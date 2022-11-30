@@ -102,6 +102,11 @@ public class ApiConditionBase {
 
     private SysParamNameEnum sysParamName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cookie_param_name")
+
+    private String cookieParamName;
+
     /**
      * 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则  策略类型为param时必选 
      */
@@ -311,6 +316,23 @@ public class ApiConditionBase {
         this.sysParamName = sysParamName;
     }
 
+    public ApiConditionBase withCookieParamName(String cookieParamName) {
+        this.cookieParamName = cookieParamName;
+        return this;
+    }
+
+    /**
+     * COOKIE参数名称;策略类型为cookie时必选
+     * @return cookieParamName
+     */
+    public String getCookieParamName() {
+        return cookieParamName;
+    }
+
+    public void setCookieParamName(String cookieParamName) {
+        this.cookieParamName = cookieParamName;
+    }
+
     public ApiConditionBase withConditionType(ConditionTypeEnum conditionType) {
         this.conditionType = conditionType;
         return this;
@@ -373,6 +395,7 @@ public class ApiConditionBase {
         ApiConditionBase apiConditionBase = (ApiConditionBase) o;
         return Objects.equals(this.reqParamName, apiConditionBase.reqParamName)
             && Objects.equals(this.sysParamName, apiConditionBase.sysParamName)
+            && Objects.equals(this.cookieParamName, apiConditionBase.cookieParamName)
             && Objects.equals(this.conditionType, apiConditionBase.conditionType)
             && Objects.equals(this.conditionOrigin, apiConditionBase.conditionOrigin)
             && Objects.equals(this.conditionValue, apiConditionBase.conditionValue);
@@ -380,7 +403,8 @@ public class ApiConditionBase {
 
     @Override
     public int hashCode() {
-        return Objects.hash(reqParamName, sysParamName, conditionType, conditionOrigin, conditionValue);
+        return Objects
+            .hash(reqParamName, sysParamName, cookieParamName, conditionType, conditionOrigin, conditionValue);
     }
 
     @Override
@@ -389,6 +413,7 @@ public class ApiConditionBase {
         sb.append("class ApiConditionBase {\n");
         sb.append("    reqParamName: ").append(toIndentedString(reqParamName)).append("\n");
         sb.append("    sysParamName: ").append(toIndentedString(sysParamName)).append("\n");
+        sb.append("    cookieParamName: ").append(toIndentedString(cookieParamName)).append("\n");
         sb.append("    conditionType: ").append(toIndentedString(conditionType)).append("\n");
         sb.append("    conditionOrigin: ").append(toIndentedString(conditionOrigin)).append("\n");
         sb.append("    conditionValue: ").append(toIndentedString(conditionValue)).append("\n");

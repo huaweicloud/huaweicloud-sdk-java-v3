@@ -1,0 +1,288 @@
+package com.huaweicloud.sdk.aom.v3.model;
+
+
+
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.aom.v3.model.WaterfallPageListParam;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Consumer;
+import java.util.Objects;
+
+/**
+ * PageResourceListParam
+ */
+public class PageResourceListParam  {
+
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="maker")
+    
+    
+    private String maker;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit")
+    
+    
+    private Integer limit;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="keywords")
+    
+    
+    private Map<String, String> keywords = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ci_relationships")
+    
+    
+    private Boolean ciRelationships;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ci_type")
+    
+    
+    private String ciType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ci_region")
+    
+    
+    private String ciRegion;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ci_id")
+    
+    
+    private String ciId;
+
+    public PageResourceListParam withMaker(String maker) {
+        this.maker = maker;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 页面的分页标志位
+     * @return maker
+     */
+    public String getMaker() {
+        return maker;
+    }
+
+    public void setMaker(String maker) {
+        this.maker = maker;
+    }
+
+    
+
+    public PageResourceListParam withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 查询返回记录的数量限制
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    
+
+    public PageResourceListParam withKeywords(Map<String, String> keywords) {
+        this.keywords = keywords;
+        return this;
+    }
+
+    
+
+    public PageResourceListParam putKeywordsItem(String key, String keywordsItem) {
+        if(this.keywords == null) {
+            this.keywords = new HashMap<>();
+        }
+        this.keywords.put(key, keywordsItem);
+        return this;
+    }
+
+    public PageResourceListParam withKeywords(Consumer<Map<String, String>> keywordsSetter) {
+        if(this.keywords == null) {
+            this.keywords = new HashMap<>();
+        }
+        keywordsSetter.accept(this.keywords);
+        return this;
+    }
+    /**
+     * 关键字模糊搜索
+     * @return keywords
+     */
+    public Map<String, String> getKeywords() {
+        return keywords;
+    }
+
+    public void setKeywords(Map<String, String> keywords) {
+        this.keywords = keywords;
+    }
+
+    
+
+    public PageResourceListParam withCiRelationships(Boolean ciRelationships) {
+        this.ciRelationships = ciRelationships;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否需要返回拓扑树,默认是false。需要：true---性能差，不需要false--性能好
+     * @return ciRelationships
+     */
+    public Boolean getCiRelationships() {
+        return ciRelationships;
+    }
+
+    public void setCiRelationships(Boolean ciRelationships) {
+        this.ciRelationships = ciRelationships;
+    }
+
+    
+
+    public PageResourceListParam withCiType(String ciType) {
+        this.ciType = ciType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 节点类型，取值：application、sub_application、component、environment
+     * @return ciType
+     */
+    public String getCiType() {
+        return ciType;
+    }
+
+    public void setCiType(String ciType) {
+        this.ciType = ciType;
+    }
+
+    
+
+    public PageResourceListParam withCiRegion(String ciRegion) {
+        this.ciRegion = ciRegion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 环境的region信息，若没有值，代表全部
+     * @return ciRegion
+     */
+    public String getCiRegion() {
+        return ciRegion;
+    }
+
+    public void setCiRegion(String ciRegion) {
+        this.ciRegion = ciRegion;
+    }
+
+    
+
+    public PageResourceListParam withCiId(String ciId) {
+        this.ciId = ciId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 节点id
+     * @return ciId
+     */
+    public String getCiId() {
+        return ciId;
+    }
+
+    public void setCiId(String ciId) {
+        this.ciId = ciId;
+    }
+
+    
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        PageResourceListParam pageResourceListParam = (PageResourceListParam) o;
+        return Objects.equals(this.maker, pageResourceListParam.maker) &&
+            Objects.equals(this.limit, pageResourceListParam.limit) &&
+            Objects.equals(this.keywords, pageResourceListParam.keywords) &&
+            Objects.equals(this.ciRelationships, pageResourceListParam.ciRelationships) &&
+            Objects.equals(this.ciType, pageResourceListParam.ciType) &&
+            Objects.equals(this.ciRegion, pageResourceListParam.ciRegion) &&
+            Objects.equals(this.ciId, pageResourceListParam.ciId);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(maker, limit, keywords, ciRelationships, ciType, ciRegion, ciId);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class PageResourceListParam {\n");
+        sb.append("    maker: ").append(toIndentedString(maker)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
+        sb.append("    ciRelationships: ").append(toIndentedString(ciRelationships)).append("\n");
+        sb.append("    ciType: ").append(toIndentedString(ciType)).append("\n");
+        sb.append("    ciRegion: ").append(toIndentedString(ciRegion)).append("\n");
+        sb.append("    ciId: ").append(toIndentedString(ciId)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+    
+}
+

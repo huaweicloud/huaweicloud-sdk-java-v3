@@ -22,8 +22,7 @@ public class OmsClient {
      *
      * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步(目前只支持华北-北京四、华东-上海一地区)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSyncEventsRequest 请求对象
      * @return CreateSyncEventsResponse
@@ -37,8 +36,7 @@ public class OmsClient {
      *
      * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步(目前只支持华北-北京四、华东-上海一地区)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSyncEventsRequest 请求对象
      * @return SyncInvoker<CreateSyncEventsRequest, CreateSyncEventsResponse>
@@ -54,8 +52,7 @@ public class OmsClient {
      *
      * 创建迁移任务，创建成功后，任务会被自动启动，不需要额外调用启动任务命令。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTaskRequest 请求对象
      * @return CreateTaskResponse
@@ -69,8 +66,7 @@ public class OmsClient {
      *
      * 创建迁移任务，创建成功后，任务会被自动启动，不需要额外调用启动任务命令。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTaskRequest 请求对象
      * @return SyncInvoker<CreateTaskRequest, CreateTaskResponse>
@@ -85,8 +81,7 @@ public class OmsClient {
      * 调用该接口删除迁移任务。
      * 正在运行的任务不允许删除，如果删除会返回失败；若要删除，请先行暂停任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
      * @return DeleteTaskResponse
@@ -101,8 +96,7 @@ public class OmsClient {
      * 调用该接口删除迁移任务。
      * 正在运行的任务不允许删除，如果删除会返回失败；若要删除，请先行暂停任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
      * @return SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
@@ -116,8 +110,7 @@ public class OmsClient {
      *
      * 查询用户账户下的所有任务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTasksRequest 请求对象
      * @return ListTasksResponse
@@ -131,8 +124,7 @@ public class OmsClient {
      *
      * 查询用户账户下的所有任务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTasksRequest 请求对象
      * @return SyncInvoker<ListTasksRequest, ListTasksResponse>
@@ -146,8 +138,7 @@ public class OmsClient {
      *
      * 查询指定ID的任务详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskRequest 请求对象
      * @return ShowTaskResponse
@@ -161,8 +152,7 @@ public class OmsClient {
      *
      * 查询指定ID的任务详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskRequest 请求对象
      * @return SyncInvoker<ShowTaskRequest, ShowTaskResponse>
@@ -176,8 +166,7 @@ public class OmsClient {
      *
      * 迁移任务暂停或失败后，调用该接口以启动任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartTaskRequest 请求对象
      * @return StartTaskResponse
@@ -191,8 +180,7 @@ public class OmsClient {
      *
      * 迁移任务暂停或失败后，调用该接口以启动任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartTaskRequest 请求对象
      * @return SyncInvoker<StartTaskRequest, StartTaskResponse>
@@ -206,8 +194,7 @@ public class OmsClient {
      *
      * 当迁移任务处于迁移中时，调用该接口停止任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopTaskRequest 请求对象
      * @return StopTaskResponse
@@ -221,8 +208,7 @@ public class OmsClient {
      *
      * 当迁移任务处于迁移中时，调用该接口停止任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopTaskRequest 请求对象
      * @return SyncInvoker<StopTaskRequest, StopTaskResponse>
@@ -236,8 +222,7 @@ public class OmsClient {
      *
      * 当迁移任务未执行完成时，修改迁移任务的流量控制策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBandwidthPolicyRequest 请求对象
      * @return UpdateBandwidthPolicyResponse
@@ -251,8 +236,7 @@ public class OmsClient {
      *
      * 当迁移任务未执行完成时，修改迁移任务的流量控制策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBandwidthPolicyRequest 请求对象
      * @return SyncInvoker<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse>
@@ -268,8 +252,7 @@ public class OmsClient {
      *
      * 创建迁移任务组，创建成功后，迁移任务组会自动创建迁移任务，不需要额外调用启动任务命令（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTaskGroupRequest 请求对象
      * @return CreateTaskGroupResponse
@@ -283,8 +266,7 @@ public class OmsClient {
      *
      * 创建迁移任务组，创建成功后，迁移任务组会自动创建迁移任务，不需要额外调用启动任务命令（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTaskGroupRequest 请求对象
      * @return SyncInvoker<CreateTaskGroupRequest, CreateTaskGroupResponse>
@@ -301,8 +283,7 @@ public class OmsClient {
      * 删除指定的迁移任务组.（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）
      * 创建任务中、监控中、暂停中状态的任务不允许删除，如果删除会返回失败；若要删除，请先行暂停任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTaskGroupRequest 请求对象
      * @return DeleteTaskGroupResponse
@@ -317,8 +298,7 @@ public class OmsClient {
      * 删除指定的迁移任务组.（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）
      * 创建任务中、监控中、暂停中状态的任务不允许删除，如果删除会返回失败；若要删除，请先行暂停任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTaskGroupRequest 请求对象
      * @return SyncInvoker<DeleteTaskGroupRequest, DeleteTaskGroupResponse>
@@ -334,8 +314,7 @@ public class OmsClient {
      *
      * 查询用户账户下的任务组信息（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTaskGroupRequest 请求对象
      * @return ListTaskGroupResponse
@@ -349,8 +328,7 @@ public class OmsClient {
      *
      * 查询用户账户下的任务组信息（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTaskGroupRequest 请求对象
      * @return SyncInvoker<ListTaskGroupRequest, ListTaskGroupResponse>
@@ -364,8 +342,7 @@ public class OmsClient {
      *
      * 当迁移任务组处于迁移失败状态时，调用该接口重启指定ID的迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RetryTaskGroupRequest 请求对象
      * @return RetryTaskGroupResponse
@@ -379,8 +356,7 @@ public class OmsClient {
      *
      * 当迁移任务组处于迁移失败状态时，调用该接口重启指定ID的迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RetryTaskGroupRequest 请求对象
      * @return SyncInvoker<RetryTaskGroupRequest, RetryTaskGroupResponse>
@@ -396,8 +372,7 @@ public class OmsClient {
      *
      * 获取指定ID的taskgroup信息（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskGroupRequest 请求对象
      * @return ShowTaskGroupResponse
@@ -411,8 +386,7 @@ public class OmsClient {
      *
      * 获取指定ID的taskgroup信息（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskGroupRequest 请求对象
      * @return SyncInvoker<ShowTaskGroupRequest, ShowTaskGroupResponse>
@@ -426,8 +400,7 @@ public class OmsClient {
      *
      * 当迁移任务组处于暂停状态时，调用该接口启动指定ID的迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartTaskGroupRequest 请求对象
      * @return StartTaskGroupResponse
@@ -441,8 +414,7 @@ public class OmsClient {
      *
      * 当迁移任务组处于暂停状态时，调用该接口启动指定ID的迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartTaskGroupRequest 请求对象
      * @return SyncInvoker<StartTaskGroupRequest, StartTaskGroupResponse>
@@ -458,8 +430,7 @@ public class OmsClient {
      *
      * 当迁移任务组处于创建任务中或监控中时，调用该接口暂停指定迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopTaskGroupRequest 请求对象
      * @return StopTaskGroupResponse
@@ -473,8 +444,7 @@ public class OmsClient {
      *
      * 当迁移任务组处于创建任务中或监控中时，调用该接口暂停指定迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopTaskGroupRequest 请求对象
      * @return SyncInvoker<StopTaskGroupRequest, StopTaskGroupResponse>
@@ -488,8 +458,7 @@ public class OmsClient {
      *
      * 当迁移任务组未执行完成时，修改迁移任务组的流量控制策略（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskGroupRequest 请求对象
      * @return UpdateTaskGroupResponse
@@ -503,8 +472,7 @@ public class OmsClient {
      *
      * 当迁移任务组未执行完成时，修改迁移任务组的流量控制策略（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskGroupRequest 请求对象
      * @return SyncInvoker<UpdateTaskGroupRequest, UpdateTaskGroupResponse>
@@ -520,8 +488,7 @@ public class OmsClient {
      *
      * 查询对象存储迁移服务的API版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return ListApiVersionsResponse
@@ -535,8 +502,7 @@ public class OmsClient {
      *
      * 查询对象存储迁移服务的API版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
@@ -552,8 +518,7 @@ public class OmsClient {
      *
      * 查询对象存储迁移服务指定API版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiInfoRequest 请求对象
      * @return ShowApiInfoResponse
@@ -567,8 +532,7 @@ public class OmsClient {
      *
      * 查询对象存储迁移服务指定API版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiInfoRequest 请求对象
      * @return SyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse>

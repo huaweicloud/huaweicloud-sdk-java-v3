@@ -22,8 +22,7 @@ public class VcmClient {
      *
      * 该 API 用于查询并显示单个作业详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckAudioJobRequest 请求对象
      * @return CheckAudioJobResponse
@@ -37,8 +36,7 @@ public class VcmClient {
      *
      * 该 API 用于查询并显示单个作业详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckAudioJobRequest 请求对象
      * @return SyncInvoker<CheckAudioJobRequest, CheckAudioJobResponse>
@@ -52,8 +50,7 @@ public class VcmClient {
      *
      * 该API用于查询并显示单个作业详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckVideoJobRequest 请求对象
      * @return CheckVideoJobResponse
@@ -67,8 +64,7 @@ public class VcmClient {
      *
      * 该API用于查询并显示单个作业详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckVideoJobRequest 请求对象
      * @return SyncInvoker<CheckVideoJobRequest, CheckVideoJobResponse>
@@ -82,8 +78,7 @@ public class VcmClient {
      *
      * 该接口用于创建语音内容审核的作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAudioJobRequest 请求对象
      * @return CreateAudioJobResponse
@@ -97,8 +92,7 @@ public class VcmClient {
      *
      * 该接口用于创建语音内容审核的作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAudioJobRequest 请求对象
      * @return SyncInvoker<CreateAudioJobRequest, CreateAudioJobResponse>
@@ -114,8 +108,7 @@ public class VcmClient {
      *
      * 该接口用于创建视频内容审核的作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVideoJobRequest 请求对象
      * @return CreateVideoJobResponse
@@ -129,8 +122,7 @@ public class VcmClient {
      *
      * 该接口用于创建视频内容审核的作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVideoJobRequest 请求对象
      * @return SyncInvoker<CreateVideoJobRequest, CreateVideoJobResponse>
@@ -146,8 +138,7 @@ public class VcmClient {
      *
      * 删除语音作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDemoInfoRequest 请求对象
      * @return DeleteDemoInfoResponse
@@ -161,8 +152,7 @@ public class VcmClient {
      *
      * 删除语音作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDemoInfoRequest 请求对象
      * @return SyncInvoker<DeleteDemoInfoRequest, DeleteDemoInfoResponse>
@@ -178,8 +168,7 @@ public class VcmClient {
      *
      * 该API用于删除指定作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVideoJobRequest 请求对象
      * @return DeleteVideoJobResponse
@@ -193,8 +182,7 @@ public class VcmClient {
      *
      * 该API用于删除指定作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVideoJobRequest 请求对象
      * @return SyncInvoker<DeleteVideoJobRequest, DeleteVideoJobResponse>
@@ -210,8 +198,7 @@ public class VcmClient {
      *
      * 查询作业列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAudioJobsRequest 请求对象
      * @return ListAudioJobsResponse
@@ -225,8 +212,7 @@ public class VcmClient {
      *
      * 查询作业列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAudioJobsRequest 请求对象
      * @return SyncInvoker<ListAudioJobsRequest, ListAudioJobsResponse>
@@ -240,8 +226,7 @@ public class VcmClient {
      *
      * 该API用于查询并显示视频内容审核的作业列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVideoJobsRequest 请求对象
      * @return ListVideoJobsResponse
@@ -255,8 +240,7 @@ public class VcmClient {
      *
      * 该API用于查询并显示视频内容审核的作业列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVideoJobsRequest 请求对象
      * @return SyncInvoker<ListVideoJobsRequest, ListVideoJobsResponse>

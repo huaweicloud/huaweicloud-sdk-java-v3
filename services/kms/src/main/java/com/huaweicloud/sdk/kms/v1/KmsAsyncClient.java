@@ -24,8 +24,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：批量添加删除密钥标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateKmsTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateKmsTagsResponse>
@@ -39,8 +38,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：批量添加删除密钥标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateKmsTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateKmsTagsRequest, BatchCreateKmsTagsResponse>
@@ -58,8 +56,7 @@ public class KmsAsyncClient {
      * - 说明：
      *    - 创建密钥的用户才能撤销该密钥授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelGrantRequest 请求对象
      * @return CompletableFuture<CancelGrantResponse>
@@ -75,8 +72,7 @@ public class KmsAsyncClient {
      * - 说明：
      *    - 创建密钥的用户才能撤销该密钥授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelGrantRequest 请求对象
      * @return AsyncInvoker<CancelGrantRequest, CancelGrantResponse>
@@ -92,8 +88,7 @@ public class KmsAsyncClient {
      * 
      * - 说明：密钥处于“计划删除”状态才能取消计划删除密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelKeyDeletionRequest 请求对象
      * @return CompletableFuture<CancelKeyDeletionResponse>
@@ -109,8 +104,7 @@ public class KmsAsyncClient {
      * 
      * - 说明：密钥处于“计划删除”状态才能取消计划删除密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelKeyDeletionRequest 请求对象
      * @return AsyncInvoker<CancelKeyDeletionRequest, CancelKeyDeletionResponse>
@@ -133,8 +127,7 @@ public class KmsAsyncClient {
      *    - 授权中retiring_principal指向的用户；
      *    - 当授权的操作列表中包含retire-grant时，grantee_principal指向的用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelSelfGrantRequest 请求对象
      * @return CompletableFuture<CancelSelfGrantResponse>
@@ -155,8 +148,7 @@ public class KmsAsyncClient {
      *    - 授权中retiring_principal指向的用户；
      *    - 当授权的操作列表中包含retire-grant时，grantee_principal指向的用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelSelfGrantRequest 请求对象
      * @return AsyncInvoker<CancelSelfGrantRequest, CancelSelfGrantResponse>
@@ -172,8 +164,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：创建数据密钥，返回结果包含明文和密文。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatakeyRequest 请求对象
      * @return CompletableFuture<CreateDatakeyResponse>
@@ -187,8 +178,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：创建数据密钥，返回结果包含明文和密文。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatakeyRequest 请求对象
      * @return AsyncInvoker<CreateDatakeyRequest, CreateDatakeyResponse>
@@ -203,8 +193,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：创建数据密钥，返回结果只包含密文。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatakeyWithoutPlaintextRequest 请求对象
      * @return CompletableFuture<CreateDatakeyWithoutPlaintextResponse>
@@ -219,8 +208,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：创建数据密钥，返回结果只包含密文。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatakeyWithoutPlaintextRequest 请求对象
      * @return AsyncInvoker<CreateDatakeyWithoutPlaintextRequest, CreateDatakeyWithoutPlaintextResponse>
@@ -238,8 +226,7 @@ public class KmsAsyncClient {
      * - 说明：
      *    - 服务默认主密钥（密钥别名后缀为“/default”）不可以授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateGrantRequest 请求对象
      * @return CompletableFuture<CreateGrantResponse>
@@ -255,8 +242,7 @@ public class KmsAsyncClient {
      * - 说明：
      *    - 服务默认主密钥（密钥别名后缀为“/default”）不可以授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateGrantRequest 请求对象
      * @return AsyncInvoker<CreateGrantRequest, CreateGrantResponse>
@@ -272,8 +258,7 @@ public class KmsAsyncClient {
      * - 对称密钥为长度为256位AES密钥，可用于小量数据的加密或者用于加密数据密钥。
      * - 非对称密钥可以为RSA密钥对或者ECC密钥对，可用于数字签名及验签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateKeyRequest 请求对象
      * @return CompletableFuture<CreateKeyResponse>
@@ -289,8 +274,7 @@ public class KmsAsyncClient {
      * - 对称密钥为长度为256位AES密钥，可用于小量数据的加密或者用于加密数据密钥。
      * - 非对称密钥可以为RSA密钥对或者ECC密钥对，可用于数字签名及验签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateKeyRequest 请求对象
      * @return AsyncInvoker<CreateKeyRequest, CreateKeyResponse>
@@ -304,8 +288,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：添加密钥标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateKmsTagRequest 请求对象
      * @return CompletableFuture<CreateKmsTagResponse>
@@ -319,8 +302,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：添加密钥标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateKmsTagRequest 请求对象
      * @return AsyncInvoker<CreateKmsTagRequest, CreateKmsTagResponse>
@@ -336,8 +318,7 @@ public class KmsAsyncClient {
      * - 功能介绍：获取导入密钥的必要参数，包括密钥导入令牌和密钥加密公钥。
      * - 说明：返回的公钥类型默认为RSA_2048。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateParametersForImportRequest 请求对象
      * @return CompletableFuture<CreateParametersForImportResponse>
@@ -353,8 +334,7 @@ public class KmsAsyncClient {
      * - 功能介绍：获取导入密钥的必要参数，包括密钥导入令牌和密钥加密公钥。
      * - 说明：返回的公钥类型默认为RSA_2048。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateParametersForImportRequest 请求对象
      * @return AsyncInvoker<CreateParametersForImportRequest, CreateParametersForImportResponse>
@@ -371,8 +351,7 @@ public class KmsAsyncClient {
      * - 功能介绍：
      *   生成8~8192bit范围内的随机数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRandomRequest 请求对象
      * @return CompletableFuture<CreateRandomResponse>
@@ -387,8 +366,7 @@ public class KmsAsyncClient {
      * - 功能介绍：
      *   生成8~8192bit范围内的随机数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRandomRequest 请求对象
      * @return AsyncInvoker<CreateRandomRequest, CreateRandomResponse>
@@ -408,8 +386,7 @@ public class KmsAsyncClient {
      * 
      * 初始版本的状态被标记为SYSCURRENT。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecretRequest 请求对象
      * @return CompletableFuture<CreateSecretResponse>
@@ -428,8 +405,7 @@ public class KmsAsyncClient {
      * 
      * 初始版本的状态被标记为SYSCURRENT。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecretRequest 请求对象
      * @return AsyncInvoker<CreateSecretRequest, CreateSecretResponse>
@@ -444,8 +420,7 @@ public class KmsAsyncClient {
      *
      * 在指定的凭据中，创建一个新的凭据版本，用于加密保管新的凭据值。默认情况下，新创建的凭据版本被标记为SYSCURRENT状态，而SYSCURRENT标记的前一个凭据版本被标记为SYSPREVIOUS状态。您可以通过指定VersionStage参数来覆盖默认行为。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecretVersionRequest 请求对象
      * @return CompletableFuture<CreateSecretVersionResponse>
@@ -459,8 +434,7 @@ public class KmsAsyncClient {
      *
      * 在指定的凭据中，创建一个新的凭据版本，用于加密保管新的凭据值。默认情况下，新创建的凭据版本被标记为SYSCURRENT状态，而SYSCURRENT标记的前一个凭据版本被标记为SYSPREVIOUS状态。您可以通过指定VersionStage参数来覆盖默认行为。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecretVersionRequest 请求对象
      * @return AsyncInvoker<CreateSecretVersionRequest, CreateSecretVersionResponse>
@@ -476,8 +450,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：解密数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DecryptDataRequest 请求对象
      * @return CompletableFuture<DecryptDataResponse>
@@ -491,8 +464,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：解密数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DecryptDataRequest 请求对象
      * @return AsyncInvoker<DecryptDataRequest, DecryptDataResponse>
@@ -506,8 +478,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：解密数据密钥，用指定的主密钥解密数据密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DecryptDatakeyRequest 请求对象
      * @return CompletableFuture<DecryptDatakeyResponse>
@@ -521,8 +492,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：解密数据密钥，用指定的主密钥解密数据密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DecryptDatakeyRequest 请求对象
      * @return AsyncInvoker<DecryptDatakeyRequest, DecryptDatakeyResponse>
@@ -538,8 +508,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：删除密钥材料信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteImportedKeyMaterialRequest 请求对象
      * @return CompletableFuture<DeleteImportedKeyMaterialResponse>
@@ -554,8 +523,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：删除密钥材料信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteImportedKeyMaterialRequest 请求对象
      * @return AsyncInvoker<DeleteImportedKeyMaterialRequest, DeleteImportedKeyMaterialResponse>
@@ -571,8 +539,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：计划多少天后删除密钥，可设置7天～1096天内删除密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteKeyRequest 请求对象
      * @return CompletableFuture<DeleteKeyResponse>
@@ -586,8 +553,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：计划多少天后删除密钥，可设置7天～1096天内删除密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteKeyRequest 请求对象
      * @return AsyncInvoker<DeleteKeyRequest, DeleteKeyResponse>
@@ -601,8 +567,7 @@ public class KmsAsyncClient {
      *
      * 立即删除指定的凭据，且无法恢复。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecretRequest 请求对象
      * @return CompletableFuture<DeleteSecretResponse>
@@ -616,8 +581,7 @@ public class KmsAsyncClient {
      *
      * 立即删除指定的凭据，且无法恢复。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecretRequest 请求对象
      * @return AsyncInvoker<DeleteSecretRequest, DeleteSecretResponse>
@@ -632,8 +596,7 @@ public class KmsAsyncClient {
      *
      * 指定延迟删除时间，创建删除凭据的定时任务，可设置7~30天的的延迟删除时间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecretForScheduleRequest 请求对象
      * @return CompletableFuture<DeleteSecretForScheduleResponse>
@@ -648,8 +611,7 @@ public class KmsAsyncClient {
      *
      * 指定延迟删除时间，创建删除凭据的定时任务，可设置7~30天的的延迟删除时间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecretForScheduleRequest 请求对象
      * @return AsyncInvoker<DeleteSecretForScheduleRequest, DeleteSecretForScheduleResponse>
@@ -665,8 +627,7 @@ public class KmsAsyncClient {
      *
      * 删除指定的凭据版本状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecretStageRequest 请求对象
      * @return CompletableFuture<DeleteSecretStageResponse>
@@ -680,8 +641,7 @@ public class KmsAsyncClient {
      *
      * 删除指定的凭据版本状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecretStageRequest 请求对象
      * @return AsyncInvoker<DeleteSecretStageRequest, DeleteSecretStageResponse>
@@ -697,8 +657,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：删除密钥标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTagRequest 请求对象
      * @return CompletableFuture<DeleteTagResponse>
@@ -712,8 +671,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：删除密钥标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTagRequest 请求对象
      * @return AsyncInvoker<DeleteTagRequest, DeleteTagResponse>
@@ -729,8 +687,7 @@ public class KmsAsyncClient {
      * 
      * - 说明：密钥为启用状态才能禁用密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisableKeyRequest 请求对象
      * @return CompletableFuture<DisableKeyResponse>
@@ -746,8 +703,7 @@ public class KmsAsyncClient {
      * 
      * - 说明：密钥为启用状态才能禁用密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisableKeyRequest 请求对象
      * @return AsyncInvoker<DisableKeyRequest, DisableKeyResponse>
@@ -761,8 +717,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：关闭用户主密钥轮换。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisableKeyRotationRequest 请求对象
      * @return CompletableFuture<DisableKeyRotationResponse>
@@ -776,8 +731,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：关闭用户主密钥轮换。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisableKeyRotationRequest 请求对象
      * @return AsyncInvoker<DisableKeyRotationRequest, DisableKeyRotationResponse>
@@ -795,8 +749,7 @@ public class KmsAsyncClient {
      * 
      * - 说明：密钥为禁用状态才能启用密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableKeyRequest 请求对象
      * @return CompletableFuture<EnableKeyResponse>
@@ -812,8 +765,7 @@ public class KmsAsyncClient {
      * 
      * - 说明：密钥为禁用状态才能启用密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableKeyRequest 请求对象
      * @return AsyncInvoker<EnableKeyRequest, EnableKeyResponse>
@@ -830,8 +782,7 @@ public class KmsAsyncClient {
      *   - 开启密钥轮换后，默认轮询间隔时间为365天。
      *   - 默认主密钥及外部导入密钥不支持轮换操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableKeyRotationRequest 请求对象
      * @return CompletableFuture<EnableKeyRotationResponse>
@@ -848,8 +799,7 @@ public class KmsAsyncClient {
      *   - 开启密钥轮换后，默认轮询间隔时间为365天。
      *   - 默认主密钥及外部导入密钥不支持轮换操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableKeyRotationRequest 请求对象
      * @return AsyncInvoker<EnableKeyRotationRequest, EnableKeyRotationResponse>
@@ -865,8 +815,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：加密数据，用指定的用户主密钥加密数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EncryptDataRequest 请求对象
      * @return CompletableFuture<EncryptDataResponse>
@@ -880,8 +829,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：加密数据，用指定的用户主密钥加密数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EncryptDataRequest 请求对象
      * @return AsyncInvoker<EncryptDataRequest, EncryptDataResponse>
@@ -895,8 +843,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：加密数据密钥，用指定的主密钥加密数据密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EncryptDatakeyRequest 请求对象
      * @return CompletableFuture<EncryptDatakeyResponse>
@@ -910,8 +857,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：加密数据密钥，用指定的主密钥加密数据密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EncryptDatakeyRequest 请求对象
      * @return AsyncInvoker<EncryptDatakeyRequest, EncryptDatakeyResponse>
@@ -927,8 +873,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：导入密钥材料。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportKeyMaterialRequest 请求对象
      * @return CompletableFuture<ImportKeyMaterialResponse>
@@ -942,8 +887,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：导入密钥材料。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportKeyMaterialRequest 请求对象
      * @return AsyncInvoker<ImportKeyMaterialRequest, ImportKeyMaterialResponse>
@@ -959,8 +903,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询密钥的授权列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGrantsRequest 请求对象
      * @return CompletableFuture<ListGrantsResponse>
@@ -974,8 +917,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询密钥的授权列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGrantsRequest 请求对象
      * @return AsyncInvoker<ListGrantsRequest, ListGrantsResponse>
@@ -989,8 +931,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询密钥详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKeyDetailRequest 请求对象
      * @return CompletableFuture<ListKeyDetailResponse>
@@ -1004,8 +945,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询密钥详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKeyDetailRequest 请求对象
      * @return AsyncInvoker<ListKeyDetailRequest, ListKeyDetailResponse>
@@ -1020,8 +960,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询用户所有密钥列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKeysRequest 请求对象
      * @return CompletableFuture<ListKeysResponse>
@@ -1035,8 +974,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询用户所有密钥列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKeysRequest 请求对象
      * @return AsyncInvoker<ListKeysRequest, ListKeysResponse>
@@ -1050,8 +988,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询密钥实例。通过标签过滤，查询指定用户主密钥的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKmsByTagsRequest 请求对象
      * @return CompletableFuture<ListKmsByTagsResponse>
@@ -1065,8 +1002,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询密钥实例。通过标签过滤，查询指定用户主密钥的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKmsByTagsRequest 请求对象
      * @return AsyncInvoker<ListKmsByTagsRequest, ListKmsByTagsResponse>
@@ -1081,8 +1017,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询用户在指定项目下的所有标签集合。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKmsTagsRequest 请求对象
      * @return CompletableFuture<ListKmsTagsResponse>
@@ -1096,8 +1031,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询用户在指定项目下的所有标签集合。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKmsTagsRequest 请求对象
      * @return AsyncInvoker<ListKmsTagsRequest, ListKmsTagsResponse>
@@ -1111,8 +1045,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询用户可以退役的授权列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRetirableGrantsRequest 请求对象
      * @return CompletableFuture<ListRetirableGrantsResponse>
@@ -1126,8 +1059,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询用户可以退役的授权列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRetirableGrantsRequest 请求对象
      * @return AsyncInvoker<ListRetirableGrantsRequest, ListRetirableGrantsResponse>
@@ -1143,8 +1075,7 @@ public class KmsAsyncClient {
      *
      * 查询指定凭据版本状态标记的版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecretStageRequest 请求对象
      * @return CompletableFuture<ListSecretStageResponse>
@@ -1158,8 +1089,7 @@ public class KmsAsyncClient {
      *
      * 查询指定凭据版本状态标记的版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecretStageRequest 请求对象
      * @return AsyncInvoker<ListSecretStageRequest, ListSecretStageResponse>
@@ -1175,8 +1105,7 @@ public class KmsAsyncClient {
      *
      * 查询指定凭据下的版本列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecretVersionsRequest 请求对象
      * @return CompletableFuture<ListSecretVersionsResponse>
@@ -1190,8 +1119,7 @@ public class KmsAsyncClient {
      *
      * 查询指定凭据下的版本列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecretVersionsRequest 请求对象
      * @return AsyncInvoker<ListSecretVersionsRequest, ListSecretVersionsResponse>
@@ -1207,8 +1135,7 @@ public class KmsAsyncClient {
      *
      * 查询当前用户在本项目下创建的所有凭据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecretsRequest 请求对象
      * @return CompletableFuture<ListSecretsResponse>
@@ -1222,8 +1149,7 @@ public class KmsAsyncClient {
      *
      * 查询当前用户在本项目下创建的所有凭据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecretsRequest 请求对象
      * @return AsyncInvoker<ListSecretsRequest, ListSecretsResponse>
@@ -1237,8 +1163,7 @@ public class KmsAsyncClient {
      *
      * 取消凭据的定时删除任务，凭据对象恢复可使用状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreSecretRequest 请求对象
      * @return CompletableFuture<RestoreSecretResponse>
@@ -1252,8 +1177,7 @@ public class KmsAsyncClient {
      *
      * 取消凭据的定时删除任务，凭据对象恢复可使用状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreSecretRequest 请求对象
      * @return AsyncInvoker<RestoreSecretRequest, RestoreSecretResponse>
@@ -1268,8 +1192,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询用户主密钥轮换状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowKeyRotationStatusRequest 请求对象
      * @return CompletableFuture<ShowKeyRotationStatusResponse>
@@ -1284,8 +1207,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询用户主密钥轮换状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowKeyRotationStatusRequest 请求对象
      * @return AsyncInvoker<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse>
@@ -1301,8 +1223,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询密钥标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowKmsTagsRequest 请求对象
      * @return CompletableFuture<ShowKmsTagsResponse>
@@ -1316,8 +1237,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询密钥标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowKmsTagsRequest 请求对象
      * @return AsyncInvoker<ShowKmsTagsRequest, ShowKmsTagsResponse>
@@ -1331,8 +1251,7 @@ public class KmsAsyncClient {
      *
      * - 查询用户指定非对称密钥的公钥信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicKeyRequest 请求对象
      * @return CompletableFuture<ShowPublicKeyResponse>
@@ -1346,8 +1265,7 @@ public class KmsAsyncClient {
      *
      * - 查询用户指定非对称密钥的公钥信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicKeyRequest 请求对象
      * @return AsyncInvoker<ShowPublicKeyRequest, ShowPublicKeyResponse>
@@ -1362,8 +1280,7 @@ public class KmsAsyncClient {
      *
      * 查询指定凭据的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecretRequest 请求对象
      * @return CompletableFuture<ShowSecretResponse>
@@ -1377,8 +1294,7 @@ public class KmsAsyncClient {
      *
      * 查询指定凭据的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecretRequest 请求对象
      * @return AsyncInvoker<ShowSecretRequest, ShowSecretResponse>
@@ -1393,8 +1309,7 @@ public class KmsAsyncClient {
      * 查询指定凭据版本的信息和版本中的明文凭据值，只能查询ENABLED状态的凭据。
      * 通过/v1/{project_id}/secrets/{secret_id}/versions/latest可访问凭据最新版本的凭据值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecretVersionRequest 请求对象
      * @return CompletableFuture<ShowSecretVersionResponse>
@@ -1409,8 +1324,7 @@ public class KmsAsyncClient {
      * 查询指定凭据版本的信息和版本中的明文凭据值，只能查询ENABLED状态的凭据。
      * 通过/v1/{project_id}/secrets/{secret_id}/versions/latest可访问凭据最新版本的凭据值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecretVersionRequest 请求对象
      * @return AsyncInvoker<ShowSecretVersionRequest, ShowSecretVersionResponse>
@@ -1426,8 +1340,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询实例数，获取用户已经创建的用户主密钥数量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserInstancesRequest 请求对象
      * @return CompletableFuture<ShowUserInstancesResponse>
@@ -1441,8 +1354,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询实例数，获取用户已经创建的用户主密钥数量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserInstancesRequest 请求对象
      * @return AsyncInvoker<ShowUserInstancesRequest, ShowUserInstancesResponse>
@@ -1458,8 +1370,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询配额，查询用户可以创建的用户主密钥配额总数及当前使用量信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserQuotasRequest 请求对象
      * @return CompletableFuture<ShowUserQuotasResponse>
@@ -1473,8 +1384,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询配额，查询用户可以创建的用户主密钥配额总数及当前使用量信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserQuotasRequest 请求对象
      * @return AsyncInvoker<ShowUserQuotasRequest, ShowUserQuotasResponse>
@@ -1490,8 +1400,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：使用非对称密钥的私钥对消息或消息摘要进行数字签名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SignRequest 请求对象
      * @return CompletableFuture<SignResponse>
@@ -1505,8 +1414,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：使用非对称密钥的私钥对消息或消息摘要进行数字签名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SignRequest 请求对象
      * @return AsyncInvoker<SignRequest, SignResponse>
@@ -1523,8 +1431,7 @@ public class KmsAsyncClient {
      *    - 服务默认主密钥（密钥别名后缀为“/default”）不可以修改。
      *    - 密钥处于“计划删除”状态，密钥别名不可以修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateKeyAliasRequest 请求对象
      * @return CompletableFuture<UpdateKeyAliasResponse>
@@ -1541,8 +1448,7 @@ public class KmsAsyncClient {
      *    - 服务默认主密钥（密钥别名后缀为“/default”）不可以修改。
      *    - 密钥处于“计划删除”状态，密钥别名不可以修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateKeyAliasRequest 请求对象
      * @return AsyncInvoker<UpdateKeyAliasRequest, UpdateKeyAliasResponse>
@@ -1561,8 +1467,7 @@ public class KmsAsyncClient {
      *    - 服务默认主密钥（密钥别名后缀为“/default”）不可以修改。
      *    - 密钥处于“计划删除”状态，密钥描述不可以修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateKeyDescriptionRequest 请求对象
      * @return CompletableFuture<UpdateKeyDescriptionResponse>
@@ -1580,8 +1485,7 @@ public class KmsAsyncClient {
      *    - 服务默认主密钥（密钥别名后缀为“/default”）不可以修改。
      *    - 密钥处于“计划删除”状态，密钥描述不可以修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateKeyDescriptionRequest 请求对象
      * @return AsyncInvoker<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse>
@@ -1597,8 +1501,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：修改用户主密钥轮换周期。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateKeyRotationIntervalRequest 请求对象
      * @return CompletableFuture<UpdateKeyRotationIntervalResponse>
@@ -1613,8 +1516,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：修改用户主密钥轮换周期。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateKeyRotationIntervalRequest 请求对象
      * @return AsyncInvoker<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse>
@@ -1630,8 +1532,7 @@ public class KmsAsyncClient {
      *
      * 更新指定凭据的元数据信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSecretRequest 请求对象
      * @return CompletableFuture<UpdateSecretResponse>
@@ -1645,8 +1546,7 @@ public class KmsAsyncClient {
      *
      * 更新指定凭据的元数据信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSecretRequest 请求对象
      * @return AsyncInvoker<UpdateSecretRequest, UpdateSecretResponse>
@@ -1661,8 +1561,7 @@ public class KmsAsyncClient {
      *
      * 更新凭据的版本状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSecretStageRequest 请求对象
      * @return CompletableFuture<UpdateSecretStageResponse>
@@ -1676,8 +1575,7 @@ public class KmsAsyncClient {
      *
      * 更新凭据的版本状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSecretStageRequest 请求对象
      * @return AsyncInvoker<UpdateSecretStageRequest, UpdateSecretStageResponse>
@@ -1693,8 +1591,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：使用非对称密钥的私钥对消息或消息摘要进行数字签名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateSignatureRequest 请求对象
      * @return CompletableFuture<ValidateSignatureResponse>
@@ -1708,8 +1605,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：使用非对称密钥的私钥对消息或消息摘要进行数字签名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateSignatureRequest 请求对象
      * @return AsyncInvoker<ValidateSignatureRequest, ValidateSignatureResponse>
@@ -1725,8 +1621,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查指定API版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVersionRequest 请求对象
      * @return CompletableFuture<ShowVersionResponse>
@@ -1740,8 +1635,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查指定API版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVersionRequest 请求对象
      * @return AsyncInvoker<ShowVersionRequest, ShowVersionResponse>
@@ -1755,8 +1649,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询API版本信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVersionsRequest 请求对象
      * @return CompletableFuture<ShowVersionsResponse>
@@ -1770,8 +1663,7 @@ public class KmsAsyncClient {
      *
      * - 功能介绍：查询API版本信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVersionsRequest 请求对象
      * @return AsyncInvoker<ShowVersionsRequest, ShowVersionsResponse>

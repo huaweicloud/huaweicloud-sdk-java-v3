@@ -46,7 +46,7 @@ public class CreateCloudPhoneServerRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ports")
 
-    private List<CreateCloudPhoneServerRequestBodyPorts> ports = null;
+    private List<Port> ports = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "band_width")
@@ -143,6 +143,8 @@ public class CreateCloudPhoneServerRequestBody {
 
     /**
      * 购买的云手机服务器个数，最多可购买10台
+     * minimum: 0
+     * maximum: 64
      * @return count
      */
     public Integer getCount() {
@@ -170,12 +172,12 @@ public class CreateCloudPhoneServerRequestBody {
         this.keypairName = keypairName;
     }
 
-    public CreateCloudPhoneServerRequestBody withPorts(List<CreateCloudPhoneServerRequestBodyPorts> ports) {
+    public CreateCloudPhoneServerRequestBody withPorts(List<Port> ports) {
         this.ports = ports;
         return this;
     }
 
-    public CreateCloudPhoneServerRequestBody addPortsItem(CreateCloudPhoneServerRequestBodyPorts portsItem) {
+    public CreateCloudPhoneServerRequestBody addPortsItem(Port portsItem) {
         if (this.ports == null) {
             this.ports = new ArrayList<>();
         }
@@ -183,8 +185,7 @@ public class CreateCloudPhoneServerRequestBody {
         return this;
     }
 
-    public CreateCloudPhoneServerRequestBody withPorts(
-        Consumer<List<CreateCloudPhoneServerRequestBodyPorts>> portsSetter) {
+    public CreateCloudPhoneServerRequestBody withPorts(Consumer<List<Port>> portsSetter) {
         if (this.ports == null) {
             this.ports = new ArrayList<>();
         }
@@ -196,11 +197,11 @@ public class CreateCloudPhoneServerRequestBody {
      * 云手机启用的应用端口，云手机服务会做端口转发
      * @return ports
      */
-    public List<CreateCloudPhoneServerRequestBodyPorts> getPorts() {
+    public List<Port> getPorts() {
         return ports;
     }
 
-    public void setPorts(List<CreateCloudPhoneServerRequestBodyPorts> ports) {
+    public void setPorts(List<Port> ports) {
         this.ports = ports;
     }
 

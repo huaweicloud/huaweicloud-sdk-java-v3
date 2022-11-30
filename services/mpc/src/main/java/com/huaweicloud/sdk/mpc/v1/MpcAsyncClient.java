@@ -25,8 +25,7 @@ public class MpcAsyncClient {
      * 创建动图任务，用于将完整的视频文件或视频文件中的一部分转换为动态图文件，暂只支持输出GIF文件。
      * 待转动图的视频文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAnimatedGraphicsTaskRequest 请求对象
      * @return CompletableFuture<CreateAnimatedGraphicsTaskResponse>
@@ -42,8 +41,7 @@ public class MpcAsyncClient {
      * 创建动图任务，用于将完整的视频文件或视频文件中的一部分转换为动态图文件，暂只支持输出GIF文件。
      * 待转动图的视频文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAnimatedGraphicsTaskRequest 请求对象
      * @return AsyncInvoker<CreateAnimatedGraphicsTaskRequest, CreateAnimatedGraphicsTaskResponse>
@@ -59,8 +57,7 @@ public class MpcAsyncClient {
      *
      * 取消已下发的生成动图任务，仅支持取消正在排队中的任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAnimatedGraphicsTaskRequest 请求对象
      * @return CompletableFuture<DeleteAnimatedGraphicsTaskResponse>
@@ -75,8 +72,7 @@ public class MpcAsyncClient {
      *
      * 取消已下发的生成动图任务，仅支持取消正在排队中的任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAnimatedGraphicsTaskRequest 请求对象
      * @return AsyncInvoker<DeleteAnimatedGraphicsTaskRequest, DeleteAnimatedGraphicsTaskResponse>
@@ -92,8 +88,7 @@ public class MpcAsyncClient {
      *
      * 查询动图任务的状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAnimatedGraphicsTaskRequest 请求对象
      * @return CompletableFuture<ListAnimatedGraphicsTaskResponse>
@@ -108,8 +103,7 @@ public class MpcAsyncClient {
      *
      * 查询动图任务的状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAnimatedGraphicsTaskRequest 请求对象
      * @return AsyncInvoker<ListAnimatedGraphicsTaskRequest, ListAnimatedGraphicsTaskResponse>
@@ -121,13 +115,255 @@ public class MpcAsyncClient {
     }
 
     /**
+     * 请求委托任务
+     *
+     * 开启或关闭\&quot;委托授权\&quot;, 开启后，媒体处理服务将拥有您所有桶的读写权限，子账号不支持委托授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAgenciesTaskRequest 请求对象
+     * @return CompletableFuture<CreateAgenciesTaskResponse>
+     */
+    public CompletableFuture<CreateAgenciesTaskResponse> createAgenciesTaskAsync(CreateAgenciesTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.createAgenciesTask);
+    }
+
+    /**
+     * 请求委托任务
+     *
+     * 开启或关闭\&quot;委托授权\&quot;, 开启后，媒体处理服务将拥有您所有桶的读写权限，子账号不支持委托授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAgenciesTaskRequest 请求对象
+     * @return AsyncInvoker<CreateAgenciesTaskRequest, CreateAgenciesTaskResponse>
+     */
+    public AsyncInvoker<CreateAgenciesTaskRequest, CreateAgenciesTaskResponse> createAgenciesTaskAsyncInvoker(
+        CreateAgenciesTaskRequest request) {
+        return new AsyncInvoker<CreateAgenciesTaskRequest, CreateAgenciesTaskResponse>(request,
+            MpcMeta.createAgenciesTask, hcClient);
+    }
+
+    /**
+     * 查询桶列表
+     *
+     * 请求查询自己创建的指定的桶区域位置的桶列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAllBucketsRequest 请求对象
+     * @return CompletableFuture<ListAllBucketsResponse>
+     */
+    public CompletableFuture<ListAllBucketsResponse> listAllBucketsAsync(ListAllBucketsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.listAllBuckets);
+    }
+
+    /**
+     * 查询桶列表
+     *
+     * 请求查询自己创建的指定的桶区域位置的桶列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAllBucketsRequest 请求对象
+     * @return AsyncInvoker<ListAllBucketsRequest, ListAllBucketsResponse>
+     */
+    public AsyncInvoker<ListAllBucketsRequest, ListAllBucketsResponse> listAllBucketsAsyncInvoker(
+        ListAllBucketsRequest request) {
+        return new AsyncInvoker<ListAllBucketsRequest, ListAllBucketsResponse>(request, MpcMeta.listAllBuckets,
+            hcClient);
+    }
+
+    /**
+     * 查询桶里的object
+     *
+     * 查询桶里的object。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAllObsObjListRequest 请求对象
+     * @return CompletableFuture<ListAllObsObjListResponse>
+     */
+    public CompletableFuture<ListAllObsObjListResponse> listAllObsObjListAsync(ListAllObsObjListRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.listAllObsObjList);
+    }
+
+    /**
+     * 查询桶里的object
+     *
+     * 查询桶里的object。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAllObsObjListRequest 请求对象
+     * @return AsyncInvoker<ListAllObsObjListRequest, ListAllObsObjListResponse>
+     */
+    public AsyncInvoker<ListAllObsObjListRequest, ListAllObsObjListResponse> listAllObsObjListAsyncInvoker(
+        ListAllObsObjListRequest request) {
+        return new AsyncInvoker<ListAllObsObjListRequest, ListAllObsObjListResponse>(request, MpcMeta.listAllObsObjList,
+            hcClient);
+    }
+
+    /**
+     * 查询转码服务端所有事件
+     *
+     * 查询消息订阅功能板块, SMN主题的所有订阅事件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNotifyEventRequest 请求对象
+     * @return CompletableFuture<ListNotifyEventResponse>
+     */
+    public CompletableFuture<ListNotifyEventResponse> listNotifyEventAsync(ListNotifyEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.listNotifyEvent);
+    }
+
+    /**
+     * 查询转码服务端所有事件
+     *
+     * 查询消息订阅功能板块, SMN主题的所有订阅事件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNotifyEventRequest 请求对象
+     * @return AsyncInvoker<ListNotifyEventRequest, ListNotifyEventResponse>
+     */
+    public AsyncInvoker<ListNotifyEventRequest, ListNotifyEventResponse> listNotifyEventAsyncInvoker(
+        ListNotifyEventRequest request) {
+        return new AsyncInvoker<ListNotifyEventRequest, ListNotifyEventResponse>(request, MpcMeta.listNotifyEvent,
+            hcClient);
+    }
+
+    /**
+     * 查询转码服务端事件通知
+     *
+     * 查询消息订阅功能板块, SMN主题的订阅事件的启用状态和订阅消息的启用状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNotifySmnTopicConfigRequest 请求对象
+     * @return CompletableFuture<ListNotifySmnTopicConfigResponse>
+     */
+    public CompletableFuture<ListNotifySmnTopicConfigResponse> listNotifySmnTopicConfigAsync(
+        ListNotifySmnTopicConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.listNotifySmnTopicConfig);
+    }
+
+    /**
+     * 查询转码服务端事件通知
+     *
+     * 查询消息订阅功能板块, SMN主题的订阅事件的启用状态和订阅消息的启用状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNotifySmnTopicConfigRequest 请求对象
+     * @return AsyncInvoker<ListNotifySmnTopicConfigRequest, ListNotifySmnTopicConfigResponse>
+     */
+    public AsyncInvoker<ListNotifySmnTopicConfigRequest, ListNotifySmnTopicConfigResponse> listNotifySmnTopicConfigAsyncInvoker(
+        ListNotifySmnTopicConfigRequest request) {
+        return new AsyncInvoker<ListNotifySmnTopicConfigRequest, ListNotifySmnTopicConfigResponse>(request,
+            MpcMeta.listNotifySmnTopicConfig, hcClient);
+    }
+
+    /**
+     * 配置转码服务端事件通知
+     *
+     * 配置转码服务端事件通知。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NotifySmnTopicConfigRequest 请求对象
+     * @return CompletableFuture<NotifySmnTopicConfigResponse>
+     */
+    public CompletableFuture<NotifySmnTopicConfigResponse> notifySmnTopicConfigAsync(
+        NotifySmnTopicConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.notifySmnTopicConfig);
+    }
+
+    /**
+     * 配置转码服务端事件通知
+     *
+     * 配置转码服务端事件通知。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NotifySmnTopicConfigRequest 请求对象
+     * @return AsyncInvoker<NotifySmnTopicConfigRequest, NotifySmnTopicConfigResponse>
+     */
+    public AsyncInvoker<NotifySmnTopicConfigRequest, NotifySmnTopicConfigResponse> notifySmnTopicConfigAsyncInvoker(
+        NotifySmnTopicConfigRequest request) {
+        return new AsyncInvoker<NotifySmnTopicConfigRequest, NotifySmnTopicConfigResponse>(request,
+            MpcMeta.notifySmnTopicConfig, hcClient);
+    }
+
+    /**
+     * 查询创建委托任务状态
+     *
+     * 查询创建委托任务状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAgenciesTaskRequest 请求对象
+     * @return CompletableFuture<ShowAgenciesTaskResponse>
+     */
+    public CompletableFuture<ShowAgenciesTaskResponse> showAgenciesTaskAsync(ShowAgenciesTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.showAgenciesTask);
+    }
+
+    /**
+     * 查询创建委托任务状态
+     *
+     * 查询创建委托任务状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAgenciesTaskRequest 请求对象
+     * @return AsyncInvoker<ShowAgenciesTaskRequest, ShowAgenciesTaskResponse>
+     */
+    public AsyncInvoker<ShowAgenciesTaskRequest, ShowAgenciesTaskResponse> showAgenciesTaskAsyncInvoker(
+        ShowAgenciesTaskRequest request) {
+        return new AsyncInvoker<ShowAgenciesTaskRequest, ShowAgenciesTaskResponse>(request, MpcMeta.showAgenciesTask,
+            hcClient);
+    }
+
+    /**
+     * 桶授权或取消授权
+     *
+     * 对OBS桶进行授权或取消授权，媒体处理服务仅拥有已授权桶的读写权限。（暂不支持KMS加密桶的授权）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateBucketAuthorizedRequest 请求对象
+     * @return CompletableFuture<UpdateBucketAuthorizedResponse>
+     */
+    public CompletableFuture<UpdateBucketAuthorizedResponse> updateBucketAuthorizedAsync(
+        UpdateBucketAuthorizedRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.updateBucketAuthorized);
+    }
+
+    /**
+     * 桶授权或取消授权
+     *
+     * 对OBS桶进行授权或取消授权，媒体处理服务仅拥有已授权桶的读写权限。（暂不支持KMS加密桶的授权）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateBucketAuthorizedRequest 请求对象
+     * @return AsyncInvoker<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse>
+     */
+    public AsyncInvoker<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> updateBucketAuthorizedAsyncInvoker(
+        UpdateBucketAuthorizedRequest request) {
+        return new AsyncInvoker<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse>(request,
+            MpcMeta.updateBucketAuthorized, hcClient);
+    }
+
+    /**
      * 新建剪辑任务
      *
      * 创建剪辑任务，用于将多个视频文件进行裁剪成多个视频分段，并且可以把这些视频分段合并成一个视频，剪切和拼接功能可以单独使用。
      * 待剪辑的视频文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEditingJobRequest 请求对象
      * @return CompletableFuture<CreateEditingJobResponse>
@@ -142,8 +378,7 @@ public class MpcAsyncClient {
      * 创建剪辑任务，用于将多个视频文件进行裁剪成多个视频分段，并且可以把这些视频分段合并成一个视频，剪切和拼接功能可以单独使用。
      * 待剪辑的视频文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEditingJobRequest 请求对象
      * @return AsyncInvoker<CreateEditingJobRequest, CreateEditingJobResponse>
@@ -159,8 +394,7 @@ public class MpcAsyncClient {
      *
      * 取消已下发的生成剪辑任务，仅支持取消正在排队中的任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEditingJobRequest 请求对象
      * @return CompletableFuture<DeleteEditingJobResponse>
@@ -174,8 +408,7 @@ public class MpcAsyncClient {
      *
      * 取消已下发的生成剪辑任务，仅支持取消正在排队中的任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEditingJobRequest 请求对象
      * @return AsyncInvoker<DeleteEditingJobRequest, DeleteEditingJobResponse>
@@ -191,8 +424,7 @@ public class MpcAsyncClient {
      *
      * 查询剪辑任务的状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEditingJobRequest 请求对象
      * @return CompletableFuture<ListEditingJobResponse>
@@ -206,8 +438,7 @@ public class MpcAsyncClient {
      *
      * 查询剪辑任务的状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEditingJobRequest 请求对象
      * @return AsyncInvoker<ListEditingJobRequest, ListEditingJobResponse>
@@ -221,14 +452,13 @@ public class MpcAsyncClient {
     /**
      * 新建独立加密任务
      *
-     * 支持独立加密，包括创建、查询、删除独立加密任务。
+     * 支持独立加密，包括创建、查询、删除独立加密任务。该API已废弃。
      * 
      * 约束：
      *   - 只支持转码后的文件进行加密。
      *   - 加密的文件必须是m3u8或者mpd结尾的文件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEncryptTaskRequest 请求对象
      * @return CompletableFuture<CreateEncryptTaskResponse>
@@ -240,14 +470,13 @@ public class MpcAsyncClient {
     /**
      * 新建独立加密任务
      *
-     * 支持独立加密，包括创建、查询、删除独立加密任务。
+     * 支持独立加密，包括创建、查询、删除独立加密任务。该API已废弃。
      * 
      * 约束：
      *   - 只支持转码后的文件进行加密。
      *   - 加密的文件必须是m3u8或者mpd结尾的文件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEncryptTaskRequest 请求对象
      * @return AsyncInvoker<CreateEncryptTaskRequest, CreateEncryptTaskResponse>
@@ -261,14 +490,13 @@ public class MpcAsyncClient {
     /**
      * 取消独立加密任务
      *
-     * 取消独立加密任务。
+     * 取消独立加密任务。该API已废弃。
      * 
      * 约束：
      * 
      *   只能取消正在任务队列中排队的任务。已开始加密或已完成的加密任务不能取消。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEncryptTaskRequest 请求对象
      * @return CompletableFuture<DeleteEncryptTaskResponse>
@@ -280,14 +508,13 @@ public class MpcAsyncClient {
     /**
      * 取消独立加密任务
      *
-     * 取消独立加密任务。
+     * 取消独立加密任务。该API已废弃。
      * 
      * 约束：
      * 
      *   只能取消正在任务队列中排队的任务。已开始加密或已完成的加密任务不能取消。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEncryptTaskRequest 请求对象
      * @return AsyncInvoker<DeleteEncryptTaskRequest, DeleteEncryptTaskResponse>
@@ -301,10 +528,9 @@ public class MpcAsyncClient {
     /**
      * 查询独立加密任务
      *
-     * 查询独立加密任务状态。返回任务执行结果或当前状态。
+     * 查询独立加密任务状态。返回任务执行结果或当前状态。该API已废弃。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEncryptTaskRequest 请求对象
      * @return CompletableFuture<ListEncryptTaskResponse>
@@ -316,10 +542,9 @@ public class MpcAsyncClient {
     /**
      * 查询独立加密任务
      *
-     * 查询独立加密任务状态。返回任务执行结果或当前状态。
+     * 查询独立加密任务状态。返回任务执行结果或当前状态。该API已废弃。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEncryptTaskRequest 请求对象
      * @return AsyncInvoker<ListEncryptTaskRequest, ListEncryptTaskResponse>
@@ -335,8 +560,7 @@ public class MpcAsyncClient {
      *
      * 创建视频解析任务，解析视频元数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateExtractTaskRequest 请求对象
      * @return CompletableFuture<CreateExtractTaskResponse>
@@ -350,8 +574,7 @@ public class MpcAsyncClient {
      *
      * 创建视频解析任务，解析视频元数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateExtractTaskRequest 请求对象
      * @return AsyncInvoker<CreateExtractTaskRequest, CreateExtractTaskResponse>
@@ -367,8 +590,7 @@ public class MpcAsyncClient {
      *
      * 取消已下发的视频解析任务，仅支持取消正在排队中的任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteExtractTaskRequest 请求对象
      * @return CompletableFuture<DeleteExtractTaskResponse>
@@ -382,8 +604,7 @@ public class MpcAsyncClient {
      *
      * 取消已下发的视频解析任务，仅支持取消正在排队中的任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteExtractTaskRequest 请求对象
      * @return AsyncInvoker<DeleteExtractTaskRequest, DeleteExtractTaskResponse>
@@ -399,8 +620,7 @@ public class MpcAsyncClient {
      *
      * 查询解析任务的状态和结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListExtractTaskRequest 请求对象
      * @return CompletableFuture<ListExtractTaskResponse>
@@ -414,8 +634,7 @@ public class MpcAsyncClient {
      *
      * 查询解析任务的状态和结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListExtractTaskRequest 请求对象
      * @return AsyncInvoker<ListExtractTaskRequest, ListExtractTaskResponse>
@@ -436,8 +655,7 @@ public class MpcAsyncClient {
      * ## 接口约束 ##
      *   无。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMbTasksReportRequest 请求对象
      * @return CompletableFuture<CreateMbTasksReportResponse>
@@ -456,8 +674,7 @@ public class MpcAsyncClient {
      * ## 接口约束 ##
      *   无。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMbTasksReportRequest 请求对象
      * @return AsyncInvoker<CreateMbTasksReportRequest, CreateMbTasksReportResponse>
@@ -474,8 +691,7 @@ public class MpcAsyncClient {
      * 创建声道合并任务，合并声道任务支持将每个声道各放一个文件中的片源，合并为单个音频文件。
      * 执行合并声道的源音频文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMergeChannelsTaskRequest 请求对象
      * @return CompletableFuture<CreateMergeChannelsTaskResponse>
@@ -491,8 +707,7 @@ public class MpcAsyncClient {
      * 创建声道合并任务，合并声道任务支持将每个声道各放一个文件中的片源，合并为单个音频文件。
      * 执行合并声道的源音频文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMergeChannelsTaskRequest 请求对象
      * @return AsyncInvoker<CreateMergeChannelsTaskRequest, CreateMergeChannelsTaskResponse>
@@ -509,8 +724,7 @@ public class MpcAsyncClient {
      * 创建音轨重置任务，重置音轨任务支持按人工指定关系声道layout，语言标签，转封装片源，使其满足转码输入。
      * 执行音轨重置的源音频文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResetTracksTaskRequest 请求对象
      * @return CompletableFuture<CreateResetTracksTaskResponse>
@@ -526,8 +740,7 @@ public class MpcAsyncClient {
      * 创建音轨重置任务，重置音轨任务支持按人工指定关系声道layout，语言标签，转封装片源，使其满足转码输入。
      * 执行音轨重置的源音频文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResetTracksTaskRequest 请求对象
      * @return AsyncInvoker<CreateResetTracksTaskRequest, CreateResetTracksTaskResponse>
@@ -543,8 +756,7 @@ public class MpcAsyncClient {
      *
      * 取消合并音频多声道文件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMergeChannelsTaskRequest 请求对象
      * @return CompletableFuture<DeleteMergeChannelsTaskResponse>
@@ -559,8 +771,7 @@ public class MpcAsyncClient {
      *
      * 取消合并音频多声道文件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMergeChannelsTaskRequest 请求对象
      * @return AsyncInvoker<DeleteMergeChannelsTaskRequest, DeleteMergeChannelsTaskResponse>
@@ -576,8 +787,7 @@ public class MpcAsyncClient {
      *
      * 取消重置音频文件声轨任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResetTracksTaskRequest 请求对象
      * @return CompletableFuture<DeleteResetTracksTaskResponse>
@@ -592,8 +802,7 @@ public class MpcAsyncClient {
      *
      * 取消重置音频文件声轨任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResetTracksTaskRequest 请求对象
      * @return AsyncInvoker<DeleteResetTracksTaskRequest, DeleteResetTracksTaskResponse>
@@ -609,8 +818,7 @@ public class MpcAsyncClient {
      *
      * 查询声道合并任务的状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMergeChannelsTaskRequest 请求对象
      * @return CompletableFuture<ListMergeChannelsTaskResponse>
@@ -625,8 +833,7 @@ public class MpcAsyncClient {
      *
      * 查询声道合并任务的状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMergeChannelsTaskRequest 请求对象
      * @return AsyncInvoker<ListMergeChannelsTaskRequest, ListMergeChannelsTaskResponse>
@@ -642,8 +849,7 @@ public class MpcAsyncClient {
      *
      * 查询音轨重置任务的状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResetTracksTaskRequest 请求对象
      * @return CompletableFuture<ListResetTracksTaskResponse>
@@ -657,8 +863,7 @@ public class MpcAsyncClient {
      *
      * 查询音轨重置任务的状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResetTracksTaskRequest 请求对象
      * @return AsyncInvoker<ListResetTracksTaskRequest, ListResetTracksTaskResponse>
@@ -681,8 +886,7 @@ public class MpcAsyncClient {
      * ## 接口约束 ##
      *   无。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMediaProcessTaskRequest 请求对象
      * @return CompletableFuture<CreateMediaProcessTaskResponse>
@@ -704,8 +908,7 @@ public class MpcAsyncClient {
      * ## 接口约束 ##
      *   无。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMediaProcessTaskRequest 请求对象
      * @return AsyncInvoker<CreateMediaProcessTaskRequest, CreateMediaProcessTaskResponse>
@@ -728,8 +931,7 @@ public class MpcAsyncClient {
      * ## 接口约束 ##
      *   仅可删除正在排队中的任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMediaProcessTaskRequest 请求对象
      * @return CompletableFuture<DeleteMediaProcessTaskResponse>
@@ -751,8 +953,7 @@ public class MpcAsyncClient {
      * ## 接口约束 ##
      *   仅可删除正在排队中的任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMediaProcessTaskRequest 请求对象
      * @return AsyncInvoker<DeleteMediaProcessTaskRequest, DeleteMediaProcessTaskResponse>
@@ -775,8 +976,7 @@ public class MpcAsyncClient {
      * ## 接口约束 ##
      *   无。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMediaProcessTaskRequest 请求对象
      * @return CompletableFuture<ListMediaProcessTaskResponse>
@@ -798,8 +998,7 @@ public class MpcAsyncClient {
      * ## 接口约束 ##
      *   无。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMediaProcessTaskRequest 请求对象
      * @return AsyncInvoker<ListMediaProcessTaskRequest, ListMediaProcessTaskResponse>
@@ -820,8 +1019,7 @@ public class MpcAsyncClient {
      * ## 接口约束 ##
      *   无。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMpeCallBackRequest 请求对象
      * @return CompletableFuture<CreateMpeCallBackResponse>
@@ -840,8 +1038,7 @@ public class MpcAsyncClient {
      * ## 接口约束 ##
      *   无。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMpeCallBackRequest 请求对象
      * @return AsyncInvoker<CreateMpeCallBackRequest, CreateMpeCallBackResponse>
@@ -857,8 +1054,7 @@ public class MpcAsyncClient {
      *
      * 创建视频增强模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateQualityEnhanceTemplateRequest 请求对象
      * @return CompletableFuture<CreateQualityEnhanceTemplateResponse>
@@ -873,8 +1069,7 @@ public class MpcAsyncClient {
      *
      * 创建视频增强模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateQualityEnhanceTemplateRequest 请求对象
      * @return AsyncInvoker<CreateQualityEnhanceTemplateRequest, CreateQualityEnhanceTemplateResponse>
@@ -890,8 +1085,7 @@ public class MpcAsyncClient {
      *
      * 删除用户视频增强模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteQualityEnhanceTemplateRequest 请求对象
      * @return CompletableFuture<DeleteQualityEnhanceTemplateResponse>
@@ -906,8 +1100,7 @@ public class MpcAsyncClient {
      *
      * 删除用户视频增强模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteQualityEnhanceTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteQualityEnhanceTemplateRequest, DeleteQualityEnhanceTemplateResponse>
@@ -923,8 +1116,7 @@ public class MpcAsyncClient {
      *
      * 查询视频增强预置模板，返回所有结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQualityEnhanceDefaultTemplateRequest 请求对象
      * @return CompletableFuture<ListQualityEnhanceDefaultTemplateResponse>
@@ -939,8 +1131,7 @@ public class MpcAsyncClient {
      *
      * 查询视频增强预置模板，返回所有结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQualityEnhanceDefaultTemplateRequest 请求对象
      * @return AsyncInvoker<ListQualityEnhanceDefaultTemplateRequest, ListQualityEnhanceDefaultTemplateResponse>
@@ -956,8 +1147,7 @@ public class MpcAsyncClient {
      *
      * 更新视频增强模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateQualityEnhanceTemplateRequest 请求对象
      * @return CompletableFuture<UpdateQualityEnhanceTemplateResponse>
@@ -972,8 +1162,7 @@ public class MpcAsyncClient {
      *
      * 更新视频增强模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateQualityEnhanceTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateQualityEnhanceTemplateRequest, UpdateQualityEnhanceTemplateResponse>
@@ -989,8 +1178,7 @@ public class MpcAsyncClient {
      *
      * 查询媒资转码详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTranscodeDetailRequest 请求对象
      * @return CompletableFuture<ListTranscodeDetailResponse>
@@ -1004,8 +1192,7 @@ public class MpcAsyncClient {
      *
      * 查询媒资转码详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTranscodeDetailRequest 请求对象
      * @return AsyncInvoker<ListTranscodeDetailRequest, ListTranscodeDetailResponse>
@@ -1021,8 +1208,7 @@ public class MpcAsyncClient {
      *
      * 取消已下发的转封装任务，仅支持取消正在排队中的任务。。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelRemuxTaskRequest 请求对象
      * @return CompletableFuture<CancelRemuxTaskResponse>
@@ -1036,8 +1222,7 @@ public class MpcAsyncClient {
      *
      * 取消已下发的转封装任务，仅支持取消正在排队中的任务。。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelRemuxTaskRequest 请求对象
      * @return AsyncInvoker<CancelRemuxTaskRequest, CancelRemuxTaskResponse>
@@ -1054,8 +1239,7 @@ public class MpcAsyncClient {
      * 创建转封装任务，转换音视频文件的格式，但不改变其分辨率和码率。
      * 待转封装的媒资文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRemuxTaskRequest 请求对象
      * @return CompletableFuture<CreateRemuxTaskResponse>
@@ -1070,8 +1254,7 @@ public class MpcAsyncClient {
      * 创建转封装任务，转换音视频文件的格式，但不改变其分辨率和码率。
      * 待转封装的媒资文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRemuxTaskRequest 请求对象
      * @return AsyncInvoker<CreateRemuxTaskRequest, CreateRemuxTaskResponse>
@@ -1087,8 +1270,7 @@ public class MpcAsyncClient {
      *
      * 对失败的转封装任务进行重试。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRetryRemuxTaskRequest 请求对象
      * @return CompletableFuture<CreateRetryRemuxTaskResponse>
@@ -1103,8 +1285,7 @@ public class MpcAsyncClient {
      *
      * 对失败的转封装任务进行重试。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRetryRemuxTaskRequest 请求对象
      * @return AsyncInvoker<CreateRetryRemuxTaskRequest, CreateRetryRemuxTaskResponse>
@@ -1116,12 +1297,11 @@ public class MpcAsyncClient {
     }
 
     /**
-     * 删除转封装任务(仅供Console调用)
+     * 删除转封装任务记录
      *
-     * 删除转封装任务
+     * 删除转封装任务记录，只能删除状态为“已取消”，“转码成功”，“转码失败”的任务记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRemuxTaskRequest 请求对象
      * @return CompletableFuture<DeleteRemuxTaskResponse>
@@ -1131,12 +1311,11 @@ public class MpcAsyncClient {
     }
 
     /**
-     * 删除转封装任务(仅供Console调用)
+     * 删除转封装任务记录
      *
-     * 删除转封装任务
+     * 删除转封装任务记录，只能删除状态为“已取消”，“转码成功”，“转码失败”的任务记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRemuxTaskRequest 请求对象
      * @return AsyncInvoker<DeleteRemuxTaskRequest, DeleteRemuxTaskResponse>
@@ -1152,8 +1331,7 @@ public class MpcAsyncClient {
      *
      * 查询转封装任务状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRemuxTaskRequest 请求对象
      * @return CompletableFuture<ListRemuxTaskResponse>
@@ -1167,8 +1345,7 @@ public class MpcAsyncClient {
      *
      * 查询转封装任务状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRemuxTaskRequest 请求对象
      * @return AsyncInvoker<ListRemuxTaskRequest, ListRemuxTaskResponse>
@@ -1183,8 +1360,7 @@ public class MpcAsyncClient {
      *
      * 新建转码模板组，最多支持一进六出。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTemplateGroupRequest 请求对象
      * @return CompletableFuture<CreateTemplateGroupResponse>
@@ -1198,8 +1374,7 @@ public class MpcAsyncClient {
      *
      * 新建转码模板组，最多支持一进六出。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTemplateGroupRequest 请求对象
      * @return AsyncInvoker<CreateTemplateGroupRequest, CreateTemplateGroupResponse>
@@ -1215,8 +1390,7 @@ public class MpcAsyncClient {
      *
      * 删除转码模板组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTemplateGroupRequest 请求对象
      * @return CompletableFuture<DeleteTemplateGroupResponse>
@@ -1230,8 +1404,7 @@ public class MpcAsyncClient {
      *
      * 删除转码模板组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTemplateGroupRequest 请求对象
      * @return AsyncInvoker<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse>
@@ -1247,8 +1420,7 @@ public class MpcAsyncClient {
      *
      * 查询转码模板组列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplateGroupRequest 请求对象
      * @return CompletableFuture<ListTemplateGroupResponse>
@@ -1262,8 +1434,7 @@ public class MpcAsyncClient {
      *
      * 查询转码模板组列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplateGroupRequest 请求对象
      * @return AsyncInvoker<ListTemplateGroupRequest, ListTemplateGroupResponse>
@@ -1279,8 +1450,7 @@ public class MpcAsyncClient {
      *
      * 修改模板组接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTemplateGroupRequest 请求对象
      * @return CompletableFuture<UpdateTemplateGroupResponse>
@@ -1294,8 +1464,7 @@ public class MpcAsyncClient {
      *
      * 修改模板组接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTemplateGroupRequest 请求对象
      * @return AsyncInvoker<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse>
@@ -1315,8 +1484,7 @@ public class MpcAsyncClient {
      * 约束：
      *   暂只支持生成JPG格式的图片文件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateThumbnailsTaskRequest 请求对象
      * @return CompletableFuture<CreateThumbnailsTaskResponse>
@@ -1335,8 +1503,7 @@ public class MpcAsyncClient {
      * 约束：
      *   暂只支持生成JPG格式的图片文件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateThumbnailsTaskRequest 请求对象
      * @return AsyncInvoker<CreateThumbnailsTaskRequest, CreateThumbnailsTaskResponse>
@@ -1353,8 +1520,7 @@ public class MpcAsyncClient {
      * 取消已下发截图任务。
      * 只能取消已接受尚在队列中等待处理的任务，已完成或正在执行阶段的任务不能取消。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteThumbnailsTaskRequest 请求对象
      * @return CompletableFuture<DeleteThumbnailsTaskResponse>
@@ -1370,8 +1536,7 @@ public class MpcAsyncClient {
      * 取消已下发截图任务。
      * 只能取消已接受尚在队列中等待处理的任务，已完成或正在执行阶段的任务不能取消。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteThumbnailsTaskRequest 请求对象
      * @return AsyncInvoker<DeleteThumbnailsTaskRequest, DeleteThumbnailsTaskResponse>
@@ -1387,8 +1552,7 @@ public class MpcAsyncClient {
      *
      * 查询截图任务状态。返回任务执行结果，包括状态、输入、输出等信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListThumbnailsTaskRequest 请求对象
      * @return CompletableFuture<ListThumbnailsTaskResponse>
@@ -1402,8 +1566,7 @@ public class MpcAsyncClient {
      *
      * 查询截图任务状态。返回任务执行结果，包括状态、输入、输出等信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListThumbnailsTaskRequest 请求对象
      * @return AsyncInvoker<ListThumbnailsTaskRequest, ListThumbnailsTaskResponse>
@@ -1420,8 +1583,7 @@ public class MpcAsyncClient {
      * 新建转码任务可以将视频进行转码，并在转码过程中压制水印、视频截图等。视频转码前需要配置转码模板。
      * 待转码的音视频需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTranscodingTaskRequest 请求对象
      * @return CompletableFuture<CreateTranscodingTaskResponse>
@@ -1437,8 +1599,7 @@ public class MpcAsyncClient {
      * 新建转码任务可以将视频进行转码，并在转码过程中压制水印、视频截图等。视频转码前需要配置转码模板。
      * 待转码的音视频需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTranscodingTaskRequest 请求对象
      * @return AsyncInvoker<CreateTranscodingTaskRequest, CreateTranscodingTaskResponse>
@@ -1455,8 +1616,7 @@ public class MpcAsyncClient {
      * 取消已下发转码任务。
      * 只能取消正在转码任务队列中排队的转码任务。已开始转码或已完成的转码任务不能取消。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTranscodingTaskRequest 请求对象
      * @return CompletableFuture<DeleteTranscodingTaskResponse>
@@ -1472,8 +1632,7 @@ public class MpcAsyncClient {
      * 取消已下发转码任务。
      * 只能取消正在转码任务队列中排队的转码任务。已开始转码或已完成的转码任务不能取消。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTranscodingTaskRequest 请求对象
      * @return AsyncInvoker<DeleteTranscodingTaskRequest, DeleteTranscodingTaskResponse>
@@ -1485,12 +1644,72 @@ public class MpcAsyncClient {
     }
 
     /**
+     * 删除转码任务记录
+     *
+     * 删除转码任务记录，只能删除状态为“已取消”，“转码成功”，“转码失败”的转码任务记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTranscodingTaskByConsoleRequest 请求对象
+     * @return CompletableFuture<DeleteTranscodingTaskByConsoleResponse>
+     */
+    public CompletableFuture<DeleteTranscodingTaskByConsoleResponse> deleteTranscodingTaskByConsoleAsync(
+        DeleteTranscodingTaskByConsoleRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.deleteTranscodingTaskByConsole);
+    }
+
+    /**
+     * 删除转码任务记录
+     *
+     * 删除转码任务记录，只能删除状态为“已取消”，“转码成功”，“转码失败”的转码任务记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTranscodingTaskByConsoleRequest 请求对象
+     * @return AsyncInvoker<DeleteTranscodingTaskByConsoleRequest, DeleteTranscodingTaskByConsoleResponse>
+     */
+    public AsyncInvoker<DeleteTranscodingTaskByConsoleRequest, DeleteTranscodingTaskByConsoleResponse> deleteTranscodingTaskByConsoleAsyncInvoker(
+        DeleteTranscodingTaskByConsoleRequest request) {
+        return new AsyncInvoker<DeleteTranscodingTaskByConsoleRequest, DeleteTranscodingTaskByConsoleResponse>(request,
+            MpcMeta.deleteTranscodingTaskByConsole, hcClient);
+    }
+
+    /**
+     * 查询点播概览信息
+     *
+     * 查询最近一周，最近一月或者自定义时间段的“转码时长”，“调用转码API次数”。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListStatSummaryRequest 请求对象
+     * @return CompletableFuture<ListStatSummaryResponse>
+     */
+    public CompletableFuture<ListStatSummaryResponse> listStatSummaryAsync(ListStatSummaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.listStatSummary);
+    }
+
+    /**
+     * 查询点播概览信息
+     *
+     * 查询最近一周，最近一月或者自定义时间段的“转码时长”，“调用转码API次数”。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListStatSummaryRequest 请求对象
+     * @return AsyncInvoker<ListStatSummaryRequest, ListStatSummaryResponse>
+     */
+    public AsyncInvoker<ListStatSummaryRequest, ListStatSummaryResponse> listStatSummaryAsyncInvoker(
+        ListStatSummaryRequest request) {
+        return new AsyncInvoker<ListStatSummaryRequest, ListStatSummaryResponse>(request, MpcMeta.listStatSummary,
+            hcClient);
+    }
+
+    /**
      * 查询转码任务
      *
      * 查询转码任务状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTranscodingTaskRequest 请求对象
      * @return CompletableFuture<ListTranscodingTaskResponse>
@@ -1504,8 +1723,7 @@ public class MpcAsyncClient {
      *
      * 查询转码任务状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTranscodingTaskRequest 请求对象
      * @return AsyncInvoker<ListTranscodingTaskRequest, ListTranscodingTaskResponse>
@@ -1521,8 +1739,7 @@ public class MpcAsyncClient {
      *
      * 新建转码模板，采用自定义的模板转码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTransTemplateRequest 请求对象
      * @return CompletableFuture<CreateTransTemplateResponse>
@@ -1536,8 +1753,7 @@ public class MpcAsyncClient {
      *
      * 新建转码模板，采用自定义的模板转码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTransTemplateRequest 请求对象
      * @return AsyncInvoker<CreateTransTemplateRequest, CreateTransTemplateResponse>
@@ -1553,8 +1769,7 @@ public class MpcAsyncClient {
      *
      * 删除转码模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTemplateRequest 请求对象
      * @return CompletableFuture<DeleteTemplateResponse>
@@ -1568,8 +1783,7 @@ public class MpcAsyncClient {
      *
      * 删除转码模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>
@@ -1586,8 +1800,7 @@ public class MpcAsyncClient {
      * 查询用户自定义转码配置模板。
      * 支持指定模板ID查询，或分页全量查询。转码配置模板ID，最多10个。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplateRequest 请求对象
      * @return CompletableFuture<ListTemplateResponse>
@@ -1602,8 +1815,7 @@ public class MpcAsyncClient {
      * 查询用户自定义转码配置模板。
      * 支持指定模板ID查询，或分页全量查询。转码配置模板ID，最多10个。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplateRequest 请求对象
      * @return AsyncInvoker<ListTemplateRequest, ListTemplateResponse>
@@ -1618,8 +1830,7 @@ public class MpcAsyncClient {
      *
      * 更新转码模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTransTemplateRequest 请求对象
      * @return CompletableFuture<UpdateTransTemplateResponse>
@@ -1633,8 +1844,7 @@ public class MpcAsyncClient {
      *
      * 更新转码模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTransTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateTransTemplateRequest, UpdateTransTemplateResponse>
@@ -1650,8 +1860,7 @@ public class MpcAsyncClient {
      *
      * 自定义水印模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateWatermarkTemplateRequest 请求对象
      * @return CompletableFuture<CreateWatermarkTemplateResponse>
@@ -1666,8 +1875,7 @@ public class MpcAsyncClient {
      *
      * 自定义水印模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateWatermarkTemplateRequest 请求对象
      * @return AsyncInvoker<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse>
@@ -1683,8 +1891,7 @@ public class MpcAsyncClient {
      *
      * 删除自定义水印模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteWatermarkTemplateRequest 请求对象
      * @return CompletableFuture<DeleteWatermarkTemplateResponse>
@@ -1699,8 +1906,7 @@ public class MpcAsyncClient {
      *
      * 删除自定义水印模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteWatermarkTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse>
@@ -1716,8 +1922,7 @@ public class MpcAsyncClient {
      *
      * 查询自定义水印模板。支持指定模板ID查询，或分页全量查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWatermarkTemplateRequest 请求对象
      * @return CompletableFuture<ListWatermarkTemplateResponse>
@@ -1732,8 +1937,7 @@ public class MpcAsyncClient {
      *
      * 查询自定义水印模板。支持指定模板ID查询，或分页全量查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWatermarkTemplateRequest 请求对象
      * @return AsyncInvoker<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse>
@@ -1749,8 +1953,7 @@ public class MpcAsyncClient {
      *
      * 更新自定义水印模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateWatermarkTemplateRequest 请求对象
      * @return CompletableFuture<UpdateWatermarkTemplateResponse>
@@ -1765,8 +1968,7 @@ public class MpcAsyncClient {
      *
      * 更新自定义水印模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateWatermarkTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse>

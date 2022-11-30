@@ -22,8 +22,7 @@ public class LtsClient {
      *
      * 创建日志接入
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAccessConfigRequest 请求对象
      * @return CreateAccessConfigResponse
@@ -37,8 +36,7 @@ public class LtsClient {
      *
      * 创建日志接入
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAccessConfigRequest 请求对象
      * @return SyncInvoker<CreateAccessConfigRequest, CreateAccessConfigResponse>
@@ -54,8 +52,7 @@ public class LtsClient {
      *
      * 创建主机组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHostGroupRequest 请求对象
      * @return CreateHostGroupResponse
@@ -69,8 +66,7 @@ public class LtsClient {
      *
      * 创建主机组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHostGroupRequest 请求对象
      * @return SyncInvoker<CreateHostGroupRequest, CreateHostGroupResponse>
@@ -86,8 +82,7 @@ public class LtsClient {
      *
      * 该接口用于创建关键词告警，目前每个帐户最多可以创建共200个关键词告警与SQL告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateKeywordsAlarmRuleRequest 请求对象
      * @return CreateKeywordsAlarmRuleResponse
@@ -101,8 +96,7 @@ public class LtsClient {
      *
      * 该接口用于创建关键词告警，目前每个帐户最多可以创建共200个关键词告警与SQL告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateKeywordsAlarmRuleRequest 请求对象
      * @return SyncInvoker<CreateKeywordsAlarmRuleRequest, CreateKeywordsAlarmRuleResponse>
@@ -118,8 +112,7 @@ public class LtsClient {
      *
      * 该接口用于将指定的一个或多个日志流的日志转储到OBS服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLogDumpObsRequest 请求对象
      * @return CreateLogDumpObsResponse
@@ -133,8 +126,7 @@ public class LtsClient {
      *
      * 该接口用于将指定的一个或多个日志流的日志转储到OBS服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLogDumpObsRequest 请求对象
      * @return SyncInvoker<CreateLogDumpObsRequest, CreateLogDumpObsResponse>
@@ -150,8 +142,7 @@ public class LtsClient {
      *
      * 该接口用于创建一个日志组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLogGroupRequest 请求对象
      * @return CreateLogGroupResponse
@@ -165,8 +156,7 @@ public class LtsClient {
      *
      * 该接口用于创建一个日志组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLogGroupRequest 请求对象
      * @return SyncInvoker<CreateLogGroupRequest, CreateLogGroupResponse>
@@ -182,8 +172,7 @@ public class LtsClient {
      *
      * 该接口用于创建某个指定日志组下的日志流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLogStreamRequest 请求对象
      * @return CreateLogStreamResponse
@@ -197,8 +186,7 @@ public class LtsClient {
      *
      * 该接口用于创建某个指定日志组下的日志流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLogStreamRequest 请求对象
      * @return SyncInvoker<CreateLogStreamRequest, CreateLogStreamResponse>
@@ -214,8 +202,7 @@ public class LtsClient {
      *
      * 该接口用于创建通知模板，目前每个帐户最多可以创建共100个通知模板，创建后名称不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNotificationTemplateRequest 请求对象
      * @return CreateNotificationTemplateResponse
@@ -229,8 +216,7 @@ public class LtsClient {
      *
      * 该接口用于创建通知模板，目前每个帐户最多可以创建共100个通知模板，创建后名称不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNotificationTemplateRequest 请求对象
      * @return SyncInvoker<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse>
@@ -246,8 +232,7 @@ public class LtsClient {
      *
      * 该接口通过结构化模板创建结构化配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStructConfigRequest 请求对象
      * @return CreateStructConfigResponse
@@ -261,8 +246,7 @@ public class LtsClient {
      *
      * 该接口通过结构化模板创建结构化配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStructConfigRequest 请求对象
      * @return SyncInvoker<CreateStructConfigRequest, CreateStructConfigResponse>
@@ -278,8 +262,7 @@ public class LtsClient {
      *
      * 该接口用于创建指定日志流下的结构化配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStructTemplateRequest 请求对象
      * @return CreateStructTemplateResponse
@@ -293,8 +276,7 @@ public class LtsClient {
      *
      * 该接口用于创建指定日志流下的结构化配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStructTemplateRequest 请求对象
      * @return SyncInvoker<CreateStructTemplateRequest, CreateStructTemplateResponse>
@@ -310,8 +292,7 @@ public class LtsClient {
      *
      * 该接口用于创建OBS转储，DIS转储，DMS转储。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTransferRequest 请求对象
      * @return CreateTransferResponse
@@ -325,8 +306,7 @@ public class LtsClient {
      *
      * 该接口用于创建OBS转储，DIS转储，DMS转储。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTransferRequest 请求对象
      * @return SyncInvoker<CreateTransferRequest, CreateTransferResponse>
@@ -342,8 +322,7 @@ public class LtsClient {
      *
      * 删除日志接入
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAccessConfigRequest 请求对象
      * @return DeleteAccessConfigResponse
@@ -357,8 +336,7 @@ public class LtsClient {
      *
      * 删除日志接入
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAccessConfigRequest 请求对象
      * @return SyncInvoker<DeleteAccessConfigRequest, DeleteAccessConfigResponse>
@@ -374,8 +352,7 @@ public class LtsClient {
      *
      * 该接口用于删除活动告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteActiveAlarmsRequest 请求对象
      * @return DeleteActiveAlarmsResponse
@@ -389,8 +366,7 @@ public class LtsClient {
      *
      * 该接口用于删除活动告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteActiveAlarmsRequest 请求对象
      * @return SyncInvoker<DeleteActiveAlarmsRequest, DeleteActiveAlarmsResponse>
@@ -406,8 +382,7 @@ public class LtsClient {
      *
      * 删除主机组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHostGroupRequest 请求对象
      * @return DeleteHostGroupResponse
@@ -421,8 +396,7 @@ public class LtsClient {
      *
      * 删除主机组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHostGroupRequest 请求对象
      * @return SyncInvoker<DeleteHostGroupRequest, DeleteHostGroupResponse>
@@ -438,8 +412,7 @@ public class LtsClient {
      *
      * 该接口用于删除关键词告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteKeywordsAlarmRuleRequest 请求对象
      * @return DeleteKeywordsAlarmRuleResponse
@@ -453,8 +426,7 @@ public class LtsClient {
      *
      * 该接口用于删除关键词告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteKeywordsAlarmRuleRequest 请求对象
      * @return SyncInvoker<DeleteKeywordsAlarmRuleRequest, DeleteKeywordsAlarmRuleResponse>
@@ -470,8 +442,7 @@ public class LtsClient {
      *
      * 该接口用于删除指定日志组。当日志组中的日志流配置了日志转储，需要取消日志转储后才可删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLogGroupRequest 请求对象
      * @return DeleteLogGroupResponse
@@ -485,8 +456,7 @@ public class LtsClient {
      *
      * 该接口用于删除指定日志组。当日志组中的日志流配置了日志转储，需要取消日志转储后才可删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLogGroupRequest 请求对象
      * @return SyncInvoker<DeleteLogGroupRequest, DeleteLogGroupResponse>
@@ -502,8 +472,7 @@ public class LtsClient {
      *
      * 该接口用于删除指定日志组下的指定日志流。当该日志流配置了日志转储，需要取消日志转储后才可删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLogStreamRequest 请求对象
      * @return DeleteLogStreamResponse
@@ -517,8 +486,7 @@ public class LtsClient {
      *
      * 该接口用于删除指定日志组下的指定日志流。当该日志流配置了日志转储，需要取消日志转储后才可删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLogStreamRequest 请求对象
      * @return SyncInvoker<DeleteLogStreamRequest, DeleteLogStreamResponse>
@@ -534,8 +502,7 @@ public class LtsClient {
      *
      * 该接口用于删除通知模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNotificationTemplateRequest 请求对象
      * @return DeleteNotificationTemplateResponse
@@ -549,8 +516,7 @@ public class LtsClient {
      *
      * 该接口用于删除通知模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNotificationTemplateRequest 请求对象
      * @return SyncInvoker<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse>
@@ -566,8 +532,7 @@ public class LtsClient {
      *
      * 该接口用于删除指定日志流下的结构化配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteStructTemplateRequest 请求对象
      * @return DeleteStructTemplateResponse
@@ -581,8 +546,7 @@ public class LtsClient {
      *
      * 该接口用于删除指定日志流下的结构化配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteStructTemplateRequest 请求对象
      * @return SyncInvoker<DeleteStructTemplateRequest, DeleteStructTemplateResponse>
@@ -598,8 +562,7 @@ public class LtsClient {
      *
      * 该接口用于删除OBS转储，DIS转储，DMS转储。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTransferRequest 请求对象
      * @return DeleteTransferResponse
@@ -613,8 +576,7 @@ public class LtsClient {
      *
      * 该接口用于删除OBS转储，DIS转储，DMS转储。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTransferRequest 请求对象
      * @return SyncInvoker<DeleteTransferRequest, DeleteTransferResponse>
@@ -630,8 +592,7 @@ public class LtsClient {
      *
      * 该接口用于将超额采集日志功能关闭。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisableLogCollectionRequest 请求对象
      * @return DisableLogCollectionResponse
@@ -645,8 +606,7 @@ public class LtsClient {
      *
      * 该接口用于将超额采集日志功能关闭。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisableLogCollectionRequest 请求对象
      * @return SyncInvoker<DisableLogCollectionRequest, DisableLogCollectionResponse>
@@ -662,8 +622,7 @@ public class LtsClient {
      *
      * 该接口用于将超额采集日志功能打开。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableLogCollectionRequest 请求对象
      * @return EnableLogCollectionResponse
@@ -677,8 +636,7 @@ public class LtsClient {
      *
      * 该接口用于将超额采集日志功能打开。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableLogCollectionRequest 请求对象
      * @return SyncInvoker<EnableLogCollectionRequest, EnableLogCollectionResponse>
@@ -694,8 +652,7 @@ public class LtsClient {
      *
      * 查询日志接入列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAccessConfigRequest 请求对象
      * @return ListAccessConfigResponse
@@ -709,8 +666,7 @@ public class LtsClient {
      *
      * 查询日志接入列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAccessConfigRequest 请求对象
      * @return SyncInvoker<ListAccessConfigRequest, ListAccessConfigResponse>
@@ -726,8 +682,7 @@ public class LtsClient {
      *
      * 该接口用于查询告警列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListActiveOrHistoryAlarmsRequest 请求对象
      * @return ListActiveOrHistoryAlarmsResponse
@@ -741,8 +696,7 @@ public class LtsClient {
      *
      * 该接口用于查询告警列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListActiveOrHistoryAlarmsRequest 请求对象
      * @return SyncInvoker<ListActiveOrHistoryAlarmsRequest, ListActiveOrHistoryAlarmsResponse>
@@ -758,8 +712,7 @@ public class LtsClient {
      *
      * 该接口用于查询结构化模板简略列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBreifStructTemplateRequest 请求对象
      * @return ListBreifStructTemplateResponse
@@ -773,8 +726,7 @@ public class LtsClient {
      *
      * 该接口用于查询结构化模板简略列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBreifStructTemplateRequest 请求对象
      * @return SyncInvoker<ListBreifStructTemplateRequest, ListBreifStructTemplateResponse>
@@ -790,8 +742,7 @@ public class LtsClient {
      *
      * 该接口用于查询日志流图表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListChartsRequest 请求对象
      * @return ListChartsResponse
@@ -805,8 +756,7 @@ public class LtsClient {
      *
      * 该接口用于查询日志流图表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListChartsRequest 请求对象
      * @return SyncInvoker<ListChartsRequest, ListChartsResponse>
@@ -820,8 +770,7 @@ public class LtsClient {
      *
      * 查询主机列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostRequest 请求对象
      * @return ListHostResponse
@@ -835,8 +784,7 @@ public class LtsClient {
      *
      * 查询主机列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostRequest 请求对象
      * @return SyncInvoker<ListHostRequest, ListHostResponse>
@@ -850,8 +798,7 @@ public class LtsClient {
      *
      * 查询主机组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostGroupRequest 请求对象
      * @return ListHostGroupResponse
@@ -865,8 +812,7 @@ public class LtsClient {
      *
      * 查询主机组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostGroupRequest 请求对象
      * @return SyncInvoker<ListHostGroupRequest, ListHostGroupResponse>
@@ -880,8 +826,7 @@ public class LtsClient {
      *
      * 该接口用于查询关键词告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKeywordsAlarmRulesRequest 请求对象
      * @return ListKeywordsAlarmRulesResponse
@@ -895,8 +840,7 @@ public class LtsClient {
      *
      * 该接口用于查询关键词告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKeywordsAlarmRulesRequest 请求对象
      * @return SyncInvoker<ListKeywordsAlarmRulesRequest, ListKeywordsAlarmRulesResponse>
@@ -912,8 +856,7 @@ public class LtsClient {
      *
      * 该接口用于查询账号下所有日志组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogGroupsRequest 请求对象
      * @return ListLogGroupsResponse
@@ -927,8 +870,7 @@ public class LtsClient {
      *
      * 该接口用于查询账号下所有日志组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogGroupsRequest 请求对象
      * @return SyncInvoker<ListLogGroupsRequest, ListLogGroupsResponse>
@@ -942,8 +884,7 @@ public class LtsClient {
      *
      * 查询关键词搜索条数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogHistogramRequest 请求对象
      * @return ListLogHistogramResponse
@@ -957,8 +898,7 @@ public class LtsClient {
      *
      * 查询关键词搜索条数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogHistogramRequest 请求对象
      * @return SyncInvoker<ListLogHistogramRequest, ListLogHistogramResponse>
@@ -974,8 +914,7 @@ public class LtsClient {
      *
      * 该接口用于查询指定日志组下的所有日志流信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogStreamRequest 请求对象
      * @return ListLogStreamResponse
@@ -989,8 +928,7 @@ public class LtsClient {
      *
      * 该接口用于查询指定日志组下的所有日志流信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogStreamRequest 请求对象
      * @return SyncInvoker<ListLogStreamRequest, ListLogStreamResponse>
@@ -1004,8 +942,7 @@ public class LtsClient {
      *
      * 该接口用于查询LTS日志流信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogStreamsRequest 请求对象
      * @return ListLogStreamsResponse
@@ -1019,8 +956,7 @@ public class LtsClient {
      *
      * 该接口用于查询LTS日志流信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogStreamsRequest 请求对象
      * @return SyncInvoker<ListLogStreamsRequest, ListLogStreamsResponse>
@@ -1036,8 +972,7 @@ public class LtsClient {
      *
      * 该接口用于查询指定日志流下的日志内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogsRequest 请求对象
      * @return ListLogsResponse
@@ -1051,8 +986,7 @@ public class LtsClient {
      *
      * 该接口用于查询指定日志流下的日志内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogsRequest 请求对象
      * @return SyncInvoker<ListLogsRequest, ListLogsResponse>
@@ -1066,8 +1000,7 @@ public class LtsClient {
      *
      * 该接口用于预览通知模板邮件格式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotificationTemplateRequest 请求对象
      * @return ListNotificationTemplateResponse
@@ -1081,8 +1014,7 @@ public class LtsClient {
      *
      * 该接口用于预览通知模板邮件格式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotificationTemplateRequest 请求对象
      * @return SyncInvoker<ListNotificationTemplateRequest, ListNotificationTemplateResponse>
@@ -1098,8 +1030,7 @@ public class LtsClient {
      *
      * 该接口用于查询通知模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotificationTemplatesRequest 请求对象
      * @return ListNotificationTemplatesResponse
@@ -1113,8 +1044,7 @@ public class LtsClient {
      *
      * 该接口用于查询通知模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotificationTemplatesRequest 请求对象
      * @return SyncInvoker<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse>
@@ -1130,8 +1060,7 @@ public class LtsClient {
      *
      * 该接口用于查询SMN主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotificationTopicsRequest 请求对象
      * @return ListNotificationTopicsResponse
@@ -1145,8 +1074,7 @@ public class LtsClient {
      *
      * 该接口用于查询SMN主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotificationTopicsRequest 请求对象
      * @return SyncInvoker<ListNotificationTopicsRequest, ListNotificationTopicsResponse>
@@ -1162,8 +1090,7 @@ public class LtsClient {
      *
      * 该接口用于查询指定日志流下的结构化日志内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQueryStructuredLogsRequest 请求对象
      * @return ListQueryStructuredLogsResponse
@@ -1177,8 +1104,7 @@ public class LtsClient {
      *
      * 该接口用于查询指定日志流下的结构化日志内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQueryStructuredLogsRequest 请求对象
      * @return SyncInvoker<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse>
@@ -1194,8 +1120,7 @@ public class LtsClient {
      *
      * 该接口用于查询结构化模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStructTemplateRequest 请求对象
      * @return ListStructTemplateResponse
@@ -1209,8 +1134,7 @@ public class LtsClient {
      *
      * 该接口用于查询结构化模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStructTemplateRequest 请求对象
      * @return SyncInvoker<ListStructTemplateRequest, ListStructTemplateResponse>
@@ -1226,8 +1150,7 @@ public class LtsClient {
      *
      * 该接口用于查询指定日志流下的结构化日志内容（新版）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStructuredLogsWithTimeRangeRequest 请求对象
      * @return ListStructuredLogsWithTimeRangeResponse
@@ -1242,8 +1165,7 @@ public class LtsClient {
      *
      * 该接口用于查询指定日志流下的结构化日志内容（新版）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStructuredLogsWithTimeRangeRequest 请求对象
      * @return SyncInvoker<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse>
@@ -1259,8 +1181,7 @@ public class LtsClient {
      *
      * 该接口用于查询OBS转储，DIS转储，DMS转储配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTransfersRequest 请求对象
      * @return ListTransfersResponse
@@ -1274,8 +1195,7 @@ public class LtsClient {
      *
      * 该接口用于查询OBS转储，DIS转储，DMS转储配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTransfersRequest 请求对象
      * @return SyncInvoker<ListTransfersRequest, ListTransfersResponse>
@@ -1289,8 +1209,7 @@ public class LtsClient {
      *
      * 该接口用于注册DMS kafka实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RegisterDmsKafkaInstanceRequest 请求对象
      * @return RegisterDmsKafkaInstanceResponse
@@ -1304,8 +1223,7 @@ public class LtsClient {
      *
      * 该接口用于注册DMS kafka实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RegisterDmsKafkaInstanceRequest 请求对象
      * @return SyncInvoker<RegisterDmsKafkaInstanceRequest, RegisterDmsKafkaInstanceResponse>
@@ -1321,8 +1239,7 @@ public class LtsClient {
      *
      * 该接口用于查询单个通知模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNotificationTemplateRequest 请求对象
      * @return ShowNotificationTemplateResponse
@@ -1336,8 +1253,7 @@ public class LtsClient {
      *
      * 该接口用于查询单个通知模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNotificationTemplateRequest 请求对象
      * @return SyncInvoker<ShowNotificationTemplateRequest, ShowNotificationTemplateResponse>
@@ -1353,8 +1269,7 @@ public class LtsClient {
      *
      * 该接口用于查询指定日志流下的结构化配置内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStructTemplateRequest 请求对象
      * @return ShowStructTemplateResponse
@@ -1368,8 +1283,7 @@ public class LtsClient {
      *
      * 该接口用于查询指定日志流下的结构化配置内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStructTemplateRequest 请求对象
      * @return SyncInvoker<ShowStructTemplateRequest, ShowStructTemplateResponse>
@@ -1385,8 +1299,7 @@ public class LtsClient {
      *
      * 修改日志接入
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAccessConfigRequest 请求对象
      * @return UpdateAccessConfigResponse
@@ -1400,8 +1313,7 @@ public class LtsClient {
      *
      * 修改日志接入
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAccessConfigRequest 请求对象
      * @return SyncInvoker<UpdateAccessConfigRequest, UpdateAccessConfigResponse>
@@ -1417,8 +1329,7 @@ public class LtsClient {
      *
      * 修改主机组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHostGroupRequest 请求对象
      * @return UpdateHostGroupResponse
@@ -1432,8 +1343,7 @@ public class LtsClient {
      *
      * 修改主机组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHostGroupRequest 请求对象
      * @return SyncInvoker<UpdateHostGroupRequest, UpdateHostGroupResponse>
@@ -1449,8 +1359,7 @@ public class LtsClient {
      *
      * 该接口用于修改关键词告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateKeywordsAlarmRuleRequest 请求对象
      * @return UpdateKeywordsAlarmRuleResponse
@@ -1464,8 +1373,7 @@ public class LtsClient {
      *
      * 该接口用于修改关键词告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateKeywordsAlarmRuleRequest 请求对象
      * @return SyncInvoker<UpdateKeywordsAlarmRuleRequest, UpdateKeywordsAlarmRuleResponse>
@@ -1481,8 +1389,7 @@ public class LtsClient {
      *
      * 该接口用于修改指定日志组下的日志存储时长。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLogGroupRequest 请求对象
      * @return UpdateLogGroupResponse
@@ -1496,8 +1403,7 @@ public class LtsClient {
      *
      * 该接口用于修改指定日志组下的日志存储时长。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLogGroupRequest 请求对象
      * @return SyncInvoker<UpdateLogGroupRequest, UpdateLogGroupResponse>
@@ -1513,8 +1419,7 @@ public class LtsClient {
      *
      * 该接口用于修改通知模板,根据名称进行修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNotificationTemplateRequest 请求对象
      * @return UpdateNotificationTemplateResponse
@@ -1528,8 +1433,7 @@ public class LtsClient {
      *
      * 该接口用于修改通知模板,根据名称进行修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNotificationTemplateRequest 请求对象
      * @return SyncInvoker<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse>
@@ -1545,8 +1449,7 @@ public class LtsClient {
      *
      * 该接口通过结构化模板修改结构化配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStructConfigRequest 请求对象
      * @return UpdateStructConfigResponse
@@ -1560,8 +1463,7 @@ public class LtsClient {
      *
      * 该接口通过结构化模板修改结构化配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStructConfigRequest 请求对象
      * @return SyncInvoker<UpdateStructConfigRequest, UpdateStructConfigResponse>
@@ -1577,8 +1479,7 @@ public class LtsClient {
      *
      * 该接口用于修改指定日志流下的结构化配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStructTemplateRequest 请求对象
      * @return UpdateStructTemplateResponse
@@ -1592,8 +1493,7 @@ public class LtsClient {
      *
      * 该接口用于修改指定日志流下的结构化配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStructTemplateRequest 请求对象
      * @return SyncInvoker<UpdateStructTemplateRequest, UpdateStructTemplateResponse>
@@ -1609,8 +1509,7 @@ public class LtsClient {
      *
      * 该接口用于更新OBS转储，DIS转储，DMS转储。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTransferRequest 请求对象
      * @return UpdateTransferResponse
@@ -1624,8 +1523,7 @@ public class LtsClient {
      *
      * 该接口用于更新OBS转储，DIS转储，DMS转储。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTransferRequest 请求对象
      * @return SyncInvoker<UpdateTransferRequest, UpdateTransferResponse>
@@ -1641,8 +1539,7 @@ public class LtsClient {
      *
      * 该接口用于创建aom日志接入lts规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAomMappingRulesRequest 请求对象
      * @return CreateAomMappingRulesResponse
@@ -1656,8 +1553,7 @@ public class LtsClient {
      *
      * 该接口用于创建aom日志接入lts规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAomMappingRulesRequest 请求对象
      * @return SyncInvoker<CreateAomMappingRulesRequest, CreateAomMappingRulesResponse>
@@ -1673,8 +1569,7 @@ public class LtsClient {
      *
      * 该接口用于删除lts接入规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAomMappingRulesRequest 请求对象
      * @return DeleteAomMappingRulesResponse
@@ -1688,8 +1583,7 @@ public class LtsClient {
      *
      * 该接口用于删除lts接入规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAomMappingRulesRequest 请求对象
      * @return SyncInvoker<DeleteAomMappingRulesRequest, DeleteAomMappingRulesResponse>
@@ -1705,8 +1599,7 @@ public class LtsClient {
      *
      * 该接口用于查询单个aom日志接入lts
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAomMappingRuleRequest 请求对象
      * @return ShowAomMappingRuleResponse
@@ -1720,8 +1613,7 @@ public class LtsClient {
      *
      * 该接口用于查询单个aom日志接入lts
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAomMappingRuleRequest 请求对象
      * @return SyncInvoker<ShowAomMappingRuleRequest, ShowAomMappingRuleResponse>
@@ -1737,8 +1629,7 @@ public class LtsClient {
      *
      * 该接口用于查询aom日志所有接入lts规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAomMappingRulesRequest 请求对象
      * @return ShowAomMappingRulesResponse
@@ -1752,8 +1643,7 @@ public class LtsClient {
      *
      * 该接口用于查询aom日志所有接入lts规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAomMappingRulesRequest 请求对象
      * @return SyncInvoker<ShowAomMappingRulesRequest, ShowAomMappingRulesResponse>
@@ -1769,8 +1659,7 @@ public class LtsClient {
      *
      * 该接口用于修改接入规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAomMappingRulesRequest 请求对象
      * @return UpdateAomMappingRulesResponse
@@ -1784,8 +1673,7 @@ public class LtsClient {
      *
      * 该接口用于修改接入规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAomMappingRulesRequest 请求对象
      * @return SyncInvoker<UpdateAomMappingRulesRequest, UpdateAomMappingRulesResponse>
@@ -1801,8 +1689,7 @@ public class LtsClient {
      *
      * 该接口用于创建SQL告警，目前每个帐户最多可以创建共200个关键词告警与SQL告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSqlAlarmRuleRequest 请求对象
      * @return CreateSqlAlarmRuleResponse
@@ -1816,8 +1703,7 @@ public class LtsClient {
      *
      * 该接口用于创建SQL告警，目前每个帐户最多可以创建共200个关键词告警与SQL告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSqlAlarmRuleRequest 请求对象
      * @return SyncInvoker<CreateSqlAlarmRuleRequest, CreateSqlAlarmRuleResponse>
@@ -1833,8 +1719,7 @@ public class LtsClient {
      *
      * 该接口用于删除SQL告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSqlAlarmRuleRequest 请求对象
      * @return DeleteSqlAlarmRuleResponse
@@ -1848,8 +1733,7 @@ public class LtsClient {
      *
      * 该接口用于删除SQL告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSqlAlarmRuleRequest 请求对象
      * @return SyncInvoker<DeleteSqlAlarmRuleRequest, DeleteSqlAlarmRuleResponse>
@@ -1865,8 +1749,7 @@ public class LtsClient {
      *
      * 该接口用于查询SQL告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSqlAlarmRulesRequest 请求对象
      * @return ListSqlAlarmRulesResponse
@@ -1880,8 +1763,7 @@ public class LtsClient {
      *
      * 该接口用于查询SQL告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSqlAlarmRulesRequest 请求对象
      * @return SyncInvoker<ListSqlAlarmRulesRequest, ListSqlAlarmRulesResponse>
@@ -1897,8 +1779,7 @@ public class LtsClient {
      *
      * 改变告警规则状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlarmRuleStatusRequest 请求对象
      * @return UpdateAlarmRuleStatusResponse
@@ -1912,8 +1793,7 @@ public class LtsClient {
      *
      * 改变告警规则状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlarmRuleStatusRequest 请求对象
      * @return SyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse>
@@ -1929,8 +1809,7 @@ public class LtsClient {
      *
      * 该接口用于修改SQL告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSqlAlarmRuleRequest 请求对象
      * @return UpdateSqlAlarmRuleResponse
@@ -1944,8 +1823,7 @@ public class LtsClient {
      *
      * 该接口用于修改SQL告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSqlAlarmRuleRequest 请求对象
      * @return SyncInvoker<UpdateSqlAlarmRuleRequest, UpdateSqlAlarmRuleResponse>

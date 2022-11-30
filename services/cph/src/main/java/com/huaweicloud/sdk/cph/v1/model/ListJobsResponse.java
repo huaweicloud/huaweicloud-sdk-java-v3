@@ -22,7 +22,7 @@ public class ListJobsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
-    private List<Object> jobs = null;
+    private List<Job> jobs = null;
 
     public ListJobsResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -30,7 +30,7 @@ public class ListJobsResponse extends SdkResponse {
     }
 
     /**
-     * 请求的唯一标识ID
+     * 请求的唯一标识ID。
      * @return requestId
      */
     public String getRequestId() {
@@ -41,12 +41,12 @@ public class ListJobsResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public ListJobsResponse withJobs(List<Object> jobs) {
+    public ListJobsResponse withJobs(List<Job> jobs) {
         this.jobs = jobs;
         return this;
     }
 
-    public ListJobsResponse addJobsItem(Object jobsItem) {
+    public ListJobsResponse addJobsItem(Job jobsItem) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class ListJobsResponse extends SdkResponse {
         return this;
     }
 
-    public ListJobsResponse withJobs(Consumer<List<Object>> jobsSetter) {
+    public ListJobsResponse withJobs(Consumer<List<Job>> jobsSetter) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class ListJobsResponse extends SdkResponse {
      * 任务信息
      * @return jobs
      */
-    public List<Object> getJobs() {
+    public List<Job> getJobs() {
         return jobs;
     }
 
-    public void setJobs(List<Object> jobs) {
+    public void setJobs(List<Job> jobs) {
         this.jobs = jobs;
     }
 

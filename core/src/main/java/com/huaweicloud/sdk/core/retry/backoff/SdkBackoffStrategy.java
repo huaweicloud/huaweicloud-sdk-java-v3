@@ -8,6 +8,7 @@ import static com.huaweicloud.sdk.core.utils.ValidationUtils.assertIntIsPositive
 
 import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.retry.RetryContext;
+import com.huaweicloud.sdk.core.utils.RandomUtils;
 
 import java.security.SecureRandom;
 
@@ -93,7 +94,7 @@ public class SdkBackoffStrategy implements BackoffStrategy {
 
         private final int maxBackoffTime;
 
-        private final SecureRandom random = new SecureRandom();
+        private final SecureRandom random = RandomUtils.getDefaultSecureRandom();
 
         /**
          * The default constructor, assign the base value to the private variables.
@@ -129,7 +130,7 @@ public class SdkBackoffStrategy implements BackoffStrategy {
 
         private final int maxBackoffTime;
 
-        private final SecureRandom random = new SecureRandom();
+        private final SecureRandom random = RandomUtils.getDefaultSecureRandom();
 
         /**
          * The default constructor, assign the base value to the private variables.

@@ -22,8 +22,7 @@ public class DmsClient {
      *
      * 批量添加或删除队列标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateOrDeleteQueueTagRequest 请求对象
      * @return BatchCreateOrDeleteQueueTagResponse
@@ -37,8 +36,7 @@ public class DmsClient {
      *
      * 批量添加或删除队列标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateOrDeleteQueueTagRequest 请求对象
      * @return SyncInvoker<BatchCreateOrDeleteQueueTagRequest, BatchCreateOrDeleteQueueTagResponse>
@@ -62,8 +60,7 @@ public class DmsClient {
      * 
      * 确认消费失败后，可以再次重新消费和确认。当开启死信时，消息进行多次重复消费仍然失败后，DMS会将该条消息转存到死信队列中，有效期为72小时，用户可以根据需要对死信消息进行重新消费。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConfirmConsumptionMessagesRequest 请求对象
      * @return ConfirmConsumptionMessagesResponse
@@ -85,8 +82,7 @@ public class DmsClient {
      * 
      * 确认消费失败后，可以再次重新消费和确认。当开启死信时，消息进行多次重复消费仍然失败后，DMS会将该条消息转存到死信队列中，有效期为72小时，用户可以根据需要对死信消息进行重新消费。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConfirmConsumptionMessagesRequest 请求对象
      * @return SyncInvoker<ConfirmConsumptionMessagesRequest, ConfirmConsumptionMessagesResponse>
@@ -110,8 +106,7 @@ public class DmsClient {
      * 
      * 仅NORMAL队列和FIFO队列可以开启死信消息，因为只有NORMAL队列和FIFO队列可消费死信消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConfirmDeadLettersMessagesRequest 请求对象
      * @return ConfirmDeadLettersMessagesResponse
@@ -133,8 +128,7 @@ public class DmsClient {
      * 
      * 仅NORMAL队列和FIFO队列可以开启死信消息，因为只有NORMAL队列和FIFO队列可消费死信消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConfirmDeadLettersMessagesRequest 请求对象
      * @return SyncInvoker<ConfirmDeadLettersMessagesRequest, ConfirmDeadLettersMessagesResponse>
@@ -152,8 +146,7 @@ public class DmsClient {
      * 
      * 仅NORMAL队列和FIFO队列可以开启死信消息，因为只有NORMAL队列和FIFO队列可消费死信消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConsumeDeadlettersMessageRequest 请求对象
      * @return ConsumeDeadlettersMessageResponse
@@ -169,8 +162,7 @@ public class DmsClient {
      * 
      * 仅NORMAL队列和FIFO队列可以开启死信消息，因为只有NORMAL队列和FIFO队列可消费死信消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConsumeDeadlettersMessageRequest 请求对象
      * @return SyncInvoker<ConsumeDeadlettersMessageRequest, ConsumeDeadlettersMessageResponse>
@@ -190,8 +182,7 @@ public class DmsClient {
      * 
      * 每个消费组只支持一种Label规则，如果第二次消费更换了Label规则，则消费失败。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConsumeMessagesRequest 请求对象
      * @return ConsumeMessagesResponse
@@ -209,8 +200,7 @@ public class DmsClient {
      * 
      * 每个消费组只支持一种Label规则，如果第二次消费更换了Label规则，则消费失败。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConsumeMessagesRequest 请求对象
      * @return SyncInvoker<ConsumeMessagesRequest, ConsumeMessagesResponse>
@@ -230,8 +220,7 @@ public class DmsClient {
      * 
      * &gt; 创建消费组后系统内部完成初始化需要1-3秒，如果创建消费组后立即进行操作，可能会导致消费失败。建议3秒后再操作该队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConsumerGroupRequest 请求对象
      * @return CreateConsumerGroupResponse
@@ -249,8 +238,7 @@ public class DmsClient {
      * 
      * &gt; 创建消费组后系统内部完成初始化需要1-3秒，如果创建消费组后立即进行操作，可能会导致消费失败。建议3秒后再操作该队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConsumerGroupRequest 请求对象
      * @return SyncInvoker<CreateConsumerGroupRequest, CreateConsumerGroupResponse>
@@ -267,8 +255,7 @@ public class DmsClient {
      * 每个project_id默认只能创建30个队列。
      * &gt; 创建队列时系统内部完成初始化需要1-3秒，如果创建队列后立即进行操作，可能会导致生产消息、消费消息、查询队列详情、创建消费组和删除队列等操作失败。建议3秒后再操作该队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateQueueRequest 请求对象
      * @return CreateQueueResponse
@@ -283,8 +270,7 @@ public class DmsClient {
      * 每个project_id默认只能创建30个队列。
      * &gt; 创建队列时系统内部完成初始化需要1-3秒，如果创建队列后立即进行操作，可能会导致生产消息、消费消息、查询队列详情、创建消费组和删除队列等操作失败。建议3秒后再操作该队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateQueueRequest 请求对象
      * @return SyncInvoker<CreateQueueRequest, CreateQueueResponse>
@@ -298,8 +284,7 @@ public class DmsClient {
      *
      * 删除指定的队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteQueueRequest 请求对象
      * @return DeleteQueueResponse
@@ -313,8 +298,7 @@ public class DmsClient {
      *
      * 删除指定的队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteQueueRequest 请求对象
      * @return SyncInvoker<DeleteQueueRequest, DeleteQueueResponse>
@@ -328,8 +312,7 @@ public class DmsClient {
      *
      * 删除指定消费组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSpecifiedConsumerGroupRequest 请求对象
      * @return DeleteSpecifiedConsumerGroupResponse
@@ -344,8 +327,7 @@ public class DmsClient {
      *
      * 删除指定消费组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSpecifiedConsumerGroupRequest 请求对象
      * @return SyncInvoker<DeleteSpecifiedConsumerGroupRequest, DeleteSpecifiedConsumerGroupResponse>
@@ -361,8 +343,7 @@ public class DmsClient {
      *
      * 获取指定队列的所有消费组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConsumerGroupsRequest 请求对象
      * @return ListConsumerGroupsResponse
@@ -376,8 +357,7 @@ public class DmsClient {
      *
      * 获取指定队列的所有消费组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConsumerGroupsRequest 请求对象
      * @return SyncInvoker<ListConsumerGroupsRequest, ListConsumerGroupsResponse>
@@ -393,8 +373,7 @@ public class DmsClient {
      *
      * 查看所有队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQueuesRequest 请求对象
      * @return ListQueuesResponse
@@ -408,8 +387,7 @@ public class DmsClient {
      *
      * 查看所有队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQueuesRequest 请求对象
      * @return SyncInvoker<ListQueuesRequest, ListQueuesResponse>
@@ -427,8 +405,7 @@ public class DmsClient {
      * - 每次发送的消息总负载不超过512KB。
      * - Kafka队列的消息保存时间在创建队列时可以设置，可设置范围为1~72小时。其他队列的消息最大保存时长为72小时。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendMessagesRequest 请求对象
      * @return SendMessagesResponse
@@ -446,8 +423,7 @@ public class DmsClient {
      * - 每次发送的消息总负载不超过512KB。
      * - Kafka队列的消息保存时间在创建队列时可以设置，可设置范围为1~72小时。其他队列的消息最大保存时长为72小时。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendMessagesRequest 请求对象
      * @return SyncInvoker<SendMessagesRequest, SendMessagesResponse>
@@ -461,8 +437,7 @@ public class DmsClient {
      *
      * 查看指定的队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQueueRequest 请求对象
      * @return ShowQueueResponse
@@ -476,8 +451,7 @@ public class DmsClient {
      *
      * 查看指定的队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQueueRequest 请求对象
      * @return SyncInvoker<ShowQueueRequest, ShowQueueResponse>
@@ -491,8 +465,7 @@ public class DmsClient {
      *
      * 查询项目标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQueueProjectTagsRequest 请求对象
      * @return ShowQueueProjectTagsResponse
@@ -506,8 +479,7 @@ public class DmsClient {
      *
      * 查询项目标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQueueProjectTagsRequest 请求对象
      * @return SyncInvoker<ShowQueueProjectTagsRequest, ShowQueueProjectTagsResponse>
@@ -523,8 +495,7 @@ public class DmsClient {
      *
      * 查询队列标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQueueTagsRequest 请求对象
      * @return ShowQueueTagsResponse
@@ -538,8 +509,7 @@ public class DmsClient {
      *
      * 查询队列标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQueueTagsRequest 请求对象
      * @return SyncInvoker<ShowQueueTagsRequest, ShowQueueTagsResponse>
@@ -553,8 +523,7 @@ public class DmsClient {
      *
      * 查看当前项目的配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotasRequest 请求对象
      * @return ShowQuotasResponse
@@ -568,8 +537,7 @@ public class DmsClient {
      *
      * 查看当前项目的配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotasRequest 请求对象
      * @return SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>

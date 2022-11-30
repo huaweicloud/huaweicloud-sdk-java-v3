@@ -71,7 +71,7 @@ public class InstanceResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "read_only_by_user")
 
-    private String readOnlyByUser;
+    private Boolean readOnlyByUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintenance_window")
@@ -448,20 +448,20 @@ public class InstanceResponse {
         this.switchStrategy = switchStrategy;
     }
 
-    public InstanceResponse withReadOnlyByUser(String readOnlyByUser) {
+    public InstanceResponse withReadOnlyByUser(Boolean readOnlyByUser) {
         this.readOnlyByUser = readOnlyByUser;
         return this;
     }
 
     /**
-     * 客户设置实例只读API的状态信息。仅支持RDS for MySQL引擎。取值为“true”，表示该实例为客户设置的只读状态。取值为“false”，表示该实例未被客户设置只读。
+     * 客户设置实例只读API的状态信息。仅支持RDS for MySQL引擎。 - true，表示该实例为客户设置的只读状态 - false， 表示该实例未被客户设置只读
      * @return readOnlyByUser
      */
-    public String getReadOnlyByUser() {
+    public Boolean getReadOnlyByUser() {
         return readOnlyByUser;
     }
 
-    public void setReadOnlyByUser(String readOnlyByUser) {
+    public void setReadOnlyByUser(Boolean readOnlyByUser) {
         this.readOnlyByUser = readOnlyByUser;
     }
 

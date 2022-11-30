@@ -26,8 +26,7 @@ public class OcrClient {
      * 
      * 只对识别成功的票证进行计费，识别失败的票证不计费。例如图片中包含三张票证，有两张识别成功，一张识别失败，此时接口计费两次。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeAutoClassificationRequest 请求对象
      * @return RecognizeAutoClassificationResponse
@@ -45,8 +44,7 @@ public class OcrClient {
      * 
      * 只对识别成功的票证进行计费，识别失败的票证不计费。例如图片中包含三张票证，有两张识别成功，一张识别失败，此时接口计费两次。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeAutoClassificationRequest 请求对象
      * @return SyncInvoker<RecognizeAutoClassificationRequest, RecognizeAutoClassificationResponse>
@@ -66,8 +64,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeBankcardRequest 请求对象
      * @return RecognizeBankcardResponse
@@ -85,8 +82,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeBankcardRequest 请求对象
      * @return SyncInvoker<RecognizeBankcardRequest, RecognizeBankcardResponse>
@@ -102,8 +98,7 @@ public class OcrClient {
      *
      * 识别名片图片上的文字信息，并返回识别的结构化结果。支持对多种不同版式名片进行结构化信息提取。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeBusinessCardRequest 请求对象
      * @return RecognizeBusinessCardResponse
@@ -117,8 +112,7 @@ public class OcrClient {
      *
      * 识别名片图片上的文字信息，并返回识别的结构化结果。支持对多种不同版式名片进行结构化信息提取。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeBusinessCardRequest 请求对象
      * @return SyncInvoker<RecognizeBusinessCardRequest, RecognizeBusinessCardResponse>
@@ -138,8 +132,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeBusinessLicenseRequest 请求对象
      * @return RecognizeBusinessLicenseResponse
@@ -157,8 +150,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeBusinessLicenseRequest 请求对象
      * @return SyncInvoker<RecognizeBusinessLicenseRequest, RecognizeBusinessLicenseResponse>
@@ -174,8 +166,7 @@ public class OcrClient {
      *
      * 识别柬文身份证图片中的文字内容，并将识别的结构化结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeCambodianIdCardRequest 请求对象
      * @return RecognizeCambodianIdCardResponse
@@ -189,8 +180,7 @@ public class OcrClient {
      *
      * 识别柬文身份证图片中的文字内容，并将识别的结构化结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeCambodianIdCardRequest 请求对象
      * @return SyncInvoker<RecognizeCambodianIdCardRequest, RecognizeCambodianIdCardResponse>
@@ -206,8 +196,7 @@ public class OcrClient {
      *
      * 识别智利身份证图片中的文字内容，并返回识别的结构化结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeChileIdCardRequest 请求对象
      * @return RecognizeChileIdCardResponse
@@ -221,8 +210,7 @@ public class OcrClient {
      *
      * 识别智利身份证图片中的文字内容，并返回识别的结构化结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeChileIdCardRequest 请求对象
      * @return SyncInvoker<RecognizeChileIdCardRequest, RecognizeChileIdCardResponse>
@@ -242,8 +230,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用智能分类识别服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeDriverLicenseRequest 请求对象
      * @return RecognizeDriverLicenseResponse
@@ -261,8 +248,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用智能分类识别服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeDriverLicenseRequest 请求对象
      * @return SyncInvoker<RecognizeDriverLicenseRequest, RecognizeDriverLicenseResponse>
@@ -278,8 +264,7 @@ public class OcrClient {
      *
      * 识别往来港澳台证件图片中的文字内容，并将识别的结构化结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeExitEntryPermitRequest 请求对象
      * @return RecognizeExitEntryPermitResponse
@@ -293,8 +278,7 @@ public class OcrClient {
      *
      * 识别往来港澳台证件图片中的文字内容，并将识别的结构化结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeExitEntryPermitRequest 请求对象
      * @return SyncInvoker<RecognizeExitEntryPermitRequest, RecognizeExitEntryPermitResponse>
@@ -310,8 +294,7 @@ public class OcrClient {
      *
      * 识别用户上传的表格图片中的文字内容，并将识别的结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeFinancialStatementRequest 请求对象
      * @return RecognizeFinancialStatementResponse
@@ -325,8 +308,7 @@ public class OcrClient {
      *
      * 识别用户上传的表格图片中的文字内容，并将识别的结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeFinancialStatementRequest 请求对象
      * @return SyncInvoker<RecognizeFinancialStatementRequest, RecognizeFinancialStatementResponse>
@@ -346,8 +328,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用智能分类识别服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeFlightItineraryRequest 请求对象
      * @return RecognizeFlightItineraryResponse
@@ -365,8 +346,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用智能分类识别服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeFlightItineraryRequest 请求对象
      * @return SyncInvoker<RecognizeFlightItineraryRequest, RecognizeFlightItineraryResponse>
@@ -382,8 +362,7 @@ public class OcrClient {
      *
      * 识别用于识别用户上传的通用表格图片（或者用户提供的华为云上OBS的通用表格图片文件的URL）中的文字内容，并将识别的结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeGeneralTableRequest 请求对象
      * @return RecognizeGeneralTableResponse
@@ -397,8 +376,7 @@ public class OcrClient {
      *
      * 识别用于识别用户上传的通用表格图片（或者用户提供的华为云上OBS的通用表格图片文件的URL）中的文字内容，并将识别的结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeGeneralTableRequest 请求对象
      * @return SyncInvoker<RecognizeGeneralTableRequest, RecognizeGeneralTableResponse>
@@ -414,8 +392,7 @@ public class OcrClient {
      *
      * 识别图片上的文字信息，返回识别的文字和坐标。支持扫描文件、电子文档、书籍、票据和表单等多种场景的文字识别。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeGeneralTextRequest 请求对象
      * @return RecognizeGeneralTextResponse
@@ -429,8 +406,7 @@ public class OcrClient {
      *
      * 识别图片上的文字信息，返回识别的文字和坐标。支持扫描文件、电子文档、书籍、票据和表单等多种场景的文字识别。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeGeneralTextRequest 请求对象
      * @return SyncInvoker<RecognizeGeneralTextRequest, RecognizeGeneralTextResponse>
@@ -446,8 +422,7 @@ public class OcrClient {
      *
      * 识别文档中的手写文字信息，并将识别的结构化结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeHandwritingRequest 请求对象
      * @return RecognizeHandwritingResponse
@@ -461,8 +436,7 @@ public class OcrClient {
      *
      * 识别文档中的手写文字信息，并将识别的结构化结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeHandwritingRequest 请求对象
      * @return SyncInvoker<RecognizeHandwritingRequest, RecognizeHandwritingResponse>
@@ -478,8 +452,7 @@ public class OcrClient {
      *
      * 支持对全国各地区不同版式的防疫健康码、核酸检测记录、行程卡中的14个关键字段进行结构化识别；支持识别4种健康码颜色，包括绿码、黄码、红码、灰码；支持返回各个关键字段的置信度，以便提高人工校验效率。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeHealthCodeRequest 请求对象
      * @return RecognizeHealthCodeResponse
@@ -493,8 +466,7 @@ public class OcrClient {
      *
      * 支持对全国各地区不同版式的防疫健康码、核酸检测记录、行程卡中的14个关键字段进行结构化识别；支持识别4种健康码颜色，包括绿码、黄码、红码、灰码；支持返回各个关键字段的置信度，以便提高人工校验效率。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeHealthCodeRequest 请求对象
      * @return SyncInvoker<RecognizeHealthCodeRequest, RecognizeHealthCodeResponse>
@@ -510,8 +482,7 @@ public class OcrClient {
      *
      * 识别香港身份证中的文字内容，并将识别的结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeHkIdCardRequest 请求对象
      * @return RecognizeHkIdCardResponse
@@ -525,8 +496,7 @@ public class OcrClient {
      *
      * 识别香港身份证中的文字内容，并将识别的结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeHkIdCardRequest 请求对象
      * @return SyncInvoker<RecognizeHkIdCardRequest, RecognizeHkIdCardResponse>
@@ -548,8 +518,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeIdCardRequest 请求对象
      * @return RecognizeIdCardResponse
@@ -569,8 +538,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeIdCardRequest 请求对象
      * @return SyncInvoker<RecognizeIdCardRequest, RecognizeIdCardResponse>
@@ -610,8 +578,7 @@ public class OcrClient {
      * - DL: driving license,驾驶证
      * - ID: identification card,各国颁发的身份证类型证件，比如身份证、选民证、社保卡等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeIdDocumentRequest 请求对象
      * @return RecognizeIdDocumentResponse
@@ -649,8 +616,7 @@ public class OcrClient {
      * - DL: driving license,驾驶证
      * - ID: identification card,各国颁发的身份证类型证件，比如身份证、选民证、社保卡等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeIdDocumentRequest 请求对象
      * @return SyncInvoker<RecognizeIdDocumentRequest, RecognizeIdDocumentResponse>
@@ -666,8 +632,7 @@ public class OcrClient {
      *
      * 识别保险单图片上的文字信息，并将识别的结构化结果返回给用户。支持对多板式保险单的扫描图片及手机照片进行结构化信息提取。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeInsurancePolicyRequest 请求对象
      * @return RecognizeInsurancePolicyResponse
@@ -681,8 +646,7 @@ public class OcrClient {
      *
      * 识别保险单图片上的文字信息，并将识别的结构化结果返回给用户。支持对多板式保险单的扫描图片及手机照片进行结构化信息提取。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeInsurancePolicyRequest 请求对象
      * @return SyncInvoker<RecognizeInsurancePolicyRequest, RecognizeInsurancePolicyResponse>
@@ -698,8 +662,7 @@ public class OcrClient {
      *
      * 发票验真服务支持10种增值税发票的信息核验，包括增值税专用发票、增值税普通发票、增值税普通发票（卷式）、增值税电子专用发票、增值税电子普通发票、增值税电子普通发票（通行费）、二手车销售统一发票、机动车销售统一发票、区块链电子发票、全电发票，支持返回票面的全部信息。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeInvoiceVerificationRequest 请求对象
      * @return RecognizeInvoiceVerificationResponse
@@ -714,8 +677,7 @@ public class OcrClient {
      *
      * 发票验真服务支持10种增值税发票的信息核验，包括增值税专用发票、增值税普通发票、增值税普通发票（卷式）、增值税电子专用发票、增值税电子普通发票、增值税电子普通发票（通行费）、二手车销售统一发票、机动车销售统一发票、区块链电子发票、全电发票，支持返回票面的全部信息。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeInvoiceVerificationRequest 请求对象
      * @return SyncInvoker<RecognizeInvoiceVerificationRequest, RecognizeInvoiceVerificationResponse>
@@ -731,8 +693,7 @@ public class OcrClient {
      *
      * 识别输入图片中的车牌信息，并返回其坐标和内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeLicensePlateRequest 请求对象
      * @return RecognizeLicensePlateResponse
@@ -746,8 +707,7 @@ public class OcrClient {
      *
      * 识别输入图片中的车牌信息，并返回其坐标和内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeLicensePlateRequest 请求对象
      * @return SyncInvoker<RecognizeLicensePlateRequest, RecognizeLicensePlateResponse>
@@ -763,8 +723,7 @@ public class OcrClient {
      *
      * 识别澳门身份证图片中的文字内容，并将识别的结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeMacaoIdCardRequest 请求对象
      * @return RecognizeMacaoIdCardResponse
@@ -778,8 +737,7 @@ public class OcrClient {
      *
      * 识别澳门身份证图片中的文字内容，并将识别的结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeMacaoIdCardRequest 请求对象
      * @return SyncInvoker<RecognizeMacaoIdCardRequest, RecognizeMacaoIdCardResponse>
@@ -795,8 +753,7 @@ public class OcrClient {
      *
      * 识别港澳居民来往内地通行证上的文字内容，并将识别的结构化结果返回给用户。支持港澳居民来往内地通行证和台湾居民来往内地通行证两种卡证。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeMainlandTravelPermitRequest 请求对象
      * @return RecognizeMainlandTravelPermitResponse
@@ -811,8 +768,7 @@ public class OcrClient {
      *
      * 识别港澳居民来往内地通行证上的文字内容，并将识别的结构化结果返回给用户。支持港澳居民来往内地通行证和台湾居民来往内地通行证两种卡证。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeMainlandTravelPermitRequest 请求对象
      * @return SyncInvoker<RecognizeMainlandTravelPermitRequest, RecognizeMainlandTravelPermitResponse>
@@ -834,8 +790,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeMvsInvoiceRequest 请求对象
      * @return RecognizeMvsInvoiceResponse
@@ -855,8 +810,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeMvsInvoiceRequest 请求对象
      * @return SyncInvoker<RecognizeMvsInvoiceRequest, RecognizeMvsInvoiceResponse>
@@ -872,8 +826,7 @@ public class OcrClient {
      *
      * 识别缅甸驾驶证中的文字信息，并返回识别的结构化结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeMyanmarDriverLicenseRequest 请求对象
      * @return RecognizeMyanmarDriverLicenseResponse
@@ -888,8 +841,7 @@ public class OcrClient {
      *
      * 识别缅甸驾驶证中的文字信息，并返回识别的结构化结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeMyanmarDriverLicenseRequest 请求对象
      * @return SyncInvoker<RecognizeMyanmarDriverLicenseRequest, RecognizeMyanmarDriverLicenseResponse>
@@ -905,8 +857,7 @@ public class OcrClient {
      *
      * 识别缅文身份证中的文字信息，并返回识别的结构化结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeMyanmarIdcardRequest 请求对象
      * @return RecognizeMyanmarIdcardResponse
@@ -920,8 +871,7 @@ public class OcrClient {
      *
      * 识别缅文身份证中的文字信息，并返回识别的结构化结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeMyanmarIdcardRequest 请求对象
      * @return SyncInvoker<RecognizeMyanmarIdcardRequest, RecognizeMyanmarIdcardResponse>
@@ -941,8 +891,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizePassportRequest 请求对象
      * @return RecognizePassportResponse
@@ -960,8 +909,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizePassportRequest 请求对象
      * @return SyncInvoker<RecognizePassportRequest, RecognizePassportResponse>
@@ -977,8 +925,7 @@ public class OcrClient {
      *
      * 识别核酸检测记录中的文字信息，并将识别的结构化结果返回给用户。PCR，全称Polymerase chain reaction,即聚合酶链式反应.PCR-test也为大众所认知为新型冠状病毒核酸检测测试。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizePcrTestRecordRequest 请求对象
      * @return RecognizePcrTestRecordResponse
@@ -992,8 +939,7 @@ public class OcrClient {
      *
      * 识别核酸检测记录中的文字信息，并将识别的结构化结果返回给用户。PCR，全称Polymerase chain reaction,即聚合酶链式反应.PCR-test也为大众所认知为新型冠状病毒核酸检测测试。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizePcrTestRecordRequest 请求对象
      * @return SyncInvoker<RecognizePcrTestRecordRequest, RecognizePcrTestRecordResponse>
@@ -1013,8 +959,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeQualificationCertificateRequest 请求对象
      * @return RecognizeQualificationCertificateResponse
@@ -1033,8 +978,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeQualificationCertificateRequest 请求对象
      * @return SyncInvoker<RecognizeQualificationCertificateRequest, RecognizeQualificationCertificateResponse>
@@ -1054,8 +998,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeQuotaInvoiceRequest 请求对象
      * @return RecognizeQuotaInvoiceResponse
@@ -1073,8 +1016,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeQuotaInvoiceRequest 请求对象
      * @return SyncInvoker<RecognizeQuotaInvoiceRequest, RecognizeQuotaInvoiceResponse>
@@ -1094,8 +1036,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用智能分类识别服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeTaxiInvoiceRequest 请求对象
      * @return RecognizeTaxiInvoiceResponse
@@ -1113,8 +1054,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用智能分类识别服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeTaxiInvoiceRequest 请求对象
      * @return SyncInvoker<RecognizeTaxiInvoiceRequest, RecognizeTaxiInvoiceResponse>
@@ -1130,8 +1070,7 @@ public class OcrClient {
      *
      * 识别泰国身份证中的文字信息，并返回识别的结构化结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeThailandIdcardRequest 请求对象
      * @return RecognizeThailandIdcardResponse
@@ -1145,8 +1084,7 @@ public class OcrClient {
      *
      * 识别泰国身份证中的文字信息，并返回识别的结构化结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeThailandIdcardRequest 请求对象
      * @return SyncInvoker<RecognizeThailandIdcardRequest, RecognizeThailandIdcardResponse>
@@ -1162,8 +1100,7 @@ public class OcrClient {
      *
      * 识别泰国车牌图片中的车牌信息，并返回识别的结构化结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeThailandLicensePlateRequest 请求对象
      * @return RecognizeThailandLicensePlateResponse
@@ -1178,8 +1115,7 @@ public class OcrClient {
      *
      * 识别泰国车牌图片中的车牌信息，并返回识别的结构化结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeThailandLicensePlateRequest 请求对象
      * @return SyncInvoker<RecognizeThailandLicensePlateRequest, RecognizeThailandLicensePlateResponse>
@@ -1199,8 +1135,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeTollInvoiceRequest 请求对象
      * @return RecognizeTollInvoiceResponse
@@ -1218,8 +1153,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeTollInvoiceRequest 请求对象
      * @return SyncInvoker<RecognizeTollInvoiceRequest, RecognizeTollInvoiceResponse>
@@ -1239,8 +1173,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeTrainTicketRequest 请求对象
      * @return RecognizeTrainTicketResponse
@@ -1258,8 +1191,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeTrainTicketRequest 请求对象
      * @return SyncInvoker<RecognizeTrainTicketRequest, RecognizeTrainTicketResponse>
@@ -1277,8 +1209,7 @@ public class OcrClient {
      * 
      * 说明： 如果图片中包含多张卡证票据，请调用智能分类识别服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeTransportationLicenseRequest 请求对象
      * @return RecognizeTransportationLicenseResponse
@@ -1295,8 +1226,7 @@ public class OcrClient {
      * 
      * 说明： 如果图片中包含多张卡证票据，请调用智能分类识别服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeTransportationLicenseRequest 请求对象
      * @return SyncInvoker<RecognizeTransportationLicenseRequest, RecognizeTransportationLicenseResponse>
@@ -1320,8 +1250,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用智能分类识别服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeVatInvoiceRequest 请求对象
      * @return RecognizeVatInvoiceResponse
@@ -1343,8 +1272,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用智能分类识别服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeVatInvoiceRequest 请求对象
      * @return SyncInvoker<RecognizeVatInvoiceRequest, RecognizeVatInvoiceResponse>
@@ -1364,8 +1292,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用智能分类识别服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeVehicleLicenseRequest 请求对象
      * @return RecognizeVehicleLicenseResponse
@@ -1383,8 +1310,7 @@ public class OcrClient {
      * 
      * 如果图片中包含多张卡证票据，请调用智能分类识别服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeVehicleLicenseRequest 请求对象
      * @return SyncInvoker<RecognizeVehicleLicenseRequest, RecognizeVehicleLicenseResponse>
@@ -1400,8 +1326,7 @@ public class OcrClient {
      *
      * 识别用户上传的韵达电子面单图片中的文字内容，并将识别的结果以json格式返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeWaybillElectronicRequest 请求对象
      * @return RecognizeWaybillElectronicResponse
@@ -1415,8 +1340,7 @@ public class OcrClient {
      *
      * 识别用户上传的韵达电子面单图片中的文字内容，并将识别的结果以json格式返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeWaybillElectronicRequest 请求对象
      * @return SyncInvoker<RecognizeWaybillElectronicRequest, RecognizeWaybillElectronicResponse>
@@ -1432,8 +1356,7 @@ public class OcrClient {
      *
      * 识别网络图片中的文字内容，并返回识别的结构化结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeWebImageRequest 请求对象
      * @return RecognizeWebImageResponse
@@ -1447,8 +1370,7 @@ public class OcrClient {
      *
      * 识别网络图片中的文字内容，并返回识别的结构化结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeWebImageRequest 请求对象
      * @return SyncInvoker<RecognizeWebImageRequest, RecognizeWebImageResponse>
@@ -1464,8 +1386,7 @@ public class OcrClient {
      *
      * 识别图片中的车架号信息，并将识别结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeVinRequest 请求对象
      * @return RecognizeVinResponse
@@ -1479,8 +1400,7 @@ public class OcrClient {
      *
      * 识别图片中的车架号信息，并将识别结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecognizeVinRequest 请求对象
      * @return SyncInvoker<RecognizeVinRequest, RecognizeVinResponse>

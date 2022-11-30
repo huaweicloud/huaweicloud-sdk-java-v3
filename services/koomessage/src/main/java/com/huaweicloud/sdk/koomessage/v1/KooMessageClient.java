@@ -22,8 +22,7 @@ public class KooMessageClient {
      *
      * 用户根据要求创建回执接口后，可以调用此接口进行注册，注意：此接口仅允许te_admin角色用户调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddCallBackRequest 请求对象
      * @return AddCallBackResponse
@@ -37,8 +36,7 @@ public class KooMessageClient {
      *
      * 用户根据要求创建回执接口后，可以调用此接口进行注册，注意：此接口仅允许te_admin角色用户调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddCallBackRequest 请求对象
      * @return SyncInvoker<AddCallBackRequest, AddCallBackResponse>
@@ -52,8 +50,7 @@ public class KooMessageClient {
      *
      * 用户注册回执接口之后，可以根据此接口查询所有已注册回执接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAimCallbacksRequest 请求对象
      * @return ListAimCallbacksResponse
@@ -67,8 +64,7 @@ public class KooMessageClient {
      *
      * 用户注册回执接口之后，可以根据此接口查询所有已注册回执接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAimCallbacksRequest 请求对象
      * @return SyncInvoker<ListAimCallbacksRequest, ListAimCallbacksResponse>
@@ -84,8 +80,7 @@ public class KooMessageClient {
      *
      * 用户在下发智能信息前，通过此接口批量查询对应手机的智能信息解析能力。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckMobileCapabilityRequest 请求对象
      * @return CheckMobileCapabilityResponse
@@ -99,8 +94,7 @@ public class KooMessageClient {
      *
      * 用户在下发智能信息前，通过此接口批量查询对应手机的智能信息解析能力。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckMobileCapabilityRequest 请求对象
      * @return SyncInvoker<CheckMobileCapabilityRequest, CheckMobileCapabilityResponse>
@@ -116,8 +110,7 @@ public class KooMessageClient {
      *
      * 生成解析的短链。一次最多生成100个解析的短链。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResolveTaskRequest 请求对象
      * @return CreateResolveTaskResponse
@@ -131,8 +124,7 @@ public class KooMessageClient {
      *
      * 生成解析的短链。一次最多生成100个解析的短链。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResolveTaskRequest 请求对象
      * @return SyncInvoker<CreateResolveTaskRequest, CreateResolveTaskResponse>
@@ -148,8 +140,7 @@ public class KooMessageClient {
      *
      * 根据用户提供的过滤条件查询个性化解析明细，包括：发送任务ID、发送手机号码等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAimResolveDetailsRequest 请求对象
      * @return ListAimResolveDetailsResponse
@@ -163,8 +154,7 @@ public class KooMessageClient {
      *
      * 根据用户提供的过滤条件查询个性化解析明细，包括：发送任务ID、发送手机号码等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAimResolveDetailsRequest 请求对象
      * @return SyncInvoker<ListAimResolveDetailsRequest, ListAimResolveDetailsResponse>
@@ -184,8 +174,7 @@ public class KooMessageClient {
      * 
      * 如需查询明细，建议使用查询解析明细接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResolveTasksRequest 请求对象
      * @return ListResolveTasksResponse
@@ -203,8 +192,7 @@ public class KooMessageClient {
      * 
      * 如需查询明细，建议使用查询解析明细接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResolveTasksRequest 请求对象
      * @return SyncInvoker<ListResolveTasksRequest, ListResolveTasksResponse>
@@ -220,8 +208,7 @@ public class KooMessageClient {
      *
      * 根据用户提供的过滤条件查询服务号菜单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMenusRequest 请求对象
      * @return ListMenusResponse
@@ -235,8 +222,7 @@ public class KooMessageClient {
      *
      * 根据用户提供的过滤条件查询服务号菜单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMenusRequest 请求对象
      * @return SyncInvoker<ListMenusRequest, ListMenusResponse>
@@ -251,8 +237,7 @@ public class KooMessageClient {
      * 
      * 支持用户修改所属企业的指定菜单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMenuRequest 请求对象
      * @return UpdateMenuResponse
@@ -267,8 +252,7 @@ public class KooMessageClient {
      * 
      * 支持用户修改所属企业的指定菜单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMenuRequest 请求对象
      * @return SyncInvoker<UpdateMenuRequest, UpdateMenuResponse>
@@ -282,8 +266,7 @@ public class KooMessageClient {
      *
      * 删除通道号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePortInfoRequest 请求对象
      * @return DeletePortInfoResponse
@@ -297,8 +280,7 @@ public class KooMessageClient {
      *
      * 删除通道号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePortInfoRequest 请求对象
      * @return SyncInvoker<DeletePortInfoRequest, DeletePortInfoResponse>
@@ -314,8 +296,7 @@ public class KooMessageClient {
      *
      * 支持查询通道号列表和通道号绑定信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPortInfosRequest 请求对象
      * @return ListPortInfosResponse
@@ -329,8 +310,7 @@ public class KooMessageClient {
      *
      * 支持查询通道号列表和通道号绑定信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPortInfosRequest 请求对象
      * @return SyncInvoker<ListPortInfosRequest, ListPortInfosResponse>
@@ -345,8 +325,7 @@ public class KooMessageClient {
      *
      * 通道号绑定服务号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param LockPortRequest 请求对象
      * @return LockPortResponse
@@ -360,8 +339,7 @@ public class KooMessageClient {
      *
      * 通道号绑定服务号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param LockPortRequest 请求对象
      * @return SyncInvoker<LockPortRequest, LockPortResponse>
@@ -375,8 +353,7 @@ public class KooMessageClient {
      *
      * 注册通道号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RegisterPortRequest 请求对象
      * @return RegisterPortResponse
@@ -390,8 +367,7 @@ public class KooMessageClient {
      *
      * 注册通道号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RegisterPortRequest 请求对象
      * @return SyncInvoker<RegisterPortRequest, RegisterPortResponse>
@@ -406,8 +382,7 @@ public class KooMessageClient {
      *
      * 通道号解绑服务号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UnlockPortRequest 请求对象
      * @return UnlockPortResponse
@@ -421,8 +396,7 @@ public class KooMessageClient {
      *
      * 通道号解绑服务号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UnlockPortRequest 请求对象
      * @return SyncInvoker<UnlockPortRequest, UnlockPortResponse>
@@ -437,8 +411,7 @@ public class KooMessageClient {
      * 
      * 根据用户提供的过滤条件查找用户管理的主页列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPortalInfosRequest 请求对象
      * @return ListPortalInfosResponse
@@ -453,8 +426,7 @@ public class KooMessageClient {
      * 
      * 根据用户提供的过滤条件查找用户管理的主页列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPortalInfosRequest 请求对象
      * @return SyncInvoker<ListPortalInfosRequest, ListPortalInfosResponse>
@@ -471,8 +443,7 @@ public class KooMessageClient {
      * 
      * 用户对已创建的主页进行信息的修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePortalInfoRequest 请求对象
      * @return UpdatePortalInfoResponse
@@ -487,8 +458,7 @@ public class KooMessageClient {
      * 
      * 用户对已创建的主页进行信息的修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePortalInfoRequest 请求对象
      * @return SyncInvoker<UpdatePortalInfoRequest, UpdatePortalInfoResponse>
@@ -504,8 +474,7 @@ public class KooMessageClient {
      *
      * 支持用户通过此接口冻结服务号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param FreezePubRequest 请求对象
      * @return FreezePubResponse
@@ -519,8 +488,7 @@ public class KooMessageClient {
      *
      * 支持用户通过此接口冻结服务号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param FreezePubRequest 请求对象
      * @return SyncInvoker<FreezePubRequest, FreezePubResponse>
@@ -535,8 +503,7 @@ public class KooMessageClient {
      * 
      * 支持根据用户提供的过滤条件查询服务号列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPubInfosRequest 请求对象
      * @return ListPubInfosResponse
@@ -551,8 +518,7 @@ public class KooMessageClient {
      * 
      * 支持根据用户提供的过滤条件查询服务号列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPubInfosRequest 请求对象
      * @return SyncInvoker<ListPubInfosRequest, ListPubInfosResponse>
@@ -567,8 +533,7 @@ public class KooMessageClient {
      *
      * 服务号解结，冻结服务号。需审核，审核通过生效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UnfreezePubRequest 请求对象
      * @return UnfreezePubResponse
@@ -582,8 +547,7 @@ public class KooMessageClient {
      *
      * 服务号解结，冻结服务号。需审核，审核通过生效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UnfreezePubRequest 请求对象
      * @return SyncInvoker<UnfreezePubRequest, UnfreezePubResponse>
@@ -597,8 +561,7 @@ public class KooMessageClient {
      *
      * 支持用户更新服务号信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePubInfoRequest 请求对象
      * @return UpdatePubInfoResponse
@@ -612,8 +575,7 @@ public class KooMessageClient {
      *
      * 支持用户更新服务号信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePubInfoRequest 请求对象
      * @return SyncInvoker<UpdatePubInfoRequest, UpdatePubInfoResponse>
@@ -628,8 +590,7 @@ public class KooMessageClient {
      *
      * 一站式服务号创建。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePubInfoRequest 请求对象
      * @return CreatePubInfoResponse
@@ -643,8 +604,7 @@ public class KooMessageClient {
      *
      * 一站式服务号创建。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePubInfoRequest 请求对象
      * @return SyncInvoker<CreatePubInfoRequest, CreatePubInfoResponse>
@@ -659,8 +619,7 @@ public class KooMessageClient {
      *
      * 支持用户通过此接口根据菜单ID催审。菜单需要在与其关联的服务号审核通过之后才能催审。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PushMenuInfoRequest 请求对象
      * @return PushMenuInfoResponse
@@ -674,8 +633,7 @@ public class KooMessageClient {
      *
      * 支持用户通过此接口根据菜单ID催审。菜单需要在与其关联的服务号审核通过之后才能催审。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PushMenuInfoRequest 请求对象
      * @return SyncInvoker<PushMenuInfoRequest, PushMenuInfoResponse>
@@ -690,8 +648,7 @@ public class KooMessageClient {
      *
      * 支持用户通过此接口根据主页ID催审。主页需要在与其关联的服务号审核通过之后才能催审。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PushPortalInfoRequest 请求对象
      * @return PushPortalInfoResponse
@@ -705,8 +662,7 @@ public class KooMessageClient {
      *
      * 支持用户通过此接口根据主页ID催审。主页需要在与其关联的服务号审核通过之后才能催审。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PushPortalInfoRequest 请求对象
      * @return SyncInvoker<PushPortalInfoRequest, PushPortalInfoResponse>
@@ -722,8 +678,7 @@ public class KooMessageClient {
      *
      * 支持用户上传图片资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadMediaRequest 请求对象
      * @return UploadMediaResponse
@@ -737,8 +692,7 @@ public class KooMessageClient {
      *
      * 支持用户上传图片资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadMediaRequest 请求对象
      * @return SyncInvoker<UploadMediaRequest, UploadMediaResponse>
@@ -752,8 +706,7 @@ public class KooMessageClient {
      *
      * 根据客户的参数发送任务名称、智能信息模板ID等进行智能信息发送。一次最多发送100个智能信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAimSendTaskRequest 请求对象
      * @return CreateAimSendTaskResponse
@@ -767,8 +720,7 @@ public class KooMessageClient {
      *
      * 根据客户的参数发送任务名称、智能信息模板ID等进行智能信息发送。一次最多发送100个智能信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAimSendTaskRequest 请求对象
      * @return SyncInvoker<CreateAimSendTaskRequest, CreateAimSendTaskResponse>
@@ -784,8 +736,7 @@ public class KooMessageClient {
      *
      * 根据用户提供的过滤条件查询发送明细列表，包括：发送任务ID、发送手机号码等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAimSendDetailsRequest 请求对象
      * @return ListAimSendDetailsResponse
@@ -799,8 +750,7 @@ public class KooMessageClient {
      *
      * 根据用户提供的过滤条件查询发送明细列表，包括：发送任务ID、发送手机号码等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAimSendDetailsRequest 请求对象
      * @return SyncInvoker<ListAimSendDetailsRequest, ListAimSendDetailsResponse>
@@ -816,8 +766,7 @@ public class KooMessageClient {
      *
      * 查询智能信息发送报表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAimSendReportsRequest 请求对象
      * @return ListAimSendReportsResponse
@@ -831,8 +780,7 @@ public class KooMessageClient {
      *
      * 查询智能信息发送报表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAimSendReportsRequest 请求对象
      * @return SyncInvoker<ListAimSendReportsRequest, ListAimSendReportsResponse>
@@ -849,8 +797,7 @@ public class KooMessageClient {
      * 
      * 根据用户提供的过滤条件查询智能信息发送任务列表，包括：发送任务名称、智能信息模板ID等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAimSendTasksRequest 请求对象
      * @return ListAimSendTasksResponse
@@ -865,8 +812,7 @@ public class KooMessageClient {
      * 
      * 根据用户提供的过滤条件查询智能信息发送任务列表，包括：发送任务名称、智能信息模板ID等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAimSendTasksRequest 请求对象
      * @return SyncInvoker<ListAimSendTasksRequest, ListAimSendTasksResponse>
@@ -882,8 +828,7 @@ public class KooMessageClient {
      *
      * 用于用户创建个人模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAimPersonalTemplateRequest 请求对象
      * @return CreateAimPersonalTemplateResponse
@@ -897,8 +842,7 @@ public class KooMessageClient {
      *
      * 用于用户创建个人模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAimPersonalTemplateRequest 请求对象
      * @return SyncInvoker<CreateAimPersonalTemplateRequest, CreateAimPersonalTemplateResponse>
@@ -914,8 +858,7 @@ public class KooMessageClient {
      *
      * 根据客户提供的模板ID，删除智能信息个人模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAimPersonalTemplateRequest 请求对象
      * @return DeleteAimPersonalTemplateResponse
@@ -929,8 +872,7 @@ public class KooMessageClient {
      *
      * 根据客户提供的模板ID，删除智能信息个人模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAimPersonalTemplateRequest 请求对象
      * @return SyncInvoker<DeleteAimPersonalTemplateRequest, DeleteAimPersonalTemplateResponse>
@@ -946,8 +888,7 @@ public class KooMessageClient {
      *
      * 根据客户提供的模板ID，删除模板素材。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTemplateMaterialRequest 请求对象
      * @return DeleteTemplateMaterialResponse
@@ -961,8 +902,7 @@ public class KooMessageClient {
      *
      * 根据客户提供的模板ID，删除模板素材。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTemplateMaterialRequest 请求对象
      * @return SyncInvoker<DeleteTemplateMaterialRequest, DeleteTemplateMaterialResponse>
@@ -978,8 +918,7 @@ public class KooMessageClient {
      *
      * 根据客户提供的过滤条件，查询模板素材列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAimTemplateMaterialsRequest 请求对象
      * @return ListAimTemplateMaterialsResponse
@@ -993,8 +932,7 @@ public class KooMessageClient {
      *
      * 根据客户提供的过滤条件，查询模板素材列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAimTemplateMaterialsRequest 请求对象
      * @return SyncInvoker<ListAimTemplateMaterialsRequest, ListAimTemplateMaterialsResponse>
@@ -1010,8 +948,7 @@ public class KooMessageClient {
      *
      * 根据用户指定过滤条件查询指定智能信息模板的解析次数。当日数据需要次日16:00之后才能查询到。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAimTemplateReportsRequest 请求对象
      * @return ListAimTemplateReportsResponse
@@ -1025,8 +962,7 @@ public class KooMessageClient {
      *
      * 根据用户指定过滤条件查询指定智能信息模板的解析次数。当日数据需要次日16:00之后才能查询到。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAimTemplateReportsRequest 请求对象
      * @return SyncInvoker<ListAimTemplateReportsRequest, ListAimTemplateReportsResponse>
@@ -1043,8 +979,7 @@ public class KooMessageClient {
      * 
      * 根据客户提供的过滤条件查询智能信息模板列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAimTemplatesRequest 请求对象
      * @return ListAimTemplatesResponse
@@ -1059,8 +994,7 @@ public class KooMessageClient {
      * 
      * 根据客户提供的过滤条件查询智能信息模板列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAimTemplatesRequest 请求对象
      * @return SyncInvoker<ListAimTemplatesRequest, ListAimTemplatesResponse>
@@ -1076,8 +1010,7 @@ public class KooMessageClient {
      *
      * 支持用户上传模板使用的图片或者视频。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadAimTemplateMaterialRequest 请求对象
      * @return UploadAimTemplateMaterialResponse
@@ -1091,8 +1024,7 @@ public class KooMessageClient {
      *
      * 支持用户上传模板使用的图片或者视频。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadAimTemplateMaterialRequest 请求对象
      * @return SyncInvoker<UploadAimTemplateMaterialRequest, UploadAimTemplateMaterialResponse>
@@ -1108,8 +1040,7 @@ public class KooMessageClient {
      *
      * 支持用户通过此接口进行智能信息基础版任务发送。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVmsSendTaskRequest 请求对象
      * @return CreateVmsSendTaskResponse
@@ -1123,8 +1054,7 @@ public class KooMessageClient {
      *
      * 支持用户通过此接口进行智能信息基础版任务发送。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVmsSendTaskRequest 请求对象
      * @return SyncInvoker<CreateVmsSendTaskRequest, CreateVmsSendTaskResponse>
@@ -1140,8 +1070,7 @@ public class KooMessageClient {
      *
      * 支持用户根据过滤条件查询智能信息基础版任务列表。包括：发送任务名称、智能信息基础版模板ID等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVmsSendTasksRequest 请求对象
      * @return ListVmsSendTasksResponse
@@ -1155,8 +1084,7 @@ public class KooMessageClient {
      *
      * 支持用户根据过滤条件查询智能信息基础版任务列表。包括：发送任务名称、智能信息基础版模板ID等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVmsSendTasksRequest 请求对象
      * @return SyncInvoker<ListVmsSendTasksRequest, ListVmsSendTasksResponse>
@@ -1172,8 +1100,7 @@ public class KooMessageClient {
      *
      * 支持用户通过此接口创建智能信息基础版模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVmsTemplateRequest 请求对象
      * @return CreateVmsTemplateResponse
@@ -1187,8 +1114,7 @@ public class KooMessageClient {
      *
      * 支持用户通过此接口创建智能信息基础版模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVmsTemplateRequest 请求对象
      * @return SyncInvoker<CreateVmsTemplateRequest, CreateVmsTemplateResponse>
@@ -1205,8 +1131,7 @@ public class KooMessageClient {
      * 根据用户提供的过滤条件查询智能信息基础版模板状态列表。
      * 包括：模板ID、模板名称等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVmsTemplateStatusRequest 请求对象
      * @return ListVmsTemplateStatusResponse
@@ -1221,8 +1146,7 @@ public class KooMessageClient {
      * 根据用户提供的过滤条件查询智能信息基础版模板状态列表。
      * 包括：模板ID、模板名称等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVmsTemplateStatusRequest 请求对象
      * @return SyncInvoker<ListVmsTemplateStatusRequest, ListVmsTemplateStatusResponse>

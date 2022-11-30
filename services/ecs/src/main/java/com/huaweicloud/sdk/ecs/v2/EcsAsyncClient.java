@@ -24,8 +24,7 @@ public class EcsAsyncClient {
      *
      * 将云服务器加入云服务器组。添加成功后，如果该云服务器组是反亲和性策略的，则该云服务器与云服务器组中的其他成员尽量分散地创建在不同主机上。如果该云服务器时故障域类型的，则该云服务器会拥有故障域属性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddServerGroupMemberRequest 请求对象
      * @return CompletableFuture<AddServerGroupMemberResponse>
@@ -40,8 +39,7 @@ public class EcsAsyncClient {
      *
      * 将云服务器加入云服务器组。添加成功后，如果该云服务器组是反亲和性策略的，则该云服务器与云服务器组中的其他成员尽量分散地创建在不同主机上。如果该云服务器时故障域类型的，则该云服务器会拥有故障域属性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddServerGroupMemberRequest 请求对象
      * @return AsyncInvoker<AddServerGroupMemberRequest, AddServerGroupMemberResponse>
@@ -63,8 +61,7 @@ public class EcsAsyncClient {
      * 
      * - 当指定的IP地址是一个已经创建好的私有IP时，系统会将指定的网卡和虚拟IP绑定。如果该IP的device_owner为空，则仅支持VPC内二三层通信；如果该IP的device_owner为neutron:VIP_PORT，则支持VPC内二三层通信、VPC之间对等连接访问，以及弹性公网IP、VPN、云专线等Internet接入。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateServerVirtualIpRequest 请求对象
      * @return CompletableFuture<AssociateServerVirtualIpResponse>
@@ -85,8 +82,7 @@ public class EcsAsyncClient {
      * 
      * - 当指定的IP地址是一个已经创建好的私有IP时，系统会将指定的网卡和虚拟IP绑定。如果该IP的device_owner为空，则仅支持VPC内二三层通信；如果该IP的device_owner为neutron:VIP_PORT，则支持VPC内二三层通信、VPC之间对等连接访问，以及弹性公网IP、VPN、云专线等Internet接入。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateServerVirtualIpRequest 请求对象
      * @return AsyncInvoker<AssociateServerVirtualIpRequest, AssociateServerVirtualIpResponse>
@@ -102,8 +98,7 @@ public class EcsAsyncClient {
      *
      * 把磁盘挂载到弹性云服务器上。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AttachServerVolumeRequest 请求对象
      * @return CompletableFuture<AttachServerVolumeResponse>
@@ -117,8 +112,7 @@ public class EcsAsyncClient {
      *
      * 把磁盘挂载到弹性云服务器上。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AttachServerVolumeRequest 请求对象
      * @return AsyncInvoker<AttachServerVolumeRequest, AttachServerVolumeResponse>
@@ -134,8 +128,7 @@ public class EcsAsyncClient {
      *
      * 给云服务器添加一张或多张网卡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddServerNicsRequest 请求对象
      * @return CompletableFuture<BatchAddServerNicsResponse>
@@ -149,8 +142,7 @@ public class EcsAsyncClient {
      *
      * 给云服务器添加一张或多张网卡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddServerNicsRequest 请求对象
      * @return AsyncInvoker<BatchAddServerNicsRequest, BatchAddServerNicsResponse>
@@ -166,8 +158,7 @@ public class EcsAsyncClient {
      *
      * 将指定的共享磁盘一次性挂载到多个弹性云服务器，实现批量挂载。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAttachSharableVolumesRequest 请求对象
      * @return CompletableFuture<BatchAttachSharableVolumesResponse>
@@ -182,8 +173,7 @@ public class EcsAsyncClient {
      *
      * 将指定的共享磁盘一次性挂载到多个弹性云服务器，实现批量挂载。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAttachSharableVolumesRequest 请求对象
      * @return AsyncInvoker<BatchAttachSharableVolumesRequest, BatchAttachSharableVolumesResponse>
@@ -201,8 +191,7 @@ public class EcsAsyncClient {
      * 
      * - 标签管理服务TMS使用该接口批量管理云服务器的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateServerTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateServerTagsResponse>
@@ -219,8 +208,7 @@ public class EcsAsyncClient {
      * 
      * - 标签管理服务TMS使用该接口批量管理云服务器的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateServerTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateServerTagsRequest, BatchCreateServerTagsResponse>
@@ -236,8 +224,7 @@ public class EcsAsyncClient {
      *
      * 卸载并删除云服务器中的一张或多张网卡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteServerNicsRequest 请求对象
      * @return CompletableFuture<BatchDeleteServerNicsResponse>
@@ -252,8 +239,7 @@ public class EcsAsyncClient {
      *
      * 卸载并删除云服务器中的一张或多张网卡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteServerNicsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteServerNicsRequest, BatchDeleteServerNicsResponse>
@@ -271,8 +257,7 @@ public class EcsAsyncClient {
      * 
      * - 标签管理服务TMS使用该接口批量管理云服务器的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteServerTagsRequest 请求对象
      * @return CompletableFuture<BatchDeleteServerTagsResponse>
@@ -289,8 +274,7 @@ public class EcsAsyncClient {
      * 
      * - 标签管理服务TMS使用该接口批量管理云服务器的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteServerTagsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteServerTagsRequest, BatchDeleteServerTagsResponse>
@@ -306,8 +290,7 @@ public class EcsAsyncClient {
      *
      * 根据给定的云服务器ID列表，批量重启云服务器，一次最多可以重启1000台。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchRebootServersRequest 请求对象
      * @return CompletableFuture<BatchRebootServersResponse>
@@ -321,8 +304,7 @@ public class EcsAsyncClient {
      *
      * 根据给定的云服务器ID列表，批量重启云服务器，一次最多可以重启1000台。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchRebootServersRequest 请求对象
      * @return AsyncInvoker<BatchRebootServersRequest, BatchRebootServersResponse>
@@ -338,8 +320,7 @@ public class EcsAsyncClient {
      *
      * 批量重置弹性云服务器管理帐号（root用户或Administrator用户）的密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchResetServersPasswordRequest 请求对象
      * @return CompletableFuture<BatchResetServersPasswordResponse>
@@ -354,8 +335,7 @@ public class EcsAsyncClient {
      *
      * 批量重置弹性云服务器管理帐号（root用户或Administrator用户）的密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchResetServersPasswordRequest 请求对象
      * @return AsyncInvoker<BatchResetServersPasswordRequest, BatchResetServersPasswordResponse>
@@ -371,8 +351,7 @@ public class EcsAsyncClient {
      *
      * 根据给定的云服务器ID列表，批量启动云服务器，一次最多可以启动1000台。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchStartServersRequest 请求对象
      * @return CompletableFuture<BatchStartServersResponse>
@@ -386,8 +365,7 @@ public class EcsAsyncClient {
      *
      * 根据给定的云服务器ID列表，批量启动云服务器，一次最多可以启动1000台。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchStartServersRequest 请求对象
      * @return AsyncInvoker<BatchStartServersRequest, BatchStartServersResponse>
@@ -403,8 +381,7 @@ public class EcsAsyncClient {
      *
      * 根据给定的云服务器ID列表，批量关闭云服务器，一次最多可以关闭1000台。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchStopServersRequest 请求对象
      * @return CompletableFuture<BatchStopServersResponse>
@@ -418,8 +395,7 @@ public class EcsAsyncClient {
      *
      * 根据给定的云服务器ID列表，批量关闭云服务器，一次最多可以关闭1000台。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchStopServersRequest 请求对象
      * @return AsyncInvoker<BatchStopServersRequest, BatchStopServersResponse>
@@ -436,8 +412,7 @@ public class EcsAsyncClient {
      * 批量修改弹性云服务器信息。
      * 当前仅支持批量修改云服务器名称，一次最多可以修改1000台。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchUpdateServersNameRequest 请求对象
      * @return CompletableFuture<BatchUpdateServersNameResponse>
@@ -453,8 +428,7 @@ public class EcsAsyncClient {
      * 批量修改弹性云服务器信息。
      * 当前仅支持批量修改云服务器名称，一次最多可以修改1000台。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchUpdateServersNameRequest 请求对象
      * @return AsyncInvoker<BatchUpdateServersNameRequest, BatchUpdateServersNameResponse>
@@ -472,8 +446,7 @@ public class EcsAsyncClient {
      * 
      * 调用该接口后，系统将卸载系统盘，然后使用新镜像重新创建系统盘，并挂载至弹性云服务器，实现切换操作系统功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeServerOsWithCloudInitRequest 请求对象
      * @return CompletableFuture<ChangeServerOsWithCloudInitResponse>
@@ -490,8 +463,7 @@ public class EcsAsyncClient {
      * 
      * 调用该接口后，系统将卸载系统盘，然后使用新镜像重新创建系统盘，并挂载至弹性云服务器，实现切换操作系统功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeServerOsWithCloudInitRequest 请求对象
      * @return AsyncInvoker<ChangeServerOsWithCloudInitRequest, ChangeServerOsWithCloudInitResponse>
@@ -509,8 +481,7 @@ public class EcsAsyncClient {
      * 
      * 该接口支持未安装Cloud-init或Cloudbase-init的镜像使用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeServerOsWithoutCloudInitRequest 请求对象
      * @return CompletableFuture<ChangeServerOsWithoutCloudInitResponse>
@@ -527,8 +498,7 @@ public class EcsAsyncClient {
      * 
      * 该接口支持未安装Cloud-init或Cloudbase-init的镜像使用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeServerOsWithoutCloudInitRequest 请求对象
      * @return AsyncInvoker<ChangeServerOsWithoutCloudInitRequest, ChangeServerOsWithoutCloudInitResponse>
@@ -557,8 +527,7 @@ public class EcsAsyncClient {
      * 
      * &gt; 对于安装Cloud-init镜像的Linux云服务器云主机，若指定user_data字段，则adminPass字段无效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostPaidServersRequest 请求对象
      * @return CompletableFuture<CreatePostPaidServersResponse>
@@ -586,8 +555,7 @@ public class EcsAsyncClient {
      * 
      * &gt; 对于安装Cloud-init镜像的Linux云服务器云主机，若指定user_data字段，则adminPass字段无效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostPaidServersRequest 请求对象
      * @return AsyncInvoker<CreatePostPaidServersRequest, CreatePostPaidServersResponse>
@@ -605,8 +573,7 @@ public class EcsAsyncClient {
      * 
      * 与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateServerGroupRequest 请求对象
      * @return CompletableFuture<CreateServerGroupResponse>
@@ -622,8 +589,7 @@ public class EcsAsyncClient {
      * 
      * 与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateServerGroupRequest 请求对象
      * @return AsyncInvoker<CreateServerGroupRequest, CreateServerGroupResponse>
@@ -661,8 +627,7 @@ public class EcsAsyncClient {
      * - [使用API购买ECS过程中常见问题及处理方法](https://support.huaweicloud.com/api-ecs/ecs_04_0007.html)
      * - [获取Token并检验Token的有效期 ](https://support.huaweicloud.com/api-ecs/ecs_04_0008.html)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateServersRequest 请求对象
      * @return CompletableFuture<CreateServersResponse>
@@ -698,8 +663,7 @@ public class EcsAsyncClient {
      * - [使用API购买ECS过程中常见问题及处理方法](https://support.huaweicloud.com/api-ecs/ecs_04_0007.html)
      * - [获取Token并检验Token的有效期 ](https://support.huaweicloud.com/api-ecs/ecs_04_0008.html)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateServersRequest 请求对象
      * @return AsyncInvoker<CreateServersRequest, CreateServersResponse>
@@ -716,8 +680,7 @@ public class EcsAsyncClient {
      * 
      * 与原生的删除云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServerGroupRequest 请求对象
      * @return CompletableFuture<DeleteServerGroupResponse>
@@ -733,8 +696,7 @@ public class EcsAsyncClient {
      * 
      * 与原生的删除云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServerGroupRequest 请求对象
      * @return AsyncInvoker<DeleteServerGroupRequest, DeleteServerGroupResponse>
@@ -750,8 +712,7 @@ public class EcsAsyncClient {
      *
      * 将弹性云服务器移出云服务器组。移出后，该云服务器与云服务器组中的成员不再遵从反亲和策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServerGroupMemberRequest 请求对象
      * @return CompletableFuture<DeleteServerGroupMemberResponse>
@@ -766,8 +727,7 @@ public class EcsAsyncClient {
      *
      * 将弹性云服务器移出云服务器组。移出后，该云服务器与云服务器组中的成员不再遵从反亲和策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServerGroupMemberRequest 请求对象
      * @return AsyncInvoker<DeleteServerGroupMemberRequest, DeleteServerGroupMemberResponse>
@@ -783,8 +743,7 @@ public class EcsAsyncClient {
      *
      * 删除云服务器指定元数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServerMetadataRequest 请求对象
      * @return CompletableFuture<DeleteServerMetadataResponse>
@@ -799,8 +758,7 @@ public class EcsAsyncClient {
      *
      * 删除云服务器指定元数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServerMetadataRequest 请求对象
      * @return AsyncInvoker<DeleteServerMetadataRequest, DeleteServerMetadataResponse>
@@ -816,8 +774,7 @@ public class EcsAsyncClient {
      *
      * 清除Windows云服务器初始安装时系统生成的密码记录。清除密码后，不影响云服务器密码登录功能，但不能再使用获取密码功能来查询该云服务器密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServerPasswordRequest 请求对象
      * @return CompletableFuture<DeleteServerPasswordResponse>
@@ -832,8 +789,7 @@ public class EcsAsyncClient {
      *
      * 清除Windows云服务器初始安装时系统生成的密码记录。清除密码后，不影响云服务器密码登录功能，但不能再使用获取密码功能来查询该云服务器密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServerPasswordRequest 请求对象
      * @return AsyncInvoker<DeleteServerPasswordRequest, DeleteServerPasswordResponse>
@@ -851,8 +807,7 @@ public class EcsAsyncClient {
      * 
      * 系统支持删除单台云服务器和批量删除多台云服务器操作，批量删除云服务器时，一次最多可以删除1000台。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServersRequest 请求对象
      * @return CompletableFuture<DeleteServersResponse>
@@ -868,8 +823,7 @@ public class EcsAsyncClient {
      * 
      * 系统支持删除单台云服务器和批量删除多台云服务器操作，批量删除云服务器时，一次最多可以删除1000台。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServersRequest 请求对象
      * @return AsyncInvoker<DeleteServersRequest, DeleteServersResponse>
@@ -884,8 +838,7 @@ public class EcsAsyncClient {
      *
      * 从弹性云服务器中卸载磁盘。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DetachServerVolumeRequest 请求对象
      * @return CompletableFuture<DetachServerVolumeResponse>
@@ -899,8 +852,7 @@ public class EcsAsyncClient {
      *
      * 从弹性云服务器中卸载磁盘。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DetachServerVolumeRequest 请求对象
      * @return AsyncInvoker<DetachServerVolumeRequest, DetachServerVolumeResponse>
@@ -918,8 +870,7 @@ public class EcsAsyncClient {
      * 
      * 该接口用于解绑定弹性云服务器网卡的虚拟IP地址。解绑后，网卡不会被删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateServerVirtualIpRequest 请求对象
      * @return CompletableFuture<DisassociateServerVirtualIpResponse>
@@ -936,8 +887,7 @@ public class EcsAsyncClient {
      * 
      * 该接口用于解绑定弹性云服务器网卡的虚拟IP地址。解绑后，网卡不会被删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateServerVirtualIpRequest 请求对象
      * @return AsyncInvoker<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse>
@@ -953,8 +903,7 @@ public class EcsAsyncClient {
      *
      * 查询云服务器规格详情信息和规格扩展信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return CompletableFuture<ListFlavorsResponse>
@@ -968,8 +917,7 @@ public class EcsAsyncClient {
      *
      * 查询云服务器规格详情信息和规格扩展信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
@@ -983,8 +931,7 @@ public class EcsAsyncClient {
      *
      * 变更规格时，部分规格的云服务器之间不能互相变更。您可以通过本接口，通过指定弹性云服务器规格，查询该规格可以变更的规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResizeFlavorsRequest 请求对象
      * @return CompletableFuture<ListResizeFlavorsResponse>
@@ -998,8 +945,7 @@ public class EcsAsyncClient {
      *
      * 变更规格时，部分规格的云服务器之间不能互相变更。您可以通过本接口，通过指定弹性云服务器规格，查询该规格可以变更的规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResizeFlavorsRequest 请求对象
      * @return AsyncInvoker<ListResizeFlavorsRequest, ListResizeFlavorsResponse>
@@ -1015,8 +961,7 @@ public class EcsAsyncClient {
      *
      * 查询弹性云服务器挂载的磁盘信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServerBlockDevicesRequest 请求对象
      * @return CompletableFuture<ListServerBlockDevicesResponse>
@@ -1031,8 +976,7 @@ public class EcsAsyncClient {
      *
      * 查询弹性云服务器挂载的磁盘信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServerBlockDevicesRequest 请求对象
      * @return AsyncInvoker<ListServerBlockDevicesRequest, ListServerBlockDevicesResponse>
@@ -1050,8 +994,7 @@ public class EcsAsyncClient {
      * 
      * 与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServerGroupsRequest 请求对象
      * @return CompletableFuture<ListServerGroupsResponse>
@@ -1067,8 +1010,7 @@ public class EcsAsyncClient {
      * 
      * 与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServerGroupsRequest 请求对象
      * @return AsyncInvoker<ListServerGroupsRequest, ListServerGroupsResponse>
@@ -1084,8 +1026,7 @@ public class EcsAsyncClient {
      *
      * 查询云服务器网卡信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServerInterfacesRequest 请求对象
      * @return CompletableFuture<ListServerInterfacesResponse>
@@ -1100,8 +1041,7 @@ public class EcsAsyncClient {
      *
      * 查询云服务器网卡信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServerInterfacesRequest 请求对象
      * @return AsyncInvoker<ListServerInterfacesRequest, ListServerInterfacesResponse>
@@ -1119,8 +1059,7 @@ public class EcsAsyncClient {
      * 
      * 该接口用于查询用户在指定项目所使用的全部标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServerTagsRequest 请求对象
      * @return CompletableFuture<ListServerTagsResponse>
@@ -1136,8 +1075,7 @@ public class EcsAsyncClient {
      * 
      * 该接口用于查询用户在指定项目所使用的全部标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServerTagsRequest 请求对象
      * @return AsyncInvoker<ListServerTagsRequest, ListServerTagsResponse>
@@ -1153,8 +1091,7 @@ public class EcsAsyncClient {
      *
      * 使用标签过滤弹性云服务器，并返回云服务器使用的所有标签和资源列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServersByTagRequest 请求对象
      * @return CompletableFuture<ListServersByTagResponse>
@@ -1168,8 +1105,7 @@ public class EcsAsyncClient {
      *
      * 使用标签过滤弹性云服务器，并返回云服务器使用的所有标签和资源列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServersByTagRequest 请求对象
      * @return AsyncInvoker<ListServersByTagRequest, ListServersByTagResponse>
@@ -1187,8 +1123,7 @@ public class EcsAsyncClient {
      * 
      * 该接口支持查询弹性云服务器计费方式，以及是否被冻结。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServersDetailsRequest 请求对象
      * @return CompletableFuture<ListServersDetailsResponse>
@@ -1204,8 +1139,7 @@ public class EcsAsyncClient {
      * 
      * 该接口支持查询弹性云服务器计费方式，以及是否被冻结。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServersDetailsRequest 请求对象
      * @return AsyncInvoker<ListServersDetailsRequest, ListServersDetailsResponse>
@@ -1223,8 +1157,7 @@ public class EcsAsyncClient {
      * - 将部署在专属主机上的弹性云服务器迁移至公共资源池，即不再部署在专属主机上。
      * - 将公共资源池的弹性云服务器迁移至专属主机上，成为专属主机上部署的弹性云服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MigrateServerRequest 请求对象
      * @return CompletableFuture<MigrateServerResponse>
@@ -1240,8 +1173,7 @@ public class EcsAsyncClient {
      * - 将部署在专属主机上的弹性云服务器迁移至公共资源池，即不再部署在专属主机上。
      * - 将公共资源池的弹性云服务器迁移至专属主机上，成为专属主机上部署的弹性云服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MigrateServerRequest 请求对象
      * @return AsyncInvoker<MigrateServerRequest, MigrateServerResponse>
@@ -1258,8 +1190,7 @@ public class EcsAsyncClient {
      * 
      * 添加多个安全组时，建议最多为弹性云服务器添加5个安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaAssociateSecurityGroupRequest 请求对象
      * @return CompletableFuture<NovaAssociateSecurityGroupResponse>
@@ -1276,8 +1207,7 @@ public class EcsAsyncClient {
      * 
      * 添加多个安全组时，建议最多为弹性云服务器添加5个安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaAssociateSecurityGroupRequest 请求对象
      * @return AsyncInvoker<NovaAssociateSecurityGroupRequest, NovaAssociateSecurityGroupResponse>
@@ -1295,8 +1225,7 @@ public class EcsAsyncClient {
      * 
      * 创建SSH密钥成功后，请把响应数据中的私钥内容保存到本地文件，用户使用该私钥登录云服务器云主机。为保证云服务器云主机器安全，私钥数据只能读取一次，请妥善保管。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaCreateKeypairRequest 请求对象
      * @return CompletableFuture<NovaCreateKeypairResponse>
@@ -1312,8 +1241,7 @@ public class EcsAsyncClient {
      * 
      * 创建SSH密钥成功后，请把响应数据中的私钥内容保存到本地文件，用户使用该私钥登录云服务器云主机。为保证云服务器云主机器安全，私钥数据只能读取一次，请妥善保管。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaCreateKeypairRequest 请求对象
      * @return AsyncInvoker<NovaCreateKeypairRequest, NovaCreateKeypairResponse>
@@ -1333,8 +1261,7 @@ public class EcsAsyncClient {
      * 
      * 该接口在云服务器创建失败后不支持自动回滚。若需要自动回滚能力，可以调用POST /v1/{project_id}/cloudservers接口，具体使用请参见创建云服务器（按需）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaCreateServersRequest 请求对象
      * @return CompletableFuture<NovaCreateServersResponse>
@@ -1352,8 +1279,7 @@ public class EcsAsyncClient {
      * 
      * 该接口在云服务器创建失败后不支持自动回滚。若需要自动回滚能力，可以调用POST /v1/{project_id}/cloudservers接口，具体使用请参见创建云服务器（按需）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaCreateServersRequest 请求对象
      * @return AsyncInvoker<NovaCreateServersRequest, NovaCreateServersResponse>
@@ -1369,8 +1295,7 @@ public class EcsAsyncClient {
      *
      * 根据SSH密钥的名称，删除指定SSH密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaDeleteKeypairRequest 请求对象
      * @return CompletableFuture<NovaDeleteKeypairResponse>
@@ -1384,8 +1309,7 @@ public class EcsAsyncClient {
      *
      * 根据SSH密钥的名称，删除指定SSH密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaDeleteKeypairRequest 请求对象
      * @return AsyncInvoker<NovaDeleteKeypairRequest, NovaDeleteKeypairResponse>
@@ -1401,8 +1325,7 @@ public class EcsAsyncClient {
      *
      * 删除一台云服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaDeleteServerRequest 请求对象
      * @return CompletableFuture<NovaDeleteServerResponse>
@@ -1416,8 +1339,7 @@ public class EcsAsyncClient {
      *
      * 删除一台云服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaDeleteServerRequest 请求对象
      * @return AsyncInvoker<NovaDeleteServerRequest, NovaDeleteServerResponse>
@@ -1433,8 +1355,7 @@ public class EcsAsyncClient {
      *
      * 移除弹性云服务器中的安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaDisassociateSecurityGroupRequest 请求对象
      * @return CompletableFuture<NovaDisassociateSecurityGroupResponse>
@@ -1449,8 +1370,7 @@ public class EcsAsyncClient {
      *
      * 移除弹性云服务器中的安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaDisassociateSecurityGroupRequest 请求对象
      * @return AsyncInvoker<NovaDisassociateSecurityGroupRequest, NovaDisassociateSecurityGroupResponse>
@@ -1466,8 +1386,7 @@ public class EcsAsyncClient {
      *
      * 查询可用域列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaListAvailabilityZonesRequest 请求对象
      * @return CompletableFuture<NovaListAvailabilityZonesResponse>
@@ -1482,8 +1401,7 @@ public class EcsAsyncClient {
      *
      * 查询可用域列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaListAvailabilityZonesRequest 请求对象
      * @return AsyncInvoker<NovaListAvailabilityZonesRequest, NovaListAvailabilityZonesResponse>
@@ -1499,8 +1417,7 @@ public class EcsAsyncClient {
      *
      * 查询SSH密钥信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaListKeypairsRequest 请求对象
      * @return CompletableFuture<NovaListKeypairsResponse>
@@ -1514,8 +1431,7 @@ public class EcsAsyncClient {
      *
      * 查询SSH密钥信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaListKeypairsRequest 请求对象
      * @return AsyncInvoker<NovaListKeypairsRequest, NovaListKeypairsResponse>
@@ -1531,8 +1447,7 @@ public class EcsAsyncClient {
      *
      * 查询指定弹性云服务器的安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaListServerSecurityGroupsRequest 请求对象
      * @return CompletableFuture<NovaListServerSecurityGroupsResponse>
@@ -1547,8 +1462,7 @@ public class EcsAsyncClient {
      *
      * 查询指定弹性云服务器的安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaListServerSecurityGroupsRequest 请求对象
      * @return AsyncInvoker<NovaListServerSecurityGroupsRequest, NovaListServerSecurityGroupsResponse>
@@ -1564,8 +1478,7 @@ public class EcsAsyncClient {
      *
      * 查询云服务器详情信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaListServersDetailsRequest 请求对象
      * @return CompletableFuture<NovaListServersDetailsResponse>
@@ -1580,8 +1493,7 @@ public class EcsAsyncClient {
      *
      * 查询云服务器详情信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaListServersDetailsRequest 请求对象
      * @return AsyncInvoker<NovaListServersDetailsRequest, NovaListServersDetailsResponse>
@@ -1597,8 +1509,7 @@ public class EcsAsyncClient {
      *
      * 根据SSH密钥名称查询指定SSH密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaShowKeypairRequest 请求对象
      * @return CompletableFuture<NovaShowKeypairResponse>
@@ -1612,8 +1523,7 @@ public class EcsAsyncClient {
      *
      * 根据SSH密钥名称查询指定SSH密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaShowKeypairRequest 请求对象
      * @return AsyncInvoker<NovaShowKeypairRequest, NovaShowKeypairResponse>
@@ -1629,8 +1539,7 @@ public class EcsAsyncClient {
      *
      * 根据云服务器ID，查询云服务器的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaShowServerRequest 请求对象
      * @return CompletableFuture<NovaShowServerResponse>
@@ -1644,8 +1553,7 @@ public class EcsAsyncClient {
      *
      * 根据云服务器ID，查询云服务器的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NovaShowServerRequest 请求对象
      * @return AsyncInvoker<NovaShowServerRequest, NovaShowServerResponse>
@@ -1661,8 +1569,7 @@ public class EcsAsyncClient {
      *
      * 配置、删除云服务器自动恢复动作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RegisterServerAutoRecoveryRequest 请求对象
      * @return CompletableFuture<RegisterServerAutoRecoveryResponse>
@@ -1677,8 +1584,7 @@ public class EcsAsyncClient {
      *
      * 配置、删除云服务器自动恢复动作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RegisterServerAutoRecoveryRequest 请求对象
      * @return AsyncInvoker<RegisterServerAutoRecoveryRequest, RegisterServerAutoRecoveryResponse>
@@ -1696,8 +1602,7 @@ public class EcsAsyncClient {
      * 
      * 注册到监控表中的云服务会被ceilometer周期性采集监控数据，包括平台的版本、cpu信息、内存、网卡、磁盘、硬件平台等信息，这些数据上报给云监控。例如SAP云服务器内部的插件会周期性从云监控中查询监控数据，以报表形式呈现给SAP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RegisterServerMonitorRequest 请求对象
      * @return CompletableFuture<RegisterServerMonitorResponse>
@@ -1714,8 +1619,7 @@ public class EcsAsyncClient {
      * 
      * 注册到监控表中的云服务会被ceilometer周期性采集监控数据，包括平台的版本、cpu信息、内存、网卡、磁盘、硬件平台等信息，这些数据上报给云监控。例如SAP云服务器内部的插件会周期性从云监控中查询监控数据，以报表形式呈现给SAP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RegisterServerMonitorRequest 请求对象
      * @return AsyncInvoker<RegisterServerMonitorRequest, RegisterServerMonitorResponse>
@@ -1733,8 +1637,7 @@ public class EcsAsyncClient {
      * 
      * 调用该接口后，系统将卸载系统盘，然后使用原镜像重新创建系统盘，并挂载至弹性云服务器，实现重装操作系统功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ReinstallServerWithCloudInitRequest 请求对象
      * @return CompletableFuture<ReinstallServerWithCloudInitResponse>
@@ -1751,8 +1654,7 @@ public class EcsAsyncClient {
      * 
      * 调用该接口后，系统将卸载系统盘，然后使用原镜像重新创建系统盘，并挂载至弹性云服务器，实现重装操作系统功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ReinstallServerWithCloudInitRequest 请求对象
      * @return AsyncInvoker<ReinstallServerWithCloudInitRequest, ReinstallServerWithCloudInitResponse>
@@ -1770,8 +1672,7 @@ public class EcsAsyncClient {
      * 
      * 该接口支持未安装Cloud-init或Cloudbase-init的镜像。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ReinstallServerWithoutCloudInitRequest 请求对象
      * @return CompletableFuture<ReinstallServerWithoutCloudInitResponse>
@@ -1788,8 +1689,7 @@ public class EcsAsyncClient {
      * 
      * 该接口支持未安装Cloud-init或Cloudbase-init的镜像。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ReinstallServerWithoutCloudInitRequest 请求对象
      * @return AsyncInvoker<ReinstallServerWithoutCloudInitRequest, ReinstallServerWithoutCloudInitResponse>
@@ -1805,8 +1705,7 @@ public class EcsAsyncClient {
      *
      * 重置弹性云服务器管理帐号（root用户或Administrator用户）的密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetServerPasswordRequest 请求对象
      * @return CompletableFuture<ResetServerPasswordResponse>
@@ -1820,8 +1719,7 @@ public class EcsAsyncClient {
      *
      * 重置弹性云服务器管理帐号（root用户或Administrator用户）的密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetServerPasswordRequest 请求对象
      * @return AsyncInvoker<ResetServerPasswordRequest, ResetServerPasswordResponse>
@@ -1841,8 +1739,7 @@ public class EcsAsyncClient {
      * 
      * 您可以通过接口“/v1/{project_id}/cloudservers/resize_flavors?{instance_uuid,source_flavor_id,source_flavor_name}”查询支持列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizePostPaidServerRequest 请求对象
      * @return CompletableFuture<ResizePostPaidServerResponse>
@@ -1861,8 +1758,7 @@ public class EcsAsyncClient {
      * 
      * 您可以通过接口“/v1/{project_id}/cloudservers/resize_flavors?{instance_uuid,source_flavor_id,source_flavor_name}”查询支持列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizePostPaidServerRequest 请求对象
      * @return AsyncInvoker<ResizePostPaidServerRequest, ResizePostPaidServerResponse>
@@ -1886,8 +1782,7 @@ public class EcsAsyncClient {
      * - 如果使用AK/SK认证方式，示例代码中region请参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)中“弹性云服务 ECS”下“区域”的内容，，serviceName（英文服务名称缩写）请指定为ECS。
      * - Endpoint请参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)中“弹性云服务 ECS”下“终端节点（Endpoint）”的内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeServerRequest 请求对象
      * @return CompletableFuture<ResizeServerResponse>
@@ -1909,8 +1804,7 @@ public class EcsAsyncClient {
      * - 如果使用AK/SK认证方式，示例代码中region请参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)中“弹性云服务 ECS”下“区域”的内容，，serviceName（英文服务名称缩写）请指定为ECS。
      * - Endpoint请参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)中“弹性云服务 ECS”下“终端节点（Endpoint）”的内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeServerRequest 请求对象
      * @return AsyncInvoker<ResizeServerRequest, ResizeServerResponse>
@@ -1925,8 +1819,7 @@ public class EcsAsyncClient {
      *
      * 查询弹性云服务器是否支持一键重置密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResetPasswordFlagRequest 请求对象
      * @return CompletableFuture<ShowResetPasswordFlagResponse>
@@ -1941,8 +1834,7 @@ public class EcsAsyncClient {
      *
      * 查询弹性云服务器是否支持一键重置密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResetPasswordFlagRequest 请求对象
      * @return AsyncInvoker<ShowResetPasswordFlagRequest, ShowResetPasswordFlagResponse>
@@ -1960,8 +1852,7 @@ public class EcsAsyncClient {
      * 
      * 该接口支持查询弹性云服务器的计费方式，以及是否被冻结。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerRequest 请求对象
      * @return CompletableFuture<ShowServerResponse>
@@ -1977,8 +1868,7 @@ public class EcsAsyncClient {
      * 
      * 该接口支持查询弹性云服务器的计费方式，以及是否被冻结。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerRequest 请求对象
      * @return AsyncInvoker<ShowServerRequest, ShowServerResponse>
@@ -1992,8 +1882,7 @@ public class EcsAsyncClient {
      *
      * 查询云服务器是否配置了自动恢复动作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerAutoRecoveryRequest 请求对象
      * @return CompletableFuture<ShowServerAutoRecoveryResponse>
@@ -2008,8 +1897,7 @@ public class EcsAsyncClient {
      *
      * 查询云服务器是否配置了自动恢复动作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerAutoRecoveryRequest 请求对象
      * @return AsyncInvoker<ShowServerAutoRecoveryRequest, ShowServerAutoRecoveryResponse>
@@ -2025,8 +1913,7 @@ public class EcsAsyncClient {
      *
      * 查询弹性云服务器挂载的单个磁盘信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerBlockDeviceRequest 请求对象
      * @return CompletableFuture<ShowServerBlockDeviceResponse>
@@ -2041,8 +1928,7 @@ public class EcsAsyncClient {
      *
      * 查询弹性云服务器挂载的单个磁盘信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerBlockDeviceRequest 请求对象
      * @return AsyncInvoker<ShowServerBlockDeviceRequest, ShowServerBlockDeviceResponse>
@@ -2060,8 +1946,7 @@ public class EcsAsyncClient {
      * 
      * 与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerGroupRequest 请求对象
      * @return CompletableFuture<ShowServerGroupResponse>
@@ -2077,8 +1962,7 @@ public class EcsAsyncClient {
      * 
      * 与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerGroupRequest 请求对象
      * @return AsyncInvoker<ShowServerGroupRequest, ShowServerGroupResponse>
@@ -2094,8 +1978,7 @@ public class EcsAsyncClient {
      *
      * 查询租户配额信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerLimitsRequest 请求对象
      * @return CompletableFuture<ShowServerLimitsResponse>
@@ -2109,8 +1992,7 @@ public class EcsAsyncClient {
      *
      * 查询租户配额信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerLimitsRequest 请求对象
      * @return AsyncInvoker<ShowServerLimitsRequest, ShowServerLimitsResponse>
@@ -2126,8 +2008,7 @@ public class EcsAsyncClient {
      *
      * 当通过支持Cloudbase-init功能的镜像创建Windows云服务器时，获取云服务器初始安装时系统生成的管理员帐户（Administrator帐户或Cloudbase-init设置的帐户）随机密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerPasswordRequest 请求对象
      * @return CompletableFuture<ShowServerPasswordResponse>
@@ -2141,8 +2022,7 @@ public class EcsAsyncClient {
      *
      * 当通过支持Cloudbase-init功能的镜像创建Windows云服务器时，获取云服务器初始安装时系统生成的管理员帐户（Administrator帐户或Cloudbase-init设置的帐户）随机密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerPasswordRequest 请求对象
      * @return AsyncInvoker<ShowServerPasswordRequest, ShowServerPasswordResponse>
@@ -2158,8 +2038,7 @@ public class EcsAsyncClient {
      *
      * 获取弹性云服务器VNC远程登录地址。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerRemoteConsoleRequest 请求对象
      * @return CompletableFuture<ShowServerRemoteConsoleResponse>
@@ -2174,8 +2053,7 @@ public class EcsAsyncClient {
      *
      * 获取弹性云服务器VNC远程登录地址。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerRemoteConsoleRequest 请求对象
      * @return AsyncInvoker<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse>
@@ -2193,8 +2071,7 @@ public class EcsAsyncClient {
      * 
      * - 标签管理服务TMS使用该接口查询指定云服务器的全部标签数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerTagsRequest 请求对象
      * @return CompletableFuture<ShowServerTagsResponse>
@@ -2210,8 +2087,7 @@ public class EcsAsyncClient {
      * 
      * - 标签管理服务TMS使用该接口查询指定云服务器的全部标签数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerTagsRequest 请求对象
      * @return AsyncInvoker<ShowServerTagsRequest, ShowServerTagsResponse>
@@ -2227,8 +2103,7 @@ public class EcsAsyncClient {
      *
      * 修改云服务器信息，目前支持修改云服务器名称及描述和hostname。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServerRequest 请求对象
      * @return CompletableFuture<UpdateServerResponse>
@@ -2242,8 +2117,7 @@ public class EcsAsyncClient {
      *
      * 修改云服务器信息，目前支持修改云服务器名称及描述和hostname。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServerRequest 请求对象
      * @return AsyncInvoker<UpdateServerRequest, UpdateServerResponse>
@@ -2260,8 +2134,7 @@ public class EcsAsyncClient {
      * 
      * 该接口支持企业项目细粒度权限的校验，具体细粒度请参见 ecs:cloudServers:put。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServerAutoTerminateTimeRequest 请求对象
      * @return CompletableFuture<UpdateServerAutoTerminateTimeResponse>
@@ -2278,8 +2151,7 @@ public class EcsAsyncClient {
      * 
      * 该接口支持企业项目细粒度权限的校验，具体细粒度请参见 ecs:cloudServers:put。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServerAutoTerminateTimeRequest 请求对象
      * @return AsyncInvoker<UpdateServerAutoTerminateTimeRequest, UpdateServerAutoTerminateTimeResponse>
@@ -2295,8 +2167,7 @@ public class EcsAsyncClient {
      *
      * 修改云服务器云主机挂载的单个磁盘信息。&#39;当前仅支持修改delete_on_termination字段。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServerBlockDeviceRequest 请求对象
      * @return CompletableFuture<UpdateServerBlockDeviceResponse>
@@ -2311,8 +2182,7 @@ public class EcsAsyncClient {
      *
      * 修改云服务器云主机挂载的单个磁盘信息。&#39;当前仅支持修改delete_on_termination字段。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServerBlockDeviceRequest 请求对象
      * @return AsyncInvoker<UpdateServerBlockDeviceRequest, UpdateServerBlockDeviceResponse>
@@ -2334,8 +2204,7 @@ public class EcsAsyncClient {
      * 
      * - 如果元数据中的字段不再请求参数中，则保持不变
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServerMetadataRequest 请求对象
      * @return CompletableFuture<UpdateServerMetadataResponse>
@@ -2356,8 +2225,7 @@ public class EcsAsyncClient {
      * 
      * - 如果元数据中的字段不再请求参数中，则保持不变
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServerMetadataRequest 请求对象
      * @return AsyncInvoker<UpdateServerMetadataRequest, UpdateServerMetadataResponse>
@@ -2375,8 +2243,7 @@ public class EcsAsyncClient {
      * 
      * 对于创建云服务器、删除云服务器、云服务器批量操作和网卡操作等异步API，命令下发后，会返回job_id，通过job_id可以查询任务的执行状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return CompletableFuture<ShowJobResponse>
@@ -2392,8 +2259,7 @@ public class EcsAsyncClient {
      * 
      * 对于创建云服务器、删除云服务器、云服务器批量操作和网卡操作等异步API，命令下发后，会返回job_id，通过job_id可以查询任务的执行状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>

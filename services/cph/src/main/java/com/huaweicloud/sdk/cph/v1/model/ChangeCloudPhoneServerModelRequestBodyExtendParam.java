@@ -22,6 +22,8 @@ public class ChangeCloudPhoneServerModelRequestBodyExtendParam {
 
     /**
      * 否自动付款。默认不自动付款。如果是规格升配的变更，则需要支付额外的费用，如果是降配的变更，则会自动退款。 - 1 表示自动付款 - 0 表示不自动付款
+     * minimum: -128
+     * maximum: 128
      * @return isAutoPay
      */
     public Integer getIsAutoPay() {

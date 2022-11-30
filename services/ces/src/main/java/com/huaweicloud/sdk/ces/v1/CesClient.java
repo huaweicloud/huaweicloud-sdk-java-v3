@@ -22,8 +22,7 @@ public class CesClient {
      *
      * 批量查询指定时间范围内指定指标的指定粒度的监控数据，目前最多支持500指标的批量查询。 对于不同的period取值和查询的指标数量，默认的最大查询区间(to-from)不同。 规则为\&quot;指标数量*(to-from)/监控周期&lt;&#x3D;3000\&quot;，若超出阈值，会自动调整from以满足规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchListMetricDataRequest 请求对象
      * @return BatchListMetricDataResponse
@@ -37,8 +36,7 @@ public class CesClient {
      *
      * 批量查询指定时间范围内指定指标的指定粒度的监控数据，目前最多支持500指标的批量查询。 对于不同的period取值和查询的指标数量，默认的最大查询区间(to-from)不同。 规则为\&quot;指标数量*(to-from)/监控周期&lt;&#x3D;3000\&quot;，若超出阈值，会自动调整from以满足规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchListMetricDataRequest 请求对象
      * @return SyncInvoker<BatchListMetricDataRequest, BatchListMetricDataResponse>
@@ -54,8 +52,7 @@ public class CesClient {
      *
      * 创建一条告警规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAlarmRequest 请求对象
      * @return CreateAlarmResponse
@@ -69,8 +66,7 @@ public class CesClient {
      *
      * 创建一条告警规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAlarmRequest 请求对象
      * @return SyncInvoker<CreateAlarmRequest, CreateAlarmResponse>
@@ -84,8 +80,7 @@ public class CesClient {
      *
      * 创建自定义告警模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAlarmTemplateRequest 请求对象
      * @return CreateAlarmTemplateResponse
@@ -99,8 +94,7 @@ public class CesClient {
      *
      * 创建自定义告警模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAlarmTemplateRequest 请求对象
      * @return SyncInvoker<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse>
@@ -116,8 +110,7 @@ public class CesClient {
      *
      * 上报自定义事件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEventsRequest 请求对象
      * @return CreateEventsResponse
@@ -131,8 +124,7 @@ public class CesClient {
      *
      * 上报自定义事件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEventsRequest 请求对象
      * @return SyncInvoker<CreateEventsRequest, CreateEventsResponse>
@@ -146,8 +138,7 @@ public class CesClient {
      *
      * 添加一条或多条指标监控数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMetricDataRequest 请求对象
      * @return CreateMetricDataResponse
@@ -161,8 +152,7 @@ public class CesClient {
      *
      * 添加一条或多条指标监控数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMetricDataRequest 请求对象
      * @return SyncInvoker<CreateMetricDataRequest, CreateMetricDataResponse>
@@ -178,8 +168,7 @@ public class CesClient {
      *
      * 创建资源分组，资源分组支持将各类资源按照业务集中进行分组管理，可以从分组角度查看监控与告警信息，以提升运维效率。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResourceGroupRequest 请求对象
      * @return CreateResourceGroupResponse
@@ -193,8 +182,7 @@ public class CesClient {
      *
      * 创建资源分组，资源分组支持将各类资源按照业务集中进行分组管理，可以从分组角度查看监控与告警信息，以提升运维效率。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResourceGroupRequest 请求对象
      * @return SyncInvoker<CreateResourceGroupRequest, CreateResourceGroupResponse>
@@ -210,8 +198,7 @@ public class CesClient {
      *
      * 删除一条告警规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAlarmRequest 请求对象
      * @return DeleteAlarmResponse
@@ -225,8 +212,7 @@ public class CesClient {
      *
      * 删除一条告警规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAlarmRequest 请求对象
      * @return SyncInvoker<DeleteAlarmRequest, DeleteAlarmResponse>
@@ -240,8 +226,7 @@ public class CesClient {
      *
      * 根据ID删除自定义告警模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAlarmTemplateRequest 请求对象
      * @return DeleteAlarmTemplateResponse
@@ -255,8 +240,7 @@ public class CesClient {
      *
      * 根据ID删除自定义告警模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAlarmTemplateRequest 请求对象
      * @return SyncInvoker<DeleteAlarmTemplateRequest, DeleteAlarmTemplateResponse>
@@ -272,8 +256,7 @@ public class CesClient {
      *
      * 删除一条资源分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceGroupRequest 请求对象
      * @return DeleteResourceGroupResponse
@@ -287,8 +270,7 @@ public class CesClient {
      *
      * 删除一条资源分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceGroupRequest 请求对象
      * @return SyncInvoker<DeleteResourceGroupRequest, DeleteResourceGroupResponse>
@@ -304,8 +286,7 @@ public class CesClient {
      *
      * 查询告警历史列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmHistoriesRequest 请求对象
      * @return ListAlarmHistoriesResponse
@@ -319,8 +300,7 @@ public class CesClient {
      *
      * 查询告警历史列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmHistoriesRequest 请求对象
      * @return SyncInvoker<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse>
@@ -336,8 +316,7 @@ public class CesClient {
      *
      * 查询自定义告警模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmTemplatesRequest 请求对象
      * @return ListAlarmTemplatesResponse
@@ -351,8 +330,7 @@ public class CesClient {
      *
      * 查询自定义告警模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmTemplatesRequest 请求对象
      * @return SyncInvoker<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse>
@@ -368,8 +346,7 @@ public class CesClient {
      *
      * 查询告警规则列表，可以指定分页条件限制结果数量，可以指定排序规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmsRequest 请求对象
      * @return ListAlarmsResponse
@@ -383,8 +360,7 @@ public class CesClient {
      *
      * 查询告警规则列表，可以指定分页条件限制结果数量，可以指定排序规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmsRequest 请求对象
      * @return SyncInvoker<ListAlarmsRequest, ListAlarmsResponse>
@@ -398,8 +374,7 @@ public class CesClient {
      *
      * 根据事件监控名称，查询该事件发生的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventDetailRequest 请求对象
      * @return ListEventDetailResponse
@@ -413,8 +388,7 @@ public class CesClient {
      *
      * 根据事件监控名称，查询该事件发生的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventDetailRequest 请求对象
      * @return SyncInvoker<ListEventDetailRequest, ListEventDetailResponse>
@@ -430,8 +404,7 @@ public class CesClient {
      *
      * 查询事件监控列表，包括系统事件和自定义事件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventsRequest 请求对象
      * @return ListEventsResponse
@@ -445,8 +418,7 @@ public class CesClient {
      *
      * 查询事件监控列表，包括系统事件和自定义事件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventsRequest 请求对象
      * @return SyncInvoker<ListEventsRequest, ListEventsResponse>
@@ -460,8 +432,7 @@ public class CesClient {
      *
      * 查询系统当前可监控指标列表，可以指定指标命名空间、指标名称、维度、排序方式，起始记录和最大记录条数过滤查询结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMetricsRequest 请求对象
      * @return ListMetricsResponse
@@ -475,8 +446,7 @@ public class CesClient {
      *
      * 查询系统当前可监控指标列表，可以指定指标命名空间、指标名称、维度、排序方式，起始记录和最大记录条数过滤查询结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMetricsRequest 请求对象
      * @return SyncInvoker<ListMetricsRequest, ListMetricsResponse>
@@ -490,8 +460,7 @@ public class CesClient {
      *
      * 查询所创建的所有资源分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourceGroupRequest 请求对象
      * @return ListResourceGroupResponse
@@ -505,8 +474,7 @@ public class CesClient {
      *
      * 查询所创建的所有资源分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourceGroupRequest 请求对象
      * @return SyncInvoker<ListResourceGroupRequest, ListResourceGroupResponse>
@@ -522,8 +490,7 @@ public class CesClient {
      *
      * 根据告警ID查询告警规则信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAlarmRequest 请求对象
      * @return ShowAlarmResponse
@@ -537,8 +504,7 @@ public class CesClient {
      *
      * 根据告警ID查询告警规则信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAlarmRequest 请求对象
      * @return SyncInvoker<ShowAlarmRequest, ShowAlarmResponse>
@@ -552,8 +518,7 @@ public class CesClient {
      *
      * 查询指定时间范围指定事件类型的主机配置数据，可以通过参数指定需要查询的数据维度。注意：该接口提供给HANA场景下SAP Monitor查询主机配置数据，其他场景下查不到主机配置数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEventDataRequest 请求对象
      * @return ShowEventDataResponse
@@ -567,8 +532,7 @@ public class CesClient {
      *
      * 查询指定时间范围指定事件类型的主机配置数据，可以通过参数指定需要查询的数据维度。注意：该接口提供给HANA场景下SAP Monitor查询主机配置数据，其他场景下查不到主机配置数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEventDataRequest 请求对象
      * @return SyncInvoker<ShowEventDataRequest, ShowEventDataResponse>
@@ -582,8 +546,7 @@ public class CesClient {
      *
      * 查询指定时间范围指定指标的指定粒度的监控数据，可以通过参数指定需要查询的数据维度。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMetricDataRequest 请求对象
      * @return ShowMetricDataResponse
@@ -597,8 +560,7 @@ public class CesClient {
      *
      * 查询指定时间范围指定指标的指定粒度的监控数据，可以通过参数指定需要查询的数据维度。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMetricDataRequest 请求对象
      * @return SyncInvoker<ShowMetricDataRequest, ShowMetricDataResponse>
@@ -614,8 +576,7 @@ public class CesClient {
      *
      * 查询用户可以创建的资源配额总数及当前使用量，当前仅有告警规则一种资源类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotasRequest 请求对象
      * @return ShowQuotasResponse
@@ -629,8 +590,7 @@ public class CesClient {
      *
      * 查询用户可以创建的资源配额总数及当前使用量，当前仅有告警规则一种资源类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotasRequest 请求对象
      * @return SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
@@ -644,8 +604,7 @@ public class CesClient {
      *
      * 根据资源分组ID查询资源分组下的资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceGroupRequest 请求对象
      * @return ShowResourceGroupResponse
@@ -659,8 +618,7 @@ public class CesClient {
      *
      * 根据资源分组ID查询资源分组下的资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceGroupRequest 请求对象
      * @return SyncInvoker<ShowResourceGroupRequest, ShowResourceGroupResponse>
@@ -676,8 +634,7 @@ public class CesClient {
      *
      * 修改告警规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlarmRequest 请求对象
      * @return UpdateAlarmResponse
@@ -691,8 +648,7 @@ public class CesClient {
      *
      * 修改告警规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlarmRequest 请求对象
      * @return SyncInvoker<UpdateAlarmRequest, UpdateAlarmResponse>
@@ -706,8 +662,7 @@ public class CesClient {
      *
      * 启动或停止一条告警规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlarmActionRequest 请求对象
      * @return UpdateAlarmActionResponse
@@ -721,8 +676,7 @@ public class CesClient {
      *
      * 启动或停止一条告警规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlarmActionRequest 请求对象
      * @return SyncInvoker<UpdateAlarmActionRequest, UpdateAlarmActionResponse>
@@ -738,8 +692,7 @@ public class CesClient {
      *
      * 更新自定义告警模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlarmTemplateRequest 请求对象
      * @return UpdateAlarmTemplateResponse
@@ -753,8 +706,7 @@ public class CesClient {
      *
      * 更新自定义告警模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlarmTemplateRequest 请求对象
      * @return SyncInvoker<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse>
@@ -770,8 +722,7 @@ public class CesClient {
      *
      * 更新资源分组，资源分组支持将各类资源按照业务集中进行分组管理，可以从分组角度查看监控与告警信息，以提升运维效率。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResourceGroupRequest 请求对象
      * @return UpdateResourceGroupResponse
@@ -785,8 +736,7 @@ public class CesClient {
      *
      * 更新资源分组，资源分组支持将各类资源按照业务集中进行分组管理，可以从分组角度查看监控与告警信息，以提升运维效率。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResourceGroupRequest 请求对象
      * @return SyncInvoker<UpdateResourceGroupRequest, UpdateResourceGroupResponse>

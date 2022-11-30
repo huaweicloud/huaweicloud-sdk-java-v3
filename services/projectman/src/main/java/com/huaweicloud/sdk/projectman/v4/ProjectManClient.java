@@ -22,8 +22,7 @@ public class ProjectManClient {
      *
      * AGC调用 当前用户申请加入项目, 申请的用户id写在header中
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddApplyJoinProjectForAgcRequest 请求对象
      * @return AddApplyJoinProjectForAgcResponse
@@ -37,8 +36,7 @@ public class ProjectManClient {
      *
      * AGC调用 当前用户申请加入项目, 申请的用户id写在header中
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddApplyJoinProjectForAgcRequest 请求对象
      * @return SyncInvoker<AddApplyJoinProjectForAgcRequest, AddApplyJoinProjectForAgcResponse>
@@ -54,8 +52,7 @@ public class ProjectManClient {
      *
      * 添加项目成员,可以添加跨租户成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddMemberV4Request 请求对象
      * @return AddMemberV4Response
@@ -69,8 +66,7 @@ public class ProjectManClient {
      *
      * 添加项目成员,可以添加跨租户成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddMemberV4Request 请求对象
      * @return SyncInvoker<AddMemberV4Request, AddMemberV4Response>
@@ -84,8 +80,7 @@ public class ProjectManClient {
      *
      * 批量添加项目成员，只能添加和项目创建者同一租户下的成员，不正确的用户id会略过，添加的用户超过权限的，默认角色设置为7
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddMembersV4Request 请求对象
      * @return BatchAddMembersV4Response
@@ -99,8 +94,7 @@ public class ProjectManClient {
      *
      * 批量添加项目成员，只能添加和项目创建者同一租户下的成员，不正确的用户id会略过，添加的用户超过权限的，默认角色设置为7
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddMembersV4Request 请求对象
      * @return SyncInvoker<BatchAddMembersV4Request, BatchAddMembersV4Response>
@@ -116,8 +110,7 @@ public class ProjectManClient {
      *
      * 批量删除项目成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteMembersV4Request 请求对象
      * @return BatchDeleteMembersV4Response
@@ -131,8 +124,7 @@ public class ProjectManClient {
      *
      * 批量删除项目成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteMembersV4Request 请求对象
      * @return SyncInvoker<BatchDeleteMembersV4Request, BatchDeleteMembersV4Response>
@@ -148,8 +140,7 @@ public class ProjectManClient {
      *
      * 拥有te_admin角色的用户可以更新其他用户的昵称
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchUpdateChildNickNamesRequest 请求对象
      * @return BatchUpdateChildNickNamesResponse
@@ -163,8 +154,7 @@ public class ProjectManClient {
      *
      * 拥有te_admin角色的用户可以更新其他用户的昵称
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchUpdateChildNickNamesRequest 请求对象
      * @return SyncInvoker<BatchUpdateChildNickNamesRequest, BatchUpdateChildNickNamesResponse>
@@ -180,8 +170,7 @@ public class ProjectManClient {
      *
      * 检查项目名称是否存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckProjectNameV4Request 请求对象
      * @return CheckProjectNameV4Response
@@ -195,8 +184,7 @@ public class ProjectManClient {
      *
      * 检查项目名称是否存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckProjectNameV4Request 请求对象
      * @return SyncInvoker<CheckProjectNameV4Request, CheckProjectNameV4Response>
@@ -212,8 +200,7 @@ public class ProjectManClient {
      *
      * 创建项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectV4Request 请求对象
      * @return CreateProjectV4Response
@@ -227,8 +214,7 @@ public class ProjectManClient {
      *
      * 创建项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectV4Request 请求对象
      * @return SyncInvoker<CreateProjectV4Request, CreateProjectV4Response>
@@ -244,8 +230,7 @@ public class ProjectManClient {
      *
      * 删除项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProjectV4Request 请求对象
      * @return DeleteProjectV4Response
@@ -259,8 +244,7 @@ public class ProjectManClient {
      *
      * 删除项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProjectV4Request 请求对象
      * @return SyncInvoker<DeleteProjectV4Request, DeleteProjectV4Response>
@@ -276,8 +260,7 @@ public class ProjectManClient {
      *
      * 获取租户没有加入的项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDomainNotAddedProjectsV4Request 请求对象
      * @return ListDomainNotAddedProjectsV4Response
@@ -292,8 +275,7 @@ public class ProjectManClient {
      *
      * 获取租户没有加入的项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDomainNotAddedProjectsV4Request 请求对象
      * @return SyncInvoker<ListDomainNotAddedProjectsV4Request, ListDomainNotAddedProjectsV4Response>
@@ -309,8 +291,7 @@ public class ProjectManClient {
      *
      * 获取bug统计信息，按模块统计
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectBugStaticsV4Request 请求对象
      * @return ListProjectBugStaticsV4Response
@@ -324,8 +305,7 @@ public class ProjectManClient {
      *
      * 获取bug统计信息，按模块统计
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectBugStaticsV4Request 请求对象
      * @return SyncInvoker<ListProjectBugStaticsV4Request, ListProjectBugStaticsV4Response>
@@ -341,8 +321,7 @@ public class ProjectManClient {
      *
      * 获取需求统计信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectDemandStaticV4Request 请求对象
      * @return ListProjectDemandStaticV4Response
@@ -356,8 +335,7 @@ public class ProjectManClient {
      *
      * 获取需求统计信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectDemandStaticV4Request 请求对象
      * @return SyncInvoker<ListProjectDemandStaticV4Request, ListProjectDemandStaticV4Response>
@@ -373,8 +351,7 @@ public class ProjectManClient {
      *
      * 获取项目成员列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectMembersV4Request 请求对象
      * @return ListProjectMembersV4Response
@@ -388,8 +365,7 @@ public class ProjectManClient {
      *
      * 获取项目成员列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectMembersV4Request 请求对象
      * @return SyncInvoker<ListProjectMembersV4Request, ListProjectMembersV4Response>
@@ -405,8 +381,7 @@ public class ProjectManClient {
      *
      * 查询项目列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectsV4Request 请求对象
      * @return ListProjectsV4Response
@@ -420,8 +395,7 @@ public class ProjectManClient {
      *
      * 查询项目列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectsV4Request 请求对象
      * @return SyncInvoker<ListProjectsV4Request, ListProjectsV4Response>
@@ -437,8 +411,7 @@ public class ProjectManClient {
      *
      * 分页查询看板项目下工作项的状态历史记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWorkitemStatusRecordsV4Request 请求对象
      * @return ListWorkitemStatusRecordsV4Response
@@ -452,8 +425,7 @@ public class ProjectManClient {
      *
      * 分页查询看板项目下工作项的状态历史记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWorkitemStatusRecordsV4Request 请求对象
      * @return SyncInvoker<ListWorkitemStatusRecordsV4Request, ListWorkitemStatusRecordsV4Response>
@@ -469,8 +441,7 @@ public class ProjectManClient {
      *
      * 查询看板项目下的工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWorkitemsRequest 请求对象
      * @return ListWorkitemsResponse
@@ -484,8 +455,7 @@ public class ProjectManClient {
      *
      * 查询看板项目下的工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWorkitemsRequest 请求对象
      * @return SyncInvoker<ListWorkitemsRequest, ListWorkitemsResponse>
@@ -500,8 +470,7 @@ public class ProjectManClient {
      *
      * 项目成员主动退出项目，项目创建者不能退出
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveProjectRequest 请求对象
      * @return RemoveProjectResponse
@@ -515,8 +484,7 @@ public class ProjectManClient {
      *
      * 项目成员主动退出项目，项目创建者不能退出
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveProjectRequest 请求对象
      * @return SyncInvoker<RemoveProjectRequest, RemoveProjectResponse>
@@ -531,8 +499,7 @@ public class ProjectManClient {
      *
      * 查询缺陷密度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBugDensityV2Request 请求对象
      * @return ShowBugDensityV2Response
@@ -546,8 +513,7 @@ public class ProjectManClient {
      *
      * 查询缺陷密度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBugDensityV2Request 请求对象
      * @return SyncInvoker<ShowBugDensityV2Request, ShowBugDensityV2Response>
@@ -563,8 +529,7 @@ public class ProjectManClient {
      *
      * 查询人均bug
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBugsPerDeveloperRequest 请求对象
      * @return ShowBugsPerDeveloperResponse
@@ -578,8 +543,7 @@ public class ProjectManClient {
      *
      * 查询人均bug
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBugsPerDeveloperRequest 请求对象
      * @return SyncInvoker<ShowBugsPerDeveloperRequest, ShowBugsPerDeveloperResponse>
@@ -595,8 +559,7 @@ public class ProjectManClient {
      *
      * 查询需求按时完成率
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCompletionRateRequest 请求对象
      * @return ShowCompletionRateResponse
@@ -610,8 +573,7 @@ public class ProjectManClient {
      *
      * 查询需求按时完成率
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCompletionRateRequest 请求对象
      * @return SyncInvoker<ShowCompletionRateRequest, ShowCompletionRateResponse>
@@ -627,8 +589,7 @@ public class ProjectManClient {
      *
      * 获取当前用户信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCurUserInfoRequest 请求对象
      * @return ShowCurUserInfoResponse
@@ -642,8 +603,7 @@ public class ProjectManClient {
      *
      * 获取当前用户信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCurUserInfoRequest 请求对象
      * @return SyncInvoker<ShowCurUserInfoRequest, ShowCurUserInfoResponse>
@@ -659,8 +619,7 @@ public class ProjectManClient {
      *
      * 获取用户在项目中的角色
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCurUserRoleRequest 请求对象
      * @return ShowCurUserRoleResponse
@@ -674,8 +633,7 @@ public class ProjectManClient {
      *
      * 获取用户在项目中的角色
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCurUserRoleRequest 请求对象
      * @return SyncInvoker<ShowCurUserRoleRequest, ShowCurUserRoleResponse>
@@ -691,8 +649,7 @@ public class ProjectManClient {
      *
      * 获取项目详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectInfoV4Request 请求对象
      * @return ShowProjectInfoV4Response
@@ -706,8 +663,7 @@ public class ProjectManClient {
      *
      * 获取项目详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectInfoV4Request 请求对象
      * @return SyncInvoker<ShowProjectInfoV4Request, ShowProjectInfoV4Response>
@@ -723,8 +679,7 @@ public class ProjectManClient {
      *
      * 获取项目概览
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectSummaryV4Request 请求对象
      * @return ShowProjectSummaryV4Response
@@ -738,8 +693,7 @@ public class ProjectManClient {
      *
      * 获取项目概览
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectSummaryV4Request 请求对象
      * @return SyncInvoker<ShowProjectSummaryV4Request, ShowProjectSummaryV4Response>
@@ -755,8 +709,7 @@ public class ProjectManClient {
      *
      * 查询看板项目的工作项流转配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowWorkItemWrokflowConfigRequest 请求对象
      * @return ShowWorkItemWrokflowConfigResponse
@@ -770,8 +723,7 @@ public class ProjectManClient {
      *
      * 查询看板项目的工作项流转配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowWorkItemWrokflowConfigRequest 请求对象
      * @return SyncInvoker<ShowWorkItemWrokflowConfigRequest, ShowWorkItemWrokflowConfigResponse>
@@ -787,8 +739,7 @@ public class ProjectManClient {
      *
      * 更新成员在项目中的角色
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMembesRoleV4Request 请求对象
      * @return UpdateMembesRoleV4Response
@@ -802,8 +753,7 @@ public class ProjectManClient {
      *
      * 更新成员在项目中的角色
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMembesRoleV4Request 请求对象
      * @return SyncInvoker<UpdateMembesRoleV4Request, UpdateMembesRoleV4Response>
@@ -819,8 +769,7 @@ public class ProjectManClient {
      *
      * 更新用户昵称
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNickNameV4Request 请求对象
      * @return UpdateNickNameV4Response
@@ -834,8 +783,7 @@ public class ProjectManClient {
      *
      * 更新用户昵称
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNickNameV4Request 请求对象
      * @return SyncInvoker<UpdateNickNameV4Request, UpdateNickNameV4Response>
@@ -851,8 +799,7 @@ public class ProjectManClient {
      *
      * 更新项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectV4Request 请求对象
      * @return UpdateProjectV4Response
@@ -866,8 +813,7 @@ public class ProjectManClient {
      *
      * 更新项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectV4Request 请求对象
      * @return SyncInvoker<UpdateProjectV4Request, UpdateProjectV4Response>
@@ -883,8 +829,7 @@ public class ProjectManClient {
      *
      * 批量删除工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteIssuesV4Request 请求对象
      * @return BatchDeleteIssuesV4Response
@@ -898,8 +843,7 @@ public class ProjectManClient {
      *
      * 批量删除工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteIssuesV4Request 请求对象
      * @return SyncInvoker<BatchDeleteIssuesV4Request, BatchDeleteIssuesV4Response>
@@ -915,8 +859,7 @@ public class ProjectManClient {
      *
      * 批量删除项目的迭代
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteIterationsV4Request 请求对象
      * @return BatchDeleteIterationsV4Response
@@ -930,8 +873,7 @@ public class ProjectManClient {
      *
      * 批量删除项目的迭代
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteIterationsV4Request 请求对象
      * @return SyncInvoker<BatchDeleteIterationsV4Request, BatchDeleteIterationsV4Response>
@@ -947,8 +889,7 @@ public class ProjectManClient {
      *
      * 取消领域与项目的关联关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelProjectDomainRequest 请求对象
      * @return CancelProjectDomainResponse
@@ -962,8 +903,7 @@ public class ProjectManClient {
      *
      * 取消领域与项目的关联关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelProjectDomainRequest 请求对象
      * @return SyncInvoker<CancelProjectDomainRequest, CancelProjectDomainResponse>
@@ -979,8 +919,7 @@ public class ProjectManClient {
      *
      * 创建工作项类型自定义字段
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCustomfieldsRequest 请求对象
      * @return CreateCustomfieldsResponse
@@ -994,8 +933,7 @@ public class ProjectManClient {
      *
      * 创建工作项类型自定义字段
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCustomfieldsRequest 请求对象
      * @return SyncInvoker<CreateCustomfieldsRequest, CreateCustomfieldsResponse>
@@ -1011,8 +949,7 @@ public class ProjectManClient {
      *
      * 创建工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateIssueV4Request 请求对象
      * @return CreateIssueV4Response
@@ -1026,8 +963,7 @@ public class ProjectManClient {
      *
      * 创建工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateIssueV4Request 请求对象
      * @return SyncInvoker<CreateIssueV4Request, CreateIssueV4Response>
@@ -1042,8 +978,7 @@ public class ProjectManClient {
      *
      * 创建Scrum项目迭代
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateIterationV4Request 请求对象
      * @return CreateIterationV4Response
@@ -1057,8 +992,7 @@ public class ProjectManClient {
      *
      * 创建Scrum项目迭代
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateIterationV4Request 请求对象
      * @return SyncInvoker<CreateIterationV4Request, CreateIterationV4Response>
@@ -1074,8 +1008,7 @@ public class ProjectManClient {
      *
      * 查询项目的领域列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectDomainRequest 请求对象
      * @return CreateProjectDomainResponse
@@ -1089,8 +1022,7 @@ public class ProjectManClient {
      *
      * 查询项目的领域列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectDomainRequest 请求对象
      * @return SyncInvoker<CreateProjectDomainRequest, CreateProjectDomainResponse>
@@ -1106,8 +1038,7 @@ public class ProjectManClient {
      *
      * 查询项目的模块列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectModuleRequest 请求对象
      * @return CreateProjectModuleResponse
@@ -1121,8 +1052,7 @@ public class ProjectManClient {
      *
      * 查询项目的模块列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectModuleRequest 请求对象
      * @return SyncInvoker<CreateProjectModuleRequest, CreateProjectModuleResponse>
@@ -1138,8 +1068,7 @@ public class ProjectManClient {
      *
      * 拥有IAM细粒度权限（projectmanConfig:systemSettingField:set）且在devcloud项目中有创建工作项的权限的用户可以设置工作项的创建者
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSystemIssueV4Request 请求对象
      * @return CreateSystemIssueV4Response
@@ -1153,8 +1082,7 @@ public class ProjectManClient {
      *
      * 拥有IAM细粒度权限（projectmanConfig:systemSettingField:set）且在devcloud项目中有创建工作项的权限的用户可以设置工作项的创建者
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSystemIssueV4Request 请求对象
      * @return SyncInvoker<CreateSystemIssueV4Request, CreateSystemIssueV4Response>
@@ -1170,8 +1098,7 @@ public class ProjectManClient {
      *
      * 删除工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIssueV4Request 请求对象
      * @return DeleteIssueV4Response
@@ -1185,8 +1112,7 @@ public class ProjectManClient {
      *
      * 删除工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIssueV4Request 请求对象
      * @return SyncInvoker<DeleteIssueV4Request, DeleteIssueV4Response>
@@ -1201,8 +1127,7 @@ public class ProjectManClient {
      *
      * 删除项目迭代
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIterationV4Request 请求对象
      * @return DeleteIterationV4Response
@@ -1216,8 +1141,7 @@ public class ProjectManClient {
      *
      * 删除项目迭代
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIterationV4Request 请求对象
      * @return SyncInvoker<DeleteIterationV4Request, DeleteIterationV4Response>
@@ -1233,8 +1157,7 @@ public class ProjectManClient {
      *
      * 删除项目的模块
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProjectModuleRequest 请求对象
      * @return DeleteProjectModuleResponse
@@ -1248,8 +1171,7 @@ public class ProjectManClient {
      *
      * 删除项目的模块
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProjectModuleRequest 请求对象
      * @return SyncInvoker<DeleteProjectModuleRequest, DeleteProjectModuleResponse>
@@ -1265,8 +1187,7 @@ public class ProjectManClient {
      *
      * 下载图片
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadImageFileRequest 请求对象
      * @return DownloadImageFileResponse
@@ -1280,8 +1201,7 @@ public class ProjectManClient {
      *
      * 下载图片
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadImageFileRequest 请求对象
      * @return SyncInvoker<DownloadImageFileRequest, DownloadImageFileResponse>
@@ -1297,8 +1217,7 @@ public class ProjectManClient {
      *
      * 查询当前工作项已经关联的工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAssociatedIssuesRequest 请求对象
      * @return ListAssociatedIssuesResponse
@@ -1312,8 +1231,7 @@ public class ProjectManClient {
      *
      * 查询当前工作项已经关联的工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAssociatedIssuesRequest 请求对象
      * @return SyncInvoker<ListAssociatedIssuesRequest, ListAssociatedIssuesResponse>
@@ -1329,8 +1247,7 @@ public class ProjectManClient {
      *
      * 查询关联用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAssociatedTestCasesRequest 请求对象
      * @return ListAssociatedTestCasesResponse
@@ -1344,8 +1261,7 @@ public class ProjectManClient {
      *
      * 查询关联用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAssociatedTestCasesRequest 请求对象
      * @return SyncInvoker<ListAssociatedTestCasesRequest, ListAssociatedTestCasesResponse>
@@ -1361,8 +1277,7 @@ public class ProjectManClient {
      *
      * 查询当前工作项已经关联的关联Wiki
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAssociatedWikisRequest 请求对象
      * @return ListAssociatedWikisResponse
@@ -1376,8 +1291,7 @@ public class ProjectManClient {
      *
      * 查询当前工作项已经关联的关联Wiki
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAssociatedWikisRequest 请求对象
      * @return SyncInvoker<ListAssociatedWikisRequest, ListAssociatedWikisResponse>
@@ -1393,8 +1307,7 @@ public class ProjectManClient {
      *
      * 获取子工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListChildIssuesV4Request 请求对象
      * @return ListChildIssuesV4Response
@@ -1408,8 +1321,7 @@ public class ProjectManClient {
      *
      * 获取子工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListChildIssuesV4Request 请求对象
      * @return SyncInvoker<ListChildIssuesV4Request, ListChildIssuesV4Response>
@@ -1425,8 +1337,7 @@ public class ProjectManClient {
      *
      * 查询当前工作项已经关联的代码提交记录 / 分支创建记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIssueAssociatedCommitsRequest 请求对象
      * @return ListIssueAssociatedCommitsResponse
@@ -1440,8 +1351,7 @@ public class ProjectManClient {
      *
      * 查询当前工作项已经关联的代码提交记录 / 分支创建记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIssueAssociatedCommitsRequest 请求对象
      * @return SyncInvoker<ListIssueAssociatedCommitsRequest, ListIssueAssociatedCommitsResponse>
@@ -1457,8 +1367,7 @@ public class ProjectManClient {
      *
      * 获取工作项的评论
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIssueCommentsV4Request 请求对象
      * @return ListIssueCommentsV4Response
@@ -1472,8 +1381,7 @@ public class ProjectManClient {
      *
      * 获取工作项的评论
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIssueCommentsV4Request 请求对象
      * @return SyncInvoker<ListIssueCommentsV4Request, ListIssueCommentsV4Response>
@@ -1489,8 +1397,7 @@ public class ProjectManClient {
      *
      * 查询Scrum工作项自定义字段的可选列表,符合custom_fields或者names条件的都返回,2个值都不传，返回所有的自定义字段列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIssueCustomFieldsRequest 请求对象
      * @return ListIssueCustomFieldsResponse
@@ -1504,8 +1411,7 @@ public class ProjectManClient {
      *
      * 查询Scrum工作项自定义字段的可选列表,符合custom_fields或者names条件的都返回,2个值都不传，返回所有的自定义字段列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIssueCustomFieldsRequest 请求对象
      * @return SyncInvoker<ListIssueCustomFieldsRequest, ListIssueCustomFieldsResponse>
@@ -1521,8 +1427,7 @@ public class ProjectManClient {
      *
      * 获取工作项历史记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIssueRecordsV4Request 请求对象
      * @return ListIssueRecordsV4Response
@@ -1536,8 +1441,7 @@ public class ProjectManClient {
      *
      * 获取工作项历史记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIssueRecordsV4Request 请求对象
      * @return SyncInvoker<ListIssueRecordsV4Request, ListIssueRecordsV4Response>
@@ -1553,8 +1457,7 @@ public class ProjectManClient {
      *
      * 工作项类型id, 分页参数，创建时间查询项目的工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIssuesSfV4Request 请求对象
      * @return ListIssuesSfV4Response
@@ -1568,8 +1471,7 @@ public class ProjectManClient {
      *
      * 工作项类型id, 分页参数，创建时间查询项目的工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIssuesSfV4Request 请求对象
      * @return SyncInvoker<ListIssuesSfV4Request, ListIssuesSfV4Response>
@@ -1585,8 +1487,7 @@ public class ProjectManClient {
      *
      * 根据筛选条件查询工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIssuesV4Request 请求对象
      * @return ListIssuesV4Response
@@ -1600,8 +1501,7 @@ public class ProjectManClient {
      *
      * 根据筛选条件查询工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIssuesV4Request 请求对象
      * @return SyncInvoker<ListIssuesV4Request, ListIssuesV4Response>
@@ -1616,8 +1516,7 @@ public class ProjectManClient {
      *
      * 查看迭代历史记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIterationHistoriesRequest 请求对象
      * @return ListIterationHistoriesResponse
@@ -1631,8 +1530,7 @@ public class ProjectManClient {
      *
      * 查看迭代历史记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIterationHistoriesRequest 请求对象
      * @return SyncInvoker<ListIterationHistoriesRequest, ListIterationHistoriesResponse>
@@ -1648,8 +1546,7 @@ public class ProjectManClient {
      *
      * 查询项目的领域列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectDomainsRequest 请求对象
      * @return ListProjectDomainsResponse
@@ -1663,8 +1560,7 @@ public class ProjectManClient {
      *
      * 查询项目的领域列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectDomainsRequest 请求对象
      * @return SyncInvoker<ListProjectDomainsRequest, ListProjectDomainsResponse>
@@ -1680,8 +1576,7 @@ public class ProjectManClient {
      *
      * 查询项目下所有工作项的历史记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectIssuesRecordsV4Request 请求对象
      * @return ListProjectIssuesRecordsV4Response
@@ -1695,8 +1590,7 @@ public class ProjectManClient {
      *
      * 查询项目下所有工作项的历史记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectIssuesRecordsV4Request 请求对象
      * @return SyncInvoker<ListProjectIssuesRecordsV4Request, ListProjectIssuesRecordsV4Response>
@@ -1712,8 +1606,7 @@ public class ProjectManClient {
      *
      * 获取项目迭代
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectIterationsV4Request 请求对象
      * @return ListProjectIterationsV4Response
@@ -1727,8 +1620,7 @@ public class ProjectManClient {
      *
      * 获取项目迭代
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectIterationsV4Request 请求对象
      * @return SyncInvoker<ListProjectIterationsV4Request, ListProjectIterationsV4Response>
@@ -1744,8 +1636,7 @@ public class ProjectManClient {
      *
      * 查询项目的模块列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectModulesRequest 请求对象
      * @return ListProjectModulesResponse
@@ -1759,8 +1650,7 @@ public class ProjectManClient {
      *
      * 查询项目的模块列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectModulesRequest 请求对象
      * @return SyncInvoker<ListProjectModulesRequest, ListProjectModulesResponse>
@@ -1776,8 +1666,7 @@ public class ProjectManClient {
      *
      * 按用户查询工时（多项目）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectWorkHoursRequest 请求对象
      * @return ListProjectWorkHoursResponse
@@ -1791,8 +1680,7 @@ public class ProjectManClient {
      *
      * 按用户查询工时（多项目）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectWorkHoursRequest 请求对象
      * @return SyncInvoker<ListProjectWorkHoursRequest, ListProjectWorkHoursResponse>
@@ -1808,8 +1696,7 @@ public class ProjectManClient {
      *
      * 查询项目的状态列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListScrumProjectStatusesRequest 请求对象
      * @return ListScrumProjectStatusesResponse
@@ -1823,8 +1710,7 @@ public class ProjectManClient {
      *
      * 查询项目的状态列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListScrumProjectStatusesRequest 请求对象
      * @return SyncInvoker<ListScrumProjectStatusesRequest, ListScrumProjectStatusesResponse>
@@ -1840,8 +1726,7 @@ public class ProjectManClient {
      *
      * 获取工作项的完成率
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIssueCompletionRateRequest 请求对象
      * @return ShowIssueCompletionRateResponse
@@ -1855,8 +1740,7 @@ public class ProjectManClient {
      *
      * 获取工作项的完成率
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIssueCompletionRateRequest 请求对象
      * @return SyncInvoker<ShowIssueCompletionRateRequest, ShowIssueCompletionRateResponse>
@@ -1872,8 +1756,7 @@ public class ProjectManClient {
      *
      * 查询工作项详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIssueV4Request 请求对象
      * @return ShowIssueV4Response
@@ -1887,8 +1770,7 @@ public class ProjectManClient {
      *
      * 查询工作项详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIssueV4Request 请求对象
      * @return SyncInvoker<ShowIssueV4Request, ShowIssueV4Response>
@@ -1902,8 +1784,7 @@ public class ProjectManClient {
      *
      * 查询Scrum项目的工作项流转配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIssuesWrokFlowConfigRequest 请求对象
      * @return ShowIssuesWrokFlowConfigResponse
@@ -1917,8 +1798,7 @@ public class ProjectManClient {
      *
      * 查询Scrum项目的工作项流转配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIssuesWrokFlowConfigRequest 请求对象
      * @return SyncInvoker<ShowIssuesWrokFlowConfigRequest, ShowIssuesWrokFlowConfigResponse>
@@ -1934,8 +1814,7 @@ public class ProjectManClient {
      *
      * 查看迭代详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIterationV4Request 请求对象
      * @return ShowIterationV4Response
@@ -1949,8 +1828,7 @@ public class ProjectManClient {
      *
      * 查看迭代详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIterationV4Request 请求对象
      * @return SyncInvoker<ShowIterationV4Request, ShowIterationV4Response>
@@ -1966,8 +1844,7 @@ public class ProjectManClient {
      *
      * 按用户查询工时（单项目）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectWorkHoursRequest 请求对象
      * @return ShowProjectWorkHoursResponse
@@ -1981,8 +1858,7 @@ public class ProjectManClient {
      *
      * 按用户查询工时（单项目）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectWorkHoursRequest 请求对象
      * @return SyncInvoker<ShowProjectWorkHoursRequest, ShowProjectWorkHoursResponse>
@@ -1998,8 +1874,7 @@ public class ProjectManClient {
      *
      * 更新工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIssueV4Request 请求对象
      * @return UpdateIssueV4Response
@@ -2013,8 +1888,7 @@ public class ProjectManClient {
      *
      * 更新工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIssueV4Request 请求对象
      * @return SyncInvoker<UpdateIssueV4Request, UpdateIssueV4Response>
@@ -2029,8 +1903,7 @@ public class ProjectManClient {
      *
      * 更新Scrum项目迭代
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIterationV4Request 请求对象
      * @return UpdateIterationV4Response
@@ -2044,8 +1917,7 @@ public class ProjectManClient {
      *
      * 更新Scrum项目迭代
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIterationV4Request 请求对象
      * @return SyncInvoker<UpdateIterationV4Request, UpdateIterationV4Response>
@@ -2061,8 +1933,7 @@ public class ProjectManClient {
      *
      * 更新项目的领域
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectDomainRequest 请求对象
      * @return UpdateProjectDomainResponse
@@ -2076,8 +1947,7 @@ public class ProjectManClient {
      *
      * 更新项目的领域
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectDomainRequest 请求对象
      * @return SyncInvoker<UpdateProjectDomainRequest, UpdateProjectDomainResponse>
@@ -2093,8 +1963,7 @@ public class ProjectManClient {
      *
      * 更新项目的模块
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectModuleRequest 请求对象
      * @return UpdateProjectModuleResponse
@@ -2108,8 +1977,7 @@ public class ProjectManClient {
      *
      * 更新项目的模块
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectModuleRequest 请求对象
      * @return SyncInvoker<UpdateProjectModuleRequest, UpdateProjectModuleResponse>
@@ -2125,8 +1993,7 @@ public class ProjectManClient {
      *
      * 上传工作项附件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadAttachmentsRequest 请求对象
      * @return UploadAttachmentsResponse
@@ -2140,8 +2007,7 @@ public class ProjectManClient {
      *
      * 上传工作项附件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadAttachmentsRequest 请求对象
      * @return SyncInvoker<UploadAttachmentsRequest, UploadAttachmentsResponse>
@@ -2157,8 +2023,7 @@ public class ProjectManClient {
      *
      * 上传图片
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadIssueImgRequest 请求对象
      * @return UploadIssueImgResponse
@@ -2172,8 +2037,7 @@ public class ProjectManClient {
      *
      * 上传图片
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadIssueImgRequest 请求对象
      * @return SyncInvoker<UploadIssueImgRequest, UploadIssueImgResponse>

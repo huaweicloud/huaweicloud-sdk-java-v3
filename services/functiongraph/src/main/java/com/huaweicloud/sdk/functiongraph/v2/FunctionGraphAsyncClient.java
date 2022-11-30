@@ -24,8 +24,7 @@ public class FunctionGraphAsyncClient {
      *
      * 异步执行函数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AsyncInvokeFunctionRequest 请求对象
      * @return CompletableFuture<AsyncInvokeFunctionResponse>
@@ -39,8 +38,7 @@ public class FunctionGraphAsyncClient {
      *
      * 异步执行函数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AsyncInvokeFunctionRequest 请求对象
      * @return AsyncInvoker<AsyncInvokeFunctionRequest, AsyncInvokeFunctionResponse>
@@ -60,8 +58,7 @@ public class FunctionGraphAsyncClient {
      * 在提供函数别名的情况下，删除对应函数别名的触发器。
      * 在不提供函数版本（也不提供别名）或版本为latest的情况下，删除该函数所有的触发器（包括所有版本和别名）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteFunctionTriggersRequest 请求对象
      * @return CompletableFuture<BatchDeleteFunctionTriggersResponse>
@@ -80,8 +77,7 @@ public class FunctionGraphAsyncClient {
      * 在提供函数别名的情况下，删除对应函数别名的触发器。
      * 在不提供函数版本（也不提供别名）或版本为latest的情况下，删除该函数所有的触发器（包括所有版本和别名）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteFunctionTriggersRequest 请求对象
      * @return AsyncInvoker<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse>
@@ -97,8 +93,7 @@ public class FunctionGraphAsyncClient {
      *
      * 删除函数流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteWorkflowsRequest 请求对象
      * @return CompletableFuture<BatchDeleteWorkflowsResponse>
@@ -113,8 +108,7 @@ public class FunctionGraphAsyncClient {
      *
      * 删除函数流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteWorkflowsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteWorkflowsRequest, BatchDeleteWorkflowsResponse>
@@ -130,8 +124,7 @@ public class FunctionGraphAsyncClient {
      *
      * -| 停止函数异步调用请求 当前仅支持recursive为false且force为true的参数。针对1：N的函数做并发异步调用 停止异步请求时实例同时在执行的其他请求也会被一并停止并返回4208 function invocation canceled 目前仅支持广州和贵阳一
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelAsyncInvocationRequest 请求对象
      * @return CompletableFuture<CancelAsyncInvocationResponse>
@@ -146,8 +139,7 @@ public class FunctionGraphAsyncClient {
      *
      * -| 停止函数异步调用请求 当前仅支持recursive为false且force为true的参数。针对1：N的函数做并发异步调用 停止异步请求时实例同时在执行的其他请求也会被一并停止并返回4208 function invocation canceled 目前仅支持广州和贵阳一
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelAsyncInvocationRequest 请求对象
      * @return AsyncInvoker<CancelAsyncInvocationRequest, CancelAsyncInvocationResponse>
@@ -163,8 +155,7 @@ public class FunctionGraphAsyncClient {
      *
      * 创建依赖包
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDependencyRequest 请求对象
      * @return CompletableFuture<CreateDependencyResponse>
@@ -178,8 +169,7 @@ public class FunctionGraphAsyncClient {
      *
      * 创建依赖包
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDependencyRequest 请求对象
      * @return AsyncInvoker<CreateDependencyRequest, CreateDependencyResponse>
@@ -195,8 +185,7 @@ public class FunctionGraphAsyncClient {
      *
      * 创建依赖包版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDependencyVersionRequest 请求对象
      * @return CompletableFuture<CreateDependencyVersionResponse>
@@ -211,8 +200,7 @@ public class FunctionGraphAsyncClient {
      *
      * 创建依赖包版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDependencyVersionRequest 请求对象
      * @return AsyncInvoker<CreateDependencyVersionRequest, CreateDependencyVersionResponse>
@@ -228,8 +216,7 @@ public class FunctionGraphAsyncClient {
      *
      * 创建测试事件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEventRequest 请求对象
      * @return CompletableFuture<CreateEventResponse>
@@ -243,8 +230,7 @@ public class FunctionGraphAsyncClient {
      *
      * 创建测试事件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEventRequest 请求对象
      * @return AsyncInvoker<CreateEventRequest, CreateEventResponse>
@@ -259,8 +245,7 @@ public class FunctionGraphAsyncClient {
      *
      * 创建指定的函数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFunctionRequest 请求对象
      * @return CompletableFuture<CreateFunctionResponse>
@@ -274,8 +259,7 @@ public class FunctionGraphAsyncClient {
      *
      * 创建指定的函数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFunctionRequest 请求对象
      * @return AsyncInvoker<CreateFunctionRequest, CreateFunctionResponse>
@@ -295,8 +279,7 @@ public class FunctionGraphAsyncClient {
      * - DDS和KAFKA触发器创建时默认为DISABLE状态，其他触发器默认为ACTIVE状态。
      * - TIMER、DDS、DMS、KAFKA、LTS触发器支持禁用，其他触发器不支持。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFunctionTriggerRequest 请求对象
      * @return CompletableFuture<CreateFunctionTriggerResponse>
@@ -315,8 +298,7 @@ public class FunctionGraphAsyncClient {
      * - DDS和KAFKA触发器创建时默认为DISABLE状态，其他触发器默认为ACTIVE状态。
      * - TIMER、DDS、DMS、KAFKA、LTS触发器支持禁用，其他触发器不支持。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFunctionTriggerRequest 请求对象
      * @return AsyncInvoker<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse>
@@ -332,8 +314,7 @@ public class FunctionGraphAsyncClient {
      *
      * 发布函数版本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFunctionVersionRequest 请求对象
      * @return CompletableFuture<CreateFunctionVersionResponse>
@@ -348,8 +329,7 @@ public class FunctionGraphAsyncClient {
      *
      * 发布函数版本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFunctionVersionRequest 请求对象
      * @return AsyncInvoker<CreateFunctionVersionRequest, CreateFunctionVersionResponse>
@@ -365,8 +345,7 @@ public class FunctionGraphAsyncClient {
      *
      * 创建函数灰度版本别名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVersionAliasRequest 请求对象
      * @return CompletableFuture<CreateVersionAliasResponse>
@@ -380,8 +359,7 @@ public class FunctionGraphAsyncClient {
      *
      * 创建函数灰度版本别名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVersionAliasRequest 请求对象
      * @return AsyncInvoker<CreateVersionAliasRequest, CreateVersionAliasResponse>
@@ -397,8 +375,7 @@ public class FunctionGraphAsyncClient {
      *
      * 创建函数流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateWorkflowRequest 请求对象
      * @return CompletableFuture<CreateWorkflowResponse>
@@ -412,8 +389,7 @@ public class FunctionGraphAsyncClient {
      *
      * 创建函数流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateWorkflowRequest 请求对象
      * @return AsyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>
@@ -429,8 +405,7 @@ public class FunctionGraphAsyncClient {
      *
      * 删除指定的依赖包
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDependencyRequest 请求对象
      * @return CompletableFuture<DeleteDependencyResponse>
@@ -444,8 +419,7 @@ public class FunctionGraphAsyncClient {
      *
      * 删除指定的依赖包
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDependencyRequest 请求对象
      * @return AsyncInvoker<DeleteDependencyRequest, DeleteDependencyResponse>
@@ -461,8 +435,7 @@ public class FunctionGraphAsyncClient {
      *
      * 删除依赖包版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDependencyVersionRequest 请求对象
      * @return CompletableFuture<DeleteDependencyVersionResponse>
@@ -477,8 +450,7 @@ public class FunctionGraphAsyncClient {
      *
      * 删除依赖包版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDependencyVersionRequest 请求对象
      * @return AsyncInvoker<DeleteDependencyVersionRequest, DeleteDependencyVersionResponse>
@@ -494,8 +466,7 @@ public class FunctionGraphAsyncClient {
      *
      * 删除指定测试事件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEventRequest 请求对象
      * @return CompletableFuture<DeleteEventResponse>
@@ -509,8 +480,7 @@ public class FunctionGraphAsyncClient {
      *
      * 删除指定测试事件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEventRequest 请求对象
      * @return AsyncInvoker<DeleteEventRequest, DeleteEventResponse>
@@ -528,8 +498,7 @@ public class FunctionGraphAsyncClient {
      * 如果URN中包含函数版本或者别名，则删除特定的函数版本或者别名指向的版本以及该版本关联的trigger。
      * 如果URN中不包含版本或者别名，则删除整个函数，包含所有版本以及别名，触发器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteFunctionRequest 请求对象
      * @return CompletableFuture<DeleteFunctionResponse>
@@ -546,8 +515,7 @@ public class FunctionGraphAsyncClient {
      * 如果URN中包含函数版本或者别名，则删除特定的函数版本或者别名指向的版本以及该版本关联的trigger。
      * 如果URN中不包含版本或者别名，则删除整个函数，包含所有版本以及别名，触发器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteFunctionRequest 请求对象
      * @return AsyncInvoker<DeleteFunctionRequest, DeleteFunctionResponse>
@@ -563,8 +531,7 @@ public class FunctionGraphAsyncClient {
      *
      * 删除函数异步配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteFunctionAsyncInvokeConfigRequest 请求对象
      * @return CompletableFuture<DeleteFunctionAsyncInvokeConfigResponse>
@@ -579,8 +546,7 @@ public class FunctionGraphAsyncClient {
      *
      * 删除函数异步配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteFunctionAsyncInvokeConfigRequest 请求对象
      * @return AsyncInvoker<DeleteFunctionAsyncInvokeConfigRequest, DeleteFunctionAsyncInvokeConfigResponse>
@@ -596,8 +562,7 @@ public class FunctionGraphAsyncClient {
      *
      * 删除触发器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteFunctionTriggerRequest 请求对象
      * @return CompletableFuture<DeleteFunctionTriggerResponse>
@@ -612,8 +577,7 @@ public class FunctionGraphAsyncClient {
      *
      * 删除触发器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteFunctionTriggerRequest 请求对象
      * @return AsyncInvoker<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse>
@@ -629,8 +593,7 @@ public class FunctionGraphAsyncClient {
      *
      * 删除函数版本别名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVersionAliasRequest 请求对象
      * @return CompletableFuture<DeleteVersionAliasResponse>
@@ -644,8 +607,7 @@ public class FunctionGraphAsyncClient {
      *
      * 删除函数版本别名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVersionAliasRequest 请求对象
      * @return AsyncInvoker<DeleteVersionAliasRequest, DeleteVersionAliasResponse>
@@ -661,8 +623,7 @@ public class FunctionGraphAsyncClient {
      *
      * 开通lts日志上报功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableLtsLogsRequest 请求对象
      * @return CompletableFuture<EnableLtsLogsResponse>
@@ -676,8 +637,7 @@ public class FunctionGraphAsyncClient {
      *
      * 开通lts日志上报功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableLtsLogsRequest 请求对象
      * @return AsyncInvoker<EnableLtsLogsRequest, EnableLtsLogsResponse>
@@ -693,8 +653,7 @@ public class FunctionGraphAsyncClient {
      *
      * 导出函数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportFunctionRequest 请求对象
      * @return CompletableFuture<ExportFunctionResponse>
@@ -708,8 +667,7 @@ public class FunctionGraphAsyncClient {
      *
      * 导出函数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportFunctionRequest 请求对象
      * @return AsyncInvoker<ExportFunctionRequest, ExportFunctionResponse>
@@ -725,8 +683,7 @@ public class FunctionGraphAsyncClient {
      *
      * 导入函数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportFunctionRequest 请求对象
      * @return CompletableFuture<ImportFunctionResponse>
@@ -740,8 +697,7 @@ public class FunctionGraphAsyncClient {
      *
      * 导入函数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportFunctionRequest 请求对象
      * @return AsyncInvoker<ImportFunctionRequest, ImportFunctionResponse>
@@ -757,8 +713,7 @@ public class FunctionGraphAsyncClient {
      *
      * 同步调用指的是客户端请求需要明确等到响应结果，也就是说这样的请求必须得调用到用户的函数，并且等到调用完成才返回。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param InvokeFunctionRequest 请求对象
      * @return CompletableFuture<InvokeFunctionResponse>
@@ -772,8 +727,7 @@ public class FunctionGraphAsyncClient {
      *
      * 同步调用指的是客户端请求需要明确等到响应结果，也就是说这样的请求必须得调用到用户的函数，并且等到调用完成才返回。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param InvokeFunctionRequest 请求对象
      * @return AsyncInvoker<InvokeFunctionRequest, InvokeFunctionResponse>
@@ -789,8 +743,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取函数异步调用请求列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAsyncInvocationsRequest 请求对象
      * @return CompletableFuture<ListAsyncInvocationsResponse>
@@ -805,8 +758,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取函数异步调用请求列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAsyncInvocationsRequest 请求对象
      * @return AsyncInvoker<ListAsyncInvocationsRequest, ListAsyncInvocationsResponse>
@@ -822,8 +774,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取依赖包列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDependenciesRequest 请求对象
      * @return CompletableFuture<ListDependenciesResponse>
@@ -837,8 +788,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取依赖包列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDependenciesRequest 请求对象
      * @return AsyncInvoker<ListDependenciesRequest, ListDependenciesResponse>
@@ -854,8 +804,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取依赖包版本列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDependencyVersionRequest 请求对象
      * @return CompletableFuture<ListDependencyVersionResponse>
@@ -870,8 +819,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取依赖包版本列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDependencyVersionRequest 请求对象
      * @return AsyncInvoker<ListDependencyVersionRequest, ListDependencyVersionResponse>
@@ -887,8 +835,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数的测试事件列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventsRequest 请求对象
      * @return CompletableFuture<ListEventsResponse>
@@ -902,8 +849,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数的测试事件列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventsRequest 请求对象
      * @return AsyncInvoker<ListEventsRequest, ListEventsResponse>
@@ -919,8 +865,7 @@ public class FunctionGraphAsyncClient {
      * 
      * 默认统计按错误次数指标统计最近一天失败次数最多的前10个函数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFunctionAsMetricRequest 请求对象
      * @return CompletableFuture<ListFunctionAsMetricResponse>
@@ -937,8 +882,7 @@ public class FunctionGraphAsyncClient {
      * 
      * 默认统计按错误次数指标统计最近一天失败次数最多的前10个函数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFunctionAsMetricRequest 请求对象
      * @return AsyncInvoker<ListFunctionAsMetricRequest, ListFunctionAsMetricResponse>
@@ -954,8 +898,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数所有版本的异步配置列表。。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFunctionAsyncInvokeConfigRequest 请求对象
      * @return CompletableFuture<ListFunctionAsyncInvokeConfigResponse>
@@ -970,8 +913,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数所有版本的异步配置列表。。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFunctionAsyncInvokeConfigRequest 请求对象
      * @return AsyncInvoker<ListFunctionAsyncInvokeConfigRequest, ListFunctionAsyncInvokeConfigResponse>
@@ -987,8 +929,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取函数预留实例数量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFunctionReservedInstancesRequest 请求对象
      * @return CompletableFuture<ListFunctionReservedInstancesResponse>
@@ -1003,8 +944,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取函数预留实例数量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFunctionReservedInstancesRequest 请求对象
      * @return AsyncInvoker<ListFunctionReservedInstancesRequest, ListFunctionReservedInstancesResponse>
@@ -1020,8 +960,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定时间段的函数运行指标。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFunctionStatisticsRequest 请求对象
      * @return CompletableFuture<ListFunctionStatisticsResponse>
@@ -1036,8 +975,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定时间段的函数运行指标。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFunctionStatisticsRequest 请求对象
      * @return AsyncInvoker<ListFunctionStatisticsRequest, ListFunctionStatisticsResponse>
@@ -1053,8 +991,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数的所有触发器设置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFunctionTriggersRequest 请求对象
      * @return CompletableFuture<ListFunctionTriggersResponse>
@@ -1069,8 +1006,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数的所有触发器设置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFunctionTriggersRequest 请求对象
      * @return AsyncInvoker<ListFunctionTriggersRequest, ListFunctionTriggersResponse>
@@ -1086,8 +1022,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数的版本列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFunctionVersionsRequest 请求对象
      * @return CompletableFuture<ListFunctionVersionsResponse>
@@ -1102,8 +1037,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数的版本列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFunctionVersionsRequest 请求对象
      * @return AsyncInvoker<ListFunctionVersionsRequest, ListFunctionVersionsResponse>
@@ -1119,8 +1053,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取函数列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFunctionsRequest 请求对象
      * @return CompletableFuture<ListFunctionsResponse>
@@ -1134,8 +1067,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取函数列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFunctionsRequest 请求对象
      * @return AsyncInvoker<ListFunctionsRequest, ListFunctionsResponse>
@@ -1151,8 +1083,7 @@ public class FunctionGraphAsyncClient {
      *
      * 查询租户配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotasRequest 请求对象
      * @return CompletableFuture<ListQuotasResponse>
@@ -1166,8 +1097,7 @@ public class FunctionGraphAsyncClient {
      *
      * 查询租户配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotasRequest 请求对象
      * @return AsyncInvoker<ListQuotasRequest, ListQuotasResponse>
@@ -1181,8 +1111,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取函数预留实例配置列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListReservedInstanceConfigsRequest 请求对象
      * @return CompletableFuture<ListReservedInstanceConfigsResponse>
@@ -1197,8 +1126,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取函数预留实例配置列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListReservedInstanceConfigsRequest 请求对象
      * @return AsyncInvoker<ListReservedInstanceConfigsRequest, ListReservedInstanceConfigsResponse>
@@ -1217,8 +1145,7 @@ public class FunctionGraphAsyncClient {
      * 返回三类的统计信息，函数格式和大小使用情况包括配额和使用量，流量报告。
      * 通过查询参数filter可以进行过滤，查询参数period可以指定返回的时间段。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStatisticsRequest 请求对象
      * @return CompletableFuture<ListStatisticsResponse>
@@ -1235,8 +1162,7 @@ public class FunctionGraphAsyncClient {
      * 返回三类的统计信息，函数格式和大小使用情况包括配额和使用量，流量报告。
      * 通过查询参数filter可以进行过滤，查询参数period可以指定返回的时间段。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStatisticsRequest 请求对象
      * @return AsyncInvoker<ListStatisticsRequest, ListStatisticsResponse>
@@ -1252,8 +1178,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取函数版本别名列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVersionAliasesRequest 请求对象
      * @return CompletableFuture<ListVersionAliasesResponse>
@@ -1267,8 +1192,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取函数版本别名列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVersionAliasesRequest 请求对象
      * @return AsyncInvoker<ListVersionAliasesRequest, ListVersionAliasesResponse>
@@ -1284,8 +1208,7 @@ public class FunctionGraphAsyncClient {
      *
      * 查询函数流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWorkflowRequest 请求对象
      * @return CompletableFuture<ListWorkflowResponse>
@@ -1299,8 +1222,7 @@ public class FunctionGraphAsyncClient {
      *
      * 查询函数流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWorkflowRequest 请求对象
      * @return AsyncInvoker<ListWorkflowRequest, ListWorkflowResponse>
@@ -1316,8 +1238,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数流执行实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWorkflowExecutionsRequest 请求对象
      * @return CompletableFuture<ListWorkflowExecutionsResponse>
@@ -1332,8 +1253,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数流执行实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWorkflowExecutionsRequest 请求对象
      * @return AsyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>
@@ -1349,8 +1269,7 @@ public class FunctionGraphAsyncClient {
      *
      * 重试函数流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RetryWorkFlowRequest 请求对象
      * @return CompletableFuture<RetryWorkFlowResponse>
@@ -1364,8 +1283,7 @@ public class FunctionGraphAsyncClient {
      *
      * 重试函数流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RetryWorkFlowRequest 请求对象
      * @return AsyncInvoker<RetryWorkFlowRequest, RetryWorkFlowResponse>
@@ -1381,8 +1299,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定依赖包
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDependcyRequest 请求对象
      * @return CompletableFuture<ShowDependcyResponse>
@@ -1396,8 +1313,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定依赖包
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDependcyRequest 请求对象
      * @return AsyncInvoker<ShowDependcyRequest, ShowDependcyResponse>
@@ -1413,8 +1329,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取依赖包版本详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDependencyVersionRequest 请求对象
      * @return CompletableFuture<ShowDependencyVersionResponse>
@@ -1429,8 +1344,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取依赖包版本详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDependencyVersionRequest 请求对象
      * @return AsyncInvoker<ShowDependencyVersionRequest, ShowDependencyVersionResponse>
@@ -1446,8 +1360,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取测试事件详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEventRequest 请求对象
      * @return CompletableFuture<ShowEventResponse>
@@ -1461,8 +1374,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取测试事件详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEventRequest 请求对象
      * @return AsyncInvoker<ShowEventRequest, ShowEventResponse>
@@ -1476,8 +1388,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数某一版本的异步配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFunctionAsyncInvokeConfigRequest 请求对象
      * @return CompletableFuture<ShowFunctionAsyncInvokeConfigResponse>
@@ -1492,8 +1403,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数某一版本的异步配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFunctionAsyncInvokeConfigRequest 请求对象
      * @return AsyncInvoker<ShowFunctionAsyncInvokeConfigRequest, ShowFunctionAsyncInvokeConfigResponse>
@@ -1509,8 +1419,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数的代码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFunctionCodeRequest 请求对象
      * @return CompletableFuture<ShowFunctionCodeResponse>
@@ -1524,8 +1433,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数的代码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFunctionCodeRequest 请求对象
      * @return AsyncInvoker<ShowFunctionCodeRequest, ShowFunctionCodeResponse>
@@ -1541,8 +1449,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数的metadata。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFunctionConfigRequest 请求对象
      * @return CompletableFuture<ShowFunctionConfigResponse>
@@ -1556,8 +1463,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数的metadata。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFunctionConfigRequest 请求对象
      * @return AsyncInvoker<ShowFunctionConfigRequest, ShowFunctionConfigResponse>
@@ -1573,8 +1479,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取特定触发器的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFunctionTriggerRequest 请求对象
      * @return CompletableFuture<ShowFunctionTriggerResponse>
@@ -1588,8 +1493,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取特定触发器的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFunctionTriggerRequest 请求对象
      * @return AsyncInvoker<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse>
@@ -1605,8 +1509,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数的lts日志组日志流配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLtsLogDetailsRequest 请求对象
      * @return CompletableFuture<ShowLtsLogDetailsResponse>
@@ -1620,8 +1523,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数的lts日志组日志流配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLtsLogDetailsRequest 请求对象
      * @return AsyncInvoker<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse>
@@ -1637,8 +1539,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取函数流指标
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTenantMetricRequest 请求对象
      * @return CompletableFuture<ShowTenantMetricResponse>
@@ -1652,8 +1553,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取函数流指标
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTenantMetricRequest 请求对象
      * @return AsyncInvoker<ShowTenantMetricRequest, ShowTenantMetricResponse>
@@ -1669,8 +1569,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取函数调用链配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTracingRequest 请求对象
      * @return CompletableFuture<ShowTracingResponse>
@@ -1684,8 +1583,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取函数调用链配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTracingRequest 请求对象
      * @return AsyncInvoker<ShowTracingRequest, ShowTracingResponse>
@@ -1700,8 +1598,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取函数指定的版本别名信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVersionAliasRequest 请求对象
      * @return CompletableFuture<ShowVersionAliasResponse>
@@ -1715,8 +1612,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取函数指定的版本别名信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVersionAliasRequest 请求对象
      * @return AsyncInvoker<ShowVersionAliasRequest, ShowVersionAliasResponse>
@@ -1732,8 +1628,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数流实例的元数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowWorkFlowRequest 请求对象
      * @return CompletableFuture<ShowWorkFlowResponse>
@@ -1747,8 +1642,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数流实例的元数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowWorkFlowRequest 请求对象
      * @return AsyncInvoker<ShowWorkFlowRequest, ShowWorkFlowResponse>
@@ -1764,8 +1658,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数流指标
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowWorkFlowMetricRequest 请求对象
      * @return CompletableFuture<ShowWorkFlowMetricResponse>
@@ -1779,8 +1672,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数流指标
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowWorkFlowMetricRequest 请求对象
      * @return AsyncInvoker<ShowWorkFlowMetricRequest, ShowWorkFlowMetricResponse>
@@ -1796,8 +1688,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数流执行实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowWorkflowExecutionRequest 请求对象
      * @return CompletableFuture<ShowWorkflowExecutionResponse>
@@ -1812,8 +1703,7 @@ public class FunctionGraphAsyncClient {
      *
      * 获取指定函数流执行实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowWorkflowExecutionRequest 请求对象
      * @return AsyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse>
@@ -1829,8 +1719,7 @@ public class FunctionGraphAsyncClient {
      *
      * 分页获取指定函数流执行实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowWorkflowExecutionForPageRequest 请求对象
      * @return CompletableFuture<ShowWorkflowExecutionForPageResponse>
@@ -1845,8 +1734,7 @@ public class FunctionGraphAsyncClient {
      *
      * 分页获取指定函数流执行实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowWorkflowExecutionForPageRequest 请求对象
      * @return AsyncInvoker<ShowWorkflowExecutionForPageRequest, ShowWorkflowExecutionForPageResponse>
@@ -1862,8 +1750,7 @@ public class FunctionGraphAsyncClient {
      *
      * 以同步执行方式启动函数流（仅快速模式函数流支持）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartSyncWorkflowExecutionRequest 请求对象
      * @return CompletableFuture<StartSyncWorkflowExecutionResponse>
@@ -1878,8 +1765,7 @@ public class FunctionGraphAsyncClient {
      *
      * 以同步执行方式启动函数流（仅快速模式函数流支持）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartSyncWorkflowExecutionRequest 请求对象
      * @return AsyncInvoker<StartSyncWorkflowExecutionRequest, StartSyncWorkflowExecutionResponse>
@@ -1895,8 +1781,7 @@ public class FunctionGraphAsyncClient {
      *
      * 以异步执行方式启动函数流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartWorkflowExecutionRequest 请求对象
      * @return CompletableFuture<StartWorkflowExecutionResponse>
@@ -1911,8 +1796,7 @@ public class FunctionGraphAsyncClient {
      *
      * 以异步执行方式启动函数流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartWorkflowExecutionRequest 请求对象
      * @return AsyncInvoker<StartWorkflowExecutionRequest, StartWorkflowExecutionResponse>
@@ -1928,8 +1812,7 @@ public class FunctionGraphAsyncClient {
      *
      * 停止函数流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopWorkFlowRequest 请求对象
      * @return CompletableFuture<StopWorkFlowResponse>
@@ -1943,8 +1826,7 @@ public class FunctionGraphAsyncClient {
      *
      * 停止函数流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopWorkFlowRequest 请求对象
      * @return AsyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse>
@@ -1960,8 +1842,7 @@ public class FunctionGraphAsyncClient {
      *
      * 更新指定依赖包
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDependcyRequest 请求对象
      * @return CompletableFuture<UpdateDependcyResponse>
@@ -1975,8 +1856,7 @@ public class FunctionGraphAsyncClient {
      *
      * 更新指定依赖包
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDependcyRequest 请求对象
      * @return AsyncInvoker<UpdateDependcyRequest, UpdateDependcyResponse>
@@ -1992,8 +1872,7 @@ public class FunctionGraphAsyncClient {
      *
      * 更新测试事件详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEventRequest 请求对象
      * @return CompletableFuture<UpdateEventResponse>
@@ -2007,8 +1886,7 @@ public class FunctionGraphAsyncClient {
      *
      * 更新测试事件详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEventRequest 请求对象
      * @return AsyncInvoker<UpdateEventRequest, UpdateEventResponse>
@@ -2023,8 +1901,7 @@ public class FunctionGraphAsyncClient {
      *
      * 设置函数异步配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFunctionAsyncInvokeConfigRequest 请求对象
      * @return CompletableFuture<UpdateFunctionAsyncInvokeConfigResponse>
@@ -2039,8 +1916,7 @@ public class FunctionGraphAsyncClient {
      *
      * 设置函数异步配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFunctionAsyncInvokeConfigRequest 请求对象
      * @return AsyncInvoker<UpdateFunctionAsyncInvokeConfigRequest, UpdateFunctionAsyncInvokeConfigResponse>
@@ -2056,8 +1932,7 @@ public class FunctionGraphAsyncClient {
      *
      * 修改指定的函数的代码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFunctionCodeRequest 请求对象
      * @return CompletableFuture<UpdateFunctionCodeResponse>
@@ -2071,8 +1946,7 @@ public class FunctionGraphAsyncClient {
      *
      * 修改指定的函数的代码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFunctionCodeRequest 请求对象
      * @return AsyncInvoker<UpdateFunctionCodeRequest, UpdateFunctionCodeResponse>
@@ -2088,8 +1962,7 @@ public class FunctionGraphAsyncClient {
      *
      * 修改指定的函数的metadata信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFunctionConfigRequest 请求对象
      * @return CompletableFuture<UpdateFunctionConfigResponse>
@@ -2104,8 +1977,7 @@ public class FunctionGraphAsyncClient {
      *
      * 修改指定的函数的metadata信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFunctionConfigRequest 请求对象
      * @return AsyncInvoker<UpdateFunctionConfigRequest, UpdateFunctionConfigResponse>
@@ -2121,8 +1993,7 @@ public class FunctionGraphAsyncClient {
      *
      * 更新函数最大实例数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFunctionMaxInstanceConfigRequest 请求对象
      * @return CompletableFuture<UpdateFunctionMaxInstanceConfigResponse>
@@ -2137,8 +2008,7 @@ public class FunctionGraphAsyncClient {
      *
      * 更新函数最大实例数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFunctionMaxInstanceConfigRequest 请求对象
      * @return AsyncInvoker<UpdateFunctionMaxInstanceConfigRequest, UpdateFunctionMaxInstanceConfigResponse>
@@ -2154,8 +2024,7 @@ public class FunctionGraphAsyncClient {
      *
      * 修改函数预留实例数量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFunctionReservedInstancesCountRequest 请求对象
      * @return CompletableFuture<UpdateFunctionReservedInstancesCountResponse>
@@ -2170,8 +2039,7 @@ public class FunctionGraphAsyncClient {
      *
      * 修改函数预留实例数量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFunctionReservedInstancesCountRequest 请求对象
      * @return AsyncInvoker<UpdateFunctionReservedInstancesCountRequest, UpdateFunctionReservedInstancesCountResponse>
@@ -2187,8 +2055,7 @@ public class FunctionGraphAsyncClient {
      *
      * 修改函数调用链配置,开通/修改传入aksk，关闭aksk传空
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTracingRequest 请求对象
      * @return CompletableFuture<UpdateTracingResponse>
@@ -2202,8 +2069,7 @@ public class FunctionGraphAsyncClient {
      *
      * 修改函数调用链配置,开通/修改传入aksk，关闭aksk传空
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTracingRequest 请求对象
      * @return AsyncInvoker<UpdateTracingRequest, UpdateTracingResponse>
@@ -2219,8 +2085,7 @@ public class FunctionGraphAsyncClient {
      *
      * 更新触发器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTriggerRequest 请求对象
      * @return CompletableFuture<UpdateTriggerResponse>
@@ -2234,8 +2099,7 @@ public class FunctionGraphAsyncClient {
      *
      * 更新触发器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTriggerRequest 请求对象
      * @return AsyncInvoker<UpdateTriggerRequest, UpdateTriggerResponse>
@@ -2251,8 +2115,7 @@ public class FunctionGraphAsyncClient {
      *
      * 修改函数版本别名信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVersionAliasRequest 请求对象
      * @return CompletableFuture<UpdateVersionAliasResponse>
@@ -2266,8 +2129,7 @@ public class FunctionGraphAsyncClient {
      *
      * 修改函数版本别名信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVersionAliasRequest 请求对象
      * @return AsyncInvoker<UpdateVersionAliasRequest, UpdateVersionAliasResponse>
@@ -2283,8 +2145,7 @@ public class FunctionGraphAsyncClient {
      *
      * 修改指定函数流实例的元数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateWorkFlowRequest 请求对象
      * @return CompletableFuture<UpdateWorkFlowResponse>
@@ -2298,8 +2159,7 @@ public class FunctionGraphAsyncClient {
      *
      * 修改指定函数流实例的元数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateWorkFlowRequest 请求对象
      * @return AsyncInvoker<UpdateWorkFlowRequest, UpdateWorkFlowResponse>

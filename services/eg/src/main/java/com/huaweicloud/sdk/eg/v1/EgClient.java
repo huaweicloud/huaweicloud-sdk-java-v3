@@ -22,8 +22,7 @@ public class EgClient {
      *
      * 按照业务场景，一键创建服务委托授权
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAgenciesRequest 请求对象
      * @return CreateAgenciesResponse
@@ -37,8 +36,7 @@ public class EgClient {
      *
      * 按照业务场景，一键创建服务委托授权
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAgenciesRequest 请求对象
      * @return SyncInvoker<CreateAgenciesRequest, CreateAgenciesResponse>
@@ -53,8 +51,7 @@ public class EgClient {
      *
      * 创建自定义事件通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateChannelRequest 请求对象
      * @return CreateChannelResponse
@@ -68,8 +65,7 @@ public class EgClient {
      *
      * 创建自定义事件通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateChannelRequest 请求对象
      * @return SyncInvoker<CreateChannelRequest, CreateChannelResponse>
@@ -83,8 +79,7 @@ public class EgClient {
      *
      * 创建目标连接
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConnectionRequest 请求对象
      * @return CreateConnectionResponse
@@ -98,8 +93,7 @@ public class EgClient {
      *
      * 创建目标连接
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConnectionRequest 请求对象
      * @return SyncInvoker<CreateConnectionRequest, CreateConnectionResponse>
@@ -115,8 +109,7 @@ public class EgClient {
      *
      * create endpoint
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEndpointRequest 请求对象
      * @return CreateEndpointResponse
@@ -130,8 +123,7 @@ public class EgClient {
      *
      * create endpoint
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEndpointRequest 请求对象
      * @return SyncInvoker<CreateEndpointRequest, CreateEndpointResponse>
@@ -146,8 +138,7 @@ public class EgClient {
      *
      * 创建自定义事件模型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEventSchemaRequest 请求对象
      * @return CreateEventSchemaResponse
@@ -161,8 +152,7 @@ public class EgClient {
      *
      * 创建自定义事件模型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEventSchemaRequest 请求对象
      * @return SyncInvoker<CreateEventSchemaRequest, CreateEventSchemaResponse>
@@ -178,8 +168,7 @@ public class EgClient {
      *
      * 创建自定义事件模型版本，版本号后台自动生成
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEventSchemaVersionRequest 请求对象
      * @return CreateEventSchemaVersionResponse
@@ -193,8 +182,7 @@ public class EgClient {
      *
      * 创建自定义事件模型版本，版本号后台自动生成
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEventSchemaVersionRequest 请求对象
      * @return SyncInvoker<CreateEventSchemaVersionRequest, CreateEventSchemaVersionResponse>
@@ -210,8 +198,7 @@ public class EgClient {
      *
      * 创建用户自定义类型的事件源，只能指定自定义通道，不能指定系统通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEventSourceRequest 请求对象
      * @return CreateEventSourceResponse
@@ -225,8 +212,7 @@ public class EgClient {
      *
      * 创建用户自定义类型的事件源，只能指定自定义通道，不能指定系统通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEventSourceRequest 请求对象
      * @return SyncInvoker<CreateEventSourceRequest, CreateEventSourceResponse>
@@ -242,8 +228,7 @@ public class EgClient {
      *
      * 创建事件订阅
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSubscriptionRequest 请求对象
      * @return CreateSubscriptionResponse
@@ -257,8 +242,7 @@ public class EgClient {
      *
      * 创建事件订阅
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSubscriptionRequest 请求对象
      * @return SyncInvoker<CreateSubscriptionRequest, CreateSubscriptionResponse>
@@ -274,8 +258,7 @@ public class EgClient {
      *
      * 创建单个事件订阅目标
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSubscriptionTargetRequest 请求对象
      * @return CreateSubscriptionTargetResponse
@@ -289,8 +272,7 @@ public class EgClient {
      *
      * 创建单个事件订阅目标
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSubscriptionTargetRequest 请求对象
      * @return SyncInvoker<CreateSubscriptionTargetRequest, CreateSubscriptionTargetResponse>
@@ -306,8 +288,7 @@ public class EgClient {
      *
      * 删除指定自定义事件通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteChannelRequest 请求对象
      * @return DeleteChannelResponse
@@ -321,8 +302,7 @@ public class EgClient {
      *
      * 删除指定自定义事件通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteChannelRequest 请求对象
      * @return SyncInvoker<DeleteChannelRequest, DeleteChannelResponse>
@@ -336,8 +316,7 @@ public class EgClient {
      *
      * 删除目标连接
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteConnectionRequest 请求对象
      * @return DeleteConnectionResponse
@@ -351,8 +330,7 @@ public class EgClient {
      *
      * 删除目标连接
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteConnectionRequest 请求对象
      * @return SyncInvoker<DeleteConnectionRequest, DeleteConnectionResponse>
@@ -367,8 +345,7 @@ public class EgClient {
      * 删除访问端点
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEndpointRequest 请求对象
      * @return DeleteEndpointResponse
@@ -381,8 +358,7 @@ public class EgClient {
      * 删除访问端点
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEndpointRequest 请求对象
      * @return SyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse>
@@ -397,8 +373,7 @@ public class EgClient {
      *
      * 删除事件模型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEventSchemaRequest 请求对象
      * @return DeleteEventSchemaResponse
@@ -412,8 +387,7 @@ public class EgClient {
      *
      * 删除事件模型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEventSchemaRequest 请求对象
      * @return SyncInvoker<DeleteEventSchemaRequest, DeleteEventSchemaResponse>
@@ -429,8 +403,7 @@ public class EgClient {
      *
      * 删除事件模型指定版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEventSchemaVersionRequest 请求对象
      * @return DeleteEventSchemaVersionResponse
@@ -444,8 +417,7 @@ public class EgClient {
      *
      * 删除事件模型指定版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEventSchemaVersionRequest 请求对象
      * @return SyncInvoker<DeleteEventSchemaVersionRequest, DeleteEventSchemaVersionResponse>
@@ -461,8 +433,7 @@ public class EgClient {
      *
      * 删除指定的自定义事件源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEventSourceRequest 请求对象
      * @return DeleteEventSourceResponse
@@ -476,8 +447,7 @@ public class EgClient {
      *
      * 删除指定的自定义事件源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEventSourceRequest 请求对象
      * @return SyncInvoker<DeleteEventSourceRequest, DeleteEventSourceResponse>
@@ -493,8 +463,7 @@ public class EgClient {
      *
      * 删除事件订阅
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSubscriptionRequest 请求对象
      * @return DeleteSubscriptionResponse
@@ -508,8 +477,7 @@ public class EgClient {
      *
      * 删除事件订阅
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSubscriptionRequest 请求对象
      * @return SyncInvoker<DeleteSubscriptionRequest, DeleteSubscriptionResponse>
@@ -525,8 +493,7 @@ public class EgClient {
      *
      * 删除事件订阅目标
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSubscriptionTargetRequest 请求对象
      * @return DeleteSubscriptionTargetResponse
@@ -540,8 +507,7 @@ public class EgClient {
      *
      * 删除事件订阅目标
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSubscriptionTargetRequest 请求对象
      * @return SyncInvoker<DeleteSubscriptionTargetRequest, DeleteSubscriptionTargetResponse>
@@ -557,8 +523,7 @@ public class EgClient {
      *
      * 事件模型自动发现
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DiscoverEventSchemaFromDataRequest 请求对象
      * @return DiscoverEventSchemaFromDataResponse
@@ -572,8 +537,7 @@ public class EgClient {
      *
      * 事件模型自动发现
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DiscoverEventSchemaFromDataRequest 请求对象
      * @return SyncInvoker<DiscoverEventSchemaFromDataRequest, DiscoverEventSchemaFromDataResponse>
@@ -588,8 +552,7 @@ public class EgClient {
      * 查询服务委托
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAgenciesRequest 请求对象
      * @return ListAgenciesResponse
@@ -602,8 +565,7 @@ public class EgClient {
      * 查询服务委托
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAgenciesRequest 请求对象
      * @return SyncInvoker<ListAgenciesRequest, ListAgenciesResponse>
@@ -617,8 +579,7 @@ public class EgClient {
      *
      * 查询事件通道列表，包括系统通道和自定义通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListChannelsRequest 请求对象
      * @return ListChannelsResponse
@@ -632,8 +593,7 @@ public class EgClient {
      *
      * 查询事件通道列表，包括系统通道和自定义通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListChannelsRequest 请求对象
      * @return SyncInvoker<ListChannelsRequest, ListChannelsResponse>
@@ -647,8 +607,7 @@ public class EgClient {
      *
      * 查询目标连接列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConnectionsRequest 请求对象
      * @return ListConnectionsResponse
@@ -662,8 +621,7 @@ public class EgClient {
      *
      * 查询目标连接列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConnectionsRequest 请求对象
      * @return SyncInvoker<ListConnectionsRequest, ListConnectionsResponse>
@@ -679,8 +637,7 @@ public class EgClient {
      *
      * list all endpoints
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointsRequest 请求对象
      * @return ListEndpointsResponse
@@ -694,8 +651,7 @@ public class EgClient {
      *
      * list all endpoints
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointsRequest 请求对象
      * @return SyncInvoker<ListEndpointsRequest, ListEndpointsResponse>
@@ -709,8 +665,7 @@ public class EgClient {
      *
      * 查询事件模型列表，包括系统事件模型和自定义事件模型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventSchemaRequest 请求对象
      * @return ListEventSchemaResponse
@@ -724,8 +679,7 @@ public class EgClient {
      *
      * 查询事件模型列表，包括系统事件模型和自定义事件模型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventSchemaRequest 请求对象
      * @return SyncInvoker<ListEventSchemaRequest, ListEventSchemaResponse>
@@ -741,8 +695,7 @@ public class EgClient {
      *
      * 查询事件模型版本列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventSchemaVersionsRequest 请求对象
      * @return ListEventSchemaVersionsResponse
@@ -756,8 +709,7 @@ public class EgClient {
      *
      * 查询事件模型版本列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventSchemaVersionsRequest 请求对象
      * @return SyncInvoker<ListEventSchemaVersionsRequest, ListEventSchemaVersionsResponse>
@@ -773,8 +725,7 @@ public class EgClient {
      *
      * 支持条件查询，如可以指定事件通道ID来查询某个事件通道下的所有事件源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventSourcesRequest 请求对象
      * @return ListEventSourcesResponse
@@ -788,8 +739,7 @@ public class EgClient {
      *
      * 支持条件查询，如可以指定事件通道ID来查询某个事件通道下的所有事件源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventSourcesRequest 请求对象
      * @return SyncInvoker<ListEventSourcesRequest, ListEventSourcesResponse>
@@ -805,8 +755,7 @@ public class EgClient {
      *
      * 查询预置的事件目标分类，获取每个事件目标分类的字段定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventTargetRequest 请求对象
      * @return ListEventTargetResponse
@@ -820,8 +769,7 @@ public class EgClient {
      *
      * 查询预置的事件目标分类，获取每个事件目标分类的字段定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventTargetRequest 请求对象
      * @return SyncInvoker<ListEventTargetRequest, ListEventTargetResponse>
@@ -837,8 +785,7 @@ public class EgClient {
      *
      * 查询当前租户的配额，未特殊配置过的会返回默认配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotasRequest 请求对象
      * @return ListQuotasResponse
@@ -852,8 +799,7 @@ public class EgClient {
      *
      * 查询当前租户的配额，未特殊配置过的会返回默认配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotasRequest 请求对象
      * @return SyncInvoker<ListQuotasRequest, ListQuotasResponse>
@@ -867,8 +813,7 @@ public class EgClient {
      *
      * 查询事件订阅列表，支持指定事件通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubscriptionsRequest 请求对象
      * @return ListSubscriptionsResponse
@@ -882,8 +827,7 @@ public class EgClient {
      *
      * 查询事件订阅列表，支持指定事件通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubscriptionsRequest 请求对象
      * @return SyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse>
@@ -899,8 +843,7 @@ public class EgClient {
      *
      * 查询触发器，支持指定函数urn。一个以函数urn为目标的订阅为一个触发器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTriggersRequest 请求对象
      * @return ListTriggersResponse
@@ -914,8 +857,7 @@ public class EgClient {
      *
      * 查询触发器，支持指定函数urn。一个以函数urn为目标的订阅为一个触发器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTriggersRequest 请求对象
      * @return SyncInvoker<ListTriggersRequest, ListTriggersResponse>
@@ -929,8 +871,7 @@ public class EgClient {
      *
      * 操作事件订阅，支持启用、禁用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param OperateSubscriptionRequest 请求对象
      * @return OperateSubscriptionResponse
@@ -944,8 +885,7 @@ public class EgClient {
      *
      * 操作事件订阅，支持启用、禁用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param OperateSubscriptionRequest 请求对象
      * @return SyncInvoker<OperateSubscriptionRequest, OperateSubscriptionResponse>
@@ -961,8 +901,7 @@ public class EgClient {
      *
      * 发布事件到事件通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PutEventsRequest 请求对象
      * @return PutEventsResponse
@@ -976,8 +915,7 @@ public class EgClient {
      *
      * 发布事件到事件通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PutEventsRequest 请求对象
      * @return SyncInvoker<PutEventsRequest, PutEventsResponse>
@@ -990,8 +928,7 @@ public class EgClient {
      * 查询事件通道详情
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailOfChannelRequest 请求对象
      * @return ShowDetailOfChannelResponse
@@ -1004,8 +941,7 @@ public class EgClient {
      * 查询事件通道详情
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailOfChannelRequest 请求对象
      * @return SyncInvoker<ShowDetailOfChannelRequest, ShowDetailOfChannelResponse>
@@ -1020,8 +956,7 @@ public class EgClient {
      * 查询目标连接详情
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailOfConnectionRequest 请求对象
      * @return ShowDetailOfConnectionResponse
@@ -1034,8 +969,7 @@ public class EgClient {
      * 查询目标连接详情
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailOfConnectionRequest 请求对象
      * @return SyncInvoker<ShowDetailOfConnectionRequest, ShowDetailOfConnectionResponse>
@@ -1051,8 +985,7 @@ public class EgClient {
      *
      * 查询事件模型详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailOfEventSchemaRequest 请求对象
      * @return ShowDetailOfEventSchemaResponse
@@ -1066,8 +999,7 @@ public class EgClient {
      *
      * 查询事件模型详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailOfEventSchemaRequest 请求对象
      * @return SyncInvoker<ShowDetailOfEventSchemaRequest, ShowDetailOfEventSchemaResponse>
@@ -1083,8 +1015,7 @@ public class EgClient {
      *
      * 查询事件模型指定版本详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailOfEventSchemaVersionRequest 请求对象
      * @return ShowDetailOfEventSchemaVersionResponse
@@ -1099,8 +1030,7 @@ public class EgClient {
      *
      * 查询事件模型指定版本详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailOfEventSchemaVersionRequest 请求对象
      * @return SyncInvoker<ShowDetailOfEventSchemaVersionRequest, ShowDetailOfEventSchemaVersionResponse>
@@ -1116,8 +1046,7 @@ public class EgClient {
      *
      * 查询事件源详情信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailOfEventSourceRequest 请求对象
      * @return ShowDetailOfEventSourceResponse
@@ -1131,8 +1060,7 @@ public class EgClient {
      *
      * 查询事件源详情信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailOfEventSourceRequest 请求对象
      * @return SyncInvoker<ShowDetailOfEventSourceRequest, ShowDetailOfEventSourceResponse>
@@ -1148,8 +1076,7 @@ public class EgClient {
      *
      * 查询事件订阅详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailOfSubscriptionRequest 请求对象
      * @return ShowDetailOfSubscriptionResponse
@@ -1163,8 +1090,7 @@ public class EgClient {
      *
      * 查询事件订阅详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailOfSubscriptionRequest 请求对象
      * @return SyncInvoker<ShowDetailOfSubscriptionRequest, ShowDetailOfSubscriptionResponse>
@@ -1180,8 +1106,7 @@ public class EgClient {
      *
      * 查询事件订阅目标详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailOfSubscriptionTargetRequest 请求对象
      * @return ShowDetailOfSubscriptionTargetResponse
@@ -1196,8 +1121,7 @@ public class EgClient {
      *
      * 查询事件订阅目标详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailOfSubscriptionTargetRequest 请求对象
      * @return SyncInvoker<ShowDetailOfSubscriptionTargetRequest, ShowDetailOfSubscriptionTargetResponse>
@@ -1213,8 +1137,7 @@ public class EgClient {
      *
      * 更新自定义事件通道定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateChannelRequest 请求对象
      * @return UpdateChannelResponse
@@ -1228,8 +1151,7 @@ public class EgClient {
      *
      * 更新自定义事件通道定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateChannelRequest 请求对象
      * @return SyncInvoker<UpdateChannelRequest, UpdateChannelResponse>
@@ -1243,8 +1165,7 @@ public class EgClient {
      *
      * 更新目标连接
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateConnectionRequest 请求对象
      * @return UpdateConnectionResponse
@@ -1258,8 +1179,7 @@ public class EgClient {
      *
      * 更新目标连接
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateConnectionRequest 请求对象
      * @return SyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>
@@ -1275,8 +1195,7 @@ public class EgClient {
      *
      * update endpoint
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointRequest 请求对象
      * @return UpdateEndpointResponse
@@ -1290,8 +1209,7 @@ public class EgClient {
      *
      * update endpoint
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointRequest 请求对象
      * @return SyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse>
@@ -1306,8 +1224,7 @@ public class EgClient {
      *
      * 更新自定义事件模型定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEventSchemaRequest 请求对象
      * @return UpdateEventSchemaResponse
@@ -1321,8 +1238,7 @@ public class EgClient {
      *
      * 更新自定义事件模型定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEventSchemaRequest 请求对象
      * @return SyncInvoker<UpdateEventSchemaRequest, UpdateEventSchemaResponse>
@@ -1338,8 +1254,7 @@ public class EgClient {
      *
      * 更新自定义事件源定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEventSourceRequest 请求对象
      * @return UpdateEventSourceResponse
@@ -1353,8 +1268,7 @@ public class EgClient {
      *
      * 更新自定义事件源定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEventSourceRequest 请求对象
      * @return SyncInvoker<UpdateEventSourceRequest, UpdateEventSourceResponse>
@@ -1370,8 +1284,7 @@ public class EgClient {
      *
      * 更新事件订阅定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSubscriptionRequest 请求对象
      * @return UpdateSubscriptionResponse
@@ -1385,8 +1298,7 @@ public class EgClient {
      *
      * 更新事件订阅定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSubscriptionRequest 请求对象
      * @return SyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse>
@@ -1402,8 +1314,7 @@ public class EgClient {
      *
      * 更新事件订阅源定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSubscriptionSourceRequest 请求对象
      * @return UpdateSubscriptionSourceResponse
@@ -1417,8 +1328,7 @@ public class EgClient {
      *
      * 更新事件订阅源定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSubscriptionSourceRequest 请求对象
      * @return SyncInvoker<UpdateSubscriptionSourceRequest, UpdateSubscriptionSourceResponse>
@@ -1434,8 +1344,7 @@ public class EgClient {
      *
      * 更新事件订阅目标定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSubscriptionTargetRequest 请求对象
      * @return UpdateSubscriptionTargetResponse
@@ -1449,8 +1358,7 @@ public class EgClient {
      *
      * 更新事件订阅目标定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSubscriptionTargetRequest 请求对象
      * @return SyncInvoker<UpdateSubscriptionTargetRequest, UpdateSubscriptionTargetResponse>
@@ -1466,8 +1374,7 @@ public class EgClient {
      *
      * 获取服务支持的API版本列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return ListApiVersionsResponse
@@ -1481,8 +1388,7 @@ public class EgClient {
      *
      * 获取服务支持的API版本列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>

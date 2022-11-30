@@ -22,8 +22,7 @@ public class CdnClient {
      *
      * 用于删除资源标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteTagsRequest 请求对象
      * @return BatchDeleteTagsResponse
@@ -37,8 +36,7 @@ public class CdnClient {
      *
      * 用于删除资源标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteTagsRequest 请求对象
      * @return SyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>
@@ -54,8 +52,7 @@ public class CdnClient {
      *
      * 创建加速域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDomainRequest 请求对象
      * @return CreateDomainResponse
@@ -69,8 +66,7 @@ public class CdnClient {
      *
      * 创建加速域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDomainRequest 请求对象
      * @return SyncInvoker<CreateDomainRequest, CreateDomainResponse>
@@ -84,8 +80,7 @@ public class CdnClient {
      *
      * 创建预热任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePreheatingTasksRequest 请求对象
      * @return CreatePreheatingTasksResponse
@@ -99,8 +94,7 @@ public class CdnClient {
      *
      * 创建预热任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePreheatingTasksRequest 请求对象
      * @return SyncInvoker<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse>
@@ -116,8 +110,7 @@ public class CdnClient {
      *
      * 创建刷新缓存任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRefreshTasksRequest 请求对象
      * @return CreateRefreshTasksResponse
@@ -131,8 +124,7 @@ public class CdnClient {
      *
      * 创建刷新缓存任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRefreshTasksRequest 请求对象
      * @return SyncInvoker<CreateRefreshTasksRequest, CreateRefreshTasksResponse>
@@ -148,8 +140,7 @@ public class CdnClient {
      *
      * 用于创建资源标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTagsRequest 请求对象
      * @return CreateTagsResponse
@@ -163,8 +154,7 @@ public class CdnClient {
      *
      * 用于创建资源标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTagsRequest 请求对象
      * @return SyncInvoker<CreateTagsRequest, CreateTagsResponse>
@@ -178,8 +168,7 @@ public class CdnClient {
      *
      * 删除加速域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDomainRequest 请求对象
      * @return DeleteDomainResponse
@@ -193,8 +182,7 @@ public class CdnClient {
      *
      * 删除加速域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDomainRequest 请求对象
      * @return SyncInvoker<DeleteDomainRequest, DeleteDomainResponse>
@@ -208,8 +196,7 @@ public class CdnClient {
      *
      * 停用加速域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisableDomainRequest 请求对象
      * @return DisableDomainResponse
@@ -223,8 +210,7 @@ public class CdnClient {
      *
      * 停用加速域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisableDomainRequest 请求对象
      * @return SyncInvoker<DisableDomainRequest, DisableDomainResponse>
@@ -238,8 +224,7 @@ public class CdnClient {
      *
      * 启用加速域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableDomainRequest 请求对象
      * @return EnableDomainResponse
@@ -253,8 +238,7 @@ public class CdnClient {
      *
      * 启用加速域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableDomainRequest 请求对象
      * @return SyncInvoker<EnableDomainRequest, EnableDomainResponse>
@@ -268,8 +252,7 @@ public class CdnClient {
      *
      * 查询加速域名信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDomainsRequest 请求对象
      * @return ListDomainsResponse
@@ -283,8 +266,7 @@ public class CdnClient {
      *
      * 查询加速域名信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDomainsRequest 请求对象
      * @return SyncInvoker<ListDomainsRequest, ListDomainsResponse>
@@ -298,8 +280,7 @@ public class CdnClient {
      *
      * 查询域名已经设置的IP黑白名单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBlackWhiteListRequest 请求对象
      * @return ShowBlackWhiteListResponse
@@ -313,8 +294,7 @@ public class CdnClient {
      *
      * 查询域名已经设置的IP黑白名单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBlackWhiteListRequest 请求对象
      * @return SyncInvoker<ShowBlackWhiteListRequest, ShowBlackWhiteListResponse>
@@ -330,8 +310,7 @@ public class CdnClient {
      *
      * 查询缓存规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCacheRulesRequest 请求对象
      * @return ShowCacheRulesResponse
@@ -345,8 +324,7 @@ public class CdnClient {
      *
      * 查询缓存规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCacheRulesRequest 请求对象
      * @return SyncInvoker<ShowCacheRulesRequest, ShowCacheRulesResponse>
@@ -362,8 +340,7 @@ public class CdnClient {
      *
      * 查询所有绑定HTTPS证书的域名信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCertificatesHttpsInfoRequest 请求对象
      * @return ShowCertificatesHttpsInfoResponse
@@ -377,8 +354,7 @@ public class CdnClient {
      *
      * 查询所有绑定HTTPS证书的域名信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCertificatesHttpsInfoRequest 请求对象
      * @return SyncInvoker<ShowCertificatesHttpsInfoRequest, ShowCertificatesHttpsInfoResponse>
@@ -394,8 +370,7 @@ public class CdnClient {
      *
      * 查询加速域名详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainDetailRequest 请求对象
      * @return ShowDomainDetailResponse
@@ -409,8 +384,7 @@ public class CdnClient {
      *
      * 查询加速域名详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainDetailRequest 请求对象
      * @return SyncInvoker<ShowDomainDetailRequest, ShowDomainDetailResponse>
@@ -426,8 +400,7 @@ public class CdnClient {
      *
      * 查询域名配置接口，支持查询回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、强制重定向、智能压缩、缓存URL参数、IPv6开关、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainFullConfigRequest 请求对象
      * @return ShowDomainFullConfigResponse
@@ -441,8 +414,7 @@ public class CdnClient {
      *
      * 查询域名配置接口，支持查询回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、强制重定向、智能压缩、缓存URL参数、IPv6开关、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainFullConfigRequest 请求对象
      * @return SyncInvoker<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse>
@@ -466,8 +438,7 @@ public class CdnClient {
      * - 如果传的是多个域名，则每个域名的数据分开返回。
      * - 支持同时查询多个指标，不超过10个。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainItemDetailsRequest 请求对象
      * @return ShowDomainItemDetailsResponse
@@ -489,8 +460,7 @@ public class CdnClient {
      * - 如果传的是多个域名，则每个域名的数据分开返回。
      * - 支持同时查询多个指标，不超过10个。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainItemDetailsRequest 请求对象
      * @return SyncInvoker<ShowDomainItemDetailsRequest, ShowDomainItemDetailsResponse>
@@ -517,8 +487,7 @@ public class CdnClient {
      * - 支持同时查询多个指标，不超过10个。
      * - 域名为海外加速场景不适用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainItemLocationDetailsRequest 请求对象
      * @return ShowDomainItemLocationDetailsResponse
@@ -544,8 +513,7 @@ public class CdnClient {
      * - 支持同时查询多个指标，不超过10个。
      * - 域名为海外加速场景不适用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainItemLocationDetailsRequest 请求对象
      * @return SyncInvoker<ShowDomainItemLocationDetailsRequest, ShowDomainItemLocationDetailsResponse>
@@ -567,8 +535,7 @@ public class CdnClient {
      * - 流量类指标单位统一为Byte（字节）、带宽类指标单位统一为bit/s（比特/秒）、请求数类和状态码类指标单位统一为次数。用于查询指定域名、指定统计指标的区域运营商明细数据。
      * - 单租户调用频率：15次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainLocationStatsRequest 请求对象
      * @return ShowDomainLocationStatsResponse
@@ -588,8 +555,7 @@ public class CdnClient {
      * - 流量类指标单位统一为Byte（字节）、带宽类指标单位统一为bit/s（比特/秒）、请求数类和状态码类指标单位统一为次数。用于查询指定域名、指定统计指标的区域运营商明细数据。
      * - 单租户调用频率：15次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainLocationStatsRequest 请求对象
      * @return SyncInvoker<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse>
@@ -611,8 +577,7 @@ public class CdnClient {
      * - 流量类指标单位统一为Byte（字节）、带宽类指标单位统一为bit/s（比特/秒）、请求数类和状态码类指标单位统一为次数。用于查询指定域名、指定统计指标的明细数据。
      * - 单租户调用频率：15次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainStatsRequest 请求对象
      * @return ShowDomainStatsResponse
@@ -632,8 +597,7 @@ public class CdnClient {
      * - 流量类指标单位统一为Byte（字节）、带宽类指标单位统一为bit/s（比特/秒）、请求数类和状态码类指标单位统一为次数。用于查询指定域名、指定统计指标的明细数据。
      * - 单租户调用频率：15次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainStatsRequest 请求对象
      * @return SyncInvoker<ShowDomainStatsRequest, ShowDomainStatsResponse>
@@ -649,8 +613,7 @@ public class CdnClient {
      *
      * 查询刷新预热任务详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHistoryTaskDetailsRequest 请求对象
      * @return ShowHistoryTaskDetailsResponse
@@ -664,8 +627,7 @@ public class CdnClient {
      *
      * 查询刷新预热任务详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHistoryTaskDetailsRequest 请求对象
      * @return SyncInvoker<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse>
@@ -681,8 +643,7 @@ public class CdnClient {
      *
      * 查询刷新预热任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHistoryTasksRequest 请求对象
      * @return ShowHistoryTasksResponse
@@ -696,8 +657,7 @@ public class CdnClient {
      *
      * 查询刷新预热任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHistoryTasksRequest 请求对象
      * @return SyncInvoker<ShowHistoryTasksRequest, ShowHistoryTasksResponse>
@@ -713,8 +673,7 @@ public class CdnClient {
      *
      * 获取加速域名证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHttpInfoRequest 请求对象
      * @return ShowHttpInfoResponse
@@ -728,8 +687,7 @@ public class CdnClient {
      *
      * 获取加速域名证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHttpInfoRequest 请求对象
      * @return SyncInvoker<ShowHttpInfoRequest, ShowHttpInfoResponse>
@@ -743,8 +701,7 @@ public class CdnClient {
      *
      * 查询IP归属信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIpInfoRequest 请求对象
      * @return ShowIpInfoResponse
@@ -758,8 +715,7 @@ public class CdnClient {
      *
      * 查询IP归属信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIpInfoRequest 请求对象
      * @return SyncInvoker<ShowIpInfoRequest, ShowIpInfoResponse>
@@ -773,8 +729,7 @@ public class CdnClient {
      *
      * 日志查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLogsRequest 请求对象
      * @return ShowLogsResponse
@@ -788,8 +743,7 @@ public class CdnClient {
      *
      * 日志查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLogsRequest 请求对象
      * @return SyncInvoker<ShowLogsRequest, ShowLogsResponse>
@@ -803,8 +757,7 @@ public class CdnClient {
      *
      * 查询回源HOST。回源HOST是CDN节点在回源过程中，在源站访问的站点域名，即http请求头中的host信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOriginHostRequest 请求对象
      * @return ShowOriginHostResponse
@@ -818,8 +771,7 @@ public class CdnClient {
      *
      * 查询回源HOST。回源HOST是CDN节点在回源过程中，在源站访问的站点域名，即http请求头中的host信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOriginHostRequest 请求对象
      * @return SyncInvoker<ShowOriginHostRequest, ShowOriginHostResponse>
@@ -835,8 +787,7 @@ public class CdnClient {
      *
      * 查询当前用户域名、刷新文件、刷新目录和预热的配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotaRequest 请求对象
      * @return ShowQuotaResponse
@@ -850,8 +801,7 @@ public class CdnClient {
      *
      * 查询当前用户域名、刷新文件、刷新目录和预热的配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotaRequest 请求对象
      * @return SyncInvoker<ShowQuotaRequest, ShowQuotaResponse>
@@ -865,8 +815,7 @@ public class CdnClient {
      *
      * 查询Referer过滤规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowReferRequest 请求对象
      * @return ShowReferResponse
@@ -880,8 +829,7 @@ public class CdnClient {
      *
      * 查询Referer过滤规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowReferRequest 请求对象
      * @return SyncInvoker<ShowReferRequest, ShowReferResponse>
@@ -895,8 +843,7 @@ public class CdnClient {
      *
      * 列举header所有配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResponseHeaderRequest 请求对象
      * @return ShowResponseHeaderResponse
@@ -910,8 +857,7 @@ public class CdnClient {
      *
      * 列举header所有配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResponseHeaderRequest 请求对象
      * @return SyncInvoker<ShowResponseHeaderRequest, ShowResponseHeaderResponse>
@@ -927,8 +873,7 @@ public class CdnClient {
      *
      * 用于查询资源标签列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTagsRequest 请求对象
      * @return ShowTagsResponse
@@ -942,8 +887,7 @@ public class CdnClient {
      *
      * 用于查询资源标签列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTagsRequest 请求对象
      * @return SyncInvoker<ShowTagsRequest, ShowTagsResponse>
@@ -963,8 +907,7 @@ public class CdnClient {
      * - 流量类指标单位统一为Byte（字节）、请求数类指标单位统一为次数。用于查询指定域名、指定统计指标的明细数据。
      * - 单租户调用频率：5次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTopUrlRequest 请求对象
      * @return ShowTopUrlResponse
@@ -984,8 +927,7 @@ public class CdnClient {
      * - 流量类指标单位统一为Byte（字节）、请求数类指标单位统一为次数。用于查询指定域名、指定统计指标的明细数据。
      * - 单租户调用频率：5次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTopUrlRequest 请求对象
      * @return SyncInvoker<ShowTopUrlRequest, ShowTopUrlResponse>
@@ -999,8 +941,7 @@ public class CdnClient {
      *
      * 查询刷新预热URL记录。如需此接口，请提交工单开通
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUrlTaskInfoRequest 请求对象
      * @return ShowUrlTaskInfoResponse
@@ -1014,8 +955,7 @@ public class CdnClient {
      *
      * 查询刷新预热URL记录。如需此接口，请提交工单开通
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUrlTaskInfoRequest 请求对象
      * @return SyncInvoker<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse>
@@ -1031,8 +971,7 @@ public class CdnClient {
      *
      * 设置域名的IP黑白名单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBlackWhiteListRequest 请求对象
      * @return UpdateBlackWhiteListResponse
@@ -1046,8 +985,7 @@ public class CdnClient {
      *
      * 设置域名的IP黑白名单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBlackWhiteListRequest 请求对象
      * @return SyncInvoker<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse>
@@ -1063,8 +1001,7 @@ public class CdnClient {
      *
      * 设置CDN节点上缓存资源的缓存策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCacheRulesRequest 请求对象
      * @return UpdateCacheRulesResponse
@@ -1078,8 +1015,7 @@ public class CdnClient {
      *
      * 设置CDN节点上缓存资源的缓存策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCacheRulesRequest 请求对象
      * @return SyncInvoker<UpdateCacheRulesRequest, UpdateCacheRulesResponse>
@@ -1095,8 +1031,7 @@ public class CdnClient {
      *
      * 修改域名全量配置接口，支持配置回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、强制重定向、智能压缩、缓存URL参数、IPv6、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainFullConfigRequest 请求对象
      * @return UpdateDomainFullConfigResponse
@@ -1110,8 +1045,7 @@ public class CdnClient {
      *
      * 修改域名全量配置接口，支持配置回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、强制重定向、智能压缩、缓存URL参数、IPv6、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainFullConfigRequest 请求对象
      * @return SyncInvoker<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse>
@@ -1127,8 +1061,7 @@ public class CdnClient {
      *
      * 一个证书配置多个域名，设置域名强制https回源参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainMultiCertificatesRequest 请求对象
      * @return UpdateDomainMultiCertificatesResponse
@@ -1143,8 +1076,7 @@ public class CdnClient {
      *
      * 一个证书配置多个域名，设置域名强制https回源参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainMultiCertificatesRequest 请求对象
      * @return SyncInvoker<UpdateDomainMultiCertificatesRequest, UpdateDomainMultiCertificatesResponse>
@@ -1160,8 +1092,7 @@ public class CdnClient {
      *
      * 修改源站信息。源站IP地址或域名都可以指引CDN节点回源到对应的源站服务器，源站域名不能与加速域名相同。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainOriginRequest 请求对象
      * @return UpdateDomainOriginResponse
@@ -1175,8 +1106,7 @@ public class CdnClient {
      *
      * 修改源站信息。源站IP地址或域名都可以指引CDN节点回源到对应的源站服务器，源站域名不能与加速域名相同。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainOriginRequest 请求对象
      * @return SyncInvoker<UpdateDomainOriginRequest, UpdateDomainOriginResponse>
@@ -1192,8 +1122,7 @@ public class CdnClient {
      *
      * 开启此项配置后，当CDN节点回源请求源站返回301/302状态码时，CDN节点会先跳转到301/302对应地址获取资源并缓存后再返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFollow302SwitchRequest 请求对象
      * @return UpdateFollow302SwitchResponse
@@ -1207,8 +1136,7 @@ public class CdnClient {
      *
      * 开启此项配置后，当CDN节点回源请求源站返回301/302状态码时，CDN节点会先跳转到301/302对应地址获取资源并缓存后再返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFollow302SwitchRequest 请求对象
      * @return SyncInvoker<UpdateFollow302SwitchRequest, UpdateFollow302SwitchResponse>
@@ -1224,8 +1152,7 @@ public class CdnClient {
      *
      * 设置加速域名HTTPS。通过配置加速域名的HTTPS证书，并将其部署在全网CDN节点，实现HTTPS安全加速。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHttpsInfoRequest 请求对象
      * @return UpdateHttpsInfoResponse
@@ -1239,8 +1166,7 @@ public class CdnClient {
      *
      * 设置加速域名HTTPS。通过配置加速域名的HTTPS证书，并将其部署在全网CDN节点，实现HTTPS安全加速。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHttpsInfoRequest 请求对象
      * @return SyncInvoker<UpdateHttpsInfoRequest, UpdateHttpsInfoResponse>
@@ -1256,8 +1182,7 @@ public class CdnClient {
      *
      * 修改回源HOST。回源HOST是CDN节点在回源过程中，在源站访问的站点域名，即http请求头中的host信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateOriginHostRequest 请求对象
      * @return UpdateOriginHostResponse
@@ -1271,8 +1196,7 @@ public class CdnClient {
      *
      * 修改回源HOST。回源HOST是CDN节点在回源过程中，在源站访问的站点域名，即http请求头中的host信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateOriginHostRequest 请求对象
      * @return SyncInvoker<UpdateOriginHostRequest, UpdateOriginHostResponse>
@@ -1288,8 +1212,7 @@ public class CdnClient {
      *
      * 修改私有桶开启关闭状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePrivateBucketAccessRequest 请求对象
      * @return UpdatePrivateBucketAccessResponse
@@ -1303,8 +1226,7 @@ public class CdnClient {
      *
      * 修改私有桶开启关闭状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePrivateBucketAccessRequest 请求对象
      * @return SyncInvoker<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse>
@@ -1322,8 +1244,7 @@ public class CdnClient {
      * 
      * 开启Range回源前需要确认源站是否支持Range请求，若源站不支持Range请求，开启Range回源将导致资源无法缓存。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRangeSwitchRequest 请求对象
      * @return UpdateRangeSwitchResponse
@@ -1339,8 +1260,7 @@ public class CdnClient {
      * 
      * 开启Range回源前需要确认源站是否支持Range请求，若源站不支持Range请求，开启Range回源将导致资源无法缓存。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRangeSwitchRequest 请求对象
      * @return SyncInvoker<UpdateRangeSwitchRequest, UpdateRangeSwitchResponse>
@@ -1356,8 +1276,7 @@ public class CdnClient {
      *
      * 设置Referer过滤规则。通过设置过滤策略，对访问者身份进行识别和过滤，实现限制访问来源的目的。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateReferRequest 请求对象
      * @return UpdateReferResponse
@@ -1371,8 +1290,7 @@ public class CdnClient {
      *
      * 设置Referer过滤规则。通过设置过滤策略，对访问者身份进行识别和过滤，实现限制访问来源的目的。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateReferRequest 请求对象
      * @return SyncInvoker<UpdateReferRequest, UpdateReferResponse>
@@ -1386,8 +1304,7 @@ public class CdnClient {
      *
      * 新增/修改域名响应头配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResponseHeaderRequest 请求对象
      * @return UpdateResponseHeaderResponse
@@ -1401,8 +1318,7 @@ public class CdnClient {
      *
      * 新增/修改域名响应头配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResponseHeaderRequest 请求对象
      * @return SyncInvoker<UpdateResponseHeaderRequest, UpdateResponseHeaderResponse>

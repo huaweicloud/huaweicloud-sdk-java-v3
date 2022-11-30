@@ -24,8 +24,7 @@ public class CcAsyncClient {
      *
      * 创建云连接实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCloudConnectionRequest 请求对象
      * @return CompletableFuture<CreateCloudConnectionResponse>
@@ -40,8 +39,7 @@ public class CcAsyncClient {
      *
      * 创建云连接实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCloudConnectionRequest 请求对象
      * @return AsyncInvoker<CreateCloudConnectionRequest, CreateCloudConnectionResponse>
@@ -57,8 +55,7 @@ public class CcAsyncClient {
      *
      * 创建网络实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNetworkInstanceRequest 请求对象
      * @return CompletableFuture<CreateNetworkInstanceResponse>
@@ -73,8 +70,7 @@ public class CcAsyncClient {
      *
      * 创建网络实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNetworkInstanceRequest 请求对象
      * @return AsyncInvoker<CreateNetworkInstanceRequest, CreateNetworkInstanceResponse>
@@ -90,8 +86,7 @@ public class CcAsyncClient {
      *
      * 删除云连接实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCloudConnectionRequest 请求对象
      * @return CompletableFuture<DeleteCloudConnectionResponse>
@@ -106,8 +101,7 @@ public class CcAsyncClient {
      *
      * 删除云连接实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCloudConnectionRequest 请求对象
      * @return AsyncInvoker<DeleteCloudConnectionRequest, DeleteCloudConnectionResponse>
@@ -123,8 +117,7 @@ public class CcAsyncClient {
      *
      * 删除网络实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNetworkInstanceRequest 请求对象
      * @return CompletableFuture<DeleteNetworkInstanceResponse>
@@ -139,8 +132,7 @@ public class CcAsyncClient {
      *
      * 删除网络实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNetworkInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteNetworkInstanceRequest, DeleteNetworkInstanceResponse>
@@ -157,8 +149,7 @@ public class CcAsyncClient {
      * 查询云连接路由条目列表。
      * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCloudConnectionRoutesRequest 请求对象
      * @return CompletableFuture<ListCloudConnectionRoutesResponse>
@@ -174,8 +165,7 @@ public class CcAsyncClient {
      * 查询云连接路由条目列表。
      * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCloudConnectionRoutesRequest 请求对象
      * @return AsyncInvoker<ListCloudConnectionRoutesRequest, ListCloudConnectionRoutesResponse>
@@ -192,8 +182,7 @@ public class CcAsyncClient {
      * 查询云连接列表。
      * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCloudConnectionsRequest 请求对象
      * @return CompletableFuture<ListCloudConnectionsResponse>
@@ -209,8 +198,7 @@ public class CcAsyncClient {
      * 查询云连接列表。
      * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCloudConnectionsRequest 请求对象
      * @return AsyncInvoker<ListCloudConnectionsRequest, ListCloudConnectionsResponse>
@@ -227,8 +215,7 @@ public class CcAsyncClient {
      * 查询云连接列表。
      * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNetworkInstancesRequest 请求对象
      * @return CompletableFuture<ListNetworkInstancesResponse>
@@ -244,8 +231,7 @@ public class CcAsyncClient {
      * 查询云连接列表。
      * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNetworkInstancesRequest 请求对象
      * @return AsyncInvoker<ListNetworkInstancesRequest, ListNetworkInstancesResponse>
@@ -261,8 +247,7 @@ public class CcAsyncClient {
      *
      * 查询云连接实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCloudConnectionRequest 请求对象
      * @return CompletableFuture<ShowCloudConnectionResponse>
@@ -276,8 +261,7 @@ public class CcAsyncClient {
      *
      * 查询云连接实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCloudConnectionRequest 请求对象
      * @return AsyncInvoker<ShowCloudConnectionRequest, ShowCloudConnectionResponse>
@@ -294,8 +278,7 @@ public class CcAsyncClient {
      * 查询云连接路由条目列表。
      * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCloudConnectionRoutesRequest 请求对象
      * @return CompletableFuture<ShowCloudConnectionRoutesResponse>
@@ -311,8 +294,7 @@ public class CcAsyncClient {
      * 查询云连接路由条目列表。
      * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCloudConnectionRoutesRequest 请求对象
      * @return AsyncInvoker<ShowCloudConnectionRoutesRequest, ShowCloudConnectionRoutesResponse>
@@ -328,8 +310,7 @@ public class CcAsyncClient {
      *
      * 查询网络实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNetworkInstanceRequest 请求对象
      * @return CompletableFuture<ShowNetworkInstanceResponse>
@@ -343,8 +324,7 @@ public class CcAsyncClient {
      *
      * 查询网络实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNetworkInstanceRequest 请求对象
      * @return AsyncInvoker<ShowNetworkInstanceRequest, ShowNetworkInstanceResponse>
@@ -360,8 +340,7 @@ public class CcAsyncClient {
      *
      * 更新云连接实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCloudConnectionRequest 请求对象
      * @return CompletableFuture<UpdateCloudConnectionResponse>
@@ -376,8 +355,7 @@ public class CcAsyncClient {
      *
      * 更新云连接实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCloudConnectionRequest 请求对象
      * @return AsyncInvoker<UpdateCloudConnectionRequest, UpdateCloudConnectionResponse>
@@ -393,8 +371,7 @@ public class CcAsyncClient {
      *
      * 更新网络实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNetworkInstanceRequest 请求对象
      * @return CompletableFuture<UpdateNetworkInstanceResponse>
@@ -409,8 +386,7 @@ public class CcAsyncClient {
      *
      * 更新网络实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNetworkInstanceRequest 请求对象
      * @return AsyncInvoker<UpdateNetworkInstanceRequest, UpdateNetworkInstanceResponse>

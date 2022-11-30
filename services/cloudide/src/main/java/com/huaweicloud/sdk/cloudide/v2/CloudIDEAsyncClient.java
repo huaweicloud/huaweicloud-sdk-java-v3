@@ -24,8 +24,7 @@ public class CloudIDEAsyncClient {
      *
      * 添加插件评论
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddExtensionEvaluationRequest 请求对象
      * @return CompletableFuture<AddExtensionEvaluationResponse>
@@ -40,8 +39,7 @@ public class CloudIDEAsyncClient {
      *
      * 添加插件评论
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddExtensionEvaluationRequest 请求对象
      * @return AsyncInvoker<AddExtensionEvaluationRequest, AddExtensionEvaluationResponse>
@@ -57,8 +55,7 @@ public class CloudIDEAsyncClient {
      *
      * 添加评论回复、回复评论回复
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddExtensionEvaluationReplyRequest 请求对象
      * @return CompletableFuture<AddExtensionEvaluationReplyResponse>
@@ -73,8 +70,7 @@ public class CloudIDEAsyncClient {
      *
      * 添加评论回复、回复评论回复
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddExtensionEvaluationReplyRequest 请求对象
      * @return AsyncInvoker<AddExtensionEvaluationReplyRequest, AddExtensionEvaluationReplyResponse>
@@ -90,8 +86,7 @@ public class CloudIDEAsyncClient {
      *
      * 添加新评星
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddExtensionStarRequest 请求对象
      * @return CompletableFuture<AddExtensionStarResponse>
@@ -105,8 +100,7 @@ public class CloudIDEAsyncClient {
      *
      * 添加新评星
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddExtensionStarRequest 请求对象
      * @return AsyncInvoker<AddExtensionStarRequest, AddExtensionStarResponse>
@@ -122,8 +116,7 @@ public class CloudIDEAsyncClient {
      *
      * 举报评论,举报回复
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckMaliciousExtensionEvaluationRequest 请求对象
      * @return CompletableFuture<CheckMaliciousExtensionEvaluationResponse>
@@ -138,8 +131,7 @@ public class CloudIDEAsyncClient {
      *
      * 举报评论,举报回复
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckMaliciousExtensionEvaluationRequest 请求对象
      * @return AsyncInvoker<CheckMaliciousExtensionEvaluationRequest, CheckMaliciousExtensionEvaluationResponse>
@@ -155,8 +147,7 @@ public class CloudIDEAsyncClient {
      *
      * 设置ide实例对插件的授权。同意、不同意、未知（下次重新询问）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateExtensionAuthorizationRequest 请求对象
      * @return CompletableFuture<CreateExtensionAuthorizationResponse>
@@ -171,8 +162,7 @@ public class CloudIDEAsyncClient {
      *
      * 设置ide实例对插件的授权。同意、不同意、未知（下次重新询问）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateExtensionAuthorizationRequest 请求对象
      * @return AsyncInvoker<CreateExtensionAuthorizationRequest, CreateExtensionAuthorizationResponse>
@@ -188,8 +178,7 @@ public class CloudIDEAsyncClient {
      *
      * 删除评论
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEvaluationRequest 请求对象
      * @return CompletableFuture<DeleteEvaluationResponse>
@@ -203,8 +192,7 @@ public class CloudIDEAsyncClient {
      *
      * 删除评论
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEvaluationRequest 请求对象
      * @return AsyncInvoker<DeleteEvaluationRequest, DeleteEvaluationResponse>
@@ -220,8 +208,7 @@ public class CloudIDEAsyncClient {
      *
      * 删除回复
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEvaluationReplyRequest 请求对象
      * @return CompletableFuture<DeleteEvaluationReplyResponse>
@@ -236,8 +223,7 @@ public class CloudIDEAsyncClient {
      *
      * 删除回复
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEvaluationReplyRequest 请求对象
      * @return AsyncInvoker<DeleteEvaluationReplyRequest, DeleteEvaluationReplyResponse>
@@ -253,8 +239,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询插件列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListExtensionsRequest 请求对象
      * @return CompletableFuture<ListExtensionsResponse>
@@ -268,8 +253,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询插件列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListExtensionsRequest 请求对象
      * @return AsyncInvoker<ListExtensionsRequest, ListExtensionsResponse>
@@ -285,8 +269,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询技术栈模板工程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectTemplatesRequest 请求对象
      * @return CompletableFuture<ListProjectTemplatesResponse>
@@ -301,8 +284,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询技术栈模板工程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectTemplatesRequest 请求对象
      * @return AsyncInvoker<ListProjectTemplatesRequest, ListProjectTemplatesResponse>
@@ -318,8 +300,7 @@ public class CloudIDEAsyncClient {
      *
      * 按region获取标签所有技术栈
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStacksRequest 请求对象
      * @return CompletableFuture<ListStacksResponse>
@@ -333,8 +314,7 @@ public class CloudIDEAsyncClient {
      *
      * 按region获取标签所有技术栈
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStacksRequest 请求对象
      * @return AsyncInvoker<ListStacksRequest, ListStacksResponse>
@@ -348,8 +328,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询当前帐号访问权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAccountStatusRequest 请求对象
      * @return CompletableFuture<ShowAccountStatusResponse>
@@ -363,8 +342,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询当前帐号访问权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAccountStatusRequest 请求对象
      * @return AsyncInvoker<ShowAccountStatusRequest, ShowAccountStatusResponse>
@@ -380,8 +358,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询ide实例对插件的授权情况，同意授权的插件能在ide实例内携带登陆用户的token调用第三方服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowExtensionAuthorizationRequest 请求对象
      * @return CompletableFuture<ShowExtensionAuthorizationResponse>
@@ -396,8 +373,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询ide实例对插件的授权情况，同意授权的插件能在ide实例内携带登陆用户的token调用第三方服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowExtensionAuthorizationRequest 请求对象
      * @return AsyncInvoker<ShowExtensionAuthorizationRequest, ShowExtensionAuthorizationResponse>
@@ -413,8 +389,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询插件详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowExtensionDetailRequest 请求对象
      * @return CompletableFuture<ShowExtensionDetailResponse>
@@ -428,8 +403,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询插件详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowExtensionDetailRequest 请求对象
      * @return AsyncInvoker<ShowExtensionDetailRequest, ShowExtensionDetailResponse>
@@ -445,8 +419,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询插件评价
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowExtensionEvaluationRequest 请求对象
      * @return CompletableFuture<ShowExtensionEvaluationResponse>
@@ -461,8 +434,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询插件评价
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowExtensionEvaluationRequest 请求对象
      * @return AsyncInvoker<ShowExtensionEvaluationRequest, ShowExtensionEvaluationResponse>
@@ -478,8 +450,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询插件评星
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowExtensionEvaluationStarRequest 请求对象
      * @return CompletableFuture<ShowExtensionEvaluationStarResponse>
@@ -494,8 +465,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询插件评星
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowExtensionEvaluationStarRequest 请求对象
      * @return AsyncInvoker<ShowExtensionEvaluationStarRequest, ShowExtensionEvaluationStarResponse>
@@ -511,8 +481,7 @@ public class CloudIDEAsyncClient {
      *
      * 获取技术栈计费信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPriceRequest 请求对象
      * @return CompletableFuture<ShowPriceResponse>
@@ -526,8 +495,7 @@ public class CloudIDEAsyncClient {
      *
      * 获取技术栈计费信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPriceRequest 请求对象
      * @return AsyncInvoker<ShowPriceRequest, ShowPriceResponse>
@@ -541,8 +509,7 @@ public class CloudIDEAsyncClient {
      *
      * 上传插件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadExtensionFileRequest 请求对象
      * @return CompletableFuture<UploadExtensionFileResponse>
@@ -556,8 +523,7 @@ public class CloudIDEAsyncClient {
      *
      * 上传插件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadExtensionFileRequest 请求对象
      * @return AsyncInvoker<UploadExtensionFileRequest, UploadExtensionFileResponse>
@@ -573,8 +539,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询用户是否有权限访问某个IDE实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckInstanceAccessRequest 请求对象
      * @return CompletableFuture<CheckInstanceAccessResponse>
@@ -588,8 +553,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询用户是否有权限访问某个IDE实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckInstanceAccessRequest 请求对象
      * @return AsyncInvoker<CheckInstanceAccessRequest, CheckInstanceAccessResponse>
@@ -605,8 +569,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询IDE实例名是否重复
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckNameRequest 请求对象
      * @return CompletableFuture<CheckNameResponse>
@@ -620,8 +583,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询IDE实例名是否重复
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckNameRequest 请求对象
      * @return AsyncInvoker<CheckNameRequest, CheckNameResponse>
@@ -635,8 +597,7 @@ public class CloudIDEAsyncClient {
      *
      * 创建IDE实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return CompletableFuture<CreateInstanceResponse>
@@ -650,8 +611,7 @@ public class CloudIDEAsyncClient {
      *
      * 创建IDE实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
@@ -667,8 +627,7 @@ public class CloudIDEAsyncClient {
      *
      * 创建IDE实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceBy3rdRequest 请求对象
      * @return CompletableFuture<CreateInstanceBy3rdResponse>
@@ -682,8 +641,7 @@ public class CloudIDEAsyncClient {
      *
      * 创建IDE实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceBy3rdRequest 请求对象
      * @return AsyncInvoker<CreateInstanceBy3rdRequest, CreateInstanceBy3rdResponse>
@@ -699,8 +657,7 @@ public class CloudIDEAsyncClient {
      *
      * 删除IDE实例（同时删除磁盘数据）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return CompletableFuture<DeleteInstanceResponse>
@@ -714,8 +671,7 @@ public class CloudIDEAsyncClient {
      *
      * 删除IDE实例（同时删除磁盘数据）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
@@ -731,8 +687,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询IDE实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return CompletableFuture<ListInstancesResponse>
@@ -746,8 +701,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询IDE实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
@@ -763,8 +717,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询某个租户下的IDE实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListOrgInstancesRequest 请求对象
      * @return CompletableFuture<ListOrgInstancesResponse>
@@ -778,8 +731,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询某个租户下的IDE实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListOrgInstancesRequest 请求对象
      * @return AsyncInvoker<ListOrgInstancesRequest, ListOrgInstancesResponse>
@@ -795,8 +747,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询某个IDE实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return CompletableFuture<ShowInstanceResponse>
@@ -810,8 +761,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询某个IDE实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
@@ -827,8 +777,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询某个IDE实例的状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceStatusInfoRequest 请求对象
      * @return CompletableFuture<ShowInstanceStatusInfoResponse>
@@ -843,8 +792,7 @@ public class CloudIDEAsyncClient {
      *
      * 查询某个IDE实例的状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceStatusInfoRequest 请求对象
      * @return AsyncInvoker<ShowInstanceStatusInfoRequest, ShowInstanceStatusInfoResponse>
@@ -860,8 +808,7 @@ public class CloudIDEAsyncClient {
      *
      * 启动IDE实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartInstanceRequest 请求对象
      * @return CompletableFuture<StartInstanceResponse>
@@ -875,8 +822,7 @@ public class CloudIDEAsyncClient {
      *
      * 启动IDE实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartInstanceRequest 请求对象
      * @return AsyncInvoker<StartInstanceRequest, StartInstanceResponse>
@@ -892,8 +838,7 @@ public class CloudIDEAsyncClient {
      *
      * 停止IDE实例（不删除磁盘数据）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopInstanceRequest 请求对象
      * @return CompletableFuture<StopInstanceResponse>
@@ -907,8 +852,7 @@ public class CloudIDEAsyncClient {
      *
      * 停止IDE实例（不删除磁盘数据）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopInstanceRequest 请求对象
      * @return AsyncInvoker<StopInstanceRequest, StopInstanceResponse>
@@ -924,8 +868,7 @@ public class CloudIDEAsyncClient {
      *
      * 修改IDE实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceRequest 请求对象
      * @return CompletableFuture<UpdateInstanceResponse>
@@ -939,8 +882,7 @@ public class CloudIDEAsyncClient {
      *
      * 修改IDE实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
@@ -956,8 +898,7 @@ public class CloudIDEAsyncClient {
      *
      * 刷新IDE实例活跃状态，超过该实例设置的过期时间后实例自动关闭。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceActivityRequest 请求对象
      * @return CompletableFuture<UpdateInstanceActivityResponse>
@@ -972,8 +913,7 @@ public class CloudIDEAsyncClient {
      *
      * 刷新IDE实例活跃状态，超过该实例设置的过期时间后实例自动关闭。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceActivityRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceActivityRequest, UpdateInstanceActivityResponse>

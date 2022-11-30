@@ -24,8 +24,7 @@ public class DdmAsyncClient {
      *
      * 创建DDM逻辑库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatabaseRequest 请求对象
      * @return CompletableFuture<CreateDatabaseResponse>
@@ -39,8 +38,7 @@ public class DdmAsyncClient {
      *
      * 创建DDM逻辑库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatabaseRequest 请求对象
      * @return AsyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>
@@ -58,8 +56,7 @@ public class DdmAsyncClient {
      * 
      * DDM运行于虚拟私有云。申请DDM实例前，需保证有可用的虚拟私有云，并且已配置好子网与安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return CompletableFuture<CreateInstanceResponse>
@@ -75,8 +72,7 @@ public class DdmAsyncClient {
      * 
      * DDM运行于虚拟私有云。申请DDM实例前，需保证有可用的虚拟私有云，并且已配置好子网与安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
@@ -92,8 +88,7 @@ public class DdmAsyncClient {
      *
      * DDM帐号用于连接和管理逻辑库。一个DDM实例最多能创建100个DDM帐号，一个DDM帐号可以关联多个逻辑库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateUsersRequest 请求对象
      * @return CompletableFuture<CreateUsersResponse>
@@ -107,8 +102,7 @@ public class DdmAsyncClient {
      *
      * DDM帐号用于连接和管理逻辑库。一个DDM实例最多能创建100个DDM帐号，一个DDM帐号可以关联多个逻辑库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateUsersRequest 请求对象
      * @return AsyncInvoker<CreateUsersRequest, CreateUsersResponse>
@@ -122,8 +116,7 @@ public class DdmAsyncClient {
      *
      * 删除指定的逻辑库，释放该逻辑库的所有资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDatabaseRequest 请求对象
      * @return CompletableFuture<DeleteDatabaseResponse>
@@ -137,8 +130,7 @@ public class DdmAsyncClient {
      *
      * 删除指定的逻辑库，释放该逻辑库的所有资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDatabaseRequest 请求对象
      * @return AsyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse>
@@ -154,8 +146,7 @@ public class DdmAsyncClient {
      *
      * 删除指定的DDM实例，释放该实例的所有资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return CompletableFuture<DeleteInstanceResponse>
@@ -169,8 +160,7 @@ public class DdmAsyncClient {
      *
      * 删除指定的DDM实例，释放该实例的所有资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
@@ -186,8 +176,7 @@ public class DdmAsyncClient {
      *
      * 删除指定的DDM实例帐号，如果帐号关联了逻辑库，则对应的关联关系也会删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteUserRequest 请求对象
      * @return CompletableFuture<DeleteUserResponse>
@@ -201,8 +190,7 @@ public class DdmAsyncClient {
      *
      * 删除指定的DDM实例帐号，如果帐号关联了逻辑库，则对应的关联关系也会删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteUserRequest 请求对象
      * @return AsyncInvoker<DeleteUserRequest, DeleteUserResponse>
@@ -214,10 +202,9 @@ public class DdmAsyncClient {
     /**
      * DDM实例节点扩容
      *
-     * 对指定的DDM实例的节点个数进行扩容。
+     * 对指定的DDM实例的节点个数进行扩容，支持按需实例与包周期实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExpandInstanceNodesRequest 请求对象
      * @return CompletableFuture<ExpandInstanceNodesResponse>
@@ -229,10 +216,9 @@ public class DdmAsyncClient {
     /**
      * DDM实例节点扩容
      *
-     * 对指定的DDM实例的节点个数进行扩容。
+     * 对指定的DDM实例的节点个数进行扩容，支持按需实例与包周期实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExpandInstanceNodesRequest 请求对象
      * @return AsyncInvoker<ExpandInstanceNodesRequest, ExpandInstanceNodesResponse>
@@ -248,8 +234,7 @@ public class DdmAsyncClient {
      *
      * 查询创建逻辑库可选取的数据库实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailableRdsListRequest 请求对象
      * @return CompletableFuture<ListAvailableRdsListResponse>
@@ -264,8 +249,7 @@ public class DdmAsyncClient {
      *
      * 查询创建逻辑库可选取的数据库实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailableRdsListRequest 请求对象
      * @return AsyncInvoker<ListAvailableRdsListRequest, ListAvailableRdsListResponse>
@@ -281,8 +265,7 @@ public class DdmAsyncClient {
      *
      * 查询DDM逻辑库列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatabasesRequest 请求对象
      * @return CompletableFuture<ListDatabasesResponse>
@@ -296,8 +279,7 @@ public class DdmAsyncClient {
      *
      * 查询DDM逻辑库列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatabasesRequest 请求对象
      * @return AsyncInvoker<ListDatabasesRequest, ListDatabasesResponse>
@@ -312,8 +294,7 @@ public class DdmAsyncClient {
      *
      * 查询DDM引擎信息详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnginesRequest 请求对象
      * @return CompletableFuture<ListEnginesResponse>
@@ -327,8 +308,7 @@ public class DdmAsyncClient {
      *
      * 查询DDM引擎信息详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnginesRequest 请求对象
      * @return AsyncInvoker<ListEnginesRequest, ListEnginesResponse>
@@ -342,8 +322,7 @@ public class DdmAsyncClient {
      *
      * 查询DDM可用区规格信息详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return CompletableFuture<ListFlavorsResponse>
@@ -357,8 +336,7 @@ public class DdmAsyncClient {
      *
      * 查询DDM可用区规格信息详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
@@ -372,8 +350,7 @@ public class DdmAsyncClient {
      *
      * 查询DDM实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return CompletableFuture<ListInstancesResponse>
@@ -387,8 +364,7 @@ public class DdmAsyncClient {
      *
      * 查询DDM实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
@@ -403,8 +379,7 @@ public class DdmAsyncClient {
      *
      * 查询DDM实例节点列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNodesRequest 请求对象
      * @return CompletableFuture<ListNodesResponse>
@@ -418,8 +393,7 @@ public class DdmAsyncClient {
      *
      * 查询DDM实例节点列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNodesRequest 请求对象
      * @return AsyncInvoker<ListNodesRequest, ListNodesResponse>
@@ -433,8 +407,7 @@ public class DdmAsyncClient {
      *
      * 查询指定时间段内在DDM实例的读写次数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListReadWriteRatioRequest 请求对象
      * @return CompletableFuture<ListReadWriteRatioResponse>
@@ -448,8 +421,7 @@ public class DdmAsyncClient {
      *
      * 查询指定时间段内在DDM实例的读写次数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListReadWriteRatioRequest 请求对象
      * @return AsyncInvoker<ListReadWriteRatioRequest, ListReadWriteRatioResponse>
@@ -465,8 +437,7 @@ public class DdmAsyncClient {
      *
      * 查询指定时间段内在DDM实例上执行过的慢sql相关信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSlowLogRequest 请求对象
      * @return CompletableFuture<ListSlowLogResponse>
@@ -480,8 +451,7 @@ public class DdmAsyncClient {
      *
      * 查询指定时间段内在DDM实例上执行过的慢sql相关信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSlowLogRequest 请求对象
      * @return AsyncInvoker<ListSlowLogRequest, ListSlowLogResponse>
@@ -495,8 +465,7 @@ public class DdmAsyncClient {
      *
      * 查询DDM帐号列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUsersRequest 请求对象
      * @return CompletableFuture<ListUsersResponse>
@@ -510,8 +479,7 @@ public class DdmAsyncClient {
      *
      * 查询DDM帐号列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUsersRequest 请求对象
      * @return AsyncInvoker<ListUsersRequest, ListUsersResponse>
@@ -525,8 +493,7 @@ public class DdmAsyncClient {
      *
      * DDM实例跨region容灾场景下，针对目标DDM实例实现表数据reload，使数据同步。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RebuildConfigRequest 请求对象
      * @return CompletableFuture<RebuildConfigResponse>
@@ -540,8 +507,7 @@ public class DdmAsyncClient {
      *
      * DDM实例跨region容灾场景下，针对目标DDM实例实现表数据reload，使数据同步。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RebuildConfigRequest 请求对象
      * @return AsyncInvoker<RebuildConfigRequest, RebuildConfigResponse>
@@ -556,8 +522,7 @@ public class DdmAsyncClient {
      *
      * 首次调用时新建DDM管理员帐号并设置密码。后续调用时仅更新管理员密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetAdministratorRequest 请求对象
      * @return CompletableFuture<ResetAdministratorResponse>
@@ -571,8 +536,7 @@ public class DdmAsyncClient {
      *
      * 首次调用时新建DDM管理员帐号并设置密码。后续调用时仅更新管理员密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetAdministratorRequest 请求对象
      * @return AsyncInvoker<ResetAdministratorRequest, ResetAdministratorResponse>
@@ -588,8 +552,7 @@ public class DdmAsyncClient {
      *
      * 重置现有DDM帐号的密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetUserPasswordRequest 请求对象
      * @return CompletableFuture<ResetUserPasswordResponse>
@@ -603,8 +566,7 @@ public class DdmAsyncClient {
      *
      * 重置现有DDM帐号的密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetUserPasswordRequest 请求对象
      * @return AsyncInvoker<ResetUserPasswordRequest, ResetUserPasswordResponse>
@@ -620,8 +582,7 @@ public class DdmAsyncClient {
      *
      * 变更DDM实例规格。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeFlavorRequest 请求对象
      * @return CompletableFuture<ResizeFlavorResponse>
@@ -635,8 +596,7 @@ public class DdmAsyncClient {
      *
      * 变更DDM实例规格。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeFlavorRequest 请求对象
      * @return AsyncInvoker<ResizeFlavorRequest, ResizeFlavorResponse>
@@ -651,8 +611,7 @@ public class DdmAsyncClient {
      *
      * 重启指定的DDM实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartInstanceRequest 请求对象
      * @return CompletableFuture<RestartInstanceResponse>
@@ -666,8 +625,7 @@ public class DdmAsyncClient {
      *
      * 重启指定的DDM实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartInstanceRequest 请求对象
      * @return AsyncInvoker<RestartInstanceRequest, RestartInstanceResponse>
@@ -683,8 +641,7 @@ public class DdmAsyncClient {
      *
      * 查询指定逻辑库的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDatabaseRequest 请求对象
      * @return CompletableFuture<ShowDatabaseResponse>
@@ -698,8 +655,7 @@ public class DdmAsyncClient {
      *
      * 查询指定逻辑库的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDatabaseRequest 请求对象
      * @return AsyncInvoker<ShowDatabaseRequest, ShowDatabaseResponse>
@@ -714,8 +670,7 @@ public class DdmAsyncClient {
      *
      * 查询指定DDM实例的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return CompletableFuture<ShowInstanceResponse>
@@ -729,8 +684,7 @@ public class DdmAsyncClient {
      *
      * 查询指定DDM实例的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
@@ -745,8 +699,7 @@ public class DdmAsyncClient {
      *
      * 查询DDM指定实例的参数详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceParamRequest 请求对象
      * @return CompletableFuture<ShowInstanceParamResponse>
@@ -760,8 +713,7 @@ public class DdmAsyncClient {
      *
      * 查询DDM指定实例的参数详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceParamRequest 请求对象
      * @return AsyncInvoker<ShowInstanceParamRequest, ShowInstanceParamResponse>
@@ -777,8 +729,7 @@ public class DdmAsyncClient {
      *
      * 查询DDM实例节点详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNodeRequest 请求对象
      * @return CompletableFuture<ShowNodeResponse>
@@ -792,8 +743,7 @@ public class DdmAsyncClient {
      *
      * 查询DDM实例节点详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNodeRequest 请求对象
      * @return AsyncInvoker<ShowNodeRequest, ShowNodeResponse>
@@ -807,8 +757,7 @@ public class DdmAsyncClient {
      *
      * 对指定的DDM实例的节点个数进行缩容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShrinkInstanceNodesRequest 请求对象
      * @return CompletableFuture<ShrinkInstanceNodesResponse>
@@ -822,8 +771,7 @@ public class DdmAsyncClient {
      *
      * 对指定的DDM实例的节点个数进行缩容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShrinkInstanceNodesRequest 请求对象
      * @return AsyncInvoker<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse>
@@ -839,8 +787,7 @@ public class DdmAsyncClient {
      *
      * 同步当前DDM实例已关联的所有DN实例配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDatabaseInfoRequest 请求对象
      * @return CompletableFuture<UpdateDatabaseInfoResponse>
@@ -854,8 +801,7 @@ public class DdmAsyncClient {
      *
      * 同步当前DDM实例已关联的所有DN实例配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDatabaseInfoRequest 请求对象
      * @return AsyncInvoker<UpdateDatabaseInfoRequest, UpdateDatabaseInfoResponse>
@@ -871,8 +817,7 @@ public class DdmAsyncClient {
      *
      * 修改DDM实例名称。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceNameRequest 请求对象
      * @return CompletableFuture<UpdateInstanceNameResponse>
@@ -886,8 +831,7 @@ public class DdmAsyncClient {
      *
      * 修改DDM实例名称。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceNameRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>
@@ -903,8 +847,7 @@ public class DdmAsyncClient {
      *
      * 修改DDM实例参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceParamRequest 请求对象
      * @return CompletableFuture<UpdateInstanceParamResponse>
@@ -918,8 +861,7 @@ public class DdmAsyncClient {
      *
      * 修改DDM实例参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceParamRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceParamRequest, UpdateInstanceParamResponse>
@@ -935,8 +877,7 @@ public class DdmAsyncClient {
      *
      * 修改DDM实例安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceSecurityGroupRequest 请求对象
      * @return CompletableFuture<UpdateInstanceSecurityGroupResponse>
@@ -951,8 +892,7 @@ public class DdmAsyncClient {
      *
      * 修改DDM实例安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceSecurityGroupRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceSecurityGroupRequest, UpdateInstanceSecurityGroupResponse>
@@ -968,8 +908,7 @@ public class DdmAsyncClient {
      *
      * 修改DDM已关联的数据库实例的读策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateReadAndWriteStrategyRequest 请求对象
      * @return CompletableFuture<UpdateReadAndWriteStrategyResponse>
@@ -984,8 +923,7 @@ public class DdmAsyncClient {
      *
      * 修改DDM已关联的数据库实例的读策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateReadAndWriteStrategyRequest 请求对象
      * @return AsyncInvoker<UpdateReadAndWriteStrategyRequest, UpdateReadAndWriteStrategyResponse>
@@ -1001,8 +939,7 @@ public class DdmAsyncClient {
      *
      * 修改现有DDM帐号的权限或者与逻辑库的管理关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserRequest 请求对象
      * @return CompletableFuture<UpdateUserResponse>
@@ -1016,8 +953,7 @@ public class DdmAsyncClient {
      *
      * 修改现有DDM帐号的权限或者与逻辑库的管理关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserRequest 请求对象
      * @return AsyncInvoker<UpdateUserRequest, UpdateUserResponse>
@@ -1031,8 +967,7 @@ public class DdmAsyncClient {
      *
      * 弱密码校验
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateWeakPasswordRequest 请求对象
      * @return CompletableFuture<ValidateWeakPasswordResponse>
@@ -1047,8 +982,7 @@ public class DdmAsyncClient {
      *
      * 弱密码校验
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateWeakPasswordRequest 请求对象
      * @return AsyncInvoker<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse>

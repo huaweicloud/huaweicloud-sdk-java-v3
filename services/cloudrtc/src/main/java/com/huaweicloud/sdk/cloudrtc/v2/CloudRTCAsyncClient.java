@@ -24,8 +24,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口创建应用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppRequest 请求对象
      * @return CompletableFuture<CreateAppResponse>
@@ -39,8 +38,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口创建应用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppRequest 请求对象
      * @return AsyncInvoker<CreateAppRequest, CreateAppResponse>
@@ -58,8 +56,7 @@ public class CloudRTCAsyncClient {
      * 
      * jobtype取值为&#39;s&#39;代表单流录制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateIndividualStreamJobRequest 请求对象
      * @return CompletableFuture<CreateIndividualStreamJobResponse>
@@ -78,8 +75,7 @@ public class CloudRTCAsyncClient {
      * 
      * jobtype取值为&#39;s&#39;代表单流录制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateIndividualStreamJobRequest 请求对象
      * @return AsyncInvoker<CreateIndividualStreamJobRequest, CreateIndividualStreamJobResponse>
@@ -111,8 +107,7 @@ public class CloudRTCAsyncClient {
      * 
      *   API触发合流录制流名规则：{jobtype}\\_{jobid}\\_{roomid}，其中jobtype取值为&#39;m&#39;代表合流录制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMixJobRequest 请求对象
      * @return CompletableFuture<CreateMixJobResponse>
@@ -142,8 +137,7 @@ public class CloudRTCAsyncClient {
      * 
      *   API触发合流录制流名规则：{jobtype}\\_{jobid}\\_{roomid}，其中jobtype取值为&#39;m&#39;代表合流录制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMixJobRequest 请求对象
      * @return AsyncInvoker<CreateMixJobRequest, CreateMixJobResponse>
@@ -162,8 +156,7 @@ public class CloudRTCAsyncClient {
      * - 若当前app在请求的location中无录制规则，则会创建新的录制规则
      * - 若当前app在请求的location中已有录制规则，则会更新原来的录制规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRecordRuleRequest 请求对象
      * @return CompletableFuture<CreateRecordRuleResponse>
@@ -180,8 +173,7 @@ public class CloudRTCAsyncClient {
      * - 若当前app在请求的location中无录制规则，则会创建新的录制规则
      * - 若当前app在请求的location中已有录制规则，则会更新原来的录制规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRecordRuleRequest 请求对象
      * @return AsyncInvoker<CreateRecordRuleRequest, CreateRecordRuleResponse>
@@ -197,8 +189,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口删除单个应用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppRequest 请求对象
      * @return CompletableFuture<DeleteAppResponse>
@@ -212,8 +203,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口删除单个应用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppRequest 请求对象
      * @return AsyncInvoker<DeleteAppRequest, DeleteAppResponse>
@@ -227,8 +217,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口删除录制规则，对于正在使用的录制规则，不允许删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRecordRuleRequest 请求对象
      * @return CompletableFuture<DeleteRecordRuleResponse>
@@ -242,8 +231,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口删除录制规则，对于正在使用的录制规则，不允许删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRecordRuleRequest 请求对象
      * @return AsyncInvoker<DeleteRecordRuleRequest, DeleteRecordRuleResponse>
@@ -259,8 +247,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口查询应用列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsRequest 请求对象
      * @return CompletableFuture<ListAppsResponse>
@@ -274,8 +261,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口查询应用列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsRequest 请求对象
      * @return AsyncInvoker<ListAppsRequest, ListAppsResponse>
@@ -289,8 +275,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口查询录制规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecordRulesRequest 请求对象
      * @return CompletableFuture<ListRecordRulesResponse>
@@ -304,8 +289,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口查询录制规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecordRulesRequest 请求对象
      * @return AsyncInvoker<ListRecordRulesRequest, ListRecordRulesResponse>
@@ -321,8 +305,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口解散房间，将该房间中所有用户踢出房间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveRoomRequest 请求对象
      * @return CompletableFuture<RemoveRoomResponse>
@@ -336,8 +319,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口解散房间，将该房间中所有用户踢出房间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveRoomRequest 请求对象
      * @return AsyncInvoker<RemoveRoomRequest, RemoveRoomResponse>
@@ -351,8 +333,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口强制用户离开房间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveUsersRequest 请求对象
      * @return CompletableFuture<RemoveUsersResponse>
@@ -366,8 +347,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口强制用户离开房间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveUsersRequest 请求对象
      * @return AsyncInvoker<RemoveUsersRequest, RemoveUsersResponse>
@@ -381,8 +361,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口查询单个应用详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAppRequest 请求对象
      * @return CompletableFuture<ShowAppResponse>
@@ -396,8 +375,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口查询单个应用详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAppRequest 请求对象
      * @return AsyncInvoker<ShowAppRequest, ShowAppResponse>
@@ -411,8 +389,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口查询自动录制配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAutoRecordRequest 请求对象
      * @return CompletableFuture<ShowAutoRecordResponse>
@@ -426,8 +403,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口查询自动录制配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAutoRecordRequest 请求对象
      * @return AsyncInvoker<ShowAutoRecordRequest, ShowAutoRecordResponse>
@@ -445,8 +421,7 @@ public class CloudRTCAsyncClient {
      * 
      * 租户的OBS桶内的情况，暂不支持查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIndividualStreamJobRequest 请求对象
      * @return CompletableFuture<ShowIndividualStreamJobResponse>
@@ -463,8 +438,7 @@ public class CloudRTCAsyncClient {
      * 
      * 租户的OBS桶内的情况，暂不支持查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIndividualStreamJobRequest 请求对象
      * @return AsyncInvoker<ShowIndividualStreamJobRequest, ShowIndividualStreamJobResponse>
@@ -480,8 +454,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口查询合流转码任务状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMixJobRequest 请求对象
      * @return CompletableFuture<ShowMixJobResponse>
@@ -495,8 +468,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口查询合流转码任务状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMixJobRequest 请求对象
      * @return AsyncInvoker<ShowMixJobRequest, ShowMixJobResponse>
@@ -510,8 +482,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口查询增值（录制）事件回调配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordCallbackRequest 请求对象
      * @return CompletableFuture<ShowRecordCallbackResponse>
@@ -525,8 +496,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口查询增值（录制）事件回调配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordCallbackRequest 请求对象
      * @return AsyncInvoker<ShowRecordCallbackRequest, ShowRecordCallbackResponse>
@@ -542,8 +512,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口查询指定录制规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordRuleRequest 请求对象
      * @return CompletableFuture<ShowRecordRuleResponse>
@@ -557,8 +526,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口查询指定录制规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordRuleRequest 请求对象
      * @return AsyncInvoker<ShowRecordRuleRequest, ShowRecordRuleResponse>
@@ -574,8 +542,7 @@ public class CloudRTCAsyncClient {
      *
      * 查询应用鉴权配置参数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUrlAuthRequest 请求对象
      * @return CompletableFuture<ShowUrlAuthResponse>
@@ -589,8 +556,7 @@ public class CloudRTCAsyncClient {
      *
      * 查询应用鉴权配置参数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUrlAuthRequest 请求对象
      * @return AsyncInvoker<ShowUrlAuthRequest, ShowUrlAuthResponse>
@@ -604,8 +570,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口启用单个应用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartAppRequest 请求对象
      * @return CompletableFuture<StartAppResponse>
@@ -619,8 +584,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口启用单个应用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartAppRequest 请求对象
      * @return AsyncInvoker<StartAppRequest, StartAppResponse>
@@ -636,8 +600,7 @@ public class CloudRTCAsyncClient {
      * 
      * 应用停用后，新房间无法新增和加入，已加入的房间可以继续使用。合流、录制功能等也不可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopAppRequest 请求对象
      * @return CompletableFuture<StopAppResponse>
@@ -653,8 +616,7 @@ public class CloudRTCAsyncClient {
      * 
      * 应用停用后，新房间无法新增和加入，已加入的房间可以继续使用。合流、录制功能等也不可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopAppRequest 请求对象
      * @return AsyncInvoker<StopAppRequest, StopAppResponse>
@@ -668,8 +630,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口停止单流任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopIndividualStreamJobRequest 请求对象
      * @return CompletableFuture<StopIndividualStreamJobResponse>
@@ -684,8 +645,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口停止单流任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopIndividualStreamJobRequest 请求对象
      * @return AsyncInvoker<StopIndividualStreamJobRequest, StopIndividualStreamJobResponse>
@@ -701,8 +661,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口停止已下发的合流转码任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopMixJobRequest 请求对象
      * @return CompletableFuture<StopMixJobResponse>
@@ -716,8 +675,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口停止已下发的合流转码任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopMixJobRequest 请求对象
      * @return AsyncInvoker<StopMixJobRequest, StopMixJobResponse>
@@ -731,8 +689,7 @@ public class CloudRTCAsyncClient {
      *
      * 更新自动录制配置，租户可以开启自动单流录制或者停用自动单流录制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAutoRecordRequest 请求对象
      * @return CompletableFuture<UpdateAutoRecordResponse>
@@ -746,8 +703,7 @@ public class CloudRTCAsyncClient {
      *
      * 更新自动录制配置，租户可以开启自动单流录制或者停用自动单流录制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAutoRecordRequest 请求对象
      * @return AsyncInvoker<UpdateAutoRecordRequest, UpdateAutoRecordResponse>
@@ -765,8 +721,7 @@ public class CloudRTCAsyncClient {
      * 
      * 仅部分场景支持修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIndividualStreamJobRequest 请求对象
      * @return CompletableFuture<UpdateIndividualStreamJobResponse>
@@ -783,8 +738,7 @@ public class CloudRTCAsyncClient {
      * 
      * 仅部分场景支持修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIndividualStreamJobRequest 请求对象
      * @return AsyncInvoker<UpdateIndividualStreamJobRequest, UpdateIndividualStreamJobResponse>
@@ -800,8 +754,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口更新合流任务布局。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMixJobRequest 请求对象
      * @return CompletableFuture<UpdateMixJobResponse>
@@ -815,8 +768,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口更新合流任务布局。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMixJobRequest 请求对象
      * @return AsyncInvoker<UpdateMixJobRequest, UpdateMixJobResponse>
@@ -836,8 +788,7 @@ public class CloudRTCAsyncClient {
      * 
      * 回调格式参考/customer-record-notify-url定义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRecordCallbackRequest 请求对象
      * @return CompletableFuture<UpdateRecordCallbackResponse>
@@ -856,8 +807,7 @@ public class CloudRTCAsyncClient {
      * 
      * 回调格式参考/customer-record-notify-url定义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRecordCallbackRequest 请求对象
      * @return AsyncInvoker<UpdateRecordCallbackRequest, UpdateRecordCallbackResponse>
@@ -873,8 +823,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口更新录制规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRecordRuleRequest 请求对象
      * @return CompletableFuture<UpdateRecordRuleResponse>
@@ -888,8 +837,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口更新录制规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRecordRuleRequest 请求对象
      * @return AsyncInvoker<UpdateRecordRuleRequest, UpdateRecordRuleResponse>
@@ -905,8 +853,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口开启或关闭URL鉴权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUrlAuthRequest 请求对象
      * @return CompletableFuture<UpdateUrlAuthResponse>
@@ -920,8 +867,7 @@ public class CloudRTCAsyncClient {
      *
      * 调用此接口开启或关闭URL鉴权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUrlAuthRequest 请求对象
      * @return AsyncInvoker<UpdateUrlAuthRequest, UpdateUrlAuthResponse>

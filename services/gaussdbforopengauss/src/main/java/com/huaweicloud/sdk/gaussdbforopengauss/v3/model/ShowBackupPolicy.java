@@ -80,6 +80,13 @@ public class ShowBackupPolicy  {
     
     private Integer fileSplitSize;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enable_standby_backup")
+    
+    
+    private Boolean enableStandbyBackup;
+
     public ShowBackupPolicy withKeepDays(Integer keepDays) {
         this.keepDays = keepDays;
         return this;
@@ -284,6 +291,28 @@ public class ShowBackupPolicy  {
 
     
 
+    public ShowBackupPolicy withEnableStandbyBackup(Boolean enableStandbyBackup) {
+        this.enableStandbyBackup = enableStandbyBackup;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否启用备机备份。  取值范围：true|false
+     * @return enableStandbyBackup
+     */
+    public Boolean getEnableStandbyBackup() {
+        return enableStandbyBackup;
+    }
+
+    public void setEnableStandbyBackup(Boolean enableStandbyBackup) {
+        this.enableStandbyBackup = enableStandbyBackup;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -301,11 +330,12 @@ public class ShowBackupPolicy  {
             Objects.equals(this.rateLimit, showBackupPolicy.rateLimit) &&
             Objects.equals(this.prefetchBlock, showBackupPolicy.prefetchBlock) &&
             Objects.equals(this.filesplitSize, showBackupPolicy.filesplitSize) &&
-            Objects.equals(this.fileSplitSize, showBackupPolicy.fileSplitSize);
+            Objects.equals(this.fileSplitSize, showBackupPolicy.fileSplitSize) &&
+            Objects.equals(this.enableStandbyBackup, showBackupPolicy.enableStandbyBackup);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(keepDays, startTime, period, differentialPriod, differentialPeriod, rateLimit, prefetchBlock, filesplitSize, fileSplitSize);
+        return Objects.hash(keepDays, startTime, period, differentialPriod, differentialPeriod, rateLimit, prefetchBlock, filesplitSize, fileSplitSize, enableStandbyBackup);
     }
     @Override
     public String toString() {
@@ -320,6 +350,7 @@ public class ShowBackupPolicy  {
         sb.append("    prefetchBlock: ").append(toIndentedString(prefetchBlock)).append("\n");
         sb.append("    filesplitSize: ").append(toIndentedString(filesplitSize)).append("\n");
         sb.append("    fileSplitSize: ").append(toIndentedString(fileSplitSize)).append("\n");
+        sb.append("    enableStandbyBackup: ").append(toIndentedString(enableStandbyBackup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

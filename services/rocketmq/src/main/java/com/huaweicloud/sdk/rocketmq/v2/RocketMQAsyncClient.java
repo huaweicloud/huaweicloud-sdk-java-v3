@@ -24,8 +24,7 @@ public class RocketMQAsyncClient {
      *
      * 批量删除实例。**实例删除后，实例中原有的数据将被删除，且没有备份，请谨慎操作。**
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteInstancesRequest 请求对象
      * @return CompletableFuture<BatchDeleteInstancesResponse>
@@ -40,8 +39,7 @@ public class RocketMQAsyncClient {
      *
      * 批量删除实例。**实例删除后，实例中原有的数据将被删除，且没有备份，请谨慎操作。**
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteInstancesRequest 请求对象
      * @return AsyncInvoker<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse>
@@ -57,8 +55,7 @@ public class RocketMQAsyncClient {
      *
      * 批量修改消费组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchUpdateConsumerGroupRequest 请求对象
      * @return CompletableFuture<BatchUpdateConsumerGroupResponse>
@@ -73,8 +70,7 @@ public class RocketMQAsyncClient {
      *
      * 批量修改消费组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchUpdateConsumerGroupRequest 请求对象
      * @return AsyncInvoker<BatchUpdateConsumerGroupRequest, BatchUpdateConsumerGroupResponse>
@@ -90,8 +86,7 @@ public class RocketMQAsyncClient {
      *
      * 创建消费组或批量删除消费组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConsumerGroupOrBatchDeleteConsumerGroupRequest 请求对象
      * @return CompletableFuture<CreateConsumerGroupOrBatchDeleteConsumerGroupResponse>
@@ -106,8 +101,7 @@ public class RocketMQAsyncClient {
      *
      * 创建消费组或批量删除消费组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConsumerGroupOrBatchDeleteConsumerGroupRequest 请求对象
      * @return AsyncInvoker<CreateConsumerGroupOrBatchDeleteConsumerGroupRequest, CreateConsumerGroupOrBatchDeleteConsumerGroupResponse>
@@ -123,8 +117,7 @@ public class RocketMQAsyncClient {
      *
      * 创建实例，该接口创建的实例为按需计费的方式。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostPaidInstanceRequest 请求对象
      * @return CompletableFuture<CreatePostPaidInstanceResponse>
@@ -139,8 +132,7 @@ public class RocketMQAsyncClient {
      *
      * 创建实例，该接口创建的实例为按需计费的方式。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostPaidInstanceRequest 请求对象
      * @return AsyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse>
@@ -156,8 +148,7 @@ public class RocketMQAsyncClient {
      *
      * 创建用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateUserRequest 请求对象
      * @return CompletableFuture<CreateUserResponse>
@@ -171,8 +162,7 @@ public class RocketMQAsyncClient {
      *
      * 创建用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateUserRequest 请求对象
      * @return AsyncInvoker<CreateUserRequest, CreateUserResponse>
@@ -186,8 +176,7 @@ public class RocketMQAsyncClient {
      *
      * 删除指定消费组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteConsumerGroupRequest 请求对象
      * @return CompletableFuture<DeleteConsumerGroupResponse>
@@ -201,8 +190,7 @@ public class RocketMQAsyncClient {
      *
      * 删除指定消费组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteConsumerGroupRequest 请求对象
      * @return AsyncInvoker<DeleteConsumerGroupRequest, DeleteConsumerGroupResponse>
@@ -218,8 +206,7 @@ public class RocketMQAsyncClient {
      *
      * 删除指定的实例，释放该实例的所有资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return CompletableFuture<DeleteInstanceResponse>
@@ -233,8 +220,7 @@ public class RocketMQAsyncClient {
      *
      * 删除指定的实例，释放该实例的所有资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
@@ -250,8 +236,7 @@ public class RocketMQAsyncClient {
      *
      * 删除用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteUserRequest 请求对象
      * @return CompletableFuture<DeleteUserResponse>
@@ -265,8 +250,7 @@ public class RocketMQAsyncClient {
      *
      * 删除用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteUserRequest 请求对象
      * @return AsyncInvoker<DeleteUserRequest, DeleteUserResponse>
@@ -280,8 +264,7 @@ public class RocketMQAsyncClient {
      *
      * 导出死信消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportDlqMessageRequest 请求对象
      * @return CompletableFuture<ExportDlqMessageResponse>
@@ -295,8 +278,7 @@ public class RocketMQAsyncClient {
      *
      * 导出死信消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportDlqMessageRequest 请求对象
      * @return AsyncInvoker<ExportDlqMessageRequest, ExportDlqMessageResponse>
@@ -312,8 +294,7 @@ public class RocketMQAsyncClient {
      *
      * 在创建实例时，需要配置实例所在的可用区ID，可通过该接口查询可用区的ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailableZonesRequest 请求对象
      * @return CompletableFuture<ListAvailableZonesResponse>
@@ -327,8 +308,7 @@ public class RocketMQAsyncClient {
      *
      * 在创建实例时，需要配置实例所在的可用区ID，可通过该接口查询可用区的ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailableZonesRequest 请求对象
      * @return AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>
@@ -344,8 +324,7 @@ public class RocketMQAsyncClient {
      *
      * 查询代理列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBrokersRequest 请求对象
      * @return CompletableFuture<ListBrokersResponse>
@@ -359,8 +338,7 @@ public class RocketMQAsyncClient {
      *
      * 查询代理列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBrokersRequest 请求对象
      * @return AsyncInvoker<ListBrokersRequest, ListBrokersResponse>
@@ -374,8 +352,7 @@ public class RocketMQAsyncClient {
      *
      * 查询消费组的授权用户列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConsumeGroupAccessPolicyRequest 请求对象
      * @return CompletableFuture<ListConsumeGroupAccessPolicyResponse>
@@ -390,8 +367,7 @@ public class RocketMQAsyncClient {
      *
      * 查询消费组的授权用户列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConsumeGroupAccessPolicyRequest 请求对象
      * @return AsyncInvoker<ListConsumeGroupAccessPolicyRequest, ListConsumeGroupAccessPolicyResponse>
@@ -407,8 +383,7 @@ public class RocketMQAsyncClient {
      *
      * 查询消费组列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceConsumerGroupsRequest 请求对象
      * @return CompletableFuture<ListInstanceConsumerGroupsResponse>
@@ -423,8 +398,7 @@ public class RocketMQAsyncClient {
      *
      * 查询消费组列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceConsumerGroupsRequest 请求对象
      * @return AsyncInvoker<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse>
@@ -440,8 +414,7 @@ public class RocketMQAsyncClient {
      *
      * 查询租户的实例列表，支持按照条件查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return CompletableFuture<ListInstancesResponse>
@@ -455,8 +428,7 @@ public class RocketMQAsyncClient {
      *
      * 查询租户的实例列表，支持按照条件查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
@@ -472,8 +444,7 @@ public class RocketMQAsyncClient {
      *
      * 查询消息轨迹。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMessageTraceRequest 请求对象
      * @return CompletableFuture<ListMessageTraceResponse>
@@ -487,8 +458,7 @@ public class RocketMQAsyncClient {
      *
      * 查询消息轨迹。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMessageTraceRequest 请求对象
      * @return AsyncInvoker<ListMessageTraceRequest, ListMessageTraceResponse>
@@ -504,8 +474,7 @@ public class RocketMQAsyncClient {
      *
      * 查询消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMessagesRequest 请求对象
      * @return CompletableFuture<ListMessagesResponse>
@@ -519,8 +488,7 @@ public class RocketMQAsyncClient {
      *
      * 查询消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMessagesRequest 请求对象
      * @return AsyncInvoker<ListMessagesRequest, ListMessagesResponse>
@@ -536,8 +504,7 @@ public class RocketMQAsyncClient {
      *
      * 查询主题的授权用户列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTopicAccessPolicyRequest 请求对象
      * @return CompletableFuture<ListTopicAccessPolicyResponse>
@@ -552,8 +519,7 @@ public class RocketMQAsyncClient {
      *
      * 查询主题的授权用户列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTopicAccessPolicyRequest 请求对象
      * @return AsyncInvoker<ListTopicAccessPolicyRequest, ListTopicAccessPolicyResponse>
@@ -569,8 +535,7 @@ public class RocketMQAsyncClient {
      *
      * 查询用户列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUserRequest 请求对象
      * @return CompletableFuture<ListUserResponse>
@@ -584,8 +549,7 @@ public class RocketMQAsyncClient {
      *
      * 查询用户列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUserRequest 请求对象
      * @return AsyncInvoker<ListUserRequest, ListUserResponse>
@@ -599,8 +563,7 @@ public class RocketMQAsyncClient {
      *
      * 重置消费进度。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetConsumeOffsetRequest 请求对象
      * @return CompletableFuture<ResetConsumeOffsetResponse>
@@ -614,8 +577,7 @@ public class RocketMQAsyncClient {
      *
      * 重置消费进度。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetConsumeOffsetRequest 请求对象
      * @return AsyncInvoker<ResetConsumeOffsetRequest, ResetConsumeOffsetResponse>
@@ -631,8 +593,7 @@ public class RocketMQAsyncClient {
      *
      * 查询消费列表或详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowConsumerListOrDetailsRequest 请求对象
      * @return CompletableFuture<ShowConsumerListOrDetailsResponse>
@@ -647,8 +608,7 @@ public class RocketMQAsyncClient {
      *
      * 查询消费列表或详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowConsumerListOrDetailsRequest 请求对象
      * @return AsyncInvoker<ShowConsumerListOrDetailsRequest, ShowConsumerListOrDetailsResponse>
@@ -664,8 +624,7 @@ public class RocketMQAsyncClient {
      *
      * 查询指定消费组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowGroupRequest 请求对象
      * @return CompletableFuture<ShowGroupResponse>
@@ -679,8 +638,7 @@ public class RocketMQAsyncClient {
      *
      * 查询指定消费组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowGroupRequest 请求对象
      * @return AsyncInvoker<ShowGroupRequest, ShowGroupResponse>
@@ -694,8 +652,7 @@ public class RocketMQAsyncClient {
      *
      * 查询指定实例的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return CompletableFuture<ShowInstanceResponse>
@@ -709,8 +666,7 @@ public class RocketMQAsyncClient {
      *
      * 查询指定实例的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
@@ -726,8 +682,7 @@ public class RocketMQAsyncClient {
      *
      * 查询用户详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserRequest 请求对象
      * @return CompletableFuture<ShowUserResponse>
@@ -741,8 +696,7 @@ public class RocketMQAsyncClient {
      *
      * 查询用户详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserRequest 请求对象
      * @return AsyncInvoker<ShowUserRequest, ShowUserResponse>
@@ -756,8 +710,7 @@ public class RocketMQAsyncClient {
      *
      * 修改指定消费组参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateConsumerGroupRequest 请求对象
      * @return CompletableFuture<UpdateConsumerGroupResponse>
@@ -771,8 +724,7 @@ public class RocketMQAsyncClient {
      *
      * 修改指定消费组参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateConsumerGroupRequest 请求对象
      * @return AsyncInvoker<UpdateConsumerGroupRequest, UpdateConsumerGroupResponse>
@@ -788,8 +740,7 @@ public class RocketMQAsyncClient {
      *
      * 修改实例的名称和描述信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceRequest 请求对象
      * @return CompletableFuture<UpdateInstanceResponse>
@@ -803,8 +754,7 @@ public class RocketMQAsyncClient {
      *
      * 修改实例的名称和描述信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
@@ -820,8 +770,7 @@ public class RocketMQAsyncClient {
      *
      * 修改用户参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserRequest 请求对象
      * @return CompletableFuture<UpdateUserResponse>
@@ -835,8 +784,7 @@ public class RocketMQAsyncClient {
      *
      * 修改用户参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserRequest 请求对象
      * @return AsyncInvoker<UpdateUserRequest, UpdateUserResponse>
@@ -850,8 +798,7 @@ public class RocketMQAsyncClient {
      *
      * 创建主题或批量删除主题。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTopicOrBatchDeleteTopicRequest 请求对象
      * @return CompletableFuture<CreateTopicOrBatchDeleteTopicResponse>
@@ -866,8 +813,7 @@ public class RocketMQAsyncClient {
      *
      * 创建主题或批量删除主题。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTopicOrBatchDeleteTopicRequest 请求对象
      * @return AsyncInvoker<CreateTopicOrBatchDeleteTopicRequest, CreateTopicOrBatchDeleteTopicResponse>
@@ -883,8 +829,7 @@ public class RocketMQAsyncClient {
      *
      * 删除指定主题。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTopicRequest 请求对象
      * @return CompletableFuture<DeleteTopicResponse>
@@ -898,8 +843,7 @@ public class RocketMQAsyncClient {
      *
      * 删除指定主题。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTopicRequest 请求对象
      * @return AsyncInvoker<DeleteTopicRequest, DeleteTopicResponse>
@@ -913,8 +857,7 @@ public class RocketMQAsyncClient {
      *
      * 查询主题消费组列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConsumerGroupOfTopicRequest 请求对象
      * @return CompletableFuture<ListConsumerGroupOfTopicResponse>
@@ -929,8 +872,7 @@ public class RocketMQAsyncClient {
      *
      * 查询主题消费组列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConsumerGroupOfTopicRequest 请求对象
      * @return AsyncInvoker<ListConsumerGroupOfTopicRequest, ListConsumerGroupOfTopicResponse>
@@ -946,8 +888,7 @@ public class RocketMQAsyncClient {
      *
      * 查询单个主题。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOneTopicRequest 请求对象
      * @return CompletableFuture<ShowOneTopicResponse>
@@ -961,8 +902,7 @@ public class RocketMQAsyncClient {
      *
      * 查询单个主题。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOneTopicRequest 请求对象
      * @return AsyncInvoker<ShowOneTopicRequest, ShowOneTopicResponse>
@@ -978,8 +918,7 @@ public class RocketMQAsyncClient {
      *
      * 查询主题的消息数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTopicStatusRequest 请求对象
      * @return CompletableFuture<ShowTopicStatusResponse>
@@ -993,8 +932,7 @@ public class RocketMQAsyncClient {
      *
      * 查询主题的消息数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTopicStatusRequest 请求对象
      * @return AsyncInvoker<ShowTopicStatusRequest, ShowTopicStatusResponse>
@@ -1010,8 +948,7 @@ public class RocketMQAsyncClient {
      *
      * 修改主题。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTopicRequest 请求对象
      * @return CompletableFuture<UpdateTopicResponse>
@@ -1025,8 +962,7 @@ public class RocketMQAsyncClient {
      *
      * 修改主题。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTopicRequest 请求对象
      * @return AsyncInvoker<UpdateTopicRequest, UpdateTopicResponse>

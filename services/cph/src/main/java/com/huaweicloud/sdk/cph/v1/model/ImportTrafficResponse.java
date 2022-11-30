@@ -22,7 +22,7 @@ public class ImportTrafficResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
-    private List<Object> jobs = null;
+    private List<PhoneJob> jobs = null;
 
     public ImportTrafficResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -30,7 +30,7 @@ public class ImportTrafficResponse extends SdkResponse {
     }
 
     /**
-     * 请求的唯一标识ID
+     * 请求的唯一标识ID。
      * @return requestId
      */
     public String getRequestId() {
@@ -41,12 +41,12 @@ public class ImportTrafficResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public ImportTrafficResponse withJobs(List<Object> jobs) {
+    public ImportTrafficResponse withJobs(List<PhoneJob> jobs) {
         this.jobs = jobs;
         return this;
     }
 
-    public ImportTrafficResponse addJobsItem(Object jobsItem) {
+    public ImportTrafficResponse addJobsItem(PhoneJob jobsItem) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class ImportTrafficResponse extends SdkResponse {
         return this;
     }
 
-    public ImportTrafficResponse withJobs(Consumer<List<Object>> jobsSetter) {
+    public ImportTrafficResponse withJobs(Consumer<List<PhoneJob>> jobsSetter) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -63,14 +63,14 @@ public class ImportTrafficResponse extends SdkResponse {
     }
 
     /**
-     * 任务信息
+     * 任务列表
      * @return jobs
      */
-    public List<Object> getJobs() {
+    public List<PhoneJob> getJobs() {
         return jobs;
     }
 
-    public void setJobs(List<Object> jobs) {
+    public void setJobs(List<PhoneJob> jobs) {
         this.jobs = jobs;
     }
 

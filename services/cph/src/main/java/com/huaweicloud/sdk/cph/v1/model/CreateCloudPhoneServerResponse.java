@@ -32,7 +32,7 @@ public class CreateCloudPhoneServerResponse extends SdkResponse {
     }
 
     /**
-     * 请求的唯一标识ID
+     * 请求的唯一标识ID。
      * @return requestId
      */
     public String getRequestId() {

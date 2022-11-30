@@ -41,6 +41,8 @@ import java.util.regex.Pattern;
 
 public class ProfileCredentialProvider implements ICredentialProvider {
 
+    private static final String FILE_NAME_REG = "^[a-zA-Z0-9._ -]+\\.(ini|properties)$";
+
     private static final String CREDENTIALS_FILE_ENV_NAME = "HUAWEICLOUD_SDK_CREDENTIALS_FILE";
 
     private static final String DEFAULT_CREDENTIALS_FILE_NAME = "credentials";
@@ -152,9 +154,21 @@ public class ProfileCredentialProvider implements ICredentialProvider {
                 + Constants.DEFAULT_PROFILE_DIR_NAME + File.separator + DEFAULT_CREDENTIALS_FILE_NAME;
     }
 
+    private static boolean isValidCredentialsFile(File file) {
+        String fileName = file.getName();
+        if (fileName.equals(DEFAULT_CREDENTIALS_FILE_NAME) || fileName.matches(FILE_NAME_REG)) {
+            return PathUtils.isValidFile(file);
+        }
+        return false;
+    }
+
     private static List<String> readFileToLines(String filePath) throws IOException {
-        if (!PathUtils.isPathExist(filePath)) {
+        File file = new File(filePath).getCanonicalFile();
+        if (!file.exists()) {
             throw new IOException(String.format("credentials file '%s' does not exist", filePath));
+        }
+        if (!isValidCredentialsFile(file)) {
+            throw new IOException(String.format("invalid credentials file path: '%s'", filePath));
         }
         return Files.readAllLines(Paths.get(filePath), StandardCharsets.UTF_8);
     }

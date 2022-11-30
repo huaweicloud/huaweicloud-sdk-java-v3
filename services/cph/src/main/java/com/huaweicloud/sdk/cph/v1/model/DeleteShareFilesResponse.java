@@ -22,7 +22,7 @@ public class DeleteShareFilesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
-    private List<Object> jobs = null;
+    private List<ServerJob> jobs = null;
 
     public DeleteShareFilesResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -30,7 +30,7 @@ public class DeleteShareFilesResponse extends SdkResponse {
     }
 
     /**
-     * 请求的唯一标识ID
+     * 请求的唯一标识ID。
      * @return requestId
      */
     public String getRequestId() {
@@ -41,12 +41,12 @@ public class DeleteShareFilesResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public DeleteShareFilesResponse withJobs(List<Object> jobs) {
+    public DeleteShareFilesResponse withJobs(List<ServerJob> jobs) {
         this.jobs = jobs;
         return this;
     }
 
-    public DeleteShareFilesResponse addJobsItem(Object jobsItem) {
+    public DeleteShareFilesResponse addJobsItem(ServerJob jobsItem) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class DeleteShareFilesResponse extends SdkResponse {
         return this;
     }
 
-    public DeleteShareFilesResponse withJobs(Consumer<List<Object>> jobsSetter) {
+    public DeleteShareFilesResponse withJobs(Consumer<List<ServerJob>> jobsSetter) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -63,14 +63,14 @@ public class DeleteShareFilesResponse extends SdkResponse {
     }
 
     /**
-     * 任务信息
+     * 任务列表。
      * @return jobs
      */
-    public List<Object> getJobs() {
+    public List<ServerJob> getJobs() {
         return jobs;
     }
 
-    public void setJobs(List<Object> jobs) {
+    public void setJobs(List<ServerJob> jobs) {
         this.jobs = jobs;
     }
 

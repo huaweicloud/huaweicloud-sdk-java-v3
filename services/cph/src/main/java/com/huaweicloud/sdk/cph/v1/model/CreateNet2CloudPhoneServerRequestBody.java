@@ -46,7 +46,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ports")
 
-    private List<CreateNet2CloudPhoneServerRequestBodyPorts> ports = null;
+    private List<Port> ports = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_param")
@@ -61,7 +61,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nics")
 
-    private List<CreateNet2CloudPhoneServerRequestBodyNics> nics = null;
+    private List<Nic> nics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ip")
@@ -153,6 +153,8 @@ public class CreateNet2CloudPhoneServerRequestBody {
 
     /**
      * 购买的云手机服务器个数，最多可购买10台
+     * minimum: 0
+     * maximum: 1024
      * @return count
      */
     public Integer getCount() {
@@ -180,12 +182,12 @@ public class CreateNet2CloudPhoneServerRequestBody {
         this.keypairName = keypairName;
     }
 
-    public CreateNet2CloudPhoneServerRequestBody withPorts(List<CreateNet2CloudPhoneServerRequestBodyPorts> ports) {
+    public CreateNet2CloudPhoneServerRequestBody withPorts(List<Port> ports) {
         this.ports = ports;
         return this;
     }
 
-    public CreateNet2CloudPhoneServerRequestBody addPortsItem(CreateNet2CloudPhoneServerRequestBodyPorts portsItem) {
+    public CreateNet2CloudPhoneServerRequestBody addPortsItem(Port portsItem) {
         if (this.ports == null) {
             this.ports = new ArrayList<>();
         }
@@ -193,8 +195,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
         return this;
     }
 
-    public CreateNet2CloudPhoneServerRequestBody withPorts(
-        Consumer<List<CreateNet2CloudPhoneServerRequestBodyPorts>> portsSetter) {
+    public CreateNet2CloudPhoneServerRequestBody withPorts(Consumer<List<Port>> portsSetter) {
         if (this.ports == null) {
             this.ports = new ArrayList<>();
         }
@@ -206,11 +207,11 @@ public class CreateNet2CloudPhoneServerRequestBody {
      * 云手机启用的应用端口，云手机服务会做端口转发
      * @return ports
      */
-    public List<CreateNet2CloudPhoneServerRequestBodyPorts> getPorts() {
+    public List<Port> getPorts() {
         return ports;
     }
 
-    public void setPorts(List<CreateNet2CloudPhoneServerRequestBodyPorts> ports) {
+    public void setPorts(List<Port> ports) {
         this.ports = ports;
     }
 
@@ -259,12 +260,12 @@ public class CreateNet2CloudPhoneServerRequestBody {
         this.tenantVpcId = tenantVpcId;
     }
 
-    public CreateNet2CloudPhoneServerRequestBody withNics(List<CreateNet2CloudPhoneServerRequestBodyNics> nics) {
+    public CreateNet2CloudPhoneServerRequestBody withNics(List<Nic> nics) {
         this.nics = nics;
         return this;
     }
 
-    public CreateNet2CloudPhoneServerRequestBody addNicsItem(CreateNet2CloudPhoneServerRequestBodyNics nicsItem) {
+    public CreateNet2CloudPhoneServerRequestBody addNicsItem(Nic nicsItem) {
         if (this.nics == null) {
             this.nics = new ArrayList<>();
         }
@@ -272,8 +273,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
         return this;
     }
 
-    public CreateNet2CloudPhoneServerRequestBody withNics(
-        Consumer<List<CreateNet2CloudPhoneServerRequestBodyNics>> nicsSetter) {
+    public CreateNet2CloudPhoneServerRequestBody withNics(Consumer<List<Nic>> nicsSetter) {
         if (this.nics == null) {
             this.nics = new ArrayList<>();
         }
@@ -285,11 +285,11 @@ public class CreateNet2CloudPhoneServerRequestBody {
      * 租户自定义的网卡的结构体，为待创建的云服务器的网卡信息
      * @return nics
      */
-    public List<CreateNet2CloudPhoneServerRequestBodyNics> getNics() {
+    public List<Nic> getNics() {
         return nics;
     }
 
-    public void setNics(List<CreateNet2CloudPhoneServerRequestBodyNics> nics) {
+    public void setNics(List<Nic> nics) {
         this.nics = nics;
     }
 

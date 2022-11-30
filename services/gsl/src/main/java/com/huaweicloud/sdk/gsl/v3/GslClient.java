@@ -22,8 +22,7 @@ public class GslClient {
      *
      * 查询后向流量池成员列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackPoolMembersRequest 请求对象
      * @return ListBackPoolMembersResponse
@@ -37,8 +36,7 @@ public class GslClient {
      *
      * 查询后向流量池成员列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackPoolMembersRequest 请求对象
      * @return SyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse>
@@ -54,8 +52,7 @@ public class GslClient {
      *
      * 查询后向流量池列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackPoolsRequest 请求对象
      * @return ListBackPoolsResponse
@@ -69,8 +66,7 @@ public class GslClient {
      *
      * 查询后向流量池列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackPoolsRequest 请求对象
      * @return SyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse>
@@ -84,8 +80,7 @@ public class GslClient {
      *
      * 查询套餐列表信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProPricePlansRequest 请求对象
      * @return ListProPricePlansResponse
@@ -99,8 +94,7 @@ public class GslClient {
      *
      * 查询套餐列表信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProPricePlansRequest 请求对象
      * @return SyncInvoker<ListProPricePlansRequest, ListProPricePlansResponse>
@@ -116,8 +110,7 @@ public class GslClient {
      *
      * 批量设置自定义属性接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchSetAttributesRequest 请求对象
      * @return BatchSetAttributesResponse
@@ -131,8 +124,7 @@ public class GslClient {
      *
      * 批量设置自定义属性接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchSetAttributesRequest 请求对象
      * @return SyncInvoker<BatchSetAttributesRequest, BatchSetAttributesResponse>
@@ -148,8 +140,7 @@ public class GslClient {
      *
      * 用户新增自定义属性接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAttributeRequest 请求对象
      * @return CreateAttributeResponse
@@ -163,8 +154,7 @@ public class GslClient {
      *
      * 用户新增自定义属性接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAttributeRequest 请求对象
      * @return SyncInvoker<CreateAttributeRequest, CreateAttributeResponse>
@@ -180,8 +170,7 @@ public class GslClient {
      *
      * 停用自定义属性接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisableAttributeRequest 请求对象
      * @return DisableAttributeResponse
@@ -195,8 +184,7 @@ public class GslClient {
      *
      * 停用自定义属性接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisableAttributeRequest 请求对象
      * @return SyncInvoker<DisableAttributeRequest, DisableAttributeResponse>
@@ -212,8 +200,7 @@ public class GslClient {
      *
      * 启用自定义属性接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableAttributeRequest 请求对象
      * @return EnableAttributeResponse
@@ -227,8 +214,7 @@ public class GslClient {
      *
      * 启用自定义属性接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableAttributeRequest 请求对象
      * @return SyncInvoker<EnableAttributeRequest, EnableAttributeResponse>
@@ -244,8 +230,7 @@ public class GslClient {
      *
      * 查询自定义属性列表接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAttributesRequest 请求对象
      * @return ListAttributesResponse
@@ -259,8 +244,7 @@ public class GslClient {
      *
      * 查询自定义属性列表接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAttributesRequest 请求对象
      * @return SyncInvoker<ListAttributesRequest, ListAttributesResponse>
@@ -276,8 +260,7 @@ public class GslClient {
      *
      * 修改自定义属性接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAttributeRequest 请求对象
      * @return UpdateAttributeResponse
@@ -291,8 +274,7 @@ public class GslClient {
      *
      * 修改自定义属性接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAttributeRequest 请求对象
      * @return SyncInvoker<UpdateAttributeRequest, UpdateAttributeResponse>
@@ -308,8 +290,7 @@ public class GslClient {
      *
      * 清除实名认证信息，接口只支持电信卡调用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRealNameRequest 请求对象
      * @return DeleteRealNameResponse
@@ -323,8 +304,7 @@ public class GslClient {
      *
      * 清除实名认证信息，接口只支持电信卡调用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRealNameRequest 请求对象
      * @return SyncInvoker<DeleteRealNameRequest, DeleteRealNameResponse>
@@ -340,8 +320,7 @@ public class GslClient {
      *
      * 创建激活实体卡申请，返回业务受理单号。1~2个工作日完成激活操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableSimCardRequest 请求对象
      * @return EnableSimCardResponse
@@ -355,8 +334,7 @@ public class GslClient {
      *
      * 创建激活实体卡申请，返回业务受理单号。1~2个工作日完成激活操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableSimCardRequest 请求对象
      * @return SyncInvoker<EnableSimCardRequest, EnableSimCardResponse>
@@ -370,8 +348,7 @@ public class GslClient {
      *
      * 查询SIM卡列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSimCardsRequest 请求对象
      * @return ListSimCardsResponse
@@ -385,8 +362,7 @@ public class GslClient {
      *
      * 查询SIM卡列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSimCardsRequest 请求对象
      * @return SyncInvoker<ListSimCardsRequest, ListSimCardsResponse>
@@ -400,8 +376,7 @@ public class GslClient {
      *
      * 支持固定机卡重绑(需要上传IMEI，将SIM卡绑定到指定IMEI的设备)和普通机卡重绑(会清除之前绑定的设备,将SIM卡绑定到正在使用的设备)，单卡每月只允许重绑2次，接口只支持电信卡调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RegisterImeiRequest 请求对象
      * @return RegisterImeiResponse
@@ -415,8 +390,7 @@ public class GslClient {
      *
      * 支持固定机卡重绑(需要上传IMEI，将SIM卡绑定到指定IMEI的设备)和普通机卡重绑(会清除之前绑定的设备,将SIM卡绑定到正在使用的设备)，单卡每月只允许重绑2次，接口只支持电信卡调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RegisterImeiRequest 请求对象
      * @return SyncInvoker<RegisterImeiRequest, RegisterImeiResponse>
@@ -430,8 +404,7 @@ public class GslClient {
      *
      * 创建复机申请，返回业务受理单号。1~2个工作日完成复机操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetSimCardRequest 请求对象
      * @return ResetSimCardResponse
@@ -445,8 +418,7 @@ public class GslClient {
      *
      * 创建复机申请，返回业务受理单号。1~2个工作日完成复机操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetSimCardRequest 请求对象
      * @return SyncInvoker<ResetSimCardRequest, ResetSimCardResponse>
@@ -460,8 +432,7 @@ public class GslClient {
      *
      * SIM卡达量断网/恢复在用,只支持电信卡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetExceedCutNetRequest 请求对象
      * @return SetExceedCutNetResponse
@@ -475,8 +446,7 @@ public class GslClient {
      *
      * SIM卡达量断网/恢复在用,只支持电信卡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetExceedCutNetRequest 请求对象
      * @return SyncInvoker<SetExceedCutNetRequest, SetExceedCutNetResponse>
@@ -492,8 +462,7 @@ public class GslClient {
      *
      * 实体卡限速接口,支持电信和联通实体卡调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetSpeedValueRequest 请求对象
      * @return SetSpeedValueResponse
@@ -507,8 +476,7 @@ public class GslClient {
      *
      * 实体卡限速接口,支持电信和联通实体卡调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetSpeedValueRequest 请求对象
      * @return SyncInvoker<SetSpeedValueRequest, SetSpeedValueResponse>
@@ -522,8 +490,7 @@ public class GslClient {
      *
      * 设备月用量统计
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMonthUsagesRequest 请求对象
      * @return ShowMonthUsagesResponse
@@ -537,8 +504,7 @@ public class GslClient {
      *
      * 设备月用量统计
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMonthUsagesRequest 请求对象
      * @return SyncInvoker<ShowMonthUsagesRequest, ShowMonthUsagesResponse>
@@ -554,8 +520,7 @@ public class GslClient {
      *
      * 实时查询SIM卡实名认证信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRealNamedRequest 请求对象
      * @return ShowRealNamedResponse
@@ -569,8 +534,7 @@ public class GslClient {
      *
      * 实时查询SIM卡实名认证信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRealNamedRequest 请求对象
      * @return SyncInvoker<ShowRealNamedRequest, ShowRealNamedResponse>
@@ -584,8 +548,7 @@ public class GslClient {
      *
      * 查询SIM卡详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSimCardRequest 请求对象
      * @return ShowSimCardResponse
@@ -599,8 +562,7 @@ public class GslClient {
      *
      * 查询SIM卡详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSimCardRequest 请求对象
      * @return SyncInvoker<ShowSimCardRequest, ShowSimCardResponse>
@@ -614,8 +576,7 @@ public class GslClient {
      *
      * SIM卡申请断网/恢复在用,只支持电信卡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartStopNetRequest 请求对象
      * @return StartStopNetResponse
@@ -629,8 +590,7 @@ public class GslClient {
      *
      * SIM卡申请断网/恢复在用,只支持电信卡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartStopNetRequest 请求对象
      * @return SyncInvoker<StartStopNetRequest, StartStopNetResponse>
@@ -644,8 +604,7 @@ public class GslClient {
      *
      * 创建停机申请，返回业务受理单号。1~2个工作日完成停机操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopSimCardRequest 请求对象
      * @return StopSimCardResponse
@@ -659,8 +618,7 @@ public class GslClient {
      *
      * 创建停机申请，返回业务受理单号。1~2个工作日完成停机操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopSimCardRequest 请求对象
      * @return SyncInvoker<StopSimCardRequest, StopSimCardResponse>
@@ -674,8 +632,7 @@ public class GslClient {
      *
      * 查询流量池成员列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSimPoolMembersRequest 请求对象
      * @return ListSimPoolMembersResponse
@@ -689,8 +646,7 @@ public class GslClient {
      *
      * 查询流量池成员列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSimPoolMembersRequest 请求对象
      * @return SyncInvoker<ListSimPoolMembersRequest, ListSimPoolMembersResponse>
@@ -706,8 +662,7 @@ public class GslClient {
      *
      * 查询流量池列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSimPoolsRequest 请求对象
      * @return ListSimPoolsResponse
@@ -721,8 +676,7 @@ public class GslClient {
      *
      * 查询流量池列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSimPoolsRequest 请求对象
      * @return SyncInvoker<ListSimPoolsRequest, ListSimPoolsResponse>
@@ -736,8 +690,7 @@ public class GslClient {
      *
      * 批量查询实体卡流量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlowBySimCardsRequest 请求对象
      * @return ListFlowBySimCardsResponse
@@ -751,8 +704,7 @@ public class GslClient {
      *
      * 批量查询实体卡流量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlowBySimCardsRequest 请求对象
      * @return SyncInvoker<ListFlowBySimCardsRequest, ListFlowBySimCardsResponse>
@@ -768,8 +720,7 @@ public class GslClient {
      *
      * SIM卡套餐列表查询，实体卡只会有一个套餐，eSIM/vSIM可能会有多个套餐
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSimPricePlansRequest 请求对象
      * @return ListSimPricePlansResponse
@@ -783,8 +734,7 @@ public class GslClient {
      *
      * SIM卡套餐列表查询，实体卡只会有一个套餐，eSIM/vSIM可能会有多个套餐
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSimPricePlansRequest 请求对象
      * @return SyncInvoker<ListSimPricePlansRequest, ListSimPricePlansResponse>
@@ -800,8 +750,7 @@ public class GslClient {
      *
      * 批量设置/取消设置标签接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchSetTagsRequest 请求对象
      * @return BatchSetTagsResponse
@@ -815,8 +764,7 @@ public class GslClient {
      *
      * 批量设置/取消设置标签接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchSetTagsRequest 请求对象
      * @return SyncInvoker<BatchSetTagsRequest, BatchSetTagsResponse>
@@ -830,8 +778,7 @@ public class GslClient {
      *
      * 添加标签接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTagRequest 请求对象
      * @return CreateTagResponse
@@ -845,8 +792,7 @@ public class GslClient {
      *
      * 添加标签接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTagRequest 请求对象
      * @return SyncInvoker<CreateTagRequest, CreateTagResponse>
@@ -860,8 +806,7 @@ public class GslClient {
      *
      * 删除标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTagRequest 请求对象
      * @return DeleteTagResponse
@@ -875,8 +820,7 @@ public class GslClient {
      *
      * 删除标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTagRequest 请求对象
      * @return SyncInvoker<DeleteTagRequest, DeleteTagResponse>
@@ -890,8 +834,7 @@ public class GslClient {
      *
      * 查询标签列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsRequest 请求对象
      * @return ListTagsResponse
@@ -905,8 +848,7 @@ public class GslClient {
      *
      * 查询标签列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsRequest 请求对象
      * @return SyncInvoker<ListTagsRequest, ListTagsResponse>

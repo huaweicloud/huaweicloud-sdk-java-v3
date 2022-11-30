@@ -24,8 +24,7 @@ public class CloudDeployAsyncClient {
      *
      * 通过模板新建部署任务cloudpipeline流水线调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeployTaskByTemplateRequest 请求对象
      * @return CompletableFuture<CreateDeployTaskByTemplateResponse>
@@ -40,8 +39,7 @@ public class CloudDeployAsyncClient {
      *
      * 通过模板新建部署任务cloudpipeline流水线调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeployTaskByTemplateRequest 请求对象
      * @return AsyncInvoker<CreateDeployTaskByTemplateRequest, CreateDeployTaskByTemplateResponse>
@@ -57,8 +55,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据部署任务id删除部署任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeployTaskRequest 请求对象
      * @return CompletableFuture<DeleteDeployTaskResponse>
@@ -72,8 +69,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据部署任务id删除部署任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeployTaskRequest 请求对象
      * @return AsyncInvoker<DeleteDeployTaskRequest, DeleteDeployTaskResponse>
@@ -89,8 +85,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据开始时间和结束时间查询项目下指定任务的历史执行记录列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDeployTaskHistoryByDateRequest 请求对象
      * @return CompletableFuture<ListDeployTaskHistoryByDateResponse>
@@ -105,8 +100,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据开始时间和结束时间查询项目下指定任务的历史执行记录列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDeployTaskHistoryByDateRequest 请求对象
      * @return AsyncInvoker<ListDeployTaskHistoryByDateRequest, ListDeployTaskHistoryByDateResponse>
@@ -122,8 +116,7 @@ public class CloudDeployAsyncClient {
      *
      * 查询项目下部署任务列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDeployTasksRequest 请求对象
      * @return CompletableFuture<ListDeployTasksResponse>
@@ -137,8 +130,7 @@ public class CloudDeployAsyncClient {
      *
      * 查询项目下部署任务列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDeployTasksRequest 请求对象
      * @return AsyncInvoker<ListDeployTasksRequest, ListDeployTasksResponse>
@@ -154,8 +146,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据部署任务id获取部署任务详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeployTaskDetailRequest 请求对象
      * @return CompletableFuture<ShowDeployTaskDetailResponse>
@@ -170,8 +161,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据部署任务id获取部署任务详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeployTaskDetailRequest 请求对象
      * @return AsyncInvoker<ShowDeployTaskDetailRequest, ShowDeployTaskDetailResponse>
@@ -187,8 +177,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据部署任务id启动部署任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartDeployTaskRequest 请求对象
      * @return CompletableFuture<StartDeployTaskResponse>
@@ -202,8 +191,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据部署任务id启动部署任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartDeployTaskRequest 请求对象
      * @return AsyncInvoker<StartDeployTaskRequest, StartDeployTaskResponse>
@@ -219,8 +207,7 @@ public class CloudDeployAsyncClient {
      *
      * 在指定主机组下新建主机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeploymentHostRequest 请求对象
      * @return CompletableFuture<CreateDeploymentHostResponse>
@@ -235,8 +222,7 @@ public class CloudDeployAsyncClient {
      *
      * 在指定主机组下新建主机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeploymentHostRequest 请求对象
      * @return AsyncInvoker<CreateDeploymentHostRequest, CreateDeploymentHostResponse>
@@ -252,8 +238,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据主机id删除主机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeploymentHostRequest 请求对象
      * @return CompletableFuture<DeleteDeploymentHostResponse>
@@ -268,8 +253,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据主机id删除主机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeploymentHostRequest 请求对象
      * @return AsyncInvoker<DeleteDeploymentHostRequest, DeleteDeploymentHostResponse>
@@ -285,8 +269,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据主机组id查询指定主机组下的主机列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostsRequest 请求对象
      * @return CompletableFuture<ListHostsResponse>
@@ -300,8 +283,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据主机组id查询指定主机组下的主机列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostsRequest 请求对象
      * @return AsyncInvoker<ListHostsRequest, ListHostsResponse>
@@ -315,8 +297,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据主机id查询主机详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeploymentHostDetailRequest 请求对象
      * @return CompletableFuture<ShowDeploymentHostDetailResponse>
@@ -331,8 +312,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据主机id查询主机详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeploymentHostDetailRequest 请求对象
      * @return AsyncInvoker<ShowDeploymentHostDetailRequest, ShowDeploymentHostDetailResponse>
@@ -348,8 +328,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据主机id修改主机信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeploymentHostRequest 请求对象
      * @return CompletableFuture<UpdateDeploymentHostResponse>
@@ -364,8 +343,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据主机id修改主机信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeploymentHostRequest 请求对象
      * @return AsyncInvoker<UpdateDeploymentHostRequest, UpdateDeploymentHostResponse>
@@ -381,8 +359,7 @@ public class CloudDeployAsyncClient {
      *
      * 在项目下新建主机组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeploymentGroupRequest 请求对象
      * @return CompletableFuture<CreateDeploymentGroupResponse>
@@ -397,8 +374,7 @@ public class CloudDeployAsyncClient {
      *
      * 在项目下新建主机组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeploymentGroupRequest 请求对象
      * @return AsyncInvoker<CreateDeploymentGroupRequest, CreateDeploymentGroupResponse>
@@ -414,8 +390,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据主机组id删除主机组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeploymentGroupRequest 请求对象
      * @return CompletableFuture<DeleteDeploymentGroupResponse>
@@ -430,8 +405,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据主机组id删除主机组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeploymentGroupRequest 请求对象
      * @return AsyncInvoker<DeleteDeploymentGroupRequest, DeleteDeploymentGroupResponse>
@@ -447,8 +421,7 @@ public class CloudDeployAsyncClient {
      *
      * 按条件查询主机组列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostGroupsRequest 请求对象
      * @return CompletableFuture<ListHostGroupsResponse>
@@ -462,8 +435,7 @@ public class CloudDeployAsyncClient {
      *
      * 按条件查询主机组列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostGroupsRequest 请求对象
      * @return AsyncInvoker<ListHostGroupsRequest, ListHostGroupsResponse>
@@ -479,8 +451,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据主机组id查询主机组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeploymentGroupDetailRequest 请求对象
      * @return CompletableFuture<ShowDeploymentGroupDetailResponse>
@@ -495,8 +466,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据主机组id查询主机组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeploymentGroupDetailRequest 请求对象
      * @return AsyncInvoker<ShowDeploymentGroupDetailRequest, ShowDeploymentGroupDetailResponse>
@@ -512,8 +482,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据主机组id修改主机组信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeploymentGroupRequest 请求对象
      * @return CompletableFuture<UpdateDeploymentGroupResponse>
@@ -528,8 +497,7 @@ public class CloudDeployAsyncClient {
      *
      * 根据主机组id修改主机组信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeploymentGroupRequest 请求对象
      * @return AsyncInvoker<UpdateDeploymentGroupRequest, UpdateDeploymentGroupResponse>
@@ -545,8 +513,7 @@ public class CloudDeployAsyncClient {
      *
      * 获取指定任务的部署任务执行成功率
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTaskSuccessRateRequest 请求对象
      * @return CompletableFuture<ListTaskSuccessRateResponse>
@@ -560,8 +527,7 @@ public class CloudDeployAsyncClient {
      *
      * 获取指定任务的部署任务执行成功率
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTaskSuccessRateRequest 请求对象
      * @return AsyncInvoker<ListTaskSuccessRateRequest, ListTaskSuccessRateResponse>
@@ -577,8 +543,7 @@ public class CloudDeployAsyncClient {
      *
      * 获取指定项目的部署任务执行成功率
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectSuccessRateRequest 请求对象
      * @return CompletableFuture<ShowProjectSuccessRateResponse>
@@ -593,8 +558,7 @@ public class CloudDeployAsyncClient {
      *
      * 获取指定项目的部署任务执行成功率
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectSuccessRateRequest 请求对象
      * @return AsyncInvoker<ShowProjectSuccessRateRequest, ShowProjectSuccessRateResponse>

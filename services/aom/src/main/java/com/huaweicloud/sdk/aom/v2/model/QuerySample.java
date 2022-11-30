@@ -50,7 +50,7 @@ public class QuerySample  {
 
 
     /**
-     * 时间序列命名空间。 取值范围： PAAS.CONTAINER、PAAS.NODE、PAAS.SLA、PAAS.AGGR、CUSTOMMETRICS等； PAAS.CONTAINER：应用时间序列； PAAS.NODE：节点时间序列； PAAS.SLA：SLA时间序列； PAAS.AGGR：集群时间序列； CUSTOMMETRICS：自定义时间序列。
+     * 时间序列命名空间。 取值范围： PAAS.CONTAINER、PAAS.NODE、PAAS.SLA、PAAS.AGGR、CUSTOMMETRICS等。 PAAS.CONTAINER：应用时间序列命名空间；  PAAS.NODE：节点时间序列命名空间；  PAAS.SLA：SLA时间序列命名空间；  PAAS.AGGR：集群时间序列命名空间；  CUSTOMMETRICS：自定义时间序列命名空间。
      * @return namespace
      */
     public String getNamespace() {
@@ -86,7 +86,7 @@ public class QuerySample  {
     }
 
     /**
-     * 时间序列维度列表 可通过/v2/{project_id}/series接口中namespace+metric_name， 查询当前监控的时间序列名称的时间序列维度列表。
+     * 时间序列维度列表。 可通过/v2/{project_id}/series接口中namespace+metric_name，查询当前监控的时间序列名称的时间序列维度列表。
      * @return dimensions
      */
     public List<DimensionSeries> getDimensions() {

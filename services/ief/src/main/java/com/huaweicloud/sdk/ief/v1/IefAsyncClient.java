@@ -30,8 +30,7 @@ public class IefAsyncClient {
      * - 创建时不允许设置重复key数据,如果数据库已存在该key，就覆盖value的值。
      * - 删除时不对标签字符集范围做校验，如果删除的标签不存在，默认处理成功。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddDeleteTagsRequest 请求对象
      * @return CompletableFuture<BatchAddDeleteTagsResponse>
@@ -51,8 +50,7 @@ public class IefAsyncClient {
      * - 创建时不允许设置重复key数据,如果数据库已存在该key，就覆盖value的值。
      * - 删除时不对标签字符集范围做校验，如果删除的标签不存在，默认处理成功。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddDeleteTagsRequest 请求对象
      * @return AsyncInvoker<BatchAddDeleteTagsRequest, BatchAddDeleteTagsResponse>
@@ -68,8 +66,7 @@ public class IefAsyncClient {
      *
      * 该API用于创建一个应用模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppRequest 请求对象
      * @return CompletableFuture<CreateAppResponse>
@@ -83,8 +80,7 @@ public class IefAsyncClient {
      *
      * 该API用于创建一个应用模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppRequest 请求对象
      * @return AsyncInvoker<CreateAppRequest, CreateAppResponse>
@@ -98,8 +94,7 @@ public class IefAsyncClient {
      *
      * 创建一个应用模板版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppVersionsRequest 请求对象
      * @return CompletableFuture<CreateAppVersionsResponse>
@@ -113,8 +108,7 @@ public class IefAsyncClient {
      *
      * 创建一个应用模板版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppVersionsRequest 请求对象
      * @return AsyncInvoker<CreateAppVersionsRequest, CreateAppVersionsResponse>
@@ -130,8 +124,7 @@ public class IefAsyncClient {
      *
      * 创建配置项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConfigMapRequest 请求对象
      * @return CompletableFuture<CreateConfigMapResponse>
@@ -145,8 +138,7 @@ public class IefAsyncClient {
      *
      * 创建配置项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConfigMapRequest 请求对象
      * @return AsyncInvoker<CreateConfigMapRequest, CreateConfigMapResponse>
@@ -162,8 +154,7 @@ public class IefAsyncClient {
      *
      * 创建部署
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeploymentsRequest 请求对象
      * @return CompletableFuture<CreateDeploymentsResponse>
@@ -177,8 +168,7 @@ public class IefAsyncClient {
      *
      * 创建部署
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeploymentsRequest 请求对象
      * @return AsyncInvoker<CreateDeploymentsRequest, CreateDeploymentsResponse>
@@ -194,8 +184,7 @@ public class IefAsyncClient {
      *
      * 注册终端设备。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeviceRequest 请求对象
      * @return CompletableFuture<CreateDeviceResponse>
@@ -209,8 +198,7 @@ public class IefAsyncClient {
      *
      * 注册终端设备。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeviceRequest 请求对象
      * @return AsyncInvoker<CreateDeviceRequest, CreateDeviceResponse>
@@ -225,8 +213,7 @@ public class IefAsyncClient {
      *
      * 创建一个终端设备模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeviceTemplateRequest 请求对象
      * @return CompletableFuture<CreateDeviceTemplateResponse>
@@ -241,8 +228,7 @@ public class IefAsyncClient {
      *
      * 创建一个终端设备模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeviceTemplateRequest 请求对象
      * @return AsyncInvoker<CreateDeviceTemplateRequest, CreateDeviceTemplateResponse>
@@ -258,8 +244,7 @@ public class IefAsyncClient {
      *
      * 该API用于注册一个边缘节点。接口调用成功后，您可以将响应消息体中node.package字段使用base64解码成tar.gz文件，并在控制台下载边缘核心软件，然后纳管边缘节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEdgeNodeRequest 请求对象
      * @return CompletableFuture<CreateEdgeNodeResponse>
@@ -273,8 +258,7 @@ public class IefAsyncClient {
      *
      * 该API用于注册一个边缘节点。接口调用成功后，您可以将响应消息体中node.package字段使用base64解码成tar.gz文件，并在控制台下载边缘核心软件，然后纳管边缘节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEdgeNodeRequest 请求对象
      * @return AsyncInvoker<CreateEdgeNodeRequest, CreateEdgeNodeResponse>
@@ -290,8 +274,7 @@ public class IefAsyncClient {
      *
      * 创建边缘节点上的应用证书和设备证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEdgeNodeCertsRequest 请求对象
      * @return CompletableFuture<CreateEdgeNodeCertsResponse>
@@ -305,8 +288,7 @@ public class IefAsyncClient {
      *
      * 创建边缘节点上的应用证书和设备证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEdgeNodeCertsRequest 请求对象
      * @return AsyncInvoker<CreateEdgeNodeCertsRequest, CreateEdgeNodeCertsResponse>
@@ -322,8 +304,7 @@ public class IefAsyncClient {
      *
      * 新增加密数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEncryptdatasRequest 请求对象
      * @return CompletableFuture<CreateEncryptdatasResponse>
@@ -337,8 +318,7 @@ public class IefAsyncClient {
      *
      * 新增加密数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEncryptdatasRequest 请求对象
      * @return AsyncInvoker<CreateEncryptdatasRequest, CreateEncryptdatasResponse>
@@ -354,8 +334,7 @@ public class IefAsyncClient {
      *
      * 创建一个端点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEndpointRequest 请求对象
      * @return CompletableFuture<CreateEndpointResponse>
@@ -369,8 +348,7 @@ public class IefAsyncClient {
      *
      * 创建一个端点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEndpointRequest 请求对象
      * @return AsyncInvoker<CreateEndpointRequest, CreateEndpointResponse>
@@ -386,8 +364,7 @@ public class IefAsyncClient {
      *
      * 加密数据绑定边缘节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNodeEncryptdatasRequest 请求对象
      * @return CompletableFuture<CreateNodeEncryptdatasResponse>
@@ -402,8 +379,7 @@ public class IefAsyncClient {
      *
      * 加密数据绑定边缘节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNodeEncryptdatasRequest 请求对象
      * @return AsyncInvoker<CreateNodeEncryptdatasRequest, CreateNodeEncryptdatasResponse>
@@ -419,8 +395,7 @@ public class IefAsyncClient {
      *
      * 创建一条规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRuleRequest 请求对象
      * @return CompletableFuture<CreateRuleResponse>
@@ -434,8 +409,7 @@ public class IefAsyncClient {
      *
      * 创建一条规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRuleRequest 请求对象
      * @return AsyncInvoker<CreateRuleRequest, CreateRuleResponse>
@@ -449,8 +423,7 @@ public class IefAsyncClient {
      *
      * 创建密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecretRequest 请求对象
      * @return CompletableFuture<CreateSecretResponse>
@@ -464,8 +437,7 @@ public class IefAsyncClient {
      *
      * 创建密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecretRequest 请求对象
      * @return AsyncInvoker<CreateSecretRequest, CreateSecretResponse>
@@ -480,8 +452,7 @@ public class IefAsyncClient {
      *
      * 创建一个服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateServiceRequest 请求对象
      * @return CompletableFuture<CreateServiceResponse>
@@ -495,8 +466,7 @@ public class IefAsyncClient {
      *
      * 创建一个服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateServiceRequest 请求对象
      * @return AsyncInvoker<CreateServiceRequest, CreateServiceResponse>
@@ -513,8 +483,7 @@ public class IefAsyncClient {
      * 一个资源上最多有20个标签。
      * 此接口为幂等接口，创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTagRequest 请求对象
      * @return CompletableFuture<CreateTagResponse>
@@ -530,8 +499,7 @@ public class IefAsyncClient {
      * 一个资源上最多有20个标签。
      * 此接口为幂等接口，创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTagRequest 请求对象
      * @return AsyncInvoker<CreateTagRequest, CreateTagResponse>
@@ -545,8 +513,7 @@ public class IefAsyncClient {
      *
      * 删除应用模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppRequest 请求对象
      * @return CompletableFuture<DeleteAppResponse>
@@ -560,8 +527,7 @@ public class IefAsyncClient {
      *
      * 删除应用模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppRequest 请求对象
      * @return AsyncInvoker<DeleteAppRequest, DeleteAppResponse>
@@ -575,8 +541,7 @@ public class IefAsyncClient {
      *
      * 删除应用版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppVersionRequest 请求对象
      * @return CompletableFuture<DeleteAppVersionResponse>
@@ -590,8 +555,7 @@ public class IefAsyncClient {
      *
      * 删除应用版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppVersionRequest 请求对象
      * @return AsyncInvoker<DeleteAppVersionRequest, DeleteAppVersionResponse>
@@ -607,8 +571,7 @@ public class IefAsyncClient {
      *
      * 删除配置项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteConfigMapRequest 请求对象
      * @return CompletableFuture<DeleteConfigMapResponse>
@@ -622,8 +585,7 @@ public class IefAsyncClient {
      *
      * 删除配置项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteConfigMapRequest 请求对象
      * @return AsyncInvoker<DeleteConfigMapRequest, DeleteConfigMapResponse>
@@ -639,8 +601,7 @@ public class IefAsyncClient {
      *
      * 删除应用部署
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeploymentRequest 请求对象
      * @return CompletableFuture<DeleteDeploymentResponse>
@@ -654,8 +615,7 @@ public class IefAsyncClient {
      *
      * 删除应用部署
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeploymentRequest 请求对象
      * @return AsyncInvoker<DeleteDeploymentRequest, DeleteDeploymentResponse>
@@ -671,8 +631,7 @@ public class IefAsyncClient {
      *
      * 该API用于删除终端设备。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceRequest 请求对象
      * @return CompletableFuture<DeleteDeviceResponse>
@@ -686,8 +645,7 @@ public class IefAsyncClient {
      *
      * 该API用于删除终端设备。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceRequest 请求对象
      * @return AsyncInvoker<DeleteDeviceRequest, DeleteDeviceResponse>
@@ -702,8 +660,7 @@ public class IefAsyncClient {
      *
      * 删除终端设备模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceTemplateRequest 请求对象
      * @return CompletableFuture<DeleteDeviceTemplateResponse>
@@ -718,8 +675,7 @@ public class IefAsyncClient {
      *
      * 删除终端设备模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteDeviceTemplateRequest, DeleteDeviceTemplateResponse>
@@ -735,8 +691,7 @@ public class IefAsyncClient {
      *
      * 删除边缘节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEdgeNodeRequest 请求对象
      * @return CompletableFuture<DeleteEdgeNodeResponse>
@@ -750,8 +705,7 @@ public class IefAsyncClient {
      *
      * 删除边缘节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEdgeNodeRequest 请求对象
      * @return AsyncInvoker<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse>
@@ -767,8 +721,7 @@ public class IefAsyncClient {
      *
      * 删除边缘节点上的证书（目前只支持删除应用证书和设备证书）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEdgeNodeCertsRequest 请求对象
      * @return CompletableFuture<DeleteEdgeNodeCertsResponse>
@@ -782,8 +735,7 @@ public class IefAsyncClient {
      *
      * 删除边缘节点上的证书（目前只支持删除应用证书和设备证书）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEdgeNodeCertsRequest 请求对象
      * @return AsyncInvoker<DeleteEdgeNodeCertsRequest, DeleteEdgeNodeCertsResponse>
@@ -799,8 +751,7 @@ public class IefAsyncClient {
      *
      * 删除加密数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEncryptdatasRequest 请求对象
      * @return CompletableFuture<DeleteEncryptdatasResponse>
@@ -814,8 +765,7 @@ public class IefAsyncClient {
      *
      * 删除加密数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEncryptdatasRequest 请求对象
      * @return AsyncInvoker<DeleteEncryptdatasRequest, DeleteEncryptdatasResponse>
@@ -831,8 +781,7 @@ public class IefAsyncClient {
      *
      * 删除一个端点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEndPointRequest 请求对象
      * @return CompletableFuture<DeleteEndPointResponse>
@@ -846,8 +795,7 @@ public class IefAsyncClient {
      *
      * 删除一个端点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEndPointRequest 请求对象
      * @return AsyncInvoker<DeleteEndPointRequest, DeleteEndPointResponse>
@@ -863,8 +811,7 @@ public class IefAsyncClient {
      *
      * 解绑边缘节点的加密数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNodeEncryptdatasRequest 请求对象
      * @return CompletableFuture<DeleteNodeEncryptdatasResponse>
@@ -879,8 +826,7 @@ public class IefAsyncClient {
      *
      * 解绑边缘节点的加密数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNodeEncryptdatasRequest 请求对象
      * @return AsyncInvoker<DeleteNodeEncryptdatasRequest, DeleteNodeEncryptdatasResponse>
@@ -896,8 +842,7 @@ public class IefAsyncClient {
      *
      * 删除资源标签。删除时不对标签字符集做校验，调用前必须要做encodeURI，服务端需要对接口uri做decodeURI。删除的key不存在报404，Key不能为空或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceTagRequest 请求对象
      * @return CompletableFuture<DeleteResourceTagResponse>
@@ -911,8 +856,7 @@ public class IefAsyncClient {
      *
      * 删除资源标签。删除时不对标签字符集做校验，调用前必须要做encodeURI，服务端需要对接口uri做decodeURI。删除的key不存在报404，Key不能为空或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceTagRequest 请求对象
      * @return AsyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>
@@ -928,8 +872,7 @@ public class IefAsyncClient {
      *
      * 删除一条规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRuleRequest 请求对象
      * @return CompletableFuture<DeleteRuleResponse>
@@ -943,8 +886,7 @@ public class IefAsyncClient {
      *
      * 删除一条规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRuleRequest 请求对象
      * @return AsyncInvoker<DeleteRuleRequest, DeleteRuleResponse>
@@ -958,8 +900,7 @@ public class IefAsyncClient {
      *
      * 删除密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecretRequest 请求对象
      * @return CompletableFuture<DeleteSecretResponse>
@@ -973,8 +914,7 @@ public class IefAsyncClient {
      *
      * 删除密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecretRequest 请求对象
      * @return AsyncInvoker<DeleteSecretRequest, DeleteSecretResponse>
@@ -989,8 +929,7 @@ public class IefAsyncClient {
      *
      * 删除一个服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServiceRequest 请求对象
      * @return CompletableFuture<DeleteServiceResponse>
@@ -1004,8 +943,7 @@ public class IefAsyncClient {
      *
      * 删除一个服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServiceRequest 请求对象
      * @return AsyncInvoker<DeleteServiceRequest, DeleteServiceResponse>
@@ -1020,8 +958,7 @@ public class IefAsyncClient {
      *
      * 启用停用边缘节点。被停用的边缘节点将无法连接到云端服务，可用该URI启用边缘节点恢复连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableDisableEdgeNodesRequest 请求对象
      * @return CompletableFuture<EnableDisableEdgeNodesResponse>
@@ -1036,8 +973,7 @@ public class IefAsyncClient {
      *
      * 启用停用边缘节点。被停用的边缘节点将无法连接到云端服务，可用该URI启用边缘节点恢复连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableDisableEdgeNodesRequest 请求对象
      * @return AsyncInvoker<EnableDisableEdgeNodesRequest, EnableDisableEdgeNodesResponse>
@@ -1053,8 +989,7 @@ public class IefAsyncClient {
      *
      * 查询应用模板版本列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppVersionsRequest 请求对象
      * @return CompletableFuture<ListAppVersionsResponse>
@@ -1068,8 +1003,7 @@ public class IefAsyncClient {
      *
      * 查询应用模板版本列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppVersionsRequest 请求对象
      * @return AsyncInvoker<ListAppVersionsRequest, ListAppVersionsResponse>
@@ -1085,8 +1019,7 @@ public class IefAsyncClient {
      *
      * 查询应用模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsRequest 请求对象
      * @return CompletableFuture<ListAppsResponse>
@@ -1100,8 +1033,7 @@ public class IefAsyncClient {
      *
      * 查询应用模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsRequest 请求对象
      * @return AsyncInvoker<ListAppsRequest, ListAppsResponse>
@@ -1115,8 +1047,7 @@ public class IefAsyncClient {
      *
      * 查询配置项列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConfigMapsRequest 请求对象
      * @return CompletableFuture<ListConfigMapsResponse>
@@ -1130,8 +1061,7 @@ public class IefAsyncClient {
      *
      * 查询配置项列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConfigMapsRequest 请求对象
      * @return AsyncInvoker<ListConfigMapsRequest, ListConfigMapsResponse>
@@ -1147,8 +1077,7 @@ public class IefAsyncClient {
      *
      * 查询部署列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDeploymentsRequest 请求对象
      * @return CompletableFuture<ListDeploymentsResponse>
@@ -1162,8 +1091,7 @@ public class IefAsyncClient {
      *
      * 查询部署列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDeploymentsRequest 请求对象
      * @return AsyncInvoker<ListDeploymentsRequest, ListDeploymentsResponse>
@@ -1179,8 +1107,7 @@ public class IefAsyncClient {
      *
      * 查询终端设备模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDeviceTemplatesRequest 请求对象
      * @return CompletableFuture<ListDeviceTemplatesResponse>
@@ -1194,8 +1121,7 @@ public class IefAsyncClient {
      *
      * 查询终端设备模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDeviceTemplatesRequest 请求对象
      * @return AsyncInvoker<ListDeviceTemplatesRequest, ListDeviceTemplatesResponse>
@@ -1211,8 +1137,7 @@ public class IefAsyncClient {
      *
      * 该API用于查询终端设备列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDevicesRequest 请求对象
      * @return CompletableFuture<ListDevicesResponse>
@@ -1226,8 +1151,7 @@ public class IefAsyncClient {
      *
      * 该API用于查询终端设备列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDevicesRequest 请求对象
      * @return AsyncInvoker<ListDevicesRequest, ListDevicesResponse>
@@ -1241,8 +1165,7 @@ public class IefAsyncClient {
      *
      * 查询边缘节点上的应用证书和设备证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEdgeNodeCertsRequest 请求对象
      * @return CompletableFuture<ListEdgeNodeCertsResponse>
@@ -1256,8 +1179,7 @@ public class IefAsyncClient {
      *
      * 查询边缘节点上的应用证书和设备证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEdgeNodeCertsRequest 请求对象
      * @return AsyncInvoker<ListEdgeNodeCertsRequest, ListEdgeNodeCertsResponse>
@@ -1275,8 +1197,7 @@ public class IefAsyncClient {
      * - 如果不携带任何检索参数，将返回该租户的所有边缘节点信息。
      * - app_name和tags不支持复合查询，如果同时存在则返回tags查询结果，可以同时携带多个其他检索参数，可同时生效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEdgeNodesRequest 请求对象
      * @return CompletableFuture<ListEdgeNodesResponse>
@@ -1292,8 +1213,7 @@ public class IefAsyncClient {
      * - 如果不携带任何检索参数，将返回该租户的所有边缘节点信息。
      * - app_name和tags不支持复合查询，如果同时存在则返回tags查询结果，可以同时携带多个其他检索参数，可同时生效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEdgeNodesRequest 请求对象
      * @return AsyncInvoker<ListEdgeNodesRequest, ListEdgeNodesResponse>
@@ -1308,8 +1228,7 @@ public class IefAsyncClient {
      *
      * 获取加密数据绑定的边缘节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEncryptdataNodesRequest 请求对象
      * @return CompletableFuture<ListEncryptdataNodesResponse>
@@ -1324,8 +1243,7 @@ public class IefAsyncClient {
      *
      * 获取加密数据绑定的边缘节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEncryptdataNodesRequest 请求对象
      * @return AsyncInvoker<ListEncryptdataNodesRequest, ListEncryptdataNodesResponse>
@@ -1341,8 +1259,7 @@ public class IefAsyncClient {
      *
      * 获取加密数据列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEncryptdatasRequest 请求对象
      * @return CompletableFuture<ListEncryptdatasResponse>
@@ -1356,8 +1273,7 @@ public class IefAsyncClient {
      *
      * 获取加密数据列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEncryptdatasRequest 请求对象
      * @return AsyncInvoker<ListEncryptdatasRequest, ListEncryptdatasResponse>
@@ -1375,8 +1291,7 @@ public class IefAsyncClient {
      * 如果不携带任何检索参数，将返回该租户的所有端点信息和系统中所有的共享端点。
      * 如果同时指定is_shared&#x3D;true和其他参数，同样还会对name、type进行过滤。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointsRequest 请求对象
      * @return CompletableFuture<ListEndpointsResponse>
@@ -1392,8 +1307,7 @@ public class IefAsyncClient {
      * 如果不携带任何检索参数，将返回该租户的所有端点信息和系统中所有的共享端点。
      * 如果同时指定is_shared&#x3D;true和其他参数，同样还会对name、type进行过滤。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointsRequest 请求对象
      * @return AsyncInvoker<ListEndpointsRequest, ListEndpointsResponse>
@@ -1408,8 +1322,7 @@ public class IefAsyncClient {
      *
      * 获取边缘节点绑定的加密数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNodeEncryptdatasRequest 请求对象
      * @return CompletableFuture<ListNodeEncryptdatasResponse>
@@ -1424,8 +1337,7 @@ public class IefAsyncClient {
      *
      * 获取边缘节点绑定的加密数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNodeEncryptdatasRequest 请求对象
      * @return AsyncInvoker<ListNodeEncryptdatasRequest, ListNodeEncryptdatasResponse>
@@ -1441,8 +1353,7 @@ public class IefAsyncClient {
      *
      * 查询应用实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPodsRequest 请求对象
      * @return CompletableFuture<ListPodsResponse>
@@ -1456,8 +1367,7 @@ public class IefAsyncClient {
      *
      * 查询应用实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPodsRequest 请求对象
      * @return AsyncInvoker<ListPodsRequest, ListPodsResponse>
@@ -1471,8 +1381,7 @@ public class IefAsyncClient {
      *
      * 使用标签过滤实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourceByTagsRequest 请求对象
      * @return CompletableFuture<ListResourceByTagsResponse>
@@ -1486,8 +1395,7 @@ public class IefAsyncClient {
      *
      * 使用标签过滤实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourceByTagsRequest 请求对象
      * @return AsyncInvoker<ListResourceByTagsRequest, ListResourceByTagsResponse>
@@ -1503,8 +1411,7 @@ public class IefAsyncClient {
      *
      * 查询特定规则下的所有错误列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuleErrorsRequest 请求对象
      * @return CompletableFuture<ListRuleErrorsResponse>
@@ -1518,8 +1425,7 @@ public class IefAsyncClient {
      *
      * 查询特定规则下的所有错误列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuleErrorsRequest 请求对象
      * @return AsyncInvoker<ListRuleErrorsRequest, ListRuleErrorsResponse>
@@ -1535,8 +1441,7 @@ public class IefAsyncClient {
      *
      * 查询到所有的规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRulesRequest 请求对象
      * @return CompletableFuture<ListRulesResponse>
@@ -1550,8 +1455,7 @@ public class IefAsyncClient {
      *
      * 查询到所有的规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRulesRequest 请求对象
      * @return AsyncInvoker<ListRulesRequest, ListRulesResponse>
@@ -1565,8 +1469,7 @@ public class IefAsyncClient {
      *
      * 查询密钥列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecretsRequest 请求对象
      * @return CompletableFuture<ListSecretsResponse>
@@ -1580,8 +1483,7 @@ public class IefAsyncClient {
      *
      * 查询密钥列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecretsRequest 请求对象
      * @return AsyncInvoker<ListSecretsRequest, ListSecretsResponse>
@@ -1595,8 +1497,7 @@ public class IefAsyncClient {
      *
      * 获取所有的服务详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServicesRequest 请求对象
      * @return CompletableFuture<ListServicesResponse>
@@ -1610,8 +1511,7 @@ public class IefAsyncClient {
      *
      * 获取所有的服务详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServicesRequest 请求对象
      * @return AsyncInvoker<ListServicesRequest, ListServicesResponse>
@@ -1626,8 +1526,7 @@ public class IefAsyncClient {
      *
      * 查询指定实例的标签信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsRequest 请求对象
      * @return CompletableFuture<ListTagsResponse>
@@ -1641,8 +1540,7 @@ public class IefAsyncClient {
      *
      * 查询指定实例的标签信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsRequest 请求对象
      * @return AsyncInvoker<ListTagsRequest, ListTagsResponse>
@@ -1656,8 +1554,7 @@ public class IefAsyncClient {
      *
      * 查询指定项目中实例类型的所有资源标签集合
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsByResourceTypeRequest 请求对象
      * @return CompletableFuture<ListTagsByResourceTypeResponse>
@@ -1672,8 +1569,7 @@ public class IefAsyncClient {
      *
      * 查询指定项目中实例类型的所有资源标签集合
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsByResourceTypeRequest 请求对象
      * @return AsyncInvoker<ListTagsByResourceTypeRequest, ListTagsByResourceTypeResponse>
@@ -1689,8 +1585,7 @@ public class IefAsyncClient {
      *
      * 重启部署下的应用实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartDeploymentsPodRequest 请求对象
      * @return CompletableFuture<RestartDeploymentsPodResponse>
@@ -1705,8 +1600,7 @@ public class IefAsyncClient {
      *
      * 重启部署下的应用实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartDeploymentsPodRequest 请求对象
      * @return AsyncInvoker<RestartDeploymentsPodRequest, RestartDeploymentsPodResponse>
@@ -1722,8 +1616,7 @@ public class IefAsyncClient {
      *
      * 查询应用模板详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAppDetailRequest 请求对象
      * @return CompletableFuture<ShowAppDetailResponse>
@@ -1737,8 +1630,7 @@ public class IefAsyncClient {
      *
      * 查询应用模板详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAppDetailRequest 请求对象
      * @return AsyncInvoker<ShowAppDetailRequest, ShowAppDetailResponse>
@@ -1753,8 +1645,7 @@ public class IefAsyncClient {
      *
      * 查询应用模板版本详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAppVersionDetailRequest 请求对象
      * @return CompletableFuture<ShowAppVersionDetailResponse>
@@ -1769,8 +1660,7 @@ public class IefAsyncClient {
      *
      * 查询应用模板版本详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAppVersionDetailRequest 请求对象
      * @return AsyncInvoker<ShowAppVersionDetailRequest, ShowAppVersionDetailResponse>
@@ -1786,8 +1676,7 @@ public class IefAsyncClient {
      *
      * 查询一个配置项详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowConfigMapRequest 请求对象
      * @return CompletableFuture<ShowConfigMapResponse>
@@ -1801,8 +1690,7 @@ public class IefAsyncClient {
      *
      * 查询一个配置项详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowConfigMapRequest 请求对象
      * @return AsyncInvoker<ShowConfigMapRequest, ShowConfigMapResponse>
@@ -1817,8 +1705,7 @@ public class IefAsyncClient {
      *
      * 查询应用部署
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeploymentRequest 请求对象
      * @return CompletableFuture<ShowDeploymentResponse>
@@ -1832,8 +1719,7 @@ public class IefAsyncClient {
      *
      * 查询应用部署
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeploymentRequest 请求对象
      * @return AsyncInvoker<ShowDeploymentRequest, ShowDeploymentResponse>
@@ -1849,8 +1735,7 @@ public class IefAsyncClient {
      *
      * 该API用于查询终端设备详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceRequest 请求对象
      * @return CompletableFuture<ShowDeviceResponse>
@@ -1864,8 +1749,7 @@ public class IefAsyncClient {
      *
      * 该API用于查询终端设备详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceRequest 请求对象
      * @return AsyncInvoker<ShowDeviceRequest, ShowDeviceResponse>
@@ -1879,8 +1763,7 @@ public class IefAsyncClient {
      *
      * 查询一个终端设备模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceTemplateRequest 请求对象
      * @return CompletableFuture<ShowDeviceTemplateResponse>
@@ -1894,8 +1777,7 @@ public class IefAsyncClient {
      *
      * 查询一个终端设备模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceTemplateRequest 请求对象
      * @return AsyncInvoker<ShowDeviceTemplateRequest, ShowDeviceTemplateResponse>
@@ -1911,8 +1793,7 @@ public class IefAsyncClient {
      *
      * 该API用于查询终端设备孪生。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceTwinRequest 请求对象
      * @return CompletableFuture<ShowDeviceTwinResponse>
@@ -1926,8 +1807,7 @@ public class IefAsyncClient {
      *
      * 该API用于查询终端设备孪生。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceTwinRequest 请求对象
      * @return AsyncInvoker<ShowDeviceTwinRequest, ShowDeviceTwinResponse>
@@ -1943,8 +1823,7 @@ public class IefAsyncClient {
      *
      * 查询边缘节点详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEdgeNodeDetailRequest 请求对象
      * @return CompletableFuture<ShowEdgeNodeDetailResponse>
@@ -1958,8 +1837,7 @@ public class IefAsyncClient {
      *
      * 查询边缘节点详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEdgeNodeDetailRequest 请求对象
      * @return AsyncInvoker<ShowEdgeNodeDetailRequest, ShowEdgeNodeDetailResponse>
@@ -1975,8 +1853,7 @@ public class IefAsyncClient {
      *
      * 查询加密数据详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEncryptdatasRequest 请求对象
      * @return CompletableFuture<ShowEncryptdatasResponse>
@@ -1990,8 +1867,7 @@ public class IefAsyncClient {
      *
      * 查询加密数据详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEncryptdatasRequest 请求对象
      * @return AsyncInvoker<ShowEncryptdatasRequest, ShowEncryptdatasResponse>
@@ -2007,8 +1883,7 @@ public class IefAsyncClient {
      *
      * 查询一个端点的详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEndPointDetailRequest 请求对象
      * @return CompletableFuture<ShowEndPointDetailResponse>
@@ -2022,8 +1897,7 @@ public class IefAsyncClient {
      *
      * 查询一个端点的详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEndPointDetailRequest 请求对象
      * @return AsyncInvoker<ShowEndPointDetailRequest, ShowEndPointDetailResponse>
@@ -2039,8 +1913,7 @@ public class IefAsyncClient {
      *
      * 获取一条规则的详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRuleDetailRequest 请求对象
      * @return CompletableFuture<ShowRuleDetailResponse>
@@ -2054,8 +1927,7 @@ public class IefAsyncClient {
      *
      * 获取一条规则的详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRuleDetailRequest 请求对象
      * @return AsyncInvoker<ShowRuleDetailRequest, ShowRuleDetailResponse>
@@ -2071,8 +1943,7 @@ public class IefAsyncClient {
      *
      * 查询一个密钥详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecretRequest 请求对象
      * @return CompletableFuture<ShowSecretResponse>
@@ -2086,8 +1957,7 @@ public class IefAsyncClient {
      *
      * 查询一个密钥详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecretRequest 请求对象
      * @return AsyncInvoker<ShowSecretRequest, ShowSecretResponse>
@@ -2101,8 +1971,7 @@ public class IefAsyncClient {
      *
      * 查询一个服务的详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServiceDetailRequest 请求对象
      * @return CompletableFuture<ShowServiceDetailResponse>
@@ -2116,8 +1985,7 @@ public class IefAsyncClient {
      *
      * 查询一个服务的详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServiceDetailRequest 请求对象
      * @return AsyncInvoker<ShowServiceDetailRequest, ShowServiceDetailResponse>
@@ -2133,8 +2001,7 @@ public class IefAsyncClient {
      *
      * 启用一条规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartRuleRequest 请求对象
      * @return CompletableFuture<StartRuleResponse>
@@ -2148,8 +2015,7 @@ public class IefAsyncClient {
      *
      * 启用一条规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartRuleRequest 请求对象
      * @return AsyncInvoker<StartRuleRequest, StartRuleResponse>
@@ -2163,8 +2029,7 @@ public class IefAsyncClient {
      *
      * 停用一条规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopRuleRequest 请求对象
      * @return CompletableFuture<StopRuleResponse>
@@ -2178,8 +2043,7 @@ public class IefAsyncClient {
      *
      * 停用一条规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopRuleRequest 请求对象
      * @return AsyncInvoker<StopRuleRequest, StopRuleResponse>
@@ -2193,8 +2057,7 @@ public class IefAsyncClient {
      *
      * 更新一个应用模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppRequest 请求对象
      * @return CompletableFuture<UpdateAppResponse>
@@ -2208,8 +2071,7 @@ public class IefAsyncClient {
      *
      * 更新一个应用模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppRequest 请求对象
      * @return AsyncInvoker<UpdateAppRequest, UpdateAppResponse>
@@ -2223,8 +2085,7 @@ public class IefAsyncClient {
      *
      * 更新一个应用模板版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppVersionRequest 请求对象
      * @return CompletableFuture<UpdateAppVersionResponse>
@@ -2238,8 +2099,7 @@ public class IefAsyncClient {
      *
      * 更新一个应用模板版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppVersionRequest 请求对象
      * @return AsyncInvoker<UpdateAppVersionRequest, UpdateAppVersionResponse>
@@ -2255,8 +2115,7 @@ public class IefAsyncClient {
      *
      * 更新一个配置项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateConfigMapRequest 请求对象
      * @return CompletableFuture<UpdateConfigMapResponse>
@@ -2270,8 +2129,7 @@ public class IefAsyncClient {
      *
      * 更新一个配置项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateConfigMapRequest 请求对象
      * @return AsyncInvoker<UpdateConfigMapRequest, UpdateConfigMapResponse>
@@ -2287,8 +2145,7 @@ public class IefAsyncClient {
      *
      * 修改应用部署
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeploymentRequest 请求对象
      * @return CompletableFuture<UpdateDeploymentResponse>
@@ -2302,8 +2159,7 @@ public class IefAsyncClient {
      *
      * 修改应用部署
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeploymentRequest 请求对象
      * @return AsyncInvoker<UpdateDeploymentRequest, UpdateDeploymentResponse>
@@ -2319,8 +2175,7 @@ public class IefAsyncClient {
      *
      * 更新一个终端设备。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceRequest 请求对象
      * @return CompletableFuture<UpdateDeviceResponse>
@@ -2334,8 +2189,7 @@ public class IefAsyncClient {
      *
      * 更新一个终端设备。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceRequest 请求对象
      * @return AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>
@@ -2350,8 +2204,7 @@ public class IefAsyncClient {
      *
      * 更新一个终端设备模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceTemplateByIdRequest 请求对象
      * @return CompletableFuture<UpdateDeviceTemplateByIdResponse>
@@ -2366,8 +2219,7 @@ public class IefAsyncClient {
      *
      * 更新一个终端设备模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceTemplateByIdRequest 请求对象
      * @return AsyncInvoker<UpdateDeviceTemplateByIdRequest, UpdateDeviceTemplateByIdResponse>
@@ -2383,8 +2235,7 @@ public class IefAsyncClient {
      *
      * 该API用于更新终端设备孪生。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceTwinRequest 请求对象
      * @return CompletableFuture<UpdateDeviceTwinResponse>
@@ -2398,8 +2249,7 @@ public class IefAsyncClient {
      *
      * 该API用于更新终端设备孪生。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceTwinRequest 请求对象
      * @return AsyncInvoker<UpdateDeviceTwinRequest, UpdateDeviceTwinResponse>
@@ -2415,8 +2265,7 @@ public class IefAsyncClient {
      *
      * 该API用于更新边缘节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEdgeNodeRequest 请求对象
      * @return CompletableFuture<UpdateEdgeNodeResponse>
@@ -2430,8 +2279,7 @@ public class IefAsyncClient {
      *
      * 该API用于更新边缘节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEdgeNodeRequest 请求对象
      * @return AsyncInvoker<UpdateEdgeNodeRequest, UpdateEdgeNodeResponse>
@@ -2447,8 +2295,7 @@ public class IefAsyncClient {
      *
      * 添加或删除边缘节点的终端设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEdgeNodeDeviceRequest 请求对象
      * @return CompletableFuture<UpdateEdgeNodeDeviceResponse>
@@ -2463,8 +2310,7 @@ public class IefAsyncClient {
      *
      * 添加或删除边缘节点的终端设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEdgeNodeDeviceRequest 请求对象
      * @return AsyncInvoker<UpdateEdgeNodeDeviceRequest, UpdateEdgeNodeDeviceResponse>
@@ -2480,8 +2326,7 @@ public class IefAsyncClient {
      *
      * 更新加密数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEncryptdatasRequest 请求对象
      * @return CompletableFuture<UpdateEncryptdatasResponse>
@@ -2495,8 +2340,7 @@ public class IefAsyncClient {
      *
      * 更新加密数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEncryptdatasRequest 请求对象
      * @return AsyncInvoker<UpdateEncryptdatasRequest, UpdateEncryptdatasResponse>
@@ -2512,8 +2356,7 @@ public class IefAsyncClient {
      *
      * 该API用于更新终端设备的边缘节点。功能与更新边缘节点的终端设备相同，推荐使用更新边缘节点的终端设备。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNodeByDeviceIdRequest 请求对象
      * @return CompletableFuture<UpdateNodeByDeviceIdResponse>
@@ -2528,8 +2371,7 @@ public class IefAsyncClient {
      *
      * 该API用于更新终端设备的边缘节点。功能与更新边缘节点的终端设备相同，推荐使用更新边缘节点的终端设备。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNodeByDeviceIdRequest 请求对象
      * @return AsyncInvoker<UpdateNodeByDeviceIdRequest, UpdateNodeByDeviceIdResponse>
@@ -2545,8 +2387,7 @@ public class IefAsyncClient {
      *
      * 更新一个密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSecretRequest 请求对象
      * @return CompletableFuture<UpdateSecretResponse>
@@ -2560,8 +2401,7 @@ public class IefAsyncClient {
      *
      * 更新一个密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSecretRequest 请求对象
      * @return AsyncInvoker<UpdateSecretRequest, UpdateSecretResponse>
@@ -2576,8 +2416,7 @@ public class IefAsyncClient {
      *
      * 更新一个服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServiceRequest 请求对象
      * @return CompletableFuture<UpdateServiceResponse>
@@ -2591,8 +2430,7 @@ public class IefAsyncClient {
      *
      * 更新一个服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServiceRequest 请求对象
      * @return AsyncInvoker<UpdateServiceRequest, UpdateServiceResponse>
@@ -2607,8 +2445,7 @@ public class IefAsyncClient {
      *
      * 该API用于升级边缘节点。边缘节点将自动升级到最新的可用版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpgradeEdgeNodeRequest 请求对象
      * @return CompletableFuture<UpgradeEdgeNodeResponse>
@@ -2622,8 +2459,7 @@ public class IefAsyncClient {
      *
      * 该API用于升级边缘节点。边缘节点将自动升级到最新的可用版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpgradeEdgeNodeRequest 请求对象
      * @return AsyncInvoker<UpgradeEdgeNodeRequest, UpgradeEdgeNodeResponse>

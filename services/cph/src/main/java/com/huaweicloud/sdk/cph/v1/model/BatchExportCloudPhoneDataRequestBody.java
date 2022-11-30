@@ -9,23 +9,21 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * BatchExportCloudPhoneDataRequestBody
+ * 导出云手机数据请求体。
  */
 public class BatchExportCloudPhoneDataRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_infos")
 
-    private List<BatchExportCloudPhoneDataRequestBodyStorageInfos> storageInfos = null;
+    private List<StorageInfo> storageInfos = null;
 
-    public BatchExportCloudPhoneDataRequestBody withStorageInfos(
-        List<BatchExportCloudPhoneDataRequestBodyStorageInfos> storageInfos) {
+    public BatchExportCloudPhoneDataRequestBody withStorageInfos(List<StorageInfo> storageInfos) {
         this.storageInfos = storageInfos;
         return this;
     }
 
-    public BatchExportCloudPhoneDataRequestBody addStorageInfosItem(
-        BatchExportCloudPhoneDataRequestBodyStorageInfos storageInfosItem) {
+    public BatchExportCloudPhoneDataRequestBody addStorageInfosItem(StorageInfo storageInfosItem) {
         if (this.storageInfos == null) {
             this.storageInfos = new ArrayList<>();
         }
@@ -33,8 +31,7 @@ public class BatchExportCloudPhoneDataRequestBody {
         return this;
     }
 
-    public BatchExportCloudPhoneDataRequestBody withStorageInfos(
-        Consumer<List<BatchExportCloudPhoneDataRequestBodyStorageInfos>> storageInfosSetter) {
+    public BatchExportCloudPhoneDataRequestBody withStorageInfos(Consumer<List<StorageInfo>> storageInfosSetter) {
         if (this.storageInfos == null) {
             this.storageInfos = new ArrayList<>();
         }
@@ -46,11 +43,11 @@ public class BatchExportCloudPhoneDataRequestBody {
      * 待导出数据的云手机信息
      * @return storageInfos
      */
-    public List<BatchExportCloudPhoneDataRequestBodyStorageInfos> getStorageInfos() {
+    public List<StorageInfo> getStorageInfos() {
         return storageInfos;
     }
 
-    public void setStorageInfos(List<BatchExportCloudPhoneDataRequestBodyStorageInfos> storageInfos) {
+    public void setStorageInfos(List<StorageInfo> storageInfos) {
         this.storageInfos = storageInfos;
     }
 

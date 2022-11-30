@@ -24,8 +24,7 @@ public class CloudPipelineAsyncClient {
      *
      * 批量获取流水线状态和阶段信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchShowPipelinesStatusRequest 请求对象
      * @return CompletableFuture<BatchShowPipelinesStatusResponse>
@@ -40,8 +39,7 @@ public class CloudPipelineAsyncClient {
      *
      * 批量获取流水线状态和阶段信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchShowPipelinesStatusRequest 请求对象
      * @return AsyncInvoker<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse>
@@ -57,8 +55,7 @@ public class CloudPipelineAsyncClient {
      *
      * 基于模板快速创建流水线及流水线内任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePipelineByTemplateRequest 请求对象
      * @return CompletableFuture<CreatePipelineByTemplateResponse>
@@ -73,8 +70,7 @@ public class CloudPipelineAsyncClient {
      *
      * 基于模板快速创建流水线及流水线内任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePipelineByTemplateRequest 请求对象
      * @return AsyncInvoker<CreatePipelineByTemplateRequest, CreatePipelineByTemplateResponse>
@@ -90,8 +86,7 @@ public class CloudPipelineAsyncClient {
      *
      * 获取流水线列表接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPipelineSimpleInfoRequest 请求对象
      * @return CompletableFuture<ListPipelineSimpleInfoResponse>
@@ -106,8 +101,7 @@ public class CloudPipelineAsyncClient {
      *
      * 获取流水线列表接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPipelineSimpleInfoRequest 请求对象
      * @return AsyncInvoker<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse>
@@ -123,8 +117,7 @@ public class CloudPipelineAsyncClient {
      *
      * 获取项目下流水线执行状况
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPipleineBuildResultRequest 请求对象
      * @return CompletableFuture<ListPipleineBuildResultResponse>
@@ -139,8 +132,7 @@ public class CloudPipelineAsyncClient {
      *
      * 获取项目下流水线执行状况
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPipleineBuildResultRequest 请求对象
      * @return AsyncInvoker<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse>
@@ -156,8 +148,7 @@ public class CloudPipelineAsyncClient {
      *
      * 查询模板列表，支持分页查询,支持模板名字模糊查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesRequest 请求对象
      * @return CompletableFuture<ListTemplatesResponse>
@@ -171,8 +162,7 @@ public class CloudPipelineAsyncClient {
      *
      * 查询模板列表，支持分页查询,支持模板名字模糊查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesRequest 请求对象
      * @return AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse>
@@ -188,8 +178,7 @@ public class CloudPipelineAsyncClient {
      *
      * 根据id删除流水线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemovePipelineRequest 请求对象
      * @return CompletableFuture<RemovePipelineResponse>
@@ -203,8 +192,7 @@ public class CloudPipelineAsyncClient {
      *
      * 根据id删除流水线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemovePipelineRequest 请求对象
      * @return AsyncInvoker<RemovePipelineRequest, RemovePipelineResponse>
@@ -220,8 +208,7 @@ public class CloudPipelineAsyncClient {
      *
      * 检查流水线创建状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceStatusRequest 请求对象
      * @return CompletableFuture<ShowInstanceStatusResponse>
@@ -235,8 +222,7 @@ public class CloudPipelineAsyncClient {
      *
      * 检查流水线创建状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceStatusRequest 请求对象
      * @return AsyncInvoker<ShowInstanceStatusRequest, ShowInstanceStatusResponse>
@@ -252,8 +238,7 @@ public class CloudPipelineAsyncClient {
      *
      * 获取流水线状态,阶段及任务信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPipleineStatusRequest 请求对象
      * @return CompletableFuture<ShowPipleineStatusResponse>
@@ -267,8 +252,7 @@ public class CloudPipelineAsyncClient {
      *
      * 获取流水线状态,阶段及任务信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPipleineStatusRequest 请求对象
      * @return AsyncInvoker<ShowPipleineStatusRequest, ShowPipleineStatusResponse>
@@ -284,8 +268,7 @@ public class CloudPipelineAsyncClient {
      *
      * 查询模板详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTemplateDetailRequest 请求对象
      * @return CompletableFuture<ShowTemplateDetailResponse>
@@ -299,8 +282,7 @@ public class CloudPipelineAsyncClient {
      *
      * 查询模板详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTemplateDetailRequest 请求对象
      * @return AsyncInvoker<ShowTemplateDetailRequest, ShowTemplateDetailResponse>
@@ -316,8 +298,7 @@ public class CloudPipelineAsyncClient {
      *
      * 启动流水线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartNewPipelineRequest 请求对象
      * @return CompletableFuture<StartNewPipelineResponse>
@@ -331,8 +312,7 @@ public class CloudPipelineAsyncClient {
      *
      * 启动流水线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartNewPipelineRequest 请求对象
      * @return AsyncInvoker<StartNewPipelineRequest, StartNewPipelineResponse>
@@ -348,8 +328,7 @@ public class CloudPipelineAsyncClient {
      *
      * 停止流水线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopPipelineNewRequest 请求对象
      * @return CompletableFuture<StopPipelineNewResponse>
@@ -363,8 +342,7 @@ public class CloudPipelineAsyncClient {
      *
      * 停止流水线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopPipelineNewRequest 请求对象
      * @return AsyncInvoker<StopPipelineNewRequest, StopPipelineNewResponse>

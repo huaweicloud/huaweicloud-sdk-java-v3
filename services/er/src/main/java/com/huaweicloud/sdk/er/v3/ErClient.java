@@ -22,8 +22,7 @@ public class ErClient {
      *
      * 每个连接只能关联到一张路由表。通过创建关联将连接关联到路由表，从该连接收到的报文会用被关联的路由表进行路由。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRouteTableRequest 请求对象
      * @return AssociateRouteTableResponse
@@ -37,8 +36,7 @@ public class ErClient {
      *
      * 每个连接只能关联到一张路由表。通过创建关联将连接关联到路由表，从该连接收到的报文会用被关联的路由表进行路由。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRouteTableRequest 请求对象
      * @return SyncInvoker<AssociateRouteTableRequest, AssociateRouteTableResponse>
@@ -54,8 +52,7 @@ public class ErClient {
      *
      * 解绑连接和路由表的关联关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateRouteTableRequest 请求对象
      * @return DisassociateRouteTableResponse
@@ -69,8 +66,7 @@ public class ErClient {
      *
      * 解绑连接和路由表的关联关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateRouteTableRequest 请求对象
      * @return SyncInvoker<DisassociateRouteTableRequest, DisassociateRouteTableResponse>
@@ -86,8 +82,7 @@ public class ErClient {
      *
      * 查询路由关联列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAssociationsRequest 请求对象
      * @return ListAssociationsResponse
@@ -101,8 +96,7 @@ public class ErClient {
      *
      * 查询路由关联列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAssociationsRequest 请求对象
      * @return SyncInvoker<ListAssociationsRequest, ListAssociationsResponse>
@@ -118,8 +112,7 @@ public class ErClient {
      *
      * 查询企业路由器实例下的连接列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAttachmentsRequest 请求对象
      * @return ListAttachmentsResponse
@@ -133,8 +126,7 @@ public class ErClient {
      *
      * 查询企业路由器实例下的连接列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAttachmentsRequest 请求对象
      * @return SyncInvoker<ListAttachmentsRequest, ListAttachmentsResponse>
@@ -150,8 +142,7 @@ public class ErClient {
      *
      * 查询连接详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAttachmentRequest 请求对象
      * @return ShowAttachmentResponse
@@ -165,8 +156,7 @@ public class ErClient {
      *
      * 查询连接详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAttachmentRequest 请求对象
      * @return SyncInvoker<ShowAttachmentRequest, ShowAttachmentResponse>
@@ -181,8 +171,7 @@ public class ErClient {
      *
      * 修改连接基本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAttachmentRequest 请求对象
      * @return UpdateAttachmentResponse
@@ -196,8 +185,7 @@ public class ErClient {
      *
      * 修改连接基本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAttachmentRequest 请求对象
      * @return SyncInvoker<UpdateAttachmentRequest, UpdateAttachmentResponse>
@@ -213,8 +201,7 @@ public class ErClient {
      *
      * 查询支持创建企业路由器实例的可用区列表，当可用区状态为available时，表示可以创建企业路由器实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailabilityZoneRequest 请求对象
      * @return ListAvailabilityZoneResponse
@@ -228,8 +215,7 @@ public class ErClient {
      *
      * 查询支持创建企业路由器实例的可用区列表，当可用区状态为available时，表示可以创建企业路由器实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailabilityZoneRequest 请求对象
      * @return SyncInvoker<ListAvailabilityZoneRequest, ListAvailabilityZoneResponse>
@@ -245,8 +231,7 @@ public class ErClient {
      *
      * 更新企业路由器的可用区信息，企业路由器实例状态为available的时候才能更新。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeAvailabilityZoneRequest 请求对象
      * @return ChangeAvailabilityZoneResponse
@@ -260,8 +245,7 @@ public class ErClient {
      *
      * 更新企业路由器的可用区信息，企业路由器实例状态为available的时候才能更新。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeAvailabilityZoneRequest 请求对象
      * @return SyncInvoker<ChangeAvailabilityZoneRequest, ChangeAvailabilityZoneResponse>
@@ -277,8 +261,7 @@ public class ErClient {
      *
      * 创建企业路由器实例，如果使能默认关联路由表或使能默认传递路由表，那么系统会默认创建一张路由表，作为默认关联路由表或默认传递路由表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnterpriseRouterRequest 请求对象
      * @return CreateEnterpriseRouterResponse
@@ -292,8 +275,7 @@ public class ErClient {
      *
      * 创建企业路由器实例，如果使能默认关联路由表或使能默认传递路由表，那么系统会默认创建一张路由表，作为默认关联路由表或默认传递路由表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnterpriseRouterRequest 请求对象
      * @return SyncInvoker<CreateEnterpriseRouterRequest, CreateEnterpriseRouterResponse>
@@ -309,8 +291,7 @@ public class ErClient {
      *
      * 删除企业路由器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnterpriseRouterRequest 请求对象
      * @return DeleteEnterpriseRouterResponse
@@ -324,8 +305,7 @@ public class ErClient {
      *
      * 删除企业路由器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnterpriseRouterRequest 请求对象
      * @return SyncInvoker<DeleteEnterpriseRouterRequest, DeleteEnterpriseRouterResponse>
@@ -341,8 +321,7 @@ public class ErClient {
      *
      * 查询企业路由器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnterpriseRoutersRequest 请求对象
      * @return ListEnterpriseRoutersResponse
@@ -356,8 +335,7 @@ public class ErClient {
      *
      * 查询企业路由器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnterpriseRoutersRequest 请求对象
      * @return SyncInvoker<ListEnterpriseRoutersRequest, ListEnterpriseRoutersResponse>
@@ -373,8 +351,7 @@ public class ErClient {
      *
      * 查询企业路由器详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEnterpriseRouterRequest 请求对象
      * @return ShowEnterpriseRouterResponse
@@ -388,8 +365,7 @@ public class ErClient {
      *
      * 查询企业路由器详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEnterpriseRouterRequest 请求对象
      * @return SyncInvoker<ShowEnterpriseRouterRequest, ShowEnterpriseRouterResponse>
@@ -405,8 +381,7 @@ public class ErClient {
      *
      * 更新企业路由器基本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEnterpriseRouterRequest 请求对象
      * @return UpdateEnterpriseRouterResponse
@@ -420,8 +395,7 @@ public class ErClient {
      *
      * 更新企业路由器基本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEnterpriseRouterRequest 请求对象
      * @return SyncInvoker<UpdateEnterpriseRouterRequest, UpdateEnterpriseRouterResponse>
@@ -437,8 +411,7 @@ public class ErClient {
      *
      * 解绑连接和路由表的传播关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisablePropagationRequest 请求对象
      * @return DisablePropagationResponse
@@ -452,8 +425,7 @@ public class ErClient {
      *
      * 解绑连接和路由表的传播关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisablePropagationRequest 请求对象
      * @return SyncInvoker<DisablePropagationRequest, DisablePropagationResponse>
@@ -469,8 +441,7 @@ public class ErClient {
      *
      * 每个连接可以和多个路由表建立传播关系，从该连接学习到的路由会应用到具有传播关系的路由表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnablePropagationRequest 请求对象
      * @return EnablePropagationResponse
@@ -484,8 +455,7 @@ public class ErClient {
      *
      * 每个连接可以和多个路由表建立传播关系，从该连接学习到的路由会应用到具有传播关系的路由表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnablePropagationRequest 请求对象
      * @return SyncInvoker<EnablePropagationRequest, EnablePropagationResponse>
@@ -501,8 +471,7 @@ public class ErClient {
      *
      * 查询路由传播列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPropagationsRequest 请求对象
      * @return ListPropagationsResponse
@@ -516,8 +485,7 @@ public class ErClient {
      *
      * 查询路由传播列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPropagationsRequest 请求对象
      * @return SyncInvoker<ListPropagationsRequest, ListPropagationsResponse>
@@ -533,8 +501,7 @@ public class ErClient {
      *
      * 创建静态路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStaticRouteRequest 请求对象
      * @return CreateStaticRouteResponse
@@ -548,8 +515,7 @@ public class ErClient {
      *
      * 创建静态路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStaticRouteRequest 请求对象
      * @return SyncInvoker<CreateStaticRouteRequest, CreateStaticRouteResponse>
@@ -565,8 +531,7 @@ public class ErClient {
      *
      * 删除静态路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteStaticRouteRequest 请求对象
      * @return DeleteStaticRouteResponse
@@ -580,8 +545,7 @@ public class ErClient {
      *
      * 删除静态路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteStaticRouteRequest 请求对象
      * @return SyncInvoker<DeleteStaticRouteRequest, DeleteStaticRouteResponse>
@@ -597,8 +561,7 @@ public class ErClient {
      *
      * 查询有效的路由列表，支持分页查询能力
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEffectiveRoutesRequest 请求对象
      * @return ListEffectiveRoutesResponse
@@ -612,8 +575,7 @@ public class ErClient {
      *
      * 查询有效的路由列表，支持分页查询能力
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEffectiveRoutesRequest 请求对象
      * @return SyncInvoker<ListEffectiveRoutesRequest, ListEffectiveRoutesResponse>
@@ -629,8 +591,7 @@ public class ErClient {
      *
      * 查询静态路由列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStaticRoutesRequest 请求对象
      * @return ListStaticRoutesResponse
@@ -644,8 +605,7 @@ public class ErClient {
      *
      * 查询静态路由列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStaticRoutesRequest 请求对象
      * @return SyncInvoker<ListStaticRoutesRequest, ListStaticRoutesResponse>
@@ -661,8 +621,7 @@ public class ErClient {
      *
      * 查询静态路由详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStaticRouteRequest 请求对象
      * @return ShowStaticRouteResponse
@@ -676,8 +635,7 @@ public class ErClient {
      *
      * 查询静态路由详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStaticRouteRequest 请求对象
      * @return SyncInvoker<ShowStaticRouteRequest, ShowStaticRouteResponse>
@@ -693,8 +651,7 @@ public class ErClient {
      *
      * 更新静态路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStaticRouteRequest 请求对象
      * @return UpdateStaticRouteResponse
@@ -708,8 +665,7 @@ public class ErClient {
      *
      * 更新静态路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStaticRouteRequest 请求对象
      * @return SyncInvoker<UpdateStaticRouteRequest, UpdateStaticRouteResponse>
@@ -725,8 +681,7 @@ public class ErClient {
      *
      * 路由表是企业路由器收发报文的依据，包含了连接的关联关系，传播关系以及路由信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRouteTableRequest 请求对象
      * @return CreateRouteTableResponse
@@ -740,8 +695,7 @@ public class ErClient {
      *
      * 路由表是企业路由器收发报文的依据，包含了连接的关联关系，传播关系以及路由信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRouteTableRequest 请求对象
      * @return SyncInvoker<CreateRouteTableRequest, CreateRouteTableResponse>
@@ -757,8 +711,7 @@ public class ErClient {
      *
      * 删除路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRouteTableRequest 请求对象
      * @return DeleteRouteTableResponse
@@ -772,8 +725,7 @@ public class ErClient {
      *
      * 删除路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRouteTableRequest 请求对象
      * @return SyncInvoker<DeleteRouteTableRequest, DeleteRouteTableResponse>
@@ -789,8 +741,7 @@ public class ErClient {
      *
      * 查询路由表列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRouteTablesRequest 请求对象
      * @return ListRouteTablesResponse
@@ -804,8 +755,7 @@ public class ErClient {
      *
      * 查询路由表列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRouteTablesRequest 请求对象
      * @return SyncInvoker<ListRouteTablesRequest, ListRouteTablesResponse>
@@ -821,8 +771,7 @@ public class ErClient {
      *
      * 查询路由表详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRouteTableRequest 请求对象
      * @return ShowRouteTableResponse
@@ -836,8 +785,7 @@ public class ErClient {
      *
      * 查询路由表详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRouteTableRequest 请求对象
      * @return SyncInvoker<ShowRouteTableRequest, ShowRouteTableResponse>
@@ -852,8 +800,7 @@ public class ErClient {
      *
      * 更新路由表基本信息，如名称，描述等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRouteTableRequest 请求对象
      * @return UpdateRouteTableResponse
@@ -867,8 +814,7 @@ public class ErClient {
      *
      * 更新路由表基本信息，如名称，描述等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRouteTableRequest 请求对象
      * @return SyncInvoker<UpdateRouteTableRequest, UpdateRouteTableResponse>
@@ -884,8 +830,7 @@ public class ErClient {
      *
      * 为特定类型的资源创建标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResourceTagRequest 请求对象
      * @return CreateResourceTagResponse
@@ -899,8 +844,7 @@ public class ErClient {
      *
      * 为特定类型的资源创建标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResourceTagRequest 请求对象
      * @return SyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse>
@@ -916,8 +860,7 @@ public class ErClient {
      *
      * 删除特定类型资源的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceTagRequest 请求对象
      * @return DeleteResourceTagResponse
@@ -931,8 +874,7 @@ public class ErClient {
      *
      * 删除特定类型资源的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceTagRequest 请求对象
      * @return SyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>
@@ -948,8 +890,7 @@ public class ErClient {
      *
      * 查询特定类型资源的标签集合。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectTagsRequest 请求对象
      * @return ListProjectTagsResponse
@@ -963,8 +904,7 @@ public class ErClient {
      *
      * 查询特定类型资源的标签集合。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectTagsRequest 请求对象
      * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
@@ -980,8 +920,7 @@ public class ErClient {
      *
      * 查询特定类型资源的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceTagRequest 请求对象
      * @return ShowResourceTagResponse
@@ -995,8 +934,7 @@ public class ErClient {
      *
      * 查询特定类型资源的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceTagRequest 请求对象
      * @return SyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse>
@@ -1012,8 +950,7 @@ public class ErClient {
      *
      * 给ER实例创建VPC连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcAttachmentRequest 请求对象
      * @return CreateVpcAttachmentResponse
@@ -1027,8 +964,7 @@ public class ErClient {
      *
      * 给ER实例创建VPC连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcAttachmentRequest 请求对象
      * @return SyncInvoker<CreateVpcAttachmentRequest, CreateVpcAttachmentResponse>
@@ -1044,8 +980,7 @@ public class ErClient {
      *
      * 删除VPC连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcAttachmentRequest 请求对象
      * @return DeleteVpcAttachmentResponse
@@ -1059,8 +994,7 @@ public class ErClient {
      *
      * 删除VPC连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcAttachmentRequest 请求对象
      * @return SyncInvoker<DeleteVpcAttachmentRequest, DeleteVpcAttachmentResponse>
@@ -1076,8 +1010,7 @@ public class ErClient {
      *
      * 查询企业路由器实例下的VPC连接列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcAttachmentsRequest 请求对象
      * @return ListVpcAttachmentsResponse
@@ -1091,8 +1024,7 @@ public class ErClient {
      *
      * 查询企业路由器实例下的VPC连接列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcAttachmentsRequest 请求对象
      * @return SyncInvoker<ListVpcAttachmentsRequest, ListVpcAttachmentsResponse>
@@ -1108,8 +1040,7 @@ public class ErClient {
      *
      * 查询VPC连接详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcAttachmentRequest 请求对象
      * @return ShowVpcAttachmentResponse
@@ -1123,8 +1054,7 @@ public class ErClient {
      *
      * 查询VPC连接详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcAttachmentRequest 请求对象
      * @return SyncInvoker<ShowVpcAttachmentRequest, ShowVpcAttachmentResponse>
@@ -1140,8 +1070,7 @@ public class ErClient {
      *
      * 修改VPC连接基本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcAttachmentRequest 请求对象
      * @return UpdateVpcAttachmentResponse
@@ -1155,8 +1084,7 @@ public class ErClient {
      *
      * 修改VPC连接基本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcAttachmentRequest 请求对象
      * @return SyncInvoker<UpdateVpcAttachmentRequest, UpdateVpcAttachmentResponse>

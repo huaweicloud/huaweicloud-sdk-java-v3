@@ -22,8 +22,7 @@ public class RomaClient {
      *
      * 添加子设备到网关
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddSubsetsToGatewayRequest 请求对象
      * @return AddSubsetsToGatewayResponse
@@ -37,8 +36,7 @@ public class RomaClient {
      *
      * 添加子设备到网关
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddSubsetsToGatewayRequest 请求对象
      * @return SyncInvoker<AddSubsetsToGatewayRequest, AddSubsetsToGatewayResponse>
@@ -54,8 +52,7 @@ public class RomaClient {
      *
      * 客户端配额绑定客户端应用列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateAppsForAppQuotaRequest 请求对象
      * @return AssociateAppsForAppQuotaResponse
@@ -69,8 +66,7 @@ public class RomaClient {
      *
      * 客户端配额绑定客户端应用列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateAppsForAppQuotaRequest 请求对象
      * @return SyncInvoker<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse>
@@ -87,8 +83,7 @@ public class RomaClient {
      * 如果创建API时，“定义API请求”使用HTTPS请求协议，那么在独立域名中需要添加SSL证书。
      * 本章节主要介绍为特定域名绑定证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateCertificateV2Request 请求对象
      * @return AssociateCertificateV2Response
@@ -103,8 +98,7 @@ public class RomaClient {
      * 如果创建API时，“定义API请求”使用HTTPS请求协议，那么在独立域名中需要添加SSL证书。
      * 本章节主要介绍为特定域名绑定证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateCertificateV2Request 请求对象
      * @return SyncInvoker<AssociateCertificateV2Request, AssociateCertificateV2Response>
@@ -120,8 +114,7 @@ public class RomaClient {
      *
      * 用户自定义的域名，需要CNAME到API分组的子域名上才能生效。 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateDomainV2Request 请求对象
      * @return AssociateDomainV2Response
@@ -135,8 +128,7 @@ public class RomaClient {
      *
      * 用户自定义的域名，需要CNAME到API分组的子域名上才能生效。 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateDomainV2Request 请求对象
      * @return SyncInvoker<AssociateDomainV2Request, AssociateDomainV2Response>
@@ -156,8 +148,7 @@ public class RomaClient {
      * 
      * 将指定的签名密钥绑定到一个或多个已发布的API上。同一个API发布到不同的环境可以绑定不同的签名密钥；一个API在发布到特定环境后只能绑定一个签名密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateSignatureKeyV2Request 请求对象
      * @return AssociateSignatureKeyV2Response
@@ -175,8 +166,7 @@ public class RomaClient {
      * 
      * 将指定的签名密钥绑定到一个或多个已发布的API上。同一个API发布到不同的环境可以绑定不同的签名密钥；一个API在发布到特定环境后只能绑定一个签名密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateSignatureKeyV2Request 请求对象
      * @return SyncInvoker<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response>
@@ -192,8 +182,7 @@ public class RomaClient {
      *
      * 批量添加设备到设备分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddDeviceToGroupRequest 请求对象
      * @return BatchAddDeviceToGroupResponse
@@ -207,8 +196,7 @@ public class RomaClient {
      *
      * 批量添加设备到设备分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddDeviceToGroupRequest 请求对象
      * @return SyncInvoker<BatchAddDeviceToGroupRequest, BatchAddDeviceToGroupResponse>
@@ -224,8 +212,7 @@ public class RomaClient {
      *
      * 批量删除设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteDevicesRequest 请求对象
      * @return BatchDeleteDevicesResponse
@@ -239,8 +226,7 @@ public class RomaClient {
      *
      * 批量删除设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteDevicesRequest 请求对象
      * @return SyncInvoker<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse>
@@ -256,8 +242,7 @@ public class RomaClient {
      *
      * 批量删除Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteMqsInstanceTopicRequest 请求对象
      * @return BatchDeleteMqsInstanceTopicResponse
@@ -271,8 +256,7 @@ public class RomaClient {
      *
      * 批量删除Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteMqsInstanceTopicRequest 请求对象
      * @return SyncInvoker<BatchDeleteMqsInstanceTopicRequest, BatchDeleteMqsInstanceTopicResponse>
@@ -288,8 +272,7 @@ public class RomaClient {
      *
      * 批量删除规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteRulesRequest 请求对象
      * @return BatchDeleteRulesResponse
@@ -303,8 +286,7 @@ public class RomaClient {
      *
      * 批量删除规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteRulesRequest 请求对象
      * @return SyncInvoker<BatchDeleteRulesRequest, BatchDeleteRulesResponse>
@@ -320,8 +302,7 @@ public class RomaClient {
      *
      * 设备批量下线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchFreezeDevicesRequest 请求对象
      * @return BatchFreezeDevicesResponse
@@ -335,8 +316,7 @@ public class RomaClient {
      *
      * 设备批量下线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchFreezeDevicesRequest 请求对象
      * @return SyncInvoker<BatchFreezeDevicesRequest, BatchFreezeDevicesResponse>
@@ -352,8 +332,7 @@ public class RomaClient {
      *
      * 批量启动\\停止任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchStartOrStopTasksRequest 请求对象
      * @return BatchStartOrStopTasksResponse
@@ -367,8 +346,7 @@ public class RomaClient {
      *
      * 批量启动\\停止任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchStartOrStopTasksRequest 请求对象
      * @return SyncInvoker<BatchStartOrStopTasksRequest, BatchStartOrStopTasksResponse>
@@ -384,8 +362,7 @@ public class RomaClient {
      *
      * 校验自定义后端API定义。校验自定义后端API的路径或名称是否已存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckLivedataApisV2Request 请求对象
      * @return CheckLivedataApisV2Response
@@ -399,8 +376,7 @@ public class RomaClient {
      *
      * 校验自定义后端API定义。校验自定义后端API的路径或名称是否已存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckLivedataApisV2Request 请求对象
      * @return SyncInvoker<CheckLivedataApisV2Request, CheckLivedataApisV2Response>
@@ -416,8 +392,7 @@ public class RomaClient {
      *
      * 设备数量统计
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountDevicesRequest 请求对象
      * @return CountDevicesResponse
@@ -431,8 +406,7 @@ public class RomaClient {
      *
      * 设备数量统计
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountDevicesRequest 请求对象
      * @return SyncInvoker<CountDevicesRequest, CountDevicesResponse>
@@ -446,8 +420,7 @@ public class RomaClient {
      *
      * 统计不同类型不同状态任务数量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountTasksRequest 请求对象
      * @return CountTasksResponse
@@ -461,8 +434,7 @@ public class RomaClient {
      *
      * 统计不同类型不同状态任务数量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountTasksRequest 请求对象
      * @return SyncInvoker<CountTasksRequest, CountTasksResponse>
@@ -476,8 +448,7 @@ public class RomaClient {
      *
      * 创建App Code时，可以不指定具体值，由后台自动生成随机字符串填充。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppCodeAutoV2Request 请求对象
      * @return CreateAppCodeAutoV2Response
@@ -491,8 +462,7 @@ public class RomaClient {
      *
      * 创建App Code时，可以不指定具体值，由后台自动生成随机字符串填充。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppCodeAutoV2Request 请求对象
      * @return SyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response>
@@ -508,8 +478,7 @@ public class RomaClient {
      *
      * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppCodeV2Request 请求对象
      * @return CreateAppCodeV2Response
@@ -523,8 +492,7 @@ public class RomaClient {
      *
      * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppCodeV2Request 请求对象
      * @return SyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response>
@@ -540,8 +508,7 @@ public class RomaClient {
      *
      * 创建应用配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppConfigV2Request 请求对象
      * @return CreateAppConfigV2Response
@@ -555,8 +522,7 @@ public class RomaClient {
      *
      * 创建应用配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppConfigV2Request 请求对象
      * @return SyncInvoker<CreateAppConfigV2Request, CreateAppConfigV2Response>
@@ -572,8 +538,7 @@ public class RomaClient {
      *
      * 创建客户端配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppQuotaRequest 请求对象
      * @return CreateAppQuotaResponse
@@ -587,8 +552,7 @@ public class RomaClient {
      *
      * 创建客户端配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppQuotaRequest 请求对象
      * @return SyncInvoker<CreateAppQuotaRequest, CreateAppQuotaResponse>
@@ -604,8 +568,7 @@ public class RomaClient {
      *
      * 创建命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCommandRequest 请求对象
      * @return CreateCommandResponse
@@ -619,8 +582,7 @@ public class RomaClient {
      *
      * 创建命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCommandRequest 请求对象
      * @return SyncInvoker<CreateCommandRequest, CreateCommandResponse>
@@ -634,8 +596,7 @@ public class RomaClient {
      *
      * 创建普通任务(区别于组合任务)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCommonTaskRequest 请求对象
      * @return CreateCommonTaskResponse
@@ -649,8 +610,7 @@ public class RomaClient {
      *
      * 创建普通任务(区别于组合任务)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCommonTaskRequest 请求对象
      * @return SyncInvoker<CreateCommonTaskRequest, CreateCommonTaskResponse>
@@ -666,8 +626,7 @@ public class RomaClient {
      *
      * 创建自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCustomAuthorizerV2Request 请求对象
      * @return CreateCustomAuthorizerV2Response
@@ -681,8 +640,7 @@ public class RomaClient {
      *
      * 创建自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCustomAuthorizerV2Request 请求对象
      * @return SyncInvoker<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response>
@@ -698,8 +656,7 @@ public class RomaClient {
      *
      * 创建数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatasourceInfoRequest 请求对象
      * @return CreateDatasourceInfoResponse
@@ -713,8 +670,7 @@ public class RomaClient {
      *
      * 创建数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatasourceInfoRequest 请求对象
      * @return SyncInvoker<CreateDatasourceInfoRequest, CreateDatasourceInfoResponse>
@@ -730,8 +686,7 @@ public class RomaClient {
      *
      * 添加目标数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDestinationRequest 请求对象
      * @return CreateDestinationResponse
@@ -745,8 +700,7 @@ public class RomaClient {
      *
      * 添加目标数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDestinationRequest 请求对象
      * @return SyncInvoker<CreateDestinationRequest, CreateDestinationResponse>
@@ -762,8 +716,7 @@ public class RomaClient {
      *
      * 创建设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeviceRequest 请求对象
      * @return CreateDeviceResponse
@@ -777,8 +730,7 @@ public class RomaClient {
      *
      * 创建设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeviceRequest 请求对象
      * @return SyncInvoker<CreateDeviceRequest, CreateDeviceResponse>
@@ -792,8 +744,7 @@ public class RomaClient {
      *
      * 创建设备分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeviceGroupRequest 请求对象
      * @return CreateDeviceGroupResponse
@@ -807,8 +758,7 @@ public class RomaClient {
      *
      * 创建设备分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeviceGroupRequest 请求对象
      * @return SyncInvoker<CreateDeviceGroupRequest, CreateDeviceGroupResponse>
@@ -824,8 +774,7 @@ public class RomaClient {
      *
      * 创建调度计划
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDispatchesRequest 请求对象
      * @return CreateDispatchesResponse
@@ -839,8 +788,7 @@ public class RomaClient {
      *
      * 创建调度计划
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDispatchesRequest 请求对象
      * @return SyncInvoker<CreateDispatchesRequest, CreateDispatchesResponse>
@@ -860,8 +808,7 @@ public class RomaClient {
      * 
      * 为此，ROMA Connect APIC提供多环境管理功能，使租户能够最大化的模拟实际场景，低成本的接入ROMA Connect APIC。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentV2Request 请求对象
      * @return CreateEnvironmentV2Response
@@ -879,8 +826,7 @@ public class RomaClient {
      * 
      * 为此，ROMA Connect APIC提供多环境管理功能，使租户能够最大化的模拟实际场景，低成本的接入ROMA Connect APIC。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentV2Request 请求对象
      * @return SyncInvoker<CreateEnvironmentV2Request, CreateEnvironmentV2Response>
@@ -904,8 +850,7 @@ public class RomaClient {
      *   3.设置了环境变量后，使用到该变量的API的调试功能将不可使用。
      *   4.定义了环境变量后，使用到环境变量的地方应该以对称的#标识环境变量，当API发布到相应的环境后，会对环境变量的值进行替换，如：定义的API的URL为：https://#address#:8080，环境变量address在RELEASE环境上的值为：192.168.1.5，则API发布到RELEASE环境后的真实的URL为：https://192.168.1.5:8080。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentVariableV2Request 请求对象
      * @return CreateEnvironmentVariableV2Response
@@ -927,8 +872,7 @@ public class RomaClient {
      *   3.设置了环境变量后，使用到该变量的API的调试功能将不可使用。
      *   4.定义了环境变量后，使用到环境变量的地方应该以对称的#标识环境变量，当API发布到相应的环境后，会对环境变量的值进行替换，如：定义的API的URL为：https://#address#:8080，环境变量address在RELEASE环境上的值为：192.168.1.5，则API发布到RELEASE环境后的真实的URL为：https://192.168.1.5:8080。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentVariableV2Request 请求对象
      * @return SyncInvoker<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response>
@@ -946,8 +890,7 @@ public class RomaClient {
      * 
      * 支持配置的特性列表及特性配置请参考“附录 &gt; 实例支持的APIC特性”
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFeatureV2Request 请求对象
      * @return CreateFeatureV2Response
@@ -963,8 +906,7 @@ public class RomaClient {
      * 
      * 支持配置的特性列表及特性配置请参考“附录 &gt; 实例支持的APIC特性”
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFeatureV2Request 请求对象
      * @return SyncInvoker<CreateFeatureV2Request, CreateFeatureV2Response>
@@ -980,8 +922,7 @@ public class RomaClient {
      *
      * 在某个实例中创建后端API脚本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLiveDataApiScriptV2Request 请求对象
      * @return CreateLiveDataApiScriptV2Response
@@ -995,8 +936,7 @@ public class RomaClient {
      *
      * 在某个实例中创建后端API脚本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLiveDataApiScriptV2Request 请求对象
      * @return SyncInvoker<CreateLiveDataApiScriptV2Request, CreateLiveDataApiScriptV2Response>
@@ -1012,8 +952,7 @@ public class RomaClient {
      *
      * 在某个实例中创建后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLiveDataApiV2Request 请求对象
      * @return CreateLiveDataApiV2Response
@@ -1027,8 +966,7 @@ public class RomaClient {
      *
      * 在某个实例中创建后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLiveDataApiV2Request 请求对象
      * @return SyncInvoker<CreateLiveDataApiV2Request, CreateLiveDataApiV2Response>
@@ -1044,8 +982,7 @@ public class RomaClient {
      *
      * 创建Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMqsInstanceTopicRequest 请求对象
      * @return CreateMqsInstanceTopicResponse
@@ -1059,8 +996,7 @@ public class RomaClient {
      *
      * 创建Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMqsInstanceTopicRequest 请求对象
      * @return SyncInvoker<CreateMqsInstanceTopicRequest, CreateMqsInstanceTopicResponse>
@@ -1076,8 +1012,7 @@ public class RomaClient {
      *
      * 创建组合任务映射
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMultiTaskMappingsRequest 请求对象
      * @return CreateMultiTaskMappingsResponse
@@ -1091,8 +1026,7 @@ public class RomaClient {
      *
      * 创建组合任务映射
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMultiTaskMappingsRequest 请求对象
      * @return SyncInvoker<CreateMultiTaskMappingsRequest, CreateMultiTaskMappingsResponse>
@@ -1108,8 +1042,7 @@ public class RomaClient {
      *
      * 创建组合任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMultiTasksRequest 请求对象
      * @return CreateMultiTasksResponse
@@ -1123,8 +1056,7 @@ public class RomaClient {
      *
      * 创建组合任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMultiTasksRequest 请求对象
      * @return SyncInvoker<CreateMultiTasksRequest, CreateMultiTasksResponse>
@@ -1140,8 +1072,7 @@ public class RomaClient {
      *
      * 该接口用于创建指定实例下对应的应用下的设备操作，订阅到指定的topic
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNotificationRequest 请求对象
      * @return CreateNotificationResponse
@@ -1155,8 +1086,7 @@ public class RomaClient {
      *
      * 该接口用于创建指定实例下对应的应用下的设备操作，订阅到指定的topic
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNotificationRequest 请求对象
      * @return SyncInvoker<CreateNotificationRequest, CreateNotificationResponse>
@@ -1172,8 +1102,7 @@ public class RomaClient {
      *
      * 创建产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProductRequest 请求对象
      * @return CreateProductResponse
@@ -1187,8 +1116,7 @@ public class RomaClient {
      *
      * 创建产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProductRequest 请求对象
      * @return SyncInvoker<CreateProductRequest, CreateProductResponse>
@@ -1202,8 +1130,7 @@ public class RomaClient {
      *
      * 创建产品模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProductTemplateRequest 请求对象
      * @return CreateProductTemplateResponse
@@ -1217,8 +1144,7 @@ public class RomaClient {
      *
      * 创建产品模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProductTemplateRequest 请求对象
      * @return SyncInvoker<CreateProductTemplateRequest, CreateProductTemplateResponse>
@@ -1234,8 +1160,7 @@ public class RomaClient {
      *
      * 添加产品主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProductTopicRequest 请求对象
      * @return CreateProductTopicResponse
@@ -1249,8 +1174,7 @@ public class RomaClient {
      *
      * 添加产品主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProductTopicRequest 请求对象
      * @return SyncInvoker<CreateProductTopicRequest, CreateProductTopicResponse>
@@ -1266,8 +1190,7 @@ public class RomaClient {
      *
      * 创建属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePropertyRequest 请求对象
      * @return CreatePropertyResponse
@@ -1281,8 +1204,7 @@ public class RomaClient {
      *
      * 创建属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePropertyRequest 请求对象
      * @return SyncInvoker<CreatePropertyRequest, CreatePropertyResponse>
@@ -1298,8 +1220,7 @@ public class RomaClient {
      *
      * 创建请求属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRequestPropertyRequest 请求对象
      * @return CreateRequestPropertyResponse
@@ -1313,8 +1234,7 @@ public class RomaClient {
      *
      * 创建请求属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRequestPropertyRequest 请求对象
      * @return SyncInvoker<CreateRequestPropertyRequest, CreateRequestPropertyResponse>
@@ -1330,8 +1250,7 @@ public class RomaClient {
      *
      * 当API上线后，系统会默认给每个API提供一个流控策略，API提供者可以根据自身API的服务能力及负载情况变更这个流控策略。 流控策略即限制API在一定长度的时间内，能够允许被访问的最大次数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRequestThrottlingPolicyV2Request 请求对象
      * @return CreateRequestThrottlingPolicyV2Response
@@ -1346,8 +1265,7 @@ public class RomaClient {
      *
      * 当API上线后，系统会默认给每个API提供一个流控策略，API提供者可以根据自身API的服务能力及负载情况变更这个流控策略。 流控策略即限制API在一定长度的时间内，能够允许被访问的最大次数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response>
@@ -1363,8 +1281,7 @@ public class RomaClient {
      *
      * 创建响应属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResponsePropertyRequest 请求对象
      * @return CreateResponsePropertyResponse
@@ -1378,8 +1295,7 @@ public class RomaClient {
      *
      * 创建响应属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResponsePropertyRequest 请求对象
      * @return SyncInvoker<CreateResponsePropertyRequest, CreateResponsePropertyResponse>
@@ -1395,8 +1311,7 @@ public class RomaClient {
      *
      * 创建规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRuleRequest 请求对象
      * @return CreateRuleResponse
@@ -1410,8 +1325,7 @@ public class RomaClient {
      *
      * 创建规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRuleRequest 请求对象
      * @return SyncInvoker<CreateRuleRequest, CreateRuleResponse>
@@ -1425,8 +1339,7 @@ public class RomaClient {
      *
      * 创建服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateServiceRequest 请求对象
      * @return CreateServiceResponse
@@ -1440,8 +1353,7 @@ public class RomaClient {
      *
      * 创建服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateServiceRequest 请求对象
      * @return SyncInvoker<CreateServiceRequest, CreateServiceResponse>
@@ -1459,8 +1371,7 @@ public class RomaClient {
      * 
      * 租户创建一个签名密钥，并将签名密钥与API进行绑定，则ROMA Connect APIC在请求这个API时，就会使用绑定的签名密钥对请求参数进行数据加密，生成签名。当租户的后端服务收到请求时，可以校验这个签名，如果签名校验不通过，则该请求不是ROMA Connect APIC发出的请求，租户可以拒绝这个请求，从而保证API的安全性，避免API被未知来源的请求攻击。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSignatureKeyV2Request 请求对象
      * @return CreateSignatureKeyV2Response
@@ -1478,8 +1389,7 @@ public class RomaClient {
      * 
      * 租户创建一个签名密钥，并将签名密钥与API进行绑定，则ROMA Connect APIC在请求这个API时，就会使用绑定的签名密钥对请求参数进行数据加密，生成签名。当租户的后端服务收到请求时，可以校验这个签名，如果签名校验不通过，则该请求不是ROMA Connect APIC发出的请求，租户可以拒绝这个请求，从而保证API的安全性，避免API被未知来源的请求攻击。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSignatureKeyV2Request 请求对象
      * @return SyncInvoker<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response>
@@ -1495,8 +1405,7 @@ public class RomaClient {
      *
      * 添加源数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSourceRequest 请求对象
      * @return CreateSourceResponse
@@ -1510,8 +1419,7 @@ public class RomaClient {
      *
      * 添加源数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSourceRequest 请求对象
      * @return SyncInvoker<CreateSourceRequest, CreateSourceResponse>
@@ -1529,8 +1437,7 @@ public class RomaClient {
      * 
      * 为流控策略添加一个特殊设置的对象，可以是APP，也可以是租户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSpecialThrottlingConfigurationV2Request 请求对象
      * @return CreateSpecialThrottlingConfigurationV2Response
@@ -1549,8 +1456,7 @@ public class RomaClient {
      * 
      * 为流控策略添加一个特殊设置的对象，可以是APP，也可以是租户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSpecialThrottlingConfigurationV2Request 请求对象
      * @return SyncInvoker<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response>
@@ -1566,8 +1472,7 @@ public class RomaClient {
      *
      * 测试后端API是否可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DebugLiveDataApiV2Request 请求对象
      * @return DebugLiveDataApiV2Response
@@ -1581,8 +1486,7 @@ public class RomaClient {
      *
      * 测试后端API是否可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DebugLiveDataApiV2Request 请求对象
      * @return SyncInvoker<DebugLiveDataApiV2Request, DebugLiveDataApiV2Response>
@@ -1598,8 +1502,7 @@ public class RomaClient {
      *
      * 规则调试
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DebugRuleRequest 请求对象
      * @return DebugRuleResponse
@@ -1613,8 +1516,7 @@ public class RomaClient {
      *
      * 规则调试
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DebugRuleRequest 请求对象
      * @return SyncInvoker<DebugRuleRequest, DebugRuleResponse>
@@ -1628,8 +1530,7 @@ public class RomaClient {
      *
      * 删除客户端配置的访问控制信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppAclRequest 请求对象
      * @return DeleteAppAclResponse
@@ -1643,8 +1544,7 @@ public class RomaClient {
      *
      * 删除客户端配置的访问控制信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppAclRequest 请求对象
      * @return SyncInvoker<DeleteAppAclRequest, DeleteAppAclResponse>
@@ -1658,8 +1558,7 @@ public class RomaClient {
      *
      * 删除App Code，App Code删除后，将无法再通过简易认证访问对应的API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppCodeV2Request 请求对象
      * @return DeleteAppCodeV2Response
@@ -1673,8 +1572,7 @@ public class RomaClient {
      *
      * 删除App Code，App Code删除后，将无法再通过简易认证访问对应的API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppCodeV2Request 请求对象
      * @return SyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response>
@@ -1690,8 +1588,7 @@ public class RomaClient {
      *
      * 删除应用配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppConfigV2Request 请求对象
      * @return DeleteAppConfigV2Response
@@ -1705,8 +1602,7 @@ public class RomaClient {
      *
      * 删除应用配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppConfigV2Request 请求对象
      * @return SyncInvoker<DeleteAppConfigV2Request, DeleteAppConfigV2Response>
@@ -1722,8 +1618,7 @@ public class RomaClient {
      *
      * 删除客户端配额。删除客户端配额时，同时删除客户端配额和客户端应用的关联关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppQuotaRequest 请求对象
      * @return DeleteAppQuotaResponse
@@ -1737,8 +1632,7 @@ public class RomaClient {
      *
      * 删除客户端配额。删除客户端配额时，同时删除客户端配额和客户端应用的关联关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppQuotaRequest 请求对象
      * @return SyncInvoker<DeleteAppQuotaRequest, DeleteAppQuotaResponse>
@@ -1754,8 +1648,7 @@ public class RomaClient {
      *
      * 删除命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCommandRequest 请求对象
      * @return DeleteCommandResponse
@@ -1769,8 +1662,7 @@ public class RomaClient {
      *
      * 删除命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCommandRequest 请求对象
      * @return SyncInvoker<DeleteCommandRequest, DeleteCommandResponse>
@@ -1784,8 +1676,7 @@ public class RomaClient {
      *
      * 删除自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCustomAuthorizerV2Request 请求对象
      * @return DeleteCustomAuthorizerV2Response
@@ -1799,8 +1690,7 @@ public class RomaClient {
      *
      * 删除自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCustomAuthorizerV2Request 请求对象
      * @return SyncInvoker<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response>
@@ -1816,8 +1706,7 @@ public class RomaClient {
      *
      * 通过数据源Id删除指定数据源信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDatasourceInfoByIdRequest 请求对象
      * @return DeleteDatasourceInfoByIdResponse
@@ -1831,8 +1720,7 @@ public class RomaClient {
      *
      * 通过数据源Id删除指定数据源信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDatasourceInfoByIdRequest 请求对象
      * @return SyncInvoker<DeleteDatasourceInfoByIdRequest, DeleteDatasourceInfoByIdResponse>
@@ -1848,8 +1736,7 @@ public class RomaClient {
      *
      * 删除目标数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDestinationRequest 请求对象
      * @return DeleteDestinationResponse
@@ -1863,8 +1750,7 @@ public class RomaClient {
      *
      * 删除目标数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDestinationRequest 请求对象
      * @return SyncInvoker<DeleteDestinationRequest, DeleteDestinationResponse>
@@ -1880,8 +1766,7 @@ public class RomaClient {
      *
      * 删除指定设备ID的设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceRequest 请求对象
      * @return DeleteDeviceResponse
@@ -1895,8 +1780,7 @@ public class RomaClient {
      *
      * 删除指定设备ID的设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceRequest 请求对象
      * @return SyncInvoker<DeleteDeviceRequest, DeleteDeviceResponse>
@@ -1910,8 +1794,7 @@ public class RomaClient {
      *
      * 删除设备分组内的设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceFromGroupRequest 请求对象
      * @return DeleteDeviceFromGroupResponse
@@ -1925,8 +1808,7 @@ public class RomaClient {
      *
      * 删除设备分组内的设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceFromGroupRequest 请求对象
      * @return SyncInvoker<DeleteDeviceFromGroupRequest, DeleteDeviceFromGroupResponse>
@@ -1942,8 +1824,7 @@ public class RomaClient {
      *
      * 删除分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceGroupRequest 请求对象
      * @return DeleteDeviceGroupResponse
@@ -1957,8 +1838,7 @@ public class RomaClient {
      *
      * 删除分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceGroupRequest 请求对象
      * @return SyncInvoker<DeleteDeviceGroupRequest, DeleteDeviceGroupResponse>
@@ -1975,8 +1855,7 @@ public class RomaClient {
      * 删除指定的环境。
      * 该操作将导致此API在指定的环境无法被访问，可能会影响相当一部分应用和用户。请确保已经告知用户，或者确认需要强制下线。环境上存在已发布的API时，该环境不能被删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentV2Request 请求对象
      * @return DeleteEnvironmentV2Response
@@ -1991,8 +1870,7 @@ public class RomaClient {
      * 删除指定的环境。
      * 该操作将导致此API在指定的环境无法被访问，可能会影响相当一部分应用和用户。请确保已经告知用户，或者确认需要强制下线。环境上存在已发布的API时，该环境不能被删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentV2Request 请求对象
      * @return SyncInvoker<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response>
@@ -2008,8 +1886,7 @@ public class RomaClient {
      *
      * 删除指定的环境变量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentVariableV2Request 请求对象
      * @return DeleteEnvironmentVariableV2Response
@@ -2023,8 +1900,7 @@ public class RomaClient {
      *
      * 删除指定的环境变量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentVariableV2Request 请求对象
      * @return SyncInvoker<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response>
@@ -2040,8 +1916,7 @@ public class RomaClient {
      *
      * 在某个实例中删除后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLiveDataApiV2Request 请求对象
      * @return DeleteLiveDataApiV2Response
@@ -2055,8 +1930,7 @@ public class RomaClient {
      *
      * 在某个实例中删除后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLiveDataApiV2Request 请求对象
      * @return SyncInvoker<DeleteLiveDataApiV2Request, DeleteLiveDataApiV2Response>
@@ -2072,8 +1946,7 @@ public class RomaClient {
      *
      * 删除Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMqsInstanceTopicRequest 请求对象
      * @return DeleteMqsInstanceTopicResponse
@@ -2087,8 +1960,7 @@ public class RomaClient {
      *
      * 删除Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMqsInstanceTopicRequest 请求对象
      * @return SyncInvoker<DeleteMqsInstanceTopicRequest, DeleteMqsInstanceTopicResponse>
@@ -2104,8 +1976,7 @@ public class RomaClient {
      *
      * 通过映射ID删除指定任务映射
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMultiTaskMappingRequest 请求对象
      * @return DeleteMultiTaskMappingResponse
@@ -2119,8 +1990,7 @@ public class RomaClient {
      *
      * 通过映射ID删除指定任务映射
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMultiTaskMappingRequest 请求对象
      * @return SyncInvoker<DeleteMultiTaskMappingRequest, DeleteMultiTaskMappingResponse>
@@ -2136,8 +2006,7 @@ public class RomaClient {
      *
      * 该接口用于删除指定订阅管理
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNotificationRequest 请求对象
      * @return DeleteNotificationResponse
@@ -2151,8 +2020,7 @@ public class RomaClient {
      *
      * 该接口用于删除指定订阅管理
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNotificationRequest 请求对象
      * @return SyncInvoker<DeleteNotificationRequest, DeleteNotificationResponse>
@@ -2168,8 +2036,7 @@ public class RomaClient {
      *
      * 删除产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProductRequest 请求对象
      * @return DeleteProductResponse
@@ -2183,8 +2050,7 @@ public class RomaClient {
      *
      * 删除产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProductRequest 请求对象
      * @return SyncInvoker<DeleteProductRequest, DeleteProductResponse>
@@ -2198,8 +2064,7 @@ public class RomaClient {
      *
      * 删除产品模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProductTemplateRequest 请求对象
      * @return DeleteProductTemplateResponse
@@ -2213,8 +2078,7 @@ public class RomaClient {
      *
      * 删除产品模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProductTemplateRequest 请求对象
      * @return SyncInvoker<DeleteProductTemplateRequest, DeleteProductTemplateResponse>
@@ -2230,8 +2094,7 @@ public class RomaClient {
      *
      * 删除产品主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProductTopicRequest 请求对象
      * @return DeleteProductTopicResponse
@@ -2245,8 +2108,7 @@ public class RomaClient {
      *
      * 删除产品主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProductTopicRequest 请求对象
      * @return SyncInvoker<DeleteProductTopicRequest, DeleteProductTopicResponse>
@@ -2262,8 +2124,7 @@ public class RomaClient {
      *
      * 删除服务属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePropertyRequest 请求对象
      * @return DeletePropertyResponse
@@ -2277,8 +2138,7 @@ public class RomaClient {
      *
      * 删除服务属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePropertyRequest 请求对象
      * @return SyncInvoker<DeletePropertyRequest, DeletePropertyResponse>
@@ -2294,8 +2154,7 @@ public class RomaClient {
      *
      * 删除请求属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRequestPropertyRequest 请求对象
      * @return DeleteRequestPropertyResponse
@@ -2309,8 +2168,7 @@ public class RomaClient {
      *
      * 删除请求属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRequestPropertyRequest 请求对象
      * @return SyncInvoker<DeleteRequestPropertyRequest, DeleteRequestPropertyResponse>
@@ -2326,8 +2184,7 @@ public class RomaClient {
      *
      * 删除指定的流控策略。当该流控策略绑定了API时，需要先解除流控策略与API的所有绑定关系后再删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRequestThrottlingPolicyV2Request 请求对象
      * @return DeleteRequestThrottlingPolicyV2Response
@@ -2342,8 +2199,7 @@ public class RomaClient {
      *
      * 删除指定的流控策略。当该流控策略绑定了API时，需要先解除流控策略与API的所有绑定关系后再删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response>
@@ -2359,8 +2215,7 @@ public class RomaClient {
      *
      * 删除响应属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResponsePropertyRequest 请求对象
      * @return DeleteResponsePropertyResponse
@@ -2374,8 +2229,7 @@ public class RomaClient {
      *
      * 删除响应属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResponsePropertyRequest 请求对象
      * @return SyncInvoker<DeleteResponsePropertyRequest, DeleteResponsePropertyResponse>
@@ -2391,8 +2245,7 @@ public class RomaClient {
      *
      * 删除规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRuleRequest 请求对象
      * @return DeleteRuleResponse
@@ -2406,8 +2259,7 @@ public class RomaClient {
      *
      * 删除规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRuleRequest 请求对象
      * @return SyncInvoker<DeleteRuleRequest, DeleteRuleResponse>
@@ -2421,8 +2273,7 @@ public class RomaClient {
      *
      * 删除服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServiceRequest 请求对象
      * @return DeleteServiceResponse
@@ -2436,8 +2287,7 @@ public class RomaClient {
      *
      * 删除服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServiceRequest 请求对象
      * @return SyncInvoker<DeleteServiceRequest, DeleteServiceResponse>
@@ -2451,8 +2301,7 @@ public class RomaClient {
      *
      * 删除指定的签名密钥。签名密钥绑定了API时无法删除，需要先解除与API的绑定关系后删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSignatureKeyV2Request 请求对象
      * @return DeleteSignatureKeyV2Response
@@ -2466,8 +2315,7 @@ public class RomaClient {
      *
      * 删除指定的签名密钥。签名密钥绑定了API时无法删除，需要先解除与API的绑定关系后删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSignatureKeyV2Request 请求对象
      * @return SyncInvoker<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response>
@@ -2483,8 +2331,7 @@ public class RomaClient {
      *
      * 删除源数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSourceRequest 请求对象
      * @return DeleteSourceResponse
@@ -2498,8 +2345,7 @@ public class RomaClient {
      *
      * 删除源数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSourceRequest 请求对象
      * @return SyncInvoker<DeleteSourceRequest, DeleteSourceResponse>
@@ -2513,8 +2359,7 @@ public class RomaClient {
      *
      * 删除某个流控策略的某个特殊配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSpecialThrottlingConfigurationV2Request 请求对象
      * @return DeleteSpecialThrottlingConfigurationV2Response
@@ -2529,8 +2374,7 @@ public class RomaClient {
      *
      * 删除某个流控策略的某个特殊配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSpecialThrottlingConfigurationV2Request 请求对象
      * @return SyncInvoker<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response>
@@ -2546,8 +2390,7 @@ public class RomaClient {
      *
      * 通过任务ID删除指定任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
      * @return DeleteTaskResponse
@@ -2561,8 +2404,7 @@ public class RomaClient {
      *
      * 通过任务ID删除指定任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
      * @return SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
@@ -2576,8 +2418,7 @@ public class RomaClient {
      *
      * 解除客户端配额和客户端应用的绑定
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateAppQuotaWithAppRequest 请求对象
      * @return DisassociateAppQuotaWithAppResponse
@@ -2591,8 +2432,7 @@ public class RomaClient {
      *
      * 解除客户端配额和客户端应用的绑定
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateAppQuotaWithAppRequest 请求对象
      * @return SyncInvoker<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse>
@@ -2608,8 +2448,7 @@ public class RomaClient {
      *
      * 如果域名证书不再需要或者已过期，则可以删除证书内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateCertificateV2Request 请求对象
      * @return DisassociateCertificateV2Response
@@ -2623,8 +2462,7 @@ public class RomaClient {
      *
      * 如果域名证书不再需要或者已过期，则可以删除证书内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateCertificateV2Request 请求对象
      * @return SyncInvoker<DisassociateCertificateV2Request, DisassociateCertificateV2Response>
@@ -2640,8 +2478,7 @@ public class RomaClient {
      *
      * 如果API分组不再需要绑定某个自定义域名，则可以为此API分组解绑此域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateDomainV2Request 请求对象
      * @return DisassociateDomainV2Response
@@ -2655,8 +2492,7 @@ public class RomaClient {
      *
      * 如果API分组不再需要绑定某个自定义域名，则可以为此API分组解绑此域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateDomainV2Request 请求对象
      * @return SyncInvoker<DisassociateDomainV2Request, DisassociateDomainV2Response>
@@ -2672,8 +2508,7 @@ public class RomaClient {
      *
      * 解除API与签名密钥的绑定关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateSignatureKeyV2Request 请求对象
      * @return DisassociateSignatureKeyV2Response
@@ -2687,8 +2522,7 @@ public class RomaClient {
      *
      * 解除API与签名密钥的绑定关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateSignatureKeyV2Request 请求对象
      * @return SyncInvoker<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response>
@@ -2704,8 +2538,7 @@ public class RomaClient {
      *
      * 导出产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadProductsRequest 请求对象
      * @return DownloadProductsResponse
@@ -2719,8 +2552,7 @@ public class RomaClient {
      *
      * 导出产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadProductsRequest 请求对象
      * @return SyncInvoker<DownloadProductsRequest, DownloadProductsResponse>
@@ -2736,8 +2568,7 @@ public class RomaClient {
      *
      * 导出Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportMqsInstanceTopicRequest 请求对象
      * @return ExportMqsInstanceTopicResponse
@@ -2751,8 +2582,7 @@ public class RomaClient {
      *
      * 导出Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportMqsInstanceTopicRequest 请求对象
      * @return SyncInvoker<ExportMqsInstanceTopicRequest, ExportMqsInstanceTopicResponse>
@@ -2768,8 +2598,7 @@ public class RomaClient {
      *
      * 导入Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportMqsInstanceTopicRequest 请求对象
      * @return ImportMqsInstanceTopicResponse
@@ -2783,8 +2612,7 @@ public class RomaClient {
      *
      * 导入Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportMqsInstanceTopicRequest 请求对象
      * @return SyncInvoker<ImportMqsInstanceTopicRequest, ImportMqsInstanceTopicResponse>
@@ -2800,8 +2628,7 @@ public class RomaClient {
      *
      * 初始化组合任务，分配任务ID，初始化映射等
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param InstallMultiTasksRequest 请求对象
      * @return InstallMultiTasksResponse
@@ -2815,8 +2642,7 @@ public class RomaClient {
      *
      * 初始化组合任务，分配任务ID，初始化映射等
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param InstallMultiTasksRequest 请求对象
      * @return SyncInvoker<InstallMultiTasksRequest, InstallMultiTasksResponse>
@@ -2832,8 +2658,7 @@ public class RomaClient {
      *
      * 查询某个签名密钥上已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToSignatureKeyV2Request 请求对象
      * @return ListApisBindedToSignatureKeyV2Response
@@ -2848,8 +2673,7 @@ public class RomaClient {
      *
      * 查询某个签名密钥上已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToSignatureKeyV2Request 请求对象
      * @return SyncInvoker<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response>
@@ -2865,8 +2689,7 @@ public class RomaClient {
      *
      * 查询所有未绑定到该签名密钥上的API列表。需要API已经发布，未发布的API不予展示。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisNotBoundWithSignatureKeyV2Request 请求对象
      * @return ListApisNotBoundWithSignatureKeyV2Response
@@ -2881,8 +2704,7 @@ public class RomaClient {
      *
      * 查询所有未绑定到该签名密钥上的API列表。需要API已经发布，未发布的API不予展示。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisNotBoundWithSignatureKeyV2Request 请求对象
      * @return SyncInvoker<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response>
@@ -2898,8 +2720,7 @@ public class RomaClient {
      *
      * 查询App Code列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppCodesV2Request 请求对象
      * @return ListAppCodesV2Response
@@ -2913,8 +2734,7 @@ public class RomaClient {
      *
      * 查询App Code列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppCodesV2Request 请求对象
      * @return SyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response>
@@ -2930,8 +2750,7 @@ public class RomaClient {
      *
      * 查询应用配置列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppConfigsV2Request 请求对象
      * @return ListAppConfigsV2Response
@@ -2945,8 +2764,7 @@ public class RomaClient {
      *
      * 查询应用配置列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppConfigsV2Request 请求对象
      * @return SyncInvoker<ListAppConfigsV2Request, ListAppConfigsV2Response>
@@ -2962,8 +2780,7 @@ public class RomaClient {
      *
      * 查询客户端配额可绑定的客户端应用列表。支持按客户端应用名称模糊搜索
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppQuotaBindableAppsRequest 请求对象
      * @return ListAppQuotaBindableAppsResponse
@@ -2977,8 +2794,7 @@ public class RomaClient {
      *
      * 查询客户端配额可绑定的客户端应用列表。支持按客户端应用名称模糊搜索
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppQuotaBindableAppsRequest 请求对象
      * @return SyncInvoker<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse>
@@ -2994,8 +2810,7 @@ public class RomaClient {
      *
      * 查询客户端配额已绑定的客户端应用列表。支持按客户端应用名称模糊匹配
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppQuotaBoundAppsRequest 请求对象
      * @return ListAppQuotaBoundAppsResponse
@@ -3009,8 +2824,7 @@ public class RomaClient {
      *
      * 查询客户端配额已绑定的客户端应用列表。支持按客户端应用名称模糊匹配
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppQuotaBoundAppsRequest 请求对象
      * @return SyncInvoker<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse>
@@ -3026,8 +2840,7 @@ public class RomaClient {
      *
      * 获取客户端配额列表。支持根据名称模糊查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppQuotasRequest 请求对象
      * @return ListAppQuotasResponse
@@ -3041,8 +2854,7 @@ public class RomaClient {
      *
      * 获取客户端配额列表。支持根据名称模糊查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppQuotasRequest 请求对象
      * @return SyncInvoker<ListAppQuotasRequest, ListAppQuotasResponse>
@@ -3056,8 +2868,7 @@ public class RomaClient {
      *
      * 查询APP列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsV2Request 请求对象
      * @return ListAppsV2Response
@@ -3071,8 +2882,7 @@ public class RomaClient {
      *
      * 查询APP列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsV2Request 请求对象
      * @return SyncInvoker<ListAppsV2Request, ListAppsV2Response>
@@ -3086,8 +2896,7 @@ public class RomaClient {
      *
      * 查询命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommandsRequest 请求对象
      * @return ListCommandsResponse
@@ -3101,8 +2910,7 @@ public class RomaClient {
      *
      * 查询命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommandsRequest 请求对象
      * @return SyncInvoker<ListCommandsRequest, ListCommandsResponse>
@@ -3116,8 +2924,7 @@ public class RomaClient {
      *
      * 查询自定义认证列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCustomAuthorizersV2Request 请求对象
      * @return ListCustomAuthorizersV2Response
@@ -3131,8 +2938,7 @@ public class RomaClient {
      *
      * 查询自定义认证列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCustomAuthorizersV2Request 请求对象
      * @return SyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response>
@@ -3148,8 +2954,7 @@ public class RomaClient {
      *
      * 获取数据源中中某个表中所有字段
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatasourceColumnsRequest 请求对象
      * @return ListDatasourceColumnsResponse
@@ -3163,8 +2968,7 @@ public class RomaClient {
      *
      * 获取数据源中中某个表中所有字段
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatasourceColumnsRequest 请求对象
      * @return SyncInvoker<ListDatasourceColumnsRequest, ListDatasourceColumnsResponse>
@@ -3180,8 +2984,7 @@ public class RomaClient {
      *
      * 获取数据源中所有的表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatasourceTablesRequest 请求对象
      * @return ListDatasourceTablesResponse
@@ -3195,8 +2998,7 @@ public class RomaClient {
      *
      * 获取数据源中所有的表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatasourceTablesRequest 请求对象
      * @return SyncInvoker<ListDatasourceTablesRequest, ListDatasourceTablesResponse>
@@ -3212,8 +3014,7 @@ public class RomaClient {
      *
      * 查询数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatasourcesRequest 请求对象
      * @return ListDatasourcesResponse
@@ -3227,8 +3028,7 @@ public class RomaClient {
      *
      * 查询数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatasourcesRequest 请求对象
      * @return SyncInvoker<ListDatasourcesRequest, ListDatasourcesResponse>
@@ -3244,8 +3044,7 @@ public class RomaClient {
      *
      * 查询目标数据源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDestinationsRequest 请求对象
      * @return ListDestinationsResponse
@@ -3259,8 +3058,7 @@ public class RomaClient {
      *
      * 查询目标数据源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDestinationsRequest 请求对象
      * @return SyncInvoker<ListDestinationsRequest, ListDestinationsResponse>
@@ -3276,8 +3074,7 @@ public class RomaClient {
      *
      * 查询设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDevicesRequest 请求对象
      * @return ListDevicesResponse
@@ -3291,8 +3088,7 @@ public class RomaClient {
      *
      * 查询设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDevicesRequest 请求对象
      * @return SyncInvoker<ListDevicesRequest, ListDevicesResponse>
@@ -3306,8 +3102,7 @@ public class RomaClient {
      *
      * 查询产品内设备数量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDevicesInProductRequest 请求对象
      * @return ListDevicesInProductResponse
@@ -3321,8 +3116,7 @@ public class RomaClient {
      *
      * 查询产品内设备数量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDevicesInProductRequest 请求对象
      * @return SyncInvoker<ListDevicesInProductRequest, ListDevicesInProductResponse>
@@ -3338,8 +3132,7 @@ public class RomaClient {
      *
      * 查询分组下的所有环境变量的列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentVariablesV2Request 请求对象
      * @return ListEnvironmentVariablesV2Response
@@ -3353,8 +3146,7 @@ public class RomaClient {
      *
      * 查询分组下的所有环境变量的列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentVariablesV2Request 请求对象
      * @return SyncInvoker<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response>
@@ -3370,8 +3162,7 @@ public class RomaClient {
      *
      * 查询符合条件的环境列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentsV2Request 请求对象
      * @return ListEnvironmentsV2Response
@@ -3385,8 +3176,7 @@ public class RomaClient {
      *
      * 查询符合条件的环境列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentsV2Request 请求对象
      * @return SyncInvoker<ListEnvironmentsV2Request, ListEnvironmentsV2Response>
@@ -3404,8 +3194,7 @@ public class RomaClient {
      * 
      * 支持配置的特性列表及特性配置请参考“附录 &gt; 实例支持的APIC特性”
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFeaturesV2Request 请求对象
      * @return ListFeaturesV2Response
@@ -3421,8 +3210,7 @@ public class RomaClient {
      * 
      * 支持配置的特性列表及特性配置请参考“附录 &gt; 实例支持的APIC特性”
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFeaturesV2Request 请求对象
      * @return SyncInvoker<ListFeaturesV2Request, ListFeaturesV2Response>
@@ -3439,8 +3227,7 @@ public class RomaClient {
      * 根据API的id和最近的一段时间查询API被调用的次数，统计周期为1分钟。查询范围一小时以内，一分钟一个样本，其样本值为一分钟内的累计值。
      * &gt; 为了安全起见，在服务器上使用curl命令调用接口查询信息后，需要清理历史操作记录，包括但不限于“~/.bash_history”、“/var/log/messages”（如有）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLatelyApiStatisticsV2Request 请求对象
      * @return ListLatelyApiStatisticsV2Response
@@ -3455,8 +3242,7 @@ public class RomaClient {
      * 根据API的id和最近的一段时间查询API被调用的次数，统计周期为1分钟。查询范围一小时以内，一分钟一个样本，其样本值为一分钟内的累计值。
      * &gt; 为了安全起见，在服务器上使用curl命令调用接口查询信息后，需要清理历史操作记录，包括但不限于“~/.bash_history”、“/var/log/messages”（如有）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLatelyApiStatisticsV2Request 请求对象
      * @return SyncInvoker<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response>
@@ -3472,8 +3258,7 @@ public class RomaClient {
      *
      * 在某个实例中查询后端API的部署记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataApiDeploymentHistoryV2Request 请求对象
      * @return ListLiveDataApiDeploymentHistoryV2Response
@@ -3488,8 +3273,7 @@ public class RomaClient {
      *
      * 在某个实例中查询后端API的部署记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataApiDeploymentHistoryV2Request 请求对象
      * @return SyncInvoker<ListLiveDataApiDeploymentHistoryV2Request, ListLiveDataApiDeploymentHistoryV2Response>
@@ -3505,8 +3289,7 @@ public class RomaClient {
      *
      * 在某个实例中查询后端API的测试结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataApiTestHistoryV2Request 请求对象
      * @return ListLiveDataApiTestHistoryV2Response
@@ -3521,8 +3304,7 @@ public class RomaClient {
      *
      * 在某个实例中查询后端API的测试结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataApiTestHistoryV2Request 请求对象
      * @return SyncInvoker<ListLiveDataApiTestHistoryV2Request, ListLiveDataApiTestHistoryV2Response>
@@ -3538,8 +3320,7 @@ public class RomaClient {
      *
      * 获取某个实例下的所有后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataApiV2Request 请求对象
      * @return ListLiveDataApiV2Response
@@ -3553,8 +3334,7 @@ public class RomaClient {
      *
      * 获取某个实例下的所有后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataApiV2Request 请求对象
      * @return SyncInvoker<ListLiveDataApiV2Request, ListLiveDataApiV2Response>
@@ -3570,8 +3350,7 @@ public class RomaClient {
      *
      * 查询自定义后端服务数据源列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataDataSourcesV2Request 请求对象
      * @return ListLiveDataDataSourcesV2Response
@@ -3585,8 +3364,7 @@ public class RomaClient {
      *
      * 查询自定义后端服务数据源列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataDataSourcesV2Request 请求对象
      * @return SyncInvoker<ListLiveDataDataSourcesV2Request, ListLiveDataDataSourcesV2Response>
@@ -3602,8 +3380,7 @@ public class RomaClient {
      *
      * 查询自定义后端服务配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataQuotaV2Request 请求对象
      * @return ListLiveDataQuotaV2Response
@@ -3617,8 +3394,7 @@ public class RomaClient {
      *
      * 查询自定义后端服务配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataQuotaV2Request 请求对象
      * @return SyncInvoker<ListLiveDataQuotaV2Request, ListLiveDataQuotaV2Response>
@@ -3634,8 +3410,7 @@ public class RomaClient {
      *
      * 查询所有任务的监控信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMonitorInfosRequest 请求对象
      * @return ListMonitorInfosResponse
@@ -3649,8 +3424,7 @@ public class RomaClient {
      *
      * 查询所有任务的监控信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMonitorInfosRequest 请求对象
      * @return SyncInvoker<ListMonitorInfosRequest, ListMonitorInfosResponse>
@@ -3666,8 +3440,7 @@ public class RomaClient {
      *
      * 查询单个任务的所有日志信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMonitorLogRequest 请求对象
      * @return ListMonitorLogResponse
@@ -3681,8 +3454,7 @@ public class RomaClient {
      *
      * 查询单个任务的所有日志信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMonitorLogRequest 请求对象
      * @return SyncInvoker<ListMonitorLogRequest, ListMonitorLogResponse>
@@ -3698,8 +3470,7 @@ public class RomaClient {
      *
      * 查询Topic列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMqsInstanceTopicsRequest 请求对象
      * @return ListMqsInstanceTopicsResponse
@@ -3713,8 +3484,7 @@ public class RomaClient {
      *
      * 查询Topic列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMqsInstanceTopicsRequest 请求对象
      * @return SyncInvoker<ListMqsInstanceTopicsRequest, ListMqsInstanceTopicsResponse>
@@ -3730,8 +3500,7 @@ public class RomaClient {
      *
      * 该接口用于查询指定应用订阅管理信息的数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotificationRequest 请求对象
      * @return ListNotificationResponse
@@ -3745,8 +3514,7 @@ public class RomaClient {
      *
      * 该接口用于查询指定应用订阅管理信息的数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotificationRequest 请求对象
      * @return SyncInvoker<ListNotificationRequest, ListNotificationResponse>
@@ -3762,8 +3530,7 @@ public class RomaClient {
      *
      * 查询产品模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductTemplatesRequest 请求对象
      * @return ListProductTemplatesResponse
@@ -3777,8 +3544,7 @@ public class RomaClient {
      *
      * 查询产品模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductTemplatesRequest 请求对象
      * @return SyncInvoker<ListProductTemplatesRequest, ListProductTemplatesResponse>
@@ -3794,8 +3560,7 @@ public class RomaClient {
      *
      * 查询产品主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductTopicsRequest 请求对象
      * @return ListProductTopicsResponse
@@ -3809,8 +3574,7 @@ public class RomaClient {
      *
      * 查询产品主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductTopicsRequest 请求对象
      * @return SyncInvoker<ListProductTopicsRequest, ListProductTopicsResponse>
@@ -3826,8 +3590,7 @@ public class RomaClient {
      *
      * 查询产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductsRequest 请求对象
      * @return ListProductsResponse
@@ -3841,8 +3604,7 @@ public class RomaClient {
      *
      * 查询产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductsRequest 请求对象
      * @return SyncInvoker<ListProductsRequest, ListProductsResponse>
@@ -3856,8 +3618,7 @@ public class RomaClient {
      *
      * 查询某个实例的租户配置列表，用户可以通过此接口查看各类型资源配置及使用情况。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectCofigsV2Request 请求对象
      * @return ListProjectCofigsV2Response
@@ -3871,8 +3632,7 @@ public class RomaClient {
      *
      * 查询某个实例的租户配置列表，用户可以通过此接口查看各类型资源配置及使用情况。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectCofigsV2Request 请求对象
      * @return SyncInvoker<ListProjectCofigsV2Request, ListProjectCofigsV2Response>
@@ -3888,8 +3648,7 @@ public class RomaClient {
      *
      * 查询属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPropertiesRequest 请求对象
      * @return ListPropertiesResponse
@@ -3903,8 +3662,7 @@ public class RomaClient {
      *
      * 查询属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPropertiesRequest 请求对象
      * @return SyncInvoker<ListPropertiesRequest, ListPropertiesResponse>
@@ -3920,8 +3678,7 @@ public class RomaClient {
      *
      * 查询请求属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestPropertiesRequest 请求对象
      * @return ListRequestPropertiesResponse
@@ -3935,8 +3692,7 @@ public class RomaClient {
      *
      * 查询请求属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestPropertiesRequest 请求对象
      * @return SyncInvoker<ListRequestPropertiesRequest, ListRequestPropertiesResponse>
@@ -3952,8 +3708,7 @@ public class RomaClient {
      *
      * 查询所有流控策略的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestThrottlingPolicyV2Request 请求对象
      * @return ListRequestThrottlingPolicyV2Response
@@ -3968,8 +3723,7 @@ public class RomaClient {
      *
      * 查询所有流控策略的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response>
@@ -3985,8 +3739,7 @@ public class RomaClient {
      *
      * 查询响应属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResponsePropertiesRequest 请求对象
      * @return ListResponsePropertiesResponse
@@ -4000,8 +3753,7 @@ public class RomaClient {
      *
      * 查询响应属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResponsePropertiesRequest 请求对象
      * @return SyncInvoker<ListResponsePropertiesRequest, ListResponsePropertiesResponse>
@@ -4017,8 +3769,7 @@ public class RomaClient {
      *
      * 查询规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRulesRequest 请求对象
      * @return ListRulesResponse
@@ -4032,8 +3783,7 @@ public class RomaClient {
      *
      * 查询规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRulesRequest 请求对象
      * @return SyncInvoker<ListRulesRequest, ListRulesResponse>
@@ -4047,8 +3797,7 @@ public class RomaClient {
      *
      * 查询服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServicesRequest 请求对象
      * @return ListServicesResponse
@@ -4062,8 +3811,7 @@ public class RomaClient {
      *
      * 查询服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServicesRequest 请求对象
      * @return SyncInvoker<ListServicesRequest, ListServicesResponse>
@@ -4077,8 +3825,7 @@ public class RomaClient {
      *
      * 查询设备影子
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListShadowsRequest 请求对象
      * @return ListShadowsResponse
@@ -4092,8 +3839,7 @@ public class RomaClient {
      *
      * 查询设备影子
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListShadowsRequest 请求对象
      * @return SyncInvoker<ListShadowsRequest, ListShadowsResponse>
@@ -4107,8 +3853,7 @@ public class RomaClient {
      *
      * 查询某个API绑定的签名密钥列表。每个API在每个环境上应该最多只会绑定一个签名密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSignatureKeysBindedToApiV2Request 请求对象
      * @return ListSignatureKeysBindedToApiV2Response
@@ -4123,8 +3868,7 @@ public class RomaClient {
      *
      * 查询某个API绑定的签名密钥列表。每个API在每个环境上应该最多只会绑定一个签名密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSignatureKeysBindedToApiV2Request 请求对象
      * @return SyncInvoker<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response>
@@ -4140,8 +3884,7 @@ public class RomaClient {
      *
      * 查询所有签名密钥的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSignatureKeysV2Request 请求对象
      * @return ListSignatureKeysV2Response
@@ -4155,8 +3898,7 @@ public class RomaClient {
      *
      * 查询所有签名密钥的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSignatureKeysV2Request 请求对象
      * @return SyncInvoker<ListSignatureKeysV2Request, ListSignatureKeysV2Response>
@@ -4172,8 +3914,7 @@ public class RomaClient {
      *
      * 查询源数据源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSourcesRequest 请求对象
      * @return ListSourcesResponse
@@ -4187,8 +3928,7 @@ public class RomaClient {
      *
      * 查询源数据源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSourcesRequest 请求对象
      * @return SyncInvoker<ListSourcesRequest, ListSourcesResponse>
@@ -4202,8 +3942,7 @@ public class RomaClient {
      *
      * 查看给流控策略设置的特殊配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSpecialThrottlingConfigurationsV2Request 请求对象
      * @return ListSpecialThrottlingConfigurationsV2Response
@@ -4218,8 +3957,7 @@ public class RomaClient {
      *
      * 查看给流控策略设置的特殊配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSpecialThrottlingConfigurationsV2Request 请求对象
      * @return SyncInvoker<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response>
@@ -4235,8 +3973,7 @@ public class RomaClient {
      *
      * 查询某个实例下的API统计信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStatisticsApiRequest 请求对象
      * @return ListStatisticsApiResponse
@@ -4250,8 +3987,7 @@ public class RomaClient {
      *
      * 查询某个实例下的API统计信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStatisticsApiRequest 请求对象
      * @return SyncInvoker<ListStatisticsApiRequest, ListStatisticsApiResponse>
@@ -4267,8 +4003,7 @@ public class RomaClient {
      *
      * 查询子设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubsetsRequest 请求对象
      * @return ListSubsetsResponse
@@ -4282,8 +4017,7 @@ public class RomaClient {
      *
      * 查询子设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubsetsRequest 请求对象
      * @return SyncInvoker<ListSubsetsRequest, ListSubsetsResponse>
@@ -4297,8 +4031,7 @@ public class RomaClient {
      *
      * 查询标签列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsV2Request 请求对象
      * @return ListTagsV2Response
@@ -4312,8 +4045,7 @@ public class RomaClient {
      *
      * 查询标签列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsV2Request 请求对象
      * @return SyncInvoker<ListTagsV2Request, ListTagsV2Response>
@@ -4327,8 +4059,7 @@ public class RomaClient {
      *
      * 查询任务列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTasksRequest 请求对象
      * @return ListTasksResponse
@@ -4342,8 +4073,7 @@ public class RomaClient {
      *
      * 查询任务列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTasksRequest 请求对象
      * @return SyncInvoker<ListTasksRequest, ListTasksResponse>
@@ -4357,8 +4087,7 @@ public class RomaClient {
      *
      * 查询设备主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTopicsRequest 请求对象
      * @return ListTopicsResponse
@@ -4372,8 +4101,7 @@ public class RomaClient {
      *
      * 查询设备主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTopicsRequest 请求对象
      * @return SyncInvoker<ListTopicsRequest, ListTopicsResponse>
@@ -4387,8 +4115,7 @@ public class RomaClient {
      *
      * 在某个实例中部署后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PublishLiveDataApiV2Request 请求对象
      * @return PublishLiveDataApiV2Response
@@ -4402,8 +4129,7 @@ public class RomaClient {
      *
      * 在某个实例中部署后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PublishLiveDataApiV2Request 请求对象
      * @return SyncInvoker<PublishLiveDataApiV2Request, PublishLiveDataApiV2Response>
@@ -4419,8 +4145,7 @@ public class RomaClient {
      *
      * 重置设备鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetAuthenticationRequest 请求对象
      * @return ResetAuthenticationResponse
@@ -4434,8 +4159,7 @@ public class RomaClient {
      *
      * 重置设备鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetAuthenticationRequest 请求对象
      * @return SyncInvoker<ResetAuthenticationRequest, ResetAuthenticationResponse>
@@ -4451,8 +4175,7 @@ public class RomaClient {
      *
      * 重发消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetMessagesRequest 请求对象
      * @return ResetMessagesResponse
@@ -4466,8 +4189,7 @@ public class RomaClient {
      *
      * 重发消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetMessagesRequest 请求对象
      * @return SyncInvoker<ResetMessagesRequest, ResetMessagesResponse>
@@ -4481,8 +4203,7 @@ public class RomaClient {
      *
      * 重置组合任务进度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetMultiTaskOffsetRequest 请求对象
      * @return ResetMultiTaskOffsetResponse
@@ -4496,8 +4217,7 @@ public class RomaClient {
      *
      * 重置组合任务进度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetMultiTaskOffsetRequest 请求对象
      * @return SyncInvoker<ResetMultiTaskOffsetRequest, ResetMultiTaskOffsetResponse>
@@ -4513,8 +4233,7 @@ public class RomaClient {
      *
      * 重置产品鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetProductAuthenticationRequest 请求对象
      * @return ResetProductAuthenticationResponse
@@ -4528,8 +4247,7 @@ public class RomaClient {
      *
      * 重置产品鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetProductAuthenticationRequest 请求对象
      * @return SyncInvoker<ResetProductAuthenticationRequest, ResetProductAuthenticationResponse>
@@ -4545,8 +4263,7 @@ public class RomaClient {
      *
      * 手工触发一次任务调度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunTaskRequest 请求对象
      * @return RunTaskResponse
@@ -4560,8 +4277,7 @@ public class RomaClient {
      *
      * 手工触发一次任务调度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunTaskRequest 请求对象
      * @return SyncInvoker<RunTaskRequest, RunTaskResponse>
@@ -4575,8 +4291,7 @@ public class RomaClient {
      *
      * 发送命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendCommandRequest 请求对象
      * @return SendCommandResponse
@@ -4590,8 +4305,7 @@ public class RomaClient {
      *
      * 发送命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendCommandRequest 请求对象
      * @return SyncInvoker<SendCommandRequest, SendCommandResponse>
@@ -4605,8 +4319,7 @@ public class RomaClient {
      *
      * 查看指定客户端应用关联的应用配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAppBoundAppQuotaRequest 请求对象
      * @return ShowAppBoundAppQuotaResponse
@@ -4620,8 +4333,7 @@ public class RomaClient {
      *
      * 查看指定客户端应用关联的应用配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAppBoundAppQuotaRequest 请求对象
      * @return SyncInvoker<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse>
@@ -4637,8 +4349,7 @@ public class RomaClient {
      *
      * 获取客户端配额详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAppQuotaRequest 请求对象
      * @return ShowAppQuotaResponse
@@ -4652,8 +4363,7 @@ public class RomaClient {
      *
      * 获取客户端配额详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAppQuotaRequest 请求对象
      * @return SyncInvoker<ShowAppQuotaRequest, ShowAppQuotaResponse>
@@ -4667,8 +4377,7 @@ public class RomaClient {
      *
      * 查询设备鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAuthenticationRequest 请求对象
      * @return ShowAuthenticationResponse
@@ -4682,8 +4391,7 @@ public class RomaClient {
      *
      * 查询设备鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAuthenticationRequest 请求对象
      * @return SyncInvoker<ShowAuthenticationRequest, ShowAuthenticationResponse>
@@ -4699,8 +4407,7 @@ public class RomaClient {
      *
      * 查询命令详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCommandRequest 请求对象
      * @return ShowCommandResponse
@@ -4714,8 +4421,7 @@ public class RomaClient {
      *
      * 查询命令详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCommandRequest 请求对象
      * @return SyncInvoker<ShowCommandRequest, ShowCommandResponse>
@@ -4729,8 +4435,7 @@ public class RomaClient {
      *
      * 根据数据源id查询数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDataourceDetailRequest 请求对象
      * @return ShowDataourceDetailResponse
@@ -4744,8 +4449,7 @@ public class RomaClient {
      *
      * 根据数据源id查询数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDataourceDetailRequest 请求对象
      * @return SyncInvoker<ShowDataourceDetailRequest, ShowDataourceDetailResponse>
@@ -4761,8 +4465,7 @@ public class RomaClient {
      *
      * 查看APP的访问控制详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppAclRequest 请求对象
      * @return ShowDetailsOfAppAclResponse
@@ -4776,8 +4479,7 @@ public class RomaClient {
      *
      * 查看APP的访问控制详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppAclRequest 请求对象
      * @return SyncInvoker<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse>
@@ -4793,8 +4495,7 @@ public class RomaClient {
      *
      * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppCodeV2Request 请求对象
      * @return ShowDetailsOfAppCodeV2Response
@@ -4808,8 +4509,7 @@ public class RomaClient {
      *
      * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppCodeV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response>
@@ -4825,8 +4525,7 @@ public class RomaClient {
      *
      * 查看应用配置详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppConfigV2Request 请求对象
      * @return ShowDetailsOfAppConfigV2Response
@@ -4840,8 +4539,7 @@ public class RomaClient {
      *
      * 查看应用配置详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppConfigV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfAppConfigV2Request, ShowDetailsOfAppConfigV2Response>
@@ -4857,8 +4555,7 @@ public class RomaClient {
      *
      * 查看指定APP的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppV2Request 请求对象
      * @return ShowDetailsOfAppV2Response
@@ -4872,8 +4569,7 @@ public class RomaClient {
      *
      * 查看指定APP的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response>
@@ -4889,8 +4585,7 @@ public class RomaClient {
      *
      * 查看自定义认证详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfCustomAuthorizersV2Request 请求对象
      * @return ShowDetailsOfCustomAuthorizersV2Response
@@ -4905,8 +4600,7 @@ public class RomaClient {
      *
      * 查看自定义认证详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfCustomAuthorizersV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response>
@@ -4922,8 +4616,7 @@ public class RomaClient {
      *
      * 查看域名下绑定的证书详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfDomainNameCertificateV2Request 请求对象
      * @return ShowDetailsOfDomainNameCertificateV2Response
@@ -4938,8 +4631,7 @@ public class RomaClient {
      *
      * 查看域名下绑定的证书详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfDomainNameCertificateV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response>
@@ -4955,8 +4647,7 @@ public class RomaClient {
      *
      * 查看指定的环境变量的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfEnvironmentVariableV2Request 请求对象
      * @return ShowDetailsOfEnvironmentVariableV2Response
@@ -4971,8 +4662,7 @@ public class RomaClient {
      *
      * 查看指定的环境变量的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfEnvironmentVariableV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response>
@@ -4988,8 +4678,7 @@ public class RomaClient {
      *
      * 查看ROMA Connect实例详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfInstanceV2Request 请求对象
      * @return ShowDetailsOfInstanceV2Response
@@ -5003,8 +4692,7 @@ public class RomaClient {
      *
      * 查看ROMA Connect实例详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfInstanceV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response>
@@ -5020,8 +4708,7 @@ public class RomaClient {
      *
      * 查看指定流控策略的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
      * @return ShowDetailsOfRequestThrottlingPolicyV2Response
@@ -5036,8 +4723,7 @@ public class RomaClient {
      *
      * 查看指定流控策略的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response>
@@ -5053,8 +4739,7 @@ public class RomaClient {
      *
      * 查询设备详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceRequest 请求对象
      * @return ShowDeviceResponse
@@ -5068,8 +4753,7 @@ public class RomaClient {
      *
      * 查询设备详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceRequest 请求对象
      * @return SyncInvoker<ShowDeviceRequest, ShowDeviceResponse>
@@ -5083,8 +4767,7 @@ public class RomaClient {
      *
      * 获取设备分组及下一层分组信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceGroupRequest 请求对象
      * @return ShowDeviceGroupResponse
@@ -5098,8 +4781,7 @@ public class RomaClient {
      *
      * 获取设备分组及下一层分组信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceGroupRequest 请求对象
      * @return SyncInvoker<ShowDeviceGroupRequest, ShowDeviceGroupResponse>
@@ -5115,8 +4797,7 @@ public class RomaClient {
      *
      * 查询所有设备分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceGroupTreeRequest 请求对象
      * @return ShowDeviceGroupTreeResponse
@@ -5130,8 +4811,7 @@ public class RomaClient {
      *
      * 查询所有设备分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceGroupTreeRequest 请求对象
      * @return SyncInvoker<ShowDeviceGroupTreeRequest, ShowDeviceGroupTreeResponse>
@@ -5147,8 +4827,7 @@ public class RomaClient {
      *
      * 查询设备分组内设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDevicesInGroupRequest 请求对象
      * @return ShowDevicesInGroupResponse
@@ -5162,8 +4841,7 @@ public class RomaClient {
      *
      * 查询设备分组内设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDevicesInGroupRequest 请求对象
      * @return SyncInvoker<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse>
@@ -5179,8 +4857,7 @@ public class RomaClient {
      *
      * 查询调度计划
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDispatchesRequest 请求对象
      * @return ShowDispatchesResponse
@@ -5194,8 +4871,7 @@ public class RomaClient {
      *
      * 查询调度计划
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDispatchesRequest 请求对象
      * @return SyncInvoker<ShowDispatchesRequest, ShowDispatchesResponse>
@@ -5211,8 +4887,7 @@ public class RomaClient {
      *
      * 查询后端API的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLiveDataApiV2Request 请求对象
      * @return ShowLiveDataApiV2Response
@@ -5226,8 +4901,7 @@ public class RomaClient {
      *
      * 查询后端API的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLiveDataApiV2Request 请求对象
      * @return SyncInvoker<ShowLiveDataApiV2Request, ShowLiveDataApiV2Response>
@@ -5244,8 +4918,7 @@ public class RomaClient {
      * 查询消息的偏移量和消息内容。
      * 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMqsInstanceMessagesRequest 请求对象
      * @return ShowMqsInstanceMessagesResponse
@@ -5260,8 +4933,7 @@ public class RomaClient {
      * 查询消息的偏移量和消息内容。
      * 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMqsInstanceMessagesRequest 请求对象
      * @return SyncInvoker<ShowMqsInstanceMessagesRequest, ShowMqsInstanceMessagesResponse>
@@ -5277,8 +4949,7 @@ public class RomaClient {
      *
      * 查询Topic权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMqsInstanceTopicAccessPolicyRequest 请求对象
      * @return ShowMqsInstanceTopicAccessPolicyResponse
@@ -5293,8 +4964,7 @@ public class RomaClient {
      *
      * 查询Topic权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMqsInstanceTopicAccessPolicyRequest 请求对象
      * @return SyncInvoker<ShowMqsInstanceTopicAccessPolicyRequest, ShowMqsInstanceTopicAccessPolicyResponse>
@@ -5310,8 +4980,7 @@ public class RomaClient {
      *
      * 查询产品详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProductRequest 请求对象
      * @return ShowProductResponse
@@ -5325,8 +4994,7 @@ public class RomaClient {
      *
      * 查询产品详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProductRequest 请求对象
      * @return SyncInvoker<ShowProductRequest, ShowProductResponse>
@@ -5340,8 +5008,7 @@ public class RomaClient {
      *
      * 查询产品鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProductAuthenticationRequest 请求对象
      * @return ShowProductAuthenticationResponse
@@ -5355,8 +5022,7 @@ public class RomaClient {
      *
      * 查询产品鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProductAuthenticationRequest 请求对象
      * @return SyncInvoker<ShowProductAuthenticationRequest, ShowProductAuthenticationResponse>
@@ -5372,8 +5038,7 @@ public class RomaClient {
      *
      * 查询产品模板详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProductTemplateRequest 请求对象
      * @return ShowProductTemplateResponse
@@ -5387,8 +5052,7 @@ public class RomaClient {
      *
      * 查询产品模板详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProductTemplateRequest 请求对象
      * @return SyncInvoker<ShowProductTemplateRequest, ShowProductTemplateResponse>
@@ -5404,8 +5068,7 @@ public class RomaClient {
      *
      * 查询服务属性详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPropertyRequest 请求对象
      * @return ShowPropertyResponse
@@ -5419,8 +5082,7 @@ public class RomaClient {
      *
      * 查询服务属性详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPropertyRequest 请求对象
      * @return SyncInvoker<ShowPropertyRequest, ShowPropertyResponse>
@@ -5434,8 +5096,7 @@ public class RomaClient {
      *
      * 查询请求属性详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRequestPropertyRequest 请求对象
      * @return ShowRequestPropertyResponse
@@ -5449,8 +5110,7 @@ public class RomaClient {
      *
      * 查询请求属性详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRequestPropertyRequest 请求对象
      * @return SyncInvoker<ShowRequestPropertyRequest, ShowRequestPropertyResponse>
@@ -5466,8 +5126,7 @@ public class RomaClient {
      *
      * 查询响应属性详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResponsePropertyRequest 请求对象
      * @return ShowResponsePropertyResponse
@@ -5481,8 +5140,7 @@ public class RomaClient {
      *
      * 查询响应属性详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResponsePropertyRequest 请求对象
      * @return SyncInvoker<ShowResponsePropertyRequest, ShowResponsePropertyResponse>
@@ -5498,8 +5156,7 @@ public class RomaClient {
      *
      * 查看ROMA Connect实例约束信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRestrictionOfInstanceV2Request 请求对象
      * @return ShowRestrictionOfInstanceV2Response
@@ -5513,8 +5170,7 @@ public class RomaClient {
      *
      * 查看ROMA Connect实例约束信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRestrictionOfInstanceV2Request 请求对象
      * @return SyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response>
@@ -5530,8 +5186,7 @@ public class RomaClient {
      *
      * 查询规则详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRuleRequest 请求对象
      * @return ShowRuleResponse
@@ -5545,8 +5200,7 @@ public class RomaClient {
      *
      * 查询规则详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRuleRequest 请求对象
      * @return SyncInvoker<ShowRuleRequest, ShowRuleResponse>
@@ -5560,8 +5214,7 @@ public class RomaClient {
      *
      * 查询服务详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServiceRequest 请求对象
      * @return ShowServiceResponse
@@ -5575,8 +5228,7 @@ public class RomaClient {
      *
      * 查询服务详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServiceRequest 请求对象
      * @return SyncInvoker<ShowServiceRequest, ShowServiceResponse>
@@ -5590,8 +5242,7 @@ public class RomaClient {
      *
      * 通过任务ID查询指定任务的信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskRequest 请求对象
      * @return ShowTaskResponse
@@ -5605,8 +5256,7 @@ public class RomaClient {
      *
      * 通过任务ID查询指定任务的信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskRequest 请求对象
      * @return SyncInvoker<ShowTaskRequest, ShowTaskResponse>
@@ -5620,8 +5270,7 @@ public class RomaClient {
      *
      * 测试数据源连通性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartTestDatasourceRequest 请求对象
      * @return StartTestDatasourceResponse
@@ -5635,8 +5284,7 @@ public class RomaClient {
      *
      * 测试数据源连通性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartTestDatasourceRequest 请求对象
      * @return SyncInvoker<StartTestDatasourceRequest, StartTestDatasourceResponse>
@@ -5652,8 +5300,7 @@ public class RomaClient {
      *
      * 手工停止当前执行的任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopTaskRequest 请求对象
      * @return StopTaskResponse
@@ -5667,8 +5314,7 @@ public class RomaClient {
      *
      * 手工停止当前执行的任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopTaskRequest 请求对象
      * @return SyncInvoker<StopTaskRequest, StopTaskResponse>
@@ -5682,8 +5328,7 @@ public class RomaClient {
      *
      * 在某个实例中取消部署后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UnpublishLiveDataApiV2Request 请求对象
      * @return UnpublishLiveDataApiV2Response
@@ -5697,8 +5342,7 @@ public class RomaClient {
      *
      * 在某个实例中取消部署后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UnpublishLiveDataApiV2Request 请求对象
      * @return SyncInvoker<UnpublishLiveDataApiV2Request, UnpublishLiveDataApiV2Response>
@@ -5714,8 +5358,7 @@ public class RomaClient {
      *
      * 设置客户端配置的访问控制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppAclRequest 请求对象
      * @return UpdateAppAclResponse
@@ -5729,8 +5372,7 @@ public class RomaClient {
      *
      * 设置客户端配置的访问控制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppAclRequest 请求对象
      * @return SyncInvoker<UpdateAppAclRequest, UpdateAppAclResponse>
@@ -5744,8 +5386,7 @@ public class RomaClient {
      *
      * 修改应用配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppConfigV2Request 请求对象
      * @return UpdateAppConfigV2Response
@@ -5759,8 +5400,7 @@ public class RomaClient {
      *
      * 修改应用配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppConfigV2Request 请求对象
      * @return SyncInvoker<UpdateAppConfigV2Request, UpdateAppConfigV2Response>
@@ -5776,8 +5416,7 @@ public class RomaClient {
      *
      * 修改客户端配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppQuotaRequest 请求对象
      * @return UpdateAppQuotaResponse
@@ -5791,8 +5430,7 @@ public class RomaClient {
      *
      * 修改客户端配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppQuotaRequest 请求对象
      * @return SyncInvoker<UpdateAppQuotaRequest, UpdateAppQuotaResponse>
@@ -5808,8 +5446,7 @@ public class RomaClient {
      *
      * 修改命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCommandRequest 请求对象
      * @return UpdateCommandResponse
@@ -5823,8 +5460,7 @@ public class RomaClient {
      *
      * 修改命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCommandRequest 请求对象
      * @return SyncInvoker<UpdateCommandRequest, UpdateCommandResponse>
@@ -5838,8 +5474,7 @@ public class RomaClient {
      *
      * 修改自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCustomAuthorizerV2Request 请求对象
      * @return UpdateCustomAuthorizerV2Response
@@ -5853,8 +5488,7 @@ public class RomaClient {
      *
      * 修改自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCustomAuthorizerV2Request 请求对象
      * @return SyncInvoker<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response>
@@ -5870,8 +5504,7 @@ public class RomaClient {
      *
      * 修改数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDatasourceInfoRequest 请求对象
      * @return UpdateDatasourceInfoResponse
@@ -5885,8 +5518,7 @@ public class RomaClient {
      *
      * 修改数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDatasourceInfoRequest 请求对象
      * @return SyncInvoker<UpdateDatasourceInfoRequest, UpdateDatasourceInfoResponse>
@@ -5902,8 +5534,7 @@ public class RomaClient {
      *
      * 修改设备信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceRequest 请求对象
      * @return UpdateDeviceResponse
@@ -5917,8 +5548,7 @@ public class RomaClient {
      *
      * 修改设备信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceRequest 请求对象
      * @return SyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>
@@ -5932,8 +5562,7 @@ public class RomaClient {
      *
      * 修改设备分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceGroupRequest 请求对象
      * @return UpdateDeviceGroupResponse
@@ -5947,8 +5576,7 @@ public class RomaClient {
      *
      * 修改设备分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceGroupRequest 请求对象
      * @return SyncInvoker<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse>
@@ -5964,8 +5592,7 @@ public class RomaClient {
      *
      * 通过任务ID和调度ID修改调度计划
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDispatchesRequest 请求对象
      * @return UpdateDispatchesResponse
@@ -5979,8 +5606,7 @@ public class RomaClient {
      *
      * 通过任务ID和调度ID修改调度计划
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDispatchesRequest 请求对象
      * @return SyncInvoker<UpdateDispatchesRequest, UpdateDispatchesResponse>
@@ -5996,8 +5622,7 @@ public class RomaClient {
      *
      * 修改绑定的域名所对应的配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainV2Request 请求对象
      * @return UpdateDomainV2Response
@@ -6011,8 +5636,7 @@ public class RomaClient {
      *
      * 修改绑定的域名所对应的配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainV2Request 请求对象
      * @return SyncInvoker<UpdateDomainV2Request, UpdateDomainV2Response>
@@ -6028,8 +5652,7 @@ public class RomaClient {
      *
      * 修改指定环境的信息。其中可修改的属性为：name、remark，其它属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEnvironmentV2Request 请求对象
      * @return UpdateEnvironmentV2Response
@@ -6043,8 +5666,7 @@ public class RomaClient {
      *
      * 修改指定环境的信息。其中可修改的属性为：name、remark，其它属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEnvironmentV2Request 请求对象
      * @return SyncInvoker<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response>
@@ -6060,8 +5682,7 @@ public class RomaClient {
      *
      * 修改环境变量。环境变量引用位置为api的后端服务地址时，修改对应环境变量会将使用该变量的所有api重新发布。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEnvironmentVariableV2Request 请求对象
      * @return UpdateEnvironmentVariableV2Response
@@ -6075,8 +5696,7 @@ public class RomaClient {
      *
      * 修改环境变量。环境变量引用位置为api的后端服务地址时，修改对应环境变量会将使用该变量的所有api重新发布。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEnvironmentVariableV2Request 请求对象
      * @return SyncInvoker<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response>
@@ -6092,8 +5712,7 @@ public class RomaClient {
      *
      * 在某个实例中更新后端API的参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLiveDataApiV2Request 请求对象
      * @return UpdateLiveDataApiV2Response
@@ -6107,8 +5726,7 @@ public class RomaClient {
      *
      * 在某个实例中更新后端API的参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLiveDataApiV2Request 请求对象
      * @return SyncInvoker<UpdateLiveDataApiV2Request, UpdateLiveDataApiV2Response>
@@ -6124,8 +5742,7 @@ public class RomaClient {
      *
      * 修改Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMqsInstanceTopicRequest 请求对象
      * @return UpdateMqsInstanceTopicResponse
@@ -6139,8 +5756,7 @@ public class RomaClient {
      *
      * 修改Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMqsInstanceTopicRequest 请求对象
      * @return SyncInvoker<UpdateMqsInstanceTopicRequest, UpdateMqsInstanceTopicResponse>
@@ -6156,8 +5772,7 @@ public class RomaClient {
      *
      * 修改组合任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMultiTasksRequest 请求对象
      * @return UpdateMultiTasksResponse
@@ -6171,8 +5786,7 @@ public class RomaClient {
      *
      * 修改组合任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMultiTasksRequest 请求对象
      * @return SyncInvoker<UpdateMultiTasksRequest, UpdateMultiTasksResponse>
@@ -6188,8 +5802,7 @@ public class RomaClient {
      *
      * 该接口用于修改指定的订阅管理
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNotificationRequest 请求对象
      * @return UpdateNotificationResponse
@@ -6203,8 +5816,7 @@ public class RomaClient {
      *
      * 该接口用于修改指定的订阅管理
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNotificationRequest 请求对象
      * @return SyncInvoker<UpdateNotificationRequest, UpdateNotificationResponse>
@@ -6220,8 +5832,7 @@ public class RomaClient {
      *
      * 修改产品信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProductRequest 请求对象
      * @return UpdateProductResponse
@@ -6235,8 +5846,7 @@ public class RomaClient {
      *
      * 修改产品信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProductRequest 请求对象
      * @return SyncInvoker<UpdateProductRequest, UpdateProductResponse>
@@ -6250,8 +5860,7 @@ public class RomaClient {
      *
      * 修改产品模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProductTemplateRequest 请求对象
      * @return UpdateProductTemplateResponse
@@ -6265,8 +5874,7 @@ public class RomaClient {
      *
      * 修改产品模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProductTemplateRequest 请求对象
      * @return SyncInvoker<UpdateProductTemplateRequest, UpdateProductTemplateResponse>
@@ -6282,8 +5890,7 @@ public class RomaClient {
      *
      * 更新产品主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProductTopicRequest 请求对象
      * @return UpdateProductTopicResponse
@@ -6297,8 +5904,7 @@ public class RomaClient {
      *
      * 更新产品主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProductTopicRequest 请求对象
      * @return SyncInvoker<UpdateProductTopicRequest, UpdateProductTopicResponse>
@@ -6314,8 +5920,7 @@ public class RomaClient {
      *
      * 修改服务属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePropertyRequest 请求对象
      * @return UpdatePropertyResponse
@@ -6329,8 +5934,7 @@ public class RomaClient {
      *
      * 修改服务属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePropertyRequest 请求对象
      * @return SyncInvoker<UpdatePropertyRequest, UpdatePropertyResponse>
@@ -6346,8 +5950,7 @@ public class RomaClient {
      *
      * 修改请求属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRequestPropertyRequest 请求对象
      * @return UpdateRequestPropertyResponse
@@ -6361,8 +5964,7 @@ public class RomaClient {
      *
      * 修改请求属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRequestPropertyRequest 请求对象
      * @return SyncInvoker<UpdateRequestPropertyRequest, UpdateRequestPropertyResponse>
@@ -6378,8 +5980,7 @@ public class RomaClient {
      *
      * 修改指定流控策略的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRequestThrottlingPolicyV2Request 请求对象
      * @return UpdateRequestThrottlingPolicyV2Response
@@ -6394,8 +5995,7 @@ public class RomaClient {
      *
      * 修改指定流控策略的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response>
@@ -6411,8 +6011,7 @@ public class RomaClient {
      *
      * 修改响应属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResponsePropertyRequest 请求对象
      * @return UpdateResponsePropertyResponse
@@ -6426,8 +6025,7 @@ public class RomaClient {
      *
      * 修改响应属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResponsePropertyRequest 请求对象
      * @return SyncInvoker<UpdateResponsePropertyRequest, UpdateResponsePropertyResponse>
@@ -6443,8 +6041,7 @@ public class RomaClient {
      *
      * 修改规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRuleRequest 请求对象
      * @return UpdateRuleResponse
@@ -6458,8 +6055,7 @@ public class RomaClient {
      *
      * 修改规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRuleRequest 请求对象
      * @return SyncInvoker<UpdateRuleRequest, UpdateRuleResponse>
@@ -6473,8 +6069,7 @@ public class RomaClient {
      *
      * 修改服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServiceRequest 请求对象
      * @return UpdateServiceResponse
@@ -6488,8 +6083,7 @@ public class RomaClient {
      *
      * 修改服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServiceRequest 请求对象
      * @return SyncInvoker<UpdateServiceRequest, UpdateServiceResponse>
@@ -6503,8 +6097,7 @@ public class RomaClient {
      *
      * 修改指定签名密钥的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSignatureKeyV2Request 请求对象
      * @return UpdateSignatureKeyV2Response
@@ -6518,8 +6111,7 @@ public class RomaClient {
      *
      * 修改指定签名密钥的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSignatureKeyV2Request 请求对象
      * @return SyncInvoker<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response>
@@ -6535,8 +6127,7 @@ public class RomaClient {
      *
      * 修改某个流控策略下的某个特殊设置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSpecialThrottlingConfigurationV2Request 请求对象
      * @return UpdateSpecialThrottlingConfigurationV2Response
@@ -6551,8 +6142,7 @@ public class RomaClient {
      *
      * 修改某个流控策略下的某个特殊设置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSpecialThrottlingConfigurationV2Request 请求对象
      * @return SyncInvoker<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response>
@@ -6568,8 +6158,7 @@ public class RomaClient {
      *
      * 更新普通任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskRequest 请求对象
      * @return UpdateTaskResponse
@@ -6583,8 +6172,7 @@ public class RomaClient {
      *
      * 更新普通任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskRequest 请求对象
      * @return SyncInvoker<UpdateTaskRequest, UpdateTaskResponse>
@@ -6598,8 +6186,7 @@ public class RomaClient {
      *
      * 更新Topic权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTopicAccessPolicyRequest 请求对象
      * @return UpdateTopicAccessPolicyResponse
@@ -6613,8 +6200,7 @@ public class RomaClient {
      *
      * 更新Topic权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTopicAccessPolicyRequest 请求对象
      * @return SyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse>
@@ -6630,8 +6216,7 @@ public class RomaClient {
      *
      * 导入产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadProductRequest 请求对象
      * @return UploadProductResponse
@@ -6645,8 +6230,7 @@ public class RomaClient {
      *
      * 导入产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadProductRequest 请求对象
      * @return SyncInvoker<UploadProductRequest, UploadProductResponse>
@@ -6662,8 +6246,7 @@ public class RomaClient {
      * 
      * 删除ACL策略时，如果存在ACL策略与API绑定关系，则无法删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteAclV2Request 请求对象
      * @return BatchDeleteAclV2Response
@@ -6679,8 +6262,7 @@ public class RomaClient {
      * 
      * 删除ACL策略时，如果存在ACL策略与API绑定关系，则无法删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteAclV2Request 请求对象
      * @return SyncInvoker<BatchDeleteAclV2Request, BatchDeleteAclV2Response>
@@ -6696,8 +6278,7 @@ public class RomaClient {
      *
      * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP[或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。](tag:hws;hws_hk;hcs;fcs;g42;)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAclStrategyV2Request 请求对象
      * @return CreateAclStrategyV2Response
@@ -6711,8 +6292,7 @@ public class RomaClient {
      *
      * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP[或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。](tag:hws;hws_hk;hcs;fcs;g42;)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAclStrategyV2Request 请求对象
      * @return SyncInvoker<CreateAclStrategyV2Request, CreateAclStrategyV2Response>
@@ -6728,8 +6308,7 @@ public class RomaClient {
      *
      * 删除指定的ACL策略， 如果存在api与该ACL策略的绑定关系，则无法删除
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAclV2Request 请求对象
      * @return DeleteAclV2Response
@@ -6743,8 +6322,7 @@ public class RomaClient {
      *
      * 删除指定的ACL策略， 如果存在api与该ACL策略的绑定关系，则无法删除
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAclV2Request 请求对象
      * @return SyncInvoker<DeleteAclV2Request, DeleteAclV2Response>
@@ -6758,8 +6336,7 @@ public class RomaClient {
      *
      * 查询所有的ACL策略列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAclStrategiesV2Request 请求对象
      * @return ListAclStrategiesV2Response
@@ -6773,8 +6350,7 @@ public class RomaClient {
      *
      * 查询所有的ACL策略列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAclStrategiesV2Request 请求对象
      * @return SyncInvoker<ListAclStrategiesV2Request, ListAclStrategiesV2Response>
@@ -6790,8 +6366,7 @@ public class RomaClient {
      *
      * 查询指定ACL策略的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAclPolicyV2Request 请求对象
      * @return ShowDetailsOfAclPolicyV2Response
@@ -6805,8 +6380,7 @@ public class RomaClient {
      *
      * 查询指定ACL策略的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAclPolicyV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response>
@@ -6822,8 +6396,7 @@ public class RomaClient {
      *
      * 修改指定的ACL策略，其中可修改的属性为：acl_name、acl_type、acl_value，其它属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAclStrategyV2Request 请求对象
      * @return UpdateAclStrategyV2Response
@@ -6837,8 +6410,7 @@ public class RomaClient {
      *
      * 修改指定的ACL策略，其中可修改的属性为：acl_name、acl_type、acl_value，其它属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAclStrategyV2Request 请求对象
      * @return SyncInvoker<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response>
@@ -6858,8 +6430,7 @@ public class RomaClient {
      * 
      * 为指定的API绑定流控策略，绑定时，需要指定在哪个环境上生效。同一个API发布到不同的环境可以绑定不同的流控策略；一个API在发布到特定环境后只能绑定一个默认的流控策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRequestThrottlingPolicyV2Request 请求对象
      * @return AssociateRequestThrottlingPolicyV2Response
@@ -6878,8 +6449,7 @@ public class RomaClient {
      * 
      * 为指定的API绑定流控策略，绑定时，需要指定在哪个环境上生效。同一个API发布到不同的环境可以绑定不同的流控策略；一个API在发布到特定环境后只能绑定一个默认的流控策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response>
@@ -6895,8 +6465,7 @@ public class RomaClient {
      *
      * 批量解除API与流控策略的绑定关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDisassociateThrottlingPolicyV2Request 请求对象
      * @return BatchDisassociateThrottlingPolicyV2Response
@@ -6911,8 +6480,7 @@ public class RomaClient {
      *
      * 批量解除API与流控策略的绑定关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDisassociateThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response>
@@ -6930,8 +6498,7 @@ public class RomaClient {
      * 
      * 注意：当action &#x3D; online时，接口返回的响应中publish_id，version_id， publish_time字段才有含义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchPublishOrOfflineApiV2Request 请求对象
      * @return BatchPublishOrOfflineApiV2Response
@@ -6947,8 +6514,7 @@ public class RomaClient {
      * 
      * 注意：当action &#x3D; online时，接口返回的响应中publish_id，version_id， publish_time字段才有含义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchPublishOrOfflineApiV2Request 请求对象
      * @return SyncInvoker<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response>
@@ -6966,8 +6532,7 @@ public class RomaClient {
      * 
      * 多个版本之间可以进行随意切换。但一个API在一个环境上，只能有一个版本生效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeApiVersionV2Request 请求对象
      * @return ChangeApiVersionV2Response
@@ -6983,8 +6548,7 @@ public class RomaClient {
      * 
      * 多个版本之间可以进行随意切换。但一个API在一个环境上，只能有一个版本生效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeApiVersionV2Request 请求对象
      * @return SyncInvoker<ChangeApiVersionV2Request, ChangeApiVersionV2Response>
@@ -7000,8 +6564,7 @@ public class RomaClient {
      *
      * 校验API分组名称是否存在。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckApiGroupsV2Request 请求对象
      * @return CheckApiGroupsV2Response
@@ -7015,8 +6578,7 @@ public class RomaClient {
      *
      * 校验API分组名称是否存在。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckApiGroupsV2Request 请求对象
      * @return SyncInvoker<CheckApiGroupsV2Request, CheckApiGroupsV2Response>
@@ -7032,8 +6594,7 @@ public class RomaClient {
      *
      * 校验API定义。校验API的路径或名称是否已存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckApisV2Request 请求对象
      * @return CheckApisV2Response
@@ -7047,8 +6608,7 @@ public class RomaClient {
      *
      * 校验API定义。校验API的路径或名称是否已存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckApisV2Request 请求对象
      * @return SyncInvoker<CheckApisV2Request, CheckApisV2Response>
@@ -7062,8 +6622,7 @@ public class RomaClient {
      *
      * API分组是API的管理单元，一个API分组等同于一个服务入口，创建API分组时，返回一个子域名作为访问入口。建议一个API分组下的API具有一定的相关性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiGroupV2Request 请求对象
      * @return CreateApiGroupV2Response
@@ -7077,8 +6636,7 @@ public class RomaClient {
      *
      * API分组是API的管理单元，一个API分组等同于一个服务入口，创建API分组时，返回一个子域名作为访问入口。建议一个API分组下的API具有一定的相关性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiGroupV2Request 请求对象
      * @return SyncInvoker<CreateApiGroupV2Request, CreateApiGroupV2Response>
@@ -7096,8 +6654,7 @@ public class RomaClient {
      * 
      * API分为两部分，第一部分为面向API使用者的API接口，定义了使用者如何调用这个API。第二部分面向API提供者，由API提供者定义这个API的真实的后端情况，定义了ROMA Connect如何去访问真实的后端服务。API的真实后端服务目前支持三种类型：传统的HTTP/HTTPS形式的web后端、[函数工作流、](tag:hws;hws_hk;hcs;fcs;g42;)MOCK。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiV2Request 请求对象
      * @return CreateApiV2Response
@@ -7113,8 +6670,7 @@ public class RomaClient {
      * 
      * API分为两部分，第一部分为面向API使用者的API接口，定义了使用者如何调用这个API。第二部分面向API提供者，由API提供者定义这个API的真实的后端情况，定义了ROMA Connect如何去访问真实的后端服务。API的真实后端服务目前支持三种类型：传统的HTTP/HTTPS形式的web后端、[函数工作流、](tag:hws;hws_hk;hcs;fcs;g42;)MOCK。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiV2Request 请求对象
      * @return SyncInvoker<CreateApiV2Request, CreateApiV2Response>
@@ -7132,8 +6688,7 @@ public class RomaClient {
      * 
      * 下线操作是将API从某个已发布的环境上下线，下线后，API将无法再被调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateOrDeletePublishRecordForApiV2Request 请求对象
      * @return CreateOrDeletePublishRecordForApiV2Response
@@ -7152,8 +6707,7 @@ public class RomaClient {
      * 
      * 下线操作是将API从某个已发布的环境上下线，下线后，API将无法再被调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateOrDeletePublishRecordForApiV2Request 请求对象
      * @return SyncInvoker<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response>
@@ -7169,8 +6723,7 @@ public class RomaClient {
      *
      * 调试一个API在指定运行环境下的定义，接口调用者需要具有操作该API的权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DebugApiV2Request 请求对象
      * @return DebugApiV2Response
@@ -7184,8 +6737,7 @@ public class RomaClient {
      *
      * 调试一个API在指定运行环境下的定义，接口调用者需要具有操作该API的权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DebugApiV2Request 请求对象
      * @return SyncInvoker<DebugApiV2Request, DebugApiV2Response>
@@ -7199,8 +6751,7 @@ public class RomaClient {
      *
      * 对某个生效中的API版本进行下线操作，下线后，API在该版本生效的环境中将不再能够被调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiByVersionIdV2Request 请求对象
      * @return DeleteApiByVersionIdV2Response
@@ -7214,8 +6765,7 @@ public class RomaClient {
      *
      * 对某个生效中的API版本进行下线操作，下线后，API在该版本生效的环境中将不再能够被调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiByVersionIdV2Request 请求对象
      * @return SyncInvoker<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response>
@@ -7233,8 +6783,7 @@ public class RomaClient {
      * 分组下存在API时分组无法删除，需要删除所有分组下的API后，再删除分组。
      * 删除分组时，会一并删除直接或间接关联到该分组下的所有资源，包括独立域名、SSL证书等等。并会将外部域名与子域名的绑定关系进行解除（取决于域名cname方式）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiGroupV2Request 请求对象
      * @return DeleteApiGroupV2Response
@@ -7250,8 +6799,7 @@ public class RomaClient {
      * 分组下存在API时分组无法删除，需要删除所有分组下的API后，再删除分组。
      * 删除分组时，会一并删除直接或间接关联到该分组下的所有资源，包括独立域名、SSL证书等等。并会将外部域名与子域名的绑定关系进行解除（取决于域名cname方式）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiGroupV2Request 请求对象
      * @return SyncInvoker<DeleteApiGroupV2Request, DeleteApiGroupV2Response>
@@ -7269,8 +6817,7 @@ public class RomaClient {
      * 
      * 删除API时，会删除该API所有相关的资源信息或绑定关系，如API的发布记录，绑定的后端服务，对APP的授权信息等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiV2Request 请求对象
      * @return DeleteApiV2Response
@@ -7286,8 +6833,7 @@ public class RomaClient {
      * 
      * 删除API时，会删除该API所有相关的资源信息或绑定关系，如API的发布记录，绑定的后端服务，对APP的授权信息等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiV2Request 请求对象
      * @return SyncInvoker<DeleteApiV2Request, DeleteApiV2Response>
@@ -7301,8 +6847,7 @@ public class RomaClient {
      *
      * 解除API与流控策略的绑定关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateRequestThrottlingPolicyV2Request 请求对象
      * @return DisassociateRequestThrottlingPolicyV2Response
@@ -7317,8 +6862,7 @@ public class RomaClient {
      *
      * 解除API与流控策略的绑定关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response>
@@ -7336,8 +6880,7 @@ public class RomaClient {
      * 
      * 如果是租户操作，则查询该租户下所有的分组；如果是管理员操作，则查询的是所有租户的分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiGroupsV2Request 请求对象
      * @return ListApiGroupsV2Response
@@ -7353,8 +6896,7 @@ public class RomaClient {
      * 
      * 如果是租户操作，则查询该租户下所有的分组；如果是管理员操作，则查询的是所有租户的分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiGroupsV2Request 请求对象
      * @return SyncInvoker<ListApiGroupsV2Request, ListApiGroupsV2Response>
@@ -7376,8 +6918,7 @@ public class RomaClient {
      * 
      * 访问某个环境上的API，其实访问的就是其运行时的定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiRuntimeDefinitionV2Request 请求对象
      * @return ListApiRuntimeDefinitionV2Response
@@ -7397,8 +6938,7 @@ public class RomaClient {
      * 
      * 访问某个环境上的API，其实访问的就是其运行时的定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiRuntimeDefinitionV2Request 请求对象
      * @return SyncInvoker<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response>
@@ -7414,8 +6954,7 @@ public class RomaClient {
      *
      * 查询某个指定的版本详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionDetailV2Request 请求对象
      * @return ListApiVersionDetailV2Response
@@ -7429,8 +6968,7 @@ public class RomaClient {
      *
      * 查询某个指定的版本详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionDetailV2Request 请求对象
      * @return SyncInvoker<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response>
@@ -7446,8 +6984,7 @@ public class RomaClient {
      *
      * 查询某个API的历史版本。每个API在一个环境上最多存在10个历史版本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsV2Request 请求对象
      * @return ListApiVersionsV2Response
@@ -7461,8 +6998,7 @@ public class RomaClient {
      *
      * 查询某个API的历史版本。每个API在一个环境上最多存在10个历史版本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsV2Request 请求对象
      * @return SyncInvoker<ListApiVersionsV2Request, ListApiVersionsV2Response>
@@ -7478,8 +7014,7 @@ public class RomaClient {
      *
      * 查询某个流控策略上已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
      * @return ListApisBindedToRequestThrottlingPolicyV2Response
@@ -7494,8 +7029,7 @@ public class RomaClient {
      *
      * 查询某个流控策略上已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response>
@@ -7511,8 +7045,7 @@ public class RomaClient {
      *
      * 查询所有未绑定到该流控策略上的自有API列表。需要API已经发布，未发布的API不予展示。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
      * @return ListApisUnbindedToRequestThrottlingPolicyV2Response
@@ -7527,8 +7060,7 @@ public class RomaClient {
      *
      * 查询所有未绑定到该流控策略上的自有API列表。需要API已经发布，未发布的API不予展示。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
      * @return SyncInvoker<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response>
@@ -7544,8 +7076,7 @@ public class RomaClient {
      *
      * 查看API列表，返回API详细信息、发布信息等，但不能查看到后端服务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisV2Request 请求对象
      * @return ListApisV2Response
@@ -7559,8 +7090,7 @@ public class RomaClient {
      *
      * 查看API列表，返回API详细信息、发布信息等，但不能查看到后端服务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisV2Request 请求对象
      * @return SyncInvoker<ListApisV2Request, ListApisV2Response>
@@ -7574,8 +7104,7 @@ public class RomaClient {
      *
      * 查询某个API绑定的流控策略列表。每个环境上应该最多只有一个流控策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
      * @return ListRequestThrottlingPoliciesBindedToApiV2Response
@@ -7590,8 +7119,7 @@ public class RomaClient {
      *
      * 查询某个API绑定的流控策略列表。每个环境上应该最多只有一个流控策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
      * @return SyncInvoker<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response>
@@ -7607,8 +7135,7 @@ public class RomaClient {
      *
      * 查询指定分组的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfApiGroupV2Request 请求对象
      * @return ShowDetailsOfApiGroupV2Response
@@ -7622,8 +7149,7 @@ public class RomaClient {
      *
      * 查询指定分组的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfApiGroupV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response>
@@ -7639,8 +7165,7 @@ public class RomaClient {
      *
      * 查看指定的API的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfApiV2Request 请求对象
      * @return ShowDetailsOfApiV2Response
@@ -7654,8 +7179,7 @@ public class RomaClient {
      *
      * 查看指定的API的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfApiV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response>
@@ -7671,8 +7195,7 @@ public class RomaClient {
      *
      * 修改API分组属性。其中name和remark可修改，其他属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApiGroupV2Request 请求对象
      * @return UpdateApiGroupV2Response
@@ -7686,8 +7209,7 @@ public class RomaClient {
      *
      * 修改API分组属性。其中name和remark可修改，其他属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApiGroupV2Request 请求对象
      * @return SyncInvoker<UpdateApiGroupV2Request, UpdateApiGroupV2Response>
@@ -7703,8 +7225,7 @@ public class RomaClient {
      *
      * 修改指定API的信息，包括后端服务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApiV2Request 请求对象
      * @return UpdateApiV2Response
@@ -7718,8 +7239,7 @@ public class RomaClient {
      *
      * 修改指定API的信息，包括后端服务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApiV2Request 请求对象
      * @return SyncInvoker<UpdateApiV2Request, UpdateApiV2Response>
@@ -7733,8 +7253,7 @@ public class RomaClient {
      *
      * 批量解除API与ACL策略的绑定
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteApiAclBindingV2Request 请求对象
      * @return BatchDeleteApiAclBindingV2Response
@@ -7748,8 +7267,7 @@ public class RomaClient {
      *
      * 批量解除API与ACL策略的绑定
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteApiAclBindingV2Request 请求对象
      * @return SyncInvoker<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response>
@@ -7767,8 +7285,7 @@ public class RomaClient {
      * 
      * 同一个API发布到不同的环境可以绑定不同的ACL策略；一个API在发布到特定环境后只能绑定一个同一种类型的ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiAclBindingV2Request 请求对象
      * @return CreateApiAclBindingV2Response
@@ -7784,8 +7301,7 @@ public class RomaClient {
      * 
      * 同一个API发布到不同的环境可以绑定不同的ACL策略；一个API在发布到特定环境后只能绑定一个同一种类型的ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiAclBindingV2Request 请求对象
      * @return SyncInvoker<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response>
@@ -7801,8 +7317,7 @@ public class RomaClient {
      *
      * 解除某条API与ACL策略的绑定关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiAclBindingV2Request 请求对象
      * @return DeleteApiAclBindingV2Response
@@ -7816,8 +7331,7 @@ public class RomaClient {
      *
      * 解除某条API与ACL策略的绑定关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiAclBindingV2Request 请求对象
      * @return SyncInvoker<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response>
@@ -7833,8 +7347,7 @@ public class RomaClient {
      *
      * 查看API绑定的ACL策略列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAclPolicyBindedToApiV2Request 请求对象
      * @return ListAclPolicyBindedToApiV2Response
@@ -7848,8 +7361,7 @@ public class RomaClient {
      *
      * 查看API绑定的ACL策略列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAclPolicyBindedToApiV2Request 请求对象
      * @return SyncInvoker<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response>
@@ -7865,8 +7377,7 @@ public class RomaClient {
      *
      * 查看ACL策略绑定的API列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToAclPolicyV2Request 请求对象
      * @return ListApisBindedToAclPolicyV2Response
@@ -7880,8 +7391,7 @@ public class RomaClient {
      *
      * 查看ACL策略绑定的API列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToAclPolicyV2Request 请求对象
      * @return SyncInvoker<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response>
@@ -7897,8 +7407,7 @@ public class RomaClient {
      *
      * 查看ACL策略未绑定的API列表，需要API已发布
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToAclPolicyV2Request 请求对象
      * @return ListApisUnbindedToAclPolicyV2Response
@@ -7913,8 +7422,7 @@ public class RomaClient {
      *
      * 查看ACL策略未绑定的API列表，需要API已发布
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToAclPolicyV2Request 请求对象
      * @return SyncInvoker<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response>
@@ -7930,8 +7438,7 @@ public class RomaClient {
      *
      * 解除API对APP的授权关系。解除授权后，APP将不再能够调用该API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelingAuthorizationV2Request 请求对象
      * @return CancelingAuthorizationV2Response
@@ -7945,8 +7452,7 @@ public class RomaClient {
      *
      * 解除API对APP的授权关系。解除授权后，APP将不再能够调用该API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelingAuthorizationV2Request 请求对象
      * @return SyncInvoker<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response>
@@ -7962,8 +7468,7 @@ public class RomaClient {
      *
      * APP创建成功后，还不能访问API，如果想要访问某个环境上的API，需要将该API在该环境上授权给APP。授权成功后，APP即可访问该环境上的这个API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAuthorizingAppsV2Request 请求对象
      * @return CreateAuthorizingAppsV2Response
@@ -7977,8 +7482,7 @@ public class RomaClient {
      *
      * APP创建成功后，还不能访问API，如果想要访问某个环境上的API，需要将该API在该环境上授权给APP。授权成功后，APP即可访问该环境上的这个API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAuthorizingAppsV2Request 请求对象
      * @return SyncInvoker<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response>
@@ -7994,8 +7498,7 @@ public class RomaClient {
      *
      * 查询APP已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToAppV2Request 请求对象
      * @return ListApisBindedToAppV2Response
@@ -8009,8 +7512,7 @@ public class RomaClient {
      *
      * 查询APP已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToAppV2Request 请求对象
      * @return SyncInvoker<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response>
@@ -8026,8 +7528,7 @@ public class RomaClient {
      *
      * 查询指定环境上某个APP未绑定的API列表，包括自有API和从云市场购买的API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToAppV2Request 请求对象
      * @return ListApisUnbindedToAppV2Response
@@ -8041,8 +7542,7 @@ public class RomaClient {
      *
      * 查询指定环境上某个APP未绑定的API列表，包括自有API和从云市场购买的API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToAppV2Request 请求对象
      * @return SyncInvoker<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response>
@@ -8058,8 +7558,7 @@ public class RomaClient {
      *
      * 查询API绑定的APP列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsBindedToApiV2Request 请求对象
      * @return ListAppsBindedToApiV2Response
@@ -8073,8 +7572,7 @@ public class RomaClient {
      *
      * 查询API绑定的APP列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsBindedToApiV2Request 请求对象
      * @return SyncInvoker<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response>
@@ -8090,8 +7588,7 @@ public class RomaClient {
      *
      * 查询指定APP下路径冲突的api列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDuplicateApisForAppV2Request 请求对象
      * @return ListDuplicateApisForAppV2Response
@@ -8105,8 +7602,7 @@ public class RomaClient {
      *
      * 查询指定APP下路径冲突的api列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDuplicateApisForAppV2Request 请求对象
      * @return SyncInvoker<ListDuplicateApisForAppV2Request, ListDuplicateApisForAppV2Response>
@@ -8123,8 +7619,7 @@ public class RomaClient {
      * - 设置应用的用户成员，为空数组时会清空已有应用成员列表
      * - 设置动作为全量更新非增量更新，应用的成员列表都会替换为当次请求的应用成员列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddUserToAppRequest 请求对象
      * @return AddUserToAppResponse
@@ -8139,8 +7634,7 @@ public class RomaClient {
      * - 设置应用的用户成员，为空数组时会清空已有应用成员列表
      * - 设置动作为全量更新非增量更新，应用的成员列表都会替换为当次请求的应用成员列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddUserToAppRequest 请求对象
      * @return SyncInvoker<AddUserToAppRequest, AddUserToAppResponse>
@@ -8154,8 +7648,7 @@ public class RomaClient {
      *
      * 查询用户成列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckAuthUsersOfAppRequest 请求对象
      * @return CheckAuthUsersOfAppResponse
@@ -8169,8 +7662,7 @@ public class RomaClient {
      *
      * 查询用户成列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckAuthUsersOfAppRequest 请求对象
      * @return SyncInvoker<CheckAuthUsersOfAppRequest, CheckAuthUsersOfAppResponse>
@@ -8186,8 +7678,7 @@ public class RomaClient {
      *
      * 查询应用的候选用户成员列表,会过滤掉异常状态用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckCanAuthUsersOfAppRequest 请求对象
      * @return CheckCanAuthUsersOfAppResponse
@@ -8201,8 +7692,7 @@ public class RomaClient {
      *
      * 查询应用的候选用户成员列表,会过滤掉异常状态用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckCanAuthUsersOfAppRequest 请求对象
      * @return SyncInvoker<CheckCanAuthUsersOfAppRequest, CheckCanAuthUsersOfAppResponse>
@@ -8218,8 +7708,7 @@ public class RomaClient {
      *
      * 查询应用详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRomaAppDetailsRequest 请求对象
      * @return CheckRomaAppDetailsResponse
@@ -8233,8 +7722,7 @@ public class RomaClient {
      *
      * 查询应用详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRomaAppDetailsRequest 请求对象
      * @return SyncInvoker<CheckRomaAppDetailsRequest, CheckRomaAppDetailsResponse>
@@ -8250,8 +7738,7 @@ public class RomaClient {
      *
      * 查询应用密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRomaAppSecretRequest 请求对象
      * @return CheckRomaAppSecretResponse
@@ -8265,8 +7752,7 @@ public class RomaClient {
      *
      * 查询应用密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRomaAppSecretRequest 请求对象
      * @return SyncInvoker<CheckRomaAppSecretRequest, CheckRomaAppSecretResponse>
@@ -8282,8 +7768,7 @@ public class RomaClient {
      *
      * 创建应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRomaAppRequest 请求对象
      * @return CreateRomaAppResponse
@@ -8297,8 +7782,7 @@ public class RomaClient {
      *
      * 创建应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRomaAppRequest 请求对象
      * @return SyncInvoker<CreateRomaAppRequest, CreateRomaAppResponse>
@@ -8312,8 +7796,7 @@ public class RomaClient {
      *
      * 删除单个应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRomaAppRequest 请求对象
      * @return DeleteRomaAppResponse
@@ -8327,8 +7810,7 @@ public class RomaClient {
      *
      * 删除单个应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRomaAppRequest 请求对象
      * @return SyncInvoker<DeleteRomaAppRequest, DeleteRomaAppResponse>
@@ -8342,8 +7824,7 @@ public class RomaClient {
      *
      * 查询应用列表，支持条件查询，所有条件是并且的关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRomaAppRequest 请求对象
      * @return ListRomaAppResponse
@@ -8357,8 +7838,7 @@ public class RomaClient {
      *
      * 查询应用列表，支持条件查询，所有条件是并且的关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRomaAppRequest 请求对象
      * @return SyncInvoker<ListRomaAppRequest, ListRomaAppResponse>
@@ -8372,8 +7852,7 @@ public class RomaClient {
      *
      * 重置应用密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetRomaAppSecretRequest 请求对象
      * @return ResetRomaAppSecretResponse
@@ -8387,8 +7866,7 @@ public class RomaClient {
      *
      * 重置应用密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetRomaAppSecretRequest 请求对象
      * @return SyncInvoker<ResetRomaAppSecretRequest, ResetRomaAppSecretResponse>
@@ -8404,8 +7882,7 @@ public class RomaClient {
      *
      * 更新应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRomaAppRequest 请求对象
      * @return UpdateRomaAppResponse
@@ -8419,8 +7896,7 @@ public class RomaClient {
      *
      * 更新应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRomaAppRequest 请求对象
      * @return SyncInvoker<UpdateRomaAppRequest, UpdateRomaAppResponse>
@@ -8434,8 +7910,7 @@ public class RomaClient {
      *
      * 校验指定条件的应用是否存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateRomaAppRequest 请求对象
      * @return ValidateRomaAppResponse
@@ -8449,8 +7924,7 @@ public class RomaClient {
      *
      * 校验指定条件的应用是否存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateRomaAppRequest 请求对象
      * @return SyncInvoker<ValidateRomaAppRequest, ValidateRomaAppResponse>
@@ -8466,8 +7940,7 @@ public class RomaClient {
      *
      * 查询作业进度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckAssetJobStatusRequest 请求对象
      * @return CheckAssetJobStatusResponse
@@ -8481,8 +7954,7 @@ public class RomaClient {
      *
      * 查询作业进度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckAssetJobStatusRequest 请求对象
      * @return SyncInvoker<CheckAssetJobStatusRequest, CheckAssetJobStatusResponse>
@@ -8501,8 +7973,7 @@ public class RomaClient {
      * - 最大支持100个应用和任务
      * - 一个用户同一时刻只能创建一个资产删除作业任务，没有Running状态的作业任务存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAssetRequest 请求对象
      * @return DeleteAssetResponse
@@ -8519,8 +7990,7 @@ public class RomaClient {
      * - 最大支持100个应用和任务
      * - 一个用户同一时刻只能创建一个资产删除作业任务，没有Running状态的作业任务存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAssetRequest 请求对象
      * @return SyncInvoker<DeleteAssetRequest, DeleteAssetResponse>
@@ -8535,8 +8005,7 @@ public class RomaClient {
      * - 导出作业执行成功后，通过该接口获取导出作业产生的资产包，仅能下载一次
      * - 可先压缩后存在数据库，下载后删除
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadAssetArchiveRequest 请求对象
      * @return DownloadAssetArchiveResponse
@@ -8551,8 +8020,7 @@ public class RomaClient {
      * - 导出作业执行成功后，通过该接口获取导出作业产生的资产包，仅能下载一次
      * - 可先压缩后存在数据库，下载后删除
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadAssetArchiveRequest 请求对象
      * @return SyncInvoker<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse>
@@ -8571,8 +8039,7 @@ public class RomaClient {
      * - 最大支持100个应用和任务
      * - 一个用户同一时刻只能创建一个资产导出作业任务，没有Running状态的作业任务存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportAssetRequest 请求对象
      * @return ExportAssetResponse
@@ -8589,8 +8056,7 @@ public class RomaClient {
      * - 最大支持100个应用和任务
      * - 一个用户同一时刻只能创建一个资产导出作业任务，没有Running状态的作业任务存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportAssetRequest 请求对象
      * @return SyncInvoker<ExportAssetRequest, ExportAssetResponse>
@@ -8606,8 +8072,7 @@ public class RomaClient {
      * - 最大支持100个应用和任务
      * - 一个用户同一时刻只能创建一个资产导入作业任务，没有Running状态的作业任务存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportAssetRequest 请求对象
      * @return ImportAssetResponse
@@ -8623,8 +8088,7 @@ public class RomaClient {
      * - 最大支持100个应用和任务
      * - 一个用户同一时刻只能创建一个资产导入作业任务，没有Running状态的作业任务存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportAssetRequest 请求对象
      * @return SyncInvoker<ImportAssetRequest, ImportAssetResponse>
@@ -8638,8 +8102,7 @@ public class RomaClient {
      *
      * 查询字典详情,
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckDictionaryRequest 请求对象
      * @return CheckDictionaryResponse
@@ -8653,8 +8116,7 @@ public class RomaClient {
      *
      * 查询字典详情,
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckDictionaryRequest 请求对象
      * @return SyncInvoker<CheckDictionaryRequest, CheckDictionaryResponse>
@@ -8670,8 +8132,7 @@ public class RomaClient {
      *
      * 创建字典
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDictionaryRequest 请求对象
      * @return CreateDictionaryResponse
@@ -8685,8 +8146,7 @@ public class RomaClient {
      *
      * 创建字典
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDictionaryRequest 请求对象
      * @return SyncInvoker<CreateDictionaryRequest, CreateDictionaryResponse>
@@ -8702,8 +8162,7 @@ public class RomaClient {
      *
      * 删除单个字典，会同时删除该字典的所有子字典
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDictionaryRequest 请求对象
      * @return DeleteDictionaryResponse
@@ -8717,8 +8176,7 @@ public class RomaClient {
      *
      * 删除单个字典，会同时删除该字典的所有子字典
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDictionaryRequest 请求对象
      * @return SyncInvoker<DeleteDictionaryRequest, DeleteDictionaryResponse>
@@ -8734,8 +8192,7 @@ public class RomaClient {
      *
      * 查询字典列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDictionaryRequest 请求对象
      * @return ListDictionaryResponse
@@ -8749,8 +8206,7 @@ public class RomaClient {
      *
      * 查询字典列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDictionaryRequest 请求对象
      * @return SyncInvoker<ListDictionaryRequest, ListDictionaryResponse>
@@ -8766,8 +8222,7 @@ public class RomaClient {
      *
      * 更新字典
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDictionaryRequest 请求对象
      * @return UpdateDictionaryResponse
@@ -8781,8 +8236,7 @@ public class RomaClient {
      *
      * 更新字典
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDictionaryRequest 请求对象
      * @return SyncInvoker<UpdateDictionaryRequest, UpdateDictionaryResponse>
@@ -8798,8 +8252,7 @@ public class RomaClient {
      *
      * 校验指定条件的字典是否存在，支持字典名称和字典编码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateDictionaryRequest 请求对象
      * @return ValidateDictionaryResponse
@@ -8813,8 +8266,7 @@ public class RomaClient {
      *
      * 校验指定条件的字典是否存在，支持字典名称和字典编码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateDictionaryRequest 请求对象
      * @return SyncInvoker<ValidateDictionaryRequest, ValidateDictionaryResponse>
@@ -8830,8 +8282,7 @@ public class RomaClient {
      *
      * 获取符合条件的服务实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRomaInstanceListV2Request 请求对象
      * @return CheckRomaInstanceListV2Response
@@ -8845,8 +8296,7 @@ public class RomaClient {
      *
      * 获取符合条件的服务实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRomaInstanceListV2Request 请求对象
      * @return SyncInvoker<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response>
@@ -8862,8 +8312,7 @@ public class RomaClient {
      *
      * 查询MQS实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMqsInstanceRequest 请求对象
      * @return ListMqsInstanceResponse
@@ -8877,8 +8326,7 @@ public class RomaClient {
      *
      * 查询MQS实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMqsInstanceRequest 请求对象
      * @return SyncInvoker<ListMqsInstanceRequest, ListMqsInstanceResponse>
@@ -8894,8 +8342,7 @@ public class RomaClient {
      *
      * 查询指定MQS实例详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMqsInstanceRequest 请求对象
      * @return ShowMqsInstanceResponse
@@ -8909,8 +8356,7 @@ public class RomaClient {
      *
      * 查询指定MQS实例详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMqsInstanceRequest 请求对象
      * @return SyncInvoker<ShowMqsInstanceRequest, ShowMqsInstanceResponse>
@@ -8926,8 +8372,7 @@ public class RomaClient {
      *
      * 导出分组下API的定义信息，导出文件内容符合swagger标准规范。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportApiDefinitionsV2Request 请求对象
      * @return ExportApiDefinitionsV2Response
@@ -8941,8 +8386,7 @@ public class RomaClient {
      *
      * 导出分组下API的定义信息，导出文件内容符合swagger标准规范。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportApiDefinitionsV2Request 请求对象
      * @return SyncInvoker<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response>
@@ -8958,8 +8402,7 @@ public class RomaClient {
      *
      * 导出自定义后端API，导出文件内容符合swagger标准规范。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportLiveDataApiDefinitionsV2Request 请求对象
      * @return ExportLiveDataApiDefinitionsV2Response
@@ -8974,8 +8417,7 @@ public class RomaClient {
      *
      * 导出自定义后端API，导出文件内容符合swagger标准规范。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportLiveDataApiDefinitionsV2Request 请求对象
      * @return SyncInvoker<ExportLiveDataApiDefinitionsV2Request, ExportLiveDataApiDefinitionsV2Response>
@@ -8991,8 +8433,7 @@ public class RomaClient {
      *
      * 导入API。导入文件内容需要符合swagger标准规范，自定义扩展字段请参考用户指南的“附录：前端API的Swagger扩展定义”章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportApiDefinitionsV2Request 请求对象
      * @return ImportApiDefinitionsV2Response
@@ -9006,8 +8447,7 @@ public class RomaClient {
      *
      * 导入API。导入文件内容需要符合swagger标准规范，自定义扩展字段请参考用户指南的“附录：前端API的Swagger扩展定义”章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportApiDefinitionsV2Request 请求对象
      * @return SyncInvoker<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response>
@@ -9023,8 +8463,7 @@ public class RomaClient {
      *
      * 导入自定义后端API。导入文件内容需要符合swagger标准规范，自定义扩展字段请参考用户指南的“附录：后端API的Swagger扩展定义”章节
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportLiveDataApiDefinitionsV2Request 请求对象
      * @return ImportLiveDataApiDefinitionsV2Response
@@ -9039,8 +8478,7 @@ public class RomaClient {
      *
      * 导入自定义后端API。导入文件内容需要符合swagger标准规范，自定义扩展字段请参考用户指南的“附录：后端API的Swagger扩展定义”章节
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportLiveDataApiDefinitionsV2Request 请求对象
      * @return SyncInvoker<ImportLiveDataApiDefinitionsV2Request, ImportLiveDataApiDefinitionsV2Response>
@@ -9058,8 +8496,7 @@ public class RomaClient {
      * 
      * 若指定地址的后端实例已存在，则更新对应后端实例信息。若请求体中包含多个重复地址的后端实例定义，则使用第一个定义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddingBackendInstancesV2Request 请求对象
      * @return AddingBackendInstancesV2Response
@@ -9075,8 +8512,7 @@ public class RomaClient {
      * 
      * 若指定地址的后端实例已存在，则更新对应后端实例信息。若请求体中包含多个重复地址的后端实例定义，则使用第一个定义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddingBackendInstancesV2Request 请求对象
      * @return SyncInvoker<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response>
@@ -9092,8 +8528,7 @@ public class RomaClient {
      *
      * 批量修改后端服务器状态不可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDisableMembersRequest 请求对象
      * @return BatchDisableMembersResponse
@@ -9107,8 +8542,7 @@ public class RomaClient {
      *
      * 批量修改后端服务器状态不可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDisableMembersRequest 请求对象
      * @return SyncInvoker<BatchDisableMembersRequest, BatchDisableMembersResponse>
@@ -9124,8 +8558,7 @@ public class RomaClient {
      *
      * 批量修改后端服务器状态可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchEnableMembersRequest 请求对象
      * @return BatchEnableMembersResponse
@@ -9139,8 +8572,7 @@ public class RomaClient {
      *
      * 批量修改后端服务器状态可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchEnableMembersRequest 请求对象
      * @return SyncInvoker<BatchEnableMembersRequest, BatchEnableMembersResponse>
@@ -9158,8 +8590,7 @@ public class RomaClient {
      * 
      * 若指定名称的后端服务器组已存在，则更新对应后端服务器组信息。若请求体中包含多个重复名称的后端服务器定义，则使用第一个定义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMemberGroupRequest 请求对象
      * @return CreateMemberGroupResponse
@@ -9175,8 +8606,7 @@ public class RomaClient {
      * 
      * 若指定名称的后端服务器组已存在，则更新对应后端服务器组信息。若请求体中包含多个重复名称的后端服务器定义，则使用第一个定义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMemberGroupRequest 请求对象
      * @return SyncInvoker<CreateMemberGroupRequest, CreateMemberGroupResponse>
@@ -9192,8 +8622,7 @@ public class RomaClient {
      *
      * 创建相同的VPC通道关联到多个实例。同一个项目下VPC通道名称不可重复。注意：实例特性vpc_name_modifiable配置为off时才可使用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectVpcChannelRequest 请求对象
      * @return CreateProjectVpcChannelResponse
@@ -9207,8 +8636,7 @@ public class RomaClient {
      *
      * 创建相同的VPC通道关联到多个实例。同一个项目下VPC通道名称不可重复。注意：实例特性vpc_name_modifiable配置为off时才可使用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectVpcChannelRequest 请求对象
      * @return SyncInvoker<CreateProjectVpcChannelRequest, CreateProjectVpcChannelResponse>
@@ -9224,8 +8652,7 @@ public class RomaClient {
      *
      * 同步VPC通道到多个实例。注意：实例特性vpc_name_modifiable配置为off时才可使用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectVpcChannelSyncsRequest 请求对象
      * @return CreateProjectVpcChannelSyncsResponse
@@ -9240,8 +8667,7 @@ public class RomaClient {
      *
      * 同步VPC通道到多个实例。注意：实例特性vpc_name_modifiable配置为off时才可使用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectVpcChannelSyncsRequest 请求对象
      * @return SyncInvoker<CreateProjectVpcChannelSyncsRequest, CreateProjectVpcChannelSyncsResponse>
@@ -9258,8 +8684,7 @@ public class RomaClient {
      * 在ROMA Connect APIC中创建连接私有VPC资源的通道，并在创建API时将后端节点配置为使用这些VPC通道，以便ROMA Connect APIC直接访问私有VPC资源。
      * &gt; 每个用户默认最多创建200个VPC通道，如需支持更多请联系技术支持调整配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcChannelV2Request 请求对象
      * @return CreateVpcChannelV2Response
@@ -9274,8 +8699,7 @@ public class RomaClient {
      * 在ROMA Connect APIC中创建连接私有VPC资源的通道，并在创建API时将后端节点配置为使用这些VPC通道，以便ROMA Connect APIC直接访问私有VPC资源。
      * &gt; 每个用户默认最多创建200个VPC通道，如需支持更多请联系技术支持调整配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcChannelV2Request 请求对象
      * @return SyncInvoker<CreateVpcChannelV2Request, CreateVpcChannelV2Response>
@@ -9291,8 +8715,7 @@ public class RomaClient {
      *
      * 删除指定VPC通道中的后端实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackendInstanceV2Request 请求对象
      * @return DeleteBackendInstanceV2Response
@@ -9306,8 +8729,7 @@ public class RomaClient {
      *
      * 删除指定VPC通道中的后端实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackendInstanceV2Request 请求对象
      * @return SyncInvoker<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response>
@@ -9323,8 +8745,7 @@ public class RomaClient {
      *
      * 删除指定的VPC通道后端服务器组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMemberGroupRequest 请求对象
      * @return DeleteMemberGroupResponse
@@ -9338,8 +8759,7 @@ public class RomaClient {
      *
      * 删除指定的VPC通道后端服务器组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMemberGroupRequest 请求对象
      * @return SyncInvoker<DeleteMemberGroupRequest, DeleteMemberGroupResponse>
@@ -9355,8 +8775,7 @@ public class RomaClient {
      *
      * 删除指定的VPC通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcChannelV2Request 请求对象
      * @return DeleteVpcChannelV2Response
@@ -9370,8 +8789,7 @@ public class RomaClient {
      *
      * 删除指定的VPC通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcChannelV2Request 请求对象
      * @return SyncInvoker<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response>
@@ -9387,8 +8805,7 @@ public class RomaClient {
      *
      * 查看指定VPC通道的后端实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackendInstancesV2Request 请求对象
      * @return ListBackendInstancesV2Response
@@ -9402,8 +8819,7 @@ public class RomaClient {
      *
      * 查看指定VPC通道的后端实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackendInstancesV2Request 请求对象
      * @return SyncInvoker<ListBackendInstancesV2Request, ListBackendInstancesV2Response>
@@ -9419,8 +8835,7 @@ public class RomaClient {
      *
      * 查询VPC通道后端云服务组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMemberGroupsRequest 请求对象
      * @return ListMemberGroupsResponse
@@ -9434,8 +8849,7 @@ public class RomaClient {
      *
      * 查询VPC通道后端云服务组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMemberGroupsRequest 请求对象
      * @return SyncInvoker<ListMemberGroupsRequest, ListMemberGroupsResponse>
@@ -9451,8 +8865,7 @@ public class RomaClient {
      *
      * 查询项目下所有实例的VPC通道列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectVpcChannelsV2Request 请求对象
      * @return ListProjectVpcChannelsV2Response
@@ -9466,8 +8879,7 @@ public class RomaClient {
      *
      * 查询项目下所有实例的VPC通道列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectVpcChannelsV2Request 请求对象
      * @return SyncInvoker<ListProjectVpcChannelsV2Request, ListProjectVpcChannelsV2Response>
@@ -9483,8 +8895,7 @@ public class RomaClient {
      *
      * 查看VPC通道列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcChannelsV2Request 请求对象
      * @return ListVpcChannelsV2Response
@@ -9498,8 +8909,7 @@ public class RomaClient {
      *
      * 查看VPC通道列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcChannelsV2Request 请求对象
      * @return SyncInvoker<ListVpcChannelsV2Request, ListVpcChannelsV2Response>
@@ -9515,8 +8925,7 @@ public class RomaClient {
      *
      * 查看指定的VPC通道后端服务器组详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfMemberGroupRequest 请求对象
      * @return ShowDetailsOfMemberGroupResponse
@@ -9530,8 +8939,7 @@ public class RomaClient {
      *
      * 查看指定的VPC通道后端服务器组详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfMemberGroupRequest 请求对象
      * @return SyncInvoker<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse>
@@ -9547,8 +8955,7 @@ public class RomaClient {
      *
      * 查看指定的VPC通道详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfVpcChannelV2Request 请求对象
      * @return ShowDetailsOfVpcChannelV2Response
@@ -9562,8 +8969,7 @@ public class RomaClient {
      *
      * 查看指定的VPC通道详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfVpcChannelV2Request 请求对象
      * @return SyncInvoker<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response>
@@ -9579,8 +8985,7 @@ public class RomaClient {
      *
      * 更新指定的VPC通道的后端实例。更新时，使用传入的请求参数对对应云服务组的后端实例进行全量覆盖修改。若未指定修改的云服务器组，则进行全量覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBackendInstancesV2Request 请求对象
      * @return UpdateBackendInstancesV2Response
@@ -9594,8 +8999,7 @@ public class RomaClient {
      *
      * 更新指定的VPC通道的后端实例。更新时，使用传入的请求参数对对应云服务组的后端实例进行全量覆盖修改。若未指定修改的云服务器组，则进行全量覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBackendInstancesV2Request 请求对象
      * @return SyncInvoker<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response>
@@ -9611,8 +9015,7 @@ public class RomaClient {
      *
      * 修改VPC通道健康检查。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHealthCheckRequest 请求对象
      * @return UpdateHealthCheckResponse
@@ -9626,8 +9029,7 @@ public class RomaClient {
      *
      * 修改VPC通道健康检查。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHealthCheckRequest 请求对象
      * @return SyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse>
@@ -9643,8 +9045,7 @@ public class RomaClient {
      *
      * 更新指定VPC通道后端服务器组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMemberGroupRequest 请求对象
      * @return UpdateMemberGroupResponse
@@ -9658,8 +9059,7 @@ public class RomaClient {
      *
      * 更新指定VPC通道后端服务器组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMemberGroupRequest 请求对象
      * @return SyncInvoker<UpdateMemberGroupRequest, UpdateMemberGroupResponse>
@@ -9675,8 +9075,7 @@ public class RomaClient {
      *
      * 项目下根据VPC通道名称批量修改多个多个实例下的VPC通道。若实例下不存在该VPC通道则创建。注意：实例特性vpc_name_modifiable配置为off时才可使用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectVpcChannelRequest 请求对象
      * @return UpdateProjectVpcChannelResponse
@@ -9690,8 +9089,7 @@ public class RomaClient {
      *
      * 项目下根据VPC通道名称批量修改多个多个实例下的VPC通道。若实例下不存在该VPC通道则创建。注意：实例特性vpc_name_modifiable配置为off时才可使用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectVpcChannelRequest 请求对象
      * @return SyncInvoker<UpdateProjectVpcChannelRequest, UpdateProjectVpcChannelResponse>
@@ -9711,8 +9109,7 @@ public class RomaClient {
      * 
      * 使用传入的后端服务器组列表对VPC通道进行全量覆盖，若后端服务器组列表为空，则会全量删除已有的服务器组；
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcChannelV2Request 请求对象
      * @return UpdateVpcChannelV2Response
@@ -9730,8 +9127,7 @@ public class RomaClient {
      * 
      * 使用传入的后端服务器组列表对VPC通道进行全量覆盖，若后端服务器组列表为空，则会全量删除已有的服务器组；
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcChannelV2Request 请求对象
      * @return SyncInvoker<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response>

@@ -24,8 +24,7 @@ public class CodeHubAsyncClient {
      *
      * 能够一次提交位于不同目录的多个文件，目录不存在时，能自动创建目录。支持强制覆盖选项，当选择强制覆盖标志为true时，忽略冲突，强制提交。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCommitRequest 请求对象
      * @return CompletableFuture<CreateCommitResponse>
@@ -39,8 +38,7 @@ public class CodeHubAsyncClient {
      *
      * 能够一次提交位于不同目录的多个文件，目录不存在时，能自动创建目录。支持强制覆盖选项，当选择强制覆盖标志为true时，忽略冲突，强制提交。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCommitRequest 请求对象
      * @return AsyncInvoker<CreateCommitRequest, CreateCommitResponse>
@@ -55,8 +53,7 @@ public class CodeHubAsyncClient {
      *
      * 根据仓库短ID获取提交信息，支持根据文件路径，查询这个路径下所有的commits列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommitsRequest 请求对象
      * @return CompletableFuture<ListCommitsResponse>
@@ -70,8 +67,7 @@ public class CodeHubAsyncClient {
      *
      * 根据仓库短ID获取提交信息，支持根据文件路径，查询这个路径下所有的commits列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommitsRequest 请求对象
      * @return AsyncInvoker<ListCommitsRequest, ListCommitsResponse>
@@ -85,8 +81,7 @@ public class CodeHubAsyncClient {
      *
      * 根据commit id查询提交差异信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDiffCommitRequest 请求对象
      * @return CompletableFuture<ShowDiffCommitResponse>
@@ -100,8 +95,7 @@ public class CodeHubAsyncClient {
      *
      * 根据commit id查询提交差异信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDiffCommitRequest 请求对象
      * @return AsyncInvoker<ShowDiffCommitRequest, ShowDiffCommitResponse>
@@ -117,8 +111,7 @@ public class CodeHubAsyncClient {
      *
      * 获取由commit id或分支或标记的名称标识的特定提交。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSingleCommitRequest 请求对象
      * @return CompletableFuture<ShowSingleCommitResponse>
@@ -132,8 +125,7 @@ public class CodeHubAsyncClient {
      *
      * 获取由commit id或分支或标记的名称标识的特定提交。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSingleCommitRequest 请求对象
      * @return AsyncInvoker<ShowSingleCommitRequest, ShowSingleCommitResponse>
@@ -149,8 +141,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库中文件的信息，如名称、大小、内容。请注意，文件内容是Base64编码的。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFilesByQueryRequest 请求对象
      * @return CompletableFuture<ListFilesByQueryResponse>
@@ -164,8 +155,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库中文件的信息，如名称、大小、内容。请注意，文件内容是Base64编码的。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFilesByQueryRequest 请求对象
      * @return AsyncInvoker<ListFilesByQueryRequest, ListFilesByQueryResponse>
@@ -181,8 +171,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库中文件的信息，如名称、大小、内容。请注意，文件内容是Base64编码的。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFileRequest 请求对象
      * @return CompletableFuture<ShowFileResponse>
@@ -196,8 +185,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库中文件的信息，如名称、大小、内容。请注意，文件内容是Base64编码的。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFileRequest 请求对象
      * @return AsyncInvoker<ShowFileRequest, ShowFileResponse>
@@ -211,8 +199,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库列表 模糊查询支持范围,如果未传入project_id，则支持按仓库名或项目名模糊查询，否则，只按仓库名模糊匹配。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param GetAllRepositoryByProjectIdRequest 请求对象
      * @return CompletableFuture<GetAllRepositoryByProjectIdResponse>
@@ -227,8 +214,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库列表 模糊查询支持范围,如果未传入project_id，则支持按仓库名或项目名模糊查询，否则，只按仓库名模糊匹配。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param GetAllRepositoryByProjectIdRequest 请求对象
      * @return AsyncInvoker<GetAllRepositoryByProjectIdRequest, GetAllRepositoryByProjectIdResponse>
@@ -244,8 +230,7 @@ public class CodeHubAsyncClient {
      *
      * 获取一个项目下可以设置为公开状态的仓库列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param GetProductTemplatesRequest 请求对象
      * @return CompletableFuture<GetProductTemplatesResponse>
@@ -259,8 +244,7 @@ public class CodeHubAsyncClient {
      *
      * 获取一个项目下可以设置为公开状态的仓库列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param GetProductTemplatesRequest 请求对象
      * @return AsyncInvoker<GetProductTemplatesRequest, GetProductTemplatesResponse>
@@ -276,8 +260,7 @@ public class CodeHubAsyncClient {
      *
      * 获取一个项目下可以设置为公开状态的仓库列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductTwoTemplatesRequest 请求对象
      * @return CompletableFuture<ListProductTwoTemplatesResponse>
@@ -292,8 +275,7 @@ public class CodeHubAsyncClient {
      *
      * 获取一个项目下可以设置为公开状态的仓库列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductTwoTemplatesRequest 请求对象
      * @return AsyncInvoker<ListProductTwoTemplatesRequest, ListProductTwoTemplatesResponse>
@@ -309,8 +291,7 @@ public class CodeHubAsyncClient {
      *
      * 一般创建仓库时调用。通过传入项目uuid,仓库名，来判断仓库是否重名。仓库存在result:false,仓库不存在result:true。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryNameExistRequest 请求对象
      * @return CompletableFuture<ShowRepositoryNameExistResponse>
@@ -325,8 +306,7 @@ public class CodeHubAsyncClient {
      *
      * 一般创建仓库时调用。通过传入项目uuid,仓库名，来判断仓库是否重名。仓库存在result:false,仓库不存在result:true。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryNameExistRequest 请求对象
      * @return AsyncInvoker<ShowRepositoryNameExistRequest, ShowRepositoryNameExistResponse>
@@ -342,8 +322,7 @@ public class CodeHubAsyncClient {
      *
      * 调用方codehubportal,添加仓库成员。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddRepoMembersRequest 请求对象
      * @return CompletableFuture<AddRepoMembersResponse>
@@ -357,8 +336,7 @@ public class CodeHubAsyncClient {
      *
      * 调用方codehubportal,添加仓库成员。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddRepoMembersRequest 请求对象
      * @return AsyncInvoker<AddRepoMembersRequest, AddRepoMembersResponse>
@@ -374,8 +352,7 @@ public class CodeHubAsyncClient {
      *
      * 删除仓库成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRepoMemberRequest 请求对象
      * @return CompletableFuture<DeleteRepoMemberResponse>
@@ -389,8 +366,7 @@ public class CodeHubAsyncClient {
      *
      * 删除仓库成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRepoMemberRequest 请求对象
      * @return AsyncInvoker<DeleteRepoMemberRequest, DeleteRepoMemberResponse>
@@ -406,8 +382,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库成员列表,可通过关键字搜索某成员。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRepoMembersRequest 请求对象
      * @return CompletableFuture<ListRepoMembersResponse>
@@ -421,8 +396,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库成员列表,可通过关键字搜索某成员。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRepoMembersRequest 请求对象
      * @return AsyncInvoker<ListRepoMembersRequest, ListRepoMembersResponse>
@@ -438,8 +412,7 @@ public class CodeHubAsyncClient {
      *
      * 给仓库中成员设置仓库的操作权限，
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetRepoRoleRequest 请求对象
      * @return CompletableFuture<SetRepoRoleResponse>
@@ -453,8 +426,7 @@ public class CodeHubAsyncClient {
      *
      * 给仓库中成员设置仓库的操作权限，
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetRepoRoleRequest 请求对象
      * @return AsyncInvoker<SetRepoRoleRequest, SetRepoRoleResponse>
@@ -468,8 +440,7 @@ public class CodeHubAsyncClient {
      *
      * 添加部署密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddDeployKeyRequest 请求对象
      * @return CompletableFuture<AddDeployKeyResponse>
@@ -483,8 +454,7 @@ public class CodeHubAsyncClient {
      *
      * 添加部署密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddDeployKeyRequest 请求对象
      * @return AsyncInvoker<AddDeployKeyRequest, AddDeployKeyResponse>
@@ -499,8 +469,7 @@ public class CodeHubAsyncClient {
      *
      * 添加部署密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddDeployKeyV2Request 请求对象
      * @return CompletableFuture<AddDeployKeyV2Response>
@@ -514,8 +483,7 @@ public class CodeHubAsyncClient {
      *
      * 添加部署密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddDeployKeyV2Request 请求对象
      * @return AsyncInvoker<AddDeployKeyV2Request, AddDeployKeyV2Response>
@@ -531,8 +499,7 @@ public class CodeHubAsyncClient {
      *
      * 新建保护分支
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddProtectBranchV2Request 请求对象
      * @return CompletableFuture<AddProtectBranchV2Response>
@@ -546,8 +513,7 @@ public class CodeHubAsyncClient {
      *
      * 新建保护分支
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddProtectBranchV2Request 请求对象
      * @return AsyncInvoker<AddProtectBranchV2Request, AddProtectBranchV2Response>
@@ -563,8 +529,7 @@ public class CodeHubAsyncClient {
      *
      * 新建标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddTagV2Request 请求对象
      * @return CompletableFuture<AddTagV2Response>
@@ -578,8 +543,7 @@ public class CodeHubAsyncClient {
      *
      * 新建标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddTagV2Request 请求对象
      * @return AsyncInvoker<AddTagV2Request, AddTagV2Response>
@@ -593,8 +557,7 @@ public class CodeHubAsyncClient {
      *
      * 用指定的名称在指定项目上创建仓库。传入参数：仓库名、模板id、是否导入项目成员、归属项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRepositoryRequest 请求对象
      * @return CompletableFuture<CreateRepositoryResponse>
@@ -608,8 +571,7 @@ public class CodeHubAsyncClient {
      *
      * 用指定的名称在指定项目上创建仓库。传入参数：仓库名、模板id、是否导入项目成员、归属项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRepositoryRequest 请求对象
      * @return AsyncInvoker<CreateRepositoryRequest, CreateRepositoryResponse>
@@ -625,8 +587,7 @@ public class CodeHubAsyncClient {
      *
      * 删除仓库部署密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeployKeyRequest 请求对象
      * @return CompletableFuture<DeleteDeployKeyResponse>
@@ -640,8 +601,7 @@ public class CodeHubAsyncClient {
      *
      * 删除仓库部署密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeployKeyRequest 请求对象
      * @return AsyncInvoker<DeleteDeployKeyRequest, DeleteDeployKeyResponse>
@@ -657,8 +617,7 @@ public class CodeHubAsyncClient {
      *
      * 删除仓库部署密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeployKeyV2Request 请求对象
      * @return CompletableFuture<DeleteDeployKeyV2Response>
@@ -672,8 +631,7 @@ public class CodeHubAsyncClient {
      *
      * 删除仓库部署密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeployKeyV2Request 请求对象
      * @return AsyncInvoker<DeleteDeployKeyV2Request, DeleteDeployKeyV2Response>
@@ -689,8 +647,7 @@ public class CodeHubAsyncClient {
      *
      * 根据仓库32位uuid删除指定的仓库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRepositoryRequest 请求对象
      * @return CompletableFuture<DeleteRepositoryResponse>
@@ -704,8 +661,7 @@ public class CodeHubAsyncClient {
      *
      * 根据仓库32位uuid删除指定的仓库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRepositoryRequest 请求对象
      * @return AsyncInvoker<DeleteRepositoryRequest, DeleteRepositoryResponse>
@@ -721,8 +677,7 @@ public class CodeHubAsyncClient {
      *
      * 不建议再使用,建议使用/{repository_uuid}/status
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param GetRepositoryByProjectIdRequest 请求对象
      * @return CompletableFuture<GetRepositoryByProjectIdResponse>
@@ -737,8 +692,7 @@ public class CodeHubAsyncClient {
      *
      * 不建议再使用,建议使用/{repository_uuid}/status
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param GetRepositoryByProjectIdRequest 请求对象
      * @return AsyncInvoker<GetRepositoryByProjectIdRequest, GetRepositoryByProjectIdResponse>
@@ -754,8 +708,7 @@ public class CodeHubAsyncClient {
      *
      * 获取公开示例模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param GetTemplatesRequest 请求对象
      * @return CompletableFuture<GetTemplatesResponse>
@@ -769,8 +722,7 @@ public class CodeHubAsyncClient {
      *
      * 获取公开示例模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param GetTemplatesRequest 请求对象
      * @return AsyncInvoker<GetTemplatesRequest, GetTemplatesResponse>
@@ -785,8 +737,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库分支列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBranchesByRepositoryIdRequest 请求对象
      * @return CompletableFuture<ListBranchesByRepositoryIdResponse>
@@ -801,8 +752,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库分支列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBranchesByRepositoryIdRequest 请求对象
      * @return AsyncInvoker<ListBranchesByRepositoryIdRequest, ListBranchesByRepositoryIdResponse>
@@ -818,8 +768,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库上一次的提交统计信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommitStatisticsRequest 请求对象
      * @return CompletableFuture<ListCommitStatisticsResponse>
@@ -834,8 +783,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库上一次的提交统计信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommitStatisticsRequest 请求对象
      * @return AsyncInvoker<ListCommitStatisticsRequest, ListCommitStatisticsResponse>
@@ -851,8 +799,7 @@ public class CodeHubAsyncClient {
      *
      * 获取一个仓库下特定分支指定文件内容
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFilesRequest 请求对象
      * @return CompletableFuture<ListFilesResponse>
@@ -866,8 +813,7 @@ public class CodeHubAsyncClient {
      *
      * 获取一个仓库下特定分支指定文件内容
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFilesRequest 请求对象
      * @return AsyncInvoker<ListFilesRequest, ListFilesResponse>
@@ -881,8 +827,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库合并请求列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMergeRequestRequest 请求对象
      * @return CompletableFuture<ListMergeRequestResponse>
@@ -896,8 +841,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库合并请求列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMergeRequestRequest 请求对象
      * @return AsyncInvoker<ListMergeRequestRequest, ListMergeRequestResponse>
@@ -913,8 +857,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRepositoryStatusRequest 请求对象
      * @return CompletableFuture<ListRepositoryStatusResponse>
@@ -929,8 +872,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRepositoryStatusRequest 请求对象
      * @return AsyncInvoker<ListRepositoryStatusRequest, ListRepositoryStatusResponse>
@@ -946,8 +888,7 @@ public class CodeHubAsyncClient {
      *
      * 获取分支目录下的文件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubfilesRequest 请求对象
      * @return CompletableFuture<ListSubfilesResponse>
@@ -961,8 +902,7 @@ public class CodeHubAsyncClient {
      *
      * 获取分支目录下的文件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubfilesRequest 请求对象
      * @return AsyncInvoker<ListSubfilesRequest, ListSubfilesResponse>
@@ -977,8 +917,7 @@ public class CodeHubAsyncClient {
      *
      * 设置仓库是公开状态还是私有状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesTwoRequest 请求对象
      * @return CompletableFuture<ListTemplatesTwoResponse>
@@ -992,8 +931,7 @@ public class CodeHubAsyncClient {
      *
      * 设置仓库是公开状态还是私有状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesTwoRequest 请求对象
      * @return AsyncInvoker<ListTemplatesTwoRequest, ListTemplatesTwoResponse>
@@ -1009,8 +947,7 @@ public class CodeHubAsyncClient {
      *
      * 获取公开示例模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTwoTemplatesRequest 请求对象
      * @return CompletableFuture<ListTwoTemplatesResponse>
@@ -1024,8 +961,7 @@ public class CodeHubAsyncClient {
      *
      * 获取公开示例模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTwoTemplatesRequest 请求对象
      * @return AsyncInvoker<ListTwoTemplatesRequest, ListTwoTemplatesResponse>
@@ -1041,8 +977,7 @@ public class CodeHubAsyncClient {
      *
      * 设置仓库是公开状态还是私有状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShareTemplatesRequest 请求对象
      * @return CompletableFuture<ShareTemplatesResponse>
@@ -1056,8 +991,7 @@ public class CodeHubAsyncClient {
      *
      * 设置仓库是公开状态还是私有状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShareTemplatesRequest 请求对象
      * @return AsyncInvoker<ShareTemplatesRequest, ShareTemplatesResponse>
@@ -1073,8 +1007,7 @@ public class CodeHubAsyncClient {
      *
      * 根据仓库id获取指定仓库的分支列表.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBranchesByRepositoryIdRequest 请求对象
      * @return CompletableFuture<ShowBranchesByRepositoryIdResponse>
@@ -1089,8 +1022,7 @@ public class CodeHubAsyncClient {
      *
      * 根据仓库id获取指定仓库的分支列表.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBranchesByRepositoryIdRequest 请求对象
      * @return AsyncInvoker<ShowBranchesByRepositoryIdRequest, ShowBranchesByRepositoryIdResponse>
@@ -1106,8 +1038,7 @@ public class CodeHubAsyncClient {
      *
      * 查询指定仓库对应的分支。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBranchesByTwoRepositoryIdRequest 请求对象
      * @return CompletableFuture<ShowBranchesByTwoRepositoryIdResponse>
@@ -1122,8 +1053,7 @@ public class CodeHubAsyncClient {
      *
      * 查询指定仓库对应的分支。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBranchesByTwoRepositoryIdRequest 请求对象
      * @return AsyncInvoker<ShowBranchesByTwoRepositoryIdRequest, ShowBranchesByTwoRepositoryIdResponse>
@@ -1139,8 +1069,7 @@ public class CodeHubAsyncClient {
      *
      * 根据仓库组名、仓库名和分支获取提交列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCommitsByBranchRequest 请求对象
      * @return CompletableFuture<ShowCommitsByBranchResponse>
@@ -1154,8 +1083,7 @@ public class CodeHubAsyncClient {
      *
      * 根据仓库组名、仓库名和分支获取提交列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCommitsByBranchRequest 请求对象
      * @return AsyncInvoker<ShowCommitsByBranchRequest, ShowCommitsByBranchResponse>
@@ -1171,8 +1099,7 @@ public class CodeHubAsyncClient {
      *
      * 根据仓库id查询仓库某分支对应的提交.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCommitsByRepoIdRequest 请求对象
      * @return CompletableFuture<ShowCommitsByRepoIdResponse>
@@ -1186,8 +1113,7 @@ public class CodeHubAsyncClient {
      *
      * 根据仓库id查询仓库某分支对应的提交.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCommitsByRepoIdRequest 请求对象
      * @return AsyncInvoker<ShowCommitsByRepoIdRequest, ShowCommitsByRepoIdResponse>
@@ -1203,8 +1129,7 @@ public class CodeHubAsyncClient {
      *
      * 修改被流水线引用的仓库状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHasPipelineRequest 请求对象
      * @return CompletableFuture<ShowHasPipelineResponse>
@@ -1218,8 +1143,7 @@ public class CodeHubAsyncClient {
      *
      * 修改被流水线引用的仓库状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHasPipelineRequest 请求对象
      * @return AsyncInvoker<ShowHasPipelineRequest, ShowHasPipelineResponse>
@@ -1235,8 +1159,7 @@ public class CodeHubAsyncClient {
      *
      * 获取一个仓库下特定分支的图片文件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowImageBlobRequest 请求对象
      * @return CompletableFuture<ShowImageBlobResponse>
@@ -1250,8 +1173,7 @@ public class CodeHubAsyncClient {
      *
      * 获取一个仓库下特定分支的图片文件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowImageBlobRequest 请求对象
      * @return AsyncInvoker<ShowImageBlobRequest, ShowImageBlobResponse>
@@ -1267,8 +1189,7 @@ public class CodeHubAsyncClient {
      *
      * 判断用户是否有仓库的管理员权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMasterRequest 请求对象
      * @return CompletableFuture<ShowMasterResponse>
@@ -1282,8 +1203,7 @@ public class CodeHubAsyncClient {
      *
      * 判断用户是否有仓库的管理员权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMasterRequest 请求对象
      * @return AsyncInvoker<ShowMasterRequest, ShowMasterResponse>
@@ -1297,8 +1217,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库合并请求详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMergeRequestRequest 请求对象
      * @return CompletableFuture<ShowMergeRequestResponse>
@@ -1312,8 +1231,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库合并请求详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMergeRequestRequest 请求对象
      * @return AsyncInvoker<ShowMergeRequestRequest, ShowMergeRequestResponse>
@@ -1329,8 +1247,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库短id,用于获取仓库详情页面url
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepoIdRequest 请求对象
      * @return CompletableFuture<ShowRepoIdResponse>
@@ -1344,8 +1261,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库短id,用于获取仓库详情页面url
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepoIdRequest 请求对象
      * @return AsyncInvoker<ShowRepoIdRequest, ShowRepoIdResponse>
@@ -1359,8 +1275,7 @@ public class CodeHubAsyncClient {
      *
      * 按照指定格式下载仓库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryArchiveRequest 请求对象
      * @return CompletableFuture<ShowRepositoryArchiveResponse>
@@ -1375,8 +1290,7 @@ public class CodeHubAsyncClient {
      *
      * 按照指定格式下载仓库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryArchiveRequest 请求对象
      * @return AsyncInvoker<ShowRepositoryArchiveRequest, ShowRepositoryArchiveResponse>
@@ -1392,8 +1306,7 @@ public class CodeHubAsyncClient {
      *
      * 根据仓库UUID(由CreateRepository接口返回)获取仓库信息仓库信息。返回 包含id，name，组名，仓库访问URL。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryByUuidRequest 请求对象
      * @return CompletableFuture<ShowRepositoryByUuidResponse>
@@ -1408,8 +1321,7 @@ public class CodeHubAsyncClient {
      *
      * 根据仓库UUID(由CreateRepository接口返回)获取仓库信息仓库信息。返回 包含id，name，组名，仓库访问URL。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryByUuidRequest 请求对象
      * @return AsyncInvoker<ShowRepositoryByUuidRequest, ShowRepositoryByUuidResponse>
@@ -1425,8 +1337,7 @@ public class CodeHubAsyncClient {
      *
      * 根据仓库短id，查询仓库的代码提交记录统计
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryStatisticsRequest 请求对象
      * @return CompletableFuture<ShowRepositoryStatisticsResponse>
@@ -1441,8 +1352,7 @@ public class CodeHubAsyncClient {
      *
      * 根据仓库短id，查询仓库的代码提交记录统计
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryStatisticsRequest 请求对象
      * @return AsyncInvoker<ShowRepositoryStatisticsRequest, ShowRepositoryStatisticsResponse>
@@ -1458,8 +1368,7 @@ public class CodeHubAsyncClient {
      *
      * 获取指定日期内代码仓指定分支的代码提交行数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStatisticCommitRequest 请求对象
      * @return CompletableFuture<ShowStatisticCommitResponse>
@@ -1473,8 +1382,7 @@ public class CodeHubAsyncClient {
      *
      * 获取指定日期内代码仓指定分支的代码提交行数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStatisticCommitRequest 请求对象
      * @return AsyncInvoker<ShowStatisticCommitRequest, ShowStatisticCommitResponse>
@@ -1490,8 +1398,7 @@ public class CodeHubAsyncClient {
      *
      * 获取指定日期内代码仓指定分支的代码提交行数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStatisticCommitV3Request 请求对象
      * @return CompletableFuture<ShowStatisticCommitV3Response>
@@ -1506,8 +1413,7 @@ public class CodeHubAsyncClient {
      *
      * 获取指定日期内代码仓指定分支的代码提交行数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStatisticCommitV3Request 请求对象
      * @return AsyncInvoker<ShowStatisticCommitV3Request, ShowStatisticCommitV3Response>
@@ -1523,8 +1429,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库统计数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStatisticalDataRequest 请求对象
      * @return CompletableFuture<ShowStatisticalDataResponse>
@@ -1538,8 +1443,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库统计数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStatisticalDataRequest 请求对象
      * @return AsyncInvoker<ShowStatisticalDataRequest, ShowStatisticalDataResponse>
@@ -1555,8 +1459,7 @@ public class CodeHubAsyncClient {
      *
      * 添加ssh key
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddSshKeyRequest 请求对象
      * @return CompletableFuture<AddSshKeyResponse>
@@ -1570,8 +1473,7 @@ public class CodeHubAsyncClient {
      *
      * 添加ssh key
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddSshKeyRequest 请求对象
      * @return AsyncInvoker<AddSshKeyRequest, AddSshKeyResponse>
@@ -1585,8 +1487,7 @@ public class CodeHubAsyncClient {
      *
      * 调用gitlab原生接口删除用户公钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSShkeyRequest 请求对象
      * @return CompletableFuture<DeleteSShkeyResponse>
@@ -1600,8 +1501,7 @@ public class CodeHubAsyncClient {
      *
      * 调用gitlab原生接口删除用户公钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSShkeyRequest 请求对象
      * @return AsyncInvoker<DeleteSShkeyRequest, DeleteSShkeyResponse>
@@ -1616,8 +1516,7 @@ public class CodeHubAsyncClient {
      *
      * 获取ssh key列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSshKeysRequest 请求对象
      * @return CompletableFuture<ListSshKeysResponse>
@@ -1631,8 +1530,7 @@ public class CodeHubAsyncClient {
      *
      * 获取ssh key列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSshKeysRequest 请求对象
      * @return AsyncInvoker<ListSshKeysRequest, ListSshKeysResponse>
@@ -1646,8 +1544,7 @@ public class CodeHubAsyncClient {
      *
      * 检验私钥是否有拉取代码的权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPrivateKeyVerifyRequest 请求对象
      * @return CompletableFuture<ShowPrivateKeyVerifyResponse>
@@ -1662,8 +1559,7 @@ public class CodeHubAsyncClient {
      *
      * 检验私钥是否有拉取代码的权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPrivateKeyVerifyRequest 请求对象
      * @return AsyncInvoker<ShowPrivateKeyVerifyRequest, ShowPrivateKeyVerifyResponse>
@@ -1679,8 +1575,7 @@ public class CodeHubAsyncClient {
      *
      * 调用 gitlab 接口判断用户使用 https 上传/下载代码时输入的用户名和密码是否合法。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateHttpsInfoRequest 请求对象
      * @return CompletableFuture<ValidateHttpsInfoResponse>
@@ -1694,8 +1589,7 @@ public class CodeHubAsyncClient {
      *
      * 调用 gitlab 接口判断用户使用 https 上传/下载代码时输入的用户名和密码是否合法。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateHttpsInfoRequest 请求对象
      * @return AsyncInvoker<ValidateHttpsInfoRequest, ValidateHttpsInfoResponse>
@@ -1711,8 +1605,7 @@ public class CodeHubAsyncClient {
      *
      * 调用 gitlab 接口判断用户使用 https 上传/下载代码时输入的用户名和密码是否合法。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateHttpsInfoV2Request 请求对象
      * @return CompletableFuture<ValidateHttpsInfoV2Response>
@@ -1726,8 +1619,7 @@ public class CodeHubAsyncClient {
      *
      * 调用 gitlab 接口判断用户使用 https 上传/下载代码时输入的用户名和密码是否合法。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateHttpsInfoV2Request 请求对象
      * @return AsyncInvoker<ValidateHttpsInfoV2Request, ValidateHttpsInfoV2Response>
@@ -1743,8 +1635,7 @@ public class CodeHubAsyncClient {
      *
      * 根据仓库id在指定仓库中创建分支
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNewBranchRequest 请求对象
      * @return CompletableFuture<CreateNewBranchResponse>
@@ -1758,8 +1649,7 @@ public class CodeHubAsyncClient {
      *
      * 根据仓库id在指定仓库中创建分支
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNewBranchRequest 请求对象
      * @return AsyncInvoker<CreateNewBranchRequest, CreateNewBranchResponse>
@@ -1775,8 +1665,7 @@ public class CodeHubAsyncClient {
      *
      * 分支关联工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateIssuesRequest 请求对象
      * @return CompletableFuture<AssociateIssuesResponse>
@@ -1790,8 +1679,7 @@ public class CodeHubAsyncClient {
      *
      * 分支关联工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateIssuesRequest 请求对象
      * @return AsyncInvoker<AssociateIssuesRequest, AssociateIssuesResponse>
@@ -1807,8 +1695,7 @@ public class CodeHubAsyncClient {
      *
      * 创建项目后，创建仓库组由后台生成方式 传入参数：仓库名、模板id、是否导入项目成员、归属项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectAndRepositoriesRequest 请求对象
      * @return CompletableFuture<CreateProjectAndRepositoriesResponse>
@@ -1823,8 +1710,7 @@ public class CodeHubAsyncClient {
      *
      * 创建项目后，创建仓库组由后台生成方式 传入参数：仓库名、模板id、是否导入项目成员、归属项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectAndRepositoriesRequest 请求对象
      * @return AsyncInvoker<CreateProjectAndRepositoriesRequest, CreateProjectAndRepositoriesResponse>
@@ -1840,8 +1726,7 @@ public class CodeHubAsyncClient {
      *
      * 创建仓库后fork仓库 传入参数：仓库名、是否导入项目成员、归属项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectAndforkRepositoriesRequest 请求对象
      * @return CompletableFuture<CreateProjectAndforkRepositoriesResponse>
@@ -1856,8 +1741,7 @@ public class CodeHubAsyncClient {
      *
      * 创建仓库后fork仓库 传入参数：仓库名、是否导入项目成员、归属项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectAndforkRepositoriesRequest 请求对象
      * @return AsyncInvoker<CreateProjectAndforkRepositoriesRequest, CreateProjectAndforkRepositoriesResponse>
@@ -1873,8 +1757,7 @@ public class CodeHubAsyncClient {
      *
      * 获取用户的所有仓库信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUserAllRepositoriesRequest 请求对象
      * @return CompletableFuture<ListUserAllRepositoriesResponse>
@@ -1889,8 +1772,7 @@ public class CodeHubAsyncClient {
      *
      * 获取用户的所有仓库信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUserAllRepositoriesRequest 请求对象
      * @return AsyncInvoker<ListUserAllRepositoriesRequest, ListUserAllRepositoriesResponse>
@@ -1906,8 +1788,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库列表,模糊查询支持范围,如果未传入project uuid，则支持按仓库名或项目名模糊查询，否则，只按仓库名模糊匹配
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAllRepositoryByTwoProjectIdRequest 请求对象
      * @return CompletableFuture<ShowAllRepositoryByTwoProjectIdResponse>
@@ -1922,8 +1803,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库列表,模糊查询支持范围,如果未传入project uuid，则支持按仓库名或项目名模糊查询，否则，只按仓库名模糊匹配
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAllRepositoryByTwoProjectIdRequest 请求对象
      * @return AsyncInvoker<ShowAllRepositoryByTwoProjectIdRequest, ShowAllRepositoryByTwoProjectIdResponse>
@@ -1939,8 +1819,7 @@ public class CodeHubAsyncClient {
      *
      * 提交代码自动触发编译构建，添加仓库钩子
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddHooksRequest 请求对象
      * @return CompletableFuture<AddHooksResponse>
@@ -1954,8 +1833,7 @@ public class CodeHubAsyncClient {
      *
      * 提交代码自动触发编译构建，添加仓库钩子
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddHooksRequest 请求对象
      * @return AsyncInvoker<AddHooksRequest, AddHooksResponse>
@@ -1969,8 +1847,7 @@ public class CodeHubAsyncClient {
      *
      * 提交代码自动触发编译构建，删除仓库钩子
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHooksRequest 请求对象
      * @return CompletableFuture<DeleteHooksResponse>
@@ -1984,8 +1861,7 @@ public class CodeHubAsyncClient {
      *
      * 提交代码自动触发编译构建，删除仓库钩子
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHooksRequest 请求对象
      * @return AsyncInvoker<DeleteHooksRequest, DeleteHooksResponse>
@@ -1999,8 +1875,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库webhook
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHooksRequest 请求对象
      * @return CompletableFuture<ListHooksResponse>
@@ -2014,8 +1889,7 @@ public class CodeHubAsyncClient {
      *
      * 获取仓库webhook
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHooksRequest 请求对象
      * @return AsyncInvoker<ListHooksRequest, ListHooksResponse>

@@ -24,8 +24,7 @@ public class CbhAsyncClient {
      *
      * 获取CBH实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCbhInstanceRequest 请求对象
      * @return CompletableFuture<ListCbhInstanceResponse>
@@ -39,8 +38,7 @@ public class CbhAsyncClient {
      *
      * 获取CBH实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCbhInstanceRequest 请求对象
      * @return AsyncInvoker<ListCbhInstanceRequest, ListCbhInstanceResponse>

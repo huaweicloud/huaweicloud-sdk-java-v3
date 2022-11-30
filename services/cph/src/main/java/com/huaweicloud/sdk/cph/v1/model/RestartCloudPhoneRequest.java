@@ -14,16 +14,16 @@ public class RestartCloudPhoneRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ResetRestartRequestBody body;
+    private RestartCloudPhoneRequestBody body;
 
-    public RestartCloudPhoneRequest withBody(ResetRestartRequestBody body) {
+    public RestartCloudPhoneRequest withBody(RestartCloudPhoneRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public RestartCloudPhoneRequest withBody(Consumer<ResetRestartRequestBody> bodySetter) {
+    public RestartCloudPhoneRequest withBody(Consumer<RestartCloudPhoneRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new ResetRestartRequestBody();
+            this.body = new RestartCloudPhoneRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class RestartCloudPhoneRequest {
      * Get body
      * @return body
      */
-    public ResetRestartRequestBody getBody() {
+    public RestartCloudPhoneRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ResetRestartRequestBody body) {
+    public void setBody(RestartCloudPhoneRequestBody body) {
         this.body = body;
     }
 

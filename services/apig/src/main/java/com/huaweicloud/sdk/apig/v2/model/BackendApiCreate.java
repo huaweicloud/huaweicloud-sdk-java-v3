@@ -252,6 +252,11 @@ public class BackendApiCreate {
     private Boolean enableClientSsl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retry_count")
+
+    private String retryCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_channel_info")
 
     private ApiBackendVpcReq vpcChannelInfo;
@@ -492,6 +497,23 @@ public class BackendApiCreate {
         this.enableClientSsl = enableClientSsl;
     }
 
+    public BackendApiCreate withRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+        return this;
+    }
+
+    /**
+     * 请求后端服务的重试次数，默认为-1，范围[-1,10]
+     * @return retryCount
+     */
+    public String getRetryCount() {
+        return retryCount;
+    }
+
+    public void setRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+    }
+
     public BackendApiCreate withVpcChannelInfo(ApiBackendVpcReq vpcChannelInfo) {
         this.vpcChannelInfo = vpcChannelInfo;
         return this;
@@ -553,6 +575,7 @@ public class BackendApiCreate {
             && Objects.equals(this.reqUri, backendApiCreate.reqUri)
             && Objects.equals(this.timeout, backendApiCreate.timeout)
             && Objects.equals(this.enableClientSsl, backendApiCreate.enableClientSsl)
+            && Objects.equals(this.retryCount, backendApiCreate.retryCount)
             && Objects.equals(this.vpcChannelInfo, backendApiCreate.vpcChannelInfo)
             && Objects.equals(this.vpcChannelStatus, backendApiCreate.vpcChannelStatus);
     }
@@ -568,6 +591,7 @@ public class BackendApiCreate {
             reqUri,
             timeout,
             enableClientSsl,
+            retryCount,
             vpcChannelInfo,
             vpcChannelStatus);
     }
@@ -585,6 +609,7 @@ public class BackendApiCreate {
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    enableClientSsl: ").append(toIndentedString(enableClientSsl)).append("\n");
+        sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
         sb.append("    vpcChannelInfo: ").append(toIndentedString(vpcChannelInfo)).append("\n");
         sb.append("    vpcChannelStatus: ").append(toIndentedString(vpcChannelStatus)).append("\n");
         sb.append("}");

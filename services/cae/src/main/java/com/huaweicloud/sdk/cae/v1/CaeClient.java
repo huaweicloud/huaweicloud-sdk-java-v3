@@ -22,8 +22,7 @@ public class CaeClient {
      *
      * 本接口用于创建cae_trust委托
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAgencyRequest 请求对象
      * @return CreateAgencyResponse
@@ -37,8 +36,7 @@ public class CaeClient {
      *
      * 本接口用于创建cae_trust委托
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAgencyRequest 请求对象
      * @return SyncInvoker<CreateAgencyRequest, CreateAgencyResponse>
@@ -52,8 +50,7 @@ public class CaeClient {
      *
      * 本接口用于获取cae_trust委托，如果委托不存在则创建委托
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAgencyRequest 请求对象
      * @return ShowAgencyResponse
@@ -67,8 +64,7 @@ public class CaeClient {
      *
      * 本接口用于获取cae_trust委托，如果委托不存在则创建委托
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAgencyRequest 请求对象
      * @return SyncInvoker<ShowAgencyRequest, ShowAgencyResponse>
@@ -82,8 +78,7 @@ public class CaeClient {
      *
      * 本接口用于创建一个应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApplicationRequest 请求对象
      * @return CreateApplicationResponse
@@ -97,8 +92,7 @@ public class CaeClient {
      *
      * 本接口用于创建一个应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApplicationRequest 请求对象
      * @return SyncInvoker<CreateApplicationRequest, CreateApplicationResponse>
@@ -114,8 +108,7 @@ public class CaeClient {
      *
      * 本接口用于删除指定应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationRequest 请求对象
      * @return DeleteApplicationResponse
@@ -129,8 +122,7 @@ public class CaeClient {
      *
      * 本接口用于删除指定应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationRequest 请求对象
      * @return SyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse>
@@ -146,8 +138,7 @@ public class CaeClient {
      *
      * 本接口用于获取当前环境下的应用列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationsRequest 请求对象
      * @return ListApplicationsResponse
@@ -161,8 +152,7 @@ public class CaeClient {
      *
      * 本接口用于获取当前环境下的应用列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationsRequest 请求对象
      * @return SyncInvoker<ListApplicationsRequest, ListApplicationsResponse>
@@ -178,8 +168,7 @@ public class CaeClient {
      *
      * 本接口用于获取指定应用详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationRequest 请求对象
      * @return ShowApplicationResponse
@@ -193,8 +182,7 @@ public class CaeClient {
      *
      * 本接口用于获取指定应用详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationRequest 请求对象
      * @return SyncInvoker<ShowApplicationRequest, ShowApplicationResponse>
@@ -210,8 +198,7 @@ public class CaeClient {
      *
      * 本接口用于创建一个组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateComponentRequest 请求对象
      * @return CreateComponentResponse
@@ -225,8 +212,7 @@ public class CaeClient {
      *
      * 本接口用于创建一个组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateComponentRequest 请求对象
      * @return SyncInvoker<CreateComponentRequest, CreateComponentResponse>
@@ -242,8 +228,7 @@ public class CaeClient {
      *
      * 本接口用于删除指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteComponentRequest 请求对象
      * @return DeleteComponentResponse
@@ -257,8 +242,7 @@ public class CaeClient {
      *
      * 本接口用于删除指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteComponentRequest 请求对象
      * @return SyncInvoker<DeleteComponentRequest, DeleteComponentResponse>
@@ -274,8 +258,7 @@ public class CaeClient {
      *
      * 本接口用于对组件执行指定操作，如部署、升级、重启、停止、启动、伸缩、重试、配置、回滚
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteActionRequest 请求对象
      * @return ExecuteActionResponse
@@ -289,8 +272,7 @@ public class CaeClient {
      *
      * 本接口用于对组件执行指定操作，如部署、升级、重启、停止、启动、伸缩、重试、配置、回滚
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteActionRequest 请求对象
      * @return SyncInvoker<ExecuteActionRequest, ExecuteActionResponse>
@@ -304,8 +286,7 @@ public class CaeClient {
      *
      * 本接口用于获取组件快照版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComponentSnapshotsRequest 请求对象
      * @return ListComponentSnapshotsResponse
@@ -319,8 +300,7 @@ public class CaeClient {
      *
      * 本接口用于获取组件快照版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComponentSnapshotsRequest 请求对象
      * @return SyncInvoker<ListComponentSnapshotsRequest, ListComponentSnapshotsResponse>
@@ -336,8 +316,7 @@ public class CaeClient {
      *
      * 本接口用于获取组件列表，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComponentsRequest 请求对象
      * @return ListComponentsResponse
@@ -351,8 +330,7 @@ public class CaeClient {
      *
      * 本接口用于获取组件列表，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComponentsRequest 请求对象
      * @return SyncInvoker<ListComponentsRequest, ListComponentsResponse>
@@ -367,8 +345,7 @@ public class CaeClient {
      * 获取事件列表
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventsRequest 请求对象
      * @return ListEventsResponse
@@ -381,8 +358,7 @@ public class CaeClient {
      * 获取事件列表
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventsRequest 请求对象
      * @return SyncInvoker<ListEventsRequest, ListEventsResponse>
@@ -396,8 +372,7 @@ public class CaeClient {
      *
      * 本接口用于获取组件实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return ListInstancesResponse
@@ -411,8 +386,7 @@ public class CaeClient {
      *
      * 本接口用于获取组件实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
@@ -426,8 +400,7 @@ public class CaeClient {
      *
      * 本接口用于获取指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowComponentRequest 请求对象
      * @return ShowComponentResponse
@@ -441,8 +414,7 @@ public class CaeClient {
      *
      * 本接口用于获取指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowComponentRequest 请求对象
      * @return SyncInvoker<ShowComponentRequest, ShowComponentResponse>
@@ -456,8 +428,7 @@ public class CaeClient {
      *
      * 本接口用于更新指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateComponentRequest 请求对象
      * @return UpdateComponentResponse
@@ -471,8 +442,7 @@ public class CaeClient {
      *
      * 本接口用于更新指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateComponentRequest 请求对象
      * @return SyncInvoker<UpdateComponentRequest, UpdateComponentResponse>
@@ -488,8 +458,7 @@ public class CaeClient {
      *
      * 本接口用于创建组件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateComponentConfigurationRequest 请求对象
      * @return CreateComponentConfigurationResponse
@@ -504,8 +473,7 @@ public class CaeClient {
      *
      * 本接口用于创建组件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateComponentConfigurationRequest 请求对象
      * @return SyncInvoker<CreateComponentConfigurationRequest, CreateComponentConfigurationResponse>
@@ -520,8 +488,7 @@ public class CaeClient {
      * 删除组件配置
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteComponentConfigurationRequest 请求对象
      * @return DeleteComponentConfigurationResponse
@@ -535,8 +502,7 @@ public class CaeClient {
      * 删除组件配置
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteComponentConfigurationRequest 请求对象
      * @return SyncInvoker<DeleteComponentConfigurationRequest, DeleteComponentConfigurationResponse>
@@ -552,8 +518,7 @@ public class CaeClient {
      *
      * 本接口用于获取组件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConfigurationsRequest 请求对象
      * @return ListConfigurationsResponse
@@ -567,8 +532,7 @@ public class CaeClient {
      *
      * 本接口用于获取组件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConfigurationsRequest 请求对象
      * @return SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
@@ -584,8 +548,7 @@ public class CaeClient {
      *
      * 本接口用于创建一个环境，环境是CAE定义的一个资源维度，所有的用户组件都放在环境下
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentRequest 请求对象
      * @return CreateEnvironmentResponse
@@ -599,8 +562,7 @@ public class CaeClient {
      *
      * 本接口用于创建一个环境，环境是CAE定义的一个资源维度，所有的用户组件都放在环境下
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentRequest 请求对象
      * @return SyncInvoker<CreateEnvironmentRequest, CreateEnvironmentResponse>
@@ -616,8 +578,7 @@ public class CaeClient {
      *
      * 本接口用于删除环境，暂未开放。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentRequest 请求对象
      * @return DeleteEnvironmentResponse
@@ -631,8 +592,7 @@ public class CaeClient {
      *
      * 本接口用于删除环境，暂未开放。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentRequest 请求对象
      * @return SyncInvoker<DeleteEnvironmentRequest, DeleteEnvironmentResponse>
@@ -648,8 +608,7 @@ public class CaeClient {
      *
      * 本接口用于获取当前租户环境信息，环境是CAE定义的一个资源维度，所有的用户组件都放在环境下
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentsRequest 请求对象
      * @return ListEnvironmentsResponse
@@ -663,8 +622,7 @@ public class CaeClient {
      *
      * 本接口用于获取当前租户环境信息，环境是CAE定义的一个资源维度，所有的用户组件都放在环境下
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentsRequest 请求对象
      * @return SyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse>
@@ -680,8 +638,7 @@ public class CaeClient {
      *
      * 本接口用于重试任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RetryJobRequest 请求对象
      * @return RetryJobResponse
@@ -695,8 +652,7 @@ public class CaeClient {
      *
      * 本接口用于重试任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RetryJobRequest 请求对象
      * @return SyncInvoker<RetryJobRequest, RetryJobResponse>
@@ -710,8 +666,7 @@ public class CaeClient {
      *
      * 本接口用于获取任务详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return ShowJobResponse
@@ -725,8 +680,7 @@ public class CaeClient {
      *
      * 本接口用于获取任务详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return SyncInvoker<ShowJobRequest, ShowJobResponse>
@@ -740,8 +694,7 @@ public class CaeClient {
      *
      * 本接口用于创建卷
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVolumeRequest 请求对象
      * @return CreateVolumeResponse
@@ -755,8 +708,7 @@ public class CaeClient {
      *
      * 本接口用于创建卷
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVolumeRequest 请求对象
      * @return SyncInvoker<CreateVolumeRequest, CreateVolumeResponse>
@@ -770,8 +722,7 @@ public class CaeClient {
      *
      * 本接口用于创建卷
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVolumeRequest 请求对象
      * @return DeleteVolumeResponse
@@ -785,8 +736,7 @@ public class CaeClient {
      *
      * 本接口用于创建卷
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVolumeRequest 请求对象
      * @return SyncInvoker<DeleteVolumeRequest, DeleteVolumeResponse>
@@ -800,8 +750,7 @@ public class CaeClient {
      *
      * 本接口用于获取卷列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVolumesRequest 请求对象
      * @return ListVolumesResponse
@@ -815,8 +764,7 @@ public class CaeClient {
      *
      * 本接口用于获取卷列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVolumesRequest 请求对象
      * @return SyncInvoker<ListVolumesRequest, ListVolumesResponse>

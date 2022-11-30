@@ -22,8 +22,7 @@ public class ResClient {
      *
      * 在指定的工作空间下面创建一个新的数据源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResDatasourceRequest 请求对象
      * @return CreateResDatasourceResponse
@@ -37,8 +36,7 @@ public class ResClient {
      *
      * 在指定的工作空间下面创建一个新的数据源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResDatasourceRequest 请求对象
      * @return SyncInvoker<CreateResDatasourceRequest, CreateResDatasourceResponse>
@@ -54,8 +52,7 @@ public class ResClient {
      *
      * 在指定工作空间下面创建智能场景。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResIntelligentSceneRequest 请求对象
      * @return CreateResIntelligentSceneResponse
@@ -69,8 +66,7 @@ public class ResClient {
      *
      * 在指定工作空间下面创建智能场景。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResIntelligentSceneRequest 请求对象
      * @return SyncInvoker<CreateResIntelligentSceneRequest, CreateResIntelligentSceneResponse>
@@ -86,8 +82,7 @@ public class ResClient {
      *
      * 新建训练作业元数据，新建成功之后可手动执行此任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResJobRequest 请求对象
      * @return CreateResJobResponse
@@ -101,8 +96,7 @@ public class ResClient {
      *
      * 新建训练作业元数据，新建成功之后可手动执行此任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResJobRequest 请求对象
      * @return SyncInvoker<CreateResJobRequest, CreateResJobResponse>
@@ -116,8 +110,7 @@ public class ResClient {
      *
      * 批量新建作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResJobsRequest 请求对象
      * @return CreateResJobsResponse
@@ -131,8 +124,7 @@ public class ResClient {
      *
      * 批量新建作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResJobsRequest 请求对象
      * @return SyncInvoker<CreateResJobsRequest, CreateResJobsResponse>
@@ -146,8 +138,7 @@ public class ResClient {
      *
      * 新建在线服务元数据，新建成功之后可手动发布此服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResOnlineInstanceRequest 请求对象
      * @return CreateResOnlineInstanceResponse
@@ -161,8 +152,7 @@ public class ResClient {
      *
      * 新建在线服务元数据，新建成功之后可手动发布此服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResOnlineInstanceRequest 请求对象
      * @return SyncInvoker<CreateResOnlineInstanceRequest, CreateResOnlineInstanceResponse>
@@ -178,8 +168,7 @@ public class ResClient {
      *
      * 在指定工作空间下面创建自定义场景。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResSceneRequest 请求对象
      * @return CreateResSceneResponse
@@ -193,8 +182,7 @@ public class ResClient {
      *
      * 在指定工作空间下面创建自定义场景。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResSceneRequest 请求对象
      * @return SyncInvoker<CreateResSceneRequest, CreateResSceneResponse>
@@ -210,8 +198,7 @@ public class ResClient {
      *
      * 用于在推荐系统下面创建独立的工作空间，用于资源的隔离，用户可以在工作空间下面继续创建数据源、场景以及推荐任务等。是否有工作空间的操作权限取决于用户是否属于当前工作空间绑定的企业项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResWorkspaceRequest 请求对象
      * @return CreateResWorkspaceResponse
@@ -225,8 +212,7 @@ public class ResClient {
      *
      * 用于在推荐系统下面创建独立的工作空间，用于资源的隔离，用户可以在工作空间下面继续创建数据源、场景以及推荐任务等。是否有工作空间的操作权限取决于用户是否属于当前工作空间绑定的企业项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResWorkspaceRequest 请求对象
      * @return SyncInvoker<CreateResWorkspaceRequest, CreateResWorkspaceResponse>
@@ -242,8 +228,7 @@ public class ResClient {
      *
      * 删除数据源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResDatasourceRequest 请求对象
      * @return DeleteResDatasourceResponse
@@ -257,8 +242,7 @@ public class ResClient {
      *
      * 删除数据源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResDatasourceRequest 请求对象
      * @return SyncInvoker<DeleteResDatasourceRequest, DeleteResDatasourceResponse>
@@ -274,8 +258,7 @@ public class ResClient {
      *
      * 删除指定作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResJobRequest 请求对象
      * @return DeleteResJobResponse
@@ -289,8 +272,7 @@ public class ResClient {
      *
      * 删除指定作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResJobRequest 请求对象
      * @return SyncInvoker<DeleteResJobRequest, DeleteResJobResponse>
@@ -304,8 +286,7 @@ public class ResClient {
      *
      * 删除在线服务实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResOnlineInstanceRequest 请求对象
      * @return DeleteResOnlineInstanceResponse
@@ -319,8 +300,7 @@ public class ResClient {
      *
      * 删除在线服务实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResOnlineInstanceRequest 请求对象
      * @return SyncInvoker<DeleteResOnlineInstanceRequest, DeleteResOnlineInstanceResponse>
@@ -336,8 +316,7 @@ public class ResClient {
      *
      * 该接口用于删除场景，删除之后不能恢复，请您谨慎操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResSceneRequest 请求对象
      * @return DeleteResSceneResponse
@@ -351,8 +330,7 @@ public class ResClient {
      *
      * 该接口用于删除场景，删除之后不能恢复，请您谨慎操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResSceneRequest 请求对象
      * @return SyncInvoker<DeleteResSceneRequest, DeleteResSceneResponse>
@@ -368,8 +346,7 @@ public class ResClient {
      *
      * 删除指定工作空间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResWorkspaceRequest 请求对象
      * @return DeleteResWorkspaceResponse
@@ -383,8 +360,7 @@ public class ResClient {
      *
      * 删除指定工作空间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResWorkspaceRequest 请求对象
      * @return SyncInvoker<DeleteResWorkspaceRequest, DeleteResWorkspaceResponse>
@@ -400,8 +376,7 @@ public class ResClient {
      *
      * 查询当前工作空间下的数据源列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResDatasourcesRequest 请求对象
      * @return ListResDatasourcesResponse
@@ -415,8 +390,7 @@ public class ResClient {
      *
      * 查询当前工作空间下的数据源列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResDatasourcesRequest 请求对象
      * @return SyncInvoker<ListResDatasourcesRequest, ListResDatasourcesResponse>
@@ -432,8 +406,7 @@ public class ResClient {
      *
      * 查询用户在当前项目id下的企业项目列表。在创建工作空间时需要提供企业项目id。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResEnterprisesRequest 请求对象
      * @return ListResEnterprisesResponse
@@ -447,8 +420,7 @@ public class ResClient {
      *
      * 查询用户在当前项目id下的企业项目列表。在创建工作空间时需要提供企业项目id。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResEnterprisesRequest 请求对象
      * @return SyncInvoker<ListResEnterprisesRequest, ListResEnterprisesResponse>
@@ -464,8 +436,7 @@ public class ResClient {
      *
      * 根据给定的workspace_id和resource_id及category查询在线服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResOnlineServiceDetailsRequest 请求对象
      * @return ListResOnlineServiceDetailsResponse
@@ -479,8 +450,7 @@ public class ResClient {
      *
      * 根据给定的workspace_id和resource_id及category查询在线服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResOnlineServiceDetailsRequest 请求对象
      * @return SyncInvoker<ListResOnlineServiceDetailsRequest, ListResOnlineServiceDetailsResponse>
@@ -496,8 +466,7 @@ public class ResClient {
      *
      * 查询当前推荐系统所提供的离线计算规格，实时计算规格和排序模型训练规格。在创建数据源和场景时，需要提供此信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResResourceSpecRequest 请求对象
      * @return ListResResourceSpecResponse
@@ -511,8 +480,7 @@ public class ResClient {
      *
      * 查询当前推荐系统所提供的离线计算规格，实时计算规格和排序模型训练规格。在创建数据源和场景时，需要提供此信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResResourceSpecRequest 请求对象
      * @return SyncInvoker<ListResResourceSpecRequest, ListResResourceSpecResponse>
@@ -528,8 +496,7 @@ public class ResClient {
      *
      * 查询当前工作空间下的场景列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResScenesRequest 请求对象
      * @return ListResScenesResponse
@@ -543,8 +510,7 @@ public class ResClient {
      *
      * 查询当前工作空间下的场景列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResScenesRequest 请求对象
      * @return SyncInvoker<ListResScenesRequest, ListResScenesResponse>
@@ -558,8 +524,7 @@ public class ResClient {
      *
      * 用于查询当前用户具有操作权限的工作空间列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResWorkspacesRequest 请求对象
      * @return ListResWorkspacesResponse
@@ -573,8 +538,7 @@ public class ResClient {
      *
      * 用于查询当前用户具有操作权限的工作空间列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResWorkspacesRequest 请求对象
      * @return SyncInvoker<ListResWorkspacesRequest, ListResWorkspacesResponse>
@@ -590,8 +554,7 @@ public class ResClient {
      *
      * 查询指定数据源的详情信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResDatasourceRequest 请求对象
      * @return ShowResDatasourceResponse
@@ -605,8 +568,7 @@ public class ResClient {
      *
      * 查询指定数据源的详情信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResDatasourceRequest 请求对象
      * @return SyncInvoker<ShowResDatasourceRequest, ShowResDatasourceResponse>
@@ -622,8 +584,7 @@ public class ResClient {
      *
      * 查询指定数据源下离线任务的结果。其中包括数据格式，数据检测、数据探索及效果评估的内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResDatasourceWorkDetailRequest 请求对象
      * @return ShowResDatasourceWorkDetailResponse
@@ -637,8 +598,7 @@ public class ResClient {
      *
      * 查询指定数据源下离线任务的结果。其中包括数据格式，数据检测、数据探索及效果评估的内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResDatasourceWorkDetailRequest 请求对象
      * @return SyncInvoker<ShowResDatasourceWorkDetailRequest, ShowResDatasourceWorkDetailResponse>
@@ -654,8 +614,7 @@ public class ResClient {
      *
      * 查询resource_id（数据源id或场景id）下的指定类型的作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResJobRequest 请求对象
      * @return ShowResJobResponse
@@ -669,8 +628,7 @@ public class ResClient {
      *
      * 查询resource_id（数据源id或场景id）下的指定类型的作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResJobRequest 请求对象
      * @return SyncInvoker<ShowResJobRequest, ShowResJobResponse>
@@ -684,8 +642,7 @@ public class ResClient {
      *
      * 查询给定workspaces_id和指定resource_id下的候选集。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResRecallSetRequest 请求对象
      * @return ShowResRecallSetResponse
@@ -699,8 +656,7 @@ public class ResClient {
      *
      * 查询给定workspaces_id和指定resource_id下的候选集。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResRecallSetRequest 请求对象
      * @return SyncInvoker<ShowResRecallSetRequest, ShowResRecallSetResponse>
@@ -716,8 +672,7 @@ public class ResClient {
      *
      * 查询指定场景的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResSceneRequest 请求对象
      * @return ShowResSceneResponse
@@ -731,8 +686,7 @@ public class ResClient {
      *
      * 查询指定场景的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResSceneRequest 请求对象
      * @return SyncInvoker<ShowResSceneRequest, ShowResSceneResponse>
@@ -746,8 +700,7 @@ public class ResClient {
      *
      * 查询指定工作空间的具体信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResWrokspaceRequest 请求对象
      * @return ShowResWrokspaceResponse
@@ -761,8 +714,7 @@ public class ResClient {
      *
      * 查询指定工作空间的具体信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResWrokspaceRequest 请求对象
      * @return SyncInvoker<ShowResWrokspaceRequest, ShowResWrokspaceResponse>
@@ -778,8 +730,7 @@ public class ResClient {
      *
      * 执行独立的作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartResJobRequest 请求对象
      * @return StartResJobResponse
@@ -793,8 +744,7 @@ public class ResClient {
      *
      * 执行独立的作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartResJobRequest 请求对象
      * @return SyncInvoker<StartResJobRequest, StartResJobResponse>
@@ -808,8 +758,7 @@ public class ResClient {
      *
      * 执行场景下面的所有作业和服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartResSceneJobsRequest 请求对象
      * @return StartResSceneJobsResponse
@@ -823,8 +772,7 @@ public class ResClient {
      *
      * 执行场景下面的所有作业和服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartResSceneJobsRequest 请求对象
      * @return SyncInvoker<StartResSceneJobsRequest, StartResSceneJobsResponse>
@@ -840,8 +788,7 @@ public class ResClient {
      *
      * 修改指定数据源的配置内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResDatasourceRequest 请求对象
      * @return UpdateResDatasourceResponse
@@ -855,8 +802,7 @@ public class ResClient {
      *
      * 修改指定数据源的配置内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResDatasourceRequest 请求对象
      * @return SyncInvoker<UpdateResDatasourceRequest, UpdateResDatasourceResponse>
@@ -872,8 +818,7 @@ public class ResClient {
      *
      * 修改数据源中的特征。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResDatastructRequest 请求对象
      * @return UpdateResDatastructResponse
@@ -887,8 +832,7 @@ public class ResClient {
      *
      * 修改数据源中的特征。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResDatastructRequest 请求对象
      * @return SyncInvoker<UpdateResDatastructRequest, UpdateResDatastructResponse>
@@ -904,8 +848,7 @@ public class ResClient {
      *
      * 更新智能场景的内容信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResIntelligentSceneRequest 请求对象
      * @return UpdateResIntelligentSceneResponse
@@ -919,8 +862,7 @@ public class ResClient {
      *
      * 更新智能场景的内容信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResIntelligentSceneRequest 请求对象
      * @return SyncInvoker<UpdateResIntelligentSceneRequest, UpdateResIntelligentSceneResponse>
@@ -936,8 +878,7 @@ public class ResClient {
      *
      * 修改指定作业的元数据信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResJobRequest 请求对象
      * @return UpdateResJobResponse
@@ -951,8 +892,7 @@ public class ResClient {
      *
      * 修改指定作业的元数据信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResJobRequest 请求对象
      * @return SyncInvoker<UpdateResJobRequest, UpdateResJobResponse>
@@ -966,8 +906,7 @@ public class ResClient {
      *
      * 修改指定在线服务的元数据内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResOnlineInstanceRequest 请求对象
      * @return UpdateResOnlineInstanceResponse
@@ -981,8 +920,7 @@ public class ResClient {
      *
      * 修改指定在线服务的元数据内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResOnlineInstanceRequest 请求对象
      * @return SyncInvoker<UpdateResOnlineInstanceRequest, UpdateResOnlineInstanceResponse>
@@ -998,8 +936,7 @@ public class ResClient {
      *
      * 更新自定义场景的内容信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResSceneRequest 请求对象
      * @return UpdateResSceneResponse
@@ -1013,8 +950,7 @@ public class ResClient {
      *
      * 更新自定义场景的内容信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResSceneRequest 请求对象
      * @return SyncInvoker<UpdateResSceneRequest, UpdateResSceneResponse>
@@ -1030,8 +966,7 @@ public class ResClient {
      *
      * 更新工作空间信息, 只允许更新描述信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResWorkspaceRequest 请求对象
      * @return UpdateResWorkspaceResponse
@@ -1045,8 +980,7 @@ public class ResClient {
      *
      * 更新工作空间信息, 只允许更新描述信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResWorkspaceRequest 请求对象
      * @return SyncInvoker<UpdateResWorkspaceRequest, UpdateResWorkspaceResponse>

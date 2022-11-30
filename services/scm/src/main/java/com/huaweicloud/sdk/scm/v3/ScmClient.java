@@ -22,8 +22,7 @@ public class ScmClient {
      *
      * 删除证书实例，即将证书资源从华为云系统中删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCertificateRequest 请求对象
      * @return DeleteCertificateResponse
@@ -37,8 +36,7 @@ public class ScmClient {
      *
      * 删除证书实例，即将证书资源从华为云系统中删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCertificateRequest 请求对象
      * @return SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>
@@ -54,8 +52,7 @@ public class ScmClient {
      *
      * 导出证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportCertificateRequest 请求对象
      * @return ExportCertificateResponse
@@ -69,8 +66,7 @@ public class ScmClient {
      *
      * 导出证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportCertificateRequest 请求对象
      * @return SyncInvoker<ExportCertificateRequest, ExportCertificateResponse>
@@ -86,8 +82,7 @@ public class ScmClient {
      *
      * 导入证书到SCM服务管理。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportCertificateRequest 请求对象
      * @return ImportCertificateResponse
@@ -101,8 +96,7 @@ public class ScmClient {
      *
      * 导入证书到SCM服务管理。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportCertificateRequest 请求对象
      * @return SyncInvoker<ImportCertificateRequest, ImportCertificateResponse>
@@ -118,8 +112,7 @@ public class ScmClient {
      *
      * 根据证书名称或绑定域名查询证书列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCertificatesRequest 请求对象
      * @return ListCertificatesResponse
@@ -133,8 +126,7 @@ public class ScmClient {
      *
      * 根据证书名称或绑定域名查询证书列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCertificatesRequest 请求对象
      * @return SyncInvoker<ListCertificatesRequest, ListCertificatesResponse>
@@ -150,8 +142,7 @@ public class ScmClient {
      *
      * 推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它华为云产品中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PushCertificateRequest 请求对象
      * @return PushCertificateResponse
@@ -165,8 +156,7 @@ public class ScmClient {
      *
      * 推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它华为云产品中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PushCertificateRequest 请求对象
      * @return SyncInvoker<PushCertificateRequest, PushCertificateResponse>
@@ -182,8 +172,7 @@ public class ScmClient {
      *
      * 查询某张证书的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCertificateRequest 请求对象
      * @return ShowCertificateResponse
@@ -197,8 +186,7 @@ public class ScmClient {
      *
      * 查询某张证书的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCertificateRequest 请求对象
      * @return SyncInvoker<ShowCertificateRequest, ShowCertificateResponse>

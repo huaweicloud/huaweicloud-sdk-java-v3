@@ -22,7 +22,7 @@ public class BatchImportCloudPhoneDataResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
-    private List<Object> jobs = null;
+    private List<PhoneJob> jobs = null;
 
     public BatchImportCloudPhoneDataResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -30,7 +30,7 @@ public class BatchImportCloudPhoneDataResponse extends SdkResponse {
     }
 
     /**
-     * 请求的唯一标识ID
+     * 请求的唯一标识ID。
      * @return requestId
      */
     public String getRequestId() {
@@ -41,12 +41,12 @@ public class BatchImportCloudPhoneDataResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public BatchImportCloudPhoneDataResponse withJobs(List<Object> jobs) {
+    public BatchImportCloudPhoneDataResponse withJobs(List<PhoneJob> jobs) {
         this.jobs = jobs;
         return this;
     }
 
-    public BatchImportCloudPhoneDataResponse addJobsItem(Object jobsItem) {
+    public BatchImportCloudPhoneDataResponse addJobsItem(PhoneJob jobsItem) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class BatchImportCloudPhoneDataResponse extends SdkResponse {
         return this;
     }
 
-    public BatchImportCloudPhoneDataResponse withJobs(Consumer<List<Object>> jobsSetter) {
+    public BatchImportCloudPhoneDataResponse withJobs(Consumer<List<PhoneJob>> jobsSetter) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class BatchImportCloudPhoneDataResponse extends SdkResponse {
      * 任务信息
      * @return jobs
      */
-    public List<Object> getJobs() {
+    public List<PhoneJob> getJobs() {
         return jobs;
     }
 
-    public void setJobs(List<Object> jobs) {
+    public void setJobs(List<PhoneJob> jobs) {
         this.jobs = jobs;
     }
 

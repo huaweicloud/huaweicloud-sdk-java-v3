@@ -14,16 +14,16 @@ public class UpdateCloudPhonePropertyRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private Phones body;
+    private UpdateCloudPhonePropertyRequestBody body;
 
-    public UpdateCloudPhonePropertyRequest withBody(Phones body) {
+    public UpdateCloudPhonePropertyRequest withBody(UpdateCloudPhonePropertyRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateCloudPhonePropertyRequest withBody(Consumer<Phones> bodySetter) {
+    public UpdateCloudPhonePropertyRequest withBody(Consumer<UpdateCloudPhonePropertyRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new Phones();
+            this.body = new UpdateCloudPhonePropertyRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class UpdateCloudPhonePropertyRequest {
      * Get body
      * @return body
      */
-    public Phones getBody() {
+    public UpdateCloudPhonePropertyRequestBody getBody() {
         return body;
     }
 
-    public void setBody(Phones body) {
+    public void setBody(UpdateCloudPhonePropertyRequestBody body) {
         this.body = body;
     }
 

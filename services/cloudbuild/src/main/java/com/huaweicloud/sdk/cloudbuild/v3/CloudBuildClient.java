@@ -22,8 +22,7 @@ public class CloudBuildClient {
      *
      * 下载指定租户下的KeyStore文件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadKeystoreRequest 请求对象
      * @return DownloadKeystoreResponse
@@ -37,8 +36,7 @@ public class CloudBuildClient {
      *
      * 下载指定租户下的KeyStore文件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadKeystoreRequest 请求对象
      * @return SyncInvoker<DownloadKeystoreRequest, DownloadKeystoreResponse>
@@ -54,8 +52,7 @@ public class CloudBuildClient {
      *
      * 执行构建任务,可传自定义参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunJobRequest 请求对象
      * @return RunJobResponse
@@ -69,8 +66,7 @@ public class CloudBuildClient {
      *
      * 执行构建任务,可传自定义参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunJobRequest 请求对象
      * @return SyncInvoker<RunJobRequest, RunJobResponse>
@@ -84,8 +80,7 @@ public class CloudBuildClient {
      *
      * 获取构建历史详情信息接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHistoryDetailsRequest 请求对象
      * @return ShowHistoryDetailsResponse
@@ -99,8 +94,7 @@ public class CloudBuildClient {
      *
      * 获取构建历史详情信息接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHistoryDetailsRequest 请求对象
      * @return SyncInvoker<ShowHistoryDetailsRequest, ShowHistoryDetailsResponse>
@@ -116,8 +110,7 @@ public class CloudBuildClient {
      *
      * 查看项目下用户的构建任务列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobListByProjectIdRequest 请求对象
      * @return ShowJobListByProjectIdResponse
@@ -131,8 +124,7 @@ public class CloudBuildClient {
      *
      * 查看项目下用户的构建任务列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobListByProjectIdRequest 请求对象
      * @return SyncInvoker<ShowJobListByProjectIdRequest, ShowJobListByProjectIdResponse>
@@ -148,8 +140,7 @@ public class CloudBuildClient {
      *
      * 查看任务运行状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobStatusRequest 请求对象
      * @return ShowJobStatusResponse
@@ -163,8 +154,7 @@ public class CloudBuildClient {
      *
      * 查看任务运行状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobStatusRequest 请求对象
      * @return SyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse>
@@ -179,8 +169,7 @@ public class CloudBuildClient {
      *
      * 根据开始时间和结束时间查看构建任务的构建成功率
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobSuccessRatioRequest 请求对象
      * @return ShowJobSuccessRatioResponse
@@ -194,8 +183,7 @@ public class CloudBuildClient {
      *
      * 根据开始时间和结束时间查看构建任务的构建成功率
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobSuccessRatioRequest 请求对象
      * @return SyncInvoker<ShowJobSuccessRatioRequest, ShowJobSuccessRatioResponse>
@@ -211,8 +199,7 @@ public class CloudBuildClient {
      *
      * 查询指定代码仓库最近一次成功的构建历史
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLastHistoryRequest 请求对象
      * @return ShowLastHistoryResponse
@@ -226,8 +213,7 @@ public class CloudBuildClient {
      *
      * 查询指定代码仓库最近一次成功的构建历史
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLastHistoryRequest 请求对象
      * @return SyncInvoker<ShowLastHistoryRequest, ShowLastHistoryResponse>
@@ -243,8 +229,7 @@ public class CloudBuildClient {
      *
      * 查看构建任务的构建历史列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowListHistoryRequest 请求对象
      * @return ShowListHistoryResponse
@@ -258,8 +243,7 @@ public class CloudBuildClient {
      *
      * 查看构建任务的构建历史列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowListHistoryRequest 请求对象
      * @return SyncInvoker<ShowListHistoryRequest, ShowListHistoryResponse>
@@ -275,8 +259,7 @@ public class CloudBuildClient {
      *
      * 根据开始时间和结束时间查看构建任务的构建历史列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowListPeriodHistoryRequest 请求对象
      * @return ShowListPeriodHistoryResponse
@@ -290,8 +273,7 @@ public class CloudBuildClient {
      *
      * 根据开始时间和结束时间查看构建任务的构建历史列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowListPeriodHistoryRequest 请求对象
      * @return SyncInvoker<ShowListPeriodHistoryRequest, ShowListPeriodHistoryResponse>

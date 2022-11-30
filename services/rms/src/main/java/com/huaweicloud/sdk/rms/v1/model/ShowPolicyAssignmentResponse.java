@@ -1,9 +1,12 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -13,6 +16,88 @@ import java.util.function.Consumer;
  * Response Object
  */
 public class ShowPolicyAssignmentResponse extends SdkResponse {
+
+    /**
+     * 规则类型，包括预定义合规规则(builtin)和用户自定义合规规则(custom)
+     */
+    public static final class PolicyAssignmentTypeEnum {
+
+        /**
+         * Enum BUILTIN for value: "builtin"
+         */
+        public static final PolicyAssignmentTypeEnum BUILTIN = new PolicyAssignmentTypeEnum("builtin");
+
+        /**
+         * Enum CUSTOM for value: "custom"
+         */
+        public static final PolicyAssignmentTypeEnum CUSTOM = new PolicyAssignmentTypeEnum("custom");
+
+        private static final Map<String, PolicyAssignmentTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PolicyAssignmentTypeEnum> createStaticFields() {
+            Map<String, PolicyAssignmentTypeEnum> map = new HashMap<>();
+            map.put("builtin", BUILTIN);
+            map.put("custom", CUSTOM);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PolicyAssignmentTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PolicyAssignmentTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            PolicyAssignmentTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new PolicyAssignmentTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static PolicyAssignmentTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            PolicyAssignmentTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PolicyAssignmentTypeEnum) {
+                return this.value.equals(((PolicyAssignmentTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_assignment_type")
+
+    private PolicyAssignmentTypeEnum policyAssignmentType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -60,9 +145,31 @@ public class ShowPolicyAssignmentResponse extends SdkResponse {
     private String policyDefinitionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_policy")
+
+    private CustomPolicy customPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameters")
 
     private Map<String, PolicyParameterValue> parameters = null;
+
+    public ShowPolicyAssignmentResponse withPolicyAssignmentType(PolicyAssignmentTypeEnum policyAssignmentType) {
+        this.policyAssignmentType = policyAssignmentType;
+        return this;
+    }
+
+    /**
+     * 规则类型，包括预定义合规规则(builtin)和用户自定义合规规则(custom)
+     * @return policyAssignmentType
+     */
+    public PolicyAssignmentTypeEnum getPolicyAssignmentType() {
+        return policyAssignmentType;
+    }
+
+    public void setPolicyAssignmentType(PolicyAssignmentTypeEnum policyAssignmentType) {
+        this.policyAssignmentType = policyAssignmentType;
+    }
 
     public ShowPolicyAssignmentResponse withId(String id) {
         this.id = id;
@@ -226,6 +333,32 @@ public class ShowPolicyAssignmentResponse extends SdkResponse {
         this.policyDefinitionId = policyDefinitionId;
     }
 
+    public ShowPolicyAssignmentResponse withCustomPolicy(CustomPolicy customPolicy) {
+        this.customPolicy = customPolicy;
+        return this;
+    }
+
+    public ShowPolicyAssignmentResponse withCustomPolicy(Consumer<CustomPolicy> customPolicySetter) {
+        if (this.customPolicy == null) {
+            this.customPolicy = new CustomPolicy();
+            customPolicySetter.accept(this.customPolicy);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get customPolicy
+     * @return customPolicy
+     */
+    public CustomPolicy getCustomPolicy() {
+        return customPolicy;
+    }
+
+    public void setCustomPolicy(CustomPolicy customPolicy) {
+        this.customPolicy = customPolicy;
+    }
+
     public ShowPolicyAssignmentResponse withParameters(Map<String, PolicyParameterValue> parameters) {
         this.parameters = parameters;
         return this;
@@ -268,7 +401,8 @@ public class ShowPolicyAssignmentResponse extends SdkResponse {
             return false;
         }
         ShowPolicyAssignmentResponse showPolicyAssignmentResponse = (ShowPolicyAssignmentResponse) o;
-        return Objects.equals(this.id, showPolicyAssignmentResponse.id)
+        return Objects.equals(this.policyAssignmentType, showPolicyAssignmentResponse.policyAssignmentType)
+            && Objects.equals(this.id, showPolicyAssignmentResponse.id)
             && Objects.equals(this.name, showPolicyAssignmentResponse.name)
             && Objects.equals(this.description, showPolicyAssignmentResponse.description)
             && Objects.equals(this.policyFilter, showPolicyAssignmentResponse.policyFilter)
@@ -277,19 +411,31 @@ public class ShowPolicyAssignmentResponse extends SdkResponse {
             && Objects.equals(this.created, showPolicyAssignmentResponse.created)
             && Objects.equals(this.updated, showPolicyAssignmentResponse.updated)
             && Objects.equals(this.policyDefinitionId, showPolicyAssignmentResponse.policyDefinitionId)
+            && Objects.equals(this.customPolicy, showPolicyAssignmentResponse.customPolicy)
             && Objects.equals(this.parameters, showPolicyAssignmentResponse.parameters);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, name, description, policyFilter, period, state, created, updated, policyDefinitionId, parameters);
+        return Objects.hash(policyAssignmentType,
+            id,
+            name,
+            description,
+            policyFilter,
+            period,
+            state,
+            created,
+            updated,
+            policyDefinitionId,
+            customPolicy,
+            parameters);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowPolicyAssignmentResponse {\n");
+        sb.append("    policyAssignmentType: ").append(toIndentedString(policyAssignmentType)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -299,6 +445,7 @@ public class ShowPolicyAssignmentResponse extends SdkResponse {
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("    policyDefinitionId: ").append(toIndentedString(policyDefinitionId)).append("\n");
+        sb.append("    customPolicy: ").append(toIndentedString(customPolicy)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
         sb.append("}");
         return sb.toString();

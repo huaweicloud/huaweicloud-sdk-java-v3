@@ -24,8 +24,7 @@ public class ElbAsyncClient {
      *
      * 在指定pool下批量创建后端服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateMembersRequest 请求对象
      * @return CompletableFuture<BatchCreateMembersResponse>
@@ -39,8 +38,7 @@ public class ElbAsyncClient {
      *
      * 在指定pool下批量创建后端服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateMembersRequest 请求对象
      * @return AsyncInvoker<BatchCreateMembersRequest, BatchCreateMembersResponse>
@@ -56,8 +54,7 @@ public class ElbAsyncClient {
      *
      * 在指定pool下批量删除后端服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteMembersRequest 请求对象
      * @return CompletableFuture<BatchDeleteMembersResponse>
@@ -71,8 +68,7 @@ public class ElbAsyncClient {
      *
      * 在指定pool下批量删除后端服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteMembersRequest 请求对象
      * @return AsyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse>
@@ -88,8 +84,7 @@ public class ElbAsyncClient {
      *
      * 批量更新转发策略的优先级。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchUpdatePoliciesPriorityRequest 请求对象
      * @return CompletableFuture<BatchUpdatePoliciesPriorityResponse>
@@ -104,8 +99,7 @@ public class ElbAsyncClient {
      *
      * 批量更新转发策略的优先级。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchUpdatePoliciesPriorityRequest 请求对象
      * @return AsyncInvoker<BatchUpdatePoliciesPriorityRequest, BatchUpdatePoliciesPriorityResponse>
@@ -121,8 +115,7 @@ public class ElbAsyncClient {
      *
      * 负载均衡器计费模式变更，当前只支持按需计费转包周期计费。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeLoadbalancerChargeModeRequest 请求对象
      * @return CompletableFuture<ChangeLoadbalancerChargeModeResponse>
@@ -137,8 +130,7 @@ public class ElbAsyncClient {
      *
      * 负载均衡器计费模式变更，当前只支持按需计费转包周期计费。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeLoadbalancerChargeModeRequest 请求对象
      * @return AsyncInvoker<ChangeLoadbalancerChargeModeRequest, ChangeLoadbalancerChargeModeResponse>
@@ -154,8 +146,7 @@ public class ElbAsyncClient {
      *
      * 创建证书。用于HTTPS协议监听器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCertificateRequest 请求对象
      * @return CompletableFuture<CreateCertificateResponse>
@@ -169,8 +160,7 @@ public class ElbAsyncClient {
      *
      * 创建证书。用于HTTPS协议监听器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCertificateRequest 请求对象
      * @return AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse>
@@ -186,8 +176,7 @@ public class ElbAsyncClient {
      *
      * 创建健康检查。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHealthMonitorRequest 请求对象
      * @return CompletableFuture<CreateHealthMonitorResponse>
@@ -201,8 +190,7 @@ public class ElbAsyncClient {
      *
      * 创建健康检查。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHealthMonitorRequest 请求对象
      * @return AsyncInvoker<CreateHealthMonitorRequest, CreateHealthMonitorResponse>
@@ -218,8 +206,7 @@ public class ElbAsyncClient {
      *
      * 创建七层转发策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateL7PolicyRequest 请求对象
      * @return CompletableFuture<CreateL7PolicyResponse>
@@ -233,8 +220,7 @@ public class ElbAsyncClient {
      *
      * 创建七层转发策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateL7PolicyRequest 请求对象
      * @return AsyncInvoker<CreateL7PolicyRequest, CreateL7PolicyResponse>
@@ -250,8 +236,7 @@ public class ElbAsyncClient {
      *
      * 创建七层转发规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateL7RuleRequest 请求对象
      * @return CompletableFuture<CreateL7RuleResponse>
@@ -265,8 +250,7 @@ public class ElbAsyncClient {
      *
      * 创建七层转发规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateL7RuleRequest 请求对象
      * @return AsyncInvoker<CreateL7RuleRequest, CreateL7RuleResponse>
@@ -281,8 +265,7 @@ public class ElbAsyncClient {
      *
      * 创建监听器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateListenerRequest 请求对象
      * @return CompletableFuture<CreateListenerResponse>
@@ -296,8 +279,7 @@ public class ElbAsyncClient {
      *
      * 创建监听器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateListenerRequest 请求对象
      * @return AsyncInvoker<CreateListenerRequest, CreateListenerResponse>
@@ -322,8 +304,7 @@ public class ElbAsyncClient {
      * 
      * [&gt; 不支持创建IPv6地址负载均衡器](tag:dt,dt_test)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLoadBalancerRequest 请求对象
      * @return CompletableFuture<CreateLoadBalancerResponse>
@@ -346,8 +327,7 @@ public class ElbAsyncClient {
      * 
      * [&gt; 不支持创建IPv6地址负载均衡器](tag:dt,dt_test)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLoadBalancerRequest 请求对象
      * @return AsyncInvoker<CreateLoadBalancerRequest, CreateLoadBalancerResponse>
@@ -363,8 +343,7 @@ public class ElbAsyncClient {
      *
      * 创建云日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLogtankRequest 请求对象
      * @return CompletableFuture<CreateLogtankResponse>
@@ -378,8 +357,7 @@ public class ElbAsyncClient {
      *
      * 创建云日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLogtankRequest 请求对象
      * @return AsyncInvoker<CreateLogtankRequest, CreateLogtankResponse>
@@ -394,8 +372,7 @@ public class ElbAsyncClient {
      *
      * 创建后端服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMemberRequest 请求对象
      * @return CompletableFuture<CreateMemberResponse>
@@ -409,8 +386,7 @@ public class ElbAsyncClient {
      *
      * 创建后端服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMemberRequest 请求对象
      * @return AsyncInvoker<CreateMemberRequest, CreateMemberResponse>
@@ -425,8 +401,7 @@ public class ElbAsyncClient {
      *
      * 创建后端服务器组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePoolRequest 请求对象
      * @return CompletableFuture<CreatePoolResponse>
@@ -440,8 +415,7 @@ public class ElbAsyncClient {
      *
      * 创建后端服务器组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePoolRequest 请求对象
      * @return AsyncInvoker<CreatePoolRequest, CreatePoolResponse>
@@ -455,8 +429,7 @@ public class ElbAsyncClient {
      *
      * 创建自定义安全策略。用于在创建HTTPS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityPolicyRequest 请求对象
      * @return CompletableFuture<CreateSecurityPolicyResponse>
@@ -471,8 +444,7 @@ public class ElbAsyncClient {
      *
      * 创建自定义安全策略。用于在创建HTTPS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityPolicyRequest 请求对象
      * @return AsyncInvoker<CreateSecurityPolicyRequest, CreateSecurityPolicyResponse>
@@ -488,8 +460,7 @@ public class ElbAsyncClient {
      *
      * 删除证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCertificateRequest 请求对象
      * @return CompletableFuture<DeleteCertificateResponse>
@@ -503,8 +474,7 @@ public class ElbAsyncClient {
      *
      * 删除证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCertificateRequest 请求对象
      * @return AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>
@@ -520,8 +490,7 @@ public class ElbAsyncClient {
      *
      * 删除健康检查。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHealthMonitorRequest 请求对象
      * @return CompletableFuture<DeleteHealthMonitorResponse>
@@ -535,8 +504,7 @@ public class ElbAsyncClient {
      *
      * 删除健康检查。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHealthMonitorRequest 请求对象
      * @return AsyncInvoker<DeleteHealthMonitorRequest, DeleteHealthMonitorResponse>
@@ -552,8 +520,7 @@ public class ElbAsyncClient {
      *
      * 删除七层转发策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteL7PolicyRequest 请求对象
      * @return CompletableFuture<DeleteL7PolicyResponse>
@@ -567,8 +534,7 @@ public class ElbAsyncClient {
      *
      * 删除七层转发策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteL7PolicyRequest 请求对象
      * @return AsyncInvoker<DeleteL7PolicyRequest, DeleteL7PolicyResponse>
@@ -584,8 +550,7 @@ public class ElbAsyncClient {
      *
      * 删除七层转发规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteL7RuleRequest 请求对象
      * @return CompletableFuture<DeleteL7RuleResponse>
@@ -599,8 +564,7 @@ public class ElbAsyncClient {
      *
      * 删除七层转发规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteL7RuleRequest 请求对象
      * @return AsyncInvoker<DeleteL7RuleRequest, DeleteL7RuleResponse>
@@ -615,8 +579,7 @@ public class ElbAsyncClient {
      *
      * 删除监听器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteListenerRequest 请求对象
      * @return CompletableFuture<DeleteListenerResponse>
@@ -630,8 +593,7 @@ public class ElbAsyncClient {
      *
      * 删除监听器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteListenerRequest 请求对象
      * @return AsyncInvoker<DeleteListenerRequest, DeleteListenerResponse>
@@ -647,8 +609,7 @@ public class ElbAsyncClient {
      *
      * 删除负载均衡器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLoadBalancerRequest 请求对象
      * @return CompletableFuture<DeleteLoadBalancerResponse>
@@ -662,8 +623,7 @@ public class ElbAsyncClient {
      *
      * 删除负载均衡器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLoadBalancerRequest 请求对象
      * @return AsyncInvoker<DeleteLoadBalancerRequest, DeleteLoadBalancerResponse>
@@ -679,8 +639,7 @@ public class ElbAsyncClient {
      *
      * 删除云日志。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLogtankRequest 请求对象
      * @return CompletableFuture<DeleteLogtankResponse>
@@ -694,8 +653,7 @@ public class ElbAsyncClient {
      *
      * 删除云日志。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLogtankRequest 请求对象
      * @return AsyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse>
@@ -710,8 +668,7 @@ public class ElbAsyncClient {
      *
      * 删除后端服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMemberRequest 请求对象
      * @return CompletableFuture<DeleteMemberResponse>
@@ -725,8 +682,7 @@ public class ElbAsyncClient {
      *
      * 删除后端服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMemberRequest 请求对象
      * @return AsyncInvoker<DeleteMemberRequest, DeleteMemberResponse>
@@ -741,8 +697,7 @@ public class ElbAsyncClient {
      *
      * 删除后端服务器组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePoolRequest 请求对象
      * @return CompletableFuture<DeletePoolResponse>
@@ -756,8 +711,7 @@ public class ElbAsyncClient {
      *
      * 删除后端服务器组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePoolRequest 请求对象
      * @return AsyncInvoker<DeletePoolRequest, DeletePoolResponse>
@@ -771,8 +725,7 @@ public class ElbAsyncClient {
      *
      * 删除自定义安全策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityPolicyRequest 请求对象
      * @return CompletableFuture<DeleteSecurityPolicyResponse>
@@ -787,8 +740,7 @@ public class ElbAsyncClient {
      *
      * 删除自定义安全策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityPolicyRequest 请求对象
      * @return AsyncInvoker<DeleteSecurityPolicyRequest, DeleteSecurityPolicyResponse>
@@ -804,8 +756,7 @@ public class ElbAsyncClient {
      *
      * 查询当前租户下的后端服务器列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAllMembersRequest 请求对象
      * @return CompletableFuture<ListAllMembersResponse>
@@ -819,8 +770,7 @@ public class ElbAsyncClient {
      *
      * 查询当前租户下的后端服务器列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAllMembersRequest 请求对象
      * @return AsyncInvoker<ListAllMembersRequest, ListAllMembersResponse>
@@ -844,8 +794,7 @@ public class ElbAsyncClient {
      * 在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，
      * 如可以选az2和az3，但不能选择az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailabilityZonesRequest 请求对象
      * @return CompletableFuture<ListAvailabilityZonesResponse>
@@ -868,8 +817,7 @@ public class ElbAsyncClient {
      * 在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，
      * 如可以选az2和az3，但不能选择az1和az3。你可以选择多个可用区，只要这些可用区在一个子集中
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailabilityZonesRequest 请求对象
      * @return AsyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse>
@@ -885,8 +833,7 @@ public class ElbAsyncClient {
      *
      * 查询证书列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCertificatesRequest 请求对象
      * @return CompletableFuture<ListCertificatesResponse>
@@ -900,8 +847,7 @@ public class ElbAsyncClient {
      *
      * 查询证书列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCertificatesRequest 请求对象
      * @return AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse>
@@ -917,8 +863,7 @@ public class ElbAsyncClient {
      *
      * 查询租户在当前region下可用的负载均衡规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return CompletableFuture<ListFlavorsResponse>
@@ -932,8 +877,7 @@ public class ElbAsyncClient {
      *
      * 查询租户在当前region下可用的负载均衡规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
@@ -947,8 +891,7 @@ public class ElbAsyncClient {
      *
      * 健康检查列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHealthMonitorsRequest 请求对象
      * @return CompletableFuture<ListHealthMonitorsResponse>
@@ -962,8 +905,7 @@ public class ElbAsyncClient {
      *
      * 健康检查列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHealthMonitorsRequest 请求对象
      * @return AsyncInvoker<ListHealthMonitorsRequest, ListHealthMonitorsResponse>
@@ -979,8 +921,7 @@ public class ElbAsyncClient {
      *
      * 查询七层转发策略列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListL7PoliciesRequest 请求对象
      * @return CompletableFuture<ListL7PoliciesResponse>
@@ -994,8 +935,7 @@ public class ElbAsyncClient {
      *
      * 查询七层转发策略列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListL7PoliciesRequest 请求对象
      * @return AsyncInvoker<ListL7PoliciesRequest, ListL7PoliciesResponse>
@@ -1011,8 +951,7 @@ public class ElbAsyncClient {
      *
      * 查询转发规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListL7RulesRequest 请求对象
      * @return CompletableFuture<ListL7RulesResponse>
@@ -1026,8 +965,7 @@ public class ElbAsyncClient {
      *
      * 查询转发规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListL7RulesRequest 请求对象
      * @return AsyncInvoker<ListL7RulesRequest, ListL7RulesResponse>
@@ -1041,8 +979,7 @@ public class ElbAsyncClient {
      *
      * 查询监听器列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListListenersRequest 请求对象
      * @return CompletableFuture<ListListenersResponse>
@@ -1056,8 +993,7 @@ public class ElbAsyncClient {
      *
      * 查询监听器列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListListenersRequest 请求对象
      * @return AsyncInvoker<ListListenersRequest, ListListenersResponse>
@@ -1072,8 +1008,7 @@ public class ElbAsyncClient {
      *
      * 查询负载均衡器列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLoadBalancersRequest 请求对象
      * @return CompletableFuture<ListLoadBalancersResponse>
@@ -1087,8 +1022,7 @@ public class ElbAsyncClient {
      *
      * 查询负载均衡器列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLoadBalancersRequest 请求对象
      * @return AsyncInvoker<ListLoadBalancersRequest, ListLoadBalancersResponse>
@@ -1104,8 +1038,7 @@ public class ElbAsyncClient {
      *
      * 查询云日志列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogtanksRequest 请求对象
      * @return CompletableFuture<ListLogtanksResponse>
@@ -1119,8 +1052,7 @@ public class ElbAsyncClient {
      *
      * 查询云日志列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogtanksRequest 请求对象
      * @return AsyncInvoker<ListLogtanksRequest, ListLogtanksResponse>
@@ -1135,8 +1067,7 @@ public class ElbAsyncClient {
      *
      * Pool下的后端服务器列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMembersRequest 请求对象
      * @return CompletableFuture<ListMembersResponse>
@@ -1150,8 +1081,7 @@ public class ElbAsyncClient {
      *
      * Pool下的后端服务器列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMembersRequest 请求对象
      * @return AsyncInvoker<ListMembersRequest, ListMembersResponse>
@@ -1165,8 +1095,7 @@ public class ElbAsyncClient {
      *
      * 后端服务器组列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPoolsRequest 请求对象
      * @return CompletableFuture<ListPoolsResponse>
@@ -1180,8 +1109,7 @@ public class ElbAsyncClient {
      *
      * 后端服务器组列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPoolsRequest 请求对象
      * @return AsyncInvoker<ListPoolsRequest, ListPoolsResponse>
@@ -1195,8 +1123,7 @@ public class ElbAsyncClient {
      *
      * 查询指定项目中负载均衡相关的各类资源的当前配额和已使用配额信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotaDetailsRequest 请求对象
      * @return CompletableFuture<ListQuotaDetailsResponse>
@@ -1210,8 +1137,7 @@ public class ElbAsyncClient {
      *
      * 查询指定项目中负载均衡相关的各类资源的当前配额和已使用配额信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotaDetailsRequest 请求对象
      * @return AsyncInvoker<ListQuotaDetailsRequest, ListQuotaDetailsResponse>
@@ -1227,8 +1153,7 @@ public class ElbAsyncClient {
      *
      * 查询自定义安全策略列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityPoliciesRequest 请求对象
      * @return CompletableFuture<ListSecurityPoliciesResponse>
@@ -1243,8 +1168,7 @@ public class ElbAsyncClient {
      *
      * 查询自定义安全策略列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityPoliciesRequest 请求对象
      * @return AsyncInvoker<ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>
@@ -1262,8 +1186,7 @@ public class ElbAsyncClient {
      * 
      * 系统安全策略为预置的所有租户通用的安全策略，租户不可新增或修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSystemSecurityPoliciesRequest 请求对象
      * @return CompletableFuture<ListSystemSecurityPoliciesResponse>
@@ -1280,8 +1203,7 @@ public class ElbAsyncClient {
      * 
      * 系统安全策略为预置的所有租户通用的安全策略，租户不可新增或修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSystemSecurityPoliciesRequest 请求对象
      * @return AsyncInvoker<ListSystemSecurityPoliciesRequest, ListSystemSecurityPoliciesResponse>
@@ -1297,8 +1219,7 @@ public class ElbAsyncClient {
      *
      * 查询证书详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCertificateRequest 请求对象
      * @return CompletableFuture<ShowCertificateResponse>
@@ -1312,8 +1233,7 @@ public class ElbAsyncClient {
      *
      * 查询证书详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCertificateRequest 请求对象
      * @return AsyncInvoker<ShowCertificateRequest, ShowCertificateResponse>
@@ -1329,8 +1249,7 @@ public class ElbAsyncClient {
      *
      * 查询规格的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFlavorRequest 请求对象
      * @return CompletableFuture<ShowFlavorResponse>
@@ -1344,8 +1263,7 @@ public class ElbAsyncClient {
      *
      * 查询规格的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFlavorRequest 请求对象
      * @return AsyncInvoker<ShowFlavorRequest, ShowFlavorResponse>
@@ -1359,8 +1277,7 @@ public class ElbAsyncClient {
      *
      * 查询健康检查详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHealthMonitorRequest 请求对象
      * @return CompletableFuture<ShowHealthMonitorResponse>
@@ -1374,8 +1291,7 @@ public class ElbAsyncClient {
      *
      * 查询健康检查详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHealthMonitorRequest 请求对象
      * @return AsyncInvoker<ShowHealthMonitorRequest, ShowHealthMonitorResponse>
@@ -1391,8 +1307,7 @@ public class ElbAsyncClient {
      *
      * 查询七层转发策略详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowL7PolicyRequest 请求对象
      * @return CompletableFuture<ShowL7PolicyResponse>
@@ -1406,8 +1321,7 @@ public class ElbAsyncClient {
      *
      * 查询七层转发策略详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowL7PolicyRequest 请求对象
      * @return AsyncInvoker<ShowL7PolicyRequest, ShowL7PolicyResponse>
@@ -1422,8 +1336,7 @@ public class ElbAsyncClient {
      *
      * 查询七层转发规则详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowL7RuleRequest 请求对象
      * @return CompletableFuture<ShowL7RuleResponse>
@@ -1437,8 +1350,7 @@ public class ElbAsyncClient {
      *
      * 查询七层转发规则详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowL7RuleRequest 请求对象
      * @return AsyncInvoker<ShowL7RuleRequest, ShowL7RuleResponse>
@@ -1452,8 +1364,7 @@ public class ElbAsyncClient {
      *
      * 监听器详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowListenerRequest 请求对象
      * @return CompletableFuture<ShowListenerResponse>
@@ -1467,8 +1378,7 @@ public class ElbAsyncClient {
      *
      * 监听器详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowListenerRequest 请求对象
      * @return AsyncInvoker<ShowListenerRequest, ShowListenerResponse>
@@ -1483,8 +1393,7 @@ public class ElbAsyncClient {
      *
      * 查询负载均衡器详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLoadBalancerRequest 请求对象
      * @return CompletableFuture<ShowLoadBalancerResponse>
@@ -1498,8 +1407,7 @@ public class ElbAsyncClient {
      *
      * 查询负载均衡器详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLoadBalancerRequest 请求对象
      * @return AsyncInvoker<ShowLoadBalancerRequest, ShowLoadBalancerResponse>
@@ -1518,8 +1426,7 @@ public class ElbAsyncClient {
      * 如：当Member的admin_state_up&#x3D;false且operating_status&#x3D;OFFLINE时，
      * 该接口返回member的operating_status&#x3D;DISABLE。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLoadBalancerStatusRequest 请求对象
      * @return CompletableFuture<ShowLoadBalancerStatusResponse>
@@ -1537,8 +1444,7 @@ public class ElbAsyncClient {
      * 如：当Member的admin_state_up&#x3D;false且operating_status&#x3D;OFFLINE时，
      * 该接口返回member的operating_status&#x3D;DISABLE。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLoadBalancerStatusRequest 请求对象
      * @return AsyncInvoker<ShowLoadBalancerStatusRequest, ShowLoadBalancerStatusResponse>
@@ -1554,8 +1460,7 @@ public class ElbAsyncClient {
      *
      * 云日志详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLogtankRequest 请求对象
      * @return CompletableFuture<ShowLogtankResponse>
@@ -1569,8 +1474,7 @@ public class ElbAsyncClient {
      *
      * 云日志详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLogtankRequest 请求对象
      * @return AsyncInvoker<ShowLogtankRequest, ShowLogtankResponse>
@@ -1584,8 +1488,7 @@ public class ElbAsyncClient {
      *
      * 后端服务器详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMemberRequest 请求对象
      * @return CompletableFuture<ShowMemberResponse>
@@ -1599,8 +1502,7 @@ public class ElbAsyncClient {
      *
      * 后端服务器详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMemberRequest 请求对象
      * @return AsyncInvoker<ShowMemberRequest, ShowMemberResponse>
@@ -1614,8 +1516,7 @@ public class ElbAsyncClient {
      *
      * 后端服务器组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPoolRequest 请求对象
      * @return CompletableFuture<ShowPoolResponse>
@@ -1629,8 +1530,7 @@ public class ElbAsyncClient {
      *
      * 后端服务器组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPoolRequest 请求对象
      * @return AsyncInvoker<ShowPoolRequest, ShowPoolResponse>
@@ -1644,8 +1544,7 @@ public class ElbAsyncClient {
      *
      * 查询指定项目中负载均衡相关的各类资源的当前配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotaRequest 请求对象
      * @return CompletableFuture<ShowQuotaResponse>
@@ -1659,8 +1558,7 @@ public class ElbAsyncClient {
      *
      * 查询指定项目中负载均衡相关的各类资源的当前配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotaRequest 请求对象
      * @return AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse>
@@ -1674,8 +1572,7 @@ public class ElbAsyncClient {
      *
      * 查询自定义安全策略详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityPolicyRequest 请求对象
      * @return CompletableFuture<ShowSecurityPolicyResponse>
@@ -1689,8 +1586,7 @@ public class ElbAsyncClient {
      *
      * 查询自定义安全策略详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityPolicyRequest 请求对象
      * @return AsyncInvoker<ShowSecurityPolicyRequest, ShowSecurityPolicyResponse>
@@ -1706,8 +1602,7 @@ public class ElbAsyncClient {
      *
      * 更新证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCertificateRequest 请求对象
      * @return CompletableFuture<UpdateCertificateResponse>
@@ -1721,8 +1616,7 @@ public class ElbAsyncClient {
      *
      * 更新证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCertificateRequest 请求对象
      * @return AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>
@@ -1738,8 +1632,7 @@ public class ElbAsyncClient {
      *
      * 更新健康检查。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHealthMonitorRequest 请求对象
      * @return CompletableFuture<UpdateHealthMonitorResponse>
@@ -1753,8 +1646,7 @@ public class ElbAsyncClient {
      *
      * 更新健康检查。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHealthMonitorRequest 请求对象
      * @return AsyncInvoker<UpdateHealthMonitorRequest, UpdateHealthMonitorResponse>
@@ -1770,8 +1662,7 @@ public class ElbAsyncClient {
      *
      * 更新七层转发策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateL7PolicyRequest 请求对象
      * @return CompletableFuture<UpdateL7PolicyResponse>
@@ -1785,8 +1676,7 @@ public class ElbAsyncClient {
      *
      * 更新七层转发策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateL7PolicyRequest 请求对象
      * @return AsyncInvoker<UpdateL7PolicyRequest, UpdateL7PolicyResponse>
@@ -1802,8 +1692,7 @@ public class ElbAsyncClient {
      *
      * 更新七层转发规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateL7RuleRequest 请求对象
      * @return CompletableFuture<UpdateL7RuleResponse>
@@ -1817,8 +1706,7 @@ public class ElbAsyncClient {
      *
      * 更新七层转发规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateL7RuleRequest 请求对象
      * @return AsyncInvoker<UpdateL7RuleRequest, UpdateL7RuleResponse>
@@ -1833,8 +1721,7 @@ public class ElbAsyncClient {
      *
      * 更新监听器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateListenerRequest 请求对象
      * @return CompletableFuture<UpdateListenerResponse>
@@ -1848,8 +1735,7 @@ public class ElbAsyncClient {
      *
      * 更新监听器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateListenerRequest 请求对象
      * @return AsyncInvoker<UpdateListenerRequest, UpdateListenerResponse>
@@ -1865,8 +1751,7 @@ public class ElbAsyncClient {
      *
      * 更新负载均衡器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLoadBalancerRequest 请求对象
      * @return CompletableFuture<UpdateLoadBalancerResponse>
@@ -1880,8 +1765,7 @@ public class ElbAsyncClient {
      *
      * 更新负载均衡器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLoadBalancerRequest 请求对象
      * @return AsyncInvoker<UpdateLoadBalancerRequest, UpdateLoadBalancerResponse>
@@ -1897,8 +1781,7 @@ public class ElbAsyncClient {
      *
      * 更新云日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLogtankRequest 请求对象
      * @return CompletableFuture<UpdateLogtankResponse>
@@ -1912,8 +1795,7 @@ public class ElbAsyncClient {
      *
      * 更新云日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLogtankRequest 请求对象
      * @return AsyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse>
@@ -1928,8 +1810,7 @@ public class ElbAsyncClient {
      *
      * 更新后端服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMemberRequest 请求对象
      * @return CompletableFuture<UpdateMemberResponse>
@@ -1943,8 +1824,7 @@ public class ElbAsyncClient {
      *
      * 更新后端服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMemberRequest 请求对象
      * @return AsyncInvoker<UpdateMemberRequest, UpdateMemberResponse>
@@ -1959,8 +1839,7 @@ public class ElbAsyncClient {
      *
      * 更新后端服务器组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePoolRequest 请求对象
      * @return CompletableFuture<UpdatePoolResponse>
@@ -1974,8 +1853,7 @@ public class ElbAsyncClient {
      *
      * 更新后端服务器组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePoolRequest 请求对象
      * @return AsyncInvoker<UpdatePoolRequest, UpdatePoolResponse>
@@ -1989,8 +1867,7 @@ public class ElbAsyncClient {
      *
      * 更新自定义安全策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSecurityPolicyRequest 请求对象
      * @return CompletableFuture<UpdateSecurityPolicyResponse>
@@ -2005,8 +1882,7 @@ public class ElbAsyncClient {
      *
      * 更新自定义安全策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSecurityPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse>
@@ -2022,8 +1898,7 @@ public class ElbAsyncClient {
      *
      * 返回ELB当前所有可用的API版本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return CompletableFuture<ListApiVersionsResponse>
@@ -2037,8 +1912,7 @@ public class ElbAsyncClient {
      *
      * 返回ELB当前所有可用的API版本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
@@ -2054,8 +1928,7 @@ public class ElbAsyncClient {
      *
      * 批量删除IP地址组的IP列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteIpListRequest 请求对象
      * @return CompletableFuture<BatchDeleteIpListResponse>
@@ -2069,8 +1942,7 @@ public class ElbAsyncClient {
      *
      * 批量删除IP地址组的IP列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteIpListRequest 请求对象
      * @return AsyncInvoker<BatchDeleteIpListRequest, BatchDeleteIpListResponse>
@@ -2099,8 +1971,7 @@ public class ElbAsyncClient {
      * - 计算出来的预占IP数大于等于最终实际占用的IP数。
      * - 总占用IP数量，即整个LB所占用的IP数量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountPreoccupyIpNumRequest 请求对象
      * @return CompletableFuture<CountPreoccupyIpNumResponse>
@@ -2127,8 +1998,7 @@ public class ElbAsyncClient {
      * - 计算出来的预占IP数大于等于最终实际占用的IP数。
      * - 总占用IP数量，即整个LB所占用的IP数量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountPreoccupyIpNumRequest 请求对象
      * @return AsyncInvoker<CountPreoccupyIpNumRequest, CountPreoccupyIpNumResponse>
@@ -2146,8 +2016,7 @@ public class ElbAsyncClient {
      * 
      * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateIpGroupRequest 请求对象
      * @return CompletableFuture<CreateIpGroupResponse>
@@ -2163,8 +2032,7 @@ public class ElbAsyncClient {
      * 
      * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateIpGroupRequest 请求对象
      * @return AsyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse>
@@ -2179,8 +2047,7 @@ public class ElbAsyncClient {
      *
      * 删除ip地址组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIpGroupRequest 请求对象
      * @return CompletableFuture<DeleteIpGroupResponse>
@@ -2194,8 +2061,7 @@ public class ElbAsyncClient {
      *
      * 删除ip地址组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIpGroupRequest 请求对象
      * @return AsyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse>
@@ -2210,8 +2076,7 @@ public class ElbAsyncClient {
      *
      * 查询IP地址组列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIpGroupsRequest 请求对象
      * @return CompletableFuture<ListIpGroupsResponse>
@@ -2225,8 +2090,7 @@ public class ElbAsyncClient {
      *
      * 查询IP地址组列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIpGroupsRequest 请求对象
      * @return AsyncInvoker<ListIpGroupsRequest, ListIpGroupsResponse>
@@ -2241,8 +2105,7 @@ public class ElbAsyncClient {
      *
      * 获取IP地址组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIpGroupRequest 请求对象
      * @return CompletableFuture<ShowIpGroupResponse>
@@ -2256,8 +2119,7 @@ public class ElbAsyncClient {
      *
      * 获取IP地址组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIpGroupRequest 请求对象
      * @return AsyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse>
@@ -2274,8 +2136,7 @@ public class ElbAsyncClient {
      * 
      * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIpGroupRequest 请求对象
      * @return CompletableFuture<UpdateIpGroupResponse>
@@ -2292,8 +2153,7 @@ public class ElbAsyncClient {
      * 
      * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIpGroupRequest 请求对象
      * @return AsyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse>
@@ -2308,8 +2168,7 @@ public class ElbAsyncClient {
      *
      * 更新IP地址组的IP列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIpListRequest 请求对象
      * @return CompletableFuture<UpdateIpListResponse>
@@ -2323,8 +2182,7 @@ public class ElbAsyncClient {
      *
      * 更新IP地址组的IP列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIpListRequest 请求对象
      * @return AsyncInvoker<UpdateIpListRequest, UpdateIpListResponse>

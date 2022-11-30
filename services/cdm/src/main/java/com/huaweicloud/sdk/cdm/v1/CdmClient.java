@@ -22,8 +22,7 @@ public class CdmClient {
      *
      * 随机集群创建作业并执行接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAndStartRandomClusterJobRequest 请求对象
      * @return CreateAndStartRandomClusterJobResponse
@@ -38,8 +37,7 @@ public class CdmClient {
      *
      * 随机集群创建作业并执行接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAndStartRandomClusterJobRequest 请求对象
      * @return SyncInvoker<CreateAndStartRandomClusterJobRequest, CreateAndStartRandomClusterJobResponse>
@@ -55,8 +53,7 @@ public class CdmClient {
      *
      * 创建集群接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClusterRequest 请求对象
      * @return CreateClusterResponse
@@ -70,8 +67,7 @@ public class CdmClient {
      *
      * 创建集群接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClusterRequest 请求对象
      * @return SyncInvoker<CreateClusterRequest, CreateClusterResponse>
@@ -85,8 +81,7 @@ public class CdmClient {
      *
      * 指定集群创建作业接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateJobRequest 请求对象
      * @return CreateJobResponse
@@ -100,8 +95,7 @@ public class CdmClient {
      *
      * 指定集群创建作业接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateJobRequest 请求对象
      * @return SyncInvoker<CreateJobRequest, CreateJobResponse>
@@ -115,8 +109,7 @@ public class CdmClient {
      *
      * 创建连接接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLinkRequest 请求对象
      * @return CreateLinkResponse
@@ -130,8 +123,7 @@ public class CdmClient {
      *
      * 创建连接接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLinkRequest 请求对象
      * @return SyncInvoker<CreateLinkRequest, CreateLinkResponse>
@@ -145,8 +137,7 @@ public class CdmClient {
      *
      * 删除集群接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteClusterRequest 请求对象
      * @return DeleteClusterResponse
@@ -160,8 +151,7 @@ public class CdmClient {
      *
      * 删除集群接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteClusterRequest 请求对象
      * @return SyncInvoker<DeleteClusterRequest, DeleteClusterResponse>
@@ -175,8 +165,7 @@ public class CdmClient {
      *
      * 删除作业接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteJobRequest 请求对象
      * @return DeleteJobResponse
@@ -190,8 +179,7 @@ public class CdmClient {
      *
      * 删除作业接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteJobRequest 请求对象
      * @return SyncInvoker<DeleteJobRequest, DeleteJobResponse>
@@ -205,8 +193,7 @@ public class CdmClient {
      *
      * 删除连接接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLinkRequest 请求对象
      * @return DeleteLinkResponse
@@ -220,8 +207,7 @@ public class CdmClient {
      *
      * 删除连接接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLinkRequest 请求对象
      * @return SyncInvoker<DeleteLinkRequest, DeleteLinkResponse>
@@ -235,8 +221,7 @@ public class CdmClient {
      *
      * 查询集群列表接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClustersRequest 请求对象
      * @return ListClustersResponse
@@ -250,8 +235,7 @@ public class CdmClient {
      *
      * 查询集群列表接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClustersRequest 请求对象
      * @return SyncInvoker<ListClustersRequest, ListClustersResponse>
@@ -265,8 +249,7 @@ public class CdmClient {
      *
      * 重启集群接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartClusterRequest 请求对象
      * @return RestartClusterResponse
@@ -280,8 +263,7 @@ public class CdmClient {
      *
      * 重启集群接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartClusterRequest 请求对象
      * @return SyncInvoker<RestartClusterRequest, RestartClusterResponse>
@@ -297,8 +279,7 @@ public class CdmClient {
      *
      * 查询集群详情接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClusterDetailRequest 请求对象
      * @return ShowClusterDetailResponse
@@ -312,8 +293,7 @@ public class CdmClient {
      *
      * 查询集群详情接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClusterDetailRequest 请求对象
      * @return SyncInvoker<ShowClusterDetailRequest, ShowClusterDetailResponse>
@@ -329,8 +309,7 @@ public class CdmClient {
      *
      * 查询作业状态接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobStatusRequest 请求对象
      * @return ShowJobStatusResponse
@@ -344,8 +323,7 @@ public class CdmClient {
      *
      * 查询作业状态接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobStatusRequest 请求对象
      * @return SyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse>
@@ -359,8 +337,7 @@ public class CdmClient {
      *
      * 查询作业接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobsRequest 请求对象
      * @return ShowJobsResponse
@@ -374,8 +351,7 @@ public class CdmClient {
      *
      * 查询作业接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobsRequest 请求对象
      * @return SyncInvoker<ShowJobsRequest, ShowJobsResponse>
@@ -389,8 +365,7 @@ public class CdmClient {
      *
      * 查询连接接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLinkRequest 请求对象
      * @return ShowLinkResponse
@@ -404,8 +379,7 @@ public class CdmClient {
      *
      * 查询连接接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLinkRequest 请求对象
      * @return SyncInvoker<ShowLinkRequest, ShowLinkResponse>
@@ -419,8 +393,7 @@ public class CdmClient {
      *
      * 查询作业执行历史接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubmissionsRequest 请求对象
      * @return ShowSubmissionsResponse
@@ -434,8 +407,7 @@ public class CdmClient {
      *
      * 查询作业执行历史接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubmissionsRequest 请求对象
      * @return SyncInvoker<ShowSubmissionsRequest, ShowSubmissionsResponse>
@@ -451,8 +423,7 @@ public class CdmClient {
      *
      * 启动集群接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartClusterRequest 请求对象
      * @return StartClusterResponse
@@ -466,8 +437,7 @@ public class CdmClient {
      *
      * 启动集群接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartClusterRequest 请求对象
      * @return SyncInvoker<StartClusterRequest, StartClusterResponse>
@@ -481,8 +451,7 @@ public class CdmClient {
      *
      * 启动作业接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartJobRequest 请求对象
      * @return StartJobResponse
@@ -496,8 +465,7 @@ public class CdmClient {
      *
      * 启动作业接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartJobRequest 请求对象
      * @return SyncInvoker<StartJobRequest, StartJobResponse>
@@ -511,8 +479,7 @@ public class CdmClient {
      *
      * 停止集群接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopClusterRequest 请求对象
      * @return StopClusterResponse
@@ -526,8 +493,7 @@ public class CdmClient {
      *
      * 停止集群接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopClusterRequest 请求对象
      * @return SyncInvoker<StopClusterRequest, StopClusterResponse>
@@ -541,8 +507,7 @@ public class CdmClient {
      *
      * 停止作业接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopJobRequest 请求对象
      * @return StopJobResponse
@@ -556,8 +521,7 @@ public class CdmClient {
      *
      * 停止作业接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopJobRequest 请求对象
      * @return SyncInvoker<StopJobRequest, StopJobResponse>
@@ -571,8 +535,7 @@ public class CdmClient {
      *
      * 修改作业接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateJobRequest 请求对象
      * @return UpdateJobResponse
@@ -586,8 +549,7 @@ public class CdmClient {
      *
      * 修改作业接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateJobRequest 请求对象
      * @return SyncInvoker<UpdateJobRequest, UpdateJobResponse>
@@ -601,8 +563,7 @@ public class CdmClient {
      *
      * 修改连接接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLinkRequest 请求对象
      * @return UpdateLinkResponse
@@ -616,8 +577,7 @@ public class CdmClient {
      *
      * 修改连接接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLinkRequest 请求对象
      * @return SyncInvoker<UpdateLinkRequest, UpdateLinkResponse>

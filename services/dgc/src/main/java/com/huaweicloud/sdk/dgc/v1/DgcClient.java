@@ -21,8 +21,7 @@ public class DgcClient {
      * 停止脚本实例的执行
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelScriptRequest 请求对象
      * @return CancelScriptResponse
@@ -35,8 +34,7 @@ public class DgcClient {
      * 停止脚本实例的执行
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelScriptRequest 请求对象
      * @return SyncInvoker<CancelScriptRequest, CancelScriptResponse>
@@ -49,8 +47,7 @@ public class DgcClient {
      * 创建连接
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConnectionRequest 请求对象
      * @return CreateConnectionResponse
@@ -63,8 +60,7 @@ public class DgcClient {
      * 创建连接
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConnectionRequest 请求对象
      * @return SyncInvoker<CreateConnectionRequest, CreateConnectionResponse>
@@ -79,8 +75,7 @@ public class DgcClient {
      * 创建作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateJobRequest 请求对象
      * @return CreateJobResponse
@@ -93,8 +88,7 @@ public class DgcClient {
      * 创建作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateJobRequest 请求对象
      * @return SyncInvoker<CreateJobRequest, CreateJobResponse>
@@ -107,8 +101,7 @@ public class DgcClient {
      * 创建资源
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResourceRequest 请求对象
      * @return CreateResourceResponse
@@ -121,8 +114,7 @@ public class DgcClient {
      * 创建资源
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResourceRequest 请求对象
      * @return SyncInvoker<CreateResourceRequest, CreateResourceResponse>
@@ -137,8 +129,7 @@ public class DgcClient {
      * 创建脚本
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateScriptRequest 请求对象
      * @return CreateScriptResponse
@@ -151,8 +142,7 @@ public class DgcClient {
      * 创建脚本
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateScriptRequest 请求对象
      * @return SyncInvoker<CreateScriptRequest, CreateScriptResponse>
@@ -165,8 +155,7 @@ public class DgcClient {
      * 删除连接
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteConnctionRequest 请求对象
      * @return DeleteConnctionResponse
@@ -179,8 +168,7 @@ public class DgcClient {
      * 删除连接
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteConnctionRequest 请求对象
      * @return SyncInvoker<DeleteConnctionRequest, DeleteConnctionResponse>
@@ -195,8 +183,7 @@ public class DgcClient {
      * 删除作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteJobRequest 请求对象
      * @return DeleteJobResponse
@@ -209,8 +196,7 @@ public class DgcClient {
      * 删除作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteJobRequest 请求对象
      * @return SyncInvoker<DeleteJobRequest, DeleteJobResponse>
@@ -223,8 +209,7 @@ public class DgcClient {
      * 删除资源
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceRequest 请求对象
      * @return DeleteResourceResponse
@@ -237,8 +222,7 @@ public class DgcClient {
      * 删除资源
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceRequest 请求对象
      * @return SyncInvoker<DeleteResourceRequest, DeleteResourceResponse>
@@ -253,8 +237,7 @@ public class DgcClient {
      * 删除脚本
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteScriptRequest 请求对象
      * @return DeleteScriptResponse
@@ -267,8 +250,7 @@ public class DgcClient {
      * 删除脚本
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteScriptRequest 请求对象
      * @return SyncInvoker<DeleteScriptRequest, DeleteScriptResponse>
@@ -281,8 +263,7 @@ public class DgcClient {
      * 执行脚本
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteScriptRequest 请求对象
      * @return ExecuteScriptResponse
@@ -295,8 +276,7 @@ public class DgcClient {
      * 执行脚本
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteScriptRequest 请求对象
      * @return SyncInvoker<ExecuteScriptRequest, ExecuteScriptResponse>
@@ -309,8 +289,7 @@ public class DgcClient {
      * 导出连接
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportConnectionsRequest 请求对象
      * @return ExportConnectionsResponse
@@ -323,8 +302,7 @@ public class DgcClient {
      * 导出连接
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportConnectionsRequest 请求对象
      * @return SyncInvoker<ExportConnectionsRequest, ExportConnectionsResponse>
@@ -339,8 +317,7 @@ public class DgcClient {
      * 导出作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportJobRequest 请求对象
      * @return ExportJobResponse
@@ -353,8 +330,7 @@ public class DgcClient {
      * 导出作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportJobRequest 请求对象
      * @return SyncInvoker<ExportJobRequest, ExportJobResponse>
@@ -367,8 +343,7 @@ public class DgcClient {
      * 批量导出作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportJobListRequest 请求对象
      * @return ExportJobListResponse
@@ -381,8 +356,7 @@ public class DgcClient {
      * 批量导出作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportJobListRequest 请求对象
      * @return SyncInvoker<ExportJobListRequest, ExportJobListResponse>
@@ -395,8 +369,7 @@ public class DgcClient {
      * 导入连接
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportConnectionsRequest 请求对象
      * @return ImportConnectionsResponse
@@ -409,8 +382,7 @@ public class DgcClient {
      * 导入连接
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportConnectionsRequest 请求对象
      * @return SyncInvoker<ImportConnectionsRequest, ImportConnectionsResponse>
@@ -425,8 +397,7 @@ public class DgcClient {
      * 导入作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportJobRequest 请求对象
      * @return ImportJobResponse
@@ -439,8 +410,7 @@ public class DgcClient {
      * 导入作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportJobRequest 请求对象
      * @return SyncInvoker<ImportJobRequest, ImportJobResponse>
@@ -453,8 +423,7 @@ public class DgcClient {
      * 查询连接列表
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConnectionsRequest 请求对象
      * @return ListConnectionsResponse
@@ -467,8 +436,7 @@ public class DgcClient {
      * 查询连接列表
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConnectionsRequest 请求对象
      * @return SyncInvoker<ListConnectionsRequest, ListConnectionsResponse>
@@ -483,8 +451,7 @@ public class DgcClient {
      * 查询作业实例列表
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListJobInstancesRequest 请求对象
      * @return ListJobInstancesResponse
@@ -497,8 +464,7 @@ public class DgcClient {
      * 查询作业实例列表
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListJobInstancesRequest 请求对象
      * @return SyncInvoker<ListJobInstancesRequest, ListJobInstancesResponse>
@@ -513,8 +479,7 @@ public class DgcClient {
      * 查询作业列表
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListJobsRequest 请求对象
      * @return ListJobsResponse
@@ -527,8 +492,7 @@ public class DgcClient {
      * 查询作业列表
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListJobsRequest 请求对象
      * @return SyncInvoker<ListJobsRequest, ListJobsResponse>
@@ -563,8 +527,7 @@ public class DgcClient {
      * 查询脚本实例执行结果
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListScriptResultsRequest 请求对象
      * @return ListScriptResultsResponse
@@ -577,8 +540,7 @@ public class DgcClient {
      * 查询脚本实例执行结果
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListScriptResultsRequest 请求对象
      * @return SyncInvoker<ListScriptResultsRequest, ListScriptResultsResponse>
@@ -593,8 +555,7 @@ public class DgcClient {
      * 查询脚本列表
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListScriptsRequest 请求对象
      * @return ListScriptsResponse
@@ -607,8 +568,7 @@ public class DgcClient {
      * 查询脚本列表
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListScriptsRequest 请求对象
      * @return SyncInvoker<ListScriptsRequest, ListScriptsResponse>
@@ -621,8 +581,7 @@ public class DgcClient {
      * 查询系统任务详情
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSystemTasksRequest 请求对象
      * @return ListSystemTasksResponse
@@ -635,8 +594,7 @@ public class DgcClient {
      * 查询系统任务详情
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSystemTasksRequest 请求对象
      * @return SyncInvoker<ListSystemTasksRequest, ListSystemTasksResponse>
@@ -651,8 +609,7 @@ public class DgcClient {
      * 重跑作业实例
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreJobInstanceRequest 请求对象
      * @return RestoreJobInstanceResponse
@@ -665,8 +622,7 @@ public class DgcClient {
      * 重跑作业实例
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreJobInstanceRequest 请求对象
      * @return SyncInvoker<RestoreJobInstanceRequest, RestoreJobInstanceResponse>
@@ -681,8 +637,7 @@ public class DgcClient {
      * 单次执行作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunOnceRequest 请求对象
      * @return RunOnceResponse
@@ -695,8 +650,7 @@ public class DgcClient {
      * 单次执行作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunOnceRequest 请求对象
      * @return SyncInvoker<RunOnceRequest, RunOnceResponse>
@@ -709,8 +663,7 @@ public class DgcClient {
      * 查询连接详情
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowConnectionRequest 请求对象
      * @return ShowConnectionResponse
@@ -723,8 +676,7 @@ public class DgcClient {
      * 查询连接详情
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowConnectionRequest 请求对象
      * @return SyncInvoker<ShowConnectionRequest, ShowConnectionResponse>
@@ -739,8 +691,7 @@ public class DgcClient {
      * 检查导入作业文件中的作业和脚本
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFileInfoRequest 请求对象
      * @return ShowFileInfoResponse
@@ -753,8 +704,7 @@ public class DgcClient {
      * 检查导入作业文件中的作业和脚本
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFileInfoRequest 请求对象
      * @return SyncInvoker<ShowFileInfoRequest, ShowFileInfoResponse>
@@ -767,8 +717,7 @@ public class DgcClient {
      * 查询作业详情
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return ShowJobResponse
@@ -781,8 +730,7 @@ public class DgcClient {
      * 查询作业详情
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return SyncInvoker<ShowJobRequest, ShowJobResponse>
@@ -795,8 +743,7 @@ public class DgcClient {
      * 查询作业实例详情
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobInstanceRequest 请求对象
      * @return ShowJobInstanceResponse
@@ -809,8 +756,7 @@ public class DgcClient {
      * 查询作业实例详情
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobInstanceRequest 请求对象
      * @return SyncInvoker<ShowJobInstanceRequest, ShowJobInstanceResponse>
@@ -825,8 +771,7 @@ public class DgcClient {
      * 查询实时作业的运行状态
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobStatusRequest 请求对象
      * @return ShowJobStatusResponse
@@ -839,8 +784,7 @@ public class DgcClient {
      * 查询实时作业的运行状态
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobStatusRequest 请求对象
      * @return SyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse>
@@ -853,8 +797,7 @@ public class DgcClient {
      * 查询资源详情
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceRequest 请求对象
      * @return ShowResourceResponse
@@ -867,8 +810,7 @@ public class DgcClient {
      * 查询资源详情
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceRequest 请求对象
      * @return SyncInvoker<ShowResourceRequest, ShowResourceResponse>
@@ -881,8 +823,7 @@ public class DgcClient {
      * 查询脚本信息
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowScriptRequest 请求对象
      * @return ShowScriptResponse
@@ -895,8 +836,7 @@ public class DgcClient {
      * 查询脚本信息
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowScriptRequest 请求对象
      * @return SyncInvoker<ShowScriptRequest, ShowScriptResponse>
@@ -909,8 +849,7 @@ public class DgcClient {
      * 启动作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartJobRequest 请求对象
      * @return StartJobResponse
@@ -923,8 +862,7 @@ public class DgcClient {
      * 启动作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartJobRequest 请求对象
      * @return SyncInvoker<StartJobRequest, StartJobResponse>
@@ -937,8 +875,7 @@ public class DgcClient {
      * 停止作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopJobRequest 请求对象
      * @return StopJobResponse
@@ -951,8 +888,7 @@ public class DgcClient {
      * 停止作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopJobRequest 请求对象
      * @return SyncInvoker<StopJobRequest, StopJobResponse>
@@ -965,8 +901,7 @@ public class DgcClient {
      * 停止作业实例
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopJobInstanceRequest 请求对象
      * @return StopJobInstanceResponse
@@ -979,8 +914,7 @@ public class DgcClient {
      * 停止作业实例
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopJobInstanceRequest 请求对象
      * @return SyncInvoker<StopJobInstanceRequest, StopJobInstanceResponse>
@@ -995,8 +929,7 @@ public class DgcClient {
      * 修改连接
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateConnectionRequest 请求对象
      * @return UpdateConnectionResponse
@@ -1009,8 +942,7 @@ public class DgcClient {
      * 修改连接
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateConnectionRequest 请求对象
      * @return SyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>
@@ -1025,8 +957,7 @@ public class DgcClient {
      * 修改作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateJobRequest 请求对象
      * @return UpdateJobResponse
@@ -1039,8 +970,7 @@ public class DgcClient {
      * 修改作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateJobRequest 请求对象
      * @return SyncInvoker<UpdateJobRequest, UpdateJobResponse>
@@ -1053,8 +983,7 @@ public class DgcClient {
      * 修改资源
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResourceRequest 请求对象
      * @return UpdateResourceResponse
@@ -1067,8 +996,7 @@ public class DgcClient {
      * 修改资源
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResourceRequest 请求对象
      * @return SyncInvoker<UpdateResourceRequest, UpdateResourceResponse>
@@ -1083,8 +1011,7 @@ public class DgcClient {
      * 修改脚本内容
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateScriptRequest 请求对象
      * @return UpdateScriptResponse
@@ -1097,8 +1024,7 @@ public class DgcClient {
      * 修改脚本内容
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateScriptRequest 请求对象
      * @return SyncInvoker<UpdateScriptRequest, UpdateScriptResponse>

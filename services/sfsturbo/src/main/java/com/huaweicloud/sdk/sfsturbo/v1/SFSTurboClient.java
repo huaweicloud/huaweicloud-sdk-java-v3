@@ -26,8 +26,7 @@ public class SFSTurboClient {
      * 一个共享上的多个标签的key不允许重复。
      * 此接口为幂等接口：如果要添加的key在共享上已存在，则覆盖更新标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddSharedTagsRequest 请求对象
      * @return BatchAddSharedTagsResponse
@@ -45,8 +44,7 @@ public class SFSTurboClient {
      * 一个共享上的多个标签的key不允许重复。
      * 此接口为幂等接口：如果要添加的key在共享上已存在，则覆盖更新标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddSharedTagsRequest 请求对象
      * @return SyncInvoker<BatchAddSharedTagsRequest, BatchAddSharedTagsResponse>
@@ -62,8 +60,7 @@ public class SFSTurboClient {
      *
      * 修改SFS Turbo文件系统绑定的安全组。修改安全组为异步任务，可以通过“查询单个文件系统”返回的子状态字段“sub_status”来判断是否修改安全组状态，子状态为“232”即为修改安全组成功。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeSecurityGroupRequest 请求对象
      * @return ChangeSecurityGroupResponse
@@ -77,8 +74,7 @@ public class SFSTurboClient {
      *
      * 修改SFS Turbo文件系统绑定的安全组。修改安全组为异步任务，可以通过“查询单个文件系统”返回的子状态字段“sub_status”来判断是否修改安全组状态，子状态为“232”即为修改安全组成功。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeSecurityGroupRequest 请求对象
      * @return SyncInvoker<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse>
@@ -94,8 +90,7 @@ public class SFSTurboClient {
      *
      * 修改文件系统名称
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeShareNameRequest 请求对象
      * @return ChangeShareNameResponse
@@ -109,8 +104,7 @@ public class SFSTurboClient {
      *
      * 修改文件系统名称
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeShareNameRequest 请求对象
      * @return SyncInvoker<ChangeShareNameRequest, ChangeShareNameResponse>
@@ -126,8 +120,7 @@ public class SFSTurboClient {
      *
      * 创建文件系统。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateShareRequest 请求对象
      * @return CreateShareResponse
@@ -141,8 +134,7 @@ public class SFSTurboClient {
      *
      * 创建文件系统。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateShareRequest 请求对象
      * @return SyncInvoker<CreateShareRequest, CreateShareResponse>
@@ -159,8 +151,7 @@ public class SFSTurboClient {
      * 一个共享上的多个标签的key不允许重复。
      * 此接口为幂等接口：如果要添加的key在共享上已存在，则覆盖更新标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSharedTagRequest 请求对象
      * @return CreateSharedTagResponse
@@ -177,8 +168,7 @@ public class SFSTurboClient {
      * 一个共享上的多个标签的key不允许重复。
      * 此接口为幂等接口：如果要添加的key在共享上已存在，则覆盖更新标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSharedTagRequest 请求对象
      * @return SyncInvoker<CreateSharedTagRequest, CreateSharedTagResponse>
@@ -194,8 +184,7 @@ public class SFSTurboClient {
      *
      * 删除文件系统。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteShareRequest 请求对象
      * @return DeleteShareResponse
@@ -209,8 +198,7 @@ public class SFSTurboClient {
      *
      * 删除文件系统。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteShareRequest 请求对象
      * @return SyncInvoker<DeleteShareRequest, DeleteShareResponse>
@@ -224,8 +212,7 @@ public class SFSTurboClient {
      *
      * 指定共享删除一个标签。当共享中不存在指定要删除的key时，接口调用将会返回404错误。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSharedTagRequest 请求对象
      * @return DeleteSharedTagResponse
@@ -239,8 +226,7 @@ public class SFSTurboClient {
      *
      * 指定共享删除一个标签。当共享中不存在指定要删除的key时，接口调用将会返回404错误。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSharedTagRequest 请求对象
      * @return SyncInvoker<DeleteSharedTagRequest, DeleteSharedTagResponse>
@@ -256,8 +242,7 @@ public class SFSTurboClient {
      *
      * 扩容文件系统。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExpandShareRequest 请求对象
      * @return ExpandShareResponse
@@ -271,8 +256,7 @@ public class SFSTurboClient {
      *
      * 扩容文件系统。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExpandShareRequest 请求对象
      * @return SyncInvoker<ExpandShareRequest, ExpandShareResponse>
@@ -286,8 +270,7 @@ public class SFSTurboClient {
      *
      * 查询租户所有共享的标签集合。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSharedTagsRequest 请求对象
      * @return ListSharedTagsResponse
@@ -301,8 +284,7 @@ public class SFSTurboClient {
      *
      * 查询租户所有共享的标签集合。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSharedTagsRequest 请求对象
      * @return SyncInvoker<ListSharedTagsRequest, ListSharedTagsResponse>
@@ -318,8 +300,7 @@ public class SFSTurboClient {
      *
      * 获取文件系统列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSharesRequest 请求对象
      * @return ListSharesResponse
@@ -333,8 +314,7 @@ public class SFSTurboClient {
      *
      * 获取文件系统列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSharesRequest 请求对象
      * @return SyncInvoker<ListSharesRequest, ListSharesResponse>
@@ -348,8 +328,7 @@ public class SFSTurboClient {
      *
      * 查询SFS Turbo文件系统详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowShareRequest 请求对象
      * @return ShowShareResponse
@@ -363,8 +342,7 @@ public class SFSTurboClient {
      *
      * 查询SFS Turbo文件系统详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowShareRequest 请求对象
      * @return SyncInvoker<ShowShareRequest, ShowShareResponse>
@@ -378,8 +356,7 @@ public class SFSTurboClient {
      *
      * 查询指定共享的所有标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSharedTagsRequest 请求对象
      * @return ShowSharedTagsResponse
@@ -393,8 +370,7 @@ public class SFSTurboClient {
      *
      * 查询指定共享的所有标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSharedTagsRequest 请求对象
      * @return SyncInvoker<ShowSharedTagsRequest, ShowSharedTagsResponse>

@@ -24,8 +24,7 @@ public class VssAsyncClient {
      *
      * 认证租户的域名资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AuthorizeDomainsRequest 请求对象
      * @return CompletableFuture<AuthorizeDomainsResponse>
@@ -39,8 +38,7 @@ public class VssAsyncClient {
      *
      * 认证租户的域名资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AuthorizeDomainsRequest 请求对象
      * @return AsyncInvoker<AuthorizeDomainsRequest, AuthorizeDomainsResponse>
@@ -56,8 +54,7 @@ public class VssAsyncClient {
      *
      * 创建租户的域名资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDomainsRequest 请求对象
      * @return CompletableFuture<CreateDomainsResponse>
@@ -71,8 +68,7 @@ public class VssAsyncClient {
      *
      * 创建租户的域名资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDomainsRequest 请求对象
      * @return AsyncInvoker<CreateDomainsRequest, CreateDomainsResponse>
@@ -87,8 +83,7 @@ public class VssAsyncClient {
      *
      * 删除租户的域名资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDomainsRequest 请求对象
      * @return CompletableFuture<DeleteDomainsResponse>
@@ -102,8 +97,7 @@ public class VssAsyncClient {
      *
      * 删除租户的域名资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDomainsRequest 请求对象
      * @return AsyncInvoker<DeleteDomainsRequest, DeleteDomainsResponse>
@@ -118,8 +112,7 @@ public class VssAsyncClient {
      *
      * 获取租户的所有域名资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDomainsRequest 请求对象
      * @return CompletableFuture<ListDomainsResponse>
@@ -133,8 +126,7 @@ public class VssAsyncClient {
      *
      * 获取租户的所有域名资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDomainsRequest 请求对象
      * @return AsyncInvoker<ListDomainsRequest, ListDomainsResponse>
@@ -148,8 +140,7 @@ public class VssAsyncClient {
      *
      * 获取域名登录配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainSettingsRequest 请求对象
      * @return CompletableFuture<ShowDomainSettingsResponse>
@@ -163,8 +154,7 @@ public class VssAsyncClient {
      *
      * 获取域名登录配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainSettingsRequest 请求对象
      * @return AsyncInvoker<ShowDomainSettingsRequest, ShowDomainSettingsResponse>
@@ -180,8 +170,7 @@ public class VssAsyncClient {
      *
      * 更新域名登录配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainSettingsRequest 请求对象
      * @return CompletableFuture<UpdateDomainSettingsResponse>
@@ -196,8 +185,7 @@ public class VssAsyncClient {
      *
      * 更新域名登录配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainSettingsRequest 请求对象
      * @return AsyncInvoker<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse>
@@ -213,8 +201,7 @@ public class VssAsyncClient {
      *
      * 下载域名扫描任务PDF报告
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadTaskReportRequest 请求对象
      * @return CompletableFuture<DownloadTaskReportResponse>
@@ -228,8 +215,7 @@ public class VssAsyncClient {
      *
      * 下载域名扫描任务PDF报告
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadTaskReportRequest 请求对象
      * @return AsyncInvoker<DownloadTaskReportRequest, DownloadTaskReportResponse>
@@ -245,8 +231,7 @@ public class VssAsyncClient {
      *
      * 生成域名扫描PDF报告
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteGenerateReportRequest 请求对象
      * @return CompletableFuture<ExecuteGenerateReportResponse>
@@ -261,8 +246,7 @@ public class VssAsyncClient {
      *
      * 生成域名扫描PDF报告
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteGenerateReportRequest 请求对象
      * @return AsyncInvoker<ExecuteGenerateReportRequest, ExecuteGenerateReportResponse>
@@ -278,8 +262,7 @@ public class VssAsyncClient {
      *
      * 获取域名业务风险扫描结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBusinessRisksRequest 请求对象
      * @return CompletableFuture<ListBusinessRisksResponse>
@@ -293,8 +276,7 @@ public class VssAsyncClient {
      *
      * 获取域名业务风险扫描结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBusinessRisksRequest 请求对象
      * @return AsyncInvoker<ListBusinessRisksRequest, ListBusinessRisksResponse>
@@ -310,8 +292,7 @@ public class VssAsyncClient {
      *
      * 获取域名端口扫描结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPortResultsRequest 请求对象
      * @return CompletableFuture<ListPortResultsResponse>
@@ -325,8 +306,7 @@ public class VssAsyncClient {
      *
      * 获取域名端口扫描结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPortResultsRequest 请求对象
      * @return AsyncInvoker<ListPortResultsRequest, ListPortResultsResponse>
@@ -342,8 +322,7 @@ public class VssAsyncClient {
      *
      * 获取域名扫描PDF报告生成状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowReportStatusRequest 请求对象
      * @return CompletableFuture<ShowReportStatusResponse>
@@ -357,8 +336,7 @@ public class VssAsyncClient {
      *
      * 获取域名扫描PDF报告生成状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowReportStatusRequest 请求对象
      * @return AsyncInvoker<ShowReportStatusRequest, ShowReportStatusResponse>
@@ -374,8 +352,7 @@ public class VssAsyncClient {
      *
      * 获取域名漏洞扫描结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResultsRequest 请求对象
      * @return CompletableFuture<ShowResultsResponse>
@@ -389,8 +366,7 @@ public class VssAsyncClient {
      *
      * 获取域名漏洞扫描结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResultsRequest 请求对象
      * @return AsyncInvoker<ShowResultsRequest, ShowResultsResponse>
@@ -404,8 +380,7 @@ public class VssAsyncClient {
      *
      * 更新域名扫描漏洞的误报状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFalsePositiveRequest 请求对象
      * @return CompletableFuture<UpdateFalsePositiveResponse>
@@ -419,8 +394,7 @@ public class VssAsyncClient {
      *
      * 更新域名扫描漏洞的误报状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFalsePositiveRequest 请求对象
      * @return AsyncInvoker<UpdateFalsePositiveRequest, UpdateFalsePositiveResponse>
@@ -436,8 +410,7 @@ public class VssAsyncClient {
      *
      * 取消或重启域名漏洞扫描任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelTasksRequest 请求对象
      * @return CompletableFuture<CancelTasksResponse>
@@ -451,8 +424,7 @@ public class VssAsyncClient {
      *
      * 取消或重启域名漏洞扫描任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelTasksRequest 请求对象
      * @return AsyncInvoker<CancelTasksRequest, CancelTasksResponse>
@@ -466,8 +438,7 @@ public class VssAsyncClient {
      *
      * 创建域名漏洞扫描任务并启动
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTasksRequest 请求对象
      * @return CompletableFuture<CreateTasksResponse>
@@ -481,8 +452,7 @@ public class VssAsyncClient {
      *
      * 创建域名漏洞扫描任务并启动
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTasksRequest 请求对象
      * @return AsyncInvoker<CreateTasksRequest, CreateTasksResponse>
@@ -496,8 +466,7 @@ public class VssAsyncClient {
      *
      * 获取域名漏洞扫描的历史扫描任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTaskHistoriesRequest 请求对象
      * @return CompletableFuture<ListTaskHistoriesResponse>
@@ -511,8 +480,7 @@ public class VssAsyncClient {
      *
      * 获取域名漏洞扫描的历史扫描任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTaskHistoriesRequest 请求对象
      * @return AsyncInvoker<ListTaskHistoriesRequest, ListTaskHistoriesResponse>
@@ -528,8 +496,7 @@ public class VssAsyncClient {
      *
      * 获取域名漏洞扫描任务详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTasksRequest 请求对象
      * @return CompletableFuture<ShowTasksResponse>
@@ -543,8 +510,7 @@ public class VssAsyncClient {
      *
      * 获取域名漏洞扫描任务详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTasksRequest 请求对象
      * @return AsyncInvoker<ShowTasksRequest, ShowTasksResponse>

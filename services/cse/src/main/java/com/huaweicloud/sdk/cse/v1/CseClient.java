@@ -22,8 +22,7 @@ public class CseClient {
      *
      * 创建微服务引擎专享版。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEngineRequest 请求对象
      * @return CreateEngineResponse
@@ -37,8 +36,7 @@ public class CseClient {
      *
      * 创建微服务引擎专享版。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEngineRequest 请求对象
      * @return SyncInvoker<CreateEngineRequest, CreateEngineResponse>
@@ -52,8 +50,7 @@ public class CseClient {
      *
      * 删除微服务引擎专享版。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEngineRequest 请求对象
      * @return DeleteEngineResponse
@@ -67,8 +64,7 @@ public class CseClient {
      *
      * 删除微服务引擎专享版。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEngineRequest 请求对象
      * @return SyncInvoker<DeleteEngineRequest, DeleteEngineResponse>
@@ -82,8 +78,7 @@ public class CseClient {
      *
      * 导出kie配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadKieRequest 请求对象
      * @return DownloadKieResponse
@@ -97,8 +92,7 @@ public class CseClient {
      *
      * 导出kie配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadKieRequest 请求对象
      * @return SyncInvoker<DownloadKieRequest, DownloadKieResponse>
@@ -112,8 +106,7 @@ public class CseClient {
      *
      * 查询微服务引擎列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnginesRequest 请求对象
      * @return ListEnginesResponse
@@ -127,8 +120,7 @@ public class CseClient {
      *
      * 查询微服务引擎列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnginesRequest 请求对象
      * @return SyncInvoker<ListEnginesRequest, ListEnginesResponse>
@@ -142,8 +134,7 @@ public class CseClient {
      *
      * 查询微服务引擎专享版的规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
@@ -157,8 +148,7 @@ public class CseClient {
      *
      * 查询微服务引擎专享版的规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
@@ -172,8 +162,7 @@ public class CseClient {
      *
      * 对微服务引擎专享版进行重试
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RetryEngineRequest 请求对象
      * @return RetryEngineResponse
@@ -187,8 +176,7 @@ public class CseClient {
      *
      * 对微服务引擎专享版进行重试
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RetryEngineRequest 请求对象
      * @return SyncInvoker<RetryEngineRequest, RetryEngineResponse>
@@ -202,8 +190,7 @@ public class CseClient {
      *
      * 查询微服务引擎专享版详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEngineRequest 请求对象
      * @return ShowEngineResponse
@@ -217,8 +204,7 @@ public class CseClient {
      *
      * 查询微服务引擎专享版详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEngineRequest 请求对象
      * @return SyncInvoker<ShowEngineRequest, ShowEngineResponse>
@@ -232,8 +218,7 @@ public class CseClient {
      *
      * 查询微服务引擎任务详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEngineJobRequest 请求对象
      * @return ShowEngineJobResponse
@@ -247,8 +232,7 @@ public class CseClient {
      *
      * 查询微服务引擎任务详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEngineJobRequest 请求对象
      * @return SyncInvoker<ShowEngineJobRequest, ShowEngineJobResponse>
@@ -262,8 +246,7 @@ public class CseClient {
      *
      * 升级微服务引擎专享版
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpgradeEngineRequest 请求对象
      * @return UpgradeEngineResponse
@@ -277,8 +260,7 @@ public class CseClient {
      *
      * 升级微服务引擎专享版
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpgradeEngineRequest 请求对象
      * @return SyncInvoker<UpgradeEngineRequest, UpgradeEngineResponse>
@@ -292,8 +274,7 @@ public class CseClient {
      *
      * 导入kie配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadKieRequest 请求对象
      * @return UploadKieResponse
@@ -307,8 +288,7 @@ public class CseClient {
      *
      * 导入kie配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadKieRequest 请求对象
      * @return SyncInvoker<UploadKieRequest, UploadKieResponse>

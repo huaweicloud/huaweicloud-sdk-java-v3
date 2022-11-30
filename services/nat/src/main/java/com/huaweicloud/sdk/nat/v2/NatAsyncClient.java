@@ -24,8 +24,7 @@ public class NatAsyncClient {
      *
      * 批量创建DNAT规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateNatGatewayDnatRulesRequest 请求对象
      * @return CompletableFuture<BatchCreateNatGatewayDnatRulesResponse>
@@ -40,8 +39,7 @@ public class NatAsyncClient {
      *
      * 批量创建DNAT规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateNatGatewayDnatRulesRequest 请求对象
      * @return AsyncInvoker<BatchCreateNatGatewayDnatRulesRequest, BatchCreateNatGatewayDnatRulesResponse>
@@ -57,8 +55,7 @@ public class NatAsyncClient {
      *
      * 创建DNAT规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNatGatewayDnatRuleRequest 请求对象
      * @return CompletableFuture<CreateNatGatewayDnatRuleResponse>
@@ -73,8 +70,7 @@ public class NatAsyncClient {
      *
      * 创建DNAT规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNatGatewayDnatRuleRequest 请求对象
      * @return AsyncInvoker<CreateNatGatewayDnatRuleRequest, CreateNatGatewayDnatRuleResponse>
@@ -90,8 +86,7 @@ public class NatAsyncClient {
      *
      * 删除指定的DNAT规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNatGatewayDnatRuleRequest 请求对象
      * @return CompletableFuture<DeleteNatGatewayDnatRuleResponse>
@@ -106,8 +101,7 @@ public class NatAsyncClient {
      *
      * 删除指定的DNAT规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNatGatewayDnatRuleRequest 请求对象
      * @return AsyncInvoker<DeleteNatGatewayDnatRuleRequest, DeleteNatGatewayDnatRuleResponse>
@@ -123,8 +117,7 @@ public class NatAsyncClient {
      *
      * 查询DNAT规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNatGatewayDnatRulesRequest 请求对象
      * @return CompletableFuture<ListNatGatewayDnatRulesResponse>
@@ -139,8 +132,7 @@ public class NatAsyncClient {
      *
      * 查询DNAT规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNatGatewayDnatRulesRequest 请求对象
      * @return AsyncInvoker<ListNatGatewayDnatRulesRequest, ListNatGatewayDnatRulesResponse>
@@ -156,8 +148,7 @@ public class NatAsyncClient {
      *
      * 查询指定的DNAT规则详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNatGatewayDnatRuleRequest 请求对象
      * @return CompletableFuture<ShowNatGatewayDnatRuleResponse>
@@ -172,8 +163,7 @@ public class NatAsyncClient {
      *
      * 查询指定的DNAT规则详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNatGatewayDnatRuleRequest 请求对象
      * @return AsyncInvoker<ShowNatGatewayDnatRuleRequest, ShowNatGatewayDnatRuleResponse>
@@ -189,8 +179,7 @@ public class NatAsyncClient {
      *
      * 更新指定的DNAT规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNatGatewayDnatRuleRequest 请求对象
      * @return CompletableFuture<UpdateNatGatewayDnatRuleResponse>
@@ -205,8 +194,7 @@ public class NatAsyncClient {
      *
      * 更新指定的DNAT规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNatGatewayDnatRuleRequest 请求对象
      * @return AsyncInvoker<UpdateNatGatewayDnatRuleRequest, UpdateNatGatewayDnatRuleResponse>
@@ -222,8 +210,7 @@ public class NatAsyncClient {
      *
      * 创建公网NAT网关实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNatGatewayRequest 请求对象
      * @return CompletableFuture<CreateNatGatewayResponse>
@@ -237,8 +224,7 @@ public class NatAsyncClient {
      *
      * 创建公网NAT网关实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNatGatewayRequest 请求对象
      * @return AsyncInvoker<CreateNatGatewayRequest, CreateNatGatewayResponse>
@@ -254,8 +240,7 @@ public class NatAsyncClient {
      *
      * 删除公网NAT网关实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNatGatewayRequest 请求对象
      * @return CompletableFuture<DeleteNatGatewayResponse>
@@ -269,8 +254,7 @@ public class NatAsyncClient {
      *
      * 删除公网NAT网关实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNatGatewayRequest 请求对象
      * @return AsyncInvoker<DeleteNatGatewayRequest, DeleteNatGatewayResponse>
@@ -286,8 +270,7 @@ public class NatAsyncClient {
      *
      * 查询公网NAT网关实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNatGatewaysRequest 请求对象
      * @return CompletableFuture<ListNatGatewaysResponse>
@@ -301,8 +284,7 @@ public class NatAsyncClient {
      *
      * 查询公网NAT网关实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNatGatewaysRequest 请求对象
      * @return AsyncInvoker<ListNatGatewaysRequest, ListNatGatewaysResponse>
@@ -318,8 +300,7 @@ public class NatAsyncClient {
      *
      * 查询指定的公网NAT网关实例详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNatGatewayRequest 请求对象
      * @return CompletableFuture<ShowNatGatewayResponse>
@@ -333,8 +314,7 @@ public class NatAsyncClient {
      *
      * 查询指定的公网NAT网关实例详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNatGatewayRequest 请求对象
      * @return AsyncInvoker<ShowNatGatewayRequest, ShowNatGatewayResponse>
@@ -350,8 +330,7 @@ public class NatAsyncClient {
      *
      * 更新公网NAT网关实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNatGatewayRequest 请求对象
      * @return CompletableFuture<UpdateNatGatewayResponse>
@@ -365,8 +344,7 @@ public class NatAsyncClient {
      *
      * 更新公网NAT网关实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNatGatewayRequest 请求对象
      * @return AsyncInvoker<UpdateNatGatewayRequest, UpdateNatGatewayResponse>
@@ -382,8 +360,7 @@ public class NatAsyncClient {
      *
      * 创建SNAT规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNatGatewaySnatRuleRequest 请求对象
      * @return CompletableFuture<CreateNatGatewaySnatRuleResponse>
@@ -398,8 +375,7 @@ public class NatAsyncClient {
      *
      * 创建SNAT规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNatGatewaySnatRuleRequest 请求对象
      * @return AsyncInvoker<CreateNatGatewaySnatRuleRequest, CreateNatGatewaySnatRuleResponse>
@@ -415,8 +391,7 @@ public class NatAsyncClient {
      *
      * 删除指定的SNAT规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNatGatewaySnatRuleRequest 请求对象
      * @return CompletableFuture<DeleteNatGatewaySnatRuleResponse>
@@ -431,8 +406,7 @@ public class NatAsyncClient {
      *
      * 删除指定的SNAT规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNatGatewaySnatRuleRequest 请求对象
      * @return AsyncInvoker<DeleteNatGatewaySnatRuleRequest, DeleteNatGatewaySnatRuleResponse>
@@ -448,8 +422,7 @@ public class NatAsyncClient {
      *
      * 查询SNAT规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNatGatewaySnatRulesRequest 请求对象
      * @return CompletableFuture<ListNatGatewaySnatRulesResponse>
@@ -464,8 +437,7 @@ public class NatAsyncClient {
      *
      * 查询SNAT规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNatGatewaySnatRulesRequest 请求对象
      * @return AsyncInvoker<ListNatGatewaySnatRulesRequest, ListNatGatewaySnatRulesResponse>
@@ -481,8 +453,7 @@ public class NatAsyncClient {
      *
      * 查询指定的SNAT规则详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNatGatewaySnatRuleRequest 请求对象
      * @return CompletableFuture<ShowNatGatewaySnatRuleResponse>
@@ -497,8 +468,7 @@ public class NatAsyncClient {
      *
      * 查询指定的SNAT规则详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNatGatewaySnatRuleRequest 请求对象
      * @return AsyncInvoker<ShowNatGatewaySnatRuleRequest, ShowNatGatewaySnatRuleResponse>
@@ -514,8 +484,7 @@ public class NatAsyncClient {
      *
      * 更新指定的SNAT规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNatGatewaySnatRuleRequest 请求对象
      * @return CompletableFuture<UpdateNatGatewaySnatRuleResponse>
@@ -530,8 +499,7 @@ public class NatAsyncClient {
      *
      * 更新指定的SNAT规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNatGatewaySnatRuleRequest 请求对象
      * @return AsyncInvoker<UpdateNatGatewaySnatRuleRequest, UpdateNatGatewaySnatRuleResponse>

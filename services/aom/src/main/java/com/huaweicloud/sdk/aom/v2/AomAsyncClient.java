@@ -20,12 +20,39 @@ public class AomAsyncClient {
 
 
     /**
+     * 新增告警行动规则
+     *
+     * 新增告警行动规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddActionRuleRequest 请求对象
+     * @return CompletableFuture<AddActionRuleResponse>
+     */
+    public CompletableFuture<AddActionRuleResponse> addActionRuleAsync(AddActionRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.addActionRule);
+    }
+
+    /**
+     * 新增告警行动规则
+     *
+     * 新增告警行动规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddActionRuleRequest 请求对象
+     * @return AsyncInvoker<AddActionRuleRequest, AddActionRuleResponse>
+     */
+    public AsyncInvoker<AddActionRuleRequest, AddActionRuleResponse> addActionRuleAsyncInvoker(AddActionRuleRequest request) {
+        return new AsyncInvoker<AddActionRuleRequest, AddActionRuleResponse>(request, AomMeta.addActionRule, hcClient);
+    }
+
+    /**
      * 添加阈值规则
      *
      * 该接口用于添加一条阈值规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddAlarmRuleRequest 请求对象
      * @return CompletableFuture<AddAlarmRuleResponse>
@@ -39,8 +66,7 @@ public class AomAsyncClient {
      *
      * 该接口用于添加一条阈值规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddAlarmRuleRequest 请求对象
      * @return AsyncInvoker<AddAlarmRuleRequest, AddAlarmRuleResponse>
@@ -50,12 +76,39 @@ public class AomAsyncClient {
     }
 
     /**
+     * 新增一条事件类告警规则
+     *
+     * 新增一条事件类告警规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddEvent2alarmRuleRequest 请求对象
+     * @return CompletableFuture<AddEvent2alarmRuleResponse>
+     */
+    public CompletableFuture<AddEvent2alarmRuleResponse> addEvent2alarmRuleAsync(AddEvent2alarmRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.addEvent2alarmRule);
+    }
+
+    /**
+     * 新增一条事件类告警规则
+     *
+     * 新增一条事件类告警规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddEvent2alarmRuleRequest 请求对象
+     * @return AsyncInvoker<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse>
+     */
+    public AsyncInvoker<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse> addEvent2alarmRuleAsyncInvoker(AddEvent2alarmRuleRequest request) {
+        return new AsyncInvoker<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse>(request, AomMeta.addEvent2alarmRule, hcClient);
+    }
+
+    /**
      * 添加监控数据
      *
      * 该接口用于向服务端添加一条或多条监控数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddMetricDataRequest 请求对象
      * @return CompletableFuture<AddMetricDataResponse>
@@ -69,8 +122,7 @@ public class AomAsyncClient {
      *
      * 该接口用于向服务端添加一条或多条监控数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddMetricDataRequest 请求对象
      * @return AsyncInvoker<AddMetricDataRequest, AddMetricDataResponse>
@@ -80,12 +132,39 @@ public class AomAsyncClient {
     }
 
     /**
+     * 新增静默规则
+     *
+     * 新增静默规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddMuteRulesRequest 请求对象
+     * @return CompletableFuture<AddMuteRulesResponse>
+     */
+    public CompletableFuture<AddMuteRulesResponse> addMuteRulesAsync(AddMuteRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.addMuteRules);
+    }
+
+    /**
+     * 新增静默规则
+     *
+     * 新增静默规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddMuteRulesRequest 请求对象
+     * @return AsyncInvoker<AddMuteRulesRequest, AddMuteRulesResponse>
+     */
+    public AsyncInvoker<AddMuteRulesRequest, AddMuteRulesResponse> addMuteRulesAsyncInvoker(AddMuteRulesRequest request) {
+        return new AsyncInvoker<AddMuteRulesRequest, AddMuteRulesResponse>(request, AomMeta.addMuteRules, hcClient);
+    }
+
+    /**
      * 添加或修改服务发现规则
      *
      * 该接口用于添加或修改一条或多条服务发现规则。同一projectid下可添加的规则上限为100条。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddOrUpdateServiceDiscoveryRulesRequest 请求对象
      * @return CompletableFuture<AddOrUpdateServiceDiscoveryRulesResponse>
@@ -99,8 +178,7 @@ public class AomAsyncClient {
      *
      * 该接口用于添加或修改一条或多条服务发现规则。同一projectid下可添加的规则上限为100条。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddOrUpdateServiceDiscoveryRulesRequest 请求对象
      * @return AsyncInvoker<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse>
@@ -114,8 +192,7 @@ public class AomAsyncClient {
      *
      * 该接口用于分段统计指定条件下的事件、告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountEventsRequest 请求对象
      * @return CompletableFuture<CountEventsResponse>
@@ -129,8 +206,7 @@ public class AomAsyncClient {
      *
      * 该接口用于分段统计指定条件下的事件、告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountEventsRequest 请求对象
      * @return AsyncInvoker<CountEventsRequest, CountEventsResponse>
@@ -140,12 +216,39 @@ public class AomAsyncClient {
     }
 
     /**
+     * 删除告警行动规则
+     *
+     * 删除告警行动规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteActionRuleRequest 请求对象
+     * @return CompletableFuture<DeleteActionRuleResponse>
+     */
+    public CompletableFuture<DeleteActionRuleResponse> deleteActionRuleAsync(DeleteActionRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.deleteActionRule);
+    }
+
+    /**
+     * 删除告警行动规则
+     *
+     * 删除告警行动规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteActionRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteActionRuleRequest, DeleteActionRuleResponse>
+     */
+    public AsyncInvoker<DeleteActionRuleRequest, DeleteActionRuleResponse> deleteActionRuleAsyncInvoker(DeleteActionRuleRequest request) {
+        return new AsyncInvoker<DeleteActionRuleRequest, DeleteActionRuleResponse>(request, AomMeta.deleteActionRule, hcClient);
+    }
+
+    /**
      * 删除阈值规则
      *
      * 该接口用于删除阈值规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAlarmRuleRequest 请求对象
      * @return CompletableFuture<DeleteAlarmRuleResponse>
@@ -159,8 +262,7 @@ public class AomAsyncClient {
      *
      * 该接口用于删除阈值规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAlarmRuleRequest 请求对象
      * @return AsyncInvoker<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse>
@@ -174,8 +276,7 @@ public class AomAsyncClient {
      *
      * 批量删除阈值规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAlarmRulesRequest 请求对象
      * @return CompletableFuture<DeleteAlarmRulesResponse>
@@ -189,8 +290,7 @@ public class AomAsyncClient {
      *
      * 批量删除阈值规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAlarmRulesRequest 请求对象
      * @return AsyncInvoker<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse>
@@ -200,12 +300,67 @@ public class AomAsyncClient {
     }
 
     /**
+     * 删除事件类告警规则
+     *
+     * 删除一条事件类告警规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEvent2alarmRuleRequest 请求对象
+     * @return CompletableFuture<DeleteEvent2alarmRuleResponse>
+     */
+    public CompletableFuture<DeleteEvent2alarmRuleResponse> deleteEvent2alarmRuleAsync(DeleteEvent2alarmRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.deleteEvent2alarmRule);
+    }
+
+    /**
+     * 删除事件类告警规则
+     *
+     * 删除一条事件类告警规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEvent2alarmRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse>
+     */
+    public AsyncInvoker<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse> deleteEvent2alarmRuleAsyncInvoker(DeleteEvent2alarmRuleRequest request) {
+        return new AsyncInvoker<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse>(request, AomMeta.deleteEvent2alarmRule, hcClient);
+    }
+
+    /**
+     * 删除静默规则
+     *
+     * 删除静默规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteMuteRulesRequest 请求对象
+     * @return CompletableFuture<DeleteMuteRulesResponse>
+     */
+    public CompletableFuture<DeleteMuteRulesResponse> deleteMuteRulesAsync(DeleteMuteRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.deleteMuteRules);
+    }
+
+    /**
+     * 删除静默规则
+     *
+     * 删除静默规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteMuteRulesRequest 请求对象
+     * @return AsyncInvoker<DeleteMuteRulesRequest, DeleteMuteRulesResponse>
+     */
+    public AsyncInvoker<DeleteMuteRulesRequest, DeleteMuteRulesResponse> deleteMuteRulesAsyncInvoker(DeleteMuteRulesRequest request) {
+        return new AsyncInvoker<DeleteMuteRulesRequest, DeleteMuteRulesResponse>(request, AomMeta.deleteMuteRules, hcClient);
+    }
+
+    /**
      * 删除服务发现规则
      *
      * 该接口用于删除服务发现规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteserviceDiscoveryRulesRequest 请求对象
      * @return CompletableFuture<DeleteserviceDiscoveryRulesResponse>
@@ -219,8 +374,7 @@ public class AomAsyncClient {
      *
      * 该接口用于删除服务发现规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteserviceDiscoveryRulesRequest 请求对象
      * @return AsyncInvoker<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse>
@@ -230,12 +384,39 @@ public class AomAsyncClient {
     }
 
     /**
+     * 获取告警行动规则列表
+     *
+     * 获取告警行动规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListActionRuleRequest 请求对象
+     * @return CompletableFuture<ListActionRuleResponse>
+     */
+    public CompletableFuture<ListActionRuleResponse> listActionRuleAsync(ListActionRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.listActionRule);
+    }
+
+    /**
+     * 获取告警行动规则列表
+     *
+     * 获取告警行动规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListActionRuleRequest 请求对象
+     * @return AsyncInvoker<ListActionRuleRequest, ListActionRuleResponse>
+     */
+    public AsyncInvoker<ListActionRuleRequest, ListActionRuleResponse> listActionRuleAsyncInvoker(ListActionRuleRequest request) {
+        return new AsyncInvoker<ListActionRuleRequest, ListActionRuleResponse>(request, AomMeta.listActionRule, hcClient);
+    }
+
+    /**
      * 查询阈值规则列表
      *
      * 该接口用于查询阈值规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmRuleRequest 请求对象
      * @return CompletableFuture<ListAlarmRuleResponse>
@@ -249,8 +430,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询阈值规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmRuleRequest 请求对象
      * @return AsyncInvoker<ListAlarmRuleRequest, ListAlarmRuleResponse>
@@ -260,12 +440,39 @@ public class AomAsyncClient {
     }
 
     /**
+     * 查询事件类告警规则列表
+     *
+     * 查询事件类告警规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEvent2alarmRuleRequest 请求对象
+     * @return CompletableFuture<ListEvent2alarmRuleResponse>
+     */
+    public CompletableFuture<ListEvent2alarmRuleResponse> listEvent2alarmRuleAsync(ListEvent2alarmRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.listEvent2alarmRule);
+    }
+
+    /**
+     * 查询事件类告警规则列表
+     *
+     * 查询事件类告警规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEvent2alarmRuleRequest 请求对象
+     * @return AsyncInvoker<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse>
+     */
+    public AsyncInvoker<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse> listEvent2alarmRuleAsyncInvoker(ListEvent2alarmRuleRequest request) {
+        return new AsyncInvoker<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse>(request, AomMeta.listEvent2alarmRule, hcClient);
+    }
+
+    /**
      * 查询事件告警信息
      *
      * 该接口用于查询对应用户的事件、告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventsRequest 请求对象
      * @return CompletableFuture<ListEventsResponse>
@@ -279,8 +486,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询对应用户的事件、告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventsRequest 请求对象
      * @return AsyncInvoker<ListEventsRequest, ListEventsResponse>
@@ -294,8 +500,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询不同维度(例如集群、IP、应用等)下的日志内容，支持分页查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogItemsRequest 请求对象
      * @return CompletableFuture<ListLogItemsResponse>
@@ -309,8 +514,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询不同维度(例如集群、IP、应用等)下的日志内容，支持分页查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogItemsRequest 请求对象
      * @return AsyncInvoker<ListLogItemsRequest, ListLogItemsResponse>
@@ -324,8 +528,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询系统当前可监控的指标列表，可以指定指标命名空间、指标名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMetricItemsRequest 请求对象
      * @return CompletableFuture<ListMetricItemsResponse>
@@ -339,8 +542,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询系统当前可监控的指标列表，可以指定指标命名空间、指标名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMetricItemsRequest 请求对象
      * @return AsyncInvoker<ListMetricItemsRequest, ListMetricItemsResponse>
@@ -350,12 +552,67 @@ public class AomAsyncClient {
     }
 
     /**
+     * 获取静默规则列表
+     *
+     * 获取静默规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMuteRuleRequest 请求对象
+     * @return CompletableFuture<ListMuteRuleResponse>
+     */
+    public CompletableFuture<ListMuteRuleResponse> listMuteRuleAsync(ListMuteRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.listMuteRule);
+    }
+
+    /**
+     * 获取静默规则列表
+     *
+     * 获取静默规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMuteRuleRequest 请求对象
+     * @return AsyncInvoker<ListMuteRuleRequest, ListMuteRuleResponse>
+     */
+    public AsyncInvoker<ListMuteRuleRequest, ListMuteRuleResponse> listMuteRuleAsyncInvoker(ListMuteRuleRequest request) {
+        return new AsyncInvoker<ListMuteRuleRequest, ListMuteRuleResponse>(request, AomMeta.listMuteRule, hcClient);
+    }
+
+    /**
+     * 获取告警发送结果
+     *
+     * 获取告警发送结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNotifiedHistoriesRequest 请求对象
+     * @return CompletableFuture<ListNotifiedHistoriesResponse>
+     */
+    public CompletableFuture<ListNotifiedHistoriesResponse> listNotifiedHistoriesAsync(ListNotifiedHistoriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.listNotifiedHistories);
+    }
+
+    /**
+     * 获取告警发送结果
+     *
+     * 获取告警发送结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNotifiedHistoriesRequest 请求对象
+     * @return AsyncInvoker<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse>
+     */
+    public AsyncInvoker<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse> listNotifiedHistoriesAsyncInvoker(ListNotifiedHistoriesRequest request) {
+        return new AsyncInvoker<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse>(request, AomMeta.listNotifiedHistories, hcClient);
+    }
+
+    /**
      * 查询时序数据
      *
      * 该接口用于查询指定时间范围内的监控时序数据，可以通过参数指定需要查询的数据维度，数据周期等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSampleRequest 请求对象
      * @return CompletableFuture<ListSampleResponse>
@@ -369,8 +626,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询指定时间范围内的监控时序数据，可以通过参数指定需要查询的数据维度，数据周期等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSampleRequest 请求对象
      * @return AsyncInvoker<ListSampleRequest, ListSampleResponse>
@@ -384,8 +640,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询系统当前可监控的时间序列列表，可以指定时间序列命名空间、名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSeriesRequest 请求对象
      * @return CompletableFuture<ListSeriesResponse>
@@ -399,8 +654,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询系统当前可监控的时间序列列表，可以指定时间序列命名空间、名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSeriesRequest 请求对象
      * @return AsyncInvoker<ListSeriesRequest, ListSeriesResponse>
@@ -414,8 +668,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询系统当前已存在的服务发现规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceDiscoveryRulesRequest 请求对象
      * @return CompletableFuture<ListServiceDiscoveryRulesResponse>
@@ -429,8 +682,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询系统当前已存在的服务发现规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceDiscoveryRulesRequest 请求对象
      * @return AsyncInvoker<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse>
@@ -444,8 +696,7 @@ public class AomAsyncClient {
      *
      * 该接口用于上报对应用户的事件、告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PushEventsRequest 请求对象
      * @return CompletableFuture<PushEventsResponse>
@@ -459,8 +710,7 @@ public class AomAsyncClient {
      *
      * 该接口用于上报对应用户的事件、告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PushEventsRequest 请求对象
      * @return AsyncInvoker<PushEventsRequest, PushEventsResponse>
@@ -470,12 +720,39 @@ public class AomAsyncClient {
     }
 
     /**
+     * 通过规则名称获取告警行动规则
+     *
+     * 通过规则名称获取告警行动规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowActionRuleRequest 请求对象
+     * @return CompletableFuture<ShowActionRuleResponse>
+     */
+    public CompletableFuture<ShowActionRuleResponse> showActionRuleAsync(ShowActionRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.showActionRule);
+    }
+
+    /**
+     * 通过规则名称获取告警行动规则
+     *
+     * 通过规则名称获取告警行动规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowActionRuleRequest 请求对象
+     * @return AsyncInvoker<ShowActionRuleRequest, ShowActionRuleResponse>
+     */
+    public AsyncInvoker<ShowActionRuleRequest, ShowActionRuleResponse> showActionRuleAsyncInvoker(ShowActionRuleRequest request) {
+        return new AsyncInvoker<ShowActionRuleRequest, ShowActionRuleResponse>(request, AomMeta.showActionRule, hcClient);
+    }
+
+    /**
      * 查询单条阈值规则
      *
      * 该接口用于查询单条阈值规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAlarmRuleRequest 请求对象
      * @return CompletableFuture<ShowAlarmRuleResponse>
@@ -489,8 +766,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询单条阈值规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAlarmRuleRequest 请求对象
      * @return AsyncInvoker<ShowAlarmRuleRequest, ShowAlarmRuleResponse>
@@ -504,8 +780,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询指定时间范围内指标的监控数据，可以通过参数指定需要查询的数据维度，数据周期等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMetricsDataRequest 请求对象
      * @return CompletableFuture<ShowMetricsDataResponse>
@@ -519,8 +794,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询指定时间范围内指标的监控数据，可以通过参数指定需要查询的数据维度，数据周期等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMetricsDataRequest 请求对象
      * @return AsyncInvoker<ShowMetricsDataRequest, ShowMetricsDataResponse>
@@ -530,12 +804,39 @@ public class AomAsyncClient {
     }
 
     /**
+     * 修改告警行动规则
+     *
+     * 修改告警行动规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateActionRuleRequest 请求对象
+     * @return CompletableFuture<UpdateActionRuleResponse>
+     */
+    public CompletableFuture<UpdateActionRuleResponse> updateActionRuleAsync(UpdateActionRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.updateActionRule);
+    }
+
+    /**
+     * 修改告警行动规则
+     *
+     * 修改告警行动规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateActionRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateActionRuleRequest, UpdateActionRuleResponse>
+     */
+    public AsyncInvoker<UpdateActionRuleRequest, UpdateActionRuleResponse> updateActionRuleAsyncInvoker(UpdateActionRuleRequest request) {
+        return new AsyncInvoker<UpdateActionRuleRequest, UpdateActionRuleResponse>(request, AomMeta.updateActionRule, hcClient);
+    }
+
+    /**
      * 修改阈值规则
      *
      * 该接口用于修改一条阈值规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlarmRuleRequest 请求对象
      * @return CompletableFuture<UpdateAlarmRuleResponse>
@@ -549,8 +850,7 @@ public class AomAsyncClient {
      *
      * 该接口用于修改一条阈值规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlarmRuleRequest 请求对象
      * @return AsyncInvoker<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse>
@@ -560,12 +860,67 @@ public class AomAsyncClient {
     }
 
     /**
+     * 更新事件类告警规则
+     *
+     * 更新事件类告警规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEventRuleRequest 请求对象
+     * @return CompletableFuture<UpdateEventRuleResponse>
+     */
+    public CompletableFuture<UpdateEventRuleResponse> updateEventRuleAsync(UpdateEventRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.updateEventRule);
+    }
+
+    /**
+     * 更新事件类告警规则
+     *
+     * 更新事件类告警规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEventRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateEventRuleRequest, UpdateEventRuleResponse>
+     */
+    public AsyncInvoker<UpdateEventRuleRequest, UpdateEventRuleResponse> updateEventRuleAsyncInvoker(UpdateEventRuleRequest request) {
+        return new AsyncInvoker<UpdateEventRuleRequest, UpdateEventRuleResponse>(request, AomMeta.updateEventRule, hcClient);
+    }
+
+    /**
+     * 修改静默规则
+     *
+     * 修改静默规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateMuteRuleRequest 请求对象
+     * @return CompletableFuture<UpdateMuteRuleResponse>
+     */
+    public CompletableFuture<UpdateMuteRuleResponse> updateMuteRuleAsync(UpdateMuteRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.updateMuteRule);
+    }
+
+    /**
+     * 修改静默规则
+     *
+     * 修改静默规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateMuteRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateMuteRuleRequest, UpdateMuteRuleResponse>
+     */
+    public AsyncInvoker<UpdateMuteRuleRequest, UpdateMuteRuleResponse> updateMuteRuleAsyncInvoker(UpdateMuteRuleRequest request) {
+        return new AsyncInvoker<UpdateMuteRuleRequest, UpdateMuteRuleResponse>(request, AomMeta.updateMuteRule, hcClient);
+    }
+
+    /**
      * 瞬时数据查询
      *
-     * 该接口用于查询PromQL(Prometheus Query Language)。 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口用于查询PromQL(Prometheus Query Language)在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstantQueryAomPromGetRequest 请求对象
      * @return CompletableFuture<ListInstantQueryAomPromGetResponse>
@@ -577,10 +932,9 @@ public class AomAsyncClient {
     /**
      * 瞬时数据查询
      *
-     * 该接口用于查询PromQL(Prometheus Query Language)。 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
+     * 该接口用于查询PromQL(Prometheus Query Language)在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstantQueryAomPromGetRequest 请求对象
      * @return AsyncInvoker<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse>
@@ -594,8 +948,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询PromQL(Prometheus Query Language) 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstantQueryAomPromPostRequest 请求对象
      * @return CompletableFuture<ListInstantQueryAomPromPostResponse>
@@ -609,8 +962,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询PromQL(Prometheus Query Language) 在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstantQueryAomPromPostRequest 请求对象
      * @return AsyncInvoker<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse>
@@ -624,8 +976,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询带有指定标签的时间序列列表。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLabelValuesAomPromGetRequest 请求对象
      * @return CompletableFuture<ListLabelValuesAomPromGetResponse>
@@ -639,8 +990,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询带有指定标签的时间序列列表。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLabelValuesAomPromGetRequest 请求对象
      * @return AsyncInvoker<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse>
@@ -654,8 +1004,7 @@ public class AomAsyncClient {
      *
      * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLabelsAomPromGetRequest 请求对象
      * @return CompletableFuture<ListLabelsAomPromGetResponse>
@@ -669,8 +1018,7 @@ public class AomAsyncClient {
      *
      * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLabelsAomPromGetRequest 请求对象
      * @return AsyncInvoker<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse>
@@ -684,8 +1032,7 @@ public class AomAsyncClient {
      *
      * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLabelsAomPromPostRequest 请求对象
      * @return CompletableFuture<ListLabelsAomPromPostResponse>
@@ -699,8 +1046,7 @@ public class AomAsyncClient {
      *
      * 该接口用于获取标签名列表。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLabelsAomPromPostRequest 请求对象
      * @return AsyncInvoker<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse>
@@ -714,8 +1060,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询序列及序列标签的元数据。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMetadataAomPromGetRequest 请求对象
      * @return CompletableFuture<ListMetadataAomPromGetResponse>
@@ -729,8 +1074,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询序列及序列标签的元数据。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMetadataAomPromGetRequest 请求对象
      * @return AsyncInvoker<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse>
@@ -744,8 +1088,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRangeQueryAomPromGetRequest 请求对象
      * @return CompletableFuture<ListRangeQueryAomPromGetResponse>
@@ -759,8 +1102,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRangeQueryAomPromGetRequest 请求对象
      * @return AsyncInvoker<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse>
@@ -774,8 +1116,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRangeQueryAomPromPostRequest 请求对象
      * @return CompletableFuture<ListRangeQueryAomPromPostResponse>
@@ -789,8 +1130,7 @@ public class AomAsyncClient {
      *
      * 该接口用于查询PromQL(Prometheus Query Language)在一段时间返回内的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRangeQueryAomPromPostRequest 请求对象
      * @return AsyncInvoker<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse>

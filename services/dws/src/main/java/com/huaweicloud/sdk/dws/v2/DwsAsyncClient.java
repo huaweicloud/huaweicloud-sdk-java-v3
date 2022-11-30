@@ -26,8 +26,7 @@ public class DwsAsyncClient {
      * 集群必须要运行在VPC之内，创建集群前，您需要先创建VPC，并获取VPC和子网的id。
      * 该接口为异步接口，创建集群需要10～15分钟。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClusterRequest 请求对象
      * @return CompletableFuture<CreateClusterResponse>
@@ -43,8 +42,7 @@ public class DwsAsyncClient {
      * 集群必须要运行在VPC之内，创建集群前，您需要先创建VPC，并获取VPC和子网的id。
      * 该接口为异步接口，创建集群需要10～15分钟。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClusterRequest 请求对象
      * @return AsyncInvoker<CreateClusterRequest, CreateClusterResponse>
@@ -59,8 +57,7 @@ public class DwsAsyncClient {
      *
      * 该接口用于为指定集群创建快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSnapshotRequest 请求对象
      * @return CompletableFuture<CreateSnapshotResponse>
@@ -74,8 +71,7 @@ public class DwsAsyncClient {
      *
      * 该接口用于为指定集群创建快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSnapshotRequest 请求对象
      * @return AsyncInvoker<CreateSnapshotRequest, CreateSnapshotResponse>
@@ -91,8 +87,7 @@ public class DwsAsyncClient {
      *
      * 此接口用于删除集群。集群删除后将释放此集群的所有资源，包括客户数据。为了安全起见，请在删除集群前为这个集群创建快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteClusterRequest 请求对象
      * @return CompletableFuture<DeleteClusterResponse>
@@ -106,8 +101,7 @@ public class DwsAsyncClient {
      *
      * 此接口用于删除集群。集群删除后将释放此集群的所有资源，包括客户数据。为了安全起见，请在删除集群前为这个集群创建快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteClusterRequest 请求对象
      * @return AsyncInvoker<DeleteClusterRequest, DeleteClusterResponse>
@@ -122,8 +116,7 @@ public class DwsAsyncClient {
      *
      * 该接口用于删除一个指定手动快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSnapshotRequest 请求对象
      * @return CompletableFuture<DeleteSnapshotResponse>
@@ -137,8 +130,7 @@ public class DwsAsyncClient {
      *
      * 该接口用于删除一个指定手动快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSnapshotRequest 请求对象
      * @return AsyncInvoker<DeleteSnapshotRequest, DeleteSnapshotResponse>
@@ -154,8 +146,7 @@ public class DwsAsyncClient {
      *
      * 该接口用于查询集群详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClusterDetailsRequest 请求对象
      * @return CompletableFuture<ListClusterDetailsResponse>
@@ -169,8 +160,7 @@ public class DwsAsyncClient {
      *
      * 该接口用于查询集群详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClusterDetailsRequest 请求对象
      * @return AsyncInvoker<ListClusterDetailsRequest, ListClusterDetailsResponse>
@@ -186,8 +176,7 @@ public class DwsAsyncClient {
      *
      * 该接口用于查询并显示集群列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClustersRequest 请求对象
      * @return CompletableFuture<ListClustersResponse>
@@ -201,8 +190,7 @@ public class DwsAsyncClient {
      *
      * 该接口用于查询并显示集群列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClustersRequest 请求对象
      * @return AsyncInvoker<ListClustersRequest, ListClustersResponse>
@@ -217,8 +205,7 @@ public class DwsAsyncClient {
      *
      * 该接口用于查询所有GaussDB(DWS)服务支持的节点类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNodeTypesRequest 请求对象
      * @return CompletableFuture<ListNodeTypesResponse>
@@ -232,8 +219,7 @@ public class DwsAsyncClient {
      *
      * 该接口用于查询所有GaussDB(DWS)服务支持的节点类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNodeTypesRequest 请求对象
      * @return AsyncInvoker<ListNodeTypesRequest, ListNodeTypesResponse>
@@ -248,8 +234,7 @@ public class DwsAsyncClient {
      *
      * 该接口用于使用快照ID查询快照详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSnapshotDetailsRequest 请求对象
      * @return CompletableFuture<ListSnapshotDetailsResponse>
@@ -263,8 +248,7 @@ public class DwsAsyncClient {
      *
      * 该接口用于使用快照ID查询快照详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSnapshotDetailsRequest 请求对象
      * @return AsyncInvoker<ListSnapshotDetailsRequest, ListSnapshotDetailsResponse>
@@ -280,8 +264,7 @@ public class DwsAsyncClient {
      *
      * 该接口用于查询快照列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSnapshotsRequest 请求对象
      * @return CompletableFuture<ListSnapshotsResponse>
@@ -295,8 +278,7 @@ public class DwsAsyncClient {
      *
      * 该接口用于查询快照列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSnapshotsRequest 请求对象
      * @return AsyncInvoker<ListSnapshotsRequest, ListSnapshotsResponse>
@@ -311,8 +293,7 @@ public class DwsAsyncClient {
      *
      * 此接口用于重置集群管理员密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetPasswordRequest 请求对象
      * @return CompletableFuture<ResetPasswordResponse>
@@ -326,8 +307,7 @@ public class DwsAsyncClient {
      *
      * 此接口用于重置集群管理员密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetPasswordRequest 请求对象
      * @return AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
@@ -342,8 +322,7 @@ public class DwsAsyncClient {
      *
      * 此接口用于扩容集群。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeClusterRequest 请求对象
      * @return CompletableFuture<ResizeClusterResponse>
@@ -357,8 +336,7 @@ public class DwsAsyncClient {
      *
      * 此接口用于扩容集群。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeClusterRequest 请求对象
      * @return AsyncInvoker<ResizeClusterRequest, ResizeClusterResponse>
@@ -373,8 +351,7 @@ public class DwsAsyncClient {
      *
      * 此接口用于重启集群。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartClusterRequest 请求对象
      * @return CompletableFuture<RestartClusterResponse>
@@ -388,8 +365,7 @@ public class DwsAsyncClient {
      *
      * 此接口用于重启集群。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartClusterRequest 请求对象
      * @return AsyncInvoker<RestartClusterRequest, RestartClusterResponse>
@@ -405,8 +381,7 @@ public class DwsAsyncClient {
      *
      * 该接口用于使用快照恢复集群。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreClusterRequest 请求对象
      * @return CompletableFuture<RestoreClusterResponse>
@@ -420,8 +395,7 @@ public class DwsAsyncClient {
      *
      * 该接口用于使用快照恢复集群。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreClusterRequest 请求对象
      * @return AsyncInvoker<RestoreClusterRequest, RestoreClusterResponse>

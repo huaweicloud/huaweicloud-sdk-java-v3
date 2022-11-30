@@ -57,7 +57,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_infos")
 
-    private List<Object> accessInfos = null;
+    private List<PhoneAccessInfo> accessInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property")
@@ -67,7 +67,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private Object metadata;
+    private ShowCloudPhoneDetailResponseBodyMetadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -85,7 +85,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     }
 
     /**
-     * 请求的唯一标识ID
+     * 请求的唯一标识ID，不超过32个字节。
      * @return requestId
      */
     public String getRequestId() {
@@ -205,6 +205,8 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
 
     /**
      * 云手机状态 - 0：创建中 - 1：创建中 - 2：运行中 - 3：重置中 - 4：重启中 - 6：冻结 - 7：正在关机 - 8：已关机 - -5：重置失败 - -6：重启失败 - -7：手机异常 - -8：创建失败 - -9：关机失败
+     * minimum: -128
+     * maximum: 128
      * @return status
      */
     public Integer getStatus() {
@@ -215,12 +217,12 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
         this.status = status;
     }
 
-    public ShowCloudPhoneDetailResponse withAccessInfos(List<Object> accessInfos) {
+    public ShowCloudPhoneDetailResponse withAccessInfos(List<PhoneAccessInfo> accessInfos) {
         this.accessInfos = accessInfos;
         return this;
     }
 
-    public ShowCloudPhoneDetailResponse addAccessInfosItem(Object accessInfosItem) {
+    public ShowCloudPhoneDetailResponse addAccessInfosItem(PhoneAccessInfo accessInfosItem) {
         if (this.accessInfos == null) {
             this.accessInfos = new ArrayList<>();
         }
@@ -228,7 +230,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
         return this;
     }
 
-    public ShowCloudPhoneDetailResponse withAccessInfos(Consumer<List<Object>> accessInfosSetter) {
+    public ShowCloudPhoneDetailResponse withAccessInfos(Consumer<List<PhoneAccessInfo>> accessInfosSetter) {
         if (this.accessInfos == null) {
             this.accessInfos = new ArrayList<>();
         }
@@ -240,11 +242,11 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
      * 云手机访问信息
      * @return accessInfos
      */
-    public List<Object> getAccessInfos() {
+    public List<PhoneAccessInfo> getAccessInfos() {
         return accessInfos;
     }
 
-    public void setAccessInfos(List<Object> accessInfos) {
+    public void setAccessInfos(List<PhoneAccessInfo> accessInfos) {
         this.accessInfos = accessInfos;
     }
 
@@ -265,14 +267,15 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
         this.property = property;
     }
 
-    public ShowCloudPhoneDetailResponse withMetadata(Object metadata) {
+    public ShowCloudPhoneDetailResponse withMetadata(ShowCloudPhoneDetailResponseBodyMetadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public ShowCloudPhoneDetailResponse withMetadata(Consumer<Object> metadataSetter) {
+    public ShowCloudPhoneDetailResponse withMetadata(
+        Consumer<ShowCloudPhoneDetailResponseBodyMetadata> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new Object();
+            this.metadata = new ShowCloudPhoneDetailResponseBodyMetadata();
             metadataSetter.accept(this.metadata);
         }
 
@@ -280,14 +283,14 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     }
 
     /**
-     * 订单以及产品相关信息
+     * Get metadata
      * @return metadata
      */
-    public Object getMetadata() {
+    public ShowCloudPhoneDetailResponseBodyMetadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Object metadata) {
+    public void setMetadata(ShowCloudPhoneDetailResponseBodyMetadata metadata) {
         this.metadata = metadata;
     }
 

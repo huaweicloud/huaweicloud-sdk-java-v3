@@ -29,8 +29,7 @@ public class CloudTableAsyncClient {
      * 
      * 本接口是一个同步接口，当创建CloudTable集群成功后会返回集群id。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClusterRequest 请求对象
      * @return CompletableFuture<CreateClusterResponse>
@@ -49,8 +48,7 @@ public class CloudTableAsyncClient {
      * 
      * 本接口是一个同步接口，当创建CloudTable集群成功后会返回集群id。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClusterRequest 请求对象
      * @return AsyncInvoker<CreateClusterRequest, CreateClusterResponse>
@@ -69,8 +67,7 @@ public class CloudTableAsyncClient {
      * - 创建中
      * - 扩容中
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteClusterRequest 请求对象
      * @return CompletableFuture<DeleteClusterResponse>
@@ -87,8 +84,7 @@ public class CloudTableAsyncClient {
      * - 创建中
      * - 扩容中
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteClusterRequest 请求对象
      * @return AsyncInvoker<DeleteClusterRequest, DeleteClusterResponse>
@@ -104,8 +100,7 @@ public class CloudTableAsyncClient {
      *
      * 查看用户创建的集群列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClustersRequest 请求对象
      * @return CompletableFuture<ListClustersResponse>
@@ -119,8 +114,7 @@ public class CloudTableAsyncClient {
      *
      * 查看用户创建的集群列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClustersRequest 请求对象
      * @return AsyncInvoker<ListClustersRequest, ListClustersResponse>
@@ -136,8 +130,7 @@ public class CloudTableAsyncClient {
      *
      * 通过集群ID唯一标识一个集群，根据集群ID查询特定CloudTable集群的详情信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClusterDetailRequest 请求对象
      * @return CompletableFuture<ShowClusterDetailResponse>
@@ -151,8 +144,7 @@ public class CloudTableAsyncClient {
      *
      * 通过集群ID唯一标识一个集群，根据集群ID查询特定CloudTable集群的详情信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClusterDetailRequest 请求对象
      * @return AsyncInvoker<ShowClusterDetailRequest, ShowClusterDetailResponse>

@@ -25,8 +25,7 @@ public class IesAsyncClient {
      * 创建边缘小站。
      * - 一个边缘小站关联一个华为云指定的区域。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEdgeSiteRequest 请求对象
      * @return CompletableFuture<CreateEdgeSiteResponse>
@@ -41,8 +40,7 @@ public class IesAsyncClient {
      * 创建边缘小站。
      * - 一个边缘小站关联一个华为云指定的区域。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEdgeSiteRequest 请求对象
      * @return AsyncInvoker<CreateEdgeSiteRequest, CreateEdgeSiteResponse>
@@ -58,8 +56,7 @@ public class IesAsyncClient {
      *
      * 删除指定的边缘小站。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEdgeSiteRequest 请求对象
      * @return CompletableFuture<DeleteEdgeSiteResponse>
@@ -73,8 +70,7 @@ public class IesAsyncClient {
      *
      * 删除指定的边缘小站。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEdgeSiteRequest 请求对象
      * @return AsyncInvoker<DeleteEdgeSiteRequest, DeleteEdgeSiteResponse>
@@ -90,8 +86,7 @@ public class IesAsyncClient {
      *
      * 查询边缘小站列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEdgeSitesRequest 请求对象
      * @return CompletableFuture<ListEdgeSitesResponse>
@@ -105,8 +100,7 @@ public class IesAsyncClient {
      *
      * 查询边缘小站列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEdgeSitesRequest 请求对象
      * @return AsyncInvoker<ListEdgeSitesRequest, ListEdgeSitesResponse>
@@ -121,8 +115,7 @@ public class IesAsyncClient {
      *
      * 查询边缘小站详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEdgeSiteRequest 请求对象
      * @return CompletableFuture<ShowEdgeSiteResponse>
@@ -136,8 +129,7 @@ public class IesAsyncClient {
      *
      * 查询边缘小站详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEdgeSiteRequest 请求对象
      * @return AsyncInvoker<ShowEdgeSiteRequest, ShowEdgeSiteResponse>
@@ -153,8 +145,7 @@ public class IesAsyncClient {
      * 更新边缘小站。
      * - 允许更新边缘小站描述或场地信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEdgeSiteRequest 请求对象
      * @return CompletableFuture<UpdateEdgeSiteResponse>
@@ -169,8 +160,7 @@ public class IesAsyncClient {
      * 更新边缘小站。
      * - 允许更新边缘小站描述或场地信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEdgeSiteRequest 请求对象
      * @return AsyncInvoker<UpdateEdgeSiteRequest, UpdateEdgeSiteResponse>
@@ -186,8 +176,7 @@ public class IesAsyncClient {
      *
      * 查看站点容量信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEdgeSiteMetricsRequest 请求对象
      * @return CompletableFuture<ListEdgeSiteMetricsResponse>
@@ -201,8 +190,7 @@ public class IesAsyncClient {
      *
      * 查看站点容量信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEdgeSiteMetricsRequest 请求对象
      * @return AsyncInvoker<ListEdgeSiteMetricsRequest, ListEdgeSiteMetricsResponse>
@@ -218,8 +206,7 @@ public class IesAsyncClient {
      *
      * 查询租户资源配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotasRequest 请求对象
      * @return CompletableFuture<ListQuotasResponse>
@@ -233,8 +220,7 @@ public class IesAsyncClient {
      *
      * 查询租户资源配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotasRequest 请求对象
      * @return AsyncInvoker<ListQuotasRequest, ListQuotasResponse>
@@ -248,8 +234,7 @@ public class IesAsyncClient {
      *
      * 查询支持智能边缘小站接入的华为云区域（region）列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSupportedRegionsRequest 请求对象
      * @return CompletableFuture<ListSupportedRegionsResponse>
@@ -264,8 +249,7 @@ public class IesAsyncClient {
      *
      * 查询支持智能边缘小站接入的华为云区域（region）列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSupportedRegionsRequest 请求对象
      * @return AsyncInvoker<ListSupportedRegionsRequest, ListSupportedRegionsResponse>

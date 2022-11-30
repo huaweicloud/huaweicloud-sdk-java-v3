@@ -22,8 +22,7 @@ public class HssClient {
      *
      * 批量创建标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateTagsRequest 请求对象
      * @return BatchCreateTagsResponse
@@ -37,8 +36,7 @@ public class HssClient {
      *
      * 批量创建标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>
@@ -54,8 +52,7 @@ public class HssClient {
      *
      * 删除单个资源下的标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceInstanceTagRequest 请求对象
      * @return DeleteResourceInstanceTagResponse
@@ -69,8 +66,7 @@ public class HssClient {
      *
      * 删除单个资源下的标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceInstanceTagRequest 请求对象
      * @return SyncInvoker<DeleteResourceInstanceTagRequest, DeleteResourceInstanceTagResponse>
@@ -86,8 +82,7 @@ public class HssClient {
      *
      * 查询云服务器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostStatusRequest 请求对象
      * @return ListHostStatusResponse
@@ -101,8 +96,7 @@ public class HssClient {
      *
      * 查询云服务器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostStatusRequest 请求对象
      * @return SyncInvoker<ListHostStatusRequest, ListHostStatusResponse>
@@ -118,8 +112,7 @@ public class HssClient {
      *
      * 查询口令复杂度策略检测报告
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPasswordComplexityRequest 请求对象
      * @return ListPasswordComplexityResponse
@@ -133,8 +126,7 @@ public class HssClient {
      *
      * 查询口令复杂度策略检测报告
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPasswordComplexityRequest 请求对象
      * @return SyncInvoker<ListPasswordComplexityRequest, ListPasswordComplexityResponse>
@@ -150,8 +142,7 @@ public class HssClient {
      *
      * 查询配额详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotasDetailRequest 请求对象
      * @return ListQuotasDetailResponse
@@ -165,8 +156,7 @@ public class HssClient {
      *
      * 查询配额详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotasDetailRequest 请求对象
      * @return SyncInvoker<ListQuotasDetailRequest, ListQuotasDetailResponse>
@@ -182,8 +172,7 @@ public class HssClient {
      *
      * 查询指定安全配置项的检查项列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRiskConfigCheckRulesRequest 请求对象
      * @return ListRiskConfigCheckRulesResponse
@@ -197,8 +186,7 @@ public class HssClient {
      *
      * 查询指定安全配置项的检查项列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRiskConfigCheckRulesRequest 请求对象
      * @return SyncInvoker<ListRiskConfigCheckRulesRequest, ListRiskConfigCheckRulesResponse>
@@ -214,8 +202,7 @@ public class HssClient {
      *
      * 查询指定安全配置项的受影响服务器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRiskConfigHostsRequest 请求对象
      * @return ListRiskConfigHostsResponse
@@ -229,8 +216,7 @@ public class HssClient {
      *
      * 查询指定安全配置项的受影响服务器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRiskConfigHostsRequest 请求对象
      * @return SyncInvoker<ListRiskConfigHostsRequest, ListRiskConfigHostsResponse>
@@ -246,8 +232,7 @@ public class HssClient {
      *
      * 查询租户的服务器安全配置检测结果列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRiskConfigsRequest 请求对象
      * @return ListRiskConfigsResponse
@@ -261,8 +246,7 @@ public class HssClient {
      *
      * 查询租户的服务器安全配置检测结果列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRiskConfigsRequest 请求对象
      * @return SyncInvoker<ListRiskConfigsRequest, ListRiskConfigsResponse>
@@ -278,8 +262,7 @@ public class HssClient {
      *
      * 查入侵事件列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityEventsRequest 请求对象
      * @return ListSecurityEventsResponse
@@ -293,8 +276,7 @@ public class HssClient {
      *
      * 查入侵事件列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityEventsRequest 请求对象
      * @return SyncInvoker<ListSecurityEventsRequest, ListSecurityEventsResponse>
@@ -310,8 +292,7 @@ public class HssClient {
      *
      * 获取账户变动历史记录信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUserChangeHistoriesRequest 请求对象
      * @return ListUserChangeHistoriesResponse
@@ -325,8 +306,7 @@ public class HssClient {
      *
      * 获取账户变动历史记录信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUserChangeHistoriesRequest 请求对象
      * @return SyncInvoker<ListUserChangeHistoriesRequest, ListUserChangeHistoriesResponse>
@@ -342,8 +322,7 @@ public class HssClient {
      *
      * 获取资产的账号列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUsersRequest 请求对象
      * @return ListUsersResponse
@@ -357,8 +336,7 @@ public class HssClient {
      *
      * 获取资产的账号列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUsersRequest 请求对象
      * @return SyncInvoker<ListUsersRequest, ListUsersResponse>
@@ -372,8 +350,7 @@ public class HssClient {
      *
      * 查询漏洞列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVulnerabilitiesRequest 请求对象
      * @return ListVulnerabilitiesResponse
@@ -387,8 +364,7 @@ public class HssClient {
      *
      * 查询漏洞列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVulnerabilitiesRequest 请求对象
      * @return SyncInvoker<ListVulnerabilitiesRequest, ListVulnerabilitiesResponse>
@@ -404,8 +380,7 @@ public class HssClient {
      *
      * 查询弱口令检测结果列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWeakPasswordUsersRequest 请求对象
      * @return ListWeakPasswordUsersResponse
@@ -419,8 +394,7 @@ public class HssClient {
      *
      * 查询弱口令检测结果列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWeakPasswordUsersRequest 请求对象
      * @return SyncInvoker<ListWeakPasswordUsersRequest, ListWeakPasswordUsersResponse>
@@ -436,8 +410,7 @@ public class HssClient {
      *
      * 查询配置检查项检测报告
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCheckRuleDetailRequest 请求对象
      * @return ShowCheckRuleDetailResponse
@@ -451,8 +424,7 @@ public class HssClient {
      *
      * 查询配置检查项检测报告
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCheckRuleDetailRequest 请求对象
      * @return SyncInvoker<ShowCheckRuleDetailRequest, ShowCheckRuleDetailResponse>
@@ -468,8 +440,7 @@ public class HssClient {
      *
      * 查询配额信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceQuotasRequest 请求对象
      * @return ShowResourceQuotasResponse
@@ -483,8 +454,7 @@ public class HssClient {
      *
      * 查询配额信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceQuotasRequest 请求对象
      * @return SyncInvoker<ShowResourceQuotasRequest, ShowResourceQuotasResponse>
@@ -500,8 +470,7 @@ public class HssClient {
      *
      * 查询指定安全配置项的检查结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRiskConfigDetailRequest 请求对象
      * @return ShowRiskConfigDetailResponse
@@ -515,8 +484,7 @@ public class HssClient {
      *
      * 查询指定安全配置项的检查结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRiskConfigDetailRequest 请求对象
      * @return SyncInvoker<ShowRiskConfigDetailRequest, ShowRiskConfigDetailResponse>
@@ -532,8 +500,7 @@ public class HssClient {
      *
      * 切换防护状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SwitchHostsProtectStatusRequest 请求对象
      * @return SwitchHostsProtectStatusResponse
@@ -547,8 +514,7 @@ public class HssClient {
      *
      * 切换防护状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SwitchHostsProtectStatusRequest 请求对象
      * @return SyncInvoker<SwitchHostsProtectStatusRequest, SwitchHostsProtectStatusResponse>

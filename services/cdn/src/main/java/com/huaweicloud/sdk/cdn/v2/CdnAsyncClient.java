@@ -24,8 +24,7 @@ public class CdnAsyncClient {
      *
      * 批量域名复制接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCopyDomainRequest 请求对象
      * @return CompletableFuture<BatchCopyDomainResponse>
@@ -39,8 +38,7 @@ public class CdnAsyncClient {
      *
      * 批量域名复制接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCopyDomainRequest 请求对象
      * @return AsyncInvoker<BatchCopyDomainRequest, BatchCopyDomainResponse>
@@ -66,8 +64,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：10次/min。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadRegionCarrierExcelRequest 请求对象
      * @return CompletableFuture<DownloadRegionCarrierExcelResponse>
@@ -92,8 +89,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：10次/min。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadRegionCarrierExcelRequest 请求对象
      * @return AsyncInvoker<DownloadRegionCarrierExcelRequest, DownloadRegionCarrierExcelResponse>
@@ -119,8 +115,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：10次/min。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadStatisticsExcelRequest 请求对象
      * @return CompletableFuture<DownloadStatisticsExcelResponse>
@@ -145,8 +140,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：10次/min。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadStatisticsExcelRequest 请求对象
      * @return AsyncInvoker<DownloadStatisticsExcelRequest, DownloadStatisticsExcelResponse>
@@ -170,8 +164,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：10次/min。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetChargeModesRequest 请求对象
      * @return CompletableFuture<SetChargeModesResponse>
@@ -193,8 +186,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：10次/min。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetChargeModesRequest 请求对象
      * @return AsyncInvoker<SetChargeModesRequest, SetChargeModesResponse>
@@ -222,8 +214,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：2次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBandwidthCalcRequest 请求对象
      * @return CompletableFuture<ShowBandwidthCalcResponse>
@@ -249,8 +240,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：2次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBandwidthCalcRequest 请求对象
      * @return AsyncInvoker<ShowBandwidthCalcRequest, ShowBandwidthCalcResponse>
@@ -274,8 +264,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：5次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowChargeModesRequest 请求对象
      * @return CompletableFuture<ShowChargeModesResponse>
@@ -297,8 +286,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：5次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowChargeModesRequest 请求对象
      * @return AsyncInvoker<ShowChargeModesRequest, ShowChargeModesResponse>
@@ -327,8 +315,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：15次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainLocationStatsRequest 请求对象
      * @return CompletableFuture<ShowDomainLocationStatsResponse>
@@ -356,8 +343,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：15次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainLocationStatsRequest 请求对象
      * @return AsyncInvoker<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse>
@@ -386,8 +372,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：15次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainStatsRequest 请求对象
      * @return CompletableFuture<ShowDomainStatsResponse>
@@ -414,8 +399,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：15次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainStatsRequest 请求对象
      * @return AsyncInvoker<ShowDomainStatsRequest, ShowDomainStatsResponse>
@@ -443,8 +427,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：5次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTopDomainNamesRequest 请求对象
      * @return CompletableFuture<ShowTopDomainNamesResponse>
@@ -470,8 +453,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：5次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTopDomainNamesRequest 请求对象
      * @return AsyncInvoker<ShowTopDomainNamesRequest, ShowTopDomainNamesResponse>
@@ -499,8 +481,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：5次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTopUrlRequest 请求对象
      * @return CompletableFuture<ShowTopUrlResponse>
@@ -526,8 +507,7 @@ public class CdnAsyncClient {
      * 
      * - 单租户调用频率：5次/s。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTopUrlRequest 请求对象
      * @return AsyncInvoker<ShowTopUrlRequest, ShowTopUrlResponse>

@@ -449,7 +449,7 @@ public class ApiPolicyMockResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "header")
 
-    private List<MockApiBaseInfoHeader> header = null;
+    private String header;
 
     public ApiPolicyMockResp withId(String id) {
         this.id = id;
@@ -619,36 +619,20 @@ public class ApiPolicyMockResp {
         this.statusCode = statusCode;
     }
 
-    public ApiPolicyMockResp withHeader(List<MockApiBaseInfoHeader> header) {
+    public ApiPolicyMockResp withHeader(String header) {
         this.header = header;
         return this;
     }
 
-    public ApiPolicyMockResp addHeaderItem(MockApiBaseInfoHeader headerItem) {
-        if (this.header == null) {
-            this.header = new ArrayList<>();
-        }
-        this.header.add(headerItem);
-        return this;
-    }
-
-    public ApiPolicyMockResp withHeader(Consumer<List<MockApiBaseInfoHeader>> headerSetter) {
-        if (this.header == null) {
-            this.header = new ArrayList<>();
-        }
-        headerSetter.accept(this.header);
-        return this;
-    }
-
     /**
-     * mock后端自定义响应头header
+     * mock后端自定义响应头header  格式：[{\"key\":\"\",\"value\": \"\", \"remark:\"\"}, {\"key2\":\"\",\"value2\": \"\",\"remark2:\"\"}]  参数说明：  key：mock后端自定义响应头header key, 支持英文，数字，中划线，且只能以英文字母或数字开头，1 ~ 64字符  value： mock后端自定义响应头header value，中文字符必须为UTF-8或者unicode编码, 不能为空，最大长度为10240  remark：mock后端自定义响应头header remark，中文字符必须为UTF-8 或者unicode编码，可以为空，最大长度为2048
      * @return header
      */
-    public List<MockApiBaseInfoHeader> getHeader() {
+    public String getHeader() {
         return header;
     }
 
-    public void setHeader(List<MockApiBaseInfoHeader> header) {
+    public void setHeader(String header) {
         this.header = header;
     }
 

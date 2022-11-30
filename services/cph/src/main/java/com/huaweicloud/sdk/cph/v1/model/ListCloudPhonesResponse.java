@@ -15,38 +15,21 @@ import java.util.function.Consumer;
 public class ListCloudPhonesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "phones")
+
+    private List<Phone> phones = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
 
     private String requestId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "phones")
-
-    private List<Object> phones = null;
-
-    public ListCloudPhonesResponse withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-    /**
-     * 请求的唯一标识ID
-     * @return requestId
-     */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
-    public ListCloudPhonesResponse withPhones(List<Object> phones) {
+    public ListCloudPhonesResponse withPhones(List<Phone> phones) {
         this.phones = phones;
         return this;
     }
 
-    public ListCloudPhonesResponse addPhonesItem(Object phonesItem) {
+    public ListCloudPhonesResponse addPhonesItem(Phone phonesItem) {
         if (this.phones == null) {
             this.phones = new ArrayList<>();
         }
@@ -54,7 +37,7 @@ public class ListCloudPhonesResponse extends SdkResponse {
         return this;
     }
 
-    public ListCloudPhonesResponse withPhones(Consumer<List<Object>> phonesSetter) {
+    public ListCloudPhonesResponse withPhones(Consumer<List<Phone>> phonesSetter) {
         if (this.phones == null) {
             this.phones = new ArrayList<>();
         }
@@ -66,12 +49,29 @@ public class ListCloudPhonesResponse extends SdkResponse {
      * 云手机信息
      * @return phones
      */
-    public List<Object> getPhones() {
+    public List<Phone> getPhones() {
         return phones;
     }
 
-    public void setPhones(List<Object> phones) {
+    public void setPhones(List<Phone> phones) {
         this.phones = phones;
+    }
+
+    public ListCloudPhonesResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * 请求的唯一标识ID。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 
     @Override
@@ -83,21 +83,21 @@ public class ListCloudPhonesResponse extends SdkResponse {
             return false;
         }
         ListCloudPhonesResponse listCloudPhonesResponse = (ListCloudPhonesResponse) o;
-        return Objects.equals(this.requestId, listCloudPhonesResponse.requestId)
-            && Objects.equals(this.phones, listCloudPhonesResponse.phones);
+        return Objects.equals(this.phones, listCloudPhonesResponse.phones)
+            && Objects.equals(this.requestId, listCloudPhonesResponse.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, phones);
+        return Objects.hash(phones, requestId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCloudPhonesResponse {\n");
-        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    phones: ").append(toIndentedString(phones)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

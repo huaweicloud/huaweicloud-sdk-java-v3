@@ -22,7 +22,7 @@ public class ListEncodeServersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encode_servers")
 
-    private List<Object> encodeServers = null;
+    private List<EncodeServer> encodeServers = null;
 
     public ListEncodeServersResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -30,7 +30,7 @@ public class ListEncodeServersResponse extends SdkResponse {
     }
 
     /**
-     * 请求的唯一标识ID
+     * 请求的唯一标识ID。
      * @return requestId
      */
     public String getRequestId() {
@@ -41,12 +41,12 @@ public class ListEncodeServersResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public ListEncodeServersResponse withEncodeServers(List<Object> encodeServers) {
+    public ListEncodeServersResponse withEncodeServers(List<EncodeServer> encodeServers) {
         this.encodeServers = encodeServers;
         return this;
     }
 
-    public ListEncodeServersResponse addEncodeServersItem(Object encodeServersItem) {
+    public ListEncodeServersResponse addEncodeServersItem(EncodeServer encodeServersItem) {
         if (this.encodeServers == null) {
             this.encodeServers = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class ListEncodeServersResponse extends SdkResponse {
         return this;
     }
 
-    public ListEncodeServersResponse withEncodeServers(Consumer<List<Object>> encodeServersSetter) {
+    public ListEncodeServersResponse withEncodeServers(Consumer<List<EncodeServer>> encodeServersSetter) {
         if (this.encodeServers == null) {
             this.encodeServers = new ArrayList<>();
         }
@@ -63,14 +63,14 @@ public class ListEncodeServersResponse extends SdkResponse {
     }
 
     /**
-     * 编码服务信息
+     * 编码服务信息。
      * @return encodeServers
      */
-    public List<Object> getEncodeServers() {
+    public List<EncodeServer> getEncodeServers() {
         return encodeServers;
     }
 
-    public void setEncodeServers(List<Object> encodeServers) {
+    public void setEncodeServers(List<EncodeServer> encodeServers) {
         this.encodeServers = encodeServers;
     }
 

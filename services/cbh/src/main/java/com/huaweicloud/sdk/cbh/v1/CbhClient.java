@@ -22,8 +22,7 @@ public class CbhClient {
      *
      * 获取CBH实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCbhInstanceRequest 请求对象
      * @return ListCbhInstanceResponse
@@ -37,8 +36,7 @@ public class CbhClient {
      *
      * 获取CBH实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCbhInstanceRequest 请求对象
      * @return SyncInvoker<ListCbhInstanceRequest, ListCbhInstanceResponse>

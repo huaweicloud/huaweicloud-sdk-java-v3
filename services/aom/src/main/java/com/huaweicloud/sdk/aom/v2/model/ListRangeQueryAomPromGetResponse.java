@@ -64,7 +64,7 @@ public class ListRangeQueryAomPromGetResponse extends SdkResponse {
 
 
     /**
-     * Get data
+     * 响应数据。
      * @return data
      */
     public Object getData() {

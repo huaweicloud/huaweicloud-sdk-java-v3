@@ -24,8 +24,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 创建资产模型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAssetModelRequest 请求对象
      * @return CompletableFuture<CreateAssetModelResponse>
@@ -39,8 +38,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 创建资产模型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAssetModelRequest 请求对象
      * @return AsyncInvoker<CreateAssetModelRequest, CreateAssetModelResponse>
@@ -56,8 +54,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除资产模型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAssetModelRequest 请求对象
      * @return CompletableFuture<DeleteAssetModelResponse>
@@ -71,8 +68,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除资产模型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAssetModelRequest 请求对象
      * @return AsyncInvoker<DeleteAssetModelRequest, DeleteAssetModelResponse>
@@ -88,8 +84,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取资产模型列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAssetModelsRequest 请求对象
      * @return CompletableFuture<ListAssetModelsResponse>
@@ -103,8 +98,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取资产模型列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAssetModelsRequest 请求对象
      * @return AsyncInvoker<ListAssetModelsRequest, ListAssetModelsResponse>
@@ -120,8 +114,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取资产模型详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAssetModelRequest 请求对象
      * @return CompletableFuture<ShowAssetModelResponse>
@@ -135,8 +128,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取资产模型详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAssetModelRequest 请求对象
      * @return AsyncInvoker<ShowAssetModelRequest, ShowAssetModelResponse>
@@ -152,8 +144,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 修改资产模型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAssetModelRequest 请求对象
      * @return CompletableFuture<UpdateAssetModelResponse>
@@ -167,8 +158,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 修改资产模型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAssetModelRequest 请求对象
      * @return AsyncInvoker<UpdateAssetModelRequest, UpdateAssetModelResponse>
@@ -184,8 +174,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 创建资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAssetNewRequest 请求对象
      * @return CompletableFuture<CreateAssetNewResponse>
@@ -199,8 +188,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 创建资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAssetNewRequest 请求对象
      * @return AsyncInvoker<CreateAssetNewRequest, CreateAssetNewResponse>
@@ -216,8 +204,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAssetNewRequest 请求对象
      * @return CompletableFuture<DeleteAssetNewResponse>
@@ -231,8 +218,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAssetNewRequest 请求对象
      * @return AsyncInvoker<DeleteAssetNewRequest, DeleteAssetNewResponse>
@@ -248,8 +234,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取资产列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAssetsNewRequest 请求对象
      * @return CompletableFuture<ListAssetsNewResponse>
@@ -263,8 +248,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取资产列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAssetsNewRequest 请求对象
      * @return AsyncInvoker<ListAssetsNewRequest, ListAssetsNewResponse>
@@ -280,8 +264,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 发布资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PublishRootAssetRequest 请求对象
      * @return CompletableFuture<PublishRootAssetResponse>
@@ -295,8 +278,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 发布资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PublishRootAssetRequest 请求对象
      * @return AsyncInvoker<PublishRootAssetRequest, PublishRootAssetResponse>
@@ -312,8 +294,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取资产详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAssetNewRequest 请求对象
      * @return CompletableFuture<ShowAssetNewResponse>
@@ -327,8 +308,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取资产详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAssetNewRequest 请求对象
      * @return AsyncInvoker<ShowAssetNewRequest, ShowAssetNewResponse>
@@ -344,8 +324,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 修改资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAssetNewRequest 请求对象
      * @return CompletableFuture<UpdateAssetNewResponse>
@@ -359,8 +338,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 修改资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAssetNewRequest 请求对象
      * @return AsyncInvoker<UpdateAssetNewRequest, UpdateAssetNewResponse>
@@ -376,8 +354,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取资产属性最新值
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLastPropertyValueRequest 请求对象
      * @return CompletableFuture<ShowLastPropertyValueResponse>
@@ -392,8 +369,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取资产属性最新值
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLastPropertyValueRequest 请求对象
      * @return AsyncInvoker<ShowLastPropertyValueRequest, ShowLastPropertyValueResponse>
@@ -409,8 +385,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取资产属性聚合值
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMetricValueRequest 请求对象
      * @return CompletableFuture<ShowMetricValueResponse>
@@ -424,8 +399,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取资产属性聚合值
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMetricValueRequest 请求对象
      * @return AsyncInvoker<ShowMetricValueRequest, ShowMetricValueResponse>
@@ -441,8 +415,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取资产属性历史值
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPropertyRawValueRequest 请求对象
      * @return CompletableFuture<ShowPropertyRawValueResponse>
@@ -457,8 +430,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取资产属性历史值
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPropertyRawValueRequest 请求对象
      * @return AsyncInvoker<ShowPropertyRawValueRequest, ShowPropertyRawValueResponse>
@@ -474,8 +446,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 创建批计算资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateComputingResourceRequest 请求对象
      * @return CompletableFuture<CreateComputingResourceResponse>
@@ -490,8 +461,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 创建批计算资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateComputingResourceRequest 请求对象
      * @return AsyncInvoker<CreateComputingResourceRequest, CreateComputingResourceResponse>
@@ -507,8 +477,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除批计算资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteComputingResourceRequest 请求对象
      * @return CompletableFuture<DeleteComputingResourceResponse>
@@ -523,8 +492,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除批计算资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteComputingResourceRequest 请求对象
      * @return AsyncInvoker<DeleteComputingResourceRequest, DeleteComputingResourceResponse>
@@ -540,8 +508,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询批计算资源列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComputingResourcesRequest 请求对象
      * @return CompletableFuture<ListComputingResourcesResponse>
@@ -556,8 +523,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询批计算资源列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComputingResourcesRequest 请求对象
      * @return AsyncInvoker<ListComputingResourcesRequest, ListComputingResourcesResponse>
@@ -573,8 +539,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 创建数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatasourceRequest 请求对象
      * @return CompletableFuture<CreateDatasourceResponse>
@@ -588,8 +553,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 创建数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatasourceRequest 请求对象
      * @return AsyncInvoker<CreateDatasourceRequest, CreateDatasourceResponse>
@@ -605,8 +569,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDatasourceRequest 请求对象
      * @return CompletableFuture<DeleteDatasourceResponse>
@@ -620,8 +583,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDatasourceRequest 请求对象
      * @return AsyncInvoker<DeleteDatasourceRequest, DeleteDatasourceResponse>
@@ -637,8 +599,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询数据源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAllDataSourceRequest 请求对象
      * @return CompletableFuture<ShowAllDataSourceResponse>
@@ -652,8 +613,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询数据源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAllDataSourceRequest 请求对象
      * @return AsyncInvoker<ShowAllDataSourceRequest, ShowAllDataSourceResponse>
@@ -669,8 +629,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询数据源详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDataSourceRequest 请求对象
      * @return CompletableFuture<ShowDataSourceResponse>
@@ -684,8 +643,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询数据源详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDataSourceRequest 请求对象
      * @return AsyncInvoker<ShowDataSourceRequest, ShowDataSourceResponse>
@@ -701,8 +659,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 修改数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDataSourceRequest 请求对象
      * @return CompletableFuture<UpdateDataSourceResponse>
@@ -716,8 +673,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 修改数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDataSourceRequest 请求对象
      * @return AsyncInvoker<UpdateDataSourceRequest, UpdateDataSourceResponse>
@@ -733,8 +689,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 创建存储组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateGroupRequest 请求对象
      * @return CompletableFuture<CreateGroupResponse>
@@ -748,8 +703,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 创建存储组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateGroupRequest 请求对象
      * @return AsyncInvoker<CreateGroupRequest, CreateGroupResponse>
@@ -764,8 +718,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除存储组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteGroupRequest 请求对象
      * @return CompletableFuture<DeleteGroupResponse>
@@ -779,8 +732,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除存储组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteGroupRequest 请求对象
      * @return AsyncInvoker<DeleteGroupRequest, DeleteGroupResponse>
@@ -795,8 +747,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询存储组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGroupsRequest 请求对象
      * @return CompletableFuture<ListGroupsResponse>
@@ -810,8 +761,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询存储组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGroupsRequest 请求对象
      * @return AsyncInvoker<ListGroupsRequest, ListGroupsResponse>
@@ -825,8 +775,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 更新存储组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateGroupRequest 请求对象
      * @return CompletableFuture<UpdateGroupResponse>
@@ -840,8 +789,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 更新存储组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateGroupRequest 请求对象
      * @return AsyncInvoker<UpdateGroupRequest, UpdateGroupResponse>
@@ -856,8 +804,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除存储
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDataStoreRequest 请求对象
      * @return CompletableFuture<DeleteDataStoreResponse>
@@ -871,8 +818,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除存储
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDataStoreRequest 请求对象
      * @return AsyncInvoker<DeleteDataStoreRequest, DeleteDataStoreResponse>
@@ -888,8 +834,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询存储列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDataStoresRequest 请求对象
      * @return CompletableFuture<ListDataStoresResponse>
@@ -903,8 +848,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询存储列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDataStoresRequest 请求对象
      * @return AsyncInvoker<ListDataStoresRequest, ListDataStoresResponse>
@@ -920,8 +864,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 更新存储
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDataStoreRequest 请求对象
      * @return CompletableFuture<UpdateDataStoreResponse>
@@ -935,8 +878,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 更新存储
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDataStoreRequest 请求对象
      * @return AsyncInvoker<UpdateDataStoreRequest, UpdateDataStoreResponse>
@@ -952,8 +894,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 根据标签查询设备历史值
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHistoryRequest 请求对象
      * @return CompletableFuture<ListHistoryResponse>
@@ -967,8 +908,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 根据标签查询设备历史值
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHistoryRequest 请求对象
      * @return AsyncInvoker<ListHistoryRequest, ListHistoryResponse>
@@ -983,8 +923,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 根据标签聚合、查询数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMetricsRequest 请求对象
      * @return CompletableFuture<ListMetricsResponse>
@@ -998,8 +937,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 根据标签聚合、查询数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMetricsRequest 请求对象
      * @return AsyncInvoker<ListMetricsRequest, ListMetricsResponse>
@@ -1014,8 +952,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询设备属性最新状态值
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPropertyValuesRequest 请求对象
      * @return CompletableFuture<ShowPropertyValuesResponse>
@@ -1029,8 +966,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询设备属性最新状态值
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPropertyValuesRequest 请求对象
      * @return AsyncInvoker<ShowPropertyValuesRequest, ShowPropertyValuesResponse>
@@ -1046,8 +982,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询标签的值列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagValuesRequest 请求对象
      * @return CompletableFuture<ListTagValuesResponse>
@@ -1061,8 +996,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询标签的值列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagValuesRequest 请求对象
      * @return AsyncInvoker<ListTagValuesRequest, ListTagValuesResponse>
@@ -1078,8 +1012,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 将SQL语句的查询结果下载到本地，只支持下载“QUERY”类型作业的查询结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportDatasetRequest 请求对象
      * @return CompletableFuture<ExportDatasetResponse>
@@ -1093,8 +1026,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 将SQL语句的查询结果下载到本地，只支持下载“QUERY”类型作业的查询结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportDatasetRequest 请求对象
      * @return AsyncInvoker<ExportDatasetRequest, ExportDatasetResponse>
@@ -1110,8 +1042,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 将数据从文件导入OBS表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportDataRequest 请求对象
      * @return CompletableFuture<ImportDataResponse>
@@ -1125,8 +1056,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 将数据从文件导入OBS表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportDataRequest 请求对象
      * @return AsyncInvoker<ImportDataRequest, ImportDataResponse>
@@ -1140,8 +1070,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 在执行SQL查询语句的作业完成后，查看该作业执行的结果。目前仅支持查看“QUERY”类型作业的执行结果。该API只能查看前1000条的结果记录，若要查看全部的结果记录，需要先导出查询结果再进行查看。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDatasetRequest 请求对象
      * @return CompletableFuture<ShowDatasetResponse>
@@ -1155,8 +1084,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 在执行SQL查询语句的作业完成后，查看该作业执行的结果。目前仅支持查看“QUERY”类型作业的执行结果。该API只能查看前1000条的结果记录，若要查看全部的结果记录，需要先导出查询结果再进行查看。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDatasetRequest 请求对象
      * @return AsyncInvoker<ShowDatasetRequest, ShowDatasetResponse>
@@ -1171,8 +1099,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 检查离线作业SQL语法。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateSqlRequest 请求对象
      * @return CompletableFuture<ValidateSqlResponse>
@@ -1186,8 +1113,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 检查离线作业SQL语法。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateSqlRequest 请求对象
      * @return AsyncInvoker<ValidateSqlRequest, ValidateSqlResponse>
@@ -1202,8 +1128,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 通过API数据源上报设备数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddDevDataRequest 请求对象
      * @return CompletableFuture<AddDevDataResponse>
@@ -1217,8 +1142,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 通过API数据源上报设备数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddDevDataRequest 请求对象
      * @return AsyncInvoker<AddDevDataRequest, AddDevDataResponse>
@@ -1232,8 +1156,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 创建离线作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateBatchJobRequest 请求对象
      * @return CompletableFuture<CreateBatchJobResponse>
@@ -1247,8 +1170,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 创建离线作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateBatchJobRequest 请求对象
      * @return AsyncInvoker<CreateBatchJobRequest, CreateBatchJobResponse>
@@ -1264,8 +1186,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除离线作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBatchJobRequest 请求对象
      * @return CompletableFuture<DeleteBatchJobResponse>
@@ -1279,8 +1200,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除离线作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBatchJobRequest 请求对象
      * @return AsyncInvoker<DeleteBatchJobRequest, DeleteBatchJobResponse>
@@ -1296,8 +1216,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询离线作业列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBatchJobsRequest 请求对象
      * @return CompletableFuture<ListBatchJobsResponse>
@@ -1311,8 +1230,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询离线作业列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBatchJobsRequest 请求对象
      * @return AsyncInvoker<ListBatchJobsRequest, ListBatchJobsResponse>
@@ -1328,8 +1246,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询离线作业详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBatchJobRequest 请求对象
      * @return CompletableFuture<ShowBatchJobResponse>
@@ -1343,8 +1260,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询离线作业详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBatchJobRequest 请求对象
      * @return AsyncInvoker<ShowBatchJobRequest, ShowBatchJobResponse>
@@ -1360,8 +1276,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 修改离线作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBatchJobRequest 请求对象
      * @return CompletableFuture<UpdateBatchJobResponse>
@@ -1375,8 +1290,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 修改离线作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBatchJobRequest 请求对象
      * @return AsyncInvoker<UpdateBatchJobRequest, UpdateBatchJobResponse>
@@ -1392,8 +1306,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 新建管道作业时，需要在URL中指定是更新哪一个作业，将在body中附带完整的作业信息。（作业中各算子的详细配置请参考算子配置章节。） check参数表示是否需要对作业配置进行检查，若为false，则不检查，将作业保存为草稿；若为true，则对作业配置进行检查。当检查不通过时，将作业状态修改为草稿；检查通过时，将作业状态修改为就绪，并返回成功。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddPipelineJobRequest 请求对象
      * @return CompletableFuture<AddPipelineJobResponse>
@@ -1407,8 +1320,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 新建管道作业时，需要在URL中指定是更新哪一个作业，将在body中附带完整的作业信息。（作业中各算子的详细配置请参考算子配置章节。） check参数表示是否需要对作业配置进行检查，若为false，则不检查，将作业保存为草稿；若为true，则对作业配置进行检查。当检查不通过时，将作业状态修改为草稿；检查通过时，将作业状态修改为就绪，并返回成功。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddPipelineJobRequest 请求对象
      * @return AsyncInvoker<AddPipelineJobRequest, AddPipelineJobResponse>
@@ -1424,8 +1336,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除用户指定的管道作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePipelineJobRequest 请求对象
      * @return CompletableFuture<DeletePipelineJobResponse>
@@ -1439,8 +1350,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除用户指定的管道作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePipelineJobRequest 请求对象
      * @return AsyncInvoker<DeletePipelineJobRequest, DeletePipelineJobResponse>
@@ -1456,8 +1366,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取用户下的所有管道作业，支持分页。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPipelineJobsRequest 请求对象
      * @return CompletableFuture<ListPipelineJobsResponse>
@@ -1471,8 +1380,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取用户下的所有管道作业，支持分页。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPipelineJobsRequest 请求对象
      * @return AsyncInvoker<ListPipelineJobsRequest, ListPipelineJobsResponse>
@@ -1488,8 +1396,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取指定管道作业的详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPipelineJobRequest 请求对象
      * @return CompletableFuture<ShowPipelineJobResponse>
@@ -1503,8 +1410,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取指定管道作业的详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPipelineJobRequest 请求对象
      * @return AsyncInvoker<ShowPipelineJobRequest, ShowPipelineJobResponse>
@@ -1520,8 +1426,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 提交管道作业到运行环境，实时接收数据源的数据并按用户定义的数据清洗逻辑对数据进行处理。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartPipelineJobRequest 请求对象
      * @return CompletableFuture<StartPipelineJobResponse>
@@ -1535,8 +1440,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 提交管道作业到运行环境，实时接收数据源的数据并按用户定义的数据清洗逻辑对数据进行处理。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartPipelineJobRequest 请求对象
      * @return AsyncInvoker<StartPipelineJobRequest, StartPipelineJobResponse>
@@ -1552,8 +1456,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 停止一个正在运行中的管道作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopPipelineJobRequest 请求对象
      * @return CompletableFuture<StopPipelineJobResponse>
@@ -1567,8 +1470,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 停止一个正在运行中的管道作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopPipelineJobRequest 请求对象
      * @return AsyncInvoker<StopPipelineJobRequest, StopPipelineJobResponse>
@@ -1584,8 +1486,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 更新管道作业时，需要在URL中指定是更新哪一个作业，将在body中附带完整的作业信息。（管道作业详细配置，每个作业可选择不同的算子进行组合，各算子的使用方法详见：数据管道算子配置指南。） check参数表示是否需要对作业配置进行检查，若为false，则不检查，将作业保存为草稿；若为true，则对作业配置进行检查。当检查不通过时，将作业状态修改为草稿；检查通过时，将作业状态修改为就绪，并返回成功。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePipelineJobRequest 请求对象
      * @return CompletableFuture<UpdatePipelineJobResponse>
@@ -1599,8 +1500,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 更新管道作业时，需要在URL中指定是更新哪一个作业，将在body中附带完整的作业信息。（管道作业详细配置，每个作业可选择不同的算子进行组合，各算子的使用方法详见：数据管道算子配置指南。） check参数表示是否需要对作业配置进行检查，若为false，则不检查，将作业保存为草稿；若为true，则对作业配置进行检查。当检查不通过时，将作业状态修改为草稿；检查通过时，将作业状态修改为就绪，并返回成功。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePipelineJobRequest 请求对象
      * @return AsyncInvoker<UpdatePipelineJobRequest, UpdatePipelineJobResponse>
@@ -1616,8 +1516,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 除名称和描述外，可先不提供作业的详细配置信息。 check参数表示是否需要对作业配置进行检查，若为false，则不检查，将作业保存为草稿；若为true，则对作业配置进行检查，无论检查是否通过，都将作业及配置信息保存为草稿，当检查不通过时，返回失败及错误信息，检查通过时，将作业状态修改为就绪，并返回成功。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStreamingJobRequest 请求对象
      * @return CompletableFuture<CreateStreamingJobResponse>
@@ -1631,8 +1530,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 除名称和描述外，可先不提供作业的详细配置信息。 check参数表示是否需要对作业配置进行检查，若为false，则不检查，将作业保存为草稿；若为true，则对作业配置进行检查，无论检查是否通过，都将作业及配置信息保存为草稿，当检查不通过时，返回失败及错误信息，检查通过时，将作业状态修改为就绪，并返回成功。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStreamingJobRequest 请求对象
      * @return AsyncInvoker<CreateStreamingJobRequest, CreateStreamingJobResponse>
@@ -1648,8 +1546,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除用户指定的作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteStreamingJobByIdRequest 请求对象
      * @return CompletableFuture<DeleteStreamingJobByIdResponse>
@@ -1664,8 +1561,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除用户指定的作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteStreamingJobByIdRequest 请求对象
      * @return AsyncInvoker<DeleteStreamingJobByIdRequest, DeleteStreamingJobByIdResponse>
@@ -1681,8 +1577,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取指定作业的详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobByIdRequest 请求对象
      * @return CompletableFuture<ShowJobByIdResponse>
@@ -1696,8 +1591,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取指定作业的详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobByIdRequest 请求对象
      * @return AsyncInvoker<ShowJobByIdRequest, ShowJobByIdResponse>
@@ -1712,8 +1606,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取用户下的所有实时分析作业，支持分页。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobsRequest 请求对象
      * @return CompletableFuture<ShowJobsResponse>
@@ -1727,8 +1620,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 获取用户下的所有实时分析作业，支持分页。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobsRequest 请求对象
      * @return AsyncInvoker<ShowJobsRequest, ShowJobsResponse>
@@ -1742,8 +1634,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 更新作业时，需要在URL中指定是更新哪一个作业，将在body中附带完整的作业信息。 check参数表示是否需要对作业配置进行检查，若为false，则不检查，将作业保存为草稿；若为true，则对作业配置进行检查，无论检查是否通过，都将作业及配置信息保存为草稿，当检查不通过时，返回失败及错误信息，检查通过时，将作业状态修改为就绪，并返回成功。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStreamingJobRequest 请求对象
      * @return CompletableFuture<UpdateStreamingJobResponse>
@@ -1757,8 +1648,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 更新作业时，需要在URL中指定是更新哪一个作业，将在body中附带完整的作业信息。 check参数表示是否需要对作业配置进行检查，若为false，则不检查，将作业保存为草稿；若为true，则对作业配置进行检查，无论检查是否通过，都将作业及配置信息保存为草稿，当检查不通过时，返回失败及错误信息，检查通过时，将作业状态修改为就绪，并返回成功。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStreamingJobRequest 请求对象
      * @return AsyncInvoker<UpdateStreamingJobRequest, UpdateStreamingJobResponse>
@@ -1774,8 +1664,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 提交作业到运行环境，实时接收数据并按用户定义的业务逻辑对数据进行处理。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartJobRequest 请求对象
      * @return CompletableFuture<StartJobResponse>
@@ -1789,8 +1678,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 提交作业到运行环境，实时接收数据并按用户定义的业务逻辑对数据进行处理。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartJobRequest 请求对象
      * @return AsyncInvoker<StartJobRequest, StartJobResponse>
@@ -1804,8 +1692,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 停止一个正在运行中的作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopJobRequest 请求对象
      * @return CompletableFuture<StopJobResponse>
@@ -1819,8 +1706,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 停止一个正在运行中的作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopJobRequest 请求对象
      * @return AsyncInvoker<StopJobRequest, StopJobResponse>
@@ -1834,8 +1720,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 执行离线作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRunRequest 请求对象
      * @return CompletableFuture<CreateRunResponse>
@@ -1849,8 +1734,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 执行离线作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRunRequest 请求对象
      * @return AsyncInvoker<CreateRunRequest, CreateRunResponse>
@@ -1864,8 +1748,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 停止提交中或运行中的离线作业，若作业已经执行结束或失败则无法停止。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRunRequest 请求对象
      * @return CompletableFuture<DeleteRunResponse>
@@ -1879,8 +1762,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 停止提交中或运行中的离线作业，若作业已经执行结束或失败则无法停止。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRunRequest 请求对象
      * @return AsyncInvoker<DeleteRunRequest, DeleteRunResponse>
@@ -1894,8 +1776,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询离线作业运行列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRunsRequest 请求对象
      * @return CompletableFuture<ListRunsResponse>
@@ -1909,8 +1790,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询离线作业运行列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRunsRequest 请求对象
      * @return AsyncInvoker<ListRunsRequest, ListRunsResponse>
@@ -1924,8 +1804,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询离线作业运行详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRunRequest 请求对象
      * @return CompletableFuture<ShowRunResponse>
@@ -1939,8 +1818,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询离线作业运行详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRunRequest 请求对象
      * @return AsyncInvoker<ShowRunRequest, ShowRunResponse>
@@ -1954,8 +1832,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 创建离线数据表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTableRequest 请求对象
      * @return CompletableFuture<CreateTableResponse>
@@ -1969,8 +1846,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 创建离线数据表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTableRequest 请求对象
      * @return AsyncInvoker<CreateTableRequest, CreateTableResponse>
@@ -1985,8 +1861,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除离线数据表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTableRequest 请求对象
      * @return CompletableFuture<DeleteTableResponse>
@@ -2000,8 +1875,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 删除离线数据表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTableRequest 请求对象
      * @return AsyncInvoker<DeleteTableRequest, DeleteTableResponse>
@@ -2016,8 +1890,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询离线数据表列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTablesRequest 请求对象
      * @return CompletableFuture<ListTablesResponse>
@@ -2031,8 +1904,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询离线数据表列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTablesRequest 请求对象
      * @return AsyncInvoker<ListTablesRequest, ListTablesResponse>
@@ -2046,8 +1918,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 预览离线数据表内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTablePreviewRequest 请求对象
      * @return CompletableFuture<ShowTablePreviewResponse>
@@ -2061,8 +1932,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 预览离线数据表内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTablePreviewRequest 请求对象
      * @return AsyncInvoker<ShowTablePreviewRequest, ShowTablePreviewResponse>
@@ -2078,8 +1948,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询离线数据表结构。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTableSchemaRequest 请求对象
      * @return CompletableFuture<ShowTableSchemaResponse>
@@ -2093,8 +1962,7 @@ public class IoTAnalyticsAsyncClient {
      *
      * 查询离线数据表结构。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTableSchemaRequest 请求对象
      * @return AsyncInvoker<ShowTableSchemaRequest, ShowTableSchemaResponse>

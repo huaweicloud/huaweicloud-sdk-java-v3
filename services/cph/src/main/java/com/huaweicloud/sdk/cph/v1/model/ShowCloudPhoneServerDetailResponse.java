@@ -87,7 +87,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private Object metadata;
+    private ShowCloudPhoneServerDetailResponseBodyMetadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "addresses")
@@ -130,7 +130,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 请求的唯一标识ID
+     * 请求的唯一标识ID。
      * @return requestId
      */
     public String getRequestId() {
@@ -250,6 +250,8 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
 
     /**
      * 服务器状态 - 0、1、3、4：创建中 - 2：异常 - 5：正常 - 8：冻结 - 10：关机 - 11：关机中 - 12：关机失败 - 13：开机中
+     * minimum: -128
+     * maximum: 128
      * @return status
      */
     public Integer getStatus() {
@@ -266,7 +268,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器所属虚拟私有云（简称VPC）的ID。 网络版本 network_version 取值为“v1”时，表示云手机服务器所属资源租户的VPC ID；取值为“v2”时，表示租户创建服务器时指定 VPC 的 VPC ID
+     * 云手机服务器所属虚拟私有云（简称VPC）的ID 网络版本 network_version 取值为“v1”时，表示云手机服务器所属资源租户的VPC ID；取值为“v2”时，表示租户创建服务器时指定 VPC 的 VPC ID
      * @return vpcId
      */
     public String getVpcId() {
@@ -283,7 +285,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器所属虚拟私有云（简称VPC）的网段。 网络版本 network_version 取值为“v1”时，表示云手机服务器所属资源租户的VPC CIDR；取值为“v2”时，表示租户创建服务器时指定 VPC 的 VPC CIDR
+     * 云手机服务器所属虚拟私有云（简称VPC）的网段 网络版本 network_version 取值为“v1”时，表示云手机服务器所属资源租户的VPC CIDR；取值为“v2”时，表示租户创建服务器时指定 VPC 的 VPC CIDR
      * @return cidr
      */
     public String getCidr() {
@@ -300,7 +302,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器所属虚拟私有云（简称VPC）的网段。 网络版本 network_version 取值为“v1”时，表示云手机服务器所属资源租户的VPC CIDR；取值为“v2”时，表示租户创建服务器时指定 VPC 的 VPC CIDR
+     * 云手机服务器所属虚拟私有云（简称VPC）的网段 网络版本 network_version 取值为“v1”时，表示云手机服务器所属资源租户的VPC CIDR；取值为“v2”时，表示租户创建服务器时指定 VPC 的 VPC CIDR
      * @return vpcCidr
      */
     public String getVpcCidr() {
@@ -317,7 +319,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器所属子网的ID。 仅在网络版本 network_version 取值为“v2”时，该取值表示租户创建服务器时指定子网的 ID，网络版本取值为“v1”时，该字段表示云手机服务器所属资源租户的子网ID
+     * 云手机服务器所属子网的ID 仅在网络版本 network_version 取值为“v2”时，该取值表示租户创建服务器时指定子网的 ID，网络版本取值为“v1”时，该字段表示云手机服务器所属资源租户的子网ID
      * @return subnetId
      */
     public String getSubnetId() {
@@ -334,7 +336,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器所属子网的网段。 网络版本 network_version 取值为“v2”时，表示租户创建服务器时指定子网的 CIDR; 取值为“v1”时，表示云手机服务器所属资源租户的子网CIDR
+     * 云手机服务器所属子网的网段 网络版本 network_version 取值为“v2”时，表示租户创建服务器时指定子网的 CIDR; 取值为“v1”时，表示云手机服务器所属资源租户的子网CIDR
      * @return subnetCidr
      */
     public String getSubnetCidr() {
@@ -362,14 +364,15 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
         this.resourceProjectId = resourceProjectId;
     }
 
-    public ShowCloudPhoneServerDetailResponse withMetadata(Object metadata) {
+    public ShowCloudPhoneServerDetailResponse withMetadata(ShowCloudPhoneServerDetailResponseBodyMetadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public ShowCloudPhoneServerDetailResponse withMetadata(Consumer<Object> metadataSetter) {
+    public ShowCloudPhoneServerDetailResponse withMetadata(
+        Consumer<ShowCloudPhoneServerDetailResponseBodyMetadata> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new Object();
+            this.metadata = new ShowCloudPhoneServerDetailResponseBodyMetadata();
             metadataSetter.accept(this.metadata);
         }
 
@@ -377,14 +380,14 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 订单以及产品相关信息
+     * Get metadata
      * @return metadata
      */
-    public Object getMetadata() {
+    public ShowCloudPhoneServerDetailResponseBodyMetadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Object metadata) {
+    public void setMetadata(ShowCloudPhoneServerDetailResponseBodyMetadata metadata) {
         this.metadata = metadata;
     }
 
@@ -493,7 +496,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 是否为自定义网络的云手机服务器标识。  \"v1\"，非自定义网络的云手机服务器。  \"v2\"，自定义网络的云手机服务器。 支持按照网络版本字段进行筛选
+     * 是否为自定义网络的云手机服务器标识。  \"v1\"，非自定义网络的云手机服务器。\\t\"v2\"，自定义网络的云手机服务器。 支持按照网络版本字段进行筛选
      * @return networkVersion
      */
     public String getNetworkVersion() {

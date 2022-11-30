@@ -125,6 +125,11 @@ public class UrlDomainRefInfo {
     private String minSslVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_http_redirect_to_https")
+
+    private Boolean isHttpRedirectToHttps;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_id")
 
     private String sslId;
@@ -215,6 +220,23 @@ public class UrlDomainRefInfo {
 
     public void setMinSslVersion(String minSslVersion) {
         this.minSslVersion = minSslVersion;
+    }
+
+    public UrlDomainRefInfo withIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+        this.isHttpRedirectToHttps = isHttpRedirectToHttps;
+        return this;
+    }
+
+    /**
+     * 是否开启http到https的重定向，false为关闭，true为开启，默认为false
+     * @return isHttpRedirectToHttps
+     */
+    public Boolean getIsHttpRedirectToHttps() {
+        return isHttpRedirectToHttps;
+    }
+
+    public void setIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+        this.isHttpRedirectToHttps = isHttpRedirectToHttps;
     }
 
     public UrlDomainRefInfo withSslId(String sslId) {
@@ -314,6 +336,7 @@ public class UrlDomainRefInfo {
         return Objects.equals(this.urlDomain, urlDomainRefInfo.urlDomain)
             && Objects.equals(this.id, urlDomainRefInfo.id) && Objects.equals(this.status, urlDomainRefInfo.status)
             && Objects.equals(this.minSslVersion, urlDomainRefInfo.minSslVersion)
+            && Objects.equals(this.isHttpRedirectToHttps, urlDomainRefInfo.isHttpRedirectToHttps)
             && Objects.equals(this.sslId, urlDomainRefInfo.sslId)
             && Objects.equals(this.sslName, urlDomainRefInfo.sslName)
             && Objects.equals(this.apiGroupId, urlDomainRefInfo.apiGroupId)
@@ -323,7 +346,16 @@ public class UrlDomainRefInfo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(urlDomain, id, status, minSslVersion, sslId, sslName, apiGroupId, apiGroupName, instanceId);
+        return Objects.hash(urlDomain,
+            id,
+            status,
+            minSslVersion,
+            isHttpRedirectToHttps,
+            sslId,
+            sslName,
+            apiGroupId,
+            apiGroupName,
+            instanceId);
     }
 
     @Override
@@ -334,6 +366,7 @@ public class UrlDomainRefInfo {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    minSslVersion: ").append(toIndentedString(minSslVersion)).append("\n");
+        sb.append("    isHttpRedirectToHttps: ").append(toIndentedString(isHttpRedirectToHttps)).append("\n");
         sb.append("    sslId: ").append(toIndentedString(sslId)).append("\n");
         sb.append("    sslName: ").append(toIndentedString(sslName)).append("\n");
         sb.append("    apiGroupId: ").append(toIndentedString(apiGroupId)).append("\n");

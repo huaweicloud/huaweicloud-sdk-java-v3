@@ -124,6 +124,11 @@ public class UrlDomainBaseInfo {
 
     private String minSslVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_http_redirect_to_https")
+
+    private Boolean isHttpRedirectToHttps;
+
     public UrlDomainBaseInfo withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
         return this;
@@ -192,6 +197,23 @@ public class UrlDomainBaseInfo {
         this.minSslVersion = minSslVersion;
     }
 
+    public UrlDomainBaseInfo withIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+        this.isHttpRedirectToHttps = isHttpRedirectToHttps;
+        return this;
+    }
+
+    /**
+     * 是否开启http到https的重定向，false为关闭，true为开启，默认为false
+     * @return isHttpRedirectToHttps
+     */
+    public Boolean getIsHttpRedirectToHttps() {
+        return isHttpRedirectToHttps;
+    }
+
+    public void setIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+        this.isHttpRedirectToHttps = isHttpRedirectToHttps;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -203,12 +225,13 @@ public class UrlDomainBaseInfo {
         UrlDomainBaseInfo urlDomainBaseInfo = (UrlDomainBaseInfo) o;
         return Objects.equals(this.urlDomain, urlDomainBaseInfo.urlDomain)
             && Objects.equals(this.id, urlDomainBaseInfo.id) && Objects.equals(this.status, urlDomainBaseInfo.status)
-            && Objects.equals(this.minSslVersion, urlDomainBaseInfo.minSslVersion);
+            && Objects.equals(this.minSslVersion, urlDomainBaseInfo.minSslVersion)
+            && Objects.equals(this.isHttpRedirectToHttps, urlDomainBaseInfo.isHttpRedirectToHttps);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(urlDomain, id, status, minSslVersion);
+        return Objects.hash(urlDomain, id, status, minSslVersion, isHttpRedirectToHttps);
     }
 
     @Override
@@ -219,6 +242,7 @@ public class UrlDomainBaseInfo {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    minSslVersion: ").append(toIndentedString(minSslVersion)).append("\n");
+        sb.append("    isHttpRedirectToHttps: ").append(toIndentedString(isHttpRedirectToHttps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

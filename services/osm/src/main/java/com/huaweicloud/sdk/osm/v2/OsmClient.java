@@ -22,8 +22,7 @@ public class OsmClient {
      *
      * 验证授权主机密码是否正确
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckHostsRequest 请求对象
      * @return CheckHostsResponse
@@ -37,8 +36,7 @@ public class OsmClient {
      *
      * 验证授权主机密码是否正确
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckHostsRequest 请求对象
      * @return SyncInvoker<CheckHostsRequest, CheckHostsResponse>
@@ -52,8 +50,7 @@ public class OsmClient {
      *
      * 是否需要验证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckNeedVerifyRequest 请求对象
      * @return CheckNeedVerifyResponse
@@ -67,8 +64,7 @@ public class OsmClient {
      *
      * 是否需要验证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckNeedVerifyRequest 请求对象
      * @return SyncInvoker<CheckNeedVerifyRequest, CheckNeedVerifyResponse>
@@ -84,8 +80,7 @@ public class OsmClient {
      *
      * 验证联系方式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckVerifyCodesRequest 请求对象
      * @return CheckVerifyCodesResponse
@@ -99,8 +94,7 @@ public class OsmClient {
      *
      * 验证联系方式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckVerifyCodesRequest 请求对象
      * @return SyncInvoker<CheckVerifyCodesRequest, CheckVerifyCodesResponse>
@@ -116,8 +110,7 @@ public class OsmClient {
      *
      * 租户确认授权
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConfirmAuthorizationsRequest 请求对象
      * @return ConfirmAuthorizationsResponse
@@ -131,8 +124,7 @@ public class OsmClient {
      *
      * 租户确认授权
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConfirmAuthorizationsRequest 请求对象
      * @return SyncInvoker<ConfirmAuthorizationsRequest, ConfirmAuthorizationsResponse>
@@ -148,8 +140,7 @@ public class OsmClient {
      *
      * 提交工单扩展参数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCaseExtendsParamRequest 请求对象
      * @return CreateCaseExtendsParamResponse
@@ -163,8 +154,7 @@ public class OsmClient {
      *
      * 提交工单扩展参数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCaseExtendsParamRequest 请求对象
      * @return SyncInvoker<CreateCaseExtendsParamRequest, CreateCaseExtendsParamResponse>
@@ -180,8 +170,7 @@ public class OsmClient {
      *
      * 添加工单关联标签接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCaseLabelsRequest 请求对象
      * @return CreateCaseLabelsResponse
@@ -195,8 +184,7 @@ public class OsmClient {
      *
      * 添加工单关联标签接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCaseLabelsRequest 请求对象
      * @return SyncInvoker<CreateCaseLabelsRequest, CreateCaseLabelsResponse>
@@ -212,8 +200,7 @@ public class OsmClient {
      *
      * 创建工单
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCasesRequest 请求对象
      * @return CreateCasesResponse
@@ -227,8 +214,7 @@ public class OsmClient {
      *
      * 创建工单
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCasesRequest 请求对象
      * @return SyncInvoker<CreateCasesRequest, CreateCasesResponse>
@@ -242,8 +228,7 @@ public class OsmClient {
      *
      * 创建标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLabelsRequest 请求对象
      * @return CreateLabelsResponse
@@ -257,8 +242,7 @@ public class OsmClient {
      *
      * 创建标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLabelsRequest 请求对象
      * @return SyncInvoker<CreateLabelsRequest, CreateLabelsResponse>
@@ -272,8 +256,7 @@ public class OsmClient {
      *
      * 提交留言
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMessagesRequest 请求对象
      * @return CreateMessagesResponse
@@ -287,8 +270,7 @@ public class OsmClient {
      *
      * 提交留言
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMessagesRequest 请求对象
      * @return SyncInvoker<CreateMessagesRequest, CreateMessagesResponse>
@@ -304,8 +286,7 @@ public class OsmClient {
      *
      * 创建授权
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePrivilegesRequest 请求对象
      * @return CreatePrivilegesResponse
@@ -319,8 +300,7 @@ public class OsmClient {
      *
      * 创建授权
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePrivilegesRequest 请求对象
      * @return SyncInvoker<CreatePrivilegesRequest, CreatePrivilegesResponse>
@@ -336,8 +316,7 @@ public class OsmClient {
      *
      * 创建关联，一个工单最多支持3个关联
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRelationsRequest 请求对象
      * @return CreateRelationsResponse
@@ -351,8 +330,7 @@ public class OsmClient {
      *
      * 创建关联，一个工单最多支持3个关联
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRelationsRequest 请求对象
      * @return SyncInvoker<CreateRelationsRequest, CreateRelationsResponse>
@@ -368,8 +346,7 @@ public class OsmClient {
      *
      * 提交评分
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateScoresRequest 请求对象
      * @return CreateScoresResponse
@@ -383,8 +360,7 @@ public class OsmClient {
      *
      * 提交评分
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateScoresRequest 请求对象
      * @return SyncInvoker<CreateScoresRequest, CreateScoresResponse>
@@ -398,8 +374,7 @@ public class OsmClient {
      *
      * 删除附件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAccessoriesRequest 请求对象
      * @return DeleteAccessoriesResponse
@@ -413,8 +388,7 @@ public class OsmClient {
      *
      * 删除附件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAccessoriesRequest 请求对象
      * @return SyncInvoker<DeleteAccessoriesRequest, DeleteAccessoriesResponse>
@@ -430,8 +404,7 @@ public class OsmClient {
      *
      * 删除指定工单关联标签接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCaseLabelsRequest 请求对象
      * @return DeleteCaseLabelsResponse
@@ -445,8 +418,7 @@ public class OsmClient {
      *
      * 删除指定工单关联标签接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCaseLabelsRequest 请求对象
      * @return SyncInvoker<DeleteCaseLabelsRequest, DeleteCaseLabelsResponse>
@@ -462,8 +434,7 @@ public class OsmClient {
      *
      * 删除标签，同时会删除工单与标签关联关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLabelsRequest 请求对象
      * @return DeleteLabelsResponse
@@ -477,8 +448,7 @@ public class OsmClient {
      *
      * 删除标签，同时会删除工单与标签关联关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLabelsRequest 请求对象
      * @return SyncInvoker<DeleteLabelsRequest, DeleteLabelsResponse>
@@ -492,8 +462,7 @@ public class OsmClient {
      *
      * 删除关联
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRelationRequest 请求对象
      * @return DeleteRelationResponse
@@ -507,8 +476,7 @@ public class OsmClient {
      *
      * 删除关联
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRelationRequest 请求对象
      * @return SyncInvoker<DeleteRelationRequest, DeleteRelationResponse>
@@ -524,8 +492,7 @@ public class OsmClient {
      *
      * 下载附件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadAccessoriesRequest 请求对象
      * @return DownloadAccessoriesResponse
@@ -539,8 +506,7 @@ public class OsmClient {
      *
      * 下载附件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadAccessoriesRequest 请求对象
      * @return SyncInvoker<DownloadAccessoriesRequest, DownloadAccessoriesResponse>
@@ -556,8 +522,7 @@ public class OsmClient {
      *
      * 工单导出
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadCasesRequest 请求对象
      * @return DownloadCasesResponse
@@ -571,8 +536,7 @@ public class OsmClient {
      *
      * 工单导出
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadCasesRequest 请求对象
      * @return SyncInvoker<DownloadCasesRequest, DownloadCasesResponse>
@@ -586,8 +550,7 @@ public class OsmClient {
      *
      * 返回图片内容，用于页面直接展示
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadImagesRequest 请求对象
      * @return DownloadImagesResponse
@@ -601,8 +564,7 @@ public class OsmClient {
      *
      * 返回图片内容，用于页面直接展示
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadImagesRequest 请求对象
      * @return SyncInvoker<DownloadImagesRequest, DownloadImagesResponse>
@@ -618,8 +580,7 @@ public class OsmClient {
      *
      * 租户批量获取下载链接
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAccessoryAccessUrlsRequest 请求对象
      * @return ListAccessoryAccessUrlsResponse
@@ -633,8 +594,7 @@ public class OsmClient {
      *
      * 租户批量获取下载链接
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAccessoryAccessUrlsRequest 请求对象
      * @return SyncInvoker<ListAccessoryAccessUrlsRequest, ListAccessoryAccessUrlsResponse>
@@ -650,8 +610,7 @@ public class OsmClient {
      *
      * 查询委托
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAgenciesRequest 请求对象
      * @return ListAgenciesResponse
@@ -665,8 +624,7 @@ public class OsmClient {
      *
      * 查询委托
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAgenciesRequest 请求对象
      * @return SyncInvoker<ListAgenciesRequest, ListAgenciesResponse>
@@ -680,8 +638,7 @@ public class OsmClient {
      *
      * 查询国家码，用于提交工单页面填写联系方式使用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAreaCodesRequest 请求对象
      * @return ListAreaCodesResponse
@@ -695,8 +652,7 @@ public class OsmClient {
      *
      * 查询国家码，用于提交工单页面填写联系方式使用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAreaCodesRequest 请求对象
      * @return SyncInvoker<ListAreaCodesRequest, ListAreaCodesResponse>
@@ -710,8 +666,7 @@ public class OsmClient {
      *
      * 查询授权列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAuthorizationsRequest 请求对象
      * @return ListAuthorizationsResponse
@@ -725,8 +680,7 @@ public class OsmClient {
      *
      * 查询授权列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAuthorizationsRequest 请求对象
      * @return SyncInvoker<ListAuthorizationsRequest, ListAuthorizationsResponse>
@@ -742,8 +696,7 @@ public class OsmClient {
      *
      * 查询工单类目列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseCategoriesRequest 请求对象
      * @return ListCaseCategoriesResponse
@@ -757,8 +710,7 @@ public class OsmClient {
      *
      * 查询工单类目列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseCategoriesRequest 请求对象
      * @return SyncInvoker<ListCaseCategoriesRequest, ListCaseCategoriesResponse>
@@ -774,8 +726,7 @@ public class OsmClient {
      *
      * 查询工单抄送邮箱
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseCcEmailsRequest 请求对象
      * @return ListCaseCcEmailsResponse
@@ -789,8 +740,7 @@ public class OsmClient {
      *
      * 查询工单抄送邮箱
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseCcEmailsRequest 请求对象
      * @return SyncInvoker<ListCaseCcEmailsRequest, ListCaseCcEmailsResponse>
@@ -806,8 +756,7 @@ public class OsmClient {
      *
      * 统计各状态工单数量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseCountsRequest 请求对象
      * @return ListCaseCountsResponse
@@ -821,8 +770,7 @@ public class OsmClient {
      *
      * 统计各状态工单数量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseCountsRequest 请求对象
      * @return SyncInvoker<ListCaseCountsRequest, ListCaseCountsResponse>
@@ -838,8 +786,7 @@ public class OsmClient {
      *
      * 查询工单关联标签接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseLabelsRequest 请求对象
      * @return ListCaseLabelsResponse
@@ -853,8 +800,7 @@ public class OsmClient {
      *
      * 查询工单关联标签接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseLabelsRequest 请求对象
      * @return SyncInvoker<ListCaseLabelsRequest, ListCaseLabelsResponse>
@@ -870,8 +816,7 @@ public class OsmClient {
      *
      * 查询工单限制，比如抄送邮箱个数等
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseLimitsRequest 请求对象
      * @return ListCaseLimitsResponse
@@ -885,8 +830,7 @@ public class OsmClient {
      *
      * 查询工单限制，比如抄送邮箱个数等
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseLimitsRequest 请求对象
      * @return SyncInvoker<ListCaseLimitsRequest, ListCaseLimitsResponse>
@@ -902,8 +846,7 @@ public class OsmClient {
      *
      * 查询工单操作日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseOperateLogsRequest 请求对象
      * @return ListCaseOperateLogsResponse
@@ -917,8 +860,7 @@ public class OsmClient {
      *
      * 查询工单操作日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseOperateLogsRequest 请求对象
      * @return SyncInvoker<ListCaseOperateLogsRequest, ListCaseOperateLogsResponse>
@@ -934,8 +876,7 @@ public class OsmClient {
      *
      * 查询工单配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseQuotasRequest 请求对象
      * @return ListCaseQuotasResponse
@@ -949,8 +890,7 @@ public class OsmClient {
      *
      * 查询工单配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseQuotasRequest 请求对象
      * @return SyncInvoker<ListCaseQuotasRequest, ListCaseQuotasResponse>
@@ -966,8 +906,7 @@ public class OsmClient {
      *
      * 查询问题类型对应模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseTemplatesRequest 请求对象
      * @return ListCaseTemplatesResponse
@@ -981,8 +920,7 @@ public class OsmClient {
      *
      * 查询问题类型对应模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseTemplatesRequest 请求对象
      * @return SyncInvoker<ListCaseTemplatesRequest, ListCaseTemplatesResponse>
@@ -998,8 +936,7 @@ public class OsmClient {
      *
      * 查询工单列表接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCasesRequest 请求对象
      * @return ListCasesResponse
@@ -1013,8 +950,7 @@ public class OsmClient {
      *
      * 查询工单列表接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCasesRequest 请求对象
      * @return SyncInvoker<ListCasesRequest, ListCasesResponse>
@@ -1028,8 +964,7 @@ public class OsmClient {
      *
      * 查询用户关联的region
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCustomersRegionsRequest 请求对象
      * @return ListCustomersRegionsResponse
@@ -1043,8 +978,7 @@ public class OsmClient {
      *
      * 查询用户关联的region
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCustomersRegionsRequest 请求对象
      * @return SyncInvoker<ListCustomersRegionsRequest, ListCustomersRegionsResponse>
@@ -1060,8 +994,7 @@ public class OsmClient {
      *
      * 提单时，根据不同的产品或者问题类型，会存在不同的一些附加参数填写
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListExtendsParamsRequest 请求对象
      * @return ListExtendsParamsResponse
@@ -1075,8 +1008,7 @@ public class OsmClient {
      *
      * 提单时，根据不同的产品或者问题类型，会存在不同的一些附加参数填写
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListExtendsParamsRequest 请求对象
      * @return SyncInvoker<ListExtendsParamsRequest, ListExtendsParamsResponse>
@@ -1092,8 +1024,7 @@ public class OsmClient {
      *
      * 查询已验证的列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHasVerifiedContactsRequest 请求对象
      * @return ListHasVerifiedContactsResponse
@@ -1107,8 +1038,7 @@ public class OsmClient {
      *
      * 查询已验证的列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHasVerifiedContactsRequest 请求对象
      * @return SyncInvoker<ListHasVerifiedContactsRequest, ListHasVerifiedContactsResponse>
@@ -1124,8 +1054,7 @@ public class OsmClient {
      *
      * 查询堡垒机历史操作记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHistoryOperateLogsRequest 请求对象
      * @return ListHistoryOperateLogsResponse
@@ -1139,8 +1068,7 @@ public class OsmClient {
      *
      * 查询堡垒机历史操作记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHistoryOperateLogsRequest 请求对象
      * @return SyncInvoker<ListHistoryOperateLogsRequest, ListHistoryOperateLogsResponse>
@@ -1156,8 +1084,7 @@ public class OsmClient {
      *
      * 查询堡垒机历史会话列
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHistorySessionsRequest 请求对象
      * @return ListHistorySessionsResponse
@@ -1171,8 +1098,7 @@ public class OsmClient {
      *
      * 查询堡垒机历史会话列
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHistorySessionsRequest 请求对象
      * @return SyncInvoker<ListHistorySessionsRequest, ListHistorySessionsResponse>
@@ -1188,8 +1114,7 @@ public class OsmClient {
      *
      * 查询标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLabelsRequest 请求对象
      * @return ListLabelsResponse
@@ -1203,8 +1128,7 @@ public class OsmClient {
      *
      * 查询标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLabelsRequest 请求对象
      * @return SyncInvoker<ListLabelsRequest, ListLabelsResponse>
@@ -1218,8 +1142,7 @@ public class OsmClient {
      *
      * 查询留言
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMessagesRequest 请求对象
      * @return ListMessagesResponse
@@ -1233,8 +1156,7 @@ public class OsmClient {
      *
      * 查询留言
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMessagesRequest 请求对象
      * @return SyncInvoker<ListMessagesRequest, ListMessagesResponse>
@@ -1248,8 +1170,7 @@ public class OsmClient {
      *
      * 查询更多留言
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMoreInstantMessagesRequest 请求对象
      * @return ListMoreInstantMessagesResponse
@@ -1263,8 +1184,7 @@ public class OsmClient {
      *
      * 查询更多留言
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMoreInstantMessagesRequest 请求对象
      * @return SyncInvoker<ListMoreInstantMessagesRequest, ListMoreInstantMessagesResponse>
@@ -1280,8 +1200,7 @@ public class OsmClient {
      *
      * 轮询查询即时消息接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNewInstantMessagesRequest 请求对象
      * @return ListNewInstantMessagesResponse
@@ -1295,8 +1214,7 @@ public class OsmClient {
      *
      * 轮询查询即时消息接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNewInstantMessagesRequest 请求对象
      * @return SyncInvoker<ListNewInstantMessagesRequest, ListNewInstantMessagesResponse>
@@ -1312,8 +1230,7 @@ public class OsmClient {
      *
      * 查询工单权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPrivilegesRequest 请求对象
      * @return ListPrivilegesResponse
@@ -1327,8 +1244,7 @@ public class OsmClient {
      *
      * 查询工单权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPrivilegesRequest 请求对象
      * @return SyncInvoker<ListPrivilegesRequest, ListPrivilegesResponse>
@@ -1344,8 +1260,7 @@ public class OsmClient {
      *
      * 提交工单时，选择产品类型之后选择对应的问题列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProblemTypesRequest 请求对象
      * @return ListProblemTypesResponse
@@ -1359,8 +1274,7 @@ public class OsmClient {
      *
      * 提交工单时，选择产品类型之后选择对应的问题列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProblemTypesRequest 请求对象
      * @return SyncInvoker<ListProblemTypesRequest, ListProblemTypesResponse>
@@ -1376,8 +1290,7 @@ public class OsmClient {
      *
      * 查询产品类型列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductCategoriesRequest 请求对象
      * @return ListProductCategoriesResponse
@@ -1391,8 +1304,7 @@ public class OsmClient {
      *
      * 查询产品类型列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductCategoriesRequest 请求对象
      * @return SyncInvoker<ListProductCategoriesRequest, ListProductCategoriesResponse>
@@ -1408,8 +1320,7 @@ public class OsmClient {
      *
      * 查询区域列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRegionsRequest 请求对象
      * @return ListRegionsResponse
@@ -1423,8 +1334,7 @@ public class OsmClient {
      *
      * 查询区域列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRegionsRequest 请求对象
      * @return SyncInvoker<ListRegionsRequest, ListRegionsResponse>
@@ -1438,8 +1348,7 @@ public class OsmClient {
      *
      * 查询工单的关联，返回关联工单的简要信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRelationRequest 请求对象
      * @return ListRelationResponse
@@ -1453,8 +1362,7 @@ public class OsmClient {
      *
      * 查询工单的关联，返回关联工单的简要信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRelationRequest 请求对象
      * @return SyncInvoker<ListRelationRequest, ListRelationResponse>
@@ -1468,8 +1376,7 @@ public class OsmClient {
      *
      * 工单满意度分类列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSatisfactionDimensionsRequest 请求对象
      * @return ListSatisfactionDimensionsResponse
@@ -1483,8 +1390,7 @@ public class OsmClient {
      *
      * 工单满意度分类列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSatisfactionDimensionsRequest 请求对象
      * @return SyncInvoker<ListSatisfactionDimensionsRequest, ListSatisfactionDimensionsResponse>
@@ -1500,8 +1406,7 @@ public class OsmClient {
      *
      * 查询问题严重性列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSeveritiesRequest 请求对象
      * @return ListSeveritiesResponse
@@ -1515,8 +1420,7 @@ public class OsmClient {
      *
      * 查询问题严重性列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSeveritiesRequest 请求对象
      * @return SyncInvoker<ListSeveritiesRequest, ListSeveritiesResponse>
@@ -1532,8 +1436,7 @@ public class OsmClient {
      *
      * 查询子用户信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubCustomersRequest 请求对象
      * @return ListSubCustomersResponse
@@ -1547,8 +1450,7 @@ public class OsmClient {
      *
      * 查询子用户信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubCustomersRequest 请求对象
      * @return SyncInvoker<ListSubCustomersRequest, ListSubCustomersResponse>
@@ -1564,8 +1466,7 @@ public class OsmClient {
      *
      * 查询堡垒机文件传输记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTransportHistoriesRequest 请求对象
      * @return ListTransportHistoriesResponse
@@ -1579,8 +1480,7 @@ public class OsmClient {
      *
      * 查询堡垒机文件传输记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTransportHistoriesRequest 请求对象
      * @return SyncInvoker<ListTransportHistoriesRequest, ListTransportHistoriesResponse>
@@ -1596,8 +1496,7 @@ public class OsmClient {
      *
      * 查询未读消息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUnreadNewInstantMessagesRequest 请求对象
      * @return ListUnreadNewInstantMessagesResponse
@@ -1612,8 +1511,7 @@ public class OsmClient {
      *
      * 查询未读消息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUnreadNewInstantMessagesRequest 请求对象
      * @return SyncInvoker<ListUnreadNewInstantMessagesRequest, ListUnreadNewInstantMessagesResponse>
@@ -1629,8 +1527,7 @@ public class OsmClient {
      *
      * 撤回留言
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RevokeMessageRequest 请求对象
      * @return RevokeMessageResponse
@@ -1644,8 +1541,7 @@ public class OsmClient {
      *
      * 撤回留言
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RevokeMessageRequest 请求对象
      * @return SyncInvoker<RevokeMessageRequest, RevokeMessageResponse>
@@ -1659,8 +1555,7 @@ public class OsmClient {
      *
      * 获取验证码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendVerifyCodesRequest 请求对象
      * @return SendVerifyCodesResponse
@@ -1674,8 +1569,7 @@ public class OsmClient {
      *
      * 获取验证码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendVerifyCodesRequest 请求对象
      * @return SyncInvoker<SendVerifyCodesRequest, SendVerifyCodesResponse>
@@ -1691,8 +1585,7 @@ public class OsmClient {
      *
      * 查询附件的一下限制，比如大小，数量，文件类型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAccessoryLimitsRequest 请求对象
      * @return ShowAccessoryLimitsResponse
@@ -1706,8 +1599,7 @@ public class OsmClient {
      *
      * 查询附件的一下限制，比如大小，数量，文件类型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAccessoryLimitsRequest 请求对象
      * @return SyncInvoker<ShowAccessoryLimitsRequest, ShowAccessoryLimitsResponse>
@@ -1723,8 +1615,7 @@ public class OsmClient {
      *
      * 查询授权详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAuthorizationDetailRequest 请求对象
      * @return ShowAuthorizationDetailResponse
@@ -1738,8 +1629,7 @@ public class OsmClient {
      *
      * 查询授权详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAuthorizationDetailRequest 请求对象
      * @return SyncInvoker<ShowAuthorizationDetailRequest, ShowAuthorizationDetailResponse>
@@ -1755,8 +1645,7 @@ public class OsmClient {
      *
      * 查询工单详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCaseDetailRequest 请求对象
      * @return ShowCaseDetailResponse
@@ -1770,8 +1659,7 @@ public class OsmClient {
      *
      * 查询工单详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCaseDetailRequest 请求对象
      * @return SyncInvoker<ShowCaseDetailRequest, ShowCaseDetailResponse>
@@ -1787,8 +1675,7 @@ public class OsmClient {
      *
      * 查询工单扩展参数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCaseExtendsParamRequest 请求对象
      * @return ShowCaseExtendsParamResponse
@@ -1802,8 +1689,7 @@ public class OsmClient {
      *
      * 查询工单扩展参数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCaseExtendsParamRequest 请求对象
      * @return SyncInvoker<ShowCaseExtendsParamRequest, ShowCaseExtendsParamResponse>
@@ -1819,8 +1705,7 @@ public class OsmClient {
      *
      * 查询某个工单状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCaseStatusRequest 请求对象
      * @return ShowCaseStatusResponse
@@ -1834,8 +1719,7 @@ public class OsmClient {
      *
      * 查询某个工单状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCaseStatusRequest 请求对象
      * @return SyncInvoker<ShowCaseStatusRequest, ShowCaseStatusResponse>
@@ -1851,8 +1735,7 @@ public class OsmClient {
      *
      * 查询提单权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCustomerPrivilegePolicyRequest 请求对象
      * @return ShowCustomerPrivilegePolicyResponse
@@ -1866,8 +1749,7 @@ public class OsmClient {
      *
      * 查询提单权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCustomerPrivilegePolicyRequest 请求对象
      * @return SyncInvoker<ShowCustomerPrivilegePolicyRequest, ShowCustomerPrivilegePolicyResponse>
@@ -1883,8 +1765,7 @@ public class OsmClient {
      *
      * 查看最新发布版本协议详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLatestPublishedAgreementRequest 请求对象
      * @return ShowLatestPublishedAgreementResponse
@@ -1899,8 +1780,7 @@ public class OsmClient {
      *
      * 查看最新发布版本协议详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLatestPublishedAgreementRequest 请求对象
      * @return SyncInvoker<ShowLatestPublishedAgreementRequest, ShowLatestPublishedAgreementResponse>
@@ -1916,8 +1796,7 @@ public class OsmClient {
      *
      * 查询伙伴工单权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPartnersCasesPrivilegeRequest 请求对象
      * @return ShowPartnersCasesPrivilegeResponse
@@ -1931,8 +1810,7 @@ public class OsmClient {
      *
      * 查询伙伴工单权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPartnersCasesPrivilegeRequest 请求对象
      * @return SyncInvoker<ShowPartnersCasesPrivilegeRequest, ShowPartnersCasesPrivilegeResponse>
@@ -1948,8 +1826,7 @@ public class OsmClient {
      *
      * 查询关联伙伴服务信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPartnersServiceInfoRequest 请求对象
      * @return ShowPartnersServiceInfoResponse
@@ -1963,8 +1840,7 @@ public class OsmClient {
      *
      * 查询关联伙伴服务信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPartnersServiceInfoRequest 请求对象
      * @return SyncInvoker<ShowPartnersServiceInfoRequest, ShowPartnersServiceInfoResponse>
@@ -1980,8 +1856,7 @@ public class OsmClient {
      *
      * 查询用户是否签署最新协议
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSignedLatestPublishedAgreementRequest 请求对象
      * @return ShowSignedLatestPublishedAgreementResponse
@@ -1996,8 +1871,7 @@ public class OsmClient {
      *
      * 查询用户是否签署最新协议
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSignedLatestPublishedAgreementRequest 请求对象
      * @return SyncInvoker<ShowSignedLatestPublishedAgreementRequest, ShowSignedLatestPublishedAgreementResponse>
@@ -2013,8 +1887,7 @@ public class OsmClient {
      *
      * 签署协议
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SignPublishedAgreementRequest 请求对象
      * @return SignPublishedAgreementResponse
@@ -2028,8 +1901,7 @@ public class OsmClient {
      *
      * 签署协议
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SignPublishedAgreementRequest 请求对象
      * @return SyncInvoker<SignPublishedAgreementRequest, SignPublishedAgreementResponse>
@@ -2045,8 +1917,7 @@ public class OsmClient {
      *
      * 拒绝|撤销授权
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAuthorizationsRequest 请求对象
      * @return UpdateAuthorizationsResponse
@@ -2060,8 +1931,7 @@ public class OsmClient {
      *
      * 拒绝|撤销授权
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAuthorizationsRequest 请求对象
      * @return SyncInvoker<UpdateAuthorizationsRequest, UpdateAuthorizationsResponse>
@@ -2077,8 +1947,7 @@ public class OsmClient {
      *
      * 修改联系方式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCaseContactInfoRequest 请求对象
      * @return UpdateCaseContactInfoResponse
@@ -2092,8 +1961,7 @@ public class OsmClient {
      *
      * 修改联系方式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCaseContactInfoRequest 请求对象
      * @return SyncInvoker<UpdateCaseContactInfoRequest, UpdateCaseContactInfoResponse>
@@ -2109,8 +1977,7 @@ public class OsmClient {
      *
      * 工单操作
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCasesRequest 请求对象
      * @return UpdateCasesResponse
@@ -2124,8 +1991,7 @@ public class OsmClient {
      *
      * 工单操作
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCasesRequest 请求对象
      * @return SyncInvoker<UpdateCasesRequest, UpdateCasesResponse>
@@ -2139,8 +2005,7 @@ public class OsmClient {
      *
      * 修改标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLabelsRequest 请求对象
      * @return UpdateLabelsResponse
@@ -2154,8 +2019,7 @@ public class OsmClient {
      *
      * 修改标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLabelsRequest 请求对象
      * @return SyncInvoker<UpdateLabelsRequest, UpdateLabelsResponse>
@@ -2169,8 +2033,7 @@ public class OsmClient {
      *
      * 设置消息已读
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNewInstantMessagesReadRequest 请求对象
      * @return UpdateNewInstantMessagesReadResponse
@@ -2185,8 +2048,7 @@ public class OsmClient {
      *
      * 设置消息已读
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNewInstantMessagesReadRequest 请求对象
      * @return SyncInvoker<UpdateNewInstantMessagesReadRequest, UpdateNewInstantMessagesReadResponse>
@@ -2202,8 +2064,7 @@ public class OsmClient {
      *
      * 上传附件给SDK使用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadJsonAccessoriesRequest 请求对象
      * @return UploadJsonAccessoriesResponse
@@ -2217,8 +2078,7 @@ public class OsmClient {
      *
      * 上传附件给SDK使用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadJsonAccessoriesRequest 请求对象
      * @return SyncInvoker<UploadJsonAccessoriesRequest, UploadJsonAccessoriesResponse>

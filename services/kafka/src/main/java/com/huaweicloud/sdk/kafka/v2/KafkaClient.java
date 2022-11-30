@@ -22,8 +22,7 @@ public class KafkaClient {
      *
      * 批量添加或删除实例标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateOrDeleteKafkaTagRequest 请求对象
      * @return BatchCreateOrDeleteKafkaTagResponse
@@ -37,8 +36,7 @@ public class KafkaClient {
      *
      * 批量添加或删除实例标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateOrDeleteKafkaTagRequest 请求对象
      * @return SyncInvoker<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse>
@@ -54,8 +52,7 @@ public class KafkaClient {
      *
      * 该接口用于向Kafka实例批量删除Topic。批量删除多个消费组时，部分删除成功，部分失败，此时接口返回删除成功，并在返回中显示删除失败的消费组信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteInstanceTopicRequest 请求对象
      * @return BatchDeleteInstanceTopicResponse
@@ -69,8 +66,7 @@ public class KafkaClient {
      *
      * 该接口用于向Kafka实例批量删除Topic。批量删除多个消费组时，部分删除成功，部分失败，此时接口返回删除成功，并在返回中显示删除失败的消费组信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteInstanceTopicRequest 请求对象
      * @return SyncInvoker<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse>
@@ -86,8 +82,7 @@ public class KafkaClient {
      *
      * 批量删除Kafka实例的用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteInstanceUsersRequest 请求对象
      * @return BatchDeleteInstanceUsersResponse
@@ -101,8 +96,7 @@ public class KafkaClient {
      *
      * 批量删除Kafka实例的用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteInstanceUsersRequest 请求对象
      * @return SyncInvoker<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse>
@@ -122,8 +116,7 @@ public class KafkaClient {
      * 
      * 实例删除后，实例中原有的数据将被删除，且没有备份，请谨慎操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchRestartOrDeleteInstancesRequest 请求对象
      * @return BatchRestartOrDeleteInstancesResponse
@@ -142,8 +135,7 @@ public class KafkaClient {
      * 
      * 实例删除后，实例中原有的数据将被删除，且没有备份，请谨慎操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchRestartOrDeleteInstancesRequest 请求对象
      * @return SyncInvoker<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse>
@@ -161,8 +153,7 @@ public class KafkaClient {
      * 
      * **当前通过调用API，只支持按需实例创建转储节点。**
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConnectorRequest 请求对象
      * @return CreateConnectorResponse
@@ -178,8 +169,7 @@ public class KafkaClient {
      * 
      * **当前通过调用API，只支持按需实例创建转储节点。**
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConnectorRequest 请求对象
      * @return SyncInvoker<CreateConnectorRequest, CreateConnectorResponse>
@@ -195,8 +185,7 @@ public class KafkaClient {
      *
      * 该接口用于向Kafka实例创建Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceTopicRequest 请求对象
      * @return CreateInstanceTopicResponse
@@ -210,8 +199,7 @@ public class KafkaClient {
      *
      * 该接口用于向Kafka实例创建Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceTopicRequest 请求对象
      * @return SyncInvoker<CreateInstanceTopicRequest, CreateInstanceTopicResponse>
@@ -227,8 +215,7 @@ public class KafkaClient {
      *
      * 创建Kafka实例的用户，用户可连接开启SASL的Kafka实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceUserRequest 请求对象
      * @return CreateInstanceUserResponse
@@ -242,8 +229,7 @@ public class KafkaClient {
      *
      * 创建Kafka实例的用户，用户可连接开启SASL的Kafka实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceUserRequest 请求对象
      * @return SyncInvoker<CreateInstanceUserRequest, CreateInstanceUserResponse>
@@ -259,8 +245,7 @@ public class KafkaClient {
      *
      * 新增Kafka实例指定Topic分区。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePartitionRequest 请求对象
      * @return CreatePartitionResponse
@@ -274,8 +259,7 @@ public class KafkaClient {
      *
      * 新增Kafka实例指定Topic分区。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePartitionRequest 请求对象
      * @return SyncInvoker<CreatePartitionRequest, CreatePartitionResponse>
@@ -291,8 +275,7 @@ public class KafkaClient {
      *
      * [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,cmcc,hws_eu)[创建kafka实例。](tag:ocb)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostPaidInstanceRequest 请求对象
      * @return CreatePostPaidInstanceResponse
@@ -306,8 +289,7 @@ public class KafkaClient {
      *
      * [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,cmcc,hws_eu)[创建kafka实例。](tag:ocb)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostPaidInstanceRequest 请求对象
      * @return SyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse>
@@ -323,8 +305,7 @@ public class KafkaClient {
      *
      * 创建转储任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSinkTaskRequest 请求对象
      * @return CreateSinkTaskResponse
@@ -338,8 +319,7 @@ public class KafkaClient {
      *
      * 创建转储任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSinkTaskRequest 请求对象
      * @return SyncInvoker<CreateSinkTaskRequest, CreateSinkTaskResponse>
@@ -355,8 +335,7 @@ public class KafkaClient {
      *
      * 删除后台任务管理中的指定记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackgroundTaskRequest 请求对象
      * @return DeleteBackgroundTaskResponse
@@ -370,8 +349,7 @@ public class KafkaClient {
      *
      * 删除后台任务管理中的指定记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackgroundTaskRequest 请求对象
      * @return SyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse>
@@ -387,8 +365,7 @@ public class KafkaClient {
      *
      * 删除指定的实例，释放该实例的所有资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return DeleteInstanceResponse
@@ -402,8 +379,7 @@ public class KafkaClient {
      *
      * 删除指定的实例，释放该实例的所有资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
@@ -419,8 +395,7 @@ public class KafkaClient {
      *
      * 删除单个转储任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSinkTaskRequest 请求对象
      * @return DeleteSinkTaskResponse
@@ -434,8 +409,7 @@ public class KafkaClient {
      *
      * 删除单个转储任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSinkTaskRequest 请求对象
      * @return SyncInvoker<DeleteSinkTaskRequest, DeleteSinkTaskResponse>
@@ -451,8 +425,7 @@ public class KafkaClient {
      *
      * 在创建实例时，需要配置实例所在的可用区ID，可通过该接口查询可用区的ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailableZonesRequest 请求对象
      * @return ListAvailableZonesResponse
@@ -466,8 +439,7 @@ public class KafkaClient {
      *
      * 在创建实例时，需要配置实例所在的可用区ID，可通过该接口查询可用区的ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailableZonesRequest 请求对象
      * @return SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>
@@ -483,8 +455,7 @@ public class KafkaClient {
      *
      * 查询实例的后台任务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackgroundTasksRequest 请求对象
      * @return ListBackgroundTasksResponse
@@ -498,8 +469,7 @@ public class KafkaClient {
      *
      * 查询实例的后台任务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackgroundTasksRequest 请求对象
      * @return SyncInvoker<ListBackgroundTasksRequest, ListBackgroundTasksResponse>
@@ -515,8 +485,7 @@ public class KafkaClient {
      *
      * 查询产品规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEngineProductsRequest 请求对象
      * @return ListEngineProductsResponse
@@ -530,8 +499,7 @@ public class KafkaClient {
      *
      * 查询产品规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEngineProductsRequest 请求对象
      * @return SyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse>
@@ -547,8 +515,7 @@ public class KafkaClient {
      *
      * 查询所有消费组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceConsumerGroupsRequest 请求对象
      * @return ListInstanceConsumerGroupsResponse
@@ -562,8 +529,7 @@ public class KafkaClient {
      *
      * 查询所有消费组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceConsumerGroupsRequest 请求对象
      * @return SyncInvoker<ListInstanceConsumerGroupsRequest, ListInstanceConsumerGroupsResponse>
@@ -579,8 +545,7 @@ public class KafkaClient {
      *
      * 该接口用于查询指定Kafka实例的Topic详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceTopicsRequest 请求对象
      * @return ListInstanceTopicsResponse
@@ -594,8 +559,7 @@ public class KafkaClient {
      *
      * 该接口用于查询指定Kafka实例的Topic详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceTopicsRequest 请求对象
      * @return SyncInvoker<ListInstanceTopicsRequest, ListInstanceTopicsResponse>
@@ -611,8 +575,7 @@ public class KafkaClient {
      *
      * 查询租户的实例列表，支持按照条件查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return ListInstancesResponse
@@ -626,8 +589,7 @@ public class KafkaClient {
      *
      * 查询租户的实例列表，支持按照条件查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
@@ -647,8 +609,7 @@ public class KafkaClient {
      * 
      * [例如，响应消息中bandwidth字段为1200MB的记录，unavailable_zones字段包含cn-east-2b、cn-east-2a和cn-east-2d，表示在华东-上海2的可用区1、可用区2、可用区3都没有该资源。](tag:hc,hws)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductsRequest 请求对象
      * @return ListProductsResponse
@@ -668,8 +629,7 @@ public class KafkaClient {
      * 
      * [例如，响应消息中bandwidth字段为1200MB的记录，unavailable_zones字段包含cn-east-2b、cn-east-2a和cn-east-2d，表示在华东-上海2的可用区1、可用区2、可用区3都没有该资源。](tag:hc,hws)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductsRequest 请求对象
      * @return SyncInvoker<ListProductsRequest, ListProductsResponse>
@@ -683,8 +643,7 @@ public class KafkaClient {
      *
      * 查询转储任务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSinkTasksRequest 请求对象
      * @return ListSinkTasksResponse
@@ -698,8 +657,7 @@ public class KafkaClient {
      *
      * 查询转储任务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSinkTasksRequest 请求对象
      * @return SyncInvoker<ListSinkTasksRequest, ListSinkTasksResponse>
@@ -713,8 +671,7 @@ public class KafkaClient {
      *
      * 重置Manager密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetManagerPasswordRequest 请求对象
      * @return ResetManagerPasswordResponse
@@ -728,8 +685,7 @@ public class KafkaClient {
      *
      * 重置Manager密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetManagerPasswordRequest 请求对象
      * @return SyncInvoker<ResetManagerPasswordRequest, ResetManagerPasswordResponse>
@@ -747,8 +703,7 @@ public class KafkaClient {
      * 
      * &gt; 停止待重置消费组客户端，然后等待一段时间（即ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG配置的时间，默认为1000毫秒）后，服务端才认为此消费组客户端已下线。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetMessageOffsetRequest 请求对象
      * @return ResetMessageOffsetResponse
@@ -764,8 +719,7 @@ public class KafkaClient {
      * 
      * &gt; 停止待重置消费组客户端，然后等待一段时间（即ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG配置的时间，默认为1000毫秒）后，服务端才认为此消费组客户端已下线。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetMessageOffsetRequest 请求对象
      * @return SyncInvoker<ResetMessageOffsetRequest, ResetMessageOffsetResponse>
@@ -781,8 +735,7 @@ public class KafkaClient {
      *
      * 重置密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetPasswordRequest 请求对象
      * @return ResetPasswordResponse
@@ -796,8 +749,7 @@ public class KafkaClient {
      *
      * 重置密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetPasswordRequest 请求对象
      * @return SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
@@ -811,8 +763,7 @@ public class KafkaClient {
      *
      * 重置用户密码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetUserPasswrodRequest 请求对象
      * @return ResetUserPasswrodResponse
@@ -826,8 +777,7 @@ public class KafkaClient {
      *
      * 重置用户密码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetUserPasswrodRequest 请求对象
      * @return SyncInvoker<ResetUserPasswrodRequest, ResetUserPasswrodResponse>
@@ -845,8 +795,7 @@ public class KafkaClient {
      * 
      * **当前通过调用API，只支持按需实例进行实例规格变更。**
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeInstanceRequest 请求对象
      * @return ResizeInstanceResponse
@@ -862,8 +811,7 @@ public class KafkaClient {
      * 
      * **当前通过调用API，只支持按需实例进行实例规格变更。**
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeInstanceRequest 请求对象
      * @return SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>
@@ -879,8 +827,7 @@ public class KafkaClient {
      *
      * 重启Manager。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartManagerRequest 请求对象
      * @return RestartManagerResponse
@@ -894,8 +841,7 @@ public class KafkaClient {
      *
      * 重启Manager。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartManagerRequest 请求对象
      * @return SyncInvoker<RestartManagerRequest, RestartManagerResponse>
@@ -911,8 +857,7 @@ public class KafkaClient {
      *
      * 查询后台任务管理中的指定记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBackgroundTaskRequest 请求对象
      * @return ShowBackgroundTaskResponse
@@ -926,8 +871,7 @@ public class KafkaClient {
      *
      * 查询后台任务管理中的指定记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBackgroundTaskRequest 请求对象
      * @return SyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse>
@@ -943,8 +887,7 @@ public class KafkaClient {
      *
      * 查询实例在CES的监控层级关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCesHierarchyRequest 请求对象
      * @return ShowCesHierarchyResponse
@@ -958,8 +901,7 @@ public class KafkaClient {
      *
      * 查询实例在CES的监控层级关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCesHierarchyRequest 请求对象
      * @return SyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse>
@@ -975,8 +917,7 @@ public class KafkaClient {
      *
      * 查询Kafka集群元数据信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClusterRequest 请求对象
      * @return ShowClusterResponse
@@ -990,8 +931,7 @@ public class KafkaClient {
      *
      * 查询Kafka集群元数据信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClusterRequest 请求对象
      * @return SyncInvoker<ShowClusterRequest, ShowClusterResponse>
@@ -1005,8 +945,7 @@ public class KafkaClient {
      *
      * 查询Kafka实例的协调器信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCoordinatorsRequest 请求对象
      * @return ShowCoordinatorsResponse
@@ -1020,8 +959,7 @@ public class KafkaClient {
      *
      * 查询Kafka实例的协调器信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCoordinatorsRequest 请求对象
      * @return SyncInvoker<ShowCoordinatorsRequest, ShowCoordinatorsResponse>
@@ -1037,8 +975,7 @@ public class KafkaClient {
      *
      * 查询消费组信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowGroupsRequest 请求对象
      * @return ShowGroupsResponse
@@ -1052,8 +989,7 @@ public class KafkaClient {
      *
      * 查询消费组信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowGroupsRequest 请求对象
      * @return SyncInvoker<ShowGroupsRequest, ShowGroupsResponse>
@@ -1067,8 +1003,7 @@ public class KafkaClient {
      *
      * 查询指定实例的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return ShowInstanceResponse
@@ -1082,8 +1017,7 @@ public class KafkaClient {
      *
      * 查询指定实例的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
@@ -1097,8 +1031,7 @@ public class KafkaClient {
      *
      * 查询实例的扩容规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceExtendProductInfoRequest 请求对象
      * @return ShowInstanceExtendProductInfoResponse
@@ -1113,8 +1046,7 @@ public class KafkaClient {
      *
      * 查询实例的扩容规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceExtendProductInfoRequest 请求对象
      * @return SyncInvoker<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse>
@@ -1131,8 +1063,7 @@ public class KafkaClient {
      * 查询消息的偏移量和消息内容。
      * 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceMessagesRequest 请求对象
      * @return ShowInstanceMessagesResponse
@@ -1147,8 +1078,7 @@ public class KafkaClient {
      * 查询消息的偏移量和消息内容。
      * 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceMessagesRequest 请求对象
      * @return SyncInvoker<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse>
@@ -1164,8 +1094,7 @@ public class KafkaClient {
      *
      * 查询Kafka实例Topic详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceTopicDetailRequest 请求对象
      * @return ShowInstanceTopicDetailResponse
@@ -1179,8 +1108,7 @@ public class KafkaClient {
      *
      * 查询Kafka实例Topic详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceTopicDetailRequest 请求对象
      * @return SyncInvoker<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse>
@@ -1198,8 +1126,7 @@ public class KafkaClient {
      * 
      * Kafka实例开启SASL功能时，才支持多用户管理的功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceUsersRequest 请求对象
      * @return ShowInstanceUsersResponse
@@ -1215,8 +1142,7 @@ public class KafkaClient {
      * 
      * Kafka实例开启SASL功能时，才支持多用户管理的功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceUsersRequest 请求对象
      * @return SyncInvoker<ShowInstanceUsersRequest, ShowInstanceUsersResponse>
@@ -1232,8 +1158,7 @@ public class KafkaClient {
      *
      * 查询项目标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowKafkaProjectTagsRequest 请求对象
      * @return ShowKafkaProjectTagsResponse
@@ -1247,8 +1172,7 @@ public class KafkaClient {
      *
      * 查询项目标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowKafkaProjectTagsRequest 请求对象
      * @return SyncInvoker<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse>
@@ -1264,8 +1188,7 @@ public class KafkaClient {
      *
      * 查询实例标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowKafkaTagsRequest 请求对象
      * @return ShowKafkaTagsResponse
@@ -1279,8 +1202,7 @@ public class KafkaClient {
      *
      * 查询实例标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowKafkaTagsRequest 请求对象
      * @return SyncInvoker<ShowKafkaTagsRequest, ShowKafkaTagsResponse>
@@ -1294,8 +1216,7 @@ public class KafkaClient {
      *
      * 查询topic在Broker上磁盘占用情况。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowKafkaTopicPartitionDiskusageRequest 请求对象
      * @return ShowKafkaTopicPartitionDiskusageResponse
@@ -1310,8 +1231,7 @@ public class KafkaClient {
      *
      * 查询topic在Broker上磁盘占用情况。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowKafkaTopicPartitionDiskusageRequest 请求对象
      * @return SyncInvoker<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse>
@@ -1327,8 +1247,7 @@ public class KafkaClient {
      *
      * 查询维护时间窗开始时间和结束时间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMaintainWindowsRequest 请求对象
      * @return ShowMaintainWindowsResponse
@@ -1342,8 +1261,7 @@ public class KafkaClient {
      *
      * 查询维护时间窗开始时间和结束时间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMaintainWindowsRequest 请求对象
      * @return SyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse>
@@ -1359,8 +1277,7 @@ public class KafkaClient {
      *
      * 查询分区指定时间段的消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMessagesRequest 请求对象
      * @return ShowMessagesResponse
@@ -1374,8 +1291,7 @@ public class KafkaClient {
      *
      * 查询分区指定时间段的消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMessagesRequest 请求对象
      * @return SyncInvoker<ShowMessagesRequest, ShowMessagesResponse>
@@ -1389,8 +1305,7 @@ public class KafkaClient {
      *
      * 查询分区最早消息的位置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPartitionBeginningMessageRequest 请求对象
      * @return ShowPartitionBeginningMessageResponse
@@ -1405,8 +1320,7 @@ public class KafkaClient {
      *
      * 查询分区最早消息的位置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPartitionBeginningMessageRequest 请求对象
      * @return SyncInvoker<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse>
@@ -1422,8 +1336,7 @@ public class KafkaClient {
      *
      * 查询分区最新消息的位置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPartitionEndMessageRequest 请求对象
      * @return ShowPartitionEndMessageResponse
@@ -1437,8 +1350,7 @@ public class KafkaClient {
      *
      * 查询分区最新消息的位置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPartitionEndMessageRequest 请求对象
      * @return SyncInvoker<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse>
@@ -1454,8 +1366,7 @@ public class KafkaClient {
      *
      * 查询分区指定偏移量的消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPartitionMessageRequest 请求对象
      * @return ShowPartitionMessageResponse
@@ -1469,8 +1380,7 @@ public class KafkaClient {
      *
      * 查询分区指定偏移量的消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPartitionMessageRequest 请求对象
      * @return SyncInvoker<ShowPartitionMessageRequest, ShowPartitionMessageResponse>
@@ -1486,8 +1396,7 @@ public class KafkaClient {
      *
      * 查询单个转储任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSinkTaskDetailRequest 请求对象
      * @return ShowSinkTaskDetailResponse
@@ -1501,8 +1410,7 @@ public class KafkaClient {
      *
      * 查询单个转储任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSinkTaskDetailRequest 请求对象
      * @return SyncInvoker<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse>
@@ -1520,8 +1428,7 @@ public class KafkaClient {
      * 
      * Kafka实例开启SASL功能时，才支持多用户管理的功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTopicAccessPolicyRequest 请求对象
      * @return ShowTopicAccessPolicyResponse
@@ -1537,8 +1444,7 @@ public class KafkaClient {
      * 
      * Kafka实例开启SASL功能时，才支持多用户管理的功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTopicAccessPolicyRequest 请求对象
      * @return SyncInvoker<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse>
@@ -1554,8 +1460,7 @@ public class KafkaClient {
      *
      * 修改实例信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceRequest 请求对象
      * @return UpdateInstanceResponse
@@ -1569,8 +1474,7 @@ public class KafkaClient {
      *
      * 修改实例信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceRequest 请求对象
      * @return SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
@@ -1586,8 +1490,7 @@ public class KafkaClient {
      *
      * 开启或关闭实例自动创建topic功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceAutoCreateTopicRequest 请求对象
      * @return UpdateInstanceAutoCreateTopicResponse
@@ -1602,8 +1505,7 @@ public class KafkaClient {
      *
      * 开启或关闭实例自动创建topic功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceAutoCreateTopicRequest 请求对象
      * @return SyncInvoker<UpdateInstanceAutoCreateTopicRequest, UpdateInstanceAutoCreateTopicResponse>
@@ -1619,8 +1521,7 @@ public class KafkaClient {
      *
      * 修改实例跨VPC访问的内网IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceCrossVpcIpRequest 请求对象
      * @return UpdateInstanceCrossVpcIpResponse
@@ -1634,8 +1535,7 @@ public class KafkaClient {
      *
      * 修改实例跨VPC访问的内网IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceCrossVpcIpRequest 请求对象
      * @return SyncInvoker<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse>
@@ -1651,8 +1551,7 @@ public class KafkaClient {
      *
      * 修改Kafka实例Topic
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceTopicRequest 请求对象
      * @return UpdateInstanceTopicResponse
@@ -1666,8 +1565,7 @@ public class KafkaClient {
      *
      * 修改Kafka实例Topic
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceTopicRequest 请求对象
      * @return SyncInvoker<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse>
@@ -1683,8 +1581,7 @@ public class KafkaClient {
      *
      * 修改转储任务的配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSinkTaskQuotaRequest 请求对象
      * @return UpdateSinkTaskQuotaResponse
@@ -1698,8 +1595,7 @@ public class KafkaClient {
      *
      * 修改转储任务的配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSinkTaskQuotaRequest 请求对象
      * @return SyncInvoker<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse>
@@ -1717,8 +1613,7 @@ public class KafkaClient {
      * 
      * Kafka实例开启SASL功能时，才支持多用户管理的功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTopicAccessPolicyRequest 请求对象
      * @return UpdateTopicAccessPolicyResponse
@@ -1734,8 +1629,7 @@ public class KafkaClient {
      * 
      * Kafka实例开启SASL功能时，才支持多用户管理的功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTopicAccessPolicyRequest 请求对象
      * @return SyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse>
@@ -1751,8 +1645,7 @@ public class KafkaClient {
      *
      * 修改Kafka实例Topic分区的副本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTopicReplicaRequest 请求对象
      * @return UpdateTopicReplicaResponse
@@ -1766,8 +1659,7 @@ public class KafkaClient {
      *
      * 修改Kafka实例Topic分区的副本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTopicReplicaRequest 请求对象
      * @return SyncInvoker<UpdateTopicReplicaRequest, UpdateTopicReplicaResponse>

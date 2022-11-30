@@ -24,8 +24,7 @@ public class MeetingAsyncClient {
      *
      * 创建企业，默认管理员及分配资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddCorpRequest 请求对象
      * @return CompletableFuture<AddCorpResponse>
@@ -39,8 +38,7 @@ public class MeetingAsyncClient {
      *
      * 创建企业，默认管理员及分配资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddCorpRequest 请求对象
      * @return AsyncInvoker<AddCorpRequest, AddCorpResponse>
@@ -54,8 +52,7 @@ public class MeetingAsyncClient {
      *
      * 企业默认管理员添加企业普通管理员。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddCorpAdminRequest 请求对象
      * @return CompletableFuture<AddCorpAdminResponse>
@@ -69,8 +66,7 @@ public class MeetingAsyncClient {
      *
      * 企业默认管理员添加企业普通管理员。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddCorpAdminRequest 请求对象
      * @return AsyncInvoker<AddCorpAdminRequest, AddCorpAdminResponse>
@@ -85,8 +81,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口添加部门，最多支持10级部门，每级子部门最多支持100个，默认企业最大部门数量为10000个。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddDepartmentRequest 请求对象
      * @return CompletableFuture<AddDepartmentResponse>
@@ -100,8 +95,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口添加部门，最多支持10级部门，每级子部门最多支持100个，默认企业最大部门数量为10000个。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddDepartmentRequest 请求对象
      * @return AsyncInvoker<AddDepartmentRequest, AddDepartmentResponse>
@@ -117,8 +111,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口添加专业会议终端。专业会议终端包括DP300/HUAWEI Bar系列/HUAWEI Board/TE系列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddDeviceRequest 请求对象
      * @return CompletableFuture<AddDeviceResponse>
@@ -132,8 +125,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口添加专业会议终端。专业会议终端包括DP300/HUAWEI Bar系列/HUAWEI Board/TE系列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddDeviceRequest 请求对象
      * @return AsyncInvoker<AddDeviceRequest, AddDeviceResponse>
@@ -147,8 +139,7 @@ public class MeetingAsyncClient {
      *
      * 新增信息窗素材（上传素材文件）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddMaterialRequest 请求对象
      * @return CompletableFuture<AddMaterialResponse>
@@ -162,8 +153,7 @@ public class MeetingAsyncClient {
      *
      * 新增信息窗素材（上传素材文件）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddMaterialRequest 请求对象
      * @return AsyncInvoker<AddMaterialRequest, AddMaterialResponse>
@@ -177,8 +167,7 @@ public class MeetingAsyncClient {
      *
      * 新增信息窗节目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddProgramRequest 请求对象
      * @return CompletableFuture<AddProgramResponse>
@@ -192,8 +181,7 @@ public class MeetingAsyncClient {
      *
      * 新增信息窗节目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddProgramRequest 请求对象
      * @return AsyncInvoker<AddProgramRequest, AddProgramResponse>
@@ -207,8 +195,7 @@ public class MeetingAsyncClient {
      *
      * 新增信息窗发布。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddPublicationRequest 请求对象
      * @return CompletableFuture<AddPublicationResponse>
@@ -222,8 +209,7 @@ public class MeetingAsyncClient {
      *
      * 新增信息窗发布。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddPublicationRequest 请求对象
      * @return AsyncInvoker<AddPublicationRequest, AddPublicationResponse>
@@ -239,8 +225,7 @@ public class MeetingAsyncClient {
      *
      * 企业新增资源发放。该接口同时支持修改，带resourceId后会判断该资源是否存在，存在即修改（支持修改的参数见修改接口），否则按新增处理。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddResourceRequest 请求对象
      * @return CompletableFuture<AddResourceResponse>
@@ -254,8 +239,7 @@ public class MeetingAsyncClient {
      *
      * 企业新增资源发放。该接口同时支持修改，带resourceId后会判断该资源是否存在，存在即修改（支持修改的参数见修改接口），否则按新增处理。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddResourceRequest 请求对象
      * @return AsyncInvoker<AddResourceRequest, AddResourceResponse>
@@ -269,8 +253,7 @@ public class MeetingAsyncClient {
      *
      * 用户使用手机扫码后,手机端请求服务端将当前会议纪要文件保存到个人云空间。二维码内容 ：cloudlink://cloudlink.huawei.com/h5page?action&#x3D;SAVE_MEETING_FILE&amp;key1&#x3D;value1&amp;key2&#x3D;value2 。key/value的个数可能变化，终端解析后，在发起后续请求时，将所有key/value存为map，作为入参即可。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddToPersonalSpaceRequest 请求对象
      * @return CompletableFuture<AddToPersonalSpaceResponse>
@@ -284,8 +267,7 @@ public class MeetingAsyncClient {
      *
      * 用户使用手机扫码后,手机端请求服务端将当前会议纪要文件保存到个人云空间。二维码内容 ：cloudlink://cloudlink.huawei.com/h5page?action&#x3D;SAVE_MEETING_FILE&amp;key1&#x3D;value1&amp;key2&#x3D;value2 。key/value的个数可能变化，终端解析后，在发起后续请求时，将所有key/value存为map，作为入参即可。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddToPersonalSpaceRequest 请求对象
      * @return AsyncInvoker<AddToPersonalSpaceRequest, AddToPersonalSpaceResponse>
@@ -302,8 +284,7 @@ public class MeetingAsyncClient {
      * 企业管理员通过该接口添加企业用户。
      * &gt; 默认添加用户后，用户第一次登录华为云会议App或者Portal时需要修改密码。若需关闭第一次登录修改密码，请联系华为销售人员，并提供华为云会议企业ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddUserRequest 请求对象
      * @return CompletableFuture<AddUserResponse>
@@ -318,8 +299,7 @@ public class MeetingAsyncClient {
      * 企业管理员通过该接口添加企业用户。
      * &gt; 默认添加用户后，用户第一次登录华为云会议App或者Portal时需要修改密码。若需关闭第一次登录修改密码，请联系华为销售人员，并提供华为云会议企业ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddUserRequest 请求对象
      * @return AsyncInvoker<AddUserRequest, AddUserResponse>
@@ -333,8 +313,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置允许/禁止与会者客户端本地录制（非云端录制）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AllowClientRecordRequest 请求对象
      * @return CompletableFuture<AllowClientRecordResponse>
@@ -348,8 +327,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置允许/禁止与会者客户端本地录制（非云端录制）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AllowClientRecordRequest 请求对象
      * @return AsyncInvoker<AllowClientRecordRequest, AllowClientRecordResponse>
@@ -365,8 +343,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置与会者是否可以自己解除静音。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AllowGuestUnmuteRequest 请求对象
      * @return CompletableFuture<AllowGuestUnmuteResponse>
@@ -380,8 +357,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置与会者是否可以自己解除静音。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AllowGuestUnmuteRequest 请求对象
      * @return AsyncInvoker<AllowGuestUnmuteRequest, AllowGuestUnmuteResponse>
@@ -397,8 +373,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于允许等候室中的成员进入会议。可以允许全部成员进入会议，或者允许指定成员进入会议。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AllowWaitingParticipantRequest 请求对象
      * @return CompletableFuture<AllowWaitingParticipantResponse>
@@ -413,8 +388,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于允许等候室中的成员进入会议。可以允许全部成员进入会议，或者允许指定成员进入会议。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AllowWaitingParticipantRequest 请求对象
      * @return AsyncInvoker<AllowWaitingParticipantRequest, AllowWaitingParticipantResponse>
@@ -430,8 +404,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口将云会议室分配给用户、专业会议终端（TE10、TE20、HUAWEI Board、HUAWEI Bar 500及HUAWEI Box系列）、智慧屏TV、电子白板（SmartRooms）、IdeaHub。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateVmrRequest 请求对象
      * @return CompletableFuture<AssociateVmrResponse>
@@ -445,8 +418,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口将云会议室分配给用户、专业会议终端（TE10、TE20、HUAWEI Board、HUAWEI Bar 500及HUAWEI Box系列）、智慧屏TV、电子白板（SmartRooms）、IdeaHub。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateVmrRequest 请求对象
      * @return AsyncInvoker<AssociateVmrRequest, AssociateVmrResponse>
@@ -461,8 +433,7 @@ public class MeetingAsyncClient {
      *
      * 通过该接口批量删除企业管理员。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteCorpAdminsRequest 请求对象
      * @return CompletableFuture<BatchDeleteCorpAdminsResponse>
@@ -477,8 +448,7 @@ public class MeetingAsyncClient {
      *
      * 通过该接口批量删除企业管理员。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteCorpAdminsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteCorpAdminsRequest, BatchDeleteCorpAdminsResponse>
@@ -495,8 +465,7 @@ public class MeetingAsyncClient {
      * 企业管理员通过该接口批量删除专业会议终端，返回删除失败的列表。
      * &gt; 如果需要删除Ideahub、SmartRooms、智慧屏TV请使用[[批量删除用户](https://support.huaweicloud.com/api-meeting/meeting_21_0070.html)](tag:hws)[[批量删除用户](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0070.html)](tag:hk)接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteDevicesRequest 请求对象
      * @return CompletableFuture<BatchDeleteDevicesResponse>
@@ -511,8 +480,7 @@ public class MeetingAsyncClient {
      * 企业管理员通过该接口批量删除专业会议终端，返回删除失败的列表。
      * &gt; 如果需要删除Ideahub、SmartRooms、智慧屏TV请使用[[批量删除用户](https://support.huaweicloud.com/api-meeting/meeting_21_0070.html)](tag:hws)[[批量删除用户](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0070.html)](tag:hk)接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteDevicesRequest 请求对象
      * @return AsyncInvoker<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse>
@@ -528,8 +496,7 @@ public class MeetingAsyncClient {
      *
      * 删除信息窗素材。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteMaterialsRequest 请求对象
      * @return CompletableFuture<BatchDeleteMaterialsResponse>
@@ -544,8 +511,7 @@ public class MeetingAsyncClient {
      *
      * 删除信息窗素材。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteMaterialsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteMaterialsRequest, BatchDeleteMaterialsResponse>
@@ -561,8 +527,7 @@ public class MeetingAsyncClient {
      *
      * 删除信息窗节目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteProgramsRequest 请求对象
      * @return CompletableFuture<BatchDeleteProgramsResponse>
@@ -576,8 +541,7 @@ public class MeetingAsyncClient {
      *
      * 删除信息窗节目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteProgramsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteProgramsRequest, BatchDeleteProgramsResponse>
@@ -593,8 +557,7 @@ public class MeetingAsyncClient {
      *
      * 删除信息窗发布。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeletePublicationsRequest 请求对象
      * @return CompletableFuture<BatchDeletePublicationsResponse>
@@ -609,8 +572,7 @@ public class MeetingAsyncClient {
      *
      * 删除信息窗发布。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeletePublicationsRequest 请求对象
      * @return AsyncInvoker<BatchDeletePublicationsRequest, BatchDeletePublicationsResponse>
@@ -626,8 +588,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口批量删除企业用户。删除多个用户时，全部删除成功或者全部删除失败。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteUsersRequest 请求对象
      * @return CompletableFuture<BatchDeleteUsersResponse>
@@ -641,8 +602,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口批量删除企业用户。删除多个用户时，全部删除成功或者全部删除失败。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteUsersRequest 请求对象
      * @return AsyncInvoker<BatchDeleteUsersRequest, BatchDeleteUsersResponse>
@@ -658,8 +618,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于批量设置来宾的举手/放下举手状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchHandRequest 请求对象
      * @return CompletableFuture<BatchHandResponse>
@@ -673,8 +632,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于批量设置来宾的举手/放下举手状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchHandRequest 请求对象
      * @return AsyncInvoker<BatchHandRequest, BatchHandResponse>
@@ -688,8 +646,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口批量修改专业会议终端状态。当硬终端资源到期后，若企业内对应资源的硬终端超过数量后会被系统随机自动停用，此时可通过该接口修改专业会议终端的状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchUpdateDevicesStatusRequest 请求对象
      * @return CompletableFuture<BatchUpdateDevicesStatusResponse>
@@ -704,8 +661,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口批量修改专业会议终端状态。当硬终端资源到期后，若企业内对应资源的硬终端超过数量后会被系统随机自动停用，此时可通过该接口修改专业会议终端的状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchUpdateDevicesStatusRequest 请求对象
      * @return AsyncInvoker<BatchUpdateDevicesStatusRequest, BatchUpdateDevicesStatusResponse>
@@ -721,8 +677,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口批量修改用户状态，当用户帐号数资源或者电子白板（SmartRooms）资源到期后，若企业内对应资源的用户帐号超过数量后会被系统随机自动停用，此时可通过该接口修改用户的状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchUpdateUserStatusRequest 请求对象
      * @return CompletableFuture<BatchUpdateUserStatusResponse>
@@ -737,8 +692,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口批量修改用户状态，当用户帐号数资源或者电子白板（SmartRooms）资源到期后，若企业内对应资源的用户帐号超过数量后会被系统随机自动停用，此时可通过该接口修改用户的状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchUpdateUserStatusRequest 请求对象
      * @return AsyncInvoker<BatchUpdateUserStatusRequest, BatchUpdateUserStatusResponse>
@@ -754,8 +708,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于广播指定的与会者。同一时间，只允许一个与会者被广播。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BroadcastParticipantRequest 请求对象
      * @return CompletableFuture<BroadcastParticipantResponse>
@@ -770,8 +723,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于广播指定的与会者。同一时间，只允许一个与会者被广播。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BroadcastParticipantRequest 请求对象
      * @return AsyncInvoker<BroadcastParticipantRequest, BroadcastParticipantResponse>
@@ -787,8 +739,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于取消广播，包括：取消广播多画面，取消广播会场，取消点名会场。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelBroadcastRequest 请求对象
      * @return CompletableFuture<CancelBroadcastResponse>
@@ -802,8 +753,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于取消广播，包括：取消广播多画面，取消广播会场，取消点名会场。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelBroadcastRequest 请求对象
      * @return AsyncInvoker<CancelBroadcastRequest, CancelBroadcastResponse>
@@ -819,8 +769,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于取消预约的会议。企业管理员可以取消本企业下用户创建的会议，普通用户只能取消自己创建的会议。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelMeetingRequest 请求对象
      * @return CompletableFuture<CancelMeetingResponse>
@@ -834,8 +783,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于取消预约的会议。企业管理员可以取消本企业下用户创建的会议，普通用户只能取消自己创建的会议。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelMeetingRequest 请求对象
      * @return AsyncInvoker<CancelMeetingRequest, CancelMeetingResponse>
@@ -851,8 +799,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于取消周期性会议。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelRecurringMeetingRequest 请求对象
      * @return CompletableFuture<CancelRecurringMeetingResponse>
@@ -867,8 +814,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于取消周期性会议。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelRecurringMeetingRequest 请求对象
      * @return AsyncInvoker<CancelRecurringMeetingRequest, CancelRecurringMeetingResponse>
@@ -884,8 +830,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于取消周期性会议的子会议。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelRecurringSubMeetingRequest 请求对象
      * @return CompletableFuture<CancelRecurringSubMeetingResponse>
@@ -900,8 +845,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于取消周期性会议的子会议。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelRecurringSubMeetingRequest 请求对象
      * @return AsyncInvoker<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse>
@@ -917,8 +861,7 @@ public class MeetingAsyncClient {
      *
      * 该接口提供校验滑块验证码。服务器收到请求，返回校验结果。用户在前台界面通过滑块操作匹配图形，使得抠图和原图吻合。然后服务器进行校验滑块验证码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckSlideVerifyCodeRequest 请求对象
      * @return CompletableFuture<CheckSlideVerifyCodeResponse>
@@ -933,8 +876,7 @@ public class MeetingAsyncClient {
      *
      * 该接口提供校验滑块验证码。服务器收到请求，返回校验结果。用户在前台界面通过滑块操作匹配图形，使得抠图和原图吻合。然后服务器进行校验滑块验证码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckSlideVerifyCodeRequest 请求对象
      * @return AsyncInvoker<CheckSlideVerifyCodeRequest, CheckSlideVerifyCodeResponse>
@@ -950,8 +892,7 @@ public class MeetingAsyncClient {
      *
      * 该接口提供校验token合法性功能。服务器收到请求后，验证token合法性并返回结果。如果参数needGenNewToken为true时，生成新的token并返回。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckTokenRequest 请求对象
      * @return CompletableFuture<CheckTokenResponse>
@@ -965,8 +906,7 @@ public class MeetingAsyncClient {
      *
      * 该接口提供校验token合法性功能。服务器收到请求后，验证token合法性并返回结果。如果参数needGenNewToken为true时，生成新的token并返回。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckTokenRequest 请求对象
      * @return AsyncInvoker<CheckTokenRequest, CheckTokenResponse>
@@ -980,8 +920,7 @@ public class MeetingAsyncClient {
      *
      * 企业用户通过该接口校验手机和邮箱对应的验证码，一分钟内记录尝试次数不得超过5次。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckVeriCodeForUpdateUserInfoRequest 请求对象
      * @return CompletableFuture<CheckVeriCodeForUpdateUserInfoResponse>
@@ -996,8 +935,7 @@ public class MeetingAsyncClient {
      *
      * 企业用户通过该接口校验手机和邮箱对应的验证码，一分钟内记录尝试次数不得超过5次。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckVeriCodeForUpdateUserInfoRequest 请求对象
      * @return AsyncInvoker<CheckVeriCodeForUpdateUserInfoRequest, CheckVeriCodeForUpdateUserInfoResponse>
@@ -1013,8 +951,7 @@ public class MeetingAsyncClient {
      *
      * 该接口提供校验验证码，服务器收到请求，返回结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckVerifyCodeRequest 请求对象
      * @return CompletableFuture<CheckVerifyCodeResponse>
@@ -1028,8 +965,7 @@ public class MeetingAsyncClient {
      *
      * 该接口提供校验验证码，服务器收到请求，返回结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckVerifyCodeRequest 请求对象
      * @return AsyncInvoker<CheckVerifyCodeRequest, CheckVerifyCodeResponse>
@@ -1045,8 +981,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于匿名用户入会鉴权。请求根据会议ID和密码鉴权，返回鉴权随机数（可以根据该随机数获取匿名用户信息、会议信息等）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAnonymousAuthRandomRequest 请求对象
      * @return CompletableFuture<CreateAnonymousAuthRandomResponse>
@@ -1061,8 +996,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于匿名用户入会鉴权。请求根据会议ID和密码鉴权，返回鉴权随机数（可以根据该随机数获取匿名用户信息、会议信息等）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAnonymousAuthRandomRequest 请求对象
      * @return AsyncInvoker<CreateAnonymousAuthRandomRequest, CreateAnonymousAuthRandomResponse>
@@ -1078,8 +1012,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于获取正在召开会议的会控Token（未开始的会议调用该接口返回失败）。Token有效期是半个小时。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConfTokenRequest 请求对象
      * @return CompletableFuture<CreateConfTokenResponse>
@@ -1093,8 +1026,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于获取正在召开会议的会控Token（未开始的会议调用该接口返回失败）。Token有效期是半个小时。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConfTokenRequest 请求对象
      * @return AsyncInvoker<CreateConfTokenRequest, CreateConfTokenResponse>
@@ -1110,8 +1042,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于创建立即会议和预约会议。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMeetingRequest 请求对象
      * @return CompletableFuture<CreateMeetingResponse>
@@ -1125,8 +1056,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于创建立即会议和预约会议。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMeetingRequest 请求对象
      * @return AsyncInvoker<CreateMeetingRequest, CreateMeetingResponse>
@@ -1142,8 +1072,7 @@ public class MeetingAsyncClient {
      *
      * 通过Access Token生成页面免登陆跳转到华为云会议的Portal的nonce信息。获取到nonce信息后，通过链接https://meeting.huaweicloud.com/?lang&#x3D;zh-CN&amp;nonce&#x3D;xxxxxxxxxxxxx#/login进行免登陆跳转。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePortalRefNonceRequest 请求对象
      * @return CompletableFuture<CreatePortalRefNonceResponse>
@@ -1158,8 +1087,7 @@ public class MeetingAsyncClient {
      *
      * 通过Access Token生成页面免登陆跳转到华为云会议的Portal的nonce信息。获取到nonce信息后，通过链接https://meeting.huaweicloud.com/?lang&#x3D;zh-CN&amp;nonce&#x3D;xxxxxxxxxxxxx#/login进行免登陆跳转。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePortalRefNonceRequest 请求对象
      * @return AsyncInvoker<CreatePortalRefNonceRequest, CreatePortalRefNonceResponse>
@@ -1175,8 +1103,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于预约周期性会议。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRecurringMeetingRequest 请求对象
      * @return CompletableFuture<CreateRecurringMeetingResponse>
@@ -1191,8 +1118,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于预约周期性会议。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRecurringMeetingRequest 请求对象
      * @return AsyncInvoker<CreateRecurringMeetingRequest, CreateRecurringMeetingResponse>
@@ -1208,8 +1134,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员生成智慧屏、电子白板（SmartRooms）、Ideahub的激活码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVisionActiveCodeRequest 请求对象
      * @return CompletableFuture<CreateVisionActiveCodeResponse>
@@ -1224,8 +1149,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员生成智慧屏、电子白板（SmartRooms）、Ideahub的激活码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVisionActiveCodeRequest 请求对象
      * @return AsyncInvoker<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse>
@@ -1241,8 +1165,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于获取会控WebSocket建链的临时Token。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateWebSocketTokenRequest 请求对象
      * @return CompletableFuture<CreateWebSocketTokenResponse>
@@ -1257,8 +1180,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于获取会控WebSocket建链的临时Token。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateWebSocketTokenRequest 请求对象
      * @return AsyncInvoker<CreateWebSocketTokenRequest, CreateWebSocketTokenResponse>
@@ -1274,8 +1196,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于创建网络研讨会。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateWebinarRequest 请求对象
      * @return CompletableFuture<CreateWebinarResponse>
@@ -1289,8 +1210,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于创建网络研讨会。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateWebinarRequest 请求对象
      * @return AsyncInvoker<CreateWebinarRequest, CreateWebinarResponse>
@@ -1306,8 +1226,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于删除与会者。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAttendeesRequest 请求对象
      * @return CompletableFuture<DeleteAttendeesResponse>
@@ -1321,8 +1240,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于删除与会者。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAttendeesRequest 请求对象
      * @return AsyncInvoker<DeleteAttendeesRequest, DeleteAttendeesResponse>
@@ -1338,8 +1256,7 @@ public class MeetingAsyncClient {
      *
      * 删除企业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCorpRequest 请求对象
      * @return CompletableFuture<DeleteCorpResponse>
@@ -1353,8 +1270,7 @@ public class MeetingAsyncClient {
      *
      * 删除企业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCorpRequest 请求对象
      * @return AsyncInvoker<DeleteCorpRequest, DeleteCorpResponse>
@@ -1368,8 +1284,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口删除企业的云会议室。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCorpVmrRequest 请求对象
      * @return CompletableFuture<DeleteCorpVmrResponse>
@@ -1383,8 +1298,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口删除企业的云会议室。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCorpVmrRequest 请求对象
      * @return AsyncInvoker<DeleteCorpVmrRequest, DeleteCorpVmrResponse>
@@ -1400,8 +1314,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口删除部门。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDepartmentRequest 请求对象
      * @return CompletableFuture<DeleteDepartmentResponse>
@@ -1415,8 +1328,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口删除部门。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDepartmentRequest 请求对象
      * @return AsyncInvoker<DeleteDepartmentRequest, DeleteDepartmentResponse>
@@ -1432,8 +1344,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于删除当前会议已保存的多画面布局。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLayoutRequest 请求对象
      * @return CompletableFuture<DeleteLayoutResponse>
@@ -1447,8 +1358,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于删除当前会议已保存的多画面布局。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLayoutRequest 请求对象
      * @return AsyncInvoker<DeleteLayoutRequest, DeleteLayoutResponse>
@@ -1463,8 +1373,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于批量删除会议的录制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRecordingsRequest 请求对象
      * @return CompletableFuture<DeleteRecordingsResponse>
@@ -1478,8 +1387,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于批量删除会议的录制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRecordingsRequest 请求对象
      * @return AsyncInvoker<DeleteRecordingsRequest, DeleteRecordingsResponse>
@@ -1495,8 +1403,7 @@ public class MeetingAsyncClient {
      *
      * 企业删除资源项，删除资源项后，企业资源总数会自动减少。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceRequest 请求对象
      * @return CompletableFuture<DeleteResourceResponse>
@@ -1510,8 +1417,7 @@ public class MeetingAsyncClient {
      *
      * 企业删除资源项，删除资源项后，企业资源总数会自动减少。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceRequest 请求对象
      * @return AsyncInvoker<DeleteResourceRequest, DeleteResourceResponse>
@@ -1527,8 +1433,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员批量删除激活码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVisionActiveCodeRequest 请求对象
      * @return CompletableFuture<DeleteVisionActiveCodeResponse>
@@ -1543,8 +1448,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员批量删除激活码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVisionActiveCodeRequest 请求对象
      * @return AsyncInvoker<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse>
@@ -1560,8 +1464,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于管理员删除已配置的事件推送设置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteWebHookConfigRequest 请求对象
      * @return CompletableFuture<DeleteWebHookConfigResponse>
@@ -1575,8 +1478,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于管理员删除已配置的事件推送设置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteWebHookConfigRequest 请求对象
      * @return AsyncInvoker<DeleteWebHookConfigRequest, DeleteWebHookConfigResponse>
@@ -1592,8 +1494,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于取消已预约的网络研讨会。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteWebinarRequest 请求对象
      * @return CompletableFuture<DeleteWebinarResponse>
@@ -1607,8 +1508,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于取消已预约的网络研讨会。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteWebinarRequest 请求对象
      * @return AsyncInvoker<DeleteWebinarRequest, DeleteWebinarResponse>
@@ -1624,8 +1524,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口回收云会议室。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateVmrRequest 请求对象
      * @return CompletableFuture<DisassociateVmrResponse>
@@ -1639,8 +1538,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口回收云会议室。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateVmrRequest 请求对象
      * @return AsyncInvoker<DisassociateVmrRequest, DisassociateVmrResponse>
@@ -1656,8 +1554,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置指定与会者的举手/放下举手状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param HandRequest 请求对象
      * @return CompletableFuture<HandResponse>
@@ -1671,8 +1568,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置指定与会者的举手/放下举手状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param HandRequest 请求对象
      * @return AsyncInvoker<HandRequest, HandResponse>
@@ -1686,8 +1582,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于挂断正在通话中的与会者。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param HangUpRequest 请求对象
      * @return CompletableFuture<HangUpResponse>
@@ -1701,8 +1596,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于挂断正在通话中的与会者。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param HangUpRequest 请求对象
      * @return AsyncInvoker<HangUpRequest, HangUpResponse>
@@ -1716,8 +1610,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于邀请指定与会者开启、关闭摄像头。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param InviteOperateVideoRequest 请求对象
      * @return CompletableFuture<InviteOperateVideoResponse>
@@ -1731,8 +1624,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于邀请指定与会者开启、关闭摄像头。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param InviteOperateVideoRequest 请求对象
      * @return AsyncInvoker<InviteOperateVideoRequest, InviteOperateVideoResponse>
@@ -1748,8 +1640,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于邀请与会者加入会议。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param InviteParticipantRequest 请求对象
      * @return CompletableFuture<InviteParticipantResponse>
@@ -1763,8 +1654,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于邀请与会者加入会议。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param InviteParticipantRequest 请求对象
      * @return AsyncInvoker<InviteParticipantRequest, InviteParticipantResponse>
@@ -1780,8 +1670,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于邀请/取消邀请指定与会人共享桌面。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param InviteShareRequest 请求对象
      * @return CompletableFuture<InviteShareResponse>
@@ -1795,8 +1684,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于邀请/取消邀请指定与会人共享桌面。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param InviteShareRequest 请求对象
      * @return AsyncInvoker<InviteShareRequest, InviteShareResponse>
@@ -1814,8 +1702,7 @@ public class MeetingAsyncClient {
      *   - 华为云会议旗舰版在企业内直接添加该用户。用户会收到华为云会议的初始密码，用户第一次以手机号或者邮箱登录时，需要修改密码。
      * * 若被邀请用户在华为云会议系统中存在，则该用户会收到短信或者邮件确认。确认完成后改用户加入企业内。该用户的密码保持原来的密码不变。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param InviteUserRequest 请求对象
      * @return CompletableFuture<InviteUserResponse>
@@ -1833,8 +1720,7 @@ public class MeetingAsyncClient {
      *   - 华为云会议旗舰版在企业内直接添加该用户。用户会收到华为云会议的初始密码，用户第一次以手机号或者邮箱登录时，需要修改密码。
      * * 若被邀请用户在华为云会议系统中存在，则该用户会收到短信或者邮件确认。确认完成后改用户加入企业内。该用户的密码保持原来的密码不变。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param InviteUserRequest 请求对象
      * @return AsyncInvoker<InviteUserRequest, InviteUserResponse>
@@ -1849,8 +1735,7 @@ public class MeetingAsyncClient {
      * 该接口用于通过会议ID和密码邀请与会者。一般用于App已知会议ID和来宾密码，通过扫码等方式获取其他终端的SIP号码后，使用该接口将其他终端邀请加入会议中。
      * &gt; 需要管理员在企业的“会议设置”&gt;“来宾扫码邀请任意硬终端入会”设置成打开，才允许通过来宾密码邀请其他终端入会。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param InviteWithPwdRequest 请求对象
      * @return CompletableFuture<InviteWithPwdResponse>
@@ -1865,8 +1750,7 @@ public class MeetingAsyncClient {
      * 该接口用于通过会议ID和密码邀请与会者。一般用于App已知会议ID和来宾密码，通过扫码等方式获取其他终端的SIP号码后，使用该接口将其他终端邀请加入会议中。
      * &gt; 需要管理员在企业的“会议设置”&gt;“来宾扫码邀请任意硬终端入会”设置成打开，才允许通过来宾密码邀请其他终端入会。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param InviteWithPwdRequest 请求对象
      * @return AsyncInvoker<InviteWithPwdRequest, InviteWithPwdResponse>
@@ -1882,8 +1766,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询历史网络研讨会。管理员可查询企业内历史网络研讨会，非管理员可查询个人历史网络研讨会。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHistoryWebinarsRequest 请求对象
      * @return CompletableFuture<ListHistoryWebinarsResponse>
@@ -1897,8 +1780,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询历史网络研讨会。管理员可查询企业内历史网络研讨会，非管理员可查询个人历史网络研讨会。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHistoryWebinarsRequest 请求对象
      * @return AsyncInvoker<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse>
@@ -1914,8 +1796,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询正在召开的网络研讨会。管理员可查询企业内正在召开网络研讨会，非管理员可查询自己预订的正在召开的网络研讨会。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListOngoingWebinarsRequest 请求对象
      * @return CompletableFuture<ListOngoingWebinarsResponse>
@@ -1929,8 +1810,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询正在召开的网络研讨会。管理员可查询企业内正在召开网络研讨会，非管理员可查询自己预订的正在召开的网络研讨会。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListOngoingWebinarsRequest 请求对象
      * @return AsyncInvoker<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse>
@@ -1946,8 +1826,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询即将召开的网络研讨会。管理员可查询企业内即将召开网络研讨会，非管理员可查询自己预订的即将召开的网络研讨会。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUpComingWebinarsRequest 请求对象
      * @return CompletableFuture<ListUpComingWebinarsResponse>
@@ -1962,8 +1841,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询即将召开的网络研讨会。管理员可查询企业内即将召开网络研讨会，非管理员可查询自己预订的即将召开的网络研讨会。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUpComingWebinarsRequest 请求对象
      * @return AsyncInvoker<ListUpComingWebinarsRequest, ListUpComingWebinarsResponse>
@@ -1979,8 +1857,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于启动或停止会议直播。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param LiveRequest 请求对象
      * @return CompletableFuture<LiveResponse>
@@ -1994,8 +1871,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于启动或停止会议直播。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param LiveRequest 请求对象
      * @return AsyncInvoker<LiveRequest, LiveResponse>
@@ -2009,8 +1885,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于锁定或解锁会议。锁定会议后，不允许新的来宾主动加入会议。会议锁定后使用主持人密码/主持人链接加入会议或者主持人邀请来宾不受影响。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param LockMeetingRequest 请求对象
      * @return CompletableFuture<LockMeetingResponse>
@@ -2024,8 +1899,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于锁定或解锁会议。锁定会议后，不允许新的来宾主动加入会议。会议锁定后使用主持人密码/主持人链接加入会议或者主持人邀请来宾不受影响。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param LockMeetingRequest 请求对象
      * @return AsyncInvoker<LockMeetingRequest, LockMeetingResponse>
@@ -2039,8 +1913,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于锁定或者解锁某在线会场的视频源。只适用于专业会议终端（如TE系列等）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param LockViewRequest 请求对象
      * @return CompletableFuture<LockViewResponse>
@@ -2054,8 +1927,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于锁定或者解锁某在线会场的视频源。只适用于专业会议终端（如TE系列等）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param LockViewRequest 请求对象
      * @return AsyncInvoker<LockViewRequest, LockViewResponse>
@@ -2069,8 +1941,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于将会中的指定与会者移入到等候室。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MoveToWaitingRoomRequest 请求对象
      * @return CompletableFuture<MoveToWaitingRoomResponse>
@@ -2084,8 +1955,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于将会中的指定与会者移入到等候室。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MoveToWaitingRoomRequest 请求对象
      * @return AsyncInvoker<MoveToWaitingRoomRequest, MoveToWaitingRoomResponse>
@@ -2101,8 +1971,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置整个会议所有与会者（主持人除外）的静音/取消静音状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MuteMeetingRequest 请求对象
      * @return CompletableFuture<MuteMeetingResponse>
@@ -2116,8 +1985,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置整个会议所有与会者（主持人除外）的静音/取消静音状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MuteMeetingRequest 请求对象
      * @return AsyncInvoker<MuteMeetingRequest, MuteMeetingResponse>
@@ -2131,8 +1999,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置指定与会者静音/取消静音状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MuteParticipantRequest 请求对象
      * @return CompletableFuture<MuteParticipantResponse>
@@ -2146,8 +2013,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置指定与会者静音/取消静音状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MuteParticipantRequest 请求对象
      * @return AsyncInvoker<MuteParticipantRequest, MuteParticipantResponse>
@@ -2163,8 +2029,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于延长会议时间。默认会议自动延长。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ProlongMeetingRequest 请求对象
      * @return CompletableFuture<ProlongMeetingResponse>
@@ -2178,8 +2043,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于延长会议时间。默认会议自动延长。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ProlongMeetingRequest 请求对象
      * @return AsyncInvoker<ProlongMeetingRequest, ProlongMeetingResponse>
@@ -2195,8 +2059,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于启动或停止会议云录制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecordRequest 请求对象
      * @return CompletableFuture<RecordResponse>
@@ -2210,8 +2073,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于启动或停止会议云录制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RecordRequest 请求对象
      * @return AsyncInvoker<RecordRequest, RecordResponse>
@@ -2225,8 +2087,7 @@ public class MeetingAsyncClient {
      *
      * 重命名某个与会者。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RenameParticipantRequest 请求对象
      * @return CompletableFuture<RenameParticipantResponse>
@@ -2240,8 +2101,7 @@ public class MeetingAsyncClient {
      *
      * 重命名某个与会者。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RenameParticipantRequest 请求对象
      * @return AsyncInvoker<RenameParticipantRequest, RenameParticipantResponse>
@@ -2257,8 +2117,7 @@ public class MeetingAsyncClient {
      *
      * 当硬终端激活码失效时，企业管理员可以通过该接口重置激活码，使用重新获取的激活码激活终端，每24小时可重新激活5次。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetActivecodeRequest 请求对象
      * @return CompletableFuture<ResetActivecodeResponse>
@@ -2272,8 +2131,7 @@ public class MeetingAsyncClient {
      *
      * 当硬终端激活码失效时，企业管理员可以通过该接口重置激活码，使用重新获取的激活码激活终端，每24小时可重新激活5次。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetActivecodeRequest 请求对象
      * @return AsyncInvoker<ResetActivecodeRequest, ResetActivecodeResponse>
@@ -2289,8 +2147,7 @@ public class MeetingAsyncClient {
      *
      * 该接口提供给用户重置密码功能，服务器收到请求，重新设置用户密码并返回结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetPwdRequest 请求对象
      * @return CompletableFuture<ResetPwdResponse>
@@ -2304,8 +2161,7 @@ public class MeetingAsyncClient {
      *
      * 该接口提供给用户重置密码功能，服务器收到请求，重新设置用户密码并返回结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetPwdRequest 请求对象
      * @return AsyncInvoker<ResetPwdRequest, ResetPwdResponse>
@@ -2319,8 +2175,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口提供企业管理员重置企业成员密码的功能。当服务器收到重置密码的请求时，发送新的密码到企业成员的邮箱或者短信，并返回结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetPwdByAdminRequest 请求对象
      * @return CompletableFuture<ResetPwdByAdminResponse>
@@ -2334,8 +2189,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口提供企业管理员重置企业成员密码的功能。当服务器收到重置密码的请求时，发送新的密码到企业成员的邮箱或者短信，并返回结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetPwdByAdminRequest 请求对象
      * @return AsyncInvoker<ResetPwdByAdminRequest, ResetPwdByAdminResponse>
@@ -2351,8 +2205,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员重置帐号的激活码，重置后，原设备直接解绑，必须重新激活使用,若手机邮箱不填，则不会发送新的激活码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetVisionActiveCodeRequest 请求对象
      * @return CompletableFuture<ResetVisionActiveCodeResponse>
@@ -2367,8 +2220,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员重置帐号的激活码，重置后，原设备直接解绑，必须重新激活使用,若手机邮箱不填，则不会发送新的激活码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetVisionActiveCodeRequest 请求对象
      * @return AsyncInvoker<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse>
@@ -2384,8 +2236,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于点名指定与会者。点名会场的效果是除了主持人外，点名与会者为非静音状态，未点名的与会者统一为静音状态。同一时间，只允许一个与会者被点名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RollcallParticipantRequest 请求对象
      * @return CompletableFuture<RollcallParticipantResponse>
@@ -2399,8 +2250,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于点名指定与会者。点名会场的效果是除了主持人外，点名与会者为非静音状态，未点名的与会者统一为静音状态。同一时间，只允许一个与会者被点名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RollcallParticipantRequest 请求对象
      * @return AsyncInvoker<RollcallParticipantRequest, RollcallParticipantResponse>
@@ -2416,8 +2266,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于保存多画面布局。保存的多画面布局，只能在当前会议使用，会议结束后，保存的多画面布局就会释放。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SaveLayoutRequest 请求对象
      * @return CompletableFuture<SaveLayoutResponse>
@@ -2431,8 +2280,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于保存多画面布局。保存的多画面布局，只能在当前会议使用，会议结束后，保存的多画面布局就会释放。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SaveLayoutRequest 请求对象
      * @return AsyncInvoker<SaveLayoutRequest, SaveLayoutResponse>
@@ -2446,8 +2294,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询指定历史会议的与会者记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchAttendanceRecordsOfHisMeetingRequest 请求对象
      * @return CompletableFuture<SearchAttendanceRecordsOfHisMeetingResponse>
@@ -2462,8 +2309,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询指定历史会议的与会者记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchAttendanceRecordsOfHisMeetingRequest 请求对象
      * @return AsyncInvoker<SearchAttendanceRecordsOfHisMeetingRequest, SearchAttendanceRecordsOfHisMeetingResponse>
@@ -2479,8 +2325,7 @@ public class MeetingAsyncClient {
      *
      * SP管理员分页搜索企业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchCorpRequest 请求对象
      * @return CompletableFuture<SearchCorpResponse>
@@ -2494,8 +2339,7 @@ public class MeetingAsyncClient {
      *
      * SP管理员分页搜索企业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchCorpRequest 请求对象
      * @return AsyncInvoker<SearchCorpRequest, SearchCorpResponse>
@@ -2509,8 +2353,7 @@ public class MeetingAsyncClient {
      *
      * 通过该接口分页查询企业管理员。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchCorpAdminsRequest 请求对象
      * @return CompletableFuture<SearchCorpAdminsResponse>
@@ -2524,8 +2367,7 @@ public class MeetingAsyncClient {
      *
      * 通过该接口分页查询企业管理员。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchCorpAdminsRequest 请求对象
      * @return AsyncInvoker<SearchCorpAdminsRequest, SearchCorpAdminsResponse>
@@ -2541,8 +2383,7 @@ public class MeetingAsyncClient {
      *
      * 企业用户（含管理员）通过该接口查询该企业的通讯录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchCorpDirRequest 请求对象
      * @return CompletableFuture<SearchCorpDirResponse>
@@ -2556,8 +2397,7 @@ public class MeetingAsyncClient {
      *
      * 企业用户（含管理员）通过该接口查询该企业的通讯录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchCorpDirRequest 请求对象
      * @return AsyncInvoker<SearchCorpDirRequest, SearchCorpDirResponse>
@@ -2573,8 +2413,7 @@ public class MeetingAsyncClient {
      *
      * 企业用户（含管理员）通过该接口查询该企业的外部联系人或者个人外部联系人。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchCorpExternalDirRequest 请求对象
      * @return CompletableFuture<SearchCorpExternalDirResponse>
@@ -2589,8 +2428,7 @@ public class MeetingAsyncClient {
      *
      * 企业用户（含管理员）通过该接口查询该企业的外部联系人或者个人外部联系人。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchCorpExternalDirRequest 请求对象
      * @return AsyncInvoker<SearchCorpExternalDirRequest, SearchCorpExternalDirResponse>
@@ -2606,8 +2444,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员根据条件查询企业资源订单列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchCorpResourcesRequest 请求对象
      * @return CompletableFuture<SearchCorpResourcesResponse>
@@ -2621,8 +2458,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员根据条件查询企业资源订单列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchCorpResourcesRequest 请求对象
      * @return AsyncInvoker<SearchCorpResourcesRequest, SearchCorpResourcesResponse>
@@ -2638,8 +2474,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口分页查询企业的云会议室。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchCorpVmrRequest 请求对象
      * @return CompletableFuture<SearchCorpVmrResponse>
@@ -2653,8 +2488,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口分页查询企业的云会议室。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchCorpVmrRequest 请求对象
      * @return AsyncInvoker<SearchCorpVmrRequest, SearchCorpVmrResponse>
@@ -2670,8 +2504,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询指定历史会议的会控记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchCtlRecordsOfHisMeetingRequest 请求对象
      * @return CompletableFuture<SearchCtlRecordsOfHisMeetingResponse>
@@ -2686,8 +2519,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询指定历史会议的会控记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchCtlRecordsOfHisMeetingRequest 请求对象
      * @return AsyncInvoker<SearchCtlRecordsOfHisMeetingRequest, SearchCtlRecordsOfHisMeetingResponse>
@@ -2703,8 +2535,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口按名称查询所有的部门。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchDepartmentByNameRequest 请求对象
      * @return CompletableFuture<SearchDepartmentByNameResponse>
@@ -2719,8 +2550,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口按名称查询所有的部门。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchDepartmentByNameRequest 请求对象
      * @return AsyncInvoker<SearchDepartmentByNameRequest, SearchDepartmentByNameResponse>
@@ -2737,8 +2567,7 @@ public class MeetingAsyncClient {
      * 企业管理员通过该接口分页查询专业会议终端信息。
      * &gt; 如果需要查询Ideahub、SmartRooms、智慧屏TV请使用[[分页查询用户](https://support.huaweicloud.com/api-meeting/meeting_21_0071.html)](tag:hws)[[分页查询用户](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0071.html)](tag:hk)接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchDevicesRequest 请求对象
      * @return CompletableFuture<SearchDevicesResponse>
@@ -2753,8 +2582,7 @@ public class MeetingAsyncClient {
      * 企业管理员通过该接口分页查询专业会议终端信息。
      * &gt; 如果需要查询Ideahub、SmartRooms、智慧屏TV请使用[[分页查询用户](https://support.huaweicloud.com/api-meeting/meeting_21_0071.html)](tag:hws)[[分页查询用户](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0071.html)](tag:hk)接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchDevicesRequest 请求对象
      * @return AsyncInvoker<SearchDevicesRequest, SearchDevicesResponse>
@@ -2773,8 +2601,7 @@ public class MeetingAsyncClient {
      * &gt; * 如果同一个会议召开并结束多次，则会产生多条历史会议（会议ID相同，会议UUID不同）
      * &gt; * 历史会议记录默认保留6个月，最长保留12个月。保留时间管理员可在“会议设置”的“历史会议留存时间”中修改
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchHisMeetingsRequest 请求对象
      * @return CompletableFuture<SearchHisMeetingsResponse>
@@ -2791,8 +2618,7 @@ public class MeetingAsyncClient {
      * &gt; * 如果同一个会议召开并结束多次，则会产生多条历史会议（会议ID相同，会议UUID不同）
      * &gt; * 历史会议记录默认保留6个月，最长保留12个月。保留时间管理员可在“会议设置”的“历史会议留存时间”中修改
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchHisMeetingsRequest 请求对象
      * @return AsyncInvoker<SearchHisMeetingsRequest, SearchHisMeetingsResponse>
@@ -2808,8 +2634,7 @@ public class MeetingAsyncClient {
      *
      * 分页查询信息窗素材。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchMaterialsRequest 请求对象
      * @return CompletableFuture<SearchMaterialsResponse>
@@ -2823,8 +2648,7 @@ public class MeetingAsyncClient {
      *
      * 分页查询信息窗素材。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchMaterialsRequest 请求对象
      * @return AsyncInvoker<SearchMaterialsRequest, SearchMaterialsResponse>
@@ -2840,8 +2664,7 @@ public class MeetingAsyncClient {
      *
      * 用户查询自己的会议纪要列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchMeetingFileListRequest 请求对象
      * @return CompletableFuture<SearchMeetingFileListResponse>
@@ -2856,8 +2679,7 @@ public class MeetingAsyncClient {
      *
      * 用户查询自己的会议纪要列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchMeetingFileListRequest 请求对象
      * @return AsyncInvoker<SearchMeetingFileListRequest, SearchMeetingFileListResponse>
@@ -2875,8 +2697,7 @@ public class MeetingAsyncClient {
      * * 管理员可以查询管理权限域内所有的会议，普通用户仅能查询自己创建或者需要参加的会议。不带查询参数时，默认查询权限范围内正在召开或还未召开的会议。
      * * 只能查询尚未结束的会议（既正在召开的会议和已预约还未召开的会议）。如果需要查询历史会议列表，请参考[[查询历史会议列表](https://support.huaweicloud.com/api-meeting/meeting_21_0051.html)](tag:hws)[[查询历史会议列表](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0051.html)](tag:hk)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchMeetingsRequest 请求对象
      * @return CompletableFuture<SearchMeetingsResponse>
@@ -2892,8 +2713,7 @@ public class MeetingAsyncClient {
      * * 管理员可以查询管理权限域内所有的会议，普通用户仅能查询自己创建或者需要参加的会议。不带查询参数时，默认查询权限范围内正在召开或还未召开的会议。
      * * 只能查询尚未结束的会议（既正在召开的会议和已预约还未召开的会议）。如果需要查询历史会议列表，请参考[[查询历史会议列表](https://support.huaweicloud.com/api-meeting/meeting_21_0051.html)](tag:hws)[[查询历史会议列表](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0051.html)](tag:hk)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchMeetingsRequest 请求对象
      * @return AsyncInvoker<SearchMeetingsRequest, SearchMeetingsResponse>
@@ -2909,8 +2729,7 @@ public class MeetingAsyncClient {
      *
      * 企业用户通过该接口查询个人已分配的云会议室及个人会议ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchMemberVmrRequest 请求对象
      * @return CompletableFuture<SearchMemberVmrResponse>
@@ -2924,8 +2743,7 @@ public class MeetingAsyncClient {
      *
      * 企业用户通过该接口查询个人已分配的云会议室及个人会议ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchMemberVmrRequest 请求对象
      * @return AsyncInvoker<SearchMemberVmrRequest, SearchMemberVmrResponse>
@@ -2941,8 +2759,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询正在召开的会议列表。管理员可以查询本企业内所有在线会议，普通用户仅能查询当前自己帐号创建或者需要参加的在线会议。不带查询参数时，默认查询权限范围内的在线会议，按开始时间升序排列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchOnlineMeetingsRequest 请求对象
      * @return CompletableFuture<SearchOnlineMeetingsResponse>
@@ -2957,8 +2774,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询正在召开的会议列表。管理员可以查询本企业内所有在线会议，普通用户仅能查询当前自己帐号创建或者需要参加的在线会议。不带查询参数时，默认查询权限范围内的在线会议，按开始时间升序排列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchOnlineMeetingsRequest 请求对象
      * @return AsyncInvoker<SearchOnlineMeetingsRequest, SearchOnlineMeetingsResponse>
@@ -2974,8 +2790,7 @@ public class MeetingAsyncClient {
      *
      * 获取信息窗节目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchProgramsRequest 请求对象
      * @return CompletableFuture<SearchProgramsResponse>
@@ -2989,8 +2804,7 @@ public class MeetingAsyncClient {
      *
      * 获取信息窗节目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchProgramsRequest 请求对象
      * @return AsyncInvoker<SearchProgramsRequest, SearchProgramsResponse>
@@ -3006,8 +2820,7 @@ public class MeetingAsyncClient {
      *
      * 获取信息窗发布。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchPublicationsRequest 请求对象
      * @return CompletableFuture<SearchPublicationsResponse>
@@ -3021,8 +2834,7 @@ public class MeetingAsyncClient {
      *
      * 获取信息窗发布。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchPublicationsRequest 请求对象
      * @return AsyncInvoker<SearchPublicationsRequest, SearchPublicationsResponse>
@@ -3038,8 +2850,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询会议录制列表。管理员可以查询本企业内所有的录制，普通用户仅能查询自己创建的会议的录制。不带查询参数时，默认查询权限范围内的录制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchRecordingsRequest 请求对象
      * @return CompletableFuture<SearchRecordingsResponse>
@@ -3053,8 +2864,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询会议录制列表。管理员可以查询本企业内所有的录制，普通用户仅能查询自己创建的会议的录制。不带查询参数时，默认查询权限范围内的录制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchRecordingsRequest 请求对象
      * @return AsyncInvoker<SearchRecordingsRequest, SearchRecordingsResponse>
@@ -3070,8 +2880,7 @@ public class MeetingAsyncClient {
      *
      * SP根据条件查询企业的资源项。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchResourceRequest 请求对象
      * @return CompletableFuture<SearchResourceResponse>
@@ -3085,8 +2894,7 @@ public class MeetingAsyncClient {
      *
      * SP根据条件查询企业的资源项。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchResourceRequest 请求对象
      * @return AsyncInvoker<SearchResourceRequest, SearchResourceResponse>
@@ -3102,8 +2910,7 @@ public class MeetingAsyncClient {
      *
      * SP根据根据条件查询企业的资源操作记录，支持根据resourceId模糊搜索。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchResourceOpRecordRequest 请求对象
      * @return CompletableFuture<SearchResourceOpRecordResponse>
@@ -3118,8 +2925,7 @@ public class MeetingAsyncClient {
      *
      * SP根据根据条件查询企业的资源操作记录，支持根据resourceId模糊搜索。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchResourceOpRecordRequest 请求对象
      * @return AsyncInvoker<SearchResourceOpRecordRequest, SearchResourceOpRecordResponse>
@@ -3135,8 +2941,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口分页查询企业用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchUsersRequest 请求对象
      * @return CompletableFuture<SearchUsersResponse>
@@ -3150,8 +2955,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口分页查询企业用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchUsersRequest 请求对象
      * @return AsyncInvoker<SearchUsersRequest, SearchUsersResponse>
@@ -3165,8 +2969,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员分页查询激活码，支持激活码、终端名称模糊查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchVisionActiveCodeRequest 请求对象
      * @return CompletableFuture<SearchVisionActiveCodeResponse>
@@ -3181,8 +2984,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员分页查询激活码，支持激活码、终端名称模糊查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchVisionActiveCodeRequest 请求对象
      * @return AsyncInvoker<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse>
@@ -3198,8 +3000,7 @@ public class MeetingAsyncClient {
      *
      * 该接口提供发送滑块验证码。服务器收到请求，返回抠图以及抠图后的原图等结果。需要在前台界面显示出抠图以及抠图后的原图，用户通过滑块操作来匹配图形。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendSlideVerifyCodeRequest 请求对象
      * @return CompletableFuture<SendSlideVerifyCodeResponse>
@@ -3213,8 +3014,7 @@ public class MeetingAsyncClient {
      *
      * 该接口提供发送滑块验证码。服务器收到请求，返回抠图以及抠图后的原图等结果。需要在前台界面显示出抠图以及抠图后的原图，用户通过滑块操作来匹配图形。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendSlideVerifyCodeRequest 请求对象
      * @return AsyncInvoker<SendSlideVerifyCodeRequest, SendSlideVerifyCodeResponse>
@@ -3230,8 +3030,7 @@ public class MeetingAsyncClient {
      *
      * 该接口提供发送验证码，服务器收到请求，发送验证码到邮箱或者短信并返回结果。用户在前台界面通过滑块验证后，再进行发送验证码操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendVeriCodeForChangePwdRequest 请求对象
      * @return CompletableFuture<SendVeriCodeForChangePwdResponse>
@@ -3246,8 +3045,7 @@ public class MeetingAsyncClient {
      *
      * 该接口提供发送验证码，服务器收到请求，发送验证码到邮箱或者短信并返回结果。用户在前台界面通过滑块验证后，再进行发送验证码操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendVeriCodeForChangePwdRequest 请求对象
      * @return AsyncInvoker<SendVeriCodeForChangePwdRequest, SendVeriCodeForChangePwdResponse>
@@ -3263,8 +3061,7 @@ public class MeetingAsyncClient {
      *
      * 修改用户手机或邮箱时，需要获取验证码。企业用户通过该接口获取验证码，系统会向用户的手机或邮箱发送，验证码1分钟内有效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendVeriCodeForUpdateUserInfoRequest 请求对象
      * @return CompletableFuture<SendVeriCodeForUpdateUserInfoResponse>
@@ -3279,8 +3076,7 @@ public class MeetingAsyncClient {
      *
      * 修改用户手机或邮箱时，需要获取验证码。企业用户通过该接口获取验证码，系统会向用户的手机或邮箱发送，验证码1分钟内有效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendVeriCodeForUpdateUserInfoRequest 请求对象
      * @return AsyncInvoker<SendVeriCodeForUpdateUserInfoRequest, SendVeriCodeForUpdateUserInfoResponse>
@@ -3296,8 +3092,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置联席主持人或释放联席主持人。只能将来宾设置为联席主持人。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetCohostRequest 请求对象
      * @return CompletableFuture<SetCohostResponse>
@@ -3311,8 +3106,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置联席主持人或释放联席主持人。只能将来宾设置为联席主持人。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetCohostRequest 请求对象
      * @return AsyncInvoker<SetCohostRequest, SetCohostResponse>
@@ -3326,8 +3120,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置会中多画面。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetCustomMultiPictureRequest 请求对象
      * @return CompletableFuture<SetCustomMultiPictureResponse>
@@ -3342,8 +3135,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置会中多画面。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetCustomMultiPictureRequest 请求对象
      * @return AsyncInvoker<SetCustomMultiPictureRequest, SetCustomMultiPictureResponse>
@@ -3359,8 +3151,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于主持人轮询、主持人选看多画面、主持人选看会场操作。只适用于专业会议终端（如TE系列等）为主持人的场景。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetHostViewRequest 请求对象
      * @return CompletableFuture<SetHostViewResponse>
@@ -3374,8 +3165,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于主持人轮询、主持人选看多画面、主持人选看会场操作。只适用于专业会议终端（如TE系列等）为主持人的场景。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetHostViewRequest 请求对象
      * @return AsyncInvoker<SetHostViewRequest, SetHostViewResponse>
@@ -3389,8 +3179,7 @@ public class MeetingAsyncClient {
      *
      * 设置会议多画面。该接口废弃不用，请使用“[[设置自定义多画面](https://support.huaweicloud.com/api-meeting/meeting_21_0418.html)](tag:hws)[[设置自定义多画面](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0418.html)](tag:hk)”接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetMultiPictureRequest 请求对象
      * @return CompletableFuture<SetMultiPictureResponse>
@@ -3404,8 +3193,7 @@ public class MeetingAsyncClient {
      *
      * 设置会议多画面。该接口废弃不用，请使用“[[设置自定义多画面](https://support.huaweicloud.com/api-meeting/meeting_21_0418.html)](tag:hws)[[设置自定义多画面](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0418.html)](tag:hk)”接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetMultiPictureRequest 请求对象
      * @return AsyncInvoker<SetMultiPictureRequest, SetMultiPictureResponse>
@@ -3421,8 +3209,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于专业会议终端（如TE系列等）选看其他与会者。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetParticipantViewRequest 请求对象
      * @return CompletableFuture<SetParticipantViewResponse>
@@ -3436,8 +3223,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于专业会议终端（如TE系列等）选看其他与会者。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetParticipantViewRequest 请求对象
      * @return AsyncInvoker<SetParticipantViewRequest, SetParticipantViewResponse>
@@ -3453,8 +3239,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置主持人或释放主持人。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetRoleRequest 请求对象
      * @return CompletableFuture<SetRoleResponse>
@@ -3468,8 +3253,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置主持人或释放主持人。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetRoleRequest 请求对象
      * @return AsyncInvoker<SetRoleRequest, SetRoleResponse>
@@ -3483,8 +3267,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置SSO登录的鉴权配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetSsoConfigRequest 请求对象
      * @return CompletableFuture<SetSsoConfigResponse>
@@ -3498,8 +3281,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置SSO登录的鉴权配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetSsoConfigRequest 请求对象
      * @return AsyncInvoker<SetSsoConfigRequest, SetSsoConfigResponse>
@@ -3514,8 +3296,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于管理员设置企业级会议事件订阅配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetWebHookConfigRequest 请求对象
      * @return CompletableFuture<SetWebHookConfigResponse>
@@ -3529,8 +3310,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于管理员设置企业级会议事件订阅配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetWebHookConfigRequest 请求对象
      * @return AsyncInvoker<SetWebHookConfigRequest, SetWebHookConfigResponse>
@@ -3546,8 +3326,7 @@ public class MeetingAsyncClient {
      *
      * SP管理员根据会议ID查询该会议归属的企业ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowConfOrgRequest 请求对象
      * @return CompletableFuture<ShowConfOrgResponse>
@@ -3561,8 +3340,7 @@ public class MeetingAsyncClient {
      *
      * SP管理员根据会议ID查询该会议归属的企业ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowConfOrgRequest 请求对象
      * @return AsyncInvoker<ShowConfOrgRequest, ShowConfOrgResponse>
@@ -3576,8 +3354,7 @@ public class MeetingAsyncClient {
      *
      * 获取企业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCorpRequest 请求对象
      * @return CompletableFuture<ShowCorpResponse>
@@ -3591,8 +3368,7 @@ public class MeetingAsyncClient {
      *
      * 获取企业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCorpRequest 请求对象
      * @return AsyncInvoker<ShowCorpRequest, ShowCorpResponse>
@@ -3606,8 +3382,7 @@ public class MeetingAsyncClient {
      *
      * 通过该接口查询企业管理员。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCorpAdminRequest 请求对象
      * @return CompletableFuture<ShowCorpAdminResponse>
@@ -3621,8 +3396,7 @@ public class MeetingAsyncClient {
      *
      * 通过该接口查询企业管理员。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCorpAdminRequest 请求对象
      * @return AsyncInvoker<ShowCorpAdminRequest, ShowCorpAdminResponse>
@@ -3638,8 +3412,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口查询企业注册信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCorpBasicInfoRequest 请求对象
      * @return CompletableFuture<ShowCorpBasicInfoResponse>
@@ -3653,8 +3426,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口查询企业注册信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCorpBasicInfoRequest 请求对象
      * @return AsyncInvoker<ShowCorpBasicInfoRequest, ShowCorpBasicInfoResponse>
@@ -3670,8 +3442,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口查询企业内资源及业务权限，包括查询已使用的资源情况。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCorpResourceRequest 请求对象
      * @return CompletableFuture<ShowCorpResourceResponse>
@@ -3685,8 +3456,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口查询企业内资源及业务权限，包括查询已使用的资源情况。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCorpResourceRequest 请求对象
      * @return AsyncInvoker<ShowCorpResourceRequest, ShowCorpResourceResponse>
@@ -3702,8 +3472,7 @@ public class MeetingAsyncClient {
      *
      * 通过部门编码查询部门信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDepartmentRequest 请求对象
      * @return CompletableFuture<ShowDepartmentResponse>
@@ -3717,8 +3486,7 @@ public class MeetingAsyncClient {
      *
      * 通过部门编码查询部门信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDepartmentRequest 请求对象
      * @return AsyncInvoker<ShowDepartmentRequest, ShowDepartmentResponse>
@@ -3734,8 +3502,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口查询部门及其一级子部门列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeptAndChildDeptRequest 请求对象
      * @return CompletableFuture<ShowDeptAndChildDeptResponse>
@@ -3750,8 +3517,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口查询部门及其一级子部门列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeptAndChildDeptRequest 请求对象
      * @return AsyncInvoker<ShowDeptAndChildDeptRequest, ShowDeptAndChildDeptResponse>
@@ -3768,8 +3534,7 @@ public class MeetingAsyncClient {
      * 企业管理员通过该接口查询专业会议终端详情。
      * &gt; 如果需要查询Ideahub、SmartRooms、智慧屏TV详情请使用[[查询用户详情](https://support.huaweicloud.com/api-meeting/meeting_21_0069.html)](tag:hws)[[查询用户详情](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0069.html)](tag:hk)接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceDetailRequest 请求对象
      * @return CompletableFuture<ShowDeviceDetailResponse>
@@ -3784,8 +3549,7 @@ public class MeetingAsyncClient {
      * 企业管理员通过该接口查询专业会议终端详情。
      * &gt; 如果需要查询Ideahub、SmartRooms、智慧屏TV详情请使用[[查询用户详情](https://support.huaweicloud.com/api-meeting/meeting_21_0069.html)](tag:hws)[[查询用户详情](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0069.html)](tag:hk)接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceDetailRequest 请求对象
      * @return AsyncInvoker<ShowDeviceDetailRequest, ShowDeviceDetailResponse>
@@ -3802,8 +3566,7 @@ public class MeetingAsyncClient {
      * 调用本接口可以查询硬终端的状态。
      * 硬终端与发起查询请求的帐号需在同一企业下，否则会鉴权失败。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceStatusRequest 请求对象
      * @return CompletableFuture<ShowDeviceStatusResponse>
@@ -3818,8 +3581,7 @@ public class MeetingAsyncClient {
      * 调用本接口可以查询硬终端的状态。
      * 硬终端与发起查询请求的帐号需在同一企业下，否则会鉴权失败。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceStatusRequest 请求对象
      * @return AsyncInvoker<ShowDeviceStatusRequest, ShowDeviceStatusResponse>
@@ -3835,8 +3597,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口获取所有的专业会议终端类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceTypesRequest 请求对象
      * @return CompletableFuture<ShowDeviceTypesResponse>
@@ -3850,8 +3611,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口获取所有的专业会议终端类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceTypesRequest 请求对象
      * @return AsyncInvoker<ShowDeviceTypesRequest, ShowDeviceTypesResponse>
@@ -3867,8 +3627,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用户查询指定历史会议的详情。管理员可以查询本企业内所有的历史会议详情，普通用户仅能查询自己创建或者被邀请的历史会议详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHisMeetingDetailRequest 请求对象
      * @return CompletableFuture<ShowHisMeetingDetailResponse>
@@ -3883,8 +3642,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用户查询指定历史会议的详情。管理员可以查询本企业内所有的历史会议详情，普通用户仅能查询自己创建或者被邀请的历史会议详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHisMeetingDetailRequest 请求对象
      * @return AsyncInvoker<ShowHisMeetingDetailRequest, ShowHisMeetingDetailResponse>
@@ -3900,8 +3658,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询当前会议已保存的多画面布局。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLayoutRequest 请求对象
      * @return CompletableFuture<ShowLayoutResponse>
@@ -3915,8 +3672,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询当前会议已保存的多画面布局。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLayoutRequest 请求对象
      * @return AsyncInvoker<ShowLayoutRequest, ShowLayoutResponse>
@@ -3932,8 +3688,7 @@ public class MeetingAsyncClient {
      * * 管理员可以查询管理权限域内所有会议的详情，普通用户仅能查询自己创建或者需要参加的会议详情。
      * * 只能查询尚未结束的会议（既正在召开的会议和已预约还未召开的会议）。如果需要查询历史会议列详情，请参考[[查询历史会议详情](https://support.huaweicloud.com/api-meeting/meeting_21_0052.html)](tag:hws)[[查询历史会议详情](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0052.html)](tag:hk)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMeetingDetailRequest 请求对象
      * @return CompletableFuture<ShowMeetingDetailResponse>
@@ -3949,8 +3704,7 @@ public class MeetingAsyncClient {
      * * 管理员可以查询管理权限域内所有会议的详情，普通用户仅能查询自己创建或者需要参加的会议详情。
      * * 只能查询尚未结束的会议（既正在召开的会议和已预约还未召开的会议）。如果需要查询历史会议列详情，请参考[[查询历史会议详情](https://support.huaweicloud.com/api-meeting/meeting_21_0052.html)](tag:hws)[[查询历史会议详情](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0052.html)](tag:hk)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMeetingDetailRequest 请求对象
      * @return AsyncInvoker<ShowMeetingDetailRequest, ShowMeetingDetailResponse>
@@ -3966,8 +3720,7 @@ public class MeetingAsyncClient {
      *
      * 用户查询单个会议纪要详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMeetingFileRequest 请求对象
      * @return CompletableFuture<ShowMeetingFileResponse>
@@ -3981,8 +3734,7 @@ public class MeetingAsyncClient {
      *
      * 用户查询单个会议纪要详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMeetingFileRequest 请求对象
      * @return AsyncInvoker<ShowMeetingFileRequest, ShowMeetingFileResponse>
@@ -3998,8 +3750,7 @@ public class MeetingAsyncClient {
      *
      * 用户使用手机扫码后，手机端请求服务端,让服务端通知指定IdeaHub打开指定用户的会议纪要文件列表。二维码内容 ：cloudlink://cloudlink.huawei.com/h5page?action&#x3D;OPEN_MEETING_FILE_LIST&amp;key1&#x3D;value1&amp;key2&#x3D;value2 。key/value的个数可能变化，终端解析后，在发起后续请求时，将所有key/value存为map，作为入参即可。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMeetingFileListRequest 请求对象
      * @return CompletableFuture<ShowMeetingFileListResponse>
@@ -4013,8 +3764,7 @@ public class MeetingAsyncClient {
      *
      * 用户使用手机扫码后，手机端请求服务端,让服务端通知指定IdeaHub打开指定用户的会议纪要文件列表。二维码内容 ：cloudlink://cloudlink.huawei.com/h5page?action&#x3D;OPEN_MEETING_FILE_LIST&amp;key1&#x3D;value1&amp;key2&#x3D;value2 。key/value的个数可能变化，终端解析后，在发起后续请求时，将所有key/value存为map，作为入参即可。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMeetingFileListRequest 请求对象
      * @return AsyncInvoker<ShowMeetingFileListRequest, ShowMeetingFileListResponse>
@@ -4030,8 +3780,7 @@ public class MeetingAsyncClient {
      *
      * 企业用户通过该接口查询自己的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMyInfoRequest 请求对象
      * @return CompletableFuture<ShowMyInfoResponse>
@@ -4045,8 +3794,7 @@ public class MeetingAsyncClient {
      *
      * 企业用户通过该接口查询自己的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMyInfoRequest 请求对象
      * @return AsyncInvoker<ShowMyInfoRequest, ShowMyInfoResponse>
@@ -4060,8 +3808,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询正在召开的会议详情。管理员可以查询本企业内所有的在线会议详情，普通用户仅能查询自己帐号创建或者需要参加的在线会议详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOnlineMeetingDetailRequest 请求对象
      * @return CompletableFuture<ShowOnlineMeetingDetailResponse>
@@ -4076,8 +3823,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询正在召开的会议详情。管理员可以查询本企业内所有的在线会议详情，普通用户仅能查询自己帐号创建或者需要参加的在线会议详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOnlineMeetingDetailRequest 请求对象
      * @return AsyncInvoker<ShowOnlineMeetingDetailRequest, ShowOnlineMeetingDetailResponse>
@@ -4093,8 +3839,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员查询所属企业的资源使用信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOrgResRequest 请求对象
      * @return CompletableFuture<ShowOrgResResponse>
@@ -4108,8 +3853,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员查询所属企业的资源使用信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOrgResRequest 请求对象
      * @return AsyncInvoker<ShowOrgResRequest, ShowOrgResResponse>
@@ -4123,8 +3867,7 @@ public class MeetingAsyncClient {
      *
      * 根据ID获取节目详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProgramRequest 请求对象
      * @return CompletableFuture<ShowProgramResponse>
@@ -4138,8 +3881,7 @@ public class MeetingAsyncClient {
      *
      * 根据ID获取节目详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProgramRequest 请求对象
      * @return AsyncInvoker<ShowProgramRequest, ShowProgramResponse>
@@ -4153,8 +3895,7 @@ public class MeetingAsyncClient {
      *
      * 根据ID获取发布详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicationRequest 请求对象
      * @return CompletableFuture<ShowPublicationResponse>
@@ -4168,8 +3909,7 @@ public class MeetingAsyncClient {
      *
      * 根据ID获取发布详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicationRequest 请求对象
      * @return AsyncInvoker<ShowPublicationRequest, ShowPublicationResponse>
@@ -4185,8 +3925,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询正在召开的会议实时信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRealTimeInfoOfMeetingRequest 请求对象
      * @return CompletableFuture<ShowRealTimeInfoOfMeetingResponse>
@@ -4201,8 +3940,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询正在召开的会议实时信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRealTimeInfoOfMeetingRequest 请求对象
      * @return AsyncInvoker<ShowRealTimeInfoOfMeetingRequest, ShowRealTimeInfoOfMeetingResponse>
@@ -4218,8 +3956,7 @@ public class MeetingAsyncClient {
      *
      * 改接口用于查询某个会议录制的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordingDetailRequest 请求对象
      * @return CompletableFuture<ShowRecordingDetailResponse>
@@ -4233,8 +3970,7 @@ public class MeetingAsyncClient {
      *
      * 改接口用于查询某个会议录制的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordingDetailRequest 请求对象
      * @return AsyncInvoker<ShowRecordingDetailRequest, ShowRecordingDetailResponse>
@@ -4252,8 +3988,7 @@ public class MeetingAsyncClient {
      * &gt; * 仅企业管理员权限的帐号才能查询录制文件的下载链接
      * &gt; * 这个接口需要在华为云会议后台开通白名单后才能调用。请联系华为销售人员，并提供华为云会议企业ID
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordingFileDownloadUrlsRequest 请求对象
      * @return CompletableFuture<ShowRecordingFileDownloadUrlsResponse>
@@ -4270,8 +4005,7 @@ public class MeetingAsyncClient {
      * &gt; * 仅企业管理员权限的帐号才能查询录制文件的下载链接
      * &gt; * 这个接口需要在华为云会议后台开通白名单后才能调用。请联系华为销售人员，并提供华为云会议企业ID
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordingFileDownloadUrlsRequest 请求对象
      * @return AsyncInvoker<ShowRecordingFileDownloadUrlsRequest, ShowRecordingFileDownloadUrlsResponse>
@@ -4287,8 +4021,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询会议所在区域的IP和域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRegionInfoOfMeetingRequest 请求对象
      * @return CompletableFuture<ShowRegionInfoOfMeetingResponse>
@@ -4303,8 +4036,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询会议所在区域的IP和域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRegionInfoOfMeetingRequest 请求对象
      * @return AsyncInvoker<ShowRegionInfoOfMeetingRequest, ShowRegionInfoOfMeetingResponse>
@@ -4320,8 +4052,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询指定网络研讨会的高级设置。管理员可查询企业内的网络研讨会高级设置，非管理员只可查询自己预定的网络研讨会的高级设置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRoomSettingRequest 请求对象
      * @return CompletableFuture<ShowRoomSettingResponse>
@@ -4335,8 +4066,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询指定网络研讨会的高级设置。管理员可查询企业内的网络研讨会高级设置，非管理员只可查询自己预定的网络研讨会的高级设置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRoomSettingRequest 请求对象
      * @return AsyncInvoker<ShowRoomSettingRequest, ShowRoomSettingResponse>
@@ -4352,8 +4082,7 @@ public class MeetingAsyncClient {
      *
      * SP管理员查询所属SP的共享资源使用信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSpResRequest 请求对象
      * @return CompletableFuture<ShowSpResResponse>
@@ -4367,8 +4096,7 @@ public class MeetingAsyncClient {
      *
      * SP管理员查询所属SP的共享资源使用信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSpResRequest 请求对象
      * @return AsyncInvoker<ShowSpResRequest, ShowSpResResponse>
@@ -4382,8 +4110,7 @@ public class MeetingAsyncClient {
      *
      * SP管理员查询SP的所有资源，包括已使用的资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSpResourceRequest 请求对象
      * @return CompletableFuture<ShowSpResourceResponse>
@@ -4397,8 +4124,7 @@ public class MeetingAsyncClient {
      *
      * SP管理员查询SP的所有资源，包括已使用的资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSpResourceRequest 请求对象
      * @return AsyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse>
@@ -4414,8 +4140,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询SSO登录的鉴权配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSsoConfigRequest 请求对象
      * @return CompletableFuture<ShowSsoConfigResponse>
@@ -4429,8 +4154,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询SSO登录的鉴权配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSsoConfigRequest 请求对象
      * @return AsyncInvoker<ShowSsoConfigRequest, ShowSsoConfigResponse>
@@ -4446,8 +4170,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口查询企业用户详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserDetailRequest 请求对象
      * @return CompletableFuture<ShowUserDetailResponse>
@@ -4461,8 +4184,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口查询企业用户详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserDetailRequest 请求对象
      * @return AsyncInvoker<ShowUserDetailRequest, ShowUserDetailResponse>
@@ -4478,8 +4200,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于管理员查询企业事件订阅配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowWebHookConfigRequest 请求对象
      * @return CompletableFuture<ShowWebHookConfigResponse>
@@ -4493,8 +4214,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于管理员查询企业事件订阅配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowWebHookConfigRequest 请求对象
      * @return AsyncInvoker<ShowWebHookConfigRequest, ShowWebHookConfigResponse>
@@ -4510,8 +4230,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询指定网络研讨会的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowWebinarRequest 请求对象
      * @return CompletableFuture<ShowWebinarResponse>
@@ -4525,8 +4244,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于查询指定网络研讨会的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowWebinarRequest 请求对象
      * @return AsyncInvoker<ShowWebinarRequest, ShowWebinarResponse>
@@ -4541,8 +4259,7 @@ public class MeetingAsyncClient {
      * 该接口用于通过会议ID和会议密码激活会议。所有的会控接口都需要在会议激活后才能调用，可以通过该接口先激活会议。
      * &gt; 来宾密码是否可以激活会议取决于会议创建时是否设置了“是否允许来宾启动会议”（allowGuestStartConf&#x3D;true）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartMeetingRequest 请求对象
      * @return CompletableFuture<StartMeetingResponse>
@@ -4557,8 +4274,7 @@ public class MeetingAsyncClient {
      * 该接口用于通过会议ID和会议密码激活会议。所有的会控接口都需要在会议激活后才能调用，可以通过该接口先激活会议。
      * &gt; 来宾密码是否可以激活会议取决于会议创建时是否设置了“是否允许来宾启动会议”（allowGuestStartConf&#x3D;true）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartMeetingRequest 请求对象
      * @return AsyncInvoker<StartMeetingRequest, StartMeetingResponse>
@@ -4575,8 +4291,7 @@ public class MeetingAsyncClient {
      * &gt; * 如果管理员在企业的会议设置中关闭“结束会议保留预约记录”开关，会议结束后会议列表中将删除该会议，与会者不能再次加入该会议。否则会议预约时间到之前，与会者可以再次加入该会议
      * &gt; * “结束会议保留预约记录”默认是开的
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopMeetingRequest 请求对象
      * @return CompletableFuture<StopMeetingResponse>
@@ -4592,8 +4307,7 @@ public class MeetingAsyncClient {
      * &gt; * 如果管理员在企业的会议设置中关闭“结束会议保留预约记录”开关，会议结束后会议列表中将删除该会议，与会者不能再次加入该会议。否则会议预约时间到之前，与会者可以再次加入该会议
      * &gt; * “结束会议保留预约记录”默认是开的
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopMeetingRequest 请求对象
      * @return AsyncInvoker<StopMeetingRequest, StopMeetingResponse>
@@ -4607,8 +4321,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于切换会中视频画面显示策略，包括广播多画面，广播单画面，声控多画面。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SwitchModeRequest 请求对象
      * @return CompletableFuture<SwitchModeResponse>
@@ -4622,8 +4335,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于切换会中视频画面显示策略，包括广播多画面，广播单画面，声控多画面。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SwitchModeRequest 请求对象
      * @return AsyncInvoker<SwitchModeRequest, SwitchModeResponse>
@@ -4637,8 +4349,7 @@ public class MeetingAsyncClient {
      *
      * 企业用户通过该接口修改手机或邮箱，需要先获取验证码，验证多次失败会禁止修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateContactRequest 请求对象
      * @return CompletableFuture<UpdateContactResponse>
@@ -4652,8 +4363,7 @@ public class MeetingAsyncClient {
      *
      * 企业用户通过该接口修改手机或邮箱，需要先获取验证码，验证多次失败会禁止修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateContactRequest 请求对象
      * @return AsyncInvoker<UpdateContactRequest, UpdateContactResponse>
@@ -4669,8 +4379,7 @@ public class MeetingAsyncClient {
      *
      * 修改企业，若任一参数为null或者不携带则不修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCorpRequest 请求对象
      * @return CompletableFuture<UpdateCorpResponse>
@@ -4684,8 +4393,7 @@ public class MeetingAsyncClient {
      *
      * 修改企业，若任一参数为null或者不携带则不修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCorpRequest 请求对象
      * @return AsyncInvoker<UpdateCorpRequest, UpdateCorpResponse>
@@ -4699,8 +4407,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口修改企业注册信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCorpBasicInfoRequest 请求对象
      * @return CompletableFuture<UpdateCorpBasicInfoResponse>
@@ -4714,8 +4421,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口修改企业注册信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCorpBasicInfoRequest 请求对象
      * @return AsyncInvoker<UpdateCorpBasicInfoRequest, UpdateCorpBasicInfoResponse>
@@ -4731,8 +4437,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口修改部门。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDepartmentRequest 请求对象
      * @return CompletableFuture<UpdateDepartmentResponse>
@@ -4746,8 +4451,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口修改部门。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDepartmentRequest 请求对象
      * @return AsyncInvoker<UpdateDepartmentRequest, UpdateDepartmentResponse>
@@ -4764,8 +4468,7 @@ public class MeetingAsyncClient {
      * 企业管理员通过该接口修改专业会议终端。
      * &gt; 如果需要修改Ideahub、SmartRooms、智慧屏TV请使用[[修改用户](https://support.huaweicloud.com/api-meeting/meeting_21_0068.html)](tag:hws)[[修改用户](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0068.html)](tag:hk)接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceRequest 请求对象
      * @return CompletableFuture<UpdateDeviceResponse>
@@ -4780,8 +4483,7 @@ public class MeetingAsyncClient {
      * 企业管理员通过该接口修改专业会议终端。
      * &gt; 如果需要修改Ideahub、SmartRooms、智慧屏TV请使用[[修改用户](https://support.huaweicloud.com/api-meeting/meeting_21_0068.html)](tag:hws)[[修改用户](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0068.html)](tag:hk)接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceRequest 请求对象
      * @return AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>
@@ -4796,8 +4498,7 @@ public class MeetingAsyncClient {
      *
      * 更新信息窗素材。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMaterialRequest 请求对象
      * @return CompletableFuture<UpdateMaterialResponse>
@@ -4811,8 +4512,7 @@ public class MeetingAsyncClient {
      *
      * 更新信息窗素材。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMaterialRequest 请求对象
      * @return AsyncInvoker<UpdateMaterialRequest, UpdateMaterialResponse>
@@ -4828,8 +4528,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于修改已预约的会议。会议开始后，不能被修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMeetingRequest 请求对象
      * @return CompletableFuture<UpdateMeetingResponse>
@@ -4843,8 +4542,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于修改已预约的会议。会议开始后，不能被修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMeetingRequest 请求对象
      * @return AsyncInvoker<UpdateMeetingRequest, UpdateMeetingResponse>
@@ -4860,8 +4558,7 @@ public class MeetingAsyncClient {
      *
      * 企业用户登录后可以修改分配给用户的云会议室及个人会议ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMemberVmrRequest 请求对象
      * @return CompletableFuture<UpdateMemberVmrResponse>
@@ -4875,8 +4572,7 @@ public class MeetingAsyncClient {
      *
      * 企业用户登录后可以修改分配给用户的云会议室及个人会议ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMemberVmrRequest 请求对象
      * @return AsyncInvoker<UpdateMemberVmrRequest, UpdateMemberVmrResponse>
@@ -4892,8 +4588,7 @@ public class MeetingAsyncClient {
      *
      * 企业用户通过该接口修改自己的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMyInfoRequest 请求对象
      * @return CompletableFuture<UpdateMyInfoResponse>
@@ -4907,8 +4602,7 @@ public class MeetingAsyncClient {
      *
      * 企业用户通过该接口修改自己的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMyInfoRequest 请求对象
      * @return AsyncInvoker<UpdateMyInfoRequest, UpdateMyInfoResponse>
@@ -4923,8 +4617,7 @@ public class MeetingAsyncClient {
      *
      * 更新信息窗节目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProgramRequest 请求对象
      * @return CompletableFuture<UpdateProgramResponse>
@@ -4938,8 +4631,7 @@ public class MeetingAsyncClient {
      *
      * 更新信息窗节目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProgramRequest 请求对象
      * @return AsyncInvoker<UpdateProgramRequest, UpdateProgramResponse>
@@ -4955,8 +4647,7 @@ public class MeetingAsyncClient {
      *
      * 修改信息窗发布。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePublicationRequest 请求对象
      * @return CompletableFuture<UpdatePublicationResponse>
@@ -4970,8 +4661,7 @@ public class MeetingAsyncClient {
      *
      * 修改信息窗发布。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePublicationRequest 请求对象
      * @return AsyncInvoker<UpdatePublicationRequest, UpdatePublicationResponse>
@@ -4987,8 +4677,7 @@ public class MeetingAsyncClient {
      *
      * 企业成员通过该接口提供用户修改密码功能，服务器收到请求，修改用户密码并返回结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePwdRequest 请求对象
      * @return CompletableFuture<UpdatePwdResponse>
@@ -5002,8 +4691,7 @@ public class MeetingAsyncClient {
      *
      * 企业成员通过该接口提供用户修改密码功能，服务器收到请求，修改用户密码并返回结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePwdRequest 请求对象
      * @return AsyncInvoker<UpdatePwdRequest, UpdatePwdResponse>
@@ -5017,8 +4705,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于修改已预约的周期性会议。会议开始后，不能被修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRecurringMeetingRequest 请求对象
      * @return CompletableFuture<UpdateRecurringMeetingResponse>
@@ -5033,8 +4720,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于修改已预约的周期性会议。会议开始后，不能被修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRecurringMeetingRequest 请求对象
      * @return AsyncInvoker<UpdateRecurringMeetingRequest, UpdateRecurringMeetingResponse>
@@ -5050,8 +4736,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于修改已预约的周期性会议的子会议。会议开始后，不能被修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRecurringSubMeetingRequest 请求对象
      * @return CompletableFuture<UpdateRecurringSubMeetingResponse>
@@ -5066,8 +4751,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于修改已预约的周期性会议的子会议。会议开始后，不能被修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRecurringSubMeetingRequest 请求对象
      * @return AsyncInvoker<UpdateRecurringSubMeetingRequest, UpdateRecurringSubMeetingResponse>
@@ -5083,8 +4767,7 @@ public class MeetingAsyncClient {
      *
      * 企业修改资源的过期时间、停用状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResourceRequest 请求对象
      * @return CompletableFuture<UpdateResourceResponse>
@@ -5098,8 +4781,7 @@ public class MeetingAsyncClient {
      *
      * 企业修改资源的过期时间、停用状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResourceRequest 请求对象
      * @return AsyncInvoker<UpdateResourceRequest, UpdateResourceResponse>
@@ -5115,8 +4797,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置指定网络研讨会的高级设置。管理员可设置企业内的网络研讨会高级设置，非管理员只可设置自己预定的网络研讨会的高级设置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRoomSettingRequest 请求对象
      * @return CompletableFuture<UpdateRoomSettingResponse>
@@ -5130,8 +4811,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于设置指定网络研讨会的高级设置。管理员可设置企业内的网络研讨会高级设置，非管理员只可设置自己预定的网络研讨会的高级设置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRoomSettingRequest 请求对象
      * @return AsyncInvoker<UpdateRoomSettingRequest, UpdateRoomSettingResponse>
@@ -5147,8 +4827,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于修改会议配置，包括会议共享是否锁定，允许呼入范围。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStartedConfConfigRequest 请求对象
      * @return CompletableFuture<UpdateStartedConfConfigResponse>
@@ -5163,8 +4842,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于修改会议配置，包括会议共享是否锁定，允许呼入范围。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStartedConfConfigRequest 请求对象
      * @return AsyncInvoker<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse>
@@ -5180,8 +4858,7 @@ public class MeetingAsyncClient {
      *
      * 该接口提供刷新Token功能，根据传入的Token，刷新Token失效时间并返回结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTokenRequest 请求对象
      * @return CompletableFuture<UpdateTokenResponse>
@@ -5195,8 +4872,7 @@ public class MeetingAsyncClient {
      *
      * 该接口提供刷新Token功能，根据传入的Token，刷新Token失效时间并返回结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTokenRequest 请求对象
      * @return AsyncInvoker<UpdateTokenRequest, UpdateTokenResponse>
@@ -5210,8 +4886,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口修改企业用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserRequest 请求对象
      * @return CompletableFuture<UpdateUserResponse>
@@ -5225,8 +4900,7 @@ public class MeetingAsyncClient {
      *
      * 企业管理员通过该接口修改企业用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserRequest 请求对象
      * @return AsyncInvoker<UpdateUserRequest, UpdateUserResponse>
@@ -5240,8 +4914,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于管理员变更订阅配置使用状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateWebHookConfigStatusRequest 请求对象
      * @return CompletableFuture<UpdateWebHookConfigStatusResponse>
@@ -5256,8 +4929,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于管理员变更订阅配置使用状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateWebHookConfigStatusRequest 请求对象
      * @return AsyncInvoker<UpdateWebHookConfigStatusRequest, UpdateWebHookConfigStatusResponse>
@@ -5273,8 +4945,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于修改已创建的网络研讨会。网络研讨会开始后不能修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateWebinarRequest 请求对象
      * @return CompletableFuture<UpdateWebinarResponse>
@@ -5288,8 +4959,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用于修改已创建的网络研讨会。网络研讨会开始后不能修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateWebinarRequest 请求对象
      * @return AsyncInvoker<UpdateWebinarRequest, UpdateWebinarResponse>
@@ -5305,8 +4975,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用户上传网络研讨会高级设置用的图片。图片可用于网络研讨会的封面和Logo。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadFileRequest 请求对象
      * @return CompletableFuture<UploadFileResponse>
@@ -5320,8 +4989,7 @@ public class MeetingAsyncClient {
      *
      * 该接口用户上传网络研讨会高级设置用的图片。图片可用于网络研讨会的封面和Logo。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadFileRequest 请求对象
      * @return AsyncInvoker<UploadFileRequest, UploadFileResponse>
@@ -5336,8 +5004,7 @@ public class MeetingAsyncClient {
      * 该接口用于查询企业内历史会议的QoS告警。仅旗舰版企业/标准版企业的企业管理员有权限查询。可以查询最近3个月内的数据。
      * &gt; 仪表盘的QoS统计功能需要申请才能开通。请联系华为销售人员，并提供华为云会议企业ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchQosHistoryMeetingsRequest 请求对象
      * @return CompletableFuture<SearchQosHistoryMeetingsResponse>
@@ -5353,8 +5020,7 @@ public class MeetingAsyncClient {
      * 该接口用于查询企业内历史会议的QoS告警。仅旗舰版企业/标准版企业的企业管理员有权限查询。可以查询最近3个月内的数据。
      * &gt; 仪表盘的QoS统计功能需要申请才能开通。请联系华为销售人员，并提供华为云会议企业ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchQosHistoryMeetingsRequest 请求对象
      * @return AsyncInvoker<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse>
@@ -5371,8 +5037,7 @@ public class MeetingAsyncClient {
      * 该接口用于查询企业内正在召开会议的QoS告警。仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * &gt; 仪表盘的QoS统计功能需要申请才能开通。请联系华为销售人员，并提供华为云会议企业ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchQosOnlineMeetingsRequest 请求对象
      * @return CompletableFuture<SearchQosOnlineMeetingsResponse>
@@ -5388,8 +5053,7 @@ public class MeetingAsyncClient {
      * 该接口用于查询企业内正在召开会议的QoS告警。仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * &gt; 仪表盘的QoS统计功能需要申请才能开通。请联系华为销售人员，并提供华为云会议企业ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchQosOnlineMeetingsRequest 请求对象
      * @return AsyncInvoker<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse>
@@ -5406,8 +5070,7 @@ public class MeetingAsyncClient {
      * 该接口用于查询企业内在线会议或历史会议的与会者QoS数据。仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * &gt; 仪表盘的QoS统计功能需要申请才能开通。请联系华为销售人员，并提供华为云会议企业ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchQosParticipantDetailRequest 请求对象
      * @return CompletableFuture<SearchQosParticipantDetailResponse>
@@ -5423,8 +5086,7 @@ public class MeetingAsyncClient {
      * 该接口用于查询企业内在线会议或历史会议的与会者QoS数据。仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * &gt; 仪表盘的QoS统计功能需要申请才能开通。请联系华为销售人员，并提供华为云会议企业ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchQosParticipantDetailRequest 请求对象
      * @return AsyncInvoker<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse>
@@ -5441,8 +5103,7 @@ public class MeetingAsyncClient {
      * 该接口用于查询企业内在线会议或历史会议的与会者QoS告警。仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * &gt; 仪表盘的QoS统计功能需要申请才能开通。请联系华为销售人员，并提供华为云会议企业ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchQosParticipantsRequest 请求对象
      * @return CompletableFuture<SearchQosParticipantsResponse>
@@ -5458,8 +5119,7 @@ public class MeetingAsyncClient {
      * 该接口用于查询企业内在线会议或历史会议的与会者QoS告警。仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * &gt; 仪表盘的QoS统计功能需要申请才能开通。请联系华为销售人员，并提供华为云会议企业ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchQosParticipantsRequest 请求对象
      * @return AsyncInvoker<SearchQosParticipantsRequest, SearchQosParticipantsResponse>
@@ -5476,8 +5136,7 @@ public class MeetingAsyncClient {
      * 该接口用于设置QoS告警阈值。仅旗舰版企业/标准版企业的企业管理员有权限设置。
      * &gt; 仪表盘的QoS统计功能需要申请才能开通。请联系华为销售人员，并提供华为云会议企业ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetQosThresholdRequest 请求对象
      * @return CompletableFuture<SetQosThresholdResponse>
@@ -5492,8 +5151,7 @@ public class MeetingAsyncClient {
      * 该接口用于设置QoS告警阈值。仅旗舰版企业/标准版企业的企业管理员有权限设置。
      * &gt; 仪表盘的QoS统计功能需要申请才能开通。请联系华为销售人员，并提供华为云会议企业ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetQosThresholdRequest 请求对象
      * @return AsyncInvoker<SetQosThresholdRequest, SetQosThresholdResponse>
@@ -5510,8 +5168,7 @@ public class MeetingAsyncClient {
      * 该接口用于查询QoS告警阈值。仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * &gt; 该接口用于查询QoS告警阈值。仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQosThresholdRequest 请求对象
      * @return CompletableFuture<ShowQosThresholdResponse>
@@ -5526,8 +5183,7 @@ public class MeetingAsyncClient {
      * 该接口用于查询QoS告警阈值。仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * &gt; 该接口用于查询QoS告警阈值。仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQosThresholdRequest 请求对象
      * @return AsyncInvoker<ShowQosThresholdRequest, ShowQosThresholdResponse>
@@ -5546,8 +5202,7 @@ public class MeetingAsyncClient {
      * * 指定日期范围内按日/按月统计的会议数据。
      * &gt; 仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchStatisticConferenceInfoRequest 请求对象
      * @return CompletableFuture<SearchStatisticConferenceInfoResponse>
@@ -5565,8 +5220,7 @@ public class MeetingAsyncClient {
      * * 指定日期范围内按日/按月统计的会议数据。
      * &gt; 仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchStatisticConferenceInfoRequest 请求对象
      * @return AsyncInvoker<SearchStatisticConferenceInfoRequest, SearchStatisticConferenceInfoResponse>
@@ -5586,8 +5240,7 @@ public class MeetingAsyncClient {
      * * 查询与会设备统计数据，按日/按月统计。
      * &gt; 仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchStatisticConferenceParticipantRequest 请求对象
      * @return CompletableFuture<SearchStatisticConferenceParticipantResponse>
@@ -5606,8 +5259,7 @@ public class MeetingAsyncClient {
      * * 查询与会设备统计数据，按日/按月统计。
      * &gt; 仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchStatisticConferenceParticipantRequest 请求对象
      * @return AsyncInvoker<SearchStatisticConferenceParticipantRequest, SearchStatisticConferenceParticipantResponse>
@@ -5625,8 +5277,7 @@ public class MeetingAsyncClient {
      * * 查询已购资源使用状况，按日/按月统计。
      * &gt; 仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchStatisticResourceInfoRequest 请求对象
      * @return CompletableFuture<SearchStatisticResourceInfoResponse>
@@ -5643,8 +5294,7 @@ public class MeetingAsyncClient {
      * * 查询已购资源使用状况，按日/按月统计。
      * &gt; 仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchStatisticResourceInfoRequest 请求对象
      * @return AsyncInvoker<SearchStatisticResourceInfoRequest, SearchStatisticResourceInfoResponse>
@@ -5664,8 +5314,7 @@ public class MeetingAsyncClient {
      * * 查询会议用户登录设备数据，按日/按月统计。
      * &gt; 仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchStatisticUserInfoRequest 请求对象
      * @return CompletableFuture<SearchStatisticUserInfoResponse>
@@ -5684,8 +5333,7 @@ public class MeetingAsyncClient {
      * * 查询会议用户登录设备数据，按日/按月统计。
      * &gt; 仅旗舰版企业/标准版企业的企业管理员有权限查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchStatisticUserInfoRequest 请求对象
      * @return AsyncInvoker<SearchStatisticUserInfoRequest, SearchStatisticUserInfoResponse>

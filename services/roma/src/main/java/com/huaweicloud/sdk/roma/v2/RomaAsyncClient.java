@@ -24,8 +24,7 @@ public class RomaAsyncClient {
      *
      * 添加子设备到网关
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddSubsetsToGatewayRequest 请求对象
      * @return CompletableFuture<AddSubsetsToGatewayResponse>
@@ -39,8 +38,7 @@ public class RomaAsyncClient {
      *
      * 添加子设备到网关
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddSubsetsToGatewayRequest 请求对象
      * @return AsyncInvoker<AddSubsetsToGatewayRequest, AddSubsetsToGatewayResponse>
@@ -56,8 +54,7 @@ public class RomaAsyncClient {
      *
      * 客户端配额绑定客户端应用列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateAppsForAppQuotaRequest 请求对象
      * @return CompletableFuture<AssociateAppsForAppQuotaResponse>
@@ -72,8 +69,7 @@ public class RomaAsyncClient {
      *
      * 客户端配额绑定客户端应用列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateAppsForAppQuotaRequest 请求对象
      * @return AsyncInvoker<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse>
@@ -90,8 +86,7 @@ public class RomaAsyncClient {
      * 如果创建API时，“定义API请求”使用HTTPS请求协议，那么在独立域名中需要添加SSL证书。
      * 本章节主要介绍为特定域名绑定证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateCertificateV2Request 请求对象
      * @return CompletableFuture<AssociateCertificateV2Response>
@@ -107,8 +102,7 @@ public class RomaAsyncClient {
      * 如果创建API时，“定义API请求”使用HTTPS请求协议，那么在独立域名中需要添加SSL证书。
      * 本章节主要介绍为特定域名绑定证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateCertificateV2Request 请求对象
      * @return AsyncInvoker<AssociateCertificateV2Request, AssociateCertificateV2Response>
@@ -124,8 +118,7 @@ public class RomaAsyncClient {
      *
      * 用户自定义的域名，需要CNAME到API分组的子域名上才能生效。 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateDomainV2Request 请求对象
      * @return CompletableFuture<AssociateDomainV2Response>
@@ -139,8 +132,7 @@ public class RomaAsyncClient {
      *
      * 用户自定义的域名，需要CNAME到API分组的子域名上才能生效。 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateDomainV2Request 请求对象
      * @return AsyncInvoker<AssociateDomainV2Request, AssociateDomainV2Response>
@@ -160,8 +152,7 @@ public class RomaAsyncClient {
      * 
      * 将指定的签名密钥绑定到一个或多个已发布的API上。同一个API发布到不同的环境可以绑定不同的签名密钥；一个API在发布到特定环境后只能绑定一个签名密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateSignatureKeyV2Request 请求对象
      * @return CompletableFuture<AssociateSignatureKeyV2Response>
@@ -180,8 +171,7 @@ public class RomaAsyncClient {
      * 
      * 将指定的签名密钥绑定到一个或多个已发布的API上。同一个API发布到不同的环境可以绑定不同的签名密钥；一个API在发布到特定环境后只能绑定一个签名密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response>
@@ -197,8 +187,7 @@ public class RomaAsyncClient {
      *
      * 批量添加设备到设备分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddDeviceToGroupRequest 请求对象
      * @return CompletableFuture<BatchAddDeviceToGroupResponse>
@@ -213,8 +202,7 @@ public class RomaAsyncClient {
      *
      * 批量添加设备到设备分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddDeviceToGroupRequest 请求对象
      * @return AsyncInvoker<BatchAddDeviceToGroupRequest, BatchAddDeviceToGroupResponse>
@@ -230,8 +218,7 @@ public class RomaAsyncClient {
      *
      * 批量删除设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteDevicesRequest 请求对象
      * @return CompletableFuture<BatchDeleteDevicesResponse>
@@ -245,8 +232,7 @@ public class RomaAsyncClient {
      *
      * 批量删除设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteDevicesRequest 请求对象
      * @return AsyncInvoker<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse>
@@ -262,8 +248,7 @@ public class RomaAsyncClient {
      *
      * 批量删除Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteMqsInstanceTopicRequest 请求对象
      * @return CompletableFuture<BatchDeleteMqsInstanceTopicResponse>
@@ -278,8 +263,7 @@ public class RomaAsyncClient {
      *
      * 批量删除Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteMqsInstanceTopicRequest 请求对象
      * @return AsyncInvoker<BatchDeleteMqsInstanceTopicRequest, BatchDeleteMqsInstanceTopicResponse>
@@ -295,8 +279,7 @@ public class RomaAsyncClient {
      *
      * 批量删除规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteRulesRequest 请求对象
      * @return CompletableFuture<BatchDeleteRulesResponse>
@@ -310,8 +293,7 @@ public class RomaAsyncClient {
      *
      * 批量删除规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteRulesRequest 请求对象
      * @return AsyncInvoker<BatchDeleteRulesRequest, BatchDeleteRulesResponse>
@@ -327,8 +309,7 @@ public class RomaAsyncClient {
      *
      * 设备批量下线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchFreezeDevicesRequest 请求对象
      * @return CompletableFuture<BatchFreezeDevicesResponse>
@@ -342,8 +323,7 @@ public class RomaAsyncClient {
      *
      * 设备批量下线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchFreezeDevicesRequest 请求对象
      * @return AsyncInvoker<BatchFreezeDevicesRequest, BatchFreezeDevicesResponse>
@@ -359,8 +339,7 @@ public class RomaAsyncClient {
      *
      * 批量启动\\停止任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchStartOrStopTasksRequest 请求对象
      * @return CompletableFuture<BatchStartOrStopTasksResponse>
@@ -375,8 +354,7 @@ public class RomaAsyncClient {
      *
      * 批量启动\\停止任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchStartOrStopTasksRequest 请求对象
      * @return AsyncInvoker<BatchStartOrStopTasksRequest, BatchStartOrStopTasksResponse>
@@ -392,8 +370,7 @@ public class RomaAsyncClient {
      *
      * 校验自定义后端API定义。校验自定义后端API的路径或名称是否已存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckLivedataApisV2Request 请求对象
      * @return CompletableFuture<CheckLivedataApisV2Response>
@@ -407,8 +384,7 @@ public class RomaAsyncClient {
      *
      * 校验自定义后端API定义。校验自定义后端API的路径或名称是否已存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckLivedataApisV2Request 请求对象
      * @return AsyncInvoker<CheckLivedataApisV2Request, CheckLivedataApisV2Response>
@@ -424,8 +400,7 @@ public class RomaAsyncClient {
      *
      * 设备数量统计
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountDevicesRequest 请求对象
      * @return CompletableFuture<CountDevicesResponse>
@@ -439,8 +414,7 @@ public class RomaAsyncClient {
      *
      * 设备数量统计
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountDevicesRequest 请求对象
      * @return AsyncInvoker<CountDevicesRequest, CountDevicesResponse>
@@ -455,8 +429,7 @@ public class RomaAsyncClient {
      *
      * 统计不同类型不同状态任务数量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountTasksRequest 请求对象
      * @return CompletableFuture<CountTasksResponse>
@@ -470,8 +443,7 @@ public class RomaAsyncClient {
      *
      * 统计不同类型不同状态任务数量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountTasksRequest 请求对象
      * @return AsyncInvoker<CountTasksRequest, CountTasksResponse>
@@ -485,8 +457,7 @@ public class RomaAsyncClient {
      *
      * 创建App Code时，可以不指定具体值，由后台自动生成随机字符串填充。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppCodeAutoV2Request 请求对象
      * @return CompletableFuture<CreateAppCodeAutoV2Response>
@@ -500,8 +471,7 @@ public class RomaAsyncClient {
      *
      * 创建App Code时，可以不指定具体值，由后台自动生成随机字符串填充。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppCodeAutoV2Request 请求对象
      * @return AsyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response>
@@ -517,8 +487,7 @@ public class RomaAsyncClient {
      *
      * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppCodeV2Request 请求对象
      * @return CompletableFuture<CreateAppCodeV2Response>
@@ -532,8 +501,7 @@ public class RomaAsyncClient {
      *
      * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppCodeV2Request 请求对象
      * @return AsyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response>
@@ -549,8 +517,7 @@ public class RomaAsyncClient {
      *
      * 创建应用配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppConfigV2Request 请求对象
      * @return CompletableFuture<CreateAppConfigV2Response>
@@ -564,8 +531,7 @@ public class RomaAsyncClient {
      *
      * 创建应用配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppConfigV2Request 请求对象
      * @return AsyncInvoker<CreateAppConfigV2Request, CreateAppConfigV2Response>
@@ -581,8 +547,7 @@ public class RomaAsyncClient {
      *
      * 创建客户端配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppQuotaRequest 请求对象
      * @return CompletableFuture<CreateAppQuotaResponse>
@@ -596,8 +561,7 @@ public class RomaAsyncClient {
      *
      * 创建客户端配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppQuotaRequest 请求对象
      * @return AsyncInvoker<CreateAppQuotaRequest, CreateAppQuotaResponse>
@@ -613,8 +577,7 @@ public class RomaAsyncClient {
      *
      * 创建命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCommandRequest 请求对象
      * @return CompletableFuture<CreateCommandResponse>
@@ -628,8 +591,7 @@ public class RomaAsyncClient {
      *
      * 创建命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCommandRequest 请求对象
      * @return AsyncInvoker<CreateCommandRequest, CreateCommandResponse>
@@ -644,8 +606,7 @@ public class RomaAsyncClient {
      *
      * 创建普通任务(区别于组合任务)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCommonTaskRequest 请求对象
      * @return CompletableFuture<CreateCommonTaskResponse>
@@ -659,8 +620,7 @@ public class RomaAsyncClient {
      *
      * 创建普通任务(区别于组合任务)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCommonTaskRequest 请求对象
      * @return AsyncInvoker<CreateCommonTaskRequest, CreateCommonTaskResponse>
@@ -676,8 +636,7 @@ public class RomaAsyncClient {
      *
      * 创建自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCustomAuthorizerV2Request 请求对象
      * @return CompletableFuture<CreateCustomAuthorizerV2Response>
@@ -692,8 +651,7 @@ public class RomaAsyncClient {
      *
      * 创建自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCustomAuthorizerV2Request 请求对象
      * @return AsyncInvoker<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response>
@@ -709,8 +667,7 @@ public class RomaAsyncClient {
      *
      * 创建数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatasourceInfoRequest 请求对象
      * @return CompletableFuture<CreateDatasourceInfoResponse>
@@ -725,8 +682,7 @@ public class RomaAsyncClient {
      *
      * 创建数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatasourceInfoRequest 请求对象
      * @return AsyncInvoker<CreateDatasourceInfoRequest, CreateDatasourceInfoResponse>
@@ -742,8 +698,7 @@ public class RomaAsyncClient {
      *
      * 添加目标数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDestinationRequest 请求对象
      * @return CompletableFuture<CreateDestinationResponse>
@@ -757,8 +712,7 @@ public class RomaAsyncClient {
      *
      * 添加目标数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDestinationRequest 请求对象
      * @return AsyncInvoker<CreateDestinationRequest, CreateDestinationResponse>
@@ -774,8 +728,7 @@ public class RomaAsyncClient {
      *
      * 创建设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeviceRequest 请求对象
      * @return CompletableFuture<CreateDeviceResponse>
@@ -789,8 +742,7 @@ public class RomaAsyncClient {
      *
      * 创建设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeviceRequest 请求对象
      * @return AsyncInvoker<CreateDeviceRequest, CreateDeviceResponse>
@@ -805,8 +757,7 @@ public class RomaAsyncClient {
      *
      * 创建设备分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeviceGroupRequest 请求对象
      * @return CompletableFuture<CreateDeviceGroupResponse>
@@ -820,8 +771,7 @@ public class RomaAsyncClient {
      *
      * 创建设备分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeviceGroupRequest 请求对象
      * @return AsyncInvoker<CreateDeviceGroupRequest, CreateDeviceGroupResponse>
@@ -837,8 +787,7 @@ public class RomaAsyncClient {
      *
      * 创建调度计划
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDispatchesRequest 请求对象
      * @return CompletableFuture<CreateDispatchesResponse>
@@ -852,8 +801,7 @@ public class RomaAsyncClient {
      *
      * 创建调度计划
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDispatchesRequest 请求对象
      * @return AsyncInvoker<CreateDispatchesRequest, CreateDispatchesResponse>
@@ -873,8 +821,7 @@ public class RomaAsyncClient {
      * 
      * 为此，ROMA Connect APIC提供多环境管理功能，使租户能够最大化的模拟实际场景，低成本的接入ROMA Connect APIC。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentV2Request 请求对象
      * @return CompletableFuture<CreateEnvironmentV2Response>
@@ -892,8 +839,7 @@ public class RomaAsyncClient {
      * 
      * 为此，ROMA Connect APIC提供多环境管理功能，使租户能够最大化的模拟实际场景，低成本的接入ROMA Connect APIC。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentV2Request 请求对象
      * @return AsyncInvoker<CreateEnvironmentV2Request, CreateEnvironmentV2Response>
@@ -917,8 +863,7 @@ public class RomaAsyncClient {
      *   3.设置了环境变量后，使用到该变量的API的调试功能将不可使用。
      *   4.定义了环境变量后，使用到环境变量的地方应该以对称的#标识环境变量，当API发布到相应的环境后，会对环境变量的值进行替换，如：定义的API的URL为：https://#address#:8080，环境变量address在RELEASE环境上的值为：192.168.1.5，则API发布到RELEASE环境后的真实的URL为：https://192.168.1.5:8080。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentVariableV2Request 请求对象
      * @return CompletableFuture<CreateEnvironmentVariableV2Response>
@@ -941,8 +886,7 @@ public class RomaAsyncClient {
      *   3.设置了环境变量后，使用到该变量的API的调试功能将不可使用。
      *   4.定义了环境变量后，使用到环境变量的地方应该以对称的#标识环境变量，当API发布到相应的环境后，会对环境变量的值进行替换，如：定义的API的URL为：https://#address#:8080，环境变量address在RELEASE环境上的值为：192.168.1.5，则API发布到RELEASE环境后的真实的URL为：https://192.168.1.5:8080。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentVariableV2Request 请求对象
      * @return AsyncInvoker<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response>
@@ -960,8 +904,7 @@ public class RomaAsyncClient {
      * 
      * 支持配置的特性列表及特性配置请参考“附录 &gt; 实例支持的APIC特性”
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFeatureV2Request 请求对象
      * @return CompletableFuture<CreateFeatureV2Response>
@@ -977,8 +920,7 @@ public class RomaAsyncClient {
      * 
      * 支持配置的特性列表及特性配置请参考“附录 &gt; 实例支持的APIC特性”
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFeatureV2Request 请求对象
      * @return AsyncInvoker<CreateFeatureV2Request, CreateFeatureV2Response>
@@ -994,8 +936,7 @@ public class RomaAsyncClient {
      *
      * 在某个实例中创建后端API脚本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLiveDataApiScriptV2Request 请求对象
      * @return CompletableFuture<CreateLiveDataApiScriptV2Response>
@@ -1010,8 +951,7 @@ public class RomaAsyncClient {
      *
      * 在某个实例中创建后端API脚本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLiveDataApiScriptV2Request 请求对象
      * @return AsyncInvoker<CreateLiveDataApiScriptV2Request, CreateLiveDataApiScriptV2Response>
@@ -1027,8 +967,7 @@ public class RomaAsyncClient {
      *
      * 在某个实例中创建后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLiveDataApiV2Request 请求对象
      * @return CompletableFuture<CreateLiveDataApiV2Response>
@@ -1042,8 +981,7 @@ public class RomaAsyncClient {
      *
      * 在某个实例中创建后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLiveDataApiV2Request 请求对象
      * @return AsyncInvoker<CreateLiveDataApiV2Request, CreateLiveDataApiV2Response>
@@ -1059,8 +997,7 @@ public class RomaAsyncClient {
      *
      * 创建Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMqsInstanceTopicRequest 请求对象
      * @return CompletableFuture<CreateMqsInstanceTopicResponse>
@@ -1075,8 +1012,7 @@ public class RomaAsyncClient {
      *
      * 创建Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMqsInstanceTopicRequest 请求对象
      * @return AsyncInvoker<CreateMqsInstanceTopicRequest, CreateMqsInstanceTopicResponse>
@@ -1092,8 +1028,7 @@ public class RomaAsyncClient {
      *
      * 创建组合任务映射
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMultiTaskMappingsRequest 请求对象
      * @return CompletableFuture<CreateMultiTaskMappingsResponse>
@@ -1108,8 +1043,7 @@ public class RomaAsyncClient {
      *
      * 创建组合任务映射
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMultiTaskMappingsRequest 请求对象
      * @return AsyncInvoker<CreateMultiTaskMappingsRequest, CreateMultiTaskMappingsResponse>
@@ -1125,8 +1059,7 @@ public class RomaAsyncClient {
      *
      * 创建组合任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMultiTasksRequest 请求对象
      * @return CompletableFuture<CreateMultiTasksResponse>
@@ -1140,8 +1073,7 @@ public class RomaAsyncClient {
      *
      * 创建组合任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMultiTasksRequest 请求对象
      * @return AsyncInvoker<CreateMultiTasksRequest, CreateMultiTasksResponse>
@@ -1157,8 +1089,7 @@ public class RomaAsyncClient {
      *
      * 该接口用于创建指定实例下对应的应用下的设备操作，订阅到指定的topic
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNotificationRequest 请求对象
      * @return CompletableFuture<CreateNotificationResponse>
@@ -1172,8 +1103,7 @@ public class RomaAsyncClient {
      *
      * 该接口用于创建指定实例下对应的应用下的设备操作，订阅到指定的topic
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNotificationRequest 请求对象
      * @return AsyncInvoker<CreateNotificationRequest, CreateNotificationResponse>
@@ -1189,8 +1119,7 @@ public class RomaAsyncClient {
      *
      * 创建产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProductRequest 请求对象
      * @return CompletableFuture<CreateProductResponse>
@@ -1204,8 +1133,7 @@ public class RomaAsyncClient {
      *
      * 创建产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProductRequest 请求对象
      * @return AsyncInvoker<CreateProductRequest, CreateProductResponse>
@@ -1220,8 +1148,7 @@ public class RomaAsyncClient {
      *
      * 创建产品模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProductTemplateRequest 请求对象
      * @return CompletableFuture<CreateProductTemplateResponse>
@@ -1236,8 +1163,7 @@ public class RomaAsyncClient {
      *
      * 创建产品模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProductTemplateRequest 请求对象
      * @return AsyncInvoker<CreateProductTemplateRequest, CreateProductTemplateResponse>
@@ -1253,8 +1179,7 @@ public class RomaAsyncClient {
      *
      * 添加产品主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProductTopicRequest 请求对象
      * @return CompletableFuture<CreateProductTopicResponse>
@@ -1268,8 +1193,7 @@ public class RomaAsyncClient {
      *
      * 添加产品主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProductTopicRequest 请求对象
      * @return AsyncInvoker<CreateProductTopicRequest, CreateProductTopicResponse>
@@ -1285,8 +1209,7 @@ public class RomaAsyncClient {
      *
      * 创建属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePropertyRequest 请求对象
      * @return CompletableFuture<CreatePropertyResponse>
@@ -1300,8 +1223,7 @@ public class RomaAsyncClient {
      *
      * 创建属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePropertyRequest 请求对象
      * @return AsyncInvoker<CreatePropertyRequest, CreatePropertyResponse>
@@ -1317,8 +1239,7 @@ public class RomaAsyncClient {
      *
      * 创建请求属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRequestPropertyRequest 请求对象
      * @return CompletableFuture<CreateRequestPropertyResponse>
@@ -1333,8 +1254,7 @@ public class RomaAsyncClient {
      *
      * 创建请求属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRequestPropertyRequest 请求对象
      * @return AsyncInvoker<CreateRequestPropertyRequest, CreateRequestPropertyResponse>
@@ -1350,8 +1270,7 @@ public class RomaAsyncClient {
      *
      * 当API上线后，系统会默认给每个API提供一个流控策略，API提供者可以根据自身API的服务能力及负载情况变更这个流控策略。 流控策略即限制API在一定长度的时间内，能够允许被访问的最大次数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<CreateRequestThrottlingPolicyV2Response>
@@ -1366,8 +1285,7 @@ public class RomaAsyncClient {
      *
      * 当API上线后，系统会默认给每个API提供一个流控策略，API提供者可以根据自身API的服务能力及负载情况变更这个流控策略。 流控策略即限制API在一定长度的时间内，能够允许被访问的最大次数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response>
@@ -1383,8 +1301,7 @@ public class RomaAsyncClient {
      *
      * 创建响应属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResponsePropertyRequest 请求对象
      * @return CompletableFuture<CreateResponsePropertyResponse>
@@ -1399,8 +1316,7 @@ public class RomaAsyncClient {
      *
      * 创建响应属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResponsePropertyRequest 请求对象
      * @return AsyncInvoker<CreateResponsePropertyRequest, CreateResponsePropertyResponse>
@@ -1416,8 +1332,7 @@ public class RomaAsyncClient {
      *
      * 创建规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRuleRequest 请求对象
      * @return CompletableFuture<CreateRuleResponse>
@@ -1431,8 +1346,7 @@ public class RomaAsyncClient {
      *
      * 创建规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRuleRequest 请求对象
      * @return AsyncInvoker<CreateRuleRequest, CreateRuleResponse>
@@ -1446,8 +1360,7 @@ public class RomaAsyncClient {
      *
      * 创建服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateServiceRequest 请求对象
      * @return CompletableFuture<CreateServiceResponse>
@@ -1461,8 +1374,7 @@ public class RomaAsyncClient {
      *
      * 创建服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateServiceRequest 请求对象
      * @return AsyncInvoker<CreateServiceRequest, CreateServiceResponse>
@@ -1481,8 +1393,7 @@ public class RomaAsyncClient {
      * 
      * 租户创建一个签名密钥，并将签名密钥与API进行绑定，则ROMA Connect APIC在请求这个API时，就会使用绑定的签名密钥对请求参数进行数据加密，生成签名。当租户的后端服务收到请求时，可以校验这个签名，如果签名校验不通过，则该请求不是ROMA Connect APIC发出的请求，租户可以拒绝这个请求，从而保证API的安全性，避免API被未知来源的请求攻击。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSignatureKeyV2Request 请求对象
      * @return CompletableFuture<CreateSignatureKeyV2Response>
@@ -1501,8 +1412,7 @@ public class RomaAsyncClient {
      * 
      * 租户创建一个签名密钥，并将签名密钥与API进行绑定，则ROMA Connect APIC在请求这个API时，就会使用绑定的签名密钥对请求参数进行数据加密，生成签名。当租户的后端服务收到请求时，可以校验这个签名，如果签名校验不通过，则该请求不是ROMA Connect APIC发出的请求，租户可以拒绝这个请求，从而保证API的安全性，避免API被未知来源的请求攻击。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response>
@@ -1518,8 +1428,7 @@ public class RomaAsyncClient {
      *
      * 添加源数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSourceRequest 请求对象
      * @return CompletableFuture<CreateSourceResponse>
@@ -1533,8 +1442,7 @@ public class RomaAsyncClient {
      *
      * 添加源数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSourceRequest 请求对象
      * @return AsyncInvoker<CreateSourceRequest, CreateSourceResponse>
@@ -1553,8 +1461,7 @@ public class RomaAsyncClient {
      * 
      * 为流控策略添加一个特殊设置的对象，可以是APP，也可以是租户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSpecialThrottlingConfigurationV2Request 请求对象
      * @return CompletableFuture<CreateSpecialThrottlingConfigurationV2Response>
@@ -1573,8 +1480,7 @@ public class RomaAsyncClient {
      * 
      * 为流控策略添加一个特殊设置的对象，可以是APP，也可以是租户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSpecialThrottlingConfigurationV2Request 请求对象
      * @return AsyncInvoker<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response>
@@ -1590,8 +1496,7 @@ public class RomaAsyncClient {
      *
      * 测试后端API是否可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DebugLiveDataApiV2Request 请求对象
      * @return CompletableFuture<DebugLiveDataApiV2Response>
@@ -1605,8 +1510,7 @@ public class RomaAsyncClient {
      *
      * 测试后端API是否可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DebugLiveDataApiV2Request 请求对象
      * @return AsyncInvoker<DebugLiveDataApiV2Request, DebugLiveDataApiV2Response>
@@ -1622,8 +1526,7 @@ public class RomaAsyncClient {
      *
      * 规则调试
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DebugRuleRequest 请求对象
      * @return CompletableFuture<DebugRuleResponse>
@@ -1637,8 +1540,7 @@ public class RomaAsyncClient {
      *
      * 规则调试
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DebugRuleRequest 请求对象
      * @return AsyncInvoker<DebugRuleRequest, DebugRuleResponse>
@@ -1652,8 +1554,7 @@ public class RomaAsyncClient {
      *
      * 删除客户端配置的访问控制信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppAclRequest 请求对象
      * @return CompletableFuture<DeleteAppAclResponse>
@@ -1667,8 +1568,7 @@ public class RomaAsyncClient {
      *
      * 删除客户端配置的访问控制信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppAclRequest 请求对象
      * @return AsyncInvoker<DeleteAppAclRequest, DeleteAppAclResponse>
@@ -1683,8 +1583,7 @@ public class RomaAsyncClient {
      *
      * 删除App Code，App Code删除后，将无法再通过简易认证访问对应的API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppCodeV2Request 请求对象
      * @return CompletableFuture<DeleteAppCodeV2Response>
@@ -1698,8 +1597,7 @@ public class RomaAsyncClient {
      *
      * 删除App Code，App Code删除后，将无法再通过简易认证访问对应的API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppCodeV2Request 请求对象
      * @return AsyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response>
@@ -1715,8 +1613,7 @@ public class RomaAsyncClient {
      *
      * 删除应用配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppConfigV2Request 请求对象
      * @return CompletableFuture<DeleteAppConfigV2Response>
@@ -1730,8 +1627,7 @@ public class RomaAsyncClient {
      *
      * 删除应用配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppConfigV2Request 请求对象
      * @return AsyncInvoker<DeleteAppConfigV2Request, DeleteAppConfigV2Response>
@@ -1747,8 +1643,7 @@ public class RomaAsyncClient {
      *
      * 删除客户端配额。删除客户端配额时，同时删除客户端配额和客户端应用的关联关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppQuotaRequest 请求对象
      * @return CompletableFuture<DeleteAppQuotaResponse>
@@ -1762,8 +1657,7 @@ public class RomaAsyncClient {
      *
      * 删除客户端配额。删除客户端配额时，同时删除客户端配额和客户端应用的关联关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppQuotaRequest 请求对象
      * @return AsyncInvoker<DeleteAppQuotaRequest, DeleteAppQuotaResponse>
@@ -1779,8 +1673,7 @@ public class RomaAsyncClient {
      *
      * 删除命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCommandRequest 请求对象
      * @return CompletableFuture<DeleteCommandResponse>
@@ -1794,8 +1687,7 @@ public class RomaAsyncClient {
      *
      * 删除命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCommandRequest 请求对象
      * @return AsyncInvoker<DeleteCommandRequest, DeleteCommandResponse>
@@ -1810,8 +1702,7 @@ public class RomaAsyncClient {
      *
      * 删除自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCustomAuthorizerV2Request 请求对象
      * @return CompletableFuture<DeleteCustomAuthorizerV2Response>
@@ -1826,8 +1717,7 @@ public class RomaAsyncClient {
      *
      * 删除自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCustomAuthorizerV2Request 请求对象
      * @return AsyncInvoker<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response>
@@ -1843,8 +1733,7 @@ public class RomaAsyncClient {
      *
      * 通过数据源Id删除指定数据源信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDatasourceInfoByIdRequest 请求对象
      * @return CompletableFuture<DeleteDatasourceInfoByIdResponse>
@@ -1859,8 +1748,7 @@ public class RomaAsyncClient {
      *
      * 通过数据源Id删除指定数据源信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDatasourceInfoByIdRequest 请求对象
      * @return AsyncInvoker<DeleteDatasourceInfoByIdRequest, DeleteDatasourceInfoByIdResponse>
@@ -1876,8 +1764,7 @@ public class RomaAsyncClient {
      *
      * 删除目标数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDestinationRequest 请求对象
      * @return CompletableFuture<DeleteDestinationResponse>
@@ -1891,8 +1778,7 @@ public class RomaAsyncClient {
      *
      * 删除目标数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDestinationRequest 请求对象
      * @return AsyncInvoker<DeleteDestinationRequest, DeleteDestinationResponse>
@@ -1908,8 +1794,7 @@ public class RomaAsyncClient {
      *
      * 删除指定设备ID的设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceRequest 请求对象
      * @return CompletableFuture<DeleteDeviceResponse>
@@ -1923,8 +1808,7 @@ public class RomaAsyncClient {
      *
      * 删除指定设备ID的设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceRequest 请求对象
      * @return AsyncInvoker<DeleteDeviceRequest, DeleteDeviceResponse>
@@ -1939,8 +1823,7 @@ public class RomaAsyncClient {
      *
      * 删除设备分组内的设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceFromGroupRequest 请求对象
      * @return CompletableFuture<DeleteDeviceFromGroupResponse>
@@ -1955,8 +1838,7 @@ public class RomaAsyncClient {
      *
      * 删除设备分组内的设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceFromGroupRequest 请求对象
      * @return AsyncInvoker<DeleteDeviceFromGroupRequest, DeleteDeviceFromGroupResponse>
@@ -1972,8 +1854,7 @@ public class RomaAsyncClient {
      *
      * 删除分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceGroupRequest 请求对象
      * @return CompletableFuture<DeleteDeviceGroupResponse>
@@ -1987,8 +1868,7 @@ public class RomaAsyncClient {
      *
      * 删除分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceGroupRequest 请求对象
      * @return AsyncInvoker<DeleteDeviceGroupRequest, DeleteDeviceGroupResponse>
@@ -2005,8 +1885,7 @@ public class RomaAsyncClient {
      * 删除指定的环境。
      * 该操作将导致此API在指定的环境无法被访问，可能会影响相当一部分应用和用户。请确保已经告知用户，或者确认需要强制下线。环境上存在已发布的API时，该环境不能被删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentV2Request 请求对象
      * @return CompletableFuture<DeleteEnvironmentV2Response>
@@ -2021,8 +1900,7 @@ public class RomaAsyncClient {
      * 删除指定的环境。
      * 该操作将导致此API在指定的环境无法被访问，可能会影响相当一部分应用和用户。请确保已经告知用户，或者确认需要强制下线。环境上存在已发布的API时，该环境不能被删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentV2Request 请求对象
      * @return AsyncInvoker<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response>
@@ -2038,8 +1916,7 @@ public class RomaAsyncClient {
      *
      * 删除指定的环境变量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentVariableV2Request 请求对象
      * @return CompletableFuture<DeleteEnvironmentVariableV2Response>
@@ -2054,8 +1931,7 @@ public class RomaAsyncClient {
      *
      * 删除指定的环境变量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentVariableV2Request 请求对象
      * @return AsyncInvoker<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response>
@@ -2071,8 +1947,7 @@ public class RomaAsyncClient {
      *
      * 在某个实例中删除后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLiveDataApiV2Request 请求对象
      * @return CompletableFuture<DeleteLiveDataApiV2Response>
@@ -2086,8 +1961,7 @@ public class RomaAsyncClient {
      *
      * 在某个实例中删除后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLiveDataApiV2Request 请求对象
      * @return AsyncInvoker<DeleteLiveDataApiV2Request, DeleteLiveDataApiV2Response>
@@ -2103,8 +1977,7 @@ public class RomaAsyncClient {
      *
      * 删除Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMqsInstanceTopicRequest 请求对象
      * @return CompletableFuture<DeleteMqsInstanceTopicResponse>
@@ -2119,8 +1992,7 @@ public class RomaAsyncClient {
      *
      * 删除Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMqsInstanceTopicRequest 请求对象
      * @return AsyncInvoker<DeleteMqsInstanceTopicRequest, DeleteMqsInstanceTopicResponse>
@@ -2136,8 +2008,7 @@ public class RomaAsyncClient {
      *
      * 通过映射ID删除指定任务映射
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMultiTaskMappingRequest 请求对象
      * @return CompletableFuture<DeleteMultiTaskMappingResponse>
@@ -2152,8 +2023,7 @@ public class RomaAsyncClient {
      *
      * 通过映射ID删除指定任务映射
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMultiTaskMappingRequest 请求对象
      * @return AsyncInvoker<DeleteMultiTaskMappingRequest, DeleteMultiTaskMappingResponse>
@@ -2169,8 +2039,7 @@ public class RomaAsyncClient {
      *
      * 该接口用于删除指定订阅管理
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNotificationRequest 请求对象
      * @return CompletableFuture<DeleteNotificationResponse>
@@ -2184,8 +2053,7 @@ public class RomaAsyncClient {
      *
      * 该接口用于删除指定订阅管理
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNotificationRequest 请求对象
      * @return AsyncInvoker<DeleteNotificationRequest, DeleteNotificationResponse>
@@ -2201,8 +2069,7 @@ public class RomaAsyncClient {
      *
      * 删除产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProductRequest 请求对象
      * @return CompletableFuture<DeleteProductResponse>
@@ -2216,8 +2083,7 @@ public class RomaAsyncClient {
      *
      * 删除产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProductRequest 请求对象
      * @return AsyncInvoker<DeleteProductRequest, DeleteProductResponse>
@@ -2232,8 +2098,7 @@ public class RomaAsyncClient {
      *
      * 删除产品模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProductTemplateRequest 请求对象
      * @return CompletableFuture<DeleteProductTemplateResponse>
@@ -2248,8 +2113,7 @@ public class RomaAsyncClient {
      *
      * 删除产品模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProductTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteProductTemplateRequest, DeleteProductTemplateResponse>
@@ -2265,8 +2129,7 @@ public class RomaAsyncClient {
      *
      * 删除产品主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProductTopicRequest 请求对象
      * @return CompletableFuture<DeleteProductTopicResponse>
@@ -2280,8 +2143,7 @@ public class RomaAsyncClient {
      *
      * 删除产品主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProductTopicRequest 请求对象
      * @return AsyncInvoker<DeleteProductTopicRequest, DeleteProductTopicResponse>
@@ -2297,8 +2159,7 @@ public class RomaAsyncClient {
      *
      * 删除服务属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePropertyRequest 请求对象
      * @return CompletableFuture<DeletePropertyResponse>
@@ -2312,8 +2173,7 @@ public class RomaAsyncClient {
      *
      * 删除服务属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePropertyRequest 请求对象
      * @return AsyncInvoker<DeletePropertyRequest, DeletePropertyResponse>
@@ -2329,8 +2189,7 @@ public class RomaAsyncClient {
      *
      * 删除请求属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRequestPropertyRequest 请求对象
      * @return CompletableFuture<DeleteRequestPropertyResponse>
@@ -2345,8 +2204,7 @@ public class RomaAsyncClient {
      *
      * 删除请求属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRequestPropertyRequest 请求对象
      * @return AsyncInvoker<DeleteRequestPropertyRequest, DeleteRequestPropertyResponse>
@@ -2362,8 +2220,7 @@ public class RomaAsyncClient {
      *
      * 删除指定的流控策略。当该流控策略绑定了API时，需要先解除流控策略与API的所有绑定关系后再删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<DeleteRequestThrottlingPolicyV2Response>
@@ -2378,8 +2235,7 @@ public class RomaAsyncClient {
      *
      * 删除指定的流控策略。当该流控策略绑定了API时，需要先解除流控策略与API的所有绑定关系后再删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response>
@@ -2395,8 +2251,7 @@ public class RomaAsyncClient {
      *
      * 删除响应属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResponsePropertyRequest 请求对象
      * @return CompletableFuture<DeleteResponsePropertyResponse>
@@ -2411,8 +2266,7 @@ public class RomaAsyncClient {
      *
      * 删除响应属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResponsePropertyRequest 请求对象
      * @return AsyncInvoker<DeleteResponsePropertyRequest, DeleteResponsePropertyResponse>
@@ -2428,8 +2282,7 @@ public class RomaAsyncClient {
      *
      * 删除规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRuleRequest 请求对象
      * @return CompletableFuture<DeleteRuleResponse>
@@ -2443,8 +2296,7 @@ public class RomaAsyncClient {
      *
      * 删除规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRuleRequest 请求对象
      * @return AsyncInvoker<DeleteRuleRequest, DeleteRuleResponse>
@@ -2458,8 +2310,7 @@ public class RomaAsyncClient {
      *
      * 删除服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServiceRequest 请求对象
      * @return CompletableFuture<DeleteServiceResponse>
@@ -2473,8 +2324,7 @@ public class RomaAsyncClient {
      *
      * 删除服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServiceRequest 请求对象
      * @return AsyncInvoker<DeleteServiceRequest, DeleteServiceResponse>
@@ -2489,8 +2339,7 @@ public class RomaAsyncClient {
      *
      * 删除指定的签名密钥。签名密钥绑定了API时无法删除，需要先解除与API的绑定关系后删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSignatureKeyV2Request 请求对象
      * @return CompletableFuture<DeleteSignatureKeyV2Response>
@@ -2505,8 +2354,7 @@ public class RomaAsyncClient {
      *
      * 删除指定的签名密钥。签名密钥绑定了API时无法删除，需要先解除与API的绑定关系后删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response>
@@ -2522,8 +2370,7 @@ public class RomaAsyncClient {
      *
      * 删除源数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSourceRequest 请求对象
      * @return CompletableFuture<DeleteSourceResponse>
@@ -2537,8 +2384,7 @@ public class RomaAsyncClient {
      *
      * 删除源数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSourceRequest 请求对象
      * @return AsyncInvoker<DeleteSourceRequest, DeleteSourceResponse>
@@ -2553,8 +2399,7 @@ public class RomaAsyncClient {
      *
      * 删除某个流控策略的某个特殊配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSpecialThrottlingConfigurationV2Request 请求对象
      * @return CompletableFuture<DeleteSpecialThrottlingConfigurationV2Response>
@@ -2569,8 +2414,7 @@ public class RomaAsyncClient {
      *
      * 删除某个流控策略的某个特殊配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSpecialThrottlingConfigurationV2Request 请求对象
      * @return AsyncInvoker<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response>
@@ -2586,8 +2430,7 @@ public class RomaAsyncClient {
      *
      * 通过任务ID删除指定任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
      * @return CompletableFuture<DeleteTaskResponse>
@@ -2601,8 +2444,7 @@ public class RomaAsyncClient {
      *
      * 通过任务ID删除指定任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
      * @return AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
@@ -2616,8 +2458,7 @@ public class RomaAsyncClient {
      *
      * 解除客户端配额和客户端应用的绑定
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateAppQuotaWithAppRequest 请求对象
      * @return CompletableFuture<DisassociateAppQuotaWithAppResponse>
@@ -2632,8 +2473,7 @@ public class RomaAsyncClient {
      *
      * 解除客户端配额和客户端应用的绑定
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateAppQuotaWithAppRequest 请求对象
      * @return AsyncInvoker<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse>
@@ -2649,8 +2489,7 @@ public class RomaAsyncClient {
      *
      * 如果域名证书不再需要或者已过期，则可以删除证书内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateCertificateV2Request 请求对象
      * @return CompletableFuture<DisassociateCertificateV2Response>
@@ -2665,8 +2504,7 @@ public class RomaAsyncClient {
      *
      * 如果域名证书不再需要或者已过期，则可以删除证书内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateCertificateV2Request 请求对象
      * @return AsyncInvoker<DisassociateCertificateV2Request, DisassociateCertificateV2Response>
@@ -2682,8 +2520,7 @@ public class RomaAsyncClient {
      *
      * 如果API分组不再需要绑定某个自定义域名，则可以为此API分组解绑此域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateDomainV2Request 请求对象
      * @return CompletableFuture<DisassociateDomainV2Response>
@@ -2698,8 +2535,7 @@ public class RomaAsyncClient {
      *
      * 如果API分组不再需要绑定某个自定义域名，则可以为此API分组解绑此域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateDomainV2Request 请求对象
      * @return AsyncInvoker<DisassociateDomainV2Request, DisassociateDomainV2Response>
@@ -2715,8 +2551,7 @@ public class RomaAsyncClient {
      *
      * 解除API与签名密钥的绑定关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateSignatureKeyV2Request 请求对象
      * @return CompletableFuture<DisassociateSignatureKeyV2Response>
@@ -2731,8 +2566,7 @@ public class RomaAsyncClient {
      *
      * 解除API与签名密钥的绑定关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response>
@@ -2748,8 +2582,7 @@ public class RomaAsyncClient {
      *
      * 导出产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadProductsRequest 请求对象
      * @return CompletableFuture<DownloadProductsResponse>
@@ -2763,8 +2596,7 @@ public class RomaAsyncClient {
      *
      * 导出产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadProductsRequest 请求对象
      * @return AsyncInvoker<DownloadProductsRequest, DownloadProductsResponse>
@@ -2780,8 +2612,7 @@ public class RomaAsyncClient {
      *
      * 导出Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportMqsInstanceTopicRequest 请求对象
      * @return CompletableFuture<ExportMqsInstanceTopicResponse>
@@ -2796,8 +2627,7 @@ public class RomaAsyncClient {
      *
      * 导出Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportMqsInstanceTopicRequest 请求对象
      * @return AsyncInvoker<ExportMqsInstanceTopicRequest, ExportMqsInstanceTopicResponse>
@@ -2813,8 +2643,7 @@ public class RomaAsyncClient {
      *
      * 导入Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportMqsInstanceTopicRequest 请求对象
      * @return CompletableFuture<ImportMqsInstanceTopicResponse>
@@ -2829,8 +2658,7 @@ public class RomaAsyncClient {
      *
      * 导入Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportMqsInstanceTopicRequest 请求对象
      * @return AsyncInvoker<ImportMqsInstanceTopicRequest, ImportMqsInstanceTopicResponse>
@@ -2846,8 +2674,7 @@ public class RomaAsyncClient {
      *
      * 初始化组合任务，分配任务ID，初始化映射等
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param InstallMultiTasksRequest 请求对象
      * @return CompletableFuture<InstallMultiTasksResponse>
@@ -2861,8 +2688,7 @@ public class RomaAsyncClient {
      *
      * 初始化组合任务，分配任务ID，初始化映射等
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param InstallMultiTasksRequest 请求对象
      * @return AsyncInvoker<InstallMultiTasksRequest, InstallMultiTasksResponse>
@@ -2878,8 +2704,7 @@ public class RomaAsyncClient {
      *
      * 查询某个签名密钥上已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToSignatureKeyV2Request 请求对象
      * @return CompletableFuture<ListApisBindedToSignatureKeyV2Response>
@@ -2894,8 +2719,7 @@ public class RomaAsyncClient {
      *
      * 查询某个签名密钥上已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response>
@@ -2911,8 +2735,7 @@ public class RomaAsyncClient {
      *
      * 查询所有未绑定到该签名密钥上的API列表。需要API已经发布，未发布的API不予展示。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisNotBoundWithSignatureKeyV2Request 请求对象
      * @return CompletableFuture<ListApisNotBoundWithSignatureKeyV2Response>
@@ -2927,8 +2750,7 @@ public class RomaAsyncClient {
      *
      * 查询所有未绑定到该签名密钥上的API列表。需要API已经发布，未发布的API不予展示。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisNotBoundWithSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response>
@@ -2944,8 +2766,7 @@ public class RomaAsyncClient {
      *
      * 查询App Code列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppCodesV2Request 请求对象
      * @return CompletableFuture<ListAppCodesV2Response>
@@ -2959,8 +2780,7 @@ public class RomaAsyncClient {
      *
      * 查询App Code列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppCodesV2Request 请求对象
      * @return AsyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response>
@@ -2976,8 +2796,7 @@ public class RomaAsyncClient {
      *
      * 查询应用配置列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppConfigsV2Request 请求对象
      * @return CompletableFuture<ListAppConfigsV2Response>
@@ -2991,8 +2810,7 @@ public class RomaAsyncClient {
      *
      * 查询应用配置列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppConfigsV2Request 请求对象
      * @return AsyncInvoker<ListAppConfigsV2Request, ListAppConfigsV2Response>
@@ -3008,8 +2826,7 @@ public class RomaAsyncClient {
      *
      * 查询客户端配额可绑定的客户端应用列表。支持按客户端应用名称模糊搜索
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppQuotaBindableAppsRequest 请求对象
      * @return CompletableFuture<ListAppQuotaBindableAppsResponse>
@@ -3024,8 +2841,7 @@ public class RomaAsyncClient {
      *
      * 查询客户端配额可绑定的客户端应用列表。支持按客户端应用名称模糊搜索
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppQuotaBindableAppsRequest 请求对象
      * @return AsyncInvoker<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse>
@@ -3041,8 +2857,7 @@ public class RomaAsyncClient {
      *
      * 查询客户端配额已绑定的客户端应用列表。支持按客户端应用名称模糊匹配
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppQuotaBoundAppsRequest 请求对象
      * @return CompletableFuture<ListAppQuotaBoundAppsResponse>
@@ -3057,8 +2872,7 @@ public class RomaAsyncClient {
      *
      * 查询客户端配额已绑定的客户端应用列表。支持按客户端应用名称模糊匹配
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppQuotaBoundAppsRequest 请求对象
      * @return AsyncInvoker<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse>
@@ -3074,8 +2888,7 @@ public class RomaAsyncClient {
      *
      * 获取客户端配额列表。支持根据名称模糊查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppQuotasRequest 请求对象
      * @return CompletableFuture<ListAppQuotasResponse>
@@ -3089,8 +2902,7 @@ public class RomaAsyncClient {
      *
      * 获取客户端配额列表。支持根据名称模糊查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppQuotasRequest 请求对象
      * @return AsyncInvoker<ListAppQuotasRequest, ListAppQuotasResponse>
@@ -3105,8 +2917,7 @@ public class RomaAsyncClient {
      *
      * 查询APP列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsV2Request 请求对象
      * @return CompletableFuture<ListAppsV2Response>
@@ -3120,8 +2931,7 @@ public class RomaAsyncClient {
      *
      * 查询APP列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsV2Request 请求对象
      * @return AsyncInvoker<ListAppsV2Request, ListAppsV2Response>
@@ -3135,8 +2945,7 @@ public class RomaAsyncClient {
      *
      * 查询命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommandsRequest 请求对象
      * @return CompletableFuture<ListCommandsResponse>
@@ -3150,8 +2959,7 @@ public class RomaAsyncClient {
      *
      * 查询命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommandsRequest 请求对象
      * @return AsyncInvoker<ListCommandsRequest, ListCommandsResponse>
@@ -3166,8 +2974,7 @@ public class RomaAsyncClient {
      *
      * 查询自定义认证列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCustomAuthorizersV2Request 请求对象
      * @return CompletableFuture<ListCustomAuthorizersV2Response>
@@ -3182,8 +2989,7 @@ public class RomaAsyncClient {
      *
      * 查询自定义认证列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCustomAuthorizersV2Request 请求对象
      * @return AsyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response>
@@ -3199,8 +3005,7 @@ public class RomaAsyncClient {
      *
      * 获取数据源中中某个表中所有字段
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatasourceColumnsRequest 请求对象
      * @return CompletableFuture<ListDatasourceColumnsResponse>
@@ -3215,8 +3020,7 @@ public class RomaAsyncClient {
      *
      * 获取数据源中中某个表中所有字段
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatasourceColumnsRequest 请求对象
      * @return AsyncInvoker<ListDatasourceColumnsRequest, ListDatasourceColumnsResponse>
@@ -3232,8 +3036,7 @@ public class RomaAsyncClient {
      *
      * 获取数据源中所有的表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatasourceTablesRequest 请求对象
      * @return CompletableFuture<ListDatasourceTablesResponse>
@@ -3248,8 +3051,7 @@ public class RomaAsyncClient {
      *
      * 获取数据源中所有的表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatasourceTablesRequest 请求对象
      * @return AsyncInvoker<ListDatasourceTablesRequest, ListDatasourceTablesResponse>
@@ -3265,8 +3067,7 @@ public class RomaAsyncClient {
      *
      * 查询数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatasourcesRequest 请求对象
      * @return CompletableFuture<ListDatasourcesResponse>
@@ -3280,8 +3081,7 @@ public class RomaAsyncClient {
      *
      * 查询数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatasourcesRequest 请求对象
      * @return AsyncInvoker<ListDatasourcesRequest, ListDatasourcesResponse>
@@ -3297,8 +3097,7 @@ public class RomaAsyncClient {
      *
      * 查询目标数据源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDestinationsRequest 请求对象
      * @return CompletableFuture<ListDestinationsResponse>
@@ -3312,8 +3111,7 @@ public class RomaAsyncClient {
      *
      * 查询目标数据源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDestinationsRequest 请求对象
      * @return AsyncInvoker<ListDestinationsRequest, ListDestinationsResponse>
@@ -3329,8 +3127,7 @@ public class RomaAsyncClient {
      *
      * 查询设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDevicesRequest 请求对象
      * @return CompletableFuture<ListDevicesResponse>
@@ -3344,8 +3141,7 @@ public class RomaAsyncClient {
      *
      * 查询设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDevicesRequest 请求对象
      * @return AsyncInvoker<ListDevicesRequest, ListDevicesResponse>
@@ -3359,8 +3155,7 @@ public class RomaAsyncClient {
      *
      * 查询产品内设备数量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDevicesInProductRequest 请求对象
      * @return CompletableFuture<ListDevicesInProductResponse>
@@ -3375,8 +3170,7 @@ public class RomaAsyncClient {
      *
      * 查询产品内设备数量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDevicesInProductRequest 请求对象
      * @return AsyncInvoker<ListDevicesInProductRequest, ListDevicesInProductResponse>
@@ -3392,8 +3186,7 @@ public class RomaAsyncClient {
      *
      * 查询分组下的所有环境变量的列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentVariablesV2Request 请求对象
      * @return CompletableFuture<ListEnvironmentVariablesV2Response>
@@ -3408,8 +3201,7 @@ public class RomaAsyncClient {
      *
      * 查询分组下的所有环境变量的列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentVariablesV2Request 请求对象
      * @return AsyncInvoker<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response>
@@ -3425,8 +3217,7 @@ public class RomaAsyncClient {
      *
      * 查询符合条件的环境列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentsV2Request 请求对象
      * @return CompletableFuture<ListEnvironmentsV2Response>
@@ -3440,8 +3231,7 @@ public class RomaAsyncClient {
      *
      * 查询符合条件的环境列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentsV2Request 请求对象
      * @return AsyncInvoker<ListEnvironmentsV2Request, ListEnvironmentsV2Response>
@@ -3459,8 +3249,7 @@ public class RomaAsyncClient {
      * 
      * 支持配置的特性列表及特性配置请参考“附录 &gt; 实例支持的APIC特性”
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFeaturesV2Request 请求对象
      * @return CompletableFuture<ListFeaturesV2Response>
@@ -3476,8 +3265,7 @@ public class RomaAsyncClient {
      * 
      * 支持配置的特性列表及特性配置请参考“附录 &gt; 实例支持的APIC特性”
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFeaturesV2Request 请求对象
      * @return AsyncInvoker<ListFeaturesV2Request, ListFeaturesV2Response>
@@ -3494,8 +3282,7 @@ public class RomaAsyncClient {
      * 根据API的id和最近的一段时间查询API被调用的次数，统计周期为1分钟。查询范围一小时以内，一分钟一个样本，其样本值为一分钟内的累计值。
      * &gt; 为了安全起见，在服务器上使用curl命令调用接口查询信息后，需要清理历史操作记录，包括但不限于“~/.bash_history”、“/var/log/messages”（如有）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLatelyApiStatisticsV2Request 请求对象
      * @return CompletableFuture<ListLatelyApiStatisticsV2Response>
@@ -3511,8 +3298,7 @@ public class RomaAsyncClient {
      * 根据API的id和最近的一段时间查询API被调用的次数，统计周期为1分钟。查询范围一小时以内，一分钟一个样本，其样本值为一分钟内的累计值。
      * &gt; 为了安全起见，在服务器上使用curl命令调用接口查询信息后，需要清理历史操作记录，包括但不限于“~/.bash_history”、“/var/log/messages”（如有）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLatelyApiStatisticsV2Request 请求对象
      * @return AsyncInvoker<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response>
@@ -3528,8 +3314,7 @@ public class RomaAsyncClient {
      *
      * 在某个实例中查询后端API的部署记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataApiDeploymentHistoryV2Request 请求对象
      * @return CompletableFuture<ListLiveDataApiDeploymentHistoryV2Response>
@@ -3544,8 +3329,7 @@ public class RomaAsyncClient {
      *
      * 在某个实例中查询后端API的部署记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataApiDeploymentHistoryV2Request 请求对象
      * @return AsyncInvoker<ListLiveDataApiDeploymentHistoryV2Request, ListLiveDataApiDeploymentHistoryV2Response>
@@ -3561,8 +3345,7 @@ public class RomaAsyncClient {
      *
      * 在某个实例中查询后端API的测试结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataApiTestHistoryV2Request 请求对象
      * @return CompletableFuture<ListLiveDataApiTestHistoryV2Response>
@@ -3577,8 +3360,7 @@ public class RomaAsyncClient {
      *
      * 在某个实例中查询后端API的测试结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataApiTestHistoryV2Request 请求对象
      * @return AsyncInvoker<ListLiveDataApiTestHistoryV2Request, ListLiveDataApiTestHistoryV2Response>
@@ -3594,8 +3376,7 @@ public class RomaAsyncClient {
      *
      * 获取某个实例下的所有后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataApiV2Request 请求对象
      * @return CompletableFuture<ListLiveDataApiV2Response>
@@ -3609,8 +3390,7 @@ public class RomaAsyncClient {
      *
      * 获取某个实例下的所有后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataApiV2Request 请求对象
      * @return AsyncInvoker<ListLiveDataApiV2Request, ListLiveDataApiV2Response>
@@ -3626,8 +3406,7 @@ public class RomaAsyncClient {
      *
      * 查询自定义后端服务数据源列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataDataSourcesV2Request 请求对象
      * @return CompletableFuture<ListLiveDataDataSourcesV2Response>
@@ -3642,8 +3421,7 @@ public class RomaAsyncClient {
      *
      * 查询自定义后端服务数据源列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataDataSourcesV2Request 请求对象
      * @return AsyncInvoker<ListLiveDataDataSourcesV2Request, ListLiveDataDataSourcesV2Response>
@@ -3659,8 +3437,7 @@ public class RomaAsyncClient {
      *
      * 查询自定义后端服务配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataQuotaV2Request 请求对象
      * @return CompletableFuture<ListLiveDataQuotaV2Response>
@@ -3674,8 +3451,7 @@ public class RomaAsyncClient {
      *
      * 查询自定义后端服务配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveDataQuotaV2Request 请求对象
      * @return AsyncInvoker<ListLiveDataQuotaV2Request, ListLiveDataQuotaV2Response>
@@ -3691,8 +3467,7 @@ public class RomaAsyncClient {
      *
      * 查询所有任务的监控信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMonitorInfosRequest 请求对象
      * @return CompletableFuture<ListMonitorInfosResponse>
@@ -3706,8 +3481,7 @@ public class RomaAsyncClient {
      *
      * 查询所有任务的监控信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMonitorInfosRequest 请求对象
      * @return AsyncInvoker<ListMonitorInfosRequest, ListMonitorInfosResponse>
@@ -3723,8 +3497,7 @@ public class RomaAsyncClient {
      *
      * 查询单个任务的所有日志信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMonitorLogRequest 请求对象
      * @return CompletableFuture<ListMonitorLogResponse>
@@ -3738,8 +3511,7 @@ public class RomaAsyncClient {
      *
      * 查询单个任务的所有日志信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMonitorLogRequest 请求对象
      * @return AsyncInvoker<ListMonitorLogRequest, ListMonitorLogResponse>
@@ -3755,8 +3527,7 @@ public class RomaAsyncClient {
      *
      * 查询Topic列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMqsInstanceTopicsRequest 请求对象
      * @return CompletableFuture<ListMqsInstanceTopicsResponse>
@@ -3771,8 +3542,7 @@ public class RomaAsyncClient {
      *
      * 查询Topic列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMqsInstanceTopicsRequest 请求对象
      * @return AsyncInvoker<ListMqsInstanceTopicsRequest, ListMqsInstanceTopicsResponse>
@@ -3788,8 +3558,7 @@ public class RomaAsyncClient {
      *
      * 该接口用于查询指定应用订阅管理信息的数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotificationRequest 请求对象
      * @return CompletableFuture<ListNotificationResponse>
@@ -3803,8 +3572,7 @@ public class RomaAsyncClient {
      *
      * 该接口用于查询指定应用订阅管理信息的数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotificationRequest 请求对象
      * @return AsyncInvoker<ListNotificationRequest, ListNotificationResponse>
@@ -3820,8 +3588,7 @@ public class RomaAsyncClient {
      *
      * 查询产品模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductTemplatesRequest 请求对象
      * @return CompletableFuture<ListProductTemplatesResponse>
@@ -3836,8 +3603,7 @@ public class RomaAsyncClient {
      *
      * 查询产品模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductTemplatesRequest 请求对象
      * @return AsyncInvoker<ListProductTemplatesRequest, ListProductTemplatesResponse>
@@ -3853,8 +3619,7 @@ public class RomaAsyncClient {
      *
      * 查询产品主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductTopicsRequest 请求对象
      * @return CompletableFuture<ListProductTopicsResponse>
@@ -3868,8 +3633,7 @@ public class RomaAsyncClient {
      *
      * 查询产品主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductTopicsRequest 请求对象
      * @return AsyncInvoker<ListProductTopicsRequest, ListProductTopicsResponse>
@@ -3885,8 +3649,7 @@ public class RomaAsyncClient {
      *
      * 查询产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductsRequest 请求对象
      * @return CompletableFuture<ListProductsResponse>
@@ -3900,8 +3663,7 @@ public class RomaAsyncClient {
      *
      * 查询产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductsRequest 请求对象
      * @return AsyncInvoker<ListProductsRequest, ListProductsResponse>
@@ -3916,8 +3678,7 @@ public class RomaAsyncClient {
      *
      * 查询某个实例的租户配置列表，用户可以通过此接口查看各类型资源配置及使用情况。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectCofigsV2Request 请求对象
      * @return CompletableFuture<ListProjectCofigsV2Response>
@@ -3931,8 +3692,7 @@ public class RomaAsyncClient {
      *
      * 查询某个实例的租户配置列表，用户可以通过此接口查看各类型资源配置及使用情况。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectCofigsV2Request 请求对象
      * @return AsyncInvoker<ListProjectCofigsV2Request, ListProjectCofigsV2Response>
@@ -3948,8 +3708,7 @@ public class RomaAsyncClient {
      *
      * 查询属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPropertiesRequest 请求对象
      * @return CompletableFuture<ListPropertiesResponse>
@@ -3963,8 +3722,7 @@ public class RomaAsyncClient {
      *
      * 查询属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPropertiesRequest 请求对象
      * @return AsyncInvoker<ListPropertiesRequest, ListPropertiesResponse>
@@ -3980,8 +3738,7 @@ public class RomaAsyncClient {
      *
      * 查询请求属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestPropertiesRequest 请求对象
      * @return CompletableFuture<ListRequestPropertiesResponse>
@@ -3996,8 +3753,7 @@ public class RomaAsyncClient {
      *
      * 查询请求属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestPropertiesRequest 请求对象
      * @return AsyncInvoker<ListRequestPropertiesRequest, ListRequestPropertiesResponse>
@@ -4013,8 +3769,7 @@ public class RomaAsyncClient {
      *
      * 查询所有流控策略的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<ListRequestThrottlingPolicyV2Response>
@@ -4029,8 +3784,7 @@ public class RomaAsyncClient {
      *
      * 查询所有流控策略的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response>
@@ -4046,8 +3800,7 @@ public class RomaAsyncClient {
      *
      * 查询响应属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResponsePropertiesRequest 请求对象
      * @return CompletableFuture<ListResponsePropertiesResponse>
@@ -4062,8 +3815,7 @@ public class RomaAsyncClient {
      *
      * 查询响应属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResponsePropertiesRequest 请求对象
      * @return AsyncInvoker<ListResponsePropertiesRequest, ListResponsePropertiesResponse>
@@ -4079,8 +3831,7 @@ public class RomaAsyncClient {
      *
      * 查询规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRulesRequest 请求对象
      * @return CompletableFuture<ListRulesResponse>
@@ -4094,8 +3845,7 @@ public class RomaAsyncClient {
      *
      * 查询规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRulesRequest 请求对象
      * @return AsyncInvoker<ListRulesRequest, ListRulesResponse>
@@ -4109,8 +3859,7 @@ public class RomaAsyncClient {
      *
      * 查询服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServicesRequest 请求对象
      * @return CompletableFuture<ListServicesResponse>
@@ -4124,8 +3873,7 @@ public class RomaAsyncClient {
      *
      * 查询服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServicesRequest 请求对象
      * @return AsyncInvoker<ListServicesRequest, ListServicesResponse>
@@ -4140,8 +3888,7 @@ public class RomaAsyncClient {
      *
      * 查询设备影子
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListShadowsRequest 请求对象
      * @return CompletableFuture<ListShadowsResponse>
@@ -4155,8 +3902,7 @@ public class RomaAsyncClient {
      *
      * 查询设备影子
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListShadowsRequest 请求对象
      * @return AsyncInvoker<ListShadowsRequest, ListShadowsResponse>
@@ -4170,8 +3916,7 @@ public class RomaAsyncClient {
      *
      * 查询某个API绑定的签名密钥列表。每个API在每个环境上应该最多只会绑定一个签名密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSignatureKeysBindedToApiV2Request 请求对象
      * @return CompletableFuture<ListSignatureKeysBindedToApiV2Response>
@@ -4186,8 +3931,7 @@ public class RomaAsyncClient {
      *
      * 查询某个API绑定的签名密钥列表。每个API在每个环境上应该最多只会绑定一个签名密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSignatureKeysBindedToApiV2Request 请求对象
      * @return AsyncInvoker<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response>
@@ -4203,8 +3947,7 @@ public class RomaAsyncClient {
      *
      * 查询所有签名密钥的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSignatureKeysV2Request 请求对象
      * @return CompletableFuture<ListSignatureKeysV2Response>
@@ -4218,8 +3961,7 @@ public class RomaAsyncClient {
      *
      * 查询所有签名密钥的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSignatureKeysV2Request 请求对象
      * @return AsyncInvoker<ListSignatureKeysV2Request, ListSignatureKeysV2Response>
@@ -4235,8 +3977,7 @@ public class RomaAsyncClient {
      *
      * 查询源数据源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSourcesRequest 请求对象
      * @return CompletableFuture<ListSourcesResponse>
@@ -4250,8 +3991,7 @@ public class RomaAsyncClient {
      *
      * 查询源数据源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSourcesRequest 请求对象
      * @return AsyncInvoker<ListSourcesRequest, ListSourcesResponse>
@@ -4265,8 +4005,7 @@ public class RomaAsyncClient {
      *
      * 查看给流控策略设置的特殊配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSpecialThrottlingConfigurationsV2Request 请求对象
      * @return CompletableFuture<ListSpecialThrottlingConfigurationsV2Response>
@@ -4281,8 +4020,7 @@ public class RomaAsyncClient {
      *
      * 查看给流控策略设置的特殊配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSpecialThrottlingConfigurationsV2Request 请求对象
      * @return AsyncInvoker<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response>
@@ -4298,8 +4036,7 @@ public class RomaAsyncClient {
      *
      * 查询某个实例下的API统计信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStatisticsApiRequest 请求对象
      * @return CompletableFuture<ListStatisticsApiResponse>
@@ -4313,8 +4050,7 @@ public class RomaAsyncClient {
      *
      * 查询某个实例下的API统计信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStatisticsApiRequest 请求对象
      * @return AsyncInvoker<ListStatisticsApiRequest, ListStatisticsApiResponse>
@@ -4330,8 +4066,7 @@ public class RomaAsyncClient {
      *
      * 查询子设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubsetsRequest 请求对象
      * @return CompletableFuture<ListSubsetsResponse>
@@ -4345,8 +4080,7 @@ public class RomaAsyncClient {
      *
      * 查询子设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubsetsRequest 请求对象
      * @return AsyncInvoker<ListSubsetsRequest, ListSubsetsResponse>
@@ -4360,8 +4094,7 @@ public class RomaAsyncClient {
      *
      * 查询标签列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsV2Request 请求对象
      * @return CompletableFuture<ListTagsV2Response>
@@ -4375,8 +4108,7 @@ public class RomaAsyncClient {
      *
      * 查询标签列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsV2Request 请求对象
      * @return AsyncInvoker<ListTagsV2Request, ListTagsV2Response>
@@ -4390,8 +4122,7 @@ public class RomaAsyncClient {
      *
      * 查询任务列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTasksRequest 请求对象
      * @return CompletableFuture<ListTasksResponse>
@@ -4405,8 +4136,7 @@ public class RomaAsyncClient {
      *
      * 查询任务列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTasksRequest 请求对象
      * @return AsyncInvoker<ListTasksRequest, ListTasksResponse>
@@ -4420,8 +4150,7 @@ public class RomaAsyncClient {
      *
      * 查询设备主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTopicsRequest 请求对象
      * @return CompletableFuture<ListTopicsResponse>
@@ -4435,8 +4164,7 @@ public class RomaAsyncClient {
      *
      * 查询设备主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTopicsRequest 请求对象
      * @return AsyncInvoker<ListTopicsRequest, ListTopicsResponse>
@@ -4450,8 +4178,7 @@ public class RomaAsyncClient {
      *
      * 在某个实例中部署后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PublishLiveDataApiV2Request 请求对象
      * @return CompletableFuture<PublishLiveDataApiV2Response>
@@ -4466,8 +4193,7 @@ public class RomaAsyncClient {
      *
      * 在某个实例中部署后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PublishLiveDataApiV2Request 请求对象
      * @return AsyncInvoker<PublishLiveDataApiV2Request, PublishLiveDataApiV2Response>
@@ -4483,8 +4209,7 @@ public class RomaAsyncClient {
      *
      * 重置设备鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetAuthenticationRequest 请求对象
      * @return CompletableFuture<ResetAuthenticationResponse>
@@ -4498,8 +4223,7 @@ public class RomaAsyncClient {
      *
      * 重置设备鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetAuthenticationRequest 请求对象
      * @return AsyncInvoker<ResetAuthenticationRequest, ResetAuthenticationResponse>
@@ -4515,8 +4239,7 @@ public class RomaAsyncClient {
      *
      * 重发消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetMessagesRequest 请求对象
      * @return CompletableFuture<ResetMessagesResponse>
@@ -4530,8 +4253,7 @@ public class RomaAsyncClient {
      *
      * 重发消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetMessagesRequest 请求对象
      * @return AsyncInvoker<ResetMessagesRequest, ResetMessagesResponse>
@@ -4546,8 +4268,7 @@ public class RomaAsyncClient {
      *
      * 重置组合任务进度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetMultiTaskOffsetRequest 请求对象
      * @return CompletableFuture<ResetMultiTaskOffsetResponse>
@@ -4562,8 +4283,7 @@ public class RomaAsyncClient {
      *
      * 重置组合任务进度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetMultiTaskOffsetRequest 请求对象
      * @return AsyncInvoker<ResetMultiTaskOffsetRequest, ResetMultiTaskOffsetResponse>
@@ -4579,8 +4299,7 @@ public class RomaAsyncClient {
      *
      * 重置产品鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetProductAuthenticationRequest 请求对象
      * @return CompletableFuture<ResetProductAuthenticationResponse>
@@ -4595,8 +4314,7 @@ public class RomaAsyncClient {
      *
      * 重置产品鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetProductAuthenticationRequest 请求对象
      * @return AsyncInvoker<ResetProductAuthenticationRequest, ResetProductAuthenticationResponse>
@@ -4612,8 +4330,7 @@ public class RomaAsyncClient {
      *
      * 手工触发一次任务调度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunTaskRequest 请求对象
      * @return CompletableFuture<RunTaskResponse>
@@ -4627,8 +4344,7 @@ public class RomaAsyncClient {
      *
      * 手工触发一次任务调度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunTaskRequest 请求对象
      * @return AsyncInvoker<RunTaskRequest, RunTaskResponse>
@@ -4642,8 +4358,7 @@ public class RomaAsyncClient {
      *
      * 发送命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendCommandRequest 请求对象
      * @return CompletableFuture<SendCommandResponse>
@@ -4657,8 +4372,7 @@ public class RomaAsyncClient {
      *
      * 发送命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendCommandRequest 请求对象
      * @return AsyncInvoker<SendCommandRequest, SendCommandResponse>
@@ -4672,8 +4386,7 @@ public class RomaAsyncClient {
      *
      * 查看指定客户端应用关联的应用配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAppBoundAppQuotaRequest 请求对象
      * @return CompletableFuture<ShowAppBoundAppQuotaResponse>
@@ -4688,8 +4401,7 @@ public class RomaAsyncClient {
      *
      * 查看指定客户端应用关联的应用配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAppBoundAppQuotaRequest 请求对象
      * @return AsyncInvoker<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse>
@@ -4705,8 +4417,7 @@ public class RomaAsyncClient {
      *
      * 获取客户端配额详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAppQuotaRequest 请求对象
      * @return CompletableFuture<ShowAppQuotaResponse>
@@ -4720,8 +4431,7 @@ public class RomaAsyncClient {
      *
      * 获取客户端配额详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAppQuotaRequest 请求对象
      * @return AsyncInvoker<ShowAppQuotaRequest, ShowAppQuotaResponse>
@@ -4736,8 +4446,7 @@ public class RomaAsyncClient {
      *
      * 查询设备鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAuthenticationRequest 请求对象
      * @return CompletableFuture<ShowAuthenticationResponse>
@@ -4751,8 +4460,7 @@ public class RomaAsyncClient {
      *
      * 查询设备鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAuthenticationRequest 请求对象
      * @return AsyncInvoker<ShowAuthenticationRequest, ShowAuthenticationResponse>
@@ -4768,8 +4476,7 @@ public class RomaAsyncClient {
      *
      * 查询命令详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCommandRequest 请求对象
      * @return CompletableFuture<ShowCommandResponse>
@@ -4783,8 +4490,7 @@ public class RomaAsyncClient {
      *
      * 查询命令详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCommandRequest 请求对象
      * @return AsyncInvoker<ShowCommandRequest, ShowCommandResponse>
@@ -4798,8 +4504,7 @@ public class RomaAsyncClient {
      *
      * 根据数据源id查询数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDataourceDetailRequest 请求对象
      * @return CompletableFuture<ShowDataourceDetailResponse>
@@ -4813,8 +4518,7 @@ public class RomaAsyncClient {
      *
      * 根据数据源id查询数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDataourceDetailRequest 请求对象
      * @return AsyncInvoker<ShowDataourceDetailRequest, ShowDataourceDetailResponse>
@@ -4830,8 +4534,7 @@ public class RomaAsyncClient {
      *
      * 查看APP的访问控制详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppAclRequest 请求对象
      * @return CompletableFuture<ShowDetailsOfAppAclResponse>
@@ -4845,8 +4548,7 @@ public class RomaAsyncClient {
      *
      * 查看APP的访问控制详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppAclRequest 请求对象
      * @return AsyncInvoker<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse>
@@ -4862,8 +4564,7 @@ public class RomaAsyncClient {
      *
      * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppCodeV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfAppCodeV2Response>
@@ -4878,8 +4579,7 @@ public class RomaAsyncClient {
      *
      * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppCodeV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response>
@@ -4895,8 +4595,7 @@ public class RomaAsyncClient {
      *
      * 查看应用配置详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppConfigV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfAppConfigV2Response>
@@ -4911,8 +4610,7 @@ public class RomaAsyncClient {
      *
      * 查看应用配置详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppConfigV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfAppConfigV2Request, ShowDetailsOfAppConfigV2Response>
@@ -4928,8 +4626,7 @@ public class RomaAsyncClient {
      *
      * 查看指定APP的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfAppV2Response>
@@ -4943,8 +4640,7 @@ public class RomaAsyncClient {
      *
      * 查看指定APP的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response>
@@ -4960,8 +4656,7 @@ public class RomaAsyncClient {
      *
      * 查看自定义认证详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfCustomAuthorizersV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfCustomAuthorizersV2Response>
@@ -4976,8 +4671,7 @@ public class RomaAsyncClient {
      *
      * 查看自定义认证详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfCustomAuthorizersV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response>
@@ -4993,8 +4687,7 @@ public class RomaAsyncClient {
      *
      * 查看域名下绑定的证书详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfDomainNameCertificateV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfDomainNameCertificateV2Response>
@@ -5009,8 +4702,7 @@ public class RomaAsyncClient {
      *
      * 查看域名下绑定的证书详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfDomainNameCertificateV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response>
@@ -5026,8 +4718,7 @@ public class RomaAsyncClient {
      *
      * 查看指定的环境变量的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfEnvironmentVariableV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfEnvironmentVariableV2Response>
@@ -5042,8 +4733,7 @@ public class RomaAsyncClient {
      *
      * 查看指定的环境变量的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfEnvironmentVariableV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response>
@@ -5059,8 +4749,7 @@ public class RomaAsyncClient {
      *
      * 查看ROMA Connect实例详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfInstanceV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfInstanceV2Response>
@@ -5075,8 +4764,7 @@ public class RomaAsyncClient {
      *
      * 查看ROMA Connect实例详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfInstanceV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response>
@@ -5092,8 +4780,7 @@ public class RomaAsyncClient {
      *
      * 查看指定流控策略的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfRequestThrottlingPolicyV2Response>
@@ -5108,8 +4795,7 @@ public class RomaAsyncClient {
      *
      * 查看指定流控策略的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response>
@@ -5125,8 +4811,7 @@ public class RomaAsyncClient {
      *
      * 查询设备详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceRequest 请求对象
      * @return CompletableFuture<ShowDeviceResponse>
@@ -5140,8 +4825,7 @@ public class RomaAsyncClient {
      *
      * 查询设备详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceRequest 请求对象
      * @return AsyncInvoker<ShowDeviceRequest, ShowDeviceResponse>
@@ -5155,8 +4839,7 @@ public class RomaAsyncClient {
      *
      * 获取设备分组及下一层分组信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceGroupRequest 请求对象
      * @return CompletableFuture<ShowDeviceGroupResponse>
@@ -5170,8 +4853,7 @@ public class RomaAsyncClient {
      *
      * 获取设备分组及下一层分组信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceGroupRequest 请求对象
      * @return AsyncInvoker<ShowDeviceGroupRequest, ShowDeviceGroupResponse>
@@ -5187,8 +4869,7 @@ public class RomaAsyncClient {
      *
      * 查询所有设备分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceGroupTreeRequest 请求对象
      * @return CompletableFuture<ShowDeviceGroupTreeResponse>
@@ -5202,8 +4883,7 @@ public class RomaAsyncClient {
      *
      * 查询所有设备分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeviceGroupTreeRequest 请求对象
      * @return AsyncInvoker<ShowDeviceGroupTreeRequest, ShowDeviceGroupTreeResponse>
@@ -5219,8 +4899,7 @@ public class RomaAsyncClient {
      *
      * 查询设备分组内设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDevicesInGroupRequest 请求对象
      * @return CompletableFuture<ShowDevicesInGroupResponse>
@@ -5234,8 +4913,7 @@ public class RomaAsyncClient {
      *
      * 查询设备分组内设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDevicesInGroupRequest 请求对象
      * @return AsyncInvoker<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse>
@@ -5251,8 +4929,7 @@ public class RomaAsyncClient {
      *
      * 查询调度计划
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDispatchesRequest 请求对象
      * @return CompletableFuture<ShowDispatchesResponse>
@@ -5266,8 +4943,7 @@ public class RomaAsyncClient {
      *
      * 查询调度计划
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDispatchesRequest 请求对象
      * @return AsyncInvoker<ShowDispatchesRequest, ShowDispatchesResponse>
@@ -5283,8 +4959,7 @@ public class RomaAsyncClient {
      *
      * 查询后端API的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLiveDataApiV2Request 请求对象
      * @return CompletableFuture<ShowLiveDataApiV2Response>
@@ -5298,8 +4973,7 @@ public class RomaAsyncClient {
      *
      * 查询后端API的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLiveDataApiV2Request 请求对象
      * @return AsyncInvoker<ShowLiveDataApiV2Request, ShowLiveDataApiV2Response>
@@ -5316,8 +4990,7 @@ public class RomaAsyncClient {
      * 查询消息的偏移量和消息内容。
      * 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMqsInstanceMessagesRequest 请求对象
      * @return CompletableFuture<ShowMqsInstanceMessagesResponse>
@@ -5333,8 +5006,7 @@ public class RomaAsyncClient {
      * 查询消息的偏移量和消息内容。
      * 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMqsInstanceMessagesRequest 请求对象
      * @return AsyncInvoker<ShowMqsInstanceMessagesRequest, ShowMqsInstanceMessagesResponse>
@@ -5350,8 +5022,7 @@ public class RomaAsyncClient {
      *
      * 查询Topic权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMqsInstanceTopicAccessPolicyRequest 请求对象
      * @return CompletableFuture<ShowMqsInstanceTopicAccessPolicyResponse>
@@ -5366,8 +5037,7 @@ public class RomaAsyncClient {
      *
      * 查询Topic权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMqsInstanceTopicAccessPolicyRequest 请求对象
      * @return AsyncInvoker<ShowMqsInstanceTopicAccessPolicyRequest, ShowMqsInstanceTopicAccessPolicyResponse>
@@ -5383,8 +5053,7 @@ public class RomaAsyncClient {
      *
      * 查询产品详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProductRequest 请求对象
      * @return CompletableFuture<ShowProductResponse>
@@ -5398,8 +5067,7 @@ public class RomaAsyncClient {
      *
      * 查询产品详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProductRequest 请求对象
      * @return AsyncInvoker<ShowProductRequest, ShowProductResponse>
@@ -5413,8 +5081,7 @@ public class RomaAsyncClient {
      *
      * 查询产品鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProductAuthenticationRequest 请求对象
      * @return CompletableFuture<ShowProductAuthenticationResponse>
@@ -5429,8 +5096,7 @@ public class RomaAsyncClient {
      *
      * 查询产品鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProductAuthenticationRequest 请求对象
      * @return AsyncInvoker<ShowProductAuthenticationRequest, ShowProductAuthenticationResponse>
@@ -5446,8 +5112,7 @@ public class RomaAsyncClient {
      *
      * 查询产品模板详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProductTemplateRequest 请求对象
      * @return CompletableFuture<ShowProductTemplateResponse>
@@ -5461,8 +5126,7 @@ public class RomaAsyncClient {
      *
      * 查询产品模板详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProductTemplateRequest 请求对象
      * @return AsyncInvoker<ShowProductTemplateRequest, ShowProductTemplateResponse>
@@ -5478,8 +5142,7 @@ public class RomaAsyncClient {
      *
      * 查询服务属性详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPropertyRequest 请求对象
      * @return CompletableFuture<ShowPropertyResponse>
@@ -5493,8 +5156,7 @@ public class RomaAsyncClient {
      *
      * 查询服务属性详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPropertyRequest 请求对象
      * @return AsyncInvoker<ShowPropertyRequest, ShowPropertyResponse>
@@ -5509,8 +5171,7 @@ public class RomaAsyncClient {
      *
      * 查询请求属性详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRequestPropertyRequest 请求对象
      * @return CompletableFuture<ShowRequestPropertyResponse>
@@ -5524,8 +5185,7 @@ public class RomaAsyncClient {
      *
      * 查询请求属性详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRequestPropertyRequest 请求对象
      * @return AsyncInvoker<ShowRequestPropertyRequest, ShowRequestPropertyResponse>
@@ -5541,8 +5201,7 @@ public class RomaAsyncClient {
      *
      * 查询响应属性详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResponsePropertyRequest 请求对象
      * @return CompletableFuture<ShowResponsePropertyResponse>
@@ -5557,8 +5216,7 @@ public class RomaAsyncClient {
      *
      * 查询响应属性详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResponsePropertyRequest 请求对象
      * @return AsyncInvoker<ShowResponsePropertyRequest, ShowResponsePropertyResponse>
@@ -5574,8 +5232,7 @@ public class RomaAsyncClient {
      *
      * 查看ROMA Connect实例约束信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRestrictionOfInstanceV2Request 请求对象
      * @return CompletableFuture<ShowRestrictionOfInstanceV2Response>
@@ -5590,8 +5247,7 @@ public class RomaAsyncClient {
      *
      * 查看ROMA Connect实例约束信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRestrictionOfInstanceV2Request 请求对象
      * @return AsyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response>
@@ -5607,8 +5263,7 @@ public class RomaAsyncClient {
      *
      * 查询规则详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRuleRequest 请求对象
      * @return CompletableFuture<ShowRuleResponse>
@@ -5622,8 +5277,7 @@ public class RomaAsyncClient {
      *
      * 查询规则详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRuleRequest 请求对象
      * @return AsyncInvoker<ShowRuleRequest, ShowRuleResponse>
@@ -5637,8 +5291,7 @@ public class RomaAsyncClient {
      *
      * 查询服务详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServiceRequest 请求对象
      * @return CompletableFuture<ShowServiceResponse>
@@ -5652,8 +5305,7 @@ public class RomaAsyncClient {
      *
      * 查询服务详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServiceRequest 请求对象
      * @return AsyncInvoker<ShowServiceRequest, ShowServiceResponse>
@@ -5667,8 +5319,7 @@ public class RomaAsyncClient {
      *
      * 通过任务ID查询指定任务的信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskRequest 请求对象
      * @return CompletableFuture<ShowTaskResponse>
@@ -5682,8 +5333,7 @@ public class RomaAsyncClient {
      *
      * 通过任务ID查询指定任务的信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskRequest 请求对象
      * @return AsyncInvoker<ShowTaskRequest, ShowTaskResponse>
@@ -5697,8 +5347,7 @@ public class RomaAsyncClient {
      *
      * 测试数据源连通性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartTestDatasourceRequest 请求对象
      * @return CompletableFuture<StartTestDatasourceResponse>
@@ -5712,8 +5361,7 @@ public class RomaAsyncClient {
      *
      * 测试数据源连通性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartTestDatasourceRequest 请求对象
      * @return AsyncInvoker<StartTestDatasourceRequest, StartTestDatasourceResponse>
@@ -5729,8 +5377,7 @@ public class RomaAsyncClient {
      *
      * 手工停止当前执行的任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopTaskRequest 请求对象
      * @return CompletableFuture<StopTaskResponse>
@@ -5744,8 +5391,7 @@ public class RomaAsyncClient {
      *
      * 手工停止当前执行的任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopTaskRequest 请求对象
      * @return AsyncInvoker<StopTaskRequest, StopTaskResponse>
@@ -5759,8 +5405,7 @@ public class RomaAsyncClient {
      *
      * 在某个实例中取消部署后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UnpublishLiveDataApiV2Request 请求对象
      * @return CompletableFuture<UnpublishLiveDataApiV2Response>
@@ -5775,8 +5420,7 @@ public class RomaAsyncClient {
      *
      * 在某个实例中取消部署后端API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UnpublishLiveDataApiV2Request 请求对象
      * @return AsyncInvoker<UnpublishLiveDataApiV2Request, UnpublishLiveDataApiV2Response>
@@ -5792,8 +5436,7 @@ public class RomaAsyncClient {
      *
      * 设置客户端配置的访问控制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppAclRequest 请求对象
      * @return CompletableFuture<UpdateAppAclResponse>
@@ -5807,8 +5450,7 @@ public class RomaAsyncClient {
      *
      * 设置客户端配置的访问控制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppAclRequest 请求对象
      * @return AsyncInvoker<UpdateAppAclRequest, UpdateAppAclResponse>
@@ -5823,8 +5465,7 @@ public class RomaAsyncClient {
      *
      * 修改应用配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppConfigV2Request 请求对象
      * @return CompletableFuture<UpdateAppConfigV2Response>
@@ -5838,8 +5479,7 @@ public class RomaAsyncClient {
      *
      * 修改应用配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppConfigV2Request 请求对象
      * @return AsyncInvoker<UpdateAppConfigV2Request, UpdateAppConfigV2Response>
@@ -5855,8 +5495,7 @@ public class RomaAsyncClient {
      *
      * 修改客户端配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppQuotaRequest 请求对象
      * @return CompletableFuture<UpdateAppQuotaResponse>
@@ -5870,8 +5509,7 @@ public class RomaAsyncClient {
      *
      * 修改客户端配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppQuotaRequest 请求对象
      * @return AsyncInvoker<UpdateAppQuotaRequest, UpdateAppQuotaResponse>
@@ -5887,8 +5525,7 @@ public class RomaAsyncClient {
      *
      * 修改命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCommandRequest 请求对象
      * @return CompletableFuture<UpdateCommandResponse>
@@ -5902,8 +5539,7 @@ public class RomaAsyncClient {
      *
      * 修改命令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCommandRequest 请求对象
      * @return AsyncInvoker<UpdateCommandRequest, UpdateCommandResponse>
@@ -5918,8 +5554,7 @@ public class RomaAsyncClient {
      *
      * 修改自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCustomAuthorizerV2Request 请求对象
      * @return CompletableFuture<UpdateCustomAuthorizerV2Response>
@@ -5934,8 +5569,7 @@ public class RomaAsyncClient {
      *
      * 修改自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCustomAuthorizerV2Request 请求对象
      * @return AsyncInvoker<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response>
@@ -5951,8 +5585,7 @@ public class RomaAsyncClient {
      *
      * 修改数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDatasourceInfoRequest 请求对象
      * @return CompletableFuture<UpdateDatasourceInfoResponse>
@@ -5967,8 +5600,7 @@ public class RomaAsyncClient {
      *
      * 修改数据源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDatasourceInfoRequest 请求对象
      * @return AsyncInvoker<UpdateDatasourceInfoRequest, UpdateDatasourceInfoResponse>
@@ -5984,8 +5616,7 @@ public class RomaAsyncClient {
      *
      * 修改设备信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceRequest 请求对象
      * @return CompletableFuture<UpdateDeviceResponse>
@@ -5999,8 +5630,7 @@ public class RomaAsyncClient {
      *
      * 修改设备信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceRequest 请求对象
      * @return AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>
@@ -6015,8 +5645,7 @@ public class RomaAsyncClient {
      *
      * 修改设备分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceGroupRequest 请求对象
      * @return CompletableFuture<UpdateDeviceGroupResponse>
@@ -6030,8 +5659,7 @@ public class RomaAsyncClient {
      *
      * 修改设备分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceGroupRequest 请求对象
      * @return AsyncInvoker<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse>
@@ -6047,8 +5675,7 @@ public class RomaAsyncClient {
      *
      * 通过任务ID和调度ID修改调度计划
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDispatchesRequest 请求对象
      * @return CompletableFuture<UpdateDispatchesResponse>
@@ -6062,8 +5689,7 @@ public class RomaAsyncClient {
      *
      * 通过任务ID和调度ID修改调度计划
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDispatchesRequest 请求对象
      * @return AsyncInvoker<UpdateDispatchesRequest, UpdateDispatchesResponse>
@@ -6079,8 +5705,7 @@ public class RomaAsyncClient {
      *
      * 修改绑定的域名所对应的配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainV2Request 请求对象
      * @return CompletableFuture<UpdateDomainV2Response>
@@ -6094,8 +5719,7 @@ public class RomaAsyncClient {
      *
      * 修改绑定的域名所对应的配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainV2Request 请求对象
      * @return AsyncInvoker<UpdateDomainV2Request, UpdateDomainV2Response>
@@ -6111,8 +5735,7 @@ public class RomaAsyncClient {
      *
      * 修改指定环境的信息。其中可修改的属性为：name、remark，其它属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEnvironmentV2Request 请求对象
      * @return CompletableFuture<UpdateEnvironmentV2Response>
@@ -6126,8 +5749,7 @@ public class RomaAsyncClient {
      *
      * 修改指定环境的信息。其中可修改的属性为：name、remark，其它属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEnvironmentV2Request 请求对象
      * @return AsyncInvoker<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response>
@@ -6143,8 +5765,7 @@ public class RomaAsyncClient {
      *
      * 修改环境变量。环境变量引用位置为api的后端服务地址时，修改对应环境变量会将使用该变量的所有api重新发布。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEnvironmentVariableV2Request 请求对象
      * @return CompletableFuture<UpdateEnvironmentVariableV2Response>
@@ -6159,8 +5780,7 @@ public class RomaAsyncClient {
      *
      * 修改环境变量。环境变量引用位置为api的后端服务地址时，修改对应环境变量会将使用该变量的所有api重新发布。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEnvironmentVariableV2Request 请求对象
      * @return AsyncInvoker<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response>
@@ -6176,8 +5796,7 @@ public class RomaAsyncClient {
      *
      * 在某个实例中更新后端API的参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLiveDataApiV2Request 请求对象
      * @return CompletableFuture<UpdateLiveDataApiV2Response>
@@ -6191,8 +5810,7 @@ public class RomaAsyncClient {
      *
      * 在某个实例中更新后端API的参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLiveDataApiV2Request 请求对象
      * @return AsyncInvoker<UpdateLiveDataApiV2Request, UpdateLiveDataApiV2Response>
@@ -6208,8 +5826,7 @@ public class RomaAsyncClient {
      *
      * 修改Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMqsInstanceTopicRequest 请求对象
      * @return CompletableFuture<UpdateMqsInstanceTopicResponse>
@@ -6224,8 +5841,7 @@ public class RomaAsyncClient {
      *
      * 修改Topic。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMqsInstanceTopicRequest 请求对象
      * @return AsyncInvoker<UpdateMqsInstanceTopicRequest, UpdateMqsInstanceTopicResponse>
@@ -6241,8 +5857,7 @@ public class RomaAsyncClient {
      *
      * 修改组合任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMultiTasksRequest 请求对象
      * @return CompletableFuture<UpdateMultiTasksResponse>
@@ -6256,8 +5871,7 @@ public class RomaAsyncClient {
      *
      * 修改组合任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMultiTasksRequest 请求对象
      * @return AsyncInvoker<UpdateMultiTasksRequest, UpdateMultiTasksResponse>
@@ -6273,8 +5887,7 @@ public class RomaAsyncClient {
      *
      * 该接口用于修改指定的订阅管理
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNotificationRequest 请求对象
      * @return CompletableFuture<UpdateNotificationResponse>
@@ -6288,8 +5901,7 @@ public class RomaAsyncClient {
      *
      * 该接口用于修改指定的订阅管理
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNotificationRequest 请求对象
      * @return AsyncInvoker<UpdateNotificationRequest, UpdateNotificationResponse>
@@ -6305,8 +5917,7 @@ public class RomaAsyncClient {
      *
      * 修改产品信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProductRequest 请求对象
      * @return CompletableFuture<UpdateProductResponse>
@@ -6320,8 +5931,7 @@ public class RomaAsyncClient {
      *
      * 修改产品信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProductRequest 请求对象
      * @return AsyncInvoker<UpdateProductRequest, UpdateProductResponse>
@@ -6336,8 +5946,7 @@ public class RomaAsyncClient {
      *
      * 修改产品模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProductTemplateRequest 请求对象
      * @return CompletableFuture<UpdateProductTemplateResponse>
@@ -6352,8 +5961,7 @@ public class RomaAsyncClient {
      *
      * 修改产品模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProductTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateProductTemplateRequest, UpdateProductTemplateResponse>
@@ -6369,8 +5977,7 @@ public class RomaAsyncClient {
      *
      * 更新产品主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProductTopicRequest 请求对象
      * @return CompletableFuture<UpdateProductTopicResponse>
@@ -6384,8 +5991,7 @@ public class RomaAsyncClient {
      *
      * 更新产品主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProductTopicRequest 请求对象
      * @return AsyncInvoker<UpdateProductTopicRequest, UpdateProductTopicResponse>
@@ -6401,8 +6007,7 @@ public class RomaAsyncClient {
      *
      * 修改服务属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePropertyRequest 请求对象
      * @return CompletableFuture<UpdatePropertyResponse>
@@ -6416,8 +6021,7 @@ public class RomaAsyncClient {
      *
      * 修改服务属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePropertyRequest 请求对象
      * @return AsyncInvoker<UpdatePropertyRequest, UpdatePropertyResponse>
@@ -6433,8 +6037,7 @@ public class RomaAsyncClient {
      *
      * 修改请求属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRequestPropertyRequest 请求对象
      * @return CompletableFuture<UpdateRequestPropertyResponse>
@@ -6449,8 +6052,7 @@ public class RomaAsyncClient {
      *
      * 修改请求属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRequestPropertyRequest 请求对象
      * @return AsyncInvoker<UpdateRequestPropertyRequest, UpdateRequestPropertyResponse>
@@ -6466,8 +6068,7 @@ public class RomaAsyncClient {
      *
      * 修改指定流控策略的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<UpdateRequestThrottlingPolicyV2Response>
@@ -6482,8 +6083,7 @@ public class RomaAsyncClient {
      *
      * 修改指定流控策略的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response>
@@ -6499,8 +6099,7 @@ public class RomaAsyncClient {
      *
      * 修改响应属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResponsePropertyRequest 请求对象
      * @return CompletableFuture<UpdateResponsePropertyResponse>
@@ -6515,8 +6114,7 @@ public class RomaAsyncClient {
      *
      * 修改响应属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResponsePropertyRequest 请求对象
      * @return AsyncInvoker<UpdateResponsePropertyRequest, UpdateResponsePropertyResponse>
@@ -6532,8 +6130,7 @@ public class RomaAsyncClient {
      *
      * 修改规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRuleRequest 请求对象
      * @return CompletableFuture<UpdateRuleResponse>
@@ -6547,8 +6144,7 @@ public class RomaAsyncClient {
      *
      * 修改规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRuleRequest 请求对象
      * @return AsyncInvoker<UpdateRuleRequest, UpdateRuleResponse>
@@ -6562,8 +6158,7 @@ public class RomaAsyncClient {
      *
      * 修改服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServiceRequest 请求对象
      * @return CompletableFuture<UpdateServiceResponse>
@@ -6577,8 +6172,7 @@ public class RomaAsyncClient {
      *
      * 修改服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServiceRequest 请求对象
      * @return AsyncInvoker<UpdateServiceRequest, UpdateServiceResponse>
@@ -6593,8 +6187,7 @@ public class RomaAsyncClient {
      *
      * 修改指定签名密钥的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSignatureKeyV2Request 请求对象
      * @return CompletableFuture<UpdateSignatureKeyV2Response>
@@ -6609,8 +6202,7 @@ public class RomaAsyncClient {
      *
      * 修改指定签名密钥的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response>
@@ -6626,8 +6218,7 @@ public class RomaAsyncClient {
      *
      * 修改某个流控策略下的某个特殊设置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSpecialThrottlingConfigurationV2Request 请求对象
      * @return CompletableFuture<UpdateSpecialThrottlingConfigurationV2Response>
@@ -6642,8 +6233,7 @@ public class RomaAsyncClient {
      *
      * 修改某个流控策略下的某个特殊设置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSpecialThrottlingConfigurationV2Request 请求对象
      * @return AsyncInvoker<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response>
@@ -6659,8 +6249,7 @@ public class RomaAsyncClient {
      *
      * 更新普通任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskRequest 请求对象
      * @return CompletableFuture<UpdateTaskResponse>
@@ -6674,8 +6263,7 @@ public class RomaAsyncClient {
      *
      * 更新普通任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskRequest 请求对象
      * @return AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse>
@@ -6689,8 +6277,7 @@ public class RomaAsyncClient {
      *
      * 更新Topic权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTopicAccessPolicyRequest 请求对象
      * @return CompletableFuture<UpdateTopicAccessPolicyResponse>
@@ -6705,8 +6292,7 @@ public class RomaAsyncClient {
      *
      * 更新Topic权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTopicAccessPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse>
@@ -6722,8 +6308,7 @@ public class RomaAsyncClient {
      *
      * 导入产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadProductRequest 请求对象
      * @return CompletableFuture<UploadProductResponse>
@@ -6737,8 +6322,7 @@ public class RomaAsyncClient {
      *
      * 导入产品
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadProductRequest 请求对象
      * @return AsyncInvoker<UploadProductRequest, UploadProductResponse>
@@ -6755,8 +6339,7 @@ public class RomaAsyncClient {
      * 
      * 删除ACL策略时，如果存在ACL策略与API绑定关系，则无法删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteAclV2Request 请求对象
      * @return CompletableFuture<BatchDeleteAclV2Response>
@@ -6772,8 +6355,7 @@ public class RomaAsyncClient {
      * 
      * 删除ACL策略时，如果存在ACL策略与API绑定关系，则无法删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteAclV2Request 请求对象
      * @return AsyncInvoker<BatchDeleteAclV2Request, BatchDeleteAclV2Response>
@@ -6789,8 +6371,7 @@ public class RomaAsyncClient {
      *
      * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP[或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。](tag:hws;hws_hk;hcs;fcs;g42;)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAclStrategyV2Request 请求对象
      * @return CompletableFuture<CreateAclStrategyV2Response>
@@ -6804,8 +6385,7 @@ public class RomaAsyncClient {
      *
      * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP[或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。](tag:hws;hws_hk;hcs;fcs;g42;)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAclStrategyV2Request 请求对象
      * @return AsyncInvoker<CreateAclStrategyV2Request, CreateAclStrategyV2Response>
@@ -6821,8 +6401,7 @@ public class RomaAsyncClient {
      *
      * 删除指定的ACL策略， 如果存在api与该ACL策略的绑定关系，则无法删除
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAclV2Request 请求对象
      * @return CompletableFuture<DeleteAclV2Response>
@@ -6836,8 +6415,7 @@ public class RomaAsyncClient {
      *
      * 删除指定的ACL策略， 如果存在api与该ACL策略的绑定关系，则无法删除
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAclV2Request 请求对象
      * @return AsyncInvoker<DeleteAclV2Request, DeleteAclV2Response>
@@ -6851,8 +6429,7 @@ public class RomaAsyncClient {
      *
      * 查询所有的ACL策略列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAclStrategiesV2Request 请求对象
      * @return CompletableFuture<ListAclStrategiesV2Response>
@@ -6866,8 +6443,7 @@ public class RomaAsyncClient {
      *
      * 查询所有的ACL策略列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAclStrategiesV2Request 请求对象
      * @return AsyncInvoker<ListAclStrategiesV2Request, ListAclStrategiesV2Response>
@@ -6883,8 +6459,7 @@ public class RomaAsyncClient {
      *
      * 查询指定ACL策略的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAclPolicyV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfAclPolicyV2Response>
@@ -6899,8 +6474,7 @@ public class RomaAsyncClient {
      *
      * 查询指定ACL策略的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAclPolicyV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response>
@@ -6916,8 +6490,7 @@ public class RomaAsyncClient {
      *
      * 修改指定的ACL策略，其中可修改的属性为：acl_name、acl_type、acl_value，其它属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAclStrategyV2Request 请求对象
      * @return CompletableFuture<UpdateAclStrategyV2Response>
@@ -6931,8 +6504,7 @@ public class RomaAsyncClient {
      *
      * 修改指定的ACL策略，其中可修改的属性为：acl_name、acl_type、acl_value，其它属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAclStrategyV2Request 请求对象
      * @return AsyncInvoker<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response>
@@ -6952,8 +6524,7 @@ public class RomaAsyncClient {
      * 
      * 为指定的API绑定流控策略，绑定时，需要指定在哪个环境上生效。同一个API发布到不同的环境可以绑定不同的流控策略；一个API在发布到特定环境后只能绑定一个默认的流控策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<AssociateRequestThrottlingPolicyV2Response>
@@ -6972,8 +6543,7 @@ public class RomaAsyncClient {
      * 
      * 为指定的API绑定流控策略，绑定时，需要指定在哪个环境上生效。同一个API发布到不同的环境可以绑定不同的流控策略；一个API在发布到特定环境后只能绑定一个默认的流控策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response>
@@ -6989,8 +6559,7 @@ public class RomaAsyncClient {
      *
      * 批量解除API与流控策略的绑定关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDisassociateThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<BatchDisassociateThrottlingPolicyV2Response>
@@ -7005,8 +6574,7 @@ public class RomaAsyncClient {
      *
      * 批量解除API与流控策略的绑定关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDisassociateThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response>
@@ -7024,8 +6592,7 @@ public class RomaAsyncClient {
      * 
      * 注意：当action &#x3D; online时，接口返回的响应中publish_id，version_id， publish_time字段才有含义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchPublishOrOfflineApiV2Request 请求对象
      * @return CompletableFuture<BatchPublishOrOfflineApiV2Response>
@@ -7042,8 +6609,7 @@ public class RomaAsyncClient {
      * 
      * 注意：当action &#x3D; online时，接口返回的响应中publish_id，version_id， publish_time字段才有含义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchPublishOrOfflineApiV2Request 请求对象
      * @return AsyncInvoker<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response>
@@ -7061,8 +6627,7 @@ public class RomaAsyncClient {
      * 
      * 多个版本之间可以进行随意切换。但一个API在一个环境上，只能有一个版本生效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeApiVersionV2Request 请求对象
      * @return CompletableFuture<ChangeApiVersionV2Response>
@@ -7078,8 +6643,7 @@ public class RomaAsyncClient {
      * 
      * 多个版本之间可以进行随意切换。但一个API在一个环境上，只能有一个版本生效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeApiVersionV2Request 请求对象
      * @return AsyncInvoker<ChangeApiVersionV2Request, ChangeApiVersionV2Response>
@@ -7095,8 +6659,7 @@ public class RomaAsyncClient {
      *
      * 校验API分组名称是否存在。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckApiGroupsV2Request 请求对象
      * @return CompletableFuture<CheckApiGroupsV2Response>
@@ -7110,8 +6673,7 @@ public class RomaAsyncClient {
      *
      * 校验API分组名称是否存在。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckApiGroupsV2Request 请求对象
      * @return AsyncInvoker<CheckApiGroupsV2Request, CheckApiGroupsV2Response>
@@ -7127,8 +6689,7 @@ public class RomaAsyncClient {
      *
      * 校验API定义。校验API的路径或名称是否已存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckApisV2Request 请求对象
      * @return CompletableFuture<CheckApisV2Response>
@@ -7142,8 +6703,7 @@ public class RomaAsyncClient {
      *
      * 校验API定义。校验API的路径或名称是否已存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckApisV2Request 请求对象
      * @return AsyncInvoker<CheckApisV2Request, CheckApisV2Response>
@@ -7157,8 +6717,7 @@ public class RomaAsyncClient {
      *
      * API分组是API的管理单元，一个API分组等同于一个服务入口，创建API分组时，返回一个子域名作为访问入口。建议一个API分组下的API具有一定的相关性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiGroupV2Request 请求对象
      * @return CompletableFuture<CreateApiGroupV2Response>
@@ -7172,8 +6731,7 @@ public class RomaAsyncClient {
      *
      * API分组是API的管理单元，一个API分组等同于一个服务入口，创建API分组时，返回一个子域名作为访问入口。建议一个API分组下的API具有一定的相关性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiGroupV2Request 请求对象
      * @return AsyncInvoker<CreateApiGroupV2Request, CreateApiGroupV2Response>
@@ -7191,8 +6749,7 @@ public class RomaAsyncClient {
      * 
      * API分为两部分，第一部分为面向API使用者的API接口，定义了使用者如何调用这个API。第二部分面向API提供者，由API提供者定义这个API的真实的后端情况，定义了ROMA Connect如何去访问真实的后端服务。API的真实后端服务目前支持三种类型：传统的HTTP/HTTPS形式的web后端、[函数工作流、](tag:hws;hws_hk;hcs;fcs;g42;)MOCK。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiV2Request 请求对象
      * @return CompletableFuture<CreateApiV2Response>
@@ -7208,8 +6765,7 @@ public class RomaAsyncClient {
      * 
      * API分为两部分，第一部分为面向API使用者的API接口，定义了使用者如何调用这个API。第二部分面向API提供者，由API提供者定义这个API的真实的后端情况，定义了ROMA Connect如何去访问真实的后端服务。API的真实后端服务目前支持三种类型：传统的HTTP/HTTPS形式的web后端、[函数工作流、](tag:hws;hws_hk;hcs;fcs;g42;)MOCK。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiV2Request 请求对象
      * @return AsyncInvoker<CreateApiV2Request, CreateApiV2Response>
@@ -7227,8 +6783,7 @@ public class RomaAsyncClient {
      * 
      * 下线操作是将API从某个已发布的环境上下线，下线后，API将无法再被调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateOrDeletePublishRecordForApiV2Request 请求对象
      * @return CompletableFuture<CreateOrDeletePublishRecordForApiV2Response>
@@ -7247,8 +6802,7 @@ public class RomaAsyncClient {
      * 
      * 下线操作是将API从某个已发布的环境上下线，下线后，API将无法再被调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateOrDeletePublishRecordForApiV2Request 请求对象
      * @return AsyncInvoker<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response>
@@ -7264,8 +6818,7 @@ public class RomaAsyncClient {
      *
      * 调试一个API在指定运行环境下的定义，接口调用者需要具有操作该API的权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DebugApiV2Request 请求对象
      * @return CompletableFuture<DebugApiV2Response>
@@ -7279,8 +6832,7 @@ public class RomaAsyncClient {
      *
      * 调试一个API在指定运行环境下的定义，接口调用者需要具有操作该API的权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DebugApiV2Request 请求对象
      * @return AsyncInvoker<DebugApiV2Request, DebugApiV2Response>
@@ -7294,8 +6846,7 @@ public class RomaAsyncClient {
      *
      * 对某个生效中的API版本进行下线操作，下线后，API在该版本生效的环境中将不再能够被调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiByVersionIdV2Request 请求对象
      * @return CompletableFuture<DeleteApiByVersionIdV2Response>
@@ -7310,8 +6861,7 @@ public class RomaAsyncClient {
      *
      * 对某个生效中的API版本进行下线操作，下线后，API在该版本生效的环境中将不再能够被调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiByVersionIdV2Request 请求对象
      * @return AsyncInvoker<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response>
@@ -7329,8 +6879,7 @@ public class RomaAsyncClient {
      * 分组下存在API时分组无法删除，需要删除所有分组下的API后，再删除分组。
      * 删除分组时，会一并删除直接或间接关联到该分组下的所有资源，包括独立域名、SSL证书等等。并会将外部域名与子域名的绑定关系进行解除（取决于域名cname方式）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiGroupV2Request 请求对象
      * @return CompletableFuture<DeleteApiGroupV2Response>
@@ -7346,8 +6895,7 @@ public class RomaAsyncClient {
      * 分组下存在API时分组无法删除，需要删除所有分组下的API后，再删除分组。
      * 删除分组时，会一并删除直接或间接关联到该分组下的所有资源，包括独立域名、SSL证书等等。并会将外部域名与子域名的绑定关系进行解除（取决于域名cname方式）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiGroupV2Request 请求对象
      * @return AsyncInvoker<DeleteApiGroupV2Request, DeleteApiGroupV2Response>
@@ -7365,8 +6913,7 @@ public class RomaAsyncClient {
      * 
      * 删除API时，会删除该API所有相关的资源信息或绑定关系，如API的发布记录，绑定的后端服务，对APP的授权信息等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiV2Request 请求对象
      * @return CompletableFuture<DeleteApiV2Response>
@@ -7382,8 +6929,7 @@ public class RomaAsyncClient {
      * 
      * 删除API时，会删除该API所有相关的资源信息或绑定关系，如API的发布记录，绑定的后端服务，对APP的授权信息等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiV2Request 请求对象
      * @return AsyncInvoker<DeleteApiV2Request, DeleteApiV2Response>
@@ -7397,8 +6943,7 @@ public class RomaAsyncClient {
      *
      * 解除API与流控策略的绑定关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<DisassociateRequestThrottlingPolicyV2Response>
@@ -7413,8 +6958,7 @@ public class RomaAsyncClient {
      *
      * 解除API与流控策略的绑定关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response>
@@ -7432,8 +6976,7 @@ public class RomaAsyncClient {
      * 
      * 如果是租户操作，则查询该租户下所有的分组；如果是管理员操作，则查询的是所有租户的分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiGroupsV2Request 请求对象
      * @return CompletableFuture<ListApiGroupsV2Response>
@@ -7449,8 +6992,7 @@ public class RomaAsyncClient {
      * 
      * 如果是租户操作，则查询该租户下所有的分组；如果是管理员操作，则查询的是所有租户的分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiGroupsV2Request 请求对象
      * @return AsyncInvoker<ListApiGroupsV2Request, ListApiGroupsV2Response>
@@ -7472,8 +7014,7 @@ public class RomaAsyncClient {
      * 
      * 访问某个环境上的API，其实访问的就是其运行时的定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiRuntimeDefinitionV2Request 请求对象
      * @return CompletableFuture<ListApiRuntimeDefinitionV2Response>
@@ -7494,8 +7035,7 @@ public class RomaAsyncClient {
      * 
      * 访问某个环境上的API，其实访问的就是其运行时的定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiRuntimeDefinitionV2Request 请求对象
      * @return AsyncInvoker<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response>
@@ -7511,8 +7051,7 @@ public class RomaAsyncClient {
      *
      * 查询某个指定的版本详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionDetailV2Request 请求对象
      * @return CompletableFuture<ListApiVersionDetailV2Response>
@@ -7527,8 +7066,7 @@ public class RomaAsyncClient {
      *
      * 查询某个指定的版本详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionDetailV2Request 请求对象
      * @return AsyncInvoker<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response>
@@ -7544,8 +7082,7 @@ public class RomaAsyncClient {
      *
      * 查询某个API的历史版本。每个API在一个环境上最多存在10个历史版本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsV2Request 请求对象
      * @return CompletableFuture<ListApiVersionsV2Response>
@@ -7559,8 +7096,7 @@ public class RomaAsyncClient {
      *
      * 查询某个API的历史版本。每个API在一个环境上最多存在10个历史版本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsV2Request 请求对象
      * @return AsyncInvoker<ListApiVersionsV2Request, ListApiVersionsV2Response>
@@ -7576,8 +7112,7 @@ public class RomaAsyncClient {
      *
      * 查询某个流控策略上已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<ListApisBindedToRequestThrottlingPolicyV2Response>
@@ -7592,8 +7127,7 @@ public class RomaAsyncClient {
      *
      * 查询某个流控策略上已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response>
@@ -7609,8 +7143,7 @@ public class RomaAsyncClient {
      *
      * 查询所有未绑定到该流控策略上的自有API列表。需要API已经发布，未发布的API不予展示。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<ListApisUnbindedToRequestThrottlingPolicyV2Response>
@@ -7625,8 +7158,7 @@ public class RomaAsyncClient {
      *
      * 查询所有未绑定到该流控策略上的自有API列表。需要API已经发布，未发布的API不予展示。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response>
@@ -7642,8 +7174,7 @@ public class RomaAsyncClient {
      *
      * 查看API列表，返回API详细信息、发布信息等，但不能查看到后端服务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisV2Request 请求对象
      * @return CompletableFuture<ListApisV2Response>
@@ -7657,8 +7188,7 @@ public class RomaAsyncClient {
      *
      * 查看API列表，返回API详细信息、发布信息等，但不能查看到后端服务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisV2Request 请求对象
      * @return AsyncInvoker<ListApisV2Request, ListApisV2Response>
@@ -7672,8 +7202,7 @@ public class RomaAsyncClient {
      *
      * 查询某个API绑定的流控策略列表。每个环境上应该最多只有一个流控策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
      * @return CompletableFuture<ListRequestThrottlingPoliciesBindedToApiV2Response>
@@ -7688,8 +7217,7 @@ public class RomaAsyncClient {
      *
      * 查询某个API绑定的流控策略列表。每个环境上应该最多只有一个流控策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
      * @return AsyncInvoker<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response>
@@ -7705,8 +7233,7 @@ public class RomaAsyncClient {
      *
      * 查询指定分组的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfApiGroupV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfApiGroupV2Response>
@@ -7721,8 +7248,7 @@ public class RomaAsyncClient {
      *
      * 查询指定分组的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfApiGroupV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response>
@@ -7738,8 +7264,7 @@ public class RomaAsyncClient {
      *
      * 查看指定的API的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfApiV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfApiV2Response>
@@ -7753,8 +7278,7 @@ public class RomaAsyncClient {
      *
      * 查看指定的API的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfApiV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response>
@@ -7770,8 +7294,7 @@ public class RomaAsyncClient {
      *
      * 修改API分组属性。其中name和remark可修改，其他属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApiGroupV2Request 请求对象
      * @return CompletableFuture<UpdateApiGroupV2Response>
@@ -7785,8 +7308,7 @@ public class RomaAsyncClient {
      *
      * 修改API分组属性。其中name和remark可修改，其他属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApiGroupV2Request 请求对象
      * @return AsyncInvoker<UpdateApiGroupV2Request, UpdateApiGroupV2Response>
@@ -7802,8 +7324,7 @@ public class RomaAsyncClient {
      *
      * 修改指定API的信息，包括后端服务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApiV2Request 请求对象
      * @return CompletableFuture<UpdateApiV2Response>
@@ -7817,8 +7338,7 @@ public class RomaAsyncClient {
      *
      * 修改指定API的信息，包括后端服务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApiV2Request 请求对象
      * @return AsyncInvoker<UpdateApiV2Request, UpdateApiV2Response>
@@ -7832,8 +7352,7 @@ public class RomaAsyncClient {
      *
      * 批量解除API与ACL策略的绑定
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteApiAclBindingV2Request 请求对象
      * @return CompletableFuture<BatchDeleteApiAclBindingV2Response>
@@ -7848,8 +7367,7 @@ public class RomaAsyncClient {
      *
      * 批量解除API与ACL策略的绑定
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteApiAclBindingV2Request 请求对象
      * @return AsyncInvoker<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response>
@@ -7867,8 +7385,7 @@ public class RomaAsyncClient {
      * 
      * 同一个API发布到不同的环境可以绑定不同的ACL策略；一个API在发布到特定环境后只能绑定一个同一种类型的ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiAclBindingV2Request 请求对象
      * @return CompletableFuture<CreateApiAclBindingV2Response>
@@ -7885,8 +7402,7 @@ public class RomaAsyncClient {
      * 
      * 同一个API发布到不同的环境可以绑定不同的ACL策略；一个API在发布到特定环境后只能绑定一个同一种类型的ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiAclBindingV2Request 请求对象
      * @return AsyncInvoker<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response>
@@ -7902,8 +7418,7 @@ public class RomaAsyncClient {
      *
      * 解除某条API与ACL策略的绑定关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiAclBindingV2Request 请求对象
      * @return CompletableFuture<DeleteApiAclBindingV2Response>
@@ -7918,8 +7433,7 @@ public class RomaAsyncClient {
      *
      * 解除某条API与ACL策略的绑定关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiAclBindingV2Request 请求对象
      * @return AsyncInvoker<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response>
@@ -7935,8 +7449,7 @@ public class RomaAsyncClient {
      *
      * 查看API绑定的ACL策略列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAclPolicyBindedToApiV2Request 请求对象
      * @return CompletableFuture<ListAclPolicyBindedToApiV2Response>
@@ -7951,8 +7464,7 @@ public class RomaAsyncClient {
      *
      * 查看API绑定的ACL策略列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAclPolicyBindedToApiV2Request 请求对象
      * @return AsyncInvoker<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response>
@@ -7968,8 +7480,7 @@ public class RomaAsyncClient {
      *
      * 查看ACL策略绑定的API列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToAclPolicyV2Request 请求对象
      * @return CompletableFuture<ListApisBindedToAclPolicyV2Response>
@@ -7984,8 +7495,7 @@ public class RomaAsyncClient {
      *
      * 查看ACL策略绑定的API列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToAclPolicyV2Request 请求对象
      * @return AsyncInvoker<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response>
@@ -8001,8 +7511,7 @@ public class RomaAsyncClient {
      *
      * 查看ACL策略未绑定的API列表，需要API已发布
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToAclPolicyV2Request 请求对象
      * @return CompletableFuture<ListApisUnbindedToAclPolicyV2Response>
@@ -8017,8 +7526,7 @@ public class RomaAsyncClient {
      *
      * 查看ACL策略未绑定的API列表，需要API已发布
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToAclPolicyV2Request 请求对象
      * @return AsyncInvoker<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response>
@@ -8034,8 +7542,7 @@ public class RomaAsyncClient {
      *
      * 解除API对APP的授权关系。解除授权后，APP将不再能够调用该API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelingAuthorizationV2Request 请求对象
      * @return CompletableFuture<CancelingAuthorizationV2Response>
@@ -8050,8 +7557,7 @@ public class RomaAsyncClient {
      *
      * 解除API对APP的授权关系。解除授权后，APP将不再能够调用该API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelingAuthorizationV2Request 请求对象
      * @return AsyncInvoker<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response>
@@ -8067,8 +7573,7 @@ public class RomaAsyncClient {
      *
      * APP创建成功后，还不能访问API，如果想要访问某个环境上的API，需要将该API在该环境上授权给APP。授权成功后，APP即可访问该环境上的这个API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAuthorizingAppsV2Request 请求对象
      * @return CompletableFuture<CreateAuthorizingAppsV2Response>
@@ -8083,8 +7588,7 @@ public class RomaAsyncClient {
      *
      * APP创建成功后，还不能访问API，如果想要访问某个环境上的API，需要将该API在该环境上授权给APP。授权成功后，APP即可访问该环境上的这个API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAuthorizingAppsV2Request 请求对象
      * @return AsyncInvoker<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response>
@@ -8100,8 +7604,7 @@ public class RomaAsyncClient {
      *
      * 查询APP已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToAppV2Request 请求对象
      * @return CompletableFuture<ListApisBindedToAppV2Response>
@@ -8116,8 +7619,7 @@ public class RomaAsyncClient {
      *
      * 查询APP已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToAppV2Request 请求对象
      * @return AsyncInvoker<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response>
@@ -8133,8 +7635,7 @@ public class RomaAsyncClient {
      *
      * 查询指定环境上某个APP未绑定的API列表，包括自有API和从云市场购买的API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToAppV2Request 请求对象
      * @return CompletableFuture<ListApisUnbindedToAppV2Response>
@@ -8149,8 +7650,7 @@ public class RomaAsyncClient {
      *
      * 查询指定环境上某个APP未绑定的API列表，包括自有API和从云市场购买的API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToAppV2Request 请求对象
      * @return AsyncInvoker<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response>
@@ -8166,8 +7666,7 @@ public class RomaAsyncClient {
      *
      * 查询API绑定的APP列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsBindedToApiV2Request 请求对象
      * @return CompletableFuture<ListAppsBindedToApiV2Response>
@@ -8182,8 +7681,7 @@ public class RomaAsyncClient {
      *
      * 查询API绑定的APP列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsBindedToApiV2Request 请求对象
      * @return AsyncInvoker<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response>
@@ -8199,8 +7697,7 @@ public class RomaAsyncClient {
      *
      * 查询指定APP下路径冲突的api列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDuplicateApisForAppV2Request 请求对象
      * @return CompletableFuture<ListDuplicateApisForAppV2Response>
@@ -8215,8 +7712,7 @@ public class RomaAsyncClient {
      *
      * 查询指定APP下路径冲突的api列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDuplicateApisForAppV2Request 请求对象
      * @return AsyncInvoker<ListDuplicateApisForAppV2Request, ListDuplicateApisForAppV2Response>
@@ -8233,8 +7729,7 @@ public class RomaAsyncClient {
      * - 设置应用的用户成员，为空数组时会清空已有应用成员列表
      * - 设置动作为全量更新非增量更新，应用的成员列表都会替换为当次请求的应用成员列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddUserToAppRequest 请求对象
      * @return CompletableFuture<AddUserToAppResponse>
@@ -8249,8 +7744,7 @@ public class RomaAsyncClient {
      * - 设置应用的用户成员，为空数组时会清空已有应用成员列表
      * - 设置动作为全量更新非增量更新，应用的成员列表都会替换为当次请求的应用成员列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddUserToAppRequest 请求对象
      * @return AsyncInvoker<AddUserToAppRequest, AddUserToAppResponse>
@@ -8265,8 +7759,7 @@ public class RomaAsyncClient {
      *
      * 查询用户成列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckAuthUsersOfAppRequest 请求对象
      * @return CompletableFuture<CheckAuthUsersOfAppResponse>
@@ -8280,8 +7773,7 @@ public class RomaAsyncClient {
      *
      * 查询用户成列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckAuthUsersOfAppRequest 请求对象
      * @return AsyncInvoker<CheckAuthUsersOfAppRequest, CheckAuthUsersOfAppResponse>
@@ -8297,8 +7789,7 @@ public class RomaAsyncClient {
      *
      * 查询应用的候选用户成员列表,会过滤掉异常状态用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckCanAuthUsersOfAppRequest 请求对象
      * @return CompletableFuture<CheckCanAuthUsersOfAppResponse>
@@ -8313,8 +7804,7 @@ public class RomaAsyncClient {
      *
      * 查询应用的候选用户成员列表,会过滤掉异常状态用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckCanAuthUsersOfAppRequest 请求对象
      * @return AsyncInvoker<CheckCanAuthUsersOfAppRequest, CheckCanAuthUsersOfAppResponse>
@@ -8330,8 +7820,7 @@ public class RomaAsyncClient {
      *
      * 查询应用详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRomaAppDetailsRequest 请求对象
      * @return CompletableFuture<CheckRomaAppDetailsResponse>
@@ -8345,8 +7834,7 @@ public class RomaAsyncClient {
      *
      * 查询应用详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRomaAppDetailsRequest 请求对象
      * @return AsyncInvoker<CheckRomaAppDetailsRequest, CheckRomaAppDetailsResponse>
@@ -8362,8 +7850,7 @@ public class RomaAsyncClient {
      *
      * 查询应用密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRomaAppSecretRequest 请求对象
      * @return CompletableFuture<CheckRomaAppSecretResponse>
@@ -8377,8 +7864,7 @@ public class RomaAsyncClient {
      *
      * 查询应用密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRomaAppSecretRequest 请求对象
      * @return AsyncInvoker<CheckRomaAppSecretRequest, CheckRomaAppSecretResponse>
@@ -8394,8 +7880,7 @@ public class RomaAsyncClient {
      *
      * 创建应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRomaAppRequest 请求对象
      * @return CompletableFuture<CreateRomaAppResponse>
@@ -8409,8 +7894,7 @@ public class RomaAsyncClient {
      *
      * 创建应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRomaAppRequest 请求对象
      * @return AsyncInvoker<CreateRomaAppRequest, CreateRomaAppResponse>
@@ -8425,8 +7909,7 @@ public class RomaAsyncClient {
      *
      * 删除单个应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRomaAppRequest 请求对象
      * @return CompletableFuture<DeleteRomaAppResponse>
@@ -8440,8 +7923,7 @@ public class RomaAsyncClient {
      *
      * 删除单个应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRomaAppRequest 请求对象
      * @return AsyncInvoker<DeleteRomaAppRequest, DeleteRomaAppResponse>
@@ -8456,8 +7938,7 @@ public class RomaAsyncClient {
      *
      * 查询应用列表，支持条件查询，所有条件是并且的关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRomaAppRequest 请求对象
      * @return CompletableFuture<ListRomaAppResponse>
@@ -8471,8 +7952,7 @@ public class RomaAsyncClient {
      *
      * 查询应用列表，支持条件查询，所有条件是并且的关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRomaAppRequest 请求对象
      * @return AsyncInvoker<ListRomaAppRequest, ListRomaAppResponse>
@@ -8486,8 +7966,7 @@ public class RomaAsyncClient {
      *
      * 重置应用密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetRomaAppSecretRequest 请求对象
      * @return CompletableFuture<ResetRomaAppSecretResponse>
@@ -8501,8 +7980,7 @@ public class RomaAsyncClient {
      *
      * 重置应用密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetRomaAppSecretRequest 请求对象
      * @return AsyncInvoker<ResetRomaAppSecretRequest, ResetRomaAppSecretResponse>
@@ -8518,8 +7996,7 @@ public class RomaAsyncClient {
      *
      * 更新应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRomaAppRequest 请求对象
      * @return CompletableFuture<UpdateRomaAppResponse>
@@ -8533,8 +8010,7 @@ public class RomaAsyncClient {
      *
      * 更新应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRomaAppRequest 请求对象
      * @return AsyncInvoker<UpdateRomaAppRequest, UpdateRomaAppResponse>
@@ -8549,8 +8025,7 @@ public class RomaAsyncClient {
      *
      * 校验指定条件的应用是否存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateRomaAppRequest 请求对象
      * @return CompletableFuture<ValidateRomaAppResponse>
@@ -8564,8 +8039,7 @@ public class RomaAsyncClient {
      *
      * 校验指定条件的应用是否存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateRomaAppRequest 请求对象
      * @return AsyncInvoker<ValidateRomaAppRequest, ValidateRomaAppResponse>
@@ -8581,8 +8055,7 @@ public class RomaAsyncClient {
      *
      * 查询作业进度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckAssetJobStatusRequest 请求对象
      * @return CompletableFuture<CheckAssetJobStatusResponse>
@@ -8596,8 +8069,7 @@ public class RomaAsyncClient {
      *
      * 查询作业进度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckAssetJobStatusRequest 请求对象
      * @return AsyncInvoker<CheckAssetJobStatusRequest, CheckAssetJobStatusResponse>
@@ -8616,8 +8088,7 @@ public class RomaAsyncClient {
      * - 最大支持100个应用和任务
      * - 一个用户同一时刻只能创建一个资产删除作业任务，没有Running状态的作业任务存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAssetRequest 请求对象
      * @return CompletableFuture<DeleteAssetResponse>
@@ -8634,8 +8105,7 @@ public class RomaAsyncClient {
      * - 最大支持100个应用和任务
      * - 一个用户同一时刻只能创建一个资产删除作业任务，没有Running状态的作业任务存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAssetRequest 请求对象
      * @return AsyncInvoker<DeleteAssetRequest, DeleteAssetResponse>
@@ -8650,8 +8120,7 @@ public class RomaAsyncClient {
      * - 导出作业执行成功后，通过该接口获取导出作业产生的资产包，仅能下载一次
      * - 可先压缩后存在数据库，下载后删除
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadAssetArchiveRequest 请求对象
      * @return CompletableFuture<DownloadAssetArchiveResponse>
@@ -8667,8 +8136,7 @@ public class RomaAsyncClient {
      * - 导出作业执行成功后，通过该接口获取导出作业产生的资产包，仅能下载一次
      * - 可先压缩后存在数据库，下载后删除
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadAssetArchiveRequest 请求对象
      * @return AsyncInvoker<DownloadAssetArchiveRequest, DownloadAssetArchiveResponse>
@@ -8687,8 +8155,7 @@ public class RomaAsyncClient {
      * - 最大支持100个应用和任务
      * - 一个用户同一时刻只能创建一个资产导出作业任务，没有Running状态的作业任务存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportAssetRequest 请求对象
      * @return CompletableFuture<ExportAssetResponse>
@@ -8705,8 +8172,7 @@ public class RomaAsyncClient {
      * - 最大支持100个应用和任务
      * - 一个用户同一时刻只能创建一个资产导出作业任务，没有Running状态的作业任务存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportAssetRequest 请求对象
      * @return AsyncInvoker<ExportAssetRequest, ExportAssetResponse>
@@ -8722,8 +8188,7 @@ public class RomaAsyncClient {
      * - 最大支持100个应用和任务
      * - 一个用户同一时刻只能创建一个资产导入作业任务，没有Running状态的作业任务存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportAssetRequest 请求对象
      * @return CompletableFuture<ImportAssetResponse>
@@ -8739,8 +8204,7 @@ public class RomaAsyncClient {
      * - 最大支持100个应用和任务
      * - 一个用户同一时刻只能创建一个资产导入作业任务，没有Running状态的作业任务存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportAssetRequest 请求对象
      * @return AsyncInvoker<ImportAssetRequest, ImportAssetResponse>
@@ -8754,8 +8218,7 @@ public class RomaAsyncClient {
      *
      * 查询字典详情,
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckDictionaryRequest 请求对象
      * @return CompletableFuture<CheckDictionaryResponse>
@@ -8769,8 +8232,7 @@ public class RomaAsyncClient {
      *
      * 查询字典详情,
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckDictionaryRequest 请求对象
      * @return AsyncInvoker<CheckDictionaryRequest, CheckDictionaryResponse>
@@ -8786,8 +8248,7 @@ public class RomaAsyncClient {
      *
      * 创建字典
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDictionaryRequest 请求对象
      * @return CompletableFuture<CreateDictionaryResponse>
@@ -8801,8 +8262,7 @@ public class RomaAsyncClient {
      *
      * 创建字典
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDictionaryRequest 请求对象
      * @return AsyncInvoker<CreateDictionaryRequest, CreateDictionaryResponse>
@@ -8818,8 +8278,7 @@ public class RomaAsyncClient {
      *
      * 删除单个字典，会同时删除该字典的所有子字典
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDictionaryRequest 请求对象
      * @return CompletableFuture<DeleteDictionaryResponse>
@@ -8833,8 +8292,7 @@ public class RomaAsyncClient {
      *
      * 删除单个字典，会同时删除该字典的所有子字典
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDictionaryRequest 请求对象
      * @return AsyncInvoker<DeleteDictionaryRequest, DeleteDictionaryResponse>
@@ -8850,8 +8308,7 @@ public class RomaAsyncClient {
      *
      * 查询字典列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDictionaryRequest 请求对象
      * @return CompletableFuture<ListDictionaryResponse>
@@ -8865,8 +8322,7 @@ public class RomaAsyncClient {
      *
      * 查询字典列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDictionaryRequest 请求对象
      * @return AsyncInvoker<ListDictionaryRequest, ListDictionaryResponse>
@@ -8882,8 +8338,7 @@ public class RomaAsyncClient {
      *
      * 更新字典
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDictionaryRequest 请求对象
      * @return CompletableFuture<UpdateDictionaryResponse>
@@ -8897,8 +8352,7 @@ public class RomaAsyncClient {
      *
      * 更新字典
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDictionaryRequest 请求对象
      * @return AsyncInvoker<UpdateDictionaryRequest, UpdateDictionaryResponse>
@@ -8914,8 +8368,7 @@ public class RomaAsyncClient {
      *
      * 校验指定条件的字典是否存在，支持字典名称和字典编码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateDictionaryRequest 请求对象
      * @return CompletableFuture<ValidateDictionaryResponse>
@@ -8929,8 +8382,7 @@ public class RomaAsyncClient {
      *
      * 校验指定条件的字典是否存在，支持字典名称和字典编码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateDictionaryRequest 请求对象
      * @return AsyncInvoker<ValidateDictionaryRequest, ValidateDictionaryResponse>
@@ -8946,8 +8398,7 @@ public class RomaAsyncClient {
      *
      * 获取符合条件的服务实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRomaInstanceListV2Request 请求对象
      * @return CompletableFuture<CheckRomaInstanceListV2Response>
@@ -8962,8 +8413,7 @@ public class RomaAsyncClient {
      *
      * 获取符合条件的服务实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRomaInstanceListV2Request 请求对象
      * @return AsyncInvoker<CheckRomaInstanceListV2Request, CheckRomaInstanceListV2Response>
@@ -8979,8 +8429,7 @@ public class RomaAsyncClient {
      *
      * 查询MQS实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMqsInstanceRequest 请求对象
      * @return CompletableFuture<ListMqsInstanceResponse>
@@ -8994,8 +8443,7 @@ public class RomaAsyncClient {
      *
      * 查询MQS实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMqsInstanceRequest 请求对象
      * @return AsyncInvoker<ListMqsInstanceRequest, ListMqsInstanceResponse>
@@ -9011,8 +8459,7 @@ public class RomaAsyncClient {
      *
      * 查询指定MQS实例详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMqsInstanceRequest 请求对象
      * @return CompletableFuture<ShowMqsInstanceResponse>
@@ -9026,8 +8473,7 @@ public class RomaAsyncClient {
      *
      * 查询指定MQS实例详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMqsInstanceRequest 请求对象
      * @return AsyncInvoker<ShowMqsInstanceRequest, ShowMqsInstanceResponse>
@@ -9043,8 +8489,7 @@ public class RomaAsyncClient {
      *
      * 导出分组下API的定义信息，导出文件内容符合swagger标准规范。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportApiDefinitionsV2Request 请求对象
      * @return CompletableFuture<ExportApiDefinitionsV2Response>
@@ -9059,8 +8504,7 @@ public class RomaAsyncClient {
      *
      * 导出分组下API的定义信息，导出文件内容符合swagger标准规范。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportApiDefinitionsV2Request 请求对象
      * @return AsyncInvoker<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response>
@@ -9076,8 +8520,7 @@ public class RomaAsyncClient {
      *
      * 导出自定义后端API，导出文件内容符合swagger标准规范。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportLiveDataApiDefinitionsV2Request 请求对象
      * @return CompletableFuture<ExportLiveDataApiDefinitionsV2Response>
@@ -9092,8 +8535,7 @@ public class RomaAsyncClient {
      *
      * 导出自定义后端API，导出文件内容符合swagger标准规范。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportLiveDataApiDefinitionsV2Request 请求对象
      * @return AsyncInvoker<ExportLiveDataApiDefinitionsV2Request, ExportLiveDataApiDefinitionsV2Response>
@@ -9109,8 +8551,7 @@ public class RomaAsyncClient {
      *
      * 导入API。导入文件内容需要符合swagger标准规范，自定义扩展字段请参考用户指南的“附录：前端API的Swagger扩展定义”章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportApiDefinitionsV2Request 请求对象
      * @return CompletableFuture<ImportApiDefinitionsV2Response>
@@ -9125,8 +8566,7 @@ public class RomaAsyncClient {
      *
      * 导入API。导入文件内容需要符合swagger标准规范，自定义扩展字段请参考用户指南的“附录：前端API的Swagger扩展定义”章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportApiDefinitionsV2Request 请求对象
      * @return AsyncInvoker<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response>
@@ -9142,8 +8582,7 @@ public class RomaAsyncClient {
      *
      * 导入自定义后端API。导入文件内容需要符合swagger标准规范，自定义扩展字段请参考用户指南的“附录：后端API的Swagger扩展定义”章节
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportLiveDataApiDefinitionsV2Request 请求对象
      * @return CompletableFuture<ImportLiveDataApiDefinitionsV2Response>
@@ -9158,8 +8597,7 @@ public class RomaAsyncClient {
      *
      * 导入自定义后端API。导入文件内容需要符合swagger标准规范，自定义扩展字段请参考用户指南的“附录：后端API的Swagger扩展定义”章节
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportLiveDataApiDefinitionsV2Request 请求对象
      * @return AsyncInvoker<ImportLiveDataApiDefinitionsV2Request, ImportLiveDataApiDefinitionsV2Response>
@@ -9177,8 +8615,7 @@ public class RomaAsyncClient {
      * 
      * 若指定地址的后端实例已存在，则更新对应后端实例信息。若请求体中包含多个重复地址的后端实例定义，则使用第一个定义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddingBackendInstancesV2Request 请求对象
      * @return CompletableFuture<AddingBackendInstancesV2Response>
@@ -9195,8 +8632,7 @@ public class RomaAsyncClient {
      * 
      * 若指定地址的后端实例已存在，则更新对应后端实例信息。若请求体中包含多个重复地址的后端实例定义，则使用第一个定义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddingBackendInstancesV2Request 请求对象
      * @return AsyncInvoker<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response>
@@ -9212,8 +8648,7 @@ public class RomaAsyncClient {
      *
      * 批量修改后端服务器状态不可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDisableMembersRequest 请求对象
      * @return CompletableFuture<BatchDisableMembersResponse>
@@ -9227,8 +8662,7 @@ public class RomaAsyncClient {
      *
      * 批量修改后端服务器状态不可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDisableMembersRequest 请求对象
      * @return AsyncInvoker<BatchDisableMembersRequest, BatchDisableMembersResponse>
@@ -9244,8 +8678,7 @@ public class RomaAsyncClient {
      *
      * 批量修改后端服务器状态可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchEnableMembersRequest 请求对象
      * @return CompletableFuture<BatchEnableMembersResponse>
@@ -9259,8 +8692,7 @@ public class RomaAsyncClient {
      *
      * 批量修改后端服务器状态可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchEnableMembersRequest 请求对象
      * @return AsyncInvoker<BatchEnableMembersRequest, BatchEnableMembersResponse>
@@ -9278,8 +8710,7 @@ public class RomaAsyncClient {
      * 
      * 若指定名称的后端服务器组已存在，则更新对应后端服务器组信息。若请求体中包含多个重复名称的后端服务器定义，则使用第一个定义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMemberGroupRequest 请求对象
      * @return CompletableFuture<CreateMemberGroupResponse>
@@ -9295,8 +8726,7 @@ public class RomaAsyncClient {
      * 
      * 若指定名称的后端服务器组已存在，则更新对应后端服务器组信息。若请求体中包含多个重复名称的后端服务器定义，则使用第一个定义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMemberGroupRequest 请求对象
      * @return AsyncInvoker<CreateMemberGroupRequest, CreateMemberGroupResponse>
@@ -9312,8 +8742,7 @@ public class RomaAsyncClient {
      *
      * 创建相同的VPC通道关联到多个实例。同一个项目下VPC通道名称不可重复。注意：实例特性vpc_name_modifiable配置为off时才可使用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectVpcChannelRequest 请求对象
      * @return CompletableFuture<CreateProjectVpcChannelResponse>
@@ -9328,8 +8757,7 @@ public class RomaAsyncClient {
      *
      * 创建相同的VPC通道关联到多个实例。同一个项目下VPC通道名称不可重复。注意：实例特性vpc_name_modifiable配置为off时才可使用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectVpcChannelRequest 请求对象
      * @return AsyncInvoker<CreateProjectVpcChannelRequest, CreateProjectVpcChannelResponse>
@@ -9345,8 +8773,7 @@ public class RomaAsyncClient {
      *
      * 同步VPC通道到多个实例。注意：实例特性vpc_name_modifiable配置为off时才可使用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectVpcChannelSyncsRequest 请求对象
      * @return CompletableFuture<CreateProjectVpcChannelSyncsResponse>
@@ -9361,8 +8788,7 @@ public class RomaAsyncClient {
      *
      * 同步VPC通道到多个实例。注意：实例特性vpc_name_modifiable配置为off时才可使用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectVpcChannelSyncsRequest 请求对象
      * @return AsyncInvoker<CreateProjectVpcChannelSyncsRequest, CreateProjectVpcChannelSyncsResponse>
@@ -9379,8 +8805,7 @@ public class RomaAsyncClient {
      * 在ROMA Connect APIC中创建连接私有VPC资源的通道，并在创建API时将后端节点配置为使用这些VPC通道，以便ROMA Connect APIC直接访问私有VPC资源。
      * &gt; 每个用户默认最多创建200个VPC通道，如需支持更多请联系技术支持调整配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcChannelV2Request 请求对象
      * @return CompletableFuture<CreateVpcChannelV2Response>
@@ -9395,8 +8820,7 @@ public class RomaAsyncClient {
      * 在ROMA Connect APIC中创建连接私有VPC资源的通道，并在创建API时将后端节点配置为使用这些VPC通道，以便ROMA Connect APIC直接访问私有VPC资源。
      * &gt; 每个用户默认最多创建200个VPC通道，如需支持更多请联系技术支持调整配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcChannelV2Request 请求对象
      * @return AsyncInvoker<CreateVpcChannelV2Request, CreateVpcChannelV2Response>
@@ -9412,8 +8836,7 @@ public class RomaAsyncClient {
      *
      * 删除指定VPC通道中的后端实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackendInstanceV2Request 请求对象
      * @return CompletableFuture<DeleteBackendInstanceV2Response>
@@ -9428,8 +8851,7 @@ public class RomaAsyncClient {
      *
      * 删除指定VPC通道中的后端实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackendInstanceV2Request 请求对象
      * @return AsyncInvoker<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response>
@@ -9445,8 +8867,7 @@ public class RomaAsyncClient {
      *
      * 删除指定的VPC通道后端服务器组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMemberGroupRequest 请求对象
      * @return CompletableFuture<DeleteMemberGroupResponse>
@@ -9460,8 +8881,7 @@ public class RomaAsyncClient {
      *
      * 删除指定的VPC通道后端服务器组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMemberGroupRequest 请求对象
      * @return AsyncInvoker<DeleteMemberGroupRequest, DeleteMemberGroupResponse>
@@ -9477,8 +8897,7 @@ public class RomaAsyncClient {
      *
      * 删除指定的VPC通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcChannelV2Request 请求对象
      * @return CompletableFuture<DeleteVpcChannelV2Response>
@@ -9492,8 +8911,7 @@ public class RomaAsyncClient {
      *
      * 删除指定的VPC通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcChannelV2Request 请求对象
      * @return AsyncInvoker<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response>
@@ -9509,8 +8927,7 @@ public class RomaAsyncClient {
      *
      * 查看指定VPC通道的后端实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackendInstancesV2Request 请求对象
      * @return CompletableFuture<ListBackendInstancesV2Response>
@@ -9525,8 +8942,7 @@ public class RomaAsyncClient {
      *
      * 查看指定VPC通道的后端实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackendInstancesV2Request 请求对象
      * @return AsyncInvoker<ListBackendInstancesV2Request, ListBackendInstancesV2Response>
@@ -9542,8 +8958,7 @@ public class RomaAsyncClient {
      *
      * 查询VPC通道后端云服务组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMemberGroupsRequest 请求对象
      * @return CompletableFuture<ListMemberGroupsResponse>
@@ -9557,8 +8972,7 @@ public class RomaAsyncClient {
      *
      * 查询VPC通道后端云服务组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMemberGroupsRequest 请求对象
      * @return AsyncInvoker<ListMemberGroupsRequest, ListMemberGroupsResponse>
@@ -9574,8 +8988,7 @@ public class RomaAsyncClient {
      *
      * 查询项目下所有实例的VPC通道列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectVpcChannelsV2Request 请求对象
      * @return CompletableFuture<ListProjectVpcChannelsV2Response>
@@ -9590,8 +9003,7 @@ public class RomaAsyncClient {
      *
      * 查询项目下所有实例的VPC通道列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectVpcChannelsV2Request 请求对象
      * @return AsyncInvoker<ListProjectVpcChannelsV2Request, ListProjectVpcChannelsV2Response>
@@ -9607,8 +9019,7 @@ public class RomaAsyncClient {
      *
      * 查看VPC通道列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcChannelsV2Request 请求对象
      * @return CompletableFuture<ListVpcChannelsV2Response>
@@ -9622,8 +9033,7 @@ public class RomaAsyncClient {
      *
      * 查看VPC通道列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcChannelsV2Request 请求对象
      * @return AsyncInvoker<ListVpcChannelsV2Request, ListVpcChannelsV2Response>
@@ -9639,8 +9049,7 @@ public class RomaAsyncClient {
      *
      * 查看指定的VPC通道后端服务器组详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfMemberGroupRequest 请求对象
      * @return CompletableFuture<ShowDetailsOfMemberGroupResponse>
@@ -9655,8 +9064,7 @@ public class RomaAsyncClient {
      *
      * 查看指定的VPC通道后端服务器组详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfMemberGroupRequest 请求对象
      * @return AsyncInvoker<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse>
@@ -9672,8 +9080,7 @@ public class RomaAsyncClient {
      *
      * 查看指定的VPC通道详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfVpcChannelV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfVpcChannelV2Response>
@@ -9688,8 +9095,7 @@ public class RomaAsyncClient {
      *
      * 查看指定的VPC通道详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfVpcChannelV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response>
@@ -9705,8 +9111,7 @@ public class RomaAsyncClient {
      *
      * 更新指定的VPC通道的后端实例。更新时，使用传入的请求参数对对应云服务组的后端实例进行全量覆盖修改。若未指定修改的云服务器组，则进行全量覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBackendInstancesV2Request 请求对象
      * @return CompletableFuture<UpdateBackendInstancesV2Response>
@@ -9721,8 +9126,7 @@ public class RomaAsyncClient {
      *
      * 更新指定的VPC通道的后端实例。更新时，使用传入的请求参数对对应云服务组的后端实例进行全量覆盖修改。若未指定修改的云服务器组，则进行全量覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBackendInstancesV2Request 请求对象
      * @return AsyncInvoker<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response>
@@ -9738,8 +9142,7 @@ public class RomaAsyncClient {
      *
      * 修改VPC通道健康检查。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHealthCheckRequest 请求对象
      * @return CompletableFuture<UpdateHealthCheckResponse>
@@ -9753,8 +9156,7 @@ public class RomaAsyncClient {
      *
      * 修改VPC通道健康检查。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHealthCheckRequest 请求对象
      * @return AsyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse>
@@ -9770,8 +9172,7 @@ public class RomaAsyncClient {
      *
      * 更新指定VPC通道后端服务器组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMemberGroupRequest 请求对象
      * @return CompletableFuture<UpdateMemberGroupResponse>
@@ -9785,8 +9186,7 @@ public class RomaAsyncClient {
      *
      * 更新指定VPC通道后端服务器组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMemberGroupRequest 请求对象
      * @return AsyncInvoker<UpdateMemberGroupRequest, UpdateMemberGroupResponse>
@@ -9802,8 +9202,7 @@ public class RomaAsyncClient {
      *
      * 项目下根据VPC通道名称批量修改多个多个实例下的VPC通道。若实例下不存在该VPC通道则创建。注意：实例特性vpc_name_modifiable配置为off时才可使用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectVpcChannelRequest 请求对象
      * @return CompletableFuture<UpdateProjectVpcChannelResponse>
@@ -9818,8 +9217,7 @@ public class RomaAsyncClient {
      *
      * 项目下根据VPC通道名称批量修改多个多个实例下的VPC通道。若实例下不存在该VPC通道则创建。注意：实例特性vpc_name_modifiable配置为off时才可使用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectVpcChannelRequest 请求对象
      * @return AsyncInvoker<UpdateProjectVpcChannelRequest, UpdateProjectVpcChannelResponse>
@@ -9839,8 +9237,7 @@ public class RomaAsyncClient {
      * 
      * 使用传入的后端服务器组列表对VPC通道进行全量覆盖，若后端服务器组列表为空，则会全量删除已有的服务器组；
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcChannelV2Request 请求对象
      * @return CompletableFuture<UpdateVpcChannelV2Response>
@@ -9858,8 +9255,7 @@ public class RomaAsyncClient {
      * 
      * 使用传入的后端服务器组列表对VPC通道进行全量覆盖，若后端服务器组列表为空，则会全量删除已有的服务器组；
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcChannelV2Request 请求对象
      * @return AsyncInvoker<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response>

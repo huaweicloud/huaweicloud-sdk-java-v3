@@ -24,8 +24,7 @@ public class WafAsyncClient {
      *
      * 绑定证书到域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ApplyCertificateToHostRequest 请求对象
      * @return CompletableFuture<ApplyCertificateToHostResponse>
@@ -40,8 +39,7 @@ public class WafAsyncClient {
      *
      * 绑定证书到域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ApplyCertificateToHostRequest 请求对象
      * @return AsyncInvoker<ApplyCertificateToHostRequest, ApplyCertificateToHostResponse>
@@ -60,8 +58,7 @@ public class WafAsyncClient {
      *  - 2.waf版本只支持升配，不支持降配；扩展包数量可以增加或者减少，但不支持数量减少为0 
      *  - 3.不支持同时升降配，如增加域名扩展包数量，同时减少规则扩展包数量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangePrepaidCloudWafRequest 请求对象
      * @return CompletableFuture<ChangePrepaidCloudWafResponse>
@@ -79,8 +76,7 @@ public class WafAsyncClient {
      *  - 2.waf版本只支持升配，不支持降配；扩展包数量可以增加或者减少，但不支持数量减少为0 
      *  - 3.不支持同时升降配，如增加域名扩展包数量，同时减少规则扩展包数量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangePrepaidCloudWafRequest 请求对象
      * @return AsyncInvoker<ChangePrepaidCloudWafRequest, ChangePrepaidCloudWafResponse>
@@ -96,8 +92,7 @@ public class WafAsyncClient {
      *
      * 创建防篡改规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAntiTamperRuleRequest 请求对象
      * @return CompletableFuture<CreateAntiTamperRuleResponse>
@@ -112,8 +107,7 @@ public class WafAsyncClient {
      *
      * 创建防篡改规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAntiTamperRuleRequest 请求对象
      * @return AsyncInvoker<CreateAntiTamperRuleRequest, CreateAntiTamperRuleResponse>
@@ -129,8 +123,7 @@ public class WafAsyncClient {
      *
      * 创建证书
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCertificateRequest 请求对象
      * @return CompletableFuture<CreateCertificateResponse>
@@ -144,8 +137,7 @@ public class WafAsyncClient {
      *
      * 创建证书
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCertificateRequest 请求对象
      * @return AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse>
@@ -161,8 +153,7 @@ public class WafAsyncClient {
      *
      * 创建地理位置控制规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateGeoipRuleRequest 请求对象
      * @return CompletableFuture<CreateGeoipRuleResponse>
@@ -176,8 +167,7 @@ public class WafAsyncClient {
      *
      * 创建地理位置控制规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateGeoipRuleRequest 请求对象
      * @return AsyncInvoker<CreateGeoipRuleRequest, CreateGeoipRuleResponse>
@@ -193,8 +183,7 @@ public class WafAsyncClient {
      *
      * 创建云模式防护域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHostRequest 请求对象
      * @return CompletableFuture<CreateHostResponse>
@@ -208,8 +197,7 @@ public class WafAsyncClient {
      *
      * 创建云模式防护域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHostRequest 请求对象
      * @return AsyncInvoker<CreateHostRequest, CreateHostResponse>
@@ -223,8 +211,7 @@ public class WafAsyncClient {
      *
      * 创建全局白名单(原误报屏蔽)规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateIgnoreRuleRequest 请求对象
      * @return CompletableFuture<CreateIgnoreRuleResponse>
@@ -238,8 +225,7 @@ public class WafAsyncClient {
      *
      * 创建全局白名单(原误报屏蔽)规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateIgnoreRuleRequest 请求对象
      * @return AsyncInvoker<CreateIgnoreRuleRequest, CreateIgnoreRuleResponse>
@@ -255,8 +241,7 @@ public class WafAsyncClient {
      *
      * 创建WAF独享引擎实例。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return CompletableFuture<CreateInstanceResponse>
@@ -270,8 +255,7 @@ public class WafAsyncClient {
      *
      * 创建WAF独享引擎实例。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
@@ -287,8 +271,7 @@ public class WafAsyncClient {
      *
      * 创建ip地址组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateIpGroupRequest 请求对象
      * @return CompletableFuture<CreateIpGroupResponse>
@@ -302,8 +285,7 @@ public class WafAsyncClient {
      *
      * 创建ip地址组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateIpGroupRequest 请求对象
      * @return AsyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse>
@@ -318,8 +300,7 @@ public class WafAsyncClient {
      *
      * 创建防护策略，系统会在生成策略时配置一些默认的配置项，如果需要修改策略的默认配置项需要通过调用更新防护策略接口实现
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePolicyRequest 请求对象
      * @return CompletableFuture<CreatePolicyResponse>
@@ -333,8 +314,7 @@ public class WafAsyncClient {
      *
      * 创建防护策略，系统会在生成策略时配置一些默认的配置项，如果需要修改策略的默认配置项需要通过调用更新防护策略接口实现
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePolicyRequest 请求对象
      * @return AsyncInvoker<CreatePolicyRequest, CreatePolicyResponse>
@@ -349,8 +329,7 @@ public class WafAsyncClient {
      *
      * 创建独享模式域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePremiumHostRequest 请求对象
      * @return CompletableFuture<CreatePremiumHostResponse>
@@ -364,8 +343,7 @@ public class WafAsyncClient {
      *
      * 创建独享模式域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePremiumHostRequest 请求对象
      * @return AsyncInvoker<CreatePremiumHostRequest, CreatePremiumHostResponse>
@@ -381,8 +359,7 @@ public class WafAsyncClient {
      *
      * 购买包周期云模式waf
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePrepaidCloudWafRequest 请求对象
      * @return CompletableFuture<CreatePrepaidCloudWafResponse>
@@ -397,8 +374,7 @@ public class WafAsyncClient {
      *
      * 购买包周期云模式waf
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePrepaidCloudWafRequest 请求对象
      * @return AsyncInvoker<CreatePrepaidCloudWafRequest, CreatePrepaidCloudWafResponse>
@@ -414,8 +390,7 @@ public class WafAsyncClient {
      *
      * 创建隐私屏蔽防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePrivacyRuleRequest 请求对象
      * @return CompletableFuture<CreatePrivacyRuleResponse>
@@ -429,8 +404,7 @@ public class WafAsyncClient {
      *
      * 创建隐私屏蔽防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePrivacyRuleRequest 请求对象
      * @return AsyncInvoker<CreatePrivacyRuleRequest, CreatePrivacyRuleResponse>
@@ -446,8 +420,7 @@ public class WafAsyncClient {
      *
      * 创建引用表，引用表能够被CC攻击防护规则和精准访问防护中的规则所引用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateValueListRequest 请求对象
      * @return CompletableFuture<CreateValueListResponse>
@@ -461,8 +434,7 @@ public class WafAsyncClient {
      *
      * 创建引用表，引用表能够被CC攻击防护规则和精准访问防护中的规则所引用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateValueListRequest 请求对象
      * @return AsyncInvoker<CreateValueListRequest, CreateValueListResponse>
@@ -478,8 +450,7 @@ public class WafAsyncClient {
      *
      * 创建黑白名单规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateWhiteblackipRuleRequest 请求对象
      * @return CompletableFuture<CreateWhiteblackipRuleResponse>
@@ -494,8 +465,7 @@ public class WafAsyncClient {
      *
      * 创建黑白名单规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateWhiteblackipRuleRequest 请求对象
      * @return AsyncInvoker<CreateWhiteblackipRuleRequest, CreateWhiteblackipRuleResponse>
@@ -511,8 +481,7 @@ public class WafAsyncClient {
      *
      * 删除防篡改防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAntitamperRuleRequest 请求对象
      * @return CompletableFuture<DeleteAntitamperRuleResponse>
@@ -527,8 +496,7 @@ public class WafAsyncClient {
      *
      * 删除防篡改防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAntitamperRuleRequest 请求对象
      * @return AsyncInvoker<DeleteAntitamperRuleRequest, DeleteAntitamperRuleResponse>
@@ -544,8 +512,7 @@ public class WafAsyncClient {
      *
      * 删除证书
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCertificateRequest 请求对象
      * @return CompletableFuture<DeleteCertificateResponse>
@@ -559,8 +526,7 @@ public class WafAsyncClient {
      *
      * 删除证书
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCertificateRequest 请求对象
      * @return AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>
@@ -576,8 +542,7 @@ public class WafAsyncClient {
      *
      * 删除地理位置控制防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteGeoipRuleRequest 请求对象
      * @return CompletableFuture<DeleteGeoipRuleResponse>
@@ -591,8 +556,7 @@ public class WafAsyncClient {
      *
      * 删除地理位置控制防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteGeoipRuleRequest 请求对象
      * @return AsyncInvoker<DeleteGeoipRuleRequest, DeleteGeoipRuleResponse>
@@ -608,8 +572,7 @@ public class WafAsyncClient {
      *
      * 删除云模式防护域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHostRequest 请求对象
      * @return CompletableFuture<DeleteHostResponse>
@@ -623,8 +586,7 @@ public class WafAsyncClient {
      *
      * 删除云模式防护域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHostRequest 请求对象
      * @return AsyncInvoker<DeleteHostRequest, DeleteHostResponse>
@@ -638,8 +600,7 @@ public class WafAsyncClient {
      *
      * 删除全局白名单(原误报屏蔽)防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIgnoreRuleRequest 请求对象
      * @return CompletableFuture<DeleteIgnoreRuleResponse>
@@ -653,8 +614,7 @@ public class WafAsyncClient {
      *
      * 删除全局白名单(原误报屏蔽)防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIgnoreRuleRequest 请求对象
      * @return AsyncInvoker<DeleteIgnoreRuleRequest, DeleteIgnoreRuleResponse>
@@ -670,8 +630,7 @@ public class WafAsyncClient {
      *
      * 删除WAF独享引擎信息。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return CompletableFuture<DeleteInstanceResponse>
@@ -685,8 +644,7 @@ public class WafAsyncClient {
      *
      * 删除WAF独享引擎信息。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
@@ -702,8 +660,7 @@ public class WafAsyncClient {
      *
      * 删除ip地址组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIpGroupRequest 请求对象
      * @return CompletableFuture<DeleteIpGroupResponse>
@@ -717,8 +674,7 @@ public class WafAsyncClient {
      *
      * 删除ip地址组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIpGroupRequest 请求对象
      * @return AsyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse>
@@ -733,8 +689,7 @@ public class WafAsyncClient {
      *
      * 删除防护策略，若策略正在使用，则需要先接解除域名与策略的绑定关系才能删除策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePolicyRequest 请求对象
      * @return CompletableFuture<DeletePolicyResponse>
@@ -748,8 +703,7 @@ public class WafAsyncClient {
      *
      * 删除防护策略，若策略正在使用，则需要先接解除域名与策略的绑定关系才能删除策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePolicyRequest 请求对象
      * @return AsyncInvoker<DeletePolicyRequest, DeletePolicyResponse>
@@ -764,8 +718,7 @@ public class WafAsyncClient {
      *
      * 删除独享模式域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePremiumHostRequest 请求对象
      * @return CompletableFuture<DeletePremiumHostResponse>
@@ -779,8 +732,7 @@ public class WafAsyncClient {
      *
      * 删除独享模式域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePremiumHostRequest 请求对象
      * @return AsyncInvoker<DeletePremiumHostRequest, DeletePremiumHostResponse>
@@ -796,8 +748,7 @@ public class WafAsyncClient {
      *
      * 删除隐私屏蔽防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePrivacyRuleRequest 请求对象
      * @return CompletableFuture<DeletePrivacyRuleResponse>
@@ -811,8 +762,7 @@ public class WafAsyncClient {
      *
      * 删除隐私屏蔽防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePrivacyRuleRequest 请求对象
      * @return AsyncInvoker<DeletePrivacyRuleRequest, DeletePrivacyRuleResponse>
@@ -828,8 +778,7 @@ public class WafAsyncClient {
      *
      * 删除引用表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteValueListRequest 请求对象
      * @return CompletableFuture<DeleteValueListResponse>
@@ -843,8 +792,7 @@ public class WafAsyncClient {
      *
      * 删除引用表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteValueListRequest 请求对象
      * @return AsyncInvoker<DeleteValueListRequest, DeleteValueListResponse>
@@ -860,8 +808,7 @@ public class WafAsyncClient {
      *
      * 删除黑白名单防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteWhiteBlackIpRuleRequest 请求对象
      * @return CompletableFuture<DeleteWhiteBlackIpRuleResponse>
@@ -876,8 +823,7 @@ public class WafAsyncClient {
      *
      * 删除黑白名单防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteWhiteBlackIpRuleRequest 请求对象
      * @return AsyncInvoker<DeleteWhiteBlackIpRuleRequest, DeleteWhiteBlackIpRuleResponse>
@@ -893,8 +839,7 @@ public class WafAsyncClient {
      *
      * 查询防篡改规则列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAntitamperRuleRequest 请求对象
      * @return CompletableFuture<ListAntitamperRuleResponse>
@@ -908,8 +853,7 @@ public class WafAsyncClient {
      *
      * 查询防篡改规则列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAntitamperRuleRequest 请求对象
      * @return AsyncInvoker<ListAntitamperRuleRequest, ListAntitamperRuleResponse>
@@ -925,8 +869,7 @@ public class WafAsyncClient {
      *
      * 查询安全统计带宽数据。需要注意的是，安全统计相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBandwidthTimelineRequest 请求对象
      * @return CompletableFuture<ListBandwidthTimelineResponse>
@@ -941,8 +884,7 @@ public class WafAsyncClient {
      *
      * 查询安全统计带宽数据。需要注意的是，安全统计相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBandwidthTimelineRequest 请求对象
      * @return AsyncInvoker<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse>
@@ -958,8 +900,7 @@ public class WafAsyncClient {
      *
      * 查询证书列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCertificatesRequest 请求对象
      * @return CompletableFuture<ListCertificatesResponse>
@@ -973,8 +914,7 @@ public class WafAsyncClient {
      *
      * 查询证书列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCertificatesRequest 请求对象
      * @return AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse>
@@ -990,8 +930,7 @@ public class WafAsyncClient {
      *
      * 查询全部防护域名列表，包括云模式和独享模式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCompositeHostsRequest 请求对象
      * @return CompletableFuture<ListCompositeHostsResponse>
@@ -1005,8 +944,7 @@ public class WafAsyncClient {
      *
      * 查询全部防护域名列表，包括云模式和独享模式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCompositeHostsRequest 请求对象
      * @return AsyncInvoker<ListCompositeHostsRequest, ListCompositeHostsResponse>
@@ -1022,8 +960,7 @@ public class WafAsyncClient {
      *
      * 查询攻击事件列表，该API暂时不支持查询全部防护事件，pagesize参数不可设为-1，由于性能原因，数据量越大消耗的内存越大，后端最多限制查询10000条数据，例如：自定义时间段内的数据超过了10000条，就无法查出page为101，pagesize为100之后的数据，需要调整时间区间，再进行查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventRequest 请求对象
      * @return CompletableFuture<ListEventResponse>
@@ -1037,8 +974,7 @@ public class WafAsyncClient {
      *
      * 查询攻击事件列表，该API暂时不支持查询全部防护事件，pagesize参数不可设为-1，由于性能原因，数据量越大消耗的内存越大，后端最多限制查询10000条数据，例如：自定义时间段内的数据超过了10000条，就无法查出page为101，pagesize为100之后的数据，需要调整时间区间，再进行查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventRequest 请求对象
      * @return AsyncInvoker<ListEventRequest, ListEventResponse>
@@ -1052,8 +988,7 @@ public class WafAsyncClient {
      *
      * 查询地理位置访问控制规则列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGeoipRuleRequest 请求对象
      * @return CompletableFuture<ListGeoipRuleResponse>
@@ -1067,8 +1002,7 @@ public class WafAsyncClient {
      *
      * 查询地理位置访问控制规则列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGeoipRuleRequest 请求对象
      * @return AsyncInvoker<ListGeoipRuleRequest, ListGeoipRuleResponse>
@@ -1083,8 +1017,7 @@ public class WafAsyncClient {
      *
      * 查询云模式防护域名列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostRequest 请求对象
      * @return CompletableFuture<ListHostResponse>
@@ -1098,8 +1031,7 @@ public class WafAsyncClient {
      *
      * 查询云模式防护域名列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostRequest 请求对象
      * @return AsyncInvoker<ListHostRequest, ListHostResponse>
@@ -1113,8 +1045,7 @@ public class WafAsyncClient {
      *
      * 返回路由信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostRouteRequest 请求对象
      * @return CompletableFuture<ListHostRouteResponse>
@@ -1128,8 +1059,7 @@ public class WafAsyncClient {
      *
      * 返回路由信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostRouteRequest 请求对象
      * @return AsyncInvoker<ListHostRouteRequest, ListHostRouteResponse>
@@ -1144,8 +1074,7 @@ public class WafAsyncClient {
      *
      * 查询全局白名单(原误报屏蔽)规则列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIgnoreRuleRequest 请求对象
      * @return CompletableFuture<ListIgnoreRuleResponse>
@@ -1159,8 +1088,7 @@ public class WafAsyncClient {
      *
      * 查询全局白名单(原误报屏蔽)规则列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIgnoreRuleRequest 请求对象
      * @return AsyncInvoker<ListIgnoreRuleRequest, ListIgnoreRuleResponse>
@@ -1176,8 +1104,7 @@ public class WafAsyncClient {
      *
      * 查询WAF独享引擎列表。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceRequest 请求对象
      * @return CompletableFuture<ListInstanceResponse>
@@ -1191,8 +1118,7 @@ public class WafAsyncClient {
      *
      * 查询WAF独享引擎列表。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceRequest 请求对象
      * @return AsyncInvoker<ListInstanceRequest, ListInstanceResponse>
@@ -1207,8 +1133,7 @@ public class WafAsyncClient {
      *
      * 查询地址组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIpGroupRequest 请求对象
      * @return CompletableFuture<ListIpGroupResponse>
@@ -1222,8 +1147,7 @@ public class WafAsyncClient {
      *
      * 查询地址组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIpGroupRequest 请求对象
      * @return AsyncInvoker<ListIpGroupRequest, ListIpGroupResponse>
@@ -1237,8 +1161,7 @@ public class WafAsyncClient {
      *
      * 查询告警通知配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNoticeConfigsRequest 请求对象
      * @return CompletableFuture<ListNoticeConfigsResponse>
@@ -1252,8 +1175,7 @@ public class WafAsyncClient {
      *
      * 查询告警通知配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNoticeConfigsRequest 请求对象
      * @return AsyncInvoker<ListNoticeConfigsRequest, ListNoticeConfigsResponse>
@@ -1269,8 +1191,7 @@ public class WafAsyncClient {
      *
      * 查询安全总览分类统计TOP信息，包含受攻击域名 、攻击源ip、受攻击URL、攻击来源区域、攻击事件分布。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListOverviewsClassificationRequest 请求对象
      * @return CompletableFuture<ListOverviewsClassificationResponse>
@@ -1285,8 +1206,7 @@ public class WafAsyncClient {
      *
      * 查询安全总览分类统计TOP信息，包含受攻击域名 、攻击源ip、受攻击URL、攻击来源区域、攻击事件分布。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListOverviewsClassificationRequest 请求对象
      * @return AsyncInvoker<ListOverviewsClassificationRequest, ListOverviewsClassificationResponse>
@@ -1302,8 +1222,7 @@ public class WafAsyncClient {
      *
      * 查询防护策略列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPolicyRequest 请求对象
      * @return CompletableFuture<ListPolicyResponse>
@@ -1317,8 +1236,7 @@ public class WafAsyncClient {
      *
      * 查询防护策略列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPolicyRequest 请求对象
      * @return AsyncInvoker<ListPolicyRequest, ListPolicyResponse>
@@ -1332,8 +1250,7 @@ public class WafAsyncClient {
      *
      * 独享模式域名列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPremiumHostRequest 请求对象
      * @return CompletableFuture<ListPremiumHostResponse>
@@ -1347,8 +1264,7 @@ public class WafAsyncClient {
      *
      * 独享模式域名列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPremiumHostRequest 请求对象
      * @return AsyncInvoker<ListPremiumHostRequest, ListPremiumHostResponse>
@@ -1364,8 +1280,7 @@ public class WafAsyncClient {
      *
      * 查询隐私屏蔽防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPrivacyRuleRequest 请求对象
      * @return CompletableFuture<ListPrivacyRuleResponse>
@@ -1379,8 +1294,7 @@ public class WafAsyncClient {
      *
      * 查询隐私屏蔽防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPrivacyRuleRequest 请求对象
      * @return AsyncInvoker<ListPrivacyRuleRequest, ListPrivacyRuleResponse>
@@ -1396,8 +1310,7 @@ public class WafAsyncClient {
      *
      * 查询安全统计qps次数。需要注意的是，安全统计相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQpsTimelineRequest 请求对象
      * @return CompletableFuture<ListQpsTimelineResponse>
@@ -1411,8 +1324,7 @@ public class WafAsyncClient {
      *
      * 查询安全统计qps次数。需要注意的是，安全统计相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQpsTimelineRequest 请求对象
      * @return AsyncInvoker<ListQpsTimelineRequest, ListQpsTimelineResponse>
@@ -1428,8 +1340,7 @@ public class WafAsyncClient {
      *
      * 查询安全总览中请求次数时间线统计数据。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestTimelineRequest 请求对象
      * @return CompletableFuture<ListRequestTimelineResponse>
@@ -1443,8 +1354,7 @@ public class WafAsyncClient {
      *
      * 查询安全总览中请求次数时间线统计数据。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestTimelineRequest 请求对象
      * @return AsyncInvoker<ListRequestTimelineRequest, ListRequestTimelineResponse>
@@ -1460,8 +1370,7 @@ public class WafAsyncClient {
      *
      * 查询安全总览请求与攻击数量。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStatisticsRequest 请求对象
      * @return CompletableFuture<ListStatisticsResponse>
@@ -1475,8 +1384,7 @@ public class WafAsyncClient {
      *
      * 查询安全总览请求与攻击数量。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStatisticsRequest 请求对象
      * @return AsyncInvoker<ListStatisticsRequest, ListStatisticsResponse>
@@ -1492,8 +1400,7 @@ public class WafAsyncClient {
      *
      * 查询业务异常TOP统计信息。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTopAbnormalRequest 请求对象
      * @return CompletableFuture<ListTopAbnormalResponse>
@@ -1507,8 +1414,7 @@ public class WafAsyncClient {
      *
      * 查询业务异常TOP统计信息。需要注意的是，安全总览相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTopAbnormalRequest 请求对象
      * @return AsyncInvoker<ListTopAbnormalRequest, ListTopAbnormalResponse>
@@ -1524,8 +1430,7 @@ public class WafAsyncClient {
      *
      * 查询引用表列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListValueListRequest 请求对象
      * @return CompletableFuture<ListValueListResponse>
@@ -1539,8 +1444,7 @@ public class WafAsyncClient {
      *
      * 查询引用表列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListValueListRequest 请求对象
      * @return AsyncInvoker<ListValueListRequest, ListValueListResponse>
@@ -1555,8 +1459,7 @@ public class WafAsyncClient {
      *
      * 查询黑白名单规则列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWhiteblackipRuleRequest 请求对象
      * @return CompletableFuture<ListWhiteblackipRuleResponse>
@@ -1571,8 +1474,7 @@ public class WafAsyncClient {
      *
      * 查询黑白名单规则列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWhiteblackipRuleRequest 请求对象
      * @return AsyncInvoker<ListWhiteblackipRuleRequest, ListWhiteblackipRuleResponse>
@@ -1588,8 +1490,7 @@ public class WafAsyncClient {
      *
      * 按企业项目迁移防护域名，仅专业版与独享版支持该功能
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MigrateCompositeHostsRequest 请求对象
      * @return CompletableFuture<MigrateCompositeHostsResponse>
@@ -1604,8 +1505,7 @@ public class WafAsyncClient {
      *
      * 按企业项目迁移防护域名，仅专业版与独享版支持该功能
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MigrateCompositeHostsRequest 请求对象
      * @return AsyncInvoker<MigrateCompositeHostsRequest, MigrateCompositeHostsResponse>
@@ -1621,8 +1521,7 @@ public class WafAsyncClient {
      *
      * 重命名WAF独享引擎。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RenameInstanceRequest 请求对象
      * @return CompletableFuture<RenameInstanceResponse>
@@ -1636,8 +1535,7 @@ public class WafAsyncClient {
      *
      * 重命名WAF独享引擎。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RenameInstanceRequest 请求对象
      * @return AsyncInvoker<RenameInstanceRequest, RenameInstanceResponse>
@@ -1653,8 +1551,7 @@ public class WafAsyncClient {
      *
      * 查询证书
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCertificateRequest 请求对象
      * @return CompletableFuture<ShowCertificateResponse>
@@ -1668,8 +1565,7 @@ public class WafAsyncClient {
      *
      * 查询证书
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCertificateRequest 请求对象
      * @return AsyncInvoker<ShowCertificateRequest, ShowCertificateResponse>
@@ -1685,8 +1581,7 @@ public class WafAsyncClient {
      *
      * 根据Id查询防护域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCompositeHostRequest 请求对象
      * @return CompletableFuture<ShowCompositeHostResponse>
@@ -1700,8 +1595,7 @@ public class WafAsyncClient {
      *
      * 根据Id查询防护域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCompositeHostRequest 请求对象
      * @return AsyncInvoker<ShowCompositeHostRequest, ShowCompositeHostResponse>
@@ -1717,8 +1611,7 @@ public class WafAsyncClient {
      *
      * 局点支持特性查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowConsoleConfigRequest 请求对象
      * @return CompletableFuture<ShowConsoleConfigResponse>
@@ -1732,8 +1625,7 @@ public class WafAsyncClient {
      *
      * 局点支持特性查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowConsoleConfigRequest 请求对象
      * @return AsyncInvoker<ShowConsoleConfigRequest, ShowConsoleConfigResponse>
@@ -1749,8 +1641,7 @@ public class WafAsyncClient {
      *
      * 查询指定事件id的防护事件详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEventRequest 请求对象
      * @return CompletableFuture<ShowEventResponse>
@@ -1764,8 +1655,7 @@ public class WafAsyncClient {
      *
      * 查询指定事件id的防护事件详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEventRequest 请求对象
      * @return AsyncInvoker<ShowEventRequest, ShowEventResponse>
@@ -1779,8 +1669,7 @@ public class WafAsyncClient {
      *
      * 根据防护域名Id查询云模式防护域名详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHostRequest 请求对象
      * @return CompletableFuture<ShowHostResponse>
@@ -1794,8 +1683,7 @@ public class WafAsyncClient {
      *
      * 根据防护域名Id查询云模式防护域名详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHostRequest 请求对象
      * @return AsyncInvoker<ShowHostRequest, ShowHostResponse>
@@ -1809,8 +1697,7 @@ public class WafAsyncClient {
      *
      * 查询WAF独享引擎信息。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return CompletableFuture<ShowInstanceResponse>
@@ -1824,8 +1711,7 @@ public class WafAsyncClient {
      *
      * 查询WAF独享引擎信息。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
@@ -1840,8 +1726,7 @@ public class WafAsyncClient {
      *
      * 查询ip地址组明细
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIpGroupRequest 请求对象
      * @return CompletableFuture<ShowIpGroupResponse>
@@ -1855,8 +1740,7 @@ public class WafAsyncClient {
      *
      * 查询ip地址组明细
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIpGroupRequest 请求对象
      * @return AsyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse>
@@ -1870,8 +1754,7 @@ public class WafAsyncClient {
      *
      * 查询lts配置信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLtsInfoConfigRequest 请求对象
      * @return CompletableFuture<ShowLtsInfoConfigResponse>
@@ -1885,8 +1768,7 @@ public class WafAsyncClient {
      *
      * 查询lts配置信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLtsInfoConfigRequest 请求对象
      * @return AsyncInvoker<ShowLtsInfoConfigRequest, ShowLtsInfoConfigResponse>
@@ -1902,8 +1784,7 @@ public class WafAsyncClient {
      *
      * 根据Id查询防护策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPolicyRequest 请求对象
      * @return CompletableFuture<ShowPolicyResponse>
@@ -1917,8 +1798,7 @@ public class WafAsyncClient {
      *
      * 根据Id查询防护策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPolicyRequest 请求对象
      * @return AsyncInvoker<ShowPolicyRequest, ShowPolicyResponse>
@@ -1932,8 +1812,7 @@ public class WafAsyncClient {
      *
      * 查看独享模式域名配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPremiumHostRequest 请求对象
      * @return CompletableFuture<ShowPremiumHostResponse>
@@ -1947,8 +1826,7 @@ public class WafAsyncClient {
      *
      * 查看独享模式域名配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPremiumHostRequest 请求对象
      * @return AsyncInvoker<ShowPremiumHostRequest, ShowPremiumHostResponse>
@@ -1964,8 +1842,7 @@ public class WafAsyncClient {
      *
      * 查询WAF回源Ip信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSourceIpRequest 请求对象
      * @return CompletableFuture<ShowSourceIpResponse>
@@ -1979,8 +1856,7 @@ public class WafAsyncClient {
      *
      * 查询WAF回源Ip信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSourceIpRequest 请求对象
      * @return AsyncInvoker<ShowSourceIpRequest, ShowSourceIpResponse>
@@ -1995,8 +1871,7 @@ public class WafAsyncClient {
      *
      * 查询租户订购信息，包括云模式包周期、按需计费、独享模式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubscriptionInfoRequest 请求对象
      * @return CompletableFuture<ShowSubscriptionInfoResponse>
@@ -2011,8 +1886,7 @@ public class WafAsyncClient {
      *
      * 查询租户订购信息，包括云模式包周期、按需计费、独享模式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubscriptionInfoRequest 请求对象
      * @return AsyncInvoker<ShowSubscriptionInfoRequest, ShowSubscriptionInfoResponse>
@@ -2028,8 +1902,7 @@ public class WafAsyncClient {
      *
      * 更新告警通知配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlertNoticeConfigRequest 请求对象
      * @return CompletableFuture<UpdateAlertNoticeConfigResponse>
@@ -2044,8 +1917,7 @@ public class WafAsyncClient {
      *
      * 更新告警通知配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlertNoticeConfigRequest 请求对象
      * @return AsyncInvoker<UpdateAlertNoticeConfigRequest, UpdateAlertNoticeConfigResponse>
@@ -2061,8 +1933,7 @@ public class WafAsyncClient {
      *
      * 修改证书
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCertificateRequest 请求对象
      * @return CompletableFuture<UpdateCertificateResponse>
@@ -2076,8 +1947,7 @@ public class WafAsyncClient {
      *
      * 修改证书
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCertificateRequest 请求对象
      * @return AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>
@@ -2093,8 +1963,7 @@ public class WafAsyncClient {
      *
      * 更新地理位置控制防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateGeoipRuleRequest 请求对象
      * @return CompletableFuture<UpdateGeoipRuleResponse>
@@ -2108,8 +1977,7 @@ public class WafAsyncClient {
      *
      * 更新地理位置控制防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateGeoipRuleRequest 请求对象
      * @return AsyncInvoker<UpdateGeoipRuleRequest, UpdateGeoipRuleResponse>
@@ -2125,8 +1993,7 @@ public class WafAsyncClient {
      *
      * 更新云模式防护域名配置，在没有填入源站信息server的原始数据的情况下，则新的源站信息server会覆盖源站信息，而不是新增源站。此外，请求体可只传需要更新的部分。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHostRequest 请求对象
      * @return CompletableFuture<UpdateHostResponse>
@@ -2140,8 +2007,7 @@ public class WafAsyncClient {
      *
      * 更新云模式防护域名配置，在没有填入源站信息server的原始数据的情况下，则新的源站信息server会覆盖源站信息，而不是新增源站。此外，请求体可只传需要更新的部分。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHostRequest 请求对象
      * @return AsyncInvoker<UpdateHostRequest, UpdateHostResponse>
@@ -2155,8 +2021,7 @@ public class WafAsyncClient {
      *
      * 修改域名防护状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHostProtectStatusRequest 请求对象
      * @return CompletableFuture<UpdateHostProtectStatusResponse>
@@ -2171,8 +2036,7 @@ public class WafAsyncClient {
      *
      * 修改域名防护状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHostProtectStatusRequest 请求对象
      * @return AsyncInvoker<UpdateHostProtectStatusRequest, UpdateHostProtectStatusResponse>
@@ -2188,8 +2052,7 @@ public class WafAsyncClient {
      *
      * 修改ip地址组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIpGroupRequest 请求对象
      * @return CompletableFuture<UpdateIpGroupResponse>
@@ -2203,8 +2066,7 @@ public class WafAsyncClient {
      *
      * 修改ip地址组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIpGroupRequest 请求对象
      * @return AsyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse>
@@ -2219,8 +2081,7 @@ public class WafAsyncClient {
      *
      * 配置全量日志lts，该接口可用来开启与关闭waf全量日志以及配置日志组和日志流。日志组id和日志流id可前往云日志服务获取。配置的日志流id要属于所配置的日志组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLtsInfoConfigRequest 请求对象
      * @return CompletableFuture<UpdateLtsInfoConfigResponse>
@@ -2234,8 +2095,7 @@ public class WafAsyncClient {
      *
      * 配置全量日志lts，该接口可用来开启与关闭waf全量日志以及配置日志组和日志流。日志组id和日志流id可前往云日志服务获取。配置的日志流id要属于所配置的日志组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLtsInfoConfigRequest 请求对象
      * @return AsyncInvoker<UpdateLtsInfoConfigRequest, UpdateLtsInfoConfigResponse>
@@ -2251,8 +2111,7 @@ public class WafAsyncClient {
      *
      * 更新防护策略，请求体可只传需要更新的部分
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePolicyRequest 请求对象
      * @return CompletableFuture<UpdatePolicyResponse>
@@ -2266,8 +2125,7 @@ public class WafAsyncClient {
      *
      * 更新防护策略，请求体可只传需要更新的部分
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePolicyRequest 请求对象
      * @return AsyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse>
@@ -2282,8 +2140,7 @@ public class WafAsyncClient {
      *
      * 更新防护策略的防护域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePolicyProtectHostRequest 请求对象
      * @return CompletableFuture<UpdatePolicyProtectHostResponse>
@@ -2298,8 +2155,7 @@ public class WafAsyncClient {
      *
      * 更新防护策略的防护域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePolicyProtectHostRequest 请求对象
      * @return AsyncInvoker<UpdatePolicyProtectHostRequest, UpdatePolicyProtectHostResponse>
@@ -2315,8 +2171,7 @@ public class WafAsyncClient {
      *
      * 修改单条规则的状态，用于开启或者关闭单条规则，比如关闭精准防护中某一条规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePolicyRuleStatusRequest 请求对象
      * @return CompletableFuture<UpdatePolicyRuleStatusResponse>
@@ -2331,8 +2186,7 @@ public class WafAsyncClient {
      *
      * 修改单条规则的状态，用于开启或者关闭单条规则，比如关闭精准防护中某一条规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePolicyRuleStatusRequest 请求对象
      * @return AsyncInvoker<UpdatePolicyRuleStatusRequest, UpdatePolicyRuleStatusResponse>
@@ -2348,8 +2202,7 @@ public class WafAsyncClient {
      *
      * 修改独享模式域名配置，在没有填入源站信息server的原始数据的情况下，则新的源站信息server会覆盖源站信息，而不是新增源站。此外，请求体可只传需要更新的部分。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePremiumHostRequest 请求对象
      * @return CompletableFuture<UpdatePremiumHostResponse>
@@ -2363,8 +2216,7 @@ public class WafAsyncClient {
      *
      * 修改独享模式域名配置，在没有填入源站信息server的原始数据的情况下，则新的源站信息server会覆盖源站信息，而不是新增源站。此外，请求体可只传需要更新的部分。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePremiumHostRequest 请求对象
      * @return AsyncInvoker<UpdatePremiumHostRequest, UpdatePremiumHostResponse>
@@ -2380,8 +2232,7 @@ public class WafAsyncClient {
      *
      * 修改独享模式域名防护状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePremiumHostProtectStatusRequest 请求对象
      * @return CompletableFuture<UpdatePremiumHostProtectStatusResponse>
@@ -2396,8 +2247,7 @@ public class WafAsyncClient {
      *
      * 修改独享模式域名防护状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePremiumHostProtectStatusRequest 请求对象
      * @return AsyncInvoker<UpdatePremiumHostProtectStatusRequest, UpdatePremiumHostProtectStatusResponse>
@@ -2413,8 +2263,7 @@ public class WafAsyncClient {
      *
      * 更新隐私屏蔽防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePrivacyRuleRequest 请求对象
      * @return CompletableFuture<UpdatePrivacyRuleResponse>
@@ -2428,8 +2277,7 @@ public class WafAsyncClient {
      *
      * 更新隐私屏蔽防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePrivacyRuleRequest 请求对象
      * @return AsyncInvoker<UpdatePrivacyRuleRequest, UpdatePrivacyRuleResponse>
@@ -2445,8 +2293,7 @@ public class WafAsyncClient {
      *
      * 修改引用表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateValueListRequest 请求对象
      * @return CompletableFuture<UpdateValueListResponse>
@@ -2460,8 +2307,7 @@ public class WafAsyncClient {
      *
      * 修改引用表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateValueListRequest 请求对象
      * @return AsyncInvoker<UpdateValueListRequest, UpdateValueListResponse>
@@ -2477,8 +2323,7 @@ public class WafAsyncClient {
      *
      * 更新黑白名单防护规则，可以更新ip/ip段以及防护动作等信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateWhiteblackipRuleRequest 请求对象
      * @return CompletableFuture<UpdateWhiteblackipRuleResponse>
@@ -2493,8 +2338,7 @@ public class WafAsyncClient {
      *
      * 更新黑白名单防护规则，可以更新ip/ip段以及防护动作等信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateWhiteblackipRuleRequest 请求对象
      * @return AsyncInvoker<UpdateWhiteblackipRuleRequest, UpdateWhiteblackipRuleResponse>

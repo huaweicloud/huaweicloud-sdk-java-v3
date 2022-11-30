@@ -24,8 +24,7 @@ public class CloudtestAsyncClient {
      *
      * 批量删除自定义测试服务类型用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteTestCaseRequest 请求对象
      * @return CompletableFuture<BatchDeleteTestCaseResponse>
@@ -39,8 +38,7 @@ public class CloudtestAsyncClient {
      *
      * 批量删除自定义测试服务类型用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteTestCaseRequest 请求对象
      * @return AsyncInvoker<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse>
@@ -56,8 +54,7 @@ public class CloudtestAsyncClient {
      *
      * 项目下创建计划
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePlanRequest 请求对象
      * @return CompletableFuture<CreatePlanResponse>
@@ -71,8 +68,7 @@ public class CloudtestAsyncClient {
      *
      * 项目下创建计划
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePlanRequest 请求对象
      * @return AsyncInvoker<CreatePlanRequest, CreatePlanResponse>
@@ -86,8 +82,7 @@ public class CloudtestAsyncClient {
      *
      * 通过接口CreateService注册成为云测的自定义服务。 注册完成后云测界面将会出现此自定义测试类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateServiceRequest 请求对象
      * @return CompletableFuture<CreateServiceResponse>
@@ -101,8 +96,7 @@ public class CloudtestAsyncClient {
      *
      * 通过接口CreateService注册成为云测的自定义服务。 注册完成后云测界面将会出现此自定义测试类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateServiceRequest 请求对象
      * @return AsyncInvoker<CreateServiceRequest, CreateServiceResponse>
@@ -118,8 +112,7 @@ public class CloudtestAsyncClient {
      *
      * 创建自定义测试服务类型用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTestCaseRequest 请求对象
      * @return CompletableFuture<CreateTestCaseResponse>
@@ -133,8 +126,7 @@ public class CloudtestAsyncClient {
      *
      * 创建自定义测试服务类型用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTestCaseRequest 请求对象
      * @return AsyncInvoker<CreateTestCaseRequest, CreateTestCaseResponse>
@@ -150,8 +142,7 @@ public class CloudtestAsyncClient {
      *
      * 计划中批量添加测试用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTestCaseInPlanRequest 请求对象
      * @return CompletableFuture<CreateTestCaseInPlanResponse>
@@ -166,8 +157,7 @@ public class CloudtestAsyncClient {
      *
      * 计划中批量添加测试用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTestCaseInPlanRequest 请求对象
      * @return AsyncInvoker<CreateTestCaseInPlanRequest, CreateTestCaseInPlanResponse>
@@ -183,8 +173,7 @@ public class CloudtestAsyncClient {
      *
      * 删除已注册服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServiceRequest 请求对象
      * @return CompletableFuture<DeleteServiceResponse>
@@ -198,8 +187,7 @@ public class CloudtestAsyncClient {
      *
      * 删除已注册服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServiceRequest 请求对象
      * @return AsyncInvoker<DeleteServiceRequest, DeleteServiceResponse>
@@ -215,8 +203,7 @@ public class CloudtestAsyncClient {
      *
      * 批量执行测试用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunTestCaseRequest 请求对象
      * @return CompletableFuture<RunTestCaseResponse>
@@ -230,8 +217,7 @@ public class CloudtestAsyncClient {
      *
      * 批量执行测试用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunTestCaseRequest 请求对象
      * @return AsyncInvoker<RunTestCaseRequest, RunTestCaseResponse>
@@ -245,8 +231,7 @@ public class CloudtestAsyncClient {
      *
      * 查询某个测试计划下的需求列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIssuesByPlanIdRequest 请求对象
      * @return CompletableFuture<ShowIssuesByPlanIdResponse>
@@ -260,8 +245,7 @@ public class CloudtestAsyncClient {
      *
      * 查询某个测试计划下的需求列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIssuesByPlanIdRequest 请求对象
      * @return AsyncInvoker<ShowIssuesByPlanIdRequest, ShowIssuesByPlanIdResponse>
@@ -277,8 +261,7 @@ public class CloudtestAsyncClient {
      *
      * 查询某测试计划下的操作历史
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPlanJournalsRequest 请求对象
      * @return CompletableFuture<ShowPlanJournalsResponse>
@@ -292,8 +275,7 @@ public class CloudtestAsyncClient {
      *
      * 查询某测试计划下的操作历史
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPlanJournalsRequest 请求对象
      * @return AsyncInvoker<ShowPlanJournalsRequest, ShowPlanJournalsResponse>
@@ -309,8 +291,7 @@ public class CloudtestAsyncClient {
      *
      * 项目下查询测试计划列表v2
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPlanListRequest 请求对象
      * @return CompletableFuture<ShowPlanListResponse>
@@ -324,8 +305,7 @@ public class CloudtestAsyncClient {
      *
      * 项目下查询测试计划列表v2
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPlanListRequest 请求对象
      * @return AsyncInvoker<ShowPlanListRequest, ShowPlanListResponse>
@@ -341,8 +321,7 @@ public class CloudtestAsyncClient {
      *
      * 项目下查询测试计划列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPlansRequest 请求对象
      * @return CompletableFuture<ShowPlansResponse>
@@ -356,8 +335,7 @@ public class CloudtestAsyncClient {
      *
      * 项目下查询测试计划列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPlansRequest 请求对象
      * @return AsyncInvoker<ShowPlansRequest, ShowPlansResponse>
@@ -371,8 +349,7 @@ public class CloudtestAsyncClient {
      *
      * 用户获取自己当前已经注册的服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRegisterServiceRequest 请求对象
      * @return CompletableFuture<ShowRegisterServiceResponse>
@@ -386,8 +363,7 @@ public class CloudtestAsyncClient {
      *
      * 用户获取自己当前已经注册的服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRegisterServiceRequest 请求对象
      * @return AsyncInvoker<ShowRegisterServiceRequest, ShowRegisterServiceResponse>
@@ -403,8 +379,7 @@ public class CloudtestAsyncClient {
      *
      * 获取测试用例详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTestCaseDetailRequest 请求对象
      * @return CompletableFuture<ShowTestCaseDetailResponse>
@@ -418,8 +393,7 @@ public class CloudtestAsyncClient {
      *
      * 获取测试用例详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTestCaseDetailRequest 请求对象
      * @return AsyncInvoker<ShowTestCaseDetailRequest, ShowTestCaseDetailResponse>
@@ -435,8 +409,7 @@ public class CloudtestAsyncClient {
      *
      * 通过用例编号获取测试用例详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTestCaseDetailV2Request 请求对象
      * @return CompletableFuture<ShowTestCaseDetailV2Response>
@@ -451,8 +424,7 @@ public class CloudtestAsyncClient {
      *
      * 通过用例编号获取测试用例详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTestCaseDetailV2Request 请求对象
      * @return AsyncInvoker<ShowTestCaseDetailV2Request, ShowTestCaseDetailV2Response>
@@ -468,8 +440,7 @@ public class CloudtestAsyncClient {
      *
      * 更新已注册服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServiceRequest 请求对象
      * @return CompletableFuture<UpdateServiceResponse>
@@ -483,8 +454,7 @@ public class CloudtestAsyncClient {
      *
      * 更新已注册服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServiceRequest 请求对象
      * @return AsyncInvoker<UpdateServiceRequest, UpdateServiceResponse>
@@ -500,8 +470,7 @@ public class CloudtestAsyncClient {
      *
      * 更新自定义测试服务类型用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTestCaseRequest 请求对象
      * @return CompletableFuture<UpdateTestCaseResponse>
@@ -515,8 +484,7 @@ public class CloudtestAsyncClient {
      *
      * 更新自定义测试服务类型用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTestCaseRequest 请求对象
      * @return AsyncInvoker<UpdateTestCaseRequest, UpdateTestCaseResponse>
@@ -532,8 +500,7 @@ public class CloudtestAsyncClient {
      *
      * 批量更新测试用例结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTestCaseResultRequest 请求对象
      * @return CompletableFuture<UpdateTestCaseResultResponse>
@@ -548,8 +515,7 @@ public class CloudtestAsyncClient {
      *
      * 批量更新测试用例结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTestCaseResultRequest 请求对象
      * @return AsyncInvoker<UpdateTestCaseResultRequest, UpdateTestCaseResultResponse>
@@ -565,8 +531,7 @@ public class CloudtestAsyncClient {
      *
      * 通过导入仓库中的文件生成接口测试套
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiTestSuiteByRepoFileRequest 请求对象
      * @return CompletableFuture<CreateApiTestSuiteByRepoFileResponse>
@@ -581,8 +546,7 @@ public class CloudtestAsyncClient {
      *
      * 通过导入仓库中的文件生成接口测试套
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiTestSuiteByRepoFileRequest 请求对象
      * @return AsyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse>
@@ -598,8 +562,7 @@ public class CloudtestAsyncClient {
      *
      * 获取云测的环境参数分组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentsRequest 请求对象
      * @return CompletableFuture<ListEnvironmentsResponse>
@@ -613,8 +576,7 @@ public class CloudtestAsyncClient {
      *
      * 获取云测的环境参数分组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentsRequest 请求对象
      * @return AsyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse>

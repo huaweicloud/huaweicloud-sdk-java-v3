@@ -24,8 +24,7 @@ public class SmnAsyncClient {
      *
      * 为指定Topic添加一个订阅者，如果订阅者的状态为未确认，则向订阅者发送一个确认的消息。待订阅者进行ConfirmSubscription确认后，该订阅者才能收到Topic发布的消息。单Topic默认可添加10000个订阅者，高并发场景下，可能会出现订阅者数量超过10000仍添加成功的情况，此为正常现象。接口是幂等的，如果添加已存在的订阅者，则返回成功，且status code为200，否则status code为201。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddSubscriptionRequest 请求对象
      * @return CompletableFuture<AddSubscriptionResponse>
@@ -39,8 +38,7 @@ public class SmnAsyncClient {
      *
      * 为指定Topic添加一个订阅者，如果订阅者的状态为未确认，则向订阅者发送一个确认的消息。待订阅者进行ConfirmSubscription确认后，该订阅者才能收到Topic发布的消息。单Topic默认可添加10000个订阅者，高并发场景下，可能会出现订阅者数量超过10000仍添加成功的情况，此为正常现象。接口是幂等的，如果添加已存在的订阅者，则返回成功，且status code为200，否则status code为201。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddSubscriptionRequest 请求对象
      * @return AsyncInvoker<AddSubscriptionRequest, AddSubscriptionResponse>
@@ -59,8 +57,7 @@ public class SmnAsyncClient {
      * 创建时，不允许重复key，如果数据库存在就覆盖。
      * 删除时，如果删除的标签不存在，默认处理成功，删除时不对标签字符集范围做校验。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateOrDeleteResourceTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateOrDeleteResourceTagsResponse>
@@ -78,8 +75,7 @@ public class SmnAsyncClient {
      * 创建时，不允许重复key，如果数据库存在就覆盖。
      * 删除时，如果删除的标签不存在，默认处理成功，删除时不对标签字符集范围做校验。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateOrDeleteResourceTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateOrDeleteResourceTagsRequest, BatchCreateOrDeleteResourceTagsResponse>
@@ -95,8 +91,7 @@ public class SmnAsyncClient {
      *
      * 删除指定的订阅者。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelSubscriptionRequest 请求对象
      * @return CompletableFuture<CancelSubscriptionResponse>
@@ -110,8 +105,7 @@ public class SmnAsyncClient {
      *
      * 删除指定的订阅者。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelSubscriptionRequest 请求对象
      * @return AsyncInvoker<CancelSubscriptionRequest, CancelSubscriptionResponse>
@@ -128,8 +122,7 @@ public class SmnAsyncClient {
      * 创建一个模板，用户可以按照模板去发送消息，这样可以减少请求的数据量。
      * 单用户默认可创建100个消息模板，高并发场景下，可能会出现消息模板数量超过100仍创建成功的情况，此为正常现象。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMessageTemplateRequest 请求对象
      * @return CompletableFuture<CreateMessageTemplateResponse>
@@ -145,8 +138,7 @@ public class SmnAsyncClient {
      * 创建一个模板，用户可以按照模板去发送消息，这样可以减少请求的数据量。
      * 单用户默认可创建100个消息模板，高并发场景下，可能会出现消息模板数量超过100仍创建成功的情况，此为正常现象。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMessageTemplateRequest 请求对象
      * @return AsyncInvoker<CreateMessageTemplateRequest, CreateMessageTemplateResponse>
@@ -162,8 +154,7 @@ public class SmnAsyncClient {
      *
      * 一个资源上最多有10个标签。此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResourceTagRequest 请求对象
      * @return CompletableFuture<CreateResourceTagResponse>
@@ -177,8 +168,7 @@ public class SmnAsyncClient {
      *
      * 一个资源上最多有10个标签。此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResourceTagRequest 请求对象
      * @return AsyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse>
@@ -195,8 +185,7 @@ public class SmnAsyncClient {
      * 创建Topic，单用户默认配额为3000。高并发场景下，可能会出现Topic数量超过3000仍创建成功的情况，此为正常现象。
      * 接口是幂等的，接口调用返回成功时，若已存在同名的Topic，返回的status code为200，否则返回的status code为201
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTopicRequest 请求对象
      * @return CompletableFuture<CreateTopicResponse>
@@ -211,8 +200,7 @@ public class SmnAsyncClient {
      * 创建Topic，单用户默认配额为3000。高并发场景下，可能会出现Topic数量超过3000仍创建成功的情况，此为正常现象。
      * 接口是幂等的，接口调用返回成功时，若已存在同名的Topic，返回的status code为200，否则返回的status code为201
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTopicRequest 请求对象
      * @return AsyncInvoker<CreateTopicRequest, CreateTopicResponse>
@@ -226,8 +214,7 @@ public class SmnAsyncClient {
      *
      * 删除消息模板。删除模板之前的消息请求都可以使用该模板发送，删除之后无法再使用该模板发送消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMessageTemplateRequest 请求对象
      * @return CompletableFuture<DeleteMessageTemplateResponse>
@@ -242,8 +229,7 @@ public class SmnAsyncClient {
      *
      * 删除消息模板。删除模板之前的消息请求都可以使用该模板发送，删除之后无法再使用该模板发送消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMessageTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteMessageTemplateRequest, DeleteMessageTemplateResponse>
@@ -259,8 +245,7 @@ public class SmnAsyncClient {
      *
      * 幂等接口：删除时，不对标签做校验。删除的key不存在报404，key不能为空或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceTagRequest 请求对象
      * @return CompletableFuture<DeleteResourceTagResponse>
@@ -274,8 +259,7 @@ public class SmnAsyncClient {
      *
      * 幂等接口：删除时，不对标签做校验。删除的key不存在报404，key不能为空或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceTagRequest 请求对象
      * @return AsyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>
@@ -291,8 +275,7 @@ public class SmnAsyncClient {
      *
      * 删除主题。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTopicRequest 请求对象
      * @return CompletableFuture<DeleteTopicResponse>
@@ -306,8 +289,7 @@ public class SmnAsyncClient {
      *
      * 删除主题。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTopicRequest 请求对象
      * @return AsyncInvoker<DeleteTopicRequest, DeleteTopicResponse>
@@ -321,8 +303,7 @@ public class SmnAsyncClient {
      *
      * 删除指定名称的主题策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTopicAttributeByNameRequest 请求对象
      * @return CompletableFuture<DeleteTopicAttributeByNameResponse>
@@ -337,8 +318,7 @@ public class SmnAsyncClient {
      *
      * 删除指定名称的主题策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTopicAttributeByNameRequest 请求对象
      * @return AsyncInvoker<DeleteTopicAttributeByNameRequest, DeleteTopicAttributeByNameResponse>
@@ -354,8 +334,7 @@ public class SmnAsyncClient {
      *
      * 删除所有主题策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTopicAttributesRequest 请求对象
      * @return CompletableFuture<DeleteTopicAttributesResponse>
@@ -370,8 +349,7 @@ public class SmnAsyncClient {
      *
      * 删除所有主题策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTopicAttributesRequest 请求对象
      * @return AsyncInvoker<DeleteTopicAttributesRequest, DeleteTopicAttributesResponse>
@@ -387,8 +365,7 @@ public class SmnAsyncClient {
      *
      * 查询模板详情，包括模板内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMessageTemplateDetailsRequest 请求对象
      * @return CompletableFuture<ListMessageTemplateDetailsResponse>
@@ -403,8 +380,7 @@ public class SmnAsyncClient {
      *
      * 查询模板详情，包括模板内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMessageTemplateDetailsRequest 请求对象
      * @return AsyncInvoker<ListMessageTemplateDetailsRequest, ListMessageTemplateDetailsResponse>
@@ -420,8 +396,7 @@ public class SmnAsyncClient {
      *
      * 分页查询模板列表，模板列表按照创建时间进行升序排列。分页查询可以指定offset以及limit。如果不存在模板，则返回空列表。额外的查询参数分别有message_template_name和protocol。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMessageTemplatesRequest 请求对象
      * @return CompletableFuture<ListMessageTemplatesResponse>
@@ -436,8 +411,7 @@ public class SmnAsyncClient {
      *
      * 分页查询模板列表，模板列表按照创建时间进行升序排列。分页查询可以指定offset以及limit。如果不存在模板，则返回空列表。额外的查询参数分别有message_template_name和protocol。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMessageTemplatesRequest 请求对象
      * @return AsyncInvoker<ListMessageTemplatesRequest, ListMessageTemplatesResponse>
@@ -453,8 +427,7 @@ public class SmnAsyncClient {
      *
      * 查询租户在指定Region和实例类型的所有标签集合。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectTagsRequest 请求对象
      * @return CompletableFuture<ListProjectTagsResponse>
@@ -468,8 +441,7 @@ public class SmnAsyncClient {
      *
      * 查询租户在指定Region和实例类型的所有标签集合。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectTagsRequest 请求对象
      * @return AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
@@ -485,8 +457,7 @@ public class SmnAsyncClient {
      *
      * 使用标签过滤实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourceInstancesRequest 请求对象
      * @return CompletableFuture<ListResourceInstancesResponse>
@@ -501,8 +472,7 @@ public class SmnAsyncClient {
      *
      * 使用标签过滤实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourceInstancesRequest 请求对象
      * @return AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>
@@ -518,8 +488,7 @@ public class SmnAsyncClient {
      *
      * 查询指定实例的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourceTagsRequest 请求对象
      * @return CompletableFuture<ListResourceTagsResponse>
@@ -533,8 +502,7 @@ public class SmnAsyncClient {
      *
      * 查询指定实例的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourceTagsRequest 请求对象
      * @return AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>
@@ -550,8 +518,7 @@ public class SmnAsyncClient {
      *
      * 分页返回请求者的所有的订阅列表，订阅列表按照订阅创建时间进行升序排列。分页查询可以指定offset以及limit。如果订阅者不存在，返回空列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubscriptionsRequest 请求对象
      * @return CompletableFuture<ListSubscriptionsResponse>
@@ -565,8 +532,7 @@ public class SmnAsyncClient {
      *
      * 分页返回请求者的所有的订阅列表，订阅列表按照订阅创建时间进行升序排列。分页查询可以指定offset以及limit。如果订阅者不存在，返回空列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubscriptionsRequest 请求对象
      * @return AsyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse>
@@ -582,8 +548,7 @@ public class SmnAsyncClient {
      *
      * 分页获取特定Topic的订阅列表，订阅列表按照订阅创建时间进行升序排列。分页查询可以指定offset以及limit。如果指定Topic不存在订阅者，返回空列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubscriptionsByTopicRequest 请求对象
      * @return CompletableFuture<ListSubscriptionsByTopicResponse>
@@ -598,8 +563,7 @@ public class SmnAsyncClient {
      *
      * 分页获取特定Topic的订阅列表，订阅列表按照订阅创建时间进行升序排列。分页查询可以指定offset以及limit。如果指定Topic不存在订阅者，返回空列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubscriptionsByTopicRequest 请求对象
      * @return AsyncInvoker<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse>
@@ -615,8 +579,7 @@ public class SmnAsyncClient {
      *
      * 查询主题的策略信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTopicAttributesRequest 请求对象
      * @return CompletableFuture<ListTopicAttributesResponse>
@@ -630,8 +593,7 @@ public class SmnAsyncClient {
      *
      * 查询主题的策略信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTopicAttributesRequest 请求对象
      * @return AsyncInvoker<ListTopicAttributesRequest, ListTopicAttributesResponse>
@@ -647,8 +609,7 @@ public class SmnAsyncClient {
      *
      * 查询Topic的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTopicDetailsRequest 请求对象
      * @return CompletableFuture<ListTopicDetailsResponse>
@@ -662,8 +623,7 @@ public class SmnAsyncClient {
      *
      * 查询Topic的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTopicDetailsRequest 请求对象
      * @return AsyncInvoker<ListTopicDetailsRequest, ListTopicDetailsResponse>
@@ -679,8 +639,7 @@ public class SmnAsyncClient {
      *
      * 分页查询Topic列表，Topic列表按照Topic创建时间进行降序排列。分页查询可以指定offset以及limit。如果不存在Topic，则返回空列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTopicsRequest 请求对象
      * @return CompletableFuture<ListTopicsResponse>
@@ -694,8 +653,7 @@ public class SmnAsyncClient {
      *
      * 分页查询Topic列表，Topic列表按照Topic创建时间进行降序排列。分页查询可以指定offset以及limit。如果不存在Topic，则返回空列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTopicsRequest 请求对象
      * @return AsyncInvoker<ListTopicsRequest, ListTopicsResponse>
@@ -709,8 +667,7 @@ public class SmnAsyncClient {
      *
      * 查询SMN API V2版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVersionRequest 请求对象
      * @return CompletableFuture<ListVersionResponse>
@@ -724,8 +681,7 @@ public class SmnAsyncClient {
      *
      * 查询SMN API V2版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVersionRequest 请求对象
      * @return AsyncInvoker<ListVersionRequest, ListVersionResponse>
@@ -739,8 +695,7 @@ public class SmnAsyncClient {
      *
      * 查询SMN开放API支持的版本号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVersionsRequest 请求对象
      * @return CompletableFuture<ListVersionsResponse>
@@ -754,8 +709,7 @@ public class SmnAsyncClient {
      *
      * 查询SMN开放API支持的版本号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVersionsRequest 请求对象
      * @return AsyncInvoker<ListVersionsRequest, ListVersionsResponse>
@@ -779,8 +733,7 @@ public class SmnAsyncClient {
      * 只需要设置其中一个，如果同时设置，生效的优先级为
      * message_structure &gt; message_template_name &gt; message。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PublishMessageRequest 请求对象
      * @return CompletableFuture<PublishMessageResponse>
@@ -803,8 +756,7 @@ public class SmnAsyncClient {
      * 只需要设置其中一个，如果同时设置，生效的优先级为
      * message_structure &gt; message_template_name &gt; message。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PublishMessageRequest 请求对象
      * @return AsyncInvoker<PublishMessageRequest, PublishMessageResponse>
@@ -820,8 +772,7 @@ public class SmnAsyncClient {
      *
      * 修改消息模板的内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMessageTemplateRequest 请求对象
      * @return CompletableFuture<UpdateMessageTemplateResponse>
@@ -836,8 +787,7 @@ public class SmnAsyncClient {
      *
      * 修改消息模板的内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMessageTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateMessageTemplateRequest, UpdateMessageTemplateResponse>
@@ -853,8 +803,7 @@ public class SmnAsyncClient {
      *
      * 更新显示名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTopicRequest 请求对象
      * @return CompletableFuture<UpdateTopicResponse>
@@ -868,8 +817,7 @@ public class SmnAsyncClient {
      *
      * 更新显示名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTopicRequest 请求对象
      * @return AsyncInvoker<UpdateTopicRequest, UpdateTopicResponse>
@@ -883,8 +831,7 @@ public class SmnAsyncClient {
      *
      * 更新主题的策略信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTopicAttributeRequest 请求对象
      * @return CompletableFuture<UpdateTopicAttributeResponse>
@@ -899,8 +846,7 @@ public class SmnAsyncClient {
      *
      * 更新主题的策略信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTopicAttributeRequest 请求对象
      * @return AsyncInvoker<UpdateTopicAttributeRequest, UpdateTopicAttributeResponse>
@@ -916,8 +862,7 @@ public class SmnAsyncClient {
      *
      * 创建平台应用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApplicationRequest 请求对象
      * @return CompletableFuture<CreateApplicationResponse>
@@ -931,8 +876,7 @@ public class SmnAsyncClient {
      *
      * 创建平台应用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApplicationRequest 请求对象
      * @return AsyncInvoker<CreateApplicationRequest, CreateApplicationResponse>
@@ -948,8 +892,7 @@ public class SmnAsyncClient {
      *
      * 删除平台应用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationRequest 请求对象
      * @return CompletableFuture<DeleteApplicationResponse>
@@ -963,8 +906,7 @@ public class SmnAsyncClient {
      *
      * 删除平台应用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationRequest 请求对象
      * @return AsyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse>
@@ -980,8 +922,7 @@ public class SmnAsyncClient {
      *
      * 获取应用平台属性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationAttributesRequest 请求对象
      * @return CompletableFuture<ListApplicationAttributesResponse>
@@ -996,8 +937,7 @@ public class SmnAsyncClient {
      *
      * 获取应用平台属性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationAttributesRequest 请求对象
      * @return AsyncInvoker<ListApplicationAttributesRequest, ListApplicationAttributesResponse>
@@ -1013,8 +953,7 @@ public class SmnAsyncClient {
      *
      * 查询应用平台列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationsRequest 请求对象
      * @return CompletableFuture<ListApplicationsResponse>
@@ -1028,8 +967,7 @@ public class SmnAsyncClient {
      *
      * 查询应用平台列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationsRequest 请求对象
      * @return AsyncInvoker<ListApplicationsRequest, ListApplicationsResponse>
@@ -1045,8 +983,7 @@ public class SmnAsyncClient {
      *
      * 将消息直发给endpoint设备。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PublishAppMessageRequest 请求对象
      * @return CompletableFuture<PublishAppMessageResponse>
@@ -1060,8 +997,7 @@ public class SmnAsyncClient {
      *
      * 将消息直发给endpoint设备。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PublishAppMessageRequest 请求对象
      * @return AsyncInvoker<PublishAppMessageRequest, PublishAppMessageResponse>
@@ -1077,8 +1013,7 @@ public class SmnAsyncClient {
      *
      * 更新应用平台。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApplicationRequest 请求对象
      * @return CompletableFuture<UpdateApplicationResponse>
@@ -1092,8 +1027,7 @@ public class SmnAsyncClient {
      *
      * 更新应用平台。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApplicationRequest 请求对象
      * @return AsyncInvoker<UpdateApplicationRequest, UpdateApplicationResponse>
@@ -1109,8 +1043,7 @@ public class SmnAsyncClient {
      *
      * 创建应用平台的endpoint终端。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApplicationEndpointRequest 请求对象
      * @return CompletableFuture<CreateApplicationEndpointResponse>
@@ -1125,8 +1058,7 @@ public class SmnAsyncClient {
      *
      * 创建应用平台的endpoint终端。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApplicationEndpointRequest 请求对象
      * @return AsyncInvoker<CreateApplicationEndpointRequest, CreateApplicationEndpointResponse>
@@ -1142,8 +1074,7 @@ public class SmnAsyncClient {
      *
      * 删除设备。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationEndpointRequest 请求对象
      * @return CompletableFuture<DeleteApplicationEndpointResponse>
@@ -1158,8 +1089,7 @@ public class SmnAsyncClient {
      *
      * 删除设备。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationEndpointRequest 请求对象
      * @return AsyncInvoker<DeleteApplicationEndpointRequest, DeleteApplicationEndpointResponse>
@@ -1175,8 +1105,7 @@ public class SmnAsyncClient {
      *
      * 获取endpoint的属性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationEndpointAttributesRequest 请求对象
      * @return CompletableFuture<ListApplicationEndpointAttributesResponse>
@@ -1191,8 +1120,7 @@ public class SmnAsyncClient {
      *
      * 获取endpoint的属性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationEndpointAttributesRequest 请求对象
      * @return AsyncInvoker<ListApplicationEndpointAttributesRequest, ListApplicationEndpointAttributesResponse>
@@ -1208,8 +1136,7 @@ public class SmnAsyncClient {
      *
      * 查询平台的endpoint列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationEndpointsRequest 请求对象
      * @return CompletableFuture<ListApplicationEndpointsResponse>
@@ -1224,8 +1151,7 @@ public class SmnAsyncClient {
      *
      * 查询平台的endpoint列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationEndpointsRequest 请求对象
      * @return AsyncInvoker<ListApplicationEndpointsRequest, ListApplicationEndpointsResponse>
@@ -1241,8 +1167,7 @@ public class SmnAsyncClient {
      *
      * 更新设备属性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApplicationEndpointRequest 请求对象
      * @return CompletableFuture<UpdateApplicationEndpointResponse>
@@ -1257,8 +1182,7 @@ public class SmnAsyncClient {
      *
      * 更新设备属性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApplicationEndpointRequest 请求对象
      * @return AsyncInvoker<UpdateApplicationEndpointRequest, UpdateApplicationEndpointResponse>

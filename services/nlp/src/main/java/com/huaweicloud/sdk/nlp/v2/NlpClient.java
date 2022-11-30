@@ -23,8 +23,7 @@ public class NlpClient {
      * 属性级情感分析，针对手机领域的用户评论进行属性级情感分析。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunAspectSentimentRequest 请求对象
      * @return RunAspectSentimentResponse
@@ -39,8 +38,7 @@ public class NlpClient {
      * 属性级情感分析，针对手机领域的用户评论进行属性级情感分析。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunAspectSentimentRequest 请求对象
      * @return SyncInvoker<RunAspectSentimentRequest, RunAspectSentimentResponse>
@@ -55,8 +53,7 @@ public class NlpClient {
      * 属性级情感分析（高级版），针对手机、汽车领域的用户评论进行属性级情感分析。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunAspectSentimentAdvanceRequest 请求对象
      * @return RunAspectSentimentAdvanceResponse
@@ -71,8 +68,7 @@ public class NlpClient {
      * 属性级情感分析（高级版），针对手机、汽车领域的用户评论进行属性级情感分析。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunAspectSentimentAdvanceRequest 请求对象
      * @return SyncInvoker<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse>
@@ -87,8 +83,7 @@ public class NlpClient {
      * 针对广告领域的自动分类，判断是否是广告。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunClassificationRequest 请求对象
      * @return RunClassificationResponse
@@ -103,8 +98,7 @@ public class NlpClient {
      * 针对广告领域的自动分类，判断是否是广告。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunClassificationRequest 请求对象
      * @return SyncInvoker<RunClassificationRequest, RunClassificationResponse>
@@ -119,8 +113,7 @@ public class NlpClient {
      * 识别句子中的成分以及成分之间的层次包含关系。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunConstituencyParserRequest 请求对象
      * @return RunConstituencyParserResponse
@@ -135,8 +128,7 @@ public class NlpClient {
      * 识别句子中的成分以及成分之间的层次包含关系。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunConstituencyParserRequest 请求对象
      * @return SyncInvoker<RunConstituencyParserRequest, RunConstituencyParserResponse>
@@ -151,8 +143,7 @@ public class NlpClient {
      * 识别句子中词汇与词汇之间的相互依存关系。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunDependencyParserRequest 请求对象
      * @return RunDependencyParserResponse
@@ -167,8 +158,7 @@ public class NlpClient {
      * 识别句子中词汇与词汇之间的相互依存关系。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunDependencyParserRequest 请求对象
      * @return SyncInvoker<RunDependencyParserRequest, RunDependencyParserResponse>
@@ -183,8 +173,7 @@ public class NlpClient {
      * 文档分类接口，输入文档内容，输出文档的标签和置信度，支持多个标签。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunDocClassificationRequest 请求对象
      * @return RunDocClassificationResponse
@@ -199,8 +188,7 @@ public class NlpClient {
      * 文档分类接口，输入文档内容，输出文档的标签和置信度，支持多个标签。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunDocClassificationRequest 请求对象
      * @return SyncInvoker<RunDocClassificationRequest, RunDocClassificationResponse>
@@ -215,8 +203,7 @@ public class NlpClient {
      * 领域情感分析，针对未知领域，电商，汽车领域的用户评论进行情感分析。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunDomainSentimentRequest 请求对象
      * @return RunDomainSentimentResponse
@@ -231,8 +218,7 @@ public class NlpClient {
      * 领域情感分析，针对未知领域，电商，汽车领域的用户评论进行情感分析。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunDomainSentimentRequest 请求对象
      * @return SyncInvoker<RunDomainSentimentRequest, RunDomainSentimentResponse>
@@ -247,8 +233,7 @@ public class NlpClient {
      * 针对通用领域的文本进行实体链接分析，识别出其中的实体，并返回实体相关信息。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunEntityLinkingRequest 请求对象
      * @return RunEntityLinkingResponse
@@ -263,8 +248,7 @@ public class NlpClient {
      * 针对通用领域的文本进行实体链接分析，识别出其中的实体，并返回实体相关信息。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunEntityLinkingRequest 请求对象
      * @return SyncInvoker<RunEntityLinkingRequest, RunEntityLinkingResponse>
@@ -279,8 +263,7 @@ public class NlpClient {
      * 实体级情感分析，本产品适用于金融方面公司实体正负面新闻的分析。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunEntitySentimentRequest 请求对象
      * @return RunEntitySentimentResponse
@@ -295,8 +278,7 @@ public class NlpClient {
      * 实体级情感分析，本产品适用于金融方面公司实体正负面新闻的分析。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunEntitySentimentRequest 请求对象
      * @return SyncInvoker<RunEntitySentimentRequest, RunEntitySentimentResponse>
@@ -312,8 +294,7 @@ public class NlpClient {
      * 目前只支持金融公告中会议召开、聘任、辞职、股票增持、股票减持5类事件以及相关要素的抽取。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunEventExtractionRequest 请求对象
      * @return RunEventExtractionResponse
@@ -329,8 +310,7 @@ public class NlpClient {
      * 目前只支持金融公告中会议召开、聘任、辞职、股票增持、股票减持5类事件以及相关要素的抽取。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunEventExtractionRequest 请求对象
      * @return SyncInvoker<RunEventExtractionRequest, RunEventExtractionResponse>
@@ -345,8 +325,7 @@ public class NlpClient {
      * 文档翻译接口，用于翻译文档格式文件。由于文档翻译会需要较长的时间，因此识别是异步的，也即接口分为创建翻译任务和查询任务状态两个接口。创建翻译任务接口创建任务完成后返回，然后用户通过调用查询任务状态接口来获得翻译状态和临时URL。 用户可以使用临时URL下载翻译好的文件，每个临时URL有效期为10分种。翻译结果会保存24小时（从翻译完成的时间算起）。24小时后如果再访问，将会返回 \\\&quot;task id is not found\\\&quot;错误。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunFileTranslationRequest 请求对象
      * @return RunFileTranslationResponse
@@ -361,8 +340,7 @@ public class NlpClient {
      * 文档翻译接口，用于翻译文档格式文件。由于文档翻译会需要较长的时间，因此识别是异步的，也即接口分为创建翻译任务和查询任务状态两个接口。创建翻译任务接口创建任务完成后返回，然后用户通过调用查询任务状态接口来获得翻译状态和临时URL。 用户可以使用临时URL下载翻译好的文件，每个临时URL有效期为10分种。翻译结果会保存24小时（从翻译完成的时间算起）。24小时后如果再访问，将会返回 \\\&quot;task id is not found\\\&quot;错误。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunFileTranslationRequest 请求对象
      * @return SyncInvoker<RunFileTranslationRequest, RunFileTranslationResponse>
@@ -376,8 +354,7 @@ public class NlpClient {
      *
      * 该接口用于获取文档翻译识别状态以及临时url，临时url可以用与获取翻译后的文档，每个临时url有效期为十分钟。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunGetFileTranslationResultRequest 请求对象
      * @return RunGetFileTranslationResultResponse
@@ -391,8 +368,7 @@ public class NlpClient {
      *
      * 该接口用于获取文档翻译识别状态以及临时url，临时url可以用与获取翻译后的文档，每个临时url有效期为十分钟。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunGetFileTranslationResultRequest 请求对象
      * @return SyncInvoker<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse>
@@ -407,8 +383,7 @@ public class NlpClient {
      * 给定一段文本，抽取其中最能够反映文本主题或者意思的词汇。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunKeywordExtractRequest 请求对象
      * @return RunKeywordExtractResponse
@@ -423,8 +398,7 @@ public class NlpClient {
      * 给定一段文本，抽取其中最能够反映文本主题或者意思的词汇。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunKeywordExtractRequest 请求对象
      * @return SyncInvoker<RunKeywordExtractRequest, RunKeywordExtractResponse>
@@ -439,8 +413,7 @@ public class NlpClient {
      * 对于用户输入的文本，返回识别出的所属语种。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunLanguageDetectionRequest 请求对象
      * @return RunLanguageDetectionResponse
@@ -455,8 +428,7 @@ public class NlpClient {
      * 对于用户输入的文本，返回识别出的所属语种。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunLanguageDetectionRequest 请求对象
      * @return SyncInvoker<RunLanguageDetectionRequest, RunLanguageDetectionResponse>
@@ -471,8 +443,7 @@ public class NlpClient {
      * 多粒度分词：给定一个句子输入，输出不同粒度的所有单词的层次结构。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunMultiGrainedSegmentRequest 请求对象
      * @return RunMultiGrainedSegmentResponse
@@ -487,8 +458,7 @@ public class NlpClient {
      * 多粒度分词：给定一个句子输入，输出不同粒度的所有单词的层次结构。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunMultiGrainedSegmentRequest 请求对象
      * @return SyncInvoker<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse>
@@ -503,8 +473,7 @@ public class NlpClient {
      * 基础版命名实体识别，对文本进行命名实体识别分析，目前支持人名、地名、时间、组织机构类实体的识别。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunNerRequest 请求对象
      * @return RunNerResponse
@@ -519,8 +488,7 @@ public class NlpClient {
      * 基础版命名实体识别，对文本进行命名实体识别分析，目前支持人名、地名、时间、组织机构类实体的识别。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunNerRequest 请求对象
      * @return SyncInvoker<RunNerRequest, RunNerResponse>
@@ -535,8 +503,7 @@ public class NlpClient {
      * 领域版本命名实体识别，对文本进行命名实体识别分析，目前支持人名、地名、组织机构、时间点、日期、百分比、货币额度、序数词、计量规格词、民族、职业、邮箱12类实体的识别。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunNerDomainRequest 请求对象
      * @return RunNerDomainResponse
@@ -551,8 +518,7 @@ public class NlpClient {
      * 领域版本命名实体识别，对文本进行命名实体识别分析，目前支持人名、地名、组织机构、时间点、日期、百分比、货币额度、序数词、计量规格词、民族、职业、邮箱12类实体的识别。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunNerDomainRequest 请求对象
      * @return SyncInvoker<RunNerDomainRequest, RunNerDomainResponse>
@@ -567,8 +533,7 @@ public class NlpClient {
      * 根据用户的输入生成诗歌。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunPoemRequest 请求对象
      * @return RunPoemResponse
@@ -583,8 +548,7 @@ public class NlpClient {
      * 根据用户的输入生成诗歌。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunPoemRequest 请求对象
      * @return SyncInvoker<RunPoemRequest, RunPoemResponse>
@@ -599,8 +563,7 @@ public class NlpClient {
      * 对文本进行分词和词性标注处理。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSegmentRequest 请求对象
      * @return RunSegmentResponse
@@ -615,8 +578,7 @@ public class NlpClient {
      * 对文本进行分词和词性标注处理。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSegmentRequest 请求对象
      * @return SyncInvoker<RunSegmentRequest, RunSegmentResponse>
@@ -631,8 +593,7 @@ public class NlpClient {
      * 针对天气、报时、新闻、笑话、翻译、提醒、闹钟、音乐8个领域进行意图理解，对用户的问题进行领域识别并提取领域内的参数。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSemanticParserRequest 请求对象
      * @return RunSemanticParserResponse
@@ -647,8 +608,7 @@ public class NlpClient {
      * 针对天气、报时、新闻、笑话、翻译、提醒、闹钟、音乐8个领域进行意图理解，对用户的问题进行领域识别并提取领域内的参数。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSemanticParserRequest 请求对象
      * @return SyncInvoker<RunSemanticParserRequest, RunSemanticParserResponse>
@@ -663,8 +623,7 @@ public class NlpClient {
      * 输入句子，返回对应的句向量。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSentenceEmbeddingRequest 请求对象
      * @return RunSentenceEmbeddingResponse
@@ -679,8 +638,7 @@ public class NlpClient {
      * 输入句子，返回对应的句向量。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSentenceEmbeddingRequest 请求对象
      * @return SyncInvoker<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse>
@@ -695,8 +653,7 @@ public class NlpClient {
      * 通用情感分析，针对通用领域的用户评论进行情感分析。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSentimentRequest 请求对象
      * @return RunSentimentResponse
@@ -711,8 +668,7 @@ public class NlpClient {
      * 通用情感分析，针对通用领域的用户评论进行情感分析。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSentimentRequest 请求对象
      * @return SyncInvoker<RunSentimentRequest, RunSentimentResponse>
@@ -727,8 +683,7 @@ public class NlpClient {
      * 对文本生成摘要。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSummaryRequest 请求对象
      * @return RunSummaryResponse
@@ -743,8 +698,7 @@ public class NlpClient {
      * 对文本生成摘要。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSummaryRequest 请求对象
      * @return SyncInvoker<RunSummaryRequest, RunSummaryResponse>
@@ -759,8 +713,7 @@ public class NlpClient {
      * 对文本生成摘要。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSummaryDomainRequest 请求对象
      * @return RunSummaryDomainResponse
@@ -775,8 +728,7 @@ public class NlpClient {
      * 对文本生成摘要。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSummaryDomainRequest 请求对象
      * @return SyncInvoker<RunSummaryDomainRequest, RunSummaryDomainResponse>
@@ -791,8 +743,7 @@ public class NlpClient {
      * 文本相似度服务，对文本对进行相似度计算。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunTextSimilarityRequest 请求对象
      * @return RunTextSimilarityResponse
@@ -807,8 +758,7 @@ public class NlpClient {
      * 文本相似度服务，对文本对进行相似度计算。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunTextSimilarityRequest 请求对象
      * @return SyncInvoker<RunTextSimilarityRequest, RunTextSimilarityResponse>
@@ -823,8 +773,7 @@ public class NlpClient {
      * 文本相似度服务高级版，对文本对进行相似度计算。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunTextSimilarityAdvanceRequest 请求对象
      * @return RunTextSimilarityAdvanceResponse
@@ -839,8 +788,7 @@ public class NlpClient {
      * 文本相似度服务高级版，对文本对进行相似度计算。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunTextSimilarityAdvanceRequest 请求对象
      * @return SyncInvoker<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse>
@@ -855,8 +803,7 @@ public class NlpClient {
      * 对于用户输入原始语种的文本，转换为目标语种的文本。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunTextTranslationRequest 请求对象
      * @return RunTextTranslationResponse
@@ -871,8 +818,7 @@ public class NlpClient {
      * 对于用户输入原始语种的文本，转换为目标语种的文本。
      * 在使用本API之前， 需要您完成服务申请， 具体操作流程请参见[申请服务](https://support.huaweicloud.com/api-nlp/nlp_03_0004.html)章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunTextTranslationRequest 请求对象
      * @return SyncInvoker<RunTextTranslationRequest, RunTextTranslationResponse>

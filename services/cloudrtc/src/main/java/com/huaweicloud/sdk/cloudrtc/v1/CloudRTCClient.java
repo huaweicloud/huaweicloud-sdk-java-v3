@@ -24,8 +24,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度1天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcAbnormalEventDimensionRequest 请求对象
      * @return ListRtcAbnormalEventDimensionResponse
@@ -42,8 +41,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度1天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcAbnormalEventDimensionRequest 请求对象
      * @return SyncInvoker<ListRtcAbnormalEventDimensionRequest, ListRtcAbnormalEventDimensionResponse>
@@ -61,8 +59,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度1天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcAbnormalEventsRequest 请求对象
      * @return ListRtcAbnormalEventsResponse
@@ -78,8 +75,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度1天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcAbnormalEventsRequest 请求对象
      * @return SyncInvoker<ListRtcAbnormalEventsRequest, ListRtcAbnormalEventsResponse>
@@ -97,8 +93,7 @@ public class CloudRTCClient {
      * 
      * 可查询5天内的数据，mid 不为null，查询实时数据时，查询起止时间不超过24个小时，每次查询单个用户时，支持跨天查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcClientQosDetailsRequest 请求对象
      * @return ListRtcClientQosDetailsResponse
@@ -114,8 +109,7 @@ public class CloudRTCClient {
      * 
      * 可查询5天内的数据，mid 不为null，查询实时数据时，查询起止时间不超过24个小时，每次查询单个用户时，支持跨天查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcClientQosDetailsRequest 请求对象
      * @return SyncInvoker<ListRtcClientQosDetailsRequest, ListRtcClientQosDetailsResponse>
@@ -133,8 +127,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度31天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcHistoryQualityRequest 请求对象
      * @return ListRtcHistoryQualityResponse
@@ -150,8 +143,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度31天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcHistoryQualityRequest 请求对象
      * @return SyncInvoker<ListRtcHistoryQualityRequest, ListRtcHistoryQualityResponse>
@@ -169,8 +161,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度31天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcHistoryScaleRequest 请求对象
      * @return ListRtcHistoryScaleResponse
@@ -186,8 +177,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度31天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcHistoryScaleRequest 请求对象
      * @return SyncInvoker<ListRtcHistoryScaleRequest, ListRtcHistoryScaleResponse>
@@ -203,8 +193,7 @@ public class CloudRTCClient {
      *
      * 查询过去的某一时间段内各种业务的用量数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcHistoryUsageRequest 请求对象
      * @return ListRtcHistoryUsageResponse
@@ -218,8 +207,7 @@ public class CloudRTCClient {
      *
      * 查询过去的某一时间段内各种业务的用量数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcHistoryUsageRequest 请求对象
      * @return SyncInvoker<ListRtcHistoryUsageRequest, ListRtcHistoryUsageResponse>
@@ -237,8 +225,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度1天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcRealtimeNetworkRequest 请求对象
      * @return ListRtcRealtimeNetworkResponse
@@ -254,8 +241,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度1天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcRealtimeNetworkRequest 请求对象
      * @return SyncInvoker<ListRtcRealtimeNetworkRequest, ListRtcRealtimeNetworkResponse>
@@ -273,8 +259,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度1天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcRealtimeQualityRequest 请求对象
      * @return ListRtcRealtimeQualityResponse
@@ -290,8 +275,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度1天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcRealtimeQualityRequest 请求对象
      * @return SyncInvoker<ListRtcRealtimeQualityRequest, ListRtcRealtimeQualityResponse>
@@ -309,8 +293,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度1天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcRealtimeScaleRequest 请求对象
      * @return ListRtcRealtimeScaleResponse
@@ -326,8 +309,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度1天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcRealtimeScaleRequest 请求对象
      * @return SyncInvoker<ListRtcRealtimeScaleRequest, ListRtcRealtimeScaleResponse>
@@ -343,8 +325,7 @@ public class CloudRTCClient {
      *
      * 对规模相关的数据，根据指定维度按在线用户数排名，获取规模相关的指标在指定维度下的统计数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcRealtimeScaleDimensionRequest 请求对象
      * @return ListRtcRealtimeScaleDimensionResponse
@@ -359,8 +340,7 @@ public class CloudRTCClient {
      *
      * 对规模相关的数据，根据指定维度按在线用户数排名，获取规模相关的指标在指定维度下的统计数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcRealtimeScaleDimensionRequest 请求对象
      * @return SyncInvoker<ListRtcRealtimeScaleDimensionRequest, ListRtcRealtimeScaleDimensionResponse>
@@ -378,8 +358,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度90天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcRoomListRequest 请求对象
      * @return ListRtcRoomListResponse
@@ -395,8 +374,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度90天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcRoomListRequest 请求对象
      * @return SyncInvoker<ListRtcRoomListRequest, ListRtcRoomListResponse>
@@ -414,8 +392,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度90天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcUserListRequest 请求对象
      * @return ListRtcUserListResponse
@@ -431,8 +408,7 @@ public class CloudRTCClient {
      * 
      * 最大查询跨度90天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRtcUserListRequest 请求对象
      * @return SyncInvoker<ListRtcUserListRequest, ListRtcUserListResponse>

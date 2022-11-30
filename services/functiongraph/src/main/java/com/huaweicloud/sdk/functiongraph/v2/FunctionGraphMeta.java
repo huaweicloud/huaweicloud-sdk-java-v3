@@ -1694,6 +1694,13 @@ public class FunctionGraphMeta {
             f -> f.withMarshaller(ShowTenantMetricRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
             }));
+        builder.<String>withRequestField("metric_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTenantMetricRequest::getMetricType, (req, v) -> {
+                req.setMetricType(v);
+            }));
 
         // response
 

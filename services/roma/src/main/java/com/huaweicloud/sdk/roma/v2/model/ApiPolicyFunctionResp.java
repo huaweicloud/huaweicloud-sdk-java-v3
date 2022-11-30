@@ -116,6 +116,11 @@ public class ApiPolicyFunctionResp {
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alias_urn")
+
+    private String aliasUrn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
@@ -291,6 +296,23 @@ public class ApiPolicyFunctionResp {
         this.version = version;
     }
 
+    public ApiPolicyFunctionResp withAliasUrn(String aliasUrn) {
+        this.aliasUrn = aliasUrn;
+        return this;
+    }
+
+    /**
+     * 函数别名URN  当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
+     * @return aliasUrn
+     */
+    public String getAliasUrn() {
+        return aliasUrn;
+    }
+
+    public void setAliasUrn(String aliasUrn) {
+        this.aliasUrn = aliasUrn;
+    }
+
     public ApiPolicyFunctionResp withId(String id) {
         this.id = id;
         return this;
@@ -438,6 +460,7 @@ public class ApiPolicyFunctionResp {
             && Objects.equals(this.invocationType, apiPolicyFunctionResp.invocationType)
             && Objects.equals(this.timeout, apiPolicyFunctionResp.timeout)
             && Objects.equals(this.version, apiPolicyFunctionResp.version)
+            && Objects.equals(this.aliasUrn, apiPolicyFunctionResp.aliasUrn)
             && Objects.equals(this.id, apiPolicyFunctionResp.id)
             && Objects.equals(this.name, apiPolicyFunctionResp.name)
             && Objects.equals(this.conditions, apiPolicyFunctionResp.conditions)
@@ -452,6 +475,7 @@ public class ApiPolicyFunctionResp {
             invocationType,
             timeout,
             version,
+            aliasUrn,
             id,
             name,
             conditions,
@@ -468,6 +492,7 @@ public class ApiPolicyFunctionResp {
         sb.append("    invocationType: ").append(toIndentedString(invocationType)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    aliasUrn: ").append(toIndentedString(aliasUrn)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");

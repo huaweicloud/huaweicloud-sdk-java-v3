@@ -24,8 +24,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 将参数模板应用到实例，可以指定一个或多个实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ApplyConfigurationRequest 请求对象
      * @return CompletableFuture<ApplyConfigurationResponse>
@@ -39,8 +38,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 将参数模板应用到实例，可以指定一个或多个实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ApplyConfigurationRequest 请求对象
      * @return AsyncInvoker<ApplyConfigurationRequest, ApplyConfigurationResponse>
@@ -56,8 +54,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 批量添加或删除指定数据库实例的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchTagActionRequest 请求对象
      * @return CompletableFuture<BatchTagActionResponse>
@@ -71,8 +68,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 批量添加或删除指定数据库实例的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchTagActionRequest 请求对象
      * @return AsyncInvoker<BatchTagActionRequest, BatchTagActionResponse>
@@ -89,8 +85,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 校验实例是否可以与指定实例建立/解除容灾关系。若接口返回成功，表示可以与指定实例建立/解除容灾关系。
      * 该接口需要对建立/解除容灾关系的两个实例各调用一次，2次调用都响应成功才能进行容灾关系的搭建/解除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckDisasterRecoveryOperationRequest 请求对象
      * @return CompletableFuture<CheckDisasterRecoveryOperationResponse>
@@ -106,8 +101,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 校验实例是否可以与指定实例建立/解除容灾关系。若接口返回成功，表示可以与指定实例建立/解除容灾关系。
      * 该接口需要对建立/解除容灾关系的两个实例各调用一次，2次调用都响应成功才能进行容灾关系的搭建/解除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckDisasterRecoveryOperationRequest 请求对象
      * @return AsyncInvoker<CheckDisasterRecoveryOperationRequest, CheckDisasterRecoveryOperationResponse>
@@ -119,12 +113,131 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 判断弱密码
+     *
+     * 判断弱密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckWeekPasswordRequest 请求对象
+     * @return CompletableFuture<CheckWeekPasswordResponse>
+     */
+    public CompletableFuture<CheckWeekPasswordResponse> checkWeekPasswordAsync(CheckWeekPasswordRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.checkWeekPassword);
+    }
+
+    /**
+     * 判断弱密码
+     *
+     * 判断弱密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckWeekPasswordRequest 请求对象
+     * @return AsyncInvoker<CheckWeekPasswordRequest, CheckWeekPasswordResponse>
+     */
+    public AsyncInvoker<CheckWeekPasswordRequest, CheckWeekPasswordResponse> checkWeekPasswordAsyncInvoker(
+        CheckWeekPasswordRequest request) {
+        return new AsyncInvoker<CheckWeekPasswordRequest, CheckWeekPasswordResponse>(request,
+            GaussDBforNoSQLMeta.checkWeekPassword, hcClient);
+    }
+
+    /**
+     * 参数模板比较
+     *
+     * 比较两个参数模板之间的差异
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CompareConfigurationRequest 请求对象
+     * @return CompletableFuture<CompareConfigurationResponse>
+     */
+    public CompletableFuture<CompareConfigurationResponse> compareConfigurationAsync(
+        CompareConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.compareConfiguration);
+    }
+
+    /**
+     * 参数模板比较
+     *
+     * 比较两个参数模板之间的差异
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CompareConfigurationRequest 请求对象
+     * @return AsyncInvoker<CompareConfigurationRequest, CompareConfigurationResponse>
+     */
+    public AsyncInvoker<CompareConfigurationRequest, CompareConfigurationResponse> compareConfigurationAsyncInvoker(
+        CompareConfigurationRequest request) {
+        return new AsyncInvoker<CompareConfigurationRequest, CompareConfigurationResponse>(request,
+            GaussDBforNoSQLMeta.compareConfiguration, hcClient);
+    }
+
+    /**
+     * 复制参数模板
+     *
+     * 复制参数模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CopyConfigurationRequest 请求对象
+     * @return CompletableFuture<CopyConfigurationResponse>
+     */
+    public CompletableFuture<CopyConfigurationResponse> copyConfigurationAsync(CopyConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.copyConfiguration);
+    }
+
+    /**
+     * 复制参数模板
+     *
+     * 复制参数模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CopyConfigurationRequest 请求对象
+     * @return AsyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse>
+     */
+    public AsyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse> copyConfigurationAsyncInvoker(
+        CopyConfigurationRequest request) {
+        return new AsyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse>(request,
+            GaussDBforNoSQLMeta.copyConfiguration, hcClient);
+    }
+
+    /**
+     * 创建手动备份
+     *
+     * 创建手动备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateBackRequest 请求对象
+     * @return CompletableFuture<CreateBackResponse>
+     */
+    public CompletableFuture<CreateBackResponse> createBackAsync(CreateBackRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.createBack);
+    }
+
+    /**
+     * 创建手动备份
+     *
+     * 创建手动备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateBackRequest 请求对象
+     * @return AsyncInvoker<CreateBackRequest, CreateBackResponse>
+     */
+    public AsyncInvoker<CreateBackRequest, CreateBackResponse> createBackAsyncInvoker(CreateBackRequest request) {
+        return new AsyncInvoker<CreateBackRequest, CreateBackResponse>(request, GaussDBforNoSQLMeta.createBack,
+            hcClient);
+    }
+
+    /**
      * ‘创建冷数据存储’
      *
      * ‘创建冷数据存储’
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateColdVolumeRequest 请求对象
      * @return CompletableFuture<CreateColdVolumeResponse>
@@ -138,8 +251,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * ‘创建冷数据存储’
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateColdVolumeRequest 请求对象
      * @return AsyncInvoker<CreateColdVolumeRequest, CreateColdVolumeResponse>
@@ -155,8 +267,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 创建参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConfigurationRequest 请求对象
      * @return CompletableFuture<CreateConfigurationResponse>
@@ -170,8 +281,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 创建参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConfigurationRequest 请求对象
      * @return AsyncInvoker<CreateConfigurationRequest, CreateConfigurationResponse>
@@ -187,8 +297,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 搭建实例与特定实例的容灾关系。 该接口需要对搭建容灾关系的两个实例分别各调用一次，2次接口都调用成功才能成功搭建容灾关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDisasterRecoveryRequest 请求对象
      * @return CompletableFuture<CreateDisasterRecoveryResponse>
@@ -203,8 +312,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 搭建实例与特定实例的容灾关系。 该接口需要对搭建容灾关系的两个实例分别各调用一次，2次接口都调用成功才能成功搭建容灾关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDisasterRecoveryRequest 请求对象
      * @return AsyncInvoker<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse>
@@ -220,8 +328,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 创建数据库实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return CompletableFuture<CreateInstanceResponse>
@@ -235,8 +342,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 创建数据库实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
@@ -252,8 +358,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 删除手动备份
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackupRequest 请求对象
      * @return CompletableFuture<DeleteBackupResponse>
@@ -267,8 +372,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 删除手动备份
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackupRequest 请求对象
      * @return AsyncInvoker<DeleteBackupRequest, DeleteBackupResponse>
@@ -284,8 +388,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 删除指定参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteConfigurationRequest 请求对象
      * @return CompletableFuture<DeleteConfigurationResponse>
@@ -299,8 +402,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 删除指定参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteConfigurationRequest 请求对象
      * @return AsyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse>
@@ -316,8 +418,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 解除实例与特定实例的容灾关系。 该接口需要对搭建容灾关系的两个实例分别各调用一次，2次接口都调用成功才能成功解除容灾关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDisasterRecoveryRequest 请求对象
      * @return CompletableFuture<DeleteDisasterRecoveryResponse>
@@ -332,8 +433,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 解除实例与特定实例的容灾关系。 该接口需要对搭建容灾关系的两个实例分别各调用一次，2次接口都调用成功才能成功解除容灾关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDisasterRecoveryRequest 请求对象
      * @return AsyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse>
@@ -345,12 +445,42 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 删除扩容失败的节点
+     *
+     * 删除扩容失败的节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEnlargeFailNodeRequest 请求对象
+     * @return CompletableFuture<DeleteEnlargeFailNodeResponse>
+     */
+    public CompletableFuture<DeleteEnlargeFailNodeResponse> deleteEnlargeFailNodeAsync(
+        DeleteEnlargeFailNodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.deleteEnlargeFailNode);
+    }
+
+    /**
+     * 删除扩容失败的节点
+     *
+     * 删除扩容失败的节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEnlargeFailNodeRequest 请求对象
+     * @return AsyncInvoker<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse>
+     */
+    public AsyncInvoker<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse> deleteEnlargeFailNodeAsyncInvoker(
+        DeleteEnlargeFailNodeRequest request) {
+        return new AsyncInvoker<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse>(request,
+            GaussDBforNoSQLMeta.deleteEnlargeFailNode, hcClient);
+    }
+
+    /**
      * 删除实例
      *
      * 删除数据库实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return CompletableFuture<DeleteInstanceResponse>
@@ -364,8 +494,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 删除数据库实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
@@ -381,8 +510,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 扩容指定集群实例的节点数量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExpandInstanceNodeRequest 请求对象
      * @return CompletableFuture<ExpandInstanceNodeResponse>
@@ -396,8 +524,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 扩容指定集群实例的节点数量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExpandInstanceNodeRequest 请求对象
      * @return AsyncInvoker<ExpandInstanceNodeRequest, ExpandInstanceNodeResponse>
@@ -409,12 +536,73 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 查询实例可变更规格
+     *
+     * 查询实例可变更规格。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAvailableFlavorInfosRequest 请求对象
+     * @return CompletableFuture<ListAvailableFlavorInfosResponse>
+     */
+    public CompletableFuture<ListAvailableFlavorInfosResponse> listAvailableFlavorInfosAsync(
+        ListAvailableFlavorInfosRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listAvailableFlavorInfos);
+    }
+
+    /**
+     * 查询实例可变更规格
+     *
+     * 查询实例可变更规格。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAvailableFlavorInfosRequest 请求对象
+     * @return AsyncInvoker<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse>
+     */
+    public AsyncInvoker<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse> listAvailableFlavorInfosAsyncInvoker(
+        ListAvailableFlavorInfosRequest request) {
+        return new AsyncInvoker<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse>(request,
+            GaussDBforNoSQLMeta.listAvailableFlavorInfos, hcClient);
+    }
+
+    /**
+     * 查询支持参数模板的引擎信息
+     *
+     * 查询支持参数模板的引擎信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConfigurationDatastoresRequest 请求对象
+     * @return CompletableFuture<ListConfigurationDatastoresResponse>
+     */
+    public CompletableFuture<ListConfigurationDatastoresResponse> listConfigurationDatastoresAsync(
+        ListConfigurationDatastoresRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listConfigurationDatastores);
+    }
+
+    /**
+     * 查询支持参数模板的引擎信息
+     *
+     * 查询支持参数模板的引擎信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConfigurationDatastoresRequest 请求对象
+     * @return AsyncInvoker<ListConfigurationDatastoresRequest, ListConfigurationDatastoresResponse>
+     */
+    public AsyncInvoker<ListConfigurationDatastoresRequest, ListConfigurationDatastoresResponse> listConfigurationDatastoresAsyncInvoker(
+        ListConfigurationDatastoresRequest request) {
+        return new AsyncInvoker<ListConfigurationDatastoresRequest, ListConfigurationDatastoresResponse>(request,
+            GaussDBforNoSQLMeta.listConfigurationDatastores, hcClient);
+    }
+
+    /**
      * 获取参数模板列表
      *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConfigurationTemplatesRequest 请求对象
      * @return CompletableFuture<ListConfigurationTemplatesResponse>
@@ -429,8 +617,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConfigurationTemplatesRequest 请求对象
      * @return AsyncInvoker<ListConfigurationTemplatesRequest, ListConfigurationTemplatesResponse>
@@ -446,8 +633,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConfigurationsRequest 请求对象
      * @return CompletableFuture<ListConfigurationsResponse>
@@ -461,8 +647,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConfigurationsRequest 请求对象
      * @return AsyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
@@ -478,8 +663,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询指定实例类型的数据库版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatastoresRequest 请求对象
      * @return CompletableFuture<ListDatastoresResponse>
@@ -493,8 +677,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询指定实例类型的数据库版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatastoresRequest 请求对象
      * @return AsyncInvoker<ListDatastoresRequest, ListDatastoresResponse>
@@ -510,8 +693,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询专属资源列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDedicatedResourcesRequest 请求对象
      * @return CompletableFuture<ListDedicatedResourcesResponse>
@@ -526,8 +708,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询专属资源列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDedicatedResourcesRequest 请求对象
      * @return AsyncInvoker<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse>
@@ -539,12 +720,41 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 查询企业项目配额
+     *
+     * 查询企业项目配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEpsQuotasRequest 请求对象
+     * @return CompletableFuture<ListEpsQuotasResponse>
+     */
+    public CompletableFuture<ListEpsQuotasResponse> listEpsQuotasAsync(ListEpsQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listEpsQuotas);
+    }
+
+    /**
+     * 查询企业项目配额
+     *
+     * 查询企业项目配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEpsQuotasRequest 请求对象
+     * @return AsyncInvoker<ListEpsQuotasRequest, ListEpsQuotasResponse>
+     */
+    public AsyncInvoker<ListEpsQuotasRequest, ListEpsQuotasResponse> listEpsQuotasAsyncInvoker(
+        ListEpsQuotasRequest request) {
+        return new AsyncInvoker<ListEpsQuotasRequest, ListEpsQuotasResponse>(request, GaussDBforNoSQLMeta.listEpsQuotas,
+            hcClient);
+    }
+
+    /**
      * 查询数据库规格
      *
      * 查询指定条件下的实例规格信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorInfosRequest 请求对象
      * @return CompletableFuture<ListFlavorInfosResponse>
@@ -558,8 +768,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询指定条件下的实例规格信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorInfosRequest 请求对象
      * @return AsyncInvoker<ListFlavorInfosRequest, ListFlavorInfosResponse>
@@ -575,8 +784,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询指定条件下的所有实例规格信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return CompletableFuture<ListFlavorsResponse>
@@ -590,8 +798,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询指定条件下的所有实例规格信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
@@ -606,8 +813,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询指定实例的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceTagsRequest 请求对象
      * @return CompletableFuture<ListInstanceTagsResponse>
@@ -621,8 +827,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询指定实例的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceTagsRequest 请求对象
      * @return AsyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>
@@ -638,8 +843,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 根据指定条件查询数据库实例列表和详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return CompletableFuture<ListInstancesResponse>
@@ -653,8 +857,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 根据指定条件查询数据库实例列表和详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
@@ -670,8 +873,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 根据标签查询指定的数据库实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesByResourceTagsRequest 请求对象
      * @return CompletableFuture<ListInstancesByResourceTagsResponse>
@@ -686,8 +888,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 根据标签查询指定的数据库实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesByResourceTagsRequest 请求对象
      * @return AsyncInvoker<ListInstancesByResourceTagsRequest, ListInstancesByResourceTagsResponse>
@@ -703,8 +904,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 根据标签查询指定的数据库实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesByTagsRequest 请求对象
      * @return CompletableFuture<ListInstancesByTagsResponse>
@@ -718,8 +918,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 根据标签查询指定的数据库实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesByTagsRequest 请求对象
      * @return AsyncInvoker<ListInstancesByTagsRequest, ListInstancesByTagsResponse>
@@ -731,12 +930,72 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 查询项目标签
+     *
+     * 查询指定项目的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectTagsRequest 请求对象
+     * @return CompletableFuture<ListProjectTagsResponse>
+     */
+    public CompletableFuture<ListProjectTagsResponse> listProjectTagsAsync(ListProjectTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listProjectTags);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询指定项目的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectTagsRequest 请求对象
+     * @return AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
+     */
+    public AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsAsyncInvoker(
+        ListProjectTagsRequest request) {
+        return new AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request,
+            GaussDBforNoSQLMeta.listProjectTags, hcClient);
+    }
+
+    /**
+     * 查询回收站实例列表
+     *
+     * 查询回收站所有引擎的实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRecycleInstancesRequest 请求对象
+     * @return CompletableFuture<ListRecycleInstancesResponse>
+     */
+    public CompletableFuture<ListRecycleInstancesResponse> listRecycleInstancesAsync(
+        ListRecycleInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listRecycleInstances);
+    }
+
+    /**
+     * 查询回收站实例列表
+     *
+     * 查询回收站所有引擎的实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRecycleInstancesRequest 请求对象
+     * @return AsyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>
+     */
+    public AsyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse> listRecycleInstancesAsyncInvoker(
+        ListRecycleInstancesRequest request) {
+        return new AsyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>(request,
+            GaussDBforNoSQLMeta.listRecycleInstances, hcClient);
+    }
+
+    /**
      * 查询实例可恢复的时间段
      *
      * 查询实例可恢复的时间段
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRestoreTimeRequest 请求对象
      * @return CompletableFuture<ListRestoreTimeResponse>
@@ -750,8 +1009,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询实例可恢复的时间段
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRestoreTimeRequest 请求对象
      * @return AsyncInvoker<ListRestoreTimeRequest, ListRestoreTimeResponse>
@@ -767,8 +1025,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询数据库慢日志信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSlowLogsRequest 请求对象
      * @return CompletableFuture<ListSlowLogsResponse>
@@ -782,8 +1039,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询数据库慢日志信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSlowLogsRequest 请求对象
      * @return AsyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse>
@@ -795,12 +1051,70 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 修改企业项目配额
+     *
+     * 修改企业项目配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyEpsQuotasRequest 请求对象
+     * @return CompletableFuture<ModifyEpsQuotasResponse>
+     */
+    public CompletableFuture<ModifyEpsQuotasResponse> modifyEpsQuotasAsync(ModifyEpsQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.modifyEpsQuotas);
+    }
+
+    /**
+     * 修改企业项目配额
+     *
+     * 修改企业项目配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyEpsQuotasRequest 请求对象
+     * @return AsyncInvoker<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse>
+     */
+    public AsyncInvoker<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse> modifyEpsQuotasAsyncInvoker(
+        ModifyEpsQuotasRequest request) {
+        return new AsyncInvoker<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse>(request,
+            GaussDBforNoSQLMeta.modifyEpsQuotas, hcClient);
+    }
+
+    /**
+     * 修改数据库端口
+     *
+     * 修改数据库实例的端口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyPortRequest 请求对象
+     * @return CompletableFuture<ModifyPortResponse>
+     */
+    public CompletableFuture<ModifyPortResponse> modifyPortAsync(ModifyPortRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.modifyPort);
+    }
+
+    /**
+     * 修改数据库端口
+     *
+     * 修改数据库实例的端口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyPortRequest 请求对象
+     * @return AsyncInvoker<ModifyPortRequest, ModifyPortResponse>
+     */
+    public AsyncInvoker<ModifyPortRequest, ModifyPortResponse> modifyPortAsyncInvoker(ModifyPortRequest request) {
+        return new AsyncInvoker<ModifyPortRequest, ModifyPortResponse>(request, GaussDBforNoSQLMeta.modifyPort,
+            hcClient);
+    }
+
+    /**
      * 绑定/解绑弹性公网IP
      *
      * 实例下的节点绑定弹性公网IP/解绑弹性公网IP
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ModifyPublicIpRequest 请求对象
      * @return CompletableFuture<ModifyPublicIpResponse>
@@ -814,8 +1128,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 实例下的节点绑定弹性公网IP/解绑弹性公网IP
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ModifyPublicIpRequest 请求对象
      * @return AsyncInvoker<ModifyPublicIpRequest, ModifyPublicIpResponse>
@@ -827,12 +1140,46 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 暂停/恢复具备容灾关系的实例数据同步
+     *
+     * 该接口用于暂停/恢复具备容灾关系的实例数据同步。
+     * 
+     * 该接口需要对具备容灾关系的两个实例分别各调用一次，2次接口都调用成功才能成功暂停/恢复容灾实例数据同步。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PauseResumeDataSynchronizationRequest 请求对象
+     * @return CompletableFuture<PauseResumeDataSynchronizationResponse>
+     */
+    public CompletableFuture<PauseResumeDataSynchronizationResponse> pauseResumeDataSynchronizationAsync(
+        PauseResumeDataSynchronizationRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.pauseResumeDataSynchronization);
+    }
+
+    /**
+     * 暂停/恢复具备容灾关系的实例数据同步
+     *
+     * 该接口用于暂停/恢复具备容灾关系的实例数据同步。
+     * 
+     * 该接口需要对具备容灾关系的两个实例分别各调用一次，2次接口都调用成功才能成功暂停/恢复容灾实例数据同步。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PauseResumeDataSynchronizationRequest 请求对象
+     * @return AsyncInvoker<PauseResumeDataSynchronizationRequest, PauseResumeDataSynchronizationResponse>
+     */
+    public AsyncInvoker<PauseResumeDataSynchronizationRequest, PauseResumeDataSynchronizationResponse> pauseResumeDataSynchronizationAsyncInvoker(
+        PauseResumeDataSynchronizationRequest request) {
+        return new AsyncInvoker<PauseResumeDataSynchronizationRequest, PauseResumeDataSynchronizationResponse>(request,
+            GaussDBforNoSQLMeta.pauseResumeDataSynchronization, hcClient);
+    }
+
+    /**
      * 修改实例的管理员密码
      *
      * 修改实例的管理员密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetPasswordRequest 请求对象
      * @return CompletableFuture<ResetPasswordResponse>
@@ -846,8 +1193,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 修改实例的管理员密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetPasswordRequest 请求对象
      * @return AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
@@ -863,8 +1209,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 扩容冷数据存储。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeColdVolumeRequest 请求对象
      * @return CompletableFuture<ResizeColdVolumeResponse>
@@ -878,8 +1223,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 扩容冷数据存储。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeColdVolumeRequest 请求对象
      * @return AsyncInvoker<ResizeColdVolumeRequest, ResizeColdVolumeResponse>
@@ -895,8 +1239,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 变更实例的规格。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeInstanceRequest 请求对象
      * @return CompletableFuture<ResizeInstanceResponse>
@@ -910,8 +1253,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 变更实例的规格。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeInstanceRequest 请求对象
      * @return AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>
@@ -927,8 +1269,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 扩容实例的存储容量大小。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeInstanceVolumeRequest 请求对象
      * @return CompletableFuture<ResizeInstanceVolumeResponse>
@@ -943,8 +1284,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 扩容实例的存储容量大小。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeInstanceVolumeRequest 请求对象
      * @return AsyncInvoker<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse>
@@ -960,8 +1300,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 重启实例的数据库服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartInstanceRequest 请求对象
      * @return CompletableFuture<RestartInstanceResponse>
@@ -975,8 +1314,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 重启实例的数据库服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartInstanceRequest 请求对象
      * @return AsyncInvoker<RestartInstanceRequest, RestartInstanceResponse>
@@ -992,8 +1330,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 恢复到已有实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreExistingInstanceRequest 请求对象
      * @return CompletableFuture<RestoreExistingInstanceResponse>
@@ -1008,8 +1345,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 恢复到已有实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreExistingInstanceRequest 请求对象
      * @return AsyncInvoker<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse>
@@ -1025,8 +1361,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 设置磁盘自动扩容策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetAutoEnlargePolicyRequest 请求对象
      * @return CompletableFuture<SetAutoEnlargePolicyResponse>
@@ -1041,8 +1376,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 设置磁盘自动扩容策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetAutoEnlargePolicyRequest 请求对象
      * @return AsyncInvoker<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse>
@@ -1058,8 +1392,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 设置自动备份策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetBackupPolicyRequest 请求对象
      * @return CompletableFuture<SetBackupPolicyResponse>
@@ -1073,8 +1406,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 设置自动备份策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetBackupPolicyRequest 请求对象
      * @return AsyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>
@@ -1086,12 +1418,72 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 设置回收策略
+     *
+     * 设置已删除实例保留天数，修改保留天数后删除的实例按照新的天数保留，修改之前已在回收站的实例保留天数不变。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetRecyclePolicyRequest 请求对象
+     * @return CompletableFuture<SetRecyclePolicyResponse>
+     */
+    public CompletableFuture<SetRecyclePolicyResponse> setRecyclePolicyAsync(SetRecyclePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.setRecyclePolicy);
+    }
+
+    /**
+     * 设置回收策略
+     *
+     * 设置已删除实例保留天数，修改保留天数后删除的实例按照新的天数保留，修改之前已在回收站的实例保留天数不变。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetRecyclePolicyRequest 请求对象
+     * @return AsyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse>
+     */
+    public AsyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse> setRecyclePolicyAsyncInvoker(
+        SetRecyclePolicyRequest request) {
+        return new AsyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse>(request,
+            GaussDBforNoSQLMeta.setRecyclePolicy, hcClient);
+    }
+
+    /**
+     * 查询备份列表
+     *
+     * 根据指定条件查询备份列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAllInstancesBackupsRequest 请求对象
+     * @return CompletableFuture<ShowAllInstancesBackupsResponse>
+     */
+    public CompletableFuture<ShowAllInstancesBackupsResponse> showAllInstancesBackupsAsync(
+        ShowAllInstancesBackupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.showAllInstancesBackups);
+    }
+
+    /**
+     * 查询备份列表
+     *
+     * 根据指定条件查询备份列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAllInstancesBackupsRequest 请求对象
+     * @return AsyncInvoker<ShowAllInstancesBackupsRequest, ShowAllInstancesBackupsResponse>
+     */
+    public AsyncInvoker<ShowAllInstancesBackupsRequest, ShowAllInstancesBackupsResponse> showAllInstancesBackupsAsyncInvoker(
+        ShowAllInstancesBackupsRequest request) {
+        return new AsyncInvoker<ShowAllInstancesBackupsRequest, ShowAllInstancesBackupsResponse>(request,
+            GaussDBforNoSQLMeta.showAllInstancesBackups, hcClient);
+    }
+
+    /**
      * 查询参数模板可应用的实例列表
      *
      * 查询参数模板可应用的实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicableInstancesRequest 请求对象
      * @return CompletableFuture<ShowApplicableInstancesResponse>
@@ -1106,8 +1498,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询参数模板可应用的实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicableInstancesRequest 请求对象
      * @return AsyncInvoker<ShowApplicableInstancesRequest, ShowApplicableInstancesResponse>
@@ -1122,8 +1513,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 查询参数模板应用历史
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplyHistoryRequest 请求对象
      * @return CompletableFuture<ShowApplyHistoryResponse>
@@ -1136,8 +1526,7 @@ public class GaussDBforNoSQLAsyncClient {
      * 查询参数模板应用历史
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplyHistoryRequest 请求对象
      * @return AsyncInvoker<ShowApplyHistoryRequest, ShowApplyHistoryResponse>
@@ -1149,12 +1538,42 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 查询磁盘自动扩容策略
+     *
+     * 查询磁盘自动扩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAutoEnlargePolicyRequest 请求对象
+     * @return CompletableFuture<ShowAutoEnlargePolicyResponse>
+     */
+    public CompletableFuture<ShowAutoEnlargePolicyResponse> showAutoEnlargePolicyAsync(
+        ShowAutoEnlargePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.showAutoEnlargePolicy);
+    }
+
+    /**
+     * 查询磁盘自动扩容策略
+     *
+     * 查询磁盘自动扩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAutoEnlargePolicyRequest 请求对象
+     * @return AsyncInvoker<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse>
+     */
+    public AsyncInvoker<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> showAutoEnlargePolicyAsyncInvoker(
+        ShowAutoEnlargePolicyRequest request) {
+        return new AsyncInvoker<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse>(request,
+            GaussDBforNoSQLMeta.showAutoEnlargePolicy, hcClient);
+    }
+
+    /**
      * 查询自动备份策略
      *
      * 查询自动备份策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBackupPolicyRequest 请求对象
      * @return CompletableFuture<ShowBackupPolicyResponse>
@@ -1168,8 +1587,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询自动备份策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBackupPolicyRequest 请求对象
      * @return AsyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>
@@ -1185,8 +1603,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 获取指定参数模板的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowConfigurationDetailRequest 请求对象
      * @return CompletableFuture<ShowConfigurationDetailResponse>
@@ -1201,8 +1618,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 获取指定参数模板的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowConfigurationDetailRequest 请求对象
      * @return AsyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse>
@@ -1214,12 +1630,41 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 查询数据库错误日志信息
+     *
+     * 查询数据库错误日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowErrorLogRequest 请求对象
+     * @return CompletableFuture<ShowErrorLogResponse>
+     */
+    public CompletableFuture<ShowErrorLogResponse> showErrorLogAsync(ShowErrorLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.showErrorLog);
+    }
+
+    /**
+     * 查询数据库错误日志信息
+     *
+     * 查询数据库错误日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowErrorLogRequest 请求对象
+     * @return AsyncInvoker<ShowErrorLogRequest, ShowErrorLogResponse>
+     */
+    public AsyncInvoker<ShowErrorLogRequest, ShowErrorLogResponse> showErrorLogAsyncInvoker(
+        ShowErrorLogRequest request) {
+        return new AsyncInvoker<ShowErrorLogRequest, ShowErrorLogResponse>(request, GaussDBforNoSQLMeta.showErrorLog,
+            hcClient);
+    }
+
+    /**
      * 获取指定实例的参数
      *
      * 获取指定实例的参数信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceConfigurationRequest 请求对象
      * @return CompletableFuture<ShowInstanceConfigurationResponse>
@@ -1234,8 +1679,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 获取指定实例的参数信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceConfigurationRequest 请求对象
      * @return AsyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>
@@ -1251,8 +1695,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 该接口用于获取容灾实例主/备角色信息，以便后续容灾实例备升主和容灾实例主降备接口调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRoleRequest 请求对象
      * @return CompletableFuture<ShowInstanceRoleResponse>
@@ -1266,8 +1709,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 该接口用于获取容灾实例主/备角色信息，以便后续容灾实例备升主和容灾实例主降备接口调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRoleRequest 请求对象
      * @return AsyncInvoker<ShowInstanceRoleRequest, ShowInstanceRoleResponse>
@@ -1279,12 +1721,42 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 查询创建实例或扩容节点时需要的IP数量
+     *
+     * 查询创建实例或扩容节点时需要的IP数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowIpNumRequirementRequest 请求对象
+     * @return CompletableFuture<ShowIpNumRequirementResponse>
+     */
+    public CompletableFuture<ShowIpNumRequirementResponse> showIpNumRequirementAsync(
+        ShowIpNumRequirementRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.showIpNumRequirement);
+    }
+
+    /**
+     * 查询创建实例或扩容节点时需要的IP数量
+     *
+     * 查询创建实例或扩容节点时需要的IP数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowIpNumRequirementRequest 请求对象
+     * @return AsyncInvoker<ShowIpNumRequirementRequest, ShowIpNumRequirementResponse>
+     */
+    public AsyncInvoker<ShowIpNumRequirementRequest, ShowIpNumRequirementResponse> showIpNumRequirementAsyncInvoker(
+        ShowIpNumRequirementRequest request) {
+        return new AsyncInvoker<ShowIpNumRequirementRequest, ShowIpNumRequirementResponse>(request,
+            GaussDBforNoSQLMeta.showIpNumRequirement, hcClient);
+    }
+
+    /**
      * 查询实例参数的修改历史
      *
      * 查询实例参数的修改历史
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowModifyHistoryRequest 请求对象
      * @return CompletableFuture<ShowModifyHistoryResponse>
@@ -1298,8 +1770,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询实例参数的修改历史
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowModifyHistoryRequest 请求对象
      * @return AsyncInvoker<ShowModifyHistoryRequest, ShowModifyHistoryResponse>
@@ -1311,12 +1782,42 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 获取容灾实例数据同步状态
+     *
+     * 获取容灾实例数据同步状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPauseResumeStutusRequest 请求对象
+     * @return CompletableFuture<ShowPauseResumeStutusResponse>
+     */
+    public CompletableFuture<ShowPauseResumeStutusResponse> showPauseResumeStutusAsync(
+        ShowPauseResumeStutusRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.showPauseResumeStutus);
+    }
+
+    /**
+     * 获取容灾实例数据同步状态
+     *
+     * 获取容灾实例数据同步状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPauseResumeStutusRequest 请求对象
+     * @return AsyncInvoker<ShowPauseResumeStutusRequest, ShowPauseResumeStutusResponse>
+     */
+    public AsyncInvoker<ShowPauseResumeStutusRequest, ShowPauseResumeStutusResponse> showPauseResumeStutusAsyncInvoker(
+        ShowPauseResumeStutusRequest request) {
+        return new AsyncInvoker<ShowPauseResumeStutusRequest, ShowPauseResumeStutusResponse>(request,
+            GaussDBforNoSQLMeta.showPauseResumeStutus, hcClient);
+    }
+
+    /**
      * 查询配额
      *
      * 查询单租户在GaussDBforNoSQL服务下的资源配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotasRequest 请求对象
      * @return CompletableFuture<ShowQuotasResponse>
@@ -1330,8 +1831,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询单租户在GaussDBforNoSQL服务下的资源配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotasRequest 请求对象
      * @return AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
@@ -1342,12 +1842,41 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 查询回收策略
+     *
+     * 查询回收策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRecyclePolicyRequest 请求对象
+     * @return CompletableFuture<ShowRecyclePolicyResponse>
+     */
+    public CompletableFuture<ShowRecyclePolicyResponse> showRecyclePolicyAsync(ShowRecyclePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.showRecyclePolicy);
+    }
+
+    /**
+     * 查询回收策略
+     *
+     * 查询回收策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRecyclePolicyRequest 请求对象
+     * @return AsyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse>
+     */
+    public AsyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> showRecyclePolicyAsyncInvoker(
+        ShowRecyclePolicyRequest request) {
+        return new AsyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse>(request,
+            GaussDBforNoSQLMeta.showRecyclePolicy, hcClient);
+    }
+
+    /**
      * 查询可恢复的实例列表
      *
      * 查询用户可恢复的实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRestorableListRequest 请求对象
      * @return CompletableFuture<ShowRestorableListResponse>
@@ -1361,8 +1890,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询用户可恢复的实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRestorableListRequest 请求对象
      * @return AsyncInvoker<ShowRestorableListRequest, ShowRestorableListResponse>
@@ -1374,12 +1902,42 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 查询慢日志脱敏状态
+     *
+     * 查询慢日志脱敏状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSlowLogDesensitizationRequest 请求对象
+     * @return CompletableFuture<ShowSlowLogDesensitizationResponse>
+     */
+    public CompletableFuture<ShowSlowLogDesensitizationResponse> showSlowLogDesensitizationAsync(
+        ShowSlowLogDesensitizationRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.showSlowLogDesensitization);
+    }
+
+    /**
+     * 查询慢日志脱敏状态
+     *
+     * 查询慢日志脱敏状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSlowLogDesensitizationRequest 请求对象
+     * @return AsyncInvoker<ShowSlowLogDesensitizationRequest, ShowSlowLogDesensitizationResponse>
+     */
+    public AsyncInvoker<ShowSlowLogDesensitizationRequest, ShowSlowLogDesensitizationResponse> showSlowLogDesensitizationAsyncInvoker(
+        ShowSlowLogDesensitizationRequest request) {
+        return new AsyncInvoker<ShowSlowLogDesensitizationRequest, ShowSlowLogDesensitizationResponse>(request,
+            GaussDBforNoSQLMeta.showSlowLogDesensitization, hcClient);
+    }
+
+    /**
      * 缩容指定集群实例的节点数量
      *
      * 缩容指定集群实例的节点数量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShrinkInstanceNodeRequest 请求对象
      * @return CompletableFuture<ShrinkInstanceNodeResponse>
@@ -1393,8 +1951,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 缩容指定集群实例的节点数量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShrinkInstanceNodeRequest 请求对象
      * @return AsyncInvoker<ShrinkInstanceNodeRequest, ShrinkInstanceNodeResponse>
@@ -1406,12 +1963,42 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 设置慢日志脱敏状态
+     *
+     * 设置慢日志脱敏状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchSlowlogDesensitizationRequest 请求对象
+     * @return CompletableFuture<SwitchSlowlogDesensitizationResponse>
+     */
+    public CompletableFuture<SwitchSlowlogDesensitizationResponse> switchSlowlogDesensitizationAsync(
+        SwitchSlowlogDesensitizationRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.switchSlowlogDesensitization);
+    }
+
+    /**
+     * 设置慢日志脱敏状态
+     *
+     * 设置慢日志脱敏状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchSlowlogDesensitizationRequest 请求对象
+     * @return AsyncInvoker<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse>
+     */
+    public AsyncInvoker<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse> switchSlowlogDesensitizationAsyncInvoker(
+        SwitchSlowlogDesensitizationRequest request) {
+        return new AsyncInvoker<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse>(request,
+            GaussDBforNoSQLMeta.switchSlowlogDesensitization, hcClient);
+    }
+
+    /**
      * 切换实例SSL开关
      *
      * 切换实例SSL开关。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SwitchSslRequest 请求对象
      * @return CompletableFuture<SwitchSslResponse>
@@ -1425,8 +2012,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 切换实例SSL开关。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SwitchSslRequest 请求对象
      * @return AsyncInvoker<SwitchSslRequest, SwitchSslResponse>
@@ -1440,8 +2026,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 该接口用于对已经搭建容灾关系的实例，将备实例升级为主实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SwitchToMasterRequest 请求对象
      * @return CompletableFuture<SwitchToMasterResponse>
@@ -1455,8 +2040,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 该接口用于对已经搭建容灾关系的实例，将备实例升级为主实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SwitchToMasterRequest 请求对象
      * @return AsyncInvoker<SwitchToMasterRequest, SwitchToMasterResponse>
@@ -1472,8 +2056,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 该接口用于对已经搭建容灾关系的实例，将主实例降级为备实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SwitchToSlaveRequest 请求对象
      * @return CompletableFuture<SwitchToSlaveResponse>
@@ -1487,8 +2070,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 该接口用于对已经搭建容灾关系的实例，将主实例降级为备实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SwitchToSlaveRequest 请求对象
      * @return AsyncInvoker<SwitchToSlaveRequest, SwitchToSlaveResponse>
@@ -1500,12 +2082,41 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 修改副本集跨网段访问配置
+     *
+     * 修改副本集跨网段访问配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateClientNetworkRequest 请求对象
+     * @return CompletableFuture<UpdateClientNetworkResponse>
+     */
+    public CompletableFuture<UpdateClientNetworkResponse> updateClientNetworkAsync(UpdateClientNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.updateClientNetwork);
+    }
+
+    /**
+     * 修改副本集跨网段访问配置
+     *
+     * 修改副本集跨网段访问配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateClientNetworkRequest 请求对象
+     * @return AsyncInvoker<UpdateClientNetworkRequest, UpdateClientNetworkResponse>
+     */
+    public AsyncInvoker<UpdateClientNetworkRequest, UpdateClientNetworkResponse> updateClientNetworkAsyncInvoker(
+        UpdateClientNetworkRequest request) {
+        return new AsyncInvoker<UpdateClientNetworkRequest, UpdateClientNetworkResponse>(request,
+            GaussDBforNoSQLMeta.updateClientNetwork, hcClient);
+    }
+
+    /**
      * 修改参数模板参数
      *
      * 修改参数模板参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateConfigurationRequest 请求对象
      * @return CompletableFuture<UpdateConfigurationResponse>
@@ -1519,8 +2130,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 修改参数模板参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateConfigurationRequest 请求对象
      * @return AsyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>
@@ -1536,8 +2146,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 修改指定实例的参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceConfigurationRequest 请求对象
      * @return CompletableFuture<UpdateInstanceConfigurationResponse>
@@ -1552,8 +2161,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 修改指定实例的参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceConfigurationRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>
@@ -1569,8 +2177,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 修改实例名称
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceNameRequest 请求对象
      * @return CompletableFuture<UpdateInstanceNameResponse>
@@ -1584,8 +2191,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 修改实例名称
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceNameRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>
@@ -1601,8 +2207,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 变更实例关联的安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSecurityGroupRequest 请求对象
      * @return CompletableFuture<UpdateSecurityGroupResponse>
@@ -1616,8 +2221,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 变更实例关联的安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSecurityGroupRequest 请求对象
      * @return AsyncInvoker<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse>
@@ -1633,8 +2237,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 升级数据库补丁版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpgradeDbVersionRequest 请求对象
      * @return CompletableFuture<UpgradeDbVersionResponse>
@@ -1648,8 +2251,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 升级数据库补丁版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpgradeDbVersionRequest 请求对象
      * @return AsyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse>
@@ -1665,8 +2267,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询当前支持的API版本信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionRequest 请求对象
      * @return CompletableFuture<ListApiVersionResponse>
@@ -1680,8 +2281,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询当前支持的API版本信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionRequest 请求对象
      * @return AsyncInvoker<ListApiVersionRequest, ListApiVersionResponse>
@@ -1697,8 +2297,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询指定API版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
      * @return CompletableFuture<ShowApiVersionResponse>
@@ -1712,8 +2311,7 @@ public class GaussDBforNoSQLAsyncClient {
      *
      * 查询指定API版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
      * @return AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>

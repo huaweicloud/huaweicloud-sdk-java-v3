@@ -22,8 +22,7 @@ public class DasClient {
      *
      * 查询API版本列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return ListApiVersionsResponse
@@ -37,8 +36,7 @@ public class DasClient {
      *
      * 查询API版本列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
@@ -54,8 +52,7 @@ public class DasClient {
      *
      * 查询指定的API版本信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
      * @return ShowApiVersionResponse
@@ -69,8 +66,7 @@ public class DasClient {
      *
      * 查询指定的API版本信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
      * @return SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
@@ -86,8 +82,7 @@ public class DasClient {
      *
      * 设置SQL限流开关状态。目前仅支持MySQL数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeSqlLimitSwitchStatusRequest 请求对象
      * @return ChangeSqlLimitSwitchStatusResponse
@@ -101,8 +96,7 @@ public class DasClient {
      *
      * 设置SQL限流开关状态。目前仅支持MySQL数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeSqlLimitSwitchStatusRequest 请求对象
      * @return SyncInvoker<ChangeSqlLimitSwitchStatusRequest, ChangeSqlLimitSwitchStatusResponse>
@@ -119,8 +113,7 @@ public class DasClient {
      * 打开或者关闭DAS收集全量SQL开关，开启后，实例的性能损耗在5%以内。开启全量SQL后，本服务会对SQL的文本内容进行存储，以便进行分析。用户可自行设置全量SQL的保存时间范围，到期后会自动删除；如果未设置，数据默认保留7天。
      * 打开或者关闭DAS收集慢SQL开关。开启慢SQL后，本服务会对慢SQL的文本内容进行存储，以便进行分析。用户可自行设置慢SQL的保存时间范围，到期后会自动删除；如果未设置，数据默认保留7天。该功能仅支持付费实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeSqlSwitchRequest 请求对象
      * @return ChangeSqlSwitchResponse
@@ -135,8 +128,7 @@ public class DasClient {
      * 打开或者关闭DAS收集全量SQL开关，开启后，实例的性能损耗在5%以内。开启全量SQL后，本服务会对SQL的文本内容进行存储，以便进行分析。用户可自行设置全量SQL的保存时间范围，到期后会自动删除；如果未设置，数据默认保留7天。
      * 打开或者关闭DAS收集慢SQL开关。开启慢SQL后，本服务会对慢SQL的文本内容进行存储，以便进行分析。用户可自行设置慢SQL的保存时间范围，到期后会自动删除；如果未设置，数据默认保留7天。该功能仅支持付费实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeSqlSwitchRequest 请求对象
      * @return SyncInvoker<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse>
@@ -152,8 +144,7 @@ public class DasClient {
      *
      * 创建空间分析任务，如触发重新分析，支持MySQL和GaussDB(for MySQL)引擎
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSpaceAnalysisTaskRequest 请求对象
      * @return CreateSpaceAnalysisTaskResponse
@@ -167,8 +158,7 @@ public class DasClient {
      *
      * 创建空间分析任务，如触发重新分析，支持MySQL和GaussDB(for MySQL)引擎
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSpaceAnalysisTaskRequest 请求对象
      * @return SyncInvoker<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse>
@@ -191,8 +181,7 @@ public class DasClient {
      * 5.部分版本只读实例不允许设置限流规则，如果要设置限流规则，请到主实例上进行添加。
      * 6.系统表不限制、不涉及数据查询的不限制、root账号在特定版本下不限制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSqlLimitRulesRequest 请求对象
      * @return CreateSqlLimitRulesResponse
@@ -213,8 +202,7 @@ public class DasClient {
      * 5.部分版本只读实例不允许设置限流规则，如果要设置限流规则，请到主实例上进行添加。
      * 6.系统表不限制、不涉及数据查询的不限制、root账号在特定版本下不限制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSqlLimitRulesRequest 请求对象
      * @return SyncInvoker<CreateSqlLimitRulesRequest, CreateSqlLimitRulesResponse>
@@ -231,8 +219,7 @@ public class DasClient {
      * 删除注册在DAS里的数据库用户。此接口只是将注册的数据库用户在DAS系统里删除，不会真正删除数据库用户对象。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDbUserRequest 请求对象
      * @return DeleteDbUserResponse
@@ -247,8 +234,7 @@ public class DasClient {
      * 删除注册在DAS里的数据库用户。此接口只是将注册的数据库用户在DAS系统里删除，不会真正删除数据库用户对象。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDbUserRequest 请求对象
      * @return SyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse>
@@ -263,8 +249,7 @@ public class DasClient {
      * 查杀会话。支持按照用户、数据库、会话列表查杀会话，三个条件至少指定一个。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProcessRequest 请求对象
      * @return DeleteProcessResponse
@@ -279,8 +264,7 @@ public class DasClient {
      * 查杀会话。支持按照用户、数据库、会话列表查杀会话，三个条件至少指定一个。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProcessRequest 请求对象
      * @return SyncInvoker<DeleteProcessRequest, DeleteProcessResponse>
@@ -294,8 +278,7 @@ public class DasClient {
      *
      * 删除SQL限流规则。目前仅支持MySQL数据库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSqlLimitRulesRequest 请求对象
      * @return DeleteSqlLimitRulesResponse
@@ -309,8 +292,7 @@ public class DasClient {
      *
      * 删除SQL限流规则。目前仅支持MySQL数据库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSqlLimitRulesRequest 请求对象
      * @return SyncInvoker<DeleteSqlLimitRulesRequest, DeleteSqlLimitRulesResponse>
@@ -326,8 +308,7 @@ public class DasClient {
      *
      * DAS收集慢SQL开关打开后，一次性导出指定时间范围内的慢SQL数据，支持分页滚动获取。该功能仅支持付费实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportSlowQueryLogsRequest 请求对象
      * @return ExportSlowQueryLogsResponse
@@ -341,8 +322,7 @@ public class DasClient {
      *
      * DAS收集慢SQL开关打开后，一次性导出指定时间范围内的慢SQL数据，支持分页滚动获取。该功能仅支持付费实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportSlowQueryLogsRequest 请求对象
      * @return SyncInvoker<ExportSlowQueryLogsRequest, ExportSlowQueryLogsResponse>
@@ -358,8 +338,7 @@ public class DasClient {
      *
      * 慢SQL开关打开后，导出慢SQL模板列表。该功能仅支持付费实例。查询时间间隔最长一天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportSlowSqlTemplatesDetailsRequest 请求对象
      * @return ExportSlowSqlTemplatesDetailsResponse
@@ -374,8 +353,7 @@ public class DasClient {
      *
      * 慢SQL开关打开后，导出慢SQL模板列表。该功能仅支持付费实例。查询时间间隔最长一天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportSlowSqlTemplatesDetailsRequest 请求对象
      * @return SyncInvoker<ExportSlowSqlTemplatesDetailsRequest, ExportSlowSqlTemplatesDetailsResponse>
@@ -391,8 +369,7 @@ public class DasClient {
      *
      * 全量SQL开关打开后，一次性导出指定时间范围内的全量SQL数据，支持分页滚动获取。该功能仅支持付费实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportSqlStatementsRequest 请求对象
      * @return ExportSqlStatementsResponse
@@ -406,8 +383,7 @@ public class DasClient {
      *
      * 全量SQL开关打开后，一次性导出指定时间范围内的全量SQL数据，支持分页滚动获取。该功能仅支持付费实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportSqlStatementsRequest 请求对象
      * @return SyncInvoker<ExportSqlStatementsRequest, ExportSqlStatementsResponse>
@@ -423,8 +399,7 @@ public class DasClient {
      *
      * TopSQL开关打开后，导出TopSQL模板列表。该功能仅支持付费实例。查询时间间隔最长一小时。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportTopSqlTemplatesDetailsRequest 请求对象
      * @return ExportTopSqlTemplatesDetailsResponse
@@ -439,8 +414,7 @@ public class DasClient {
      *
      * TopSQL开关打开后，导出TopSQL模板列表。该功能仅支持付费实例。查询时间间隔最长一小时。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportTopSqlTemplatesDetailsRequest 请求对象
      * @return SyncInvoker<ExportTopSqlTemplatesDetailsRequest, ExportTopSqlTemplatesDetailsResponse>
@@ -456,8 +430,7 @@ public class DasClient {
      *
      * TopSQL开关打开后，导出SQL执行耗时区间数据。该功能仅支持付费实例。查询时间间隔最长六小时。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportTopSqlTrendDetailsRequest 请求对象
      * @return ExportTopSqlTrendDetailsResponse
@@ -471,8 +444,7 @@ public class DasClient {
      *
      * TopSQL开关打开后，导出SQL执行耗时区间数据。该功能仅支持付费实例。查询时间间隔最长六小时。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportTopSqlTrendDetailsRequest 请求对象
      * @return SyncInvoker<ExportTopSqlTrendDetailsRequest, ExportTopSqlTrendDetailsResponse>
@@ -489,8 +461,7 @@ public class DasClient {
      * 查询注册在DAS里的数据库用户列表，后续调用其他接口时(如查询实例会话列表接口)需要用到此接口返回的db_user_id。此接口不会返回数据库实例上的数据库用户对象。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDbUsersRequest 请求对象
      * @return ListDbUsersResponse
@@ -505,8 +476,7 @@ public class DasClient {
      * 查询注册在DAS里的数据库用户列表，后续调用其他接口时(如查询实例会话列表接口)需要用到此接口返回的db_user_id。此接口不会返回数据库实例上的数据库用户对象。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDbUsersRequest 请求对象
      * @return SyncInvoker<ListDbUsersRequest, ListDbUsersResponse>
@@ -521,8 +491,7 @@ public class DasClient {
      * 查询InnoDB锁等待列表。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInnodbLocksRequest 请求对象
      * @return ListInnodbLocksResponse
@@ -537,8 +506,7 @@ public class DasClient {
      * 查询InnoDB锁等待列表。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInnodbLocksRequest 请求对象
      * @return SyncInvoker<ListInnodbLocksRequest, ListInnodbLocksResponse>
@@ -555,8 +523,7 @@ public class DasClient {
      * 查询元数据锁列表。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMetadataLocksRequest 请求对象
      * @return ListMetadataLocksResponse
@@ -571,8 +538,7 @@ public class DasClient {
      * 查询元数据锁列表。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMetadataLocksRequest 请求对象
      * @return SyncInvoker<ListMetadataLocksRequest, ListMetadataLocksResponse>
@@ -589,8 +555,7 @@ public class DasClient {
      * 支持根据数据库、用户查询实例会话列表。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProcessesRequest 请求对象
      * @return ListProcessesResponse
@@ -605,8 +570,7 @@ public class DasClient {
      * 支持根据数据库、用户查询实例会话列表。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProcessesRequest 请求对象
      * @return SyncInvoker<ListProcessesRequest, ListProcessesResponse>
@@ -620,8 +584,7 @@ public class DasClient {
      *
      * 获取空间分析数据列表。实例级别数据来源于文件系统，库级别和表级别数据来源于information_schema.tables表。空间&amp;元数据分析最多分析10000张表，若缺少库表空间数据，可能是因为数据库实例表个数过多或者账号未保存密码。如果为保存密码，请使用用户管理接口或页面录入数据库账号。支持MySQL和GaussDB(for MySQL)引擎
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSpaceAnalysisRequest 请求对象
      * @return ListSpaceAnalysisResponse
@@ -635,8 +598,7 @@ public class DasClient {
      *
      * 获取空间分析数据列表。实例级别数据来源于文件系统，库级别和表级别数据来源于information_schema.tables表。空间&amp;元数据分析最多分析10000张表，若缺少库表空间数据，可能是因为数据库实例表个数过多或者账号未保存密码。如果为保存密码，请使用用户管理接口或页面录入数据库账号。支持MySQL和GaussDB(for MySQL)引擎
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSpaceAnalysisRequest 请求对象
      * @return SyncInvoker<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse>
@@ -652,8 +614,7 @@ public class DasClient {
      *
      * 查询SQL限流规则。目前仅支持MySQL数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSqlLimitRulesRequest 请求对象
      * @return ListSqlLimitRulesResponse
@@ -667,8 +628,7 @@ public class DasClient {
      *
      * 查询SQL限流规则。目前仅支持MySQL数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSqlLimitRulesRequest 请求对象
      * @return SyncInvoker<ListSqlLimitRulesRequest, ListSqlLimitRulesResponse>
@@ -685,8 +645,7 @@ public class DasClient {
      * 此接口是将数据库用户和密码注册进DAS系统，同时会返回一个数据库用户ID ，后续调用其他接口时（如查询实例会话列表接口）需要用到此数据库用户ID。密码为加密存储，且仅用于DAS API相关功能。此接口不会在数据库实例上创建数据库用户对象。请确保输入的用户名和密码是已经存在并且是正确的。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RegisterDbUserRequest 请求对象
      * @return RegisterDbUserResponse
@@ -701,8 +660,7 @@ public class DasClient {
      * 此接口是将数据库用户和密码注册进DAS系统，同时会返回一个数据库用户ID ，后续调用其他接口时（如查询实例会话列表接口）需要用到此数据库用户ID。密码为加密存储，且仅用于DAS API相关功能。此接口不会在数据库实例上创建数据库用户对象。请确保输入的用户名和密码是已经存在并且是正确的。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RegisterDbUserRequest 请求对象
      * @return SyncInvoker<RegisterDbUserRequest, RegisterDbUserResponse>
@@ -719,8 +677,7 @@ public class DasClient {
      * 查询注册在DAS里的数据库用户信息。此接口不能查询数据库实例上的数据库用户对象。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDbUserRequest 请求对象
      * @return ShowDbUserResponse
@@ -735,8 +692,7 @@ public class DasClient {
      * 查询注册在DAS里的数据库用户信息。此接口不能查询数据库实例上的数据库用户对象。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDbUserRequest 请求对象
      * @return SyncInvoker<ShowDbUserRequest, ShowDbUserResponse>
@@ -750,8 +706,7 @@ public class DasClient {
      *
      * 查询云DBA配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotasRequest 请求对象
      * @return ShowQuotasResponse
@@ -765,8 +720,7 @@ public class DasClient {
      *
      * 查询云DBA配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotasRequest 请求对象
      * @return SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
@@ -781,8 +735,7 @@ public class DasClient {
      * 查询SQL执行计划。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSqlExecutionPlanRequest 请求对象
      * @return ShowSqlExecutionPlanResponse
@@ -797,8 +750,7 @@ public class DasClient {
      * 查询SQL执行计划。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSqlExecutionPlanRequest 请求对象
      * @return SyncInvoker<ShowSqlExecutionPlanRequest, ShowSqlExecutionPlanResponse>
@@ -816,8 +768,7 @@ public class DasClient {
      * 目前仅支持MySQL实例。
      * 补充GET请求，处理超长SQL
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSqlExplainRequest 请求对象
      * @return ShowSqlExplainResponse
@@ -833,8 +784,7 @@ public class DasClient {
      * 目前仅支持MySQL实例。
      * 补充GET请求，处理超长SQL
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSqlExplainRequest 请求对象
      * @return SyncInvoker<ShowSqlExplainRequest, ShowSqlExplainResponse>
@@ -850,8 +800,7 @@ public class DasClient {
      *
      * 查询指定ID的SQL限流任务信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSqlLimitJobInfoRequest 请求对象
      * @return ShowSqlLimitJobInfoResponse
@@ -865,8 +814,7 @@ public class DasClient {
      *
      * 查询指定ID的SQL限流任务信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSqlLimitJobInfoRequest 请求对象
      * @return SyncInvoker<ShowSqlLimitJobInfoRequest, ShowSqlLimitJobInfoResponse>
@@ -882,8 +830,7 @@ public class DasClient {
      *
      * 查询SQL限流的开关状态。目前仅支持MySQL实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSqlLimitSwitchStatusRequest 请求对象
      * @return ShowSqlLimitSwitchStatusResponse
@@ -897,8 +844,7 @@ public class DasClient {
      *
      * 查询SQL限流的开关状态。目前仅支持MySQL实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSqlLimitSwitchStatusRequest 请求对象
      * @return SyncInvoker<ShowSqlLimitSwitchStatusRequest, ShowSqlLimitSwitchStatusResponse>
@@ -914,8 +860,7 @@ public class DasClient {
      *
      * 查询DAS收集全量SQL和慢SQL的开关状态。该功能仅支持付费实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSqlSwitchStatusRequest 请求对象
      * @return ShowSqlSwitchStatusResponse
@@ -929,8 +874,7 @@ public class DasClient {
      *
      * 查询DAS收集全量SQL和慢SQL的开关状态。该功能仅支持付费实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSqlSwitchStatusRequest 请求对象
      * @return SyncInvoker<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse>
@@ -947,8 +891,7 @@ public class DasClient {
      * 修改注册在DAS里的数据库用户名和密码。此接口不会修改数据库实例上的数据库用户对象的用户名和密码。请确保输入的用户名和密码是已经存在并且是正确的。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDbUserRequest 请求对象
      * @return UpdateDbUserResponse
@@ -963,8 +906,7 @@ public class DasClient {
      * 修改注册在DAS里的数据库用户名和密码。此接口不会修改数据库实例上的数据库用户对象的用户名和密码。请确保输入的用户名和密码是已经存在并且是正确的。
      * 目前仅支持MySQL实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDbUserRequest 请求对象
      * @return SyncInvoker<UpdateDbUserRequest, UpdateDbUserResponse>

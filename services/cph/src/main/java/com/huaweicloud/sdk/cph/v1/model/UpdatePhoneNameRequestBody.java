@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * UpdatePhoneNameRequestBody
+ * 更新云手机名称请求体。
  */
 public class UpdatePhoneNameRequestBody {
 

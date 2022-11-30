@@ -22,7 +22,7 @@ public class ShowBandwidthDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "band_widths")
 
-    private List<Object> bandWidths = null;
+    private List<Bandwidth> bandWidths = null;
 
     public ShowBandwidthDetailResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -30,7 +30,7 @@ public class ShowBandwidthDetailResponse extends SdkResponse {
     }
 
     /**
-     * 请求的唯一标识ID
+     * 请求的唯一标识ID。
      * @return requestId
      */
     public String getRequestId() {
@@ -41,12 +41,12 @@ public class ShowBandwidthDetailResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public ShowBandwidthDetailResponse withBandWidths(List<Object> bandWidths) {
+    public ShowBandwidthDetailResponse withBandWidths(List<Bandwidth> bandWidths) {
         this.bandWidths = bandWidths;
         return this;
     }
 
-    public ShowBandwidthDetailResponse addBandWidthsItem(Object bandWidthsItem) {
+    public ShowBandwidthDetailResponse addBandWidthsItem(Bandwidth bandWidthsItem) {
         if (this.bandWidths == null) {
             this.bandWidths = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class ShowBandwidthDetailResponse extends SdkResponse {
         return this;
     }
 
-    public ShowBandwidthDetailResponse withBandWidths(Consumer<List<Object>> bandWidthsSetter) {
+    public ShowBandwidthDetailResponse withBandWidths(Consumer<List<Bandwidth>> bandWidthsSetter) {
         if (this.bandWidths == null) {
             this.bandWidths = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class ShowBandwidthDetailResponse extends SdkResponse {
      * 带宽信息
      * @return bandWidths
      */
-    public List<Object> getBandWidths() {
+    public List<Bandwidth> getBandWidths() {
         return bandWidths;
     }
 
-    public void setBandWidths(List<Object> bandWidths) {
+    public void setBandWidths(List<Bandwidth> bandWidths) {
         this.bandWidths = bandWidths;
     }
 

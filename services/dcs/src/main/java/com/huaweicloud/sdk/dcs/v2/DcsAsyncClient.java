@@ -24,8 +24,7 @@ public class DcsAsyncClient {
      *
      * 为指定实例批量添加标签，或批量删除标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateOrDeleteTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateOrDeleteTagsResponse>
@@ -40,8 +39,7 @@ public class DcsAsyncClient {
      *
      * 为指定实例批量添加标签，或批量删除标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateOrDeleteTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse>
@@ -57,8 +55,7 @@ public class DcsAsyncClient {
      *
      * 批量删除多个缓存实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteInstancesRequest 请求对象
      * @return CompletableFuture<BatchDeleteInstancesResponse>
@@ -73,8 +70,7 @@ public class DcsAsyncClient {
      *
      * 批量删除多个缓存实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteInstancesRequest 请求对象
      * @return AsyncInvoker<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse>
@@ -92,8 +88,7 @@ public class DcsAsyncClient {
      * 创建中实例不返回节点信息。
      * 仅支持Redis4.0和Redis5.0实例查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchShowNodesInformationRequest 请求对象
      * @return CompletableFuture<BatchShowNodesInformationResponse>
@@ -110,8 +105,7 @@ public class DcsAsyncClient {
      * 创建中实例不返回节点信息。
      * 仅支持Redis4.0和Redis5.0实例查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchShowNodesInformationRequest 请求对象
      * @return AsyncInvoker<BatchShowNodesInformationRequest, BatchShowNodesInformationResponse>
@@ -127,8 +121,7 @@ public class DcsAsyncClient {
      *
      * 批量停止数据迁移任务，接口响应成功，仅表示下发任务成功。查询到迁移任务状态为TERMINATED时，即停止成功。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchStopMigrationTasksRequest 请求对象
      * @return CompletableFuture<BatchStopMigrationTasksResponse>
@@ -143,8 +136,7 @@ public class DcsAsyncClient {
      *
      * 批量停止数据迁移任务，接口响应成功，仅表示下发任务成功。查询到迁移任务状态为TERMINATED时，即停止成功。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchStopMigrationTasksRequest 请求对象
      * @return AsyncInvoker<BatchStopMigrationTasksRequest, BatchStopMigrationTasksResponse>
@@ -160,8 +152,7 @@ public class DcsAsyncClient {
      *
      * 切换实例主备节点，只有主备实例支持该操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeMasterStandbyRequest 请求对象
      * @return CompletableFuture<ChangeMasterStandbyResponse>
@@ -175,8 +166,7 @@ public class DcsAsyncClient {
      *
      * 切换实例主备节点，只有主备实例支持该操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeMasterStandbyRequest 请求对象
      * @return AsyncInvoker<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse>
@@ -193,8 +183,7 @@ public class DcsAsyncClient {
      * 备份指定的缓存实例。
      * &gt; 只有主备和集群类型的缓存实例支持备份恢复操作，单机实例不支持备份恢复操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CopyInstanceRequest 请求对象
      * @return CompletableFuture<CopyInstanceResponse>
@@ -209,8 +198,7 @@ public class DcsAsyncClient {
      * 备份指定的缓存实例。
      * &gt; 只有主备和集群类型的缓存实例支持备份恢复操作，单机实例不支持备份恢复操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CopyInstanceRequest 请求对象
      * @return AsyncInvoker<CopyInstanceRequest, CopyInstanceResponse>
@@ -225,8 +213,7 @@ public class DcsAsyncClient {
      *
      * 为Redis实例创建大key分析任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateBigkeyScanTaskRequest 请求对象
      * @return CompletableFuture<CreateBigkeyScanTaskResponse>
@@ -241,8 +228,7 @@ public class DcsAsyncClient {
      *
      * 为Redis实例创建大key分析任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateBigkeyScanTaskRequest 请求对象
      * @return AsyncInvoker<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse>
@@ -258,8 +244,7 @@ public class DcsAsyncClient {
      *
      * 诊断指定的缓存实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDiagnosisTaskRequest 请求对象
      * @return CompletableFuture<CreateDiagnosisTaskResponse>
@@ -273,8 +258,7 @@ public class DcsAsyncClient {
      *
      * 诊断指定的缓存实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDiagnosisTaskRequest 请求对象
      * @return AsyncInvoker<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse>
@@ -292,8 +276,7 @@ public class DcsAsyncClient {
      * 
      * 热key分析需要将缓存实例配置参数maxmemory-policy设置为allkeys-lfu或volatile-lfu。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHotkeyScanTaskRequest 请求对象
      * @return CompletableFuture<CreateHotkeyScanTaskResponse>
@@ -310,8 +293,7 @@ public class DcsAsyncClient {
      * 
      * 热key分析需要将缓存实例配置参数maxmemory-policy设置为allkeys-lfu或volatile-lfu。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHotkeyScanTaskRequest 请求对象
      * @return AsyncInvoker<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse>
@@ -327,8 +309,7 @@ public class DcsAsyncClient {
      *
      * 创建缓存实例，该接口创建的缓存实例支持按需计费和包周期两种方式。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return CompletableFuture<CreateInstanceResponse>
@@ -342,8 +323,7 @@ public class DcsAsyncClient {
      *
      * 创建缓存实例，该接口创建的缓存实例支持按需计费和包周期两种方式。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
@@ -359,8 +339,7 @@ public class DcsAsyncClient {
      *
      * 创建数据迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMigrationTaskRequest 请求对象
      * @return CompletableFuture<CreateMigrationTaskResponse>
@@ -374,8 +353,7 @@ public class DcsAsyncClient {
      *
      * 创建数据迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMigrationTaskRequest 请求对象
      * @return AsyncInvoker<CreateMigrationTaskRequest, CreateMigrationTaskResponse>
@@ -391,8 +369,7 @@ public class DcsAsyncClient {
      *
      * 创建在线数据迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateOnlineMigrationTaskRequest 请求对象
      * @return CompletableFuture<CreateOnlineMigrationTaskResponse>
@@ -407,8 +384,7 @@ public class DcsAsyncClient {
      *
      * 创建在线数据迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateOnlineMigrationTaskRequest 请求对象
      * @return AsyncInvoker<CreateOnlineMigrationTaskRequest, CreateOnlineMigrationTaskResponse>
@@ -424,8 +400,7 @@ public class DcsAsyncClient {
      *
      * 采集Redis运行日志。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRedislogRequest 请求对象
      * @return CompletableFuture<CreateRedislogResponse>
@@ -439,8 +414,7 @@ public class DcsAsyncClient {
      *
      * 采集Redis运行日志。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRedislogRequest 请求对象
      * @return AsyncInvoker<CreateRedislogRequest, CreateRedislogResponse>
@@ -456,8 +430,7 @@ public class DcsAsyncClient {
      *
      * 获取日志下载链接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRedislogDownloadLinkRequest 请求对象
      * @return CompletableFuture<CreateRedislogDownloadLinkResponse>
@@ -472,8 +445,7 @@ public class DcsAsyncClient {
      *
      * 获取日志下载链接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRedislogDownloadLinkRequest 请求对象
      * @return AsyncInvoker<CreateRedislogDownloadLinkRequest, CreateRedislogDownloadLinkResponse>
@@ -489,8 +461,7 @@ public class DcsAsyncClient {
      *
      * 删除后台任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackgroundTaskRequest 请求对象
      * @return CompletableFuture<DeleteBackgroundTaskResponse>
@@ -505,8 +476,7 @@ public class DcsAsyncClient {
      *
      * 删除后台任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackgroundTaskRequest 请求对象
      * @return AsyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse>
@@ -522,8 +492,7 @@ public class DcsAsyncClient {
      *
      * 删除缓存实例已备份的文件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackupFileRequest 请求对象
      * @return CompletableFuture<DeleteBackupFileResponse>
@@ -537,8 +506,7 @@ public class DcsAsyncClient {
      *
      * 删除缓存实例已备份的文件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackupFileRequest 请求对象
      * @return AsyncInvoker<DeleteBackupFileRequest, DeleteBackupFileResponse>
@@ -554,8 +522,7 @@ public class DcsAsyncClient {
      *
      * 删除大key分析记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBigkeyScanTaskRequest 请求对象
      * @return CompletableFuture<DeleteBigkeyScanTaskResponse>
@@ -570,8 +537,7 @@ public class DcsAsyncClient {
      *
      * 删除大key分析记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBigkeyScanTaskRequest 请求对象
      * @return AsyncInvoker<DeleteBigkeyScanTaskRequest, DeleteBigkeyScanTaskResponse>
@@ -587,8 +553,7 @@ public class DcsAsyncClient {
      *
      * 删除热key分析任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHotkeyScanTaskRequest 请求对象
      * @return CompletableFuture<DeleteHotkeyScanTaskResponse>
@@ -603,8 +568,7 @@ public class DcsAsyncClient {
      *
      * 删除热key分析任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHotkeyScanTaskRequest 请求对象
      * @return AsyncInvoker<DeleteHotkeyScanTaskRequest, DeleteHotkeyScanTaskResponse>
@@ -620,8 +584,7 @@ public class DcsAsyncClient {
      *
      * 将只读副本的IP从域名中摘除，摘除成功后，只读域名不会再解析到该副本IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIpFromDomainNameRequest 请求对象
      * @return CompletableFuture<DeleteIpFromDomainNameResponse>
@@ -636,8 +599,7 @@ public class DcsAsyncClient {
      *
      * 将只读副本的IP从域名中摘除，摘除成功后，只读域名不会再解析到该副本IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIpFromDomainNameRequest 请求对象
      * @return AsyncInvoker<DeleteIpFromDomainNameRequest, DeleteIpFromDomainNameResponse>
@@ -653,8 +615,7 @@ public class DcsAsyncClient {
      *
      * 删除数据迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMigrationTaskRequest 请求对象
      * @return CompletableFuture<DeleteMigrationTaskResponse>
@@ -668,8 +629,7 @@ public class DcsAsyncClient {
      *
      * 删除数据迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMigrationTaskRequest 请求对象
      * @return AsyncInvoker<DeleteMigrationTaskRequest, DeleteMigrationTaskResponse>
@@ -687,8 +647,7 @@ public class DcsAsyncClient {
      * 
      * &gt; 如果是删除按需资源，请按照本章节执行；如果是删除包周期资源，即退订，请参考[退订包周期资源](https://support.huaweicloud.com/api-oce/zh-cn_topic_0082522030.html#section2)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSingleInstanceRequest 请求对象
      * @return CompletableFuture<DeleteSingleInstanceResponse>
@@ -705,8 +664,7 @@ public class DcsAsyncClient {
      * 
      * &gt; 如果是删除按需资源，请按照本章节执行；如果是删除包周期资源，即退订，请参考[退订包周期资源](https://support.huaweicloud.com/api-oce/zh-cn_topic_0082522030.html#section2)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSingleInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteSingleInstanceRequest, DeleteSingleInstanceResponse>
@@ -722,8 +680,7 @@ public class DcsAsyncClient {
      *
      * 查询所在局点的可用区信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailableZonesRequest 请求对象
      * @return CompletableFuture<ListAvailableZonesResponse>
@@ -737,8 +694,7 @@ public class DcsAsyncClient {
      *
      * 查询所在局点的可用区信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailableZonesRequest 请求对象
      * @return AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>
@@ -754,8 +710,7 @@ public class DcsAsyncClient {
      *
      * 查询后台任务列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackgroundTaskRequest 请求对象
      * @return CompletableFuture<ListBackgroundTaskResponse>
@@ -769,8 +724,7 @@ public class DcsAsyncClient {
      *
      * 查询后台任务列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackgroundTaskRequest 请求对象
      * @return AsyncInvoker<ListBackgroundTaskRequest, ListBackgroundTaskResponse>
@@ -786,8 +740,7 @@ public class DcsAsyncClient {
      *
      * 获取指定实例的备份文件下载链接，下载备份文件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackupFileLinksRequest 请求对象
      * @return CompletableFuture<ListBackupFileLinksResponse>
@@ -801,8 +754,7 @@ public class DcsAsyncClient {
      *
      * 获取指定实例的备份文件下载链接，下载备份文件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackupFileLinksRequest 请求对象
      * @return AsyncInvoker<ListBackupFileLinksRequest, ListBackupFileLinksResponse>
@@ -818,8 +770,7 @@ public class DcsAsyncClient {
      *
      * 查询指定缓存实例的备份信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackupRecordsRequest 请求对象
      * @return CompletableFuture<ListBackupRecordsResponse>
@@ -833,8 +784,7 @@ public class DcsAsyncClient {
      *
      * 查询指定缓存实例的备份信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackupRecordsRequest 请求对象
      * @return AsyncInvoker<ListBackupRecordsRequest, ListBackupRecordsResponse>
@@ -850,8 +800,7 @@ public class DcsAsyncClient {
      *
      * 查询大key分析任务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBigkeyScanTasksRequest 请求对象
      * @return CompletableFuture<ListBigkeyScanTasksResponse>
@@ -865,8 +814,7 @@ public class DcsAsyncClient {
      *
      * 查询大key分析任务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBigkeyScanTasksRequest 请求对象
      * @return AsyncInvoker<ListBigkeyScanTasksRequest, ListBigkeyScanTasksResponse>
@@ -882,8 +830,7 @@ public class DcsAsyncClient {
      *
      * 查询指定实例的配置参数信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConfigurationsRequest 请求对象
      * @return CompletableFuture<ListConfigurationsResponse>
@@ -897,8 +844,7 @@ public class DcsAsyncClient {
      *
      * 查询指定实例的配置参数信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConfigurationsRequest 请求对象
      * @return AsyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
@@ -914,8 +860,7 @@ public class DcsAsyncClient {
      *
      * 查询指定缓存实例诊断任务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDiagnosisTasksRequest 请求对象
      * @return CompletableFuture<ListDiagnosisTasksResponse>
@@ -929,8 +874,7 @@ public class DcsAsyncClient {
      *
      * 查询指定缓存实例诊断任务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDiagnosisTasksRequest 请求对象
      * @return AsyncInvoker<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse>
@@ -946,8 +890,7 @@ public class DcsAsyncClient {
      *
      * 在创建缓存实例时，需要配置订购的产品规格编码（spec_code），可通过该接口查询产品规格，查询条件不选时默认查询全部。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return CompletableFuture<ListFlavorsResponse>
@@ -961,8 +904,7 @@ public class DcsAsyncClient {
      *
      * 在创建缓存实例时，需要配置订购的产品规格编码（spec_code），可通过该接口查询产品规格，查询条件不选时默认查询全部。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
@@ -976,8 +918,7 @@ public class DcsAsyncClient {
      *
      * 查询读写分离实例和集群实例的分片和副本信息，其中，读写分离实例仅Redis4.0和Redis5.0的主备实例支持。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGroupReplicationInfoRequest 请求对象
      * @return CompletableFuture<ListGroupReplicationInfoResponse>
@@ -992,8 +933,7 @@ public class DcsAsyncClient {
      *
      * 查询读写分离实例和集群实例的分片和副本信息，其中，读写分离实例仅Redis4.0和Redis5.0的主备实例支持。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGroupReplicationInfoRequest 请求对象
      * @return AsyncInvoker<ListGroupReplicationInfoRequest, ListGroupReplicationInfoResponse>
@@ -1009,8 +949,7 @@ public class DcsAsyncClient {
      *
      * 查询热key分析历史记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHotKeyScanTasksRequest 请求对象
      * @return CompletableFuture<ListHotKeyScanTasksResponse>
@@ -1024,8 +963,7 @@ public class DcsAsyncClient {
      *
      * 查询热key分析历史记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHotKeyScanTasksRequest 请求对象
      * @return AsyncInvoker<ListHotKeyScanTasksRequest, ListHotKeyScanTasksResponse>
@@ -1041,8 +979,7 @@ public class DcsAsyncClient {
      *
      * 查询租户的缓存实例列表，支持按照条件查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return CompletableFuture<ListInstancesResponse>
@@ -1056,8 +993,7 @@ public class DcsAsyncClient {
      *
      * 查询租户的缓存实例列表，支持按照条件查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
@@ -1072,8 +1008,7 @@ public class DcsAsyncClient {
      *
      * 查询维护时间窗开始时间和结束时间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMaintenanceWindowsRequest 请求对象
      * @return CompletableFuture<ListMaintenanceWindowsResponse>
@@ -1088,8 +1023,7 @@ public class DcsAsyncClient {
      *
      * 查询维护时间窗开始时间和结束时间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMaintenanceWindowsRequest 请求对象
      * @return AsyncInvoker<ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse>
@@ -1105,8 +1039,7 @@ public class DcsAsyncClient {
      *
      * 查询迁移任务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMigrationTaskRequest 请求对象
      * @return CompletableFuture<ListMigrationTaskResponse>
@@ -1120,8 +1053,7 @@ public class DcsAsyncClient {
      *
      * 查询迁移任务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMigrationTaskRequest 请求对象
      * @return AsyncInvoker<ListMigrationTaskRequest, ListMigrationTaskResponse>
@@ -1138,8 +1070,7 @@ public class DcsAsyncClient {
      * 查询主维度对象列表，主维度ID当前支持dcs_instance_id，dcs_memcached_instance_id。
      * &gt; 该接口当前仅在中国华南区开放。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMonitoredObjectsRequest 请求对象
      * @return CompletableFuture<ListMonitoredObjectsResponse>
@@ -1155,8 +1086,7 @@ public class DcsAsyncClient {
      * 查询主维度对象列表，主维度ID当前支持dcs_instance_id，dcs_memcached_instance_id。
      * &gt; 该接口当前仅在中国华南区开放。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMonitoredObjectsRequest 请求对象
      * @return AsyncInvoker<ListMonitoredObjectsRequest, ListMonitoredObjectsResponse>
@@ -1173,8 +1103,7 @@ public class DcsAsyncClient {
      * 查询主维度下子维度监控对象列表，当前支持子维度的主维度ID的有 dcs_instance_id
      * &gt; 该接口当前仅在中国华南区开放。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMonitoredObjectsOfInstanceRequest 请求对象
      * @return CompletableFuture<ListMonitoredObjectsOfInstanceResponse>
@@ -1190,8 +1119,7 @@ public class DcsAsyncClient {
      * 查询主维度下子维度监控对象列表，当前支持子维度的主维度ID的有 dcs_instance_id
      * &gt; 该接口当前仅在中国华南区开放。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMonitoredObjectsOfInstanceRequest 请求对象
      * @return AsyncInvoker<ListMonitoredObjectsOfInstanceRequest, ListMonitoredObjectsOfInstanceResponse>
@@ -1207,8 +1135,7 @@ public class DcsAsyncClient {
      *
      * 查询该租户在当前区域下不同状态的实例数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNumberOfInstancesInDifferentStatusRequest 请求对象
      * @return CompletableFuture<ListNumberOfInstancesInDifferentStatusResponse>
@@ -1223,8 +1150,7 @@ public class DcsAsyncClient {
      *
      * 查询该租户在当前区域下不同状态的实例数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNumberOfInstancesInDifferentStatusRequest 请求对象
      * @return AsyncInvoker<ListNumberOfInstancesInDifferentStatusRequest, ListNumberOfInstancesInDifferentStatusResponse>
@@ -1240,8 +1166,7 @@ public class DcsAsyncClient {
      *
      * 查询Redis运行日志列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRedislogRequest 请求对象
      * @return CompletableFuture<ListRedislogResponse>
@@ -1255,8 +1180,7 @@ public class DcsAsyncClient {
      *
      * 查询Redis运行日志列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRedislogRequest 请求对象
      * @return AsyncInvoker<ListRedislogRequest, ListRedislogResponse>
@@ -1271,8 +1195,7 @@ public class DcsAsyncClient {
      *
      * 查询指定缓存实例的恢复记录列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRestoreRecordsRequest 请求对象
      * @return CompletableFuture<ListRestoreRecordsResponse>
@@ -1286,8 +1209,7 @@ public class DcsAsyncClient {
      *
      * 查询指定缓存实例的恢复记录列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRestoreRecordsRequest 请求对象
      * @return AsyncInvoker<ListRestoreRecordsRequest, ListRestoreRecordsResponse>
@@ -1303,8 +1225,7 @@ public class DcsAsyncClient {
      *
      * 查询慢日志。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSlowlogRequest 请求对象
      * @return CompletableFuture<ListSlowlogResponse>
@@ -1318,8 +1239,7 @@ public class DcsAsyncClient {
      *
      * 查询慢日志。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSlowlogRequest 请求对象
      * @return AsyncInvoker<ListSlowlogRequest, ListSlowlogResponse>
@@ -1333,8 +1253,7 @@ public class DcsAsyncClient {
      *
      * 查询当前租户下处于“运行中”状态的缓存实例的统计信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStatisticsOfRunningInstancesRequest 请求对象
      * @return CompletableFuture<ListStatisticsOfRunningInstancesResponse>
@@ -1349,8 +1268,7 @@ public class DcsAsyncClient {
      *
      * 查询当前租户下处于“运行中”状态的缓存实例的统计信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStatisticsOfRunningInstancesRequest 请求对象
      * @return AsyncInvoker<ListStatisticsOfRunningInstancesRequest, ListStatisticsOfRunningInstancesResponse>
@@ -1366,8 +1284,7 @@ public class DcsAsyncClient {
      *
      * 查询租户在指定Project中实例类型的所有资源标签集合。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsOfTenantRequest 请求对象
      * @return CompletableFuture<ListTagsOfTenantResponse>
@@ -1381,8 +1298,7 @@ public class DcsAsyncClient {
      *
      * 查询租户在指定Project中实例类型的所有资源标签集合。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsOfTenantRequest 请求对象
      * @return AsyncInvoker<ListTagsOfTenantRequest, ListTagsOfTenantResponse>
@@ -1398,8 +1314,7 @@ public class DcsAsyncClient {
      *
      * 用户可以为状态为“运行中”的DCS缓存实例进行规格变更，当前仅能支持按需实例的同副本或分片数量的实例规格变更。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeInstanceRequest 请求对象
      * @return CompletableFuture<ResizeInstanceResponse>
@@ -1413,8 +1328,7 @@ public class DcsAsyncClient {
      *
      * 用户可以为状态为“运行中”的DCS缓存实例进行规格变更，当前仅能支持按需实例的同副本或分片数量的实例规格变更。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeInstanceRequest 请求对象
      * @return AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>
@@ -1432,8 +1346,7 @@ public class DcsAsyncClient {
      * 
      * 清空Redis4.0/Redis5.0的实例数据，数据清空后，无法撤销，且无法恢复，请谨慎操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartOrFlushInstancesRequest 请求对象
      * @return CompletableFuture<RestartOrFlushInstancesResponse>
@@ -1450,8 +1363,7 @@ public class DcsAsyncClient {
      * 
      * 清空Redis4.0/Redis5.0的实例数据，数据清空后，无法撤销，且无法恢复，请谨慎操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartOrFlushInstancesRequest 请求对象
      * @return AsyncInvoker<RestartOrFlushInstancesRequest, RestartOrFlushInstancesResponse>
@@ -1468,8 +1380,7 @@ public class DcsAsyncClient {
      * 恢复指定的缓存实例。
      * &gt; 只有主备和集群类型的缓存实例支持备份恢复操作，单机实例不支持备份恢复操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreInstanceRequest 请求对象
      * @return CompletableFuture<RestoreInstanceResponse>
@@ -1484,8 +1395,7 @@ public class DcsAsyncClient {
      * 恢复指定的缓存实例。
      * &gt; 只有主备和集群类型的缓存实例支持备份恢复操作，单机实例不支持备份恢复操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreInstanceRequest 请求对象
      * @return AsyncInvoker<RestoreInstanceRequest, RestoreInstanceResponse>
@@ -1501,8 +1411,7 @@ public class DcsAsyncClient {
      *
      * 配置在线数据迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetOnlineMigrationTaskRequest 请求对象
      * @return CompletableFuture<SetOnlineMigrationTaskResponse>
@@ -1517,8 +1426,7 @@ public class DcsAsyncClient {
      *
      * 配置在线数据迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetOnlineMigrationTaskRequest 请求对象
      * @return AsyncInvoker<SetOnlineMigrationTaskRequest, SetOnlineMigrationTaskResponse>
@@ -1534,8 +1442,7 @@ public class DcsAsyncClient {
      *
      * 查询大key自动分析配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBigkeyAutoscanConfigRequest 请求对象
      * @return CompletableFuture<ShowBigkeyAutoscanConfigResponse>
@@ -1550,8 +1457,7 @@ public class DcsAsyncClient {
      *
      * 查询大key自动分析配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBigkeyAutoscanConfigRequest 请求对象
      * @return AsyncInvoker<ShowBigkeyAutoscanConfigRequest, ShowBigkeyAutoscanConfigResponse>
@@ -1567,8 +1473,7 @@ public class DcsAsyncClient {
      *
      * 查询大key分析详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBigkeyScanTaskDetailsRequest 请求对象
      * @return CompletableFuture<ShowBigkeyScanTaskDetailsResponse>
@@ -1583,8 +1488,7 @@ public class DcsAsyncClient {
      *
      * 查询大key分析详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBigkeyScanTaskDetailsRequest 请求对象
      * @return AsyncInvoker<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse>
@@ -1600,8 +1504,7 @@ public class DcsAsyncClient {
      *
      * 通过报告ID查询诊断报告的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDiagnosisTaskDetailsRequest 请求对象
      * @return CompletableFuture<ShowDiagnosisTaskDetailsResponse>
@@ -1616,8 +1519,7 @@ public class DcsAsyncClient {
      *
      * 通过报告ID查询诊断报告的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDiagnosisTaskDetailsRequest 请求对象
      * @return AsyncInvoker<ShowDiagnosisTaskDetailsRequest, ShowDiagnosisTaskDetailsResponse>
@@ -1633,8 +1535,7 @@ public class DcsAsyncClient {
      *
      * 查询热key自动分析配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHotkeyAutoscanConfigRequest 请求对象
      * @return CompletableFuture<ShowHotkeyAutoscanConfigResponse>
@@ -1649,8 +1550,7 @@ public class DcsAsyncClient {
      *
      * 查询热key自动分析配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHotkeyAutoscanConfigRequest 请求对象
      * @return AsyncInvoker<ShowHotkeyAutoscanConfigRequest, ShowHotkeyAutoscanConfigResponse>
@@ -1666,8 +1566,7 @@ public class DcsAsyncClient {
      *
      * 查询热key分析详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHotkeyTaskDetailsRequest 请求对象
      * @return CompletableFuture<ShowHotkeyTaskDetailsResponse>
@@ -1682,8 +1581,7 @@ public class DcsAsyncClient {
      *
      * 查询热key分析详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHotkeyTaskDetailsRequest 请求对象
      * @return AsyncInvoker<ShowHotkeyTaskDetailsRequest, ShowHotkeyTaskDetailsResponse>
@@ -1699,8 +1597,7 @@ public class DcsAsyncClient {
      *
      * 通过实例ID查询实例的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return CompletableFuture<ShowInstanceResponse>
@@ -1714,8 +1611,7 @@ public class DcsAsyncClient {
      *
      * 通过实例ID查询实例的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
@@ -1730,8 +1626,7 @@ public class DcsAsyncClient {
      *
      * 查询迁移任务详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMigrationTaskRequest 请求对象
      * @return CompletableFuture<ShowMigrationTaskResponse>
@@ -1745,8 +1640,7 @@ public class DcsAsyncClient {
      *
      * 查询迁移任务详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMigrationTaskRequest 请求对象
      * @return AsyncInvoker<ShowMigrationTaskRequest, ShowMigrationTaskResponse>
@@ -1762,8 +1656,7 @@ public class DcsAsyncClient {
      *
      * 查询在线迁移进度明细。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMigrationTaskStatsRequest 请求对象
      * @return CompletableFuture<ShowMigrationTaskStatsResponse>
@@ -1778,8 +1671,7 @@ public class DcsAsyncClient {
      *
      * 查询在线迁移进度明细。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMigrationTaskStatsRequest 请求对象
      * @return AsyncInvoker<ShowMigrationTaskStatsRequest, ShowMigrationTaskStatsResponse>
@@ -1795,8 +1687,7 @@ public class DcsAsyncClient {
      *
      * 查询租户默认可以创建的实例数和总内存的配额限制，以及可以申请配额的最大值和最小值。不同的租户在不同的区域配额可能不同。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotaOfTenantRequest 请求对象
      * @return CompletableFuture<ShowQuotaOfTenantResponse>
@@ -1810,8 +1701,7 @@ public class DcsAsyncClient {
      *
      * 查询租户默认可以创建的实例数和总内存的配额限制，以及可以申请配额的最大值和最小值。不同的租户在不同的区域配额可能不同。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotaOfTenantRequest 请求对象
      * @return AsyncInvoker<ShowQuotaOfTenantRequest, ShowQuotaOfTenantResponse>
@@ -1827,8 +1717,7 @@ public class DcsAsyncClient {
      *
      * 通过实例ID查询标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTagsRequest 请求对象
      * @return CompletableFuture<ShowTagsResponse>
@@ -1842,8 +1731,7 @@ public class DcsAsyncClient {
      *
      * 通过实例ID查询标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTagsRequest 请求对象
      * @return AsyncInvoker<ShowTagsRequest, ShowTagsResponse>
@@ -1857,8 +1745,7 @@ public class DcsAsyncClient {
      *
      * 停止数据迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopMigrationTaskRequest 请求对象
      * @return CompletableFuture<StopMigrationTaskResponse>
@@ -1872,8 +1759,7 @@ public class DcsAsyncClient {
      *
      * 停止数据迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopMigrationTaskRequest 请求对象
      * @return AsyncInvoker<StopMigrationTaskRequest, StopMigrationTaskResponse>
@@ -1889,8 +1775,7 @@ public class DcsAsyncClient {
      *
      * 同步停止数据迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopMigrationTaskSyncRequest 请求对象
      * @return CompletableFuture<StopMigrationTaskSyncResponse>
@@ -1905,8 +1790,7 @@ public class DcsAsyncClient {
      *
      * 同步停止数据迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopMigrationTaskSyncRequest 请求对象
      * @return AsyncInvoker<StopMigrationTaskSyncRequest, StopMigrationTaskSyncResponse>
@@ -1922,8 +1806,7 @@ public class DcsAsyncClient {
      *
      * 设置大key自动分析配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBigkeyAutoscanConfigRequest 请求对象
      * @return CompletableFuture<UpdateBigkeyAutoscanConfigResponse>
@@ -1938,8 +1821,7 @@ public class DcsAsyncClient {
      *
      * 设置大key自动分析配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBigkeyAutoscanConfigRequest 请求对象
      * @return AsyncInvoker<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse>
@@ -1955,8 +1837,7 @@ public class DcsAsyncClient {
      *
      * 为了确保分布式缓存服务发挥出最优性能，您可以根据自己的业务情况对DCS缓存实例的运行参数进行调整。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateConfigurationsRequest 请求对象
      * @return CompletableFuture<UpdateConfigurationsResponse>
@@ -1971,8 +1852,7 @@ public class DcsAsyncClient {
      *
      * 为了确保分布式缓存服务发挥出最优性能，您可以根据自己的业务情况对DCS缓存实例的运行参数进行调整。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateConfigurationsRequest 请求对象
      * @return AsyncInvoker<UpdateConfigurationsRequest, UpdateConfigurationsResponse>
@@ -1988,8 +1868,7 @@ public class DcsAsyncClient {
      *
      * 设置热key自动分析配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHotkeyAutoScanConfigRequest 请求对象
      * @return CompletableFuture<UpdateHotkeyAutoScanConfigResponse>
@@ -2004,8 +1883,7 @@ public class DcsAsyncClient {
      *
      * 设置热key自动分析配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHotkeyAutoScanConfigRequest 请求对象
      * @return AsyncInvoker<UpdateHotkeyAutoScanConfigRequest, UpdateHotkeyAutoScanConfigResponse>
@@ -2021,8 +1899,7 @@ public class DcsAsyncClient {
      *
      * 修改缓存实例的信息，可修改信息包括实例名称、描述、备份策略、维护时间窗开始和结束时间以及安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceRequest 请求对象
      * @return CompletableFuture<UpdateInstanceResponse>
@@ -2036,8 +1913,7 @@ public class DcsAsyncClient {
      *
      * 修改缓存实例的信息，可修改信息包括实例名称、描述、备份策略、维护时间窗开始和结束时间以及安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
@@ -2053,8 +1929,7 @@ public class DcsAsyncClient {
      *
      * 修改缓存实例的密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePasswordRequest 请求对象
      * @return CompletableFuture<UpdatePasswordResponse>
@@ -2068,8 +1943,7 @@ public class DcsAsyncClient {
      *
      * 修改缓存实例的密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePasswordRequest 请求对象
      * @return AsyncInvoker<UpdatePasswordRequest, UpdatePasswordResponse>
@@ -2085,8 +1959,7 @@ public class DcsAsyncClient {
      *
      * 设置副本优先级，主节点故障时，权重越小的备节点切换为主节点的优先级越高。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSlavePriorityRequest 请求对象
      * @return CompletableFuture<UpdateSlavePriorityResponse>
@@ -2100,8 +1973,7 @@ public class DcsAsyncClient {
      *
      * 设置副本优先级，主节点故障时，权重越小的备节点切换为主节点的优先级越高。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSlavePriorityRequest 请求对象
      * @return AsyncInvoker<UpdateSlavePriorityRequest, UpdateSlavePriorityResponse>
@@ -2117,8 +1989,7 @@ public class DcsAsyncClient {
      *
      * 查询指定实例的IP白名单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIpWhitelistRequest 请求对象
      * @return CompletableFuture<ShowIpWhitelistResponse>
@@ -2132,8 +2003,7 @@ public class DcsAsyncClient {
      *
      * 查询指定实例的IP白名单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIpWhitelistRequest 请求对象
      * @return AsyncInvoker<ShowIpWhitelistRequest, ShowIpWhitelistResponse>
@@ -2149,8 +2019,7 @@ public class DcsAsyncClient {
      *
      * 为指定实例设置IP白名单分组，包含创建、停用、编辑、删除白名单四个功能
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIpWhitelistRequest 请求对象
      * @return CompletableFuture<UpdateIpWhitelistResponse>
@@ -2164,8 +2033,7 @@ public class DcsAsyncClient {
      *
      * 为指定实例设置IP白名单分组，包含创建、停用、编辑、删除白名单四个功能
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIpWhitelistRequest 请求对象
      * @return AsyncInvoker<UpdateIpWhitelistRequest, UpdateIpWhitelistResponse>

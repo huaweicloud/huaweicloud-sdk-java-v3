@@ -25,8 +25,7 @@ public class DcAsyncClient {
      * 用于合作伙伴用户最终租户创建托管专线
      * 创建者必须拥有合作伙伴资质，并且已经构建好运营(hosting)专线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHostedDirectConnectRequest 请求对象
      * @return CompletableFuture<CreateHostedDirectConnectResponse>
@@ -42,8 +41,7 @@ public class DcAsyncClient {
      * 用于合作伙伴用户最终租户创建托管专线
      * 创建者必须拥有合作伙伴资质，并且已经构建好运营(hosting)专线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHostedDirectConnectRequest 请求对象
      * @return AsyncInvoker<CreateHostedDirectConnectRequest, CreateHostedDirectConnectResponse>
@@ -59,8 +57,7 @@ public class DcAsyncClient {
      *
      * 删除物理连接，本接口只适用于按需计费物理专线，对于包周期购买的专线通过订单退订的方式删除物理连接
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDirectConnectRequest 请求对象
      * @return CompletableFuture<DeleteDirectConnectResponse>
@@ -74,8 +71,7 @@ public class DcAsyncClient {
      *
      * 删除物理连接，本接口只适用于按需计费物理专线，对于包周期购买的专线通过订单退订的方式删除物理连接
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDirectConnectRequest 请求对象
      * @return AsyncInvoker<DeleteDirectConnectRequest, DeleteDirectConnectResponse>
@@ -91,8 +87,7 @@ public class DcAsyncClient {
      *
      * 合作伙伴删除托管专线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHostedDirectConnectRequest 请求对象
      * @return CompletableFuture<DeleteHostedDirectConnectResponse>
@@ -107,8 +102,7 @@ public class DcAsyncClient {
      *
      * 合作伙伴删除托管专线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHostedDirectConnectRequest 请求对象
      * @return AsyncInvoker<DeleteHostedDirectConnectRequest, DeleteHostedDirectConnectResponse>
@@ -124,8 +118,7 @@ public class DcAsyncClient {
      *
      * 查询租户创建的所有的direct connect对象.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDirectConnectsRequest 请求对象
      * @return CompletableFuture<ListDirectConnectsResponse>
@@ -139,8 +132,7 @@ public class DcAsyncClient {
      *
      * 查询租户创建的所有的direct connect对象.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDirectConnectsRequest 请求对象
      * @return AsyncInvoker<ListDirectConnectsRequest, ListDirectConnectsResponse>
@@ -156,8 +148,7 @@ public class DcAsyncClient {
      *
      * 查询合作伙伴创建的托管专线连接列表.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostedDirectConnectsRequest 请求对象
      * @return CompletableFuture<ListHostedDirectConnectsResponse>
@@ -172,8 +163,7 @@ public class DcAsyncClient {
      *
      * 查询合作伙伴创建的托管专线连接列表.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostedDirectConnectsRequest 请求对象
      * @return AsyncInvoker<ListHostedDirectConnectsRequest, ListHostedDirectConnectsResponse>
@@ -189,8 +179,7 @@ public class DcAsyncClient {
      *
      * 查询物理连接详细信息.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDirectConnectRequest 请求对象
      * @return CompletableFuture<ShowDirectConnectResponse>
@@ -204,8 +193,7 @@ public class DcAsyncClient {
      *
      * 查询物理连接详细信息.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDirectConnectRequest 请求对象
      * @return AsyncInvoker<ShowDirectConnectRequest, ShowDirectConnectResponse>
@@ -221,8 +209,7 @@ public class DcAsyncClient {
      *
      * 查询合法作伙伴的Hosted专线类型.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHostedDirectConnectRequest 请求对象
      * @return CompletableFuture<ShowHostedDirectConnectResponse>
@@ -237,8 +224,7 @@ public class DcAsyncClient {
      *
      * 查询合法作伙伴的Hosted专线类型.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHostedDirectConnectRequest 请求对象
      * @return AsyncInvoker<ShowHostedDirectConnectRequest, ShowHostedDirectConnectResponse>
@@ -254,8 +240,7 @@ public class DcAsyncClient {
      *
      * 更新物理连接信息，包括名字,描述等信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDirectConnectRequest 请求对象
      * @return CompletableFuture<UpdateDirectConnectResponse>
@@ -269,8 +254,7 @@ public class DcAsyncClient {
      *
      * 更新物理连接信息，包括名字,描述等信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDirectConnectRequest 请求对象
      * @return AsyncInvoker<UpdateDirectConnectRequest, UpdateDirectConnectResponse>
@@ -286,8 +270,7 @@ public class DcAsyncClient {
      *
      * 合作伙伴创建托管专线.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHostedDirectConnectRequest 请求对象
      * @return CompletableFuture<UpdateHostedDirectConnectResponse>
@@ -302,8 +285,7 @@ public class DcAsyncClient {
      *
      * 合作伙伴创建托管专线.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHostedDirectConnectRequest 请求对象
      * @return AsyncInvoker<UpdateHostedDirectConnectRequest, UpdateHostedDirectConnectResponse>
@@ -321,8 +303,7 @@ public class DcAsyncClient {
      * - 标签管理服务需要使用该接口批量管理实例的标签。
      * - 一个资源上最多有10个标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateResourceTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateResourceTagsResponse>
@@ -339,8 +320,7 @@ public class DcAsyncClient {
      * - 标签管理服务需要使用该接口批量管理实例的标签。
      * - 一个资源上最多有10个标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateResourceTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse>
@@ -358,8 +338,7 @@ public class DcAsyncClient {
      * - 此接口为幂等接口：
      * - 创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResourceTagRequest 请求对象
      * @return CompletableFuture<CreateResourceTagResponse>
@@ -375,8 +354,7 @@ public class DcAsyncClient {
      * - 此接口为幂等接口：
      * - 创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResourceTagRequest 请求对象
      * @return AsyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse>
@@ -392,8 +370,7 @@ public class DcAsyncClient {
      *
      * 删除时,不对标签字符集做校验，调用接口前必须要做encodeURI，服务端需要对接口uri做decodeURI。删除的key不存在报404，Key不能为空或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceTagRequest 请求对象
      * @return CompletableFuture<DeleteResourceTagResponse>
@@ -407,8 +384,7 @@ public class DcAsyncClient {
      *
      * 删除时,不对标签字符集做校验，调用接口前必须要做encodeURI，服务端需要对接口uri做decodeURI。删除的key不存在报404，Key不能为空或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceTagRequest 请求对象
      * @return AsyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>
@@ -425,8 +401,7 @@ public class DcAsyncClient {
      * - 查询租户在指定Project中实例类型的所有资源标签集合。
      * - 标签管理服务需要能够列出当前租户全部已使用的资源标签集合，为各服务打资源标签和过滤实例时提供标签联想功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectTagsRequest 请求对象
      * @return CompletableFuture<ListProjectTagsResponse>
@@ -441,8 +416,7 @@ public class DcAsyncClient {
      * - 查询租户在指定Project中实例类型的所有资源标签集合。
      * - 标签管理服务需要能够列出当前租户全部已使用的资源标签集合，为各服务打资源标签和过滤实例时提供标签联想功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectTagsRequest 请求对象
      * @return AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
@@ -458,8 +432,7 @@ public class DcAsyncClient {
      *
      * 通过标签查询资源实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagResourceInstancesRequest 请求对象
      * @return CompletableFuture<ListTagResourceInstancesResponse>
@@ -474,8 +447,7 @@ public class DcAsyncClient {
      *
      * 通过标签查询资源实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagResourceInstancesRequest 请求对象
      * @return AsyncInvoker<ListTagResourceInstancesRequest, ListTagResourceInstancesResponse>
@@ -491,8 +463,7 @@ public class DcAsyncClient {
      *
      * 查询资源标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceTagRequest 请求对象
      * @return CompletableFuture<ShowResourceTagResponse>
@@ -506,8 +477,7 @@ public class DcAsyncClient {
      *
      * 查询资源标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceTagRequest 请求对象
      * @return AsyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse>
@@ -523,8 +493,7 @@ public class DcAsyncClient {
      *
      * 创建虑拟网关
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVirtualGatewayRequest 请求对象
      * @return CompletableFuture<CreateVirtualGatewayResponse>
@@ -539,8 +508,7 @@ public class DcAsyncClient {
      *
      * 创建虑拟网关
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVirtualGatewayRequest 请求对象
      * @return AsyncInvoker<CreateVirtualGatewayRequest, CreateVirtualGatewayResponse>
@@ -556,8 +524,7 @@ public class DcAsyncClient {
      *
      * 删除指定的虚拟网关
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVirtualGatewayRequest 请求对象
      * @return CompletableFuture<DeleteVirtualGatewayResponse>
@@ -572,8 +539,7 @@ public class DcAsyncClient {
      *
      * 删除指定的虚拟网关
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVirtualGatewayRequest 请求对象
      * @return AsyncInvoker<DeleteVirtualGatewayRequest, DeleteVirtualGatewayResponse>
@@ -589,8 +555,7 @@ public class DcAsyncClient {
      *
      * 查询虚拟网关列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVirtualGatewaysRequest 请求对象
      * @return CompletableFuture<ListVirtualGatewaysResponse>
@@ -604,8 +569,7 @@ public class DcAsyncClient {
      *
      * 查询虚拟网关列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVirtualGatewaysRequest 请求对象
      * @return AsyncInvoker<ListVirtualGatewaysRequest, ListVirtualGatewaysResponse>
@@ -621,8 +585,7 @@ public class DcAsyncClient {
      *
      * 查询指定虚拟网关的详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVirtualGatewayRequest 请求对象
      * @return CompletableFuture<ShowVirtualGatewayResponse>
@@ -636,8 +599,7 @@ public class DcAsyncClient {
      *
      * 查询指定虚拟网关的详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVirtualGatewayRequest 请求对象
      * @return AsyncInvoker<ShowVirtualGatewayRequest, ShowVirtualGatewayResponse>
@@ -653,8 +615,7 @@ public class DcAsyncClient {
      *
      * 修改虚拟网关的信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVirtualGatewayRequest 请求对象
      * @return CompletableFuture<UpdateVirtualGatewayResponse>
@@ -669,8 +630,7 @@ public class DcAsyncClient {
      *
      * 修改虚拟网关的信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVirtualGatewayRequest 请求对象
      * @return AsyncInvoker<UpdateVirtualGatewayRequest, UpdateVirtualGatewayResponse>
@@ -686,8 +646,7 @@ public class DcAsyncClient {
      *
      * 虚拟接口配置物理专线上与客户互联的IP和路由等相关信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVirtualInterfaceRequest 请求对象
      * @return CompletableFuture<CreateVirtualInterfaceResponse>
@@ -702,8 +661,7 @@ public class DcAsyncClient {
      *
      * 虚拟接口配置物理专线上与客户互联的IP和路由等相关信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVirtualInterfaceRequest 请求对象
      * @return AsyncInvoker<CreateVirtualInterfaceRequest, CreateVirtualInterfaceResponse>
@@ -719,8 +677,7 @@ public class DcAsyncClient {
      *
      * 删除虚拟接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVirtualInterfaceRequest 请求对象
      * @return CompletableFuture<DeleteVirtualInterfaceResponse>
@@ -735,8 +692,7 @@ public class DcAsyncClient {
      *
      * 删除虚拟接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVirtualInterfaceRequest 请求对象
      * @return AsyncInvoker<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse>
@@ -752,8 +708,7 @@ public class DcAsyncClient {
      *
      * 查询租户所有的虚拟接口列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVirtualInterfacesRequest 请求对象
      * @return CompletableFuture<ListVirtualInterfacesResponse>
@@ -768,8 +723,7 @@ public class DcAsyncClient {
      *
      * 查询租户所有的虚拟接口列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVirtualInterfacesRequest 请求对象
      * @return AsyncInvoker<ListVirtualInterfacesRequest, ListVirtualInterfacesResponse>
@@ -785,8 +739,7 @@ public class DcAsyncClient {
      *
      * 查询虚拟接口详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVirtualInterfaceRequest 请求对象
      * @return CompletableFuture<ShowVirtualInterfaceResponse>
@@ -801,8 +754,7 @@ public class DcAsyncClient {
      *
      * 查询虚拟接口详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVirtualInterfaceRequest 请求对象
      * @return AsyncInvoker<ShowVirtualInterfaceRequest, ShowVirtualInterfaceResponse>
@@ -818,8 +770,7 @@ public class DcAsyncClient {
      *
      * 修改虚拟接口的详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVirtualInterfaceRequest 请求对象
      * @return CompletableFuture<UpdateVirtualInterfaceResponse>
@@ -834,8 +785,7 @@ public class DcAsyncClient {
      *
      * 修改虚拟接口的详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVirtualInterfaceRequest 请求对象
      * @return AsyncInvoker<UpdateVirtualInterfaceRequest, UpdateVirtualInterfaceResponse>

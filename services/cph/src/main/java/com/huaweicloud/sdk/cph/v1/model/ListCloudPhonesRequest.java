@@ -47,6 +47,8 @@ public class ListCloudPhonesRequest {
 
     /**
      * 偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源数，默认值为0。
+     * minimum: 0
+     * maximum: 8096
      * @return offset
      */
     public Integer getOffset() {
@@ -64,6 +66,8 @@ public class ListCloudPhonesRequest {
 
     /**
      * 每页返回的资源个数。取值范围：1~100（默认值为100），一般设置为10、20、50。
+     * minimum: 0
+     * maximum: 8096
      * @return limit
      */
     public Integer getLimit() {
@@ -97,7 +101,7 @@ public class ListCloudPhonesRequest {
     }
 
     /**
-     * 服务器id。
+     * 云手机服务器的唯一标识。
      * @return serverId
      */
     public String getServerId() {
@@ -115,6 +119,8 @@ public class ListCloudPhonesRequest {
 
     /**
      * 云手机状态 - 0：创建中 - 1：创建中 - 2：运行中 - 3：重置中 - 4：重启中 - 6：冻结 - 7：正在关机 - 8：已关机 - -5：重置失败 - -6：重启失败 - -7：手机异常 - -8：创建失败 - -9：关机失败
+     * minimum: -128
+     * maximum: 128
      * @return status
      */
     public Integer getStatus() {
@@ -132,6 +138,8 @@ public class ListCloudPhonesRequest {
 
     /**
      * 云手机类型 - 0：普通云手机 - 1：试玩云手机
+     * minimum: -128
+     * maximum: 128
      * @return type
      */
     public Integer getType() {

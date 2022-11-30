@@ -24,8 +24,7 @@ public class CptsAsyncClient {
      *
      * 创建用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCaseRequest 请求对象
      * @return CompletableFuture<CreateCaseResponse>
@@ -39,8 +38,7 @@ public class CptsAsyncClient {
      *
      * 创建用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCaseRequest 请求对象
      * @return AsyncInvoker<CreateCaseRequest, CreateCaseResponse>
@@ -54,8 +52,7 @@ public class CptsAsyncClient {
      *
      * 创建任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTaskRequest 请求对象
      * @return CompletableFuture<CreateTaskResponse>
@@ -69,8 +66,7 @@ public class CptsAsyncClient {
      *
      * 创建任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTaskRequest 请求对象
      * @return AsyncInvoker<CreateTaskRequest, CreateTaskResponse>
@@ -84,8 +80,7 @@ public class CptsAsyncClient {
      *
      * 创建事务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTempRequest 请求对象
      * @return CompletableFuture<CreateTempResponse>
@@ -99,8 +94,7 @@ public class CptsAsyncClient {
      *
      * 创建事务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTempRequest 请求对象
      * @return AsyncInvoker<CreateTempRequest, CreateTempResponse>
@@ -114,8 +108,7 @@ public class CptsAsyncClient {
      *
      * 创建变量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVariableRequest 请求对象
      * @return CompletableFuture<CreateVariableResponse>
@@ -129,8 +122,7 @@ public class CptsAsyncClient {
      *
      * 创建变量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVariableRequest 请求对象
      * @return AsyncInvoker<CreateVariableRequest, CreateVariableResponse>
@@ -146,8 +138,7 @@ public class CptsAsyncClient {
      *
      * 调试用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DebugCaseRequest 请求对象
      * @return CompletableFuture<DebugCaseResponse>
@@ -161,8 +152,7 @@ public class CptsAsyncClient {
      *
      * 调试用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DebugCaseRequest 请求对象
      * @return AsyncInvoker<DebugCaseRequest, DebugCaseResponse>
@@ -176,8 +166,7 @@ public class CptsAsyncClient {
      *
      * 删除用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCaseRequest 请求对象
      * @return CompletableFuture<DeleteCaseResponse>
@@ -191,8 +180,7 @@ public class CptsAsyncClient {
      *
      * 删除用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCaseRequest 请求对象
      * @return AsyncInvoker<DeleteCaseRequest, DeleteCaseResponse>
@@ -206,8 +194,7 @@ public class CptsAsyncClient {
      *
      * 删除任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
      * @return CompletableFuture<DeleteTaskResponse>
@@ -221,8 +208,7 @@ public class CptsAsyncClient {
      *
      * 删除任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
      * @return AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
@@ -236,8 +222,7 @@ public class CptsAsyncClient {
      *
      * 删除事务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTempRequest 请求对象
      * @return CompletableFuture<DeleteTempResponse>
@@ -251,8 +236,7 @@ public class CptsAsyncClient {
      *
      * 删除事务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTempRequest 请求对象
      * @return AsyncInvoker<DeleteTempRequest, DeleteTempResponse>
@@ -266,8 +250,7 @@ public class CptsAsyncClient {
      *
      * 删除全局变量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVariableRequest 请求对象
      * @return CompletableFuture<DeleteVariableResponse>
@@ -281,8 +264,7 @@ public class CptsAsyncClient {
      *
      * 删除全局变量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVariableRequest 请求对象
      * @return AsyncInvoker<DeleteVariableRequest, DeleteVariableResponse>
@@ -298,8 +280,7 @@ public class CptsAsyncClient {
      *
      * 查询全局变量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVariablesRequest 请求对象
      * @return CompletableFuture<ListVariablesResponse>
@@ -313,8 +294,7 @@ public class CptsAsyncClient {
      *
      * 查询全局变量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVariablesRequest 请求对象
      * @return AsyncInvoker<ListVariablesRequest, ListVariablesResponse>
@@ -329,8 +309,7 @@ public class CptsAsyncClient {
      *
      * 查询CPTS任务离线报告列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHistoryRunInfoRequest 请求对象
      * @return CompletableFuture<ShowHistoryRunInfoResponse>
@@ -344,8 +323,7 @@ public class CptsAsyncClient {
      *
      * 查询CPTS任务离线报告列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHistoryRunInfoRequest 请求对象
      * @return AsyncInvoker<ShowHistoryRunInfoRequest, ShowHistoryRunInfoResponse>
@@ -361,8 +339,7 @@ public class CptsAsyncClient {
      *
      * 查询报告
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowReportRequest 请求对象
      * @return CompletableFuture<ShowReportResponse>
@@ -376,8 +353,7 @@ public class CptsAsyncClient {
      *
      * 查询报告
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowReportRequest 请求对象
      * @return AsyncInvoker<ShowReportRequest, ShowReportResponse>
@@ -391,8 +367,7 @@ public class CptsAsyncClient {
      *
      * 查询任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskRequest 请求对象
      * @return CompletableFuture<ShowTaskResponse>
@@ -406,8 +381,7 @@ public class CptsAsyncClient {
      *
      * 查询任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskRequest 请求对象
      * @return AsyncInvoker<ShowTaskRequest, ShowTaskResponse>
@@ -421,8 +395,7 @@ public class CptsAsyncClient {
      *
      * 查询任务集
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskSetRequest 请求对象
      * @return CompletableFuture<ShowTaskSetResponse>
@@ -436,8 +409,7 @@ public class CptsAsyncClient {
      *
      * 查询任务集
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskSetRequest 请求对象
      * @return AsyncInvoker<ShowTaskSetRequest, ShowTaskSetResponse>
@@ -451,8 +423,7 @@ public class CptsAsyncClient {
      *
      * 查询事务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTempRequest 请求对象
      * @return CompletableFuture<ShowTempResponse>
@@ -466,8 +437,7 @@ public class CptsAsyncClient {
      *
      * 查询事务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTempRequest 请求对象
      * @return AsyncInvoker<ShowTempRequest, ShowTempResponse>
@@ -481,8 +451,7 @@ public class CptsAsyncClient {
      *
      * 查询事务集
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTempSetRequest 请求对象
      * @return CompletableFuture<ShowTempSetResponse>
@@ -496,8 +465,7 @@ public class CptsAsyncClient {
      *
      * 查询事务集
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTempSetRequest 请求对象
      * @return AsyncInvoker<ShowTempSetRequest, ShowTempSetResponse>
@@ -511,8 +479,7 @@ public class CptsAsyncClient {
      *
      * 修改用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCaseRequest 请求对象
      * @return CompletableFuture<UpdateCaseResponse>
@@ -526,8 +493,7 @@ public class CptsAsyncClient {
      *
      * 修改用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCaseRequest 请求对象
      * @return AsyncInvoker<UpdateCaseRequest, UpdateCaseResponse>
@@ -541,8 +507,7 @@ public class CptsAsyncClient {
      *
      * 修改任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskRequest 请求对象
      * @return CompletableFuture<UpdateTaskResponse>
@@ -556,8 +521,7 @@ public class CptsAsyncClient {
      *
      * 修改任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskRequest 请求对象
      * @return AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse>
@@ -571,8 +535,7 @@ public class CptsAsyncClient {
      *
      * 修改任务关联用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskRelatedTestCaseRequest 请求对象
      * @return CompletableFuture<UpdateTaskRelatedTestCaseResponse>
@@ -587,8 +550,7 @@ public class CptsAsyncClient {
      *
      * 修改任务关联用例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskRelatedTestCaseRequest 请求对象
      * @return AsyncInvoker<UpdateTaskRelatedTestCaseRequest, UpdateTaskRelatedTestCaseResponse>
@@ -604,8 +566,7 @@ public class CptsAsyncClient {
      *
      * 更新任务状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskStatusRequest 请求对象
      * @return CompletableFuture<UpdateTaskStatusResponse>
@@ -619,8 +580,7 @@ public class CptsAsyncClient {
      *
      * 更新任务状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskStatusRequest 请求对象
      * @return AsyncInvoker<UpdateTaskStatusRequest, UpdateTaskStatusResponse>
@@ -636,8 +596,7 @@ public class CptsAsyncClient {
      *
      * 修改事务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTempRequest 请求对象
      * @return CompletableFuture<UpdateTempResponse>
@@ -651,8 +610,7 @@ public class CptsAsyncClient {
      *
      * 修改事务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTempRequest 请求对象
      * @return AsyncInvoker<UpdateTempRequest, UpdateTempResponse>
@@ -666,8 +624,7 @@ public class CptsAsyncClient {
      *
      * 修改变量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVariableRequest 请求对象
      * @return CompletableFuture<UpdateVariableResponse>
@@ -681,8 +638,7 @@ public class CptsAsyncClient {
      *
      * 修改变量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVariableRequest 请求对象
      * @return AsyncInvoker<UpdateVariableRequest, UpdateVariableResponse>
@@ -698,8 +654,7 @@ public class CptsAsyncClient {
      *
      * 创建工程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectRequest 请求对象
      * @return CompletableFuture<CreateProjectResponse>
@@ -713,8 +668,7 @@ public class CptsAsyncClient {
      *
      * 创建工程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectRequest 请求对象
      * @return AsyncInvoker<CreateProjectRequest, CreateProjectResponse>
@@ -729,8 +683,7 @@ public class CptsAsyncClient {
      *
      * 删除工程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProjectRequest 请求对象
      * @return CompletableFuture<DeleteProjectResponse>
@@ -744,8 +697,7 @@ public class CptsAsyncClient {
      *
      * 删除工程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProjectRequest 请求对象
      * @return AsyncInvoker<DeleteProjectRequest, DeleteProjectResponse>
@@ -760,8 +712,7 @@ public class CptsAsyncClient {
      *
      * 查询工程集
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectSetsRequest 请求对象
      * @return CompletableFuture<ListProjectSetsResponse>
@@ -775,8 +726,7 @@ public class CptsAsyncClient {
      *
      * 查询工程集
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectSetsRequest 请求对象
      * @return AsyncInvoker<ListProjectSetsRequest, ListProjectSetsResponse>
@@ -792,8 +742,7 @@ public class CptsAsyncClient {
      *
      * 查询用例树
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectTestCaseRequest 请求对象
      * @return CompletableFuture<ListProjectTestCaseResponse>
@@ -807,8 +756,7 @@ public class CptsAsyncClient {
      *
      * 查询用例树
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectTestCaseRequest 请求对象
      * @return AsyncInvoker<ListProjectTestCaseRequest, ListProjectTestCaseResponse>
@@ -824,8 +772,7 @@ public class CptsAsyncClient {
      *
      * 查询导入进度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProcessRequest 请求对象
      * @return CompletableFuture<ShowProcessResponse>
@@ -839,8 +786,7 @@ public class CptsAsyncClient {
      *
      * 查询导入进度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProcessRequest 请求对象
      * @return AsyncInvoker<ShowProcessRequest, ShowProcessResponse>
@@ -854,8 +800,7 @@ public class CptsAsyncClient {
      *
      * 查询工程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectRequest 请求对象
      * @return CompletableFuture<ShowProjectResponse>
@@ -869,8 +814,7 @@ public class CptsAsyncClient {
      *
      * 查询工程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectRequest 请求对象
      * @return AsyncInvoker<ShowProjectRequest, ShowProjectResponse>
@@ -884,8 +828,7 @@ public class CptsAsyncClient {
      *
      * 修改工程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectRequest 请求对象
      * @return CompletableFuture<UpdateProjectResponse>
@@ -899,8 +842,7 @@ public class CptsAsyncClient {
      *
      * 修改工程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectRequest 请求对象
      * @return AsyncInvoker<UpdateProjectRequest, UpdateProjectResponse>

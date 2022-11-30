@@ -22,8 +22,7 @@ public class IecClient {
      *
      * 添加网卡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddNicsRequest 请求对象
      * @return AddNicsResponse
@@ -37,8 +36,7 @@ public class IecClient {
      *
      * 添加网卡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddNicsRequest 请求对象
      * @return SyncInvoker<AddNicsRequest, AddNicsResponse>
@@ -52,8 +50,7 @@ public class IecClient {
      *
      * 路由表关联子网
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateSubnetRequest 请求对象
      * @return AssociateSubnetResponse
@@ -67,8 +64,7 @@ public class IecClient {
      *
      * 路由表关联子网
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateSubnetRequest 请求对象
      * @return SyncInvoker<AssociateSubnetRequest, AssociateSubnetResponse>
@@ -84,8 +80,7 @@ public class IecClient {
      *
      * 批量重启边缘实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchRebootInstanceRequest 请求对象
      * @return BatchRebootInstanceResponse
@@ -99,8 +94,7 @@ public class IecClient {
      *
      * 批量重启边缘实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchRebootInstanceRequest 请求对象
      * @return SyncInvoker<BatchRebootInstanceRequest, BatchRebootInstanceResponse>
@@ -116,8 +110,7 @@ public class IecClient {
      *
      * 批量操作启动边缘实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchStartInstanceRequest 请求对象
      * @return BatchStartInstanceResponse
@@ -131,8 +124,7 @@ public class IecClient {
      *
      * 批量操作启动边缘实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchStartInstanceRequest 请求对象
      * @return SyncInvoker<BatchStartInstanceRequest, BatchStartInstanceResponse>
@@ -148,8 +140,7 @@ public class IecClient {
      *
      * 批量关闭边缘实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchStopInstanceRequest 请求对象
      * @return BatchStopInstanceResponse
@@ -163,8 +154,7 @@ public class IecClient {
      *
      * 批量关闭边缘实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchStopInstanceRequest 请求对象
      * @return SyncInvoker<BatchStopInstanceRequest, BatchStopInstanceResponse>
@@ -182,8 +172,7 @@ public class IecClient {
      * 
      * 调用该接口后，系统将卸载系统盘，然后使用新镜像重新创建系统盘，并挂载至实例，实现切换操作系统功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeOsRequest 请求对象
      * @return ChangeOsResponse
@@ -199,8 +188,7 @@ public class IecClient {
      * 
      * 调用该接口后，系统将卸载系统盘，然后使用新镜像重新创建系统盘，并挂载至实例，实现切换操作系统功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeOsRequest 请求对象
      * @return SyncInvoker<ChangeOsRequest, ChangeOsResponse>
@@ -220,8 +208,7 @@ public class IecClient {
      * - 边缘业务下实例分布取决于部署计划的实例分布与调度策略。
      * - 边缘业务下实例名称、规格、镜像等参数取决于部署计划配置计算实例字段。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeploymentRequest 请求对象
      * @return CreateDeploymentResponse
@@ -241,8 +228,7 @@ public class IecClient {
      * - 边缘业务下实例分布取决于部署计划的实例分布与调度策略。
      * - 边缘业务下实例名称、规格、镜像等参数取决于部署计划配置计算实例字段。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeploymentRequest 请求对象
      * @return SyncInvoker<CreateDeploymentRequest, CreateDeploymentResponse>
@@ -260,8 +246,7 @@ public class IecClient {
      * 
      * 创建SSH密钥成功后，请把响应数据中的私钥内容保存到本地文件，用户使用该私钥登录边缘实例。为保证边缘实例安全，私钥数据只能读取一次，请妥善保管。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateKeypairRequest 请求对象
      * @return CreateKeypairResponse
@@ -277,8 +262,7 @@ public class IecClient {
      * 
      * 创建SSH密钥成功后，请把响应数据中的私钥内容保存到本地文件，用户使用该私钥登录边缘实例。为保证边缘实例安全，私钥数据只能读取一次，请妥善保管。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateKeypairRequest 请求对象
      * @return SyncInvoker<CreateKeypairRequest, CreateKeypairResponse>
@@ -292,8 +276,7 @@ public class IecClient {
      *
      * 创建端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePortRequest 请求对象
      * @return CreatePortResponse
@@ -307,8 +290,7 @@ public class IecClient {
      *
      * 创建端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePortRequest 请求对象
      * @return SyncInvoker<CreatePortRequest, CreatePortResponse>
@@ -322,8 +304,7 @@ public class IecClient {
      *
      * 创建路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRoutesRequest 请求对象
      * @return CreateRoutesResponse
@@ -337,8 +318,7 @@ public class IecClient {
      *
      * 创建路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRoutesRequest 请求对象
      * @return SyncInvoker<CreateRoutesRequest, CreateRoutesResponse>
@@ -352,8 +332,7 @@ public class IecClient {
      *
      * 创建路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRoutetableRequest 请求对象
      * @return CreateRoutetableResponse
@@ -367,8 +346,7 @@ public class IecClient {
      *
      * 创建路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRoutetableRequest 请求对象
      * @return SyncInvoker<CreateRoutetableRequest, CreateRoutetableResponse>
@@ -384,8 +362,7 @@ public class IecClient {
      *
      * 根据用户的请求内容，创建对应的安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityGroupRequest 请求对象
      * @return CreateSecurityGroupResponse
@@ -399,8 +376,7 @@ public class IecClient {
      *
      * 根据用户的请求内容，创建对应的安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityGroupRequest 请求对象
      * @return SyncInvoker<CreateSecurityGroupRequest, CreateSecurityGroupResponse>
@@ -416,8 +392,7 @@ public class IecClient {
      *
      * 根据用户的请求内容，创建安全组规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityGroupRuleRequest 请求对象
      * @return CreateSecurityGroupRuleResponse
@@ -431,8 +406,7 @@ public class IecClient {
      *
      * 根据用户的请求内容，创建安全组规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse>
@@ -448,8 +422,7 @@ public class IecClient {
      *
      * 根据用户的请求内容，创建虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcRequest 请求对象
      * @return CreateVpcResponse
@@ -463,8 +436,7 @@ public class IecClient {
      *
      * 根据用户的请求内容，创建虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcRequest 请求对象
      * @return SyncInvoker<CreateVpcRequest, CreateVpcResponse>
@@ -478,8 +450,7 @@ public class IecClient {
      *
      * 删除部署计划。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeploymentRequest 请求对象
      * @return DeleteDeploymentResponse
@@ -493,8 +464,7 @@ public class IecClient {
      *
      * 删除部署计划。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeploymentRequest 请求对象
      * @return SyncInvoker<DeleteDeploymentRequest, DeleteDeploymentResponse>
@@ -510,8 +480,7 @@ public class IecClient {
      *
      * 删除边缘业务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEdgeCloudRequest 请求对象
      * @return DeleteEdgeCloudResponse
@@ -525,8 +494,7 @@ public class IecClient {
      *
      * 删除边缘业务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEdgeCloudRequest 请求对象
      * @return SyncInvoker<DeleteEdgeCloudRequest, DeleteEdgeCloudResponse>
@@ -542,8 +510,7 @@ public class IecClient {
      *
      * 批量删除边缘实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstancesRequest 请求对象
      * @return DeleteInstancesResponse
@@ -557,8 +524,7 @@ public class IecClient {
      *
      * 批量删除边缘实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstancesRequest 请求对象
      * @return SyncInvoker<DeleteInstancesRequest, DeleteInstancesResponse>
@@ -574,8 +540,7 @@ public class IecClient {
      *
      * 删除密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteKeypairRequest 请求对象
      * @return DeleteKeypairResponse
@@ -589,8 +554,7 @@ public class IecClient {
      *
      * 删除密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteKeypairRequest 请求对象
      * @return SyncInvoker<DeleteKeypairRequest, DeleteKeypairResponse>
@@ -604,8 +568,7 @@ public class IecClient {
      *
      * 删除网卡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNicsRequest 请求对象
      * @return DeleteNicsResponse
@@ -619,8 +582,7 @@ public class IecClient {
      *
      * 删除网卡。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNicsRequest 请求对象
      * @return SyncInvoker<DeleteNicsRequest, DeleteNicsResponse>
@@ -634,8 +596,7 @@ public class IecClient {
      *
      * 删除端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePortRequest 请求对象
      * @return DeletePortResponse
@@ -649,8 +610,7 @@ public class IecClient {
      *
      * 删除端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePortRequest 请求对象
      * @return SyncInvoker<DeletePortRequest, DeletePortResponse>
@@ -664,8 +624,7 @@ public class IecClient {
      *
      * 删除路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRoutesRequest 请求对象
      * @return DeleteRoutesResponse
@@ -679,8 +638,7 @@ public class IecClient {
      *
      * 删除路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRoutesRequest 请求对象
      * @return SyncInvoker<DeleteRoutesRequest, DeleteRoutesResponse>
@@ -694,8 +652,7 @@ public class IecClient {
      *
      * 删除路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRoutetableRequest 请求对象
      * @return DeleteRoutetableResponse
@@ -709,8 +666,7 @@ public class IecClient {
      *
      * 删除路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRoutetableRequest 请求对象
      * @return SyncInvoker<DeleteRoutetableRequest, DeleteRoutetableResponse>
@@ -726,8 +682,7 @@ public class IecClient {
      *
      * 根据安全组的ID，删除对应的安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityGroupRequest 请求对象
      * @return DeleteSecurityGroupResponse
@@ -741,8 +696,7 @@ public class IecClient {
      *
      * 根据安全组的ID，删除对应的安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityGroupRequest 请求对象
      * @return SyncInvoker<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse>
@@ -758,8 +712,7 @@ public class IecClient {
      *
      * 根据安全组的ID，删除对应的安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityGroupRuleRequest 请求对象
      * @return DeleteSecurityGroupRuleResponse
@@ -773,8 +726,7 @@ public class IecClient {
      *
      * 根据安全组的ID，删除对应的安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse>
@@ -790,8 +742,7 @@ public class IecClient {
      *
      * 根据子网的ID，删除子网。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSubnetRequest 请求对象
      * @return DeleteSubnetResponse
@@ -805,8 +756,7 @@ public class IecClient {
      *
      * 根据子网的ID，删除子网。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSubnetRequest 请求对象
      * @return SyncInvoker<DeleteSubnetRequest, DeleteSubnetResponse>
@@ -820,8 +770,7 @@ public class IecClient {
      *
      * 根据虚拟机私有云的ID，删除对应的虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcRequest 请求对象
      * @return DeleteVpcResponse
@@ -835,8 +784,7 @@ public class IecClient {
      *
      * 根据虚拟机私有云的ID，删除对应的虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcRequest 请求对象
      * @return SyncInvoker<DeleteVpcRequest, DeleteVpcResponse>
@@ -850,8 +798,7 @@ public class IecClient {
      *
      * 路由表解关联子网
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateSubnetRequest 请求对象
      * @return DisassociateSubnetResponse
@@ -865,8 +812,7 @@ public class IecClient {
      *
      * 路由表解关联子网
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateSubnetRequest 请求对象
      * @return SyncInvoker<DisassociateSubnetRequest, DisassociateSubnetResponse>
@@ -882,8 +828,7 @@ public class IecClient {
      *
      * 执行部署计划，创建一个边缘业务。单租户默认可创建10个边缘业务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteDeploymentRequest 请求对象
      * @return ExecuteDeploymentResponse
@@ -897,8 +842,7 @@ public class IecClient {
      *
      * 执行部署计划，创建一个边缘业务。单租户默认可创建10个边缘业务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteDeploymentRequest 请求对象
      * @return SyncInvoker<ExecuteDeploymentRequest, ExecuteDeploymentResponse>
@@ -914,8 +858,7 @@ public class IecClient {
      *
      * 执行部署计划，对边缘业务进行扩容操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExpandEdgecloudRequest 请求对象
      * @return ExpandEdgecloudResponse
@@ -929,8 +872,7 @@ public class IecClient {
      *
      * 执行部署计划，对边缘业务进行扩容操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExpandEdgecloudRequest 请求对象
      * @return SyncInvoker<ExpandEdgecloudRequest, ExpandEdgecloudResponse>
@@ -946,8 +888,7 @@ public class IecClient {
      *
      * 查询带宽列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBandwidthsRequest 请求对象
      * @return ListBandwidthsResponse
@@ -961,8 +902,7 @@ public class IecClient {
      *
      * 查询带宽列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBandwidthsRequest 请求对象
      * @return SyncInvoker<ListBandwidthsRequest, ListBandwidthsResponse>
@@ -978,8 +918,7 @@ public class IecClient {
      *
      * 查询部署计划列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDeploymentsRequest 请求对象
      * @return ListDeploymentsResponse
@@ -993,8 +932,7 @@ public class IecClient {
      *
      * 查询部署计划列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDeploymentsRequest 请求对象
      * @return SyncInvoker<ListDeploymentsRequest, ListDeploymentsResponse>
@@ -1010,8 +948,7 @@ public class IecClient {
      *
      * 查询边缘业务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEdgeCloudRequest 请求对象
      * @return ListEdgeCloudResponse
@@ -1025,8 +962,7 @@ public class IecClient {
      *
      * 查询边缘业务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEdgeCloudRequest 请求对象
      * @return SyncInvoker<ListEdgeCloudRequest, ListEdgeCloudResponse>
@@ -1040,8 +976,7 @@ public class IecClient {
      *
      * 查询边缘规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
@@ -1055,8 +990,7 @@ public class IecClient {
      *
      * 查询边缘规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
@@ -1073,8 +1007,7 @@ public class IecClient {
      * -  查询已注册的私有镜像列表: visibility&#x3D;private
      * - 公共镜像: visibility&#x3D;public
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListImagesRequest 请求对象
      * @return ListImagesResponse
@@ -1091,8 +1024,7 @@ public class IecClient {
      * -  查询已注册的私有镜像列表: visibility&#x3D;private
      * - 公共镜像: visibility&#x3D;public
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListImagesRequest 请求对象
      * @return SyncInvoker<ListImagesRequest, ListImagesResponse>
@@ -1106,8 +1038,7 @@ public class IecClient {
      *
      * 查询边缘实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return ListInstancesResponse
@@ -1121,8 +1052,7 @@ public class IecClient {
      *
      * 查询边缘实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
@@ -1136,8 +1066,7 @@ public class IecClient {
      *
      * 查询密钥信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKeypairsRequest 请求对象
      * @return ListKeypairsResponse
@@ -1151,8 +1080,7 @@ public class IecClient {
      *
      * 查询密钥信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKeypairsRequest 请求对象
      * @return SyncInvoker<ListKeypairsRequest, ListKeypairsResponse>
@@ -1166,8 +1094,7 @@ public class IecClient {
      *
      * 查询端口的列表信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPortsRequest 请求对象
      * @return ListPortsResponse
@@ -1181,8 +1108,7 @@ public class IecClient {
      *
      * 查询端口的列表信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPortsRequest 请求对象
      * @return SyncInvoker<ListPortsRequest, ListPortsResponse>
@@ -1196,8 +1122,7 @@ public class IecClient {
      *
      * 查询租户资源配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotaRequest 请求对象
      * @return ListQuotaResponse
@@ -1211,8 +1136,7 @@ public class IecClient {
      *
      * 查询租户资源配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotaRequest 请求对象
      * @return SyncInvoker<ListQuotaRequest, ListQuotaResponse>
@@ -1226,8 +1150,7 @@ public class IecClient {
      *
      * 查询子网关联的路由表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRelatedRoutetablesRequest 请求对象
      * @return ListRelatedRoutetablesResponse
@@ -1241,8 +1164,7 @@ public class IecClient {
      *
      * 查询子网关联的路由表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRelatedRoutetablesRequest 请求对象
      * @return SyncInvoker<ListRelatedRoutetablesRequest, ListRelatedRoutetablesResponse>
@@ -1258,8 +1180,7 @@ public class IecClient {
      *
      * 查询路由列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRoutesRequest 请求对象
      * @return ListRoutesResponse
@@ -1273,8 +1194,7 @@ public class IecClient {
      *
      * 查询路由列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRoutesRequest 请求对象
      * @return SyncInvoker<ListRoutesRequest, ListRoutesResponse>
@@ -1288,8 +1208,7 @@ public class IecClient {
      *
      * 查询路由列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRoutetablesRequest 请求对象
      * @return ListRoutetablesResponse
@@ -1303,8 +1222,7 @@ public class IecClient {
      *
      * 查询路由列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRoutetablesRequest 请求对象
      * @return SyncInvoker<ListRoutetablesRequest, ListRoutetablesResponse>
@@ -1320,8 +1238,7 @@ public class IecClient {
      *
      * 根据用户的查询条件，获取安全组规则的列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityGroupRulesRequest 请求对象
      * @return ListSecurityGroupRulesResponse
@@ -1335,8 +1252,7 @@ public class IecClient {
      *
      * 根据用户的查询条件，获取安全组规则的列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityGroupRulesRequest 请求对象
      * @return SyncInvoker<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse>
@@ -1352,8 +1268,7 @@ public class IecClient {
      *
      * 根据特定查询条件，获取安全组的列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityGroupsRequest 请求对象
      * @return ListSecurityGroupsResponse
@@ -1367,8 +1282,7 @@ public class IecClient {
      *
      * 根据特定查询条件，获取安全组的列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityGroupsRequest 请求对象
      * @return SyncInvoker<ListSecurityGroupsRequest, ListSecurityGroupsResponse>
@@ -1387,8 +1301,7 @@ public class IecClient {
      * - 边缘站点：靠近终端应用的位置，基于一个或多个运营商建立的一个城市级站点。边缘站点提供物理隔离的资源池，提供多元算力、存储和网络的能力。用户可以将业务灵活就近部署在边缘站点上，以降低网络时延和成本。
      * - 边缘区域：为依据边缘站点的物理位置划分的区域，一个边缘区域包含多个相靠近的边缘站点的集合。IEC当前提供城市级、省级和大区级三个分布层级的边缘区域。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSitesRequest 请求对象
      * @return ListSitesResponse
@@ -1405,8 +1318,7 @@ public class IecClient {
      * - 边缘站点：靠近终端应用的位置，基于一个或多个运营商建立的一个城市级站点。边缘站点提供物理隔离的资源池，提供多元算力、存储和网络的能力。用户可以将业务灵活就近部署在边缘站点上，以降低网络时延和成本。
      * - 边缘区域：为依据边缘站点的物理位置划分的区域，一个边缘区域包含多个相靠近的边缘站点的集合。IEC当前提供城市级、省级和大区级三个分布层级的边缘区域。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSitesRequest 请求对象
      * @return SyncInvoker<ListSitesRequest, ListSitesResponse>
@@ -1420,8 +1332,7 @@ public class IecClient {
      *
      * 根据查询条件获取子网的列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubnetsRequest 请求对象
      * @return ListSubnetsResponse
@@ -1435,8 +1346,7 @@ public class IecClient {
      *
      * 根据查询条件获取子网的列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubnetsRequest 请求对象
      * @return SyncInvoker<ListSubnetsRequest, ListSubnetsResponse>
@@ -1450,8 +1360,7 @@ public class IecClient {
      *
      * 获取虚拟私有云的列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcsRequest 请求对象
      * @return ListVpcsResponse
@@ -1465,8 +1374,7 @@ public class IecClient {
      *
      * 获取虚拟私有云的列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcsRequest 请求对象
      * @return SyncInvoker<ListVpcsRequest, ListVpcsResponse>
@@ -1480,8 +1388,7 @@ public class IecClient {
      *
      * 查询带宽详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBandwidthRequest 请求对象
      * @return ShowBandwidthResponse
@@ -1495,8 +1402,7 @@ public class IecClient {
      *
      * 查询带宽详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBandwidthRequest 请求对象
      * @return SyncInvoker<ShowBandwidthRequest, ShowBandwidthResponse>
@@ -1510,8 +1416,7 @@ public class IecClient {
      *
      * 查询边缘业务详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEdgeCloudRequest 请求对象
      * @return ShowEdgeCloudResponse
@@ -1525,8 +1430,7 @@ public class IecClient {
      *
      * 查询边缘业务详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEdgeCloudRequest 请求对象
      * @return SyncInvoker<ShowEdgeCloudRequest, ShowEdgeCloudResponse>
@@ -1540,8 +1444,7 @@ public class IecClient {
      *
      * 查询镜像详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowImageRequest 请求对象
      * @return ShowImageResponse
@@ -1555,8 +1458,7 @@ public class IecClient {
      *
      * 查询镜像详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowImageRequest 请求对象
      * @return SyncInvoker<ShowImageRequest, ShowImageResponse>
@@ -1570,8 +1472,7 @@ public class IecClient {
      *
      * 查询边缘实例详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return ShowInstanceResponse
@@ -1585,8 +1486,7 @@ public class IecClient {
      *
      * 查询边缘实例详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
@@ -1600,8 +1500,7 @@ public class IecClient {
      *
      * 查询密钥信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowKeypairRequest 请求对象
      * @return ShowKeypairResponse
@@ -1615,8 +1514,7 @@ public class IecClient {
      *
      * 查询密钥信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowKeypairRequest 请求对象
      * @return SyncInvoker<ShowKeypairRequest, ShowKeypairResponse>
@@ -1630,8 +1528,7 @@ public class IecClient {
      *
      * 根据端口的ID，获取端口的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPortRequest 请求对象
      * @return ShowPortResponse
@@ -1645,8 +1542,7 @@ public class IecClient {
      *
      * 根据端口的ID，获取端口的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPortRequest 请求对象
      * @return SyncInvoker<ShowPortRequest, ShowPortResponse>
@@ -1660,8 +1556,7 @@ public class IecClient {
      *
      * 查询路由表详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRoutetableRequest 请求对象
      * @return ShowRoutetableResponse
@@ -1675,8 +1570,7 @@ public class IecClient {
      *
      * 查询路由表详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRoutetableRequest 请求对象
      * @return SyncInvoker<ShowRoutetableRequest, ShowRoutetableResponse>
@@ -1692,8 +1586,7 @@ public class IecClient {
      *
      * 根据安全组的ID，获取特定安全组的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityGroupRequest 请求对象
      * @return ShowSecurityGroupResponse
@@ -1707,8 +1600,7 @@ public class IecClient {
      *
      * 根据安全组的ID，获取特定安全组的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityGroupRequest 请求对象
      * @return SyncInvoker<ShowSecurityGroupRequest, ShowSecurityGroupResponse>
@@ -1724,8 +1616,7 @@ public class IecClient {
      *
      * 根据安全组规则的ID，获取安全组规则的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityGroupRuleRequest 请求对象
      * @return ShowSecurityGroupRuleResponse
@@ -1739,8 +1630,7 @@ public class IecClient {
      *
      * 根据安全组规则的ID，获取安全组规则的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse>
@@ -1756,8 +1646,7 @@ public class IecClient {
      *
      * 根据子网的ID，获取子网的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubnetRequest 请求对象
      * @return ShowSubnetResponse
@@ -1771,8 +1660,7 @@ public class IecClient {
      *
      * 根据子网的ID，获取子网的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubnetRequest 请求对象
      * @return SyncInvoker<ShowSubnetRequest, ShowSubnetResponse>
@@ -1786,8 +1674,7 @@ public class IecClient {
      *
      * 查询硬盘详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVolumeRequest 请求对象
      * @return ShowVolumeResponse
@@ -1801,8 +1688,7 @@ public class IecClient {
      *
      * 查询硬盘详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVolumeRequest 请求对象
      * @return SyncInvoker<ShowVolumeRequest, ShowVolumeResponse>
@@ -1816,8 +1702,7 @@ public class IecClient {
      *
      * 根据虚拟私有云ID，获取虚拟私有云的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcRequest 请求对象
      * @return ShowVpcResponse
@@ -1831,8 +1716,7 @@ public class IecClient {
      *
      * 根据虚拟私有云ID，获取虚拟私有云的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcRequest 请求对象
      * @return SyncInvoker<ShowVpcRequest, ShowVpcResponse>
@@ -1846,8 +1730,7 @@ public class IecClient {
      *
      * 修改边缘实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceRequest 请求对象
      * @return UpdateInstanceResponse
@@ -1861,8 +1744,7 @@ public class IecClient {
      *
      * 修改边缘实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceRequest 请求对象
      * @return SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
@@ -1878,8 +1760,7 @@ public class IecClient {
      *
      * 更新端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePortRequest 请求对象
      * @return UpdatePortResponse
@@ -1893,8 +1774,7 @@ public class IecClient {
      *
      * 更新端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePortRequest 请求对象
      * @return SyncInvoker<UpdatePortRequest, UpdatePortResponse>
@@ -1908,8 +1788,7 @@ public class IecClient {
      *
      * 更新路由信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRoutesRequest 请求对象
      * @return UpdateRoutesResponse
@@ -1923,8 +1802,7 @@ public class IecClient {
      *
      * 更新路由信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRoutesRequest 请求对象
      * @return SyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse>
@@ -1938,8 +1816,7 @@ public class IecClient {
      *
      * 更新路由表基本信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRoutetableRequest 请求对象
      * @return UpdateRoutetableResponse
@@ -1953,8 +1830,7 @@ public class IecClient {
      *
      * 更新路由表基本信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRoutetableRequest 请求对象
      * @return SyncInvoker<UpdateRoutetableRequest, UpdateRoutetableResponse>
@@ -1970,8 +1846,7 @@ public class IecClient {
      *
      * 更新子网的基本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSubnetRequest 请求对象
      * @return UpdateSubnetResponse
@@ -1985,8 +1860,7 @@ public class IecClient {
      *
      * 更新子网的基本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSubnetRequest 请求对象
      * @return SyncInvoker<UpdateSubnetRequest, UpdateSubnetResponse>
@@ -2000,8 +1874,7 @@ public class IecClient {
      *
      * 更新虚拟私有云的信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcRequest 请求对象
      * @return UpdateVpcResponse
@@ -2015,8 +1888,7 @@ public class IecClient {
      *
      * 更新虚拟私有云的信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcRequest 请求对象
      * @return SyncInvoker<UpdateVpcRequest, UpdateVpcResponse>
@@ -2030,8 +1902,7 @@ public class IecClient {
      *
      * 创建网络ACL。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFirewallRequest 请求对象
      * @return CreateFirewallResponse
@@ -2045,8 +1916,7 @@ public class IecClient {
      *
      * 创建网络ACL。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFirewallRequest 请求对象
      * @return SyncInvoker<CreateFirewallRequest, CreateFirewallResponse>
@@ -2062,8 +1932,7 @@ public class IecClient {
      *
      * 删除网络ACL。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteFirewallRequest 请求对象
      * @return DeleteFirewallResponse
@@ -2077,8 +1946,7 @@ public class IecClient {
      *
      * 删除网络ACL。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteFirewallRequest 请求对象
      * @return SyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse>
@@ -2094,8 +1962,7 @@ public class IecClient {
      *
      * 查询网络ACL列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFirewallsRequest 请求对象
      * @return ListFirewallsResponse
@@ -2109,8 +1976,7 @@ public class IecClient {
      *
      * 查询网络ACL列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFirewallsRequest 请求对象
      * @return SyncInvoker<ListFirewallsRequest, ListFirewallsResponse>
@@ -2124,8 +1990,7 @@ public class IecClient {
      *
      * 查询网络ACL详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFirewallRequest 请求对象
      * @return ShowFirewallResponse
@@ -2139,8 +2004,7 @@ public class IecClient {
      *
      * 查询网络ACL详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFirewallRequest 请求对象
      * @return SyncInvoker<ShowFirewallRequest, ShowFirewallResponse>
@@ -2154,8 +2018,7 @@ public class IecClient {
      *
      * 更新网络ACL。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFirewallRequest 请求对象
      * @return UpdateFirewallResponse
@@ -2169,8 +2032,7 @@ public class IecClient {
      *
      * 更新网络ACL。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFirewallRequest 请求对象
      * @return SyncInvoker<UpdateFirewallRequest, UpdateFirewallResponse>
@@ -2186,8 +2048,7 @@ public class IecClient {
      *
      * 更新网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFirewallRuleRequest 请求对象
      * @return UpdateFirewallRuleResponse
@@ -2201,8 +2062,7 @@ public class IecClient {
      *
      * 更新网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFirewallRuleRequest 请求对象
      * @return SyncInvoker<UpdateFirewallRuleRequest, UpdateFirewallRuleResponse>
@@ -2218,8 +2078,7 @@ public class IecClient {
      *
      * 根据用户的请求内容，创建弹性公网IP
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePublicIpRequest 请求对象
      * @return CreatePublicIpResponse
@@ -2233,8 +2092,7 @@ public class IecClient {
      *
      * 根据用户的请求内容，创建弹性公网IP
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePublicIpRequest 请求对象
      * @return SyncInvoker<CreatePublicIpRequest, CreatePublicIpResponse>
@@ -2250,8 +2108,7 @@ public class IecClient {
      *
      * 根据弹性公网IP的ID，删除对应的弹性公网IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePublicIpRequest 请求对象
      * @return DeletePublicIpResponse
@@ -2265,8 +2122,7 @@ public class IecClient {
      *
      * 根据弹性公网IP的ID，删除对应的弹性公网IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePublicIpRequest 请求对象
      * @return SyncInvoker<DeletePublicIpRequest, DeletePublicIpResponse>
@@ -2282,8 +2138,7 @@ public class IecClient {
      *
      * 获取弹性公网IP列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublicIpsRequest 请求对象
      * @return ListPublicIpsResponse
@@ -2297,8 +2152,7 @@ public class IecClient {
      *
      * 获取弹性公网IP列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublicIpsRequest 请求对象
      * @return SyncInvoker<ListPublicIpsRequest, ListPublicIpsResponse>
@@ -2312,8 +2166,7 @@ public class IecClient {
      *
      * 获取弹性公网IP的详情信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicIpRequest 请求对象
      * @return ShowPublicIpResponse
@@ -2327,8 +2180,7 @@ public class IecClient {
      *
      * 获取弹性公网IP的详情信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicIpRequest 请求对象
      * @return SyncInvoker<ShowPublicIpRequest, ShowPublicIpResponse>
@@ -2342,8 +2194,7 @@ public class IecClient {
      *
      * 更新弹性公网IP的信息，主要用于解绑和绑定EIP和VIP之间的关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePublicIpRequest 请求对象
      * @return UpdatePublicIpResponse
@@ -2357,8 +2208,7 @@ public class IecClient {
      *
      * 更新弹性公网IP的信息，主要用于解绑和绑定EIP和VIP之间的关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePublicIpRequest 请求对象
      * @return SyncInvoker<UpdatePublicIpRequest, UpdatePublicIpResponse>

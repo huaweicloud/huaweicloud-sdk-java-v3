@@ -24,8 +24,7 @@ public class HiLensAsyncClient {
      *
      * 获取设备告警列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDeviceAlarmsRequest 请求对象
      * @return CompletableFuture<ListDeviceAlarmsResponse>
@@ -39,8 +38,7 @@ public class HiLensAsyncClient {
      *
      * 获取设备告警列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDeviceAlarmsRequest 请求对象
      * @return AsyncInvoker<ListDeviceAlarmsRequest, ListDeviceAlarmsResponse>
@@ -56,8 +54,7 @@ public class HiLensAsyncClient {
      *
      * 获取基础版设备列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDevicesRequest 请求对象
      * @return CompletableFuture<ListDevicesResponse>
@@ -71,8 +68,7 @@ public class HiLensAsyncClient {
      *
      * 获取基础版设备列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDevicesRequest 请求对象
      * @return AsyncInvoker<ListDevicesRequest, ListDevicesResponse>

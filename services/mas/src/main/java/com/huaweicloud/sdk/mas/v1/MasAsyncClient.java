@@ -23,8 +23,7 @@ public class MasAsyncClient {
      * 查询命名空间列表
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNameSpaceListRequest 请求对象
      * @return CompletableFuture<ShowNameSpaceListResponse>
@@ -37,8 +36,7 @@ public class MasAsyncClient {
      * 查询命名空间列表
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNameSpaceListRequest 请求对象
      * @return AsyncInvoker<ShowNameSpaceListRequest, ShowNameSpaceListResponse>

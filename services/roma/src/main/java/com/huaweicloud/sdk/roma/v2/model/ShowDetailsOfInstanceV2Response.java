@@ -907,6 +907,11 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
 
     private NodeIps nodeIps;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ingress_ips")
+
+    private String ingressIps;
+
     public ShowDetailsOfInstanceV2Response withId(String id) {
         this.id = id;
         return this;
@@ -1492,6 +1497,23 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.nodeIps = nodeIps;
     }
 
+    public ShowDetailsOfInstanceV2Response withIngressIps(String ingressIps) {
+        this.ingressIps = ingressIps;
+        return this;
+    }
+
+    /**
+     * 实例集群全量入口（多入口实例）
+     * @return ingressIps
+     */
+    public String getIngressIps() {
+        return ingressIps;
+    }
+
+    public void setIngressIps(String ingressIps) {
+        this.ingressIps = ingressIps;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1532,7 +1554,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
             && Objects.equals(this.listeners, showDetailsOfInstanceV2Response.listeners)
             && Objects.equals(this.supportedFeatures, showDetailsOfInstanceV2Response.supportedFeatures)
             && Objects.equals(this.ingressIpV6, showDetailsOfInstanceV2Response.ingressIpV6)
-            && Objects.equals(this.nodeIps, showDetailsOfInstanceV2Response.nodeIps);
+            && Objects.equals(this.nodeIps, showDetailsOfInstanceV2Response.nodeIps)
+            && Objects.equals(this.ingressIps, showDetailsOfInstanceV2Response.ingressIps);
     }
 
     @Override
@@ -1568,7 +1591,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
             listeners,
             supportedFeatures,
             ingressIpV6,
-            nodeIps);
+            nodeIps,
+            ingressIps);
     }
 
     @Override
@@ -1607,6 +1631,7 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         sb.append("    supportedFeatures: ").append(toIndentedString(supportedFeatures)).append("\n");
         sb.append("    ingressIpV6: ").append(toIndentedString(ingressIpV6)).append("\n");
         sb.append("    nodeIps: ").append(toIndentedString(nodeIps)).append("\n");
+        sb.append("    ingressIps: ").append(toIndentedString(ingressIps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -14,6 +14,32 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class AomMeta {
 
+    public static final HttpRequestDef<AddActionRuleRequest, AddActionRuleResponse> addActionRule = genForaddActionRule();
+
+    private static HttpRequestDef<AddActionRuleRequest, AddActionRuleResponse> genForaddActionRule() {
+        // basic
+        HttpRequestDef.Builder<AddActionRuleRequest, AddActionRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddActionRuleRequest.class, AddActionRuleResponse.class)
+                .withName("AddActionRule")
+                .withUri("/v2/{project_id}/alert/action-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ActionRule>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ActionRule.class),
+            f -> f.withMarshaller(AddActionRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddAlarmRuleRequest, AddAlarmRuleResponse> addAlarmRule = genForaddAlarmRule();
 
     private static HttpRequestDef<AddAlarmRuleRequest, AddAlarmRuleResponse> genForaddAlarmRule() {
@@ -40,6 +66,41 @@ public class AomMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse> addEvent2alarmRule = genForaddEvent2alarmRule();
+
+    private static HttpRequestDef<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse> genForaddEvent2alarmRule() {
+        // basic
+        HttpRequestDef.Builder<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddEvent2alarmRuleRequest.class, AddEvent2alarmRuleResponse.class)
+                .withName("AddEvent2alarmRule")
+                .withUri("/v2/{project_id}/event2alarm-rule")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Event2alarmRuleBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Event2alarmRuleBody.class),
+            f -> f.withMarshaller(AddEvent2alarmRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        builder.<String>withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddEvent2alarmRuleResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
+        
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddMetricDataRequest, AddMetricDataResponse> addMetricData = genForaddMetricData();
 
     private static HttpRequestDef<AddMetricDataRequest, AddMetricDataResponse> genForaddMetricData() {
@@ -58,6 +119,32 @@ public class AomMeta {
             f -> f.withMarshaller(AddMetricDataRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }).withInnerContainerType(MetricDataItem.class)
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddMuteRulesRequest, AddMuteRulesResponse> addMuteRules = genForaddMuteRules();
+
+    private static HttpRequestDef<AddMuteRulesRequest, AddMuteRulesResponse> genForaddMuteRules() {
+        // basic
+        HttpRequestDef.Builder<AddMuteRulesRequest, AddMuteRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddMuteRulesRequest.class, AddMuteRulesResponse.class)
+                .withName("AddMuteRules")
+                .withUri("/v2/{project_id}/alert/mute-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<MuteRule>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MuteRule.class),
+            f -> f.withMarshaller(AddMuteRulesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
@@ -118,6 +205,32 @@ public class AomMeta {
             f -> f.withMarshaller(CountEventsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteActionRuleRequest, DeleteActionRuleResponse> deleteActionRule = genFordeleteActionRule();
+
+    private static HttpRequestDef<DeleteActionRuleRequest, DeleteActionRuleResponse> genFordeleteActionRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteActionRuleRequest, DeleteActionRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteActionRuleRequest.class, DeleteActionRuleResponse.class)
+                .withName("DeleteActionRule")
+                .withUri("/v2/{project_id}/alert/action-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeleteActionRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(String.class)
         );
 
         // response
@@ -196,6 +309,58 @@ public class AomMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse> deleteEvent2alarmRule = genFordeleteEvent2alarmRule();
+
+    private static HttpRequestDef<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse> genFordeleteEvent2alarmRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteEvent2alarmRuleRequest.class, DeleteEvent2alarmRuleResponse.class)
+                .withName("DeleteEvent2alarmRule")
+                .withUri("/v2/{project_id}/event2alarm-rule")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeleteEvent2alarmRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(String.class)
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteMuteRulesRequest, DeleteMuteRulesResponse> deleteMuteRules = genFordeleteMuteRules();
+
+    private static HttpRequestDef<DeleteMuteRulesRequest, DeleteMuteRulesResponse> genFordeleteMuteRules() {
+        // basic
+        HttpRequestDef.Builder<DeleteMuteRulesRequest, DeleteMuteRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteMuteRulesRequest.class, DeleteMuteRulesResponse.class)
+                .withName("DeleteMuteRules")
+                .withUri("/v2/{project_id}/alert/mute-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<DeleteMuteRuleName>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeleteMuteRulesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(DeleteMuteRuleName.class)
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse> deleteserviceDiscoveryRules = genFordeleteserviceDiscoveryRules();
 
     private static HttpRequestDef<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse> genFordeleteserviceDiscoveryRules() {
@@ -215,6 +380,24 @@ public class AomMeta {
                 req.setAppRulesIds(v);
             })
         );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListActionRuleRequest, ListActionRuleResponse> listActionRule = genForlistActionRule();
+
+    private static HttpRequestDef<ListActionRuleRequest, ListActionRuleResponse> genForlistActionRule() {
+        // basic
+        HttpRequestDef.Builder<ListActionRuleRequest, ListActionRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListActionRuleRequest.class, ListActionRuleResponse.class)
+                .withName("ListActionRule")
+                .withUri("/v2/{project_id}/alert/action-rules")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -251,6 +434,33 @@ public class AomMeta {
         );
 
         // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse> listEvent2alarmRule = genForlistEvent2alarmRule();
+
+    private static HttpRequestDef<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse> genForlistEvent2alarmRule() {
+        // basic
+        HttpRequestDef.Builder<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEvent2alarmRuleRequest.class, ListEvent2alarmRuleResponse.class)
+                .withName("ListEvent2alarmRule")
+                .withUri("/v2/{project_id}/event2alarm-rule")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<List<Event2alarmRuleBody>>withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEvent2alarmRuleResponse::getBody, (response, data)->{
+                response.setBody(data);
+            }).withInnerContainerType(Event2alarmRuleBody.class)
+        );
 
 
         return builder.build();
@@ -365,6 +575,59 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(MetricAPIQueryItemParam.class),
             f -> f.withMarshaller(ListMetricItemsRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMuteRuleRequest, ListMuteRuleResponse> listMuteRule = genForlistMuteRule();
+
+    private static HttpRequestDef<ListMuteRuleRequest, ListMuteRuleResponse> genForlistMuteRule() {
+        // basic
+        HttpRequestDef.Builder<ListMuteRuleRequest, ListMuteRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMuteRuleRequest.class, ListMuteRuleResponse.class)
+                .withName("ListMuteRule")
+                .withUri("/v2/{project_id}/alert/mute-rules")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<List<MuteRule>>withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMuteRuleResponse::getBody, (response, data)->{
+                response.setBody(data);
+            }).withInnerContainerType(MuteRule.class)
+        );
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse> listNotifiedHistories = genForlistNotifiedHistories();
+
+    private static HttpRequestDef<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse> genForlistNotifiedHistories() {
+        // basic
+        HttpRequestDef.Builder<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListNotifiedHistoriesRequest.class, ListNotifiedHistoriesResponse.class)
+                .withName("ListNotifiedHistories")
+                .withUri("/v2/{project_id}/alarm-notified-histories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("event_sn",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotifiedHistoriesRequest::getEventSn, (req, v) -> {
+                req.setEventSn(v);
             })
         );
 
@@ -518,6 +781,32 @@ public class AomMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowActionRuleRequest, ShowActionRuleResponse> showActionRule = genForshowActionRule();
+
+    private static HttpRequestDef<ShowActionRuleRequest, ShowActionRuleResponse> genForshowActionRule() {
+        // basic
+        HttpRequestDef.Builder<ShowActionRuleRequest, ShowActionRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowActionRuleRequest.class, ShowActionRuleResponse.class)
+                .withName("ShowActionRule")
+                .withUri("/v2/{project_id}/alert/action-rules/{rule_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("rule_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowActionRuleRequest::getRuleName, (req, v) -> {
+                req.setRuleName(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAlarmRuleRequest, ShowAlarmRuleResponse> showAlarmRule = genForshowAlarmRule();
 
     private static HttpRequestDef<ShowAlarmRuleRequest, ShowAlarmRuleResponse> genForshowAlarmRule() {
@@ -578,6 +867,32 @@ public class AomMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateActionRuleRequest, UpdateActionRuleResponse> updateActionRule = genForupdateActionRule();
+
+    private static HttpRequestDef<UpdateActionRuleRequest, UpdateActionRuleResponse> genForupdateActionRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateActionRuleRequest, UpdateActionRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateActionRuleRequest.class, UpdateActionRuleResponse.class)
+                .withName("UpdateActionRule")
+                .withUri("/v2/{project_id}/alert/action-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ActionRule>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ActionRule.class),
+            f -> f.withMarshaller(UpdateActionRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse> updateAlarmRule = genForupdateAlarmRule();
 
     private static HttpRequestDef<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse> genForupdateAlarmRule() {
@@ -594,6 +909,67 @@ public class AomMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAlarmRuleParam.class),
             f -> f.withMarshaller(UpdateAlarmRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEventRuleRequest, UpdateEventRuleResponse> updateEventRule = genForupdateEventRule();
+
+    private static HttpRequestDef<UpdateEventRuleRequest, UpdateEventRuleResponse> genForupdateEventRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateEventRuleRequest, UpdateEventRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateEventRuleRequest.class, UpdateEventRuleResponse.class)
+                .withName("UpdateEventRule")
+                .withUri("/v2/{project_id}/event2alarm-rule")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Event2alarmRuleBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Event2alarmRuleBody.class),
+            f -> f.withMarshaller(UpdateEventRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        builder.<String>withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateEventRuleResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
+        
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateMuteRuleRequest, UpdateMuteRuleResponse> updateMuteRule = genForupdateMuteRule();
+
+    private static HttpRequestDef<UpdateMuteRuleRequest, UpdateMuteRuleResponse> genForupdateMuteRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateMuteRuleRequest, UpdateMuteRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateMuteRuleRequest.class, UpdateMuteRuleResponse.class)
+                .withName("UpdateMuteRule")
+                .withUri("/v2/{project_id}/alert/mute-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<MuteRule>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MuteRule.class),
+            f -> f.withMarshaller(UpdateMuteRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

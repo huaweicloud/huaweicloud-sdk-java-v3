@@ -22,8 +22,7 @@ public class VpcClient {
      *
      * 租户A名下的VPC申请和租户B的VPC建立对等连接，需要等待租户B接受该请求。此接口用于租户接受其他租户发起的对等连接请求。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AcceptVpcPeeringRequest 请求对象
      * @return AcceptVpcPeeringResponse
@@ -37,8 +36,7 @@ public class VpcClient {
      *
      * 租户A名下的VPC申请和租户B的VPC建立对等连接，需要等待租户B接受该请求。此接口用于租户接受其他租户发起的对等连接请求。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AcceptVpcPeeringRequest 请求对象
      * @return SyncInvoker<AcceptVpcPeeringRequest, AcceptVpcPeeringResponse>
@@ -54,8 +52,7 @@ public class VpcClient {
      *
      * 路由表关联子网。子网关联路由表A后，再关联B，不需要先跟路由表A解关联再关联路由表B
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRouteTableRequest 请求对象
      * @return AssociateRouteTableResponse
@@ -69,8 +66,7 @@ public class VpcClient {
      *
      * 路由表关联子网。子网关联路由表A后，再关联B，不需要先跟路由表A解关联再关联路由表B
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRouteTableRequest 请求对象
      * @return SyncInvoker<AssociateRouteTableRequest, AssociateRouteTableResponse>
@@ -87,8 +83,7 @@ public class VpcClient {
      * 为指定的子网资源实例批量添加标签。
      * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateSubnetTagsRequest 请求对象
      * @return BatchCreateSubnetTagsResponse
@@ -103,8 +98,7 @@ public class VpcClient {
      * 为指定的子网资源实例批量添加标签。
      * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateSubnetTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse>
@@ -121,8 +115,7 @@ public class VpcClient {
      * 为指定的子网资源实例批量删除标签
      * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteSubnetTagsRequest 请求对象
      * @return BatchDeleteSubnetTagsResponse
@@ -137,8 +130,7 @@ public class VpcClient {
      * 为指定的子网资源实例批量删除标签
      * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteSubnetTagsRequest 请求对象
      * @return SyncInvoker<BatchDeleteSubnetTagsRequest, BatchDeleteSubnetTagsResponse>
@@ -154,8 +146,7 @@ public class VpcClient {
      *
      * 创建端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePortRequest 请求对象
      * @return CreatePortResponse
@@ -169,8 +160,7 @@ public class VpcClient {
      *
      * 创建端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePortRequest 请求对象
      * @return SyncInvoker<CreatePortRequest, CreatePortResponse>
@@ -184,8 +174,7 @@ public class VpcClient {
      *
      * 创建路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRouteTableRequest 请求对象
      * @return CreateRouteTableResponse
@@ -199,8 +188,7 @@ public class VpcClient {
      *
      * 创建路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRouteTableRequest 请求对象
      * @return SyncInvoker<CreateRouteTableRequest, CreateRouteTableResponse>
@@ -216,8 +204,7 @@ public class VpcClient {
      *
      * 创建安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityGroupRequest 请求对象
      * @return CreateSecurityGroupResponse
@@ -231,8 +218,7 @@ public class VpcClient {
      *
      * 创建安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityGroupRequest 请求对象
      * @return SyncInvoker<CreateSecurityGroupRequest, CreateSecurityGroupResponse>
@@ -248,8 +234,7 @@ public class VpcClient {
      *
      * 创建安全组规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityGroupRuleRequest 请求对象
      * @return CreateSecurityGroupRuleResponse
@@ -263,8 +248,7 @@ public class VpcClient {
      *
      * 创建安全组规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse>
@@ -280,8 +264,7 @@ public class VpcClient {
      *
      * 创建子网。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSubnetRequest 请求对象
      * @return CreateSubnetResponse
@@ -295,8 +278,7 @@ public class VpcClient {
      *
      * 创建子网。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSubnetRequest 请求对象
      * @return SyncInvoker<CreateSubnetRequest, CreateSubnetResponse>
@@ -311,8 +293,7 @@ public class VpcClient {
      * 给指定子网资源实例增加标签信息。
      * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSubnetTagRequest 请求对象
      * @return CreateSubnetTagResponse
@@ -327,8 +308,7 @@ public class VpcClient {
      * 给指定子网资源实例增加标签信息。
      * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSubnetTagRequest 请求对象
      * @return SyncInvoker<CreateSubnetTagRequest, CreateSubnetTagResponse>
@@ -344,8 +324,7 @@ public class VpcClient {
      *
      * 创建对等连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcPeeringRequest 请求对象
      * @return CreateVpcPeeringResponse
@@ -359,8 +338,7 @@ public class VpcClient {
      *
      * 创建对等连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcPeeringRequest 请求对象
      * @return SyncInvoker<CreateVpcPeeringRequest, CreateVpcPeeringResponse>
@@ -376,8 +354,7 @@ public class VpcClient {
      *
      * 删除端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePortRequest 请求对象
      * @return DeletePortResponse
@@ -391,8 +368,7 @@ public class VpcClient {
      *
      * 删除端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePortRequest 请求对象
      * @return SyncInvoker<DeletePortRequest, DeletePortResponse>
@@ -406,8 +382,7 @@ public class VpcClient {
      *
      * 删除路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRouteTableRequest 请求对象
      * @return DeleteRouteTableResponse
@@ -421,8 +396,7 @@ public class VpcClient {
      *
      * 删除路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRouteTableRequest 请求对象
      * @return SyncInvoker<DeleteRouteTableRequest, DeleteRouteTableResponse>
@@ -438,8 +412,7 @@ public class VpcClient {
      *
      * 删除安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityGroupRequest 请求对象
      * @return DeleteSecurityGroupResponse
@@ -453,8 +426,7 @@ public class VpcClient {
      *
      * 删除安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityGroupRequest 请求对象
      * @return SyncInvoker<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse>
@@ -470,8 +442,7 @@ public class VpcClient {
      *
      * 删除安全组规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityGroupRuleRequest 请求对象
      * @return DeleteSecurityGroupRuleResponse
@@ -485,8 +456,7 @@ public class VpcClient {
      *
      * 删除安全组规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse>
@@ -502,8 +472,7 @@ public class VpcClient {
      *
      * 删除子网
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSubnetRequest 请求对象
      * @return DeleteSubnetResponse
@@ -517,8 +486,7 @@ public class VpcClient {
      *
      * 删除子网
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSubnetRequest 请求对象
      * @return SyncInvoker<DeleteSubnetRequest, DeleteSubnetResponse>
@@ -533,8 +501,7 @@ public class VpcClient {
      * 删除指定子网资源实例的标签信息。
      * 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSubnetTagRequest 请求对象
      * @return DeleteSubnetTagResponse
@@ -549,8 +516,7 @@ public class VpcClient {
      * 删除指定子网资源实例的标签信息。
      * 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSubnetTagRequest 请求对象
      * @return SyncInvoker<DeleteSubnetTagRequest, DeleteSubnetTagResponse>
@@ -567,8 +533,7 @@ public class VpcClient {
      * 删除对等连接。
      * 可以在在本端或对端任何一端删除对等连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcPeeringRequest 请求对象
      * @return DeleteVpcPeeringResponse
@@ -583,8 +548,7 @@ public class VpcClient {
      * 删除对等连接。
      * 可以在在本端或对端任何一端删除对等连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcPeeringRequest 请求对象
      * @return SyncInvoker<DeleteVpcPeeringRequest, DeleteVpcPeeringResponse>
@@ -600,8 +564,7 @@ public class VpcClient {
      *
      * 子网解关联路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateRouteTableRequest 请求对象
      * @return DisassociateRouteTableResponse
@@ -615,8 +578,7 @@ public class VpcClient {
      *
      * 子网解关联路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateRouteTableRequest 请求对象
      * @return SyncInvoker<DisassociateRouteTableRequest, DisassociateRouteTableResponse>
@@ -632,8 +594,7 @@ public class VpcClient {
      *
      * 查询提交请求的租户的所有端口，单次查询最多返回2000条数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPortsRequest 请求对象
      * @return ListPortsResponse
@@ -647,8 +608,7 @@ public class VpcClient {
      *
      * 查询提交请求的租户的所有端口，单次查询最多返回2000条数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPortsRequest 请求对象
      * @return SyncInvoker<ListPortsRequest, ListPortsResponse>
@@ -662,8 +622,7 @@ public class VpcClient {
      *
      * 查询提交请求的帐户的所有路由表列表，并根据过滤条件进行过滤
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRouteTablesRequest 请求对象
      * @return ListRouteTablesResponse
@@ -677,8 +636,7 @@ public class VpcClient {
      *
      * 查询提交请求的帐户的所有路由表列表，并根据过滤条件进行过滤
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRouteTablesRequest 请求对象
      * @return SyncInvoker<ListRouteTablesRequest, ListRouteTablesResponse>
@@ -694,8 +652,7 @@ public class VpcClient {
      *
      * 查询安全组规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityGroupRulesRequest 请求对象
      * @return ListSecurityGroupRulesResponse
@@ -709,8 +666,7 @@ public class VpcClient {
      *
      * 查询安全组规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityGroupRulesRequest 请求对象
      * @return SyncInvoker<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse>
@@ -726,8 +682,7 @@ public class VpcClient {
      *
      * 查询安全组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityGroupsRequest 请求对象
      * @return ListSecurityGroupsResponse
@@ -741,8 +696,7 @@ public class VpcClient {
      *
      * 查询安全组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityGroupsRequest 请求对象
      * @return SyncInvoker<ListSecurityGroupsRequest, ListSecurityGroupsResponse>
@@ -758,8 +712,7 @@ public class VpcClient {
      *
      * 查询租户在指定区域和实例类型的所有标签集合
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubnetTagsRequest 请求对象
      * @return ListSubnetTagsResponse
@@ -773,8 +726,7 @@ public class VpcClient {
      *
      * 查询租户在指定区域和实例类型的所有标签集合
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubnetTagsRequest 请求对象
      * @return SyncInvoker<ListSubnetTagsRequest, ListSubnetTagsResponse>
@@ -790,8 +742,7 @@ public class VpcClient {
      *
      * 查询子网列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubnetsRequest 请求对象
      * @return ListSubnetsResponse
@@ -805,8 +756,7 @@ public class VpcClient {
      *
      * 查询子网列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubnetsRequest 请求对象
      * @return SyncInvoker<ListSubnetsRequest, ListSubnetsResponse>
@@ -820,8 +770,7 @@ public class VpcClient {
      *
      * 使用标签过滤实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubnetsByTagsRequest 请求对象
      * @return ListSubnetsByTagsResponse
@@ -835,8 +784,7 @@ public class VpcClient {
      *
      * 使用标签过滤实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubnetsByTagsRequest 请求对象
      * @return SyncInvoker<ListSubnetsByTagsRequest, ListSubnetsByTagsResponse>
@@ -852,8 +800,7 @@ public class VpcClient {
      *
      * 查询提交请求的租户的所有对等连接。根据过滤条件进行过滤。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcPeeringsRequest 请求对象
      * @return ListVpcPeeringsResponse
@@ -867,8 +814,7 @@ public class VpcClient {
      *
      * 查询提交请求的租户的所有对等连接。根据过滤条件进行过滤。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcPeeringsRequest 请求对象
      * @return SyncInvoker<ListVpcPeeringsRequest, ListVpcPeeringsResponse>
@@ -884,8 +830,7 @@ public class VpcClient {
      *
      * 租户A名下的VPC申请和租户B的VPC建立对等连接，需要等待租户B接受该请求。此接口用于租户拒绝其他租户发起的对等连接请求。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RejectVpcPeeringRequest 请求对象
      * @return RejectVpcPeeringResponse
@@ -899,8 +844,7 @@ public class VpcClient {
      *
      * 租户A名下的VPC申请和租户B的VPC建立对等连接，需要等待租户B接受该请求。此接口用于租户拒绝其他租户发起的对等连接请求。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RejectVpcPeeringRequest 请求对象
      * @return SyncInvoker<RejectVpcPeeringRequest, RejectVpcPeeringResponse>
@@ -916,8 +860,7 @@ public class VpcClient {
      *
      * 查询单个端口详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPortRequest 请求对象
      * @return ShowPortResponse
@@ -931,8 +874,7 @@ public class VpcClient {
      *
      * 查询单个端口详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPortRequest 请求对象
      * @return SyncInvoker<ShowPortRequest, ShowPortResponse>
@@ -946,8 +888,7 @@ public class VpcClient {
      *
      * 查询单租户在VPC服务下的网络资源配额，包括vpc配额、子网配额、安全组配额、安全组规则配额、弹性公网IP配额，vpn配额等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotaRequest 请求对象
      * @return ShowQuotaResponse
@@ -961,8 +902,7 @@ public class VpcClient {
      *
      * 查询单租户在VPC服务下的网络资源配额，包括vpc配额、子网配额、安全组配额、安全组规则配额、弹性公网IP配额，vpn配额等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotaRequest 请求对象
      * @return SyncInvoker<ShowQuotaRequest, ShowQuotaResponse>
@@ -976,8 +916,7 @@ public class VpcClient {
      *
      * 查询路由表详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRouteTableRequest 请求对象
      * @return ShowRouteTableResponse
@@ -991,8 +930,7 @@ public class VpcClient {
      *
      * 查询路由表详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRouteTableRequest 请求对象
      * @return SyncInvoker<ShowRouteTableRequest, ShowRouteTableResponse>
@@ -1008,8 +946,7 @@ public class VpcClient {
      *
      * 查询单个安全组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityGroupRequest 请求对象
      * @return ShowSecurityGroupResponse
@@ -1023,8 +960,7 @@ public class VpcClient {
      *
      * 查询单个安全组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityGroupRequest 请求对象
      * @return SyncInvoker<ShowSecurityGroupRequest, ShowSecurityGroupResponse>
@@ -1040,8 +976,7 @@ public class VpcClient {
      *
      * 查询单个安全组规则详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityGroupRuleRequest 请求对象
      * @return ShowSecurityGroupRuleResponse
@@ -1055,8 +990,7 @@ public class VpcClient {
      *
      * 查询单个安全组规则详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse>
@@ -1072,8 +1006,7 @@ public class VpcClient {
      *
      * 查询子网详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubnetRequest 请求对象
      * @return ShowSubnetResponse
@@ -1087,8 +1020,7 @@ public class VpcClient {
      *
      * 查询子网详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubnetRequest 请求对象
      * @return SyncInvoker<ShowSubnetRequest, ShowSubnetResponse>
@@ -1102,8 +1034,7 @@ public class VpcClient {
      *
      * 查询指定子网实例的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubnetTagsRequest 请求对象
      * @return ShowSubnetTagsResponse
@@ -1117,8 +1048,7 @@ public class VpcClient {
      *
      * 查询指定子网实例的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubnetTagsRequest 请求对象
      * @return SyncInvoker<ShowSubnetTagsRequest, ShowSubnetTagsResponse>
@@ -1134,8 +1064,7 @@ public class VpcClient {
      *
      * 查询对等连接详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcPeeringRequest 请求对象
      * @return ShowVpcPeeringResponse
@@ -1149,8 +1078,7 @@ public class VpcClient {
      *
      * 查询对等连接详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcPeeringRequest 请求对象
      * @return SyncInvoker<ShowVpcPeeringRequest, ShowVpcPeeringResponse>
@@ -1166,8 +1094,7 @@ public class VpcClient {
      *
      * 更新端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePortRequest 请求对象
      * @return UpdatePortResponse
@@ -1181,8 +1108,7 @@ public class VpcClient {
      *
      * 更新端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePortRequest 请求对象
      * @return SyncInvoker<UpdatePortRequest, UpdatePortResponse>
@@ -1196,8 +1122,7 @@ public class VpcClient {
      *
      * 更新路由表，包括可以更新路由表的名称，描述，以及新增、更新、删除路由条目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRouteTableRequest 请求对象
      * @return UpdateRouteTableResponse
@@ -1211,8 +1136,7 @@ public class VpcClient {
      *
      * 更新路由表，包括可以更新路由表的名称，描述，以及新增、更新、删除路由条目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRouteTableRequest 请求对象
      * @return SyncInvoker<UpdateRouteTableRequest, UpdateRouteTableResponse>
@@ -1228,8 +1152,7 @@ public class VpcClient {
      *
      * 更新子网。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSubnetRequest 请求对象
      * @return UpdateSubnetResponse
@@ -1243,8 +1166,7 @@ public class VpcClient {
      *
      * 更新子网。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSubnetRequest 请求对象
      * @return SyncInvoker<UpdateSubnetRequest, UpdateSubnetResponse>
@@ -1258,8 +1180,7 @@ public class VpcClient {
      *
      * 更新对等连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcPeeringRequest 请求对象
      * @return UpdateVpcPeeringResponse
@@ -1273,8 +1194,7 @@ public class VpcClient {
      *
      * 更新对等连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcPeeringRequest 请求对象
      * @return SyncInvoker<UpdateVpcPeeringRequest, UpdateVpcPeeringResponse>
@@ -1290,8 +1210,7 @@ public class VpcClient {
      *
      * 申请私有IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePrivateipRequest 请求对象
      * @return CreatePrivateipResponse
@@ -1305,8 +1224,7 @@ public class VpcClient {
      *
      * 申请私有IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePrivateipRequest 请求对象
      * @return SyncInvoker<CreatePrivateipRequest, CreatePrivateipResponse>
@@ -1322,8 +1240,7 @@ public class VpcClient {
      *
      * 删除私有IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePrivateipRequest 请求对象
      * @return DeletePrivateipResponse
@@ -1337,8 +1254,7 @@ public class VpcClient {
      *
      * 删除私有IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePrivateipRequest 请求对象
      * @return SyncInvoker<DeletePrivateipRequest, DeletePrivateipResponse>
@@ -1354,8 +1270,7 @@ public class VpcClient {
      *
      * 查询指定子网下的私有IP列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPrivateipsRequest 请求对象
      * @return ListPrivateipsResponse
@@ -1369,8 +1284,7 @@ public class VpcClient {
      *
      * 查询指定子网下的私有IP列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPrivateipsRequest 请求对象
      * @return SyncInvoker<ListPrivateipsRequest, ListPrivateipsResponse>
@@ -1393,8 +1307,7 @@ public class VpcClient {
      * - 这里以及下文描述的IP地址总数、已用IP地址总数不包含系统预留地址。
      * - 在分配IP时，用户可以指定系统预留的IP地址。但是不论IP是如何分配的，只要是处于系统预留IP地址段的IP均不会被统计到已用IP地址数目和IP地址总数中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNetworkIpAvailabilitiesRequest 请求对象
      * @return ShowNetworkIpAvailabilitiesResponse
@@ -1415,8 +1328,7 @@ public class VpcClient {
      * - 这里以及下文描述的IP地址总数、已用IP地址总数不包含系统预留地址。
      * - 在分配IP时，用户可以指定系统预留的IP地址。但是不论IP是如何分配的，只要是处于系统预留IP地址段的IP均不会被统计到已用IP地址数目和IP地址总数中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNetworkIpAvailabilitiesRequest 请求对象
      * @return SyncInvoker<ShowNetworkIpAvailabilitiesRequest, ShowNetworkIpAvailabilitiesResponse>
@@ -1432,8 +1344,7 @@ public class VpcClient {
      *
      * 指定ID查询私有IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPrivateipRequest 请求对象
      * @return ShowPrivateipResponse
@@ -1447,8 +1358,7 @@ public class VpcClient {
      *
      * 指定ID查询私有IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPrivateipRequest 请求对象
      * @return SyncInvoker<ShowPrivateipRequest, ShowPrivateipResponse>
@@ -1462,8 +1372,7 @@ public class VpcClient {
      *
      * 创建安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateSecurityGroupRequest 请求对象
      * @return NeutronCreateSecurityGroupResponse
@@ -1477,8 +1386,7 @@ public class VpcClient {
      *
      * 创建安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateSecurityGroupRequest 请求对象
      * @return SyncInvoker<NeutronCreateSecurityGroupRequest, NeutronCreateSecurityGroupResponse>
@@ -1494,8 +1402,7 @@ public class VpcClient {
      *
      * 创建安全组规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateSecurityGroupRuleRequest 请求对象
      * @return NeutronCreateSecurityGroupRuleResponse
@@ -1510,8 +1417,7 @@ public class VpcClient {
      *
      * 创建安全组规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<NeutronCreateSecurityGroupRuleRequest, NeutronCreateSecurityGroupRuleResponse>
@@ -1527,8 +1433,7 @@ public class VpcClient {
      *
      * 删除安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteSecurityGroupRequest 请求对象
      * @return NeutronDeleteSecurityGroupResponse
@@ -1542,8 +1447,7 @@ public class VpcClient {
      *
      * 删除安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteSecurityGroupRequest 请求对象
      * @return SyncInvoker<NeutronDeleteSecurityGroupRequest, NeutronDeleteSecurityGroupResponse>
@@ -1559,8 +1463,7 @@ public class VpcClient {
      *
      * 删除安全组规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteSecurityGroupRuleRequest 请求对象
      * @return NeutronDeleteSecurityGroupRuleResponse
@@ -1575,8 +1478,7 @@ public class VpcClient {
      *
      * 删除安全组规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<NeutronDeleteSecurityGroupRuleRequest, NeutronDeleteSecurityGroupRuleResponse>
@@ -1592,8 +1494,7 @@ public class VpcClient {
      *
      * 查询提交请求的租户有权限查看的所有安全组规则。单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListSecurityGroupRulesRequest 请求对象
      * @return NeutronListSecurityGroupRulesResponse
@@ -1608,8 +1509,7 @@ public class VpcClient {
      *
      * 查询提交请求的租户有权限查看的所有安全组规则。单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListSecurityGroupRulesRequest 请求对象
      * @return SyncInvoker<NeutronListSecurityGroupRulesRequest, NeutronListSecurityGroupRulesResponse>
@@ -1625,8 +1525,7 @@ public class VpcClient {
      *
      * 查询提交请求租户的所有安全组，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询 。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListSecurityGroupsRequest 请求对象
      * @return NeutronListSecurityGroupsResponse
@@ -1640,8 +1539,7 @@ public class VpcClient {
      *
      * 查询提交请求租户的所有安全组，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询 。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListSecurityGroupsRequest 请求对象
      * @return SyncInvoker<NeutronListSecurityGroupsRequest, NeutronListSecurityGroupsResponse>
@@ -1657,8 +1555,7 @@ public class VpcClient {
      *
      * 查询安全组详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowSecurityGroupRequest 请求对象
      * @return NeutronShowSecurityGroupResponse
@@ -1672,8 +1569,7 @@ public class VpcClient {
      *
      * 查询安全组详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowSecurityGroupRequest 请求对象
      * @return SyncInvoker<NeutronShowSecurityGroupRequest, NeutronShowSecurityGroupResponse>
@@ -1689,8 +1585,7 @@ public class VpcClient {
      *
      * 查询安全组规则详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowSecurityGroupRuleRequest 请求对象
      * @return NeutronShowSecurityGroupRuleResponse
@@ -1705,8 +1600,7 @@ public class VpcClient {
      *
      * 查询安全组规则详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<NeutronShowSecurityGroupRuleRequest, NeutronShowSecurityGroupRuleResponse>
@@ -1722,8 +1616,7 @@ public class VpcClient {
      *
      * 更新安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateSecurityGroupRequest 请求对象
      * @return NeutronUpdateSecurityGroupResponse
@@ -1737,8 +1630,7 @@ public class VpcClient {
      *
      * 更新安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateSecurityGroupRequest 请求对象
      * @return SyncInvoker<NeutronUpdateSecurityGroupRequest, NeutronUpdateSecurityGroupResponse>
@@ -1754,8 +1646,7 @@ public class VpcClient {
      *
      * 插入一条网络ACL规则到某一网络ACL策略中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronAddFirewallRuleRequest 请求对象
      * @return NeutronAddFirewallRuleResponse
@@ -1769,8 +1660,7 @@ public class VpcClient {
      *
      * 插入一条网络ACL规则到某一网络ACL策略中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronAddFirewallRuleRequest 请求对象
      * @return SyncInvoker<NeutronAddFirewallRuleRequest, NeutronAddFirewallRuleResponse>
@@ -1786,8 +1676,7 @@ public class VpcClient {
      *
      * 创建网络ACL组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateFirewallGroupRequest 请求对象
      * @return NeutronCreateFirewallGroupResponse
@@ -1801,8 +1690,7 @@ public class VpcClient {
      *
      * 创建网络ACL组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateFirewallGroupRequest 请求对象
      * @return SyncInvoker<NeutronCreateFirewallGroupRequest, NeutronCreateFirewallGroupResponse>
@@ -1818,8 +1706,7 @@ public class VpcClient {
      *
      * 创建网络ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateFirewallPolicyRequest 请求对象
      * @return NeutronCreateFirewallPolicyResponse
@@ -1833,8 +1720,7 @@ public class VpcClient {
      *
      * 创建网络ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateFirewallPolicyRequest 请求对象
      * @return SyncInvoker<NeutronCreateFirewallPolicyRequest, NeutronCreateFirewallPolicyResponse>
@@ -1850,8 +1736,7 @@ public class VpcClient {
      *
      * 创建网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateFirewallRuleRequest 请求对象
      * @return NeutronCreateFirewallRuleResponse
@@ -1865,8 +1750,7 @@ public class VpcClient {
      *
      * 创建网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateFirewallRuleRequest 请求对象
      * @return SyncInvoker<NeutronCreateFirewallRuleRequest, NeutronCreateFirewallRuleResponse>
@@ -1882,8 +1766,7 @@ public class VpcClient {
      *
      * 删除网络ACL组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteFirewallGroupRequest 请求对象
      * @return NeutronDeleteFirewallGroupResponse
@@ -1897,8 +1780,7 @@ public class VpcClient {
      *
      * 删除网络ACL组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteFirewallGroupRequest 请求对象
      * @return SyncInvoker<NeutronDeleteFirewallGroupRequest, NeutronDeleteFirewallGroupResponse>
@@ -1914,8 +1796,7 @@ public class VpcClient {
      *
      * 删除网络ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteFirewallPolicyRequest 请求对象
      * @return NeutronDeleteFirewallPolicyResponse
@@ -1929,8 +1810,7 @@ public class VpcClient {
      *
      * 删除网络ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteFirewallPolicyRequest 请求对象
      * @return SyncInvoker<NeutronDeleteFirewallPolicyRequest, NeutronDeleteFirewallPolicyResponse>
@@ -1946,8 +1826,7 @@ public class VpcClient {
      *
      * 删除网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteFirewallRuleRequest 请求对象
      * @return NeutronDeleteFirewallRuleResponse
@@ -1961,8 +1840,7 @@ public class VpcClient {
      *
      * 删除网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteFirewallRuleRequest 请求对象
      * @return SyncInvoker<NeutronDeleteFirewallRuleRequest, NeutronDeleteFirewallRuleResponse>
@@ -1978,8 +1856,7 @@ public class VpcClient {
      *
      * 查询提交请求的租户有权限操作的所有网络ACL组信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListFirewallGroupsRequest 请求对象
      * @return NeutronListFirewallGroupsResponse
@@ -1993,8 +1870,7 @@ public class VpcClient {
      *
      * 查询提交请求的租户有权限操作的所有网络ACL组信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListFirewallGroupsRequest 请求对象
      * @return SyncInvoker<NeutronListFirewallGroupsRequest, NeutronListFirewallGroupsResponse>
@@ -2010,8 +1886,7 @@ public class VpcClient {
      *
      * 查询提交请求的租户有权限操作的所有网络ACL策略信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListFirewallPoliciesRequest 请求对象
      * @return NeutronListFirewallPoliciesResponse
@@ -2025,8 +1900,7 @@ public class VpcClient {
      *
      * 查询提交请求的租户有权限操作的所有网络ACL策略信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListFirewallPoliciesRequest 请求对象
      * @return SyncInvoker<NeutronListFirewallPoliciesRequest, NeutronListFirewallPoliciesResponse>
@@ -2042,8 +1916,7 @@ public class VpcClient {
      *
      * 查询提交请求的租户有权限操作的所有网络ACL规则信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListFirewallRulesRequest 请求对象
      * @return NeutronListFirewallRulesResponse
@@ -2057,8 +1930,7 @@ public class VpcClient {
      *
      * 查询提交请求的租户有权限操作的所有网络ACL规则信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListFirewallRulesRequest 请求对象
      * @return SyncInvoker<NeutronListFirewallRulesRequest, NeutronListFirewallRulesResponse>
@@ -2074,8 +1946,7 @@ public class VpcClient {
      *
      * 从某一网络ACL策略中移除一条网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronRemoveFirewallRuleRequest 请求对象
      * @return NeutronRemoveFirewallRuleResponse
@@ -2089,8 +1960,7 @@ public class VpcClient {
      *
      * 从某一网络ACL策略中移除一条网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronRemoveFirewallRuleRequest 请求对象
      * @return SyncInvoker<NeutronRemoveFirewallRuleRequest, NeutronRemoveFirewallRuleResponse>
@@ -2106,8 +1976,7 @@ public class VpcClient {
      *
      * 查询特定网络ACL组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowFirewallGroupRequest 请求对象
      * @return NeutronShowFirewallGroupResponse
@@ -2121,8 +1990,7 @@ public class VpcClient {
      *
      * 查询特定网络ACL组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowFirewallGroupRequest 请求对象
      * @return SyncInvoker<NeutronShowFirewallGroupRequest, NeutronShowFirewallGroupResponse>
@@ -2138,8 +2006,7 @@ public class VpcClient {
      *
      * 查询特定网络ACL策略详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowFirewallPolicyRequest 请求对象
      * @return NeutronShowFirewallPolicyResponse
@@ -2153,8 +2020,7 @@ public class VpcClient {
      *
      * 查询特定网络ACL策略详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowFirewallPolicyRequest 请求对象
      * @return SyncInvoker<NeutronShowFirewallPolicyRequest, NeutronShowFirewallPolicyResponse>
@@ -2170,8 +2036,7 @@ public class VpcClient {
      *
      * 查询特定网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowFirewallRuleRequest 请求对象
      * @return NeutronShowFirewallRuleResponse
@@ -2185,8 +2050,7 @@ public class VpcClient {
      *
      * 查询特定网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowFirewallRuleRequest 请求对象
      * @return SyncInvoker<NeutronShowFirewallRuleRequest, NeutronShowFirewallRuleResponse>
@@ -2202,8 +2066,7 @@ public class VpcClient {
      *
      * 更新网络ACL组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateFirewallGroupRequest 请求对象
      * @return NeutronUpdateFirewallGroupResponse
@@ -2217,8 +2080,7 @@ public class VpcClient {
      *
      * 更新网络ACL组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateFirewallGroupRequest 请求对象
      * @return SyncInvoker<NeutronUpdateFirewallGroupRequest, NeutronUpdateFirewallGroupResponse>
@@ -2234,8 +2096,7 @@ public class VpcClient {
      *
      * 更新网络ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateFirewallPolicyRequest 请求对象
      * @return NeutronUpdateFirewallPolicyResponse
@@ -2249,8 +2110,7 @@ public class VpcClient {
      *
      * 更新网络ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateFirewallPolicyRequest 请求对象
      * @return SyncInvoker<NeutronUpdateFirewallPolicyRequest, NeutronUpdateFirewallPolicyResponse>
@@ -2266,8 +2126,7 @@ public class VpcClient {
      *
      * 更新网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateFirewallRuleRequest 请求对象
      * @return NeutronUpdateFirewallRuleResponse
@@ -2281,8 +2140,7 @@ public class VpcClient {
      *
      * 更新网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateFirewallRuleRequest 请求对象
      * @return SyncInvoker<NeutronUpdateFirewallRuleRequest, NeutronUpdateFirewallRuleResponse>
@@ -2299,8 +2157,7 @@ public class VpcClient {
      * 为指定的VPC资源实例批量添加标签。
      * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateVpcTagsRequest 请求对象
      * @return BatchCreateVpcTagsResponse
@@ -2315,8 +2172,7 @@ public class VpcClient {
      * 为指定的VPC资源实例批量添加标签。
      * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateVpcTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateVpcTagsRequest, BatchCreateVpcTagsResponse>
@@ -2333,8 +2189,7 @@ public class VpcClient {
      * 为指定的VPC资源实例批量删除标签。
      * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteVpcTagsRequest 请求对象
      * @return BatchDeleteVpcTagsResponse
@@ -2349,8 +2204,7 @@ public class VpcClient {
      * 为指定的VPC资源实例批量删除标签。
      * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteVpcTagsRequest 请求对象
      * @return SyncInvoker<BatchDeleteVpcTagsRequest, BatchDeleteVpcTagsResponse>
@@ -2366,8 +2220,7 @@ public class VpcClient {
      *
      * 创建虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcRequest 请求对象
      * @return CreateVpcResponse
@@ -2381,8 +2234,7 @@ public class VpcClient {
      *
      * 创建虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcRequest 请求对象
      * @return SyncInvoker<CreateVpcRequest, CreateVpcResponse>
@@ -2397,8 +2249,7 @@ public class VpcClient {
      * 给指定VPC资源实例增加标签信息
      * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcResourceTagRequest 请求对象
      * @return CreateVpcResourceTagResponse
@@ -2413,8 +2264,7 @@ public class VpcClient {
      * 给指定VPC资源实例增加标签信息
      * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcResourceTagRequest 请求对象
      * @return SyncInvoker<CreateVpcResourceTagRequest, CreateVpcResourceTagResponse>
@@ -2430,8 +2280,7 @@ public class VpcClient {
      *
      * 创建路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcRouteRequest 请求对象
      * @return CreateVpcRouteResponse
@@ -2445,8 +2294,7 @@ public class VpcClient {
      *
      * 创建路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcRouteRequest 请求对象
      * @return SyncInvoker<CreateVpcRouteRequest, CreateVpcRouteResponse>
@@ -2462,8 +2310,7 @@ public class VpcClient {
      *
      * 删除虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcRequest 请求对象
      * @return DeleteVpcResponse
@@ -2477,8 +2324,7 @@ public class VpcClient {
      *
      * 删除虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcRequest 请求对象
      * @return SyncInvoker<DeleteVpcRequest, DeleteVpcResponse>
@@ -2492,8 +2338,7 @@ public class VpcClient {
      *
      * 删除路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcRouteRequest 请求对象
      * @return DeleteVpcRouteResponse
@@ -2507,8 +2352,7 @@ public class VpcClient {
      *
      * 删除路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcRouteRequest 请求对象
      * @return SyncInvoker<DeleteVpcRouteRequest, DeleteVpcRouteResponse>
@@ -2525,8 +2369,7 @@ public class VpcClient {
      * 删除指定VPC资源实例的标签信息
      * 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcTagRequest 请求对象
      * @return DeleteVpcTagResponse
@@ -2541,8 +2384,7 @@ public class VpcClient {
      * 删除指定VPC资源实例的标签信息
      * 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcTagRequest 请求对象
      * @return SyncInvoker<DeleteVpcTagRequest, DeleteVpcTagResponse>
@@ -2556,8 +2398,7 @@ public class VpcClient {
      *
      * 查询提交请求的租户的所有路由列表，并根据过滤条件进行过滤。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcRoutesRequest 请求对象
      * @return ListVpcRoutesResponse
@@ -2571,8 +2412,7 @@ public class VpcClient {
      *
      * 查询提交请求的租户的所有路由列表，并根据过滤条件进行过滤。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcRoutesRequest 请求对象
      * @return SyncInvoker<ListVpcRoutesRequest, ListVpcRoutesResponse>
@@ -2586,8 +2426,7 @@ public class VpcClient {
      *
      * 查询租户在指定区域和实例类型的所有标签集合
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcTagsRequest 请求对象
      * @return ListVpcTagsResponse
@@ -2601,8 +2440,7 @@ public class VpcClient {
      *
      * 查询租户在指定区域和实例类型的所有标签集合
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcTagsRequest 请求对象
      * @return SyncInvoker<ListVpcTagsRequest, ListVpcTagsResponse>
@@ -2616,8 +2454,7 @@ public class VpcClient {
      *
      * 查询虚拟私有云列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcsRequest 请求对象
      * @return ListVpcsResponse
@@ -2631,8 +2468,7 @@ public class VpcClient {
      *
      * 查询虚拟私有云列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcsRequest 请求对象
      * @return SyncInvoker<ListVpcsRequest, ListVpcsResponse>
@@ -2646,8 +2482,7 @@ public class VpcClient {
      *
      * 使用标签过滤实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcsByTagsRequest 请求对象
      * @return ListVpcsByTagsResponse
@@ -2661,8 +2496,7 @@ public class VpcClient {
      *
      * 使用标签过滤实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcsByTagsRequest 请求对象
      * @return SyncInvoker<ListVpcsByTagsRequest, ListVpcsByTagsResponse>
@@ -2678,8 +2512,7 @@ public class VpcClient {
      *
      * 查询虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcRequest 请求对象
      * @return ShowVpcResponse
@@ -2693,8 +2526,7 @@ public class VpcClient {
      *
      * 查询虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcRequest 请求对象
      * @return SyncInvoker<ShowVpcRequest, ShowVpcResponse>
@@ -2708,8 +2540,7 @@ public class VpcClient {
      *
      * 查询路由详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcRouteRequest 请求对象
      * @return ShowVpcRouteResponse
@@ -2723,8 +2554,7 @@ public class VpcClient {
      *
      * 查询路由详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcRouteRequest 请求对象
      * @return SyncInvoker<ShowVpcRouteRequest, ShowVpcRouteResponse>
@@ -2738,8 +2568,7 @@ public class VpcClient {
      *
      * 查询指定VPC实例的标签信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcTagsRequest 请求对象
      * @return ShowVpcTagsResponse
@@ -2753,8 +2582,7 @@ public class VpcClient {
      *
      * 查询指定VPC实例的标签信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcTagsRequest 请求对象
      * @return SyncInvoker<ShowVpcTagsRequest, ShowVpcTagsResponse>
@@ -2768,8 +2596,7 @@ public class VpcClient {
      *
      * 更新虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcRequest 请求对象
      * @return UpdateVpcResponse
@@ -2783,8 +2610,7 @@ public class VpcClient {
      *
      * 更新虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcRequest 请求对象
      * @return SyncInvoker<UpdateVpcRequest, UpdateVpcResponse>

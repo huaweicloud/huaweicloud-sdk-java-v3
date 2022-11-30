@@ -22,6 +22,8 @@ public class UpdateBandwidthRequestBody {
 
     /**
      * - 小于等于300Mbit/s：默认最小增长步长为1Mbit/s。 - 300Mbit/s~1000Mbit/s：默认最小增长步长为50Mbit/s。 - 大于1000Mbit/s：默认最小增长步长为500Mbit/s。
+     * minimum: 0
+     * maximum: 8096
      * @return bandWidthSize
      */
     public Integer getBandWidthSize() {

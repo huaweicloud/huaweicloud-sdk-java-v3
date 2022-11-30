@@ -16,6 +16,88 @@ import java.util.function.Consumer;
  */
 public class PolicyAssignmentRequestBody {
 
+    /**
+     * 规则类型，包括预定义合规规则(builtin)和用户自定义合规规则(custom)
+     */
+    public static final class PolicyAssignmentTypeEnum {
+
+        /**
+         * Enum BUILTIN for value: "builtin"
+         */
+        public static final PolicyAssignmentTypeEnum BUILTIN = new PolicyAssignmentTypeEnum("builtin");
+
+        /**
+         * Enum CUSTOM for value: "custom"
+         */
+        public static final PolicyAssignmentTypeEnum CUSTOM = new PolicyAssignmentTypeEnum("custom");
+
+        private static final Map<String, PolicyAssignmentTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PolicyAssignmentTypeEnum> createStaticFields() {
+            Map<String, PolicyAssignmentTypeEnum> map = new HashMap<>();
+            map.put("builtin", BUILTIN);
+            map.put("custom", CUSTOM);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PolicyAssignmentTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PolicyAssignmentTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            PolicyAssignmentTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new PolicyAssignmentTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static PolicyAssignmentTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            PolicyAssignmentTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PolicyAssignmentTypeEnum) {
+                return this.value.equals(((PolicyAssignmentTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_assignment_type")
+
+    private PolicyAssignmentTypeEnum policyAssignmentType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
@@ -132,6 +214,11 @@ public class PolicyAssignmentRequestBody {
     private PolicyFilterDefinition policyFilter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_policy")
+
+    private CustomPolicy customPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_definition_id")
 
     private String policyDefinitionId;
@@ -140,6 +227,23 @@ public class PolicyAssignmentRequestBody {
     @JsonProperty(value = "parameters")
 
     private Map<String, PolicyParameterValue> parameters = null;
+
+    public PolicyAssignmentRequestBody withPolicyAssignmentType(PolicyAssignmentTypeEnum policyAssignmentType) {
+        this.policyAssignmentType = policyAssignmentType;
+        return this;
+    }
+
+    /**
+     * 规则类型，包括预定义合规规则(builtin)和用户自定义合规规则(custom)
+     * @return policyAssignmentType
+     */
+    public PolicyAssignmentTypeEnum getPolicyAssignmentType() {
+        return policyAssignmentType;
+    }
+
+    public void setPolicyAssignmentType(PolicyAssignmentTypeEnum policyAssignmentType) {
+        this.policyAssignmentType = policyAssignmentType;
+    }
 
     public PolicyAssignmentRequestBody withName(String name) {
         this.name = name;
@@ -218,6 +322,32 @@ public class PolicyAssignmentRequestBody {
         this.policyFilter = policyFilter;
     }
 
+    public PolicyAssignmentRequestBody withCustomPolicy(CustomPolicy customPolicy) {
+        this.customPolicy = customPolicy;
+        return this;
+    }
+
+    public PolicyAssignmentRequestBody withCustomPolicy(Consumer<CustomPolicy> customPolicySetter) {
+        if (this.customPolicy == null) {
+            this.customPolicy = new CustomPolicy();
+            customPolicySetter.accept(this.customPolicy);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get customPolicy
+     * @return customPolicy
+     */
+    public CustomPolicy getCustomPolicy() {
+        return customPolicy;
+    }
+
+    public void setCustomPolicy(CustomPolicy customPolicy) {
+        this.customPolicy = customPolicy;
+    }
+
     public PolicyAssignmentRequestBody withPolicyDefinitionId(String policyDefinitionId) {
         this.policyDefinitionId = policyDefinitionId;
         return this;
@@ -277,27 +407,38 @@ public class PolicyAssignmentRequestBody {
             return false;
         }
         PolicyAssignmentRequestBody policyAssignmentRequestBody = (PolicyAssignmentRequestBody) o;
-        return Objects.equals(this.name, policyAssignmentRequestBody.name)
+        return Objects.equals(this.policyAssignmentType, policyAssignmentRequestBody.policyAssignmentType)
+            && Objects.equals(this.name, policyAssignmentRequestBody.name)
             && Objects.equals(this.description, policyAssignmentRequestBody.description)
             && Objects.equals(this.period, policyAssignmentRequestBody.period)
             && Objects.equals(this.policyFilter, policyAssignmentRequestBody.policyFilter)
+            && Objects.equals(this.customPolicy, policyAssignmentRequestBody.customPolicy)
             && Objects.equals(this.policyDefinitionId, policyAssignmentRequestBody.policyDefinitionId)
             && Objects.equals(this.parameters, policyAssignmentRequestBody.parameters);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, period, policyFilter, policyDefinitionId, parameters);
+        return Objects.hash(policyAssignmentType,
+            name,
+            description,
+            period,
+            policyFilter,
+            customPolicy,
+            policyDefinitionId,
+            parameters);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PolicyAssignmentRequestBody {\n");
+        sb.append("    policyAssignmentType: ").append(toIndentedString(policyAssignmentType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("    policyFilter: ").append(toIndentedString(policyFilter)).append("\n");
+        sb.append("    customPolicy: ").append(toIndentedString(customPolicy)).append("\n");
         sb.append("    policyDefinitionId: ").append(toIndentedString(policyDefinitionId)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
         sb.append("}");

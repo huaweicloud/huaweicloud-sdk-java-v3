@@ -22,8 +22,7 @@ public class DnsClient {
      *
      * 绑定单个IP地址到终端节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateEndpointIpaddressRequest 请求对象
      * @return AssociateEndpointIpaddressResponse
@@ -37,8 +36,7 @@ public class DnsClient {
      *
      * 绑定单个IP地址到终端节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateEndpointIpaddressRequest 请求对象
      * @return SyncInvoker<AssociateEndpointIpaddressRequest, AssociateEndpointIpaddressResponse>
@@ -54,8 +52,7 @@ public class DnsClient {
      *
      * 批量删除PTR。本接口为原子操作，所有记录应全部删除成功或全部失败。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeletePtrRecordsRequest 请求对象
      * @return BatchDeletePtrRecordsResponse
@@ -69,8 +66,7 @@ public class DnsClient {
      *
      * 批量删除PTR。本接口为原子操作，所有记录应全部删除成功或全部失败。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeletePtrRecordsRequest 请求对象
      * @return SyncInvoker<BatchDeletePtrRecordsRequest, BatchDeletePtrRecordsResponse>
@@ -88,8 +84,7 @@ public class DnsClient {
      * 响应结果中只包含本次实际删除的Record Set。
      * 支持批量删除公网域名和内网域名的记录集。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteRecordSetsRequest 请求对象
      * @return BatchDeleteRecordSetsResponse
@@ -105,8 +100,7 @@ public class DnsClient {
      * 响应结果中只包含本次实际删除的Record Set。
      * 支持批量删除公网域名和内网域名的记录集。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteRecordSetsRequest 请求对象
      * @return SyncInvoker<BatchDeleteRecordSetsRequest, BatchDeleteRecordSetsResponse>
@@ -124,8 +118,7 @@ public class DnsClient {
      * 本接口为原子操作，所有记录应全部删除成功或全部失败。
      * 仅支持公网Zone、内网Zone。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteZonesRequest 请求对象
      * @return BatchDeleteZonesResponse
@@ -141,8 +134,7 @@ public class DnsClient {
      * 本接口为原子操作，所有记录应全部删除成功或全部失败。
      * 仅支持公网Zone、内网Zone。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteZonesRequest 请求对象
      * @return SyncInvoker<BatchDeleteZonesRequest, BatchDeleteZonesResponse>
@@ -160,8 +152,7 @@ public class DnsClient {
      * 响应结果中只包含本次实际更新的Record Set。
      * 仅支持公网域名记录集。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchSetRecordSetsStatusRequest 请求对象
      * @return BatchSetRecordSetsStatusResponse
@@ -177,8 +168,7 @@ public class DnsClient {
      * 响应结果中只包含本次实际更新的Record Set。
      * 仅支持公网域名记录集。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchSetRecordSetsStatusRequest 请求对象
      * @return SyncInvoker<BatchSetRecordSetsStatusRequest, BatchSetRecordSetsStatusResponse>
@@ -196,8 +186,7 @@ public class DnsClient {
      * 响应结果中只包含本次实际更新的Zone。
      * 仅支持公网Zone。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchSetZonesStatusRequest 请求对象
      * @return BatchSetZonesStatusResponse
@@ -213,8 +202,7 @@ public class DnsClient {
      * 响应结果中只包含本次实际更新的Zone。
      * 仅支持公网Zone。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchSetZonesStatusRequest 请求对象
      * @return SyncInvoker<BatchSetZonesStatusRequest, BatchSetZonesStatusResponse>
@@ -230,8 +218,7 @@ public class DnsClient {
      *
      * 创建单个自定义线路
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCustomLineRequest 请求对象
      * @return CreateCustomLineResponse
@@ -245,8 +232,7 @@ public class DnsClient {
      *
      * 创建单个自定义线路
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCustomLineRequest 请求对象
      * @return SyncInvoker<CreateCustomLineRequest, CreateCustomLineResponse>
@@ -262,8 +248,7 @@ public class DnsClient {
      *
      * 创建单个终端节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEndpointRequest 请求对象
      * @return CreateEndpointResponse
@@ -277,8 +262,7 @@ public class DnsClient {
      *
      * 创建单个终端节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEndpointRequest 请求对象
      * @return SyncInvoker<CreateEndpointRequest, CreateEndpointResponse>
@@ -294,8 +278,7 @@ public class DnsClient {
      *
      * 创建一个线路分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLineGroupRequest 请求对象
      * @return CreateLineGroupResponse
@@ -309,8 +292,7 @@ public class DnsClient {
      *
      * 创建一个线路分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLineGroupRequest 请求对象
      * @return SyncInvoker<CreateLineGroupRequest, CreateLineGroupResponse>
@@ -326,8 +308,7 @@ public class DnsClient {
      *
      * 创建一个解析规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResolveRuleRequest 请求对象
      * @return CreateResolveRuleResponse
@@ -341,8 +322,7 @@ public class DnsClient {
      *
      * 创建一个解析规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResolveRuleRequest 请求对象
      * @return SyncInvoker<CreateResolveRuleRequest, CreateResolveRuleResponse>
@@ -358,8 +338,7 @@ public class DnsClient {
      *
      * 创建公网域名找回请求。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRetrievalRequest 请求对象
      * @return CreateRetrievalResponse
@@ -373,8 +352,7 @@ public class DnsClient {
      *
      * 创建公网域名找回请求。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRetrievalRequest 请求对象
      * @return SyncInvoker<CreateRetrievalRequest, CreateRetrievalResponse>
@@ -390,8 +368,7 @@ public class DnsClient {
      *
      * 请求服务器立即执行找回验证。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRetrievalVerificationRequest 请求对象
      * @return CreateRetrievalVerificationResponse
@@ -405,8 +382,7 @@ public class DnsClient {
      *
      * 请求服务器立即执行找回验证。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRetrievalVerificationRequest 请求对象
      * @return SyncInvoker<CreateRetrievalVerificationRequest, CreateRetrievalVerificationResponse>
@@ -422,8 +398,7 @@ public class DnsClient {
      *
      * 删除单个自定义线路
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCustomLineRequest 请求对象
      * @return DeleteCustomLineResponse
@@ -437,8 +412,7 @@ public class DnsClient {
      *
      * 删除单个自定义线路
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCustomLineRequest 请求对象
      * @return SyncInvoker<DeleteCustomLineRequest, DeleteCustomLineResponse>
@@ -454,8 +428,7 @@ public class DnsClient {
      *
      * 删除终端节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEndpointRequest 请求对象
      * @return DeleteEndpointResponse
@@ -469,8 +442,7 @@ public class DnsClient {
      *
      * 删除终端节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEndpointRequest 请求对象
      * @return SyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse>
@@ -486,8 +458,7 @@ public class DnsClient {
      *
      * 删除单个线路分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLineGroupRequest 请求对象
      * @return DeleteLineGroupResponse
@@ -501,8 +472,7 @@ public class DnsClient {
      *
      * 删除单个线路分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLineGroupRequest 请求对象
      * @return SyncInvoker<DeleteLineGroupRequest, DeleteLineGroupResponse>
@@ -518,8 +488,7 @@ public class DnsClient {
      *
      * 删除解析规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResolveRuleRequest 请求对象
      * @return DeleteResolveRuleResponse
@@ -533,8 +502,7 @@ public class DnsClient {
      *
      * 删除解析规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResolveRuleRequest 请求对象
      * @return SyncInvoker<DeleteResolveRuleRequest, DeleteResolveRuleResponse>
@@ -550,8 +518,7 @@ public class DnsClient {
      *
      * 解除endpoint绑定的IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateEndpointIpaddressRequest 请求对象
      * @return DisassociateEndpointIpaddressResponse
@@ -566,8 +533,7 @@ public class DnsClient {
      *
      * 解除endpoint绑定的IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateEndpointIpaddressRequest 请求对象
      * @return SyncInvoker<DisassociateEndpointIpaddressRequest, DisassociateEndpointIpaddressResponse>
@@ -583,8 +549,7 @@ public class DnsClient {
      *
      * 查询所有的云解析服务API版本号列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return ListApiVersionsResponse
@@ -598,8 +563,7 @@ public class DnsClient {
      *
      * 查询所有的云解析服务API版本号列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
@@ -615,8 +579,7 @@ public class DnsClient {
      *
      * 查询自定义线路
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCustomLineRequest 请求对象
      * @return ListCustomLineResponse
@@ -630,8 +593,7 @@ public class DnsClient {
      *
      * 查询自定义线路
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCustomLineRequest 请求对象
      * @return SyncInvoker<ListCustomLineRequest, ListCustomLineResponse>
@@ -647,8 +609,7 @@ public class DnsClient {
      *
      * 查询某个endpoint下的ip地址列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointIpaddressesRequest 请求对象
      * @return ListEndpointIpaddressesResponse
@@ -662,8 +623,7 @@ public class DnsClient {
      *
      * 查询某个endpoint下的ip地址列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointIpaddressesRequest 请求对象
      * @return SyncInvoker<ListEndpointIpaddressesRequest, ListEndpointIpaddressesResponse>
@@ -679,8 +639,7 @@ public class DnsClient {
      *
      * 查询vpc的终端节点信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointVpcsRequest 请求对象
      * @return ListEndpointVpcsResponse
@@ -694,8 +653,7 @@ public class DnsClient {
      *
      * 查询vpc的终端节点信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointVpcsRequest 请求对象
      * @return SyncInvoker<ListEndpointVpcsRequest, ListEndpointVpcsResponse>
@@ -711,8 +669,7 @@ public class DnsClient {
      *
      * 查询终端节点列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointsRequest 请求对象
      * @return ListEndpointsResponse
@@ -726,8 +683,7 @@ public class DnsClient {
      *
      * 查询终端节点列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointsRequest 请求对象
      * @return SyncInvoker<ListEndpointsRequest, ListEndpointsResponse>
@@ -741,8 +697,7 @@ public class DnsClient {
      *
      * 查询线路分组列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLineGroupsRequest 请求对象
      * @return ListLineGroupsResponse
@@ -756,8 +711,7 @@ public class DnsClient {
      *
      * 查询线路分组列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLineGroupsRequest 请求对象
      * @return SyncInvoker<ListLineGroupsRequest, ListLineGroupsResponse>
@@ -773,8 +727,7 @@ public class DnsClient {
      *
      * 查询名称服务器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNameServersRequest 请求对象
      * @return ListNameServersResponse
@@ -788,8 +741,7 @@ public class DnsClient {
      *
      * 查询名称服务器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNameServersRequest 请求对象
      * @return SyncInvoker<ListNameServersRequest, ListNameServersResponse>
@@ -805,8 +757,7 @@ public class DnsClient {
      *
      * 查询解析规则的列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResoleRulesRequest 请求对象
      * @return ListResoleRulesResponse
@@ -820,8 +771,7 @@ public class DnsClient {
      *
      * 查询解析规则的列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResoleRulesRequest 请求对象
      * @return SyncInvoker<ListResoleRulesRequest, ListResoleRulesResponse>
@@ -837,8 +787,7 @@ public class DnsClient {
      *
      * 查询指定的云解析服务API版本号
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiInfoRequest 请求对象
      * @return ShowApiInfoResponse
@@ -852,8 +801,7 @@ public class DnsClient {
      *
      * 查询指定的云解析服务API版本号
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiInfoRequest 请求对象
      * @return SyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse>
@@ -867,8 +815,7 @@ public class DnsClient {
      *
      * 查询单租户在DNS服务下的资源配额，包括公网zone配额、内网zone配额、Record Set配额、PTR Record配额、入站终端节点配额、出站终端节点配额、自定义线路配额、线路分组配额等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainQuotaRequest 请求对象
      * @return ShowDomainQuotaResponse
@@ -882,8 +829,7 @@ public class DnsClient {
      *
      * 查询单租户在DNS服务下的资源配额，包括公网zone配额、内网zone配额、Record Set配额、PTR Record配额、入站终端节点配额、出站终端节点配额、自定义线路配额、线路分组配额等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainQuotaRequest 请求对象
      * @return SyncInvoker<ShowDomainQuotaRequest, ShowDomainQuotaResponse>
@@ -899,8 +845,7 @@ public class DnsClient {
      *
      * 查询终端单个节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEndpointRequest 请求对象
      * @return ShowEndpointResponse
@@ -914,8 +859,7 @@ public class DnsClient {
      *
      * 查询终端单个节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEndpointRequest 请求对象
      * @return SyncInvoker<ShowEndpointRequest, ShowEndpointResponse>
@@ -929,8 +873,7 @@ public class DnsClient {
      *
      * 查询线路分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLineGroupRequest 请求对象
      * @return ShowLineGroupResponse
@@ -944,8 +887,7 @@ public class DnsClient {
      *
      * 查询线路分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLineGroupRequest 请求对象
      * @return SyncInvoker<ShowLineGroupRequest, ShowLineGroupResponse>
@@ -959,8 +901,7 @@ public class DnsClient {
      *
      * 查询单个解析规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResoleRuleRequest 请求对象
      * @return ShowResoleRuleResponse
@@ -974,8 +915,7 @@ public class DnsClient {
      *
      * 查询单个解析规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResoleRuleRequest 请求对象
      * @return SyncInvoker<ShowResoleRuleRequest, ShowResoleRuleResponse>
@@ -991,8 +931,7 @@ public class DnsClient {
      *
      * 查询域名找回请求。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRetrievalRequest 请求对象
      * @return ShowRetrievalResponse
@@ -1006,8 +945,7 @@ public class DnsClient {
      *
      * 查询域名找回请求。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRetrievalRequest 请求对象
      * @return SyncInvoker<ShowRetrievalRequest, ShowRetrievalResponse>
@@ -1021,8 +959,7 @@ public class DnsClient {
      *
      * 查询域名找回结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRetrievalVerificationRequest 请求对象
      * @return ShowRetrievalVerificationResponse
@@ -1036,8 +973,7 @@ public class DnsClient {
      *
      * 查询域名找回结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRetrievalVerificationRequest 请求对象
      * @return SyncInvoker<ShowRetrievalVerificationRequest, ShowRetrievalVerificationResponse>
@@ -1053,8 +989,7 @@ public class DnsClient {
      *
      * 更新单个自定义线路
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCustomLineRequest 请求对象
      * @return UpdateCustomLineResponse
@@ -1068,8 +1003,7 @@ public class DnsClient {
      *
      * 更新单个自定义线路
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCustomLineRequest 请求对象
      * @return SyncInvoker<UpdateCustomLineRequest, UpdateCustomLineResponse>
@@ -1085,8 +1019,7 @@ public class DnsClient {
      *
      * 修改终端节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointRequest 请求对象
      * @return UpdateEndpointResponse
@@ -1100,8 +1033,7 @@ public class DnsClient {
      *
      * 修改终端节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointRequest 请求对象
      * @return SyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse>
@@ -1117,8 +1049,7 @@ public class DnsClient {
      *
      * 更新单个线路分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLineGroupsRequest 请求对象
      * @return UpdateLineGroupsResponse
@@ -1132,8 +1063,7 @@ public class DnsClient {
      *
      * 更新单个线路分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLineGroupsRequest 请求对象
      * @return SyncInvoker<UpdateLineGroupsRequest, UpdateLineGroupsResponse>
@@ -1149,8 +1079,7 @@ public class DnsClient {
      *
      * 修改一个解析规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResolveRuleRequest 请求对象
      * @return UpdateResolveRuleResponse
@@ -1164,8 +1093,7 @@ public class DnsClient {
      *
      * 修改一个解析规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResolveRuleRequest 请求对象
      * @return SyncInvoker<UpdateResolveRuleRequest, UpdateResolveRuleResponse>
@@ -1181,8 +1109,7 @@ public class DnsClient {
      *
      * 设置弹性IP的PTR记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEipRecordSetRequest 请求对象
      * @return CreateEipRecordSetResponse
@@ -1196,8 +1123,7 @@ public class DnsClient {
      *
      * 设置弹性IP的PTR记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEipRecordSetRequest 请求对象
      * @return SyncInvoker<CreateEipRecordSetRequest, CreateEipRecordSetResponse>
@@ -1213,8 +1139,7 @@ public class DnsClient {
      *
      * 查询租户弹性IP的PTR记录列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPtrRecordsRequest 请求对象
      * @return ListPtrRecordsResponse
@@ -1228,8 +1153,7 @@ public class DnsClient {
      *
      * 查询租户弹性IP的PTR记录列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPtrRecordsRequest 请求对象
      * @return SyncInvoker<ListPtrRecordsRequest, ListPtrRecordsResponse>
@@ -1245,8 +1169,7 @@ public class DnsClient {
      *
      * 将弹性IP的PTR记录恢复为默认值
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestorePtrRecordRequest 请求对象
      * @return RestorePtrRecordResponse
@@ -1260,8 +1183,7 @@ public class DnsClient {
      *
      * 将弹性IP的PTR记录恢复为默认值
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestorePtrRecordRequest 请求对象
      * @return SyncInvoker<RestorePtrRecordRequest, RestorePtrRecordResponse>
@@ -1277,8 +1199,7 @@ public class DnsClient {
      *
      * 查询单个弹性IP的PTR记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPtrRecordSetRequest 请求对象
      * @return ShowPtrRecordSetResponse
@@ -1292,8 +1213,7 @@ public class DnsClient {
      *
      * 查询单个弹性IP的PTR记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPtrRecordSetRequest 请求对象
      * @return SyncInvoker<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse>
@@ -1309,8 +1229,7 @@ public class DnsClient {
      *
      * 修改弹性IP的PTR记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePtrRecordRequest 请求对象
      * @return UpdatePtrRecordResponse
@@ -1324,8 +1243,7 @@ public class DnsClient {
      *
      * 修改弹性IP的PTR记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePtrRecordRequest 请求对象
      * @return SyncInvoker<UpdatePtrRecordRequest, UpdatePtrRecordResponse>
@@ -1341,8 +1259,7 @@ public class DnsClient {
      *
      * Record Set关联健康检查。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateHealthCheckRequest 请求对象
      * @return AssociateHealthCheckResponse
@@ -1356,8 +1273,7 @@ public class DnsClient {
      *
      * Record Set关联健康检查。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateHealthCheckRequest 请求对象
      * @return SyncInvoker<AssociateHealthCheckRequest, AssociateHealthCheckResponse>
@@ -1374,8 +1290,7 @@ public class DnsClient {
      * 批量删除某个Zone下的Record Set资源，当删除的资源不存在时，则默认删除成功。
      * 响应结果中只包含本次实际删除的资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteRecordSetWithLineRequest 请求对象
      * @return BatchDeleteRecordSetWithLineResponse
@@ -1391,8 +1306,7 @@ public class DnsClient {
      * 批量删除某个Zone下的Record Set资源，当删除的资源不存在时，则默认删除成功。
      * 响应结果中只包含本次实际删除的资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteRecordSetWithLineRequest 请求对象
      * @return SyncInvoker<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse>
@@ -1409,8 +1323,7 @@ public class DnsClient {
      * 批量修改RecordSet。属于原子性操作，请求Record Set将全部完成修改，或不做任何修改。
      * 仅公网Zone支持。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchUpdateRecordSetWithLineRequest 请求对象
      * @return BatchUpdateRecordSetWithLineResponse
@@ -1426,8 +1339,7 @@ public class DnsClient {
      * 批量修改RecordSet。属于原子性操作，请求Record Set将全部完成修改，或不做任何修改。
      * 仅公网Zone支持。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchUpdateRecordSetWithLineRequest 请求对象
      * @return SyncInvoker<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse>
@@ -1443,8 +1355,7 @@ public class DnsClient {
      *
      * 创建单个Record Set
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRecordSetRequest 请求对象
      * @return CreateRecordSetResponse
@@ -1458,8 +1369,7 @@ public class DnsClient {
      *
      * 创建单个Record Set
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRecordSetRequest 请求对象
      * @return SyncInvoker<CreateRecordSetRequest, CreateRecordSetResponse>
@@ -1475,8 +1385,7 @@ public class DnsClient {
      *
      * 批量线路创建RecordSet。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网Zone支持。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRecordSetWithBatchLinesRequest 请求对象
      * @return CreateRecordSetWithBatchLinesResponse
@@ -1491,8 +1400,7 @@ public class DnsClient {
      *
      * 批量线路创建RecordSet。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网Zone支持。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRecordSetWithBatchLinesRequest 请求对象
      * @return SyncInvoker<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse>
@@ -1508,8 +1416,7 @@ public class DnsClient {
      *
      * 创建单个Record Set，仅适用于公网DNS
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRecordSetWithLineRequest 请求对象
      * @return CreateRecordSetWithLineResponse
@@ -1523,8 +1430,7 @@ public class DnsClient {
      *
      * 创建单个Record Set，仅适用于公网DNS
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRecordSetWithLineRequest 请求对象
      * @return SyncInvoker<CreateRecordSetWithLineRequest, CreateRecordSetWithLineResponse>
@@ -1540,8 +1446,7 @@ public class DnsClient {
      *
      * 删除单个Record Set
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRecordSetRequest 请求对象
      * @return DeleteRecordSetResponse
@@ -1555,8 +1460,7 @@ public class DnsClient {
      *
      * 删除单个Record Set
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRecordSetRequest 请求对象
      * @return SyncInvoker<DeleteRecordSetRequest, DeleteRecordSetResponse>
@@ -1572,8 +1476,7 @@ public class DnsClient {
      *
      * 删除单个Record Set
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRecordSetsRequest 请求对象
      * @return DeleteRecordSetsResponse
@@ -1587,8 +1490,7 @@ public class DnsClient {
      *
      * 删除单个Record Set
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRecordSetsRequest 请求对象
      * @return SyncInvoker<DeleteRecordSetsRequest, DeleteRecordSetsResponse>
@@ -1604,8 +1506,7 @@ public class DnsClient {
      *
      * Record Set解关联健康检查。。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateHealthCheckRequest 请求对象
      * @return DisassociateHealthCheckResponse
@@ -1619,8 +1520,7 @@ public class DnsClient {
      *
      * Record Set解关联健康检查。。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateHealthCheckRequest 请求对象
      * @return SyncInvoker<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse>
@@ -1636,8 +1536,7 @@ public class DnsClient {
      *
      * 查询租户Record Set资源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecordSetsRequest 请求对象
      * @return ListRecordSetsResponse
@@ -1651,8 +1550,7 @@ public class DnsClient {
      *
      * 查询租户Record Set资源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecordSetsRequest 请求对象
      * @return SyncInvoker<ListRecordSetsRequest, ListRecordSetsResponse>
@@ -1668,8 +1566,7 @@ public class DnsClient {
      *
      * 查询单个Zone下Record Set列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecordSetsByZoneRequest 请求对象
      * @return ListRecordSetsByZoneResponse
@@ -1683,8 +1580,7 @@ public class DnsClient {
      *
      * 查询单个Zone下Record Set列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecordSetsByZoneRequest 请求对象
      * @return SyncInvoker<ListRecordSetsByZoneRequest, ListRecordSetsByZoneResponse>
@@ -1700,8 +1596,7 @@ public class DnsClient {
      *
      * 查询租户Record Set资源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecordSetsWithLineRequest 请求对象
      * @return ListRecordSetsWithLineResponse
@@ -1715,8 +1610,7 @@ public class DnsClient {
      *
      * 查询租户Record Set资源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecordSetsWithLineRequest 请求对象
      * @return SyncInvoker<ListRecordSetsWithLineRequest, ListRecordSetsWithLineResponse>
@@ -1732,8 +1626,7 @@ public class DnsClient {
      *
      * 设置Record Set状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetRecordSetsStatusRequest 请求对象
      * @return SetRecordSetsStatusResponse
@@ -1747,8 +1640,7 @@ public class DnsClient {
      *
      * 设置Record Set状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetRecordSetsStatusRequest 请求对象
      * @return SyncInvoker<SetRecordSetsStatusRequest, SetRecordSetsStatusResponse>
@@ -1764,8 +1656,7 @@ public class DnsClient {
      *
      * 查询单个Record Set
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordSetRequest 请求对象
      * @return ShowRecordSetResponse
@@ -1779,8 +1670,7 @@ public class DnsClient {
      *
      * 查询单个Record Set
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordSetRequest 请求对象
      * @return SyncInvoker<ShowRecordSetRequest, ShowRecordSetResponse>
@@ -1794,8 +1684,7 @@ public class DnsClient {
      *
      * 查询单个Zone下Record Set列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordSetByZoneRequest 请求对象
      * @return ShowRecordSetByZoneResponse
@@ -1809,8 +1698,7 @@ public class DnsClient {
      *
      * 查询单个Zone下Record Set列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordSetByZoneRequest 请求对象
      * @return SyncInvoker<ShowRecordSetByZoneRequest, ShowRecordSetByZoneResponse>
@@ -1826,8 +1714,7 @@ public class DnsClient {
      *
      * 查询单个Record Set，仅适用于公网DNS
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordSetWithLineRequest 请求对象
      * @return ShowRecordSetWithLineResponse
@@ -1841,8 +1728,7 @@ public class DnsClient {
      *
      * 查询单个Record Set，仅适用于公网DNS
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordSetWithLineRequest 请求对象
      * @return SyncInvoker<ShowRecordSetWithLineRequest, ShowRecordSetWithLineResponse>
@@ -1858,8 +1744,7 @@ public class DnsClient {
      *
      * 修改单个Record Set
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRecordSetRequest 请求对象
      * @return UpdateRecordSetResponse
@@ -1873,8 +1758,7 @@ public class DnsClient {
      *
      * 修改单个Record Set
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRecordSetRequest 请求对象
      * @return SyncInvoker<UpdateRecordSetRequest, UpdateRecordSetResponse>
@@ -1890,8 +1774,7 @@ public class DnsClient {
      *
      * 修改单个Record Set
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRecordSetsRequest 请求对象
      * @return UpdateRecordSetsResponse
@@ -1905,8 +1788,7 @@ public class DnsClient {
      *
      * 修改单个Record Set
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRecordSetsRequest 请求对象
      * @return SyncInvoker<UpdateRecordSetsRequest, UpdateRecordSetsResponse>
@@ -1922,8 +1804,7 @@ public class DnsClient {
      *
      * 为指定实例批量添加或删除标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateTagRequest 请求对象
      * @return BatchCreateTagResponse
@@ -1937,8 +1818,7 @@ public class DnsClient {
      *
      * 为指定实例批量添加或删除标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateTagRequest 请求对象
      * @return SyncInvoker<BatchCreateTagRequest, BatchCreateTagResponse>
@@ -1954,8 +1834,7 @@ public class DnsClient {
      *
      * 为指定实例添加标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTagRequest 请求对象
      * @return CreateTagResponse
@@ -1969,8 +1848,7 @@ public class DnsClient {
      *
      * 为指定实例添加标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTagRequest 请求对象
      * @return SyncInvoker<CreateTagRequest, CreateTagResponse>
@@ -1984,8 +1862,7 @@ public class DnsClient {
      *
      * 删除资源标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTagRequest 请求对象
      * @return DeleteTagResponse
@@ -1999,8 +1876,7 @@ public class DnsClient {
      *
      * 删除资源标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTagRequest 请求对象
      * @return SyncInvoker<DeleteTagRequest, DeleteTagResponse>
@@ -2014,8 +1890,7 @@ public class DnsClient {
      *
      * 使用标签查询资源实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagRequest 请求对象
      * @return ListTagResponse
@@ -2029,8 +1904,7 @@ public class DnsClient {
      *
      * 使用标签查询资源实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagRequest 请求对象
      * @return SyncInvoker<ListTagRequest, ListTagResponse>
@@ -2044,8 +1918,7 @@ public class DnsClient {
      *
      * 查询指定实例类型的所有标签集合
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsRequest 请求对象
      * @return ListTagsResponse
@@ -2059,8 +1932,7 @@ public class DnsClient {
      *
      * 查询指定实例类型的所有标签集合
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsRequest 请求对象
      * @return SyncInvoker<ListTagsRequest, ListTagsResponse>
@@ -2074,8 +1946,7 @@ public class DnsClient {
      *
      * 查询指定实例的标签信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceTagRequest 请求对象
      * @return ShowResourceTagResponse
@@ -2089,8 +1960,7 @@ public class DnsClient {
      *
      * 查询指定实例的标签信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceTagRequest 请求对象
      * @return SyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse>
@@ -2106,8 +1976,7 @@ public class DnsClient {
      *
      * 在内网Zone上关联VPC
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRouterRequest 请求对象
      * @return AssociateRouterResponse
@@ -2121,8 +1990,7 @@ public class DnsClient {
      *
      * 在内网Zone上关联VPC
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRouterRequest 请求对象
      * @return SyncInvoker<AssociateRouterRequest, AssociateRouterResponse>
@@ -2138,8 +2006,7 @@ public class DnsClient {
      *
      * 创建单个内网Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePrivateZoneRequest 请求对象
      * @return CreatePrivateZoneResponse
@@ -2153,8 +2020,7 @@ public class DnsClient {
      *
      * 创建单个内网Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePrivateZoneRequest 请求对象
      * @return SyncInvoker<CreatePrivateZoneRequest, CreatePrivateZoneResponse>
@@ -2170,8 +2036,7 @@ public class DnsClient {
      *
      * 创建单个公网Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePublicZoneRequest 请求对象
      * @return CreatePublicZoneResponse
@@ -2185,8 +2050,7 @@ public class DnsClient {
      *
      * 创建单个公网Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePublicZoneRequest 请求对象
      * @return SyncInvoker<CreatePublicZoneRequest, CreatePublicZoneResponse>
@@ -2202,8 +2066,7 @@ public class DnsClient {
      *
      * 删除单个内网Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePrivateZoneRequest 请求对象
      * @return DeletePrivateZoneResponse
@@ -2217,8 +2080,7 @@ public class DnsClient {
      *
      * 删除单个内网Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePrivateZoneRequest 请求对象
      * @return SyncInvoker<DeletePrivateZoneRequest, DeletePrivateZoneResponse>
@@ -2234,8 +2096,7 @@ public class DnsClient {
      *
      * 删除单个公网Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePublicZoneRequest 请求对象
      * @return DeletePublicZoneResponse
@@ -2249,8 +2110,7 @@ public class DnsClient {
      *
      * 删除单个公网Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePublicZoneRequest 请求对象
      * @return SyncInvoker<DeletePublicZoneRequest, DeletePublicZoneResponse>
@@ -2266,8 +2126,7 @@ public class DnsClient {
      *
      * 在内网Zone上解关联VPC
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateRouterRequest 请求对象
      * @return DisassociateRouterResponse
@@ -2281,8 +2140,7 @@ public class DnsClient {
      *
      * 在内网Zone上解关联VPC
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateRouterRequest 请求对象
      * @return SyncInvoker<DisassociateRouterRequest, DisassociateRouterResponse>
@@ -2298,8 +2156,7 @@ public class DnsClient {
      *
      * 查询内网Zone的列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPrivateZonesRequest 请求对象
      * @return ListPrivateZonesResponse
@@ -2313,8 +2170,7 @@ public class DnsClient {
      *
      * 查询内网Zone的列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPrivateZonesRequest 请求对象
      * @return SyncInvoker<ListPrivateZonesRequest, ListPrivateZonesResponse>
@@ -2330,8 +2186,7 @@ public class DnsClient {
      *
      * 查询公网Zone的列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublicZonesRequest 请求对象
      * @return ListPublicZonesResponse
@@ -2345,8 +2200,7 @@ public class DnsClient {
      *
      * 查询公网Zone的列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublicZonesRequest 请求对象
      * @return SyncInvoker<ListPublicZonesRequest, ListPublicZonesResponse>
@@ -2362,8 +2216,7 @@ public class DnsClient {
      *
      * 设置单个内网Zone的子域名递归解析代理
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetPrivateZoneProxyPatternRequest 请求对象
      * @return SetPrivateZoneProxyPatternResponse
@@ -2377,8 +2230,7 @@ public class DnsClient {
      *
      * 设置单个内网Zone的子域名递归解析代理
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetPrivateZoneProxyPatternRequest 请求对象
      * @return SyncInvoker<SetPrivateZoneProxyPatternRequest, SetPrivateZoneProxyPatternResponse>
@@ -2394,8 +2246,7 @@ public class DnsClient {
      *
      * 查询单个内网Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPrivateZoneRequest 请求对象
      * @return ShowPrivateZoneResponse
@@ -2409,8 +2260,7 @@ public class DnsClient {
      *
      * 查询单个内网Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPrivateZoneRequest 请求对象
      * @return SyncInvoker<ShowPrivateZoneRequest, ShowPrivateZoneResponse>
@@ -2426,8 +2276,7 @@ public class DnsClient {
      *
      * 查询单个内网Zone的名称服务器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPrivateZoneNameServerRequest 请求对象
      * @return ShowPrivateZoneNameServerResponse
@@ -2441,8 +2290,7 @@ public class DnsClient {
      *
      * 查询单个内网Zone的名称服务器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPrivateZoneNameServerRequest 请求对象
      * @return SyncInvoker<ShowPrivateZoneNameServerRequest, ShowPrivateZoneNameServerResponse>
@@ -2458,8 +2306,7 @@ public class DnsClient {
      *
      * 查询单个公网Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicZoneRequest 请求对象
      * @return ShowPublicZoneResponse
@@ -2473,8 +2320,7 @@ public class DnsClient {
      *
      * 查询单个公网Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicZoneRequest 请求对象
      * @return SyncInvoker<ShowPublicZoneRequest, ShowPublicZoneResponse>
@@ -2490,8 +2336,7 @@ public class DnsClient {
      *
      * 查询单个公网Zone的名称服务器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicZoneNameServerRequest 请求对象
      * @return ShowPublicZoneNameServerResponse
@@ -2505,8 +2350,7 @@ public class DnsClient {
      *
      * 查询单个公网Zone的名称服务器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicZoneNameServerRequest 请求对象
      * @return SyncInvoker<ShowPublicZoneNameServerRequest, ShowPublicZoneNameServerResponse>
@@ -2522,8 +2366,7 @@ public class DnsClient {
      *
      * 修改单个内网Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePrivateZoneRequest 请求对象
      * @return UpdatePrivateZoneResponse
@@ -2537,8 +2380,7 @@ public class DnsClient {
      *
      * 修改单个内网Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePrivateZoneRequest 请求对象
      * @return SyncInvoker<UpdatePrivateZoneRequest, UpdatePrivateZoneResponse>
@@ -2554,8 +2396,7 @@ public class DnsClient {
      *
      * 修改单个公网Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePublicZoneRequest 请求对象
      * @return UpdatePublicZoneResponse
@@ -2569,8 +2410,7 @@ public class DnsClient {
      *
      * 修改单个公网Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePublicZoneRequest 请求对象
      * @return SyncInvoker<UpdatePublicZoneRequest, UpdatePublicZoneResponse>
@@ -2586,8 +2426,7 @@ public class DnsClient {
      *
      * 设置单个公网Zone状态，支持暂停、启用Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePublicZoneStatusRequest 请求对象
      * @return UpdatePublicZoneStatusResponse
@@ -2601,8 +2440,7 @@ public class DnsClient {
      *
      * 设置单个公网Zone状态，支持暂停、启用Zone
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePublicZoneStatusRequest 请求对象
      * @return SyncInvoker<UpdatePublicZoneStatusRequest, UpdatePublicZoneStatusResponse>

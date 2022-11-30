@@ -28,8 +28,7 @@ public class MrsClient {
      * 
      * - 创建时，同一个集群不允许重复key，如果数据库存在就覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateClusterTagsRequest 请求对象
      * @return BatchCreateClusterTagsResponse
@@ -49,8 +48,7 @@ public class MrsClient {
      * 
      * - 创建时，同一个集群不允许重复key，如果数据库存在就覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateClusterTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse>
@@ -71,8 +69,7 @@ public class MrsClient {
      * -
      * 删除时，如果删除的标签不存在，默认处理成功，删除时不对标签字符集范围做校验。Key长度36个unicode字符，value为43个unicode字符。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteClusterTagsRequest 请求对象
      * @return BatchDeleteClusterTagsResponse
@@ -93,8 +90,7 @@ public class MrsClient {
      * -
      * 删除时，如果删除的标签不存在，默认处理成功，删除时不对标签字符集范围做校验。Key长度36个unicode字符，value为43个unicode字符。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteClusterTagsRequest 请求对象
      * @return SyncInvoker<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse>
@@ -110,8 +106,7 @@ public class MrsClient {
      * 在MRS集群中新增一个作业，并执行作业。该接口不兼容Sahara。
      * 集群ID可参考[查询集群列表](https://support.huaweicloud.com/api-mrs/ListClusters.html)接口获取。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAndExecuteJobRequest 请求对象
      * @return CreateAndExecuteJobResponse
@@ -127,8 +122,7 @@ public class MrsClient {
      * 在MRS集群中新增一个作业，并执行作业。该接口不兼容Sahara。
      * 集群ID可参考[查询集群列表](https://support.huaweicloud.com/api-mrs/ListClusters.html)接口获取。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAndExecuteJobRequest 请求对象
      * @return SyncInvoker<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse>
@@ -148,8 +142,7 @@ public class MrsClient {
      * - 通过[终端节点](https://support.huaweicloud.com/api-mrs/mrs_02_0003.html)获取区域信息
      * - 参考[MRS服务支持的组件](https://support.huaweicloud.com/api-mrs/mrs_02_9001.html)获取MRS版本及对应版本支持的组件信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClusterRequest 请求对象
      * @return CreateClusterResponse
@@ -169,8 +162,7 @@ public class MrsClient {
      * - 通过[终端节点](https://support.huaweicloud.com/api-mrs/mrs_02_0003.html)获取区域信息
      * - 参考[MRS服务支持的组件](https://support.huaweicloud.com/api-mrs/mrs_02_9001.html)获取MRS版本及对应版本支持的组件信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClusterRequest 请求对象
      * @return SyncInvoker<CreateClusterRequest, CreateClusterResponse>
@@ -185,8 +177,7 @@ public class MrsClient {
      * 为特定的集群添加一个tag。
      * 一个集群上最多有10个标签，此接口为幂等接口。添加标签时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClusterTagRequest 请求对象
      * @return CreateClusterTagResponse
@@ -201,8 +192,7 @@ public class MrsClient {
      * 为特定的集群添加一个tag。
      * 一个集群上最多有10个标签，此接口为幂等接口。添加标签时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClusterTagRequest 请求对象
      * @return SyncInvoker<CreateClusterTagRequest, CreateClusterTagResponse>
@@ -218,8 +208,7 @@ public class MrsClient {
      * 
      * 在创建集群并执行作业接口中也可以创建弹性伸缩规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateScalingPolicyRequest 请求对象
      * @return CreateScalingPolicyResponse
@@ -235,8 +224,7 @@ public class MrsClient {
      * 
      * 在创建集群并执行作业接口中也可以创建弹性伸缩规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateScalingPolicyRequest 请求对象
      * @return SyncInvoker<CreateScalingPolicyRequest, CreateScalingPolicyResponse>
@@ -258,8 +246,7 @@ public class MrsClient {
      * - terminated：已删除
      * - failed：失败
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteClusterRequest 请求对象
      * @return DeleteClusterResponse
@@ -281,8 +268,7 @@ public class MrsClient {
      * - terminated：已删除
      * - failed：失败
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteClusterRequest 请求对象
      * @return SyncInvoker<DeleteClusterRequest, DeleteClusterResponse>
@@ -296,8 +282,7 @@ public class MrsClient {
      *
      * 删除特定集群的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteClusterTagRequest 请求对象
      * @return DeleteClusterTagResponse
@@ -311,8 +296,7 @@ public class MrsClient {
      *
      * 删除特定集群的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteClusterTagRequest 请求对象
      * @return SyncInvoker<DeleteClusterTagRequest, DeleteClusterTagResponse>
@@ -327,8 +311,7 @@ public class MrsClient {
      * 如需使用作业管理接口请参考apiv2接口使用，本接口后续不再进行维护。
      * 删除指定的作业执行对象。该接口兼容Sahara。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteJobExecutionRequest 请求对象
      * @return DeleteJobExecutionResponse
@@ -343,8 +326,7 @@ public class MrsClient {
      * 如需使用作业管理接口请参考apiv2接口使用，本接口后续不再进行维护。
      * 删除指定的作业执行对象。该接口兼容Sahara。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteJobExecutionRequest 请求对象
      * @return SyncInvoker<DeleteJobExecutionRequest, DeleteJobExecutionResponse>
@@ -358,8 +340,7 @@ public class MrsClient {
      *
      * 查询租户在指定Region下的所有标签集合 。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAllTagsRequest 请求对象
      * @return ListAllTagsResponse
@@ -373,8 +354,7 @@ public class MrsClient {
      *
      * 查询租户在指定Region下的所有标签集合 。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAllTagsRequest 请求对象
      * @return SyncInvoker<ListAllTagsRequest, ListAllTagsResponse>
@@ -388,8 +368,7 @@ public class MrsClient {
      *
      * 查询指定集群的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClusterTagsRequest 请求对象
      * @return ListClusterTagsResponse
@@ -403,8 +382,7 @@ public class MrsClient {
      *
      * 查询指定集群的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClusterTagsRequest 请求对象
      * @return SyncInvoker<ListClusterTagsRequest, ListClusterTagsResponse>
@@ -418,8 +396,7 @@ public class MrsClient {
      *
      * 查看用户创建的集群列表信息。该接口不兼容Sahara。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClustersRequest 请求对象
      * @return ListClustersResponse
@@ -433,8 +410,7 @@ public class MrsClient {
      *
      * 查看用户创建的集群列表信息。该接口不兼容Sahara。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClustersRequest 请求对象
      * @return SyncInvoker<ListClustersRequest, ListClustersResponse>
@@ -450,8 +426,7 @@ public class MrsClient {
      * 
      * 集群默认按照创建时间倒序，集群tag也按照创建时间倒序。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClustersByTagsRequest 请求对象
      * @return ListClustersByTagsResponse
@@ -467,8 +442,7 @@ public class MrsClient {
      * 
      * 集群默认按照创建时间倒序，集群tag也按照创建时间倒序。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClustersByTagsRequest 请求对象
      * @return SyncInvoker<ListClustersByTagsRequest, ListClustersByTagsResponse>
@@ -483,8 +457,7 @@ public class MrsClient {
      * 如需使用作业管理接口请参考apiv2接口使用，本接口后续不再进行维护。
      * 查询所有作业的exe对象列表。该接口不兼容Sahara。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListExecuteJobRequest 请求对象
      * @return ListExecuteJobResponse
@@ -499,8 +472,7 @@ public class MrsClient {
      * 如需使用作业管理接口请参考apiv2接口使用，本接口后续不再进行维护。
      * 查询所有作业的exe对象列表。该接口不兼容Sahara。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListExecuteJobRequest 请求对象
      * @return SyncInvoker<ListExecuteJobRequest, ListExecuteJobResponse>
@@ -514,8 +486,7 @@ public class MrsClient {
      *
      * 该接口用于查询输入集群的主机列表详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostsRequest 请求对象
      * @return ListHostsResponse
@@ -529,8 +500,7 @@ public class MrsClient {
      *
      * 该接口用于查询输入集群的主机列表详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostsRequest 请求对象
      * @return SyncInvoker<ListHostsRequest, ListHostsResponse>
@@ -544,8 +514,7 @@ public class MrsClient {
      *
      * 查看指定集群的详细信息。该接口不兼容Sahara。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClusterDetailsRequest 请求对象
      * @return ShowClusterDetailsResponse
@@ -559,8 +528,7 @@ public class MrsClient {
      *
      * 查看指定集群的详细信息。该接口不兼容Sahara。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClusterDetailsRequest 请求对象
      * @return SyncInvoker<ShowClusterDetailsRequest, ShowClusterDetailsResponse>
@@ -575,8 +543,7 @@ public class MrsClient {
      * 如需使用作业管理接口请参考apiv2接口使用，本接口后续不再进行维护。
      * 查询指定作业的exe对象详细信息。该接口不兼容Sahara。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobExesRequest 请求对象
      * @return ShowJobExesResponse
@@ -591,8 +558,7 @@ public class MrsClient {
      * 如需使用作业管理接口请参考apiv2接口使用，本接口后续不再进行维护。
      * 查询指定作业的exe对象详细信息。该接口不兼容Sahara。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobExesRequest 请求对象
      * @return SyncInvoker<ShowJobExesRequest, ShowJobExesResponse>
@@ -607,8 +573,7 @@ public class MrsClient {
      * 创建集群后，扩容/缩容集群Core节点或者Task节点。MRS集群创建成功后不支持调整Master节点数量，即不支持扩缩容Master节点。该接口不兼容Sahara。
      * 处于running状态的集群才允许扩容/缩容，其他状态则不允许扩容/缩容。 集群状态和集群ID可参考[查询集群列表](https://support.huaweicloud.com/api-mrs/ListClusters.html)接口获取。 本章节的接口只支持流式集群、分析集群和混合集群，不支持自定义集群。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateClusterScalingRequest 请求对象
      * @return UpdateClusterScalingResponse
@@ -623,8 +588,7 @@ public class MrsClient {
      * 创建集群后，扩容/缩容集群Core节点或者Task节点。MRS集群创建成功后不支持调整Master节点数量，即不支持扩缩容Master节点。该接口不兼容Sahara。
      * 处于running状态的集群才允许扩容/缩容，其他状态则不允许扩容/缩容。 集群状态和集群ID可参考[查询集群列表](https://support.huaweicloud.com/api-mrs/ListClusters.html)接口获取。 本章节的接口只支持流式集群、分析集群和混合集群，不支持自定义集群。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateClusterScalingRequest 请求对象
      * @return SyncInvoker<UpdateClusterScalingRequest, UpdateClusterScalingResponse>

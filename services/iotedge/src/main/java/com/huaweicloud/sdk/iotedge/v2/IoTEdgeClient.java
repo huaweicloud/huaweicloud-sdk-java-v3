@@ -22,8 +22,7 @@ public class IoTEdgeClient {
      *
      * 创建边缘节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEdgeNodeRequest 请求对象
      * @return CreateEdgeNodeResponse
@@ -37,8 +36,7 @@ public class IoTEdgeClient {
      *
      * 创建边缘节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEdgeNodeRequest 请求对象
      * @return SyncInvoker<CreateEdgeNodeRequest, CreateEdgeNodeResponse>
@@ -52,8 +50,7 @@ public class IoTEdgeClient {
      *
      * 生成边缘节点安装命令，命令有效时间30分钟，超过后需要重新生成
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstallCmdRequest 请求对象
      * @return CreateInstallCmdResponse
@@ -67,8 +64,7 @@ public class IoTEdgeClient {
      *
      * 生成边缘节点安装命令，命令有效时间30分钟，超过后需要重新生成
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstallCmdRequest 请求对象
      * @return SyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse>
@@ -82,8 +78,7 @@ public class IoTEdgeClient {
      *
      * 删除指定边缘节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEdgeNodeRequest 请求对象
      * @return DeleteEdgeNodeResponse
@@ -97,8 +92,7 @@ public class IoTEdgeClient {
      *
      * 删除指定边缘节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEdgeNodeRequest 请求对象
      * @return SyncInvoker<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse>
@@ -112,8 +106,7 @@ public class IoTEdgeClient {
      *
      * 查询边缘节点列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEdgeNodesRequest 请求对象
      * @return ListEdgeNodesResponse
@@ -127,8 +120,7 @@ public class IoTEdgeClient {
      *
      * 查询边缘节点列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEdgeNodesRequest 请求对象
      * @return SyncInvoker<ListEdgeNodesRequest, ListEdgeNodesResponse>
@@ -142,8 +134,7 @@ public class IoTEdgeClient {
      *
      * 查询边缘节点详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEdgeNodeRequest 请求对象
      * @return ShowEdgeNodeResponse
@@ -157,8 +148,7 @@ public class IoTEdgeClient {
      *
      * 查询边缘节点详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEdgeNodeRequest 请求对象
      * @return SyncInvoker<ShowEdgeNodeRequest, ShowEdgeNodeResponse>
@@ -172,8 +162,7 @@ public class IoTEdgeClient {
      *
      * 添加设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddDeviceRequest 请求对象
      * @return AddDeviceResponse
@@ -187,8 +176,7 @@ public class IoTEdgeClient {
      *
      * 添加设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddDeviceRequest 请求对象
      * @return SyncInvoker<AddDeviceRequest, AddDeviceResponse>
@@ -202,8 +190,7 @@ public class IoTEdgeClient {
      *
      * 删除设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceRequest 请求对象
      * @return DeleteDeviceResponse
@@ -217,8 +204,7 @@ public class IoTEdgeClient {
      *
      * 删除设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeviceRequest 请求对象
      * @return SyncInvoker<DeleteDeviceRequest, DeleteDeviceResponse>
@@ -232,8 +218,7 @@ public class IoTEdgeClient {
      *
      * 查询设备列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDevicesRequest 请求对象
      * @return ListDevicesResponse
@@ -247,8 +232,7 @@ public class IoTEdgeClient {
      *
      * 查询设备列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDevicesRequest 请求对象
      * @return SyncInvoker<ListDevicesRequest, ListDevicesResponse>
@@ -262,8 +246,7 @@ public class IoTEdgeClient {
      *
      * 获取协议配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProductConfigRequest 请求对象
      * @return ShowProductConfigResponse
@@ -277,8 +260,7 @@ public class IoTEdgeClient {
      *
      * 获取协议配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProductConfigRequest 请求对象
      * @return SyncInvoker<ShowProductConfigRequest, ShowProductConfigResponse>
@@ -292,8 +274,7 @@ public class IoTEdgeClient {
      *
      * 修改设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceRequest 请求对象
      * @return UpdateDeviceResponse
@@ -307,8 +288,7 @@ public class IoTEdgeClient {
      *
      * 修改设备
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeviceRequest 请求对象
      * @return SyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>
@@ -322,8 +302,7 @@ public class IoTEdgeClient {
      *
      * 查询应用列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchListEdgeAppsRequest 请求对象
      * @return BatchListEdgeAppsResponse
@@ -337,8 +316,7 @@ public class IoTEdgeClient {
      *
      * 查询应用列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchListEdgeAppsRequest 请求对象
      * @return SyncInvoker<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse>
@@ -352,8 +330,7 @@ public class IoTEdgeClient {
      *
      * 创建应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEdgeAppRequest 请求对象
      * @return CreateEdgeAppResponse
@@ -367,8 +344,7 @@ public class IoTEdgeClient {
      *
      * 创建应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEdgeAppRequest 请求对象
      * @return SyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse>
@@ -382,8 +358,7 @@ public class IoTEdgeClient {
      *
      * 删除应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEdgeAppRequest 请求对象
      * @return DeleteEdgeAppResponse
@@ -397,8 +372,7 @@ public class IoTEdgeClient {
      *
      * 删除应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEdgeAppRequest 请求对象
      * @return SyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse>
@@ -412,8 +386,7 @@ public class IoTEdgeClient {
      *
      * 查询应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEdgeAppRequest 请求对象
      * @return ShowEdgeAppResponse
@@ -427,8 +400,7 @@ public class IoTEdgeClient {
      *
      * 查询应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEdgeAppRequest 请求对象
      * @return SyncInvoker<ShowEdgeAppRequest, ShowEdgeAppResponse>
@@ -442,8 +414,7 @@ public class IoTEdgeClient {
      *
      * 查询应用版本列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchListEdgeAppVersionsRequest 请求对象
      * @return BatchListEdgeAppVersionsResponse
@@ -457,8 +428,7 @@ public class IoTEdgeClient {
      *
      * 查询应用版本列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchListEdgeAppVersionsRequest 请求对象
      * @return SyncInvoker<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse>
@@ -472,8 +442,7 @@ public class IoTEdgeClient {
      *
      * 创建应用版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEdgeApplicationVersionRequest 请求对象
      * @return CreateEdgeApplicationVersionResponse
@@ -487,8 +456,7 @@ public class IoTEdgeClient {
      *
      * 创建应用版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEdgeApplicationVersionRequest 请求对象
      * @return SyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse>
@@ -502,8 +470,7 @@ public class IoTEdgeClient {
      *
      * 删除应用版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEdgeApplicationVersionRequest 请求对象
      * @return DeleteEdgeApplicationVersionResponse
@@ -517,8 +484,7 @@ public class IoTEdgeClient {
      *
      * 删除应用版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEdgeApplicationVersionRequest 请求对象
      * @return SyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse>
@@ -532,8 +498,7 @@ public class IoTEdgeClient {
      *
      * 查询应用版本详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEdgeApplicationVersionRequest 请求对象
      * @return ShowEdgeApplicationVersionResponse
@@ -547,8 +512,7 @@ public class IoTEdgeClient {
      *
      * 查询应用版本详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEdgeApplicationVersionRequest 请求对象
      * @return SyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse>
@@ -562,8 +526,7 @@ public class IoTEdgeClient {
      *
      * 修改应用版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEdgeApplicationVersionRequest 请求对象
      * @return UpdateEdgeApplicationVersionResponse
@@ -577,8 +540,7 @@ public class IoTEdgeClient {
      *
      * 修改应用版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEdgeApplicationVersionRequest 请求对象
      * @return SyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse>
@@ -592,8 +554,7 @@ public class IoTEdgeClient {
      *
      * 更新应用版本状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEdgeApplicationVersionStateRequest 请求对象
      * @return UpdateEdgeApplicationVersionStateResponse
@@ -607,8 +568,7 @@ public class IoTEdgeClient {
      *
      * 更新应用版本状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEdgeApplicationVersionStateRequest 请求对象
      * @return SyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse>
@@ -622,8 +582,7 @@ public class IoTEdgeClient {
      *
      * 用户通过在指定边缘节点上设置外部实体的接入信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateExternalEntityRequest 请求对象
      * @return CreateExternalEntityResponse
@@ -637,8 +596,7 @@ public class IoTEdgeClient {
      *
      * 用户通过在指定边缘节点上设置外部实体的接入信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateExternalEntityRequest 请求对象
      * @return SyncInvoker<CreateExternalEntityRequest, CreateExternalEntityResponse>
@@ -652,8 +610,7 @@ public class IoTEdgeClient {
      *
      * 删除节点下外部实体
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteExternalEntityRequest 请求对象
      * @return DeleteExternalEntityResponse
@@ -667,8 +624,7 @@ public class IoTEdgeClient {
      *
      * 删除节点下外部实体
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteExternalEntityRequest 请求对象
      * @return SyncInvoker<DeleteExternalEntityRequest, DeleteExternalEntityResponse>
@@ -682,8 +638,7 @@ public class IoTEdgeClient {
      *
      * 用户在指定边缘节点上查询外部实体列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListExternalEntityRequest 请求对象
      * @return ListExternalEntityResponse
@@ -697,8 +652,7 @@ public class IoTEdgeClient {
      *
      * 用户在指定边缘节点上查询外部实体列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListExternalEntityRequest 请求对象
      * @return SyncInvoker<ListExternalEntityRequest, ListExternalEntityResponse>
@@ -712,8 +666,7 @@ public class IoTEdgeClient {
      *
      * 用户通过在指定边缘节点上修改指定外部实体的接入信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateExternalEntityRequest 请求对象
      * @return UpdateExternalEntityResponse
@@ -727,8 +680,7 @@ public class IoTEdgeClient {
      *
      * 用户通过在指定边缘节点上修改指定外部实体的接入信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateExternalEntityRequest 请求对象
      * @return SyncInvoker<UpdateExternalEntityRequest, UpdateExternalEntityResponse>
@@ -742,8 +694,7 @@ public class IoTEdgeClient {
      *
      * 用户通过Console接口查询指定边缘节点上边缘模块列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchListModulesRequest 请求对象
      * @return BatchListModulesResponse
@@ -757,8 +708,7 @@ public class IoTEdgeClient {
      *
      * 用户通过Console接口查询指定边缘节点上边缘模块列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchListModulesRequest 请求对象
      * @return SyncInvoker<BatchListModulesRequest, BatchListModulesResponse>
@@ -772,8 +722,7 @@ public class IoTEdgeClient {
      *
      * 用户通过Console接口在指定边缘节点上创建边缘模块
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateModuleRequest 请求对象
      * @return CreateModuleResponse
@@ -787,8 +736,7 @@ public class IoTEdgeClient {
      *
      * 用户通过Console接口在指定边缘节点上创建边缘模块
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateModuleRequest 请求对象
      * @return SyncInvoker<CreateModuleRequest, CreateModuleResponse>
@@ -802,8 +750,7 @@ public class IoTEdgeClient {
      *
      * 用户通过过Console接口在指定边缘节点上删除边缘模块
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteModuleRequest 请求对象
      * @return DeleteModuleResponse
@@ -817,8 +764,7 @@ public class IoTEdgeClient {
      *
      * 用户通过过Console接口在指定边缘节点上删除边缘模块
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteModuleRequest 请求对象
      * @return SyncInvoker<DeleteModuleRequest, DeleteModuleResponse>
@@ -832,8 +778,7 @@ public class IoTEdgeClient {
      *
      * 用户通过Console接口查询指定边缘节点上指定边缘模块
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowModuleRequest 请求对象
      * @return ShowModuleResponse
@@ -847,8 +792,7 @@ public class IoTEdgeClient {
      *
      * 用户通过Console接口查询指定边缘节点上指定边缘模块
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowModuleRequest 请求对象
      * @return SyncInvoker<ShowModuleRequest, ShowModuleResponse>
@@ -862,8 +806,7 @@ public class IoTEdgeClient {
      *
      * 用户通过Console接口查询指定边缘节点上指定边缘模块
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateModuleRequest 请求对象
      * @return UpdateModuleResponse
@@ -877,8 +820,7 @@ public class IoTEdgeClient {
      *
      * 用户通过Console接口查询指定边缘节点上指定边缘模块
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateModuleRequest 请求对象
      * @return SyncInvoker<UpdateModuleRequest, UpdateModuleResponse>
@@ -892,8 +834,7 @@ public class IoTEdgeClient {
      *
      * 用户在指定边缘节点上查询边缘路由列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRoutesRequest 请求对象
      * @return ListRoutesResponse
@@ -907,8 +848,7 @@ public class IoTEdgeClient {
      *
      * 用户在指定边缘节点上查询边缘路由列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRoutesRequest 请求对象
      * @return SyncInvoker<ListRoutesRequest, ListRoutesResponse>
@@ -922,8 +862,7 @@ public class IoTEdgeClient {
      *
      * 用户通过在指定边缘节点上设置边缘路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRoutesRequest 请求对象
      * @return UpdateRoutesResponse
@@ -937,8 +876,7 @@ public class IoTEdgeClient {
      *
      * 用户通过在指定边缘节点上设置边缘路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRoutesRequest 请求对象
      * @return SyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse>
@@ -952,8 +890,7 @@ public class IoTEdgeClient {
      *
      * 南向3rdIA对下发的配置项进行批量确认
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchConfirmConfigsNewRequest 请求对象
      * @return BatchConfirmConfigsNewResponse
@@ -967,8 +904,7 @@ public class IoTEdgeClient {
      *
      * 南向3rdIA对下发的配置项进行批量确认
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchConfirmConfigsNewRequest 请求对象
      * @return SyncInvoker<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse>
@@ -982,8 +918,7 @@ public class IoTEdgeClient {
      *
      * 批量导入南向3rdIA配置项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchImportConfigsRequest 请求对象
      * @return BatchImportConfigsResponse
@@ -997,8 +932,7 @@ public class IoTEdgeClient {
      *
      * 批量导入南向3rdIA配置项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchImportConfigsRequest 请求对象
      * @return SyncInvoker<BatchImportConfigsRequest, BatchImportConfigsResponse>
@@ -1012,8 +946,7 @@ public class IoTEdgeClient {
      *
      * 删除南向3rdIA配置项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIaConfigRequest 请求对象
      * @return DeleteIaConfigResponse
@@ -1027,8 +960,7 @@ public class IoTEdgeClient {
      *
      * 删除南向3rdIA配置项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIaConfigRequest 请求对象
      * @return SyncInvoker<DeleteIaConfigRequest, DeleteIaConfigResponse>
@@ -1042,8 +974,7 @@ public class IoTEdgeClient {
      *
      * 查询南向3rdIA配置项列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIaConfigsRequest 请求对象
      * @return ListIaConfigsResponse
@@ -1057,8 +988,7 @@ public class IoTEdgeClient {
      *
      * 查询南向3rdIA配置项列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIaConfigsRequest 请求对象
      * @return SyncInvoker<ListIaConfigsRequest, ListIaConfigsResponse>
@@ -1072,8 +1002,7 @@ public class IoTEdgeClient {
      *
      * 查询南向3rdIA配置项详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIaConfigRequest 请求对象
      * @return ShowIaConfigResponse
@@ -1087,8 +1016,7 @@ public class IoTEdgeClient {
      *
      * 查询南向3rdIA配置项详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIaConfigRequest 请求对象
      * @return SyncInvoker<ShowIaConfigRequest, ShowIaConfigResponse>
@@ -1102,8 +1030,7 @@ public class IoTEdgeClient {
      *
      * 创建&amp;更新南向3rdIA配置项信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIaConfigRequest 请求对象
      * @return UpdateIaConfigResponse
@@ -1117,8 +1044,7 @@ public class IoTEdgeClient {
      *
      * 创建&amp;更新南向3rdIA配置项信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIaConfigRequest 请求对象
      * @return SyncInvoker<UpdateIaConfigRequest, UpdateIaConfigResponse>
@@ -1133,8 +1059,7 @@ public class IoTEdgeClient {
      * 批量授权北向NA信息到边缘节点。
      * 已授权的边缘节点上的南向IA应用，可以通过部署在边缘节点上的api网关访问北向NA提供的接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAssociateNaToNodesRequest 请求对象
      * @return BatchAssociateNaToNodesResponse
@@ -1149,8 +1074,7 @@ public class IoTEdgeClient {
      * 批量授权北向NA信息到边缘节点。
      * 已授权的边缘节点上的南向IA应用，可以通过部署在边缘节点上的api网关访问北向NA提供的接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAssociateNaToNodesRequest 请求对象
      * @return SyncInvoker<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse>
@@ -1164,8 +1088,7 @@ public class IoTEdgeClient {
      *
      * 删除北向NA信息，如果有边缘节点已分配该NA信息，会通知到该边缘节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNaRequest 请求对象
      * @return DeleteNaResponse
@@ -1179,8 +1102,7 @@ public class IoTEdgeClient {
      *
      * 删除北向NA信息，如果有边缘节点已分配该NA信息，会通知到该边缘节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNaRequest 请求对象
      * @return SyncInvoker<DeleteNaRequest, DeleteNaResponse>
@@ -1194,8 +1116,7 @@ public class IoTEdgeClient {
      *
      * 查询该北向NA信息的已分配节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNaAuthorizedNodesRequest 请求对象
      * @return ListNaAuthorizedNodesResponse
@@ -1209,8 +1130,7 @@ public class IoTEdgeClient {
      *
      * 查询该北向NA信息的已分配节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNaAuthorizedNodesRequest 请求对象
      * @return SyncInvoker<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse>
@@ -1224,8 +1144,7 @@ public class IoTEdgeClient {
      *
      * 查询北向NA信息列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNasRequest 请求对象
      * @return ListNasResponse
@@ -1239,8 +1158,7 @@ public class IoTEdgeClient {
      *
      * 查询北向NA信息列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNasRequest 请求对象
      * @return SyncInvoker<ListNasRequest, ListNasResponse>
@@ -1254,8 +1172,7 @@ public class IoTEdgeClient {
      *
      * 查询北向NA信息详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNaRequest 请求对象
      * @return ShowNaResponse
@@ -1269,8 +1186,7 @@ public class IoTEdgeClient {
      *
      * 查询北向NA信息详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNaRequest 请求对象
      * @return SyncInvoker<ShowNaRequest, ShowNaResponse>
@@ -1284,8 +1200,7 @@ public class IoTEdgeClient {
      *
      * 创建&amp;更新北向NA信息，当更新北向NA信息时，会通知到已分配该北向NA的所有边缘节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNaRequest 请求对象
      * @return UpdateNaResponse
@@ -1299,8 +1214,7 @@ public class IoTEdgeClient {
      *
      * 创建&amp;更新北向NA信息，当更新北向NA信息时，会通知到已分配该北向NA的所有边缘节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNaRequest 请求对象
      * @return SyncInvoker<UpdateNaRequest, UpdateNaResponse>

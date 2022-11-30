@@ -24,8 +24,7 @@ public class CloudArtifactAsyncClient {
      *
      * 获取项目下文件版本信息列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectReleaseFilesRequest 请求对象
      * @return CompletableFuture<ShowProjectReleaseFilesResponse>
@@ -40,8 +39,7 @@ public class CloudArtifactAsyncClient {
      *
      * 获取项目下文件版本信息列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectReleaseFilesRequest 请求对象
      * @return AsyncInvoker<ShowProjectReleaseFilesRequest, ShowProjectReleaseFilesResponse>
@@ -57,8 +55,7 @@ public class CloudArtifactAsyncClient {
      *
      * 获取项目下文件版本信息列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowReleaseProjectFilesRequest 请求对象
      * @return CompletableFuture<ShowReleaseProjectFilesResponse>
@@ -73,8 +70,7 @@ public class CloudArtifactAsyncClient {
      *
      * 获取项目下文件版本信息列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowReleaseProjectFilesRequest 请求对象
      * @return AsyncInvoker<ShowReleaseProjectFilesRequest, ShowReleaseProjectFilesResponse>

@@ -250,6 +250,11 @@ public class BackendApiBaseInfo {
 
     private Boolean enableClientSsl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retry_count")
+
+    private String retryCount;
+
     public BackendApiBaseInfo withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -404,6 +409,23 @@ public class BackendApiBaseInfo {
         this.enableClientSsl = enableClientSsl;
     }
 
+    public BackendApiBaseInfo withRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+        return this;
+    }
+
+    /**
+     * 请求后端服务的重试次数，默认为-1，范围[-1,10]
+     * @return retryCount
+     */
+    public String getRetryCount() {
+        return retryCount;
+    }
+
+    public void setRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -421,13 +443,22 @@ public class BackendApiBaseInfo {
             && Objects.equals(this.version, backendApiBaseInfo.version)
             && Objects.equals(this.reqUri, backendApiBaseInfo.reqUri)
             && Objects.equals(this.timeout, backendApiBaseInfo.timeout)
-            && Objects.equals(this.enableClientSsl, backendApiBaseInfo.enableClientSsl);
+            && Objects.equals(this.enableClientSsl, backendApiBaseInfo.enableClientSsl)
+            && Objects.equals(this.retryCount, backendApiBaseInfo.retryCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(authorizerId, urlDomain, reqProtocol, remark, reqMethod, version, reqUri, timeout, enableClientSsl);
+        return Objects.hash(authorizerId,
+            urlDomain,
+            reqProtocol,
+            remark,
+            reqMethod,
+            version,
+            reqUri,
+            timeout,
+            enableClientSsl,
+            retryCount);
     }
 
     @Override
@@ -443,6 +474,7 @@ public class BackendApiBaseInfo {
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    enableClientSsl: ").append(toIndentedString(enableClientSsl)).append("\n");
+        sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

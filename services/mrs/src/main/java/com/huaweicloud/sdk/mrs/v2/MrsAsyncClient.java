@@ -24,8 +24,7 @@ public class MrsAsyncClient {
      *
      * 在MRS集群中批量删除作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteJobsRequest 请求对象
      * @return CompletableFuture<BatchDeleteJobsResponse>
@@ -39,8 +38,7 @@ public class MrsAsyncClient {
      *
      * 在MRS集群中批量删除作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteJobsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse>
@@ -58,8 +56,7 @@ public class MrsAsyncClient {
      * - 通过[终端节点](https://support.huaweicloud.com/api-mrs/mrs_02_0003.html)获取区域信息
      * - 参考[MRS服务支持的组件](https://support.huaweicloud.com/api-mrs/mrs_02_9001.html)获取MRS版本及对应版本支持的组件信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClusterRequest 请求对象
      * @return CompletableFuture<CreateClusterResponse>
@@ -77,8 +74,7 @@ public class MrsAsyncClient {
      * - 通过[终端节点](https://support.huaweicloud.com/api-mrs/mrs_02_0003.html)获取区域信息
      * - 参考[MRS服务支持的组件](https://support.huaweicloud.com/api-mrs/mrs_02_9001.html)获取MRS版本及对应版本支持的组件信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClusterRequest 请求对象
      * @return AsyncInvoker<CreateClusterRequest, CreateClusterResponse>
@@ -98,8 +94,7 @@ public class MrsAsyncClient {
      * 
      * 所有示例中涉及的OBS路径、样例文件及终端节点和AKSK，请提前准备并在提交请求时根据实际情况替换。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateExecuteJobRequest 请求对象
      * @return CompletableFuture<CreateExecuteJobResponse>
@@ -119,8 +114,7 @@ public class MrsAsyncClient {
      * 
      * 所有示例中涉及的OBS路径、样例文件及终端节点和AKSK，请提前准备并在提交请求时根据实际情况替换。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateExecuteJobRequest 请求对象
      * @return AsyncInvoker<CreateExecuteJobRequest, CreateExecuteJobResponse>
@@ -134,8 +128,7 @@ public class MrsAsyncClient {
      *
      * 获取用户（组）与IAM委托之间的映射关系的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAgencyMappingRequest 请求对象
      * @return CompletableFuture<ShowAgencyMappingResponse>
@@ -149,8 +142,7 @@ public class MrsAsyncClient {
      *
      * 获取用户（组）与IAM委托之间的映射关系的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAgencyMappingRequest 请求对象
      * @return AsyncInvoker<ShowAgencyMappingRequest, ShowAgencyMappingResponse>
@@ -160,12 +152,39 @@ public class MrsAsyncClient {
     }
 
     /**
+     * 查看弹性伸缩策略
+     *
+     * 查看指定集群的所有的弹性伸缩策略信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAutoScalingPolicyRequest 请求对象
+     * @return CompletableFuture<ShowAutoScalingPolicyResponse>
+     */
+    public CompletableFuture<ShowAutoScalingPolicyResponse> showAutoScalingPolicyAsync(ShowAutoScalingPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, MrsMeta.showAutoScalingPolicy);
+    }
+
+    /**
+     * 查看弹性伸缩策略
+     *
+     * 查看指定集群的所有的弹性伸缩策略信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAutoScalingPolicyRequest 请求对象
+     * @return AsyncInvoker<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse>
+     */
+    public AsyncInvoker<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse> showAutoScalingPolicyAsyncInvoker(ShowAutoScalingPolicyRequest request) {
+        return new AsyncInvoker<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse>(request, MrsMeta.showAutoScalingPolicy, hcClient);
+    }
+
+    /**
      * 查询作业列表信息
      *
      * 在MRS指定集群中查询作业列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobExeListNewRequest 请求对象
      * @return CompletableFuture<ShowJobExeListNewResponse>
@@ -179,8 +198,7 @@ public class MrsAsyncClient {
      *
      * 在MRS指定集群中查询作业列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobExeListNewRequest 请求对象
      * @return AsyncInvoker<ShowJobExeListNewRequest, ShowJobExeListNewResponse>
@@ -194,8 +212,7 @@ public class MrsAsyncClient {
      *
      * 在MRS集群中查询指定作业的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSingleJobExeRequest 请求对象
      * @return CompletableFuture<ShowSingleJobExeResponse>
@@ -209,8 +226,7 @@ public class MrsAsyncClient {
      *
      * 在MRS集群中查询指定作业的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSingleJobExeRequest 请求对象
      * @return AsyncInvoker<ShowSingleJobExeRequest, ShowSingleJobExeResponse>
@@ -224,8 +240,7 @@ public class MrsAsyncClient {
      *
      * 在MRS集群中查询SparkSql和SparkScript两种类型作业的SQL语句运行完成后返回的查询结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSqlResultWithJobRequest 请求对象
      * @return CompletableFuture<ShowSqlResultWithJobResponse>
@@ -239,8 +254,7 @@ public class MrsAsyncClient {
      *
      * 在MRS集群中查询SparkSql和SparkScript两种类型作业的SQL语句运行完成后返回的查询结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSqlResultWithJobRequest 请求对象
      * @return AsyncInvoker<ShowSqlResultWithJobRequest, ShowSqlResultWithJobResponse>
@@ -254,8 +268,7 @@ public class MrsAsyncClient {
      *
      * 在MRS集群中终止指定作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopJobRequest 请求对象
      * @return CompletableFuture<StopJobResponse>
@@ -269,8 +282,7 @@ public class MrsAsyncClient {
      *
      * 在MRS集群中终止指定作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopJobRequest 请求对象
      * @return AsyncInvoker<StopJobRequest, StopJobResponse>
@@ -284,8 +296,7 @@ public class MrsAsyncClient {
      *
      * 更新用户（组）与IAM委托之间的映射关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAgencyMappingRequest 请求对象
      * @return CompletableFuture<UpdateAgencyMappingResponse>
@@ -299,8 +310,7 @@ public class MrsAsyncClient {
      *
      * 更新用户（组）与IAM委托之间的映射关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAgencyMappingRequest 请求对象
      * @return AsyncInvoker<UpdateAgencyMappingRequest, UpdateAgencyMappingResponse>
@@ -310,12 +320,39 @@ public class MrsAsyncClient {
     }
 
     /**
+     * 修改集群名称
+     *
+     * 修改集群名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateClusterNameRequest 请求对象
+     * @return CompletableFuture<UpdateClusterNameResponse>
+     */
+    public CompletableFuture<UpdateClusterNameResponse> updateClusterNameAsync(UpdateClusterNameRequest request) {
+        return hcClient.asyncInvokeHttp(request, MrsMeta.updateClusterName);
+    }
+
+    /**
+     * 修改集群名称
+     *
+     * 修改集群名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateClusterNameRequest 请求对象
+     * @return AsyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse>
+     */
+    public AsyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse> updateClusterNameAsyncInvoker(UpdateClusterNameRequest request) {
+        return new AsyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse>(request, MrsMeta.updateClusterName, hcClient);
+    }
+
+    /**
      * 获取指定目录文件列表
      *
      * 在MRS集群中获取指定目录文件列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHdfsFileListRequest 请求对象
      * @return CompletableFuture<ShowHdfsFileListResponse>
@@ -329,8 +366,7 @@ public class MrsAsyncClient {
      *
      * 在MRS集群中获取指定目录文件列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHdfsFileListRequest 请求对象
      * @return AsyncInvoker<ShowHdfsFileListRequest, ShowHdfsFileListResponse>
@@ -344,8 +380,7 @@ public class MrsAsyncClient {
      *
      * 在MRS集群中取消一条SQL的执行任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelSqlRequest 请求对象
      * @return CompletableFuture<CancelSqlResponse>
@@ -359,8 +394,7 @@ public class MrsAsyncClient {
      *
      * 在MRS集群中取消一条SQL的执行任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelSqlRequest 请求对象
      * @return AsyncInvoker<CancelSqlRequest, CancelSqlResponse>
@@ -374,8 +408,7 @@ public class MrsAsyncClient {
      *
      * 在MRS集群中提交并执行一条SQL语句。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteSqlRequest 请求对象
      * @return CompletableFuture<ExecuteSqlResponse>
@@ -389,8 +422,7 @@ public class MrsAsyncClient {
      *
      * 在MRS集群中提交并执行一条SQL语句。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteSqlRequest 请求对象
      * @return AsyncInvoker<ExecuteSqlRequest, ExecuteSqlResponse>
@@ -404,8 +436,7 @@ public class MrsAsyncClient {
      *
      * 在MRS集群中查询一条SQL的执行结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSqlResultRequest 请求对象
      * @return CompletableFuture<ShowSqlResultResponse>
@@ -419,8 +450,7 @@ public class MrsAsyncClient {
      *
      * 在MRS集群中查询一条SQL的执行结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSqlResultRequest 请求对象
      * @return AsyncInvoker<ShowSqlResultRequest, ShowSqlResultResponse>

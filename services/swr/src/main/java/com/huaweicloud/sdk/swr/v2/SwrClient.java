@@ -22,8 +22,7 @@ public class SwrClient {
      *
      * 创建镜像自动同步任务，帮助您把最新推送的镜像自动同步到其他区域镜像仓库内。 镜像自动同步帮助您把最新推送的镜像自动同步到其他区域镜像仓库内，后期镜像有更新时，目标仓库的镜像也会自动更新，但已有的镜像不会自动同步。已有镜像的同步需要手动操作，详情请参见手动同步镜像。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateImageSyncRepoRequest 请求对象
      * @return CreateImageSyncRepoResponse
@@ -37,8 +36,7 @@ public class SwrClient {
      *
      * 创建镜像自动同步任务，帮助您把最新推送的镜像自动同步到其他区域镜像仓库内。 镜像自动同步帮助您把最新推送的镜像自动同步到其他区域镜像仓库内，后期镜像有更新时，目标仓库的镜像也会自动更新，但已有的镜像不会自动同步。已有镜像的同步需要手动操作，详情请参见手动同步镜像。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateImageSyncRepoRequest 请求对象
      * @return SyncInvoker<CreateImageSyncRepoRequest, CreateImageSyncRepoResponse>
@@ -54,8 +52,7 @@ public class SwrClient {
      *
      * 对于镜像仓库已有的镜像，如果想在其他区域使用，需要手动触发镜像同步。 判断是否同步成功的方法如下：响应状态码为200，无报错信息，表示同步成功。通过SWR管理控制台或调用查询镜像仓库概要信息接口，在目标区域的目标组织下，若存在所同步的镜像版本表示同步成功。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateManualImageSyncRepoRequest 请求对象
      * @return CreateManualImageSyncRepoResponse
@@ -69,8 +66,7 @@ public class SwrClient {
      *
      * 对于镜像仓库已有的镜像，如果想在其他区域使用，需要手动触发镜像同步。 判断是否同步成功的方法如下：响应状态码为200，无报错信息，表示同步成功。通过SWR管理控制台或调用查询镜像仓库概要信息接口，在目标区域的目标组织下，若存在所同步的镜像版本表示同步成功。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateManualImageSyncRepoRequest 请求对象
      * @return SyncInvoker<CreateManualImageSyncRepoRequest, CreateManualImageSyncRepoResponse>
@@ -86,8 +82,7 @@ public class SwrClient {
      *
      * 创建组织
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNamespaceRequest 请求对象
      * @return CreateNamespaceResponse
@@ -101,8 +96,7 @@ public class SwrClient {
      *
      * 创建组织
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNamespaceRequest 请求对象
      * @return SyncInvoker<CreateNamespaceRequest, CreateNamespaceResponse>
@@ -118,8 +112,7 @@ public class SwrClient {
      *
      * 创建组织权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNamespaceAuthRequest 请求对象
      * @return CreateNamespaceAuthResponse
@@ -133,8 +126,7 @@ public class SwrClient {
      *
      * 创建组织权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNamespaceAuthRequest 请求对象
      * @return SyncInvoker<CreateNamespaceAuthRequest, CreateNamespaceAuthResponse>
@@ -150,8 +142,7 @@ public class SwrClient {
      *
      * 在组织下创建镜像仓库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRepoRequest 请求对象
      * @return CreateRepoResponse
@@ -165,8 +156,7 @@ public class SwrClient {
      *
      * 在组织下创建镜像仓库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRepoRequest 请求对象
      * @return SyncInvoker<CreateRepoRequest, CreateRepoResponse>
@@ -180,8 +170,7 @@ public class SwrClient {
      *
      * 创建共享帐号。镜像上传后，您可以共享私有镜像给其他帐号，并授予下载该镜像的权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRepoDomainsRequest 请求对象
      * @return CreateRepoDomainsResponse
@@ -195,8 +184,7 @@ public class SwrClient {
      *
      * 创建共享帐号。镜像上传后，您可以共享私有镜像给其他帐号，并授予下载该镜像的权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRepoDomainsRequest 请求对象
      * @return SyncInvoker<CreateRepoDomainsRequest, CreateRepoDomainsResponse>
@@ -212,8 +200,7 @@ public class SwrClient {
      *
      * 创建镜像老化规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRetentionRequest 请求对象
      * @return CreateRetentionResponse
@@ -227,8 +214,7 @@ public class SwrClient {
      *
      * 创建镜像老化规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRetentionRequest 请求对象
      * @return SyncInvoker<CreateRetentionRequest, CreateRetentionResponse>
@@ -244,8 +230,7 @@ public class SwrClient {
      *
      * 调用该接口，通过获取响应消息头的X-Swr-Dockerlogin的值及响应消息体的host值，可生成临时登录指令。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecretRequest 请求对象
      * @return CreateSecretResponse
@@ -259,8 +244,7 @@ public class SwrClient {
      *
      * 调用该接口，通过获取响应消息头的X-Swr-Dockerlogin的值及响应消息体的host值，可生成临时登录指令。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecretRequest 请求对象
      * @return SyncInvoker<CreateSecretRequest, CreateSecretResponse>
@@ -274,8 +258,7 @@ public class SwrClient {
      *
      * 创建触发器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTriggerRequest 请求对象
      * @return CreateTriggerResponse
@@ -289,8 +272,7 @@ public class SwrClient {
      *
      * 创建触发器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTriggerRequest 请求对象
      * @return SyncInvoker<CreateTriggerRequest, CreateTriggerResponse>
@@ -304,8 +286,7 @@ public class SwrClient {
      *
      * 创建镜像权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateUserRepositoryAuthRequest 请求对象
      * @return CreateUserRepositoryAuthResponse
@@ -319,8 +300,7 @@ public class SwrClient {
      *
      * 创建镜像权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateUserRepositoryAuthRequest 请求对象
      * @return SyncInvoker<CreateUserRepositoryAuthRequest, CreateUserRepositoryAuthResponse>
@@ -336,8 +316,7 @@ public class SwrClient {
      *
      * 根据目标区域、目标组织删除指定的镜像自动同步任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteImageSyncRepoRequest 请求对象
      * @return DeleteImageSyncRepoResponse
@@ -351,8 +330,7 @@ public class SwrClient {
      *
      * 根据目标区域、目标组织删除指定的镜像自动同步任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteImageSyncRepoRequest 请求对象
      * @return SyncInvoker<DeleteImageSyncRepoRequest, DeleteImageSyncRepoResponse>
@@ -368,8 +346,7 @@ public class SwrClient {
      *
      * 删除组织权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNamespaceAuthRequest 请求对象
      * @return DeleteNamespaceAuthResponse
@@ -383,8 +360,7 @@ public class SwrClient {
      *
      * 删除组织权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNamespaceAuthRequest 请求对象
      * @return SyncInvoker<DeleteNamespaceAuthRequest, DeleteNamespaceAuthResponse>
@@ -400,8 +376,7 @@ public class SwrClient {
      *
      * 删除组织
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNamespacesRequest 请求对象
      * @return DeleteNamespacesResponse
@@ -415,8 +390,7 @@ public class SwrClient {
      *
      * 删除组织
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNamespacesRequest 请求对象
      * @return SyncInvoker<DeleteNamespacesRequest, DeleteNamespacesResponse>
@@ -432,8 +406,7 @@ public class SwrClient {
      *
      * 删除组织下的镜像仓库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRepoRequest 请求对象
      * @return DeleteRepoResponse
@@ -447,8 +420,7 @@ public class SwrClient {
      *
      * 删除组织下的镜像仓库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRepoRequest 请求对象
      * @return SyncInvoker<DeleteRepoRequest, DeleteRepoResponse>
@@ -462,8 +434,7 @@ public class SwrClient {
      *
      * 删除共享帐号
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRepoDomainsRequest 请求对象
      * @return DeleteRepoDomainsResponse
@@ -477,8 +448,7 @@ public class SwrClient {
      *
      * 删除共享帐号
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRepoDomainsRequest 请求对象
      * @return SyncInvoker<DeleteRepoDomainsRequest, DeleteRepoDomainsResponse>
@@ -494,8 +464,7 @@ public class SwrClient {
      *
      * 删除镜像仓库中指定tag的镜像
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRepoTagRequest 请求对象
      * @return DeleteRepoTagResponse
@@ -509,8 +478,7 @@ public class SwrClient {
      *
      * 删除镜像仓库中指定tag的镜像
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRepoTagRequest 请求对象
      * @return SyncInvoker<DeleteRepoTagRequest, DeleteRepoTagResponse>
@@ -524,8 +492,7 @@ public class SwrClient {
      *
      * 删除镜像老化规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRetentionRequest 请求对象
      * @return DeleteRetentionResponse
@@ -539,8 +506,7 @@ public class SwrClient {
      *
      * 删除镜像老化规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRetentionRequest 请求对象
      * @return SyncInvoker<DeleteRetentionRequest, DeleteRetentionResponse>
@@ -556,8 +522,7 @@ public class SwrClient {
      *
      * 删除触发器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTriggerRequest 请求对象
      * @return DeleteTriggerResponse
@@ -571,8 +536,7 @@ public class SwrClient {
      *
      * 删除触发器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTriggerRequest 请求对象
      * @return SyncInvoker<DeleteTriggerRequest, DeleteTriggerResponse>
@@ -586,8 +550,7 @@ public class SwrClient {
      *
      * 删除镜像权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteUserRepositoryAuthRequest 请求对象
      * @return DeleteUserRepositoryAuthResponse
@@ -601,8 +564,7 @@ public class SwrClient {
      *
      * 删除镜像权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteUserRepositoryAuthRequest 请求对象
      * @return SyncInvoker<DeleteUserRepositoryAuthRequest, DeleteUserRepositoryAuthResponse>
@@ -618,8 +580,7 @@ public class SwrClient {
      *
      * 获取为当前镜像仓库所创建的所有自动同步任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListImageAutoSyncReposDetailsRequest 请求对象
      * @return ListImageAutoSyncReposDetailsResponse
@@ -634,8 +595,7 @@ public class SwrClient {
      *
      * 获取为当前镜像仓库所创建的所有自动同步任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListImageAutoSyncReposDetailsRequest 请求对象
      * @return SyncInvoker<ListImageAutoSyncReposDetailsRequest, ListImageAutoSyncReposDetailsResponse>
@@ -651,8 +611,7 @@ public class SwrClient {
      *
      * 查询组织列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNamespacesRequest 请求对象
      * @return ListNamespacesResponse
@@ -666,8 +625,7 @@ public class SwrClient {
      *
      * 查询组织列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNamespacesRequest 请求对象
      * @return SyncInvoker<ListNamespacesRequest, ListNamespacesResponse>
@@ -683,8 +641,7 @@ public class SwrClient {
      *
      * 获取配额信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotasRequest 请求对象
      * @return ListQuotasResponse
@@ -698,8 +655,7 @@ public class SwrClient {
      *
      * 获取配额信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotasRequest 请求对象
      * @return SyncInvoker<ListQuotasRequest, ListQuotasResponse>
@@ -713,8 +669,7 @@ public class SwrClient {
      *
      * 获取共享帐号列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRepoDomainsRequest 请求对象
      * @return ListRepoDomainsResponse
@@ -728,8 +683,7 @@ public class SwrClient {
      *
      * 获取共享帐号列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRepoDomainsRequest 请求对象
      * @return SyncInvoker<ListRepoDomainsRequest, ListRepoDomainsResponse>
@@ -745,8 +699,7 @@ public class SwrClient {
      *
      * 查询镜像仓库列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListReposDetailsRequest 请求对象
      * @return ListReposDetailsResponse
@@ -760,8 +713,7 @@ public class SwrClient {
      *
      * 查询镜像仓库列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListReposDetailsRequest 请求对象
      * @return SyncInvoker<ListReposDetailsRequest, ListReposDetailsResponse>
@@ -777,8 +729,7 @@ public class SwrClient {
      *
      * 查询镜像tag列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRepositoryTagsRequest 请求对象
      * @return ListRepositoryTagsResponse
@@ -792,8 +743,7 @@ public class SwrClient {
      *
      * 查询镜像tag列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRepositoryTagsRequest 请求对象
      * @return SyncInvoker<ListRepositoryTagsRequest, ListRepositoryTagsResponse>
@@ -809,8 +759,7 @@ public class SwrClient {
      *
      * 获取镜像老化记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRetentionHistoriesRequest 请求对象
      * @return ListRetentionHistoriesResponse
@@ -824,8 +773,7 @@ public class SwrClient {
      *
      * 获取镜像老化记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRetentionHistoriesRequest 请求对象
      * @return SyncInvoker<ListRetentionHistoriesRequest, ListRetentionHistoriesResponse>
@@ -841,8 +789,7 @@ public class SwrClient {
      *
      * 获取镜像老化规则列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRetentionsRequest 请求对象
      * @return ListRetentionsResponse
@@ -856,8 +803,7 @@ public class SwrClient {
      *
      * 获取镜像老化规则列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRetentionsRequest 请求对象
      * @return SyncInvoker<ListRetentionsRequest, ListRetentionsResponse>
@@ -873,8 +819,7 @@ public class SwrClient {
      *
      * 查询共享镜像列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSharedReposDetailsRequest 请求对象
      * @return ListSharedReposDetailsResponse
@@ -888,8 +833,7 @@ public class SwrClient {
      *
      * 查询共享镜像列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSharedReposDetailsRequest 请求对象
      * @return SyncInvoker<ListSharedReposDetailsRequest, ListSharedReposDetailsResponse>
@@ -905,8 +849,7 @@ public class SwrClient {
      *
      * 获取镜像仓库下的触发器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTriggersDetailsRequest 请求对象
      * @return ListTriggersDetailsResponse
@@ -920,8 +863,7 @@ public class SwrClient {
      *
      * 获取镜像仓库下的触发器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTriggersDetailsRequest 请求对象
      * @return SyncInvoker<ListTriggersDetailsRequest, ListTriggersDetailsResponse>
@@ -937,8 +879,7 @@ public class SwrClient {
      *
      * 判断共享租户是否存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAccessDomainRequest 请求对象
      * @return ShowAccessDomainResponse
@@ -952,8 +893,7 @@ public class SwrClient {
      *
      * 判断共享租户是否存在
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAccessDomainRequest 请求对象
      * @return SyncInvoker<ShowAccessDomainRequest, ShowAccessDomainResponse>
@@ -969,8 +909,7 @@ public class SwrClient {
      *
      * 获取组织详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNamespaceRequest 请求对象
      * @return ShowNamespaceResponse
@@ -984,8 +923,7 @@ public class SwrClient {
      *
      * 获取组织详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNamespaceRequest 请求对象
      * @return SyncInvoker<ShowNamespaceRequest, ShowNamespaceResponse>
@@ -999,8 +937,7 @@ public class SwrClient {
      *
      * 查询组织权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNamespaceAuthRequest 请求对象
      * @return ShowNamespaceAuthResponse
@@ -1014,8 +951,7 @@ public class SwrClient {
      *
      * 查询组织权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNamespaceAuthRequest 请求对象
      * @return SyncInvoker<ShowNamespaceAuthRequest, ShowNamespaceAuthResponse>
@@ -1031,8 +967,7 @@ public class SwrClient {
      *
      * 查询镜像仓库概要信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryRequest 请求对象
      * @return ShowRepositoryResponse
@@ -1046,8 +981,7 @@ public class SwrClient {
      *
      * 查询镜像仓库概要信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryRequest 请求对象
      * @return SyncInvoker<ShowRepositoryRequest, ShowRepositoryResponse>
@@ -1063,8 +997,7 @@ public class SwrClient {
      *
      * 获取镜像老化规则记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRetentionRequest 请求对象
      * @return ShowRetentionResponse
@@ -1078,8 +1011,7 @@ public class SwrClient {
      *
      * 获取镜像老化规则记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRetentionRequest 请求对象
      * @return SyncInvoker<ShowRetentionRequest, ShowRetentionResponse>
@@ -1093,8 +1025,7 @@ public class SwrClient {
      *
      * 创建镜像自动同步任务后，可以通过此接口查询该任务的状态，以判断是否同步成功。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSyncJobRequest 请求对象
      * @return ShowSyncJobResponse
@@ -1108,8 +1039,7 @@ public class SwrClient {
      *
      * 创建镜像自动同步任务后，可以通过此接口查询该任务的状态，以判断是否同步成功。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSyncJobRequest 请求对象
      * @return SyncInvoker<ShowSyncJobRequest, ShowSyncJobResponse>
@@ -1123,8 +1053,7 @@ public class SwrClient {
      *
      * 获取触发器详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTriggerRequest 请求对象
      * @return ShowTriggerResponse
@@ -1138,8 +1067,7 @@ public class SwrClient {
      *
      * 获取触发器详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTriggerRequest 请求对象
      * @return SyncInvoker<ShowTriggerRequest, ShowTriggerResponse>
@@ -1153,8 +1081,7 @@ public class SwrClient {
      *
      * 查询镜像权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserRepositoryAuthRequest 请求对象
      * @return ShowUserRepositoryAuthResponse
@@ -1168,8 +1095,7 @@ public class SwrClient {
      *
      * 查询镜像权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserRepositoryAuthRequest 请求对象
      * @return SyncInvoker<ShowUserRepositoryAuthRequest, ShowUserRepositoryAuthResponse>
@@ -1185,8 +1111,7 @@ public class SwrClient {
      *
      * 更新组织权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNamespaceAuthRequest 请求对象
      * @return UpdateNamespaceAuthResponse
@@ -1200,8 +1125,7 @@ public class SwrClient {
      *
      * 更新组织权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNamespaceAuthRequest 请求对象
      * @return SyncInvoker<UpdateNamespaceAuthRequest, UpdateNamespaceAuthResponse>
@@ -1217,8 +1141,7 @@ public class SwrClient {
      *
      * 更新租户组织下的镜像概要信息，包括镜像类型、是否公有、描述信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRepoRequest 请求对象
      * @return UpdateRepoResponse
@@ -1232,8 +1155,7 @@ public class SwrClient {
      *
      * 更新租户组织下的镜像概要信息，包括镜像类型、是否公有、描述信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRepoRequest 请求对象
      * @return SyncInvoker<UpdateRepoRequest, UpdateRepoResponse>
@@ -1247,8 +1169,7 @@ public class SwrClient {
      *
      * 更新共享帐号
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRepoDomainsRequest 请求对象
      * @return UpdateRepoDomainsResponse
@@ -1262,8 +1183,7 @@ public class SwrClient {
      *
      * 更新共享帐号
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRepoDomainsRequest 请求对象
      * @return SyncInvoker<UpdateRepoDomainsRequest, UpdateRepoDomainsResponse>
@@ -1279,8 +1199,7 @@ public class SwrClient {
      *
      * 修改镜像老化规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRetentionRequest 请求对象
      * @return UpdateRetentionResponse
@@ -1294,8 +1213,7 @@ public class SwrClient {
      *
      * 修改镜像老化规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRetentionRequest 请求对象
      * @return SyncInvoker<UpdateRetentionRequest, UpdateRetentionResponse>
@@ -1311,8 +1229,7 @@ public class SwrClient {
      *
      * 更新触发器配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTriggerRequest 请求对象
      * @return UpdateTriggerResponse
@@ -1326,8 +1243,7 @@ public class SwrClient {
      *
      * 更新触发器配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTriggerRequest 请求对象
      * @return SyncInvoker<UpdateTriggerRequest, UpdateTriggerResponse>
@@ -1341,8 +1257,7 @@ public class SwrClient {
      *
      * 更新镜像权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserRepositoryAuthRequest 请求对象
      * @return UpdateUserRepositoryAuthResponse
@@ -1356,8 +1271,7 @@ public class SwrClient {
      *
      * 更新镜像权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserRepositoryAuthRequest 请求对象
      * @return SyncInvoker<UpdateUserRepositoryAuthRequest, UpdateUserRepositoryAuthResponse>
@@ -1373,8 +1287,7 @@ public class SwrClient {
      *
      * 查询所有API版本信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return ListApiVersionsResponse
@@ -1388,8 +1301,7 @@ public class SwrClient {
      *
      * 查询所有API版本信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
@@ -1405,8 +1317,7 @@ public class SwrClient {
      *
      * 查询指定API版本信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
      * @return ShowApiVersionResponse
@@ -1420,8 +1331,7 @@ public class SwrClient {
      *
      * 查询指定API版本信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
      * @return SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>

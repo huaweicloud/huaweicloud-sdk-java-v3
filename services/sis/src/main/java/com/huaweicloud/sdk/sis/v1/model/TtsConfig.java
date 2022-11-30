@@ -186,7 +186,7 @@ public class TtsConfig {
     private SampleRateEnum sampleRate;
 
     /**
-     * 语音合成特征字符串，组成形式为{language}_{speaker}_{domain}，即“语种_人员标识_领域”。发音人分为普通发音人和精品发音人。  普通发音人每100字计一次调用，取值范围如下：   chinese_xiaoqi_common  小琪，标准女声发音人。  chinese_xiaoyu_common  小宇，标准男声发音人。  chinese_xiaoyan_common  小燕，温柔女声发音人。  chinese_xiaowang_common  小王，童声发音人。  chinese_xiaowen_common   小雯，柔美女声发音人。  chinese_xiaojing_common 小婧，俏皮女声发音人。  chinese_xiaosong_common  小宋，激昂男声发音人。  chinese_xiaoxia_common   小夏，热情女声发音人。  chinese_xiaodai_common   小呆，呆萌童声发音人。  chinese_xiaoqian_common  小倩，成熟女声发音人。  english_cameal_common    cameal，柔美女声英文发音人。   精品发音人每50字计一次调用，区域仅支持cn-north-4，cn-east-3，暂时不支持音高调节，取值范围如下：  chinese_huaxiaoxia_common  华小夏，热情女声发音人。  chinese_huaxiaogang_common  华晓刚，利落男声发音人。  chinese_huaxiaolu_common  华小璐，知性女声发音人。  chinese_huaxiaoshu_common  华小舒，舒缓女声发音人。  chinese_huaxiaowei_common  华小唯，嗲柔女声发音人。  chinese_huaxiaoliang_common  华小靓，嘹亮女声发音人。  chinese_huaxiaodong_common  华晓东，成熟男声发音人。  chinese_huaxiaoyan_common  华小颜，严厉女声发音人。  chinese_huaxiaoxuan_common  华小萱，台湾女声发音人。  chinese_huaxiaowen_common  华小雯，柔美女声发音人。  chinese_huaxiaoyang_common  华晓阳，朝气男声发音人。  chinese_huaxiaomin_common  华小闽，闽南女声发音人。  chinese_huanvxia_literature 华女侠，武侠女生发音人，只支持16k的采样率。  chinese_huaxiaoxuan_literature 华晓悬，悬疑男声发音人，只支持16k的采样率。  默认：chinese_xiaoyan_common
+     * 语音合成特征字符串，组成形式为{language}_{speaker}_{domain}，即“语种_人员标识_领域”。发音人分为普通发音人和精品发音人。  普通发音人每100字计一次调用，取值范围如下：   chinese_xiaoqi_common  小琪，标准女声发音人。  chinese_xiaoyu_common  小宇，标准男声发音人。  chinese_xiaoyan_common  小燕，温柔女声发音人。  chinese_xiaowang_common  小王，童声发音人。  chinese_xiaowen_common   小雯，柔美女声发音人。  chinese_xiaojing_common 小婧，俏皮女声发音人。  chinese_xiaosong_common  小宋，激昂男声发音人。  chinese_xiaoxia_common   小夏，热情女声发音人。  chinese_xiaodai_common   小呆，呆萌童声发音人。  chinese_xiaoqian_common  小倩，成熟女声发音人。  english_cameal_common    cameal，柔美女声英文发音人。   精品发音人每50字计一次调用，区域仅支持cn-north-4，cn-east-3，暂时不支持音高调节，取值范围如下：  chinese_huaxiaoxia_common  华小夏，热情女声发音人。  chinese_huaxiaogang_common  华晓刚，利落男声发音人。  chinese_huaxiaolu_common  华小璐，知性女声发音人。  chinese_huaxiaoshu_common  华小舒，舒缓女声发音人。  chinese_huaxiaowei_common  华小唯，嗲柔女声发音人。  chinese_huaxiaoliang_common  华小靓，嘹亮女声发音人。  chinese_huaxiaodong_common  华晓东，成熟男声发音人。  chinese_huaxiaoyan_common  华小颜，严厉女声发音人。  chinese_huaxiaoxuan_common  华小萱，台湾女声发音人。  chinese_huaxiaowen_common  华小雯，柔美女声发音人。  chinese_huaxiaoyang_common  华晓阳，朝气男声发音人。  chinese_huaxiaomin_common  华小闽，闽南女声发音人。  chinese_huanvxia_literature 华女侠，武侠女生发音人，只支持16k的采样率。  chinese_huaxiaoxuan_literature 华晓悬，悬疑男声发音人，只支持16k的采样率。  chinese_huaxiaomei_common 华小美，温柔女声发音人。  chinese_huaxiaofei_common 华小飞，朝气男声发音人。  chinese_huaxiaolong_common 华小龙，朝气男声发音人。  chinese_huaxiaorui_common 华小蕊，知性女声发音人。  chinese_huaxiaoru_common 华小汝，柔美女声发音人(中英混)。  chinese_huaxiaohan_common 华小涵，知性女声发音人(中英混)。  chinese_huaxiaoning_common 华小宁，沉稳男声发言人(中英混)。  chinese_huaxiaozhen_common 华小珍，温柔女声发音人(中英混)。  nenglish_alvin_common alvin，成熟男声纯英文发音人。  english_amy_common amy amy，成熟女声纯英文发音人。  默认：chinese_xiaoyan_common
      */
     public static final class PropertyEnum {
 
@@ -336,6 +336,36 @@ public class TtsConfig {
          */
         public static final PropertyEnum CHINESE_HUAXIAORUI_COMMON = new PropertyEnum("chinese_huaxiaorui_common");
 
+        /**
+         * Enum CHINESE_HUAXIAORU_COMMON for value: "chinese_huaxiaoru_common"
+         */
+        public static final PropertyEnum CHINESE_HUAXIAORU_COMMON = new PropertyEnum("chinese_huaxiaoru_common");
+
+        /**
+         * Enum CHINESE_HUAXIAOHAN_COMMON for value: "chinese_huaxiaohan_common"
+         */
+        public static final PropertyEnum CHINESE_HUAXIAOHAN_COMMON = new PropertyEnum("chinese_huaxiaohan_common");
+
+        /**
+         * Enum CHINESE_HUAXIAONING_COMMON for value: "chinese_huaxiaoning_common"
+         */
+        public static final PropertyEnum CHINESE_HUAXIAONING_COMMON = new PropertyEnum("chinese_huaxiaoning_common");
+
+        /**
+         * Enum CHINESE_HUAXIAOZHEN_COMMON for value: "chinese_huaxiaozhen_common"
+         */
+        public static final PropertyEnum CHINESE_HUAXIAOZHEN_COMMON = new PropertyEnum("chinese_huaxiaozhen_common");
+
+        /**
+         * Enum ENGLISH_ALVIN_COMMON for value: "english_alvin_common"
+         */
+        public static final PropertyEnum ENGLISH_ALVIN_COMMON = new PropertyEnum("english_alvin_common");
+
+        /**
+         * Enum ENGLISH_AMY_COMMON for value: "english_amy_common"
+         */
+        public static final PropertyEnum ENGLISH_AMY_COMMON = new PropertyEnum("english_amy_common");
+
         private static final Map<String, PropertyEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PropertyEnum> createStaticFields() {
@@ -369,6 +399,12 @@ public class TtsConfig {
             map.put("chinese_huaxiaofei_common", CHINESE_HUAXIAOFEI_COMMON);
             map.put("chinese_huaxiaolong_common", CHINESE_HUAXIAOLONG_COMMON);
             map.put("chinese_huaxiaorui_common", CHINESE_HUAXIAORUI_COMMON);
+            map.put("chinese_huaxiaoru_common", CHINESE_HUAXIAORU_COMMON);
+            map.put("chinese_huaxiaohan_common", CHINESE_HUAXIAOHAN_COMMON);
+            map.put("chinese_huaxiaoning_common", CHINESE_HUAXIAONING_COMMON);
+            map.put("chinese_huaxiaozhen_common", CHINESE_HUAXIAOZHEN_COMMON);
+            map.put("english_alvin_common", ENGLISH_ALVIN_COMMON);
+            map.put("english_amy_common", ENGLISH_AMY_COMMON);
             return Collections.unmodifiableMap(map);
         }
 
@@ -485,7 +521,7 @@ public class TtsConfig {
     }
 
     /**
-     * 语音合成特征字符串，组成形式为{language}_{speaker}_{domain}，即“语种_人员标识_领域”。发音人分为普通发音人和精品发音人。  普通发音人每100字计一次调用，取值范围如下：   chinese_xiaoqi_common  小琪，标准女声发音人。  chinese_xiaoyu_common  小宇，标准男声发音人。  chinese_xiaoyan_common  小燕，温柔女声发音人。  chinese_xiaowang_common  小王，童声发音人。  chinese_xiaowen_common   小雯，柔美女声发音人。  chinese_xiaojing_common 小婧，俏皮女声发音人。  chinese_xiaosong_common  小宋，激昂男声发音人。  chinese_xiaoxia_common   小夏，热情女声发音人。  chinese_xiaodai_common   小呆，呆萌童声发音人。  chinese_xiaoqian_common  小倩，成熟女声发音人。  english_cameal_common    cameal，柔美女声英文发音人。   精品发音人每50字计一次调用，区域仅支持cn-north-4，cn-east-3，暂时不支持音高调节，取值范围如下：  chinese_huaxiaoxia_common  华小夏，热情女声发音人。  chinese_huaxiaogang_common  华晓刚，利落男声发音人。  chinese_huaxiaolu_common  华小璐，知性女声发音人。  chinese_huaxiaoshu_common  华小舒，舒缓女声发音人。  chinese_huaxiaowei_common  华小唯，嗲柔女声发音人。  chinese_huaxiaoliang_common  华小靓，嘹亮女声发音人。  chinese_huaxiaodong_common  华晓东，成熟男声发音人。  chinese_huaxiaoyan_common  华小颜，严厉女声发音人。  chinese_huaxiaoxuan_common  华小萱，台湾女声发音人。  chinese_huaxiaowen_common  华小雯，柔美女声发音人。  chinese_huaxiaoyang_common  华晓阳，朝气男声发音人。  chinese_huaxiaomin_common  华小闽，闽南女声发音人。  chinese_huanvxia_literature 华女侠，武侠女生发音人，只支持16k的采样率。  chinese_huaxiaoxuan_literature 华晓悬，悬疑男声发音人，只支持16k的采样率。  默认：chinese_xiaoyan_common
+     * 语音合成特征字符串，组成形式为{language}_{speaker}_{domain}，即“语种_人员标识_领域”。发音人分为普通发音人和精品发音人。  普通发音人每100字计一次调用，取值范围如下：   chinese_xiaoqi_common  小琪，标准女声发音人。  chinese_xiaoyu_common  小宇，标准男声发音人。  chinese_xiaoyan_common  小燕，温柔女声发音人。  chinese_xiaowang_common  小王，童声发音人。  chinese_xiaowen_common   小雯，柔美女声发音人。  chinese_xiaojing_common 小婧，俏皮女声发音人。  chinese_xiaosong_common  小宋，激昂男声发音人。  chinese_xiaoxia_common   小夏，热情女声发音人。  chinese_xiaodai_common   小呆，呆萌童声发音人。  chinese_xiaoqian_common  小倩，成熟女声发音人。  english_cameal_common    cameal，柔美女声英文发音人。   精品发音人每50字计一次调用，区域仅支持cn-north-4，cn-east-3，暂时不支持音高调节，取值范围如下：  chinese_huaxiaoxia_common  华小夏，热情女声发音人。  chinese_huaxiaogang_common  华晓刚，利落男声发音人。  chinese_huaxiaolu_common  华小璐，知性女声发音人。  chinese_huaxiaoshu_common  华小舒，舒缓女声发音人。  chinese_huaxiaowei_common  华小唯，嗲柔女声发音人。  chinese_huaxiaoliang_common  华小靓，嘹亮女声发音人。  chinese_huaxiaodong_common  华晓东，成熟男声发音人。  chinese_huaxiaoyan_common  华小颜，严厉女声发音人。  chinese_huaxiaoxuan_common  华小萱，台湾女声发音人。  chinese_huaxiaowen_common  华小雯，柔美女声发音人。  chinese_huaxiaoyang_common  华晓阳，朝气男声发音人。  chinese_huaxiaomin_common  华小闽，闽南女声发音人。  chinese_huanvxia_literature 华女侠，武侠女生发音人，只支持16k的采样率。  chinese_huaxiaoxuan_literature 华晓悬，悬疑男声发音人，只支持16k的采样率。  chinese_huaxiaomei_common 华小美，温柔女声发音人。  chinese_huaxiaofei_common 华小飞，朝气男声发音人。  chinese_huaxiaolong_common 华小龙，朝气男声发音人。  chinese_huaxiaorui_common 华小蕊，知性女声发音人。  chinese_huaxiaoru_common 华小汝，柔美女声发音人(中英混)。  chinese_huaxiaohan_common 华小涵，知性女声发音人(中英混)。  chinese_huaxiaoning_common 华小宁，沉稳男声发言人(中英混)。  chinese_huaxiaozhen_common 华小珍，温柔女声发音人(中英混)。  nenglish_alvin_common alvin，成熟男声纯英文发音人。  english_amy_common amy amy，成熟女声纯英文发音人。  默认：chinese_xiaoyan_common
      * @return property
      */
     public PropertyEnum getProperty() {

@@ -22,8 +22,7 @@ public class GesClient {
      *
      * 可以通过绑定弹性公网IP（简称EIP）访问GES服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AttachEipRequest 请求对象
      * @return AttachEipResponse
@@ -37,8 +36,7 @@ public class GesClient {
      *
      * 可以通过绑定弹性公网IP（简称EIP）访问GES服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AttachEipRequest 请求对象
      * @return SyncInvoker<AttachEipRequest, AttachEipResponse>
@@ -52,8 +50,7 @@ public class GesClient {
      *
      * 清空图中所有数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ClearGraphRequest 请求对象
      * @return ClearGraphResponse
@@ -67,8 +64,7 @@ public class GesClient {
      *
      * 清空图中所有数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ClearGraphRequest 请求对象
      * @return SyncInvoker<ClearGraphRequest, ClearGraphResponse>
@@ -82,8 +78,7 @@ public class GesClient {
      *
      * 新增备份。当前图数据出现错误或故障时，可以启动备份图进行恢复。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateBackupRequest 请求对象
      * @return CreateBackupResponse
@@ -97,8 +92,7 @@ public class GesClient {
      *
      * 新增备份。当前图数据出现错误或故障时，可以启动备份图进行恢复。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateBackupRequest 请求对象
      * @return SyncInvoker<CreateBackupRequest, CreateBackupResponse>
@@ -112,8 +106,7 @@ public class GesClient {
      *
      * 创建一个图。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateGraphRequest 请求对象
      * @return CreateGraphResponse
@@ -127,8 +120,7 @@ public class GesClient {
      *
      * 创建一个图。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateGraphRequest 请求对象
      * @return SyncInvoker<CreateGraphRequest, CreateGraphResponse>
@@ -142,8 +134,7 @@ public class GesClient {
      *
      * 新增元数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMetadataRequest 请求对象
      * @return CreateMetadataResponse
@@ -157,8 +148,7 @@ public class GesClient {
      *
      * 新增元数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMetadataRequest 请求对象
      * @return SyncInvoker<CreateMetadataRequest, CreateMetadataResponse>
@@ -172,8 +162,7 @@ public class GesClient {
      *
      * 删除备份。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackupRequest 请求对象
      * @return DeleteBackupResponse
@@ -187,8 +176,7 @@ public class GesClient {
      *
      * 删除备份。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackupRequest 请求对象
      * @return SyncInvoker<DeleteBackupRequest, DeleteBackupResponse>
@@ -202,8 +190,7 @@ public class GesClient {
      *
      * 删除一个图。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteGraphRequest 请求对象
      * @return DeleteGraphResponse
@@ -217,8 +204,7 @@ public class GesClient {
      *
      * 删除一个图。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteGraphRequest 请求对象
      * @return SyncInvoker<DeleteGraphRequest, DeleteGraphResponse>
@@ -232,8 +218,7 @@ public class GesClient {
      *
      * 删除元数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMetadataRequest 请求对象
      * @return DeleteMetadataResponse
@@ -247,8 +232,7 @@ public class GesClient {
      *
      * 删除元数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMetadataRequest 请求对象
      * @return SyncInvoker<DeleteMetadataRequest, DeleteMetadataResponse>
@@ -262,8 +246,7 @@ public class GesClient {
      *
      * 当无需继续使用EIP时，您可通过解绑EIP来释放网络资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DetachEipRequest 请求对象
      * @return DetachEipResponse
@@ -277,8 +260,7 @@ public class GesClient {
      *
      * 当无需继续使用EIP时，您可通过解绑EIP来释放网络资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DetachEipRequest 请求对象
      * @return SyncInvoker<DetachEipRequest, DetachEipResponse>
@@ -293,8 +275,7 @@ public class GesClient {
      * 扩副本能力允许动态扩容多个从节点，扩容的从节点可以处理读请求，从而提高读请求性能。
      * &gt;一万边和百亿边规格的图暂不支持扩副本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExpandGraphRequest 请求对象
      * @return ExpandGraphResponse
@@ -309,8 +290,7 @@ public class GesClient {
      * 扩副本能力允许动态扩容多个从节点，扩容的从节点可以处理读请求，从而提高读请求性能。
      * &gt;一万边和百亿边规格的图暂不支持扩副本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExpandGraphRequest 请求对象
      * @return SyncInvoker<ExpandGraphRequest, ExpandGraphResponse>
@@ -324,8 +304,7 @@ public class GesClient {
      *
      * 导出图。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportGraphRequest 请求对象
      * @return ExportGraphResponse
@@ -339,8 +318,7 @@ public class GesClient {
      *
      * 导出图。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportGraphRequest 请求对象
      * @return SyncInvoker<ExportGraphRequest, ExportGraphResponse>
@@ -354,8 +332,7 @@ public class GesClient {
      *
      * 增量导入图数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportGraphRequest 请求对象
      * @return ImportGraphResponse
@@ -369,8 +346,7 @@ public class GesClient {
      *
      * 增量导入图数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportGraphRequest 请求对象
      * @return SyncInvoker<ImportGraphRequest, ImportGraphResponse>
@@ -384,8 +360,7 @@ public class GesClient {
      *
      * 查询备份列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackupsRequest 请求对象
      * @return ListBackupsResponse
@@ -399,8 +374,7 @@ public class GesClient {
      *
      * 查询备份列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackupsRequest 请求对象
      * @return SyncInvoker<ListBackupsRequest, ListBackupsResponse>
@@ -414,8 +388,7 @@ public class GesClient {
      *
      * 查询某个图下的备份列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGraphBackupsRequest 请求对象
      * @return ListGraphBackupsResponse
@@ -429,8 +402,7 @@ public class GesClient {
      *
      * 查询某个图下的备份列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGraphBackupsRequest 请求对象
      * @return SyncInvoker<ListGraphBackupsRequest, ListGraphBackupsResponse>
@@ -444,8 +416,7 @@ public class GesClient {
      *
      * 查询某个图下的元数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGraphMetadatasRequest 请求对象
      * @return ListGraphMetadatasResponse
@@ -459,8 +430,7 @@ public class GesClient {
      *
      * 查询某个图下的元数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGraphMetadatasRequest 请求对象
      * @return SyncInvoker<ListGraphMetadatasRequest, ListGraphMetadatasResponse>
@@ -474,8 +444,7 @@ public class GesClient {
      *
      * 查询当前租户所有的图。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGraphsRequest 请求对象
      * @return ListGraphsResponse
@@ -489,8 +458,7 @@ public class GesClient {
      *
      * 查询当前租户所有的图。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGraphsRequest 请求对象
      * @return SyncInvoker<ListGraphsRequest, ListGraphsResponse>
@@ -504,8 +472,7 @@ public class GesClient {
      *
      * 查询管理面任务中心。当前创建图、关闭图、启动图、删除图、增加备份、导入图、导出图、升级图等操作为异步任务，该API用于查询这些任务的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListJobsRequest 请求对象
      * @return ListJobsResponse
@@ -519,8 +486,7 @@ public class GesClient {
      *
      * 查询管理面任务中心。当前创建图、关闭图、启动图、删除图、增加备份、导入图、导出图、升级图等操作为异步任务，该API用于查询这些任务的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListJobsRequest 请求对象
      * @return SyncInvoker<ListJobsRequest, ListJobsResponse>
@@ -534,8 +500,7 @@ public class GesClient {
      *
      * 查询元数据列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMetadatasRequest 请求对象
      * @return ListMetadatasResponse
@@ -549,8 +514,7 @@ public class GesClient {
      *
      * 查询元数据列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMetadatasRequest 请求对象
      * @return SyncInvoker<ListMetadatasRequest, ListMetadatasResponse>
@@ -564,8 +528,7 @@ public class GesClient {
      *
      * 查询租户配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotasRequest 请求对象
      * @return ListQuotasResponse
@@ -579,8 +542,7 @@ public class GesClient {
      *
      * 查询租户配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotasRequest 请求对象
      * @return SyncInvoker<ListQuotasRequest, ListQuotasResponse>
@@ -594,8 +556,7 @@ public class GesClient {
      *
      * 扩容图规格。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeGraphRequest 请求对象
      * @return ResizeGraphResponse
@@ -609,8 +570,7 @@ public class GesClient {
      *
      * 扩容图规格。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeGraphRequest 请求对象
      * @return SyncInvoker<ResizeGraphRequest, ResizeGraphResponse>
@@ -624,8 +584,7 @@ public class GesClient {
      *
      * 强制启动一个图。针对导入、导出 、运行中 、清空中的图。强制重启图，会将该图执行中的异步任务变为失败，然后停止图、启动图到运行状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartGraphRequest 请求对象
      * @return RestartGraphResponse
@@ -639,8 +598,7 @@ public class GesClient {
      *
      * 强制启动一个图。针对导入、导出 、运行中 、清空中的图。强制重启图，会将该图执行中的异步任务变为失败，然后停止图、启动图到运行状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartGraphRequest 请求对象
      * @return SyncInvoker<RestartGraphRequest, RestartGraphResponse>
@@ -654,8 +612,7 @@ public class GesClient {
      *
      * 根据图ID查询某个图详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowGraphRequest 请求对象
      * @return ShowGraphResponse
@@ -669,8 +626,7 @@ public class GesClient {
      *
      * 根据图ID查询某个图详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowGraphRequest 请求对象
      * @return SyncInvoker<ShowGraphRequest, ShowGraphResponse>
@@ -684,8 +640,7 @@ public class GesClient {
      *
      * 查询Job的执行状态。对创建图、关闭图、启动图、删除图、导入图等异步API命令下发后，会返回jobId，通过jobId查询任务的执行状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return ShowJobResponse
@@ -699,8 +654,7 @@ public class GesClient {
      *
      * 查询Job的执行状态。对创建图、关闭图、启动图、删除图、导入图等异步API命令下发后，会返回jobId，通过jobId查询任务的执行状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return SyncInvoker<ShowJobRequest, ShowJobResponse>
@@ -714,8 +668,7 @@ public class GesClient {
      *
      * 启动一个图。暂时不用的图可以先关闭，需要使用时再启动。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartGraphRequest 请求对象
      * @return StartGraphResponse
@@ -729,8 +682,7 @@ public class GesClient {
      *
      * 启动一个图。暂时不用的图可以先关闭，需要使用时再启动。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartGraphRequest 请求对象
      * @return SyncInvoker<StartGraphRequest, StartGraphResponse>
@@ -745,8 +697,7 @@ public class GesClient {
      * 关闭一个图。如果图创建好了，暂时不用可以先关闭，需要使用时再启用。
      * &gt;处于关闭状态的图不计算实例费用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopGraphRequest 请求对象
      * @return StopGraphResponse
@@ -761,8 +712,7 @@ public class GesClient {
      * 关闭一个图。如果图创建好了，暂时不用可以先关闭，需要使用时再启用。
      * &gt;处于关闭状态的图不计算实例费用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopGraphRequest 请求对象
      * @return SyncInvoker<StopGraphRequest, StopGraphResponse>
@@ -776,8 +726,7 @@ public class GesClient {
      *
      * 升级图。图引擎服务会定期升级版本，用户可根据需要升级图。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpgradeGraphRequest 请求对象
      * @return UpgradeGraphResponse
@@ -791,8 +740,7 @@ public class GesClient {
      *
      * 升级图。图引擎服务会定期升级版本，用户可根据需要升级图。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpgradeGraphRequest 请求对象
      * @return SyncInvoker<UpgradeGraphRequest, UpgradeGraphResponse>
@@ -806,8 +754,7 @@ public class GesClient {
      *
      * 从OBS导入元数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadFromObsRequest 请求对象
      * @return UploadFromObsResponse
@@ -821,8 +768,7 @@ public class GesClient {
      *
      * 从OBS导入元数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadFromObsRequest 请求对象
      * @return SyncInvoker<UploadFromObsRequest, UploadFromObsResponse>

@@ -18,7 +18,7 @@ public class AddReadonlyNodeRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num")
 
-    private String num;
+    private Integer num;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delay")
@@ -47,7 +47,7 @@ public class AddReadonlyNodeRequestBody {
         this.specCode = specCode;
     }
 
-    public AddReadonlyNodeRequestBody withNum(String num) {
+    public AddReadonlyNodeRequestBody withNum(Integer num) {
         this.num = num;
         return this;
     }
@@ -56,11 +56,11 @@ public class AddReadonlyNodeRequestBody {
      * 待新增只读节点个数。 取值范围：1-5。
      * @return num
      */
-    public String getNum() {
+    public Integer getNum() {
         return num;
     }
 
-    public void setNum(String num) {
+    public void setNum(Integer num) {
         this.num = num;
     }
 

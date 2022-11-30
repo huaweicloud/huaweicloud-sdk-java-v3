@@ -538,6 +538,31 @@ public class RmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdatePolicyStateRequest, UpdatePolicyStateResponse> updatePolicyState =
+        genForupdatePolicyState();
+
+    private static HttpRequestDef<UpdatePolicyStateRequest, UpdatePolicyStateResponse> genForupdatePolicyState() {
+        // basic
+        HttpRequestDef.Builder<UpdatePolicyStateRequest, UpdatePolicyStateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePolicyStateRequest.class, UpdatePolicyStateResponse.class)
+                .withName("UpdatePolicyState")
+                .withUri("/v1/resource-manager/domains/{domain_id}/policy-states")
+                .withContentType("application/json");
+
+        // requests
+        builder.<PolicyStateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(PolicyStateRequestBody.class),
+            f -> f.withMarshaller(UpdatePolicyStateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateStoredQueryRequest, CreateStoredQueryResponse> createStoredQuery =
         genForcreateStoredQuery();
 

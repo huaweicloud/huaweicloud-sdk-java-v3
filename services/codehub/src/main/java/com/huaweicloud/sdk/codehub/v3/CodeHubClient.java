@@ -22,8 +22,7 @@ public class CodeHubClient {
      *
      * 能够一次提交位于不同目录的多个文件，目录不存在时，能自动创建目录。支持强制覆盖选项，当选择强制覆盖标志为true时，忽略冲突，强制提交。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCommitRequest 请求对象
      * @return CreateCommitResponse
@@ -37,8 +36,7 @@ public class CodeHubClient {
      *
      * 能够一次提交位于不同目录的多个文件，目录不存在时，能自动创建目录。支持强制覆盖选项，当选择强制覆盖标志为true时，忽略冲突，强制提交。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCommitRequest 请求对象
      * @return SyncInvoker<CreateCommitRequest, CreateCommitResponse>
@@ -52,8 +50,7 @@ public class CodeHubClient {
      *
      * 根据仓库短ID获取提交信息，支持根据文件路径，查询这个路径下所有的commits列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommitsRequest 请求对象
      * @return ListCommitsResponse
@@ -67,8 +64,7 @@ public class CodeHubClient {
      *
      * 根据仓库短ID获取提交信息，支持根据文件路径，查询这个路径下所有的commits列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommitsRequest 请求对象
      * @return SyncInvoker<ListCommitsRequest, ListCommitsResponse>
@@ -82,8 +78,7 @@ public class CodeHubClient {
      *
      * 根据commit id查询提交差异信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDiffCommitRequest 请求对象
      * @return ShowDiffCommitResponse
@@ -97,8 +92,7 @@ public class CodeHubClient {
      *
      * 根据commit id查询提交差异信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDiffCommitRequest 请求对象
      * @return SyncInvoker<ShowDiffCommitRequest, ShowDiffCommitResponse>
@@ -114,8 +108,7 @@ public class CodeHubClient {
      *
      * 获取由commit id或分支或标记的名称标识的特定提交。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSingleCommitRequest 请求对象
      * @return ShowSingleCommitResponse
@@ -129,8 +122,7 @@ public class CodeHubClient {
      *
      * 获取由commit id或分支或标记的名称标识的特定提交。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSingleCommitRequest 请求对象
      * @return SyncInvoker<ShowSingleCommitRequest, ShowSingleCommitResponse>
@@ -146,8 +138,7 @@ public class CodeHubClient {
      *
      * 获取仓库中文件的信息，如名称、大小、内容。请注意，文件内容是Base64编码的。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFilesByQueryRequest 请求对象
      * @return ListFilesByQueryResponse
@@ -161,8 +152,7 @@ public class CodeHubClient {
      *
      * 获取仓库中文件的信息，如名称、大小、内容。请注意，文件内容是Base64编码的。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFilesByQueryRequest 请求对象
      * @return SyncInvoker<ListFilesByQueryRequest, ListFilesByQueryResponse>
@@ -178,8 +168,7 @@ public class CodeHubClient {
      *
      * 获取仓库中文件的信息，如名称、大小、内容。请注意，文件内容是Base64编码的。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFileRequest 请求对象
      * @return ShowFileResponse
@@ -193,8 +182,7 @@ public class CodeHubClient {
      *
      * 获取仓库中文件的信息，如名称、大小、内容。请注意，文件内容是Base64编码的。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowFileRequest 请求对象
      * @return SyncInvoker<ShowFileRequest, ShowFileResponse>
@@ -208,8 +196,7 @@ public class CodeHubClient {
      *
      * 获取仓库列表 模糊查询支持范围,如果未传入project_id，则支持按仓库名或项目名模糊查询，否则，只按仓库名模糊匹配。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param GetAllRepositoryByProjectIdRequest 请求对象
      * @return GetAllRepositoryByProjectIdResponse
@@ -223,8 +210,7 @@ public class CodeHubClient {
      *
      * 获取仓库列表 模糊查询支持范围,如果未传入project_id，则支持按仓库名或项目名模糊查询，否则，只按仓库名模糊匹配。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param GetAllRepositoryByProjectIdRequest 请求对象
      * @return SyncInvoker<GetAllRepositoryByProjectIdRequest, GetAllRepositoryByProjectIdResponse>
@@ -240,8 +226,7 @@ public class CodeHubClient {
      *
      * 获取一个项目下可以设置为公开状态的仓库列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param GetProductTemplatesRequest 请求对象
      * @return GetProductTemplatesResponse
@@ -255,8 +240,7 @@ public class CodeHubClient {
      *
      * 获取一个项目下可以设置为公开状态的仓库列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param GetProductTemplatesRequest 请求对象
      * @return SyncInvoker<GetProductTemplatesRequest, GetProductTemplatesResponse>
@@ -272,8 +256,7 @@ public class CodeHubClient {
      *
      * 获取一个项目下可以设置为公开状态的仓库列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductTwoTemplatesRequest 请求对象
      * @return ListProductTwoTemplatesResponse
@@ -287,8 +270,7 @@ public class CodeHubClient {
      *
      * 获取一个项目下可以设置为公开状态的仓库列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductTwoTemplatesRequest 请求对象
      * @return SyncInvoker<ListProductTwoTemplatesRequest, ListProductTwoTemplatesResponse>
@@ -304,8 +286,7 @@ public class CodeHubClient {
      *
      * 一般创建仓库时调用。通过传入项目uuid,仓库名，来判断仓库是否重名。仓库存在result:false,仓库不存在result:true。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryNameExistRequest 请求对象
      * @return ShowRepositoryNameExistResponse
@@ -319,8 +300,7 @@ public class CodeHubClient {
      *
      * 一般创建仓库时调用。通过传入项目uuid,仓库名，来判断仓库是否重名。仓库存在result:false,仓库不存在result:true。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryNameExistRequest 请求对象
      * @return SyncInvoker<ShowRepositoryNameExistRequest, ShowRepositoryNameExistResponse>
@@ -336,8 +316,7 @@ public class CodeHubClient {
      *
      * 调用方codehubportal,添加仓库成员。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddRepoMembersRequest 请求对象
      * @return AddRepoMembersResponse
@@ -351,8 +330,7 @@ public class CodeHubClient {
      *
      * 调用方codehubportal,添加仓库成员。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddRepoMembersRequest 请求对象
      * @return SyncInvoker<AddRepoMembersRequest, AddRepoMembersResponse>
@@ -368,8 +346,7 @@ public class CodeHubClient {
      *
      * 删除仓库成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRepoMemberRequest 请求对象
      * @return DeleteRepoMemberResponse
@@ -383,8 +360,7 @@ public class CodeHubClient {
      *
      * 删除仓库成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRepoMemberRequest 请求对象
      * @return SyncInvoker<DeleteRepoMemberRequest, DeleteRepoMemberResponse>
@@ -400,8 +376,7 @@ public class CodeHubClient {
      *
      * 获取仓库成员列表,可通过关键字搜索某成员。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRepoMembersRequest 请求对象
      * @return ListRepoMembersResponse
@@ -415,8 +390,7 @@ public class CodeHubClient {
      *
      * 获取仓库成员列表,可通过关键字搜索某成员。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRepoMembersRequest 请求对象
      * @return SyncInvoker<ListRepoMembersRequest, ListRepoMembersResponse>
@@ -432,8 +406,7 @@ public class CodeHubClient {
      *
      * 给仓库中成员设置仓库的操作权限，
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetRepoRoleRequest 请求对象
      * @return SetRepoRoleResponse
@@ -447,8 +420,7 @@ public class CodeHubClient {
      *
      * 给仓库中成员设置仓库的操作权限，
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetRepoRoleRequest 请求对象
      * @return SyncInvoker<SetRepoRoleRequest, SetRepoRoleResponse>
@@ -462,8 +434,7 @@ public class CodeHubClient {
      *
      * 添加部署密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddDeployKeyRequest 请求对象
      * @return AddDeployKeyResponse
@@ -477,8 +448,7 @@ public class CodeHubClient {
      *
      * 添加部署密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddDeployKeyRequest 请求对象
      * @return SyncInvoker<AddDeployKeyRequest, AddDeployKeyResponse>
@@ -492,8 +462,7 @@ public class CodeHubClient {
      *
      * 添加部署密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddDeployKeyV2Request 请求对象
      * @return AddDeployKeyV2Response
@@ -507,8 +476,7 @@ public class CodeHubClient {
      *
      * 添加部署密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddDeployKeyV2Request 请求对象
      * @return SyncInvoker<AddDeployKeyV2Request, AddDeployKeyV2Response>
@@ -524,8 +492,7 @@ public class CodeHubClient {
      *
      * 新建保护分支
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddProtectBranchV2Request 请求对象
      * @return AddProtectBranchV2Response
@@ -539,8 +506,7 @@ public class CodeHubClient {
      *
      * 新建保护分支
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddProtectBranchV2Request 请求对象
      * @return SyncInvoker<AddProtectBranchV2Request, AddProtectBranchV2Response>
@@ -556,8 +522,7 @@ public class CodeHubClient {
      *
      * 新建标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddTagV2Request 请求对象
      * @return AddTagV2Response
@@ -571,8 +536,7 @@ public class CodeHubClient {
      *
      * 新建标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddTagV2Request 请求对象
      * @return SyncInvoker<AddTagV2Request, AddTagV2Response>
@@ -586,8 +550,7 @@ public class CodeHubClient {
      *
      * 用指定的名称在指定项目上创建仓库。传入参数：仓库名、模板id、是否导入项目成员、归属项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRepositoryRequest 请求对象
      * @return CreateRepositoryResponse
@@ -601,8 +564,7 @@ public class CodeHubClient {
      *
      * 用指定的名称在指定项目上创建仓库。传入参数：仓库名、模板id、是否导入项目成员、归属项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRepositoryRequest 请求对象
      * @return SyncInvoker<CreateRepositoryRequest, CreateRepositoryResponse>
@@ -618,8 +580,7 @@ public class CodeHubClient {
      *
      * 删除仓库部署密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeployKeyRequest 请求对象
      * @return DeleteDeployKeyResponse
@@ -633,8 +594,7 @@ public class CodeHubClient {
      *
      * 删除仓库部署密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeployKeyRequest 请求对象
      * @return SyncInvoker<DeleteDeployKeyRequest, DeleteDeployKeyResponse>
@@ -650,8 +610,7 @@ public class CodeHubClient {
      *
      * 删除仓库部署密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeployKeyV2Request 请求对象
      * @return DeleteDeployKeyV2Response
@@ -665,8 +624,7 @@ public class CodeHubClient {
      *
      * 删除仓库部署密钥
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeployKeyV2Request 请求对象
      * @return SyncInvoker<DeleteDeployKeyV2Request, DeleteDeployKeyV2Response>
@@ -682,8 +640,7 @@ public class CodeHubClient {
      *
      * 根据仓库32位uuid删除指定的仓库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRepositoryRequest 请求对象
      * @return DeleteRepositoryResponse
@@ -697,8 +654,7 @@ public class CodeHubClient {
      *
      * 根据仓库32位uuid删除指定的仓库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRepositoryRequest 请求对象
      * @return SyncInvoker<DeleteRepositoryRequest, DeleteRepositoryResponse>
@@ -714,8 +670,7 @@ public class CodeHubClient {
      *
      * 不建议再使用,建议使用/{repository_uuid}/status
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param GetRepositoryByProjectIdRequest 请求对象
      * @return GetRepositoryByProjectIdResponse
@@ -729,8 +684,7 @@ public class CodeHubClient {
      *
      * 不建议再使用,建议使用/{repository_uuid}/status
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param GetRepositoryByProjectIdRequest 请求对象
      * @return SyncInvoker<GetRepositoryByProjectIdRequest, GetRepositoryByProjectIdResponse>
@@ -746,8 +700,7 @@ public class CodeHubClient {
      *
      * 获取公开示例模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param GetTemplatesRequest 请求对象
      * @return GetTemplatesResponse
@@ -761,8 +714,7 @@ public class CodeHubClient {
      *
      * 获取公开示例模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param GetTemplatesRequest 请求对象
      * @return SyncInvoker<GetTemplatesRequest, GetTemplatesResponse>
@@ -776,8 +728,7 @@ public class CodeHubClient {
      *
      * 获取仓库分支列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBranchesByRepositoryIdRequest 请求对象
      * @return ListBranchesByRepositoryIdResponse
@@ -791,8 +742,7 @@ public class CodeHubClient {
      *
      * 获取仓库分支列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBranchesByRepositoryIdRequest 请求对象
      * @return SyncInvoker<ListBranchesByRepositoryIdRequest, ListBranchesByRepositoryIdResponse>
@@ -808,8 +758,7 @@ public class CodeHubClient {
      *
      * 获取仓库上一次的提交统计信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommitStatisticsRequest 请求对象
      * @return ListCommitStatisticsResponse
@@ -823,8 +772,7 @@ public class CodeHubClient {
      *
      * 获取仓库上一次的提交统计信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommitStatisticsRequest 请求对象
      * @return SyncInvoker<ListCommitStatisticsRequest, ListCommitStatisticsResponse>
@@ -840,8 +788,7 @@ public class CodeHubClient {
      *
      * 获取一个仓库下特定分支指定文件内容
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFilesRequest 请求对象
      * @return ListFilesResponse
@@ -855,8 +802,7 @@ public class CodeHubClient {
      *
      * 获取一个仓库下特定分支指定文件内容
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFilesRequest 请求对象
      * @return SyncInvoker<ListFilesRequest, ListFilesResponse>
@@ -870,8 +816,7 @@ public class CodeHubClient {
      *
      * 获取仓库合并请求列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMergeRequestRequest 请求对象
      * @return ListMergeRequestResponse
@@ -885,8 +830,7 @@ public class CodeHubClient {
      *
      * 获取仓库合并请求列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMergeRequestRequest 请求对象
      * @return SyncInvoker<ListMergeRequestRequest, ListMergeRequestResponse>
@@ -902,8 +846,7 @@ public class CodeHubClient {
      *
      * 获取仓库状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRepositoryStatusRequest 请求对象
      * @return ListRepositoryStatusResponse
@@ -917,8 +860,7 @@ public class CodeHubClient {
      *
      * 获取仓库状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRepositoryStatusRequest 请求对象
      * @return SyncInvoker<ListRepositoryStatusRequest, ListRepositoryStatusResponse>
@@ -934,8 +876,7 @@ public class CodeHubClient {
      *
      * 获取分支目录下的文件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubfilesRequest 请求对象
      * @return ListSubfilesResponse
@@ -949,8 +890,7 @@ public class CodeHubClient {
      *
      * 获取分支目录下的文件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubfilesRequest 请求对象
      * @return SyncInvoker<ListSubfilesRequest, ListSubfilesResponse>
@@ -964,8 +904,7 @@ public class CodeHubClient {
      *
      * 设置仓库是公开状态还是私有状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesTwoRequest 请求对象
      * @return ListTemplatesTwoResponse
@@ -979,8 +918,7 @@ public class CodeHubClient {
      *
      * 设置仓库是公开状态还是私有状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesTwoRequest 请求对象
      * @return SyncInvoker<ListTemplatesTwoRequest, ListTemplatesTwoResponse>
@@ -996,8 +934,7 @@ public class CodeHubClient {
      *
      * 获取公开示例模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTwoTemplatesRequest 请求对象
      * @return ListTwoTemplatesResponse
@@ -1011,8 +948,7 @@ public class CodeHubClient {
      *
      * 获取公开示例模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTwoTemplatesRequest 请求对象
      * @return SyncInvoker<ListTwoTemplatesRequest, ListTwoTemplatesResponse>
@@ -1028,8 +964,7 @@ public class CodeHubClient {
      *
      * 设置仓库是公开状态还是私有状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShareTemplatesRequest 请求对象
      * @return ShareTemplatesResponse
@@ -1043,8 +978,7 @@ public class CodeHubClient {
      *
      * 设置仓库是公开状态还是私有状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShareTemplatesRequest 请求对象
      * @return SyncInvoker<ShareTemplatesRequest, ShareTemplatesResponse>
@@ -1060,8 +994,7 @@ public class CodeHubClient {
      *
      * 根据仓库id获取指定仓库的分支列表.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBranchesByRepositoryIdRequest 请求对象
      * @return ShowBranchesByRepositoryIdResponse
@@ -1075,8 +1008,7 @@ public class CodeHubClient {
      *
      * 根据仓库id获取指定仓库的分支列表.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBranchesByRepositoryIdRequest 请求对象
      * @return SyncInvoker<ShowBranchesByRepositoryIdRequest, ShowBranchesByRepositoryIdResponse>
@@ -1092,8 +1024,7 @@ public class CodeHubClient {
      *
      * 查询指定仓库对应的分支。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBranchesByTwoRepositoryIdRequest 请求对象
      * @return ShowBranchesByTwoRepositoryIdResponse
@@ -1108,8 +1039,7 @@ public class CodeHubClient {
      *
      * 查询指定仓库对应的分支。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBranchesByTwoRepositoryIdRequest 请求对象
      * @return SyncInvoker<ShowBranchesByTwoRepositoryIdRequest, ShowBranchesByTwoRepositoryIdResponse>
@@ -1125,8 +1055,7 @@ public class CodeHubClient {
      *
      * 根据仓库组名、仓库名和分支获取提交列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCommitsByBranchRequest 请求对象
      * @return ShowCommitsByBranchResponse
@@ -1140,8 +1069,7 @@ public class CodeHubClient {
      *
      * 根据仓库组名、仓库名和分支获取提交列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCommitsByBranchRequest 请求对象
      * @return SyncInvoker<ShowCommitsByBranchRequest, ShowCommitsByBranchResponse>
@@ -1157,8 +1085,7 @@ public class CodeHubClient {
      *
      * 根据仓库id查询仓库某分支对应的提交.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCommitsByRepoIdRequest 请求对象
      * @return ShowCommitsByRepoIdResponse
@@ -1172,8 +1099,7 @@ public class CodeHubClient {
      *
      * 根据仓库id查询仓库某分支对应的提交.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCommitsByRepoIdRequest 请求对象
      * @return SyncInvoker<ShowCommitsByRepoIdRequest, ShowCommitsByRepoIdResponse>
@@ -1189,8 +1115,7 @@ public class CodeHubClient {
      *
      * 修改被流水线引用的仓库状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHasPipelineRequest 请求对象
      * @return ShowHasPipelineResponse
@@ -1204,8 +1129,7 @@ public class CodeHubClient {
      *
      * 修改被流水线引用的仓库状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHasPipelineRequest 请求对象
      * @return SyncInvoker<ShowHasPipelineRequest, ShowHasPipelineResponse>
@@ -1221,8 +1145,7 @@ public class CodeHubClient {
      *
      * 获取一个仓库下特定分支的图片文件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowImageBlobRequest 请求对象
      * @return ShowImageBlobResponse
@@ -1236,8 +1159,7 @@ public class CodeHubClient {
      *
      * 获取一个仓库下特定分支的图片文件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowImageBlobRequest 请求对象
      * @return SyncInvoker<ShowImageBlobRequest, ShowImageBlobResponse>
@@ -1252,8 +1174,7 @@ public class CodeHubClient {
      *
      * 判断用户是否有仓库的管理员权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMasterRequest 请求对象
      * @return ShowMasterResponse
@@ -1267,8 +1188,7 @@ public class CodeHubClient {
      *
      * 判断用户是否有仓库的管理员权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMasterRequest 请求对象
      * @return SyncInvoker<ShowMasterRequest, ShowMasterResponse>
@@ -1282,8 +1202,7 @@ public class CodeHubClient {
      *
      * 获取仓库合并请求详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMergeRequestRequest 请求对象
      * @return ShowMergeRequestResponse
@@ -1297,8 +1216,7 @@ public class CodeHubClient {
      *
      * 获取仓库合并请求详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMergeRequestRequest 请求对象
      * @return SyncInvoker<ShowMergeRequestRequest, ShowMergeRequestResponse>
@@ -1314,8 +1232,7 @@ public class CodeHubClient {
      *
      * 获取仓库短id,用于获取仓库详情页面url
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepoIdRequest 请求对象
      * @return ShowRepoIdResponse
@@ -1329,8 +1246,7 @@ public class CodeHubClient {
      *
      * 获取仓库短id,用于获取仓库详情页面url
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepoIdRequest 请求对象
      * @return SyncInvoker<ShowRepoIdRequest, ShowRepoIdResponse>
@@ -1344,8 +1260,7 @@ public class CodeHubClient {
      *
      * 按照指定格式下载仓库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryArchiveRequest 请求对象
      * @return ShowRepositoryArchiveResponse
@@ -1359,8 +1274,7 @@ public class CodeHubClient {
      *
      * 按照指定格式下载仓库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryArchiveRequest 请求对象
      * @return SyncInvoker<ShowRepositoryArchiveRequest, ShowRepositoryArchiveResponse>
@@ -1376,8 +1290,7 @@ public class CodeHubClient {
      *
      * 根据仓库UUID(由CreateRepository接口返回)获取仓库信息仓库信息。返回 包含id，name，组名，仓库访问URL。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryByUuidRequest 请求对象
      * @return ShowRepositoryByUuidResponse
@@ -1391,8 +1304,7 @@ public class CodeHubClient {
      *
      * 根据仓库UUID(由CreateRepository接口返回)获取仓库信息仓库信息。返回 包含id，name，组名，仓库访问URL。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryByUuidRequest 请求对象
      * @return SyncInvoker<ShowRepositoryByUuidRequest, ShowRepositoryByUuidResponse>
@@ -1408,8 +1320,7 @@ public class CodeHubClient {
      *
      * 根据仓库短id，查询仓库的代码提交记录统计
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryStatisticsRequest 请求对象
      * @return ShowRepositoryStatisticsResponse
@@ -1423,8 +1334,7 @@ public class CodeHubClient {
      *
      * 根据仓库短id，查询仓库的代码提交记录统计
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryStatisticsRequest 请求对象
      * @return SyncInvoker<ShowRepositoryStatisticsRequest, ShowRepositoryStatisticsResponse>
@@ -1440,8 +1350,7 @@ public class CodeHubClient {
      *
      * 获取指定日期内代码仓指定分支的代码提交行数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStatisticCommitRequest 请求对象
      * @return ShowStatisticCommitResponse
@@ -1455,8 +1364,7 @@ public class CodeHubClient {
      *
      * 获取指定日期内代码仓指定分支的代码提交行数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStatisticCommitRequest 请求对象
      * @return SyncInvoker<ShowStatisticCommitRequest, ShowStatisticCommitResponse>
@@ -1472,8 +1380,7 @@ public class CodeHubClient {
      *
      * 获取指定日期内代码仓指定分支的代码提交行数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStatisticCommitV3Request 请求对象
      * @return ShowStatisticCommitV3Response
@@ -1487,8 +1394,7 @@ public class CodeHubClient {
      *
      * 获取指定日期内代码仓指定分支的代码提交行数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStatisticCommitV3Request 请求对象
      * @return SyncInvoker<ShowStatisticCommitV3Request, ShowStatisticCommitV3Response>
@@ -1504,8 +1410,7 @@ public class CodeHubClient {
      *
      * 获取仓库统计数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStatisticalDataRequest 请求对象
      * @return ShowStatisticalDataResponse
@@ -1519,8 +1424,7 @@ public class CodeHubClient {
      *
      * 获取仓库统计数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStatisticalDataRequest 请求对象
      * @return SyncInvoker<ShowStatisticalDataRequest, ShowStatisticalDataResponse>
@@ -1536,8 +1440,7 @@ public class CodeHubClient {
      *
      * 添加ssh key
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddSshKeyRequest 请求对象
      * @return AddSshKeyResponse
@@ -1551,8 +1454,7 @@ public class CodeHubClient {
      *
      * 添加ssh key
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddSshKeyRequest 请求对象
      * @return SyncInvoker<AddSshKeyRequest, AddSshKeyResponse>
@@ -1566,8 +1468,7 @@ public class CodeHubClient {
      *
      * 调用gitlab原生接口删除用户公钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSShkeyRequest 请求对象
      * @return DeleteSShkeyResponse
@@ -1581,8 +1482,7 @@ public class CodeHubClient {
      *
      * 调用gitlab原生接口删除用户公钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSShkeyRequest 请求对象
      * @return SyncInvoker<DeleteSShkeyRequest, DeleteSShkeyResponse>
@@ -1596,8 +1496,7 @@ public class CodeHubClient {
      *
      * 获取ssh key列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSshKeysRequest 请求对象
      * @return ListSshKeysResponse
@@ -1611,8 +1510,7 @@ public class CodeHubClient {
      *
      * 获取ssh key列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSshKeysRequest 请求对象
      * @return SyncInvoker<ListSshKeysRequest, ListSshKeysResponse>
@@ -1626,8 +1524,7 @@ public class CodeHubClient {
      *
      * 检验私钥是否有拉取代码的权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPrivateKeyVerifyRequest 请求对象
      * @return ShowPrivateKeyVerifyResponse
@@ -1641,8 +1538,7 @@ public class CodeHubClient {
      *
      * 检验私钥是否有拉取代码的权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPrivateKeyVerifyRequest 请求对象
      * @return SyncInvoker<ShowPrivateKeyVerifyRequest, ShowPrivateKeyVerifyResponse>
@@ -1658,8 +1554,7 @@ public class CodeHubClient {
      *
      * 调用 gitlab 接口判断用户使用 https 上传/下载代码时输入的用户名和密码是否合法。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateHttpsInfoRequest 请求对象
      * @return ValidateHttpsInfoResponse
@@ -1673,8 +1568,7 @@ public class CodeHubClient {
      *
      * 调用 gitlab 接口判断用户使用 https 上传/下载代码时输入的用户名和密码是否合法。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateHttpsInfoRequest 请求对象
      * @return SyncInvoker<ValidateHttpsInfoRequest, ValidateHttpsInfoResponse>
@@ -1690,8 +1584,7 @@ public class CodeHubClient {
      *
      * 调用 gitlab 接口判断用户使用 https 上传/下载代码时输入的用户名和密码是否合法。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateHttpsInfoV2Request 请求对象
      * @return ValidateHttpsInfoV2Response
@@ -1705,8 +1598,7 @@ public class CodeHubClient {
      *
      * 调用 gitlab 接口判断用户使用 https 上传/下载代码时输入的用户名和密码是否合法。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateHttpsInfoV2Request 请求对象
      * @return SyncInvoker<ValidateHttpsInfoV2Request, ValidateHttpsInfoV2Response>
@@ -1722,8 +1614,7 @@ public class CodeHubClient {
      *
      * 根据仓库id在指定仓库中创建分支
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNewBranchRequest 请求对象
      * @return CreateNewBranchResponse
@@ -1737,8 +1628,7 @@ public class CodeHubClient {
      *
      * 根据仓库id在指定仓库中创建分支
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNewBranchRequest 请求对象
      * @return SyncInvoker<CreateNewBranchRequest, CreateNewBranchResponse>
@@ -1754,8 +1644,7 @@ public class CodeHubClient {
      *
      * 分支关联工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateIssuesRequest 请求对象
      * @return AssociateIssuesResponse
@@ -1769,8 +1658,7 @@ public class CodeHubClient {
      *
      * 分支关联工作项
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateIssuesRequest 请求对象
      * @return SyncInvoker<AssociateIssuesRequest, AssociateIssuesResponse>
@@ -1786,8 +1674,7 @@ public class CodeHubClient {
      *
      * 创建项目后，创建仓库组由后台生成方式 传入参数：仓库名、模板id、是否导入项目成员、归属项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectAndRepositoriesRequest 请求对象
      * @return CreateProjectAndRepositoriesResponse
@@ -1802,8 +1689,7 @@ public class CodeHubClient {
      *
      * 创建项目后，创建仓库组由后台生成方式 传入参数：仓库名、模板id、是否导入项目成员、归属项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectAndRepositoriesRequest 请求对象
      * @return SyncInvoker<CreateProjectAndRepositoriesRequest, CreateProjectAndRepositoriesResponse>
@@ -1819,8 +1705,7 @@ public class CodeHubClient {
      *
      * 创建仓库后fork仓库 传入参数：仓库名、是否导入项目成员、归属项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectAndforkRepositoriesRequest 请求对象
      * @return CreateProjectAndforkRepositoriesResponse
@@ -1835,8 +1720,7 @@ public class CodeHubClient {
      *
      * 创建仓库后fork仓库 传入参数：仓库名、是否导入项目成员、归属项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectAndforkRepositoriesRequest 请求对象
      * @return SyncInvoker<CreateProjectAndforkRepositoriesRequest, CreateProjectAndforkRepositoriesResponse>
@@ -1852,8 +1736,7 @@ public class CodeHubClient {
      *
      * 获取用户的所有仓库信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUserAllRepositoriesRequest 请求对象
      * @return ListUserAllRepositoriesResponse
@@ -1867,8 +1750,7 @@ public class CodeHubClient {
      *
      * 获取用户的所有仓库信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUserAllRepositoriesRequest 请求对象
      * @return SyncInvoker<ListUserAllRepositoriesRequest, ListUserAllRepositoriesResponse>
@@ -1884,8 +1766,7 @@ public class CodeHubClient {
      *
      * 获取仓库列表,模糊查询支持范围,如果未传入project uuid，则支持按仓库名或项目名模糊查询，否则，只按仓库名模糊匹配
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAllRepositoryByTwoProjectIdRequest 请求对象
      * @return ShowAllRepositoryByTwoProjectIdResponse
@@ -1900,8 +1781,7 @@ public class CodeHubClient {
      *
      * 获取仓库列表,模糊查询支持范围,如果未传入project uuid，则支持按仓库名或项目名模糊查询，否则，只按仓库名模糊匹配
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAllRepositoryByTwoProjectIdRequest 请求对象
      * @return SyncInvoker<ShowAllRepositoryByTwoProjectIdRequest, ShowAllRepositoryByTwoProjectIdResponse>
@@ -1917,8 +1797,7 @@ public class CodeHubClient {
      *
      * 提交代码自动触发编译构建，添加仓库钩子
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddHooksRequest 请求对象
      * @return AddHooksResponse
@@ -1932,8 +1811,7 @@ public class CodeHubClient {
      *
      * 提交代码自动触发编译构建，添加仓库钩子
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddHooksRequest 请求对象
      * @return SyncInvoker<AddHooksRequest, AddHooksResponse>
@@ -1947,8 +1825,7 @@ public class CodeHubClient {
      *
      * 提交代码自动触发编译构建，删除仓库钩子
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHooksRequest 请求对象
      * @return DeleteHooksResponse
@@ -1962,8 +1839,7 @@ public class CodeHubClient {
      *
      * 提交代码自动触发编译构建，删除仓库钩子
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHooksRequest 请求对象
      * @return SyncInvoker<DeleteHooksRequest, DeleteHooksResponse>
@@ -1977,8 +1853,7 @@ public class CodeHubClient {
      *
      * 获取仓库webhook
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHooksRequest 请求对象
      * @return ListHooksResponse
@@ -1992,8 +1867,7 @@ public class CodeHubClient {
      *
      * 获取仓库webhook
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHooksRequest 请求对象
      * @return SyncInvoker<ListHooksRequest, ListHooksResponse>

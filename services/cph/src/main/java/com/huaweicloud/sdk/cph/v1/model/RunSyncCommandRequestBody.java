@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * RunSyncCommandRequestBody
+ * 执行shell命令请求体。
  */
 public class RunSyncCommandRequestBody {
 
@@ -39,7 +39,7 @@ public class RunSyncCommandRequestBody {
     }
 
     /**
-     * 手机管理命令，仅支持shell命令
+     * ADB命令，固定填写shell。
      * @return command
      */
     public String getCommand() {
@@ -56,7 +56,7 @@ public class RunSyncCommandRequestBody {
     }
 
     /**
-     * 待执行的命令。最大长度为1024字节，只支持大小写字母、数字、下划线（_）、点（.）、斜线（/）、冒号（:）、中划线（-）
+     * 待执行的命令。  最大长度为1024字节，只支持大小写字母、数字、下划线（_）、点（.）、斜线（/）、冒号（:）、中划线（-）。
      * @return content
      */
     public String getContent() {
@@ -89,7 +89,7 @@ public class RunSyncCommandRequestBody {
     }
 
     /**
-     * 云手机ID列表 server_ids参数不存在时必选
+     * 云手机ID列表。 server_ids参数不存在时必选，同时存在只处理phone_ids。
      * @return phoneIds
      */
     public List<String> getPhoneIds() {
@@ -122,7 +122,7 @@ public class RunSyncCommandRequestBody {
     }
 
     /**
-     * 云手机服务器ID列表 phone_ids参数不存在时必选
+     * 云手机服务器ID列表。 phone_ids参数不存在时必选，同时存在只处理phone_ids。
      * @return serverIds
      */
     public List<String> getServerIds() {

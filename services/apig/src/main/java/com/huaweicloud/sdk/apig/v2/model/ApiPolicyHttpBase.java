@@ -230,6 +230,11 @@ public class ApiPolicyHttpBase {
 
     private Integer timeout;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retry_count")
+
+    private String retryCount;
+
     public ApiPolicyHttpBase withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
         return this;
@@ -316,6 +321,23 @@ public class ApiPolicyHttpBase {
         this.timeout = timeout;
     }
 
+    public ApiPolicyHttpBase withRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+        return this;
+    }
+
+    /**
+     * 请求后端服务的重试次数，默认为-1，范围[-1,10]
+     * @return retryCount
+     */
+    public String getRetryCount() {
+        return retryCount;
+    }
+
+    public void setRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -329,12 +351,13 @@ public class ApiPolicyHttpBase {
             && Objects.equals(this.reqProtocol, apiPolicyHttpBase.reqProtocol)
             && Objects.equals(this.reqMethod, apiPolicyHttpBase.reqMethod)
             && Objects.equals(this.reqUri, apiPolicyHttpBase.reqUri)
-            && Objects.equals(this.timeout, apiPolicyHttpBase.timeout);
+            && Objects.equals(this.timeout, apiPolicyHttpBase.timeout)
+            && Objects.equals(this.retryCount, apiPolicyHttpBase.retryCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(urlDomain, reqProtocol, reqMethod, reqUri, timeout);
+        return Objects.hash(urlDomain, reqProtocol, reqMethod, reqUri, timeout, retryCount);
     }
 
     @Override
@@ -346,6 +369,7 @@ public class ApiPolicyHttpBase {
         sb.append("    reqMethod: ").append(toIndentedString(reqMethod)).append("\n");
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+        sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

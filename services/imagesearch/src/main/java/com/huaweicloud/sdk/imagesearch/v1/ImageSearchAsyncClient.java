@@ -27,8 +27,7 @@ public class ImageSearchAsyncClient {
      * 
      * &gt; - 添加或搜索的图片存储在OBS的桶中时，需要对OBS的桶授权。在图像搜索服务管理控制台“实例管理”页面，单击实例操作列的“离线导入”，进入“离线导入”页面。选择存放数据的OBS桶，单击“授权”按钮，字体显示为灰色即完成OBS授权访问。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunAddPictureRequest 请求对象
      * @return CompletableFuture<RunAddPictureResponse>
@@ -45,8 +44,7 @@ public class ImageSearchAsyncClient {
      * 
      * &gt; - 添加或搜索的图片存储在OBS的桶中时，需要对OBS的桶授权。在图像搜索服务管理控制台“实例管理”页面，单击实例操作列的“离线导入”，进入“离线导入”页面。选择存放数据的OBS桶，单击“授权”按钮，字体显示为灰色即完成OBS授权访问。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunAddPictureRequest 请求对象
      * @return AsyncInvoker<RunAddPictureRequest, RunAddPictureResponse>
@@ -60,8 +58,7 @@ public class ImageSearchAsyncClient {
      *
      * 通过图片路径查询索引库中对应图片是否存在。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunCheckPictureRequest 请求对象
      * @return CompletableFuture<RunCheckPictureResponse>
@@ -75,8 +72,7 @@ public class ImageSearchAsyncClient {
      *
      * 通过图片路径查询索引库中对应图片是否存在。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunCheckPictureRequest 请求对象
      * @return AsyncInvoker<RunCheckPictureRequest, RunCheckPictureResponse>
@@ -90,8 +86,7 @@ public class ImageSearchAsyncClient {
      *
      * 创建实例，实例中会生成图片索引库，用来存放图片特征。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunCreateInstanceRequest 请求对象
      * @return CompletableFuture<RunCreateInstanceResponse>
@@ -105,8 +100,7 @@ public class ImageSearchAsyncClient {
      *
      * 创建实例，实例中会生成图片索引库，用来存放图片特征。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunCreateInstanceRequest 请求对象
      * @return AsyncInvoker<RunCreateInstanceRequest, RunCreateInstanceResponse>
@@ -120,8 +114,7 @@ public class ImageSearchAsyncClient {
      *
      * 删除已存在的实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunDeleteInstanceRequest 请求对象
      * @return CompletableFuture<RunDeleteInstanceResponse>
@@ -135,8 +128,7 @@ public class ImageSearchAsyncClient {
      *
      * 删除已存在的实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunDeleteInstanceRequest 请求对象
      * @return AsyncInvoker<RunDeleteInstanceRequest, RunDeleteInstanceResponse>
@@ -150,8 +142,7 @@ public class ImageSearchAsyncClient {
      *
      * 通过图片路径删除索引库中对应图片。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunDeletePictureRequest 请求对象
      * @return CompletableFuture<RunDeletePictureResponse>
@@ -165,8 +156,7 @@ public class ImageSearchAsyncClient {
      *
      * 通过图片路径删除索引库中对应图片。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunDeletePictureRequest 请求对象
      * @return AsyncInvoker<RunDeletePictureRequest, RunDeletePictureResponse>
@@ -180,8 +170,7 @@ public class ImageSearchAsyncClient {
      *
      * 修改图像索引库中已存在的图片信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunModifyPictureRequest 请求对象
      * @return CompletableFuture<RunModifyPictureResponse>
@@ -195,8 +184,7 @@ public class ImageSearchAsyncClient {
      *
      * 修改图像索引库中已存在的图片信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunModifyPictureRequest 请求对象
      * @return AsyncInvoker<RunModifyPictureRequest, RunModifyPictureResponse>
@@ -210,8 +198,7 @@ public class ImageSearchAsyncClient {
      *
      * 查看用户指定实例详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunQueryInstanceRequest 请求对象
      * @return CompletableFuture<RunQueryInstanceResponse>
@@ -225,8 +212,7 @@ public class ImageSearchAsyncClient {
      *
      * 查看用户指定实例详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunQueryInstanceRequest 请求对象
      * @return AsyncInvoker<RunQueryInstanceRequest, RunQueryInstanceResponse>
@@ -240,8 +226,7 @@ public class ImageSearchAsyncClient {
      *
      * 从图片索引库中搜索相似图片。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSearchPictureRequest 请求对象
      * @return CompletableFuture<RunSearchPictureResponse>
@@ -255,8 +240,7 @@ public class ImageSearchAsyncClient {
      *
      * 从图片索引库中搜索相似图片。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSearchPictureRequest 请求对象
      * @return AsyncInvoker<RunSearchPictureRequest, RunSearchPictureResponse>

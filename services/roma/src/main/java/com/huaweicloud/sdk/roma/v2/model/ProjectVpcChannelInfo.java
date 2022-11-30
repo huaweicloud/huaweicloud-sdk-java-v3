@@ -327,6 +327,93 @@ public class ProjectVpcChannelInfo {
 
     private VpcHealthConfigInfo vpcHealthConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "microservice_info")
+
+    private MicroServiceInfo microserviceInfo;
+
+    /**
+     * vpc通道类型。 - BUILTIN：BUILTIN通道类型 - MICROSERVICE：微服务类型
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum BUILTIN for value: "BUILTIN"
+         */
+        public static final TypeEnum BUILTIN = new TypeEnum("BUILTIN");
+
+        /**
+         * Enum MICROSERVICE for value: "MICROSERVICE"
+         */
+        public static final TypeEnum MICROSERVICE = new TypeEnum("MICROSERVICE");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("BUILTIN", BUILTIN);
+            map.put("MICROSERVICE", MICROSERVICE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
+
     public ProjectVpcChannelInfo withName(String name) {
         this.name = name;
         return this;
@@ -589,6 +676,49 @@ public class ProjectVpcChannelInfo {
         this.vpcHealthConfig = vpcHealthConfig;
     }
 
+    public ProjectVpcChannelInfo withMicroserviceInfo(MicroServiceInfo microserviceInfo) {
+        this.microserviceInfo = microserviceInfo;
+        return this;
+    }
+
+    public ProjectVpcChannelInfo withMicroserviceInfo(Consumer<MicroServiceInfo> microserviceInfoSetter) {
+        if (this.microserviceInfo == null) {
+            this.microserviceInfo = new MicroServiceInfo();
+            microserviceInfoSetter.accept(this.microserviceInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get microserviceInfo
+     * @return microserviceInfo
+     */
+    public MicroServiceInfo getMicroserviceInfo() {
+        return microserviceInfo;
+    }
+
+    public void setMicroserviceInfo(MicroServiceInfo microserviceInfo) {
+        this.microserviceInfo = microserviceInfo;
+    }
+
+    public ProjectVpcChannelInfo withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * vpc通道类型。 - BUILTIN：BUILTIN通道类型 - MICROSERVICE：微服务类型
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -610,7 +740,9 @@ public class ProjectVpcChannelInfo {
             && Objects.equals(this.instanceId, projectVpcChannelInfo.instanceId)
             && Objects.equals(this.instanceName, projectVpcChannelInfo.instanceName)
             && Objects.equals(this.members, projectVpcChannelInfo.members)
-            && Objects.equals(this.vpcHealthConfig, projectVpcChannelInfo.vpcHealthConfig);
+            && Objects.equals(this.vpcHealthConfig, projectVpcChannelInfo.vpcHealthConfig)
+            && Objects.equals(this.microserviceInfo, projectVpcChannelInfo.microserviceInfo)
+            && Objects.equals(this.type, projectVpcChannelInfo.type);
     }
 
     @Override
@@ -627,7 +759,9 @@ public class ProjectVpcChannelInfo {
             instanceId,
             instanceName,
             members,
-            vpcHealthConfig);
+            vpcHealthConfig,
+            microserviceInfo,
+            type);
     }
 
     @Override
@@ -647,6 +781,8 @@ public class ProjectVpcChannelInfo {
         sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("    members: ").append(toIndentedString(members)).append("\n");
         sb.append("    vpcHealthConfig: ").append(toIndentedString(vpcHealthConfig)).append("\n");
+        sb.append("    microserviceInfo: ").append(toIndentedString(microserviceInfo)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

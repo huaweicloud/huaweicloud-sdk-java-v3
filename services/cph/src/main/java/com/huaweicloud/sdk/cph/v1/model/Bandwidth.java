@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 带宽信息
+ * 带宽信息响应
  */
 public class Bandwidth {
 
@@ -86,6 +86,8 @@ public class Bandwidth {
 
     /**
      * 云手机服务器的带宽大小
+     * minimum: 0
+     * maximum: 8096
      * @return bandWidthSize
      */
     public Integer getBandWidthSize() {
@@ -103,6 +105,8 @@ public class Bandwidth {
 
     /**
      * 云手机服务器带宽的计费方式  取值范围：  - 0，bandwidth, 按带宽计费  - 1，traffic, 按流量计费
+     * minimum: -128
+     * maximum: 128
      * @return bandWidthChargeMode
      */
     public Integer getBandWidthChargeMode() {
@@ -120,6 +124,8 @@ public class Bandwidth {
 
     /**
      * 云手机服务器的带宽类型  - 0，per，独享带宽 - 1，whole，共享带宽
+     * minimum: -128
+     * maximum: 128
      * @return bandWidthShareType
      */
     public Integer getBandWidthShareType() {

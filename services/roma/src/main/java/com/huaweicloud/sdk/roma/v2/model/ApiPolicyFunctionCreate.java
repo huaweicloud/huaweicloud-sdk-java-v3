@@ -115,6 +115,11 @@ public class ApiPolicyFunctionCreate {
 
     private String version;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alias_urn")
+
+    private String aliasUrn;
+
     /**
      * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
      */
@@ -286,6 +291,23 @@ public class ApiPolicyFunctionCreate {
         this.version = version;
     }
 
+    public ApiPolicyFunctionCreate withAliasUrn(String aliasUrn) {
+        this.aliasUrn = aliasUrn;
+        return this;
+    }
+
+    /**
+     * 函数别名URN  当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
+     * @return aliasUrn
+     */
+    public String getAliasUrn() {
+        return aliasUrn;
+    }
+
+    public void setAliasUrn(String aliasUrn) {
+        this.aliasUrn = aliasUrn;
+    }
+
     public ApiPolicyFunctionCreate withEffectMode(EffectModeEnum effectMode) {
         this.effectMode = effectMode;
         return this;
@@ -416,6 +438,7 @@ public class ApiPolicyFunctionCreate {
             && Objects.equals(this.invocationType, apiPolicyFunctionCreate.invocationType)
             && Objects.equals(this.timeout, apiPolicyFunctionCreate.timeout)
             && Objects.equals(this.version, apiPolicyFunctionCreate.version)
+            && Objects.equals(this.aliasUrn, apiPolicyFunctionCreate.aliasUrn)
             && Objects.equals(this.effectMode, apiPolicyFunctionCreate.effectMode)
             && Objects.equals(this.name, apiPolicyFunctionCreate.name)
             && Objects.equals(this.backendParams, apiPolicyFunctionCreate.backendParams)
@@ -429,6 +452,7 @@ public class ApiPolicyFunctionCreate {
             invocationType,
             timeout,
             version,
+            aliasUrn,
             effectMode,
             name,
             backendParams,
@@ -444,6 +468,7 @@ public class ApiPolicyFunctionCreate {
         sb.append("    invocationType: ").append(toIndentedString(invocationType)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    aliasUrn: ").append(toIndentedString(aliasUrn)).append("\n");
         sb.append("    effectMode: ").append(toIndentedString(effectMode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    backendParams: ").append(toIndentedString(backendParams)).append("\n");

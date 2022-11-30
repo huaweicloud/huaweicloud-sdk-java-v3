@@ -11,9 +11,9 @@ import java.util.Objects;
 public class CreateNet2CloudPhoneServerRequestBodyBandWidth {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "band_width_share_type")
+    @JsonProperty(value = "band_width_id")
 
-    private Integer bandWidthShareType;
+    private String bandWidthId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "band_width_size")
@@ -21,25 +21,30 @@ public class CreateNet2CloudPhoneServerRequestBodyBandWidth {
     private Integer bandWidthSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "band_width_id")
+    @JsonProperty(value = "band_width_charge_mode")
 
-    private String bandWidthId;
+    private Integer bandWidthChargeMode;
 
-    public CreateNet2CloudPhoneServerRequestBodyBandWidth withBandWidthShareType(Integer bandWidthShareType) {
-        this.bandWidthShareType = bandWidthShareType;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "band_width_share_type")
+
+    private Integer bandWidthShareType;
+
+    public CreateNet2CloudPhoneServerRequestBodyBandWidth withBandWidthId(String bandWidthId) {
+        this.bandWidthId = bandWidthId;
         return this;
     }
 
     /**
-     * 带宽类型 - 0 表示独享带宽 - 1 表示共享带宽
-     * @return bandWidthShareType
+     * 云手机服务器的带宽唯一标识
+     * @return bandWidthId
      */
-    public Integer getBandWidthShareType() {
-        return bandWidthShareType;
+    public String getBandWidthId() {
+        return bandWidthId;
     }
 
-    public void setBandWidthShareType(Integer bandWidthShareType) {
-        this.bandWidthShareType = bandWidthShareType;
+    public void setBandWidthId(String bandWidthId) {
+        this.bandWidthId = bandWidthId;
     }
 
     public CreateNet2CloudPhoneServerRequestBodyBandWidth withBandWidthSize(Integer bandWidthSize) {
@@ -48,7 +53,9 @@ public class CreateNet2CloudPhoneServerRequestBodyBandWidth {
     }
 
     /**
-     * 功能说明：带宽大小  带宽（Mbit/s），取值范围为[1,2000]。  调整带宽时的最小单位会根据带宽范围不同存在差异。  小于等于300Mbit/s：默认最小单位为1Mbit/s。 300Mbit/s~1000Mbit/s：默认最小单位为50Mbit/s。 大于1000Mbit/s：默认最小单位为500Mbit/s。 说明：  如果share_type是独享带宽，该参数必选项；如果share_type是共享带宽并且id有值，该参数会忽略
+     * 云手机服务器的带宽大小
+     * minimum: 0
+     * maximum: 8096
      * @return bandWidthSize
      */
     public Integer getBandWidthSize() {
@@ -59,21 +66,42 @@ public class CreateNet2CloudPhoneServerRequestBodyBandWidth {
         this.bandWidthSize = bandWidthSize;
     }
 
-    public CreateNet2CloudPhoneServerRequestBodyBandWidth withBandWidthId(String bandWidthId) {
-        this.bandWidthId = bandWidthId;
+    public CreateNet2CloudPhoneServerRequestBodyBandWidth withBandWidthChargeMode(Integer bandWidthChargeMode) {
+        this.bandWidthChargeMode = bandWidthChargeMode;
         return this;
     }
 
     /**
-     * 带宽ID，创建共享带宽类型带宽的弹性IP时可以指定之前的共享带宽创建。  取值范围：共享带宽类型的带宽ID。  说明：  当创建共享带宽类型的带宽时，该字段必选
-     * @return bandWidthId
+     * 云手机服务器带宽的计费方式  取值范围：  - 0，bandwidth, 按带宽计费  - 1，traffic, 按流量计费
+     * minimum: -128
+     * maximum: 128
+     * @return bandWidthChargeMode
      */
-    public String getBandWidthId() {
-        return bandWidthId;
+    public Integer getBandWidthChargeMode() {
+        return bandWidthChargeMode;
     }
 
-    public void setBandWidthId(String bandWidthId) {
-        this.bandWidthId = bandWidthId;
+    public void setBandWidthChargeMode(Integer bandWidthChargeMode) {
+        this.bandWidthChargeMode = bandWidthChargeMode;
+    }
+
+    public CreateNet2CloudPhoneServerRequestBodyBandWidth withBandWidthShareType(Integer bandWidthShareType) {
+        this.bandWidthShareType = bandWidthShareType;
+        return this;
+    }
+
+    /**
+     * 云手机服务器的带宽类型  - 0，per，独享带宽 - 1，whole，共享带宽
+     * minimum: -128
+     * maximum: 128
+     * @return bandWidthShareType
+     */
+    public Integer getBandWidthShareType() {
+        return bandWidthShareType;
+    }
+
+    public void setBandWidthShareType(Integer bandWidthShareType) {
+        this.bandWidthShareType = bandWidthShareType;
     }
 
     @Override
@@ -86,24 +114,27 @@ public class CreateNet2CloudPhoneServerRequestBodyBandWidth {
         }
         CreateNet2CloudPhoneServerRequestBodyBandWidth createNet2CloudPhoneServerRequestBodyBandWidth =
             (CreateNet2CloudPhoneServerRequestBodyBandWidth) o;
-        return Objects.equals(this.bandWidthShareType,
-            createNet2CloudPhoneServerRequestBodyBandWidth.bandWidthShareType)
+        return Objects.equals(this.bandWidthId, createNet2CloudPhoneServerRequestBodyBandWidth.bandWidthId)
             && Objects.equals(this.bandWidthSize, createNet2CloudPhoneServerRequestBodyBandWidth.bandWidthSize)
-            && Objects.equals(this.bandWidthId, createNet2CloudPhoneServerRequestBodyBandWidth.bandWidthId);
+            && Objects.equals(this.bandWidthChargeMode,
+                createNet2CloudPhoneServerRequestBodyBandWidth.bandWidthChargeMode)
+            && Objects.equals(this.bandWidthShareType,
+                createNet2CloudPhoneServerRequestBodyBandWidth.bandWidthShareType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bandWidthShareType, bandWidthSize, bandWidthId);
+        return Objects.hash(bandWidthId, bandWidthSize, bandWidthChargeMode, bandWidthShareType);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateNet2CloudPhoneServerRequestBodyBandWidth {\n");
-        sb.append("    bandWidthShareType: ").append(toIndentedString(bandWidthShareType)).append("\n");
-        sb.append("    bandWidthSize: ").append(toIndentedString(bandWidthSize)).append("\n");
         sb.append("    bandWidthId: ").append(toIndentedString(bandWidthId)).append("\n");
+        sb.append("    bandWidthSize: ").append(toIndentedString(bandWidthSize)).append("\n");
+        sb.append("    bandWidthChargeMode: ").append(toIndentedString(bandWidthChargeMode)).append("\n");
+        sb.append("    bandWidthShareType: ").append(toIndentedString(bandWidthShareType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

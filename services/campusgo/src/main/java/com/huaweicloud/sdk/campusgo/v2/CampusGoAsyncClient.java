@@ -24,8 +24,7 @@ public class CampusGoAsyncClient {
      *
      * 该接口用于创建服务作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTasksRequest 请求对象
      * @return CompletableFuture<CreateTasksResponse>
@@ -39,8 +38,7 @@ public class CampusGoAsyncClient {
      *
      * 该接口用于创建服务作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTasksRequest 请求对象
      * @return AsyncInvoker<CreateTasksRequest, CreateTasksResponse>
@@ -54,8 +52,7 @@ public class CampusGoAsyncClient {
      *
      * 该接口用于删除服务作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
      * @return CompletableFuture<DeleteTaskResponse>
@@ -69,8 +66,7 @@ public class CampusGoAsyncClient {
      *
      * 该接口用于删除服务作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
      * @return AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
@@ -84,8 +80,7 @@ public class CampusGoAsyncClient {
      *
      * 该接口用于获取服务作业列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTasksDetailsRequest 请求对象
      * @return CompletableFuture<ListTasksDetailsResponse>
@@ -99,8 +94,7 @@ public class CampusGoAsyncClient {
      *
      * 该接口用于获取服务作业列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTasksDetailsRequest 请求对象
      * @return AsyncInvoker<ListTasksDetailsRequest, ListTasksDetailsResponse>
@@ -116,8 +110,7 @@ public class CampusGoAsyncClient {
      *
      * 该接口用于查询服务作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskRequest 请求对象
      * @return CompletableFuture<ShowTaskResponse>
@@ -131,8 +124,7 @@ public class CampusGoAsyncClient {
      *
      * 该接口用于查询服务作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskRequest 请求对象
      * @return AsyncInvoker<ShowTaskRequest, ShowTaskResponse>

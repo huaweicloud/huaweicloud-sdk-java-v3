@@ -24,8 +24,7 @@ public class DmsAsyncClient {
      *
      * 批量添加或删除队列标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateOrDeleteQueueTagRequest 请求对象
      * @return CompletableFuture<BatchCreateOrDeleteQueueTagResponse>
@@ -40,8 +39,7 @@ public class DmsAsyncClient {
      *
      * 批量添加或删除队列标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateOrDeleteQueueTagRequest 请求对象
      * @return AsyncInvoker<BatchCreateOrDeleteQueueTagRequest, BatchCreateOrDeleteQueueTagResponse>
@@ -65,8 +63,7 @@ public class DmsAsyncClient {
      * 
      * 确认消费失败后，可以再次重新消费和确认。当开启死信时，消息进行多次重复消费仍然失败后，DMS会将该条消息转存到死信队列中，有效期为72小时，用户可以根据需要对死信消息进行重新消费。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConfirmConsumptionMessagesRequest 请求对象
      * @return CompletableFuture<ConfirmConsumptionMessagesResponse>
@@ -89,8 +86,7 @@ public class DmsAsyncClient {
      * 
      * 确认消费失败后，可以再次重新消费和确认。当开启死信时，消息进行多次重复消费仍然失败后，DMS会将该条消息转存到死信队列中，有效期为72小时，用户可以根据需要对死信消息进行重新消费。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConfirmConsumptionMessagesRequest 请求对象
      * @return AsyncInvoker<ConfirmConsumptionMessagesRequest, ConfirmConsumptionMessagesResponse>
@@ -114,8 +110,7 @@ public class DmsAsyncClient {
      * 
      * 仅NORMAL队列和FIFO队列可以开启死信消息，因为只有NORMAL队列和FIFO队列可消费死信消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConfirmDeadLettersMessagesRequest 请求对象
      * @return CompletableFuture<ConfirmDeadLettersMessagesResponse>
@@ -138,8 +133,7 @@ public class DmsAsyncClient {
      * 
      * 仅NORMAL队列和FIFO队列可以开启死信消息，因为只有NORMAL队列和FIFO队列可消费死信消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConfirmDeadLettersMessagesRequest 请求对象
      * @return AsyncInvoker<ConfirmDeadLettersMessagesRequest, ConfirmDeadLettersMessagesResponse>
@@ -157,8 +151,7 @@ public class DmsAsyncClient {
      * 
      * 仅NORMAL队列和FIFO队列可以开启死信消息，因为只有NORMAL队列和FIFO队列可消费死信消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConsumeDeadlettersMessageRequest 请求对象
      * @return CompletableFuture<ConsumeDeadlettersMessageResponse>
@@ -175,8 +168,7 @@ public class DmsAsyncClient {
      * 
      * 仅NORMAL队列和FIFO队列可以开启死信消息，因为只有NORMAL队列和FIFO队列可消费死信消息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConsumeDeadlettersMessageRequest 请求对象
      * @return AsyncInvoker<ConsumeDeadlettersMessageRequest, ConsumeDeadlettersMessageResponse>
@@ -196,8 +188,7 @@ public class DmsAsyncClient {
      * 
      * 每个消费组只支持一种Label规则，如果第二次消费更换了Label规则，则消费失败。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConsumeMessagesRequest 请求对象
      * @return CompletableFuture<ConsumeMessagesResponse>
@@ -215,8 +206,7 @@ public class DmsAsyncClient {
      * 
      * 每个消费组只支持一种Label规则，如果第二次消费更换了Label规则，则消费失败。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConsumeMessagesRequest 请求对象
      * @return AsyncInvoker<ConsumeMessagesRequest, ConsumeMessagesResponse>
@@ -236,8 +226,7 @@ public class DmsAsyncClient {
      * 
      * &gt; 创建消费组后系统内部完成初始化需要1-3秒，如果创建消费组后立即进行操作，可能会导致消费失败。建议3秒后再操作该队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConsumerGroupRequest 请求对象
      * @return CompletableFuture<CreateConsumerGroupResponse>
@@ -255,8 +244,7 @@ public class DmsAsyncClient {
      * 
      * &gt; 创建消费组后系统内部完成初始化需要1-3秒，如果创建消费组后立即进行操作，可能会导致消费失败。建议3秒后再操作该队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConsumerGroupRequest 请求对象
      * @return AsyncInvoker<CreateConsumerGroupRequest, CreateConsumerGroupResponse>
@@ -273,8 +261,7 @@ public class DmsAsyncClient {
      * 每个project_id默认只能创建30个队列。
      * &gt; 创建队列时系统内部完成初始化需要1-3秒，如果创建队列后立即进行操作，可能会导致生产消息、消费消息、查询队列详情、创建消费组和删除队列等操作失败。建议3秒后再操作该队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateQueueRequest 请求对象
      * @return CompletableFuture<CreateQueueResponse>
@@ -289,8 +276,7 @@ public class DmsAsyncClient {
      * 每个project_id默认只能创建30个队列。
      * &gt; 创建队列时系统内部完成初始化需要1-3秒，如果创建队列后立即进行操作，可能会导致生产消息、消费消息、查询队列详情、创建消费组和删除队列等操作失败。建议3秒后再操作该队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateQueueRequest 请求对象
      * @return AsyncInvoker<CreateQueueRequest, CreateQueueResponse>
@@ -304,8 +290,7 @@ public class DmsAsyncClient {
      *
      * 删除指定的队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteQueueRequest 请求对象
      * @return CompletableFuture<DeleteQueueResponse>
@@ -319,8 +304,7 @@ public class DmsAsyncClient {
      *
      * 删除指定的队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteQueueRequest 请求对象
      * @return AsyncInvoker<DeleteQueueRequest, DeleteQueueResponse>
@@ -334,8 +318,7 @@ public class DmsAsyncClient {
      *
      * 删除指定消费组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSpecifiedConsumerGroupRequest 请求对象
      * @return CompletableFuture<DeleteSpecifiedConsumerGroupResponse>
@@ -350,8 +333,7 @@ public class DmsAsyncClient {
      *
      * 删除指定消费组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSpecifiedConsumerGroupRequest 请求对象
      * @return AsyncInvoker<DeleteSpecifiedConsumerGroupRequest, DeleteSpecifiedConsumerGroupResponse>
@@ -367,8 +349,7 @@ public class DmsAsyncClient {
      *
      * 获取指定队列的所有消费组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConsumerGroupsRequest 请求对象
      * @return CompletableFuture<ListConsumerGroupsResponse>
@@ -382,8 +363,7 @@ public class DmsAsyncClient {
      *
      * 获取指定队列的所有消费组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConsumerGroupsRequest 请求对象
      * @return AsyncInvoker<ListConsumerGroupsRequest, ListConsumerGroupsResponse>
@@ -399,8 +379,7 @@ public class DmsAsyncClient {
      *
      * 查看所有队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQueuesRequest 请求对象
      * @return CompletableFuture<ListQueuesResponse>
@@ -414,8 +393,7 @@ public class DmsAsyncClient {
      *
      * 查看所有队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQueuesRequest 请求对象
      * @return AsyncInvoker<ListQueuesRequest, ListQueuesResponse>
@@ -433,8 +411,7 @@ public class DmsAsyncClient {
      * - 每次发送的消息总负载不超过512KB。
      * - Kafka队列的消息保存时间在创建队列时可以设置，可设置范围为1~72小时。其他队列的消息最大保存时长为72小时。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendMessagesRequest 请求对象
      * @return CompletableFuture<SendMessagesResponse>
@@ -452,8 +429,7 @@ public class DmsAsyncClient {
      * - 每次发送的消息总负载不超过512KB。
      * - Kafka队列的消息保存时间在创建队列时可以设置，可设置范围为1~72小时。其他队列的消息最大保存时长为72小时。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendMessagesRequest 请求对象
      * @return AsyncInvoker<SendMessagesRequest, SendMessagesResponse>
@@ -468,8 +444,7 @@ public class DmsAsyncClient {
      *
      * 查看指定的队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQueueRequest 请求对象
      * @return CompletableFuture<ShowQueueResponse>
@@ -483,8 +458,7 @@ public class DmsAsyncClient {
      *
      * 查看指定的队列。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQueueRequest 请求对象
      * @return AsyncInvoker<ShowQueueRequest, ShowQueueResponse>
@@ -498,8 +472,7 @@ public class DmsAsyncClient {
      *
      * 查询项目标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQueueProjectTagsRequest 请求对象
      * @return CompletableFuture<ShowQueueProjectTagsResponse>
@@ -514,8 +487,7 @@ public class DmsAsyncClient {
      *
      * 查询项目标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQueueProjectTagsRequest 请求对象
      * @return AsyncInvoker<ShowQueueProjectTagsRequest, ShowQueueProjectTagsResponse>
@@ -531,8 +503,7 @@ public class DmsAsyncClient {
      *
      * 查询队列标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQueueTagsRequest 请求对象
      * @return CompletableFuture<ShowQueueTagsResponse>
@@ -546,8 +517,7 @@ public class DmsAsyncClient {
      *
      * 查询队列标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQueueTagsRequest 请求对象
      * @return AsyncInvoker<ShowQueueTagsRequest, ShowQueueTagsResponse>
@@ -562,8 +532,7 @@ public class DmsAsyncClient {
      *
      * 查看当前项目的配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotasRequest 请求对象
      * @return CompletableFuture<ShowQuotasResponse>
@@ -577,8 +546,7 @@ public class DmsAsyncClient {
      *
      * 查看当前项目的配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotasRequest 请求对象
      * @return AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>

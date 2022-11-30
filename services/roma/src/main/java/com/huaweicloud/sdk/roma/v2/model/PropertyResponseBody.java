@@ -9,7 +9,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * PropertyResponseBody
@@ -258,7 +257,7 @@ public class PropertyResponseBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enum_dict")
 
-    private PropertyDataEnum enumDict;
+    private Object enumDict;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "method")
@@ -458,29 +457,20 @@ public class PropertyResponseBody {
         this.enumList = enumList;
     }
 
-    public PropertyResponseBody withEnumDict(PropertyDataEnum enumDict) {
+    public PropertyResponseBody withEnumDict(Object enumDict) {
         this.enumDict = enumDict;
         return this;
     }
 
-    public PropertyResponseBody withEnumDict(Consumer<PropertyDataEnum> enumDictSetter) {
-        if (this.enumDict == null) {
-            this.enumDict = new PropertyDataEnum();
-            enumDictSetter.accept(this.enumDict);
-        }
-
-        return this;
-    }
-
     /**
-     * Get enumDict
+     * 当数据类型为boolean枚举值时填写json格式数据，形如\"enum_dict\":{\"0\":\"xxx\",\"1\":\"xxx\"}
      * @return enumDict
      */
-    public PropertyDataEnum getEnumDict() {
+    public Object getEnumDict() {
         return enumDict;
     }
 
-    public void setEnumDict(PropertyDataEnum enumDict) {
+    public void setEnumDict(Object enumDict) {
         this.enumDict = enumDict;
     }
 

@@ -24,8 +24,7 @@ public class DeHClient {
      * 
      * 标签管理服务（TMS）使用该接口批量添加专属主机的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateDedicatedHostTagsRequest 请求对象
      * @return BatchCreateDedicatedHostTagsResponse
@@ -42,8 +41,7 @@ public class DeHClient {
      * 
      * 标签管理服务（TMS）使用该接口批量添加专属主机的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateDedicatedHostTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateDedicatedHostTagsRequest, BatchCreateDedicatedHostTagsResponse>
@@ -61,8 +59,7 @@ public class DeHClient {
      * 
      * 标签管理服务（TMS）使用该接口批量删除专属主机的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteDedicatedHostTagsRequest 请求对象
      * @return BatchDeleteDedicatedHostTagsResponse
@@ -79,8 +76,7 @@ public class DeHClient {
      * 
      * 标签管理服务（TMS）使用该接口批量删除专属主机的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteDedicatedHostTagsRequest 请求对象
      * @return SyncInvoker<BatchDeleteDedicatedHostTagsRequest, BatchDeleteDedicatedHostTagsResponse>
@@ -96,8 +92,7 @@ public class DeHClient {
      *
      * 分配一台或多台专属主机，需要设置实例规格、所属AZ、数量等参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDedicatedHostRequest 请求对象
      * @return CreateDedicatedHostResponse
@@ -111,8 +106,7 @@ public class DeHClient {
      *
      * 分配一台或多台专属主机，需要设置实例规格、所属AZ、数量等参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDedicatedHostRequest 请求对象
      * @return SyncInvoker<CreateDedicatedHostRequest, CreateDedicatedHostResponse>
@@ -128,8 +122,7 @@ public class DeHClient {
      *
      * 释放专属主机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDedicatedHostRequest 请求对象
      * @return DeleteDedicatedHostResponse
@@ -143,8 +136,7 @@ public class DeHClient {
      *
      * 释放专属主机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDedicatedHostRequest 请求对象
      * @return SyncInvoker<DeleteDedicatedHostRequest, DeleteDedicatedHostResponse>
@@ -160,8 +152,7 @@ public class DeHClient {
      *
      * 查询某一AZ内可用的专属主机类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDedicatedHostTypesRequest 请求对象
      * @return ListDedicatedHostTypesResponse
@@ -175,8 +166,7 @@ public class DeHClient {
      *
      * 查询某一AZ内可用的专属主机类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDedicatedHostTypesRequest 请求对象
      * @return SyncInvoker<ListDedicatedHostTypesRequest, ListDedicatedHostTypesResponse>
@@ -192,8 +182,7 @@ public class DeHClient {
      *
      * 通过该接口查询专属主机列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDedicatedHostsRequest 请求对象
      * @return ListDedicatedHostsResponse
@@ -207,8 +196,7 @@ public class DeHClient {
      *
      * 通过该接口查询专属主机列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDedicatedHostsRequest 请求对象
      * @return SyncInvoker<ListDedicatedHostsRequest, ListDedicatedHostsResponse>
@@ -226,8 +214,7 @@ public class DeHClient {
      * 
      * 标签管理服务（TMS）使用该接口过滤专属主机列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDedicatedHostsByTagsRequest 请求对象
      * @return ListDedicatedHostsByTagsResponse
@@ -243,8 +230,7 @@ public class DeHClient {
      * 
      * 标签管理服务（TMS）使用该接口过滤专属主机列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDedicatedHostsByTagsRequest 请求对象
      * @return SyncInvoker<ListDedicatedHostsByTagsRequest, ListDedicatedHostsByTagsResponse>
@@ -260,8 +246,7 @@ public class DeHClient {
      *
      * 查询专属主机上已部署的云服务器信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServersDedicatedHostRequest 请求对象
      * @return ListServersDedicatedHostResponse
@@ -275,8 +260,7 @@ public class DeHClient {
      *
      * 查询专属主机上已部署的云服务器信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServersDedicatedHostRequest 请求对象
      * @return SyncInvoker<ListServersDedicatedHostRequest, ListServersDedicatedHostResponse>
@@ -292,8 +276,7 @@ public class DeHClient {
      *
      * 查询某一台专属主机的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDedicatedHostRequest 请求对象
      * @return ShowDedicatedHostResponse
@@ -307,8 +290,7 @@ public class DeHClient {
      *
      * 查询某一台专属主机的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDedicatedHostRequest 请求对象
      * @return SyncInvoker<ShowDedicatedHostRequest, ShowDedicatedHostResponse>
@@ -326,8 +308,7 @@ public class DeHClient {
      * 
      * 标签管理服务（TMS）使用该接口查询指定专属主机的全部标签数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDedicatedHostTagsRequest 请求对象
      * @return ShowDedicatedHostTagsResponse
@@ -343,8 +324,7 @@ public class DeHClient {
      * 
      * 标签管理服务（TMS）使用该接口查询指定专属主机的全部标签数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDedicatedHostTagsRequest 请求对象
      * @return SyncInvoker<ShowDedicatedHostTagsRequest, ShowDedicatedHostTagsResponse>
@@ -360,8 +340,7 @@ public class DeHClient {
      *
      * 该接口用于查询租户的专属主机配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotaSetsRequest 请求对象
      * @return ShowQuotaSetsResponse
@@ -375,8 +354,7 @@ public class DeHClient {
      *
      * 该接口用于查询租户的专属主机配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotaSetsRequest 请求对象
      * @return SyncInvoker<ShowQuotaSetsRequest, ShowQuotaSetsResponse>
@@ -390,8 +368,7 @@ public class DeHClient {
      *
      * 该接口用于变更专属主机的“auto_placement”和“name”属性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDedicatedHostRequest 请求对象
      * @return UpdateDedicatedHostResponse
@@ -405,8 +382,7 @@ public class DeHClient {
      *
      * 该接口用于变更专属主机的“auto_placement”和“name”属性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDedicatedHostRequest 请求对象
      * @return SyncInvoker<UpdateDedicatedHostRequest, UpdateDedicatedHostResponse>

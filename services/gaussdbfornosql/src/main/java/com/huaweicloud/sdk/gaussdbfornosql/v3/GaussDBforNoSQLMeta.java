@@ -109,6 +109,119 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckWeekPasswordRequest, CheckWeekPasswordResponse> checkWeekPassword =
+        genForcheckWeekPassword();
+
+    private static HttpRequestDef<CheckWeekPasswordRequest, CheckWeekPasswordResponse> genForcheckWeekPassword() {
+        // basic
+        HttpRequestDef.Builder<CheckWeekPasswordRequest, CheckWeekPasswordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckWeekPasswordRequest.class, CheckWeekPasswordResponse.class)
+                .withName("CheckWeekPassword")
+                .withUri("/v3/{project_id}/weak-password-verification")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CheckWeekPasswordRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckWeekPasswordRequestBody.class),
+            f -> f.withMarshaller(CheckWeekPasswordRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CompareConfigurationRequest, CompareConfigurationResponse> compareConfiguration =
+        genForcompareConfiguration();
+
+    private static HttpRequestDef<CompareConfigurationRequest, CompareConfigurationResponse> genForcompareConfiguration() {
+        // basic
+        HttpRequestDef.Builder<CompareConfigurationRequest, CompareConfigurationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CompareConfigurationRequest.class, CompareConfigurationResponse.class)
+            .withName("CompareConfiguration")
+            .withUri("/v3/{project_id}/configurations/comparison")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CompareConfigurationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CompareConfigurationRequestBody.class),
+            f -> f.withMarshaller(CompareConfigurationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CopyConfigurationRequest, CopyConfigurationResponse> copyConfiguration =
+        genForcopyConfiguration();
+
+    private static HttpRequestDef<CopyConfigurationRequest, CopyConfigurationResponse> genForcopyConfiguration() {
+        // basic
+        HttpRequestDef.Builder<CopyConfigurationRequest, CopyConfigurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CopyConfigurationRequest.class, CopyConfigurationResponse.class)
+                .withName("CopyConfiguration")
+                .withUri("/v3/{project_id}/configurations/{config_id}/copy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyConfigurationRequest::getConfigId, (req, v) -> {
+                req.setConfigId(v);
+            }));
+        builder.<CopyConfigurationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CopyConfigurationRequestBody.class),
+            f -> f.withMarshaller(CopyConfigurationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateBackRequest, CreateBackResponse> createBack = genForcreateBack();
+
+    private static HttpRequestDef<CreateBackRequest, CreateBackResponse> genForcreateBack() {
+        // basic
+        HttpRequestDef.Builder<CreateBackRequest, CreateBackResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateBackRequest.class, CreateBackResponse.class)
+                .withName("CreateBack")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBackRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<NoSqlCreateBackupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NoSqlCreateBackupRequestBody.class),
+            f -> f.withMarshaller(CreateBackRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateColdVolumeRequest, CreateColdVolumeResponse> createColdVolume =
         genForcreateColdVolume();
 
@@ -297,6 +410,38 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse> deleteEnlargeFailNode =
+        genFordeleteEnlargeFailNode();
+
+    private static HttpRequestDef<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse> genFordeleteEnlargeFailNode() {
+        // basic
+        HttpRequestDef.Builder<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteEnlargeFailNodeRequest.class, DeleteEnlargeFailNodeResponse.class)
+            .withName("DeleteEnlargeFailNode")
+            .withUri("/v3/{project_id}/instances/{instance_id}/enlarge-failed-nodes")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEnlargeFailNodeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<DeleteEnlargeFailNodeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteEnlargeFailNodeRequestBody.class),
+            f -> f.withMarshaller(DeleteEnlargeFailNodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance =
         genFordeleteInstance();
 
@@ -348,6 +493,53 @@ public class GaussDBforNoSQLMeta {
             f -> f.withMarshaller(ExpandInstanceNodeRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse> listAvailableFlavorInfos =
+        genForlistAvailableFlavorInfos();
+
+    private static HttpRequestDef<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse> genForlistAvailableFlavorInfos() {
+        // basic
+        HttpRequestDef.Builder<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListAvailableFlavorInfosRequest.class, ListAvailableFlavorInfosResponse.class)
+                .withName("ListAvailableFlavorInfos")
+                .withUri("/v3/{project_id}/instances/{instance_id}/available-flavors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailableFlavorInfosRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConfigurationDatastoresRequest, ListConfigurationDatastoresResponse> listConfigurationDatastores =
+        genForlistConfigurationDatastores();
+
+    private static HttpRequestDef<ListConfigurationDatastoresRequest, ListConfigurationDatastoresResponse> genForlistConfigurationDatastores() {
+        // basic
+        HttpRequestDef.Builder<ListConfigurationDatastoresRequest, ListConfigurationDatastoresResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListConfigurationDatastoresRequest.class,
+                    ListConfigurationDatastoresResponse.class)
+                .withName("ListConfigurationDatastores")
+                .withUri("/v3/{project_id}/configurations/datastores")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -456,6 +648,45 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDedicatedResourcesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEpsQuotasRequest, ListEpsQuotasResponse> listEpsQuotas =
+        genForlistEpsQuotas();
+
+    private static HttpRequestDef<ListEpsQuotasRequest, ListEpsQuotasResponse> genForlistEpsQuotas() {
+        // basic
+        HttpRequestDef.Builder<ListEpsQuotasRequest, ListEpsQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEpsQuotasRequest.class, ListEpsQuotasResponse.class)
+                .withName("ListEpsQuotas")
+                .withUri("/v3/{project_id}/enterprise-projects/quotas")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEpsQuotasRequest::getEnterpriseProjectName, (req, v) -> {
+                req.setEnterpriseProjectName(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEpsQuotasRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEpsQuotasRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
 
@@ -686,6 +917,77 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags =
+        genForlistProjectTags();
+
+    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForlistProjectTags() {
+        // basic
+        HttpRequestDef.Builder<ListProjectTagsRequest, ListProjectTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProjectTagsRequest.class, ListProjectTagsResponse.class)
+                .withName("ListProjectTags")
+                .withUri("/v3/{project_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectTagsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectTagsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRecycleInstancesRequest, ListRecycleInstancesResponse> listRecycleInstances =
+        genForlistRecycleInstances();
+
+    private static HttpRequestDef<ListRecycleInstancesRequest, ListRecycleInstancesResponse> genForlistRecycleInstances() {
+        // basic
+        HttpRequestDef.Builder<ListRecycleInstancesRequest, ListRecycleInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListRecycleInstancesRequest.class, ListRecycleInstancesResponse.class)
+            .withName("ListRecycleInstances")
+            .withUri("/v3/{project_id}/recycle-instances")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRecycleInstancesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRecycleInstancesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecycleInstancesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRestoreTimeRequest, ListRestoreTimeResponse> listRestoreTime =
         genForlistRestoreTime();
 
@@ -805,6 +1107,62 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse> modifyEpsQuotas =
+        genFormodifyEpsQuotas();
+
+    private static HttpRequestDef<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse> genFormodifyEpsQuotas() {
+        // basic
+        HttpRequestDef.Builder<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyEpsQuotasRequest.class, ModifyEpsQuotasResponse.class)
+                .withName("ModifyEpsQuotas")
+                .withUri("/v3/{project_id}/enterprise-projects/quotas")
+                .withContentType("application/json");
+
+        // requests
+        builder.<NoSqlModiflyEpsQuotasRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NoSqlModiflyEpsQuotasRequestBody.class),
+            f -> f.withMarshaller(ModifyEpsQuotasRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyPortRequest, ModifyPortResponse> modifyPort = genFormodifyPort();
+
+    private static HttpRequestDef<ModifyPortRequest, ModifyPortResponse> genFormodifyPort() {
+        // basic
+        HttpRequestDef.Builder<ModifyPortRequest, ModifyPortResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyPortRequest.class, ModifyPortResponse.class)
+                .withName("ModifyPort")
+                .withUri("/v3/{project_id}/instances/{instance_id}/port")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyPortRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ModifyPortRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyPortRequestBody.class),
+            f -> f.withMarshaller(ModifyPortRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ModifyPublicIpRequest, ModifyPublicIpResponse> modifyPublicIp =
         genFormodifyPublicIp();
 
@@ -840,6 +1198,48 @@ public class GaussDBforNoSQLMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<PauseResumeDataSynchronizationRequest, PauseResumeDataSynchronizationResponse> pauseResumeDataSynchronization =
+        genForpauseResumeDataSynchronization();
+
+    private static HttpRequestDef<PauseResumeDataSynchronizationRequest, PauseResumeDataSynchronizationResponse> genForpauseResumeDataSynchronization() {
+        // basic
+        HttpRequestDef.Builder<PauseResumeDataSynchronizationRequest, PauseResumeDataSynchronizationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    PauseResumeDataSynchronizationRequest.class,
+                    PauseResumeDataSynchronizationResponse.class)
+                .withName("PauseResumeDataSynchronization")
+                .withUri("/v3/{project_id}/instances/{instance_id}/disaster-recovery/data-synchronization")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PauseResumeDataSynchronizationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ActionBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ActionBody.class),
+            f -> f.withMarshaller(PauseResumeDataSynchronizationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(PauseResumeDataSynchronizationResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }
@@ -1086,6 +1486,105 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetRecyclePolicyRequest, SetRecyclePolicyResponse> setRecyclePolicy =
+        genForsetRecyclePolicy();
+
+    private static HttpRequestDef<SetRecyclePolicyRequest, SetRecyclePolicyResponse> genForsetRecyclePolicy() {
+        // basic
+        HttpRequestDef.Builder<SetRecyclePolicyRequest, SetRecyclePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetRecyclePolicyRequest.class, SetRecyclePolicyResponse.class)
+                .withName("SetRecyclePolicy")
+                .withUri("/v3/{project_id}/instances/recycle-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<RecyclePolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RecyclePolicyRequestBody.class),
+            f -> f.withMarshaller(SetRecyclePolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAllInstancesBackupsRequest, ShowAllInstancesBackupsResponse> showAllInstancesBackups =
+        genForshowAllInstancesBackups();
+
+    private static HttpRequestDef<ShowAllInstancesBackupsRequest, ShowAllInstancesBackupsResponse> genForshowAllInstancesBackups() {
+        // basic
+        HttpRequestDef.Builder<ShowAllInstancesBackupsRequest, ShowAllInstancesBackupsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAllInstancesBackupsRequest.class, ShowAllInstancesBackupsResponse.class)
+            .withName("ShowAllInstancesBackups")
+            .withUri("/v3/{project_id}/backups")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<ShowAllInstancesBackupsRequest.DatastoreTypeEnum>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowAllInstancesBackupsRequest.DatastoreTypeEnum.class),
+            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getDatastoreType, (req, v) -> {
+                req.setDatastoreType(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("backup_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getBackupId, (req, v) -> {
+                req.setBackupId(v);
+            }));
+        builder.<ShowAllInstancesBackupsRequest.BackupTypeEnum>withRequestField("backup_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowAllInstancesBackupsRequest.BackupTypeEnum.class),
+            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getBackupType, (req, v) -> {
+                req.setBackupType(v);
+            }));
+        builder.<String>withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getBeginTime, (req, v) -> {
+                req.setBeginTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAllInstancesBackupsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowApplicableInstancesRequest, ShowApplicableInstancesResponse> showApplicableInstances =
         genForshowApplicableInstances();
 
@@ -1164,6 +1663,31 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> showAutoEnlargePolicy =
+        genForshowAutoEnlargePolicy();
+
+    private static HttpRequestDef<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> genForshowAutoEnlargePolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAutoEnlargePolicyRequest.class, ShowAutoEnlargePolicyResponse.class)
+            .withName("ShowAutoEnlargePolicy")
+            .withUri("/v3/{project_id}/instances/{instance_id}/disk-auto-expansion")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoEnlargePolicyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicy =
         genForshowBackupPolicy();
 
@@ -1207,6 +1731,72 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowConfigurationDetailRequest::getConfigId, (req, v) -> {
                 req.setConfigId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowErrorLogRequest, ShowErrorLogResponse> showErrorLog = genForshowErrorLog();
+
+    private static HttpRequestDef<ShowErrorLogRequest, ShowErrorLogResponse> genForshowErrorLog() {
+        // basic
+        HttpRequestDef.Builder<ShowErrorLogRequest, ShowErrorLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowErrorLogRequest.class, ShowErrorLogResponse.class)
+                .withName("ShowErrorLog")
+                .withUri("/v3/{project_id}/instances/{instance_id}/error-log")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowErrorLogRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowErrorLogRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowErrorLogRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<String>withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowErrorLogRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            }));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowErrorLogRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowErrorLogRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowErrorLogRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -1267,6 +1857,52 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowIpNumRequirementRequest, ShowIpNumRequirementResponse> showIpNumRequirement =
+        genForshowIpNumRequirement();
+
+    private static HttpRequestDef<ShowIpNumRequirementRequest, ShowIpNumRequirementResponse> genForshowIpNumRequirement() {
+        // basic
+        HttpRequestDef.Builder<ShowIpNumRequirementRequest, ShowIpNumRequirementResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowIpNumRequirementRequest.class, ShowIpNumRequirementResponse.class)
+            .withName("ShowIpNumRequirement")
+            .withUri("/v3/{project_id}/ip-num-requirement")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("node_num",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowIpNumRequirementRequest::getNodeNum, (req, v) -> {
+                req.setNodeNum(v);
+            }));
+        builder.<String>withRequestField("engine_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIpNumRequirementRequest::getEngineName, (req, v) -> {
+                req.setEngineName(v);
+            }));
+        builder.<String>withRequestField("instance_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIpNumRequirementRequest::getInstanceMode, (req, v) -> {
+                req.setInstanceMode(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIpNumRequirementRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowModifyHistoryRequest, ShowModifyHistoryResponse> showModifyHistory =
         genForshowModifyHistory();
 
@@ -1306,6 +1942,31 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowPauseResumeStutusRequest, ShowPauseResumeStutusResponse> showPauseResumeStutus =
+        genForshowPauseResumeStutus();
+
+    private static HttpRequestDef<ShowPauseResumeStutusRequest, ShowPauseResumeStutusResponse> genForshowPauseResumeStutus() {
+        // basic
+        HttpRequestDef.Builder<ShowPauseResumeStutusRequest, ShowPauseResumeStutusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowPauseResumeStutusRequest.class, ShowPauseResumeStutusResponse.class)
+            .withName("ShowPauseResumeStutus")
+            .withUri("/v3/{project_id}/instances/{instance_id}/disaster-recovery/data-synchronization")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPauseResumeStutusRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
 
     private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
@@ -1317,6 +1978,31 @@ public class GaussDBforNoSQLMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> showRecyclePolicy =
+        genForshowRecyclePolicy();
+
+    private static HttpRequestDef<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> genForshowRecyclePolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRecyclePolicyRequest.class, ShowRecyclePolicyResponse.class)
+                .withName("ShowRecyclePolicy")
+                .withUri("/v3/{project_id}/instances/recycle-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRecyclePolicyRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
 
         // response
 
@@ -1362,6 +2048,34 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSlowLogDesensitizationRequest, ShowSlowLogDesensitizationResponse> showSlowLogDesensitization =
+        genForshowSlowLogDesensitization();
+
+    private static HttpRequestDef<ShowSlowLogDesensitizationRequest, ShowSlowLogDesensitizationResponse> genForshowSlowLogDesensitization() {
+        // basic
+        HttpRequestDef.Builder<ShowSlowLogDesensitizationRequest, ShowSlowLogDesensitizationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSlowLogDesensitizationRequest.class,
+                    ShowSlowLogDesensitizationResponse.class)
+                .withName("ShowSlowLogDesensitization")
+                .withUri("/v3/{project_id}/instances/{instance_id}/slowlog-desensitization")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSlowLogDesensitizationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShrinkInstanceNodeRequest, ShrinkInstanceNodeResponse> shrinkInstanceNode =
         genForshrinkInstanceNode();
 
@@ -1386,6 +2100,41 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShrinkInstanceNodeRequestBody.class),
             f -> f.withMarshaller(ShrinkInstanceNodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse> switchSlowlogDesensitization =
+        genForswitchSlowlogDesensitization();
+
+    private static HttpRequestDef<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse> genForswitchSlowlogDesensitization() {
+        // basic
+        HttpRequestDef.Builder<SwitchSlowlogDesensitizationRequest, SwitchSlowlogDesensitizationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    SwitchSlowlogDesensitizationRequest.class,
+                    SwitchSlowlogDesensitizationResponse.class)
+                .withName("SwitchSlowlogDesensitization")
+                .withUri("/v3/{project_id}/instances/{instance_id}/slowlog-desensitization")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchSlowlogDesensitizationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<SwitchSlowlogDesensitizationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwitchSlowlogDesensitizationRequestBody.class),
+            f -> f.withMarshaller(SwitchSlowlogDesensitizationRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1444,6 +2193,13 @@ public class GaussDBforNoSQLMeta {
             f -> f.withMarshaller(SwitchToMasterRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<SwitchToMasterDisasterRecoveryBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SwitchToMasterDisasterRecoveryBody.class),
+            f -> f.withMarshaller(SwitchToMasterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
 
@@ -1468,6 +2224,38 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SwitchToSlaveRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateClientNetworkRequest, UpdateClientNetworkResponse> updateClientNetwork =
+        genForupdateClientNetwork();
+
+    private static HttpRequestDef<UpdateClientNetworkRequest, UpdateClientNetworkResponse> genForupdateClientNetwork() {
+        // basic
+        HttpRequestDef.Builder<UpdateClientNetworkRequest, UpdateClientNetworkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateClientNetworkRequest.class, UpdateClientNetworkResponse.class)
+                .withName("UpdateClientNetwork")
+                .withUri("/v3/{project_id}/instances/{instance_id}/client-network")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClientNetworkRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpdateClientNetworkRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateClientNetworkRequestBody.class),
+            f -> f.withMarshaller(UpdateClientNetworkRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

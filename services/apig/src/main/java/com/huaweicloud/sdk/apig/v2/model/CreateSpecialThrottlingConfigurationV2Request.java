@@ -32,7 +32,7 @@ public class CreateSpecialThrottlingConfigurationV2Request {
     }
 
     /**
-     * 实例ID
+     * 实例ID，在API网关控制台的“实例信息”中获取。
      * @return instanceId
      */
     public String getInstanceId() {

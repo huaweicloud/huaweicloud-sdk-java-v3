@@ -9,23 +9,21 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * BatchMigrateCloudPhoneRequestBody
+ * 迁移云手机请求体。
  */
 public class BatchMigrateCloudPhoneRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migrate_infos")
 
-    private List<BatchMigrateCloudPhoneRequestBodyMigrateInfos> migrateInfos = null;
+    private List<MigrateInfo> migrateInfos = null;
 
-    public BatchMigrateCloudPhoneRequestBody withMigrateInfos(
-        List<BatchMigrateCloudPhoneRequestBodyMigrateInfos> migrateInfos) {
+    public BatchMigrateCloudPhoneRequestBody withMigrateInfos(List<MigrateInfo> migrateInfos) {
         this.migrateInfos = migrateInfos;
         return this;
     }
 
-    public BatchMigrateCloudPhoneRequestBody addMigrateInfosItem(
-        BatchMigrateCloudPhoneRequestBodyMigrateInfos migrateInfosItem) {
+    public BatchMigrateCloudPhoneRequestBody addMigrateInfosItem(MigrateInfo migrateInfosItem) {
         if (this.migrateInfos == null) {
             this.migrateInfos = new ArrayList<>();
         }
@@ -33,8 +31,7 @@ public class BatchMigrateCloudPhoneRequestBody {
         return this;
     }
 
-    public BatchMigrateCloudPhoneRequestBody withMigrateInfos(
-        Consumer<List<BatchMigrateCloudPhoneRequestBodyMigrateInfos>> migrateInfosSetter) {
+    public BatchMigrateCloudPhoneRequestBody withMigrateInfos(Consumer<List<MigrateInfo>> migrateInfosSetter) {
         if (this.migrateInfos == null) {
             this.migrateInfos = new ArrayList<>();
         }
@@ -43,14 +40,14 @@ public class BatchMigrateCloudPhoneRequestBody {
     }
 
     /**
-     * 待迁移数据的云手机信息
+     * 待迁移数据的云手机信息。
      * @return migrateInfos
      */
-    public List<BatchMigrateCloudPhoneRequestBodyMigrateInfos> getMigrateInfos() {
+    public List<MigrateInfo> getMigrateInfos() {
         return migrateInfos;
     }
 
-    public void setMigrateInfos(List<BatchMigrateCloudPhoneRequestBodyMigrateInfos> migrateInfos) {
+    public void setMigrateInfos(List<MigrateInfo> migrateInfos) {
         this.migrateInfos = migrateInfos;
     }
 

@@ -24,8 +24,7 @@ public class ApigAsyncClient {
      *
      * 实例更新或绑定EIP
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddEipV2Request 请求对象
      * @return CompletableFuture<AddEipV2Response>
@@ -39,8 +38,7 @@ public class ApigAsyncClient {
      *
      * 实例更新或绑定EIP
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddEipV2Request 请求对象
      * @return AsyncInvoker<AddEipV2Request, AddEipV2Response>
@@ -54,8 +52,7 @@ public class ApigAsyncClient {
      *
      * 实例开启公网出口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddEngressEipV2Request 请求对象
      * @return CompletableFuture<AddEngressEipV2Response>
@@ -69,8 +66,7 @@ public class ApigAsyncClient {
      *
      * 实例开启公网出口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddEngressEipV2Request 请求对象
      * @return AsyncInvoker<AddEngressEipV2Request, AddEngressEipV2Response>
@@ -87,8 +83,7 @@ public class ApigAsyncClient {
      * 如果创建API时，“定义API请求”使用HTTPS请求协议，那么在独立域名中需要添加SSL证书。
      * 本章节主要介绍为特定域名绑定证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateCertificateV2Request 请求对象
      * @return CompletableFuture<AssociateCertificateV2Response>
@@ -104,8 +99,7 @@ public class ApigAsyncClient {
      * 如果创建API时，“定义API请求”使用HTTPS请求协议，那么在独立域名中需要添加SSL证书。
      * 本章节主要介绍为特定域名绑定证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateCertificateV2Request 请求对象
      * @return AsyncInvoker<AssociateCertificateV2Request, AssociateCertificateV2Response>
@@ -122,8 +116,7 @@ public class ApigAsyncClient {
      * 用户自定义的域名，需要增加A记录才能生效，具体方法请参见《云解析服务用户指南》的“添加A类型记录集”章节。
      * 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateDomainV2Request 请求对象
      * @return CompletableFuture<AssociateDomainV2Response>
@@ -138,8 +131,7 @@ public class ApigAsyncClient {
      * 用户自定义的域名，需要增加A记录才能生效，具体方法请参见《云解析服务用户指南》的“添加A类型记录集”章节。
      * 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateDomainV2Request 请求对象
      * @return AsyncInvoker<AssociateDomainV2Request, AssociateDomainV2Response>
@@ -159,8 +151,7 @@ public class ApigAsyncClient {
      * 
      * 将指定的签名密钥绑定到一个或多个已发布的API上。同一个API发布到不同的环境可以绑定不同的签名密钥；一个API在发布到特定环境后只能绑定一个签名密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateSignatureKeyV2Request 请求对象
      * @return CompletableFuture<AssociateSignatureKeyV2Response>
@@ -179,8 +170,7 @@ public class ApigAsyncClient {
      * 
      * 将指定的签名密钥绑定到一个或多个已发布的API上。同一个API发布到不同的环境可以绑定不同的签名密钥；一个API在发布到特定环境后只能绑定一个签名密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response>
@@ -200,8 +190,7 @@ public class ApigAsyncClient {
      * - 修改插件后及时生效
      * - 相同类型的插件只能绑定一个，原来已经绑定的通类型插件，会直接覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AttachApiToPluginRequest 请求对象
      * @return CompletableFuture<AttachApiToPluginResponse>
@@ -219,8 +208,7 @@ public class ApigAsyncClient {
      * - 修改插件后及时生效
      * - 相同类型的插件只能绑定一个，原来已经绑定的通类型插件，会直接覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AttachApiToPluginRequest 请求对象
      * @return AsyncInvoker<AttachApiToPluginRequest, AttachApiToPluginResponse>
@@ -240,8 +228,7 @@ public class ApigAsyncClient {
      * - 修改插件后及时生效
      * - 相同类型的插件只能绑定一个，原来已经绑定的通类型插件，会直接覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AttachPluginToApiRequest 请求对象
      * @return CompletableFuture<AttachPluginToApiResponse>
@@ -259,8 +246,7 @@ public class ApigAsyncClient {
      * - 修改插件后及时生效
      * - 相同类型的插件只能绑定一个，原来已经绑定的通类型插件，会直接覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AttachPluginToApiRequest 请求对象
      * @return AsyncInvoker<AttachPluginToApiRequest, AttachPluginToApiResponse>
@@ -276,8 +262,7 @@ public class ApigAsyncClient {
      *
      * 创建自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCustomAuthorizerV2Request 请求对象
      * @return CompletableFuture<CreateCustomAuthorizerV2Response>
@@ -292,8 +277,7 @@ public class ApigAsyncClient {
      *
      * 创建自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCustomAuthorizerV2Request 请求对象
      * @return AsyncInvoker<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response>
@@ -313,8 +297,7 @@ public class ApigAsyncClient {
      * 
      * 为此，API网关提供多环境管理功能，使租户能够最大化的模拟实际场景，低成本的接入API网关。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentV2Request 请求对象
      * @return CompletableFuture<CreateEnvironmentV2Response>
@@ -332,8 +315,7 @@ public class ApigAsyncClient {
      * 
      * 为此，API网关提供多环境管理功能，使租户能够最大化的模拟实际场景，低成本的接入API网关。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentV2Request 请求对象
      * @return AsyncInvoker<CreateEnvironmentV2Request, CreateEnvironmentV2Response>
@@ -360,8 +342,7 @@ public class ApigAsyncClient {
      * &gt; 3. 设置了环境变量后，使用到该变量的API的调试功能将不可使用。
      * &gt; 4. 定义了环境变量后，使用到环境变量的地方应该以对称的#标识环境变量，当API发布到相应的环境后，会对环境变量的值进行替换，如：定义的API的URL为：https://#address#:8080，环境变量address在RELEASE环境上的值为：192.168.1.5，则API发布到RELEASE环境后的真实的URL为：https://192.168.1.5:8080。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentVariableV2Request 请求对象
      * @return CompletableFuture<CreateEnvironmentVariableV2Response>
@@ -387,8 +368,7 @@ public class ApigAsyncClient {
      * &gt; 3. 设置了环境变量后，使用到该变量的API的调试功能将不可使用。
      * &gt; 4. 定义了环境变量后，使用到环境变量的地方应该以对称的#标识环境变量，当API发布到相应的环境后，会对环境变量的值进行替换，如：定义的API的URL为：https://#address#:8080，环境变量address在RELEASE环境上的值为：192.168.1.5，则API发布到RELEASE环境后的真实的URL为：https://192.168.1.5:8080。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentVariableV2Request 请求对象
      * @return AsyncInvoker<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response>
@@ -430,8 +410,7 @@ public class ApigAsyncClient {
      * | real_ip_header_getter | 是否开启通过用户自定义的Header获取用户源IP地址。 |{\&quot;name\&quot;:\&quot;real_ip_header_getter\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;: \&quot;{\\\\\&quot;enable\\\\\&quot;: \\\\\&quot;on\\\\\&quot;,\\\\\&quot;header_getter\\\\\&quot;: \\\\\&quot;header:testIP\\\\\&quot;}\&quot;} | (1) enable &lt;br/&gt;(2) header_getter | (1) 是否开启 &lt;br/&gt;(2) 获取用户源IP地址的自定义Header | (1) off | (1) on/off |
      * | policy_cookie_param | 是否开启策略后端条件支持cookie类型。 |{\&quot;name\&quot;:\&quot;policy_cookie_param\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;: \&quot;on\&quot;} | - | - | off | on/off |
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFeatureV2Request 请求对象
      * @return CompletableFuture<CreateFeatureV2Response>
@@ -471,8 +450,7 @@ public class ApigAsyncClient {
      * | real_ip_header_getter | 是否开启通过用户自定义的Header获取用户源IP地址。 |{\&quot;name\&quot;:\&quot;real_ip_header_getter\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;: \&quot;{\\\\\&quot;enable\\\\\&quot;: \\\\\&quot;on\\\\\&quot;,\\\\\&quot;header_getter\\\\\&quot;: \\\\\&quot;header:testIP\\\\\&quot;}\&quot;} | (1) enable &lt;br/&gt;(2) header_getter | (1) 是否开启 &lt;br/&gt;(2) 获取用户源IP地址的自定义Header | (1) off | (1) on/off |
      * | policy_cookie_param | 是否开启策略后端条件支持cookie类型。 |{\&quot;name\&quot;:\&quot;policy_cookie_param\&quot;,\&quot;enable\&quot;:true,\&quot;config\&quot;: \&quot;on\&quot;} | - | - | off | on/off |
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFeatureV2Request 请求对象
      * @return AsyncInvoker<CreateFeatureV2Request, CreateFeatureV2Response>
@@ -488,8 +466,7 @@ public class ApigAsyncClient {
      *
      * 新增分组下自定义响应
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateGatewayResponseV2Request 请求对象
      * @return CompletableFuture<CreateGatewayResponseV2Response>
@@ -504,8 +481,7 @@ public class ApigAsyncClient {
      *
      * 新增分组下自定义响应
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateGatewayResponseV2Request 请求对象
      * @return AsyncInvoker<CreateGatewayResponseV2Request, CreateGatewayResponseV2Response>
@@ -521,8 +497,7 @@ public class ApigAsyncClient {
      *
      * 创建专享版实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceV2Request 请求对象
      * @return CompletableFuture<CreateInstanceV2Response>
@@ -536,8 +511,7 @@ public class ApigAsyncClient {
      *
      * 创建专享版实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceV2Request 请求对象
      * @return AsyncInvoker<CreateInstanceV2Request, CreateInstanceV2Response>
@@ -555,8 +529,7 @@ public class ApigAsyncClient {
      * - 插件不允许重名
      * - 插件创建后未绑定API前是无意义的，绑定API后，对绑定的API即时生效
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePluginRequest 请求对象
      * @return CompletableFuture<CreatePluginResponse>
@@ -572,8 +545,7 @@ public class ApigAsyncClient {
      * - 插件不允许重名
      * - 插件创建后未绑定API前是无意义的，绑定API后，对绑定的API即时生效
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePluginRequest 请求对象
      * @return AsyncInvoker<CreatePluginRequest, CreatePluginResponse>
@@ -588,8 +560,7 @@ public class ApigAsyncClient {
      *
      * 当API上线后，系统会默认给每个API提供一个流控策略，API提供者可以根据自身API的服务能力及负载情况变更这个流控策略。 流控策略即限制API在一定长度的时间内，能够允许被访问的最大次数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<CreateRequestThrottlingPolicyV2Response>
@@ -604,8 +575,7 @@ public class ApigAsyncClient {
      *
      * 当API上线后，系统会默认给每个API提供一个流控策略，API提供者可以根据自身API的服务能力及负载情况变更这个流控策略。 流控策略即限制API在一定长度的时间内，能够允许被访问的最大次数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response>
@@ -625,8 +595,7 @@ public class ApigAsyncClient {
      * 
      * 租户创建一个签名密钥，并将签名密钥与API进行绑定，则API网关在请求这个API时，就会使用绑定的签名密钥对请求参数进行数据加密，生成签名。当租户的后端服务收到请求时，可以校验这个签名，如果签名校验不通过，则该请求不是API网关发出的请求，租户可以拒绝这个请求，从而保证API的安全性，避免API被未知来源的请求攻击。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSignatureKeyV2Request 请求对象
      * @return CompletableFuture<CreateSignatureKeyV2Response>
@@ -645,8 +614,7 @@ public class ApigAsyncClient {
      * 
      * 租户创建一个签名密钥，并将签名密钥与API进行绑定，则API网关在请求这个API时，就会使用绑定的签名密钥对请求参数进行数据加密，生成签名。当租户的后端服务收到请求时，可以校验这个签名，如果签名校验不通过，则该请求不是API网关发出的请求，租户可以拒绝这个请求，从而保证API的安全性，避免API被未知来源的请求攻击。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response>
@@ -666,8 +634,7 @@ public class ApigAsyncClient {
      * 
      * 为流控策略添加一个特殊设置的对象，可以是APP，也可以是租户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSpecialThrottlingConfigurationV2Request 请求对象
      * @return CompletableFuture<CreateSpecialThrottlingConfigurationV2Response>
@@ -686,8 +653,7 @@ public class ApigAsyncClient {
      * 
      * 为流控策略添加一个特殊设置的对象，可以是APP，也可以是租户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSpecialThrottlingConfigurationV2Request 请求对象
      * @return AsyncInvoker<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response>
@@ -703,8 +669,7 @@ public class ApigAsyncClient {
      *
      * 删除自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCustomAuthorizerV2Request 请求对象
      * @return CompletableFuture<DeleteCustomAuthorizerV2Response>
@@ -719,8 +684,7 @@ public class ApigAsyncClient {
      *
      * 删除自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCustomAuthorizerV2Request 请求对象
      * @return AsyncInvoker<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response>
@@ -740,8 +704,7 @@ public class ApigAsyncClient {
      * 
      * 环境上存在已发布的API时，该环境不能被删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentV2Request 请求对象
      * @return CompletableFuture<DeleteEnvironmentV2Response>
@@ -759,8 +722,7 @@ public class ApigAsyncClient {
      * 
      * 环境上存在已发布的API时，该环境不能被删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentV2Request 请求对象
      * @return AsyncInvoker<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response>
@@ -776,8 +738,7 @@ public class ApigAsyncClient {
      *
      * 删除指定的环境变量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentVariableV2Request 请求对象
      * @return CompletableFuture<DeleteEnvironmentVariableV2Response>
@@ -792,8 +753,7 @@ public class ApigAsyncClient {
      *
      * 删除指定的环境变量。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentVariableV2Request 请求对象
      * @return AsyncInvoker<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response>
@@ -809,8 +769,7 @@ public class ApigAsyncClient {
      *
      * 删除分组指定错误类型的自定义响应配置，还原为使用默认值的配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteGatewayResponseTypeV2Request 请求对象
      * @return CompletableFuture<DeleteGatewayResponseTypeV2Response>
@@ -825,8 +784,7 @@ public class ApigAsyncClient {
      *
      * 删除分组指定错误类型的自定义响应配置，还原为使用默认值的配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteGatewayResponseTypeV2Request 请求对象
      * @return AsyncInvoker<DeleteGatewayResponseTypeV2Request, DeleteGatewayResponseTypeV2Response>
@@ -842,8 +800,7 @@ public class ApigAsyncClient {
      *
      * 删除分组自定义响应
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteGatewayResponseV2Request 请求对象
      * @return CompletableFuture<DeleteGatewayResponseV2Response>
@@ -858,8 +815,7 @@ public class ApigAsyncClient {
      *
      * 删除分组自定义响应
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteGatewayResponseV2Request 请求对象
      * @return AsyncInvoker<DeleteGatewayResponseV2Request, DeleteGatewayResponseV2Response>
@@ -875,8 +831,7 @@ public class ApigAsyncClient {
      *
      * 删除专享版实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstancesV2Request 请求对象
      * @return CompletableFuture<DeleteInstancesV2Response>
@@ -890,8 +845,7 @@ public class ApigAsyncClient {
      *
      * 删除专享版实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstancesV2Request 请求对象
      * @return AsyncInvoker<DeleteInstancesV2Request, DeleteInstancesV2Response>
@@ -908,8 +862,7 @@ public class ApigAsyncClient {
      * 删除插件。
      * - 必须先解除API和插件的绑定关系，否则删除报错
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePluginRequest 请求对象
      * @return CompletableFuture<DeletePluginResponse>
@@ -924,8 +877,7 @@ public class ApigAsyncClient {
      * 删除插件。
      * - 必须先解除API和插件的绑定关系，否则删除报错
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePluginRequest 请求对象
      * @return AsyncInvoker<DeletePluginRequest, DeletePluginResponse>
@@ -940,8 +892,7 @@ public class ApigAsyncClient {
      *
      * 删除指定的流控策略，以及该流控策略与API的所有绑定关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<DeleteRequestThrottlingPolicyV2Response>
@@ -956,8 +907,7 @@ public class ApigAsyncClient {
      *
      * 删除指定的流控策略，以及该流控策略与API的所有绑定关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response>
@@ -973,8 +923,7 @@ public class ApigAsyncClient {
      *
      * 删除指定的签名密钥，删除签名密钥时，其配置的绑定关系会一并删除，相应的签名密钥会失效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSignatureKeyV2Request 请求对象
      * @return CompletableFuture<DeleteSignatureKeyV2Response>
@@ -989,8 +938,7 @@ public class ApigAsyncClient {
      *
      * 删除指定的签名密钥，删除签名密钥时，其配置的绑定关系会一并删除，相应的签名密钥会失效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response>
@@ -1006,8 +954,7 @@ public class ApigAsyncClient {
      *
      * 删除某个流控策略的某个特殊配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSpecialThrottlingConfigurationV2Request 请求对象
      * @return CompletableFuture<DeleteSpecialThrottlingConfigurationV2Response>
@@ -1022,8 +969,7 @@ public class ApigAsyncClient {
      *
      * 删除某个流控策略的某个特殊配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSpecialThrottlingConfigurationV2Request 请求对象
      * @return AsyncInvoker<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response>
@@ -1040,8 +986,7 @@ public class ApigAsyncClient {
      * 解除绑定在插件上的API
      * - 解绑及时生效
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DetachApiFromPluginRequest 请求对象
      * @return CompletableFuture<DetachApiFromPluginResponse>
@@ -1056,8 +1001,7 @@ public class ApigAsyncClient {
      * 解除绑定在插件上的API
      * - 解绑及时生效
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DetachApiFromPluginRequest 请求对象
      * @return AsyncInvoker<DetachApiFromPluginRequest, DetachApiFromPluginResponse>
@@ -1074,8 +1018,7 @@ public class ApigAsyncClient {
      * 解除绑定在API上的插件
      * - 解绑及时生效
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DetachPluginFromApiRequest 请求对象
      * @return CompletableFuture<DetachPluginFromApiResponse>
@@ -1090,8 +1033,7 @@ public class ApigAsyncClient {
      * 解除绑定在API上的插件
      * - 解绑及时生效
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DetachPluginFromApiRequest 请求对象
      * @return AsyncInvoker<DetachPluginFromApiRequest, DetachPluginFromApiResponse>
@@ -1107,8 +1049,7 @@ public class ApigAsyncClient {
      *
      * 如果域名证书不再需要或者已过期，则可以删除证书内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateCertificateV2Request 请求对象
      * @return CompletableFuture<DisassociateCertificateV2Response>
@@ -1123,8 +1064,7 @@ public class ApigAsyncClient {
      *
      * 如果域名证书不再需要或者已过期，则可以删除证书内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateCertificateV2Request 请求对象
      * @return AsyncInvoker<DisassociateCertificateV2Request, DisassociateCertificateV2Response>
@@ -1140,8 +1080,7 @@ public class ApigAsyncClient {
      *
      * 如果API分组不再需要绑定某个自定义域名，则可以为此API分组解绑此域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateDomainV2Request 请求对象
      * @return CompletableFuture<DisassociateDomainV2Response>
@@ -1156,8 +1095,7 @@ public class ApigAsyncClient {
      *
      * 如果API分组不再需要绑定某个自定义域名，则可以为此API分组解绑此域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateDomainV2Request 请求对象
      * @return AsyncInvoker<DisassociateDomainV2Request, DisassociateDomainV2Response>
@@ -1173,8 +1111,7 @@ public class ApigAsyncClient {
      *
      * 解除API与签名密钥的绑定关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateSignatureKeyV2Request 请求对象
      * @return CompletableFuture<DisassociateSignatureKeyV2Response>
@@ -1189,8 +1126,7 @@ public class ApigAsyncClient {
      *
      * 解除API与签名密钥的绑定关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response>
@@ -1206,8 +1142,7 @@ public class ApigAsyncClient {
      *
      * 导入微服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportMicroserviceRequest 请求对象
      * @return CompletableFuture<ImportMicroserviceResponse>
@@ -1221,8 +1156,7 @@ public class ApigAsyncClient {
      *
      * 导入微服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportMicroserviceRequest 请求对象
      * @return AsyncInvoker<ImportMicroserviceRequest, ImportMicroserviceResponse>
@@ -1240,8 +1174,7 @@ public class ApigAsyncClient {
      * - 支持分页返回
      * - 支持插件名称模糊查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiAttachablePluginsRequest 请求对象
      * @return CompletableFuture<ListApiAttachablePluginsResponse>
@@ -1258,8 +1191,7 @@ public class ApigAsyncClient {
      * - 支持分页返回
      * - 支持插件名称模糊查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiAttachablePluginsRequest 请求对象
      * @return AsyncInvoker<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse>
@@ -1278,8 +1210,7 @@ public class ApigAsyncClient {
      * - 支持分页返回
      * - 支持插件名称模糊查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiAttachedPluginsRequest 请求对象
      * @return CompletableFuture<ListApiAttachedPluginsResponse>
@@ -1297,8 +1228,7 @@ public class ApigAsyncClient {
      * - 支持分页返回
      * - 支持插件名称模糊查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiAttachedPluginsRequest 请求对象
      * @return AsyncInvoker<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse>
@@ -1314,8 +1244,7 @@ public class ApigAsyncClient {
      *
      * 查询租户名下的API分组概况。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiGroupsQuantitiesV2Request 请求对象
      * @return CompletableFuture<ListApiGroupsQuantitiesV2Response>
@@ -1330,8 +1259,7 @@ public class ApigAsyncClient {
      *
      * 查询租户名下的API分组概况。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiGroupsQuantitiesV2Request 请求对象
      * @return AsyncInvoker<ListApiGroupsQuantitiesV2Request, ListApiGroupsQuantitiesV2Response>
@@ -1347,8 +1275,7 @@ public class ApigAsyncClient {
      *
      * 查询租户名下的API概况：已发布到RELEASE环境的API个数，未发布到RELEASE环境的API个数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiQuantitiesV2Request 请求对象
      * @return CompletableFuture<ListApiQuantitiesV2Response>
@@ -1362,8 +1289,7 @@ public class ApigAsyncClient {
      *
      * 查询租户名下的API概况：已发布到RELEASE环境的API个数，未发布到RELEASE环境的API个数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiQuantitiesV2Request 请求对象
      * @return AsyncInvoker<ListApiQuantitiesV2Request, ListApiQuantitiesV2Response>
@@ -1379,8 +1305,7 @@ public class ApigAsyncClient {
      *
      * 查询某个签名密钥上已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToSignatureKeyV2Request 请求对象
      * @return CompletableFuture<ListApisBindedToSignatureKeyV2Response>
@@ -1395,8 +1320,7 @@ public class ApigAsyncClient {
      *
      * 查询某个签名密钥上已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response>
@@ -1412,8 +1336,7 @@ public class ApigAsyncClient {
      *
      * 查询所有未绑定到该签名密钥上的API列表。需要API已经发布，未发布的API不予展示。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisNotBoundWithSignatureKeyV2Request 请求对象
      * @return CompletableFuture<ListApisNotBoundWithSignatureKeyV2Response>
@@ -1428,8 +1351,7 @@ public class ApigAsyncClient {
      *
      * 查询所有未绑定到该签名密钥上的API列表。需要API已经发布，未发布的API不予展示。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisNotBoundWithSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response>
@@ -1445,8 +1367,7 @@ public class ApigAsyncClient {
      *
      * 查询租户名下的APP概况：已进行API访问授权的APP个数，未进行API访问授权的APP个数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppQuantitiesV2Request 请求对象
      * @return CompletableFuture<ListAppQuantitiesV2Response>
@@ -1460,8 +1381,7 @@ public class ApigAsyncClient {
      *
      * 查询租户名下的APP概况：已进行API访问授权的APP个数，未进行API访问授权的APP个数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppQuantitiesV2Request 请求对象
      * @return AsyncInvoker<ListAppQuantitiesV2Request, ListAppQuantitiesV2Response>
@@ -1477,8 +1397,7 @@ public class ApigAsyncClient {
      *
      * 查看可用区信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailableZonesV2Request 请求对象
      * @return CompletableFuture<ListAvailableZonesV2Response>
@@ -1493,8 +1412,7 @@ public class ApigAsyncClient {
      *
      * 查看可用区信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailableZonesV2Request 请求对象
      * @return AsyncInvoker<ListAvailableZonesV2Request, ListAvailableZonesV2Response>
@@ -1510,8 +1428,7 @@ public class ApigAsyncClient {
      *
      * 查询自定义认证列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCustomAuthorizersV2Request 请求对象
      * @return CompletableFuture<ListCustomAuthorizersV2Response>
@@ -1526,8 +1443,7 @@ public class ApigAsyncClient {
      *
      * 查询自定义认证列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCustomAuthorizersV2Request 请求对象
      * @return AsyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response>
@@ -1543,8 +1459,7 @@ public class ApigAsyncClient {
      *
      * 查询分组下的所有环境变量的列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentVariablesV2Request 请求对象
      * @return CompletableFuture<ListEnvironmentVariablesV2Response>
@@ -1559,8 +1474,7 @@ public class ApigAsyncClient {
      *
      * 查询分组下的所有环境变量的列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentVariablesV2Request 请求对象
      * @return AsyncInvoker<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response>
@@ -1576,8 +1490,7 @@ public class ApigAsyncClient {
      *
      * 查询符合条件的环境列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentsV2Request 请求对象
      * @return CompletableFuture<ListEnvironmentsV2Response>
@@ -1591,8 +1504,7 @@ public class ApigAsyncClient {
      *
      * 查询符合条件的环境列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentsV2Request 请求对象
      * @return AsyncInvoker<ListEnvironmentsV2Request, ListEnvironmentsV2Response>
@@ -1653,8 +1565,7 @@ public class ApigAsyncClient {
      * sm_cipher_type | 加密本地敏感数据时，是否支持应用商密加密算法。 | 否 |
      * rate_limit_algorithm | 是否支持切换流控算法。 | 否 |
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFeaturesV2Request 请求对象
      * @return CompletableFuture<ListFeaturesV2Response>
@@ -1713,8 +1624,7 @@ public class ApigAsyncClient {
      * sm_cipher_type | 加密本地敏感数据时，是否支持应用商密加密算法。 | 否 |
      * rate_limit_algorithm | 是否支持切换流控算法。 | 否 |
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFeaturesV2Request 请求对象
      * @return AsyncInvoker<ListFeaturesV2Request, ListFeaturesV2Response>
@@ -1730,8 +1640,7 @@ public class ApigAsyncClient {
      *
      * 查询分组自定义响应列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGatewayResponsesV2Request 请求对象
      * @return CompletableFuture<ListGatewayResponsesV2Response>
@@ -1746,8 +1655,7 @@ public class ApigAsyncClient {
      *
      * 查询分组自定义响应列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGatewayResponsesV2Request 请求对象
      * @return AsyncInvoker<ListGatewayResponsesV2Request, ListGatewayResponsesV2Response>
@@ -1763,8 +1671,7 @@ public class ApigAsyncClient {
      *
      * 查询租户实例配置列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceConfigsV2Request 请求对象
      * @return CompletableFuture<ListInstanceConfigsV2Response>
@@ -1779,8 +1686,7 @@ public class ApigAsyncClient {
      *
      * 查询租户实例配置列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceConfigsV2Request 请求对象
      * @return AsyncInvoker<ListInstanceConfigsV2Request, ListInstanceConfigsV2Response>
@@ -1796,8 +1702,7 @@ public class ApigAsyncClient {
      *
      * 查询专享版实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesV2Request 请求对象
      * @return CompletableFuture<ListInstancesV2Response>
@@ -1811,8 +1716,7 @@ public class ApigAsyncClient {
      *
      * 查询专享版实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesV2Request 请求对象
      * @return AsyncInvoker<ListInstancesV2Request, ListInstancesV2Response>
@@ -1829,8 +1733,7 @@ public class ApigAsyncClient {
      * 根据API的id和最近的一段时间查询API被调用的次数，统计周期为1分钟。查询范围一小时以内，一分钟一个样本，其样本值为一分钟内的累计值。
      * &gt; 为了安全起见，在服务器上使用curl命令调用接口查询信息后，需要清理历史操作记录，包括但不限于“~/.bash_history”、“/var/log/messages”（如有）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLatelyApiStatisticsV2Request 请求对象
      * @return CompletableFuture<ListLatelyApiStatisticsV2Response>
@@ -1846,8 +1749,7 @@ public class ApigAsyncClient {
      * 根据API的id和最近的一段时间查询API被调用的次数，统计周期为1分钟。查询范围一小时以内，一分钟一个样本，其样本值为一分钟内的累计值。
      * &gt; 为了安全起见，在服务器上使用curl命令调用接口查询信息后，需要清理历史操作记录，包括但不限于“~/.bash_history”、“/var/log/messages”（如有）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLatelyApiStatisticsV2Request 请求对象
      * @return AsyncInvoker<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response>
@@ -1864,8 +1766,7 @@ public class ApigAsyncClient {
      * 根据API分组的编号查询该分组下所有API被调用的总次数，统计周期为1分钟。查询范围一小时以内，一分钟一个样本，其样本值为一分钟内的累计值。
      * &gt; 为了安全起见，在服务器上使用curl命令调用接口查询信息后，需要清理历史操作记录，包括但不限于“~/.bash_history”、“/var/log/messages”（如有）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLatelyGroupStatisticsV2Request 请求对象
      * @return CompletableFuture<ListLatelyGroupStatisticsV2Response>
@@ -1881,8 +1782,7 @@ public class ApigAsyncClient {
      * 根据API分组的编号查询该分组下所有API被调用的总次数，统计周期为1分钟。查询范围一小时以内，一分钟一个样本，其样本值为一分钟内的累计值。
      * &gt; 为了安全起见，在服务器上使用curl命令调用接口查询信息后，需要清理历史操作记录，包括但不限于“~/.bash_history”、“/var/log/messages”（如有）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLatelyGroupStatisticsV2Request 请求对象
      * @return AsyncInvoker<ListLatelyGroupStatisticsV2Request, ListLatelyGroupStatisticsV2Response>
@@ -1898,8 +1798,7 @@ public class ApigAsyncClient {
      *
      * 查询指定时间范围指定指标的指定粒度的监控数据，可以通过参数指定需要查询的数据维度。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMetricDataRequest 请求对象
      * @return CompletableFuture<ListMetricDataResponse>
@@ -1913,8 +1812,7 @@ public class ApigAsyncClient {
      *
      * 查询指定时间范围指定指标的指定粒度的监控数据，可以通过参数指定需要查询的数据维度。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMetricDataRequest 请求对象
      * @return AsyncInvoker<ListMetricDataRequest, ListMetricDataResponse>
@@ -1933,8 +1831,7 @@ public class ApigAsyncClient {
      * - 支持API名称模糊查询
      * - 支持已绑定其他插件的API查询返回
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPluginAttachableApisRequest 请求对象
      * @return CompletableFuture<ListPluginAttachableApisResponse>
@@ -1952,8 +1849,7 @@ public class ApigAsyncClient {
      * - 支持API名称模糊查询
      * - 支持已绑定其他插件的API查询返回
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPluginAttachableApisRequest 请求对象
      * @return AsyncInvoker<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse>
@@ -1973,8 +1869,7 @@ public class ApigAsyncClient {
      * - 支持API名称模糊查询
      * - 绑定关系列表中返回的API在对应的环境中可能已经下线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPluginAttachedApisRequest 请求对象
      * @return CompletableFuture<ListPluginAttachedApisResponse>
@@ -1993,8 +1888,7 @@ public class ApigAsyncClient {
      * - 支持API名称模糊查询
      * - 绑定关系列表中返回的API在对应的环境中可能已经下线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPluginAttachedApisRequest 请求对象
      * @return AsyncInvoker<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse>
@@ -2015,8 +1909,7 @@ public class ApigAsyncClient {
      * - 支持根据插件编码查询
      * - 支持根据名称模糊查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPluginsRequest 请求对象
      * @return CompletableFuture<ListPluginsResponse>
@@ -2035,8 +1928,7 @@ public class ApigAsyncClient {
      * - 支持根据插件编码查询
      * - 支持根据名称模糊查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPluginsRequest 请求对象
      * @return AsyncInvoker<ListPluginsRequest, ListPluginsResponse>
@@ -2050,8 +1942,7 @@ public class ApigAsyncClient {
      *
      * 查询某个实例的租户配置列表，用户可以通过此接口查看各类型资源配置及使用情况。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectCofigsV2Request 请求对象
      * @return CompletableFuture<ListProjectCofigsV2Response>
@@ -2065,8 +1956,7 @@ public class ApigAsyncClient {
      *
      * 查询某个实例的租户配置列表，用户可以通过此接口查看各类型资源配置及使用情况。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectCofigsV2Request 请求对象
      * @return AsyncInvoker<ListProjectCofigsV2Request, ListProjectCofigsV2Response>
@@ -2082,8 +1972,7 @@ public class ApigAsyncClient {
      *
      * 查询所有流控策略的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<ListRequestThrottlingPolicyV2Response>
@@ -2098,8 +1987,7 @@ public class ApigAsyncClient {
      *
      * 查询所有流控策略的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response>
@@ -2115,8 +2003,7 @@ public class ApigAsyncClient {
      *
      * 查询某个API绑定的签名密钥列表。每个API在每个环境上应该最多只会绑定一个签名密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSignatureKeysBindedToApiV2Request 请求对象
      * @return CompletableFuture<ListSignatureKeysBindedToApiV2Response>
@@ -2131,8 +2018,7 @@ public class ApigAsyncClient {
      *
      * 查询某个API绑定的签名密钥列表。每个API在每个环境上应该最多只会绑定一个签名密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSignatureKeysBindedToApiV2Request 请求对象
      * @return AsyncInvoker<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response>
@@ -2148,8 +2034,7 @@ public class ApigAsyncClient {
      *
      * 查询所有签名密钥的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSignatureKeysV2Request 请求对象
      * @return CompletableFuture<ListSignatureKeysV2Response>
@@ -2163,8 +2048,7 @@ public class ApigAsyncClient {
      *
      * 查询所有签名密钥的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSignatureKeysV2Request 请求对象
      * @return AsyncInvoker<ListSignatureKeysV2Request, ListSignatureKeysV2Response>
@@ -2180,8 +2064,7 @@ public class ApigAsyncClient {
      *
      * 查看给流控策略设置的特殊配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSpecialThrottlingConfigurationsV2Request 请求对象
      * @return CompletableFuture<ListSpecialThrottlingConfigurationsV2Response>
@@ -2196,8 +2079,7 @@ public class ApigAsyncClient {
      *
      * 查看给流控策略设置的特殊配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSpecialThrottlingConfigurationsV2Request 请求对象
      * @return AsyncInvoker<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response>
@@ -2213,8 +2095,7 @@ public class ApigAsyncClient {
      *
      * 查询标签列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsV2Request 请求对象
      * @return CompletableFuture<ListTagsV2Response>
@@ -2228,8 +2109,7 @@ public class ApigAsyncClient {
      *
      * 查询标签列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsV2Request 请求对象
      * @return AsyncInvoker<ListTagsV2Request, ListTagsV2Response>
@@ -2243,8 +2123,7 @@ public class ApigAsyncClient {
      *
      * 实例解绑EIP
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveEipV2Request 请求对象
      * @return CompletableFuture<RemoveEipV2Response>
@@ -2258,8 +2137,7 @@ public class ApigAsyncClient {
      *
      * 实例解绑EIP
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveEipV2Request 请求对象
      * @return AsyncInvoker<RemoveEipV2Request, RemoveEipV2Response>
@@ -2273,8 +2151,7 @@ public class ApigAsyncClient {
      *
      * 关闭实例公网出口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveEngressEipV2Request 请求对象
      * @return CompletableFuture<RemoveEngressEipV2Response>
@@ -2288,8 +2165,7 @@ public class ApigAsyncClient {
      *
      * 关闭实例公网出口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveEngressEipV2Request 请求对象
      * @return AsyncInvoker<RemoveEngressEipV2Request, RemoveEngressEipV2Response>
@@ -2305,8 +2181,7 @@ public class ApigAsyncClient {
      *
      * 查看自定义认证详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfCustomAuthorizersV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfCustomAuthorizersV2Response>
@@ -2321,8 +2196,7 @@ public class ApigAsyncClient {
      *
      * 查看自定义认证详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfCustomAuthorizersV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response>
@@ -2338,8 +2212,7 @@ public class ApigAsyncClient {
      *
      * 查看域名下绑定的证书详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfDomainNameCertificateV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfDomainNameCertificateV2Response>
@@ -2354,8 +2227,7 @@ public class ApigAsyncClient {
      *
      * 查看域名下绑定的证书详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfDomainNameCertificateV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response>
@@ -2371,8 +2243,7 @@ public class ApigAsyncClient {
      *
      * 查看指定的环境变量的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfEnvironmentVariableV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfEnvironmentVariableV2Response>
@@ -2387,8 +2258,7 @@ public class ApigAsyncClient {
      *
      * 查看指定的环境变量的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfEnvironmentVariableV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response>
@@ -2404,8 +2274,7 @@ public class ApigAsyncClient {
      *
      * 查看分组下指定错误类型的自定义响应
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfGatewayResponseTypeV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfGatewayResponseTypeV2Response>
@@ -2420,8 +2289,7 @@ public class ApigAsyncClient {
      *
      * 查看分组下指定错误类型的自定义响应
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfGatewayResponseTypeV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfGatewayResponseTypeV2Request, ShowDetailsOfGatewayResponseTypeV2Response>
@@ -2437,8 +2305,7 @@ public class ApigAsyncClient {
      *
      * 查询分组自定义响应详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfGatewayResponseV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfGatewayResponseV2Response>
@@ -2453,8 +2320,7 @@ public class ApigAsyncClient {
      *
      * 查询分组自定义响应详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfGatewayResponseV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfGatewayResponseV2Request, ShowDetailsOfGatewayResponseV2Response>
@@ -2470,8 +2336,7 @@ public class ApigAsyncClient {
      *
      * 查看专享版实例创建进度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfInstanceProgressV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfInstanceProgressV2Response>
@@ -2486,8 +2351,7 @@ public class ApigAsyncClient {
      *
      * 查看专享版实例创建进度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfInstanceProgressV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfInstanceProgressV2Request, ShowDetailsOfInstanceProgressV2Response>
@@ -2503,8 +2367,7 @@ public class ApigAsyncClient {
      *
      * 查看专享版实例详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfInstanceV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfInstanceV2Response>
@@ -2519,8 +2382,7 @@ public class ApigAsyncClient {
      *
      * 查看专享版实例详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfInstanceV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response>
@@ -2536,8 +2398,7 @@ public class ApigAsyncClient {
      *
      * 查看指定流控策略的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfRequestThrottlingPolicyV2Response>
@@ -2552,8 +2413,7 @@ public class ApigAsyncClient {
      *
      * 查看指定流控策略的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response>
@@ -2569,8 +2429,7 @@ public class ApigAsyncClient {
      *
      * 查询插件详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPluginRequest 请求对象
      * @return CompletableFuture<ShowPluginResponse>
@@ -2584,8 +2443,7 @@ public class ApigAsyncClient {
      *
      * 查询插件详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPluginRequest 请求对象
      * @return AsyncInvoker<ShowPluginRequest, ShowPluginResponse>
@@ -2599,8 +2457,7 @@ public class ApigAsyncClient {
      *
      * 修改自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCustomAuthorizerV2Request 请求对象
      * @return CompletableFuture<UpdateCustomAuthorizerV2Response>
@@ -2615,8 +2472,7 @@ public class ApigAsyncClient {
      *
      * 修改自定义认证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCustomAuthorizerV2Request 请求对象
      * @return AsyncInvoker<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response>
@@ -2632,8 +2488,7 @@ public class ApigAsyncClient {
      *
      * 修改绑定的域名所对应的配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainV2Request 请求对象
      * @return CompletableFuture<UpdateDomainV2Response>
@@ -2647,8 +2502,7 @@ public class ApigAsyncClient {
      *
      * 修改绑定的域名所对应的配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainV2Request 请求对象
      * @return AsyncInvoker<UpdateDomainV2Request, UpdateDomainV2Response>
@@ -2664,8 +2518,7 @@ public class ApigAsyncClient {
      *
      * 更新实例出公网带宽
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEngressEipV2Request 请求对象
      * @return CompletableFuture<UpdateEngressEipV2Response>
@@ -2679,8 +2532,7 @@ public class ApigAsyncClient {
      *
      * 更新实例出公网带宽
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEngressEipV2Request 请求对象
      * @return AsyncInvoker<UpdateEngressEipV2Request, UpdateEngressEipV2Response>
@@ -2696,8 +2548,7 @@ public class ApigAsyncClient {
      *
      * 修改指定环境的信息。其中可修改的属性为：name、remark，其它属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEnvironmentV2Request 请求对象
      * @return CompletableFuture<UpdateEnvironmentV2Response>
@@ -2711,8 +2562,7 @@ public class ApigAsyncClient {
      *
      * 修改指定环境的信息。其中可修改的属性为：name、remark，其它属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEnvironmentV2Request 请求对象
      * @return AsyncInvoker<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response>
@@ -2728,8 +2578,7 @@ public class ApigAsyncClient {
      *
      * 修改分组下指定错误类型的自定义响应。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateGatewayResponseTypeV2Request 请求对象
      * @return CompletableFuture<UpdateGatewayResponseTypeV2Response>
@@ -2744,8 +2593,7 @@ public class ApigAsyncClient {
      *
      * 修改分组下指定错误类型的自定义响应。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateGatewayResponseTypeV2Request 请求对象
      * @return AsyncInvoker<UpdateGatewayResponseTypeV2Request, UpdateGatewayResponseTypeV2Response>
@@ -2761,8 +2609,7 @@ public class ApigAsyncClient {
      *
      * 修改分组自定义响应
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateGatewayResponseV2Request 请求对象
      * @return CompletableFuture<UpdateGatewayResponseV2Response>
@@ -2777,8 +2624,7 @@ public class ApigAsyncClient {
      *
      * 修改分组自定义响应
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateGatewayResponseV2Request 请求对象
      * @return AsyncInvoker<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response>
@@ -2794,8 +2640,7 @@ public class ApigAsyncClient {
      *
      * 更新专享版实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceV2Request 请求对象
      * @return CompletableFuture<UpdateInstanceV2Response>
@@ -2809,8 +2654,7 @@ public class ApigAsyncClient {
      *
      * 更新专享版实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceV2Request 请求对象
      * @return AsyncInvoker<UpdateInstanceV2Request, UpdateInstanceV2Response>
@@ -2828,8 +2672,7 @@ public class ApigAsyncClient {
      * - 插件不允许重名
      * - 插件不支持修改类型和可见范围
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePluginRequest 请求对象
      * @return CompletableFuture<UpdatePluginResponse>
@@ -2845,8 +2688,7 @@ public class ApigAsyncClient {
      * - 插件不允许重名
      * - 插件不支持修改类型和可见范围
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePluginRequest 请求对象
      * @return AsyncInvoker<UpdatePluginRequest, UpdatePluginResponse>
@@ -2861,8 +2703,7 @@ public class ApigAsyncClient {
      *
      * 修改指定流控策略的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<UpdateRequestThrottlingPolicyV2Response>
@@ -2877,8 +2718,7 @@ public class ApigAsyncClient {
      *
      * 修改指定流控策略的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response>
@@ -2894,8 +2734,7 @@ public class ApigAsyncClient {
      *
      * 修改指定签名密钥的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSignatureKeyV2Request 请求对象
      * @return CompletableFuture<UpdateSignatureKeyV2Response>
@@ -2910,8 +2749,7 @@ public class ApigAsyncClient {
      *
      * 修改指定签名密钥的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response>
@@ -2927,8 +2765,7 @@ public class ApigAsyncClient {
      *
      * 修改某个流控策略下的某个特殊设置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSpecialThrottlingConfigurationV2Request 请求对象
      * @return CompletableFuture<UpdateSpecialThrottlingConfigurationV2Response>
@@ -2943,8 +2780,7 @@ public class ApigAsyncClient {
      *
      * 修改某个流控策略下的某个特殊设置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSpecialThrottlingConfigurationV2Request 请求对象
      * @return AsyncInvoker<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response>
@@ -2962,8 +2798,7 @@ public class ApigAsyncClient {
      * 
      * 删除ACL策略时，如果存在ACL策略与API绑定关系，则无法删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteAclV2Request 请求对象
      * @return CompletableFuture<BatchDeleteAclV2Response>
@@ -2979,8 +2814,7 @@ public class ApigAsyncClient {
      * 
      * 删除ACL策略时，如果存在ACL策略与API绑定关系，则无法删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteAclV2Request 请求对象
      * @return AsyncInvoker<BatchDeleteAclV2Request, BatchDeleteAclV2Response>
@@ -2996,8 +2830,7 @@ public class ApigAsyncClient {
      *
      * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAclStrategyV2Request 请求对象
      * @return CompletableFuture<CreateAclStrategyV2Response>
@@ -3011,8 +2844,7 @@ public class ApigAsyncClient {
      *
      * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAclStrategyV2Request 请求对象
      * @return AsyncInvoker<CreateAclStrategyV2Request, CreateAclStrategyV2Response>
@@ -3028,8 +2860,7 @@ public class ApigAsyncClient {
      *
      * 删除指定的ACL策略， 如果存在api与该ACL策略的绑定关系，则无法删除
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAclV2Request 请求对象
      * @return CompletableFuture<DeleteAclV2Response>
@@ -3043,8 +2874,7 @@ public class ApigAsyncClient {
      *
      * 删除指定的ACL策略， 如果存在api与该ACL策略的绑定关系，则无法删除
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAclV2Request 请求对象
      * @return AsyncInvoker<DeleteAclV2Request, DeleteAclV2Response>
@@ -3058,8 +2888,7 @@ public class ApigAsyncClient {
      *
      * 查询所有的ACL策略列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAclStrategiesV2Request 请求对象
      * @return CompletableFuture<ListAclStrategiesV2Response>
@@ -3073,8 +2902,7 @@ public class ApigAsyncClient {
      *
      * 查询所有的ACL策略列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAclStrategiesV2Request 请求对象
      * @return AsyncInvoker<ListAclStrategiesV2Request, ListAclStrategiesV2Response>
@@ -3090,8 +2918,7 @@ public class ApigAsyncClient {
      *
      * 查询指定ACL策略的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAclPolicyV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfAclPolicyV2Response>
@@ -3106,8 +2933,7 @@ public class ApigAsyncClient {
      *
      * 查询指定ACL策略的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAclPolicyV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response>
@@ -3123,8 +2949,7 @@ public class ApigAsyncClient {
      *
      * 修改指定的ACL策略，其中可修改的属性为：acl_name、acl_type、acl_value，其它属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAclStrategyV2Request 请求对象
      * @return CompletableFuture<UpdateAclStrategyV2Response>
@@ -3138,8 +2963,7 @@ public class ApigAsyncClient {
      *
      * 修改指定的ACL策略，其中可修改的属性为：acl_name、acl_type、acl_value，其它属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAclStrategyV2Request 请求对象
      * @return AsyncInvoker<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response>
@@ -3159,8 +2983,7 @@ public class ApigAsyncClient {
      * 
      * 为指定的API绑定流控策略，绑定时，需要指定在哪个环境上生效。同一个API发布到不同的环境可以绑定不同的流控策略；一个API在发布到特定环境后只能绑定一个默认的流控策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<AssociateRequestThrottlingPolicyV2Response>
@@ -3179,8 +3002,7 @@ public class ApigAsyncClient {
      * 
      * 为指定的API绑定流控策略，绑定时，需要指定在哪个环境上生效。同一个API发布到不同的环境可以绑定不同的流控策略；一个API在发布到特定环境后只能绑定一个默认的流控策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response>
@@ -3196,8 +3018,7 @@ public class ApigAsyncClient {
      *
      * 批量解除API与流控策略的绑定关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDisassociateThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<BatchDisassociateThrottlingPolicyV2Response>
@@ -3212,8 +3033,7 @@ public class ApigAsyncClient {
      *
      * 批量解除API与流控策略的绑定关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDisassociateThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response>
@@ -3229,8 +3049,7 @@ public class ApigAsyncClient {
      *
      * 将多个API发布到一个指定的环境，或将多个API从指定的环境下线。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchPublishOrOfflineApiV2Request 请求对象
      * @return CompletableFuture<BatchPublishOrOfflineApiV2Response>
@@ -3245,8 +3064,7 @@ public class ApigAsyncClient {
      *
      * 将多个API发布到一个指定的环境，或将多个API从指定的环境下线。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchPublishOrOfflineApiV2Request 请求对象
      * @return AsyncInvoker<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response>
@@ -3264,8 +3082,7 @@ public class ApigAsyncClient {
      * 
      * 多个版本之间可以进行随意切换。但一个API在一个环境上，只能有一个版本生效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeApiVersionV2Request 请求对象
      * @return CompletableFuture<ChangeApiVersionV2Response>
@@ -3281,8 +3098,7 @@ public class ApigAsyncClient {
      * 
      * 多个版本之间可以进行随意切换。但一个API在一个环境上，只能有一个版本生效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeApiVersionV2Request 请求对象
      * @return AsyncInvoker<ChangeApiVersionV2Request, ChangeApiVersionV2Response>
@@ -3298,8 +3114,7 @@ public class ApigAsyncClient {
      *
      * API分组是API的管理单元，一个API分组等同于一个服务入口，创建API分组时，返回一个子域名作为访问入口。建议一个API分组下的API具有一定的相关性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiGroupV2Request 请求对象
      * @return CompletableFuture<CreateApiGroupV2Response>
@@ -3313,8 +3128,7 @@ public class ApigAsyncClient {
      *
      * API分组是API的管理单元，一个API分组等同于一个服务入口，创建API分组时，返回一个子域名作为访问入口。建议一个API分组下的API具有一定的相关性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiGroupV2Request 请求对象
      * @return AsyncInvoker<CreateApiGroupV2Request, CreateApiGroupV2Response>
@@ -3332,8 +3146,7 @@ public class ApigAsyncClient {
      * 
      * API分为两部分，第一部分为面向API使用者的API接口，定义了使用者如何调用这个API。第二部分面向API提供者，由API提供者定义这个API的真实的后端情况，定义了API网关如何去访问真实的后端服务。API的真实后端服务目前支持三种类型：传统的HTTP/HTTPS形式的web后端、函数工作流、MOCK。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiV2Request 请求对象
      * @return CompletableFuture<CreateApiV2Response>
@@ -3349,8 +3162,7 @@ public class ApigAsyncClient {
      * 
      * API分为两部分，第一部分为面向API使用者的API接口，定义了使用者如何调用这个API。第二部分面向API提供者，由API提供者定义这个API的真实的后端情况，定义了API网关如何去访问真实的后端服务。API的真实后端服务目前支持三种类型：传统的HTTP/HTTPS形式的web后端、函数工作流、MOCK。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiV2Request 请求对象
      * @return AsyncInvoker<CreateApiV2Request, CreateApiV2Response>
@@ -3368,8 +3180,7 @@ public class ApigAsyncClient {
      * 
      * 下线操作是将API从某个已发布的环境上下线，下线后，API将无法再被调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateOrDeletePublishRecordForApiV2Request 请求对象
      * @return CompletableFuture<CreateOrDeletePublishRecordForApiV2Response>
@@ -3388,8 +3199,7 @@ public class ApigAsyncClient {
      * 
      * 下线操作是将API从某个已发布的环境上下线，下线后，API将无法再被调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateOrDeletePublishRecordForApiV2Request 请求对象
      * @return AsyncInvoker<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response>
@@ -3405,8 +3215,7 @@ public class ApigAsyncClient {
      *
      * 调试一个API在指定运行环境下的定义，接口调用者需要具有操作该API的权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DebugApiV2Request 请求对象
      * @return CompletableFuture<DebugApiV2Response>
@@ -3420,8 +3229,7 @@ public class ApigAsyncClient {
      *
      * 调试一个API在指定运行环境下的定义，接口调用者需要具有操作该API的权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DebugApiV2Request 请求对象
      * @return AsyncInvoker<DebugApiV2Request, DebugApiV2Response>
@@ -3435,8 +3243,7 @@ public class ApigAsyncClient {
      *
      * 对某个生效中的API版本进行下线操作，下线后，API在该版本生效的环境中将不再能够被调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiByVersionIdV2Request 请求对象
      * @return CompletableFuture<DeleteApiByVersionIdV2Response>
@@ -3451,8 +3258,7 @@ public class ApigAsyncClient {
      *
      * 对某个生效中的API版本进行下线操作，下线后，API在该版本生效的环境中将不再能够被调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiByVersionIdV2Request 请求对象
      * @return AsyncInvoker<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response>
@@ -3470,8 +3276,7 @@ public class ApigAsyncClient {
      * 删除API分组前，要先下线并删除分组下的所有API。
      * 删除时，会一并删除直接或间接关联到该分组下的所有资源，包括独立域名、SSL证书信息等等。并会将外部域名与子域名的绑定关系进行解除（取决于域名cname方式）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiGroupV2Request 请求对象
      * @return CompletableFuture<DeleteApiGroupV2Response>
@@ -3487,8 +3292,7 @@ public class ApigAsyncClient {
      * 删除API分组前，要先下线并删除分组下的所有API。
      * 删除时，会一并删除直接或间接关联到该分组下的所有资源，包括独立域名、SSL证书信息等等。并会将外部域名与子域名的绑定关系进行解除（取决于域名cname方式）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiGroupV2Request 请求对象
      * @return AsyncInvoker<DeleteApiGroupV2Request, DeleteApiGroupV2Response>
@@ -3506,8 +3310,7 @@ public class ApigAsyncClient {
      * 
      * 删除API时，会删除该API所有相关的资源信息或绑定关系，如API的发布记录，绑定的后端服务，对APP的授权信息等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiV2Request 请求对象
      * @return CompletableFuture<DeleteApiV2Response>
@@ -3523,8 +3326,7 @@ public class ApigAsyncClient {
      * 
      * 删除API时，会删除该API所有相关的资源信息或绑定关系，如API的发布记录，绑定的后端服务，对APP的授权信息等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiV2Request 请求对象
      * @return AsyncInvoker<DeleteApiV2Request, DeleteApiV2Response>
@@ -3538,8 +3340,7 @@ public class ApigAsyncClient {
      *
      * 解除API与流控策略的绑定关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<DisassociateRequestThrottlingPolicyV2Response>
@@ -3554,8 +3355,7 @@ public class ApigAsyncClient {
      *
      * 解除API与流控策略的绑定关系。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response>
@@ -3573,8 +3373,7 @@ public class ApigAsyncClient {
      * 
      * 如果是租户操作，则查询该租户下所有的分组；如果是管理员权限帐号操作，则查询的是所有租户的分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiGroupsV2Request 请求对象
      * @return CompletableFuture<ListApiGroupsV2Response>
@@ -3590,8 +3389,7 @@ public class ApigAsyncClient {
      * 
      * 如果是租户操作，则查询该租户下所有的分组；如果是管理员权限帐号操作，则查询的是所有租户的分组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiGroupsV2Request 请求对象
      * @return AsyncInvoker<ListApiGroupsV2Request, ListApiGroupsV2Response>
@@ -3613,8 +3411,7 @@ public class ApigAsyncClient {
      * 
      * 访问某个环境上的API，其实访问的就是其运行时的定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiRuntimeDefinitionV2Request 请求对象
      * @return CompletableFuture<ListApiRuntimeDefinitionV2Response>
@@ -3635,8 +3432,7 @@ public class ApigAsyncClient {
      * 
      * 访问某个环境上的API，其实访问的就是其运行时的定义
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiRuntimeDefinitionV2Request 请求对象
      * @return AsyncInvoker<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response>
@@ -3652,8 +3448,7 @@ public class ApigAsyncClient {
      *
      * 查询某个指定的版本详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionDetailV2Request 请求对象
      * @return CompletableFuture<ListApiVersionDetailV2Response>
@@ -3668,8 +3463,7 @@ public class ApigAsyncClient {
      *
      * 查询某个指定的版本详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionDetailV2Request 请求对象
      * @return AsyncInvoker<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response>
@@ -3685,8 +3479,7 @@ public class ApigAsyncClient {
      *
      * 查询某个API的历史版本。每个API在一个环境上最多存在10个历史版本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsV2Request 请求对象
      * @return CompletableFuture<ListApiVersionsV2Response>
@@ -3700,8 +3493,7 @@ public class ApigAsyncClient {
      *
      * 查询某个API的历史版本。每个API在一个环境上最多存在10个历史版本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsV2Request 请求对象
      * @return AsyncInvoker<ListApiVersionsV2Request, ListApiVersionsV2Response>
@@ -3717,8 +3509,7 @@ public class ApigAsyncClient {
      *
      * 查询某个流控策略上已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<ListApisBindedToRequestThrottlingPolicyV2Response>
@@ -3733,8 +3524,7 @@ public class ApigAsyncClient {
      *
      * 查询某个流控策略上已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response>
@@ -3750,8 +3540,7 @@ public class ApigAsyncClient {
      *
      * 查询所有未绑定到该流控策略上的自有API列表。需要API已经发布，未发布的API不予展示。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<ListApisUnbindedToRequestThrottlingPolicyV2Response>
@@ -3766,8 +3555,7 @@ public class ApigAsyncClient {
      *
      * 查询所有未绑定到该流控策略上的自有API列表。需要API已经发布，未发布的API不予展示。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response>
@@ -3783,8 +3571,7 @@ public class ApigAsyncClient {
      *
      * 查看API列表，返回API详细信息、发布信息等，但不能查看到后端服务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisV2Request 请求对象
      * @return CompletableFuture<ListApisV2Response>
@@ -3798,8 +3585,7 @@ public class ApigAsyncClient {
      *
      * 查看API列表，返回API详细信息、发布信息等，但不能查看到后端服务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisV2Request 请求对象
      * @return AsyncInvoker<ListApisV2Request, ListApisV2Response>
@@ -3813,8 +3599,7 @@ public class ApigAsyncClient {
      *
      * 查询某个API绑定的流控策略列表。每个环境上应该最多只有一个流控策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
      * @return CompletableFuture<ListRequestThrottlingPoliciesBindedToApiV2Response>
@@ -3829,8 +3614,7 @@ public class ApigAsyncClient {
      *
      * 查询某个API绑定的流控策略列表。每个环境上应该最多只有一个流控策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRequestThrottlingPoliciesBindedToApiV2Request 请求对象
      * @return AsyncInvoker<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response>
@@ -3846,8 +3630,7 @@ public class ApigAsyncClient {
      *
      * 查询指定分组的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfApiGroupV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfApiGroupV2Response>
@@ -3862,8 +3645,7 @@ public class ApigAsyncClient {
      *
      * 查询指定分组的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfApiGroupV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response>
@@ -3879,8 +3661,7 @@ public class ApigAsyncClient {
      *
      * 查看指定的API的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfApiV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfApiV2Response>
@@ -3894,8 +3675,7 @@ public class ApigAsyncClient {
      *
      * 查看指定的API的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfApiV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response>
@@ -3911,8 +3691,7 @@ public class ApigAsyncClient {
      *
      * 修改API分组属性。其中name和remark可修改，其他属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApiGroupV2Request 请求对象
      * @return CompletableFuture<UpdateApiGroupV2Response>
@@ -3926,8 +3705,7 @@ public class ApigAsyncClient {
      *
      * 修改API分组属性。其中name和remark可修改，其他属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApiGroupV2Request 请求对象
      * @return AsyncInvoker<UpdateApiGroupV2Request, UpdateApiGroupV2Response>
@@ -3943,8 +3721,7 @@ public class ApigAsyncClient {
      *
      * 修改指定API的信息，包括后端服务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApiV2Request 请求对象
      * @return CompletableFuture<UpdateApiV2Response>
@@ -3958,8 +3735,7 @@ public class ApigAsyncClient {
      *
      * 修改指定API的信息，包括后端服务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApiV2Request 请求对象
      * @return AsyncInvoker<UpdateApiV2Request, UpdateApiV2Response>
@@ -3973,8 +3749,7 @@ public class ApigAsyncClient {
      *
      * 批量解除API与ACL策略的绑定
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteApiAclBindingV2Request 请求对象
      * @return CompletableFuture<BatchDeleteApiAclBindingV2Response>
@@ -3989,8 +3764,7 @@ public class ApigAsyncClient {
      *
      * 批量解除API与ACL策略的绑定
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteApiAclBindingV2Request 请求对象
      * @return AsyncInvoker<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response>
@@ -4008,8 +3782,7 @@ public class ApigAsyncClient {
      * 
      * 同一个API发布到不同的环境可以绑定不同的ACL策略；一个API在发布到特定环境后只能绑定一个同一种类型的ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiAclBindingV2Request 请求对象
      * @return CompletableFuture<CreateApiAclBindingV2Response>
@@ -4026,8 +3799,7 @@ public class ApigAsyncClient {
      * 
      * 同一个API发布到不同的环境可以绑定不同的ACL策略；一个API在发布到特定环境后只能绑定一个同一种类型的ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApiAclBindingV2Request 请求对象
      * @return AsyncInvoker<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response>
@@ -4043,8 +3815,7 @@ public class ApigAsyncClient {
      *
      * 解除某条API与ACL策略的绑定关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiAclBindingV2Request 请求对象
      * @return CompletableFuture<DeleteApiAclBindingV2Response>
@@ -4059,8 +3830,7 @@ public class ApigAsyncClient {
      *
      * 解除某条API与ACL策略的绑定关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApiAclBindingV2Request 请求对象
      * @return AsyncInvoker<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response>
@@ -4076,8 +3846,7 @@ public class ApigAsyncClient {
      *
      * 查看API绑定的ACL策略列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAclPolicyBindedToApiV2Request 请求对象
      * @return CompletableFuture<ListAclPolicyBindedToApiV2Response>
@@ -4092,8 +3861,7 @@ public class ApigAsyncClient {
      *
      * 查看API绑定的ACL策略列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAclPolicyBindedToApiV2Request 请求对象
      * @return AsyncInvoker<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response>
@@ -4109,8 +3877,7 @@ public class ApigAsyncClient {
      *
      * 查看ACL策略绑定的API列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToAclPolicyV2Request 请求对象
      * @return CompletableFuture<ListApisBindedToAclPolicyV2Response>
@@ -4125,8 +3892,7 @@ public class ApigAsyncClient {
      *
      * 查看ACL策略绑定的API列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToAclPolicyV2Request 请求对象
      * @return AsyncInvoker<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response>
@@ -4142,8 +3908,7 @@ public class ApigAsyncClient {
      *
      * 查看ACL策略未绑定的API列表，需要API已发布
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToAclPolicyV2Request 请求对象
      * @return CompletableFuture<ListApisUnbindedToAclPolicyV2Response>
@@ -4158,8 +3923,7 @@ public class ApigAsyncClient {
      *
      * 查看ACL策略未绑定的API列表，需要API已发布
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToAclPolicyV2Request 请求对象
      * @return AsyncInvoker<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response>
@@ -4175,8 +3939,7 @@ public class ApigAsyncClient {
      *
      * 解除API对APP的授权关系。解除授权后，APP将不再能够调用该API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelingAuthorizationV2Request 请求对象
      * @return CompletableFuture<CancelingAuthorizationV2Response>
@@ -4191,8 +3954,7 @@ public class ApigAsyncClient {
      *
      * 解除API对APP的授权关系。解除授权后，APP将不再能够调用该API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelingAuthorizationV2Request 请求对象
      * @return AsyncInvoker<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response>
@@ -4208,8 +3970,7 @@ public class ApigAsyncClient {
      *
      * 校验app是否存在，非APP所有者可以调用该接口校验APP是否真实存在。这个接口只展示app的基本信息id 、name、 remark，其他信息不显示。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckAppV2Request 请求对象
      * @return CompletableFuture<CheckAppV2Response>
@@ -4223,8 +3984,7 @@ public class ApigAsyncClient {
      *
      * 校验app是否存在，非APP所有者可以调用该接口校验APP是否真实存在。这个接口只展示app的基本信息id 、name、 remark，其他信息不显示。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckAppV2Request 请求对象
      * @return AsyncInvoker<CheckAppV2Request, CheckAppV2Response>
@@ -4239,8 +3999,7 @@ public class ApigAsyncClient {
      * APP即应用，是一个可以访问API的身份标识。将API授权给APP后，APP即可调用API。
      * 创建一个APP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAnAppV2Request 请求对象
      * @return CompletableFuture<CreateAnAppV2Response>
@@ -4255,8 +4014,7 @@ public class ApigAsyncClient {
      * APP即应用，是一个可以访问API的身份标识。将API授权给APP后，APP即可调用API。
      * 创建一个APP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAnAppV2Request 请求对象
      * @return AsyncInvoker<CreateAnAppV2Request, CreateAnAppV2Response>
@@ -4271,8 +4029,7 @@ public class ApigAsyncClient {
      *
      * 创建App Code时，可以不指定具体值，由后台自动生成随机字符串填充。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppCodeAutoV2Request 请求对象
      * @return CompletableFuture<CreateAppCodeAutoV2Response>
@@ -4286,8 +4043,7 @@ public class ApigAsyncClient {
      *
      * 创建App Code时，可以不指定具体值，由后台自动生成随机字符串填充。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppCodeAutoV2Request 请求对象
      * @return AsyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response>
@@ -4303,8 +4059,7 @@ public class ApigAsyncClient {
      *
      * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppCodeV2Request 请求对象
      * @return CompletableFuture<CreateAppCodeV2Response>
@@ -4318,8 +4073,7 @@ public class ApigAsyncClient {
      *
      * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppCodeV2Request 请求对象
      * @return AsyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response>
@@ -4335,8 +4089,7 @@ public class ApigAsyncClient {
      *
      * APP创建成功后，还不能访问API，如果想要访问某个环境上的API，需要将该API在该环境上授权给APP。授权成功后，APP即可访问该环境上的这个API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAuthorizingAppsV2Request 请求对象
      * @return CompletableFuture<CreateAuthorizingAppsV2Response>
@@ -4351,8 +4104,7 @@ public class ApigAsyncClient {
      *
      * APP创建成功后，还不能访问API，如果想要访问某个环境上的API，需要将该API在该环境上授权给APP。授权成功后，APP即可访问该环境上的这个API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAuthorizingAppsV2Request 请求对象
      * @return AsyncInvoker<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response>
@@ -4368,8 +4120,7 @@ public class ApigAsyncClient {
      *
      * 删除App Code，App Code删除后，将无法再通过简易认证访问对应的API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppCodeV2Request 请求对象
      * @return CompletableFuture<DeleteAppCodeV2Response>
@@ -4383,8 +4134,7 @@ public class ApigAsyncClient {
      *
      * 删除App Code，App Code删除后，将无法再通过简易认证访问对应的API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppCodeV2Request 请求对象
      * @return AsyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response>
@@ -4401,8 +4151,7 @@ public class ApigAsyncClient {
      * 删除指定的APP。
      * APP删除后，将无法再调用任何API[；其中，云商店自动创建的APP无法被删除](tag:hws)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppV2Request 请求对象
      * @return CompletableFuture<DeleteAppV2Response>
@@ -4417,8 +4166,7 @@ public class ApigAsyncClient {
      * 删除指定的APP。
      * APP删除后，将无法再调用任何API[；其中，云商店自动创建的APP无法被删除](tag:hws)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppV2Request 请求对象
      * @return AsyncInvoker<DeleteAppV2Request, DeleteAppV2Response>
@@ -4432,8 +4180,7 @@ public class ApigAsyncClient {
      *
      * 查询APP已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToAppV2Request 请求对象
      * @return CompletableFuture<ListApisBindedToAppV2Response>
@@ -4448,8 +4195,7 @@ public class ApigAsyncClient {
      *
      * 查询APP已经绑定的API列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisBindedToAppV2Request 请求对象
      * @return AsyncInvoker<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response>
@@ -4465,8 +4211,7 @@ public class ApigAsyncClient {
      *
      * 查询指定环境上某个APP未绑定的API列表[，包括自有API和从云商店购买的API](tag:hws)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToAppV2Request 请求对象
      * @return CompletableFuture<ListApisUnbindedToAppV2Response>
@@ -4481,8 +4226,7 @@ public class ApigAsyncClient {
      *
      * 查询指定环境上某个APP未绑定的API列表[，包括自有API和从云商店购买的API](tag:hws)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApisUnbindedToAppV2Request 请求对象
      * @return AsyncInvoker<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response>
@@ -4498,8 +4242,7 @@ public class ApigAsyncClient {
      *
      * 查询App Code列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppCodesV2Request 请求对象
      * @return CompletableFuture<ListAppCodesV2Response>
@@ -4513,8 +4256,7 @@ public class ApigAsyncClient {
      *
      * 查询App Code列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppCodesV2Request 请求对象
      * @return AsyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response>
@@ -4530,8 +4272,7 @@ public class ApigAsyncClient {
      *
      * 查询API绑定的APP列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsBindedToApiV2Request 请求对象
      * @return CompletableFuture<ListAppsBindedToApiV2Response>
@@ -4546,8 +4287,7 @@ public class ApigAsyncClient {
      *
      * 查询API绑定的APP列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsBindedToApiV2Request 请求对象
      * @return AsyncInvoker<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response>
@@ -4563,8 +4303,7 @@ public class ApigAsyncClient {
      *
      * 查询APP列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsV2Request 请求对象
      * @return CompletableFuture<ListAppsV2Response>
@@ -4578,8 +4317,7 @@ public class ApigAsyncClient {
      *
      * 查询APP列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsV2Request 请求对象
      * @return AsyncInvoker<ListAppsV2Request, ListAppsV2Response>
@@ -4593,8 +4331,7 @@ public class ApigAsyncClient {
      *
      * 重置指定APP的密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResettingAppSecretV2Request 请求对象
      * @return CompletableFuture<ResettingAppSecretV2Response>
@@ -4609,8 +4346,7 @@ public class ApigAsyncClient {
      *
      * 重置指定APP的密钥。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResettingAppSecretV2Request 请求对象
      * @return AsyncInvoker<ResettingAppSecretV2Request, ResettingAppSecretV2Response>
@@ -4626,8 +4362,7 @@ public class ApigAsyncClient {
      *
      * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppCodeV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfAppCodeV2Response>
@@ -4642,8 +4377,7 @@ public class ApigAsyncClient {
      *
      * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppCodeV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response>
@@ -4659,8 +4393,7 @@ public class ApigAsyncClient {
      *
      * 查看指定APP的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfAppV2Response>
@@ -4674,8 +4407,7 @@ public class ApigAsyncClient {
      *
      * 查看指定APP的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfAppV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response>
@@ -4691,8 +4423,7 @@ public class ApigAsyncClient {
      *
      * 修改指定APP的信息。其中可修改的属性为：name、remark，当支持用户自定义key和secret的开关开启时，app_key和app_secret也支持修改，其它属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppV2Request 请求对象
      * @return CompletableFuture<UpdateAppV2Response>
@@ -4706,8 +4437,7 @@ public class ApigAsyncClient {
      *
      * 修改指定APP的信息。其中可修改的属性为：name、remark，当支持用户自定义key和secret的开关开启时，app_key和app_secret也支持修改，其它属性不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppV2Request 请求对象
      * @return AsyncInvoker<UpdateAppV2Request, UpdateAppV2Response>
@@ -4721,8 +4451,7 @@ public class ApigAsyncClient {
      *
      * 导出分组下API的定义信息。导出文件内容符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportApiDefinitionsV2Request 请求对象
      * @return CompletableFuture<ExportApiDefinitionsV2Response>
@@ -4737,8 +4466,7 @@ public class ApigAsyncClient {
      *
      * 导出分组下API的定义信息。导出文件内容符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportApiDefinitionsV2Request 请求对象
      * @return AsyncInvoker<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response>
@@ -4754,8 +4482,7 @@ public class ApigAsyncClient {
      *
      * 导入API。导入文件内容需要符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportApiDefinitionsV2Request 请求对象
      * @return CompletableFuture<ImportApiDefinitionsV2Response>
@@ -4770,8 +4497,7 @@ public class ApigAsyncClient {
      *
      * 导入API。导入文件内容需要符合swagger标准规范，API网关自定义扩展字段请参考《API网关开发指南》的“导入导出API：扩展定义”章节。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportApiDefinitionsV2Request 请求对象
      * @return AsyncInvoker<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response>
@@ -4787,8 +4513,7 @@ public class ApigAsyncClient {
      *
      * 域名绑定SSL证书。目前暂时仅支持单个绑定,请求体当中的certificate_ids里面有且只能有一个证书ID
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAssociateCertsV2Request 请求对象
      * @return CompletableFuture<BatchAssociateCertsV2Response>
@@ -4803,8 +4528,7 @@ public class ApigAsyncClient {
      *
      * 域名绑定SSL证书。目前暂时仅支持单个绑定,请求体当中的certificate_ids里面有且只能有一个证书ID
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAssociateCertsV2Request 请求对象
      * @return AsyncInvoker<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response>
@@ -4820,8 +4544,7 @@ public class ApigAsyncClient {
      *
      * 域名绑定SSL证书
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAssociateDomainsV2Request 请求对象
      * @return CompletableFuture<BatchAssociateDomainsV2Response>
@@ -4836,8 +4559,7 @@ public class ApigAsyncClient {
      *
      * 域名绑定SSL证书
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAssociateDomainsV2Request 请求对象
      * @return AsyncInvoker<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response>
@@ -4853,8 +4575,7 @@ public class ApigAsyncClient {
      *
      * 域名解绑SSL证书。目前暂时仅支持单个解绑,请求体当中的certificate_ids里面有且只能有一个证书ID
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDisassociateCertsV2Request 请求对象
      * @return CompletableFuture<BatchDisassociateCertsV2Response>
@@ -4869,8 +4590,7 @@ public class ApigAsyncClient {
      *
      * 域名解绑SSL证书。目前暂时仅支持单个解绑,请求体当中的certificate_ids里面有且只能有一个证书ID
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDisassociateCertsV2Request 请求对象
      * @return AsyncInvoker<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response>
@@ -4886,8 +4606,7 @@ public class ApigAsyncClient {
      *
      * SSL证书解绑域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDisassociateDomainsV2Request 请求对象
      * @return CompletableFuture<BatchDisassociateDomainsV2Response>
@@ -4902,8 +4621,7 @@ public class ApigAsyncClient {
      *
      * SSL证书解绑域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDisassociateDomainsV2Request 请求对象
      * @return AsyncInvoker<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response>
@@ -4919,8 +4637,7 @@ public class ApigAsyncClient {
      *
      * 创建SSL证书
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCertificateV2Request 请求对象
      * @return CompletableFuture<CreateCertificateV2Response>
@@ -4934,8 +4651,7 @@ public class ApigAsyncClient {
      *
      * 创建SSL证书
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCertificateV2Request 请求对象
      * @return AsyncInvoker<CreateCertificateV2Request, CreateCertificateV2Response>
@@ -4951,8 +4667,7 @@ public class ApigAsyncClient {
      *
      * 删除ssl证书接口,删除时只有没有关联域名的证书才能被删除
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCertificateV2Request 请求对象
      * @return CompletableFuture<DeleteCertificateV2Response>
@@ -4966,8 +4681,7 @@ public class ApigAsyncClient {
      *
      * 删除ssl证书接口,删除时只有没有关联域名的证书才能被删除
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCertificateV2Request 请求对象
      * @return AsyncInvoker<DeleteCertificateV2Request, DeleteCertificateV2Response>
@@ -4983,8 +4697,7 @@ public class ApigAsyncClient {
      *
      * 获取SSL证书已绑定域名列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAttachedDomainsV2Request 请求对象
      * @return CompletableFuture<ListAttachedDomainsV2Response>
@@ -4999,8 +4712,7 @@ public class ApigAsyncClient {
      *
      * 获取SSL证书已绑定域名列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAttachedDomainsV2Request 请求对象
      * @return AsyncInvoker<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response>
@@ -5016,8 +4728,7 @@ public class ApigAsyncClient {
      *
      * 获取SSL证书列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCertificatesV2Request 请求对象
      * @return CompletableFuture<ListCertificatesV2Response>
@@ -5031,8 +4742,7 @@ public class ApigAsyncClient {
      *
      * 获取SSL证书列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCertificatesV2Request 请求对象
      * @return AsyncInvoker<ListCertificatesV2Request, ListCertificatesV2Response>
@@ -5048,8 +4758,7 @@ public class ApigAsyncClient {
      *
      * 查看证书详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfCertificateV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfCertificateV2Response>
@@ -5064,8 +4773,7 @@ public class ApigAsyncClient {
      *
      * 查看证书详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfCertificateV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response>
@@ -5081,8 +4789,7 @@ public class ApigAsyncClient {
      *
      * 修改SSL证书
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCertificateV2Request 请求对象
      * @return CompletableFuture<UpdateCertificateV2Response>
@@ -5096,8 +4803,7 @@ public class ApigAsyncClient {
      *
      * 修改SSL证书
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCertificateV2Request 请求对象
      * @return AsyncInvoker<UpdateCertificateV2Request, UpdateCertificateV2Response>
@@ -5115,8 +4821,7 @@ public class ApigAsyncClient {
      * 
      * 若指定地址的后端实例已存在，则更新对应后端实例信息。若请求体中包含多个重复地址的后端实例定义，则使用第一个定义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddingBackendInstancesV2Request 请求对象
      * @return CompletableFuture<AddingBackendInstancesV2Response>
@@ -5133,8 +4838,7 @@ public class ApigAsyncClient {
      * 
      * 若指定地址的后端实例已存在，则更新对应后端实例信息。若请求体中包含多个重复地址的后端实例定义，则使用第一个定义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddingBackendInstancesV2Request 请求对象
      * @return AsyncInvoker<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response>
@@ -5150,8 +4854,7 @@ public class ApigAsyncClient {
      *
      * 批量修改后端服务器状态不可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDisableMembersRequest 请求对象
      * @return CompletableFuture<BatchDisableMembersResponse>
@@ -5165,8 +4868,7 @@ public class ApigAsyncClient {
      *
      * 批量修改后端服务器状态不可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDisableMembersRequest 请求对象
      * @return AsyncInvoker<BatchDisableMembersRequest, BatchDisableMembersResponse>
@@ -5182,8 +4884,7 @@ public class ApigAsyncClient {
      *
      * 批量修改后端服务器状态可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchEnableMembersRequest 请求对象
      * @return CompletableFuture<BatchEnableMembersResponse>
@@ -5197,8 +4898,7 @@ public class ApigAsyncClient {
      *
      * 批量修改后端服务器状态可用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchEnableMembersRequest 请求对象
      * @return AsyncInvoker<BatchEnableMembersRequest, BatchEnableMembersResponse>
@@ -5216,8 +4916,7 @@ public class ApigAsyncClient {
      * 
      * 若指定名称的后端服务器组已存在，则更新对应后端服务器组信息。若请求体中包含多个重复名称的后端服务器定义，则使用第一个定义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMemberGroupRequest 请求对象
      * @return CompletableFuture<CreateMemberGroupResponse>
@@ -5233,8 +4932,7 @@ public class ApigAsyncClient {
      * 
      * 若指定名称的后端服务器组已存在，则更新对应后端服务器组信息。若请求体中包含多个重复名称的后端服务器定义，则使用第一个定义。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMemberGroupRequest 请求对象
      * @return AsyncInvoker<CreateMemberGroupRequest, CreateMemberGroupResponse>
@@ -5251,8 +4949,7 @@ public class ApigAsyncClient {
      * 在API网关中创建连接私有VPC资源的通道，并在创建API时将后端节点配置为使用这些VPC通道，以便API网关直接访问私有VPC资源。
      * &gt; 每个用户最多创建30个VPC通道。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcChannelV2Request 请求对象
      * @return CompletableFuture<CreateVpcChannelV2Response>
@@ -5267,8 +4964,7 @@ public class ApigAsyncClient {
      * 在API网关中创建连接私有VPC资源的通道，并在创建API时将后端节点配置为使用这些VPC通道，以便API网关直接访问私有VPC资源。
      * &gt; 每个用户最多创建30个VPC通道。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcChannelV2Request 请求对象
      * @return AsyncInvoker<CreateVpcChannelV2Request, CreateVpcChannelV2Response>
@@ -5284,8 +4980,7 @@ public class ApigAsyncClient {
      *
      * 删除指定VPC通道中的后端实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackendInstanceV2Request 请求对象
      * @return CompletableFuture<DeleteBackendInstanceV2Response>
@@ -5300,8 +4995,7 @@ public class ApigAsyncClient {
      *
      * 删除指定VPC通道中的后端实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackendInstanceV2Request 请求对象
      * @return AsyncInvoker<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response>
@@ -5317,8 +5011,7 @@ public class ApigAsyncClient {
      *
      * 删除指定的VPC通道后端服务器组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMemberGroupRequest 请求对象
      * @return CompletableFuture<DeleteMemberGroupResponse>
@@ -5332,8 +5025,7 @@ public class ApigAsyncClient {
      *
      * 删除指定的VPC通道后端服务器组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMemberGroupRequest 请求对象
      * @return AsyncInvoker<DeleteMemberGroupRequest, DeleteMemberGroupResponse>
@@ -5349,8 +5041,7 @@ public class ApigAsyncClient {
      *
      * 删除指定的VPC通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcChannelV2Request 请求对象
      * @return CompletableFuture<DeleteVpcChannelV2Response>
@@ -5364,8 +5055,7 @@ public class ApigAsyncClient {
      *
      * 删除指定的VPC通道
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcChannelV2Request 请求对象
      * @return AsyncInvoker<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response>
@@ -5381,8 +5071,7 @@ public class ApigAsyncClient {
      *
      * 查看指定VPC通道的后端实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackendInstancesV2Request 请求对象
      * @return CompletableFuture<ListBackendInstancesV2Response>
@@ -5397,8 +5086,7 @@ public class ApigAsyncClient {
      *
      * 查看指定VPC通道的后端实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackendInstancesV2Request 请求对象
      * @return AsyncInvoker<ListBackendInstancesV2Request, ListBackendInstancesV2Response>
@@ -5414,8 +5102,7 @@ public class ApigAsyncClient {
      *
      * 查询VPC通道后端云服务组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMemberGroupsRequest 请求对象
      * @return CompletableFuture<ListMemberGroupsResponse>
@@ -5429,8 +5116,7 @@ public class ApigAsyncClient {
      *
      * 查询VPC通道后端云服务组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMemberGroupsRequest 请求对象
      * @return AsyncInvoker<ListMemberGroupsRequest, ListMemberGroupsResponse>
@@ -5446,8 +5132,7 @@ public class ApigAsyncClient {
      *
      * 查看VPC通道列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcChannelsV2Request 请求对象
      * @return CompletableFuture<ListVpcChannelsV2Response>
@@ -5461,8 +5146,7 @@ public class ApigAsyncClient {
      *
      * 查看VPC通道列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcChannelsV2Request 请求对象
      * @return AsyncInvoker<ListVpcChannelsV2Request, ListVpcChannelsV2Response>
@@ -5478,8 +5162,7 @@ public class ApigAsyncClient {
      *
      * 查看指定的VPC通道后端服务器组详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfMemberGroupRequest 请求对象
      * @return CompletableFuture<ShowDetailsOfMemberGroupResponse>
@@ -5494,8 +5177,7 @@ public class ApigAsyncClient {
      *
      * 查看指定的VPC通道后端服务器组详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfMemberGroupRequest 请求对象
      * @return AsyncInvoker<ShowDetailsOfMemberGroupRequest, ShowDetailsOfMemberGroupResponse>
@@ -5511,8 +5193,7 @@ public class ApigAsyncClient {
      *
      * 查看指定的VPC通道详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfVpcChannelV2Request 请求对象
      * @return CompletableFuture<ShowDetailsOfVpcChannelV2Response>
@@ -5527,8 +5208,7 @@ public class ApigAsyncClient {
      *
      * 查看指定的VPC通道详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDetailsOfVpcChannelV2Request 请求对象
      * @return AsyncInvoker<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response>
@@ -5544,8 +5224,7 @@ public class ApigAsyncClient {
      *
      * 更新指定的VPC通道的后端实例。更新时，使用传入的请求参数对对应云服务组的后端实例进行全量覆盖修改。若未指定修改的云服务器组，则进行全量覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBackendInstancesV2Request 请求对象
      * @return CompletableFuture<UpdateBackendInstancesV2Response>
@@ -5560,8 +5239,7 @@ public class ApigAsyncClient {
      *
      * 更新指定的VPC通道的后端实例。更新时，使用传入的请求参数对对应云服务组的后端实例进行全量覆盖修改。若未指定修改的云服务器组，则进行全量覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBackendInstancesV2Request 请求对象
      * @return AsyncInvoker<UpdateBackendInstancesV2Request, UpdateBackendInstancesV2Response>
@@ -5577,8 +5255,7 @@ public class ApigAsyncClient {
      *
      * 修改VPC通道健康检查。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHealthCheckRequest 请求对象
      * @return CompletableFuture<UpdateHealthCheckResponse>
@@ -5592,8 +5269,7 @@ public class ApigAsyncClient {
      *
      * 修改VPC通道健康检查。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHealthCheckRequest 请求对象
      * @return AsyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse>
@@ -5609,8 +5285,7 @@ public class ApigAsyncClient {
      *
      * 更新指定VPC通道后端服务器组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMemberGroupRequest 请求对象
      * @return CompletableFuture<UpdateMemberGroupResponse>
@@ -5624,8 +5299,7 @@ public class ApigAsyncClient {
      *
      * 更新指定VPC通道后端服务器组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMemberGroupRequest 请求对象
      * @return AsyncInvoker<UpdateMemberGroupRequest, UpdateMemberGroupResponse>
@@ -5645,8 +5319,7 @@ public class ApigAsyncClient {
      * 
      * 使用传入的后端服务器组列表对VPC通道进行全量覆盖，若后端服务器组列表为空，则会全量删除已有的服务器组；
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcChannelV2Request 请求对象
      * @return CompletableFuture<UpdateVpcChannelV2Response>
@@ -5664,8 +5337,7 @@ public class ApigAsyncClient {
      * 
      * 使用传入的后端服务器组列表对VPC通道进行全量覆盖，若后端服务器组列表为空，则会全量删除已有的服务器组；
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcChannelV2Request 请求对象
      * @return AsyncInvoker<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response>

@@ -24,8 +24,7 @@ public class SmsAsyncClient {
      *
      * 检查网卡安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckNetAclRequest 请求对象
      * @return CompletableFuture<CheckNetAclResponse>
@@ -39,8 +38,7 @@ public class SmsAsyncClient {
      *
      * 检查网卡安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckNetAclRequest 请求对象
      * @return AsyncInvoker<CheckNetAclRequest, CheckNetAclResponse>
@@ -54,8 +52,7 @@ public class SmsAsyncClient {
      *
      * 上传迁移任务的日志。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CollectLogRequest 请求对象
      * @return CompletableFuture<CollectLogResponse>
@@ -69,8 +66,7 @@ public class SmsAsyncClient {
      *
      * 上传迁移任务的日志。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CollectLogRequest 请求对象
      * @return AsyncInvoker<CollectLogRequest, CollectLogResponse>
@@ -84,8 +80,7 @@ public class SmsAsyncClient {
      *
      * 新建迁移项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMigprojectRequest 请求对象
      * @return CompletableFuture<CreateMigprojectResponse>
@@ -99,8 +94,7 @@ public class SmsAsyncClient {
      *
      * 新建迁移项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMigprojectRequest 请求对象
      * @return AsyncInvoker<CreateMigprojectRequest, CreateMigprojectResponse>
@@ -116,8 +110,7 @@ public class SmsAsyncClient {
      *
      * 根据源端服务器创建一个迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTaskRequest 请求对象
      * @return CompletableFuture<CreateTaskResponse>
@@ -131,8 +124,7 @@ public class SmsAsyncClient {
      *
      * 根据源端服务器创建一个迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTaskRequest 请求对象
      * @return AsyncInvoker<CreateTaskRequest, CreateTaskResponse>
@@ -146,8 +138,7 @@ public class SmsAsyncClient {
      *
      * 新增源端模板信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTemplateRequest 请求对象
      * @return CompletableFuture<CreateTemplateResponse>
@@ -161,8 +152,7 @@ public class SmsAsyncClient {
      *
      * 新增源端模板信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTemplateRequest 请求对象
      * @return AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse>
@@ -178,8 +168,7 @@ public class SmsAsyncClient {
      *
      * 删除指定ID的迁移项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMigprojectRequest 请求对象
      * @return CompletableFuture<DeleteMigprojectResponse>
@@ -193,8 +182,7 @@ public class SmsAsyncClient {
      *
      * 删除指定ID的迁移项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMigprojectRequest 请求对象
      * @return AsyncInvoker<DeleteMigprojectRequest, DeleteMigprojectResponse>
@@ -210,8 +198,7 @@ public class SmsAsyncClient {
      *
      * 从主机迁移服务界面上删除指定ID的源端服务器信息。一旦源端服务器信息被删除，则只能通过重启源端服务器上的迁移Agent来将源端服务器信息重新添加在主机迁移服务界面。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServerRequest 请求对象
      * @return CompletableFuture<DeleteServerResponse>
@@ -225,8 +212,7 @@ public class SmsAsyncClient {
      *
      * 从主机迁移服务界面上删除指定ID的源端服务器信息。一旦源端服务器信息被删除，则只能通过重启源端服务器上的迁移Agent来将源端服务器信息重新添加在主机迁移服务界面。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServerRequest 请求对象
      * @return AsyncInvoker<DeleteServerRequest, DeleteServerResponse>
@@ -241,8 +227,7 @@ public class SmsAsyncClient {
      *
      * 批量删除源端服务器信息。一旦源端服务器信息被删除，则只能通过重启源端服务器上的迁移Agent来将源端服务器信息重新添加在主机迁移服务界面。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServersRequest 请求对象
      * @return CompletableFuture<DeleteServersResponse>
@@ -256,8 +241,7 @@ public class SmsAsyncClient {
      *
      * 批量删除源端服务器信息。一旦源端服务器信息被删除，则只能通过重启源端服务器上的迁移Agent来将源端服务器信息重新添加在主机迁移服务界面。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServersRequest 请求对象
      * @return AsyncInvoker<DeleteServersRequest, DeleteServersResponse>
@@ -272,8 +256,7 @@ public class SmsAsyncClient {
      *
      * 删除指定ID的迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
      * @return CompletableFuture<DeleteTaskResponse>
@@ -287,8 +270,7 @@ public class SmsAsyncClient {
      *
      * 删除指定ID的迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
      * @return AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
@@ -302,8 +284,7 @@ public class SmsAsyncClient {
      *
      * 批量删除迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTasksRequest 请求对象
      * @return CompletableFuture<DeleteTasksResponse>
@@ -317,8 +298,7 @@ public class SmsAsyncClient {
      *
      * 批量删除迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTasksRequest 请求对象
      * @return AsyncInvoker<DeleteTasksRequest, DeleteTasksResponse>
@@ -332,8 +312,7 @@ public class SmsAsyncClient {
      *
      * 删除指定ID的模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTemplateRequest 请求对象
      * @return CompletableFuture<DeleteTemplateResponse>
@@ -347,8 +326,7 @@ public class SmsAsyncClient {
      *
      * 删除指定ID的模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>
@@ -364,8 +342,7 @@ public class SmsAsyncClient {
      *
      * 批量删除指定ID的模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTemplatesRequest 请求对象
      * @return CompletableFuture<DeleteTemplatesResponse>
@@ -379,8 +356,7 @@ public class SmsAsyncClient {
      *
      * 批量删除指定ID的模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTemplatesRequest 请求对象
      * @return AsyncInvoker<DeleteTemplatesRequest, DeleteTemplatesResponse>
@@ -396,8 +372,7 @@ public class SmsAsyncClient {
      *
      * 主机迁移过程中可能发生错误，使用该接口可以批量查询迁移过程中出现错误的源端服务器信息，以及它们的错误信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListErrorServersRequest 请求对象
      * @return CompletableFuture<ListErrorServersResponse>
@@ -411,8 +386,7 @@ public class SmsAsyncClient {
      *
      * 主机迁移过程中可能发生错误，使用该接口可以批量查询迁移过程中出现错误的源端服务器信息，以及它们的错误信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListErrorServersRequest 请求对象
      * @return AsyncInvoker<ListErrorServersRequest, ListErrorServersResponse>
@@ -428,8 +402,7 @@ public class SmsAsyncClient {
      *
      * 主机迁移服务中可以使用迁移项目来对源端进行项目管理，使用该接口获取当前账户下所有的迁移项目列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMigprojectsRequest 请求对象
      * @return CompletableFuture<ListMigprojectsResponse>
@@ -443,8 +416,7 @@ public class SmsAsyncClient {
      *
      * 主机迁移服务中可以使用迁移项目来对源端进行项目管理，使用该接口获取当前账户下所有的迁移项目列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMigprojectsRequest 请求对象
      * @return AsyncInvoker<ListMigprojectsRequest, ListMigprojectsResponse>
@@ -460,8 +432,7 @@ public class SmsAsyncClient {
      *
      * 用户在源端安装并成功启动Agent后，Agent会将源端服务器信息注册在主机迁移服务中，调用该接口查询已注册的源端服务器列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServersRequest 请求对象
      * @return CompletableFuture<ListServersResponse>
@@ -475,8 +446,7 @@ public class SmsAsyncClient {
      *
      * 用户在源端安装并成功启动Agent后，Agent会将源端服务器信息注册在主机迁移服务中，调用该接口查询已注册的源端服务器列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServersRequest 请求对象
      * @return AsyncInvoker<ListServersRequest, ListServersResponse>
@@ -490,8 +460,7 @@ public class SmsAsyncClient {
      *
      * 在设置目的端后，主机迁移服务会自动创建迁移任务，使用该接口可以查询迁移任务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTasksRequest 请求对象
      * @return CompletableFuture<ListTasksResponse>
@@ -505,8 +474,7 @@ public class SmsAsyncClient {
      *
      * 在设置目的端后，主机迁移服务会自动创建迁移任务，使用该接口可以查询迁移任务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTasksRequest 请求对象
      * @return AsyncInvoker<ListTasksRequest, ListTasksResponse>
@@ -520,8 +488,7 @@ public class SmsAsyncClient {
      *
      * 查询弹性云服务器模板列表，迁移时选择“新建服务器”时可使用该模板创建弹性云服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesRequest 请求对象
      * @return CompletableFuture<ListTemplatesResponse>
@@ -535,8 +502,7 @@ public class SmsAsyncClient {
      *
      * 查询弹性云服务器模板列表，迁移时选择“新建服务器”时可使用该模板创建弹性云服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesRequest 请求对象
      * @return AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse>
@@ -551,8 +517,7 @@ public class SmsAsyncClient {
      *
      * 上报源端服务器信息，上报成功后会在sms服务器列表中看到对应的源端服务器信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RegisterServerRequest 请求对象
      * @return CompletableFuture<RegisterServerResponse>
@@ -566,8 +531,7 @@ public class SmsAsyncClient {
      *
      * 上报源端服务器信息，上报成功后会在sms服务器列表中看到对应的源端服务器信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RegisterServerRequest 请求对象
      * @return AsyncInvoker<RegisterServerRequest, RegisterServerResponse>
@@ -583,8 +547,7 @@ public class SmsAsyncClient {
      *
      * 当源端服务器为Windows操作系统时，安装在源端服务器上的迁移Agent通过SSLSocket同目的端服务器通信，该接口用于下载目的端服务器所需要的证书和私钥(PEM格式)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCertKeyRequest 请求对象
      * @return CompletableFuture<ShowCertKeyResponse>
@@ -598,8 +561,7 @@ public class SmsAsyncClient {
      *
      * 当源端服务器为Windows操作系统时，安装在源端服务器上的迁移Agent通过SSLSocket同目的端服务器通信，该接口用于下载目的端服务器所需要的证书和私钥(PEM格式)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCertKeyRequest 请求对象
      * @return AsyncInvoker<ShowCertKeyRequest, ShowCertKeyResponse>
@@ -613,8 +575,7 @@ public class SmsAsyncClient {
      *
      * 迁移Agent调用该接口从SMS服务端获取下发给指定源端迁移Agent的命令。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCommandRequest 请求对象
      * @return CompletableFuture<ShowCommandResponse>
@@ -628,8 +589,7 @@ public class SmsAsyncClient {
      *
      * 迁移Agent调用该接口从SMS服务端获取下发给指定源端迁移Agent的命令。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCommandRequest 请求对象
      * @return AsyncInvoker<ShowCommandRequest, ShowCommandResponse>
@@ -643,8 +603,7 @@ public class SmsAsyncClient {
      *
      * 查询指定ID的迁移项目详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMigprojectRequest 请求对象
      * @return CompletableFuture<ShowMigprojectResponse>
@@ -658,8 +617,7 @@ public class SmsAsyncClient {
      *
      * 查询指定ID的迁移项目详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMigprojectRequest 请求对象
      * @return AsyncInvoker<ShowMigprojectRequest, ShowMigprojectResponse>
@@ -675,8 +633,7 @@ public class SmsAsyncClient {
      *
      * 获取服务器总览
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOverviewRequest 请求对象
      * @return CompletableFuture<ShowOverviewResponse>
@@ -690,8 +647,7 @@ public class SmsAsyncClient {
      *
      * 获取服务器总览
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOverviewRequest 请求对象
      * @return AsyncInvoker<ShowOverviewRequest, ShowOverviewResponse>
@@ -706,8 +662,7 @@ public class SmsAsyncClient {
      *
      * 查询指定任务ID的安全传输通道的证书passphrase。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPassphraseRequest 请求对象
      * @return CompletableFuture<ShowPassphraseResponse>
@@ -721,8 +676,7 @@ public class SmsAsyncClient {
      *
      * 查询指定任务ID的安全传输通道的证书passphrase。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPassphraseRequest 请求对象
      * @return AsyncInvoker<ShowPassphraseRequest, ShowPassphraseResponse>
@@ -738,8 +692,7 @@ public class SmsAsyncClient {
      *
      * 迁移Agent将源端服务器信息上报到主机迁移服务后，主机迁移服务会对迁移的可行性进行检测，该接口返回源端服务器的基本信息和检查结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerRequest 请求对象
      * @return CompletableFuture<ShowServerResponse>
@@ -753,8 +706,7 @@ public class SmsAsyncClient {
      *
      * 迁移Agent将源端服务器信息上报到主机迁移服务后，主机迁移服务会对迁移的可行性进行检测，该接口返回源端服务器的基本信息和检查结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowServerRequest 请求对象
      * @return AsyncInvoker<ShowServerRequest, ShowServerResponse>
@@ -768,8 +720,7 @@ public class SmsAsyncClient {
      *
      * 计算sha256
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSha256Request 请求对象
      * @return CompletableFuture<ShowSha256Response>
@@ -783,8 +734,7 @@ public class SmsAsyncClient {
      *
      * 计算sha256
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSha256Request 请求对象
      * @return AsyncInvoker<ShowSha256Request, ShowSha256Response>
@@ -798,8 +748,7 @@ public class SmsAsyncClient {
      *
      * 查询指定ID的模板中的目的端服务器的密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTargetPasswordRequest 请求对象
      * @return CompletableFuture<ShowTargetPasswordResponse>
@@ -813,8 +762,7 @@ public class SmsAsyncClient {
      *
      * 查询指定ID的模板中的目的端服务器的密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTargetPasswordRequest 请求对象
      * @return AsyncInvoker<ShowTargetPasswordRequest, ShowTargetPasswordResponse>
@@ -830,8 +778,7 @@ public class SmsAsyncClient {
      *
      * 查询指定ID的迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskRequest 请求对象
      * @return CompletableFuture<ShowTaskResponse>
@@ -845,8 +792,7 @@ public class SmsAsyncClient {
      *
      * 查询指定ID的迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskRequest 请求对象
      * @return AsyncInvoker<ShowTaskRequest, ShowTaskResponse>
@@ -860,8 +806,7 @@ public class SmsAsyncClient {
      *
      * 查询指定ID的弹性云服务器模板信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTemplateRequest 请求对象
      * @return CompletableFuture<ShowTemplateResponse>
@@ -875,8 +820,7 @@ public class SmsAsyncClient {
      *
      * 查询指定ID的弹性云服务器模板信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTemplateRequest 请求对象
      * @return AsyncInvoker<ShowTemplateRequest, ShowTemplateResponse>
@@ -891,8 +835,7 @@ public class SmsAsyncClient {
      *
      * 按时间段查询迁移任务的迁移速率。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowsSpeedLimitsRequest 请求对象
      * @return CompletableFuture<ShowsSpeedLimitsResponse>
@@ -906,8 +849,7 @@ public class SmsAsyncClient {
      *
      * 按时间段查询迁移任务的迁移速率。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowsSpeedLimitsRequest 请求对象
      * @return AsyncInvoker<ShowsSpeedLimitsRequest, ShowsSpeedLimitsResponse>
@@ -923,8 +865,7 @@ public class SmsAsyncClient {
      *
      * 解锁指定任务的目的端服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UnlockTargetEcsRequest 请求对象
      * @return CompletableFuture<UnlockTargetEcsResponse>
@@ -938,8 +879,7 @@ public class SmsAsyncClient {
      *
      * 解锁指定任务的目的端服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UnlockTargetEcsRequest 请求对象
      * @return AsyncInvoker<UnlockTargetEcsRequest, UnlockTargetEcsResponse>
@@ -955,8 +895,7 @@ public class SmsAsyncClient {
      *
      * 迁移Agent调用该接口向SMS服务端反馈指定指令的执行结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCommandResultRequest 请求对象
      * @return CompletableFuture<UpdateCommandResultResponse>
@@ -970,8 +909,7 @@ public class SmsAsyncClient {
      *
      * 迁移Agent调用该接口向SMS服务端反馈指定指令的执行结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCommandResultRequest 请求对象
      * @return AsyncInvoker<UpdateCommandResultRequest, UpdateCommandResultResponse>
@@ -987,8 +925,7 @@ public class SmsAsyncClient {
      *
      * 更新任务对应源端复制状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCopyStateRequest 请求对象
      * @return CompletableFuture<UpdateCopyStateResponse>
@@ -1002,8 +939,7 @@ public class SmsAsyncClient {
      *
      * 更新任务对应源端复制状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCopyStateRequest 请求对象
      * @return AsyncInvoker<UpdateCopyStateRequest, UpdateCopyStateResponse>
@@ -1019,8 +955,7 @@ public class SmsAsyncClient {
      *
      * 更改默认迁移项目，注册源端会注册在当前的默认项目下。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDefaultMigprojectRequest 请求对象
      * @return CompletableFuture<UpdateDefaultMigprojectResponse>
@@ -1035,8 +970,7 @@ public class SmsAsyncClient {
      *
      * 更改默认迁移项目，注册源端会注册在当前的默认项目下。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDefaultMigprojectRequest 请求对象
      * @return AsyncInvoker<UpdateDefaultMigprojectRequest, UpdateDefaultMigprojectResponse>
@@ -1052,8 +986,7 @@ public class SmsAsyncClient {
      *
      * 更新服务器的磁盘信息，此接口会把服务器原有磁盘信息清空，然后更新成新磁盘信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDiskInfoRequest 请求对象
      * @return CompletableFuture<UpdateDiskInfoResponse>
@@ -1067,8 +1000,7 @@ public class SmsAsyncClient {
      *
      * 更新服务器的磁盘信息，此接口会把服务器原有磁盘信息清空，然后更新成新磁盘信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDiskInfoRequest 请求对象
      * @return AsyncInvoker<UpdateDiskInfoRequest, UpdateDiskInfoResponse>
@@ -1084,8 +1016,7 @@ public class SmsAsyncClient {
      *
      * 更新迁移项目的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMigprojectRequest 请求对象
      * @return CompletableFuture<UpdateMigprojectResponse>
@@ -1099,8 +1030,7 @@ public class SmsAsyncClient {
      *
      * 更新迁移项目的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMigprojectRequest 请求对象
      * @return AsyncInvoker<UpdateMigprojectRequest, UpdateMigprojectResponse>
@@ -1116,8 +1046,7 @@ public class SmsAsyncClient {
      *
      * 该功能用来修改SMS服务端的源端名称，方便用户对源端进行管理。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServerNameRequest 请求对象
      * @return CompletableFuture<UpdateServerNameResponse>
@@ -1131,8 +1060,7 @@ public class SmsAsyncClient {
      *
      * 该功能用来修改SMS服务端的源端名称，方便用户对源端进行管理。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServerNameRequest 请求对象
      * @return AsyncInvoker<UpdateServerNameRequest, UpdateServerNameResponse>
@@ -1148,8 +1076,7 @@ public class SmsAsyncClient {
      *
      * 设置迁移任务的迁移速率。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSpeedRequest 请求对象
      * @return CompletableFuture<UpdateSpeedResponse>
@@ -1163,8 +1090,7 @@ public class SmsAsyncClient {
      *
      * 设置迁移任务的迁移速率。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSpeedRequest 请求对象
      * @return AsyncInvoker<UpdateSpeedRequest, UpdateSpeedResponse>
@@ -1178,8 +1104,7 @@ public class SmsAsyncClient {
      *
      * 更新指定ID的迁移任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskRequest 请求对象
      * @return CompletableFuture<UpdateTaskResponse>
@@ -1193,8 +1118,7 @@ public class SmsAsyncClient {
      *
      * 更新指定ID的迁移任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskRequest 请求对象
      * @return AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse>
@@ -1210,8 +1134,7 @@ public class SmsAsyncClient {
      * 
      * 迁移Agent自动调用此接口用于上报数据迁移进度，您无需调用此接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskSpeedRequest 请求对象
      * @return CompletableFuture<UpdateTaskSpeedResponse>
@@ -1227,8 +1150,7 @@ public class SmsAsyncClient {
      * 
      * 迁移Agent自动调用此接口用于上报数据迁移进度，您无需调用此接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskSpeedRequest 请求对象
      * @return AsyncInvoker<UpdateTaskSpeedRequest, UpdateTaskSpeedResponse>
@@ -1244,8 +1166,7 @@ public class SmsAsyncClient {
      *
      * 管理迁移任务，包括启动任务，暂停任务，同步任务，日志上传，回滚失败迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskStatusRequest 请求对象
      * @return CompletableFuture<UpdateTaskStatusResponse>
@@ -1259,8 +1180,7 @@ public class SmsAsyncClient {
      *
      * 管理迁移任务，包括启动任务，暂停任务，同步任务，日志上传，回滚失败迁移任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskStatusRequest 请求对象
      * @return AsyncInvoker<UpdateTaskStatusRequest, UpdateTaskStatusResponse>
@@ -1276,8 +1196,7 @@ public class SmsAsyncClient {
      *
      * 修改源端模板信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTemplateRequest 请求对象
      * @return CompletableFuture<UpdateTemplateResponse>
@@ -1291,8 +1210,7 @@ public class SmsAsyncClient {
      *
      * 修改源端模板信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse>

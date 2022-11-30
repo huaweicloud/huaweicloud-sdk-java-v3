@@ -25,8 +25,7 @@ public class CbsAsyncClient {
      * 获取完全匹配的热点标准问题列表。
      * 默认按照完全匹配标准问题被问及的频次降序排序。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CollectHotQuestionsRequest 请求对象
      * @return CompletableFuture<CollectHotQuestionsResponse>
@@ -41,8 +40,7 @@ public class CbsAsyncClient {
      * 获取完全匹配的热点标准问题列表。
      * 默认按照完全匹配标准问题被问及的频次降序排序。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CollectHotQuestionsRequest 请求对象
      * @return AsyncInvoker<CollectHotQuestionsRequest, CollectHotQuestionsResponse>
@@ -56,8 +54,7 @@ public class CbsAsyncClient {
      *
      * 用户问关键词统计。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CollectKeyWordsRequest 请求对象
      * @return CompletableFuture<CollectKeyWordsResponse>
@@ -71,8 +68,7 @@ public class CbsAsyncClient {
      *
      * 用户问关键词统计。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CollectKeyWordsRequest 请求对象
      * @return AsyncInvoker<CollectKeyWordsRequest, CollectKeyWordsResponse>
@@ -87,8 +83,7 @@ public class CbsAsyncClient {
      * 指定领域获取指定时间范围内的问题答复率，支持按周期统计。
      * 如果领域未指定则表示获取所有领域的问题答复率。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CollectReplyRatesRequest 请求对象
      * @return CompletableFuture<CollectReplyRatesResponse>
@@ -103,8 +98,7 @@ public class CbsAsyncClient {
      * 指定领域获取指定时间范围内的问题答复率，支持按周期统计。
      * 如果领域未指定则表示获取所有领域的问题答复率。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CollectReplyRatesRequest 请求对象
      * @return AsyncInvoker<CollectReplyRatesRequest, CollectReplyRatesResponse>
@@ -118,8 +112,7 @@ public class CbsAsyncClient {
      *
      * 获取用户会话统计信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CollectSessionStatsRequest 请求对象
      * @return CompletableFuture<CollectSessionStatsResponse>
@@ -133,8 +126,7 @@ public class CbsAsyncClient {
      *
      * 获取用户会话统计信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CollectSessionStatsRequest 请求对象
      * @return AsyncInvoker<CollectSessionStatsRequest, CollectSessionStatsResponse>
@@ -148,8 +140,7 @@ public class CbsAsyncClient {
      *
      * 问答会话API由开启会话、处理会话、关闭会话三个接口组成。用户可通过调用该接口创建会话。该接口仅支持老用户，新用户请优先使用问答机器人API接口进行调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSessionRequest 请求对象
      * @return CompletableFuture<CreateSessionResponse>
@@ -163,8 +154,7 @@ public class CbsAsyncClient {
      *
      * 问答会话API由开启会话、处理会话、关闭会话三个接口组成。用户可通过调用该接口创建会话。该接口仅支持老用户，新用户请优先使用问答机器人API接口进行调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSessionRequest 请求对象
      * @return AsyncInvoker<CreateSessionRequest, CreateSessionResponse>
@@ -178,8 +168,7 @@ public class CbsAsyncClient {
      *
      * 问答会话API由开启会话、处理会话、关闭会话三个接口组成。用户可通过调用该接口关闭会话。该接口即将下线，请优先使用问答机器人API接口进行调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSessionRequest 请求对象
      * @return CompletableFuture<DeleteSessionResponse>
@@ -193,8 +182,7 @@ public class CbsAsyncClient {
      *
      * 问答会话API由开启会话、处理会话、关闭会话三个接口组成。用户可通过调用该接口关闭会话。该接口即将下线，请优先使用问答机器人API接口进行调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSessionRequest 请求对象
      * @return AsyncInvoker<DeleteSessionRequest, DeleteSessionResponse>
@@ -208,8 +196,7 @@ public class CbsAsyncClient {
      *
      * 用户调用该接口和机器人进行聊天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteQaChatRequest 请求对象
      * @return CompletableFuture<ExecuteQaChatResponse>
@@ -223,8 +210,7 @@ public class CbsAsyncClient {
      *
      * 用户调用该接口和机器人进行聊天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteQaChatRequest 请求对象
      * @return AsyncInvoker<ExecuteQaChatRequest, ExecuteQaChatResponse>
@@ -238,8 +224,7 @@ public class CbsAsyncClient {
      *
      * 问答会话API由开启会话、处理会话、关闭会话三个接口组成。用户可通过调用该接口与机器人进行会话。该接口即将下线，请优先使用问答机器人API接口进行调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteSessionRequest 请求对象
      * @return CompletableFuture<ExecuteSessionResponse>
@@ -253,8 +238,7 @@ public class CbsAsyncClient {
      *
      * 问答会话API由开启会话、处理会话、关闭会话三个接口组成。用户可通过调用该接口与机器人进行会话。该接口即将下线，请优先使用问答机器人API接口进行调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteSessionRequest 请求对象
      * @return AsyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse>
@@ -268,8 +252,7 @@ public class CbsAsyncClient {
      *
      * 获取用户输入问题的提示问题列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSuggestionsRequest 请求对象
      * @return CompletableFuture<ListSuggestionsResponse>
@@ -283,8 +266,7 @@ public class CbsAsyncClient {
      *
      * 获取用户输入问题的提示问题列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSuggestionsRequest 请求对象
      * @return AsyncInvoker<ListSuggestionsRequest, ListSuggestionsResponse>
@@ -298,8 +280,7 @@ public class CbsAsyncClient {
      *
      * 智能问答返回的结果后，用户是否转人工。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param TagLaborRequest 请求对象
      * @return CompletableFuture<TagLaborResponse>
@@ -313,8 +294,7 @@ public class CbsAsyncClient {
      *
      * 智能问答返回的结果后，用户是否转人工。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param TagLaborRequest 请求对象
      * @return AsyncInvoker<TagLaborRequest, TagLaborResponse>
@@ -328,8 +308,7 @@ public class CbsAsyncClient {
      *
      * 用户提出问题后，对智能问答返回的结果是否满意。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param TagSatisfactionRequest 请求对象
      * @return CompletableFuture<TagSatisfactionResponse>
@@ -343,8 +322,7 @@ public class CbsAsyncClient {
      *
      * 用户提出问题后，对智能问答返回的结果是否满意。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param TagSatisfactionRequest 请求对象
      * @return AsyncInvoker<TagSatisfactionRequest, TagSatisfactionResponse>

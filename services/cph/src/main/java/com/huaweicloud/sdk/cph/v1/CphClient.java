@@ -22,8 +22,7 @@ public class CphClient {
      *
      * 批量导出云手机中的数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchExportCloudPhoneDataRequest 请求对象
      * @return BatchExportCloudPhoneDataResponse
@@ -37,8 +36,7 @@ public class CphClient {
      *
      * 批量导出云手机中的数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchExportCloudPhoneDataRequest 请求对象
      * @return SyncInvoker<BatchExportCloudPhoneDataRequest, BatchExportCloudPhoneDataResponse>
@@ -54,8 +52,7 @@ public class CphClient {
      *
      * 导入数据到手机中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchImportCloudPhoneDataRequest 请求对象
      * @return BatchImportCloudPhoneDataResponse
@@ -69,8 +66,7 @@ public class CphClient {
      *
      * 导入数据到手机中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchImportCloudPhoneDataRequest 请求对象
      * @return SyncInvoker<BatchImportCloudPhoneDataRequest, BatchImportCloudPhoneDataResponse>
@@ -86,8 +82,7 @@ public class CphClient {
      *
      * 批量迁移整台云手机，包括云手机的系统盘数据和数据盘数据。该接口为异步接口，迁移完成的时间和手机的数据量有一定关系，整机数据大小为11G时，迁移时间大约为3-5分钟。迁移前请关闭云手机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchMigrateCloudPhoneRequest 请求对象
      * @return BatchMigrateCloudPhoneResponse
@@ -101,8 +96,7 @@ public class CphClient {
      *
      * 批量迁移整台云手机，包括云手机的系统盘数据和数据盘数据。该接口为异步接口，迁移完成的时间和手机的数据量有一定关系，整机数据大小为11G时，迁移时间大约为3-5分钟。迁移前请关闭云手机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchMigrateCloudPhoneRequest 请求对象
      * @return SyncInvoker<BatchMigrateCloudPhoneRequest, BatchMigrateCloudPhoneResponse>
@@ -118,8 +112,7 @@ public class CphClient {
      *
      * 变更云手机服务器规格。只有能使用physical.rx1.xlarge.special私有规格的租户才可使用本接口。变更的目标规格也必须为特殊的规格才可变更。接口调用成功后，大约2分钟左右规格会变更结束，在订单中心可以查看到变更的订单状态为成功，且查询服务器的详细信息，可以查看到服务器规格名称已经变成新的规格名称。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeCloudPhoneServerModelRequest 请求对象
      * @return ChangeCloudPhoneServerModelResponse
@@ -133,8 +126,7 @@ public class CphClient {
      *
      * 变更云手机服务器规格。只有能使用physical.rx1.xlarge.special私有规格的租户才可使用本接口。变更的目标规格也必须为特殊的规格才可变更。接口调用成功后，大约2分钟左右规格会变更结束，在订单中心可以查看到变更的订单状态为成功，且查询服务器的详细信息，可以查看到服务器规格名称已经变成新的规格名称。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeCloudPhoneServerModelRequest 请求对象
      * @return SyncInvoker<ChangeCloudPhoneServerModelRequest, ChangeCloudPhoneServerModelResponse>
@@ -146,12 +138,11 @@ public class CphClient {
     }
 
     /**
-     * 购买系统定义网络的云手机服务器
+     * 购买系统定义网络云手机服务器
      *
      * 购买系统定义网络云手机服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCloudPhoneServerRequest 请求对象
      * @return CreateCloudPhoneServerResponse
@@ -161,12 +152,11 @@ public class CphClient {
     }
 
     /**
-     * 购买系统定义网络的云手机服务器
+     * 购买系统定义网络云手机服务器
      *
      * 购买系统定义网络云手机服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCloudPhoneServerRequest 请求对象
      * @return SyncInvoker<CreateCloudPhoneServerRequest, CreateCloudPhoneServerResponse>
@@ -182,8 +172,7 @@ public class CphClient {
      *
      * 购买自定义网络的云手机服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNet2CloudPhoneServerRequest 请求对象
      * @return CreateNet2CloudPhoneServerResponse
@@ -197,8 +186,7 @@ public class CphClient {
      *
      * 购买自定义网络的云手机服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNet2CloudPhoneServerRequest 请求对象
      * @return SyncInvoker<CreateNet2CloudPhoneServerRequest, CreateNet2CloudPhoneServerResponse>
@@ -214,8 +202,7 @@ public class CphClient {
      *
      * 在共享应用存储目录中删除共享应用，该功能仅在支持共享应用的云手机规格上可实现。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteShareAppsRequest 请求对象
      * @return DeleteShareAppsResponse
@@ -229,8 +216,7 @@ public class CphClient {
      *
      * 在共享应用存储目录中删除共享应用，该功能仅在支持共享应用的云手机规格上可实现。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteShareAppsRequest 请求对象
      * @return SyncInvoker<DeleteShareAppsRequest, DeleteShareAppsResponse>
@@ -246,8 +232,7 @@ public class CphClient {
      *
      * 删除共享存储目录中文件，该功能仅在支持共享存储的云手机规格上可实现。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteShareFilesRequest 请求对象
      * @return DeleteShareFilesResponse
@@ -261,8 +246,7 @@ public class CphClient {
      *
      * 删除共享存储目录中文件，该功能仅在支持共享存储的云手机规格上可实现。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteShareFilesRequest 请求对象
      * @return SyncInvoker<DeleteShareFilesRequest, DeleteShareFilesResponse>
@@ -278,8 +262,7 @@ public class CphClient {
      *
      * 手机流量路由修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportTrafficRequest 请求对象
      * @return ImportTrafficResponse
@@ -293,8 +276,7 @@ public class CphClient {
      *
      * 手机流量路由修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportTrafficRequest 请求对象
      * @return SyncInvoker<ImportTrafficRequest, ImportTrafficResponse>
@@ -308,8 +290,7 @@ public class CphClient {
      *
      * 根据项目ID查询可用的手机镜像。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCloudPhoneImagesRequest 请求对象
      * @return ListCloudPhoneImagesResponse
@@ -323,8 +304,7 @@ public class CphClient {
      *
      * 根据项目ID查询可用的手机镜像。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCloudPhoneImagesRequest 请求对象
      * @return SyncInvoker<ListCloudPhoneImagesRequest, ListCloudPhoneImagesResponse>
@@ -340,8 +320,7 @@ public class CphClient {
      *
      * 查询或统计云手机的规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCloudPhoneModelsRequest 请求对象
      * @return ListCloudPhoneModelsResponse
@@ -355,8 +334,7 @@ public class CphClient {
      *
      * 查询或统计云手机的规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCloudPhoneModelsRequest 请求对象
      * @return SyncInvoker<ListCloudPhoneModelsRequest, ListCloudPhoneModelsResponse>
@@ -372,8 +350,7 @@ public class CphClient {
      *
      * 查询云手机服务器的规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCloudPhoneServerModelsRequest 请求对象
      * @return ListCloudPhoneServerModelsResponse
@@ -387,8 +364,7 @@ public class CphClient {
      *
      * 查询云手机服务器的规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCloudPhoneServerModelsRequest 请求对象
      * @return SyncInvoker<ListCloudPhoneServerModelsRequest, ListCloudPhoneServerModelsResponse>
@@ -404,8 +380,7 @@ public class CphClient {
      *
      * 分页查询云手机服务器，云手机服务器列表按照创建时间进行降序排列。分页查询可以指定offset以及limit。如果不存在云手机服务器，则返回空列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCloudPhoneServersRequest 请求对象
      * @return ListCloudPhoneServersResponse
@@ -419,8 +394,7 @@ public class CphClient {
      *
      * 分页查询云手机服务器，云手机服务器列表按照创建时间进行降序排列。分页查询可以指定offset以及limit。如果不存在云手机服务器，则返回空列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCloudPhoneServersRequest 请求对象
      * @return SyncInvoker<ListCloudPhoneServersRequest, ListCloudPhoneServersResponse>
@@ -436,8 +410,7 @@ public class CphClient {
      *
      * 分页查询云手机，云手机列表按照创建时间进行降序排列。分页查询可以指定offset以及limit。如果不存在云手机，则返回空列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCloudPhonesRequest 请求对象
      * @return ListCloudPhonesResponse
@@ -451,8 +424,7 @@ public class CphClient {
      *
      * 分页查询云手机，云手机列表按照创建时间进行降序排列。分页查询可以指定offset以及limit。如果不存在云手机，则返回空列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCloudPhonesRequest 请求对象
      * @return SyncInvoker<ListCloudPhonesRequest, ListCloudPhonesResponse>
@@ -468,8 +440,7 @@ public class CphClient {
      *
      * 查询编码服务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEncodeServersRequest 请求对象
      * @return ListEncodeServersResponse
@@ -483,8 +454,7 @@ public class CphClient {
      *
      * 查询编码服务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEncodeServersRequest 请求对象
      * @return SyncInvoker<ListEncodeServersRequest, ListEncodeServersResponse>
@@ -500,8 +470,7 @@ public class CphClient {
      *
      * 查询同一个request id下的任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListJobsRequest 请求对象
      * @return ListJobsResponse
@@ -515,8 +484,7 @@ public class CphClient {
      *
      * 查询同一个request id下的任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListJobsRequest 请求对象
      * @return SyncInvoker<ListJobsRequest, ListJobsResponse>
@@ -530,8 +498,7 @@ public class CphClient {
      *
      * 查询共享存储指定路径下的文件列表，该功能仅在支持共享存储的云手机规格上可实现。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListShareFilesRequest 请求对象
      * @return ListShareFilesResponse
@@ -545,8 +512,7 @@ public class CphClient {
      *
      * 查询共享存储指定路径下的文件列表，该功能仅在支持共享存储的云手机规格上可实现。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListShareFilesRequest 请求对象
      * @return SyncInvoker<ListShareFilesRequest, ListShareFilesResponse>
@@ -562,8 +528,7 @@ public class CphClient {
      *
      * 推送应用tar文件至共享应用存储目录中，该功能仅在支持共享应用的云手机规格上可实现。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PushShareAppsRequest 请求对象
      * @return PushShareAppsResponse
@@ -577,8 +542,7 @@ public class CphClient {
      *
      * 推送应用tar文件至共享应用存储目录中，该功能仅在支持共享应用的云手机规格上可实现。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PushShareAppsRequest 请求对象
      * @return SyncInvoker<PushShareAppsRequest, PushShareAppsResponse>
@@ -592,8 +556,7 @@ public class CphClient {
      *
      * 推送文件至共享存储目录中，该功能仅在支持共享存储的云手机规格上可实现。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PushShareFilesRequest 请求对象
      * @return PushShareFilesResponse
@@ -607,8 +570,7 @@ public class CphClient {
      *
      * 推送文件至共享存储目录中，该功能仅在支持共享存储的云手机规格上可实现。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param PushShareFilesRequest 请求对象
      * @return SyncInvoker<PushShareFilesRequest, PushShareFilesResponse>
@@ -624,8 +586,7 @@ public class CphClient {
      *
      * 批量重置云手机，将云手机恢复出厂设置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetCloudPhoneRequest 请求对象
      * @return ResetCloudPhoneResponse
@@ -639,8 +600,7 @@ public class CphClient {
      *
      * 批量重置云手机，将云手机恢复出厂设置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetCloudPhoneRequest 请求对象
      * @return SyncInvoker<ResetCloudPhoneRequest, ResetCloudPhoneResponse>
@@ -656,8 +616,7 @@ public class CphClient {
      *
      * 批量重启云手机，也可用于开启云手机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartCloudPhoneRequest 请求对象
      * @return RestartCloudPhoneResponse
@@ -671,8 +630,7 @@ public class CphClient {
      *
      * 批量重启云手机，也可用于开启云手机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartCloudPhoneRequest 请求对象
      * @return SyncInvoker<RestartCloudPhoneRequest, RestartCloudPhoneResponse>
@@ -688,8 +646,7 @@ public class CphClient {
      *
      * 批量重启云手机服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartCloudPhoneServerRequest 请求对象
      * @return RestartCloudPhoneServerResponse
@@ -703,8 +660,7 @@ public class CphClient {
      *
      * 批量重启云手机服务器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartCloudPhoneServerRequest 请求对象
      * @return SyncInvoker<RestartCloudPhoneServerRequest, RestartCloudPhoneServerResponse>
@@ -720,8 +676,7 @@ public class CphClient {
      *
      * 批量重启编码服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartEncodeServerRequest 请求对象
      * @return RestartEncodeServerResponse
@@ -735,8 +690,7 @@ public class CphClient {
      *
      * 批量重启编码服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartEncodeServerRequest 请求对象
      * @return SyncInvoker<RestartEncodeServerRequest, RestartEncodeServerResponse>
@@ -752,8 +706,7 @@ public class CphClient {
      *
      * 查询云手机使用的带宽信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBandwidthDetailRequest 请求对象
      * @return ShowBandwidthDetailResponse
@@ -767,8 +720,7 @@ public class CphClient {
      *
      * 查询云手机使用的带宽信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBandwidthDetailRequest 请求对象
      * @return SyncInvoker<ShowBandwidthDetailRequest, ShowBandwidthDetailResponse>
@@ -784,8 +736,7 @@ public class CphClient {
      *
      * 查询云手机的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCloudPhoneDetailRequest 请求对象
      * @return ShowCloudPhoneDetailResponse
@@ -799,8 +750,7 @@ public class CphClient {
      *
      * 查询云手机的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCloudPhoneDetailRequest 请求对象
      * @return SyncInvoker<ShowCloudPhoneDetailRequest, ShowCloudPhoneDetailResponse>
@@ -816,8 +766,7 @@ public class CphClient {
      *
      * 根据server_id查询云手机服务器的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCloudPhoneServerDetailRequest 请求对象
      * @return ShowCloudPhoneServerDetailResponse
@@ -831,8 +780,7 @@ public class CphClient {
      *
      * 根据server_id查询云手机服务器的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCloudPhoneServerDetailRequest 请求对象
      * @return SyncInvoker<ShowCloudPhoneServerDetailRequest, ShowCloudPhoneServerDetailResponse>
@@ -848,8 +796,7 @@ public class CphClient {
      *
      * 查询任务的执行状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return ShowJobResponse
@@ -863,8 +810,7 @@ public class CphClient {
      *
      * 查询任务的执行状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return SyncInvoker<ShowJobRequest, ShowJobResponse>
@@ -878,8 +824,7 @@ public class CphClient {
      *
      * 批量关闭云手机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopCloudPhoneRequest 请求对象
      * @return StopCloudPhoneResponse
@@ -893,8 +838,7 @@ public class CphClient {
      *
      * 批量关闭云手机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopCloudPhoneRequest 请求对象
      * @return SyncInvoker<StopCloudPhoneRequest, StopCloudPhoneResponse>
@@ -910,8 +854,7 @@ public class CphClient {
      *
      * 修改云手机使用的共享带宽大小。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBandwidthRequest 请求对象
      * @return UpdateBandwidthResponse
@@ -925,8 +868,7 @@ public class CphClient {
      *
      * 修改云手机使用的共享带宽大小。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBandwidthRequest 请求对象
      * @return SyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse>
@@ -942,8 +884,7 @@ public class CphClient {
      *
      * 部分云手机属性开放更新能力，部分属性无法更新，部分属性需要重启手机生效，属性约束请云手机属性列表。如果手机处于异常状态，属性更新后需恢复手机状态为运行中才可生效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCloudPhonePropertyRequest 请求对象
      * @return UpdateCloudPhonePropertyResponse
@@ -957,8 +898,7 @@ public class CphClient {
      *
      * 部分云手机属性开放更新能力，部分属性无法更新，部分属性需要重启手机生效，属性约束请云手机属性列表。如果手机处于异常状态，属性更新后需恢复手机状态为运行中才可生效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCloudPhonePropertyRequest 请求对象
      * @return SyncInvoker<UpdateCloudPhonePropertyRequest, UpdateCloudPhonePropertyResponse>
@@ -974,8 +914,7 @@ public class CphClient {
      *
      * 修改连接云手机的密钥对。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateKeypairRequest 请求对象
      * @return UpdateKeypairResponse
@@ -989,8 +928,7 @@ public class CphClient {
      *
      * 修改连接云手机的密钥对。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateKeypairRequest 请求对象
      * @return SyncInvoker<UpdateKeypairRequest, UpdateKeypairResponse>
@@ -1004,8 +942,7 @@ public class CphClient {
      *
      * 根据phoneId修改phoneName。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePhoneNameRequest 请求对象
      * @return UpdatePhoneNameResponse
@@ -1019,8 +956,7 @@ public class CphClient {
      *
      * 根据phoneId修改phoneName。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePhoneNameRequest 请求对象
      * @return SyncInvoker<UpdatePhoneNameRequest, UpdatePhoneNameResponse>
@@ -1036,8 +972,7 @@ public class CphClient {
      *
      * 根据serverId修改serverName。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServerNameRequest 请求对象
      * @return UpdateServerNameResponse
@@ -1051,8 +986,7 @@ public class CphClient {
      *
      * 根据serverId修改serverName。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServerNameRequest 请求对象
      * @return SyncInvoker<UpdateServerNameRequest, UpdateServerNameResponse>
@@ -1064,12 +998,69 @@ public class CphClient {
     }
 
     /**
+     * 安装apk
+     *
+     * 在云手机中安装apk。系统会将指定的apk文件下载后直接安装到云手机中。
+     * 支持安装单apk应用和多apk应用。可使用install命令安装单apk应用，一次只支持安装一个apk；可使用install-multiple命令安装多apk应用（多apk应用为单个应用拆分成多个apk），一次只支持同一个应用的多个apk。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param InstallApkRequest 请求对象
+     * @return InstallApkResponse
+     */
+    public InstallApkResponse installApk(InstallApkRequest request) {
+        return hcClient.syncInvokeHttp(request, CphMeta.installApk);
+    }
+
+    /**
+     * 安装apk
+     *
+     * 在云手机中安装apk。系统会将指定的apk文件下载后直接安装到云手机中。
+     * 支持安装单apk应用和多apk应用。可使用install命令安装单apk应用，一次只支持安装一个apk；可使用install-multiple命令安装多apk应用（多apk应用为单个应用拆分成多个apk），一次只支持同一个应用的多个apk。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param InstallApkRequest 请求对象
+     * @return SyncInvoker<InstallApkRequest, InstallApkResponse>
+     */
+    public SyncInvoker<InstallApkRequest, InstallApkResponse> installApkInvoker(InstallApkRequest request) {
+        return new SyncInvoker<InstallApkRequest, InstallApkResponse>(request, CphMeta.installApk, hcClient);
+    }
+
+    /**
+     * 推送文件
+     *
+     * 推送文件到云手机文件系统中。系统会将所指定的文件下载解压后，将解压后的内容全部推送到云手机的根目录下。只支持指定tar格式的文件进行推送，您需要将tar文件提前上传至您的OBS桶中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PushFileRequest 请求对象
+     * @return PushFileResponse
+     */
+    public PushFileResponse pushFile(PushFileRequest request) {
+        return hcClient.syncInvokeHttp(request, CphMeta.pushFile);
+    }
+
+    /**
+     * 推送文件
+     *
+     * 推送文件到云手机文件系统中。系统会将所指定的文件下载解压后，将解压后的内容全部推送到云手机的根目录下。只支持指定tar格式的文件进行推送，您需要将tar文件提前上传至您的OBS桶中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PushFileRequest 请求对象
+     * @return SyncInvoker<PushFileRequest, PushFileResponse>
+     */
+    public SyncInvoker<PushFileRequest, PushFileResponse> pushFileInvoker(PushFileRequest request) {
+        return new SyncInvoker<PushFileRequest, PushFileResponse>(request, CphMeta.pushFile, hcClient);
+    }
+
+    /**
      * 执行异步adb命令
      *
-     * 在云手机中执行异步执行命令并返回任务，可调用查询任务执行状态和查询任务执行状态列表获取任务执行结果。该接口支持push、install、uninstall和shell命令的执行。
+     * 在云手机中执行shell命令。该接口为异步接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunShellCommandRequest 请求对象
      * @return RunShellCommandResponse
@@ -1081,10 +1072,9 @@ public class CphClient {
     /**
      * 执行异步adb命令
      *
-     * 在云手机中执行异步执行命令并返回任务，可调用查询任务执行状态和查询任务执行状态列表获取任务执行结果。该接口支持push、install、uninstall和shell命令的执行。
+     * 在云手机中执行shell命令。该接口为异步接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunShellCommandRequest 请求对象
      * @return SyncInvoker<RunShellCommandRequest, RunShellCommandResponse>
@@ -1100,8 +1090,7 @@ public class CphClient {
      *
      * 在云手机中同步执行命令并返回命令执行的输出信息，该接口仅支持adb shell命令的执行。1分钟内每个用户调用接口次数上限为6次，每个云手机允许执行命令超时时间为2秒，接口时间不超过30秒，执行云手机数越多，接口耗时相应越长。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSyncCommandRequest 请求对象
      * @return RunSyncCommandResponse
@@ -1115,8 +1104,7 @@ public class CphClient {
      *
      * 在云手机中同步执行命令并返回命令执行的输出信息，该接口仅支持adb shell命令的执行。1分钟内每个用户调用接口次数上限为6次，每个云手机允许执行命令超时时间为2秒，接口时间不超过30秒，执行云手机数越多，接口耗时相应越长。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSyncCommandRequest 请求对象
      * @return SyncInvoker<RunSyncCommandRequest, RunSyncCommandResponse>
@@ -1125,6 +1113,34 @@ public class CphClient {
         RunSyncCommandRequest request) {
         return new SyncInvoker<RunSyncCommandRequest, RunSyncCommandResponse>(request, CphMeta.runSyncCommand,
             hcClient);
+    }
+
+    /**
+     * 卸载apk
+     *
+     * 在云手机中卸载apk。该接口为异步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UninstallApkRequest 请求对象
+     * @return UninstallApkResponse
+     */
+    public UninstallApkResponse uninstallApk(UninstallApkRequest request) {
+        return hcClient.syncInvokeHttp(request, CphMeta.uninstallApk);
+    }
+
+    /**
+     * 卸载apk
+     *
+     * 在云手机中卸载apk。该接口为异步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UninstallApkRequest 请求对象
+     * @return SyncInvoker<UninstallApkRequest, UninstallApkResponse>
+     */
+    public SyncInvoker<UninstallApkRequest, UninstallApkResponse> uninstallApkInvoker(UninstallApkRequest request) {
+        return new SyncInvoker<UninstallApkRequest, UninstallApkResponse>(request, CphMeta.uninstallApk, hcClient);
     }
 
 }

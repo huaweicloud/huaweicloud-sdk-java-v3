@@ -22,8 +22,7 @@ public class KpsClient {
      *
      * 给指定的虚拟机绑定（替换或重置，替换需提供虚拟机已配置的SSH密钥对私钥；重置不需要提供虚拟机的SSH密钥对私钥）新的SSH密钥对。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateKeypairRequest 请求对象
      * @return AssociateKeypairResponse
@@ -37,8 +36,7 @@ public class KpsClient {
      *
      * 给指定的虚拟机绑定（替换或重置，替换需提供虚拟机已配置的SSH密钥对私钥；重置不需要提供虚拟机的SSH密钥对私钥）新的SSH密钥对。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateKeypairRequest 请求对象
      * @return SyncInvoker<AssociateKeypairRequest, AssociateKeypairResponse>
@@ -54,8 +52,7 @@ public class KpsClient {
      *
      * 创建和导入SSH密钥对
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateKeypairRequest 请求对象
      * @return CreateKeypairResponse
@@ -69,8 +66,7 @@ public class KpsClient {
      *
      * 创建和导入SSH密钥对
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateKeypairRequest 请求对象
      * @return SyncInvoker<CreateKeypairRequest, CreateKeypairResponse>
@@ -84,8 +80,7 @@ public class KpsClient {
      *
      * 删除操作失败的任务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAllFailedTaskRequest 请求对象
      * @return DeleteAllFailedTaskResponse
@@ -99,8 +94,7 @@ public class KpsClient {
      *
      * 删除操作失败的任务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAllFailedTaskRequest 请求对象
      * @return SyncInvoker<DeleteAllFailedTaskRequest, DeleteAllFailedTaskResponse>
@@ -116,8 +110,7 @@ public class KpsClient {
      *
      * 删除失败的任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteFailedTaskRequest 请求对象
      * @return DeleteFailedTaskResponse
@@ -131,8 +124,7 @@ public class KpsClient {
      *
      * 删除失败的任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteFailedTaskRequest 请求对象
      * @return SyncInvoker<DeleteFailedTaskRequest, DeleteFailedTaskResponse>
@@ -148,8 +140,7 @@ public class KpsClient {
      *
      * 删除SSH密钥对。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteKeypairRequest 请求对象
      * @return DeleteKeypairResponse
@@ -163,8 +154,7 @@ public class KpsClient {
      *
      * 删除SSH密钥对。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteKeypairRequest 请求对象
      * @return SyncInvoker<DeleteKeypairRequest, DeleteKeypairResponse>
@@ -178,8 +168,7 @@ public class KpsClient {
      *
      * 给指定的虚拟机解除绑定SSH密钥对并恢复SSH密码登录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateKeypairRequest 请求对象
      * @return DisassociateKeypairResponse
@@ -193,8 +182,7 @@ public class KpsClient {
      *
      * 给指定的虚拟机解除绑定SSH密钥对并恢复SSH密码登录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateKeypairRequest 请求对象
      * @return SyncInvoker<DisassociateKeypairRequest, DisassociateKeypairResponse>
@@ -210,8 +198,7 @@ public class KpsClient {
      *
      * 查询绑定、解绑等操作失败的任务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFailedTaskRequest 请求对象
      * @return ListFailedTaskResponse
@@ -225,8 +212,7 @@ public class KpsClient {
      *
      * 查询绑定、解绑等操作失败的任务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFailedTaskRequest 请求对象
      * @return SyncInvoker<ListFailedTaskRequest, ListFailedTaskResponse>
@@ -242,8 +228,7 @@ public class KpsClient {
      *
      * 查询SSH密钥对详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKeypairDetailRequest 请求对象
      * @return ListKeypairDetailResponse
@@ -257,8 +242,7 @@ public class KpsClient {
      *
      * 查询SSH密钥对详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKeypairDetailRequest 请求对象
      * @return SyncInvoker<ListKeypairDetailRequest, ListKeypairDetailResponse>
@@ -274,8 +258,7 @@ public class KpsClient {
      *
      * 根据SSH密钥对接口返回的task_id，查询SSH密钥对当前任务的执行状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKeypairTaskRequest 请求对象
      * @return ListKeypairTaskResponse
@@ -289,8 +272,7 @@ public class KpsClient {
      *
      * 根据SSH密钥对接口返回的task_id，查询SSH密钥对当前任务的执行状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKeypairTaskRequest 请求对象
      * @return SyncInvoker<ListKeypairTaskRequest, ListKeypairTaskResponse>
@@ -306,8 +288,7 @@ public class KpsClient {
      *
      * 查询SSH密钥对列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKeypairsRequest 请求对象
      * @return ListKeypairsResponse
@@ -321,8 +302,7 @@ public class KpsClient {
      *
      * 查询SSH密钥对列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKeypairsRequest 请求对象
      * @return SyncInvoker<ListKeypairsRequest, ListKeypairsResponse>
@@ -336,8 +316,7 @@ public class KpsClient {
      *
      * 查询正在处理的任务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRunningTaskRequest 请求对象
      * @return ListRunningTaskResponse
@@ -351,8 +330,7 @@ public class KpsClient {
      *
      * 查询正在处理的任务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRunningTaskRequest 请求对象
      * @return SyncInvoker<ListRunningTaskRequest, ListRunningTaskResponse>
@@ -368,8 +346,7 @@ public class KpsClient {
      *
      * 更新SSH密钥对描述。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateKeypairDescriptionRequest 请求对象
      * @return UpdateKeypairDescriptionResponse
@@ -383,8 +360,7 @@ public class KpsClient {
      *
      * 更新SSH密钥对描述。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateKeypairDescriptionRequest 请求对象
      * @return SyncInvoker<UpdateKeypairDescriptionRequest, UpdateKeypairDescriptionResponse>

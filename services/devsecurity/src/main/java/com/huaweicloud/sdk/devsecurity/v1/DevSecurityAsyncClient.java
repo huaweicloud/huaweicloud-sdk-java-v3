@@ -24,8 +24,7 @@ public class DevSecurityAsyncClient {
      *
      * 创建移动应用安全任务并启动
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecAppTaskRequest 请求对象
      * @return CompletableFuture<CreateSecAppTaskResponse>
@@ -39,8 +38,7 @@ public class DevSecurityAsyncClient {
      *
      * 创建移动应用安全任务并启动
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecAppTaskRequest 请求对象
      * @return AsyncInvoker<CreateSecAppTaskRequest, CreateSecAppTaskResponse>
@@ -56,8 +54,7 @@ public class DevSecurityAsyncClient {
      *
      * 删除移动应用安全任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecAppTaskRequest 请求对象
      * @return CompletableFuture<DeleteSecAppTaskResponse>
@@ -71,8 +68,7 @@ public class DevSecurityAsyncClient {
      *
      * 删除移动应用安全任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecAppTaskRequest 请求对象
      * @return AsyncInvoker<DeleteSecAppTaskRequest, DeleteSecAppTaskResponse>
@@ -88,8 +84,7 @@ public class DevSecurityAsyncClient {
      *
      * 获取移动应用安全任务结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecAppTaskResultRequest 请求对象
      * @return CompletableFuture<ShowSecAppTaskResultResponse>
@@ -104,8 +99,7 @@ public class DevSecurityAsyncClient {
      *
      * 获取移动应用安全任务结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecAppTaskResultRequest 请求对象
      * @return AsyncInvoker<ShowSecAppTaskResultRequest, ShowSecAppTaskResultResponse>
@@ -121,8 +115,7 @@ public class DevSecurityAsyncClient {
      *
      * 查询移动应用安全任务状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecAppTaskStatusRequest 请求对象
      * @return CompletableFuture<ShowSecAppTaskStatusResponse>
@@ -137,8 +130,7 @@ public class DevSecurityAsyncClient {
      *
      * 查询移动应用安全任务状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecAppTaskStatusRequest 请求对象
      * @return AsyncInvoker<ShowSecAppTaskStatusRequest, ShowSecAppTaskStatusResponse>

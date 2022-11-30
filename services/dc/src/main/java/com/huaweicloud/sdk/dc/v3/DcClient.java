@@ -23,8 +23,7 @@ public class DcClient {
      * 用于合作伙伴用户最终租户创建托管专线
      * 创建者必须拥有合作伙伴资质，并且已经构建好运营(hosting)专线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHostedDirectConnectRequest 请求对象
      * @return CreateHostedDirectConnectResponse
@@ -39,8 +38,7 @@ public class DcClient {
      * 用于合作伙伴用户最终租户创建托管专线
      * 创建者必须拥有合作伙伴资质，并且已经构建好运营(hosting)专线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHostedDirectConnectRequest 请求对象
      * @return SyncInvoker<CreateHostedDirectConnectRequest, CreateHostedDirectConnectResponse>
@@ -56,8 +54,7 @@ public class DcClient {
      *
      * 删除物理连接，本接口只适用于按需计费物理专线，对于包周期购买的专线通过订单退订的方式删除物理连接
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDirectConnectRequest 请求对象
      * @return DeleteDirectConnectResponse
@@ -71,8 +68,7 @@ public class DcClient {
      *
      * 删除物理连接，本接口只适用于按需计费物理专线，对于包周期购买的专线通过订单退订的方式删除物理连接
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDirectConnectRequest 请求对象
      * @return SyncInvoker<DeleteDirectConnectRequest, DeleteDirectConnectResponse>
@@ -88,8 +84,7 @@ public class DcClient {
      *
      * 合作伙伴删除托管专线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHostedDirectConnectRequest 请求对象
      * @return DeleteHostedDirectConnectResponse
@@ -103,8 +98,7 @@ public class DcClient {
      *
      * 合作伙伴删除托管专线
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHostedDirectConnectRequest 请求对象
      * @return SyncInvoker<DeleteHostedDirectConnectRequest, DeleteHostedDirectConnectResponse>
@@ -120,8 +114,7 @@ public class DcClient {
      *
      * 查询租户创建的所有的direct connect对象.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDirectConnectsRequest 请求对象
      * @return ListDirectConnectsResponse
@@ -135,8 +128,7 @@ public class DcClient {
      *
      * 查询租户创建的所有的direct connect对象.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDirectConnectsRequest 请求对象
      * @return SyncInvoker<ListDirectConnectsRequest, ListDirectConnectsResponse>
@@ -152,8 +144,7 @@ public class DcClient {
      *
      * 查询合作伙伴创建的托管专线连接列表.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostedDirectConnectsRequest 请求对象
      * @return ListHostedDirectConnectsResponse
@@ -167,8 +158,7 @@ public class DcClient {
      *
      * 查询合作伙伴创建的托管专线连接列表.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostedDirectConnectsRequest 请求对象
      * @return SyncInvoker<ListHostedDirectConnectsRequest, ListHostedDirectConnectsResponse>
@@ -184,8 +174,7 @@ public class DcClient {
      *
      * 查询物理连接详细信息.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDirectConnectRequest 请求对象
      * @return ShowDirectConnectResponse
@@ -199,8 +188,7 @@ public class DcClient {
      *
      * 查询物理连接详细信息.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDirectConnectRequest 请求对象
      * @return SyncInvoker<ShowDirectConnectRequest, ShowDirectConnectResponse>
@@ -216,8 +204,7 @@ public class DcClient {
      *
      * 查询合法作伙伴的Hosted专线类型.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHostedDirectConnectRequest 请求对象
      * @return ShowHostedDirectConnectResponse
@@ -231,8 +218,7 @@ public class DcClient {
      *
      * 查询合法作伙伴的Hosted专线类型.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHostedDirectConnectRequest 请求对象
      * @return SyncInvoker<ShowHostedDirectConnectRequest, ShowHostedDirectConnectResponse>
@@ -248,8 +234,7 @@ public class DcClient {
      *
      * 更新物理连接信息，包括名字,描述等信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDirectConnectRequest 请求对象
      * @return UpdateDirectConnectResponse
@@ -263,8 +248,7 @@ public class DcClient {
      *
      * 更新物理连接信息，包括名字,描述等信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDirectConnectRequest 请求对象
      * @return SyncInvoker<UpdateDirectConnectRequest, UpdateDirectConnectResponse>
@@ -280,8 +264,7 @@ public class DcClient {
      *
      * 合作伙伴创建托管专线.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHostedDirectConnectRequest 请求对象
      * @return UpdateHostedDirectConnectResponse
@@ -295,8 +278,7 @@ public class DcClient {
      *
      * 合作伙伴创建托管专线.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHostedDirectConnectRequest 请求对象
      * @return SyncInvoker<UpdateHostedDirectConnectRequest, UpdateHostedDirectConnectResponse>
@@ -314,8 +296,7 @@ public class DcClient {
      * - 标签管理服务需要使用该接口批量管理实例的标签。
      * - 一个资源上最多有10个标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateResourceTagsRequest 请求对象
      * @return BatchCreateResourceTagsResponse
@@ -331,8 +312,7 @@ public class DcClient {
      * - 标签管理服务需要使用该接口批量管理实例的标签。
      * - 一个资源上最多有10个标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateResourceTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse>
@@ -350,8 +330,7 @@ public class DcClient {
      * - 此接口为幂等接口：
      * - 创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResourceTagRequest 请求对象
      * @return CreateResourceTagResponse
@@ -367,8 +346,7 @@ public class DcClient {
      * - 此接口为幂等接口：
      * - 创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResourceTagRequest 请求对象
      * @return SyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse>
@@ -384,8 +362,7 @@ public class DcClient {
      *
      * 删除时,不对标签字符集做校验，调用接口前必须要做encodeURI，服务端需要对接口uri做decodeURI。删除的key不存在报404，Key不能为空或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceTagRequest 请求对象
      * @return DeleteResourceTagResponse
@@ -399,8 +376,7 @@ public class DcClient {
      *
      * 删除时,不对标签字符集做校验，调用接口前必须要做encodeURI，服务端需要对接口uri做decodeURI。删除的key不存在报404，Key不能为空或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteResourceTagRequest 请求对象
      * @return SyncInvoker<DeleteResourceTagRequest, DeleteResourceTagResponse>
@@ -417,8 +393,7 @@ public class DcClient {
      * - 查询租户在指定Project中实例类型的所有资源标签集合。
      * - 标签管理服务需要能够列出当前租户全部已使用的资源标签集合，为各服务打资源标签和过滤实例时提供标签联想功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectTagsRequest 请求对象
      * @return ListProjectTagsResponse
@@ -433,8 +408,7 @@ public class DcClient {
      * - 查询租户在指定Project中实例类型的所有资源标签集合。
      * - 标签管理服务需要能够列出当前租户全部已使用的资源标签集合，为各服务打资源标签和过滤实例时提供标签联想功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectTagsRequest 请求对象
      * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
@@ -450,8 +424,7 @@ public class DcClient {
      *
      * 通过标签查询资源实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagResourceInstancesRequest 请求对象
      * @return ListTagResourceInstancesResponse
@@ -465,8 +438,7 @@ public class DcClient {
      *
      * 通过标签查询资源实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagResourceInstancesRequest 请求对象
      * @return SyncInvoker<ListTagResourceInstancesRequest, ListTagResourceInstancesResponse>
@@ -482,8 +454,7 @@ public class DcClient {
      *
      * 查询资源标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceTagRequest 请求对象
      * @return ShowResourceTagResponse
@@ -497,8 +468,7 @@ public class DcClient {
      *
      * 查询资源标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceTagRequest 请求对象
      * @return SyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse>
@@ -514,8 +484,7 @@ public class DcClient {
      *
      * 创建虑拟网关
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVirtualGatewayRequest 请求对象
      * @return CreateVirtualGatewayResponse
@@ -529,8 +498,7 @@ public class DcClient {
      *
      * 创建虑拟网关
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVirtualGatewayRequest 请求对象
      * @return SyncInvoker<CreateVirtualGatewayRequest, CreateVirtualGatewayResponse>
@@ -546,8 +514,7 @@ public class DcClient {
      *
      * 删除指定的虚拟网关
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVirtualGatewayRequest 请求对象
      * @return DeleteVirtualGatewayResponse
@@ -561,8 +528,7 @@ public class DcClient {
      *
      * 删除指定的虚拟网关
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVirtualGatewayRequest 请求对象
      * @return SyncInvoker<DeleteVirtualGatewayRequest, DeleteVirtualGatewayResponse>
@@ -578,8 +544,7 @@ public class DcClient {
      *
      * 查询虚拟网关列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVirtualGatewaysRequest 请求对象
      * @return ListVirtualGatewaysResponse
@@ -593,8 +558,7 @@ public class DcClient {
      *
      * 查询虚拟网关列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVirtualGatewaysRequest 请求对象
      * @return SyncInvoker<ListVirtualGatewaysRequest, ListVirtualGatewaysResponse>
@@ -610,8 +574,7 @@ public class DcClient {
      *
      * 查询指定虚拟网关的详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVirtualGatewayRequest 请求对象
      * @return ShowVirtualGatewayResponse
@@ -625,8 +588,7 @@ public class DcClient {
      *
      * 查询指定虚拟网关的详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVirtualGatewayRequest 请求对象
      * @return SyncInvoker<ShowVirtualGatewayRequest, ShowVirtualGatewayResponse>
@@ -642,8 +604,7 @@ public class DcClient {
      *
      * 修改虚拟网关的信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVirtualGatewayRequest 请求对象
      * @return UpdateVirtualGatewayResponse
@@ -657,8 +618,7 @@ public class DcClient {
      *
      * 修改虚拟网关的信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVirtualGatewayRequest 请求对象
      * @return SyncInvoker<UpdateVirtualGatewayRequest, UpdateVirtualGatewayResponse>
@@ -674,8 +634,7 @@ public class DcClient {
      *
      * 虚拟接口配置物理专线上与客户互联的IP和路由等相关信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVirtualInterfaceRequest 请求对象
      * @return CreateVirtualInterfaceResponse
@@ -689,8 +648,7 @@ public class DcClient {
      *
      * 虚拟接口配置物理专线上与客户互联的IP和路由等相关信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVirtualInterfaceRequest 请求对象
      * @return SyncInvoker<CreateVirtualInterfaceRequest, CreateVirtualInterfaceResponse>
@@ -706,8 +664,7 @@ public class DcClient {
      *
      * 删除虚拟接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVirtualInterfaceRequest 请求对象
      * @return DeleteVirtualInterfaceResponse
@@ -721,8 +678,7 @@ public class DcClient {
      *
      * 删除虚拟接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVirtualInterfaceRequest 请求对象
      * @return SyncInvoker<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse>
@@ -738,8 +694,7 @@ public class DcClient {
      *
      * 查询租户所有的虚拟接口列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVirtualInterfacesRequest 请求对象
      * @return ListVirtualInterfacesResponse
@@ -753,8 +708,7 @@ public class DcClient {
      *
      * 查询租户所有的虚拟接口列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVirtualInterfacesRequest 请求对象
      * @return SyncInvoker<ListVirtualInterfacesRequest, ListVirtualInterfacesResponse>
@@ -770,8 +724,7 @@ public class DcClient {
      *
      * 查询虚拟接口详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVirtualInterfaceRequest 请求对象
      * @return ShowVirtualInterfaceResponse
@@ -785,8 +738,7 @@ public class DcClient {
      *
      * 查询虚拟接口详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVirtualInterfaceRequest 请求对象
      * @return SyncInvoker<ShowVirtualInterfaceRequest, ShowVirtualInterfaceResponse>
@@ -802,8 +754,7 @@ public class DcClient {
      *
      * 修改虚拟接口的详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVirtualInterfaceRequest 请求对象
      * @return UpdateVirtualInterfaceResponse
@@ -817,8 +768,7 @@ public class DcClient {
      *
      * 修改虚拟接口的详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVirtualInterfaceRequest 请求对象
      * @return SyncInvoker<UpdateVirtualInterfaceRequest, UpdateVirtualInterfaceResponse>

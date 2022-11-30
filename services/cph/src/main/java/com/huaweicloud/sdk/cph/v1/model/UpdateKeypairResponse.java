@@ -22,7 +22,7 @@ public class UpdateKeypairResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
-    private List<Object> jobs = null;
+    private List<ServerJob> jobs = null;
 
     public UpdateKeypairResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -30,7 +30,7 @@ public class UpdateKeypairResponse extends SdkResponse {
     }
 
     /**
-     * 请求的唯一标识ID
+     * 请求的唯一标识ID。
      * @return requestId
      */
     public String getRequestId() {
@@ -41,12 +41,12 @@ public class UpdateKeypairResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public UpdateKeypairResponse withJobs(List<Object> jobs) {
+    public UpdateKeypairResponse withJobs(List<ServerJob> jobs) {
         this.jobs = jobs;
         return this;
     }
 
-    public UpdateKeypairResponse addJobsItem(Object jobsItem) {
+    public UpdateKeypairResponse addJobsItem(ServerJob jobsItem) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class UpdateKeypairResponse extends SdkResponse {
         return this;
     }
 
-    public UpdateKeypairResponse withJobs(Consumer<List<Object>> jobsSetter) {
+    public UpdateKeypairResponse withJobs(Consumer<List<ServerJob>> jobsSetter) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class UpdateKeypairResponse extends SdkResponse {
      * 任务信息
      * @return jobs
      */
-    public List<Object> getJobs() {
+    public List<ServerJob> getJobs() {
         return jobs;
     }
 
-    public void setJobs(List<Object> jobs) {
+    public void setJobs(List<ServerJob> jobs) {
         this.jobs = jobs;
     }
 

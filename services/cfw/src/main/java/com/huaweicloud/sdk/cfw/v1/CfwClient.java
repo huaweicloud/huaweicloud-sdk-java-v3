@@ -22,8 +22,7 @@ public class CfwClient {
      *
      * 添加地址组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddAddressItemsUsingPostRequest 请求对象
      * @return AddAddressItemsUsingPostResponse
@@ -37,8 +36,7 @@ public class CfwClient {
      *
      * 添加地址组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddAddressItemsUsingPostRequest 请求对象
      * @return SyncInvoker<AddAddressItemsUsingPostRequest, AddAddressItemsUsingPostResponse>
@@ -54,8 +52,7 @@ public class CfwClient {
      *
      * 添加地址组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddAddressSetInfoUsingPostRequest 请求对象
      * @return AddAddressSetInfoUsingPostResponse
@@ -69,8 +66,7 @@ public class CfwClient {
      *
      * 添加地址组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddAddressSetInfoUsingPostRequest 请求对象
      * @return SyncInvoker<AddAddressSetInfoUsingPostRequest, AddAddressSetInfoUsingPostResponse>
@@ -86,8 +82,7 @@ public class CfwClient {
      *
      * 创建黑白名单规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddBlackWhiteListUsingPostRequest 请求对象
      * @return AddBlackWhiteListUsingPostResponse
@@ -101,8 +96,7 @@ public class CfwClient {
      *
      * 创建黑白名单规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddBlackWhiteListUsingPostRequest 请求对象
      * @return SyncInvoker<AddBlackWhiteListUsingPostRequest, AddBlackWhiteListUsingPostResponse>
@@ -118,8 +112,7 @@ public class CfwClient {
      *
      * 批量添加服务组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddServiceItemsUsingPostRequest 请求对象
      * @return AddServiceItemsUsingPostResponse
@@ -133,8 +126,7 @@ public class CfwClient {
      *
      * 批量添加服务组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddServiceItemsUsingPostRequest 请求对象
      * @return SyncInvoker<AddServiceItemsUsingPostRequest, AddServiceItemsUsingPostResponse>
@@ -150,8 +142,7 @@ public class CfwClient {
      *
      * 创建服务组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddServiceSetUsingPostRequest 请求对象
      * @return AddServiceSetUsingPostResponse
@@ -165,8 +156,7 @@ public class CfwClient {
      *
      * 创建服务组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddServiceSetUsingPostRequest 请求对象
      * @return SyncInvoker<AddServiceSetUsingPostRequest, AddServiceSetUsingPostResponse>
@@ -182,8 +172,7 @@ public class CfwClient {
      *
      * 东西向防护资源防护开启/关闭
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeEwProtectStatusRequest 请求对象
      * @return ChangeEwProtectStatusResponse
@@ -197,8 +186,7 @@ public class CfwClient {
      *
      * 东西向防护资源防护开启/关闭
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeEwProtectStatusRequest 请求对象
      * @return SyncInvoker<ChangeEwProtectStatusRequest, ChangeEwProtectStatusResponse>
@@ -214,8 +202,7 @@ public class CfwClient {
      *
      * 切换防护模式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeIpsProtectModeUsingPostRequest 请求对象
      * @return ChangeIpsProtectModeUsingPostResponse
@@ -230,8 +217,7 @@ public class CfwClient {
      *
      * 切换防护模式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeIpsProtectModeUsingPostRequest 请求对象
      * @return SyncInvoker<ChangeIpsProtectModeUsingPostRequest, ChangeIpsProtectModeUsingPostResponse>
@@ -247,8 +233,7 @@ public class CfwClient {
      *
      * 清除规则击中次数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAclRuleCountRequest 请求对象
      * @return DeleteAclRuleCountResponse
@@ -262,8 +247,7 @@ public class CfwClient {
      *
      * 清除规则击中次数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAclRuleCountRequest 请求对象
      * @return SyncInvoker<DeleteAclRuleCountRequest, DeleteAclRuleCountResponse>
@@ -279,8 +263,7 @@ public class CfwClient {
      *
      * 删除地址组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAddressItemUsingDeleteRequest 请求对象
      * @return DeleteAddressItemUsingDeleteResponse
@@ -295,8 +278,7 @@ public class CfwClient {
      *
      * 删除地址组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAddressItemUsingDeleteRequest 请求对象
      * @return SyncInvoker<DeleteAddressItemUsingDeleteRequest, DeleteAddressItemUsingDeleteResponse>
@@ -312,8 +294,7 @@ public class CfwClient {
      *
      * 删除地址组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAddressSetInfoUsingDeleteRequest 请求对象
      * @return DeleteAddressSetInfoUsingDeleteResponse
@@ -328,8 +309,7 @@ public class CfwClient {
      *
      * 删除地址组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAddressSetInfoUsingDeleteRequest 请求对象
      * @return SyncInvoker<DeleteAddressSetInfoUsingDeleteRequest, DeleteAddressSetInfoUsingDeleteResponse>
@@ -345,8 +325,7 @@ public class CfwClient {
      *
      * 删除黑白名单规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBlackWhiteListUsingDeleteRequest 请求对象
      * @return DeleteBlackWhiteListUsingDeleteResponse
@@ -361,8 +340,7 @@ public class CfwClient {
      *
      * 删除黑白名单规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBlackWhiteListUsingDeleteRequest 请求对象
      * @return SyncInvoker<DeleteBlackWhiteListUsingDeleteRequest, DeleteBlackWhiteListUsingDeleteResponse>
@@ -378,8 +356,7 @@ public class CfwClient {
      *
      * 删除服务组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServiceItemUsingDeleteRequest 请求对象
      * @return DeleteServiceItemUsingDeleteResponse
@@ -394,8 +371,7 @@ public class CfwClient {
      *
      * 删除服务组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServiceItemUsingDeleteRequest 请求对象
      * @return SyncInvoker<DeleteServiceItemUsingDeleteRequest, DeleteServiceItemUsingDeleteResponse>
@@ -411,8 +387,7 @@ public class CfwClient {
      *
      * 删除服务组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServiceSetUsingDeleteRequest 请求对象
      * @return DeleteServiceSetUsingDeleteResponse
@@ -426,8 +401,7 @@ public class CfwClient {
      *
      * 删除服务组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServiceSetUsingDeleteRequest 请求对象
      * @return SyncInvoker<DeleteServiceSetUsingDeleteRequest, DeleteServiceSetUsingDeleteResponse>
@@ -443,8 +417,7 @@ public class CfwClient {
      *
      * 查询访问控制日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAccessControlLogsRequest 请求对象
      * @return ListAccessControlLogsResponse
@@ -458,8 +431,7 @@ public class CfwClient {
      *
      * 查询访问控制日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAccessControlLogsRequest 请求对象
      * @return SyncInvoker<ListAccessControlLogsRequest, ListAccessControlLogsResponse>
@@ -475,8 +447,7 @@ public class CfwClient {
      *
      * 查询地址组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddressItemsUsingGetRequest 请求对象
      * @return ListAddressItemsUsingGetResponse
@@ -490,8 +461,7 @@ public class CfwClient {
      *
      * 查询地址组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddressItemsUsingGetRequest 请求对象
      * @return SyncInvoker<ListAddressItemsUsingGetRequest, ListAddressItemsUsingGetResponse>
@@ -507,8 +477,7 @@ public class CfwClient {
      *
      * 查询地址组详细
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddressSetDetailUsingGetRequest 请求对象
      * @return ListAddressSetDetailUsingGetResponse
@@ -523,8 +492,7 @@ public class CfwClient {
      *
      * 查询地址组详细
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddressSetDetailUsingGetRequest 请求对象
      * @return SyncInvoker<ListAddressSetDetailUsingGetRequest, ListAddressSetDetailUsingGetResponse>
@@ -540,8 +508,7 @@ public class CfwClient {
      *
      * 查询地址组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddressSetListUsingGetRequest 请求对象
      * @return ListAddressSetListUsingGetResponse
@@ -555,8 +522,7 @@ public class CfwClient {
      *
      * 查询地址组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddressSetListUsingGetRequest 请求对象
      * @return SyncInvoker<ListAddressSetListUsingGetRequest, ListAddressSetListUsingGetResponse>
@@ -572,8 +538,7 @@ public class CfwClient {
      *
      * 查询攻击日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAttackLogsRequest 请求对象
      * @return ListAttackLogsResponse
@@ -587,8 +552,7 @@ public class CfwClient {
      *
      * 查询攻击日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAttackLogsRequest 请求对象
      * @return SyncInvoker<ListAttackLogsRequest, ListAttackLogsResponse>
@@ -604,8 +568,7 @@ public class CfwClient {
      *
      * 查询黑白名单列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBlackWhiteListsUsingGetRequest 请求对象
      * @return ListBlackWhiteListsUsingGetResponse
@@ -619,8 +582,7 @@ public class CfwClient {
      *
      * 查询黑白名单列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBlackWhiteListsUsingGetRequest 请求对象
      * @return SyncInvoker<ListBlackWhiteListsUsingGetRequest, ListBlackWhiteListsUsingGetResponse>
@@ -636,8 +598,7 @@ public class CfwClient {
      *
      * 查询dns服务器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDnsServersRequest 请求对象
      * @return ListDnsServersResponse
@@ -651,8 +612,7 @@ public class CfwClient {
      *
      * 查询dns服务器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDnsServersRequest 请求对象
      * @return SyncInvoker<ListDnsServersRequest, ListDnsServersResponse>
@@ -668,8 +628,7 @@ public class CfwClient {
      *
      * 查询东西向防火墙信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEastWestFirewallRequest 请求对象
      * @return ListEastWestFirewallResponse
@@ -683,8 +642,7 @@ public class CfwClient {
      *
      * 查询东西向防火墙信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEastWestFirewallRequest 请求对象
      * @return SyncInvoker<ListEastWestFirewallRequest, ListEastWestFirewallResponse>
@@ -700,8 +658,7 @@ public class CfwClient {
      *
      * 查询防火墙实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFirewallUsingGetRequest 请求对象
      * @return ListFirewallUsingGetResponse
@@ -715,8 +672,7 @@ public class CfwClient {
      *
      * 查询防火墙实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFirewallUsingGetRequest 请求对象
      * @return SyncInvoker<ListFirewallUsingGetRequest, ListFirewallUsingGetResponse>
@@ -732,8 +688,7 @@ public class CfwClient {
      *
      * 查询流日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlowLogsRequest 请求对象
      * @return ListFlowLogsResponse
@@ -747,8 +702,7 @@ public class CfwClient {
      *
      * 查询流日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlowLogsRequest 请求对象
      * @return SyncInvoker<ListFlowLogsRequest, ListFlowLogsResponse>
@@ -762,8 +716,7 @@ public class CfwClient {
      *
      * 查询防护模式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIpsProtectModeUsingPostRequest 请求对象
      * @return ListIpsProtectModeUsingPostResponse
@@ -777,8 +730,7 @@ public class CfwClient {
      *
      * 查询防护模式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIpsProtectModeUsingPostRequest 请求对象
      * @return SyncInvoker<ListIpsProtectModeUsingPostRequest, ListIpsProtectModeUsingPostResponse>
@@ -794,8 +746,7 @@ public class CfwClient {
      *
      * 测试域名有效性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListParseDomainDetailsRequest 请求对象
      * @return ListParseDomainDetailsResponse
@@ -809,8 +760,7 @@ public class CfwClient {
      *
      * 测试域名有效性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListParseDomainDetailsRequest 请求对象
      * @return SyncInvoker<ListParseDomainDetailsRequest, ListParseDomainDetailsResponse>
@@ -826,8 +776,7 @@ public class CfwClient {
      *
      * 获取规则击中次数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuleHitCountRequest 请求对象
      * @return ListRuleHitCountResponse
@@ -841,8 +790,7 @@ public class CfwClient {
      *
      * 获取规则击中次数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuleHitCountRequest 请求对象
      * @return SyncInvoker<ListRuleHitCountRequest, ListRuleHitCountResponse>
@@ -858,8 +806,7 @@ public class CfwClient {
      *
      * 查询服务组成员列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceItemsDetailsRequest 请求对象
      * @return ListServiceItemsDetailsResponse
@@ -873,8 +820,7 @@ public class CfwClient {
      *
      * 查询服务组成员列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceItemsDetailsRequest 请求对象
      * @return SyncInvoker<ListServiceItemsDetailsRequest, ListServiceItemsDetailsResponse>
@@ -890,8 +836,7 @@ public class CfwClient {
      *
      * 获取服务组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceSetRequest 请求对象
      * @return ListServiceSetResponse
@@ -905,8 +850,7 @@ public class CfwClient {
      *
      * 获取服务组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceSetRequest 请求对象
      * @return SyncInvoker<ListServiceSetRequest, ListServiceSetResponse>
@@ -922,8 +866,7 @@ public class CfwClient {
      *
      * 查询服务组细节
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceSetDetailsRequest 请求对象
      * @return ListServiceSetDetailsResponse
@@ -937,8 +880,7 @@ public class CfwClient {
      *
      * 查询服务组细节
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceSetDetailsRequest 请求对象
      * @return SyncInvoker<ListServiceSetDetailsRequest, ListServiceSetDetailsResponse>
@@ -954,8 +896,7 @@ public class CfwClient {
      *
      * 更新地址组信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAddressSetInfoUsingPutRequest 请求对象
      * @return UpdateAddressSetInfoUsingPutResponse
@@ -970,8 +911,7 @@ public class CfwClient {
      *
      * 更新地址组信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAddressSetInfoUsingPutRequest 请求对象
      * @return SyncInvoker<UpdateAddressSetInfoUsingPutRequest, UpdateAddressSetInfoUsingPutResponse>
@@ -987,8 +927,7 @@ public class CfwClient {
      *
      * 更新黑白名单列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBlackWhiteListUsingPutRequest 请求对象
      * @return UpdateBlackWhiteListUsingPutResponse
@@ -1003,8 +942,7 @@ public class CfwClient {
      *
      * 更新黑白名单列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBlackWhiteListUsingPutRequest 请求对象
      * @return SyncInvoker<UpdateBlackWhiteListUsingPutRequest, UpdateBlackWhiteListUsingPutResponse>
@@ -1020,8 +958,7 @@ public class CfwClient {
      *
      * 更新dns服务器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDnsServersRequest 请求对象
      * @return UpdateDnsServersResponse
@@ -1035,8 +972,7 @@ public class CfwClient {
      *
      * 更新dns服务器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDnsServersRequest 请求对象
      * @return SyncInvoker<UpdateDnsServersRequest, UpdateDnsServersResponse>
@@ -1052,8 +988,7 @@ public class CfwClient {
      *
      * 更新服务组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServiceSetUsingPutRequest 请求对象
      * @return UpdateServiceSetUsingPutResponse
@@ -1067,8 +1002,7 @@ public class CfwClient {
      *
      * 更新服务组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServiceSetUsingPutRequest 请求对象
      * @return SyncInvoker<UpdateServiceSetUsingPutRequest, UpdateServiceSetUsingPutResponse>
@@ -1084,8 +1018,7 @@ public class CfwClient {
      *
      * 创建ACL规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddRuleAclUsingPostRequest 请求对象
      * @return AddRuleAclUsingPostResponse
@@ -1099,8 +1032,7 @@ public class CfwClient {
      *
      * 创建ACL规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddRuleAclUsingPostRequest 请求对象
      * @return SyncInvoker<AddRuleAclUsingPostRequest, AddRuleAclUsingPostResponse>
@@ -1116,8 +1048,7 @@ public class CfwClient {
      *
      * 删除ACL规则组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRuleAclUsingDeleteRequest 请求对象
      * @return DeleteRuleAclUsingDeleteResponse
@@ -1131,8 +1062,7 @@ public class CfwClient {
      *
      * 删除ACL规则组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRuleAclUsingDeleteRequest 请求对象
      * @return SyncInvoker<DeleteRuleAclUsingDeleteRequest, DeleteRuleAclUsingDeleteResponse>
@@ -1148,8 +1078,7 @@ public class CfwClient {
      *
      * ACL防护规则优先级设置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuleAclUsingPutRequest 请求对象
      * @return ListRuleAclUsingPutResponse
@@ -1163,8 +1092,7 @@ public class CfwClient {
      *
      * ACL防护规则优先级设置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuleAclUsingPutRequest 请求对象
      * @return SyncInvoker<ListRuleAclUsingPutRequest, ListRuleAclUsingPutResponse>
@@ -1180,8 +1108,7 @@ public class CfwClient {
      *
      * 查询防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuleAclsUsingGetRequest 请求对象
      * @return ListRuleAclsUsingGetResponse
@@ -1195,8 +1122,7 @@ public class CfwClient {
      *
      * 查询防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuleAclsUsingGetRequest 请求对象
      * @return SyncInvoker<ListRuleAclsUsingGetRequest, ListRuleAclsUsingGetResponse>
@@ -1212,8 +1138,7 @@ public class CfwClient {
      *
      * 更新ACL规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRuleAclUsingPutRequest 请求对象
      * @return UpdateRuleAclUsingPutResponse
@@ -1227,8 +1152,7 @@ public class CfwClient {
      *
      * 更新ACL规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRuleAclUsingPutRequest 请求对象
      * @return SyncInvoker<UpdateRuleAclUsingPutRequest, UpdateRuleAclUsingPutResponse>
@@ -1244,8 +1168,7 @@ public class CfwClient {
      *
      * 开启关闭EIP
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeProtectEipRequest 请求对象
      * @return ChangeProtectEipResponse
@@ -1259,8 +1182,7 @@ public class CfwClient {
      *
      * 开启关闭EIP
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeProtectEipRequest 请求对象
      * @return SyncInvoker<ChangeProtectEipRequest, ChangeProtectEipResponse>
@@ -1276,8 +1198,7 @@ public class CfwClient {
      *
      * 查询Eip个数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountEipsRequest 请求对象
      * @return CountEipsResponse
@@ -1291,8 +1212,7 @@ public class CfwClient {
      *
      * 查询Eip个数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountEipsRequest 请求对象
      * @return SyncInvoker<CountEipsRequest, CountEipsResponse>
@@ -1306,8 +1226,7 @@ public class CfwClient {
      *
      * 弹性IP列表查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEipResourcesRequest 请求对象
      * @return ListEipResourcesResponse
@@ -1321,8 +1240,7 @@ public class CfwClient {
      *
      * 弹性IP列表查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEipResourcesRequest 请求对象
      * @return SyncInvoker<ListEipResourcesRequest, ListEipResourcesResponse>
@@ -1338,8 +1256,7 @@ public class CfwClient {
      *
      * 切换开关状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeIpsSwitchUsingPostRequest 请求对象
      * @return ChangeIpsSwitchUsingPostResponse
@@ -1353,8 +1270,7 @@ public class CfwClient {
      *
      * 切换开关状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeIpsSwitchUsingPostRequest 请求对象
      * @return SyncInvoker<ChangeIpsSwitchUsingPostRequest, ChangeIpsSwitchUsingPostResponse>
@@ -1370,8 +1286,7 @@ public class CfwClient {
      *
      * 查询IPS特性开关状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIpsSwitchStatusUsingGetRequest 请求对象
      * @return ListIpsSwitchStatusUsingGetResponse
@@ -1385,8 +1300,7 @@ public class CfwClient {
      *
      * 查询IPS特性开关状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIpsSwitchStatusUsingGetRequest 请求对象
      * @return SyncInvoker<ListIpsSwitchStatusUsingGetRequest, ListIpsSwitchStatusUsingGetResponse>
@@ -1402,8 +1316,7 @@ public class CfwClient {
      *
      * 查询防护vpc信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcProtectsRequest 请求对象
      * @return ListVpcProtectsResponse
@@ -1417,8 +1330,7 @@ public class CfwClient {
      *
      * 查询防护vpc信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcProtectsRequest 请求对象
      * @return SyncInvoker<ListVpcProtectsRequest, ListVpcProtectsResponse>

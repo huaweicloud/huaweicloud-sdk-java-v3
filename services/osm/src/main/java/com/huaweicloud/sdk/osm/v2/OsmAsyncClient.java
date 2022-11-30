@@ -24,8 +24,7 @@ public class OsmAsyncClient {
      *
      * 验证授权主机密码是否正确
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckHostsRequest 请求对象
      * @return CompletableFuture<CheckHostsResponse>
@@ -39,8 +38,7 @@ public class OsmAsyncClient {
      *
      * 验证授权主机密码是否正确
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckHostsRequest 请求对象
      * @return AsyncInvoker<CheckHostsRequest, CheckHostsResponse>
@@ -54,8 +52,7 @@ public class OsmAsyncClient {
      *
      * 是否需要验证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckNeedVerifyRequest 请求对象
      * @return CompletableFuture<CheckNeedVerifyResponse>
@@ -69,8 +66,7 @@ public class OsmAsyncClient {
      *
      * 是否需要验证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckNeedVerifyRequest 请求对象
      * @return AsyncInvoker<CheckNeedVerifyRequest, CheckNeedVerifyResponse>
@@ -86,8 +82,7 @@ public class OsmAsyncClient {
      *
      * 验证联系方式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckVerifyCodesRequest 请求对象
      * @return CompletableFuture<CheckVerifyCodesResponse>
@@ -101,8 +96,7 @@ public class OsmAsyncClient {
      *
      * 验证联系方式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckVerifyCodesRequest 请求对象
      * @return AsyncInvoker<CheckVerifyCodesRequest, CheckVerifyCodesResponse>
@@ -118,8 +112,7 @@ public class OsmAsyncClient {
      *
      * 租户确认授权
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConfirmAuthorizationsRequest 请求对象
      * @return CompletableFuture<ConfirmAuthorizationsResponse>
@@ -134,8 +127,7 @@ public class OsmAsyncClient {
      *
      * 租户确认授权
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConfirmAuthorizationsRequest 请求对象
      * @return AsyncInvoker<ConfirmAuthorizationsRequest, ConfirmAuthorizationsResponse>
@@ -151,8 +143,7 @@ public class OsmAsyncClient {
      *
      * 提交工单扩展参数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCaseExtendsParamRequest 请求对象
      * @return CompletableFuture<CreateCaseExtendsParamResponse>
@@ -167,8 +158,7 @@ public class OsmAsyncClient {
      *
      * 提交工单扩展参数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCaseExtendsParamRequest 请求对象
      * @return AsyncInvoker<CreateCaseExtendsParamRequest, CreateCaseExtendsParamResponse>
@@ -184,8 +174,7 @@ public class OsmAsyncClient {
      *
      * 添加工单关联标签接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCaseLabelsRequest 请求对象
      * @return CompletableFuture<CreateCaseLabelsResponse>
@@ -199,8 +188,7 @@ public class OsmAsyncClient {
      *
      * 添加工单关联标签接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCaseLabelsRequest 请求对象
      * @return AsyncInvoker<CreateCaseLabelsRequest, CreateCaseLabelsResponse>
@@ -216,8 +204,7 @@ public class OsmAsyncClient {
      *
      * 创建工单
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCasesRequest 请求对象
      * @return CompletableFuture<CreateCasesResponse>
@@ -231,8 +218,7 @@ public class OsmAsyncClient {
      *
      * 创建工单
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCasesRequest 请求对象
      * @return AsyncInvoker<CreateCasesRequest, CreateCasesResponse>
@@ -246,8 +232,7 @@ public class OsmAsyncClient {
      *
      * 创建标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLabelsRequest 请求对象
      * @return CompletableFuture<CreateLabelsResponse>
@@ -261,8 +246,7 @@ public class OsmAsyncClient {
      *
      * 创建标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLabelsRequest 请求对象
      * @return AsyncInvoker<CreateLabelsRequest, CreateLabelsResponse>
@@ -277,8 +261,7 @@ public class OsmAsyncClient {
      *
      * 提交留言
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMessagesRequest 请求对象
      * @return CompletableFuture<CreateMessagesResponse>
@@ -292,8 +275,7 @@ public class OsmAsyncClient {
      *
      * 提交留言
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMessagesRequest 请求对象
      * @return AsyncInvoker<CreateMessagesRequest, CreateMessagesResponse>
@@ -309,8 +291,7 @@ public class OsmAsyncClient {
      *
      * 创建授权
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePrivilegesRequest 请求对象
      * @return CompletableFuture<CreatePrivilegesResponse>
@@ -324,8 +305,7 @@ public class OsmAsyncClient {
      *
      * 创建授权
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePrivilegesRequest 请求对象
      * @return AsyncInvoker<CreatePrivilegesRequest, CreatePrivilegesResponse>
@@ -341,8 +321,7 @@ public class OsmAsyncClient {
      *
      * 创建关联，一个工单最多支持3个关联
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRelationsRequest 请求对象
      * @return CompletableFuture<CreateRelationsResponse>
@@ -356,8 +335,7 @@ public class OsmAsyncClient {
      *
      * 创建关联，一个工单最多支持3个关联
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRelationsRequest 请求对象
      * @return AsyncInvoker<CreateRelationsRequest, CreateRelationsResponse>
@@ -373,8 +351,7 @@ public class OsmAsyncClient {
      *
      * 提交评分
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateScoresRequest 请求对象
      * @return CompletableFuture<CreateScoresResponse>
@@ -388,8 +365,7 @@ public class OsmAsyncClient {
      *
      * 提交评分
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateScoresRequest 请求对象
      * @return AsyncInvoker<CreateScoresRequest, CreateScoresResponse>
@@ -404,8 +380,7 @@ public class OsmAsyncClient {
      *
      * 删除附件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAccessoriesRequest 请求对象
      * @return CompletableFuture<DeleteAccessoriesResponse>
@@ -419,8 +394,7 @@ public class OsmAsyncClient {
      *
      * 删除附件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAccessoriesRequest 请求对象
      * @return AsyncInvoker<DeleteAccessoriesRequest, DeleteAccessoriesResponse>
@@ -436,8 +410,7 @@ public class OsmAsyncClient {
      *
      * 删除指定工单关联标签接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCaseLabelsRequest 请求对象
      * @return CompletableFuture<DeleteCaseLabelsResponse>
@@ -451,8 +424,7 @@ public class OsmAsyncClient {
      *
      * 删除指定工单关联标签接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCaseLabelsRequest 请求对象
      * @return AsyncInvoker<DeleteCaseLabelsRequest, DeleteCaseLabelsResponse>
@@ -468,8 +440,7 @@ public class OsmAsyncClient {
      *
      * 删除标签，同时会删除工单与标签关联关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLabelsRequest 请求对象
      * @return CompletableFuture<DeleteLabelsResponse>
@@ -483,8 +454,7 @@ public class OsmAsyncClient {
      *
      * 删除标签，同时会删除工单与标签关联关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLabelsRequest 请求对象
      * @return AsyncInvoker<DeleteLabelsRequest, DeleteLabelsResponse>
@@ -499,8 +469,7 @@ public class OsmAsyncClient {
      *
      * 删除关联
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRelationRequest 请求对象
      * @return CompletableFuture<DeleteRelationResponse>
@@ -514,8 +483,7 @@ public class OsmAsyncClient {
      *
      * 删除关联
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRelationRequest 请求对象
      * @return AsyncInvoker<DeleteRelationRequest, DeleteRelationResponse>
@@ -531,8 +499,7 @@ public class OsmAsyncClient {
      *
      * 下载附件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadAccessoriesRequest 请求对象
      * @return CompletableFuture<DownloadAccessoriesResponse>
@@ -546,8 +513,7 @@ public class OsmAsyncClient {
      *
      * 下载附件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadAccessoriesRequest 请求对象
      * @return AsyncInvoker<DownloadAccessoriesRequest, DownloadAccessoriesResponse>
@@ -563,8 +529,7 @@ public class OsmAsyncClient {
      *
      * 工单导出
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadCasesRequest 请求对象
      * @return CompletableFuture<DownloadCasesResponse>
@@ -578,8 +543,7 @@ public class OsmAsyncClient {
      *
      * 工单导出
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadCasesRequest 请求对象
      * @return AsyncInvoker<DownloadCasesRequest, DownloadCasesResponse>
@@ -594,8 +558,7 @@ public class OsmAsyncClient {
      *
      * 返回图片内容，用于页面直接展示
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadImagesRequest 请求对象
      * @return CompletableFuture<DownloadImagesResponse>
@@ -609,8 +572,7 @@ public class OsmAsyncClient {
      *
      * 返回图片内容，用于页面直接展示
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadImagesRequest 请求对象
      * @return AsyncInvoker<DownloadImagesRequest, DownloadImagesResponse>
@@ -626,8 +588,7 @@ public class OsmAsyncClient {
      *
      * 租户批量获取下载链接
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAccessoryAccessUrlsRequest 请求对象
      * @return CompletableFuture<ListAccessoryAccessUrlsResponse>
@@ -642,8 +603,7 @@ public class OsmAsyncClient {
      *
      * 租户批量获取下载链接
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAccessoryAccessUrlsRequest 请求对象
      * @return AsyncInvoker<ListAccessoryAccessUrlsRequest, ListAccessoryAccessUrlsResponse>
@@ -659,8 +619,7 @@ public class OsmAsyncClient {
      *
      * 查询委托
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAgenciesRequest 请求对象
      * @return CompletableFuture<ListAgenciesResponse>
@@ -674,8 +633,7 @@ public class OsmAsyncClient {
      *
      * 查询委托
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAgenciesRequest 请求对象
      * @return AsyncInvoker<ListAgenciesRequest, ListAgenciesResponse>
@@ -690,8 +648,7 @@ public class OsmAsyncClient {
      *
      * 查询国家码，用于提交工单页面填写联系方式使用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAreaCodesRequest 请求对象
      * @return CompletableFuture<ListAreaCodesResponse>
@@ -705,8 +662,7 @@ public class OsmAsyncClient {
      *
      * 查询国家码，用于提交工单页面填写联系方式使用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAreaCodesRequest 请求对象
      * @return AsyncInvoker<ListAreaCodesRequest, ListAreaCodesResponse>
@@ -721,8 +677,7 @@ public class OsmAsyncClient {
      *
      * 查询授权列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAuthorizationsRequest 请求对象
      * @return CompletableFuture<ListAuthorizationsResponse>
@@ -736,8 +691,7 @@ public class OsmAsyncClient {
      *
      * 查询授权列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAuthorizationsRequest 请求对象
      * @return AsyncInvoker<ListAuthorizationsRequest, ListAuthorizationsResponse>
@@ -753,8 +707,7 @@ public class OsmAsyncClient {
      *
      * 查询工单类目列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseCategoriesRequest 请求对象
      * @return CompletableFuture<ListCaseCategoriesResponse>
@@ -768,8 +721,7 @@ public class OsmAsyncClient {
      *
      * 查询工单类目列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseCategoriesRequest 请求对象
      * @return AsyncInvoker<ListCaseCategoriesRequest, ListCaseCategoriesResponse>
@@ -785,8 +737,7 @@ public class OsmAsyncClient {
      *
      * 查询工单抄送邮箱
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseCcEmailsRequest 请求对象
      * @return CompletableFuture<ListCaseCcEmailsResponse>
@@ -800,8 +751,7 @@ public class OsmAsyncClient {
      *
      * 查询工单抄送邮箱
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseCcEmailsRequest 请求对象
      * @return AsyncInvoker<ListCaseCcEmailsRequest, ListCaseCcEmailsResponse>
@@ -817,8 +767,7 @@ public class OsmAsyncClient {
      *
      * 统计各状态工单数量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseCountsRequest 请求对象
      * @return CompletableFuture<ListCaseCountsResponse>
@@ -832,8 +781,7 @@ public class OsmAsyncClient {
      *
      * 统计各状态工单数量
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseCountsRequest 请求对象
      * @return AsyncInvoker<ListCaseCountsRequest, ListCaseCountsResponse>
@@ -849,8 +797,7 @@ public class OsmAsyncClient {
      *
      * 查询工单关联标签接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseLabelsRequest 请求对象
      * @return CompletableFuture<ListCaseLabelsResponse>
@@ -864,8 +811,7 @@ public class OsmAsyncClient {
      *
      * 查询工单关联标签接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseLabelsRequest 请求对象
      * @return AsyncInvoker<ListCaseLabelsRequest, ListCaseLabelsResponse>
@@ -881,8 +827,7 @@ public class OsmAsyncClient {
      *
      * 查询工单限制，比如抄送邮箱个数等
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseLimitsRequest 请求对象
      * @return CompletableFuture<ListCaseLimitsResponse>
@@ -896,8 +841,7 @@ public class OsmAsyncClient {
      *
      * 查询工单限制，比如抄送邮箱个数等
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseLimitsRequest 请求对象
      * @return AsyncInvoker<ListCaseLimitsRequest, ListCaseLimitsResponse>
@@ -913,8 +857,7 @@ public class OsmAsyncClient {
      *
      * 查询工单操作日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseOperateLogsRequest 请求对象
      * @return CompletableFuture<ListCaseOperateLogsResponse>
@@ -928,8 +871,7 @@ public class OsmAsyncClient {
      *
      * 查询工单操作日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseOperateLogsRequest 请求对象
      * @return AsyncInvoker<ListCaseOperateLogsRequest, ListCaseOperateLogsResponse>
@@ -945,8 +887,7 @@ public class OsmAsyncClient {
      *
      * 查询工单配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseQuotasRequest 请求对象
      * @return CompletableFuture<ListCaseQuotasResponse>
@@ -960,8 +901,7 @@ public class OsmAsyncClient {
      *
      * 查询工单配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseQuotasRequest 请求对象
      * @return AsyncInvoker<ListCaseQuotasRequest, ListCaseQuotasResponse>
@@ -977,8 +917,7 @@ public class OsmAsyncClient {
      *
      * 查询问题类型对应模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseTemplatesRequest 请求对象
      * @return CompletableFuture<ListCaseTemplatesResponse>
@@ -992,8 +931,7 @@ public class OsmAsyncClient {
      *
      * 查询问题类型对应模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCaseTemplatesRequest 请求对象
      * @return AsyncInvoker<ListCaseTemplatesRequest, ListCaseTemplatesResponse>
@@ -1009,8 +947,7 @@ public class OsmAsyncClient {
      *
      * 查询工单列表接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCasesRequest 请求对象
      * @return CompletableFuture<ListCasesResponse>
@@ -1024,8 +961,7 @@ public class OsmAsyncClient {
      *
      * 查询工单列表接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCasesRequest 请求对象
      * @return AsyncInvoker<ListCasesRequest, ListCasesResponse>
@@ -1039,8 +975,7 @@ public class OsmAsyncClient {
      *
      * 查询用户关联的region
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCustomersRegionsRequest 请求对象
      * @return CompletableFuture<ListCustomersRegionsResponse>
@@ -1055,8 +990,7 @@ public class OsmAsyncClient {
      *
      * 查询用户关联的region
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCustomersRegionsRequest 请求对象
      * @return AsyncInvoker<ListCustomersRegionsRequest, ListCustomersRegionsResponse>
@@ -1072,8 +1006,7 @@ public class OsmAsyncClient {
      *
      * 提单时，根据不同的产品或者问题类型，会存在不同的一些附加参数填写
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListExtendsParamsRequest 请求对象
      * @return CompletableFuture<ListExtendsParamsResponse>
@@ -1087,8 +1020,7 @@ public class OsmAsyncClient {
      *
      * 提单时，根据不同的产品或者问题类型，会存在不同的一些附加参数填写
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListExtendsParamsRequest 请求对象
      * @return AsyncInvoker<ListExtendsParamsRequest, ListExtendsParamsResponse>
@@ -1104,8 +1036,7 @@ public class OsmAsyncClient {
      *
      * 查询已验证的列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHasVerifiedContactsRequest 请求对象
      * @return CompletableFuture<ListHasVerifiedContactsResponse>
@@ -1120,8 +1051,7 @@ public class OsmAsyncClient {
      *
      * 查询已验证的列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHasVerifiedContactsRequest 请求对象
      * @return AsyncInvoker<ListHasVerifiedContactsRequest, ListHasVerifiedContactsResponse>
@@ -1137,8 +1067,7 @@ public class OsmAsyncClient {
      *
      * 查询堡垒机历史操作记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHistoryOperateLogsRequest 请求对象
      * @return CompletableFuture<ListHistoryOperateLogsResponse>
@@ -1153,8 +1082,7 @@ public class OsmAsyncClient {
      *
      * 查询堡垒机历史操作记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHistoryOperateLogsRequest 请求对象
      * @return AsyncInvoker<ListHistoryOperateLogsRequest, ListHistoryOperateLogsResponse>
@@ -1170,8 +1098,7 @@ public class OsmAsyncClient {
      *
      * 查询堡垒机历史会话列
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHistorySessionsRequest 请求对象
      * @return CompletableFuture<ListHistorySessionsResponse>
@@ -1185,8 +1112,7 @@ public class OsmAsyncClient {
      *
      * 查询堡垒机历史会话列
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHistorySessionsRequest 请求对象
      * @return AsyncInvoker<ListHistorySessionsRequest, ListHistorySessionsResponse>
@@ -1202,8 +1128,7 @@ public class OsmAsyncClient {
      *
      * 查询标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLabelsRequest 请求对象
      * @return CompletableFuture<ListLabelsResponse>
@@ -1217,8 +1142,7 @@ public class OsmAsyncClient {
      *
      * 查询标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLabelsRequest 请求对象
      * @return AsyncInvoker<ListLabelsRequest, ListLabelsResponse>
@@ -1232,8 +1156,7 @@ public class OsmAsyncClient {
      *
      * 查询留言
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMessagesRequest 请求对象
      * @return CompletableFuture<ListMessagesResponse>
@@ -1247,8 +1170,7 @@ public class OsmAsyncClient {
      *
      * 查询留言
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMessagesRequest 请求对象
      * @return AsyncInvoker<ListMessagesRequest, ListMessagesResponse>
@@ -1263,8 +1185,7 @@ public class OsmAsyncClient {
      *
      * 查询更多留言
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMoreInstantMessagesRequest 请求对象
      * @return CompletableFuture<ListMoreInstantMessagesResponse>
@@ -1279,8 +1200,7 @@ public class OsmAsyncClient {
      *
      * 查询更多留言
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMoreInstantMessagesRequest 请求对象
      * @return AsyncInvoker<ListMoreInstantMessagesRequest, ListMoreInstantMessagesResponse>
@@ -1296,8 +1216,7 @@ public class OsmAsyncClient {
      *
      * 轮询查询即时消息接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNewInstantMessagesRequest 请求对象
      * @return CompletableFuture<ListNewInstantMessagesResponse>
@@ -1312,8 +1231,7 @@ public class OsmAsyncClient {
      *
      * 轮询查询即时消息接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNewInstantMessagesRequest 请求对象
      * @return AsyncInvoker<ListNewInstantMessagesRequest, ListNewInstantMessagesResponse>
@@ -1329,8 +1247,7 @@ public class OsmAsyncClient {
      *
      * 查询工单权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPrivilegesRequest 请求对象
      * @return CompletableFuture<ListPrivilegesResponse>
@@ -1344,8 +1261,7 @@ public class OsmAsyncClient {
      *
      * 查询工单权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPrivilegesRequest 请求对象
      * @return AsyncInvoker<ListPrivilegesRequest, ListPrivilegesResponse>
@@ -1361,8 +1277,7 @@ public class OsmAsyncClient {
      *
      * 提交工单时，选择产品类型之后选择对应的问题列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProblemTypesRequest 请求对象
      * @return CompletableFuture<ListProblemTypesResponse>
@@ -1376,8 +1291,7 @@ public class OsmAsyncClient {
      *
      * 提交工单时，选择产品类型之后选择对应的问题列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProblemTypesRequest 请求对象
      * @return AsyncInvoker<ListProblemTypesRequest, ListProblemTypesResponse>
@@ -1393,8 +1307,7 @@ public class OsmAsyncClient {
      *
      * 查询产品类型列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductCategoriesRequest 请求对象
      * @return CompletableFuture<ListProductCategoriesResponse>
@@ -1409,8 +1322,7 @@ public class OsmAsyncClient {
      *
      * 查询产品类型列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductCategoriesRequest 请求对象
      * @return AsyncInvoker<ListProductCategoriesRequest, ListProductCategoriesResponse>
@@ -1426,8 +1338,7 @@ public class OsmAsyncClient {
      *
      * 查询区域列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRegionsRequest 请求对象
      * @return CompletableFuture<ListRegionsResponse>
@@ -1441,8 +1352,7 @@ public class OsmAsyncClient {
      *
      * 查询区域列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRegionsRequest 请求对象
      * @return AsyncInvoker<ListRegionsRequest, ListRegionsResponse>
@@ -1456,8 +1366,7 @@ public class OsmAsyncClient {
      *
      * 查询工单的关联，返回关联工单的简要信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRelationRequest 请求对象
      * @return CompletableFuture<ListRelationResponse>
@@ -1471,8 +1380,7 @@ public class OsmAsyncClient {
      *
      * 查询工单的关联，返回关联工单的简要信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRelationRequest 请求对象
      * @return AsyncInvoker<ListRelationRequest, ListRelationResponse>
@@ -1487,8 +1395,7 @@ public class OsmAsyncClient {
      *
      * 工单满意度分类列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSatisfactionDimensionsRequest 请求对象
      * @return CompletableFuture<ListSatisfactionDimensionsResponse>
@@ -1503,8 +1410,7 @@ public class OsmAsyncClient {
      *
      * 工单满意度分类列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSatisfactionDimensionsRequest 请求对象
      * @return AsyncInvoker<ListSatisfactionDimensionsRequest, ListSatisfactionDimensionsResponse>
@@ -1520,8 +1426,7 @@ public class OsmAsyncClient {
      *
      * 查询问题严重性列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSeveritiesRequest 请求对象
      * @return CompletableFuture<ListSeveritiesResponse>
@@ -1535,8 +1440,7 @@ public class OsmAsyncClient {
      *
      * 查询问题严重性列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSeveritiesRequest 请求对象
      * @return AsyncInvoker<ListSeveritiesRequest, ListSeveritiesResponse>
@@ -1552,8 +1456,7 @@ public class OsmAsyncClient {
      *
      * 查询子用户信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubCustomersRequest 请求对象
      * @return CompletableFuture<ListSubCustomersResponse>
@@ -1567,8 +1470,7 @@ public class OsmAsyncClient {
      *
      * 查询子用户信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubCustomersRequest 请求对象
      * @return AsyncInvoker<ListSubCustomersRequest, ListSubCustomersResponse>
@@ -1584,8 +1486,7 @@ public class OsmAsyncClient {
      *
      * 查询堡垒机文件传输记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTransportHistoriesRequest 请求对象
      * @return CompletableFuture<ListTransportHistoriesResponse>
@@ -1600,8 +1501,7 @@ public class OsmAsyncClient {
      *
      * 查询堡垒机文件传输记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTransportHistoriesRequest 请求对象
      * @return AsyncInvoker<ListTransportHistoriesRequest, ListTransportHistoriesResponse>
@@ -1617,8 +1517,7 @@ public class OsmAsyncClient {
      *
      * 查询未读消息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUnreadNewInstantMessagesRequest 请求对象
      * @return CompletableFuture<ListUnreadNewInstantMessagesResponse>
@@ -1633,8 +1532,7 @@ public class OsmAsyncClient {
      *
      * 查询未读消息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUnreadNewInstantMessagesRequest 请求对象
      * @return AsyncInvoker<ListUnreadNewInstantMessagesRequest, ListUnreadNewInstantMessagesResponse>
@@ -1650,8 +1548,7 @@ public class OsmAsyncClient {
      *
      * 撤回留言
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RevokeMessageRequest 请求对象
      * @return CompletableFuture<RevokeMessageResponse>
@@ -1665,8 +1562,7 @@ public class OsmAsyncClient {
      *
      * 撤回留言
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RevokeMessageRequest 请求对象
      * @return AsyncInvoker<RevokeMessageRequest, RevokeMessageResponse>
@@ -1681,8 +1577,7 @@ public class OsmAsyncClient {
      *
      * 获取验证码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendVerifyCodesRequest 请求对象
      * @return CompletableFuture<SendVerifyCodesResponse>
@@ -1696,8 +1591,7 @@ public class OsmAsyncClient {
      *
      * 获取验证码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SendVerifyCodesRequest 请求对象
      * @return AsyncInvoker<SendVerifyCodesRequest, SendVerifyCodesResponse>
@@ -1713,8 +1607,7 @@ public class OsmAsyncClient {
      *
      * 查询附件的一下限制，比如大小，数量，文件类型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAccessoryLimitsRequest 请求对象
      * @return CompletableFuture<ShowAccessoryLimitsResponse>
@@ -1728,8 +1621,7 @@ public class OsmAsyncClient {
      *
      * 查询附件的一下限制，比如大小，数量，文件类型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAccessoryLimitsRequest 请求对象
      * @return AsyncInvoker<ShowAccessoryLimitsRequest, ShowAccessoryLimitsResponse>
@@ -1745,8 +1637,7 @@ public class OsmAsyncClient {
      *
      * 查询授权详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAuthorizationDetailRequest 请求对象
      * @return CompletableFuture<ShowAuthorizationDetailResponse>
@@ -1761,8 +1652,7 @@ public class OsmAsyncClient {
      *
      * 查询授权详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAuthorizationDetailRequest 请求对象
      * @return AsyncInvoker<ShowAuthorizationDetailRequest, ShowAuthorizationDetailResponse>
@@ -1778,8 +1668,7 @@ public class OsmAsyncClient {
      *
      * 查询工单详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCaseDetailRequest 请求对象
      * @return CompletableFuture<ShowCaseDetailResponse>
@@ -1793,8 +1682,7 @@ public class OsmAsyncClient {
      *
      * 查询工单详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCaseDetailRequest 请求对象
      * @return AsyncInvoker<ShowCaseDetailRequest, ShowCaseDetailResponse>
@@ -1810,8 +1698,7 @@ public class OsmAsyncClient {
      *
      * 查询工单扩展参数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCaseExtendsParamRequest 请求对象
      * @return CompletableFuture<ShowCaseExtendsParamResponse>
@@ -1826,8 +1713,7 @@ public class OsmAsyncClient {
      *
      * 查询工单扩展参数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCaseExtendsParamRequest 请求对象
      * @return AsyncInvoker<ShowCaseExtendsParamRequest, ShowCaseExtendsParamResponse>
@@ -1843,8 +1729,7 @@ public class OsmAsyncClient {
      *
      * 查询某个工单状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCaseStatusRequest 请求对象
      * @return CompletableFuture<ShowCaseStatusResponse>
@@ -1858,8 +1743,7 @@ public class OsmAsyncClient {
      *
      * 查询某个工单状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCaseStatusRequest 请求对象
      * @return AsyncInvoker<ShowCaseStatusRequest, ShowCaseStatusResponse>
@@ -1875,8 +1759,7 @@ public class OsmAsyncClient {
      *
      * 查询提单权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCustomerPrivilegePolicyRequest 请求对象
      * @return CompletableFuture<ShowCustomerPrivilegePolicyResponse>
@@ -1891,8 +1774,7 @@ public class OsmAsyncClient {
      *
      * 查询提单权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCustomerPrivilegePolicyRequest 请求对象
      * @return AsyncInvoker<ShowCustomerPrivilegePolicyRequest, ShowCustomerPrivilegePolicyResponse>
@@ -1908,8 +1790,7 @@ public class OsmAsyncClient {
      *
      * 查看最新发布版本协议详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLatestPublishedAgreementRequest 请求对象
      * @return CompletableFuture<ShowLatestPublishedAgreementResponse>
@@ -1924,8 +1805,7 @@ public class OsmAsyncClient {
      *
      * 查看最新发布版本协议详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLatestPublishedAgreementRequest 请求对象
      * @return AsyncInvoker<ShowLatestPublishedAgreementRequest, ShowLatestPublishedAgreementResponse>
@@ -1941,8 +1821,7 @@ public class OsmAsyncClient {
      *
      * 查询伙伴工单权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPartnersCasesPrivilegeRequest 请求对象
      * @return CompletableFuture<ShowPartnersCasesPrivilegeResponse>
@@ -1957,8 +1836,7 @@ public class OsmAsyncClient {
      *
      * 查询伙伴工单权限
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPartnersCasesPrivilegeRequest 请求对象
      * @return AsyncInvoker<ShowPartnersCasesPrivilegeRequest, ShowPartnersCasesPrivilegeResponse>
@@ -1974,8 +1852,7 @@ public class OsmAsyncClient {
      *
      * 查询关联伙伴服务信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPartnersServiceInfoRequest 请求对象
      * @return CompletableFuture<ShowPartnersServiceInfoResponse>
@@ -1990,8 +1867,7 @@ public class OsmAsyncClient {
      *
      * 查询关联伙伴服务信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPartnersServiceInfoRequest 请求对象
      * @return AsyncInvoker<ShowPartnersServiceInfoRequest, ShowPartnersServiceInfoResponse>
@@ -2007,8 +1883,7 @@ public class OsmAsyncClient {
      *
      * 查询用户是否签署最新协议
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSignedLatestPublishedAgreementRequest 请求对象
      * @return CompletableFuture<ShowSignedLatestPublishedAgreementResponse>
@@ -2023,8 +1898,7 @@ public class OsmAsyncClient {
      *
      * 查询用户是否签署最新协议
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSignedLatestPublishedAgreementRequest 请求对象
      * @return AsyncInvoker<ShowSignedLatestPublishedAgreementRequest, ShowSignedLatestPublishedAgreementResponse>
@@ -2040,8 +1914,7 @@ public class OsmAsyncClient {
      *
      * 签署协议
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SignPublishedAgreementRequest 请求对象
      * @return CompletableFuture<SignPublishedAgreementResponse>
@@ -2056,8 +1929,7 @@ public class OsmAsyncClient {
      *
      * 签署协议
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SignPublishedAgreementRequest 请求对象
      * @return AsyncInvoker<SignPublishedAgreementRequest, SignPublishedAgreementResponse>
@@ -2073,8 +1945,7 @@ public class OsmAsyncClient {
      *
      * 拒绝|撤销授权
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAuthorizationsRequest 请求对象
      * @return CompletableFuture<UpdateAuthorizationsResponse>
@@ -2089,8 +1960,7 @@ public class OsmAsyncClient {
      *
      * 拒绝|撤销授权
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAuthorizationsRequest 请求对象
      * @return AsyncInvoker<UpdateAuthorizationsRequest, UpdateAuthorizationsResponse>
@@ -2106,8 +1976,7 @@ public class OsmAsyncClient {
      *
      * 修改联系方式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCaseContactInfoRequest 请求对象
      * @return CompletableFuture<UpdateCaseContactInfoResponse>
@@ -2122,8 +1991,7 @@ public class OsmAsyncClient {
      *
      * 修改联系方式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCaseContactInfoRequest 请求对象
      * @return AsyncInvoker<UpdateCaseContactInfoRequest, UpdateCaseContactInfoResponse>
@@ -2139,8 +2007,7 @@ public class OsmAsyncClient {
      *
      * 工单操作
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCasesRequest 请求对象
      * @return CompletableFuture<UpdateCasesResponse>
@@ -2154,8 +2021,7 @@ public class OsmAsyncClient {
      *
      * 工单操作
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCasesRequest 请求对象
      * @return AsyncInvoker<UpdateCasesRequest, UpdateCasesResponse>
@@ -2169,8 +2035,7 @@ public class OsmAsyncClient {
      *
      * 修改标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLabelsRequest 请求对象
      * @return CompletableFuture<UpdateLabelsResponse>
@@ -2184,8 +2049,7 @@ public class OsmAsyncClient {
      *
      * 修改标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLabelsRequest 请求对象
      * @return AsyncInvoker<UpdateLabelsRequest, UpdateLabelsResponse>
@@ -2200,8 +2064,7 @@ public class OsmAsyncClient {
      *
      * 设置消息已读
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNewInstantMessagesReadRequest 请求对象
      * @return CompletableFuture<UpdateNewInstantMessagesReadResponse>
@@ -2216,8 +2079,7 @@ public class OsmAsyncClient {
      *
      * 设置消息已读
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNewInstantMessagesReadRequest 请求对象
      * @return AsyncInvoker<UpdateNewInstantMessagesReadRequest, UpdateNewInstantMessagesReadResponse>
@@ -2233,8 +2095,7 @@ public class OsmAsyncClient {
      *
      * 上传附件给SDK使用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadJsonAccessoriesRequest 请求对象
      * @return CompletableFuture<UploadJsonAccessoriesResponse>
@@ -2249,8 +2110,7 @@ public class OsmAsyncClient {
      *
      * 上传附件给SDK使用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadJsonAccessoriesRequest 请求对象
      * @return AsyncInvoker<UploadJsonAccessoriesRequest, UploadJsonAccessoriesResponse>

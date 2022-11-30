@@ -22,7 +22,7 @@ public class ListCloudPhoneImagesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone_images")
 
-    private List<Object> phoneImages = null;
+    private List<PhoneImage> phoneImages = null;
 
     public ListCloudPhoneImagesResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -30,7 +30,7 @@ public class ListCloudPhoneImagesResponse extends SdkResponse {
     }
 
     /**
-     * 请求的唯一标识ID
+     * 请求的唯一标识ID。
      * @return requestId
      */
     public String getRequestId() {
@@ -41,12 +41,12 @@ public class ListCloudPhoneImagesResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public ListCloudPhoneImagesResponse withPhoneImages(List<Object> phoneImages) {
+    public ListCloudPhoneImagesResponse withPhoneImages(List<PhoneImage> phoneImages) {
         this.phoneImages = phoneImages;
         return this;
     }
 
-    public ListCloudPhoneImagesResponse addPhoneImagesItem(Object phoneImagesItem) {
+    public ListCloudPhoneImagesResponse addPhoneImagesItem(PhoneImage phoneImagesItem) {
         if (this.phoneImages == null) {
             this.phoneImages = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class ListCloudPhoneImagesResponse extends SdkResponse {
         return this;
     }
 
-    public ListCloudPhoneImagesResponse withPhoneImages(Consumer<List<Object>> phoneImagesSetter) {
+    public ListCloudPhoneImagesResponse withPhoneImages(Consumer<List<PhoneImage>> phoneImagesSetter) {
         if (this.phoneImages == null) {
             this.phoneImages = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class ListCloudPhoneImagesResponse extends SdkResponse {
      * 手机镜像信息
      * @return phoneImages
      */
-    public List<Object> getPhoneImages() {
+    public List<PhoneImage> getPhoneImages() {
         return phoneImages;
     }
 
-    public void setPhoneImages(List<Object> phoneImages) {
+    public void setPhoneImages(List<PhoneImage> phoneImages) {
         this.phoneImages = phoneImages;
     }
 

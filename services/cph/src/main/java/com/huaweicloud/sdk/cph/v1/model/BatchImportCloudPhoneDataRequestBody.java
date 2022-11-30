@@ -9,23 +9,21 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * BatchImportCloudPhoneDataRequestBody
+ * 导入云手机数据请求体
  */
 public class BatchImportCloudPhoneDataRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restore_infos")
 
-    private List<BatchImportCloudPhoneDataRequestBodyRestoreInfos> restoreInfos = null;
+    private List<RestoreInfo> restoreInfos = null;
 
-    public BatchImportCloudPhoneDataRequestBody withRestoreInfos(
-        List<BatchImportCloudPhoneDataRequestBodyRestoreInfos> restoreInfos) {
+    public BatchImportCloudPhoneDataRequestBody withRestoreInfos(List<RestoreInfo> restoreInfos) {
         this.restoreInfos = restoreInfos;
         return this;
     }
 
-    public BatchImportCloudPhoneDataRequestBody addRestoreInfosItem(
-        BatchImportCloudPhoneDataRequestBodyRestoreInfos restoreInfosItem) {
+    public BatchImportCloudPhoneDataRequestBody addRestoreInfosItem(RestoreInfo restoreInfosItem) {
         if (this.restoreInfos == null) {
             this.restoreInfos = new ArrayList<>();
         }
@@ -33,8 +31,7 @@ public class BatchImportCloudPhoneDataRequestBody {
         return this;
     }
 
-    public BatchImportCloudPhoneDataRequestBody withRestoreInfos(
-        Consumer<List<BatchImportCloudPhoneDataRequestBodyRestoreInfos>> restoreInfosSetter) {
+    public BatchImportCloudPhoneDataRequestBody withRestoreInfos(Consumer<List<RestoreInfo>> restoreInfosSetter) {
         if (this.restoreInfos == null) {
             this.restoreInfos = new ArrayList<>();
         }
@@ -46,11 +43,11 @@ public class BatchImportCloudPhoneDataRequestBody {
      * 待导入数据的云手机信息
      * @return restoreInfos
      */
-    public List<BatchImportCloudPhoneDataRequestBodyRestoreInfos> getRestoreInfos() {
+    public List<RestoreInfo> getRestoreInfos() {
         return restoreInfos;
     }
 
-    public void setRestoreInfos(List<BatchImportCloudPhoneDataRequestBodyRestoreInfos> restoreInfos) {
+    public void setRestoreInfos(List<RestoreInfo> restoreInfos) {
         this.restoreInfos = restoreInfos;
     }
 

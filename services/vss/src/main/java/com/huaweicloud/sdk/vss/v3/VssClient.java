@@ -22,8 +22,7 @@ public class VssClient {
      *
      * 认证租户的域名资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AuthorizeDomainsRequest 请求对象
      * @return AuthorizeDomainsResponse
@@ -37,8 +36,7 @@ public class VssClient {
      *
      * 认证租户的域名资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AuthorizeDomainsRequest 请求对象
      * @return SyncInvoker<AuthorizeDomainsRequest, AuthorizeDomainsResponse>
@@ -54,8 +52,7 @@ public class VssClient {
      *
      * 创建租户的域名资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDomainsRequest 请求对象
      * @return CreateDomainsResponse
@@ -69,8 +66,7 @@ public class VssClient {
      *
      * 创建租户的域名资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDomainsRequest 请求对象
      * @return SyncInvoker<CreateDomainsRequest, CreateDomainsResponse>
@@ -84,8 +80,7 @@ public class VssClient {
      *
      * 删除租户的域名资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDomainsRequest 请求对象
      * @return DeleteDomainsResponse
@@ -99,8 +94,7 @@ public class VssClient {
      *
      * 删除租户的域名资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDomainsRequest 请求对象
      * @return SyncInvoker<DeleteDomainsRequest, DeleteDomainsResponse>
@@ -114,8 +108,7 @@ public class VssClient {
      *
      * 获取租户的所有域名资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDomainsRequest 请求对象
      * @return ListDomainsResponse
@@ -129,8 +122,7 @@ public class VssClient {
      *
      * 获取租户的所有域名资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDomainsRequest 请求对象
      * @return SyncInvoker<ListDomainsRequest, ListDomainsResponse>
@@ -144,8 +136,7 @@ public class VssClient {
      *
      * 获取域名登录配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainSettingsRequest 请求对象
      * @return ShowDomainSettingsResponse
@@ -159,8 +150,7 @@ public class VssClient {
      *
      * 获取域名登录配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainSettingsRequest 请求对象
      * @return SyncInvoker<ShowDomainSettingsRequest, ShowDomainSettingsResponse>
@@ -176,8 +166,7 @@ public class VssClient {
      *
      * 更新域名登录配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainSettingsRequest 请求对象
      * @return UpdateDomainSettingsResponse
@@ -191,8 +180,7 @@ public class VssClient {
      *
      * 更新域名登录配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainSettingsRequest 请求对象
      * @return SyncInvoker<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse>
@@ -208,8 +196,7 @@ public class VssClient {
      *
      * 下载域名扫描任务PDF报告
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadTaskReportRequest 请求对象
      * @return DownloadTaskReportResponse
@@ -223,8 +210,7 @@ public class VssClient {
      *
      * 下载域名扫描任务PDF报告
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadTaskReportRequest 请求对象
      * @return SyncInvoker<DownloadTaskReportRequest, DownloadTaskReportResponse>
@@ -240,8 +226,7 @@ public class VssClient {
      *
      * 生成域名扫描PDF报告
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteGenerateReportRequest 请求对象
      * @return ExecuteGenerateReportResponse
@@ -255,8 +240,7 @@ public class VssClient {
      *
      * 生成域名扫描PDF报告
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteGenerateReportRequest 请求对象
      * @return SyncInvoker<ExecuteGenerateReportRequest, ExecuteGenerateReportResponse>
@@ -272,8 +256,7 @@ public class VssClient {
      *
      * 获取域名业务风险扫描结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBusinessRisksRequest 请求对象
      * @return ListBusinessRisksResponse
@@ -287,8 +270,7 @@ public class VssClient {
      *
      * 获取域名业务风险扫描结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBusinessRisksRequest 请求对象
      * @return SyncInvoker<ListBusinessRisksRequest, ListBusinessRisksResponse>
@@ -304,8 +286,7 @@ public class VssClient {
      *
      * 获取域名端口扫描结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPortResultsRequest 请求对象
      * @return ListPortResultsResponse
@@ -319,8 +300,7 @@ public class VssClient {
      *
      * 获取域名端口扫描结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPortResultsRequest 请求对象
      * @return SyncInvoker<ListPortResultsRequest, ListPortResultsResponse>
@@ -336,8 +316,7 @@ public class VssClient {
      *
      * 获取域名扫描PDF报告生成状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowReportStatusRequest 请求对象
      * @return ShowReportStatusResponse
@@ -351,8 +330,7 @@ public class VssClient {
      *
      * 获取域名扫描PDF报告生成状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowReportStatusRequest 请求对象
      * @return SyncInvoker<ShowReportStatusRequest, ShowReportStatusResponse>
@@ -368,8 +346,7 @@ public class VssClient {
      *
      * 获取域名漏洞扫描结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResultsRequest 请求对象
      * @return ShowResultsResponse
@@ -383,8 +360,7 @@ public class VssClient {
      *
      * 获取域名漏洞扫描结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResultsRequest 请求对象
      * @return SyncInvoker<ShowResultsRequest, ShowResultsResponse>
@@ -398,8 +374,7 @@ public class VssClient {
      *
      * 更新域名扫描漏洞的误报状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFalsePositiveRequest 请求对象
      * @return UpdateFalsePositiveResponse
@@ -413,8 +388,7 @@ public class VssClient {
      *
      * 更新域名扫描漏洞的误报状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFalsePositiveRequest 请求对象
      * @return SyncInvoker<UpdateFalsePositiveRequest, UpdateFalsePositiveResponse>
@@ -430,8 +404,7 @@ public class VssClient {
      *
      * 取消或重启域名漏洞扫描任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelTasksRequest 请求对象
      * @return CancelTasksResponse
@@ -445,8 +418,7 @@ public class VssClient {
      *
      * 取消或重启域名漏洞扫描任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelTasksRequest 请求对象
      * @return SyncInvoker<CancelTasksRequest, CancelTasksResponse>
@@ -460,8 +432,7 @@ public class VssClient {
      *
      * 创建域名漏洞扫描任务并启动
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTasksRequest 请求对象
      * @return CreateTasksResponse
@@ -475,8 +446,7 @@ public class VssClient {
      *
      * 创建域名漏洞扫描任务并启动
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTasksRequest 请求对象
      * @return SyncInvoker<CreateTasksRequest, CreateTasksResponse>
@@ -490,8 +460,7 @@ public class VssClient {
      *
      * 获取域名漏洞扫描的历史扫描任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTaskHistoriesRequest 请求对象
      * @return ListTaskHistoriesResponse
@@ -505,8 +474,7 @@ public class VssClient {
      *
      * 获取域名漏洞扫描的历史扫描任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTaskHistoriesRequest 请求对象
      * @return SyncInvoker<ListTaskHistoriesRequest, ListTaskHistoriesResponse>
@@ -522,8 +490,7 @@ public class VssClient {
      *
      * 获取域名漏洞扫描任务详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTasksRequest 请求对象
      * @return ShowTasksResponse
@@ -537,8 +504,7 @@ public class VssClient {
      *
      * 获取域名漏洞扫描任务详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTasksRequest 请求对象
      * @return SyncInvoker<ShowTasksRequest, ShowTasksResponse>

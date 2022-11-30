@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * MicroServiceInfoCCECreate
@@ -128,6 +131,11 @@ public class MicroServiceInfoCCECreate {
 
     private Integer port;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "labels")
+
+    private List<MicroserviceLabel> labels = null;
+
     public MicroServiceInfoCCECreate withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -232,6 +240,39 @@ public class MicroServiceInfoCCECreate {
         this.port = port;
     }
 
+    public MicroServiceInfoCCECreate withLabels(List<MicroserviceLabel> labels) {
+        this.labels = labels;
+        return this;
+    }
+
+    public MicroServiceInfoCCECreate addLabelsItem(MicroserviceLabel labelsItem) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        this.labels.add(labelsItem);
+        return this;
+    }
+
+    public MicroServiceInfoCCECreate withLabels(Consumer<List<MicroserviceLabel>> labelsSetter) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        labelsSetter.accept(this.labels);
+        return this;
+    }
+
+    /**
+     * 工作负载的标签列表。
+     * @return labels
+     */
+    public List<MicroserviceLabel> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(List<MicroserviceLabel> labels) {
+        this.labels = labels;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -246,12 +287,13 @@ public class MicroServiceInfoCCECreate {
             && Objects.equals(this.workloadType, microServiceInfoCCECreate.workloadType)
             && Objects.equals(this.appName, microServiceInfoCCECreate.appName)
             && Objects.equals(this.version, microServiceInfoCCECreate.version)
-            && Objects.equals(this.port, microServiceInfoCCECreate.port);
+            && Objects.equals(this.port, microServiceInfoCCECreate.port)
+            && Objects.equals(this.labels, microServiceInfoCCECreate.labels);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, namespace, workloadType, appName, version, port);
+        return Objects.hash(clusterId, namespace, workloadType, appName, version, port, labels);
     }
 
     @Override
@@ -264,6 +306,7 @@ public class MicroServiceInfoCCECreate {
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("}");
         return sb.toString();
     }

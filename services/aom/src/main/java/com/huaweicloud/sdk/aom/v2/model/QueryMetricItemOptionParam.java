@@ -186,7 +186,7 @@ public class QueryMetricItemOptionParam  {
 
 
     /**
-     * 指标名称。名称长度取值范围为1~255个字符。 取值范围： AOM提供的基础指标， cpuUsage、cpuCoreUsed等 cpuUage：cpu使用率； cpuCoreUsed：cpu内核占用； 用户上报的自定义指标名称。
+     * 指标名称。名称长度取值范围为1~255个字符。 取值范围：AOM提供的基础指标，cpuUsage、cpuCoreUsed等。 cpuUage：cpu使用率； cpuCoreUsed：cpu内核占用； 用户上报的自定义指标名称。
      * @return metricName
      */
     public String getMetricName() {

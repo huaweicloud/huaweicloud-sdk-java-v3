@@ -24,8 +24,7 @@ public class EipAsyncClient {
      *
      * 查询公共池列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommonPoolsRequest 请求对象
      * @return CompletableFuture<ListCommonPoolsResponse>
@@ -39,8 +38,7 @@ public class EipAsyncClient {
      *
      * 查询公共池列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommonPoolsRequest 请求对象
      * @return AsyncInvoker<ListCommonPoolsRequest, ListCommonPoolsResponse>
@@ -56,8 +54,7 @@ public class EipAsyncClient {
      *
      * 查询公共池分组列表，包含名称和位置信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublicBorderGroupsRequest 请求对象
      * @return CompletableFuture<ListPublicBorderGroupsResponse>
@@ -72,8 +69,7 @@ public class EipAsyncClient {
      *
      * 查询公共池分组列表，包含名称和位置信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublicBorderGroupsRequest 请求对象
      * @return AsyncInvoker<ListPublicBorderGroupsRequest, ListPublicBorderGroupsResponse>
@@ -89,8 +85,7 @@ public class EipAsyncClient {
      *
      * 查询指定租户下的共享带宽类型列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListShareBandwidthTypesRequest 请求对象
      * @return CompletableFuture<ListShareBandwidthTypesResponse>
@@ -105,8 +100,7 @@ public class EipAsyncClient {
      *
      * 查询指定租户下的共享带宽类型列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListShareBandwidthTypesRequest 请求对象
      * @return AsyncInvoker<ListShareBandwidthTypesRequest, ListShareBandwidthTypesResponse>
@@ -122,8 +116,7 @@ public class EipAsyncClient {
      *
      * 绑定弹性公网IP
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociatePublicipsRequest 请求对象
      * @return CompletableFuture<AssociatePublicipsResponse>
@@ -137,8 +130,7 @@ public class EipAsyncClient {
      *
      * 绑定弹性公网IP
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociatePublicipsRequest 请求对象
      * @return AsyncInvoker<AssociatePublicipsRequest, AssociatePublicipsResponse>
@@ -154,8 +146,7 @@ public class EipAsyncClient {
      *
      * 解绑弹性公网IP
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociatePublicipsRequest 请求对象
      * @return CompletableFuture<DisassociatePublicipsResponse>
@@ -170,8 +161,7 @@ public class EipAsyncClient {
      *
      * 解绑弹性公网IP
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociatePublicipsRequest 请求对象
      * @return AsyncInvoker<DisassociatePublicipsRequest, DisassociatePublicipsResponse>
@@ -187,8 +177,7 @@ public class EipAsyncClient {
      *
      * 全量查询公网IP池列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublicipPoolRequest 请求对象
      * @return CompletableFuture<ListPublicipPoolResponse>
@@ -202,8 +191,7 @@ public class EipAsyncClient {
      *
      * 全量查询公网IP池列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublicipPoolRequest 请求对象
      * @return AsyncInvoker<ListPublicipPoolRequest, ListPublicipPoolResponse>
@@ -219,8 +207,7 @@ public class EipAsyncClient {
      *
      * 查询弹性公网IP列表信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublicipsRequest 请求对象
      * @return CompletableFuture<ListPublicipsResponse>
@@ -234,8 +221,7 @@ public class EipAsyncClient {
      *
      * 查询弹性公网IP列表信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublicipsRequest 请求对象
      * @return AsyncInvoker<ListPublicipsRequest, ListPublicipsResponse>
@@ -250,8 +236,7 @@ public class EipAsyncClient {
      *
      * 查询弹性公网IP详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicipRequest 请求对象
      * @return CompletableFuture<ShowPublicipResponse>
@@ -265,8 +250,7 @@ public class EipAsyncClient {
      *
      * 查询弹性公网IP详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicipRequest 请求对象
      * @return AsyncInvoker<ShowPublicipRequest, ShowPublicipResponse>
@@ -281,8 +265,7 @@ public class EipAsyncClient {
      *
      * 查询公网IP池详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicipPoolRequest 请求对象
      * @return CompletableFuture<ShowPublicipPoolResponse>
@@ -296,8 +279,7 @@ public class EipAsyncClient {
      *
      * 查询公网IP池详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicipPoolRequest 请求对象
      * @return AsyncInvoker<ShowPublicipPoolRequest, ShowPublicipPoolResponse>
@@ -306,6 +288,68 @@ public class EipAsyncClient {
         ShowPublicipPoolRequest request) {
         return new AsyncInvoker<ShowPublicipPoolRequest, ShowPublicipPoolResponse>(request, EipMeta.showPublicipPool,
             hcClient);
+    }
+
+    /**
+     * 绑定弹性公网IP
+     *
+     * 绑定弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAssociatePublicipRequest 请求对象
+     * @return CompletableFuture<UpdateAssociatePublicipResponse>
+     */
+    public CompletableFuture<UpdateAssociatePublicipResponse> updateAssociatePublicipAsync(
+        UpdateAssociatePublicipRequest request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.updateAssociatePublicip);
+    }
+
+    /**
+     * 绑定弹性公网IP
+     *
+     * 绑定弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAssociatePublicipRequest 请求对象
+     * @return AsyncInvoker<UpdateAssociatePublicipRequest, UpdateAssociatePublicipResponse>
+     */
+    public AsyncInvoker<UpdateAssociatePublicipRequest, UpdateAssociatePublicipResponse> updateAssociatePublicipAsyncInvoker(
+        UpdateAssociatePublicipRequest request) {
+        return new AsyncInvoker<UpdateAssociatePublicipRequest, UpdateAssociatePublicipResponse>(request,
+            EipMeta.updateAssociatePublicip, hcClient);
+    }
+
+    /**
+     * 解绑弹性公网IP
+     *
+     * 解绑弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDisassociatePublicipRequest 请求对象
+     * @return CompletableFuture<UpdateDisassociatePublicipResponse>
+     */
+    public CompletableFuture<UpdateDisassociatePublicipResponse> updateDisassociatePublicipAsync(
+        UpdateDisassociatePublicipRequest request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.updateDisassociatePublicip);
+    }
+
+    /**
+     * 解绑弹性公网IP
+     *
+     * 解绑弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDisassociatePublicipRequest 请求对象
+     * @return AsyncInvoker<UpdateDisassociatePublicipRequest, UpdateDisassociatePublicipResponse>
+     */
+    public AsyncInvoker<UpdateDisassociatePublicipRequest, UpdateDisassociatePublicipResponse> updateDisassociatePublicipAsyncInvoker(
+        UpdateDisassociatePublicipRequest request) {
+        return new AsyncInvoker<UpdateDisassociatePublicipRequest, UpdateDisassociatePublicipResponse>(request,
+            EipMeta.updateDisassociatePublicip, hcClient);
     }
 
 }

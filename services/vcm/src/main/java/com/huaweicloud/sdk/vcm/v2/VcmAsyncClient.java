@@ -24,8 +24,7 @@ public class VcmAsyncClient {
      *
      * 该 API 用于查询并显示单个作业详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckAudioJobRequest 请求对象
      * @return CompletableFuture<CheckAudioJobResponse>
@@ -39,8 +38,7 @@ public class VcmAsyncClient {
      *
      * 该 API 用于查询并显示单个作业详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckAudioJobRequest 请求对象
      * @return AsyncInvoker<CheckAudioJobRequest, CheckAudioJobResponse>
@@ -55,8 +53,7 @@ public class VcmAsyncClient {
      *
      * 该API用于查询并显示单个作业详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckVideoJobRequest 请求对象
      * @return CompletableFuture<CheckVideoJobResponse>
@@ -70,8 +67,7 @@ public class VcmAsyncClient {
      *
      * 该API用于查询并显示单个作业详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckVideoJobRequest 请求对象
      * @return AsyncInvoker<CheckVideoJobRequest, CheckVideoJobResponse>
@@ -86,8 +82,7 @@ public class VcmAsyncClient {
      *
      * 该接口用于创建语音内容审核的作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAudioJobRequest 请求对象
      * @return CompletableFuture<CreateAudioJobResponse>
@@ -101,8 +96,7 @@ public class VcmAsyncClient {
      *
      * 该接口用于创建语音内容审核的作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAudioJobRequest 请求对象
      * @return AsyncInvoker<CreateAudioJobRequest, CreateAudioJobResponse>
@@ -118,8 +112,7 @@ public class VcmAsyncClient {
      *
      * 该接口用于创建视频内容审核的作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVideoJobRequest 请求对象
      * @return CompletableFuture<CreateVideoJobResponse>
@@ -133,8 +126,7 @@ public class VcmAsyncClient {
      *
      * 该接口用于创建视频内容审核的作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVideoJobRequest 请求对象
      * @return AsyncInvoker<CreateVideoJobRequest, CreateVideoJobResponse>
@@ -150,8 +142,7 @@ public class VcmAsyncClient {
      *
      * 删除语音作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDemoInfoRequest 请求对象
      * @return CompletableFuture<DeleteDemoInfoResponse>
@@ -165,8 +156,7 @@ public class VcmAsyncClient {
      *
      * 删除语音作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDemoInfoRequest 请求对象
      * @return AsyncInvoker<DeleteDemoInfoRequest, DeleteDemoInfoResponse>
@@ -182,8 +172,7 @@ public class VcmAsyncClient {
      *
      * 该API用于删除指定作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVideoJobRequest 请求对象
      * @return CompletableFuture<DeleteVideoJobResponse>
@@ -197,8 +186,7 @@ public class VcmAsyncClient {
      *
      * 该API用于删除指定作业。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVideoJobRequest 请求对象
      * @return AsyncInvoker<DeleteVideoJobRequest, DeleteVideoJobResponse>
@@ -214,8 +202,7 @@ public class VcmAsyncClient {
      *
      * 查询作业列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAudioJobsRequest 请求对象
      * @return CompletableFuture<ListAudioJobsResponse>
@@ -229,8 +216,7 @@ public class VcmAsyncClient {
      *
      * 查询作业列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAudioJobsRequest 请求对象
      * @return AsyncInvoker<ListAudioJobsRequest, ListAudioJobsResponse>
@@ -245,8 +231,7 @@ public class VcmAsyncClient {
      *
      * 该API用于查询并显示视频内容审核的作业列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVideoJobsRequest 请求对象
      * @return CompletableFuture<ListVideoJobsResponse>
@@ -260,8 +245,7 @@ public class VcmAsyncClient {
      *
      * 该API用于查询并显示视频内容审核的作业列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVideoJobsRequest 请求对象
      * @return AsyncInvoker<ListVideoJobsRequest, ListVideoJobsResponse>

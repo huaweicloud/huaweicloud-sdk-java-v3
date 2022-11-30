@@ -22,8 +22,7 @@ public class DevSecurityClient {
      *
      * 创建移动应用安全任务并启动
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecAppTaskRequest 请求对象
      * @return CreateSecAppTaskResponse
@@ -37,8 +36,7 @@ public class DevSecurityClient {
      *
      * 创建移动应用安全任务并启动
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecAppTaskRequest 请求对象
      * @return SyncInvoker<CreateSecAppTaskRequest, CreateSecAppTaskResponse>
@@ -54,8 +52,7 @@ public class DevSecurityClient {
      *
      * 删除移动应用安全任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecAppTaskRequest 请求对象
      * @return DeleteSecAppTaskResponse
@@ -69,8 +66,7 @@ public class DevSecurityClient {
      *
      * 删除移动应用安全任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecAppTaskRequest 请求对象
      * @return SyncInvoker<DeleteSecAppTaskRequest, DeleteSecAppTaskResponse>
@@ -86,8 +82,7 @@ public class DevSecurityClient {
      *
      * 获取移动应用安全任务结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecAppTaskResultRequest 请求对象
      * @return ShowSecAppTaskResultResponse
@@ -101,8 +96,7 @@ public class DevSecurityClient {
      *
      * 获取移动应用安全任务结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecAppTaskResultRequest 请求对象
      * @return SyncInvoker<ShowSecAppTaskResultRequest, ShowSecAppTaskResultResponse>
@@ -118,8 +112,7 @@ public class DevSecurityClient {
      *
      * 查询移动应用安全任务状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecAppTaskStatusRequest 请求对象
      * @return ShowSecAppTaskStatusResponse
@@ -133,8 +126,7 @@ public class DevSecurityClient {
      *
      * 查询移动应用安全任务状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecAppTaskStatusRequest 请求对象
      * @return SyncInvoker<ShowSecAppTaskStatusRequest, ShowSecAppTaskStatusResponse>

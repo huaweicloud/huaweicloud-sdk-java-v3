@@ -25,6 +25,11 @@ public class ShowTenantMetricRequest {
 
     private String endTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metric_type")
+
+    private String metricType;
+
     public ShowTenantMetricRequest withPeriod(String period) {
         this.period = period;
         return this;
@@ -76,6 +81,23 @@ public class ShowTenantMetricRequest {
         this.endTime = endTime;
     }
 
+    public ShowTenantMetricRequest withMetricType(String metricType) {
+        this.metricType = metricType;
+        return this;
+    }
+
+    /**
+     * 指标类型，为空或不在取值范围内时，查询所有指标。取值范围：totalCount 调用次数；errorCount 错误次数； averageDuration 运行时间；running 运行中个数；rejectCount  拒绝个数。
+     * @return metricType
+     */
+    public String getMetricType() {
+        return metricType;
+    }
+
+    public void setMetricType(String metricType) {
+        this.metricType = metricType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -87,12 +109,13 @@ public class ShowTenantMetricRequest {
         ShowTenantMetricRequest showTenantMetricRequest = (ShowTenantMetricRequest) o;
         return Objects.equals(this.period, showTenantMetricRequest.period)
             && Objects.equals(this.startTime, showTenantMetricRequest.startTime)
-            && Objects.equals(this.endTime, showTenantMetricRequest.endTime);
+            && Objects.equals(this.endTime, showTenantMetricRequest.endTime)
+            && Objects.equals(this.metricType, showTenantMetricRequest.metricType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(period, startTime, endTime);
+        return Objects.hash(period, startTime, endTime, metricType);
     }
 
     @Override
@@ -102,6 +125,7 @@ public class ShowTenantMetricRequest {
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    metricType: ").append(toIndentedString(metricType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

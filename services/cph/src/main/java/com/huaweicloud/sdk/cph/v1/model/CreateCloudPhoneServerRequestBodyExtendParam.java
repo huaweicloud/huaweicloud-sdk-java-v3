@@ -37,6 +37,8 @@ public class CreateCloudPhoneServerRequestBodyExtendParam {
 
     /**
      * 计费类型 0 表示包周期
+     * minimum: 0
+     * maximum: 64
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -54,6 +56,8 @@ public class CreateCloudPhoneServerRequestBodyExtendParam {
 
     /**
      * 订购周期类型 - 2 表示月 - 3 表示年
+     * minimum: 0
+     * maximum: 64
      * @return periodType
      */
     public Integer getPeriodType() {
@@ -71,6 +75,8 @@ public class CreateCloudPhoneServerRequestBodyExtendParam {
 
     /**
      * 订购周期数 当订购周期为月时，取值范围[1, 9]。 当订购周期为年时，取值范围[1,10]
+     * minimum: -128
+     * maximum: 128
      * @return periodNum
      */
     public Integer getPeriodNum() {
@@ -88,6 +94,8 @@ public class CreateCloudPhoneServerRequestBodyExtendParam {
 
     /**
      * 是否自动付款。默认不自动付款。 - 1 表示自动付款 - 0 表示不自动付款
+     * minimum: 0
+     * maximum: 64
      * @return isAutoPay
      */
     public Integer getIsAutoPay() {

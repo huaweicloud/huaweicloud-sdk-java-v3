@@ -22,6 +22,8 @@ public class ListCloudPhoneServerModelsRequest {
 
     /**
      * 产品类型 - 0：云手机 - 1：云手游
+     * minimum: 0
+     * maximum: 1024
      * @return productType
      */
     public Integer getProductType() {

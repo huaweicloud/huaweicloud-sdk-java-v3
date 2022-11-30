@@ -22,8 +22,7 @@ public class DevStarClient {
      *
      * 通过应用Id获取软件发布仓库列表 
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationReleaseRepositoriesRequest 请求对象
      * @return ShowApplicationReleaseRepositoriesResponse
@@ -38,8 +37,7 @@ public class DevStarClient {
      *
      * 通过应用Id获取软件发布仓库列表 
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationReleaseRepositoriesRequest 请求对象
      * @return SyncInvoker<ShowApplicationReleaseRepositoriesRequest, ShowApplicationReleaseRepositoriesResponse>
@@ -55,8 +53,7 @@ public class DevStarClient {
      *
      * 根据应用Id查询应用关联的代码仓、流水线删除状态 使用场景：用户删除应用关联的资源（如代码仓、流水线...）后，通过该接口实时查询代码仓、流水线删除状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationResDeleteStatusRequest 请求对象
      * @return ShowApplicationResDeleteStatusResponse
@@ -71,8 +68,7 @@ public class DevStarClient {
      *
      * 根据应用Id查询应用关联的代码仓、流水线删除状态 使用场景：用户删除应用关联的资源（如代码仓、流水线...）后，通过该接口实时查询代码仓、流水线删除状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationResDeleteStatusRequest 请求对象
      * @return SyncInvoker<ShowApplicationResDeleteStatusRequest, ShowApplicationResDeleteStatusResponse>
@@ -88,8 +84,7 @@ public class DevStarClient {
      *
      * 根据应用Id获取依赖元数据资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationDependentResourcesRequest 请求对象
      * @return ShowApplicationDependentResourcesResponse
@@ -104,8 +99,7 @@ public class DevStarClient {
      *
      * 根据应用Id获取依赖元数据资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationDependentResourcesRequest 请求对象
      * @return SyncInvoker<ShowApplicationDependentResourcesRequest, ShowApplicationDependentResourcesResponse>
@@ -121,8 +115,7 @@ public class DevStarClient {
      *
      * 根据应用Id获取应用详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationV3Request 请求对象
      * @return ShowApplicationV3Response
@@ -136,8 +129,7 @@ public class DevStarClient {
      *
      * 根据应用Id获取应用详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationV3Request 请求对象
      * @return SyncInvoker<ShowApplicationV3Request, ShowApplicationV3Response>
@@ -155,8 +147,7 @@ public class DevStarClient {
      * - 允许更新信息的信息包含
      * name,description,icon
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApplicationRequest 请求对象
      * @return UpdateApplicationResponse
@@ -172,8 +163,7 @@ public class DevStarClient {
      * - 允许更新信息的信息包含
      * name,description,icon
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateApplicationRequest 请求对象
      * @return SyncInvoker<UpdateApplicationRequest, UpdateApplicationResponse>
@@ -189,8 +179,7 @@ public class DevStarClient {
      *
      * 根据应用Id删除应用，并可以选择删除其关联的代码仓、流水线资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationV4Request 请求对象
      * @return DeleteApplicationV4Response
@@ -204,8 +193,7 @@ public class DevStarClient {
      *
      * 根据应用Id删除应用，并可以选择删除其关联的代码仓、流水线资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationV4Request 请求对象
      * @return SyncInvoker<DeleteApplicationV4Request, DeleteApplicationV4Response>
@@ -222,8 +210,7 @@ public class DevStarClient {
      * 获取我创建的应用列表
      * 当前只支持查询我创建的应用，其中请求参数is_created_by_self需为true
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationsV6Request 请求对象
      * @return ListApplicationsV6Response
@@ -238,8 +225,7 @@ public class DevStarClient {
      * 获取我创建的应用列表
      * 当前只支持查询我创建的应用，其中请求参数is_created_by_self需为true
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationsV6Request 请求对象
      * @return SyncInvoker<ListApplicationsV6Request, ListApplicationsV6Response>
@@ -255,8 +241,7 @@ public class DevStarClient {
      *
      * 下载模板产物。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadApplicationCodeRequest 请求对象
      * @return DownloadApplicationCodeResponse
@@ -270,8 +255,7 @@ public class DevStarClient {
      *
      * 下载模板产物。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadApplicationCodeRequest 请求对象
      * @return SyncInvoker<DownloadApplicationCodeRequest, DownloadApplicationCodeResponse>
@@ -287,8 +271,7 @@ public class DevStarClient {
      *
      * 部署任务执行变更人工审核，终止或者继续部署任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConfirmDeploymentJobRequest 请求对象
      * @return ConfirmDeploymentJobResponse
@@ -302,8 +285,7 @@ public class DevStarClient {
      *
      * 部署任务执行变更人工审核，终止或者继续部署任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConfirmDeploymentJobRequest 请求对象
      * @return SyncInvoker<ConfirmDeploymentJobRequest, ConfirmDeploymentJobResponse>
@@ -322,8 +304,7 @@ public class DevStarClient {
      * handler为在函数部署方式下，入口函数名称，从应用代码中获取，格式为“包名.类名.函数名称”，例如：com.example.demo.APIGTrigger.handler。
      * 也可以从应用详情接口返回结构template_deployment中直接获取。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeploymentJobsRequest 请求对象
      * @return CreateDeploymentJobsResponse
@@ -340,8 +321,7 @@ public class DevStarClient {
      * handler为在函数部署方式下，入口函数名称，从应用代码中获取，格式为“包名.类名.函数名称”，例如：com.example.demo.APIGTrigger.handler。
      * 也可以从应用详情接口返回结构template_deployment中直接获取。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeploymentJobsRequest 请求对象
      * @return SyncInvoker<CreateDeploymentJobsRequest, CreateDeploymentJobsResponse>
@@ -357,8 +337,7 @@ public class DevStarClient {
      *
      * 查询应用环境部署任务详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeploymentJobsRequest 请求对象
      * @return ShowDeploymentJobsResponse
@@ -372,8 +351,7 @@ public class DevStarClient {
      *
      * 查询应用环境部署任务详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeploymentJobsRequest 请求对象
      * @return SyncInvoker<ShowDeploymentJobsRequest, ShowDeploymentJobsResponse>
@@ -397,8 +375,7 @@ public class DevStarClient {
      * - 代码生成位置
      * 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunCodehubTemplateJobRequest 请求对象
      * @return RunCodehubTemplateJobResponse
@@ -420,8 +397,7 @@ public class DevStarClient {
      * - 代码生成位置
      * 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunCodehubTemplateJobRequest 请求对象
      * @return SyncInvoker<RunCodehubTemplateJobRequest, RunCodehubTemplateJobResponse>
@@ -445,8 +421,7 @@ public class DevStarClient {
      * - 代码生成位置
      * 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunDevstarTemplateJobRequest 请求对象
      * @return RunDevstarTemplateJobResponse
@@ -468,8 +443,7 @@ public class DevStarClient {
      * - 代码生成位置
      * 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunDevstarTemplateJobRequest 请求对象
      * @return SyncInvoker<RunDevstarTemplateJobRequest, RunDevstarTemplateJobResponse>
@@ -494,8 +468,7 @@ public class DevStarClient {
      * - 代码生成位置
      * 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobDetailRequest 请求对象
      * @return ShowJobDetailResponse
@@ -518,8 +491,7 @@ public class DevStarClient {
      * - 代码生成位置
      * 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobDetailRequest 请求对象
      * @return SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>
@@ -534,8 +506,7 @@ public class DevStarClient {
      *
      * 流水线模板列表查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPipelineTemplatesRequest 请求对象
      * @return ListPipelineTemplatesResponse
@@ -549,8 +520,7 @@ public class DevStarClient {
      *
      * 流水线模板列表查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPipelineTemplatesRequest 请求对象
      * @return SyncInvoker<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse>
@@ -566,8 +536,7 @@ public class DevStarClient {
      *
      * 查询应用流水线最近一次运行状态查询接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPipelineLastStatusV2Request 请求对象
      * @return ShowPipelineLastStatusV2Response
@@ -581,8 +550,7 @@ public class DevStarClient {
      *
      * 查询应用流水线最近一次运行状态查询接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPipelineLastStatusV2Request 请求对象
      * @return SyncInvoker<ShowPipelineLastStatusV2Request, ShowPipelineLastStatusV2Response>
@@ -598,8 +566,7 @@ public class DevStarClient {
      *
      * 根据流水线Id操作流水线启动
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartPipelineRequest 请求对象
      * @return StartPipelineResponse
@@ -613,8 +580,7 @@ public class DevStarClient {
      *
      * 根据流水线Id操作流水线启动
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartPipelineRequest 请求对象
      * @return SyncInvoker<StartPipelineRequest, StartPipelineResponse>
@@ -630,8 +596,7 @@ public class DevStarClient {
      * 获取用户有权限的DevStar存量DevCloud项目列表。
      * 来源包括：1.DevStar创建的DevCloud项目；2.DevStar应用有关联DevCloud项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectsV4Request 请求对象
      * @return ListProjectsV4Response
@@ -646,8 +611,7 @@ public class DevStarClient {
      * 获取用户有权限的DevStar存量DevCloud项目列表。
      * 来源包括：1.DevStar创建的DevCloud项目；2.DevStar应用有关联DevCloud项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectsV4Request 请求对象
      * @return SyncInvoker<ListProjectsV4Request, ListProjectsV4Response>
@@ -667,8 +631,7 @@ public class DevStarClient {
      * - 必传参数
      *     project_id,name,region_id
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRepositoryDuplicateNameRequest 请求对象
      * @return CheckRepositoryDuplicateNameResponse
@@ -687,8 +650,7 @@ public class DevStarClient {
      * - 必传参数
      *     project_id,name,region_id
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRepositoryDuplicateNameRequest 请求对象
      * @return SyncInvoker<CheckRepositoryDuplicateNameRequest, CheckRepositoryDuplicateNameResponse>
@@ -706,8 +668,7 @@ public class DevStarClient {
      * - 用户需为登录状态。
      * - 拥有仓库权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryByCloudIdeRequest 请求对象
      * @return ShowRepositoryByCloudIdeResponse
@@ -723,8 +684,7 @@ public class DevStarClient {
      * - 用户需为登录状态。
      * - 拥有仓库权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryByCloudIdeRequest 请求对象
      * @return SyncInvoker<ShowRepositoryByCloudIdeRequest, ShowRepositoryByCloudIdeResponse>
@@ -740,8 +700,7 @@ public class DevStarClient {
      *
      * 查询代码仓库的统计信息,包括代码仓的名称,代码行数等信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryStatisticalDataV2Request 请求对象
      * @return ShowRepositoryStatisticalDataV2Response
@@ -756,8 +715,7 @@ public class DevStarClient {
      *
      * 查询代码仓库的统计信息,包括代码仓的名称,代码行数等信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRepositoryStatisticalDataV2Request 请求对象
      * @return SyncInvoker<ShowRepositoryStatisticalDataV2Request, ShowRepositoryStatisticalDataV2Response>
@@ -773,8 +731,7 @@ public class DevStarClient {
      *
      * 该接口可以用于模板作者或模板维护人读取模板文件内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTemplateFileRequest 请求对象
      * @return ShowTemplateFileResponse
@@ -788,8 +745,7 @@ public class DevStarClient {
      *
      * 该接口可以用于模板作者或模板维护人读取模板文件内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTemplateFileRequest 请求对象
      * @return SyncInvoker<ShowTemplateFileRequest, ShowTemplateFileResponse>
@@ -805,8 +761,7 @@ public class DevStarClient {
      *
      * 未登录状态下，将用户浏览过的模板缓存在浏览器中，登录时，调用该接口同步模板浏览记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTemplateViewHistoriesRequest 请求对象
      * @return CreateTemplateViewHistoriesResponse
@@ -820,8 +775,7 @@ public class DevStarClient {
      *
      * 未登录状态下，将用户浏览过的模板缓存在浏览器中，登录时，调用该接口同步模板浏览记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTemplateViewHistoriesRequest 请求对象
      * @return SyncInvoker<CreateTemplateViewHistoriesRequest, CreateTemplateViewHistoriesResponse>
@@ -837,8 +791,7 @@ public class DevStarClient {
      *
      * 查询模板列表，推荐使用/v1/templates/query接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublishedTemplatesRequest 请求对象
      * @return ListPublishedTemplatesResponse
@@ -852,8 +805,7 @@ public class DevStarClient {
      *
      * 查询模板列表，推荐使用/v1/templates/query接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublishedTemplatesRequest 请求对象
      * @return SyncInvoker<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse>
@@ -869,8 +821,7 @@ public class DevStarClient {
      *
      * 查询DevStar或者CodeLabs登录用户浏览过的模板（只返回最近浏览的5个模板）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplateViewHistoriesRequest 请求对象
      * @return ListTemplateViewHistoriesResponse
@@ -884,8 +835,7 @@ public class DevStarClient {
      *
      * 查询DevStar或者CodeLabs登录用户浏览过的模板（只返回最近浏览的5个模板）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplateViewHistoriesRequest 请求对象
      * @return SyncInvoker<ListTemplateViewHistoriesRequest, ListTemplateViewHistoriesResponse>
@@ -901,8 +851,7 @@ public class DevStarClient {
      *
      * 查询模板列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesRequest 请求对象
      * @return ListTemplatesResponse
@@ -916,8 +865,7 @@ public class DevStarClient {
      *
      * 查询模板列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesRequest 请求对象
      * @return SyncInvoker<ListTemplatesRequest, ListTemplatesResponse>
@@ -932,8 +880,7 @@ public class DevStarClient {
      *
      * 查询模板列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesV2Request 请求对象
      * @return ListTemplatesV2Response
@@ -947,8 +894,7 @@ public class DevStarClient {
      *
      * 查询模板列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesV2Request 请求对象
      * @return SyncInvoker<ListTemplatesV2Request, ListTemplatesV2Response>
@@ -964,8 +910,7 @@ public class DevStarClient {
      *
      * 获取指定模板详情，包括模板id、名称、描述、作者、标签、上架时间等信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTemplateV3Request 请求对象
      * @return ShowTemplateV3Response
@@ -979,8 +924,7 @@ public class DevStarClient {
      *
      * 获取指定模板详情，包括模板id、名称、描述、作者、标签、上架时间等信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTemplateV3Request 请求对象
      * @return SyncInvoker<ShowTemplateV3Request, ShowTemplateV3Response>
@@ -996,8 +940,7 @@ public class DevStarClient {
      *
      * 查询模板详情，推荐使用V3版本接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTemplateDetailRequest 请求对象
      * @return ShowTemplateDetailResponse
@@ -1011,8 +954,7 @@ public class DevStarClient {
      *
      * 查询模板详情，推荐使用V3版本接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTemplateDetailRequest 请求对象
      * @return SyncInvoker<ShowTemplateDetailRequest, ShowTemplateDetailResponse>

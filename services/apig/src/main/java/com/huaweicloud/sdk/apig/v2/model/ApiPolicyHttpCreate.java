@@ -233,6 +233,11 @@ public class ApiPolicyHttpCreate {
 
     private Integer timeout;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retry_count")
+
+    private String retryCount;
+
     /**
      * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
      */
@@ -508,6 +513,23 @@ public class ApiPolicyHttpCreate {
         this.timeout = timeout;
     }
 
+    public ApiPolicyHttpCreate withRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+        return this;
+    }
+
+    /**
+     * 请求后端服务的重试次数，默认为-1，范围[-1,10]
+     * @return retryCount
+     */
+    public String getRetryCount() {
+        return retryCount;
+    }
+
+    public void setRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+    }
+
     public ApiPolicyHttpCreate withEffectMode(EffectModeEnum effectMode) {
         this.effectMode = effectMode;
         return this;
@@ -682,6 +704,7 @@ public class ApiPolicyHttpCreate {
             && Objects.equals(this.reqMethod, apiPolicyHttpCreate.reqMethod)
             && Objects.equals(this.reqUri, apiPolicyHttpCreate.reqUri)
             && Objects.equals(this.timeout, apiPolicyHttpCreate.timeout)
+            && Objects.equals(this.retryCount, apiPolicyHttpCreate.retryCount)
             && Objects.equals(this.effectMode, apiPolicyHttpCreate.effectMode)
             && Objects.equals(this.name, apiPolicyHttpCreate.name)
             && Objects.equals(this.backendParams, apiPolicyHttpCreate.backendParams)
@@ -698,6 +721,7 @@ public class ApiPolicyHttpCreate {
             reqMethod,
             reqUri,
             timeout,
+            retryCount,
             effectMode,
             name,
             backendParams,
@@ -716,6 +740,7 @@ public class ApiPolicyHttpCreate {
         sb.append("    reqMethod: ").append(toIndentedString(reqMethod)).append("\n");
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+        sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
         sb.append("    effectMode: ").append(toIndentedString(effectMode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    backendParams: ").append(toIndentedString(backendParams)).append("\n");

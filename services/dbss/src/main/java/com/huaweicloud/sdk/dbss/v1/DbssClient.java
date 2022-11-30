@@ -22,8 +22,7 @@ public class DbssClient {
      *
      * 用于开启和关闭agent的功能，当开启后，开始抓取用户的访问信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SwitchAgentRequest 请求对象
      * @return SwitchAgentResponse
@@ -37,8 +36,7 @@ public class DbssClient {
      *
      * 用于开启和关闭agent的功能，当开启后，开始抓取用户的访问信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SwitchAgentRequest 请求对象
      * @return SyncInvoker<SwitchAgentRequest, SwitchAgentResponse>
@@ -52,8 +50,7 @@ public class DbssClient {
      *
      * 开启关闭风险规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SwitchRiskRuleRequest 请求对象
      * @return SwitchRiskRuleResponse
@@ -67,8 +64,7 @@ public class DbssClient {
      *
      * 开启关闭风险规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SwitchRiskRuleRequest 请求对象
      * @return SyncInvoker<SwitchRiskRuleRequest, SwitchRiskRuleResponse>

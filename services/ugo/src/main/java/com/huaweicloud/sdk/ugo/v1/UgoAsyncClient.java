@@ -24,8 +24,7 @@ public class UgoAsyncClient {
      *
      * 目标库权限检查。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckPermissionRequest 请求对象
      * @return CompletableFuture<CheckPermissionResponse>
@@ -39,8 +38,7 @@ public class UgoAsyncClient {
      *
      * 目标库权限检查。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckPermissionRequest 请求对象
      * @return AsyncInvoker<CheckPermissionRequest, CheckPermissionResponse>
@@ -56,8 +54,7 @@ public class UgoAsyncClient {
      *
      * 提交语法转换。只有migration_project_status为\&quot;READY\&quot;时才能调用该接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CommitSyntaxConversionRequest 请求对象
      * @return CompletableFuture<CommitSyntaxConversionResponse>
@@ -72,8 +69,7 @@ public class UgoAsyncClient {
      *
      * 提交语法转换。只有migration_project_status为\&quot;READY\&quot;时才能调用该接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CommitSyntaxConversionRequest 请求对象
      * @return AsyncInvoker<CommitSyntaxConversionRequest, CommitSyntaxConversionResponse>
@@ -89,8 +85,7 @@ public class UgoAsyncClient {
      *
      * 提交验证。语法转换完成后，才能调用该接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CommitVerificationRequest 请求对象
      * @return CompletableFuture<CommitVerificationResponse>
@@ -104,8 +99,7 @@ public class UgoAsyncClient {
      *
      * 提交验证。语法转换完成后，才能调用该接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CommitVerificationRequest 请求对象
      * @return AsyncInvoker<CommitVerificationRequest, CommitVerificationResponse>
@@ -121,8 +115,7 @@ public class UgoAsyncClient {
      *
      * 评估项目确认目标数据库类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConfirmTargetDbTypeRequest 请求对象
      * @return CompletableFuture<ConfirmTargetDbTypeResponse>
@@ -136,8 +129,7 @@ public class UgoAsyncClient {
      *
      * 评估项目确认目标数据库类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ConfirmTargetDbTypeRequest 请求对象
      * @return AsyncInvoker<ConfirmTargetDbTypeRequest, ConfirmTargetDbTypeResponse>
@@ -153,8 +145,7 @@ public class UgoAsyncClient {
      *
      * 创建评估项目。评估项目分2个阶段：采集、评估。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEvaluationProjectRequest 请求对象
      * @return CompletableFuture<CreateEvaluationProjectResponse>
@@ -169,8 +160,7 @@ public class UgoAsyncClient {
      *
      * 创建评估项目。评估项目分2个阶段：采集、评估。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEvaluationProjectRequest 请求对象
      * @return AsyncInvoker<CreateEvaluationProjectRequest, CreateEvaluationProjectResponse>
@@ -186,8 +176,7 @@ public class UgoAsyncClient {
      *
      * 创建迁移项目。创建迁移项目需要关联状态为“COMPLETED”的评估项目。迁移项目依次经历以下几个阶段：目标库权限检查、语法转换、验证、下载迁移失败的报告、删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMigrationProjectRequest 请求对象
      * @return CompletableFuture<CreateMigrationProjectResponse>
@@ -202,8 +191,7 @@ public class UgoAsyncClient {
      *
      * 创建迁移项目。创建迁移项目需要关联状态为“COMPLETED”的评估项目。迁移项目依次经历以下几个阶段：目标库权限检查、语法转换、验证、下载迁移失败的报告、删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMigrationProjectRequest 请求对象
      * @return AsyncInvoker<CreateMigrationProjectRequest, CreateMigrationProjectResponse>
@@ -219,8 +207,7 @@ public class UgoAsyncClient {
      *
      * 删除评估项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEvaluationProjectRequest 请求对象
      * @return CompletableFuture<DeleteEvaluationProjectResponse>
@@ -235,8 +222,7 @@ public class UgoAsyncClient {
      *
      * 删除评估项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEvaluationProjectRequest 请求对象
      * @return AsyncInvoker<DeleteEvaluationProjectRequest, DeleteEvaluationProjectResponse>
@@ -252,8 +238,7 @@ public class UgoAsyncClient {
      *
      * 删除迁移项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMigrationProjectRequest 请求对象
      * @return CompletableFuture<DeleteMigrationProjectResponse>
@@ -268,8 +253,7 @@ public class UgoAsyncClient {
      *
      * 删除迁移项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMigrationProjectRequest 请求对象
      * @return AsyncInvoker<DeleteMigrationProjectRequest, DeleteMigrationProjectResponse>
@@ -285,8 +269,7 @@ public class UgoAsyncClient {
      *
      * 下载迁移错误报告。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadFailureReportRequest 请求对象
      * @return CompletableFuture<DownloadFailureReportResponse>
@@ -301,8 +284,7 @@ public class UgoAsyncClient {
      *
      * 下载迁移错误报告。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadFailureReportRequest 请求对象
      * @return AsyncInvoker<DownloadFailureReportRequest, DownloadFailureReportResponse>
@@ -318,8 +300,7 @@ public class UgoAsyncClient {
      *
      * 查询评估项目列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEvaluationProjectsRequest 请求对象
      * @return CompletableFuture<ListEvaluationProjectsResponse>
@@ -334,8 +315,7 @@ public class UgoAsyncClient {
      *
      * 查询评估项目列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEvaluationProjectsRequest 请求对象
      * @return AsyncInvoker<ListEvaluationProjectsRequest, ListEvaluationProjectsResponse>
@@ -351,8 +331,7 @@ public class UgoAsyncClient {
      *
      * 查询迁移项目列表。创建迁移项目之后，调用该接口，根据项目名称，获取项目ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMigrationProjectsRequest 请求对象
      * @return CompletableFuture<ListMigrationProjectsResponse>
@@ -367,8 +346,7 @@ public class UgoAsyncClient {
      *
      * 查询迁移项目列表。创建迁移项目之后，调用该接口，根据项目名称，获取项目ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMigrationProjectsRequest 请求对象
      * @return AsyncInvoker<ListMigrationProjectsRequest, ListMigrationProjectsResponse>
@@ -384,8 +362,7 @@ public class UgoAsyncClient {
      *
      * 查询权限检查结果。permission_check_status 为 \&quot;SUCCESS\&quot; 或者 \&quot;FAILED\&quot; 时，才能调用该接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPermissionCheckResultRequest 请求对象
      * @return CompletableFuture<ListPermissionCheckResultResponse>
@@ -400,8 +377,7 @@ public class UgoAsyncClient {
      *
      * 查询权限检查结果。permission_check_status 为 \&quot;SUCCESS\&quot; 或者 \&quot;FAILED\&quot; 时，才能调用该接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPermissionCheckResultRequest 请求对象
      * @return AsyncInvoker<ListPermissionCheckResultRequest, ListPermissionCheckResultResponse>
@@ -417,8 +393,7 @@ public class UgoAsyncClient {
      *
      * 查询单租户的配额，包括评估项目配额、迁移项目配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotasRequest 请求对象
      * @return CompletableFuture<ListQuotasResponse>
@@ -432,8 +407,7 @@ public class UgoAsyncClient {
      *
      * 查询单租户的配额，包括评估项目配额、迁移项目配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotasRequest 请求对象
      * @return AsyncInvoker<ListQuotasRequest, ListQuotasResponse>
@@ -447,8 +421,7 @@ public class UgoAsyncClient {
      *
      * 查询语法转换的进度。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSyntaxConversionProgressRequest 请求对象
      * @return CompletableFuture<ListSyntaxConversionProgressResponse>
@@ -463,8 +436,7 @@ public class UgoAsyncClient {
      *
      * 查询语法转换的进度。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSyntaxConversionProgressRequest 请求对象
      * @return AsyncInvoker<ListSyntaxConversionProgressRequest, ListSyntaxConversionProgressResponse>
@@ -480,8 +452,7 @@ public class UgoAsyncClient {
      *
      * 查询验证进度。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVerificationProgressRequest 请求对象
      * @return CompletableFuture<ListVerificationProgressResponse>
@@ -496,8 +467,7 @@ public class UgoAsyncClient {
      *
      * 查询验证进度。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVerificationProgressRequest 请求对象
      * @return AsyncInvoker<ListVerificationProgressRequest, ListVerificationProgressResponse>
@@ -513,8 +483,7 @@ public class UgoAsyncClient {
      *
      * 查询评估项目详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEvaluationProjectDetailRequest 请求对象
      * @return CompletableFuture<ShowEvaluationProjectDetailResponse>
@@ -529,8 +498,7 @@ public class UgoAsyncClient {
      *
      * 查询评估项目详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEvaluationProjectDetailRequest 请求对象
      * @return AsyncInvoker<ShowEvaluationProjectDetailRequest, ShowEvaluationProjectDetailResponse>
@@ -546,8 +514,7 @@ public class UgoAsyncClient {
      *
      * 查询评估项目状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEvaluationProjectStatusRequest 请求对象
      * @return CompletableFuture<ShowEvaluationProjectStatusResponse>
@@ -562,8 +529,7 @@ public class UgoAsyncClient {
      *
      * 查询评估项目状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEvaluationProjectStatusRequest 请求对象
      * @return AsyncInvoker<ShowEvaluationProjectStatusRequest, ShowEvaluationProjectStatusResponse>
@@ -579,8 +545,7 @@ public class UgoAsyncClient {
      *
      * 查询迁移项目详情。只有migration_project_status为\&quot;READY\&quot;时才能调用该接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMigrationProjectDetailRequest 请求对象
      * @return CompletableFuture<ShowMigrationProjectDetailResponse>
@@ -595,8 +560,7 @@ public class UgoAsyncClient {
      *
      * 查询迁移项目详情。只有migration_project_status为\&quot;READY\&quot;时才能调用该接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMigrationProjectDetailRequest 请求对象
      * @return AsyncInvoker<ShowMigrationProjectDetailRequest, ShowMigrationProjectDetailResponse>
@@ -612,8 +576,7 @@ public class UgoAsyncClient {
      *
      * 查询迁移项目状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMigrationProjectStatusRequest 请求对象
      * @return CompletableFuture<ShowMigrationProjectStatusResponse>
@@ -628,8 +591,7 @@ public class UgoAsyncClient {
      *
      * 查询迁移项目状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMigrationProjectStatusRequest 请求对象
      * @return AsyncInvoker<ShowMigrationProjectStatusRequest, ShowMigrationProjectStatusResponse>
@@ -645,8 +607,7 @@ public class UgoAsyncClient {
      *
      * 查询API版本信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return CompletableFuture<ListApiVersionsResponse>
@@ -660,8 +621,7 @@ public class UgoAsyncClient {
      *
      * 查询API版本信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
@@ -677,8 +637,7 @@ public class UgoAsyncClient {
      *
      * 查询指定版本号的API版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiVersionInfoRequest 请求对象
      * @return CompletableFuture<ShowApiVersionInfoResponse>
@@ -692,8 +651,7 @@ public class UgoAsyncClient {
      *
      * 查询指定版本号的API版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiVersionInfoRequest 请求对象
      * @return AsyncInvoker<ShowApiVersionInfoRequest, ShowApiVersionInfoResponse>
@@ -709,8 +667,7 @@ public class UgoAsyncClient {
      *
      * SQL语句转换。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSqlConversionRequest 请求对象
      * @return CompletableFuture<RunSqlConversionResponse>
@@ -724,8 +681,7 @@ public class UgoAsyncClient {
      *
      * SQL语句转换。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunSqlConversionRequest 请求对象
      * @return AsyncInvoker<RunSqlConversionRequest, RunSqlConversionResponse>

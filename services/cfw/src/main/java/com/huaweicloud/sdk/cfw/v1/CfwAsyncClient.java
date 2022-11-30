@@ -24,8 +24,7 @@ public class CfwAsyncClient {
      *
      * 添加地址组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddAddressItemsUsingPostRequest 请求对象
      * @return CompletableFuture<AddAddressItemsUsingPostResponse>
@@ -40,8 +39,7 @@ public class CfwAsyncClient {
      *
      * 添加地址组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddAddressItemsUsingPostRequest 请求对象
      * @return AsyncInvoker<AddAddressItemsUsingPostRequest, AddAddressItemsUsingPostResponse>
@@ -57,8 +55,7 @@ public class CfwAsyncClient {
      *
      * 添加地址组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddAddressSetInfoUsingPostRequest 请求对象
      * @return CompletableFuture<AddAddressSetInfoUsingPostResponse>
@@ -73,8 +70,7 @@ public class CfwAsyncClient {
      *
      * 添加地址组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddAddressSetInfoUsingPostRequest 请求对象
      * @return AsyncInvoker<AddAddressSetInfoUsingPostRequest, AddAddressSetInfoUsingPostResponse>
@@ -90,8 +86,7 @@ public class CfwAsyncClient {
      *
      * 创建黑白名单规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddBlackWhiteListUsingPostRequest 请求对象
      * @return CompletableFuture<AddBlackWhiteListUsingPostResponse>
@@ -106,8 +101,7 @@ public class CfwAsyncClient {
      *
      * 创建黑白名单规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddBlackWhiteListUsingPostRequest 请求对象
      * @return AsyncInvoker<AddBlackWhiteListUsingPostRequest, AddBlackWhiteListUsingPostResponse>
@@ -123,8 +117,7 @@ public class CfwAsyncClient {
      *
      * 批量添加服务组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddServiceItemsUsingPostRequest 请求对象
      * @return CompletableFuture<AddServiceItemsUsingPostResponse>
@@ -139,8 +132,7 @@ public class CfwAsyncClient {
      *
      * 批量添加服务组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddServiceItemsUsingPostRequest 请求对象
      * @return AsyncInvoker<AddServiceItemsUsingPostRequest, AddServiceItemsUsingPostResponse>
@@ -156,8 +148,7 @@ public class CfwAsyncClient {
      *
      * 创建服务组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddServiceSetUsingPostRequest 请求对象
      * @return CompletableFuture<AddServiceSetUsingPostResponse>
@@ -172,8 +163,7 @@ public class CfwAsyncClient {
      *
      * 创建服务组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddServiceSetUsingPostRequest 请求对象
      * @return AsyncInvoker<AddServiceSetUsingPostRequest, AddServiceSetUsingPostResponse>
@@ -189,8 +179,7 @@ public class CfwAsyncClient {
      *
      * 东西向防护资源防护开启/关闭
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeEwProtectStatusRequest 请求对象
      * @return CompletableFuture<ChangeEwProtectStatusResponse>
@@ -205,8 +194,7 @@ public class CfwAsyncClient {
      *
      * 东西向防护资源防护开启/关闭
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeEwProtectStatusRequest 请求对象
      * @return AsyncInvoker<ChangeEwProtectStatusRequest, ChangeEwProtectStatusResponse>
@@ -222,8 +210,7 @@ public class CfwAsyncClient {
      *
      * 切换防护模式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeIpsProtectModeUsingPostRequest 请求对象
      * @return CompletableFuture<ChangeIpsProtectModeUsingPostResponse>
@@ -238,8 +225,7 @@ public class CfwAsyncClient {
      *
      * 切换防护模式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeIpsProtectModeUsingPostRequest 请求对象
      * @return AsyncInvoker<ChangeIpsProtectModeUsingPostRequest, ChangeIpsProtectModeUsingPostResponse>
@@ -255,8 +241,7 @@ public class CfwAsyncClient {
      *
      * 清除规则击中次数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAclRuleCountRequest 请求对象
      * @return CompletableFuture<DeleteAclRuleCountResponse>
@@ -270,8 +255,7 @@ public class CfwAsyncClient {
      *
      * 清除规则击中次数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAclRuleCountRequest 请求对象
      * @return AsyncInvoker<DeleteAclRuleCountRequest, DeleteAclRuleCountResponse>
@@ -287,8 +271,7 @@ public class CfwAsyncClient {
      *
      * 删除地址组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAddressItemUsingDeleteRequest 请求对象
      * @return CompletableFuture<DeleteAddressItemUsingDeleteResponse>
@@ -303,8 +286,7 @@ public class CfwAsyncClient {
      *
      * 删除地址组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAddressItemUsingDeleteRequest 请求对象
      * @return AsyncInvoker<DeleteAddressItemUsingDeleteRequest, DeleteAddressItemUsingDeleteResponse>
@@ -320,8 +302,7 @@ public class CfwAsyncClient {
      *
      * 删除地址组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAddressSetInfoUsingDeleteRequest 请求对象
      * @return CompletableFuture<DeleteAddressSetInfoUsingDeleteResponse>
@@ -336,8 +317,7 @@ public class CfwAsyncClient {
      *
      * 删除地址组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAddressSetInfoUsingDeleteRequest 请求对象
      * @return AsyncInvoker<DeleteAddressSetInfoUsingDeleteRequest, DeleteAddressSetInfoUsingDeleteResponse>
@@ -353,8 +333,7 @@ public class CfwAsyncClient {
      *
      * 删除黑白名单规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBlackWhiteListUsingDeleteRequest 请求对象
      * @return CompletableFuture<DeleteBlackWhiteListUsingDeleteResponse>
@@ -369,8 +348,7 @@ public class CfwAsyncClient {
      *
      * 删除黑白名单规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBlackWhiteListUsingDeleteRequest 请求对象
      * @return AsyncInvoker<DeleteBlackWhiteListUsingDeleteRequest, DeleteBlackWhiteListUsingDeleteResponse>
@@ -386,8 +364,7 @@ public class CfwAsyncClient {
      *
      * 删除服务组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServiceItemUsingDeleteRequest 请求对象
      * @return CompletableFuture<DeleteServiceItemUsingDeleteResponse>
@@ -402,8 +379,7 @@ public class CfwAsyncClient {
      *
      * 删除服务组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServiceItemUsingDeleteRequest 请求对象
      * @return AsyncInvoker<DeleteServiceItemUsingDeleteRequest, DeleteServiceItemUsingDeleteResponse>
@@ -419,8 +395,7 @@ public class CfwAsyncClient {
      *
      * 删除服务组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServiceSetUsingDeleteRequest 请求对象
      * @return CompletableFuture<DeleteServiceSetUsingDeleteResponse>
@@ -435,8 +410,7 @@ public class CfwAsyncClient {
      *
      * 删除服务组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteServiceSetUsingDeleteRequest 请求对象
      * @return AsyncInvoker<DeleteServiceSetUsingDeleteRequest, DeleteServiceSetUsingDeleteResponse>
@@ -452,8 +426,7 @@ public class CfwAsyncClient {
      *
      * 查询访问控制日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAccessControlLogsRequest 请求对象
      * @return CompletableFuture<ListAccessControlLogsResponse>
@@ -468,8 +441,7 @@ public class CfwAsyncClient {
      *
      * 查询访问控制日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAccessControlLogsRequest 请求对象
      * @return AsyncInvoker<ListAccessControlLogsRequest, ListAccessControlLogsResponse>
@@ -485,8 +457,7 @@ public class CfwAsyncClient {
      *
      * 查询地址组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddressItemsUsingGetRequest 请求对象
      * @return CompletableFuture<ListAddressItemsUsingGetResponse>
@@ -501,8 +472,7 @@ public class CfwAsyncClient {
      *
      * 查询地址组成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddressItemsUsingGetRequest 请求对象
      * @return AsyncInvoker<ListAddressItemsUsingGetRequest, ListAddressItemsUsingGetResponse>
@@ -518,8 +488,7 @@ public class CfwAsyncClient {
      *
      * 查询地址组详细
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddressSetDetailUsingGetRequest 请求对象
      * @return CompletableFuture<ListAddressSetDetailUsingGetResponse>
@@ -534,8 +503,7 @@ public class CfwAsyncClient {
      *
      * 查询地址组详细
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddressSetDetailUsingGetRequest 请求对象
      * @return AsyncInvoker<ListAddressSetDetailUsingGetRequest, ListAddressSetDetailUsingGetResponse>
@@ -551,8 +519,7 @@ public class CfwAsyncClient {
      *
      * 查询地址组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddressSetListUsingGetRequest 请求对象
      * @return CompletableFuture<ListAddressSetListUsingGetResponse>
@@ -567,8 +534,7 @@ public class CfwAsyncClient {
      *
      * 查询地址组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddressSetListUsingGetRequest 请求对象
      * @return AsyncInvoker<ListAddressSetListUsingGetRequest, ListAddressSetListUsingGetResponse>
@@ -584,8 +550,7 @@ public class CfwAsyncClient {
      *
      * 查询攻击日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAttackLogsRequest 请求对象
      * @return CompletableFuture<ListAttackLogsResponse>
@@ -599,8 +564,7 @@ public class CfwAsyncClient {
      *
      * 查询攻击日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAttackLogsRequest 请求对象
      * @return AsyncInvoker<ListAttackLogsRequest, ListAttackLogsResponse>
@@ -616,8 +580,7 @@ public class CfwAsyncClient {
      *
      * 查询黑白名单列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBlackWhiteListsUsingGetRequest 请求对象
      * @return CompletableFuture<ListBlackWhiteListsUsingGetResponse>
@@ -632,8 +595,7 @@ public class CfwAsyncClient {
      *
      * 查询黑白名单列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBlackWhiteListsUsingGetRequest 请求对象
      * @return AsyncInvoker<ListBlackWhiteListsUsingGetRequest, ListBlackWhiteListsUsingGetResponse>
@@ -649,8 +611,7 @@ public class CfwAsyncClient {
      *
      * 查询dns服务器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDnsServersRequest 请求对象
      * @return CompletableFuture<ListDnsServersResponse>
@@ -664,8 +625,7 @@ public class CfwAsyncClient {
      *
      * 查询dns服务器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDnsServersRequest 请求对象
      * @return AsyncInvoker<ListDnsServersRequest, ListDnsServersResponse>
@@ -681,8 +641,7 @@ public class CfwAsyncClient {
      *
      * 查询东西向防火墙信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEastWestFirewallRequest 请求对象
      * @return CompletableFuture<ListEastWestFirewallResponse>
@@ -697,8 +656,7 @@ public class CfwAsyncClient {
      *
      * 查询东西向防火墙信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEastWestFirewallRequest 请求对象
      * @return AsyncInvoker<ListEastWestFirewallRequest, ListEastWestFirewallResponse>
@@ -714,8 +672,7 @@ public class CfwAsyncClient {
      *
      * 查询防火墙实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFirewallUsingGetRequest 请求对象
      * @return CompletableFuture<ListFirewallUsingGetResponse>
@@ -730,8 +687,7 @@ public class CfwAsyncClient {
      *
      * 查询防火墙实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFirewallUsingGetRequest 请求对象
      * @return AsyncInvoker<ListFirewallUsingGetRequest, ListFirewallUsingGetResponse>
@@ -747,8 +703,7 @@ public class CfwAsyncClient {
      *
      * 查询流日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlowLogsRequest 请求对象
      * @return CompletableFuture<ListFlowLogsResponse>
@@ -762,8 +717,7 @@ public class CfwAsyncClient {
      *
      * 查询流日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlowLogsRequest 请求对象
      * @return AsyncInvoker<ListFlowLogsRequest, ListFlowLogsResponse>
@@ -778,8 +732,7 @@ public class CfwAsyncClient {
      *
      * 查询防护模式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIpsProtectModeUsingPostRequest 请求对象
      * @return CompletableFuture<ListIpsProtectModeUsingPostResponse>
@@ -794,8 +747,7 @@ public class CfwAsyncClient {
      *
      * 查询防护模式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIpsProtectModeUsingPostRequest 请求对象
      * @return AsyncInvoker<ListIpsProtectModeUsingPostRequest, ListIpsProtectModeUsingPostResponse>
@@ -811,8 +763,7 @@ public class CfwAsyncClient {
      *
      * 测试域名有效性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListParseDomainDetailsRequest 请求对象
      * @return CompletableFuture<ListParseDomainDetailsResponse>
@@ -827,8 +778,7 @@ public class CfwAsyncClient {
      *
      * 测试域名有效性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListParseDomainDetailsRequest 请求对象
      * @return AsyncInvoker<ListParseDomainDetailsRequest, ListParseDomainDetailsResponse>
@@ -844,8 +794,7 @@ public class CfwAsyncClient {
      *
      * 获取规则击中次数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuleHitCountRequest 请求对象
      * @return CompletableFuture<ListRuleHitCountResponse>
@@ -859,8 +808,7 @@ public class CfwAsyncClient {
      *
      * 获取规则击中次数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuleHitCountRequest 请求对象
      * @return AsyncInvoker<ListRuleHitCountRequest, ListRuleHitCountResponse>
@@ -876,8 +824,7 @@ public class CfwAsyncClient {
      *
      * 查询服务组成员列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceItemsDetailsRequest 请求对象
      * @return CompletableFuture<ListServiceItemsDetailsResponse>
@@ -892,8 +839,7 @@ public class CfwAsyncClient {
      *
      * 查询服务组成员列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceItemsDetailsRequest 请求对象
      * @return AsyncInvoker<ListServiceItemsDetailsRequest, ListServiceItemsDetailsResponse>
@@ -909,8 +855,7 @@ public class CfwAsyncClient {
      *
      * 获取服务组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceSetRequest 请求对象
      * @return CompletableFuture<ListServiceSetResponse>
@@ -924,8 +869,7 @@ public class CfwAsyncClient {
      *
      * 获取服务组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceSetRequest 请求对象
      * @return AsyncInvoker<ListServiceSetRequest, ListServiceSetResponse>
@@ -941,8 +885,7 @@ public class CfwAsyncClient {
      *
      * 查询服务组细节
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceSetDetailsRequest 请求对象
      * @return CompletableFuture<ListServiceSetDetailsResponse>
@@ -957,8 +900,7 @@ public class CfwAsyncClient {
      *
      * 查询服务组细节
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceSetDetailsRequest 请求对象
      * @return AsyncInvoker<ListServiceSetDetailsRequest, ListServiceSetDetailsResponse>
@@ -974,8 +916,7 @@ public class CfwAsyncClient {
      *
      * 更新地址组信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAddressSetInfoUsingPutRequest 请求对象
      * @return CompletableFuture<UpdateAddressSetInfoUsingPutResponse>
@@ -990,8 +931,7 @@ public class CfwAsyncClient {
      *
      * 更新地址组信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAddressSetInfoUsingPutRequest 请求对象
      * @return AsyncInvoker<UpdateAddressSetInfoUsingPutRequest, UpdateAddressSetInfoUsingPutResponse>
@@ -1007,8 +947,7 @@ public class CfwAsyncClient {
      *
      * 更新黑白名单列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBlackWhiteListUsingPutRequest 请求对象
      * @return CompletableFuture<UpdateBlackWhiteListUsingPutResponse>
@@ -1023,8 +962,7 @@ public class CfwAsyncClient {
      *
      * 更新黑白名单列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBlackWhiteListUsingPutRequest 请求对象
      * @return AsyncInvoker<UpdateBlackWhiteListUsingPutRequest, UpdateBlackWhiteListUsingPutResponse>
@@ -1040,8 +978,7 @@ public class CfwAsyncClient {
      *
      * 更新dns服务器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDnsServersRequest 请求对象
      * @return CompletableFuture<UpdateDnsServersResponse>
@@ -1055,8 +992,7 @@ public class CfwAsyncClient {
      *
      * 更新dns服务器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDnsServersRequest 请求对象
      * @return AsyncInvoker<UpdateDnsServersRequest, UpdateDnsServersResponse>
@@ -1072,8 +1008,7 @@ public class CfwAsyncClient {
      *
      * 更新服务组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServiceSetUsingPutRequest 请求对象
      * @return CompletableFuture<UpdateServiceSetUsingPutResponse>
@@ -1088,8 +1023,7 @@ public class CfwAsyncClient {
      *
      * 更新服务组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateServiceSetUsingPutRequest 请求对象
      * @return AsyncInvoker<UpdateServiceSetUsingPutRequest, UpdateServiceSetUsingPutResponse>
@@ -1105,8 +1039,7 @@ public class CfwAsyncClient {
      *
      * 创建ACL规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddRuleAclUsingPostRequest 请求对象
      * @return CompletableFuture<AddRuleAclUsingPostResponse>
@@ -1120,8 +1053,7 @@ public class CfwAsyncClient {
      *
      * 创建ACL规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddRuleAclUsingPostRequest 请求对象
      * @return AsyncInvoker<AddRuleAclUsingPostRequest, AddRuleAclUsingPostResponse>
@@ -1137,8 +1069,7 @@ public class CfwAsyncClient {
      *
      * 删除ACL规则组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRuleAclUsingDeleteRequest 请求对象
      * @return CompletableFuture<DeleteRuleAclUsingDeleteResponse>
@@ -1153,8 +1084,7 @@ public class CfwAsyncClient {
      *
      * 删除ACL规则组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRuleAclUsingDeleteRequest 请求对象
      * @return AsyncInvoker<DeleteRuleAclUsingDeleteRequest, DeleteRuleAclUsingDeleteResponse>
@@ -1170,8 +1100,7 @@ public class CfwAsyncClient {
      *
      * ACL防护规则优先级设置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuleAclUsingPutRequest 请求对象
      * @return CompletableFuture<ListRuleAclUsingPutResponse>
@@ -1185,8 +1114,7 @@ public class CfwAsyncClient {
      *
      * ACL防护规则优先级设置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuleAclUsingPutRequest 请求对象
      * @return AsyncInvoker<ListRuleAclUsingPutRequest, ListRuleAclUsingPutResponse>
@@ -1202,8 +1130,7 @@ public class CfwAsyncClient {
      *
      * 查询防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuleAclsUsingGetRequest 请求对象
      * @return CompletableFuture<ListRuleAclsUsingGetResponse>
@@ -1218,8 +1145,7 @@ public class CfwAsyncClient {
      *
      * 查询防护规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuleAclsUsingGetRequest 请求对象
      * @return AsyncInvoker<ListRuleAclsUsingGetRequest, ListRuleAclsUsingGetResponse>
@@ -1235,8 +1161,7 @@ public class CfwAsyncClient {
      *
      * 更新ACL规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRuleAclUsingPutRequest 请求对象
      * @return CompletableFuture<UpdateRuleAclUsingPutResponse>
@@ -1251,8 +1176,7 @@ public class CfwAsyncClient {
      *
      * 更新ACL规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRuleAclUsingPutRequest 请求对象
      * @return AsyncInvoker<UpdateRuleAclUsingPutRequest, UpdateRuleAclUsingPutResponse>
@@ -1268,8 +1192,7 @@ public class CfwAsyncClient {
      *
      * 开启关闭EIP
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeProtectEipRequest 请求对象
      * @return CompletableFuture<ChangeProtectEipResponse>
@@ -1283,8 +1206,7 @@ public class CfwAsyncClient {
      *
      * 开启关闭EIP
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeProtectEipRequest 请求对象
      * @return AsyncInvoker<ChangeProtectEipRequest, ChangeProtectEipResponse>
@@ -1300,8 +1222,7 @@ public class CfwAsyncClient {
      *
      * 查询Eip个数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountEipsRequest 请求对象
      * @return CompletableFuture<CountEipsResponse>
@@ -1315,8 +1236,7 @@ public class CfwAsyncClient {
      *
      * 查询Eip个数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountEipsRequest 请求对象
      * @return AsyncInvoker<CountEipsRequest, CountEipsResponse>
@@ -1330,8 +1250,7 @@ public class CfwAsyncClient {
      *
      * 弹性IP列表查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEipResourcesRequest 请求对象
      * @return CompletableFuture<ListEipResourcesResponse>
@@ -1345,8 +1264,7 @@ public class CfwAsyncClient {
      *
      * 弹性IP列表查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEipResourcesRequest 请求对象
      * @return AsyncInvoker<ListEipResourcesRequest, ListEipResourcesResponse>
@@ -1362,8 +1280,7 @@ public class CfwAsyncClient {
      *
      * 切换开关状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeIpsSwitchUsingPostRequest 请求对象
      * @return CompletableFuture<ChangeIpsSwitchUsingPostResponse>
@@ -1378,8 +1295,7 @@ public class CfwAsyncClient {
      *
      * 切换开关状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeIpsSwitchUsingPostRequest 请求对象
      * @return AsyncInvoker<ChangeIpsSwitchUsingPostRequest, ChangeIpsSwitchUsingPostResponse>
@@ -1395,8 +1311,7 @@ public class CfwAsyncClient {
      *
      * 查询IPS特性开关状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIpsSwitchStatusUsingGetRequest 请求对象
      * @return CompletableFuture<ListIpsSwitchStatusUsingGetResponse>
@@ -1411,8 +1326,7 @@ public class CfwAsyncClient {
      *
      * 查询IPS特性开关状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIpsSwitchStatusUsingGetRequest 请求对象
      * @return AsyncInvoker<ListIpsSwitchStatusUsingGetRequest, ListIpsSwitchStatusUsingGetResponse>
@@ -1428,8 +1342,7 @@ public class CfwAsyncClient {
      *
      * 查询防护vpc信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcProtectsRequest 请求对象
      * @return CompletableFuture<ListVpcProtectsResponse>
@@ -1443,8 +1356,7 @@ public class CfwAsyncClient {
      *
      * 查询防护vpc信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcProtectsRequest 请求对象
      * @return AsyncInvoker<ListVpcProtectsRequest, ListVpcProtectsResponse>

@@ -22,8 +22,7 @@ public class VpcClient {
      *
      * 批量创建辅助弹性网卡
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateSubNetworkInterfaceRequest 请求对象
      * @return BatchCreateSubNetworkInterfaceResponse
@@ -38,8 +37,7 @@ public class VpcClient {
      *
      * 批量创建辅助弹性网卡
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateSubNetworkInterfaceRequest 请求对象
      * @return SyncInvoker<BatchCreateSubNetworkInterfaceRequest, BatchCreateSubNetworkInterfaceResponse>
@@ -55,8 +53,7 @@ public class VpcClient {
      *
      * 创建安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityGroupRequest 请求对象
      * @return CreateSecurityGroupResponse
@@ -70,8 +67,7 @@ public class VpcClient {
      *
      * 创建安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityGroupRequest 请求对象
      * @return SyncInvoker<CreateSecurityGroupRequest, CreateSecurityGroupResponse>
@@ -87,8 +83,7 @@ public class VpcClient {
      *
      * 创建安全组规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityGroupRuleRequest 请求对象
      * @return CreateSecurityGroupRuleResponse
@@ -102,8 +97,7 @@ public class VpcClient {
      *
      * 创建安全组规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse>
@@ -119,8 +113,7 @@ public class VpcClient {
      *
      * 创建辅助弹性网卡
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSubNetworkInterfaceRequest 请求对象
      * @return CreateSubNetworkInterfaceResponse
@@ -134,8 +127,7 @@ public class VpcClient {
      *
      * 创建辅助弹性网卡
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSubNetworkInterfaceRequest 请求对象
      * @return SyncInvoker<CreateSubNetworkInterfaceRequest, CreateSubNetworkInterfaceResponse>
@@ -151,8 +143,7 @@ public class VpcClient {
      *
      * 删除安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityGroupRequest 请求对象
      * @return DeleteSecurityGroupResponse
@@ -166,8 +157,7 @@ public class VpcClient {
      *
      * 删除安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityGroupRequest 请求对象
      * @return SyncInvoker<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse>
@@ -183,8 +173,7 @@ public class VpcClient {
      *
      * 删除安全组规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityGroupRuleRequest 请求对象
      * @return DeleteSecurityGroupRuleResponse
@@ -198,8 +187,7 @@ public class VpcClient {
      *
      * 删除安全组规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse>
@@ -215,8 +203,7 @@ public class VpcClient {
      *
      * 删除辅助弹性网卡
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSubNetworkInterfaceRequest 请求对象
      * @return DeleteSubNetworkInterfaceResponse
@@ -230,8 +217,7 @@ public class VpcClient {
      *
      * 删除辅助弹性网卡
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSubNetworkInterfaceRequest 请求对象
      * @return SyncInvoker<DeleteSubNetworkInterfaceRequest, DeleteSubNetworkInterfaceResponse>
@@ -247,8 +233,7 @@ public class VpcClient {
      *
      * 查询安全组规则列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityGroupRulesRequest 请求对象
      * @return ListSecurityGroupRulesResponse
@@ -262,8 +247,7 @@ public class VpcClient {
      *
      * 查询安全组规则列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityGroupRulesRequest 请求对象
      * @return SyncInvoker<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse>
@@ -279,8 +263,7 @@ public class VpcClient {
      *
      * 查询某租户下的安全组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityGroupsRequest 请求对象
      * @return ListSecurityGroupsResponse
@@ -294,8 +277,7 @@ public class VpcClient {
      *
      * 查询某租户下的安全组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityGroupsRequest 请求对象
      * @return SyncInvoker<ListSecurityGroupsRequest, ListSecurityGroupsResponse>
@@ -311,8 +293,7 @@ public class VpcClient {
      *
      * 查询辅助弹性网卡列表，单次查询最多返回2000条数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubNetworkInterfacesRequest 请求对象
      * @return ListSubNetworkInterfacesResponse
@@ -326,8 +307,7 @@ public class VpcClient {
      *
      * 查询辅助弹性网卡列表，单次查询最多返回2000条数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubNetworkInterfacesRequest 请求对象
      * @return SyncInvoker<ListSubNetworkInterfacesRequest, ListSubNetworkInterfacesResponse>
@@ -343,8 +323,7 @@ public class VpcClient {
      *
      * 批量迁移辅助弹性网卡
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MigrateSubNetworkInterfaceRequest 请求对象
      * @return MigrateSubNetworkInterfaceResponse
@@ -358,8 +337,7 @@ public class VpcClient {
      *
      * 批量迁移辅助弹性网卡
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MigrateSubNetworkInterfaceRequest 请求对象
      * @return SyncInvoker<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse>
@@ -375,8 +353,7 @@ public class VpcClient {
      *
      * 查询单个安全组详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityGroupRequest 请求对象
      * @return ShowSecurityGroupResponse
@@ -390,8 +367,7 @@ public class VpcClient {
      *
      * 查询单个安全组详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityGroupRequest 请求对象
      * @return SyncInvoker<ShowSecurityGroupRequest, ShowSecurityGroupResponse>
@@ -407,8 +383,7 @@ public class VpcClient {
      *
      * 查询单个安全组规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityGroupRuleRequest 请求对象
      * @return ShowSecurityGroupRuleResponse
@@ -422,8 +397,7 @@ public class VpcClient {
      *
      * 查询单个安全组规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityGroupRuleRequest 请求对象
      * @return SyncInvoker<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse>
@@ -439,8 +413,7 @@ public class VpcClient {
      *
      * 查询辅助弹性网卡详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubNetworkInterfaceRequest 请求对象
      * @return ShowSubNetworkInterfaceResponse
@@ -454,8 +427,7 @@ public class VpcClient {
      *
      * 查询辅助弹性网卡详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubNetworkInterfaceRequest 请求对象
      * @return SyncInvoker<ShowSubNetworkInterfaceRequest, ShowSubNetworkInterfaceResponse>
@@ -471,8 +443,7 @@ public class VpcClient {
      *
      * 查询辅助弹性网卡数目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubNetworkInterfacesQuantityRequest 请求对象
      * @return ShowSubNetworkInterfacesQuantityResponse
@@ -487,8 +458,7 @@ public class VpcClient {
      *
      * 查询辅助弹性网卡数目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubNetworkInterfacesQuantityRequest 请求对象
      * @return SyncInvoker<ShowSubNetworkInterfacesQuantityRequest, ShowSubNetworkInterfacesQuantityResponse>
@@ -504,8 +474,7 @@ public class VpcClient {
      *
      * 更新安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSecurityGroupRequest 请求对象
      * @return UpdateSecurityGroupResponse
@@ -519,8 +488,7 @@ public class VpcClient {
      *
      * 更新安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSecurityGroupRequest 请求对象
      * @return SyncInvoker<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse>
@@ -536,8 +504,7 @@ public class VpcClient {
      *
      * 更新辅助弹性网卡
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSubNetworkInterfaceRequest 请求对象
      * @return UpdateSubNetworkInterfaceResponse
@@ -551,8 +518,7 @@ public class VpcClient {
      *
      * 更新辅助弹性网卡
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSubNetworkInterfaceRequest 请求对象
      * @return SyncInvoker<UpdateSubNetworkInterfaceRequest, UpdateSubNetworkInterfaceResponse>
@@ -568,8 +534,7 @@ public class VpcClient {
      *
      * 创建地址组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAddressGroupRequest 请求对象
      * @return CreateAddressGroupResponse
@@ -583,8 +548,7 @@ public class VpcClient {
      *
      * 创建地址组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAddressGroupRequest 请求对象
      * @return SyncInvoker<CreateAddressGroupRequest, CreateAddressGroupResponse>
@@ -600,8 +564,7 @@ public class VpcClient {
      *
      * 删除地址组，非强制删除，删除前请确保未被其他资源引用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAddressGroupRequest 请求对象
      * @return DeleteAddressGroupResponse
@@ -615,8 +578,7 @@ public class VpcClient {
      *
      * 删除地址组，非强制删除，删除前请确保未被其他资源引用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAddressGroupRequest 请求对象
      * @return SyncInvoker<DeleteAddressGroupRequest, DeleteAddressGroupResponse>
@@ -632,8 +594,7 @@ public class VpcClient {
      *
      * 强制删除地址组，删除的地址组与安全组规则关联时，会删除地址组与关联的安全组规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIpAddressGroupForceRequest 请求对象
      * @return DeleteIpAddressGroupForceResponse
@@ -647,8 +608,7 @@ public class VpcClient {
      *
      * 强制删除地址组，删除的地址组与安全组规则关联时，会删除地址组与关联的安全组规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIpAddressGroupForceRequest 请求对象
      * @return SyncInvoker<DeleteIpAddressGroupForceRequest, DeleteIpAddressGroupForceResponse>
@@ -664,8 +624,7 @@ public class VpcClient {
      *
      * 查询地址组列表，根据过滤条件进行过滤。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddressGroupRequest 请求对象
      * @return ListAddressGroupResponse
@@ -679,8 +638,7 @@ public class VpcClient {
      *
      * 查询地址组列表，根据过滤条件进行过滤。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddressGroupRequest 请求对象
      * @return SyncInvoker<ListAddressGroupRequest, ListAddressGroupResponse>
@@ -696,8 +654,7 @@ public class VpcClient {
      *
      * 查询地址组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAddressGroupRequest 请求对象
      * @return ShowAddressGroupResponse
@@ -711,8 +668,7 @@ public class VpcClient {
      *
      * 查询地址组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAddressGroupRequest 请求对象
      * @return SyncInvoker<ShowAddressGroupRequest, ShowAddressGroupResponse>
@@ -728,8 +684,7 @@ public class VpcClient {
      *
      * 更新地址组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAddressGroupRequest 请求对象
      * @return UpdateAddressGroupResponse
@@ -743,8 +698,7 @@ public class VpcClient {
      *
      * 更新地址组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAddressGroupRequest 请求对象
      * @return SyncInvoker<UpdateAddressGroupRequest, UpdateAddressGroupResponse>
@@ -760,8 +714,7 @@ public class VpcClient {
      *
      * 添加VPC的扩展网段
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddVpcExtendCidrRequest 请求对象
      * @return AddVpcExtendCidrResponse
@@ -775,8 +728,7 @@ public class VpcClient {
      *
      * 添加VPC的扩展网段
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddVpcExtendCidrRequest 请求对象
      * @return SyncInvoker<AddVpcExtendCidrRequest, AddVpcExtendCidrResponse>
@@ -792,8 +744,7 @@ public class VpcClient {
      *
      * 创建虚拟私有云
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcRequest 请求对象
      * @return CreateVpcResponse
@@ -807,8 +758,7 @@ public class VpcClient {
      *
      * 创建虚拟私有云
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcRequest 请求对象
      * @return SyncInvoker<CreateVpcRequest, CreateVpcResponse>
@@ -822,8 +772,7 @@ public class VpcClient {
      *
      * 删除VPC
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcRequest 请求对象
      * @return DeleteVpcResponse
@@ -837,8 +786,7 @@ public class VpcClient {
      *
      * 删除VPC
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcRequest 请求对象
      * @return SyncInvoker<DeleteVpcRequest, DeleteVpcResponse>
@@ -852,8 +800,7 @@ public class VpcClient {
      *
      * 查询vpc列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcsRequest 请求对象
      * @return ListVpcsResponse
@@ -867,8 +814,7 @@ public class VpcClient {
      *
      * 查询vpc列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcsRequest 请求对象
      * @return SyncInvoker<ListVpcsRequest, ListVpcsResponse>
@@ -882,8 +828,7 @@ public class VpcClient {
      *
      * 移除VPC扩展网段
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveVpcExtendCidrRequest 请求对象
      * @return RemoveVpcExtendCidrResponse
@@ -897,8 +842,7 @@ public class VpcClient {
      *
      * 移除VPC扩展网段
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveVpcExtendCidrRequest 请求对象
      * @return SyncInvoker<RemoveVpcExtendCidrRequest, RemoveVpcExtendCidrResponse>
@@ -914,8 +858,7 @@ public class VpcClient {
      *
      * 查询vpc详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcRequest 请求对象
      * @return ShowVpcResponse
@@ -929,8 +872,7 @@ public class VpcClient {
      *
      * 查询vpc详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcRequest 请求对象
      * @return SyncInvoker<ShowVpcRequest, ShowVpcResponse>
@@ -944,8 +886,7 @@ public class VpcClient {
      *
      * 更新vpc
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcRequest 请求对象
      * @return UpdateVpcResponse
@@ -959,8 +900,7 @@ public class VpcClient {
      *
      * 更新vpc
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcRequest 请求对象
      * @return SyncInvoker<UpdateVpcRequest, UpdateVpcResponse>

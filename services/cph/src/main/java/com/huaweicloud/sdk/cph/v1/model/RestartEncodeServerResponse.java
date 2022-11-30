@@ -22,7 +22,7 @@ public class RestartEncodeServerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
-    private List<Object> jobs = null;
+    private List<EncodeServerJob> jobs = null;
 
     public RestartEncodeServerResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -41,12 +41,12 @@ public class RestartEncodeServerResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public RestartEncodeServerResponse withJobs(List<Object> jobs) {
+    public RestartEncodeServerResponse withJobs(List<EncodeServerJob> jobs) {
         this.jobs = jobs;
         return this;
     }
 
-    public RestartEncodeServerResponse addJobsItem(Object jobsItem) {
+    public RestartEncodeServerResponse addJobsItem(EncodeServerJob jobsItem) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class RestartEncodeServerResponse extends SdkResponse {
         return this;
     }
 
-    public RestartEncodeServerResponse withJobs(Consumer<List<Object>> jobsSetter) {
+    public RestartEncodeServerResponse withJobs(Consumer<List<EncodeServerJob>> jobsSetter) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class RestartEncodeServerResponse extends SdkResponse {
      * 任务信息
      * @return jobs
      */
-    public List<Object> getJobs() {
+    public List<EncodeServerJob> getJobs() {
         return jobs;
     }
 
-    public void setJobs(List<Object> jobs) {
+    public void setJobs(List<EncodeServerJob> jobs) {
         this.jobs = jobs;
     }
 

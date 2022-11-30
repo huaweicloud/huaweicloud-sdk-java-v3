@@ -22,8 +22,7 @@ public class CssClient {
      *
      * 由于集群数据面业务的增长或者不确定性，很难在一开始就能够把集群的规模形态想明白，该接口能够在非独立master和client的集群上面独立master、client角色。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddIndependentNodeRequest 请求对象
      * @return AddIndependentNodeResponse
@@ -37,8 +36,7 @@ public class CssClient {
      *
      * 由于集群数据面业务的增长或者不确定性，很难在一开始就能够把集群的规模形态想明白，该接口能够在非独立master和client的集群上面独立master、client角色。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddIndependentNodeRequest 请求对象
      * @return SyncInvoker<AddIndependentNodeRequest, AddIndependentNodeResponse>
@@ -54,8 +52,7 @@ public class CssClient {
      *
      * 该接口用于切换集群的安全模式。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeModeRequest 请求对象
      * @return ChangeModeResponse
@@ -69,8 +66,7 @@ public class CssClient {
      *
      * 该接口用于切换集群的安全模式。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeModeRequest 请求对象
      * @return SyncInvoker<ChangeModeRequest, ChangeModeResponse>
@@ -84,8 +80,7 @@ public class CssClient {
      *
      * 该接口用于设置自动创建快照，默认一天创建一个快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAutoCreatePolicyRequest 请求对象
      * @return CreateAutoCreatePolicyResponse
@@ -99,8 +94,7 @@ public class CssClient {
      *
      * 该接口用于设置自动创建快照，默认一天创建一个快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAutoCreatePolicyRequest 请求对象
      * @return SyncInvoker<CreateAutoCreatePolicyRequest, CreateAutoCreatePolicyResponse>
@@ -116,8 +110,7 @@ public class CssClient {
      *
      * 该接口用于开启公网访问。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateBindPublicRequest 请求对象
      * @return CreateBindPublicResponse
@@ -131,8 +124,7 @@ public class CssClient {
      *
      * 该接口用于开启公网访问。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateBindPublicRequest 请求对象
      * @return SyncInvoker<CreateBindPublicRequest, CreateBindPublicResponse>
@@ -148,8 +140,7 @@ public class CssClient {
      *
      * 该接口用于创建集群。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClusterRequest 请求对象
      * @return CreateClusterResponse
@@ -163,8 +154,7 @@ public class CssClient {
      *
      * 该接口用于创建集群。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClusterRequest 请求对象
      * @return SyncInvoker<CreateClusterRequest, CreateClusterResponse>
@@ -178,8 +168,7 @@ public class CssClient {
      *
      * 该接口用于给指定集群添加标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClustersTagsRequest 请求对象
      * @return CreateClustersTagsResponse
@@ -193,8 +182,7 @@ public class CssClient {
      *
      * 该接口用于给指定集群添加标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClustersTagsRequest 请求对象
      * @return SyncInvoker<CreateClustersTagsRequest, CreateClustersTagsResponse>
@@ -210,8 +198,7 @@ public class CssClient {
      *
      * 该接口用于加载存放于OBS的自定义词库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLoadIkThesaurusRequest 请求对象
      * @return CreateLoadIkThesaurusResponse
@@ -225,8 +212,7 @@ public class CssClient {
      *
      * 该接口用于加载存放于OBS的自定义词库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLoadIkThesaurusRequest 请求对象
      * @return SyncInvoker<CreateLoadIkThesaurusRequest, CreateLoadIkThesaurusResponse>
@@ -242,8 +228,7 @@ public class CssClient {
      *
      * 该接口用于备份日志。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLogBackupRequest 请求对象
      * @return CreateLogBackupResponse
@@ -257,8 +242,7 @@ public class CssClient {
      *
      * 该接口用于备份日志。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLogBackupRequest 请求对象
      * @return SyncInvoker<CreateLogBackupRequest, CreateLogBackupResponse>
@@ -274,8 +258,7 @@ public class CssClient {
      *
      * 该接口用于手动创建一个快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSnapshotRequest 请求对象
      * @return CreateSnapshotResponse
@@ -289,8 +272,7 @@ public class CssClient {
      *
      * 该接口用于手动创建一个快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSnapshotRequest 请求对象
      * @return SyncInvoker<CreateSnapshotRequest, CreateSnapshotResponse>
@@ -308,8 +290,7 @@ public class CssClient {
      * 
      * &gt;此接口亦可用于包年/包月集群退订。公安冻结的集群不能删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteClusterRequest 请求对象
      * @return DeleteClusterResponse
@@ -325,8 +306,7 @@ public class CssClient {
      * 
      * &gt;此接口亦可用于包年/包月集群退订。公安冻结的集群不能删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteClusterRequest 请求对象
      * @return SyncInvoker<DeleteClusterRequest, DeleteClusterResponse>
@@ -340,8 +320,7 @@ public class CssClient {
      *
      * 此接口用于删除集群标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteClustersTagsRequest 请求对象
      * @return DeleteClustersTagsResponse
@@ -355,8 +334,7 @@ public class CssClient {
      *
      * 此接口用于删除集群标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteClustersTagsRequest 请求对象
      * @return SyncInvoker<DeleteClustersTagsRequest, DeleteClustersTagsResponse>
@@ -372,8 +350,7 @@ public class CssClient {
      *
      * 该接口用于删除自定义词库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIkThesaurusRequest 请求对象
      * @return DeleteIkThesaurusResponse
@@ -387,8 +364,7 @@ public class CssClient {
      *
      * 该接口用于删除自定义词库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteIkThesaurusRequest 请求对象
      * @return SyncInvoker<DeleteIkThesaurusRequest, DeleteIkThesaurusResponse>
@@ -404,8 +380,7 @@ public class CssClient {
      *
      * 该接口用于删除快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSnapshotRequest 请求对象
      * @return DeleteSnapshotResponse
@@ -419,8 +394,7 @@ public class CssClient {
      *
      * 该接口用于删除快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSnapshotRequest 请求对象
      * @return SyncInvoker<DeleteSnapshotRequest, DeleteSnapshotResponse>
@@ -436,8 +410,7 @@ public class CssClient {
      *
      * 该接口用于下载安全证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadCertRequest 请求对象
      * @return DownloadCertResponse
@@ -451,8 +424,7 @@ public class CssClient {
      *
      * 该接口用于下载安全证书。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadCertRequest 请求对象
      * @return SyncInvoker<DownloadCertRequest, DownloadCertResponse>
@@ -466,8 +438,7 @@ public class CssClient {
      *
      * 该接口用于查询并显示集群列表以及集群的状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClustersDetailsRequest 请求对象
      * @return ListClustersDetailsResponse
@@ -481,8 +452,7 @@ public class CssClient {
      *
      * 该接口用于查询并显示集群列表以及集群的状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClustersDetailsRequest 请求对象
      * @return SyncInvoker<ListClustersDetailsRequest, ListClustersDetailsResponse>
@@ -498,8 +468,7 @@ public class CssClient {
      *
      * 该接口用于查询指定region下的所有标签集合。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClustersTagsRequest 请求对象
      * @return ListClustersTagsResponse
@@ -513,8 +482,7 @@ public class CssClient {
      *
      * 该接口用于查询指定region下的所有标签集合。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClustersTagsRequest 请求对象
      * @return SyncInvoker<ListClustersTagsRequest, ListClustersTagsResponse>
@@ -530,8 +498,7 @@ public class CssClient {
      *
      * 该接口用于查询并显示支持的实例规格对应的ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
@@ -545,8 +512,7 @@ public class CssClient {
      *
      * 该接口用于查询并显示支持的实例规格对应的ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
@@ -560,8 +526,7 @@ public class CssClient {
      *
      * 该接口用于查询具体某个集群的日志任务记录列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogsJobRequest 请求对象
      * @return ListLogsJobResponse
@@ -575,8 +540,7 @@ public class CssClient {
      *
      * 该接口用于查询具体某个集群的日志任务记录列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogsJobRequest 请求对象
      * @return SyncInvoker<ListLogsJobRequest, ListLogsJobResponse>
@@ -590,8 +554,7 @@ public class CssClient {
      *
      * 该接口用于查询集群的所有快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSnapshotsRequest 请求对象
      * @return ListSnapshotsResponse
@@ -605,8 +568,7 @@ public class CssClient {
      *
      * 该接口用于查询集群的所有快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSnapshotsRequest 请求对象
      * @return SyncInvoker<ListSnapshotsRequest, ListSnapshotsResponse>
@@ -620,8 +582,7 @@ public class CssClient {
      *
      * 该接口用于获取当前集群现有的参数配置列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListYmlsRequest 请求对象
      * @return ListYmlsResponse
@@ -635,8 +596,7 @@ public class CssClient {
      *
      * 该接口用于获取当前集群现有的参数配置列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListYmlsRequest 请求对象
      * @return SyncInvoker<ListYmlsRequest, ListYmlsResponse>
@@ -650,8 +610,7 @@ public class CssClient {
      *
      * 该接口可获取参数配置的任务操作列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListYmlsJobRequest 请求对象
      * @return ListYmlsJobResponse
@@ -665,8 +624,7 @@ public class CssClient {
      *
      * 该接口可获取参数配置的任务操作列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListYmlsJobRequest 请求对象
      * @return SyncInvoker<ListYmlsJobRequest, ListYmlsJobResponse>
@@ -680,8 +638,7 @@ public class CssClient {
      *
      * 该接口用于修改集群密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetPasswordRequest 请求对象
      * @return ResetPasswordResponse
@@ -695,8 +652,7 @@ public class CssClient {
      *
      * 该接口用于修改集群密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetPasswordRequest 请求对象
      * @return SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
@@ -710,8 +666,7 @@ public class CssClient {
      *
      * 此接口用于重启集群，重启集群将导致业务中断。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartClusterRequest 请求对象
      * @return RestartClusterResponse
@@ -725,8 +680,7 @@ public class CssClient {
      *
      * 此接口用于重启集群，重启集群将导致业务中断。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestartClusterRequest 请求对象
      * @return SyncInvoker<RestartClusterRequest, RestartClusterResponse>
@@ -742,8 +696,7 @@ public class CssClient {
      *
      * 该接口用于手动恢复一个快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreSnapshotRequest 请求对象
      * @return RestoreSnapshotResponse
@@ -757,8 +710,7 @@ public class CssClient {
      *
      * 该接口用于手动恢复一个快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreSnapshotRequest 请求对象
      * @return SyncInvoker<RestoreSnapshotRequest, RestoreSnapshotResponse>
@@ -774,8 +726,7 @@ public class CssClient {
      *
      * 该接口用于查询自动创建快照策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAutoCreatePolicyRequest 请求对象
      * @return ShowAutoCreatePolicyResponse
@@ -789,8 +740,7 @@ public class CssClient {
      *
      * 该接口用于查询自动创建快照策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAutoCreatePolicyRequest 请求对象
      * @return SyncInvoker<ShowAutoCreatePolicyRequest, ShowAutoCreatePolicyResponse>
@@ -806,8 +756,7 @@ public class CssClient {
      *
      * 该接口用于查询并显示单个集群详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClusterDetailRequest 请求对象
      * @return ShowClusterDetailResponse
@@ -821,8 +770,7 @@ public class CssClient {
      *
      * 该接口用于查询并显示单个集群详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClusterDetailRequest 请求对象
      * @return SyncInvoker<ShowClusterDetailRequest, ShowClusterDetailResponse>
@@ -838,8 +786,7 @@ public class CssClient {
      *
      * 该接口用于查询指定集群的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClusterTagRequest 请求对象
      * @return ShowClusterTagResponse
@@ -853,8 +800,7 @@ public class CssClient {
      *
      * 该接口用于查询指定集群的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClusterTagRequest 请求对象
      * @return SyncInvoker<ShowClusterTagRequest, ShowClusterTagResponse>
@@ -870,8 +816,7 @@ public class CssClient {
      *
      * 该接口用于日志基础配置查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowGetLogSettingRequest 请求对象
      * @return ShowGetLogSettingResponse
@@ -885,8 +830,7 @@ public class CssClient {
      *
      * 该接口用于日志基础配置查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowGetLogSettingRequest 请求对象
      * @return SyncInvoker<ShowGetLogSettingRequest, ShowGetLogSettingResponse>
@@ -902,8 +846,7 @@ public class CssClient {
      *
      * 该接口用于查询自定义词库的加载状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIkThesaurusRequest 请求对象
      * @return ShowIkThesaurusResponse
@@ -917,8 +860,7 @@ public class CssClient {
      *
      * 该接口用于查询自定义词库的加载状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowIkThesaurusRequest 请求对象
      * @return SyncInvoker<ShowIkThesaurusRequest, ShowIkThesaurusResponse>
@@ -934,8 +876,7 @@ public class CssClient {
      *
      * 该接口用于查询日志信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLogBackupRequest 请求对象
      * @return ShowLogBackupResponse
@@ -949,8 +890,7 @@ public class CssClient {
      *
      * 该接口用于查询日志信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLogBackupRequest 请求对象
      * @return SyncInvoker<ShowLogBackupRequest, ShowLogBackupResponse>
@@ -964,8 +904,7 @@ public class CssClient {
      *
      * 该接口用于获取终端节点连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcepConnectionRequest 请求对象
      * @return ShowVpcepConnectionResponse
@@ -979,8 +918,7 @@ public class CssClient {
      *
      * 该接口用于获取终端节点连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcepConnectionRequest 请求对象
      * @return SyncInvoker<ShowVpcepConnectionRequest, ShowVpcepConnectionResponse>
@@ -1002,8 +940,7 @@ public class CssClient {
      * - “备份路径”：快照在OBS桶中的存放路径。
      * - “IAM委托”：由于需要将快照保存在OBS中，所以需要在IAM中设置对应的委托获取对OBS服务的授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartAutoSettingRequest 请求对象
      * @return StartAutoSettingResponse
@@ -1023,8 +960,7 @@ public class CssClient {
      * - “备份路径”：快照在OBS桶中的存放路径。
      * - “IAM委托”：由于需要将快照保存在OBS中，所以需要在IAM中设置对应的委托获取对OBS服务的授权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartAutoSettingRequest 请求对象
      * @return SyncInvoker<StartAutoSettingRequest, StartAutoSettingResponse>
@@ -1040,8 +976,7 @@ public class CssClient {
      *
      * 该接口用于日志自动备份策略开启。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartLogAutoBackupPolicyRequest 请求对象
      * @return StartLogAutoBackupPolicyResponse
@@ -1055,8 +990,7 @@ public class CssClient {
      *
      * 该接口用于日志自动备份策略开启。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartLogAutoBackupPolicyRequest 请求对象
      * @return SyncInvoker<StartLogAutoBackupPolicyRequest, StartLogAutoBackupPolicyResponse>
@@ -1072,8 +1006,7 @@ public class CssClient {
      *
      * 该接口用于开启日志功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartLogsRequest 请求对象
      * @return StartLogsResponse
@@ -1087,8 +1020,7 @@ public class CssClient {
      *
      * 该接口用于开启日志功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartLogsRequest 请求对象
      * @return SyncInvoker<StartLogsRequest, StartLogsResponse>
@@ -1102,8 +1034,7 @@ public class CssClient {
      *
      * 该接口用于开启公网访问控制白名单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartPublicWhitelistRequest 请求对象
      * @return StartPublicWhitelistResponse
@@ -1117,8 +1048,7 @@ public class CssClient {
      *
      * 该接口用于开启公网访问控制白名单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartPublicWhitelistRequest 请求对象
      * @return SyncInvoker<StartPublicWhitelistRequest, StartPublicWhitelistResponse>
@@ -1134,8 +1064,7 @@ public class CssClient {
      *
      * 该接口用于开启终端节点服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartVpecpRequest 请求对象
      * @return StartVpecpResponse
@@ -1149,8 +1078,7 @@ public class CssClient {
      *
      * 该接口用于开启终端节点服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartVpecpRequest 请求对象
      * @return SyncInvoker<StartVpecpRequest, StartVpecpResponse>
@@ -1164,8 +1092,7 @@ public class CssClient {
      *
      * 该接口用于日志自动备份策略关闭。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopLogAutoBackupPolicyRequest 请求对象
      * @return StopLogAutoBackupPolicyResponse
@@ -1179,8 +1106,7 @@ public class CssClient {
      *
      * 该接口用于日志自动备份策略关闭。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopLogAutoBackupPolicyRequest 请求对象
      * @return SyncInvoker<StopLogAutoBackupPolicyRequest, StopLogAutoBackupPolicyResponse>
@@ -1196,8 +1122,7 @@ public class CssClient {
      *
      * 该接口用于关闭日志功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopLogsRequest 请求对象
      * @return StopLogsResponse
@@ -1211,8 +1136,7 @@ public class CssClient {
      *
      * 该接口用于关闭日志功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopLogsRequest 请求对象
      * @return SyncInvoker<StopLogsRequest, StopLogsResponse>
@@ -1226,8 +1150,7 @@ public class CssClient {
      *
      * 该接口用于关闭公网访问控制白名单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopPublicWhitelistRequest 请求对象
      * @return StopPublicWhitelistResponse
@@ -1241,8 +1164,7 @@ public class CssClient {
      *
      * 该接口用于关闭公网访问控制白名单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopPublicWhitelistRequest 请求对象
      * @return SyncInvoker<StopPublicWhitelistRequest, StopPublicWhitelistResponse>
@@ -1258,8 +1180,7 @@ public class CssClient {
      *
      * 该接口用于停用快照功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopSnapshotRequest 请求对象
      * @return StopSnapshotResponse
@@ -1273,8 +1194,7 @@ public class CssClient {
      *
      * 该接口用于停用快照功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopSnapshotRequest 请求对象
      * @return SyncInvoker<StopSnapshotRequest, StopSnapshotResponse>
@@ -1288,8 +1208,7 @@ public class CssClient {
      *
      * 该接口用于关闭终端节点服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopVpecpRequest 请求对象
      * @return StopVpecpResponse
@@ -1303,8 +1222,7 @@ public class CssClient {
      *
      * 该接口用于关闭终端节点服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopVpecpRequest 请求对象
      * @return SyncInvoker<StopVpecpRequest, StopVpecpResponse>
@@ -1318,8 +1236,7 @@ public class CssClient {
      *
      * 该接口用于对集群批量添加或删除标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBatchClustersTagsRequest 请求对象
      * @return UpdateBatchClustersTagsResponse
@@ -1333,8 +1250,7 @@ public class CssClient {
      *
      * 该接口用于对集群批量添加或删除标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBatchClustersTagsRequest 请求对象
      * @return SyncInvoker<UpdateBatchClustersTagsRequest, UpdateBatchClustersTagsResponse>
@@ -1350,8 +1266,7 @@ public class CssClient {
      *
      * 该接口用于修改集群名称。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateClusterNameRequest 请求对象
      * @return UpdateClusterNameResponse
@@ -1365,8 +1280,7 @@ public class CssClient {
      *
      * 该接口用于修改集群名称。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateClusterNameRequest 请求对象
      * @return SyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse>
@@ -1384,8 +1298,7 @@ public class CssClient {
      * 
      * 集群扩容实例的数量和存储容量，请参考[扩容实例的数量和存储容量](UpdateExtendInstanceStorage.xml)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateExtendClusterRequest 请求对象
      * @return UpdateExtendClusterResponse
@@ -1401,8 +1314,7 @@ public class CssClient {
      * 
      * 集群扩容实例的数量和存储容量，请参考[扩容实例的数量和存储容量](UpdateExtendInstanceStorage.xml)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateExtendClusterRequest 请求对象
      * @return SyncInvoker<UpdateExtendClusterRequest, UpdateExtendClusterResponse>
@@ -1418,8 +1330,7 @@ public class CssClient {
      *
      * 该接口用于集群扩容不同类型实例的个数以及存储容量。已经存在独立Master、Client、冷数据节点的集群使用该接口扩容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateExtendInstanceStorageRequest 请求对象
      * @return UpdateExtendInstanceStorageResponse
@@ -1433,8 +1344,7 @@ public class CssClient {
      *
      * 该接口用于集群扩容不同类型实例的个数以及存储容量。已经存在独立Master、Client、冷数据节点的集群使用该接口扩容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateExtendInstanceStorageRequest 请求对象
      * @return SyncInvoker<UpdateExtendInstanceStorageRequest, UpdateExtendInstanceStorageResponse>
@@ -1450,8 +1360,7 @@ public class CssClient {
      *
      * 该接口用于变更集群规格。只支持变更ess节点类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFlavorRequest 请求对象
      * @return UpdateFlavorResponse
@@ -1465,8 +1374,7 @@ public class CssClient {
      *
      * 该接口用于变更集群规格。只支持变更ess节点类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFlavorRequest 请求对象
      * @return SyncInvoker<UpdateFlavorRequest, UpdateFlavorResponse>
@@ -1484,8 +1392,7 @@ public class CssClient {
      * - ess-client: Client节点。
      * - ess-master: Master节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFlavorByTypeRequest 请求对象
      * @return UpdateFlavorByTypeResponse
@@ -1503,8 +1410,7 @@ public class CssClient {
      * - ess-client: Client节点。
      * - ess-master: Master节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFlavorByTypeRequest 请求对象
      * @return SyncInvoker<UpdateFlavorByTypeRequest, UpdateFlavorByTypeResponse>
@@ -1520,8 +1426,7 @@ public class CssClient {
      *
      * 该接口用于替换失败节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceRequest 请求对象
      * @return UpdateInstanceResponse
@@ -1535,8 +1440,7 @@ public class CssClient {
      *
      * 该接口用于替换失败节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceRequest 请求对象
      * @return SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
@@ -1552,8 +1456,7 @@ public class CssClient {
      *
      * 该接口用于修改日志基础配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLogSettingRequest 请求对象
      * @return UpdateLogSettingResponse
@@ -1567,8 +1470,7 @@ public class CssClient {
      *
      * 该接口用于修改日志基础配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLogSettingRequest 请求对象
      * @return SyncInvoker<UpdateLogSettingRequest, UpdateLogSettingResponse>
@@ -1584,8 +1486,7 @@ public class CssClient {
      *
      * 该接口用于按需集群转包周期集群。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateOndemandClusterToPeriodRequest 请求对象
      * @return UpdateOndemandClusterToPeriodResponse
@@ -1600,8 +1501,7 @@ public class CssClient {
      *
      * 该接口用于按需集群转包周期集群。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateOndemandClusterToPeriodRequest 请求对象
      * @return SyncInvoker<UpdateOndemandClusterToPeriodRequest, UpdateOndemandClusterToPeriodResponse>
@@ -1617,8 +1517,7 @@ public class CssClient {
      *
      * 该接口用于修改公网访问带宽。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePublicBandWidthRequest 请求对象
      * @return UpdatePublicBandWidthResponse
@@ -1632,8 +1531,7 @@ public class CssClient {
      *
      * 该接口用于修改公网访问带宽。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePublicBandWidthRequest 请求对象
      * @return SyncInvoker<UpdatePublicBandWidthRequest, UpdatePublicBandWidthResponse>
@@ -1649,8 +1547,7 @@ public class CssClient {
      *
      * 该接口用于集群对不同类型实例的个数以及存储容量进行缩容。包周期集群不支持API操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateShrinkClusterRequest 请求对象
      * @return UpdateShrinkClusterResponse
@@ -1664,8 +1561,7 @@ public class CssClient {
      *
      * 该接口用于集群对不同类型实例的个数以及存储容量进行缩容。包周期集群不支持API操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateShrinkClusterRequest 请求对象
      * @return SyncInvoker<UpdateShrinkClusterRequest, UpdateShrinkClusterResponse>
@@ -1681,8 +1577,7 @@ public class CssClient {
      *
      * 该接口可以对集群现有节点中指定节点进行缩容。包周期集群不支持API操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateShrinkNodesRequest 请求对象
      * @return UpdateShrinkNodesResponse
@@ -1696,8 +1591,7 @@ public class CssClient {
      *
      * 该接口可以对集群现有节点中指定节点进行缩容。包周期集群不支持API操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateShrinkNodesRequest 请求对象
      * @return SyncInvoker<UpdateShrinkNodesRequest, UpdateShrinkNodesResponse>
@@ -1715,8 +1609,7 @@ public class CssClient {
      * 
      * 可以使用该接口开启快照功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSnapshotSettingRequest 请求对象
      * @return UpdateSnapshotSettingResponse
@@ -1732,8 +1625,7 @@ public class CssClient {
      * 
      * 可以使用该接口开启快照功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSnapshotSettingRequest 请求对象
      * @return SyncInvoker<UpdateSnapshotSettingRequest, UpdateSnapshotSettingResponse>
@@ -1749,8 +1641,7 @@ public class CssClient {
      *
      * 该接口用于关闭公网访问。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUnbindPublicRequest 请求对象
      * @return UpdateUnbindPublicResponse
@@ -1764,8 +1655,7 @@ public class CssClient {
      *
      * 该接口用于关闭公网访问。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUnbindPublicRequest 请求对象
      * @return SyncInvoker<UpdateUnbindPublicRequest, UpdateUnbindPublicResponse>
@@ -1781,8 +1671,7 @@ public class CssClient {
      *
      * 该接口用于更新终端节点连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcepConnectionRequest 请求对象
      * @return UpdateVpcepConnectionResponse
@@ -1796,8 +1685,7 @@ public class CssClient {
      *
      * 该接口用于更新终端节点连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcepConnectionRequest 请求对象
      * @return SyncInvoker<UpdateVpcepConnectionRequest, UpdateVpcepConnectionResponse>
@@ -1813,8 +1701,7 @@ public class CssClient {
      *
      * 该接口用于修改终端节点服务白名单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcepWhitelistRequest 请求对象
      * @return UpdateVpcepWhitelistResponse
@@ -1828,8 +1715,7 @@ public class CssClient {
      *
      * 该接口用于修改终端节点服务白名单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcepWhitelistRequest 请求对象
      * @return SyncInvoker<UpdateVpcepWhitelistRequest, UpdateVpcepWhitelistResponse>
@@ -1845,8 +1731,7 @@ public class CssClient {
      *
      * 该接口用于修改参数配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateYmlsRequest 请求对象
      * @return UpdateYmlsResponse
@@ -1860,8 +1745,7 @@ public class CssClient {
      *
      * 该接口用于修改参数配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateYmlsRequest 请求对象
      * @return SyncInvoker<UpdateYmlsRequest, UpdateYmlsResponse>
@@ -1875,8 +1759,7 @@ public class CssClient {
      *
      * 该接口用于开启Kibana公网访问。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartKibanaPublicRequest 请求对象
      * @return StartKibanaPublicResponse
@@ -1890,8 +1773,7 @@ public class CssClient {
      *
      * 该接口用于开启Kibana公网访问。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartKibanaPublicRequest 请求对象
      * @return SyncInvoker<StartKibanaPublicRequest, StartKibanaPublicResponse>
@@ -1907,8 +1789,7 @@ public class CssClient {
      *
      * 该接口用于关闭Kibana公网访问控制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopPublicKibanaWhitelistRequest 请求对象
      * @return StopPublicKibanaWhitelistResponse
@@ -1922,8 +1803,7 @@ public class CssClient {
      *
      * 该接口用于关闭Kibana公网访问控制。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopPublicKibanaWhitelistRequest 请求对象
      * @return SyncInvoker<StopPublicKibanaWhitelistRequest, StopPublicKibanaWhitelistResponse>
@@ -1939,8 +1819,7 @@ public class CssClient {
      *
      * 该接口用于修改Kibana公网带宽。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlterKibanaRequest 请求对象
      * @return UpdateAlterKibanaResponse
@@ -1954,8 +1833,7 @@ public class CssClient {
      *
      * 该接口用于修改Kibana公网带宽。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlterKibanaRequest 请求对象
      * @return SyncInvoker<UpdateAlterKibanaRequest, UpdateAlterKibanaResponse>
@@ -1971,8 +1849,7 @@ public class CssClient {
      *
      * 该接口用于关闭Kibana公网访问。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCloseKibanaRequest 请求对象
      * @return UpdateCloseKibanaResponse
@@ -1986,8 +1863,7 @@ public class CssClient {
      *
      * 该接口用于关闭Kibana公网访问。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCloseKibanaRequest 请求对象
      * @return SyncInvoker<UpdateCloseKibanaRequest, UpdateCloseKibanaResponse>
@@ -2003,8 +1879,7 @@ public class CssClient {
      *
      * 该接口通过修改kibana白名单，修改kibana的访问权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePublicKibanaWhitelistRequest 请求对象
      * @return UpdatePublicKibanaWhitelistResponse
@@ -2018,8 +1893,7 @@ public class CssClient {
      *
      * 该接口通过修改kibana白名单，修改kibana的访问权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePublicKibanaWhitelistRequest 请求对象
      * @return SyncInvoker<UpdatePublicKibanaWhitelistRequest, UpdatePublicKibanaWhitelistResponse>
@@ -2035,8 +1909,7 @@ public class CssClient {
      *
      * 该接口用于添加到自定义模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddFavoriteRequest 请求对象
      * @return AddFavoriteResponse
@@ -2050,8 +1923,7 @@ public class CssClient {
      *
      * 该接口用于添加到自定义模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddFavoriteRequest 请求对象
      * @return SyncInvoker<AddFavoriteRequest, AddFavoriteResponse>
@@ -2065,8 +1937,7 @@ public class CssClient {
      *
      * 该接口用于创建配置文件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCnfRequest 请求对象
      * @return CreateCnfResponse
@@ -2080,8 +1951,7 @@ public class CssClient {
      *
      * 该接口用于创建配置文件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCnfRequest 请求对象
      * @return SyncInvoker<CreateCnfRequest, CreateCnfResponse>
@@ -2095,8 +1965,7 @@ public class CssClient {
      *
      * 删除配置文件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteConfRequest 请求对象
      * @return DeleteConfResponse
@@ -2110,8 +1979,7 @@ public class CssClient {
      *
      * 删除配置文件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteConfRequest 请求对象
      * @return SyncInvoker<DeleteConfRequest, DeleteConfResponse>
@@ -2125,8 +1993,7 @@ public class CssClient {
      *
      * 该接口用于删除自定义模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTemplateRequest 请求对象
      * @return DeleteTemplateResponse
@@ -2140,8 +2007,7 @@ public class CssClient {
      *
      * 该接口用于删除自定义模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTemplateRequest 请求对象
      * @return SyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>
@@ -2157,8 +2023,7 @@ public class CssClient {
      *
      * 该接口用于查询操作记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListActionsRequest 请求对象
      * @return ListActionsResponse
@@ -2172,8 +2037,7 @@ public class CssClient {
      *
      * 该接口用于查询操作记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListActionsRequest 请求对象
      * @return SyncInvoker<ListActionsRequest, ListActionsResponse>
@@ -2187,8 +2051,7 @@ public class CssClient {
      *
      * 该接口用于查询配置文件列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConfsRequest 请求对象
      * @return ListConfsResponse
@@ -2202,8 +2065,7 @@ public class CssClient {
      *
      * 该接口用于查询配置文件列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConfsRequest 请求对象
      * @return SyncInvoker<ListConfsRequest, ListConfsResponse>
@@ -2217,8 +2079,7 @@ public class CssClient {
      *
      * 该接口用于查询pipeline列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPipelinesRequest 请求对象
      * @return ListPipelinesResponse
@@ -2232,8 +2093,7 @@ public class CssClient {
      *
      * 该接口用于查询pipeline列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPipelinesRequest 请求对象
      * @return SyncInvoker<ListPipelinesRequest, ListPipelinesResponse>
@@ -2247,8 +2107,7 @@ public class CssClient {
      *
      * 该接口用于查询模板列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesRequest 请求对象
      * @return ListTemplatesResponse
@@ -2262,8 +2121,7 @@ public class CssClient {
      *
      * 该接口用于查询模板列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesRequest 请求对象
      * @return SyncInvoker<ListTemplatesRequest, ListTemplatesResponse>
@@ -2277,8 +2135,7 @@ public class CssClient {
      *
      * 该接口用于查询配置文件内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowGetConfDetailRequest 请求对象
      * @return ShowGetConfDetailResponse
@@ -2292,8 +2149,7 @@ public class CssClient {
      *
      * 该接口用于查询配置文件内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowGetConfDetailRequest 请求对象
      * @return SyncInvoker<ShowGetConfDetailRequest, ShowGetConfDetailResponse>
@@ -2309,8 +2165,7 @@ public class CssClient {
      *
      * 该接口用于连通性测试。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartConnectivityTestRequest 请求对象
      * @return StartConnectivityTestResponse
@@ -2324,8 +2179,7 @@ public class CssClient {
      *
      * 该接口用于连通性测试。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartConnectivityTestRequest 请求对象
      * @return SyncInvoker<StartConnectivityTestRequest, StartConnectivityTestResponse>
@@ -2341,8 +2195,7 @@ public class CssClient {
      *
      * 该接口用于启动pipeline迁移数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartPipelineRequest 请求对象
      * @return StartPipelineResponse
@@ -2356,8 +2209,7 @@ public class CssClient {
      *
      * 该接口用于启动pipeline迁移数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartPipelineRequest 请求对象
      * @return SyncInvoker<StartPipelineRequest, StartPipelineResponse>
@@ -2371,8 +2223,7 @@ public class CssClient {
      *
      * 该接口用于停止pipeline迁移数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopPipelineRequest 请求对象
      * @return StopPipelineResponse
@@ -2386,8 +2237,7 @@ public class CssClient {
      *
      * 该接口用于停止pipeline迁移数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopPipelineRequest 请求对象
      * @return SyncInvoker<StopPipelineRequest, StopPipelineResponse>
@@ -2401,8 +2251,7 @@ public class CssClient {
      *
      * 该接口用于更新配置文件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCnfRequest 请求对象
      * @return UpdateCnfResponse
@@ -2416,8 +2265,7 @@ public class CssClient {
      *
      * 该接口用于更新配置文件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCnfRequest 请求对象
      * @return SyncInvoker<UpdateCnfRequest, UpdateCnfResponse>

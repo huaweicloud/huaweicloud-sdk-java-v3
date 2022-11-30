@@ -22,8 +22,7 @@ public class CgsClient {
      *
      * 查询容器节点列表（仅新版本容器安全支持，即将上线，敬请期待！）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListContainerNodesRequest 请求对象
      * @return ListContainerNodesResponse
@@ -37,8 +36,7 @@ public class CgsClient {
      *
      * 查询容器节点列表（仅新版本容器安全支持，即将上线，敬请期待！）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListContainerNodesRequest 请求对象
      * @return SyncInvoker<ListContainerNodesRequest, ListContainerNodesResponse>

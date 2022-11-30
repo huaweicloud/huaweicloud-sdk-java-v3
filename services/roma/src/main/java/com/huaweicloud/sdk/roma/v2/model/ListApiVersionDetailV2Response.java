@@ -1772,7 +1772,7 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     }
 
     /**
-     * [函数工作流策略后端列表](tag:hws;hws_hk;hcs;fcs;g42;)[暂不支持](tag:Site)
+     * [函数工作流策略后端列表](tag:hws,hws_hk,hcs,fcs,g42)[暂不支持](tag:Site)
      * @return policyFunctions
      */
     public List<ApiPolicyFunctionResp> getPolicyFunctions() {

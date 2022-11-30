@@ -24,8 +24,7 @@ public class CesAsyncClient {
      *
      * 批量增加告警规则资源(资源分组类型的告警规则不支持)，资源分组类型的修改请使用资源分组管理相关接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddAlarmRuleResourcesRequest 请求对象
      * @return CompletableFuture<AddAlarmRuleResourcesResponse>
@@ -40,8 +39,7 @@ public class CesAsyncClient {
      *
      * 批量增加告警规则资源(资源分组类型的告警规则不支持)，资源分组类型的修改请使用资源分组管理相关接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddAlarmRuleResourcesRequest 请求对象
      * @return AsyncInvoker<AddAlarmRuleResourcesRequest, AddAlarmRuleResourcesResponse>
@@ -57,8 +55,7 @@ public class CesAsyncClient {
      *
      * 给自定义资源分组,即类型为手动添加的资源分组,批量增加关联资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateResourcesRequest 请求对象
      * @return CompletableFuture<BatchCreateResourcesResponse>
@@ -73,8 +70,7 @@ public class CesAsyncClient {
      *
      * 给自定义资源分组,即类型为手动添加的资源分组,批量增加关联资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateResourcesRequest 请求对象
      * @return AsyncInvoker<BatchCreateResourcesRequest, BatchCreateResourcesResponse>
@@ -90,8 +86,7 @@ public class CesAsyncClient {
      *
      * 批量删除告警规则V2接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteAlarmRulesRequest 请求对象
      * @return CompletableFuture<BatchDeleteAlarmRulesResponse>
@@ -106,8 +101,7 @@ public class CesAsyncClient {
      *
      * 批量删除告警规则V2接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteAlarmRulesRequest 请求对象
      * @return AsyncInvoker<BatchDeleteAlarmRulesRequest, BatchDeleteAlarmRulesResponse>
@@ -123,8 +117,7 @@ public class CesAsyncClient {
      *
      * 批量删除自定义告警模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteAlarmTemplatesRequest 请求对象
      * @return CompletableFuture<BatchDeleteAlarmTemplatesResponse>
@@ -139,8 +132,7 @@ public class CesAsyncClient {
      *
      * 批量删除自定义告警模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteAlarmTemplatesRequest 请求对象
      * @return AsyncInvoker<BatchDeleteAlarmTemplatesRequest, BatchDeleteAlarmTemplatesResponse>
@@ -156,8 +148,7 @@ public class CesAsyncClient {
      *
      * 批量删除资源分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteResourceGroupsRequest 请求对象
      * @return CompletableFuture<BatchDeleteResourceGroupsResponse>
@@ -172,8 +163,7 @@ public class CesAsyncClient {
      *
      * 批量删除资源分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteResourceGroupsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteResourceGroupsRequest, BatchDeleteResourceGroupsResponse>
@@ -189,8 +179,7 @@ public class CesAsyncClient {
      *
      * 给自定义资源分组,即类型为手动添加的资源分组,批量删除关联资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteResourcesRequest 请求对象
      * @return CompletableFuture<BatchDeleteResourcesResponse>
@@ -205,8 +194,7 @@ public class CesAsyncClient {
      *
      * 给自定义资源分组,即类型为手动添加的资源分组,批量删除关联资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteResourcesRequest 请求对象
      * @return AsyncInvoker<BatchDeleteResourcesRequest, BatchDeleteResourcesResponse>
@@ -222,8 +210,7 @@ public class CesAsyncClient {
      *
      * 批量启停告警规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchEnableAlarmRulesRequest 请求对象
      * @return CompletableFuture<BatchEnableAlarmRulesResponse>
@@ -238,8 +225,7 @@ public class CesAsyncClient {
      *
      * 批量启停告警规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchEnableAlarmRulesRequest 请求对象
      * @return AsyncInvoker<BatchEnableAlarmRulesRequest, BatchEnableAlarmRulesResponse>
@@ -255,8 +241,7 @@ public class CesAsyncClient {
      *
      * 创建告警规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAlarmRulesRequest 请求对象
      * @return CompletableFuture<CreateAlarmRulesResponse>
@@ -270,8 +255,7 @@ public class CesAsyncClient {
      *
      * 创建告警规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAlarmRulesRequest 请求对象
      * @return AsyncInvoker<CreateAlarmRulesRequest, CreateAlarmRulesResponse>
@@ -287,8 +271,7 @@ public class CesAsyncClient {
      *
      * 创建自定义告警模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAlarmTemplateRequest 请求对象
      * @return CompletableFuture<CreateAlarmTemplateResponse>
@@ -302,8 +285,7 @@ public class CesAsyncClient {
      *
      * 创建自定义告警模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAlarmTemplateRequest 请求对象
      * @return AsyncInvoker<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse>
@@ -319,8 +301,7 @@ public class CesAsyncClient {
      *
      * 创建资源分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResourceGroupRequest 请求对象
      * @return CompletableFuture<CreateResourceGroupResponse>
@@ -334,8 +315,7 @@ public class CesAsyncClient {
      *
      * 创建资源分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateResourceGroupRequest 请求对象
      * @return AsyncInvoker<CreateResourceGroupRequest, CreateResourceGroupResponse>
@@ -351,8 +331,7 @@ public class CesAsyncClient {
      *
      * 批量删除告警规则资源（资源分组类型的告警规则不支持），资源分组类型的修改请使用资源分组管理相关接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAlarmRuleResourcesRequest 请求对象
      * @return CompletableFuture<DeleteAlarmRuleResourcesResponse>
@@ -367,8 +346,7 @@ public class CesAsyncClient {
      *
      * 批量删除告警规则资源（资源分组类型的告警规则不支持），资源分组类型的修改请使用资源分组管理相关接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAlarmRuleResourcesRequest 请求对象
      * @return AsyncInvoker<DeleteAlarmRuleResourcesRequest, DeleteAlarmRuleResourcesResponse>
@@ -384,8 +362,7 @@ public class CesAsyncClient {
      *
      * 根据ECS/BMS资源ID查询磁盘、挂载点、进程、显卡、RAID控制器维度指标信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAgentDimensionInfoRequest 请求对象
      * @return CompletableFuture<ListAgentDimensionInfoResponse>
@@ -400,8 +377,7 @@ public class CesAsyncClient {
      *
      * 根据ECS/BMS资源ID查询磁盘、挂载点、进程、显卡、RAID控制器维度指标信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAgentDimensionInfoRequest 请求对象
      * @return AsyncInvoker<ListAgentDimensionInfoRequest, ListAgentDimensionInfoResponse>
@@ -417,8 +393,7 @@ public class CesAsyncClient {
      *
      * 查询告警记录列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmHistoriesRequest 请求对象
      * @return CompletableFuture<ListAlarmHistoriesResponse>
@@ -432,8 +407,7 @@ public class CesAsyncClient {
      *
      * 查询告警记录列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmHistoriesRequest 请求对象
      * @return AsyncInvoker<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse>
@@ -449,8 +423,7 @@ public class CesAsyncClient {
      *
      * 根据告警规则ID查询策略列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmRulePoliciesRequest 请求对象
      * @return CompletableFuture<ListAlarmRulePoliciesResponse>
@@ -465,8 +438,7 @@ public class CesAsyncClient {
      *
      * 根据告警规则ID查询策略列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmRulePoliciesRequest 请求对象
      * @return AsyncInvoker<ListAlarmRulePoliciesRequest, ListAlarmRulePoliciesResponse>
@@ -482,8 +454,7 @@ public class CesAsyncClient {
      *
      * 根据告警规则ID查询告警规则资源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmRuleResourcesRequest 请求对象
      * @return CompletableFuture<ListAlarmRuleResourcesResponse>
@@ -498,8 +469,7 @@ public class CesAsyncClient {
      *
      * 根据告警规则ID查询告警规则资源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmRuleResourcesRequest 请求对象
      * @return AsyncInvoker<ListAlarmRuleResourcesRequest, ListAlarmRuleResourcesResponse>
@@ -515,8 +485,7 @@ public class CesAsyncClient {
      *
      * 查询告警规则列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmRulesRequest 请求对象
      * @return CompletableFuture<ListAlarmRulesResponse>
@@ -530,8 +499,7 @@ public class CesAsyncClient {
      *
      * 查询告警规则列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmRulesRequest 请求对象
      * @return AsyncInvoker<ListAlarmRulesRequest, ListAlarmRulesResponse>
@@ -547,8 +515,7 @@ public class CesAsyncClient {
      *
      * 查询告警模板关联的告警规则列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmTemplateAssociationAlarmsRequest 请求对象
      * @return CompletableFuture<ListAlarmTemplateAssociationAlarmsResponse>
@@ -563,8 +530,7 @@ public class CesAsyncClient {
      *
      * 查询告警模板关联的告警规则列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmTemplateAssociationAlarmsRequest 请求对象
      * @return AsyncInvoker<ListAlarmTemplateAssociationAlarmsRequest, ListAlarmTemplateAssociationAlarmsResponse>
@@ -580,8 +546,7 @@ public class CesAsyncClient {
      *
      * 查询告警模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmTemplatesRequest 请求对象
      * @return CompletableFuture<ListAlarmTemplatesResponse>
@@ -595,8 +560,7 @@ public class CesAsyncClient {
      *
      * 查询告警模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmTemplatesRequest 请求对象
      * @return AsyncInvoker<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse>
@@ -612,8 +576,7 @@ public class CesAsyncClient {
      *
      * 查询资源分组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourceGroupsRequest 请求对象
      * @return CompletableFuture<ListResourceGroupsResponse>
@@ -627,8 +590,7 @@ public class CesAsyncClient {
      *
      * 查询资源分组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourceGroupsRequest 请求对象
      * @return AsyncInvoker<ListResourceGroupsRequest, ListResourceGroupsResponse>
@@ -644,8 +606,7 @@ public class CesAsyncClient {
      *
      * 查询资源分组下指定服务类别特定维度的资源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourceGroupsServicesResourcesRequest 请求对象
      * @return CompletableFuture<ListResourceGroupsServicesResourcesResponse>
@@ -660,8 +621,7 @@ public class CesAsyncClient {
      *
      * 查询资源分组下指定服务类别特定维度的资源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourceGroupsServicesResourcesRequest 请求对象
      * @return AsyncInvoker<ListResourceGroupsServicesResourcesRequest, ListResourceGroupsServicesResourcesResponse>
@@ -677,8 +637,7 @@ public class CesAsyncClient {
      *
      * 查询告警模板详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAlarmTemplateRequest 请求对象
      * @return CompletableFuture<ShowAlarmTemplateResponse>
@@ -692,8 +651,7 @@ public class CesAsyncClient {
      *
      * 查询告警模板详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAlarmTemplateRequest 请求对象
      * @return AsyncInvoker<ShowAlarmTemplateRequest, ShowAlarmTemplateResponse>
@@ -709,8 +667,7 @@ public class CesAsyncClient {
      *
      * 查询指定资源分组详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceGroupRequest 请求对象
      * @return CompletableFuture<ShowResourceGroupResponse>
@@ -724,8 +681,7 @@ public class CesAsyncClient {
      *
      * 查询指定资源分组详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceGroupRequest 请求对象
      * @return AsyncInvoker<ShowResourceGroupRequest, ShowResourceGroupResponse>
@@ -741,8 +697,7 @@ public class CesAsyncClient {
      *
      * 修改告警规则策略(全量修改)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlarmRulePoliciesRequest 请求对象
      * @return CompletableFuture<UpdateAlarmRulePoliciesResponse>
@@ -757,8 +712,7 @@ public class CesAsyncClient {
      *
      * 修改告警规则策略(全量修改)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlarmRulePoliciesRequest 请求对象
      * @return AsyncInvoker<UpdateAlarmRulePoliciesRequest, UpdateAlarmRulePoliciesResponse>
@@ -774,8 +728,7 @@ public class CesAsyncClient {
      *
      * 修改自定义告警模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlarmTemplateRequest 请求对象
      * @return CompletableFuture<UpdateAlarmTemplateResponse>
@@ -789,8 +742,7 @@ public class CesAsyncClient {
      *
      * 修改自定义告警模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlarmTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse>
@@ -806,8 +758,7 @@ public class CesAsyncClient {
      *
      * 修改资源分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResourceGroupRequest 请求对象
      * @return CompletableFuture<UpdateResourceGroupResponse>
@@ -821,8 +772,7 @@ public class CesAsyncClient {
      *
      * 修改资源分组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateResourceGroupRequest 请求对象
      * @return AsyncInvoker<UpdateResourceGroupRequest, UpdateResourceGroupResponse>

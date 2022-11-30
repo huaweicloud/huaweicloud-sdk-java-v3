@@ -113,6 +113,11 @@ public class FunctionApiBaseInfo {
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alias_urn")
+
+    private String aliasUrn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timeout")
 
     private Integer timeout;
@@ -190,6 +195,23 @@ public class FunctionApiBaseInfo {
         this.version = version;
     }
 
+    public FunctionApiBaseInfo withAliasUrn(String aliasUrn) {
+        this.aliasUrn = aliasUrn;
+        return this;
+    }
+
+    /**
+     * 函数别名URN  当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
+     * @return aliasUrn
+     */
+    public String getAliasUrn() {
+        return aliasUrn;
+    }
+
+    public void setAliasUrn(String aliasUrn) {
+        this.aliasUrn = aliasUrn;
+    }
+
     public FunctionApiBaseInfo withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -238,13 +260,14 @@ public class FunctionApiBaseInfo {
             && Objects.equals(this.remark, functionApiBaseInfo.remark)
             && Objects.equals(this.invocationType, functionApiBaseInfo.invocationType)
             && Objects.equals(this.version, functionApiBaseInfo.version)
+            && Objects.equals(this.aliasUrn, functionApiBaseInfo.aliasUrn)
             && Objects.equals(this.timeout, functionApiBaseInfo.timeout)
             && Objects.equals(this.authorizerId, functionApiBaseInfo.authorizerId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(functionUrn, remark, invocationType, version, timeout, authorizerId);
+        return Objects.hash(functionUrn, remark, invocationType, version, aliasUrn, timeout, authorizerId);
     }
 
     @Override
@@ -255,6 +278,7 @@ public class FunctionApiBaseInfo {
         sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    invocationType: ").append(toIndentedString(invocationType)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    aliasUrn: ").append(toIndentedString(aliasUrn)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    authorizerId: ").append(toIndentedString(authorizerId)).append("\n");
         sb.append("}");

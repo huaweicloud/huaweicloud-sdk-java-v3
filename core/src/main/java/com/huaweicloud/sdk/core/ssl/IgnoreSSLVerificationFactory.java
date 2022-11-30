@@ -23,6 +23,7 @@ package com.huaweicloud.sdk.core.ssl;
 
 import com.huaweicloud.sdk.core.exception.SdkException;
 
+import com.huaweicloud.sdk.core.utils.RandomUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,9 +43,8 @@ import javax.net.ssl.X509TrustManager;
 public class IgnoreSSLVerificationFactory {
     private static final Logger logger = LoggerFactory.getLogger(IgnoreSSLVerificationFactory.class);
 
-    private static HostnameVerifier hostnameVerifier = (hostname, sslSession) -> true;
-
-    private static X509TrustManager trustAllManager = new X509TrustManager() {
+    private static final HostnameVerifier HOST_VERIFIER = (hostname, sslSession) -> true;
+    private static final X509TrustManager TRUST_ALL_MANAGER = new X509TrustManager() {
         @Override
         public void checkClientTrusted(X509Certificate[] chain, String authType) {
         }
@@ -67,17 +67,21 @@ public class IgnoreSSLVerificationFactory {
     }
 
     public static X509TrustManager getTrustAllManager() {
-        return trustAllManager;
+        return TRUST_ALL_MANAGER;
     }
 
     public static HostnameVerifier getHostnameVerifier() {
-        return hostnameVerifier;
+        return HOST_VERIFIER;
     }
 
     public static SSLContext getSSLContext() {
+        return getSSLContext(RandomUtils.getDefaultSecureRandom());
+    }
+
+    public static SSLContext getSSLContext(SecureRandom secureRandom) {
         try {
             SSLContext sslContext = SSLContext.getInstance("TLS");
-            sslContext.init(null, new TrustManager[] {trustAllManager}, new SecureRandom());
+            sslContext.init(null, new TrustManager[] {TRUST_ALL_MANAGER}, secureRandom);
             return sslContext;
         } catch (NoSuchAlgorithmException e) {
             logger.error("Init SSL Context Error", e);

@@ -37,12 +37,12 @@ public class CredentialProviderChain implements ICredentialProvider {
     }
 
     public static CredentialProviderChain getDefaultCredentialProviderChain(String credentialType) {
-        ICredentialProvider[] providers = new ICredentialProvider[]{
+        ICredentialProvider[] credentialProviders = new ICredentialProvider[]{
             new EnvCredentialProvider(credentialType),
             new ProfileCredentialProvider(credentialType),
             new MetadataCredentialProvider(credentialType)
         };
-        return new CredentialProviderChain(providers);
+        return new CredentialProviderChain(credentialProviders);
     }
 
     public static CredentialProviderChain getBasicCredentialProviderChain() {

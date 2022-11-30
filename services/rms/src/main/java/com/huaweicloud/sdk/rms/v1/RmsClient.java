@@ -22,8 +22,7 @@ public class RmsClient {
      *
      * 查询资源与资源关系的变更历史
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceHistoryRequest 请求对象
      * @return ShowResourceHistoryResponse
@@ -37,8 +36,7 @@ public class RmsClient {
      *
      * 查询资源与资源关系的变更历史
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceHistoryRequest 请求对象
      * @return SyncInvoker<ShowResourceHistoryRequest, ShowResourceHistoryResponse>
@@ -54,8 +52,7 @@ public class RmsClient {
      *
      * 创建新的合规规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePolicyAssignmentsRequest 请求对象
      * @return CreatePolicyAssignmentsResponse
@@ -69,8 +66,7 @@ public class RmsClient {
      *
      * 创建新的合规规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePolicyAssignmentsRequest 请求对象
      * @return SyncInvoker<CreatePolicyAssignmentsRequest, CreatePolicyAssignmentsResponse>
@@ -86,8 +82,7 @@ public class RmsClient {
      *
      * 根据规则ID删除此规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePolicyAssignmentRequest 请求对象
      * @return DeletePolicyAssignmentResponse
@@ -101,8 +96,7 @@ public class RmsClient {
      *
      * 根据规则ID删除此规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePolicyAssignmentRequest 请求对象
      * @return SyncInvoker<DeletePolicyAssignmentRequest, DeletePolicyAssignmentResponse>
@@ -118,8 +112,7 @@ public class RmsClient {
      *
      * 根据规则ID停用此规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisablePolicyAssignmentRequest 请求对象
      * @return DisablePolicyAssignmentResponse
@@ -133,8 +126,7 @@ public class RmsClient {
      *
      * 根据规则ID停用此规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisablePolicyAssignmentRequest 请求对象
      * @return SyncInvoker<DisablePolicyAssignmentRequest, DisablePolicyAssignmentResponse>
@@ -150,8 +142,7 @@ public class RmsClient {
      *
      * 根据规则ID启用此规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnablePolicyAssignmentRequest 请求对象
      * @return EnablePolicyAssignmentResponse
@@ -165,8 +156,7 @@ public class RmsClient {
      *
      * 根据规则ID启用此规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnablePolicyAssignmentRequest 请求对象
      * @return SyncInvoker<EnablePolicyAssignmentRequest, EnablePolicyAssignmentResponse>
@@ -182,8 +172,7 @@ public class RmsClient {
      *
      * 列出用户的内置策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBuiltInPolicyDefinitionsRequest 请求对象
      * @return ListBuiltInPolicyDefinitionsResponse
@@ -198,8 +187,7 @@ public class RmsClient {
      *
      * 列出用户的内置策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBuiltInPolicyDefinitionsRequest 请求对象
      * @return SyncInvoker<ListBuiltInPolicyDefinitionsRequest, ListBuiltInPolicyDefinitionsResponse>
@@ -215,8 +203,7 @@ public class RmsClient {
      *
      * 列出用户的合规规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPolicyAssignmentsRequest 请求对象
      * @return ListPolicyAssignmentsResponse
@@ -230,8 +217,7 @@ public class RmsClient {
      *
      * 列出用户的合规规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPolicyAssignmentsRequest 请求对象
      * @return SyncInvoker<ListPolicyAssignmentsRequest, ListPolicyAssignmentsResponse>
@@ -247,8 +233,7 @@ public class RmsClient {
      *
      * 根据规则ID查询所有的合规结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPolicyStatesByAssignmentIdRequest 请求对象
      * @return ListPolicyStatesByAssignmentIdResponse
@@ -263,8 +248,7 @@ public class RmsClient {
      *
      * 根据规则ID查询所有的合规结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPolicyStatesByAssignmentIdRequest 请求对象
      * @return SyncInvoker<ListPolicyStatesByAssignmentIdRequest, ListPolicyStatesByAssignmentIdResponse>
@@ -280,8 +264,7 @@ public class RmsClient {
      *
      * 查询用户所有的合规结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPolicyStatesByDomainIdRequest 请求对象
      * @return ListPolicyStatesByDomainIdResponse
@@ -295,8 +278,7 @@ public class RmsClient {
      *
      * 查询用户所有的合规结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPolicyStatesByDomainIdRequest 请求对象
      * @return SyncInvoker<ListPolicyStatesByDomainIdRequest, ListPolicyStatesByDomainIdResponse>
@@ -312,8 +294,7 @@ public class RmsClient {
      *
      * 根据资源ID查询所有合规结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPolicyStatesByResourceIdRequest 请求对象
      * @return ListPolicyStatesByResourceIdResponse
@@ -328,8 +309,7 @@ public class RmsClient {
      *
      * 根据资源ID查询所有合规结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPolicyStatesByResourceIdRequest 请求对象
      * @return SyncInvoker<ListPolicyStatesByResourceIdRequest, ListPolicyStatesByResourceIdResponse>
@@ -345,8 +325,7 @@ public class RmsClient {
      *
      * 根据规则ID评估此规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunEvaluationByPolicyAssignmentIdRequest 请求对象
      * @return RunEvaluationByPolicyAssignmentIdResponse
@@ -361,8 +340,7 @@ public class RmsClient {
      *
      * 根据规则ID评估此规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunEvaluationByPolicyAssignmentIdRequest 请求对象
      * @return SyncInvoker<RunEvaluationByPolicyAssignmentIdRequest, RunEvaluationByPolicyAssignmentIdResponse>
@@ -378,8 +356,7 @@ public class RmsClient {
      *
      * 根据策略ID查询单个内置策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBuiltInPolicyDefinitionRequest 请求对象
      * @return ShowBuiltInPolicyDefinitionResponse
@@ -393,8 +370,7 @@ public class RmsClient {
      *
      * 根据策略ID查询单个内置策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBuiltInPolicyDefinitionRequest 请求对象
      * @return SyncInvoker<ShowBuiltInPolicyDefinitionRequest, ShowBuiltInPolicyDefinitionResponse>
@@ -410,8 +386,7 @@ public class RmsClient {
      *
      * 根据规则ID查询此规则的评估状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEvaluationStateByAssignmentIdRequest 请求对象
      * @return ShowEvaluationStateByAssignmentIdResponse
@@ -426,8 +401,7 @@ public class RmsClient {
      *
      * 根据规则ID查询此规则的评估状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEvaluationStateByAssignmentIdRequest 请求对象
      * @return SyncInvoker<ShowEvaluationStateByAssignmentIdRequest, ShowEvaluationStateByAssignmentIdResponse>
@@ -443,8 +417,7 @@ public class RmsClient {
      *
      * 根据规则ID获取单个规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPolicyAssignmentRequest 请求对象
      * @return ShowPolicyAssignmentResponse
@@ -458,8 +431,7 @@ public class RmsClient {
      *
      * 根据规则ID获取单个规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPolicyAssignmentRequest 请求对象
      * @return SyncInvoker<ShowPolicyAssignmentRequest, ShowPolicyAssignmentResponse>
@@ -475,8 +447,7 @@ public class RmsClient {
      *
      * 更新用户的合规规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePolicyAssignmentRequest 请求对象
      * @return UpdatePolicyAssignmentResponse
@@ -490,8 +461,7 @@ public class RmsClient {
      *
      * 更新用户的合规规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePolicyAssignmentRequest 请求对象
      * @return SyncInvoker<UpdatePolicyAssignmentRequest, UpdatePolicyAssignmentResponse>
@@ -503,12 +473,41 @@ public class RmsClient {
     }
 
     /**
+     * 更新合规评估结果
+     *
+     * 更新用户自定义合规规则的合规评估结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePolicyStateRequest 请求对象
+     * @return UpdatePolicyStateResponse
+     */
+    public UpdatePolicyStateResponse updatePolicyState(UpdatePolicyStateRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.updatePolicyState);
+    }
+
+    /**
+     * 更新合规评估结果
+     *
+     * 更新用户自定义合规规则的合规评估结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePolicyStateRequest 请求对象
+     * @return SyncInvoker<UpdatePolicyStateRequest, UpdatePolicyStateResponse>
+     */
+    public SyncInvoker<UpdatePolicyStateRequest, UpdatePolicyStateResponse> updatePolicyStateInvoker(
+        UpdatePolicyStateRequest request) {
+        return new SyncInvoker<UpdatePolicyStateRequest, UpdatePolicyStateResponse>(request, RmsMeta.updatePolicyState,
+            hcClient);
+    }
+
+    /**
      * 创建高级查询
      *
      * 创建新的高级查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStoredQueryRequest 请求对象
      * @return CreateStoredQueryResponse
@@ -522,8 +521,7 @@ public class RmsClient {
      *
      * 创建新的高级查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStoredQueryRequest 请求对象
      * @return SyncInvoker<CreateStoredQueryRequest, CreateStoredQueryResponse>
@@ -539,8 +537,7 @@ public class RmsClient {
      *
      * 删除单个高级查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteStoredQueryRequest 请求对象
      * @return DeleteStoredQueryResponse
@@ -554,8 +551,7 @@ public class RmsClient {
      *
      * 删除单个高级查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteStoredQueryRequest 请求对象
      * @return SyncInvoker<DeleteStoredQueryRequest, DeleteStoredQueryResponse>
@@ -571,8 +567,7 @@ public class RmsClient {
      *
      * List Schemas
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSchemasRequest 请求对象
      * @return ListSchemasResponse
@@ -586,8 +581,7 @@ public class RmsClient {
      *
      * List Schemas
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSchemasRequest 请求对象
      * @return SyncInvoker<ListSchemasRequest, ListSchemasResponse>
@@ -601,8 +595,7 @@ public class RmsClient {
      *
      * 列举所有高级查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStoredQueriesRequest 请求对象
      * @return ListStoredQueriesResponse
@@ -616,8 +609,7 @@ public class RmsClient {
      *
      * 列举所有高级查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStoredQueriesRequest 请求对象
      * @return SyncInvoker<ListStoredQueriesRequest, ListStoredQueriesResponse>
@@ -633,8 +625,7 @@ public class RmsClient {
      *
      * 执行高级查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunQueryRequest 请求对象
      * @return RunQueryResponse
@@ -648,8 +639,7 @@ public class RmsClient {
      *
      * 执行高级查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunQueryRequest 请求对象
      * @return SyncInvoker<RunQueryRequest, RunQueryResponse>
@@ -663,8 +653,7 @@ public class RmsClient {
      *
      * Show Resource Query Language
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStoredQueryRequest 请求对象
      * @return ShowStoredQueryResponse
@@ -678,8 +667,7 @@ public class RmsClient {
      *
      * Show Resource Query Language
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStoredQueryRequest 请求对象
      * @return SyncInvoker<ShowStoredQueryRequest, ShowStoredQueryResponse>
@@ -695,8 +683,7 @@ public class RmsClient {
      *
      * 更新自定义查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStoredQueryRequest 请求对象
      * @return UpdateStoredQueryResponse
@@ -710,8 +697,7 @@ public class RmsClient {
      *
      * 更新自定义查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStoredQueryRequest 请求对象
      * @return SyncInvoker<UpdateStoredQueryRequest, UpdateStoredQueryResponse>
@@ -727,8 +713,7 @@ public class RmsClient {
      *
      * 查询用户可见的区域
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRegionsRequest 请求对象
      * @return ListRegionsResponse
@@ -742,8 +727,7 @@ public class RmsClient {
      *
      * 查询用户可见的区域
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRegionsRequest 请求对象
      * @return SyncInvoker<ListRegionsRequest, ListRegionsResponse>
@@ -757,8 +741,7 @@ public class RmsClient {
      *
      * 指定资源ID，查询该资源与其他资源的关联关系，可以指定关系方向为\&quot;in\&quot; 或者\&quot;out\&quot;
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceRelationsRequest 请求对象
      * @return ShowResourceRelationsResponse
@@ -772,8 +755,7 @@ public class RmsClient {
      *
      * 指定资源ID，查询该资源与其他资源的关联关系，可以指定关系方向为\&quot;in\&quot; 或者\&quot;out\&quot;
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceRelationsRequest 请求对象
      * @return SyncInvoker<ShowResourceRelationsRequest, ShowResourceRelationsResponse>
@@ -789,8 +771,7 @@ public class RmsClient {
      *
      * 返回当前用户下所有资源，需要当前用户有rms:resources:list权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAllResourcesRequest 请求对象
      * @return ListAllResourcesResponse
@@ -804,8 +785,7 @@ public class RmsClient {
      *
      * 返回当前用户下所有资源，需要当前用户有rms:resources:list权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAllResourcesRequest 请求对象
      * @return SyncInvoker<ListAllResourcesRequest, ListAllResourcesResponse>
@@ -821,8 +801,7 @@ public class RmsClient {
      *
      * 查询RMS支持的云服务、资源、区域列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProvidersRequest 请求对象
      * @return ListProvidersResponse
@@ -836,8 +815,7 @@ public class RmsClient {
      *
      * 查询RMS支持的云服务、资源、区域列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProvidersRequest 请求对象
      * @return SyncInvoker<ListProvidersRequest, ListProvidersResponse>
@@ -851,8 +829,7 @@ public class RmsClient {
      *
      * 返回当前租户下特定资源类型的资源，需要当前用户有rms:resources:list权限。比如查询云服务器，对应的RMS资源类型是ecs.cloudservers，其中provider为ecs，type为cloudservers。 RMS支持的服务和资源类型参见[支持的服务和区域](https://console.huaweicloud.com/eps/#/resources/supported)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourcesRequest 请求对象
      * @return ListResourcesResponse
@@ -866,8 +843,7 @@ public class RmsClient {
      *
      * 返回当前租户下特定资源类型的资源，需要当前用户有rms:resources:list权限。比如查询云服务器，对应的RMS资源类型是ecs.cloudservers，其中provider为ecs，type为cloudservers。 RMS支持的服务和资源类型参见[支持的服务和区域](https://console.huaweicloud.com/eps/#/resources/supported)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourcesRequest 请求对象
      * @return SyncInvoker<ListResourcesRequest, ListResourcesResponse>
@@ -881,8 +857,7 @@ public class RmsClient {
      *
      * 指定资源ID，返回该资源的详细信息，需要当前用户有rms:resources:get权限。比如查询云服务器，对应的RMS资源类型是ecs.cloudservers，其中provider为ecs，type为cloudservers。RMS支持的服务和资源类型参见[支持的服务和区域](https://console.huaweicloud.com/eps/#/resources/supported)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceByIdRequest 请求对象
      * @return ShowResourceByIdResponse
@@ -896,8 +871,7 @@ public class RmsClient {
      *
      * 指定资源ID，返回该资源的详细信息，需要当前用户有rms:resources:get权限。比如查询云服务器，对应的RMS资源类型是ecs.cloudservers，其中provider为ecs，type为cloudservers。RMS支持的服务和资源类型参见[支持的服务和区域](https://console.huaweicloud.com/eps/#/resources/supported)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceByIdRequest 请求对象
      * @return SyncInvoker<ShowResourceByIdRequest, ShowResourceByIdResponse>
@@ -913,8 +887,7 @@ public class RmsClient {
      *
      * 创建或更新资源记录器，只能存在一个资源记录器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTrackerConfigRequest 请求对象
      * @return CreateTrackerConfigResponse
@@ -928,8 +901,7 @@ public class RmsClient {
      *
      * 创建或更新资源记录器，只能存在一个资源记录器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTrackerConfigRequest 请求对象
      * @return SyncInvoker<CreateTrackerConfigRequest, CreateTrackerConfigResponse>
@@ -945,8 +917,7 @@ public class RmsClient {
      *
      * 删除资源记录器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTrackerConfigRequest 请求对象
      * @return DeleteTrackerConfigResponse
@@ -960,8 +931,7 @@ public class RmsClient {
      *
      * 删除资源记录器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTrackerConfigRequest 请求对象
      * @return SyncInvoker<DeleteTrackerConfigRequest, DeleteTrackerConfigResponse>
@@ -977,8 +947,7 @@ public class RmsClient {
      *
      * 查询资源记录器的详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTrackerConfigRequest 请求对象
      * @return ShowTrackerConfigResponse
@@ -992,8 +961,7 @@ public class RmsClient {
      *
      * 查询资源记录器的详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTrackerConfigRequest 请求对象
      * @return SyncInvoker<ShowTrackerConfigRequest, ShowTrackerConfigResponse>

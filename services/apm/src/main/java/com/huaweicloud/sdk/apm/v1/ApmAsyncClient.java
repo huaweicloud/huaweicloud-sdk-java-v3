@@ -24,8 +24,7 @@ public class ApmAsyncClient {
      *
      * 创建aksk。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAkSkRequest 请求对象
      * @return CompletableFuture<CreateAkSkResponse>
@@ -39,8 +38,7 @@ public class ApmAsyncClient {
      *
      * 创建aksk。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAkSkRequest 请求对象
      * @return AsyncInvoker<CreateAkSkRequest, CreateAkSkResponse>
@@ -54,8 +52,7 @@ public class ApmAsyncClient {
      *
      * 删除aksk。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAkSkRequest 请求对象
      * @return CompletableFuture<DeleteAkSkResponse>
@@ -69,8 +66,7 @@ public class ApmAsyncClient {
      *
      * 删除aksk。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAkSkRequest 请求对象
      * @return AsyncInvoker<DeleteAkSkRequest, DeleteAkSkResponse>
@@ -84,8 +80,7 @@ public class ApmAsyncClient {
      *
      * 查询租户的aksk。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAkSksRequest 请求对象
      * @return CompletableFuture<ShowAkSksResponse>
@@ -99,8 +94,7 @@ public class ApmAsyncClient {
      *
      * 查询租户的aksk。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAkSksRequest 请求对象
      * @return AsyncInvoker<ShowAkSksRequest, ShowAkSksResponse>
@@ -114,8 +108,7 @@ public class ApmAsyncClient {
      *
      * 查询系统中存在的告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmDataRequest 请求对象
      * @return CompletableFuture<ListAlarmDataResponse>
@@ -129,8 +122,7 @@ public class ApmAsyncClient {
      *
      * 查询系统中存在的告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmDataRequest 请求对象
      * @return AsyncInvoker<ListAlarmDataRequest, ListAlarmDataResponse>
@@ -145,8 +137,7 @@ public class ApmAsyncClient {
      *
      * 查询单个告警的触发详情与历史。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmNotifyRequest 请求对象
      * @return CompletableFuture<ListAlarmNotifyResponse>
@@ -160,8 +151,7 @@ public class ApmAsyncClient {
      *
      * 查询单个告警的触发详情与历史。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAlarmNotifyRequest 请求对象
      * @return AsyncInvoker<ListAlarmNotifyRequest, ListAlarmNotifyResponse>
@@ -177,8 +167,7 @@ public class ApmAsyncClient {
      *
      * 获取该用户创建的ak/sk列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAkSkRequest 请求对象
      * @return CompletableFuture<ListAkSkResponse>
@@ -192,8 +181,7 @@ public class ApmAsyncClient {
      *
      * 获取该用户创建的ak/sk列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAkSkRequest 请求对象
      * @return AsyncInvoker<ListAkSkRequest, ListAkSkResponse>
@@ -207,8 +195,7 @@ public class ApmAsyncClient {
      *
      * 该接口用于查询对应用户下的应用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBusinessRequest 请求对象
      * @return CompletableFuture<ListBusinessResponse>
@@ -222,8 +209,7 @@ public class ApmAsyncClient {
      *
      * 该接口用于查询对应用户下的应用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBusinessRequest 请求对象
      * @return AsyncInvoker<ListBusinessRequest, ListBusinessResponse>
@@ -238,8 +224,7 @@ public class ApmAsyncClient {
      *
      * 查询监控项列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvMonitorItemRequest 请求对象
      * @return CompletableFuture<ListEnvMonitorItemResponse>
@@ -253,8 +238,7 @@ public class ApmAsyncClient {
      *
      * 查询监控项列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvMonitorItemRequest 请求对象
      * @return AsyncInvoker<ListEnvMonitorItemRequest, ListEnvMonitorItemResponse>
@@ -270,8 +254,7 @@ public class ApmAsyncClient {
      *
      * 保存监控项。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SaveMonitorItemConfigRequest 请求对象
      * @return CompletableFuture<SaveMonitorItemConfigResponse>
@@ -286,8 +269,7 @@ public class ApmAsyncClient {
      *
      * 保存监控项。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SaveMonitorItemConfigRequest 请求对象
      * @return AsyncInvoker<SaveMonitorItemConfigRequest, SaveMonitorItemConfigResponse>
@@ -303,8 +285,7 @@ public class ApmAsyncClient {
      *
      * 对指定区域下的组件和环境及其探针情况进行搜索。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchApplicationRequest 请求对象
      * @return CompletableFuture<SearchApplicationResponse>
@@ -318,8 +299,7 @@ public class ApmAsyncClient {
      *
      * 对指定区域下的组件和环境及其探针情况进行搜索。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchApplicationRequest 请求对象
      * @return AsyncInvoker<SearchApplicationRequest, SearchApplicationResponse>
@@ -335,8 +315,7 @@ public class ApmAsyncClient {
      *
      * 根据region名称获取该region下的master服务podlb地址信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMasterAddressRequest 请求对象
      * @return CompletableFuture<ShowMasterAddressResponse>
@@ -350,8 +329,7 @@ public class ApmAsyncClient {
      *
      * 根据region名称获取该region下的master服务podlb地址信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMasterAddressRequest 请求对象
      * @return AsyncInvoker<ShowMasterAddressRequest, ShowMasterAddressResponse>
@@ -367,8 +345,7 @@ public class ApmAsyncClient {
      *
      * 该接口用于删除指定的组件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppRequest 请求对象
      * @return CompletableFuture<DeleteAppResponse>
@@ -382,8 +359,7 @@ public class ApmAsyncClient {
      *
      * 该接口用于删除指定的组件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppRequest 请求对象
      * @return AsyncInvoker<DeleteAppRequest, DeleteAppResponse>
@@ -397,8 +373,7 @@ public class ApmAsyncClient {
      *
      * 获取组件下的环境列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppEnvsRequest 请求对象
      * @return CompletableFuture<ListAppEnvsResponse>
@@ -412,8 +387,7 @@ public class ApmAsyncClient {
      *
      * 获取组件下的环境列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppEnvsRequest 请求对象
      * @return AsyncInvoker<ListAppEnvsRequest, ListAppEnvsResponse>
@@ -427,8 +401,7 @@ public class ApmAsyncClient {
      *
      * 获取组件列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsRequest 请求对象
      * @return CompletableFuture<ListAppsResponse>
@@ -442,8 +415,7 @@ public class ApmAsyncClient {
      *
      * 获取组件列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppsRequest 请求对象
      * @return AsyncInvoker<ListAppsRequest, ListAppsResponse>
@@ -457,8 +429,7 @@ public class ApmAsyncClient {
      *
      * 查询环境标签接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvTagsRequest 请求对象
      * @return CompletableFuture<ListEnvTagsResponse>
@@ -472,8 +443,7 @@ public class ApmAsyncClient {
      *
      * 查询环境标签接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvTagsRequest 请求对象
      * @return AsyncInvoker<ListEnvTagsRequest, ListEnvTagsResponse>
@@ -487,8 +457,7 @@ public class ApmAsyncClient {
      *
      * 查询单个应用的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBusinessDetailRequest 请求对象
      * @return CompletableFuture<ShowBusinessDetailResponse>
@@ -502,8 +471,7 @@ public class ApmAsyncClient {
      *
      * 查询单个应用的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBusinessDetailRequest 请求对象
      * @return AsyncInvoker<ShowBusinessDetailRequest, ShowBusinessDetailResponse>
@@ -519,8 +487,7 @@ public class ApmAsyncClient {
      *
      * 查询单个子应用详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubBusinessDetailRequest 请求对象
      * @return CompletableFuture<ShowSubBusinessDetailResponse>
@@ -535,8 +502,7 @@ public class ApmAsyncClient {
      *
      * 查询单个子应用详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubBusinessDetailRequest 请求对象
      * @return AsyncInvoker<ShowSubBusinessDetailRequest, ShowSubBusinessDetailResponse>
@@ -552,8 +518,7 @@ public class ApmAsyncClient {
      *
      * 获取应用树。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTopologyTreeRequest 请求对象
      * @return CompletableFuture<ShowTopologyTreeResponse>
@@ -567,8 +532,7 @@ public class ApmAsyncClient {
      *
      * 获取应用树。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTopologyTreeRequest 请求对象
      * @return AsyncInvoker<ShowTopologyTreeRequest, ShowTopologyTreeResponse>
@@ -584,8 +548,7 @@ public class ApmAsyncClient {
      *
      * 该接口用于查询用户开通的region信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListOpenRegionRequest 请求对象
      * @return CompletableFuture<ListOpenRegionResponse>
@@ -599,8 +562,7 @@ public class ApmAsyncClient {
      *
      * 该接口用于查询用户开通的region信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListOpenRegionRequest 请求对象
      * @return AsyncInvoker<ListOpenRegionRequest, ListOpenRegionResponse>
@@ -616,8 +578,7 @@ public class ApmAsyncClient {
      *
      * 查询所有的支持的region信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSupportedRegionRequest 请求对象
      * @return CompletableFuture<ListSupportedRegionResponse>
@@ -631,8 +592,7 @@ public class ApmAsyncClient {
      *
      * 查询所有的支持的region信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSupportedRegionRequest 请求对象
      * @return AsyncInvoker<ListSupportedRegionRequest, ListSupportedRegionResponse>
@@ -648,8 +608,7 @@ public class ApmAsyncClient {
      *
      * 查询应用级别全局拓扑图信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchBusinessTopologyRequest 请求对象
      * @return CompletableFuture<SearchBusinessTopologyResponse>
@@ -664,8 +623,7 @@ public class ApmAsyncClient {
      *
      * 查询应用级别全局拓扑图信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchBusinessTopologyRequest 请求对象
      * @return AsyncInvoker<SearchBusinessTopologyRequest, SearchBusinessTopologyResponse>
@@ -681,8 +639,7 @@ public class ApmAsyncClient {
      *
      * 查询组件环境级别全局拓扑图信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchEnvTopologyRequest 请求对象
      * @return CompletableFuture<SearchEnvTopologyResponse>
@@ -696,8 +653,7 @@ public class ApmAsyncClient {
      *
      * 查询组件环境级别全局拓扑图信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchEnvTopologyRequest 请求对象
      * @return AsyncInvoker<SearchEnvTopologyRequest, SearchEnvTopologyResponse>
@@ -713,8 +669,7 @@ public class ApmAsyncClient {
      *
      * 查询所选Region下设置了URL跟踪的环境列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBusinessEnvRequest 请求对象
      * @return CompletableFuture<ListBusinessEnvResponse>
@@ -728,8 +683,7 @@ public class ApmAsyncClient {
      *
      * 查询所选Region下设置了URL跟踪的环境列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBusinessEnvRequest 请求对象
      * @return AsyncInvoker<ListBusinessEnvRequest, ListBusinessEnvResponse>
@@ -745,8 +699,7 @@ public class ApmAsyncClient {
      *
      * 查询当前被调用的URL跟踪视图列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchTransactionRequest 请求对象
      * @return CompletableFuture<SearchTransactionResponse>
@@ -760,8 +713,7 @@ public class ApmAsyncClient {
      *
      * 查询当前被调用的URL跟踪视图列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchTransactionRequest 请求对象
      * @return AsyncInvoker<SearchTransactionRequest, SearchTransactionResponse>
@@ -777,8 +729,7 @@ public class ApmAsyncClient {
      *
      * 查询已配置好的URL跟踪配置列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchTransactionConfigRequest 请求对象
      * @return CompletableFuture<SearchTransactionConfigResponse>
@@ -793,8 +744,7 @@ public class ApmAsyncClient {
      *
      * 查询已配置好的URL跟踪配置列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchTransactionConfigRequest 请求对象
      * @return AsyncInvoker<SearchTransactionConfigRequest, SearchTransactionConfigResponse>
@@ -810,8 +760,7 @@ public class ApmAsyncClient {
      *
      * 查询某条URL跟踪视图详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTransactionDetailRequest 请求对象
      * @return CompletableFuture<ShowTransactionDetailResponse>
@@ -826,8 +775,7 @@ public class ApmAsyncClient {
      *
      * 查询某条URL跟踪视图详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTransactionDetailRequest 请求对象
      * @return AsyncInvoker<ShowTransactionDetailRequest, ShowTransactionDetailResponse>
@@ -843,8 +791,7 @@ public class ApmAsyncClient {
      *
      * 获取实例信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvInstancesRequest 请求对象
      * @return CompletableFuture<ListEnvInstancesResponse>
@@ -858,8 +805,7 @@ public class ApmAsyncClient {
      *
      * 获取实例信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvInstancesRequest 请求对象
      * @return AsyncInvoker<ListEnvInstancesRequest, ListEnvInstancesResponse>
@@ -875,8 +821,7 @@ public class ApmAsyncClient {
      *
      * 获取原始数据详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClobDetailRequest 请求对象
      * @return CompletableFuture<ShowClobDetailResponse>
@@ -890,8 +835,7 @@ public class ApmAsyncClient {
      *
      * 获取原始数据详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClobDetailRequest 请求对象
      * @return AsyncInvoker<ShowClobDetailRequest, ShowClobDetailResponse>
@@ -907,8 +851,7 @@ public class ApmAsyncClient {
      *
      * 获取监控项信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEnvMonitorItemsRequest 请求对象
      * @return CompletableFuture<ShowEnvMonitorItemsResponse>
@@ -922,8 +865,7 @@ public class ApmAsyncClient {
      *
      * 获取监控项信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEnvMonitorItemsRequest 请求对象
      * @return AsyncInvoker<ShowEnvMonitorItemsRequest, ShowEnvMonitorItemsResponse>
@@ -939,8 +881,7 @@ public class ApmAsyncClient {
      *
      * 获取event的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEventDetailRequest 请求对象
      * @return CompletableFuture<ShowEventDetailResponse>
@@ -954,8 +895,7 @@ public class ApmAsyncClient {
      *
      * 获取event的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEventDetailRequest 请求对象
      * @return AsyncInvoker<ShowEventDetailRequest, ShowEventDetailResponse>
@@ -971,8 +911,7 @@ public class ApmAsyncClient {
      *
      * 查询监控项配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMonitorItemViewConfigRequest 请求对象
      * @return CompletableFuture<ShowMonitorItemViewConfigResponse>
@@ -987,8 +926,7 @@ public class ApmAsyncClient {
      *
      * 查询监控项配置信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMonitorItemViewConfigRequest 请求对象
      * @return AsyncInvoker<ShowMonitorItemViewConfigRequest, ShowMonitorItemViewConfigResponse>
@@ -1004,8 +942,7 @@ public class ApmAsyncClient {
      *
      * 获取原始数据表格。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRawTableRequest 请求对象
      * @return CompletableFuture<ShowRawTableResponse>
@@ -1019,8 +956,7 @@ public class ApmAsyncClient {
      *
      * 获取原始数据表格。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRawTableRequest 请求对象
      * @return AsyncInvoker<ShowRawTableRequest, ShowRawTableResponse>
@@ -1035,8 +971,7 @@ public class ApmAsyncClient {
      *
      * span数据查询接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSpanSearchRequest 请求对象
      * @return CompletableFuture<ShowSpanSearchResponse>
@@ -1050,8 +985,7 @@ public class ApmAsyncClient {
      *
      * span数据查询接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSpanSearchRequest 请求对象
      * @return AsyncInvoker<ShowSpanSearchRequest, ShowSpanSearchResponse>
@@ -1067,8 +1001,7 @@ public class ApmAsyncClient {
      *
      * 获取汇总表格数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSumTableRequest 请求对象
      * @return CompletableFuture<ShowSumTableResponse>
@@ -1082,8 +1015,7 @@ public class ApmAsyncClient {
      *
      * 获取汇总表格数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSumTableRequest 请求对象
      * @return AsyncInvoker<ShowSumTableRequest, ShowSumTableResponse>
@@ -1098,8 +1030,7 @@ public class ApmAsyncClient {
      *
      * 调用链拓扑图。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTopologyRequest 请求对象
      * @return CompletableFuture<ShowTopologyResponse>
@@ -1113,8 +1044,7 @@ public class ApmAsyncClient {
      *
      * 调用链拓扑图。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTopologyRequest 请求对象
      * @return AsyncInvoker<ShowTopologyRequest, ShowTopologyResponse>
@@ -1129,8 +1059,7 @@ public class ApmAsyncClient {
      *
      * 获取一个trace的所有调用链数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTraceEventsRequest 请求对象
      * @return CompletableFuture<ShowTraceEventsResponse>
@@ -1144,8 +1073,7 @@ public class ApmAsyncClient {
      *
      * 获取一个trace的所有调用链数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTraceEventsRequest 请求对象
      * @return AsyncInvoker<ShowTraceEventsRequest, ShowTraceEventsResponse>
@@ -1161,8 +1089,7 @@ public class ApmAsyncClient {
      *
      * 获取趋势图。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTrendRequest 请求对象
      * @return CompletableFuture<ShowTrendResponse>
@@ -1176,8 +1103,7 @@ public class ApmAsyncClient {
      *
      * 获取趋势图。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTrendRequest 请求对象
      * @return AsyncInvoker<ShowTrendRequest, ShowTrendResponse>

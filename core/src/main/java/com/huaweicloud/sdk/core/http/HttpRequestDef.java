@@ -61,6 +61,9 @@ public interface HttpRequestDef<ReqT, ResT> {
     Builder<ReqT, ResT> builder();
 
     @JsonIgnore
+    Class<ReqT> getRequestType();
+
+    @JsonIgnore
     Class<ResT> getResponseType();
 
     @JsonIgnore
@@ -196,6 +199,11 @@ public interface HttpRequestDef<ReqT, ResT> {
         List<Field<T, ?>> responseFields = new ArrayList<>();
 
         Map<String, Field<T, ?>> responseFieldsMap;
+
+        @Override
+        public Class<R> getRequestType() {
+            return requestClass;
+        }
 
         @Override
         public Class<T> getResponseType() {

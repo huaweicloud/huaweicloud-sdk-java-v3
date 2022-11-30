@@ -21,15 +21,42 @@
 
 package com.huaweicloud.sdk.core.utils;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.File;
+import java.io.IOException;
 
 public class PathUtils {
     public static boolean isPathExist(String path) {
         if (StringUtils.isEmpty(path)) {
             return false;
         }
-        return Files.exists(Paths.get(path));
+        return new File(path).exists();
+    }
+
+    public static boolean isValidFile(String path) {
+        if (StringUtils.isEmpty(path)) {
+            return false;
+        }
+
+        return isValidFile(new File(path));
+    }
+
+    public static boolean isValidFile(File file) {
+        if (!file.exists()) {
+            return false;
+        }
+
+        File parentFile = file.getParentFile();
+        if (!parentFile.exists() || !parentFile.isDirectory()) {
+            return false;
+        }
+        try {
+            if (!file.getCanonicalFile().toPath().startsWith(parentFile.getCanonicalFile().toPath())) {
+                return false;
+            }
+        } catch (IOException ignore) {
+            return false;
+        }
+        return true;
     }
 
     public static String getUserHomePath() {

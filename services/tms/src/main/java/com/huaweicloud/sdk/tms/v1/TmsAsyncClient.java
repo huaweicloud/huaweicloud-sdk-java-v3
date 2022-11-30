@@ -24,8 +24,7 @@ public class TmsAsyncClient {
      *
      * 用于创建预定标签。用户创建预定义标签后，可以使用预定义标签来给资源创建标签。该接口支持幂等特性和处理批量数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePredefineTagsRequest 请求对象
      * @return CompletableFuture<CreatePredefineTagsResponse>
@@ -39,8 +38,7 @@ public class TmsAsyncClient {
      *
      * 用于创建预定标签。用户创建预定义标签后，可以使用预定义标签来给资源创建标签。该接口支持幂等特性和处理批量数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePredefineTagsRequest 请求对象
      * @return AsyncInvoker<CreatePredefineTagsRequest, CreatePredefineTagsResponse>
@@ -56,8 +54,7 @@ public class TmsAsyncClient {
      *
      * 用于删除预定标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePredefineTagsRequest 请求对象
      * @return CompletableFuture<DeletePredefineTagsResponse>
@@ -71,8 +68,7 @@ public class TmsAsyncClient {
      *
      * 用于删除预定标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePredefineTagsRequest 请求对象
      * @return AsyncInvoker<DeletePredefineTagsRequest, DeletePredefineTagsResponse>
@@ -88,8 +84,7 @@ public class TmsAsyncClient {
      *
      * 查询标签管理服务的API版本列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return CompletableFuture<ListApiVersionsResponse>
@@ -103,8 +98,7 @@ public class TmsAsyncClient {
      *
      * 查询标签管理服务的API版本列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
@@ -120,8 +114,7 @@ public class TmsAsyncClient {
      *
      * 用于查询预定义标签列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPredefineTagsRequest 请求对象
      * @return CompletableFuture<ListPredefineTagsResponse>
@@ -135,8 +128,7 @@ public class TmsAsyncClient {
      *
      * 用于查询预定义标签列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPredefineTagsRequest 请求对象
      * @return AsyncInvoker<ListPredefineTagsRequest, ListPredefineTagsResponse>
@@ -152,8 +144,7 @@ public class TmsAsyncClient {
      *
      * 查询标签管理支持的服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProvidersRequest 请求对象
      * @return CompletableFuture<ListProvidersResponse>
@@ -167,8 +158,7 @@ public class TmsAsyncClient {
      *
      * 查询标签管理支持的服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProvidersRequest 请求对象
      * @return AsyncInvoker<ListProvidersRequest, ListProvidersResponse>
@@ -183,8 +173,7 @@ public class TmsAsyncClient {
      *
      * 查询指定的标签管理服务API版本号详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
      * @return CompletableFuture<ShowApiVersionResponse>
@@ -198,8 +187,7 @@ public class TmsAsyncClient {
      *
      * 查询指定的标签管理服务API版本号详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
      * @return AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
@@ -215,8 +203,7 @@ public class TmsAsyncClient {
      *
      * 查询标签的配额信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTagQuotaRequest 请求对象
      * @return CompletableFuture<ShowTagQuotaResponse>
@@ -230,8 +217,7 @@ public class TmsAsyncClient {
      *
      * 查询标签的配额信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTagQuotaRequest 请求对象
      * @return AsyncInvoker<ShowTagQuotaRequest, ShowTagQuotaResponse>
@@ -246,8 +232,7 @@ public class TmsAsyncClient {
      *
      * 修改预定义标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePredefineTagsRequest 请求对象
      * @return CompletableFuture<UpdatePredefineTagsResponse>
@@ -261,8 +246,7 @@ public class TmsAsyncClient {
      *
      * 修改预定义标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePredefineTagsRequest 请求对象
      * @return AsyncInvoker<UpdatePredefineTagsRequest, UpdatePredefineTagsResponse>

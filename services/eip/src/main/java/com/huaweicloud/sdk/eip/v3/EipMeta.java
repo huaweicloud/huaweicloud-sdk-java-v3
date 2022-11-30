@@ -163,7 +163,7 @@ public class EipMeta {
     private static HttpRequestDef<AssociatePublicipsRequest, AssociatePublicipsResponse> genForassociatePublicips() {
         // basic
         HttpRequestDef.Builder<AssociatePublicipsRequest, AssociatePublicipsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, AssociatePublicipsRequest.class, AssociatePublicipsResponse.class)
+            HttpRequestDef.builder(HttpMethod.POST, AssociatePublicipsRequest.class, AssociatePublicipsResponse.class)
                 .withName("AssociatePublicips")
                 .withUri("/v3/{project_id}/eip/publicips/{publicip_id}/associate-instance")
                 .withContentType("application/json;charset=UTF-8");
@@ -195,10 +195,10 @@ public class EipMeta {
     private static HttpRequestDef<DisassociatePublicipsRequest, DisassociatePublicipsResponse> genFordisassociatePublicips() {
         // basic
         HttpRequestDef.Builder<DisassociatePublicipsRequest, DisassociatePublicipsResponse> builder = HttpRequestDef
-            .builder(HttpMethod.PUT, DisassociatePublicipsRequest.class, DisassociatePublicipsResponse.class)
+            .builder(HttpMethod.POST, DisassociatePublicipsRequest.class, DisassociatePublicipsResponse.class)
             .withName("DisassociatePublicips")
             .withUri("/v3/{project_id}/eip/publicips/{publicip_id}/disassociate-instance")
-            .withContentType("application/json;charset=UTF-8");
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("publicip_id",
@@ -207,13 +207,6 @@ public class EipMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DisassociatePublicipsRequest::getPublicipId, (req, v) -> {
                 req.setPublicipId(v);
-            }));
-        builder.<DisassociatePublicipsRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DisassociatePublicipsRequestBody.class),
-            f -> f.withMarshaller(DisassociatePublicipsRequest::getBody, (req, v) -> {
-                req.setBody(v);
             }));
 
         // response
@@ -684,6 +677,73 @@ public class EipMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPublicipPoolRequest::getFields, (req, v) -> {
                 req.setFields(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAssociatePublicipRequest, UpdateAssociatePublicipResponse> updateAssociatePublicip =
+        genForupdateAssociatePublicip();
+
+    private static HttpRequestDef<UpdateAssociatePublicipRequest, UpdateAssociatePublicipResponse> genForupdateAssociatePublicip() {
+        // basic
+        HttpRequestDef.Builder<UpdateAssociatePublicipRequest, UpdateAssociatePublicipResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAssociatePublicipRequest.class, UpdateAssociatePublicipResponse.class)
+            .withName("UpdateAssociatePublicip")
+            .withUri("/v3/{project_id}/eip/publicips/{publicip_id}/associate-instance")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("publicip_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAssociatePublicipRequest::getPublicipId, (req, v) -> {
+                req.setPublicipId(v);
+            }));
+        builder.<AssociatePublicipsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociatePublicipsRequestBody.class),
+            f -> f.withMarshaller(UpdateAssociatePublicipRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDisassociatePublicipRequest, UpdateDisassociatePublicipResponse> updateDisassociatePublicip =
+        genForupdateDisassociatePublicip();
+
+    private static HttpRequestDef<UpdateDisassociatePublicipRequest, UpdateDisassociatePublicipResponse> genForupdateDisassociatePublicip() {
+        // basic
+        HttpRequestDef.Builder<UpdateDisassociatePublicipRequest, UpdateDisassociatePublicipResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateDisassociatePublicipRequest.class,
+                    UpdateDisassociatePublicipResponse.class)
+                .withName("UpdateDisassociatePublicip")
+                .withUri("/v3/{project_id}/eip/publicips/{publicip_id}/disassociate-instance")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("publicip_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDisassociatePublicipRequest::getPublicipId, (req, v) -> {
+                req.setPublicipId(v);
+            }));
+        builder.<DisassociatePublicipsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DisassociatePublicipsRequestBody.class),
+            f -> f.withMarshaller(UpdateDisassociatePublicipRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

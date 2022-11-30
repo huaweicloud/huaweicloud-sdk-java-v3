@@ -126,6 +126,11 @@ public class AssociateCertificateV2Response extends SdkResponse {
     private String minSslVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_http_redirect_to_https")
+
+    private Boolean isHttpRedirectToHttps;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_name")
 
     private String sslName;
@@ -203,6 +208,23 @@ public class AssociateCertificateV2Response extends SdkResponse {
         this.minSslVersion = minSslVersion;
     }
 
+    public AssociateCertificateV2Response withIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+        this.isHttpRedirectToHttps = isHttpRedirectToHttps;
+        return this;
+    }
+
+    /**
+     * 是否开启http到https的重定向，false为关闭，true为开启，默认为false
+     * @return isHttpRedirectToHttps
+     */
+    public Boolean getIsHttpRedirectToHttps() {
+        return isHttpRedirectToHttps;
+    }
+
+    public void setIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+        this.isHttpRedirectToHttps = isHttpRedirectToHttps;
+    }
+
     public AssociateCertificateV2Response withSslName(String sslName) {
         this.sslName = sslName;
         return this;
@@ -250,13 +272,14 @@ public class AssociateCertificateV2Response extends SdkResponse {
             && Objects.equals(this.id, associateCertificateV2Response.id)
             && Objects.equals(this.status, associateCertificateV2Response.status)
             && Objects.equals(this.minSslVersion, associateCertificateV2Response.minSslVersion)
+            && Objects.equals(this.isHttpRedirectToHttps, associateCertificateV2Response.isHttpRedirectToHttps)
             && Objects.equals(this.sslName, associateCertificateV2Response.sslName)
             && Objects.equals(this.sslId, associateCertificateV2Response.sslId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(urlDomain, id, status, minSslVersion, sslName, sslId);
+        return Objects.hash(urlDomain, id, status, minSslVersion, isHttpRedirectToHttps, sslName, sslId);
     }
 
     @Override
@@ -267,6 +290,7 @@ public class AssociateCertificateV2Response extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    minSslVersion: ").append(toIndentedString(minSslVersion)).append("\n");
+        sb.append("    isHttpRedirectToHttps: ").append(toIndentedString(isHttpRedirectToHttps)).append("\n");
         sb.append("    sslName: ").append(toIndentedString(sslName)).append("\n");
         sb.append("    sslId: ").append(toIndentedString(sslId)).append("\n");
         sb.append("}");

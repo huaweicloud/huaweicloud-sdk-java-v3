@@ -24,8 +24,7 @@ public class VpcAsyncClient {
      *
      * 租户A名下的VPC申请和租户B的VPC建立对等连接，需要等待租户B接受该请求。此接口用于租户接受其他租户发起的对等连接请求。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AcceptVpcPeeringRequest 请求对象
      * @return CompletableFuture<AcceptVpcPeeringResponse>
@@ -39,8 +38,7 @@ public class VpcAsyncClient {
      *
      * 租户A名下的VPC申请和租户B的VPC建立对等连接，需要等待租户B接受该请求。此接口用于租户接受其他租户发起的对等连接请求。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AcceptVpcPeeringRequest 请求对象
      * @return AsyncInvoker<AcceptVpcPeeringRequest, AcceptVpcPeeringResponse>
@@ -56,8 +54,7 @@ public class VpcAsyncClient {
      *
      * 路由表关联子网。子网关联路由表A后，再关联B，不需要先跟路由表A解关联再关联路由表B
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRouteTableRequest 请求对象
      * @return CompletableFuture<AssociateRouteTableResponse>
@@ -71,8 +68,7 @@ public class VpcAsyncClient {
      *
      * 路由表关联子网。子网关联路由表A后，再关联B，不需要先跟路由表A解关联再关联路由表B
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRouteTableRequest 请求对象
      * @return AsyncInvoker<AssociateRouteTableRequest, AssociateRouteTableResponse>
@@ -89,8 +85,7 @@ public class VpcAsyncClient {
      * 为指定的子网资源实例批量添加标签。
      * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateSubnetTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateSubnetTagsResponse>
@@ -106,8 +101,7 @@ public class VpcAsyncClient {
      * 为指定的子网资源实例批量添加标签。
      * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateSubnetTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse>
@@ -124,8 +118,7 @@ public class VpcAsyncClient {
      * 为指定的子网资源实例批量删除标签
      * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteSubnetTagsRequest 请求对象
      * @return CompletableFuture<BatchDeleteSubnetTagsResponse>
@@ -141,8 +134,7 @@ public class VpcAsyncClient {
      * 为指定的子网资源实例批量删除标签
      * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteSubnetTagsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteSubnetTagsRequest, BatchDeleteSubnetTagsResponse>
@@ -158,8 +150,7 @@ public class VpcAsyncClient {
      *
      * 创建端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePortRequest 请求对象
      * @return CompletableFuture<CreatePortResponse>
@@ -173,8 +164,7 @@ public class VpcAsyncClient {
      *
      * 创建端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePortRequest 请求对象
      * @return AsyncInvoker<CreatePortRequest, CreatePortResponse>
@@ -188,8 +178,7 @@ public class VpcAsyncClient {
      *
      * 创建路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRouteTableRequest 请求对象
      * @return CompletableFuture<CreateRouteTableResponse>
@@ -203,8 +192,7 @@ public class VpcAsyncClient {
      *
      * 创建路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRouteTableRequest 请求对象
      * @return AsyncInvoker<CreateRouteTableRequest, CreateRouteTableResponse>
@@ -220,8 +208,7 @@ public class VpcAsyncClient {
      *
      * 创建安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityGroupRequest 请求对象
      * @return CompletableFuture<CreateSecurityGroupResponse>
@@ -235,8 +222,7 @@ public class VpcAsyncClient {
      *
      * 创建安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityGroupRequest 请求对象
      * @return AsyncInvoker<CreateSecurityGroupRequest, CreateSecurityGroupResponse>
@@ -252,8 +238,7 @@ public class VpcAsyncClient {
      *
      * 创建安全组规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityGroupRuleRequest 请求对象
      * @return CompletableFuture<CreateSecurityGroupRuleResponse>
@@ -268,8 +253,7 @@ public class VpcAsyncClient {
      *
      * 创建安全组规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityGroupRuleRequest 请求对象
      * @return AsyncInvoker<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse>
@@ -285,8 +269,7 @@ public class VpcAsyncClient {
      *
      * 创建子网。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSubnetRequest 请求对象
      * @return CompletableFuture<CreateSubnetResponse>
@@ -300,8 +283,7 @@ public class VpcAsyncClient {
      *
      * 创建子网。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSubnetRequest 请求对象
      * @return AsyncInvoker<CreateSubnetRequest, CreateSubnetResponse>
@@ -317,8 +299,7 @@ public class VpcAsyncClient {
      * 给指定子网资源实例增加标签信息。
      * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSubnetTagRequest 请求对象
      * @return CompletableFuture<CreateSubnetTagResponse>
@@ -333,8 +314,7 @@ public class VpcAsyncClient {
      * 给指定子网资源实例增加标签信息。
      * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSubnetTagRequest 请求对象
      * @return AsyncInvoker<CreateSubnetTagRequest, CreateSubnetTagResponse>
@@ -350,8 +330,7 @@ public class VpcAsyncClient {
      *
      * 创建对等连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcPeeringRequest 请求对象
      * @return CompletableFuture<CreateVpcPeeringResponse>
@@ -365,8 +344,7 @@ public class VpcAsyncClient {
      *
      * 创建对等连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcPeeringRequest 请求对象
      * @return AsyncInvoker<CreateVpcPeeringRequest, CreateVpcPeeringResponse>
@@ -382,8 +360,7 @@ public class VpcAsyncClient {
      *
      * 删除端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePortRequest 请求对象
      * @return CompletableFuture<DeletePortResponse>
@@ -397,8 +374,7 @@ public class VpcAsyncClient {
      *
      * 删除端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePortRequest 请求对象
      * @return AsyncInvoker<DeletePortRequest, DeletePortResponse>
@@ -412,8 +388,7 @@ public class VpcAsyncClient {
      *
      * 删除路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRouteTableRequest 请求对象
      * @return CompletableFuture<DeleteRouteTableResponse>
@@ -427,8 +402,7 @@ public class VpcAsyncClient {
      *
      * 删除路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRouteTableRequest 请求对象
      * @return AsyncInvoker<DeleteRouteTableRequest, DeleteRouteTableResponse>
@@ -444,8 +418,7 @@ public class VpcAsyncClient {
      *
      * 删除安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityGroupRequest 请求对象
      * @return CompletableFuture<DeleteSecurityGroupResponse>
@@ -459,8 +432,7 @@ public class VpcAsyncClient {
      *
      * 删除安全组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityGroupRequest 请求对象
      * @return AsyncInvoker<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse>
@@ -476,8 +448,7 @@ public class VpcAsyncClient {
      *
      * 删除安全组规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityGroupRuleRequest 请求对象
      * @return CompletableFuture<DeleteSecurityGroupRuleResponse>
@@ -492,8 +463,7 @@ public class VpcAsyncClient {
      *
      * 删除安全组规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecurityGroupRuleRequest 请求对象
      * @return AsyncInvoker<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse>
@@ -509,8 +479,7 @@ public class VpcAsyncClient {
      *
      * 删除子网
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSubnetRequest 请求对象
      * @return CompletableFuture<DeleteSubnetResponse>
@@ -524,8 +493,7 @@ public class VpcAsyncClient {
      *
      * 删除子网
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSubnetRequest 请求对象
      * @return AsyncInvoker<DeleteSubnetRequest, DeleteSubnetResponse>
@@ -541,8 +509,7 @@ public class VpcAsyncClient {
      * 删除指定子网资源实例的标签信息。
      * 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSubnetTagRequest 请求对象
      * @return CompletableFuture<DeleteSubnetTagResponse>
@@ -557,8 +524,7 @@ public class VpcAsyncClient {
      * 删除指定子网资源实例的标签信息。
      * 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSubnetTagRequest 请求对象
      * @return AsyncInvoker<DeleteSubnetTagRequest, DeleteSubnetTagResponse>
@@ -575,8 +541,7 @@ public class VpcAsyncClient {
      * 删除对等连接。
      * 可以在在本端或对端任何一端删除对等连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcPeeringRequest 请求对象
      * @return CompletableFuture<DeleteVpcPeeringResponse>
@@ -591,8 +556,7 @@ public class VpcAsyncClient {
      * 删除对等连接。
      * 可以在在本端或对端任何一端删除对等连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcPeeringRequest 请求对象
      * @return AsyncInvoker<DeleteVpcPeeringRequest, DeleteVpcPeeringResponse>
@@ -608,8 +572,7 @@ public class VpcAsyncClient {
      *
      * 子网解关联路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateRouteTableRequest 请求对象
      * @return CompletableFuture<DisassociateRouteTableResponse>
@@ -624,8 +587,7 @@ public class VpcAsyncClient {
      *
      * 子网解关联路由表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateRouteTableRequest 请求对象
      * @return AsyncInvoker<DisassociateRouteTableRequest, DisassociateRouteTableResponse>
@@ -641,8 +603,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求的租户的所有端口，单次查询最多返回2000条数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPortsRequest 请求对象
      * @return CompletableFuture<ListPortsResponse>
@@ -656,8 +617,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求的租户的所有端口，单次查询最多返回2000条数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPortsRequest 请求对象
      * @return AsyncInvoker<ListPortsRequest, ListPortsResponse>
@@ -671,8 +631,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求的帐户的所有路由表列表，并根据过滤条件进行过滤
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRouteTablesRequest 请求对象
      * @return CompletableFuture<ListRouteTablesResponse>
@@ -686,8 +645,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求的帐户的所有路由表列表，并根据过滤条件进行过滤
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRouteTablesRequest 请求对象
      * @return AsyncInvoker<ListRouteTablesRequest, ListRouteTablesResponse>
@@ -703,8 +661,7 @@ public class VpcAsyncClient {
      *
      * 查询安全组规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityGroupRulesRequest 请求对象
      * @return CompletableFuture<ListSecurityGroupRulesResponse>
@@ -719,8 +676,7 @@ public class VpcAsyncClient {
      *
      * 查询安全组规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityGroupRulesRequest 请求对象
      * @return AsyncInvoker<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse>
@@ -736,8 +692,7 @@ public class VpcAsyncClient {
      *
      * 查询安全组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityGroupsRequest 请求对象
      * @return CompletableFuture<ListSecurityGroupsResponse>
@@ -751,8 +706,7 @@ public class VpcAsyncClient {
      *
      * 查询安全组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecurityGroupsRequest 请求对象
      * @return AsyncInvoker<ListSecurityGroupsRequest, ListSecurityGroupsResponse>
@@ -768,8 +722,7 @@ public class VpcAsyncClient {
      *
      * 查询租户在指定区域和实例类型的所有标签集合
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubnetTagsRequest 请求对象
      * @return CompletableFuture<ListSubnetTagsResponse>
@@ -783,8 +736,7 @@ public class VpcAsyncClient {
      *
      * 查询租户在指定区域和实例类型的所有标签集合
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubnetTagsRequest 请求对象
      * @return AsyncInvoker<ListSubnetTagsRequest, ListSubnetTagsResponse>
@@ -800,8 +752,7 @@ public class VpcAsyncClient {
      *
      * 查询子网列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubnetsRequest 请求对象
      * @return CompletableFuture<ListSubnetsResponse>
@@ -815,8 +766,7 @@ public class VpcAsyncClient {
      *
      * 查询子网列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubnetsRequest 请求对象
      * @return AsyncInvoker<ListSubnetsRequest, ListSubnetsResponse>
@@ -830,8 +780,7 @@ public class VpcAsyncClient {
      *
      * 使用标签过滤实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubnetsByTagsRequest 请求对象
      * @return CompletableFuture<ListSubnetsByTagsResponse>
@@ -845,8 +794,7 @@ public class VpcAsyncClient {
      *
      * 使用标签过滤实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSubnetsByTagsRequest 请求对象
      * @return AsyncInvoker<ListSubnetsByTagsRequest, ListSubnetsByTagsResponse>
@@ -862,8 +810,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求的租户的所有对等连接。根据过滤条件进行过滤。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcPeeringsRequest 请求对象
      * @return CompletableFuture<ListVpcPeeringsResponse>
@@ -877,8 +824,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求的租户的所有对等连接。根据过滤条件进行过滤。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcPeeringsRequest 请求对象
      * @return AsyncInvoker<ListVpcPeeringsRequest, ListVpcPeeringsResponse>
@@ -894,8 +840,7 @@ public class VpcAsyncClient {
      *
      * 租户A名下的VPC申请和租户B的VPC建立对等连接，需要等待租户B接受该请求。此接口用于租户拒绝其他租户发起的对等连接请求。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RejectVpcPeeringRequest 请求对象
      * @return CompletableFuture<RejectVpcPeeringResponse>
@@ -909,8 +854,7 @@ public class VpcAsyncClient {
      *
      * 租户A名下的VPC申请和租户B的VPC建立对等连接，需要等待租户B接受该请求。此接口用于租户拒绝其他租户发起的对等连接请求。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RejectVpcPeeringRequest 请求对象
      * @return AsyncInvoker<RejectVpcPeeringRequest, RejectVpcPeeringResponse>
@@ -926,8 +870,7 @@ public class VpcAsyncClient {
      *
      * 查询单个端口详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPortRequest 请求对象
      * @return CompletableFuture<ShowPortResponse>
@@ -941,8 +884,7 @@ public class VpcAsyncClient {
      *
      * 查询单个端口详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPortRequest 请求对象
      * @return AsyncInvoker<ShowPortRequest, ShowPortResponse>
@@ -956,8 +898,7 @@ public class VpcAsyncClient {
      *
      * 查询单租户在VPC服务下的网络资源配额，包括vpc配额、子网配额、安全组配额、安全组规则配额、弹性公网IP配额，vpn配额等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotaRequest 请求对象
      * @return CompletableFuture<ShowQuotaResponse>
@@ -971,8 +912,7 @@ public class VpcAsyncClient {
      *
      * 查询单租户在VPC服务下的网络资源配额，包括vpc配额、子网配额、安全组配额、安全组规则配额、弹性公网IP配额，vpn配额等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotaRequest 请求对象
      * @return AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse>
@@ -986,8 +926,7 @@ public class VpcAsyncClient {
      *
      * 查询路由表详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRouteTableRequest 请求对象
      * @return CompletableFuture<ShowRouteTableResponse>
@@ -1001,8 +940,7 @@ public class VpcAsyncClient {
      *
      * 查询路由表详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRouteTableRequest 请求对象
      * @return AsyncInvoker<ShowRouteTableRequest, ShowRouteTableResponse>
@@ -1018,8 +956,7 @@ public class VpcAsyncClient {
      *
      * 查询单个安全组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityGroupRequest 请求对象
      * @return CompletableFuture<ShowSecurityGroupResponse>
@@ -1033,8 +970,7 @@ public class VpcAsyncClient {
      *
      * 查询单个安全组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityGroupRequest 请求对象
      * @return AsyncInvoker<ShowSecurityGroupRequest, ShowSecurityGroupResponse>
@@ -1050,8 +986,7 @@ public class VpcAsyncClient {
      *
      * 查询单个安全组规则详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityGroupRuleRequest 请求对象
      * @return CompletableFuture<ShowSecurityGroupRuleResponse>
@@ -1066,8 +1001,7 @@ public class VpcAsyncClient {
      *
      * 查询单个安全组规则详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecurityGroupRuleRequest 请求对象
      * @return AsyncInvoker<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse>
@@ -1083,8 +1017,7 @@ public class VpcAsyncClient {
      *
      * 查询子网详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubnetRequest 请求对象
      * @return CompletableFuture<ShowSubnetResponse>
@@ -1098,8 +1031,7 @@ public class VpcAsyncClient {
      *
      * 查询子网详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubnetRequest 请求对象
      * @return AsyncInvoker<ShowSubnetRequest, ShowSubnetResponse>
@@ -1113,8 +1045,7 @@ public class VpcAsyncClient {
      *
      * 查询指定子网实例的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubnetTagsRequest 请求对象
      * @return CompletableFuture<ShowSubnetTagsResponse>
@@ -1128,8 +1059,7 @@ public class VpcAsyncClient {
      *
      * 查询指定子网实例的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSubnetTagsRequest 请求对象
      * @return AsyncInvoker<ShowSubnetTagsRequest, ShowSubnetTagsResponse>
@@ -1145,8 +1075,7 @@ public class VpcAsyncClient {
      *
      * 查询对等连接详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcPeeringRequest 请求对象
      * @return CompletableFuture<ShowVpcPeeringResponse>
@@ -1160,8 +1089,7 @@ public class VpcAsyncClient {
      *
      * 查询对等连接详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcPeeringRequest 请求对象
      * @return AsyncInvoker<ShowVpcPeeringRequest, ShowVpcPeeringResponse>
@@ -1177,8 +1105,7 @@ public class VpcAsyncClient {
      *
      * 更新端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePortRequest 请求对象
      * @return CompletableFuture<UpdatePortResponse>
@@ -1192,8 +1119,7 @@ public class VpcAsyncClient {
      *
      * 更新端口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePortRequest 请求对象
      * @return AsyncInvoker<UpdatePortRequest, UpdatePortResponse>
@@ -1207,8 +1133,7 @@ public class VpcAsyncClient {
      *
      * 更新路由表，包括可以更新路由表的名称，描述，以及新增、更新、删除路由条目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRouteTableRequest 请求对象
      * @return CompletableFuture<UpdateRouteTableResponse>
@@ -1222,8 +1147,7 @@ public class VpcAsyncClient {
      *
      * 更新路由表，包括可以更新路由表的名称，描述，以及新增、更新、删除路由条目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRouteTableRequest 请求对象
      * @return AsyncInvoker<UpdateRouteTableRequest, UpdateRouteTableResponse>
@@ -1239,8 +1163,7 @@ public class VpcAsyncClient {
      *
      * 更新子网。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSubnetRequest 请求对象
      * @return CompletableFuture<UpdateSubnetResponse>
@@ -1254,8 +1177,7 @@ public class VpcAsyncClient {
      *
      * 更新子网。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSubnetRequest 请求对象
      * @return AsyncInvoker<UpdateSubnetRequest, UpdateSubnetResponse>
@@ -1270,8 +1192,7 @@ public class VpcAsyncClient {
      *
      * 更新对等连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcPeeringRequest 请求对象
      * @return CompletableFuture<UpdateVpcPeeringResponse>
@@ -1285,8 +1206,7 @@ public class VpcAsyncClient {
      *
      * 更新对等连接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcPeeringRequest 请求对象
      * @return AsyncInvoker<UpdateVpcPeeringRequest, UpdateVpcPeeringResponse>
@@ -1302,8 +1222,7 @@ public class VpcAsyncClient {
      *
      * 申请私有IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePrivateipRequest 请求对象
      * @return CompletableFuture<CreatePrivateipResponse>
@@ -1317,8 +1236,7 @@ public class VpcAsyncClient {
      *
      * 申请私有IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePrivateipRequest 请求对象
      * @return AsyncInvoker<CreatePrivateipRequest, CreatePrivateipResponse>
@@ -1334,8 +1252,7 @@ public class VpcAsyncClient {
      *
      * 删除私有IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePrivateipRequest 请求对象
      * @return CompletableFuture<DeletePrivateipResponse>
@@ -1349,8 +1266,7 @@ public class VpcAsyncClient {
      *
      * 删除私有IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePrivateipRequest 请求对象
      * @return AsyncInvoker<DeletePrivateipRequest, DeletePrivateipResponse>
@@ -1366,8 +1282,7 @@ public class VpcAsyncClient {
      *
      * 查询指定子网下的私有IP列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPrivateipsRequest 请求对象
      * @return CompletableFuture<ListPrivateipsResponse>
@@ -1381,8 +1296,7 @@ public class VpcAsyncClient {
      *
      * 查询指定子网下的私有IP列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPrivateipsRequest 请求对象
      * @return AsyncInvoker<ListPrivateipsRequest, ListPrivateipsResponse>
@@ -1405,8 +1319,7 @@ public class VpcAsyncClient {
      * - 这里以及下文描述的IP地址总数、已用IP地址总数不包含系统预留地址。
      * - 在分配IP时，用户可以指定系统预留的IP地址。但是不论IP是如何分配的，只要是处于系统预留IP地址段的IP均不会被统计到已用IP地址数目和IP地址总数中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNetworkIpAvailabilitiesRequest 请求对象
      * @return CompletableFuture<ShowNetworkIpAvailabilitiesResponse>
@@ -1428,8 +1341,7 @@ public class VpcAsyncClient {
      * - 这里以及下文描述的IP地址总数、已用IP地址总数不包含系统预留地址。
      * - 在分配IP时，用户可以指定系统预留的IP地址。但是不论IP是如何分配的，只要是处于系统预留IP地址段的IP均不会被统计到已用IP地址数目和IP地址总数中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNetworkIpAvailabilitiesRequest 请求对象
      * @return AsyncInvoker<ShowNetworkIpAvailabilitiesRequest, ShowNetworkIpAvailabilitiesResponse>
@@ -1445,8 +1357,7 @@ public class VpcAsyncClient {
      *
      * 指定ID查询私有IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPrivateipRequest 请求对象
      * @return CompletableFuture<ShowPrivateipResponse>
@@ -1460,8 +1371,7 @@ public class VpcAsyncClient {
      *
      * 指定ID查询私有IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPrivateipRequest 请求对象
      * @return AsyncInvoker<ShowPrivateipRequest, ShowPrivateipResponse>
@@ -1476,8 +1386,7 @@ public class VpcAsyncClient {
      *
      * 创建安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateSecurityGroupRequest 请求对象
      * @return CompletableFuture<NeutronCreateSecurityGroupResponse>
@@ -1492,8 +1401,7 @@ public class VpcAsyncClient {
      *
      * 创建安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateSecurityGroupRequest 请求对象
      * @return AsyncInvoker<NeutronCreateSecurityGroupRequest, NeutronCreateSecurityGroupResponse>
@@ -1509,8 +1417,7 @@ public class VpcAsyncClient {
      *
      * 创建安全组规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateSecurityGroupRuleRequest 请求对象
      * @return CompletableFuture<NeutronCreateSecurityGroupRuleResponse>
@@ -1525,8 +1432,7 @@ public class VpcAsyncClient {
      *
      * 创建安全组规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateSecurityGroupRuleRequest 请求对象
      * @return AsyncInvoker<NeutronCreateSecurityGroupRuleRequest, NeutronCreateSecurityGroupRuleResponse>
@@ -1542,8 +1448,7 @@ public class VpcAsyncClient {
      *
      * 删除安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteSecurityGroupRequest 请求对象
      * @return CompletableFuture<NeutronDeleteSecurityGroupResponse>
@@ -1558,8 +1463,7 @@ public class VpcAsyncClient {
      *
      * 删除安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteSecurityGroupRequest 请求对象
      * @return AsyncInvoker<NeutronDeleteSecurityGroupRequest, NeutronDeleteSecurityGroupResponse>
@@ -1575,8 +1479,7 @@ public class VpcAsyncClient {
      *
      * 删除安全组规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteSecurityGroupRuleRequest 请求对象
      * @return CompletableFuture<NeutronDeleteSecurityGroupRuleResponse>
@@ -1591,8 +1494,7 @@ public class VpcAsyncClient {
      *
      * 删除安全组规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteSecurityGroupRuleRequest 请求对象
      * @return AsyncInvoker<NeutronDeleteSecurityGroupRuleRequest, NeutronDeleteSecurityGroupRuleResponse>
@@ -1608,8 +1510,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求的租户有权限查看的所有安全组规则。单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListSecurityGroupRulesRequest 请求对象
      * @return CompletableFuture<NeutronListSecurityGroupRulesResponse>
@@ -1624,8 +1525,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求的租户有权限查看的所有安全组规则。单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListSecurityGroupRulesRequest 请求对象
      * @return AsyncInvoker<NeutronListSecurityGroupRulesRequest, NeutronListSecurityGroupRulesResponse>
@@ -1641,8 +1541,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求租户的所有安全组，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询 。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListSecurityGroupsRequest 请求对象
      * @return CompletableFuture<NeutronListSecurityGroupsResponse>
@@ -1657,8 +1556,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求租户的所有安全组，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询 。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListSecurityGroupsRequest 请求对象
      * @return AsyncInvoker<NeutronListSecurityGroupsRequest, NeutronListSecurityGroupsResponse>
@@ -1674,8 +1572,7 @@ public class VpcAsyncClient {
      *
      * 查询安全组详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowSecurityGroupRequest 请求对象
      * @return CompletableFuture<NeutronShowSecurityGroupResponse>
@@ -1690,8 +1587,7 @@ public class VpcAsyncClient {
      *
      * 查询安全组详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowSecurityGroupRequest 请求对象
      * @return AsyncInvoker<NeutronShowSecurityGroupRequest, NeutronShowSecurityGroupResponse>
@@ -1707,8 +1603,7 @@ public class VpcAsyncClient {
      *
      * 查询安全组规则详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowSecurityGroupRuleRequest 请求对象
      * @return CompletableFuture<NeutronShowSecurityGroupRuleResponse>
@@ -1723,8 +1618,7 @@ public class VpcAsyncClient {
      *
      * 查询安全组规则详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowSecurityGroupRuleRequest 请求对象
      * @return AsyncInvoker<NeutronShowSecurityGroupRuleRequest, NeutronShowSecurityGroupRuleResponse>
@@ -1740,8 +1634,7 @@ public class VpcAsyncClient {
      *
      * 更新安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateSecurityGroupRequest 请求对象
      * @return CompletableFuture<NeutronUpdateSecurityGroupResponse>
@@ -1756,8 +1649,7 @@ public class VpcAsyncClient {
      *
      * 更新安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateSecurityGroupRequest 请求对象
      * @return AsyncInvoker<NeutronUpdateSecurityGroupRequest, NeutronUpdateSecurityGroupResponse>
@@ -1773,8 +1665,7 @@ public class VpcAsyncClient {
      *
      * 插入一条网络ACL规则到某一网络ACL策略中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronAddFirewallRuleRequest 请求对象
      * @return CompletableFuture<NeutronAddFirewallRuleResponse>
@@ -1789,8 +1680,7 @@ public class VpcAsyncClient {
      *
      * 插入一条网络ACL规则到某一网络ACL策略中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronAddFirewallRuleRequest 请求对象
      * @return AsyncInvoker<NeutronAddFirewallRuleRequest, NeutronAddFirewallRuleResponse>
@@ -1806,8 +1696,7 @@ public class VpcAsyncClient {
      *
      * 创建网络ACL组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateFirewallGroupRequest 请求对象
      * @return CompletableFuture<NeutronCreateFirewallGroupResponse>
@@ -1822,8 +1711,7 @@ public class VpcAsyncClient {
      *
      * 创建网络ACL组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateFirewallGroupRequest 请求对象
      * @return AsyncInvoker<NeutronCreateFirewallGroupRequest, NeutronCreateFirewallGroupResponse>
@@ -1839,8 +1727,7 @@ public class VpcAsyncClient {
      *
      * 创建网络ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateFirewallPolicyRequest 请求对象
      * @return CompletableFuture<NeutronCreateFirewallPolicyResponse>
@@ -1855,8 +1742,7 @@ public class VpcAsyncClient {
      *
      * 创建网络ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateFirewallPolicyRequest 请求对象
      * @return AsyncInvoker<NeutronCreateFirewallPolicyRequest, NeutronCreateFirewallPolicyResponse>
@@ -1872,8 +1758,7 @@ public class VpcAsyncClient {
      *
      * 创建网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateFirewallRuleRequest 请求对象
      * @return CompletableFuture<NeutronCreateFirewallRuleResponse>
@@ -1888,8 +1773,7 @@ public class VpcAsyncClient {
      *
      * 创建网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateFirewallRuleRequest 请求对象
      * @return AsyncInvoker<NeutronCreateFirewallRuleRequest, NeutronCreateFirewallRuleResponse>
@@ -1905,8 +1789,7 @@ public class VpcAsyncClient {
      *
      * 删除网络ACL组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteFirewallGroupRequest 请求对象
      * @return CompletableFuture<NeutronDeleteFirewallGroupResponse>
@@ -1921,8 +1804,7 @@ public class VpcAsyncClient {
      *
      * 删除网络ACL组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteFirewallGroupRequest 请求对象
      * @return AsyncInvoker<NeutronDeleteFirewallGroupRequest, NeutronDeleteFirewallGroupResponse>
@@ -1938,8 +1820,7 @@ public class VpcAsyncClient {
      *
      * 删除网络ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteFirewallPolicyRequest 请求对象
      * @return CompletableFuture<NeutronDeleteFirewallPolicyResponse>
@@ -1954,8 +1835,7 @@ public class VpcAsyncClient {
      *
      * 删除网络ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteFirewallPolicyRequest 请求对象
      * @return AsyncInvoker<NeutronDeleteFirewallPolicyRequest, NeutronDeleteFirewallPolicyResponse>
@@ -1971,8 +1851,7 @@ public class VpcAsyncClient {
      *
      * 删除网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteFirewallRuleRequest 请求对象
      * @return CompletableFuture<NeutronDeleteFirewallRuleResponse>
@@ -1987,8 +1866,7 @@ public class VpcAsyncClient {
      *
      * 删除网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteFirewallRuleRequest 请求对象
      * @return AsyncInvoker<NeutronDeleteFirewallRuleRequest, NeutronDeleteFirewallRuleResponse>
@@ -2004,8 +1882,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求的租户有权限操作的所有网络ACL组信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListFirewallGroupsRequest 请求对象
      * @return CompletableFuture<NeutronListFirewallGroupsResponse>
@@ -2020,8 +1897,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求的租户有权限操作的所有网络ACL组信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListFirewallGroupsRequest 请求对象
      * @return AsyncInvoker<NeutronListFirewallGroupsRequest, NeutronListFirewallGroupsResponse>
@@ -2037,8 +1913,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求的租户有权限操作的所有网络ACL策略信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListFirewallPoliciesRequest 请求对象
      * @return CompletableFuture<NeutronListFirewallPoliciesResponse>
@@ -2053,8 +1928,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求的租户有权限操作的所有网络ACL策略信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListFirewallPoliciesRequest 请求对象
      * @return AsyncInvoker<NeutronListFirewallPoliciesRequest, NeutronListFirewallPoliciesResponse>
@@ -2070,8 +1944,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求的租户有权限操作的所有网络ACL规则信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListFirewallRulesRequest 请求对象
      * @return CompletableFuture<NeutronListFirewallRulesResponse>
@@ -2086,8 +1959,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求的租户有权限操作的所有网络ACL规则信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListFirewallRulesRequest 请求对象
      * @return AsyncInvoker<NeutronListFirewallRulesRequest, NeutronListFirewallRulesResponse>
@@ -2103,8 +1975,7 @@ public class VpcAsyncClient {
      *
      * 从某一网络ACL策略中移除一条网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronRemoveFirewallRuleRequest 请求对象
      * @return CompletableFuture<NeutronRemoveFirewallRuleResponse>
@@ -2119,8 +1990,7 @@ public class VpcAsyncClient {
      *
      * 从某一网络ACL策略中移除一条网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronRemoveFirewallRuleRequest 请求对象
      * @return AsyncInvoker<NeutronRemoveFirewallRuleRequest, NeutronRemoveFirewallRuleResponse>
@@ -2136,8 +2006,7 @@ public class VpcAsyncClient {
      *
      * 查询特定网络ACL组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowFirewallGroupRequest 请求对象
      * @return CompletableFuture<NeutronShowFirewallGroupResponse>
@@ -2152,8 +2021,7 @@ public class VpcAsyncClient {
      *
      * 查询特定网络ACL组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowFirewallGroupRequest 请求对象
      * @return AsyncInvoker<NeutronShowFirewallGroupRequest, NeutronShowFirewallGroupResponse>
@@ -2169,8 +2037,7 @@ public class VpcAsyncClient {
      *
      * 查询特定网络ACL策略详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowFirewallPolicyRequest 请求对象
      * @return CompletableFuture<NeutronShowFirewallPolicyResponse>
@@ -2185,8 +2052,7 @@ public class VpcAsyncClient {
      *
      * 查询特定网络ACL策略详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowFirewallPolicyRequest 请求对象
      * @return AsyncInvoker<NeutronShowFirewallPolicyRequest, NeutronShowFirewallPolicyResponse>
@@ -2202,8 +2068,7 @@ public class VpcAsyncClient {
      *
      * 查询特定网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowFirewallRuleRequest 请求对象
      * @return CompletableFuture<NeutronShowFirewallRuleResponse>
@@ -2218,8 +2083,7 @@ public class VpcAsyncClient {
      *
      * 查询特定网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowFirewallRuleRequest 请求对象
      * @return AsyncInvoker<NeutronShowFirewallRuleRequest, NeutronShowFirewallRuleResponse>
@@ -2235,8 +2099,7 @@ public class VpcAsyncClient {
      *
      * 更新网络ACL组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateFirewallGroupRequest 请求对象
      * @return CompletableFuture<NeutronUpdateFirewallGroupResponse>
@@ -2251,8 +2114,7 @@ public class VpcAsyncClient {
      *
      * 更新网络ACL组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateFirewallGroupRequest 请求对象
      * @return AsyncInvoker<NeutronUpdateFirewallGroupRequest, NeutronUpdateFirewallGroupResponse>
@@ -2268,8 +2130,7 @@ public class VpcAsyncClient {
      *
      * 更新网络ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateFirewallPolicyRequest 请求对象
      * @return CompletableFuture<NeutronUpdateFirewallPolicyResponse>
@@ -2284,8 +2145,7 @@ public class VpcAsyncClient {
      *
      * 更新网络ACL策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateFirewallPolicyRequest 请求对象
      * @return AsyncInvoker<NeutronUpdateFirewallPolicyRequest, NeutronUpdateFirewallPolicyResponse>
@@ -2301,8 +2161,7 @@ public class VpcAsyncClient {
      *
      * 更新网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateFirewallRuleRequest 请求对象
      * @return CompletableFuture<NeutronUpdateFirewallRuleResponse>
@@ -2317,8 +2176,7 @@ public class VpcAsyncClient {
      *
      * 更新网络ACL规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateFirewallRuleRequest 请求对象
      * @return AsyncInvoker<NeutronUpdateFirewallRuleRequest, NeutronUpdateFirewallRuleResponse>
@@ -2335,8 +2193,7 @@ public class VpcAsyncClient {
      * 为指定的VPC资源实例批量添加标签。
      * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateVpcTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateVpcTagsResponse>
@@ -2351,8 +2208,7 @@ public class VpcAsyncClient {
      * 为指定的VPC资源实例批量添加标签。
      * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateVpcTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateVpcTagsRequest, BatchCreateVpcTagsResponse>
@@ -2369,8 +2225,7 @@ public class VpcAsyncClient {
      * 为指定的VPC资源实例批量删除标签。
      * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteVpcTagsRequest 请求对象
      * @return CompletableFuture<BatchDeleteVpcTagsResponse>
@@ -2385,8 +2240,7 @@ public class VpcAsyncClient {
      * 为指定的VPC资源实例批量删除标签。
      * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteVpcTagsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteVpcTagsRequest, BatchDeleteVpcTagsResponse>
@@ -2402,8 +2256,7 @@ public class VpcAsyncClient {
      *
      * 创建虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcRequest 请求对象
      * @return CompletableFuture<CreateVpcResponse>
@@ -2417,8 +2270,7 @@ public class VpcAsyncClient {
      *
      * 创建虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcRequest 请求对象
      * @return AsyncInvoker<CreateVpcRequest, CreateVpcResponse>
@@ -2433,8 +2285,7 @@ public class VpcAsyncClient {
      * 给指定VPC资源实例增加标签信息
      * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcResourceTagRequest 请求对象
      * @return CompletableFuture<CreateVpcResourceTagResponse>
@@ -2450,8 +2301,7 @@ public class VpcAsyncClient {
      * 给指定VPC资源实例增加标签信息
      * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcResourceTagRequest 请求对象
      * @return AsyncInvoker<CreateVpcResourceTagRequest, CreateVpcResourceTagResponse>
@@ -2467,8 +2317,7 @@ public class VpcAsyncClient {
      *
      * 创建路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcRouteRequest 请求对象
      * @return CompletableFuture<CreateVpcRouteResponse>
@@ -2482,8 +2331,7 @@ public class VpcAsyncClient {
      *
      * 创建路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVpcRouteRequest 请求对象
      * @return AsyncInvoker<CreateVpcRouteRequest, CreateVpcRouteResponse>
@@ -2499,8 +2347,7 @@ public class VpcAsyncClient {
      *
      * 删除虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcRequest 请求对象
      * @return CompletableFuture<DeleteVpcResponse>
@@ -2514,8 +2361,7 @@ public class VpcAsyncClient {
      *
      * 删除虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcRequest 请求对象
      * @return AsyncInvoker<DeleteVpcRequest, DeleteVpcResponse>
@@ -2529,8 +2375,7 @@ public class VpcAsyncClient {
      *
      * 删除路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcRouteRequest 请求对象
      * @return CompletableFuture<DeleteVpcRouteResponse>
@@ -2544,8 +2389,7 @@ public class VpcAsyncClient {
      *
      * 删除路由
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcRouteRequest 请求对象
      * @return AsyncInvoker<DeleteVpcRouteRequest, DeleteVpcRouteResponse>
@@ -2562,8 +2406,7 @@ public class VpcAsyncClient {
      * 删除指定VPC资源实例的标签信息
      * 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcTagRequest 请求对象
      * @return CompletableFuture<DeleteVpcTagResponse>
@@ -2578,8 +2421,7 @@ public class VpcAsyncClient {
      * 删除指定VPC资源实例的标签信息
      * 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVpcTagRequest 请求对象
      * @return AsyncInvoker<DeleteVpcTagRequest, DeleteVpcTagResponse>
@@ -2594,8 +2436,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求的租户的所有路由列表，并根据过滤条件进行过滤。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcRoutesRequest 请求对象
      * @return CompletableFuture<ListVpcRoutesResponse>
@@ -2609,8 +2450,7 @@ public class VpcAsyncClient {
      *
      * 查询提交请求的租户的所有路由列表，并根据过滤条件进行过滤。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcRoutesRequest 请求对象
      * @return AsyncInvoker<ListVpcRoutesRequest, ListVpcRoutesResponse>
@@ -2625,8 +2465,7 @@ public class VpcAsyncClient {
      *
      * 查询租户在指定区域和实例类型的所有标签集合
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcTagsRequest 请求对象
      * @return CompletableFuture<ListVpcTagsResponse>
@@ -2640,8 +2479,7 @@ public class VpcAsyncClient {
      *
      * 查询租户在指定区域和实例类型的所有标签集合
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcTagsRequest 请求对象
      * @return AsyncInvoker<ListVpcTagsRequest, ListVpcTagsResponse>
@@ -2655,8 +2493,7 @@ public class VpcAsyncClient {
      *
      * 查询虚拟私有云列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcsRequest 请求对象
      * @return CompletableFuture<ListVpcsResponse>
@@ -2670,8 +2507,7 @@ public class VpcAsyncClient {
      *
      * 查询虚拟私有云列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcsRequest 请求对象
      * @return AsyncInvoker<ListVpcsRequest, ListVpcsResponse>
@@ -2685,8 +2521,7 @@ public class VpcAsyncClient {
      *
      * 使用标签过滤实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcsByTagsRequest 请求对象
      * @return CompletableFuture<ListVpcsByTagsResponse>
@@ -2700,8 +2535,7 @@ public class VpcAsyncClient {
      *
      * 使用标签过滤实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVpcsByTagsRequest 请求对象
      * @return AsyncInvoker<ListVpcsByTagsRequest, ListVpcsByTagsResponse>
@@ -2717,8 +2551,7 @@ public class VpcAsyncClient {
      *
      * 查询虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcRequest 请求对象
      * @return CompletableFuture<ShowVpcResponse>
@@ -2732,8 +2565,7 @@ public class VpcAsyncClient {
      *
      * 查询虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcRequest 请求对象
      * @return AsyncInvoker<ShowVpcRequest, ShowVpcResponse>
@@ -2747,8 +2579,7 @@ public class VpcAsyncClient {
      *
      * 查询路由详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcRouteRequest 请求对象
      * @return CompletableFuture<ShowVpcRouteResponse>
@@ -2762,8 +2593,7 @@ public class VpcAsyncClient {
      *
      * 查询路由详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcRouteRequest 请求对象
      * @return AsyncInvoker<ShowVpcRouteRequest, ShowVpcRouteResponse>
@@ -2778,8 +2608,7 @@ public class VpcAsyncClient {
      *
      * 查询指定VPC实例的标签信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcTagsRequest 请求对象
      * @return CompletableFuture<ShowVpcTagsResponse>
@@ -2793,8 +2622,7 @@ public class VpcAsyncClient {
      *
      * 查询指定VPC实例的标签信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVpcTagsRequest 请求对象
      * @return AsyncInvoker<ShowVpcTagsRequest, ShowVpcTagsResponse>
@@ -2808,8 +2636,7 @@ public class VpcAsyncClient {
      *
      * 更新虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcRequest 请求对象
      * @return CompletableFuture<UpdateVpcResponse>
@@ -2823,8 +2650,7 @@ public class VpcAsyncClient {
      *
      * 更新虚拟私有云。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVpcRequest 请求对象
      * @return AsyncInvoker<UpdateVpcRequest, UpdateVpcResponse>

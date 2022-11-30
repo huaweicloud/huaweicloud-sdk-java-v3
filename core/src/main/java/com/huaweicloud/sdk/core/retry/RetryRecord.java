@@ -129,14 +129,14 @@ public class RetryRecord<ResT> {
         }
         // In asynchronous cases, all throwable in retry would be thrown in CompletionException,
         // if this exception is thrown to the main thread, it could change to ExecutionException.
-        if (CompletionException.class.isAssignableFrom(throwable.getClass())) {
+        if (throwable instanceof CompletionException) {
             Throwable cause = throwable.getCause();
-            if (SdkException.class.isAssignableFrom(cause.getClass())) {
+            if (cause instanceof SdkException) {
                 handleSdkException((SdkException) cause);
             }
         }
         // In synchronous cases, throwable in retry would be thrown by SdkException
-        if (SdkException.class.isAssignableFrom(throwable.getClass())) {
+        if (throwable instanceof SdkException) {
             handleSdkException((SdkException) throwable);
         }
 

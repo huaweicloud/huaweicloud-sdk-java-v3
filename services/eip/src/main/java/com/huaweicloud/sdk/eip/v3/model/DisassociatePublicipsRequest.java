@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -15,11 +14,6 @@ public class DisassociatePublicipsRequest {
     @JsonProperty(value = "publicip_id")
 
     private String publicipId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
-
-    private DisassociatePublicipsRequestBody body;
 
     public DisassociatePublicipsRequest withPublicipId(String publicipId) {
         this.publicipId = publicipId;
@@ -38,32 +32,6 @@ public class DisassociatePublicipsRequest {
         this.publicipId = publicipId;
     }
 
-    public DisassociatePublicipsRequest withBody(DisassociatePublicipsRequestBody body) {
-        this.body = body;
-        return this;
-    }
-
-    public DisassociatePublicipsRequest withBody(Consumer<DisassociatePublicipsRequestBody> bodySetter) {
-        if (this.body == null) {
-            this.body = new DisassociatePublicipsRequestBody();
-            bodySetter.accept(this.body);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get body
-     * @return body
-     */
-    public DisassociatePublicipsRequestBody getBody() {
-        return body;
-    }
-
-    public void setBody(DisassociatePublicipsRequestBody body) {
-        this.body = body;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -73,13 +41,12 @@ public class DisassociatePublicipsRequest {
             return false;
         }
         DisassociatePublicipsRequest disassociatePublicipsRequest = (DisassociatePublicipsRequest) o;
-        return Objects.equals(this.publicipId, disassociatePublicipsRequest.publicipId)
-            && Objects.equals(this.body, disassociatePublicipsRequest.body);
+        return Objects.equals(this.publicipId, disassociatePublicipsRequest.publicipId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(publicipId, body);
+        return Objects.hash(publicipId);
     }
 
     @Override
@@ -87,7 +54,6 @@ public class DisassociatePublicipsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class DisassociatePublicipsRequest {\n");
         sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

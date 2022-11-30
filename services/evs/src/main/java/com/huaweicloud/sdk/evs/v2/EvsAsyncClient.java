@@ -27,8 +27,7 @@ public class EvsAsyncClient {
      * 添加标签时，如果云硬盘的标签已存在相同key，则会覆盖已有标签。
      * 单个云硬盘最多支持创建10个标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateVolumeTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateVolumeTagsResponse>
@@ -46,8 +45,7 @@ public class EvsAsyncClient {
      * 添加标签时，如果云硬盘的标签已存在相同key，则会覆盖已有标签。
      * 单个云硬盘最多支持创建10个标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateVolumeTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateVolumeTagsRequest, BatchCreateVolumeTagsResponse>
@@ -63,8 +61,7 @@ public class EvsAsyncClient {
      *
      * 为指定云硬盘批量删除标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteVolumeTagsRequest 请求对象
      * @return CompletableFuture<BatchDeleteVolumeTagsResponse>
@@ -79,8 +76,7 @@ public class EvsAsyncClient {
      *
      * 为指定云硬盘批量删除标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteVolumeTagsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteVolumeTagsRequest, BatchDeleteVolumeTagsResponse>
@@ -96,8 +92,7 @@ public class EvsAsyncClient {
      *
      * 通过云硬盘过户记录ID以及身份认证密钥来接受云硬盘过户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CinderAcceptVolumeTransferRequest 请求对象
      * @return CompletableFuture<CinderAcceptVolumeTransferResponse>
@@ -112,8 +107,7 @@ public class EvsAsyncClient {
      *
      * 通过云硬盘过户记录ID以及身份认证密钥来接受云硬盘过户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CinderAcceptVolumeTransferRequest 请求对象
      * @return AsyncInvoker<CinderAcceptVolumeTransferRequest, CinderAcceptVolumeTransferResponse>
@@ -130,8 +124,7 @@ public class EvsAsyncClient {
      * 指定云硬盘来创建云硬盘过户记录，创建成功后，会返回过户记录ID以及身份认证密钥。
      * 云硬盘在过户过程中的状态变化如下：创建云硬盘过户后，云硬盘状态由“available”变为“awaiting-transfer”。当云硬盘过户被接收后，云硬盘状态变为“available”。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CinderCreateVolumeTransferRequest 请求对象
      * @return CompletableFuture<CinderCreateVolumeTransferResponse>
@@ -147,8 +140,7 @@ public class EvsAsyncClient {
      * 指定云硬盘来创建云硬盘过户记录，创建成功后，会返回过户记录ID以及身份认证密钥。
      * 云硬盘在过户过程中的状态变化如下：创建云硬盘过户后，云硬盘状态由“available”变为“awaiting-transfer”。当云硬盘过户被接收后，云硬盘状态变为“available”。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CinderCreateVolumeTransferRequest 请求对象
      * @return AsyncInvoker<CinderCreateVolumeTransferRequest, CinderCreateVolumeTransferResponse>
@@ -164,8 +156,7 @@ public class EvsAsyncClient {
      *
      * 当云硬盘过户未被接受时，您可以删除云硬盘过户记录，接受后则无法执行删除操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CinderDeleteVolumeTransferRequest 请求对象
      * @return CompletableFuture<CinderDeleteVolumeTransferResponse>
@@ -180,8 +171,7 @@ public class EvsAsyncClient {
      *
      * 当云硬盘过户未被接受时，您可以删除云硬盘过户记录，接受后则无法执行删除操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CinderDeleteVolumeTransferRequest 请求对象
      * @return AsyncInvoker<CinderDeleteVolumeTransferRequest, CinderDeleteVolumeTransferResponse>
@@ -197,8 +187,7 @@ public class EvsAsyncClient {
      *
      * 查询所有的可用分区信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CinderListAvailabilityZonesRequest 请求对象
      * @return CompletableFuture<CinderListAvailabilityZonesResponse>
@@ -213,8 +202,7 @@ public class EvsAsyncClient {
      *
      * 查询所有的可用分区信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CinderListAvailabilityZonesRequest 请求对象
      * @return AsyncInvoker<CinderListAvailabilityZonesRequest, CinderListAvailabilityZonesResponse>
@@ -230,8 +218,7 @@ public class EvsAsyncClient {
      *
      * 查询租户的详细配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CinderListQuotasRequest 请求对象
      * @return CompletableFuture<CinderListQuotasResponse>
@@ -245,8 +232,7 @@ public class EvsAsyncClient {
      *
      * 查询租户的详细配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CinderListQuotasRequest 请求对象
      * @return AsyncInvoker<CinderListQuotasRequest, CinderListQuotasResponse>
@@ -262,8 +248,7 @@ public class EvsAsyncClient {
      *
      * 查询当前租户下所有云硬盘的过户记录列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CinderListVolumeTransfersRequest 请求对象
      * @return CompletableFuture<CinderListVolumeTransfersResponse>
@@ -278,8 +263,7 @@ public class EvsAsyncClient {
      *
      * 查询当前租户下所有云硬盘的过户记录列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CinderListVolumeTransfersRequest 请求对象
      * @return AsyncInvoker<CinderListVolumeTransfersRequest, CinderListVolumeTransfersResponse>
@@ -295,8 +279,7 @@ public class EvsAsyncClient {
      *
      * 查询云硬盘类型列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CinderListVolumeTypesRequest 请求对象
      * @return CompletableFuture<CinderListVolumeTypesResponse>
@@ -311,8 +294,7 @@ public class EvsAsyncClient {
      *
      * 查询云硬盘类型列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CinderListVolumeTypesRequest 请求对象
      * @return AsyncInvoker<CinderListVolumeTypesRequest, CinderListVolumeTypesResponse>
@@ -328,8 +310,7 @@ public class EvsAsyncClient {
      *
      * 查询单个云硬盘的过户记录详情，比如过户记录创建时间、ID以及名称等信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CinderShowVolumeTransferRequest 请求对象
      * @return CompletableFuture<CinderShowVolumeTransferResponse>
@@ -344,8 +325,7 @@ public class EvsAsyncClient {
      *
      * 查询单个云硬盘的过户记录详情，比如过户记录创建时间、ID以及名称等信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CinderShowVolumeTransferRequest 请求对象
      * @return AsyncInvoker<CinderShowVolumeTransferRequest, CinderShowVolumeTransferResponse>
@@ -361,8 +341,7 @@ public class EvsAsyncClient {
      *
      * 创建云硬盘快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSnapshotRequest 请求对象
      * @return CompletableFuture<CreateSnapshotResponse>
@@ -376,8 +355,7 @@ public class EvsAsyncClient {
      *
      * 创建云硬盘快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSnapshotRequest 请求对象
      * @return AsyncInvoker<CreateSnapshotRequest, CreateSnapshotResponse>
@@ -398,8 +376,7 @@ public class EvsAsyncClient {
      * - 如果您需要查询订单的资源开通详情，请参考\&quot;[查询订单的资源开通详情](https://support.huaweicloud.com/api-oce/api_order_00001.html)\&quot;。
      * - 如果您需要退订该包周期资源，请参考“[退订包周期资源](https://support.huaweicloud.com/api-oce/zh-cn_topic_0082522030.html)”。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVolumeRequest 请求对象
      * @return CompletableFuture<CreateVolumeResponse>
@@ -418,8 +395,7 @@ public class EvsAsyncClient {
      * - 如果您需要查询订单的资源开通详情，请参考\&quot;[查询订单的资源开通详情](https://support.huaweicloud.com/api-oce/api_order_00001.html)\&quot;。
      * - 如果您需要退订该包周期资源，请参考“[退订包周期资源](https://support.huaweicloud.com/api-oce/zh-cn_topic_0082522030.html)”。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVolumeRequest 请求对象
      * @return AsyncInvoker<CreateVolumeRequest, CreateVolumeResponse>
@@ -434,8 +410,7 @@ public class EvsAsyncClient {
      *
      * 删除云硬盘快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSnapshotRequest 请求对象
      * @return CompletableFuture<DeleteSnapshotResponse>
@@ -449,8 +424,7 @@ public class EvsAsyncClient {
      *
      * 删除云硬盘快照。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSnapshotRequest 请求对象
      * @return AsyncInvoker<DeleteSnapshotRequest, DeleteSnapshotResponse>
@@ -466,8 +440,7 @@ public class EvsAsyncClient {
      *
      * 删除一个云硬盘。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVolumeRequest 请求对象
      * @return CompletableFuture<DeleteVolumeResponse>
@@ -481,8 +454,7 @@ public class EvsAsyncClient {
      *
      * 删除一个云硬盘。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVolumeRequest 请求对象
      * @return AsyncInvoker<DeleteVolumeRequest, DeleteVolumeResponse>
@@ -497,8 +469,7 @@ public class EvsAsyncClient {
      *
      * 查询云硬盘快照详细列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSnapshotsRequest 请求对象
      * @return CompletableFuture<ListSnapshotsResponse>
@@ -512,8 +483,7 @@ public class EvsAsyncClient {
      *
      * 查询云硬盘快照详细列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSnapshotsRequest 请求对象
      * @return AsyncInvoker<ListSnapshotsRequest, ListSnapshotsResponse>
@@ -528,8 +498,7 @@ public class EvsAsyncClient {
      *
      * 获取某个租户的所有云硬盘资源的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVolumeTagsRequest 请求对象
      * @return CompletableFuture<ListVolumeTagsResponse>
@@ -543,8 +512,7 @@ public class EvsAsyncClient {
      *
      * 获取某个租户的所有云硬盘资源的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVolumeTagsRequest 请求对象
      * @return AsyncInvoker<ListVolumeTagsRequest, ListVolumeTagsResponse>
@@ -560,8 +528,7 @@ public class EvsAsyncClient {
      *
      * 查询所有云硬盘的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVolumesRequest 请求对象
      * @return CompletableFuture<ListVolumesResponse>
@@ -575,8 +542,7 @@ public class EvsAsyncClient {
      *
      * 查询所有云硬盘的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVolumesRequest 请求对象
      * @return AsyncInvoker<ListVolumesRequest, ListVolumesResponse>
@@ -590,8 +556,7 @@ public class EvsAsyncClient {
      *
      * 通过标签查询云硬盘资源实例详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVolumesByTagsRequest 请求对象
      * @return CompletableFuture<ListVolumesByTagsResponse>
@@ -605,8 +570,7 @@ public class EvsAsyncClient {
      *
      * 通过标签查询云硬盘资源实例详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVolumesByTagsRequest 请求对象
      * @return AsyncInvoker<ListVolumesByTagsRequest, ListVolumesByTagsResponse>
@@ -627,8 +591,7 @@ public class EvsAsyncClient {
      * - 如果您需要查询订单的资源开通详情，请参考\&quot;[查询订单的资源开通详情](https://support.huaweicloud.com/api-oce/api_order_00001.html)\&quot;。
      * - 如果您需要退订该包周期资源，请参考“[退订包周期资源](https://support.huaweicloud.com/api-oce/zh-cn_topic_0082522030.html)”。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeVolumeRequest 请求对象
      * @return CompletableFuture<ResizeVolumeResponse>
@@ -647,8 +610,7 @@ public class EvsAsyncClient {
      * - 如果您需要查询订单的资源开通详情，请参考\&quot;[查询订单的资源开通详情](https://support.huaweicloud.com/api-oce/api_order_00001.html)\&quot;。
      * - 如果您需要退订该包周期资源，请参考“[退订包周期资源](https://support.huaweicloud.com/api-oce/zh-cn_topic_0082522030.html)”。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeVolumeRequest 请求对象
      * @return AsyncInvoker<ResizeVolumeRequest, ResizeVolumeResponse>
@@ -663,8 +625,7 @@ public class EvsAsyncClient {
      *
      * 将快照数据回滚到云硬盘。支持企业项目授权功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RollbackSnapshotRequest 请求对象
      * @return CompletableFuture<RollbackSnapshotResponse>
@@ -678,8 +639,7 @@ public class EvsAsyncClient {
      *
      * 将快照数据回滚到云硬盘。支持企业项目授权功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RollbackSnapshotRequest 请求对象
      * @return AsyncInvoker<RollbackSnapshotRequest, RollbackSnapshotResponse>
@@ -696,8 +656,7 @@ public class EvsAsyncClient {
      * 查询Job的执行状态。
      * 可用于查询创建云硬盘，扩容云硬盘，删除云硬盘等API的执行状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return CompletableFuture<ShowJobResponse>
@@ -712,8 +671,7 @@ public class EvsAsyncClient {
      * 查询Job的执行状态。
      * 可用于查询创建云硬盘，扩容云硬盘，删除云硬盘等API的执行状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>
@@ -727,8 +685,7 @@ public class EvsAsyncClient {
      *
      * 查询单个云硬盘快照信息。支持企业项目授权功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSnapshotRequest 请求对象
      * @return CompletableFuture<ShowSnapshotResponse>
@@ -742,8 +699,7 @@ public class EvsAsyncClient {
      *
      * 查询单个云硬盘快照信息。支持企业项目授权功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSnapshotRequest 请求对象
      * @return AsyncInvoker<ShowSnapshotRequest, ShowSnapshotResponse>
@@ -758,8 +714,7 @@ public class EvsAsyncClient {
      *
      * 查询单个云硬盘的详细信息。支持企业项目授权功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVolumeRequest 请求对象
      * @return CompletableFuture<ShowVolumeResponse>
@@ -773,8 +728,7 @@ public class EvsAsyncClient {
      *
      * 查询单个云硬盘的详细信息。支持企业项目授权功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVolumeRequest 请求对象
      * @return AsyncInvoker<ShowVolumeRequest, ShowVolumeResponse>
@@ -788,8 +742,7 @@ public class EvsAsyncClient {
      *
      * 查询指定云硬盘的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVolumeTagsRequest 请求对象
      * @return CompletableFuture<ShowVolumeTagsResponse>
@@ -803,8 +756,7 @@ public class EvsAsyncClient {
      *
      * 查询指定云硬盘的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVolumeTagsRequest 请求对象
      * @return AsyncInvoker<ShowVolumeTagsRequest, ShowVolumeTagsResponse>
@@ -820,8 +772,7 @@ public class EvsAsyncClient {
      *
      * 更新云硬盘快照。支持企业项目授权功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSnapshotRequest 请求对象
      * @return CompletableFuture<UpdateSnapshotResponse>
@@ -835,8 +786,7 @@ public class EvsAsyncClient {
      *
      * 更新云硬盘快照。支持企业项目授权功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSnapshotRequest 请求对象
      * @return AsyncInvoker<UpdateSnapshotRequest, UpdateSnapshotResponse>
@@ -852,8 +802,7 @@ public class EvsAsyncClient {
      *
      * 更新一个云硬盘的名称和描述。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVolumeRequest 请求对象
      * @return CompletableFuture<UpdateVolumeResponse>
@@ -867,8 +816,7 @@ public class EvsAsyncClient {
      *
      * 更新一个云硬盘的名称和描述。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVolumeRequest 请求对象
      * @return AsyncInvoker<UpdateVolumeRequest, UpdateVolumeResponse>
@@ -883,8 +831,7 @@ public class EvsAsyncClient {
      *
      * 查询接口版本信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVersionsRequest 请求对象
      * @return CompletableFuture<ListVersionsResponse>
@@ -898,8 +845,7 @@ public class EvsAsyncClient {
      *
      * 查询接口版本信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVersionsRequest 请求对象
      * @return AsyncInvoker<ListVersionsRequest, ListVersionsResponse>
@@ -914,8 +860,7 @@ public class EvsAsyncClient {
      *
      * 查询接口的指定版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVersionRequest 请求对象
      * @return CompletableFuture<ShowVersionResponse>
@@ -929,8 +874,7 @@ public class EvsAsyncClient {
      *
      * 查询接口的指定版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVersionRequest 请求对象
      * @return AsyncInvoker<ShowVersionRequest, ShowVersionResponse>

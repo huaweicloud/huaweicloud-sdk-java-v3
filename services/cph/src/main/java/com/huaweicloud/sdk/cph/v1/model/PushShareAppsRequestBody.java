@@ -62,6 +62,8 @@ public class PushShareAppsRequestBody {
 
     /**
      * 是否预装应用，1：预装，0：不预装；默认不预装
+     * minimum: -128
+     * maximum: 128
      * @return preInstallApp
      */
     public Integer getPreInstallApp() {

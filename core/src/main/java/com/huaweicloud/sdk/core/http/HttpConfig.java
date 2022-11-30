@@ -24,10 +24,12 @@ package com.huaweicloud.sdk.core.http;
 import com.huaweicloud.sdk.core.HttpListener;
 import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
 
+import com.huaweicloud.sdk.core.utils.RandomUtils;
 import okhttp3.ConnectionPool;
 import okhttp3.Dispatcher;
 import okhttp3.internal.Util;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -82,6 +84,8 @@ public class HttpConfig {
     private Dispatcher dispatcher = new Dispatcher(DEFAULT_EXECUTOR_SERVICE);
 
     private SigningAlgorithm signingAlgorithm = SigningAlgorithm.getDefault();
+
+    private SecureRandom secureRandom = RandomUtils.getDefaultSecureRandom();
 
     public int getTimeout() {
         return timeout;
@@ -261,6 +265,19 @@ public class HttpConfig {
 
     public HttpConfig withSigningAlgorithm(SigningAlgorithm signingAlgorithm) {
         this.signingAlgorithm = signingAlgorithm;
+        return this;
+    }
+
+    public SecureRandom getSecureRandom() {
+        return secureRandom;
+    }
+
+    public void setSecureRandom(SecureRandom secureRandom) {
+        this.secureRandom = secureRandom;
+    }
+
+    public HttpConfig withSecureRandom(SecureRandom secureRandom) {
+        this.secureRandom = secureRandom;
         return this;
     }
 }

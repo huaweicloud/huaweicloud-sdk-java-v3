@@ -252,6 +252,11 @@ public class BackendApiBase {
     private Boolean enableClientSsl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retry_count")
+
+    private String retryCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
@@ -425,6 +430,23 @@ public class BackendApiBase {
         this.enableClientSsl = enableClientSsl;
     }
 
+    public BackendApiBase withRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+        return this;
+    }
+
+    /**
+     * 请求后端服务的重试次数，默认为-1，范围[-1,10]
+     * @return retryCount
+     */
+    public String getRetryCount() {
+        return retryCount;
+    }
+
+    public void setRetryCount(String retryCount) {
+        this.retryCount = retryCount;
+    }
+
     public BackendApiBase withId(String id) {
         this.id = id;
         return this;
@@ -511,7 +533,8 @@ public class BackendApiBase {
             && Objects.equals(this.reqUri, backendApiBase.reqUri)
             && Objects.equals(this.timeout, backendApiBase.timeout)
             && Objects.equals(this.enableClientSsl, backendApiBase.enableClientSsl)
-            && Objects.equals(this.id, backendApiBase.id) && Objects.equals(this.status, backendApiBase.status)
+            && Objects.equals(this.retryCount, backendApiBase.retryCount) && Objects.equals(this.id, backendApiBase.id)
+            && Objects.equals(this.status, backendApiBase.status)
             && Objects.equals(this.registerTime, backendApiBase.registerTime)
             && Objects.equals(this.updateTime, backendApiBase.updateTime);
     }
@@ -527,6 +550,7 @@ public class BackendApiBase {
             reqUri,
             timeout,
             enableClientSsl,
+            retryCount,
             id,
             status,
             registerTime,
@@ -546,6 +570,7 @@ public class BackendApiBase {
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    enableClientSsl: ").append(toIndentedString(enableClientSsl)).append("\n");
+        sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    registerTime: ").append(toIndentedString(registerTime)).append("\n");

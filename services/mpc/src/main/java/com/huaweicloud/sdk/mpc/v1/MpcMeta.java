@@ -136,6 +136,193 @@ public class MpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateAgenciesTaskRequest, CreateAgenciesTaskResponse> createAgenciesTask =
+        genForcreateAgenciesTask();
+
+    private static HttpRequestDef<CreateAgenciesTaskRequest, CreateAgenciesTaskResponse> genForcreateAgenciesTask() {
+        // basic
+        HttpRequestDef.Builder<CreateAgenciesTaskRequest, CreateAgenciesTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAgenciesTaskRequest.class, CreateAgenciesTaskResponse.class)
+                .withName("CreateAgenciesTask")
+                .withUri("/v1/{project_id}/agencies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AgenciesTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AgenciesTaskReq.class),
+            f -> f.withMarshaller(CreateAgenciesTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllBucketsRequest, ListAllBucketsResponse> listAllBuckets =
+        genForlistAllBuckets();
+
+    private static HttpRequestDef<ListAllBucketsRequest, ListAllBucketsResponse> genForlistAllBuckets() {
+        // basic
+        HttpRequestDef.Builder<ListAllBucketsRequest, ListAllBucketsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAllBucketsRequest.class, ListAllBucketsResponse.class)
+                .withName("ListAllBuckets")
+                .withUri("/v1/{project_id}/buckets")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllObsObjListRequest, ListAllObsObjListResponse> listAllObsObjList =
+        genForlistAllObsObjList();
+
+    private static HttpRequestDef<ListAllObsObjListRequest, ListAllObsObjListResponse> genForlistAllObsObjList() {
+        // basic
+        HttpRequestDef.Builder<ListAllObsObjListRequest, ListAllObsObjListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAllObsObjListRequest.class, ListAllObsObjListResponse.class)
+                .withName("ListAllObsObjList")
+                .withUri("/v1.0-ext/{project_id}/objects")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bucket",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllObsObjListRequest::getBucket, (req, v) -> {
+                req.setBucket(v);
+            }));
+        builder.<String>withRequestField("prefix",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllObsObjListRequest::getPrefix, (req, v) -> {
+                req.setPrefix(v);
+            }));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllObsObjListRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNotifyEventRequest, ListNotifyEventResponse> listNotifyEvent =
+        genForlistNotifyEvent();
+
+    private static HttpRequestDef<ListNotifyEventRequest, ListNotifyEventResponse> genForlistNotifyEvent() {
+        // basic
+        HttpRequestDef.Builder<ListNotifyEventRequest, ListNotifyEventResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListNotifyEventRequest.class, ListNotifyEventResponse.class)
+                .withName("ListNotifyEvent")
+                .withUri("/v1/{project_id}/notification/event")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNotifySmnTopicConfigRequest, ListNotifySmnTopicConfigResponse> listNotifySmnTopicConfig =
+        genForlistNotifySmnTopicConfig();
+
+    private static HttpRequestDef<ListNotifySmnTopicConfigRequest, ListNotifySmnTopicConfigResponse> genForlistNotifySmnTopicConfig() {
+        // basic
+        HttpRequestDef.Builder<ListNotifySmnTopicConfigRequest, ListNotifySmnTopicConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListNotifySmnTopicConfigRequest.class, ListNotifySmnTopicConfigResponse.class)
+                .withName("ListNotifySmnTopicConfig")
+                .withUri("/v1/{project_id}/notification")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NotifySmnTopicConfigRequest, NotifySmnTopicConfigResponse> notifySmnTopicConfig =
+        genFornotifySmnTopicConfig();
+
+    private static HttpRequestDef<NotifySmnTopicConfigRequest, NotifySmnTopicConfigResponse> genFornotifySmnTopicConfig() {
+        // basic
+        HttpRequestDef.Builder<NotifySmnTopicConfigRequest, NotifySmnTopicConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, NotifySmnTopicConfigRequest.class, NotifySmnTopicConfigResponse.class)
+            .withName("NotifySmnTopicConfig")
+            .withUri("/v1/{project_id}/notification")
+            .withContentType("application/json");
+
+        // requests
+        builder.<NotificationConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(NotificationConfigReq.class),
+            f -> f.withMarshaller(NotifySmnTopicConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAgenciesTaskRequest, ShowAgenciesTaskResponse> showAgenciesTask =
+        genForshowAgenciesTask();
+
+    private static HttpRequestDef<ShowAgenciesTaskRequest, ShowAgenciesTaskResponse> genForshowAgenciesTask() {
+        // basic
+        HttpRequestDef.Builder<ShowAgenciesTaskRequest, ShowAgenciesTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAgenciesTaskRequest.class, ShowAgenciesTaskResponse.class)
+                .withName("ShowAgenciesTask")
+                .withUri("/v1/{project_id}/agencies")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> updateBucketAuthorized =
+        genForupdateBucketAuthorized();
+
+    private static HttpRequestDef<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> genForupdateBucketAuthorized() {
+        // basic
+        HttpRequestDef.Builder<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateBucketAuthorizedRequest.class, UpdateBucketAuthorizedResponse.class)
+            .withName("UpdateBucketAuthorized")
+            .withUri("/v1/{project_id}/authority")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BucketAuthorizedReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BucketAuthorizedReq.class),
+            f -> f.withMarshaller(UpdateBucketAuthorizedRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateEditingJobRequest, CreateEditingJobResponse> createEditingJob =
         genForcreateEditingJob();
 
@@ -1445,6 +1632,73 @@ public class MpcMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(DeleteTranscodingTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTranscodingTaskByConsoleRequest, DeleteTranscodingTaskByConsoleResponse> deleteTranscodingTaskByConsole =
+        genFordeleteTranscodingTaskByConsole();
+
+    private static HttpRequestDef<DeleteTranscodingTaskByConsoleRequest, DeleteTranscodingTaskByConsoleResponse> genFordeleteTranscodingTaskByConsole() {
+        // basic
+        HttpRequestDef.Builder<DeleteTranscodingTaskByConsoleRequest, DeleteTranscodingTaskByConsoleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteTranscodingTaskByConsoleRequest.class,
+                    DeleteTranscodingTaskByConsoleResponse.class)
+                .withName("DeleteTranscodingTaskByConsole")
+                .withUri("/v1/{project_id}/transcodings/task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteTranscodingTaskByConsoleRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListStatSummaryRequest, ListStatSummaryResponse> listStatSummary =
+        genForlistStatSummary();
+
+    private static HttpRequestDef<ListStatSummaryRequest, ListStatSummaryResponse> genForlistStatSummary() {
+        // basic
+        HttpRequestDef.Builder<ListStatSummaryRequest, ListStatSummaryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListStatSummaryRequest.class, ListStatSummaryResponse.class)
+                .withName("ListStatSummary")
+                .withUri("/v1/{project_id}/transcodings/summaries")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStatSummaryRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStatSummaryRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<String>withRequestField("stat_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStatSummaryRequest::getStatType, (req, v) -> {
+                req.setStatType(v);
             }));
 
         // response

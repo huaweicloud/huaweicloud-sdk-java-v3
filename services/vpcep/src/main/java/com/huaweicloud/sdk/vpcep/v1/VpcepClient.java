@@ -23,8 +23,7 @@ public class VpcepClient {
      * 功能介绍
      * 接受或者拒绝终端节点连接到当前的终端节点服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AcceptOrRejectEndpointRequest 请求对象
      * @return AcceptOrRejectEndpointResponse
@@ -39,8 +38,7 @@ public class VpcepClient {
      * 功能介绍
      * 接受或者拒绝终端节点连接到当前的终端节点服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AcceptOrRejectEndpointRequest 请求对象
      * @return SyncInvoker<AcceptOrRejectEndpointRequest, AcceptOrRejectEndpointResponse>
@@ -59,8 +57,7 @@ public class VpcepClient {
      * 说明
      * 本帐号默认在自身用户的终端节点服务的白名单中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddOrRemoveServicePermissionsRequest 请求对象
      * @return AddOrRemoveServicePermissionsResponse
@@ -78,8 +75,7 @@ public class VpcepClient {
      * 说明
      * 本帐号默认在自身用户的终端节点服务的白名单中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddOrRemoveServicePermissionsRequest 请求对象
      * @return SyncInvoker<AddOrRemoveServicePermissionsRequest, AddOrRemoveServicePermissionsResponse>
@@ -98,8 +94,7 @@ public class VpcepClient {
      * 说明
      * 本帐号默认在自身用户的终端节点服务的白名单中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddEndpointServicePermissionsRequest 请求对象
      * @return BatchAddEndpointServicePermissionsResponse
@@ -117,8 +112,7 @@ public class VpcepClient {
      * 说明
      * 本帐号默认在自身用户的终端节点服务的白名单中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddEndpointServicePermissionsRequest 请求对象
      * @return SyncInvoker<BatchAddEndpointServicePermissionsRequest, BatchAddEndpointServicePermissionsResponse>
@@ -135,8 +129,7 @@ public class VpcepClient {
      * 功能介绍
      * 批量删除当前用户下终端节点服务的白名单
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchRemoveEndpointServicePermissionsRequest 请求对象
      * @return BatchRemoveEndpointServicePermissionsResponse
@@ -152,8 +145,7 @@ public class VpcepClient {
      * 功能介绍
      * 批量删除当前用户下终端节点服务的白名单
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchRemoveEndpointServicePermissionsRequest 请求对象
      * @return SyncInvoker<BatchRemoveEndpointServicePermissionsRequest, BatchRemoveEndpointServicePermissionsResponse>
@@ -170,8 +162,7 @@ public class VpcepClient {
      * 功能介绍
      * 创建终端节点，以便访问终端节点服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEndpointRequest 请求对象
      * @return CreateEndpointResponse
@@ -186,8 +177,7 @@ public class VpcepClient {
      * 功能介绍
      * 创建终端节点，以便访问终端节点服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEndpointRequest 请求对象
      * @return SyncInvoker<CreateEndpointRequest, CreateEndpointResponse>
@@ -208,8 +198,7 @@ public class VpcepClient {
      * 该接口为异步接口，调用成功会返回200状态码，说明请求已正常下发。
      * 通常创建终端节点服务需要1~2分钟，可以通过查询终端节点服务详情查看创建结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEndpointServiceRequest 请求对象
      * @return CreateEndpointServiceResponse
@@ -228,8 +217,7 @@ public class VpcepClient {
      * 该接口为异步接口，调用成功会返回200状态码，说明请求已正常下发。
      * 通常创建终端节点服务需要1~2分钟，可以通过查询终端节点服务详情查看创建结果。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEndpointServiceRequest 请求对象
      * @return SyncInvoker<CreateEndpointServiceRequest, CreateEndpointServiceResponse>
@@ -246,8 +234,7 @@ public class VpcepClient {
      * 功能介绍
      * 删除终端节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEndpointRequest 请求对象
      * @return DeleteEndpointResponse
@@ -262,8 +249,7 @@ public class VpcepClient {
      * 功能介绍
      * 删除终端节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEndpointRequest 请求对象
      * @return SyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse>
@@ -280,8 +266,7 @@ public class VpcepClient {
      * 功能介绍
      * 删除网关型终端节点policy。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEndpointPolicyRequest 请求对象
      * @return DeleteEndpointPolicyResponse
@@ -296,8 +281,7 @@ public class VpcepClient {
      * 功能介绍
      * 删除网关型终端节点policy。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEndpointPolicyRequest 请求对象
      * @return SyncInvoker<DeleteEndpointPolicyRequest, DeleteEndpointPolicyResponse>
@@ -314,8 +298,7 @@ public class VpcepClient {
      * 功能介绍
      * 删除终端节点服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEndpointServiceRequest 请求对象
      * @return DeleteEndpointServiceResponse
@@ -330,8 +313,7 @@ public class VpcepClient {
      * 功能介绍
      * 删除终端节点服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEndpointServiceRequest 请求对象
      * @return SyncInvoker<DeleteEndpointServiceRequest, DeleteEndpointServiceResponse>
@@ -348,8 +330,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询终端节点的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointInfoDetailsRequest 请求对象
      * @return ListEndpointInfoDetailsResponse
@@ -364,8 +345,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询终端节点的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointInfoDetailsRequest 请求对象
      * @return SyncInvoker<ListEndpointInfoDetailsRequest, ListEndpointInfoDetailsResponse>
@@ -382,8 +362,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询当前用户下的终端节点服务的列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointServiceRequest 请求对象
      * @return ListEndpointServiceResponse
@@ -398,8 +377,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询当前用户下的终端节点服务的列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointServiceRequest 请求对象
      * @return SyncInvoker<ListEndpointServiceRequest, ListEndpointServiceResponse>
@@ -416,8 +394,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询当前用户下的终端节点的列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointsRequest 请求对象
      * @return ListEndpointsResponse
@@ -432,8 +409,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询当前用户下的终端节点的列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointsRequest 请求对象
      * @return SyncInvoker<ListEndpointsRequest, ListEndpointsResponse>
@@ -448,8 +424,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询用户的资源配额，包括终端节点服务和终端节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotaDetailsRequest 请求对象
      * @return ListQuotaDetailsResponse
@@ -464,8 +439,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询用户的资源配额，包括终端节点服务和终端节点。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotaDetailsRequest 请求对象
      * @return SyncInvoker<ListQuotaDetailsRequest, ListQuotaDetailsResponse>
@@ -482,8 +456,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询连接当前用户下的某一个终端节点服务的连接列表。marker_id是连接的唯一标识。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceConnectionsRequest 请求对象
      * @return ListServiceConnectionsResponse
@@ -498,8 +471,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询连接当前用户下的某一个终端节点服务的连接列表。marker_id是连接的唯一标识。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceConnectionsRequest 请求对象
      * @return SyncInvoker<ListServiceConnectionsRequest, ListServiceConnectionsResponse>
@@ -516,8 +488,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询终端节点服务的概要信息， 此接口是供创建终端节点的用户来查询需要连接的终端节点服务信息。 此接口既可以方便其他用户查询到您的终端节点服务概要信息, 又可以避免您的终端节点服务的细节信息暴露给其他用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceDescribeDetailsRequest 请求对象
      * @return ListServiceDescribeDetailsResponse
@@ -532,8 +503,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询终端节点服务的概要信息， 此接口是供创建终端节点的用户来查询需要连接的终端节点服务信息。 此接口既可以方便其他用户查询到您的终端节点服务概要信息, 又可以避免您的终端节点服务的细节信息暴露给其他用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceDescribeDetailsRequest 请求对象
      * @return SyncInvoker<ListServiceDescribeDetailsRequest, ListServiceDescribeDetailsResponse>
@@ -550,8 +520,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询终端节点服务的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceDetailsRequest 请求对象
      * @return ListServiceDetailsResponse
@@ -566,8 +535,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询终端节点服务的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServiceDetailsRequest 请求对象
      * @return SyncInvoker<ListServiceDetailsRequest, ListServiceDetailsResponse>
@@ -586,8 +554,7 @@ public class VpcepClient {
      * 说明
      * 本帐号默认在当前用户下终端节点服务的白名单中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServicePermissionsDetailsRequest 请求对象
      * @return ListServicePermissionsDetailsResponse
@@ -605,8 +572,7 @@ public class VpcepClient {
      * 说明
      * 本帐号默认在当前用户下终端节点服务的白名单中。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServicePermissionsDetailsRequest 请求对象
      * @return SyncInvoker<ListServicePermissionsDetailsRequest, ListServicePermissionsDetailsResponse>
@@ -624,8 +590,7 @@ public class VpcepClient {
      * 查询公共终端节点服务的列表，公共终端节点服务是所有用户可见且可连接的终端节点服务，
      * 由运维人员创建，用户可直接使用，但无权创建。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServicePublicDetailsRequest 请求对象
      * @return ListServicePublicDetailsResponse
@@ -641,8 +606,7 @@ public class VpcepClient {
      * 查询公共终端节点服务的列表，公共终端节点服务是所有用户可见且可连接的终端节点服务，
      * 由运维人员创建，用户可直接使用，但无权创建。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServicePublicDetailsRequest 请求对象
      * @return SyncInvoker<ListServicePublicDetailsRequest, ListServicePublicDetailsResponse>
@@ -659,8 +623,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询指定VPC终端节点接口版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSpecifiedVersionDetailsRequest 请求对象
      * @return ListSpecifiedVersionDetailsResponse
@@ -675,8 +638,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询指定VPC终端节点接口版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSpecifiedVersionDetailsRequest 请求对象
      * @return SyncInvoker<ListSpecifiedVersionDetailsRequest, ListSpecifiedVersionDetailsResponse>
@@ -693,8 +655,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询VPC终端节点接口版本列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVersionDetailsRequest 请求对象
      * @return ListVersionDetailsResponse
@@ -709,8 +670,7 @@ public class VpcepClient {
      * 功能介绍
      * 查询VPC终端节点接口版本列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVersionDetailsRequest 请求对象
      * @return SyncInvoker<ListVersionDetailsRequest, ListVersionDetailsResponse>
@@ -727,8 +687,7 @@ public class VpcepClient {
      * 功能介绍：
      *      更新终端节点服务连接的终端节点的描述。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointConnectionsDescRequest 请求对象
      * @return UpdateEndpointConnectionsDescResponse
@@ -744,8 +703,7 @@ public class VpcepClient {
      * 功能介绍：
      *      更新终端节点服务连接的终端节点的描述。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointConnectionsDescRequest 请求对象
      * @return SyncInvoker<UpdateEndpointConnectionsDescRequest, UpdateEndpointConnectionsDescResponse>
@@ -762,8 +720,7 @@ public class VpcepClient {
      * 功能介绍
      * 修改网关型终端节点policy。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointPolicyRequest 请求对象
      * @return UpdateEndpointPolicyResponse
@@ -778,8 +735,7 @@ public class VpcepClient {
      * 功能介绍
      * 修改网关型终端节点policy。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointPolicyRequest 请求对象
      * @return SyncInvoker<UpdateEndpointPolicyRequest, UpdateEndpointPolicyResponse>
@@ -796,8 +752,7 @@ public class VpcepClient {
      * 功能介绍
      * 修改终端节点路由表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointRoutetableRequest 请求对象
      * @return UpdateEndpointRoutetableResponse
@@ -812,8 +767,7 @@ public class VpcepClient {
      * 功能介绍
      * 修改终端节点路由表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointRoutetableRequest 请求对象
      * @return SyncInvoker<UpdateEndpointRoutetableRequest, UpdateEndpointRoutetableResponse>
@@ -830,8 +784,7 @@ public class VpcepClient {
      * 功能介绍
      * 修改终端节点服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointServiceRequest 请求对象
      * @return UpdateEndpointServiceResponse
@@ -846,8 +799,7 @@ public class VpcepClient {
      * 功能介绍
      * 修改终端节点服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointServiceRequest 请求对象
      * @return SyncInvoker<UpdateEndpointServiceRequest, UpdateEndpointServiceResponse>
@@ -864,8 +816,7 @@ public class VpcepClient {
      * 功能介绍
      * 修改终端节点服务名称
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointServiceNameRequest 请求对象
      * @return UpdateEndpointServiceNameResponse
@@ -880,8 +831,7 @@ public class VpcepClient {
      * 功能介绍
      * 修改终端节点服务名称
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointServiceNameRequest 请求对象
      * @return SyncInvoker<UpdateEndpointServiceNameRequest, UpdateEndpointServiceNameResponse>
@@ -898,8 +848,7 @@ public class VpcepClient {
      * 功能介绍
      * 更新当前用户下终端节点服务白名单的描述信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointServicePermissionDescRequest 请求对象
      * @return UpdateEndpointServicePermissionDescResponse
@@ -915,8 +864,7 @@ public class VpcepClient {
      * 功能介绍
      * 更新当前用户下终端节点服务白名单的描述信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointServicePermissionDescRequest 请求对象
      * @return SyncInvoker<UpdateEndpointServicePermissionDescRequest, UpdateEndpointServicePermissionDescResponse>
@@ -933,8 +881,7 @@ public class VpcepClient {
      * 功能介绍
      * 更新或删除允许访问终端节点的白名单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointWhiteRequest 请求对象
      * @return UpdateEndpointWhiteResponse
@@ -949,8 +896,7 @@ public class VpcepClient {
      * 功能介绍
      * 更新或删除允许访问终端节点的白名单。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointWhiteRequest 请求对象
      * @return SyncInvoker<UpdateEndpointWhiteRequest, UpdateEndpointWhiteResponse>
@@ -968,8 +914,7 @@ public class VpcepClient {
      * 为指定Endpoint Service或Endpoint批量添加或删除标签。
      * ● 一个资源上最多有10个标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddOrRemoveResourceInstanceRequest 请求对象
      * @return BatchAddOrRemoveResourceInstanceResponse
@@ -986,8 +931,7 @@ public class VpcepClient {
      * 为指定Endpoint Service或Endpoint批量添加或删除标签。
      * ● 一个资源上最多有10个标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddOrRemoveResourceInstanceRequest 请求对象
      * @return SyncInvoker<BatchAddOrRemoveResourceInstanceRequest, BatchAddOrRemoveResourceInstanceResponse>
@@ -1004,8 +948,7 @@ public class VpcepClient {
      * 功能介绍
      * 根据租户ID和资源类型，获取租户下资源的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQueryProjectResourceTagsRequest 请求对象
      * @return ListQueryProjectResourceTagsResponse
@@ -1021,8 +964,7 @@ public class VpcepClient {
      * 功能介绍
      * 根据租户ID和资源类型，获取租户下资源的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQueryProjectResourceTagsRequest 请求对象
      * @return SyncInvoker<ListQueryProjectResourceTagsRequest, ListQueryProjectResourceTagsResponse>
@@ -1039,8 +981,7 @@ public class VpcepClient {
      * 功能介绍
      * 使用标签过滤查询租户下资源的实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourceInstancesRequest 请求对象
      * @return ListResourceInstancesResponse
@@ -1055,8 +996,7 @@ public class VpcepClient {
      * 功能介绍
      * 使用标签过滤查询租户下资源的实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourceInstancesRequest 请求对象
      * @return SyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>

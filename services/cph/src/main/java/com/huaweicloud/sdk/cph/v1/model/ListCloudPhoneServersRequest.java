@@ -42,6 +42,8 @@ public class ListCloudPhoneServersRequest {
 
     /**
      * 偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源数，默认值为0。
+     * minimum: 0
+     * maximum: 8096
      * @return offset
      */
     public Integer getOffset() {
@@ -59,6 +61,8 @@ public class ListCloudPhoneServersRequest {
 
     /**
      * 每页返回的资源个数。取值范围：1~100（默认值为100），一般设置为10、20、50。
+     * minimum: 0
+     * maximum: 8096
      * @return limit
      */
     public Integer getLimit() {
@@ -92,7 +96,7 @@ public class ListCloudPhoneServersRequest {
     }
 
     /**
-     * 服务器id。
+     * 云手机服务器的唯一标识。
      * @return serverId
      */
     public String getServerId() {

@@ -3,6 +3,10 @@ package com.huaweicloud.sdk.aom.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,7 +14,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.Dimension;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -47,13 +53,103 @@ public class AlarmRuleParam  {
     
     
     private String alarmDescription;
+    /**
+     * 告警级别。1：紧急，2：重要，3：一般，4：提示。
+     */
+    public static final class AlarmLevelEnum {
+
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final AlarmLevelEnum NUMBER_1 = new AlarmLevelEnum(1);
+        
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final AlarmLevelEnum NUMBER_2 = new AlarmLevelEnum(2);
+        
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
+        public static final AlarmLevelEnum NUMBER_3 = new AlarmLevelEnum(3);
+        
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
+        public static final AlarmLevelEnum NUMBER_4 = new AlarmLevelEnum(4);
+        
+
+        private static final Map<Integer, AlarmLevelEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, AlarmLevelEnum> createStaticFields() {
+            Map<Integer, AlarmLevelEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            map.put(3, NUMBER_3);
+            map.put(4, NUMBER_4);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        AlarmLevelEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AlarmLevelEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            AlarmLevelEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new AlarmLevelEnum(value);
+            }
+            return result;
+        }
+
+        public static AlarmLevelEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            AlarmLevelEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AlarmLevelEnum) {
+                return this.value.equals(((AlarmLevelEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_level")
     
     
-    private Integer alarmLevel;
+    private AlarmLevelEnum alarmLevel;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -124,13 +220,109 @@ public class AlarmRuleParam  {
     
     
     private Integer period;
+    /**
+     * 统计方式。
+     */
+    public static final class StatisticEnum {
+
+        
+        /**
+         * Enum MAXIMUM for value: "maximum"
+         */
+        public static final StatisticEnum MAXIMUM = new StatisticEnum("maximum");
+        
+        /**
+         * Enum MINIMUM for value: "minimum"
+         */
+        public static final StatisticEnum MINIMUM = new StatisticEnum("minimum");
+        
+        /**
+         * Enum AVERAGE for value: "average"
+         */
+        public static final StatisticEnum AVERAGE = new StatisticEnum("average");
+        
+        /**
+         * Enum SUM for value: "sum"
+         */
+        public static final StatisticEnum SUM = new StatisticEnum("sum");
+        
+        /**
+         * Enum SAMPLECOUNT for value: "sampleCount"
+         */
+        public static final StatisticEnum SAMPLECOUNT = new StatisticEnum("sampleCount");
+        
+
+        private static final Map<String, StatisticEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatisticEnum> createStaticFields() {
+            Map<String, StatisticEnum> map = new HashMap<>();
+            map.put("maximum", MAXIMUM);
+            map.put("minimum", MINIMUM);
+            map.put("average", AVERAGE);
+            map.put("sum", SUM);
+            map.put("sampleCount", SAMPLECOUNT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatisticEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatisticEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            StatisticEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatisticEnum(value);
+            }
+            return result;
+        }
+
+        public static StatisticEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            StatisticEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatisticEnum) {
+                return this.value.equals(((StatisticEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="statistic")
     
     
-    private String statistic;
+    private StatisticEnum statistic;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -248,7 +440,7 @@ public class AlarmRuleParam  {
 
     
 
-    public AlarmRuleParam withAlarmLevel(Integer alarmLevel) {
+    public AlarmRuleParam withAlarmLevel(AlarmLevelEnum alarmLevel) {
         this.alarmLevel = alarmLevel;
         return this;
     }
@@ -260,11 +452,11 @@ public class AlarmRuleParam  {
      * 告警级别。1：紧急，2：重要，3：一般，4：提示。
      * @return alarmLevel
      */
-    public Integer getAlarmLevel() {
+    public AlarmLevelEnum getAlarmLevel() {
         return alarmLevel;
     }
 
-    public void setAlarmLevel(Integer alarmLevel) {
+    public void setAlarmLevel(AlarmLevelEnum alarmLevel) {
         this.alarmLevel = alarmLevel;
     }
 
@@ -532,7 +724,7 @@ public class AlarmRuleParam  {
 
     
 
-    public AlarmRuleParam withStatistic(String statistic) {
+    public AlarmRuleParam withStatistic(StatisticEnum statistic) {
         this.statistic = statistic;
         return this;
     }
@@ -544,11 +736,11 @@ public class AlarmRuleParam  {
      * 统计方式。
      * @return statistic
      */
-    public String getStatistic() {
+    public StatisticEnum getStatistic() {
         return statistic;
     }
 
-    public void setStatistic(String statistic) {
+    public void setStatistic(StatisticEnum statistic) {
         this.statistic = statistic;
     }
 

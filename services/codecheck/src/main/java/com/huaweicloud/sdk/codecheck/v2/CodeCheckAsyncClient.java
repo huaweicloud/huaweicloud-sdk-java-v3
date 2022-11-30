@@ -24,8 +24,7 @@ public class CodeCheckAsyncClient {
      *
      * 查询任务规则集的检查参数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckParametersRequest 请求对象
      * @return CompletableFuture<CheckParametersResponse>
@@ -39,8 +38,7 @@ public class CodeCheckAsyncClient {
      *
      * 查询任务规则集的检查参数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckParametersRequest 请求对象
      * @return AsyncInvoker<CheckParametersRequest, CheckParametersResponse>
@@ -56,8 +54,7 @@ public class CodeCheckAsyncClient {
      *
      * 提供每次扫描的问题数量统计
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRecordRequest 请求对象
      * @return CompletableFuture<CheckRecordResponse>
@@ -71,8 +68,7 @@ public class CodeCheckAsyncClient {
      *
      * 提供每次扫描的问题数量统计
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRecordRequest 请求对象
      * @return AsyncInvoker<CheckRecordRequest, CheckRecordResponse>
@@ -86,8 +82,7 @@ public class CodeCheckAsyncClient {
      *
      * 查询任务规则集的检查参数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRulesetParametersRequest 请求对象
      * @return CompletableFuture<CheckRulesetParametersResponse>
@@ -102,8 +97,7 @@ public class CodeCheckAsyncClient {
      *
      * 查询任务规则集的检查参数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckRulesetParametersRequest 请求对象
      * @return AsyncInvoker<CheckRulesetParametersRequest, CheckRulesetParametersResponse>
@@ -119,8 +113,7 @@ public class CodeCheckAsyncClient {
      *
      * 可根据需求灵活的组合规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRulesetRequest 请求对象
      * @return CompletableFuture<CreateRulesetResponse>
@@ -134,8 +127,7 @@ public class CodeCheckAsyncClient {
      *
      * 可根据需求灵活的组合规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRulesetRequest 请求对象
      * @return AsyncInvoker<CreateRulesetRequest, CreateRulesetResponse>
@@ -151,8 +143,7 @@ public class CodeCheckAsyncClient {
      *
      * 新建检查任务但是不执行。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTaskRequest 请求对象
      * @return CompletableFuture<CreateTaskResponse>
@@ -166,8 +157,7 @@ public class CodeCheckAsyncClient {
      *
      * 新建检查任务但是不执行。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTaskRequest 请求对象
      * @return AsyncInvoker<CreateTaskRequest, CreateTaskResponse>
@@ -181,8 +171,7 @@ public class CodeCheckAsyncClient {
      *
      * 删除自定义规则集，正在使用中的或默认规则集不能删除
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRulesetRequest 请求对象
      * @return CompletableFuture<DeleteRulesetResponse>
@@ -196,8 +185,7 @@ public class CodeCheckAsyncClient {
      *
      * 删除自定义规则集，正在使用中的或默认规则集不能删除
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRulesetRequest 请求对象
      * @return AsyncInvoker<DeleteRulesetRequest, DeleteRulesetResponse>
@@ -213,8 +201,7 @@ public class CodeCheckAsyncClient {
      *
      * 删除检查任务，执行中的任务删除无法再查看
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
      * @return CompletableFuture<DeleteTaskResponse>
@@ -228,8 +215,7 @@ public class CodeCheckAsyncClient {
      *
      * 删除检查任务，执行中的任务删除无法再查看
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTaskRequest 请求对象
      * @return AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
@@ -243,8 +229,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据语言、问题级别等条件查询规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRulesRequest 请求对象
      * @return CompletableFuture<ListRulesResponse>
@@ -258,8 +243,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据语言、问题级别等条件查询规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRulesRequest 请求对象
      * @return AsyncInvoker<ListRulesRequest, ListRulesResponse>
@@ -273,8 +257,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据项目ID、语言等条件查询规则集列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRulesetsRequest 请求对象
      * @return CompletableFuture<ListRulesetsResponse>
@@ -288,8 +271,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据项目ID、语言等条件查询规则集列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRulesetsRequest 请求对象
      * @return AsyncInvoker<ListRulesetsRequest, ListRulesetsResponse>
@@ -305,8 +287,7 @@ public class CodeCheckAsyncClient {
      *
      * 任务配置检查参数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTaskParameterRequest 请求对象
      * @return CompletableFuture<ListTaskParameterResponse>
@@ -320,8 +301,7 @@ public class CodeCheckAsyncClient {
      *
      * 任务配置检查参数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTaskParameterRequest 请求对象
      * @return AsyncInvoker<ListTaskParameterRequest, ListTaskParameterResponse>
@@ -337,8 +317,7 @@ public class CodeCheckAsyncClient {
      *
      * 查询任务的已选规则集列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTaskRulesetRequest 请求对象
      * @return CompletableFuture<ListTaskRulesetResponse>
@@ -352,8 +331,7 @@ public class CodeCheckAsyncClient {
      *
      * 查询任务的已选规则集列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTaskRulesetRequest 请求对象
      * @return AsyncInvoker<ListTaskRulesetRequest, ListTaskRulesetResponse>
@@ -369,8 +347,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据项目ID、规则集ID等条件查询规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplateRulesRequest 请求对象
      * @return CompletableFuture<ListTemplateRulesResponse>
@@ -384,8 +361,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据项目ID、规则集ID等条件查询规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplateRulesRequest 请求对象
      * @return AsyncInvoker<ListTemplateRulesRequest, ListTemplateRulesResponse>
@@ -401,8 +377,7 @@ public class CodeCheckAsyncClient {
      *
      * 执行检查任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunTaskRequest 请求对象
      * @return CompletableFuture<RunTaskResponse>
@@ -416,8 +391,7 @@ public class CodeCheckAsyncClient {
      *
      * 执行检查任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunTaskRequest 请求对象
      * @return AsyncInvoker<RunTaskRequest, RunTaskResponse>
@@ -431,8 +405,7 @@ public class CodeCheckAsyncClient {
      *
      * 设置每个项目对应语言的默认规则集配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetDefaulTemplateRequest 请求对象
      * @return CompletableFuture<SetDefaulTemplateResponse>
@@ -446,8 +419,7 @@ public class CodeCheckAsyncClient {
      *
      * 设置每个项目对应语言的默认规则集配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetDefaulTemplateRequest 请求对象
      * @return AsyncInvoker<SetDefaulTemplateRequest, SetDefaulTemplateResponse>
@@ -463,8 +435,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据任务ID查询任务执行状态。任务状态：0表示检查中，1表示检查失败，2表示检查成功，3表示任务中止。只有正在检查中才有进度的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProgressDetailRequest 请求对象
      * @return CompletableFuture<ShowProgressDetailResponse>
@@ -478,8 +449,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据任务ID查询任务执行状态。任务状态：0表示检查中，1表示检查失败，2表示检查成功，3表示任务中止。只有正在检查中才有进度的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProgressDetailRequest 请求对象
      * @return AsyncInvoker<ShowProgressDetailRequest, ShowProgressDetailResponse>
@@ -495,8 +465,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据检查任务ID查询cmertrics缺陷概要。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskCmetricsRequest 请求对象
      * @return CompletableFuture<ShowTaskCmetricsResponse>
@@ -510,8 +479,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据检查任务ID查询cmertrics缺陷概要。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskCmetricsRequest 请求对象
      * @return AsyncInvoker<ShowTaskCmetricsRequest, ShowTaskCmetricsResponse>
@@ -527,8 +495,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据检查任务ID分页查询缺陷结果详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskDefectsRequest 请求对象
      * @return CompletableFuture<ShowTaskDefectsResponse>
@@ -542,8 +509,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据检查任务ID分页查询缺陷结果详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskDefectsRequest 请求对象
      * @return AsyncInvoker<ShowTaskDefectsRequest, ShowTaskDefectsResponse>
@@ -559,8 +525,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据检查任务ID查询缺陷详情的统计
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskDefectsStatisticRequest 请求对象
      * @return CompletableFuture<ShowTaskDefectsStatisticResponse>
@@ -575,8 +540,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据检查任务ID查询缺陷详情的统计
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskDefectsStatisticRequest 请求对象
      * @return AsyncInvoker<ShowTaskDefectsStatisticRequest, ShowTaskDefectsStatisticResponse>
@@ -592,8 +556,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据检查任务ID查询缺陷结果的概要。包括问题概述、问题状态、圈复杂度、代码重复率等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskDetailRequest 请求对象
      * @return CompletableFuture<ShowTaskDetailResponse>
@@ -607,8 +570,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据检查任务ID查询缺陷结果的概要。包括问题概述、问题状态、圈复杂度、代码重复率等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskDetailRequest 请求对象
      * @return AsyncInvoker<ShowTaskDetailRequest, ShowTaskDetailResponse>
@@ -624,8 +586,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据DEVCLOUD_PROJECT_UUID查询该项目下的任务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskListByProjectIdRequest 请求对象
      * @return CompletableFuture<ShowTaskListByProjectIdResponse>
@@ -640,8 +601,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据DEVCLOUD_PROJECT_UUID查询该项目下的任务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskListByProjectIdRequest 请求对象
      * @return AsyncInvoker<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse>
@@ -657,8 +617,7 @@ public class CodeCheckAsyncClient {
      *
      * 查询任务检查失败日志，不传execute_id则查询最近一次的检查日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTasklogRequest 请求对象
      * @return CompletableFuture<ShowTasklogResponse>
@@ -672,8 +631,7 @@ public class CodeCheckAsyncClient {
      *
      * 查询任务检查失败日志，不传execute_id则查询最近一次的检查日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTasklogRequest 请求对象
      * @return AsyncInvoker<ShowTasklogRequest, ShowTasklogResponse>
@@ -687,8 +645,7 @@ public class CodeCheckAsyncClient {
      *
      * 查询任务的已选规则集列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTasksRulesetsRequest 请求对象
      * @return CompletableFuture<ShowTasksRulesetsResponse>
@@ -702,8 +659,7 @@ public class CodeCheckAsyncClient {
      *
      * 查询任务的已选规则集列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTasksRulesetsRequest 请求对象
      * @return AsyncInvoker<ShowTasksRulesetsRequest, ShowTasksRulesetsResponse>
@@ -719,8 +675,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据任务ID终止检查任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopTaskByIdRequest 请求对象
      * @return CompletableFuture<StopTaskByIdResponse>
@@ -734,8 +689,7 @@ public class CodeCheckAsyncClient {
      *
      * 根据任务ID终止检查任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopTaskByIdRequest 请求对象
      * @return AsyncInvoker<StopTaskByIdRequest, StopTaskByIdResponse>
@@ -751,8 +705,7 @@ public class CodeCheckAsyncClient {
      *
      * 修改检查出的缺陷的状态为已解决、已忽略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDefectStatusRequest 请求对象
      * @return CompletableFuture<UpdateDefectStatusResponse>
@@ -766,8 +719,7 @@ public class CodeCheckAsyncClient {
      *
      * 修改检查出的缺陷的状态为已解决、已忽略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDefectStatusRequest 请求对象
      * @return AsyncInvoker<UpdateDefectStatusRequest, UpdateDefectStatusResponse>
@@ -783,8 +735,7 @@ public class CodeCheckAsyncClient {
      *
      * 修改任务规则集。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskRulesetRequest 请求对象
      * @return CompletableFuture<UpdateTaskRulesetResponse>
@@ -798,8 +749,7 @@ public class CodeCheckAsyncClient {
      *
      * 修改任务规则集。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTaskRulesetRequest 请求对象
      * @return AsyncInvoker<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse>

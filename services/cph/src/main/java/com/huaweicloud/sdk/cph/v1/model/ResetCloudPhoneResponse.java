@@ -22,7 +22,7 @@ public class ResetCloudPhoneResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
-    private List<Object> jobs = null;
+    private List<PhoneJob> jobs = null;
 
     public ResetCloudPhoneResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -30,7 +30,7 @@ public class ResetCloudPhoneResponse extends SdkResponse {
     }
 
     /**
-     * 请求的唯一标识ID
+     * 请求的唯一标识ID。
      * @return requestId
      */
     public String getRequestId() {
@@ -41,12 +41,12 @@ public class ResetCloudPhoneResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public ResetCloudPhoneResponse withJobs(List<Object> jobs) {
+    public ResetCloudPhoneResponse withJobs(List<PhoneJob> jobs) {
         this.jobs = jobs;
         return this;
     }
 
-    public ResetCloudPhoneResponse addJobsItem(Object jobsItem) {
+    public ResetCloudPhoneResponse addJobsItem(PhoneJob jobsItem) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class ResetCloudPhoneResponse extends SdkResponse {
         return this;
     }
 
-    public ResetCloudPhoneResponse withJobs(Consumer<List<Object>> jobsSetter) {
+    public ResetCloudPhoneResponse withJobs(Consumer<List<PhoneJob>> jobsSetter) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class ResetCloudPhoneResponse extends SdkResponse {
      * 任务信息
      * @return jobs
      */
-    public List<Object> getJobs() {
+    public List<PhoneJob> getJobs() {
         return jobs;
     }
 
-    public void setJobs(List<Object> jobs) {
+    public void setJobs(List<PhoneJob> jobs) {
         this.jobs = jobs;
     }
 

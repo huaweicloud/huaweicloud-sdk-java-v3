@@ -24,8 +24,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于创建cae_trust委托
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAgencyRequest 请求对象
      * @return CompletableFuture<CreateAgencyResponse>
@@ -39,8 +38,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于创建cae_trust委托
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAgencyRequest 请求对象
      * @return AsyncInvoker<CreateAgencyRequest, CreateAgencyResponse>
@@ -55,8 +53,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取cae_trust委托，如果委托不存在则创建委托
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAgencyRequest 请求对象
      * @return CompletableFuture<ShowAgencyResponse>
@@ -70,8 +67,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取cae_trust委托，如果委托不存在则创建委托
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAgencyRequest 请求对象
      * @return AsyncInvoker<ShowAgencyRequest, ShowAgencyResponse>
@@ -85,8 +81,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于创建一个应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApplicationRequest 请求对象
      * @return CompletableFuture<CreateApplicationResponse>
@@ -100,8 +95,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于创建一个应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApplicationRequest 请求对象
      * @return AsyncInvoker<CreateApplicationRequest, CreateApplicationResponse>
@@ -117,8 +111,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于删除指定应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationRequest 请求对象
      * @return CompletableFuture<DeleteApplicationResponse>
@@ -132,8 +125,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于删除指定应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationRequest 请求对象
      * @return AsyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse>
@@ -149,8 +141,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取当前环境下的应用列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationsRequest 请求对象
      * @return CompletableFuture<ListApplicationsResponse>
@@ -164,8 +155,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取当前环境下的应用列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationsRequest 请求对象
      * @return AsyncInvoker<ListApplicationsRequest, ListApplicationsResponse>
@@ -181,8 +171,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取指定应用详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationRequest 请求对象
      * @return CompletableFuture<ShowApplicationResponse>
@@ -196,8 +185,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取指定应用详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationRequest 请求对象
      * @return AsyncInvoker<ShowApplicationRequest, ShowApplicationResponse>
@@ -213,8 +201,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于创建一个组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateComponentRequest 请求对象
      * @return CompletableFuture<CreateComponentResponse>
@@ -228,8 +215,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于创建一个组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateComponentRequest 请求对象
      * @return AsyncInvoker<CreateComponentRequest, CreateComponentResponse>
@@ -245,8 +231,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于删除指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteComponentRequest 请求对象
      * @return CompletableFuture<DeleteComponentResponse>
@@ -260,8 +245,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于删除指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteComponentRequest 请求对象
      * @return AsyncInvoker<DeleteComponentRequest, DeleteComponentResponse>
@@ -277,8 +261,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于对组件执行指定操作，如部署、升级、重启、停止、启动、伸缩、重试、配置、回滚
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteActionRequest 请求对象
      * @return CompletableFuture<ExecuteActionResponse>
@@ -292,8 +275,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于对组件执行指定操作，如部署、升级、重启、停止、启动、伸缩、重试、配置、回滚
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteActionRequest 请求对象
      * @return AsyncInvoker<ExecuteActionRequest, ExecuteActionResponse>
@@ -308,8 +290,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取组件快照版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComponentSnapshotsRequest 请求对象
      * @return CompletableFuture<ListComponentSnapshotsResponse>
@@ -324,8 +305,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取组件快照版本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComponentSnapshotsRequest 请求对象
      * @return AsyncInvoker<ListComponentSnapshotsRequest, ListComponentSnapshotsResponse>
@@ -341,8 +321,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取组件列表，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComponentsRequest 请求对象
      * @return CompletableFuture<ListComponentsResponse>
@@ -356,8 +335,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取组件列表，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComponentsRequest 请求对象
      * @return AsyncInvoker<ListComponentsRequest, ListComponentsResponse>
@@ -372,8 +350,7 @@ public class CaeAsyncClient {
      * 获取事件列表
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventsRequest 请求对象
      * @return CompletableFuture<ListEventsResponse>
@@ -386,8 +363,7 @@ public class CaeAsyncClient {
      * 获取事件列表
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEventsRequest 请求对象
      * @return AsyncInvoker<ListEventsRequest, ListEventsResponse>
@@ -401,8 +377,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取组件实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return CompletableFuture<ListInstancesResponse>
@@ -416,8 +391,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取组件实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
@@ -432,8 +406,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowComponentRequest 请求对象
      * @return CompletableFuture<ShowComponentResponse>
@@ -447,8 +420,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowComponentRequest 请求对象
      * @return AsyncInvoker<ShowComponentRequest, ShowComponentResponse>
@@ -463,8 +435,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于更新指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateComponentRequest 请求对象
      * @return CompletableFuture<UpdateComponentResponse>
@@ -478,8 +449,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于更新指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateComponentRequest 请求对象
      * @return AsyncInvoker<UpdateComponentRequest, UpdateComponentResponse>
@@ -495,8 +465,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于创建组件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateComponentConfigurationRequest 请求对象
      * @return CompletableFuture<CreateComponentConfigurationResponse>
@@ -511,8 +480,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于创建组件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateComponentConfigurationRequest 请求对象
      * @return AsyncInvoker<CreateComponentConfigurationRequest, CreateComponentConfigurationResponse>
@@ -527,8 +495,7 @@ public class CaeAsyncClient {
      * 删除组件配置
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteComponentConfigurationRequest 请求对象
      * @return CompletableFuture<DeleteComponentConfigurationResponse>
@@ -542,8 +509,7 @@ public class CaeAsyncClient {
      * 删除组件配置
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteComponentConfigurationRequest 请求对象
      * @return AsyncInvoker<DeleteComponentConfigurationRequest, DeleteComponentConfigurationResponse>
@@ -559,8 +525,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取组件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConfigurationsRequest 请求对象
      * @return CompletableFuture<ListConfigurationsResponse>
@@ -574,8 +539,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取组件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConfigurationsRequest 请求对象
      * @return AsyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
@@ -591,8 +555,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于创建一个环境，环境是CAE定义的一个资源维度，所有的用户组件都放在环境下
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentRequest 请求对象
      * @return CompletableFuture<CreateEnvironmentResponse>
@@ -606,8 +569,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于创建一个环境，环境是CAE定义的一个资源维度，所有的用户组件都放在环境下
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentRequest 请求对象
      * @return AsyncInvoker<CreateEnvironmentRequest, CreateEnvironmentResponse>
@@ -623,8 +585,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于删除环境，暂未开放。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentRequest 请求对象
      * @return CompletableFuture<DeleteEnvironmentResponse>
@@ -638,8 +599,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于删除环境，暂未开放。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentRequest 请求对象
      * @return AsyncInvoker<DeleteEnvironmentRequest, DeleteEnvironmentResponse>
@@ -655,8 +615,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取当前租户环境信息，环境是CAE定义的一个资源维度，所有的用户组件都放在环境下
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentsRequest 请求对象
      * @return CompletableFuture<ListEnvironmentsResponse>
@@ -670,8 +629,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取当前租户环境信息，环境是CAE定义的一个资源维度，所有的用户组件都放在环境下
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentsRequest 请求对象
      * @return AsyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse>
@@ -687,8 +645,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于重试任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RetryJobRequest 请求对象
      * @return CompletableFuture<RetryJobResponse>
@@ -702,8 +659,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于重试任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RetryJobRequest 请求对象
      * @return AsyncInvoker<RetryJobRequest, RetryJobResponse>
@@ -717,8 +673,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取任务详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return CompletableFuture<ShowJobResponse>
@@ -732,8 +687,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取任务详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>
@@ -747,8 +701,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于创建卷
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVolumeRequest 请求对象
      * @return CompletableFuture<CreateVolumeResponse>
@@ -762,8 +715,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于创建卷
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVolumeRequest 请求对象
      * @return AsyncInvoker<CreateVolumeRequest, CreateVolumeResponse>
@@ -778,8 +730,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于创建卷
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVolumeRequest 请求对象
      * @return CompletableFuture<DeleteVolumeResponse>
@@ -793,8 +744,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于创建卷
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVolumeRequest 请求对象
      * @return AsyncInvoker<DeleteVolumeRequest, DeleteVolumeResponse>
@@ -809,8 +759,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取卷列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVolumesRequest 请求对象
      * @return CompletableFuture<ListVolumesResponse>
@@ -824,8 +773,7 @@ public class CaeAsyncClient {
      *
      * 本接口用于获取卷列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVolumesRequest 请求对象
      * @return AsyncInvoker<ListVolumesRequest, ListVolumesResponse>

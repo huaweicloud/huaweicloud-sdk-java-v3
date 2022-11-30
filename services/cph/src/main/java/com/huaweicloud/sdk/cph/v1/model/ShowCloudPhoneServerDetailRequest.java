@@ -21,7 +21,7 @@ public class ShowCloudPhoneServerDetailRequest {
     }
 
     /**
-     * 服务器id。
+     * 云手机服务器的唯一标识。
      * @return serverId
      */
     public String getServerId() {

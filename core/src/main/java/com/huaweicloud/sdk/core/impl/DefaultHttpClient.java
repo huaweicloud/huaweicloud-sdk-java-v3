@@ -104,7 +104,7 @@ public class DefaultHttpClient implements HttpClient {
         } else if (httpConfig.isIgnoreSSLVerification()) {
             clientBuilder.hostnameVerifier(IgnoreSSLVerificationFactory.getHostnameVerifier())
                     .sslSocketFactory(
-                            IgnoreSSLVerificationFactory.getSSLContext().getSocketFactory(),
+                            IgnoreSSLVerificationFactory.getSSLContext(httpConfig.getSecureRandom()).getSocketFactory(),
                             IgnoreSSLVerificationFactory.getTrustAllManager());
         } else if (httpConfig.getSigningAlgorithm() == SigningAlgorithm.HMAC_SHA256) {
             clientBuilder.sslSocketFactory(
@@ -112,7 +112,7 @@ public class DefaultHttpClient implements HttpClient {
                     DefaultSSLSocketFactory.getDefaultX509TrustManager());
         } else if (httpConfig.getSigningAlgorithm() == SigningAlgorithm.HMAC_SM3) {
             clientBuilder.sslSocketFactory(
-                    GMSSLSocketFactory.getSSLContext().getSocketFactory(),
+                    GMSSLSocketFactory.getSSLContext(httpConfig.getSecureRandom()).getSocketFactory(),
                     GMSSLSocketFactory.getX509TrustManager());
         }
 

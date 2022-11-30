@@ -25,6 +25,11 @@ public class EnlargeRequest {
 
     private String groupId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_auto_pay")
+
+    private Boolean isAutoPay;
+
     public EnlargeRequest withFlavorId(String flavorId) {
         this.flavorId = flavorId;
         return this;
@@ -76,6 +81,23 @@ public class EnlargeRequest {
         this.groupId = groupId;
     }
 
+    public EnlargeRequest withIsAutoPay(Boolean isAutoPay) {
+        this.isAutoPay = isAutoPay;
+        return this;
+    }
+
+    /**
+     * 变更包年包月实例规格时可指定，表示是否自动从账户中支付，此字段不影响自动续订的支付方式。true，表示自动从账户中支付。false，表示手动从账户中支付，默认为该方式。
+     * @return isAutoPay
+     */
+    public Boolean getIsAutoPay() {
+        return isAutoPay;
+    }
+
+    public void setIsAutoPay(Boolean isAutoPay) {
+        this.isAutoPay = isAutoPay;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -87,12 +109,13 @@ public class EnlargeRequest {
         EnlargeRequest enlargeRequest = (EnlargeRequest) o;
         return Objects.equals(this.flavorId, enlargeRequest.flavorId)
             && Objects.equals(this.nodeNumber, enlargeRequest.nodeNumber)
-            && Objects.equals(this.groupId, enlargeRequest.groupId);
+            && Objects.equals(this.groupId, enlargeRequest.groupId)
+            && Objects.equals(this.isAutoPay, enlargeRequest.isAutoPay);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flavorId, nodeNumber, groupId);
+        return Objects.hash(flavorId, nodeNumber, groupId, isAutoPay);
     }
 
     @Override
@@ -102,6 +125,7 @@ public class EnlargeRequest {
         sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
         sb.append("    nodeNumber: ").append(toIndentedString(nodeNumber)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * StopCloudPhoneRequestBody
+ * 关闭云手机请求体。
  */
 public class StopCloudPhoneRequestBody {
 

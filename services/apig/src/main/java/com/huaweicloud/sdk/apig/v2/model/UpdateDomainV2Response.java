@@ -125,6 +125,11 @@ public class UpdateDomainV2Response extends SdkResponse {
 
     private String minSslVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_http_redirect_to_https")
+
+    private Boolean isHttpRedirectToHttps;
+
     public UpdateDomainV2Response withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
         return this;
@@ -193,6 +198,23 @@ public class UpdateDomainV2Response extends SdkResponse {
         this.minSslVersion = minSslVersion;
     }
 
+    public UpdateDomainV2Response withIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+        this.isHttpRedirectToHttps = isHttpRedirectToHttps;
+        return this;
+    }
+
+    /**
+     * 是否开启http到https的重定向，false为关闭，true为开启，默认为false
+     * @return isHttpRedirectToHttps
+     */
+    public Boolean getIsHttpRedirectToHttps() {
+        return isHttpRedirectToHttps;
+    }
+
+    public void setIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+        this.isHttpRedirectToHttps = isHttpRedirectToHttps;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -205,12 +227,13 @@ public class UpdateDomainV2Response extends SdkResponse {
         return Objects.equals(this.urlDomain, updateDomainV2Response.urlDomain)
             && Objects.equals(this.id, updateDomainV2Response.id)
             && Objects.equals(this.status, updateDomainV2Response.status)
-            && Objects.equals(this.minSslVersion, updateDomainV2Response.minSslVersion);
+            && Objects.equals(this.minSslVersion, updateDomainV2Response.minSslVersion)
+            && Objects.equals(this.isHttpRedirectToHttps, updateDomainV2Response.isHttpRedirectToHttps);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(urlDomain, id, status, minSslVersion);
+        return Objects.hash(urlDomain, id, status, minSslVersion, isHttpRedirectToHttps);
     }
 
     @Override
@@ -221,6 +244,7 @@ public class UpdateDomainV2Response extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    minSslVersion: ").append(toIndentedString(minSslVersion)).append("\n");
+        sb.append("    isHttpRedirectToHttps: ").append(toIndentedString(isHttpRedirectToHttps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

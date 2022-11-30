@@ -22,8 +22,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询云桌面支持的可用分区列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailabilityZonesRequest 请求对象
      * @return ListAvailabilityZonesResponse
@@ -37,8 +36,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询云桌面支持的可用分区列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailabilityZonesRequest 请求对象
      * @return SyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse>
@@ -54,8 +52,7 @@ public class WorkspaceClient {
      *
      * 该接口用于导出连接记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportUserLoginInfoNewRequest 请求对象
      * @return ExportUserLoginInfoNewResponse
@@ -69,8 +66,7 @@ public class WorkspaceClient {
      *
      * 该接口用于导出连接记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExportUserLoginInfoNewRequest 请求对象
      * @return SyncInvoker<ExportUserLoginInfoNewRequest, ExportUserLoginInfoNewResponse>
@@ -86,8 +82,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询登录人数，注意查询参数不可全空。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHistoryOnlineInfoNewRequest 请求对象
      * @return ListHistoryOnlineInfoNewResponse
@@ -101,8 +96,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询登录人数，注意查询参数不可全空。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHistoryOnlineInfoNewRequest 请求对象
      * @return SyncInvoker<ListHistoryOnlineInfoNewRequest, ListHistoryOnlineInfoNewResponse>
@@ -118,8 +112,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询登录信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLoginRecordsNewRequest 请求对象
      * @return ListLoginRecordsNewResponse
@@ -133,8 +126,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询登录信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLoginRecordsNewRequest 请求对象
      * @return SyncInvoker<ListLoginRecordsNewRequest, ListLoginRecordsNewResponse>
@@ -150,8 +142,7 @@ public class WorkspaceClient {
      *
      * 批量删除桌面，删除后无法恢复。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteDesktopsRequest 请求对象
      * @return BatchDeleteDesktopsResponse
@@ -165,8 +156,7 @@ public class WorkspaceClient {
      *
      * 批量删除桌面，删除后无法恢复。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteDesktopsRequest 请求对象
      * @return SyncInvoker<BatchDeleteDesktopsRequest, BatchDeleteDesktopsResponse>
@@ -182,8 +172,7 @@ public class WorkspaceClient {
      *
      * 批量操作桌面，用于批量开机、关机和重启。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchRunDesktopsRequest 请求对象
      * @return BatchRunDesktopsResponse
@@ -197,8 +186,7 @@ public class WorkspaceClient {
      *
      * 批量操作桌面，用于批量开机、关机和重启。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchRunDesktopsRequest 请求对象
      * @return SyncInvoker<BatchRunDesktopsRequest, BatchRunDesktopsResponse>
@@ -214,8 +202,7 @@ public class WorkspaceClient {
      *
      * 创建桌面，并将此桌面分配给用户，当桌面创建成功后用户可以登录使用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDesktopRequest 请求对象
      * @return CreateDesktopResponse
@@ -229,8 +216,7 @@ public class WorkspaceClient {
      *
      * 创建桌面，并将此桌面分配给用户，当桌面创建成功后用户可以登录使用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDesktopRequest 请求对象
      * @return SyncInvoker<CreateDesktopRequest, CreateDesktopResponse>
@@ -245,8 +231,7 @@ public class WorkspaceClient {
      *
      * 删除单个桌面，删除后无法恢复。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDesktopRequest 请求对象
      * @return DeleteDesktopResponse
@@ -260,8 +245,7 @@ public class WorkspaceClient {
      *
      * 删除单个桌面，删除后无法恢复。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDesktopRequest 请求对象
      * @return SyncInvoker<DeleteDesktopRequest, DeleteDesktopResponse>
@@ -276,8 +260,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询桌面虚拟机列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDesktopsRequest 请求对象
      * @return ListDesktopsResponse
@@ -291,8 +274,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询桌面虚拟机列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDesktopsRequest 请求对象
      * @return SyncInvoker<ListDesktopsRequest, ListDesktopsResponse>
@@ -307,8 +289,7 @@ public class WorkspaceClient {
      *
      * 查询桌面详情信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDesktopsDetailRequest 请求对象
      * @return ListDesktopsDetailResponse
@@ -322,8 +303,7 @@ public class WorkspaceClient {
      *
      * 查询桌面详情信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDesktopsDetailRequest 请求对象
      * @return SyncInvoker<ListDesktopsDetailRequest, ListDesktopsDetailResponse>
@@ -339,8 +319,7 @@ public class WorkspaceClient {
      *
      * 变更云桌面规格，只支持变更CPU和内存，不支持变更磁盘，不支持同规格互相变更。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeDesktopRequest 请求对象
      * @return ResizeDesktopResponse
@@ -354,8 +333,7 @@ public class WorkspaceClient {
      *
      * 变更云桌面规格，只支持变更CPU和内存，不支持变更磁盘，不支持同规格互相变更。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeDesktopRequest 请求对象
      * @return SyncInvoker<ResizeDesktopRequest, ResizeDesktopResponse>
@@ -370,8 +348,7 @@ public class WorkspaceClient {
      *
      * 指定桌面Id查询详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDesktopDetailRequest 请求对象
      * @return ShowDesktopDetailResponse
@@ -385,8 +362,7 @@ public class WorkspaceClient {
      *
      * 指定桌面Id查询详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDesktopDetailRequest 请求对象
      * @return SyncInvoker<ShowDesktopDetailRequest, ShowDesktopDetailResponse>
@@ -402,8 +378,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询云桌面支持的产品镜像列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListImagesRequest 请求对象
      * @return ListImagesResponse
@@ -417,8 +392,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询云桌面支持的产品镜像列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListImagesRequest 请求对象
      * @return SyncInvoker<ListImagesRequest, ListImagesResponse>
@@ -432,8 +406,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询异步任务执行情况，比如查询创建桌面的执行状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListItaSubJobsRequest 请求对象
      * @return ListItaSubJobsResponse
@@ -447,8 +420,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询异步任务执行情况，比如查询创建桌面的执行状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListItaSubJobsRequest 请求对象
      * @return SyncInvoker<ListItaSubJobsRequest, ListItaSubJobsResponse>
@@ -464,8 +436,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询云桌面支持的产品套餐列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductsRequest 请求对象
      * @return ListProductsResponse
@@ -479,8 +450,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询云桌面支持的产品套餐列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductsRequest 请求对象
      * @return SyncInvoker<ListProductsRequest, ListProductsResponse>
@@ -495,8 +465,7 @@ public class WorkspaceClient {
      *
      * 该接口用于操作用户，包含三种操作：锁定、解锁和重置密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeUserStatusRequest 请求对象
      * @return ChangeUserStatusResponse
@@ -510,8 +479,7 @@ public class WorkspaceClient {
      *
      * 该接口用于操作用户，包含三种操作：锁定、解锁和重置密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeUserStatusRequest 请求对象
      * @return SyncInvoker<ChangeUserStatusRequest, ChangeUserStatusResponse>
@@ -527,8 +495,7 @@ public class WorkspaceClient {
      *
      * 该接口用于创建桌面用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDesktopUserRequest 请求对象
      * @return CreateDesktopUserResponse
@@ -542,8 +509,7 @@ public class WorkspaceClient {
      *
      * 该接口用于创建桌面用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDesktopUserRequest 请求对象
      * @return SyncInvoker<CreateDesktopUserRequest, CreateDesktopUserResponse>
@@ -559,8 +525,7 @@ public class WorkspaceClient {
      *
      * 删除指定的桌面用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteUserRequest 请求对象
      * @return DeleteUserResponse
@@ -574,8 +539,7 @@ public class WorkspaceClient {
      *
      * 删除指定的桌面用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteUserRequest 请求对象
      * @return SyncInvoker<DeleteUserRequest, DeleteUserResponse>
@@ -589,8 +553,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询指定的桌面用户详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUserDetailRequest 请求对象
      * @return ListUserDetailResponse
@@ -604,8 +567,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询指定的桌面用户详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUserDetailRequest 请求对象
      * @return SyncInvoker<ListUserDetailRequest, ListUserDetailResponse>
@@ -621,8 +583,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询桌面用户列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUsersRequest 请求对象
      * @return ListUsersResponse
@@ -636,8 +597,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询桌面用户列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUsersRequest 请求对象
      * @return SyncInvoker<ListUsersRequest, ListUsersResponse>
@@ -651,8 +611,7 @@ public class WorkspaceClient {
      *
      * 该接口用于修改桌面用户信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserInfoRequest 请求对象
      * @return UpdateUserInfoResponse
@@ -666,8 +625,7 @@ public class WorkspaceClient {
      *
      * 该接口用于修改桌面用户信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserInfoRequest 请求对象
      * @return SyncInvoker<UpdateUserInfoRequest, UpdateUserInfoResponse>
@@ -683,8 +641,7 @@ public class WorkspaceClient {
      *
      * 增加桌面磁盘。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddVolumesRequest 请求对象
      * @return AddVolumesResponse
@@ -698,8 +655,7 @@ public class WorkspaceClient {
      *
      * 增加桌面磁盘。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddVolumesRequest 请求对象
      * @return SyncInvoker<AddVolumesRequest, AddVolumesResponse>
@@ -713,8 +669,7 @@ public class WorkspaceClient {
      *
      * 扩容桌面磁盘。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExpandVolumesRequest 请求对象
      * @return ExpandVolumesResponse
@@ -728,8 +683,7 @@ public class WorkspaceClient {
      *
      * 扩容桌面磁盘。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExpandVolumesRequest 请求对象
      * @return SyncInvoker<ExpandVolumesRequest, ExpandVolumesResponse>
@@ -746,8 +700,7 @@ public class WorkspaceClient {
      * 
      * 作为异步接口，调用成功说明云办公服务后台收到了开通请求，但服务是否开通成功需要通过任务查询接口(GET /v2/{project_id}/workspace-sub-jobs)查询该任务的执行状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ApplyWorkspaceRequest 请求对象
      * @return ApplyWorkspaceResponse
@@ -763,8 +716,7 @@ public class WorkspaceClient {
      * 
      * 作为异步接口，调用成功说明云办公服务后台收到了开通请求，但服务是否开通成功需要通过任务查询接口(GET /v2/{project_id}/workspace-sub-jobs)查询该任务的执行状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ApplyWorkspaceRequest 请求对象
      * @return SyncInvoker<ApplyWorkspaceRequest, ApplyWorkspaceResponse>
@@ -780,8 +732,7 @@ public class WorkspaceClient {
      *
      * 该接口用于注销云办公服务。注销前请确保当前用户下的云桌面已经删除，注销后无法恢复。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelWorkspaceRequest 请求对象
      * @return CancelWorkspaceResponse
@@ -795,8 +746,7 @@ public class WorkspaceClient {
      *
      * 该接口用于注销云办公服务。注销前请确保当前用户下的云桌面已经删除，注销后无法恢复。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelWorkspaceRequest 请求对象
      * @return SyncInvoker<CancelWorkspaceRequest, CancelWorkspaceResponse>
@@ -812,8 +762,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询云办公服务详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWorkspacesRequest 请求对象
      * @return ListWorkspacesResponse
@@ -827,8 +776,7 @@ public class WorkspaceClient {
      *
      * 该接口用于查询云办公服务详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWorkspacesRequest 请求对象
      * @return SyncInvoker<ListWorkspacesRequest, ListWorkspacesResponse>
@@ -844,8 +792,7 @@ public class WorkspaceClient {
      *
      * 该接口目前支持修改云办公服务属性。单次请求仅支持修改一种属性类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateWorkspaceRequest 请求对象
      * @return UpdateWorkspaceResponse
@@ -859,8 +806,7 @@ public class WorkspaceClient {
      *
      * 该接口目前支持修改云办公服务属性。单次请求仅支持修改一种属性类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateWorkspaceRequest 请求对象
      * @return SyncInvoker<UpdateWorkspaceRequest, UpdateWorkspaceResponse>

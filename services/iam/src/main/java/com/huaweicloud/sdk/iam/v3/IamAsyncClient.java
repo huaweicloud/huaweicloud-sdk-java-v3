@@ -26,8 +26,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateAgencyWithAllProjectsPermissionRequest 请求对象
      * @return CompletableFuture<AssociateAgencyWithAllProjectsPermissionResponse>
@@ -44,8 +43,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateAgencyWithAllProjectsPermissionRequest 请求对象
      * @return AsyncInvoker<AssociateAgencyWithAllProjectsPermissionRequest, AssociateAgencyWithAllProjectsPermissionResponse>
@@ -63,8 +61,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateAgencyWithDomainPermissionRequest 请求对象
      * @return CompletableFuture<AssociateAgencyWithDomainPermissionResponse>
@@ -81,8 +78,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateAgencyWithDomainPermissionRequest 请求对象
      * @return AsyncInvoker<AssociateAgencyWithDomainPermissionRequest, AssociateAgencyWithDomainPermissionResponse>
@@ -100,8 +96,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateAgencyWithProjectPermissionRequest 请求对象
      * @return CompletableFuture<AssociateAgencyWithProjectPermissionResponse>
@@ -118,8 +113,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateAgencyWithProjectPermissionRequest 请求对象
      * @return AsyncInvoker<AssociateAgencyWithProjectPermissionRequest, AssociateAgencyWithProjectPermissionResponse>
@@ -137,8 +131,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRoleToGroupOnEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<AssociateRoleToGroupOnEnterpriseProjectResponse>
@@ -155,8 +148,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRoleToGroupOnEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<AssociateRoleToGroupOnEnterpriseProjectRequest, AssociateRoleToGroupOnEnterpriseProjectResponse>
@@ -173,8 +165,7 @@ public class IamAsyncClient {
      * 基于用户为企业项目授权。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRoleToUserOnEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<AssociateRoleToUserOnEnterpriseProjectResponse>
@@ -190,8 +181,7 @@ public class IamAsyncClient {
      * 基于用户为企业项目授权。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateRoleToUserOnEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<AssociateRoleToUserOnEnterpriseProjectRequest, AssociateRoleToUserOnEnterpriseProjectResponse>
@@ -209,8 +199,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckAllProjectsPermissionForAgencyRequest 请求对象
      * @return CompletableFuture<CheckAllProjectsPermissionForAgencyResponse>
@@ -227,8 +216,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckAllProjectsPermissionForAgencyRequest 请求对象
      * @return AsyncInvoker<CheckAllProjectsPermissionForAgencyRequest, CheckAllProjectsPermissionForAgencyResponse>
@@ -246,8 +234,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckDomainPermissionForAgencyRequest 请求对象
      * @return CompletableFuture<CheckDomainPermissionForAgencyResponse>
@@ -264,8 +251,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckDomainPermissionForAgencyRequest 请求对象
      * @return AsyncInvoker<CheckDomainPermissionForAgencyRequest, CheckDomainPermissionForAgencyResponse>
@@ -283,8 +269,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckProjectPermissionForAgencyRequest 请求对象
      * @return CompletableFuture<CheckProjectPermissionForAgencyResponse>
@@ -301,8 +286,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckProjectPermissionForAgencyRequest 请求对象
      * @return AsyncInvoker<CheckProjectPermissionForAgencyRequest, CheckProjectPermissionForAgencyResponse>
@@ -320,8 +304,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAgencyRequest 请求对象
      * @return CompletableFuture<CreateAgencyResponse>
@@ -337,8 +320,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAgencyRequest 请求对象
      * @return AsyncInvoker<CreateAgencyRequest, CreateAgencyResponse>
@@ -355,8 +337,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAgencyCustomPolicyRequest 请求对象
      * @return CompletableFuture<CreateAgencyCustomPolicyResponse>
@@ -373,8 +354,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAgencyCustomPolicyRequest 请求对象
      * @return AsyncInvoker<CreateAgencyCustomPolicyRequest, CreateAgencyCustomPolicyResponse>
@@ -392,8 +372,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCloudServiceCustomPolicyRequest 请求对象
      * @return CompletableFuture<CreateCloudServiceCustomPolicyResponse>
@@ -410,8 +389,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCloudServiceCustomPolicyRequest 请求对象
      * @return AsyncInvoker<CreateCloudServiceCustomPolicyRequest, CreateCloudServiceCustomPolicyResponse>
@@ -431,8 +409,7 @@ public class IamAsyncClient {
      * 
      * &gt; - logintoken的有效期为10分钟。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLoginTokenRequest 请求对象
      * @return CompletableFuture<CreateLoginTokenResponse>
@@ -450,8 +427,7 @@ public class IamAsyncClient {
      * 
      * &gt; - logintoken的有效期为10分钟。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLoginTokenRequest 请求对象
      * @return AsyncInvoker<CreateLoginTokenRequest, CreateLoginTokenResponse>
@@ -471,8 +447,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMetadataRequest 请求对象
      * @return CompletableFuture<CreateMetadataResponse>
@@ -490,8 +465,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMetadataRequest 请求对象
      * @return AsyncInvoker<CreateMetadataRequest, CreateMetadataResponse>
@@ -507,8 +481,7 @@ public class IamAsyncClient {
      *
      * 创建OpenId Connect身份提供商配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateOpenIdConnectConfigRequest 请求对象
      * @return CompletableFuture<CreateOpenIdConnectConfigResponse>
@@ -523,8 +496,7 @@ public class IamAsyncClient {
      *
      * 创建OpenId Connect身份提供商配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateOpenIdConnectConfigRequest 请求对象
      * @return AsyncInvoker<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse>
@@ -540,8 +512,7 @@ public class IamAsyncClient {
      *
      * 获取联邦认证token(OpenId Connect Id token方式)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTokenWithIdTokenRequest 请求对象
      * @return CompletableFuture<CreateTokenWithIdTokenResponse>
@@ -556,8 +527,7 @@ public class IamAsyncClient {
      *
      * 获取联邦认证token(OpenId Connect Id token方式)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTokenWithIdTokenRequest 请求对象
      * @return AsyncInvoker<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse>
@@ -573,8 +543,7 @@ public class IamAsyncClient {
      *
      * 获取联邦认证token(OpenId Connect Id token方式)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateUnscopedTokenWithIdTokenRequest 请求对象
      * @return CompletableFuture<CreateUnscopedTokenWithIdTokenResponse>
@@ -589,8 +558,7 @@ public class IamAsyncClient {
      *
      * 获取联邦认证token(OpenId Connect Id token方式)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateUnscopedTokenWithIdTokenRequest 请求对象
      * @return AsyncInvoker<CreateUnscopedTokenWithIdTokenRequest, CreateUnscopedTokenWithIdTokenResponse>
@@ -608,8 +576,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAgencyRequest 请求对象
      * @return CompletableFuture<DeleteAgencyResponse>
@@ -625,8 +592,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAgencyRequest 请求对象
      * @return AsyncInvoker<DeleteAgencyRequest, DeleteAgencyResponse>
@@ -643,8 +609,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCustomPolicyRequest 请求对象
      * @return CompletableFuture<DeleteCustomPolicyResponse>
@@ -660,8 +625,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCustomPolicyRequest 请求对象
      * @return AsyncInvoker<DeleteCustomPolicyRequest, DeleteCustomPolicyResponse>
@@ -679,8 +643,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDomainGroupInheritedRoleRequest 请求对象
      * @return CompletableFuture<DeleteDomainGroupInheritedRoleResponse>
@@ -697,8 +660,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDomainGroupInheritedRoleRequest 请求对象
      * @return AsyncInvoker<DeleteDomainGroupInheritedRoleRequest, DeleteDomainGroupInheritedRoleResponse>
@@ -716,8 +678,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneAddUserToGroupRequest 请求对象
      * @return CompletableFuture<KeystoneAddUserToGroupResponse>
@@ -734,8 +695,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneAddUserToGroupRequest 请求对象
      * @return AsyncInvoker<KeystoneAddUserToGroupRequest, KeystoneAddUserToGroupResponse>
@@ -753,8 +713,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneAssociateGroupWithDomainPermissionRequest 请求对象
      * @return CompletableFuture<KeystoneAssociateGroupWithDomainPermissionResponse>
@@ -771,8 +730,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneAssociateGroupWithDomainPermissionRequest 请求对象
      * @return AsyncInvoker<KeystoneAssociateGroupWithDomainPermissionRequest, KeystoneAssociateGroupWithDomainPermissionResponse>
@@ -790,8 +748,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneAssociateGroupWithProjectPermissionRequest 请求对象
      * @return CompletableFuture<KeystoneAssociateGroupWithProjectPermissionResponse>
@@ -808,8 +765,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneAssociateGroupWithProjectPermissionRequest 请求对象
      * @return AsyncInvoker<KeystoneAssociateGroupWithProjectPermissionRequest, KeystoneAssociateGroupWithProjectPermissionResponse>
@@ -827,8 +783,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCheckDomainPermissionForGroupRequest 请求对象
      * @return CompletableFuture<KeystoneCheckDomainPermissionForGroupResponse>
@@ -845,8 +800,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCheckDomainPermissionForGroupRequest 请求对象
      * @return AsyncInvoker<KeystoneCheckDomainPermissionForGroupRequest, KeystoneCheckDomainPermissionForGroupResponse>
@@ -864,8 +818,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCheckProjectPermissionForGroupRequest 请求对象
      * @return CompletableFuture<KeystoneCheckProjectPermissionForGroupResponse>
@@ -882,8 +835,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCheckProjectPermissionForGroupRequest 请求对象
      * @return AsyncInvoker<KeystoneCheckProjectPermissionForGroupRequest, KeystoneCheckProjectPermissionForGroupResponse>
@@ -901,8 +853,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCheckUserInGroupRequest 请求对象
      * @return CompletableFuture<KeystoneCheckUserInGroupResponse>
@@ -919,8 +870,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCheckUserInGroupRequest 请求对象
      * @return AsyncInvoker<KeystoneCheckUserInGroupRequest, KeystoneCheckUserInGroupResponse>
@@ -938,8 +888,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCheckroleForGroupRequest 请求对象
      * @return CompletableFuture<KeystoneCheckroleForGroupResponse>
@@ -956,8 +905,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCheckroleForGroupRequest 请求对象
      * @return AsyncInvoker<KeystoneCheckroleForGroupRequest, KeystoneCheckroleForGroupResponse>
@@ -975,8 +923,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateGroupRequest 请求对象
      * @return CompletableFuture<KeystoneCreateGroupResponse>
@@ -992,8 +939,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateGroupRequest 请求对象
      * @return AsyncInvoker<KeystoneCreateGroupRequest, KeystoneCreateGroupResponse>
@@ -1011,8 +957,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateIdentityProviderRequest 请求对象
      * @return CompletableFuture<KeystoneCreateIdentityProviderResponse>
@@ -1029,8 +974,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateIdentityProviderRequest 请求对象
      * @return AsyncInvoker<KeystoneCreateIdentityProviderRequest, KeystoneCreateIdentityProviderResponse>
@@ -1048,8 +992,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateMappingRequest 请求对象
      * @return CompletableFuture<KeystoneCreateMappingResponse>
@@ -1066,8 +1009,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateMappingRequest 请求对象
      * @return AsyncInvoker<KeystoneCreateMappingRequest, KeystoneCreateMappingResponse>
@@ -1085,8 +1027,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateProjectRequest 请求对象
      * @return CompletableFuture<KeystoneCreateProjectResponse>
@@ -1103,8 +1044,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateProjectRequest 请求对象
      * @return AsyncInvoker<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse>
@@ -1122,8 +1062,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateProtocolRequest 请求对象
      * @return CompletableFuture<KeystoneCreateProtocolResponse>
@@ -1140,8 +1079,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateProtocolRequest 请求对象
      * @return AsyncInvoker<KeystoneCreateProtocolRequest, KeystoneCreateProtocolResponse>
@@ -1159,8 +1097,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateScopedTokenRequest 请求对象
      * @return CompletableFuture<KeystoneCreateScopedTokenResponse>
@@ -1177,8 +1114,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateScopedTokenRequest 请求对象
      * @return AsyncInvoker<KeystoneCreateScopedTokenRequest, KeystoneCreateScopedTokenResponse>
@@ -1196,8 +1132,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneDeleteGroupRequest 请求对象
      * @return CompletableFuture<KeystoneDeleteGroupResponse>
@@ -1213,8 +1148,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneDeleteGroupRequest 请求对象
      * @return AsyncInvoker<KeystoneDeleteGroupRequest, KeystoneDeleteGroupResponse>
@@ -1232,8 +1166,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneDeleteIdentityProviderRequest 请求对象
      * @return CompletableFuture<KeystoneDeleteIdentityProviderResponse>
@@ -1250,8 +1183,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneDeleteIdentityProviderRequest 请求对象
      * @return AsyncInvoker<KeystoneDeleteIdentityProviderRequest, KeystoneDeleteIdentityProviderResponse>
@@ -1269,8 +1201,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneDeleteMappingRequest 请求对象
      * @return CompletableFuture<KeystoneDeleteMappingResponse>
@@ -1287,8 +1218,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneDeleteMappingRequest 请求对象
      * @return AsyncInvoker<KeystoneDeleteMappingRequest, KeystoneDeleteMappingResponse>
@@ -1306,8 +1236,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneDeleteProtocolRequest 请求对象
      * @return CompletableFuture<KeystoneDeleteProtocolResponse>
@@ -1324,8 +1253,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneDeleteProtocolRequest 请求对象
      * @return AsyncInvoker<KeystoneDeleteProtocolRequest, KeystoneDeleteProtocolResponse>
@@ -1341,8 +1269,7 @@ public class IamAsyncClient {
      *
      * 该接口可以用于管理员查询用户组所有项目服务权限列表。 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListAllProjectPermissionsForGroupRequest 请求对象
      * @return CompletableFuture<KeystoneListAllProjectPermissionsForGroupResponse>
@@ -1357,8 +1284,7 @@ public class IamAsyncClient {
      *
      * 该接口可以用于管理员查询用户组所有项目服务权限列表。 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListAllProjectPermissionsForGroupRequest 请求对象
      * @return AsyncInvoker<KeystoneListAllProjectPermissionsForGroupRequest, KeystoneListAllProjectPermissionsForGroupResponse>
@@ -1376,8 +1302,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListAuthDomainsRequest 请求对象
      * @return CompletableFuture<KeystoneListAuthDomainsResponse>
@@ -1394,8 +1319,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListAuthDomainsRequest 请求对象
      * @return AsyncInvoker<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse>
@@ -1413,8 +1337,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListAuthProjectsRequest 请求对象
      * @return CompletableFuture<KeystoneListAuthProjectsResponse>
@@ -1431,8 +1354,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListAuthProjectsRequest 请求对象
      * @return AsyncInvoker<KeystoneListAuthProjectsRequest, KeystoneListAuthProjectsResponse>
@@ -1450,8 +1372,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListDomainPermissionsForGroupRequest 请求对象
      * @return CompletableFuture<KeystoneListDomainPermissionsForGroupResponse>
@@ -1468,8 +1389,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListDomainPermissionsForGroupRequest 请求对象
      * @return AsyncInvoker<KeystoneListDomainPermissionsForGroupRequest, KeystoneListDomainPermissionsForGroupResponse>
@@ -1487,8 +1407,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListEndpointsRequest 请求对象
      * @return CompletableFuture<KeystoneListEndpointsResponse>
@@ -1505,8 +1424,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListEndpointsRequest 请求对象
      * @return AsyncInvoker<KeystoneListEndpointsRequest, KeystoneListEndpointsResponse>
@@ -1525,8 +1443,7 @@ public class IamAsyncClient {
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * &gt; - 推荐使用[查询IAM用户可以访问的账号详情](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;IAM&amp;api&#x3D;KeystoneQueryAccessibleDomainDetailsToUser)，该接口可以返回相同的响应格式。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListFederationDomainsRequest 请求对象
      * @return CompletableFuture<KeystoneListFederationDomainsResponse>
@@ -1544,8 +1461,7 @@ public class IamAsyncClient {
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * &gt; - 推荐使用[查询IAM用户可以访问的账号详情](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;IAM&amp;api&#x3D;KeystoneQueryAccessibleDomainDetailsToUser)，该接口可以返回相同的响应格式。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListFederationDomainsRequest 请求对象
      * @return AsyncInvoker<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse>
@@ -1563,8 +1479,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListGroupsRequest 请求对象
      * @return CompletableFuture<KeystoneListGroupsResponse>
@@ -1580,8 +1495,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListGroupsRequest 请求对象
      * @return AsyncInvoker<KeystoneListGroupsRequest, KeystoneListGroupsResponse>
@@ -1599,8 +1513,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListIdentityProvidersRequest 请求对象
      * @return CompletableFuture<KeystoneListIdentityProvidersResponse>
@@ -1617,8 +1530,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListIdentityProvidersRequest 请求对象
      * @return AsyncInvoker<KeystoneListIdentityProvidersRequest, KeystoneListIdentityProvidersResponse>
@@ -1636,8 +1548,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListMappingsRequest 请求对象
      * @return CompletableFuture<KeystoneListMappingsResponse>
@@ -1654,8 +1565,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListMappingsRequest 请求对象
      * @return AsyncInvoker<KeystoneListMappingsRequest, KeystoneListMappingsResponse>
@@ -1673,8 +1583,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListPermissionsRequest 请求对象
      * @return CompletableFuture<KeystoneListPermissionsResponse>
@@ -1691,8 +1600,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListPermissionsRequest 请求对象
      * @return AsyncInvoker<KeystoneListPermissionsRequest, KeystoneListPermissionsResponse>
@@ -1710,8 +1618,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListProjectPermissionsForGroupRequest 请求对象
      * @return CompletableFuture<KeystoneListProjectPermissionsForGroupResponse>
@@ -1728,8 +1635,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListProjectPermissionsForGroupRequest 请求对象
      * @return AsyncInvoker<KeystoneListProjectPermissionsForGroupRequest, KeystoneListProjectPermissionsForGroupResponse>
@@ -1747,8 +1653,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListProjectsRequest 请求对象
      * @return CompletableFuture<KeystoneListProjectsResponse>
@@ -1765,8 +1670,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListProjectsRequest 请求对象
      * @return AsyncInvoker<KeystoneListProjectsRequest, KeystoneListProjectsResponse>
@@ -1784,8 +1688,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListProjectsForUserRequest 请求对象
      * @return CompletableFuture<KeystoneListProjectsForUserResponse>
@@ -1802,8 +1705,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListProjectsForUserRequest 请求对象
      * @return AsyncInvoker<KeystoneListProjectsForUserRequest, KeystoneListProjectsForUserResponse>
@@ -1821,8 +1723,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListProtocolsRequest 请求对象
      * @return CompletableFuture<KeystoneListProtocolsResponse>
@@ -1839,8 +1740,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListProtocolsRequest 请求对象
      * @return AsyncInvoker<KeystoneListProtocolsRequest, KeystoneListProtocolsResponse>
@@ -1858,8 +1758,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListRegionsRequest 请求对象
      * @return CompletableFuture<KeystoneListRegionsResponse>
@@ -1875,8 +1774,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListRegionsRequest 请求对象
      * @return AsyncInvoker<KeystoneListRegionsRequest, KeystoneListRegionsResponse>
@@ -1894,8 +1792,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListServicesRequest 请求对象
      * @return CompletableFuture<KeystoneListServicesResponse>
@@ -1912,8 +1809,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListServicesRequest 请求对象
      * @return AsyncInvoker<KeystoneListServicesRequest, KeystoneListServicesResponse>
@@ -1931,8 +1827,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListUsersForGroupByAdminRequest 请求对象
      * @return CompletableFuture<KeystoneListUsersForGroupByAdminResponse>
@@ -1949,8 +1844,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListUsersForGroupByAdminRequest 请求对象
      * @return AsyncInvoker<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse>
@@ -1968,8 +1862,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListVersionsRequest 请求对象
      * @return CompletableFuture<KeystoneListVersionsResponse>
@@ -1986,8 +1879,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListVersionsRequest 请求对象
      * @return AsyncInvoker<KeystoneListVersionsRequest, KeystoneListVersionsResponse>
@@ -2005,8 +1897,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneRemoveDomainPermissionFromGroupRequest 请求对象
      * @return CompletableFuture<KeystoneRemoveDomainPermissionFromGroupResponse>
@@ -2023,8 +1914,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneRemoveDomainPermissionFromGroupRequest 请求对象
      * @return AsyncInvoker<KeystoneRemoveDomainPermissionFromGroupRequest, KeystoneRemoveDomainPermissionFromGroupResponse>
@@ -2042,8 +1932,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneRemoveProjectPermissionFromGroupRequest 请求对象
      * @return CompletableFuture<KeystoneRemoveProjectPermissionFromGroupResponse>
@@ -2060,8 +1949,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneRemoveProjectPermissionFromGroupRequest 请求对象
      * @return AsyncInvoker<KeystoneRemoveProjectPermissionFromGroupRequest, KeystoneRemoveProjectPermissionFromGroupResponse>
@@ -2079,8 +1967,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneRemoveUserFromGroupRequest 请求对象
      * @return CompletableFuture<KeystoneRemoveUserFromGroupResponse>
@@ -2097,8 +1984,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneRemoveUserFromGroupRequest 请求对象
      * @return AsyncInvoker<KeystoneRemoveUserFromGroupRequest, KeystoneRemoveUserFromGroupResponse>
@@ -2116,8 +2002,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowCatalogRequest 请求对象
      * @return CompletableFuture<KeystoneShowCatalogResponse>
@@ -2133,8 +2018,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowCatalogRequest 请求对象
      * @return AsyncInvoker<KeystoneShowCatalogRequest, KeystoneShowCatalogResponse>
@@ -2152,8 +2036,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowEndpointRequest 请求对象
      * @return CompletableFuture<KeystoneShowEndpointResponse>
@@ -2170,8 +2053,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowEndpointRequest 请求对象
      * @return AsyncInvoker<KeystoneShowEndpointRequest, KeystoneShowEndpointResponse>
@@ -2189,8 +2071,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowGroupRequest 请求对象
      * @return CompletableFuture<KeystoneShowGroupResponse>
@@ -2206,8 +2087,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowGroupRequest 请求对象
      * @return AsyncInvoker<KeystoneShowGroupRequest, KeystoneShowGroupResponse>
@@ -2225,8 +2105,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowIdentityProviderRequest 请求对象
      * @return CompletableFuture<KeystoneShowIdentityProviderResponse>
@@ -2243,8 +2122,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowIdentityProviderRequest 请求对象
      * @return AsyncInvoker<KeystoneShowIdentityProviderRequest, KeystoneShowIdentityProviderResponse>
@@ -2262,8 +2140,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowMappingRequest 请求对象
      * @return CompletableFuture<KeystoneShowMappingResponse>
@@ -2279,8 +2156,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowMappingRequest 请求对象
      * @return AsyncInvoker<KeystoneShowMappingRequest, KeystoneShowMappingResponse>
@@ -2298,8 +2174,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowPermissionRequest 请求对象
      * @return CompletableFuture<KeystoneShowPermissionResponse>
@@ -2316,8 +2191,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowPermissionRequest 请求对象
      * @return AsyncInvoker<KeystoneShowPermissionRequest, KeystoneShowPermissionResponse>
@@ -2335,8 +2209,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowProjectRequest 请求对象
      * @return CompletableFuture<KeystoneShowProjectResponse>
@@ -2352,8 +2225,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowProjectRequest 请求对象
      * @return AsyncInvoker<KeystoneShowProjectRequest, KeystoneShowProjectResponse>
@@ -2371,8 +2243,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowProtocolRequest 请求对象
      * @return CompletableFuture<KeystoneShowProtocolResponse>
@@ -2389,8 +2260,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowProtocolRequest 请求对象
      * @return AsyncInvoker<KeystoneShowProtocolRequest, KeystoneShowProtocolResponse>
@@ -2408,8 +2278,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowRegionRequest 请求对象
      * @return CompletableFuture<KeystoneShowRegionResponse>
@@ -2425,8 +2294,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowRegionRequest 请求对象
      * @return AsyncInvoker<KeystoneShowRegionRequest, KeystoneShowRegionResponse>
@@ -2444,8 +2312,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowSecurityComplianceRequest 请求对象
      * @return CompletableFuture<KeystoneShowSecurityComplianceResponse>
@@ -2462,8 +2329,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowSecurityComplianceRequest 请求对象
      * @return AsyncInvoker<KeystoneShowSecurityComplianceRequest, KeystoneShowSecurityComplianceResponse>
@@ -2481,8 +2347,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowSecurityComplianceByOptionRequest 请求对象
      * @return CompletableFuture<KeystoneShowSecurityComplianceByOptionResponse>
@@ -2499,8 +2364,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowSecurityComplianceByOptionRequest 请求对象
      * @return AsyncInvoker<KeystoneShowSecurityComplianceByOptionRequest, KeystoneShowSecurityComplianceByOptionResponse>
@@ -2518,8 +2382,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowServiceRequest 请求对象
      * @return CompletableFuture<KeystoneShowServiceResponse>
@@ -2535,8 +2398,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowServiceRequest 请求对象
      * @return AsyncInvoker<KeystoneShowServiceRequest, KeystoneShowServiceResponse>
@@ -2554,8 +2416,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowVersionRequest 请求对象
      * @return CompletableFuture<KeystoneShowVersionResponse>
@@ -2571,8 +2432,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowVersionRequest 请求对象
      * @return AsyncInvoker<KeystoneShowVersionRequest, KeystoneShowVersionResponse>
@@ -2590,8 +2450,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneUpdateGroupRequest 请求对象
      * @return CompletableFuture<KeystoneUpdateGroupResponse>
@@ -2607,8 +2466,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneUpdateGroupRequest 请求对象
      * @return AsyncInvoker<KeystoneUpdateGroupRequest, KeystoneUpdateGroupResponse>
@@ -2626,8 +2484,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneUpdateIdentityProviderRequest 请求对象
      * @return CompletableFuture<KeystoneUpdateIdentityProviderResponse>
@@ -2644,8 +2501,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneUpdateIdentityProviderRequest 请求对象
      * @return AsyncInvoker<KeystoneUpdateIdentityProviderRequest, KeystoneUpdateIdentityProviderResponse>
@@ -2663,8 +2519,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneUpdateMappingRequest 请求对象
      * @return CompletableFuture<KeystoneUpdateMappingResponse>
@@ -2681,8 +2536,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneUpdateMappingRequest 请求对象
      * @return AsyncInvoker<KeystoneUpdateMappingRequest, KeystoneUpdateMappingResponse>
@@ -2700,8 +2554,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneUpdateProjectRequest 请求对象
      * @return CompletableFuture<KeystoneUpdateProjectResponse>
@@ -2718,8 +2571,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneUpdateProjectRequest 请求对象
      * @return AsyncInvoker<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse>
@@ -2737,8 +2589,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneUpdateProtocolRequest 请求对象
      * @return CompletableFuture<KeystoneUpdateProtocolResponse>
@@ -2755,8 +2606,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneUpdateProtocolRequest 请求对象
      * @return AsyncInvoker<KeystoneUpdateProtocolRequest, KeystoneUpdateProtocolResponse>
@@ -2774,8 +2624,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAgenciesRequest 请求对象
      * @return CompletableFuture<ListAgenciesResponse>
@@ -2791,8 +2640,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAgenciesRequest 请求对象
      * @return AsyncInvoker<ListAgenciesRequest, ListAgenciesResponse>
@@ -2809,8 +2657,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAllProjectsPermissionsForAgencyRequest 请求对象
      * @return CompletableFuture<ListAllProjectsPermissionsForAgencyResponse>
@@ -2827,8 +2674,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAllProjectsPermissionsForAgencyRequest 请求对象
      * @return AsyncInvoker<ListAllProjectsPermissionsForAgencyRequest, ListAllProjectsPermissionsForAgencyResponse>
@@ -2846,8 +2692,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCustomPoliciesRequest 请求对象
      * @return CompletableFuture<ListCustomPoliciesResponse>
@@ -2863,8 +2708,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCustomPoliciesRequest 请求对象
      * @return AsyncInvoker<ListCustomPoliciesRequest, ListCustomPoliciesResponse>
@@ -2882,8 +2726,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDomainPermissionsForAgencyRequest 请求对象
      * @return CompletableFuture<ListDomainPermissionsForAgencyResponse>
@@ -2900,8 +2743,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDomainPermissionsForAgencyRequest 请求对象
      * @return AsyncInvoker<ListDomainPermissionsForAgencyRequest, ListDomainPermissionsForAgencyResponse>
@@ -2919,8 +2761,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnterpriseProjectsForGroupRequest 请求对象
      * @return CompletableFuture<ListEnterpriseProjectsForGroupResponse>
@@ -2937,8 +2778,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnterpriseProjectsForGroupRequest 请求对象
      * @return AsyncInvoker<ListEnterpriseProjectsForGroupRequest, ListEnterpriseProjectsForGroupResponse>
@@ -2956,8 +2796,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnterpriseProjectsForUserRequest 请求对象
      * @return CompletableFuture<ListEnterpriseProjectsForUserResponse>
@@ -2974,8 +2813,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnterpriseProjectsForUserRequest 请求对象
      * @return AsyncInvoker<ListEnterpriseProjectsForUserRequest, ListEnterpriseProjectsForUserResponse>
@@ -2993,8 +2831,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGroupsForEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<ListGroupsForEnterpriseProjectResponse>
@@ -3011,8 +2848,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListGroupsForEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<ListGroupsForEnterpriseProjectRequest, ListGroupsForEnterpriseProjectResponse>
@@ -3030,8 +2866,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectPermissionsForAgencyRequest 请求对象
      * @return CompletableFuture<ListProjectPermissionsForAgencyResponse>
@@ -3048,8 +2883,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectPermissionsForAgencyRequest 请求对象
      * @return AsyncInvoker<ListProjectPermissionsForAgencyRequest, ListProjectPermissionsForAgencyResponse>
@@ -3067,8 +2901,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRolesForGroupOnEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<ListRolesForGroupOnEnterpriseProjectResponse>
@@ -3085,8 +2918,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRolesForGroupOnEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<ListRolesForGroupOnEnterpriseProjectRequest, ListRolesForGroupOnEnterpriseProjectResponse>
@@ -3103,8 +2935,7 @@ public class IamAsyncClient {
      * 该接口可用于查询企业项目直接关联用户的权限。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRolesForUserOnEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<ListRolesForUserOnEnterpriseProjectResponse>
@@ -3120,8 +2951,7 @@ public class IamAsyncClient {
      * 该接口可用于查询企业项目直接关联用户的权限。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRolesForUserOnEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<ListRolesForUserOnEnterpriseProjectRequest, ListRolesForUserOnEnterpriseProjectResponse>
@@ -3138,8 +2968,7 @@ public class IamAsyncClient {
      * 该接口可用于查询企业项目直接关联的用户。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUsersForEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<ListUsersForEnterpriseProjectResponse>
@@ -3155,8 +2984,7 @@ public class IamAsyncClient {
      * 该接口可用于查询企业项目直接关联的用户。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUsersForEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<ListUsersForEnterpriseProjectRequest, ListUsersForEnterpriseProjectResponse>
@@ -3174,8 +3002,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveAllProjectsPermissionFromAgencyRequest 请求对象
      * @return CompletableFuture<RemoveAllProjectsPermissionFromAgencyResponse>
@@ -3192,8 +3019,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveAllProjectsPermissionFromAgencyRequest 请求对象
      * @return AsyncInvoker<RemoveAllProjectsPermissionFromAgencyRequest, RemoveAllProjectsPermissionFromAgencyResponse>
@@ -3211,8 +3037,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveDomainPermissionFromAgencyRequest 请求对象
      * @return CompletableFuture<RemoveDomainPermissionFromAgencyResponse>
@@ -3229,8 +3054,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveDomainPermissionFromAgencyRequest 请求对象
      * @return AsyncInvoker<RemoveDomainPermissionFromAgencyRequest, RemoveDomainPermissionFromAgencyResponse>
@@ -3248,8 +3072,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveProjectPermissionFromAgencyRequest 请求对象
      * @return CompletableFuture<RemoveProjectPermissionFromAgencyResponse>
@@ -3266,8 +3089,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveProjectPermissionFromAgencyRequest 请求对象
      * @return AsyncInvoker<RemoveProjectPermissionFromAgencyRequest, RemoveProjectPermissionFromAgencyResponse>
@@ -3285,8 +3107,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RevokeRoleFromGroupOnEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<RevokeRoleFromGroupOnEnterpriseProjectResponse>
@@ -3303,8 +3124,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RevokeRoleFromGroupOnEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<RevokeRoleFromGroupOnEnterpriseProjectRequest, RevokeRoleFromGroupOnEnterpriseProjectResponse>
@@ -3321,8 +3141,7 @@ public class IamAsyncClient {
      * 删除企业项目直接关联用户的权限。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RevokeRoleFromUserOnEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<RevokeRoleFromUserOnEnterpriseProjectResponse>
@@ -3338,8 +3157,7 @@ public class IamAsyncClient {
      * 删除企业项目直接关联用户的权限。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RevokeRoleFromUserOnEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<RevokeRoleFromUserOnEnterpriseProjectRequest, RevokeRoleFromUserOnEnterpriseProjectResponse>
@@ -3357,8 +3175,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAgencyRequest 请求对象
      * @return CompletableFuture<ShowAgencyResponse>
@@ -3374,8 +3191,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAgencyRequest 请求对象
      * @return AsyncInvoker<ShowAgencyRequest, ShowAgencyResponse>
@@ -3391,8 +3207,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCustomPolicyRequest 请求对象
      * @return CompletableFuture<ShowCustomPolicyResponse>
@@ -3408,8 +3223,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCustomPolicyRequest 请求对象
      * @return AsyncInvoker<ShowCustomPolicyRequest, ShowCustomPolicyResponse>
@@ -3427,8 +3241,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainApiAclPolicyRequest 请求对象
      * @return CompletableFuture<ShowDomainApiAclPolicyResponse>
@@ -3445,8 +3258,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainApiAclPolicyRequest 请求对象
      * @return AsyncInvoker<ShowDomainApiAclPolicyRequest, ShowDomainApiAclPolicyResponse>
@@ -3464,8 +3276,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainConsoleAclPolicyRequest 请求对象
      * @return CompletableFuture<ShowDomainConsoleAclPolicyResponse>
@@ -3482,8 +3293,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainConsoleAclPolicyRequest 请求对象
      * @return AsyncInvoker<ShowDomainConsoleAclPolicyRequest, ShowDomainConsoleAclPolicyResponse>
@@ -3501,8 +3311,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainLoginPolicyRequest 请求对象
      * @return CompletableFuture<ShowDomainLoginPolicyResponse>
@@ -3519,8 +3328,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainLoginPolicyRequest 请求对象
      * @return AsyncInvoker<ShowDomainLoginPolicyRequest, ShowDomainLoginPolicyResponse>
@@ -3538,8 +3346,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainPasswordPolicyRequest 请求对象
      * @return CompletableFuture<ShowDomainPasswordPolicyResponse>
@@ -3556,8 +3363,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainPasswordPolicyRequest 请求对象
      * @return AsyncInvoker<ShowDomainPasswordPolicyRequest, ShowDomainPasswordPolicyResponse>
@@ -3575,8 +3381,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainProtectPolicyRequest 请求对象
      * @return CompletableFuture<ShowDomainProtectPolicyResponse>
@@ -3593,8 +3398,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainProtectPolicyRequest 请求对象
      * @return AsyncInvoker<ShowDomainProtectPolicyRequest, ShowDomainProtectPolicyResponse>
@@ -3612,8 +3416,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainQuotaRequest 请求对象
      * @return CompletableFuture<ShowDomainQuotaResponse>
@@ -3629,8 +3432,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainQuotaRequest 请求对象
      * @return AsyncInvoker<ShowDomainQuotaRequest, ShowDomainQuotaResponse>
@@ -3647,8 +3449,7 @@ public class IamAsyncClient {
      * 该接口用于查询指定账号中的授权记录。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainRoleAssignmentsRequest 请求对象
      * @return CompletableFuture<ShowDomainRoleAssignmentsResponse>
@@ -3664,8 +3465,7 @@ public class IamAsyncClient {
      * 该接口用于查询指定账号中的授权记录。
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainRoleAssignmentsRequest 请求对象
      * @return AsyncInvoker<ShowDomainRoleAssignmentsRequest, ShowDomainRoleAssignmentsResponse>
@@ -3683,8 +3483,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMetadataRequest 请求对象
      * @return CompletableFuture<ShowMetadataResponse>
@@ -3700,8 +3499,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMetadataRequest 请求对象
      * @return AsyncInvoker<ShowMetadataRequest, ShowMetadataResponse>
@@ -3716,8 +3514,7 @@ public class IamAsyncClient {
      *
      * 查询OpenId Connect身份提供商配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOpenIdConnectConfigRequest 请求对象
      * @return CompletableFuture<ShowOpenIdConnectConfigResponse>
@@ -3732,8 +3529,7 @@ public class IamAsyncClient {
      *
      * 查询OpenId Connect身份提供商配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOpenIdConnectConfigRequest 请求对象
      * @return AsyncInvoker<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse>
@@ -3751,8 +3547,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectDetailsAndStatusRequest 请求对象
      * @return CompletableFuture<ShowProjectDetailsAndStatusResponse>
@@ -3769,8 +3564,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectDetailsAndStatusRequest 请求对象
      * @return AsyncInvoker<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse>
@@ -3788,8 +3582,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectQuotaRequest 请求对象
      * @return CompletableFuture<ShowProjectQuotaResponse>
@@ -3805,8 +3598,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectQuotaRequest 请求对象
      * @return AsyncInvoker<ShowProjectQuotaRequest, ShowProjectQuotaResponse>
@@ -3824,8 +3616,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAgencyRequest 请求对象
      * @return CompletableFuture<UpdateAgencyResponse>
@@ -3841,8 +3632,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAgencyRequest 请求对象
      * @return AsyncInvoker<UpdateAgencyRequest, UpdateAgencyResponse>
@@ -3859,8 +3649,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAgencyCustomPolicyRequest 请求对象
      * @return CompletableFuture<UpdateAgencyCustomPolicyResponse>
@@ -3877,8 +3666,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAgencyCustomPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateAgencyCustomPolicyRequest, UpdateAgencyCustomPolicyResponse>
@@ -3896,8 +3684,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCloudServiceCustomPolicyRequest 请求对象
      * @return CompletableFuture<UpdateCloudServiceCustomPolicyResponse>
@@ -3914,8 +3701,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateCloudServiceCustomPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateCloudServiceCustomPolicyRequest, UpdateCloudServiceCustomPolicyResponse>
@@ -3933,8 +3719,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainApiAclPolicyRequest 请求对象
      * @return CompletableFuture<UpdateDomainApiAclPolicyResponse>
@@ -3951,8 +3736,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainApiAclPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateDomainApiAclPolicyRequest, UpdateDomainApiAclPolicyResponse>
@@ -3970,8 +3754,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainConsoleAclPolicyRequest 请求对象
      * @return CompletableFuture<UpdateDomainConsoleAclPolicyResponse>
@@ -3988,8 +3771,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainConsoleAclPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateDomainConsoleAclPolicyRequest, UpdateDomainConsoleAclPolicyResponse>
@@ -4007,8 +3789,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainGroupInheritRoleRequest 请求对象
      * @return CompletableFuture<UpdateDomainGroupInheritRoleResponse>
@@ -4025,8 +3806,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainGroupInheritRoleRequest 请求对象
      * @return AsyncInvoker<UpdateDomainGroupInheritRoleRequest, UpdateDomainGroupInheritRoleResponse>
@@ -4044,8 +3824,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainLoginPolicyRequest 请求对象
      * @return CompletableFuture<UpdateDomainLoginPolicyResponse>
@@ -4062,8 +3841,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainLoginPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse>
@@ -4081,8 +3859,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainPasswordPolicyRequest 请求对象
      * @return CompletableFuture<UpdateDomainPasswordPolicyResponse>
@@ -4099,8 +3876,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainPasswordPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateDomainPasswordPolicyRequest, UpdateDomainPasswordPolicyResponse>
@@ -4118,8 +3894,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainProtectPolicyRequest 请求对象
      * @return CompletableFuture<UpdateDomainProtectPolicyResponse>
@@ -4136,8 +3911,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainProtectPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse>
@@ -4153,8 +3927,7 @@ public class IamAsyncClient {
      *
      * 修改OpenId Connect身份提供商配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateOpenIdConnectConfigRequest 请求对象
      * @return CompletableFuture<UpdateOpenIdConnectConfigResponse>
@@ -4169,8 +3942,7 @@ public class IamAsyncClient {
      *
      * 修改OpenId Connect身份提供商配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateOpenIdConnectConfigRequest 请求对象
      * @return AsyncInvoker<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse>
@@ -4188,8 +3960,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectStatusRequest 请求对象
      * @return CompletableFuture<UpdateProjectStatusResponse>
@@ -4205,8 +3976,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectStatusRequest 请求对象
      * @return AsyncInvoker<UpdateProjectStatusRequest, UpdateProjectStatusResponse>
@@ -4226,8 +3996,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePermanentAccessKeyRequest 请求对象
      * @return CompletableFuture<CreatePermanentAccessKeyResponse>
@@ -4246,8 +4015,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePermanentAccessKeyRequest 请求对象
      * @return AsyncInvoker<CreatePermanentAccessKeyRequest, CreatePermanentAccessKeyResponse>
@@ -4267,8 +4035,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTemporaryAccessKeyByAgencyRequest 请求对象
      * @return CompletableFuture<CreateTemporaryAccessKeyByAgencyResponse>
@@ -4287,8 +4054,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTemporaryAccessKeyByAgencyRequest 请求对象
      * @return AsyncInvoker<CreateTemporaryAccessKeyByAgencyRequest, CreateTemporaryAccessKeyByAgencyResponse>
@@ -4308,8 +4074,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTemporaryAccessKeyByTokenRequest 请求对象
      * @return CompletableFuture<CreateTemporaryAccessKeyByTokenResponse>
@@ -4328,8 +4093,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTemporaryAccessKeyByTokenRequest 请求对象
      * @return AsyncInvoker<CreateTemporaryAccessKeyByTokenRequest, CreateTemporaryAccessKeyByTokenResponse>
@@ -4347,8 +4111,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePermanentAccessKeyRequest 请求对象
      * @return CompletableFuture<DeletePermanentAccessKeyResponse>
@@ -4365,8 +4128,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePermanentAccessKeyRequest 请求对象
      * @return AsyncInvoker<DeletePermanentAccessKeyRequest, DeletePermanentAccessKeyResponse>
@@ -4384,8 +4146,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPermanentAccessKeysRequest 请求对象
      * @return CompletableFuture<ListPermanentAccessKeysResponse>
@@ -4402,8 +4163,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPermanentAccessKeysRequest 请求对象
      * @return AsyncInvoker<ListPermanentAccessKeysRequest, ListPermanentAccessKeysResponse>
@@ -4421,8 +4181,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPermanentAccessKeyRequest 请求对象
      * @return CompletableFuture<ShowPermanentAccessKeyResponse>
@@ -4439,8 +4198,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPermanentAccessKeyRequest 请求对象
      * @return AsyncInvoker<ShowPermanentAccessKeyRequest, ShowPermanentAccessKeyResponse>
@@ -4458,8 +4216,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePermanentAccessKeyRequest 请求对象
      * @return CompletableFuture<UpdatePermanentAccessKeyResponse>
@@ -4476,8 +4233,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePermanentAccessKeyRequest 请求对象
      * @return AsyncInvoker<UpdatePermanentAccessKeyRequest, UpdatePermanentAccessKeyResponse>
@@ -4495,8 +4251,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateBindingDeviceRequest 请求对象
      * @return CompletableFuture<CreateBindingDeviceResponse>
@@ -4512,8 +4267,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateBindingDeviceRequest 请求对象
      * @return AsyncInvoker<CreateBindingDeviceRequest, CreateBindingDeviceResponse>
@@ -4531,8 +4285,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMfaDeviceRequest 请求对象
      * @return CompletableFuture<CreateMfaDeviceResponse>
@@ -4548,8 +4301,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateMfaDeviceRequest 请求对象
      * @return AsyncInvoker<CreateMfaDeviceRequest, CreateMfaDeviceResponse>
@@ -4567,8 +4319,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateUserRequest 请求对象
      * @return CompletableFuture<CreateUserResponse>
@@ -4584,8 +4335,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateUserRequest 请求对象
      * @return AsyncInvoker<CreateUserRequest, CreateUserResponse>
@@ -4601,8 +4351,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBindingDeviceRequest 请求对象
      * @return CompletableFuture<DeleteBindingDeviceResponse>
@@ -4618,8 +4367,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBindingDeviceRequest 请求对象
      * @return AsyncInvoker<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse>
@@ -4637,8 +4385,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMfaDeviceRequest 请求对象
      * @return CompletableFuture<DeleteMfaDeviceResponse>
@@ -4654,8 +4401,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMfaDeviceRequest 请求对象
      * @return AsyncInvoker<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse>
@@ -4673,8 +4419,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateUserRequest 请求对象
      * @return CompletableFuture<KeystoneCreateUserResponse>
@@ -4690,8 +4435,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateUserRequest 请求对象
      * @return AsyncInvoker<KeystoneCreateUserRequest, KeystoneCreateUserResponse>
@@ -4709,8 +4453,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneDeleteUserRequest 请求对象
      * @return CompletableFuture<KeystoneDeleteUserResponse>
@@ -4726,8 +4469,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneDeleteUserRequest 请求对象
      * @return AsyncInvoker<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse>
@@ -4745,8 +4487,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListGroupsForUserRequest 请求对象
      * @return CompletableFuture<KeystoneListGroupsForUserResponse>
@@ -4763,8 +4504,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListGroupsForUserRequest 请求对象
      * @return AsyncInvoker<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse>
@@ -4782,8 +4522,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListUsersRequest 请求对象
      * @return CompletableFuture<KeystoneListUsersResponse>
@@ -4799,8 +4538,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneListUsersRequest 请求对象
      * @return AsyncInvoker<KeystoneListUsersRequest, KeystoneListUsersResponse>
@@ -4818,8 +4556,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowUserRequest 请求对象
      * @return CompletableFuture<KeystoneShowUserResponse>
@@ -4835,8 +4572,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneShowUserRequest 请求对象
      * @return AsyncInvoker<KeystoneShowUserRequest, KeystoneShowUserResponse>
@@ -4854,8 +4590,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneUpdateUserByAdminRequest 请求对象
      * @return CompletableFuture<KeystoneUpdateUserByAdminResponse>
@@ -4872,8 +4607,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneUpdateUserByAdminRequest 请求对象
      * @return AsyncInvoker<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse>
@@ -4891,8 +4625,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneUpdateUserPasswordRequest 请求对象
      * @return CompletableFuture<KeystoneUpdateUserPasswordResponse>
@@ -4909,8 +4642,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneUpdateUserPasswordRequest 请求对象
      * @return AsyncInvoker<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse>
@@ -4928,8 +4660,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUserLoginProtectsRequest 请求对象
      * @return CompletableFuture<ListUserLoginProtectsResponse>
@@ -4946,8 +4677,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUserLoginProtectsRequest 请求对象
      * @return AsyncInvoker<ListUserLoginProtectsRequest, ListUserLoginProtectsResponse>
@@ -4965,8 +4695,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUserMfaDevicesRequest 请求对象
      * @return CompletableFuture<ListUserMfaDevicesResponse>
@@ -4982,8 +4711,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUserMfaDevicesRequest 请求对象
      * @return AsyncInvoker<ListUserMfaDevicesRequest, ListUserMfaDevicesResponse>
@@ -5001,8 +4729,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserRequest 请求对象
      * @return CompletableFuture<ShowUserResponse>
@@ -5018,8 +4745,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserRequest 请求对象
      * @return AsyncInvoker<ShowUserRequest, ShowUserResponse>
@@ -5035,8 +4761,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserLoginProtectRequest 请求对象
      * @return CompletableFuture<ShowUserLoginProtectResponse>
@@ -5053,8 +4778,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserLoginProtectRequest 请求对象
      * @return AsyncInvoker<ShowUserLoginProtectRequest, ShowUserLoginProtectResponse>
@@ -5072,8 +4796,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserMfaDeviceRequest 请求对象
      * @return CompletableFuture<ShowUserMfaDeviceResponse>
@@ -5089,8 +4812,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserMfaDeviceRequest 请求对象
      * @return AsyncInvoker<ShowUserMfaDeviceRequest, ShowUserMfaDeviceResponse>
@@ -5108,8 +4830,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLoginProtectRequest 请求对象
      * @return CompletableFuture<UpdateLoginProtectResponse>
@@ -5125,8 +4846,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLoginProtectRequest 请求对象
      * @return AsyncInvoker<UpdateLoginProtectRequest, UpdateLoginProtectResponse>
@@ -5144,8 +4864,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserRequest 请求对象
      * @return CompletableFuture<UpdateUserResponse>
@@ -5161,8 +4880,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserRequest 请求对象
      * @return AsyncInvoker<UpdateUserRequest, UpdateUserResponse>
@@ -5178,8 +4896,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserInformationRequest 请求对象
      * @return CompletableFuture<UpdateUserInformationResponse>
@@ -5196,8 +4913,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserInformationRequest 请求对象
      * @return AsyncInvoker<UpdateUserInformationRequest, UpdateUserInformationResponse>
@@ -5221,8 +4937,7 @@ public class IamAsyncClient {
      * 
      * &gt; - token的有效期为24小时，建议进行缓存，避免频繁调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateAgencyTokenRequest 请求对象
      * @return CompletableFuture<KeystoneCreateAgencyTokenResponse>
@@ -5245,8 +4960,7 @@ public class IamAsyncClient {
      * 
      * &gt; - token的有效期为24小时，建议进行缓存，避免频繁调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateAgencyTokenRequest 请求对象
      * @return AsyncInvoker<KeystoneCreateAgencyTokenRequest, KeystoneCreateAgencyTokenResponse>
@@ -5269,8 +4983,7 @@ public class IamAsyncClient {
      * &gt; - 通过Postman获取用户token示例请参见：[如何通过Postman获取用户token](https://support.huaweicloud.com/iam_faq/iam_01_034.html)。
      * &gt; - 如果需要获取具有Security Administrator权限的token，请参见：[IAM 常见问题](https://support.huaweicloud.com/iam_faq/iam_01_0608.html)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateUserTokenByPasswordRequest 请求对象
      * @return CompletableFuture<KeystoneCreateUserTokenByPasswordResponse>
@@ -5292,8 +5005,7 @@ public class IamAsyncClient {
      * &gt; - 通过Postman获取用户token示例请参见：[如何通过Postman获取用户token](https://support.huaweicloud.com/iam_faq/iam_01_034.html)。
      * &gt; - 如果需要获取具有Security Administrator权限的token，请参见：[IAM 常见问题](https://support.huaweicloud.com/iam_faq/iam_01_0608.html)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateUserTokenByPasswordRequest 请求对象
      * @return AsyncInvoker<KeystoneCreateUserTokenByPasswordRequest, KeystoneCreateUserTokenByPasswordResponse>
@@ -5316,8 +5028,7 @@ public class IamAsyncClient {
      * &gt; - 通过Postman获取用户token示例请参见：[如何通过Postman获取用户token](https://support.huaweicloud.com/iam_faq/iam_01_034.html)。
      * &gt; - 如果需要获取具有Security Administrator权限的token，请参见：[IAM 常见问题](https://support.huaweicloud.com/iam_faq/iam_01_0608.html)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateUserTokenByPasswordAndMfaRequest 请求对象
      * @return CompletableFuture<KeystoneCreateUserTokenByPasswordAndMfaResponse>
@@ -5339,8 +5050,7 @@ public class IamAsyncClient {
      * &gt; - 通过Postman获取用户token示例请参见：[如何通过Postman获取用户token](https://support.huaweicloud.com/iam_faq/iam_01_034.html)。
      * &gt; - 如果需要获取具有Security Administrator权限的token，请参见：[IAM 常见问题](https://support.huaweicloud.com/iam_faq/iam_01_0608.html)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneCreateUserTokenByPasswordAndMfaRequest 请求对象
      * @return AsyncInvoker<KeystoneCreateUserTokenByPasswordAndMfaRequest, KeystoneCreateUserTokenByPasswordAndMfaResponse>
@@ -5358,8 +5068,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneValidateTokenRequest 请求对象
      * @return CompletableFuture<KeystoneValidateTokenResponse>
@@ -5376,8 +5085,7 @@ public class IamAsyncClient {
      * 
      * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param KeystoneValidateTokenRequest 请求对象
      * @return AsyncInvoker<KeystoneValidateTokenRequest, KeystoneValidateTokenResponse>

@@ -17,24 +17,9 @@ public class ShowJobResponse extends SdkResponse {
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "error_msg")
-
-    private String errorMsg;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "execute_msg")
-
-    private String executeMsg;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
     private String jobId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "end_time")
-
-    private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
@@ -42,14 +27,29 @@ public class ShowJobResponse extends SdkResponse {
     private String beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "error_code")
+    @JsonProperty(value = "end_time")
 
-    private String errorCode;
+    private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private Integer status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_msg")
+
+    private String errorMsg;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private String errorCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execute_msg")
+
+    private String executeMsg;
 
     public ShowJobResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -57,7 +57,7 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     /**
-     * 请求的唯一标识ID
+     * 请求的唯一标识ID。
      * @return requestId
      */
     public String getRequestId() {
@@ -66,40 +66,6 @@ public class ShowJobResponse extends SdkResponse {
 
     public void setRequestId(String requestId) {
         this.requestId = requestId;
-    }
-
-    public ShowJobResponse withErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
-        return this;
-    }
-
-    /**
-     * 任务错误码说明
-     * @return errorMsg
-     */
-    public String getErrorMsg() {
-        return errorMsg;
-    }
-
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
-    }
-
-    public ShowJobResponse withExecuteMsg(String executeMsg) {
-        this.executeMsg = executeMsg;
-        return this;
-    }
-
-    /**
-     * 任务执行返回内容，最长1024个字节
-     * @return executeMsg
-     */
-    public String getExecuteMsg() {
-        return executeMsg;
-    }
-
-    public void setExecuteMsg(String executeMsg) {
-        this.executeMsg = executeMsg;
     }
 
     public ShowJobResponse withJobId(String jobId) {
@@ -119,6 +85,23 @@ public class ShowJobResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    public ShowJobResponse withBeginTime(String beginTime) {
+        this.beginTime = beginTime;
+        return this;
+    }
+
+    /**
+     * 任务处理开始时间 时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ
+     * @return beginTime
+     */
+    public String getBeginTime() {
+        return beginTime;
+    }
+
+    public void setBeginTime(String beginTime) {
+        this.beginTime = beginTime;
+    }
+
     public ShowJobResponse withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -136,21 +119,40 @@ public class ShowJobResponse extends SdkResponse {
         this.endTime = endTime;
     }
 
-    public ShowJobResponse withBeginTime(String beginTime) {
-        this.beginTime = beginTime;
+    public ShowJobResponse withStatus(Integer status) {
+        this.status = status;
         return this;
     }
 
     /**
-     * 任务处理开始时间 时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ
-     * @return beginTime
+     * 任务状态 - 1： 运行中 - 2： 成功 - -1： 失败
+     * minimum: -128
+     * maximum: 128
+     * @return status
      */
-    public String getBeginTime() {
-        return beginTime;
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setBeginTime(String beginTime) {
-        this.beginTime = beginTime;
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public ShowJobResponse withErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+        return this;
+    }
+
+    /**
+     * 任务错误码说明。
+     * @return errorMsg
+     */
+    public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
     }
 
     public ShowJobResponse withErrorCode(String errorCode) {
@@ -170,21 +172,21 @@ public class ShowJobResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    public ShowJobResponse withStatus(Integer status) {
-        this.status = status;
+    public ShowJobResponse withExecuteMsg(String executeMsg) {
+        this.executeMsg = executeMsg;
         return this;
     }
 
     /**
-     * 任务状态 - 1： 运行中 - 2： 成功 - -1： 失败
-     * @return status
+     * 任务执行返回内容，最长1024个字节
+     * @return executeMsg
      */
-    public Integer getStatus() {
-        return status;
+    public String getExecuteMsg() {
+        return executeMsg;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setExecuteMsg(String executeMsg) {
+        this.executeMsg = executeMsg;
     }
 
     @Override
@@ -197,18 +199,18 @@ public class ShowJobResponse extends SdkResponse {
         }
         ShowJobResponse showJobResponse = (ShowJobResponse) o;
         return Objects.equals(this.requestId, showJobResponse.requestId)
-            && Objects.equals(this.errorMsg, showJobResponse.errorMsg)
-            && Objects.equals(this.executeMsg, showJobResponse.executeMsg)
             && Objects.equals(this.jobId, showJobResponse.jobId)
-            && Objects.equals(this.endTime, showJobResponse.endTime)
             && Objects.equals(this.beginTime, showJobResponse.beginTime)
+            && Objects.equals(this.endTime, showJobResponse.endTime)
+            && Objects.equals(this.status, showJobResponse.status)
+            && Objects.equals(this.errorMsg, showJobResponse.errorMsg)
             && Objects.equals(this.errorCode, showJobResponse.errorCode)
-            && Objects.equals(this.status, showJobResponse.status);
+            && Objects.equals(this.executeMsg, showJobResponse.executeMsg);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, errorMsg, executeMsg, jobId, endTime, beginTime, errorCode, status);
+        return Objects.hash(requestId, jobId, beginTime, endTime, status, errorMsg, errorCode, executeMsg);
     }
 
     @Override
@@ -216,13 +218,13 @@ public class ShowJobResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowJobResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-        sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
-        sb.append("    executeMsg: ").append(toIndentedString(executeMsg)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
-        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
-        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    executeMsg: ").append(toIndentedString(executeMsg)).append("\n");
         sb.append("}");
         return sb.toString();
     }

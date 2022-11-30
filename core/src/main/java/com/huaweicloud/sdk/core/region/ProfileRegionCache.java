@@ -21,15 +21,15 @@
 
 package com.huaweicloud.sdk.core.region;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.utils.PathUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
+import org.yaml.snakeyaml.Yaml;
+import org.yaml.snakeyaml.constructor.SafeConstructor;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Iterator;
@@ -40,11 +40,13 @@ import java.util.Map;
 import java.util.Objects;
 
 public class ProfileRegionCache {
-    private static final ProfileRegionCache INSTANCE = createInstance();
+    private static final String REGIONS_FILE_REG = "^[a-zA-Z0-9._ -]+\\.(yml|yaml)$";
 
     private static final String DEFAULT_REGIONS_FILE_NAME = "regions.yaml";
 
     private static final String REGIONS_FILE_ENV = "HUAWEICLOUD_SDK_REGIONS_FILE";
+
+    private static final ProfileRegionCache INSTANCE = createInstance();
 
     protected final Map<String, Region> value;
 
@@ -57,29 +59,57 @@ public class ProfileRegionCache {
     }
 
     private static ProfileRegionCache createInstance() {
-        Map<String, Region> result = new LinkedHashMap<>();
         String regionsFilePath = getRegionsFilePath();
         if (Objects.isNull(regionsFilePath) || !PathUtils.isPathExist(regionsFilePath)) {
-            return new ProfileRegionCache(Collections.unmodifiableMap(result));
+            return new ProfileRegionCache(Collections.unmodifiableMap(new LinkedHashMap<>()));
         }
 
-        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-        Map<String, List<Region>> map;
         try {
-            map = mapper.readValue(new File(regionsFilePath), new TypeReference<Map<String, List<Region>>>() {
-            });
+            File file = new File(regionsFilePath).getCanonicalFile();
+            if (!isValidRegionsFile(file)) {
+                throw new SdkException(String.format("invalid regions file path: '%s'", regionsFilePath));
+            }
+            Map<String, Region> result = resolveRegions(file.getCanonicalPath());
+            return new ProfileRegionCache(Collections.unmodifiableMap(result));
         } catch (IOException e) {
             throw new SdkException(String.format("failed to resolve file '%s'", regionsFilePath), e);
         }
+    }
 
-        Iterator<Map.Entry<String, List<Region>>> iterator = map.entrySet().iterator();
+    private static Map<String, Region> resolveRegions(String filepath) {
+        Map<String, Region> result = new LinkedHashMap<>();
+        Yaml yaml = new Yaml(new SafeConstructor());
+        Map<?, ?> map;
+        try (FileInputStream inputStream = new FileInputStream(filepath)) {
+            Object obj = yaml.load(inputStream);
+            if (obj instanceof Map) {
+                map = (Map<?, ?>) obj;
+            } else {
+                return result;
+            }
+        } catch (IOException e) {
+            throw new SdkException(String.format("failed to resolve file '%s'", filepath), e);
+        }
+
+        Iterator<? extends Map.Entry<?, ?>> iterator = map.entrySet().iterator();
         while (iterator.hasNext()) {
-            Map.Entry<String, List<Region>> entry = iterator.next();
-            for (Region region : entry.getValue()) {
-                result.put(entry.getKey().toUpperCase(Locale.ROOT) + region.getId(), region);
+            Map.Entry<?, ?> next = iterator.next();
+            if (!(next.getValue() instanceof List)) {
+                continue;
+            }
+            for (Object o : (List<?>) next.getValue()) {
+                if (!(o instanceof Map)) {
+                    continue;
+                }
+                Map<?, ?> regionMap = (Map<?, ?>) o;
+                String id = (String) regionMap.get("id");
+                String endpoint = (String) regionMap.get("endpoint");
+                if (!StringUtils.isEmpty(id) && !StringUtils.isEmpty(endpoint)) {
+                    result.put(next.getKey().toString().toUpperCase(Locale.ROOT) + id, new Region(id, endpoint));
+                }
             }
         }
-        return new ProfileRegionCache(Collections.unmodifiableMap(result));
+        return result;
     }
 
     private static String getRegionsFilePath() {
@@ -90,6 +120,13 @@ public class ProfileRegionCache {
 
         String userHomePath = PathUtils.getUserHomePath();
         return StringUtils.isEmpty(userHomePath) ? null : userHomePath + File.separator
-            + Constants.DEFAULT_PROFILE_DIR_NAME + File.separator + DEFAULT_REGIONS_FILE_NAME;
+                + Constants.DEFAULT_PROFILE_DIR_NAME + File.separator + DEFAULT_REGIONS_FILE_NAME;
+    }
+
+    private static boolean isValidRegionsFile(File file) {
+        if (!file.getName().matches(REGIONS_FILE_REG)) {
+            return false;
+        }
+        return PathUtils.isValidFile(file);
     }
 }

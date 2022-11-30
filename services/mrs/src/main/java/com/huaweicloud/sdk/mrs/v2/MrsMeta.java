@@ -134,6 +134,41 @@ public class MrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse> showAutoScalingPolicy = genForshowAutoScalingPolicy();
+
+    private static HttpRequestDef<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse> genForshowAutoScalingPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAutoScalingPolicyRequest.class, ShowAutoScalingPolicyResponse.class)
+                .withName("ShowAutoScalingPolicy")
+                .withUri("/v2/{project_id}/autoscaling-policy/{cluster_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoScalingPolicyRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            })
+        );
+
+        // response
+        builder.<List<AutoScalingPolicyV2>>withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowAutoScalingPolicyResponse::getBody, (response, data)->{
+                response.setBody(data);
+            }).withInnerContainerType(AutoScalingPolicyV2.class)
+        );
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowJobExeListNewRequest, ShowJobExeListNewResponse> showJobExeListNew = genForshowJobExeListNew();
 
     private static HttpRequestDef<ShowJobExeListNewRequest, ShowJobExeListNewResponse> genForshowJobExeListNew() {
@@ -382,6 +417,40 @@ public class MrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AgencyMappingArray.class),
             f -> f.withMarshaller(UpdateAgencyMappingRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateClusterNameRequest, UpdateClusterNameResponse> updateClusterName = genForupdateClusterName();
+
+    private static HttpRequestDef<UpdateClusterNameRequest, UpdateClusterNameResponse> genForupdateClusterName() {
+        // basic
+        HttpRequestDef.Builder<UpdateClusterNameRequest, UpdateClusterNameResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateClusterNameRequest.class, UpdateClusterNameResponse.class)
+                .withName("UpdateClusterName")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/cluster-name")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClusterNameRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            })
+        );
+        builder.<UpdateClusterReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateClusterReq.class),
+            f -> f.withMarshaller(UpdateClusterNameRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

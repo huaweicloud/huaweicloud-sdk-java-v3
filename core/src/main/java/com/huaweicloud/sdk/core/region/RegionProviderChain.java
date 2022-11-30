@@ -32,8 +32,11 @@ public class RegionProviderChain implements IRegionProvider {
     }
 
     public static RegionProviderChain getDefaultRegionProviderChain(String serviceName) {
-        IRegionProvider[] providers = {new EnvRegionProvider(serviceName), new ProfileRegionProvider(serviceName)};
-        return new RegionProviderChain(providers);
+        IRegionProvider[] regionProviders = {
+            new EnvRegionProvider(serviceName),
+            new ProfileRegionProvider(serviceName)
+        };
+        return new RegionProviderChain(regionProviders);
     }
 
     @Override

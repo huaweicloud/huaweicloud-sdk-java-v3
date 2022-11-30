@@ -97,6 +97,11 @@ public class UrlDomainModify {
 
     private MinSslVersionEnum minSslVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_http_redirect_to_https")
+
+    private Boolean isHttpRedirectToHttps;
+
     public UrlDomainModify withMinSslVersion(MinSslVersionEnum minSslVersion) {
         this.minSslVersion = minSslVersion;
         return this;
@@ -114,6 +119,23 @@ public class UrlDomainModify {
         this.minSslVersion = minSslVersion;
     }
 
+    public UrlDomainModify withIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+        this.isHttpRedirectToHttps = isHttpRedirectToHttps;
+        return this;
+    }
+
+    /**
+     * 是否开启http到https的重定向，false为关闭，true为开启，默认为false
+     * @return isHttpRedirectToHttps
+     */
+    public Boolean getIsHttpRedirectToHttps() {
+        return isHttpRedirectToHttps;
+    }
+
+    public void setIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+        this.isHttpRedirectToHttps = isHttpRedirectToHttps;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -123,12 +145,13 @@ public class UrlDomainModify {
             return false;
         }
         UrlDomainModify urlDomainModify = (UrlDomainModify) o;
-        return Objects.equals(this.minSslVersion, urlDomainModify.minSslVersion);
+        return Objects.equals(this.minSslVersion, urlDomainModify.minSslVersion)
+            && Objects.equals(this.isHttpRedirectToHttps, urlDomainModify.isHttpRedirectToHttps);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(minSslVersion);
+        return Objects.hash(minSslVersion, isHttpRedirectToHttps);
     }
 
     @Override
@@ -136,6 +159,7 @@ public class UrlDomainModify {
         StringBuilder sb = new StringBuilder();
         sb.append("class UrlDomainModify {\n");
         sb.append("    minSslVersion: ").append(toIndentedString(minSslVersion)).append("\n");
+        sb.append("    isHttpRedirectToHttps: ").append(toIndentedString(isHttpRedirectToHttps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

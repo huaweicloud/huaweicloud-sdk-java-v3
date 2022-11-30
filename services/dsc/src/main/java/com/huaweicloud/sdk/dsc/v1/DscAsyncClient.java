@@ -24,8 +24,7 @@ public class DscAsyncClient {
      *
      * 对数据进行脱敏
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddDataMaskRequest 请求对象
      * @return CompletableFuture<BatchAddDataMaskResponse>
@@ -39,8 +38,7 @@ public class DscAsyncClient {
      *
      * 对数据进行脱敏
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchAddDataMaskRequest 请求对象
      * @return AsyncInvoker<BatchAddDataMaskRequest, BatchAddDataMaskResponse>
@@ -56,8 +54,7 @@ public class DscAsyncClient {
      *
      * 对json体中数据动态添加水印
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatabaseWaterMarkRequest 请求对象
      * @return CompletableFuture<CreateDatabaseWaterMarkResponse>
@@ -72,8 +69,7 @@ public class DscAsyncClient {
      *
      * 对json体中数据动态添加水印
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatabaseWaterMarkRequest 请求对象
      * @return AsyncInvoker<CreateDatabaseWaterMarkRequest, CreateDatabaseWaterMarkResponse>
@@ -89,8 +85,7 @@ public class DscAsyncClient {
      *
      * 对WORD(.docx)，PPT(.pptx)，EXCEL(.xlsx)，PDF(.pdf) 类型的文件嵌入文字暗水印、文字明水印或者图片明水印，用户以formData的格式传入待加水印的文件和水印相关信息，DSC服务给文件加完水印后返回给用户已嵌入水印的文件的二进制流。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDocWatermarkRequest 请求对象
      * @return CompletableFuture<CreateDocWatermarkResponse>
@@ -104,8 +99,7 @@ public class DscAsyncClient {
      *
      * 对WORD(.docx)，PPT(.pptx)，EXCEL(.xlsx)，PDF(.pdf) 类型的文件嵌入文字暗水印、文字明水印或者图片明水印，用户以formData的格式传入待加水印的文件和水印相关信息，DSC服务给文件加完水印后返回给用户已嵌入水印的文件的二进制流。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDocWatermarkRequest 请求对象
      * @return AsyncInvoker<CreateDocWatermarkRequest, CreateDocWatermarkResponse>
@@ -121,8 +115,7 @@ public class DscAsyncClient {
      *
      * 对WORD(.docx)，PPT(.pptx)，EXCEL(.xlsx)，PDF(.pdf)*类型的文档嵌入文字暗水印、文字明水印或者图片明水印，用户传入待加水印的文档地址（目前支持OBS)和水印相关信息，DSC服务对文档加完水印后返回给用户已嵌入水印的文档的存放地址。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDocWatermarkByAddressRequest 请求对象
      * @return CompletableFuture<CreateDocWatermarkByAddressResponse>
@@ -137,8 +130,7 @@ public class DscAsyncClient {
      *
      * 对WORD(.docx)，PPT(.pptx)，EXCEL(.xlsx)，PDF(.pdf)*类型的文档嵌入文字暗水印、文字明水印或者图片明水印，用户传入待加水印的文档地址（目前支持OBS)和水印相关信息，DSC服务对文档加完水印后返回给用户已嵌入水印的文档的存放地址。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDocWatermarkByAddressRequest 请求对象
      * @return AsyncInvoker<CreateDocWatermarkByAddressRequest, CreateDocWatermarkByAddressResponse>
@@ -154,8 +146,7 @@ public class DscAsyncClient {
      *
      * 对图片嵌入文字暗水印或者图片暗水印，用户以formData的格式传入待加水印图片和水印相关信息，DSC服务对图片加完水印后返回给用户已嵌入水印的图片二进制流，目前支持的图片格式为：*.jpg, *.jpeg, *.jpe, *.png, *.bmp, *.dib, *.rle, *.tiff, *.tif, *.ppm, *.webp, *.tga, *.tpic, *.gif。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateImageWatermarkRequest 请求对象
      * @return CompletableFuture<CreateImageWatermarkResponse>
@@ -170,8 +161,7 @@ public class DscAsyncClient {
      *
      * 对图片嵌入文字暗水印或者图片暗水印，用户以formData的格式传入待加水印图片和水印相关信息，DSC服务对图片加完水印后返回给用户已嵌入水印的图片二进制流，目前支持的图片格式为：*.jpg, *.jpeg, *.jpe, *.png, *.bmp, *.dib, *.rle, *.tiff, *.tif, *.ppm, *.webp, *.tga, *.tpic, *.gif。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateImageWatermarkRequest 请求对象
      * @return AsyncInvoker<CreateImageWatermarkRequest, CreateImageWatermarkResponse>
@@ -187,8 +177,7 @@ public class DscAsyncClient {
      *
      * 对指定存储地址信息（目前支持华为云OBS）的图片嵌入文字暗水印或者图片暗水印，已嵌入的水印的图片将存放在用户指定的位置（目前支持华为云OBS），支持的图片格式为：*.jpg, *.jpeg, *.jpe, *.png, *.bmp, *.dib, *.rle, *.tiff, *.tif, *.ppm, *.webp, *.tga, *.tpic, *.gif。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateImageWatermarkByAddressRequest 请求对象
      * @return CompletableFuture<CreateImageWatermarkByAddressResponse>
@@ -203,8 +192,7 @@ public class DscAsyncClient {
      *
      * 对指定存储地址信息（目前支持华为云OBS）的图片嵌入文字暗水印或者图片暗水印，已嵌入的水印的图片将存放在用户指定的位置（目前支持华为云OBS），支持的图片格式为：*.jpg, *.jpeg, *.jpe, *.png, *.bmp, *.dib, *.rle, *.tiff, *.tif, *.ppm, *.webp, *.tga, *.tpic, *.gif。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateImageWatermarkByAddressRequest 请求对象
      * @return AsyncInvoker<CreateImageWatermarkByAddressRequest, CreateImageWatermarkByAddressResponse>
@@ -220,8 +208,7 @@ public class DscAsyncClient {
      *
      * 提取请求数据中水印内容
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDatabaseWaterMarkRequest 请求对象
      * @return CompletableFuture<ShowDatabaseWaterMarkResponse>
@@ -236,8 +223,7 @@ public class DscAsyncClient {
      *
      * 提取请求数据中水印内容
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDatabaseWaterMarkRequest 请求对象
      * @return AsyncInvoker<ShowDatabaseWaterMarkRequest, ShowDatabaseWaterMarkResponse>
@@ -253,8 +239,7 @@ public class DscAsyncClient {
      *
      * 对已嵌入文字暗水印的WORD(.docx)，PPT(.pptx)，EXCEL(.xlsx)，PDF(.pdf)类型的文档进行文字暗水印提取，用户以formData的格式传入待提取水印的文件，DSC服务以JSON的格式返回从文档里提取的出的文字暗水印内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDocWatermarkRequest 请求对象
      * @return CompletableFuture<ShowDocWatermarkResponse>
@@ -268,8 +253,7 @@ public class DscAsyncClient {
      *
      * 对已嵌入文字暗水印的WORD(.docx)，PPT(.pptx)，EXCEL(.xlsx)，PDF(.pdf)类型的文档进行文字暗水印提取，用户以formData的格式传入待提取水印的文件，DSC服务以JSON的格式返回从文档里提取的出的文字暗水印内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDocWatermarkRequest 请求对象
      * @return AsyncInvoker<ShowDocWatermarkRequest, ShowDocWatermarkResponse>
@@ -285,8 +269,7 @@ public class DscAsyncClient {
      *
      * 支持对已嵌入文字暗水印的WORD(.docx)，PPT(.pptx)，EXCEL(.xlsx)，PDF(.pdf)类型的文档进行水印提取，用户传入待提取水印的文档地址（目前支持OBS），DSC服务以JSON的格式返回从文档里提取的出的文字暗水印内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDocWatermarkByAddressRequest 请求对象
      * @return CompletableFuture<ShowDocWatermarkByAddressResponse>
@@ -301,8 +284,7 @@ public class DscAsyncClient {
      *
      * 支持对已嵌入文字暗水印的WORD(.docx)，PPT(.pptx)，EXCEL(.xlsx)，PDF(.pdf)类型的文档进行水印提取，用户传入待提取水印的文档地址（目前支持OBS），DSC服务以JSON的格式返回从文档里提取的出的文字暗水印内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDocWatermarkByAddressRequest 请求对象
      * @return AsyncInvoker<ShowDocWatermarkByAddressRequest, ShowDocWatermarkByAddressResponse>
@@ -318,8 +300,7 @@ public class DscAsyncClient {
      *
      * 对已嵌入文字暗水印的图片进行水印提取，用户以formData的格式传入待提取水印的图片，DSC服务以JSON的格式返回从图片里提取的出的文字暗水印。目前支持的图片格式为：*.jpg, *.jpeg, *.jpe, *.png, *.bmp, *.dib, *.rle, *.tiff, *.tif, *.ppm, *.webp, *.tga, *.tpic, *.gif。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowImageWatermarkRequest 请求对象
      * @return CompletableFuture<ShowImageWatermarkResponse>
@@ -333,8 +314,7 @@ public class DscAsyncClient {
      *
      * 对已嵌入文字暗水印的图片进行水印提取，用户以formData的格式传入待提取水印的图片，DSC服务以JSON的格式返回从图片里提取的出的文字暗水印。目前支持的图片格式为：*.jpg, *.jpeg, *.jpe, *.png, *.bmp, *.dib, *.rle, *.tiff, *.tif, *.ppm, *.webp, *.tga, *.tpic, *.gif。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowImageWatermarkRequest 请求对象
      * @return AsyncInvoker<ShowImageWatermarkRequest, ShowImageWatermarkResponse>
@@ -350,8 +330,7 @@ public class DscAsyncClient {
      *
      * 对指定存储地址信息（目前支持华为云OBS）的已嵌入文字暗水印的图片提取文字暗水印，支持的图片格式为：*.jpg, *.jpeg, *.jpe, *.png, *.bmp, *.dib, *.rle, *.tiff, *.tif, *.ppm, *.webp, *.tga, *.tpic, *.gif。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowImageWatermarkByAddressRequest 请求对象
      * @return CompletableFuture<ShowImageWatermarkByAddressResponse>
@@ -366,8 +345,7 @@ public class DscAsyncClient {
      *
      * 对指定存储地址信息（目前支持华为云OBS）的已嵌入文字暗水印的图片提取文字暗水印，支持的图片格式为：*.jpg, *.jpeg, *.jpe, *.png, *.bmp, *.dib, *.rle, *.tiff, *.tif, *.ppm, *.webp, *.tga, *.tpic, *.gif。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowImageWatermarkByAddressRequest 请求对象
      * @return AsyncInvoker<ShowImageWatermarkByAddressRequest, ShowImageWatermarkByAddressResponse>
@@ -383,8 +361,7 @@ public class DscAsyncClient {
      *
      * 对已嵌入图片暗水印的图片进行水印提取，用户以formData的格式传入待提取水印的图片，DSC服务以图片二进制流的格式返回从图片里提取的出的图片暗水印。目前支持的图片格式为：*.jpg, *.jpeg, *.jpe, *.png, *.bmp, *.dib, *.rle, *.tiff, *.tif, *.ppm, *.webp, *.tga, *.tpic, *.gif。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowImageWatermarkWithImageRequest 请求对象
      * @return CompletableFuture<ShowImageWatermarkWithImageResponse>
@@ -399,8 +376,7 @@ public class DscAsyncClient {
      *
      * 对已嵌入图片暗水印的图片进行水印提取，用户以formData的格式传入待提取水印的图片，DSC服务以图片二进制流的格式返回从图片里提取的出的图片暗水印。目前支持的图片格式为：*.jpg, *.jpeg, *.jpe, *.png, *.bmp, *.dib, *.rle, *.tiff, *.tif, *.ppm, *.webp, *.tga, *.tpic, *.gif。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowImageWatermarkWithImageRequest 请求对象
      * @return AsyncInvoker<ShowImageWatermarkWithImageRequest, ShowImageWatermarkWithImageResponse>
@@ -416,8 +392,7 @@ public class DscAsyncClient {
      *
      * 对指定存储地址信息（目前支持华为云OBS）的已嵌入图片暗水印的图片提取图片暗水印，提取出的水印图片将存放在用户指定的位置（目前支持华为云OBS），支持的图片格式为：*.jpg, *.jpeg, *.jpe, *.png, *.bmp, *.dib, *.rle, *.tiff, *.tif, *.ppm, *.webp, *.tga, *.tpic, *.gif。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowImageWatermarkWithImageByAddressRequest 请求对象
      * @return CompletableFuture<ShowImageWatermarkWithImageByAddressResponse>
@@ -432,8 +407,7 @@ public class DscAsyncClient {
      *
      * 对指定存储地址信息（目前支持华为云OBS）的已嵌入图片暗水印的图片提取图片暗水印，提取出的水印图片将存放在用户指定的位置（目前支持华为云OBS），支持的图片格式为：*.jpg, *.jpeg, *.jpe, *.png, *.bmp, *.dib, *.rle, *.tiff, *.tif, *.ppm, *.webp, *.tga, *.tpic, *.gif。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowImageWatermarkWithImageByAddressRequest 请求对象
      * @return AsyncInvoker<ShowImageWatermarkWithImageByAddressRequest, ShowImageWatermarkWithImageByAddressResponse>
@@ -449,8 +423,7 @@ public class DscAsyncClient {
      *
      * 查询指定任务扫描结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowScanJobResultsRequest 请求对象
      * @return CompletableFuture<ShowScanJobResultsResponse>
@@ -464,8 +437,7 @@ public class DscAsyncClient {
      *
      * 查询指定任务扫描结果
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowScanJobResultsRequest 请求对象
      * @return AsyncInvoker<ShowScanJobResultsRequest, ShowScanJobResultsResponse>
@@ -481,8 +453,7 @@ public class DscAsyncClient {
      *
      * 查询扫描任务列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowScanJobsRequest 请求对象
      * @return CompletableFuture<ShowScanJobsResponse>
@@ -496,8 +467,7 @@ public class DscAsyncClient {
      *
      * 查询扫描任务列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowScanJobsRequest 请求对象
      * @return AsyncInvoker<ShowScanJobsRequest, ShowScanJobsResponse>
@@ -512,8 +482,7 @@ public class DscAsyncClient {
      *
      * 查询OpenApi调用记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOpenApiCalledRecordsRequest 请求对象
      * @return CompletableFuture<ShowOpenApiCalledRecordsResponse>
@@ -528,8 +497,7 @@ public class DscAsyncClient {
      *
      * 查询OpenApi调用记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOpenApiCalledRecordsRequest 请求对象
      * @return AsyncInvoker<ShowOpenApiCalledRecordsRequest, ShowOpenApiCalledRecordsResponse>

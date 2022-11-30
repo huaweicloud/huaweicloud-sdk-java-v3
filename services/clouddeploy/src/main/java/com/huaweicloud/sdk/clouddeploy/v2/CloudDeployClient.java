@@ -22,8 +22,7 @@ public class CloudDeployClient {
      *
      * 通过模板新建部署任务cloudpipeline流水线调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeployTaskByTemplateRequest 请求对象
      * @return CreateDeployTaskByTemplateResponse
@@ -37,8 +36,7 @@ public class CloudDeployClient {
      *
      * 通过模板新建部署任务cloudpipeline流水线调用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeployTaskByTemplateRequest 请求对象
      * @return SyncInvoker<CreateDeployTaskByTemplateRequest, CreateDeployTaskByTemplateResponse>
@@ -54,8 +52,7 @@ public class CloudDeployClient {
      *
      * 根据部署任务id删除部署任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeployTaskRequest 请求对象
      * @return DeleteDeployTaskResponse
@@ -69,8 +66,7 @@ public class CloudDeployClient {
      *
      * 根据部署任务id删除部署任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeployTaskRequest 请求对象
      * @return SyncInvoker<DeleteDeployTaskRequest, DeleteDeployTaskResponse>
@@ -86,8 +82,7 @@ public class CloudDeployClient {
      *
      * 根据开始时间和结束时间查询项目下指定任务的历史执行记录列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDeployTaskHistoryByDateRequest 请求对象
      * @return ListDeployTaskHistoryByDateResponse
@@ -101,8 +96,7 @@ public class CloudDeployClient {
      *
      * 根据开始时间和结束时间查询项目下指定任务的历史执行记录列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDeployTaskHistoryByDateRequest 请求对象
      * @return SyncInvoker<ListDeployTaskHistoryByDateRequest, ListDeployTaskHistoryByDateResponse>
@@ -118,8 +112,7 @@ public class CloudDeployClient {
      *
      * 查询项目下部署任务列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDeployTasksRequest 请求对象
      * @return ListDeployTasksResponse
@@ -133,8 +126,7 @@ public class CloudDeployClient {
      *
      * 查询项目下部署任务列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDeployTasksRequest 请求对象
      * @return SyncInvoker<ListDeployTasksRequest, ListDeployTasksResponse>
@@ -150,8 +142,7 @@ public class CloudDeployClient {
      *
      * 根据部署任务id获取部署任务详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeployTaskDetailRequest 请求对象
      * @return ShowDeployTaskDetailResponse
@@ -165,8 +156,7 @@ public class CloudDeployClient {
      *
      * 根据部署任务id获取部署任务详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeployTaskDetailRequest 请求对象
      * @return SyncInvoker<ShowDeployTaskDetailRequest, ShowDeployTaskDetailResponse>
@@ -182,8 +172,7 @@ public class CloudDeployClient {
      *
      * 根据部署任务id启动部署任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartDeployTaskRequest 请求对象
      * @return StartDeployTaskResponse
@@ -197,8 +186,7 @@ public class CloudDeployClient {
      *
      * 根据部署任务id启动部署任务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartDeployTaskRequest 请求对象
      * @return SyncInvoker<StartDeployTaskRequest, StartDeployTaskResponse>
@@ -214,8 +202,7 @@ public class CloudDeployClient {
      *
      * 在指定主机组下新建主机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeploymentHostRequest 请求对象
      * @return CreateDeploymentHostResponse
@@ -229,8 +216,7 @@ public class CloudDeployClient {
      *
      * 在指定主机组下新建主机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeploymentHostRequest 请求对象
      * @return SyncInvoker<CreateDeploymentHostRequest, CreateDeploymentHostResponse>
@@ -246,8 +232,7 @@ public class CloudDeployClient {
      *
      * 根据主机id删除主机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeploymentHostRequest 请求对象
      * @return DeleteDeploymentHostResponse
@@ -261,8 +246,7 @@ public class CloudDeployClient {
      *
      * 根据主机id删除主机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeploymentHostRequest 请求对象
      * @return SyncInvoker<DeleteDeploymentHostRequest, DeleteDeploymentHostResponse>
@@ -278,8 +262,7 @@ public class CloudDeployClient {
      *
      * 根据主机组id查询指定主机组下的主机列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostsRequest 请求对象
      * @return ListHostsResponse
@@ -293,8 +276,7 @@ public class CloudDeployClient {
      *
      * 根据主机组id查询指定主机组下的主机列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostsRequest 请求对象
      * @return SyncInvoker<ListHostsRequest, ListHostsResponse>
@@ -308,8 +290,7 @@ public class CloudDeployClient {
      *
      * 根据主机id查询主机详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeploymentHostDetailRequest 请求对象
      * @return ShowDeploymentHostDetailResponse
@@ -323,8 +304,7 @@ public class CloudDeployClient {
      *
      * 根据主机id查询主机详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeploymentHostDetailRequest 请求对象
      * @return SyncInvoker<ShowDeploymentHostDetailRequest, ShowDeploymentHostDetailResponse>
@@ -340,8 +320,7 @@ public class CloudDeployClient {
      *
      * 根据主机id修改主机信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeploymentHostRequest 请求对象
      * @return UpdateDeploymentHostResponse
@@ -355,8 +334,7 @@ public class CloudDeployClient {
      *
      * 根据主机id修改主机信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeploymentHostRequest 请求对象
      * @return SyncInvoker<UpdateDeploymentHostRequest, UpdateDeploymentHostResponse>
@@ -372,8 +350,7 @@ public class CloudDeployClient {
      *
      * 在项目下新建主机组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeploymentGroupRequest 请求对象
      * @return CreateDeploymentGroupResponse
@@ -387,8 +364,7 @@ public class CloudDeployClient {
      *
      * 在项目下新建主机组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDeploymentGroupRequest 请求对象
      * @return SyncInvoker<CreateDeploymentGroupRequest, CreateDeploymentGroupResponse>
@@ -404,8 +380,7 @@ public class CloudDeployClient {
      *
      * 根据主机组id删除主机组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeploymentGroupRequest 请求对象
      * @return DeleteDeploymentGroupResponse
@@ -419,8 +394,7 @@ public class CloudDeployClient {
      *
      * 根据主机组id删除主机组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDeploymentGroupRequest 请求对象
      * @return SyncInvoker<DeleteDeploymentGroupRequest, DeleteDeploymentGroupResponse>
@@ -436,8 +410,7 @@ public class CloudDeployClient {
      *
      * 按条件查询主机组列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostGroupsRequest 请求对象
      * @return ListHostGroupsResponse
@@ -451,8 +424,7 @@ public class CloudDeployClient {
      *
      * 按条件查询主机组列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostGroupsRequest 请求对象
      * @return SyncInvoker<ListHostGroupsRequest, ListHostGroupsResponse>
@@ -468,8 +440,7 @@ public class CloudDeployClient {
      *
      * 根据主机组id查询主机组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeploymentGroupDetailRequest 请求对象
      * @return ShowDeploymentGroupDetailResponse
@@ -483,8 +454,7 @@ public class CloudDeployClient {
      *
      * 根据主机组id查询主机组详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDeploymentGroupDetailRequest 请求对象
      * @return SyncInvoker<ShowDeploymentGroupDetailRequest, ShowDeploymentGroupDetailResponse>
@@ -500,8 +470,7 @@ public class CloudDeployClient {
      *
      * 根据主机组id修改主机组信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeploymentGroupRequest 请求对象
      * @return UpdateDeploymentGroupResponse
@@ -515,8 +484,7 @@ public class CloudDeployClient {
      *
      * 根据主机组id修改主机组信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDeploymentGroupRequest 请求对象
      * @return SyncInvoker<UpdateDeploymentGroupRequest, UpdateDeploymentGroupResponse>
@@ -532,8 +500,7 @@ public class CloudDeployClient {
      *
      * 获取指定任务的部署任务执行成功率
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTaskSuccessRateRequest 请求对象
      * @return ListTaskSuccessRateResponse
@@ -547,8 +514,7 @@ public class CloudDeployClient {
      *
      * 获取指定任务的部署任务执行成功率
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTaskSuccessRateRequest 请求对象
      * @return SyncInvoker<ListTaskSuccessRateRequest, ListTaskSuccessRateResponse>
@@ -564,8 +530,7 @@ public class CloudDeployClient {
      *
      * 获取指定项目的部署任务执行成功率
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectSuccessRateRequest 请求对象
      * @return ShowProjectSuccessRateResponse
@@ -579,8 +544,7 @@ public class CloudDeployClient {
      *
      * 获取指定项目的部署任务执行成功率
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectSuccessRateRequest 请求对象
      * @return SyncInvoker<ShowProjectSuccessRateRequest, ShowProjectSuccessRateResponse>

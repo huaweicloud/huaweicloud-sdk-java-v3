@@ -22,8 +22,7 @@ public class RabbitMQClient {
      *
      * 批量添加或删除实例标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateOrDeleteRabbitMqTagRequest 请求对象
      * @return BatchCreateOrDeleteRabbitMqTagResponse
@@ -38,8 +37,7 @@ public class RabbitMQClient {
      *
      * 批量添加或删除实例标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateOrDeleteRabbitMqTagRequest 请求对象
      * @return SyncInvoker<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse>
@@ -59,8 +57,7 @@ public class RabbitMQClient {
      * 
      * 实例删除后，实例中原有的数据将被删除，且没有备份，请谨慎操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchRestartOrDeleteInstancesRequest 请求对象
      * @return BatchRestartOrDeleteInstancesResponse
@@ -79,8 +76,7 @@ public class RabbitMQClient {
      * 
      * 实例删除后，实例中原有的数据将被删除，且没有备份，请谨慎操作。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchRestartOrDeleteInstancesRequest 请求对象
      * @return SyncInvoker<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse>
@@ -96,8 +92,7 @@ public class RabbitMQClient {
      *
      * 创建实例，该接口创建的实例为按需计费的方式。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostPaidInstanceRequest 请求对象
      * @return CreatePostPaidInstanceResponse
@@ -111,8 +106,7 @@ public class RabbitMQClient {
      *
      * 创建实例，该接口创建的实例为按需计费的方式。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostPaidInstanceRequest 请求对象
      * @return SyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse>
@@ -128,8 +122,7 @@ public class RabbitMQClient {
      *
      * 创建实例，该接口创建的实例为按需计费的方式。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostPaidInstanceByEngineRequest 请求对象
      * @return CreatePostPaidInstanceByEngineResponse
@@ -144,8 +137,7 @@ public class RabbitMQClient {
      *
      * 创建实例，该接口创建的实例为按需计费的方式。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostPaidInstanceByEngineRequest 请求对象
      * @return SyncInvoker<CreatePostPaidInstanceByEngineRequest, CreatePostPaidInstanceByEngineResponse>
@@ -161,8 +153,7 @@ public class RabbitMQClient {
      *
      * 删除后台任务管理中的指定记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackgroundTaskRequest 请求对象
      * @return DeleteBackgroundTaskResponse
@@ -176,8 +167,7 @@ public class RabbitMQClient {
      *
      * 删除后台任务管理中的指定记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackgroundTaskRequest 请求对象
      * @return SyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse>
@@ -193,8 +183,7 @@ public class RabbitMQClient {
      *
      * 删除指定的实例，释放该实例的所有资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return DeleteInstanceResponse
@@ -208,8 +197,7 @@ public class RabbitMQClient {
      *
      * 删除指定的实例，释放该实例的所有资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
@@ -225,8 +213,7 @@ public class RabbitMQClient {
      *
      * 在创建实例时，需要配置实例所在的可用区ID，可通过该接口查询可用区的ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailableZonesRequest 请求对象
      * @return ListAvailableZonesResponse
@@ -240,8 +227,7 @@ public class RabbitMQClient {
      *
      * 在创建实例时，需要配置实例所在的可用区ID，可通过该接口查询可用区的ID。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAvailableZonesRequest 请求对象
      * @return SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>
@@ -257,8 +243,7 @@ public class RabbitMQClient {
      *
      * 查询实例的后台任务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackgroundTasksRequest 请求对象
      * @return ListBackgroundTasksResponse
@@ -272,8 +257,7 @@ public class RabbitMQClient {
      *
      * 查询实例的后台任务列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackgroundTasksRequest 请求对象
      * @return SyncInvoker<ListBackgroundTasksRequest, ListBackgroundTasksResponse>
@@ -289,8 +273,7 @@ public class RabbitMQClient {
      *
      * 查询产品规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEngineProductsRequest 请求对象
      * @return ListEngineProductsResponse
@@ -304,8 +287,7 @@ public class RabbitMQClient {
      *
      * 查询产品规格列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEngineProductsRequest 请求对象
      * @return SyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse>
@@ -321,8 +303,7 @@ public class RabbitMQClient {
      *
      * 查询租户的实例列表，支持按照条件查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesDetailsRequest 请求对象
      * @return ListInstancesDetailsResponse
@@ -336,8 +317,7 @@ public class RabbitMQClient {
      *
      * 查询租户的实例列表，支持按照条件查询。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesDetailsRequest 请求对象
      * @return SyncInvoker<ListInstancesDetailsRequest, ListInstancesDetailsResponse>
@@ -353,8 +333,7 @@ public class RabbitMQClient {
      *
      * 查询插件列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPluginsRequest 请求对象
      * @return ListPluginsResponse
@@ -368,8 +347,7 @@ public class RabbitMQClient {
      *
      * 查询插件列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPluginsRequest 请求对象
      * @return SyncInvoker<ListPluginsRequest, ListPluginsResponse>
@@ -383,8 +361,7 @@ public class RabbitMQClient {
      *
      * 在创建实例时，需要配置订购的产品ID（即product_id），可通过该接口查询产品规格。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductsRequest 请求对象
      * @return ListProductsResponse
@@ -398,8 +375,7 @@ public class RabbitMQClient {
      *
      * 在创建实例时，需要配置订购的产品ID（即product_id），可通过该接口查询产品规格。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProductsRequest 请求对象
      * @return SyncInvoker<ListProductsRequest, ListProductsResponse>
@@ -413,8 +389,7 @@ public class RabbitMQClient {
      *
      * 重置密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetPasswordRequest 请求对象
      * @return ResetPasswordResponse
@@ -428,8 +403,7 @@ public class RabbitMQClient {
      *
      * 重置密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetPasswordRequest 请求对象
      * @return SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
@@ -446,8 +420,7 @@ public class RabbitMQClient {
      * 
      * [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,ctc)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeInstanceRequest 请求对象
      * @return ResizeInstanceResponse
@@ -463,8 +436,7 @@ public class RabbitMQClient {
      * 
      * [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,ctc)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResizeInstanceRequest 请求对象
      * @return SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>
@@ -480,8 +452,7 @@ public class RabbitMQClient {
      *
      * 查询后台任务管理中的指定记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBackgroundTaskRequest 请求对象
      * @return ShowBackgroundTaskResponse
@@ -495,8 +466,7 @@ public class RabbitMQClient {
      *
      * 查询后台任务管理中的指定记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBackgroundTaskRequest 请求对象
      * @return SyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse>
@@ -512,8 +482,7 @@ public class RabbitMQClient {
      *
      * 查询指定实例的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return ShowInstanceResponse
@@ -527,8 +496,7 @@ public class RabbitMQClient {
      *
      * 查询指定实例的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
@@ -544,8 +512,7 @@ public class RabbitMQClient {
      * 
      * RabbtiMQ只支持只增加节点数的扩容方式。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceExtendProductInfoRequest 请求对象
      * @return ShowInstanceExtendProductInfoResponse
@@ -562,8 +529,7 @@ public class RabbitMQClient {
      * 
      * RabbtiMQ只支持只增加节点数的扩容方式。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceExtendProductInfoRequest 请求对象
      * @return SyncInvoker<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse>
@@ -579,8 +545,7 @@ public class RabbitMQClient {
      *
      * 查询维护时间窗开始时间和结束时间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMaintainWindowsRequest 请求对象
      * @return ShowMaintainWindowsResponse
@@ -594,8 +559,7 @@ public class RabbitMQClient {
      *
      * 查询维护时间窗开始时间和结束时间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMaintainWindowsRequest 请求对象
      * @return SyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse>
@@ -611,8 +575,7 @@ public class RabbitMQClient {
      *
      * 查询项目标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRabbitMqProjectTagsRequest 请求对象
      * @return ShowRabbitMqProjectTagsResponse
@@ -626,8 +589,7 @@ public class RabbitMQClient {
      *
      * 查询项目标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRabbitMqProjectTagsRequest 请求对象
      * @return SyncInvoker<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse>
@@ -643,8 +605,7 @@ public class RabbitMQClient {
      *
      * 查询实例标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRabbitMqTagsRequest 请求对象
      * @return ShowRabbitMqTagsResponse
@@ -658,8 +619,7 @@ public class RabbitMQClient {
      *
      * 查询实例标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRabbitMqTagsRequest 请求对象
      * @return SyncInvoker<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse>
@@ -675,8 +635,7 @@ public class RabbitMQClient {
      *
      * 修改实例的名称和描述信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceRequest 请求对象
      * @return UpdateInstanceResponse
@@ -690,8 +649,7 @@ public class RabbitMQClient {
      *
      * 修改实例的名称和描述信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceRequest 请求对象
      * @return SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
@@ -707,8 +665,7 @@ public class RabbitMQClient {
      *
      * 开启或关闭插件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePluginsRequest 请求对象
      * @return UpdatePluginsResponse
@@ -722,8 +679,7 @@ public class RabbitMQClient {
      *
      * 开启或关闭插件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePluginsRequest 请求对象
      * @return SyncInvoker<UpdatePluginsRequest, UpdatePluginsResponse>

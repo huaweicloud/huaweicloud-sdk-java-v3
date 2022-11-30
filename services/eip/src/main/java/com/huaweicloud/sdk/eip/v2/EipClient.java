@@ -22,8 +22,7 @@ public class EipClient {
      *
      * 共享带宽插入弹性公网IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddPublicipsIntoSharedBandwidthRequest 请求对象
      * @return AddPublicipsIntoSharedBandwidthResponse
@@ -38,8 +37,7 @@ public class EipClient {
      *
      * 共享带宽插入弹性公网IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddPublicipsIntoSharedBandwidthRequest 请求对象
      * @return SyncInvoker<AddPublicipsIntoSharedBandwidthRequest, AddPublicipsIntoSharedBandwidthResponse>
@@ -55,8 +53,7 @@ public class EipClient {
      *
      * 批量创建共享带宽。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateSharedBandwidthsRequest 请求对象
      * @return BatchCreateSharedBandwidthsResponse
@@ -70,8 +67,7 @@ public class EipClient {
      *
      * 批量创建共享带宽。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateSharedBandwidthsRequest 请求对象
      * @return SyncInvoker<BatchCreateSharedBandwidthsRequest, BatchCreateSharedBandwidthsResponse>
@@ -87,8 +83,7 @@ public class EipClient {
      *
      * 创建共享带宽。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSharedBandwidthRequest 请求对象
      * @return CreateSharedBandwidthResponse
@@ -102,8 +97,7 @@ public class EipClient {
      *
      * 创建共享带宽。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSharedBandwidthRequest 请求对象
      * @return SyncInvoker<CreateSharedBandwidthRequest, CreateSharedBandwidthResponse>
@@ -119,8 +113,7 @@ public class EipClient {
      *
      * 删除共享带宽。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSharedBandwidthRequest 请求对象
      * @return DeleteSharedBandwidthResponse
@@ -134,8 +127,7 @@ public class EipClient {
      *
      * 删除共享带宽。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSharedBandwidthRequest 请求对象
      * @return SyncInvoker<DeleteSharedBandwidthRequest, DeleteSharedBandwidthResponse>
@@ -151,8 +143,7 @@ public class EipClient {
      *
      * 查询带宽列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBandwidthsRequest 请求对象
      * @return ListBandwidthsResponse
@@ -166,8 +157,7 @@ public class EipClient {
      *
      * 查询带宽列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBandwidthsRequest 请求对象
      * @return SyncInvoker<ListBandwidthsRequest, ListBandwidthsResponse>
@@ -183,8 +173,7 @@ public class EipClient {
      *
      * 查询配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotasRequest 请求对象
      * @return ListQuotasResponse
@@ -198,8 +187,7 @@ public class EipClient {
      *
      * 查询配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotasRequest 请求对象
      * @return SyncInvoker<ListQuotasRequest, ListQuotasResponse>
@@ -213,8 +201,7 @@ public class EipClient {
      *
      * 共享带宽移除弹性公网IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemovePublicipsFromSharedBandwidthRequest 请求对象
      * @return RemovePublicipsFromSharedBandwidthResponse
@@ -229,8 +216,7 @@ public class EipClient {
      *
      * 共享带宽移除弹性公网IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemovePublicipsFromSharedBandwidthRequest 请求对象
      * @return SyncInvoker<RemovePublicipsFromSharedBandwidthRequest, RemovePublicipsFromSharedBandwidthResponse>
@@ -246,8 +232,7 @@ public class EipClient {
      *
      * 查询带宽
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBandwidthRequest 请求对象
      * @return ShowBandwidthResponse
@@ -261,8 +246,7 @@ public class EipClient {
      *
      * 查询带宽
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBandwidthRequest 请求对象
      * @return SyncInvoker<ShowBandwidthRequest, ShowBandwidthResponse>
@@ -276,8 +260,7 @@ public class EipClient {
      *
      * 更新带宽。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBandwidthRequest 请求对象
      * @return UpdateBandwidthResponse
@@ -291,8 +274,7 @@ public class EipClient {
      *
      * 更新带宽。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateBandwidthRequest 请求对象
      * @return SyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse>
@@ -308,8 +290,7 @@ public class EipClient {
      *
      * 更新带宽。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePrePaidBandwidthRequest 请求对象
      * @return UpdatePrePaidBandwidthResponse
@@ -323,8 +304,7 @@ public class EipClient {
      *
      * 更新带宽。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePrePaidBandwidthRequest 请求对象
      * @return SyncInvoker<UpdatePrePaidBandwidthRequest, UpdatePrePaidBandwidthResponse>
@@ -340,8 +320,7 @@ public class EipClient {
      *
      * 为指定的弹性公网IP资源实例批量添加标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreatePublicipTagsRequest 请求对象
      * @return BatchCreatePublicipTagsResponse
@@ -355,8 +334,7 @@ public class EipClient {
      *
      * 为指定的弹性公网IP资源实例批量添加标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreatePublicipTagsRequest 请求对象
      * @return SyncInvoker<BatchCreatePublicipTagsRequest, BatchCreatePublicipTagsResponse>
@@ -372,8 +350,7 @@ public class EipClient {
      *
      * 为指定的弹性公网IP资源实例批量删除标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeletePublicipTagsRequest 请求对象
      * @return BatchDeletePublicipTagsResponse
@@ -387,8 +364,7 @@ public class EipClient {
      *
      * 为指定的弹性公网IP资源实例批量删除标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeletePublicipTagsRequest 请求对象
      * @return SyncInvoker<BatchDeletePublicipTagsRequest, BatchDeletePublicipTagsResponse>
@@ -404,8 +380,7 @@ public class EipClient {
      *
      * 申请包年包月的弹性公网IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePrePaidPublicipRequest 请求对象
      * @return CreatePrePaidPublicipResponse
@@ -419,8 +394,7 @@ public class EipClient {
      *
      * 申请包年包月的弹性公网IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePrePaidPublicipRequest 请求对象
      * @return SyncInvoker<CreatePrePaidPublicipRequest, CreatePrePaidPublicipResponse>
@@ -437,8 +411,7 @@ public class EipClient {
      * 申请弹性公网IP，支持IPv4和IPv6。
      *  弹性公网IP（Elastic IP）提供独立的公网IP资源，包括公网IP地址与公网出口带宽服务。可以与弹性云服务器、裸金属服务器、虚拟IP、弹性负载均衡、NAT网关等资源灵活地绑定及解绑。拥有多种灵活的计费方式，可以满足各种业务场景的需要。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePublicipRequest 请求对象
      * @return CreatePublicipResponse
@@ -453,8 +426,7 @@ public class EipClient {
      * 申请弹性公网IP，支持IPv4和IPv6。
      *  弹性公网IP（Elastic IP）提供独立的公网IP资源，包括公网IP地址与公网出口带宽服务。可以与弹性云服务器、裸金属服务器、虚拟IP、弹性负载均衡、NAT网关等资源灵活地绑定及解绑。拥有多种灵活的计费方式，可以满足各种业务场景的需要。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePublicipRequest 请求对象
      * @return SyncInvoker<CreatePublicipRequest, CreatePublicipResponse>
@@ -470,8 +442,7 @@ public class EipClient {
      *
      * 给指定弹性IP资源实例增加标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePublicipTagRequest 请求对象
      * @return CreatePublicipTagResponse
@@ -485,8 +456,7 @@ public class EipClient {
      *
      * 给指定弹性IP资源实例增加标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePublicipTagRequest 请求对象
      * @return SyncInvoker<CreatePublicipTagRequest, CreatePublicipTagResponse>
@@ -502,8 +472,7 @@ public class EipClient {
      *
      * 删除弹性公网IP,绑定状态eip不允许直接删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePublicipRequest 请求对象
      * @return DeletePublicipResponse
@@ -517,8 +486,7 @@ public class EipClient {
      *
      * 删除弹性公网IP,绑定状态eip不允许直接删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePublicipRequest 请求对象
      * @return SyncInvoker<DeletePublicipRequest, DeletePublicipResponse>
@@ -534,8 +502,7 @@ public class EipClient {
      *
      * 删除指定弹性公网IP的标签信息。其中project_id是项目ID，publicip_id 是要操作的弹性公网IP的id。key是要删除标签的键。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePublicipTagRequest 请求对象
      * @return DeletePublicipTagResponse
@@ -549,8 +516,7 @@ public class EipClient {
      *
      * 删除指定弹性公网IP的标签信息。其中project_id是项目ID，publicip_id 是要操作的弹性公网IP的id。key是要删除标签的键。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePublicipTagRequest 请求对象
      * @return SyncInvoker<DeletePublicipTagRequest, DeletePublicipTagResponse>
@@ -566,8 +532,7 @@ public class EipClient {
      *
      * 查询租户在指定区域和实例类型的所有标签集合。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublicipTagsRequest 请求对象
      * @return ListPublicipTagsResponse
@@ -581,8 +546,7 @@ public class EipClient {
      *
      * 查询租户在指定区域和实例类型的所有标签集合。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublicipTagsRequest 请求对象
      * @return SyncInvoker<ListPublicipTagsRequest, ListPublicipTagsResponse>
@@ -598,8 +562,7 @@ public class EipClient {
      *
      * 查询弹性公网IP列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublicipsRequest 请求对象
      * @return ListPublicipsResponse
@@ -613,8 +576,7 @@ public class EipClient {
      *
      * 查询弹性公网IP列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublicipsRequest 请求对象
      * @return SyncInvoker<ListPublicipsRequest, ListPublicipsResponse>
@@ -628,8 +590,7 @@ public class EipClient {
      *
      * 使用标签过滤弹性公网IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublicipsByTagsRequest 请求对象
      * @return ListPublicipsByTagsResponse
@@ -643,8 +604,7 @@ public class EipClient {
      *
      * 使用标签过滤弹性公网IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPublicipsByTagsRequest 请求对象
      * @return SyncInvoker<ListPublicipsByTagsRequest, ListPublicipsByTagsResponse>
@@ -660,8 +620,7 @@ public class EipClient {
      *
      * 查询指定的弹性公网IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicipRequest 请求对象
      * @return ShowPublicipResponse
@@ -675,8 +634,7 @@ public class EipClient {
      *
      * 查询指定的弹性公网IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicipRequest 请求对象
      * @return SyncInvoker<ShowPublicipRequest, ShowPublicipResponse>
@@ -690,8 +648,7 @@ public class EipClient {
      *
      * 查询指定弹性IP实例的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicipTagsRequest 请求对象
      * @return ShowPublicipTagsResponse
@@ -705,8 +662,7 @@ public class EipClient {
      *
      * 查询指定弹性IP实例的标签信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPublicipTagsRequest 请求对象
      * @return SyncInvoker<ShowPublicipTagsRequest, ShowPublicipTagsResponse>
@@ -722,8 +678,7 @@ public class EipClient {
      *
      * 更新弹性公网IP，将弹性公网IP跟一个网卡绑定或者解绑定，转换IP地址版本类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePublicipRequest 请求对象
      * @return UpdatePublicipResponse
@@ -737,8 +692,7 @@ public class EipClient {
      *
      * 更新弹性公网IP，将弹性公网IP跟一个网卡绑定或者解绑定，转换IP地址版本类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePublicipRequest 请求对象
      * @return SyncInvoker<UpdatePublicipRequest, UpdatePublicipResponse>
@@ -754,8 +708,7 @@ public class EipClient {
      *
      * 创建浮动IP的外部网络UUID，请使用GET /v2.0/networks?router:external&#x3D;True或neutron net-external-list方式获取。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateFloatingIpRequest 请求对象
      * @return NeutronCreateFloatingIpResponse
@@ -769,8 +722,7 @@ public class EipClient {
      *
      * 创建浮动IP的外部网络UUID，请使用GET /v2.0/networks?router:external&#x3D;True或neutron net-external-list方式获取。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronCreateFloatingIpRequest 请求对象
      * @return SyncInvoker<NeutronCreateFloatingIpRequest, NeutronCreateFloatingIpResponse>
@@ -786,8 +738,7 @@ public class EipClient {
      *
      * 删除指定的浮动IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteFloatingIpRequest 请求对象
      * @return NeutronDeleteFloatingIpResponse
@@ -801,8 +752,7 @@ public class EipClient {
      *
      * 删除指定的浮动IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronDeleteFloatingIpRequest 请求对象
      * @return SyncInvoker<NeutronDeleteFloatingIpRequest, NeutronDeleteFloatingIpResponse>
@@ -818,8 +768,7 @@ public class EipClient {
      *
      * 查询提交请求的租户有权限操作的所有浮动IP地址。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListFloatingIpsRequest 请求对象
      * @return NeutronListFloatingIpsResponse
@@ -833,8 +782,7 @@ public class EipClient {
      *
      * 查询提交请求的租户有权限操作的所有浮动IP地址。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronListFloatingIpsRequest 请求对象
      * @return SyncInvoker<NeutronListFloatingIpsRequest, NeutronListFloatingIpsResponse>
@@ -850,8 +798,7 @@ public class EipClient {
      *
      * 查询浮动IP详情，包括浮动IP状态，浮动IP所属路由器ID，浮动IP的外部网络ID等等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowFloatingIpRequest 请求对象
      * @return NeutronShowFloatingIpResponse
@@ -865,8 +812,7 @@ public class EipClient {
      *
      * 查询浮动IP详情，包括浮动IP状态，浮动IP所属路由器ID，浮动IP的外部网络ID等等。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronShowFloatingIpRequest 请求对象
      * @return SyncInvoker<NeutronShowFloatingIpRequest, NeutronShowFloatingIpResponse>
@@ -884,8 +830,7 @@ public class EipClient {
      *  更新时需在URL中给出浮动IP地址的ID。
      *  port_id 为空，则表示浮动IP从端口解绑。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateFloatingIpRequest 请求对象
      * @return NeutronUpdateFloatingIpResponse
@@ -901,8 +846,7 @@ public class EipClient {
      *  更新时需在URL中给出浮动IP地址的ID。
      *  port_id 为空，则表示浮动IP从端口解绑。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param NeutronUpdateFloatingIpRequest 请求对象
      * @return SyncInvoker<NeutronUpdateFloatingIpRequest, NeutronUpdateFloatingIpResponse>

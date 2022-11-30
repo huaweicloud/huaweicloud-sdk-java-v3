@@ -22,8 +22,7 @@ public class RdsClient {
      *
      * 应用参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ApplyConfigurationAsyncRequest 请求对象
      * @return ApplyConfigurationAsyncResponse
@@ -37,8 +36,7 @@ public class RdsClient {
      *
      * 应用参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ApplyConfigurationAsyncRequest 请求对象
      * @return SyncInvoker<ApplyConfigurationAsyncRequest, ApplyConfigurationAsyncResponse>
@@ -54,8 +52,7 @@ public class RdsClient {
      *
      * 绑定和解绑弹性公网IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AttachEipRequest 请求对象
      * @return AttachEipResponse
@@ -69,8 +66,7 @@ public class RdsClient {
      *
      * 绑定和解绑弹性公网IP。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AttachEipRequest 请求对象
      * @return SyncInvoker<AttachEipRequest, AttachEipResponse>
@@ -84,8 +80,7 @@ public class RdsClient {
      *
      * 批量添加标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchTagAddActionRequest 请求对象
      * @return BatchTagAddActionResponse
@@ -99,8 +94,7 @@ public class RdsClient {
      *
      * 批量添加标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchTagAddActionRequest 请求对象
      * @return SyncInvoker<BatchTagAddActionRequest, BatchTagAddActionResponse>
@@ -116,8 +110,7 @@ public class RdsClient {
      *
      * 批量删除标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchTagDelActionRequest 请求对象
      * @return BatchTagDelActionResponse
@@ -131,8 +124,7 @@ public class RdsClient {
      *
      * 批量删除标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchTagDelActionRequest 请求对象
      * @return SyncInvoker<BatchTagDelActionRequest, BatchTagDelActionResponse>
@@ -148,8 +140,7 @@ public class RdsClient {
      *
      * 更改主备实例的数据同步方式。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeFailoverModeRequest 请求对象
      * @return ChangeFailoverModeResponse
@@ -163,8 +154,7 @@ public class RdsClient {
      *
      * 更改主备实例的数据同步方式。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeFailoverModeRequest 请求对象
      * @return SyncInvoker<ChangeFailoverModeRequest, ChangeFailoverModeResponse>
@@ -180,8 +170,7 @@ public class RdsClient {
      *
      * 切换主备实例的倒换策略.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeFailoverStrategyRequest 请求对象
      * @return ChangeFailoverStrategyResponse
@@ -195,8 +184,7 @@ public class RdsClient {
      *
      * 切换主备实例的倒换策略.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeFailoverStrategyRequest 请求对象
      * @return SyncInvoker<ChangeFailoverStrategyRequest, ChangeFailoverStrategyResponse>
@@ -212,8 +200,7 @@ public class RdsClient {
      *
      * 设置可维护时间段
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeOpsWindowRequest 请求对象
      * @return ChangeOpsWindowResponse
@@ -227,8 +214,7 @@ public class RdsClient {
      *
      * 设置可维护时间段
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeOpsWindowRequest 请求对象
      * @return SyncInvoker<ChangeOpsWindowRequest, ChangeOpsWindowResponse>
@@ -244,8 +230,7 @@ public class RdsClient {
      *
      * 创建参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConfigurationRequest 请求对象
      * @return CreateConfigurationResponse
@@ -259,8 +244,7 @@ public class RdsClient {
      *
      * 创建参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateConfigurationRequest 请求对象
      * @return SyncInvoker<CreateConfigurationRequest, CreateConfigurationResponse>
@@ -276,8 +260,7 @@ public class RdsClient {
      *
      * 申请域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDnsNameRequest 请求对象
      * @return CreateDnsNameResponse
@@ -291,8 +274,7 @@ public class RdsClient {
      *
      * 申请域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDnsNameRequest 请求对象
      * @return SyncInvoker<CreateDnsNameRequest, CreateDnsNameResponse>
@@ -306,8 +288,7 @@ public class RdsClient {
      *
      * 创建数据库实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return CreateInstanceResponse
@@ -321,8 +302,7 @@ public class RdsClient {
      *
      * 创建数据库实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
@@ -338,8 +318,7 @@ public class RdsClient {
      *
      * 创建手动备份。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateManualBackupRequest 请求对象
      * @return CreateManualBackupResponse
@@ -353,8 +332,7 @@ public class RdsClient {
      *
      * 创建手动备份。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateManualBackupRequest 请求对象
      * @return SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>
@@ -370,8 +348,7 @@ public class RdsClient {
      *
      * 在指定数据库上创建插件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostgresqlExtensionRequest 请求对象
      * @return CreatePostgresqlExtensionResponse
@@ -385,8 +362,7 @@ public class RdsClient {
      *
      * 在指定数据库上创建插件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostgresqlExtensionRequest 请求对象
      * @return SyncInvoker<CreatePostgresqlExtensionRequest, CreatePostgresqlExtensionResponse>
@@ -402,8 +378,7 @@ public class RdsClient {
      *
      * 恢复到新实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRestoreInstanceRequest 请求对象
      * @return CreateRestoreInstanceResponse
@@ -417,8 +392,7 @@ public class RdsClient {
      *
      * 恢复到新实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRestoreInstanceRequest 请求对象
      * @return SyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse>
@@ -434,8 +408,7 @@ public class RdsClient {
      *
      * 删除参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteConfigurationRequest 请求对象
      * @return DeleteConfigurationResponse
@@ -449,8 +422,7 @@ public class RdsClient {
      *
      * 删除参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteConfigurationRequest 请求对象
      * @return SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse>
@@ -466,8 +438,7 @@ public class RdsClient {
      *
      * 删除数据库实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return DeleteInstanceResponse
@@ -481,8 +452,7 @@ public class RdsClient {
      *
      * 删除数据库实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
@@ -498,8 +468,7 @@ public class RdsClient {
      *
      * 删除手动备份。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteManualBackupRequest 请求对象
      * @return DeleteManualBackupResponse
@@ -513,8 +482,7 @@ public class RdsClient {
      *
      * 删除手动备份。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteManualBackupRequest 请求对象
      * @return SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>
@@ -530,8 +498,7 @@ public class RdsClient {
      *
      * 在指定数据库上删除插件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePostgresqlExtensionRequest 请求对象
      * @return DeletePostgresqlExtensionResponse
@@ -545,8 +512,7 @@ public class RdsClient {
      *
      * 在指定数据库上删除插件。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePostgresqlExtensionRequest 请求对象
      * @return SyncInvoker<DeletePostgresqlExtensionRequest, DeletePostgresqlExtensionResponse>
@@ -562,8 +528,7 @@ public class RdsClient {
      *
      * 获取慢日志下载链接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadSlowlogRequest 请求对象
      * @return DownloadSlowlogResponse
@@ -577,8 +542,7 @@ public class RdsClient {
      *
      * 获取慢日志下载链接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadSlowlogRequest 请求对象
      * @return SyncInvoker<DownloadSlowlogRequest, DownloadSlowlogResponse>
@@ -594,8 +558,7 @@ public class RdsClient {
      *
      * 应用参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableConfigurationRequest 请求对象
      * @return EnableConfigurationResponse
@@ -609,8 +572,7 @@ public class RdsClient {
      *
      * 应用参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableConfigurationRequest 请求对象
      * @return SyncInvoker<EnableConfigurationRequest, EnableConfigurationResponse>
@@ -626,8 +588,7 @@ public class RdsClient {
      *
      * 获取审计日志列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAuditlogsRequest 请求对象
      * @return ListAuditlogsResponse
@@ -641,8 +602,7 @@ public class RdsClient {
      *
      * 获取审计日志列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAuditlogsRequest 请求对象
      * @return SyncInvoker<ListAuditlogsRequest, ListAuditlogsResponse>
@@ -656,8 +616,7 @@ public class RdsClient {
      *
      * 获取备份列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackupsRequest 请求对象
      * @return ListBackupsResponse
@@ -671,8 +630,7 @@ public class RdsClient {
      *
      * 获取备份列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackupsRequest 请求对象
      * @return SyncInvoker<ListBackupsRequest, ListBackupsResponse>
@@ -686,8 +644,7 @@ public class RdsClient {
      *
      * 查询SQLServer可用字符集
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCollationsRequest 请求对象
      * @return ListCollationsResponse
@@ -701,8 +658,7 @@ public class RdsClient {
      *
      * 查询SQLServer可用字符集
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCollationsRequest 请求对象
      * @return SyncInvoker<ListCollationsRequest, ListCollationsResponse>
@@ -718,8 +674,7 @@ public class RdsClient {
      *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConfigurationsRequest 请求对象
      * @return ListConfigurationsResponse
@@ -733,8 +688,7 @@ public class RdsClient {
      *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListConfigurationsRequest 请求对象
      * @return SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
@@ -750,8 +704,7 @@ public class RdsClient {
      *
      * 查询数据库引擎的版本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatastoresRequest 请求对象
      * @return ListDatastoresResponse
@@ -765,8 +718,7 @@ public class RdsClient {
      *
      * 查询数据库引擎的版本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatastoresRequest 请求对象
      * @return SyncInvoker<ListDatastoresRequest, ListDatastoresResponse>
@@ -782,8 +734,7 @@ public class RdsClient {
      *
      * 批量查询容灾实例信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDrRelationsRequest 请求对象
      * @return ListDrRelationsResponse
@@ -797,8 +748,7 @@ public class RdsClient {
      *
      * 批量查询容灾实例信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDrRelationsRequest 请求对象
      * @return SyncInvoker<ListDrRelationsRequest, ListDrRelationsResponse>
@@ -814,8 +764,7 @@ public class RdsClient {
      *
      * 查询数据库错误日志。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListErrorLogsRequest 请求对象
      * @return ListErrorLogsResponse
@@ -829,8 +778,7 @@ public class RdsClient {
      *
      * 查询数据库错误日志。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListErrorLogsRequest 请求对象
      * @return SyncInvoker<ListErrorLogsRequest, ListErrorLogsResponse>
@@ -844,8 +792,7 @@ public class RdsClient {
      *
      * 查询数据库错误日志。(与原v3接口相比修改offset,符合华为云服务开放 API遵从性规范3.0)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListErrorLogsNewRequest 请求对象
      * @return ListErrorLogsNewResponse
@@ -859,8 +806,7 @@ public class RdsClient {
      *
      * 查询数据库错误日志。(与原v3接口相比修改offset,符合华为云服务开放 API遵从性规范3.0)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListErrorLogsNewRequest 请求对象
      * @return SyncInvoker<ListErrorLogsNewRequest, ListErrorLogsNewResponse>
@@ -876,8 +822,7 @@ public class RdsClient {
      *
      * 查询数据库规格。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
@@ -891,8 +836,7 @@ public class RdsClient {
      *
      * 查询数据库规格。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
@@ -906,8 +850,7 @@ public class RdsClient {
      *
      * 查询数据库实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return ListInstancesResponse
@@ -921,8 +864,7 @@ public class RdsClient {
      *
      * 查询数据库实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
@@ -936,8 +878,7 @@ public class RdsClient {
      *
      * 获取指定ID的任务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListJobInfoRequest 请求对象
      * @return ListJobInfoResponse
@@ -951,8 +892,7 @@ public class RdsClient {
      *
      * 获取指定ID的任务信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListJobInfoRequest 请求对象
      * @return SyncInvoker<ListJobInfoRequest, ListJobInfoResponse>
@@ -966,8 +906,7 @@ public class RdsClient {
      *
      * 获取指定实例和时间范围的任务信息（SQL Server）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListJobInfoDetailRequest 请求对象
      * @return ListJobInfoDetailResponse
@@ -981,8 +920,7 @@ public class RdsClient {
      *
      * 获取指定实例和时间范围的任务信息（SQL Server）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListJobInfoDetailRequest 请求对象
      * @return SyncInvoker<ListJobInfoDetailRequest, ListJobInfoDetailResponse>
@@ -998,8 +936,7 @@ public class RdsClient {
      *
      * 查询跨区域备份列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListOffSiteBackupsRequest 请求对象
      * @return ListOffSiteBackupsResponse
@@ -1013,8 +950,7 @@ public class RdsClient {
      *
      * 查询跨区域备份列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListOffSiteBackupsRequest 请求对象
      * @return SyncInvoker<ListOffSiteBackupsRequest, ListOffSiteBackupsResponse>
@@ -1030,8 +966,7 @@ public class RdsClient {
      *
      * 查询跨区域备份实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListOffSiteInstancesRequest 请求对象
      * @return ListOffSiteInstancesResponse
@@ -1045,8 +980,7 @@ public class RdsClient {
      *
      * 查询跨区域备份实例列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListOffSiteInstancesRequest 请求对象
      * @return SyncInvoker<ListOffSiteInstancesRequest, ListOffSiteInstancesResponse>
@@ -1063,8 +997,7 @@ public class RdsClient {
      * 查询跨区域备份可恢复时间段。
      * 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListOffSiteRestoreTimesRequest 请求对象
      * @return ListOffSiteRestoreTimesResponse
@@ -1079,8 +1012,7 @@ public class RdsClient {
      * 查询跨区域备份可恢复时间段。
      * 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListOffSiteRestoreTimesRequest 请求对象
      * @return SyncInvoker<ListOffSiteRestoreTimesRequest, ListOffSiteRestoreTimesResponse>
@@ -1096,8 +1028,7 @@ public class RdsClient {
      *
      * 获取指定数据库的插件信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPostgresqlExtensionRequest 请求对象
      * @return ListPostgresqlExtensionResponse
@@ -1111,8 +1042,7 @@ public class RdsClient {
      *
      * 获取指定数据库的插件信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPostgresqlExtensionRequest 请求对象
      * @return SyncInvoker<ListPostgresqlExtensionRequest, ListPostgresqlExtensionResponse>
@@ -1128,8 +1058,7 @@ public class RdsClient {
      *
      * 查询项目标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectTagsRequest 请求对象
      * @return ListProjectTagsResponse
@@ -1143,8 +1072,7 @@ public class RdsClient {
      *
      * 查询项目标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectTagsRequest 请求对象
      * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
@@ -1161,8 +1089,7 @@ public class RdsClient {
      * 查询可恢复时间段。
      * 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRestoreTimesRequest 请求对象
      * @return ListRestoreTimesResponse
@@ -1177,8 +1104,7 @@ public class RdsClient {
      * 查询可恢复时间段。
      * 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRestoreTimesRequest 请求对象
      * @return SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse>
@@ -1195,8 +1121,7 @@ public class RdsClient {
      * 查询慢日志文件列表。
      * 调用该接口取到慢日志文件名后，可以调用接口/v3/{project_id}/instances/{instance_id}/slowlog-download 获取慢日志文件下载链接
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSlowLogFileRequest 请求对象
      * @return ListSlowLogFileResponse
@@ -1211,8 +1136,7 @@ public class RdsClient {
      * 查询慢日志文件列表。
      * 调用该接口取到慢日志文件名后，可以调用接口/v3/{project_id}/instances/{instance_id}/slowlog-download 获取慢日志文件下载链接
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSlowLogFileRequest 请求对象
      * @return SyncInvoker<ListSlowLogFileRequest, ListSlowLogFileResponse>
@@ -1228,8 +1152,7 @@ public class RdsClient {
      *
      * 查询数据库慢日志。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSlowLogsRequest 请求对象
      * @return ListSlowLogsResponse
@@ -1243,8 +1166,7 @@ public class RdsClient {
      *
      * 查询数据库慢日志。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSlowLogsRequest 请求对象
      * @return SyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse>
@@ -1258,8 +1180,7 @@ public class RdsClient {
      *
      * 查询数据库慢日志。(与原v3接口相比修改offset,符合华为云服务开放 API遵从性规范3.0)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSlowLogsNewRequest 请求对象
      * @return ListSlowLogsNewResponse
@@ -1273,8 +1194,7 @@ public class RdsClient {
      *
      * 查询数据库慢日志。(与原v3接口相比修改offset,符合华为云服务开放 API遵从性规范3.0)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSlowLogsNewRequest 请求对象
      * @return SyncInvoker<ListSlowLogsNewRequest, ListSlowLogsNewResponse>
@@ -1290,8 +1210,7 @@ public class RdsClient {
      *
      * 获取慢日志统计信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSlowlogStatisticsRequest 请求对象
      * @return ListSlowlogStatisticsResponse
@@ -1305,8 +1224,7 @@ public class RdsClient {
      *
      * 获取慢日志统计信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSlowlogStatisticsRequest 请求对象
      * @return SyncInvoker<ListSlowlogStatisticsRequest, ListSlowlogStatisticsResponse>
@@ -1322,8 +1240,7 @@ public class RdsClient {
      *
      * 查询数据库磁盘类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStorageTypesRequest 请求对象
      * @return ListStorageTypesResponse
@@ -1337,8 +1254,7 @@ public class RdsClient {
      *
      * 查询数据库磁盘类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStorageTypesRequest 请求对象
      * @return SyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse>
@@ -1354,8 +1270,7 @@ public class RdsClient {
      *
      * 迁移主备实例的备机
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MigrateFollowerRequest 请求对象
      * @return MigrateFollowerResponse
@@ -1369,8 +1284,7 @@ public class RdsClient {
      *
      * 迁移主备实例的备机
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MigrateFollowerRequest 请求对象
      * @return SyncInvoker<MigrateFollowerRequest, MigrateFollowerResponse>
@@ -1386,8 +1300,7 @@ public class RdsClient {
      *
      * 恢复到已有实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreExistInstanceRequest 请求对象
      * @return RestoreExistInstanceResponse
@@ -1401,8 +1314,7 @@ public class RdsClient {
      *
      * 恢复到已有实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreExistInstanceRequest 请求对象
      * @return SyncInvoker<RestoreExistInstanceRequest, RestoreExistInstanceResponse>
@@ -1418,8 +1330,7 @@ public class RdsClient {
      *
      * 表级时间点恢复(MySQL)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreTablesRequest 请求对象
      * @return RestoreTablesResponse
@@ -1433,8 +1344,7 @@ public class RdsClient {
      *
      * 表级时间点恢复(MySQL)。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreTablesRequest 请求对象
      * @return SyncInvoker<RestoreTablesRequest, RestoreTablesResponse>
@@ -1448,8 +1358,7 @@ public class RdsClient {
      *
      * 恢复到已有实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreToExistingInstanceRequest 请求对象
      * @return RestoreToExistingInstanceResponse
@@ -1463,8 +1372,7 @@ public class RdsClient {
      *
      * 恢复到已有实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreToExistingInstanceRequest 请求对象
      * @return SyncInvoker<RestoreToExistingInstanceRequest, RestoreToExistingInstanceResponse>
@@ -1480,8 +1388,7 @@ public class RdsClient {
      *
      * 设置审计日志策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetAuditlogPolicyRequest 请求对象
      * @return SetAuditlogPolicyResponse
@@ -1495,8 +1402,7 @@ public class RdsClient {
      *
      * 设置审计日志策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetAuditlogPolicyRequest 请求对象
      * @return SyncInvoker<SetAuditlogPolicyRequest, SetAuditlogPolicyResponse>
@@ -1512,8 +1418,7 @@ public class RdsClient {
      *
      * 设置自动备份策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetBackupPolicyRequest 请求对象
      * @return SetBackupPolicyResponse
@@ -1527,8 +1432,7 @@ public class RdsClient {
      *
      * 设置自动备份策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetBackupPolicyRequest 请求对象
      * @return SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>
@@ -1544,8 +1448,7 @@ public class RdsClient {
      *
      * 修改指定实例的binlog本地保留时长。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetBinlogClearPolicyRequest 请求对象
      * @return SetBinlogClearPolicyResponse
@@ -1559,8 +1462,7 @@ public class RdsClient {
      *
      * 修改指定实例的binlog本地保留时长。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetBinlogClearPolicyRequest 请求对象
      * @return SyncInvoker<SetBinlogClearPolicyRequest, SetBinlogClearPolicyResponse>
@@ -1576,8 +1478,7 @@ public class RdsClient {
      *
      * 设置跨区域备份策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetOffSiteBackupPolicyRequest 请求对象
      * @return SetOffSiteBackupPolicyResponse
@@ -1591,8 +1492,7 @@ public class RdsClient {
      *
      * 设置跨区域备份策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetOffSiteBackupPolicyRequest 请求对象
      * @return SyncInvoker<SetOffSiteBackupPolicyRequest, SetOffSiteBackupPolicyResponse>
@@ -1608,8 +1508,7 @@ public class RdsClient {
      *
      * 修改安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetSecurityGroupRequest 请求对象
      * @return SetSecurityGroupResponse
@@ -1623,8 +1522,7 @@ public class RdsClient {
      *
      * 修改安全组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetSecurityGroupRequest 请求对象
      * @return SyncInvoker<SetSecurityGroupRequest, SetSecurityGroupResponse>
@@ -1640,8 +1538,7 @@ public class RdsClient {
      *
      * V3慢日志敏感信息的开关
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetSensitiveSlowLogRequest 请求对象
      * @return SetSensitiveSlowLogResponse
@@ -1655,8 +1552,7 @@ public class RdsClient {
      *
      * V3慢日志敏感信息的开关
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetSensitiveSlowLogRequest 请求对象
      * @return SyncInvoker<SetSensitiveSlowLogRequest, SetSensitiveSlowLogResponse>
@@ -1672,8 +1568,7 @@ public class RdsClient {
      *
      * 生成审计日志下载链接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAuditlogDownloadLinkRequest 请求对象
      * @return ShowAuditlogDownloadLinkResponse
@@ -1687,8 +1582,7 @@ public class RdsClient {
      *
      * 生成审计日志下载链接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAuditlogDownloadLinkRequest 请求对象
      * @return SyncInvoker<ShowAuditlogDownloadLinkRequest, ShowAuditlogDownloadLinkResponse>
@@ -1704,8 +1598,7 @@ public class RdsClient {
      *
      * 查询审计日志策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAuditlogPolicyRequest 请求对象
      * @return ShowAuditlogPolicyResponse
@@ -1719,8 +1612,7 @@ public class RdsClient {
      *
      * 查询审计日志策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAuditlogPolicyRequest 请求对象
      * @return SyncInvoker<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse>
@@ -1736,8 +1628,7 @@ public class RdsClient {
      *
      * 获取备份下载链接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBackupDownloadLinkRequest 请求对象
      * @return ShowBackupDownloadLinkResponse
@@ -1751,8 +1642,7 @@ public class RdsClient {
      *
      * 获取备份下载链接。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBackupDownloadLinkRequest 请求对象
      * @return SyncInvoker<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse>
@@ -1768,8 +1658,7 @@ public class RdsClient {
      *
      * 查询自动备份策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBackupPolicyRequest 请求对象
      * @return ShowBackupPolicyResponse
@@ -1783,8 +1672,7 @@ public class RdsClient {
      *
      * 查询自动备份策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBackupPolicyRequest 请求对象
      * @return SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>
@@ -1800,8 +1688,7 @@ public class RdsClient {
      *
      * 查寻指定实例的binlog本地保留时长。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBinlogClearPolicyRequest 请求对象
      * @return ShowBinlogClearPolicyResponse
@@ -1815,8 +1702,7 @@ public class RdsClient {
      *
      * 查寻指定实例的binlog本地保留时长。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBinlogClearPolicyRequest 请求对象
      * @return SyncInvoker<ShowBinlogClearPolicyRequest, ShowBinlogClearPolicyResponse>
@@ -1832,8 +1718,7 @@ public class RdsClient {
      *
      * 获取指定参数模板的参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowConfigurationRequest 请求对象
      * @return ShowConfigurationResponse
@@ -1847,8 +1732,7 @@ public class RdsClient {
      *
      * 获取指定参数模板的参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowConfigurationRequest 请求对象
      * @return SyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse>
@@ -1864,8 +1748,7 @@ public class RdsClient {
      *
      * 查询实例ipv6域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDnsNameRequest 请求对象
      * @return ShowDnsNameResponse
@@ -1879,8 +1762,7 @@ public class RdsClient {
      *
      * 查询实例ipv6域名。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDnsNameRequest 请求对象
      * @return SyncInvoker<ShowDnsNameRequest, ShowDnsNameResponse>
@@ -1894,8 +1776,7 @@ public class RdsClient {
      *
      * 查询实例ipv4域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainNameRequest 请求对象
      * @return ShowDomainNameResponse
@@ -1909,8 +1790,7 @@ public class RdsClient {
      *
      * 查询实例ipv4域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainNameRequest 请求对象
      * @return SyncInvoker<ShowDomainNameRequest, ShowDomainNameResponse>
@@ -1926,8 +1806,7 @@ public class RdsClient {
      *
      * 建立跨云容灾关系后，查询主实例和灾备实例间的复制状态及延迟。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDrReplicaStatusRequest 请求对象
      * @return ShowDrReplicaStatusResponse
@@ -1941,8 +1820,7 @@ public class RdsClient {
      *
      * 建立跨云容灾关系后，查询主实例和灾备实例间的复制状态及延迟。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDrReplicaStatusRequest 请求对象
      * @return SyncInvoker<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse>
@@ -1958,8 +1836,7 @@ public class RdsClient {
      *
      * 获取指定实例的参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceConfigurationRequest 请求对象
      * @return ShowInstanceConfigurationResponse
@@ -1973,8 +1850,7 @@ public class RdsClient {
      *
      * 获取指定实例的参数模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceConfigurationRequest 请求对象
      * @return SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>
@@ -1990,8 +1866,7 @@ public class RdsClient {
      *
      * 查询跨区域备份策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOffSiteBackupPolicyRequest 请求对象
      * @return ShowOffSiteBackupPolicyResponse
@@ -2005,8 +1880,7 @@ public class RdsClient {
      *
      * 查询跨区域备份策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOffSiteBackupPolicyRequest 请求对象
      * @return SyncInvoker<ShowOffSiteBackupPolicyRequest, ShowOffSiteBackupPolicyResponse>
@@ -2022,8 +1896,7 @@ public class RdsClient {
      *
      * 查询当前项目下资源配额情况。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotasRequest 请求对象
      * @return ShowQuotasResponse
@@ -2037,8 +1910,7 @@ public class RdsClient {
      *
      * 查询当前项目下资源配额情况。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotasRequest 请求对象
      * @return SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
@@ -2052,8 +1924,7 @@ public class RdsClient {
      *
      * 获取实例的复制状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowReplicationStatusRequest 请求对象
      * @return ShowReplicationStatusResponse
@@ -2067,8 +1938,7 @@ public class RdsClient {
      *
      * 获取实例的复制状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowReplicationStatusRequest 请求对象
      * @return SyncInvoker<ShowReplicationStatusRequest, ShowReplicationStatusResponse>
@@ -2084,8 +1954,7 @@ public class RdsClient {
      *
      * 手动倒换主备.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartFailoverRequest 请求对象
      * @return StartFailoverResponse
@@ -2099,8 +1968,7 @@ public class RdsClient {
      *
      * 手动倒换主备.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartFailoverRequest 请求对象
      * @return SyncInvoker<StartFailoverRequest, StartFailoverResponse>
@@ -2114,8 +1982,7 @@ public class RdsClient {
      *
      * 扩容数据库实例的磁盘空间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartInstanceEnlargeVolumeActionRequest 请求对象
      * @return StartInstanceEnlargeVolumeActionResponse
@@ -2130,8 +1997,7 @@ public class RdsClient {
      *
      * 扩容数据库实例的磁盘空间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartInstanceEnlargeVolumeActionRequest 请求对象
      * @return SyncInvoker<StartInstanceEnlargeVolumeActionRequest, StartInstanceEnlargeVolumeActionResponse>
@@ -2147,8 +2013,7 @@ public class RdsClient {
      *
      * 重启数据库实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartInstanceRestartActionRequest 请求对象
      * @return StartInstanceRestartActionResponse
@@ -2162,8 +2027,7 @@ public class RdsClient {
      *
      * 重启数据库实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartInstanceRestartActionRequest 请求对象
      * @return SyncInvoker<StartInstanceRestartActionRequest, StartInstanceRestartActionResponse>
@@ -2179,8 +2043,7 @@ public class RdsClient {
      *
      * 单机转主备实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartInstanceSingleToHaActionRequest 请求对象
      * @return StartInstanceSingleToHaActionResponse
@@ -2195,8 +2058,7 @@ public class RdsClient {
      *
      * 单机转主备实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartInstanceSingleToHaActionRequest 请求对象
      * @return SyncInvoker<StartInstanceSingleToHaActionRequest, StartInstanceSingleToHaActionResponse>
@@ -2212,8 +2074,7 @@ public class RdsClient {
      *
      * 设置回收站策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartRecyclePolicyRequest 请求对象
      * @return StartRecyclePolicyResponse
@@ -2227,8 +2088,7 @@ public class RdsClient {
      *
      * 设置回收站策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartRecyclePolicyRequest 请求对象
      * @return SyncInvoker<StartRecyclePolicyRequest, StartRecyclePolicyResponse>
@@ -2244,8 +2104,7 @@ public class RdsClient {
      *
      * 变更数据库实例的规格。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartResizeFlavorActionRequest 请求对象
      * @return StartResizeFlavorActionResponse
@@ -2259,8 +2118,7 @@ public class RdsClient {
      *
      * 变更数据库实例的规格。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartResizeFlavorActionRequest 请求对象
      * @return SyncInvoker<StartResizeFlavorActionRequest, StartResizeFlavorActionResponse>
@@ -2276,8 +2134,7 @@ public class RdsClient {
      *
      * 停止实例以节省费用，在停止数据库实例后，支持手动重新开启实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartupInstanceRequest 请求对象
      * @return StartupInstanceResponse
@@ -2291,8 +2148,7 @@ public class RdsClient {
      *
      * 停止实例以节省费用，在停止数据库实例后，支持手动重新开启实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartupInstanceRequest 请求对象
      * @return SyncInvoker<StartupInstanceRequest, StartupInstanceResponse>
@@ -2308,8 +2164,7 @@ public class RdsClient {
      *
      * 实例进行关机，通过暂时停止按需实例以节省费用，实例默认停止七天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopInstanceRequest 请求对象
      * @return StopInstanceResponse
@@ -2323,8 +2178,7 @@ public class RdsClient {
      *
      * 实例进行关机，通过暂时停止按需实例以节省费用，实例默认停止七天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopInstanceRequest 请求对象
      * @return SyncInvoker<StopInstanceRequest, StopInstanceResponse>
@@ -2338,8 +2192,7 @@ public class RdsClient {
      *
      * 设置SSL数据加密。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SwitchSslRequest 请求对象
      * @return SwitchSslResponse
@@ -2353,8 +2206,7 @@ public class RdsClient {
      *
      * 设置SSL数据加密。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SwitchSslRequest 请求对象
      * @return SyncInvoker<SwitchSslRequest, SwitchSslResponse>
@@ -2368,8 +2220,7 @@ public class RdsClient {
      *
      * 修改参数模板参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateConfigurationRequest 请求对象
      * @return UpdateConfigurationResponse
@@ -2383,8 +2234,7 @@ public class RdsClient {
      *
      * 修改参数模板参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateConfigurationRequest 请求对象
      * @return SyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>
@@ -2400,8 +2250,7 @@ public class RdsClient {
      *
      * 修改内网地址
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDataIpRequest 请求对象
      * @return UpdateDataIpResponse
@@ -2415,8 +2264,7 @@ public class RdsClient {
      *
      * 修改内网地址
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDataIpRequest 请求对象
      * @return SyncInvoker<UpdateDataIpRequest, UpdateDataIpResponse>
@@ -2430,8 +2278,7 @@ public class RdsClient {
      *
      * 修改域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDnsNameRequest 请求对象
      * @return UpdateDnsNameResponse
@@ -2445,8 +2292,7 @@ public class RdsClient {
      *
      * 修改域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDnsNameRequest 请求对象
      * @return SyncInvoker<UpdateDnsNameRequest, UpdateDnsNameResponse>
@@ -2460,8 +2306,7 @@ public class RdsClient {
      *
      * 修改指定实例的参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceConfigurationRequest 请求对象
      * @return UpdateInstanceConfigurationResponse
@@ -2475,8 +2320,7 @@ public class RdsClient {
      *
      * 修改指定实例的参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceConfigurationRequest 请求对象
      * @return SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>
@@ -2492,8 +2336,7 @@ public class RdsClient {
      *
      * 修改指定实例的参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceConfigurationAsyncRequest 请求对象
      * @return UpdateInstanceConfigurationAsyncResponse
@@ -2508,8 +2351,7 @@ public class RdsClient {
      *
      * 修改指定实例的参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceConfigurationAsyncRequest 请求对象
      * @return SyncInvoker<UpdateInstanceConfigurationAsyncRequest, UpdateInstanceConfigurationAsyncResponse>
@@ -2525,8 +2367,7 @@ public class RdsClient {
      *
      * 修改实例名称。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceNameRequest 请求对象
      * @return UpdateInstanceNameResponse
@@ -2540,8 +2381,7 @@ public class RdsClient {
      *
      * 修改实例名称。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceNameRequest 请求对象
      * @return SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>
@@ -2557,8 +2397,7 @@ public class RdsClient {
      *
      * 修改数据库端口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePortRequest 请求对象
      * @return UpdatePortResponse
@@ -2572,8 +2411,7 @@ public class RdsClient {
      *
      * 修改数据库端口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePortRequest 请求对象
      * @return SyncInvoker<UpdatePortRequest, UpdatePortResponse>
@@ -2587,8 +2425,7 @@ public class RdsClient {
      *
      * 修改指定数据库实例的备注信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePostgresqlInstanceAliasRequest 请求对象
      * @return UpdatePostgresqlInstanceAliasResponse
@@ -2603,8 +2440,7 @@ public class RdsClient {
      *
      * 修改指定数据库实例的备注信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePostgresqlInstanceAliasRequest 请求对象
      * @return SyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>
@@ -2620,8 +2456,7 @@ public class RdsClient {
      *
      * 对实例进行小版本升级。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpgradeDbVersionRequest 请求对象
      * @return UpgradeDbVersionResponse
@@ -2635,8 +2470,7 @@ public class RdsClient {
      *
      * 对实例进行小版本升级。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpgradeDbVersionRequest 请求对象
      * @return SyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse>
@@ -2652,8 +2486,7 @@ public class RdsClient {
      *
      * 查询API版本列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionRequest 请求对象
      * @return ListApiVersionResponse
@@ -2667,8 +2500,7 @@ public class RdsClient {
      *
      * 查询API版本列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionRequest 请求对象
      * @return SyncInvoker<ListApiVersionRequest, ListApiVersionResponse>
@@ -2684,8 +2516,7 @@ public class RdsClient {
      *
      * 查询API版本列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionNewRequest 请求对象
      * @return ListApiVersionNewResponse
@@ -2699,8 +2530,7 @@ public class RdsClient {
      *
      * 查询API版本列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionNewRequest 请求对象
      * @return SyncInvoker<ListApiVersionNewRequest, ListApiVersionNewResponse>
@@ -2716,8 +2546,7 @@ public class RdsClient {
      *
      * 查询指定的API版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
      * @return ShowApiVersionResponse
@@ -2731,8 +2560,7 @@ public class RdsClient {
      *
      * 查询指定的API版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
      * @return SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
@@ -2748,8 +2576,7 @@ public class RdsClient {
      *
      * 授权数据库帐号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AllowDbUserPrivilegeRequest 请求对象
      * @return AllowDbUserPrivilegeResponse
@@ -2763,8 +2590,7 @@ public class RdsClient {
      *
      * 授权数据库帐号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AllowDbUserPrivilegeRequest 请求对象
      * @return SyncInvoker<AllowDbUserPrivilegeRequest, AllowDbUserPrivilegeResponse>
@@ -2780,8 +2606,7 @@ public class RdsClient {
      *
      * 创建数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatabaseRequest 请求对象
      * @return CreateDatabaseResponse
@@ -2795,8 +2620,7 @@ public class RdsClient {
      *
      * 创建数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatabaseRequest 请求对象
      * @return SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>
@@ -2812,8 +2636,7 @@ public class RdsClient {
      *
      * 在指定实例中创建数据库帐号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDbUserRequest 请求对象
      * @return CreateDbUserResponse
@@ -2827,8 +2650,7 @@ public class RdsClient {
      *
      * 在指定实例中创建数据库帐号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDbUserRequest 请求对象
      * @return SyncInvoker<CreateDbUserRequest, CreateDbUserResponse>
@@ -2842,8 +2664,7 @@ public class RdsClient {
      *
      * 删除数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDatabaseRequest 请求对象
      * @return DeleteDatabaseResponse
@@ -2857,8 +2678,7 @@ public class RdsClient {
      *
      * 删除数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDatabaseRequest 请求对象
      * @return SyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse>
@@ -2874,8 +2694,7 @@ public class RdsClient {
      *
      * 删除数据库用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDbUserRequest 请求对象
      * @return DeleteDbUserResponse
@@ -2889,8 +2708,7 @@ public class RdsClient {
      *
      * 删除数据库用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDbUserRequest 请求对象
      * @return SyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse>
@@ -2904,8 +2722,7 @@ public class RdsClient {
      *
      * 查询指定用户的已授权数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAuthorizedDatabasesRequest 请求对象
      * @return ListAuthorizedDatabasesResponse
@@ -2919,8 +2736,7 @@ public class RdsClient {
      *
      * 查询指定用户的已授权数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAuthorizedDatabasesRequest 请求对象
      * @return SyncInvoker<ListAuthorizedDatabasesRequest, ListAuthorizedDatabasesResponse>
@@ -2936,8 +2752,7 @@ public class RdsClient {
      *
      * 查询指定数据库的已授权用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAuthorizedDbUsersRequest 请求对象
      * @return ListAuthorizedDbUsersResponse
@@ -2951,8 +2766,7 @@ public class RdsClient {
      *
      * 查询指定数据库的已授权用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAuthorizedDbUsersRequest 请求对象
      * @return SyncInvoker<ListAuthorizedDbUsersRequest, ListAuthorizedDbUsersResponse>
@@ -2968,8 +2782,7 @@ public class RdsClient {
      *
      * 查询数据库列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatabasesRequest 请求对象
      * @return ListDatabasesResponse
@@ -2983,8 +2796,7 @@ public class RdsClient {
      *
      * 查询数据库列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatabasesRequest 请求对象
      * @return SyncInvoker<ListDatabasesRequest, ListDatabasesResponse>
@@ -2998,8 +2810,7 @@ public class RdsClient {
      *
      * 查询数据库用户列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDbUsersRequest 请求对象
      * @return ListDbUsersResponse
@@ -3013,8 +2824,7 @@ public class RdsClient {
      *
      * 查询数据库用户列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDbUsersRequest 请求对象
      * @return SyncInvoker<ListDbUsersRequest, ListDbUsersResponse>
@@ -3028,8 +2838,7 @@ public class RdsClient {
      *
      * 重置数据库密码.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetPwdRequest 请求对象
      * @return ResetPwdResponse
@@ -3043,8 +2852,7 @@ public class RdsClient {
      *
      * 重置数据库密码.
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetPwdRequest 请求对象
      * @return SyncInvoker<ResetPwdRequest, ResetPwdResponse>
@@ -3058,8 +2866,7 @@ public class RdsClient {
      *
      * 解除数据库帐号权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RevokeRequest 请求对象
      * @return RevokeResponse
@@ -3073,8 +2880,7 @@ public class RdsClient {
      *
      * 解除数据库帐号权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RevokeRequest 请求对象
      * @return SyncInvoker<RevokeRequest, RevokeResponse>
@@ -3088,8 +2894,7 @@ public class RdsClient {
      *
      * 设置数据库账号密码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetDbUserPwdRequest 请求对象
      * @return SetDbUserPwdResponse
@@ -3103,8 +2908,7 @@ public class RdsClient {
      *
      * 设置数据库账号密码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetDbUserPwdRequest 请求对象
      * @return SyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse>
@@ -3118,8 +2922,7 @@ public class RdsClient {
      *
      * 根据业务需求，设置数据库用户只读
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetReadOnlySwitchRequest 请求对象
      * @return SetReadOnlySwitchResponse
@@ -3133,8 +2936,7 @@ public class RdsClient {
      *
      * 根据业务需求，设置数据库用户只读
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetReadOnlySwitchRequest 请求对象
      * @return SyncInvoker<SetReadOnlySwitchRequest, SetReadOnlySwitchResponse>
@@ -3150,8 +2952,7 @@ public class RdsClient {
      *
      * 修改指定实例中的数据库备注。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDatabaseRequest 请求对象
      * @return UpdateDatabaseResponse
@@ -3165,8 +2966,7 @@ public class RdsClient {
      *
      * 修改指定实例中的数据库备注。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDatabaseRequest 请求对象
      * @return SyncInvoker<UpdateDatabaseRequest, UpdateDatabaseResponse>
@@ -3182,8 +2982,7 @@ public class RdsClient {
      *
      * 修改数据库用户名备注
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDbUserCommentRequest 请求对象
      * @return UpdateDbUserCommentResponse
@@ -3197,8 +2996,7 @@ public class RdsClient {
      *
      * 修改数据库用户名备注
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDbUserCommentRequest 请求对象
      * @return SyncInvoker<UpdateDbUserCommentRequest, UpdateDbUserCommentResponse>
@@ -3214,8 +3012,7 @@ public class RdsClient {
      *
      * 在指定实例的数据库中, 设置帐号的权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AllowDbPrivilegeRequest 请求对象
      * @return AllowDbPrivilegeResponse
@@ -3229,8 +3026,7 @@ public class RdsClient {
      *
      * 在指定实例的数据库中, 设置帐号的权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AllowDbPrivilegeRequest 请求对象
      * @return SyncInvoker<AllowDbPrivilegeRequest, AllowDbPrivilegeResponse>
@@ -3248,8 +3044,7 @@ public class RdsClient {
      * 
      * - 调用接口前，您需要了解API 认证鉴权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeProxyScaleRequest 请求对象
      * @return ChangeProxyScaleResponse
@@ -3265,8 +3060,7 @@ public class RdsClient {
      * 
      * - 调用接口前，您需要了解API 认证鉴权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeProxyScaleRequest 请求对象
      * @return SyncInvoker<ChangeProxyScaleRequest, ChangeProxyScaleResponse>
@@ -3282,8 +3076,7 @@ public class RdsClient {
      *
      * 修改指定实例的读写分离延时阈值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeTheDelayThresholdRequest 请求对象
      * @return ChangeTheDelayThresholdResponse
@@ -3297,8 +3090,7 @@ public class RdsClient {
      *
      * 修改指定实例的读写分离延时阈值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeTheDelayThresholdRequest 请求对象
      * @return SyncInvoker<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse>
@@ -3314,8 +3106,7 @@ public class RdsClient {
      *
      * 在指定实例中创建数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostgresqlDatabaseRequest 请求对象
      * @return CreatePostgresqlDatabaseResponse
@@ -3329,8 +3120,7 @@ public class RdsClient {
      *
      * 在指定实例中创建数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostgresqlDatabaseRequest 请求对象
      * @return SyncInvoker<CreatePostgresqlDatabaseRequest, CreatePostgresqlDatabaseResponse>
@@ -3346,8 +3136,7 @@ public class RdsClient {
      *
      * 在指定实例的数据库中, 创建数据库schema。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostgresqlDatabaseSchemaRequest 请求对象
      * @return CreatePostgresqlDatabaseSchemaResponse
@@ -3362,8 +3151,7 @@ public class RdsClient {
      *
      * 在指定实例的数据库中, 创建数据库schema。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostgresqlDatabaseSchemaRequest 请求对象
      * @return SyncInvoker<CreatePostgresqlDatabaseSchemaRequest, CreatePostgresqlDatabaseSchemaResponse>
@@ -3379,8 +3167,7 @@ public class RdsClient {
      *
      * 在指定实例中创建数据库用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostgresqlDbUserRequest 请求对象
      * @return CreatePostgresqlDbUserResponse
@@ -3394,8 +3181,7 @@ public class RdsClient {
      *
      * 在指定实例中创建数据库用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePostgresqlDbUserRequest 请求对象
      * @return SyncInvoker<CreatePostgresqlDbUserRequest, CreatePostgresqlDbUserResponse>
@@ -3411,8 +3197,7 @@ public class RdsClient {
      *
      * 查询指定实例的数据库SCHEMA列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPostgresqlDatabaseSchemasRequest 请求对象
      * @return ListPostgresqlDatabaseSchemasResponse
@@ -3427,8 +3212,7 @@ public class RdsClient {
      *
      * 查询指定实例的数据库SCHEMA列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPostgresqlDatabaseSchemasRequest 请求对象
      * @return SyncInvoker<ListPostgresqlDatabaseSchemasRequest, ListPostgresqlDatabaseSchemasResponse>
@@ -3444,8 +3228,7 @@ public class RdsClient {
      *
      * 查询指定实例中的数据库列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPostgresqlDatabasesRequest 请求对象
      * @return ListPostgresqlDatabasesResponse
@@ -3459,8 +3242,7 @@ public class RdsClient {
      *
      * 查询指定实例中的数据库列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPostgresqlDatabasesRequest 请求对象
      * @return SyncInvoker<ListPostgresqlDatabasesRequest, ListPostgresqlDatabasesResponse>
@@ -3476,8 +3258,7 @@ public class RdsClient {
      *
      * 在指定实例中查询数据库用户列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPostgresqlDbUserPaginatedRequest 请求对象
      * @return ListPostgresqlDbUserPaginatedResponse
@@ -3492,8 +3273,7 @@ public class RdsClient {
      *
      * 在指定实例中查询数据库用户列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPostgresqlDbUserPaginatedRequest 请求对象
      * @return SyncInvoker<ListPostgresqlDbUserPaginatedRequest, ListPostgresqlDbUserPaginatedResponse>
@@ -3511,8 +3291,7 @@ public class RdsClient {
      * 
      * - 调用接口前，您需要了解API 认证鉴权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchQueryScaleComputeFlavorsRequest 请求对象
      * @return SearchQueryScaleComputeFlavorsResponse
@@ -3529,8 +3308,7 @@ public class RdsClient {
      * 
      * - 调用接口前，您需要了解API 认证鉴权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchQueryScaleComputeFlavorsRequest 请求对象
      * @return SyncInvoker<SearchQueryScaleComputeFlavorsRequest, SearchQueryScaleComputeFlavorsResponse>
@@ -3548,8 +3326,7 @@ public class RdsClient {
      * 
      * - 调用接口前，您需要了解API 认证鉴权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchQueryScaleFlavorsRequest 请求对象
      * @return SearchQueryScaleFlavorsResponse
@@ -3565,8 +3342,7 @@ public class RdsClient {
      * 
      * - 调用接口前，您需要了解API 认证鉴权。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SearchQueryScaleFlavorsRequest 请求对象
      * @return SyncInvoker<SearchQueryScaleFlavorsRequest, SearchQueryScaleFlavorsResponse>
@@ -3582,8 +3358,7 @@ public class RdsClient {
      *
      * 设置数据库用户权限：只读或可读写。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetDatabaseUserPrivilegeRequest 请求对象
      * @return SetDatabaseUserPrivilegeResponse
@@ -3597,8 +3372,7 @@ public class RdsClient {
      *
      * 设置数据库用户权限：只读或可读写。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetDatabaseUserPrivilegeRequest 请求对象
      * @return SyncInvoker<SetDatabaseUserPrivilegeRequest, SetDatabaseUserPrivilegeResponse>
@@ -3614,8 +3388,7 @@ public class RdsClient {
      *
      * 重置指定数据库帐号的密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetPostgresqlDbUserPwdRequest 请求对象
      * @return SetPostgresqlDbUserPwdResponse
@@ -3629,8 +3402,7 @@ public class RdsClient {
      *
      * 重置指定数据库帐号的密码。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SetPostgresqlDbUserPwdRequest 请求对象
      * @return SyncInvoker<SetPostgresqlDbUserPwdRequest, SetPostgresqlDbUserPwdResponse>
@@ -3646,8 +3418,7 @@ public class RdsClient {
      *
      * 查询指定实例的数据库代理详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInformationAboutDatabaseProxyRequest 请求对象
      * @return ShowInformationAboutDatabaseProxyResponse
@@ -3662,8 +3433,7 @@ public class RdsClient {
      *
      * 查询指定实例的数据库代理详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInformationAboutDatabaseProxyRequest 请求对象
      * @return SyncInvoker<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse>
@@ -3679,8 +3449,7 @@ public class RdsClient {
      *
      * 获取实例指定参数的值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPostgresqlParamValueRequest 请求对象
      * @return ShowPostgresqlParamValueResponse
@@ -3694,8 +3463,7 @@ public class RdsClient {
      *
      * 获取实例指定参数的值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPostgresqlParamValueRequest 请求对象
      * @return SyncInvoker<ShowPostgresqlParamValueRequest, ShowPostgresqlParamValueResponse>
@@ -3711,8 +3479,7 @@ public class RdsClient {
      *
      * 为指定实例开启数据库代理。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartDatabaseProxyRequest 请求对象
      * @return StartDatabaseProxyResponse
@@ -3726,8 +3493,7 @@ public class RdsClient {
      *
      * 为指定实例开启数据库代理。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartDatabaseProxyRequest 请求对象
      * @return SyncInvoker<StartDatabaseProxyRequest, StartDatabaseProxyResponse>
@@ -3743,8 +3509,7 @@ public class RdsClient {
      *
      * 为指定实例关闭数据库代理。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopDatabaseProxyRequest 请求对象
      * @return StopDatabaseProxyResponse
@@ -3758,8 +3523,7 @@ public class RdsClient {
      *
      * 为指定实例关闭数据库代理。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopDatabaseProxyRequest 请求对象
      * @return SyncInvoker<StopDatabaseProxyRequest, StopDatabaseProxyResponse>
@@ -3775,8 +3539,7 @@ public class RdsClient {
      *
      * 修改实例指定参数的值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePostgresqlParameterValueRequest 请求对象
      * @return UpdatePostgresqlParameterValueResponse
@@ -3791,8 +3554,7 @@ public class RdsClient {
      *
      * 修改实例指定参数的值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePostgresqlParameterValueRequest 请求对象
      * @return SyncInvoker<UpdatePostgresqlParameterValueRequest, UpdatePostgresqlParameterValueResponse>
@@ -3808,8 +3570,7 @@ public class RdsClient {
      *
      * 修改指定实例的读写分离权重。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateReadWeightRequest 请求对象
      * @return UpdateReadWeightResponse
@@ -3823,8 +3584,7 @@ public class RdsClient {
      *
      * 修改指定实例的读写分离权重。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateReadWeightRequest 请求对象
      * @return SyncInvoker<UpdateReadWeightRequest, UpdateReadWeightResponse>
@@ -3840,8 +3600,7 @@ public class RdsClient {
      *
      * 授权数据库帐号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AllowSqlserverDbUserPrivilegeRequest 请求对象
      * @return AllowSqlserverDbUserPrivilegeResponse
@@ -3856,8 +3615,7 @@ public class RdsClient {
      *
      * 授权数据库帐号。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AllowSqlserverDbUserPrivilegeRequest 请求对象
      * @return SyncInvoker<AllowSqlserverDbUserPrivilegeRequest, AllowSqlserverDbUserPrivilegeResponse>
@@ -3873,8 +3631,7 @@ public class RdsClient {
      *
      * 创建数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSqlserverDatabaseRequest 请求对象
      * @return CreateSqlserverDatabaseResponse
@@ -3888,8 +3645,7 @@ public class RdsClient {
      *
      * 创建数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSqlserverDatabaseRequest 请求对象
      * @return SyncInvoker<CreateSqlserverDatabaseRequest, CreateSqlserverDatabaseResponse>
@@ -3905,8 +3661,7 @@ public class RdsClient {
      *
      * 创建数据库用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSqlserverDbUserRequest 请求对象
      * @return CreateSqlserverDbUserResponse
@@ -3920,8 +3675,7 @@ public class RdsClient {
      *
      * 创建数据库用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSqlserverDbUserRequest 请求对象
      * @return SyncInvoker<CreateSqlserverDbUserRequest, CreateSqlserverDbUserResponse>
@@ -3937,8 +3691,7 @@ public class RdsClient {
      *
      * 删除数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSqlserverDatabaseRequest 请求对象
      * @return DeleteSqlserverDatabaseResponse
@@ -3952,8 +3705,7 @@ public class RdsClient {
      *
      * 删除数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSqlserverDatabaseRequest 请求对象
      * @return SyncInvoker<DeleteSqlserverDatabaseRequest, DeleteSqlserverDatabaseResponse>
@@ -3969,8 +3721,7 @@ public class RdsClient {
      *
      * 删除数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSqlserverDatabaseExRequest 请求对象
      * @return DeleteSqlserverDatabaseExResponse
@@ -3984,8 +3735,7 @@ public class RdsClient {
      *
      * 删除数据库。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSqlserverDatabaseExRequest 请求对象
      * @return SyncInvoker<DeleteSqlserverDatabaseExRequest, DeleteSqlserverDatabaseExResponse>
@@ -4001,8 +3751,7 @@ public class RdsClient {
      *
      * 删除数据库用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSqlserverDbUserRequest 请求对象
      * @return DeleteSqlserverDbUserResponse
@@ -4016,8 +3765,7 @@ public class RdsClient {
      *
      * 删除数据库用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSqlserverDbUserRequest 请求对象
      * @return SyncInvoker<DeleteSqlserverDbUserRequest, DeleteSqlserverDbUserResponse>
@@ -4033,8 +3781,7 @@ public class RdsClient {
      *
      * 查询指定数据库的已授权用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAuthorizedSqlserverDbUsersRequest 请求对象
      * @return ListAuthorizedSqlserverDbUsersResponse
@@ -4049,8 +3796,7 @@ public class RdsClient {
      *
      * 查询指定数据库的已授权用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAuthorizedSqlserverDbUsersRequest 请求对象
      * @return SyncInvoker<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse>
@@ -4066,8 +3812,7 @@ public class RdsClient {
      *
      * 查询数据库列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSqlserverDatabasesRequest 请求对象
      * @return ListSqlserverDatabasesResponse
@@ -4081,8 +3826,7 @@ public class RdsClient {
      *
      * 查询数据库列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSqlserverDatabasesRequest 请求对象
      * @return SyncInvoker<ListSqlserverDatabasesRequest, ListSqlserverDatabasesResponse>
@@ -4098,8 +3842,7 @@ public class RdsClient {
      *
      * 查询数据库用户列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSqlserverDbUsersRequest 请求对象
      * @return ListSqlserverDbUsersResponse
@@ -4113,8 +3856,7 @@ public class RdsClient {
      *
      * 查询数据库用户列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSqlserverDbUsersRequest 请求对象
      * @return SyncInvoker<ListSqlserverDbUsersRequest, ListSqlserverDbUsersResponse>
@@ -4130,8 +3872,7 @@ public class RdsClient {
      *
      * 解除数据库帐号权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RevokeSqlserverDbUserPrivilegeRequest 请求对象
      * @return RevokeSqlserverDbUserPrivilegeResponse
@@ -4146,8 +3887,7 @@ public class RdsClient {
      *
      * 解除数据库帐号权限。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RevokeSqlserverDbUserPrivilegeRequest 请求对象
      * @return SyncInvoker<RevokeSqlserverDbUserPrivilegeRequest, RevokeSqlserverDbUserPrivilegeResponse>

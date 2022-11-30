@@ -22,8 +22,7 @@ public class GaClient {
      *
      * 创建全球加速器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAcceleratorRequest 请求对象
      * @return CreateAcceleratorResponse
@@ -37,8 +36,7 @@ public class GaClient {
      *
      * 创建全球加速器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAcceleratorRequest 请求对象
      * @return SyncInvoker<CreateAcceleratorRequest, CreateAcceleratorResponse>
@@ -54,8 +52,7 @@ public class GaClient {
      *
      * 删除全球加速器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAcceleratorRequest 请求对象
      * @return DeleteAcceleratorResponse
@@ -69,8 +66,7 @@ public class GaClient {
      *
      * 删除全球加速器。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAcceleratorRequest 请求对象
      * @return SyncInvoker<DeleteAcceleratorRequest, DeleteAcceleratorResponse>
@@ -86,8 +82,7 @@ public class GaClient {
      *
      * 查询全球加速器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAcceleratorsRequest 请求对象
      * @return ListAcceleratorsResponse
@@ -101,8 +96,7 @@ public class GaClient {
      *
      * 查询全球加速器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAcceleratorsRequest 请求对象
      * @return SyncInvoker<ListAcceleratorsRequest, ListAcceleratorsResponse>
@@ -118,8 +112,7 @@ public class GaClient {
      *
      * 查询全球加速器详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAcceleratorRequest 请求对象
      * @return ShowAcceleratorResponse
@@ -133,8 +126,7 @@ public class GaClient {
      *
      * 查询全球加速器详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAcceleratorRequest 请求对象
      * @return SyncInvoker<ShowAcceleratorRequest, ShowAcceleratorResponse>
@@ -150,8 +142,7 @@ public class GaClient {
      *
      * 更新全球加速器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAcceleratorRequest 请求对象
      * @return UpdateAcceleratorResponse
@@ -165,8 +156,7 @@ public class GaClient {
      *
      * 更新全球加速器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAcceleratorRequest 请求对象
      * @return SyncInvoker<UpdateAcceleratorRequest, UpdateAcceleratorResponse>
@@ -182,8 +172,7 @@ public class GaClient {
      *
      * 创建终端节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEndpointRequest 请求对象
      * @return CreateEndpointResponse
@@ -197,8 +186,7 @@ public class GaClient {
      *
      * 创建终端节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEndpointRequest 请求对象
      * @return SyncInvoker<CreateEndpointRequest, CreateEndpointResponse>
@@ -213,8 +201,7 @@ public class GaClient {
      *
      * 删除终端节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEndpointRequest 请求对象
      * @return DeleteEndpointResponse
@@ -228,8 +215,7 @@ public class GaClient {
      *
      * 删除终端节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEndpointRequest 请求对象
      * @return SyncInvoker<DeleteEndpointRequest, DeleteEndpointResponse>
@@ -244,8 +230,7 @@ public class GaClient {
      *
      * 查询终端节点组下终端节点列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointsRequest 请求对象
      * @return ListEndpointsResponse
@@ -259,8 +244,7 @@ public class GaClient {
      *
      * 查询终端节点组下终端节点列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointsRequest 请求对象
      * @return SyncInvoker<ListEndpointsRequest, ListEndpointsResponse>
@@ -274,8 +258,7 @@ public class GaClient {
      *
      * 查询终端节点详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEndpointRequest 请求对象
      * @return ShowEndpointResponse
@@ -289,8 +272,7 @@ public class GaClient {
      *
      * 查询终端节点详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEndpointRequest 请求对象
      * @return SyncInvoker<ShowEndpointRequest, ShowEndpointResponse>
@@ -304,8 +286,7 @@ public class GaClient {
      *
      * 更新终端节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointRequest 请求对象
      * @return UpdateEndpointResponse
@@ -319,8 +300,7 @@ public class GaClient {
      *
      * 更新终端节点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointRequest 请求对象
      * @return SyncInvoker<UpdateEndpointRequest, UpdateEndpointResponse>
@@ -335,8 +315,7 @@ public class GaClient {
      *
      * 创建终端节点组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEndpointGroupRequest 请求对象
      * @return CreateEndpointGroupResponse
@@ -350,8 +329,7 @@ public class GaClient {
      *
      * 创建终端节点组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEndpointGroupRequest 请求对象
      * @return SyncInvoker<CreateEndpointGroupRequest, CreateEndpointGroupResponse>
@@ -367,8 +345,7 @@ public class GaClient {
      *
      * 删除终端节点组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEndpointGroupRequest 请求对象
      * @return DeleteEndpointGroupResponse
@@ -382,8 +359,7 @@ public class GaClient {
      *
      * 删除终端节点组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEndpointGroupRequest 请求对象
      * @return SyncInvoker<DeleteEndpointGroupRequest, DeleteEndpointGroupResponse>
@@ -399,8 +375,7 @@ public class GaClient {
      *
      * 查询终端节点组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointGroupsRequest 请求对象
      * @return ListEndpointGroupsResponse
@@ -414,8 +389,7 @@ public class GaClient {
      *
      * 查询终端节点组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEndpointGroupsRequest 请求对象
      * @return SyncInvoker<ListEndpointGroupsRequest, ListEndpointGroupsResponse>
@@ -431,8 +405,7 @@ public class GaClient {
      *
      * 查询终端节点组详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEndpointGroupRequest 请求对象
      * @return ShowEndpointGroupResponse
@@ -446,8 +419,7 @@ public class GaClient {
      *
      * 查询终端节点组详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEndpointGroupRequest 请求对象
      * @return SyncInvoker<ShowEndpointGroupRequest, ShowEndpointGroupResponse>
@@ -463,8 +435,7 @@ public class GaClient {
      *
      * 更新终端节点组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointGroupRequest 请求对象
      * @return UpdateEndpointGroupResponse
@@ -478,8 +449,7 @@ public class GaClient {
      *
      * 更新终端节点组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEndpointGroupRequest 请求对象
      * @return SyncInvoker<UpdateEndpointGroupRequest, UpdateEndpointGroupResponse>
@@ -495,8 +465,7 @@ public class GaClient {
      *
      * 创建健康检查
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHealthCheckRequest 请求对象
      * @return CreateHealthCheckResponse
@@ -510,8 +479,7 @@ public class GaClient {
      *
      * 创建健康检查
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHealthCheckRequest 请求对象
      * @return SyncInvoker<CreateHealthCheckRequest, CreateHealthCheckResponse>
@@ -527,8 +495,7 @@ public class GaClient {
      *
      * 删除健康检查
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHealthCheckRequest 请求对象
      * @return DeleteHealthCheckResponse
@@ -542,8 +509,7 @@ public class GaClient {
      *
      * 删除健康检查
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHealthCheckRequest 请求对象
      * @return SyncInvoker<DeleteHealthCheckRequest, DeleteHealthCheckResponse>
@@ -559,8 +525,7 @@ public class GaClient {
      *
      * 查询健康检查列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHealthChecksRequest 请求对象
      * @return ListHealthChecksResponse
@@ -574,8 +539,7 @@ public class GaClient {
      *
      * 查询健康检查列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHealthChecksRequest 请求对象
      * @return SyncInvoker<ListHealthChecksRequest, ListHealthChecksResponse>
@@ -591,8 +555,7 @@ public class GaClient {
      *
      * 查询健康检查详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHealthCheckRequest 请求对象
      * @return ShowHealthCheckResponse
@@ -606,8 +569,7 @@ public class GaClient {
      *
      * 查询健康检查详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowHealthCheckRequest 请求对象
      * @return SyncInvoker<ShowHealthCheckRequest, ShowHealthCheckResponse>
@@ -623,8 +585,7 @@ public class GaClient {
      *
      * 更新健康检查
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHealthCheckRequest 请求对象
      * @return UpdateHealthCheckResponse
@@ -638,8 +599,7 @@ public class GaClient {
      *
      * 更新健康检查
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHealthCheckRequest 请求对象
      * @return SyncInvoker<UpdateHealthCheckRequest, UpdateHealthCheckResponse>
@@ -655,8 +615,7 @@ public class GaClient {
      *
      * 创建监听器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateListenerRequest 请求对象
      * @return CreateListenerResponse
@@ -670,8 +629,7 @@ public class GaClient {
      *
      * 创建监听器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateListenerRequest 请求对象
      * @return SyncInvoker<CreateListenerRequest, CreateListenerResponse>
@@ -686,8 +644,7 @@ public class GaClient {
      *
      * 删除监听器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteListenerRequest 请求对象
      * @return DeleteListenerResponse
@@ -701,8 +658,7 @@ public class GaClient {
      *
      * 删除监听器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteListenerRequest 请求对象
      * @return SyncInvoker<DeleteListenerRequest, DeleteListenerResponse>
@@ -717,8 +673,7 @@ public class GaClient {
      *
      * 查询监听器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListListenersRequest 请求对象
      * @return ListListenersResponse
@@ -732,8 +687,7 @@ public class GaClient {
      *
      * 查询监听器列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListListenersRequest 请求对象
      * @return SyncInvoker<ListListenersRequest, ListListenersResponse>
@@ -747,8 +701,7 @@ public class GaClient {
      *
      * 查询监听器详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowListenerRequest 请求对象
      * @return ShowListenerResponse
@@ -762,8 +715,7 @@ public class GaClient {
      *
      * 查询监听器详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowListenerRequest 请求对象
      * @return SyncInvoker<ShowListenerRequest, ShowListenerResponse>
@@ -777,8 +729,7 @@ public class GaClient {
      *
      * 更新监听器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateListenerRequest 请求对象
      * @return UpdateListenerResponse
@@ -792,8 +743,7 @@ public class GaClient {
      *
      * 更新监听器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateListenerRequest 请求对象
      * @return SyncInvoker<UpdateListenerRequest, UpdateListenerResponse>
@@ -808,8 +758,7 @@ public class GaClient {
      *
      * 查询区域列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRegionsRequest 请求对象
      * @return ListRegionsResponse
@@ -823,8 +772,7 @@ public class GaClient {
      *
      * 查询区域列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRegionsRequest 请求对象
      * @return SyncInvoker<ListRegionsRequest, ListRegionsResponse>

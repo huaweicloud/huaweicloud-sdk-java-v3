@@ -24,8 +24,7 @@ public class LiveAsyncClient {
      *
      * 可单独创建直播播放域名或推流域名，每个租户最多可配置64条域名记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDomainRequest 请求对象
      * @return CompletableFuture<CreateDomainResponse>
@@ -39,8 +38,7 @@ public class LiveAsyncClient {
      *
      * 可单独创建直播播放域名或推流域名，每个租户最多可配置64条域名记录。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDomainRequest 请求对象
      * @return AsyncInvoker<CreateDomainRequest, CreateDomainResponse>
@@ -55,8 +53,7 @@ public class LiveAsyncClient {
      *
      * 将用户已创建的播放域名和推流域名建立域名映射关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDomainMappingRequest 请求对象
      * @return CompletableFuture<CreateDomainMappingResponse>
@@ -70,8 +67,7 @@ public class LiveAsyncClient {
      *
      * 将用户已创建的播放域名和推流域名建立域名映射关系
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDomainMappingRequest 请求对象
      * @return AsyncInvoker<CreateDomainMappingRequest, CreateDomainMappingResponse>
@@ -87,8 +83,7 @@ public class LiveAsyncClient {
      *
      * 创建录制回调配置接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRecordCallbackConfigRequest 请求对象
      * @return CompletableFuture<CreateRecordCallbackConfigResponse>
@@ -103,8 +98,7 @@ public class LiveAsyncClient {
      *
      * 创建录制回调配置接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRecordCallbackConfigRequest 请求对象
      * @return AsyncInvoker<CreateRecordCallbackConfigRequest, CreateRecordCallbackConfigResponse>
@@ -120,8 +114,7 @@ public class LiveAsyncClient {
      *
      * Create Record Index
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRecordIndexRequest 请求对象
      * @return CompletableFuture<CreateRecordIndexResponse>
@@ -135,8 +128,7 @@ public class LiveAsyncClient {
      *
      * Create Record Index
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRecordIndexRequest 请求对象
      * @return AsyncInvoker<CreateRecordIndexRequest, CreateRecordIndexResponse>
@@ -152,8 +144,7 @@ public class LiveAsyncClient {
      *
      * 创建录制规则接口，录制规则对新推送的流生效，对已经推送中的流不生效
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRecordRuleRequest 请求对象
      * @return CompletableFuture<CreateRecordRuleResponse>
@@ -167,8 +158,7 @@ public class LiveAsyncClient {
      *
      * 创建录制规则接口，录制规则对新推送的流生效，对已经推送中的流不生效
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateRecordRuleRequest 请求对象
      * @return AsyncInvoker<CreateRecordRuleRequest, CreateRecordRuleResponse>
@@ -184,8 +174,7 @@ public class LiveAsyncClient {
      *
      * 禁止直播推流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStreamForbiddenRequest 请求对象
      * @return CompletableFuture<CreateStreamForbiddenResponse>
@@ -200,8 +189,7 @@ public class LiveAsyncClient {
      *
      * 禁止直播推流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStreamForbiddenRequest 请求对象
      * @return AsyncInvoker<CreateStreamForbiddenRequest, CreateStreamForbiddenResponse>
@@ -217,8 +205,7 @@ public class LiveAsyncClient {
      *
      * 创建直播转码模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTranscodingsTemplateRequest 请求对象
      * @return CompletableFuture<CreateTranscodingsTemplateResponse>
@@ -233,8 +220,7 @@ public class LiveAsyncClient {
      *
      * 创建直播转码模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTranscodingsTemplateRequest 请求对象
      * @return AsyncInvoker<CreateTranscodingsTemplateRequest, CreateTranscodingsTemplateResponse>
@@ -250,8 +236,7 @@ public class LiveAsyncClient {
      *
      * 删除域名。只有在域名停用（off）状态时才能删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDomainRequest 请求对象
      * @return CompletableFuture<DeleteDomainResponse>
@@ -265,8 +250,7 @@ public class LiveAsyncClient {
      *
      * 删除域名。只有在域名停用（off）状态时才能删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDomainRequest 请求对象
      * @return AsyncInvoker<DeleteDomainRequest, DeleteDomainResponse>
@@ -281,8 +265,7 @@ public class LiveAsyncClient {
      *
      * 将播放域名和推流域名的域名映射关系删除
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDomainMappingRequest 请求对象
      * @return CompletableFuture<DeleteDomainMappingResponse>
@@ -296,8 +279,7 @@ public class LiveAsyncClient {
      *
      * 将播放域名和推流域名的域名映射关系删除
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDomainMappingRequest 请求对象
      * @return AsyncInvoker<DeleteDomainMappingRequest, DeleteDomainMappingResponse>
@@ -313,8 +295,7 @@ public class LiveAsyncClient {
      *
      * 删除录制回调配置接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRecordCallbackConfigRequest 请求对象
      * @return CompletableFuture<DeleteRecordCallbackConfigResponse>
@@ -329,8 +310,7 @@ public class LiveAsyncClient {
      *
      * 删除录制回调配置接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRecordCallbackConfigRequest 请求对象
      * @return AsyncInvoker<DeleteRecordCallbackConfigRequest, DeleteRecordCallbackConfigResponse>
@@ -346,8 +326,7 @@ public class LiveAsyncClient {
      *
      * 删除录制规则接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRecordRuleRequest 请求对象
      * @return CompletableFuture<DeleteRecordRuleResponse>
@@ -361,8 +340,7 @@ public class LiveAsyncClient {
      *
      * 删除录制规则接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteRecordRuleRequest 请求对象
      * @return AsyncInvoker<DeleteRecordRuleRequest, DeleteRecordRuleResponse>
@@ -378,8 +356,7 @@ public class LiveAsyncClient {
      *
      * 恢复直播推流接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteStreamForbiddenRequest 请求对象
      * @return CompletableFuture<DeleteStreamForbiddenResponse>
@@ -394,8 +371,7 @@ public class LiveAsyncClient {
      *
      * 恢复直播推流接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteStreamForbiddenRequest 请求对象
      * @return AsyncInvoker<DeleteStreamForbiddenRequest, DeleteStreamForbiddenResponse>
@@ -411,8 +387,7 @@ public class LiveAsyncClient {
      *
      * 删除直播转码模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTranscodingsTemplateRequest 请求对象
      * @return CompletableFuture<DeleteTranscodingsTemplateResponse>
@@ -427,8 +402,7 @@ public class LiveAsyncClient {
      *
      * 删除直播转码模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTranscodingsTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteTranscodingsTemplateRequest, DeleteTranscodingsTemplateResponse>
@@ -444,8 +418,7 @@ public class LiveAsyncClient {
      *
      * 获取直播播放日志，基于域名以5分钟粒度进行打包，日志内容以 \&quot;|\&quot; 进行分隔。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveSampleLogsRequest 请求对象
      * @return CompletableFuture<ListLiveSampleLogsResponse>
@@ -459,8 +432,7 @@ public class LiveAsyncClient {
      *
      * 获取直播播放日志，基于域名以5分钟粒度进行打包，日志内容以 \&quot;|\&quot; 进行分隔。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveSampleLogsRequest 请求对象
      * @return AsyncInvoker<ListLiveSampleLogsRequest, ListLiveSampleLogsResponse>
@@ -476,8 +448,7 @@ public class LiveAsyncClient {
      *
      * 查询直播中的流信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveStreamsOnlineRequest 请求对象
      * @return CompletableFuture<ListLiveStreamsOnlineResponse>
@@ -492,8 +463,7 @@ public class LiveAsyncClient {
      *
      * 查询直播中的流信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLiveStreamsOnlineRequest 请求对象
      * @return AsyncInvoker<ListLiveStreamsOnlineRequest, ListLiveStreamsOnlineResponse>
@@ -509,8 +479,7 @@ public class LiveAsyncClient {
      *
      * 查询录制回调配置列表接口。通过指定条件，查询满足条件的配置列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecordCallbackConfigsRequest 请求对象
      * @return CompletableFuture<ListRecordCallbackConfigsResponse>
@@ -525,8 +494,7 @@ public class LiveAsyncClient {
      *
      * 查询录制回调配置列表接口。通过指定条件，查询满足条件的配置列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecordCallbackConfigsRequest 请求对象
      * @return AsyncInvoker<ListRecordCallbackConfigsRequest, ListRecordCallbackConfigsResponse>
@@ -542,8 +510,7 @@ public class LiveAsyncClient {
      *
      * 录制完成的内容查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecordContentsRequest 请求对象
      * @return CompletableFuture<ListRecordContentsResponse>
@@ -557,8 +524,7 @@ public class LiveAsyncClient {
      *
      * 录制完成的内容查询
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecordContentsRequest 请求对象
      * @return AsyncInvoker<ListRecordContentsRequest, ListRecordContentsResponse>
@@ -574,8 +540,7 @@ public class LiveAsyncClient {
      *
      * 查询录制规则列表接口，通过指定条件，查询满足条件的录制规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecordRulesRequest 请求对象
      * @return CompletableFuture<ListRecordRulesResponse>
@@ -589,8 +554,7 @@ public class LiveAsyncClient {
      *
      * 查询录制规则列表接口，通过指定条件，查询满足条件的录制规则列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecordRulesRequest 请求对象
      * @return AsyncInvoker<ListRecordRulesRequest, ListRecordRulesResponse>
@@ -606,8 +570,7 @@ public class LiveAsyncClient {
      *
      * 查询禁播黑名单列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStreamForbiddenRequest 请求对象
      * @return CompletableFuture<ListStreamForbiddenResponse>
@@ -621,8 +584,7 @@ public class LiveAsyncClient {
      *
      * 查询禁播黑名单列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStreamForbiddenRequest 请求对象
      * @return AsyncInvoker<ListStreamForbiddenRequest, ListStreamForbiddenResponse>
@@ -638,8 +600,7 @@ public class LiveAsyncClient {
      *
      * 对单条流的实时录制控制接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunRecordRequest 请求对象
      * @return CompletableFuture<RunRecordResponse>
@@ -653,8 +614,7 @@ public class LiveAsyncClient {
      *
      * 对单条流的实时录制控制接口。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunRecordRequest 请求对象
      * @return AsyncInvoker<RunRecordRequest, RunRecordResponse>
@@ -668,8 +628,7 @@ public class LiveAsyncClient {
      *
      * 查询直播域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainRequest 请求对象
      * @return CompletableFuture<ShowDomainResponse>
@@ -683,8 +642,7 @@ public class LiveAsyncClient {
      *
      * 查询直播域名
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDomainRequest 请求对象
      * @return AsyncInvoker<ShowDomainRequest, ShowDomainResponse>
@@ -698,8 +656,7 @@ public class LiveAsyncClient {
      *
      * 查询录制回调配置接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordCallbackConfigRequest 请求对象
      * @return CompletableFuture<ShowRecordCallbackConfigResponse>
@@ -714,8 +671,7 @@ public class LiveAsyncClient {
      *
      * 查询录制回调配置接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordCallbackConfigRequest 请求对象
      * @return AsyncInvoker<ShowRecordCallbackConfigRequest, ShowRecordCallbackConfigResponse>
@@ -731,8 +687,7 @@ public class LiveAsyncClient {
      *
      * 查询录制规则接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordRuleRequest 请求对象
      * @return CompletableFuture<ShowRecordRuleResponse>
@@ -746,8 +701,7 @@ public class LiveAsyncClient {
      *
      * 查询录制规则接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRecordRuleRequest 请求对象
      * @return AsyncInvoker<ShowRecordRuleRequest, ShowRecordRuleResponse>
@@ -763,8 +717,7 @@ public class LiveAsyncClient {
      *
      * 查询直播转码模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTranscodingsTemplateRequest 请求对象
      * @return CompletableFuture<ShowTranscodingsTemplateResponse>
@@ -779,8 +732,7 @@ public class LiveAsyncClient {
      *
      * 查询直播转码模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTranscodingsTemplateRequest 请求对象
      * @return AsyncInvoker<ShowTranscodingsTemplateRequest, ShowTranscodingsTemplateResponse>
@@ -796,8 +748,7 @@ public class LiveAsyncClient {
      *
      * 修改直播播放、RTMP推流加速域名相关信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainRequest 请求对象
      * @return CompletableFuture<UpdateDomainResponse>
@@ -811,8 +762,7 @@ public class LiveAsyncClient {
      *
      * 修改直播播放、RTMP推流加速域名相关信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDomainRequest 请求对象
      * @return AsyncInvoker<UpdateDomainRequest, UpdateDomainResponse>
@@ -827,8 +777,7 @@ public class LiveAsyncClient {
      *
      * 修改录制回调配置接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRecordCallbackConfigRequest 请求对象
      * @return CompletableFuture<UpdateRecordCallbackConfigResponse>
@@ -843,8 +792,7 @@ public class LiveAsyncClient {
      *
      * 修改录制回调配置接口
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRecordCallbackConfigRequest 请求对象
      * @return AsyncInvoker<UpdateRecordCallbackConfigRequest, UpdateRecordCallbackConfigResponse>
@@ -860,8 +808,7 @@ public class LiveAsyncClient {
      *
      * 修改录制规则接口，如果规则修改后，修改后的规则对正在录制的流无效，对新的流有效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRecordRuleRequest 请求对象
      * @return CompletableFuture<UpdateRecordRuleResponse>
@@ -875,8 +822,7 @@ public class LiveAsyncClient {
      *
      * 修改录制规则接口，如果规则修改后，修改后的规则对正在录制的流无效，对新的流有效。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateRecordRuleRequest 请求对象
      * @return AsyncInvoker<UpdateRecordRuleRequest, UpdateRecordRuleResponse>
@@ -892,8 +838,7 @@ public class LiveAsyncClient {
      *
      * 修改禁推属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStreamForbiddenRequest 请求对象
      * @return CompletableFuture<UpdateStreamForbiddenResponse>
@@ -908,8 +853,7 @@ public class LiveAsyncClient {
      *
      * 修改禁推属性
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStreamForbiddenRequest 请求对象
      * @return AsyncInvoker<UpdateStreamForbiddenRequest, UpdateStreamForbiddenResponse>
@@ -925,8 +869,7 @@ public class LiveAsyncClient {
      *
      * 修改直播转码模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTranscodingsTemplateRequest 请求对象
      * @return CompletableFuture<UpdateTranscodingsTemplateResponse>
@@ -941,8 +884,7 @@ public class LiveAsyncClient {
      *
      * 修改直播转码模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTranscodingsTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateTranscodingsTemplateRequest, UpdateTranscodingsTemplateResponse>

@@ -16,14 +16,14 @@ public class UpdateKeypairRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "servers")
 
-    private List<UpdateKeypairRequestBodyServers> servers = null;
+    private List<ServerKeypair> servers = null;
 
-    public UpdateKeypairRequestBody withServers(List<UpdateKeypairRequestBodyServers> servers) {
+    public UpdateKeypairRequestBody withServers(List<ServerKeypair> servers) {
         this.servers = servers;
         return this;
     }
 
-    public UpdateKeypairRequestBody addServersItem(UpdateKeypairRequestBodyServers serversItem) {
+    public UpdateKeypairRequestBody addServersItem(ServerKeypair serversItem) {
         if (this.servers == null) {
             this.servers = new ArrayList<>();
         }
@@ -31,7 +31,7 @@ public class UpdateKeypairRequestBody {
         return this;
     }
 
-    public UpdateKeypairRequestBody withServers(Consumer<List<UpdateKeypairRequestBodyServers>> serversSetter) {
+    public UpdateKeypairRequestBody withServers(Consumer<List<ServerKeypair>> serversSetter) {
         if (this.servers == null) {
             this.servers = new ArrayList<>();
         }
@@ -43,11 +43,11 @@ public class UpdateKeypairRequestBody {
      * 待更改密钥对的云手机服务器信息
      * @return servers
      */
-    public List<UpdateKeypairRequestBodyServers> getServers() {
+    public List<ServerKeypair> getServers() {
         return servers;
     }
 
-    public void setServers(List<UpdateKeypairRequestBodyServers> servers) {
+    public void setServers(List<ServerKeypair> servers) {
         this.servers = servers;
     }
 

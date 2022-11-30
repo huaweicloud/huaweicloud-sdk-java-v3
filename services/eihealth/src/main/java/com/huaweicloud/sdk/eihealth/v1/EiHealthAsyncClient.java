@@ -24,8 +24,7 @@ public class EiHealthAsyncClient {
      *
      * 批量导入应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchImportAppRequest 请求对象
      * @return CompletableFuture<BatchImportAppResponse>
@@ -39,8 +38,7 @@ public class EiHealthAsyncClient {
      *
      * 批量导入应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchImportAppRequest 请求对象
      * @return AsyncInvoker<BatchImportAppRequest, BatchImportAppResponse>
@@ -56,8 +54,7 @@ public class EiHealthAsyncClient {
      *
      * 创建应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppRequest 请求对象
      * @return CompletableFuture<CreateAppResponse>
@@ -71,8 +68,7 @@ public class EiHealthAsyncClient {
      *
      * 创建应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAppRequest 请求对象
      * @return AsyncInvoker<CreateAppRequest, CreateAppResponse>
@@ -86,8 +82,7 @@ public class EiHealthAsyncClient {
      *
      * 删除应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppRequest 请求对象
      * @return CompletableFuture<DeleteAppResponse>
@@ -101,8 +96,7 @@ public class EiHealthAsyncClient {
      *
      * 删除应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAppRequest 请求对象
      * @return AsyncInvoker<DeleteAppRequest, DeleteAppResponse>
@@ -116,8 +110,7 @@ public class EiHealthAsyncClient {
      *
      * 获取应用列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppRequest 请求对象
      * @return CompletableFuture<ListAppResponse>
@@ -131,8 +124,7 @@ public class EiHealthAsyncClient {
      *
      * 获取应用列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAppRequest 请求对象
      * @return AsyncInvoker<ListAppRequest, ListAppResponse>
@@ -146,8 +138,7 @@ public class EiHealthAsyncClient {
      *
      * 获取应用详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAppRequest 请求对象
      * @return CompletableFuture<ShowAppResponse>
@@ -161,8 +152,7 @@ public class EiHealthAsyncClient {
      *
      * 获取应用详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAppRequest 请求对象
      * @return AsyncInvoker<ShowAppRequest, ShowAppResponse>
@@ -176,8 +166,7 @@ public class EiHealthAsyncClient {
      *
      * 订阅应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SubscribeAppRequest 请求对象
      * @return CompletableFuture<SubscribeAppResponse>
@@ -191,8 +180,7 @@ public class EiHealthAsyncClient {
      *
      * 订阅应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SubscribeAppRequest 请求对象
      * @return AsyncInvoker<SubscribeAppRequest, SubscribeAppResponse>
@@ -208,8 +196,7 @@ public class EiHealthAsyncClient {
      *
      * 更新应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppRequest 请求对象
      * @return CompletableFuture<UpdateAppResponse>
@@ -223,8 +210,7 @@ public class EiHealthAsyncClient {
      *
      * 更新应用
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAppRequest 请求对象
      * @return AsyncInvoker<UpdateAppRequest, UpdateAppResponse>
@@ -238,8 +224,7 @@ public class EiHealthAsyncClient {
      *
      * 获取资产列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAssetRequest 请求对象
      * @return CompletableFuture<ListAssetResponse>
@@ -253,8 +238,7 @@ public class EiHealthAsyncClient {
      *
      * 获取资产列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAssetRequest 请求对象
      * @return AsyncInvoker<ListAssetRequest, ListAssetResponse>
@@ -268,8 +252,7 @@ public class EiHealthAsyncClient {
      *
      * 获取属性值列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPropertyRequest 请求对象
      * @return CompletableFuture<ListPropertyResponse>
@@ -283,8 +266,7 @@ public class EiHealthAsyncClient {
      *
      * 获取属性值列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPropertyRequest 请求对象
      * @return AsyncInvoker<ListPropertyRequest, ListPropertyResponse>
@@ -300,8 +282,7 @@ public class EiHealthAsyncClient {
      *
      * 查询资产详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAssetRequest 请求对象
      * @return CompletableFuture<ShowAssetResponse>
@@ -315,8 +296,7 @@ public class EiHealthAsyncClient {
      *
      * 查询资产详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAssetRequest 请求对象
      * @return AsyncInvoker<ShowAssetRequest, ShowAssetResponse>
@@ -330,8 +310,7 @@ public class EiHealthAsyncClient {
      *
      * 查询资产版本详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAssetVersionRequest 请求对象
      * @return CompletableFuture<ShowAssetVersionResponse>
@@ -345,8 +324,7 @@ public class EiHealthAsyncClient {
      *
      * 查询资产版本详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAssetVersionRequest 请求对象
      * @return AsyncInvoker<ShowAssetVersionRequest, ShowAssetVersionResponse>
@@ -362,8 +340,7 @@ public class EiHealthAsyncClient {
      *
      * 创建自动作业模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAutoJobRequest 请求对象
      * @return CompletableFuture<CreateAutoJobResponse>
@@ -377,8 +354,7 @@ public class EiHealthAsyncClient {
      *
      * 创建自动作业模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAutoJobRequest 请求对象
      * @return AsyncInvoker<CreateAutoJobRequest, CreateAutoJobResponse>
@@ -394,8 +370,7 @@ public class EiHealthAsyncClient {
      *
      * 删除自动作业模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAutoJobRequest 请求对象
      * @return CompletableFuture<DeleteAutoJobResponse>
@@ -409,8 +384,7 @@ public class EiHealthAsyncClient {
      *
      * 删除自动作业模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAutoJobRequest 请求对象
      * @return AsyncInvoker<DeleteAutoJobRequest, DeleteAutoJobResponse>
@@ -426,8 +400,7 @@ public class EiHealthAsyncClient {
      *
      * 获取自动作业模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAutoJobRequest 请求对象
      * @return CompletableFuture<ListAutoJobResponse>
@@ -441,8 +414,7 @@ public class EiHealthAsyncClient {
      *
      * 获取自动作业模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAutoJobRequest 请求对象
      * @return AsyncInvoker<ListAutoJobRequest, ListAutoJobResponse>
@@ -456,8 +428,7 @@ public class EiHealthAsyncClient {
      *
      * 查询自动作业模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAutoJobRequest 请求对象
      * @return CompletableFuture<ShowAutoJobResponse>
@@ -471,8 +442,7 @@ public class EiHealthAsyncClient {
      *
      * 查询自动作业模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAutoJobRequest 请求对象
      * @return AsyncInvoker<ShowAutoJobRequest, ShowAutoJobResponse>
@@ -486,8 +456,7 @@ public class EiHealthAsyncClient {
      *
      * 启动自动作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartAutoJobRequest 请求对象
      * @return CompletableFuture<StartAutoJobResponse>
@@ -501,8 +470,7 @@ public class EiHealthAsyncClient {
      *
      * 启动自动作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartAutoJobRequest 请求对象
      * @return AsyncInvoker<StartAutoJobRequest, StartAutoJobResponse>
@@ -518,8 +486,7 @@ public class EiHealthAsyncClient {
      *
      * 停止自动作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopAutoJobRequest 请求对象
      * @return CompletableFuture<StopAutoJobResponse>
@@ -533,8 +500,7 @@ public class EiHealthAsyncClient {
      *
      * 停止自动作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopAutoJobRequest 请求对象
      * @return AsyncInvoker<StopAutoJobRequest, StopAutoJobResponse>
@@ -548,8 +514,7 @@ public class EiHealthAsyncClient {
      *
      * 更新自动作业模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAutoJobRequest 请求对象
      * @return CompletableFuture<UpdateAutoJobResponse>
@@ -563,8 +528,7 @@ public class EiHealthAsyncClient {
      *
      * 更新自动作业模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAutoJobRequest 请求对象
      * @return AsyncInvoker<UpdateAutoJobRequest, UpdateAutoJobResponse>
@@ -580,8 +544,7 @@ public class EiHealthAsyncClient {
      *
      * 购买计算资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateComputingResourceRequest 请求对象
      * @return CompletableFuture<CreateComputingResourceResponse>
@@ -596,8 +559,7 @@ public class EiHealthAsyncClient {
      *
      * 购买计算资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateComputingResourceRequest 请求对象
      * @return AsyncInvoker<CreateComputingResourceRequest, CreateComputingResourceResponse>
@@ -613,8 +575,7 @@ public class EiHealthAsyncClient {
      *
      * 删除计算资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteComputingResourceRequest 请求对象
      * @return CompletableFuture<DeleteComputingResourceResponse>
@@ -629,8 +590,7 @@ public class EiHealthAsyncClient {
      *
      * 删除计算资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteComputingResourceRequest 请求对象
      * @return AsyncInvoker<DeleteComputingResourceRequest, DeleteComputingResourceResponse>
@@ -646,8 +606,7 @@ public class EiHealthAsyncClient {
      *
      * 查询计算资源规格
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComputingResourceFlavorsRequest 请求对象
      * @return CompletableFuture<ListComputingResourceFlavorsResponse>
@@ -662,8 +621,7 @@ public class EiHealthAsyncClient {
      *
      * 查询计算资源规格
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComputingResourceFlavorsRequest 请求对象
      * @return AsyncInvoker<ListComputingResourceFlavorsRequest, ListComputingResourceFlavorsResponse>
@@ -679,8 +637,7 @@ public class EiHealthAsyncClient {
      *
      * 查询计算资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComputingResourcesRequest 请求对象
      * @return CompletableFuture<ListComputingResourcesResponse>
@@ -695,8 +652,7 @@ public class EiHealthAsyncClient {
      *
      * 查询计算资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComputingResourcesRequest 请求对象
      * @return AsyncInvoker<ListComputingResourcesRequest, ListComputingResourcesResponse>
@@ -712,8 +668,7 @@ public class EiHealthAsyncClient {
      *
      * 重启计算资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RebootNodeRequest 请求对象
      * @return CompletableFuture<RebootNodeResponse>
@@ -727,8 +682,7 @@ public class EiHealthAsyncClient {
      *
      * 重启计算资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RebootNodeRequest 请求对象
      * @return AsyncInvoker<RebootNodeRequest, RebootNodeResponse>
@@ -742,8 +696,7 @@ public class EiHealthAsyncClient {
      *
      * 查询bms计算资源显卡id列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBmsDevicesRequest 请求对象
      * @return CompletableFuture<ShowBmsDevicesResponse>
@@ -757,8 +710,7 @@ public class EiHealthAsyncClient {
      *
      * 查询bms计算资源显卡id列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBmsDevicesRequest 请求对象
      * @return AsyncInvoker<ShowBmsDevicesRequest, ShowBmsDevicesResponse>
@@ -774,8 +726,7 @@ public class EiHealthAsyncClient {
      *
      * 获取EVS配额及使用情况
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEvsQuotaRequest 请求对象
      * @return CompletableFuture<ShowEvsQuotaResponse>
@@ -789,8 +740,7 @@ public class EiHealthAsyncClient {
      *
      * 获取EVS配额及使用情况
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEvsQuotaRequest 请求对象
      * @return AsyncInvoker<ShowEvsQuotaRequest, ShowEvsQuotaResponse>
@@ -806,8 +756,7 @@ public class EiHealthAsyncClient {
      *
      * 获取节点剩余配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLeftQuotaRequest 请求对象
      * @return CompletableFuture<ShowLeftQuotaResponse>
@@ -821,8 +770,7 @@ public class EiHealthAsyncClient {
      *
      * 获取节点剩余配额
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowLeftQuotaRequest 请求对象
      * @return AsyncInvoker<ShowLeftQuotaRequest, ShowLeftQuotaResponse>
@@ -838,8 +786,7 @@ public class EiHealthAsyncClient {
      *
      * 查询计算资源调度信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowScheduleRequest 请求对象
      * @return CompletableFuture<ShowScheduleResponse>
@@ -853,8 +800,7 @@ public class EiHealthAsyncClient {
      *
      * 查询计算资源调度信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowScheduleRequest 请求对象
      * @return AsyncInvoker<ShowScheduleRequest, ShowScheduleResponse>
@@ -870,8 +816,7 @@ public class EiHealthAsyncClient {
      *
      * 启动计算资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartNodeRequest 请求对象
      * @return CompletableFuture<StartNodeResponse>
@@ -885,8 +830,7 @@ public class EiHealthAsyncClient {
      *
      * 启动计算资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StartNodeRequest 请求对象
      * @return AsyncInvoker<StartNodeRequest, StartNodeResponse>
@@ -900,8 +844,7 @@ public class EiHealthAsyncClient {
      *
      * 关闭计算资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopNodeRequest 请求对象
      * @return CompletableFuture<StopNodeResponse>
@@ -915,8 +858,7 @@ public class EiHealthAsyncClient {
      *
      * 关闭计算资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopNodeRequest 请求对象
      * @return AsyncInvoker<StopNodeRequest, StopNodeResponse>
@@ -930,8 +872,7 @@ public class EiHealthAsyncClient {
      *
      * 修改计算资源调度信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateScheduleRequest 请求对象
      * @return CompletableFuture<UpdateScheduleResponse>
@@ -945,8 +886,7 @@ public class EiHealthAsyncClient {
      *
      * 修改计算资源调度信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateScheduleRequest 请求对象
      * @return AsyncInvoker<UpdateScheduleRequest, UpdateScheduleResponse>
@@ -962,8 +902,7 @@ public class EiHealthAsyncClient {
      *
      * 将需要归档的重要数据拷贝到数据归档桶
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateBackupRequest 请求对象
      * @return CompletableFuture<CreateBackupResponse>
@@ -977,8 +916,7 @@ public class EiHealthAsyncClient {
      *
      * 将需要归档的重要数据拷贝到数据归档桶
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateBackupRequest 请求对象
      * @return AsyncInvoker<CreateBackupRequest, CreateBackupResponse>
@@ -994,8 +932,7 @@ public class EiHealthAsyncClient {
      *
      * 删除指定的归档
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackupRequest 请求对象
      * @return CompletableFuture<DeleteBackupResponse>
@@ -1009,8 +946,7 @@ public class EiHealthAsyncClient {
      *
      * 删除指定的归档
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackupRequest 请求对象
      * @return AsyncInvoker<DeleteBackupRequest, DeleteBackupResponse>
@@ -1026,8 +962,7 @@ public class EiHealthAsyncClient {
      *
      * 分页查询用户管理的项目的所有历史归档记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackupRequest 请求对象
      * @return CompletableFuture<ListBackupResponse>
@@ -1041,8 +976,7 @@ public class EiHealthAsyncClient {
      *
      * 分页查询用户管理的项目的所有历史归档记录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackupRequest 请求对象
      * @return AsyncInvoker<ListBackupRequest, ListBackupResponse>
@@ -1056,8 +990,7 @@ public class EiHealthAsyncClient {
      *
      * 将指定的归档数据拷贝到目标项目的某个目录下
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreBackupRequest 请求对象
      * @return CompletableFuture<RestoreBackupResponse>
@@ -1071,8 +1004,7 @@ public class EiHealthAsyncClient {
      *
      * 将指定的归档数据拷贝到目标项目的某个目录下
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreBackupRequest 请求对象
      * @return AsyncInvoker<RestoreBackupRequest, RestoreBackupResponse>
@@ -1088,8 +1020,7 @@ public class EiHealthAsyncClient {
      *
      * 根据归档ID获取该归档的全数据清单
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBackupPathRequest 请求对象
      * @return CompletableFuture<ShowBackupPathResponse>
@@ -1103,8 +1034,7 @@ public class EiHealthAsyncClient {
      *
      * 根据归档ID获取该归档的全数据清单
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBackupPathRequest 请求对象
      * @return AsyncInvoker<ShowBackupPathRequest, ShowBackupPathResponse>
@@ -1120,8 +1050,7 @@ public class EiHealthAsyncClient {
      *
      * 复制项目数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CopyDataRequest 请求对象
      * @return CompletableFuture<CopyDataResponse>
@@ -1135,8 +1064,7 @@ public class EiHealthAsyncClient {
      *
      * 复制项目数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CopyDataRequest 请求对象
      * @return AsyncInvoker<CopyDataRequest, CopyDataResponse>
@@ -1150,8 +1078,7 @@ public class EiHealthAsyncClient {
      *
      * 创建文件夹
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDataRequest 请求对象
      * @return CompletableFuture<CreateDataResponse>
@@ -1165,8 +1092,7 @@ public class EiHealthAsyncClient {
      *
      * 创建文件夹
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDataRequest 请求对象
      * @return AsyncInvoker<CreateDataRequest, CreateDataResponse>
@@ -1180,8 +1106,7 @@ public class EiHealthAsyncClient {
      *
      * 批量删除项目数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDataRequest 请求对象
      * @return CompletableFuture<DeleteDataResponse>
@@ -1195,8 +1120,7 @@ public class EiHealthAsyncClient {
      *
      * 批量删除项目数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDataRequest 请求对象
      * @return AsyncInvoker<DeleteDataRequest, DeleteDataResponse>
@@ -1210,8 +1134,7 @@ public class EiHealthAsyncClient {
      *
      * 导入项目数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportDataRequest 请求对象
      * @return CompletableFuture<ImportDataResponse>
@@ -1225,8 +1148,7 @@ public class EiHealthAsyncClient {
      *
      * 导入项目数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportDataRequest 请求对象
      * @return AsyncInvoker<ImportDataRequest, ImportDataResponse>
@@ -1240,8 +1162,7 @@ public class EiHealthAsyncClient {
      *
      * 导入网上数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportNetworkDataRequest 请求对象
      * @return CompletableFuture<ImportNetworkDataResponse>
@@ -1255,8 +1176,7 @@ public class EiHealthAsyncClient {
      *
      * 导入网上数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportNetworkDataRequest 请求对象
      * @return AsyncInvoker<ImportNetworkDataRequest, ImportNetworkDataResponse>
@@ -1272,8 +1192,7 @@ public class EiHealthAsyncClient {
      *
      * 获取桶列表(包含当前项目桶和引用项目桶)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBucketRequest 请求对象
      * @return CompletableFuture<ListBucketResponse>
@@ -1287,8 +1206,7 @@ public class EiHealthAsyncClient {
      *
      * 获取桶列表(包含当前项目桶和引用项目桶)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBucketRequest 请求对象
      * @return AsyncInvoker<ListBucketRequest, ListBucketResponse>
@@ -1302,8 +1220,7 @@ public class EiHealthAsyncClient {
      *
      * 查询指定目录下的数据列表，如果不指定默认查询根目录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDataRequest 请求对象
      * @return CompletableFuture<ListDataResponse>
@@ -1317,8 +1234,7 @@ public class EiHealthAsyncClient {
      *
      * 查询指定目录下的数据列表，如果不指定默认查询根目录
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDataRequest 请求对象
      * @return AsyncInvoker<ListDataRequest, ListDataResponse>
@@ -1332,8 +1248,7 @@ public class EiHealthAsyncClient {
      *
      * 引用项目数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param QuoteDataRequest 请求对象
      * @return CompletableFuture<QuoteDataResponse>
@@ -1347,8 +1262,7 @@ public class EiHealthAsyncClient {
      *
      * 引用项目数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param QuoteDataRequest 请求对象
      * @return AsyncInvoker<QuoteDataRequest, QuoteDataResponse>
@@ -1362,8 +1276,7 @@ public class EiHealthAsyncClient {
      *
      * 获取桶存量信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBucketStorageRequest 请求对象
      * @return CompletableFuture<ShowBucketStorageResponse>
@@ -1377,8 +1290,7 @@ public class EiHealthAsyncClient {
      *
      * 获取桶存量信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBucketStorageRequest 请求对象
      * @return AsyncInvoker<ShowBucketStorageRequest, ShowBucketStorageResponse>
@@ -1394,8 +1306,7 @@ public class EiHealthAsyncClient {
      *
      * 获取指定数据对象的详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDataRequest 请求对象
      * @return CompletableFuture<ShowDataResponse>
@@ -1409,8 +1320,7 @@ public class EiHealthAsyncClient {
      *
      * 获取指定数据对象的详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDataRequest 请求对象
      * @return AsyncInvoker<ShowDataRequest, ShowDataResponse>
@@ -1424,8 +1334,7 @@ public class EiHealthAsyncClient {
      *
      * 查询项目级数据权限控制策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDataPolicyRequest 请求对象
      * @return CompletableFuture<ShowDataPolicyResponse>
@@ -1439,8 +1348,7 @@ public class EiHealthAsyncClient {
      *
      * 查询项目级数据权限控制策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDataPolicyRequest 请求对象
      * @return AsyncInvoker<ShowDataPolicyRequest, ShowDataPolicyResponse>
@@ -1456,8 +1364,7 @@ public class EiHealthAsyncClient {
      *
      * 订阅资产市场数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SubscribeDataRequest 请求对象
      * @return CompletableFuture<SubscribeDataResponse>
@@ -1471,8 +1378,7 @@ public class EiHealthAsyncClient {
      *
      * 订阅资产市场数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SubscribeDataRequest 请求对象
      * @return AsyncInvoker<SubscribeDataRequest, SubscribeDataResponse>
@@ -1488,8 +1394,7 @@ public class EiHealthAsyncClient {
      *
      * 设置项目级权限控制策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDataPolicyRequest 请求对象
      * @return CompletableFuture<UpdateDataPolicyResponse>
@@ -1503,8 +1408,7 @@ public class EiHealthAsyncClient {
      *
      * 设置项目级权限控制策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDataPolicyRequest 请求对象
      * @return AsyncInvoker<UpdateDataPolicyRequest, UpdateDataPolicyResponse>
@@ -1520,8 +1424,7 @@ public class EiHealthAsyncClient {
      *
      * 上传数据文件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadDataRequest 请求对象
      * @return CompletableFuture<UploadDataResponse>
@@ -1535,8 +1438,7 @@ public class EiHealthAsyncClient {
      *
      * 上传数据文件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadDataRequest 请求对象
      * @return AsyncInvoker<UploadDataRequest, UploadDataResponse>
@@ -1550,8 +1452,7 @@ public class EiHealthAsyncClient {
      *
      * 取消数据作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelDataJobRequest 请求对象
      * @return CompletableFuture<CancelDataJobResponse>
@@ -1565,8 +1466,7 @@ public class EiHealthAsyncClient {
      *
      * 取消数据作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelDataJobRequest 请求对象
      * @return AsyncInvoker<CancelDataJobRequest, CancelDataJobResponse>
@@ -1582,8 +1482,7 @@ public class EiHealthAsyncClient {
      *
      * 删除数据作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDataJobRequest 请求对象
      * @return CompletableFuture<DeleteDataJobResponse>
@@ -1597,8 +1496,7 @@ public class EiHealthAsyncClient {
      *
      * 删除数据作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDataJobRequest 请求对象
      * @return AsyncInvoker<DeleteDataJobRequest, DeleteDataJobResponse>
@@ -1614,8 +1512,7 @@ public class EiHealthAsyncClient {
      *
      * 下载数据作业执行日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadDataJobLogRequest 请求对象
      * @return CompletableFuture<DownloadDataJobLogResponse>
@@ -1629,8 +1526,7 @@ public class EiHealthAsyncClient {
      *
      * 下载数据作业执行日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadDataJobLogRequest 请求对象
      * @return AsyncInvoker<DownloadDataJobLogRequest, DownloadDataJobLogResponse>
@@ -1646,8 +1542,7 @@ public class EiHealthAsyncClient {
      *
      * 获取数据作业执行日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCheckpointRequest 请求对象
      * @return CompletableFuture<ListCheckpointResponse>
@@ -1661,8 +1556,7 @@ public class EiHealthAsyncClient {
      *
      * 获取数据作业执行日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCheckpointRequest 请求对象
      * @return AsyncInvoker<ListCheckpointRequest, ListCheckpointResponse>
@@ -1678,8 +1572,7 @@ public class EiHealthAsyncClient {
      *
      * 获取数据作业列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDataJobRequest 请求对象
      * @return CompletableFuture<ListDataJobResponse>
@@ -1693,8 +1586,7 @@ public class EiHealthAsyncClient {
      *
      * 获取数据作业列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDataJobRequest 请求对象
      * @return AsyncInvoker<ListDataJobRequest, ListDataJobResponse>
@@ -1708,8 +1600,7 @@ public class EiHealthAsyncClient {
      *
      * 重试数据作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RetryDataJobRequest 请求对象
      * @return CompletableFuture<RetryDataJobResponse>
@@ -1723,8 +1614,7 @@ public class EiHealthAsyncClient {
      *
      * 重试数据作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RetryDataJobRequest 请求对象
      * @return AsyncInvoker<RetryDataJobRequest, RetryDataJobResponse>
@@ -1740,8 +1630,7 @@ public class EiHealthAsyncClient {
      *
      * 获取数据作业详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDataJobRequest 请求对象
      * @return CompletableFuture<ShowDataJobResponse>
@@ -1755,8 +1644,7 @@ public class EiHealthAsyncClient {
      *
      * 获取数据作业详细信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDataJobRequest 请求对象
      * @return AsyncInvoker<ShowDataJobRequest, ShowDataJobResponse>
@@ -1770,8 +1658,7 @@ public class EiHealthAsyncClient {
      *
      * 插入单条数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatabaseDataRequest 请求对象
      * @return CompletableFuture<CreateDatabaseDataResponse>
@@ -1785,8 +1672,7 @@ public class EiHealthAsyncClient {
      *
      * 插入单条数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatabaseDataRequest 请求对象
      * @return AsyncInvoker<CreateDatabaseDataRequest, CreateDatabaseDataResponse>
@@ -1802,8 +1688,7 @@ public class EiHealthAsyncClient {
      *
      * 创建数据库实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return CompletableFuture<CreateInstanceResponse>
@@ -1817,8 +1702,7 @@ public class EiHealthAsyncClient {
      *
      * 创建数据库实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
@@ -1834,8 +1718,7 @@ public class EiHealthAsyncClient {
      *
      * 删除指定行数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDatabaseDataRequest 请求对象
      * @return CompletableFuture<DeleteDatabaseDataResponse>
@@ -1849,8 +1732,7 @@ public class EiHealthAsyncClient {
      *
      * 删除指定行数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDatabaseDataRequest 请求对象
      * @return AsyncInvoker<DeleteDatabaseDataRequest, DeleteDatabaseDataResponse>
@@ -1866,8 +1748,7 @@ public class EiHealthAsyncClient {
      *
      * 删除实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return CompletableFuture<DeleteInstanceResponse>
@@ -1881,8 +1762,7 @@ public class EiHealthAsyncClient {
      *
      * 删除实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
@@ -1898,8 +1778,7 @@ public class EiHealthAsyncClient {
      *
      * 导入数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportDatabaseDataRequest 请求对象
      * @return CompletableFuture<ImportDatabaseDataResponse>
@@ -1913,8 +1792,7 @@ public class EiHealthAsyncClient {
      *
      * 导入数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportDatabaseDataRequest 请求对象
      * @return AsyncInvoker<ImportDatabaseDataRequest, ImportDatabaseDataResponse>
@@ -1930,8 +1808,7 @@ public class EiHealthAsyncClient {
      *
      * 查询数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatabaseDataRequest 请求对象
      * @return CompletableFuture<ListDatabaseDataResponse>
@@ -1945,8 +1822,7 @@ public class EiHealthAsyncClient {
      *
      * 查询数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatabaseDataRequest 请求对象
      * @return AsyncInvoker<ListDatabaseDataRequest, ListDatabaseDataResponse>
@@ -1962,8 +1838,7 @@ public class EiHealthAsyncClient {
      *
      * 获取实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceRequest 请求对象
      * @return CompletableFuture<ListInstanceResponse>
@@ -1977,8 +1852,7 @@ public class EiHealthAsyncClient {
      *
      * 获取实例列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceRequest 请求对象
      * @return AsyncInvoker<ListInstanceRequest, ListInstanceResponse>
@@ -1994,8 +1868,7 @@ public class EiHealthAsyncClient {
      *
      * 引用数据库实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param QuoteInstanceRequest 请求对象
      * @return CompletableFuture<QuoteInstanceResponse>
@@ -2009,8 +1882,7 @@ public class EiHealthAsyncClient {
      *
      * 引用数据库实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param QuoteInstanceRequest 请求对象
      * @return AsyncInvoker<QuoteInstanceRequest, QuoteInstanceResponse>
@@ -2026,8 +1898,7 @@ public class EiHealthAsyncClient {
      *
      * 查询实例详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return CompletableFuture<ShowInstanceResponse>
@@ -2041,8 +1912,7 @@ public class EiHealthAsyncClient {
      *
      * 查询实例详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceRequest 请求对象
      * @return AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
@@ -2058,8 +1928,7 @@ public class EiHealthAsyncClient {
      *
      * 更新数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDatabaseDataRequest 请求对象
      * @return CompletableFuture<UpdateDatabaseDataResponse>
@@ -2073,8 +1942,7 @@ public class EiHealthAsyncClient {
      *
      * 更新数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDatabaseDataRequest 请求对象
      * @return AsyncInvoker<UpdateDatabaseDataRequest, UpdateDatabaseDataResponse>
@@ -2090,8 +1958,7 @@ public class EiHealthAsyncClient {
      *
      * 购买数据库资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatabaseResourceRequest 请求对象
      * @return CompletableFuture<CreateDatabaseResourceResponse>
@@ -2106,8 +1973,7 @@ public class EiHealthAsyncClient {
      *
      * 购买数据库资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDatabaseResourceRequest 请求对象
      * @return AsyncInvoker<CreateDatabaseResourceRequest, CreateDatabaseResourceResponse>
@@ -2123,8 +1989,7 @@ public class EiHealthAsyncClient {
      *
      * 删除数据库资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDatabaseResourceRequest 请求对象
      * @return CompletableFuture<DeleteDatabaseResourceResponse>
@@ -2139,8 +2004,7 @@ public class EiHealthAsyncClient {
      *
      * 删除数据库资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDatabaseResourceRequest 请求对象
      * @return AsyncInvoker<DeleteDatabaseResourceRequest, DeleteDatabaseResourceResponse>
@@ -2156,8 +2020,7 @@ public class EiHealthAsyncClient {
      *
      * 查询数据库资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatabaseResourceRequest 请求对象
      * @return CompletableFuture<ListDatabaseResourceResponse>
@@ -2172,8 +2035,7 @@ public class EiHealthAsyncClient {
      *
      * 查询数据库资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatabaseResourceRequest 请求对象
      * @return AsyncInvoker<ListDatabaseResourceRequest, ListDatabaseResourceResponse>
@@ -2189,8 +2051,7 @@ public class EiHealthAsyncClient {
      *
      * 获取数据库资源规格列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatabaseResourceFlavorRequest 请求对象
      * @return CompletableFuture<ListDatabaseResourceFlavorResponse>
@@ -2205,8 +2066,7 @@ public class EiHealthAsyncClient {
      *
      * 获取数据库资源规格列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDatabaseResourceFlavorRequest 请求对象
      * @return AsyncInvoker<ListDatabaseResourceFlavorRequest, ListDatabaseResourceFlavorResponse>
@@ -2222,8 +2082,7 @@ public class EiHealthAsyncClient {
      *
      * 批量删除镜像tag
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteTagRequest 请求对象
      * @return CompletableFuture<BatchDeleteTagResponse>
@@ -2237,8 +2096,7 @@ public class EiHealthAsyncClient {
      *
      * 批量删除镜像tag
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteTagRequest 请求对象
      * @return AsyncInvoker<BatchDeleteTagRequest, BatchDeleteTagResponse>
@@ -2254,8 +2112,7 @@ public class EiHealthAsyncClient {
      *
      * 创建镜像
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateImageRequest 请求对象
      * @return CompletableFuture<CreateImageResponse>
@@ -2269,8 +2126,7 @@ public class EiHealthAsyncClient {
      *
      * 创建镜像
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateImageRequest 请求对象
      * @return AsyncInvoker<CreateImageRequest, CreateImageResponse>
@@ -2284,8 +2140,7 @@ public class EiHealthAsyncClient {
      *
      * 删除镜像仓库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteImageRequest 请求对象
      * @return CompletableFuture<DeleteImageResponse>
@@ -2299,8 +2154,7 @@ public class EiHealthAsyncClient {
      *
      * 删除镜像仓库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteImageRequest 请求对象
      * @return AsyncInvoker<DeleteImageRequest, DeleteImageResponse>
@@ -2314,8 +2168,7 @@ public class EiHealthAsyncClient {
      *
      * 删除指定镜像tag
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTagRequest 请求对象
      * @return CompletableFuture<DeleteTagResponse>
@@ -2329,8 +2182,7 @@ public class EiHealthAsyncClient {
      *
      * 删除指定镜像tag
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTagRequest 请求对象
      * @return AsyncInvoker<DeleteTagRequest, DeleteTagResponse>
@@ -2344,8 +2196,7 @@ public class EiHealthAsyncClient {
      *
      * 导入镜像
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportImageRequest 请求对象
      * @return CompletableFuture<ImportImageResponse>
@@ -2359,8 +2210,7 @@ public class EiHealthAsyncClient {
      *
      * 导入镜像
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportImageRequest 请求对象
      * @return AsyncInvoker<ImportImageRequest, ImportImageResponse>
@@ -2374,8 +2224,7 @@ public class EiHealthAsyncClient {
      *
      * 获取镜像列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListImageRequest 请求对象
      * @return CompletableFuture<ListImageResponse>
@@ -2389,8 +2238,7 @@ public class EiHealthAsyncClient {
      *
      * 获取镜像列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListImageRequest 请求对象
      * @return AsyncInvoker<ListImageRequest, ListImageResponse>
@@ -2404,8 +2252,7 @@ public class EiHealthAsyncClient {
      *
      * 获取指定镜像的tag列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListImageTagRequest 请求对象
      * @return CompletableFuture<ListImageTagResponse>
@@ -2419,8 +2266,7 @@ public class EiHealthAsyncClient {
      *
      * 获取指定镜像的tag列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListImageTagRequest 请求对象
      * @return AsyncInvoker<ListImageTagRequest, ListImageTagResponse>
@@ -2436,8 +2282,7 @@ public class EiHealthAsyncClient {
      *
      * 获取docker login指令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDockerLoginRequest 请求对象
      * @return CompletableFuture<ShowDockerLoginResponse>
@@ -2451,8 +2296,7 @@ public class EiHealthAsyncClient {
      *
      * 获取docker login指令
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDockerLoginRequest 请求对象
      * @return AsyncInvoker<ShowDockerLoginRequest, ShowDockerLoginResponse>
@@ -2468,8 +2312,7 @@ public class EiHealthAsyncClient {
      *
      * 订阅镜像
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SubscribeImageRequest 请求对象
      * @return CompletableFuture<SubscribeImageResponse>
@@ -2483,8 +2326,7 @@ public class EiHealthAsyncClient {
      *
      * 订阅镜像
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SubscribeImageRequest 请求对象
      * @return AsyncInvoker<SubscribeImageRequest, SubscribeImageResponse>
@@ -2500,8 +2342,7 @@ public class EiHealthAsyncClient {
      *
      * 更新镜像描述信息或者类型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateImageRequest 请求对象
      * @return CompletableFuture<UpdateImageResponse>
@@ -2515,8 +2356,7 @@ public class EiHealthAsyncClient {
      *
      * 更新镜像描述信息或者类型
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateImageRequest 请求对象
      * @return AsyncInvoker<UpdateImageRequest, UpdateImageResponse>
@@ -2530,8 +2370,7 @@ public class EiHealthAsyncClient {
      *
      * 获取作业配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobConfigRequest 请求对象
      * @return CompletableFuture<ShowJobConfigResponse>
@@ -2545,8 +2384,7 @@ public class EiHealthAsyncClient {
      *
      * 获取作业配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobConfigRequest 请求对象
      * @return AsyncInvoker<ShowJobConfigRequest, ShowJobConfigResponse>
@@ -2562,8 +2400,7 @@ public class EiHealthAsyncClient {
      *
      * 设置作业配置，目前支持修改保存时长(180天 - 10年)、记录数(1W-500W)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateJobConfigRequest 请求对象
      * @return CompletableFuture<UpdateJobConfigResponse>
@@ -2577,8 +2414,7 @@ public class EiHealthAsyncClient {
      *
      * 设置作业配置，目前支持修改保存时长(180天 - 10年)、记录数(1W-500W)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateJobConfigRequest 请求对象
      * @return AsyncInvoker<UpdateJobConfigRequest, UpdateJobConfigResponse>
@@ -2594,8 +2430,7 @@ public class EiHealthAsyncClient {
      *
      * 取消或强制作业调度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelJobRequest 请求对象
      * @return CompletableFuture<CancelJobResponse>
@@ -2609,8 +2444,7 @@ public class EiHealthAsyncClient {
      *
      * 取消或强制作业调度
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CancelJobRequest 请求对象
      * @return AsyncInvoker<CancelJobRequest, CancelJobResponse>
@@ -2624,8 +2458,7 @@ public class EiHealthAsyncClient {
      *
      * 删除作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteJobRequest 请求对象
      * @return CompletableFuture<DeleteJobResponse>
@@ -2639,8 +2472,7 @@ public class EiHealthAsyncClient {
      *
      * 删除作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteJobRequest 请求对象
      * @return AsyncInvoker<DeleteJobRequest, DeleteJobResponse>
@@ -2654,8 +2486,7 @@ public class EiHealthAsyncClient {
      *
      * 启动作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteJobRequest 请求对象
      * @return CompletableFuture<ExecuteJobResponse>
@@ -2669,8 +2500,7 @@ public class EiHealthAsyncClient {
      *
      * 启动作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ExecuteJobRequest 请求对象
      * @return AsyncInvoker<ExecuteJobRequest, ExecuteJobResponse>
@@ -2684,8 +2514,7 @@ public class EiHealthAsyncClient {
      *
      * 获取作业列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListJobRequest 请求对象
      * @return CompletableFuture<ListJobResponse>
@@ -2699,8 +2528,7 @@ public class EiHealthAsyncClient {
      *
      * 获取作业列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListJobRequest 请求对象
      * @return AsyncInvoker<ListJobRequest, ListJobResponse>
@@ -2714,8 +2542,7 @@ public class EiHealthAsyncClient {
      *
      * 重试作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RetryJobRequest 请求对象
      * @return CompletableFuture<RetryJobResponse>
@@ -2729,8 +2556,7 @@ public class EiHealthAsyncClient {
      *
      * 重试作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RetryJobRequest 请求对象
      * @return AsyncInvoker<RetryJobRequest, RetryJobResponse>
@@ -2744,8 +2570,7 @@ public class EiHealthAsyncClient {
      *
      * 获取作业详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return CompletableFuture<ShowJobResponse>
@@ -2759,8 +2584,7 @@ public class EiHealthAsyncClient {
      *
      * 获取作业详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>
@@ -2774,8 +2598,7 @@ public class EiHealthAsyncClient {
      *
      * 获取作业事件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobEventRequest 请求对象
      * @return CompletableFuture<ShowJobEventResponse>
@@ -2789,8 +2612,7 @@ public class EiHealthAsyncClient {
      *
      * 获取作业事件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobEventRequest 请求对象
      * @return AsyncInvoker<ShowJobEventRequest, ShowJobEventResponse>
@@ -2806,8 +2628,7 @@ public class EiHealthAsyncClient {
      *
      * 获取作业日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobLogRequest 请求对象
      * @return CompletableFuture<ShowJobLogResponse>
@@ -2821,8 +2642,7 @@ public class EiHealthAsyncClient {
      *
      * 获取作业日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobLogRequest 请求对象
      * @return AsyncInvoker<ShowJobLogRequest, ShowJobLogResponse>
@@ -2836,8 +2656,7 @@ public class EiHealthAsyncClient {
      *
      * 获取子任务启动事件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskEventsRequest 请求对象
      * @return CompletableFuture<ShowTaskEventsResponse>
@@ -2851,8 +2670,7 @@ public class EiHealthAsyncClient {
      *
      * 获取子任务启动事件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskEventsRequest 请求对象
      * @return AsyncInvoker<ShowTaskEventsRequest, ShowTaskEventsResponse>
@@ -2868,8 +2686,7 @@ public class EiHealthAsyncClient {
      *
      * 获取子任务中实例的事件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskInstanceEventsRequest 请求对象
      * @return CompletableFuture<ShowTaskInstanceEventsResponse>
@@ -2884,8 +2701,7 @@ public class EiHealthAsyncClient {
      *
      * 获取子任务中实例的事件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskInstanceEventsRequest 请求对象
      * @return AsyncInvoker<ShowTaskInstanceEventsRequest, ShowTaskInstanceEventsResponse>
@@ -2901,8 +2717,7 @@ public class EiHealthAsyncClient {
      *
      * 获取子任务中实例的pod信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskInstancePodRequest 请求对象
      * @return CompletableFuture<ShowTaskInstancePodResponse>
@@ -2916,8 +2731,7 @@ public class EiHealthAsyncClient {
      *
      * 获取子任务中实例的pod信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskInstancePodRequest 请求对象
      * @return AsyncInvoker<ShowTaskInstancePodRequest, ShowTaskInstancePodResponse>
@@ -2933,8 +2747,7 @@ public class EiHealthAsyncClient {
      *
      * 获取子任务实例信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskInstancesRequest 请求对象
      * @return CompletableFuture<ShowTaskInstancesResponse>
@@ -2948,8 +2761,7 @@ public class EiHealthAsyncClient {
      *
      * 获取子任务实例信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTaskInstancesRequest 请求对象
      * @return AsyncInvoker<ShowTaskInstancesRequest, ShowTaskInstancesResponse>
@@ -2965,8 +2777,7 @@ public class EiHealthAsyncClient {
      *
      * 创建标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLabelRequest 请求对象
      * @return CompletableFuture<CreateLabelResponse>
@@ -2980,8 +2791,7 @@ public class EiHealthAsyncClient {
      *
      * 创建标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLabelRequest 请求对象
      * @return AsyncInvoker<CreateLabelRequest, CreateLabelResponse>
@@ -2995,8 +2805,7 @@ public class EiHealthAsyncClient {
      *
      * 删除标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLabelRequest 请求对象
      * @return CompletableFuture<DeleteLabelResponse>
@@ -3010,8 +2819,7 @@ public class EiHealthAsyncClient {
      *
      * 删除标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLabelRequest 请求对象
      * @return AsyncInvoker<DeleteLabelRequest, DeleteLabelResponse>
@@ -3025,8 +2833,7 @@ public class EiHealthAsyncClient {
      *
      * 获取标签列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLabelRequest 请求对象
      * @return CompletableFuture<ListLabelResponse>
@@ -3040,8 +2847,7 @@ public class EiHealthAsyncClient {
      *
      * 获取标签列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLabelRequest 请求对象
      * @return AsyncInvoker<ListLabelRequest, ListLabelResponse>
@@ -3055,8 +2861,7 @@ public class EiHealthAsyncClient {
      *
      * 创建标签页面
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLabelPageRequest 请求对象
      * @return CompletableFuture<CreateLabelPageResponse>
@@ -3070,8 +2875,7 @@ public class EiHealthAsyncClient {
      *
      * 创建标签页面
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLabelPageRequest 请求对象
      * @return AsyncInvoker<CreateLabelPageRequest, CreateLabelPageResponse>
@@ -3087,8 +2891,7 @@ public class EiHealthAsyncClient {
      *
      * 删除标签页面
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLabelPageRequest 请求对象
      * @return CompletableFuture<DeleteLabelPageResponse>
@@ -3102,8 +2905,7 @@ public class EiHealthAsyncClient {
      *
      * 删除标签页面
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLabelPageRequest 请求对象
      * @return AsyncInvoker<DeleteLabelPageRequest, DeleteLabelPageResponse>
@@ -3119,8 +2921,7 @@ public class EiHealthAsyncClient {
      *
      * 获取标签页面列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLabelPageRequest 请求对象
      * @return CompletableFuture<ListLabelPageResponse>
@@ -3134,8 +2935,7 @@ public class EiHealthAsyncClient {
      *
      * 获取标签页面列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLabelPageRequest 请求对象
      * @return AsyncInvoker<ListLabelPageRequest, ListLabelPageResponse>
@@ -3151,8 +2951,7 @@ public class EiHealthAsyncClient {
      *
      * 邮箱连通性测试
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckEmailConnectionRequest 请求对象
      * @return CompletableFuture<CheckEmailConnectionResponse>
@@ -3167,8 +2966,7 @@ public class EiHealthAsyncClient {
      *
      * 邮箱连通性测试
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckEmailConnectionRequest 请求对象
      * @return AsyncInvoker<CheckEmailConnectionRequest, CheckEmailConnectionResponse>
@@ -3184,8 +2982,7 @@ public class EiHealthAsyncClient {
      *
      * 删除消息邮件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMessageEmailConfigRequest 请求对象
      * @return CompletableFuture<DeleteMessageEmailConfigResponse>
@@ -3200,8 +2997,7 @@ public class EiHealthAsyncClient {
      *
      * 删除消息邮件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMessageEmailConfigRequest 请求对象
      * @return AsyncInvoker<DeleteMessageEmailConfigRequest, DeleteMessageEmailConfigResponse>
@@ -3217,8 +3013,7 @@ public class EiHealthAsyncClient {
      *
      * 从消息中心获取当前用户有权限查看的消息列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMessageRequest 请求对象
      * @return CompletableFuture<ListMessageResponse>
@@ -3232,8 +3027,7 @@ public class EiHealthAsyncClient {
      *
      * 从消息中心获取当前用户有权限查看的消息列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMessageRequest 请求对象
      * @return AsyncInvoker<ListMessageRequest, ListMessageResponse>
@@ -3247,8 +3041,7 @@ public class EiHealthAsyncClient {
      *
      * 获取消息清理规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMessageClearRuleRequest 请求对象
      * @return CompletableFuture<ShowMessageClearRuleResponse>
@@ -3263,8 +3056,7 @@ public class EiHealthAsyncClient {
      *
      * 获取消息清理规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMessageClearRuleRequest 请求对象
      * @return AsyncInvoker<ShowMessageClearRuleRequest, ShowMessageClearRuleResponse>
@@ -3280,8 +3072,7 @@ public class EiHealthAsyncClient {
      *
      * 获取消息邮件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMessageEmailConfigRequest 请求对象
      * @return CompletableFuture<ShowMessageEmailConfigResponse>
@@ -3296,8 +3087,7 @@ public class EiHealthAsyncClient {
      *
      * 获取消息邮件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMessageEmailConfigRequest 请求对象
      * @return AsyncInvoker<ShowMessageEmailConfigRequest, ShowMessageEmailConfigResponse>
@@ -3313,8 +3103,7 @@ public class EiHealthAsyncClient {
      *
      * 获取用户邮件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMessageReceiveConfigRequest 请求对象
      * @return CompletableFuture<ShowMessageReceiveConfigResponse>
@@ -3329,8 +3118,7 @@ public class EiHealthAsyncClient {
      *
      * 获取用户邮件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMessageReceiveConfigRequest 请求对象
      * @return AsyncInvoker<ShowMessageReceiveConfigRequest, ShowMessageReceiveConfigResponse>
@@ -3346,8 +3134,7 @@ public class EiHealthAsyncClient {
      *
      * 设置消息清理规则，支持修改保存时长(180天 - 10年)、记录数(1W-500W)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMessageClearRuleRequest 请求对象
      * @return CompletableFuture<UpdateMessageClearRuleResponse>
@@ -3362,8 +3149,7 @@ public class EiHealthAsyncClient {
      *
      * 设置消息清理规则，支持修改保存时长(180天 - 10年)、记录数(1W-500W)
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMessageClearRuleRequest 请求对象
      * @return AsyncInvoker<UpdateMessageClearRuleRequest, UpdateMessageClearRuleResponse>
@@ -3379,8 +3165,7 @@ public class EiHealthAsyncClient {
      *
      * 设置消息邮件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMessageEmailConfigRequest 请求对象
      * @return CompletableFuture<UpdateMessageEmailConfigResponse>
@@ -3395,8 +3180,7 @@ public class EiHealthAsyncClient {
      *
      * 设置消息邮件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMessageEmailConfigRequest 请求对象
      * @return AsyncInvoker<UpdateMessageEmailConfigRequest, UpdateMessageEmailConfigResponse>
@@ -3412,8 +3196,7 @@ public class EiHealthAsyncClient {
      *
      * 设置用户邮件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMessageReceiveConfigRequest 请求对象
      * @return CompletableFuture<UpdateMessageReceiveConfigResponse>
@@ -3428,8 +3211,7 @@ public class EiHealthAsyncClient {
      *
      * 设置用户邮件配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMessageReceiveConfigRequest 请求对象
      * @return AsyncInvoker<UpdateMessageReceiveConfigRequest, UpdateMessageReceiveConfigResponse>
@@ -3445,8 +3227,7 @@ public class EiHealthAsyncClient {
      *
      * 设置节点标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchUpdateNodeLabelRequest 请求对象
      * @return CompletableFuture<BatchUpdateNodeLabelResponse>
@@ -3461,8 +3242,7 @@ public class EiHealthAsyncClient {
      *
      * 设置节点标签
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchUpdateNodeLabelRequest 请求对象
      * @return AsyncInvoker<BatchUpdateNodeLabelRequest, BatchUpdateNodeLabelResponse>
@@ -3478,8 +3258,7 @@ public class EiHealthAsyncClient {
      *
      * 获取节点标签集
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClusterAllNodeLabelRequest 请求对象
      * @return CompletableFuture<ListClusterAllNodeLabelResponse>
@@ -3494,8 +3273,7 @@ public class EiHealthAsyncClient {
      *
      * 获取节点标签集
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClusterAllNodeLabelRequest 请求对象
      * @return AsyncInvoker<ListClusterAllNodeLabelRequest, ListClusterAllNodeLabelResponse>
@@ -3511,8 +3289,7 @@ public class EiHealthAsyncClient {
      *
      * 获取节点标签集
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNodeLabelRequest 请求对象
      * @return CompletableFuture<ListNodeLabelResponse>
@@ -3526,8 +3303,7 @@ public class EiHealthAsyncClient {
      *
      * 获取节点标签集
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNodeLabelRequest 请求对象
      * @return AsyncInvoker<ListNodeLabelRequest, ListNodeLabelResponse>
@@ -3543,8 +3319,7 @@ public class EiHealthAsyncClient {
      *
      * 获取预置标签列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPresetLabelRequest 请求对象
      * @return CompletableFuture<ListPresetLabelResponse>
@@ -3558,8 +3333,7 @@ public class EiHealthAsyncClient {
      *
      * 获取预置标签列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPresetLabelRequest 请求对象
      * @return AsyncInvoker<ListPresetLabelRequest, ListPresetLabelResponse>
@@ -3575,8 +3349,7 @@ public class EiHealthAsyncClient {
      *
      * 创建notebook
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNotebookRequest 请求对象
      * @return CompletableFuture<CreateNotebookResponse>
@@ -3590,8 +3363,7 @@ public class EiHealthAsyncClient {
      *
      * 创建notebook
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNotebookRequest 请求对象
      * @return AsyncInvoker<CreateNotebookRequest, CreateNotebookResponse>
@@ -3607,8 +3379,7 @@ public class EiHealthAsyncClient {
      *
      * 删除notebook
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNotebookRequest 请求对象
      * @return CompletableFuture<DeleteNotebookResponse>
@@ -3622,8 +3393,7 @@ public class EiHealthAsyncClient {
      *
      * 删除notebook
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNotebookRequest 请求对象
      * @return AsyncInvoker<DeleteNotebookRequest, DeleteNotebookResponse>
@@ -3639,8 +3409,7 @@ public class EiHealthAsyncClient {
      *
      * 获取notebook列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotebookRequest 请求对象
      * @return CompletableFuture<ListNotebookResponse>
@@ -3654,8 +3423,7 @@ public class EiHealthAsyncClient {
      *
      * 获取notebook列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotebookRequest 请求对象
      * @return AsyncInvoker<ListNotebookRequest, ListNotebookResponse>
@@ -3671,8 +3439,7 @@ public class EiHealthAsyncClient {
      *
      * 获取notebook工作环境
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotebookToolRequest 请求对象
      * @return CompletableFuture<ListNotebookToolResponse>
@@ -3686,8 +3453,7 @@ public class EiHealthAsyncClient {
      *
      * 获取notebook工作环境
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotebookToolRequest 请求对象
      * @return AsyncInvoker<ListNotebookToolRequest, ListNotebookToolResponse>
@@ -3703,8 +3469,7 @@ public class EiHealthAsyncClient {
      *
      * 获取notebook详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNotebookRequest 请求对象
      * @return CompletableFuture<ShowNotebookResponse>
@@ -3718,8 +3483,7 @@ public class EiHealthAsyncClient {
      *
      * 获取notebook详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNotebookRequest 请求对象
      * @return AsyncInvoker<ShowNotebookRequest, ShowNotebookResponse>
@@ -3735,8 +3499,7 @@ public class EiHealthAsyncClient {
      *
      * 获取notebook鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNotebookTokenRequest 请求对象
      * @return CompletableFuture<ShowNotebookTokenResponse>
@@ -3750,8 +3513,7 @@ public class EiHealthAsyncClient {
      *
      * 获取notebook鉴权信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNotebookTokenRequest 请求对象
      * @return AsyncInvoker<ShowNotebookTokenRequest, ShowNotebookTokenResponse>
@@ -3767,8 +3529,7 @@ public class EiHealthAsyncClient {
      *
      * 启停notebook
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopOrStartNotebookRequest 请求对象
      * @return CompletableFuture<StopOrStartNotebookResponse>
@@ -3782,8 +3543,7 @@ public class EiHealthAsyncClient {
      *
      * 启停notebook
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param StopOrStartNotebookRequest 请求对象
      * @return AsyncInvoker<StopOrStartNotebookRequest, StopOrStartNotebookResponse>
@@ -3799,8 +3559,7 @@ public class EiHealthAsyncClient {
      *
      * 更新notebook
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNotebookRequest 请求对象
      * @return CompletableFuture<UpdateNotebookResponse>
@@ -3814,8 +3573,7 @@ public class EiHealthAsyncClient {
      *
      * 更新notebook
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNotebookRequest 请求对象
      * @return AsyncInvoker<UpdateNotebookRequest, UpdateNotebookResponse>
@@ -3831,8 +3589,7 @@ public class EiHealthAsyncClient {
      *
      * 获取用户OBS桶列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListObsBucketRequest 请求对象
      * @return CompletableFuture<ListObsBucketResponse>
@@ -3846,8 +3603,7 @@ public class EiHealthAsyncClient {
      *
      * 获取用户OBS桶列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListObsBucketRequest 请求对象
      * @return AsyncInvoker<ListObsBucketRequest, ListObsBucketResponse>
@@ -3863,8 +3619,7 @@ public class EiHealthAsyncClient {
      *
      * 获取用户OBS桶内对象
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListObsBucketObjectRequest 请求对象
      * @return CompletableFuture<ListObsBucketObjectResponse>
@@ -3878,8 +3633,7 @@ public class EiHealthAsyncClient {
      *
      * 获取用户OBS桶内对象
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListObsBucketObjectRequest 请求对象
      * @return AsyncInvoker<ListObsBucketObjectRequest, ListObsBucketObjectResponse>
@@ -3895,8 +3649,7 @@ public class EiHealthAsyncClient {
      *
      * 获取医疗平台信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOverviewRequest 请求对象
      * @return CompletableFuture<ShowOverviewResponse>
@@ -3910,8 +3663,7 @@ public class EiHealthAsyncClient {
      *
      * 获取医疗平台信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOverviewRequest 请求对象
      * @return AsyncInvoker<ShowOverviewRequest, ShowOverviewResponse>
@@ -3927,8 +3679,7 @@ public class EiHealthAsyncClient {
      *
      * 购买性能加速资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePerformanceResourceRequest 请求对象
      * @return CompletableFuture<CreatePerformanceResourceResponse>
@@ -3943,8 +3694,7 @@ public class EiHealthAsyncClient {
      *
      * 购买性能加速资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePerformanceResourceRequest 请求对象
      * @return AsyncInvoker<CreatePerformanceResourceRequest, CreatePerformanceResourceResponse>
@@ -3960,8 +3710,7 @@ public class EiHealthAsyncClient {
      *
      * 删除性能加速资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePerformanceResourceRequest 请求对象
      * @return CompletableFuture<DeletePerformanceResourceResponse>
@@ -3976,8 +3725,7 @@ public class EiHealthAsyncClient {
      *
      * 删除性能加速资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePerformanceResourceRequest 请求对象
      * @return AsyncInvoker<DeletePerformanceResourceRequest, DeletePerformanceResourceResponse>
@@ -3993,8 +3741,7 @@ public class EiHealthAsyncClient {
      *
      * 查询性能加速资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPerformanceResourcesRequest 请求对象
      * @return CompletableFuture<ListPerformanceResourcesResponse>
@@ -4009,8 +3756,7 @@ public class EiHealthAsyncClient {
      *
      * 查询性能加速资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPerformanceResourcesRequest 请求对象
      * @return AsyncInvoker<ListPerformanceResourcesRequest, ListPerformanceResourcesResponse>
@@ -4026,8 +3772,7 @@ public class EiHealthAsyncClient {
      *
      * 更新性能加速资源配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePerformanceResourceRequest 请求对象
      * @return CompletableFuture<UpdatePerformanceResourceResponse>
@@ -4042,8 +3787,7 @@ public class EiHealthAsyncClient {
      *
      * 更新性能加速资源配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePerformanceResourceRequest 请求对象
      * @return AsyncInvoker<UpdatePerformanceResourceRequest, UpdatePerformanceResourceResponse>
@@ -4059,8 +3803,7 @@ public class EiHealthAsyncClient {
      *
      * 批量删除项目成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteMemberRequest 请求对象
      * @return CompletableFuture<BatchDeleteMemberResponse>
@@ -4074,8 +3817,7 @@ public class EiHealthAsyncClient {
      *
      * 批量删除项目成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteMemberRequest 请求对象
      * @return AsyncInvoker<BatchDeleteMemberRequest, BatchDeleteMemberResponse>
@@ -4091,8 +3833,7 @@ public class EiHealthAsyncClient {
      *
      * 创建项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectRequest 请求对象
      * @return CompletableFuture<CreateProjectResponse>
@@ -4106,8 +3847,7 @@ public class EiHealthAsyncClient {
      *
      * 创建项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectRequest 请求对象
      * @return AsyncInvoker<CreateProjectRequest, CreateProjectResponse>
@@ -4123,8 +3863,7 @@ public class EiHealthAsyncClient {
      *
      * 移除项目成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMemberRequest 请求对象
      * @return CompletableFuture<DeleteMemberResponse>
@@ -4138,8 +3877,7 @@ public class EiHealthAsyncClient {
      *
      * 移除项目成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMemberRequest 请求对象
      * @return AsyncInvoker<DeleteMemberRequest, DeleteMemberResponse>
@@ -4155,8 +3893,7 @@ public class EiHealthAsyncClient {
      *
      * 删除项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProjectRequest 请求对象
      * @return CompletableFuture<DeleteProjectResponse>
@@ -4170,8 +3907,7 @@ public class EiHealthAsyncClient {
      *
      * 删除项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteProjectRequest 请求对象
      * @return AsyncInvoker<DeleteProjectRequest, DeleteProjectResponse>
@@ -4187,8 +3923,7 @@ public class EiHealthAsyncClient {
      *
      * 获取项目列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectRequest 请求对象
      * @return CompletableFuture<ListProjectResponse>
@@ -4202,8 +3937,7 @@ public class EiHealthAsyncClient {
      *
      * 获取项目列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectRequest 请求对象
      * @return AsyncInvoker<ListProjectRequest, ListProjectResponse>
@@ -4217,8 +3951,7 @@ public class EiHealthAsyncClient {
      *
      * 获取最近的作业列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecentJobRequest 请求对象
      * @return CompletableFuture<ListRecentJobResponse>
@@ -4232,8 +3965,7 @@ public class EiHealthAsyncClient {
      *
      * 获取最近的作业列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecentJobRequest 请求对象
      * @return AsyncInvoker<ListRecentJobRequest, ListRecentJobResponse>
@@ -4249,8 +3981,7 @@ public class EiHealthAsyncClient {
      *
      * 获取项目详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectRequest 请求对象
      * @return CompletableFuture<ShowProjectResponse>
@@ -4264,8 +3995,7 @@ public class EiHealthAsyncClient {
      *
      * 获取项目详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectRequest 请求对象
      * @return AsyncInvoker<ShowProjectRequest, ShowProjectResponse>
@@ -4279,8 +4009,7 @@ public class EiHealthAsyncClient {
      *
      * 转移项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param TransferProjectRequest 请求对象
      * @return CompletableFuture<TransferProjectResponse>
@@ -4294,8 +4023,7 @@ public class EiHealthAsyncClient {
      *
      * 转移项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param TransferProjectRequest 请求对象
      * @return AsyncInvoker<TransferProjectRequest, TransferProjectResponse>
@@ -4311,8 +4039,7 @@ public class EiHealthAsyncClient {
      *
      * 更新或者添加项目成员角色
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMemberRequest 请求对象
      * @return CompletableFuture<UpdateMemberResponse>
@@ -4326,8 +4053,7 @@ public class EiHealthAsyncClient {
      *
      * 更新或者添加项目成员角色
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMemberRequest 请求对象
      * @return AsyncInvoker<UpdateMemberRequest, UpdateMemberResponse>
@@ -4343,8 +4069,7 @@ public class EiHealthAsyncClient {
      *
      * 更新项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectRequest 请求对象
      * @return CompletableFuture<UpdateProjectResponse>
@@ -4358,8 +4083,7 @@ public class EiHealthAsyncClient {
      *
      * 更新项目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectRequest 请求对象
      * @return AsyncInvoker<UpdateProjectRequest, UpdateProjectResponse>
@@ -4375,8 +4099,7 @@ public class EiHealthAsyncClient {
      *
      * 下载近一万条审计日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadDataTraceRequest 请求对象
      * @return CompletableFuture<DownloadDataTraceResponse>
@@ -4390,8 +4113,7 @@ public class EiHealthAsyncClient {
      *
      * 下载近一万条审计日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadDataTraceRequest 请求对象
      * @return AsyncInvoker<DownloadDataTraceRequest, DownloadDataTraceResponse>
@@ -4407,8 +4129,7 @@ public class EiHealthAsyncClient {
      *
      * 获取项目审计日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectTraceRequest 请求对象
      * @return CompletableFuture<ShowProjectTraceResponse>
@@ -4422,8 +4143,7 @@ public class EiHealthAsyncClient {
      *
      * 获取项目审计日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectTraceRequest 请求对象
      * @return AsyncInvoker<ShowProjectTraceRequest, ShowProjectTraceResponse>
@@ -4439,8 +4159,7 @@ public class EiHealthAsyncClient {
      *
      * 获取指定审计日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectTraceDataRequest 请求对象
      * @return CompletableFuture<ShowProjectTraceDataResponse>
@@ -4455,8 +4174,7 @@ public class EiHealthAsyncClient {
      *
      * 获取指定审计日志
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectTraceDataRequest 请求对象
      * @return AsyncInvoker<ShowProjectTraceDataRequest, ShowProjectTraceDataResponse>
@@ -4472,8 +4190,7 @@ public class EiHealthAsyncClient {
      *
      * 获取项目审计日志追踪器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectTrackerRequest 请求对象
      * @return CompletableFuture<ShowProjectTrackerResponse>
@@ -4487,8 +4204,7 @@ public class EiHealthAsyncClient {
      *
      * 获取项目审计日志追踪器
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectTrackerRequest 请求对象
      * @return AsyncInvoker<ShowProjectTrackerRequest, ShowProjectTrackerResponse>
@@ -4504,8 +4220,7 @@ public class EiHealthAsyncClient {
      *
      * 更新项目审计日志追踪器配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectTrackerRequest 请求对象
      * @return CompletableFuture<UpdateProjectTrackerResponse>
@@ -4520,8 +4235,7 @@ public class EiHealthAsyncClient {
      *
      * 更新项目审计日志追踪器配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateProjectTrackerRequest 请求对象
      * @return AsyncInvoker<UpdateProjectTrackerRequest, UpdateProjectTrackerResponse>
@@ -4537,8 +4251,7 @@ public class EiHealthAsyncClient {
      *
      * 获取资源监控数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceMetricDataRequest 请求对象
      * @return CompletableFuture<ShowResourceMetricDataResponse>
@@ -4553,8 +4266,7 @@ public class EiHealthAsyncClient {
      *
      * 获取资源监控数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceMetricDataRequest 请求对象
      * @return AsyncInvoker<ShowResourceMetricDataRequest, ShowResourceMetricDataResponse>
@@ -4570,8 +4282,7 @@ public class EiHealthAsyncClient {
      *
      * 取消收藏
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteStarRequest 请求对象
      * @return CompletableFuture<DeleteStarResponse>
@@ -4585,8 +4296,7 @@ public class EiHealthAsyncClient {
      *
      * 取消收藏
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteStarRequest 请求对象
      * @return AsyncInvoker<DeleteStarRequest, DeleteStarResponse>
@@ -4600,8 +4310,7 @@ public class EiHealthAsyncClient {
      *
      * 获取收藏资产列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStarRequest 请求对象
      * @return CompletableFuture<ListStarResponse>
@@ -4615,8 +4324,7 @@ public class EiHealthAsyncClient {
      *
      * 获取收藏资产列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStarRequest 请求对象
      * @return AsyncInvoker<ListStarRequest, ListStarResponse>
@@ -4630,8 +4338,7 @@ public class EiHealthAsyncClient {
      *
      * 收藏资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStarRequest 请求对象
      * @return CompletableFuture<UpdateStarResponse>
@@ -4645,8 +4352,7 @@ public class EiHealthAsyncClient {
      *
      * 收藏资产
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStarRequest 请求对象
      * @return AsyncInvoker<UpdateStarRequest, UpdateStarResponse>
@@ -4660,8 +4366,7 @@ public class EiHealthAsyncClient {
      *
      * 获取性能加速资源上统计信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPerformanceResourceStatRequest 请求对象
      * @return CompletableFuture<ListPerformanceResourceStatResponse>
@@ -4676,8 +4381,7 @@ public class EiHealthAsyncClient {
      *
      * 获取性能加速资源上统计信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPerformanceResourceStatRequest 请求对象
      * @return AsyncInvoker<ListPerformanceResourceStatRequest, ListPerformanceResourceStatResponse>
@@ -4693,8 +4397,7 @@ public class EiHealthAsyncClient {
      *
      * 统计应用、流程、作业数目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWorkflowStatisticRequest 请求对象
      * @return CompletableFuture<ListWorkflowStatisticResponse>
@@ -4709,8 +4412,7 @@ public class EiHealthAsyncClient {
      *
      * 统计应用、流程、作业数目
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWorkflowStatisticRequest 请求对象
      * @return AsyncInvoker<ListWorkflowStatisticRequest, ListWorkflowStatisticResponse>
@@ -4726,8 +4428,7 @@ public class EiHealthAsyncClient {
      *
      * 查询存储资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStorageResourcesRequest 请求对象
      * @return CompletableFuture<ListStorageResourcesResponse>
@@ -4742,8 +4443,7 @@ public class EiHealthAsyncClient {
      *
      * 查询存储资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStorageResourcesRequest 请求对象
      * @return AsyncInvoker<ListStorageResourcesRequest, ListStorageResourcesResponse>
@@ -4759,8 +4459,7 @@ public class EiHealthAsyncClient {
      *
      * 创建study
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStudyRequest 请求对象
      * @return CompletableFuture<CreateStudyResponse>
@@ -4774,8 +4473,7 @@ public class EiHealthAsyncClient {
      *
      * 创建study
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStudyRequest 请求对象
      * @return AsyncInvoker<CreateStudyRequest, CreateStudyResponse>
@@ -4789,8 +4487,7 @@ public class EiHealthAsyncClient {
      *
      * 创建study作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStudyJobRequest 请求对象
      * @return CompletableFuture<CreateStudyJobResponse>
@@ -4804,8 +4501,7 @@ public class EiHealthAsyncClient {
      *
      * 创建study作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStudyJobRequest 请求对象
      * @return AsyncInvoker<CreateStudyJobRequest, CreateStudyJobResponse>
@@ -4821,8 +4517,7 @@ public class EiHealthAsyncClient {
      *
      * 删除study
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteStudyRequest 请求对象
      * @return CompletableFuture<DeleteStudyResponse>
@@ -4836,8 +4531,7 @@ public class EiHealthAsyncClient {
      *
      * 删除study
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteStudyRequest 请求对象
      * @return AsyncInvoker<DeleteStudyRequest, DeleteStudyResponse>
@@ -4851,8 +4545,7 @@ public class EiHealthAsyncClient {
      *
      * 列举study
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStudyRequest 请求对象
      * @return CompletableFuture<ListStudyResponse>
@@ -4866,8 +4559,7 @@ public class EiHealthAsyncClient {
      *
      * 列举study
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStudyRequest 请求对象
      * @return AsyncInvoker<ListStudyRequest, ListStudyResponse>
@@ -4881,8 +4573,7 @@ public class EiHealthAsyncClient {
      *
      * 列举study所有作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStudyJobRequest 请求对象
      * @return CompletableFuture<ListStudyJobResponse>
@@ -4896,8 +4587,7 @@ public class EiHealthAsyncClient {
      *
      * 列举study所有作业
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStudyJobRequest 请求对象
      * @return AsyncInvoker<ListStudyJobRequest, ListStudyJobResponse>
@@ -4913,8 +4603,7 @@ public class EiHealthAsyncClient {
      *
      * 获取生成study作业3D结构的内容
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param Show3dStructureContentRequest 请求对象
      * @return CompletableFuture<Show3dStructureContentResponse>
@@ -4929,8 +4618,7 @@ public class EiHealthAsyncClient {
      *
      * 获取生成study作业3D结构的内容
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param Show3dStructureContentRequest 请求对象
      * @return AsyncInvoker<Show3dStructureContentRequest, Show3dStructureContentResponse>
@@ -4946,8 +4634,7 @@ public class EiHealthAsyncClient {
      *
      * 获取study作业的最值信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowExtremumInfoRequest 请求对象
      * @return CompletableFuture<ShowExtremumInfoResponse>
@@ -4961,8 +4648,7 @@ public class EiHealthAsyncClient {
      *
      * 获取study作业的最值信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowExtremumInfoRequest 请求对象
      * @return AsyncInvoker<ShowExtremumInfoRequest, ShowExtremumInfoResponse>
@@ -4978,8 +4664,7 @@ public class EiHealthAsyncClient {
      *
      * 获取跨域归档配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListArchiveConfigsRequest 请求对象
      * @return CompletableFuture<ListArchiveConfigsResponse>
@@ -4993,8 +4678,7 @@ public class EiHealthAsyncClient {
      *
      * 获取跨域归档配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListArchiveConfigsRequest 请求对象
      * @return AsyncInvoker<ListArchiveConfigsRequest, ListArchiveConfigsResponse>
@@ -5010,8 +4694,7 @@ public class EiHealthAsyncClient {
      *
      * 获取系统配置列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEnvRequest 请求对象
      * @return CompletableFuture<ShowEnvResponse>
@@ -5025,8 +4708,7 @@ public class EiHealthAsyncClient {
      *
      * 获取系统配置列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEnvRequest 请求对象
      * @return AsyncInvoker<ShowEnvRequest, ShowEnvResponse>
@@ -5040,8 +4722,7 @@ public class EiHealthAsyncClient {
      *
      * 获取供应商配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVendorRequest 请求对象
      * @return CompletableFuture<ShowVendorResponse>
@@ -5055,8 +4736,7 @@ public class EiHealthAsyncClient {
      *
      * 获取供应商配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVendorRequest 请求对象
      * @return AsyncInvoker<ShowVendorRequest, ShowVendorResponse>
@@ -5070,8 +4750,7 @@ public class EiHealthAsyncClient {
      *
      * 修改跨域归档设置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateArchiveConfigRequest 请求对象
      * @return CompletableFuture<UpdateArchiveConfigResponse>
@@ -5085,8 +4764,7 @@ public class EiHealthAsyncClient {
      *
      * 修改跨域归档设置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateArchiveConfigRequest 请求对象
      * @return AsyncInvoker<UpdateArchiveConfigRequest, UpdateArchiveConfigResponse>
@@ -5102,8 +4780,7 @@ public class EiHealthAsyncClient {
      *
      * 设置供应商配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVendorRequest 请求对象
      * @return CompletableFuture<UpdateVendorResponse>
@@ -5117,8 +4794,7 @@ public class EiHealthAsyncClient {
      *
      * 设置供应商配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVendorRequest 请求对象
      * @return AsyncInvoker<UpdateVendorRequest, UpdateVendorResponse>
@@ -5134,8 +4810,7 @@ public class EiHealthAsyncClient {
      *
      * 获取当前系统配额及资源使用情况
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotaRequest 请求对象
      * @return CompletableFuture<ListQuotaResponse>
@@ -5149,8 +4824,7 @@ public class EiHealthAsyncClient {
      *
      * 获取当前系统配额及资源使用情况
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQuotaRequest 请求对象
      * @return AsyncInvoker<ListQuotaRequest, ListQuotaResponse>
@@ -5164,8 +4838,7 @@ public class EiHealthAsyncClient {
      *
      * 创建模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTemplateRequest 请求对象
      * @return CompletableFuture<CreateTemplateResponse>
@@ -5179,8 +4852,7 @@ public class EiHealthAsyncClient {
      *
      * 创建模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTemplateRequest 请求对象
      * @return AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse>
@@ -5196,8 +4868,7 @@ public class EiHealthAsyncClient {
      *
      * 删除模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTemplateRequest 请求对象
      * @return CompletableFuture<DeleteTemplateResponse>
@@ -5211,8 +4882,7 @@ public class EiHealthAsyncClient {
      *
      * 删除模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>
@@ -5228,8 +4898,7 @@ public class EiHealthAsyncClient {
      *
      * 从其他项目导入模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportTemplateRequest 请求对象
      * @return CompletableFuture<ImportTemplateResponse>
@@ -5243,8 +4912,7 @@ public class EiHealthAsyncClient {
      *
      * 从其他项目导入模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportTemplateRequest 请求对象
      * @return AsyncInvoker<ImportTemplateRequest, ImportTemplateResponse>
@@ -5260,8 +4928,7 @@ public class EiHealthAsyncClient {
      *
      * 查询模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplateRequest 请求对象
      * @return CompletableFuture<ListTemplateResponse>
@@ -5275,8 +4942,7 @@ public class EiHealthAsyncClient {
      *
      * 查询模板列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplateRequest 请求对象
      * @return AsyncInvoker<ListTemplateRequest, ListTemplateResponse>
@@ -5292,8 +4958,7 @@ public class EiHealthAsyncClient {
      *
      * 查询模板详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTemplateRequest 请求对象
      * @return CompletableFuture<ShowTemplateResponse>
@@ -5307,8 +4972,7 @@ public class EiHealthAsyncClient {
      *
      * 查询模板详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTemplateRequest 请求对象
      * @return AsyncInvoker<ShowTemplateRequest, ShowTemplateResponse>
@@ -5324,8 +4988,7 @@ public class EiHealthAsyncClient {
      *
      * 上传模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadTemplateRequest 请求对象
      * @return CompletableFuture<UploadTemplateResponse>
@@ -5339,8 +5002,7 @@ public class EiHealthAsyncClient {
      *
      * 上传模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadTemplateRequest 请求对象
      * @return AsyncInvoker<UploadTemplateRequest, UploadTemplateResponse>
@@ -5356,8 +5018,7 @@ public class EiHealthAsyncClient {
      *
      * 发送验证码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCodeRequest 请求对象
      * @return CompletableFuture<CreateCodeResponse>
@@ -5371,8 +5032,7 @@ public class EiHealthAsyncClient {
      *
      * 发送验证码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCodeRequest 请求对象
      * @return AsyncInvoker<CreateCodeRequest, CreateCodeResponse>
@@ -5386,8 +5046,7 @@ public class EiHealthAsyncClient {
      *
      * 创建用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateUserRequest 请求对象
      * @return CompletableFuture<CreateUserResponse>
@@ -5401,8 +5060,7 @@ public class EiHealthAsyncClient {
      *
      * 创建用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateUserRequest 请求对象
      * @return AsyncInvoker<CreateUserRequest, CreateUserResponse>
@@ -5416,8 +5074,7 @@ public class EiHealthAsyncClient {
      *
      * 删除用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteUserRequest 请求对象
      * @return CompletableFuture<DeleteUserResponse>
@@ -5431,8 +5088,7 @@ public class EiHealthAsyncClient {
      *
      * 删除用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteUserRequest 请求对象
      * @return AsyncInvoker<DeleteUserRequest, DeleteUserResponse>
@@ -5446,8 +5102,7 @@ public class EiHealthAsyncClient {
      *
      * 获取可用的认证方法
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMfaRequest 请求对象
      * @return CompletableFuture<ListMfaResponse>
@@ -5461,8 +5116,7 @@ public class EiHealthAsyncClient {
      *
      * 获取可用的认证方法
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListMfaRequest 请求对象
      * @return AsyncInvoker<ListMfaRequest, ListMfaResponse>
@@ -5476,8 +5130,7 @@ public class EiHealthAsyncClient {
      *
      * 获取用户列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUserRequest 请求对象
      * @return CompletableFuture<ListUserResponse>
@@ -5491,8 +5144,7 @@ public class EiHealthAsyncClient {
      *
      * 获取用户列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUserRequest 请求对象
      * @return AsyncInvoker<ListUserRequest, ListUserResponse>
@@ -5506,8 +5158,7 @@ public class EiHealthAsyncClient {
      *
      * 校验token是否可访问当前环境
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTokenVerificationRequest 请求对象
      * @return CompletableFuture<ShowTokenVerificationResponse>
@@ -5522,8 +5173,7 @@ public class EiHealthAsyncClient {
      *
      * 校验token是否可访问当前环境
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTokenVerificationRequest 请求对象
      * @return AsyncInvoker<ShowTokenVerificationRequest, ShowTokenVerificationResponse>
@@ -5539,8 +5189,7 @@ public class EiHealthAsyncClient {
      *
      * 获取指定用户详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserRequest 请求对象
      * @return CompletableFuture<ShowUserResponse>
@@ -5554,8 +5203,7 @@ public class EiHealthAsyncClient {
      *
      * 获取指定用户详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserRequest 请求对象
      * @return AsyncInvoker<ShowUserRequest, ShowUserResponse>
@@ -5569,8 +5217,7 @@ public class EiHealthAsyncClient {
      *
      * 查询用户设置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserSettingRequest 请求对象
      * @return CompletableFuture<ShowUserSettingResponse>
@@ -5584,8 +5231,7 @@ public class EiHealthAsyncClient {
      *
      * 查询用户设置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUserSettingRequest 请求对象
      * @return AsyncInvoker<ShowUserSettingRequest, ShowUserSettingResponse>
@@ -5601,8 +5247,7 @@ public class EiHealthAsyncClient {
      *
      * 新用户重置密码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInitPasswordRequest 请求对象
      * @return CompletableFuture<UpdateInitPasswordResponse>
@@ -5616,8 +5261,7 @@ public class EiHealthAsyncClient {
      *
      * 新用户重置密码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInitPasswordRequest 请求对象
      * @return AsyncInvoker<UpdateInitPasswordRequest, UpdateInitPasswordResponse>
@@ -5633,8 +5277,7 @@ public class EiHealthAsyncClient {
      *
      * 修改密码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePasswordRequest 请求对象
      * @return CompletableFuture<UpdatePasswordResponse>
@@ -5648,8 +5291,7 @@ public class EiHealthAsyncClient {
      *
      * 修改密码
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePasswordRequest 请求对象
      * @return AsyncInvoker<UpdatePasswordRequest, UpdatePasswordResponse>
@@ -5665,8 +5307,7 @@ public class EiHealthAsyncClient {
      *
      * 修改用户基本信息（邮箱，手机）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserRequest 请求对象
      * @return CompletableFuture<UpdateUserResponse>
@@ -5680,8 +5321,7 @@ public class EiHealthAsyncClient {
      *
      * 修改用户基本信息（邮箱，手机）
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserRequest 请求对象
      * @return AsyncInvoker<UpdateUserRequest, UpdateUserResponse>
@@ -5695,8 +5335,7 @@ public class EiHealthAsyncClient {
      *
      * 最终租户修改子用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserByDomainRequest 请求对象
      * @return CompletableFuture<UpdateUserByDomainResponse>
@@ -5710,8 +5349,7 @@ public class EiHealthAsyncClient {
      *
      * 最终租户修改子用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserByDomainRequest 请求对象
      * @return AsyncInvoker<UpdateUserByDomainRequest, UpdateUserByDomainResponse>
@@ -5727,8 +5365,7 @@ public class EiHealthAsyncClient {
      *
      * 更新用户角色
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserRoleRequest 请求对象
      * @return CompletableFuture<UpdateUserRoleResponse>
@@ -5742,8 +5379,7 @@ public class EiHealthAsyncClient {
      *
      * 更新用户角色
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserRoleRequest 请求对象
      * @return AsyncInvoker<UpdateUserRoleRequest, UpdateUserRoleResponse>
@@ -5759,8 +5395,7 @@ public class EiHealthAsyncClient {
      *
      * 更新用户设置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserSettingRequest 请求对象
      * @return CompletableFuture<UpdateUserSettingResponse>
@@ -5774,8 +5409,7 @@ public class EiHealthAsyncClient {
      *
      * 更新用户设置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateUserSettingRequest 请求对象
      * @return AsyncInvoker<UpdateUserSettingRequest, UpdateUserSettingResponse>
@@ -5791,8 +5425,7 @@ public class EiHealthAsyncClient {
      *
      * 预验证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateCodeRequest 请求对象
      * @return CompletableFuture<ValidateCodeResponse>
@@ -5806,8 +5439,7 @@ public class EiHealthAsyncClient {
      *
      * 预验证
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ValidateCodeRequest 请求对象
      * @return AsyncInvoker<ValidateCodeRequest, ValidateCodeResponse>
@@ -5823,8 +5455,7 @@ public class EiHealthAsyncClient {
      *
      * 获取供应商列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVendorRequest 请求对象
      * @return CompletableFuture<ListVendorResponse>
@@ -5838,8 +5469,7 @@ public class EiHealthAsyncClient {
      *
      * 获取供应商列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVendorRequest 请求对象
      * @return AsyncInvoker<ListVendorRequest, ListVendorResponse>
@@ -5853,8 +5483,7 @@ public class EiHealthAsyncClient {
      *
      * 创建流程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateWorkflowRequest 请求对象
      * @return CompletableFuture<CreateWorkflowResponse>
@@ -5868,8 +5497,7 @@ public class EiHealthAsyncClient {
      *
      * 创建流程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateWorkflowRequest 请求对象
      * @return AsyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>
@@ -5885,8 +5513,7 @@ public class EiHealthAsyncClient {
      *
      * 删除流程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteWorkflowRequest 请求对象
      * @return CompletableFuture<DeleteWorkflowResponse>
@@ -5900,8 +5527,7 @@ public class EiHealthAsyncClient {
      *
      * 删除流程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteWorkflowRequest 请求对象
      * @return AsyncInvoker<DeleteWorkflowRequest, DeleteWorkflowResponse>
@@ -5917,8 +5543,7 @@ public class EiHealthAsyncClient {
      *
      * 导入流程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportWorkflowRequest 请求对象
      * @return CompletableFuture<ImportWorkflowResponse>
@@ -5932,8 +5557,7 @@ public class EiHealthAsyncClient {
      *
      * 导入流程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportWorkflowRequest 请求对象
      * @return AsyncInvoker<ImportWorkflowRequest, ImportWorkflowResponse>
@@ -5949,8 +5573,7 @@ public class EiHealthAsyncClient {
      *
      * 获取流程列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWorkflowRequest 请求对象
      * @return CompletableFuture<ListWorkflowResponse>
@@ -5964,8 +5587,7 @@ public class EiHealthAsyncClient {
      *
      * 获取流程列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListWorkflowRequest 请求对象
      * @return AsyncInvoker<ListWorkflowRequest, ListWorkflowResponse>
@@ -5981,8 +5603,7 @@ public class EiHealthAsyncClient {
      *
      * 获取流程详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowWorkflowRequest 请求对象
      * @return CompletableFuture<ShowWorkflowResponse>
@@ -5996,8 +5617,7 @@ public class EiHealthAsyncClient {
      *
      * 获取流程详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowWorkflowRequest 请求对象
      * @return AsyncInvoker<ShowWorkflowRequest, ShowWorkflowResponse>
@@ -6013,8 +5633,7 @@ public class EiHealthAsyncClient {
      *
      * 订阅流程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SubscribeWorkflowRequest 请求对象
      * @return CompletableFuture<SubscribeWorkflowResponse>
@@ -6028,8 +5647,7 @@ public class EiHealthAsyncClient {
      *
      * 订阅流程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param SubscribeWorkflowRequest 请求对象
      * @return AsyncInvoker<SubscribeWorkflowRequest, SubscribeWorkflowResponse>
@@ -6045,8 +5663,7 @@ public class EiHealthAsyncClient {
      *
      * 更新流程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateWorkflowRequest 请求对象
      * @return CompletableFuture<UpdateWorkflowResponse>
@@ -6060,8 +5677,7 @@ public class EiHealthAsyncClient {
      *
      * 更新流程
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateWorkflowRequest 请求对象
      * @return AsyncInvoker<UpdateWorkflowRequest, UpdateWorkflowResponse>

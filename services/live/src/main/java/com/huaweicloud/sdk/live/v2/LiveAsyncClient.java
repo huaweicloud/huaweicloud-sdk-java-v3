@@ -28,8 +28,7 @@ public class LiveAsyncClient {
      * 
      * 支持查询当天，当前数据延时少于1分钟。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAreaDetailRequest 请求对象
      * @return CompletableFuture<ListAreaDetailResponse>
@@ -47,8 +46,7 @@ public class LiveAsyncClient {
      * 
      * 支持查询当天，当前数据延时少于1分钟。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAreaDetailRequest 请求对象
      * @return AsyncInvoker<ListAreaDetailRequest, ListAreaDetailResponse>
@@ -64,8 +62,7 @@ public class LiveAsyncClient {
      *
      * 查询播放域名带宽数据。  最大查询跨度31天，最大查询周期一年。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBandwidthDetailRequest 请求对象
      * @return CompletableFuture<ListBandwidthDetailResponse>
@@ -79,8 +76,7 @@ public class LiveAsyncClient {
      *
      * 查询播放域名带宽数据。  最大查询跨度31天，最大查询周期一年。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBandwidthDetailRequest 请求对象
      * @return AsyncInvoker<ListBandwidthDetailRequest, ListBandwidthDetailResponse>
@@ -96,8 +92,7 @@ public class LiveAsyncClient {
      *
      * 查询指定时间范围内播放带宽峰值。  最大查询跨度31天，最大查询周期一年。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDomainBandwidthPeakRequest 请求对象
      * @return CompletableFuture<ListDomainBandwidthPeakResponse>
@@ -112,8 +107,7 @@ public class LiveAsyncClient {
      *
      * 查询指定时间范围内播放带宽峰值。  最大查询跨度31天，最大查询周期一年。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDomainBandwidthPeakRequest 请求对象
      * @return AsyncInvoker<ListDomainBandwidthPeakRequest, ListDomainBandwidthPeakResponse>
@@ -129,8 +123,7 @@ public class LiveAsyncClient {
      *
      * 查询播放域名流量数据。  最大查询跨度31天，最大查询周期一年。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDomainTrafficDetailRequest 请求对象
      * @return CompletableFuture<ListDomainTrafficDetailResponse>
@@ -145,8 +138,7 @@ public class LiveAsyncClient {
      *
      * 查询播放域名流量数据。  最大查询跨度31天，最大查询周期一年。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDomainTrafficDetailRequest 请求对象
      * @return AsyncInvoker<ListDomainTrafficDetailRequest, ListDomainTrafficDetailResponse>
@@ -162,8 +154,7 @@ public class LiveAsyncClient {
      *
      * 查询指定时间范围内流量汇总量。  最大查询跨度31天，最大查询周期一年。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDomainTrafficSummaryRequest 请求对象
      * @return CompletableFuture<ListDomainTrafficSummaryResponse>
@@ -178,8 +169,7 @@ public class LiveAsyncClient {
      *
      * 查询指定时间范围内流量汇总量。  最大查询跨度31天，最大查询周期一年。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDomainTrafficSummaryRequest 请求对象
      * @return AsyncInvoker<ListDomainTrafficSummaryRequest, ListDomainTrafficSummaryResponse>
@@ -199,8 +189,7 @@ public class LiveAsyncClient {
      * 
      * 最大查询跨度1天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHistoryStreamsRequest 请求对象
      * @return CompletableFuture<ListHistoryStreamsResponse>
@@ -218,8 +207,7 @@ public class LiveAsyncClient {
      * 
      * 最大查询跨度1天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHistoryStreamsRequest 请求对象
      * @return AsyncInvoker<ListHistoryStreamsRequest, ListHistoryStreamsResponse>
@@ -235,8 +223,7 @@ public class LiveAsyncClient {
      *
      * 查询直播拉流HTTP状态码接口。  获取加速域名1分钟粒度的HTTP返回码  最大查询跨度不能超过24小时，最大查询周期7天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQueryHttpCodeRequest 请求对象
      * @return CompletableFuture<ListQueryHttpCodeResponse>
@@ -250,8 +237,7 @@ public class LiveAsyncClient {
      *
      * 查询直播拉流HTTP状态码接口。  获取加速域名1分钟粒度的HTTP返回码  最大查询跨度不能超过24小时，最大查询周期7天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQueryHttpCodeRequest 请求对象
      * @return AsyncInvoker<ListQueryHttpCodeRequest, ListQueryHttpCodeResponse>
@@ -267,8 +253,7 @@ public class LiveAsyncClient {
      *
      * 查询直播租户每小时录制的最大并发数，计算1小时内每分钟的并发总路数，取最大值做为统计值。  最大查询跨度31天，最大查询周期90天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecordDataRequest 请求对象
      * @return CompletableFuture<ListRecordDataResponse>
@@ -282,8 +267,7 @@ public class LiveAsyncClient {
      *
      * 查询直播租户每小时录制的最大并发数，计算1小时内每分钟的并发总路数，取最大值做为统计值。  最大查询跨度31天，最大查询周期90天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRecordDataRequest 请求对象
      * @return AsyncInvoker<ListRecordDataRequest, ListRecordDataResponse>
@@ -299,8 +283,7 @@ public class LiveAsyncClient {
      *
      * 查询直播域名每小时的截图数量。  最大查询跨度31天，最大查询周期90天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSnapshotDataRequest 请求对象
      * @return CompletableFuture<ListSnapshotDataResponse>
@@ -314,8 +297,7 @@ public class LiveAsyncClient {
      *
      * 查询直播域名每小时的截图数量。  最大查询跨度31天，最大查询周期90天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSnapshotDataRequest 请求对象
      * @return AsyncInvoker<ListSnapshotDataRequest, ListSnapshotDataResponse>
@@ -331,8 +313,7 @@ public class LiveAsyncClient {
      *
      * 查询直播域名每小时的转码时长数据。  最大查询跨度31天，最大查询周期90天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTranscodeDataRequest 请求对象
      * @return CompletableFuture<ListTranscodeDataResponse>
@@ -346,8 +327,7 @@ public class LiveAsyncClient {
      *
      * 查询直播域名每小时的转码时长数据。  最大查询跨度31天，最大查询周期90天。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTranscodeDataRequest 请求对象
      * @return AsyncInvoker<ListTranscodeDataRequest, ListTranscodeDataResponse>
@@ -363,8 +343,7 @@ public class LiveAsyncClient {
      *
      * 查询观众趋势。  最大查询跨度31天，最大查询周期一年。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUsersOfStreamRequest 请求对象
      * @return CompletableFuture<ListUsersOfStreamResponse>
@@ -378,8 +357,7 @@ public class LiveAsyncClient {
      *
      * 查询观众趋势。  最大查询跨度31天，最大查询周期一年。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListUsersOfStreamRequest 请求对象
      * @return AsyncInvoker<ListUsersOfStreamRequest, ListUsersOfStreamResponse>
@@ -395,8 +373,7 @@ public class LiveAsyncClient {
      *
      * 查询域名维度推流路数接口。  最大查询跨度31天，最大查询周期1年。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStreamCountRequest 请求对象
      * @return CompletableFuture<ShowStreamCountResponse>
@@ -410,8 +387,7 @@ public class LiveAsyncClient {
      *
      * 查询域名维度推流路数接口。  最大查询跨度31天，最大查询周期1年。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStreamCountRequest 请求对象
      * @return AsyncInvoker<ShowStreamCountRequest, ShowStreamCountResponse>
@@ -428,8 +404,7 @@ public class LiveAsyncClient {
      * 查询播放画像信息。  最大查询跨度1天，最大查询周期31天。
      * 不统计协议为HLS的播放时长（play_duration）信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStreamPortraitRequest 请求对象
      * @return CompletableFuture<ShowStreamPortraitResponse>
@@ -444,8 +419,7 @@ public class LiveAsyncClient {
      * 查询播放画像信息。  最大查询跨度1天，最大查询周期31天。
      * 不统计协议为HLS的播放时长（play_duration）信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStreamPortraitRequest 请求对象
      * @return AsyncInvoker<ShowStreamPortraitRequest, ShowStreamPortraitResponse>
@@ -461,8 +435,7 @@ public class LiveAsyncClient {
      *
      * 查询上行带宽数据。  最大查询跨度31天，最大查询周期1年。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUpBandwidthRequest 请求对象
      * @return CompletableFuture<ShowUpBandwidthResponse>
@@ -476,8 +449,7 @@ public class LiveAsyncClient {
      *
      * 查询上行带宽数据。  最大查询跨度31天，最大查询周期1年。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowUpBandwidthRequest 请求对象
      * @return AsyncInvoker<ShowUpBandwidthRequest, ShowUpBandwidthResponse>
@@ -497,8 +469,7 @@ public class LiveAsyncClient {
      * 
      * 返回的码率数据列表粒度为1秒钟。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSingleStreamBitrateRequest 请求对象
      * @return CompletableFuture<ListSingleStreamBitrateResponse>
@@ -517,8 +488,7 @@ public class LiveAsyncClient {
      * 
      * 返回的码率数据列表粒度为1秒钟。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSingleStreamBitrateRequest 请求对象
      * @return AsyncInvoker<ListSingleStreamBitrateRequest, ListSingleStreamBitrateResponse>
@@ -538,8 +508,7 @@ public class LiveAsyncClient {
      * 
      * 返回的码率数据列表粒度为1秒钟。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSingleStreamDetailRequest 请求对象
      * @return CompletableFuture<ListSingleStreamDetailResponse>
@@ -558,8 +527,7 @@ public class LiveAsyncClient {
      * 
      * 返回的码率数据列表粒度为1秒钟。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSingleStreamDetailRequest 请求对象
      * @return AsyncInvoker<ListSingleStreamDetailRequest, ListSingleStreamDetailResponse>
@@ -579,8 +547,7 @@ public class LiveAsyncClient {
      * 
      * 返回的帧率数据列表粒度为1秒钟。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSingleStreamFramerateRequest 请求对象
      * @return CompletableFuture<ListSingleStreamFramerateResponse>
@@ -599,8 +566,7 @@ public class LiveAsyncClient {
      * 
      * 返回的帧率数据列表粒度为1秒钟。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSingleStreamFramerateRequest 请求对象
      * @return AsyncInvoker<ListSingleStreamFramerateRequest, ListSingleStreamFramerateResponse>

@@ -24,8 +24,7 @@ public class EpsAsyncClient {
      *
      * 创建企业项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<CreateEnterpriseProjectResponse>
@@ -40,8 +39,7 @@ public class EpsAsyncClient {
      *
      * 创建企业项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<CreateEnterpriseProjectRequest, CreateEnterpriseProjectResponse>
@@ -57,8 +55,7 @@ public class EpsAsyncClient {
      *
      * 停用企业项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisableEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<DisableEnterpriseProjectResponse>
@@ -73,8 +70,7 @@ public class EpsAsyncClient {
      *
      * 停用企业项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisableEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<DisableEnterpriseProjectRequest, DisableEnterpriseProjectResponse>
@@ -90,8 +86,7 @@ public class EpsAsyncClient {
      *
      * 启用企业项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<EnableEnterpriseProjectResponse>
@@ -106,8 +101,7 @@ public class EpsAsyncClient {
      *
      * 启用企业项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<EnableEnterpriseProjectRequest, EnableEnterpriseProjectResponse>
@@ -123,8 +117,7 @@ public class EpsAsyncClient {
      *
      * 查询企业项目的API版本列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return CompletableFuture<ListApiVersionsResponse>
@@ -138,8 +131,7 @@ public class EpsAsyncClient {
      *
      * 查询企业项目的API版本列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
@@ -155,8 +147,7 @@ public class EpsAsyncClient {
      *
      * 查询当前用户已授权的企业项目列表，用户可以使用企业项目绑定资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<ListEnterpriseProjectResponse>
@@ -171,8 +162,7 @@ public class EpsAsyncClient {
      *
      * 查询当前用户已授权的企业项目列表，用户可以使用企业项目绑定资源。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<ListEnterpriseProjectRequest, ListEnterpriseProjectResponse>
@@ -188,8 +178,7 @@ public class EpsAsyncClient {
      *
      * 查询企业项目支持的服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProvidersRequest 请求对象
      * @return CompletableFuture<ListProvidersResponse>
@@ -203,8 +192,7 @@ public class EpsAsyncClient {
      *
      * 查询企业项目支持的服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProvidersRequest 请求对象
      * @return AsyncInvoker<ListProvidersRequest, ListProvidersResponse>
@@ -219,8 +207,7 @@ public class EpsAsyncClient {
      *
      * 迁移资源到目标企业项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MigrateResourceRequest 请求对象
      * @return CompletableFuture<MigrateResourceResponse>
@@ -234,8 +221,7 @@ public class EpsAsyncClient {
      *
      * 迁移资源到目标企业项目。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MigrateResourceRequest 请求对象
      * @return AsyncInvoker<MigrateResourceRequest, MigrateResourceResponse>
@@ -251,8 +237,7 @@ public class EpsAsyncClient {
      *
      * 查询指定的企业项目API版本号详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
      * @return CompletableFuture<ShowApiVersionResponse>
@@ -266,8 +251,7 @@ public class EpsAsyncClient {
      *
      * 查询指定的企业项目API版本号详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
      * @return AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
@@ -283,8 +267,7 @@ public class EpsAsyncClient {
      *
      * 查询企业项目详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<ShowEnterpriseProjectResponse>
@@ -299,8 +282,7 @@ public class EpsAsyncClient {
      *
      * 查询企业项目详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse>
@@ -316,8 +298,7 @@ public class EpsAsyncClient {
      *
      * 查询企业项目的配额信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEnterpriseProjectQuotaRequest 请求对象
      * @return CompletableFuture<ShowEnterpriseProjectQuotaResponse>
@@ -332,8 +313,7 @@ public class EpsAsyncClient {
      *
      * 查询企业项目的配额信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEnterpriseProjectQuotaRequest 请求对象
      * @return AsyncInvoker<ShowEnterpriseProjectQuotaRequest, ShowEnterpriseProjectQuotaResponse>
@@ -349,8 +329,7 @@ public class EpsAsyncClient {
      *
      * 查询企业项目下绑定的资源详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceBindEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<ShowResourceBindEnterpriseProjectResponse>
@@ -365,8 +344,7 @@ public class EpsAsyncClient {
      *
      * 查询企业项目下绑定的资源详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowResourceBindEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse>
@@ -382,8 +360,7 @@ public class EpsAsyncClient {
      *
      * 修改企业项目。当前仅支持修改名称和描述。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<UpdateEnterpriseProjectResponse>
@@ -398,8 +375,7 @@ public class EpsAsyncClient {
      *
      * 修改企业项目。当前仅支持修改名称和描述。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<UpdateEnterpriseProjectRequest, UpdateEnterpriseProjectResponse>

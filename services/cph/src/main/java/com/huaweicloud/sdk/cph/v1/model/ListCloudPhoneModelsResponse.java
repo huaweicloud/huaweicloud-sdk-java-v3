@@ -22,7 +22,7 @@ public class ListCloudPhoneModelsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone_models")
 
-    private List<Object> phoneModels = null;
+    private List<PhoneModel> phoneModels = null;
 
     public ListCloudPhoneModelsResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -30,7 +30,7 @@ public class ListCloudPhoneModelsResponse extends SdkResponse {
     }
 
     /**
-     * 请求的唯一标识ID
+     * 请求的唯一标识ID。
      * @return requestId
      */
     public String getRequestId() {
@@ -41,12 +41,12 @@ public class ListCloudPhoneModelsResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public ListCloudPhoneModelsResponse withPhoneModels(List<Object> phoneModels) {
+    public ListCloudPhoneModelsResponse withPhoneModels(List<PhoneModel> phoneModels) {
         this.phoneModels = phoneModels;
         return this;
     }
 
-    public ListCloudPhoneModelsResponse addPhoneModelsItem(Object phoneModelsItem) {
+    public ListCloudPhoneModelsResponse addPhoneModelsItem(PhoneModel phoneModelsItem) {
         if (this.phoneModels == null) {
             this.phoneModels = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class ListCloudPhoneModelsResponse extends SdkResponse {
         return this;
     }
 
-    public ListCloudPhoneModelsResponse withPhoneModels(Consumer<List<Object>> phoneModelsSetter) {
+    public ListCloudPhoneModelsResponse withPhoneModels(Consumer<List<PhoneModel>> phoneModelsSetter) {
         if (this.phoneModels == null) {
             this.phoneModels = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class ListCloudPhoneModelsResponse extends SdkResponse {
      * 云手机的规格信息
      * @return phoneModels
      */
-    public List<Object> getPhoneModels() {
+    public List<PhoneModel> getPhoneModels() {
         return phoneModels;
     }
 
-    public void setPhoneModels(List<Object> phoneModels) {
+    public void setPhoneModels(List<PhoneModel> phoneModels) {
         this.phoneModels = phoneModels;
     }
 

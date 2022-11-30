@@ -277,6 +277,13 @@ public class CphMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCloudPhoneModelsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
 
         // response
 
@@ -616,10 +623,10 @@ public class CphMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<ResetRestartRequestBody>withRequestField("body",
+        builder.<ResetCloudPhoneRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ResetRestartRequestBody.class),
+            TypeCasts.uncheckedConversion(ResetCloudPhoneRequestBody.class),
             f -> f.withMarshaller(ResetCloudPhoneRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -641,10 +648,10 @@ public class CphMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<ResetRestartRequestBody>withRequestField("body",
+        builder.<RestartCloudPhoneRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ResetRestartRequestBody.class),
+            TypeCasts.uncheckedConversion(RestartCloudPhoneRequestBody.class),
             f -> f.withMarshaller(RestartCloudPhoneRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -869,10 +876,10 @@ public class CphMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Phones>withRequestField("body",
+        builder.<UpdateCloudPhonePropertyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Phones.class),
+            TypeCasts.uncheckedConversion(UpdateCloudPhonePropertyRequestBody.class),
             f -> f.withMarshaller(UpdateCloudPhonePropertyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -971,6 +978,54 @@ public class CphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<InstallApkRequest, InstallApkResponse> installApk = genForinstallApk();
+
+    private static HttpRequestDef<InstallApkRequest, InstallApkResponse> genForinstallApk() {
+        // basic
+        HttpRequestDef.Builder<InstallApkRequest, InstallApkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, InstallApkRequest.class, InstallApkResponse.class)
+                .withName("InstallApk")
+                .withUri("/v1/{project_id}/cloud-phone/phones/commands")
+                .withContentType("application/json");
+
+        // requests
+        builder.<InstallApkRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstallApkRequestBody.class),
+            f -> f.withMarshaller(InstallApkRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<PushFileRequest, PushFileResponse> pushFile = genForpushFile();
+
+    private static HttpRequestDef<PushFileRequest, PushFileResponse> genForpushFile() {
+        // basic
+        HttpRequestDef.Builder<PushFileRequest, PushFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, PushFileRequest.class, PushFileResponse.class)
+                .withName("PushFile")
+                .withUri("/v1/{project_id}/cloud-phone/phones/commands")
+                .withContentType("application/json");
+
+        // requests
+        builder.<PushFileRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PushFileRequestBody.class),
+            f -> f.withMarshaller(PushFileRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunShellCommandRequest, RunShellCommandResponse> runShellCommand =
         genForrunShellCommand();
 
@@ -1013,6 +1068,30 @@ public class CphMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RunSyncCommandRequestBody.class),
             f -> f.withMarshaller(RunSyncCommandRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UninstallApkRequest, UninstallApkResponse> uninstallApk = genForuninstallApk();
+
+    private static HttpRequestDef<UninstallApkRequest, UninstallApkResponse> genForuninstallApk() {
+        // basic
+        HttpRequestDef.Builder<UninstallApkRequest, UninstallApkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UninstallApkRequest.class, UninstallApkResponse.class)
+                .withName("UninstallApk")
+                .withUri("/v1/{project_id}/cloud-phone/phones/commands")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UninstallApkRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UninstallApkRequestBody.class),
+            f -> f.withMarshaller(UninstallApkRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -24,8 +24,7 @@ public class CsmsAsyncClient {
      *
      * - 功能介绍：批量添加或删除凭据标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateOrDeleteTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateOrDeleteTagsResponse>
@@ -40,8 +39,7 @@ public class CsmsAsyncClient {
      *
      * - 功能介绍：批量添加或删除凭据标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateOrDeleteTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse>
@@ -61,8 +59,7 @@ public class CsmsAsyncClient {
      * 
      * 初始版本的状态被标记为SYSCURRENT。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecretRequest 请求对象
      * @return CompletableFuture<CreateSecretResponse>
@@ -80,8 +77,7 @@ public class CsmsAsyncClient {
      * 
      * 初始版本的状态被标记为SYSCURRENT。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecretRequest 请求对象
      * @return AsyncInvoker<CreateSecretRequest, CreateSecretResponse>
@@ -96,8 +92,7 @@ public class CsmsAsyncClient {
      *
      * - 功能介绍：添加凭据标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecretTagRequest 请求对象
      * @return CompletableFuture<CreateSecretTagResponse>
@@ -111,8 +106,7 @@ public class CsmsAsyncClient {
      *
      * - 功能介绍：添加凭据标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecretTagRequest 请求对象
      * @return AsyncInvoker<CreateSecretTagRequest, CreateSecretTagResponse>
@@ -128,8 +122,7 @@ public class CsmsAsyncClient {
      *
      * 在指定的凭据中，创建一个新的凭据版本，用于加密保管新的凭据值。默认情况下，新创建的凭据版本被标记为SYSCURRENT状态，而SYSCURRENT标记的前一个凭据版本被标记为SYSPREVIOUS状态。您可以通过指定VersionStage参数来覆盖默认行为。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecretVersionRequest 请求对象
      * @return CompletableFuture<CreateSecretVersionResponse>
@@ -143,8 +136,7 @@ public class CsmsAsyncClient {
      *
      * 在指定的凭据中，创建一个新的凭据版本，用于加密保管新的凭据值。默认情况下，新创建的凭据版本被标记为SYSCURRENT状态，而SYSCURRENT标记的前一个凭据版本被标记为SYSPREVIOUS状态。您可以通过指定VersionStage参数来覆盖默认行为。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecretVersionRequest 请求对象
      * @return AsyncInvoker<CreateSecretVersionRequest, CreateSecretVersionResponse>
@@ -160,8 +152,7 @@ public class CsmsAsyncClient {
      *
      * 立即删除指定的凭据，且无法恢复。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecretRequest 请求对象
      * @return CompletableFuture<DeleteSecretResponse>
@@ -175,8 +166,7 @@ public class CsmsAsyncClient {
      *
      * 立即删除指定的凭据，且无法恢复。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecretRequest 请求对象
      * @return AsyncInvoker<DeleteSecretRequest, DeleteSecretResponse>
@@ -191,8 +181,7 @@ public class CsmsAsyncClient {
      *
      * 指定延迟删除时间，创建删除凭据的定时任务，可设置7~30天的的延迟删除时间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecretForScheduleRequest 请求对象
      * @return CompletableFuture<DeleteSecretForScheduleResponse>
@@ -207,8 +196,7 @@ public class CsmsAsyncClient {
      *
      * 指定延迟删除时间，创建删除凭据的定时任务，可设置7~30天的的延迟删除时间。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecretForScheduleRequest 请求对象
      * @return AsyncInvoker<DeleteSecretForScheduleRequest, DeleteSecretForScheduleResponse>
@@ -224,8 +212,7 @@ public class CsmsAsyncClient {
      *
      * 删除指定的凭据版本状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecretStageRequest 请求对象
      * @return CompletableFuture<DeleteSecretStageResponse>
@@ -239,8 +226,7 @@ public class CsmsAsyncClient {
      *
      * 删除指定的凭据版本状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecretStageRequest 请求对象
      * @return AsyncInvoker<DeleteSecretStageRequest, DeleteSecretStageResponse>
@@ -256,8 +242,7 @@ public class CsmsAsyncClient {
      *
      * - 功能介绍：删除凭据标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecretTagRequest 请求对象
      * @return CompletableFuture<DeleteSecretTagResponse>
@@ -271,8 +256,7 @@ public class CsmsAsyncClient {
      *
      * - 功能介绍：删除凭据标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSecretTagRequest 请求对象
      * @return AsyncInvoker<DeleteSecretTagRequest, DeleteSecretTagResponse>
@@ -288,8 +272,7 @@ public class CsmsAsyncClient {
      *
      * 下载指定凭据的备份文件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadSecretBlobRequest 请求对象
      * @return CompletableFuture<DownloadSecretBlobResponse>
@@ -303,8 +286,7 @@ public class CsmsAsyncClient {
      *
      * 下载指定凭据的备份文件
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DownloadSecretBlobRequest 请求对象
      * @return AsyncInvoker<DownloadSecretBlobRequest, DownloadSecretBlobResponse>
@@ -320,8 +302,7 @@ public class CsmsAsyncClient {
      *
      * - 功能介绍：查询用户在指定项目下的所有凭据标签集合。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectSecretsTagsRequest 请求对象
      * @return CompletableFuture<ListProjectSecretsTagsResponse>
@@ -336,8 +317,7 @@ public class CsmsAsyncClient {
      *
      * - 功能介绍：查询用户在指定项目下的所有凭据标签集合。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectSecretsTagsRequest 请求对象
      * @return AsyncInvoker<ListProjectSecretsTagsRequest, ListProjectSecretsTagsResponse>
@@ -353,8 +333,7 @@ public class CsmsAsyncClient {
      *
      * - 功能介绍：查询凭据实例。通过标签过滤，筛选用户凭据,返回凭据列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourceInstancesRequest 请求对象
      * @return CompletableFuture<ListResourceInstancesResponse>
@@ -369,8 +348,7 @@ public class CsmsAsyncClient {
      *
      * - 功能介绍：查询凭据实例。通过标签过滤，筛选用户凭据,返回凭据列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListResourceInstancesRequest 请求对象
      * @return AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>
@@ -386,8 +364,7 @@ public class CsmsAsyncClient {
      *
      * - 功能介绍：查询凭据标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecretTagsRequest 请求对象
      * @return CompletableFuture<ListSecretTagsResponse>
@@ -401,8 +378,7 @@ public class CsmsAsyncClient {
      *
      * - 功能介绍：查询凭据标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecretTagsRequest 请求对象
      * @return AsyncInvoker<ListSecretTagsRequest, ListSecretTagsResponse>
@@ -418,8 +394,7 @@ public class CsmsAsyncClient {
      *
      * 查询指定凭据下的版本列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecretVersionsRequest 请求对象
      * @return CompletableFuture<ListSecretVersionsResponse>
@@ -433,8 +408,7 @@ public class CsmsAsyncClient {
      *
      * 查询指定凭据下的版本列表信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecretVersionsRequest 请求对象
      * @return AsyncInvoker<ListSecretVersionsRequest, ListSecretVersionsResponse>
@@ -450,8 +424,7 @@ public class CsmsAsyncClient {
      *
      * 查询当前用户在本项目下创建的所有凭据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecretsRequest 请求对象
      * @return CompletableFuture<ListSecretsResponse>
@@ -465,8 +438,7 @@ public class CsmsAsyncClient {
      *
      * 查询当前用户在本项目下创建的所有凭据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSecretsRequest 请求对象
      * @return AsyncInvoker<ListSecretsRequest, ListSecretsResponse>
@@ -480,8 +452,7 @@ public class CsmsAsyncClient {
      *
      * 取消凭据的定时删除任务，凭据对象恢复可使用状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreSecretRequest 请求对象
      * @return CompletableFuture<RestoreSecretResponse>
@@ -495,8 +466,7 @@ public class CsmsAsyncClient {
      *
      * 取消凭据的定时删除任务，凭据对象恢复可使用状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreSecretRequest 请求对象
      * @return AsyncInvoker<RestoreSecretRequest, RestoreSecretResponse>
@@ -511,8 +481,7 @@ public class CsmsAsyncClient {
      *
      * 查询指定凭据的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecretRequest 请求对象
      * @return CompletableFuture<ShowSecretResponse>
@@ -526,8 +495,7 @@ public class CsmsAsyncClient {
      *
      * 查询指定凭据的信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecretRequest 请求对象
      * @return AsyncInvoker<ShowSecretRequest, ShowSecretResponse>
@@ -541,8 +509,7 @@ public class CsmsAsyncClient {
      *
      * 查询指定凭据版本状态标记的版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecretStageRequest 请求对象
      * @return CompletableFuture<ShowSecretStageResponse>
@@ -556,8 +523,7 @@ public class CsmsAsyncClient {
      *
      * 查询指定凭据版本状态标记的版本信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecretStageRequest 请求对象
      * @return AsyncInvoker<ShowSecretStageRequest, ShowSecretStageResponse>
@@ -574,8 +540,7 @@ public class CsmsAsyncClient {
      * 查询指定凭据版本的信息和版本中的明文凭据值，只能查询ENABLED状态的凭据。
      * 通过/v1/{project_id}/secrets/{secret_name}/versions/latest （即将当前接口URL中的{version_id}赋值为latest）可访问凭据最新版本的凭据值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecretVersionRequest 请求对象
      * @return CompletableFuture<ShowSecretVersionResponse>
@@ -590,8 +555,7 @@ public class CsmsAsyncClient {
      * 查询指定凭据版本的信息和版本中的明文凭据值，只能查询ENABLED状态的凭据。
      * 通过/v1/{project_id}/secrets/{secret_name}/versions/latest （即将当前接口URL中的{version_id}赋值为latest）可访问凭据最新版本的凭据值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowSecretVersionRequest 请求对象
      * @return AsyncInvoker<ShowSecretVersionRequest, ShowSecretVersionResponse>
@@ -607,8 +571,7 @@ public class CsmsAsyncClient {
      *
      * 更新指定凭据的元数据信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSecretRequest 请求对象
      * @return CompletableFuture<UpdateSecretResponse>
@@ -622,8 +585,7 @@ public class CsmsAsyncClient {
      *
      * 更新指定凭据的元数据信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSecretRequest 请求对象
      * @return AsyncInvoker<UpdateSecretRequest, UpdateSecretResponse>
@@ -638,8 +600,7 @@ public class CsmsAsyncClient {
      *
      * 更新凭据的版本状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSecretStageRequest 请求对象
      * @return CompletableFuture<UpdateSecretStageResponse>
@@ -653,8 +614,7 @@ public class CsmsAsyncClient {
      *
      * 更新凭据的版本状态。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSecretStageRequest 请求对象
      * @return AsyncInvoker<UpdateSecretStageRequest, UpdateSecretStageResponse>
@@ -670,8 +630,7 @@ public class CsmsAsyncClient {
      *
      * 通过上传凭据备份文件，恢复凭据对象
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadSecretBlobRequest 请求对象
      * @return CompletableFuture<UploadSecretBlobResponse>
@@ -685,8 +644,7 @@ public class CsmsAsyncClient {
      *
      * 通过上传凭据备份文件，恢复凭据对象
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadSecretBlobRequest 请求对象
      * @return AsyncInvoker<UploadSecretBlobRequest, UploadSecretBlobResponse>

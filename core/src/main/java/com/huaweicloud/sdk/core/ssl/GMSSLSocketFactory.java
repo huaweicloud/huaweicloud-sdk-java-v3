@@ -23,6 +23,7 @@ package com.huaweicloud.sdk.core.ssl;
 
 import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.exception.SdkException;
+import com.huaweicloud.sdk.core.utils.RandomUtils;
 import org.openeuler.BGMProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -68,10 +69,14 @@ public class GMSSLSocketFactory {
     }
 
     public static SSLContext getSSLContext() {
+        return getSSLContext(RandomUtils.getDefaultSecureRandom());
+    }
+
+    public static SSLContext getSSLContext(SecureRandom secureRandom) {
         try {
             SSLContext sslContext = SSLContext.getInstance(
                     Constants.TLS_PROTOCOL_GM, Constants.SECURITY_PROVIDER_BGM);
-            sslContext.init(null, new TrustManager[]{TRUST_MANAGER}, new SecureRandom());
+            sslContext.init(null, new TrustManager[]{TRUST_MANAGER}, secureRandom);
             return sslContext;
         } catch (NoSuchAlgorithmException e) {
             logger.error("Init SSL Context Error", e);

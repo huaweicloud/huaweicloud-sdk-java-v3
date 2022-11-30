@@ -308,6 +308,93 @@ public class UpdateVpcChannelV2Response extends SdkResponse {
 
     private List<MemberGroupInfo> memberGroups = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "microservice_info")
+
+    private MicroServiceInfo microserviceInfo;
+
+    /**
+     * vpc通道类型。 - BUILTIN：BUILTIN通道类型 - MICROSERVICE：微服务类型
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum BUILTIN for value: "BUILTIN"
+         */
+        public static final TypeEnum BUILTIN = new TypeEnum("BUILTIN");
+
+        /**
+         * Enum MICROSERVICE for value: "MICROSERVICE"
+         */
+        public static final TypeEnum MICROSERVICE = new TypeEnum("MICROSERVICE");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("BUILTIN", BUILTIN);
+            map.put("MICROSERVICE", MICROSERVICE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
+
     public UpdateVpcChannelV2Response withName(String name) {
         this.name = name;
         return this;
@@ -477,6 +564,49 @@ public class UpdateVpcChannelV2Response extends SdkResponse {
         this.memberGroups = memberGroups;
     }
 
+    public UpdateVpcChannelV2Response withMicroserviceInfo(MicroServiceInfo microserviceInfo) {
+        this.microserviceInfo = microserviceInfo;
+        return this;
+    }
+
+    public UpdateVpcChannelV2Response withMicroserviceInfo(Consumer<MicroServiceInfo> microserviceInfoSetter) {
+        if (this.microserviceInfo == null) {
+            this.microserviceInfo = new MicroServiceInfo();
+            microserviceInfoSetter.accept(this.microserviceInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get microserviceInfo
+     * @return microserviceInfo
+     */
+    public MicroServiceInfo getMicroserviceInfo() {
+        return microserviceInfo;
+    }
+
+    public void setMicroserviceInfo(MicroServiceInfo microserviceInfo) {
+        this.microserviceInfo = microserviceInfo;
+    }
+
+    public UpdateVpcChannelV2Response withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * vpc通道类型。 - BUILTIN：BUILTIN通道类型 - MICROSERVICE：微服务类型
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -494,12 +624,24 @@ public class UpdateVpcChannelV2Response extends SdkResponse {
             && Objects.equals(this.createTime, updateVpcChannelV2Response.createTime)
             && Objects.equals(this.id, updateVpcChannelV2Response.id)
             && Objects.equals(this.status, updateVpcChannelV2Response.status)
-            && Objects.equals(this.memberGroups, updateVpcChannelV2Response.memberGroups);
+            && Objects.equals(this.memberGroups, updateVpcChannelV2Response.memberGroups)
+            && Objects.equals(this.microserviceInfo, updateVpcChannelV2Response.microserviceInfo)
+            && Objects.equals(this.type, updateVpcChannelV2Response.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, port, balanceStrategy, memberType, dictCode, createTime, id, status, memberGroups);
+        return Objects.hash(name,
+            port,
+            balanceStrategy,
+            memberType,
+            dictCode,
+            createTime,
+            id,
+            status,
+            memberGroups,
+            microserviceInfo,
+            type);
     }
 
     @Override
@@ -515,6 +657,8 @@ public class UpdateVpcChannelV2Response extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    memberGroups: ").append(toIndentedString(memberGroups)).append("\n");
+        sb.append("    microserviceInfo: ").append(toIndentedString(microserviceInfo)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -25,8 +25,7 @@ public class CceAsyncClient {
      * 该API用于在指定集群下纳管节点。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddNodeRequest 请求对象
      * @return CompletableFuture<AddNodeResponse>
@@ -41,8 +40,7 @@ public class CceAsyncClient {
      * 该API用于在指定集群下纳管节点。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddNodeRequest 请求对象
      * @return AsyncInvoker<AddNodeRequest, AddNodeResponse>
@@ -56,8 +54,7 @@ public class CceAsyncClient {
      *
      * 集群唤醒用于唤醒已休眠的集群，唤醒后，将继续收取控制节点资源费用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AwakeClusterRequest 请求对象
      * @return CompletableFuture<AwakeClusterResponse>
@@ -71,8 +68,7 @@ public class CceAsyncClient {
      *
      * 集群唤醒用于唤醒已休眠的集群，唤醒后，将继续收取控制节点资源费用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AwakeClusterRequest 请求对象
      * @return AsyncInvoker<AwakeClusterRequest, AwakeClusterResponse>
@@ -87,8 +83,7 @@ public class CceAsyncClient {
      *
      * 根据提供的插件模板，安装插件实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAddonInstanceRequest 请求对象
      * @return CompletableFuture<CreateAddonInstanceResponse>
@@ -102,8 +97,7 @@ public class CceAsyncClient {
      *
      * 根据提供的插件模板，安装插件实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAddonInstanceRequest 请求对象
      * @return AsyncInvoker<CreateAddonInstanceRequest, CreateAddonInstanceResponse>
@@ -121,8 +115,7 @@ public class CceAsyncClient {
      * 
      * &gt;存储管理的URL格式为：https://{clusterid}.Endpoint/uri。其中{clusterid}为集群ID，uri为资源路径，也即API访问的路径。如果使用https://Endpoint/uri，则必须指定请求header中的X-Cluster-ID参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCloudPersistentVolumeClaimsRequest 请求对象
      * @return CompletableFuture<CreateCloudPersistentVolumeClaimsResponse>
@@ -139,8 +132,7 @@ public class CceAsyncClient {
      * 
      * &gt;存储管理的URL格式为：https://{clusterid}.Endpoint/uri。其中{clusterid}为集群ID，uri为资源路径，也即API访问的路径。如果使用https://Endpoint/uri，则必须指定请求header中的X-Cluster-ID参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCloudPersistentVolumeClaimsRequest 请求对象
      * @return AsyncInvoker<CreateCloudPersistentVolumeClaimsRequest, CreateCloudPersistentVolumeClaimsResponse>
@@ -159,8 +151,7 @@ public class CceAsyncClient {
      * &gt;   - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * &gt;   - 调用该接口创建集群时，默认不安装ICAgent，若需安装ICAgent，可在请求Body参数的annotations中加入\&quot;cluster.install.addons.external/install\&quot;: \&quot;[{\&quot;addonTemplateName\&quot;:\&quot;icagent\&quot;}]\&quot;的集群注解，将在创建集群时自动安装ICAgent。ICAgent是应用性能管理APM的采集代理，运行在应用所在的服务器上，用于实时采集探针所获取的数据，安装ICAgent是使用应用性能管理APM的前提。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClusterRequest 请求对象
      * @return CompletableFuture<CreateClusterResponse>
@@ -177,8 +168,7 @@ public class CceAsyncClient {
      * &gt;   - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * &gt;   - 调用该接口创建集群时，默认不安装ICAgent，若需安装ICAgent，可在请求Body参数的annotations中加入\&quot;cluster.install.addons.external/install\&quot;: \&quot;[{\&quot;addonTemplateName\&quot;:\&quot;icagent\&quot;}]\&quot;的集群注解，将在创建集群时自动安装ICAgent。ICAgent是应用性能管理APM的采集代理，运行在应用所在的服务器上，用于实时采集探针所获取的数据，安装ICAgent是使用应用性能管理APM的前提。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateClusterRequest 请求对象
      * @return AsyncInvoker<CreateClusterRequest, CreateClusterResponse>
@@ -193,8 +183,7 @@ public class CceAsyncClient {
      *
      * 该API用于获取指定集群的证书信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateKubernetesClusterCertRequest 请求对象
      * @return CompletableFuture<CreateKubernetesClusterCertResponse>
@@ -209,8 +198,7 @@ public class CceAsyncClient {
      *
      * 该API用于获取指定集群的证书信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateKubernetesClusterCertRequest 请求对象
      * @return AsyncInvoker<CreateKubernetesClusterCertRequest, CreateKubernetesClusterCertResponse>
@@ -228,8 +216,7 @@ public class CceAsyncClient {
      * &gt; - 若无集群，请先[创建集群](cce_02_0236.xml)。
      * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNodeRequest 请求对象
      * @return CompletableFuture<CreateNodeResponse>
@@ -245,8 +232,7 @@ public class CceAsyncClient {
      * &gt; - 若无集群，请先[创建集群](cce_02_0236.xml)。
      * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNodeRequest 请求对象
      * @return AsyncInvoker<CreateNodeRequest, CreateNodeResponse>
@@ -263,8 +249,7 @@ public class CceAsyncClient {
      * &gt; 若无集群，请先[创建集群](cce_02_0236.xml)。
      * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNodePoolRequest 请求对象
      * @return CompletableFuture<CreateNodePoolResponse>
@@ -281,8 +266,7 @@ public class CceAsyncClient {
      * &gt; 若无集群，请先[创建集群](cce_02_0236.xml)。
      * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNodePoolRequest 请求对象
      * @return AsyncInvoker<CreateNodePoolRequest, CreateNodePoolResponse>
@@ -298,8 +282,7 @@ public class CceAsyncClient {
      *
      * 删除插件实例的功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAddonInstanceRequest 请求对象
      * @return CompletableFuture<DeleteAddonInstanceResponse>
@@ -313,8 +296,7 @@ public class CceAsyncClient {
      *
      * 删除插件实例的功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAddonInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteAddonInstanceRequest, DeleteAddonInstanceResponse>
@@ -332,8 +314,7 @@ public class CceAsyncClient {
      * 
      * &gt;存储管理的URL格式为：https://{clusterid}.Endpoint/uri。其中{clusterid}为集群ID，uri为资源路径，也即API访问的路径。如果使用https://Endpoint/uri，则必须指定请求header中的X-Cluster-ID参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCloudPersistentVolumeClaimsRequest 请求对象
      * @return CompletableFuture<DeleteCloudPersistentVolumeClaimsResponse>
@@ -350,8 +331,7 @@ public class CceAsyncClient {
      * 
      * &gt;存储管理的URL格式为：https://{clusterid}.Endpoint/uri。其中{clusterid}为集群ID，uri为资源路径，也即API访问的路径。如果使用https://Endpoint/uri，则必须指定请求header中的X-Cluster-ID参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteCloudPersistentVolumeClaimsRequest 请求对象
      * @return AsyncInvoker<DeleteCloudPersistentVolumeClaimsRequest, DeleteCloudPersistentVolumeClaimsResponse>
@@ -368,8 +348,7 @@ public class CceAsyncClient {
      * 该API用于删除一个指定的集群。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteClusterRequest 请求对象
      * @return CompletableFuture<DeleteClusterResponse>
@@ -384,8 +363,7 @@ public class CceAsyncClient {
      * 该API用于删除一个指定的集群。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteClusterRequest 请求对象
      * @return AsyncInvoker<DeleteClusterRequest, DeleteClusterResponse>
@@ -401,8 +379,7 @@ public class CceAsyncClient {
      * 该API用于删除指定的节点。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNodeRequest 请求对象
      * @return CompletableFuture<DeleteNodeResponse>
@@ -417,8 +394,7 @@ public class CceAsyncClient {
      * 该API用于删除指定的节点。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNodeRequest 请求对象
      * @return AsyncInvoker<DeleteNodeRequest, DeleteNodeResponse>
@@ -433,8 +409,7 @@ public class CceAsyncClient {
      * 该API用于删除指定的节点池。
      * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNodePoolRequest 请求对象
      * @return CompletableFuture<DeleteNodePoolResponse>
@@ -449,8 +424,7 @@ public class CceAsyncClient {
      * 该API用于删除指定的节点池。
      * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNodePoolRequest 请求对象
      * @return AsyncInvoker<DeleteNodePoolRequest, DeleteNodePoolResponse>
@@ -466,8 +440,7 @@ public class CceAsyncClient {
      *
      * 集群休眠用于将运行中的集群置于休眠状态，休眠后，将不再收取控制节点资源费用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param HibernateClusterRequest 请求对象
      * @return CompletableFuture<HibernateClusterResponse>
@@ -481,8 +454,7 @@ public class CceAsyncClient {
      *
      * 集群休眠用于将运行中的集群置于休眠状态，休眠后，将不再收取控制节点资源费用。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param HibernateClusterRequest 请求对象
      * @return AsyncInvoker<HibernateClusterRequest, HibernateClusterResponse>
@@ -498,8 +470,7 @@ public class CceAsyncClient {
      *
      * 获取集群所有已安装插件实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddonInstancesRequest 请求对象
      * @return CompletableFuture<ListAddonInstancesResponse>
@@ -513,8 +484,7 @@ public class CceAsyncClient {
      *
      * 获取集群所有已安装插件实例
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddonInstancesRequest 请求对象
      * @return AsyncInvoker<ListAddonInstancesRequest, ListAddonInstancesResponse>
@@ -530,8 +500,7 @@ public class CceAsyncClient {
      *
      * 插件模板查询接口，查询插件信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddonTemplatesRequest 请求对象
      * @return CompletableFuture<ListAddonTemplatesResponse>
@@ -545,8 +514,7 @@ public class CceAsyncClient {
      *
      * 插件模板查询接口，查询插件信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAddonTemplatesRequest 请求对象
      * @return AsyncInvoker<ListAddonTemplatesRequest, ListAddonTemplatesResponse>
@@ -562,8 +530,7 @@ public class CceAsyncClient {
      *
      * 该API用于获取指定项目下所有集群的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClustersRequest 请求对象
      * @return CompletableFuture<ListClustersResponse>
@@ -577,8 +544,7 @@ public class CceAsyncClient {
      *
      * 该API用于获取指定项目下所有集群的详细信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClustersRequest 请求对象
      * @return AsyncInvoker<ListClustersRequest, ListClustersResponse>
@@ -595,8 +561,7 @@ public class CceAsyncClient {
      * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      * &gt; - nodepool是集群中具有相同配置的节点实例的子集。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNodePoolsRequest 请求对象
      * @return CompletableFuture<ListNodePoolsResponse>
@@ -612,8 +577,7 @@ public class CceAsyncClient {
      * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      * &gt; - nodepool是集群中具有相同配置的节点实例的子集。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNodePoolsRequest 请求对象
      * @return AsyncInvoker<ListNodePoolsRequest, ListNodePoolsResponse>
@@ -629,8 +593,7 @@ public class CceAsyncClient {
      * 该API用于通过集群ID获取指定集群下所有节点的详细信息。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNodesRequest 请求对象
      * @return CompletableFuture<ListNodesResponse>
@@ -645,8 +608,7 @@ public class CceAsyncClient {
      * 该API用于通过集群ID获取指定集群下所有节点的详细信息。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNodesRequest 请求对象
      * @return AsyncInvoker<ListNodesRequest, ListNodesResponse>
@@ -663,8 +625,7 @@ public class CceAsyncClient {
      * 
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MigrateNodeRequest 请求对象
      * @return CompletableFuture<MigrateNodeResponse>
@@ -681,8 +642,7 @@ public class CceAsyncClient {
      * 
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MigrateNodeRequest 请求对象
      * @return AsyncInvoker<MigrateNodeRequest, MigrateNodeResponse>
@@ -697,8 +657,7 @@ public class CceAsyncClient {
      * 该API用于在指定集群下移除节点。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveNodeRequest 请求对象
      * @return CompletableFuture<RemoveNodeResponse>
@@ -713,8 +672,7 @@ public class CceAsyncClient {
      * 该API用于在指定集群下移除节点。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveNodeRequest 请求对象
      * @return AsyncInvoker<RemoveNodeRequest, RemoveNodeResponse>
@@ -729,8 +687,7 @@ public class CceAsyncClient {
      * 该API用于在指定集群下重置节点。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetNodeRequest 请求对象
      * @return CompletableFuture<ResetNodeResponse>
@@ -745,8 +702,7 @@ public class CceAsyncClient {
      * 该API用于在指定集群下重置节点。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ResetNodeRequest 请求对象
      * @return AsyncInvoker<ResetNodeRequest, ResetNodeResponse>
@@ -760,8 +716,7 @@ public class CceAsyncClient {
      *
      * 获取插件实例详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAddonInstanceRequest 请求对象
      * @return CompletableFuture<ShowAddonInstanceResponse>
@@ -775,8 +730,7 @@ public class CceAsyncClient {
      *
      * 获取插件实例详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAddonInstanceRequest 请求对象
      * @return AsyncInvoker<ShowAddonInstanceRequest, ShowAddonInstanceResponse>
@@ -793,8 +747,7 @@ public class CceAsyncClient {
      * 该API用于获取指定集群的详细信息。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClusterRequest 请求对象
      * @return CompletableFuture<ShowClusterResponse>
@@ -809,8 +762,7 @@ public class CceAsyncClient {
      * 该API用于获取指定集群的详细信息。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClusterRequest 请求对象
      * @return AsyncInvoker<ShowClusterRequest, ShowClusterResponse>
@@ -825,8 +777,7 @@ public class CceAsyncClient {
      * 该API用于通过集群ID获取集群访问的地址，包括PrivateIP(HA集群返回VIP)与PublicIP
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClusterEndpointsRequest 请求对象
      * @return CompletableFuture<ShowClusterEndpointsResponse>
@@ -842,8 +793,7 @@ public class CceAsyncClient {
      * 该API用于通过集群ID获取集群访问的地址，包括PrivateIP(HA集群返回VIP)与PublicIP
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowClusterEndpointsRequest 请求对象
      * @return AsyncInvoker<ShowClusterEndpointsRequest, ShowClusterEndpointsResponse>
@@ -863,8 +813,7 @@ public class CceAsyncClient {
      * &gt;   - 创建、删除集群时，查询相应任务的进度。
      * &gt;   - 创建、删除节点时，查询相应任务的进度。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return CompletableFuture<ShowJobResponse>
@@ -882,8 +831,7 @@ public class CceAsyncClient {
      * &gt;   - 创建、删除集群时，查询相应任务的进度。
      * &gt;   - 创建、删除节点时，查询相应任务的进度。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobRequest 请求对象
      * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>
@@ -898,8 +846,7 @@ public class CceAsyncClient {
      * 该API用于通过节点ID获取指定节点的详细信息。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNodeRequest 请求对象
      * @return CompletableFuture<ShowNodeResponse>
@@ -914,8 +861,7 @@ public class CceAsyncClient {
      * 该API用于通过节点ID获取指定节点的详细信息。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNodeRequest 请求对象
      * @return AsyncInvoker<ShowNodeRequest, ShowNodeResponse>
@@ -930,8 +876,7 @@ public class CceAsyncClient {
      * 该API用于获取指定节点池的详细信息。
      * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNodePoolRequest 请求对象
      * @return CompletableFuture<ShowNodePoolResponse>
@@ -946,8 +891,7 @@ public class CceAsyncClient {
      * 该API用于获取指定节点池的详细信息。
      * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNodePoolRequest 请求对象
      * @return AsyncInvoker<ShowNodePoolRequest, ShowNodePoolResponse>
@@ -962,8 +906,7 @@ public class CceAsyncClient {
      *
      * 该API用于查询CCE服务下的资源配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotasRequest 请求对象
      * @return CompletableFuture<ShowQuotasResponse>
@@ -977,8 +920,7 @@ public class CceAsyncClient {
      *
      * 该API用于查询CCE服务下的资源配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotasRequest 请求对象
      * @return AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
@@ -992,8 +934,7 @@ public class CceAsyncClient {
      *
      * 更新插件实例的功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAddonInstanceRequest 请求对象
      * @return CompletableFuture<UpdateAddonInstanceResponse>
@@ -1007,8 +948,7 @@ public class CceAsyncClient {
      *
      * 更新插件实例的功能。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAddonInstanceRequest 请求对象
      * @return AsyncInvoker<UpdateAddonInstanceRequest, UpdateAddonInstanceResponse>
@@ -1025,8 +965,7 @@ public class CceAsyncClient {
      * 该API用于更新指定的集群。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateClusterRequest 请求对象
      * @return CompletableFuture<UpdateClusterResponse>
@@ -1041,8 +980,7 @@ public class CceAsyncClient {
      * 该API用于更新指定的集群。
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateClusterRequest 请求对象
      * @return AsyncInvoker<UpdateClusterRequest, UpdateClusterResponse>
@@ -1058,8 +996,7 @@ public class CceAsyncClient {
      * 该API用于通过集群ID绑定、解绑集群公网apiserver地址
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateClusterEipRequest 请求对象
      * @return CompletableFuture<UpdateClusterEipResponse>
@@ -1074,8 +1011,7 @@ public class CceAsyncClient {
      * 该API用于通过集群ID绑定、解绑集群公网apiserver地址
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateClusterEipRequest 请求对象
      * @return AsyncInvoker<UpdateClusterEipRequest, UpdateClusterEipResponse>
@@ -1093,8 +1029,7 @@ public class CceAsyncClient {
      * &gt; - 当前仅支持更新metadata下的name字段，即节点的名字。
      * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNodeRequest 请求对象
      * @return CompletableFuture<UpdateNodeResponse>
@@ -1110,8 +1045,7 @@ public class CceAsyncClient {
      * &gt; - 当前仅支持更新metadata下的name字段，即节点的名字。
      * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNodeRequest 请求对象
      * @return AsyncInvoker<UpdateNodeRequest, UpdateNodeResponse>
@@ -1128,8 +1062,7 @@ public class CceAsyncClient {
      * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      * &gt; - 当前仅支持更新节点池名称，spec下的initialNodeCount，k8sTags，taints，login，userTags与节点池的扩缩容配置相关字段。若此次更新未设置相关值，默认更新为初始值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNodePoolRequest 请求对象
      * @return CompletableFuture<UpdateNodePoolResponse>
@@ -1146,8 +1079,7 @@ public class CceAsyncClient {
      * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      * &gt; - 当前仅支持更新节点池名称，spec下的initialNodeCount，k8sTags，taints，login，userTags与节点池的扩缩容配置相关字段。若此次更新未设置相关值，默认更新为初始值。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNodePoolRequest 请求对象
      * @return AsyncInvoker<UpdateNodePoolRequest, UpdateNodePoolResponse>
@@ -1163,8 +1095,7 @@ public class CceAsyncClient {
      *
      * 该API用于查询CCE服务当前支持的API版本信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVersionRequest 请求对象
      * @return CompletableFuture<ShowVersionResponse>
@@ -1178,8 +1109,7 @@ public class CceAsyncClient {
      *
      * 该API用于查询CCE服务当前支持的API版本信息列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVersionRequest 请求对象
      * @return AsyncInvoker<ShowVersionRequest, ShowVersionResponse>

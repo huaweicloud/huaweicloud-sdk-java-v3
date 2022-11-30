@@ -24,8 +24,7 @@ public class ModerationAsyncClient {
      *
      * 分析并识别用户上传的图像内容是否有敏感内容（如涉及暴恐元素、涉黄内容等），并将识别结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckImageModerationRequest 请求对象
      * @return CompletableFuture<CheckImageModerationResponse>
@@ -40,8 +39,7 @@ public class ModerationAsyncClient {
      *
      * 分析并识别用户上传的图像内容是否有敏感内容（如涉及暴恐元素、涉黄内容等），并将识别结果返回给用户。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CheckImageModerationRequest 请求对象
      * @return AsyncInvoker<CheckImageModerationRequest, CheckImageModerationResponse>
@@ -57,8 +55,7 @@ public class ModerationAsyncClient {
      *
      * 分析并识别用户上传的音频内容是否有敏感内容（如色情、政治等），并将识别结果返回给用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunCreateAudioModerationJobRequest 请求对象
      * @return CompletableFuture<RunCreateAudioModerationJobResponse>
@@ -73,8 +70,7 @@ public class ModerationAsyncClient {
      *
      * 分析并识别用户上传的音频内容是否有敏感内容（如色情、政治等），并将识别结果返回给用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunCreateAudioModerationJobRequest 请求对象
      * @return AsyncInvoker<RunCreateAudioModerationJobRequest, RunCreateAudioModerationJobResponse>
@@ -90,8 +86,7 @@ public class ModerationAsyncClient {
      *
      * 创建视频内容审核作业，创建成功会将作业ID返回给用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunCreateVideoModerationJobRequest 请求对象
      * @return CompletableFuture<RunCreateVideoModerationJobResponse>
@@ -106,8 +101,7 @@ public class ModerationAsyncClient {
      *
      * 创建视频内容审核作业，创建成功会将作业ID返回给用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunCreateVideoModerationJobRequest 请求对象
      * @return AsyncInvoker<RunCreateVideoModerationJobRequest, RunCreateVideoModerationJobResponse>
@@ -122,8 +116,7 @@ public class ModerationAsyncClient {
      * 查询音频内容审核作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunQueryAudioModerationJobRequest 请求对象
      * @return CompletableFuture<RunQueryAudioModerationJobResponse>
@@ -137,8 +130,7 @@ public class ModerationAsyncClient {
      * 查询音频内容审核作业
      *
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunQueryAudioModerationJobRequest 请求对象
      * @return AsyncInvoker<RunQueryAudioModerationJobRequest, RunQueryAudioModerationJobResponse>
@@ -154,8 +146,7 @@ public class ModerationAsyncClient {
      *
      * 查询视频审核作业处理状态与结果，并将识别结果返回给用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunQueryVideoModerationJobRequest 请求对象
      * @return CompletableFuture<RunQueryVideoModerationJobResponse>
@@ -170,8 +161,7 @@ public class ModerationAsyncClient {
      *
      * 查询视频审核作业处理状态与结果，并将识别结果返回给用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunQueryVideoModerationJobRequest 请求对象
      * @return AsyncInvoker<RunQueryVideoModerationJobRequest, RunQueryVideoModerationJobResponse>
@@ -187,8 +177,7 @@ public class ModerationAsyncClient {
      *
      * 分析并识别用户上传的文本内容是否有敏感内容（如色情、政治等），并将识别结果返回给用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunTextModerationRequest 请求对象
      * @return CompletableFuture<RunTextModerationResponse>
@@ -202,8 +191,7 @@ public class ModerationAsyncClient {
      *
      * 分析并识别用户上传的文本内容是否有敏感内容（如色情、政治等），并将识别结果返回给用户
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RunTextModerationRequest 请求对象
      * @return AsyncInvoker<RunTextModerationRequest, RunTextModerationResponse>

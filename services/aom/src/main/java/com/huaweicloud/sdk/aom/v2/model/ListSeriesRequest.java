@@ -70,7 +70,7 @@ public class ListSeriesRequest  {
 
 
     /**
-     * 分页查询起始位置，为非负整数1234。
+     * 分页查询起始位置，为非负整数。
      * @return offset
      */
     public String getOffset() {

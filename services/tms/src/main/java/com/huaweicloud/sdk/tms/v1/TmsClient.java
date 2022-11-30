@@ -22,8 +22,7 @@ public class TmsClient {
      *
      * 用于创建预定标签。用户创建预定义标签后，可以使用预定义标签来给资源创建标签。该接口支持幂等特性和处理批量数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePredefineTagsRequest 请求对象
      * @return CreatePredefineTagsResponse
@@ -37,8 +36,7 @@ public class TmsClient {
      *
      * 用于创建预定标签。用户创建预定义标签后，可以使用预定义标签来给资源创建标签。该接口支持幂等特性和处理批量数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePredefineTagsRequest 请求对象
      * @return SyncInvoker<CreatePredefineTagsRequest, CreatePredefineTagsResponse>
@@ -54,8 +52,7 @@ public class TmsClient {
      *
      * 用于删除预定标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePredefineTagsRequest 请求对象
      * @return DeletePredefineTagsResponse
@@ -69,8 +66,7 @@ public class TmsClient {
      *
      * 用于删除预定标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePredefineTagsRequest 请求对象
      * @return SyncInvoker<DeletePredefineTagsRequest, DeletePredefineTagsResponse>
@@ -86,8 +82,7 @@ public class TmsClient {
      *
      * 查询标签管理服务的API版本列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return ListApiVersionsResponse
@@ -101,8 +96,7 @@ public class TmsClient {
      *
      * 查询标签管理服务的API版本列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApiVersionsRequest 请求对象
      * @return SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
@@ -118,8 +112,7 @@ public class TmsClient {
      *
      * 用于查询预定义标签列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPredefineTagsRequest 请求对象
      * @return ListPredefineTagsResponse
@@ -133,8 +126,7 @@ public class TmsClient {
      *
      * 用于查询预定义标签列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPredefineTagsRequest 请求对象
      * @return SyncInvoker<ListPredefineTagsRequest, ListPredefineTagsResponse>
@@ -150,8 +142,7 @@ public class TmsClient {
      *
      * 查询标签管理支持的服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProvidersRequest 请求对象
      * @return ListProvidersResponse
@@ -165,8 +156,7 @@ public class TmsClient {
      *
      * 查询标签管理支持的服务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProvidersRequest 请求对象
      * @return SyncInvoker<ListProvidersRequest, ListProvidersResponse>
@@ -180,8 +170,7 @@ public class TmsClient {
      *
      * 查询指定的标签管理服务API版本号详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
      * @return ShowApiVersionResponse
@@ -195,8 +184,7 @@ public class TmsClient {
      *
      * 查询指定的标签管理服务API版本号详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApiVersionRequest 请求对象
      * @return SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
@@ -212,8 +200,7 @@ public class TmsClient {
      *
      * 查询标签的配额信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTagQuotaRequest 请求对象
      * @return ShowTagQuotaResponse
@@ -227,8 +214,7 @@ public class TmsClient {
      *
      * 查询标签的配额信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowTagQuotaRequest 请求对象
      * @return SyncInvoker<ShowTagQuotaRequest, ShowTagQuotaResponse>
@@ -242,8 +228,7 @@ public class TmsClient {
      *
      * 修改预定义标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePredefineTagsRequest 请求对象
      * @return UpdatePredefineTagsResponse
@@ -257,8 +242,7 @@ public class TmsClient {
      *
      * 修改预定义标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePredefineTagsRequest 请求对象
      * @return SyncInvoker<UpdatePredefineTagsRequest, UpdatePredefineTagsResponse>

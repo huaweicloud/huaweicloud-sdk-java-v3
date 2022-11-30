@@ -112,6 +112,11 @@ public class ApiPolicyFunctionBase {
 
     private String version;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alias_urn")
+
+    private String aliasUrn;
+
     public ApiPolicyFunctionBase withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
         return this;
@@ -181,6 +186,23 @@ public class ApiPolicyFunctionBase {
         this.version = version;
     }
 
+    public ApiPolicyFunctionBase withAliasUrn(String aliasUrn) {
+        this.aliasUrn = aliasUrn;
+        return this;
+    }
+
+    /**
+     * 函数别名URN  当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
+     * @return aliasUrn
+     */
+    public String getAliasUrn() {
+        return aliasUrn;
+    }
+
+    public void setAliasUrn(String aliasUrn) {
+        this.aliasUrn = aliasUrn;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -193,12 +215,13 @@ public class ApiPolicyFunctionBase {
         return Objects.equals(this.functionUrn, apiPolicyFunctionBase.functionUrn)
             && Objects.equals(this.invocationType, apiPolicyFunctionBase.invocationType)
             && Objects.equals(this.timeout, apiPolicyFunctionBase.timeout)
-            && Objects.equals(this.version, apiPolicyFunctionBase.version);
+            && Objects.equals(this.version, apiPolicyFunctionBase.version)
+            && Objects.equals(this.aliasUrn, apiPolicyFunctionBase.aliasUrn);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(functionUrn, invocationType, timeout, version);
+        return Objects.hash(functionUrn, invocationType, timeout, version, aliasUrn);
     }
 
     @Override
@@ -209,6 +232,7 @@ public class ApiPolicyFunctionBase {
         sb.append("    invocationType: ").append(toIndentedString(invocationType)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    aliasUrn: ").append(toIndentedString(aliasUrn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

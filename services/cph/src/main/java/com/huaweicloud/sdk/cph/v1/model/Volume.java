@@ -81,6 +81,8 @@ public class Volume {
 
     /**
      * 云手机服务器的硬盘大小，单位G
+     * minimum: 0
+     * maximum: 8096
      * @return volumeSize
      */
     public Integer getVolumeSize() {

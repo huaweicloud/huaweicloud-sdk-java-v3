@@ -22,7 +22,7 @@ public class ListCloudPhoneServersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "servers")
 
-    private List<Object> servers = null;
+    private List<Server> servers = null;
 
     public ListCloudPhoneServersResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -30,7 +30,7 @@ public class ListCloudPhoneServersResponse extends SdkResponse {
     }
 
     /**
-     * 请求的唯一标识ID
+     * 请求的唯一标识ID。
      * @return requestId
      */
     public String getRequestId() {
@@ -41,12 +41,12 @@ public class ListCloudPhoneServersResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public ListCloudPhoneServersResponse withServers(List<Object> servers) {
+    public ListCloudPhoneServersResponse withServers(List<Server> servers) {
         this.servers = servers;
         return this;
     }
 
-    public ListCloudPhoneServersResponse addServersItem(Object serversItem) {
+    public ListCloudPhoneServersResponse addServersItem(Server serversItem) {
         if (this.servers == null) {
             this.servers = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class ListCloudPhoneServersResponse extends SdkResponse {
         return this;
     }
 
-    public ListCloudPhoneServersResponse withServers(Consumer<List<Object>> serversSetter) {
+    public ListCloudPhoneServersResponse withServers(Consumer<List<Server>> serversSetter) {
         if (this.servers == null) {
             this.servers = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class ListCloudPhoneServersResponse extends SdkResponse {
      * 云手机服务器信息
      * @return servers
      */
-    public List<Object> getServers() {
+    public List<Server> getServers() {
         return servers;
     }
 
-    public void setServers(List<Object> servers) {
+    public void setServers(List<Server> servers) {
         this.servers = servers;
     }
 

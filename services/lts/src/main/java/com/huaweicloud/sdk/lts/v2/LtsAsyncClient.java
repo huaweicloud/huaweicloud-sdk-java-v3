@@ -24,8 +24,7 @@ public class LtsAsyncClient {
      *
      * 创建日志接入
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAccessConfigRequest 请求对象
      * @return CompletableFuture<CreateAccessConfigResponse>
@@ -39,8 +38,7 @@ public class LtsAsyncClient {
      *
      * 创建日志接入
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAccessConfigRequest 请求对象
      * @return AsyncInvoker<CreateAccessConfigRequest, CreateAccessConfigResponse>
@@ -56,8 +54,7 @@ public class LtsAsyncClient {
      *
      * 创建主机组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHostGroupRequest 请求对象
      * @return CompletableFuture<CreateHostGroupResponse>
@@ -71,8 +68,7 @@ public class LtsAsyncClient {
      *
      * 创建主机组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHostGroupRequest 请求对象
      * @return AsyncInvoker<CreateHostGroupRequest, CreateHostGroupResponse>
@@ -88,8 +84,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于创建关键词告警，目前每个帐户最多可以创建共200个关键词告警与SQL告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateKeywordsAlarmRuleRequest 请求对象
      * @return CompletableFuture<CreateKeywordsAlarmRuleResponse>
@@ -104,8 +99,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于创建关键词告警，目前每个帐户最多可以创建共200个关键词告警与SQL告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateKeywordsAlarmRuleRequest 请求对象
      * @return AsyncInvoker<CreateKeywordsAlarmRuleRequest, CreateKeywordsAlarmRuleResponse>
@@ -121,8 +115,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于将指定的一个或多个日志流的日志转储到OBS服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLogDumpObsRequest 请求对象
      * @return CompletableFuture<CreateLogDumpObsResponse>
@@ -136,8 +129,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于将指定的一个或多个日志流的日志转储到OBS服务。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLogDumpObsRequest 请求对象
      * @return AsyncInvoker<CreateLogDumpObsRequest, CreateLogDumpObsResponse>
@@ -153,8 +145,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于创建一个日志组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLogGroupRequest 请求对象
      * @return CompletableFuture<CreateLogGroupResponse>
@@ -168,8 +159,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于创建一个日志组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLogGroupRequest 请求对象
      * @return AsyncInvoker<CreateLogGroupRequest, CreateLogGroupResponse>
@@ -185,8 +175,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于创建某个指定日志组下的日志流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLogStreamRequest 请求对象
      * @return CompletableFuture<CreateLogStreamResponse>
@@ -200,8 +189,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于创建某个指定日志组下的日志流
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateLogStreamRequest 请求对象
      * @return AsyncInvoker<CreateLogStreamRequest, CreateLogStreamResponse>
@@ -217,8 +205,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于创建通知模板，目前每个帐户最多可以创建共100个通知模板，创建后名称不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNotificationTemplateRequest 请求对象
      * @return CompletableFuture<CreateNotificationTemplateResponse>
@@ -233,8 +220,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于创建通知模板，目前每个帐户最多可以创建共100个通知模板，创建后名称不可修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateNotificationTemplateRequest 请求对象
      * @return AsyncInvoker<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse>
@@ -250,8 +236,7 @@ public class LtsAsyncClient {
      *
      * 该接口通过结构化模板创建结构化配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStructConfigRequest 请求对象
      * @return CompletableFuture<CreateStructConfigResponse>
@@ -265,8 +250,7 @@ public class LtsAsyncClient {
      *
      * 该接口通过结构化模板创建结构化配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStructConfigRequest 请求对象
      * @return AsyncInvoker<CreateStructConfigRequest, CreateStructConfigResponse>
@@ -282,8 +266,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于创建指定日志流下的结构化配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStructTemplateRequest 请求对象
      * @return CompletableFuture<CreateStructTemplateResponse>
@@ -298,8 +281,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于创建指定日志流下的结构化配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateStructTemplateRequest 请求对象
      * @return AsyncInvoker<CreateStructTemplateRequest, CreateStructTemplateResponse>
@@ -315,8 +297,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于创建OBS转储，DIS转储，DMS转储。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTransferRequest 请求对象
      * @return CompletableFuture<CreateTransferResponse>
@@ -330,8 +311,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于创建OBS转储，DIS转储，DMS转储。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTransferRequest 请求对象
      * @return AsyncInvoker<CreateTransferRequest, CreateTransferResponse>
@@ -347,8 +327,7 @@ public class LtsAsyncClient {
      *
      * 删除日志接入
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAccessConfigRequest 请求对象
      * @return CompletableFuture<DeleteAccessConfigResponse>
@@ -362,8 +341,7 @@ public class LtsAsyncClient {
      *
      * 删除日志接入
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAccessConfigRequest 请求对象
      * @return AsyncInvoker<DeleteAccessConfigRequest, DeleteAccessConfigResponse>
@@ -379,8 +357,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除活动告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteActiveAlarmsRequest 请求对象
      * @return CompletableFuture<DeleteActiveAlarmsResponse>
@@ -394,8 +371,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除活动告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteActiveAlarmsRequest 请求对象
      * @return AsyncInvoker<DeleteActiveAlarmsRequest, DeleteActiveAlarmsResponse>
@@ -411,8 +387,7 @@ public class LtsAsyncClient {
      *
      * 删除主机组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHostGroupRequest 请求对象
      * @return CompletableFuture<DeleteHostGroupResponse>
@@ -426,8 +401,7 @@ public class LtsAsyncClient {
      *
      * 删除主机组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHostGroupRequest 请求对象
      * @return AsyncInvoker<DeleteHostGroupRequest, DeleteHostGroupResponse>
@@ -443,8 +417,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除关键词告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteKeywordsAlarmRuleRequest 请求对象
      * @return CompletableFuture<DeleteKeywordsAlarmRuleResponse>
@@ -459,8 +432,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除关键词告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteKeywordsAlarmRuleRequest 请求对象
      * @return AsyncInvoker<DeleteKeywordsAlarmRuleRequest, DeleteKeywordsAlarmRuleResponse>
@@ -476,8 +448,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除指定日志组。当日志组中的日志流配置了日志转储，需要取消日志转储后才可删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLogGroupRequest 请求对象
      * @return CompletableFuture<DeleteLogGroupResponse>
@@ -491,8 +462,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除指定日志组。当日志组中的日志流配置了日志转储，需要取消日志转储后才可删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLogGroupRequest 请求对象
      * @return AsyncInvoker<DeleteLogGroupRequest, DeleteLogGroupResponse>
@@ -508,8 +478,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除指定日志组下的指定日志流。当该日志流配置了日志转储，需要取消日志转储后才可删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLogStreamRequest 请求对象
      * @return CompletableFuture<DeleteLogStreamResponse>
@@ -523,8 +492,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除指定日志组下的指定日志流。当该日志流配置了日志转储，需要取消日志转储后才可删除。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteLogStreamRequest 请求对象
      * @return AsyncInvoker<DeleteLogStreamRequest, DeleteLogStreamResponse>
@@ -540,8 +508,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除通知模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNotificationTemplateRequest 请求对象
      * @return CompletableFuture<DeleteNotificationTemplateResponse>
@@ -556,8 +523,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除通知模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteNotificationTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse>
@@ -573,8 +539,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除指定日志流下的结构化配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteStructTemplateRequest 请求对象
      * @return CompletableFuture<DeleteStructTemplateResponse>
@@ -589,8 +554,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除指定日志流下的结构化配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteStructTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteStructTemplateRequest, DeleteStructTemplateResponse>
@@ -606,8 +570,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除OBS转储，DIS转储，DMS转储。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTransferRequest 请求对象
      * @return CompletableFuture<DeleteTransferResponse>
@@ -621,8 +584,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除OBS转储，DIS转储，DMS转储。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTransferRequest 请求对象
      * @return AsyncInvoker<DeleteTransferRequest, DeleteTransferResponse>
@@ -638,8 +600,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于将超额采集日志功能关闭。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisableLogCollectionRequest 请求对象
      * @return CompletableFuture<DisableLogCollectionResponse>
@@ -654,8 +615,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于将超额采集日志功能关闭。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisableLogCollectionRequest 请求对象
      * @return AsyncInvoker<DisableLogCollectionRequest, DisableLogCollectionResponse>
@@ -671,8 +631,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于将超额采集日志功能打开。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableLogCollectionRequest 请求对象
      * @return CompletableFuture<EnableLogCollectionResponse>
@@ -686,8 +645,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于将超额采集日志功能打开。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param EnableLogCollectionRequest 请求对象
      * @return AsyncInvoker<EnableLogCollectionRequest, EnableLogCollectionResponse>
@@ -703,8 +661,7 @@ public class LtsAsyncClient {
      *
      * 查询日志接入列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAccessConfigRequest 请求对象
      * @return CompletableFuture<ListAccessConfigResponse>
@@ -718,8 +675,7 @@ public class LtsAsyncClient {
      *
      * 查询日志接入列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAccessConfigRequest 请求对象
      * @return AsyncInvoker<ListAccessConfigRequest, ListAccessConfigResponse>
@@ -735,8 +691,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询告警列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListActiveOrHistoryAlarmsRequest 请求对象
      * @return CompletableFuture<ListActiveOrHistoryAlarmsResponse>
@@ -751,8 +706,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询告警列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListActiveOrHistoryAlarmsRequest 请求对象
      * @return AsyncInvoker<ListActiveOrHistoryAlarmsRequest, ListActiveOrHistoryAlarmsResponse>
@@ -768,8 +722,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询结构化模板简略列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBreifStructTemplateRequest 请求对象
      * @return CompletableFuture<ListBreifStructTemplateResponse>
@@ -784,8 +737,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询结构化模板简略列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBreifStructTemplateRequest 请求对象
      * @return AsyncInvoker<ListBreifStructTemplateRequest, ListBreifStructTemplateResponse>
@@ -801,8 +753,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询日志流图表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListChartsRequest 请求对象
      * @return CompletableFuture<ListChartsResponse>
@@ -816,8 +767,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询日志流图表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListChartsRequest 请求对象
      * @return AsyncInvoker<ListChartsRequest, ListChartsResponse>
@@ -831,8 +781,7 @@ public class LtsAsyncClient {
      *
      * 查询主机列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostRequest 请求对象
      * @return CompletableFuture<ListHostResponse>
@@ -846,8 +795,7 @@ public class LtsAsyncClient {
      *
      * 查询主机列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostRequest 请求对象
      * @return AsyncInvoker<ListHostRequest, ListHostResponse>
@@ -861,8 +809,7 @@ public class LtsAsyncClient {
      *
      * 查询主机组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostGroupRequest 请求对象
      * @return CompletableFuture<ListHostGroupResponse>
@@ -876,8 +823,7 @@ public class LtsAsyncClient {
      *
      * 查询主机组列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostGroupRequest 请求对象
      * @return AsyncInvoker<ListHostGroupRequest, ListHostGroupResponse>
@@ -892,8 +838,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询关键词告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKeywordsAlarmRulesRequest 请求对象
      * @return CompletableFuture<ListKeywordsAlarmRulesResponse>
@@ -908,8 +853,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询关键词告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListKeywordsAlarmRulesRequest 请求对象
      * @return AsyncInvoker<ListKeywordsAlarmRulesRequest, ListKeywordsAlarmRulesResponse>
@@ -925,8 +869,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询账号下所有日志组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogGroupsRequest 请求对象
      * @return CompletableFuture<ListLogGroupsResponse>
@@ -940,8 +883,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询账号下所有日志组。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogGroupsRequest 请求对象
      * @return AsyncInvoker<ListLogGroupsRequest, ListLogGroupsResponse>
@@ -956,8 +898,7 @@ public class LtsAsyncClient {
      *
      * 查询关键词搜索条数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogHistogramRequest 请求对象
      * @return CompletableFuture<ListLogHistogramResponse>
@@ -971,8 +912,7 @@ public class LtsAsyncClient {
      *
      * 查询关键词搜索条数
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogHistogramRequest 请求对象
      * @return AsyncInvoker<ListLogHistogramRequest, ListLogHistogramResponse>
@@ -988,8 +928,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询指定日志组下的所有日志流信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogStreamRequest 请求对象
      * @return CompletableFuture<ListLogStreamResponse>
@@ -1003,8 +942,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询指定日志组下的所有日志流信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogStreamRequest 请求对象
      * @return AsyncInvoker<ListLogStreamRequest, ListLogStreamResponse>
@@ -1019,8 +957,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询LTS日志流信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogStreamsRequest 请求对象
      * @return CompletableFuture<ListLogStreamsResponse>
@@ -1034,8 +971,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询LTS日志流信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogStreamsRequest 请求对象
      * @return AsyncInvoker<ListLogStreamsRequest, ListLogStreamsResponse>
@@ -1051,8 +987,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询指定日志流下的日志内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogsRequest 请求对象
      * @return CompletableFuture<ListLogsResponse>
@@ -1066,8 +1001,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询指定日志流下的日志内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListLogsRequest 请求对象
      * @return AsyncInvoker<ListLogsRequest, ListLogsResponse>
@@ -1081,8 +1015,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于预览通知模板邮件格式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotificationTemplateRequest 请求对象
      * @return CompletableFuture<ListNotificationTemplateResponse>
@@ -1097,8 +1030,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于预览通知模板邮件格式
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotificationTemplateRequest 请求对象
      * @return AsyncInvoker<ListNotificationTemplateRequest, ListNotificationTemplateResponse>
@@ -1114,8 +1046,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询通知模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotificationTemplatesRequest 请求对象
      * @return CompletableFuture<ListNotificationTemplatesResponse>
@@ -1130,8 +1061,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询通知模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotificationTemplatesRequest 请求对象
      * @return AsyncInvoker<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse>
@@ -1147,8 +1077,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询SMN主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotificationTopicsRequest 请求对象
      * @return CompletableFuture<ListNotificationTopicsResponse>
@@ -1163,8 +1092,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询SMN主题
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNotificationTopicsRequest 请求对象
      * @return AsyncInvoker<ListNotificationTopicsRequest, ListNotificationTopicsResponse>
@@ -1180,8 +1108,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询指定日志流下的结构化日志内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQueryStructuredLogsRequest 请求对象
      * @return CompletableFuture<ListQueryStructuredLogsResponse>
@@ -1196,8 +1123,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询指定日志流下的结构化日志内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListQueryStructuredLogsRequest 请求对象
      * @return AsyncInvoker<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse>
@@ -1213,8 +1139,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询结构化模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStructTemplateRequest 请求对象
      * @return CompletableFuture<ListStructTemplateResponse>
@@ -1228,8 +1153,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询结构化模板。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStructTemplateRequest 请求对象
      * @return AsyncInvoker<ListStructTemplateRequest, ListStructTemplateResponse>
@@ -1245,8 +1169,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询指定日志流下的结构化日志内容（新版）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStructuredLogsWithTimeRangeRequest 请求对象
      * @return CompletableFuture<ListStructuredLogsWithTimeRangeResponse>
@@ -1261,8 +1184,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询指定日志流下的结构化日志内容（新版）。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListStructuredLogsWithTimeRangeRequest 请求对象
      * @return AsyncInvoker<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse>
@@ -1278,8 +1200,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询OBS转储，DIS转储，DMS转储配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTransfersRequest 请求对象
      * @return CompletableFuture<ListTransfersResponse>
@@ -1293,8 +1214,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询OBS转储，DIS转储，DMS转储配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTransfersRequest 请求对象
      * @return AsyncInvoker<ListTransfersRequest, ListTransfersResponse>
@@ -1309,8 +1229,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于注册DMS kafka实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RegisterDmsKafkaInstanceRequest 请求对象
      * @return CompletableFuture<RegisterDmsKafkaInstanceResponse>
@@ -1325,8 +1244,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于注册DMS kafka实例。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RegisterDmsKafkaInstanceRequest 请求对象
      * @return AsyncInvoker<RegisterDmsKafkaInstanceRequest, RegisterDmsKafkaInstanceResponse>
@@ -1342,8 +1260,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询单个通知模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNotificationTemplateRequest 请求对象
      * @return CompletableFuture<ShowNotificationTemplateResponse>
@@ -1358,8 +1275,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询单个通知模板
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowNotificationTemplateRequest 请求对象
      * @return AsyncInvoker<ShowNotificationTemplateRequest, ShowNotificationTemplateResponse>
@@ -1375,8 +1291,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询指定日志流下的结构化配置内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStructTemplateRequest 请求对象
      * @return CompletableFuture<ShowStructTemplateResponse>
@@ -1390,8 +1305,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询指定日志流下的结构化配置内容。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowStructTemplateRequest 请求对象
      * @return AsyncInvoker<ShowStructTemplateRequest, ShowStructTemplateResponse>
@@ -1407,8 +1321,7 @@ public class LtsAsyncClient {
      *
      * 修改日志接入
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAccessConfigRequest 请求对象
      * @return CompletableFuture<UpdateAccessConfigResponse>
@@ -1422,8 +1335,7 @@ public class LtsAsyncClient {
      *
      * 修改日志接入
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAccessConfigRequest 请求对象
      * @return AsyncInvoker<UpdateAccessConfigRequest, UpdateAccessConfigResponse>
@@ -1439,8 +1351,7 @@ public class LtsAsyncClient {
      *
      * 修改主机组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHostGroupRequest 请求对象
      * @return CompletableFuture<UpdateHostGroupResponse>
@@ -1454,8 +1365,7 @@ public class LtsAsyncClient {
      *
      * 修改主机组
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateHostGroupRequest 请求对象
      * @return AsyncInvoker<UpdateHostGroupRequest, UpdateHostGroupResponse>
@@ -1471,8 +1381,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于修改关键词告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateKeywordsAlarmRuleRequest 请求对象
      * @return CompletableFuture<UpdateKeywordsAlarmRuleResponse>
@@ -1487,8 +1396,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于修改关键词告警。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateKeywordsAlarmRuleRequest 请求对象
      * @return AsyncInvoker<UpdateKeywordsAlarmRuleRequest, UpdateKeywordsAlarmRuleResponse>
@@ -1504,8 +1412,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于修改指定日志组下的日志存储时长。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLogGroupRequest 请求对象
      * @return CompletableFuture<UpdateLogGroupResponse>
@@ -1519,8 +1426,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于修改指定日志组下的日志存储时长。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateLogGroupRequest 请求对象
      * @return AsyncInvoker<UpdateLogGroupRequest, UpdateLogGroupResponse>
@@ -1536,8 +1442,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于修改通知模板,根据名称进行修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNotificationTemplateRequest 请求对象
      * @return CompletableFuture<UpdateNotificationTemplateResponse>
@@ -1552,8 +1457,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于修改通知模板,根据名称进行修改。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateNotificationTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse>
@@ -1569,8 +1473,7 @@ public class LtsAsyncClient {
      *
      * 该接口通过结构化模板修改结构化配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStructConfigRequest 请求对象
      * @return CompletableFuture<UpdateStructConfigResponse>
@@ -1584,8 +1487,7 @@ public class LtsAsyncClient {
      *
      * 该接口通过结构化模板修改结构化配置
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStructConfigRequest 请求对象
      * @return AsyncInvoker<UpdateStructConfigRequest, UpdateStructConfigResponse>
@@ -1601,8 +1503,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于修改指定日志流下的结构化配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStructTemplateRequest 请求对象
      * @return CompletableFuture<UpdateStructTemplateResponse>
@@ -1617,8 +1518,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于修改指定日志流下的结构化配置。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateStructTemplateRequest 请求对象
      * @return AsyncInvoker<UpdateStructTemplateRequest, UpdateStructTemplateResponse>
@@ -1634,8 +1534,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于更新OBS转储，DIS转储，DMS转储。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTransferRequest 请求对象
      * @return CompletableFuture<UpdateTransferResponse>
@@ -1649,8 +1548,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于更新OBS转储，DIS转储，DMS转储。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateTransferRequest 请求对象
      * @return AsyncInvoker<UpdateTransferRequest, UpdateTransferResponse>
@@ -1666,8 +1564,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于创建aom日志接入lts规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAomMappingRulesRequest 请求对象
      * @return CompletableFuture<CreateAomMappingRulesResponse>
@@ -1682,8 +1579,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于创建aom日志接入lts规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAomMappingRulesRequest 请求对象
      * @return AsyncInvoker<CreateAomMappingRulesRequest, CreateAomMappingRulesResponse>
@@ -1699,8 +1595,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除lts接入规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAomMappingRulesRequest 请求对象
      * @return CompletableFuture<DeleteAomMappingRulesResponse>
@@ -1715,8 +1610,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除lts接入规则。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAomMappingRulesRequest 请求对象
      * @return AsyncInvoker<DeleteAomMappingRulesRequest, DeleteAomMappingRulesResponse>
@@ -1732,8 +1626,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询单个aom日志接入lts
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAomMappingRuleRequest 请求对象
      * @return CompletableFuture<ShowAomMappingRuleResponse>
@@ -1747,8 +1640,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询单个aom日志接入lts
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAomMappingRuleRequest 请求对象
      * @return AsyncInvoker<ShowAomMappingRuleRequest, ShowAomMappingRuleResponse>
@@ -1764,8 +1656,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询aom日志所有接入lts规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAomMappingRulesRequest 请求对象
      * @return CompletableFuture<ShowAomMappingRulesResponse>
@@ -1779,8 +1670,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询aom日志所有接入lts规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowAomMappingRulesRequest 请求对象
      * @return AsyncInvoker<ShowAomMappingRulesRequest, ShowAomMappingRulesResponse>
@@ -1796,8 +1686,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于修改接入规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAomMappingRulesRequest 请求对象
      * @return CompletableFuture<UpdateAomMappingRulesResponse>
@@ -1812,8 +1701,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于修改接入规则
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAomMappingRulesRequest 请求对象
      * @return AsyncInvoker<UpdateAomMappingRulesRequest, UpdateAomMappingRulesResponse>
@@ -1829,8 +1717,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于创建SQL告警，目前每个帐户最多可以创建共200个关键词告警与SQL告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSqlAlarmRuleRequest 请求对象
      * @return CompletableFuture<CreateSqlAlarmRuleResponse>
@@ -1844,8 +1731,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于创建SQL告警，目前每个帐户最多可以创建共200个关键词告警与SQL告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSqlAlarmRuleRequest 请求对象
      * @return AsyncInvoker<CreateSqlAlarmRuleRequest, CreateSqlAlarmRuleResponse>
@@ -1861,8 +1747,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除SQL告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSqlAlarmRuleRequest 请求对象
      * @return CompletableFuture<DeleteSqlAlarmRuleResponse>
@@ -1876,8 +1761,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于删除SQL告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteSqlAlarmRuleRequest 请求对象
      * @return AsyncInvoker<DeleteSqlAlarmRuleRequest, DeleteSqlAlarmRuleResponse>
@@ -1893,8 +1777,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询SQL告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSqlAlarmRulesRequest 请求对象
      * @return CompletableFuture<ListSqlAlarmRulesResponse>
@@ -1908,8 +1791,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于查询SQL告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSqlAlarmRulesRequest 请求对象
      * @return AsyncInvoker<ListSqlAlarmRulesRequest, ListSqlAlarmRulesResponse>
@@ -1925,8 +1807,7 @@ public class LtsAsyncClient {
      *
      * 改变告警规则状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlarmRuleStatusRequest 请求对象
      * @return CompletableFuture<UpdateAlarmRuleStatusResponse>
@@ -1941,8 +1822,7 @@ public class LtsAsyncClient {
      *
      * 改变告警规则状态
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateAlarmRuleStatusRequest 请求对象
      * @return AsyncInvoker<UpdateAlarmRuleStatusRequest, UpdateAlarmRuleStatusResponse>
@@ -1958,8 +1838,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于修改SQL告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSqlAlarmRuleRequest 请求对象
      * @return CompletableFuture<UpdateSqlAlarmRuleResponse>
@@ -1973,8 +1852,7 @@ public class LtsAsyncClient {
      *
      * 该接口用于修改SQL告警
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateSqlAlarmRuleRequest 请求对象
      * @return AsyncInvoker<UpdateSqlAlarmRuleRequest, UpdateSqlAlarmRuleResponse>

@@ -24,8 +24,7 @@ public class CbrAsyncClient {
      *
      * 添加备份可共享的成员，只有云服务器备份可以添加备份共享成员，且仅支持在同一区域的不同用户间共享。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddMemberRequest 请求对象
      * @return CompletableFuture<AddMemberResponse>
@@ -39,8 +38,7 @@ public class CbrAsyncClient {
      *
      * 添加备份可共享的成员，只有云服务器备份可以添加备份共享成员，且仅支持在同一区域的不同用户间共享。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddMemberRequest 请求对象
      * @return AsyncInvoker<AddMemberRequest, AddMemberResponse>
@@ -54,8 +52,7 @@ public class CbrAsyncClient {
      *
      * 存储库添加资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddVaultResourceRequest 请求对象
      * @return CompletableFuture<AddVaultResourceResponse>
@@ -69,8 +66,7 @@ public class CbrAsyncClient {
      *
      * 存储库添加资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AddVaultResourceRequest 请求对象
      * @return AsyncInvoker<AddVaultResourceRequest, AddVaultResourceResponse>
@@ -86,8 +82,7 @@ public class CbrAsyncClient {
      *
      * 存储库设置策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateVaultPolicyRequest 请求对象
      * @return CompletableFuture<AssociateVaultPolicyResponse>
@@ -102,8 +97,7 @@ public class CbrAsyncClient {
      *
      * 存储库设置策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param AssociateVaultPolicyRequest 请求对象
      * @return AsyncInvoker<AssociateVaultPolicyRequest, AssociateVaultPolicyResponse>
@@ -126,8 +120,7 @@ public class CbrAsyncClient {
      *     删除时，允许重复key。
      *     删除时，如果删除的标签不存在，默认处理成功,删除时不对标签字符集范围做校验。key长度127个字符，value为255个字符。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateAndDeleteVaultTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateAndDeleteVaultTagsResponse>
@@ -149,8 +142,7 @@ public class CbrAsyncClient {
      *     删除时，允许重复key。
      *     删除时，如果删除的标签不存在，默认处理成功,删除时不对标签字符集范围做校验。key长度127个字符，value为255个字符。删除时tags结构体不能缺失，key不能为空，或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateAndDeleteVaultTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateAndDeleteVaultTagsRequest, BatchCreateAndDeleteVaultTagsResponse>
@@ -166,8 +158,7 @@ public class CbrAsyncClient {
      *
      * 跨区域复制备份。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CopyBackupRequest 请求对象
      * @return CompletableFuture<CopyBackupResponse>
@@ -181,8 +172,7 @@ public class CbrAsyncClient {
      *
      * 跨区域复制备份。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CopyBackupRequest 请求对象
      * @return AsyncInvoker<CopyBackupRequest, CopyBackupResponse>
@@ -196,8 +186,7 @@ public class CbrAsyncClient {
      *
      * 执行复制
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CopyCheckpointRequest 请求对象
      * @return CompletableFuture<CopyCheckpointResponse>
@@ -211,8 +200,7 @@ public class CbrAsyncClient {
      *
      * 执行复制
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CopyCheckpointRequest 请求对象
      * @return AsyncInvoker<CopyCheckpointRequest, CopyCheckpointResponse>
@@ -228,8 +216,7 @@ public class CbrAsyncClient {
      *
      * 对存储库执行备份，生成备份还原点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCheckpointRequest 请求对象
      * @return CompletableFuture<CreateCheckpointResponse>
@@ -243,8 +230,7 @@ public class CbrAsyncClient {
      *
      * 对存储库执行备份，生成备份还原点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateCheckpointRequest 请求对象
      * @return AsyncInvoker<CreateCheckpointRequest, CreateCheckpointResponse>
@@ -260,8 +246,7 @@ public class CbrAsyncClient {
      *
      * 创建策略，策略分为备份策略和复制策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePolicyRequest 请求对象
      * @return CompletableFuture<CreatePolicyResponse>
@@ -275,8 +260,7 @@ public class CbrAsyncClient {
      *
      * 创建策略，策略分为备份策略和复制策略。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePolicyRequest 请求对象
      * @return AsyncInvoker<CreatePolicyRequest, CreatePolicyResponse>
@@ -291,8 +275,7 @@ public class CbrAsyncClient {
      *
      * 创建存储库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVaultRequest 请求对象
      * @return CompletableFuture<CreateVaultResponse>
@@ -306,8 +289,7 @@ public class CbrAsyncClient {
      *
      * 创建存储库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVaultRequest 请求对象
      * @return AsyncInvoker<CreateVaultRequest, CreateVaultResponse>
@@ -322,8 +304,7 @@ public class CbrAsyncClient {
      * 一个资源上最多有10个标签。
      * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVaultTagsRequest 请求对象
      * @return CompletableFuture<CreateVaultTagsResponse>
@@ -338,8 +319,7 @@ public class CbrAsyncClient {
      * 一个资源上最多有10个标签。
      * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateVaultTagsRequest 请求对象
      * @return AsyncInvoker<CreateVaultTagsRequest, CreateVaultTagsResponse>
@@ -355,8 +335,7 @@ public class CbrAsyncClient {
      *
      * 删除单个备份。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackupRequest 请求对象
      * @return CompletableFuture<DeleteBackupResponse>
@@ -370,8 +349,7 @@ public class CbrAsyncClient {
      *
      * 删除单个备份。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteBackupRequest 请求对象
      * @return AsyncInvoker<DeleteBackupRequest, DeleteBackupResponse>
@@ -386,8 +364,7 @@ public class CbrAsyncClient {
      *
      * 删除指定的备份共享成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMemberRequest 请求对象
      * @return CompletableFuture<DeleteMemberResponse>
@@ -401,8 +378,7 @@ public class CbrAsyncClient {
      *
      * 删除指定的备份共享成员
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteMemberRequest 请求对象
      * @return AsyncInvoker<DeleteMemberRequest, DeleteMemberResponse>
@@ -417,8 +393,7 @@ public class CbrAsyncClient {
      *
      * 删除策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePolicyRequest 请求对象
      * @return CompletableFuture<DeletePolicyResponse>
@@ -432,8 +407,7 @@ public class CbrAsyncClient {
      *
      * 删除策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeletePolicyRequest 请求对象
      * @return AsyncInvoker<DeletePolicyRequest, DeletePolicyResponse>
@@ -448,8 +422,7 @@ public class CbrAsyncClient {
      *
      * 删除存储库。若删除储存库，将一并删除存储库中的所有备份。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVaultRequest 请求对象
      * @return CompletableFuture<DeleteVaultResponse>
@@ -463,8 +436,7 @@ public class CbrAsyncClient {
      *
      * 删除存储库。若删除储存库，将一并删除存储库中的所有备份。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVaultRequest 请求对象
      * @return AsyncInvoker<DeleteVaultRequest, DeleteVaultResponse>
@@ -478,8 +450,7 @@ public class CbrAsyncClient {
      *
      * 幂等接口：删除时，如果删除的标签不存在，返回404。Key不能为空或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVaultTagRequest 请求对象
      * @return CompletableFuture<DeleteVaultTagResponse>
@@ -493,8 +464,7 @@ public class CbrAsyncClient {
      *
      * 幂等接口：删除时，如果删除的标签不存在，返回404。Key不能为空或者空字符串。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteVaultTagRequest 请求对象
      * @return AsyncInvoker<DeleteVaultTagRequest, DeleteVaultTagResponse>
@@ -510,8 +480,7 @@ public class CbrAsyncClient {
      *
      * 存储库解除策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateVaultPolicyRequest 请求对象
      * @return CompletableFuture<DisassociateVaultPolicyResponse>
@@ -526,8 +495,7 @@ public class CbrAsyncClient {
      *
      * 存储库解除策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DisassociateVaultPolicyRequest 请求对象
      * @return AsyncInvoker<DisassociateVaultPolicyRequest, DisassociateVaultPolicyResponse>
@@ -543,8 +511,7 @@ public class CbrAsyncClient {
      *
      * 同步线下混合云VMware备份副本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportBackupRequest 请求对象
      * @return CompletableFuture<ImportBackupResponse>
@@ -558,8 +525,7 @@ public class CbrAsyncClient {
      *
      * 同步线下混合云VMware备份副本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ImportBackupRequest 请求对象
      * @return AsyncInvoker<ImportBackupRequest, ImportBackupResponse>
@@ -574,8 +540,7 @@ public class CbrAsyncClient {
      *
      * 查询所有副本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackupsRequest 请求对象
      * @return CompletableFuture<ListBackupsResponse>
@@ -589,8 +554,7 @@ public class CbrAsyncClient {
      *
      * 查询所有副本
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBackupsRequest 请求对象
      * @return AsyncInvoker<ListBackupsRequest, ListBackupsResponse>
@@ -604,8 +568,7 @@ public class CbrAsyncClient {
      *
      * 查询任务列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListOpLogsRequest 请求对象
      * @return CompletableFuture<ListOpLogsResponse>
@@ -619,8 +582,7 @@ public class CbrAsyncClient {
      *
      * 查询任务列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListOpLogsRequest 请求对象
      * @return AsyncInvoker<ListOpLogsRequest, ListOpLogsResponse>
@@ -634,8 +596,7 @@ public class CbrAsyncClient {
      *
      * 查询策略列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPoliciesRequest 请求对象
      * @return CompletableFuture<ListPoliciesResponse>
@@ -649,8 +610,7 @@ public class CbrAsyncClient {
      *
      * 查询策略列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListPoliciesRequest 请求对象
      * @return AsyncInvoker<ListPoliciesRequest, ListPoliciesResponse>
@@ -665,8 +625,7 @@ public class CbrAsyncClient {
      *
      * 查询可保护性资源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProtectableRequest 请求对象
      * @return CompletableFuture<ListProtectableResponse>
@@ -680,8 +639,7 @@ public class CbrAsyncClient {
      *
      * 查询可保护性资源列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProtectableRequest 请求对象
      * @return AsyncInvoker<ListProtectableRequest, ListProtectableResponse>
@@ -697,8 +655,7 @@ public class CbrAsyncClient {
      *
      * 查询存储库列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVaultRequest 请求对象
      * @return CompletableFuture<ListVaultResponse>
@@ -712,8 +669,7 @@ public class CbrAsyncClient {
      *
      * 查询存储库列表
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListVaultRequest 请求对象
      * @return AsyncInvoker<ListVaultRequest, ListVaultResponse>
@@ -727,8 +683,7 @@ public class CbrAsyncClient {
      *
      * 支持资源迁移到另一个存储库，不删除备份。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MigrateVaultResourceRequest 请求对象
      * @return CompletableFuture<MigrateVaultResourceResponse>
@@ -743,8 +698,7 @@ public class CbrAsyncClient {
      *
      * 支持资源迁移到另一个存储库，不删除备份。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param MigrateVaultResourceRequest 请求对象
      * @return AsyncInvoker<MigrateVaultResourceRequest, MigrateVaultResourceResponse>
@@ -760,8 +714,7 @@ public class CbrAsyncClient {
      *
      * 移除存储库中的资源，若移除资源，将一并删除该资源在保管库中的备份
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveVaultResourceRequest 请求对象
      * @return CompletableFuture<RemoveVaultResourceResponse>
@@ -775,8 +728,7 @@ public class CbrAsyncClient {
      *
      * 移除存储库中的资源，若移除资源，将一并删除该资源在保管库中的备份
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RemoveVaultResourceRequest 请求对象
      * @return AsyncInvoker<RemoveVaultResourceRequest, RemoveVaultResourceResponse>
@@ -792,8 +744,7 @@ public class CbrAsyncClient {
      *
      * 恢复备份数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreBackupRequest 请求对象
      * @return CompletableFuture<RestoreBackupResponse>
@@ -807,8 +758,7 @@ public class CbrAsyncClient {
      *
      * 恢复备份数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param RestoreBackupRequest 请求对象
      * @return AsyncInvoker<RestoreBackupRequest, RestoreBackupResponse>
@@ -823,8 +773,7 @@ public class CbrAsyncClient {
      *
      * 根据指定id查询单个副本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBackupRequest 请求对象
      * @return CompletableFuture<ShowBackupResponse>
@@ -838,8 +787,7 @@ public class CbrAsyncClient {
      *
      * 根据指定id查询单个副本。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowBackupRequest 请求对象
      * @return AsyncInvoker<ShowBackupRequest, ShowBackupResponse>
@@ -853,8 +801,7 @@ public class CbrAsyncClient {
      *
      * 根据还原点ID查询指定还原点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCheckpointRequest 请求对象
      * @return CompletableFuture<ShowCheckpointResponse>
@@ -868,8 +815,7 @@ public class CbrAsyncClient {
      *
      * 根据还原点ID查询指定还原点
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowCheckpointRequest 请求对象
      * @return AsyncInvoker<ShowCheckpointRequest, ShowCheckpointResponse>
@@ -885,8 +831,7 @@ public class CbrAsyncClient {
      *
      * 获取备份成员的详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMemberDetailRequest 请求对象
      * @return CompletableFuture<ShowMemberDetailResponse>
@@ -900,8 +845,7 @@ public class CbrAsyncClient {
      *
      * 获取备份成员的详情
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMemberDetailRequest 请求对象
      * @return AsyncInvoker<ShowMemberDetailRequest, ShowMemberDetailResponse>
@@ -917,8 +861,7 @@ public class CbrAsyncClient {
      *
      * 获取备份共享成员的列表信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMembersDetailRequest 请求对象
      * @return CompletableFuture<ShowMembersDetailResponse>
@@ -932,8 +875,7 @@ public class CbrAsyncClient {
      *
      * 获取备份共享成员的列表信息
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowMembersDetailRequest 请求对象
      * @return AsyncInvoker<ShowMembersDetailRequest, ShowMembersDetailResponse>
@@ -949,8 +891,7 @@ public class CbrAsyncClient {
      *
      * 根据指定任务ID查询任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOpLogRequest 请求对象
      * @return CompletableFuture<ShowOpLogResponse>
@@ -964,8 +905,7 @@ public class CbrAsyncClient {
      *
      * 根据指定任务ID查询任务
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowOpLogRequest 请求对象
      * @return AsyncInvoker<ShowOpLogRequest, ShowOpLogResponse>
@@ -979,8 +919,7 @@ public class CbrAsyncClient {
      *
      * 查询单个策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPolicyRequest 请求对象
      * @return CompletableFuture<ShowPolicyResponse>
@@ -994,8 +933,7 @@ public class CbrAsyncClient {
      *
      * 查询单个策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowPolicyRequest 请求对象
      * @return AsyncInvoker<ShowPolicyRequest, ShowPolicyResponse>
@@ -1009,8 +947,7 @@ public class CbrAsyncClient {
      *
      * 根据ID查询可保护性资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProtectableRequest 请求对象
      * @return CompletableFuture<ShowProtectableResponse>
@@ -1024,8 +961,7 @@ public class CbrAsyncClient {
      *
      * 根据ID查询可保护性资源
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProtectableRequest 请求对象
      * @return AsyncInvoker<ShowProtectableRequest, ShowProtectableResponse>
@@ -1041,8 +977,7 @@ public class CbrAsyncClient {
      *
      * 查询本区域的复制能力
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowReplicationCapabilitiesRequest 请求对象
      * @return CompletableFuture<ShowReplicationCapabilitiesResponse>
@@ -1057,8 +992,7 @@ public class CbrAsyncClient {
      *
      * 查询本区域的复制能力
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowReplicationCapabilitiesRequest 请求对象
      * @return AsyncInvoker<ShowReplicationCapabilitiesRequest, ShowReplicationCapabilitiesResponse>
@@ -1074,8 +1008,7 @@ public class CbrAsyncClient {
      *
      * 根据ID查询指定存储库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVaultRequest 请求对象
      * @return CompletableFuture<ShowVaultResponse>
@@ -1089,8 +1022,7 @@ public class CbrAsyncClient {
      *
      * 根据ID查询指定存储库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVaultRequest 请求对象
      * @return AsyncInvoker<ShowVaultRequest, ShowVaultResponse>
@@ -1105,8 +1037,7 @@ public class CbrAsyncClient {
      * 查询租户在指定Region和实例类型的所有标签集合
      * 标签管理服务需要能够列出当前租户全部已使用的标签集合，为各服务Console打标签和过滤实例时提供标签联想功能
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVaultProjectTagRequest 请求对象
      * @return CompletableFuture<ShowVaultProjectTagResponse>
@@ -1121,8 +1052,7 @@ public class CbrAsyncClient {
      * 查询租户在指定Region和实例类型的所有标签集合
      * 标签管理服务需要能够列出当前租户全部已使用的标签集合，为各服务Console打标签和过滤实例时提供标签联想功能
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVaultProjectTagRequest 请求对象
      * @return AsyncInvoker<ShowVaultProjectTagRequest, ShowVaultProjectTagResponse>
@@ -1139,8 +1069,7 @@ public class CbrAsyncClient {
      * 使用标签过滤实例
      * 标签管理服务需要提供按标签过滤各服务实例并汇总显示在列表中，需要各服务提供查询能力
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVaultResourceInstancesRequest 请求对象
      * @return CompletableFuture<ShowVaultResourceInstancesResponse>
@@ -1156,8 +1085,7 @@ public class CbrAsyncClient {
      * 使用标签过滤实例
      * 标签管理服务需要提供按标签过滤各服务实例并汇总显示在列表中，需要各服务提供查询能力
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVaultResourceInstancesRequest 请求对象
      * @return AsyncInvoker<ShowVaultResourceInstancesRequest, ShowVaultResourceInstancesResponse>
@@ -1174,8 +1102,7 @@ public class CbrAsyncClient {
      * 查询指定实例的标签信息
      * 标签管理服务需要使用该接口查询指定实例的全部标签数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVaultTagRequest 请求对象
      * @return CompletableFuture<ShowVaultTagResponse>
@@ -1190,8 +1117,7 @@ public class CbrAsyncClient {
      * 查询指定实例的标签信息
      * 标签管理服务需要使用该接口查询指定实例的全部标签数据
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowVaultTagRequest 请求对象
      * @return AsyncInvoker<ShowVaultTagRequest, ShowVaultTagResponse>
@@ -1206,8 +1132,7 @@ public class CbrAsyncClient {
      *
      * 更新备份共享成员的状态，需要接收方执行此API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMemberStatusRequest 请求对象
      * @return CompletableFuture<UpdateMemberStatusResponse>
@@ -1221,8 +1146,7 @@ public class CbrAsyncClient {
      *
      * 更新备份共享成员的状态，需要接收方执行此API。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateMemberStatusRequest 请求对象
      * @return AsyncInvoker<UpdateMemberStatusRequest, UpdateMemberStatusResponse>
@@ -1238,8 +1162,7 @@ public class CbrAsyncClient {
      *
      * 修改策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePolicyRequest 请求对象
      * @return CompletableFuture<UpdatePolicyResponse>
@@ -1253,8 +1176,7 @@ public class CbrAsyncClient {
      *
      * 修改策略
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdatePolicyRequest 请求对象
      * @return AsyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse>
@@ -1269,8 +1191,7 @@ public class CbrAsyncClient {
      *
      * 根据存储库ID修改存储库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVaultRequest 请求对象
      * @return CompletableFuture<UpdateVaultResponse>
@@ -1284,8 +1205,7 @@ public class CbrAsyncClient {
      *
      * 根据存储库ID修改存储库
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateVaultRequest 请求对象
      * @return AsyncInvoker<UpdateVaultRequest, UpdateVaultResponse>

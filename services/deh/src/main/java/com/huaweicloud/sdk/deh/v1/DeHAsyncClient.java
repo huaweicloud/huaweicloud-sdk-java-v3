@@ -26,8 +26,7 @@ public class DeHAsyncClient {
      * 
      * 标签管理服务（TMS）使用该接口批量添加专属主机的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateDedicatedHostTagsRequest 请求对象
      * @return CompletableFuture<BatchCreateDedicatedHostTagsResponse>
@@ -44,8 +43,7 @@ public class DeHAsyncClient {
      * 
      * 标签管理服务（TMS）使用该接口批量添加专属主机的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchCreateDedicatedHostTagsRequest 请求对象
      * @return AsyncInvoker<BatchCreateDedicatedHostTagsRequest, BatchCreateDedicatedHostTagsResponse>
@@ -63,8 +61,7 @@ public class DeHAsyncClient {
      * 
      * 标签管理服务（TMS）使用该接口批量删除专属主机的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteDedicatedHostTagsRequest 请求对象
      * @return CompletableFuture<BatchDeleteDedicatedHostTagsResponse>
@@ -81,8 +78,7 @@ public class DeHAsyncClient {
      * 
      * 标签管理服务（TMS）使用该接口批量删除专属主机的标签。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param BatchDeleteDedicatedHostTagsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteDedicatedHostTagsRequest, BatchDeleteDedicatedHostTagsResponse>
@@ -98,8 +94,7 @@ public class DeHAsyncClient {
      *
      * 分配一台或多台专属主机，需要设置实例规格、所属AZ、数量等参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDedicatedHostRequest 请求对象
      * @return CompletableFuture<CreateDedicatedHostResponse>
@@ -113,8 +108,7 @@ public class DeHAsyncClient {
      *
      * 分配一台或多台专属主机，需要设置实例规格、所属AZ、数量等参数。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDedicatedHostRequest 请求对象
      * @return AsyncInvoker<CreateDedicatedHostRequest, CreateDedicatedHostResponse>
@@ -130,8 +124,7 @@ public class DeHAsyncClient {
      *
      * 释放专属主机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDedicatedHostRequest 请求对象
      * @return CompletableFuture<DeleteDedicatedHostResponse>
@@ -145,8 +138,7 @@ public class DeHAsyncClient {
      *
      * 释放专属主机。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteDedicatedHostRequest 请求对象
      * @return AsyncInvoker<DeleteDedicatedHostRequest, DeleteDedicatedHostResponse>
@@ -162,8 +154,7 @@ public class DeHAsyncClient {
      *
      * 查询某一AZ内可用的专属主机类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDedicatedHostTypesRequest 请求对象
      * @return CompletableFuture<ListDedicatedHostTypesResponse>
@@ -178,8 +169,7 @@ public class DeHAsyncClient {
      *
      * 查询某一AZ内可用的专属主机类型。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDedicatedHostTypesRequest 请求对象
      * @return AsyncInvoker<ListDedicatedHostTypesRequest, ListDedicatedHostTypesResponse>
@@ -195,8 +185,7 @@ public class DeHAsyncClient {
      *
      * 通过该接口查询专属主机列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDedicatedHostsRequest 请求对象
      * @return CompletableFuture<ListDedicatedHostsResponse>
@@ -210,8 +199,7 @@ public class DeHAsyncClient {
      *
      * 通过该接口查询专属主机列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDedicatedHostsRequest 请求对象
      * @return AsyncInvoker<ListDedicatedHostsRequest, ListDedicatedHostsResponse>
@@ -229,8 +217,7 @@ public class DeHAsyncClient {
      * 
      * 标签管理服务（TMS）使用该接口过滤专属主机列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDedicatedHostsByTagsRequest 请求对象
      * @return CompletableFuture<ListDedicatedHostsByTagsResponse>
@@ -247,8 +234,7 @@ public class DeHAsyncClient {
      * 
      * 标签管理服务（TMS）使用该接口过滤专属主机列表。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDedicatedHostsByTagsRequest 请求对象
      * @return AsyncInvoker<ListDedicatedHostsByTagsRequest, ListDedicatedHostsByTagsResponse>
@@ -264,8 +250,7 @@ public class DeHAsyncClient {
      *
      * 查询专属主机上已部署的云服务器信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServersDedicatedHostRequest 请求对象
      * @return CompletableFuture<ListServersDedicatedHostResponse>
@@ -280,8 +265,7 @@ public class DeHAsyncClient {
      *
      * 查询专属主机上已部署的云服务器信息。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListServersDedicatedHostRequest 请求对象
      * @return AsyncInvoker<ListServersDedicatedHostRequest, ListServersDedicatedHostResponse>
@@ -297,8 +281,7 @@ public class DeHAsyncClient {
      *
      * 查询某一台专属主机的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDedicatedHostRequest 请求对象
      * @return CompletableFuture<ShowDedicatedHostResponse>
@@ -312,8 +295,7 @@ public class DeHAsyncClient {
      *
      * 查询某一台专属主机的详情。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDedicatedHostRequest 请求对象
      * @return AsyncInvoker<ShowDedicatedHostRequest, ShowDedicatedHostResponse>
@@ -331,8 +313,7 @@ public class DeHAsyncClient {
      * 
      * 标签管理服务（TMS）使用该接口查询指定专属主机的全部标签数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDedicatedHostTagsRequest 请求对象
      * @return CompletableFuture<ShowDedicatedHostTagsResponse>
@@ -349,8 +330,7 @@ public class DeHAsyncClient {
      * 
      * 标签管理服务（TMS）使用该接口查询指定专属主机的全部标签数据。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowDedicatedHostTagsRequest 请求对象
      * @return AsyncInvoker<ShowDedicatedHostTagsRequest, ShowDedicatedHostTagsResponse>
@@ -366,8 +346,7 @@ public class DeHAsyncClient {
      *
      * 该接口用于查询租户的专属主机配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotaSetsRequest 请求对象
      * @return CompletableFuture<ShowQuotaSetsResponse>
@@ -381,8 +360,7 @@ public class DeHAsyncClient {
      *
      * 该接口用于查询租户的专属主机配额。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowQuotaSetsRequest 请求对象
      * @return AsyncInvoker<ShowQuotaSetsRequest, ShowQuotaSetsResponse>
@@ -397,8 +375,7 @@ public class DeHAsyncClient {
      *
      * 该接口用于变更专属主机的“auto_placement”和“name”属性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDedicatedHostRequest 请求对象
      * @return CompletableFuture<UpdateDedicatedHostResponse>
@@ -412,8 +389,7 @@ public class DeHAsyncClient {
      *
      * 该接口用于变更专属主机的“auto_placement”和“name”属性。
      * 
-     * 详细说明请参考华为云API Explorer。
-     * Please refer to Huawei cloud API Explorer for details.
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateDedicatedHostRequest 请求对象
      * @return AsyncInvoker<UpdateDedicatedHostRequest, UpdateDedicatedHostResponse>
