@@ -497,6 +497,108 @@ public class CloudIDEMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateAcceptanceRequest, CreateAcceptanceResponse> createAcceptance =
+        genForcreateAcceptance();
+
+    private static HttpRequestDef<CreateAcceptanceRequest, CreateAcceptanceResponse> genForcreateAcceptance() {
+        // basic
+        HttpRequestDef.Builder<CreateAcceptanceRequest, CreateAcceptanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAcceptanceRequest.class, CreateAcceptanceResponse.class)
+                .withName("CreateAcceptance")
+                .withUri("/v2/aims/codemodelserver/code-generation/acceptance")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AcceptanceSchema>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AcceptanceSchema.class),
+            f -> f.withMarshaller(CreateAcceptanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRequestRequest, CreateRequestResponse> createRequest =
+        genForcreateRequest();
+
+    private static HttpRequestDef<CreateRequestRequest, CreateRequestResponse> genForcreateRequest() {
+        // basic
+        HttpRequestDef.Builder<CreateRequestRequest, CreateRequestResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRequestRequest.class, CreateRequestResponse.class)
+                .withName("CreateRequest")
+                .withUri("/v2/aims/codemodelserver/code-generation/request")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("topn",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CreateRequestRequest::getTopn, (req, v) -> {
+                req.setTopn(v);
+            }));
+        builder.<String>withRequestField("scenario",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRequestRequest::getScenario, (req, v) -> {
+                req.setScenario(v);
+            }));
+        builder.<Boolean>withRequestField("resubmit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(CreateRequestRequest::getResubmit, (req, v) -> {
+                req.setResubmit(v);
+            }));
+        builder.<String>withRequestField("model_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRequestRequest::getModelId, (req, v) -> {
+                req.setModelId(v);
+            }));
+        builder.<PropertiesSchema>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PropertiesSchema.class),
+            f -> f.withMarshaller(CreateRequestRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowResultRequest, ShowResultResponse> showResult = genForshowResult();
+
+    private static HttpRequestDef<ShowResultRequest, ShowResultResponse> genForshowResult() {
+        // basic
+        HttpRequestDef.Builder<ShowResultRequest, ShowResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowResultRequest.class, ShowResultResponse.class)
+                .withName("ShowResult")
+                .withUri("/v2/aims/codemodelserver/code-generation/results")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("request_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResultRequest::getRequestId, (req, v) -> {
+                req.setRequestId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CheckInstanceAccessRequest, CheckInstanceAccessResponse> checkInstanceAccess =
         genForcheckInstanceAccess();
 

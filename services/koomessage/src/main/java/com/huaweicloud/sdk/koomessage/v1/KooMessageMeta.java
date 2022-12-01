@@ -1408,6 +1408,31 @@ public class KooMessageMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddVmsCallBackRequest, AddVmsCallBackResponse> addVmsCallBack =
+        genForaddVmsCallBack();
+
+    private static HttpRequestDef<AddVmsCallBackRequest, AddVmsCallBackResponse> genForaddVmsCallBack() {
+        // basic
+        HttpRequestDef.Builder<AddVmsCallBackRequest, AddVmsCallBackResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddVmsCallBackRequest.class, AddVmsCallBackResponse.class)
+                .withName("AddVmsCallBack")
+                .withUri("/v1/aim-basic/callbacks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AddVmsCallBackRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddVmsCallBackRequestBody.class),
+            f -> f.withMarshaller(AddVmsCallBackRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateVmsSendTaskRequest, CreateVmsSendTaskResponse> createVmsSendTask =
         genForcreateVmsSendTask();
 
@@ -1427,6 +1452,24 @@ public class KooMessageMeta {
             f -> f.withMarshaller(CreateVmsSendTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVmsCallbacksRequest, ListVmsCallbacksResponse> listVmsCallbacks =
+        genForlistVmsCallbacks();
+
+    private static HttpRequestDef<ListVmsCallbacksRequest, ListVmsCallbacksResponse> genForlistVmsCallbacks() {
+        // basic
+        HttpRequestDef.Builder<ListVmsCallbacksRequest, ListVmsCallbacksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVmsCallbacksRequest.class, ListVmsCallbacksResponse.class)
+                .withName("ListVmsCallbacks")
+                .withUri("/v1/aim-basic/callbacks")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

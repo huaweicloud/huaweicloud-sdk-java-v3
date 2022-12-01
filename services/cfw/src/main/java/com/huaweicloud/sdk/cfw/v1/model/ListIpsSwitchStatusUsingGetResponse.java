@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -12,69 +13,34 @@ import java.util.Objects;
 public class ListIpsSwitchStatusUsingGetResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "object_id")
+    @JsonProperty(value = "data")
 
-    private String objectId;
+    private IpsSwitchResponseDTO data;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "basic_defense_status")
+    public ListIpsSwitchStatusUsingGetResponse withData(IpsSwitchResponseDTO data) {
+        this.data = data;
+        return this;
+    }
 
-    private Integer basicDefenseStatus;
+    public ListIpsSwitchStatusUsingGetResponse withData(Consumer<IpsSwitchResponseDTO> dataSetter) {
+        if (this.data == null) {
+            this.data = new IpsSwitchResponseDTO();
+            dataSetter.accept(this.data);
+        }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "virtual_patches_stauts")
-
-    private Integer virtualPatchesStauts;
-
-    public ListIpsSwitchStatusUsingGetResponse withObjectId(String objectId) {
-        this.objectId = objectId;
         return this;
     }
 
     /**
-     * object_id
-     * @return objectId
+     * Get data
+     * @return data
      */
-    public String getObjectId() {
-        return objectId;
+    public IpsSwitchResponseDTO getData() {
+        return data;
     }
 
-    public void setObjectId(String objectId) {
-        this.objectId = objectId;
-    }
-
-    public ListIpsSwitchStatusUsingGetResponse withBasicDefenseStatus(Integer basicDefenseStatus) {
-        this.basicDefenseStatus = basicDefenseStatus;
-        return this;
-    }
-
-    /**
-     * 基础防御状态
-     * @return basicDefenseStatus
-     */
-    public Integer getBasicDefenseStatus() {
-        return basicDefenseStatus;
-    }
-
-    public void setBasicDefenseStatus(Integer basicDefenseStatus) {
-        this.basicDefenseStatus = basicDefenseStatus;
-    }
-
-    public ListIpsSwitchStatusUsingGetResponse withVirtualPatchesStauts(Integer virtualPatchesStauts) {
-        this.virtualPatchesStauts = virtualPatchesStauts;
-        return this;
-    }
-
-    /**
-     * 虚拟补丁状态
-     * @return virtualPatchesStauts
-     */
-    public Integer getVirtualPatchesStauts() {
-        return virtualPatchesStauts;
-    }
-
-    public void setVirtualPatchesStauts(Integer virtualPatchesStauts) {
-        this.virtualPatchesStauts = virtualPatchesStauts;
+    public void setData(IpsSwitchResponseDTO data) {
+        this.data = data;
     }
 
     @Override
@@ -87,23 +53,19 @@ public class ListIpsSwitchStatusUsingGetResponse extends SdkResponse {
         }
         ListIpsSwitchStatusUsingGetResponse listIpsSwitchStatusUsingGetResponse =
             (ListIpsSwitchStatusUsingGetResponse) o;
-        return Objects.equals(this.objectId, listIpsSwitchStatusUsingGetResponse.objectId)
-            && Objects.equals(this.basicDefenseStatus, listIpsSwitchStatusUsingGetResponse.basicDefenseStatus)
-            && Objects.equals(this.virtualPatchesStauts, listIpsSwitchStatusUsingGetResponse.virtualPatchesStauts);
+        return Objects.equals(this.data, listIpsSwitchStatusUsingGetResponse.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectId, basicDefenseStatus, virtualPatchesStauts);
+        return Objects.hash(data);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListIpsSwitchStatusUsingGetResponse {\n");
-        sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
-        sb.append("    basicDefenseStatus: ").append(toIndentedString(basicDefenseStatus)).append("\n");
-        sb.append("    virtualPatchesStauts: ").append(toIndentedString(virtualPatchesStauts)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

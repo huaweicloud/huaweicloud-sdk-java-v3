@@ -165,7 +165,7 @@ public class ListAimTemplatesRequest {
     }
 
     /**
-     * 模板创建开始时间。样例：2019-10-12T07:20:50Z。
+     * 模板创建开始时间。样例：2019-10-12T07:20:50Z。  > begin_time和end_time必须全部为空或全部不为空，并且begin_time不能大于end_time。 
      * @return beginTime
      */
     public String getBeginTime() {
@@ -182,7 +182,7 @@ public class ListAimTemplatesRequest {
     }
 
     /**
-     * 模板创建结束时间。样例：2019-10-12T07:20:50Z。
+     * 模板创建结束时间。样例：2019-10-12T07:20:50Z。  > begin_time和end_time必须全部为空或全部不为空，并且begin_time不能大于end_time。 
      * @return endTime
      */
     public String getEndTime() {

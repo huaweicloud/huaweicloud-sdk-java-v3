@@ -282,6 +282,38 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CopyConfigurationRequest, CopyConfigurationResponse> copyConfiguration =
+        genForcopyConfiguration();
+
+    private static HttpRequestDef<CopyConfigurationRequest, CopyConfigurationResponse> genForcopyConfiguration() {
+        // basic
+        HttpRequestDef.Builder<CopyConfigurationRequest, CopyConfigurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CopyConfigurationRequest.class, CopyConfigurationResponse.class)
+                .withName("CopyConfiguration")
+                .withUri("/v3/{project_id}/configurations/{config_id}/copy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyConfigurationRequest::getConfigId, (req, v) -> {
+                req.setConfigId(v);
+            }));
+        builder.<ConfigurationCopyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ConfigurationCopyRequestBody.class),
+            f -> f.withMarshaller(CopyConfigurationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateConfigurationRequest, CreateConfigurationResponse> createConfiguration =
         genForcreateConfiguration();
 
@@ -1133,6 +1165,69 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstanceParamHistoriesRequest, ListInstanceParamHistoriesResponse> listInstanceParamHistories =
+        genForlistInstanceParamHistories();
+
+    private static HttpRequestDef<ListInstanceParamHistoriesRequest, ListInstanceParamHistoriesResponse> genForlistInstanceParamHistories() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceParamHistoriesRequest, ListInstanceParamHistoriesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInstanceParamHistoriesRequest.class,
+                    ListInstanceParamHistoriesResponse.class)
+                .withName("ListInstanceParamHistories")
+                .withUri("/v3/{project_id}/instances/{instance_id}/configuration-histories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceParamHistoriesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceParamHistoriesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceParamHistoriesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceParamHistoriesRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceParamHistoriesRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<String>withRequestField("param_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceParamHistoriesRequest::getParamName, (req, v) -> {
+                req.setParamName(v);
             }));
 
         // response
@@ -4886,6 +4981,38 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchAddMsdtcsRequest, BatchAddMsdtcsResponse> batchAddMsdtcs =
+        genForbatchAddMsdtcs();
+
+    private static HttpRequestDef<BatchAddMsdtcsRequest, BatchAddMsdtcsResponse> genForbatchAddMsdtcs() {
+        // basic
+        HttpRequestDef.Builder<BatchAddMsdtcsRequest, BatchAddMsdtcsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchAddMsdtcsRequest.class, BatchAddMsdtcsResponse.class)
+                .withName("BatchAddMsdtcs")
+                .withUri("/v3/{project_id}/instances/{instance_id}/msdtc/host")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchAddMsdtcsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<AddMsdtcRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddMsdtcRequestBody.class),
+            f -> f.withMarshaller(BatchAddMsdtcsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateSqlserverDatabaseRequest, CreateSqlserverDatabaseResponse> createSqlserverDatabase =
         genForcreateSqlserverDatabase();
 
@@ -5147,6 +5274,45 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAuthorizedSqlserverDbUsersRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMsdtcHostsRequest, ListMsdtcHostsResponse> listMsdtcHosts =
+        genForlistMsdtcHosts();
+
+    private static HttpRequestDef<ListMsdtcHostsRequest, ListMsdtcHostsResponse> genForlistMsdtcHosts() {
+        // basic
+        HttpRequestDef.Builder<ListMsdtcHostsRequest, ListMsdtcHostsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMsdtcHostsRequest.class, ListMsdtcHostsResponse.class)
+                .withName("ListMsdtcHosts")
+                .withUri("/v3/{project_id}/instances/{instance_id}/msdtc/hosts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMsdtcHostsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMsdtcHostsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMsdtcHostsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response

@@ -734,7 +734,7 @@ public class CfwMeta {
             }));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAttackLogsRequest::getFwInstanceId, (req, v) -> {
                 req.setFwInstanceId(v);

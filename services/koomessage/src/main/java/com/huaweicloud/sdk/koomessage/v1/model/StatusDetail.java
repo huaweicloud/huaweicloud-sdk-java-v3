@@ -31,7 +31,7 @@ public class StatusDetail {
     }
 
     /**
-     * 运营商类型。  - cmcc：中国移动 - cucc：中国联通 - ctcc：中国电信 - oversea: 港澳台及国外 - unknown:未知 
+     * 运营商类型。  - cmcc：中国移动 - cucc：中国联通 - ctcc：中国电信 - oversea：港澳台及国外 - unknown：未知 
      * @return carrier
      */
     public String getCarrier() {
@@ -48,7 +48,7 @@ public class StatusDetail {
     }
 
     /**
-     * 模板状态： - 0：正常可用  - 1：审核中  - 2：审核不通过  - 3：模板已禁用  - 4：模板不存在  - 5: 模板已过期 
+     * 模板状态： - 0：正常可用  - 1：审核中  - 2：审核不通过  - 3：模板已禁用  - 4：模板不存在  - 5：模板已过期 
      * @return status
      */
     public Integer getStatus() {

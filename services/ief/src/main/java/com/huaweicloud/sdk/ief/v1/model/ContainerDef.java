@@ -54,6 +54,11 @@ public class ContainerDef {
     private Boolean privileged;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "run_as_user")
+
+    private Integer runAsUser;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "readiness_probe")
 
     private Probe readinessProbe;
@@ -287,6 +292,23 @@ public class ContainerDef {
         this.privileged = privileged;
     }
 
+    public ContainerDef withRunAsUser(Integer runAsUser) {
+        this.runAsUser = runAsUser;
+        return this;
+    }
+
+    /**
+     * 容器运行用户ID，输入范围为0~65534的整数
+     * @return runAsUser
+     */
+    public Integer getRunAsUser() {
+        return runAsUser;
+    }
+
+    public void setRunAsUser(Integer runAsUser) {
+        this.runAsUser = runAsUser;
+    }
+
     public ContainerDef withReadinessProbe(Probe readinessProbe) {
         this.readinessProbe = readinessProbe;
         return this;
@@ -420,6 +442,7 @@ public class ContainerDef {
             && Objects.equals(this.resources, containerDef.resources) && Objects.equals(this.envs, containerDef.envs)
             && Objects.equals(this.ports, containerDef.ports)
             && Objects.equals(this.privileged, containerDef.privileged)
+            && Objects.equals(this.runAsUser, containerDef.runAsUser)
             && Objects.equals(this.readinessProbe, containerDef.readinessProbe)
             && Objects.equals(this.livenessProbe, containerDef.livenessProbe)
             && Objects.equals(this.version, containerDef.version) && Objects.equals(this.volumes, containerDef.volumes)
@@ -436,6 +459,7 @@ public class ContainerDef {
             envs,
             ports,
             privileged,
+            runAsUser,
             readinessProbe,
             livenessProbe,
             version,
@@ -455,6 +479,7 @@ public class ContainerDef {
         sb.append("    envs: ").append(toIndentedString(envs)).append("\n");
         sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
         sb.append("    privileged: ").append(toIndentedString(privileged)).append("\n");
+        sb.append("    runAsUser: ").append(toIndentedString(runAsUser)).append("\n");
         sb.append("    readinessProbe: ").append(toIndentedString(readinessProbe)).append("\n");
         sb.append("    livenessProbe: ").append(toIndentedString(livenessProbe)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");

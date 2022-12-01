@@ -12,25 +12,25 @@ import java.util.Objects;
 public class CreateAttributeResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "id")
 
-    private String body;
+    private Long id;
 
-    public CreateAttributeResponse withBody(String body) {
-        this.body = body;
+    public CreateAttributeResponse withId(Long id) {
+        this.id = id;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 自定义属性标识
+     * @return id
      */
-    public String getBody() {
-        return body;
+    public Long getId() {
+        return id;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class CreateAttributeResponse extends SdkResponse {
             return false;
         }
         CreateAttributeResponse createAttributeResponse = (CreateAttributeResponse) o;
-        return Objects.equals(this.body, createAttributeResponse.body);
+        return Objects.equals(this.id, createAttributeResponse.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateAttributeResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

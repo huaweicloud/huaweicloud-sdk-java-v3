@@ -444,7 +444,7 @@ public class ListSimCardsRequest {
     }
 
     /**
-     * 标签ID，最多支持传50个
+     * 标签ID，最多支持传10个
      * @return tagId
      */
     public List<Long> getTagId() {

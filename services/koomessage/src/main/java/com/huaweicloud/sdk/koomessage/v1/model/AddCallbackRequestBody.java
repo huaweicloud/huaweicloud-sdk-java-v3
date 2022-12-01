@@ -26,7 +26,7 @@ public class AddCallbackRequestBody {
     }
 
     /**
-     * 回调地址。  > 建议使用https。 
+     * 回调地址。  > - 必须http或https开头，建议使用https > - 支持域名或公网IP回调地址，不支持私网IP回调地址 
      * @return callbackUrl
      */
     public String getCallbackUrl() {

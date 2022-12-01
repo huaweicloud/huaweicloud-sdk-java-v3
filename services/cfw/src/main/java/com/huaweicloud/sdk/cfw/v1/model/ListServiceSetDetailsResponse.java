@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -12,69 +13,34 @@ import java.util.Objects;
 public class ListServiceSetDetailsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
+    @JsonProperty(value = "data")
 
-    private String id;
+    private ServiceSetDetailResponseDto data;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
+    public ListServiceSetDetailsResponse withData(ServiceSetDetailResponseDto data) {
+        this.data = data;
+        return this;
+    }
 
-    private String name;
+    public ListServiceSetDetailsResponse withData(Consumer<ServiceSetDetailResponseDto> dataSetter) {
+        if (this.data == null) {
+            this.data = new ServiceSetDetailResponseDto();
+            dataSetter.accept(this.data);
+        }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
-
-    private String description;
-
-    public ListServiceSetDetailsResponse withId(String id) {
-        this.id = id;
         return this;
     }
 
     /**
-     * 服务组id
-     * @return id
+     * Get data
+     * @return data
      */
-    public String getId() {
-        return id;
+    public ServiceSetDetailResponseDto getData() {
+        return data;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public ListServiceSetDetailsResponse withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /**
-     * 服务组名称
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ListServiceSetDetailsResponse withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    /**
-     * 服务组描述信息
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void setData(ServiceSetDetailResponseDto data) {
+        this.data = data;
     }
 
     @Override
@@ -86,23 +52,19 @@ public class ListServiceSetDetailsResponse extends SdkResponse {
             return false;
         }
         ListServiceSetDetailsResponse listServiceSetDetailsResponse = (ListServiceSetDetailsResponse) o;
-        return Objects.equals(this.id, listServiceSetDetailsResponse.id)
-            && Objects.equals(this.name, listServiceSetDetailsResponse.name)
-            && Objects.equals(this.description, listServiceSetDetailsResponse.description);
+        return Objects.equals(this.data, listServiceSetDetailsResponse.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description);
+        return Objects.hash(data);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListServiceSetDetailsResponse {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

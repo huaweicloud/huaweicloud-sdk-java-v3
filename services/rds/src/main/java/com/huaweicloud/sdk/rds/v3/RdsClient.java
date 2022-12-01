@@ -226,6 +226,36 @@ public class RdsClient {
     }
 
     /**
+     * 复制参数模板
+     *
+     * 复制参数模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CopyConfigurationRequest 请求对象
+     * @return CopyConfigurationResponse
+     */
+    public CopyConfigurationResponse copyConfiguration(CopyConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.copyConfiguration);
+    }
+
+    /**
+     * 复制参数模板
+     *
+     * 复制参数模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CopyConfigurationRequest 请求对象
+     * @return SyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse>
+     */
+    public SyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse> copyConfigurationInvoker(
+        CopyConfigurationRequest request) {
+        return new SyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse>(request, RdsMeta.copyConfiguration,
+            hcClient);
+    }
+
+    /**
      * 创建参数模板
      *
      * 创建参数模板。
@@ -843,6 +873,36 @@ public class RdsClient {
      */
     public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
         return new SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, RdsMeta.listFlavors, hcClient);
+    }
+
+    /**
+     * 查询实例参数修改历史
+     *
+     * 实例参数修改历史。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceParamHistoriesRequest 请求对象
+     * @return ListInstanceParamHistoriesResponse
+     */
+    public ListInstanceParamHistoriesResponse listInstanceParamHistories(ListInstanceParamHistoriesRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listInstanceParamHistories);
+    }
+
+    /**
+     * 查询实例参数修改历史
+     *
+     * 实例参数修改历史。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceParamHistoriesRequest 请求对象
+     * @return SyncInvoker<ListInstanceParamHistoriesRequest, ListInstanceParamHistoriesResponse>
+     */
+    public SyncInvoker<ListInstanceParamHistoriesRequest, ListInstanceParamHistoriesResponse> listInstanceParamHistoriesInvoker(
+        ListInstanceParamHistoriesRequest request) {
+        return new SyncInvoker<ListInstanceParamHistoriesRequest, ListInstanceParamHistoriesResponse>(request,
+            RdsMeta.listInstanceParamHistories, hcClient);
     }
 
     /**
@@ -3627,6 +3687,36 @@ public class RdsClient {
     }
 
     /**
+     * 添加MSDTC
+     *
+     * 添加MSDTC相关主机host地址
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchAddMsdtcsRequest 请求对象
+     * @return BatchAddMsdtcsResponse
+     */
+    public BatchAddMsdtcsResponse batchAddMsdtcs(BatchAddMsdtcsRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.batchAddMsdtcs);
+    }
+
+    /**
+     * 添加MSDTC
+     *
+     * 添加MSDTC相关主机host地址
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchAddMsdtcsRequest 请求对象
+     * @return SyncInvoker<BatchAddMsdtcsRequest, BatchAddMsdtcsResponse>
+     */
+    public SyncInvoker<BatchAddMsdtcsRequest, BatchAddMsdtcsResponse> batchAddMsdtcsInvoker(
+        BatchAddMsdtcsRequest request) {
+        return new SyncInvoker<BatchAddMsdtcsRequest, BatchAddMsdtcsResponse>(request, RdsMeta.batchAddMsdtcs,
+            hcClient);
+    }
+
+    /**
      * 创建数据库
      *
      * 创建数据库。
@@ -3805,6 +3895,36 @@ public class RdsClient {
         ListAuthorizedSqlserverDbUsersRequest request) {
         return new SyncInvoker<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse>(request,
             RdsMeta.listAuthorizedSqlserverDbUsers, hcClient);
+    }
+
+    /**
+     * 查询MSDTC的hosts信息
+     *
+     * 查询MSDTC的hosts信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMsdtcHostsRequest 请求对象
+     * @return ListMsdtcHostsResponse
+     */
+    public ListMsdtcHostsResponse listMsdtcHosts(ListMsdtcHostsRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listMsdtcHosts);
+    }
+
+    /**
+     * 查询MSDTC的hosts信息
+     *
+     * 查询MSDTC的hosts信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMsdtcHostsRequest 请求对象
+     * @return SyncInvoker<ListMsdtcHostsRequest, ListMsdtcHostsResponse>
+     */
+    public SyncInvoker<ListMsdtcHostsRequest, ListMsdtcHostsResponse> listMsdtcHostsInvoker(
+        ListMsdtcHostsRequest request) {
+        return new SyncInvoker<ListMsdtcHostsRequest, ListMsdtcHostsResponse>(request, RdsMeta.listMsdtcHosts,
+            hcClient);
     }
 
     /**

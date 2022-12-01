@@ -19,6 +19,11 @@ public class AppConfigs {
     private Boolean privileged;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "run_as_user")
+
+    private Integer runAsUser;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_network")
 
     private Boolean hostNetwork;
@@ -36,7 +41,7 @@ public class AppConfigs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_pid")
 
-    private String hostPid;
+    private Boolean hostPid;
 
     public AppConfigs withPrivileged(Boolean privileged) {
         this.privileged = privileged;
@@ -53,6 +58,23 @@ public class AppConfigs {
 
     public void setPrivileged(Boolean privileged) {
         this.privileged = privileged;
+    }
+
+    public AppConfigs withRunAsUser(Integer runAsUser) {
+        this.runAsUser = runAsUser;
+        return this;
+    }
+
+    /**
+     * 容器运行用户ID，输入范围为0~65534的整数
+     * @return runAsUser
+     */
+    public Integer getRunAsUser() {
+        return runAsUser;
+    }
+
+    public void setRunAsUser(Integer runAsUser) {
+        this.runAsUser = runAsUser;
     }
 
     public AppConfigs withHostNetwork(Boolean hostNetwork) {
@@ -122,7 +144,7 @@ public class AppConfigs {
         this.ports = ports;
     }
 
-    public AppConfigs withHostPid(String hostPid) {
+    public AppConfigs withHostPid(Boolean hostPid) {
         this.hostPid = hostPid;
         return this;
     }
@@ -131,11 +153,11 @@ public class AppConfigs {
      * 应用实例是否与主机共PID命名空间，默认值false
      * @return hostPid
      */
-    public String getHostPid() {
+    public Boolean getHostPid() {
         return hostPid;
     }
 
-    public void setHostPid(String hostPid) {
+    public void setHostPid(Boolean hostPid) {
         this.hostPid = hostPid;
     }
 
@@ -149,6 +171,7 @@ public class AppConfigs {
         }
         AppConfigs appConfigs = (AppConfigs) o;
         return Objects.equals(this.privileged, appConfigs.privileged)
+            && Objects.equals(this.runAsUser, appConfigs.runAsUser)
             && Objects.equals(this.hostNetwork, appConfigs.hostNetwork)
             && Objects.equals(this.restartPolicy, appConfigs.restartPolicy)
             && Objects.equals(this.ports, appConfigs.ports) && Objects.equals(this.hostPid, appConfigs.hostPid);
@@ -156,7 +179,7 @@ public class AppConfigs {
 
     @Override
     public int hashCode() {
-        return Objects.hash(privileged, hostNetwork, restartPolicy, ports, hostPid);
+        return Objects.hash(privileged, runAsUser, hostNetwork, restartPolicy, ports, hostPid);
     }
 
     @Override
@@ -164,6 +187,7 @@ public class AppConfigs {
         StringBuilder sb = new StringBuilder();
         sb.append("class AppConfigs {\n");
         sb.append("    privileged: ").append(toIndentedString(privileged)).append("\n");
+        sb.append("    runAsUser: ").append(toIndentedString(runAsUser)).append("\n");
         sb.append("    hostNetwork: ").append(toIndentedString(hostNetwork)).append("\n");
         sb.append("    restartPolicy: ").append(toIndentedString(restartPolicy)).append("\n");
         sb.append("    ports: ").append(toIndentedString(ports)).append("\n");

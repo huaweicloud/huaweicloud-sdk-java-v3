@@ -838,6 +838,8 @@ public class KooMessageAsyncClient {
      *
      * 用于用户创建个人模板。
      * 
+     * &gt; 请求中所有字符串不允许携带“&lt;”、“&gt;”或多个空格。
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateAimPersonalTemplateRequest 请求对象
@@ -852,6 +854,8 @@ public class KooMessageAsyncClient {
      * 创建个人模板
      *
      * 用于用户创建个人模板。
+     * 
+     * &gt; 请求中所有字符串不允许携带“&lt;”、“&gt;”或多个空格。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1025,6 +1029,9 @@ public class KooMessageAsyncClient {
      *
      * 支持用户上传模板使用的图片或者视频。
      * 
+     * &gt; 单个租户资源空间为10GB，包括回收站内容，请及时清理无用资源，防止资源浪费。
+     * &gt; 请求中所有字符串不允许携带“&lt;”、“&gt;”或多个空格。
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadAimTemplateMaterialRequest 请求对象
@@ -1040,6 +1047,9 @@ public class KooMessageAsyncClient {
      *
      * 支持用户上传模板使用的图片或者视频。
      * 
+     * &gt; 单个租户资源空间为10GB，包括回收站内容，请及时清理无用资源，防止资源浪费。
+     * &gt; 请求中所有字符串不允许携带“&lt;”、“&gt;”或多个空格。
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UploadAimTemplateMaterialRequest 请求对象
@@ -1049,6 +1059,36 @@ public class KooMessageAsyncClient {
         UploadAimTemplateMaterialRequest request) {
         return new AsyncInvoker<UploadAimTemplateMaterialRequest, UploadAimTemplateMaterialResponse>(request,
             KooMessageMeta.uploadAimTemplateMaterial, hcClient);
+    }
+
+    /**
+     * 注册智能信息基础版回执URL
+     *
+     * 用户根据要求创建智能信息基础版回执接口后，可以调用此接口进行注册。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddVmsCallBackRequest 请求对象
+     * @return CompletableFuture<AddVmsCallBackResponse>
+     */
+    public CompletableFuture<AddVmsCallBackResponse> addVmsCallBackAsync(AddVmsCallBackRequest request) {
+        return hcClient.asyncInvokeHttp(request, KooMessageMeta.addVmsCallBack);
+    }
+
+    /**
+     * 注册智能信息基础版回执URL
+     *
+     * 用户根据要求创建智能信息基础版回执接口后，可以调用此接口进行注册。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddVmsCallBackRequest 请求对象
+     * @return AsyncInvoker<AddVmsCallBackRequest, AddVmsCallBackResponse>
+     */
+    public AsyncInvoker<AddVmsCallBackRequest, AddVmsCallBackResponse> addVmsCallBackAsyncInvoker(
+        AddVmsCallBackRequest request) {
+        return new AsyncInvoker<AddVmsCallBackRequest, AddVmsCallBackResponse>(request, KooMessageMeta.addVmsCallBack,
+            hcClient);
     }
 
     /**
@@ -1079,6 +1119,36 @@ public class KooMessageAsyncClient {
         CreateVmsSendTaskRequest request) {
         return new AsyncInvoker<CreateVmsSendTaskRequest, CreateVmsSendTaskResponse>(request,
             KooMessageMeta.createVmsSendTask, hcClient);
+    }
+
+    /**
+     * 查询用户已注册智能信息基础版回执接口
+     *
+     * 查询所有已注册的智能信息基础版回执接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListVmsCallbacksRequest 请求对象
+     * @return CompletableFuture<ListVmsCallbacksResponse>
+     */
+    public CompletableFuture<ListVmsCallbacksResponse> listVmsCallbacksAsync(ListVmsCallbacksRequest request) {
+        return hcClient.asyncInvokeHttp(request, KooMessageMeta.listVmsCallbacks);
+    }
+
+    /**
+     * 查询用户已注册智能信息基础版回执接口
+     *
+     * 查询所有已注册的智能信息基础版回执接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListVmsCallbacksRequest 请求对象
+     * @return AsyncInvoker<ListVmsCallbacksRequest, ListVmsCallbacksResponse>
+     */
+    public AsyncInvoker<ListVmsCallbacksRequest, ListVmsCallbacksResponse> listVmsCallbacksAsyncInvoker(
+        ListVmsCallbacksRequest request) {
+        return new AsyncInvoker<ListVmsCallbacksRequest, ListVmsCallbacksResponse>(request,
+            KooMessageMeta.listVmsCallbacks, hcClient);
     }
 
     /**

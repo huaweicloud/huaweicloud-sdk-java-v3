@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -63,13 +65,18 @@ public class CreateAimSendTaskResponse extends SdkResponse {
 
     private Integer supportResolveCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "failed_short_chains")
+
+    private List<CreateResolveTaskParamMode> failedShortChains = null;
+
     public CreateAimSendTaskResponse withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
     }
 
     /**
-     * 短信任务名称。
+     * 智能信息发送任务名称。
      * @return taskName
      */
     public String getTaskName() {
@@ -251,6 +258,40 @@ public class CreateAimSendTaskResponse extends SdkResponse {
         this.supportResolveCount = supportResolveCount;
     }
 
+    public CreateAimSendTaskResponse withFailedShortChains(List<CreateResolveTaskParamMode> failedShortChains) {
+        this.failedShortChains = failedShortChains;
+        return this;
+    }
+
+    public CreateAimSendTaskResponse addFailedShortChainsItem(CreateResolveTaskParamMode failedShortChainsItem) {
+        if (this.failedShortChains == null) {
+            this.failedShortChains = new ArrayList<>();
+        }
+        this.failedShortChains.add(failedShortChainsItem);
+        return this;
+    }
+
+    public CreateAimSendTaskResponse withFailedShortChains(
+        Consumer<List<CreateResolveTaskParamMode>> failedShortChainsSetter) {
+        if (this.failedShortChains == null) {
+            this.failedShortChains = new ArrayList<>();
+        }
+        failedShortChainsSetter.accept(this.failedShortChains);
+        return this;
+    }
+
+    /**
+     * 短链生成失败列表。 
+     * @return failedShortChains
+     */
+    public List<CreateResolveTaskParamMode> getFailedShortChains() {
+        return failedShortChains;
+    }
+
+    public void setFailedShortChains(List<CreateResolveTaskParamMode> failedShortChains) {
+        this.failedShortChains = failedShortChains;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -269,7 +310,8 @@ public class CreateAimSendTaskResponse extends SdkResponse {
             && Objects.equals(this.submissionCount, createAimSendTaskResponse.submissionCount)
             && Objects.equals(this.sendCount, createAimSendTaskResponse.sendCount)
             && Objects.equals(this.resolveCount, createAimSendTaskResponse.resolveCount)
-            && Objects.equals(this.supportResolveCount, createAimSendTaskResponse.supportResolveCount);
+            && Objects.equals(this.supportResolveCount, createAimSendTaskResponse.supportResolveCount)
+            && Objects.equals(this.failedShortChains, createAimSendTaskResponse.failedShortChains);
     }
 
     @Override
@@ -283,7 +325,8 @@ public class CreateAimSendTaskResponse extends SdkResponse {
             submissionCount,
             sendCount,
             resolveCount,
-            supportResolveCount);
+            supportResolveCount,
+            failedShortChains);
     }
 
     @Override
@@ -300,6 +343,7 @@ public class CreateAimSendTaskResponse extends SdkResponse {
         sb.append("    sendCount: ").append(toIndentedString(sendCount)).append("\n");
         sb.append("    resolveCount: ").append(toIndentedString(resolveCount)).append("\n");
         sb.append("    supportResolveCount: ").append(toIndentedString(supportResolveCount)).append("\n");
+        sb.append("    failedShortChains: ").append(toIndentedString(failedShortChains)).append("\n");
         sb.append("}");
         return sb.toString();
     }

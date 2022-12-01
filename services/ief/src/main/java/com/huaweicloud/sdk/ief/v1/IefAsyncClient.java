@@ -120,6 +120,36 @@ public class IefAsyncClient {
     }
 
     /**
+     * 创建批量处理任务
+     *
+     * 创建批量处理作业。该API用于创建批量处理作业，当前支持：批量节点升级、批量应用部署、批量应用升级
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateBatchJobRequest 请求对象
+     * @return CompletableFuture<CreateBatchJobResponse>
+     */
+    public CompletableFuture<CreateBatchJobResponse> createBatchJobAsync(CreateBatchJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.createBatchJob);
+    }
+
+    /**
+     * 创建批量处理任务
+     *
+     * 创建批量处理作业。该API用于创建批量处理作业，当前支持：批量节点升级、批量应用部署、批量应用升级
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateBatchJobRequest 请求对象
+     * @return AsyncInvoker<CreateBatchJobRequest, CreateBatchJobResponse>
+     */
+    public AsyncInvoker<CreateBatchJobRequest, CreateBatchJobResponse> createBatchJobAsyncInvoker(
+        CreateBatchJobRequest request) {
+        return new AsyncInvoker<CreateBatchJobRequest, CreateBatchJobResponse>(request, IefMeta.createBatchJob,
+            hcClient);
+    }
+
+    /**
      * 创建配置项
      *
      * 创建配置项
@@ -237,6 +267,66 @@ public class IefAsyncClient {
         CreateDeviceTemplateRequest request) {
         return new AsyncInvoker<CreateDeviceTemplateRequest, CreateDeviceTemplateResponse>(request,
             IefMeta.createDeviceTemplate, hcClient);
+    }
+
+    /**
+     * 边缘节点组管理
+     *
+     * 创建边缘节点组。该API只能在铂金版实例中使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEdgeGroupRequest 请求对象
+     * @return CompletableFuture<CreateEdgeGroupResponse>
+     */
+    public CompletableFuture<CreateEdgeGroupResponse> createEdgeGroupAsync(CreateEdgeGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.createEdgeGroup);
+    }
+
+    /**
+     * 边缘节点组管理
+     *
+     * 创建边缘节点组。该API只能在铂金版实例中使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEdgeGroupRequest 请求对象
+     * @return AsyncInvoker<CreateEdgeGroupRequest, CreateEdgeGroupResponse>
+     */
+    public AsyncInvoker<CreateEdgeGroupRequest, CreateEdgeGroupResponse> createEdgeGroupAsyncInvoker(
+        CreateEdgeGroupRequest request) {
+        return new AsyncInvoker<CreateEdgeGroupRequest, CreateEdgeGroupResponse>(request, IefMeta.createEdgeGroup,
+            hcClient);
+    }
+
+    /**
+     * 创建边缘节点组证书
+     *
+     * 创建边缘节点组证书。边缘节点组证书.tar.gz文件仅在调用该API时提供压缩包下载，请及时下载证书文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEdgeGroupCertRequest 请求对象
+     * @return CompletableFuture<CreateEdgeGroupCertResponse>
+     */
+    public CompletableFuture<CreateEdgeGroupCertResponse> createEdgeGroupCertAsync(CreateEdgeGroupCertRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.createEdgeGroupCert);
+    }
+
+    /**
+     * 创建边缘节点组证书
+     *
+     * 创建边缘节点组证书。边缘节点组证书.tar.gz文件仅在调用该API时提供压缩包下载，请及时下载证书文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEdgeGroupCertRequest 请求对象
+     * @return AsyncInvoker<CreateEdgeGroupCertRequest, CreateEdgeGroupCertResponse>
+     */
+    public AsyncInvoker<CreateEdgeGroupCertRequest, CreateEdgeGroupCertResponse> createEdgeGroupCertAsyncInvoker(
+        CreateEdgeGroupCertRequest request) {
+        return new AsyncInvoker<CreateEdgeGroupCertRequest, CreateEdgeGroupCertResponse>(request,
+            IefMeta.createEdgeGroupCert, hcClient);
     }
 
     /**
@@ -391,6 +481,35 @@ public class IefAsyncClient {
     }
 
     /**
+     * 创建批量节点注册作业
+     *
+     * 创建批量节点注册作业。接口调用成功后，您可以将响应消息体中product.package字段使用base64解码成tar.gz产品证书文件，并在控制台下载边缘注册软件edge-register和edge-installer，使用该产品证书批量纳管边缘节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateProductRequest 请求对象
+     * @return CompletableFuture<CreateProductResponse>
+     */
+    public CompletableFuture<CreateProductResponse> createProductAsync(CreateProductRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.createProduct);
+    }
+
+    /**
+     * 创建批量节点注册作业
+     *
+     * 创建批量节点注册作业。接口调用成功后，您可以将响应消息体中product.package字段使用base64解码成tar.gz产品证书文件，并在控制台下载边缘注册软件edge-register和edge-installer，使用该产品证书批量纳管边缘节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateProductRequest 请求对象
+     * @return AsyncInvoker<CreateProductRequest, CreateProductResponse>
+     */
+    public AsyncInvoker<CreateProductRequest, CreateProductResponse> createProductAsyncInvoker(
+        CreateProductRequest request) {
+        return new AsyncInvoker<CreateProductRequest, CreateProductResponse>(request, IefMeta.createProduct, hcClient);
+    }
+
+    /**
      * 创建规则
      *
      * 创建一条规则
@@ -474,6 +593,36 @@ public class IefAsyncClient {
     public AsyncInvoker<CreateServiceRequest, CreateServiceResponse> createServiceAsyncInvoker(
         CreateServiceRequest request) {
         return new AsyncInvoker<CreateServiceRequest, CreateServiceResponse>(request, IefMeta.createService, hcClient);
+    }
+
+    /**
+     * 创建系统订阅
+     *
+     * 创建系统订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSystemEventRequest 请求对象
+     * @return CompletableFuture<CreateSystemEventResponse>
+     */
+    public CompletableFuture<CreateSystemEventResponse> createSystemEventAsync(CreateSystemEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.createSystemEvent);
+    }
+
+    /**
+     * 创建系统订阅
+     *
+     * 创建系统订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSystemEventRequest 请求对象
+     * @return AsyncInvoker<CreateSystemEventRequest, CreateSystemEventResponse>
+     */
+    public AsyncInvoker<CreateSystemEventRequest, CreateSystemEventResponse> createSystemEventAsyncInvoker(
+        CreateSystemEventRequest request) {
+        return new AsyncInvoker<CreateSystemEventRequest, CreateSystemEventResponse>(request, IefMeta.createSystemEvent,
+            hcClient);
     }
 
     /**
@@ -563,6 +712,36 @@ public class IefAsyncClient {
     public AsyncInvoker<DeleteAppVersionRequest, DeleteAppVersionResponse> deleteAppVersionAsyncInvoker(
         DeleteAppVersionRequest request) {
         return new AsyncInvoker<DeleteAppVersionRequest, DeleteAppVersionResponse>(request, IefMeta.deleteAppVersion,
+            hcClient);
+    }
+
+    /**
+     * 删除批量处理作业
+     *
+     * 删除批量处理作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBatchJobRequest 请求对象
+     * @return CompletableFuture<DeleteBatchJobResponse>
+     */
+    public CompletableFuture<DeleteBatchJobResponse> deleteBatchJobAsync(DeleteBatchJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.deleteBatchJob);
+    }
+
+    /**
+     * 删除批量处理作业
+     *
+     * 删除批量处理作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBatchJobRequest 请求对象
+     * @return AsyncInvoker<DeleteBatchJobRequest, DeleteBatchJobResponse>
+     */
+    public AsyncInvoker<DeleteBatchJobRequest, DeleteBatchJobResponse> deleteBatchJobAsyncInvoker(
+        DeleteBatchJobRequest request) {
+        return new AsyncInvoker<DeleteBatchJobRequest, DeleteBatchJobResponse>(request, IefMeta.deleteBatchJob,
             hcClient);
     }
 
@@ -684,6 +863,66 @@ public class IefAsyncClient {
         DeleteDeviceTemplateRequest request) {
         return new AsyncInvoker<DeleteDeviceTemplateRequest, DeleteDeviceTemplateResponse>(request,
             IefMeta.deleteDeviceTemplate, hcClient);
+    }
+
+    /**
+     * 删除边缘节点组
+     *
+     * 删除边缘节点组。该API只能在铂金版实例中使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEdgeGroupRequest 请求对象
+     * @return CompletableFuture<DeleteEdgeGroupResponse>
+     */
+    public CompletableFuture<DeleteEdgeGroupResponse> deleteEdgeGroupAsync(DeleteEdgeGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.deleteEdgeGroup);
+    }
+
+    /**
+     * 删除边缘节点组
+     *
+     * 删除边缘节点组。该API只能在铂金版实例中使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEdgeGroupRequest 请求对象
+     * @return AsyncInvoker<DeleteEdgeGroupRequest, DeleteEdgeGroupResponse>
+     */
+    public AsyncInvoker<DeleteEdgeGroupRequest, DeleteEdgeGroupResponse> deleteEdgeGroupAsyncInvoker(
+        DeleteEdgeGroupRequest request) {
+        return new AsyncInvoker<DeleteEdgeGroupRequest, DeleteEdgeGroupResponse>(request, IefMeta.deleteEdgeGroup,
+            hcClient);
+    }
+
+    /**
+     * 删除边缘节点组证书
+     *
+     * 删除边缘节点组证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEdgeGroupCertRequest 请求对象
+     * @return CompletableFuture<DeleteEdgeGroupCertResponse>
+     */
+    public CompletableFuture<DeleteEdgeGroupCertResponse> deleteEdgeGroupCertAsync(DeleteEdgeGroupCertRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.deleteEdgeGroupCert);
+    }
+
+    /**
+     * 删除边缘节点组证书
+     *
+     * 删除边缘节点组证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEdgeGroupCertRequest 请求对象
+     * @return AsyncInvoker<DeleteEdgeGroupCertRequest, DeleteEdgeGroupCertResponse>
+     */
+    public AsyncInvoker<DeleteEdgeGroupCertRequest, DeleteEdgeGroupCertResponse> deleteEdgeGroupCertAsyncInvoker(
+        DeleteEdgeGroupCertRequest request) {
+        return new AsyncInvoker<DeleteEdgeGroupCertRequest, DeleteEdgeGroupCertResponse>(request,
+            IefMeta.deleteEdgeGroupCert, hcClient);
     }
 
     /**
@@ -838,6 +1077,35 @@ public class IefAsyncClient {
     }
 
     /**
+     * 删除批量节点注册作业
+     *
+     * 删除批量节点注册作业。接口调用成功后，与该批量注册任务关联的批量注册凭证将会失效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteProductRequest 请求对象
+     * @return CompletableFuture<DeleteProductResponse>
+     */
+    public CompletableFuture<DeleteProductResponse> deleteProductAsync(DeleteProductRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.deleteProduct);
+    }
+
+    /**
+     * 删除批量节点注册作业
+     *
+     * 删除批量节点注册作业。接口调用成功后，与该批量注册任务关联的批量注册凭证将会失效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteProductRequest 请求对象
+     * @return AsyncInvoker<DeleteProductRequest, DeleteProductResponse>
+     */
+    public AsyncInvoker<DeleteProductRequest, DeleteProductResponse> deleteProductAsyncInvoker(
+        DeleteProductRequest request) {
+        return new AsyncInvoker<DeleteProductRequest, DeleteProductResponse>(request, IefMeta.deleteProduct, hcClient);
+    }
+
+    /**
      * 删除资源标签
      *
      * 删除资源标签。删除时不对标签字符集做校验，调用前必须要做encodeURI，服务端需要对接口uri做decodeURI。删除的key不存在报404，Key不能为空或者空字符串。
@@ -954,6 +1222,36 @@ public class IefAsyncClient {
     }
 
     /**
+     * 删除系统订阅列表
+     *
+     * 删除系统订阅列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSystemEventRequest 请求对象
+     * @return CompletableFuture<DeleteSystemEventResponse>
+     */
+    public CompletableFuture<DeleteSystemEventResponse> deleteSystemEventAsync(DeleteSystemEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.deleteSystemEvent);
+    }
+
+    /**
+     * 删除系统订阅列表
+     *
+     * 删除系统订阅列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSystemEventRequest 请求对象
+     * @return AsyncInvoker<DeleteSystemEventRequest, DeleteSystemEventResponse>
+     */
+    public AsyncInvoker<DeleteSystemEventRequest, DeleteSystemEventResponse> deleteSystemEventAsyncInvoker(
+        DeleteSystemEventRequest request) {
+        return new AsyncInvoker<DeleteSystemEventRequest, DeleteSystemEventResponse>(request, IefMeta.deleteSystemEvent,
+            hcClient);
+    }
+
+    /**
      * 启用停用边缘节点
      *
      * 启用停用边缘节点。被停用的边缘节点将无法连接到云端服务，可用该URI启用边缘节点恢复连接。
@@ -1040,6 +1338,35 @@ public class IefAsyncClient {
      */
     public AsyncInvoker<ListAppsRequest, ListAppsResponse> listAppsAsyncInvoker(ListAppsRequest request) {
         return new AsyncInvoker<ListAppsRequest, ListAppsResponse>(request, IefMeta.listApps, hcClient);
+    }
+
+    /**
+     * 查询批量处理作业列表
+     *
+     * 查询批量处理作业列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBatchJobRequest 请求对象
+     * @return CompletableFuture<ListBatchJobResponse>
+     */
+    public CompletableFuture<ListBatchJobResponse> listBatchJobAsync(ListBatchJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.listBatchJob);
+    }
+
+    /**
+     * 查询批量处理作业列表
+     *
+     * 查询批量处理作业列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBatchJobRequest 请求对象
+     * @return AsyncInvoker<ListBatchJobRequest, ListBatchJobResponse>
+     */
+    public AsyncInvoker<ListBatchJobRequest, ListBatchJobResponse> listBatchJobAsyncInvoker(
+        ListBatchJobRequest request) {
+        return new AsyncInvoker<ListBatchJobRequest, ListBatchJobResponse>(request, IefMeta.listBatchJob, hcClient);
     }
 
     /**
@@ -1158,6 +1485,66 @@ public class IefAsyncClient {
      */
     public AsyncInvoker<ListDevicesRequest, ListDevicesResponse> listDevicesAsyncInvoker(ListDevicesRequest request) {
         return new AsyncInvoker<ListDevicesRequest, ListDevicesResponse>(request, IefMeta.listDevices, hcClient);
+    }
+
+    /**
+     * 查询边缘节点组证书列表
+     *
+     * 查询边缘节点组证书列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEdgeGroupCertsRequest 请求对象
+     * @return CompletableFuture<ListEdgeGroupCertsResponse>
+     */
+    public CompletableFuture<ListEdgeGroupCertsResponse> listEdgeGroupCertsAsync(ListEdgeGroupCertsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.listEdgeGroupCerts);
+    }
+
+    /**
+     * 查询边缘节点组证书列表
+     *
+     * 查询边缘节点组证书列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEdgeGroupCertsRequest 请求对象
+     * @return AsyncInvoker<ListEdgeGroupCertsRequest, ListEdgeGroupCertsResponse>
+     */
+    public AsyncInvoker<ListEdgeGroupCertsRequest, ListEdgeGroupCertsResponse> listEdgeGroupCertsAsyncInvoker(
+        ListEdgeGroupCertsRequest request) {
+        return new AsyncInvoker<ListEdgeGroupCertsRequest, ListEdgeGroupCertsResponse>(request,
+            IefMeta.listEdgeGroupCerts, hcClient);
+    }
+
+    /**
+     * 查询边缘节点组列表
+     *
+     * 查询边缘节点组列表。该API只能在铂金版实例中使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEdgeGroupsRequest 请求对象
+     * @return CompletableFuture<ListEdgeGroupsResponse>
+     */
+    public CompletableFuture<ListEdgeGroupsResponse> listEdgeGroupsAsync(ListEdgeGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.listEdgeGroups);
+    }
+
+    /**
+     * 查询边缘节点组列表
+     *
+     * 查询边缘节点组列表。该API只能在铂金版实例中使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEdgeGroupsRequest 请求对象
+     * @return AsyncInvoker<ListEdgeGroupsRequest, ListEdgeGroupsResponse>
+     */
+    public AsyncInvoker<ListEdgeGroupsRequest, ListEdgeGroupsResponse> listEdgeGroupsAsyncInvoker(
+        ListEdgeGroupsRequest request) {
+        return new AsyncInvoker<ListEdgeGroupsRequest, ListEdgeGroupsResponse>(request, IefMeta.listEdgeGroups,
+            hcClient);
     }
 
     /**
@@ -1377,6 +1764,35 @@ public class IefAsyncClient {
     }
 
     /**
+     * 查询批量节点注册作业列表
+     *
+     * 查询批量节点注册作业列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProductsRequest 请求对象
+     * @return CompletableFuture<ListProductsResponse>
+     */
+    public CompletableFuture<ListProductsResponse> listProductsAsync(ListProductsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.listProducts);
+    }
+
+    /**
+     * 查询批量节点注册作业列表
+     *
+     * 查询批量节点注册作业列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProductsRequest 请求对象
+     * @return AsyncInvoker<ListProductsRequest, ListProductsResponse>
+     */
+    public AsyncInvoker<ListProductsRequest, ListProductsResponse> listProductsAsyncInvoker(
+        ListProductsRequest request) {
+        return new AsyncInvoker<ListProductsRequest, ListProductsResponse>(request, IefMeta.listProducts, hcClient);
+    }
+
+    /**
      * 查询资源实例
      *
      * 使用标签过滤实例
@@ -1522,6 +1938,36 @@ public class IefAsyncClient {
     }
 
     /**
+     * 查询系统订阅列表
+     *
+     * 查询系统订阅列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSystemEventsRequest 请求对象
+     * @return CompletableFuture<ListSystemEventsResponse>
+     */
+    public CompletableFuture<ListSystemEventsResponse> listSystemEventsAsync(ListSystemEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.listSystemEvents);
+    }
+
+    /**
+     * 查询系统订阅列表
+     *
+     * 查询系统订阅列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSystemEventsRequest 请求对象
+     * @return AsyncInvoker<ListSystemEventsRequest, ListSystemEventsResponse>
+     */
+    public AsyncInvoker<ListSystemEventsRequest, ListSystemEventsResponse> listSystemEventsAsyncInvoker(
+        ListSystemEventsRequest request) {
+        return new AsyncInvoker<ListSystemEventsRequest, ListSystemEventsResponse>(request, IefMeta.listSystemEvents,
+            hcClient);
+    }
+
+    /**
      * 查询资源标签
      *
      * 查询指定实例的标签信息
@@ -1612,6 +2058,65 @@ public class IefAsyncClient {
     }
 
     /**
+     * 继续批量处理作业
+     *
+     * 继续执行批量处理作业。该API只对停止的批量处理作业生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestoreBatchJobRequest 请求对象
+     * @return CompletableFuture<RestoreBatchJobResponse>
+     */
+    public CompletableFuture<RestoreBatchJobResponse> restoreBatchJobAsync(RestoreBatchJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.restoreBatchJob);
+    }
+
+    /**
+     * 继续批量处理作业
+     *
+     * 继续执行批量处理作业。该API只对停止的批量处理作业生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestoreBatchJobRequest 请求对象
+     * @return AsyncInvoker<RestoreBatchJobRequest, RestoreBatchJobResponse>
+     */
+    public AsyncInvoker<RestoreBatchJobRequest, RestoreBatchJobResponse> restoreBatchJobAsyncInvoker(
+        RestoreBatchJobRequest request) {
+        return new AsyncInvoker<RestoreBatchJobRequest, RestoreBatchJobResponse>(request, IefMeta.restoreBatchJob,
+            hcClient);
+    }
+
+    /**
+     * 重试批量处理作业
+     *
+     * 重试批量处理作业。该API仅对执行状态失败的批量处理作业生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RetryBatchJobRequest 请求对象
+     * @return CompletableFuture<RetryBatchJobResponse>
+     */
+    public CompletableFuture<RetryBatchJobResponse> retryBatchJobAsync(RetryBatchJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.retryBatchJob);
+    }
+
+    /**
+     * 重试批量处理作业
+     *
+     * 重试批量处理作业。该API仅对执行状态失败的批量处理作业生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RetryBatchJobRequest 请求对象
+     * @return AsyncInvoker<RetryBatchJobRequest, RetryBatchJobResponse>
+     */
+    public AsyncInvoker<RetryBatchJobRequest, RetryBatchJobResponse> retryBatchJobAsyncInvoker(
+        RetryBatchJobRequest request) {
+        return new AsyncInvoker<RetryBatchJobRequest, RetryBatchJobResponse>(request, IefMeta.retryBatchJob, hcClient);
+    }
+
+    /**
      * 查询应用模板详情
      *
      * 查询应用模板详情。
@@ -1669,6 +2174,35 @@ public class IefAsyncClient {
         ShowAppVersionDetailRequest request) {
         return new AsyncInvoker<ShowAppVersionDetailRequest, ShowAppVersionDetailResponse>(request,
             IefMeta.showAppVersionDetail, hcClient);
+    }
+
+    /**
+     * 查询批量处理作业详情
+     *
+     * 查询批量处理作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowBatchJobRequest 请求对象
+     * @return CompletableFuture<ShowBatchJobResponse>
+     */
+    public CompletableFuture<ShowBatchJobResponse> showBatchJobAsync(ShowBatchJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.showBatchJob);
+    }
+
+    /**
+     * 查询批量处理作业详情
+     *
+     * 查询批量处理作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowBatchJobRequest 请求对象
+     * @return AsyncInvoker<ShowBatchJobRequest, ShowBatchJobResponse>
+     */
+    public AsyncInvoker<ShowBatchJobRequest, ShowBatchJobResponse> showBatchJobAsyncInvoker(
+        ShowBatchJobRequest request) {
+        return new AsyncInvoker<ShowBatchJobRequest, ShowBatchJobResponse>(request, IefMeta.showBatchJob, hcClient);
     }
 
     /**
@@ -1819,6 +2353,67 @@ public class IefAsyncClient {
     }
 
     /**
+     * 查询边缘节点组证书列表
+     *
+     * 查询边缘节点组证书详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEdgeGroupCertDetailRequest 请求对象
+     * @return CompletableFuture<ShowEdgeGroupCertDetailResponse>
+     */
+    public CompletableFuture<ShowEdgeGroupCertDetailResponse> showEdgeGroupCertDetailAsync(
+        ShowEdgeGroupCertDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.showEdgeGroupCertDetail);
+    }
+
+    /**
+     * 查询边缘节点组证书列表
+     *
+     * 查询边缘节点组证书详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEdgeGroupCertDetailRequest 请求对象
+     * @return AsyncInvoker<ShowEdgeGroupCertDetailRequest, ShowEdgeGroupCertDetailResponse>
+     */
+    public AsyncInvoker<ShowEdgeGroupCertDetailRequest, ShowEdgeGroupCertDetailResponse> showEdgeGroupCertDetailAsyncInvoker(
+        ShowEdgeGroupCertDetailRequest request) {
+        return new AsyncInvoker<ShowEdgeGroupCertDetailRequest, ShowEdgeGroupCertDetailResponse>(request,
+            IefMeta.showEdgeGroupCertDetail, hcClient);
+    }
+
+    /**
+     * 查询边缘节点组详情
+     *
+     * 查询边缘节点组详情。该API只能在铂金版实例中使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEdgeGroupDetailRequest 请求对象
+     * @return CompletableFuture<ShowEdgeGroupDetailResponse>
+     */
+    public CompletableFuture<ShowEdgeGroupDetailResponse> showEdgeGroupDetailAsync(ShowEdgeGroupDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.showEdgeGroupDetail);
+    }
+
+    /**
+     * 查询边缘节点组详情
+     *
+     * 查询边缘节点组详情。该API只能在铂金版实例中使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEdgeGroupDetailRequest 请求对象
+     * @return AsyncInvoker<ShowEdgeGroupDetailRequest, ShowEdgeGroupDetailResponse>
+     */
+    public AsyncInvoker<ShowEdgeGroupDetailRequest, ShowEdgeGroupDetailResponse> showEdgeGroupDetailAsyncInvoker(
+        ShowEdgeGroupDetailRequest request) {
+        return new AsyncInvoker<ShowEdgeGroupDetailRequest, ShowEdgeGroupDetailResponse>(request,
+            IefMeta.showEdgeGroupDetail, hcClient);
+    }
+
+    /**
      * 查询边缘节点详情
      *
      * 查询边缘节点详情。
@@ -1906,6 +2501,64 @@ public class IefAsyncClient {
         ShowEndPointDetailRequest request) {
         return new AsyncInvoker<ShowEndPointDetailRequest, ShowEndPointDetailResponse>(request,
             IefMeta.showEndPointDetail, hcClient);
+    }
+
+    /**
+     * 查询批量节点注册作业详情
+     *
+     * 查询批量节点注册作业详情。该接口无法查询产品证书文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowProductDetailRequest 请求对象
+     * @return CompletableFuture<ShowProductDetailResponse>
+     */
+    public CompletableFuture<ShowProductDetailResponse> showProductDetailAsync(ShowProductDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.showProductDetail);
+    }
+
+    /**
+     * 查询批量节点注册作业详情
+     *
+     * 查询批量节点注册作业详情。该接口无法查询产品证书文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowProductDetailRequest 请求对象
+     * @return AsyncInvoker<ShowProductDetailRequest, ShowProductDetailResponse>
+     */
+    public AsyncInvoker<ShowProductDetailRequest, ShowProductDetailResponse> showProductDetailAsyncInvoker(
+        ShowProductDetailRequest request) {
+        return new AsyncInvoker<ShowProductDetailRequest, ShowProductDetailResponse>(request, IefMeta.showProductDetail,
+            hcClient);
+    }
+
+    /**
+     * 查询IEF服务下的资源配额
+     *
+     * 查询IEF服务下的资源配额
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowQuotaRequest 请求对象
+     * @return CompletableFuture<ShowQuotaResponse>
+     */
+    public CompletableFuture<ShowQuotaResponse> showQuotaAsync(ShowQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.showQuota);
+    }
+
+    /**
+     * 查询IEF服务下的资源配额
+     *
+     * 查询IEF服务下的资源配额
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowQuotaRequest 请求对象
+     * @return AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse>
+     */
+    public AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse> showQuotaAsyncInvoker(ShowQuotaRequest request) {
+        return new AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse>(request, IefMeta.showQuota, hcClient);
     }
 
     /**
@@ -1997,6 +2650,37 @@ public class IefAsyncClient {
     }
 
     /**
+     * 查询系统订阅列表
+     *
+     * 查询系统订阅列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSystemEventDetailRequest 请求对象
+     * @return CompletableFuture<ShowSystemEventDetailResponse>
+     */
+    public CompletableFuture<ShowSystemEventDetailResponse> showSystemEventDetailAsync(
+        ShowSystemEventDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.showSystemEventDetail);
+    }
+
+    /**
+     * 查询系统订阅列表
+     *
+     * 查询系统订阅列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSystemEventDetailRequest 请求对象
+     * @return AsyncInvoker<ShowSystemEventDetailRequest, ShowSystemEventDetailResponse>
+     */
+    public AsyncInvoker<ShowSystemEventDetailRequest, ShowSystemEventDetailResponse> showSystemEventDetailAsyncInvoker(
+        ShowSystemEventDetailRequest request) {
+        return new AsyncInvoker<ShowSystemEventDetailRequest, ShowSystemEventDetailResponse>(request,
+            IefMeta.showSystemEventDetail, hcClient);
+    }
+
+    /**
      * 启用规则
      *
      * 启用一条规则
@@ -2025,6 +2709,65 @@ public class IefAsyncClient {
     }
 
     /**
+     * 启用系统订阅
+     *
+     * 启用系统订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartSystemEventRequest 请求对象
+     * @return CompletableFuture<StartSystemEventResponse>
+     */
+    public CompletableFuture<StartSystemEventResponse> startSystemEventAsync(StartSystemEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.startSystemEvent);
+    }
+
+    /**
+     * 启用系统订阅
+     *
+     * 启用系统订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartSystemEventRequest 请求对象
+     * @return AsyncInvoker<StartSystemEventRequest, StartSystemEventResponse>
+     */
+    public AsyncInvoker<StartSystemEventRequest, StartSystemEventResponse> startSystemEventAsyncInvoker(
+        StartSystemEventRequest request) {
+        return new AsyncInvoker<StartSystemEventRequest, StartSystemEventResponse>(request, IefMeta.startSystemEvent,
+            hcClient);
+    }
+
+    /**
+     * 停止批量处理作业
+     *
+     * 停止批量处理作业。该API仅对运行中的批量处理作业生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopBatchJobRequest 请求对象
+     * @return CompletableFuture<StopBatchJobResponse>
+     */
+    public CompletableFuture<StopBatchJobResponse> stopBatchJobAsync(StopBatchJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.stopBatchJob);
+    }
+
+    /**
+     * 停止批量处理作业
+     *
+     * 停止批量处理作业。该API仅对运行中的批量处理作业生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopBatchJobRequest 请求对象
+     * @return AsyncInvoker<StopBatchJobRequest, StopBatchJobResponse>
+     */
+    public AsyncInvoker<StopBatchJobRequest, StopBatchJobResponse> stopBatchJobAsyncInvoker(
+        StopBatchJobRequest request) {
+        return new AsyncInvoker<StopBatchJobRequest, StopBatchJobResponse>(request, IefMeta.stopBatchJob, hcClient);
+    }
+
+    /**
      * 停用规则
      *
      * 停用一条规则
@@ -2050,6 +2793,36 @@ public class IefAsyncClient {
      */
     public AsyncInvoker<StopRuleRequest, StopRuleResponse> stopRuleAsyncInvoker(StopRuleRequest request) {
         return new AsyncInvoker<StopRuleRequest, StopRuleResponse>(request, IefMeta.stopRule, hcClient);
+    }
+
+    /**
+     * 停用系统订阅
+     *
+     * 停用系统订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopSystemEventRequest 请求对象
+     * @return CompletableFuture<StopSystemEventResponse>
+     */
+    public CompletableFuture<StopSystemEventResponse> stopSystemEventAsync(StopSystemEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.stopSystemEvent);
+    }
+
+    /**
+     * 停用系统订阅
+     *
+     * 停用系统订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopSystemEventRequest 请求对象
+     * @return AsyncInvoker<StopSystemEventRequest, StopSystemEventResponse>
+     */
+    public AsyncInvoker<StopSystemEventRequest, StopSystemEventResponse> stopSystemEventAsyncInvoker(
+        StopSystemEventRequest request) {
+        return new AsyncInvoker<StopSystemEventRequest, StopSystemEventResponse>(request, IefMeta.stopSystemEvent,
+            hcClient);
     }
 
     /**
@@ -2258,6 +3031,67 @@ public class IefAsyncClient {
         UpdateDeviceTwinRequest request) {
         return new AsyncInvoker<UpdateDeviceTwinRequest, UpdateDeviceTwinResponse>(request, IefMeta.updateDeviceTwin,
             hcClient);
+    }
+
+    /**
+     * 更新边缘节点组
+     *
+     * 更新边缘节点组描述。该API只能在铂金版实例中使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEdgeGroupRequest 请求对象
+     * @return CompletableFuture<UpdateEdgeGroupResponse>
+     */
+    public CompletableFuture<UpdateEdgeGroupResponse> updateEdgeGroupAsync(UpdateEdgeGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.updateEdgeGroup);
+    }
+
+    /**
+     * 更新边缘节点组
+     *
+     * 更新边缘节点组描述。该API只能在铂金版实例中使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEdgeGroupRequest 请求对象
+     * @return AsyncInvoker<UpdateEdgeGroupRequest, UpdateEdgeGroupResponse>
+     */
+    public AsyncInvoker<UpdateEdgeGroupRequest, UpdateEdgeGroupResponse> updateEdgeGroupAsyncInvoker(
+        UpdateEdgeGroupRequest request) {
+        return new AsyncInvoker<UpdateEdgeGroupRequest, UpdateEdgeGroupResponse>(request, IefMeta.updateEdgeGroup,
+            hcClient);
+    }
+
+    /**
+     * 绑定或解绑边缘节点
+     *
+     * 边缘节点组绑定或解绑边缘节点。该API只能在铂金版实例中使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEdgeGroupNodeBindingRequest 请求对象
+     * @return CompletableFuture<UpdateEdgeGroupNodeBindingResponse>
+     */
+    public CompletableFuture<UpdateEdgeGroupNodeBindingResponse> updateEdgeGroupNodeBindingAsync(
+        UpdateEdgeGroupNodeBindingRequest request) {
+        return hcClient.asyncInvokeHttp(request, IefMeta.updateEdgeGroupNodeBinding);
+    }
+
+    /**
+     * 绑定或解绑边缘节点
+     *
+     * 边缘节点组绑定或解绑边缘节点。该API只能在铂金版实例中使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEdgeGroupNodeBindingRequest 请求对象
+     * @return AsyncInvoker<UpdateEdgeGroupNodeBindingRequest, UpdateEdgeGroupNodeBindingResponse>
+     */
+    public AsyncInvoker<UpdateEdgeGroupNodeBindingRequest, UpdateEdgeGroupNodeBindingResponse> updateEdgeGroupNodeBindingAsyncInvoker(
+        UpdateEdgeGroupNodeBindingRequest request) {
+        return new AsyncInvoker<UpdateEdgeGroupNodeBindingRequest, UpdateEdgeGroupNodeBindingResponse>(request,
+            IefMeta.updateEdgeGroupNodeBinding, hcClient);
     }
 
     /**

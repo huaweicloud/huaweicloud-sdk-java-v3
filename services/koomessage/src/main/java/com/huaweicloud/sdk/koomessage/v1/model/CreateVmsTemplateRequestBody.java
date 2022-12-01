@@ -88,7 +88,7 @@ public class CreateVmsTemplateRequestBody {
     }
 
     /**
-     * 智能信息基础版模板主题，最大不超过15个字，若使用中文需经过UTF-8 编码，主题不能包含【】，否则审核会不通过。
+     * 智能信息基础版模板主题，最大不超过15个字，若使用中文需经过UTF-8 编码，主题不能包含“【】”，否则审核会不通过。
      * @return title
      */
     public String getTitle() {

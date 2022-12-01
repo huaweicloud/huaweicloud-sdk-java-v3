@@ -268,6 +268,11 @@ public class EdgeNodeResp {
 
     private String containerRuntimeVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "identifier")
+
+    private String identifier;
+
     public EdgeNodeResp withId(String id) {
         this.id = id;
         return this;
@@ -1304,6 +1309,23 @@ public class EdgeNodeResp {
         this.containerRuntimeVersion = containerRuntimeVersion;
     }
 
+    public EdgeNodeResp withIdentifier(String identifier) {
+        this.identifier = identifier;
+        return this;
+    }
+
+    /**
+     * 边缘节点使用token注册时的凭证
+     * @return identifier
+     */
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1353,7 +1375,8 @@ public class EdgeNodeResp {
             && Objects.equals(this.errorReason, edgeNodeResp.errorReason)
             && Objects.equals(this.tags, edgeNodeResp.tags) && Objects.equals(this.npuNum, edgeNodeResp.npuNum)
             && Objects.equals(this.npuInfo, edgeNodeResp.npuInfo)
-            && Objects.equals(this.containerRuntimeVersion, edgeNodeResp.containerRuntimeVersion);
+            && Objects.equals(this.containerRuntimeVersion, edgeNodeResp.containerRuntimeVersion)
+            && Objects.equals(this.identifier, edgeNodeResp.identifier);
     }
 
     @Override
@@ -1408,7 +1431,8 @@ public class EdgeNodeResp {
             tags,
             npuNum,
             npuInfo,
-            containerRuntimeVersion);
+            containerRuntimeVersion,
+            identifier);
     }
 
     @Override
@@ -1466,6 +1490,7 @@ public class EdgeNodeResp {
         sb.append("    npuNum: ").append(toIndentedString(npuNum)).append("\n");
         sb.append("    npuInfo: ").append(toIndentedString(npuInfo)).append("\n");
         sb.append("    containerRuntimeVersion: ").append(toIndentedString(containerRuntimeVersion)).append("\n");
+        sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
         sb.append("}");
         return sb.toString();
     }

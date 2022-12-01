@@ -29,6 +29,11 @@ public class ServiceItemListResponseDtoData {
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "set_id")
+
+    private String setId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "records")
 
     private List<ServiceItemListResponseDtoDataRecords> records = null;
@@ -84,6 +89,23 @@ public class ServiceItemListResponseDtoData {
         this.total = total;
     }
 
+    public ServiceItemListResponseDtoData withSetId(String setId) {
+        this.setId = setId;
+        return this;
+    }
+
+    /**
+     * 服务组id
+     * @return setId
+     */
+    public String getSetId() {
+        return setId;
+    }
+
+    public void setSetId(String setId) {
+        this.setId = setId;
+    }
+
     public ServiceItemListResponseDtoData withRecords(List<ServiceItemListResponseDtoDataRecords> records) {
         this.records = records;
         return this;
@@ -130,12 +152,13 @@ public class ServiceItemListResponseDtoData {
         return Objects.equals(this.offset, serviceItemListResponseDtoData.offset)
             && Objects.equals(this.limit, serviceItemListResponseDtoData.limit)
             && Objects.equals(this.total, serviceItemListResponseDtoData.total)
+            && Objects.equals(this.setId, serviceItemListResponseDtoData.setId)
             && Objects.equals(this.records, serviceItemListResponseDtoData.records);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, total, records);
+        return Objects.hash(offset, limit, total, setId, records);
     }
 
     @Override
@@ -145,6 +168,7 @@ public class ServiceItemListResponseDtoData {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    setId: ").append(toIndentedString(setId)).append("\n");
         sb.append("    records: ").append(toIndentedString(records)).append("\n");
         sb.append("}");
         return sb.toString();

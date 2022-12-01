@@ -49,9 +49,9 @@ public class GetEastWestFirewallResponseBody {
     private VpcDetail inspectionVpc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "protected_infos")
+    @JsonProperty(value = "protect_infos")
 
-    private List<EwProtectResourceInfo> protectedInfos = null;
+    private List<EwProtectResourceInfo> protectInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
@@ -231,38 +231,37 @@ public class GetEastWestFirewallResponseBody {
         this.inspectionVpc = inspectionVpc;
     }
 
-    public GetEastWestFirewallResponseBody withProtectedInfos(List<EwProtectResourceInfo> protectedInfos) {
-        this.protectedInfos = protectedInfos;
+    public GetEastWestFirewallResponseBody withProtectInfos(List<EwProtectResourceInfo> protectInfos) {
+        this.protectInfos = protectInfos;
         return this;
     }
 
-    public GetEastWestFirewallResponseBody addProtectedInfosItem(EwProtectResourceInfo protectedInfosItem) {
-        if (this.protectedInfos == null) {
-            this.protectedInfos = new ArrayList<>();
+    public GetEastWestFirewallResponseBody addProtectInfosItem(EwProtectResourceInfo protectInfosItem) {
+        if (this.protectInfos == null) {
+            this.protectInfos = new ArrayList<>();
         }
-        this.protectedInfos.add(protectedInfosItem);
+        this.protectInfos.add(protectInfosItem);
         return this;
     }
 
-    public GetEastWestFirewallResponseBody withProtectedInfos(
-        Consumer<List<EwProtectResourceInfo>> protectedInfosSetter) {
-        if (this.protectedInfos == null) {
-            this.protectedInfos = new ArrayList<>();
+    public GetEastWestFirewallResponseBody withProtectInfos(Consumer<List<EwProtectResourceInfo>> protectInfosSetter) {
+        if (this.protectInfos == null) {
+            this.protectInfos = new ArrayList<>();
         }
-        protectedInfosSetter.accept(this.protectedInfos);
+        protectInfosSetter.accept(this.protectInfos);
         return this;
     }
 
     /**
      * 东西向防护资源信息
-     * @return protectedInfos
+     * @return protectInfos
      */
-    public List<EwProtectResourceInfo> getProtectedInfos() {
-        return protectedInfos;
+    public List<EwProtectResourceInfo> getProtectInfos() {
+        return protectInfos;
     }
 
-    public void setProtectedInfos(List<EwProtectResourceInfo> protectedInfos) {
-        this.protectedInfos = protectedInfos;
+    public void setProtectInfos(List<EwProtectResourceInfo> protectInfos) {
+        this.protectInfos = protectInfos;
     }
 
     public GetEastWestFirewallResponseBody withTotal(Integer total) {
@@ -332,7 +331,7 @@ public class GetEastWestFirewallResponseBody {
             && Objects.equals(this.firewallAssociatedSubnets, getEastWestFirewallResponseBody.firewallAssociatedSubnets)
             && Objects.equals(this.er, getEastWestFirewallResponseBody.er)
             && Objects.equals(this.inspectionVpc, getEastWestFirewallResponseBody.inspectionVpc)
-            && Objects.equals(this.protectedInfos, getEastWestFirewallResponseBody.protectedInfos)
+            && Objects.equals(this.protectInfos, getEastWestFirewallResponseBody.protectInfos)
             && Objects.equals(this.total, getEastWestFirewallResponseBody.total)
             && Objects.equals(this.offset, getEastWestFirewallResponseBody.offset)
             && Objects.equals(this.limit, getEastWestFirewallResponseBody.limit);
@@ -347,7 +346,7 @@ public class GetEastWestFirewallResponseBody {
             firewallAssociatedSubnets,
             er,
             inspectionVpc,
-            protectedInfos,
+            protectInfos,
             total,
             offset,
             limit);
@@ -364,7 +363,7 @@ public class GetEastWestFirewallResponseBody {
         sb.append("    firewallAssociatedSubnets: ").append(toIndentedString(firewallAssociatedSubnets)).append("\n");
         sb.append("    er: ").append(toIndentedString(er)).append("\n");
         sb.append("    inspectionVpc: ").append(toIndentedString(inspectionVpc)).append("\n");
-        sb.append("    protectedInfos: ").append(toIndentedString(protectedInfos)).append("\n");
+        sb.append("    protectInfos: ").append(toIndentedString(protectInfos)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

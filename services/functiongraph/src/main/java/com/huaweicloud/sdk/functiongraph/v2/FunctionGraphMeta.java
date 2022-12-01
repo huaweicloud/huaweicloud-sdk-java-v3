@@ -46,6 +46,47 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse> asyncInvokeReservedFunction =
+        genForasyncInvokeReservedFunction();
+
+    private static HttpRequestDef<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse> genForasyncInvokeReservedFunction() {
+        // basic
+        HttpRequestDef.Builder<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AsyncInvokeReservedFunctionRequest.class,
+                    AsyncInvokeReservedFunctionResponse.class)
+                .withName("AsyncInvokeReservedFunction")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/reserved-invocations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AsyncInvokeReservedFunctionRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            }));
+        builder.<Map<String, Object>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Map.class),
+            f -> f.withMarshaller(AsyncInvokeReservedFunctionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(Object.class));
+
+        // response
+
+        builder.<String>withResponseField("Content-Type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AsyncInvokeReservedFunctionResponse::getContentType,
+                AsyncInvokeReservedFunctionResponse::setContentType));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse> batchDeleteFunctionTriggers =
         genForbatchDeleteFunctionTriggers();
 

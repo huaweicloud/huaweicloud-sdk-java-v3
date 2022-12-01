@@ -250,6 +250,11 @@ public class ResFeeRecordV2 {
 
     private Integer measureId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "formula")
+
+    private String formula;
+
     public ResFeeRecordV2 withBillDate(String billDate) {
         this.billDate = billDate;
         return this;
@@ -1066,6 +1071,23 @@ public class ResFeeRecordV2 {
         this.measureId = measureId;
     }
 
+    public ResFeeRecordV2 withFormula(String formula) {
+        this.formula = formula;
+        return this;
+    }
+
+    /**
+     * 实付金额计算公式。当前只包含如下场景： 按需简单定价 按需线性定价 包年包月新购和续费的简单定价 包年包月新购和续费的线性定价  说明： 实付金额计算公式得到的金额值等于amount - coupon_amount的差值。
+     * @return formula
+     */
+    public String getFormula() {
+        return formula;
+    }
+
+    public void setFormula(String formula) {
+        this.formula = formula;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1122,7 +1144,8 @@ public class ResFeeRecordV2 {
             && Objects.equals(this.bonusAmount, resFeeRecordV2.bonusAmount)
             && Objects.equals(this.debtAmount, resFeeRecordV2.debtAmount)
             && Objects.equals(this.adjustmentAmount, resFeeRecordV2.adjustmentAmount)
-            && Objects.equals(this.measureId, resFeeRecordV2.measureId);
+            && Objects.equals(this.measureId, resFeeRecordV2.measureId)
+            && Objects.equals(this.formula, resFeeRecordV2.formula);
     }
 
     @Override
@@ -1174,7 +1197,8 @@ public class ResFeeRecordV2 {
             bonusAmount,
             debtAmount,
             adjustmentAmount,
-            measureId);
+            measureId,
+            formula);
     }
 
     @Override
@@ -1229,6 +1253,7 @@ public class ResFeeRecordV2 {
         sb.append("    debtAmount: ").append(toIndentedString(debtAmount)).append("\n");
         sb.append("    adjustmentAmount: ").append(toIndentedString(adjustmentAmount)).append("\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
+        sb.append("    formula: ").append(toIndentedString(formula)).append("\n");
         sb.append("}");
         return sb.toString();
     }

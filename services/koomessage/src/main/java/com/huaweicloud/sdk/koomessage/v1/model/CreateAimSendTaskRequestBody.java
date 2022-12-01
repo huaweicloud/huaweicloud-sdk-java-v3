@@ -32,7 +32,7 @@ public class CreateAimSendTaskRequestBody {
     }
 
     /**
-     * 短信任务名称。
+     * 智能信息发送任务名称。  > 不能为空白字符串。 
      * @return taskName
      */
     public String getTaskName() {

@@ -1,0 +1,569 @@
+package com.huaweicloud.sdk.hilens.v3.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * 设备详情
+ */
+public class NodeResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private String createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_id")
+
+    private String clusterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_node_state")
+
+    private String clusterNodeState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_node_type")
+
+    private String clusterNodeType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "firmware_name")
+
+    private String firmwareName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "upgrade_firmware_version")
+
+    private String upgradeFirmwareVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "firmware_status")
+
+    private String firmwareStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "firmware_upgrade_record")
+
+    private List<FirmwareUpdateRecord> firmwareUpgradeRecord = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "state")
+
+    private String state;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "active_status")
+
+    private String activeStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cpu")
+
+    private Integer cpu;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gpu_num")
+
+    private Object gpuNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "npu_num")
+
+    private Object npuNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_ips")
+
+    private List<String> hostIps = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TagObject> tags = null;
+
+    public NodeResponse withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 设备ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public NodeResponse withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 设备名称，只允许中文字符、英文字母、数字、下划线、中划线，最大长度64
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public NodeResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 设备描述，最大长度255，不允许^, ~, ＃, $, %, &, *, <, >, (, ), [, ], {, }, ', \", \\
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public NodeResponse withCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 产生时间，如2021-10-15 14:45:22 GMT+08:00
+     * @return createdAt
+     */
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public NodeResponse withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    /**
+     * 当该设备处于集群时，显示设备所属的集群ID
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
+    public NodeResponse withClusterNodeState(String clusterNodeState) {
+        this.clusterNodeState = clusterNodeState;
+        return this;
+    }
+
+    /**
+     * 设备所处集群状态，集群创建（cluster_create）、集群删除（cluster_delete）、添加集群工作节点设备（cluster_add_nodes）、删除集群工作节点设备（cluster_delete_node）、集群节点设备状态更新（cluster_node_state_update）
+     * @return clusterNodeState
+     */
+    public String getClusterNodeState() {
+        return clusterNodeState;
+    }
+
+    public void setClusterNodeState(String clusterNodeState) {
+        this.clusterNodeState = clusterNodeState;
+    }
+
+    public NodeResponse withClusterNodeType(String clusterNodeType) {
+        this.clusterNodeType = clusterNodeType;
+        return this;
+    }
+
+    /**
+     * 当该设备处于集群时，显示所属的集群设备类型。 - cluster_controller 控制设备 - cluster_worker 工作设备
+     * @return clusterNodeType
+     */
+    public String getClusterNodeType() {
+        return clusterNodeType;
+    }
+
+    public void setClusterNodeType(String clusterNodeType) {
+        this.clusterNodeType = clusterNodeType;
+    }
+
+    public NodeResponse withFirmwareName(String firmwareName) {
+        this.firmwareName = firmwareName;
+        return this;
+    }
+
+    /**
+     * 固件名称。可包含大小写字母、数字、下划线、中划线,长度不超过60字符。必须以字母开头,字母或数字结尾
+     * @return firmwareName
+     */
+    public String getFirmwareName() {
+        return firmwareName;
+    }
+
+    public void setFirmwareName(String firmwareName) {
+        this.firmwareName = firmwareName;
+    }
+
+    public NodeResponse withUpgradeFirmwareVersion(String upgradeFirmwareVersion) {
+        this.upgradeFirmwareVersion = upgradeFirmwareVersion;
+        return this;
+    }
+
+    /**
+     * 固件正在升级的版本
+     * @return upgradeFirmwareVersion
+     */
+    public String getUpgradeFirmwareVersion() {
+        return upgradeFirmwareVersion;
+    }
+
+    public void setUpgradeFirmwareVersion(String upgradeFirmwareVersion) {
+        this.upgradeFirmwareVersion = upgradeFirmwareVersion;
+    }
+
+    public NodeResponse withFirmwareStatus(String firmwareStatus) {
+        this.firmwareStatus = firmwareStatus;
+        return this;
+    }
+
+    /**
+     * 固件升级状态，1、2、3分别代表升级中，升级失败，升级成功
+     * @return firmwareStatus
+     */
+    public String getFirmwareStatus() {
+        return firmwareStatus;
+    }
+
+    public void setFirmwareStatus(String firmwareStatus) {
+        this.firmwareStatus = firmwareStatus;
+    }
+
+    public NodeResponse withFirmwareUpgradeRecord(List<FirmwareUpdateRecord> firmwareUpgradeRecord) {
+        this.firmwareUpgradeRecord = firmwareUpgradeRecord;
+        return this;
+    }
+
+    public NodeResponse addFirmwareUpgradeRecordItem(FirmwareUpdateRecord firmwareUpgradeRecordItem) {
+        if (this.firmwareUpgradeRecord == null) {
+            this.firmwareUpgradeRecord = new ArrayList<>();
+        }
+        this.firmwareUpgradeRecord.add(firmwareUpgradeRecordItem);
+        return this;
+    }
+
+    public NodeResponse withFirmwareUpgradeRecord(Consumer<List<FirmwareUpdateRecord>> firmwareUpgradeRecordSetter) {
+        if (this.firmwareUpgradeRecord == null) {
+            this.firmwareUpgradeRecord = new ArrayList<>();
+        }
+        firmwareUpgradeRecordSetter.accept(this.firmwareUpgradeRecord);
+        return this;
+    }
+
+    /**
+     * Get firmwareUpgradeRecord
+     * @return firmwareUpgradeRecord
+     */
+    public List<FirmwareUpdateRecord> getFirmwareUpgradeRecord() {
+        return firmwareUpgradeRecord;
+    }
+
+    public void setFirmwareUpgradeRecord(List<FirmwareUpdateRecord> firmwareUpgradeRecord) {
+        this.firmwareUpgradeRecord = firmwareUpgradeRecord;
+    }
+
+    public NodeResponse withState(String state) {
+        this.state = state;
+        return this;
+    }
+
+    /**
+     * 设备状态：UNCONNECTED(未注册)、RUNNING(运行中)、FAIL(故障)、STOPPED(停用)、UPGRADING(升级中)、FREEZE(冻结)
+     * @return state
+     */
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public NodeResponse withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 设备类型
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public NodeResponse withActiveStatus(String activeStatus) {
+        this.activeStatus = activeStatus;
+        return this;
+    }
+
+    /**
+     * 设备激活状态，未激活（INACTIVE）和已激活（ACTIVATED）
+     * @return activeStatus
+     */
+    public String getActiveStatus() {
+        return activeStatus;
+    }
+
+    public void setActiveStatus(String activeStatus) {
+        this.activeStatus = activeStatus;
+    }
+
+    public NodeResponse withCpu(Integer cpu) {
+        this.cpu = cpu;
+        return this;
+    }
+
+    /**
+     * 设备CPU个数
+     * @return cpu
+     */
+    public Integer getCpu() {
+        return cpu;
+    }
+
+    public void setCpu(Integer cpu) {
+        this.cpu = cpu;
+    }
+
+    public NodeResponse withGpuNum(Object gpuNum) {
+        this.gpuNum = gpuNum;
+        return this;
+    }
+
+    /**
+     * 设备GPU个数
+     * @return gpuNum
+     */
+    public Object getGpuNum() {
+        return gpuNum;
+    }
+
+    public void setGpuNum(Object gpuNum) {
+        this.gpuNum = gpuNum;
+    }
+
+    public NodeResponse withNpuNum(Object npuNum) {
+        this.npuNum = npuNum;
+        return this;
+    }
+
+    /**
+     * 设备NPU个数
+     * @return npuNum
+     */
+    public Object getNpuNum() {
+        return npuNum;
+    }
+
+    public void setNpuNum(Object npuNum) {
+        this.npuNum = npuNum;
+    }
+
+    public NodeResponse withHostIps(List<String> hostIps) {
+        this.hostIps = hostIps;
+        return this;
+    }
+
+    public NodeResponse addHostIpsItem(String hostIpsItem) {
+        if (this.hostIps == null) {
+            this.hostIps = new ArrayList<>();
+        }
+        this.hostIps.add(hostIpsItem);
+        return this;
+    }
+
+    public NodeResponse withHostIps(Consumer<List<String>> hostIpsSetter) {
+        if (this.hostIps == null) {
+            this.hostIps = new ArrayList<>();
+        }
+        hostIpsSetter.accept(this.hostIps);
+        return this;
+    }
+
+    /**
+     * 主机IP列表
+     * @return hostIps
+     */
+    public List<String> getHostIps() {
+        return hostIps;
+    }
+
+    public void setHostIps(List<String> hostIps) {
+        this.hostIps = hostIps;
+    }
+
+    public NodeResponse withTags(List<TagObject> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public NodeResponse addTagsItem(TagObject tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public NodeResponse withTags(Consumer<List<TagObject>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 设备标签对列表
+     * @return tags
+     */
+    public List<TagObject> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TagObject> tags) {
+        this.tags = tags;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        NodeResponse nodeResponse = (NodeResponse) o;
+        return Objects.equals(this.id, nodeResponse.id) && Objects.equals(this.name, nodeResponse.name)
+            && Objects.equals(this.description, nodeResponse.description)
+            && Objects.equals(this.createdAt, nodeResponse.createdAt)
+            && Objects.equals(this.clusterId, nodeResponse.clusterId)
+            && Objects.equals(this.clusterNodeState, nodeResponse.clusterNodeState)
+            && Objects.equals(this.clusterNodeType, nodeResponse.clusterNodeType)
+            && Objects.equals(this.firmwareName, nodeResponse.firmwareName)
+            && Objects.equals(this.upgradeFirmwareVersion, nodeResponse.upgradeFirmwareVersion)
+            && Objects.equals(this.firmwareStatus, nodeResponse.firmwareStatus)
+            && Objects.equals(this.firmwareUpgradeRecord, nodeResponse.firmwareUpgradeRecord)
+            && Objects.equals(this.state, nodeResponse.state) && Objects.equals(this.type, nodeResponse.type)
+            && Objects.equals(this.activeStatus, nodeResponse.activeStatus)
+            && Objects.equals(this.cpu, nodeResponse.cpu) && Objects.equals(this.gpuNum, nodeResponse.gpuNum)
+            && Objects.equals(this.npuNum, nodeResponse.npuNum) && Objects.equals(this.hostIps, nodeResponse.hostIps)
+            && Objects.equals(this.tags, nodeResponse.tags);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id,
+            name,
+            description,
+            createdAt,
+            clusterId,
+            clusterNodeState,
+            clusterNodeType,
+            firmwareName,
+            upgradeFirmwareVersion,
+            firmwareStatus,
+            firmwareUpgradeRecord,
+            state,
+            type,
+            activeStatus,
+            cpu,
+            gpuNum,
+            npuNum,
+            hostIps,
+            tags);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class NodeResponse {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    clusterNodeState: ").append(toIndentedString(clusterNodeState)).append("\n");
+        sb.append("    clusterNodeType: ").append(toIndentedString(clusterNodeType)).append("\n");
+        sb.append("    firmwareName: ").append(toIndentedString(firmwareName)).append("\n");
+        sb.append("    upgradeFirmwareVersion: ").append(toIndentedString(upgradeFirmwareVersion)).append("\n");
+        sb.append("    firmwareStatus: ").append(toIndentedString(firmwareStatus)).append("\n");
+        sb.append("    firmwareUpgradeRecord: ").append(toIndentedString(firmwareUpgradeRecord)).append("\n");
+        sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    activeStatus: ").append(toIndentedString(activeStatus)).append("\n");
+        sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");
+        sb.append("    gpuNum: ").append(toIndentedString(gpuNum)).append("\n");
+        sb.append("    npuNum: ").append(toIndentedString(npuNum)).append("\n");
+        sb.append("    hostIps: ").append(toIndentedString(hostIps)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

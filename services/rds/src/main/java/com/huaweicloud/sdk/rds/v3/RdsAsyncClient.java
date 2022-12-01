@@ -230,6 +230,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 复制参数模板
+     *
+     * 复制参数模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CopyConfigurationRequest 请求对象
+     * @return CompletableFuture<CopyConfigurationResponse>
+     */
+    public CompletableFuture<CopyConfigurationResponse> copyConfigurationAsync(CopyConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.copyConfiguration);
+    }
+
+    /**
+     * 复制参数模板
+     *
+     * 复制参数模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CopyConfigurationRequest 请求对象
+     * @return AsyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse>
+     */
+    public AsyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse> copyConfigurationAsyncInvoker(
+        CopyConfigurationRequest request) {
+        return new AsyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse>(request, RdsMeta.copyConfiguration,
+            hcClient);
+    }
+
+    /**
      * 创建参数模板
      *
      * 创建参数模板。
@@ -853,6 +883,37 @@ public class RdsAsyncClient {
      */
     public AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsAsyncInvoker(ListFlavorsRequest request) {
         return new AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, RdsMeta.listFlavors, hcClient);
+    }
+
+    /**
+     * 查询实例参数修改历史
+     *
+     * 实例参数修改历史。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceParamHistoriesRequest 请求对象
+     * @return CompletableFuture<ListInstanceParamHistoriesResponse>
+     */
+    public CompletableFuture<ListInstanceParamHistoriesResponse> listInstanceParamHistoriesAsync(
+        ListInstanceParamHistoriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listInstanceParamHistories);
+    }
+
+    /**
+     * 查询实例参数修改历史
+     *
+     * 实例参数修改历史。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceParamHistoriesRequest 请求对象
+     * @return AsyncInvoker<ListInstanceParamHistoriesRequest, ListInstanceParamHistoriesResponse>
+     */
+    public AsyncInvoker<ListInstanceParamHistoriesRequest, ListInstanceParamHistoriesResponse> listInstanceParamHistoriesAsyncInvoker(
+        ListInstanceParamHistoriesRequest request) {
+        return new AsyncInvoker<ListInstanceParamHistoriesRequest, ListInstanceParamHistoriesResponse>(request,
+            RdsMeta.listInstanceParamHistories, hcClient);
     }
 
     /**
@@ -3676,6 +3737,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 添加MSDTC
+     *
+     * 添加MSDTC相关主机host地址
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchAddMsdtcsRequest 请求对象
+     * @return CompletableFuture<BatchAddMsdtcsResponse>
+     */
+    public CompletableFuture<BatchAddMsdtcsResponse> batchAddMsdtcsAsync(BatchAddMsdtcsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.batchAddMsdtcs);
+    }
+
+    /**
+     * 添加MSDTC
+     *
+     * 添加MSDTC相关主机host地址
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchAddMsdtcsRequest 请求对象
+     * @return AsyncInvoker<BatchAddMsdtcsRequest, BatchAddMsdtcsResponse>
+     */
+    public AsyncInvoker<BatchAddMsdtcsRequest, BatchAddMsdtcsResponse> batchAddMsdtcsAsyncInvoker(
+        BatchAddMsdtcsRequest request) {
+        return new AsyncInvoker<BatchAddMsdtcsRequest, BatchAddMsdtcsResponse>(request, RdsMeta.batchAddMsdtcs,
+            hcClient);
+    }
+
+    /**
      * 创建数据库
      *
      * 创建数据库。
@@ -3859,6 +3950,36 @@ public class RdsAsyncClient {
         ListAuthorizedSqlserverDbUsersRequest request) {
         return new AsyncInvoker<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse>(request,
             RdsMeta.listAuthorizedSqlserverDbUsers, hcClient);
+    }
+
+    /**
+     * 查询MSDTC的hosts信息
+     *
+     * 查询MSDTC的hosts信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMsdtcHostsRequest 请求对象
+     * @return CompletableFuture<ListMsdtcHostsResponse>
+     */
+    public CompletableFuture<ListMsdtcHostsResponse> listMsdtcHostsAsync(ListMsdtcHostsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listMsdtcHosts);
+    }
+
+    /**
+     * 查询MSDTC的hosts信息
+     *
+     * 查询MSDTC的hosts信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMsdtcHostsRequest 请求对象
+     * @return AsyncInvoker<ListMsdtcHostsRequest, ListMsdtcHostsResponse>
+     */
+    public AsyncInvoker<ListMsdtcHostsRequest, ListMsdtcHostsResponse> listMsdtcHostsAsyncInvoker(
+        ListMsdtcHostsRequest request) {
+        return new AsyncInvoker<ListMsdtcHostsRequest, ListMsdtcHostsResponse>(request, RdsMeta.listMsdtcHosts,
+            hcClient);
     }
 
     /**

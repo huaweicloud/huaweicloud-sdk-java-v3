@@ -32,7 +32,7 @@ public class ValueInAttributes {
     }
 
     /**
-     * value 最大长度512， value允许英文字母、数字、下划线、中划线、点、逗号、@、#、+、\\、/、？、^、=、%、&、:、~
+     * value 最大长度512，value允许英文字母、数字、下划线、中划线、点、逗号、冒号、/、@、+、?、^、=、%、&、~、#、!、*
      * @return value
      */
     public String getValue() {

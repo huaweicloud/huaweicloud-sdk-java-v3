@@ -32,7 +32,7 @@ public class AIMSendTaskInfo {
     }
 
     /**
-     * 短信任务名称。
+     * 智能信息发送任务名称。
      * @return taskName
      */
     public String getTaskName() {

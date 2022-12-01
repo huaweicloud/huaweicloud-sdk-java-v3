@@ -526,6 +526,107 @@ public class CloudIDEClient {
     }
 
     /**
+     * CreateAcceptance接口
+     *
+     * create a acceptance
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAcceptanceRequest 请求对象
+     * @return CreateAcceptanceResponse
+     */
+    public CreateAcceptanceResponse createAcceptance(CreateAcceptanceRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.createAcceptance);
+    }
+
+    /**
+     * CreateAcceptance接口
+     *
+     * create a acceptance
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAcceptanceRequest 请求对象
+     * @return SyncInvoker<CreateAcceptanceRequest, CreateAcceptanceResponse>
+     */
+    public SyncInvoker<CreateAcceptanceRequest, CreateAcceptanceResponse> createAcceptanceInvoker(
+        CreateAcceptanceRequest request) {
+        return new SyncInvoker<CreateAcceptanceRequest, CreateAcceptanceResponse>(request,
+            CloudIDEMeta.createAcceptance, hcClient);
+    }
+
+    /**
+     * Create Request接口
+     *
+     * create a code generation request.
+     * 
+     * if agent receives a code generation request, it will:
+     * - record the request into mysql,
+     * - decompose the request into &#x60;topn&#x60; tasks.
+     * - send the tasks to kafka.
+     * 
+     * if agent receives a duplicated code generation request, it will not decompose request and send to kafka.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateRequestRequest 请求对象
+     * @return CreateRequestResponse
+     */
+    public CreateRequestResponse createRequest(CreateRequestRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.createRequest);
+    }
+
+    /**
+     * Create Request接口
+     *
+     * create a code generation request.
+     * 
+     * if agent receives a code generation request, it will:
+     * - record the request into mysql,
+     * - decompose the request into &#x60;topn&#x60; tasks.
+     * - send the tasks to kafka.
+     * 
+     * if agent receives a duplicated code generation request, it will not decompose request and send to kafka.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateRequestRequest 请求对象
+     * @return SyncInvoker<CreateRequestRequest, CreateRequestResponse>
+     */
+    public SyncInvoker<CreateRequestRequest, CreateRequestResponse> createRequestInvoker(CreateRequestRequest request) {
+        return new SyncInvoker<CreateRequestRequest, CreateRequestResponse>(request, CloudIDEMeta.createRequest,
+            hcClient);
+    }
+
+    /**
+     * Show Result接口
+     *
+     * get the result of the code generation request.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResultRequest 请求对象
+     * @return ShowResultResponse
+     */
+    public ShowResultResponse showResult(ShowResultRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.showResult);
+    }
+
+    /**
+     * Show Result接口
+     *
+     * get the result of the code generation request.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResultRequest 请求对象
+     * @return SyncInvoker<ShowResultRequest, ShowResultResponse>
+     */
+    public SyncInvoker<ShowResultRequest, ShowResultResponse> showResultInvoker(ShowResultRequest request) {
+        return new SyncInvoker<ShowResultRequest, ShowResultResponse>(request, CloudIDEMeta.showResult, hcClient);
+    }
+
+    /**
      * 查询用户是否有权限访问某个IDE实例
      *
      * 查询用户是否有权限访问某个IDE实例

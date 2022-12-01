@@ -31,7 +31,7 @@ public class UploadMediaRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 图片资源。
+     * 图片资源。  > 文件格式与文件名后缀需保持一致，请勿修改原始文件后缀，否则导致资源上传失败。 
      * @return file
      */
     public FormDataFilePart getFile() {

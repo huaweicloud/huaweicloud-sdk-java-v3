@@ -133,6 +133,38 @@ public class IefMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateBatchJobRequest, CreateBatchJobResponse> createBatchJob =
+        genForcreateBatchJob();
+
+    private static HttpRequestDef<CreateBatchJobRequest, CreateBatchJobResponse> genForcreateBatchJob() {
+        // basic
+        HttpRequestDef.Builder<CreateBatchJobRequest, CreateBatchJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateBatchJobRequest.class, CreateBatchJobResponse.class)
+                .withName("CreateBatchJob")
+                .withUri("/v2/{project_id}/productmgr/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBatchJobRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+        builder.<BatchJobRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchJobRequest.class),
+            f -> f.withMarshaller(CreateBatchJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateConfigMapRequest, CreateConfigMapResponse> createConfigMap =
         genForcreateConfigMap();
 
@@ -252,6 +284,77 @@ public class IefMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeviceTemplate.class),
             f -> f.withMarshaller(CreateDeviceTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateEdgeGroupRequest, CreateEdgeGroupResponse> createEdgeGroup =
+        genForcreateEdgeGroup();
+
+    private static HttpRequestDef<CreateEdgeGroupRequest, CreateEdgeGroupResponse> genForcreateEdgeGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateEdgeGroupRequest, CreateEdgeGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateEdgeGroupRequest.class, CreateEdgeGroupResponse.class)
+                .withName("CreateEdgeGroup")
+                .withUri("/v2/{project_id}/edgemgr/groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateEdgeGroupRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+        builder.<EdgeGroupRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(EdgeGroupRequest.class),
+            f -> f.withMarshaller(CreateEdgeGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateEdgeGroupCertRequest, CreateEdgeGroupCertResponse> createEdgeGroupCert =
+        genForcreateEdgeGroupCert();
+
+    private static HttpRequestDef<CreateEdgeGroupCertRequest, CreateEdgeGroupCertResponse> genForcreateEdgeGroupCert() {
+        // basic
+        HttpRequestDef.Builder<CreateEdgeGroupCertRequest, CreateEdgeGroupCertResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateEdgeGroupCertRequest.class, CreateEdgeGroupCertResponse.class)
+                .withName("CreateEdgeGroupCert")
+                .withUri("/v2/{project_id}/edgemgr/groups/{group_id}/certs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateEdgeGroupCertRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateEdgeGroupCertRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+        builder.<EdgeGroupCertRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(EdgeGroupCertRequest.class),
+            f -> f.withMarshaller(CreateEdgeGroupCertRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -434,6 +537,38 @@ public class IefMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateProductRequest, CreateProductResponse> createProduct =
+        genForcreateProduct();
+
+    private static HttpRequestDef<CreateProductRequest, CreateProductResponse> genForcreateProduct() {
+        // basic
+        HttpRequestDef.Builder<CreateProductRequest, CreateProductResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateProductRequest.class, CreateProductResponse.class)
+                .withName("CreateProduct")
+                .withUri("/v2/{project_id}/productmgr/products")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateProductRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+        builder.<ProductCreateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ProductCreateRequest.class),
+            f -> f.withMarshaller(CreateProductRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateRuleRequest, CreateRuleResponse> createRule = genForcreateRule();
 
     private static HttpRequestDef<CreateRuleRequest, CreateRuleResponse> genForcreateRule() {
@@ -520,6 +655,38 @@ public class IefMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Service.class),
             f -> f.withMarshaller(CreateServiceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSystemEventRequest, CreateSystemEventResponse> createSystemEvent =
+        genForcreateSystemEvent();
+
+    private static HttpRequestDef<CreateSystemEventRequest, CreateSystemEventResponse> genForcreateSystemEvent() {
+        // basic
+        HttpRequestDef.Builder<CreateSystemEventRequest, CreateSystemEventResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSystemEventRequest.class, CreateSystemEventResponse.class)
+                .withName("CreateSystemEvent")
+                .withUri("/v2/{project_id}/routemgr/exchanger/systemevents")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSystemEventRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+        builder.<EventCreateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(EventCreateReq.class),
+            f -> f.withMarshaller(CreateSystemEventRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -642,6 +809,38 @@ public class IefMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAppVersionRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteBatchJobRequest, DeleteBatchJobResponse> deleteBatchJob =
+        genFordeleteBatchJob();
+
+    private static HttpRequestDef<DeleteBatchJobRequest, DeleteBatchJobResponse> genFordeleteBatchJob() {
+        // basic
+        HttpRequestDef.Builder<DeleteBatchJobRequest, DeleteBatchJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteBatchJobRequest.class, DeleteBatchJobResponse.class)
+                .withName("DeleteBatchJob")
+                .withUri("/v2/{project_id}/productmgr/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBatchJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBatchJobRequest::getIefInstanceId, (req, v) -> {
                 req.setIefInstanceId(v);
             }));
 
@@ -776,6 +975,77 @@ public class IefMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDeviceTemplateRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEdgeGroupRequest, DeleteEdgeGroupResponse> deleteEdgeGroup =
+        genFordeleteEdgeGroup();
+
+    private static HttpRequestDef<DeleteEdgeGroupRequest, DeleteEdgeGroupResponse> genFordeleteEdgeGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteEdgeGroupRequest, DeleteEdgeGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteEdgeGroupRequest.class, DeleteEdgeGroupResponse.class)
+                .withName("DeleteEdgeGroup")
+                .withUri("/v2/{project_id}/edgemgr/groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEdgeGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEdgeGroupRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEdgeGroupCertRequest, DeleteEdgeGroupCertResponse> deleteEdgeGroupCert =
+        genFordeleteEdgeGroupCert();
+
+    private static HttpRequestDef<DeleteEdgeGroupCertRequest, DeleteEdgeGroupCertResponse> genFordeleteEdgeGroupCert() {
+        // basic
+        HttpRequestDef.Builder<DeleteEdgeGroupCertRequest, DeleteEdgeGroupCertResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteEdgeGroupCertRequest.class, DeleteEdgeGroupCertResponse.class)
+            .withName("DeleteEdgeGroupCert")
+            .withUri("/v2/{project_id}/edgemgr/groups/{group_id}/certs/{group_cert_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEdgeGroupCertRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("group_cert_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEdgeGroupCertRequest::getGroupCertId, (req, v) -> {
+                req.setGroupCertId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEdgeGroupCertRequest::getIefInstanceId, (req, v) -> {
                 req.setIefInstanceId(v);
             }));
 
@@ -958,6 +1228,38 @@ public class IefMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteProductRequest, DeleteProductResponse> deleteProduct =
+        genFordeleteProduct();
+
+    private static HttpRequestDef<DeleteProductRequest, DeleteProductResponse> genFordeleteProduct() {
+        // basic
+        HttpRequestDef.Builder<DeleteProductRequest, DeleteProductResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteProductRequest.class, DeleteProductResponse.class)
+                .withName("DeleteProduct")
+                .withUri("/v2/{project_id}/productmgr/products/{product_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("product_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteProductRequest::getProductId, (req, v) -> {
+                req.setProductId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteProductRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> deleteResourceTag =
         genFordeleteResourceTag();
 
@@ -1090,6 +1392,38 @@ public class IefMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteServiceRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSystemEventRequest, DeleteSystemEventResponse> deleteSystemEvent =
+        genFordeleteSystemEvent();
+
+    private static HttpRequestDef<DeleteSystemEventRequest, DeleteSystemEventResponse> genFordeleteSystemEvent() {
+        // basic
+        HttpRequestDef.Builder<DeleteSystemEventRequest, DeleteSystemEventResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSystemEventRequest.class, DeleteSystemEventResponse.class)
+                .withName("DeleteSystemEvent")
+                .withUri("/v2/{project_id}/routemgr/exchanger/systemevents/{event_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("event_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSystemEventRequest::getEventId, (req, v) -> {
+                req.setEventId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSystemEventRequest::getIefInstanceId, (req, v) -> {
                 req.setIefInstanceId(v);
             }));
 
@@ -1234,6 +1568,58 @@ public class IefMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppsRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBatchJobRequest, ListBatchJobResponse> listBatchJob = genForlistBatchJob();
+
+    private static HttpRequestDef<ListBatchJobRequest, ListBatchJobResponse> genForlistBatchJob() {
+        // basic
+        HttpRequestDef.Builder<ListBatchJobRequest, ListBatchJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBatchJobRequest.class, ListBatchJobResponse.class)
+                .withName("ListBatchJob")
+                .withUri("/v2/{project_id}/productmgr/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBatchJobRequest::getJobType, (req, v) -> {
+                req.setJobType(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBatchJobRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBatchJobRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBatchJobRequest::getSort, (req, v) -> {
+                req.setSort(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBatchJobRequest::getIefInstanceId, (req, v) -> {
                 req.setIefInstanceId(v);
             }));
 
@@ -1459,6 +1845,105 @@ public class IefMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDevicesRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEdgeGroupCertsRequest, ListEdgeGroupCertsResponse> listEdgeGroupCerts =
+        genForlistEdgeGroupCerts();
+
+    private static HttpRequestDef<ListEdgeGroupCertsRequest, ListEdgeGroupCertsResponse> genForlistEdgeGroupCerts() {
+        // basic
+        HttpRequestDef.Builder<ListEdgeGroupCertsRequest, ListEdgeGroupCertsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEdgeGroupCertsRequest.class, ListEdgeGroupCertsResponse.class)
+                .withName("ListEdgeGroupCerts")
+                .withUri("/v2/{project_id}/edgemgr/groups/{group_id}/certs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEdgeGroupCertsRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEdgeGroupCertsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEdgeGroupCertsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEdgeGroupCertsRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEdgeGroupsRequest, ListEdgeGroupsResponse> listEdgeGroups =
+        genForlistEdgeGroups();
+
+    private static HttpRequestDef<ListEdgeGroupsRequest, ListEdgeGroupsResponse> genForlistEdgeGroups() {
+        // basic
+        HttpRequestDef.Builder<ListEdgeGroupsRequest, ListEdgeGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEdgeGroupsRequest.class, ListEdgeGroupsResponse.class)
+                .withName("ListEdgeGroups")
+                .withUri("/v2/{project_id}/edgemgr/groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEdgeGroupsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEdgeGroupsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEdgeGroupsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEdgeGroupsRequest::getSort, (req, v) -> {
+                req.setSort(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEdgeGroupsRequest::getIefInstanceId, (req, v) -> {
                 req.setIefInstanceId(v);
             }));
 
@@ -1865,6 +2350,51 @@ public class IefMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListProductsRequest, ListProductsResponse> listProducts = genForlistProducts();
+
+    private static HttpRequestDef<ListProductsRequest, ListProductsResponse> genForlistProducts() {
+        // basic
+        HttpRequestDef.Builder<ListProductsRequest, ListProductsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProductsRequest.class, ListProductsResponse.class)
+                .withName("ListProducts")
+                .withUri("/v2/{project_id}/productmgr/products")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProductsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProductsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProductsRequest::getSort, (req, v) -> {
+                req.setSort(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProductsRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListResourceByTagsRequest, ListResourceByTagsResponse> listResourceByTags =
         genForlistResourceByTags();
 
@@ -2106,6 +2636,52 @@ public class IefMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSystemEventsRequest, ListSystemEventsResponse> listSystemEvents =
+        genForlistSystemEvents();
+
+    private static HttpRequestDef<ListSystemEventsRequest, ListSystemEventsResponse> genForlistSystemEvents() {
+        // basic
+        HttpRequestDef.Builder<ListSystemEventsRequest, ListSystemEventsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSystemEventsRequest.class, ListSystemEventsResponse.class)
+                .withName("ListSystemEvents")
+                .withUri("/v2/{project_id}/routemgr/exchanger/systemevents")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSystemEventsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSystemEventsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSystemEventsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSystemEventsRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForlistTags();
 
     private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForlistTags() {
@@ -2222,6 +2798,84 @@ public class IefMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RestoreBatchJobRequest, RestoreBatchJobResponse> restoreBatchJob =
+        genForrestoreBatchJob();
+
+    private static HttpRequestDef<RestoreBatchJobRequest, RestoreBatchJobResponse> genForrestoreBatchJob() {
+        // basic
+        HttpRequestDef.Builder<RestoreBatchJobRequest, RestoreBatchJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RestoreBatchJobRequest.class, RestoreBatchJobResponse.class)
+                .withName("RestoreBatchJob")
+                .withUri("/v2/{project_id}/productmgr/jobs/{job_id}/restore")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreBatchJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreBatchJobRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RestoreBatchJobResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RetryBatchJobRequest, RetryBatchJobResponse> retryBatchJob =
+        genForretryBatchJob();
+
+    private static HttpRequestDef<RetryBatchJobRequest, RetryBatchJobResponse> genForretryBatchJob() {
+        // basic
+        HttpRequestDef.Builder<RetryBatchJobRequest, RetryBatchJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RetryBatchJobRequest.class, RetryBatchJobResponse.class)
+                .withName("RetryBatchJob")
+                .withUri("/v2/{project_id}/productmgr/jobs/{job_id}/retry")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryBatchJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryBatchJobRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RetryBatchJobResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAppDetailRequest, ShowAppDetailResponse> showAppDetail =
         genForshowAppDetail();
 
@@ -2285,6 +2939,37 @@ public class IefMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAppVersionDetailRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBatchJobRequest, ShowBatchJobResponse> showBatchJob = genForshowBatchJob();
+
+    private static HttpRequestDef<ShowBatchJobRequest, ShowBatchJobResponse> genForshowBatchJob() {
+        // basic
+        HttpRequestDef.Builder<ShowBatchJobRequest, ShowBatchJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBatchJobRequest.class, ShowBatchJobResponse.class)
+                .withName("ShowBatchJob")
+                .withUri("/v2/{project_id}/productmgr/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBatchJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBatchJobRequest::getIefInstanceId, (req, v) -> {
                 req.setIefInstanceId(v);
             }));
 
@@ -2452,6 +3137,77 @@ public class IefMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowEdgeGroupCertDetailRequest, ShowEdgeGroupCertDetailResponse> showEdgeGroupCertDetail =
+        genForshowEdgeGroupCertDetail();
+
+    private static HttpRequestDef<ShowEdgeGroupCertDetailRequest, ShowEdgeGroupCertDetailResponse> genForshowEdgeGroupCertDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowEdgeGroupCertDetailRequest, ShowEdgeGroupCertDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowEdgeGroupCertDetailRequest.class, ShowEdgeGroupCertDetailResponse.class)
+            .withName("ShowEdgeGroupCertDetail")
+            .withUri("/v2/{project_id}/edgemgr/groups/{group_id}/certs/{group_cert_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEdgeGroupCertDetailRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("group_cert_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEdgeGroupCertDetailRequest::getGroupCertId, (req, v) -> {
+                req.setGroupCertId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEdgeGroupCertDetailRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEdgeGroupDetailRequest, ShowEdgeGroupDetailResponse> showEdgeGroupDetail =
+        genForshowEdgeGroupDetail();
+
+    private static HttpRequestDef<ShowEdgeGroupDetailRequest, ShowEdgeGroupDetailResponse> genForshowEdgeGroupDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowEdgeGroupDetailRequest, ShowEdgeGroupDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowEdgeGroupDetailRequest.class, ShowEdgeGroupDetailResponse.class)
+                .withName("ShowEdgeGroupDetail")
+                .withUri("/v2/{project_id}/edgemgr/groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEdgeGroupDetailRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEdgeGroupDetailRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowEdgeNodeDetailRequest, ShowEdgeNodeDetailResponse> showEdgeNodeDetail =
         genForshowEdgeNodeDetail();
 
@@ -2541,6 +3297,62 @@ public class IefMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEndPointDetailRequest::getIefInstanceId, (req, v) -> {
                 req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProductDetailRequest, ShowProductDetailResponse> showProductDetail =
+        genForshowProductDetail();
+
+    private static HttpRequestDef<ShowProductDetailRequest, ShowProductDetailResponse> genForshowProductDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowProductDetailRequest, ShowProductDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowProductDetailRequest.class, ShowProductDetailResponse.class)
+                .withName("ShowProductDetail")
+                .withUri("/v2/{project_id}/productmgr/products/{product_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("product_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProductDetailRequest::getProductId, (req, v) -> {
+                req.setProductId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProductDetailRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> showQuota = genForshowQuota();
+
+    private static HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> genForshowQuota() {
+        // basic
+        HttpRequestDef.Builder<ShowQuotaRequest, ShowQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQuotaRequest.class, ShowQuotaResponse.class)
+                .withName("ShowQuota")
+                .withUri("/v2/{project_id}/edgemgr/quotas")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("types",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQuotaRequest::getTypes, (req, v) -> {
+                req.setTypes(v);
             }));
 
         // response
@@ -2643,6 +3455,38 @@ public class IefMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSystemEventDetailRequest, ShowSystemEventDetailResponse> showSystemEventDetail =
+        genForshowSystemEventDetail();
+
+    private static HttpRequestDef<ShowSystemEventDetailRequest, ShowSystemEventDetailResponse> genForshowSystemEventDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowSystemEventDetailRequest, ShowSystemEventDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSystemEventDetailRequest.class, ShowSystemEventDetailResponse.class)
+            .withName("ShowSystemEventDetail")
+            .withUri("/v2/{project_id}/routemgr/exchanger/systemevents/{event_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("event_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSystemEventDetailRequest::getEventId, (req, v) -> {
+                req.setEventId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSystemEventDetailRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StartRuleRequest, StartRuleResponse> startRule = genForstartRule();
 
     private static HttpRequestDef<StartRuleRequest, StartRuleResponse> genForstartRule() {
@@ -2674,6 +3518,76 @@ public class IefMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<StartSystemEventRequest, StartSystemEventResponse> startSystemEvent =
+        genForstartSystemEvent();
+
+    private static HttpRequestDef<StartSystemEventRequest, StartSystemEventResponse> genForstartSystemEvent() {
+        // basic
+        HttpRequestDef.Builder<StartSystemEventRequest, StartSystemEventResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartSystemEventRequest.class, StartSystemEventResponse.class)
+                .withName("StartSystemEvent")
+                .withUri("/v2/{project_id}/routemgr/exchanger/systemevents/{event_id}/start")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("event_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartSystemEventRequest::getEventId, (req, v) -> {
+                req.setEventId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartSystemEventRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopBatchJobRequest, StopBatchJobResponse> stopBatchJob = genForstopBatchJob();
+
+    private static HttpRequestDef<StopBatchJobRequest, StopBatchJobResponse> genForstopBatchJob() {
+        // basic
+        HttpRequestDef.Builder<StopBatchJobRequest, StopBatchJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopBatchJobRequest.class, StopBatchJobResponse.class)
+                .withName("StopBatchJob")
+                .withUri("/v2/{project_id}/productmgr/jobs/{job_id}/pause")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopBatchJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopBatchJobRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(StopBatchJobResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StopRuleRequest, StopRuleResponse> stopRule = genForstopRule();
 
     private static HttpRequestDef<StopRuleRequest, StopRuleResponse> genForstopRule() {
@@ -2697,6 +3611,38 @@ public class IefMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopRuleRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopSystemEventRequest, StopSystemEventResponse> stopSystemEvent =
+        genForstopSystemEvent();
+
+    private static HttpRequestDef<StopSystemEventRequest, StopSystemEventResponse> genForstopSystemEvent() {
+        // basic
+        HttpRequestDef.Builder<StopSystemEventRequest, StopSystemEventResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopSystemEventRequest.class, StopSystemEventResponse.class)
+                .withName("StopSystemEvent")
+                .withUri("/v2/{project_id}/routemgr/exchanger/systemevents/{event_id}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("event_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopSystemEventRequest::getEventId, (req, v) -> {
+                req.setEventId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopSystemEventRequest::getIefInstanceId, (req, v) -> {
                 req.setIefInstanceId(v);
             }));
 
@@ -2976,6 +3922,87 @@ public class IefMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(TwinUpdateDetail.class),
             f -> f.withMarshaller(UpdateDeviceTwinRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEdgeGroupRequest, UpdateEdgeGroupResponse> updateEdgeGroup =
+        genForupdateEdgeGroup();
+
+    private static HttpRequestDef<UpdateEdgeGroupRequest, UpdateEdgeGroupResponse> genForupdateEdgeGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateEdgeGroupRequest, UpdateEdgeGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateEdgeGroupRequest.class, UpdateEdgeGroupResponse.class)
+                .withName("UpdateEdgeGroup")
+                .withUri("/v2/{project_id}/edgemgr/groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEdgeGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEdgeGroupRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+        builder.<EdgeGroupUpdateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(EdgeGroupUpdateRequest.class),
+            f -> f.withMarshaller(UpdateEdgeGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEdgeGroupNodeBindingRequest, UpdateEdgeGroupNodeBindingResponse> updateEdgeGroupNodeBinding =
+        genForupdateEdgeGroupNodeBinding();
+
+    private static HttpRequestDef<UpdateEdgeGroupNodeBindingRequest, UpdateEdgeGroupNodeBindingResponse> genForupdateEdgeGroupNodeBinding() {
+        // basic
+        HttpRequestDef.Builder<UpdateEdgeGroupNodeBindingRequest, UpdateEdgeGroupNodeBindingResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateEdgeGroupNodeBindingRequest.class,
+                    UpdateEdgeGroupNodeBindingResponse.class)
+                .withName("UpdateEdgeGroupNodeBinding")
+                .withUri("/v2/{project_id}/edgemgr/groups/{group_id}/nodes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEdgeGroupNodeBindingRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEdgeGroupNodeBindingRequest::getIefInstanceId, (req, v) -> {
+                req.setIefInstanceId(v);
+            }));
+        builder.<UpdateGroupNodeBindingRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateGroupNodeBindingRequest.class),
+            f -> f.withMarshaller(UpdateEdgeGroupNodeBindingRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

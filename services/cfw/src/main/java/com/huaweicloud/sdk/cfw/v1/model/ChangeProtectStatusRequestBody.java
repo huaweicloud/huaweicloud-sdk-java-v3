@@ -108,7 +108,7 @@ public class ChangeProtectStatusRequestBody {
     }
 
     /**
-     * 防护对象ID
+     * 防护对象id
      * @return objectId
      */
     public String getObjectId() {

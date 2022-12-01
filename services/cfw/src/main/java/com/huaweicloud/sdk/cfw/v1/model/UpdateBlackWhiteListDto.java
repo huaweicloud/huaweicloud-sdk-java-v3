@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.cfw.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -34,6 +39,93 @@ public class UpdateBlackWhiteListDto {
     @JsonProperty(value = "port")
 
     private String port;
+
+    /**
+     * 黑白名单类型4：黑名单，5：白名单
+     */
+    public static final class ListTypeEnum {
+
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
+        public static final ListTypeEnum NUMBER_4 = new ListTypeEnum(4);
+
+        /**
+         * Enum NUMBER_5 for value: 5
+         */
+        public static final ListTypeEnum NUMBER_5 = new ListTypeEnum(5);
+
+        private static final Map<Integer, ListTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, ListTypeEnum> createStaticFields() {
+            Map<Integer, ListTypeEnum> map = new HashMap<>();
+            map.put(4, NUMBER_4);
+            map.put(5, NUMBER_5);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        ListTypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ListTypeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            ListTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ListTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static ListTypeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            ListTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ListTypeEnum) {
+                return this.value.equals(((ListTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "list_type")
+
+    private ListTypeEnum listType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "object_id")
+
+    private String objectId;
 
     public UpdateBlackWhiteListDto withDirection(Integer direction) {
         this.direction = direction;
@@ -120,6 +212,40 @@ public class UpdateBlackWhiteListDto {
         this.port = port;
     }
 
+    public UpdateBlackWhiteListDto withListType(ListTypeEnum listType) {
+        this.listType = listType;
+        return this;
+    }
+
+    /**
+     * 黑白名单类型4：黑名单，5：白名单
+     * @return listType
+     */
+    public ListTypeEnum getListType() {
+        return listType;
+    }
+
+    public void setListType(ListTypeEnum listType) {
+        this.listType = listType;
+    }
+
+    public UpdateBlackWhiteListDto withObjectId(String objectId) {
+        this.objectId = objectId;
+        return this;
+    }
+
+    /**
+     * 防护对象id
+     * @return objectId
+     */
+    public String getObjectId() {
+        return objectId;
+    }
+
+    public void setObjectId(String objectId) {
+        this.objectId = objectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -133,12 +259,14 @@ public class UpdateBlackWhiteListDto {
             && Objects.equals(this.addressType, updateBlackWhiteListDto.addressType)
             && Objects.equals(this.address, updateBlackWhiteListDto.address)
             && Objects.equals(this.protocol, updateBlackWhiteListDto.protocol)
-            && Objects.equals(this.port, updateBlackWhiteListDto.port);
+            && Objects.equals(this.port, updateBlackWhiteListDto.port)
+            && Objects.equals(this.listType, updateBlackWhiteListDto.listType)
+            && Objects.equals(this.objectId, updateBlackWhiteListDto.objectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(direction, addressType, address, protocol, port);
+        return Objects.hash(direction, addressType, address, protocol, port, listType, objectId);
     }
 
     @Override
@@ -150,6 +278,8 @@ public class UpdateBlackWhiteListDto {
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    listType: ").append(toIndentedString(listType)).append("\n");
+        sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

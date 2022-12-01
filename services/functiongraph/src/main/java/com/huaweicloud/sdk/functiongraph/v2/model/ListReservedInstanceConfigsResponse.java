@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -13,144 +15,95 @@ import java.util.function.Consumer;
 public class ListReservedInstanceConfigsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "function_urn")
+    @JsonProperty(value = "reservedinstances")
 
-    private String functionUrn;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "qualifier_type")
-
-    private String qualifierType;
+    private List<ReservedInstanceConfigs> reservedinstances = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "qualifier_name")
+    @JsonProperty(value = "page_info")
 
-    private String qualifierName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "min_count")
-
-    private Integer minCount;
+    private PageInfo pageInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "idle_mode")
+    @JsonProperty(value = "count")
 
-    private Boolean idleMode;
+    private Long count;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tactics_config")
+    public ListReservedInstanceConfigsResponse withReservedinstances(List<ReservedInstanceConfigs> reservedinstances) {
+        this.reservedinstances = reservedinstances;
+        return this;
+    }
 
-    private TacticsConfig tacticsConfig;
+    public ListReservedInstanceConfigsResponse addReservedinstancesItem(ReservedInstanceConfigs reservedinstancesItem) {
+        if (this.reservedinstances == null) {
+            this.reservedinstances = new ArrayList<>();
+        }
+        this.reservedinstances.add(reservedinstancesItem);
+        return this;
+    }
 
-    public ListReservedInstanceConfigsResponse withFunctionUrn(String functionUrn) {
-        this.functionUrn = functionUrn;
+    public ListReservedInstanceConfigsResponse withReservedinstances(
+        Consumer<List<ReservedInstanceConfigs>> reservedinstancesSetter) {
+        if (this.reservedinstances == null) {
+            this.reservedinstances = new ArrayList<>();
+        }
+        reservedinstancesSetter.accept(this.reservedinstances);
         return this;
     }
 
     /**
-     * 函数URN
-     * @return functionUrn
+     * 函数预留实例列表
+     * @return reservedinstances
      */
-    public String getFunctionUrn() {
-        return functionUrn;
+    public List<ReservedInstanceConfigs> getReservedinstances() {
+        return reservedinstances;
     }
 
-    public void setFunctionUrn(String functionUrn) {
-        this.functionUrn = functionUrn;
+    public void setReservedinstances(List<ReservedInstanceConfigs> reservedinstances) {
+        this.reservedinstances = reservedinstances;
     }
 
-    public ListReservedInstanceConfigsResponse withQualifierType(String qualifierType) {
-        this.qualifierType = qualifierType;
+    public ListReservedInstanceConfigsResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
         return this;
     }
 
-    /**
-     * 限定类型, 支持version和alias
-     * @return qualifierType
-     */
-    public String getQualifierType() {
-        return qualifierType;
-    }
-
-    public void setQualifierType(String qualifierType) {
-        this.qualifierType = qualifierType;
-    }
-
-    public ListReservedInstanceConfigsResponse withQualifierName(String qualifierName) {
-        this.qualifierName = qualifierName;
-        return this;
-    }
-
-    /**
-     * 限定类型对应的取值
-     * @return qualifierName
-     */
-    public String getQualifierName() {
-        return qualifierName;
-    }
-
-    public void setQualifierName(String qualifierName) {
-        this.qualifierName = qualifierName;
-    }
-
-    public ListReservedInstanceConfigsResponse withMinCount(Integer minCount) {
-        this.minCount = minCount;
-        return this;
-    }
-
-    /**
-     * 预留实例个数
-     * @return minCount
-     */
-    public Integer getMinCount() {
-        return minCount;
-    }
-
-    public void setMinCount(Integer minCount) {
-        this.minCount = minCount;
-    }
-
-    public ListReservedInstanceConfigsResponse withIdleMode(Boolean idleMode) {
-        this.idleMode = idleMode;
-        return this;
-    }
-
-    /**
-     * 是否开启闲置模式配置
-     * @return idleMode
-     */
-    public Boolean getIdleMode() {
-        return idleMode;
-    }
-
-    public void setIdleMode(Boolean idleMode) {
-        this.idleMode = idleMode;
-    }
-
-    public ListReservedInstanceConfigsResponse withTacticsConfig(TacticsConfig tacticsConfig) {
-        this.tacticsConfig = tacticsConfig;
-        return this;
-    }
-
-    public ListReservedInstanceConfigsResponse withTacticsConfig(Consumer<TacticsConfig> tacticsConfigSetter) {
-        if (this.tacticsConfig == null) {
-            this.tacticsConfig = new TacticsConfig();
-            tacticsConfigSetter.accept(this.tacticsConfig);
+    public ListReservedInstanceConfigsResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
         }
 
         return this;
     }
 
     /**
-     * Get tacticsConfig
-     * @return tacticsConfig
+     * Get pageInfo
+     * @return pageInfo
      */
-    public TacticsConfig getTacticsConfig() {
-        return tacticsConfig;
+    public PageInfo getPageInfo() {
+        return pageInfo;
     }
 
-    public void setTacticsConfig(TacticsConfig tacticsConfig) {
-        this.tacticsConfig = tacticsConfig;
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
+    public ListReservedInstanceConfigsResponse withCount(Long count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * 函数个数
+     * @return count
+     */
+    public Long getCount() {
+        return count;
+    }
+
+    public void setCount(Long count) {
+        this.count = count;
     }
 
     @Override
@@ -163,29 +116,23 @@ public class ListReservedInstanceConfigsResponse extends SdkResponse {
         }
         ListReservedInstanceConfigsResponse listReservedInstanceConfigsResponse =
             (ListReservedInstanceConfigsResponse) o;
-        return Objects.equals(this.functionUrn, listReservedInstanceConfigsResponse.functionUrn)
-            && Objects.equals(this.qualifierType, listReservedInstanceConfigsResponse.qualifierType)
-            && Objects.equals(this.qualifierName, listReservedInstanceConfigsResponse.qualifierName)
-            && Objects.equals(this.minCount, listReservedInstanceConfigsResponse.minCount)
-            && Objects.equals(this.idleMode, listReservedInstanceConfigsResponse.idleMode)
-            && Objects.equals(this.tacticsConfig, listReservedInstanceConfigsResponse.tacticsConfig);
+        return Objects.equals(this.reservedinstances, listReservedInstanceConfigsResponse.reservedinstances)
+            && Objects.equals(this.pageInfo, listReservedInstanceConfigsResponse.pageInfo)
+            && Objects.equals(this.count, listReservedInstanceConfigsResponse.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(functionUrn, qualifierType, qualifierName, minCount, idleMode, tacticsConfig);
+        return Objects.hash(reservedinstances, pageInfo, count);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListReservedInstanceConfigsResponse {\n");
-        sb.append("    functionUrn: ").append(toIndentedString(functionUrn)).append("\n");
-        sb.append("    qualifierType: ").append(toIndentedString(qualifierType)).append("\n");
-        sb.append("    qualifierName: ").append(toIndentedString(qualifierName)).append("\n");
-        sb.append("    minCount: ").append(toIndentedString(minCount)).append("\n");
-        sb.append("    idleMode: ").append(toIndentedString(idleMode)).append("\n");
-        sb.append("    tacticsConfig: ").append(toIndentedString(tacticsConfig)).append("\n");
+        sb.append("    reservedinstances: ").append(toIndentedString(reservedinstances)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

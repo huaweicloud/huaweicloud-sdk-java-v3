@@ -20,6 +20,351 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 添加工作负载队列
+     *
+     * 添加工作负载队列
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddWorkloadQueueRequest 请求对象
+     * @return CompletableFuture<AddWorkloadQueueResponse>
+     */
+    public CompletableFuture<AddWorkloadQueueResponse> addWorkloadQueueAsync(AddWorkloadQueueRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.addWorkloadQueue);
+    }
+
+    /**
+     * 添加工作负载队列
+     *
+     * 添加工作负载队列
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddWorkloadQueueRequest 请求对象
+     * @return AsyncInvoker<AddWorkloadQueueRequest, AddWorkloadQueueResponse>
+     */
+    public AsyncInvoker<AddWorkloadQueueRequest, AddWorkloadQueueResponse> addWorkloadQueueAsyncInvoker(
+        AddWorkloadQueueRequest request) {
+        return new AsyncInvoker<AddWorkloadQueueRequest, AddWorkloadQueueResponse>(request, DwsMeta.addWorkloadQueue,
+            hcClient);
+    }
+
+    /**
+     * 集群绑定EIP
+     *
+     * 集群绑定Eip
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateEipRequest 请求对象
+     * @return CompletableFuture<AssociateEipResponse>
+     */
+    public CompletableFuture<AssociateEipResponse> associateEipAsync(AssociateEipRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.associateEip);
+    }
+
+    /**
+     * 集群绑定EIP
+     *
+     * 集群绑定Eip
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateEipRequest 请求对象
+     * @return AsyncInvoker<AssociateEipRequest, AssociateEipResponse>
+     */
+    public AsyncInvoker<AssociateEipRequest, AssociateEipResponse> associateEipAsyncInvoker(
+        AssociateEipRequest request) {
+        return new AsyncInvoker<AssociateEipRequest, AssociateEipResponse>(request, DwsMeta.associateEip, hcClient);
+    }
+
+    /**
+     * 集群绑定ELB
+     *
+     * 集群绑定Elb接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateElbRequest 请求对象
+     * @return CompletableFuture<AssociateElbResponse>
+     */
+    public CompletableFuture<AssociateElbResponse> associateElbAsync(AssociateElbRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.associateElb);
+    }
+
+    /**
+     * 集群绑定ELB
+     *
+     * 集群绑定Elb接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateElbRequest 请求对象
+     * @return AsyncInvoker<AssociateElbRequest, AssociateElbResponse>
+     */
+    public AsyncInvoker<AssociateElbRequest, AssociateElbResponse> associateElbAsyncInvoker(
+        AssociateElbRequest request) {
+        return new AsyncInvoker<AssociateElbRequest, AssociateElbResponse>(request, DwsMeta.associateElb, hcClient);
+    }
+
+    /**
+     * 批量增加CN节点
+     *
+     * 当用户集群创建后，实际需要的CN数量会随着业务需求而发生变化，因此管理CN节点功能的实现使用户可以根据实际需求动态调整集群CN数量。
+     * - 增删CN节点过程中不允许执行其他运维操作。
+     * - 增删CN节点过程中需要停止业务操作，建议在业务低峰期或业务中断情况下进行操作。
+     * - 增删CN节点时发生故障且回滚失败，需要用户登录后台进行处理，处理方案请参见《故障排除》中的“集群使用&gt;增删CN回滚失败”章节。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateClusterCnRequest 请求对象
+     * @return CompletableFuture<BatchCreateClusterCnResponse>
+     */
+    public CompletableFuture<BatchCreateClusterCnResponse> batchCreateClusterCnAsync(
+        BatchCreateClusterCnRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.batchCreateClusterCn);
+    }
+
+    /**
+     * 批量增加CN节点
+     *
+     * 当用户集群创建后，实际需要的CN数量会随着业务需求而发生变化，因此管理CN节点功能的实现使用户可以根据实际需求动态调整集群CN数量。
+     * - 增删CN节点过程中不允许执行其他运维操作。
+     * - 增删CN节点过程中需要停止业务操作，建议在业务低峰期或业务中断情况下进行操作。
+     * - 增删CN节点时发生故障且回滚失败，需要用户登录后台进行处理，处理方案请参见《故障排除》中的“集群使用&gt;增删CN回滚失败”章节。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateClusterCnRequest 请求对象
+     * @return AsyncInvoker<BatchCreateClusterCnRequest, BatchCreateClusterCnResponse>
+     */
+    public AsyncInvoker<BatchCreateClusterCnRequest, BatchCreateClusterCnResponse> batchCreateClusterCnAsyncInvoker(
+        BatchCreateClusterCnRequest request) {
+        return new AsyncInvoker<BatchCreateClusterCnRequest, BatchCreateClusterCnResponse>(request,
+            DwsMeta.batchCreateClusterCn, hcClient);
+    }
+
+    /**
+     * 批量添加标签
+     *
+     * 为指定集群批量添加标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateResourceTagRequest 请求对象
+     * @return CompletableFuture<BatchCreateResourceTagResponse>
+     */
+    public CompletableFuture<BatchCreateResourceTagResponse> batchCreateResourceTagAsync(
+        BatchCreateResourceTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.batchCreateResourceTag);
+    }
+
+    /**
+     * 批量添加标签
+     *
+     * 为指定集群批量添加标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateResourceTagRequest 请求对象
+     * @return AsyncInvoker<BatchCreateResourceTagRequest, BatchCreateResourceTagResponse>
+     */
+    public AsyncInvoker<BatchCreateResourceTagRequest, BatchCreateResourceTagResponse> batchCreateResourceTagAsyncInvoker(
+        BatchCreateResourceTagRequest request) {
+        return new AsyncInvoker<BatchCreateResourceTagRequest, BatchCreateResourceTagResponse>(request,
+            DwsMeta.batchCreateResourceTag, hcClient);
+    }
+
+    /**
+     * 批量删除CN节点
+     *
+     * 当用户集群创建后，实际需要的CN数量会随着业务需求而发生变化，因此管理CN节点功能的实现使用户可以根据实际需求动态调整集群CN数量。
+     * - 增删CN节点过程中不允许执行其他运维操作。
+     * - 增删CN节点过程中需要停止业务操作，建议在业务低峰期或业务中断情况下进行操作。
+     * - 增删CN节点时发生故障且回滚失败，需要用户登录后台进行处理，处理方案请参见《故障排除》中的“集群使用&gt;增删CN回滚失败”章节。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteClusterCnRequest 请求对象
+     * @return CompletableFuture<BatchDeleteClusterCnResponse>
+     */
+    public CompletableFuture<BatchDeleteClusterCnResponse> batchDeleteClusterCnAsync(
+        BatchDeleteClusterCnRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.batchDeleteClusterCn);
+    }
+
+    /**
+     * 批量删除CN节点
+     *
+     * 当用户集群创建后，实际需要的CN数量会随着业务需求而发生变化，因此管理CN节点功能的实现使用户可以根据实际需求动态调整集群CN数量。
+     * - 增删CN节点过程中不允许执行其他运维操作。
+     * - 增删CN节点过程中需要停止业务操作，建议在业务低峰期或业务中断情况下进行操作。
+     * - 增删CN节点时发生故障且回滚失败，需要用户登录后台进行处理，处理方案请参见《故障排除》中的“集群使用&gt;增删CN回滚失败”章节。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteClusterCnRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteClusterCnRequest, BatchDeleteClusterCnResponse>
+     */
+    public AsyncInvoker<BatchDeleteClusterCnRequest, BatchDeleteClusterCnResponse> batchDeleteClusterCnAsyncInvoker(
+        BatchDeleteClusterCnRequest request) {
+        return new AsyncInvoker<BatchDeleteClusterCnRequest, BatchDeleteClusterCnResponse>(request,
+            DwsMeta.batchDeleteClusterCn, hcClient);
+    }
+
+    /**
+     * 批量删除标签
+     *
+     * 为指定集群批量删除标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteResourceTagRequest 请求对象
+     * @return CompletableFuture<BatchDeleteResourceTagResponse>
+     */
+    public CompletableFuture<BatchDeleteResourceTagResponse> batchDeleteResourceTagAsync(
+        BatchDeleteResourceTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.batchDeleteResourceTag);
+    }
+
+    /**
+     * 批量删除标签
+     *
+     * 为指定集群批量删除标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteResourceTagRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse>
+     */
+    public AsyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse> batchDeleteResourceTagAsyncInvoker(
+        BatchDeleteResourceTagRequest request) {
+        return new AsyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse>(request,
+            DwsMeta.batchDeleteResourceTag, hcClient);
+    }
+
+    /**
+     * 解除只读
+     *
+     * 当集群进入只读状态时，无法进行数据库相关操作，用户可以在管理控制台解除集群的只读状态。触发只读状态可能是由于磁盘使用率过高，因此需要对集群数据进行清理或扩容。
+     * - 解除只读支持1.7.2及以上版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CancelReadonlyClusterRequest 请求对象
+     * @return CompletableFuture<CancelReadonlyClusterResponse>
+     */
+    public CompletableFuture<CancelReadonlyClusterResponse> cancelReadonlyClusterAsync(
+        CancelReadonlyClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.cancelReadonlyCluster);
+    }
+
+    /**
+     * 解除只读
+     *
+     * 当集群进入只读状态时，无法进行数据库相关操作，用户可以在管理控制台解除集群的只读状态。触发只读状态可能是由于磁盘使用率过高，因此需要对集群数据进行清理或扩容。
+     * - 解除只读支持1.7.2及以上版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CancelReadonlyClusterRequest 请求对象
+     * @return AsyncInvoker<CancelReadonlyClusterRequest, CancelReadonlyClusterResponse>
+     */
+    public AsyncInvoker<CancelReadonlyClusterRequest, CancelReadonlyClusterResponse> cancelReadonlyClusterAsyncInvoker(
+        CancelReadonlyClusterRequest request) {
+        return new AsyncInvoker<CancelReadonlyClusterRequest, CancelReadonlyClusterResponse>(request,
+            DwsMeta.cancelReadonlyCluster, hcClient);
+    }
+
+    /**
+     * 创建集群前检查
+     *
+     * 创建集群前预检查
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckClusterRequest 请求对象
+     * @return CompletableFuture<CheckClusterResponse>
+     */
+    public CompletableFuture<CheckClusterResponse> checkClusterAsync(CheckClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.checkCluster);
+    }
+
+    /**
+     * 创建集群前检查
+     *
+     * 创建集群前预检查
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckClusterRequest 请求对象
+     * @return AsyncInvoker<CheckClusterRequest, CheckClusterResponse>
+     */
+    public AsyncInvoker<CheckClusterRequest, CheckClusterResponse> checkClusterAsyncInvoker(
+        CheckClusterRequest request) {
+        return new AsyncInvoker<CheckClusterRequest, CheckClusterResponse>(request, DwsMeta.checkCluster, hcClient);
+    }
+
+    /**
+     * 复制快照
+     *
+     * 该接口用于复制一个自动快照。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CopySnapshotRequest 请求对象
+     * @return CompletableFuture<CopySnapshotResponse>
+     */
+    public CompletableFuture<CopySnapshotResponse> copySnapshotAsync(CopySnapshotRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.copySnapshot);
+    }
+
+    /**
+     * 复制快照
+     *
+     * 该接口用于复制一个自动快照。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CopySnapshotRequest 请求对象
+     * @return AsyncInvoker<CopySnapshotRequest, CopySnapshotResponse>
+     */
+    public AsyncInvoker<CopySnapshotRequest, CopySnapshotResponse> copySnapshotAsyncInvoker(
+        CopySnapshotRequest request) {
+        return new AsyncInvoker<CopySnapshotRequest, CopySnapshotResponse>(request, DwsMeta.copySnapshot, hcClient);
+    }
+
+    /**
+     * 创建告警订阅
+     *
+     * 创建告警订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAlarmSubRequest 请求对象
+     * @return CompletableFuture<CreateAlarmSubResponse>
+     */
+    public CompletableFuture<CreateAlarmSubResponse> createAlarmSubAsync(CreateAlarmSubRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.createAlarmSub);
+    }
+
+    /**
+     * 创建告警订阅
+     *
+     * 创建告警订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAlarmSubRequest 请求对象
+     * @return AsyncInvoker<CreateAlarmSubRequest, CreateAlarmSubResponse>
+     */
+    public AsyncInvoker<CreateAlarmSubRequest, CreateAlarmSubResponse> createAlarmSubAsyncInvoker(
+        CreateAlarmSubRequest request) {
+        return new AsyncInvoker<CreateAlarmSubRequest, CreateAlarmSubResponse>(request, DwsMeta.createAlarmSub,
+            hcClient);
+    }
+
+    /**
      * 创建集群
      *
      * 该接口用于创建集群。
@@ -53,6 +398,154 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 申请域名
+     *
+     * 为指定集群申请域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateClusterDnsRequest 请求对象
+     * @return CompletableFuture<CreateClusterDnsResponse>
+     */
+    public CompletableFuture<CreateClusterDnsResponse> createClusterDnsAsync(CreateClusterDnsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.createClusterDns);
+    }
+
+    /**
+     * 申请域名
+     *
+     * 为指定集群申请域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateClusterDnsRequest 请求对象
+     * @return AsyncInvoker<CreateClusterDnsRequest, CreateClusterDnsResponse>
+     */
+    public AsyncInvoker<CreateClusterDnsRequest, CreateClusterDnsResponse> createClusterDnsAsyncInvoker(
+        CreateClusterDnsRequest request) {
+        return new AsyncInvoker<CreateClusterDnsRequest, CreateClusterDnsResponse>(request, DwsMeta.createClusterDns,
+            hcClient);
+    }
+
+    /**
+     * 设置资源管理
+     *
+     * 设置资源管理。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateClusterWorkloadRequest 请求对象
+     * @return CompletableFuture<CreateClusterWorkloadResponse>
+     */
+    public CompletableFuture<CreateClusterWorkloadResponse> createClusterWorkloadAsync(
+        CreateClusterWorkloadRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.createClusterWorkload);
+    }
+
+    /**
+     * 设置资源管理
+     *
+     * 设置资源管理。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateClusterWorkloadRequest 请求对象
+     * @return AsyncInvoker<CreateClusterWorkloadRequest, CreateClusterWorkloadResponse>
+     */
+    public AsyncInvoker<CreateClusterWorkloadRequest, CreateClusterWorkloadResponse> createClusterWorkloadAsyncInvoker(
+        CreateClusterWorkloadRequest request) {
+        return new AsyncInvoker<CreateClusterWorkloadRequest, CreateClusterWorkloadResponse>(request,
+            DwsMeta.createClusterWorkload, hcClient);
+    }
+
+    /**
+     * 创建数据源
+     *
+     * 该接口用于创建一个数据源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDataSourceRequest 请求对象
+     * @return CompletableFuture<CreateDataSourceResponse>
+     */
+    public CompletableFuture<CreateDataSourceResponse> createDataSourceAsync(CreateDataSourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.createDataSource);
+    }
+
+    /**
+     * 创建数据源
+     *
+     * 该接口用于创建一个数据源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDataSourceRequest 请求对象
+     * @return AsyncInvoker<CreateDataSourceRequest, CreateDataSourceResponse>
+     */
+    public AsyncInvoker<CreateDataSourceRequest, CreateDataSourceResponse> createDataSourceAsyncInvoker(
+        CreateDataSourceRequest request) {
+        return new AsyncInvoker<CreateDataSourceRequest, CreateDataSourceResponse>(request, DwsMeta.createDataSource,
+            hcClient);
+    }
+
+    /**
+     * 创建容灾
+     *
+     * 创建容灾
+     *
+     * @param CreateDisasterRecoveryRequest 请求对象
+     * @return CompletableFuture<CreateDisasterRecoveryResponse>
+     */
+    public CompletableFuture<CreateDisasterRecoveryResponse> createDisasterRecoveryAsync(
+        CreateDisasterRecoveryRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.createDisasterRecovery);
+    }
+
+    /**
+     * 创建容灾
+     *
+     * 创建容灾
+     *
+     * @param CreateDisasterRecoveryRequest 请求对象
+     * @return AsyncInvoker<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse>
+     */
+    public AsyncInvoker<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse> createDisasterRecoveryAsyncInvoker(
+        CreateDisasterRecoveryRequest request) {
+        return new AsyncInvoker<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse>(request,
+            DwsMeta.createDisasterRecovery, hcClient);
+    }
+
+    /**
+     * 创建订阅事件
+     *
+     * 添加订阅的事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEventSubRequest 请求对象
+     * @return CompletableFuture<CreateEventSubResponse>
+     */
+    public CompletableFuture<CreateEventSubResponse> createEventSubAsync(CreateEventSubRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.createEventSub);
+    }
+
+    /**
+     * 创建订阅事件
+     *
+     * 添加订阅的事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEventSubRequest 请求对象
+     * @return AsyncInvoker<CreateEventSubRequest, CreateEventSubResponse>
+     */
+    public AsyncInvoker<CreateEventSubRequest, CreateEventSubResponse> createEventSubAsyncInvoker(
+        CreateEventSubRequest request) {
+        return new AsyncInvoker<CreateEventSubRequest, CreateEventSubResponse>(request, DwsMeta.createEventSub,
+            hcClient);
+    }
+
+    /**
      * 创建快照
      *
      * 该接口用于为指定集群创建快照。
@@ -79,6 +572,97 @@ public class DwsAsyncClient {
     public AsyncInvoker<CreateSnapshotRequest, CreateSnapshotResponse> createSnapshotAsyncInvoker(
         CreateSnapshotRequest request) {
         return new AsyncInvoker<CreateSnapshotRequest, CreateSnapshotResponse>(request, DwsMeta.createSnapshot,
+            hcClient);
+    }
+
+    /**
+     * 添加快照策略
+     *
+     * 该接口用于设置快照策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSnapshotPolicyRequest 请求对象
+     * @return CompletableFuture<CreateSnapshotPolicyResponse>
+     */
+    public CompletableFuture<CreateSnapshotPolicyResponse> createSnapshotPolicyAsync(
+        CreateSnapshotPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.createSnapshotPolicy);
+    }
+
+    /**
+     * 添加快照策略
+     *
+     * 该接口用于设置快照策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSnapshotPolicyRequest 请求对象
+     * @return AsyncInvoker<CreateSnapshotPolicyRequest, CreateSnapshotPolicyResponse>
+     */
+    public AsyncInvoker<CreateSnapshotPolicyRequest, CreateSnapshotPolicyResponse> createSnapshotPolicyAsyncInvoker(
+        CreateSnapshotPolicyRequest request) {
+        return new AsyncInvoker<CreateSnapshotPolicyRequest, CreateSnapshotPolicyResponse>(request,
+            DwsMeta.createSnapshotPolicy, hcClient);
+    }
+
+    /**
+     * 添加工作负载计划
+     *
+     * 添加工作负载计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateWorkloadPlanRequest 请求对象
+     * @return CompletableFuture<CreateWorkloadPlanResponse>
+     */
+    public CompletableFuture<CreateWorkloadPlanResponse> createWorkloadPlanAsync(CreateWorkloadPlanRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.createWorkloadPlan);
+    }
+
+    /**
+     * 添加工作负载计划
+     *
+     * 添加工作负载计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateWorkloadPlanRequest 请求对象
+     * @return AsyncInvoker<CreateWorkloadPlanRequest, CreateWorkloadPlanResponse>
+     */
+    public AsyncInvoker<CreateWorkloadPlanRequest, CreateWorkloadPlanResponse> createWorkloadPlanAsyncInvoker(
+        CreateWorkloadPlanRequest request) {
+        return new AsyncInvoker<CreateWorkloadPlanRequest, CreateWorkloadPlanResponse>(request,
+            DwsMeta.createWorkloadPlan, hcClient);
+    }
+
+    /**
+     * 删除告警订阅
+     *
+     * 删除订阅的告警
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAlarmSubRequest 请求对象
+     * @return CompletableFuture<DeleteAlarmSubResponse>
+     */
+    public CompletableFuture<DeleteAlarmSubResponse> deleteAlarmSubAsync(DeleteAlarmSubRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.deleteAlarmSub);
+    }
+
+    /**
+     * 删除告警订阅
+     *
+     * 删除订阅的告警
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAlarmSubRequest 请求对象
+     * @return AsyncInvoker<DeleteAlarmSubRequest, DeleteAlarmSubResponse>
+     */
+    public AsyncInvoker<DeleteAlarmSubRequest, DeleteAlarmSubResponse> deleteAlarmSubAsyncInvoker(
+        DeleteAlarmSubRequest request) {
+        return new AsyncInvoker<DeleteAlarmSubRequest, DeleteAlarmSubResponse>(request, DwsMeta.deleteAlarmSub,
             hcClient);
     }
 
@@ -112,6 +696,97 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 删除集群域名
+     *
+     * 删除指定集群域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteClusterDnsRequest 请求对象
+     * @return CompletableFuture<DeleteClusterDnsResponse>
+     */
+    public CompletableFuture<DeleteClusterDnsResponse> deleteClusterDnsAsync(DeleteClusterDnsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.deleteClusterDns);
+    }
+
+    /**
+     * 删除集群域名
+     *
+     * 删除指定集群域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteClusterDnsRequest 请求对象
+     * @return AsyncInvoker<DeleteClusterDnsRequest, DeleteClusterDnsResponse>
+     */
+    public AsyncInvoker<DeleteClusterDnsRequest, DeleteClusterDnsResponse> deleteClusterDnsAsyncInvoker(
+        DeleteClusterDnsRequest request) {
+        return new AsyncInvoker<DeleteClusterDnsRequest, DeleteClusterDnsResponse>(request, DwsMeta.deleteClusterDns,
+            hcClient);
+    }
+
+    /**
+     * 删除容灾
+     *
+     * 删除容灾。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDisasterRecoveryRequest 请求对象
+     * @return CompletableFuture<DeleteDisasterRecoveryResponse>
+     */
+    public CompletableFuture<DeleteDisasterRecoveryResponse> deleteDisasterRecoveryAsync(
+        DeleteDisasterRecoveryRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.deleteDisasterRecovery);
+    }
+
+    /**
+     * 删除容灾
+     *
+     * 删除容灾。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDisasterRecoveryRequest 请求对象
+     * @return AsyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse>
+     */
+    public AsyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> deleteDisasterRecoveryAsyncInvoker(
+        DeleteDisasterRecoveryRequest request) {
+        return new AsyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse>(request,
+            DwsMeta.deleteDisasterRecovery, hcClient);
+    }
+
+    /**
+     * 删除订阅事件
+     *
+     * 删除订阅的事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEventSubRequest 请求对象
+     * @return CompletableFuture<DeleteEventSubResponse>
+     */
+    public CompletableFuture<DeleteEventSubResponse> deleteEventSubAsync(DeleteEventSubRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.deleteEventSub);
+    }
+
+    /**
+     * 删除订阅事件
+     *
+     * 删除订阅的事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEventSubRequest 请求对象
+     * @return AsyncInvoker<DeleteEventSubRequest, DeleteEventSubResponse>
+     */
+    public AsyncInvoker<DeleteEventSubRequest, DeleteEventSubResponse> deleteEventSubAsyncInvoker(
+        DeleteEventSubRequest request) {
+        return new AsyncInvoker<DeleteEventSubRequest, DeleteEventSubResponse>(request, DwsMeta.deleteEventSub,
+            hcClient);
+    }
+
+    /**
      * 删除快照
      *
      * 该接口用于删除一个指定手动快照。
@@ -139,6 +814,428 @@ public class DwsAsyncClient {
         DeleteSnapshotRequest request) {
         return new AsyncInvoker<DeleteSnapshotRequest, DeleteSnapshotResponse>(request, DwsMeta.deleteSnapshot,
             hcClient);
+    }
+
+    /**
+     * 删除快照策略
+     *
+     * 该接口用于删除一个快照策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSnapshotPolicyRequest 请求对象
+     * @return CompletableFuture<DeleteSnapshotPolicyResponse>
+     */
+    public CompletableFuture<DeleteSnapshotPolicyResponse> deleteSnapshotPolicyAsync(
+        DeleteSnapshotPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.deleteSnapshotPolicy);
+    }
+
+    /**
+     * 删除快照策略
+     *
+     * 该接口用于删除一个快照策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSnapshotPolicyRequest 请求对象
+     * @return AsyncInvoker<DeleteSnapshotPolicyRequest, DeleteSnapshotPolicyResponse>
+     */
+    public AsyncInvoker<DeleteSnapshotPolicyRequest, DeleteSnapshotPolicyResponse> deleteSnapshotPolicyAsyncInvoker(
+        DeleteSnapshotPolicyRequest request) {
+        return new AsyncInvoker<DeleteSnapshotPolicyRequest, DeleteSnapshotPolicyResponse>(request,
+            DwsMeta.deleteSnapshotPolicy, hcClient);
+    }
+
+    /**
+     * 删除工作负载队列
+     *
+     * 该接口用于删除工作负载队列。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteWorkloadQueueRequest 请求对象
+     * @return CompletableFuture<DeleteWorkloadQueueResponse>
+     */
+    public CompletableFuture<DeleteWorkloadQueueResponse> deleteWorkloadQueueAsync(DeleteWorkloadQueueRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.deleteWorkloadQueue);
+    }
+
+    /**
+     * 删除工作负载队列
+     *
+     * 该接口用于删除工作负载队列。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteWorkloadQueueRequest 请求对象
+     * @return AsyncInvoker<DeleteWorkloadQueueRequest, DeleteWorkloadQueueResponse>
+     */
+    public AsyncInvoker<DeleteWorkloadQueueRequest, DeleteWorkloadQueueResponse> deleteWorkloadQueueAsyncInvoker(
+        DeleteWorkloadQueueRequest request) {
+        return new AsyncInvoker<DeleteWorkloadQueueRequest, DeleteWorkloadQueueResponse>(request,
+            DwsMeta.deleteWorkloadQueue, hcClient);
+    }
+
+    /**
+     * 集群解绑EIP
+     *
+     * 集群解绑Eip
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisassociateEipRequest 请求对象
+     * @return CompletableFuture<DisassociateEipResponse>
+     */
+    public CompletableFuture<DisassociateEipResponse> disassociateEipAsync(DisassociateEipRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.disassociateEip);
+    }
+
+    /**
+     * 集群解绑EIP
+     *
+     * 集群解绑Eip
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisassociateEipRequest 请求对象
+     * @return AsyncInvoker<DisassociateEipRequest, DisassociateEipResponse>
+     */
+    public AsyncInvoker<DisassociateEipRequest, DisassociateEipResponse> disassociateEipAsyncInvoker(
+        DisassociateEipRequest request) {
+        return new AsyncInvoker<DisassociateEipRequest, DisassociateEipResponse>(request, DwsMeta.disassociateEip,
+            hcClient);
+    }
+
+    /**
+     * 集群解绑ELB
+     *
+     * 集群解绑Elb接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisassociateElbRequest 请求对象
+     * @return CompletableFuture<DisassociateElbResponse>
+     */
+    public CompletableFuture<DisassociateElbResponse> disassociateElbAsync(DisassociateElbRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.disassociateElb);
+    }
+
+    /**
+     * 集群解绑ELB
+     *
+     * 集群解绑Elb接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisassociateElbRequest 请求对象
+     * @return AsyncInvoker<DisassociateElbRequest, DisassociateElbResponse>
+     */
+    public AsyncInvoker<DisassociateElbRequest, DisassociateElbResponse> disassociateElbAsyncInvoker(
+        DisassociateElbRequest request) {
+        return new AsyncInvoker<DisassociateElbRequest, DisassociateElbResponse>(request, DwsMeta.disassociateElb,
+            hcClient);
+    }
+
+    /**
+     * 下发重分布
+     *
+     * 下发重分布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteRedistributionClusterRequest 请求对象
+     * @return CompletableFuture<ExecuteRedistributionClusterResponse>
+     */
+    public CompletableFuture<ExecuteRedistributionClusterResponse> executeRedistributionClusterAsync(
+        ExecuteRedistributionClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.executeRedistributionCluster);
+    }
+
+    /**
+     * 下发重分布
+     *
+     * 下发重分布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteRedistributionClusterRequest 请求对象
+     * @return AsyncInvoker<ExecuteRedistributionClusterRequest, ExecuteRedistributionClusterResponse>
+     */
+    public AsyncInvoker<ExecuteRedistributionClusterRequest, ExecuteRedistributionClusterResponse> executeRedistributionClusterAsyncInvoker(
+        ExecuteRedistributionClusterRequest request) {
+        return new AsyncInvoker<ExecuteRedistributionClusterRequest, ExecuteRedistributionClusterResponse>(request,
+            DwsMeta.executeRedistributionCluster, hcClient);
+    }
+
+    /**
+     * 查询告警配置
+     *
+     * 查询告警配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAlarmConfigsRequest 请求对象
+     * @return CompletableFuture<ListAlarmConfigsResponse>
+     */
+    public CompletableFuture<ListAlarmConfigsResponse> listAlarmConfigsAsync(ListAlarmConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listAlarmConfigs);
+    }
+
+    /**
+     * 查询告警配置
+     *
+     * 查询告警配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAlarmConfigsRequest 请求对象
+     * @return AsyncInvoker<ListAlarmConfigsRequest, ListAlarmConfigsResponse>
+     */
+    public AsyncInvoker<ListAlarmConfigsRequest, ListAlarmConfigsResponse> listAlarmConfigsAsyncInvoker(
+        ListAlarmConfigsRequest request) {
+        return new AsyncInvoker<ListAlarmConfigsRequest, ListAlarmConfigsResponse>(request, DwsMeta.listAlarmConfigs,
+            hcClient);
+    }
+
+    /**
+     * 查询告警详情列表
+     *
+     * 查询告警详情列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAlarmDetailRequest 请求对象
+     * @return CompletableFuture<ListAlarmDetailResponse>
+     */
+    public CompletableFuture<ListAlarmDetailResponse> listAlarmDetailAsync(ListAlarmDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listAlarmDetail);
+    }
+
+    /**
+     * 查询告警详情列表
+     *
+     * 查询告警详情列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAlarmDetailRequest 请求对象
+     * @return AsyncInvoker<ListAlarmDetailRequest, ListAlarmDetailResponse>
+     */
+    public AsyncInvoker<ListAlarmDetailRequest, ListAlarmDetailResponse> listAlarmDetailAsyncInvoker(
+        ListAlarmDetailRequest request) {
+        return new AsyncInvoker<ListAlarmDetailRequest, ListAlarmDetailResponse>(request, DwsMeta.listAlarmDetail,
+            hcClient);
+    }
+
+    /**
+     * 查询告警统计列表
+     *
+     * 查询告警统计
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAlarmStatisticRequest 请求对象
+     * @return CompletableFuture<ListAlarmStatisticResponse>
+     */
+    public CompletableFuture<ListAlarmStatisticResponse> listAlarmStatisticAsync(ListAlarmStatisticRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listAlarmStatistic);
+    }
+
+    /**
+     * 查询告警统计列表
+     *
+     * 查询告警统计
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAlarmStatisticRequest 请求对象
+     * @return AsyncInvoker<ListAlarmStatisticRequest, ListAlarmStatisticResponse>
+     */
+    public AsyncInvoker<ListAlarmStatisticRequest, ListAlarmStatisticResponse> listAlarmStatisticAsyncInvoker(
+        ListAlarmStatisticRequest request) {
+        return new AsyncInvoker<ListAlarmStatisticRequest, ListAlarmStatisticResponse>(request,
+            DwsMeta.listAlarmStatistic, hcClient);
+    }
+
+    /**
+     * 查询告警订阅列表
+     *
+     * 查询订阅告警
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAlarmSubsRequest 请求对象
+     * @return CompletableFuture<ListAlarmSubsResponse>
+     */
+    public CompletableFuture<ListAlarmSubsResponse> listAlarmSubsAsync(ListAlarmSubsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listAlarmSubs);
+    }
+
+    /**
+     * 查询告警订阅列表
+     *
+     * 查询订阅告警
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAlarmSubsRequest 请求对象
+     * @return AsyncInvoker<ListAlarmSubsRequest, ListAlarmSubsResponse>
+     */
+    public AsyncInvoker<ListAlarmSubsRequest, ListAlarmSubsResponse> listAlarmSubsAsyncInvoker(
+        ListAlarmSubsRequest request) {
+        return new AsyncInvoker<ListAlarmSubsRequest, ListAlarmSubsResponse>(request, DwsMeta.listAlarmSubs, hcClient);
+    }
+
+    /**
+     * 查询日志记录
+     *
+     * 查询审计日志记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAuditLogRequest 请求对象
+     * @return CompletableFuture<ListAuditLogResponse>
+     */
+    public CompletableFuture<ListAuditLogResponse> listAuditLogAsync(ListAuditLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listAuditLog);
+    }
+
+    /**
+     * 查询日志记录
+     *
+     * 查询审计日志记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAuditLogRequest 请求对象
+     * @return AsyncInvoker<ListAuditLogRequest, ListAuditLogResponse>
+     */
+    public AsyncInvoker<ListAuditLogRequest, ListAuditLogResponse> listAuditLogAsyncInvoker(
+        ListAuditLogRequest request) {
+        return new AsyncInvoker<ListAuditLogRequest, ListAuditLogResponse>(request, DwsMeta.listAuditLog, hcClient);
+    }
+
+    /**
+     * 查询可用区列表
+     *
+     * 在创建实例时，需要配置实例所在的可用区ID，可通过该接口查询可用区的ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAvailabilityZonesRequest 请求对象
+     * @return CompletableFuture<ListAvailabilityZonesResponse>
+     */
+    public CompletableFuture<ListAvailabilityZonesResponse> listAvailabilityZonesAsync(
+        ListAvailabilityZonesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listAvailabilityZones);
+    }
+
+    /**
+     * 查询可用区列表
+     *
+     * 在创建实例时，需要配置实例所在的可用区ID，可通过该接口查询可用区的ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAvailabilityZonesRequest 请求对象
+     * @return AsyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse>
+     */
+    public AsyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> listAvailabilityZonesAsyncInvoker(
+        ListAvailabilityZonesRequest request) {
+        return new AsyncInvoker<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse>(request,
+            DwsMeta.listAvailabilityZones, hcClient);
+    }
+
+    /**
+     * 查询集群CN节点
+     *
+     * 查询集群的CN节点列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterCnRequest 请求对象
+     * @return CompletableFuture<ListClusterCnResponse>
+     */
+    public CompletableFuture<ListClusterCnResponse> listClusterCnAsync(ListClusterCnRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listClusterCn);
+    }
+
+    /**
+     * 查询集群CN节点
+     *
+     * 查询集群的CN节点列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterCnRequest 请求对象
+     * @return AsyncInvoker<ListClusterCnRequest, ListClusterCnResponse>
+     */
+    public AsyncInvoker<ListClusterCnRequest, ListClusterCnResponse> listClusterCnAsyncInvoker(
+        ListClusterCnRequest request) {
+        return new AsyncInvoker<ListClusterCnRequest, ListClusterCnResponse>(request, DwsMeta.listClusterCn, hcClient);
+    }
+
+    /**
+     * 查询集群参数组
+     *
+     * 查询集群所关联的参数组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterConfigurationsRequest 请求对象
+     * @return CompletableFuture<ListClusterConfigurationsResponse>
+     */
+    public CompletableFuture<ListClusterConfigurationsResponse> listClusterConfigurationsAsync(
+        ListClusterConfigurationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listClusterConfigurations);
+    }
+
+    /**
+     * 查询集群参数组
+     *
+     * 查询集群所关联的参数组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterConfigurationsRequest 请求对象
+     * @return AsyncInvoker<ListClusterConfigurationsRequest, ListClusterConfigurationsResponse>
+     */
+    public AsyncInvoker<ListClusterConfigurationsRequest, ListClusterConfigurationsResponse> listClusterConfigurationsAsyncInvoker(
+        ListClusterConfigurationsRequest request) {
+        return new AsyncInvoker<ListClusterConfigurationsRequest, ListClusterConfigurationsResponse>(request,
+            DwsMeta.listClusterConfigurations, hcClient);
+    }
+
+    /**
+     * 查询集群参数配置
+     *
+     * 查询集群所关联的参数组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterConfigurationsParameterRequest 请求对象
+     * @return CompletableFuture<ListClusterConfigurationsParameterResponse>
+     */
+    public CompletableFuture<ListClusterConfigurationsParameterResponse> listClusterConfigurationsParameterAsync(
+        ListClusterConfigurationsParameterRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listClusterConfigurationsParameter);
+    }
+
+    /**
+     * 查询集群参数配置
+     *
+     * 查询集群所关联的参数组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterConfigurationsParameterRequest 请求对象
+     * @return AsyncInvoker<ListClusterConfigurationsParameterRequest, ListClusterConfigurationsParameterResponse>
+     */
+    public AsyncInvoker<ListClusterConfigurationsParameterRequest, ListClusterConfigurationsParameterResponse> listClusterConfigurationsParameterAsyncInvoker(
+        ListClusterConfigurationsParameterRequest request) {
+        return new AsyncInvoker<ListClusterConfigurationsParameterRequest, ListClusterConfigurationsParameterResponse>(
+            request, DwsMeta.listClusterConfigurationsParameter, hcClient);
     }
 
     /**
@@ -172,6 +1269,124 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 查询合适的缩容数
+     *
+     * 查询合适的缩容数
+     *
+     * @param ListClusterScaleInNumbersRequest 请求对象
+     * @return CompletableFuture<ListClusterScaleInNumbersResponse>
+     */
+    public CompletableFuture<ListClusterScaleInNumbersResponse> listClusterScaleInNumbersAsync(
+        ListClusterScaleInNumbersRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listClusterScaleInNumbers);
+    }
+
+    /**
+     * 查询合适的缩容数
+     *
+     * 查询合适的缩容数
+     *
+     * @param ListClusterScaleInNumbersRequest 请求对象
+     * @return AsyncInvoker<ListClusterScaleInNumbersRequest, ListClusterScaleInNumbersResponse>
+     */
+    public AsyncInvoker<ListClusterScaleInNumbersRequest, ListClusterScaleInNumbersResponse> listClusterScaleInNumbersAsyncInvoker(
+        ListClusterScaleInNumbersRequest request) {
+        return new AsyncInvoker<ListClusterScaleInNumbersRequest, ListClusterScaleInNumbersResponse>(request,
+            DwsMeta.listClusterScaleInNumbers, hcClient);
+    }
+
+    /**
+     * 查询集群快照列表
+     *
+     * 该接口用于查询集群快照列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterSnapshotsRequest 请求对象
+     * @return CompletableFuture<ListClusterSnapshotsResponse>
+     */
+    public CompletableFuture<ListClusterSnapshotsResponse> listClusterSnapshotsAsync(
+        ListClusterSnapshotsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listClusterSnapshots);
+    }
+
+    /**
+     * 查询集群快照列表
+     *
+     * 该接口用于查询集群快照列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterSnapshotsRequest 请求对象
+     * @return AsyncInvoker<ListClusterSnapshotsRequest, ListClusterSnapshotsResponse>
+     */
+    public AsyncInvoker<ListClusterSnapshotsRequest, ListClusterSnapshotsResponse> listClusterSnapshotsAsyncInvoker(
+        ListClusterSnapshotsRequest request) {
+        return new AsyncInvoker<ListClusterSnapshotsRequest, ListClusterSnapshotsResponse>(request,
+            DwsMeta.listClusterSnapshots, hcClient);
+    }
+
+    /**
+     * 查询集群标签
+     *
+     * 查询指定集群的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterTagsRequest 请求对象
+     * @return CompletableFuture<ListClusterTagsResponse>
+     */
+    public CompletableFuture<ListClusterTagsResponse> listClusterTagsAsync(ListClusterTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listClusterTags);
+    }
+
+    /**
+     * 查询集群标签
+     *
+     * 查询指定集群的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterTagsRequest 请求对象
+     * @return AsyncInvoker<ListClusterTagsRequest, ListClusterTagsResponse>
+     */
+    public AsyncInvoker<ListClusterTagsRequest, ListClusterTagsResponse> listClusterTagsAsyncInvoker(
+        ListClusterTagsRequest request) {
+        return new AsyncInvoker<ListClusterTagsRequest, ListClusterTagsResponse>(request, DwsMeta.listClusterTags,
+            hcClient);
+    }
+
+    /**
+     * 查询资源管理
+     *
+     * 查询资管管理开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterWorkloadRequest 请求对象
+     * @return CompletableFuture<ListClusterWorkloadResponse>
+     */
+    public CompletableFuture<ListClusterWorkloadResponse> listClusterWorkloadAsync(ListClusterWorkloadRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listClusterWorkload);
+    }
+
+    /**
+     * 查询资源管理
+     *
+     * 查询资管管理开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterWorkloadRequest 请求对象
+     * @return AsyncInvoker<ListClusterWorkloadRequest, ListClusterWorkloadResponse>
+     */
+    public AsyncInvoker<ListClusterWorkloadRequest, ListClusterWorkloadResponse> listClusterWorkloadAsyncInvoker(
+        ListClusterWorkloadRequest request) {
+        return new AsyncInvoker<ListClusterWorkloadRequest, ListClusterWorkloadResponse>(request,
+            DwsMeta.listClusterWorkload, hcClient);
+    }
+
+    /**
      * 查询集群列表
      *
      * 该接口用于查询并显示集群列表
@@ -201,6 +1416,311 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 查询数据源
+     *
+     * 该接口用于查询数据源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDataSourceRequest 请求对象
+     * @return CompletableFuture<ListDataSourceResponse>
+     */
+    public CompletableFuture<ListDataSourceResponse> listDataSourceAsync(ListDataSourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listDataSource);
+    }
+
+    /**
+     * 查询数据源
+     *
+     * 该接口用于查询数据源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDataSourceRequest 请求对象
+     * @return AsyncInvoker<ListDataSourceRequest, ListDataSourceResponse>
+     */
+    public AsyncInvoker<ListDataSourceRequest, ListDataSourceResponse> listDataSourceAsyncInvoker(
+        ListDataSourceRequest request) {
+        return new AsyncInvoker<ListDataSourceRequest, ListDataSourceResponse>(request, DwsMeta.listDataSource,
+            hcClient);
+    }
+
+    /**
+     * 查询容灾列表
+     *
+     * 查询容灾列表
+     *
+     * @param ListDisasterRecoverRequest 请求对象
+     * @return CompletableFuture<ListDisasterRecoverResponse>
+     */
+    public CompletableFuture<ListDisasterRecoverResponse> listDisasterRecoverAsync(ListDisasterRecoverRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listDisasterRecover);
+    }
+
+    /**
+     * 查询容灾列表
+     *
+     * 查询容灾列表
+     *
+     * @param ListDisasterRecoverRequest 请求对象
+     * @return AsyncInvoker<ListDisasterRecoverRequest, ListDisasterRecoverResponse>
+     */
+    public AsyncInvoker<ListDisasterRecoverRequest, ListDisasterRecoverResponse> listDisasterRecoverAsyncInvoker(
+        ListDisasterRecoverRequest request) {
+        return new AsyncInvoker<ListDisasterRecoverRequest, ListDisasterRecoverResponse>(request,
+            DwsMeta.listDisasterRecover, hcClient);
+    }
+
+    /**
+     * 查询专属分布式存储池列表
+     *
+     * 获取专属分布式存储池列表，只包括用户开通的SSD专属资源池信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDssPoolsRequest 请求对象
+     * @return CompletableFuture<ListDssPoolsResponse>
+     */
+    public CompletableFuture<ListDssPoolsResponse> listDssPoolsAsync(ListDssPoolsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listDssPools);
+    }
+
+    /**
+     * 查询专属分布式存储池列表
+     *
+     * 获取专属分布式存储池列表，只包括用户开通的SSD专属资源池信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDssPoolsRequest 请求对象
+     * @return AsyncInvoker<ListDssPoolsRequest, ListDssPoolsResponse>
+     */
+    public AsyncInvoker<ListDssPoolsRequest, ListDssPoolsResponse> listDssPoolsAsyncInvoker(
+        ListDssPoolsRequest request) {
+        return new AsyncInvoker<ListDssPoolsRequest, ListDssPoolsResponse>(request, DwsMeta.listDssPools, hcClient);
+    }
+
+    /**
+     * 获取集群可绑定的ELB列表
+     *
+     * 查询集群可以关联的Elb列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListElbsRequest 请求对象
+     * @return CompletableFuture<ListElbsResponse>
+     */
+    public CompletableFuture<ListElbsResponse> listElbsAsync(ListElbsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listElbs);
+    }
+
+    /**
+     * 获取集群可绑定的ELB列表
+     *
+     * 查询集群可以关联的Elb列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListElbsRequest 请求对象
+     * @return AsyncInvoker<ListElbsRequest, ListElbsResponse>
+     */
+    public AsyncInvoker<ListElbsRequest, ListElbsResponse> listElbsAsyncInvoker(ListElbsRequest request) {
+        return new AsyncInvoker<ListElbsRequest, ListElbsResponse>(request, DwsMeta.listElbs, hcClient);
+    }
+
+    /**
+     * 查询事件配置
+     *
+     * 查询事件配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEventSpecsRequest 请求对象
+     * @return CompletableFuture<ListEventSpecsResponse>
+     */
+    public CompletableFuture<ListEventSpecsResponse> listEventSpecsAsync(ListEventSpecsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listEventSpecs);
+    }
+
+    /**
+     * 查询事件配置
+     *
+     * 查询事件配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEventSpecsRequest 请求对象
+     * @return AsyncInvoker<ListEventSpecsRequest, ListEventSpecsResponse>
+     */
+    public AsyncInvoker<ListEventSpecsRequest, ListEventSpecsResponse> listEventSpecsAsyncInvoker(
+        ListEventSpecsRequest request) {
+        return new AsyncInvoker<ListEventSpecsRequest, ListEventSpecsResponse>(request, DwsMeta.listEventSpecs,
+            hcClient);
+    }
+
+    /**
+     * 查询订阅事件
+     *
+     * 查询订阅的事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEventSubsRequest 请求对象
+     * @return CompletableFuture<ListEventSubsResponse>
+     */
+    public CompletableFuture<ListEventSubsResponse> listEventSubsAsync(ListEventSubsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listEventSubs);
+    }
+
+    /**
+     * 查询订阅事件
+     *
+     * 查询订阅的事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEventSubsRequest 请求对象
+     * @return AsyncInvoker<ListEventSubsRequest, ListEventSubsResponse>
+     */
+    public AsyncInvoker<ListEventSubsRequest, ListEventSubsResponse> listEventSubsAsyncInvoker(
+        ListEventSubsRequest request) {
+        return new AsyncInvoker<ListEventSubsRequest, ListEventSubsResponse>(request, DwsMeta.listEventSubs, hcClient);
+    }
+
+    /**
+     * 查询事件列表
+     *
+     * 查询事件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEventsRequest 请求对象
+     * @return CompletableFuture<ListEventsResponse>
+     */
+    public CompletableFuture<ListEventsResponse> listEventsAsync(ListEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listEvents);
+    }
+
+    /**
+     * 查询事件列表
+     *
+     * 查询事件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEventsRequest 请求对象
+     * @return AsyncInvoker<ListEventsRequest, ListEventsResponse>
+     */
+    public AsyncInvoker<ListEventsRequest, ListEventsResponse> listEventsAsyncInvoker(ListEventsRequest request) {
+        return new AsyncInvoker<ListEventsRequest, ListEventsResponse>(request, DwsMeta.listEvents, hcClient);
+    }
+
+    /**
+     * openApi查询磁盘信息
+     *
+     * openApi查询磁盘信息
+     *
+     * @param ListHostDiskRequest 请求对象
+     * @return CompletableFuture<ListHostDiskResponse>
+     */
+    public CompletableFuture<ListHostDiskResponse> listHostDiskAsync(ListHostDiskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listHostDisk);
+    }
+
+    /**
+     * openApi查询磁盘信息
+     *
+     * openApi查询磁盘信息
+     *
+     * @param ListHostDiskRequest 请求对象
+     * @return AsyncInvoker<ListHostDiskRequest, ListHostDiskResponse>
+     */
+    public AsyncInvoker<ListHostDiskRequest, ListHostDiskResponse> listHostDiskAsyncInvoker(
+        ListHostDiskRequest request) {
+        return new AsyncInvoker<ListHostDiskRequest, ListHostDiskResponse>(request, DwsMeta.listHostDisk, hcClient);
+    }
+
+    /**
+     * openapi获取网卡状态
+     *
+     * openapi获取网卡状态
+     *
+     * @param ListHostNetRequest 请求对象
+     * @return CompletableFuture<ListHostNetResponse>
+     */
+    public CompletableFuture<ListHostNetResponse> listHostNetAsync(ListHostNetRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listHostNet);
+    }
+
+    /**
+     * openapi获取网卡状态
+     *
+     * openapi获取网卡状态
+     *
+     * @param ListHostNetRequest 请求对象
+     * @return AsyncInvoker<ListHostNetRequest, ListHostNetResponse>
+     */
+    public AsyncInvoker<ListHostNetRequest, ListHostNetResponse> listHostNetAsyncInvoker(ListHostNetRequest request) {
+        return new AsyncInvoker<ListHostNetRequest, ListHostNetResponse>(request, DwsMeta.listHostNet, hcClient);
+    }
+
+    /**
+     * openApi查询主机概览
+     *
+     * openApi查询主机概览
+     *
+     * @param ListHostOverviewRequest 请求对象
+     * @return CompletableFuture<ListHostOverviewResponse>
+     */
+    public CompletableFuture<ListHostOverviewResponse> listHostOverviewAsync(ListHostOverviewRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listHostOverview);
+    }
+
+    /**
+     * openApi查询主机概览
+     *
+     * openApi查询主机概览
+     *
+     * @param ListHostOverviewRequest 请求对象
+     * @return AsyncInvoker<ListHostOverviewRequest, ListHostOverviewResponse>
+     */
+    public AsyncInvoker<ListHostOverviewRequest, ListHostOverviewResponse> listHostOverviewAsyncInvoker(
+        ListHostOverviewRequest request) {
+        return new AsyncInvoker<ListHostOverviewRequest, ListHostOverviewResponse>(request, DwsMeta.listHostOverview,
+            hcClient);
+    }
+
+    /**
+     * 查询job进度
+     *
+     * 查询job进度信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJobDetailsRequest 请求对象
+     * @return CompletableFuture<ListJobDetailsResponse>
+     */
+    public CompletableFuture<ListJobDetailsResponse> listJobDetailsAsync(ListJobDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listJobDetails);
+    }
+
+    /**
+     * 查询job进度
+     *
+     * 查询job进度信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJobDetailsRequest 请求对象
+     * @return AsyncInvoker<ListJobDetailsRequest, ListJobDetailsResponse>
+     */
+    public AsyncInvoker<ListJobDetailsRequest, ListJobDetailsResponse> listJobDetailsAsyncInvoker(
+        ListJobDetailsRequest request) {
+        return new AsyncInvoker<ListJobDetailsRequest, ListJobDetailsResponse>(request, DwsMeta.listJobDetails,
+            hcClient);
+    }
+
+    /**
      * 查询节点类型
      *
      * 该接口用于查询所有GaussDB(DWS)服务支持的节点类型。
@@ -227,6 +1747,34 @@ public class DwsAsyncClient {
     public AsyncInvoker<ListNodeTypesRequest, ListNodeTypesResponse> listNodeTypesAsyncInvoker(
         ListNodeTypesRequest request) {
         return new AsyncInvoker<ListNodeTypesRequest, ListNodeTypesResponse>(request, DwsMeta.listNodeTypes, hcClient);
+    }
+
+    /**
+     * 查询配额
+     *
+     * 查询单租户在GaussDB(DWS)服务下的配额信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQuotasRequest 请求对象
+     * @return CompletableFuture<ListQuotasResponse>
+     */
+    public CompletableFuture<ListQuotasResponse> listQuotasAsync(ListQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listQuotas);
+    }
+
+    /**
+     * 查询配额
+     *
+     * 查询单租户在GaussDB(DWS)服务下的配额信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQuotasRequest 请求对象
+     * @return AsyncInvoker<ListQuotasRequest, ListQuotasResponse>
+     */
+    public AsyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasAsyncInvoker(ListQuotasRequest request) {
+        return new AsyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, DwsMeta.listQuotas, hcClient);
     }
 
     /**
@@ -260,6 +1808,67 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 查询快照策略
+     *
+     * 查询快照策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSnapshotPolicyRequest 请求对象
+     * @return CompletableFuture<ListSnapshotPolicyResponse>
+     */
+    public CompletableFuture<ListSnapshotPolicyResponse> listSnapshotPolicyAsync(ListSnapshotPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listSnapshotPolicy);
+    }
+
+    /**
+     * 查询快照策略
+     *
+     * 查询快照策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSnapshotPolicyRequest 请求对象
+     * @return AsyncInvoker<ListSnapshotPolicyRequest, ListSnapshotPolicyResponse>
+     */
+    public AsyncInvoker<ListSnapshotPolicyRequest, ListSnapshotPolicyResponse> listSnapshotPolicyAsyncInvoker(
+        ListSnapshotPolicyRequest request) {
+        return new AsyncInvoker<ListSnapshotPolicyRequest, ListSnapshotPolicyResponse>(request,
+            DwsMeta.listSnapshotPolicy, hcClient);
+    }
+
+    /**
+     * 快照统计信息
+     *
+     * 快照统计信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSnapshotStatisticsRequest 请求对象
+     * @return CompletableFuture<ListSnapshotStatisticsResponse>
+     */
+    public CompletableFuture<ListSnapshotStatisticsResponse> listSnapshotStatisticsAsync(
+        ListSnapshotStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listSnapshotStatistics);
+    }
+
+    /**
+     * 快照统计信息
+     *
+     * 快照统计信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSnapshotStatisticsRequest 请求对象
+     * @return AsyncInvoker<ListSnapshotStatisticsRequest, ListSnapshotStatisticsResponse>
+     */
+    public AsyncInvoker<ListSnapshotStatisticsRequest, ListSnapshotStatisticsResponse> listSnapshotStatisticsAsyncInvoker(
+        ListSnapshotStatisticsRequest request) {
+        return new AsyncInvoker<ListSnapshotStatisticsRequest, ListSnapshotStatisticsResponse>(request,
+            DwsMeta.listSnapshotStatistics, hcClient);
+    }
+
+    /**
      * 查询快照列表
      *
      * 该接口用于查询快照列表。
@@ -286,6 +1895,125 @@ public class DwsAsyncClient {
     public AsyncInvoker<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsAsyncInvoker(
         ListSnapshotsRequest request) {
         return new AsyncInvoker<ListSnapshotsRequest, ListSnapshotsResponse>(request, DwsMeta.listSnapshots, hcClient);
+    }
+
+    /**
+     * 查询资源统计信息列表
+     *
+     * 查询当前可用资源数量，其中包括“可用集群和总集群（个）”、“可用节点和总节点（个）”、“总容量（GB）”。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListStatisticsRequest 请求对象
+     * @return CompletableFuture<ListStatisticsResponse>
+     */
+    public CompletableFuture<ListStatisticsResponse> listStatisticsAsync(ListStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listStatistics);
+    }
+
+    /**
+     * 查询资源统计信息列表
+     *
+     * 查询当前可用资源数量，其中包括“可用集群和总集群（个）”、“可用节点和总节点（个）”、“总容量（GB）”。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListStatisticsRequest 请求对象
+     * @return AsyncInvoker<ListStatisticsRequest, ListStatisticsResponse>
+     */
+    public AsyncInvoker<ListStatisticsRequest, ListStatisticsResponse> listStatisticsAsyncInvoker(
+        ListStatisticsRequest request) {
+        return new AsyncInvoker<ListStatisticsRequest, ListStatisticsResponse>(request, DwsMeta.listStatistics,
+            hcClient);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询项目标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTagsRequest 请求对象
+     * @return CompletableFuture<ListTagsResponse>
+     */
+    public CompletableFuture<ListTagsResponse> listTagsAsync(ListTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listTags);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询项目标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTagsRequest 请求对象
+     * @return AsyncInvoker<ListTagsRequest, ListTagsResponse>
+     */
+    public AsyncInvoker<ListTagsRequest, ListTagsResponse> listTagsAsyncInvoker(ListTagsRequest request) {
+        return new AsyncInvoker<ListTagsRequest, ListTagsResponse>(request, DwsMeta.listTags, hcClient);
+    }
+
+    /**
+     * 查询工作负载队列
+     *
+     * 查询工作负载队列
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListWorkloadQueueRequest 请求对象
+     * @return CompletableFuture<ListWorkloadQueueResponse>
+     */
+    public CompletableFuture<ListWorkloadQueueResponse> listWorkloadQueueAsync(ListWorkloadQueueRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listWorkloadQueue);
+    }
+
+    /**
+     * 查询工作负载队列
+     *
+     * 查询工作负载队列
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListWorkloadQueueRequest 请求对象
+     * @return AsyncInvoker<ListWorkloadQueueRequest, ListWorkloadQueueResponse>
+     */
+    public AsyncInvoker<ListWorkloadQueueRequest, ListWorkloadQueueResponse> listWorkloadQueueAsyncInvoker(
+        ListWorkloadQueueRequest request) {
+        return new AsyncInvoker<ListWorkloadQueueRequest, ListWorkloadQueueResponse>(request, DwsMeta.listWorkloadQueue,
+            hcClient);
+    }
+
+    /**
+     * 停止容灾
+     *
+     * 停止容灾
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PauseDisasterRecoveryRequest 请求对象
+     * @return CompletableFuture<PauseDisasterRecoveryResponse>
+     */
+    public CompletableFuture<PauseDisasterRecoveryResponse> pauseDisasterRecoveryAsync(
+        PauseDisasterRecoveryRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.pauseDisasterRecovery);
+    }
+
+    /**
+     * 停止容灾
+     *
+     * 停止容灾
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PauseDisasterRecoveryRequest 请求对象
+     * @return AsyncInvoker<PauseDisasterRecoveryRequest, PauseDisasterRecoveryResponse>
+     */
+    public AsyncInvoker<PauseDisasterRecoveryRequest, PauseDisasterRecoveryResponse> pauseDisasterRecoveryAsyncInvoker(
+        PauseDisasterRecoveryRequest request) {
+        return new AsyncInvoker<PauseDisasterRecoveryRequest, PauseDisasterRecoveryResponse>(request,
+            DwsMeta.pauseDisasterRecovery, hcClient);
     }
 
     /**
@@ -404,6 +2132,373 @@ public class DwsAsyncClient {
         RestoreClusterRequest request) {
         return new AsyncInvoker<RestoreClusterRequest, RestoreClusterResponse>(request, DwsMeta.restoreCluster,
             hcClient);
+    }
+
+    /**
+     * 恢复容灾
+     *
+     * 恢复容灾
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestoreDisasterRequest 请求对象
+     * @return CompletableFuture<RestoreDisasterResponse>
+     */
+    public CompletableFuture<RestoreDisasterResponse> restoreDisasterAsync(RestoreDisasterRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.restoreDisaster);
+    }
+
+    /**
+     * 恢复容灾
+     *
+     * 恢复容灾
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestoreDisasterRequest 请求对象
+     * @return AsyncInvoker<RestoreDisasterRequest, RestoreDisasterResponse>
+     */
+    public AsyncInvoker<RestoreDisasterRequest, RestoreDisasterResponse> restoreDisasterAsyncInvoker(
+        RestoreDisasterRequest request) {
+        return new AsyncInvoker<RestoreDisasterRequest, RestoreDisasterResponse>(request, DwsMeta.restoreDisaster,
+            hcClient);
+    }
+
+    /**
+     * 集群缩容
+     *
+     * 该接口用于缩容集群。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShrinkClusterRequest 请求对象
+     * @return CompletableFuture<ShrinkClusterResponse>
+     */
+    public CompletableFuture<ShrinkClusterResponse> shrinkClusterAsync(ShrinkClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.shrinkCluster);
+    }
+
+    /**
+     * 集群缩容
+     *
+     * 该接口用于缩容集群。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShrinkClusterRequest 请求对象
+     * @return AsyncInvoker<ShrinkClusterRequest, ShrinkClusterResponse>
+     */
+    public AsyncInvoker<ShrinkClusterRequest, ShrinkClusterResponse> shrinkClusterAsyncInvoker(
+        ShrinkClusterRequest request) {
+        return new AsyncInvoker<ShrinkClusterRequest, ShrinkClusterResponse>(request, DwsMeta.shrinkCluster, hcClient);
+    }
+
+    /**
+     * 启动容灾
+     *
+     * 启动容灾
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartDisasterRecoveryRequest 请求对象
+     * @return CompletableFuture<StartDisasterRecoveryResponse>
+     */
+    public CompletableFuture<StartDisasterRecoveryResponse> startDisasterRecoveryAsync(
+        StartDisasterRecoveryRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.startDisasterRecovery);
+    }
+
+    /**
+     * 启动容灾
+     *
+     * 启动容灾
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartDisasterRecoveryRequest 请求对象
+     * @return AsyncInvoker<StartDisasterRecoveryRequest, StartDisasterRecoveryResponse>
+     */
+    public AsyncInvoker<StartDisasterRecoveryRequest, StartDisasterRecoveryResponse> startDisasterRecoveryAsyncInvoker(
+        StartDisasterRecoveryRequest request) {
+        return new AsyncInvoker<StartDisasterRecoveryRequest, StartDisasterRecoveryResponse>(request,
+            DwsMeta.startDisasterRecovery, hcClient);
+    }
+
+    /**
+     * 容灾异常切换
+     *
+     * 容灾-异常切换
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchFailoverDisasterRequest 请求对象
+     * @return CompletableFuture<SwitchFailoverDisasterResponse>
+     */
+    public CompletableFuture<SwitchFailoverDisasterResponse> switchFailoverDisasterAsync(
+        SwitchFailoverDisasterRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.switchFailoverDisaster);
+    }
+
+    /**
+     * 容灾异常切换
+     *
+     * 容灾-异常切换
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchFailoverDisasterRequest 请求对象
+     * @return AsyncInvoker<SwitchFailoverDisasterRequest, SwitchFailoverDisasterResponse>
+     */
+    public AsyncInvoker<SwitchFailoverDisasterRequest, SwitchFailoverDisasterResponse> switchFailoverDisasterAsyncInvoker(
+        SwitchFailoverDisasterRequest request) {
+        return new AsyncInvoker<SwitchFailoverDisasterRequest, SwitchFailoverDisasterResponse>(request,
+            DwsMeta.switchFailoverDisaster, hcClient);
+    }
+
+    /**
+     * 主备恢复
+     *
+     * 当集群状态为“非均衡”时会出现某些节点主实例增多，从而负载压力较大。这种情况下集群状态是正常的，但整体性能要低于均衡状态。可进行集群主备恢复操作将集群状态切换为“可用“状态。
+     * - 集群主备恢复仅8.1.1.202及以上版本支持。
+     * - 集群主备恢复将会短暂中断业务，中断时间根据用户自身业务量所决定，建议用户在业务低峰期执行此操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchOverClusterRequest 请求对象
+     * @return CompletableFuture<SwitchOverClusterResponse>
+     */
+    public CompletableFuture<SwitchOverClusterResponse> switchOverClusterAsync(SwitchOverClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.switchOverCluster);
+    }
+
+    /**
+     * 主备恢复
+     *
+     * 当集群状态为“非均衡”时会出现某些节点主实例增多，从而负载压力较大。这种情况下集群状态是正常的，但整体性能要低于均衡状态。可进行集群主备恢复操作将集群状态切换为“可用“状态。
+     * - 集群主备恢复仅8.1.1.202及以上版本支持。
+     * - 集群主备恢复将会短暂中断业务，中断时间根据用户自身业务量所决定，建议用户在业务低峰期执行此操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchOverClusterRequest 请求对象
+     * @return AsyncInvoker<SwitchOverClusterRequest, SwitchOverClusterResponse>
+     */
+    public AsyncInvoker<SwitchOverClusterRequest, SwitchOverClusterResponse> switchOverClusterAsyncInvoker(
+        SwitchOverClusterRequest request) {
+        return new AsyncInvoker<SwitchOverClusterRequest, SwitchOverClusterResponse>(request, DwsMeta.switchOverCluster,
+            hcClient);
+    }
+
+    /**
+     * 灾备切换
+     *
+     * 容灾-灾备切换
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchoverDisasterRecoveryRequest 请求对象
+     * @return CompletableFuture<SwitchoverDisasterRecoveryResponse>
+     */
+    public CompletableFuture<SwitchoverDisasterRecoveryResponse> switchoverDisasterRecoveryAsync(
+        SwitchoverDisasterRecoveryRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.switchoverDisasterRecovery);
+    }
+
+    /**
+     * 灾备切换
+     *
+     * 容灾-灾备切换
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchoverDisasterRecoveryRequest 请求对象
+     * @return AsyncInvoker<SwitchoverDisasterRecoveryRequest, SwitchoverDisasterRecoveryResponse>
+     */
+    public AsyncInvoker<SwitchoverDisasterRecoveryRequest, SwitchoverDisasterRecoveryResponse> switchoverDisasterRecoveryAsyncInvoker(
+        SwitchoverDisasterRecoveryRequest request) {
+        return new AsyncInvoker<SwitchoverDisasterRecoveryRequest, SwitchoverDisasterRecoveryResponse>(request,
+            DwsMeta.switchoverDisasterRecovery, hcClient);
+    }
+
+    /**
+     * 更新告警订阅
+     *
+     * 更新订阅的告警
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAlarmSubRequest 请求对象
+     * @return CompletableFuture<UpdateAlarmSubResponse>
+     */
+    public CompletableFuture<UpdateAlarmSubResponse> updateAlarmSubAsync(UpdateAlarmSubRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.updateAlarmSub);
+    }
+
+    /**
+     * 更新告警订阅
+     *
+     * 更新订阅的告警
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAlarmSubRequest 请求对象
+     * @return AsyncInvoker<UpdateAlarmSubRequest, UpdateAlarmSubResponse>
+     */
+    public AsyncInvoker<UpdateAlarmSubRequest, UpdateAlarmSubResponse> updateAlarmSubAsyncInvoker(
+        UpdateAlarmSubRequest request) {
+        return new AsyncInvoker<UpdateAlarmSubRequest, UpdateAlarmSubResponse>(request, DwsMeta.updateAlarmSub,
+            hcClient);
+    }
+
+    /**
+     * 修改集群域名
+     *
+     * 为指定集群修改域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateClusterDnsRequest 请求对象
+     * @return CompletableFuture<UpdateClusterDnsResponse>
+     */
+    public CompletableFuture<UpdateClusterDnsResponse> updateClusterDnsAsync(UpdateClusterDnsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.updateClusterDns);
+    }
+
+    /**
+     * 修改集群域名
+     *
+     * 为指定集群修改域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateClusterDnsRequest 请求对象
+     * @return AsyncInvoker<UpdateClusterDnsRequest, UpdateClusterDnsResponse>
+     */
+    public AsyncInvoker<UpdateClusterDnsRequest, UpdateClusterDnsResponse> updateClusterDnsAsyncInvoker(
+        UpdateClusterDnsRequest request) {
+        return new AsyncInvoker<UpdateClusterDnsRequest, UpdateClusterDnsResponse>(request, DwsMeta.updateClusterDns,
+            hcClient);
+    }
+
+    /**
+     * 修改集群参数配置
+     *
+     * 修改集群使用的参数配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateConfigurationRequest 请求对象
+     * @return CompletableFuture<UpdateConfigurationResponse>
+     */
+    public CompletableFuture<UpdateConfigurationResponse> updateConfigurationAsync(UpdateConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.updateConfiguration);
+    }
+
+    /**
+     * 修改集群参数配置
+     *
+     * 修改集群使用的参数配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateConfigurationRequest 请求对象
+     * @return AsyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>
+     */
+    public AsyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse> updateConfigurationAsyncInvoker(
+        UpdateConfigurationRequest request) {
+        return new AsyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>(request,
+            DwsMeta.updateConfiguration, hcClient);
+    }
+
+    /**
+     * 更新数据源
+     *
+     * 该接口用于更新一个数据源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDataSourceRequest 请求对象
+     * @return CompletableFuture<UpdateDataSourceResponse>
+     */
+    public CompletableFuture<UpdateDataSourceResponse> updateDataSourceAsync(UpdateDataSourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.updateDataSource);
+    }
+
+    /**
+     * 更新数据源
+     *
+     * 该接口用于更新一个数据源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDataSourceRequest 请求对象
+     * @return AsyncInvoker<UpdateDataSourceRequest, UpdateDataSourceResponse>
+     */
+    public AsyncInvoker<UpdateDataSourceRequest, UpdateDataSourceResponse> updateDataSourceAsyncInvoker(
+        UpdateDataSourceRequest request) {
+        return new AsyncInvoker<UpdateDataSourceRequest, UpdateDataSourceResponse>(request, DwsMeta.updateDataSource,
+            hcClient);
+    }
+
+    /**
+     * 更新订阅事件
+     *
+     * 更新订阅事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEventSubRequest 请求对象
+     * @return CompletableFuture<UpdateEventSubResponse>
+     */
+    public CompletableFuture<UpdateEventSubResponse> updateEventSubAsync(UpdateEventSubRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.updateEventSub);
+    }
+
+    /**
+     * 更新订阅事件
+     *
+     * 更新订阅事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEventSubRequest 请求对象
+     * @return AsyncInvoker<UpdateEventSubRequest, UpdateEventSubResponse>
+     */
+    public AsyncInvoker<UpdateEventSubRequest, UpdateEventSubResponse> updateEventSubAsyncInvoker(
+        UpdateEventSubRequest request) {
+        return new AsyncInvoker<UpdateEventSubRequest, UpdateEventSubResponse>(request, DwsMeta.updateEventSub,
+            hcClient);
+    }
+
+    /**
+     * 修改运维时间窗
+     *
+     * 您可以根据业务需求，设置可维护时间段。建议将可维护时间段设置在业务低峰期，避免业务在维护过程中异常中断。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateMaintenanceWindowRequest 请求对象
+     * @return CompletableFuture<UpdateMaintenanceWindowResponse>
+     */
+    public CompletableFuture<UpdateMaintenanceWindowResponse> updateMaintenanceWindowAsync(
+        UpdateMaintenanceWindowRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.updateMaintenanceWindow);
+    }
+
+    /**
+     * 修改运维时间窗
+     *
+     * 您可以根据业务需求，设置可维护时间段。建议将可维护时间段设置在业务低峰期，避免业务在维护过程中异常中断。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateMaintenanceWindowRequest 请求对象
+     * @return AsyncInvoker<UpdateMaintenanceWindowRequest, UpdateMaintenanceWindowResponse>
+     */
+    public AsyncInvoker<UpdateMaintenanceWindowRequest, UpdateMaintenanceWindowResponse> updateMaintenanceWindowAsyncInvoker(
+        UpdateMaintenanceWindowRequest request) {
+        return new AsyncInvoker<UpdateMaintenanceWindowRequest, UpdateMaintenanceWindowResponse>(request,
+            DwsMeta.updateMaintenanceWindow, hcClient);
     }
 
 }

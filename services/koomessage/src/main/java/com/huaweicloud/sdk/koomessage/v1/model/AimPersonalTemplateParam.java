@@ -50,7 +50,7 @@ public class AimPersonalTemplateParam {
     }
 
     /**
-     * 动态参数名称。示例：${param1}
+     * 动态参数名称。示例：${param1}。
      * @return name
      */
     public String getName() {

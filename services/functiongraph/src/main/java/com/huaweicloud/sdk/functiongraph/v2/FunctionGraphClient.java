@@ -48,6 +48,36 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 函数异步执行并返回预留实例ID
+     *
+     * 函数异步执行并返回预留实例ID用于场景指客户端请求执行比较费时任务，不需要同步等待执行完成返回结果，该方法提前返回任务执行对应的预留实例ID, 如果预留实例有异常，可以通过该实例ID把对应实例删除（该接口主要针对白名单用户）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AsyncInvokeReservedFunctionRequest 请求对象
+     * @return AsyncInvokeReservedFunctionResponse
+     */
+    public AsyncInvokeReservedFunctionResponse asyncInvokeReservedFunction(AsyncInvokeReservedFunctionRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.asyncInvokeReservedFunction);
+    }
+
+    /**
+     * 函数异步执行并返回预留实例ID
+     *
+     * 函数异步执行并返回预留实例ID用于场景指客户端请求执行比较费时任务，不需要同步等待执行完成返回结果，该方法提前返回任务执行对应的预留实例ID, 如果预留实例有异常，可以通过该实例ID把对应实例删除（该接口主要针对白名单用户）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AsyncInvokeReservedFunctionRequest 请求对象
+     * @return SyncInvoker<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse>
+     */
+    public SyncInvoker<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse> asyncInvokeReservedFunctionInvoker(
+        AsyncInvokeReservedFunctionRequest request) {
+        return new SyncInvoker<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse>(request,
+            FunctionGraphMeta.asyncInvokeReservedFunction, hcClient);
+    }
+
+    /**
      * 删除指定函数的所有触发器
      *
      * 删除指定函数所有触发器设置。

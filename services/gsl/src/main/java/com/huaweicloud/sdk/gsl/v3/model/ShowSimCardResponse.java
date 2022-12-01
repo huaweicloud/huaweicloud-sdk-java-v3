@@ -599,7 +599,7 @@ public class ShowSimCardResponse extends SdkResponse {
     }
 
     /**
-     * 运营商状态 -1.正常（非停机状态） 1.停机（超流量停机） 2.停机（超流量阈值停机） 3.停机（流量池停机） 4.停机（套餐到期停机） 5.停机（主动停机） 6.停机（违规停机）
+     * 运营商状态 -1.正常（非停机状态） 1.停机（超流量停机） 2.停机（超流量阈值停机） 3.停机（流量池停机） 4.停机（套餐到期停机） 5.停机（主动停机） 6.停机（违规停机） 7.停机（机卡分离停机）
      * @return operatorStatus
      */
     public Integer getOperatorStatus() {

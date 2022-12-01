@@ -45,6 +45,8 @@ public class CdmRegion {
 
     public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://cdm.na-mexico-1.myhuaweicloud.cn");
 
+    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://cdm.la-north-2.myhuaweicloud.cn");
+
     public static final Region AP_SOUTHEAST_3 =
         new Region("ap-southeast-3", "https://cdm.ap-southeast-3.myhuaweicloud.cn");
 
@@ -69,6 +71,7 @@ public class CdmRegion {
         map.put("cn-north-9", CN_NORTH_9);
         map.put("cn-north-2", CN_NORTH_2);
         map.put("na-mexico-1", NA_MEXICO_1);
+        map.put("la-north-2", LA_NORTH_2);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
         return Collections.unmodifiableMap(map);
     }

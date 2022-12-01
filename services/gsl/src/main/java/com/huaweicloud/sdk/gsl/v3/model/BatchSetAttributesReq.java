@@ -29,7 +29,7 @@ public class BatchSetAttributesReq {
     }
 
     /**
-     * 临时文件ID
+     * 临时文件ID，如果通过接口调用，此字段为空
      * @return fileTempId
      */
     public Long getFileTempId() {

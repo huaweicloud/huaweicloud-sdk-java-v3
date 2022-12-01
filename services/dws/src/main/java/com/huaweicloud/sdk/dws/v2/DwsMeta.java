@@ -7,8 +7,337 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.dws.v2.model.*;
 
+import java.util.List;
+
 @SuppressWarnings("unchecked")
 public class DwsMeta {
+
+    public static final HttpRequestDef<AddWorkloadQueueRequest, AddWorkloadQueueResponse> addWorkloadQueue =
+        genForaddWorkloadQueue();
+
+    private static HttpRequestDef<AddWorkloadQueueRequest, AddWorkloadQueueResponse> genForaddWorkloadQueue() {
+        // basic
+        HttpRequestDef.Builder<AddWorkloadQueueRequest, AddWorkloadQueueResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, AddWorkloadQueueRequest.class, AddWorkloadQueueResponse.class)
+                .withName("AddWorkloadQueue")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/workload/queues")
+                .withContentType("application/x-www-form-urlencoded");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddWorkloadQueueRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddWorkloadQueueResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AssociateEipRequest, AssociateEipResponse> associateEip = genForassociateEip();
+
+    private static HttpRequestDef<AssociateEipRequest, AssociateEipResponse> genForassociateEip() {
+        // basic
+        HttpRequestDef.Builder<AssociateEipRequest, AssociateEipResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AssociateEipRequest.class, AssociateEipResponse.class)
+                .withName("AssociateEip")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/eips/{eip_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateEipRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("eip_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateEipRequest::getEipId, (req, v) -> {
+                req.setEipId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AssociateElbRequest, AssociateElbResponse> associateElb = genForassociateElb();
+
+    private static HttpRequestDef<AssociateElbRequest, AssociateElbResponse> genForassociateElb() {
+        // basic
+        HttpRequestDef.Builder<AssociateElbRequest, AssociateElbResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AssociateElbRequest.class, AssociateElbResponse.class)
+                .withName("AssociateElb")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/elbs/{elb_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateElbRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("elb_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateElbRequest::getElbId, (req, v) -> {
+                req.setElbId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateClusterCnRequest, BatchCreateClusterCnResponse> batchCreateClusterCn =
+        genForbatchCreateClusterCn();
+
+    private static HttpRequestDef<BatchCreateClusterCnRequest, BatchCreateClusterCnResponse> genForbatchCreateClusterCn() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateClusterCnRequest, BatchCreateClusterCnResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchCreateClusterCnRequest.class, BatchCreateClusterCnResponse.class)
+            .withName("BatchCreateClusterCn")
+            .withUri("/v1.0/{project_id}/clusters/{cluster_id}/cns/batch-create")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateClusterCnRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<BatchCreateCn>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateCn.class),
+            f -> f.withMarshaller(BatchCreateClusterCnRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateResourceTagRequest, BatchCreateResourceTagResponse> batchCreateResourceTag =
+        genForbatchCreateResourceTag();
+
+    private static HttpRequestDef<BatchCreateResourceTagRequest, BatchCreateResourceTagResponse> genForbatchCreateResourceTag() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateResourceTagRequest, BatchCreateResourceTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchCreateResourceTagRequest.class, BatchCreateResourceTagResponse.class)
+            .withName("BatchCreateResourceTag")
+            .withUri("/v1.0/{project_id}/clusters/{cluster_id}/tags/batch-create")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateResourceTagRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<BatchCreateResourceTags>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateResourceTags.class),
+            f -> f.withMarshaller(BatchCreateResourceTagRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteClusterCnRequest, BatchDeleteClusterCnResponse> batchDeleteClusterCn =
+        genForbatchDeleteClusterCn();
+
+    private static HttpRequestDef<BatchDeleteClusterCnRequest, BatchDeleteClusterCnResponse> genForbatchDeleteClusterCn() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteClusterCnRequest, BatchDeleteClusterCnResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteClusterCnRequest.class, BatchDeleteClusterCnResponse.class)
+            .withName("BatchDeleteClusterCn")
+            .withUri("/v1.0/{project_id}/clusters/{cluster_id}/cns/batch-delete")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteClusterCnRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<BatchDeleteCn>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteCn.class),
+            f -> f.withMarshaller(BatchDeleteClusterCnRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse> batchDeleteResourceTag =
+        genForbatchDeleteResourceTag();
+
+    private static HttpRequestDef<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse> genForbatchDeleteResourceTag() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteResourceTagRequest.class, BatchDeleteResourceTagResponse.class)
+            .withName("BatchDeleteResourceTag")
+            .withUri("/v1.0/{project_id}/clusters/{cluster_id}/tags/batch-delete")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteResourceTagRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<BatchDeleteResourceTags>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteResourceTags.class),
+            f -> f.withMarshaller(BatchDeleteResourceTagRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CancelReadonlyClusterRequest, CancelReadonlyClusterResponse> cancelReadonlyCluster =
+        genForcancelReadonlyCluster();
+
+    private static HttpRequestDef<CancelReadonlyClusterRequest, CancelReadonlyClusterResponse> genForcancelReadonlyCluster() {
+        // basic
+        HttpRequestDef.Builder<CancelReadonlyClusterRequest, CancelReadonlyClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CancelReadonlyClusterRequest.class, CancelReadonlyClusterResponse.class)
+            .withName("CancelReadonlyCluster")
+            .withUri("/v1.0/{project_id}/clusters/{cluster_id}/cancel-readonly")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelReadonlyClusterRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckClusterRequest, CheckClusterResponse> checkCluster = genForcheckCluster();
+
+    private static HttpRequestDef<CheckClusterRequest, CheckClusterResponse> genForcheckCluster() {
+        // basic
+        HttpRequestDef.Builder<CheckClusterRequest, CheckClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckClusterRequest.class, CheckClusterResponse.class)
+                .withName("CheckCluster")
+                .withUri("/v2/{project_id}/cluster-precheck")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ClusterCheckRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ClusterCheckRequestBody.class),
+            f -> f.withMarshaller(CheckClusterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CopySnapshotRequest, CopySnapshotResponse> copySnapshot = genForcopySnapshot();
+
+    private static HttpRequestDef<CopySnapshotRequest, CopySnapshotResponse> genForcopySnapshot() {
+        // basic
+        HttpRequestDef.Builder<CopySnapshotRequest, CopySnapshotResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CopySnapshotRequest.class, CopySnapshotResponse.class)
+                .withName("CopySnapshot")
+                .withUri("/v1.0/{project_id}/snapshots/{snapshot_id}/linked-copy")
+                .withContentType("application/x-www-form-urlencoded");
+
+        // requests
+        builder.<String>withRequestField("snapshot_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopySnapshotRequest::getSnapshotId, (req, v) -> {
+                req.setSnapshotId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CopySnapshotResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAlarmSubRequest, CreateAlarmSubResponse> createAlarmSub =
+        genForcreateAlarmSub();
+
+    private static HttpRequestDef<CreateAlarmSubRequest, CreateAlarmSubResponse> genForcreateAlarmSub() {
+        // basic
+        HttpRequestDef.Builder<CreateAlarmSubRequest, CreateAlarmSubResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAlarmSubRequest.class, CreateAlarmSubResponse.class)
+                .withName("CreateAlarmSub")
+                .withUri("/v2/{project_id}/alarm-subs")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<AlarmSubRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AlarmSubRequest.class),
+            f -> f.withMarshaller(CreateAlarmSubRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<CreateClusterRequest, CreateClusterResponse> createCluster =
         genForcreateCluster();
@@ -35,6 +364,159 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateClusterDnsRequest, CreateClusterDnsResponse> createClusterDns =
+        genForcreateClusterDns();
+
+    private static HttpRequestDef<CreateClusterDnsRequest, CreateClusterDnsResponse> genForcreateClusterDns() {
+        // basic
+        HttpRequestDef.Builder<CreateClusterDnsRequest, CreateClusterDnsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateClusterDnsRequest.class, CreateClusterDnsResponse.class)
+                .withName("CreateClusterDns")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/dns")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClusterDnsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<CreateClusterDns>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateClusterDns.class),
+            f -> f.withMarshaller(CreateClusterDnsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateClusterWorkloadRequest, CreateClusterWorkloadResponse> createClusterWorkload =
+        genForcreateClusterWorkload();
+
+    private static HttpRequestDef<CreateClusterWorkloadRequest, CreateClusterWorkloadResponse> genForcreateClusterWorkload() {
+        // basic
+        HttpRequestDef.Builder<CreateClusterWorkloadRequest, CreateClusterWorkloadResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateClusterWorkloadRequest.class, CreateClusterWorkloadResponse.class)
+            .withName("CreateClusterWorkload")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/workload")
+            .withContentType("application/x-www-form-urlencoded");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClusterWorkloadRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateClusterWorkloadResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDataSourceRequest, CreateDataSourceResponse> createDataSource =
+        genForcreateDataSource();
+
+    private static HttpRequestDef<CreateDataSourceRequest, CreateDataSourceResponse> genForcreateDataSource() {
+        // basic
+        HttpRequestDef.Builder<CreateDataSourceRequest, CreateDataSourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDataSourceRequest.class, CreateDataSourceResponse.class)
+                .withName("CreateDataSource")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/ext-data-sources")
+                .withContentType("application/x-www-form-urlencoded");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDataSourceRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateDataSourceResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse> createDisasterRecovery =
+        genForcreateDisasterRecovery();
+
+    private static HttpRequestDef<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse> genForcreateDisasterRecovery() {
+        // basic
+        HttpRequestDef.Builder<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDisasterRecoveryRequest.class, CreateDisasterRecoveryResponse.class)
+            .withName("CreateDisasterRecovery")
+            .withUri("/v2/{project_id}/disaster-recoveries")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateDisasterRecovery>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateDisasterRecovery.class),
+            f -> f.withMarshaller(CreateDisasterRecoveryRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateDisasterRecoveryResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateEventSubRequest, CreateEventSubResponse> createEventSub =
+        genForcreateEventSub();
+
+    private static HttpRequestDef<CreateEventSubRequest, CreateEventSubResponse> genForcreateEventSub() {
+        // basic
+        HttpRequestDef.Builder<CreateEventSubRequest, CreateEventSubResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateEventSubRequest.class, CreateEventSubResponse.class)
+                .withName("CreateEventSub")
+                .withUri("/v2/{project_id}/event-subs")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<EventSubRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EventSubRequest.class),
+            f -> f.withMarshaller(CreateEventSubRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateSnapshotRequest, CreateSnapshotResponse> createSnapshot =
         genForcreateSnapshot();
 
@@ -53,6 +535,95 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(CreateSnapshotRequestBody.class),
             f -> f.withMarshaller(CreateSnapshotRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSnapshotPolicyRequest, CreateSnapshotPolicyResponse> createSnapshotPolicy =
+        genForcreateSnapshotPolicy();
+
+    private static HttpRequestDef<CreateSnapshotPolicyRequest, CreateSnapshotPolicyResponse> genForcreateSnapshotPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateSnapshotPolicyRequest, CreateSnapshotPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, CreateSnapshotPolicyRequest.class, CreateSnapshotPolicyResponse.class)
+            .withName("CreateSnapshotPolicy")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/snapshot-policies")
+            .withContentType("application/x-www-form-urlencoded");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSnapshotPolicyRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateSnapshotPolicyResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateWorkloadPlanRequest, CreateWorkloadPlanResponse> createWorkloadPlan =
+        genForcreateWorkloadPlan();
+
+    private static HttpRequestDef<CreateWorkloadPlanRequest, CreateWorkloadPlanResponse> genForcreateWorkloadPlan() {
+        // basic
+        HttpRequestDef.Builder<CreateWorkloadPlanRequest, CreateWorkloadPlanResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateWorkloadPlanRequest.class, CreateWorkloadPlanResponse.class)
+                .withName("CreateWorkloadPlan")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/workload/plans")
+                .withContentType("application/x-www-form-urlencoded");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateWorkloadPlanRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateWorkloadPlanResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAlarmSubRequest, DeleteAlarmSubResponse> deleteAlarmSub =
+        genFordeleteAlarmSub();
+
+    private static HttpRequestDef<DeleteAlarmSubRequest, DeleteAlarmSubResponse> genFordeleteAlarmSub() {
+        // basic
+        HttpRequestDef.Builder<DeleteAlarmSubRequest, DeleteAlarmSubResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAlarmSubRequest.class, DeleteAlarmSubResponse.class)
+                .withName("DeleteAlarmSub")
+                .withUri("/v2/{project_id}/alarm-subs/{alarm_sub_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("alarm_sub_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAlarmSubRequest::getAlarmSubId, (req, v) -> {
+                req.setAlarmSubId(v);
             }));
 
         // response
@@ -92,6 +663,95 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteClusterDnsRequest, DeleteClusterDnsResponse> deleteClusterDns =
+        genFordeleteClusterDns();
+
+    private static HttpRequestDef<DeleteClusterDnsRequest, DeleteClusterDnsResponse> genFordeleteClusterDns() {
+        // basic
+        HttpRequestDef.Builder<DeleteClusterDnsRequest, DeleteClusterDnsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteClusterDnsRequest.class, DeleteClusterDnsResponse.class)
+                .withName("DeleteClusterDns")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/dns")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClusterDnsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClusterDnsRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> deleteDisasterRecovery =
+        genFordeleteDisasterRecovery();
+
+    private static HttpRequestDef<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> genFordeleteDisasterRecovery() {
+        // basic
+        HttpRequestDef.Builder<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDisasterRecoveryRequest.class, DeleteDisasterRecoveryResponse.class)
+            .withName("DeleteDisasterRecovery")
+            .withUri("/v2/{project_id}/disaster-recovery/{disaster_recovery_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("disaster_recovery_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDisasterRecoveryRequest::getDisasterRecoveryId, (req, v) -> {
+                req.setDisasterRecoveryId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDisasterRecoveryResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEventSubRequest, DeleteEventSubResponse> deleteEventSub =
+        genFordeleteEventSub();
+
+    private static HttpRequestDef<DeleteEventSubRequest, DeleteEventSubResponse> genFordeleteEventSub() {
+        // basic
+        HttpRequestDef.Builder<DeleteEventSubRequest, DeleteEventSubResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteEventSubRequest.class, DeleteEventSubResponse.class)
+                .withName("DeleteEventSub")
+                .withUri("/v2/{project_id}/event-subs/{event_sub_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("event_sub_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEventSubRequest::getEventSubId, (req, v) -> {
+                req.setEventSubId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteSnapshotRequest, DeleteSnapshotResponse> deleteSnapshot =
         genFordeleteSnapshot();
 
@@ -110,6 +770,413 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSnapshotRequest::getSnapshotId, (req, v) -> {
                 req.setSnapshotId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSnapshotPolicyRequest, DeleteSnapshotPolicyResponse> deleteSnapshotPolicy =
+        genFordeleteSnapshotPolicy();
+
+    private static HttpRequestDef<DeleteSnapshotPolicyRequest, DeleteSnapshotPolicyResponse> genFordeleteSnapshotPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteSnapshotPolicyRequest, DeleteSnapshotPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteSnapshotPolicyRequest.class, DeleteSnapshotPolicyResponse.class)
+            .withName("DeleteSnapshotPolicy")
+            .withUri("/v1.0/{project_id}/clusters/{cluster_id}/snapshot-policies/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSnapshotPolicyRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSnapshotPolicyRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteWorkloadQueueRequest, DeleteWorkloadQueueResponse> deleteWorkloadQueue =
+        genFordeleteWorkloadQueue();
+
+    private static HttpRequestDef<DeleteWorkloadQueueRequest, DeleteWorkloadQueueResponse> genFordeleteWorkloadQueue() {
+        // basic
+        HttpRequestDef.Builder<DeleteWorkloadQueueRequest, DeleteWorkloadQueueResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteWorkloadQueueRequest.class, DeleteWorkloadQueueResponse.class)
+            .withName("DeleteWorkloadQueue")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/workload/queues")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWorkloadQueueRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("logical_cluster_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWorkloadQueueRequest::getLogicalClusterName, (req, v) -> {
+                req.setLogicalClusterName(v);
+            }));
+        builder.<String>withRequestField("workload_queue_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWorkloadQueueRequest::getWorkloadQueueName, (req, v) -> {
+                req.setWorkloadQueueName(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteWorkloadQueueResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateEipRequest, DisassociateEipResponse> disassociateEip =
+        genFordisassociateEip();
+
+    private static HttpRequestDef<DisassociateEipRequest, DisassociateEipResponse> genFordisassociateEip() {
+        // basic
+        HttpRequestDef.Builder<DisassociateEipRequest, DisassociateEipResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DisassociateEipRequest.class, DisassociateEipResponse.class)
+                .withName("DisassociateEip")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/eips/{eip_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateEipRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("eip_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateEipRequest::getEipId, (req, v) -> {
+                req.setEipId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateElbRequest, DisassociateElbResponse> disassociateElb =
+        genFordisassociateElb();
+
+    private static HttpRequestDef<DisassociateElbRequest, DisassociateElbResponse> genFordisassociateElb() {
+        // basic
+        HttpRequestDef.Builder<DisassociateElbRequest, DisassociateElbResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DisassociateElbRequest.class, DisassociateElbResponse.class)
+                .withName("DisassociateElb")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/elbs/{elb_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateElbRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("elb_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateElbRequest::getElbId, (req, v) -> {
+                req.setElbId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteRedistributionClusterRequest, ExecuteRedistributionClusterResponse> executeRedistributionCluster =
+        genForexecuteRedistributionCluster();
+
+    private static HttpRequestDef<ExecuteRedistributionClusterRequest, ExecuteRedistributionClusterResponse> genForexecuteRedistributionCluster() {
+        // basic
+        HttpRequestDef.Builder<ExecuteRedistributionClusterRequest, ExecuteRedistributionClusterResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecuteRedistributionClusterRequest.class,
+                    ExecuteRedistributionClusterResponse.class)
+                .withName("ExecuteRedistributionCluster")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/redistribution")
+                .withContentType("application/x-www-form-urlencoded");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteRedistributionClusterRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ExecuteRedistributionClusterResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAlarmConfigsRequest, ListAlarmConfigsResponse> listAlarmConfigs =
+        genForlistAlarmConfigs();
+
+    private static HttpRequestDef<ListAlarmConfigsRequest, ListAlarmConfigsResponse> genForlistAlarmConfigs() {
+        // basic
+        HttpRequestDef.Builder<ListAlarmConfigsRequest, ListAlarmConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAlarmConfigsRequest.class, ListAlarmConfigsResponse.class)
+                .withName("ListAlarmConfigs")
+                .withUri("/v2/alarm-configs")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAlarmDetailRequest, ListAlarmDetailResponse> listAlarmDetail =
+        genForlistAlarmDetail();
+
+    private static HttpRequestDef<ListAlarmDetailRequest, ListAlarmDetailResponse> genForlistAlarmDetail() {
+        // basic
+        HttpRequestDef.Builder<ListAlarmDetailRequest, ListAlarmDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAlarmDetailRequest.class, ListAlarmDetailResponse.class)
+                .withName("ListAlarmDetail")
+                .withUri("/v2/{project_id}/alarms")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("time_zone",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmDetailRequest::getTimeZone, (req, v) -> {
+                req.setTimeZone(v);
+            }));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmDetailRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmDetailRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAlarmStatisticRequest, ListAlarmStatisticResponse> listAlarmStatistic =
+        genForlistAlarmStatistic();
+
+    private static HttpRequestDef<ListAlarmStatisticRequest, ListAlarmStatisticResponse> genForlistAlarmStatistic() {
+        // basic
+        HttpRequestDef.Builder<ListAlarmStatisticRequest, ListAlarmStatisticResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAlarmStatisticRequest.class, ListAlarmStatisticResponse.class)
+                .withName("ListAlarmStatistic")
+                .withUri("/v2/{project_id}/alarm-statistic")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("time_zone",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmStatisticRequest::getTimeZone, (req, v) -> {
+                req.setTimeZone(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAlarmSubsRequest, ListAlarmSubsResponse> listAlarmSubs =
+        genForlistAlarmSubs();
+
+    private static HttpRequestDef<ListAlarmSubsRequest, ListAlarmSubsResponse> genForlistAlarmSubs() {
+        // basic
+        HttpRequestDef.Builder<ListAlarmSubsRequest, ListAlarmSubsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAlarmSubsRequest.class, ListAlarmSubsResponse.class)
+                .withName("ListAlarmSubs")
+                .withUri("/v2/{project_id}/alarm-subs")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAuditLogRequest, ListAuditLogResponse> listAuditLog = genForlistAuditLog();
+
+    private static HttpRequestDef<ListAuditLogRequest, ListAuditLogResponse> genForlistAuditLog() {
+        // basic
+        HttpRequestDef.Builder<ListAuditLogRequest, ListAuditLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAuditLogRequest.class, ListAuditLogResponse.class)
+                .withName("ListAuditLog")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/audit-log-records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuditLogRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> listAvailabilityZones =
+        genForlistAvailabilityZones();
+
+    private static HttpRequestDef<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> genForlistAvailabilityZones() {
+        // basic
+        HttpRequestDef.Builder<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAvailabilityZonesRequest.class, ListAvailabilityZonesResponse.class)
+            .withName("ListAvailabilityZones")
+            .withUri("/v1.0/{project_id}/availability-zones")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClusterCnRequest, ListClusterCnResponse> listClusterCn =
+        genForlistClusterCn();
+
+    private static HttpRequestDef<ListClusterCnRequest, ListClusterCnResponse> genForlistClusterCn() {
+        // basic
+        HttpRequestDef.Builder<ListClusterCnRequest, ListClusterCnResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListClusterCnRequest.class, ListClusterCnResponse.class)
+                .withName("ListClusterCn")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/cns")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterCnRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClusterConfigurationsRequest, ListClusterConfigurationsResponse> listClusterConfigurations =
+        genForlistClusterConfigurations();
+
+    private static HttpRequestDef<ListClusterConfigurationsRequest, ListClusterConfigurationsResponse> genForlistClusterConfigurations() {
+        // basic
+        HttpRequestDef.Builder<ListClusterConfigurationsRequest, ListClusterConfigurationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListClusterConfigurationsRequest.class,
+                    ListClusterConfigurationsResponse.class)
+                .withName("ListClusterConfigurations")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterConfigurationsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClusterConfigurationsParameterRequest, ListClusterConfigurationsParameterResponse> listClusterConfigurationsParameter =
+        genForlistClusterConfigurationsParameter();
+
+    private static HttpRequestDef<ListClusterConfigurationsParameterRequest, ListClusterConfigurationsParameterResponse> genForlistClusterConfigurationsParameter() {
+        // basic
+        HttpRequestDef.Builder<ListClusterConfigurationsParameterRequest, ListClusterConfigurationsParameterResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListClusterConfigurationsParameterRequest.class,
+                    ListClusterConfigurationsParameterResponse.class)
+                .withName("ListClusterConfigurationsParameter")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/configurations/{configuration_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterConfigurationsParameterRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("configuration_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterConfigurationsParameterRequest::getConfigurationId, (req, v) -> {
+                req.setConfigurationId(v);
             }));
 
         // response
@@ -142,6 +1209,109 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListClusterScaleInNumbersRequest, ListClusterScaleInNumbersResponse> listClusterScaleInNumbers =
+        genForlistClusterScaleInNumbers();
+
+    private static HttpRequestDef<ListClusterScaleInNumbersRequest, ListClusterScaleInNumbersResponse> genForlistClusterScaleInNumbers() {
+        // basic
+        HttpRequestDef.Builder<ListClusterScaleInNumbersRequest, ListClusterScaleInNumbersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListClusterScaleInNumbersRequest.class,
+                    ListClusterScaleInNumbersResponse.class)
+                .withName("ListClusterScaleInNumbers")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/shrink-numbers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterScaleInNumbersRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClusterSnapshotsRequest, ListClusterSnapshotsResponse> listClusterSnapshots =
+        genForlistClusterSnapshots();
+
+    private static HttpRequestDef<ListClusterSnapshotsRequest, ListClusterSnapshotsResponse> genForlistClusterSnapshots() {
+        // basic
+        HttpRequestDef.Builder<ListClusterSnapshotsRequest, ListClusterSnapshotsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListClusterSnapshotsRequest.class, ListClusterSnapshotsResponse.class)
+            .withName("ListClusterSnapshots")
+            .withUri("/v1.0/{project_id}/cluster/{cluster_id}/snapshots")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterSnapshotsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClusterTagsRequest, ListClusterTagsResponse> listClusterTags =
+        genForlistClusterTags();
+
+    private static HttpRequestDef<ListClusterTagsRequest, ListClusterTagsResponse> genForlistClusterTags() {
+        // basic
+        HttpRequestDef.Builder<ListClusterTagsRequest, ListClusterTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListClusterTagsRequest.class, ListClusterTagsResponse.class)
+                .withName("ListClusterTags")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterTagsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClusterWorkloadRequest, ListClusterWorkloadResponse> listClusterWorkload =
+        genForlistClusterWorkload();
+
+    private static HttpRequestDef<ListClusterWorkloadRequest, ListClusterWorkloadResponse> genForlistClusterWorkload() {
+        // basic
+        HttpRequestDef.Builder<ListClusterWorkloadRequest, ListClusterWorkloadResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListClusterWorkloadRequest.class, ListClusterWorkloadResponse.class)
+                .withName("ListClusterWorkload")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/workload")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterWorkloadRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListClustersRequest, ListClustersResponse> listClusters = genForlistClusters();
 
     private static HttpRequestDef<ListClustersRequest, ListClustersResponse> genForlistClusters() {
@@ -159,6 +1329,367 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDataSourceRequest, ListDataSourceResponse> listDataSource =
+        genForlistDataSource();
+
+    private static HttpRequestDef<ListDataSourceRequest, ListDataSourceResponse> genForlistDataSource() {
+        // basic
+        HttpRequestDef.Builder<ListDataSourceRequest, ListDataSourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDataSourceRequest.class, ListDataSourceResponse.class)
+                .withName("ListDataSource")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/ext-data-sources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataSourceRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDisasterRecoverRequest, ListDisasterRecoverResponse> listDisasterRecover =
+        genForlistDisasterRecover();
+
+    private static HttpRequestDef<ListDisasterRecoverRequest, ListDisasterRecoverResponse> genForlistDisasterRecover() {
+        // basic
+        HttpRequestDef.Builder<ListDisasterRecoverRequest, ListDisasterRecoverResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDisasterRecoverRequest.class, ListDisasterRecoverResponse.class)
+                .withName("ListDisasterRecover")
+                .withUri("/v2/{project_id}/disaster-recoveries")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDisasterRecoverResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDssPoolsRequest, ListDssPoolsResponse> listDssPools = genForlistDssPools();
+
+    private static HttpRequestDef<ListDssPoolsRequest, ListDssPoolsResponse> genForlistDssPools() {
+        // basic
+        HttpRequestDef.Builder<ListDssPoolsRequest, ListDssPoolsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDssPoolsRequest.class, ListDssPoolsResponse.class)
+                .withName("ListDssPools")
+                .withUri("/v1.0/{project_id}/dss-pools")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListElbsRequest, ListElbsResponse> listElbs = genForlistElbs();
+
+    private static HttpRequestDef<ListElbsRequest, ListElbsResponse> genForlistElbs() {
+        // basic
+        HttpRequestDef.Builder<ListElbsRequest, ListElbsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListElbsRequest.class, ListElbsResponse.class)
+                .withName("ListElbs")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/elbs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListElbsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEventSpecsRequest, ListEventSpecsResponse> listEventSpecs =
+        genForlistEventSpecs();
+
+    private static HttpRequestDef<ListEventSpecsRequest, ListEventSpecsResponse> genForlistEventSpecs() {
+        // basic
+        HttpRequestDef.Builder<ListEventSpecsRequest, ListEventSpecsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEventSpecsRequest.class, ListEventSpecsResponse.class)
+                .withName("ListEventSpecs")
+                .withUri("/v2/event-specs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("spec_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventSpecsRequest::getSpecName, (req, v) -> {
+                req.setSpecName(v);
+            }));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventSpecsRequest::getCategory, (req, v) -> {
+                req.setCategory(v);
+            }));
+        builder.<String>withRequestField("severity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventSpecsRequest::getSeverity, (req, v) -> {
+                req.setSeverity(v);
+            }));
+        builder.<String>withRequestField("source_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventSpecsRequest::getSourceType, (req, v) -> {
+                req.setSourceType(v);
+            }));
+        builder.<String>withRequestField("tag",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventSpecsRequest::getTag, (req, v) -> {
+                req.setTag(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEventSubsRequest, ListEventSubsResponse> listEventSubs =
+        genForlistEventSubs();
+
+    private static HttpRequestDef<ListEventSubsRequest, ListEventSubsResponse> genForlistEventSubs() {
+        // basic
+        HttpRequestDef.Builder<ListEventSubsRequest, ListEventSubsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEventSubsRequest.class, ListEventSubsResponse.class)
+                .withName("ListEventSubs")
+                .withUri("/v2/{project_id}/event-subs")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEventsRequest, ListEventsResponse> listEvents = genForlistEvents();
+
+    private static HttpRequestDef<ListEventsRequest, ListEventsResponse> genForlistEvents() {
+        // basic
+        HttpRequestDef.Builder<ListEventsRequest, ListEventsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEventsRequest.class, ListEventsResponse.class)
+                .withName("ListEvents")
+                .withUri("/v2/{project_id}/events")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHostDiskRequest, ListHostDiskResponse> listHostDisk = genForlistHostDisk();
+
+    private static HttpRequestDef<ListHostDiskRequest, ListHostDiskResponse> genForlistHostDisk() {
+        // basic
+        HttpRequestDef.Builder<ListHostDiskRequest, ListHostDiskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHostDiskRequest.class, ListHostDiskResponse.class)
+                .withName("ListHostDisk")
+                .withUri("/v1.0/{project_id}/dms/disk")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostDiskRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostDiskRequest::getInstanceName, (req, v) -> {
+                req.setInstanceName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHostDiskRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHostDiskRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+
+        // response
+        builder.<List<DiskResp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListHostDiskResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(DiskResp.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHostNetRequest, ListHostNetResponse> listHostNet = genForlistHostNet();
+
+    private static HttpRequestDef<ListHostNetRequest, ListHostNetResponse> genForlistHostNet() {
+        // basic
+        HttpRequestDef.Builder<ListHostNetRequest, ListHostNetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHostNetRequest.class, ListHostNetResponse.class)
+                .withName("ListHostNet")
+                .withUri("/v1.0/{project_id}/dms/net")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostNetRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostNetRequest::getInstanceName, (req, v) -> {
+                req.setInstanceName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHostNetRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHostNetRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+
+        // response
+        builder.<List<NetResp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListHostNetResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(NetResp.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHostOverviewRequest, ListHostOverviewResponse> listHostOverview =
+        genForlistHostOverview();
+
+    private static HttpRequestDef<ListHostOverviewRequest, ListHostOverviewResponse> genForlistHostOverview() {
+        // basic
+        HttpRequestDef.Builder<ListHostOverviewRequest, ListHostOverviewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHostOverviewRequest.class, ListHostOverviewResponse.class)
+                .withName("ListHostOverview")
+                .withUri("/v1.0/{project_id}/dms/host-overview")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostOverviewRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostOverviewRequest::getInstanceName, (req, v) -> {
+                req.setInstanceName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHostOverviewRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHostOverviewRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+
+        // response
+        builder.<List<HostOverviewResponse>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListHostOverviewResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(HostOverviewResponse.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListJobDetailsRequest, ListJobDetailsResponse> listJobDetails =
+        genForlistJobDetails();
+
+    private static HttpRequestDef<ListJobDetailsRequest, ListJobDetailsResponse> genForlistJobDetails() {
+        // basic
+        HttpRequestDef.Builder<ListJobDetailsRequest, ListJobDetailsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListJobDetailsRequest.class, ListJobDetailsResponse.class)
+                .withName("ListJobDetails")
+                .withUri("/v1.0/{project_id}/job/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobDetailsRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListNodeTypesRequest, ListNodeTypesResponse> listNodeTypes =
         genForlistNodeTypes();
 
@@ -168,6 +1699,23 @@ public class DwsMeta {
             HttpRequestDef.builder(HttpMethod.GET, ListNodeTypesRequest.class, ListNodeTypesResponse.class)
                 .withName("ListNodeTypes")
                 .withUri("/v2/{project_id}/node-types")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
+
+    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
+        // basic
+        HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
+                .withName("ListQuotas")
+                .withUri("/v1.0/{project_id}/quotas")
                 .withContentType("application/json");
 
         // requests
@@ -202,6 +1750,56 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSnapshotPolicyRequest, ListSnapshotPolicyResponse> listSnapshotPolicy =
+        genForlistSnapshotPolicy();
+
+    private static HttpRequestDef<ListSnapshotPolicyRequest, ListSnapshotPolicyResponse> genForlistSnapshotPolicy() {
+        // basic
+        HttpRequestDef.Builder<ListSnapshotPolicyRequest, ListSnapshotPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSnapshotPolicyRequest.class, ListSnapshotPolicyResponse.class)
+                .withName("ListSnapshotPolicy")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/snapshot-policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotPolicyRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSnapshotStatisticsRequest, ListSnapshotStatisticsResponse> listSnapshotStatistics =
+        genForlistSnapshotStatistics();
+
+    private static HttpRequestDef<ListSnapshotStatisticsRequest, ListSnapshotStatisticsResponse> genForlistSnapshotStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListSnapshotStatisticsRequest, ListSnapshotStatisticsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSnapshotStatisticsRequest.class, ListSnapshotStatisticsResponse.class)
+            .withName("ListSnapshotStatistics")
+            .withUri("/v1.0/{project_id}/clusters/{cluster_id}/snapshots/statistics")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotStatisticsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshots =
         genForlistSnapshots();
 
@@ -214,6 +1812,91 @@ public class DwsMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListStatisticsRequest, ListStatisticsResponse> listStatistics =
+        genForlistStatistics();
+
+    private static HttpRequestDef<ListStatisticsRequest, ListStatisticsResponse> genForlistStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListStatisticsRequest, ListStatisticsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListStatisticsRequest.class, ListStatisticsResponse.class)
+                .withName("ListStatistics")
+                .withUri("/v1.0/{project_id}/statistics")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForlistTags();
+
+    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForlistTags() {
+        // basic
+        HttpRequestDef.Builder<ListTagsRequest, ListTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTagsRequest.class, ListTagsResponse.class)
+                .withName("ListTags")
+                .withUri("/v1.0/{project_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWorkloadQueueRequest, ListWorkloadQueueResponse> listWorkloadQueue =
+        genForlistWorkloadQueue();
+
+    private static HttpRequestDef<ListWorkloadQueueRequest, ListWorkloadQueueResponse> genForlistWorkloadQueue() {
+        // basic
+        HttpRequestDef.Builder<ListWorkloadQueueRequest, ListWorkloadQueueResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListWorkloadQueueRequest.class, ListWorkloadQueueResponse.class)
+                .withName("ListWorkloadQueue")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/workload/queues")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkloadQueueRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<PauseDisasterRecoveryRequest, PauseDisasterRecoveryResponse> pauseDisasterRecovery =
+        genForpauseDisasterRecovery();
+
+    private static HttpRequestDef<PauseDisasterRecoveryRequest, PauseDisasterRecoveryResponse> genForpauseDisasterRecovery() {
+        // basic
+        HttpRequestDef.Builder<PauseDisasterRecoveryRequest, PauseDisasterRecoveryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, PauseDisasterRecoveryRequest.class, PauseDisasterRecoveryResponse.class)
+            .withName("PauseDisasterRecovery")
+            .withUri("/v2/{project_id}/disaster-recovery/{disaster_recovery_id}/pause")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("disaster_recovery_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PauseDisasterRecoveryRequest::getDisasterRecoveryId, (req, v) -> {
+                req.setDisasterRecoveryId(v);
+            }));
 
         // response
 
@@ -340,6 +2023,372 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestoreClusterRequestBody.class),
             f -> f.withMarshaller(RestoreClusterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestoreDisasterRequest, RestoreDisasterResponse> restoreDisaster =
+        genForrestoreDisaster();
+
+    private static HttpRequestDef<RestoreDisasterRequest, RestoreDisasterResponse> genForrestoreDisaster() {
+        // basic
+        HttpRequestDef.Builder<RestoreDisasterRequest, RestoreDisasterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RestoreDisasterRequest.class, RestoreDisasterResponse.class)
+                .withName("RestoreDisaster")
+                .withUri("/v2/{project_id}/disaster-recovery/{disaster_recovery_id}/recovery")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("disaster_recovery_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreDisasterRequest::getDisasterRecoveryId, (req, v) -> {
+                req.setDisasterRecoveryId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShrinkClusterRequest, ShrinkClusterResponse> shrinkCluster =
+        genForshrinkCluster();
+
+    private static HttpRequestDef<ShrinkClusterRequest, ShrinkClusterResponse> genForshrinkCluster() {
+        // basic
+        HttpRequestDef.Builder<ShrinkClusterRequest, ShrinkClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShrinkClusterRequest.class, ShrinkClusterResponse.class)
+                .withName("ShrinkCluster")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/cluster-shrink")
+                .withContentType("application/x-www-form-urlencoded");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShrinkClusterRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShrinkClusterResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartDisasterRecoveryRequest, StartDisasterRecoveryResponse> startDisasterRecovery =
+        genForstartDisasterRecovery();
+
+    private static HttpRequestDef<StartDisasterRecoveryRequest, StartDisasterRecoveryResponse> genForstartDisasterRecovery() {
+        // basic
+        HttpRequestDef.Builder<StartDisasterRecoveryRequest, StartDisasterRecoveryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StartDisasterRecoveryRequest.class, StartDisasterRecoveryResponse.class)
+            .withName("StartDisasterRecovery")
+            .withUri("/v2/{project_id}/disaster-recovery/{disaster_recovery_id}/start")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("disaster_recovery_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartDisasterRecoveryRequest::getDisasterRecoveryId, (req, v) -> {
+                req.setDisasterRecoveryId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchFailoverDisasterRequest, SwitchFailoverDisasterResponse> switchFailoverDisaster =
+        genForswitchFailoverDisaster();
+
+    private static HttpRequestDef<SwitchFailoverDisasterRequest, SwitchFailoverDisasterResponse> genForswitchFailoverDisaster() {
+        // basic
+        HttpRequestDef.Builder<SwitchFailoverDisasterRequest, SwitchFailoverDisasterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SwitchFailoverDisasterRequest.class, SwitchFailoverDisasterResponse.class)
+            .withName("SwitchFailoverDisaster")
+            .withUri("/v2/{project_id}/disaster-recovery/{disaster_recovery_id}/failover")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("disaster_recovery_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchFailoverDisasterRequest::getDisasterRecoveryId, (req, v) -> {
+                req.setDisasterRecoveryId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchOverClusterRequest, SwitchOverClusterResponse> switchOverCluster =
+        genForswitchOverCluster();
+
+    private static HttpRequestDef<SwitchOverClusterRequest, SwitchOverClusterResponse> genForswitchOverCluster() {
+        // basic
+        HttpRequestDef.Builder<SwitchOverClusterRequest, SwitchOverClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SwitchOverClusterRequest.class, SwitchOverClusterResponse.class)
+                .withName("SwitchOverCluster")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/switchover")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchOverClusterRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchoverDisasterRecoveryRequest, SwitchoverDisasterRecoveryResponse> switchoverDisasterRecovery =
+        genForswitchoverDisasterRecovery();
+
+    private static HttpRequestDef<SwitchoverDisasterRecoveryRequest, SwitchoverDisasterRecoveryResponse> genForswitchoverDisasterRecovery() {
+        // basic
+        HttpRequestDef.Builder<SwitchoverDisasterRecoveryRequest, SwitchoverDisasterRecoveryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    SwitchoverDisasterRecoveryRequest.class,
+                    SwitchoverDisasterRecoveryResponse.class)
+                .withName("SwitchoverDisasterRecovery")
+                .withUri("/v2/{project_id}/disaster-recovery/{disaster_recovery_id}/switchover")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("disaster_recovery_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchoverDisasterRecoveryRequest::getDisasterRecoveryId, (req, v) -> {
+                req.setDisasterRecoveryId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAlarmSubRequest, UpdateAlarmSubResponse> updateAlarmSub =
+        genForupdateAlarmSub();
+
+    private static HttpRequestDef<UpdateAlarmSubRequest, UpdateAlarmSubResponse> genForupdateAlarmSub() {
+        // basic
+        HttpRequestDef.Builder<UpdateAlarmSubRequest, UpdateAlarmSubResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAlarmSubRequest.class, UpdateAlarmSubResponse.class)
+                .withName("UpdateAlarmSub")
+                .withUri("/v2/{project_id}/alarm-subs/{alarm_sub_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("alarm_sub_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAlarmSubRequest::getAlarmSubId, (req, v) -> {
+                req.setAlarmSubId(v);
+            }));
+        builder.<AlarmSubUpdateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AlarmSubUpdateRequest.class),
+            f -> f.withMarshaller(UpdateAlarmSubRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateClusterDnsRequest, UpdateClusterDnsResponse> updateClusterDns =
+        genForupdateClusterDns();
+
+    private static HttpRequestDef<UpdateClusterDnsRequest, UpdateClusterDnsResponse> genForupdateClusterDns() {
+        // basic
+        HttpRequestDef.Builder<UpdateClusterDnsRequest, UpdateClusterDnsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateClusterDnsRequest.class, UpdateClusterDnsResponse.class)
+                .withName("UpdateClusterDns")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/dns")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClusterDnsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<ModifyClusterDns>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyClusterDns.class),
+            f -> f.withMarshaller(UpdateClusterDnsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateConfigurationRequest, UpdateConfigurationResponse> updateConfiguration =
+        genForupdateConfiguration();
+
+    private static HttpRequestDef<UpdateConfigurationRequest, UpdateConfigurationResponse> genForupdateConfiguration() {
+        // basic
+        HttpRequestDef.Builder<UpdateConfigurationRequest, UpdateConfigurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateConfigurationRequest.class, UpdateConfigurationResponse.class)
+                .withName("UpdateConfiguration")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/configurations/{configuration_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateConfigurationRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("configuration_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateConfigurationRequest::getConfigurationId, (req, v) -> {
+                req.setConfigurationId(v);
+            }));
+        builder.<ConfigurationParameterValues>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConfigurationParameterValues.class),
+            f -> f.withMarshaller(UpdateConfigurationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDataSourceRequest, UpdateDataSourceResponse> updateDataSource =
+        genForupdateDataSource();
+
+    private static HttpRequestDef<UpdateDataSourceRequest, UpdateDataSourceResponse> genForupdateDataSource() {
+        // basic
+        HttpRequestDef.Builder<UpdateDataSourceRequest, UpdateDataSourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDataSourceRequest.class, UpdateDataSourceResponse.class)
+                .withName("UpdateDataSource")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/ext-data-sources/{ext_data_source_id}")
+                .withContentType("application/x-www-form-urlencoded");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDataSourceRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("ext_data_source_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDataSourceRequest::getExtDataSourceId, (req, v) -> {
+                req.setExtDataSourceId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDataSourceResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEventSubRequest, UpdateEventSubResponse> updateEventSub =
+        genForupdateEventSub();
+
+    private static HttpRequestDef<UpdateEventSubRequest, UpdateEventSubResponse> genForupdateEventSub() {
+        // basic
+        HttpRequestDef.Builder<UpdateEventSubRequest, UpdateEventSubResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateEventSubRequest.class, UpdateEventSubResponse.class)
+                .withName("UpdateEventSub")
+                .withUri("/v2/{project_id}/event-subs/{event_sub_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("event_sub_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEventSubRequest::getEventSubId, (req, v) -> {
+                req.setEventSubId(v);
+            }));
+        builder.<EventSubUpdateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EventSubUpdateRequest.class),
+            f -> f.withMarshaller(UpdateEventSubRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateMaintenanceWindowRequest, UpdateMaintenanceWindowResponse> updateMaintenanceWindow =
+        genForupdateMaintenanceWindow();
+
+    private static HttpRequestDef<UpdateMaintenanceWindowRequest, UpdateMaintenanceWindowResponse> genForupdateMaintenanceWindow() {
+        // basic
+        HttpRequestDef.Builder<UpdateMaintenanceWindowRequest, UpdateMaintenanceWindowResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateMaintenanceWindowRequest.class, UpdateMaintenanceWindowResponse.class)
+            .withName("UpdateMaintenanceWindow")
+            .withUri("/v1.0/{project_id}/clusters/{cluster_id}/maintenance-window")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMaintenanceWindowRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<MaintenanceWindow>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MaintenanceWindow.class),
+            f -> f.withMarshaller(UpdateMaintenanceWindowRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

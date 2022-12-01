@@ -48,6 +48,36 @@ public class ImageClient {
     }
 
     /**
+     * 删除媒资图像标签
+     *
+     * 用于用户删除自定义的标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunDeleteCustomTagsRequest 请求对象
+     * @return RunDeleteCustomTagsResponse
+     */
+    public RunDeleteCustomTagsResponse runDeleteCustomTags(RunDeleteCustomTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ImageMeta.runDeleteCustomTags);
+    }
+
+    /**
+     * 删除媒资图像标签
+     *
+     * 用于用户删除自定义的标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunDeleteCustomTagsRequest 请求对象
+     * @return SyncInvoker<RunDeleteCustomTagsRequest, RunDeleteCustomTagsResponse>
+     */
+    public SyncInvoker<RunDeleteCustomTagsRequest, RunDeleteCustomTagsResponse> runDeleteCustomTagsInvoker(
+        RunDeleteCustomTagsRequest request) {
+        return new SyncInvoker<RunDeleteCustomTagsRequest, RunDeleteCustomTagsResponse>(request,
+            ImageMeta.runDeleteCustomTags, hcClient);
+    }
+
+    /**
      * 图像描述
      *
      * 图像描述
@@ -108,7 +138,7 @@ public class ImageClient {
     }
 
     /**
-     * 媒资图像标签
+     * 标签识别
      *
      * 自然图像的语义内容非常丰富，一个图像包含多个标签内容，图像标签服务准确识别自然图片中数百种场景、上千种通用物体及其属性，让智能相册管理、照片检索和分类、基于场景内容或者物体的广告推荐等功能更加直观。使用时用户发送待处理图片，返回图片标签内容及相应置信度。
      * 
@@ -122,7 +152,7 @@ public class ImageClient {
     }
 
     /**
-     * 媒资图像标签
+     * 标签识别
      *
      * 自然图像的语义内容非常丰富，一个图像包含多个标签内容，图像标签服务准确识别自然图片中数百种场景、上千种通用物体及其属性，让智能相册管理、照片检索和分类、基于场景内容或者物体的广告推荐等功能更加直观。使用时用户发送待处理图片，返回图片标签内容及相应置信度。
      * 
@@ -135,6 +165,36 @@ public class ImageClient {
         RunImageMediaTaggingRequest request) {
         return new SyncInvoker<RunImageMediaTaggingRequest, RunImageMediaTaggingResponse>(request,
             ImageMeta.runImageMediaTagging, hcClient);
+    }
+
+    /**
+     * 媒资图像标签检测
+     *
+     * 自然图像的语义内容非常丰富，一个图像包含多个标签内容，图像标签服务准确识别自然图片中数百种场景、上千种通用物体及其属性，让智能相册管理、照片检索和分类、基于场景内容或者物体的广告推荐等功能更加直观。使用时用户发送待处理图片，返回图片标签内容及相应的位置坐标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunImageMediaTaggingDetRequest 请求对象
+     * @return RunImageMediaTaggingDetResponse
+     */
+    public RunImageMediaTaggingDetResponse runImageMediaTaggingDet(RunImageMediaTaggingDetRequest request) {
+        return hcClient.syncInvokeHttp(request, ImageMeta.runImageMediaTaggingDet);
+    }
+
+    /**
+     * 媒资图像标签检测
+     *
+     * 自然图像的语义内容非常丰富，一个图像包含多个标签内容，图像标签服务准确识别自然图片中数百种场景、上千种通用物体及其属性，让智能相册管理、照片检索和分类、基于场景内容或者物体的广告推荐等功能更加直观。使用时用户发送待处理图片，返回图片标签内容及相应的位置坐标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunImageMediaTaggingDetRequest 请求对象
+     * @return SyncInvoker<RunImageMediaTaggingDetRequest, RunImageMediaTaggingDetResponse>
+     */
+    public SyncInvoker<RunImageMediaTaggingDetRequest, RunImageMediaTaggingDetResponse> runImageMediaTaggingDetInvoker(
+        RunImageMediaTaggingDetRequest request) {
+        return new SyncInvoker<RunImageMediaTaggingDetRequest, RunImageMediaTaggingDetResponse>(request,
+            ImageMeta.runImageMediaTaggingDet, hcClient);
     }
 
     /**
@@ -165,6 +225,36 @@ public class ImageClient {
         RunImageTaggingRequest request) {
         return new SyncInvoker<RunImageTaggingRequest, RunImageTaggingResponse>(request, ImageMeta.runImageTagging,
             hcClient);
+    }
+
+    /**
+     * 查询媒资图像标签
+     *
+     * 用于用户自查是否存在自定义的标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunQueryCustomTagsRequest 请求对象
+     * @return RunQueryCustomTagsResponse
+     */
+    public RunQueryCustomTagsResponse runQueryCustomTags(RunQueryCustomTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ImageMeta.runQueryCustomTags);
+    }
+
+    /**
+     * 查询媒资图像标签
+     *
+     * 用于用户自查是否存在自定义的标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunQueryCustomTagsRequest 请求对象
+     * @return SyncInvoker<RunQueryCustomTagsRequest, RunQueryCustomTagsResponse>
+     */
+    public SyncInvoker<RunQueryCustomTagsRequest, RunQueryCustomTagsResponse> runQueryCustomTagsInvoker(
+        RunQueryCustomTagsRequest request) {
+        return new SyncInvoker<RunQueryCustomTagsRequest, RunQueryCustomTagsResponse>(request,
+            ImageMeta.runQueryCustomTags, hcClient);
     }
 
 }

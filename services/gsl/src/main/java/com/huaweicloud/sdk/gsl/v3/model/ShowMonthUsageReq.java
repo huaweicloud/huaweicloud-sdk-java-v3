@@ -45,7 +45,7 @@ public class ShowMonthUsageReq {
     }
 
     /**
-     * sim卡id列表
+     * sim卡id列表，最多支持传入500个SIM卡id。
      * @return simCardIds
      */
     public List<Long> getSimCardIds() {
@@ -78,7 +78,7 @@ public class ShowMonthUsageReq {
     }
 
     /**
-     * 账期
+     * 账期，最多支持传入本月在内的6个月账期，例如[2022-07, 2022-06]，不支持传入未来账期。
      * @return billingCycles
      */
     public List<String> getBillingCycles() {

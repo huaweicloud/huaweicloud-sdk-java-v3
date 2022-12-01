@@ -285,7 +285,7 @@ public class VmsSendTask {
     }
 
     /**
-     * 扩展字段。  > 预留字段 
+     * 扩展字段。  > 预留字段。 
      * @return exdata
      */
     public String getExdata() {

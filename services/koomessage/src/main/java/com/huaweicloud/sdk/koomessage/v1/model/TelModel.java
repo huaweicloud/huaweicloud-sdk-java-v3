@@ -26,7 +26,7 @@ public class TelModel {
     }
 
     /**
-     * 电话号码（只能包含数字和-，且开头和结尾必须为数字）。
+     * 电话号码（只能包含数字和”-“，且开头和结尾必须为数字）。
      * @return tel
      */
     public String getTel() {

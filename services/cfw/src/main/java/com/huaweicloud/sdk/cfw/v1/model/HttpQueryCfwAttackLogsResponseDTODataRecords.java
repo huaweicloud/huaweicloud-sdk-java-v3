@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -182,6 +184,11 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
     @JsonProperty(value = "app")
 
     private String app;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "packetMessages")
+
+    private List<PacketMessage> packetMessages = null;
 
     public HttpQueryCfwAttackLogsResponseDTODataRecords withDirection(DirectionEnum direction) {
         this.direction = direction;
@@ -502,6 +509,40 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
         this.app = app;
     }
 
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withPacketMessages(List<PacketMessage> packetMessages) {
+        this.packetMessages = packetMessages;
+        return this;
+    }
+
+    public HttpQueryCfwAttackLogsResponseDTODataRecords addPacketMessagesItem(PacketMessage packetMessagesItem) {
+        if (this.packetMessages == null) {
+            this.packetMessages = new ArrayList<>();
+        }
+        this.packetMessages.add(packetMessagesItem);
+        return this;
+    }
+
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withPacketMessages(
+        Consumer<List<PacketMessage>> packetMessagesSetter) {
+        if (this.packetMessages == null) {
+            this.packetMessages = new ArrayList<>();
+        }
+        packetMessagesSetter.accept(this.packetMessages);
+        return this;
+    }
+
+    /**
+     * 攻击报文信息
+     * @return packetMessages
+     */
+    public List<PacketMessage> getPacketMessages() {
+        return packetMessages;
+    }
+
+    public void setPacketMessages(List<PacketMessage> packetMessages) {
+        this.packetMessages = packetMessages;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -529,7 +570,8 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
             && Objects.equals(this.dstPort, httpQueryCfwAttackLogsResponseDTODataRecords.dstPort)
             && Objects.equals(this.protocol, httpQueryCfwAttackLogsResponseDTODataRecords.protocol)
             && Objects.equals(this.packet, httpQueryCfwAttackLogsResponseDTODataRecords.packet)
-            && Objects.equals(this.app, httpQueryCfwAttackLogsResponseDTODataRecords.app);
+            && Objects.equals(this.app, httpQueryCfwAttackLogsResponseDTODataRecords.app)
+            && Objects.equals(this.packetMessages, httpQueryCfwAttackLogsResponseDTODataRecords.packetMessages);
     }
 
     @Override
@@ -551,7 +593,8 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
             dstPort,
             protocol,
             packet,
-            app);
+            app,
+            packetMessages);
     }
 
     @Override
@@ -576,6 +619,7 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    packet: ").append(toIndentedString(packet)).append("\n");
         sb.append("    app: ").append(toIndentedString(app)).append("\n");
+        sb.append("    packetMessages: ").append(toIndentedString(packetMessages)).append("\n");
         sb.append("}");
         return sb.toString();
     }

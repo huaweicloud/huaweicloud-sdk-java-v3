@@ -238,13 +238,6 @@ public class GslMeta {
             }));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateAttributeResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
 
         return builder.build();
     }

@@ -173,6 +173,94 @@ public class RuleAclListResponseDTODataRecords {
 
     private RuleServiceDto service;
 
+    /**
+     * 规则type，0：互联网规则，1：vpc规则，2nat规则
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final TypeEnum NUMBER_0 = new TypeEnum(0);
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final TypeEnum NUMBER_1 = new TypeEnum(1);
+
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final TypeEnum NUMBER_2 = new TypeEnum(2);
+
+        private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, TypeEnum> createStaticFields() {
+            Map<Integer, TypeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        TypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
+
     public RuleAclListResponseDTODataRecords withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -481,6 +569,23 @@ public class RuleAclListResponseDTODataRecords {
         this.service = service;
     }
 
+    public RuleAclListResponseDTODataRecords withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 规则type，0：互联网规则，1：vpc规则，2nat规则
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -505,7 +610,8 @@ public class RuleAclListResponseDTODataRecords {
             && Objects.equals(this.longConnectEnable, ruleAclListResponseDTODataRecords.longConnectEnable)
             && Objects.equals(this.source, ruleAclListResponseDTODataRecords.source)
             && Objects.equals(this.destination, ruleAclListResponseDTODataRecords.destination)
-            && Objects.equals(this.service, ruleAclListResponseDTODataRecords.service);
+            && Objects.equals(this.service, ruleAclListResponseDTODataRecords.service)
+            && Objects.equals(this.type, ruleAclListResponseDTODataRecords.type);
     }
 
     @Override
@@ -525,7 +631,8 @@ public class RuleAclListResponseDTODataRecords {
             longConnectEnable,
             source,
             destination,
-            service);
+            service,
+            type);
     }
 
     @Override
@@ -548,6 +655,7 @@ public class RuleAclListResponseDTODataRecords {
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
         sb.append("    service: ").append(toIndentedString(service)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

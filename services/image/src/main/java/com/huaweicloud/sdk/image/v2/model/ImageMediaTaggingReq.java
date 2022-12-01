@@ -35,6 +35,11 @@ public class ImageMediaTaggingReq {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "use_default_tags")
+
+    private String useDefaultTags;
+
     public ImageMediaTaggingReq withImage(String image) {
         this.image = image;
         return this;
@@ -120,6 +125,23 @@ public class ImageMediaTaggingReq {
         this.limit = limit;
     }
 
+    public ImageMediaTaggingReq withUseDefaultTags(String useDefaultTags) {
+        this.useDefaultTags = useDefaultTags;
+        return this;
+    }
+
+    /**
+     * \"true\"：使用系统默认标签体系。  \"false\"：使用用户自定义标签体系（用户需预先调用接口进行自定义标签体系的构建）。  默认值为\"true\"。
+     * @return useDefaultTags
+     */
+    public String getUseDefaultTags() {
+        return useDefaultTags;
+    }
+
+    public void setUseDefaultTags(String useDefaultTags) {
+        this.useDefaultTags = useDefaultTags;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -133,12 +155,13 @@ public class ImageMediaTaggingReq {
             && Objects.equals(this.url, imageMediaTaggingReq.url)
             && Objects.equals(this.language, imageMediaTaggingReq.language)
             && Objects.equals(this.threshold, imageMediaTaggingReq.threshold)
-            && Objects.equals(this.limit, imageMediaTaggingReq.limit);
+            && Objects.equals(this.limit, imageMediaTaggingReq.limit)
+            && Objects.equals(this.useDefaultTags, imageMediaTaggingReq.useDefaultTags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, language, threshold, limit);
+        return Objects.hash(image, url, language, threshold, limit, useDefaultTags);
     }
 
     @Override
@@ -150,6 +173,7 @@ public class ImageMediaTaggingReq {
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    useDefaultTags: ").append(toIndentedString(useDefaultTags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

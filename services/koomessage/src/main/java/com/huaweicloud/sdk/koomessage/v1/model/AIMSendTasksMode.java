@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -62,13 +64,23 @@ public class AIMSendTasksMode {
 
     private Integer supportResolveCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "failed_short_chains")
+
+    private List<CreateResolveTaskParamMode> failedShortChains = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "success_number")
+
+    private Integer successNumber;
+
     public AIMSendTasksMode withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
     }
 
     /**
-     * 短信任务名称。
+     * 智能信息发送任务名称。
      * @return taskName
      */
     public String getTaskName() {
@@ -250,6 +262,56 @@ public class AIMSendTasksMode {
         this.supportResolveCount = supportResolveCount;
     }
 
+    public AIMSendTasksMode withFailedShortChains(List<CreateResolveTaskParamMode> failedShortChains) {
+        this.failedShortChains = failedShortChains;
+        return this;
+    }
+
+    public AIMSendTasksMode addFailedShortChainsItem(CreateResolveTaskParamMode failedShortChainsItem) {
+        if (this.failedShortChains == null) {
+            this.failedShortChains = new ArrayList<>();
+        }
+        this.failedShortChains.add(failedShortChainsItem);
+        return this;
+    }
+
+    public AIMSendTasksMode withFailedShortChains(Consumer<List<CreateResolveTaskParamMode>> failedShortChainsSetter) {
+        if (this.failedShortChains == null) {
+            this.failedShortChains = new ArrayList<>();
+        }
+        failedShortChainsSetter.accept(this.failedShortChains);
+        return this;
+    }
+
+    /**
+     * 短链生成失败列表。  > 预留字段。 
+     * @return failedShortChains
+     */
+    public List<CreateResolveTaskParamMode> getFailedShortChains() {
+        return failedShortChains;
+    }
+
+    public void setFailedShortChains(List<CreateResolveTaskParamMode> failedShortChains) {
+        this.failedShortChains = failedShortChains;
+    }
+
+    public AIMSendTasksMode withSuccessNumber(Integer successNumber) {
+        this.successNumber = successNumber;
+        return this;
+    }
+
+    /**
+     * 发送成功的智能信息数。
+     * @return successNumber
+     */
+    public Integer getSuccessNumber() {
+        return successNumber;
+    }
+
+    public void setSuccessNumber(Integer successNumber) {
+        this.successNumber = successNumber;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -268,7 +330,9 @@ public class AIMSendTasksMode {
             && Objects.equals(this.submissionCount, aiMSendTasksMode.submissionCount)
             && Objects.equals(this.sendCount, aiMSendTasksMode.sendCount)
             && Objects.equals(this.resolveCount, aiMSendTasksMode.resolveCount)
-            && Objects.equals(this.supportResolveCount, aiMSendTasksMode.supportResolveCount);
+            && Objects.equals(this.supportResolveCount, aiMSendTasksMode.supportResolveCount)
+            && Objects.equals(this.failedShortChains, aiMSendTasksMode.failedShortChains)
+            && Objects.equals(this.successNumber, aiMSendTasksMode.successNumber);
     }
 
     @Override
@@ -282,7 +346,9 @@ public class AIMSendTasksMode {
             submissionCount,
             sendCount,
             resolveCount,
-            supportResolveCount);
+            supportResolveCount,
+            failedShortChains,
+            successNumber);
     }
 
     @Override
@@ -299,6 +365,8 @@ public class AIMSendTasksMode {
         sb.append("    sendCount: ").append(toIndentedString(sendCount)).append("\n");
         sb.append("    resolveCount: ").append(toIndentedString(resolveCount)).append("\n");
         sb.append("    supportResolveCount: ").append(toIndentedString(supportResolveCount)).append("\n");
+        sb.append("    failedShortChains: ").append(toIndentedString(failedShortChains)).append("\n");
+        sb.append("    successNumber: ").append(toIndentedString(successNumber)).append("\n");
         sb.append("}");
         return sb.toString();
     }

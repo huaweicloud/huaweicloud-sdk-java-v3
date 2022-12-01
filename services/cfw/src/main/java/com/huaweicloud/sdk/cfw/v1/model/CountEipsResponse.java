@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -12,71 +13,34 @@ import java.util.Objects;
 public class CountEipsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "object_id")
+    @JsonProperty(value = "data")
 
-    private String objectId;
+    private EipCountRespData data;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "eip_total")
+    public CountEipsResponse withData(EipCountRespData data) {
+        this.data = data;
+        return this;
+    }
 
-    private Integer eipTotal;
+    public CountEipsResponse withData(Consumer<EipCountRespData> dataSetter) {
+        if (this.data == null) {
+            this.data = new EipCountRespData();
+            dataSetter.accept(this.data);
+        }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "eip_protected")
-
-    private Integer eipProtected;
-
-    public CountEipsResponse withObjectId(String objectId) {
-        this.objectId = objectId;
         return this;
     }
 
     /**
-     * 防护对象ID
-     * @return objectId
+     * Get data
+     * @return data
      */
-    public String getObjectId() {
-        return objectId;
+    public EipCountRespData getData() {
+        return data;
     }
 
-    public void setObjectId(String objectId) {
-        this.objectId = objectId;
-    }
-
-    public CountEipsResponse withEipTotal(Integer eipTotal) {
-        this.eipTotal = eipTotal;
-        return this;
-    }
-
-    /**
-     * EIP总数
-     * minimum: 0
-     * @return eipTotal
-     */
-    public Integer getEipTotal() {
-        return eipTotal;
-    }
-
-    public void setEipTotal(Integer eipTotal) {
-        this.eipTotal = eipTotal;
-    }
-
-    public CountEipsResponse withEipProtected(Integer eipProtected) {
-        this.eipProtected = eipProtected;
-        return this;
-    }
-
-    /**
-     * EIP防护数
-     * minimum: 0
-     * @return eipProtected
-     */
-    public Integer getEipProtected() {
-        return eipProtected;
-    }
-
-    public void setEipProtected(Integer eipProtected) {
-        this.eipProtected = eipProtected;
+    public void setData(EipCountRespData data) {
+        this.data = data;
     }
 
     @Override
@@ -88,23 +52,19 @@ public class CountEipsResponse extends SdkResponse {
             return false;
         }
         CountEipsResponse countEipsResponse = (CountEipsResponse) o;
-        return Objects.equals(this.objectId, countEipsResponse.objectId)
-            && Objects.equals(this.eipTotal, countEipsResponse.eipTotal)
-            && Objects.equals(this.eipProtected, countEipsResponse.eipProtected);
+        return Objects.equals(this.data, countEipsResponse.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectId, eipTotal, eipProtected);
+        return Objects.hash(data);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CountEipsResponse {\n");
-        sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
-        sb.append("    eipTotal: ").append(toIndentedString(eipTotal)).append("\n");
-        sb.append("    eipProtected: ").append(toIndentedString(eipProtected)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }
