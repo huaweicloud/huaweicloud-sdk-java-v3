@@ -18,6 +18,217 @@ public class WorkspaceClient {
     }
 
     /**
+     * 删除接入策略
+     *
+     * 该接口用于删除指定接入策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteAccessPoliciesRequest 请求对象
+     * @return BatchDeleteAccessPoliciesResponse
+     */
+    public BatchDeleteAccessPoliciesResponse batchDeleteAccessPolicies(BatchDeleteAccessPoliciesRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.batchDeleteAccessPolicies);
+    }
+
+    /**
+     * 删除接入策略
+     *
+     * 该接口用于删除指定接入策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteAccessPoliciesRequest 请求对象
+     * @return SyncInvoker<BatchDeleteAccessPoliciesRequest, BatchDeleteAccessPoliciesResponse>
+     */
+    public SyncInvoker<BatchDeleteAccessPoliciesRequest, BatchDeleteAccessPoliciesResponse> batchDeleteAccessPoliciesInvoker(
+        BatchDeleteAccessPoliciesRequest request) {
+        return new SyncInvoker<BatchDeleteAccessPoliciesRequest, BatchDeleteAccessPoliciesResponse>(request,
+            WorkspaceMeta.batchDeleteAccessPolicies, hcClient);
+    }
+
+    /**
+     * 创建接入策略
+     *
+     * 该接口用于创建接入策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAccessPolicyRequest 请求对象
+     * @return CreateAccessPolicyResponse
+     */
+    public CreateAccessPolicyResponse createAccessPolicy(CreateAccessPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.createAccessPolicy);
+    }
+
+    /**
+     * 创建接入策略
+     *
+     * 该接口用于创建接入策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAccessPolicyRequest 请求对象
+     * @return SyncInvoker<CreateAccessPolicyRequest, CreateAccessPolicyResponse>
+     */
+    public SyncInvoker<CreateAccessPolicyRequest, CreateAccessPolicyResponse> createAccessPolicyInvoker(
+        CreateAccessPolicyRequest request) {
+        return new SyncInvoker<CreateAccessPolicyRequest, CreateAccessPolicyResponse>(request,
+            WorkspaceMeta.createAccessPolicy, hcClient);
+    }
+
+    /**
+     * 查询接入策略
+     *
+     * 该接口用于查询接入策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAccessPoliciesRequest 请求对象
+     * @return ListAccessPoliciesResponse
+     */
+    public ListAccessPoliciesResponse listAccessPolicies(ListAccessPoliciesRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.listAccessPolicies);
+    }
+
+    /**
+     * 查询接入策略
+     *
+     * 该接口用于查询接入策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAccessPoliciesRequest 请求对象
+     * @return SyncInvoker<ListAccessPoliciesRequest, ListAccessPoliciesResponse>
+     */
+    public SyncInvoker<ListAccessPoliciesRequest, ListAccessPoliciesResponse> listAccessPoliciesInvoker(
+        ListAccessPoliciesRequest request) {
+        return new SyncInvoker<ListAccessPoliciesRequest, ListAccessPoliciesResponse>(request,
+            WorkspaceMeta.listAccessPolicies, hcClient);
+    }
+
+    /**
+     * 查询指定接入策略的应用对象
+     *
+     * 该接口用于查询指定接入策略的应用对象。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAccessPolicyObjectsRequest 请求对象
+     * @return ListAccessPolicyObjectsResponse
+     */
+    public ListAccessPolicyObjectsResponse listAccessPolicyObjects(ListAccessPolicyObjectsRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.listAccessPolicyObjects);
+    }
+
+    /**
+     * 查询指定接入策略的应用对象
+     *
+     * 该接口用于查询指定接入策略的应用对象。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAccessPolicyObjectsRequest 请求对象
+     * @return SyncInvoker<ListAccessPolicyObjectsRequest, ListAccessPolicyObjectsResponse>
+     */
+    public SyncInvoker<ListAccessPolicyObjectsRequest, ListAccessPolicyObjectsResponse> listAccessPolicyObjectsInvoker(
+        ListAccessPolicyObjectsRequest request) {
+        return new SyncInvoker<ListAccessPolicyObjectsRequest, ListAccessPolicyObjectsResponse>(request,
+            WorkspaceMeta.listAccessPolicyObjects, hcClient);
+    }
+
+    /**
+     * 更新指定接入策略的应用对象
+     *
+     * 该接口用于更新指定接入策略的应用对象。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAccessPolicyObjectsRequest 请求对象
+     * @return UpdateAccessPolicyObjectsResponse
+     */
+    public UpdateAccessPolicyObjectsResponse updateAccessPolicyObjects(UpdateAccessPolicyObjectsRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.updateAccessPolicyObjects);
+    }
+
+    /**
+     * 更新指定接入策略的应用对象
+     *
+     * 该接口用于更新指定接入策略的应用对象。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAccessPolicyObjectsRequest 请求对象
+     * @return SyncInvoker<UpdateAccessPolicyObjectsRequest, UpdateAccessPolicyObjectsResponse>
+     */
+    public SyncInvoker<UpdateAccessPolicyObjectsRequest, UpdateAccessPolicyObjectsResponse> updateAccessPolicyObjectsInvoker(
+        UpdateAccessPolicyObjectsRequest request) {
+        return new SyncInvoker<UpdateAccessPolicyObjectsRequest, UpdateAccessPolicyObjectsResponse>(request,
+            WorkspaceMeta.updateAccessPolicyObjects, hcClient);
+    }
+
+    /**
+     * 查询辅助认证配置
+     *
+     * 查询辅助认证的配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAssistAuthConfigRequest 请求对象
+     * @return ShowAssistAuthConfigResponse
+     */
+    public ShowAssistAuthConfigResponse showAssistAuthConfig(ShowAssistAuthConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.showAssistAuthConfig);
+    }
+
+    /**
+     * 查询辅助认证配置
+     *
+     * 查询辅助认证的配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAssistAuthConfigRequest 请求对象
+     * @return SyncInvoker<ShowAssistAuthConfigRequest, ShowAssistAuthConfigResponse>
+     */
+    public SyncInvoker<ShowAssistAuthConfigRequest, ShowAssistAuthConfigResponse> showAssistAuthConfigInvoker(
+        ShowAssistAuthConfigRequest request) {
+        return new SyncInvoker<ShowAssistAuthConfigRequest, ShowAssistAuthConfigResponse>(request,
+            WorkspaceMeta.showAssistAuthConfig, hcClient);
+    }
+
+    /**
+     * 更新辅助认证策略配置
+     *
+     * 更新辅助认证策略配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAssistAuthMethodConfigRequest 请求对象
+     * @return UpdateAssistAuthMethodConfigResponse
+     */
+    public UpdateAssistAuthMethodConfigResponse updateAssistAuthMethodConfig(
+        UpdateAssistAuthMethodConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.updateAssistAuthMethodConfig);
+    }
+
+    /**
+     * 更新辅助认证策略配置
+     *
+     * 更新辅助认证策略配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAssistAuthMethodConfigRequest 请求对象
+     * @return SyncInvoker<UpdateAssistAuthMethodConfigRequest, UpdateAssistAuthMethodConfigResponse>
+     */
+    public SyncInvoker<UpdateAssistAuthMethodConfigRequest, UpdateAssistAuthMethodConfigResponse> updateAssistAuthMethodConfigInvoker(
+        UpdateAssistAuthMethodConfigRequest request) {
+        return new SyncInvoker<UpdateAssistAuthMethodConfigRequest, UpdateAssistAuthMethodConfigResponse>(request,
+            WorkspaceMeta.updateAssistAuthMethodConfig, hcClient);
+    }
+
+    /**
      * 查询可用分区列表
      *
      * 该接口用于查询云桌面支持的可用分区列表。
@@ -461,6 +672,222 @@ public class WorkspaceClient {
     }
 
     /**
+     * 增加终端与桌面绑定配置
+     *
+     * 增加终端与桌面绑定配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTerminalsBindingDesktopsRequest 请求对象
+     * @return CreateTerminalsBindingDesktopsResponse
+     */
+    public CreateTerminalsBindingDesktopsResponse createTerminalsBindingDesktops(
+        CreateTerminalsBindingDesktopsRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.createTerminalsBindingDesktops);
+    }
+
+    /**
+     * 增加终端与桌面绑定配置
+     *
+     * 增加终端与桌面绑定配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTerminalsBindingDesktopsRequest 请求对象
+     * @return SyncInvoker<CreateTerminalsBindingDesktopsRequest, CreateTerminalsBindingDesktopsResponse>
+     */
+    public SyncInvoker<CreateTerminalsBindingDesktopsRequest, CreateTerminalsBindingDesktopsResponse> createTerminalsBindingDesktopsInvoker(
+        CreateTerminalsBindingDesktopsRequest request) {
+        return new SyncInvoker<CreateTerminalsBindingDesktopsRequest, CreateTerminalsBindingDesktopsResponse>(request,
+            WorkspaceMeta.createTerminalsBindingDesktops, hcClient);
+    }
+
+    /**
+     * 删除终端与桌面绑定配置
+     *
+     * 删除终端与桌面绑定配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTerminalsBindingDesktopsRequest 请求对象
+     * @return DeleteTerminalsBindingDesktopsResponse
+     */
+    public DeleteTerminalsBindingDesktopsResponse deleteTerminalsBindingDesktops(
+        DeleteTerminalsBindingDesktopsRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.deleteTerminalsBindingDesktops);
+    }
+
+    /**
+     * 删除终端与桌面绑定配置
+     *
+     * 删除终端与桌面绑定配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTerminalsBindingDesktopsRequest 请求对象
+     * @return SyncInvoker<DeleteTerminalsBindingDesktopsRequest, DeleteTerminalsBindingDesktopsResponse>
+     */
+    public SyncInvoker<DeleteTerminalsBindingDesktopsRequest, DeleteTerminalsBindingDesktopsResponse> deleteTerminalsBindingDesktopsInvoker(
+        DeleteTerminalsBindingDesktopsRequest request) {
+        return new SyncInvoker<DeleteTerminalsBindingDesktopsRequest, DeleteTerminalsBindingDesktopsResponse>(request,
+            WorkspaceMeta.deleteTerminalsBindingDesktops, hcClient);
+    }
+
+    /**
+     * 查询终端与桌面绑定配置列表
+     *
+     * 查询终端与桌面绑定配置列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTerminalsBindingDesktopsRequest 请求对象
+     * @return ListTerminalsBindingDesktopsResponse
+     */
+    public ListTerminalsBindingDesktopsResponse listTerminalsBindingDesktops(
+        ListTerminalsBindingDesktopsRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.listTerminalsBindingDesktops);
+    }
+
+    /**
+     * 查询终端与桌面绑定配置列表
+     *
+     * 查询终端与桌面绑定配置列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTerminalsBindingDesktopsRequest 请求对象
+     * @return SyncInvoker<ListTerminalsBindingDesktopsRequest, ListTerminalsBindingDesktopsResponse>
+     */
+    public SyncInvoker<ListTerminalsBindingDesktopsRequest, ListTerminalsBindingDesktopsResponse> listTerminalsBindingDesktopsInvoker(
+        ListTerminalsBindingDesktopsRequest request) {
+        return new SyncInvoker<ListTerminalsBindingDesktopsRequest, ListTerminalsBindingDesktopsResponse>(request,
+            WorkspaceMeta.listTerminalsBindingDesktops, hcClient);
+    }
+
+    /**
+     * 查询终端与桌面绑定的开关配置信息
+     *
+     * 查询终端与桌面绑定的开关配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTerminalsBindingDesktopsConfigRequest 请求对象
+     * @return ListTerminalsBindingDesktopsConfigResponse
+     */
+    public ListTerminalsBindingDesktopsConfigResponse listTerminalsBindingDesktopsConfig(
+        ListTerminalsBindingDesktopsConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.listTerminalsBindingDesktopsConfig);
+    }
+
+    /**
+     * 查询终端与桌面绑定的开关配置信息
+     *
+     * 查询终端与桌面绑定的开关配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTerminalsBindingDesktopsConfigRequest 请求对象
+     * @return SyncInvoker<ListTerminalsBindingDesktopsConfigRequest, ListTerminalsBindingDesktopsConfigResponse>
+     */
+    public SyncInvoker<ListTerminalsBindingDesktopsConfigRequest, ListTerminalsBindingDesktopsConfigResponse> listTerminalsBindingDesktopsConfigInvoker(
+        ListTerminalsBindingDesktopsConfigRequest request) {
+        return new SyncInvoker<ListTerminalsBindingDesktopsConfigRequest, ListTerminalsBindingDesktopsConfigResponse>(
+            request, WorkspaceMeta.listTerminalsBindingDesktopsConfig, hcClient);
+    }
+
+    /**
+     * 修改终端与桌面绑定配置
+     *
+     * 修改终端与桌面绑定配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTerminalsBindingDesktopsRequest 请求对象
+     * @return UpdateTerminalsBindingDesktopsResponse
+     */
+    public UpdateTerminalsBindingDesktopsResponse updateTerminalsBindingDesktops(
+        UpdateTerminalsBindingDesktopsRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.updateTerminalsBindingDesktops);
+    }
+
+    /**
+     * 修改终端与桌面绑定配置
+     *
+     * 修改终端与桌面绑定配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTerminalsBindingDesktopsRequest 请求对象
+     * @return SyncInvoker<UpdateTerminalsBindingDesktopsRequest, UpdateTerminalsBindingDesktopsResponse>
+     */
+    public SyncInvoker<UpdateTerminalsBindingDesktopsRequest, UpdateTerminalsBindingDesktopsResponse> updateTerminalsBindingDesktopsInvoker(
+        UpdateTerminalsBindingDesktopsRequest request) {
+        return new SyncInvoker<UpdateTerminalsBindingDesktopsRequest, UpdateTerminalsBindingDesktopsResponse>(request,
+            WorkspaceMeta.updateTerminalsBindingDesktops, hcClient);
+    }
+
+    /**
+     * 设置终端与桌面绑定的开关配置
+     *
+     * 设置终端与桌面绑定的开关配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTerminalsBindingDesktopsConfigRequest 请求对象
+     * @return UpdateTerminalsBindingDesktopsConfigResponse
+     */
+    public UpdateTerminalsBindingDesktopsConfigResponse updateTerminalsBindingDesktopsConfig(
+        UpdateTerminalsBindingDesktopsConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.updateTerminalsBindingDesktopsConfig);
+    }
+
+    /**
+     * 设置终端与桌面绑定的开关配置
+     *
+     * 设置终端与桌面绑定的开关配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTerminalsBindingDesktopsConfigRequest 请求对象
+     * @return SyncInvoker<UpdateTerminalsBindingDesktopsConfigRequest, UpdateTerminalsBindingDesktopsConfigResponse>
+     */
+    public SyncInvoker<UpdateTerminalsBindingDesktopsConfigRequest, UpdateTerminalsBindingDesktopsConfigResponse> updateTerminalsBindingDesktopsConfigInvoker(
+        UpdateTerminalsBindingDesktopsConfigRequest request) {
+        return new SyncInvoker<UpdateTerminalsBindingDesktopsConfigRequest, UpdateTerminalsBindingDesktopsConfigResponse>(
+            request, WorkspaceMeta.updateTerminalsBindingDesktopsConfig, hcClient);
+    }
+
+    /**
+     * 解绑OTP设备
+     *
+     * 该接口用于解绑用户的OTP设备
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteOtpDevicesRequest 请求对象
+     * @return BatchDeleteOtpDevicesResponse
+     */
+    public BatchDeleteOtpDevicesResponse batchDeleteOtpDevices(BatchDeleteOtpDevicesRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.batchDeleteOtpDevices);
+    }
+
+    /**
+     * 解绑OTP设备
+     *
+     * 该接口用于解绑用户的OTP设备
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteOtpDevicesRequest 请求对象
+     * @return SyncInvoker<BatchDeleteOtpDevicesRequest, BatchDeleteOtpDevicesResponse>
+     */
+    public SyncInvoker<BatchDeleteOtpDevicesRequest, BatchDeleteOtpDevicesResponse> batchDeleteOtpDevicesInvoker(
+        BatchDeleteOtpDevicesRequest request) {
+        return new SyncInvoker<BatchDeleteOtpDevicesRequest, BatchDeleteOtpDevicesResponse>(request,
+            WorkspaceMeta.batchDeleteOtpDevices, hcClient);
+    }
+
+    /**
      * 操作用户
      *
      * 该接口用于操作用户，包含三种操作：锁定、解锁和重置密码。
@@ -546,6 +973,36 @@ public class WorkspaceClient {
      */
     public SyncInvoker<DeleteUserRequest, DeleteUserResponse> deleteUserInvoker(DeleteUserRequest request) {
         return new SyncInvoker<DeleteUserRequest, DeleteUserResponse>(request, WorkspaceMeta.deleteUser, hcClient);
+    }
+
+    /**
+     * 查询MFA设备
+     *
+     * 该接口用于查询相应用户下面的MFA设备
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOtpDevicesByUserIdRequest 请求对象
+     * @return ListOtpDevicesByUserIdResponse
+     */
+    public ListOtpDevicesByUserIdResponse listOtpDevicesByUserId(ListOtpDevicesByUserIdRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.listOtpDevicesByUserId);
+    }
+
+    /**
+     * 查询MFA设备
+     *
+     * 该接口用于查询相应用户下面的MFA设备
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOtpDevicesByUserIdRequest 请求对象
+     * @return SyncInvoker<ListOtpDevicesByUserIdRequest, ListOtpDevicesByUserIdResponse>
+     */
+    public SyncInvoker<ListOtpDevicesByUserIdRequest, ListOtpDevicesByUserIdResponse> listOtpDevicesByUserIdInvoker(
+        ListOtpDevicesByUserIdRequest request) {
+        return new SyncInvoker<ListOtpDevicesByUserIdRequest, ListOtpDevicesByUserIdResponse>(request,
+            WorkspaceMeta.listOtpDevicesByUserId, hcClient);
     }
 
     /**
@@ -662,6 +1119,36 @@ public class WorkspaceClient {
      */
     public SyncInvoker<AddVolumesRequest, AddVolumesResponse> addVolumesInvoker(AddVolumesRequest request) {
         return new SyncInvoker<AddVolumesRequest, AddVolumesResponse>(request, WorkspaceMeta.addVolumes, hcClient);
+    }
+
+    /**
+     * 删除桌面数据盘
+     *
+     * 删除桌面数据盘，删除后无法恢复。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDesktopVolumesRequest 请求对象
+     * @return DeleteDesktopVolumesResponse
+     */
+    public DeleteDesktopVolumesResponse deleteDesktopVolumes(DeleteDesktopVolumesRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.deleteDesktopVolumes);
+    }
+
+    /**
+     * 删除桌面数据盘
+     *
+     * 删除桌面数据盘，删除后无法恢复。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDesktopVolumesRequest 请求对象
+     * @return SyncInvoker<DeleteDesktopVolumesRequest, DeleteDesktopVolumesResponse>
+     */
+    public SyncInvoker<DeleteDesktopVolumesRequest, DeleteDesktopVolumesResponse> deleteDesktopVolumesInvoker(
+        DeleteDesktopVolumesRequest request) {
+        return new SyncInvoker<DeleteDesktopVolumesRequest, DeleteDesktopVolumesResponse>(request,
+            WorkspaceMeta.deleteDesktopVolumes, hcClient);
     }
 
     /**
@@ -784,6 +1271,66 @@ public class WorkspaceClient {
     public SyncInvoker<ListWorkspacesRequest, ListWorkspacesResponse> listWorkspacesInvoker(
         ListWorkspacesRequest request) {
         return new SyncInvoker<ListWorkspacesRequest, ListWorkspacesResponse>(request, WorkspaceMeta.listWorkspaces,
+            hcClient);
+    }
+
+    /**
+     * 查询云办公服务是否被锁定
+     *
+     * 查询云办公服务是否被锁定。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowWorkspaceLockRequest 请求对象
+     * @return ShowWorkspaceLockResponse
+     */
+    public ShowWorkspaceLockResponse showWorkspaceLock(ShowWorkspaceLockRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.showWorkspaceLock);
+    }
+
+    /**
+     * 查询云办公服务是否被锁定
+     *
+     * 查询云办公服务是否被锁定。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowWorkspaceLockRequest 请求对象
+     * @return SyncInvoker<ShowWorkspaceLockRequest, ShowWorkspaceLockResponse>
+     */
+    public SyncInvoker<ShowWorkspaceLockRequest, ShowWorkspaceLockResponse> showWorkspaceLockInvoker(
+        ShowWorkspaceLockRequest request) {
+        return new SyncInvoker<ShowWorkspaceLockRequest, ShowWorkspaceLockResponse>(request,
+            WorkspaceMeta.showWorkspaceLock, hcClient);
+    }
+
+    /**
+     * 解除云办公服务锁定状态
+     *
+     * 该接口目前支持解除云办公服务锁定状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UnlockWorkspaceRequest 请求对象
+     * @return UnlockWorkspaceResponse
+     */
+    public UnlockWorkspaceResponse unlockWorkspace(UnlockWorkspaceRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.unlockWorkspace);
+    }
+
+    /**
+     * 解除云办公服务锁定状态
+     *
+     * 该接口目前支持解除云办公服务锁定状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UnlockWorkspaceRequest 请求对象
+     * @return SyncInvoker<UnlockWorkspaceRequest, UnlockWorkspaceResponse>
+     */
+    public SyncInvoker<UnlockWorkspaceRequest, UnlockWorkspaceResponse> unlockWorkspaceInvoker(
+        UnlockWorkspaceRequest request) {
+        return new SyncInvoker<UnlockWorkspaceRequest, UnlockWorkspaceResponse>(request, WorkspaceMeta.unlockWorkspace,
             hcClient);
     }
 

@@ -18,10 +18,18 @@ public class ErRegion {
 
     public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://er.cn-north-4.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_2 = new Region("cn-north-2", "https://er.cn-north-2.myhuaweicloud.com");
+
     public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://er.cn-north-9.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_1 =
+        new Region("ap-southeast-1", "https://er.ap-southeast-1.myhuaweicloud.com");
 
     public static final Region AP_SOUTHEAST_2 =
         new Region("ap-southeast-2", "https://er.ap-southeast-2.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_3 =
+        new Region("ap-southeast-3", "https://er.ap-southeast-3.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("ER");
 
@@ -32,8 +40,11 @@ public class ErRegion {
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("cn-east-3", CN_EAST_3);
         map.put("cn-north-4", CN_NORTH_4);
+        map.put("cn-north-2", CN_NORTH_2);
         map.put("cn-north-9", CN_NORTH_9);
+        map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-2", AP_SOUTHEAST_2);
+        map.put("ap-southeast-3", AP_SOUTHEAST_3);
         return Collections.unmodifiableMap(map);
     }
 

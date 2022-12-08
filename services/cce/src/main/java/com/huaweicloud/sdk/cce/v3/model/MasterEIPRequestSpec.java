@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class MasterEIPRequestSpec {
 
     /**
-     * 绑定或解绑动作
+     * 绑定或解绑动作，必选参数。 - 绑定：固定值为{\"action\":\"bind\"} - 解绑：固定值为{\"action\":\"unbind\"} 
      */
     public static final class ActionEnum {
 
@@ -119,7 +119,7 @@ public class MasterEIPRequestSpec {
     }
 
     /**
-     * 绑定或解绑动作
+     * 绑定或解绑动作，必选参数。 - 绑定：固定值为{\"action\":\"bind\"} - 解绑：固定值为{\"action\":\"unbind\"} 
      * @return action
      */
     public ActionEnum getAction() {
@@ -162,7 +162,7 @@ public class MasterEIPRequestSpec {
     }
 
     /**
-     * 带宽
+     * 带宽(字段已失效，暂不推荐使用)
      * @return bandwidth
      */
     public String getBandwidth() {
@@ -179,7 +179,7 @@ public class MasterEIPRequestSpec {
     }
 
     /**
-     * 弹性网卡IP
+     * 弹性网卡IP(字段已失效，暂不推荐使用)
      * @return elasticIp
      */
     public String getElasticIp() {

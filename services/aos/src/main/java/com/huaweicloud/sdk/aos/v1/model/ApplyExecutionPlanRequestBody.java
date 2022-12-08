@@ -31,13 +31,6 @@ public class ApplyExecutionPlanRequestBody  {
     
     private String executionPlanId;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="executor")
-    
-    
-    private String executor;
-
     public ApplyExecutionPlanRequestBody withStackId(String stackId) {
         this.stackId = stackId;
         return this;
@@ -47,7 +40,7 @@ public class ApplyExecutionPlanRequestBody  {
 
 
     /**
-     * 堆栈id
+     * 资源栈id
      * @return stackId
      */
     public String getStackId() {
@@ -82,28 +75,6 @@ public class ApplyExecutionPlanRequestBody  {
 
     
 
-    public ApplyExecutionPlanRequestBody withExecutor(String executor) {
-        this.executor = executor;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 执行操作者的名字，用于审计工作
-     * @return executor
-     */
-    public String getExecutor() {
-        return executor;
-    }
-
-    public void setExecutor(String executor) {
-        this.executor = executor;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -114,12 +85,11 @@ public class ApplyExecutionPlanRequestBody  {
         }
         ApplyExecutionPlanRequestBody applyExecutionPlanRequestBody = (ApplyExecutionPlanRequestBody) o;
         return Objects.equals(this.stackId, applyExecutionPlanRequestBody.stackId) &&
-            Objects.equals(this.executionPlanId, applyExecutionPlanRequestBody.executionPlanId) &&
-            Objects.equals(this.executor, applyExecutionPlanRequestBody.executor);
+            Objects.equals(this.executionPlanId, applyExecutionPlanRequestBody.executionPlanId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(stackId, executionPlanId, executor);
+        return Objects.hash(stackId, executionPlanId);
     }
     @Override
     public String toString() {
@@ -127,7 +97,6 @@ public class ApplyExecutionPlanRequestBody  {
         sb.append("class ApplyExecutionPlanRequestBody {\n");
         sb.append("    stackId: ").append(toIndentedString(stackId)).append("\n");
         sb.append("    executionPlanId: ").append(toIndentedString(executionPlanId)).append("\n");
-        sb.append("    executor: ").append(toIndentedString(executor)).append("\n");
         sb.append("}");
         return sb.toString();
     }

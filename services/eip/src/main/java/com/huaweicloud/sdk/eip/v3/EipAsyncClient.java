@@ -81,6 +81,36 @@ public class EipAsyncClient {
     }
 
     /**
+     * 查询公网IP池列表
+     *
+     * 全量查询公网IP池列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPublicipPoolRequest 请求对象
+     * @return CompletableFuture<ListPublicipPoolResponse>
+     */
+    public CompletableFuture<ListPublicipPoolResponse> listPublicipPoolAsync(ListPublicipPoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.listPublicipPool);
+    }
+
+    /**
+     * 查询公网IP池列表
+     *
+     * 全量查询公网IP池列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPublicipPoolRequest 请求对象
+     * @return AsyncInvoker<ListPublicipPoolRequest, ListPublicipPoolResponse>
+     */
+    public AsyncInvoker<ListPublicipPoolRequest, ListPublicipPoolResponse> listPublicipPoolAsyncInvoker(
+        ListPublicipPoolRequest request) {
+        return new AsyncInvoker<ListPublicipPoolRequest, ListPublicipPoolResponse>(request, EipMeta.listPublicipPool,
+            hcClient);
+    }
+
+    /**
      * 查询指定租户下的共享带宽类型列表
      *
      * 查询指定租户下的共享带宽类型列表
@@ -109,6 +139,36 @@ public class EipAsyncClient {
         ListShareBandwidthTypesRequest request) {
         return new AsyncInvoker<ListShareBandwidthTypesRequest, ListShareBandwidthTypesResponse>(request,
             EipMeta.listShareBandwidthTypes, hcClient);
+    }
+
+    /**
+     * 查询公网IP池详情
+     *
+     * 查询公网IP池详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPublicipPoolRequest 请求对象
+     * @return CompletableFuture<ShowPublicipPoolResponse>
+     */
+    public CompletableFuture<ShowPublicipPoolResponse> showPublicipPoolAsync(ShowPublicipPoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.showPublicipPool);
+    }
+
+    /**
+     * 查询公网IP池详情
+     *
+     * 查询公网IP池详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPublicipPoolRequest 请求对象
+     * @return AsyncInvoker<ShowPublicipPoolRequest, ShowPublicipPoolResponse>
+     */
+    public AsyncInvoker<ShowPublicipPoolRequest, ShowPublicipPoolResponse> showPublicipPoolAsyncInvoker(
+        ShowPublicipPoolRequest request) {
+        return new AsyncInvoker<ShowPublicipPoolRequest, ShowPublicipPoolResponse>(request, EipMeta.showPublicipPool,
+            hcClient);
     }
 
     /**
@@ -142,6 +202,37 @@ public class EipAsyncClient {
     }
 
     /**
+     * 查询弹性公网IP可用数
+     *
+     * IP池用于查询公网可用ip个数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountEipAvailableResourcesRequest 请求对象
+     * @return CompletableFuture<CountEipAvailableResourcesResponse>
+     */
+    public CompletableFuture<CountEipAvailableResourcesResponse> countEipAvailableResourcesAsync(
+        CountEipAvailableResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.countEipAvailableResources);
+    }
+
+    /**
+     * 查询弹性公网IP可用数
+     *
+     * IP池用于查询公网可用ip个数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountEipAvailableResourcesRequest 请求对象
+     * @return AsyncInvoker<CountEipAvailableResourcesRequest, CountEipAvailableResourcesResponse>
+     */
+    public AsyncInvoker<CountEipAvailableResourcesRequest, CountEipAvailableResourcesResponse> countEipAvailableResourcesAsyncInvoker(
+        CountEipAvailableResourcesRequest request) {
+        return new AsyncInvoker<CountEipAvailableResourcesRequest, CountEipAvailableResourcesResponse>(request,
+            EipMeta.countEipAvailableResources, hcClient);
+    }
+
+    /**
      * 解绑弹性公网IP
      *
      * 解绑弹性公网IP
@@ -170,36 +261,6 @@ public class EipAsyncClient {
         DisassociatePublicipsRequest request) {
         return new AsyncInvoker<DisassociatePublicipsRequest, DisassociatePublicipsResponse>(request,
             EipMeta.disassociatePublicips, hcClient);
-    }
-
-    /**
-     * 查询公网IP池列表
-     *
-     * 全量查询公网IP池列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListPublicipPoolRequest 请求对象
-     * @return CompletableFuture<ListPublicipPoolResponse>
-     */
-    public CompletableFuture<ListPublicipPoolResponse> listPublicipPoolAsync(ListPublicipPoolRequest request) {
-        return hcClient.asyncInvokeHttp(request, EipMeta.listPublicipPool);
-    }
-
-    /**
-     * 查询公网IP池列表
-     *
-     * 全量查询公网IP池列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListPublicipPoolRequest 请求对象
-     * @return AsyncInvoker<ListPublicipPoolRequest, ListPublicipPoolResponse>
-     */
-    public AsyncInvoker<ListPublicipPoolRequest, ListPublicipPoolResponse> listPublicipPoolAsyncInvoker(
-        ListPublicipPoolRequest request) {
-        return new AsyncInvoker<ListPublicipPoolRequest, ListPublicipPoolResponse>(request, EipMeta.listPublicipPool,
-            hcClient);
     }
 
     /**
@@ -258,36 +319,6 @@ public class EipAsyncClient {
     public AsyncInvoker<ShowPublicipRequest, ShowPublicipResponse> showPublicipAsyncInvoker(
         ShowPublicipRequest request) {
         return new AsyncInvoker<ShowPublicipRequest, ShowPublicipResponse>(request, EipMeta.showPublicip, hcClient);
-    }
-
-    /**
-     * 查询公网IP池详情
-     *
-     * 查询公网IP池详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowPublicipPoolRequest 请求对象
-     * @return CompletableFuture<ShowPublicipPoolResponse>
-     */
-    public CompletableFuture<ShowPublicipPoolResponse> showPublicipPoolAsync(ShowPublicipPoolRequest request) {
-        return hcClient.asyncInvokeHttp(request, EipMeta.showPublicipPool);
-    }
-
-    /**
-     * 查询公网IP池详情
-     *
-     * 查询公网IP池详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowPublicipPoolRequest 请求对象
-     * @return AsyncInvoker<ShowPublicipPoolRequest, ShowPublicipPoolResponse>
-     */
-    public AsyncInvoker<ShowPublicipPoolRequest, ShowPublicipPoolResponse> showPublicipPoolAsyncInvoker(
-        ShowPublicipPoolRequest request) {
-        return new AsyncInvoker<ShowPublicipPoolRequest, ShowPublicipPoolResponse>(request, EipMeta.showPublicipPool,
-            hcClient);
     }
 
     /**

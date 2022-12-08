@@ -41,7 +41,7 @@ public class SwitchAgentRequest  {
 
 
     /**
-     * instance_id
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {

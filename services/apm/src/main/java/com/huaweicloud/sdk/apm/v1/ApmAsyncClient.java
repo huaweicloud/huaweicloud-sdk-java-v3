@@ -163,6 +163,64 @@ public class ApmAsyncClient {
     }
 
     /**
+     * 更改实例的采集状态
+     *
+     * 改变指定实例的采集状态：开启和关闭。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeAgentStatusRequest 请求对象
+     * @return CompletableFuture<ChangeAgentStatusResponse>
+     */
+    public CompletableFuture<ChangeAgentStatusResponse> changeAgentStatusAsync(ChangeAgentStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApmMeta.changeAgentStatus);
+    }
+
+    /**
+     * 更改实例的采集状态
+     *
+     * 改变指定实例的采集状态：开启和关闭。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeAgentStatusRequest 请求对象
+     * @return AsyncInvoker<ChangeAgentStatusRequest, ChangeAgentStatusResponse>
+     */
+    public AsyncInvoker<ChangeAgentStatusRequest, ChangeAgentStatusResponse> changeAgentStatusAsyncInvoker(
+        ChangeAgentStatusRequest request) {
+        return new AsyncInvoker<ChangeAgentStatusRequest, ChangeAgentStatusResponse>(request, ApmMeta.changeAgentStatus,
+            hcClient);
+    }
+
+    /**
+     * 删除agent
+     *
+     * 删除agent
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAgentRequest 请求对象
+     * @return CompletableFuture<DeleteAgentResponse>
+     */
+    public CompletableFuture<DeleteAgentResponse> deleteAgentAsync(DeleteAgentRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApmMeta.deleteAgent);
+    }
+
+    /**
+     * 删除agent
+     *
+     * 删除agent
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAgentRequest 请求对象
+     * @return AsyncInvoker<DeleteAgentRequest, DeleteAgentResponse>
+     */
+    public AsyncInvoker<DeleteAgentRequest, DeleteAgentResponse> deleteAgentAsyncInvoker(DeleteAgentRequest request) {
+        return new AsyncInvoker<DeleteAgentRequest, DeleteAgentResponse>(request, ApmMeta.deleteAgent, hcClient);
+    }
+
+    /**
      * 获取ak/sk
      *
      * 获取该用户创建的ak/sk列表。
@@ -278,6 +336,34 @@ public class ApmAsyncClient {
         SaveMonitorItemConfigRequest request) {
         return new AsyncInvoker<SaveMonitorItemConfigRequest, SaveMonitorItemConfigResponse>(request,
             ApmMeta.saveMonitorItemConfig, hcClient);
+    }
+
+    /**
+     * 搜索业务下所有探针
+     *
+     * 该接口用于搜索业务下所有探针情况。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SearchAgentRequest 请求对象
+     * @return CompletableFuture<SearchAgentResponse>
+     */
+    public CompletableFuture<SearchAgentResponse> searchAgentAsync(SearchAgentRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApmMeta.searchAgent);
+    }
+
+    /**
+     * 搜索业务下所有探针
+     *
+     * 该接口用于搜索业务下所有探针情况。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SearchAgentRequest 请求对象
+     * @return AsyncInvoker<SearchAgentRequest, SearchAgentResponse>
+     */
+    public AsyncInvoker<SearchAgentRequest, SearchAgentResponse> searchAgentAsyncInvoker(SearchAgentRequest request) {
+        return new AsyncInvoker<SearchAgentRequest, SearchAgentResponse>(request, ApmMeta.searchAgent, hcClient);
     }
 
     /**

@@ -43,7 +43,7 @@ public class DeleteDependencyVersionRequest {
     }
 
     /**
-     * 依赖包的ID。
+     * 依赖包版本号。
      * @return version
      */
     public String getVersion() {

@@ -160,6 +160,64 @@ public class ApmClient {
     }
 
     /**
+     * 更改实例的采集状态
+     *
+     * 改变指定实例的采集状态：开启和关闭。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeAgentStatusRequest 请求对象
+     * @return ChangeAgentStatusResponse
+     */
+    public ChangeAgentStatusResponse changeAgentStatus(ChangeAgentStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.changeAgentStatus);
+    }
+
+    /**
+     * 更改实例的采集状态
+     *
+     * 改变指定实例的采集状态：开启和关闭。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeAgentStatusRequest 请求对象
+     * @return SyncInvoker<ChangeAgentStatusRequest, ChangeAgentStatusResponse>
+     */
+    public SyncInvoker<ChangeAgentStatusRequest, ChangeAgentStatusResponse> changeAgentStatusInvoker(
+        ChangeAgentStatusRequest request) {
+        return new SyncInvoker<ChangeAgentStatusRequest, ChangeAgentStatusResponse>(request, ApmMeta.changeAgentStatus,
+            hcClient);
+    }
+
+    /**
+     * 删除agent
+     *
+     * 删除agent
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAgentRequest 请求对象
+     * @return DeleteAgentResponse
+     */
+    public DeleteAgentResponse deleteAgent(DeleteAgentRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.deleteAgent);
+    }
+
+    /**
+     * 删除agent
+     *
+     * 删除agent
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAgentRequest 请求对象
+     * @return SyncInvoker<DeleteAgentRequest, DeleteAgentResponse>
+     */
+    public SyncInvoker<DeleteAgentRequest, DeleteAgentResponse> deleteAgentInvoker(DeleteAgentRequest request) {
+        return new SyncInvoker<DeleteAgentRequest, DeleteAgentResponse>(request, ApmMeta.deleteAgent, hcClient);
+    }
+
+    /**
      * 获取ak/sk
      *
      * 获取该用户创建的ak/sk列表。
@@ -273,6 +331,34 @@ public class ApmClient {
         SaveMonitorItemConfigRequest request) {
         return new SyncInvoker<SaveMonitorItemConfigRequest, SaveMonitorItemConfigResponse>(request,
             ApmMeta.saveMonitorItemConfig, hcClient);
+    }
+
+    /**
+     * 搜索业务下所有探针
+     *
+     * 该接口用于搜索业务下所有探针情况。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SearchAgentRequest 请求对象
+     * @return SearchAgentResponse
+     */
+    public SearchAgentResponse searchAgent(SearchAgentRequest request) {
+        return hcClient.syncInvokeHttp(request, ApmMeta.searchAgent);
+    }
+
+    /**
+     * 搜索业务下所有探针
+     *
+     * 该接口用于搜索业务下所有探针情况。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SearchAgentRequest 请求对象
+     * @return SyncInvoker<SearchAgentRequest, SearchAgentResponse>
+     */
+    public SyncInvoker<SearchAgentRequest, SearchAgentResponse> searchAgentInvoker(SearchAgentRequest request) {
+        return new SyncInvoker<SearchAgentRequest, SearchAgentResponse>(request, ApmMeta.searchAgent, hcClient);
     }
 
     /**

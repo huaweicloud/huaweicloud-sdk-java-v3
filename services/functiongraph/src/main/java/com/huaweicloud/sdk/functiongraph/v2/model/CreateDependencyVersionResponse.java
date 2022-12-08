@@ -62,6 +62,11 @@ public class CreateDependencyVersionResponse extends SdkResponse {
     private Long version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dep_id")
+
+    private String depId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_modified")
 
     private Long lastModified;
@@ -72,7 +77,7 @@ public class CreateDependencyVersionResponse extends SdkResponse {
     }
 
     /**
-     * 依赖包ID。
+     * 依赖包版本ID。
      * @return id
      */
     public String getId() {
@@ -236,6 +241,23 @@ public class CreateDependencyVersionResponse extends SdkResponse {
         this.version = version;
     }
 
+    public CreateDependencyVersionResponse withDepId(String depId) {
+        this.depId = depId;
+        return this;
+    }
+
+    /**
+     * 依赖包ID
+     * @return depId
+     */
+    public String getDepId() {
+        return depId;
+    }
+
+    public void setDepId(String depId) {
+        this.depId = depId;
+    }
+
     public CreateDependencyVersionResponse withLastModified(Long lastModified) {
         this.lastModified = lastModified;
         return this;
@@ -272,12 +294,14 @@ public class CreateDependencyVersionResponse extends SdkResponse {
             && Objects.equals(this.description, createDependencyVersionResponse.description)
             && Objects.equals(this.fileName, createDependencyVersionResponse.fileName)
             && Objects.equals(this.version, createDependencyVersionResponse.version)
+            && Objects.equals(this.depId, createDependencyVersionResponse.depId)
             && Objects.equals(this.lastModified, createDependencyVersionResponse.lastModified);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, owner, link, runtime, etag, size, name, description, fileName, version, lastModified);
+        return Objects
+            .hash(id, owner, link, runtime, etag, size, name, description, fileName, version, depId, lastModified);
     }
 
     @Override
@@ -294,6 +318,7 @@ public class CreateDependencyVersionResponse extends SdkResponse {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    depId: ").append(toIndentedString(depId)).append("\n");
         sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
         sb.append("}");
         return sb.toString();

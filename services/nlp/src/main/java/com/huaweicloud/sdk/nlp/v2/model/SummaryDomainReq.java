@@ -278,7 +278,7 @@ public class SummaryDomainReq  {
 
 
     /**
-     * 文本正文（目前仅支持UTF-8编码），长度不超过1000字。
+     * 文本正文（目前仅支持UTF-8编码），长度不超过10000字。
      * @return content
      */
     public String getContent() {

@@ -2152,6 +2152,52 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse> setAutoEnlargePolicy =
+        genForsetAutoEnlargePolicy();
+
+    private static HttpRequestDef<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse> genForsetAutoEnlargePolicy() {
+        // basic
+        HttpRequestDef.Builder<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, SetAutoEnlargePolicyRequest.class, SetAutoEnlargePolicyResponse.class)
+            .withName("SetAutoEnlargePolicy")
+            .withUri("/v3/{project_id}/instances/{instance_id}/disk-auto-expansion")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetAutoEnlargePolicyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetAutoEnlargePolicyRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<CustomerModifyAutoEnlargePolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CustomerModifyAutoEnlargePolicyReq.class),
+            f -> f.withMarshaller(SetAutoEnlargePolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetAutoEnlargePolicyResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicy =
         genForsetBackupPolicy();
 
@@ -2265,6 +2311,52 @@ public class RdsMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetSecondLevelMonitorRequest, SetSecondLevelMonitorResponse> setSecondLevelMonitor =
+        genForsetSecondLevelMonitor();
+
+    private static HttpRequestDef<SetSecondLevelMonitorRequest, SetSecondLevelMonitorResponse> genForsetSecondLevelMonitor() {
+        // basic
+        HttpRequestDef.Builder<SetSecondLevelMonitorRequest, SetSecondLevelMonitorResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, SetSecondLevelMonitorRequest.class, SetSecondLevelMonitorResponse.class)
+            .withName("SetSecondLevelMonitor")
+            .withUri("/v3/{project_id}/instances/{instance_id}/second-level-monitor")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetSecondLevelMonitorRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetSecondLevelMonitorRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<SecondMonitor>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SecondMonitor.class),
+            f -> f.withMarshaller(SetSecondLevelMonitorRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetSecondLevelMonitorResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }
@@ -2411,6 +2503,38 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAuditlogPolicyRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> showAutoEnlargePolicy =
+        genForshowAutoEnlargePolicy();
+
+    private static HttpRequestDef<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> genForshowAutoEnlargePolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAutoEnlargePolicyRequest.class, ShowAutoEnlargePolicyResponse.class)
+            .withName("ShowAutoEnlargePolicy")
+            .withUri("/v3/{project_id}/instances/{instance_id}/disk-auto-expansion")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoEnlargePolicyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoEnlargePolicyRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 
@@ -2771,6 +2895,41 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowReplicationStatusRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecondLevelMonitoringRequest, ShowSecondLevelMonitoringResponse> showSecondLevelMonitoring =
+        genForshowSecondLevelMonitoring();
+
+    private static HttpRequestDef<ShowSecondLevelMonitoringRequest, ShowSecondLevelMonitoringResponse> genForshowSecondLevelMonitoring() {
+        // basic
+        HttpRequestDef.Builder<ShowSecondLevelMonitoringRequest, ShowSecondLevelMonitoringResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecondLevelMonitoringRequest.class,
+                    ShowSecondLevelMonitoringResponse.class)
+                .withName("ShowSecondLevelMonitoring")
+                .withUri("/v3/{project_id}/instances/{instance_id}/second-level-monitor")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecondLevelMonitoringRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecondLevelMonitoringRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 

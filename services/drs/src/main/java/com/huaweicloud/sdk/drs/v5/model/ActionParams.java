@@ -43,6 +43,16 @@ public class ActionParams {
 
     private CompareTaskParams compareTaskParam;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_sync_re_edit")
+
+    private Boolean isSyncReEdit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "force_delete")
+
+    private Boolean forceDelete;
+
     public ActionParams withEndpoints(List<JobEndpointInfo> endpoints) {
         this.endpoints = endpoints;
         return this;
@@ -179,6 +189,40 @@ public class ActionParams {
         this.compareTaskParam = compareTaskParam;
     }
 
+    public ActionParams withIsSyncReEdit(Boolean isSyncReEdit) {
+        this.isSyncReEdit = isSyncReEdit;
+        return this;
+    }
+
+    /**
+     * 再编辑任务启动时取值true。
+     * @return isSyncReEdit
+     */
+    public Boolean getIsSyncReEdit() {
+        return isSyncReEdit;
+    }
+
+    public void setIsSyncReEdit(Boolean isSyncReEdit) {
+        this.isSyncReEdit = isSyncReEdit;
+    }
+
+    public ActionParams withForceDelete(Boolean forceDelete) {
+        this.forceDelete = forceDelete;
+        return this;
+    }
+
+    /**
+     * 强制结束任务时取值true。
+     * @return forceDelete
+     */
+    public Boolean getForceDelete() {
+        return forceDelete;
+    }
+
+    public void setForceDelete(Boolean forceDelete) {
+        this.forceDelete = forceDelete;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -193,12 +237,21 @@ public class ActionParams {
             && Objects.equals(this.skipPrecheckInfo, actionParams.skipPrecheckInfo)
             && Objects.equals(this.pauseMode, actionParams.pauseMode)
             && Objects.equals(this.startTime, actionParams.startTime)
-            && Objects.equals(this.compareTaskParam, actionParams.compareTaskParam);
+            && Objects.equals(this.compareTaskParam, actionParams.compareTaskParam)
+            && Objects.equals(this.isSyncReEdit, actionParams.isSyncReEdit)
+            && Objects.equals(this.forceDelete, actionParams.forceDelete);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(endpoints, precheckMode, skipPrecheckInfo, pauseMode, startTime, compareTaskParam);
+        return Objects.hash(endpoints,
+            precheckMode,
+            skipPrecheckInfo,
+            pauseMode,
+            startTime,
+            compareTaskParam,
+            isSyncReEdit,
+            forceDelete);
     }
 
     @Override
@@ -211,6 +264,8 @@ public class ActionParams {
         sb.append("    pauseMode: ").append(toIndentedString(pauseMode)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    compareTaskParam: ").append(toIndentedString(compareTaskParam)).append("\n");
+        sb.append("    isSyncReEdit: ").append(toIndentedString(isSyncReEdit)).append("\n");
+        sb.append("    forceDelete: ").append(toIndentedString(forceDelete)).append("\n");
         sb.append("}");
         return sb.toString();
     }

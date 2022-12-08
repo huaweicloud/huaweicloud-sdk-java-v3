@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 如果用户给与的var_value是经过KMS加密的，可以通过传递相关加密信息，RF在使用的时候会帮助用户进行KMS解密  更多关于KMS加密介绍见：https://support.huaweicloud.com/productdesc-dew/dew_01_0006.html  * 注意：KMS每个月有免费试用的额度，如果超过，则KMS需要收费，此费用不是RF收取， 具体标准见：https://www.huaweicloud.com/pricing.html?tab&#x3D;detail#/dew  * 注意：KMS加密只代表RF在存储和传输的时候传递的是密文，但是在stack-events中依然是明文，如果希望在log中以密文形式对待， 请在模板中声名sensitive，更多关于sensitive的介绍见：https://learn.hashicorp.com/tutorials/terraform/sensitive-variables 
+ * 如果用户给与的var_value是经过KMS加密的，可以通过传递相关加密信息，资源编排服务在使用的时候会帮助用户进行KMS解密  更多关于KMS加密介绍见：https://support.huaweicloud.com/productdesc-dew/dew_01_0006.html  * 注意：KMS每个月有免费试用的额度，如果超过，则KMS需要收费，此费用不是资源编排服务收取， 具体标准见：https://www.huaweicloud.com/pricing.html?tab&#x3D;detail#/dew  * 注意：KMS加密只代表资源编排服务在存储和传输的时候传递的是密文，但是在stack-events中依然是明文，如果希望在log中以密文形式对待， 请在模板中声名sensitive，更多关于sensitive的介绍见：https://learn.hashicorp.com/tutorials/terraform/sensitive-variables 
  */
 public class KmsStructure  {
 
@@ -40,7 +40,7 @@ public class KmsStructure  {
 
 
     /**
-     * 解密时，RF应该使用的KMS秘钥的ID，通常是加密时所使用的秘钥ID
+     * 解密时，资源编排服务应该使用的KMS秘钥的ID，通常是加密时所使用的秘钥ID
      * @return id
      */
     public String getId() {

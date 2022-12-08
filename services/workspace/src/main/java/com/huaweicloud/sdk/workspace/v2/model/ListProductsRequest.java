@@ -40,6 +40,16 @@ public class ListProductsRequest {
 
     private String packageType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     public ListProductsRequest withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -142,6 +152,44 @@ public class ListProductsRequest {
         this.packageType = packageType;
     }
 
+    public ListProductsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页数量，范围0-100，默认100。
+     * minimum: 0
+     * maximum: 100
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListProductsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 偏移量，默认0。
+     * minimum: 0
+     * maximum: 5000
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -156,12 +204,14 @@ public class ListProductsRequest {
             && Objects.equals(this.osType, listProductsRequest.osType)
             && Objects.equals(this.chargeMode, listProductsRequest.chargeMode)
             && Objects.equals(this.architecture, listProductsRequest.architecture)
-            && Objects.equals(this.packageType, listProductsRequest.packageType);
+            && Objects.equals(this.packageType, listProductsRequest.packageType)
+            && Objects.equals(this.limit, listProductsRequest.limit)
+            && Objects.equals(this.offset, listProductsRequest.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(productId, availabilityZone, osType, chargeMode, architecture, packageType);
+        return Objects.hash(productId, availabilityZone, osType, chargeMode, architecture, packageType, limit, offset);
     }
 
     @Override
@@ -174,6 +224,8 @@ public class ListProductsRequest {
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
         sb.append("    packageType: ").append(toIndentedString(packageType)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 堆栈输出
+ * 资源栈输出
  */
 public class StackOutput  {
 
@@ -61,7 +61,7 @@ public class StackOutput  {
 
 
     /**
-     * 堆栈输出的name，由用户自己在模板中定义
+     * 资源栈输出的name，由用户自己在模板中定义
      * @return name
      */
     public String getName() {

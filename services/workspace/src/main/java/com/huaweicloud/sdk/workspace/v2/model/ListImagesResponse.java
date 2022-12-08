@@ -19,6 +19,11 @@ public class ListImagesResponse extends SdkResponse {
 
     private List<ImageInfo> images = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Integer totalCount;
+
     public ListImagesResponse withImages(List<ImageInfo> images) {
         this.images = images;
         return this;
@@ -52,6 +57,23 @@ public class ListImagesResponse extends SdkResponse {
         this.images = images;
     }
 
+    public ListImagesResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /**
+     * 对象总数。
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -61,12 +83,13 @@ public class ListImagesResponse extends SdkResponse {
             return false;
         }
         ListImagesResponse listImagesResponse = (ListImagesResponse) o;
-        return Objects.equals(this.images, listImagesResponse.images);
+        return Objects.equals(this.images, listImagesResponse.images)
+            && Objects.equals(this.totalCount, listImagesResponse.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(images);
+        return Objects.hash(images, totalCount);
     }
 
     @Override
@@ -74,6 +97,7 @@ public class ListImagesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListImagesResponse {\n");
         sb.append("    images: ").append(toIndentedString(images)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

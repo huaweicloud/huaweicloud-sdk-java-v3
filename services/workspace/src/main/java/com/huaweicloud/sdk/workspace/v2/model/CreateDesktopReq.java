@@ -145,11 +145,6 @@ public class CreateDesktopReq {
     private Boolean emailNotification;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "vpc_id")
-
-    private String vpcId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<Tag> tags = null;
@@ -414,23 +409,6 @@ public class CreateDesktopReq {
         this.emailNotification = emailNotification;
     }
 
-    public CreateDesktopReq withVpcId(String vpcId) {
-        this.vpcId = vpcId;
-        return this;
-    }
-
-    /**
-     * 在非对接AD场景首次创建桌面时使用。
-     * @return vpcId
-     */
-    public String getVpcId() {
-        return vpcId;
-    }
-
-    public void setVpcId(String vpcId) {
-        this.vpcId = vpcId;
-    }
-
     public CreateDesktopReq withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -484,7 +462,7 @@ public class CreateDesktopReq {
             && Objects.equals(this.securityGroups, createDesktopReq.securityGroups)
             && Objects.equals(this.desktops, createDesktopReq.desktops)
             && Objects.equals(this.emailNotification, createDesktopReq.emailNotification)
-            && Objects.equals(this.vpcId, createDesktopReq.vpcId) && Objects.equals(this.tags, createDesktopReq.tags);
+            && Objects.equals(this.tags, createDesktopReq.tags);
     }
 
     @Override
@@ -500,7 +478,6 @@ public class CreateDesktopReq {
             securityGroups,
             desktops,
             emailNotification,
-            vpcId,
             tags);
     }
 
@@ -519,7 +496,6 @@ public class CreateDesktopReq {
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
         sb.append("    desktops: ").append(toIndentedString(desktops)).append("\n");
         sb.append("    emailNotification: ").append(toIndentedString(emailNotification)).append("\n");
-        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();

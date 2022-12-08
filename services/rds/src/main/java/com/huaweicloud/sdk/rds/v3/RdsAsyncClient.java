@@ -1494,6 +1494,41 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 设置自动扩容策略
+     *
+     * 设置实例存储空间自动扩容策略，按扩容量扣除存储费用。
+     * 可用存储空间小于设置值或者10GB时，自动扩容当前存储空间的15%（非10倍数向上取整，账户余额不足，会导致自动扩容失败）。
+     * 设置只读实例自动扩容与主实例自动扩容互不影响，对只读实例设置自动扩容时，可选择大于或等于主实例的存储空间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetAutoEnlargePolicyRequest 请求对象
+     * @return CompletableFuture<SetAutoEnlargePolicyResponse>
+     */
+    public CompletableFuture<SetAutoEnlargePolicyResponse> setAutoEnlargePolicyAsync(
+        SetAutoEnlargePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.setAutoEnlargePolicy);
+    }
+
+    /**
+     * 设置自动扩容策略
+     *
+     * 设置实例存储空间自动扩容策略，按扩容量扣除存储费用。
+     * 可用存储空间小于设置值或者10GB时，自动扩容当前存储空间的15%（非10倍数向上取整，账户余额不足，会导致自动扩容失败）。
+     * 设置只读实例自动扩容与主实例自动扩容互不影响，对只读实例设置自动扩容时，可选择大于或等于主实例的存储空间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetAutoEnlargePolicyRequest 请求对象
+     * @return AsyncInvoker<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse>
+     */
+    public AsyncInvoker<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse> setAutoEnlargePolicyAsyncInvoker(
+        SetAutoEnlargePolicyRequest request) {
+        return new AsyncInvoker<SetAutoEnlargePolicyRequest, SetAutoEnlargePolicyResponse>(request,
+            RdsMeta.setAutoEnlargePolicy, hcClient);
+    }
+
+    /**
      * 设置自动备份策略
      *
      * 设置自动备份策略。
@@ -1583,6 +1618,41 @@ public class RdsAsyncClient {
         SetOffSiteBackupPolicyRequest request) {
         return new AsyncInvoker<SetOffSiteBackupPolicyRequest, SetOffSiteBackupPolicyResponse>(request,
             RdsMeta.setOffSiteBackupPolicy, hcClient);
+    }
+
+    /**
+     * 设置秒级监控策略
+     *
+     * 设置实例秒级监控策略，约五分钟后生效，对于1秒监控和5秒监控，计费方式为按需付费（每小时扣费一次）。
+     * 设置只读实例秒级监控与主实例互不影响。
+     * 规格变更到4U以下的实例，秒级监控功能会自动关闭。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetSecondLevelMonitorRequest 请求对象
+     * @return CompletableFuture<SetSecondLevelMonitorResponse>
+     */
+    public CompletableFuture<SetSecondLevelMonitorResponse> setSecondLevelMonitorAsync(
+        SetSecondLevelMonitorRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.setSecondLevelMonitor);
+    }
+
+    /**
+     * 设置秒级监控策略
+     *
+     * 设置实例秒级监控策略，约五分钟后生效，对于1秒监控和5秒监控，计费方式为按需付费（每小时扣费一次）。
+     * 设置只读实例秒级监控与主实例互不影响。
+     * 规格变更到4U以下的实例，秒级监控功能会自动关闭。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetSecondLevelMonitorRequest 请求对象
+     * @return AsyncInvoker<SetSecondLevelMonitorRequest, SetSecondLevelMonitorResponse>
+     */
+    public AsyncInvoker<SetSecondLevelMonitorRequest, SetSecondLevelMonitorResponse> setSecondLevelMonitorAsyncInvoker(
+        SetSecondLevelMonitorRequest request) {
+        return new AsyncInvoker<SetSecondLevelMonitorRequest, SetSecondLevelMonitorResponse>(request,
+            RdsMeta.setSecondLevelMonitor, hcClient);
     }
 
     /**
@@ -1704,6 +1774,37 @@ public class RdsAsyncClient {
         ShowAuditlogPolicyRequest request) {
         return new AsyncInvoker<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse>(request,
             RdsMeta.showAuditlogPolicy, hcClient);
+    }
+
+    /**
+     * 查询自动扩容策略
+     *
+     * 查询实例存储空间自动扩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAutoEnlargePolicyRequest 请求对象
+     * @return CompletableFuture<ShowAutoEnlargePolicyResponse>
+     */
+    public CompletableFuture<ShowAutoEnlargePolicyResponse> showAutoEnlargePolicyAsync(
+        ShowAutoEnlargePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showAutoEnlargePolicy);
+    }
+
+    /**
+     * 查询自动扩容策略
+     *
+     * 查询实例存储空间自动扩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAutoEnlargePolicyRequest 请求对象
+     * @return AsyncInvoker<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse>
+     */
+    public AsyncInvoker<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> showAutoEnlargePolicyAsyncInvoker(
+        ShowAutoEnlargePolicyRequest request) {
+        return new AsyncInvoker<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse>(request,
+            RdsMeta.showAutoEnlargePolicy, hcClient);
     }
 
     /**
@@ -2035,6 +2136,37 @@ public class RdsAsyncClient {
         ShowReplicationStatusRequest request) {
         return new AsyncInvoker<ShowReplicationStatusRequest, ShowReplicationStatusResponse>(request,
             RdsMeta.showReplicationStatus, hcClient);
+    }
+
+    /**
+     * 查询秒级监控策略
+     *
+     * 查询实例秒级监控策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSecondLevelMonitoringRequest 请求对象
+     * @return CompletableFuture<ShowSecondLevelMonitoringResponse>
+     */
+    public CompletableFuture<ShowSecondLevelMonitoringResponse> showSecondLevelMonitoringAsync(
+        ShowSecondLevelMonitoringRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showSecondLevelMonitoring);
+    }
+
+    /**
+     * 查询秒级监控策略
+     *
+     * 查询实例秒级监控策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSecondLevelMonitoringRequest 请求对象
+     * @return AsyncInvoker<ShowSecondLevelMonitoringRequest, ShowSecondLevelMonitoringResponse>
+     */
+    public AsyncInvoker<ShowSecondLevelMonitoringRequest, ShowSecondLevelMonitoringResponse> showSecondLevelMonitoringAsyncInvoker(
+        ShowSecondLevelMonitoringRequest request) {
+        return new AsyncInvoker<ShowSecondLevelMonitoringRequest, ShowSecondLevelMonitoringResponse>(request,
+            RdsMeta.showSecondLevelMonitoring, hcClient);
     }
 
     /**

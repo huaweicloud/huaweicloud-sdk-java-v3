@@ -139,6 +139,69 @@ public class ApmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeAgentStatusRequest, ChangeAgentStatusResponse> changeAgentStatus =
+        genForchangeAgentStatus();
+
+    private static HttpRequestDef<ChangeAgentStatusRequest, ChangeAgentStatusResponse> genForchangeAgentStatus() {
+        // basic
+        HttpRequestDef.Builder<ChangeAgentStatusRequest, ChangeAgentStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeAgentStatusRequest.class, ChangeAgentStatusResponse.class)
+                .withName("ChangeAgentStatus")
+                .withUri("/v1/apm2/openapi/apm-service/agent-mgr/change-status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ChangeAgentStatusRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+        builder.<AgentStatusChangeParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AgentStatusChangeParam.class),
+            f -> f.withMarshaller(ChangeAgentStatusRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAgentRequest, DeleteAgentResponse> deleteAgent = genFordeleteAgent();
+
+    private static HttpRequestDef<DeleteAgentRequest, DeleteAgentResponse> genFordeleteAgent() {
+        // basic
+        HttpRequestDef.Builder<DeleteAgentRequest, DeleteAgentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteAgentRequest.class, DeleteAgentResponse.class)
+                .withName("DeleteAgent")
+                .withUri("/v1/apm2/openapi/apm-service/agent-mgr/delete-agent")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(DeleteAgentRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+        builder.<AgentDeleteParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AgentDeleteParam.class),
+            f -> f.withMarshaller(DeleteAgentRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAkSkRequest, ListAkSkResponse> listAkSk = genForlistAkSk();
 
     private static HttpRequestDef<ListAkSkRequest, ListAkSkResponse> genForlistAkSk() {
@@ -229,6 +292,37 @@ public class ApmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SaveMonitorItemParam.class),
             f -> f.withMarshaller(SaveMonitorItemConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchAgentRequest, SearchAgentResponse> searchAgent = genForsearchAgent();
+
+    private static HttpRequestDef<SearchAgentRequest, SearchAgentResponse> genForsearchAgent() {
+        // basic
+        HttpRequestDef.Builder<SearchAgentRequest, SearchAgentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SearchAgentRequest.class, SearchAgentResponse.class)
+                .withName("SearchAgent")
+                .withUri("/v1/apm2/openapi/apm-service/agent-mgr/search")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(SearchAgentRequest::getXBusinessId, (req, v) -> {
+                req.setXBusinessId(v);
+            }));
+        builder.<AgentSearchParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AgentSearchParam.class),
+            f -> f.withMarshaller(SearchAgentRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

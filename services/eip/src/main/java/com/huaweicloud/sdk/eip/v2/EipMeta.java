@@ -125,6 +125,24 @@ public class EipMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListBandwidthPkgRequest, ListBandwidthPkgResponse> listBandwidthPkg =
+        genForlistBandwidthPkg();
+
+    private static HttpRequestDef<ListBandwidthPkgRequest, ListBandwidthPkgResponse> genForlistBandwidthPkg() {
+        // basic
+        HttpRequestDef.Builder<ListBandwidthPkgRequest, ListBandwidthPkgResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBandwidthPkgRequest.class, ListBandwidthPkgResponse.class)
+                .withName("ListBandwidthPkg")
+                .withUri("/v2/{project_id}/bandwidthpkgs")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListBandwidthsRequest, ListBandwidthsResponse> listBandwidths =
         genForlistBandwidths();
 
@@ -351,6 +369,56 @@ public class EipMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchCreatePublicipsRequest, BatchCreatePublicipsResponse> batchCreatePublicips =
+        genForbatchCreatePublicips();
+
+    private static HttpRequestDef<BatchCreatePublicipsRequest, BatchCreatePublicipsResponse> genForbatchCreatePublicips() {
+        // basic
+        HttpRequestDef.Builder<BatchCreatePublicipsRequest, BatchCreatePublicipsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchCreatePublicipsRequest.class, BatchCreatePublicipsResponse.class)
+            .withName("BatchCreatePublicips")
+            .withUri("/v2/{project_id}/batchpublicips")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchCreatePublicipsV2RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreatePublicipsV2RequestBody.class),
+            f -> f.withMarshaller(BatchCreatePublicipsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeletePublicIpRequest, BatchDeletePublicIpResponse> batchDeletePublicIp =
+        genForbatchDeletePublicIp();
+
+    private static HttpRequestDef<BatchDeletePublicIpRequest, BatchDeletePublicIpResponse> genForbatchDeletePublicIp() {
+        // basic
+        HttpRequestDef.Builder<BatchDeletePublicIpRequest, BatchDeletePublicIpResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, BatchDeletePublicIpRequest.class, BatchDeletePublicIpResponse.class)
+            .withName("BatchDeletePublicIp")
+            .withUri("/v2/{project_id}/batchpublicips")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchDeletePublicIpRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeletePublicIpRequestBody.class),
+            f -> f.withMarshaller(BatchDeletePublicIpRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeletePublicipTagsRequest, BatchDeletePublicipTagsResponse> batchDeletePublicipTags =
         genForbatchDeletePublicipTags();
 
@@ -379,6 +447,77 @@ public class EipMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDisassociatePublicipsRequest, BatchDisassociatePublicipsResponse> batchDisassociatePublicips =
+        genForbatchDisassociatePublicips();
+
+    private static HttpRequestDef<BatchDisassociatePublicipsRequest, BatchDisassociatePublicipsResponse> genForbatchDisassociatePublicips() {
+        // basic
+        HttpRequestDef.Builder<BatchDisassociatePublicipsRequest, BatchDisassociatePublicipsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PATCH,
+                    BatchDisassociatePublicipsRequest.class,
+                    BatchDisassociatePublicipsResponse.class)
+                .withName("BatchDisassociatePublicips")
+                .withUri("/v2/{project_id}/batchpublicips")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchDeletePublicIpRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeletePublicIpRequestBody.class),
+            f -> f.withMarshaller(BatchDisassociatePublicipsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountPublicIpRequest, CountPublicIpResponse> countPublicIp =
+        genForcountPublicIp();
+
+    private static HttpRequestDef<CountPublicIpRequest, CountPublicIpResponse> genForcountPublicIp() {
+        // basic
+        HttpRequestDef.Builder<CountPublicIpRequest, CountPublicIpResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CountPublicIpRequest.class, CountPublicIpResponse.class)
+                .withName("CountPublicIp")
+                .withUri("/v2/{project_id}/elasticips")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountPublicIpInstanceRequest, CountPublicIpInstanceResponse> countPublicIpInstance =
+        genForcountPublicIpInstance();
+
+    private static HttpRequestDef<CountPublicIpInstanceRequest, CountPublicIpInstanceResponse> genForcountPublicIpInstance() {
+        // basic
+        HttpRequestDef.Builder<CountPublicIpInstanceRequest, CountPublicIpInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, CountPublicIpInstanceRequest.class, CountPublicIpInstanceResponse.class)
+            .withName("CountPublicIpInstance")
+            .withUri("/v2/{project_id}/publicip/instances")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CountPublicIpInstanceResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }
@@ -642,6 +781,31 @@ public class EipMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPublicIpTypeRequest, ShowPublicIpTypeResponse> showPublicIpType =
+        genForshowPublicIpType();
+
+    private static HttpRequestDef<ShowPublicIpTypeRequest, ShowPublicIpTypeResponse> genForshowPublicIpType() {
+        // basic
+        HttpRequestDef.Builder<ShowPublicIpTypeRequest, ShowPublicIpTypeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPublicIpTypeRequest.class, ShowPublicIpTypeResponse.class)
+                .withName("ShowPublicIpType")
+                .withUri("/v2/{project_id}/publicip_types")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPublicIpTypeResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }

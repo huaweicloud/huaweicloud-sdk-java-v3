@@ -162,7 +162,7 @@ public class ActionReq {
     }
 
     /**
-     * 任务ID (对比任务相关操作，多任务场景传父任务详情返回的master_job_id)
+     * 任务ID (对比任务相关操作，多任务场景传父任务详情返回的master_job_id)，批量操作时必填
      * @return jobId
      */
     public String getJobId() {

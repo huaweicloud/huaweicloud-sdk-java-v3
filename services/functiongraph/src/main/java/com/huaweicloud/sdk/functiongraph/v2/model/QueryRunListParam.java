@@ -11,14 +11,14 @@ import java.util.Objects;
 public class QueryRunListParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page")
+    @JsonProperty(value = "offset")
 
-    private Integer page;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_size")
+    @JsonProperty(value = "limit")
 
-    private Integer pageSize;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
@@ -30,26 +30,26 @@ public class QueryRunListParam {
 
     private String endTime;
 
-    public QueryRunListParam withPage(Integer page) {
-        this.page = page;
+    public QueryRunListParam withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
-     * 页码
-     * minimum: 1
-     * @return page
+     * 偏移量,表示从此偏移量开始查询,默认值为0
+     * minimum: 0
+     * @return offset
      */
-    public Integer getPage() {
-        return page;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setPage(Integer page) {
-        this.page = page;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
-    public QueryRunListParam withPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public QueryRunListParam withLimit(Integer limit) {
+        this.limit = limit;
         return this;
     }
 
@@ -57,14 +57,14 @@ public class QueryRunListParam {
      * 每页大小
      * minimum: 1
      * maximum: 100
-     * @return pageSize
+     * @return limit
      */
-    public Integer getPageSize() {
-        return pageSize;
+    public Integer getLimit() {
+        return limit;
     }
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     public QueryRunListParam withStartTime(String startTime) {
@@ -110,23 +110,23 @@ public class QueryRunListParam {
             return false;
         }
         QueryRunListParam queryRunListParam = (QueryRunListParam) o;
-        return Objects.equals(this.page, queryRunListParam.page)
-            && Objects.equals(this.pageSize, queryRunListParam.pageSize)
+        return Objects.equals(this.offset, queryRunListParam.offset)
+            && Objects.equals(this.limit, queryRunListParam.limit)
             && Objects.equals(this.startTime, queryRunListParam.startTime)
             && Objects.equals(this.endTime, queryRunListParam.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(page, pageSize, startTime, endTime);
+        return Objects.hash(offset, limit, startTime, endTime);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class QueryRunListParam {\n");
-        sb.append("    page: ").append(toIndentedString(page)).append("\n");
-        sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");

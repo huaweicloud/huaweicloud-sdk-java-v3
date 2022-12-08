@@ -50,7 +50,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * 是否启用。
+     * 是否可以消费。
      * @return enabled
      */
     public Boolean getEnabled() {

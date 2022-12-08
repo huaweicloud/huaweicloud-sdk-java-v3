@@ -45,6 +45,11 @@ public class DynamicConfigInfo {
          */
         public static final TypeEnum ENCRYPT = new TypeEnum("encrypt");
 
+        /**
+         * Enum ENUM for value: "enum"
+         */
+        public static final TypeEnum ENUM = new TypeEnum("enum");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -52,6 +57,7 @@ public class DynamicConfigInfo {
             map.put("text", TEXT);
             map.put("host_group", HOST_GROUP);
             map.put("encrypt", ENCRYPT);
+            map.put("enum", ENUM);
             return Collections.unmodifiableMap(map);
         }
 

@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.projectman.v4.model.*;
 
+import java.util.List;
+
 @SuppressWarnings("unchecked")
 public class ProjectManMeta {
 
@@ -1158,6 +1160,45 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteAttachmentRequest, DeleteAttachmentResponse> deleteAttachment =
+        genFordeleteAttachment();
+
+    private static HttpRequestDef<DeleteAttachmentRequest, DeleteAttachmentResponse> genFordeleteAttachment() {
+        // basic
+        HttpRequestDef.Builder<DeleteAttachmentRequest, DeleteAttachmentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAttachmentRequest.class, DeleteAttachmentResponse.class)
+                .withName("DeleteAttachment")
+                .withUri("/v4/projects/{project_id}/issues/{issue_id}/attachments/{attachment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAttachmentRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("issue_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAttachmentRequest::getIssueId, (req, v) -> {
+                req.setIssueId(v);
+            }));
+        builder.<String>withRequestField("attachment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAttachmentRequest::getAttachmentId, (req, v) -> {
+                req.setAttachmentId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteIssueV4Request, DeleteIssueV4Response> deleteIssueV4 =
         genFordeleteIssueV4();
 
@@ -1247,6 +1288,45 @@ public class ProjectManMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(DeleteProjectModuleRequest::getModuleId, (req, v) -> {
                 req.setModuleId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadAttachmentRequest, DownloadAttachmentResponse> downloadAttachment =
+        genFordownloadAttachment();
+
+    private static HttpRequestDef<DownloadAttachmentRequest, DownloadAttachmentResponse> genFordownloadAttachment() {
+        // basic
+        HttpRequestDef.Builder<DownloadAttachmentRequest, DownloadAttachmentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, DownloadAttachmentRequest.class, DownloadAttachmentResponse.class)
+                .withName("DownloadAttachment")
+                .withUri("/v4/projects/{project_id}/issues/{issue_id}/attachments/{attachment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadAttachmentRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("issue_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadAttachmentRequest::getIssueId, (req, v) -> {
+                req.setIssueId(v);
+            }));
+        builder.<String>withRequestField("attachment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadAttachmentRequest::getAttachmentId, (req, v) -> {
+                req.setAttachmentId(v);
             }));
 
         // response
@@ -2000,6 +2080,59 @@ public class ProjectManMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListStatusStatisticRequest, ListStatusStatisticResponse> listStatusStatistic =
+        genForlistStatusStatistic();
+
+    private static HttpRequestDef<ListStatusStatisticRequest, ListStatusStatisticResponse> genForlistStatusStatistic() {
+        // basic
+        HttpRequestDef.Builder<ListStatusStatisticRequest, ListStatusStatisticResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListStatusStatisticRequest.class, ListStatusStatisticResponse.class)
+                .withName("ListStatusStatistic")
+                .withUri("/v4/projects/{project_id}/status-statistic")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStatusStatisticRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("iteration_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListStatusStatisticRequest::getIterationId, (req, v) -> {
+                req.setIterationId(v);
+            }));
+        builder.<Integer>withRequestField("tracker_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListStatusStatisticRequest::getTrackerId, (req, v) -> {
+                req.setTrackerId(v);
+            }));
+        builder.<Integer>withRequestField("status_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListStatusStatisticRequest::getStatusId, (req, v) -> {
+                req.setStatusId(v);
+            }));
+
+        // response
+        builder.<List<UserStatusStatistic>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListStatusStatisticResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(UserStatusStatistic.class));
 
         return builder.build();
     }

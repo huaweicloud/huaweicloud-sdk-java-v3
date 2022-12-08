@@ -15,16 +15,16 @@ public class ListFirewallUsingGetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private GetFirewallInstanceResponseData data;
+    private GetFirewallInstanceData data;
 
-    public ListFirewallUsingGetResponse withData(GetFirewallInstanceResponseData data) {
+    public ListFirewallUsingGetResponse withData(GetFirewallInstanceData data) {
         this.data = data;
         return this;
     }
 
-    public ListFirewallUsingGetResponse withData(Consumer<GetFirewallInstanceResponseData> dataSetter) {
+    public ListFirewallUsingGetResponse withData(Consumer<GetFirewallInstanceData> dataSetter) {
         if (this.data == null) {
-            this.data = new GetFirewallInstanceResponseData();
+            this.data = new GetFirewallInstanceData();
             dataSetter.accept(this.data);
         }
 
@@ -35,11 +35,11 @@ public class ListFirewallUsingGetResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public GetFirewallInstanceResponseData getData() {
+    public GetFirewallInstanceData getData() {
         return data;
     }
 
-    public void setData(GetFirewallInstanceResponseData data) {
+    public void setData(GetFirewallInstanceData data) {
         this.data = data;
     }
 

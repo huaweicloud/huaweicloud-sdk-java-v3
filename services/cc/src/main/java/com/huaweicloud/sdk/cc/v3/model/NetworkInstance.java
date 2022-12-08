@@ -126,7 +126,7 @@ public class NetworkInstance {
     private OffsetDateTime updatedAt;
 
     /**
-     * 网络实例的类型。 - VPC：虚拟私有云。 - VGW：虚拟网关。
+     * 网络实例的类型。 - vpc：虚拟私有云。 - vgw：虚拟网关。
      */
     public static final class TypeEnum {
 
@@ -362,7 +362,7 @@ public class NetworkInstance {
     }
 
     /**
-     * 网络实例的类型。 - VPC：虚拟私有云。 - VGW：虚拟网关。
+     * 网络实例的类型。 - vpc：虚拟私有云。 - vgw：虚拟网关。
      * @return type
      */
     public TypeEnum getType() {

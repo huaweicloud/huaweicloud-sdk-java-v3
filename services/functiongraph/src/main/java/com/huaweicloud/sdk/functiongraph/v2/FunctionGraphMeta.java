@@ -70,7 +70,7 @@ public class FunctionGraphMeta {
             }));
         builder.<Map<String, Object>>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Map.class),
             f -> f.withMarshaller(AsyncInvokeReservedFunctionRequest::getBody, (req, v) -> {
                 req.setBody(v);

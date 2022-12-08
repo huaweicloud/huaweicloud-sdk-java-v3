@@ -76,6 +76,62 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 解绑弹性公网IP
+     *
+     * 实例解绑弹性公网IP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CancelGaussMySqlInstanceEipRequest 请求对象
+     * @return CompletableFuture<CancelGaussMySqlInstanceEipResponse>
+     */
+    public CompletableFuture<CancelGaussMySqlInstanceEipResponse> cancelGaussMySqlInstanceEipAsync(CancelGaussMySqlInstanceEipRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.cancelGaussMySqlInstanceEip);
+    }
+
+    /**
+     * 解绑弹性公网IP
+     *
+     * 实例解绑弹性公网IP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CancelGaussMySqlInstanceEipRequest 请求对象
+     * @return AsyncInvoker<CancelGaussMySqlInstanceEipRequest, CancelGaussMySqlInstanceEipResponse>
+     */
+    public AsyncInvoker<CancelGaussMySqlInstanceEipRequest, CancelGaussMySqlInstanceEipResponse> cancelGaussMySqlInstanceEipAsyncInvoker(CancelGaussMySqlInstanceEipRequest request) {
+        return new AsyncInvoker<CancelGaussMySqlInstanceEipRequest, CancelGaussMySqlInstanceEipResponse>(request, GaussDBMeta.cancelGaussMySqlInstanceEip, hcClient);
+    }
+
+    /**
+     * 取消定时任务
+     *
+     * 取消定时任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CancelScheduleTaskRequest 请求对象
+     * @return CompletableFuture<CancelScheduleTaskResponse>
+     */
+    public CompletableFuture<CancelScheduleTaskResponse> cancelScheduleTaskAsync(CancelScheduleTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.cancelScheduleTask);
+    }
+
+    /**
+     * 取消定时任务
+     *
+     * 取消定时任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CancelScheduleTaskRequest 请求对象
+     * @return AsyncInvoker<CancelScheduleTaskRequest, CancelScheduleTaskResponse>
+     */
+    public AsyncInvoker<CancelScheduleTaskRequest, CancelScheduleTaskResponse> cancelScheduleTaskAsyncInvoker(CancelScheduleTaskRequest request) {
+        return new AsyncInvoker<CancelScheduleTaskRequest, CancelScheduleTaskResponse>(request, GaussDBMeta.cancelScheduleTask, hcClient);
+    }
+
+    /**
      * 变更实例规格
      *
      * 变更数据库实例的规格。
@@ -157,6 +213,34 @@ public class GaussDBAsyncClient {
      */
     public AsyncInvoker<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse> createGaussMySqlBackupAsyncInvoker(CreateGaussMySqlBackupRequest request) {
         return new AsyncInvoker<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse>(request, GaussDBMeta.createGaussMySqlBackup, hcClient);
+    }
+
+    /**
+     * 创建参数模板
+     *
+     * 创建参数模板信息，包含参数模板名称、描述、数据库版本信息、参数值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateGaussMySqlConfigurationRequest 请求对象
+     * @return CompletableFuture<CreateGaussMySqlConfigurationResponse>
+     */
+    public CompletableFuture<CreateGaussMySqlConfigurationResponse> createGaussMySqlConfigurationAsync(CreateGaussMySqlConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.createGaussMySqlConfiguration);
+    }
+
+    /**
+     * 创建参数模板
+     *
+     * 创建参数模板信息，包含参数模板名称、描述、数据库版本信息、参数值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateGaussMySqlConfigurationRequest 请求对象
+     * @return AsyncInvoker<CreateGaussMySqlConfigurationRequest, CreateGaussMySqlConfigurationResponse>
+     */
+    public AsyncInvoker<CreateGaussMySqlConfigurationRequest, CreateGaussMySqlConfigurationResponse> createGaussMySqlConfigurationAsyncInvoker(CreateGaussMySqlConfigurationRequest request) {
+        return new AsyncInvoker<CreateGaussMySqlConfigurationRequest, CreateGaussMySqlConfigurationResponse>(request, GaussDBMeta.createGaussMySqlConfiguration, hcClient);
     }
 
     /**
@@ -328,6 +412,62 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 删除手动备份
+     *
+     * 删除手动备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteGaussMySqlBackupRequest 请求对象
+     * @return CompletableFuture<DeleteGaussMySqlBackupResponse>
+     */
+    public CompletableFuture<DeleteGaussMySqlBackupResponse> deleteGaussMySqlBackupAsync(DeleteGaussMySqlBackupRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.deleteGaussMySqlBackup);
+    }
+
+    /**
+     * 删除手动备份
+     *
+     * 删除手动备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteGaussMySqlBackupRequest 请求对象
+     * @return AsyncInvoker<DeleteGaussMySqlBackupRequest, DeleteGaussMySqlBackupResponse>
+     */
+    public AsyncInvoker<DeleteGaussMySqlBackupRequest, DeleteGaussMySqlBackupResponse> deleteGaussMySqlBackupAsyncInvoker(DeleteGaussMySqlBackupRequest request) {
+        return new AsyncInvoker<DeleteGaussMySqlBackupRequest, DeleteGaussMySqlBackupResponse>(request, GaussDBMeta.deleteGaussMySqlBackup, hcClient);
+    }
+
+    /**
+     * 删除参数模板
+     *
+     * 删除指定参数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteGaussMySqlConfigurationRequest 请求对象
+     * @return CompletableFuture<DeleteGaussMySqlConfigurationResponse>
+     */
+    public CompletableFuture<DeleteGaussMySqlConfigurationResponse> deleteGaussMySqlConfigurationAsync(DeleteGaussMySqlConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.deleteGaussMySqlConfiguration);
+    }
+
+    /**
+     * 删除参数模板
+     *
+     * 删除指定参数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteGaussMySqlConfigurationRequest 请求对象
+     * @return AsyncInvoker<DeleteGaussMySqlConfigurationRequest, DeleteGaussMySqlConfigurationResponse>
+     */
+    public AsyncInvoker<DeleteGaussMySqlConfigurationRequest, DeleteGaussMySqlConfigurationResponse> deleteGaussMySqlConfigurationAsyncInvoker(DeleteGaussMySqlConfigurationRequest request) {
+        return new AsyncInvoker<DeleteGaussMySqlConfigurationRequest, DeleteGaussMySqlConfigurationResponse>(request, GaussDBMeta.deleteGaussMySqlConfiguration, hcClient);
+    }
+
+    /**
      * 删除数据库
      *
      * 删除云数据库 GaussDB(for MySQL)实例数据库。
@@ -468,6 +608,34 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 删除指定任务记录
+     *
+     * 删除指定任务记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTaskRecordRequest 请求对象
+     * @return CompletableFuture<DeleteTaskRecordResponse>
+     */
+    public CompletableFuture<DeleteTaskRecordResponse> deleteTaskRecordAsync(DeleteTaskRecordRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.deleteTaskRecord);
+    }
+
+    /**
+     * 删除指定任务记录
+     *
+     * 删除指定任务记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTaskRecordRequest 请求对象
+     * @return AsyncInvoker<DeleteTaskRecordRequest, DeleteTaskRecordResponse>
+     */
+    public AsyncInvoker<DeleteTaskRecordRequest, DeleteTaskRecordResponse> deleteTaskRecordAsyncInvoker(DeleteTaskRecordRequest request) {
+        return new AsyncInvoker<DeleteTaskRecordRequest, DeleteTaskRecordResponse>(request, GaussDBMeta.deleteTaskRecord, hcClient);
+    }
+
+    /**
      * 包周期存储扩容
      *
      * 包周期存储扩容
@@ -523,6 +691,34 @@ public class GaussDBAsyncClient {
      */
     public AsyncInvoker<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse> expandGaussMySqlProxyAsyncInvoker(ExpandGaussMySqlProxyRequest request) {
         return new AsyncInvoker<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse>(request, GaussDBMeta.expandGaussMySqlProxy, hcClient);
+    }
+
+    /**
+     * 手动主备倒换
+     *
+     * 用户手动进行主备倒换。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param InvokeGaussMySqlInstanceSwitchOverRequest 请求对象
+     * @return CompletableFuture<InvokeGaussMySqlInstanceSwitchOverResponse>
+     */
+    public CompletableFuture<InvokeGaussMySqlInstanceSwitchOverResponse> invokeGaussMySqlInstanceSwitchOverAsync(InvokeGaussMySqlInstanceSwitchOverRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.invokeGaussMySqlInstanceSwitchOver);
+    }
+
+    /**
+     * 手动主备倒换
+     *
+     * 用户手动进行主备倒换。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param InvokeGaussMySqlInstanceSwitchOverRequest 请求对象
+     * @return AsyncInvoker<InvokeGaussMySqlInstanceSwitchOverRequest, InvokeGaussMySqlInstanceSwitchOverResponse>
+     */
+    public AsyncInvoker<InvokeGaussMySqlInstanceSwitchOverRequest, InvokeGaussMySqlInstanceSwitchOverResponse> invokeGaussMySqlInstanceSwitchOverAsyncInvoker(InvokeGaussMySqlInstanceSwitchOverRequest request) {
+        return new AsyncInvoker<InvokeGaussMySqlInstanceSwitchOverRequest, InvokeGaussMySqlInstanceSwitchOverResponse>(request, GaussDBMeta.invokeGaussMySqlInstanceSwitchOver, hcClient);
     }
 
     /**
@@ -778,6 +974,34 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 获取即时任务列表
+     *
+     * 获取即时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListImmediateJobsRequest 请求对象
+     * @return CompletableFuture<ListImmediateJobsResponse>
+     */
+    public CompletableFuture<ListImmediateJobsResponse> listImmediateJobsAsync(ListImmediateJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.listImmediateJobs);
+    }
+
+    /**
+     * 获取即时任务列表
+     *
+     * 获取即时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListImmediateJobsRequest 请求对象
+     * @return AsyncInvoker<ListImmediateJobsRequest, ListImmediateJobsResponse>
+     */
+    public AsyncInvoker<ListImmediateJobsRequest, ListImmediateJobsResponse> listImmediateJobsAsyncInvoker(ListImmediateJobsRequest request) {
+        return new AsyncInvoker<ListImmediateJobsRequest, ListImmediateJobsResponse>(request, GaussDBMeta.listImmediateJobs, hcClient);
+    }
+
+    /**
      * 查询资源标签
      *
      * 查询指定实例的标签信息。
@@ -834,6 +1058,34 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 获取定时任务列表
+     *
+     * 获取定时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListScheduleJobsRequest 请求对象
+     * @return CompletableFuture<ListScheduleJobsResponse>
+     */
+    public CompletableFuture<ListScheduleJobsResponse> listScheduleJobsAsync(ListScheduleJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.listScheduleJobs);
+    }
+
+    /**
+     * 获取定时任务列表
+     *
+     * 获取定时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListScheduleJobsRequest 请求对象
+     * @return AsyncInvoker<ListScheduleJobsRequest, ListScheduleJobsResponse>
+     */
+    public AsyncInvoker<ListScheduleJobsRequest, ListScheduleJobsResponse> listScheduleJobsAsyncInvoker(ListScheduleJobsRequest request) {
+        return new AsyncInvoker<ListScheduleJobsRequest, ListScheduleJobsResponse>(request, GaussDBMeta.listScheduleJobs, hcClient);
+    }
+
+    /**
      * 修改数据库用户密码
      *
      * 修改云数据库 GaussDB(for MySQL)实例数据库用户密码。
@@ -887,6 +1139,62 @@ public class GaussDBAsyncClient {
      */
     public AsyncInvoker<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse> resetGaussMySqlPasswordAsyncInvoker(ResetGaussMySqlPasswordRequest request) {
         return new AsyncInvoker<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse>(request, GaussDBMeta.resetGaussMySqlPassword, hcClient);
+    }
+
+    /**
+     * 重启数据库实例
+     *
+     * 重启数据库实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestartGaussMySqlInstanceRequest 请求对象
+     * @return CompletableFuture<RestartGaussMySqlInstanceResponse>
+     */
+    public CompletableFuture<RestartGaussMySqlInstanceResponse> restartGaussMySqlInstanceAsync(RestartGaussMySqlInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.restartGaussMySqlInstance);
+    }
+
+    /**
+     * 重启数据库实例
+     *
+     * 重启数据库实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestartGaussMySqlInstanceRequest 请求对象
+     * @return AsyncInvoker<RestartGaussMySqlInstanceRequest, RestartGaussMySqlInstanceResponse>
+     */
+    public AsyncInvoker<RestartGaussMySqlInstanceRequest, RestartGaussMySqlInstanceResponse> restartGaussMySqlInstanceAsyncInvoker(RestartGaussMySqlInstanceRequest request) {
+        return new AsyncInvoker<RestartGaussMySqlInstanceRequest, RestartGaussMySqlInstanceResponse>(request, GaussDBMeta.restartGaussMySqlInstance, hcClient);
+    }
+
+    /**
+     * 节点重启
+     *
+     * 节点重启。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestartGaussMySqlNodeRequest 请求对象
+     * @return CompletableFuture<RestartGaussMySqlNodeResponse>
+     */
+    public CompletableFuture<RestartGaussMySqlNodeResponse> restartGaussMySqlNodeAsync(RestartGaussMySqlNodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.restartGaussMySqlNode);
+    }
+
+    /**
+     * 节点重启
+     *
+     * 节点重启。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestartGaussMySqlNodeRequest 请求对象
+     * @return AsyncInvoker<RestartGaussMySqlNodeRequest, RestartGaussMySqlNodeResponse>
+     */
+    public AsyncInvoker<RestartGaussMySqlNodeRequest, RestartGaussMySqlNodeResponse> restartGaussMySqlNodeAsyncInvoker(RestartGaussMySqlNodeRequest request) {
+        return new AsyncInvoker<RestartGaussMySqlNodeRequest, RestartGaussMySqlNodeResponse>(request, GaussDBMeta.restartGaussMySqlNode, hcClient);
     }
 
     /**
@@ -1055,6 +1363,34 @@ public class GaussDBAsyncClient {
      */
     public AsyncInvoker<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse> showGaussMySqlBackupPolicyAsyncInvoker(ShowGaussMySqlBackupPolicyRequest request) {
         return new AsyncInvoker<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse>(request, GaussDBMeta.showGaussMySqlBackupPolicy, hcClient);
+    }
+
+    /**
+     * 获取参数模板详情
+     *
+     * 获取指定参数模板的参数信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowGaussMySqlConfigurationRequest 请求对象
+     * @return CompletableFuture<ShowGaussMySqlConfigurationResponse>
+     */
+    public CompletableFuture<ShowGaussMySqlConfigurationResponse> showGaussMySqlConfigurationAsync(ShowGaussMySqlConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.showGaussMySqlConfiguration);
+    }
+
+    /**
+     * 获取参数模板详情
+     *
+     * 获取指定参数模板的参数信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowGaussMySqlConfigurationRequest 请求对象
+     * @return AsyncInvoker<ShowGaussMySqlConfigurationRequest, ShowGaussMySqlConfigurationResponse>
+     */
+    public AsyncInvoker<ShowGaussMySqlConfigurationRequest, ShowGaussMySqlConfigurationResponse> showGaussMySqlConfigurationAsyncInvoker(ShowGaussMySqlConfigurationRequest request) {
+        return new AsyncInvoker<ShowGaussMySqlConfigurationRequest, ShowGaussMySqlConfigurationResponse>(request, GaussDBMeta.showGaussMySqlConfiguration, hcClient);
     }
 
     /**
@@ -1310,6 +1646,62 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 应用参数模板
+     *
+     * 指定实例变更参数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchGaussMySqlConfigurationRequest 请求对象
+     * @return CompletableFuture<SwitchGaussMySqlConfigurationResponse>
+     */
+    public CompletableFuture<SwitchGaussMySqlConfigurationResponse> switchGaussMySqlConfigurationAsync(SwitchGaussMySqlConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.switchGaussMySqlConfiguration);
+    }
+
+    /**
+     * 应用参数模板
+     *
+     * 指定实例变更参数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchGaussMySqlConfigurationRequest 请求对象
+     * @return AsyncInvoker<SwitchGaussMySqlConfigurationRequest, SwitchGaussMySqlConfigurationResponse>
+     */
+    public AsyncInvoker<SwitchGaussMySqlConfigurationRequest, SwitchGaussMySqlConfigurationResponse> switchGaussMySqlConfigurationAsyncInvoker(SwitchGaussMySqlConfigurationRequest request) {
+        return new AsyncInvoker<SwitchGaussMySqlConfigurationRequest, SwitchGaussMySqlConfigurationResponse>(request, GaussDBMeta.switchGaussMySqlConfiguration, hcClient);
+    }
+
+    /**
+     * 开关SSL
+     *
+     * 为实例设置SSL数据加密。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchGaussMySqlInstanceSslRequest 请求对象
+     * @return CompletableFuture<SwitchGaussMySqlInstanceSslResponse>
+     */
+    public CompletableFuture<SwitchGaussMySqlInstanceSslResponse> switchGaussMySqlInstanceSslAsync(SwitchGaussMySqlInstanceSslRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.switchGaussMySqlInstanceSsl);
+    }
+
+    /**
+     * 开关SSL
+     *
+     * 为实例设置SSL数据加密。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchGaussMySqlInstanceSslRequest 请求对象
+     * @return AsyncInvoker<SwitchGaussMySqlInstanceSslRequest, SwitchGaussMySqlInstanceSslResponse>
+     */
+    public AsyncInvoker<SwitchGaussMySqlInstanceSslRequest, SwitchGaussMySqlInstanceSslResponse> switchGaussMySqlInstanceSslAsyncInvoker(SwitchGaussMySqlInstanceSslRequest request) {
+        return new AsyncInvoker<SwitchGaussMySqlInstanceSslRequest, SwitchGaussMySqlInstanceSslResponse>(request, GaussDBMeta.switchGaussMySqlInstanceSsl, hcClient);
+    }
+
+    /**
      * 开启或者关闭审计日志
      *
      * 开启或者关闭审计日志
@@ -1366,6 +1758,118 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 修改参数模板
+     *
+     * 修改指定参数模板的参数信息，包括名称、描述、指定参数的值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlConfigurationRequest 请求对象
+     * @return CompletableFuture<UpdateGaussMySqlConfigurationResponse>
+     */
+    public CompletableFuture<UpdateGaussMySqlConfigurationResponse> updateGaussMySqlConfigurationAsync(UpdateGaussMySqlConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateGaussMySqlConfiguration);
+    }
+
+    /**
+     * 修改参数模板
+     *
+     * 修改指定参数模板的参数信息，包括名称、描述、指定参数的值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlConfigurationRequest 请求对象
+     * @return AsyncInvoker<UpdateGaussMySqlConfigurationRequest, UpdateGaussMySqlConfigurationResponse>
+     */
+    public AsyncInvoker<UpdateGaussMySqlConfigurationRequest, UpdateGaussMySqlConfigurationResponse> updateGaussMySqlConfigurationAsyncInvoker(UpdateGaussMySqlConfigurationRequest request) {
+        return new AsyncInvoker<UpdateGaussMySqlConfigurationRequest, UpdateGaussMySqlConfigurationResponse>(request, GaussDBMeta.updateGaussMySqlConfiguration, hcClient);
+    }
+
+    /**
+     * 修改实例备注
+     *
+     * 修改实例备注。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlInstanceAliasRequest 请求对象
+     * @return CompletableFuture<UpdateGaussMySqlInstanceAliasResponse>
+     */
+    public CompletableFuture<UpdateGaussMySqlInstanceAliasResponse> updateGaussMySqlInstanceAliasAsync(UpdateGaussMySqlInstanceAliasRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateGaussMySqlInstanceAlias);
+    }
+
+    /**
+     * 修改实例备注
+     *
+     * 修改实例备注。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlInstanceAliasRequest 请求对象
+     * @return AsyncInvoker<UpdateGaussMySqlInstanceAliasRequest, UpdateGaussMySqlInstanceAliasResponse>
+     */
+    public AsyncInvoker<UpdateGaussMySqlInstanceAliasRequest, UpdateGaussMySqlInstanceAliasResponse> updateGaussMySqlInstanceAliasAsyncInvoker(UpdateGaussMySqlInstanceAliasRequest request) {
+        return new AsyncInvoker<UpdateGaussMySqlInstanceAliasRequest, UpdateGaussMySqlInstanceAliasResponse>(request, GaussDBMeta.updateGaussMySqlInstanceAlias, hcClient);
+    }
+
+    /**
+     * 绑定弹性公网IP
+     *
+     * 实例绑定弹性公网IP，供外网连接使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlInstanceEipRequest 请求对象
+     * @return CompletableFuture<UpdateGaussMySqlInstanceEipResponse>
+     */
+    public CompletableFuture<UpdateGaussMySqlInstanceEipResponse> updateGaussMySqlInstanceEipAsync(UpdateGaussMySqlInstanceEipRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateGaussMySqlInstanceEip);
+    }
+
+    /**
+     * 绑定弹性公网IP
+     *
+     * 实例绑定弹性公网IP，供外网连接使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlInstanceEipRequest 请求对象
+     * @return AsyncInvoker<UpdateGaussMySqlInstanceEipRequest, UpdateGaussMySqlInstanceEipResponse>
+     */
+    public AsyncInvoker<UpdateGaussMySqlInstanceEipRequest, UpdateGaussMySqlInstanceEipResponse> updateGaussMySqlInstanceEipAsyncInvoker(UpdateGaussMySqlInstanceEipRequest request) {
+        return new AsyncInvoker<UpdateGaussMySqlInstanceEipRequest, UpdateGaussMySqlInstanceEipResponse>(request, GaussDBMeta.updateGaussMySqlInstanceEip, hcClient);
+    }
+
+    /**
+     * 修改内网地址
+     *
+     * 修改实例内网地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlInstanceInternalIpRequest 请求对象
+     * @return CompletableFuture<UpdateGaussMySqlInstanceInternalIpResponse>
+     */
+    public CompletableFuture<UpdateGaussMySqlInstanceInternalIpResponse> updateGaussMySqlInstanceInternalIpAsync(UpdateGaussMySqlInstanceInternalIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateGaussMySqlInstanceInternalIp);
+    }
+
+    /**
+     * 修改内网地址
+     *
+     * 修改实例内网地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlInstanceInternalIpRequest 请求对象
+     * @return AsyncInvoker<UpdateGaussMySqlInstanceInternalIpRequest, UpdateGaussMySqlInstanceInternalIpResponse>
+     */
+    public AsyncInvoker<UpdateGaussMySqlInstanceInternalIpRequest, UpdateGaussMySqlInstanceInternalIpResponse> updateGaussMySqlInstanceInternalIpAsyncInvoker(UpdateGaussMySqlInstanceInternalIpRequest request) {
+        return new AsyncInvoker<UpdateGaussMySqlInstanceInternalIpRequest, UpdateGaussMySqlInstanceInternalIpResponse>(request, GaussDBMeta.updateGaussMySqlInstanceInternalIp, hcClient);
+    }
+
+    /**
      * 修改实例名称
      *
      * 修改实例名称
@@ -1391,6 +1895,90 @@ public class GaussDBAsyncClient {
      */
     public AsyncInvoker<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse> updateGaussMySqlInstanceNameAsyncInvoker(UpdateGaussMySqlInstanceNameRequest request) {
         return new AsyncInvoker<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse>(request, GaussDBMeta.updateGaussMySqlInstanceName, hcClient);
+    }
+
+    /**
+     * 设置可维护时间段
+     *
+     * 设置可维护时间段。建议将可维护时间段设置在业务低峰期，避免业务在维护过程中异常中断。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlInstanceOpsWindowRequest 请求对象
+     * @return CompletableFuture<UpdateGaussMySqlInstanceOpsWindowResponse>
+     */
+    public CompletableFuture<UpdateGaussMySqlInstanceOpsWindowResponse> updateGaussMySqlInstanceOpsWindowAsync(UpdateGaussMySqlInstanceOpsWindowRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateGaussMySqlInstanceOpsWindow);
+    }
+
+    /**
+     * 设置可维护时间段
+     *
+     * 设置可维护时间段。建议将可维护时间段设置在业务低峰期，避免业务在维护过程中异常中断。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlInstanceOpsWindowRequest 请求对象
+     * @return AsyncInvoker<UpdateGaussMySqlInstanceOpsWindowRequest, UpdateGaussMySqlInstanceOpsWindowResponse>
+     */
+    public AsyncInvoker<UpdateGaussMySqlInstanceOpsWindowRequest, UpdateGaussMySqlInstanceOpsWindowResponse> updateGaussMySqlInstanceOpsWindowAsyncInvoker(UpdateGaussMySqlInstanceOpsWindowRequest request) {
+        return new AsyncInvoker<UpdateGaussMySqlInstanceOpsWindowRequest, UpdateGaussMySqlInstanceOpsWindowResponse>(request, GaussDBMeta.updateGaussMySqlInstanceOpsWindow, hcClient);
+    }
+
+    /**
+     * 修改实例端口
+     *
+     * 修改实例数据库端口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlInstancePortRequest 请求对象
+     * @return CompletableFuture<UpdateGaussMySqlInstancePortResponse>
+     */
+    public CompletableFuture<UpdateGaussMySqlInstancePortResponse> updateGaussMySqlInstancePortAsync(UpdateGaussMySqlInstancePortRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateGaussMySqlInstancePort);
+    }
+
+    /**
+     * 修改实例端口
+     *
+     * 修改实例数据库端口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlInstancePortRequest 请求对象
+     * @return AsyncInvoker<UpdateGaussMySqlInstancePortRequest, UpdateGaussMySqlInstancePortResponse>
+     */
+    public AsyncInvoker<UpdateGaussMySqlInstancePortRequest, UpdateGaussMySqlInstancePortResponse> updateGaussMySqlInstancePortAsyncInvoker(UpdateGaussMySqlInstancePortRequest request) {
+        return new AsyncInvoker<UpdateGaussMySqlInstancePortRequest, UpdateGaussMySqlInstancePortResponse>(request, GaussDBMeta.updateGaussMySqlInstancePort, hcClient);
+    }
+
+    /**
+     * 修改安全组
+     *
+     * 修改指定实例安全组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlInstanceSecurityGroupRequest 请求对象
+     * @return CompletableFuture<UpdateGaussMySqlInstanceSecurityGroupResponse>
+     */
+    public CompletableFuture<UpdateGaussMySqlInstanceSecurityGroupResponse> updateGaussMySqlInstanceSecurityGroupAsync(UpdateGaussMySqlInstanceSecurityGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateGaussMySqlInstanceSecurityGroup);
+    }
+
+    /**
+     * 修改安全组
+     *
+     * 修改指定实例安全组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGaussMySqlInstanceSecurityGroupRequest 请求对象
+     * @return AsyncInvoker<UpdateGaussMySqlInstanceSecurityGroupRequest, UpdateGaussMySqlInstanceSecurityGroupResponse>
+     */
+    public AsyncInvoker<UpdateGaussMySqlInstanceSecurityGroupRequest, UpdateGaussMySqlInstanceSecurityGroupResponse> updateGaussMySqlInstanceSecurityGroupAsyncInvoker(UpdateGaussMySqlInstanceSecurityGroupRequest request) {
+        return new AsyncInvoker<UpdateGaussMySqlInstanceSecurityGroupRequest, UpdateGaussMySqlInstanceSecurityGroupResponse>(request, GaussDBMeta.updateGaussMySqlInstanceSecurityGroup, hcClient);
     }
 
     /**
@@ -1450,6 +2038,34 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 修改代理会话一致性
+     *
+     * 修改代理会话一致性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateProxySessionConsistenceRequest 请求对象
+     * @return CompletableFuture<UpdateProxySessionConsistenceResponse>
+     */
+    public CompletableFuture<UpdateProxySessionConsistenceResponse> updateProxySessionConsistenceAsync(UpdateProxySessionConsistenceRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateProxySessionConsistence);
+    }
+
+    /**
+     * 修改代理会话一致性
+     *
+     * 修改代理会话一致性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateProxySessionConsistenceRequest 请求对象
+     * @return AsyncInvoker<UpdateProxySessionConsistenceRequest, UpdateProxySessionConsistenceResponse>
+     */
+    public AsyncInvoker<UpdateProxySessionConsistenceRequest, UpdateProxySessionConsistenceResponse> updateProxySessionConsistenceAsyncInvoker(UpdateProxySessionConsistenceRequest request) {
+        return new AsyncInvoker<UpdateProxySessionConsistenceRequest, UpdateProxySessionConsistenceResponse>(request, GaussDBMeta.updateProxySessionConsistence, hcClient);
+    }
+
+    /**
      * 开启/关闭proxy事务拆分
      *
      * 开启/关闭proxy事务拆分
@@ -1475,6 +2091,34 @@ public class GaussDBAsyncClient {
      */
     public AsyncInvoker<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse> updateTransactionSplitStatusAsyncInvoker(UpdateTransactionSplitStatusRequest request) {
         return new AsyncInvoker<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse>(request, GaussDBMeta.updateTransactionSplitStatus, hcClient);
+    }
+
+    /**
+     * 内核版本升级
+     *
+     * 内核版本升级。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeGaussMySqlInstanceDatabaseRequest 请求对象
+     * @return CompletableFuture<UpgradeGaussMySqlInstanceDatabaseResponse>
+     */
+    public CompletableFuture<UpgradeGaussMySqlInstanceDatabaseResponse> upgradeGaussMySqlInstanceDatabaseAsync(UpgradeGaussMySqlInstanceDatabaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.upgradeGaussMySqlInstanceDatabase);
+    }
+
+    /**
+     * 内核版本升级
+     *
+     * 内核版本升级。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeGaussMySqlInstanceDatabaseRequest 请求对象
+     * @return AsyncInvoker<UpgradeGaussMySqlInstanceDatabaseRequest, UpgradeGaussMySqlInstanceDatabaseResponse>
+     */
+    public AsyncInvoker<UpgradeGaussMySqlInstanceDatabaseRequest, UpgradeGaussMySqlInstanceDatabaseResponse> upgradeGaussMySqlInstanceDatabaseAsyncInvoker(UpgradeGaussMySqlInstanceDatabaseRequest request) {
+        return new AsyncInvoker<UpgradeGaussMySqlInstanceDatabaseRequest, UpgradeGaussMySqlInstanceDatabaseResponse>(request, GaussDBMeta.upgradeGaussMySqlInstanceDatabase, hcClient);
     }
 
     /**

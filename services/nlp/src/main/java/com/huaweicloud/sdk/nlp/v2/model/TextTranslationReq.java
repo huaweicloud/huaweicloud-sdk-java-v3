@@ -32,7 +32,7 @@ public class TextTranslationReq  {
     
     private String text;
     /**
-     * 翻译原语言，具体取值见支持的语言列表: zh    中文 en    英文 ru    俄语 ja    日文 de    德文 fr    法文 es    西班牙文 ko    韩语 auto  自动检测输入语种并翻译成目标语种，您需要指定目标语种。
+     * 翻译原语言，具体取值见支持的语言列表: 阿拉伯语 ar 德语 de 俄语 ru 法语 fr 韩语 ko 葡萄牙语 pt 日语 ja 泰语 th 土耳其语 tr 西班牙语 es 英语 en 越南语 vi 中文（简体） zh 中文（繁体） zh-tw 自动检测输入语种并翻译成目标语种，您需要指定目标语种。 auto
      */
     public static final class FromEnum {
 
@@ -58,6 +58,36 @@ public class TextTranslationReq  {
         public static final FromEnum RU = new FromEnum("ru");
         
         /**
+         * Enum ES for value: "es"
+         */
+        public static final FromEnum ES = new FromEnum("es");
+        
+        /**
+         * Enum DE for value: "de"
+         */
+        public static final FromEnum DE = new FromEnum("de");
+        
+        /**
+         * Enum AR for value: "ar"
+         */
+        public static final FromEnum AR = new FromEnum("ar");
+        
+        /**
+         * Enum PT for value: "pt"
+         */
+        public static final FromEnum PT = new FromEnum("pt");
+        
+        /**
+         * Enum TH for value: "th"
+         */
+        public static final FromEnum TH = new FromEnum("th");
+        
+        /**
+         * Enum TR for value: "tr"
+         */
+        public static final FromEnum TR = new FromEnum("tr");
+        
+        /**
          * Enum KO for value: "ko"
          */
         public static final FromEnum KO = new FromEnum("ko");
@@ -68,14 +98,234 @@ public class TextTranslationReq  {
         public static final FromEnum FR = new FromEnum("fr");
         
         /**
-         * Enum ES for value: "es"
+         * Enum VI for value: "vi"
          */
-        public static final FromEnum ES = new FromEnum("es");
+        public static final FromEnum VI = new FromEnum("vi");
         
         /**
-         * Enum DE for value: "de"
+         * Enum HI for value: "hi"
          */
-        public static final FromEnum DE = new FromEnum("de");
+        public static final FromEnum HI = new FromEnum("hi");
+        
+        /**
+         * Enum KM for value: "km"
+         */
+        public static final FromEnum KM = new FromEnum("km");
+        
+        /**
+         * Enum MY for value: "my"
+         */
+        public static final FromEnum MY = new FromEnum("my");
+        
+        /**
+         * Enum TA for value: "ta"
+         */
+        public static final FromEnum TA = new FromEnum("ta");
+        
+        /**
+         * Enum FA for value: "fa"
+         */
+        public static final FromEnum FA = new FromEnum("fa");
+        
+        /**
+         * Enum UR for value: "ur"
+         */
+        public static final FromEnum UR = new FromEnum("ur");
+        
+        /**
+         * Enum BN for value: "bn"
+         */
+        public static final FromEnum BN = new FromEnum("bn");
+        
+        /**
+         * Enum MR for value: "mr"
+         */
+        public static final FromEnum MR = new FromEnum("mr");
+        
+        /**
+         * Enum GU for value: "gu"
+         */
+        public static final FromEnum GU = new FromEnum("gu");
+        
+        /**
+         * Enum PA for value: "pa"
+         */
+        public static final FromEnum PA = new FromEnum("pa");
+        
+        /**
+         * Enum TE for value: "te"
+         */
+        public static final FromEnum TE = new FromEnum("te");
+        
+        /**
+         * Enum HE for value: "he"
+         */
+        public static final FromEnum HE = new FromEnum("he");
+        
+        /**
+         * Enum CS for value: "cs"
+         */
+        public static final FromEnum CS = new FromEnum("cs");
+        
+        /**
+         * Enum SK for value: "sk"
+         */
+        public static final FromEnum SK = new FromEnum("sk");
+        
+        /**
+         * Enum RO for value: "ro"
+         */
+        public static final FromEnum RO = new FromEnum("ro");
+        
+        /**
+         * Enum SQ for value: "sq"
+         */
+        public static final FromEnum SQ = new FromEnum("sq");
+        
+        /**
+         * Enum LV for value: "lv"
+         */
+        public static final FromEnum LV = new FromEnum("lv");
+        
+        /**
+         * Enum ET for value: "et"
+         */
+        public static final FromEnum ET = new FromEnum("et");
+        
+        /**
+         * Enum LT for value: "lt"
+         */
+        public static final FromEnum LT = new FromEnum("lt");
+        
+        /**
+         * Enum HR for value: "hr"
+         */
+        public static final FromEnum HR = new FromEnum("hr");
+        
+        /**
+         * Enum BS for value: "bs"
+         */
+        public static final FromEnum BS = new FromEnum("bs");
+        
+        /**
+         * Enum KA for value: "ka"
+         */
+        public static final FromEnum KA = new FromEnum("ka");
+        
+        /**
+         * Enum SL for value: "sl"
+         */
+        public static final FromEnum SL = new FromEnum("sl");
+        
+        /**
+         * Enum CA for value: "ca"
+         */
+        public static final FromEnum CA = new FromEnum("ca");
+        
+        /**
+         * Enum AF for value: "af"
+         */
+        public static final FromEnum AF = new FromEnum("af");
+        
+        /**
+         * Enum MG for value: "mg"
+         */
+        public static final FromEnum MG = new FromEnum("mg");
+        
+        /**
+         * Enum ID for value: "id"
+         */
+        public static final FromEnum ID = new FromEnum("id");
+        
+        /**
+         * Enum FIL for value: "fil"
+         */
+        public static final FromEnum FIL = new FromEnum("fil");
+        
+        /**
+         * Enum SW for value: "sw"
+         */
+        public static final FromEnum SW = new FromEnum("sw");
+        
+        /**
+         * Enum HU for value: "hu"
+         */
+        public static final FromEnum HU = new FromEnum("hu");
+        
+        /**
+         * Enum SR for value: "sr"
+         */
+        public static final FromEnum SR = new FromEnum("sr");
+        
+        /**
+         * Enum MK for value: "mk"
+         */
+        public static final FromEnum MK = new FromEnum("mk");
+        
+        /**
+         * Enum UK for value: "uk"
+         */
+        public static final FromEnum UK = new FromEnum("uk");
+        
+        /**
+         * Enum BG for value: "bg"
+         */
+        public static final FromEnum BG = new FromEnum("bg");
+        
+        /**
+         * Enum MT for value: "mt"
+         */
+        public static final FromEnum MT = new FromEnum("mt");
+        
+        /**
+         * Enum EL for value: "el"
+         */
+        public static final FromEnum EL = new FromEnum("el");
+        
+        /**
+         * Enum IS for value: "is"
+         */
+        public static final FromEnum IS = new FromEnum("is");
+        
+        /**
+         * Enum GA for value: "ga"
+         */
+        public static final FromEnum GA = new FromEnum("ga");
+        
+        /**
+         * Enum CY for value: "cy"
+         */
+        public static final FromEnum CY = new FromEnum("cy");
+        
+        /**
+         * Enum HT for value: "ht"
+         */
+        public static final FromEnum HT = new FromEnum("ht");
+        
+        /**
+         * Enum NO for value: "no"
+         */
+        public static final FromEnum NO = new FromEnum("no");
+        
+        /**
+         * Enum SV for value: "sv"
+         */
+        public static final FromEnum SV = new FromEnum("sv");
+        
+        /**
+         * Enum FI for value: "fi"
+         */
+        public static final FromEnum FI = new FromEnum("fi");
+        
+        /**
+         * Enum DA for value: "da"
+         */
+        public static final FromEnum DA = new FromEnum("da");
+        
+        /**
+         * Enum ZH_TW for value: "zh-tw"
+         */
+        public static final FromEnum ZH_TW = new FromEnum("zh-tw");
         
         /**
          * Enum AUTO for value: "auto"
@@ -91,10 +341,60 @@ public class TextTranslationReq  {
             map.put("en", EN);
             map.put("ja", JA);
             map.put("ru", RU);
-            map.put("ko", KO);
-            map.put("fr", FR);
             map.put("es", ES);
             map.put("de", DE);
+            map.put("ar", AR);
+            map.put("pt", PT);
+            map.put("th", TH);
+            map.put("tr", TR);
+            map.put("ko", KO);
+            map.put("fr", FR);
+            map.put("vi", VI);
+            map.put("hi", HI);
+            map.put("km", KM);
+            map.put("my", MY);
+            map.put("ta", TA);
+            map.put("fa", FA);
+            map.put("ur", UR);
+            map.put("bn", BN);
+            map.put("mr", MR);
+            map.put("gu", GU);
+            map.put("pa", PA);
+            map.put("te", TE);
+            map.put("he", HE);
+            map.put("cs", CS);
+            map.put("sk", SK);
+            map.put("ro", RO);
+            map.put("sq", SQ);
+            map.put("lv", LV);
+            map.put("et", ET);
+            map.put("lt", LT);
+            map.put("hr", HR);
+            map.put("bs", BS);
+            map.put("ka", KA);
+            map.put("sl", SL);
+            map.put("ca", CA);
+            map.put("af", AF);
+            map.put("mg", MG);
+            map.put("id", ID);
+            map.put("fil", FIL);
+            map.put("sw", SW);
+            map.put("hu", HU);
+            map.put("sr", SR);
+            map.put("mk", MK);
+            map.put("uk", UK);
+            map.put("bg", BG);
+            map.put("mt", MT);
+            map.put("el", EL);
+            map.put("is", IS);
+            map.put("ga", GA);
+            map.put("cy", CY);
+            map.put("ht", HT);
+            map.put("no", NO);
+            map.put("sv", SV);
+            map.put("fi", FI);
+            map.put("da", DA);
+            map.put("zh-tw", ZH_TW);
             map.put("auto", AUTO);
             return Collections.unmodifiableMap(map);
         }
@@ -159,7 +459,7 @@ public class TextTranslationReq  {
     
     private FromEnum from;
     /**
-     * 翻译原语言，具体取值见支持的语言列表: zh    中文 en    英文 ru    俄语 ja    日文 de    德文 fr    法文 es    西班牙文 ko    韩语
+     * 翻译目标语言，具体取值见支持的语言列表: 阿拉伯语 ar 德语 de 俄语 ru 法语 fr 韩语 ko 葡萄牙语 pt 日语 ja 泰语 th 土耳其语 tr 西班牙语 es 英语 en 越南语 vi 中文（简体） zh 中文（繁体） zh-tw
      */
     public static final class ToEnum {
 
@@ -185,6 +485,36 @@ public class TextTranslationReq  {
         public static final ToEnum RU = new ToEnum("ru");
         
         /**
+         * Enum ES for value: "es"
+         */
+        public static final ToEnum ES = new ToEnum("es");
+        
+        /**
+         * Enum DE for value: "de"
+         */
+        public static final ToEnum DE = new ToEnum("de");
+        
+        /**
+         * Enum AR for value: "ar"
+         */
+        public static final ToEnum AR = new ToEnum("ar");
+        
+        /**
+         * Enum PT for value: "pt"
+         */
+        public static final ToEnum PT = new ToEnum("pt");
+        
+        /**
+         * Enum TH for value: "th"
+         */
+        public static final ToEnum TH = new ToEnum("th");
+        
+        /**
+         * Enum TR for value: "tr"
+         */
+        public static final ToEnum TR = new ToEnum("tr");
+        
+        /**
          * Enum KO for value: "ko"
          */
         public static final ToEnum KO = new ToEnum("ko");
@@ -195,14 +525,234 @@ public class TextTranslationReq  {
         public static final ToEnum FR = new ToEnum("fr");
         
         /**
-         * Enum ES for value: "es"
+         * Enum VI for value: "vi"
          */
-        public static final ToEnum ES = new ToEnum("es");
+        public static final ToEnum VI = new ToEnum("vi");
         
         /**
-         * Enum DE for value: "de"
+         * Enum HI for value: "hi"
          */
-        public static final ToEnum DE = new ToEnum("de");
+        public static final ToEnum HI = new ToEnum("hi");
+        
+        /**
+         * Enum KM for value: "km"
+         */
+        public static final ToEnum KM = new ToEnum("km");
+        
+        /**
+         * Enum MY for value: "my"
+         */
+        public static final ToEnum MY = new ToEnum("my");
+        
+        /**
+         * Enum TA for value: "ta"
+         */
+        public static final ToEnum TA = new ToEnum("ta");
+        
+        /**
+         * Enum FA for value: "fa"
+         */
+        public static final ToEnum FA = new ToEnum("fa");
+        
+        /**
+         * Enum UR for value: "ur"
+         */
+        public static final ToEnum UR = new ToEnum("ur");
+        
+        /**
+         * Enum BN for value: "bn"
+         */
+        public static final ToEnum BN = new ToEnum("bn");
+        
+        /**
+         * Enum MR for value: "mr"
+         */
+        public static final ToEnum MR = new ToEnum("mr");
+        
+        /**
+         * Enum GU for value: "gu"
+         */
+        public static final ToEnum GU = new ToEnum("gu");
+        
+        /**
+         * Enum PA for value: "pa"
+         */
+        public static final ToEnum PA = new ToEnum("pa");
+        
+        /**
+         * Enum TE for value: "te"
+         */
+        public static final ToEnum TE = new ToEnum("te");
+        
+        /**
+         * Enum HE for value: "he"
+         */
+        public static final ToEnum HE = new ToEnum("he");
+        
+        /**
+         * Enum CS for value: "cs"
+         */
+        public static final ToEnum CS = new ToEnum("cs");
+        
+        /**
+         * Enum SK for value: "sk"
+         */
+        public static final ToEnum SK = new ToEnum("sk");
+        
+        /**
+         * Enum RO for value: "ro"
+         */
+        public static final ToEnum RO = new ToEnum("ro");
+        
+        /**
+         * Enum SQ for value: "sq"
+         */
+        public static final ToEnum SQ = new ToEnum("sq");
+        
+        /**
+         * Enum LV for value: "lv"
+         */
+        public static final ToEnum LV = new ToEnum("lv");
+        
+        /**
+         * Enum ET for value: "et"
+         */
+        public static final ToEnum ET = new ToEnum("et");
+        
+        /**
+         * Enum LT for value: "lt"
+         */
+        public static final ToEnum LT = new ToEnum("lt");
+        
+        /**
+         * Enum HR for value: "hr"
+         */
+        public static final ToEnum HR = new ToEnum("hr");
+        
+        /**
+         * Enum BS for value: "bs"
+         */
+        public static final ToEnum BS = new ToEnum("bs");
+        
+        /**
+         * Enum KA for value: "ka"
+         */
+        public static final ToEnum KA = new ToEnum("ka");
+        
+        /**
+         * Enum SL for value: "sl"
+         */
+        public static final ToEnum SL = new ToEnum("sl");
+        
+        /**
+         * Enum CA for value: "ca"
+         */
+        public static final ToEnum CA = new ToEnum("ca");
+        
+        /**
+         * Enum AF for value: "af"
+         */
+        public static final ToEnum AF = new ToEnum("af");
+        
+        /**
+         * Enum MG for value: "mg"
+         */
+        public static final ToEnum MG = new ToEnum("mg");
+        
+        /**
+         * Enum ID for value: "id"
+         */
+        public static final ToEnum ID = new ToEnum("id");
+        
+        /**
+         * Enum FIL for value: "fil"
+         */
+        public static final ToEnum FIL = new ToEnum("fil");
+        
+        /**
+         * Enum SW for value: "sw"
+         */
+        public static final ToEnum SW = new ToEnum("sw");
+        
+        /**
+         * Enum HU for value: "hu"
+         */
+        public static final ToEnum HU = new ToEnum("hu");
+        
+        /**
+         * Enum SR for value: "sr"
+         */
+        public static final ToEnum SR = new ToEnum("sr");
+        
+        /**
+         * Enum MK for value: "mk"
+         */
+        public static final ToEnum MK = new ToEnum("mk");
+        
+        /**
+         * Enum UK for value: "uk"
+         */
+        public static final ToEnum UK = new ToEnum("uk");
+        
+        /**
+         * Enum BG for value: "bg"
+         */
+        public static final ToEnum BG = new ToEnum("bg");
+        
+        /**
+         * Enum MT for value: "mt"
+         */
+        public static final ToEnum MT = new ToEnum("mt");
+        
+        /**
+         * Enum EL for value: "el"
+         */
+        public static final ToEnum EL = new ToEnum("el");
+        
+        /**
+         * Enum IS for value: "is"
+         */
+        public static final ToEnum IS = new ToEnum("is");
+        
+        /**
+         * Enum GA for value: "ga"
+         */
+        public static final ToEnum GA = new ToEnum("ga");
+        
+        /**
+         * Enum CY for value: "cy"
+         */
+        public static final ToEnum CY = new ToEnum("cy");
+        
+        /**
+         * Enum HT for value: "ht"
+         */
+        public static final ToEnum HT = new ToEnum("ht");
+        
+        /**
+         * Enum NO for value: "no"
+         */
+        public static final ToEnum NO = new ToEnum("no");
+        
+        /**
+         * Enum SV for value: "sv"
+         */
+        public static final ToEnum SV = new ToEnum("sv");
+        
+        /**
+         * Enum FI for value: "fi"
+         */
+        public static final ToEnum FI = new ToEnum("fi");
+        
+        /**
+         * Enum DA for value: "da"
+         */
+        public static final ToEnum DA = new ToEnum("da");
+        
+        /**
+         * Enum ZH_TW for value: "zh-tw"
+         */
+        public static final ToEnum ZH_TW = new ToEnum("zh-tw");
         
 
         private static final Map<String, ToEnum> STATIC_FIELDS = createStaticFields();
@@ -213,10 +763,60 @@ public class TextTranslationReq  {
             map.put("en", EN);
             map.put("ja", JA);
             map.put("ru", RU);
-            map.put("ko", KO);
-            map.put("fr", FR);
             map.put("es", ES);
             map.put("de", DE);
+            map.put("ar", AR);
+            map.put("pt", PT);
+            map.put("th", TH);
+            map.put("tr", TR);
+            map.put("ko", KO);
+            map.put("fr", FR);
+            map.put("vi", VI);
+            map.put("hi", HI);
+            map.put("km", KM);
+            map.put("my", MY);
+            map.put("ta", TA);
+            map.put("fa", FA);
+            map.put("ur", UR);
+            map.put("bn", BN);
+            map.put("mr", MR);
+            map.put("gu", GU);
+            map.put("pa", PA);
+            map.put("te", TE);
+            map.put("he", HE);
+            map.put("cs", CS);
+            map.put("sk", SK);
+            map.put("ro", RO);
+            map.put("sq", SQ);
+            map.put("lv", LV);
+            map.put("et", ET);
+            map.put("lt", LT);
+            map.put("hr", HR);
+            map.put("bs", BS);
+            map.put("ka", KA);
+            map.put("sl", SL);
+            map.put("ca", CA);
+            map.put("af", AF);
+            map.put("mg", MG);
+            map.put("id", ID);
+            map.put("fil", FIL);
+            map.put("sw", SW);
+            map.put("hu", HU);
+            map.put("sr", SR);
+            map.put("mk", MK);
+            map.put("uk", UK);
+            map.put("bg", BG);
+            map.put("mt", MT);
+            map.put("el", EL);
+            map.put("is", IS);
+            map.put("ga", GA);
+            map.put("cy", CY);
+            map.put("ht", HT);
+            map.put("no", NO);
+            map.put("sv", SV);
+            map.put("fi", FI);
+            map.put("da", DA);
+            map.put("zh-tw", ZH_TW);
             return Collections.unmodifiableMap(map);
         }
 
@@ -368,7 +968,7 @@ public class TextTranslationReq  {
 
 
     /**
-     * 待翻译文本，仅支持utf-8编码，长度不超过5000字符。
+     * 待翻译文本，仅支持utf-8编码，长度不超过2000字符。
      * @return text
      */
     public String getText() {
@@ -390,7 +990,7 @@ public class TextTranslationReq  {
 
 
     /**
-     * 翻译原语言，具体取值见支持的语言列表: zh    中文 en    英文 ru    俄语 ja    日文 de    德文 fr    法文 es    西班牙文 ko    韩语 auto  自动检测输入语种并翻译成目标语种，您需要指定目标语种。
+     * 翻译原语言，具体取值见支持的语言列表: 阿拉伯语 ar 德语 de 俄语 ru 法语 fr 韩语 ko 葡萄牙语 pt 日语 ja 泰语 th 土耳其语 tr 西班牙语 es 英语 en 越南语 vi 中文（简体） zh 中文（繁体） zh-tw 自动检测输入语种并翻译成目标语种，您需要指定目标语种。 auto
      * @return from
      */
     public FromEnum getFrom() {
@@ -412,7 +1012,7 @@ public class TextTranslationReq  {
 
 
     /**
-     * 翻译原语言，具体取值见支持的语言列表: zh    中文 en    英文 ru    俄语 ja    日文 de    德文 fr    法文 es    西班牙文 ko    韩语
+     * 翻译目标语言，具体取值见支持的语言列表: 阿拉伯语 ar 德语 de 俄语 ru 法语 fr 韩语 ko 葡萄牙语 pt 日语 ja 泰语 th 土耳其语 tr 西班牙语 es 英语 en 越南语 vi 中文（简体） zh 中文（繁体） zh-tw
      * @return to
      */
     public ToEnum getTo() {

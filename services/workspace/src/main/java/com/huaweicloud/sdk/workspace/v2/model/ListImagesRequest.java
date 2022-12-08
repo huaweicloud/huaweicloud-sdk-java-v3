@@ -30,6 +30,21 @@ public class ListImagesRequest {
 
     private String architecture;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "package_type")
+
+    private String packageType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     public ListImagesRequest withOsType(String osType) {
         this.osType = osType;
         return this;
@@ -98,6 +113,61 @@ public class ListImagesRequest {
         this.architecture = architecture;
     }
 
+    public ListImagesRequest withPackageType(String packageType) {
+        this.packageType = packageType;
+        return this;
+    }
+
+    /**
+     * 套餐系列
+     * @return packageType
+     */
+    public String getPackageType() {
+        return packageType;
+    }
+
+    public void setPackageType(String packageType) {
+        this.packageType = packageType;
+    }
+
+    public ListImagesRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页数量，范围0-100，默认100。
+     * minimum: 0
+     * maximum: 100
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListImagesRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 偏移量,默认0。
+     * minimum: 0
+     * maximum: 5000
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -110,12 +180,15 @@ public class ListImagesRequest {
         return Objects.equals(this.osType, listImagesRequest.osType)
             && Objects.equals(this.imageType, listImagesRequest.imageType)
             && Objects.equals(this.platform, listImagesRequest.platform)
-            && Objects.equals(this.architecture, listImagesRequest.architecture);
+            && Objects.equals(this.architecture, listImagesRequest.architecture)
+            && Objects.equals(this.packageType, listImagesRequest.packageType)
+            && Objects.equals(this.limit, listImagesRequest.limit)
+            && Objects.equals(this.offset, listImagesRequest.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(osType, imageType, platform, architecture);
+        return Objects.hash(osType, imageType, platform, architecture, packageType, limit, offset);
     }
 
     @Override
@@ -126,6 +199,9 @@ public class ListImagesRequest {
         sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
         sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
         sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
+        sb.append("    packageType: ").append(toIndentedString(packageType)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

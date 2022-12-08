@@ -1094,6 +1094,36 @@ public class ProjectManClient {
     }
 
     /**
+     * 删除附件
+     *
+     * 取消工作项与附件关联，如附件为工作项页面上传则删除附件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAttachmentRequest 请求对象
+     * @return DeleteAttachmentResponse
+     */
+    public DeleteAttachmentResponse deleteAttachment(DeleteAttachmentRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.deleteAttachment);
+    }
+
+    /**
+     * 删除附件
+     *
+     * 取消工作项与附件关联，如附件为工作项页面上传则删除附件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAttachmentRequest 请求对象
+     * @return SyncInvoker<DeleteAttachmentRequest, DeleteAttachmentResponse>
+     */
+    public SyncInvoker<DeleteAttachmentRequest, DeleteAttachmentResponse> deleteAttachmentInvoker(
+        DeleteAttachmentRequest request) {
+        return new SyncInvoker<DeleteAttachmentRequest, DeleteAttachmentResponse>(request,
+            ProjectManMeta.deleteAttachment, hcClient);
+    }
+
+    /**
      * 删除工作项
      *
      * 删除工作项
@@ -1180,6 +1210,36 @@ public class ProjectManClient {
         DeleteProjectModuleRequest request) {
         return new SyncInvoker<DeleteProjectModuleRequest, DeleteProjectModuleResponse>(request,
             ProjectManMeta.deleteProjectModule, hcClient);
+    }
+
+    /**
+     * 下载工作项附件
+     *
+     * 下载工作项附件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DownloadAttachmentRequest 请求对象
+     * @return DownloadAttachmentResponse
+     */
+    public DownloadAttachmentResponse downloadAttachment(DownloadAttachmentRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.downloadAttachment);
+    }
+
+    /**
+     * 下载工作项附件
+     *
+     * 下载工作项附件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DownloadAttachmentRequest 请求对象
+     * @return SyncInvoker<DownloadAttachmentRequest, DownloadAttachmentResponse>
+     */
+    public SyncInvoker<DownloadAttachmentRequest, DownloadAttachmentResponse> downloadAttachmentInvoker(
+        DownloadAttachmentRequest request) {
+        return new SyncInvoker<DownloadAttachmentRequest, DownloadAttachmentResponse>(request,
+            ProjectManMeta.downloadAttachment, hcClient);
     }
 
     /**
@@ -1719,6 +1779,36 @@ public class ProjectManClient {
         ListScrumProjectStatusesRequest request) {
         return new SyncInvoker<ListScrumProjectStatusesRequest, ListScrumProjectStatusesResponse>(request,
             ProjectManMeta.listScrumProjectStatuses, hcClient);
+    }
+
+    /**
+     * 查询迭代下工作项状态的统计数据（处理人维度）
+     *
+     * 查询迭代下工作项状态的统计数据（处理人维度）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListStatusStatisticRequest 请求对象
+     * @return ListStatusStatisticResponse
+     */
+    public ListStatusStatisticResponse listStatusStatistic(ListStatusStatisticRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listStatusStatistic);
+    }
+
+    /**
+     * 查询迭代下工作项状态的统计数据（处理人维度）
+     *
+     * 查询迭代下工作项状态的统计数据（处理人维度）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListStatusStatisticRequest 请求对象
+     * @return SyncInvoker<ListStatusStatisticRequest, ListStatusStatisticResponse>
+     */
+    public SyncInvoker<ListStatusStatisticRequest, ListStatusStatisticResponse> listStatusStatisticInvoker(
+        ListStatusStatisticRequest request) {
+        return new SyncInvoker<ListStatusStatisticRequest, ListStatusStatisticResponse>(request,
+            ProjectManMeta.listStatusStatistic, hcClient);
     }
 
     /**

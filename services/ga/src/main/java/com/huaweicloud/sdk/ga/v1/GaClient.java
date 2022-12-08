@@ -20,7 +20,7 @@ public class GaClient {
     /**
      * 创建全球加速器
      *
-     * 创建全球加速器
+     * 创建全球加速器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -34,7 +34,7 @@ public class GaClient {
     /**
      * 创建全球加速器
      *
-     * 创建全球加速器
+     * 创建全球加速器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -80,7 +80,7 @@ public class GaClient {
     /**
      * 查询全球加速器列表
      *
-     * 查询全球加速器列表
+     * 查询全球加速器列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -94,7 +94,7 @@ public class GaClient {
     /**
      * 查询全球加速器列表
      *
-     * 查询全球加速器列表
+     * 查询全球加速器列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -110,7 +110,7 @@ public class GaClient {
     /**
      * 查询全球加速器详情
      *
-     * 查询全球加速器详情
+     * 查询全球加速器详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -124,7 +124,7 @@ public class GaClient {
     /**
      * 查询全球加速器详情
      *
-     * 查询全球加速器详情
+     * 查询全球加速器详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -140,7 +140,7 @@ public class GaClient {
     /**
      * 更新全球加速器
      *
-     * 更新全球加速器
+     * 更新全球加速器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -154,7 +154,7 @@ public class GaClient {
     /**
      * 更新全球加速器
      *
-     * 更新全球加速器
+     * 更新全球加速器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -170,7 +170,7 @@ public class GaClient {
     /**
      * 创建终端节点
      *
-     * 创建终端节点
+     * 创建终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -184,7 +184,7 @@ public class GaClient {
     /**
      * 创建终端节点
      *
-     * 创建终端节点
+     * 创建终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -199,7 +199,7 @@ public class GaClient {
     /**
      * 删除终端节点
      *
-     * 删除终端节点
+     * 删除终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -213,7 +213,7 @@ public class GaClient {
     /**
      * 删除终端节点
      *
-     * 删除终端节点
+     * 删除终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -228,7 +228,7 @@ public class GaClient {
     /**
      * 查询终端节点组下终端节点列表
      *
-     * 查询终端节点组下终端节点列表
+     * 查询终端节点组下终端节点列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -242,7 +242,7 @@ public class GaClient {
     /**
      * 查询终端节点组下终端节点列表
      *
-     * 查询终端节点组下终端节点列表
+     * 查询终端节点组下终端节点列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -256,7 +256,7 @@ public class GaClient {
     /**
      * 查询终端节点详情
      *
-     * 查询终端节点详情
+     * 查询终端节点详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -270,7 +270,7 @@ public class GaClient {
     /**
      * 查询终端节点详情
      *
-     * 查询终端节点详情
+     * 查询终端节点详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -284,7 +284,7 @@ public class GaClient {
     /**
      * 更新终端节点
      *
-     * 更新终端节点
+     * 更新终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -298,7 +298,7 @@ public class GaClient {
     /**
      * 更新终端节点
      *
-     * 更新终端节点
+     * 更新终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -313,7 +313,7 @@ public class GaClient {
     /**
      * 创建终端节点组
      *
-     * 创建终端节点组
+     * 创建终端节点组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -327,7 +327,7 @@ public class GaClient {
     /**
      * 创建终端节点组
      *
-     * 创建终端节点组
+     * 创建终端节点组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -373,7 +373,7 @@ public class GaClient {
     /**
      * 查询终端节点组列表
      *
-     * 查询终端节点组列表
+     * 查询终端节点组列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -387,7 +387,7 @@ public class GaClient {
     /**
      * 查询终端节点组列表
      *
-     * 查询终端节点组列表
+     * 查询终端节点组列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -403,7 +403,7 @@ public class GaClient {
     /**
      * 查询终端节点组详情
      *
-     * 查询终端节点组详情
+     * 查询终端节点组详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -417,7 +417,7 @@ public class GaClient {
     /**
      * 查询终端节点组详情
      *
-     * 查询终端节点组详情
+     * 查询终端节点组详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -433,7 +433,7 @@ public class GaClient {
     /**
      * 更新终端节点组
      *
-     * 更新终端节点组
+     * 更新终端节点组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -447,7 +447,7 @@ public class GaClient {
     /**
      * 更新终端节点组
      *
-     * 更新终端节点组
+     * 更新终端节点组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -463,7 +463,7 @@ public class GaClient {
     /**
      * 创建健康检查
      *
-     * 创建健康检查
+     * 创建健康检查。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -477,7 +477,7 @@ public class GaClient {
     /**
      * 创建健康检查
      *
-     * 创建健康检查
+     * 创建健康检查。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -493,7 +493,7 @@ public class GaClient {
     /**
      * 删除健康检查
      *
-     * 删除健康检查
+     * 删除健康检查。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -507,7 +507,7 @@ public class GaClient {
     /**
      * 删除健康检查
      *
-     * 删除健康检查
+     * 删除健康检查。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -523,7 +523,7 @@ public class GaClient {
     /**
      * 查询健康检查列表
      *
-     * 查询健康检查列表
+     * 查询健康检查列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -537,7 +537,7 @@ public class GaClient {
     /**
      * 查询健康检查列表
      *
-     * 查询健康检查列表
+     * 查询健康检查列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -553,7 +553,7 @@ public class GaClient {
     /**
      * 查询健康检查详情
      *
-     * 查询健康检查详情
+     * 查询健康检查详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -567,7 +567,7 @@ public class GaClient {
     /**
      * 查询健康检查详情
      *
-     * 查询健康检查详情
+     * 查询健康检查详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -583,7 +583,7 @@ public class GaClient {
     /**
      * 更新健康检查
      *
-     * 更新健康检查
+     * 更新健康检查。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -597,7 +597,7 @@ public class GaClient {
     /**
      * 更新健康检查
      *
-     * 更新健康检查
+     * 更新健康检查。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -613,7 +613,7 @@ public class GaClient {
     /**
      * 创建监听器
      *
-     * 创建监听器
+     * 创建监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -627,7 +627,7 @@ public class GaClient {
     /**
      * 创建监听器
      *
-     * 创建监听器
+     * 创建监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -642,7 +642,7 @@ public class GaClient {
     /**
      * 删除监听器
      *
-     * 删除监听器
+     * 删除监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -656,7 +656,7 @@ public class GaClient {
     /**
      * 删除监听器
      *
-     * 删除监听器
+     * 删除监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -671,7 +671,7 @@ public class GaClient {
     /**
      * 查询监听器列表
      *
-     * 查询监听器列表
+     * 查询监听器列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -685,7 +685,7 @@ public class GaClient {
     /**
      * 查询监听器列表
      *
-     * 查询监听器列表
+     * 查询监听器列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -699,7 +699,7 @@ public class GaClient {
     /**
      * 查询监听器详情
      *
-     * 查询监听器详情
+     * 查询监听器详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -713,7 +713,7 @@ public class GaClient {
     /**
      * 查询监听器详情
      *
-     * 查询监听器详情
+     * 查询监听器详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -727,7 +727,7 @@ public class GaClient {
     /**
      * 更新监听器
      *
-     * 更新监听器
+     * 更新监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -741,7 +741,7 @@ public class GaClient {
     /**
      * 更新监听器
      *
-     * 更新监听器
+     * 更新监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -756,7 +756,7 @@ public class GaClient {
     /**
      * 查询区域列表
      *
-     * 查询区域列表
+     * 查询区域列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -770,7 +770,7 @@ public class GaClient {
     /**
      * 查询区域列表
      *
-     * 查询区域列表
+     * 查询区域列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -779,6 +779,92 @@ public class GaClient {
      */
     public SyncInvoker<ListRegionsRequest, ListRegionsResponse> listRegionsInvoker(ListRegionsRequest request) {
         return new SyncInvoker<ListRegionsRequest, ListRegionsResponse>(request, GaMeta.listRegions, hcClient);
+    }
+
+    /**
+     * 批量添加标签
+     *
+     * 批量添加标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTagsRequest 请求对象
+     * @return CreateTagsResponse
+     */
+    public CreateTagsResponse createTags(CreateTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaMeta.createTags);
+    }
+
+    /**
+     * 批量添加标签
+     *
+     * 批量添加标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTagsRequest 请求对象
+     * @return SyncInvoker<CreateTagsRequest, CreateTagsResponse>
+     */
+    public SyncInvoker<CreateTagsRequest, CreateTagsResponse> createTagsInvoker(CreateTagsRequest request) {
+        return new SyncInvoker<CreateTagsRequest, CreateTagsResponse>(request, GaMeta.createTags, hcClient);
+    }
+
+    /**
+     * 批量删除标签
+     *
+     * 批量删除标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTagsRequest 请求对象
+     * @return DeleteTagsResponse
+     */
+    public DeleteTagsResponse deleteTags(DeleteTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaMeta.deleteTags);
+    }
+
+    /**
+     * 批量删除标签
+     *
+     * 批量删除标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTagsRequest 请求对象
+     * @return SyncInvoker<DeleteTagsRequest, DeleteTagsResponse>
+     */
+    public SyncInvoker<DeleteTagsRequest, DeleteTagsResponse> deleteTagsInvoker(DeleteTagsRequest request) {
+        return new SyncInvoker<DeleteTagsRequest, DeleteTagsResponse>(request, GaMeta.deleteTags, hcClient);
+    }
+
+    /**
+     * 查询资源已打标签
+     *
+     * 查询资源已打标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResourceTagsRequest 请求对象
+     * @return ShowResourceTagsResponse
+     */
+    public ShowResourceTagsResponse showResourceTags(ShowResourceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaMeta.showResourceTags);
+    }
+
+    /**
+     * 查询资源已打标签
+     *
+     * 查询资源已打标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResourceTagsRequest 请求对象
+     * @return SyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse>
+     */
+    public SyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse> showResourceTagsInvoker(
+        ShowResourceTagsRequest request) {
+        return new SyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse>(request, GaMeta.showResourceTags,
+            hcClient);
     }
 
 }

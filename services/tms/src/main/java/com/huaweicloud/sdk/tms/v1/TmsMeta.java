@@ -35,6 +35,31 @@ public class TmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateResourceTagRequest, CreateResourceTagResponse> createResourceTag =
+        genForcreateResourceTag();
+
+    private static HttpRequestDef<CreateResourceTagRequest, CreateResourceTagResponse> genForcreateResourceTag() {
+        // basic
+        HttpRequestDef.Builder<CreateResourceTagRequest, CreateResourceTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateResourceTagRequest.class, CreateResourceTagResponse.class)
+                .withName("CreateResourceTag")
+                .withUri("/v1.0/resource-tags/batch-create")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ReqCreateTag>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReqCreateTag.class),
+            f -> f.withMarshaller(CreateResourceTagRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeletePredefineTagsRequest, DeletePredefineTagsResponse> deletePredefineTags =
         genFordeletePredefineTags();
 
@@ -52,6 +77,31 @@ public class TmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReqDeletePredefineTag.class),
             f -> f.withMarshaller(DeletePredefineTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> deleteResourceTag =
+        genFordeleteResourceTag();
+
+    private static HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> genFordeleteResourceTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteResourceTagRequest, DeleteResourceTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteResourceTagRequest.class, DeleteResourceTagResponse.class)
+                .withName("DeleteResourceTag")
+                .withUri("/v1.0/resource-tags/batch-delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ReqDeleteTag>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReqDeleteTag.class),
+            f -> f.withMarshaller(DeleteResourceTagRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -184,6 +234,114 @@ public class TmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListResourceRequest, ListResourceResponse> listResource = genForlistResource();
+
+    private static HttpRequestDef<ListResourceRequest, ListResourceResponse> genForlistResource() {
+        // basic
+        HttpRequestDef.Builder<ListResourceRequest, ListResourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListResourceRequest.class, ListResourceResponse.class)
+                .withName("ListResource")
+                .withUri("/v1.0/resource-instances/filter")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ResqTagResource>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResqTagResource.class),
+            f -> f.withMarshaller(ListResourceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTagKeysRequest, ListTagKeysResponse> listTagKeys = genForlistTagKeys();
+
+    private static HttpRequestDef<ListTagKeysRequest, ListTagKeysResponse> genForlistTagKeys() {
+        // basic
+        HttpRequestDef.Builder<ListTagKeysRequest, ListTagKeysResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTagKeysRequest.class, ListTagKeysResponse.class)
+                .withName("ListTagKeys")
+                .withUri("/v1.0/tag-keys")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagKeysRequest::getRegionId, (req, v) -> {
+                req.setRegionId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTagKeysRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagKeysRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTagValuesRequest, ListTagValuesResponse> listTagValues =
+        genForlistTagValues();
+
+    private static HttpRequestDef<ListTagValuesRequest, ListTagValuesResponse> genForlistTagValues() {
+        // basic
+        HttpRequestDef.Builder<ListTagValuesRequest, ListTagValuesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTagValuesRequest.class, ListTagValuesResponse.class)
+                .withName("ListTagValues")
+                .withUri("/v1.0/tag-values")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagValuesRequest::getRegionId, (req, v) -> {
+                req.setRegionId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTagValuesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagValuesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("key",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagValuesRequest::getKey, (req, v) -> {
+                req.setKey(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion =
         genForshowApiVersion();
 
@@ -202,6 +360,45 @@ public class TmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApiVersionRequest::getApiVersion, (req, v) -> {
                 req.setApiVersion(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> showResourceTag =
+        genForshowResourceTag();
+
+    private static HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> genForshowResourceTag() {
+        // basic
+        HttpRequestDef.Builder<ShowResourceTagRequest, ShowResourceTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowResourceTagRequest.class, ShowResourceTagResponse.class)
+                .withName("ShowResourceTag")
+                .withUri("/v2.0/resources/{resource_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceTagRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<String>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceTagRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("resource_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceTagRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
             }));
 
         // response

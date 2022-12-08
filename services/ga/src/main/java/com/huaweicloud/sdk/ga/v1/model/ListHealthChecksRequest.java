@@ -141,7 +141,7 @@ public class ListHealthChecksRequest {
 
     /**
      * 分页查询每页的资源个数。如果不设置，则默认为500。
-     * minimum: 0
+     * minimum: 1
      * maximum: 2000
      * @return limit
      */

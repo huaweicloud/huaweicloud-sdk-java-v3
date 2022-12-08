@@ -62,7 +62,7 @@ public class Agency  {
 
 
     /**
-     * 对应provider所使用的IAM委托名称名称，RF会使用此委托的权限去访问、创建对应provider的资源
+     * 对应provider所使用的IAM委托名称，资源编排服务会使用此委托的权限去访问、创建对应provider的资源
      * @return agencyName
      */
     public String getAgencyName() {

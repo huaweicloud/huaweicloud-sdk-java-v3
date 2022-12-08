@@ -22,7 +22,7 @@ public class GaAsyncClient {
     /**
      * 创建全球加速器
      *
-     * 创建全球加速器
+     * 创建全球加速器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -36,7 +36,7 @@ public class GaAsyncClient {
     /**
      * 创建全球加速器
      *
-     * 创建全球加速器
+     * 创建全球加速器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -82,7 +82,7 @@ public class GaAsyncClient {
     /**
      * 查询全球加速器列表
      *
-     * 查询全球加速器列表
+     * 查询全球加速器列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -96,7 +96,7 @@ public class GaAsyncClient {
     /**
      * 查询全球加速器列表
      *
-     * 查询全球加速器列表
+     * 查询全球加速器列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -112,7 +112,7 @@ public class GaAsyncClient {
     /**
      * 查询全球加速器详情
      *
-     * 查询全球加速器详情
+     * 查询全球加速器详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -126,7 +126,7 @@ public class GaAsyncClient {
     /**
      * 查询全球加速器详情
      *
-     * 查询全球加速器详情
+     * 查询全球加速器详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -142,7 +142,7 @@ public class GaAsyncClient {
     /**
      * 更新全球加速器
      *
-     * 更新全球加速器
+     * 更新全球加速器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -156,7 +156,7 @@ public class GaAsyncClient {
     /**
      * 更新全球加速器
      *
-     * 更新全球加速器
+     * 更新全球加速器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -172,7 +172,7 @@ public class GaAsyncClient {
     /**
      * 创建终端节点
      *
-     * 创建终端节点
+     * 创建终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -186,7 +186,7 @@ public class GaAsyncClient {
     /**
      * 创建终端节点
      *
-     * 创建终端节点
+     * 创建终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -202,7 +202,7 @@ public class GaAsyncClient {
     /**
      * 删除终端节点
      *
-     * 删除终端节点
+     * 删除终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -216,7 +216,7 @@ public class GaAsyncClient {
     /**
      * 删除终端节点
      *
-     * 删除终端节点
+     * 删除终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -232,7 +232,7 @@ public class GaAsyncClient {
     /**
      * 查询终端节点组下终端节点列表
      *
-     * 查询终端节点组下终端节点列表
+     * 查询终端节点组下终端节点列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -246,7 +246,7 @@ public class GaAsyncClient {
     /**
      * 查询终端节点组下终端节点列表
      *
-     * 查询终端节点组下终端节点列表
+     * 查询终端节点组下终端节点列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -261,7 +261,7 @@ public class GaAsyncClient {
     /**
      * 查询终端节点详情
      *
-     * 查询终端节点详情
+     * 查询终端节点详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -275,7 +275,7 @@ public class GaAsyncClient {
     /**
      * 查询终端节点详情
      *
-     * 查询终端节点详情
+     * 查询终端节点详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -290,7 +290,7 @@ public class GaAsyncClient {
     /**
      * 更新终端节点
      *
-     * 更新终端节点
+     * 更新终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -304,7 +304,7 @@ public class GaAsyncClient {
     /**
      * 更新终端节点
      *
-     * 更新终端节点
+     * 更新终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -320,7 +320,7 @@ public class GaAsyncClient {
     /**
      * 创建终端节点组
      *
-     * 创建终端节点组
+     * 创建终端节点组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -334,7 +334,7 @@ public class GaAsyncClient {
     /**
      * 创建终端节点组
      *
-     * 创建终端节点组
+     * 创建终端节点组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -380,7 +380,7 @@ public class GaAsyncClient {
     /**
      * 查询终端节点组列表
      *
-     * 查询终端节点组列表
+     * 查询终端节点组列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -394,7 +394,7 @@ public class GaAsyncClient {
     /**
      * 查询终端节点组列表
      *
-     * 查询终端节点组列表
+     * 查询终端节点组列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -410,7 +410,7 @@ public class GaAsyncClient {
     /**
      * 查询终端节点组详情
      *
-     * 查询终端节点组详情
+     * 查询终端节点组详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -424,7 +424,7 @@ public class GaAsyncClient {
     /**
      * 查询终端节点组详情
      *
-     * 查询终端节点组详情
+     * 查询终端节点组详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -440,7 +440,7 @@ public class GaAsyncClient {
     /**
      * 更新终端节点组
      *
-     * 更新终端节点组
+     * 更新终端节点组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -454,7 +454,7 @@ public class GaAsyncClient {
     /**
      * 更新终端节点组
      *
-     * 更新终端节点组
+     * 更新终端节点组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -470,7 +470,7 @@ public class GaAsyncClient {
     /**
      * 创建健康检查
      *
-     * 创建健康检查
+     * 创建健康检查。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -484,7 +484,7 @@ public class GaAsyncClient {
     /**
      * 创建健康检查
      *
-     * 创建健康检查
+     * 创建健康检查。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -500,7 +500,7 @@ public class GaAsyncClient {
     /**
      * 删除健康检查
      *
-     * 删除健康检查
+     * 删除健康检查。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -514,7 +514,7 @@ public class GaAsyncClient {
     /**
      * 删除健康检查
      *
-     * 删除健康检查
+     * 删除健康检查。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -530,7 +530,7 @@ public class GaAsyncClient {
     /**
      * 查询健康检查列表
      *
-     * 查询健康检查列表
+     * 查询健康检查列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -544,7 +544,7 @@ public class GaAsyncClient {
     /**
      * 查询健康检查列表
      *
-     * 查询健康检查列表
+     * 查询健康检查列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -560,7 +560,7 @@ public class GaAsyncClient {
     /**
      * 查询健康检查详情
      *
-     * 查询健康检查详情
+     * 查询健康检查详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -574,7 +574,7 @@ public class GaAsyncClient {
     /**
      * 查询健康检查详情
      *
-     * 查询健康检查详情
+     * 查询健康检查详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -590,7 +590,7 @@ public class GaAsyncClient {
     /**
      * 更新健康检查
      *
-     * 更新健康检查
+     * 更新健康检查。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -604,7 +604,7 @@ public class GaAsyncClient {
     /**
      * 更新健康检查
      *
-     * 更新健康检查
+     * 更新健康检查。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -620,7 +620,7 @@ public class GaAsyncClient {
     /**
      * 创建监听器
      *
-     * 创建监听器
+     * 创建监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -634,7 +634,7 @@ public class GaAsyncClient {
     /**
      * 创建监听器
      *
-     * 创建监听器
+     * 创建监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -650,7 +650,7 @@ public class GaAsyncClient {
     /**
      * 删除监听器
      *
-     * 删除监听器
+     * 删除监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -664,7 +664,7 @@ public class GaAsyncClient {
     /**
      * 删除监听器
      *
-     * 删除监听器
+     * 删除监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -680,7 +680,7 @@ public class GaAsyncClient {
     /**
      * 查询监听器列表
      *
-     * 查询监听器列表
+     * 查询监听器列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -694,7 +694,7 @@ public class GaAsyncClient {
     /**
      * 查询监听器列表
      *
-     * 查询监听器列表
+     * 查询监听器列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -709,7 +709,7 @@ public class GaAsyncClient {
     /**
      * 查询监听器详情
      *
-     * 查询监听器详情
+     * 查询监听器详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -723,7 +723,7 @@ public class GaAsyncClient {
     /**
      * 查询监听器详情
      *
-     * 查询监听器详情
+     * 查询监听器详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -738,7 +738,7 @@ public class GaAsyncClient {
     /**
      * 更新监听器
      *
-     * 更新监听器
+     * 更新监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -752,7 +752,7 @@ public class GaAsyncClient {
     /**
      * 更新监听器
      *
-     * 更新监听器
+     * 更新监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -768,7 +768,7 @@ public class GaAsyncClient {
     /**
      * 查询区域列表
      *
-     * 查询区域列表
+     * 查询区域列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -782,7 +782,7 @@ public class GaAsyncClient {
     /**
      * 查询区域列表
      *
-     * 查询区域列表
+     * 查询区域列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -791,6 +791,92 @@ public class GaAsyncClient {
      */
     public AsyncInvoker<ListRegionsRequest, ListRegionsResponse> listRegionsAsyncInvoker(ListRegionsRequest request) {
         return new AsyncInvoker<ListRegionsRequest, ListRegionsResponse>(request, GaMeta.listRegions, hcClient);
+    }
+
+    /**
+     * 批量添加标签
+     *
+     * 批量添加标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTagsRequest 请求对象
+     * @return CompletableFuture<CreateTagsResponse>
+     */
+    public CompletableFuture<CreateTagsResponse> createTagsAsync(CreateTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.createTags);
+    }
+
+    /**
+     * 批量添加标签
+     *
+     * 批量添加标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTagsRequest 请求对象
+     * @return AsyncInvoker<CreateTagsRequest, CreateTagsResponse>
+     */
+    public AsyncInvoker<CreateTagsRequest, CreateTagsResponse> createTagsAsyncInvoker(CreateTagsRequest request) {
+        return new AsyncInvoker<CreateTagsRequest, CreateTagsResponse>(request, GaMeta.createTags, hcClient);
+    }
+
+    /**
+     * 批量删除标签
+     *
+     * 批量删除标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTagsRequest 请求对象
+     * @return CompletableFuture<DeleteTagsResponse>
+     */
+    public CompletableFuture<DeleteTagsResponse> deleteTagsAsync(DeleteTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.deleteTags);
+    }
+
+    /**
+     * 批量删除标签
+     *
+     * 批量删除标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTagsRequest 请求对象
+     * @return AsyncInvoker<DeleteTagsRequest, DeleteTagsResponse>
+     */
+    public AsyncInvoker<DeleteTagsRequest, DeleteTagsResponse> deleteTagsAsyncInvoker(DeleteTagsRequest request) {
+        return new AsyncInvoker<DeleteTagsRequest, DeleteTagsResponse>(request, GaMeta.deleteTags, hcClient);
+    }
+
+    /**
+     * 查询资源已打标签
+     *
+     * 查询资源已打标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResourceTagsRequest 请求对象
+     * @return CompletableFuture<ShowResourceTagsResponse>
+     */
+    public CompletableFuture<ShowResourceTagsResponse> showResourceTagsAsync(ShowResourceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.showResourceTags);
+    }
+
+    /**
+     * 查询资源已打标签
+     *
+     * 查询资源已打标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResourceTagsRequest 请求对象
+     * @return AsyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse>
+     */
+    public AsyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse> showResourceTagsAsyncInvoker(
+        ShowResourceTagsRequest request) {
+        return new AsyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse>(request, GaMeta.showResourceTags,
+            hcClient);
     }
 
 }

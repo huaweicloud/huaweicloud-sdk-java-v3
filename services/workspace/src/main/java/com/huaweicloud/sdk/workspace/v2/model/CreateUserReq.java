@@ -93,7 +93,7 @@ public class CreateUserReq {
     }
 
     /**
-     * 账户过期时间，0表示永远不过期。时间格式：yyyy-MM-ddTHH:mm:ssZ。
+     * 账户过期时间，0表示永远不过期。时间格式：yyyy-MM-ddTHH:mm:ssZ或yyyy-MM-ddTHH:mm:ss.SSSZ。
      * @return accountExpires
      */
     public String getAccountExpires() {

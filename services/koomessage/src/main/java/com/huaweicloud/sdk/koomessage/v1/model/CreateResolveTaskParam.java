@@ -106,7 +106,7 @@ public class CreateResolveTaskParam {
     }
 
     /**
-     * 自定义短码，支持长度为3到8位的数字或大小写字母。样例为：aDC123。 > 自定义短码时即generation_type为2时，此参数为必填。
+     * 自定义短码，支持长度为3到10位的数字或大小写字母。样例为：aDC123。 > 自定义短码时即generation_type为2时，此参数为必填。
      * @return customShortCode
      */
     public String getCustomShortCode() {

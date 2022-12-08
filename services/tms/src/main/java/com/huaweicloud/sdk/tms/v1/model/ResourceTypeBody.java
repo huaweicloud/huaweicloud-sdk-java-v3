@@ -56,7 +56,7 @@ public class ResourceTypeBody {
     }
 
     /**
-     * 资源类型显示名称，可以通过参数中'locale'设置语言
+     * 资源类型显示名称，可以通过参数中“locale”设置语言。
      * @return resourceTypeI18nDisplayName
      */
     public String getResourceTypeI18nDisplayName() {

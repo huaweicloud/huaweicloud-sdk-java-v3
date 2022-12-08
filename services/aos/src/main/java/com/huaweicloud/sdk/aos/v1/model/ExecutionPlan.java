@@ -227,7 +227,7 @@ public class ExecutionPlan  {
 
 
     /**
-     * 执行计划的唯一Id，由IaC随机生成,为uuid
+     * 执行计划的唯一Id，由资源编排服务随机生成,为uuid
      * @return executionPlanId
      */
     public String getExecutionPlanId() {

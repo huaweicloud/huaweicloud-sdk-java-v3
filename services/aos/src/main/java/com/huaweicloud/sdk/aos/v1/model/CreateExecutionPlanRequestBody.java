@@ -50,13 +50,6 @@ public class CreateExecutionPlanRequestBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="executor")
-    
-    
-    private String executor;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
     
@@ -92,7 +85,7 @@ public class CreateExecutionPlanRequestBody  {
 
 
     /**
-     * 用户希望生成执行计划的栈（stack）的Id。此Id由IAC在生成栈的时候生成，为UUID。
+     * 用户希望生成执行计划的栈（stack）的Id。此Id由资源编排服务在生成栈的时候生成，为UUID。
      * @return stackId
      */
     public String getStackId() {
@@ -114,7 +107,7 @@ public class CreateExecutionPlanRequestBody  {
 
 
     /**
-     * HCL模板，描述了资源的目标状态。IAC将比较此模板与当前远程资源的状态之间的区别 template_body 和 template_uri 有且仅有一个存在
+     * HCL模板，描述了资源的目标状态。资源编排服务将比较此模板与当前远程资源的状态之间的区别 template_body 和 template_uri 有且仅有一个存在
      * @return templateBody
      */
     public String getTemplateBody() {
@@ -136,7 +129,7 @@ public class CreateExecutionPlanRequestBody  {
 
 
     /**
-     * HCL模板的OBS地址，描述了资源的目标状态。IAC将比较此模板与当前远程资源的状态之间的区别。目前接受纯tf文件或zip压缩包。 纯tf文件需要以“.tf”结尾，并遵守tf模板格式。压缩包目前只支持zip格式，文件需要以\".zip\"结尾，压缩包解压后应该只包含文件，且文件均以“.tf”结尾，不支持nested结构 template_body 和 template_uri 有且仅有一个存在
+     * HCL模板的OBS地址，描述了资源的目标状态。资源编排服务将比较此模板与当前远程资源的状态之间的区别。目前接受纯tf文件或zip压缩包。 纯tf文件需要以“.tf”结尾，并遵守tf模板格式。压缩包目前只支持zip格式，文件需要以\".zip\"结尾，压缩包解压后应该只包含文件，且文件均以“.tf”结尾，不支持nested结构 template_body 和 template_uri 有且仅有一个存在
      * @return templateUri
      */
     public String getTemplateUri() {
@@ -167,28 +160,6 @@ public class CreateExecutionPlanRequestBody  {
 
     public void setExecutionPlanName(String executionPlanName) {
         this.executionPlanName = executionPlanName;
-    }
-
-    
-
-    public CreateExecutionPlanRequestBody withExecutor(String executor) {
-        this.executor = executor;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 执行操作者的名字
-     * @return executor
-     */
-    public String getExecutor() {
-        return executor;
-    }
-
-    public void setExecutor(String executor) {
-        this.executor = executor;
     }
 
     
@@ -238,7 +209,7 @@ public class CreateExecutionPlanRequestBody  {
     }
 
     /**
-     * terraform支持参数，即，同一个模板可以给予不同的参数而达到不同的效果。var是一系列terraform所需要的参数。 注：IaC支持vars、vars_body和vars_uri，如果vars、vars_body和vars_uri中声名了同一个变量，将报错400。 注：vars中的值只支持简单的字符串类型，如果其他类型，需要用户自己在HCL引用时转换，或者用户可以使用vars_body或vars_uri， vars_body和vars_uri中支持HCL支持的各种类型以及复杂结构。
+     * terraform支持参数，即，同一个模板可以给予不同的参数而达到不同的效果。var是一系列terraform所需要的参数。 注：资源编排服务支持vars、vars_body和vars_uri，如果vars、vars_body和vars_uri中声名了同一个变量，将报错400。 注：vars中的值只支持简单的字符串类型，如果其他类型，需要用户自己在HCL引用时转换，或者用户可以使用vars_body或vars_uri， vars_body和vars_uri中支持HCL支持的各种类型以及复杂结构。
      * @return varsStructure
      */
     public List<VarsStructure> getVarsStructure() {
@@ -282,7 +253,7 @@ public class CreateExecutionPlanRequestBody  {
 
 
     /**
-     * 参数文件的OBS地址，如果客户偏向使用文件维护参数，可以将参数上传OBS，并将OBS地址提交。 注：如果用户同时使用了vars_body、vars_uri和vars，且他们的内容中定义了同一个参数，IAC将报错并返回400。 vars_uri和vars_body中的vars按照HCL的语义，可以支持各种类型、复杂结构等
+     * 参数文件的OBS地址，如果客户偏向使用文件维护参数，可以将参数上传OBS，并将OBS地址提交。 注：如果用户同时使用了vars_body、vars_uri和vars，且他们的内容中定义了同一个参数，资源编排服务将报错并返回400。 vars_uri和vars_body中的vars按照HCL的语义，可以支持各种类型、复杂结构等
      * @return varsUri
      */
     public String getVarsUri() {
@@ -308,7 +279,6 @@ public class CreateExecutionPlanRequestBody  {
             Objects.equals(this.templateBody, createExecutionPlanRequestBody.templateBody) &&
             Objects.equals(this.templateUri, createExecutionPlanRequestBody.templateUri) &&
             Objects.equals(this.executionPlanName, createExecutionPlanRequestBody.executionPlanName) &&
-            Objects.equals(this.executor, createExecutionPlanRequestBody.executor) &&
             Objects.equals(this.description, createExecutionPlanRequestBody.description) &&
             Objects.equals(this.varsStructure, createExecutionPlanRequestBody.varsStructure) &&
             Objects.equals(this.varsBody, createExecutionPlanRequestBody.varsBody) &&
@@ -316,7 +286,7 @@ public class CreateExecutionPlanRequestBody  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(stackId, templateBody, templateUri, executionPlanName, executor, description, varsStructure, varsBody, varsUri);
+        return Objects.hash(stackId, templateBody, templateUri, executionPlanName, description, varsStructure, varsBody, varsUri);
     }
     @Override
     public String toString() {
@@ -326,7 +296,6 @@ public class CreateExecutionPlanRequestBody  {
         sb.append("    templateBody: ").append(toIndentedString(templateBody)).append("\n");
         sb.append("    templateUri: ").append(toIndentedString(templateUri)).append("\n");
         sb.append("    executionPlanName: ").append(toIndentedString(executionPlanName)).append("\n");
-        sb.append("    executor: ").append(toIndentedString(executor)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    varsStructure: ").append(toIndentedString(varsStructure)).append("\n");
         sb.append("    varsBody: ").append(toIndentedString(varsBody)).append("\n");

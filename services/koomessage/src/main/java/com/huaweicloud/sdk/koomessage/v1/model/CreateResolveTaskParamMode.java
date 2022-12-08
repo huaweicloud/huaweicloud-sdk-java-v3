@@ -326,7 +326,7 @@ public class CreateResolveTaskParamMode {
     }
 
     /**
-     * 自定义短码，支持长度为3到8位的数字或大小写字母。样例为：aDC123。
+     * 自定义短码，支持长度为3到10位的数字或大小写字母。样例为：aDC123。
      * @return customShortCode
      */
     public String getCustomShortCode() {

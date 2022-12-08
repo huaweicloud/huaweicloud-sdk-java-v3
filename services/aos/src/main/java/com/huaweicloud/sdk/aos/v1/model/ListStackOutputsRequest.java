@@ -38,27 +38,6 @@ public class ListStackOutputsRequest  {
     
     private String stackId;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="executor")
-    
-    
-    private String executor;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
-    
-    private Integer limit;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
-    
-    private String marker;
-
     public ListStackOutputsRequest withClientRequestId(String clientRequestId) {
         this.clientRequestId = clientRequestId;
         return this;
@@ -112,7 +91,7 @@ public class ListStackOutputsRequest  {
 
 
     /**
-     * 用户希望描述的栈的Id。若stack_name和stack_id同时存在，则IaC会检查是否两个匹配，否则返回400
+     * 用户希望描述的栈的Id。若stack_name和stack_id同时存在，则资源编排服务会检查是否两个匹配，否则返回400
      * @return stackId
      */
     public String getStackId() {
@@ -121,74 +100,6 @@ public class ListStackOutputsRequest  {
 
     public void setStackId(String stackId) {
         this.stackId = stackId;
-    }
-
-    
-
-    public ListStackOutputsRequest withExecutor(String executor) {
-        this.executor = executor;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 执行操作者的名字，将用做未来的审计工作。
-     * @return executor
-     */
-    public String getExecutor() {
-        return executor;
-    }
-
-    public void setExecutor(String executor) {
-        this.executor = executor;
-    }
-
-    
-
-    public ListStackOutputsRequest withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 分页limit
-     * minimum: 1
-     * maximum: 1000
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    
-
-    public ListStackOutputsRequest withMarker(String marker) {
-        this.marker = marker;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 当一页无法发回所有的细节，上一次的请求将返回next_marker以指引还有更多页数，客户可以将next_marker中的值放到此处以查询下一页的信息。
-     * @return marker
-     */
-    public String getMarker() {
-        return marker;
-    }
-
-    public void setMarker(String marker) {
-        this.marker = marker;
     }
 
     
@@ -204,14 +115,11 @@ public class ListStackOutputsRequest  {
         ListStackOutputsRequest listStackOutputsRequest = (ListStackOutputsRequest) o;
         return Objects.equals(this.clientRequestId, listStackOutputsRequest.clientRequestId) &&
             Objects.equals(this.stackName, listStackOutputsRequest.stackName) &&
-            Objects.equals(this.stackId, listStackOutputsRequest.stackId) &&
-            Objects.equals(this.executor, listStackOutputsRequest.executor) &&
-            Objects.equals(this.limit, listStackOutputsRequest.limit) &&
-            Objects.equals(this.marker, listStackOutputsRequest.marker);
+            Objects.equals(this.stackId, listStackOutputsRequest.stackId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(clientRequestId, stackName, stackId, executor, limit, marker);
+        return Objects.hash(clientRequestId, stackName, stackId);
     }
     @Override
     public String toString() {
@@ -220,9 +128,6 @@ public class ListStackOutputsRequest  {
         sb.append("    clientRequestId: ").append(toIndentedString(clientRequestId)).append("\n");
         sb.append("    stackName: ").append(toIndentedString(stackName)).append("\n");
         sb.append("    stackId: ").append(toIndentedString(stackId)).append("\n");
-        sb.append("    executor: ").append(toIndentedString(executor)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

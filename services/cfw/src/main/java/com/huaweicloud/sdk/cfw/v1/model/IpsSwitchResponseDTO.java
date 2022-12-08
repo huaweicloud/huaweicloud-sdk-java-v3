@@ -11,9 +11,9 @@ import java.util.Objects;
 public class IpsSwitchResponseDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "object_id")
+    @JsonProperty(value = "id")
 
-    private String objectId;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "basic_defense_status")
@@ -21,25 +21,25 @@ public class IpsSwitchResponseDTO {
     private Integer basicDefenseStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "virtual_patches_stauts")
+    @JsonProperty(value = "virtual_patches_status")
 
-    private Integer virtualPatchesStauts;
+    private Integer virtualPatchesStatus;
 
-    public IpsSwitchResponseDTO withObjectId(String objectId) {
-        this.objectId = objectId;
+    public IpsSwitchResponseDTO withId(String id) {
+        this.id = id;
         return this;
     }
 
     /**
-     * object_id
-     * @return objectId
+     * ips开关id
+     * @return id
      */
-    public String getObjectId() {
-        return objectId;
+    public String getId() {
+        return id;
     }
 
-    public void setObjectId(String objectId) {
-        this.objectId = objectId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public IpsSwitchResponseDTO withBasicDefenseStatus(Integer basicDefenseStatus) {
@@ -59,21 +59,21 @@ public class IpsSwitchResponseDTO {
         this.basicDefenseStatus = basicDefenseStatus;
     }
 
-    public IpsSwitchResponseDTO withVirtualPatchesStauts(Integer virtualPatchesStauts) {
-        this.virtualPatchesStauts = virtualPatchesStauts;
+    public IpsSwitchResponseDTO withVirtualPatchesStatus(Integer virtualPatchesStatus) {
+        this.virtualPatchesStatus = virtualPatchesStatus;
         return this;
     }
 
     /**
      * 虚拟补丁状态
-     * @return virtualPatchesStauts
+     * @return virtualPatchesStatus
      */
-    public Integer getVirtualPatchesStauts() {
-        return virtualPatchesStauts;
+    public Integer getVirtualPatchesStatus() {
+        return virtualPatchesStatus;
     }
 
-    public void setVirtualPatchesStauts(Integer virtualPatchesStauts) {
-        this.virtualPatchesStauts = virtualPatchesStauts;
+    public void setVirtualPatchesStatus(Integer virtualPatchesStatus) {
+        this.virtualPatchesStatus = virtualPatchesStatus;
     }
 
     @Override
@@ -85,23 +85,23 @@ public class IpsSwitchResponseDTO {
             return false;
         }
         IpsSwitchResponseDTO ipsSwitchResponseDTO = (IpsSwitchResponseDTO) o;
-        return Objects.equals(this.objectId, ipsSwitchResponseDTO.objectId)
+        return Objects.equals(this.id, ipsSwitchResponseDTO.id)
             && Objects.equals(this.basicDefenseStatus, ipsSwitchResponseDTO.basicDefenseStatus)
-            && Objects.equals(this.virtualPatchesStauts, ipsSwitchResponseDTO.virtualPatchesStauts);
+            && Objects.equals(this.virtualPatchesStatus, ipsSwitchResponseDTO.virtualPatchesStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectId, basicDefenseStatus, virtualPatchesStauts);
+        return Objects.hash(id, basicDefenseStatus, virtualPatchesStatus);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class IpsSwitchResponseDTO {\n");
-        sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    basicDefenseStatus: ").append(toIndentedString(basicDefenseStatus)).append("\n");
-        sb.append("    virtualPatchesStauts: ").append(toIndentedString(virtualPatchesStauts)).append("\n");
+        sb.append("    virtualPatchesStatus: ").append(toIndentedString(virtualPatchesStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

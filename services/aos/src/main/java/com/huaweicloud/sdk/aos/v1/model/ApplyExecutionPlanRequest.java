@@ -99,7 +99,7 @@ public class ApplyExecutionPlanRequest  {
 
 
     /**
-     * 执行计划的名字。如果未指定，则使用execution_plan_id作为execution_plan_name。
+     * 执行计划的名字。
      * @return executionPlanName
      */
     public String getExecutionPlanName() {

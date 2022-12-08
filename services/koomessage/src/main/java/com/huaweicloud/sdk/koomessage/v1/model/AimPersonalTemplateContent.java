@@ -67,6 +67,11 @@ public class AimPersonalTemplateContent {
     private String oppoBackground;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vivo_background")
+
+    private String vivoBackground;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
     private AimPersonalTemplateContentAction action;
@@ -181,7 +186,7 @@ public class AimPersonalTemplateContent {
     }
 
     /**
-     * 功能类型。  - OPEN_URL：表示跳转H5 - OPEN_QUICK：表示跳转快应用 - OPEN_APP：表示跳转APP - DIAL_PHONE：表示拉起拨号盘 - OPEN_SMS：表示新建短信息 - OPEN_EMAIL：表示打开邮箱 - OPEN_SCHEDULE：表示新建日程 - OPEN_MAP：表示位置定位 - OPEN_BROWSER：表示打开浏览器 - OPEN_POPUP：表示弹窗 - COPY_PARAMETER：表示复制 - VIEW_PIC：表示打开大图  > - type为Image和Button时为必填项，必须绑定事件 > - type为其他类型时则不必填 > - OPPO厂商点击事件类型只支持打开浏览器、打开快应用、打开APP > - 横滑类1、横滑类2版式的图片不支持绑定事件，默认与按钮事件一致  
+     * 功能类型。  - OPEN_URL：表示跳转H5 - OPEN_QUICK：表示跳转快应用 - OPEN_APP：表示跳转APP - DIAL_PHONE：表示拉起拨号盘 - OPEN_SMS：表示新建短信息 - OPEN_EMAIL：表示打开邮箱 - OPEN_SCHEDULE：表示新建日程 - OPEN_MAP：表示位置定位 - OPEN_BROWSER：表示打开浏览器 - OPEN_POPUP：表示弹窗 - COPY_PARAMETER：表示复制 - VIEW_PIC：表示打开大图  > - type为Image和Button时为必填项，必须绑定事件 > - type为其他类型时则不必填 > - OPPO厂商点击事件类型只支持打开浏览器、打开快应用、打开APP、跳转H5 > - VIVO厂商点击事件类型不支持打开邮箱、打开地图 > - MEIZU厂商点击事件类型不支持打开大图 > - 横滑类1、横滑类2版式的图片不支持绑定事件，默认与按钮事件一致  
      * @return actionType
      */
     public String getActionType() {
@@ -260,6 +265,23 @@ public class AimPersonalTemplateContent {
         this.oppoBackground = oppoBackground;
     }
 
+    public AimPersonalTemplateContent withVivoBackground(String vivoBackground) {
+        this.vivoBackground = vivoBackground;
+        return this;
+    }
+
+    /**
+     * VIVO红包背景。  > - 当src_type为1时，即资源ID时，参数填入上传模板素材接口中返回的aim_resource_id，如：691996319597764608 > - 当src_type为2时，即资源地址时，参数填写资源完整的URL，最大长度不超过1000个字符 
+     * @return vivoBackground
+     */
+    public String getVivoBackground() {
+        return vivoBackground;
+    }
+
+    public void setVivoBackground(String vivoBackground) {
+        this.vivoBackground = vivoBackground;
+    }
+
     public AimPersonalTemplateContent withAction(AimPersonalTemplateContentAction action) {
         this.action = action;
         return this;
@@ -306,6 +328,7 @@ public class AimPersonalTemplateContent {
             && Objects.equals(this.visible, aimPersonalTemplateContent.visible)
             && Objects.equals(this.currencyDisplay, aimPersonalTemplateContent.currencyDisplay)
             && Objects.equals(this.oppoBackground, aimPersonalTemplateContent.oppoBackground)
+            && Objects.equals(this.vivoBackground, aimPersonalTemplateContent.vivoBackground)
             && Objects.equals(this.action, aimPersonalTemplateContent.action);
     }
 
@@ -322,6 +345,7 @@ public class AimPersonalTemplateContent {
             visible,
             currencyDisplay,
             oppoBackground,
+            vivoBackground,
             action);
     }
 
@@ -340,6 +364,7 @@ public class AimPersonalTemplateContent {
         sb.append("    visible: ").append(toIndentedString(visible)).append("\n");
         sb.append("    currencyDisplay: ").append(toIndentedString(currencyDisplay)).append("\n");
         sb.append("    oppoBackground: ").append(toIndentedString(oppoBackground)).append("\n");
+        sb.append("    vivoBackground: ").append(toIndentedString(vivoBackground)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("}");
         return sb.toString();

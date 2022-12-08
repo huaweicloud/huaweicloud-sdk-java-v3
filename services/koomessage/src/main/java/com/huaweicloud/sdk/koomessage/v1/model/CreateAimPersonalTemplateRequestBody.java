@@ -39,6 +39,16 @@ public class CreateAimPersonalTemplateRequestBody {
     private String smsExample;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sms_signs")
+
+    private List<String> smsSigns = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sms_template")
+
+    private String smsTemplate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pages")
 
     private List<AimPersonalTemplatePage> pages = null;
@@ -136,6 +146,56 @@ public class CreateAimPersonalTemplateRequestBody {
 
     public void setSmsExample(String smsExample) {
         this.smsExample = smsExample;
+    }
+
+    public CreateAimPersonalTemplateRequestBody withSmsSigns(List<String> smsSigns) {
+        this.smsSigns = smsSigns;
+        return this;
+    }
+
+    public CreateAimPersonalTemplateRequestBody addSmsSignsItem(String smsSignsItem) {
+        if (this.smsSigns == null) {
+            this.smsSigns = new ArrayList<>();
+        }
+        this.smsSigns.add(smsSignsItem);
+        return this;
+    }
+
+    public CreateAimPersonalTemplateRequestBody withSmsSigns(Consumer<List<String>> smsSignsSetter) {
+        if (this.smsSigns == null) {
+            this.smsSigns = new ArrayList<>();
+        }
+        smsSignsSetter.accept(this.smsSigns);
+        return this;
+    }
+
+    /**
+     * 短信签名。最多可以传三个签名，发送短信时，只要能匹配其中一个即可。填写的短信签名为企业绑定的签名，每个签名最多20个字，支持输入中文，英文，数字，符号，单个签名内容不包括中括号。  > 选择厂商包含VIVO时，此参数必填。 
+     * @return smsSigns
+     */
+    public List<String> getSmsSigns() {
+        return smsSigns;
+    }
+
+    public void setSmsSigns(List<String> smsSigns) {
+        this.smsSigns = smsSigns;
+    }
+
+    public CreateAimPersonalTemplateRequestBody withSmsTemplate(String smsTemplate) {
+        this.smsTemplate = smsTemplate;
+        return this;
+    }
+
+    /**
+     * 短信原文模板。参数示例：尊敬的客户，截至[文本0-20]，您本月国内通用流量已使用[数字0-4]GB，使用到[数字0-4]GB ，整体上网速度将不高于[数字0-2]Mbps。您可点击[字母0-20]获取[文本0-20]。  > - 正则类型仅支持文本、字母、数字三种，且长度最大为99，且中括号为英文中括号。静态短信文案加正则动态文案最大值的总字数不超过370个字符 > - 选择厂商包含VIVO时，此参数必填 
+     * @return smsTemplate
+     */
+    public String getSmsTemplate() {
+        return smsTemplate;
+    }
+
+    public void setSmsTemplate(String smsTemplate) {
+        this.smsTemplate = smsTemplate;
     }
 
     public CreateAimPersonalTemplateRequestBody withPages(List<AimPersonalTemplatePage> pages) {
@@ -253,6 +313,8 @@ public class CreateAimPersonalTemplateRequestBody {
             && Objects.equals(this.scene, createAimPersonalTemplateRequestBody.scene)
             && Objects.equals(this.useId, createAimPersonalTemplateRequestBody.useId)
             && Objects.equals(this.smsExample, createAimPersonalTemplateRequestBody.smsExample)
+            && Objects.equals(this.smsSigns, createAimPersonalTemplateRequestBody.smsSigns)
+            && Objects.equals(this.smsTemplate, createAimPersonalTemplateRequestBody.smsTemplate)
             && Objects.equals(this.pages, createAimPersonalTemplateRequestBody.pages)
             && Objects.equals(this.params, createAimPersonalTemplateRequestBody.params)
             && Objects.equals(this.factorys, createAimPersonalTemplateRequestBody.factorys);
@@ -260,7 +322,7 @@ public class CreateAimPersonalTemplateRequestBody {
 
     @Override
     public int hashCode() {
-        return Objects.hash(cardId, tplName, scene, useId, smsExample, pages, params, factorys);
+        return Objects.hash(cardId, tplName, scene, useId, smsExample, smsSigns, smsTemplate, pages, params, factorys);
     }
 
     @Override
@@ -272,6 +334,8 @@ public class CreateAimPersonalTemplateRequestBody {
         sb.append("    scene: ").append(toIndentedString(scene)).append("\n");
         sb.append("    useId: ").append(toIndentedString(useId)).append("\n");
         sb.append("    smsExample: ").append(toIndentedString(smsExample)).append("\n");
+        sb.append("    smsSigns: ").append(toIndentedString(smsSigns)).append("\n");
+        sb.append("    smsTemplate: ").append(toIndentedString(smsTemplate)).append("\n");
         sb.append("    pages: ").append(toIndentedString(pages)).append("\n");
         sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("    factorys: ").append(toIndentedString(factorys)).append("\n");

@@ -11,9 +11,9 @@ import java.util.Objects;
 public class InstanceDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "publicip")
+    @JsonProperty(value = "public_ip")
 
-    private String publicip;
+    private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exp_time")
@@ -141,14 +141,14 @@ public class InstanceDetail {
     private String bastionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "public_id")
-
-    private String publicId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alter_permit")
 
     private String alterPermit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_id")
+
+    private String publicId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bastion_version")
@@ -170,21 +170,26 @@ public class InstanceDetail {
 
     private String instanceDescription;
 
-    public InstanceDetail withPublicip(String publicip) {
-        this.publicip = publicip;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_auto_renew")
+
+    private Integer isAutoRenew;
+
+    public InstanceDetail withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
         return this;
     }
 
     /**
      * 弹性ip
-     * @return publicip
+     * @return publicIp
      */
-    public String getPublicip() {
-        return publicip;
+    public String getPublicIp() {
+        return publicIp;
     }
 
-    public void setPublicip(String publicip) {
-        this.publicip = publicip;
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
     }
 
     public InstanceDetail withExpTime(String expTime) {
@@ -193,7 +198,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 过期时间
+     * 过期时间，要求用UTC时间表示
      * @return expTime
      */
     public String getExpTime() {
@@ -210,7 +215,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 开始时间
+     * 开始时间，要求用UTC时间表示
      * @return startTime
      */
     public String getStartTime() {
@@ -227,7 +232,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 结束时间
+     * 结束时间，要求用UTC时间表示
      * @return endTime
      */
     public String getEndTime() {
@@ -244,7 +249,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 释放时间
+     * 释放时间，要求用UTC时间表示
      * @return releaseTime
      */
     public String getReleaseTime() {
@@ -346,7 +351,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例创建时间
+     * 实例创建时间，要求用UTC时间表示
      * @return created
      */
     public String getCreated() {
@@ -612,23 +617,6 @@ public class InstanceDetail {
         this.bastionType = bastionType;
     }
 
-    public InstanceDetail withPublicId(String publicId) {
-        this.publicId = publicId;
-        return this;
-    }
-
-    /**
-     * 实例绑定的弹性IP的id
-     * @return publicId
-     */
-    public String getPublicId() {
-        return publicId;
-    }
-
-    public void setPublicId(String publicId) {
-        this.publicId = publicId;
-    }
-
     public InstanceDetail withAlterPermit(String alterPermit) {
         this.alterPermit = alterPermit;
         return this;
@@ -644,6 +632,23 @@ public class InstanceDetail {
 
     public void setAlterPermit(String alterPermit) {
         this.alterPermit = alterPermit;
+    }
+
+    public InstanceDetail withPublicId(String publicId) {
+        this.publicId = publicId;
+        return this;
+    }
+
+    /**
+     * 实例绑定的弹性IP的id
+     * @return publicId
+     */
+    public String getPublicId() {
+        return publicId;
+    }
+
+    public void setPublicId(String publicId) {
+        this.publicId = publicId;
     }
 
     public InstanceDetail withBastionVersion(String bastionVersion) {
@@ -714,6 +719,25 @@ public class InstanceDetail {
         this.instanceDescription = instanceDescription;
     }
 
+    public InstanceDetail withIsAutoRenew(Integer isAutoRenew) {
+        this.isAutoRenew = isAutoRenew;
+        return this;
+    }
+
+    /**
+     * 是否支持续费
+     * minimum: 0
+     * maximum: 100
+     * @return isAutoRenew
+     */
+    public Integer getIsAutoRenew() {
+        return isAutoRenew;
+    }
+
+    public void setIsAutoRenew(Integer isAutoRenew) {
+        this.isAutoRenew = isAutoRenew;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -723,7 +747,7 @@ public class InstanceDetail {
             return false;
         }
         InstanceDetail instanceDetail = (InstanceDetail) o;
-        return Objects.equals(this.publicip, instanceDetail.publicip)
+        return Objects.equals(this.publicIp, instanceDetail.publicIp)
             && Objects.equals(this.expTime, instanceDetail.expTime)
             && Objects.equals(this.startTime, instanceDetail.startTime)
             && Objects.equals(this.endTime, instanceDetail.endTime)
@@ -748,17 +772,18 @@ public class InstanceDetail {
             && Objects.equals(this.periodNum, instanceDetail.periodNum)
             && Objects.equals(this.resourceId, instanceDetail.resourceId)
             && Objects.equals(this.bastionType, instanceDetail.bastionType)
-            && Objects.equals(this.publicId, instanceDetail.publicId)
             && Objects.equals(this.alterPermit, instanceDetail.alterPermit)
+            && Objects.equals(this.publicId, instanceDetail.publicId)
             && Objects.equals(this.bastionVersion, instanceDetail.bastionVersion)
             && Objects.equals(this.newBastionVersion, instanceDetail.newBastionVersion)
             && Objects.equals(this.instanceStatus, instanceDetail.instanceStatus)
-            && Objects.equals(this.instanceDescription, instanceDetail.instanceDescription);
+            && Objects.equals(this.instanceDescription, instanceDetail.instanceDescription)
+            && Objects.equals(this.isAutoRenew, instanceDetail.isAutoRenew);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(publicip,
+        return Objects.hash(publicIp,
             expTime,
             startTime,
             endTime,
@@ -784,19 +809,20 @@ public class InstanceDetail {
             periodNum,
             resourceId,
             bastionType,
-            publicId,
             alterPermit,
+            publicId,
             bastionVersion,
             newBastionVersion,
             instanceStatus,
-            instanceDescription);
+            instanceDescription,
+            isAutoRenew);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InstanceDetail {\n");
-        sb.append("    publicip: ").append(toIndentedString(publicip)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    expTime: ").append(toIndentedString(expTime)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
@@ -822,12 +848,13 @@ public class InstanceDetail {
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    bastionType: ").append(toIndentedString(bastionType)).append("\n");
-        sb.append("    publicId: ").append(toIndentedString(publicId)).append("\n");
         sb.append("    alterPermit: ").append(toIndentedString(alterPermit)).append("\n");
+        sb.append("    publicId: ").append(toIndentedString(publicId)).append("\n");
         sb.append("    bastionVersion: ").append(toIndentedString(bastionVersion)).append("\n");
         sb.append("    newBastionVersion: ").append(toIndentedString(newBastionVersion)).append("\n");
         sb.append("    instanceStatus: ").append(toIndentedString(instanceStatus)).append("\n");
         sb.append("    instanceDescription: ").append(toIndentedString(instanceDescription)).append("\n");
+        sb.append("    isAutoRenew: ").append(toIndentedString(isAutoRenew)).append("\n");
         sb.append("}");
         return sb.toString();
     }

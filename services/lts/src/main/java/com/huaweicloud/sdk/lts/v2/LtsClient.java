@@ -1177,6 +1177,37 @@ public class LtsClient {
     }
 
     /**
+     * 按时间段统计查询资源
+     *
+     * 按时间段统计查询资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTimeLineTrafficStatisticsRequest 请求对象
+     * @return ListTimeLineTrafficStatisticsResponse
+     */
+    public ListTimeLineTrafficStatisticsResponse listTimeLineTrafficStatistics(
+        ListTimeLineTrafficStatisticsRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listTimeLineTrafficStatistics);
+    }
+
+    /**
+     * 按时间段统计查询资源
+     *
+     * 按时间段统计查询资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTimeLineTrafficStatisticsRequest 请求对象
+     * @return SyncInvoker<ListTimeLineTrafficStatisticsRequest, ListTimeLineTrafficStatisticsResponse>
+     */
+    public SyncInvoker<ListTimeLineTrafficStatisticsRequest, ListTimeLineTrafficStatisticsResponse> listTimeLineTrafficStatisticsInvoker(
+        ListTimeLineTrafficStatisticsRequest request) {
+        return new SyncInvoker<ListTimeLineTrafficStatisticsRequest, ListTimeLineTrafficStatisticsResponse>(request,
+            LtsMeta.listTimeLineTrafficStatistics, hcClient);
+    }
+
+    /**
      * 查询日志转储
      *
      * 该接口用于查询OBS转储，DIS转储，DMS转储配置。

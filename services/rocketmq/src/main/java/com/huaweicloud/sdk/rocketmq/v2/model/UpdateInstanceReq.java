@@ -26,9 +26,9 @@ public class UpdateInstanceReq {
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "retention_policy")
+    @JsonProperty(value = "enable_acl")
 
-    private Boolean retentionPolicy;
+    private Boolean enableAcl;
 
     public UpdateInstanceReq withName(String name) {
         this.name = name;
@@ -81,21 +81,21 @@ public class UpdateInstanceReq {
         this.securityGroupId = securityGroupId;
     }
 
-    public UpdateInstanceReq withRetentionPolicy(Boolean retentionPolicy) {
-        this.retentionPolicy = retentionPolicy;
+    public UpdateInstanceReq withEnableAcl(Boolean enableAcl) {
+        this.enableAcl = enableAcl;
         return this;
     }
 
     /**
      * ACL访问控制。
-     * @return retentionPolicy
+     * @return enableAcl
      */
-    public Boolean getRetentionPolicy() {
-        return retentionPolicy;
+    public Boolean getEnableAcl() {
+        return enableAcl;
     }
 
-    public void setRetentionPolicy(Boolean retentionPolicy) {
-        this.retentionPolicy = retentionPolicy;
+    public void setEnableAcl(Boolean enableAcl) {
+        this.enableAcl = enableAcl;
     }
 
     @Override
@@ -110,12 +110,12 @@ public class UpdateInstanceReq {
         return Objects.equals(this.name, updateInstanceReq.name)
             && Objects.equals(this.description, updateInstanceReq.description)
             && Objects.equals(this.securityGroupId, updateInstanceReq.securityGroupId)
-            && Objects.equals(this.retentionPolicy, updateInstanceReq.retentionPolicy);
+            && Objects.equals(this.enableAcl, updateInstanceReq.enableAcl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, securityGroupId, retentionPolicy);
+        return Objects.hash(name, description, securityGroupId, enableAcl);
     }
 
     @Override
@@ -125,7 +125,7 @@ public class UpdateInstanceReq {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
-        sb.append("    retentionPolicy: ").append(toIndentedString(retentionPolicy)).append("\n");
+        sb.append("    enableAcl: ").append(toIndentedString(enableAcl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

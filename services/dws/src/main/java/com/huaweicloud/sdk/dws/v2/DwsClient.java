@@ -1591,6 +1591,8 @@ public class DwsClient {
      * openApi查询磁盘信息
      *
      * openApi查询磁盘信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostDiskRequest 请求对象
      * @return ListHostDiskResponse
@@ -1603,6 +1605,8 @@ public class DwsClient {
      * openApi查询磁盘信息
      *
      * openApi查询磁盘信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostDiskRequest 请求对象
      * @return SyncInvoker<ListHostDiskRequest, ListHostDiskResponse>
@@ -1615,6 +1619,8 @@ public class DwsClient {
      * openapi获取网卡状态
      *
      * openapi获取网卡状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostNetRequest 请求对象
      * @return ListHostNetResponse
@@ -1627,6 +1633,8 @@ public class DwsClient {
      * openapi获取网卡状态
      *
      * openapi获取网卡状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostNetRequest 请求对象
      * @return SyncInvoker<ListHostNetRequest, ListHostNetResponse>
@@ -1639,6 +1647,8 @@ public class DwsClient {
      * openApi查询主机概览
      *
      * openApi查询主机概览
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostOverviewRequest 请求对象
      * @return ListHostOverviewResponse
@@ -1651,6 +1661,8 @@ public class DwsClient {
      * openApi查询主机概览
      *
      * openApi查询主机概览
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHostOverviewRequest 请求对象
      * @return SyncInvoker<ListHostOverviewRequest, ListHostOverviewResponse>

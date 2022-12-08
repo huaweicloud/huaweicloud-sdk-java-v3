@@ -14,46 +14,46 @@ import java.util.function.Consumer;
 public class OptionalFlavorsInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "optional_flavor_list")
+    @JsonProperty(value = "list")
 
-    private List<ComputeFlavor> optionalFlavorList = null;
+    private List<ComputeFlavor> list = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
-    public OptionalFlavorsInfo withOptionalFlavorList(List<ComputeFlavor> optionalFlavorList) {
-        this.optionalFlavorList = optionalFlavorList;
+    public OptionalFlavorsInfo withList(List<ComputeFlavor> list) {
+        this.list = list;
         return this;
     }
 
-    public OptionalFlavorsInfo addOptionalFlavorListItem(ComputeFlavor optionalFlavorListItem) {
-        if (this.optionalFlavorList == null) {
-            this.optionalFlavorList = new ArrayList<>();
+    public OptionalFlavorsInfo addListItem(ComputeFlavor listItem) {
+        if (this.list == null) {
+            this.list = new ArrayList<>();
         }
-        this.optionalFlavorList.add(optionalFlavorListItem);
+        this.list.add(listItem);
         return this;
     }
 
-    public OptionalFlavorsInfo withOptionalFlavorList(Consumer<List<ComputeFlavor>> optionalFlavorListSetter) {
-        if (this.optionalFlavorList == null) {
-            this.optionalFlavorList = new ArrayList<>();
+    public OptionalFlavorsInfo withList(Consumer<List<ComputeFlavor>> listSetter) {
+        if (this.list == null) {
+            this.list = new ArrayList<>();
         }
-        optionalFlavorListSetter.accept(this.optionalFlavorList);
+        listSetter.accept(this.list);
         return this;
     }
 
     /**
-     * 扩容节点时可用的规格列表。
-     * @return optionalFlavorList
+     * 实例规格变更时可用的规格列表。
+     * @return list
      */
-    public List<ComputeFlavor> getOptionalFlavorList() {
-        return optionalFlavorList;
+    public List<ComputeFlavor> getList() {
+        return list;
     }
 
-    public void setOptionalFlavorList(List<ComputeFlavor> optionalFlavorList) {
-        this.optionalFlavorList = optionalFlavorList;
+    public void setList(List<ComputeFlavor> list) {
+        this.list = list;
     }
 
     public OptionalFlavorsInfo withTotalCount(Integer totalCount) {
@@ -82,20 +82,20 @@ public class OptionalFlavorsInfo {
             return false;
         }
         OptionalFlavorsInfo optionalFlavorsInfo = (OptionalFlavorsInfo) o;
-        return Objects.equals(this.optionalFlavorList, optionalFlavorsInfo.optionalFlavorList)
+        return Objects.equals(this.list, optionalFlavorsInfo.list)
             && Objects.equals(this.totalCount, optionalFlavorsInfo.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(optionalFlavorList, totalCount);
+        return Objects.hash(list, totalCount);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class OptionalFlavorsInfo {\n");
-        sb.append("    optionalFlavorList: ").append(toIndentedString(optionalFlavorList)).append("\n");
+        sb.append("    list: ").append(toIndentedString(list)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");
         return sb.toString();

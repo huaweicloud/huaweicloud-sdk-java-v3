@@ -22,7 +22,7 @@ public class ShowInstanceExtendProductInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "monthly")
 
-    private List<ListProductsRespHourly> monthly = null;
+    private List<ShowInstanceExtendProductInfoRespHourly> monthly = null;
 
     public ShowInstanceExtendProductInfoResponse withHourly(List<ShowInstanceExtendProductInfoRespHourly> hourly) {
         this.hourly = hourly;
@@ -58,12 +58,12 @@ public class ShowInstanceExtendProductInfoResponse extends SdkResponse {
         this.hourly = hourly;
     }
 
-    public ShowInstanceExtendProductInfoResponse withMonthly(List<ListProductsRespHourly> monthly) {
+    public ShowInstanceExtendProductInfoResponse withMonthly(List<ShowInstanceExtendProductInfoRespHourly> monthly) {
         this.monthly = monthly;
         return this;
     }
 
-    public ShowInstanceExtendProductInfoResponse addMonthlyItem(ListProductsRespHourly monthlyItem) {
+    public ShowInstanceExtendProductInfoResponse addMonthlyItem(ShowInstanceExtendProductInfoRespHourly monthlyItem) {
         if (this.monthly == null) {
             this.monthly = new ArrayList<>();
         }
@@ -71,7 +71,8 @@ public class ShowInstanceExtendProductInfoResponse extends SdkResponse {
         return this;
     }
 
-    public ShowInstanceExtendProductInfoResponse withMonthly(Consumer<List<ListProductsRespHourly>> monthlySetter) {
+    public ShowInstanceExtendProductInfoResponse withMonthly(
+        Consumer<List<ShowInstanceExtendProductInfoRespHourly>> monthlySetter) {
         if (this.monthly == null) {
             this.monthly = new ArrayList<>();
         }
@@ -83,11 +84,11 @@ public class ShowInstanceExtendProductInfoResponse extends SdkResponse {
      * 表示包年包月的产品列表。当前暂不支持通过API创建包年包月的Kafka实例。
      * @return monthly
      */
-    public List<ListProductsRespHourly> getMonthly() {
+    public List<ShowInstanceExtendProductInfoRespHourly> getMonthly() {
         return monthly;
     }
 
-    public void setMonthly(List<ListProductsRespHourly> monthly) {
+    public void setMonthly(List<ShowInstanceExtendProductInfoRespHourly> monthly) {
         this.monthly = monthly;
     }
 

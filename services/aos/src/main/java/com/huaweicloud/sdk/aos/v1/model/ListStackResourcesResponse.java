@@ -52,7 +52,7 @@ public class ListStackResourcesResponse extends SdkResponse {
     }
 
     /**
-     * 堆栈输出
+     * 资源栈输出
      * @return stackResources
      */
     public List<StackResource> getStackResources() {

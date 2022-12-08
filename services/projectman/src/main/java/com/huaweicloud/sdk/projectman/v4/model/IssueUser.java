@@ -11,6 +11,16 @@ import java.util.Objects;
 public class IssueUser {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_id")
+
+    private String userId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_num_id")
+
+    private Integer userNumId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private Integer id;
@@ -24,6 +34,40 @@ public class IssueUser {
     @JsonProperty(value = "nick_name")
 
     private String nickName;
+
+    public IssueUser withUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+
+    /**
+     * 用户uuid
+     * @return userId
+     */
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public IssueUser withUserNumId(Integer userNumId) {
+        this.userNumId = userNumId;
+        return this;
+    }
+
+    /**
+     * 用户数字id
+     * @return userNumId
+     */
+    public Integer getUserNumId() {
+        return userNumId;
+    }
+
+    public void setUserNumId(Integer userNumId) {
+        this.userNumId = userNumId;
+    }
 
     public IssueUser withId(Integer id) {
         this.id = id;
@@ -85,19 +129,22 @@ public class IssueUser {
             return false;
         }
         IssueUser issueUser = (IssueUser) o;
-        return Objects.equals(this.id, issueUser.id) && Objects.equals(this.name, issueUser.name)
+        return Objects.equals(this.userId, issueUser.userId) && Objects.equals(this.userNumId, issueUser.userNumId)
+            && Objects.equals(this.id, issueUser.id) && Objects.equals(this.name, issueUser.name)
             && Objects.equals(this.nickName, issueUser.nickName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, nickName);
+        return Objects.hash(userId, userNumId, id, name, nickName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class IssueUser {\n");
+        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+        sb.append("    userNumId: ").append(toIndentedString(userNumId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    nickName: ").append(toIndentedString(nickName)).append("\n");

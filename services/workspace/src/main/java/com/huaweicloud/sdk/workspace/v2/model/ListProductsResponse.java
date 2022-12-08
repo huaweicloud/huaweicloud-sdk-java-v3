@@ -20,6 +20,11 @@ public class ListProductsResponse extends SdkResponse {
     private String osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "architecture")
+
+    private String architecture;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
 
     private String availabilityZone;
@@ -28,6 +33,11 @@ public class ListProductsResponse extends SdkResponse {
     @JsonProperty(value = "products")
 
     private List<ProductInfo> products = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Integer totalCount;
 
     public ListProductsResponse withOsType(String osType) {
         this.osType = osType;
@@ -44,6 +54,23 @@ public class ListProductsResponse extends SdkResponse {
 
     public void setOsType(String osType) {
         this.osType = osType;
+    }
+
+    public ListProductsResponse withArchitecture(String architecture) {
+        this.architecture = architecture;
+        return this;
+    }
+
+    /**
+     * 产品架构。请求参数有package_type=agile时，才有此参数。
+     * @return architecture
+     */
+    public String getArchitecture() {
+        return architecture;
+    }
+
+    public void setArchitecture(String architecture) {
+        this.architecture = architecture;
     }
 
     public ListProductsResponse withAvailabilityZone(String availabilityZone) {
@@ -96,6 +123,23 @@ public class ListProductsResponse extends SdkResponse {
         this.products = products;
     }
 
+    public ListProductsResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /**
+     * 对象总数。
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -106,13 +150,15 @@ public class ListProductsResponse extends SdkResponse {
         }
         ListProductsResponse listProductsResponse = (ListProductsResponse) o;
         return Objects.equals(this.osType, listProductsResponse.osType)
+            && Objects.equals(this.architecture, listProductsResponse.architecture)
             && Objects.equals(this.availabilityZone, listProductsResponse.availabilityZone)
-            && Objects.equals(this.products, listProductsResponse.products);
+            && Objects.equals(this.products, listProductsResponse.products)
+            && Objects.equals(this.totalCount, listProductsResponse.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(osType, availabilityZone, products);
+        return Objects.hash(osType, architecture, availabilityZone, products, totalCount);
     }
 
     @Override
@@ -120,8 +166,10 @@ public class ListProductsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListProductsResponse {\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
+        sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    products: ").append(toIndentedString(products)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

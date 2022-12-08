@@ -38,13 +38,6 @@ public class DeleteStackRequest  {
     
     private String stackId;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="executor")
-    
-    
-    private String executor;
-
     public DeleteStackRequest withClientRequestId(String clientRequestId) {
         this.clientRequestId = clientRequestId;
         return this;
@@ -98,7 +91,7 @@ public class DeleteStackRequest  {
 
 
     /**
-     * 用户希望描述的栈的Id。若stack_name和stack_id同时存在，则IaC会检查是否两个匹配，否则返回400
+     * 用户希望描述的栈的Id。若stack_name和stack_id同时存在，则资源编排服务会检查是否两个匹配，否则返回400
      * @return stackId
      */
     public String getStackId() {
@@ -107,28 +100,6 @@ public class DeleteStackRequest  {
 
     public void setStackId(String stackId) {
         this.stackId = stackId;
-    }
-
-    
-
-    public DeleteStackRequest withExecutor(String executor) {
-        this.executor = executor;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 执行操作者的名字，将用做未来的审计工作。
-     * @return executor
-     */
-    public String getExecutor() {
-        return executor;
-    }
-
-    public void setExecutor(String executor) {
-        this.executor = executor;
     }
 
     
@@ -144,12 +115,11 @@ public class DeleteStackRequest  {
         DeleteStackRequest deleteStackRequest = (DeleteStackRequest) o;
         return Objects.equals(this.clientRequestId, deleteStackRequest.clientRequestId) &&
             Objects.equals(this.stackName, deleteStackRequest.stackName) &&
-            Objects.equals(this.stackId, deleteStackRequest.stackId) &&
-            Objects.equals(this.executor, deleteStackRequest.executor);
+            Objects.equals(this.stackId, deleteStackRequest.stackId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(clientRequestId, stackName, stackId, executor);
+        return Objects.hash(clientRequestId, stackName, stackId);
     }
     @Override
     public String toString() {
@@ -158,7 +128,6 @@ public class DeleteStackRequest  {
         sb.append("    clientRequestId: ").append(toIndentedString(clientRequestId)).append("\n");
         sb.append("    stackName: ").append(toIndentedString(stackName)).append("\n");
         sb.append("    stackId: ").append(toIndentedString(stackId)).append("\n");
-        sb.append("    executor: ").append(toIndentedString(executor)).append("\n");
         sb.append("}");
         return sb.toString();
     }

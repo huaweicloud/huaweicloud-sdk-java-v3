@@ -291,7 +291,7 @@ public class UserDetail {
     }
 
     /**
-     * UTC时间毫秒数对应的字符。
+     * UTC时间毫秒数对应的字符，格式为：yyyy-MM-ddTHH:mm:ss.SSSZ。
      * @return whenCreated
      */
     public String getWhenCreated() {

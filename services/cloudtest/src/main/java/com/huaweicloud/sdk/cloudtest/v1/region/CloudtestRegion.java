@@ -34,6 +34,9 @@ public class CloudtestRegion {
     public static final Region SA_BRAZIL_1 =
         new Region("sa-brazil-1", "https://cloudtest-ext.sa-brazil-1.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_3 =
+        new Region("ap-southeast-3", "https://cloudtest-ext.ap-southeast-3.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CLOUDTEST");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -48,6 +51,7 @@ public class CloudtestRegion {
         map.put("cn-east-3", CN_EAST_3);
         map.put("la-north-2", LA_NORTH_2);
         map.put("sa-brazil-1", SA_BRAZIL_1);
+        map.put("ap-southeast-3", AP_SOUTHEAST_3);
         return Collections.unmodifiableMap(map);
     }
 

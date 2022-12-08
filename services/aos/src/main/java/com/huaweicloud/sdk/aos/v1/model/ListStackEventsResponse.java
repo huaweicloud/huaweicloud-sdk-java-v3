@@ -29,13 +29,6 @@ public class ListStackEventsResponse extends SdkResponse {
     
     private List<StackEventResponse> stackEvents = null;
     
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="next_marker")
-    
-    
-    private String nextMarker;
-
     public ListStackEventsResponse withStackEvents(List<StackEventResponse> stackEvents) {
         this.stackEvents = stackEvents;
         return this;
@@ -72,28 +65,6 @@ public class ListStackEventsResponse extends SdkResponse {
 
     
 
-    public ListStackEventsResponse withNextMarker(String nextMarker) {
-        this.nextMarker = nextMarker;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 当一页无法发回所有的细节，将返回next_marker，客户可以继续调用list-stack-events并给与next_marker来继续读取下页
-     * @return nextMarker
-     */
-    public String getNextMarker() {
-        return nextMarker;
-    }
-
-    public void setNextMarker(String nextMarker) {
-        this.nextMarker = nextMarker;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -103,19 +74,17 @@ public class ListStackEventsResponse extends SdkResponse {
             return false;
         }
         ListStackEventsResponse listStackEventsResponse = (ListStackEventsResponse) o;
-        return Objects.equals(this.stackEvents, listStackEventsResponse.stackEvents) &&
-            Objects.equals(this.nextMarker, listStackEventsResponse.nextMarker);
+        return Objects.equals(this.stackEvents, listStackEventsResponse.stackEvents);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(stackEvents, nextMarker);
+        return Objects.hash(stackEvents);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListStackEventsResponse {\n");
         sb.append("    stackEvents: ").append(toIndentedString(stackEvents)).append("\n");
-        sb.append("    nextMarker: ").append(toIndentedString(nextMarker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

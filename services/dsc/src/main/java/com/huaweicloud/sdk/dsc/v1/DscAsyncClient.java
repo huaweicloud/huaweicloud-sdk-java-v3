@@ -20,6 +20,119 @@ public class DscAsyncClient {
     }
 
     /**
+     * 添加资产授权
+     *
+     * 添加数据资产扫描授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddBucketsRequest 请求对象
+     * @return CompletableFuture<AddBucketsResponse>
+     */
+    public CompletableFuture<AddBucketsResponse> addBucketsAsync(AddBucketsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.addBuckets);
+    }
+
+    /**
+     * 添加资产授权
+     *
+     * 添加数据资产扫描授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddBucketsRequest 请求对象
+     * @return AsyncInvoker<AddBucketsRequest, AddBucketsResponse>
+     */
+    public AsyncInvoker<AddBucketsRequest, AddBucketsResponse> addBucketsAsyncInvoker(AddBucketsRequest request) {
+        return new AsyncInvoker<AddBucketsRequest, AddBucketsResponse>(request, DscMeta.addBuckets, hcClient);
+    }
+
+    /**
+     * 创建扫描规则
+     *
+     * 根据指定的规则名称、规则类型、风险等级、最小匹配次数等参数创建自定义的敏感数据识别规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddRuleRequest 请求对象
+     * @return CompletableFuture<AddRuleResponse>
+     */
+    public CompletableFuture<AddRuleResponse> addRuleAsync(AddRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.addRule);
+    }
+
+    /**
+     * 创建扫描规则
+     *
+     * 根据指定的规则名称、规则类型、风险等级、最小匹配次数等参数创建自定义的敏感数据识别规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddRuleRequest 请求对象
+     * @return AsyncInvoker<AddRuleRequest, AddRuleResponse>
+     */
+    public AsyncInvoker<AddRuleRequest, AddRuleResponse> addRuleAsyncInvoker(AddRuleRequest request) {
+        return new AsyncInvoker<AddRuleRequest, AddRuleResponse>(request, DscMeta.addRule, hcClient);
+    }
+
+    /**
+     * 创建扫描规则组
+     *
+     * 根据指定的规则组名称和扫描规则列表创建敏感数据扫描规则组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddRuleGroupRequest 请求对象
+     * @return CompletableFuture<AddRuleGroupResponse>
+     */
+    public CompletableFuture<AddRuleGroupResponse> addRuleGroupAsync(AddRuleGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.addRuleGroup);
+    }
+
+    /**
+     * 创建扫描规则组
+     *
+     * 根据指定的规则组名称和扫描规则列表创建敏感数据扫描规则组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddRuleGroupRequest 请求对象
+     * @return AsyncInvoker<AddRuleGroupRequest, AddRuleGroupResponse>
+     */
+    public AsyncInvoker<AddRuleGroupRequest, AddRuleGroupResponse> addRuleGroupAsyncInvoker(
+        AddRuleGroupRequest request) {
+        return new AsyncInvoker<AddRuleGroupRequest, AddRuleGroupResponse>(request, DscMeta.addRuleGroup, hcClient);
+    }
+
+    /**
+     * 创建扫描任务
+     *
+     * 根据指定的任务名称、扫描方式、扫描周期、扫描规则组、扫描时间创建扫描任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddScanJobRequest 请求对象
+     * @return CompletableFuture<AddScanJobResponse>
+     */
+    public CompletableFuture<AddScanJobResponse> addScanJobAsync(AddScanJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.addScanJob);
+    }
+
+    /**
+     * 创建扫描任务
+     *
+     * 根据指定的任务名称、扫描方式、扫描周期、扫描规则组、扫描时间创建扫描任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddScanJobRequest 请求对象
+     * @return AsyncInvoker<AddScanJobRequest, AddScanJobResponse>
+     */
+    public AsyncInvoker<AddScanJobRequest, AddScanJobResponse> addScanJobAsyncInvoker(AddScanJobRequest request) {
+        return new AsyncInvoker<AddScanJobRequest, AddScanJobResponse>(request, DscMeta.addScanJob, hcClient);
+    }
+
+    /**
      * 对数据进行脱敏
      *
      * 对数据进行脱敏
@@ -47,6 +160,65 @@ public class DscAsyncClient {
         BatchAddDataMaskRequest request) {
         return new AsyncInvoker<BatchAddDataMaskRequest, BatchAddDataMaskResponse>(request, DscMeta.batchAddDataMask,
             hcClient);
+    }
+
+    /**
+     * 开启/停止脱敏任务
+     *
+     * 开启/停止脱敏任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeDbTemplateOperationRequest 请求对象
+     * @return CompletableFuture<ChangeDbTemplateOperationResponse>
+     */
+    public CompletableFuture<ChangeDbTemplateOperationResponse> changeDbTemplateOperationAsync(
+        ChangeDbTemplateOperationRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.changeDbTemplateOperation);
+    }
+
+    /**
+     * 开启/停止脱敏任务
+     *
+     * 开启/停止脱敏任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeDbTemplateOperationRequest 请求对象
+     * @return AsyncInvoker<ChangeDbTemplateOperationRequest, ChangeDbTemplateOperationResponse>
+     */
+    public AsyncInvoker<ChangeDbTemplateOperationRequest, ChangeDbTemplateOperationResponse> changeDbTemplateOperationAsyncInvoker(
+        ChangeDbTemplateOperationRequest request) {
+        return new AsyncInvoker<ChangeDbTemplateOperationRequest, ChangeDbTemplateOperationResponse>(request,
+            DscMeta.changeDbTemplateOperation, hcClient);
+    }
+
+    /**
+     * 修改扫描规则
+     *
+     * 修改自定义的敏感数据识别规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeRuleRequest 请求对象
+     * @return CompletableFuture<ChangeRuleResponse>
+     */
+    public CompletableFuture<ChangeRuleResponse> changeRuleAsync(ChangeRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.changeRule);
+    }
+
+    /**
+     * 修改扫描规则
+     *
+     * 修改自定义的敏感数据识别规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeRuleRequest 请求对象
+     * @return AsyncInvoker<ChangeRuleRequest, ChangeRuleResponse>
+     */
+    public AsyncInvoker<ChangeRuleRequest, ChangeRuleResponse> changeRuleAsyncInvoker(ChangeRuleRequest request) {
+        return new AsyncInvoker<ChangeRuleRequest, ChangeRuleResponse>(request, DscMeta.changeRule, hcClient);
     }
 
     /**
@@ -201,6 +373,361 @@ public class DscAsyncClient {
         CreateImageWatermarkByAddressRequest request) {
         return new AsyncInvoker<CreateImageWatermarkByAddressRequest, CreateImageWatermarkByAddressResponse>(request,
             DscMeta.createImageWatermarkByAddress, hcClient);
+    }
+
+    /**
+     * 实例下单
+     *
+     * 根据计费方式、计费周期等信息进行实例下单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateProductOrderRequest 请求对象
+     * @return CompletableFuture<CreateProductOrderResponse>
+     */
+    public CompletableFuture<CreateProductOrderResponse> createProductOrderAsync(CreateProductOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.createProductOrder);
+    }
+
+    /**
+     * 实例下单
+     *
+     * 根据计费方式、计费周期等信息进行实例下单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateProductOrderRequest 请求对象
+     * @return AsyncInvoker<CreateProductOrderRequest, CreateProductOrderResponse>
+     */
+    public AsyncInvoker<CreateProductOrderRequest, CreateProductOrderResponse> createProductOrderAsyncInvoker(
+        CreateProductOrderRequest request) {
+        return new AsyncInvoker<CreateProductOrderRequest, CreateProductOrderResponse>(request,
+            DscMeta.createProductOrder, hcClient);
+    }
+
+    /**
+     * 删除资产授权
+     *
+     * 删除数据资产扫描授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBucketRequest 请求对象
+     * @return CompletableFuture<DeleteBucketResponse>
+     */
+    public CompletableFuture<DeleteBucketResponse> deleteBucketAsync(DeleteBucketRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.deleteBucket);
+    }
+
+    /**
+     * 删除资产授权
+     *
+     * 删除数据资产扫描授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBucketRequest 请求对象
+     * @return AsyncInvoker<DeleteBucketRequest, DeleteBucketResponse>
+     */
+    public AsyncInvoker<DeleteBucketRequest, DeleteBucketResponse> deleteBucketAsyncInvoker(
+        DeleteBucketRequest request) {
+        return new AsyncInvoker<DeleteBucketRequest, DeleteBucketResponse>(request, DscMeta.deleteBucket, hcClient);
+    }
+
+    /**
+     * 删除扫描规则
+     *
+     * 删除指定的敏感数据识别规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteRuleRequest 请求对象
+     * @return CompletableFuture<DeleteRuleResponse>
+     */
+    public CompletableFuture<DeleteRuleResponse> deleteRuleAsync(DeleteRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.deleteRule);
+    }
+
+    /**
+     * 删除扫描规则
+     *
+     * 删除指定的敏感数据识别规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteRuleRequest, DeleteRuleResponse>
+     */
+    public AsyncInvoker<DeleteRuleRequest, DeleteRuleResponse> deleteRuleAsyncInvoker(DeleteRuleRequest request) {
+        return new AsyncInvoker<DeleteRuleRequest, DeleteRuleResponse>(request, DscMeta.deleteRule, hcClient);
+    }
+
+    /**
+     * 删除扫描规则组
+     *
+     * 根据扫描规则组ID删除指定的扫描规则组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteRuleGroupRequest 请求对象
+     * @return CompletableFuture<DeleteRuleGroupResponse>
+     */
+    public CompletableFuture<DeleteRuleGroupResponse> deleteRuleGroupAsync(DeleteRuleGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.deleteRuleGroup);
+    }
+
+    /**
+     * 删除扫描规则组
+     *
+     * 根据扫描规则组ID删除指定的扫描规则组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteRuleGroupRequest 请求对象
+     * @return AsyncInvoker<DeleteRuleGroupRequest, DeleteRuleGroupResponse>
+     */
+    public AsyncInvoker<DeleteRuleGroupRequest, DeleteRuleGroupResponse> deleteRuleGroupAsyncInvoker(
+        DeleteRuleGroupRequest request) {
+        return new AsyncInvoker<DeleteRuleGroupRequest, DeleteRuleGroupResponse>(request, DscMeta.deleteRuleGroup,
+            hcClient);
+    }
+
+    /**
+     * 查看资产列表
+     *
+     * 查询数据资产扫描授权列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBucketsRequest 请求对象
+     * @return CompletableFuture<ListBucketsResponse>
+     */
+    public CompletableFuture<ListBucketsResponse> listBucketsAsync(ListBucketsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.listBuckets);
+    }
+
+    /**
+     * 查看资产列表
+     *
+     * 查询数据资产扫描授权列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBucketsRequest 请求对象
+     * @return AsyncInvoker<ListBucketsRequest, ListBucketsResponse>
+     */
+    public AsyncInvoker<ListBucketsRequest, ListBucketsResponse> listBucketsAsyncInvoker(ListBucketsRequest request) {
+        return new AsyncInvoker<ListBucketsRequest, ListBucketsResponse>(request, DscMeta.listBuckets, hcClient);
+    }
+
+    /**
+     * 查询脱敏任务执行列表
+     *
+     * 查询脱敏任务执行列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDbMaskTaskRequest 请求对象
+     * @return CompletableFuture<ListDbMaskTaskResponse>
+     */
+    public CompletableFuture<ListDbMaskTaskResponse> listDbMaskTaskAsync(ListDbMaskTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.listDbMaskTask);
+    }
+
+    /**
+     * 查询脱敏任务执行列表
+     *
+     * 查询脱敏任务执行列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDbMaskTaskRequest 请求对象
+     * @return AsyncInvoker<ListDbMaskTaskRequest, ListDbMaskTaskResponse>
+     */
+    public AsyncInvoker<ListDbMaskTaskRequest, ListDbMaskTaskResponse> listDbMaskTaskAsyncInvoker(
+        ListDbMaskTaskRequest request) {
+        return new AsyncInvoker<ListDbMaskTaskRequest, ListDbMaskTaskResponse>(request, DscMeta.listDbMaskTask,
+            hcClient);
+    }
+
+    /**
+     * OBS血缘图桶级查询
+     *
+     * OBS血缘图桶级查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRelationBucketsRequest 请求对象
+     * @return CompletableFuture<ListRelationBucketsResponse>
+     */
+    public CompletableFuture<ListRelationBucketsResponse> listRelationBucketsAsync(ListRelationBucketsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.listRelationBuckets);
+    }
+
+    /**
+     * OBS血缘图桶级查询
+     *
+     * OBS血缘图桶级查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRelationBucketsRequest 请求对象
+     * @return AsyncInvoker<ListRelationBucketsRequest, ListRelationBucketsResponse>
+     */
+    public AsyncInvoker<ListRelationBucketsRequest, ListRelationBucketsResponse> listRelationBucketsAsyncInvoker(
+        ListRelationBucketsRequest request) {
+        return new AsyncInvoker<ListRelationBucketsRequest, ListRelationBucketsResponse>(request,
+            DscMeta.listRelationBuckets, hcClient);
+    }
+
+    /**
+     * 数据库血缘图表字段级查询
+     *
+     * 数据库血缘图表字段级查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRelationColumnRequest 请求对象
+     * @return CompletableFuture<ListRelationColumnResponse>
+     */
+    public CompletableFuture<ListRelationColumnResponse> listRelationColumnAsync(ListRelationColumnRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.listRelationColumn);
+    }
+
+    /**
+     * 数据库血缘图表字段级查询
+     *
+     * 数据库血缘图表字段级查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRelationColumnRequest 请求对象
+     * @return AsyncInvoker<ListRelationColumnRequest, ListRelationColumnResponse>
+     */
+    public AsyncInvoker<ListRelationColumnRequest, ListRelationColumnResponse> listRelationColumnAsyncInvoker(
+        ListRelationColumnRequest request) {
+        return new AsyncInvoker<ListRelationColumnRequest, ListRelationColumnResponse>(request,
+            DscMeta.listRelationColumn, hcClient);
+    }
+
+    /**
+     * 数据库血缘图数据库级查询
+     *
+     * 数据库血缘图数据库级查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRelationDbRequest 请求对象
+     * @return CompletableFuture<ListRelationDbResponse>
+     */
+    public CompletableFuture<ListRelationDbResponse> listRelationDbAsync(ListRelationDbRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.listRelationDb);
+    }
+
+    /**
+     * 数据库血缘图数据库级查询
+     *
+     * 数据库血缘图数据库级查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRelationDbRequest 请求对象
+     * @return AsyncInvoker<ListRelationDbRequest, ListRelationDbResponse>
+     */
+    public AsyncInvoker<ListRelationDbRequest, ListRelationDbResponse> listRelationDbAsyncInvoker(
+        ListRelationDbRequest request) {
+        return new AsyncInvoker<ListRelationDbRequest, ListRelationDbResponse>(request, DscMeta.listRelationDb,
+            hcClient);
+    }
+
+    /**
+     * OBS血缘图文件分页查询
+     *
+     * OBS血缘图文件分页查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRelationFileRequest 请求对象
+     * @return CompletableFuture<ListRelationFileResponse>
+     */
+    public CompletableFuture<ListRelationFileResponse> listRelationFileAsync(ListRelationFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.listRelationFile);
+    }
+
+    /**
+     * OBS血缘图文件分页查询
+     *
+     * OBS血缘图文件分页查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRelationFileRequest 请求对象
+     * @return AsyncInvoker<ListRelationFileRequest, ListRelationFileResponse>
+     */
+    public AsyncInvoker<ListRelationFileRequest, ListRelationFileResponse> listRelationFileAsyncInvoker(
+        ListRelationFileRequest request) {
+        return new AsyncInvoker<ListRelationFileRequest, ListRelationFileResponse>(request, DscMeta.listRelationFile,
+            hcClient);
+    }
+
+    /**
+     * 数据库血缘图表分页查询
+     *
+     * 数据库血缘图表分页查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRelationTableRequest 请求对象
+     * @return CompletableFuture<ListRelationTableResponse>
+     */
+    public CompletableFuture<ListRelationTableResponse> listRelationTableAsync(ListRelationTableRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.listRelationTable);
+    }
+
+    /**
+     * 数据库血缘图表分页查询
+     *
+     * 数据库血缘图表分页查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRelationTableRequest 请求对象
+     * @return AsyncInvoker<ListRelationTableRequest, ListRelationTableResponse>
+     */
+    public AsyncInvoker<ListRelationTableRequest, ListRelationTableResponse> listRelationTableAsyncInvoker(
+        ListRelationTableRequest request) {
+        return new AsyncInvoker<ListRelationTableRequest, ListRelationTableResponse>(request, DscMeta.listRelationTable,
+            hcClient);
+    }
+
+    /**
+     * 查询扫描规则组列表
+     *
+     * 根据指定的项目ID查询扫描规则组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRuleGroupsRequest 请求对象
+     * @return CompletableFuture<ListRuleGroupsResponse>
+     */
+    public CompletableFuture<ListRuleGroupsResponse> listRuleGroupsAsync(ListRuleGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.listRuleGroups);
+    }
+
+    /**
+     * 查询扫描规则组列表
+     *
+     * 根据指定的项目ID查询扫描规则组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRuleGroupsRequest 请求对象
+     * @return AsyncInvoker<ListRuleGroupsRequest, ListRuleGroupsResponse>
+     */
+    public AsyncInvoker<ListRuleGroupsRequest, ListRuleGroupsResponse> listRuleGroupsAsyncInvoker(
+        ListRuleGroupsRequest request) {
+        return new AsyncInvoker<ListRuleGroupsRequest, ListRuleGroupsResponse>(request, DscMeta.listRuleGroups,
+            hcClient);
     }
 
     /**
@@ -419,6 +946,34 @@ public class DscAsyncClient {
     }
 
     /**
+     * 查看规则列表
+     *
+     * 查询扫描规则列表，返回扫描规则总数和扫描规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRulesRequest 请求对象
+     * @return CompletableFuture<ShowRulesResponse>
+     */
+    public CompletableFuture<ShowRulesResponse> showRulesAsync(ShowRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.showRules);
+    }
+
+    /**
+     * 查看规则列表
+     *
+     * 查询扫描规则列表，返回扫描规则总数和扫描规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRulesRequest 请求对象
+     * @return AsyncInvoker<ShowRulesRequest, ShowRulesResponse>
+     */
+    public AsyncInvoker<ShowRulesRequest, ShowRulesResponse> showRulesAsyncInvoker(ShowRulesRequest request) {
+        return new AsyncInvoker<ShowRulesRequest, ShowRulesResponse>(request, DscMeta.showRules, hcClient);
+    }
+
+    /**
      * 查询指定任务扫描结果
      *
      * 查询指定任务扫描结果
@@ -475,6 +1030,124 @@ public class DscAsyncClient {
     public AsyncInvoker<ShowScanJobsRequest, ShowScanJobsResponse> showScanJobsAsyncInvoker(
         ShowScanJobsRequest request) {
         return new AsyncInvoker<ShowScanJobsRequest, ShowScanJobsResponse>(request, DscMeta.showScanJobs, hcClient);
+    }
+
+    /**
+     * 查询资源开通信息
+     *
+     * 查询资源开通信息，根据项目ID查询订单详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSpecificationRequest 请求对象
+     * @return CompletableFuture<ShowSpecificationResponse>
+     */
+    public CompletableFuture<ShowSpecificationResponse> showSpecificationAsync(ShowSpecificationRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.showSpecification);
+    }
+
+    /**
+     * 查询资源开通信息
+     *
+     * 查询资源开通信息，根据项目ID查询订单详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSpecificationRequest 请求对象
+     * @return AsyncInvoker<ShowSpecificationRequest, ShowSpecificationResponse>
+     */
+    public AsyncInvoker<ShowSpecificationRequest, ShowSpecificationResponse> showSpecificationAsyncInvoker(
+        ShowSpecificationRequest request) {
+        return new AsyncInvoker<ShowSpecificationRequest, ShowSpecificationResponse>(request, DscMeta.showSpecification,
+            hcClient);
+    }
+
+    /**
+     * 查询告警通知主题
+     *
+     * 查询告警通知主题，返回默认主题、已确认主题数量及列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTopicsRequest 请求对象
+     * @return CompletableFuture<ShowTopicsResponse>
+     */
+    public CompletableFuture<ShowTopicsResponse> showTopicsAsync(ShowTopicsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.showTopics);
+    }
+
+    /**
+     * 查询告警通知主题
+     *
+     * 查询告警通知主题，返回默认主题、已确认主题数量及列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTopicsRequest 请求对象
+     * @return AsyncInvoker<ShowTopicsRequest, ShowTopicsResponse>
+     */
+    public AsyncInvoker<ShowTopicsRequest, ShowTopicsResponse> showTopicsAsyncInvoker(ShowTopicsRequest request) {
+        return new AsyncInvoker<ShowTopicsRequest, ShowTopicsResponse>(request, DscMeta.showTopics, hcClient);
+    }
+
+    /**
+     * 编辑资产名称
+     *
+     * 编辑数据资产名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAssetNameRequest 请求对象
+     * @return CompletableFuture<UpdateAssetNameResponse>
+     */
+    public CompletableFuture<UpdateAssetNameResponse> updateAssetNameAsync(UpdateAssetNameRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.updateAssetName);
+    }
+
+    /**
+     * 编辑资产名称
+     *
+     * 编辑数据资产名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAssetNameRequest 请求对象
+     * @return AsyncInvoker<UpdateAssetNameRequest, UpdateAssetNameResponse>
+     */
+    public AsyncInvoker<UpdateAssetNameRequest, UpdateAssetNameResponse> updateAssetNameAsyncInvoker(
+        UpdateAssetNameRequest request) {
+        return new AsyncInvoker<UpdateAssetNameRequest, UpdateAssetNameResponse>(request, DscMeta.updateAssetName,
+            hcClient);
+    }
+
+    /**
+     * 修改告警通知主题
+     *
+     * 修改告警通知的关联项目ID、通知主题、通知状态(0为关闭通知，1为开启通知)等通用配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDefaultTopicRequest 请求对象
+     * @return CompletableFuture<UpdateDefaultTopicResponse>
+     */
+    public CompletableFuture<UpdateDefaultTopicResponse> updateDefaultTopicAsync(UpdateDefaultTopicRequest request) {
+        return hcClient.asyncInvokeHttp(request, DscMeta.updateDefaultTopic);
+    }
+
+    /**
+     * 修改告警通知主题
+     *
+     * 修改告警通知的关联项目ID、通知主题、通知状态(0为关闭通知，1为开启通知)等通用配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDefaultTopicRequest 请求对象
+     * @return AsyncInvoker<UpdateDefaultTopicRequest, UpdateDefaultTopicResponse>
+     */
+    public AsyncInvoker<UpdateDefaultTopicRequest, UpdateDefaultTopicResponse> updateDefaultTopicAsyncInvoker(
+        UpdateDefaultTopicRequest request) {
+        return new AsyncInvoker<UpdateDefaultTopicRequest, UpdateDefaultTopicResponse>(request,
+            DscMeta.updateDefaultTopic, hcClient);
     }
 
     /**

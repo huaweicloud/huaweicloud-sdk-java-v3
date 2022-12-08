@@ -131,7 +131,7 @@ public class ListAimTemplatesRequest {
     }
 
     /**
-     * 厂商类型。暂不支持VIVO。 - HUAWEI：华为 - Xiaomi：小米 - OPPO：OPPO - MEIZU：魅族 - VIVO：VIVO 
+     * 厂商类型。 - HUAWEI：华为 - Xiaomi：小米 - OPPO：OPPO - MEIZU：魅族 - VIVO：VIVO 
      * @return factoryType
      */
     public List<String> getFactoryType() {

@@ -12,7 +12,6 @@ import com.huaweicloud.sdk.aos.v1.model.AgenciesPrimitiveTypeHolder;
 import com.huaweicloud.sdk.aos.v1.model.Agency;
 import com.huaweicloud.sdk.aos.v1.model.EnableAutoRollbackPrimitiveTypeHolder;
 import com.huaweicloud.sdk.aos.v1.model.EnableDeletionProtectionPrimitiveTypeHolder;
-import com.huaweicloud.sdk.aos.v1.model.ExecutorPrimitiveTypeHolder;
 import com.huaweicloud.sdk.aos.v1.model.StackDescriptionPrimitiveTypeHolder;
 import com.huaweicloud.sdk.aos.v1.model.StackNamePrimitiveTypeHolder;
 import com.huaweicloud.sdk.aos.v1.model.TemplateBodyPrimitiveTypeHolder;
@@ -38,13 +37,6 @@ public class CreateStackRequestBody  {
     
     
     private String stackName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="executor")
-    
-    
-    private String executor;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -127,28 +119,6 @@ public class CreateStackRequestBody  {
 
     public void setStackName(String stackName) {
         this.stackName = stackName;
-    }
-
-    
-
-    public CreateStackRequestBody withExecutor(String executor) {
-        this.executor = executor;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 执行操作者的名字，将用做未来的审计工作
-     * @return executor
-     */
-    public String getExecutor() {
-        return executor;
-    }
-
-    public void setExecutor(String executor) {
-        this.executor = executor;
     }
 
     
@@ -264,7 +234,7 @@ public class CreateStackRequestBody  {
 
 
     /**
-     * HCL模板，描述了资源的目标状态。RF将比较此模板与当前远程资源的状态之间的区别。  template_body和template_uri 必须有且只有一个存在 
+     * HCL模板，描述了资源的目标状态。资源编排服务将比较此模板与当前远程资源的状态之间的区别。  template_body和template_uri 必须有且只有一个存在 
      * @return templateBody
      */
     public String getTemplateBody() {
@@ -308,7 +278,7 @@ public class CreateStackRequestBody  {
 
 
     /**
-     * HCL支持参数，即，同一个模板可以给予不同的参数而达到不同的效果  * vars_body使用HCL的tfvars格式，用户可以将“.tfvars”中的内容提交到vars_body中。具体tfvars格式见：https://www.terraform.io/language/values/variables#variable-definitions-tfvars-files  * RF支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * 如果vars_body过大，可以使用vars_uri  * 如果vars中都是简单的字符串格式，可以使用var_structure  * 注意：vars中不应该传递任何敏感信息，RF会直接明文使用、log、展示、存储对应的vars 
+     * HCL支持参数，即，同一个模板可以给予不同的参数而达到不同的效果  * vars_body使用HCL的tfvars格式，用户可以将“.tfvars”中的内容提交到vars_body中。具体tfvars格式见：https://www.terraform.io/language/values/variables#variable-definitions-tfvars-files  * 资源编排服务支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * 如果vars_body过大，可以使用vars_uri  * 如果vars中都是简单的字符串格式，可以使用var_structure  * 注意：vars中不应该传递任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的vars 
      * @return varsBody
      */
     public String getVarsBody() {
@@ -344,7 +314,7 @@ public class CreateStackRequestBody  {
     }
 
     /**
-     * HCL支持参数，即，同一个模板可以给予不同的参数而达到不同的效果。  * var_structure可以允许客户提交最简单的字符串类型的参数  * RF支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * vars_structure中的值只支持简单的字符串类型，如果需要使用其他类型，需要用户自己在HCL引用时转换， 或者用户可以使用vars_uri、vars_body，vars_uri和vars_body中支持HCL支持的各种类型以及复杂结构  * 如果vars_structure过大，可以使用vars_uri  * 注意：vars中不应该传递任何敏感信息，RF会直接明文使用、log、展示、存储对应的vars 
+     * HCL支持参数，即，同一个模板可以给予不同的参数而达到不同的效果。  * var_structure可以允许客户提交最简单的字符串类型的参数  * 资源编排服务支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * vars_structure中的值只支持简单的字符串类型，如果需要使用其他类型，需要用户自己在HCL引用时转换， 或者用户可以使用vars_uri、vars_body，vars_uri和vars_body中支持HCL支持的各种类型以及复杂结构  * 如果vars_structure过大，可以使用vars_uri  * 注意：vars中不应该传递任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的vars 
      * @return varsStructure
      */
     public List<VarsStructure> getVarsStructure() {
@@ -366,7 +336,7 @@ public class CreateStackRequestBody  {
 
 
     /**
-     * HCL支持参数，即，同一个模板可以给予不同的参数而达到不同的效果  * vars_body使用HCL的tfvars格式，用户可以将“.tfvars”中的内容提交到vars_body中。具体tfvars格式见：https://www.terraform.io/language/values/variables#variable-definitions-tfvars-files  * RF支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * 如果vars_body过大，可以使用vars_uri  * 如果vars中都是简单的字符串格式，可以使用var_structure  * 注意：vars中不应该传递任何敏感信息，RF会直接明文使用、log、展示、存储对应的vars 
+     * HCL支持参数，即，同一个模板可以给予不同的参数而达到不同的效果  * vars_body使用HCL的tfvars格式，用户可以将“.tfvars”中的内容提交到vars_body中。具体tfvars格式见：https://www.terraform.io/language/values/variables#variable-definitions-tfvars-files  * 资源编排服务支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * 如果vars_body过大，可以使用vars_uri  * 如果vars中都是简单的字符串格式，可以使用var_structure  * 注意：vars中不应该传递任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的vars 
      * @return varsUri
      */
     public String getVarsUri() {
@@ -389,7 +359,6 @@ public class CreateStackRequestBody  {
         }
         CreateStackRequestBody createStackRequestBody = (CreateStackRequestBody) o;
         return Objects.equals(this.stackName, createStackRequestBody.stackName) &&
-            Objects.equals(this.executor, createStackRequestBody.executor) &&
             Objects.equals(this.agencies, createStackRequestBody.agencies) &&
             Objects.equals(this.description, createStackRequestBody.description) &&
             Objects.equals(this.enableDeletionProtection, createStackRequestBody.enableDeletionProtection) &&
@@ -402,14 +371,13 @@ public class CreateStackRequestBody  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(stackName, executor, agencies, description, enableDeletionProtection, enableAutoRollback, templateBody, templateUri, varsBody, varsStructure, varsUri);
+        return Objects.hash(stackName, agencies, description, enableDeletionProtection, enableAutoRollback, templateBody, templateUri, varsBody, varsStructure, varsUri);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateStackRequestBody {\n");
         sb.append("    stackName: ").append(toIndentedString(stackName)).append("\n");
-        sb.append("    executor: ").append(toIndentedString(executor)).append("\n");
         sb.append("    agencies: ").append(toIndentedString(agencies)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enableDeletionProtection: ").append(toIndentedString(enableDeletionProtection)).append("\n");

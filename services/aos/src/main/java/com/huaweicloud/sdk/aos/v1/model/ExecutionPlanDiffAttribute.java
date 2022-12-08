@@ -1,0 +1,146 @@
+package com.huaweicloud.sdk.aos.v1.model;
+
+
+
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.function.Consumer;
+import java.util.Objects;
+
+/**
+ * 执行计划的更多细节
+ */
+public class ExecutionPlanDiffAttribute  {
+
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="previous_value")
+    
+    
+    private String previousValue;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="target_value")
+    
+    
+    private String targetValue;
+
+    public ExecutionPlanDiffAttribute withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 当前资源被修改的参数的名字。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
+
+    public ExecutionPlanDiffAttribute withPreviousValue(String previousValue) {
+        this.previousValue = previousValue;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 当前资源被修改前参数的值，新创建时为空。
+     * @return previousValue
+     */
+    public String getPreviousValue() {
+        return previousValue;
+    }
+
+    public void setPreviousValue(String previousValue) {
+        this.previousValue = previousValue;
+    }
+
+    
+
+    public ExecutionPlanDiffAttribute withTargetValue(String targetValue) {
+        this.targetValue = targetValue;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 当前资源被修改的参数的目的值，删除时为空。
+     * @return targetValue
+     */
+    public String getTargetValue() {
+        return targetValue;
+    }
+
+    public void setTargetValue(String targetValue) {
+        this.targetValue = targetValue;
+    }
+
+    
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ExecutionPlanDiffAttribute executionPlanDiffAttribute = (ExecutionPlanDiffAttribute) o;
+        return Objects.equals(this.name, executionPlanDiffAttribute.name) &&
+            Objects.equals(this.previousValue, executionPlanDiffAttribute.previousValue) &&
+            Objects.equals(this.targetValue, executionPlanDiffAttribute.targetValue);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, previousValue, targetValue);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ExecutionPlanDiffAttribute {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    previousValue: ").append(toIndentedString(previousValue)).append("\n");
+        sb.append("    targetValue: ").append(toIndentedString(targetValue)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+    
+}
+

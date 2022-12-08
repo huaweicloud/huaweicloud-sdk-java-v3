@@ -144,6 +144,36 @@ public class EipAsyncClient {
     }
 
     /**
+     * 查询带宽加油包列表
+     *
+     * 查询带宽加油包列表信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBandwidthPkgRequest 请求对象
+     * @return CompletableFuture<ListBandwidthPkgResponse>
+     */
+    public CompletableFuture<ListBandwidthPkgResponse> listBandwidthPkgAsync(ListBandwidthPkgRequest request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.listBandwidthPkg);
+    }
+
+    /**
+     * 查询带宽加油包列表
+     *
+     * 查询带宽加油包列表信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBandwidthPkgRequest 请求对象
+     * @return AsyncInvoker<ListBandwidthPkgRequest, ListBandwidthPkgResponse>
+     */
+    public AsyncInvoker<ListBandwidthPkgRequest, ListBandwidthPkgResponse> listBandwidthPkgAsyncInvoker(
+        ListBandwidthPkgRequest request) {
+        return new AsyncInvoker<ListBandwidthPkgRequest, ListBandwidthPkgResponse>(request, EipMeta.listBandwidthPkg,
+            hcClient);
+    }
+
+    /**
      * 查询带宽列表
      *
      * 查询带宽列表。
@@ -354,6 +384,67 @@ public class EipAsyncClient {
     }
 
     /**
+     * 批量创建弹性公网IP
+     *
+     * 批量创建弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreatePublicipsRequest 请求对象
+     * @return CompletableFuture<BatchCreatePublicipsResponse>
+     */
+    public CompletableFuture<BatchCreatePublicipsResponse> batchCreatePublicipsAsync(
+        BatchCreatePublicipsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.batchCreatePublicips);
+    }
+
+    /**
+     * 批量创建弹性公网IP
+     *
+     * 批量创建弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreatePublicipsRequest 请求对象
+     * @return AsyncInvoker<BatchCreatePublicipsRequest, BatchCreatePublicipsResponse>
+     */
+    public AsyncInvoker<BatchCreatePublicipsRequest, BatchCreatePublicipsResponse> batchCreatePublicipsAsyncInvoker(
+        BatchCreatePublicipsRequest request) {
+        return new AsyncInvoker<BatchCreatePublicipsRequest, BatchCreatePublicipsResponse>(request,
+            EipMeta.batchCreatePublicips, hcClient);
+    }
+
+    /**
+     * 批量删除弹性公网IP
+     *
+     * 批量删除弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeletePublicIpRequest 请求对象
+     * @return CompletableFuture<BatchDeletePublicIpResponse>
+     */
+    public CompletableFuture<BatchDeletePublicIpResponse> batchDeletePublicIpAsync(BatchDeletePublicIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.batchDeletePublicIp);
+    }
+
+    /**
+     * 批量删除弹性公网IP
+     *
+     * 批量删除弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeletePublicIpRequest 请求对象
+     * @return AsyncInvoker<BatchDeletePublicIpRequest, BatchDeletePublicIpResponse>
+     */
+    public AsyncInvoker<BatchDeletePublicIpRequest, BatchDeletePublicIpResponse> batchDeletePublicIpAsyncInvoker(
+        BatchDeletePublicIpRequest request) {
+        return new AsyncInvoker<BatchDeletePublicIpRequest, BatchDeletePublicIpResponse>(request,
+            EipMeta.batchDeletePublicIp, hcClient);
+    }
+
+    /**
      * 批量删除弹性公网IP资源标签
      *
      * 为指定的弹性公网IP资源实例批量删除标签。
@@ -382,6 +473,97 @@ public class EipAsyncClient {
         BatchDeletePublicipTagsRequest request) {
         return new AsyncInvoker<BatchDeletePublicipTagsRequest, BatchDeletePublicipTagsResponse>(request,
             EipMeta.batchDeletePublicipTags, hcClient);
+    }
+
+    /**
+     * 批量解绑弹性公网IP
+     *
+     * 批量解绑弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDisassociatePublicipsRequest 请求对象
+     * @return CompletableFuture<BatchDisassociatePublicipsResponse>
+     */
+    public CompletableFuture<BatchDisassociatePublicipsResponse> batchDisassociatePublicipsAsync(
+        BatchDisassociatePublicipsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.batchDisassociatePublicips);
+    }
+
+    /**
+     * 批量解绑弹性公网IP
+     *
+     * 批量解绑弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDisassociatePublicipsRequest 请求对象
+     * @return AsyncInvoker<BatchDisassociatePublicipsRequest, BatchDisassociatePublicipsResponse>
+     */
+    public AsyncInvoker<BatchDisassociatePublicipsRequest, BatchDisassociatePublicipsResponse> batchDisassociatePublicipsAsyncInvoker(
+        BatchDisassociatePublicipsRequest request) {
+        return new AsyncInvoker<BatchDisassociatePublicipsRequest, BatchDisassociatePublicipsResponse>(request,
+            EipMeta.batchDisassociatePublicips, hcClient);
+    }
+
+    /**
+     * 查询PublicIp数量
+     *
+     * 查询PublicIp数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountPublicIpRequest 请求对象
+     * @return CompletableFuture<CountPublicIpResponse>
+     */
+    public CompletableFuture<CountPublicIpResponse> countPublicIpAsync(CountPublicIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.countPublicIp);
+    }
+
+    /**
+     * 查询PublicIp数量
+     *
+     * 查询PublicIp数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountPublicIpRequest 请求对象
+     * @return AsyncInvoker<CountPublicIpRequest, CountPublicIpResponse>
+     */
+    public AsyncInvoker<CountPublicIpRequest, CountPublicIpResponse> countPublicIpAsyncInvoker(
+        CountPublicIpRequest request) {
+        return new AsyncInvoker<CountPublicIpRequest, CountPublicIpResponse>(request, EipMeta.countPublicIp, hcClient);
+    }
+
+    /**
+     * 查询PublicIp实例数
+     *
+     * 查询PublicIp实例数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountPublicIpInstanceRequest 请求对象
+     * @return CompletableFuture<CountPublicIpInstanceResponse>
+     */
+    public CompletableFuture<CountPublicIpInstanceResponse> countPublicIpInstanceAsync(
+        CountPublicIpInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.countPublicIpInstance);
+    }
+
+    /**
+     * 查询PublicIp实例数
+     *
+     * 查询PublicIp实例数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountPublicIpInstanceRequest 请求对象
+     * @return AsyncInvoker<CountPublicIpInstanceRequest, CountPublicIpInstanceResponse>
+     */
+    public AsyncInvoker<CountPublicIpInstanceRequest, CountPublicIpInstanceResponse> countPublicIpInstanceAsyncInvoker(
+        CountPublicIpInstanceRequest request) {
+        return new AsyncInvoker<CountPublicIpInstanceRequest, CountPublicIpInstanceResponse>(request,
+            EipMeta.countPublicIpInstance, hcClient);
     }
 
     /**
@@ -624,6 +806,36 @@ public class EipAsyncClient {
         ListPublicipsByTagsRequest request) {
         return new AsyncInvoker<ListPublicipsByTagsRequest, ListPublicipsByTagsResponse>(request,
             EipMeta.listPublicipsByTags, hcClient);
+    }
+
+    /**
+     * 查询PublicIp类型
+     *
+     * 查询PublicIp类型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPublicIpTypeRequest 请求对象
+     * @return CompletableFuture<ShowPublicIpTypeResponse>
+     */
+    public CompletableFuture<ShowPublicIpTypeResponse> showPublicIpTypeAsync(ShowPublicIpTypeRequest request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.showPublicIpType);
+    }
+
+    /**
+     * 查询PublicIp类型
+     *
+     * 查询PublicIp类型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPublicIpTypeRequest 请求对象
+     * @return AsyncInvoker<ShowPublicIpTypeRequest, ShowPublicIpTypeResponse>
+     */
+    public AsyncInvoker<ShowPublicIpTypeRequest, ShowPublicIpTypeResponse> showPublicIpTypeAsyncInvoker(
+        ShowPublicIpTypeRequest request) {
+        return new AsyncInvoker<ShowPublicIpTypeRequest, ShowPublicIpTypeResponse>(request, EipMeta.showPublicIpType,
+            hcClient);
     }
 
     /**

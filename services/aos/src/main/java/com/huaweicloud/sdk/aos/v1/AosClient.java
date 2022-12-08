@@ -74,9 +74,37 @@ public class AosClient {
     }
 
     /**
-     * 删除堆栈
+     * 此命令用于删除已有的执行计划(execution plan)
      *
-     * 删除堆栈
+     * 此命令用于删除已有的执行计划(execution plan)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteExecutionPlanRequest 请求对象
+     * @return DeleteExecutionPlanResponse
+     */
+    public DeleteExecutionPlanResponse deleteExecutionPlan(DeleteExecutionPlanRequest request) {
+        return hcClient.syncInvokeHttp(request, AosMeta.deleteExecutionPlan);
+    }
+
+    /**
+     * 此命令用于删除已有的执行计划(execution plan)
+     *
+     * 此命令用于删除已有的执行计划(execution plan)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteExecutionPlanRequest 请求对象
+     * @return SyncInvoker<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse>
+     */
+    public SyncInvoker<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse> deleteExecutionPlanInvoker(DeleteExecutionPlanRequest request) {
+        return new SyncInvoker<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse>(request, AosMeta.deleteExecutionPlan, hcClient);
+    }
+
+    /**
+     * 删除资源栈
+     *
+     * 删除资源栈
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -88,9 +116,9 @@ public class AosClient {
     }
 
     /**
-     * 删除堆栈
+     * 删除资源栈
      *
-     * 删除堆栈
+     * 删除资源栈
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -99,6 +127,34 @@ public class AosClient {
      */
     public SyncInvoker<DeleteStackRequest, DeleteStackResponse> deleteStackInvoker(DeleteStackRequest request) {
         return new SyncInvoker<DeleteStackRequest, DeleteStackResponse>(request, AosMeta.deleteStack, hcClient);
+    }
+
+    /**
+     * 描述执行计划当前的状态，返回执行计划的元数据
+     *
+     * 描述执行计划当前的状态，返回执行计划的元数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DescribeExecutionPlanRequest 请求对象
+     * @return DescribeExecutionPlanResponse
+     */
+    public DescribeExecutionPlanResponse describeExecutionPlan(DescribeExecutionPlanRequest request) {
+        return hcClient.syncInvokeHttp(request, AosMeta.describeExecutionPlan);
+    }
+
+    /**
+     * 描述执行计划当前的状态，返回执行计划的元数据
+     *
+     * 描述执行计划当前的状态，返回执行计划的元数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DescribeExecutionPlanRequest 请求对象
+     * @return SyncInvoker<DescribeExecutionPlanRequest, DescribeExecutionPlanResponse>
+     */
+    public SyncInvoker<DescribeExecutionPlanRequest, DescribeExecutionPlanResponse> describeExecutionPlanInvoker(DescribeExecutionPlanRequest request) {
+        return new SyncInvoker<DescribeExecutionPlanRequest, DescribeExecutionPlanResponse>(request, AosMeta.describeExecutionPlan, hcClient);
     }
 
     /**
@@ -130,9 +186,65 @@ public class AosClient {
     }
 
     /**
-     * 获取堆栈模板
+     * 此接口用于获取执行计划的详细内容
      *
-     * 获取堆栈当前使用的模板
+     * 此接口用于获取执行计划的详细内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param GetExecutionPlanRequest 请求对象
+     * @return GetExecutionPlanResponse
+     */
+    public GetExecutionPlanResponse getExecutionPlan(GetExecutionPlanRequest request) {
+        return hcClient.syncInvokeHttp(request, AosMeta.getExecutionPlan);
+    }
+
+    /**
+     * 此接口用于获取执行计划的详细内容
+     *
+     * 此接口用于获取执行计划的详细内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param GetExecutionPlanRequest 请求对象
+     * @return SyncInvoker<GetExecutionPlanRequest, GetExecutionPlanResponse>
+     */
+    public SyncInvoker<GetExecutionPlanRequest, GetExecutionPlanResponse> getExecutionPlanInvoker(GetExecutionPlanRequest request) {
+        return new SyncInvoker<GetExecutionPlanRequest, GetExecutionPlanResponse>(request, AosMeta.getExecutionPlan, hcClient);
+    }
+
+    /**
+     * 描述栈的状态，返回栈的元数据
+     *
+     * 描述栈的状态，返回栈的元数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param GetStackMetadataRequest 请求对象
+     * @return GetStackMetadataResponse
+     */
+    public GetStackMetadataResponse getStackMetadata(GetStackMetadataRequest request) {
+        return hcClient.syncInvokeHttp(request, AosMeta.getStackMetadata);
+    }
+
+    /**
+     * 描述栈的状态，返回栈的元数据
+     *
+     * 描述栈的状态，返回栈的元数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param GetStackMetadataRequest 请求对象
+     * @return SyncInvoker<GetStackMetadataRequest, GetStackMetadataResponse>
+     */
+    public SyncInvoker<GetStackMetadataRequest, GetStackMetadataResponse> getStackMetadataInvoker(GetStackMetadataRequest request) {
+        return new SyncInvoker<GetStackMetadataRequest, GetStackMetadataResponse>(request, AosMeta.getStackMetadata, hcClient);
+    }
+
+    /**
+     * 获取资源栈模板
+     *
+     * 获取资源栈当前使用的模板
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -144,9 +256,9 @@ public class AosClient {
     }
 
     /**
-     * 获取堆栈模板
+     * 获取资源栈模板
      *
-     * 获取堆栈当前使用的模板
+     * 获取资源栈当前使用的模板
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -214,9 +326,9 @@ public class AosClient {
     }
 
     /**
-     * 列举堆栈的输出
+     * 列举资源栈的输出
      *
-     * 列举堆栈的输出
+     * 列举资源栈的输出
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -228,9 +340,9 @@ public class AosClient {
     }
 
     /**
-     * 列举堆栈的输出
+     * 列举资源栈的输出
      *
-     * 列举堆栈的输出
+     * 列举资源栈的输出
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -242,9 +354,9 @@ public class AosClient {
     }
 
     /**
-     * 获取堆栈的资源列表
+     * 获取资源栈的资源列表
      *
-     * 获取堆栈的资源列表，可以获取整个栈从生成到当前时间点的所有状态
+     * 获取资源栈的资源列表，可以获取整个栈从生成到当前时间点的所有状态
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -256,9 +368,9 @@ public class AosClient {
     }
 
     /**
-     * 获取堆栈的资源列表
+     * 获取资源栈的资源列表
      *
-     * 获取堆栈的资源列表，可以获取整个栈从生成到当前时间点的所有状态
+     * 获取资源栈的资源列表，可以获取整个栈从生成到当前时间点的所有状态
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -376,7 +488,7 @@ public class AosClient {
      * 
      * * 此API为全量API，即用户每次部署都需要给予所想要使用的template、vars的全量
      * 
-     * * 当触发的部署失败时，如果堆栈开启了自动回滚，会触发自动回滚的流程，否则就会停留在部署失败时的状态
+     * * 当触发的部署失败时，如果资源栈开启了自动回滚，会触发自动回滚的流程，否则就会停留在部署失败时的状态
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -398,7 +510,7 @@ public class AosClient {
      * 
      * * 此API为全量API，即用户每次部署都需要给予所想要使用的template、vars的全量
      * 
-     * * 当触发的部署失败时，如果堆栈开启了自动回滚，会触发自动回滚的流程，否则就会停留在部署失败时的状态
+     * * 当触发的部署失败时，如果资源栈开启了自动回滚，会触发自动回滚的流程，否则就会停留在部署失败时的状态
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -410,13 +522,13 @@ public class AosClient {
     }
 
     /**
-     * 列举堆栈
+     * 列举资源栈
      *
-     * ListStacks 列举当前局点下用户所有的堆栈
+     * ListStacks 列举当前局点下用户所有的资源栈
      * 
      *   * 默认按照生成时间排序，最早生成的在最前
-     *   * 注意：目前暂时返回全量堆栈信息，即不支持分页
-     *   * 如果没有任何堆栈，则返回空list
+     *   * 注意：目前暂时返回全量资源栈信息，即不支持分页
+     *   * 如果没有任何资源栈，则返回空list
      * 
      * ListStacks返回的只有摘要信息（具体摘要信息见ListStacksResponseBody），如果用户需要详细的资源栈元数据请调用GetStackMetadata
      * 
@@ -430,13 +542,13 @@ public class AosClient {
     }
 
     /**
-     * 列举堆栈
+     * 列举资源栈
      *
-     * ListStacks 列举当前局点下用户所有的堆栈
+     * ListStacks 列举当前局点下用户所有的资源栈
      * 
      *   * 默认按照生成时间排序，最早生成的在最前
-     *   * 注意：目前暂时返回全量堆栈信息，即不支持分页
-     *   * 如果没有任何堆栈，则返回空list
+     *   * 注意：目前暂时返回全量资源栈信息，即不支持分页
+     *   * 如果没有任何资源栈，则返回空list
      * 
      * ListStacks返回的只有摘要信息（具体摘要信息见ListStacksResponseBody），如果用户需要详细的资源栈元数据请调用GetStackMetadata
      * 

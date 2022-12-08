@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 磁盘初始化配置管理参数。  该参数配置逻辑较为复杂，详细说明请参见[节点磁盘挂载](node_storage_example.xml)。  该参数缺省时，按照extendParam中的DockerLVMConfigOverride参数进行磁盘管理。此参数对1.15.11及以上集群版本支持。 
+ * 磁盘初始化配置管理参数。  该参数配置逻辑较为复杂，详细说明请参见[节点磁盘挂载](node_storage_example.xml)。  该参数缺省时，按照extendParam中的DockerLVMConfigOverride（已废弃）参数进行磁盘管理。此参数对1.15.11及以上集群版本支持。  &gt; 如存在节点规格涉及本地盘并同时使用云硬盘场景时，请勿缺省此参数，避免出现将用户未期望的磁盘分区。 
  */
 public class Storage {
 

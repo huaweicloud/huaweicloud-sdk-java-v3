@@ -209,7 +209,7 @@ public class PostDomainNerRequest  {
 
 
     /**
-     * 待分析文本，长度为1~64，文本编码为UTF-8。
+     * 待分析文本，长度为1~512，文本编码为UTF-8。
      * @return text
      */
     public String getText() {

@@ -88,7 +88,7 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     }
 
     /**
-     * 是否启用。
+     * 是否可以消费。
      * @return enabled
      */
     public Boolean getEnabled() {

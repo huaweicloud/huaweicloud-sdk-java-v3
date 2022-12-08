@@ -701,10 +701,7 @@ This configuration is only valid for a credential, and it will override the glob
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
 
 String iamEndpoint = "https://iam.cn-north-4.myhuaweicloud.com";
-BasicCredentials credentials = new BasicCredentials()
-								.withAk(ak)
-								.withSk(sk)
-								.withIamEndpoint(iamEndpoint);
+BasicCredentials credentials = new BasicCredentials().withAk(ak).withSk(sk).withIamEndpoint(iamEndpoint);
 ```
 
 ##### 3.3.2 Region configuration

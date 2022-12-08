@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,31 +17,38 @@ public class RecognizeAutoClassificationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private AutoClassificationResult result;
+    private List<AutoClassificationResult> result = null;
 
-    public RecognizeAutoClassificationResponse withResult(AutoClassificationResult result) {
+    public RecognizeAutoClassificationResponse withResult(List<AutoClassificationResult> result) {
         this.result = result;
         return this;
     }
 
-    public RecognizeAutoClassificationResponse withResult(Consumer<AutoClassificationResult> resultSetter) {
+    public RecognizeAutoClassificationResponse addResultItem(AutoClassificationResult resultItem) {
         if (this.result == null) {
-            this.result = new AutoClassificationResult();
-            resultSetter.accept(this.result);
+            this.result = new ArrayList<>();
         }
+        this.result.add(resultItem);
+        return this;
+    }
 
+    public RecognizeAutoClassificationResponse withResult(Consumer<List<AutoClassificationResult>> resultSetter) {
+        if (this.result == null) {
+            this.result = new ArrayList<>();
+        }
+        resultSetter.accept(this.result);
         return this;
     }
 
     /**
-     * Get result
+     * 调用成功时表示调用结果。  调用失败时无此字段。 
      * @return result
      */
-    public AutoClassificationResult getResult() {
+    public List<AutoClassificationResult> getResult() {
         return result;
     }
 
-    public void setResult(AutoClassificationResult result) {
+    public void setResult(List<AutoClassificationResult> result) {
         this.result = result;
     }
 

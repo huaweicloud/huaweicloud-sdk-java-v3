@@ -695,10 +695,7 @@ set HUAWEICLOUD_SDK_IAM_ENDPOINT=https://iam.cn-north-4.myhuaweicloud.com
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
 
 String iamEndpoint = "https://iam.cn-north-4.myhuaweicloud.com";
-BasicCredentials credentials = new BasicCredentials()
-								.withAk(ak)
-								.withSk(sk)
-								.withIamEndpoint(iamEndpoint);
+BasicCredentials credentials = new BasicCredentials().withAk(ak).withSk(sk).withIamEndpoint(iamEndpoint);
 ```
 
 ##### 3.3.2 Region配置

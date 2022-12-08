@@ -41,9 +41,19 @@ public class ShowGroupResponse extends SdkResponse {
     private BigDecimal retryMaxTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "from_beginning")
+    @JsonProperty(value = "app_id")
 
-    private Boolean fromBeginning;
+    private String appId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_name")
+
+    private String appName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "permissions")
+
+    private List<String> permissions = null;
 
     public ShowGroupResponse withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -51,7 +61,7 @@ public class ShowGroupResponse extends SdkResponse {
     }
 
     /**
-     * 是否启用。
+     * 是否可以消费。
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -146,21 +156,71 @@ public class ShowGroupResponse extends SdkResponse {
         this.retryMaxTime = retryMaxTime;
     }
 
-    public ShowGroupResponse withFromBeginning(Boolean fromBeginning) {
-        this.fromBeginning = fromBeginning;
+    public ShowGroupResponse withAppId(String appId) {
+        this.appId = appId;
         return this;
     }
 
     /**
-     * 是否重头消费。
-     * @return fromBeginning
+     * 应用id。
+     * @return appId
      */
-    public Boolean getFromBeginning() {
-        return fromBeginning;
+    public String getAppId() {
+        return appId;
     }
 
-    public void setFromBeginning(Boolean fromBeginning) {
-        this.fromBeginning = fromBeginning;
+    public void setAppId(String appId) {
+        this.appId = appId;
+    }
+
+    public ShowGroupResponse withAppName(String appName) {
+        this.appName = appName;
+        return this;
+    }
+
+    /**
+     * 应用名称。
+     * @return appName
+     */
+    public String getAppName() {
+        return appName;
+    }
+
+    public void setAppName(String appName) {
+        this.appName = appName;
+    }
+
+    public ShowGroupResponse withPermissions(List<String> permissions) {
+        this.permissions = permissions;
+        return this;
+    }
+
+    public ShowGroupResponse addPermissionsItem(String permissionsItem) {
+        if (this.permissions == null) {
+            this.permissions = new ArrayList<>();
+        }
+        this.permissions.add(permissionsItem);
+        return this;
+    }
+
+    public ShowGroupResponse withPermissions(Consumer<List<String>> permissionsSetter) {
+        if (this.permissions == null) {
+            this.permissions = new ArrayList<>();
+        }
+        permissionsSetter.accept(this.permissions);
+        return this;
+    }
+
+    /**
+     * 权限。
+     * @return permissions
+     */
+    public List<String> getPermissions() {
+        return permissions;
+    }
+
+    public void setPermissions(List<String> permissions) {
+        this.permissions = permissions;
     }
 
     @Override
@@ -177,12 +237,14 @@ public class ShowGroupResponse extends SdkResponse {
             && Objects.equals(this.brokers, showGroupResponse.brokers)
             && Objects.equals(this.name, showGroupResponse.name)
             && Objects.equals(this.retryMaxTime, showGroupResponse.retryMaxTime)
-            && Objects.equals(this.fromBeginning, showGroupResponse.fromBeginning);
+            && Objects.equals(this.appId, showGroupResponse.appId)
+            && Objects.equals(this.appName, showGroupResponse.appName)
+            && Objects.equals(this.permissions, showGroupResponse.permissions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enabled, broadcast, brokers, name, retryMaxTime, fromBeginning);
+        return Objects.hash(enabled, broadcast, brokers, name, retryMaxTime, appId, appName, permissions);
     }
 
     @Override
@@ -194,7 +256,9 @@ public class ShowGroupResponse extends SdkResponse {
         sb.append("    brokers: ").append(toIndentedString(brokers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    retryMaxTime: ").append(toIndentedString(retryMaxTime)).append("\n");
-        sb.append("    fromBeginning: ").append(toIndentedString(fromBeginning)).append("\n");
+        sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
+        sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
+        sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

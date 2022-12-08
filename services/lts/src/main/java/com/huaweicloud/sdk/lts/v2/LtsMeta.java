@@ -1183,6 +1183,41 @@ public class LtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTimeLineTrafficStatisticsRequest, ListTimeLineTrafficStatisticsResponse> listTimeLineTrafficStatistics =
+        genForlistTimeLineTrafficStatistics();
+
+    private static HttpRequestDef<ListTimeLineTrafficStatisticsRequest, ListTimeLineTrafficStatisticsResponse> genForlistTimeLineTrafficStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListTimeLineTrafficStatisticsRequest, ListTimeLineTrafficStatisticsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListTimeLineTrafficStatisticsRequest.class,
+                    ListTimeLineTrafficStatisticsResponse.class)
+                .withName("ListTimeLineTrafficStatistics")
+                .withUri("/v2/{project_id}/lts/timeline-traffic-statistics")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("timezone",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTimeLineTrafficStatisticsRequest::getTimezone, (req, v) -> {
+                req.setTimezone(v);
+            }));
+        builder.<TimelineTrafficStatisticsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TimelineTrafficStatisticsRequestBody.class),
+            f -> f.withMarshaller(ListTimeLineTrafficStatisticsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListTransfersRequest, ListTransfersResponse> listTransfers =
         genForlistTransfers();
 

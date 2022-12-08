@@ -35,7 +35,7 @@ public class ApplyExecutionPlanResponse extends SdkResponse {
 
 
     /**
-     * 部署生成的唯一ID，由IAC生成
+     * 部署生成的唯一ID，由资源编排服务生成
      * @return deploymentId
      */
     public String getDeploymentId() {

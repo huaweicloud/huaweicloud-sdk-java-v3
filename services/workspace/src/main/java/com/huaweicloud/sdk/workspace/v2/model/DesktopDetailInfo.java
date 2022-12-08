@@ -106,6 +106,16 @@ public class DesktopDetailInfo {
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "site_type")
+
+    private String siteType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "site_name")
+
+    private String siteName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product")
 
     private ProductDetailInfo product;
@@ -539,6 +549,40 @@ public class DesktopDetailInfo {
         this.availabilityZone = availabilityZone;
     }
 
+    public DesktopDetailInfo withSiteType(String siteType) {
+        this.siteType = siteType;
+        return this;
+    }
+
+    /**
+     * 站点类型
+     * @return siteType
+     */
+    public String getSiteType() {
+        return siteType;
+    }
+
+    public void setSiteType(String siteType) {
+        this.siteType = siteType;
+    }
+
+    public DesktopDetailInfo withSiteName(String siteName) {
+        this.siteName = siteName;
+        return this;
+    }
+
+    /**
+     * 站点名字
+     * @return siteName
+     */
+    public String getSiteName() {
+        return siteName;
+    }
+
+    public void setSiteName(String siteName) {
+        this.siteName = siteName;
+    }
+
     public DesktopDetailInfo withProduct(ProductDetailInfo product) {
         this.product = product;
         return this;
@@ -693,6 +737,8 @@ public class DesktopDetailInfo {
             && Objects.equals(this.dataVolumes, desktopDetailInfo.dataVolumes)
             && Objects.equals(this.userGroup, desktopDetailInfo.userGroup)
             && Objects.equals(this.availabilityZone, desktopDetailInfo.availabilityZone)
+            && Objects.equals(this.siteType, desktopDetailInfo.siteType)
+            && Objects.equals(this.siteName, desktopDetailInfo.siteName)
             && Objects.equals(this.product, desktopDetailInfo.product)
             && Objects.equals(this.ouName, desktopDetailInfo.ouName)
             && Objects.equals(this.osVersion, desktopDetailInfo.osVersion)
@@ -721,6 +767,8 @@ public class DesktopDetailInfo {
             dataVolumes,
             userGroup,
             availabilityZone,
+            siteType,
+            siteName,
             product,
             ouName,
             osVersion,
@@ -751,6 +799,8 @@ public class DesktopDetailInfo {
         sb.append("    dataVolumes: ").append(toIndentedString(dataVolumes)).append("\n");
         sb.append("    userGroup: ").append(toIndentedString(userGroup)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    siteType: ").append(toIndentedString(siteType)).append("\n");
+        sb.append("    siteName: ").append(toIndentedString(siteName)).append("\n");
         sb.append("    product: ").append(toIndentedString(product)).append("\n");
         sb.append("    ouName: ").append(toIndentedString(ouName)).append("\n");
         sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");

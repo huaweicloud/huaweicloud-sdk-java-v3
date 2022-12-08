@@ -279,6 +279,16 @@ public class UpdateFunctionConfigRequestBody {
     private Boolean isStatefulFunction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_dynamic_memory")
+
+    private Boolean enableDynamicMemory;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_auth_in_header")
+
+    private Boolean enableAuthInHeader;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_names")
 
     private String domainNames;
@@ -642,6 +652,40 @@ public class UpdateFunctionConfigRequestBody {
         this.isStatefulFunction = isStatefulFunction;
     }
 
+    public UpdateFunctionConfigRequestBody withEnableDynamicMemory(Boolean enableDynamicMemory) {
+        this.enableDynamicMemory = enableDynamicMemory;
+        return this;
+    }
+
+    /**
+     * 是否启动动态内存配置
+     * @return enableDynamicMemory
+     */
+    public Boolean getEnableDynamicMemory() {
+        return enableDynamicMemory;
+    }
+
+    public void setEnableDynamicMemory(Boolean enableDynamicMemory) {
+        this.enableDynamicMemory = enableDynamicMemory;
+    }
+
+    public UpdateFunctionConfigRequestBody withEnableAuthInHeader(Boolean enableAuthInHeader) {
+        this.enableAuthInHeader = enableAuthInHeader;
+        return this;
+    }
+
+    /**
+     * 是否允许在请求头中添加鉴权信息
+     * @return enableAuthInHeader
+     */
+    public Boolean getEnableAuthInHeader() {
+        return enableAuthInHeader;
+    }
+
+    public void setEnableAuthInHeader(Boolean enableAuthInHeader) {
+        this.enableAuthInHeader = enableAuthInHeader;
+    }
+
     public UpdateFunctionConfigRequestBody withDomainNames(String domainNames) {
         this.domainNames = domainNames;
         return this;
@@ -687,6 +731,8 @@ public class UpdateFunctionConfigRequestBody {
             && Objects.equals(this.initializerTimeout, updateFunctionConfigRequestBody.initializerTimeout)
             && Objects.equals(this.enterpriseProjectId, updateFunctionConfigRequestBody.enterpriseProjectId)
             && Objects.equals(this.isStatefulFunction, updateFunctionConfigRequestBody.isStatefulFunction)
+            && Objects.equals(this.enableDynamicMemory, updateFunctionConfigRequestBody.enableDynamicMemory)
+            && Objects.equals(this.enableAuthInHeader, updateFunctionConfigRequestBody.enableAuthInHeader)
             && Objects.equals(this.domainNames, updateFunctionConfigRequestBody.domainNames);
     }
 
@@ -711,6 +757,8 @@ public class UpdateFunctionConfigRequestBody {
             initializerTimeout,
             enterpriseProjectId,
             isStatefulFunction,
+            enableDynamicMemory,
+            enableAuthInHeader,
             domainNames);
     }
 
@@ -737,6 +785,8 @@ public class UpdateFunctionConfigRequestBody {
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    isStatefulFunction: ").append(toIndentedString(isStatefulFunction)).append("\n");
+        sb.append("    enableDynamicMemory: ").append(toIndentedString(enableDynamicMemory)).append("\n");
+        sb.append("    enableAuthInHeader: ").append(toIndentedString(enableAuthInHeader)).append("\n");
         sb.append("    domainNames: ").append(toIndentedString(domainNames)).append("\n");
         sb.append("}");
         return sb.toString();

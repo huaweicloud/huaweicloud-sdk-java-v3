@@ -13,65 +13,82 @@ import java.util.function.Consumer;
 public class ShowWorkflowExecutionForPageResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "pager")
+    @JsonProperty(value = "total")
 
-    private Pager pager;
+    private Long total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "hisRecords")
+    @JsonProperty(value = "size")
 
-    private FlowExecutionBriefV2 hisRecords;
+    private Integer size;
 
-    public ShowWorkflowExecutionForPageResponse withPager(Pager pager) {
-        this.pager = pager;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "executions")
+
+    private FlowExecutionBriefV2 executions;
+
+    public ShowWorkflowExecutionForPageResponse withTotal(Long total) {
+        this.total = total;
         return this;
     }
 
-    public ShowWorkflowExecutionForPageResponse withPager(Consumer<Pager> pagerSetter) {
-        if (this.pager == null) {
-            this.pager = new Pager();
-            pagerSetter.accept(this.pager);
+    /**
+     * 返回所有满足条件的对象个数
+     * minimum: 0
+     * maximum: 1000000
+     * @return total
+     */
+    public Long getTotal() {
+        return total;
+    }
+
+    public void setTotal(Long total) {
+        this.total = total;
+    }
+
+    public ShowWorkflowExecutionForPageResponse withSize(Integer size) {
+        this.size = size;
+        return this;
+    }
+
+    /**
+     * 返回对象的大小
+     * minimum: 0
+     * maximum: 100
+     * @return size
+     */
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
+    public ShowWorkflowExecutionForPageResponse withExecutions(FlowExecutionBriefV2 executions) {
+        this.executions = executions;
+        return this;
+    }
+
+    public ShowWorkflowExecutionForPageResponse withExecutions(Consumer<FlowExecutionBriefV2> executionsSetter) {
+        if (this.executions == null) {
+            this.executions = new FlowExecutionBriefV2();
+            executionsSetter.accept(this.executions);
         }
 
         return this;
     }
 
     /**
-     * Get pager
-     * @return pager
+     * Get executions
+     * @return executions
      */
-    public Pager getPager() {
-        return pager;
+    public FlowExecutionBriefV2 getExecutions() {
+        return executions;
     }
 
-    public void setPager(Pager pager) {
-        this.pager = pager;
-    }
-
-    public ShowWorkflowExecutionForPageResponse withHisRecords(FlowExecutionBriefV2 hisRecords) {
-        this.hisRecords = hisRecords;
-        return this;
-    }
-
-    public ShowWorkflowExecutionForPageResponse withHisRecords(Consumer<FlowExecutionBriefV2> hisRecordsSetter) {
-        if (this.hisRecords == null) {
-            this.hisRecords = new FlowExecutionBriefV2();
-            hisRecordsSetter.accept(this.hisRecords);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get hisRecords
-     * @return hisRecords
-     */
-    public FlowExecutionBriefV2 getHisRecords() {
-        return hisRecords;
-    }
-
-    public void setHisRecords(FlowExecutionBriefV2 hisRecords) {
-        this.hisRecords = hisRecords;
+    public void setExecutions(FlowExecutionBriefV2 executions) {
+        this.executions = executions;
     }
 
     @Override
@@ -84,21 +101,23 @@ public class ShowWorkflowExecutionForPageResponse extends SdkResponse {
         }
         ShowWorkflowExecutionForPageResponse showWorkflowExecutionForPageResponse =
             (ShowWorkflowExecutionForPageResponse) o;
-        return Objects.equals(this.pager, showWorkflowExecutionForPageResponse.pager)
-            && Objects.equals(this.hisRecords, showWorkflowExecutionForPageResponse.hisRecords);
+        return Objects.equals(this.total, showWorkflowExecutionForPageResponse.total)
+            && Objects.equals(this.size, showWorkflowExecutionForPageResponse.size)
+            && Objects.equals(this.executions, showWorkflowExecutionForPageResponse.executions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pager, hisRecords);
+        return Objects.hash(total, size, executions);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowWorkflowExecutionForPageResponse {\n");
-        sb.append("    pager: ").append(toIndentedString(pager)).append("\n");
-        sb.append("    hisRecords: ").append(toIndentedString(hisRecords)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    executions: ").append(toIndentedString(executions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

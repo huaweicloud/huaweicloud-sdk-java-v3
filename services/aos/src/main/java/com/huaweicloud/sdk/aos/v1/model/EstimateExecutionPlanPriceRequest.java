@@ -105,7 +105,7 @@ public class EstimateExecutionPlanPriceRequest  {
 
 
     /**
-     * 执行计划的名字。如果未指定，则使用execution_plan_id作为execution_plan_name。
+     * 执行计划的名字。
      * @return executionPlanName
      */
     public String getExecutionPlanName() {
@@ -127,7 +127,7 @@ public class EstimateExecutionPlanPriceRequest  {
 
 
     /**
-     * 用户希望描述的栈的Id。若stack_name和stack_id同时存在，则IaC会检查是否两个匹配，否则返回400
+     * 用户希望描述的栈的Id。若stack_name和stack_id同时存在，则资源编排服务会检查是否两个匹配，否则返回400
      * @return stackId
      */
     public String getStackId() {

@@ -106,6 +106,64 @@ public class AosMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse> deleteExecutionPlan = genFordeleteExecutionPlan();
+
+    private static HttpRequestDef<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse> genFordeleteExecutionPlan() {
+        // basic
+        HttpRequestDef.Builder<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteExecutionPlanRequest.class, DeleteExecutionPlanResponse.class)
+                .withName("DeleteExecutionPlan")
+                .withUri("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("stack_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteExecutionPlanRequest::getStackName, (req, v) -> {
+                req.setStackName(v);
+            })
+        );
+        builder.<String>withRequestField("execution_plan_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteExecutionPlanRequest::getExecutionPlanName, (req, v) -> {
+                req.setExecutionPlanName(v);
+            })
+        );
+        builder.<String>withRequestField("stack_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteExecutionPlanRequest::getStackId, (req, v) -> {
+                req.setStackId(v);
+            })
+        );
+        builder.<String>withRequestField("execution_plan_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteExecutionPlanRequest::getExecutionPlanId, (req, v) -> {
+                req.setExecutionPlanId(v);
+            })
+        );
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteExecutionPlanRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteStackRequest, DeleteStackResponse> deleteStack = genFordeleteStack();
 
     private static HttpRequestDef<DeleteStackRequest, DeleteStackResponse> genFordeleteStack() {
@@ -133,19 +191,69 @@ public class AosMeta {
                 req.setStackId(v);
             })
         );
-        builder.<String>withRequestField("executor",
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStackRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DescribeExecutionPlanRequest, DescribeExecutionPlanResponse> describeExecutionPlan = genFordescribeExecutionPlan();
+
+    private static HttpRequestDef<DescribeExecutionPlanRequest, DescribeExecutionPlanResponse> genFordescribeExecutionPlan() {
+        // basic
+        HttpRequestDef.Builder<DescribeExecutionPlanRequest, DescribeExecutionPlanResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, DescribeExecutionPlanRequest.class, DescribeExecutionPlanResponse.class)
+                .withName("DescribeExecutionPlan")
+                .withUri("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("stack_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DescribeExecutionPlanRequest::getStackName, (req, v) -> {
+                req.setStackName(v);
+            })
+        );
+        builder.<String>withRequestField("execution_plan_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DescribeExecutionPlanRequest::getExecutionPlanName, (req, v) -> {
+                req.setExecutionPlanName(v);
+            })
+        );
+        builder.<String>withRequestField("stack_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStackRequest::getExecutor, (req, v) -> {
-                req.setExecutor(v);
+            f -> f.withMarshaller(DescribeExecutionPlanRequest::getStackId, (req, v) -> {
+                req.setStackId(v);
+            })
+        );
+        builder.<String>withRequestField("execution_plan_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DescribeExecutionPlanRequest::getExecutionPlanId, (req, v) -> {
+                req.setExecutionPlanId(v);
             })
         );
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStackRequest::getClientRequestId, (req, v) -> {
+            f -> f.withMarshaller(DescribeExecutionPlanRequest::getClientRequestId, (req, v) -> {
                 req.setClientRequestId(v);
             })
         );
@@ -214,6 +322,106 @@ public class AosMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<GetExecutionPlanRequest, GetExecutionPlanResponse> getExecutionPlan = genForgetExecutionPlan();
+
+    private static HttpRequestDef<GetExecutionPlanRequest, GetExecutionPlanResponse> genForgetExecutionPlan() {
+        // basic
+        HttpRequestDef.Builder<GetExecutionPlanRequest, GetExecutionPlanResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetExecutionPlanRequest.class, GetExecutionPlanResponse.class)
+                .withName("GetExecutionPlan")
+                .withUri("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("stack_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetExecutionPlanRequest::getStackName, (req, v) -> {
+                req.setStackName(v);
+            })
+        );
+        builder.<String>withRequestField("execution_plan_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetExecutionPlanRequest::getExecutionPlanName, (req, v) -> {
+                req.setExecutionPlanName(v);
+            })
+        );
+        builder.<String>withRequestField("stack_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetExecutionPlanRequest::getStackId, (req, v) -> {
+                req.setStackId(v);
+            })
+        );
+        builder.<String>withRequestField("execution_plan_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetExecutionPlanRequest::getExecutionPlanId, (req, v) -> {
+                req.setExecutionPlanId(v);
+            })
+        );
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetExecutionPlanRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetStackMetadataRequest, GetStackMetadataResponse> getStackMetadata = genForgetStackMetadata();
+
+    private static HttpRequestDef<GetStackMetadataRequest, GetStackMetadataResponse> genForgetStackMetadata() {
+        // basic
+        HttpRequestDef.Builder<GetStackMetadataRequest, GetStackMetadataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetStackMetadataRequest.class, GetStackMetadataResponse.class)
+                .withName("GetStackMetadata")
+                .withUri("/v1/{project_id}/stacks/{stack_name}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("stack_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetStackMetadataRequest::getStackName, (req, v) -> {
+                req.setStackName(v);
+            })
+        );
+        builder.<String>withRequestField("stack_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetStackMetadataRequest::getStackId, (req, v) -> {
+                req.setStackId(v);
+            })
+        );
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetStackMetadataRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<GetStackTemplateRequest, GetStackTemplateResponse> getStackTemplate = genForgetStackTemplate();
 
     private static HttpRequestDef<GetStackTemplateRequest, GetStackTemplateResponse> genForgetStackTemplate() {
@@ -239,14 +447,6 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(GetStackTemplateRequest::getStackId, (req, v) -> {
                 req.setStackId(v);
-            })
-        );
-        builder.<String>withRequestField("executor",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetStackTemplateRequest::getExecutor, (req, v) -> {
-                req.setExecutor(v);
             })
         );
         builder.<String>withRequestField("Client-Request-Id",
@@ -281,14 +481,6 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListExecutionPlansRequest::getStackName, (req, v) -> {
                 req.setStackName(v);
-            })
-        );
-        builder.<String>withRequestField("executor",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExecutionPlansRequest::getExecutor, (req, v) -> {
-                req.setExecutor(v);
             })
         );
         builder.<String>withRequestField("stack_id",
@@ -349,30 +541,6 @@ public class AosMeta {
                 req.setDeploymentId(v);
             })
         );
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListStackEventsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            })
-        );
-        builder.<String>withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackEventsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            })
-        );
-        builder.<String>withRequestField("executor",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackEventsRequest::getExecutor, (req, v) -> {
-                req.setExecutor(v);
-            })
-        );
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -415,30 +583,6 @@ public class AosMeta {
                 req.setStackId(v);
             })
         );
-        builder.<String>withRequestField("executor",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackOutputsRequest::getExecutor, (req, v) -> {
-                req.setExecutor(v);
-            })
-        );
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListStackOutputsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            })
-        );
-        builder.<String>withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackOutputsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            })
-        );
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -479,14 +623,6 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListStackResourcesRequest::getStackId, (req, v) -> {
                 req.setStackId(v);
-            })
-        );
-        builder.<String>withRequestField("executor",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStackResourcesRequest::getExecutor, (req, v) -> {
-                req.setExecutor(v);
             })
         );
         builder.<String>withRequestField("Client-Request-Id",
@@ -667,14 +803,6 @@ public class AosMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("executor",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStacksRequest::getExecutor, (req, v) -> {
-                req.setExecutor(v);
-            })
-        );
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,

@@ -35,6 +35,11 @@ public class ResizeInstanceReq {
 
     private String newProductId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publicip_id")
+
+    private String publicipId;
+
     public ResizeInstanceReq withNewSpecCode(String newSpecCode) {
         this.newSpecCode = newSpecCode;
         return this;
@@ -120,6 +125,23 @@ public class ResizeInstanceReq {
         this.newProductId = newProductId;
     }
 
+    public ResizeInstanceReq withPublicipId(String publicipId) {
+        this.publicipId = publicipId;
+        return this;
+    }
+
+    /**
+     * 实例绑定的弹性IP地址的ID。 以英文逗号隔开多个弹性IP地址的ID。 如果开启了公网再扩容，需要填写此参数。
+     * @return publicipId
+     */
+    public String getPublicipId() {
+        return publicipId;
+    }
+
+    public void setPublicipId(String publicipId) {
+        this.publicipId = publicipId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -133,12 +155,13 @@ public class ResizeInstanceReq {
             && Objects.equals(this.newStorageSpace, resizeInstanceReq.newStorageSpace)
             && Objects.equals(this.operType, resizeInstanceReq.operType)
             && Objects.equals(this.newBrokerNum, resizeInstanceReq.newBrokerNum)
-            && Objects.equals(this.newProductId, resizeInstanceReq.newProductId);
+            && Objects.equals(this.newProductId, resizeInstanceReq.newProductId)
+            && Objects.equals(this.publicipId, resizeInstanceReq.publicipId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(newSpecCode, newStorageSpace, operType, newBrokerNum, newProductId);
+        return Objects.hash(newSpecCode, newStorageSpace, operType, newBrokerNum, newProductId, publicipId);
     }
 
     @Override
@@ -150,6 +173,7 @@ public class ResizeInstanceReq {
         sb.append("    operType: ").append(toIndentedString(operType)).append("\n");
         sb.append("    newBrokerNum: ").append(toIndentedString(newBrokerNum)).append("\n");
         sb.append("    newProductId: ").append(toIndentedString(newProductId)).append("\n");
+        sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

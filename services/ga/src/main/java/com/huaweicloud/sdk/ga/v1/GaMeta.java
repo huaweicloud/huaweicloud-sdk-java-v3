@@ -909,4 +909,112 @@ public class GaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateTagsRequest, CreateTagsResponse> createTags = genForcreateTags();
+
+    private static HttpRequestDef<CreateTagsRequest, CreateTagsResponse> genForcreateTags() {
+        // basic
+        HttpRequestDef.Builder<CreateTagsRequest, CreateTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTagsRequest.class, CreateTagsResponse.class)
+                .withName("CreateTags")
+                .withUri("/v1/{resource_type}/{resource_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ResourceType>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceType.class),
+            f -> f.withMarshaller(CreateTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTagsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<CreateTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTagsRequestBody.class),
+            f -> f.withMarshaller(CreateTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTagsRequest, DeleteTagsResponse> deleteTags = genFordeleteTags();
+
+    private static HttpRequestDef<DeleteTagsRequest, DeleteTagsResponse> genFordeleteTags() {
+        // basic
+        HttpRequestDef.Builder<DeleteTagsRequest, DeleteTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagsRequest.class, DeleteTagsResponse.class)
+                .withName("DeleteTags")
+                .withUri("/v1/{resource_type}/{resource_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ResourceType>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceType.class),
+            f -> f.withMarshaller(DeleteTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTagsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<DeleteTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteTagsRequestBody.class),
+            f -> f.withMarshaller(DeleteTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowResourceTagsRequest, ShowResourceTagsResponse> showResourceTags =
+        genForshowResourceTags();
+
+    private static HttpRequestDef<ShowResourceTagsRequest, ShowResourceTagsResponse> genForshowResourceTags() {
+        // basic
+        HttpRequestDef.Builder<ShowResourceTagsRequest, ShowResourceTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowResourceTagsRequest.class, ShowResourceTagsResponse.class)
+                .withName("ShowResourceTags")
+                .withUri("/v1/{resource_type}/{resource_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ResourceType>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceType.class),
+            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
 }

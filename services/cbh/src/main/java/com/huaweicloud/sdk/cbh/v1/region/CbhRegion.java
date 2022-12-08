@@ -23,6 +23,9 @@ public class CbhRegion {
     public static final Region CN_SOUTHWEST_2 =
         new Region("cn-southwest-2", "https://cbh.cn-southwest-2.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_3 =
+        new Region("ap-southeast-3", "https://cbh.ap-southeast-3.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CBH");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -34,6 +37,7 @@ public class CbhRegion {
         map.put("cn-east-3", CN_EAST_3);
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
+        map.put("ap-southeast-3", AP_SOUTHEAST_3);
         return Collections.unmodifiableMap(map);
     }
 

@@ -51,7 +51,7 @@ public class ProviderResponseBody {
     }
 
     /**
-     * 服务显示名称，可以通过参数中'locale'设置语言。
+     * 服务显示名称，可以通过参数中“locale”设置语言。
      * @return providerI18nDisplayName
      */
     public String getProviderI18nDisplayName() {

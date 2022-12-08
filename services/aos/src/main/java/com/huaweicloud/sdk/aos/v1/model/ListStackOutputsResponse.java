@@ -29,13 +29,6 @@ public class ListStackOutputsResponse extends SdkResponse {
     
     private List<StackOutput> outputs = null;
     
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="next_marker")
-    
-    
-    private String nextMarker;
-
     public ListStackOutputsResponse withOutputs(List<StackOutput> outputs) {
         this.outputs = outputs;
         return this;
@@ -59,7 +52,7 @@ public class ListStackOutputsResponse extends SdkResponse {
     }
 
     /**
-     * 堆栈输出
+     * 资源栈输出
      * @return outputs
      */
     public List<StackOutput> getOutputs() {
@@ -68,28 +61,6 @@ public class ListStackOutputsResponse extends SdkResponse {
 
     public void setOutputs(List<StackOutput> outputs) {
         this.outputs = outputs;
-    }
-
-    
-
-    public ListStackOutputsResponse withNextMarker(String nextMarker) {
-        this.nextMarker = nextMarker;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 下一页的标记信息
-     * @return nextMarker
-     */
-    public String getNextMarker() {
-        return nextMarker;
-    }
-
-    public void setNextMarker(String nextMarker) {
-        this.nextMarker = nextMarker;
     }
 
     
@@ -103,19 +74,17 @@ public class ListStackOutputsResponse extends SdkResponse {
             return false;
         }
         ListStackOutputsResponse listStackOutputsResponse = (ListStackOutputsResponse) o;
-        return Objects.equals(this.outputs, listStackOutputsResponse.outputs) &&
-            Objects.equals(this.nextMarker, listStackOutputsResponse.nextMarker);
+        return Objects.equals(this.outputs, listStackOutputsResponse.outputs);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(outputs, nextMarker);
+        return Objects.hash(outputs);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListStackOutputsResponse {\n");
         sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
-        sb.append("    nextMarker: ").append(toIndentedString(nextMarker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

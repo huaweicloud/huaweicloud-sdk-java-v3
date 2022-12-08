@@ -37,7 +37,7 @@ public class InstanceRequest {
     }
 
     /**
-     * API类型，固定值“Addon”，该值不可修改。
+     * API类型，固定值“Addon”，该值不可修改，该字段传入无效。
      * @return kind
      */
     public String getKind() {
@@ -54,7 +54,7 @@ public class InstanceRequest {
     }
 
     /**
-     * API版本，固定值“v3”，该值不可修改。
+     * API版本，固定值“v3”，该值不可修改，该字段传入无效。
      * @return apiVersion
      */
     public String getApiVersion() {

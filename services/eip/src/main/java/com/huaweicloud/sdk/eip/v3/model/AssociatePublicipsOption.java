@@ -16,7 +16,7 @@ import java.util.Objects;
 public class AssociatePublicipsOption {
 
     /**
-     * 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例； associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例
+     * 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例 约束：associate_instance_type字段不允许为空 约束：双栈公网IP不允许修改绑定的实例
      */
     public static final class AssociateInstanceTypeEnum {
 
@@ -40,11 +40,6 @@ public class AssociatePublicipsOption {
          */
         public static final AssociateInstanceTypeEnum ELB = new AssociateInstanceTypeEnum("ELB");
 
-        /**
-         * Enum EMPTY for value: ""
-         */
-        public static final AssociateInstanceTypeEnum EMPTY = new AssociateInstanceTypeEnum("");
-
         private static final Map<String, AssociateInstanceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AssociateInstanceTypeEnum> createStaticFields() {
@@ -53,7 +48,6 @@ public class AssociatePublicipsOption {
             map.put("NATGW", NATGW);
             map.put("VPN", VPN);
             map.put("ELB", ELB);
-            map.put("", EMPTY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -126,7 +120,7 @@ public class AssociatePublicipsOption {
     }
 
     /**
-     * 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB、null 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例； associate_instance_type和associate_instance_id都为null时解绑实例 约束：双栈公网IP不允许修改绑定的实例
+     * 功能说明：端口所属实例类型 取值范围：PORT、NATGW、VPN、ELB 约束：associate_instance_type和associate_instance_id都不为空时表示绑定实例 约束：associate_instance_type字段不允许为空 约束：双栈公网IP不允许修改绑定的实例
      * @return associateInstanceType
      */
     public AssociateInstanceTypeEnum getAssociateInstanceType() {

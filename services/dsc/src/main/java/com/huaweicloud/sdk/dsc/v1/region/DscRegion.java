@@ -24,6 +24,9 @@ public class DscRegion {
 
     public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://sdg.cn-south-1.myhuaweicloud.com");
 
+    public static final Region CN_SOUTHWEST_2 =
+        new Region("cn-southwest-2", "https://sdg.cn-southwest-2.myhuaweicloud.com");
+
     public static final Region AP_SOUTHEAST_2 =
         new Region("ap-southeast-2", "https://sdg.ap-southeast-2.myhuaweicloud.com");
 
@@ -51,6 +54,7 @@ public class DscRegion {
         map.put("cn-east-2", CN_EAST_2);
         map.put("cn-east-3", CN_EAST_3);
         map.put("cn-south-1", CN_SOUTH_1);
+        map.put("cn-southwest-2", CN_SOUTHWEST_2);
         map.put("ap-southeast-2", AP_SOUTHEAST_2);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);

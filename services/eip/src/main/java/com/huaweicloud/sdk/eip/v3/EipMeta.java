@@ -76,144 +76,6 @@ public class EipMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListShareBandwidthTypesRequest, ListShareBandwidthTypesResponse> listShareBandwidthTypes =
-        genForlistShareBandwidthTypes();
-
-    private static HttpRequestDef<ListShareBandwidthTypesRequest, ListShareBandwidthTypesResponse> genForlistShareBandwidthTypes() {
-        // basic
-        HttpRequestDef.Builder<ListShareBandwidthTypesRequest, ListShareBandwidthTypesResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListShareBandwidthTypesRequest.class, ListShareBandwidthTypesResponse.class)
-            .withName("ListShareBandwidthTypes")
-            .withUri("/v3/{project_id}/eip/share-bandwidth-types")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("fields",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getFields, (req, v) -> {
-                req.setFields(v);
-            }));
-        builder.<String>withRequestField("id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getId, (req, v) -> {
-                req.setId(v);
-            }));
-        builder.<String>withRequestField("bandwidth_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getBandwidthType, (req, v) -> {
-                req.setBandwidthType(v);
-            }));
-        builder.<String>withRequestField("name_en",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getNameEn, (req, v) -> {
-                req.setNameEn(v);
-            }));
-        builder.<String>withRequestField("name_zh",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getNameZh, (req, v) -> {
-                req.setNameZh(v);
-            }));
-        builder.<String>withRequestField("public_border_group",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getPublicBorderGroup, (req, v) -> {
-                req.setPublicBorderGroup(v);
-            }));
-        builder.<String>withRequestField("sort_key",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
-            }));
-        builder.<String>withRequestField("sort_dir",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getSortDir, (req, v) -> {
-                req.setSortDir(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<AssociatePublicipsRequest, AssociatePublicipsResponse> associatePublicips =
-        genForassociatePublicips();
-
-    private static HttpRequestDef<AssociatePublicipsRequest, AssociatePublicipsResponse> genForassociatePublicips() {
-        // basic
-        HttpRequestDef.Builder<AssociatePublicipsRequest, AssociatePublicipsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, AssociatePublicipsRequest.class, AssociatePublicipsResponse.class)
-                .withName("AssociatePublicips")
-                .withUri("/v3/{project_id}/eip/publicips/{publicip_id}/associate-instance")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("publicip_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociatePublicipsRequest::getPublicipId, (req, v) -> {
-                req.setPublicipId(v);
-            }));
-        builder.<AssociatePublicipsRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AssociatePublicipsRequestBody.class),
-            f -> f.withMarshaller(AssociatePublicipsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DisassociatePublicipsRequest, DisassociatePublicipsResponse> disassociatePublicips =
-        genFordisassociatePublicips();
-
-    private static HttpRequestDef<DisassociatePublicipsRequest, DisassociatePublicipsResponse> genFordisassociatePublicips() {
-        // basic
-        HttpRequestDef.Builder<DisassociatePublicipsRequest, DisassociatePublicipsResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, DisassociatePublicipsRequest.class, DisassociatePublicipsResponse.class)
-            .withName("DisassociatePublicips")
-            .withUri("/v3/{project_id}/eip/publicips/{publicip_id}/disassociate-instance")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("publicip_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociatePublicipsRequest::getPublicipId, (req, v) -> {
-                req.setPublicipId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListPublicipPoolRequest, ListPublicipPoolResponse> listPublicipPool =
         genForlistPublicipPool();
 
@@ -309,6 +171,204 @@ public class EipMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPublicipPoolRequest::getPublicBorderGroup, (req, v) -> {
                 req.setPublicBorderGroup(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListShareBandwidthTypesRequest, ListShareBandwidthTypesResponse> listShareBandwidthTypes =
+        genForlistShareBandwidthTypes();
+
+    private static HttpRequestDef<ListShareBandwidthTypesRequest, ListShareBandwidthTypesResponse> genForlistShareBandwidthTypes() {
+        // basic
+        HttpRequestDef.Builder<ListShareBandwidthTypesRequest, ListShareBandwidthTypesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListShareBandwidthTypesRequest.class, ListShareBandwidthTypesResponse.class)
+            .withName("ListShareBandwidthTypes")
+            .withUri("/v3/{project_id}/eip/share-bandwidth-types")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getFields, (req, v) -> {
+                req.setFields(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("bandwidth_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getBandwidthType, (req, v) -> {
+                req.setBandwidthType(v);
+            }));
+        builder.<String>withRequestField("name_en",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getNameEn, (req, v) -> {
+                req.setNameEn(v);
+            }));
+        builder.<String>withRequestField("name_zh",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getNameZh, (req, v) -> {
+                req.setNameZh(v);
+            }));
+        builder.<String>withRequestField("public_border_group",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getPublicBorderGroup, (req, v) -> {
+                req.setPublicBorderGroup(v);
+            }));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getSortKey, (req, v) -> {
+                req.setSortKey(v);
+            }));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getSortDir, (req, v) -> {
+                req.setSortDir(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPublicipPoolRequest, ShowPublicipPoolResponse> showPublicipPool =
+        genForshowPublicipPool();
+
+    private static HttpRequestDef<ShowPublicipPoolRequest, ShowPublicipPoolResponse> genForshowPublicipPool() {
+        // basic
+        HttpRequestDef.Builder<ShowPublicipPoolRequest, ShowPublicipPoolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPublicipPoolRequest.class, ShowPublicipPoolResponse.class)
+                .withName("ShowPublicipPool")
+                .withUri("/v3/{project_id}/eip/publicip-pools/{publicip_pool_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("publicip_pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPublicipPoolRequest::getPublicipPoolId, (req, v) -> {
+                req.setPublicipPoolId(v);
+            }));
+        builder.<String>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPublicipPoolRequest::getFields, (req, v) -> {
+                req.setFields(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AssociatePublicipsRequest, AssociatePublicipsResponse> associatePublicips =
+        genForassociatePublicips();
+
+    private static HttpRequestDef<AssociatePublicipsRequest, AssociatePublicipsResponse> genForassociatePublicips() {
+        // basic
+        HttpRequestDef.Builder<AssociatePublicipsRequest, AssociatePublicipsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AssociatePublicipsRequest.class, AssociatePublicipsResponse.class)
+                .withName("AssociatePublicips")
+                .withUri("/v3/{project_id}/eip/publicips/{publicip_id}/associate-instance")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("publicip_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociatePublicipsRequest::getPublicipId, (req, v) -> {
+                req.setPublicipId(v);
+            }));
+        builder.<AssociatePublicipsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociatePublicipsRequestBody.class),
+            f -> f.withMarshaller(AssociatePublicipsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountEipAvailableResourcesRequest, CountEipAvailableResourcesResponse> countEipAvailableResources =
+        genForcountEipAvailableResources();
+
+    private static HttpRequestDef<CountEipAvailableResourcesRequest, CountEipAvailableResourcesResponse> genForcountEipAvailableResources() {
+        // basic
+        HttpRequestDef.Builder<CountEipAvailableResourcesRequest, CountEipAvailableResourcesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CountEipAvailableResourcesRequest.class,
+                    CountEipAvailableResourcesResponse.class)
+                .withName("CountEipAvailableResources")
+                .withUri("/v3/{project_id}/eip/resources/available")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<EipResourcesAvailableV3RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EipResourcesAvailableV3RequestBody.class),
+            f -> f.withMarshaller(CountEipAvailableResourcesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociatePublicipsRequest, DisassociatePublicipsResponse> disassociatePublicips =
+        genFordisassociatePublicips();
+
+    private static HttpRequestDef<DisassociatePublicipsRequest, DisassociatePublicipsResponse> genFordisassociatePublicips() {
+        // basic
+        HttpRequestDef.Builder<DisassociatePublicipsRequest, DisassociatePublicipsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DisassociatePublicipsRequest.class, DisassociatePublicipsResponse.class)
+            .withName("DisassociatePublicips")
+            .withUri("/v3/{project_id}/eip/publicips/{publicip_id}/disassociate-instance")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("publicip_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociatePublicipsRequest::getPublicipId, (req, v) -> {
+                req.setPublicipId(v);
             }));
 
         // response
@@ -644,38 +704,6 @@ public class EipMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowPublicipRequest::getFields, (req, v) -> {
-                req.setFields(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowPublicipPoolRequest, ShowPublicipPoolResponse> showPublicipPool =
-        genForshowPublicipPool();
-
-    private static HttpRequestDef<ShowPublicipPoolRequest, ShowPublicipPoolResponse> genForshowPublicipPool() {
-        // basic
-        HttpRequestDef.Builder<ShowPublicipPoolRequest, ShowPublicipPoolResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowPublicipPoolRequest.class, ShowPublicipPoolResponse.class)
-                .withName("ShowPublicipPool")
-                .withUri("/v3/{project_id}/eip/publicip-pools/{publicip_pool_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("publicip_pool_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPublicipPoolRequest::getPublicipPoolId, (req, v) -> {
-                req.setPublicipPoolId(v);
-            }));
-        builder.<String>withRequestField("fields",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPublicipPoolRequest::getFields, (req, v) -> {
                 req.setFields(v);
             }));
 

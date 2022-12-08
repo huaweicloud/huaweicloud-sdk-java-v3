@@ -22,7 +22,7 @@ public class ListEpsQuotasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quotas")
 
-    private List<NoSqlQueryEpsQuotaInfoList> quotas = null;
+    private List<NoSqlQueryEpsQuotaInfo> quotas = null;
 
     public ListEpsQuotasResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
@@ -41,12 +41,12 @@ public class ListEpsQuotasResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    public ListEpsQuotasResponse withQuotas(List<NoSqlQueryEpsQuotaInfoList> quotas) {
+    public ListEpsQuotasResponse withQuotas(List<NoSqlQueryEpsQuotaInfo> quotas) {
         this.quotas = quotas;
         return this;
     }
 
-    public ListEpsQuotasResponse addQuotasItem(NoSqlQueryEpsQuotaInfoList quotasItem) {
+    public ListEpsQuotasResponse addQuotasItem(NoSqlQueryEpsQuotaInfo quotasItem) {
         if (this.quotas == null) {
             this.quotas = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class ListEpsQuotasResponse extends SdkResponse {
         return this;
     }
 
-    public ListEpsQuotasResponse withQuotas(Consumer<List<NoSqlQueryEpsQuotaInfoList>> quotasSetter) {
+    public ListEpsQuotasResponse withQuotas(Consumer<List<NoSqlQueryEpsQuotaInfo>> quotasSetter) {
         if (this.quotas == null) {
             this.quotas = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class ListEpsQuotasResponse extends SdkResponse {
      * 企业项目配额信息列表。
      * @return quotas
      */
-    public List<NoSqlQueryEpsQuotaInfoList> getQuotas() {
+    public List<NoSqlQueryEpsQuotaInfo> getQuotas() {
         return quotas;
     }
 
-    public void setQuotas(List<NoSqlQueryEpsQuotaInfoList> quotas) {
+    public void setQuotas(List<NoSqlQueryEpsQuotaInfo> quotas) {
         this.quotas = quotas;
     }
 

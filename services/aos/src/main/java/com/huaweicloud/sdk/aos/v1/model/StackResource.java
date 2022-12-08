@@ -49,7 +49,7 @@ public class StackResource  {
     
     private String logicalResourceType;
     /**
-     * 此次事件的类型 * `CREATION_IN_PROGRESS` - 正在生成 * `CREATION_FAILED`      - 生成失败 * `CREATION_COMPLETE`    - 生成完成 * `DELETION_IN_PROGRESS` - 正在删除 * `DELETION_FAILED`      - 删除失败 * `DELETION_COMPLETE`    - 已经删除 * `DELETION_SKIPPED`     - 跳过删除。未来我们将支持，用户可以从IaC中删除，但是不真的删除资源本身 * `UPDATE_IN_PROGRESS`   - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_FAILED`        - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_COMPLETE`      - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION
+     * 此次事件的类型 * `CREATION_IN_PROGRESS` - 正在生成 * `CREATION_FAILED`      - 生成失败 * `CREATION_COMPLETE`    - 生成完成 * `DELETION_IN_PROGRESS` - 正在删除 * `DELETION_FAILED`      - 删除失败 * `DELETION_COMPLETE`    - 已经删除 * `DELETION_SKIPPED`     - 跳过删除。未来我们将支持，用户可以从资源编排服务中删除，但是不真的删除资源本身 * `UPDATE_IN_PROGRESS`   - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_FAILED`        - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_COMPLETE`      - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION
      */
     public static final class ResourceStatusEnum {
 
@@ -189,20 +189,6 @@ public class StackResource  {
     
     private String statusMessage;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
-    
-    private String createTime;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
-    
-    private String updateTime;
-
     public StackResource withPhysicalResourceId(String physicalResourceId) {
         this.physicalResourceId = physicalResourceId;
         return this;
@@ -300,7 +286,7 @@ public class StackResource  {
 
 
     /**
-     * 此次事件的类型 * `CREATION_IN_PROGRESS` - 正在生成 * `CREATION_FAILED`      - 生成失败 * `CREATION_COMPLETE`    - 生成完成 * `DELETION_IN_PROGRESS` - 正在删除 * `DELETION_FAILED`      - 删除失败 * `DELETION_COMPLETE`    - 已经删除 * `DELETION_SKIPPED`     - 跳过删除。未来我们将支持，用户可以从IaC中删除，但是不真的删除资源本身 * `UPDATE_IN_PROGRESS`   - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_FAILED`        - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_COMPLETE`      - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION
+     * 此次事件的类型 * `CREATION_IN_PROGRESS` - 正在生成 * `CREATION_FAILED`      - 生成失败 * `CREATION_COMPLETE`    - 生成完成 * `DELETION_IN_PROGRESS` - 正在删除 * `DELETION_FAILED`      - 删除失败 * `DELETION_COMPLETE`    - 已经删除 * `DELETION_SKIPPED`     - 跳过删除。未来我们将支持，用户可以从资源编排服务中删除，但是不真的删除资源本身 * `UPDATE_IN_PROGRESS`   - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_FAILED`        - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_COMPLETE`      - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION
      * @return resourceStatus
      */
     public ResourceStatusEnum getResourceStatus() {
@@ -335,50 +321,6 @@ public class StackResource  {
 
     
 
-    public StackResource withCreateTime(String createTime) {
-        this.createTime = createTime;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 资源的生成时间
-     * @return createTime
-     */
-    public String getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime;
-    }
-
-    
-
-    public StackResource withUpdateTime(String updateTime) {
-        this.updateTime = updateTime;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 资源的更新时间
-     * @return updateTime
-     */
-    public String getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(String updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -393,13 +335,11 @@ public class StackResource  {
             Objects.equals(this.logicalResourceName, stackResource.logicalResourceName) &&
             Objects.equals(this.logicalResourceType, stackResource.logicalResourceType) &&
             Objects.equals(this.resourceStatus, stackResource.resourceStatus) &&
-            Objects.equals(this.statusMessage, stackResource.statusMessage) &&
-            Objects.equals(this.createTime, stackResource.createTime) &&
-            Objects.equals(this.updateTime, stackResource.updateTime);
+            Objects.equals(this.statusMessage, stackResource.statusMessage);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(physicalResourceId, physicalResourceName, logicalResourceName, logicalResourceType, resourceStatus, statusMessage, createTime, updateTime);
+        return Objects.hash(physicalResourceId, physicalResourceName, logicalResourceName, logicalResourceType, resourceStatus, statusMessage);
     }
     @Override
     public String toString() {
@@ -411,8 +351,6 @@ public class StackResource  {
         sb.append("    logicalResourceType: ").append(toIndentedString(logicalResourceType)).append("\n");
         sb.append("    resourceStatus: ").append(toIndentedString(resourceStatus)).append("\n");
         sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
-        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

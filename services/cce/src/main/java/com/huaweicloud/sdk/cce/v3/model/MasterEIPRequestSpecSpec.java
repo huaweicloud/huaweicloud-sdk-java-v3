@@ -21,7 +21,7 @@ public class MasterEIPRequestSpecSpec {
     }
 
     /**
-     * 弹性网卡ID
+     * 弹性网卡ID，必选参数
      * @return id
      */
     public String getId() {
