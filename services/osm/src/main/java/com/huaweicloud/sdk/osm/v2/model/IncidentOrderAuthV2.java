@@ -39,7 +39,7 @@ public class IncidentOrderAuthV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type_id")
 
-    private Object resourceTypeId;
+    private String resourceTypeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type_name")
@@ -183,7 +183,7 @@ public class IncidentOrderAuthV2 {
         this.authDescribe = authDescribe;
     }
 
-    public IncidentOrderAuthV2 withResourceTypeId(Object resourceTypeId) {
+    public IncidentOrderAuthV2 withResourceTypeId(String resourceTypeId) {
         this.resourceTypeId = resourceTypeId;
         return this;
     }
@@ -192,11 +192,11 @@ public class IncidentOrderAuthV2 {
      * 授权资源类型id
      * @return resourceTypeId
      */
-    public Object getResourceTypeId() {
+    public String getResourceTypeId() {
         return resourceTypeId;
     }
 
-    public void setResourceTypeId(Object resourceTypeId) {
+    public void setResourceTypeId(String resourceTypeId) {
         this.resourceTypeId = resourceTypeId;
     }
 

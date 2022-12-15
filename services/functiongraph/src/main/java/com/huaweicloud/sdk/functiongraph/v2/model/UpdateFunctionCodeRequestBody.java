@@ -132,6 +132,11 @@ public class UpdateFunctionCodeRequestBody {
 
     private List<String> dependList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "depend_version_list")
+
+    private List<String> dependVersionList = null;
+
     public UpdateFunctionCodeRequestBody withCodeType(CodeTypeEnum codeType) {
         this.codeType = codeType;
         return this;
@@ -242,6 +247,39 @@ public class UpdateFunctionCodeRequestBody {
         this.dependList = dependList;
     }
 
+    public UpdateFunctionCodeRequestBody withDependVersionList(List<String> dependVersionList) {
+        this.dependVersionList = dependVersionList;
+        return this;
+    }
+
+    public UpdateFunctionCodeRequestBody addDependVersionListItem(String dependVersionListItem) {
+        if (this.dependVersionList == null) {
+            this.dependVersionList = new ArrayList<>();
+        }
+        this.dependVersionList.add(dependVersionListItem);
+        return this;
+    }
+
+    public UpdateFunctionCodeRequestBody withDependVersionList(Consumer<List<String>> dependVersionListSetter) {
+        if (this.dependVersionList == null) {
+            this.dependVersionList = new ArrayList<>();
+        }
+        dependVersionListSetter.accept(this.dependVersionList);
+        return this;
+    }
+
+    /**
+     * 依赖版本id列表
+     * @return dependVersionList
+     */
+    public List<String> getDependVersionList() {
+        return dependVersionList;
+    }
+
+    public void setDependVersionList(List<String> dependVersionList) {
+        this.dependVersionList = dependVersionList;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -255,12 +293,13 @@ public class UpdateFunctionCodeRequestBody {
             && Objects.equals(this.codeUrl, updateFunctionCodeRequestBody.codeUrl)
             && Objects.equals(this.codeFilename, updateFunctionCodeRequestBody.codeFilename)
             && Objects.equals(this.funcCode, updateFunctionCodeRequestBody.funcCode)
-            && Objects.equals(this.dependList, updateFunctionCodeRequestBody.dependList);
+            && Objects.equals(this.dependList, updateFunctionCodeRequestBody.dependList)
+            && Objects.equals(this.dependVersionList, updateFunctionCodeRequestBody.dependVersionList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(codeType, codeUrl, codeFilename, funcCode, dependList);
+        return Objects.hash(codeType, codeUrl, codeFilename, funcCode, dependList, dependVersionList);
     }
 
     @Override
@@ -272,6 +311,7 @@ public class UpdateFunctionCodeRequestBody {
         sb.append("    codeFilename: ").append(toIndentedString(codeFilename)).append("\n");
         sb.append("    funcCode: ").append(toIndentedString(funcCode)).append("\n");
         sb.append("    dependList: ").append(toIndentedString(dependList)).append("\n");
+        sb.append("    dependVersionList: ").append(toIndentedString(dependVersionList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

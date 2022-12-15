@@ -1233,13 +1233,6 @@ public class GaussDBforNoSQLMeta {
             }));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(PauseResumeDataSynchronizationResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
 
         return builder.build();
     }

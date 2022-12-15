@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 public class RawTableParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "lastRowId")
+    @JsonProperty(value = "last_row_id")
 
     private String lastRowId;
 

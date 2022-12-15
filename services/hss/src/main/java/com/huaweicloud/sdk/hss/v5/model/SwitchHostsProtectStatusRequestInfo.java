@@ -44,7 +44,7 @@ public class SwitchHostsProtectStatusRequestInfo {
     }
 
     /**
-     * 开通的版本，包含如下:   - hss.version.null : VERSION_NULL   - hss.version.basic : VERSION_BASIC   - hss.version.enterprise : VERSION_ENTERPRISE   - hss.version.premium : VERSION_PREMIUM   - hss.version.wtp : VERSION_WTP
+     * 主机开通的版本，包含如下:   - hss.version.null ：无。   - hss.version.basic ：基础版。   - hss.version.enterprise ：企业版。   - hss.version.premium ：旗舰版。   - hss.version.wtp ：网页防篡改版。
      * @return version
      */
     public String getVersion() {

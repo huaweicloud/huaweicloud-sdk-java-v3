@@ -152,6 +152,26 @@ public class CreateSqlAlarmRuleRequestBody {
 
     private NotificationSaveRule notificationSaveRule;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trigger_condition_count")
+
+    private Integer triggerConditionCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trigger_condition_frequency")
+
+    private Integer triggerConditionFrequency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "whether_recovery_policy")
+
+    private Boolean whetherRecoveryPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recovery_policy")
+
+    private Integer recoveryPolicy;
+
     public CreateSqlAlarmRuleRequestBody withSqlAlarmRuleName(String sqlAlarmRuleName) {
         this.sqlAlarmRuleName = sqlAlarmRuleName;
         return this;
@@ -340,6 +360,74 @@ public class CreateSqlAlarmRuleRequestBody {
         this.notificationSaveRule = notificationSaveRule;
     }
 
+    public CreateSqlAlarmRuleRequestBody withTriggerConditionCount(Integer triggerConditionCount) {
+        this.triggerConditionCount = triggerConditionCount;
+        return this;
+    }
+
+    /**
+     * 触发条件：触发次数;默认为1
+     * @return triggerConditionCount
+     */
+    public Integer getTriggerConditionCount() {
+        return triggerConditionCount;
+    }
+
+    public void setTriggerConditionCount(Integer triggerConditionCount) {
+        this.triggerConditionCount = triggerConditionCount;
+    }
+
+    public CreateSqlAlarmRuleRequestBody withTriggerConditionFrequency(Integer triggerConditionFrequency) {
+        this.triggerConditionFrequency = triggerConditionFrequency;
+        return this;
+    }
+
+    /**
+     * 触发条件：触发周期;默认为1
+     * @return triggerConditionFrequency
+     */
+    public Integer getTriggerConditionFrequency() {
+        return triggerConditionFrequency;
+    }
+
+    public void setTriggerConditionFrequency(Integer triggerConditionFrequency) {
+        this.triggerConditionFrequency = triggerConditionFrequency;
+    }
+
+    public CreateSqlAlarmRuleRequestBody withWhetherRecoveryPolicy(Boolean whetherRecoveryPolicy) {
+        this.whetherRecoveryPolicy = whetherRecoveryPolicy;
+        return this;
+    }
+
+    /**
+     * 是否打开恢复通知;默认false
+     * @return whetherRecoveryPolicy
+     */
+    public Boolean getWhetherRecoveryPolicy() {
+        return whetherRecoveryPolicy;
+    }
+
+    public void setWhetherRecoveryPolicy(Boolean whetherRecoveryPolicy) {
+        this.whetherRecoveryPolicy = whetherRecoveryPolicy;
+    }
+
+    public CreateSqlAlarmRuleRequestBody withRecoveryPolicy(Integer recoveryPolicy) {
+        this.recoveryPolicy = recoveryPolicy;
+        return this;
+    }
+
+    /**
+     * 恢复策略周期;默认为3
+     * @return recoveryPolicy
+     */
+    public Integer getRecoveryPolicy() {
+        return recoveryPolicy;
+    }
+
+    public void setRecoveryPolicy(Integer recoveryPolicy) {
+        this.recoveryPolicy = recoveryPolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -357,7 +445,11 @@ public class CreateSqlAlarmRuleRequestBody {
             && Objects.equals(this.sqlAlarmLevel, createSqlAlarmRuleRequestBody.sqlAlarmLevel)
             && Objects.equals(this.sqlAlarmSend, createSqlAlarmRuleRequestBody.sqlAlarmSend)
             && Objects.equals(this.domainId, createSqlAlarmRuleRequestBody.domainId)
-            && Objects.equals(this.notificationSaveRule, createSqlAlarmRuleRequestBody.notificationSaveRule);
+            && Objects.equals(this.notificationSaveRule, createSqlAlarmRuleRequestBody.notificationSaveRule)
+            && Objects.equals(this.triggerConditionCount, createSqlAlarmRuleRequestBody.triggerConditionCount)
+            && Objects.equals(this.triggerConditionFrequency, createSqlAlarmRuleRequestBody.triggerConditionFrequency)
+            && Objects.equals(this.whetherRecoveryPolicy, createSqlAlarmRuleRequestBody.whetherRecoveryPolicy)
+            && Objects.equals(this.recoveryPolicy, createSqlAlarmRuleRequestBody.recoveryPolicy);
     }
 
     @Override
@@ -370,7 +462,11 @@ public class CreateSqlAlarmRuleRequestBody {
             sqlAlarmLevel,
             sqlAlarmSend,
             domainId,
-            notificationSaveRule);
+            notificationSaveRule,
+            triggerConditionCount,
+            triggerConditionFrequency,
+            whetherRecoveryPolicy,
+            recoveryPolicy);
     }
 
     @Override
@@ -386,6 +482,10 @@ public class CreateSqlAlarmRuleRequestBody {
         sb.append("    sqlAlarmSend: ").append(toIndentedString(sqlAlarmSend)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    notificationSaveRule: ").append(toIndentedString(notificationSaveRule)).append("\n");
+        sb.append("    triggerConditionCount: ").append(toIndentedString(triggerConditionCount)).append("\n");
+        sb.append("    triggerConditionFrequency: ").append(toIndentedString(triggerConditionFrequency)).append("\n");
+        sb.append("    whetherRecoveryPolicy: ").append(toIndentedString(whetherRecoveryPolicy)).append("\n");
+        sb.append("    recoveryPolicy: ").append(toIndentedString(recoveryPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

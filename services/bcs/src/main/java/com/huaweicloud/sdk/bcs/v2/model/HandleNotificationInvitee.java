@@ -36,7 +36,7 @@ public class HandleNotificationInvitee {
     }
 
     /**
-     * 被邀请方BCS服务实例id
+     * 被邀请方BCS服务实例ID
      * @return inviteeBcsId
      */
     public String getInviteeBcsId() {
@@ -87,7 +87,7 @@ public class HandleNotificationInvitee {
     }
 
     /**
-     * 被邀请方租户id。控制台->被邀请方账号->我的凭证->API凭证->账号ID
+     * 被邀请方租户id。控制台->被邀请方帐号->我的凭证->API凭证->帐号ID
      * @return inviteeUserId
      */
     public String getInviteeUserId() {

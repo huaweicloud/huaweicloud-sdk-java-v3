@@ -173,7 +173,7 @@ public class BackupResp {
     private Integer resourceSize;
 
     /**
-     * 资源类型
+     * 资源类型: 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 云桌面：OS::Workspace::DesktopV2
      */
     public static final class ResourceTypeEnum {
 
@@ -187,12 +187,18 @@ public class BackupResp {
          */
         public static final ResourceTypeEnum OS_CINDER_VOLUME = new ResourceTypeEnum("OS::Cinder::Volume");
 
+        /**
+         * Enum OS_WORKSPACE_DESKTOPV2 for value: "OS::Workspace::DesktopV2"
+         */
+        public static final ResourceTypeEnum OS_WORKSPACE_DESKTOPV2 = new ResourceTypeEnum("OS::Workspace::DesktopV2");
+
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ResourceTypeEnum> createStaticFields() {
             Map<String, ResourceTypeEnum> map = new HashMap<>();
             map.put("OS::Nova::Server", OS_NOVA_SERVER);
             map.put("OS::Cinder::Volume", OS_CINDER_VOLUME);
+            map.put("OS::Workspace::DesktopV2", OS_WORKSPACE_DESKTOPV2);
             return Collections.unmodifiableMap(map);
         }
 
@@ -672,7 +678,7 @@ public class BackupResp {
     }
 
     /**
-     * 资源类型
+     * 资源类型: 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 云桌面：OS::Workspace::DesktopV2
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {

@@ -267,7 +267,7 @@ public class ListLoadbalancersRequest {
     }
 
     /**
-     * 负载均衡器所在的子网ID。
+     * 负载均衡器所在的子网IPv4网络ID。
      * @return vipSubnetId
      */
     public String getVipSubnetId() {

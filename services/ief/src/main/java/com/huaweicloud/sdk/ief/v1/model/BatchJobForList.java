@@ -36,24 +36,29 @@ public class BatchJobForList {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_count")
+    @JsonProperty(value = "task_total_count")
 
-    private Integer taskCount;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "success_count")
-
-    private Integer successCount;
+    private Integer taskTotalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "failed_count")
+    @JsonProperty(value = "task_success_count")
 
-    private Integer failedCount;
+    private Integer taskSuccessCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "updated_at")
+    @JsonProperty(value = "task_failed_count")
 
-    private Integer updatedAt;
+    private Integer taskFailedCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status_last_updated_at")
+
+    private Integer statusLastUpdatedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
 
     public BatchJobForList withJobId(String jobId) {
         this.jobId = jobId;
@@ -140,72 +145,89 @@ public class BatchJobForList {
         this.status = status;
     }
 
-    public BatchJobForList withTaskCount(Integer taskCount) {
-        this.taskCount = taskCount;
+    public BatchJobForList withTaskTotalCount(Integer taskTotalCount) {
+        this.taskTotalCount = taskTotalCount;
         return this;
     }
 
     /**
      * 任务总数
-     * @return taskCount
+     * @return taskTotalCount
      */
-    public Integer getTaskCount() {
-        return taskCount;
+    public Integer getTaskTotalCount() {
+        return taskTotalCount;
     }
 
-    public void setTaskCount(Integer taskCount) {
-        this.taskCount = taskCount;
+    public void setTaskTotalCount(Integer taskTotalCount) {
+        this.taskTotalCount = taskTotalCount;
     }
 
-    public BatchJobForList withSuccessCount(Integer successCount) {
-        this.successCount = successCount;
+    public BatchJobForList withTaskSuccessCount(Integer taskSuccessCount) {
+        this.taskSuccessCount = taskSuccessCount;
         return this;
     }
 
     /**
      * 任务项执行成功数
-     * @return successCount
+     * @return taskSuccessCount
      */
-    public Integer getSuccessCount() {
-        return successCount;
+    public Integer getTaskSuccessCount() {
+        return taskSuccessCount;
     }
 
-    public void setSuccessCount(Integer successCount) {
-        this.successCount = successCount;
+    public void setTaskSuccessCount(Integer taskSuccessCount) {
+        this.taskSuccessCount = taskSuccessCount;
     }
 
-    public BatchJobForList withFailedCount(Integer failedCount) {
-        this.failedCount = failedCount;
+    public BatchJobForList withTaskFailedCount(Integer taskFailedCount) {
+        this.taskFailedCount = taskFailedCount;
         return this;
     }
 
     /**
      * 任务项执行失败数
-     * @return failedCount
+     * @return taskFailedCount
      */
-    public Integer getFailedCount() {
-        return failedCount;
+    public Integer getTaskFailedCount() {
+        return taskFailedCount;
     }
 
-    public void setFailedCount(Integer failedCount) {
-        this.failedCount = failedCount;
+    public void setTaskFailedCount(Integer taskFailedCount) {
+        this.taskFailedCount = taskFailedCount;
     }
 
-    public BatchJobForList withUpdatedAt(Integer updatedAt) {
-        this.updatedAt = updatedAt;
+    public BatchJobForList withStatusLastUpdatedAt(Integer statusLastUpdatedAt) {
+        this.statusLastUpdatedAt = statusLastUpdatedAt;
         return this;
     }
 
     /**
      * 状态更新时间戳
-     * @return updatedAt
+     * @return statusLastUpdatedAt
      */
-    public Integer getUpdatedAt() {
-        return updatedAt;
+    public Integer getStatusLastUpdatedAt() {
+        return statusLastUpdatedAt;
     }
 
-    public void setUpdatedAt(Integer updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setStatusLastUpdatedAt(Integer statusLastUpdatedAt) {
+        this.statusLastUpdatedAt = statusLastUpdatedAt;
+    }
+
+    public BatchJobForList withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 任务描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
@@ -222,16 +244,25 @@ public class BatchJobForList {
             && Objects.equals(this.jobType, batchJobForList.jobType)
             && Objects.equals(this.createdAt, batchJobForList.createdAt)
             && Objects.equals(this.status, batchJobForList.status)
-            && Objects.equals(this.taskCount, batchJobForList.taskCount)
-            && Objects.equals(this.successCount, batchJobForList.successCount)
-            && Objects.equals(this.failedCount, batchJobForList.failedCount)
-            && Objects.equals(this.updatedAt, batchJobForList.updatedAt);
+            && Objects.equals(this.taskTotalCount, batchJobForList.taskTotalCount)
+            && Objects.equals(this.taskSuccessCount, batchJobForList.taskSuccessCount)
+            && Objects.equals(this.taskFailedCount, batchJobForList.taskFailedCount)
+            && Objects.equals(this.statusLastUpdatedAt, batchJobForList.statusLastUpdatedAt)
+            && Objects.equals(this.description, batchJobForList.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(jobId, jobName, jobType, createdAt, status, taskCount, successCount, failedCount, updatedAt);
+        return Objects.hash(jobId,
+            jobName,
+            jobType,
+            createdAt,
+            status,
+            taskTotalCount,
+            taskSuccessCount,
+            taskFailedCount,
+            statusLastUpdatedAt,
+            description);
     }
 
     @Override
@@ -243,10 +274,11 @@ public class BatchJobForList {
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    taskCount: ").append(toIndentedString(taskCount)).append("\n");
-        sb.append("    successCount: ").append(toIndentedString(successCount)).append("\n");
-        sb.append("    failedCount: ").append(toIndentedString(failedCount)).append("\n");
-        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    taskTotalCount: ").append(toIndentedString(taskTotalCount)).append("\n");
+        sb.append("    taskSuccessCount: ").append(toIndentedString(taskSuccessCount)).append("\n");
+        sb.append("    taskFailedCount: ").append(toIndentedString(taskFailedCount)).append("\n");
+        sb.append("    statusLastUpdatedAt: ").append(toIndentedString(statusLastUpdatedAt)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

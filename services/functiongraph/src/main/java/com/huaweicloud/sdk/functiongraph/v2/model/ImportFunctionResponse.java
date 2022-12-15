@@ -407,6 +407,11 @@ public class ImportFunctionResponse extends SdkResponse {
     private List<String> dependList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "depend_version_list")
+
+    private List<String> dependVersionList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "strategy_config")
 
     private StrategyConfig strategyConfig;
@@ -898,6 +903,39 @@ public class ImportFunctionResponse extends SdkResponse {
         this.dependList = dependList;
     }
 
+    public ImportFunctionResponse withDependVersionList(List<String> dependVersionList) {
+        this.dependVersionList = dependVersionList;
+        return this;
+    }
+
+    public ImportFunctionResponse addDependVersionListItem(String dependVersionListItem) {
+        if (this.dependVersionList == null) {
+            this.dependVersionList = new ArrayList<>();
+        }
+        this.dependVersionList.add(dependVersionListItem);
+        return this;
+    }
+
+    public ImportFunctionResponse withDependVersionList(Consumer<List<String>> dependVersionListSetter) {
+        if (this.dependVersionList == null) {
+            this.dependVersionList = new ArrayList<>();
+        }
+        dependVersionListSetter.accept(this.dependVersionList);
+        return this;
+    }
+
+    /**
+     * 依赖版本id列表
+     * @return dependVersionList
+     */
+    public List<String> getDependVersionList() {
+        return dependVersionList;
+    }
+
+    public void setDependVersionList(List<String> dependVersionList) {
+        this.dependVersionList = dependVersionList;
+    }
+
     public ImportFunctionResponse withStrategyConfig(StrategyConfig strategyConfig) {
         this.strategyConfig = strategyConfig;
         return this;
@@ -1027,6 +1065,7 @@ public class ImportFunctionResponse extends SdkResponse {
             && Objects.equals(this.lastModified, importFunctionResponse.lastModified)
             && Objects.equals(this.funcVpc, importFunctionResponse.funcVpc)
             && Objects.equals(this.dependList, importFunctionResponse.dependList)
+            && Objects.equals(this.dependVersionList, importFunctionResponse.dependVersionList)
             && Objects.equals(this.strategyConfig, importFunctionResponse.strategyConfig)
             && Objects.equals(this.extendConfig, importFunctionResponse.extendConfig)
             && Objects.equals(this.initializerHandler, importFunctionResponse.initializerHandler)
@@ -1062,6 +1101,7 @@ public class ImportFunctionResponse extends SdkResponse {
             lastModified,
             funcVpc,
             dependList,
+            dependVersionList,
             strategyConfig,
             extendConfig,
             initializerHandler,
@@ -1099,6 +1139,7 @@ public class ImportFunctionResponse extends SdkResponse {
         sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
         sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
         sb.append("    dependList: ").append(toIndentedString(dependList)).append("\n");
+        sb.append("    dependVersionList: ").append(toIndentedString(dependVersionList)).append("\n");
         sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
         sb.append("    extendConfig: ").append(toIndentedString(extendConfig)).append("\n");
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");

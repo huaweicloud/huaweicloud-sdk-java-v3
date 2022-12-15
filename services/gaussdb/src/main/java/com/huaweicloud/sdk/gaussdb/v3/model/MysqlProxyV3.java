@@ -163,7 +163,7 @@ public class MysqlProxyV3  {
 
 
     /**
-     * Proxy实例开启状态。  取值: 值为“ACTIVE”，表示数据库代理正常； “FAILED”，表示数据库代理创建失败； “DELETED”，表示数据库代理已删除； “ABNORMAL”，表示数据库代理异常； “ENABLING PROXY”，表示数据库代理正在开启； “DISABLING PROXY”，表示数据库代理正在关闭； “ADDING PROXY NODE”，表示数据库代理正在扩容； “DELETING READ REPLICAS FROM PROXY”，表示数据库代理正在移除只读节点； “ADDING READ REPLICAS TO PROXY”，表示数据库代理正在添加只读节点； “CHANGING WEIGHTS”，表示数据库代理正在修改只读节点权重。
+     * Proxy实例开启状态。  取值: - “ACTIVE”，表示数据库代理正常； - “FAILED”，表示数据库代理创建失败； - “DELETED”，表示数据库代理已删除； - “ABNORMAL”，表示数据库代理异常； - “ENABLING PROXY”，表示数据库代理正在开启； - “DISABLING PROXY”，表示数据库代理正在关闭； - “ADDING PROXY NODE”，表示数据库代理正在扩容； - “DELETING READ REPLICAS FROM PROXY”，表示数据库代理正在移除只读节点； - “ADDING READ REPLICAS TO PROXY”，表示数据库代理正在添加只读节点； - “CHANGING WEIGHTS”，表示数据库代理正在修改只读节点权重。
      * @return status
      */
     public String getStatus() {
@@ -229,7 +229,7 @@ public class MysqlProxyV3  {
 
 
     /**
-     * Proxy实例状态。 取值范围：ACTIVE、ABNORMAL、FAILED和DELETED。
+     * Proxy实例状态。  取值范围： - ACTIVE，表示数据库代理正常 - ABNORMAL，表示数据库代理异常 - FAILED，表示数据库代理创建失败 - DELETED，表示数据库代理已删除
      * @return poolStatus
      */
     public String getPoolStatus() {

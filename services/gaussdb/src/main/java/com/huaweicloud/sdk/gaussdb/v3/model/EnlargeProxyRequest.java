@@ -40,7 +40,7 @@ public class EnlargeProxyRequest  {
 
 
     /**
-     * proxy节点扩容操作需要扩容的节点数。本次扩容的节点数的取值范围：1~30之间的整数。 限制条件：该实例的proxy节点的总数量小于等于32。
+     * proxy节点扩容操作需要扩容的节点数。  扩容的节点数的取值范围：1~30之间的整数。  限制条件：该实例的proxy节点的总数量小于等于32。
      * @return nodeNum
      */
     public Integer getNodeNum() {
@@ -62,7 +62,7 @@ public class EnlargeProxyRequest  {
 
 
     /**
-     * 数据库代理id。 如果实例只开启了一个代理，可不传该参数；如果实例开启了多个代理，则必须指定一个数据库代理，扩容新的代理节点。。
+     * 数据库代理id。  如果实例只开启了一个代理，可不传该参数；如果实例开启了多个代理，则必须指定一个数据库代理，扩容新的代理节点。
      * @return proxyId
      */
     public String getProxyId() {

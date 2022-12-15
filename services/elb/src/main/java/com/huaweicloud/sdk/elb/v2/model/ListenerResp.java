@@ -332,7 +332,7 @@ public class ListenerResp {
 
     /**
      * 监听器的最大连接数。该字段为预留字段，暂未启用。默认为-1。
-     * minimum: 0
+     * minimum: -1
      * @return connectionLimit
      */
     public Integer getConnectionLimit() {

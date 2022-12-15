@@ -64,7 +64,7 @@ public class ShowGaussMySqlEngineVersionRequest  {
 
 
     /**
-     * 数据库引擎。支持的引擎如下，不区分大小写：gaussdb-mysql
+     * 数据库引擎。支持的引擎如下，不区分大小写：gaussdb-mysql。
      * @return databaseName
      */
     public String getDatabaseName() {

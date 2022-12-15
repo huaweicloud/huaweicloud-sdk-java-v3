@@ -72,7 +72,7 @@ public class RestartGaussMySqlInstanceRequest  {
 
 
     /**
-     * 租户在某一project下的实例id
+     * 租户在某一project下的实例ID
      * @return instanceId
      */
     public String getInstanceId() {

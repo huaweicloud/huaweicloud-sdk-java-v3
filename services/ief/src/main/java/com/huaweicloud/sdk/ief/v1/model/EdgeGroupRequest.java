@@ -33,6 +33,11 @@ public class EdgeGroupRequest {
 
     private List<Attributes> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_ids")
+
+    private List<String> deviceIds = null;
+
     public EdgeGroupRequest withName(String name) {
         this.name = name;
         return this;
@@ -133,6 +138,39 @@ public class EdgeGroupRequest {
         this.tags = tags;
     }
 
+    public EdgeGroupRequest withDeviceIds(List<String> deviceIds) {
+        this.deviceIds = deviceIds;
+        return this;
+    }
+
+    public EdgeGroupRequest addDeviceIdsItem(String deviceIdsItem) {
+        if (this.deviceIds == null) {
+            this.deviceIds = new ArrayList<>();
+        }
+        this.deviceIds.add(deviceIdsItem);
+        return this;
+    }
+
+    public EdgeGroupRequest withDeviceIds(Consumer<List<String>> deviceIdsSetter) {
+        if (this.deviceIds == null) {
+            this.deviceIds = new ArrayList<>();
+        }
+        deviceIdsSetter.accept(this.deviceIds);
+        return this;
+    }
+
+    /**
+     * 节点组绑定的终端设备ID列表
+     * @return deviceIds
+     */
+    public List<String> getDeviceIds() {
+        return deviceIds;
+    }
+
+    public void setDeviceIds(List<String> deviceIds) {
+        this.deviceIds = deviceIds;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -145,12 +183,13 @@ public class EdgeGroupRequest {
         return Objects.equals(this.name, edgeGroupRequest.name)
             && Objects.equals(this.description, edgeGroupRequest.description)
             && Objects.equals(this.nodeIds, edgeGroupRequest.nodeIds)
-            && Objects.equals(this.tags, edgeGroupRequest.tags);
+            && Objects.equals(this.tags, edgeGroupRequest.tags)
+            && Objects.equals(this.deviceIds, edgeGroupRequest.deviceIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, nodeIds, tags);
+        return Objects.hash(name, description, nodeIds, tags, deviceIds);
     }
 
     @Override
@@ -161,6 +200,7 @@ public class EdgeGroupRequest {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    nodeIds: ").append(toIndentedString(nodeIds)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    deviceIds: ").append(toIndentedString(deviceIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

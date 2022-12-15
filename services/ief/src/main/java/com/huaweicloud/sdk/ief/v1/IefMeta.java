@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.ief.v1.model.*;
 
+import java.util.List;
+
 @SuppressWarnings("unchecked")
 public class IefMeta {
 
@@ -589,7 +591,7 @@ public class IefMeta {
             }));
         builder.<RuleDetail>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RuleDetail.class),
             f -> f.withMarshaller(CreateRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1895,6 +1897,13 @@ public class IefMeta {
             }));
 
         // response
+        builder.<List<EdgeGroupCertListResp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEdgeGroupCertsResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(EdgeGroupCertListResp.class));
 
         return builder.build();
     }
@@ -4233,7 +4242,7 @@ public class IefMeta {
             }));
         builder.<Service>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Service.class),
             f -> f.withMarshaller(UpdateServiceRequest::getBody, (req, v) -> {
                 req.setBody(v);

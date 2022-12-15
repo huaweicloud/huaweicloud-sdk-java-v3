@@ -80,9 +80,9 @@ public class ShowBatchJobResponse extends SdkResponse {
     private List<Target> targets = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "updated_at")
+    @JsonProperty(value = "status_last_updated_at")
 
-    private Integer updatedAt;
+    private Integer statusLastUpdatedAt;
 
     public ShowBatchJobResponse withJobId(String jobId) {
         this.jobId = jobId;
@@ -337,21 +337,21 @@ public class ShowBatchJobResponse extends SdkResponse {
         this.targets = targets;
     }
 
-    public ShowBatchJobResponse withUpdatedAt(Integer updatedAt) {
-        this.updatedAt = updatedAt;
+    public ShowBatchJobResponse withStatusLastUpdatedAt(Integer statusLastUpdatedAt) {
+        this.statusLastUpdatedAt = statusLastUpdatedAt;
         return this;
     }
 
     /**
      * 状态更新时间戳
-     * @return updatedAt
+     * @return statusLastUpdatedAt
      */
-    public Integer getUpdatedAt() {
-        return updatedAt;
+    public Integer getStatusLastUpdatedAt() {
+        return statusLastUpdatedAt;
     }
 
-    public void setUpdatedAt(Integer updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setStatusLastUpdatedAt(Integer statusLastUpdatedAt) {
+        this.statusLastUpdatedAt = statusLastUpdatedAt;
     }
 
     @Override
@@ -376,7 +376,7 @@ public class ShowBatchJobResponse extends SdkResponse {
             && Objects.equals(this.taskData, showBatchJobResponse.taskData)
             && Objects.equals(this.tasks, showBatchJobResponse.tasks)
             && Objects.equals(this.targets, showBatchJobResponse.targets)
-            && Objects.equals(this.updatedAt, showBatchJobResponse.updatedAt);
+            && Objects.equals(this.statusLastUpdatedAt, showBatchJobResponse.statusLastUpdatedAt);
     }
 
     @Override
@@ -394,7 +394,7 @@ public class ShowBatchJobResponse extends SdkResponse {
             taskData,
             tasks,
             targets,
-            updatedAt);
+            statusLastUpdatedAt);
     }
 
     @Override
@@ -414,7 +414,7 @@ public class ShowBatchJobResponse extends SdkResponse {
         sb.append("    taskData: ").append(toIndentedString(taskData)).append("\n");
         sb.append("    tasks: ").append(toIndentedString(tasks)).append("\n");
         sb.append("    targets: ").append(toIndentedString(targets)).append("\n");
-        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    statusLastUpdatedAt: ").append(toIndentedString(statusLastUpdatedAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

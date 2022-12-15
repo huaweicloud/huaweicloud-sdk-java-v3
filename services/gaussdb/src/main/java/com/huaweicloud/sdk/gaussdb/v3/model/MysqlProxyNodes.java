@@ -90,7 +90,7 @@ public class MysqlProxyNodes  {
 
 
     /**
-     * Proxy节点状态。 取值范围：ACTIVE、ABNORMAL、BUILD和FAILED。
+     * Proxy节点状态。  取值范围： - ACTIVE，表示节点正常 - ABNORMAL，表示节点异常 - FAILED，表示节点失败 - DELETED，表示节点已删除
      * @return status
      */
     public String getStatus() {
@@ -178,7 +178,7 @@ public class MysqlProxyNodes  {
 
 
     /**
-     * Proxy节点是否被冻结：0-未冻结；1-冻结；2-冻结删除。
+     * Proxy节点是否被冻结。  取值范围： - 0-未冻结 - 1-冻结 - 2-冻结删除
      * @return frozenFlag
      */
     public Integer getFrozenFlag() {

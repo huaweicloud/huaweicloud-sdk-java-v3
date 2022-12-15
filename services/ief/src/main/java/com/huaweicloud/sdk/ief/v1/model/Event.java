@@ -263,7 +263,7 @@ public class Event {
     }
 
     /**
-     * Get targetResource
+     * 目的端点资源属性
      * @return targetResource
      */
     public Map<String, String> getTargetResource() {
@@ -280,7 +280,7 @@ public class Event {
     }
 
     /**
-     * Get successMessages
+     * 成功次数
      * @return successMessages
      */
     public Integer getSuccessMessages() {
@@ -297,7 +297,7 @@ public class Event {
     }
 
     /**
-     * Get failMessages
+     * 失败次数
      * @return failMessages
      */
     public Integer getFailMessages() {
@@ -314,7 +314,7 @@ public class Event {
     }
 
     /**
-     * Get deleteAt
+     * 删除时间
      * @return deleteAt
      */
     public Integer getDeleteAt() {

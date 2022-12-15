@@ -259,6 +259,26 @@ public class KeywordsAlarmRuleRespList {
 
     private StatusEnum status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trigger_condition_count")
+
+    private Integer triggerConditionCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trigger_condition_frequency")
+
+    private Integer triggerConditionFrequency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "whether_recovery_policy")
+
+    private Boolean whetherRecoveryPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recovery_policy")
+
+    private Integer recoveryPolicy;
+
     public KeywordsAlarmRuleRespList withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -555,6 +575,74 @@ public class KeywordsAlarmRuleRespList {
         this.status = status;
     }
 
+    public KeywordsAlarmRuleRespList withTriggerConditionCount(Integer triggerConditionCount) {
+        this.triggerConditionCount = triggerConditionCount;
+        return this;
+    }
+
+    /**
+     * 触发条件：触发次数;默认为1
+     * @return triggerConditionCount
+     */
+    public Integer getTriggerConditionCount() {
+        return triggerConditionCount;
+    }
+
+    public void setTriggerConditionCount(Integer triggerConditionCount) {
+        this.triggerConditionCount = triggerConditionCount;
+    }
+
+    public KeywordsAlarmRuleRespList withTriggerConditionFrequency(Integer triggerConditionFrequency) {
+        this.triggerConditionFrequency = triggerConditionFrequency;
+        return this;
+    }
+
+    /**
+     * 触发条件：触发周期;默认为1
+     * @return triggerConditionFrequency
+     */
+    public Integer getTriggerConditionFrequency() {
+        return triggerConditionFrequency;
+    }
+
+    public void setTriggerConditionFrequency(Integer triggerConditionFrequency) {
+        this.triggerConditionFrequency = triggerConditionFrequency;
+    }
+
+    public KeywordsAlarmRuleRespList withWhetherRecoveryPolicy(Boolean whetherRecoveryPolicy) {
+        this.whetherRecoveryPolicy = whetherRecoveryPolicy;
+        return this;
+    }
+
+    /**
+     * 是否打开恢复通知;默认false
+     * @return whetherRecoveryPolicy
+     */
+    public Boolean getWhetherRecoveryPolicy() {
+        return whetherRecoveryPolicy;
+    }
+
+    public void setWhetherRecoveryPolicy(Boolean whetherRecoveryPolicy) {
+        this.whetherRecoveryPolicy = whetherRecoveryPolicy;
+    }
+
+    public KeywordsAlarmRuleRespList withRecoveryPolicy(Integer recoveryPolicy) {
+        this.recoveryPolicy = recoveryPolicy;
+        return this;
+    }
+
+    /**
+     * 恢复策略周期;默认为3
+     * @return recoveryPolicy
+     */
+    public Integer getRecoveryPolicy() {
+        return recoveryPolicy;
+    }
+
+    public void setRecoveryPolicy(Integer recoveryPolicy) {
+        this.recoveryPolicy = recoveryPolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -578,7 +666,11 @@ public class KeywordsAlarmRuleRespList {
             && Objects.equals(this.updateTime, keywordsAlarmRuleRespList.updateTime)
             && Objects.equals(this.topics, keywordsAlarmRuleRespList.topics)
             && Objects.equals(this.templateName, keywordsAlarmRuleRespList.templateName)
-            && Objects.equals(this.status, keywordsAlarmRuleRespList.status);
+            && Objects.equals(this.status, keywordsAlarmRuleRespList.status)
+            && Objects.equals(this.triggerConditionCount, keywordsAlarmRuleRespList.triggerConditionCount)
+            && Objects.equals(this.triggerConditionFrequency, keywordsAlarmRuleRespList.triggerConditionFrequency)
+            && Objects.equals(this.whetherRecoveryPolicy, keywordsAlarmRuleRespList.whetherRecoveryPolicy)
+            && Objects.equals(this.recoveryPolicy, keywordsAlarmRuleRespList.recoveryPolicy);
     }
 
     @Override
@@ -597,7 +689,11 @@ public class KeywordsAlarmRuleRespList {
             updateTime,
             topics,
             templateName,
-            status);
+            status,
+            triggerConditionCount,
+            triggerConditionFrequency,
+            whetherRecoveryPolicy,
+            recoveryPolicy);
     }
 
     @Override
@@ -621,6 +717,10 @@ public class KeywordsAlarmRuleRespList {
         sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
         sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    triggerConditionCount: ").append(toIndentedString(triggerConditionCount)).append("\n");
+        sb.append("    triggerConditionFrequency: ").append(toIndentedString(triggerConditionFrequency)).append("\n");
+        sb.append("    whetherRecoveryPolicy: ").append(toIndentedString(whetherRecoveryPolicy)).append("\n");
+        sb.append("    recoveryPolicy: ").append(toIndentedString(recoveryPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

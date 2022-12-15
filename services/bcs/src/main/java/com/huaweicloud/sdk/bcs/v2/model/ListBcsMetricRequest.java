@@ -27,7 +27,7 @@ public class ListBcsMetricRequest {
     }
 
     /**
-     * 区块链服务id,当前不支持IEF实例
+     * 区块链服务id
      * @return blockchainId
      */
     public String getBlockchainId() {

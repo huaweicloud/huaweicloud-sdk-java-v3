@@ -28,7 +28,7 @@ import java.io.InputStream;
 /**
  * @author HuaweiCloud_SDK
  */
-public class SdkStreamRequest {
+public class SdkStreamRequest implements SdkRequest {
 
     @JsonIgnore
     private InputStream body;
@@ -37,12 +37,11 @@ public class SdkStreamRequest {
         this.body = inputStream;
     }
 
-    InputStream getBody() {
+    public InputStream extractBody() {
         return this.body;
     }
 
     public InputStream getUploadStream() {
         return this.body;
     }
-
 }

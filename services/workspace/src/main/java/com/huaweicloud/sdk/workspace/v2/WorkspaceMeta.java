@@ -889,6 +889,23 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
+
+    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
+        // basic
+        HttpRequestDef.Builder<ShowQuotasRequest, ShowQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQuotasRequest.class, ShowQuotasResponse.class)
+                .withName("ShowQuotas")
+                .withUri("/v2/{project_id}/quotas")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateTerminalsBindingDesktopsRequest, CreateTerminalsBindingDesktopsResponse> createTerminalsBindingDesktops =
         genForcreateTerminalsBindingDesktops();
 

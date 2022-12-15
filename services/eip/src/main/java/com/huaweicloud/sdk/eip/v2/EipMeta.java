@@ -75,6 +75,31 @@ public class EipMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeBandwidthToPeriodRequest, ChangeBandwidthToPeriodResponse> changeBandwidthToPeriod =
+        genForchangeBandwidthToPeriod();
+
+    private static HttpRequestDef<ChangeBandwidthToPeriodRequest, ChangeBandwidthToPeriodResponse> genForchangeBandwidthToPeriod() {
+        // basic
+        HttpRequestDef.Builder<ChangeBandwidthToPeriodRequest, ChangeBandwidthToPeriodResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ChangeBandwidthToPeriodRequest.class, ChangeBandwidthToPeriodResponse.class)
+            .withName("ChangeBandwidthToPeriod")
+            .withUri("/v2.0/{project_id}/bandwidths/change-to-period")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BwChangeToPeriodReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BwChangeToPeriodReq.class),
+            f -> f.withMarshaller(ChangeBandwidthToPeriodRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateSharedBandwidthRequest, CreateSharedBandwidthResponse> createSharedBandwidth =
         genForcreateSharedBandwidth();
 
@@ -471,6 +496,31 @@ public class EipMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeletePublicIpRequestBody.class),
             f -> f.withMarshaller(BatchDisassociatePublicipsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangePublicipToPeriodRequest, ChangePublicipToPeriodResponse> changePublicipToPeriod =
+        genForchangePublicipToPeriod();
+
+    private static HttpRequestDef<ChangePublicipToPeriodRequest, ChangePublicipToPeriodResponse> genForchangePublicipToPeriod() {
+        // basic
+        HttpRequestDef.Builder<ChangePublicipToPeriodRequest, ChangePublicipToPeriodResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ChangePublicipToPeriodRequest.class, ChangePublicipToPeriodResponse.class)
+            .withName("ChangePublicipToPeriod")
+            .withUri("/v2.0/{project_id}/publicips/change-to-period")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ChangeToPeriodReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeToPeriodReq.class),
+            f -> f.withMarshaller(ChangePublicipToPeriodRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -884,6 +934,31 @@ public class EipMeta {
             TypeCasts.uncheckedConversion(UpdatePublicipsRequestBody.class),
             f -> f.withMarshaller(UpdatePublicipRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowResourcesJobDetailRequest, ShowResourcesJobDetailResponse> showResourcesJobDetail =
+        genForshowResourcesJobDetail();
+
+    private static HttpRequestDef<ShowResourcesJobDetailRequest, ShowResourcesJobDetailResponse> genForshowResourcesJobDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowResourcesJobDetailRequest, ShowResourcesJobDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowResourcesJobDetailRequest.class, ShowResourcesJobDetailResponse.class)
+            .withName("ShowResourcesJobDetail")
+            .withUri("/v1/{project_id}/jobs/{job_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourcesJobDetailRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
             }));
 
         // response

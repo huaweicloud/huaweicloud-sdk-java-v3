@@ -56,7 +56,7 @@ public class QuitUnionFromMemberListRequestBody {
     }
 
     /**
-     * 邀请方BCS服务实例ID。可调用“查询服务实例列表”接口获取对应的id
+     * 邀请方BCS服务实例ID。可调用“查询服务实例列表”接口获取对应的ID
      * @return inviterBcsid
      */
     public String getInviterBcsid() {
@@ -73,7 +73,7 @@ public class QuitUnionFromMemberListRequestBody {
     }
 
     /**
-     * 邀请方项目ID。控制台->邀请方账号->我的凭证->API凭证->项目列表，选择对应的项目ID
+     * 邀请方项目ID。控制台->邀请方帐号->我的凭证->API凭证->项目列表，选择对应的项目ID
      * @return inviterProjectid
      */
     public String getInviterProjectid() {
@@ -90,7 +90,7 @@ public class QuitUnionFromMemberListRequestBody {
     }
 
     /**
-     * 邀请方租户ID。控制台->邀请方账号->我的凭证->API凭证->账号ID
+     * 邀请方租户ID。控制台->邀请方帐号->我的凭证->API凭证->帐号ID
      * @return inviterDomainid
      */
     public String getInviterDomainid() {
@@ -107,7 +107,7 @@ public class QuitUnionFromMemberListRequestBody {
     }
 
     /**
-     * 邀请方租户名称。控制台->邀请方账号->我的凭证->API凭证->账号名
+     * 邀请方租户名称。控制台->邀请方帐号->我的凭证->API凭证->帐号名
      * @return inviterUsername
      */
     public String getInviterUsername() {
@@ -158,7 +158,7 @@ public class QuitUnionFromMemberListRequestBody {
     }
 
     /**
-     * 被邀请方项目ID。控制台->被邀请方账号->我的凭证->API凭证->项目列表，选择对应的项目ID
+     * 被邀请方项目ID。控制台->被邀请方帐号->我的凭证->API凭证->项目列表，选择对应的项目ID
      * @return inviteeProjectid
      */
     public String getInviteeProjectid() {
@@ -175,7 +175,7 @@ public class QuitUnionFromMemberListRequestBody {
     }
 
     /**
-     * 被邀请方租户ID。控制台->被邀请方账号->我的凭证->API凭证->账号ID
+     * 被邀请方租户ID。控制台->被邀请方帐号->我的凭证->API凭证->帐号ID
      * @return inviteeDomainid
      */
     public String getInviteeDomainid() {

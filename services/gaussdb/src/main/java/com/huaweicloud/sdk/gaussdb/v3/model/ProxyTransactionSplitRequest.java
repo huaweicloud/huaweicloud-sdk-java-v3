@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 前端页面请求体
+ * ProxyTransactionSplitRequest
  */
 public class ProxyTransactionSplitRequest  {
 
@@ -78,7 +78,7 @@ public class ProxyTransactionSplitRequest  {
     }
 
     /**
-     * 目标proxy列表
+     * 实例的proxy列表
      * @return proxyIdList
      */
     public List<String> getProxyIdList() {

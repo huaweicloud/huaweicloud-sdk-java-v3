@@ -435,7 +435,7 @@ public class MysqlInstanceListInfo  {
 
 
     /**
-     * 创建时间，格式为\"yyyy-mm-ddThh:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。说明：创建时返回值为空，数据库实例创建成功后该值不为空。
+     * 创建时间，格式为\"yyyy-mm-ddThh:mm:ssZ\"。  其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。  说明：创建时返回值为空，数据库实例创建成功后该值不为空。
      * @return created
      */
     public String getCreated() {
@@ -457,7 +457,7 @@ public class MysqlInstanceListInfo  {
 
 
     /**
-     * 更新时间，格式与\"created\"字段对应格式完全相同。说明：创建时返回值为空，数据库实例创建成功后该值不为空。
+     * 更新时间，格式与\"created\"字段对应格式完全相同。  说明：创建时返回值为空，数据库实例创建成功后该值不为空。
      * @return updated
      */
     public String getUpdated() {

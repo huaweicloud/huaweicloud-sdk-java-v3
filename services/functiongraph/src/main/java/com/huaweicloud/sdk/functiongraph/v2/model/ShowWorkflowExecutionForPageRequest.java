@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -17,9 +16,24 @@ public class ShowWorkflowExecutionForPageRequest {
     private String workflowId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "offset")
 
-    private QueryRunListParam body;
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_time")
+
+    private String startTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_time")
+
+    private String endTime;
 
     public ShowWorkflowExecutionForPageRequest withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
@@ -38,30 +52,75 @@ public class ShowWorkflowExecutionForPageRequest {
         this.workflowId = workflowId;
     }
 
-    public ShowWorkflowExecutionForPageRequest withBody(QueryRunListParam body) {
-        this.body = body;
-        return this;
-    }
-
-    public ShowWorkflowExecutionForPageRequest withBody(Consumer<QueryRunListParam> bodySetter) {
-        if (this.body == null) {
-            this.body = new QueryRunListParam();
-            bodySetter.accept(this.body);
-        }
-
+    public ShowWorkflowExecutionForPageRequest withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 偏移量，表示从此偏移量开始查询，offset大于等于0
+     * minimum: 0
+     * @return offset
      */
-    public QueryRunListParam getBody() {
-        return body;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setBody(QueryRunListParam body) {
-        this.body = body;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ShowWorkflowExecutionForPageRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 分页查询，每页查询数据条数，取值范围：1,2,3...100
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ShowWorkflowExecutionForPageRequest withStartTime(String startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    /**
+     * 查询开始时间，UTC时间，格式：YYYY-MM-DD hh:mm:ss。若起始时间未填写，以终止时间前推3天为起始时间。
+     * @return startTime
+     */
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public ShowWorkflowExecutionForPageRequest withEndTime(String endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+
+    /**
+     * 查询结束时间，UTC时间，格式：YYYY-MM-DD hh:mm:ss。若终止时间未填写，以起始时间后退3天未终止时间。若均未填写，默认查询最近3天数据。
+     * @return endTime
+     */
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
     @Override
@@ -75,12 +134,15 @@ public class ShowWorkflowExecutionForPageRequest {
         ShowWorkflowExecutionForPageRequest showWorkflowExecutionForPageRequest =
             (ShowWorkflowExecutionForPageRequest) o;
         return Objects.equals(this.workflowId, showWorkflowExecutionForPageRequest.workflowId)
-            && Objects.equals(this.body, showWorkflowExecutionForPageRequest.body);
+            && Objects.equals(this.offset, showWorkflowExecutionForPageRequest.offset)
+            && Objects.equals(this.limit, showWorkflowExecutionForPageRequest.limit)
+            && Objects.equals(this.startTime, showWorkflowExecutionForPageRequest.startTime)
+            && Objects.equals(this.endTime, showWorkflowExecutionForPageRequest.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workflowId, body);
+        return Objects.hash(workflowId, offset, limit, startTime, endTime);
     }
 
     @Override
@@ -88,7 +150,10 @@ public class ShowWorkflowExecutionForPageRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowWorkflowExecutionForPageRequest {\n");
         sb.append("    workflowId: ").append(toIndentedString(workflowId)).append("\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

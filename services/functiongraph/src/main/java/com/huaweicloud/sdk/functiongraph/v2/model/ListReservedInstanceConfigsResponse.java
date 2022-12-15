@@ -15,9 +15,9 @@ import java.util.function.Consumer;
 public class ListReservedInstanceConfigsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "reservedinstances")
+    @JsonProperty(value = "reserved_instances")
 
-    private List<ReservedInstanceConfigs> reservedinstances = null;
+    private List<ReservedInstanceConfigs> reservedInstances = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_info")
@@ -29,38 +29,38 @@ public class ListReservedInstanceConfigsResponse extends SdkResponse {
 
     private Long count;
 
-    public ListReservedInstanceConfigsResponse withReservedinstances(List<ReservedInstanceConfigs> reservedinstances) {
-        this.reservedinstances = reservedinstances;
+    public ListReservedInstanceConfigsResponse withReservedInstances(List<ReservedInstanceConfigs> reservedInstances) {
+        this.reservedInstances = reservedInstances;
         return this;
     }
 
-    public ListReservedInstanceConfigsResponse addReservedinstancesItem(ReservedInstanceConfigs reservedinstancesItem) {
-        if (this.reservedinstances == null) {
-            this.reservedinstances = new ArrayList<>();
+    public ListReservedInstanceConfigsResponse addReservedInstancesItem(ReservedInstanceConfigs reservedInstancesItem) {
+        if (this.reservedInstances == null) {
+            this.reservedInstances = new ArrayList<>();
         }
-        this.reservedinstances.add(reservedinstancesItem);
+        this.reservedInstances.add(reservedInstancesItem);
         return this;
     }
 
-    public ListReservedInstanceConfigsResponse withReservedinstances(
-        Consumer<List<ReservedInstanceConfigs>> reservedinstancesSetter) {
-        if (this.reservedinstances == null) {
-            this.reservedinstances = new ArrayList<>();
+    public ListReservedInstanceConfigsResponse withReservedInstances(
+        Consumer<List<ReservedInstanceConfigs>> reservedInstancesSetter) {
+        if (this.reservedInstances == null) {
+            this.reservedInstances = new ArrayList<>();
         }
-        reservedinstancesSetter.accept(this.reservedinstances);
+        reservedInstancesSetter.accept(this.reservedInstances);
         return this;
     }
 
     /**
      * 函数预留实例列表
-     * @return reservedinstances
+     * @return reservedInstances
      */
-    public List<ReservedInstanceConfigs> getReservedinstances() {
-        return reservedinstances;
+    public List<ReservedInstanceConfigs> getReservedInstances() {
+        return reservedInstances;
     }
 
-    public void setReservedinstances(List<ReservedInstanceConfigs> reservedinstances) {
-        this.reservedinstances = reservedinstances;
+    public void setReservedInstances(List<ReservedInstanceConfigs> reservedInstances) {
+        this.reservedInstances = reservedInstances;
     }
 
     public ListReservedInstanceConfigsResponse withPageInfo(PageInfo pageInfo) {
@@ -116,21 +116,21 @@ public class ListReservedInstanceConfigsResponse extends SdkResponse {
         }
         ListReservedInstanceConfigsResponse listReservedInstanceConfigsResponse =
             (ListReservedInstanceConfigsResponse) o;
-        return Objects.equals(this.reservedinstances, listReservedInstanceConfigsResponse.reservedinstances)
+        return Objects.equals(this.reservedInstances, listReservedInstanceConfigsResponse.reservedInstances)
             && Objects.equals(this.pageInfo, listReservedInstanceConfigsResponse.pageInfo)
             && Objects.equals(this.count, listReservedInstanceConfigsResponse.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(reservedinstances, pageInfo, count);
+        return Objects.hash(reservedInstances, pageInfo, count);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListReservedInstanceConfigsResponse {\n");
-        sb.append("    reservedinstances: ").append(toIndentedString(reservedinstances)).append("\n");
+        sb.append("    reservedInstances: ").append(toIndentedString(reservedInstances)).append("\n");
         sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");

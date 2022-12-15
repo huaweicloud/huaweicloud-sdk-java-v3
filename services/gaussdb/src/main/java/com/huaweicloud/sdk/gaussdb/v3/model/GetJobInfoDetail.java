@@ -37,10 +37,15 @@ public class GetJobInfoDetail  {
     
     private String name;
     /**
-     * 任务执行状态。  取值： - 值为“Running”，表示任务正在执行。 - 值为“Completed”，表示任务执行成功。 - 值为“Failed”，表示任务执行失败。
+     * 任务执行状态。  取值： - 值为“Pending”，表示延时任务，未执行。 - 值为“Running”，表示任务正在执行。 - 值为“Completed”，表示任务执行成功。 - 值为“Failed”，表示任务执行失败。
      */
     public static final class StatusEnum {
 
+        
+        /**
+         * Enum PENDING for value: "Pending"
+         */
+        public static final StatusEnum PENDING = new StatusEnum("Pending");
         
         /**
          * Enum RUNNING for value: "Running"
@@ -62,6 +67,7 @@ public class GetJobInfoDetail  {
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
+            map.put("Pending", PENDING);
             map.put("Running", RUNNING);
             map.put("Completed", COMPLETED);
             map.put("Failed", FAILED);
@@ -223,7 +229,7 @@ public class GetJobInfoDetail  {
 
 
     /**
-     * 任务执行状态。  取值： - 值为“Running”，表示任务正在执行。 - 值为“Completed”，表示任务执行成功。 - 值为“Failed”，表示任务执行失败。
+     * 任务执行状态。  取值： - 值为“Pending”，表示延时任务，未执行。 - 值为“Running”，表示任务正在执行。 - 值为“Completed”，表示任务执行成功。 - 值为“Failed”，表示任务执行失败。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -245,7 +251,7 @@ public class GetJobInfoDetail  {
 
 
     /**
-     * 创建时间，格式为\"yyyy-mm-ddThh:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为   +0800 说明：创建时返回值为空，数据库实例创建成功后该值不为空。
+     * 创建时间，格式为\"yyyy-mm-ddThh:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。  说明：创建时返回值为空，数据库实例创建成功后该值不为空。
      * @return created
      */
     public String getCreated() {
@@ -267,7 +273,7 @@ public class GetJobInfoDetail  {
 
 
     /**
-     * 结束时间，格式为\"yyyy-mm-ddThh:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为   +0800 说明：创建时返回值为空，数据库实例创建成功后该值不为空。
+     * 结束时间，格式为\"yyyy-mm-ddThh:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。  说明：创建时返回值为空，数据库实例创建成功后该值不为空。
      * @return ended
      */
     public String getEnded() {

@@ -66,7 +66,7 @@ public class EdgeGroupResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodes")
 
-    private List<EdgeNode> nodes = null;
+    private List<EdgeNodeResp> nodes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deployments")
@@ -126,7 +126,7 @@ public class EdgeGroupResp {
     }
 
     /**
-     * 边缘节点组名称
+     * 边缘节点组名称，小写英文字母、数字、中划线，以小写字母或数字开头，最大长度为32个字符，不能为空
      * @return name
      */
     public String getName() {
@@ -273,12 +273,12 @@ public class EdgeGroupResp {
         this.gpuNum = gpuNum;
     }
 
-    public EdgeGroupResp withNodes(List<EdgeNode> nodes) {
+    public EdgeGroupResp withNodes(List<EdgeNodeResp> nodes) {
         this.nodes = nodes;
         return this;
     }
 
-    public EdgeGroupResp addNodesItem(EdgeNode nodesItem) {
+    public EdgeGroupResp addNodesItem(EdgeNodeResp nodesItem) {
         if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
@@ -286,7 +286,7 @@ public class EdgeGroupResp {
         return this;
     }
 
-    public EdgeGroupResp withNodes(Consumer<List<EdgeNode>> nodesSetter) {
+    public EdgeGroupResp withNodes(Consumer<List<EdgeNodeResp>> nodesSetter) {
         if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
@@ -298,11 +298,11 @@ public class EdgeGroupResp {
      * 绑定的边缘节点详情
      * @return nodes
      */
-    public List<EdgeNode> getNodes() {
+    public List<EdgeNodeResp> getNodes() {
         return nodes;
     }
 
-    public void setNodes(List<EdgeNode> nodes) {
+    public void setNodes(List<EdgeNodeResp> nodes) {
         this.nodes = nodes;
     }
 

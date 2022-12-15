@@ -71,7 +71,7 @@ public class CreateTagRequest {
     }
 
     /**
-     * 资源类型
+     * 资源类型 1. ief-edge_node 2. ief-deployment 3. ief-application 4. ief-device
      * @return resourceType
      */
     public String getResourceType() {

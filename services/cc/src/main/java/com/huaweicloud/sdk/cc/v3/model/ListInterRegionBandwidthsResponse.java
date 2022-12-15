@@ -15,9 +15,9 @@ import java.util.function.Consumer;
 public class ListInterRegionBandwidthsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "inter_region_bandwidth")
+    @JsonProperty(value = "inter_region_bandwidths")
 
-    private List<InterRegionBandwidth> interRegionBandwidth = null;
+    private List<InterRegionBandwidth> interRegionBandwidths = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_info")
@@ -29,39 +29,40 @@ public class ListInterRegionBandwidthsResponse extends SdkResponse {
 
     private String requestId;
 
-    public ListInterRegionBandwidthsResponse withInterRegionBandwidth(List<InterRegionBandwidth> interRegionBandwidth) {
-        this.interRegionBandwidth = interRegionBandwidth;
+    public ListInterRegionBandwidthsResponse withInterRegionBandwidths(
+        List<InterRegionBandwidth> interRegionBandwidths) {
+        this.interRegionBandwidths = interRegionBandwidths;
         return this;
     }
 
-    public ListInterRegionBandwidthsResponse addInterRegionBandwidthItem(
-        InterRegionBandwidth interRegionBandwidthItem) {
-        if (this.interRegionBandwidth == null) {
-            this.interRegionBandwidth = new ArrayList<>();
+    public ListInterRegionBandwidthsResponse addInterRegionBandwidthsItem(
+        InterRegionBandwidth interRegionBandwidthsItem) {
+        if (this.interRegionBandwidths == null) {
+            this.interRegionBandwidths = new ArrayList<>();
         }
-        this.interRegionBandwidth.add(interRegionBandwidthItem);
+        this.interRegionBandwidths.add(interRegionBandwidthsItem);
         return this;
     }
 
-    public ListInterRegionBandwidthsResponse withInterRegionBandwidth(
-        Consumer<List<InterRegionBandwidth>> interRegionBandwidthSetter) {
-        if (this.interRegionBandwidth == null) {
-            this.interRegionBandwidth = new ArrayList<>();
+    public ListInterRegionBandwidthsResponse withInterRegionBandwidths(
+        Consumer<List<InterRegionBandwidth>> interRegionBandwidthsSetter) {
+        if (this.interRegionBandwidths == null) {
+            this.interRegionBandwidths = new ArrayList<>();
         }
-        interRegionBandwidthSetter.accept(this.interRegionBandwidth);
+        interRegionBandwidthsSetter.accept(this.interRegionBandwidths);
         return this;
     }
 
     /**
      * 域间带宽实例列表。
-     * @return interRegionBandwidth
+     * @return interRegionBandwidths
      */
-    public List<InterRegionBandwidth> getInterRegionBandwidth() {
-        return interRegionBandwidth;
+    public List<InterRegionBandwidth> getInterRegionBandwidths() {
+        return interRegionBandwidths;
     }
 
-    public void setInterRegionBandwidth(List<InterRegionBandwidth> interRegionBandwidth) {
-        this.interRegionBandwidth = interRegionBandwidth;
+    public void setInterRegionBandwidths(List<InterRegionBandwidth> interRegionBandwidths) {
+        this.interRegionBandwidths = interRegionBandwidths;
     }
 
     public ListInterRegionBandwidthsResponse withPageInfo(PageInfo pageInfo) {
@@ -116,21 +117,21 @@ public class ListInterRegionBandwidthsResponse extends SdkResponse {
             return false;
         }
         ListInterRegionBandwidthsResponse listInterRegionBandwidthsResponse = (ListInterRegionBandwidthsResponse) o;
-        return Objects.equals(this.interRegionBandwidth, listInterRegionBandwidthsResponse.interRegionBandwidth)
+        return Objects.equals(this.interRegionBandwidths, listInterRegionBandwidthsResponse.interRegionBandwidths)
             && Objects.equals(this.pageInfo, listInterRegionBandwidthsResponse.pageInfo)
             && Objects.equals(this.requestId, listInterRegionBandwidthsResponse.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(interRegionBandwidth, pageInfo, requestId);
+        return Objects.hash(interRegionBandwidths, pageInfo, requestId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListInterRegionBandwidthsResponse {\n");
-        sb.append("    interRegionBandwidth: ").append(toIndentedString(interRegionBandwidth)).append("\n");
+        sb.append("    interRegionBandwidths: ").append(toIndentedString(interRegionBandwidths)).append("\n");
         sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");

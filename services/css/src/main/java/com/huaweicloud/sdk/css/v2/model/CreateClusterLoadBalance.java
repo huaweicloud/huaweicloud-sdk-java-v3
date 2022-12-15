@@ -19,9 +19,9 @@ public class CreateClusterLoadBalance {
     private Boolean endpointWithDnsName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "vpcPermisssions")
+    @JsonProperty(value = "vpcPermissions")
 
-    private List<String> vpcPermisssions = null;
+    private List<String> vpcPermissions = null;
 
     public CreateClusterLoadBalance withEndpointWithDnsName(Boolean endpointWithDnsName) {
         this.endpointWithDnsName = endpointWithDnsName;
@@ -40,37 +40,37 @@ public class CreateClusterLoadBalance {
         this.endpointWithDnsName = endpointWithDnsName;
     }
 
-    public CreateClusterLoadBalance withVpcPermisssions(List<String> vpcPermisssions) {
-        this.vpcPermisssions = vpcPermisssions;
+    public CreateClusterLoadBalance withVpcPermissions(List<String> vpcPermissions) {
+        this.vpcPermissions = vpcPermissions;
         return this;
     }
 
-    public CreateClusterLoadBalance addVpcPermisssionsItem(String vpcPermisssionsItem) {
-        if (this.vpcPermisssions == null) {
-            this.vpcPermisssions = new ArrayList<>();
+    public CreateClusterLoadBalance addVpcPermissionsItem(String vpcPermissionsItem) {
+        if (this.vpcPermissions == null) {
+            this.vpcPermissions = new ArrayList<>();
         }
-        this.vpcPermisssions.add(vpcPermisssionsItem);
+        this.vpcPermissions.add(vpcPermissionsItem);
         return this;
     }
 
-    public CreateClusterLoadBalance withVpcPermisssions(Consumer<List<String>> vpcPermisssionsSetter) {
-        if (this.vpcPermisssions == null) {
-            this.vpcPermisssions = new ArrayList<>();
+    public CreateClusterLoadBalance withVpcPermissions(Consumer<List<String>> vpcPermissionsSetter) {
+        if (this.vpcPermissions == null) {
+            this.vpcPermissions = new ArrayList<>();
         }
-        vpcPermisssionsSetter.accept(this.vpcPermisssions);
+        vpcPermissionsSetter.accept(this.vpcPermissions);
         return this;
     }
 
     /**
      * 访问控制。
-     * @return vpcPermisssions
+     * @return vpcPermissions
      */
-    public List<String> getVpcPermisssions() {
-        return vpcPermisssions;
+    public List<String> getVpcPermissions() {
+        return vpcPermissions;
     }
 
-    public void setVpcPermisssions(List<String> vpcPermisssions) {
-        this.vpcPermisssions = vpcPermisssions;
+    public void setVpcPermissions(List<String> vpcPermissions) {
+        this.vpcPermissions = vpcPermissions;
     }
 
     @Override
@@ -83,12 +83,12 @@ public class CreateClusterLoadBalance {
         }
         CreateClusterLoadBalance createClusterLoadBalance = (CreateClusterLoadBalance) o;
         return Objects.equals(this.endpointWithDnsName, createClusterLoadBalance.endpointWithDnsName)
-            && Objects.equals(this.vpcPermisssions, createClusterLoadBalance.vpcPermisssions);
+            && Objects.equals(this.vpcPermissions, createClusterLoadBalance.vpcPermissions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(endpointWithDnsName, vpcPermisssions);
+        return Objects.hash(endpointWithDnsName, vpcPermissions);
     }
 
     @Override
@@ -96,7 +96,7 @@ public class CreateClusterLoadBalance {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateClusterLoadBalance {\n");
         sb.append("    endpointWithDnsName: ").append(toIndentedString(endpointWithDnsName)).append("\n");
-        sb.append("    vpcPermisssions: ").append(toIndentedString(vpcPermisssions)).append("\n");
+        sb.append("    vpcPermissions: ").append(toIndentedString(vpcPermissions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

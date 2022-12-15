@@ -32,7 +32,7 @@ public class BatchRemovePeersFromChannelRequest {
     }
 
     /**
-     * 区块链服务id。可调用“查询服务实例列表”接口获取id
+     * 区块链服务id。可调用“查询服务实例列表”接口获取ID
      * @return blockchainId
      */
     public String getBlockchainId() {

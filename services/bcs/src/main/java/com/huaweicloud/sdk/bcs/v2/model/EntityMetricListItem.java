@@ -40,6 +40,11 @@ public class EntityMetricListItem {
 
     private String sendBytesRate;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "filesystemUsage")
+
+    private String filesystemUsage;
+
     public EntityMetricListItem withCpuUsage(String cpuUsage) {
         this.cpuUsage = cpuUsage;
         return this;
@@ -63,7 +68,7 @@ public class EntityMetricListItem {
     }
 
     /**
-     * 磁盘使用率
+     * 磁盘读取速率
      * @return diskReadRate
      */
     public String getDiskReadRate() {
@@ -142,6 +147,23 @@ public class EntityMetricListItem {
         this.sendBytesRate = sendBytesRate;
     }
 
+    public EntityMetricListItem withFilesystemUsage(String filesystemUsage) {
+        this.filesystemUsage = filesystemUsage;
+        return this;
+    }
+
+    /**
+     * 文件系统使用率
+     * @return filesystemUsage
+     */
+    public String getFilesystemUsage() {
+        return filesystemUsage;
+    }
+
+    public void setFilesystemUsage(String filesystemUsage) {
+        this.filesystemUsage = filesystemUsage;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -156,12 +178,14 @@ public class EntityMetricListItem {
             && Objects.equals(this.diskWriteRate, entityMetricListItem.diskWriteRate)
             && Objects.equals(this.memUsage, entityMetricListItem.memUsage)
             && Objects.equals(this.recvBytesRate, entityMetricListItem.recvBytesRate)
-            && Objects.equals(this.sendBytesRate, entityMetricListItem.sendBytesRate);
+            && Objects.equals(this.sendBytesRate, entityMetricListItem.sendBytesRate)
+            && Objects.equals(this.filesystemUsage, entityMetricListItem.filesystemUsage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cpuUsage, diskReadRate, diskWriteRate, memUsage, recvBytesRate, sendBytesRate);
+        return Objects
+            .hash(cpuUsage, diskReadRate, diskWriteRate, memUsage, recvBytesRate, sendBytesRate, filesystemUsage);
     }
 
     @Override
@@ -174,6 +198,7 @@ public class EntityMetricListItem {
         sb.append("    memUsage: ").append(toIndentedString(memUsage)).append("\n");
         sb.append("    recvBytesRate: ").append(toIndentedString(recvBytesRate)).append("\n");
         sb.append("    sendBytesRate: ").append(toIndentedString(sendBytesRate)).append("\n");
+        sb.append("    filesystemUsage: ").append(toIndentedString(filesystemUsage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

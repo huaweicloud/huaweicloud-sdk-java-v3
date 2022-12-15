@@ -31,7 +31,7 @@ public class IEFNode {
     }
 
     /**
-     * 节点ID
+     * 节点ID（注意：应填写IEF节点的ID信息）
      * @return id
      */
     public String getId() {
@@ -65,7 +65,7 @@ public class IEFNode {
     }
 
     /**
-     * 节点公有IP
+     * 节点公有IP（弹性IP）
      * @return publicIpAddress
      */
     public String getPublicIpAddress() {

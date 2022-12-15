@@ -48,7 +48,7 @@ public class CreateLogStreamParams {
     }
 
     /**
-     * 企业项目名称。
+     * Get enterpriseProjectName
      * @return enterpriseProjectName
      */
     public String getEnterpriseProjectName() {
@@ -65,9 +65,7 @@ public class CreateLogStreamParams {
     }
 
     /**
-     * 日志存储时间（天），取值范围：1-365。
-     * minimum: 1
-     * maximum: 365
+     * Get ttlInDays
      * @return ttlInDays
      */
     public Integer getTtlInDays() {

@@ -128,7 +128,7 @@ public class ListGaussMySqlErrorLogRequest  {
 
 
     /**
-     * 开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * 开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。
      * @return startDate
      */
     public String getStartDate() {
@@ -150,7 +150,7 @@ public class ListGaussMySqlErrorLogRequest  {
 
 
     /**
-     * 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。
      * @return endDate
      */
     public String getEndDate() {
@@ -194,7 +194,7 @@ public class ListGaussMySqlErrorLogRequest  {
 
 
     /**
-     * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100
+     * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
      * @return limit
      */
     public Integer getLimit() {

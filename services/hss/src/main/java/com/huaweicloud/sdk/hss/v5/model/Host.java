@@ -39,6 +39,11 @@ public class Host {
     private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_name")
 
     private String enterpriseProjectName;
@@ -153,6 +158,36 @@ public class Host {
 
     private List<String> labels = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_create_time")
+
+    private Long agentCreateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_update_time")
+
+    private Long agentUpdateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_version")
+
+    private String agentVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "upgrade_status")
+
+    private String upgradeStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "upgrade_result_code")
+
+    private String upgradeResultCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "upgradable")
+
+    private Boolean upgradable;
+
     public Host withHostName(String hostName) {
         this.hostName = hostName;
         return this;
@@ -238,6 +273,23 @@ public class Host {
         this.publicIp = publicIp;
     }
 
+    public Host withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public Host withEnterpriseProjectName(String enterpriseProjectName) {
         this.enterpriseProjectName = enterpriseProjectName;
         return this;
@@ -278,7 +330,7 @@ public class Host {
     }
 
     /**
-     * Agent状态，包含如下5种。   - not_installed ：未安装。   - online ：在线。   - offline ：离线。   - install_failed ：安装失败。   - installing ：安装中。
+     * Agent状态，包含如下5种。   - installed ：已安装。   - not_installed ：未安装。   - online ：在线。   - offline ：离线。   - install_failed ：安装失败。   - installing ：安装中。
      * @return agentStatus
      */
     public String getAgentStatus() {
@@ -653,6 +705,112 @@ public class Host {
         this.labels = labels;
     }
 
+    public Host withAgentCreateTime(Long agentCreateTime) {
+        this.agentCreateTime = agentCreateTime;
+        return this;
+    }
+
+    /**
+     * agent安装时间，采用时间戳，默认毫秒，
+     * minimum: 0
+     * maximum: 4824695185000
+     * @return agentCreateTime
+     */
+    public Long getAgentCreateTime() {
+        return agentCreateTime;
+    }
+
+    public void setAgentCreateTime(Long agentCreateTime) {
+        this.agentCreateTime = agentCreateTime;
+    }
+
+    public Host withAgentUpdateTime(Long agentUpdateTime) {
+        this.agentUpdateTime = agentUpdateTime;
+        return this;
+    }
+
+    /**
+     * agent状态修改时间，采用时间戳，默认毫秒，
+     * minimum: 0
+     * maximum: 4824695185000
+     * @return agentUpdateTime
+     */
+    public Long getAgentUpdateTime() {
+        return agentUpdateTime;
+    }
+
+    public void setAgentUpdateTime(Long agentUpdateTime) {
+        this.agentUpdateTime = agentUpdateTime;
+    }
+
+    public Host withAgentVersion(String agentVersion) {
+        this.agentVersion = agentVersion;
+        return this;
+    }
+
+    /**
+     * agent版本
+     * @return agentVersion
+     */
+    public String getAgentVersion() {
+        return agentVersion;
+    }
+
+    public void setAgentVersion(String agentVersion) {
+        this.agentVersion = agentVersion;
+    }
+
+    public Host withUpgradeStatus(String upgradeStatus) {
+        this.upgradeStatus = upgradeStatus;
+        return this;
+    }
+
+    /**
+     * 升级状态，包含如下4种。   - not_upgrade ：未升级，也就是默认状态，客户还没有给这台机器下发过升级。   - upgrading ：正在升级中。   - upgrade_failed ：升级失败。   - upgrade_succeed ：升级成功。
+     * @return upgradeStatus
+     */
+    public String getUpgradeStatus() {
+        return upgradeStatus;
+    }
+
+    public void setUpgradeStatus(String upgradeStatus) {
+        this.upgradeStatus = upgradeStatus;
+    }
+
+    public Host withUpgradeResultCode(String upgradeResultCode) {
+        this.upgradeResultCode = upgradeResultCode;
+        return this;
+    }
+
+    /**
+     * 升级失败原因，只有当 upgrade_status 为 upgrade_failed 时才显示，包含如下12种。   - package_unavailable ：升级包解析失败，升级文件有错误。   - network_access_timeout ：下载升级包失败，网络异常。   - agent_offline ：agent离线。   - hostguard_abnormal ：agent工作进程异常。   - insufficient_disk_space ：磁盘空间不足。   - failed_to_replace_file ：替换文件失败。
+     * @return upgradeResultCode
+     */
+    public String getUpgradeResultCode() {
+        return upgradeResultCode;
+    }
+
+    public void setUpgradeResultCode(String upgradeResultCode) {
+        this.upgradeResultCode = upgradeResultCode;
+    }
+
+    public Host withUpgradable(Boolean upgradable) {
+        this.upgradable = upgradable;
+        return this;
+    }
+
+    /**
+     * 该服务器agent是否可升级
+     * @return upgradable
+     */
+    public Boolean getUpgradable() {
+        return upgradable;
+    }
+
+    public void setUpgradable(Boolean upgradable) {
+        this.upgradable = upgradable;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -665,6 +823,7 @@ public class Host {
         return Objects.equals(this.hostName, host.hostName) && Objects.equals(this.hostId, host.hostId)
             && Objects.equals(this.agentId, host.agentId) && Objects.equals(this.privateIp, host.privateIp)
             && Objects.equals(this.publicIp, host.publicIp)
+            && Objects.equals(this.enterpriseProjectId, host.enterpriseProjectId)
             && Objects.equals(this.enterpriseProjectName, host.enterpriseProjectName)
             && Objects.equals(this.hostStatus, host.hostStatus) && Objects.equals(this.agentStatus, host.agentStatus)
             && Objects.equals(this.installResultCode, host.installResultCode)
@@ -677,7 +836,12 @@ public class Host {
             && Objects.equals(this.policyGroupName, host.policyGroupName) && Objects.equals(this.asset, host.asset)
             && Objects.equals(this.vulnerability, host.vulnerability) && Objects.equals(this.baseline, host.baseline)
             && Objects.equals(this.intrusion, host.intrusion) && Objects.equals(this.assetValue, host.assetValue)
-            && Objects.equals(this.labels, host.labels);
+            && Objects.equals(this.labels, host.labels) && Objects.equals(this.agentCreateTime, host.agentCreateTime)
+            && Objects.equals(this.agentUpdateTime, host.agentUpdateTime)
+            && Objects.equals(this.agentVersion, host.agentVersion)
+            && Objects.equals(this.upgradeStatus, host.upgradeStatus)
+            && Objects.equals(this.upgradeResultCode, host.upgradeResultCode)
+            && Objects.equals(this.upgradable, host.upgradable);
     }
 
     @Override
@@ -687,6 +851,7 @@ public class Host {
             agentId,
             privateIp,
             publicIp,
+            enterpriseProjectId,
             enterpriseProjectName,
             hostStatus,
             agentStatus,
@@ -709,7 +874,13 @@ public class Host {
             baseline,
             intrusion,
             assetValue,
-            labels);
+            labels,
+            agentCreateTime,
+            agentUpdateTime,
+            agentVersion,
+            upgradeStatus,
+            upgradeResultCode,
+            upgradable);
     }
 
     @Override
@@ -721,6 +892,7 @@ public class Host {
         sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
         sb.append("    hostStatus: ").append(toIndentedString(hostStatus)).append("\n");
         sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
@@ -744,6 +916,12 @@ public class Host {
         sb.append("    intrusion: ").append(toIndentedString(intrusion)).append("\n");
         sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+        sb.append("    agentCreateTime: ").append(toIndentedString(agentCreateTime)).append("\n");
+        sb.append("    agentUpdateTime: ").append(toIndentedString(agentUpdateTime)).append("\n");
+        sb.append("    agentVersion: ").append(toIndentedString(agentVersion)).append("\n");
+        sb.append("    upgradeStatus: ").append(toIndentedString(upgradeStatus)).append("\n");
+        sb.append("    upgradeResultCode: ").append(toIndentedString(upgradeResultCode)).append("\n");
+        sb.append("    upgradable: ").append(toIndentedString(upgradable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

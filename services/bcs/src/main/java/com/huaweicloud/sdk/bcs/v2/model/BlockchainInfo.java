@@ -43,7 +43,7 @@ public class BlockchainInfo {
     }
 
     /**
-     * 服务实例名
+     * 服务实例名称
      * @return name
      */
     public String getName() {

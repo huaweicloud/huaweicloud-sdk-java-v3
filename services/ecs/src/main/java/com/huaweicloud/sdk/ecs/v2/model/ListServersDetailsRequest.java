@@ -65,6 +65,11 @@ public class ListServersDetailsRequest {
 
     private String ipEq;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_id")
+
+    private String serverId;
+
     public ListServersDetailsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -254,6 +259,23 @@ public class ListServersDetailsRequest {
         this.ipEq = ipEq;
     }
 
+    public ListServersDetailsRequest withServerId(String serverId) {
+        this.serverId = serverId;
+        return this;
+    }
+
+    /**
+     * 云服务器ID，格式为UUID，匹配规则为精确匹配  示例: server_id={id1}&server_id={id2}
+     * @return serverId
+     */
+    public String getServerId() {
+        return serverId;
+    }
+
+    public void setServerId(String serverId) {
+        this.serverId = serverId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -273,13 +295,24 @@ public class ListServersDetailsRequest {
             && Objects.equals(this.reservationId, listServersDetailsRequest.reservationId)
             && Objects.equals(this.status, listServersDetailsRequest.status)
             && Objects.equals(this.tags, listServersDetailsRequest.tags)
-            && Objects.equals(this.ipEq, listServersDetailsRequest.ipEq);
+            && Objects.equals(this.ipEq, listServersDetailsRequest.ipEq)
+            && Objects.equals(this.serverId, listServersDetailsRequest.serverId);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(enterpriseProjectId, flavor, ip, limit, name, notTags, offset, reservationId, status, tags, ipEq);
+        return Objects.hash(enterpriseProjectId,
+            flavor,
+            ip,
+            limit,
+            name,
+            notTags,
+            offset,
+            reservationId,
+            status,
+            tags,
+            ipEq,
+            serverId);
     }
 
     @Override
@@ -297,6 +330,7 @@ public class ListServersDetailsRequest {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    ipEq: ").append(toIndentedString(ipEq)).append("\n");
+        sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

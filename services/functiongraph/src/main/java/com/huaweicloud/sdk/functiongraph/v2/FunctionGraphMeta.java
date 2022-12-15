@@ -1058,12 +1058,12 @@ public class FunctionGraphMeta {
             f -> f.withMarshaller(ListFunctionReservedInstancesRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
             }));
-        builder.<String>withRequestField("maxitems",
+        builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFunctionReservedInstancesRequest::getMaxitems, (req, v) -> {
-                req.setMaxitems(v);
+            f -> f.withMarshaller(ListFunctionReservedInstancesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
         builder.<String>withRequestField("urn",
             LocationType.Query,
@@ -1258,6 +1258,20 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListReservedInstanceConfigsRequest::getFunctionUrn, (req, v) -> {
                 req.setFunctionUrn(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReservedInstanceConfigsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReservedInstanceConfigsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -1935,12 +1949,33 @@ public class FunctionGraphMeta {
             f -> f.withMarshaller(ShowWorkflowExecutionForPageRequest::getWorkflowId, (req, v) -> {
                 req.setWorkflowId(v);
             }));
-        builder.<QueryRunListParam>withRequestField("body",
-            LocationType.Body,
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(QueryRunListParam.class),
-            f -> f.withMarshaller(ShowWorkflowExecutionForPageRequest::getBody, (req, v) -> {
-                req.setBody(v);
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowWorkflowExecutionForPageRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowWorkflowExecutionForPageRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowExecutionForPageRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowExecutionForPageRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
             }));
 
         // response

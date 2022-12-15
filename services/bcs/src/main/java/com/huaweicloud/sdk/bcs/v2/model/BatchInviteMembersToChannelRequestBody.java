@@ -39,7 +39,7 @@ public class BatchInviteMembersToChannelRequestBody {
     }
 
     /**
-     * 发出邀请的BCS服务实例id
+     * 发出邀请的服务实例ID
      * @return bcsId
      */
     public String getBcsId() {

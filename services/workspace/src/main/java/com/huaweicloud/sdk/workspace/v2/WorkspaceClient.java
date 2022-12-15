@@ -672,6 +672,34 @@ public class WorkspaceClient {
     }
 
     /**
+     * 查询租户配额
+     *
+     * Console Framework和WKSDesktopManager调用该接口查询租户配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return ShowQuotasResponse
+     */
+    public ShowQuotasResponse showQuotas(ShowQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.showQuotas);
+    }
+
+    /**
+     * 查询租户配额
+     *
+     * Console Framework和WKSDesktopManager调用该接口查询租户配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
+     */
+    public SyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasInvoker(ShowQuotasRequest request) {
+        return new SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, WorkspaceMeta.showQuotas, hcClient);
+    }
+
+    /**
      * 增加终端与桌面绑定配置
      *
      * 增加终端与桌面绑定配置。

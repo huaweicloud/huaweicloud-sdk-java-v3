@@ -181,7 +181,7 @@ public class BillingCreate {
     private ConsistentLevelEnum consistentLevel;
 
     /**
-     * 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo）。
+     * 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo），云桌面（workspace）。
      */
     public static final class ObjectTypeEnum {
 
@@ -200,6 +200,11 @@ public class BillingCreate {
          */
         public static final ObjectTypeEnum TURBO = new ObjectTypeEnum("turbo");
 
+        /**
+         * Enum WORKSPACE for value: "workspace"
+         */
+        public static final ObjectTypeEnum WORKSPACE = new ObjectTypeEnum("workspace");
+
         private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ObjectTypeEnum> createStaticFields() {
@@ -207,6 +212,7 @@ public class BillingCreate {
             map.put("server", SERVER);
             map.put("disk", DISK);
             map.put("turbo", TURBO);
+            map.put("workspace", WORKSPACE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -584,7 +590,7 @@ public class BillingCreate {
     }
 
     /**
-     * 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo）。
+     * 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo），云桌面（workspace）。
      * @return objectType
      */
     public ObjectTypeEnum getObjectType() {

@@ -42,7 +42,7 @@ public class ShowInstanceMonitorExtendResponse extends SdkResponse {
 
 
     /**
-     * 实例秒级监控开关。为true时表示开启，为false时表示关闭。
+     * 实例秒级监控开关。  - true，表示开启。 - false，表示关闭。
      * @return monitorSwitch
      */
     public Boolean getMonitorSwitch() {
@@ -64,7 +64,7 @@ public class ShowInstanceMonitorExtendResponse extends SdkResponse {
 
 
     /**
-     * 采集周期，仅在monitor_switch为true时返回。1：采集周期为1s； 5：采集周期为5s。
+     * 采集周期，仅在monitor_switch为true时返回。 - 1：采集周期为1s。 - 5：采集周期为5s。
      * @return period
      */
     public Integer getPeriod() {

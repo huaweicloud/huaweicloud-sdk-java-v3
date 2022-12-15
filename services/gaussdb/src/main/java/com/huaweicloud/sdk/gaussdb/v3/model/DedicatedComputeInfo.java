@@ -68,7 +68,7 @@ public class DedicatedComputeInfo  {
 
 
     /**
-     * 专属资源池中cpu总数
+     * 专属资源池中cpu总数。
      * @return vcpusTotal
      */
     public Integer getVcpusTotal() {
@@ -90,7 +90,7 @@ public class DedicatedComputeInfo  {
 
 
     /**
-     * 专属资源池已使用的cpu数
+     * 专属资源池已使用的cpu数。
      * @return vcpusUsed
      */
     public Integer getVcpusUsed() {
@@ -112,7 +112,7 @@ public class DedicatedComputeInfo  {
 
 
     /**
-     * 专属资源池计算内存大小, 单位GB
+     * 专属资源池计算内存大小, 单位GB。
      * @return ramTotal
      */
     public Integer getRamTotal() {
@@ -134,7 +134,7 @@ public class DedicatedComputeInfo  {
 
 
     /**
-     * 专属资源池已使用的计算内存大小，单位GB
+     * 专属资源池已使用的计算内存大小，单位GB。
      * @return ramUsed
      */
     public Integer getRamUsed() {
@@ -156,7 +156,7 @@ public class DedicatedComputeInfo  {
 
 
     /**
-     * 专属资源池计算资源规格码
+     * 专属资源池计算资源规格码。
      * @return specCode
      */
     public String getSpecCode() {
@@ -178,7 +178,7 @@ public class DedicatedComputeInfo  {
 
 
     /**
-     * 专属资源池计算主机数量
+     * 专属资源池计算主机数量。
      * @return hostNum
      */
     public Integer getHostNum() {

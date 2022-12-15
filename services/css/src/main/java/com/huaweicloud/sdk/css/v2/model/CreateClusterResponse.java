@@ -18,9 +18,9 @@ public class CreateClusterResponse extends SdkResponse {
     private CreateClusterResp cluster;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ordeId")
+    @JsonProperty(value = "orderId")
 
-    private String ordeId;
+    private String orderId;
 
     public CreateClusterResponse withCluster(CreateClusterResp cluster) {
         this.cluster = cluster;
@@ -48,21 +48,21 @@ public class CreateClusterResponse extends SdkResponse {
         this.cluster = cluster;
     }
 
-    public CreateClusterResponse withOrdeId(String ordeId) {
-        this.ordeId = ordeId;
+    public CreateClusterResponse withOrderId(String orderId) {
+        this.orderId = orderId;
         return this;
     }
 
     /**
      * 订单号。若创建的是包周期集群，则只返回ordeld参数。
-     * @return ordeId
+     * @return orderId
      */
-    public String getOrdeId() {
-        return ordeId;
+    public String getOrderId() {
+        return orderId;
     }
 
-    public void setOrdeId(String ordeId) {
-        this.ordeId = ordeId;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     @Override
@@ -75,12 +75,12 @@ public class CreateClusterResponse extends SdkResponse {
         }
         CreateClusterResponse createClusterResponse = (CreateClusterResponse) o;
         return Objects.equals(this.cluster, createClusterResponse.cluster)
-            && Objects.equals(this.ordeId, createClusterResponse.ordeId);
+            && Objects.equals(this.orderId, createClusterResponse.orderId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cluster, ordeId);
+        return Objects.hash(cluster, orderId);
     }
 
     @Override
@@ -88,7 +88,7 @@ public class CreateClusterResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateClusterResponse {\n");
         sb.append("    cluster: ").append(toIndentedString(cluster)).append("\n");
-        sb.append("    ordeId: ").append(toIndentedString(ordeId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

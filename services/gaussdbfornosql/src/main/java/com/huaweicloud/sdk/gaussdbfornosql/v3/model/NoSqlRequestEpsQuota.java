@@ -19,7 +19,7 @@ public class NoSqlRequestEpsQuota {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota")
 
-    private NoSqlEpsQuota quota;
+    private NoSqlEpsQuotaRequestInfo quota;
 
     public NoSqlRequestEpsQuota withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -38,14 +38,14 @@ public class NoSqlRequestEpsQuota {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public NoSqlRequestEpsQuota withQuota(NoSqlEpsQuota quota) {
+    public NoSqlRequestEpsQuota withQuota(NoSqlEpsQuotaRequestInfo quota) {
         this.quota = quota;
         return this;
     }
 
-    public NoSqlRequestEpsQuota withQuota(Consumer<NoSqlEpsQuota> quotaSetter) {
+    public NoSqlRequestEpsQuota withQuota(Consumer<NoSqlEpsQuotaRequestInfo> quotaSetter) {
         if (this.quota == null) {
-            this.quota = new NoSqlEpsQuota();
+            this.quota = new NoSqlEpsQuotaRequestInfo();
             quotaSetter.accept(this.quota);
         }
 
@@ -56,11 +56,11 @@ public class NoSqlRequestEpsQuota {
      * Get quota
      * @return quota
      */
-    public NoSqlEpsQuota getQuota() {
+    public NoSqlEpsQuotaRequestInfo getQuota() {
         return quota;
     }
 
-    public void setQuota(NoSqlEpsQuota quota) {
+    public void setQuota(NoSqlEpsQuotaRequestInfo quota) {
         this.quota = quota;
     }
 

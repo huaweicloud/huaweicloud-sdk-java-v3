@@ -28,7 +28,7 @@ public class ShowGaussMySqlProjectQuotasRequest  {
     
     private String xLanguage;
     /**
-     * '功能说明：根据type过滤查询指定类型的配额' 取值范围：instance
+     * 功能说明：根据type过滤查询指定类型的配额。  取值范围：instance
      */
     public static final class TypeEnum {
 
@@ -140,7 +140,7 @@ public class ShowGaussMySqlProjectQuotasRequest  {
 
 
     /**
-     * '功能说明：根据type过滤查询指定类型的配额' 取值范围：instance
+     * 功能说明：根据type过滤查询指定类型的配额。  取值范围：instance
      * @return type
      */
     public TypeEnum getType() {

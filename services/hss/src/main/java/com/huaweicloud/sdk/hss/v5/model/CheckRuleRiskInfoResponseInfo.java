@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.hss.v5.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 检查项风险信息
@@ -54,6 +57,21 @@ public class CheckRuleRiskInfoResponseInfo {
     @JsonProperty(value = "status")
 
     private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fix_status")
+
+    private String fixStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_auto_fix")
+
+    private Boolean enableAutoFix;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule_params")
+
+    private List<CheckRuleFixParamInfo> ruleParams = null;
 
     public CheckRuleRiskInfoResponseInfo withSeverity(String severity) {
         this.severity = severity;
@@ -210,6 +228,73 @@ public class CheckRuleRiskInfoResponseInfo {
         this.status = status;
     }
 
+    public CheckRuleRiskInfoResponseInfo withFixStatus(String fixStatus) {
+        this.fixStatus = fixStatus;
+        return this;
+    }
+
+    /**
+     * 修复状态，包含如下：   - fixing :正在修复中   - fix_failed :修复失败   - fix_success :修复成功
+     * @return fixStatus
+     */
+    public String getFixStatus() {
+        return fixStatus;
+    }
+
+    public void setFixStatus(String fixStatus) {
+        this.fixStatus = fixStatus;
+    }
+
+    public CheckRuleRiskInfoResponseInfo withEnableAutoFix(Boolean enableAutoFix) {
+        this.enableAutoFix = enableAutoFix;
+        return this;
+    }
+
+    /**
+     * 是否支持一键修复
+     * @return enableAutoFix
+     */
+    public Boolean getEnableAutoFix() {
+        return enableAutoFix;
+    }
+
+    public void setEnableAutoFix(Boolean enableAutoFix) {
+        this.enableAutoFix = enableAutoFix;
+    }
+
+    public CheckRuleRiskInfoResponseInfo withRuleParams(List<CheckRuleFixParamInfo> ruleParams) {
+        this.ruleParams = ruleParams;
+        return this;
+    }
+
+    public CheckRuleRiskInfoResponseInfo addRuleParamsItem(CheckRuleFixParamInfo ruleParamsItem) {
+        if (this.ruleParams == null) {
+            this.ruleParams = new ArrayList<>();
+        }
+        this.ruleParams.add(ruleParamsItem);
+        return this;
+    }
+
+    public CheckRuleRiskInfoResponseInfo withRuleParams(Consumer<List<CheckRuleFixParamInfo>> ruleParamsSetter) {
+        if (this.ruleParams == null) {
+            this.ruleParams = new ArrayList<>();
+        }
+        ruleParamsSetter.accept(this.ruleParams);
+        return this;
+    }
+
+    /**
+     * 支持传递参数修复的检查项可传递参数的范围
+     * @return ruleParams
+     */
+    public List<CheckRuleFixParamInfo> getRuleParams() {
+        return ruleParams;
+    }
+
+    public void setRuleParams(List<CheckRuleFixParamInfo> ruleParams) {
+        this.ruleParams = ruleParams;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -227,13 +312,26 @@ public class CheckRuleRiskInfoResponseInfo {
             && Objects.equals(this.checkRuleId, checkRuleRiskInfoResponseInfo.checkRuleId)
             && Objects.equals(this.hostNum, checkRuleRiskInfoResponseInfo.hostNum)
             && Objects.equals(this.scanResult, checkRuleRiskInfoResponseInfo.scanResult)
-            && Objects.equals(this.status, checkRuleRiskInfoResponseInfo.status);
+            && Objects.equals(this.status, checkRuleRiskInfoResponseInfo.status)
+            && Objects.equals(this.fixStatus, checkRuleRiskInfoResponseInfo.fixStatus)
+            && Objects.equals(this.enableAutoFix, checkRuleRiskInfoResponseInfo.enableAutoFix)
+            && Objects.equals(this.ruleParams, checkRuleRiskInfoResponseInfo.ruleParams);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(severity, checkName, checkType, standard, checkRuleName, checkRuleId, hostNum, scanResult, status);
+        return Objects.hash(severity,
+            checkName,
+            checkType,
+            standard,
+            checkRuleName,
+            checkRuleId,
+            hostNum,
+            scanResult,
+            status,
+            fixStatus,
+            enableAutoFix,
+            ruleParams);
     }
 
     @Override
@@ -249,6 +347,9 @@ public class CheckRuleRiskInfoResponseInfo {
         sb.append("    hostNum: ").append(toIndentedString(hostNum)).append("\n");
         sb.append("    scanResult: ").append(toIndentedString(scanResult)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    fixStatus: ").append(toIndentedString(fixStatus)).append("\n");
+        sb.append("    enableAutoFix: ").append(toIndentedString(enableAutoFix)).append("\n");
+        sb.append("    ruleParams: ").append(toIndentedString(ruleParams)).append("\n");
         sb.append("}");
         return sb.toString();
     }

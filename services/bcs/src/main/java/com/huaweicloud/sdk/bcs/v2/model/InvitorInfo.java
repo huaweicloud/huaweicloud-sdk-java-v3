@@ -110,7 +110,7 @@ public class InvitorInfo {
     }
 
     /**
-     * 邀请方的BCS服务实例id
+     * 邀请方的服务实例id
      * @return invitorBcsId
      */
     public String getInvitorBcsId() {
@@ -127,7 +127,7 @@ public class InvitorInfo {
     }
 
     /**
-     * 邀请方的BCS服务实例名
+     * 邀请方的服务实例名
      * @return invitorBcsName
      */
     public String getInvitorBcsName() {
@@ -246,7 +246,7 @@ public class InvitorInfo {
     }
 
     /**
-     * 是否允许order老化
+     * 是否允许共识节点老化
      * @return orderFadeEnabled
      */
     public Boolean getOrderFadeEnabled() {
@@ -263,7 +263,7 @@ public class InvitorInfo {
     }
 
     /**
-     * order老化阈值
+     * 共识节点的老化阈值
      * @return orderFadeCache
      */
     public Long getOrderFadeCache() {

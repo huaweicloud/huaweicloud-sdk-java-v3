@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.TaurusModifyProxyWeightReadonlyNode;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyProxyWeightReadonlyNode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -32,7 +32,7 @@ public class TaurusModifyProxyWeightRequest  {
     @JsonProperty(value="readonly_nodes")
     
     
-    private List<TaurusModifyProxyWeightReadonlyNode> readonlyNodes = null;
+    private List<ModifyProxyWeightReadonlyNode> readonlyNodes = null;
     
     public TaurusModifyProxyWeightRequest withMasterWeight(Integer masterWeight) {
         this.masterWeight = masterWeight;
@@ -56,13 +56,13 @@ public class TaurusModifyProxyWeightRequest  {
 
     
 
-    public TaurusModifyProxyWeightRequest withReadonlyNodes(List<TaurusModifyProxyWeightReadonlyNode> readonlyNodes) {
+    public TaurusModifyProxyWeightRequest withReadonlyNodes(List<ModifyProxyWeightReadonlyNode> readonlyNodes) {
         this.readonlyNodes = readonlyNodes;
         return this;
     }
 
     
-    public TaurusModifyProxyWeightRequest addReadonlyNodesItem(TaurusModifyProxyWeightReadonlyNode readonlyNodesItem) {
+    public TaurusModifyProxyWeightRequest addReadonlyNodesItem(ModifyProxyWeightReadonlyNode readonlyNodesItem) {
         if(this.readonlyNodes == null) {
             this.readonlyNodes = new ArrayList<>();
         }
@@ -70,7 +70,7 @@ public class TaurusModifyProxyWeightRequest  {
         return this;
     }
 
-    public TaurusModifyProxyWeightRequest withReadonlyNodes(Consumer<List<TaurusModifyProxyWeightReadonlyNode>> readonlyNodesSetter) {
+    public TaurusModifyProxyWeightRequest withReadonlyNodes(Consumer<List<ModifyProxyWeightReadonlyNode>> readonlyNodesSetter) {
         if(this.readonlyNodes == null) {
             this.readonlyNodes = new ArrayList<>();
         }
@@ -82,11 +82,11 @@ public class TaurusModifyProxyWeightRequest  {
      * 只读节点权重配置信息
      * @return readonlyNodes
      */
-    public List<TaurusModifyProxyWeightReadonlyNode> getReadonlyNodes() {
+    public List<ModifyProxyWeightReadonlyNode> getReadonlyNodes() {
         return readonlyNodes;
     }
 
-    public void setReadonlyNodes(List<TaurusModifyProxyWeightReadonlyNode> readonlyNodes) {
+    public void setReadonlyNodes(List<ModifyProxyWeightReadonlyNode> readonlyNodes) {
         this.readonlyNodes = readonlyNodes;
     }
 

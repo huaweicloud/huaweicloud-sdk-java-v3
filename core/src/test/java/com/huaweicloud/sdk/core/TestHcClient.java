@@ -30,6 +30,7 @@ import com.huaweicloud.sdk.core.Constants.MEDIATYPE;
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
 import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -40,6 +41,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
@@ -81,15 +83,15 @@ public class TestHcClient {
         hcClient = new HcClient(new HttpConfig().withIgnoreSSLVerification(true)
                 .withTimeout(600)
                 .addHttpListener(HttpListener.forResponseListener(
-                    responseListener -> logger.debug("RESPONSE: [{} {}] {} {} {} {} {}ms",
-                        responseListener.exchange().getApiReference().getName(),
-                        responseListener.exchange().getApiReference().getUri(), responseListener.httpMethod(),
-                        responseListener.uri(), responseListener.statusCode(),
-                            responseListener.body().orElse(""),
-                        responseListener.exchange().getApiTimer().getDurationMs())))
+                        responseListener -> logger.debug("RESPONSE: [{} {}] {} {} {} {} {}ms",
+                                responseListener.exchange().getApiReference().getName(),
+                                responseListener.exchange().getApiReference().getUri(), responseListener.httpMethod(),
+                                responseListener.uri(), responseListener.statusCode(),
+                                responseListener.body().orElse(""),
+                                responseListener.exchange().getApiTimer().getDurationMs())))
                 .addHttpListener(HttpListener.forRequestListener(
-                    requestListener -> logger.debug("REQUEST: {} {} {}", requestListener.httpMethod(),
-                        requestListener.uri(), requestListener.body().orElse("")))))
+                        requestListener -> logger.debug("REQUEST: {} {} {}", requestListener.httpMethod(),
+                                requestListener.uri(), requestListener.body().orElse("")))))
                 .withCredential(new BasicCredentials().withAk("test").withSk("test").withProjectId("pp"))
                 .withEndpoint("https://127.0.0.1:8999");
 
@@ -118,6 +120,7 @@ public class TestHcClient {
                         .withHeader("token", "success")
                         .withBody("")
                         .withStatus(200)));
+
         wireMockRule.start();
     }
 
@@ -131,7 +134,7 @@ public class TestHcClient {
         CompletableFuture<TestHttpRequestDef.TestResponse> future = callAsync(new TestHttpRequestDef.TestRequest());
         TestHttpRequestDef.TestResponse response = future.get();
         Assert.assertNotNull(response.getBody());
-        TestHttpRequestDef.InnerResponse[] result = new TestHttpRequestDef.InnerResponse[] {
+        TestHttpRequestDef.InnerResponse[] result = new TestHttpRequestDef.InnerResponse[]{
                 new TestHttpRequestDef.InnerResponse().withIres("1").withJres("2"),
                 new TestHttpRequestDef.InnerResponse().withIres("2").withJres("3")
         };
@@ -144,7 +147,7 @@ public class TestHcClient {
                 new TestHttpRequestDef.TestNoBodyRequest());
         TestHttpRequestDef.TestResponse response = future.get();
         Assert.assertNotNull(response.getBody());
-        TestHttpRequestDef.InnerResponse[] result = new TestHttpRequestDef.InnerResponse[] {
+        TestHttpRequestDef.InnerResponse[] result = new TestHttpRequestDef.InnerResponse[]{
                 new TestHttpRequestDef.InnerResponse().withIres("1").withJres("2"),
                 new TestHttpRequestDef.InnerResponse().withIres("2").withJres("3")
         };
@@ -197,5 +200,4 @@ public class TestHcClient {
             TestHttpRequestDef.TestCustomAuthorizationRequest request) {
         return hcClient.asyncInvokeHttp(request, testCustomizeAuthorizationDef);
     }
-
 }

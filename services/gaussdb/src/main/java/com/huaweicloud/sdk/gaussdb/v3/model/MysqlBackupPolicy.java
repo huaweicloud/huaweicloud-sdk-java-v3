@@ -54,7 +54,7 @@ public class MysqlBackupPolicy  {
 
 
     /**
-     * 备份时间段。自动备份将在该时间段内触发。取值范围：非空，格式必须为hh:mm-HH:MM且有效，当前时间指UTC时间。HH取值必须比hh大1。mm和MM取值必须相同，且取值必须为00。取值示例：21:00-22:00
+     * 备份时间段。自动备份将在该时间段内触发。  取值范围：非空，格式必须为hh:mm-HH:MM且有效，当前时间指UTC时间。HH取值必须比hh大1。mm和MM取值必须相同，且取值必须为00。  取值示例：21:00-22:00
      * @return startTime
      */
     public String getStartTime() {
@@ -98,7 +98,7 @@ public class MysqlBackupPolicy  {
 
 
     /**
-     * 备份周期配置。自动备份将在每星期指定的天进行。取值范围：格式为逗号隔开的数字，数字代表星期。取值示例：1,2,3,4则表示备份周期配置为星期一、星期二、星期三和星期四。
+     * 备份周期配置。自动备份将在每星期指定的天进行。  取值范围：格式为逗号隔开的数字，数字代表星期。  取值示例：1,2,3,4则表示备份周期配置为星期一、星期二、星期三和星期四。
      * @return period
      */
     public String getPeriod() {
@@ -120,7 +120,7 @@ public class MysqlBackupPolicy  {
 
 
     /**
-     * 1级备份保留数量，默认值为0。当一级备份开关开启时，该参数值有效。取值：0或1
+     * 一级备份保留数量，默认值为0。当一级备份开关开启时，该参数值有效。取值：0或1
      * @return retentionNumBackupLevel1
      */
     public Integer getRetentionNumBackupLevel1() {

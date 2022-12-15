@@ -149,6 +149,11 @@ public class EventManagementResponseInfo {
     private Object systemInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extend_info")
+
+    private Object extendInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recommendation")
 
     private String recommendation;
@@ -208,7 +213,7 @@ public class EventManagementResponseInfo {
     }
 
     /**
-     * 事件类型，包含如下:   - 1001 : 恶意软件   - 1010 : Rootkit   - 1011 : 勒索软件   - 1015 : Webshell   - 1017 : 反弹Shell   - 2001 : 一般漏洞利用   - 3002 : 文件提权   - 3003 : 进程提权   - 3004 : 关键文件变更   - 3005 : 文件/目录变更   - 3007 : 进程异常行为   - 3015 : 高危命令执行   - 3018 : 异常Shell   - 3027 : Crontab可疑任务   - 4002 : 暴力破解   - 4004 : 异常登录   - 4006 : 非法系统账号
+     * 事件类型，包含如下:   - 1001 : 恶意软件   - 1010 : Rootkit   - 1011 : 勒索软件   - 1015 : Webshell   - 1017 : 反弹Shell   - 2001 : 一般漏洞利用   - 2047 : Redis漏洞利用   - 2048 : Hadoop漏洞利用   - 2049 : MySQL漏洞利用   - 3002 : 文件提权   - 3003 : 进程提权   - 3004 : 关键文件变更   - 3005 : 文件/目录变更   - 3007 : 进程异常行为   - 3015 : 高危命令执行   - 3018 : 异常Shell   - 3027 : Crontab可疑任务   - 4002 : 暴力破解   - 4004 : 异常登录   - 4006 : 非法系统账号
      * minimum: 1000
      * maximum: 30000
      * @return eventType
@@ -329,7 +334,7 @@ public class EventManagementResponseInfo {
     }
 
     /**
-     * 服务器私网IP
+     * 服务器私有IP
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -675,6 +680,23 @@ public class EventManagementResponseInfo {
         this.systemInfo = systemInfo;
     }
 
+    public EventManagementResponseInfo withExtendInfo(Object extendInfo) {
+        this.extendInfo = extendInfo;
+        return this;
+    }
+
+    /**
+     * 事件扩展信息，json格式
+     * @return extendInfo
+     */
+    public Object getExtendInfo() {
+        return extendInfo;
+    }
+
+    public void setExtendInfo(Object extendInfo) {
+        this.extendInfo = extendInfo;
+    }
+
     public EventManagementResponseInfo withRecommendation(String recommendation) {
         this.recommendation = recommendation;
         return this;
@@ -828,6 +850,7 @@ public class EventManagementResponseInfo {
             && Objects.equals(this.networkInfo, eventManagementResponseInfo.networkInfo)
             && Objects.equals(this.appInfo, eventManagementResponseInfo.appInfo)
             && Objects.equals(this.systemInfo, eventManagementResponseInfo.systemInfo)
+            && Objects.equals(this.extendInfo, eventManagementResponseInfo.extendInfo)
             && Objects.equals(this.recommendation, eventManagementResponseInfo.recommendation)
             && Objects.equals(this.processInfoList, eventManagementResponseInfo.processInfoList)
             && Objects.equals(this.userInfoList, eventManagementResponseInfo.userInfoList)
@@ -863,6 +886,7 @@ public class EventManagementResponseInfo {
             networkInfo,
             appInfo,
             systemInfo,
+            extendInfo,
             recommendation,
             processInfoList,
             userInfoList,
@@ -900,6 +924,7 @@ public class EventManagementResponseInfo {
         sb.append("    networkInfo: ").append(toIndentedString(networkInfo)).append("\n");
         sb.append("    appInfo: ").append(toIndentedString(appInfo)).append("\n");
         sb.append("    systemInfo: ").append(toIndentedString(systemInfo)).append("\n");
+        sb.append("    extendInfo: ").append(toIndentedString(extendInfo)).append("\n");
         sb.append("    recommendation: ").append(toIndentedString(recommendation)).append("\n");
         sb.append("    processInfoList: ").append(toIndentedString(processInfoList)).append("\n");
         sb.append("    userInfoList: ").append(toIndentedString(userInfoList)).append("\n");

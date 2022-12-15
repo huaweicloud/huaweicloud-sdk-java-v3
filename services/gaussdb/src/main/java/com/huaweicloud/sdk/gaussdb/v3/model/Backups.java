@@ -158,7 +158,7 @@ public class Backups  {
     
     private Integer takeUpTime;
     /**
-     * 备份类型，取值： - auto：自动全量备份。 - manual：手动全量备份
+     * 备份类型，取值：  - auto：自动全量备份。 - manual：手动全量备份。
      */
     public static final class TypeEnum {
 
@@ -415,7 +415,7 @@ public class Backups  {
 
 
     /**
-     * 备份开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * 备份开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。
      * @return beginTime
      */
     public String getBeginTime() {
@@ -437,7 +437,7 @@ public class Backups  {
 
 
     /**
-     * 备份结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * 备份结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。
      * @return endTime
      */
     public String getEndTime() {
@@ -503,7 +503,7 @@ public class Backups  {
 
 
     /**
-     * 备份类型，取值： - auto：自动全量备份。 - manual：手动全量备份
+     * 备份类型，取值：  - auto：自动全量备份。 - manual：手动全量备份。
      * @return type
      */
     public TypeEnum getType() {

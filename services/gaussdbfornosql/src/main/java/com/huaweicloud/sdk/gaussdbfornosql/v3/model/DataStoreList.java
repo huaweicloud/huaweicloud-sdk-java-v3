@@ -11,30 +11,30 @@ import java.util.Objects;
 public class DataStoreList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "datastore_type")
+    @JsonProperty(value = "datastore_name")
 
-    private String datastoreType;
+    private String datastoreName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
 
-    public DataStoreList withDatastoreType(String datastoreType) {
-        this.datastoreType = datastoreType;
+    public DataStoreList withDatastoreName(String datastoreName) {
+        this.datastoreName = datastoreName;
         return this;
     }
 
     /**
      * 数据库引擎。
-     * @return datastoreType
+     * @return datastoreName
      */
-    public String getDatastoreType() {
-        return datastoreType;
+    public String getDatastoreName() {
+        return datastoreName;
     }
 
-    public void setDatastoreType(String datastoreType) {
-        this.datastoreType = datastoreType;
+    public void setDatastoreName(String datastoreName) {
+        this.datastoreName = datastoreName;
     }
 
     public DataStoreList withVersion(String version) {
@@ -63,20 +63,20 @@ public class DataStoreList {
             return false;
         }
         DataStoreList dataStoreList = (DataStoreList) o;
-        return Objects.equals(this.datastoreType, dataStoreList.datastoreType)
+        return Objects.equals(this.datastoreName, dataStoreList.datastoreName)
             && Objects.equals(this.version, dataStoreList.version);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(datastoreType, version);
+        return Objects.hash(datastoreName, version);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DataStoreList {\n");
-        sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
+        sb.append("    datastoreName: ").append(toIndentedString(datastoreName)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -412,6 +412,11 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     private List<String> dependList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "depend_version_list")
+
+    private List<String> dependVersionList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "strategy_config")
 
     private StrategyConfig strategyConfig;
@@ -1046,6 +1051,39 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         this.dependList = dependList;
     }
 
+    public ShowFunctionConfigResponse withDependVersionList(List<String> dependVersionList) {
+        this.dependVersionList = dependVersionList;
+        return this;
+    }
+
+    public ShowFunctionConfigResponse addDependVersionListItem(String dependVersionListItem) {
+        if (this.dependVersionList == null) {
+            this.dependVersionList = new ArrayList<>();
+        }
+        this.dependVersionList.add(dependVersionListItem);
+        return this;
+    }
+
+    public ShowFunctionConfigResponse withDependVersionList(Consumer<List<String>> dependVersionListSetter) {
+        if (this.dependVersionList == null) {
+            this.dependVersionList = new ArrayList<>();
+        }
+        dependVersionListSetter.accept(this.dependVersionList);
+        return this;
+    }
+
+    /**
+     * 依赖版本id列表
+     * @return dependVersionList
+     */
+    public List<String> getDependVersionList() {
+        return dependVersionList;
+    }
+
+    public void setDependVersionList(List<String> dependVersionList) {
+        this.dependVersionList = dependVersionList;
+    }
+
     public ShowFunctionConfigResponse withStrategyConfig(StrategyConfig strategyConfig) {
         this.strategyConfig = strategyConfig;
         return this;
@@ -1337,6 +1375,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.funcVpc, showFunctionConfigResponse.funcVpc)
             && Objects.equals(this.mountConfig, showFunctionConfigResponse.mountConfig)
             && Objects.equals(this.dependList, showFunctionConfigResponse.dependList)
+            && Objects.equals(this.dependVersionList, showFunctionConfigResponse.dependVersionList)
             && Objects.equals(this.strategyConfig, showFunctionConfigResponse.strategyConfig)
             && Objects.equals(this.dependencies, showFunctionConfigResponse.dependencies)
             && Objects.equals(this.initializerHandler, showFunctionConfigResponse.initializerHandler)
@@ -1381,6 +1420,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             funcVpc,
             mountConfig,
             dependList,
+            dependVersionList,
             strategyConfig,
             dependencies,
             initializerHandler,
@@ -1427,6 +1467,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
         sb.append("    mountConfig: ").append(toIndentedString(mountConfig)).append("\n");
         sb.append("    dependList: ").append(toIndentedString(dependList)).append("\n");
+        sb.append("    dependVersionList: ").append(toIndentedString(dependVersionList)).append("\n");
         sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
         sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");

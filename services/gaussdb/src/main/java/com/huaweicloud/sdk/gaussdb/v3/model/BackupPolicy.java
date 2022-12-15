@@ -122,7 +122,7 @@ public class BackupPolicy  {
 
 
     /**
-     * 1级备份保留数量。当一级备份开关开启时，返回此参数。
+     * 一级备份保留数量。当一级备份开关开启时，返回此参数。
      * @return retentionNumBackupLevel1
      */
     public Integer getRetentionNumBackupLevel1() {

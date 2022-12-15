@@ -62,7 +62,7 @@ public class BatchTagActionDelRequestBody {
     }
 
     /**
-     * 标签列表。单个实例总标签数上限10个。
+     * 标签列表。单个实例总标签数上限20个。
      * @return tags
      */
     public List<TagDelWithKeyValue> getTags() {

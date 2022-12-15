@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 修改备份策略信息
+ * 设置自动备份策略信息
  */
 public class MysqlUpdateBackupPolicyRequest  {
 

@@ -40,7 +40,7 @@ public class DedicatedStorageInfo  {
 
 
     /**
-     * 专属资源池存储资源规格码
+     * 专属资源池存储资源规格码。
      * @return specCode
      */
     public String getSpecCode() {
@@ -62,7 +62,7 @@ public class DedicatedStorageInfo  {
 
 
     /**
-     * 专属资源池存储主机数量
+     * 专属资源池存储主机数量。
      * @return hostNum
      */
     public Integer getHostNum() {

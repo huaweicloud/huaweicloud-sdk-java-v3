@@ -330,7 +330,7 @@ public class MysqlSlowLogList  {
 
 
     /**
-     * 发生时间,UTC时间
+     * 发生时间，UTC时间
      * @return startTime
      */
     public String getStartTime() {

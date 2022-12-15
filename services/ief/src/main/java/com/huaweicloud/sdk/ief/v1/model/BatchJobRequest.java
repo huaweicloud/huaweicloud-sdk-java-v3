@@ -44,7 +44,7 @@ public class BatchJobRequest {
     }
 
     /**
-     * 批量作业名称
+     * 批量作业名称，允许输入小写字母，数字，中划线，不能以中划线开头或结尾，最大长度为26位
      * @return jobName
      */
     public String getJobName() {

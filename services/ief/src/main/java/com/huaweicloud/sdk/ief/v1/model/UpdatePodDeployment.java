@@ -27,7 +27,7 @@ public class UpdatePodDeployment {
     }
 
     /**
-     * 应用部署副本数，只能为1
+     * 应用部署副本数
      * @return replicas
      */
     public Integer getReplicas() {

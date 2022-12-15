@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -207,6 +209,16 @@ public class CreateFunctionRequestBody {
     @JsonProperty(value = "handler")
 
     private String handler;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "depend_version_list")
+
+    private List<String> dependVersionList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "func_vpc")
+
+    private FuncVpc funcVpc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memory_size")
@@ -524,6 +536,65 @@ public class CreateFunctionRequestBody {
         this.handler = handler;
     }
 
+    public CreateFunctionRequestBody withDependVersionList(List<String> dependVersionList) {
+        this.dependVersionList = dependVersionList;
+        return this;
+    }
+
+    public CreateFunctionRequestBody addDependVersionListItem(String dependVersionListItem) {
+        if (this.dependVersionList == null) {
+            this.dependVersionList = new ArrayList<>();
+        }
+        this.dependVersionList.add(dependVersionListItem);
+        return this;
+    }
+
+    public CreateFunctionRequestBody withDependVersionList(Consumer<List<String>> dependVersionListSetter) {
+        if (this.dependVersionList == null) {
+            this.dependVersionList = new ArrayList<>();
+        }
+        dependVersionListSetter.accept(this.dependVersionList);
+        return this;
+    }
+
+    /**
+     * 依赖版本id列表
+     * @return dependVersionList
+     */
+    public List<String> getDependVersionList() {
+        return dependVersionList;
+    }
+
+    public void setDependVersionList(List<String> dependVersionList) {
+        this.dependVersionList = dependVersionList;
+    }
+
+    public CreateFunctionRequestBody withFuncVpc(FuncVpc funcVpc) {
+        this.funcVpc = funcVpc;
+        return this;
+    }
+
+    public CreateFunctionRequestBody withFuncVpc(Consumer<FuncVpc> funcVpcSetter) {
+        if (this.funcVpc == null) {
+            this.funcVpc = new FuncVpc();
+            funcVpcSetter.accept(this.funcVpc);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get funcVpc
+     * @return funcVpc
+     */
+    public FuncVpc getFuncVpc() {
+        return funcVpc;
+    }
+
+    public void setFuncVpc(FuncVpc funcVpc) {
+        this.funcVpc = funcVpc;
+    }
+
     public CreateFunctionRequestBody withMemorySize(Integer memorySize) {
         this.memorySize = memorySize;
         return this;
@@ -768,6 +839,8 @@ public class CreateFunctionRequestBody {
             && Objects.equals(this.runtime, createFunctionRequestBody.runtime)
             && Objects.equals(this.timeout, createFunctionRequestBody.timeout)
             && Objects.equals(this.handler, createFunctionRequestBody.handler)
+            && Objects.equals(this.dependVersionList, createFunctionRequestBody.dependVersionList)
+            && Objects.equals(this.funcVpc, createFunctionRequestBody.funcVpc)
             && Objects.equals(this.memorySize, createFunctionRequestBody.memorySize)
             && Objects.equals(this.codeType, createFunctionRequestBody.codeType)
             && Objects.equals(this.codeUrl, createFunctionRequestBody.codeUrl)
@@ -790,6 +863,8 @@ public class CreateFunctionRequestBody {
             runtime,
             timeout,
             handler,
+            dependVersionList,
+            funcVpc,
             memorySize,
             codeType,
             codeUrl,
@@ -814,6 +889,8 @@ public class CreateFunctionRequestBody {
         sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    handler: ").append(toIndentedString(handler)).append("\n");
+        sb.append("    dependVersionList: ").append(toIndentedString(dependVersionList)).append("\n");
+        sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
         sb.append("    memorySize: ").append(toIndentedString(memorySize)).append("\n");
         sb.append("    codeType: ").append(toIndentedString(codeType)).append("\n");
         sb.append("    codeUrl: ").append(toIndentedString(codeUrl)).append("\n");

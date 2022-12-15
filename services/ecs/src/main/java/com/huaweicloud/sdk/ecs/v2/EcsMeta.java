@@ -1075,6 +1075,13 @@ public class EcsMeta {
             f -> f.withMarshaller(ListServersDetailsRequest::getIpEq, (req, v) -> {
                 req.setIpEq(v);
             }));
+        builder.<String>withRequestField("server_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServersDetailsRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
 
         // response
 

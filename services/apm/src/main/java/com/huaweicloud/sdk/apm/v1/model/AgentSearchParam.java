@@ -119,7 +119,7 @@ public class AgentSearchParam {
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "orderByStatus")
+    @JsonProperty(value = "order_by_status")
 
     private String orderByStatus;
 

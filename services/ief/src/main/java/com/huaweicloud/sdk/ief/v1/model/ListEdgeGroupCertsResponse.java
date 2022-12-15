@@ -15,63 +15,41 @@ import java.util.function.Consumer;
 public class ListEdgeGroupCertsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "count")
+    @JsonProperty(value = "body")
 
-    private Integer count;
+    private List<EdgeGroupCertListResp> body = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "edge_groups")
+    public ListEdgeGroupCertsResponse withBody(List<EdgeGroupCertListResp> body) {
+        this.body = body;
+        return this;
+    }
 
-    private List<EdgeGroupResp> edgeGroups = null;
+    public ListEdgeGroupCertsResponse addBodyItem(EdgeGroupCertListResp bodyItem) {
+        if (this.body == null) {
+            this.body = new ArrayList<>();
+        }
+        this.body.add(bodyItem);
+        return this;
+    }
 
-    public ListEdgeGroupCertsResponse withCount(Integer count) {
-        this.count = count;
+    public ListEdgeGroupCertsResponse withBody(Consumer<List<EdgeGroupCertListResp>> bodySetter) {
+        if (this.body == null) {
+            this.body = new ArrayList<>();
+        }
+        bodySetter.accept(this.body);
         return this;
     }
 
     /**
-     * 边缘节点组数目
-     * @return count
+     * Get body
+     * @return body
      */
-    public Integer getCount() {
-        return count;
+    public List<EdgeGroupCertListResp> getBody() {
+        return body;
     }
 
-    public void setCount(Integer count) {
-        this.count = count;
-    }
-
-    public ListEdgeGroupCertsResponse withEdgeGroups(List<EdgeGroupResp> edgeGroups) {
-        this.edgeGroups = edgeGroups;
-        return this;
-    }
-
-    public ListEdgeGroupCertsResponse addEdgeGroupsItem(EdgeGroupResp edgeGroupsItem) {
-        if (this.edgeGroups == null) {
-            this.edgeGroups = new ArrayList<>();
-        }
-        this.edgeGroups.add(edgeGroupsItem);
-        return this;
-    }
-
-    public ListEdgeGroupCertsResponse withEdgeGroups(Consumer<List<EdgeGroupResp>> edgeGroupsSetter) {
-        if (this.edgeGroups == null) {
-            this.edgeGroups = new ArrayList<>();
-        }
-        edgeGroupsSetter.accept(this.edgeGroups);
-        return this;
-    }
-
-    /**
-     * 边缘节点组详情
-     * @return edgeGroups
-     */
-    public List<EdgeGroupResp> getEdgeGroups() {
-        return edgeGroups;
-    }
-
-    public void setEdgeGroups(List<EdgeGroupResp> edgeGroups) {
-        this.edgeGroups = edgeGroups;
+    public void setBody(List<EdgeGroupCertListResp> body) {
+        this.body = body;
     }
 
     @Override
@@ -83,21 +61,19 @@ public class ListEdgeGroupCertsResponse extends SdkResponse {
             return false;
         }
         ListEdgeGroupCertsResponse listEdgeGroupCertsResponse = (ListEdgeGroupCertsResponse) o;
-        return Objects.equals(this.count, listEdgeGroupCertsResponse.count)
-            && Objects.equals(this.edgeGroups, listEdgeGroupCertsResponse.edgeGroups);
+        return Objects.equals(this.body, listEdgeGroupCertsResponse.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, edgeGroups);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListEdgeGroupCertsResponse {\n");
-        sb.append("    count: ").append(toIndentedString(count)).append("\n");
-        sb.append("    edgeGroups: ").append(toIndentedString(edgeGroups)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

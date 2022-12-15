@@ -88,7 +88,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
 
 
     /**
-     * 专属资源池id
+     * 专属资源池id。
      * @return id
      */
     public String getId() {
@@ -110,7 +110,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
 
 
     /**
-     * 专属资源池名称
+     * 专属资源池名称。
      * @return name
      */
     public String getName() {
@@ -132,7 +132,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
 
 
     /**
-     * 引擎名称
+     * 引擎名称。
      * @return engineName
      */
     public String getEngineName() {
@@ -168,7 +168,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
     }
 
     /**
-     * 可用区
+     * 可用区。
      * @return availabilityZoneIds
      */
     public List<String> getAvailabilityZoneIds() {
@@ -190,7 +190,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
 
 
     /**
-     * 资源规格类型
+     * 资源规格类型。
      * @return architecture
      */
     public String getArchitecture() {
@@ -212,7 +212,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
 
 
     /**
-     * 专属资源池状态
+     * 专属资源池状态。
      * @return status
      */
     public String getStatus() {

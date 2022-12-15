@@ -21,7 +21,7 @@ public class InstanceRestartRequsetBody {
     }
 
     /**
-     * 在线调试时必填。
+     * 空值
      * @return restart
      */
     public Object getRestart() {

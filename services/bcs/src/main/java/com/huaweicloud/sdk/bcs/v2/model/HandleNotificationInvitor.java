@@ -87,7 +87,7 @@ public class HandleNotificationInvitor {
     }
 
     /**
-     * 邀请方租户id。控制台->邀请方账号->我的凭证->API凭证->账号ID
+     * 邀请方租户id。控制台->邀请方帐号->我的凭证->API凭证->帐号ID
      * @return invitorUserId
      */
     public String getInvitorUserId() {

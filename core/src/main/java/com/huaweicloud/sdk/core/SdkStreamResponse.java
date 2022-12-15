@@ -36,7 +36,11 @@ public class SdkStreamResponse extends SdkResponse {
     @JsonIgnore
     private InputStream body;
 
-    void setBody(InputStream inputStream) {
+    /**
+     * 解析http响应body，用于content-type是application/bson或application/octet-stream的响应
+     * @param inputStream http response body
+     */
+    public void parseBody(InputStream inputStream) {
         this.body = inputStream;
     }
 
@@ -47,5 +51,4 @@ public class SdkStreamResponse extends SdkResponse {
             throw new SdkException(e);
         }
     }
-
 }

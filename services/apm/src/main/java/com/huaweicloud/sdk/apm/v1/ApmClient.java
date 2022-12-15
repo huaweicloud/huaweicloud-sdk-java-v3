@@ -334,9 +334,9 @@ public class ApmClient {
     }
 
     /**
-     * 搜索业务下所有探针
+     * 查询应用下所有探针
      *
-     * 该接口用于搜索业务下所有探针情况。
+     * 该接口用于搜索应用下所有探针情况。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -348,9 +348,9 @@ public class ApmClient {
     }
 
     /**
-     * 搜索业务下所有探针
+     * 查询应用下所有探针
      *
-     * 该接口用于搜索业务下所有探针情况。
+     * 该接口用于搜索应用下所有探针情况。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

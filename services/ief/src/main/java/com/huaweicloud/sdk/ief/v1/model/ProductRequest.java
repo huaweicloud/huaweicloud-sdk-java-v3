@@ -41,7 +41,7 @@ public class ProductRequest {
     }
 
     /**
-     * 产品名称
+     * 产品名称，允许输入小写字母，数字，中划线，不能以中划线开头或结尾，最大长度为26位
      * @return name
      */
     public String getName() {

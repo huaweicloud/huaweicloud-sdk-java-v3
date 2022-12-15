@@ -79,6 +79,36 @@ public class EipClient {
     }
 
     /**
+     * 按需转包API
+     *
+     * 租户按需转包接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeBandwidthToPeriodRequest 请求对象
+     * @return ChangeBandwidthToPeriodResponse
+     */
+    public ChangeBandwidthToPeriodResponse changeBandwidthToPeriod(ChangeBandwidthToPeriodRequest request) {
+        return hcClient.syncInvokeHttp(request, EipMeta.changeBandwidthToPeriod);
+    }
+
+    /**
+     * 按需转包API
+     *
+     * 租户按需转包接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeBandwidthToPeriodRequest 请求对象
+     * @return SyncInvoker<ChangeBandwidthToPeriodRequest, ChangeBandwidthToPeriodResponse>
+     */
+    public SyncInvoker<ChangeBandwidthToPeriodRequest, ChangeBandwidthToPeriodResponse> changeBandwidthToPeriodInvoker(
+        ChangeBandwidthToPeriodRequest request) {
+        return new SyncInvoker<ChangeBandwidthToPeriodRequest, ChangeBandwidthToPeriodResponse>(request,
+            EipMeta.changeBandwidthToPeriod, hcClient);
+    }
+
+    /**
      * 创建共享带宽
      *
      * 创建共享带宽。
@@ -496,6 +526,36 @@ public class EipClient {
     }
 
     /**
+     * 按需转包接口
+     *
+     * 租户按需转包接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangePublicipToPeriodRequest 请求对象
+     * @return ChangePublicipToPeriodResponse
+     */
+    public ChangePublicipToPeriodResponse changePublicipToPeriod(ChangePublicipToPeriodRequest request) {
+        return hcClient.syncInvokeHttp(request, EipMeta.changePublicipToPeriod);
+    }
+
+    /**
+     * 按需转包接口
+     *
+     * 租户按需转包接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangePublicipToPeriodRequest 请求对象
+     * @return SyncInvoker<ChangePublicipToPeriodRequest, ChangePublicipToPeriodResponse>
+     */
+    public SyncInvoker<ChangePublicipToPeriodRequest, ChangePublicipToPeriodResponse> changePublicipToPeriodInvoker(
+        ChangePublicipToPeriodRequest request) {
+        return new SyncInvoker<ChangePublicipToPeriodRequest, ChangePublicipToPeriodResponse>(request,
+            EipMeta.changePublicipToPeriod, hcClient);
+    }
+
+    /**
      * 查询PublicIp数量
      *
      * 查询PublicIp数量
@@ -909,6 +969,36 @@ public class EipClient {
         UpdatePublicipRequest request) {
         return new SyncInvoker<UpdatePublicipRequest, UpdatePublicipResponse>(request, EipMeta.updatePublicip,
             hcClient);
+    }
+
+    /**
+     * 查询Job状态接口
+     *
+     * 查询Job状态接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResourcesJobDetailRequest 请求对象
+     * @return ShowResourcesJobDetailResponse
+     */
+    public ShowResourcesJobDetailResponse showResourcesJobDetail(ShowResourcesJobDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, EipMeta.showResourcesJobDetail);
+    }
+
+    /**
+     * 查询Job状态接口
+     *
+     * 查询Job状态接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResourcesJobDetailRequest 请求对象
+     * @return SyncInvoker<ShowResourcesJobDetailRequest, ShowResourcesJobDetailResponse>
+     */
+    public SyncInvoker<ShowResourcesJobDetailRequest, ShowResourcesJobDetailResponse> showResourcesJobDetailInvoker(
+        ShowResourcesJobDetailRequest request) {
+        return new SyncInvoker<ShowResourcesJobDetailRequest, ShowResourcesJobDetailResponse>(request,
+            EipMeta.showResourcesJobDetail, hcClient);
     }
 
     /**

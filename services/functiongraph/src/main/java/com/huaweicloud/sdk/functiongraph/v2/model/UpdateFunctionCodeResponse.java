@@ -337,6 +337,11 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
     private List<String> dependList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "depend_version_list")
+
+    private List<String> dependVersionList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "strategy_config")
 
     private StrategyConfig strategyConfig;
@@ -575,6 +580,39 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
         this.dependList = dependList;
     }
 
+    public UpdateFunctionCodeResponse withDependVersionList(List<String> dependVersionList) {
+        this.dependVersionList = dependVersionList;
+        return this;
+    }
+
+    public UpdateFunctionCodeResponse addDependVersionListItem(String dependVersionListItem) {
+        if (this.dependVersionList == null) {
+            this.dependVersionList = new ArrayList<>();
+        }
+        this.dependVersionList.add(dependVersionListItem);
+        return this;
+    }
+
+    public UpdateFunctionCodeResponse withDependVersionList(Consumer<List<String>> dependVersionListSetter) {
+        if (this.dependVersionList == null) {
+            this.dependVersionList = new ArrayList<>();
+        }
+        dependVersionListSetter.accept(this.dependVersionList);
+        return this;
+    }
+
+    /**
+     * 依赖版本id列表
+     * @return dependVersionList
+     */
+    public List<String> getDependVersionList() {
+        return dependVersionList;
+    }
+
+    public void setDependVersionList(List<String> dependVersionList) {
+        this.dependVersionList = dependVersionList;
+    }
+
     public UpdateFunctionCodeResponse withStrategyConfig(StrategyConfig strategyConfig) {
         this.strategyConfig = strategyConfig;
         return this;
@@ -655,6 +693,7 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
             && Objects.equals(this.lastModified, updateFunctionCodeResponse.lastModified)
             && Objects.equals(this.funcCode, updateFunctionCodeResponse.funcCode)
             && Objects.equals(this.dependList, updateFunctionCodeResponse.dependList)
+            && Objects.equals(this.dependVersionList, updateFunctionCodeResponse.dependVersionList)
             && Objects.equals(this.strategyConfig, updateFunctionCodeResponse.strategyConfig)
             && Objects.equals(this.dependencies, updateFunctionCodeResponse.dependencies);
     }
@@ -673,6 +712,7 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
             lastModified,
             funcCode,
             dependList,
+            dependVersionList,
             strategyConfig,
             dependencies);
     }
@@ -693,6 +733,7 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
         sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
         sb.append("    funcCode: ").append(toIndentedString(funcCode)).append("\n");
         sb.append("    dependList: ").append(toIndentedString(dependList)).append("\n");
+        sb.append("    dependVersionList: ").append(toIndentedString(dependVersionList)).append("\n");
         sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
         sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
         sb.append("}");

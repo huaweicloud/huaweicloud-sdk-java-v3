@@ -253,7 +253,7 @@ public class MysqlFlavorsInfo  {
         return this;
     }
     /**
-     * 规格所在az的状态，包含以下状态： - normal，在售 - unsupported，暂不支持该规格 - sellout，售罄。
+     * 规格所在az的状态，包含以下状态：  - normal，在售 - unsupported，暂不支持该规格 - sellout，售罄。
      * @return azStatus
      */
     public Map<String, String> getAzStatus() {

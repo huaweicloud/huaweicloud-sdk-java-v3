@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 开启/关闭审计日志参数体
+ * 开启/关闭全量SQL参数体
  */
 public class OperateAuditLogRequestV3Body  {
 
@@ -33,7 +33,7 @@ public class OperateAuditLogRequestV3Body  {
 
 
     /**
-     * 审计日志开关状态。取值：ON|OFF
+     * 全量SQL开关状态。 取值： - ON，表示开启 - OFF，表示关闭
      * @return switchStatus
      */
     public String getSwitchStatus() {

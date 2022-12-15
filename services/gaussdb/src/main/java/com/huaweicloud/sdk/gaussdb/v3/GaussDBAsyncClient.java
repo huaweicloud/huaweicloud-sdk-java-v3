@@ -22,7 +22,7 @@ public class GaussDBAsyncClient {
     /**
      * 授予数据库用户数据库权限
      *
-     * 授予云数据库 GaussDB(for MySQL)实例数据库用户数据库权限
+     * 授予云数据库 GaussDB(for MySQL)实例数据库用户数据库权限。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -36,7 +36,7 @@ public class GaussDBAsyncClient {
     /**
      * 授予数据库用户数据库权限
      *
-     * 授予云数据库 GaussDB(for MySQL)实例数据库用户数据库权限
+     * 授予云数据库 GaussDB(for MySQL)实例数据库用户数据库权限。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -190,7 +190,7 @@ public class GaussDBAsyncClient {
     /**
      * 创建手动备份
      *
-     * 创建手动备份
+     * 创建手动备份。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -204,7 +204,7 @@ public class GaussDBAsyncClient {
     /**
      * 创建手动备份
      *
-     * 创建手动备份
+     * 创建手动备份。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -274,7 +274,7 @@ public class GaussDBAsyncClient {
     /**
      * 创建数据库用户
      *
-     * 创建云数据库 GaussDB(for MySQL)实例数据库用户。
+     * 创建云数据库GaussDB(for MySQL)实例数据库用户。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -288,7 +288,7 @@ public class GaussDBAsyncClient {
     /**
      * 创建数据库用户
      *
-     * 创建云数据库 GaussDB(for MySQL)实例数据库用户。
+     * 创建云数据库GaussDB(for MySQL)实例数据库用户。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -302,7 +302,7 @@ public class GaussDBAsyncClient {
     /**
      * 创建数据库实例
      *
-     * 创建云数据库 GaussDB(for MySQL)实例。
+     * 创建云数据库GaussDB(for MySQL)实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -316,7 +316,7 @@ public class GaussDBAsyncClient {
     /**
      * 创建数据库实例
      *
-     * 创建云数据库 GaussDB(for MySQL)实例。
+     * 创建云数据库GaussDB(for MySQL)实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -386,7 +386,7 @@ public class GaussDBAsyncClient {
     /**
      * 删除数据库用户的数据库权限
      *
-     * 删除云数据库 GaussDB(for MySQL)实例数据库用户的数据库权限
+     * 删除云数据库 GaussDB(for MySQL)实例数据库用户的数据库权限。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -400,7 +400,7 @@ public class GaussDBAsyncClient {
     /**
      * 删除数据库用户的数据库权限
      *
-     * 删除云数据库 GaussDB(for MySQL)实例数据库用户的数据库权限
+     * 删除云数据库 GaussDB(for MySQL)实例数据库用户的数据库权限。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -638,7 +638,7 @@ public class GaussDBAsyncClient {
     /**
      * 包周期存储扩容
      *
-     * 包周期存储扩容
+     * 包周期存储扩容。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -652,7 +652,7 @@ public class GaussDBAsyncClient {
     /**
      * 包周期存储扩容
      *
-     * 包周期存储扩容
+     * 包周期存储扩容。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -892,7 +892,7 @@ public class GaussDBAsyncClient {
     /**
      * 批量查询实例详情
      *
-     * 批量查询实例详情
+     * 批量查询实例详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -906,7 +906,7 @@ public class GaussDBAsyncClient {
     /**
      * 批量查询实例详情
      *
-     * 批量查询实例详情
+     * 批量查询实例详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -948,7 +948,7 @@ public class GaussDBAsyncClient {
     /**
      * 查询数据库慢日志
      *
-     * 查询数据库慢日志
+     * 查询数据库慢日志。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -962,7 +962,7 @@ public class GaussDBAsyncClient {
     /**
      * 查询数据库慢日志
      *
-     * 查询数据库慢日志
+     * 查询数据库慢日志。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1116,7 +1116,7 @@ public class GaussDBAsyncClient {
     /**
      * 重置数据库密码
      *
-     * 重置数据库密码
+     * 重置数据库密码。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1130,7 +1130,7 @@ public class GaussDBAsyncClient {
     /**
      * 重置数据库密码
      *
-     * 重置数据库密码
+     * 重置数据库密码。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1200,7 +1200,7 @@ public class GaussDBAsyncClient {
     /**
      * 设置读写分离权重
      *
-     * 设置读写分离权重
+     * 设置读写分离权重。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1214,7 +1214,7 @@ public class GaussDBAsyncClient {
     /**
      * 设置读写分离权重
      *
-     * 设置读写分离权重
+     * 设置读写分离权重。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1254,9 +1254,9 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 查询审计日志开关状态
+     * 查询全量SQL开关状态
      *
-     * 查询审计日志开关状态
+     * 查询全量SQL开关状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1268,9 +1268,9 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 查询审计日志开关状态
+     * 查询全量SQL开关状态
      *
-     * 查询审计日志开关状态
+     * 查询全量SQL开关状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1312,7 +1312,7 @@ public class GaussDBAsyncClient {
     /**
      * 查询备份列表
      *
-     * 查询备份列表
+     * 查询备份列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1326,7 +1326,7 @@ public class GaussDBAsyncClient {
     /**
      * 查询备份列表
      *
-     * 查询备份列表
+     * 查询备份列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1452,7 +1452,7 @@ public class GaussDBAsyncClient {
     /**
      * 查询实例详情信息
      *
-     * 查询实例详情信息
+     * 查询实例详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1466,7 +1466,7 @@ public class GaussDBAsyncClient {
     /**
      * 查询实例详情信息
      *
-     * 查询实例详情信息
+     * 查询实例详情信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1702,9 +1702,9 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 开启或者关闭审计日志
+     * 开启或者关闭全量SQL
      *
-     * 开启或者关闭审计日志
+     * 开启或者关闭全量SQL。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1716,9 +1716,9 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 开启或者关闭审计日志
+     * 开启或者关闭全量SQL
      *
-     * 开启或者关闭审计日志
+     * 开启或者关闭全量SQL。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1730,9 +1730,9 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 修改备份策略
+     * 设置备份策略
      *
-     * 修改备份策略
+     * 设置自动备份策略。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1744,9 +1744,9 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 修改备份策略
+     * 设置备份策略
      *
-     * 修改备份策略
+     * 设置自动备份策略。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1872,7 +1872,7 @@ public class GaussDBAsyncClient {
     /**
      * 修改实例名称
      *
-     * 修改实例名称
+     * 修改实例名称。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1886,7 +1886,7 @@ public class GaussDBAsyncClient {
     /**
      * 修改实例名称
      *
-     * 修改实例名称
+     * 修改实例名称。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2066,9 +2066,9 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 开启/关闭proxy事务拆分
+     * 设置proxy事务拆分
      *
-     * 开启/关闭proxy事务拆分
+     * 设置proxy事务拆分。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2080,9 +2080,9 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 开启/关闭proxy事务拆分
+     * 设置proxy事务拆分
      *
-     * 开启/关闭proxy事务拆分
+     * 设置proxy事务拆分。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2124,7 +2124,7 @@ public class GaussDBAsyncClient {
     /**
      * 删除SQL限流规则
      *
-     * 删除SQL限流规则
+     * 删除SQL限流规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2138,7 +2138,7 @@ public class GaussDBAsyncClient {
     /**
      * 删除SQL限流规则
      *
-     * 删除SQL限流规则
+     * 删除SQL限流规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2152,7 +2152,7 @@ public class GaussDBAsyncClient {
     /**
      * 设置SQL限流规则
      *
-     * 设置SQL限流规则
+     * 设置SQL限流规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2166,7 +2166,7 @@ public class GaussDBAsyncClient {
     /**
      * 设置SQL限流规则
      *
-     * 设置SQL限流规则
+     * 设置SQL限流规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2180,7 +2180,7 @@ public class GaussDBAsyncClient {
     /**
      * 查询SQL限流开关状态
      *
-     * 查询SQL限流开关状态
+     * 查询SQL限流开关状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2194,7 +2194,7 @@ public class GaussDBAsyncClient {
     /**
      * 查询SQL限流开关状态
      *
-     * 查询SQL限流开关状态
+     * 查询SQL限流开关状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2208,7 +2208,7 @@ public class GaussDBAsyncClient {
     /**
      * 查询SQL限流规则
      *
-     * 查询SQL限流规则
+     * 查询SQL限流规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2222,7 +2222,7 @@ public class GaussDBAsyncClient {
     /**
      * 查询SQL限流规则
      *
-     * 查询SQL限流规则
+     * 查询SQL限流规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2236,7 +2236,7 @@ public class GaussDBAsyncClient {
     /**
      * 开启或者关闭SQL限流
      *
-     * 开启或者关闭SQL限流
+     * 开启或者关闭SQL限流。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2250,7 +2250,7 @@ public class GaussDBAsyncClient {
     /**
      * 开启或者关闭SQL限流
      *
-     * 开启或者关闭SQL限流
+     * 开启或者关闭SQL限流。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

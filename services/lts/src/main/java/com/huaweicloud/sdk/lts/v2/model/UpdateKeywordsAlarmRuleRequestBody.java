@@ -246,6 +246,26 @@ public class UpdateKeywordsAlarmRuleRequestBody {
 
     private NotificationSaveRule notificationSaveRule;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trigger_condition_count")
+
+    private Integer triggerConditionCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trigger_condition_frequency")
+
+    private Integer triggerConditionFrequency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "whether_recovery_policy")
+
+    private Boolean whetherRecoveryPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recovery_policy")
+
+    private Integer recoveryPolicy;
+
     public UpdateKeywordsAlarmRuleRequestBody withKeywordsAlarmRuleId(String keywordsAlarmRuleId) {
         this.keywordsAlarmRuleId = keywordsAlarmRuleId;
         return this;
@@ -455,6 +475,74 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         this.notificationSaveRule = notificationSaveRule;
     }
 
+    public UpdateKeywordsAlarmRuleRequestBody withTriggerConditionCount(Integer triggerConditionCount) {
+        this.triggerConditionCount = triggerConditionCount;
+        return this;
+    }
+
+    /**
+     * 触发条件：触发次数;默认为1
+     * @return triggerConditionCount
+     */
+    public Integer getTriggerConditionCount() {
+        return triggerConditionCount;
+    }
+
+    public void setTriggerConditionCount(Integer triggerConditionCount) {
+        this.triggerConditionCount = triggerConditionCount;
+    }
+
+    public UpdateKeywordsAlarmRuleRequestBody withTriggerConditionFrequency(Integer triggerConditionFrequency) {
+        this.triggerConditionFrequency = triggerConditionFrequency;
+        return this;
+    }
+
+    /**
+     * 触发条件：触发周期;默认为1
+     * @return triggerConditionFrequency
+     */
+    public Integer getTriggerConditionFrequency() {
+        return triggerConditionFrequency;
+    }
+
+    public void setTriggerConditionFrequency(Integer triggerConditionFrequency) {
+        this.triggerConditionFrequency = triggerConditionFrequency;
+    }
+
+    public UpdateKeywordsAlarmRuleRequestBody withWhetherRecoveryPolicy(Boolean whetherRecoveryPolicy) {
+        this.whetherRecoveryPolicy = whetherRecoveryPolicy;
+        return this;
+    }
+
+    /**
+     * 是否打开恢复通知;默认false
+     * @return whetherRecoveryPolicy
+     */
+    public Boolean getWhetherRecoveryPolicy() {
+        return whetherRecoveryPolicy;
+    }
+
+    public void setWhetherRecoveryPolicy(Boolean whetherRecoveryPolicy) {
+        this.whetherRecoveryPolicy = whetherRecoveryPolicy;
+    }
+
+    public UpdateKeywordsAlarmRuleRequestBody withRecoveryPolicy(Integer recoveryPolicy) {
+        this.recoveryPolicy = recoveryPolicy;
+        return this;
+    }
+
+    /**
+     * 恢复策略周期;默认为3
+     * @return recoveryPolicy
+     */
+    public Integer getRecoveryPolicy() {
+        return recoveryPolicy;
+    }
+
+    public void setRecoveryPolicy(Integer recoveryPolicy) {
+        this.recoveryPolicy = recoveryPolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -474,7 +562,12 @@ public class UpdateKeywordsAlarmRuleRequestBody {
             && Objects.equals(this.keywordsAlarmSend, updateKeywordsAlarmRuleRequestBody.keywordsAlarmSend)
             && Objects.equals(this.keywordsAlarmSendCode, updateKeywordsAlarmRuleRequestBody.keywordsAlarmSendCode)
             && Objects.equals(this.domainId, updateKeywordsAlarmRuleRequestBody.domainId)
-            && Objects.equals(this.notificationSaveRule, updateKeywordsAlarmRuleRequestBody.notificationSaveRule);
+            && Objects.equals(this.notificationSaveRule, updateKeywordsAlarmRuleRequestBody.notificationSaveRule)
+            && Objects.equals(this.triggerConditionCount, updateKeywordsAlarmRuleRequestBody.triggerConditionCount)
+            && Objects.equals(this.triggerConditionFrequency,
+                updateKeywordsAlarmRuleRequestBody.triggerConditionFrequency)
+            && Objects.equals(this.whetherRecoveryPolicy, updateKeywordsAlarmRuleRequestBody.whetherRecoveryPolicy)
+            && Objects.equals(this.recoveryPolicy, updateKeywordsAlarmRuleRequestBody.recoveryPolicy);
     }
 
     @Override
@@ -488,7 +581,11 @@ public class UpdateKeywordsAlarmRuleRequestBody {
             keywordsAlarmSend,
             keywordsAlarmSendCode,
             domainId,
-            notificationSaveRule);
+            notificationSaveRule,
+            triggerConditionCount,
+            triggerConditionFrequency,
+            whetherRecoveryPolicy,
+            recoveryPolicy);
     }
 
     @Override
@@ -507,6 +604,10 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         sb.append("    keywordsAlarmSendCode: ").append(toIndentedString(keywordsAlarmSendCode)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    notificationSaveRule: ").append(toIndentedString(notificationSaveRule)).append("\n");
+        sb.append("    triggerConditionCount: ").append(toIndentedString(triggerConditionCount)).append("\n");
+        sb.append("    triggerConditionFrequency: ").append(toIndentedString(triggerConditionFrequency)).append("\n");
+        sb.append("    whetherRecoveryPolicy: ").append(toIndentedString(whetherRecoveryPolicy)).append("\n");
+        sb.append("    recoveryPolicy: ").append(toIndentedString(recoveryPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

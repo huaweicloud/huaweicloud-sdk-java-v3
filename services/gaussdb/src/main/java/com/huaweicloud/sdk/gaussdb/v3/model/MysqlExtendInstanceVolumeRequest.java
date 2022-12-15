@@ -40,7 +40,7 @@ public class MysqlExtendInstanceVolumeRequest  {
 
 
     /**
-     * 扩容后的容量，每次扩容最小容量为10GB，实例所选容量大小必须为10的整数倍，最大为128000GB.
+     * 扩容后的容量。包周期实例初始最小磁盘规格为40G，实例所选容量大小必须为10的整数倍，且大于实际使用容量，最大为128000GB.  取值范围： 扩容时必须大于等于50G； 缩容时必须大于等于40G。
      * @return size
      */
     public Integer getSize() {

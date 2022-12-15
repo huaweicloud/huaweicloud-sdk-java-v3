@@ -165,7 +165,7 @@ public class EventDetailResponseInfo {
     }
 
     /**
-     * 服务器私网IP
+     * 服务器私有IP
      * @return privateIp
      */
     public String getPrivateIp() {

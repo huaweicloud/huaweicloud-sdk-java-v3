@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ListHostStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region")
-
-    private String region;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -86,6 +81,11 @@ public class ListHostStatusRequest {
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region")
+
+    private String region;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_group_id")
 
     private String policyGroupId;
@@ -140,23 +140,6 @@ public class ListHostStatusRequest {
 
     private Integer offset;
 
-    public ListHostStatusRequest withRegion(String region) {
-        this.region = region;
-        return this;
-    }
-
-    /**
-     * region id
-     * @return region
-     */
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
     public ListHostStatusRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -197,7 +180,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * Agent状态，包含如下5种。   - not_installed ：未安装。   - online ：在线。   - offline ：离线。   - install_failed ：安装失败。   - installing ：安装中。   - not_online ：不在线的（除了在线以外的所有状态，仅作为查询条件）。
+     * Agent状态，包含如下6种。   - installed ：已安装。   - not_installed ：未安装。   - online ：在线。   - offline ：离线。   - install_failed ：安装失败。   - installing ：安装中。   - not_online ：不在线的（除了在线以外的所有状态，仅作为查询条件）。
      * @return agentStatus
      */
     public String getAgentStatus() {
@@ -393,6 +376,23 @@ public class ListHostStatusRequest {
 
     public void setGroupName(String groupName) {
         this.groupName = groupName;
+    }
+
+    public ListHostStatusRequest withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+
+    /**
+     * region id
+     * @return region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
     }
 
     public ListHostStatusRequest withPolicyGroupId(String policyGroupId) {
@@ -595,8 +595,7 @@ public class ListHostStatusRequest {
             return false;
         }
         ListHostStatusRequest listHostStatusRequest = (ListHostStatusRequest) o;
-        return Objects.equals(this.region, listHostStatusRequest.region)
-            && Objects.equals(this.enterpriseProjectId, listHostStatusRequest.enterpriseProjectId)
+        return Objects.equals(this.enterpriseProjectId, listHostStatusRequest.enterpriseProjectId)
             && Objects.equals(this.version, listHostStatusRequest.version)
             && Objects.equals(this.agentStatus, listHostStatusRequest.agentStatus)
             && Objects.equals(this.detectResult, listHostStatusRequest.detectResult)
@@ -610,6 +609,7 @@ public class ListHostStatusRequest {
             && Objects.equals(this.protectStatus, listHostStatusRequest.protectStatus)
             && Objects.equals(this.groupId, listHostStatusRequest.groupId)
             && Objects.equals(this.groupName, listHostStatusRequest.groupName)
+            && Objects.equals(this.region, listHostStatusRequest.region)
             && Objects.equals(this.policyGroupId, listHostStatusRequest.policyGroupId)
             && Objects.equals(this.policyGroupName, listHostStatusRequest.policyGroupName)
             && Objects.equals(this.chargingMode, listHostStatusRequest.chargingMode)
@@ -625,8 +625,7 @@ public class ListHostStatusRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(region,
-            enterpriseProjectId,
+        return Objects.hash(enterpriseProjectId,
             version,
             agentStatus,
             detectResult,
@@ -640,6 +639,7 @@ public class ListHostStatusRequest {
             protectStatus,
             groupId,
             groupName,
+            region,
             policyGroupId,
             policyGroupName,
             chargingMode,
@@ -657,7 +657,6 @@ public class ListHostStatusRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListHostStatusRequest {\n");
-        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
@@ -672,6 +671,7 @@ public class ListHostStatusRequest {
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    policyGroupId: ").append(toIndentedString(policyGroupId)).append("\n");
         sb.append("    policyGroupName: ").append(toIndentedString(policyGroupName)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");

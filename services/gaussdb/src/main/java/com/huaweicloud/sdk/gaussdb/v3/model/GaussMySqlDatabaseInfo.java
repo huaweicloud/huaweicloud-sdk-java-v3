@@ -91,7 +91,7 @@ public class GaussMySqlDatabaseInfo  {
 
 
     /**
-     * 是否为只读权限：true表示只读,false表示可读写。
+     * 是否为只读权限： - true，表示只读。 - false，表示可读写。
      * @return readonly
      */
     public Boolean getReadonly() {

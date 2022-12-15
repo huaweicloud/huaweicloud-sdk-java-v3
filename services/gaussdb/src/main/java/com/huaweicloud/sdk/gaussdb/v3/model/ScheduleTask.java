@@ -82,10 +82,10 @@ public class ScheduleTask  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_status")
+    @JsonProperty(value="job_status")
     
     
-    private String taskStatus;
+    private String jobStatus;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -299,8 +299,8 @@ public class ScheduleTask  {
 
     
 
-    public ScheduleTask withTaskStatus(String taskStatus) {
-        this.taskStatus = taskStatus;
+    public ScheduleTask withJobStatus(String jobStatus) {
+        this.jobStatus = jobStatus;
         return this;
     }
 
@@ -309,14 +309,14 @@ public class ScheduleTask  {
 
     /**
      * 任务执行状态。 取值： - 值为“Pending”，表示延时任务，未执行。 - 值为“Running”，表示任务正在执行。 - 值为“Completed”，表示任务执行成功。 - 值为“Failed”，表示任务执行失败。
-     * @return taskStatus
+     * @return jobStatus
      */
-    public String getTaskStatus() {
-        return taskStatus;
+    public String getJobStatus() {
+        return jobStatus;
     }
 
-    public void setTaskStatus(String taskStatus) {
-        this.taskStatus = taskStatus;
+    public void setJobStatus(String jobStatus) {
+        this.jobStatus = jobStatus;
     }
 
     
@@ -383,13 +383,13 @@ public class ScheduleTask  {
             Objects.equals(this.createTime, scheduleTask.createTime) &&
             Objects.equals(this.startTime, scheduleTask.startTime) &&
             Objects.equals(this.endTime, scheduleTask.endTime) &&
-            Objects.equals(this.taskStatus, scheduleTask.taskStatus) &&
+            Objects.equals(this.jobStatus, scheduleTask.jobStatus) &&
             Objects.equals(this.datastoreType, scheduleTask.datastoreType) &&
             Objects.equals(this.targetConfig, scheduleTask.targetConfig);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, instanceId, instanceName, instanceStatus, projectId, jobName, createTime, startTime, endTime, taskStatus, datastoreType, targetConfig);
+        return Objects.hash(jobId, instanceId, instanceName, instanceStatus, projectId, jobName, createTime, startTime, endTime, jobStatus, datastoreType, targetConfig);
     }
     @Override
     public String toString() {
@@ -404,7 +404,7 @@ public class ScheduleTask  {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-        sb.append("    taskStatus: ").append(toIndentedString(taskStatus)).append("\n");
+        sb.append("    jobStatus: ").append(toIndentedString(jobStatus)).append("\n");
         sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
         sb.append("    targetConfig: ").append(toIndentedString(targetConfig)).append("\n");
         sb.append("}");

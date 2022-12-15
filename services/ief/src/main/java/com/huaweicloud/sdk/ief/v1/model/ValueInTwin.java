@@ -58,7 +58,7 @@ public class ValueInTwin {
     }
 
     /**
-     * 动态属性的期望信息
+     * 动态属性的实际信息
      * @return optional
      */
     public Boolean getOptional() {

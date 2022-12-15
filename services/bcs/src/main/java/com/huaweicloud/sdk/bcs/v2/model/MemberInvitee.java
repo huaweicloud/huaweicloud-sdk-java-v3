@@ -31,7 +31,7 @@ public class MemberInvitee {
     }
 
     /**
-     * 被邀请方BCS服务实例id
+     * 被邀请方BCS服务实例ID
      * @return inviteeBcsId
      */
     public String getInviteeBcsId() {

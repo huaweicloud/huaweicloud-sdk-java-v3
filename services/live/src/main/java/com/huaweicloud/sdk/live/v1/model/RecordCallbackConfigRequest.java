@@ -212,6 +212,11 @@ public class RecordCallbackConfigRequest {
 
     private SignTypeEnum signType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key")
+
+    private String key;
+
     public RecordCallbackConfigRequest withPublishDomain(String publishDomain) {
         this.publishDomain = publishDomain;
         return this;
@@ -316,6 +321,23 @@ public class RecordCallbackConfigRequest {
         this.signType = signType;
     }
 
+    public RecordCallbackConfigRequest withKey(String key) {
+        this.key = key;
+        return this;
+    }
+
+    /**
+     * 回调秘钥，主要用于鉴权。为了保护用户数据信息安全，建议填写。
+     * @return key
+     */
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -329,12 +351,13 @@ public class RecordCallbackConfigRequest {
             && Objects.equals(this.app, recordCallbackConfigRequest.app)
             && Objects.equals(this.notifyCallbackUrl, recordCallbackConfigRequest.notifyCallbackUrl)
             && Objects.equals(this.notifyEventSubscription, recordCallbackConfigRequest.notifyEventSubscription)
-            && Objects.equals(this.signType, recordCallbackConfigRequest.signType);
+            && Objects.equals(this.signType, recordCallbackConfigRequest.signType)
+            && Objects.equals(this.key, recordCallbackConfigRequest.key);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(publishDomain, app, notifyCallbackUrl, notifyEventSubscription, signType);
+        return Objects.hash(publishDomain, app, notifyCallbackUrl, notifyEventSubscription, signType, key);
     }
 
     @Override
@@ -346,6 +369,7 @@ public class RecordCallbackConfigRequest {
         sb.append("    notifyCallbackUrl: ").append(toIndentedString(notifyCallbackUrl)).append("\n");
         sb.append("    notifyEventSubscription: ").append(toIndentedString(notifyEventSubscription)).append("\n");
         sb.append("    signType: ").append(toIndentedString(signType)).append("\n");
+        sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -254,6 +254,26 @@ public class SqlAlarmRuleRespList {
 
     private StatusEnum status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trigger_condition_count")
+
+    private Integer triggerConditionCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trigger_condition_frequency")
+
+    private Integer triggerConditionFrequency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "whether_recovery_policy")
+
+    private Boolean whetherRecoveryPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recovery_policy")
+
+    private Integer recoveryPolicy;
+
     public SqlAlarmRuleRespList withSqlAlarmRuleName(String sqlAlarmRuleName) {
         this.sqlAlarmRuleName = sqlAlarmRuleName;
         return this;
@@ -533,6 +553,74 @@ public class SqlAlarmRuleRespList {
         this.status = status;
     }
 
+    public SqlAlarmRuleRespList withTriggerConditionCount(Integer triggerConditionCount) {
+        this.triggerConditionCount = triggerConditionCount;
+        return this;
+    }
+
+    /**
+     * 触发条件：触发次数;默认为1
+     * @return triggerConditionCount
+     */
+    public Integer getTriggerConditionCount() {
+        return triggerConditionCount;
+    }
+
+    public void setTriggerConditionCount(Integer triggerConditionCount) {
+        this.triggerConditionCount = triggerConditionCount;
+    }
+
+    public SqlAlarmRuleRespList withTriggerConditionFrequency(Integer triggerConditionFrequency) {
+        this.triggerConditionFrequency = triggerConditionFrequency;
+        return this;
+    }
+
+    /**
+     * 触发条件：触发周期;默认为1
+     * @return triggerConditionFrequency
+     */
+    public Integer getTriggerConditionFrequency() {
+        return triggerConditionFrequency;
+    }
+
+    public void setTriggerConditionFrequency(Integer triggerConditionFrequency) {
+        this.triggerConditionFrequency = triggerConditionFrequency;
+    }
+
+    public SqlAlarmRuleRespList withWhetherRecoveryPolicy(Boolean whetherRecoveryPolicy) {
+        this.whetherRecoveryPolicy = whetherRecoveryPolicy;
+        return this;
+    }
+
+    /**
+     * 是否打开恢复通知;默认false
+     * @return whetherRecoveryPolicy
+     */
+    public Boolean getWhetherRecoveryPolicy() {
+        return whetherRecoveryPolicy;
+    }
+
+    public void setWhetherRecoveryPolicy(Boolean whetherRecoveryPolicy) {
+        this.whetherRecoveryPolicy = whetherRecoveryPolicy;
+    }
+
+    public SqlAlarmRuleRespList withRecoveryPolicy(Integer recoveryPolicy) {
+        this.recoveryPolicy = recoveryPolicy;
+        return this;
+    }
+
+    /**
+     * 恢复策略周期;默认为3
+     * @return recoveryPolicy
+     */
+    public Integer getRecoveryPolicy() {
+        return recoveryPolicy;
+    }
+
+    public void setRecoveryPolicy(Integer recoveryPolicy) {
+        this.recoveryPolicy = recoveryPolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -555,7 +643,11 @@ public class SqlAlarmRuleRespList {
             && Objects.equals(this.createTime, sqlAlarmRuleRespList.createTime)
             && Objects.equals(this.updateTime, sqlAlarmRuleRespList.updateTime)
             && Objects.equals(this.templateName, sqlAlarmRuleRespList.templateName)
-            && Objects.equals(this.status, sqlAlarmRuleRespList.status);
+            && Objects.equals(this.status, sqlAlarmRuleRespList.status)
+            && Objects.equals(this.triggerConditionCount, sqlAlarmRuleRespList.triggerConditionCount)
+            && Objects.equals(this.triggerConditionFrequency, sqlAlarmRuleRespList.triggerConditionFrequency)
+            && Objects.equals(this.whetherRecoveryPolicy, sqlAlarmRuleRespList.whetherRecoveryPolicy)
+            && Objects.equals(this.recoveryPolicy, sqlAlarmRuleRespList.recoveryPolicy);
     }
 
     @Override
@@ -573,7 +665,11 @@ public class SqlAlarmRuleRespList {
             createTime,
             updateTime,
             templateName,
-            status);
+            status,
+            triggerConditionCount,
+            triggerConditionFrequency,
+            whetherRecoveryPolicy,
+            recoveryPolicy);
     }
 
     @Override
@@ -594,6 +690,10 @@ public class SqlAlarmRuleRespList {
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    triggerConditionCount: ").append(toIndentedString(triggerConditionCount)).append("\n");
+        sb.append("    triggerConditionFrequency: ").append(toIndentedString(triggerConditionFrequency)).append("\n");
+        sb.append("    whetherRecoveryPolicy: ").append(toIndentedString(whetherRecoveryPolicy)).append("\n");
+        sb.append("    recoveryPolicy: ").append(toIndentedString(recoveryPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

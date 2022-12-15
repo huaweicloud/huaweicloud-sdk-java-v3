@@ -40,7 +40,7 @@ public class MysqlTags  {
 
 
     /**
-     * 标签键。最大长度36个unicode字符。 key不能为空或者空字符串，不能为空格。 字符集：A-Z，a-z ，0-9，‘-’，‘_’，UNICODE字符（\\u4E00-\\u9FFF）。
+     * 标签键。最大长度36个unicode字符。key不能为空或者空字符串，不能为空格。  字符集：A-Z，a-z ，0-9，‘-’，‘_’，UNICODE字符（\\u4E00-\\u9FFF）。
      * @return key
      */
     public String getKey() {
@@ -62,7 +62,7 @@ public class MysqlTags  {
 
 
     /**
-     * 标签值。最大长度43个unicode字符。 可以为空字符串。 字符集：A-Z，a-z ，0-9，‘.’，‘-’，‘_’，UNICODE字符（\\u4E00-\\u9FFF）。
+     * 标签值。最大长度43个unicode字符。可以为空字符串。  字符集：A-Z，a-z ，0-9，‘.’，‘-’，‘_’，UNICODE字符（\\u4E00-\\u9FFF）。
      * @return value
      */
     public String getValue() {

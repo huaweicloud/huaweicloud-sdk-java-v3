@@ -159,7 +159,7 @@ public class InvitationDetail {
     }
 
     /**
-     * 被邀请方bcs服务实例id
+     * 被邀请方服务实例ID
      * @return invitedBcsId
      */
     public String getInvitedBcsId() {

@@ -43,6 +43,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
+@SuppressWarnings("PMD.CouplingBetweenObjects") // ignore pmd coupling between object
 public class TestHttpRequestDef {
 
     public static class TestRequest {
@@ -156,12 +157,11 @@ public class TestHttpRequestDef {
                 .withContentType("application/json;charset=UTF-8");
 
         builder.withResponseField("body", LocationType.Body, FieldExistence.NULL_IGNORE, List.class,
-            f -> f.withMarshaller(TestResponse::getBody, TestResponse::setBody)
-                .withInnerContainerType(InnerResponse.class));
+                f -> f.withMarshaller(TestResponse::getBody, TestResponse::setBody)
+                        .withInnerContainerType(InnerResponse.class));
 
         return builder.build();
     }
-
 
     public static class TestUploadDownloadRequest extends SdkStreamRequest {
         private String id;
@@ -260,26 +260,26 @@ public class TestHttpRequestDef {
     }
 
     public static HttpRequestDef<TestUploadDownloadRequest, TestUploadDownloadResponse>
-        buildTestUploadDownloadRequestDef() {
+    buildTestUploadDownloadRequestDef() {
         HttpRequestDef.Builder<TestUploadDownloadRequest, TestUploadDownloadResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST,
-                TestUploadDownloadRequest.class,
-                TestUploadDownloadResponse.class)
-                .withName("TestUploadDownload")
-                .withUri("/uploaddownload")
-                .withContentType("application/octet-stream");
+                HttpRequestDef.builder(HttpMethod.POST,
+                                TestUploadDownloadRequest.class,
+                                TestUploadDownloadResponse.class)
+                        .withName("TestUploadDownload")
+                        .withUri("/uploaddownload")
+                        .withContentType("application/octet-stream");
         builder.withRequestField("id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(TestUploadDownloadRequest::getId, TestUploadDownloadRequest::setId));
+                LocationType.Query,
+                FieldExistence.NULL_IGNORE,
+                String.class,
+                f -> f.withMarshaller(TestUploadDownloadRequest::getId, TestUploadDownloadRequest::setId));
 
         return builder.build();
     }
 
     public static HttpRequestDef<TestFormDataRequest, TestFormDataResponse> buildTestFormDataRequestDef() {
         HttpRequestDef.Builder<TestFormDataRequest, TestFormDataResponse> builder = HttpRequestDef.builder(
-                HttpMethod.POST, TestFormDataRequest.class, TestFormDataResponse.class)
+                        HttpMethod.POST, TestFormDataRequest.class, TestFormDataResponse.class)
                 .withName("TestFormData")
                 .withUri("/upload-formdata")
                 .withContentType("multipart/form-data");
@@ -293,14 +293,14 @@ public class TestHttpRequestDef {
     @SuppressWarnings(value = {"unchecked", "rawtypes"})
     public static HttpRequestDef<TestNoBodyRequest, TestResponse> buildHttpRequestNoRequestBodyDef() {
         HttpRequestDef.Builder<TestNoBodyRequest, TestResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, TestNoBodyRequest.class, TestResponse.class)
-                .withName("TestNoBody")
-                .withUri("/v2.1/{project_id}/servers")
-                .withContentType("application/json;charset=UTF-8");
+                HttpRequestDef.builder(HttpMethod.PUT, TestNoBodyRequest.class, TestResponse.class)
+                        .withName("TestNoBody")
+                        .withUri("/v2.1/{project_id}/servers")
+                        .withContentType("application/json;charset=UTF-8");
 
         builder.withResponseField("body", LocationType.Body, FieldExistence.NULL_IGNORE, List.class,
-            f -> f.withMarshaller(TestResponse::getBody, TestResponse::setBody)
-                .withInnerContainerType(InnerResponse.class));
+                f -> f.withMarshaller(TestResponse::getBody, TestResponse::setBody)
+                        .withInnerContainerType(InnerResponse.class));
 
         return builder.build();
     }
@@ -335,7 +335,7 @@ public class TestHttpRequestDef {
     }
 
     public static HttpRequestDef<TestCustomAuthorizationRequest, TestCustomAuthorizationResponse>
-        buildTestCustomizedAuthorizationRequestDef() {
+    buildTestCustomizedAuthorizationRequestDef() {
         // basic
         HttpRequestDef.Builder<TestCustomAuthorizationRequest, TestCustomAuthorizationResponse> builder = HttpRequestDef
                 .builder(HttpMethod.POST, TestCustomAuthorizationRequest.class, TestCustomAuthorizationResponse.class)
@@ -345,13 +345,13 @@ public class TestHttpRequestDef {
 
         // requests
         builder.withRequestField("Authorization", LocationType.Header, FieldExistence.NON_NULL_NON_EMPTY,
-            String.class, f -> f.withMarshaller(TestCustomAuthorizationRequest::getAuthorization,
-                TestCustomAuthorizationRequest::setAuthorization));
+                String.class, f -> f.withMarshaller(TestCustomAuthorizationRequest::getAuthorization,
+                        TestCustomAuthorizationRequest::setAuthorization));
 
         // response
         builder.withResponseField("token", LocationType.Header, FieldExistence.NULL_IGNORE,
-            String.class, f -> f.withMarshaller(TestCustomAuthorizationResponse::getToken,
-                TestCustomAuthorizationResponse::setToken));
+                String.class, f -> f.withMarshaller(TestCustomAuthorizationResponse::getToken,
+                        TestCustomAuthorizationResponse::setToken));
         return builder.build();
     }
 

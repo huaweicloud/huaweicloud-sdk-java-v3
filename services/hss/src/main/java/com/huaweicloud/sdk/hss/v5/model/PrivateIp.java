@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 服务器私网IP
+ * 服务器私有IP
  */
 public class PrivateIp {
 

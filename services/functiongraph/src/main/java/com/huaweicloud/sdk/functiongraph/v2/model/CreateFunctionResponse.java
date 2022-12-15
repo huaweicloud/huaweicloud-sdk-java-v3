@@ -412,6 +412,11 @@ public class CreateFunctionResponse extends SdkResponse {
     private List<String> dependList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "depend_version_list")
+
+    private List<String> dependVersionList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "strategy_config")
 
     private StrategyConfig strategyConfig;
@@ -949,6 +954,39 @@ public class CreateFunctionResponse extends SdkResponse {
         this.dependList = dependList;
     }
 
+    public CreateFunctionResponse withDependVersionList(List<String> dependVersionList) {
+        this.dependVersionList = dependVersionList;
+        return this;
+    }
+
+    public CreateFunctionResponse addDependVersionListItem(String dependVersionListItem) {
+        if (this.dependVersionList == null) {
+            this.dependVersionList = new ArrayList<>();
+        }
+        this.dependVersionList.add(dependVersionListItem);
+        return this;
+    }
+
+    public CreateFunctionResponse withDependVersionList(Consumer<List<String>> dependVersionListSetter) {
+        if (this.dependVersionList == null) {
+            this.dependVersionList = new ArrayList<>();
+        }
+        dependVersionListSetter.accept(this.dependVersionList);
+        return this;
+    }
+
+    /**
+     * 依赖版本id列表
+     * @return dependVersionList
+     */
+    public List<String> getDependVersionList() {
+        return dependVersionList;
+    }
+
+    public void setDependVersionList(List<String> dependVersionList) {
+        this.dependVersionList = dependVersionList;
+    }
+
     public CreateFunctionResponse withStrategyConfig(StrategyConfig strategyConfig) {
         this.strategyConfig = strategyConfig;
         return this;
@@ -1156,6 +1194,7 @@ public class CreateFunctionResponse extends SdkResponse {
             && Objects.equals(this.funcVpc, createFunctionResponse.funcVpc)
             && Objects.equals(this.mountConfig, createFunctionResponse.mountConfig)
             && Objects.equals(this.dependList, createFunctionResponse.dependList)
+            && Objects.equals(this.dependVersionList, createFunctionResponse.dependVersionList)
             && Objects.equals(this.strategyConfig, createFunctionResponse.strategyConfig)
             && Objects.equals(this.extendConfig, createFunctionResponse.extendConfig)
             && Objects.equals(this.initializerHandler, createFunctionResponse.initializerHandler)
@@ -1196,6 +1235,7 @@ public class CreateFunctionResponse extends SdkResponse {
             funcVpc,
             mountConfig,
             dependList,
+            dependVersionList,
             strategyConfig,
             extendConfig,
             initializerHandler,
@@ -1238,6 +1278,7 @@ public class CreateFunctionResponse extends SdkResponse {
         sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
         sb.append("    mountConfig: ").append(toIndentedString(mountConfig)).append("\n");
         sb.append("    dependList: ").append(toIndentedString(dependList)).append("\n");
+        sb.append("    dependVersionList: ").append(toIndentedString(dependVersionList)).append("\n");
         sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
         sb.append("    extendConfig: ").append(toIndentedString(extendConfig)).append("\n");
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");

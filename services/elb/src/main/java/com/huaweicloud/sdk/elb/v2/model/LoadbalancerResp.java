@@ -360,7 +360,7 @@ public class LoadbalancerResp {
     }
 
     /**
-     * 负载均衡器所在的子网ID。仅支持内网类型。
+     * 负载均衡器所在的子网的IPv4网络ID。仅支持内网类型。
      * @return vipSubnetId
      */
     public String getVipSubnetId() {

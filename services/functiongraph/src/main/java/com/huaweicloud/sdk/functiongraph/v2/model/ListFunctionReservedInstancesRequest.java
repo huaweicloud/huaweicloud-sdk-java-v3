@@ -16,9 +16,9 @@ public class ListFunctionReservedInstancesRequest {
     private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "maxitems")
+    @JsonProperty(value = "limit")
 
-    private String maxitems;
+    private String limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "urn")
@@ -42,21 +42,21 @@ public class ListFunctionReservedInstancesRequest {
         this.marker = marker;
     }
 
-    public ListFunctionReservedInstancesRequest withMaxitems(String maxitems) {
-        this.maxitems = maxitems;
+    public ListFunctionReservedInstancesRequest withLimit(String limit) {
+        this.limit = limit;
         return this;
     }
 
     /**
      * 每次查询获取的最大函数记录数量  最大值：400 如果不提供该值或者提供的值大于400或等于0，则使用默认值：400 如果该值小于0，则返回参数错误。
-     * @return maxitems
+     * @return limit
      */
-    public String getMaxitems() {
-        return maxitems;
+    public String getLimit() {
+        return limit;
     }
 
-    public void setMaxitems(String maxitems) {
-        this.maxitems = maxitems;
+    public void setLimit(String limit) {
+        this.limit = limit;
     }
 
     public ListFunctionReservedInstancesRequest withUrn(String urn) {
@@ -87,13 +87,13 @@ public class ListFunctionReservedInstancesRequest {
         ListFunctionReservedInstancesRequest listFunctionReservedInstancesRequest =
             (ListFunctionReservedInstancesRequest) o;
         return Objects.equals(this.marker, listFunctionReservedInstancesRequest.marker)
-            && Objects.equals(this.maxitems, listFunctionReservedInstancesRequest.maxitems)
+            && Objects.equals(this.limit, listFunctionReservedInstancesRequest.limit)
             && Objects.equals(this.urn, listFunctionReservedInstancesRequest.urn);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(marker, maxitems, urn);
+        return Objects.hash(marker, limit, urn);
     }
 
     @Override
@@ -101,7 +101,7 @@ public class ListFunctionReservedInstancesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListFunctionReservedInstancesRequest {\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
-        sb.append("    maxitems: ").append(toIndentedString(maxitems)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    urn: ").append(toIndentedString(urn)).append("\n");
         sb.append("}");
         return sb.toString();

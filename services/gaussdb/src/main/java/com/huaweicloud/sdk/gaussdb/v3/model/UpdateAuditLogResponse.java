@@ -35,7 +35,7 @@ public class UpdateAuditLogResponse extends SdkResponse {
 
 
     /**
-     * 开启/关闭审计日志操作结果。
+     * 开启/关闭全量SQL操作结果。
      * @return result
      */
     public String getResult() {

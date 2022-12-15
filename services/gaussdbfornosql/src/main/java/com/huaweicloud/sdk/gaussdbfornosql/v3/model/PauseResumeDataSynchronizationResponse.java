@@ -12,25 +12,25 @@ import java.util.Objects;
 public class PauseResumeDataSynchronizationResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "job_id")
 
-    private String body;
+    private String jobId;
 
-    public PauseResumeDataSynchronizationResponse withBody(String body) {
-        this.body = body;
+    public PauseResumeDataSynchronizationResponse withJobId(String jobId) {
+        this.jobId = jobId;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 暂停/恢复具备容灾关系的实例数据同步的工作ID
+     * @return jobId
      */
-    public String getBody() {
-        return body;
+    public String getJobId() {
+        return jobId;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 
     @Override
@@ -43,19 +43,19 @@ public class PauseResumeDataSynchronizationResponse extends SdkResponse {
         }
         PauseResumeDataSynchronizationResponse pauseResumeDataSynchronizationResponse =
             (PauseResumeDataSynchronizationResponse) o;
-        return Objects.equals(this.body, pauseResumeDataSynchronizationResponse.body);
+        return Objects.equals(this.jobId, pauseResumeDataSynchronizationResponse.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(jobId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PauseResumeDataSynchronizationResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

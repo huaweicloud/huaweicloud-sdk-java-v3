@@ -28,7 +28,7 @@ public class TaurusModifyInstanceMonitorRequestBody  {
     
     private Boolean monitorSwitch;
     /**
-     * 采集周期，仅在monitor_switch为true时生效。默认为5s。monitor_switch为false时，不传该参数。  取值： 1：采集周期为1s； 5：采集周期为5s。
+     * 采集周期，仅在monitor_switch为true时生效。默认为5s。monitor_switch为false时，不传该参数。  取值： 1：采集周期为1s。 5：采集周期为5s。
      */
     public static final class PeriodEnum {
 
@@ -144,7 +144,7 @@ public class TaurusModifyInstanceMonitorRequestBody  {
 
 
     /**
-     * 采集周期，仅在monitor_switch为true时生效。默认为5s。monitor_switch为false时，不传该参数。  取值： 1：采集周期为1s； 5：采集周期为5s。
+     * 采集周期，仅在monitor_switch为true时生效。默认为5s。monitor_switch为false时，不传该参数。  取值： 1：采集周期为1s。 5：采集周期为5s。
      * @return period
      */
     public PeriodEnum getPeriod() {

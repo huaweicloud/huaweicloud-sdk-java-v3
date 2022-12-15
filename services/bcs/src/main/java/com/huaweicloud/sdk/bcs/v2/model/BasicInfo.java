@@ -94,6 +94,11 @@ public class BasicInfo {
     private String deployType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_fade_enabled")
+
+    private Boolean orderFadeEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_cross_region")
 
     private Boolean isCrossRegion;
@@ -107,6 +112,11 @@ public class BasicInfo {
     @JsonProperty(value = "is_support_restful")
 
     private Boolean isSupportRestful;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_support_tc3")
+
+    private Boolean isSupportTc3;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_old_service")
@@ -137,6 +147,26 @@ public class BasicInfo {
     @JsonProperty(value = "order_status")
 
     private Long orderStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_fade_cache")
+
+    private Long orderFadeCache;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deploy_status")
+
+    private Integer deployStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "block_info")
+
+    private CreateRequestBodyBlockInfo blockInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_platform_type")
+
+    private String clusterPlatformType;
 
     public BasicInfo withId(String id) {
         this.id = id;
@@ -410,6 +440,23 @@ public class BasicInfo {
         this.deployType = deployType;
     }
 
+    public BasicInfo withOrderFadeEnabled(Boolean orderFadeEnabled) {
+        this.orderFadeEnabled = orderFadeEnabled;
+        return this;
+    }
+
+    /**
+     * 是否允许order老化
+     * @return orderFadeEnabled
+     */
+    public Boolean getOrderFadeEnabled() {
+        return orderFadeEnabled;
+    }
+
+    public void setOrderFadeEnabled(Boolean orderFadeEnabled) {
+        this.orderFadeEnabled = orderFadeEnabled;
+    }
+
     public BasicInfo withIsCrossRegion(Boolean isCrossRegion) {
         this.isCrossRegion = isCrossRegion;
         return this;
@@ -459,6 +506,23 @@ public class BasicInfo {
 
     public void setIsSupportRestful(Boolean isSupportRestful) {
         this.isSupportRestful = isSupportRestful;
+    }
+
+    public BasicInfo withIsSupportTc3(Boolean isSupportTc3) {
+        this.isSupportTc3 = isSupportTc3;
+        return this;
+    }
+
+    /**
+     * BCS服务是否支持可信计算平台，分为支持（true），不支持（false）
+     * @return isSupportTc3
+     */
+    public Boolean getIsSupportTc3() {
+        return isSupportTc3;
+    }
+
+    public void setIsSupportTc3(Boolean isSupportTc3) {
+        this.isSupportTc3 = isSupportTc3;
     }
 
     public BasicInfo withIsOldService(Boolean isOldService) {
@@ -579,6 +643,83 @@ public class BasicInfo {
         this.orderStatus = orderStatus;
     }
 
+    public BasicInfo withOrderFadeCache(Long orderFadeCache) {
+        this.orderFadeCache = orderFadeCache;
+        return this;
+    }
+
+    /**
+     * 共识节点的老化阈值
+     * @return orderFadeCache
+     */
+    public Long getOrderFadeCache() {
+        return orderFadeCache;
+    }
+
+    public void setOrderFadeCache(Long orderFadeCache) {
+        this.orderFadeCache = orderFadeCache;
+    }
+
+    public BasicInfo withDeployStatus(Integer deployStatus) {
+        this.deployStatus = deployStatus;
+        return this;
+    }
+
+    /**
+     * BCS服务部署状态，分为进行中（0），成功（1），失败（2），结束（3）
+     * @return deployStatus
+     */
+    public Integer getDeployStatus() {
+        return deployStatus;
+    }
+
+    public void setDeployStatus(Integer deployStatus) {
+        this.deployStatus = deployStatus;
+    }
+
+    public BasicInfo withBlockInfo(CreateRequestBodyBlockInfo blockInfo) {
+        this.blockInfo = blockInfo;
+        return this;
+    }
+
+    public BasicInfo withBlockInfo(Consumer<CreateRequestBodyBlockInfo> blockInfoSetter) {
+        if (this.blockInfo == null) {
+            this.blockInfo = new CreateRequestBodyBlockInfo();
+            blockInfoSetter.accept(this.blockInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get blockInfo
+     * @return blockInfo
+     */
+    public CreateRequestBodyBlockInfo getBlockInfo() {
+        return blockInfo;
+    }
+
+    public void setBlockInfo(CreateRequestBodyBlockInfo blockInfo) {
+        this.blockInfo = blockInfo;
+    }
+
+    public BasicInfo withClusterPlatformType(String clusterPlatformType) {
+        this.clusterPlatformType = clusterPlatformType;
+        return this;
+    }
+
+    /**
+     * 集群CPU架构类型：X86（VirtualMachine），ARM（ARM64）
+     * @return clusterPlatformType
+     */
+    public String getClusterPlatformType() {
+        return clusterPlatformType;
+    }
+
+    public void setClusterPlatformType(String clusterPlatformType) {
+        this.clusterPlatformType = clusterPlatformType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -603,15 +744,21 @@ public class BasicInfo {
             && Objects.equals(this.clusterAz, basicInfo.clusterAz)
             && Objects.equals(this.createdTime, basicInfo.createdTime)
             && Objects.equals(this.deployType, basicInfo.deployType)
+            && Objects.equals(this.orderFadeEnabled, basicInfo.orderFadeEnabled)
             && Objects.equals(this.isCrossRegion, basicInfo.isCrossRegion)
             && Objects.equals(this.isSupportRollback, basicInfo.isSupportRollback)
             && Objects.equals(this.isSupportRestful, basicInfo.isSupportRestful)
+            && Objects.equals(this.isSupportTc3, basicInfo.isSupportTc3)
             && Objects.equals(this.isOldService, basicInfo.isOldService)
             && Objects.equals(this.oldServiceVersion, basicInfo.oldServiceVersion)
             && Objects.equals(this.agentPortalAddrs, basicInfo.agentPortalAddrs)
             && Objects.equals(this.status, basicInfo.status)
             && Objects.equals(this.processStatus, basicInfo.processStatus)
-            && Objects.equals(this.orderStatus, basicInfo.orderStatus);
+            && Objects.equals(this.orderStatus, basicInfo.orderStatus)
+            && Objects.equals(this.orderFadeCache, basicInfo.orderFadeCache)
+            && Objects.equals(this.deployStatus, basicInfo.deployStatus)
+            && Objects.equals(this.blockInfo, basicInfo.blockInfo)
+            && Objects.equals(this.clusterPlatformType, basicInfo.clusterPlatformType);
     }
 
     @Override
@@ -632,15 +779,21 @@ public class BasicInfo {
             clusterAz,
             createdTime,
             deployType,
+            orderFadeEnabled,
             isCrossRegion,
             isSupportRollback,
             isSupportRestful,
+            isSupportTc3,
             isOldService,
             oldServiceVersion,
             agentPortalAddrs,
             status,
             processStatus,
-            orderStatus);
+            orderStatus,
+            orderFadeCache,
+            deployStatus,
+            blockInfo,
+            clusterPlatformType);
     }
 
     @Override
@@ -663,15 +816,21 @@ public class BasicInfo {
         sb.append("    clusterAz: ").append(toIndentedString(clusterAz)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    deployType: ").append(toIndentedString(deployType)).append("\n");
+        sb.append("    orderFadeEnabled: ").append(toIndentedString(orderFadeEnabled)).append("\n");
         sb.append("    isCrossRegion: ").append(toIndentedString(isCrossRegion)).append("\n");
         sb.append("    isSupportRollback: ").append(toIndentedString(isSupportRollback)).append("\n");
         sb.append("    isSupportRestful: ").append(toIndentedString(isSupportRestful)).append("\n");
+        sb.append("    isSupportTc3: ").append(toIndentedString(isSupportTc3)).append("\n");
         sb.append("    isOldService: ").append(toIndentedString(isOldService)).append("\n");
         sb.append("    oldServiceVersion: ").append(toIndentedString(oldServiceVersion)).append("\n");
         sb.append("    agentPortalAddrs: ").append(toIndentedString(agentPortalAddrs)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    processStatus: ").append(toIndentedString(processStatus)).append("\n");
         sb.append("    orderStatus: ").append(toIndentedString(orderStatus)).append("\n");
+        sb.append("    orderFadeCache: ").append(toIndentedString(orderFadeCache)).append("\n");
+        sb.append("    deployStatus: ").append(toIndentedString(deployStatus)).append("\n");
+        sb.append("    blockInfo: ").append(toIndentedString(blockInfo)).append("\n");
+        sb.append("    clusterPlatformType: ").append(toIndentedString(clusterPlatformType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

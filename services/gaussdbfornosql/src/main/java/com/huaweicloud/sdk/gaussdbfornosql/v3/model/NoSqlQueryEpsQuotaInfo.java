@@ -24,12 +24,12 @@ public class NoSqlQueryEpsQuotaInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota")
 
-    private NoSqlEpsQuota quota;
+    private NoSqlEpsQuotaTotal quota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used")
 
-    private NoSqlQueryEpsQuotaUsed used;
+    private NoSqlEpsQuotaUsed used;
 
     public NoSqlQueryEpsQuotaInfo withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -65,14 +65,14 @@ public class NoSqlQueryEpsQuotaInfo {
         this.enterpriseProjectName = enterpriseProjectName;
     }
 
-    public NoSqlQueryEpsQuotaInfo withQuota(NoSqlEpsQuota quota) {
+    public NoSqlQueryEpsQuotaInfo withQuota(NoSqlEpsQuotaTotal quota) {
         this.quota = quota;
         return this;
     }
 
-    public NoSqlQueryEpsQuotaInfo withQuota(Consumer<NoSqlEpsQuota> quotaSetter) {
+    public NoSqlQueryEpsQuotaInfo withQuota(Consumer<NoSqlEpsQuotaTotal> quotaSetter) {
         if (this.quota == null) {
-            this.quota = new NoSqlEpsQuota();
+            this.quota = new NoSqlEpsQuotaTotal();
             quotaSetter.accept(this.quota);
         }
 
@@ -83,22 +83,22 @@ public class NoSqlQueryEpsQuotaInfo {
      * Get quota
      * @return quota
      */
-    public NoSqlEpsQuota getQuota() {
+    public NoSqlEpsQuotaTotal getQuota() {
         return quota;
     }
 
-    public void setQuota(NoSqlEpsQuota quota) {
+    public void setQuota(NoSqlEpsQuotaTotal quota) {
         this.quota = quota;
     }
 
-    public NoSqlQueryEpsQuotaInfo withUsed(NoSqlQueryEpsQuotaUsed used) {
+    public NoSqlQueryEpsQuotaInfo withUsed(NoSqlEpsQuotaUsed used) {
         this.used = used;
         return this;
     }
 
-    public NoSqlQueryEpsQuotaInfo withUsed(Consumer<NoSqlQueryEpsQuotaUsed> usedSetter) {
+    public NoSqlQueryEpsQuotaInfo withUsed(Consumer<NoSqlEpsQuotaUsed> usedSetter) {
         if (this.used == null) {
-            this.used = new NoSqlQueryEpsQuotaUsed();
+            this.used = new NoSqlEpsQuotaUsed();
             usedSetter.accept(this.used);
         }
 
@@ -109,11 +109,11 @@ public class NoSqlQueryEpsQuotaInfo {
      * Get used
      * @return used
      */
-    public NoSqlQueryEpsQuotaUsed getUsed() {
+    public NoSqlEpsQuotaUsed getUsed() {
         return used;
     }
 
-    public void setUsed(NoSqlQueryEpsQuotaUsed used) {
+    public void setUsed(NoSqlEpsQuotaUsed used) {
         this.used = used;
     }
 

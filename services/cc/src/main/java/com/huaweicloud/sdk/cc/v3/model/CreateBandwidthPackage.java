@@ -503,6 +503,88 @@ public class CreateBandwidthPackage {
 
     private ResourceTypeEnum resourceType;
 
+    /**
+     * 互通类型: - Area: 大区互通 - Region: 城域互通
+     */
+    public static final class InterflowModeEnum {
+
+        /**
+         * Enum AREA for value: "Area"
+         */
+        public static final InterflowModeEnum AREA = new InterflowModeEnum("Area");
+
+        /**
+         * Enum REGION for value: "Region"
+         */
+        public static final InterflowModeEnum REGION = new InterflowModeEnum("Region");
+
+        private static final Map<String, InterflowModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, InterflowModeEnum> createStaticFields() {
+            Map<String, InterflowModeEnum> map = new HashMap<>();
+            map.put("Area", AREA);
+            map.put("Region", REGION);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        InterflowModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static InterflowModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            InterflowModeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new InterflowModeEnum(value);
+            }
+            return result;
+        }
+
+        public static InterflowModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            InterflowModeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof InterflowModeEnum) {
+                return this.value.equals(((InterflowModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "interflow_mode")
+
+    private InterflowModeEnum interflowMode;
+
     public CreateBandwidthPackage withName(String name) {
         this.name = name;
         return this;
@@ -692,6 +774,23 @@ public class CreateBandwidthPackage {
         this.resourceType = resourceType;
     }
 
+    public CreateBandwidthPackage withInterflowMode(InterflowModeEnum interflowMode) {
+        this.interflowMode = interflowMode;
+        return this;
+    }
+
+    /**
+     * 互通类型: - Area: 大区互通 - Region: 城域互通
+     * @return interflowMode
+     */
+    public InterflowModeEnum getInterflowMode() {
+        return interflowMode;
+    }
+
+    public void setInterflowMode(InterflowModeEnum interflowMode) {
+        this.interflowMode = interflowMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -711,7 +810,8 @@ public class CreateBandwidthPackage {
             && Objects.equals(this.bandwidth, createBandwidthPackage.bandwidth)
             && Objects.equals(this.projectId, createBandwidthPackage.projectId)
             && Objects.equals(this.resourceId, createBandwidthPackage.resourceId)
-            && Objects.equals(this.resourceType, createBandwidthPackage.resourceType);
+            && Objects.equals(this.resourceType, createBandwidthPackage.resourceType)
+            && Objects.equals(this.interflowMode, createBandwidthPackage.interflowMode);
     }
 
     @Override
@@ -726,7 +826,8 @@ public class CreateBandwidthPackage {
             bandwidth,
             projectId,
             resourceId,
-            resourceType);
+            resourceType,
+            interflowMode);
     }
 
     @Override
@@ -744,6 +845,7 @@ public class CreateBandwidthPackage {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    interflowMode: ").append(toIndentedString(interflowMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }
