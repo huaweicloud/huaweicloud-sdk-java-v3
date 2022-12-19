@@ -801,6 +801,105 @@ public class CodeCheckMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowTaskPathTreeRequest, ShowTaskPathTreeResponse> showTaskPathTree =
+        genForshowTaskPathTree();
+
+    private static HttpRequestDef<ShowTaskPathTreeRequest, ShowTaskPathTreeResponse> genForshowTaskPathTree() {
+        // basic
+        HttpRequestDef.Builder<ShowTaskPathTreeRequest, ShowTaskPathTreeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTaskPathTreeRequest.class, ShowTaskPathTreeResponse.class)
+                .withName("ShowTaskPathTree")
+                .withUri("/v2/{project_id}/tasks/{task_id}/listpathtree")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskPathTreeRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskPathTreeRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<String>withRequestField("current_path",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskPathTreeRequest::getCurrentPath, (req, v) -> {
+                req.setCurrentPath(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTaskPathTreeRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTaskPathTreeRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTaskSettingsRequest, ShowTaskSettingsResponse> showTaskSettings =
+        genForshowTaskSettings();
+
+    private static HttpRequestDef<ShowTaskSettingsRequest, ShowTaskSettingsResponse> genForshowTaskSettings() {
+        // basic
+        HttpRequestDef.Builder<ShowTaskSettingsRequest, ShowTaskSettingsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTaskSettingsRequest.class, ShowTaskSettingsResponse.class)
+                .withName("ShowTaskSettings")
+                .withUri("/v2/{project_id}/tasks/{task_id}/settings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskSettingsRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskSettingsRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTaskSettingsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTaskSettingsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTasklogRequest, ShowTasklogResponse> showTasklog = genForshowTasklog();
 
     private static HttpRequestDef<ShowTasklogRequest, ShowTasklogResponse> genForshowTasklog() {
@@ -941,6 +1040,45 @@ public class CodeCheckMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateIgnorePathRequest, UpdateIgnorePathResponse> updateIgnorePath =
+        genForupdateIgnorePath();
+
+    private static HttpRequestDef<UpdateIgnorePathRequest, UpdateIgnorePathResponse> genForupdateIgnorePath() {
+        // basic
+        HttpRequestDef.Builder<UpdateIgnorePathRequest, UpdateIgnorePathResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateIgnorePathRequest.class, UpdateIgnorePathResponse.class)
+                .withName("UpdateIgnorePath")
+                .withUri("/v2/{project_id}/tasks/{task_id}/config-ignorepath")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIgnorePathRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIgnorePathRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<UpdateIgnorePathRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateIgnorePathRequestBody.class),
+            f -> f.withMarshaller(UpdateIgnorePathRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse> updateTaskRuleset =
         genForupdateTaskRuleset();
 
@@ -967,6 +1105,45 @@ public class CodeCheckMeta {
             f -> f.withMarshaller(UpdateTaskRulesetRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }).withInnerContainerType(UpdateTaskRulesetItem.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTaskSettingsRequest, UpdateTaskSettingsResponse> updateTaskSettings =
+        genForupdateTaskSettings();
+
+    private static HttpRequestDef<UpdateTaskSettingsRequest, UpdateTaskSettingsResponse> genForupdateTaskSettings() {
+        // basic
+        HttpRequestDef.Builder<UpdateTaskSettingsRequest, UpdateTaskSettingsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateTaskSettingsRequest.class, UpdateTaskSettingsResponse.class)
+                .withName("UpdateTaskSettings")
+                .withUri("/v2/{project_id}/tasks/{task_id}/settings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTaskSettingsRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTaskSettingsRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<UpdateTaskSettingsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateTaskSettingsRequestBody.class),
+            f -> f.withMarshaller(UpdateTaskSettingsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
 

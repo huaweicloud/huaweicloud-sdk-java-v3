@@ -613,6 +613,66 @@ public class CodeCheckAsyncClient {
     }
 
     /**
+     * 获取任务的目录树
+     *
+     * 获取任务的目录树
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTaskPathTreeRequest 请求对象
+     * @return CompletableFuture<ShowTaskPathTreeResponse>
+     */
+    public CompletableFuture<ShowTaskPathTreeResponse> showTaskPathTreeAsync(ShowTaskPathTreeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.showTaskPathTree);
+    }
+
+    /**
+     * 获取任务的目录树
+     *
+     * 获取任务的目录树
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTaskPathTreeRequest 请求对象
+     * @return AsyncInvoker<ShowTaskPathTreeRequest, ShowTaskPathTreeResponse>
+     */
+    public AsyncInvoker<ShowTaskPathTreeRequest, ShowTaskPathTreeResponse> showTaskPathTreeAsyncInvoker(
+        ShowTaskPathTreeRequest request) {
+        return new AsyncInvoker<ShowTaskPathTreeRequest, ShowTaskPathTreeResponse>(request,
+            CodeCheckMeta.showTaskPathTree, hcClient);
+    }
+
+    /**
+     * 查询任务的高级选项
+     *
+     * 查询任务的高级选项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTaskSettingsRequest 请求对象
+     * @return CompletableFuture<ShowTaskSettingsResponse>
+     */
+    public CompletableFuture<ShowTaskSettingsResponse> showTaskSettingsAsync(ShowTaskSettingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.showTaskSettings);
+    }
+
+    /**
+     * 查询任务的高级选项
+     *
+     * 查询任务的高级选项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTaskSettingsRequest 请求对象
+     * @return AsyncInvoker<ShowTaskSettingsRequest, ShowTaskSettingsResponse>
+     */
+    public AsyncInvoker<ShowTaskSettingsRequest, ShowTaskSettingsResponse> showTaskSettingsAsyncInvoker(
+        ShowTaskSettingsRequest request) {
+        return new AsyncInvoker<ShowTaskSettingsRequest, ShowTaskSettingsResponse>(request,
+            CodeCheckMeta.showTaskSettings, hcClient);
+    }
+
+    /**
      * 查询任务检查失败日志
      *
      * 查询任务检查失败日志，不传execute_id则查询最近一次的检查日志
@@ -731,6 +791,36 @@ public class CodeCheckAsyncClient {
     }
 
     /**
+     * 任务配置屏蔽目录
+     *
+     * 任务配置屏蔽目录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateIgnorePathRequest 请求对象
+     * @return CompletableFuture<UpdateIgnorePathResponse>
+     */
+    public CompletableFuture<UpdateIgnorePathResponse> updateIgnorePathAsync(UpdateIgnorePathRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.updateIgnorePath);
+    }
+
+    /**
+     * 任务配置屏蔽目录
+     *
+     * 任务配置屏蔽目录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateIgnorePathRequest 请求对象
+     * @return AsyncInvoker<UpdateIgnorePathRequest, UpdateIgnorePathResponse>
+     */
+    public AsyncInvoker<UpdateIgnorePathRequest, UpdateIgnorePathResponse> updateIgnorePathAsyncInvoker(
+        UpdateIgnorePathRequest request) {
+        return new AsyncInvoker<UpdateIgnorePathRequest, UpdateIgnorePathResponse>(request,
+            CodeCheckMeta.updateIgnorePath, hcClient);
+    }
+
+    /**
      * 修改任务规则集
      *
      * 修改任务规则集。
@@ -758,6 +848,36 @@ public class CodeCheckAsyncClient {
         UpdateTaskRulesetRequest request) {
         return new AsyncInvoker<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse>(request,
             CodeCheckMeta.updateTaskRuleset, hcClient);
+    }
+
+    /**
+     * 任务配置高级选项
+     *
+     * 任务配置高级选项，如自定义镜像
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTaskSettingsRequest 请求对象
+     * @return CompletableFuture<UpdateTaskSettingsResponse>
+     */
+    public CompletableFuture<UpdateTaskSettingsResponse> updateTaskSettingsAsync(UpdateTaskSettingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeCheckMeta.updateTaskSettings);
+    }
+
+    /**
+     * 任务配置高级选项
+     *
+     * 任务配置高级选项，如自定义镜像
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTaskSettingsRequest 请求对象
+     * @return AsyncInvoker<UpdateTaskSettingsRequest, UpdateTaskSettingsResponse>
+     */
+    public AsyncInvoker<UpdateTaskSettingsRequest, UpdateTaskSettingsResponse> updateTaskSettingsAsyncInvoker(
+        UpdateTaskSettingsRequest request) {
+        return new AsyncInvoker<UpdateTaskSettingsRequest, UpdateTaskSettingsResponse>(request,
+            CodeCheckMeta.updateTaskSettings, hcClient);
     }
 
 }

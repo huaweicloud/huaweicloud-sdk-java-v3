@@ -65,6 +65,34 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ContinueUpgradeClusterTaskRequest, ContinueUpgradeClusterTaskResponse> continueUpgradeClusterTask =
+        genForcontinueUpgradeClusterTask();
+
+    private static HttpRequestDef<ContinueUpgradeClusterTaskRequest, ContinueUpgradeClusterTaskResponse> genForcontinueUpgradeClusterTask() {
+        // basic
+        HttpRequestDef.Builder<ContinueUpgradeClusterTaskRequest, ContinueUpgradeClusterTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ContinueUpgradeClusterTaskRequest.class,
+                    ContinueUpgradeClusterTaskResponse.class)
+                .withName("ContinueUpgradeClusterTask")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/continue")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ContinueUpgradeClusterTaskRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateAddonInstanceRequest, CreateAddonInstanceResponse> createAddonInstance =
         genForcreateAddonInstance();
 
@@ -729,6 +757,31 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<PauseUpgradeClusterTaskRequest, PauseUpgradeClusterTaskResponse> pauseUpgradeClusterTask =
+        genForpauseUpgradeClusterTask();
+
+    private static HttpRequestDef<PauseUpgradeClusterTaskRequest, PauseUpgradeClusterTaskResponse> genForpauseUpgradeClusterTask() {
+        // basic
+        HttpRequestDef.Builder<PauseUpgradeClusterTaskRequest, PauseUpgradeClusterTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, PauseUpgradeClusterTaskRequest.class, PauseUpgradeClusterTaskResponse.class)
+            .withName("PauseUpgradeClusterTask")
+            .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/pause")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PauseUpgradeClusterTaskRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RemoveNodeRequest, RemoveNodeResponse> removeNode = genForremoveNode();
 
     private static HttpRequestDef<RemoveNodeRequest, RemoveNodeResponse> genForremoveNode() {
@@ -784,6 +837,31 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(ResetNodeList.class),
             f -> f.withMarshaller(ResetNodeRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RetryUpgradeClusterTaskRequest, RetryUpgradeClusterTaskResponse> retryUpgradeClusterTask =
+        genForretryUpgradeClusterTask();
+
+    private static HttpRequestDef<RetryUpgradeClusterTaskRequest, RetryUpgradeClusterTaskResponse> genForretryUpgradeClusterTask() {
+        // basic
+        HttpRequestDef.Builder<RetryUpgradeClusterTaskRequest, RetryUpgradeClusterTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RetryUpgradeClusterTaskRequest.class, RetryUpgradeClusterTaskResponse.class)
+            .withName("RetryUpgradeClusterTask")
+            .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/retry")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryUpgradeClusterTaskRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
             }));
 
         // response
@@ -982,6 +1060,38 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowUpgradeClusterTaskRequest, ShowUpgradeClusterTaskResponse> showUpgradeClusterTask =
+        genForshowUpgradeClusterTask();
+
+    private static HttpRequestDef<ShowUpgradeClusterTaskRequest, ShowUpgradeClusterTaskResponse> genForshowUpgradeClusterTask() {
+        // basic
+        HttpRequestDef.Builder<ShowUpgradeClusterTaskRequest, ShowUpgradeClusterTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowUpgradeClusterTaskRequest.class, ShowUpgradeClusterTaskResponse.class)
+            .withName("ShowUpgradeClusterTask")
+            .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade/tasks/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUpgradeClusterTaskRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUpgradeClusterTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateAddonInstanceRequest, UpdateAddonInstanceResponse> updateAddonInstance =
         genForupdateAddonInstance();
 
@@ -1147,6 +1257,38 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NodePoolUpdate.class),
             f -> f.withMarshaller(UpdateNodePoolRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeClusterRequest, UpgradeClusterResponse> upgradeCluster =
+        genForupgradeCluster();
+
+    private static HttpRequestDef<UpgradeClusterRequest, UpgradeClusterResponse> genForupgradeCluster() {
+        // basic
+        HttpRequestDef.Builder<UpgradeClusterRequest, UpgradeClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpgradeClusterRequest.class, UpgradeClusterResponse.class)
+                .withName("UpgradeCluster")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeClusterRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<UpgradeClusterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpgradeClusterRequestBody.class),
+            f -> f.withMarshaller(UpgradeClusterRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

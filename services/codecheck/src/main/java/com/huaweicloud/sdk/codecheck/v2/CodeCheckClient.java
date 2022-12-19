@@ -605,6 +605,66 @@ public class CodeCheckClient {
     }
 
     /**
+     * 获取任务的目录树
+     *
+     * 获取任务的目录树
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTaskPathTreeRequest 请求对象
+     * @return ShowTaskPathTreeResponse
+     */
+    public ShowTaskPathTreeResponse showTaskPathTree(ShowTaskPathTreeRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.showTaskPathTree);
+    }
+
+    /**
+     * 获取任务的目录树
+     *
+     * 获取任务的目录树
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTaskPathTreeRequest 请求对象
+     * @return SyncInvoker<ShowTaskPathTreeRequest, ShowTaskPathTreeResponse>
+     */
+    public SyncInvoker<ShowTaskPathTreeRequest, ShowTaskPathTreeResponse> showTaskPathTreeInvoker(
+        ShowTaskPathTreeRequest request) {
+        return new SyncInvoker<ShowTaskPathTreeRequest, ShowTaskPathTreeResponse>(request,
+            CodeCheckMeta.showTaskPathTree, hcClient);
+    }
+
+    /**
+     * 查询任务的高级选项
+     *
+     * 查询任务的高级选项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTaskSettingsRequest 请求对象
+     * @return ShowTaskSettingsResponse
+     */
+    public ShowTaskSettingsResponse showTaskSettings(ShowTaskSettingsRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.showTaskSettings);
+    }
+
+    /**
+     * 查询任务的高级选项
+     *
+     * 查询任务的高级选项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTaskSettingsRequest 请求对象
+     * @return SyncInvoker<ShowTaskSettingsRequest, ShowTaskSettingsResponse>
+     */
+    public SyncInvoker<ShowTaskSettingsRequest, ShowTaskSettingsResponse> showTaskSettingsInvoker(
+        ShowTaskSettingsRequest request) {
+        return new SyncInvoker<ShowTaskSettingsRequest, ShowTaskSettingsResponse>(request,
+            CodeCheckMeta.showTaskSettings, hcClient);
+    }
+
+    /**
      * 查询任务检查失败日志
      *
      * 查询任务检查失败日志，不传execute_id则查询最近一次的检查日志
@@ -722,6 +782,36 @@ public class CodeCheckClient {
     }
 
     /**
+     * 任务配置屏蔽目录
+     *
+     * 任务配置屏蔽目录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateIgnorePathRequest 请求对象
+     * @return UpdateIgnorePathResponse
+     */
+    public UpdateIgnorePathResponse updateIgnorePath(UpdateIgnorePathRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.updateIgnorePath);
+    }
+
+    /**
+     * 任务配置屏蔽目录
+     *
+     * 任务配置屏蔽目录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateIgnorePathRequest 请求对象
+     * @return SyncInvoker<UpdateIgnorePathRequest, UpdateIgnorePathResponse>
+     */
+    public SyncInvoker<UpdateIgnorePathRequest, UpdateIgnorePathResponse> updateIgnorePathInvoker(
+        UpdateIgnorePathRequest request) {
+        return new SyncInvoker<UpdateIgnorePathRequest, UpdateIgnorePathResponse>(request,
+            CodeCheckMeta.updateIgnorePath, hcClient);
+    }
+
+    /**
      * 修改任务规则集
      *
      * 修改任务规则集。
@@ -749,6 +839,36 @@ public class CodeCheckClient {
         UpdateTaskRulesetRequest request) {
         return new SyncInvoker<UpdateTaskRulesetRequest, UpdateTaskRulesetResponse>(request,
             CodeCheckMeta.updateTaskRuleset, hcClient);
+    }
+
+    /**
+     * 任务配置高级选项
+     *
+     * 任务配置高级选项，如自定义镜像
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTaskSettingsRequest 请求对象
+     * @return UpdateTaskSettingsResponse
+     */
+    public UpdateTaskSettingsResponse updateTaskSettings(UpdateTaskSettingsRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.updateTaskSettings);
+    }
+
+    /**
+     * 任务配置高级选项
+     *
+     * 任务配置高级选项，如自定义镜像
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTaskSettingsRequest 请求对象
+     * @return SyncInvoker<UpdateTaskSettingsRequest, UpdateTaskSettingsResponse>
+     */
+    public SyncInvoker<UpdateTaskSettingsRequest, UpdateTaskSettingsResponse> updateTaskSettingsInvoker(
+        UpdateTaskSettingsRequest request) {
+        return new SyncInvoker<UpdateTaskSettingsRequest, UpdateTaskSettingsResponse>(request,
+            CodeCheckMeta.updateTaskSettings, hcClient);
     }
 
 }

@@ -19,6 +19,11 @@ public class SlowSqlTemplate {
     private String sqlTemplate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sql_sample")
+
+    private String sqlSample;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_names")
 
     private List<String> dbNames = null;
@@ -83,6 +88,23 @@ public class SlowSqlTemplate {
 
     public void setSqlTemplate(String sqlTemplate) {
         this.sqlTemplate = sqlTemplate;
+    }
+
+    public SlowSqlTemplate withSqlSample(String sqlSample) {
+        this.sqlSample = sqlSample;
+        return this;
+    }
+
+    /**
+     * SQL样本。
+     * @return sqlSample
+     */
+    public String getSqlSample() {
+        return sqlSample;
+    }
+
+    public void setSqlSample(String sqlSample) {
+        this.sqlSample = sqlSample;
     }
 
     public SlowSqlTemplate withDbNames(List<String> dbNames) {
@@ -281,6 +303,7 @@ public class SlowSqlTemplate {
         }
         SlowSqlTemplate slowSqlTemplate = (SlowSqlTemplate) o;
         return Objects.equals(this.sqlTemplate, slowSqlTemplate.sqlTemplate)
+            && Objects.equals(this.sqlSample, slowSqlTemplate.sqlSample)
             && Objects.equals(this.dbNames, slowSqlTemplate.dbNames)
             && Objects.equals(this.executeCount, slowSqlTemplate.executeCount)
             && Objects.equals(this.avgExecuteTime, slowSqlTemplate.avgExecuteTime)
@@ -296,6 +319,7 @@ public class SlowSqlTemplate {
     @Override
     public int hashCode() {
         return Objects.hash(sqlTemplate,
+            sqlSample,
             dbNames,
             executeCount,
             avgExecuteTime,
@@ -313,6 +337,7 @@ public class SlowSqlTemplate {
         StringBuilder sb = new StringBuilder();
         sb.append("class SlowSqlTemplate {\n");
         sb.append("    sqlTemplate: ").append(toIndentedString(sqlTemplate)).append("\n");
+        sb.append("    sqlSample: ").append(toIndentedString(sqlSample)).append("\n");
         sb.append("    dbNames: ").append(toIndentedString(dbNames)).append("\n");
         sb.append("    executeCount: ").append(toIndentedString(executeCount)).append("\n");
         sb.append("    avgExecuteTime: ").append(toIndentedString(avgExecuteTime)).append("\n");

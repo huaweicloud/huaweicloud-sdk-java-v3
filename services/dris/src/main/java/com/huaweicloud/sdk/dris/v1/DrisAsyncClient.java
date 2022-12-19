@@ -704,6 +704,130 @@ public class DrisAsyncClient {
     }
 
     /**
+     * 查询信号机列表
+     *
+     * 查询信号机列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowTrafficControllersRequest 请求对象
+     * @return CompletableFuture<BatchShowTrafficControllersResponse>
+     */
+    public CompletableFuture<BatchShowTrafficControllersResponse> batchShowTrafficControllersAsync(
+        BatchShowTrafficControllersRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrisMeta.batchShowTrafficControllers);
+    }
+
+    /**
+     * 查询信号机列表
+     *
+     * 查询信号机列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowTrafficControllersRequest 请求对象
+     * @return AsyncInvoker<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse>
+     */
+    public AsyncInvoker<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse> batchShowTrafficControllersAsyncInvoker(
+        BatchShowTrafficControllersRequest request) {
+        return new AsyncInvoker<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse>(request,
+            DrisMeta.batchShowTrafficControllers, hcClient);
+    }
+
+    /**
+     * 创建信号机
+     *
+     * 创建信号机
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTrafficControllerRequest 请求对象
+     * @return CompletableFuture<CreateTrafficControllerResponse>
+     */
+    public CompletableFuture<CreateTrafficControllerResponse> createTrafficControllerAsync(
+        CreateTrafficControllerRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrisMeta.createTrafficController);
+    }
+
+    /**
+     * 创建信号机
+     *
+     * 创建信号机
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTrafficControllerRequest 请求对象
+     * @return AsyncInvoker<CreateTrafficControllerRequest, CreateTrafficControllerResponse>
+     */
+    public AsyncInvoker<CreateTrafficControllerRequest, CreateTrafficControllerResponse> createTrafficControllerAsyncInvoker(
+        CreateTrafficControllerRequest request) {
+        return new AsyncInvoker<CreateTrafficControllerRequest, CreateTrafficControllerResponse>(request,
+            DrisMeta.createTrafficController, hcClient);
+    }
+
+    /**
+     * 删除信号机
+     *
+     * 删除信号机
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTrafficControllerRequest 请求对象
+     * @return CompletableFuture<DeleteTrafficControllerResponse>
+     */
+    public CompletableFuture<DeleteTrafficControllerResponse> deleteTrafficControllerAsync(
+        DeleteTrafficControllerRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrisMeta.deleteTrafficController);
+    }
+
+    /**
+     * 删除信号机
+     *
+     * 删除信号机
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTrafficControllerRequest 请求对象
+     * @return AsyncInvoker<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse>
+     */
+    public AsyncInvoker<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse> deleteTrafficControllerAsyncInvoker(
+        DeleteTrafficControllerRequest request) {
+        return new AsyncInvoker<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse>(request,
+            DrisMeta.deleteTrafficController, hcClient);
+    }
+
+    /**
+     * 修改信号机
+     *
+     * 修改信号机
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTrafficControllerRequest 请求对象
+     * @return CompletableFuture<UpdateTrafficControllerResponse>
+     */
+    public CompletableFuture<UpdateTrafficControllerResponse> updateTrafficControllerAsync(
+        UpdateTrafficControllerRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrisMeta.updateTrafficController);
+    }
+
+    /**
+     * 修改信号机
+     *
+     * 修改信号机
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTrafficControllerRequest 请求对象
+     * @return AsyncInvoker<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse>
+     */
+    public AsyncInvoker<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse> updateTrafficControllerAsyncInvoker(
+        UpdateTrafficControllerRequest request) {
+        return new AsyncInvoker<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse>(request,
+            DrisMeta.updateTrafficController, hcClient);
+    }
+
+    /**
      * 查询长期交通事件列表
      *
      * 条件查询交通事件
@@ -1044,6 +1168,123 @@ public class DrisAsyncClient {
         UpdateV2xEdgeAppRequest request) {
         return new AsyncInvoker<UpdateV2xEdgeAppRequest, UpdateV2xEdgeAppResponse>(request, DrisMeta.updateV2xEdgeApp,
             hcClient);
+    }
+
+    /**
+     * 查询车辆列表
+     *
+     * 查询车辆列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowVehiclesRequest 请求对象
+     * @return CompletableFuture<BatchShowVehiclesResponse>
+     */
+    public CompletableFuture<BatchShowVehiclesResponse> batchShowVehiclesAsync(BatchShowVehiclesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrisMeta.batchShowVehicles);
+    }
+
+    /**
+     * 查询车辆列表
+     *
+     * 查询车辆列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowVehiclesRequest 请求对象
+     * @return AsyncInvoker<BatchShowVehiclesRequest, BatchShowVehiclesResponse>
+     */
+    public AsyncInvoker<BatchShowVehiclesRequest, BatchShowVehiclesResponse> batchShowVehiclesAsyncInvoker(
+        BatchShowVehiclesRequest request) {
+        return new AsyncInvoker<BatchShowVehiclesRequest, BatchShowVehiclesResponse>(request,
+            DrisMeta.batchShowVehicles, hcClient);
+    }
+
+    /**
+     * 创建车辆
+     *
+     * 创建车辆
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVehicleRequest 请求对象
+     * @return CompletableFuture<CreateVehicleResponse>
+     */
+    public CompletableFuture<CreateVehicleResponse> createVehicleAsync(CreateVehicleRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrisMeta.createVehicle);
+    }
+
+    /**
+     * 创建车辆
+     *
+     * 创建车辆
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVehicleRequest 请求对象
+     * @return AsyncInvoker<CreateVehicleRequest, CreateVehicleResponse>
+     */
+    public AsyncInvoker<CreateVehicleRequest, CreateVehicleResponse> createVehicleAsyncInvoker(
+        CreateVehicleRequest request) {
+        return new AsyncInvoker<CreateVehicleRequest, CreateVehicleResponse>(request, DrisMeta.createVehicle, hcClient);
+    }
+
+    /**
+     * 删除车辆
+     *
+     * 删除车辆
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteVehicleRequest 请求对象
+     * @return CompletableFuture<DeleteVehicleResponse>
+     */
+    public CompletableFuture<DeleteVehicleResponse> deleteVehicleAsync(DeleteVehicleRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrisMeta.deleteVehicle);
+    }
+
+    /**
+     * 删除车辆
+     *
+     * 删除车辆
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteVehicleRequest 请求对象
+     * @return AsyncInvoker<DeleteVehicleRequest, DeleteVehicleResponse>
+     */
+    public AsyncInvoker<DeleteVehicleRequest, DeleteVehicleResponse> deleteVehicleAsyncInvoker(
+        DeleteVehicleRequest request) {
+        return new AsyncInvoker<DeleteVehicleRequest, DeleteVehicleResponse>(request, DrisMeta.deleteVehicle, hcClient);
+    }
+
+    /**
+     * 修改车辆
+     *
+     * 修改车辆
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateVehicleRequest 请求对象
+     * @return CompletableFuture<UpdateVehicleResponse>
+     */
+    public CompletableFuture<UpdateVehicleResponse> updateVehicleAsync(UpdateVehicleRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrisMeta.updateVehicle);
+    }
+
+    /**
+     * 修改车辆
+     *
+     * 修改车辆
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateVehicleRequest 请求对象
+     * @return AsyncInvoker<UpdateVehicleRequest, UpdateVehicleResponse>
+     */
+    public AsyncInvoker<UpdateVehicleRequest, UpdateVehicleResponse> updateVehicleAsyncInvoker(
+        UpdateVehicleRequest request) {
+        return new AsyncInvoker<UpdateVehicleRequest, UpdateVehicleResponse>(request, DrisMeta.updateVehicle, hcClient);
     }
 
     /**

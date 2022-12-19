@@ -380,6 +380,36 @@ public class CbhAsyncClient {
     }
 
     /**
+     * 创建变更CBH订单
+     *
+     * 创建变更CBH订单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeInstanceOrderRequest 请求对象
+     * @return CompletableFuture<ChangeInstanceOrderResponse>
+     */
+    public CompletableFuture<ChangeInstanceOrderResponse> changeInstanceOrderAsync(ChangeInstanceOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbhMeta.changeInstanceOrder);
+    }
+
+    /**
+     * 创建变更CBH订单
+     *
+     * 创建变更CBH订单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeInstanceOrderRequest 请求对象
+     * @return AsyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse>
+     */
+    public AsyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> changeInstanceOrderAsyncInvoker(
+        ChangeInstanceOrderRequest request) {
+        return new AsyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse>(request,
+            CbhMeta.changeInstanceOrder, hcClient);
+    }
+
+    /**
      * 关闭CBH实例
      *
      * 关闭CBH实例

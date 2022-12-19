@@ -34,6 +34,21 @@ public class ApigRegion {
     public static final Region RU_NORTHWEST_2 =
         new Region("ru-northwest-2", "https://apig.ru-northwest-2.myhuaweicloud.com");
 
+    public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://apig.sa-brazil-1.myhuaweicloud.com");
+
+    public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://apig.la-south-2.myhuaweicloud.com");
+
+    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://apig.la-north-2.myhuaweicloud.com");
+
+    public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://apig.na-mexico-1.myhuaweicloud.com");
+
+    public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://apig.af-south-1.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://apig.cn-north-9.myhuaweicloud.com");
+
+    public static final Region CN_SOUTHWEST_2 =
+        new Region("cn-southwest-2", "https://apig.cn-southwest-2.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("APIG");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -49,6 +64,13 @@ public class ApigRegion {
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
         map.put("ru-northwest-2", RU_NORTHWEST_2);
+        map.put("sa-brazil-1", SA_BRAZIL_1);
+        map.put("la-south-2", LA_SOUTH_2);
+        map.put("la-north-2", LA_NORTH_2);
+        map.put("na-mexico-1", NA_MEXICO_1);
+        map.put("af-south-1", AF_SOUTH_1);
+        map.put("cn-north-9", CN_NORTH_9);
+        map.put("cn-southwest-2", CN_SOUTHWEST_2);
         return Collections.unmodifiableMap(map);
     }
 

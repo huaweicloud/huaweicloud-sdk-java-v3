@@ -964,6 +964,179 @@ public class DrisMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse> batchShowTrafficControllers =
+        genForbatchShowTrafficControllers();
+
+    private static HttpRequestDef<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse> genForbatchShowTrafficControllers() {
+        // basic
+        HttpRequestDef.Builder<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    BatchShowTrafficControllersRequest.class,
+                    BatchShowTrafficControllersResponse.class)
+                .withName("BatchShowTrafficControllers")
+                .withUri("/v1/{project_id}/traffic-controllers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("traffic_controller_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getTrafficControllerId, (req, v) -> {
+                req.setTrafficControllerId(v);
+            }));
+        builder.<String>withRequestField("esn",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getEsn, (req, v) -> {
+                req.setEsn(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchShowTrafficControllersRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTrafficControllerRequest, CreateTrafficControllerResponse> createTrafficController =
+        genForcreateTrafficController();
+
+    private static HttpRequestDef<CreateTrafficControllerRequest, CreateTrafficControllerResponse> genForcreateTrafficController() {
+        // basic
+        HttpRequestDef.Builder<CreateTrafficControllerRequest, CreateTrafficControllerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateTrafficControllerRequest.class, CreateTrafficControllerResponse.class)
+            .withName("CreateTrafficController")
+            .withUri("/v1/{project_id}/traffic-controllers")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTrafficControllerRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<AddTrafficControllerDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AddTrafficControllerDTO.class),
+            f -> f.withMarshaller(CreateTrafficControllerRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse> deleteTrafficController =
+        genFordeleteTrafficController();
+
+    private static HttpRequestDef<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse> genFordeleteTrafficController() {
+        // basic
+        HttpRequestDef.Builder<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteTrafficControllerRequest.class, DeleteTrafficControllerResponse.class)
+            .withName("DeleteTrafficController")
+            .withUri("/v1/{project_id}/traffic-controllers/{traffic_controller_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("traffic_controller_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTrafficControllerRequest::getTrafficControllerId, (req, v) -> {
+                req.setTrafficControllerId(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTrafficControllerRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteTrafficControllerResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse> updateTrafficController =
+        genForupdateTrafficController();
+
+    private static HttpRequestDef<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse> genForupdateTrafficController() {
+        // basic
+        HttpRequestDef.Builder<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateTrafficControllerRequest.class, UpdateTrafficControllerResponse.class)
+            .withName("UpdateTrafficController")
+            .withUri("/v1/{project_id}/traffic-controllers/{traffic_controller_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("traffic_controller_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTrafficControllerRequest::getTrafficControllerId, (req, v) -> {
+                req.setTrafficControllerId(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTrafficControllerRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ModifyTrafficControllerRequestDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyTrafficControllerRequestDTO.class),
+            f -> f.withMarshaller(UpdateTrafficControllerRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchShowTrafficEventsRequest, BatchShowTrafficEventsResponse> batchShowTrafficEvents =
         genForbatchShowTrafficEvents();
 
@@ -1429,6 +1602,169 @@ public class DrisMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyV2XEdgeAppDTO.class),
             f -> f.withMarshaller(UpdateV2xEdgeAppRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchShowVehiclesRequest, BatchShowVehiclesResponse> batchShowVehicles =
+        genForbatchShowVehicles();
+
+    private static HttpRequestDef<BatchShowVehiclesRequest, BatchShowVehiclesResponse> genForbatchShowVehicles() {
+        // basic
+        HttpRequestDef.Builder<BatchShowVehiclesRequest, BatchShowVehiclesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, BatchShowVehiclesRequest.class, BatchShowVehiclesResponse.class)
+                .withName("BatchShowVehicles")
+                .withUri("/v1/{project_id}/vehicles")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchShowVehiclesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchShowVehiclesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("vehicle_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchShowVehiclesRequest::getVehicleId, (req, v) -> {
+                req.setVehicleId(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchShowVehiclesRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchShowVehiclesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateVehicleRequest, CreateVehicleResponse> createVehicle =
+        genForcreateVehicle();
+
+    private static HttpRequestDef<CreateVehicleRequest, CreateVehicleResponse> genForcreateVehicle() {
+        // basic
+        HttpRequestDef.Builder<CreateVehicleRequest, CreateVehicleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateVehicleRequest.class, CreateVehicleResponse.class)
+                .withName("CreateVehicle")
+                .withUri("/v1/{project_id}/vehicles")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateVehicleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<AddVehicleDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AddVehicleDTO.class),
+            f -> f.withMarshaller(CreateVehicleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteVehicleRequest, DeleteVehicleResponse> deleteVehicle =
+        genFordeleteVehicle();
+
+    private static HttpRequestDef<DeleteVehicleRequest, DeleteVehicleResponse> genFordeleteVehicle() {
+        // basic
+        HttpRequestDef.Builder<DeleteVehicleRequest, DeleteVehicleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteVehicleRequest.class, DeleteVehicleResponse.class)
+                .withName("DeleteVehicle")
+                .withUri("/v1/{project_id}/vehicles/{vehicle_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vehicle_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVehicleRequest::getVehicleId, (req, v) -> {
+                req.setVehicleId(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVehicleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteVehicleResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateVehicleRequest, UpdateVehicleResponse> updateVehicle =
+        genForupdateVehicle();
+
+    private static HttpRequestDef<UpdateVehicleRequest, UpdateVehicleResponse> genForupdateVehicle() {
+        // basic
+        HttpRequestDef.Builder<UpdateVehicleRequest, UpdateVehicleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateVehicleRequest.class, UpdateVehicleResponse.class)
+                .withName("UpdateVehicle")
+                .withUri("/v1/{project_id}/vehicles/{vehicle_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vehicle_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateVehicleRequest::getVehicleId, (req, v) -> {
+                req.setVehicleId(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateVehicleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ModifyVehicleRequestDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyVehicleRequestDTO.class),
+            f -> f.withMarshaller(UpdateVehicleRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

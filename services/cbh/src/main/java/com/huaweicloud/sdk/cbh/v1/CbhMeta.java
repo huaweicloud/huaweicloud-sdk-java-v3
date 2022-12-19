@@ -296,6 +296,38 @@ public class CbhMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> changeInstanceOrder =
+        genForchangeInstanceOrder();
+
+    private static HttpRequestDef<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> genForchangeInstanceOrder() {
+        // basic
+        HttpRequestDef.Builder<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ChangeInstanceOrderRequest.class, ChangeInstanceOrderResponse.class)
+                .withName("ChangeInstanceOrder")
+                .withUri("/v1/{project_id}/cbs/{server_id}/alter/{instance_key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeInstanceOrderRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+        builder.<String>withRequestField("instance_key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeInstanceOrderRequest::getInstanceKey, (req, v) -> {
+                req.setInstanceKey(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StopCbhInstanceRequest, StopCbhInstanceResponse> stopCbhInstance =
         genForstopCbhInstance();
 

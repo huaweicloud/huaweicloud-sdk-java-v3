@@ -690,6 +690,126 @@ public class DrisClient {
     }
 
     /**
+     * 查询信号机列表
+     *
+     * 查询信号机列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowTrafficControllersRequest 请求对象
+     * @return BatchShowTrafficControllersResponse
+     */
+    public BatchShowTrafficControllersResponse batchShowTrafficControllers(BatchShowTrafficControllersRequest request) {
+        return hcClient.syncInvokeHttp(request, DrisMeta.batchShowTrafficControllers);
+    }
+
+    /**
+     * 查询信号机列表
+     *
+     * 查询信号机列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowTrafficControllersRequest 请求对象
+     * @return SyncInvoker<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse>
+     */
+    public SyncInvoker<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse> batchShowTrafficControllersInvoker(
+        BatchShowTrafficControllersRequest request) {
+        return new SyncInvoker<BatchShowTrafficControllersRequest, BatchShowTrafficControllersResponse>(request,
+            DrisMeta.batchShowTrafficControllers, hcClient);
+    }
+
+    /**
+     * 创建信号机
+     *
+     * 创建信号机
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTrafficControllerRequest 请求对象
+     * @return CreateTrafficControllerResponse
+     */
+    public CreateTrafficControllerResponse createTrafficController(CreateTrafficControllerRequest request) {
+        return hcClient.syncInvokeHttp(request, DrisMeta.createTrafficController);
+    }
+
+    /**
+     * 创建信号机
+     *
+     * 创建信号机
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTrafficControllerRequest 请求对象
+     * @return SyncInvoker<CreateTrafficControllerRequest, CreateTrafficControllerResponse>
+     */
+    public SyncInvoker<CreateTrafficControllerRequest, CreateTrafficControllerResponse> createTrafficControllerInvoker(
+        CreateTrafficControllerRequest request) {
+        return new SyncInvoker<CreateTrafficControllerRequest, CreateTrafficControllerResponse>(request,
+            DrisMeta.createTrafficController, hcClient);
+    }
+
+    /**
+     * 删除信号机
+     *
+     * 删除信号机
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTrafficControllerRequest 请求对象
+     * @return DeleteTrafficControllerResponse
+     */
+    public DeleteTrafficControllerResponse deleteTrafficController(DeleteTrafficControllerRequest request) {
+        return hcClient.syncInvokeHttp(request, DrisMeta.deleteTrafficController);
+    }
+
+    /**
+     * 删除信号机
+     *
+     * 删除信号机
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTrafficControllerRequest 请求对象
+     * @return SyncInvoker<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse>
+     */
+    public SyncInvoker<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse> deleteTrafficControllerInvoker(
+        DeleteTrafficControllerRequest request) {
+        return new SyncInvoker<DeleteTrafficControllerRequest, DeleteTrafficControllerResponse>(request,
+            DrisMeta.deleteTrafficController, hcClient);
+    }
+
+    /**
+     * 修改信号机
+     *
+     * 修改信号机
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTrafficControllerRequest 请求对象
+     * @return UpdateTrafficControllerResponse
+     */
+    public UpdateTrafficControllerResponse updateTrafficController(UpdateTrafficControllerRequest request) {
+        return hcClient.syncInvokeHttp(request, DrisMeta.updateTrafficController);
+    }
+
+    /**
+     * 修改信号机
+     *
+     * 修改信号机
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTrafficControllerRequest 请求对象
+     * @return SyncInvoker<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse>
+     */
+    public SyncInvoker<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse> updateTrafficControllerInvoker(
+        UpdateTrafficControllerRequest request) {
+        return new SyncInvoker<UpdateTrafficControllerRequest, UpdateTrafficControllerResponse>(request,
+            DrisMeta.updateTrafficController, hcClient);
+    }
+
+    /**
      * 查询长期交通事件列表
      *
      * 条件查询交通事件
@@ -1028,6 +1148,120 @@ public class DrisClient {
         UpdateV2xEdgeAppRequest request) {
         return new SyncInvoker<UpdateV2xEdgeAppRequest, UpdateV2xEdgeAppResponse>(request, DrisMeta.updateV2xEdgeApp,
             hcClient);
+    }
+
+    /**
+     * 查询车辆列表
+     *
+     * 查询车辆列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowVehiclesRequest 请求对象
+     * @return BatchShowVehiclesResponse
+     */
+    public BatchShowVehiclesResponse batchShowVehicles(BatchShowVehiclesRequest request) {
+        return hcClient.syncInvokeHttp(request, DrisMeta.batchShowVehicles);
+    }
+
+    /**
+     * 查询车辆列表
+     *
+     * 查询车辆列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowVehiclesRequest 请求对象
+     * @return SyncInvoker<BatchShowVehiclesRequest, BatchShowVehiclesResponse>
+     */
+    public SyncInvoker<BatchShowVehiclesRequest, BatchShowVehiclesResponse> batchShowVehiclesInvoker(
+        BatchShowVehiclesRequest request) {
+        return new SyncInvoker<BatchShowVehiclesRequest, BatchShowVehiclesResponse>(request, DrisMeta.batchShowVehicles,
+            hcClient);
+    }
+
+    /**
+     * 创建车辆
+     *
+     * 创建车辆
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVehicleRequest 请求对象
+     * @return CreateVehicleResponse
+     */
+    public CreateVehicleResponse createVehicle(CreateVehicleRequest request) {
+        return hcClient.syncInvokeHttp(request, DrisMeta.createVehicle);
+    }
+
+    /**
+     * 创建车辆
+     *
+     * 创建车辆
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVehicleRequest 请求对象
+     * @return SyncInvoker<CreateVehicleRequest, CreateVehicleResponse>
+     */
+    public SyncInvoker<CreateVehicleRequest, CreateVehicleResponse> createVehicleInvoker(CreateVehicleRequest request) {
+        return new SyncInvoker<CreateVehicleRequest, CreateVehicleResponse>(request, DrisMeta.createVehicle, hcClient);
+    }
+
+    /**
+     * 删除车辆
+     *
+     * 删除车辆
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteVehicleRequest 请求对象
+     * @return DeleteVehicleResponse
+     */
+    public DeleteVehicleResponse deleteVehicle(DeleteVehicleRequest request) {
+        return hcClient.syncInvokeHttp(request, DrisMeta.deleteVehicle);
+    }
+
+    /**
+     * 删除车辆
+     *
+     * 删除车辆
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteVehicleRequest 请求对象
+     * @return SyncInvoker<DeleteVehicleRequest, DeleteVehicleResponse>
+     */
+    public SyncInvoker<DeleteVehicleRequest, DeleteVehicleResponse> deleteVehicleInvoker(DeleteVehicleRequest request) {
+        return new SyncInvoker<DeleteVehicleRequest, DeleteVehicleResponse>(request, DrisMeta.deleteVehicle, hcClient);
+    }
+
+    /**
+     * 修改车辆
+     *
+     * 修改车辆
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateVehicleRequest 请求对象
+     * @return UpdateVehicleResponse
+     */
+    public UpdateVehicleResponse updateVehicle(UpdateVehicleRequest request) {
+        return hcClient.syncInvokeHttp(request, DrisMeta.updateVehicle);
+    }
+
+    /**
+     * 修改车辆
+     *
+     * 修改车辆
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateVehicleRequest 请求对象
+     * @return SyncInvoker<UpdateVehicleRequest, UpdateVehicleResponse>
+     */
+    public SyncInvoker<UpdateVehicleRequest, UpdateVehicleResponse> updateVehicleInvoker(UpdateVehicleRequest request) {
+        return new SyncInvoker<UpdateVehicleRequest, UpdateVehicleResponse>(request, DrisMeta.updateVehicle, hcClient);
     }
 
     /**

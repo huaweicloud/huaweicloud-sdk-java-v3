@@ -79,6 +79,41 @@ public class CceAsyncClient {
     }
 
     /**
+     * 继续执行集群升级任务
+     *
+     * 继续执行被暂停的集群升级任务。
+     * &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+     * &gt; - 当前集群升级相关接口受限开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ContinueUpgradeClusterTaskRequest 请求对象
+     * @return CompletableFuture<ContinueUpgradeClusterTaskResponse>
+     */
+    public CompletableFuture<ContinueUpgradeClusterTaskResponse> continueUpgradeClusterTaskAsync(
+        ContinueUpgradeClusterTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.continueUpgradeClusterTask);
+    }
+
+    /**
+     * 继续执行集群升级任务
+     *
+     * 继续执行被暂停的集群升级任务。
+     * &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+     * &gt; - 当前集群升级相关接口受限开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ContinueUpgradeClusterTaskRequest 请求对象
+     * @return AsyncInvoker<ContinueUpgradeClusterTaskRequest, ContinueUpgradeClusterTaskResponse>
+     */
+    public AsyncInvoker<ContinueUpgradeClusterTaskRequest, ContinueUpgradeClusterTaskResponse> continueUpgradeClusterTaskAsyncInvoker(
+        ContinueUpgradeClusterTaskRequest request) {
+        return new AsyncInvoker<ContinueUpgradeClusterTaskRequest, ContinueUpgradeClusterTaskResponse>(request,
+            CceMeta.continueUpgradeClusterTask, hcClient);
+    }
+
+    /**
      * 创建AddonInstance
      *
      * 根据提供的插件模板，安装插件实例。
@@ -662,6 +697,41 @@ public class CceAsyncClient {
     }
 
     /**
+     * 暂停集群升级任务
+     *
+     * 暂停集群升级任务。
+     * &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+     * &gt; - 当前集群升级相关接口受限开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PauseUpgradeClusterTaskRequest 请求对象
+     * @return CompletableFuture<PauseUpgradeClusterTaskResponse>
+     */
+    public CompletableFuture<PauseUpgradeClusterTaskResponse> pauseUpgradeClusterTaskAsync(
+        PauseUpgradeClusterTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.pauseUpgradeClusterTask);
+    }
+
+    /**
+     * 暂停集群升级任务
+     *
+     * 暂停集群升级任务。
+     * &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+     * &gt; - 当前集群升级相关接口受限开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PauseUpgradeClusterTaskRequest 请求对象
+     * @return AsyncInvoker<PauseUpgradeClusterTaskRequest, PauseUpgradeClusterTaskResponse>
+     */
+    public AsyncInvoker<PauseUpgradeClusterTaskRequest, PauseUpgradeClusterTaskResponse> pauseUpgradeClusterTaskAsyncInvoker(
+        PauseUpgradeClusterTaskRequest request) {
+        return new AsyncInvoker<PauseUpgradeClusterTaskRequest, PauseUpgradeClusterTaskResponse>(request,
+            CceMeta.pauseUpgradeClusterTask, hcClient);
+    }
+
+    /**
      * 节点移除
      *
      * 该API用于在指定集群下移除节点。
@@ -719,6 +789,41 @@ public class CceAsyncClient {
      */
     public AsyncInvoker<ResetNodeRequest, ResetNodeResponse> resetNodeAsyncInvoker(ResetNodeRequest request) {
         return new AsyncInvoker<ResetNodeRequest, ResetNodeResponse>(request, CceMeta.resetNode, hcClient);
+    }
+
+    /**
+     * 重试集群升级任务
+     *
+     * 重新执行失败的集群升级任务。
+     * &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+     * &gt; - 当前集群升级相关接口受限开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RetryUpgradeClusterTaskRequest 请求对象
+     * @return CompletableFuture<RetryUpgradeClusterTaskResponse>
+     */
+    public CompletableFuture<RetryUpgradeClusterTaskResponse> retryUpgradeClusterTaskAsync(
+        RetryUpgradeClusterTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.retryUpgradeClusterTask);
+    }
+
+    /**
+     * 重试集群升级任务
+     *
+     * 重新执行失败的集群升级任务。
+     * &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+     * &gt; - 当前集群升级相关接口受限开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RetryUpgradeClusterTaskRequest 请求对象
+     * @return AsyncInvoker<RetryUpgradeClusterTaskRequest, RetryUpgradeClusterTaskResponse>
+     */
+    public AsyncInvoker<RetryUpgradeClusterTaskRequest, RetryUpgradeClusterTaskResponse> retryUpgradeClusterTaskAsyncInvoker(
+        RetryUpgradeClusterTaskRequest request) {
+        return new AsyncInvoker<RetryUpgradeClusterTaskRequest, RetryUpgradeClusterTaskResponse>(request,
+            CceMeta.retryUpgradeClusterTask, hcClient);
     }
 
     /**
@@ -940,6 +1045,41 @@ public class CceAsyncClient {
     }
 
     /**
+     * 获取集群升级任务详情
+     *
+     * 获取集群升级任务详情，任务ID由调用集群升级API后从响应体中uid字段获取。
+     * &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+     * &gt; - 当前集群升级相关接口受限开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowUpgradeClusterTaskRequest 请求对象
+     * @return CompletableFuture<ShowUpgradeClusterTaskResponse>
+     */
+    public CompletableFuture<ShowUpgradeClusterTaskResponse> showUpgradeClusterTaskAsync(
+        ShowUpgradeClusterTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showUpgradeClusterTask);
+    }
+
+    /**
+     * 获取集群升级任务详情
+     *
+     * 获取集群升级任务详情，任务ID由调用集群升级API后从响应体中uid字段获取。
+     * &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+     * &gt; - 当前集群升级相关接口受限开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowUpgradeClusterTaskRequest 请求对象
+     * @return AsyncInvoker<ShowUpgradeClusterTaskRequest, ShowUpgradeClusterTaskResponse>
+     */
+    public AsyncInvoker<ShowUpgradeClusterTaskRequest, ShowUpgradeClusterTaskResponse> showUpgradeClusterTaskAsyncInvoker(
+        ShowUpgradeClusterTaskRequest request) {
+        return new AsyncInvoker<ShowUpgradeClusterTaskRequest, ShowUpgradeClusterTaskResponse>(request,
+            CceMeta.showUpgradeClusterTask, hcClient);
+    }
+
+    /**
      * 更新AddonInstance
      *
      * 更新插件实例的功能。
@@ -1101,6 +1241,40 @@ public class CceAsyncClient {
     public AsyncInvoker<UpdateNodePoolRequest, UpdateNodePoolResponse> updateNodePoolAsyncInvoker(
         UpdateNodePoolRequest request) {
         return new AsyncInvoker<UpdateNodePoolRequest, UpdateNodePoolResponse>(request, CceMeta.updateNodePool,
+            hcClient);
+    }
+
+    /**
+     * 集群升级
+     *
+     * 集群升级。
+     * &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+     * &gt; - 当前集群升级相关接口受限开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeClusterRequest 请求对象
+     * @return CompletableFuture<UpgradeClusterResponse>
+     */
+    public CompletableFuture<UpgradeClusterResponse> upgradeClusterAsync(UpgradeClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.upgradeCluster);
+    }
+
+    /**
+     * 集群升级
+     *
+     * 集群升级。
+     * &gt; - 集群升级涉及多维度的组件升级操作，强烈建议统一通过CCE控制台执行交互式升级，降低集群升级过程的业务意外受损风险；
+     * &gt; - 当前集群升级相关接口受限开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeClusterRequest 请求对象
+     * @return AsyncInvoker<UpgradeClusterRequest, UpgradeClusterResponse>
+     */
+    public AsyncInvoker<UpgradeClusterRequest, UpgradeClusterResponse> upgradeClusterAsyncInvoker(
+        UpgradeClusterRequest request) {
+        return new AsyncInvoker<UpgradeClusterRequest, UpgradeClusterResponse>(request, CceMeta.upgradeCluster,
             hcClient);
     }
 
