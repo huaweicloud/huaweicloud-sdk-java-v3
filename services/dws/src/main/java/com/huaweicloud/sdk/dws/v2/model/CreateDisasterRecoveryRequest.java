@@ -14,16 +14,16 @@ public class CreateDisasterRecoveryRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateDisasterRecovery body;
+    private CreateDisasterRecoveryReq body;
 
-    public CreateDisasterRecoveryRequest withBody(CreateDisasterRecovery body) {
+    public CreateDisasterRecoveryRequest withBody(CreateDisasterRecoveryReq body) {
         this.body = body;
         return this;
     }
 
-    public CreateDisasterRecoveryRequest withBody(Consumer<CreateDisasterRecovery> bodySetter) {
+    public CreateDisasterRecoveryRequest withBody(Consumer<CreateDisasterRecoveryReq> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateDisasterRecovery();
+            this.body = new CreateDisasterRecoveryReq();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateDisasterRecoveryRequest {
      * Get body
      * @return body
      */
-    public CreateDisasterRecovery getBody() {
+    public CreateDisasterRecoveryReq getBody() {
         return body;
     }
 
-    public void setBody(CreateDisasterRecovery body) {
+    public void setBody(CreateDisasterRecoveryReq body) {
         this.body = body;
     }
 

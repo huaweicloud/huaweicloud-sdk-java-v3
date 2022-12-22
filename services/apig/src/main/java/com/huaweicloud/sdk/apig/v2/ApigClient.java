@@ -254,6 +254,37 @@ public class ApigClient {
     }
 
     /**
+     * 批量添加或删除单个实例的标签
+     *
+     * 批量添加或删除单个实例的标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateOrDeleteInstanceTagsRequest 请求对象
+     * @return BatchCreateOrDeleteInstanceTagsResponse
+     */
+    public BatchCreateOrDeleteInstanceTagsResponse batchCreateOrDeleteInstanceTags(
+        BatchCreateOrDeleteInstanceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.batchCreateOrDeleteInstanceTags);
+    }
+
+    /**
+     * 批量添加或删除单个实例的标签
+     *
+     * 批量添加或删除单个实例的标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateOrDeleteInstanceTagsRequest 请求对象
+     * @return SyncInvoker<BatchCreateOrDeleteInstanceTagsRequest, BatchCreateOrDeleteInstanceTagsResponse>
+     */
+    public SyncInvoker<BatchCreateOrDeleteInstanceTagsRequest, BatchCreateOrDeleteInstanceTagsResponse> batchCreateOrDeleteInstanceTagsInvoker(
+        BatchCreateOrDeleteInstanceTagsRequest request) {
+        return new SyncInvoker<BatchCreateOrDeleteInstanceTagsRequest, BatchCreateOrDeleteInstanceTagsResponse>(request,
+            ApigMeta.batchCreateOrDeleteInstanceTags, hcClient);
+    }
+
+    /**
      * 创建自定义认证
      *
      * 创建自定义认证
@@ -1672,6 +1703,36 @@ public class ApigClient {
     }
 
     /**
+     * 查询单个实例标签
+     *
+     * 查询单个实例的标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceTagsRequest 请求对象
+     * @return ListInstanceTagsResponse
+     */
+    public ListInstanceTagsResponse listInstanceTags(ListInstanceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.listInstanceTags);
+    }
+
+    /**
+     * 查询单个实例标签
+     *
+     * 查询单个实例的标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceTagsRequest 请求对象
+     * @return SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>
+     */
+    public SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsInvoker(
+        ListInstanceTagsRequest request) {
+        return new SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>(request, ApigMeta.listInstanceTags,
+            hcClient);
+    }
+
+    /**
      * 查询专享版实例列表
      *
      * 查询专享版实例列表
@@ -1935,6 +1996,36 @@ public class ApigClient {
         ListProjectCofigsV2Request request) {
         return new SyncInvoker<ListProjectCofigsV2Request, ListProjectCofigsV2Response>(request,
             ApigMeta.listProjectCofigsV2, hcClient);
+    }
+
+    /**
+     * 查询项目下所有实例标签
+     *
+     * 查询项目下所有实例标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectInstanceTagsRequest 请求对象
+     * @return ListProjectInstanceTagsResponse
+     */
+    public ListProjectInstanceTagsResponse listProjectInstanceTags(ListProjectInstanceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.listProjectInstanceTags);
+    }
+
+    /**
+     * 查询项目下所有实例标签
+     *
+     * 查询项目下所有实例标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectInstanceTagsRequest 请求对象
+     * @return SyncInvoker<ListProjectInstanceTagsRequest, ListProjectInstanceTagsResponse>
+     */
+    public SyncInvoker<ListProjectInstanceTagsRequest, ListProjectInstanceTagsResponse> listProjectInstanceTagsInvoker(
+        ListProjectInstanceTagsRequest request) {
+        return new SyncInvoker<ListProjectInstanceTagsRequest, ListProjectInstanceTagsResponse>(request,
+            ApigMeta.listProjectInstanceTags, hcClient);
     }
 
     /**

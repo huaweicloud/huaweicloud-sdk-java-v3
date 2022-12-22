@@ -19,6 +19,16 @@ public class ListWorkloadQueueResponse extends SdkResponse {
 
     private List<String> workloadQueueNameList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workload_res_code")
+
+    private Integer workloadResCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workload_res_str")
+
+    private String workloadResStr;
+
     public ListWorkloadQueueResponse withWorkloadQueueNameList(List<String> workloadQueueNameList) {
         this.workloadQueueNameList = workloadQueueNameList;
         return this;
@@ -52,6 +62,40 @@ public class ListWorkloadQueueResponse extends SdkResponse {
         this.workloadQueueNameList = workloadQueueNameList;
     }
 
+    public ListWorkloadQueueResponse withWorkloadResCode(Integer workloadResCode) {
+        this.workloadResCode = workloadResCode;
+        return this;
+    }
+
+    /**
+     * 结果状态码。
+     * @return workloadResCode
+     */
+    public Integer getWorkloadResCode() {
+        return workloadResCode;
+    }
+
+    public void setWorkloadResCode(Integer workloadResCode) {
+        this.workloadResCode = workloadResCode;
+    }
+
+    public ListWorkloadQueueResponse withWorkloadResStr(String workloadResStr) {
+        this.workloadResStr = workloadResStr;
+        return this;
+    }
+
+    /**
+     * 结果描述。
+     * @return workloadResStr
+     */
+    public String getWorkloadResStr() {
+        return workloadResStr;
+    }
+
+    public void setWorkloadResStr(String workloadResStr) {
+        this.workloadResStr = workloadResStr;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -61,12 +105,14 @@ public class ListWorkloadQueueResponse extends SdkResponse {
             return false;
         }
         ListWorkloadQueueResponse listWorkloadQueueResponse = (ListWorkloadQueueResponse) o;
-        return Objects.equals(this.workloadQueueNameList, listWorkloadQueueResponse.workloadQueueNameList);
+        return Objects.equals(this.workloadQueueNameList, listWorkloadQueueResponse.workloadQueueNameList)
+            && Objects.equals(this.workloadResCode, listWorkloadQueueResponse.workloadResCode)
+            && Objects.equals(this.workloadResStr, listWorkloadQueueResponse.workloadResStr);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workloadQueueNameList);
+        return Objects.hash(workloadQueueNameList, workloadResCode, workloadResStr);
     }
 
     @Override
@@ -74,6 +120,8 @@ public class ListWorkloadQueueResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListWorkloadQueueResponse {\n");
         sb.append("    workloadQueueNameList: ").append(toIndentedString(workloadQueueNameList)).append("\n");
+        sb.append("    workloadResCode: ").append(toIndentedString(workloadResCode)).append("\n");
+        sb.append("    workloadResStr: ").append(toIndentedString(workloadResStr)).append("\n");
         sb.append("}");
         return sb.toString();
     }

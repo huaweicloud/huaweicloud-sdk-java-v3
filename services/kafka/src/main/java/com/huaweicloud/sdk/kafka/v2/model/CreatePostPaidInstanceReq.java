@@ -520,8 +520,90 @@ public class CreatePostPaidInstanceReq {
     private Boolean sslEnable;
 
     /**
-     * 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
+     * Gets or Sets saslEnabledMechanisms
      */
+    public static final class SaslEnabledMechanismsEnum {
+
+        /**
+         * Enum PLAIN for value: "PLAIN"
+         */
+        public static final SaslEnabledMechanismsEnum PLAIN = new SaslEnabledMechanismsEnum("PLAIN");
+
+        /**
+         * Enum SCRAM_SHA_512 for value: "SCRAM-SHA-512"
+         */
+        public static final SaslEnabledMechanismsEnum SCRAM_SHA_512 = new SaslEnabledMechanismsEnum("SCRAM-SHA-512");
+
+        private static final Map<String, SaslEnabledMechanismsEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SaslEnabledMechanismsEnum> createStaticFields() {
+            Map<String, SaslEnabledMechanismsEnum> map = new HashMap<>();
+            map.put("PLAIN", PLAIN);
+            map.put("SCRAM-SHA-512", SCRAM_SHA_512);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SaslEnabledMechanismsEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SaslEnabledMechanismsEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            SaslEnabledMechanismsEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new SaslEnabledMechanismsEnum(value);
+            }
+            return result;
+        }
+
+        public static SaslEnabledMechanismsEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            SaslEnabledMechanismsEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SaslEnabledMechanismsEnum) {
+                return this.value.equals(((SaslEnabledMechanismsEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sasl_enabled_mechanisms")
+
+    private List<SaslEnabledMechanismsEnum> saslEnabledMechanisms = null;
+
+    /**
+    * 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
+    */
     public static final class RetentionPolicyEnum {
 
         /**
@@ -1143,6 +1225,40 @@ public class CreatePostPaidInstanceReq {
         this.sslEnable = sslEnable;
     }
 
+    public CreatePostPaidInstanceReq withSaslEnabledMechanisms(List<SaslEnabledMechanismsEnum> saslEnabledMechanisms) {
+        this.saslEnabledMechanisms = saslEnabledMechanisms;
+        return this;
+    }
+
+    public CreatePostPaidInstanceReq addSaslEnabledMechanismsItem(SaslEnabledMechanismsEnum saslEnabledMechanismsItem) {
+        if (this.saslEnabledMechanisms == null) {
+            this.saslEnabledMechanisms = new ArrayList<>();
+        }
+        this.saslEnabledMechanisms.add(saslEnabledMechanismsItem);
+        return this;
+    }
+
+    public CreatePostPaidInstanceReq withSaslEnabledMechanisms(
+        Consumer<List<SaslEnabledMechanismsEnum>> saslEnabledMechanismsSetter) {
+        if (this.saslEnabledMechanisms == null) {
+            this.saslEnabledMechanisms = new ArrayList<>();
+        }
+        saslEnabledMechanismsSetter.accept(this.saslEnabledMechanisms);
+        return this;
+    }
+
+    /**
+     * 开启SASL后使用的认证机制，如果开启了SASL认证功能（即ssl_enable=true），该字段为必选。  若该字段值为空，默认开启PLAIN认证机制。  选择其一进行SASL认证即可,支持同时开启两种认证机制。 取值如下： - PLAIN: 简单的用户名密码校验。 - SCRAM-SHA-512: 用户凭证校验，安全性比PLAIN机制更高。
+     * @return saslEnabledMechanisms
+     */
+    public List<SaslEnabledMechanismsEnum> getSaslEnabledMechanisms() {
+        return saslEnabledMechanisms;
+    }
+
+    public void setSaslEnabledMechanisms(List<SaslEnabledMechanismsEnum> saslEnabledMechanisms) {
+        this.saslEnabledMechanisms = saslEnabledMechanisms;
+    }
+
     public CreatePostPaidInstanceReq withRetentionPolicy(RetentionPolicyEnum retentionPolicy) {
         this.retentionPolicy = retentionPolicy;
         return this;
@@ -1327,6 +1443,7 @@ public class CreatePostPaidInstanceReq {
             && Objects.equals(this.publicBandwidth, createPostPaidInstanceReq.publicBandwidth)
             && Objects.equals(this.publicipId, createPostPaidInstanceReq.publicipId)
             && Objects.equals(this.sslEnable, createPostPaidInstanceReq.sslEnable)
+            && Objects.equals(this.saslEnabledMechanisms, createPostPaidInstanceReq.saslEnabledMechanisms)
             && Objects.equals(this.retentionPolicy, createPostPaidInstanceReq.retentionPolicy)
             && Objects.equals(this.connectorEnable, createPostPaidInstanceReq.connectorEnable)
             && Objects.equals(this.diskEncryptedEnable, createPostPaidInstanceReq.diskEncryptedEnable)
@@ -1362,6 +1479,7 @@ public class CreatePostPaidInstanceReq {
             publicBandwidth,
             publicipId,
             sslEnable,
+            saslEnabledMechanisms,
             retentionPolicy,
             connectorEnable,
             diskEncryptedEnable,
@@ -1399,6 +1517,7 @@ public class CreatePostPaidInstanceReq {
         sb.append("    publicBandwidth: ").append(toIndentedString(publicBandwidth)).append("\n");
         sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
         sb.append("    sslEnable: ").append(toIndentedString(sslEnable)).append("\n");
+        sb.append("    saslEnabledMechanisms: ").append(toIndentedString(saslEnabledMechanisms)).append("\n");
         sb.append("    retentionPolicy: ").append(toIndentedString(retentionPolicy)).append("\n");
         sb.append("    connectorEnable: ").append(toIndentedString(connectorEnable)).append("\n");
         sb.append("    diskEncryptedEnable: ").append(toIndentedString(diskEncryptedEnable)).append("\n");

@@ -12,25 +12,47 @@ import java.util.Objects;
 public class CreateDataSourceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "id")
 
-    private String body;
+    private String id;
 
-    public CreateDataSourceResponse withBody(String body) {
-        this.body = body;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_id")
+
+    private String jobId;
+
+    public CreateDataSourceResponse withId(String id) {
+        this.id = id;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 数据源id。
+     * @return id
      */
-    public String getBody() {
-        return body;
+    public String getId() {
+        return id;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public CreateDataSourceResponse withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+
+    /**
+     * 创建数据源job_id。
+     * @return jobId
+     */
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 
     @Override
@@ -42,19 +64,21 @@ public class CreateDataSourceResponse extends SdkResponse {
             return false;
         }
         CreateDataSourceResponse createDataSourceResponse = (CreateDataSourceResponse) o;
-        return Objects.equals(this.body, createDataSourceResponse.body);
+        return Objects.equals(this.id, createDataSourceResponse.id)
+            && Objects.equals(this.jobId, createDataSourceResponse.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(id, jobId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateDataSourceResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

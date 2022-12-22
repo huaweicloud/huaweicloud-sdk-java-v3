@@ -32,11 +32,6 @@ public class ClusterSnapshots {
     private String started;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "finished")
-
-    private String finished;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
     private Double size;
@@ -119,7 +114,7 @@ public class ClusterSnapshots {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_backup_size")
 
-    private String totalBackupSize;
+    private Integer totalBackupSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "base_backup_name")
@@ -139,7 +134,7 @@ public class ClusterSnapshots {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_level")
 
-    private Boolean backupLevel;
+    private String backupLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fine_grained_backup_detail")
@@ -222,23 +217,6 @@ public class ClusterSnapshots {
 
     public void setStarted(String started) {
         this.started = started;
-    }
-
-    public ClusterSnapshots withFinished(String finished) {
-        this.finished = finished;
-        return this;
-    }
-
-    /**
-     * 快照完成的日期时间，格式为 ISO8601: YYYY-MM-DDThh:mm:ssZ。
-     * @return finished
-     */
-    public String getFinished() {
-        return finished;
-    }
-
-    public void setFinished(String finished) {
-        this.finished = finished;
     }
 
     public ClusterSnapshots withSize(Double size) {
@@ -522,7 +500,7 @@ public class ClusterSnapshots {
         this.backupDevice = backupDevice;
     }
 
-    public ClusterSnapshots withTotalBackupSize(String totalBackupSize) {
+    public ClusterSnapshots withTotalBackupSize(Integer totalBackupSize) {
         this.totalBackupSize = totalBackupSize;
         return this;
     }
@@ -531,11 +509,11 @@ public class ClusterSnapshots {
      * 累计快照大小。
      * @return totalBackupSize
      */
-    public String getTotalBackupSize() {
+    public Integer getTotalBackupSize() {
         return totalBackupSize;
     }
 
-    public void setTotalBackupSize(String totalBackupSize) {
+    public void setTotalBackupSize(Integer totalBackupSize) {
         this.totalBackupSize = totalBackupSize;
     }
 
@@ -590,7 +568,7 @@ public class ClusterSnapshots {
         this.fineGrainedBackup = fineGrainedBackup;
     }
 
-    public ClusterSnapshots withBackupLevel(Boolean backupLevel) {
+    public ClusterSnapshots withBackupLevel(String backupLevel) {
         this.backupLevel = backupLevel;
         return this;
     }
@@ -599,11 +577,11 @@ public class ClusterSnapshots {
      * 备份级别。
      * @return backupLevel
      */
-    public Boolean getBackupLevel() {
+    public String getBackupLevel() {
         return backupLevel;
     }
 
-    public void setBackupLevel(Boolean backupLevel) {
+    public void setBackupLevel(String backupLevel) {
         this.backupLevel = backupLevel;
     }
 
@@ -680,7 +658,6 @@ public class ClusterSnapshots {
         return Objects.equals(this.id, clusterSnapshots.id) && Objects.equals(this.name, clusterSnapshots.name)
             && Objects.equals(this.description, clusterSnapshots.description)
             && Objects.equals(this.started, clusterSnapshots.started)
-            && Objects.equals(this.finished, clusterSnapshots.finished)
             && Objects.equals(this.size, clusterSnapshots.size) && Objects.equals(this.status, clusterSnapshots.status)
             && Objects.equals(this.clusterId, clusterSnapshots.clusterId)
             && Objects.equals(this.datastore, clusterSnapshots.datastore)
@@ -712,7 +689,6 @@ public class ClusterSnapshots {
             name,
             description,
             started,
-            finished,
             size,
             status,
             clusterId,
@@ -747,7 +723,6 @@ public class ClusterSnapshots {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    started: ").append(toIndentedString(started)).append("\n");
-        sb.append("    finished: ").append(toIndentedString(finished)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");

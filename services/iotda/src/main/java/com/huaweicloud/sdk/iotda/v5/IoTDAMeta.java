@@ -1532,6 +1532,38 @@ public class IoTDAMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SearchDevicesRequest, SearchDevicesResponse> searchDevices =
+        genForsearchDevices();
+
+    private static HttpRequestDef<SearchDevicesRequest, SearchDevicesResponse> genForsearchDevices() {
+        // basic
+        HttpRequestDef.Builder<SearchDevicesRequest, SearchDevicesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SearchDevicesRequest.class, SearchDevicesResponse.class)
+                .withName("SearchDevices")
+                .withUri("/v5/iot/{project_id}/search/query-devices")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchDevicesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<SearchSql>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchSql.class),
+            f -> f.withMarshaller(SearchDevicesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDeviceRequest, ShowDeviceResponse> showDevice = genForshowDevice();
 
     private static HttpRequestDef<ShowDeviceRequest, ShowDeviceResponse> genForshowDevice() {

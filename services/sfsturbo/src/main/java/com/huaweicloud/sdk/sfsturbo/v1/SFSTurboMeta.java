@@ -278,17 +278,17 @@ public class SFSTurboMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("limit",
+        builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListSharesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
-        builder.<Integer>withRequestField("offset",
+        builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListSharesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));

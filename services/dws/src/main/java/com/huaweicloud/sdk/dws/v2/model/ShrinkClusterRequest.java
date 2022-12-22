@@ -19,7 +19,7 @@ public class ShrinkClusterRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private Object body;
+    private ClusterShrinkReq body;
 
     public ShrinkClusterRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -38,14 +38,14 @@ public class ShrinkClusterRequest {
         this.clusterId = clusterId;
     }
 
-    public ShrinkClusterRequest withBody(Object body) {
+    public ShrinkClusterRequest withBody(ClusterShrinkReq body) {
         this.body = body;
         return this;
     }
 
-    public ShrinkClusterRequest withBody(Consumer<Object> bodySetter) {
+    public ShrinkClusterRequest withBody(Consumer<ClusterShrinkReq> bodySetter) {
         if (this.body == null) {
-            this.body = new Object();
+            this.body = new ClusterShrinkReq();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class ShrinkClusterRequest {
      * Get body
      * @return body
      */
-    public Object getBody() {
+    public ClusterShrinkReq getBody() {
         return body;
     }
 
-    public void setBody(Object body) {
+    public void setBody(ClusterShrinkReq body) {
         this.body = body;
     }
 

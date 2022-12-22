@@ -166,9 +166,9 @@ public class FlowExecutionBriefV2 {
     private OffsetDateTime lastUpdateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_by")
+    @JsonProperty(value = "created_by")
 
-    private String createBy;
+    private String createdBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workflow_urn")
@@ -277,21 +277,21 @@ public class FlowExecutionBriefV2 {
         this.lastUpdateTime = lastUpdateTime;
     }
 
-    public FlowExecutionBriefV2 withCreateBy(String createBy) {
-        this.createBy = createBy;
+    public FlowExecutionBriefV2 withCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
         return this;
     }
 
     /**
-     * Get createBy
-     * @return createBy
+     * Get createdBy
+     * @return createdBy
      */
-    public String getCreateBy() {
-        return createBy;
+    public String getCreatedBy() {
+        return createdBy;
     }
 
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
     }
 
     public FlowExecutionBriefV2 withWorkflowUrn(String workflowUrn) {
@@ -326,13 +326,14 @@ public class FlowExecutionBriefV2 {
             && Objects.equals(this.beginTime, flowExecutionBriefV2.beginTime)
             && Objects.equals(this.endTime, flowExecutionBriefV2.endTime)
             && Objects.equals(this.lastUpdateTime, flowExecutionBriefV2.lastUpdateTime)
-            && Objects.equals(this.createBy, flowExecutionBriefV2.createBy)
+            && Objects.equals(this.createdBy, flowExecutionBriefV2.createdBy)
             && Objects.equals(this.workflowUrn, flowExecutionBriefV2.workflowUrn);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workflowId, executionId, status, beginTime, endTime, lastUpdateTime, createBy, workflowUrn);
+        return Objects
+            .hash(workflowId, executionId, status, beginTime, endTime, lastUpdateTime, createdBy, workflowUrn);
     }
 
     @Override
@@ -345,7 +346,7 @@ public class FlowExecutionBriefV2 {
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    lastUpdateTime: ").append(toIndentedString(lastUpdateTime)).append("\n");
-        sb.append("    createBy: ").append(toIndentedString(createBy)).append("\n");
+        sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
         sb.append("    workflowUrn: ").append(toIndentedString(workflowUrn)).append("\n");
         sb.append("}");
         return sb.toString();

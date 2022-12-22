@@ -727,6 +727,8 @@ public class ListSimCardsRequest {
 
     /**
      * 订单号
+     * minimum: 0
+     * maximum: 9223372036854774784
      * @return orderId
      */
     public Long getOrderId() {

@@ -389,6 +389,16 @@ public class CreatePostPaidInstanceReq {
     private StorageSpecCodeEnum storageSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_acl")
+
+    private Boolean enableAcl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_enable")
 
     private Boolean ipv6Enable;
@@ -628,6 +638,40 @@ public class CreatePostPaidInstanceReq {
         this.storageSpecCode = storageSpecCode;
     }
 
+    public CreatePostPaidInstanceReq withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID。若为企业项目帐号，该参数必填。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public CreatePostPaidInstanceReq withEnableAcl(Boolean enableAcl) {
+        this.enableAcl = enableAcl;
+        return this;
+    }
+
+    /**
+     * 是否开启访问控制列表。
+     * @return enableAcl
+     */
+    public Boolean getEnableAcl() {
+        return enableAcl;
+    }
+
+    public void setEnableAcl(Boolean enableAcl) {
+        this.enableAcl = enableAcl;
+    }
+
     public CreatePostPaidInstanceReq withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
         return this;
@@ -717,6 +761,8 @@ public class CreatePostPaidInstanceReq {
             && Objects.equals(this.productId, createPostPaidInstanceReq.productId)
             && Objects.equals(this.sslEnable, createPostPaidInstanceReq.sslEnable)
             && Objects.equals(this.storageSpecCode, createPostPaidInstanceReq.storageSpecCode)
+            && Objects.equals(this.enterpriseProjectId, createPostPaidInstanceReq.enterpriseProjectId)
+            && Objects.equals(this.enableAcl, createPostPaidInstanceReq.enableAcl)
             && Objects.equals(this.ipv6Enable, createPostPaidInstanceReq.ipv6Enable)
             && Objects.equals(this.enablePublicip, createPostPaidInstanceReq.enablePublicip)
             && Objects.equals(this.publicipId, createPostPaidInstanceReq.publicipId)
@@ -737,6 +783,8 @@ public class CreatePostPaidInstanceReq {
             productId,
             sslEnable,
             storageSpecCode,
+            enterpriseProjectId,
+            enableAcl,
             ipv6Enable,
             enablePublicip,
             publicipId,
@@ -759,6 +807,8 @@ public class CreatePostPaidInstanceReq {
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    sslEnable: ").append(toIndentedString(sslEnable)).append("\n");
         sb.append("    storageSpecCode: ").append(toIndentedString(storageSpecCode)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    enableAcl: ").append(toIndentedString(enableAcl)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
         sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");

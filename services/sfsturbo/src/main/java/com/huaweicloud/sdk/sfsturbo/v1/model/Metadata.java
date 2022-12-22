@@ -30,6 +30,11 @@ public class Metadata {
 
     private String expandType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hpc_bw")
+
+    private String hpcBw;
+
     public Metadata withCryptKeyId(String cryptKeyId) {
         this.cryptKeyId = cryptKeyId;
         return this;
@@ -98,6 +103,23 @@ public class Metadata {
         this.expandType = expandType;
     }
 
+    public Metadata withHpcBw(String hpcBw) {
+        this.hpcBw = hpcBw;
+        return this;
+    }
+
+    /**
+     * hpc型带宽,仅创建hpc型需要
+     * @return hpcBw
+     */
+    public String getHpcBw() {
+        return hpcBw;
+    }
+
+    public void setHpcBw(String hpcBw) {
+        this.hpcBw = hpcBw;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -110,12 +132,12 @@ public class Metadata {
         return Objects.equals(this.cryptKeyId, metadata.cryptKeyId)
             && Objects.equals(this.dedicatedFlavor, metadata.dedicatedFlavor)
             && Objects.equals(this.dedicatedStorageId, metadata.dedicatedStorageId)
-            && Objects.equals(this.expandType, metadata.expandType);
+            && Objects.equals(this.expandType, metadata.expandType) && Objects.equals(this.hpcBw, metadata.hpcBw);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cryptKeyId, dedicatedFlavor, dedicatedStorageId, expandType);
+        return Objects.hash(cryptKeyId, dedicatedFlavor, dedicatedStorageId, expandType, hpcBw);
     }
 
     @Override
@@ -126,6 +148,7 @@ public class Metadata {
         sb.append("    dedicatedFlavor: ").append(toIndentedString(dedicatedFlavor)).append("\n");
         sb.append("    dedicatedStorageId: ").append(toIndentedString(dedicatedStorageId)).append("\n");
         sb.append("    expandType: ").append(toIndentedString(expandType)).append("\n");
+        sb.append("    hpcBw: ").append(toIndentedString(hpcBw)).append("\n");
         sb.append("}");
         return sb.toString();
     }

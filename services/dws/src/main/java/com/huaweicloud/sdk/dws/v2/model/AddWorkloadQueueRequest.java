@@ -19,7 +19,7 @@ public class AddWorkloadQueueRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private WorkloadQueue body;
+    private WorkloadQueueReq body;
 
     public AddWorkloadQueueRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -38,14 +38,14 @@ public class AddWorkloadQueueRequest {
         this.clusterId = clusterId;
     }
 
-    public AddWorkloadQueueRequest withBody(WorkloadQueue body) {
+    public AddWorkloadQueueRequest withBody(WorkloadQueueReq body) {
         this.body = body;
         return this;
     }
 
-    public AddWorkloadQueueRequest withBody(Consumer<WorkloadQueue> bodySetter) {
+    public AddWorkloadQueueRequest withBody(Consumer<WorkloadQueueReq> bodySetter) {
         if (this.body == null) {
-            this.body = new WorkloadQueue();
+            this.body = new WorkloadQueueReq();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class AddWorkloadQueueRequest {
      * Get body
      * @return body
      */
-    public WorkloadQueue getBody() {
+    public WorkloadQueueReq getBody() {
         return body;
     }
 
-    public void setBody(WorkloadQueue body) {
+    public void setBody(WorkloadQueueReq body) {
         this.body = body;
     }
 

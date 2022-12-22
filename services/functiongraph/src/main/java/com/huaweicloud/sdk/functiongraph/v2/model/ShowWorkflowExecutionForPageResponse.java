@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -25,7 +27,7 @@ public class ShowWorkflowExecutionForPageResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executions")
 
-    private FlowExecutionBriefV2 executions;
+    private List<FlowExecutionBriefV2> executions = null;
 
     public ShowWorkflowExecutionForPageResponse withTotal(Long total) {
         this.total = total;
@@ -65,29 +67,36 @@ public class ShowWorkflowExecutionForPageResponse extends SdkResponse {
         this.size = size;
     }
 
-    public ShowWorkflowExecutionForPageResponse withExecutions(FlowExecutionBriefV2 executions) {
+    public ShowWorkflowExecutionForPageResponse withExecutions(List<FlowExecutionBriefV2> executions) {
         this.executions = executions;
         return this;
     }
 
-    public ShowWorkflowExecutionForPageResponse withExecutions(Consumer<FlowExecutionBriefV2> executionsSetter) {
+    public ShowWorkflowExecutionForPageResponse addExecutionsItem(FlowExecutionBriefV2 executionsItem) {
         if (this.executions == null) {
-            this.executions = new FlowExecutionBriefV2();
-            executionsSetter.accept(this.executions);
+            this.executions = new ArrayList<>();
         }
+        this.executions.add(executionsItem);
+        return this;
+    }
 
+    public ShowWorkflowExecutionForPageResponse withExecutions(Consumer<List<FlowExecutionBriefV2>> executionsSetter) {
+        if (this.executions == null) {
+            this.executions = new ArrayList<>();
+        }
+        executionsSetter.accept(this.executions);
         return this;
     }
 
     /**
-     * Get executions
+     * 函数流返回体信息
      * @return executions
      */
-    public FlowExecutionBriefV2 getExecutions() {
+    public List<FlowExecutionBriefV2> getExecutions() {
         return executions;
     }
 
-    public void setExecutions(FlowExecutionBriefV2 executions) {
+    public void setExecutions(List<FlowExecutionBriefV2> executions) {
         this.executions = executions;
     }
 

@@ -19,7 +19,7 @@ public class ExecuteRedistributionClusterRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private Object body;
+    private RedistributionReq body;
 
     public ExecuteRedistributionClusterRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -38,14 +38,14 @@ public class ExecuteRedistributionClusterRequest {
         this.clusterId = clusterId;
     }
 
-    public ExecuteRedistributionClusterRequest withBody(Object body) {
+    public ExecuteRedistributionClusterRequest withBody(RedistributionReq body) {
         this.body = body;
         return this;
     }
 
-    public ExecuteRedistributionClusterRequest withBody(Consumer<Object> bodySetter) {
+    public ExecuteRedistributionClusterRequest withBody(Consumer<RedistributionReq> bodySetter) {
         if (this.body == null) {
-            this.body = new Object();
+            this.body = new RedistributionReq();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class ExecuteRedistributionClusterRequest {
      * Get body
      * @return body
      */
-    public Object getBody() {
+    public RedistributionReq getBody() {
         return body;
     }
 
-    public void setBody(Object body) {
+    public void setBody(RedistributionReq body) {
         this.body = body;
     }
 

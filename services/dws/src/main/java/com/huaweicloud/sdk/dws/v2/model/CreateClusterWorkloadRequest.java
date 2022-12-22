@@ -19,7 +19,7 @@ public class CreateClusterWorkloadRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private WorkloadStatus body;
+    private WorkloadStatusReq body;
 
     public CreateClusterWorkloadRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -38,14 +38,14 @@ public class CreateClusterWorkloadRequest {
         this.clusterId = clusterId;
     }
 
-    public CreateClusterWorkloadRequest withBody(WorkloadStatus body) {
+    public CreateClusterWorkloadRequest withBody(WorkloadStatusReq body) {
         this.body = body;
         return this;
     }
 
-    public CreateClusterWorkloadRequest withBody(Consumer<WorkloadStatus> bodySetter) {
+    public CreateClusterWorkloadRequest withBody(Consumer<WorkloadStatusReq> bodySetter) {
         if (this.body == null) {
-            this.body = new WorkloadStatus();
+            this.body = new WorkloadStatusReq();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class CreateClusterWorkloadRequest {
      * Get body
      * @return body
      */
-    public WorkloadStatus getBody() {
+    public WorkloadStatusReq getBody() {
         return body;
     }
 
-    public void setBody(WorkloadStatus body) {
+    public void setBody(WorkloadStatusReq body) {
         this.body = body;
     }
 

@@ -24,16 +24,6 @@ public class WorkloadQueue {
     private String logicalClusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "short_query_optimize")
-
-    private String shortQueryOptimize;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "short_query_concurrency_num")
-
-    private String shortQueryConcurrencyNum;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workload_resource_item_list")
 
     private List<WorkloadResource> workloadResourceItemList = null;
@@ -70,40 +60,6 @@ public class WorkloadQueue {
 
     public void setLogicalClusterName(String logicalClusterName) {
         this.logicalClusterName = logicalClusterName;
-    }
-
-    public WorkloadQueue withShortQueryOptimize(String shortQueryOptimize) {
-        this.shortQueryOptimize = shortQueryOptimize;
-        return this;
-    }
-
-    /**
-     * 短查询开关。
-     * @return shortQueryOptimize
-     */
-    public String getShortQueryOptimize() {
-        return shortQueryOptimize;
-    }
-
-    public void setShortQueryOptimize(String shortQueryOptimize) {
-        this.shortQueryOptimize = shortQueryOptimize;
-    }
-
-    public WorkloadQueue withShortQueryConcurrencyNum(String shortQueryConcurrencyNum) {
-        this.shortQueryConcurrencyNum = shortQueryConcurrencyNum;
-        return this;
-    }
-
-    /**
-     * 短查询并发数。
-     * @return shortQueryConcurrencyNum
-     */
-    public String getShortQueryConcurrencyNum() {
-        return shortQueryConcurrencyNum;
-    }
-
-    public void setShortQueryConcurrencyNum(String shortQueryConcurrencyNum) {
-        this.shortQueryConcurrencyNum = shortQueryConcurrencyNum;
     }
 
     public WorkloadQueue withWorkloadResourceItemList(List<WorkloadResource> workloadResourceItemList) {
@@ -150,18 +106,12 @@ public class WorkloadQueue {
         WorkloadQueue workloadQueue = (WorkloadQueue) o;
         return Objects.equals(this.workloadQueueName, workloadQueue.workloadQueueName)
             && Objects.equals(this.logicalClusterName, workloadQueue.logicalClusterName)
-            && Objects.equals(this.shortQueryOptimize, workloadQueue.shortQueryOptimize)
-            && Objects.equals(this.shortQueryConcurrencyNum, workloadQueue.shortQueryConcurrencyNum)
             && Objects.equals(this.workloadResourceItemList, workloadQueue.workloadResourceItemList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workloadQueueName,
-            logicalClusterName,
-            shortQueryOptimize,
-            shortQueryConcurrencyNum,
-            workloadResourceItemList);
+        return Objects.hash(workloadQueueName, logicalClusterName, workloadResourceItemList);
     }
 
     @Override
@@ -170,8 +120,6 @@ public class WorkloadQueue {
         sb.append("class WorkloadQueue {\n");
         sb.append("    workloadQueueName: ").append(toIndentedString(workloadQueueName)).append("\n");
         sb.append("    logicalClusterName: ").append(toIndentedString(logicalClusterName)).append("\n");
-        sb.append("    shortQueryOptimize: ").append(toIndentedString(shortQueryOptimize)).append("\n");
-        sb.append("    shortQueryConcurrencyNum: ").append(toIndentedString(shortQueryConcurrencyNum)).append("\n");
         sb.append("    workloadResourceItemList: ").append(toIndentedString(workloadResourceItemList)).append("\n");
         sb.append("}");
         return sb.toString();

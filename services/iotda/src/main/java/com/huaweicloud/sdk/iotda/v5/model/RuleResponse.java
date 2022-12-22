@@ -63,6 +63,11 @@ public class RuleResponse {
 
     private String lastUpdateTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_side")
+
+    private DeviceSide deviceSide;
+
     public RuleResponse withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -179,7 +184,7 @@ public class RuleResponse {
     }
 
     /**
-     * 规则的类型 - DEVICE_LINKAGE：设备联动。
+     * 规则的类型 - DEVICE_LINKAGE：云端联动规则。 - DEVICE_SIDE：端侧规则。
      * @return ruleType
      */
     public String getRuleType() {
@@ -274,6 +279,32 @@ public class RuleResponse {
         this.lastUpdateTime = lastUpdateTime;
     }
 
+    public RuleResponse withDeviceSide(DeviceSide deviceSide) {
+        this.deviceSide = deviceSide;
+        return this;
+    }
+
+    public RuleResponse withDeviceSide(Consumer<DeviceSide> deviceSideSetter) {
+        if (this.deviceSide == null) {
+            this.deviceSide = new DeviceSide();
+            deviceSideSetter.accept(this.deviceSide);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get deviceSide
+     * @return deviceSide
+     */
+    public DeviceSide getDeviceSide() {
+        return deviceSide;
+    }
+
+    public void setDeviceSide(DeviceSide deviceSide) {
+        this.deviceSide = deviceSide;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -290,7 +321,8 @@ public class RuleResponse {
             && Objects.equals(this.ruleType, ruleResponse.ruleType) && Objects.equals(this.status, ruleResponse.status)
             && Objects.equals(this.appId, ruleResponse.appId)
             && Objects.equals(this.edgeNodeIds, ruleResponse.edgeNodeIds)
-            && Objects.equals(this.lastUpdateTime, ruleResponse.lastUpdateTime);
+            && Objects.equals(this.lastUpdateTime, ruleResponse.lastUpdateTime)
+            && Objects.equals(this.deviceSide, ruleResponse.deviceSide);
     }
 
     @Override
@@ -304,7 +336,8 @@ public class RuleResponse {
             status,
             appId,
             edgeNodeIds,
-            lastUpdateTime);
+            lastUpdateTime,
+            deviceSide);
     }
 
     @Override
@@ -321,6 +354,7 @@ public class RuleResponse {
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    edgeNodeIds: ").append(toIndentedString(edgeNodeIds)).append("\n");
         sb.append("    lastUpdateTime: ").append(toIndentedString(lastUpdateTime)).append("\n");
+        sb.append("    deviceSide: ").append(toIndentedString(deviceSide)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -36,16 +36,6 @@ public class AuditDumpRecord {
     private String bucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version")
-
-    private String version;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "configure_status")
-
-    private String configureStatus;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location_prefix")
 
     private String locationPrefix;
@@ -145,40 +135,6 @@ public class AuditDumpRecord {
         this.bucketName = bucketName;
     }
 
-    public AuditDumpRecord withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
-    /**
-     * 版本。
-     * @return version
-     */
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
-    public AuditDumpRecord withConfigureStatus(String configureStatus) {
-        this.configureStatus = configureStatus;
-        return this;
-    }
-
-    /**
-     * 配置状态。
-     * @return configureStatus
-     */
-    public String getConfigureStatus() {
-        return configureStatus;
-    }
-
-    public void setConfigureStatus(String configureStatus) {
-        this.configureStatus = configureStatus;
-    }
-
     public AuditDumpRecord withLocationPrefix(String locationPrefix) {
         this.locationPrefix = locationPrefix;
         return this;
@@ -244,8 +200,6 @@ public class AuditDumpRecord {
             && Objects.equals(this.beginTime, auditDumpRecord.beginTime)
             && Objects.equals(this.endTime, auditDumpRecord.endTime)
             && Objects.equals(this.bucketName, auditDumpRecord.bucketName)
-            && Objects.equals(this.version, auditDumpRecord.version)
-            && Objects.equals(this.configureStatus, auditDumpRecord.configureStatus)
             && Objects.equals(this.locationPrefix, auditDumpRecord.locationPrefix)
             && Objects.equals(this.result, auditDumpRecord.result)
             && Objects.equals(this.failedReason, auditDumpRecord.failedReason);
@@ -253,16 +207,8 @@ public class AuditDumpRecord {
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId,
-            exectorTime,
-            beginTime,
-            endTime,
-            bucketName,
-            version,
-            configureStatus,
-            locationPrefix,
-            result,
-            failedReason);
+        return Objects
+            .hash(clusterId, exectorTime, beginTime, endTime, bucketName, locationPrefix, result, failedReason);
     }
 
     @Override
@@ -274,8 +220,6 @@ public class AuditDumpRecord {
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
-        sb.append("    configureStatus: ").append(toIndentedString(configureStatus)).append("\n");
         sb.append("    locationPrefix: ").append(toIndentedString(locationPrefix)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");

@@ -271,6 +271,41 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchCreateOrDeleteInstanceTagsRequest, BatchCreateOrDeleteInstanceTagsResponse> batchCreateOrDeleteInstanceTags =
+        genForbatchCreateOrDeleteInstanceTags();
+
+    private static HttpRequestDef<BatchCreateOrDeleteInstanceTagsRequest, BatchCreateOrDeleteInstanceTagsResponse> genForbatchCreateOrDeleteInstanceTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateOrDeleteInstanceTagsRequest, BatchCreateOrDeleteInstanceTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateOrDeleteInstanceTagsRequest.class,
+                    BatchCreateOrDeleteInstanceTagsResponse.class)
+                .withName("BatchCreateOrDeleteInstanceTags")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/instance-tags/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateOrDeleteInstanceTagsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<TmsUpdatePublicReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TmsUpdatePublicReq.class),
+            f -> f.withMarshaller(BatchCreateOrDeleteInstanceTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> createCustomAuthorizerV2 =
         genForcreateCustomAuthorizerV2();
 
@@ -1898,6 +1933,31 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTags =
+        genForlistInstanceTags();
+
+    private static HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> genForlistInstanceTags() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceTagsRequest, ListInstanceTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInstanceTagsRequest.class, ListInstanceTagsResponse.class)
+                .withName("ListInstanceTags")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/instance-tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceTagsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListInstancesV2Request, ListInstancesV2Response> listInstancesV2 =
         genForlistInstancesV2();
 
@@ -2378,6 +2438,24 @@ public class ApigMeta {
             f -> f.withMarshaller(ListProjectCofigsV2Request::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProjectInstanceTagsRequest, ListProjectInstanceTagsResponse> listProjectInstanceTags =
+        genForlistProjectInstanceTags();
+
+    private static HttpRequestDef<ListProjectInstanceTagsRequest, ListProjectInstanceTagsResponse> genForlistProjectInstanceTags() {
+        // basic
+        HttpRequestDef.Builder<ListProjectInstanceTagsRequest, ListProjectInstanceTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListProjectInstanceTagsRequest.class, ListProjectInstanceTagsResponse.class)
+            .withName("ListProjectInstanceTags")
+            .withUri("/v2/{project_id}/apigw/instance-tags")
+            .withContentType("application/json");
+
+        // requests
 
         // response
 

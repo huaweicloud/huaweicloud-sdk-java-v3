@@ -12,25 +12,25 @@ import java.util.Objects;
 public class ShrinkClusterResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "job_id")
 
-    private String body;
+    private String jobId;
 
-    public ShrinkClusterResponse withBody(String body) {
-        this.body = body;
+    public ShrinkClusterResponse withJobId(String jobId) {
+        this.jobId = jobId;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 缩容job_id。
+     * @return jobId
      */
-    public String getBody() {
-        return body;
+    public String getJobId() {
+        return jobId;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class ShrinkClusterResponse extends SdkResponse {
             return false;
         }
         ShrinkClusterResponse shrinkClusterResponse = (ShrinkClusterResponse) o;
-        return Objects.equals(this.body, shrinkClusterResponse.body);
+        return Objects.equals(this.jobId, shrinkClusterResponse.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(jobId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShrinkClusterResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

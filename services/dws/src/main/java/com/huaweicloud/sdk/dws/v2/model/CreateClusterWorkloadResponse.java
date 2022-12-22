@@ -12,25 +12,47 @@ import java.util.Objects;
 public class CreateClusterWorkloadResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "workload_res_code")
 
-    private String body;
+    private Integer workloadResCode;
 
-    public CreateClusterWorkloadResponse withBody(String body) {
-        this.body = body;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workload_res_str")
+
+    private String workloadResStr;
+
+    public CreateClusterWorkloadResponse withWorkloadResCode(Integer workloadResCode) {
+        this.workloadResCode = workloadResCode;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 响应编码。
+     * @return workloadResCode
      */
-    public String getBody() {
-        return body;
+    public Integer getWorkloadResCode() {
+        return workloadResCode;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setWorkloadResCode(Integer workloadResCode) {
+        this.workloadResCode = workloadResCode;
+    }
+
+    public CreateClusterWorkloadResponse withWorkloadResStr(String workloadResStr) {
+        this.workloadResStr = workloadResStr;
+        return this;
+    }
+
+    /**
+     * 响应信息。
+     * @return workloadResStr
+     */
+    public String getWorkloadResStr() {
+        return workloadResStr;
+    }
+
+    public void setWorkloadResStr(String workloadResStr) {
+        this.workloadResStr = workloadResStr;
     }
 
     @Override
@@ -42,19 +64,21 @@ public class CreateClusterWorkloadResponse extends SdkResponse {
             return false;
         }
         CreateClusterWorkloadResponse createClusterWorkloadResponse = (CreateClusterWorkloadResponse) o;
-        return Objects.equals(this.body, createClusterWorkloadResponse.body);
+        return Objects.equals(this.workloadResCode, createClusterWorkloadResponse.workloadResCode)
+            && Objects.equals(this.workloadResStr, createClusterWorkloadResponse.workloadResStr);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(workloadResCode, workloadResStr);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateClusterWorkloadResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    workloadResCode: ").append(toIndentedString(workloadResCode)).append("\n");
+        sb.append("    workloadResStr: ").append(toIndentedString(workloadResStr)).append("\n");
         sb.append("}");
         return sb.toString();
     }

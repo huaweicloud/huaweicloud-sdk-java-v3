@@ -21,7 +21,7 @@ public class DwsMeta {
             HttpRequestDef.builder(HttpMethod.PUT, AddWorkloadQueueRequest.class, AddWorkloadQueueResponse.class)
                 .withName("AddWorkloadQueue")
                 .withUri("/v2/{project_id}/clusters/{cluster_id}/workload/queues")
-                .withContentType("application/x-www-form-urlencoded");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("cluster_id",
@@ -31,15 +31,15 @@ public class DwsMeta {
             f -> f.withMarshaller(AddWorkloadQueueRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
             }));
-
-        // response
-        builder.<String>withResponseField("body",
+        builder.<WorkloadQueueReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(AddWorkloadQueueResponse::getBody, (response, data) -> {
-                response.setBody(data);
+            TypeCasts.uncheckedConversion(WorkloadQueueReq.class),
+            f -> f.withMarshaller(AddWorkloadQueueRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
+
+        // response
 
         return builder.build();
     }
@@ -291,7 +291,7 @@ public class DwsMeta {
             HttpRequestDef.builder(HttpMethod.POST, CopySnapshotRequest.class, CopySnapshotResponse.class)
                 .withName("CopySnapshot")
                 .withUri("/v1.0/{project_id}/snapshots/{snapshot_id}/linked-copy")
-                .withContentType("application/x-www-form-urlencoded");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("snapshot_id",
@@ -301,15 +301,15 @@ public class DwsMeta {
             f -> f.withMarshaller(CopySnapshotRequest::getSnapshotId, (req, v) -> {
                 req.setSnapshotId(v);
             }));
+        builder.<LinkCopyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LinkCopyReq.class),
+            f -> f.withMarshaller(CopySnapshotRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CopySnapshotResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
 
         return builder.build();
     }
@@ -405,7 +405,7 @@ public class DwsMeta {
             .builder(HttpMethod.POST, CreateClusterWorkloadRequest.class, CreateClusterWorkloadResponse.class)
             .withName("CreateClusterWorkload")
             .withUri("/v2/{project_id}/clusters/{cluster_id}/workload")
-            .withContentType("application/x-www-form-urlencoded");
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("cluster_id",
@@ -415,15 +415,15 @@ public class DwsMeta {
             f -> f.withMarshaller(CreateClusterWorkloadRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
             }));
-
-        // response
-        builder.<String>withResponseField("body",
+        builder.<WorkloadStatusReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateClusterWorkloadResponse::getBody, (response, data) -> {
-                response.setBody(data);
+            TypeCasts.uncheckedConversion(WorkloadStatusReq.class),
+            f -> f.withMarshaller(CreateClusterWorkloadRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
+
+        // response
 
         return builder.build();
     }
@@ -437,7 +437,7 @@ public class DwsMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreateDataSourceRequest.class, CreateDataSourceResponse.class)
                 .withName("CreateDataSource")
                 .withUri("/v1.0/{project_id}/clusters/{cluster_id}/ext-data-sources")
-                .withContentType("application/x-www-form-urlencoded");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("cluster_id",
@@ -447,15 +447,15 @@ public class DwsMeta {
             f -> f.withMarshaller(CreateDataSourceRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
             }));
+        builder.<ExtDataSourceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExtDataSourceReq.class),
+            f -> f.withMarshaller(CreateDataSourceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateDataSourceResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
 
         return builder.build();
     }
@@ -472,22 +472,15 @@ public class DwsMeta {
             .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.<CreateDisasterRecovery>withRequestField("body",
+        builder.<CreateDisasterRecoveryReq>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(CreateDisasterRecovery.class),
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDisasterRecoveryReq.class),
             f -> f.withMarshaller(CreateDisasterRecoveryRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateDisasterRecoveryResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
 
         return builder.build();
     }
@@ -551,7 +544,7 @@ public class DwsMeta {
             .builder(HttpMethod.PUT, CreateSnapshotPolicyRequest.class, CreateSnapshotPolicyResponse.class)
             .withName("CreateSnapshotPolicy")
             .withUri("/v2/{project_id}/clusters/{cluster_id}/snapshot-policies")
-            .withContentType("application/x-www-form-urlencoded");
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("cluster_id",
@@ -560,6 +553,13 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateSnapshotPolicyRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
+            }));
+        builder.<BackupPolicy>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BackupPolicy.class),
+            f -> f.withMarshaller(CreateSnapshotPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -583,7 +583,7 @@ public class DwsMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreateWorkloadPlanRequest.class, CreateWorkloadPlanResponse.class)
                 .withName("CreateWorkloadPlan")
                 .withUri("/v2/{project_id}/clusters/{cluster_id}/workload/plans")
-                .withContentType("application/x-www-form-urlencoded");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("cluster_id",
@@ -593,15 +593,15 @@ public class DwsMeta {
             f -> f.withMarshaller(CreateWorkloadPlanRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
             }));
+        builder.<WorkloadPlanReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(WorkloadPlanReq.class),
+            f -> f.withMarshaller(CreateWorkloadPlanRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateWorkloadPlanResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
 
         return builder.build();
     }
@@ -688,6 +688,38 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteClusterDnsRequest::getType, (req, v) -> {
                 req.setType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDataSourceRequest, DeleteDataSourceResponse> deleteDataSource =
+        genFordeleteDataSource();
+
+    private static HttpRequestDef<DeleteDataSourceRequest, DeleteDataSourceResponse> genFordeleteDataSource() {
+        // basic
+        HttpRequestDef.Builder<DeleteDataSourceRequest, DeleteDataSourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDataSourceRequest.class, DeleteDataSourceResponse.class)
+                .withName("DeleteDataSource")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/ext-data-sources/{ext_data_source_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDataSourceRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("ext_data_source_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDataSourceRequest::getExtDataSourceId, (req, v) -> {
+                req.setExtDataSourceId(v);
             }));
 
         // response
@@ -830,7 +862,7 @@ public class DwsMeta {
             }));
         builder.<String>withRequestField("logical_cluster_name",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteWorkloadQueueRequest::getLogicalClusterName, (req, v) -> {
                 req.setLogicalClusterName(v);
@@ -844,13 +876,6 @@ public class DwsMeta {
             }));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteWorkloadQueueResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
 
         return builder.build();
     }
@@ -931,7 +956,7 @@ public class DwsMeta {
                     ExecuteRedistributionClusterResponse.class)
                 .withName("ExecuteRedistributionCluster")
                 .withUri("/v2/{project_id}/clusters/{cluster_id}/redistribution")
-                .withContentType("application/x-www-form-urlencoded");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("cluster_id",
@@ -940,6 +965,13 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExecuteRedistributionClusterRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
+            }));
+        builder.<RedistributionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RedistributionReq.class),
+            f -> f.withMarshaller(ExecuteRedistributionClusterRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -950,6 +982,38 @@ public class DwsMeta {
             f -> f.withMarshaller(ExecuteRedistributionClusterResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExpandInstanceStorageRequest, ExpandInstanceStorageResponse> expandInstanceStorage =
+        genForexpandInstanceStorage();
+
+    private static HttpRequestDef<ExpandInstanceStorageRequest, ExpandInstanceStorageResponse> genForexpandInstanceStorage() {
+        // basic
+        HttpRequestDef.Builder<ExpandInstanceStorageRequest, ExpandInstanceStorageResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ExpandInstanceStorageRequest.class, ExpandInstanceStorageResponse.class)
+            .withName("ExpandInstanceStorage")
+            .withUri("/v1.0/{project_id}/clusters/{cluster_id}/expand-instance-storage")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExpandInstanceStorageRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<ExpandInstanceStorage>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExpandInstanceStorage.class),
+            f -> f.withMarshaller(ExpandInstanceStorageRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
 
         return builder.build();
     }
@@ -1245,7 +1309,7 @@ public class DwsMeta {
         HttpRequestDef.Builder<ListClusterSnapshotsRequest, ListClusterSnapshotsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListClusterSnapshotsRequest.class, ListClusterSnapshotsResponse.class)
             .withName("ListClusterSnapshots")
-            .withUri("/v1.0/{project_id}/cluster/{cluster_id}/snapshots")
+            .withUri("/v1.0/{project_id}/clusters/{cluster_id}/snapshots")
             .withContentType("application/json");
 
         // requests
@@ -1255,6 +1319,34 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListClusterSnapshotsRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListClusterSnapshotsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListClusterSnapshotsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterSnapshotsRequest::getSortKey, (req, v) -> {
+                req.setSortKey(v);
+            }));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterSnapshotsRequest::getSortDir, (req, v) -> {
+                req.setSortDir(v);
             }));
 
         // response
@@ -1368,13 +1460,6 @@ public class DwsMeta {
         // requests
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListDisasterRecoverResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
 
         return builder.build();
     }
@@ -2065,7 +2150,7 @@ public class DwsMeta {
             HttpRequestDef.builder(HttpMethod.POST, ShrinkClusterRequest.class, ShrinkClusterResponse.class)
                 .withName("ShrinkCluster")
                 .withUri("/v1.0/{project_id}/clusters/{cluster_id}/cluster-shrink")
-                .withContentType("application/x-www-form-urlencoded");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("cluster_id",
@@ -2075,15 +2160,15 @@ public class DwsMeta {
             f -> f.withMarshaller(ShrinkClusterRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
             }));
+        builder.<ClusterShrinkReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ClusterShrinkReq.class),
+            f -> f.withMarshaller(ShrinkClusterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShrinkClusterResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
 
         return builder.build();
     }
@@ -2303,7 +2388,7 @@ public class DwsMeta {
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDataSourceRequest.class, UpdateDataSourceResponse.class)
                 .withName("UpdateDataSource")
                 .withUri("/v1.0/{project_id}/clusters/{cluster_id}/ext-data-sources/{ext_data_source_id}")
-                .withContentType("application/x-www-form-urlencoded");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("cluster_id",
@@ -2320,15 +2405,15 @@ public class DwsMeta {
             f -> f.withMarshaller(UpdateDataSourceRequest::getExtDataSourceId, (req, v) -> {
                 req.setExtDataSourceId(v);
             }));
+        builder.<ReconfigureExtDataSourceActionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReconfigureExtDataSourceActionReq.class),
+            f -> f.withMarshaller(UpdateDataSourceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateDataSourceResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
 
         return builder.build();
     }

@@ -64,6 +64,11 @@ public class CreateRuleResponse extends SdkResponse {
 
     private String lastUpdateTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_side")
+
+    private DeviceSide deviceSide;
+
     public CreateRuleResponse withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -180,7 +185,7 @@ public class CreateRuleResponse extends SdkResponse {
     }
 
     /**
-     * 规则的类型 - DEVICE_LINKAGE：设备联动。
+     * 规则的类型 - DEVICE_LINKAGE：云端联动规则。 - DEVICE_SIDE：端侧规则。
      * @return ruleType
      */
     public String getRuleType() {
@@ -275,6 +280,32 @@ public class CreateRuleResponse extends SdkResponse {
         this.lastUpdateTime = lastUpdateTime;
     }
 
+    public CreateRuleResponse withDeviceSide(DeviceSide deviceSide) {
+        this.deviceSide = deviceSide;
+        return this;
+    }
+
+    public CreateRuleResponse withDeviceSide(Consumer<DeviceSide> deviceSideSetter) {
+        if (this.deviceSide == null) {
+            this.deviceSide = new DeviceSide();
+            deviceSideSetter.accept(this.deviceSide);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get deviceSide
+     * @return deviceSide
+     */
+    public DeviceSide getDeviceSide() {
+        return deviceSide;
+    }
+
+    public void setDeviceSide(DeviceSide deviceSide) {
+        this.deviceSide = deviceSide;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -293,7 +324,8 @@ public class CreateRuleResponse extends SdkResponse {
             && Objects.equals(this.status, createRuleResponse.status)
             && Objects.equals(this.appId, createRuleResponse.appId)
             && Objects.equals(this.edgeNodeIds, createRuleResponse.edgeNodeIds)
-            && Objects.equals(this.lastUpdateTime, createRuleResponse.lastUpdateTime);
+            && Objects.equals(this.lastUpdateTime, createRuleResponse.lastUpdateTime)
+            && Objects.equals(this.deviceSide, createRuleResponse.deviceSide);
     }
 
     @Override
@@ -307,7 +339,8 @@ public class CreateRuleResponse extends SdkResponse {
             status,
             appId,
             edgeNodeIds,
-            lastUpdateTime);
+            lastUpdateTime,
+            deviceSide);
     }
 
     @Override
@@ -324,6 +357,7 @@ public class CreateRuleResponse extends SdkResponse {
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    edgeNodeIds: ").append(toIndentedString(edgeNodeIds)).append("\n");
         sb.append("    lastUpdateTime: ").append(toIndentedString(lastUpdateTime)).append("\n");
+        sb.append("    deviceSide: ").append(toIndentedString(deviceSide)).append("\n");
         sb.append("}");
         return sb.toString();
     }

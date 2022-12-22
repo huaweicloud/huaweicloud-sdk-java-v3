@@ -72,6 +72,11 @@ public class BackPoolVO {
     private OffsetDateTime modifyTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private Long orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "activated_sim_quantity")
 
     private Integer activatedSimQuantity;
@@ -296,6 +301,23 @@ public class BackPoolVO {
         this.modifyTime = modifyTime;
     }
 
+    public BackPoolVO withOrderId(Long orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 批次号
+     * @return orderId
+     */
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+
     public BackPoolVO withActivatedSimQuantity(Integer activatedSimQuantity) {
         this.activatedSimQuantity = activatedSimQuantity;
         return this;
@@ -384,6 +406,7 @@ public class BackPoolVO {
             && Objects.equals(this.statusTime, backPoolVO.statusTime)
             && Objects.equals(this.quantity, backPoolVO.quantity)
             && Objects.equals(this.modifyTime, backPoolVO.modifyTime)
+            && Objects.equals(this.orderId, backPoolVO.orderId)
             && Objects.equals(this.activatedSimQuantity, backPoolVO.activatedSimQuantity)
             && Objects.equals(this.inactiveSimQuantity, backPoolVO.inactiveSimQuantity)
             && Objects.equals(this.disassembledSimQuantity, backPoolVO.disassembledSimQuantity)
@@ -404,6 +427,7 @@ public class BackPoolVO {
             statusTime,
             quantity,
             modifyTime,
+            orderId,
             activatedSimQuantity,
             inactiveSimQuantity,
             disassembledSimQuantity,
@@ -426,6 +450,7 @@ public class BackPoolVO {
         sb.append("    statusTime: ").append(toIndentedString(statusTime)).append("\n");
         sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
         sb.append("    modifyTime: ").append(toIndentedString(modifyTime)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    activatedSimQuantity: ").append(toIndentedString(activatedSimQuantity)).append("\n");
         sb.append("    inactiveSimQuantity: ").append(toIndentedString(inactiveSimQuantity)).append("\n");
         sb.append("    disassembledSimQuantity: ").append(toIndentedString(disassembledSimQuantity)).append("\n");

@@ -1140,6 +1140,36 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 变更实例存储容量
+     *
+     * 变更实例的存储容量大小
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyVolumeRequest 请求对象
+     * @return CompletableFuture<ModifyVolumeResponse>
+     */
+    public CompletableFuture<ModifyVolumeResponse> modifyVolumeAsync(ModifyVolumeRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.modifyVolume);
+    }
+
+    /**
+     * 变更实例存储容量
+     *
+     * 变更实例的存储容量大小
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyVolumeRequest 请求对象
+     * @return AsyncInvoker<ModifyVolumeRequest, ModifyVolumeResponse>
+     */
+    public AsyncInvoker<ModifyVolumeRequest, ModifyVolumeResponse> modifyVolumeAsyncInvoker(
+        ModifyVolumeRequest request) {
+        return new AsyncInvoker<ModifyVolumeRequest, ModifyVolumeResponse>(request, GaussDBforNoSQLMeta.modifyVolume,
+            hcClient);
+    }
+
+    /**
      * 暂停/恢复具备容灾关系的实例数据同步
      *
      * 该接口用于暂停/恢复具备容灾关系的实例数据同步。

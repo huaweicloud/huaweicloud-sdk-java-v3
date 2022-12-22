@@ -519,6 +519,20 @@ public class GaussDBforNoSQLMeta {
             f -> f.withMarshaller(ListAvailableFlavorInfosRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAvailableFlavorInfosRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAvailableFlavorInfosRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
 
         // response
 
@@ -1194,6 +1208,37 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyPublicIpRequestBody.class),
             f -> f.withMarshaller(ModifyPublicIpRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyVolumeRequest, ModifyVolumeResponse> modifyVolume = genFormodifyVolume();
+
+    private static HttpRequestDef<ModifyVolumeRequest, ModifyVolumeResponse> genFormodifyVolume() {
+        // basic
+        HttpRequestDef.Builder<ModifyVolumeRequest, ModifyVolumeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyVolumeRequest.class, ModifyVolumeResponse.class)
+                .withName("ModifyVolume")
+                .withUri("/v3/{project_id}/instances/{instance_id}/volume")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyVolumeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ModifyVolumeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyVolumeRequestBody.class),
+            f -> f.withMarshaller(ModifyVolumeRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

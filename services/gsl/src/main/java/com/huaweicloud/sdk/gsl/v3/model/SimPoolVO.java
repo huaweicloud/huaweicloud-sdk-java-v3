@@ -67,6 +67,11 @@ public class SimPoolVO {
     private Integer quantity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private Long orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modify_time")
 
     private OffsetDateTime modifyTime;
@@ -281,6 +286,23 @@ public class SimPoolVO {
         this.quantity = quantity;
     }
 
+    public SimPoolVO withOrderId(Long orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 批次号
+     * @return orderId
+     */
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+
     public SimPoolVO withModifyTime(OffsetDateTime modifyTime) {
         this.modifyTime = modifyTime;
         return this;
@@ -383,7 +405,7 @@ public class SimPoolVO {
             && Objects.equals(this.billingCycle, simPoolVO.billingCycle)
             && Objects.equals(this.flowTotal, simPoolVO.flowTotal) && Objects.equals(this.flowUsed, simPoolVO.flowUsed)
             && Objects.equals(this.flowLeft, simPoolVO.flowLeft) && Objects.equals(this.quantity, simPoolVO.quantity)
-            && Objects.equals(this.modifyTime, simPoolVO.modifyTime)
+            && Objects.equals(this.orderId, simPoolVO.orderId) && Objects.equals(this.modifyTime, simPoolVO.modifyTime)
             && Objects.equals(this.activatedSimQuantity, simPoolVO.activatedSimQuantity)
             && Objects.equals(this.inactiveSimQuantity, simPoolVO.inactiveSimQuantity)
             && Objects.equals(this.disassembledSimQuantity, simPoolVO.disassembledSimQuantity)
@@ -403,6 +425,7 @@ public class SimPoolVO {
             flowUsed,
             flowLeft,
             quantity,
+            orderId,
             modifyTime,
             activatedSimQuantity,
             inactiveSimQuantity,
@@ -425,6 +448,7 @@ public class SimPoolVO {
         sb.append("    flowUsed: ").append(toIndentedString(flowUsed)).append("\n");
         sb.append("    flowLeft: ").append(toIndentedString(flowLeft)).append("\n");
         sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    modifyTime: ").append(toIndentedString(modifyTime)).append("\n");
         sb.append("    activatedSimQuantity: ").append(toIndentedString(activatedSimQuantity)).append("\n");
         sb.append("    inactiveSimQuantity: ").append(toIndentedString(inactiveSimQuantity)).append("\n");

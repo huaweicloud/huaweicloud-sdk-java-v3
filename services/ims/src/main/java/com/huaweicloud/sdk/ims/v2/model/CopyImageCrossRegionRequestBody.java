@@ -35,6 +35,11 @@ public class CopyImageCrossRegionRequestBody {
 
     private String region;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vault_id")
+
+    private String vaultId;
+
     public CopyImageCrossRegionRequestBody withAgencyName(String agencyName) {
         this.agencyName = agencyName;
         return this;
@@ -120,6 +125,23 @@ public class CopyImageCrossRegionRequestBody {
         this.region = region;
     }
 
+    public CopyImageCrossRegionRequestBody withVaultId(String vaultId) {
+        this.vaultId = vaultId;
+        return this;
+    }
+
+    /**
+     * 存储库ID。如果是整机镜像，则在跨Region复制镜像时，为必选参数，需传入该值。
+     * @return vaultId
+     */
+    public String getVaultId() {
+        return vaultId;
+    }
+
+    public void setVaultId(String vaultId) {
+        this.vaultId = vaultId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -133,12 +155,13 @@ public class CopyImageCrossRegionRequestBody {
             && Objects.equals(this.description, copyImageCrossRegionRequestBody.description)
             && Objects.equals(this.name, copyImageCrossRegionRequestBody.name)
             && Objects.equals(this.projectName, copyImageCrossRegionRequestBody.projectName)
-            && Objects.equals(this.region, copyImageCrossRegionRequestBody.region);
+            && Objects.equals(this.region, copyImageCrossRegionRequestBody.region)
+            && Objects.equals(this.vaultId, copyImageCrossRegionRequestBody.vaultId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(agencyName, description, name, projectName, region);
+        return Objects.hash(agencyName, description, name, projectName, region, vaultId);
     }
 
     @Override
@@ -150,6 +173,7 @@ public class CopyImageCrossRegionRequestBody {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    vaultId: ").append(toIndentedString(vaultId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

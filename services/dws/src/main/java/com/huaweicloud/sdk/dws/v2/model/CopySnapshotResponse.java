@@ -12,25 +12,25 @@ import java.util.Objects;
 public class CopySnapshotResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "snapshot_id")
 
-    private String body;
+    private String snapshotId;
 
-    public CopySnapshotResponse withBody(String body) {
-        this.body = body;
+    public CopySnapshotResponse withSnapshotId(String snapshotId) {
+        this.snapshotId = snapshotId;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 快照id。
+     * @return snapshotId
      */
-    public String getBody() {
-        return body;
+    public String getSnapshotId() {
+        return snapshotId;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setSnapshotId(String snapshotId) {
+        this.snapshotId = snapshotId;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class CopySnapshotResponse extends SdkResponse {
             return false;
         }
         CopySnapshotResponse copySnapshotResponse = (CopySnapshotResponse) o;
-        return Objects.equals(this.body, copySnapshotResponse.body);
+        return Objects.equals(this.snapshotId, copySnapshotResponse.snapshotId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(snapshotId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CopySnapshotResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

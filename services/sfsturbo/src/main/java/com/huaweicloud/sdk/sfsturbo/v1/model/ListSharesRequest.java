@@ -13,14 +13,14 @@ public class ListSharesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private Integer limit;
+    private Long limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private Integer offset;
+    private Long offset;
 
-    public ListSharesRequest withLimit(Integer limit) {
+    public ListSharesRequest withLimit(Long limit) {
         this.limit = limit;
         return this;
     }
@@ -31,15 +31,15 @@ public class ListSharesRequest {
      * maximum: 200
      * @return limit
      */
-    public Integer getLimit() {
+    public Long getLimit() {
         return limit;
     }
 
-    public void setLimit(Integer limit) {
+    public void setLimit(Long limit) {
         this.limit = limit;
     }
 
-    public ListSharesRequest withOffset(Integer offset) {
+    public ListSharesRequest withOffset(Long offset) {
         this.offset = offset;
         return this;
     }
@@ -50,11 +50,11 @@ public class ListSharesRequest {
      * maximum: 200
      * @return offset
      */
-    public Integer getOffset() {
+    public Long getOffset() {
         return offset;
     }
 
-    public void setOffset(Integer offset) {
+    public void setOffset(Long offset) {
         this.offset = offset;
     }
 

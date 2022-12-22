@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -12,25 +15,41 @@ import java.util.Objects;
 public class ListDisasterRecoverResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "disaster_recovery")
 
-    private String body;
+    private List<DisasterRecovery> disasterRecovery = null;
 
-    public ListDisasterRecoverResponse withBody(String body) {
-        this.body = body;
+    public ListDisasterRecoverResponse withDisasterRecovery(List<DisasterRecovery> disasterRecovery) {
+        this.disasterRecovery = disasterRecovery;
+        return this;
+    }
+
+    public ListDisasterRecoverResponse addDisasterRecoveryItem(DisasterRecovery disasterRecoveryItem) {
+        if (this.disasterRecovery == null) {
+            this.disasterRecovery = new ArrayList<>();
+        }
+        this.disasterRecovery.add(disasterRecoveryItem);
+        return this;
+    }
+
+    public ListDisasterRecoverResponse withDisasterRecovery(Consumer<List<DisasterRecovery>> disasterRecoverySetter) {
+        if (this.disasterRecovery == null) {
+            this.disasterRecovery = new ArrayList<>();
+        }
+        disasterRecoverySetter.accept(this.disasterRecovery);
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 容灾对象
+     * @return disasterRecovery
      */
-    public String getBody() {
-        return body;
+    public List<DisasterRecovery> getDisasterRecovery() {
+        return disasterRecovery;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setDisasterRecovery(List<DisasterRecovery> disasterRecovery) {
+        this.disasterRecovery = disasterRecovery;
     }
 
     @Override
@@ -42,19 +61,19 @@ public class ListDisasterRecoverResponse extends SdkResponse {
             return false;
         }
         ListDisasterRecoverResponse listDisasterRecoverResponse = (ListDisasterRecoverResponse) o;
-        return Objects.equals(this.body, listDisasterRecoverResponse.body);
+        return Objects.equals(this.disasterRecovery, listDisasterRecoverResponse.disasterRecovery);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(disasterRecovery);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListDisasterRecoverResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    disasterRecovery: ").append(toIndentedString(disasterRecovery)).append("\n");
         sb.append("}");
         return sb.toString();
     }

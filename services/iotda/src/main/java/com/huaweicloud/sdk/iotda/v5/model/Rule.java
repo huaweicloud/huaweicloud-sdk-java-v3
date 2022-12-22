@@ -48,6 +48,11 @@ public class Rule {
 
     private String appId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_side")
+
+    private DeviceSide deviceSide;
+
     public Rule withName(String name) {
         this.name = name;
         return this;
@@ -147,7 +152,7 @@ public class Rule {
     }
 
     /**
-     * **参数说明**：规则的类型。 **取值范围**： - DEVICE_LINKAGE：设备联动。
+     * **参数说明**：规则的类型。 **取值范围**： - DEVICE_LINKAGE：云端联动规则。  - DEVICE_SIDE：端侧规则。
      * @return ruleType
      */
     public String getRuleType() {
@@ -192,6 +197,32 @@ public class Rule {
         this.appId = appId;
     }
 
+    public Rule withDeviceSide(DeviceSide deviceSide) {
+        this.deviceSide = deviceSide;
+        return this;
+    }
+
+    public Rule withDeviceSide(Consumer<DeviceSide> deviceSideSetter) {
+        if (this.deviceSide == null) {
+            this.deviceSide = new DeviceSide();
+            deviceSideSetter.accept(this.deviceSide);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get deviceSide
+     * @return deviceSide
+     */
+    public DeviceSide getDeviceSide() {
+        return deviceSide;
+    }
+
+    public void setDeviceSide(DeviceSide deviceSide) {
+        this.deviceSide = deviceSide;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -204,12 +235,12 @@ public class Rule {
         return Objects.equals(this.name, rule.name) && Objects.equals(this.description, rule.description)
             && Objects.equals(this.conditionGroup, rule.conditionGroup) && Objects.equals(this.actions, rule.actions)
             && Objects.equals(this.ruleType, rule.ruleType) && Objects.equals(this.status, rule.status)
-            && Objects.equals(this.appId, rule.appId);
+            && Objects.equals(this.appId, rule.appId) && Objects.equals(this.deviceSide, rule.deviceSide);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, conditionGroup, actions, ruleType, status, appId);
+        return Objects.hash(name, description, conditionGroup, actions, ruleType, status, appId, deviceSide);
     }
 
     @Override
@@ -223,6 +254,7 @@ public class Rule {
         sb.append("    ruleType: ").append(toIndentedString(ruleType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
+        sb.append("    deviceSide: ").append(toIndentedString(deviceSide)).append("\n");
         sb.append("}");
         return sb.toString();
     }

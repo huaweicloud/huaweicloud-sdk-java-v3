@@ -30,6 +30,11 @@ public class CreateCloudPhoneServerRequestBodyExtendParam {
 
     private Integer isAutoPay;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_auto_renew")
+
+    private Integer isAutoRenew;
+
     public CreateCloudPhoneServerRequestBodyExtendParam withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
         return this;
@@ -106,6 +111,25 @@ public class CreateCloudPhoneServerRequestBodyExtendParam {
         this.isAutoPay = isAutoPay;
     }
 
+    public CreateCloudPhoneServerRequestBodyExtendParam withIsAutoRenew(Integer isAutoRenew) {
+        this.isAutoRenew = isAutoRenew;
+        return this;
+    }
+
+    /**
+     * 是否自动续订。默认不自动续订。 - 1 表示自动续订 - 0 表示不自动续订
+     * minimum: 0
+     * maximum: 64
+     * @return isAutoRenew
+     */
+    public Integer getIsAutoRenew() {
+        return isAutoRenew;
+    }
+
+    public void setIsAutoRenew(Integer isAutoRenew) {
+        this.isAutoRenew = isAutoRenew;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -119,12 +143,13 @@ public class CreateCloudPhoneServerRequestBodyExtendParam {
         return Objects.equals(this.chargingMode, createCloudPhoneServerRequestBodyExtendParam.chargingMode)
             && Objects.equals(this.periodType, createCloudPhoneServerRequestBodyExtendParam.periodType)
             && Objects.equals(this.periodNum, createCloudPhoneServerRequestBodyExtendParam.periodNum)
-            && Objects.equals(this.isAutoPay, createCloudPhoneServerRequestBodyExtendParam.isAutoPay);
+            && Objects.equals(this.isAutoPay, createCloudPhoneServerRequestBodyExtendParam.isAutoPay)
+            && Objects.equals(this.isAutoRenew, createCloudPhoneServerRequestBodyExtendParam.isAutoRenew);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(chargingMode, periodType, periodNum, isAutoPay);
+        return Objects.hash(chargingMode, periodType, periodNum, isAutoPay, isAutoRenew);
     }
 
     @Override
@@ -135,6 +160,7 @@ public class CreateCloudPhoneServerRequestBodyExtendParam {
         sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
+        sb.append("    isAutoRenew: ").append(toIndentedString(isAutoRenew)).append("\n");
         sb.append("}");
         return sb.toString();
     }

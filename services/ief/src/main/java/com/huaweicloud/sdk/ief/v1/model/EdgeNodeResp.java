@@ -273,6 +273,21 @@ public class EdgeNodeResp {
 
     private String identifier;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "purchase_id")
+
+    private String purchaseId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "state_details")
+
+    private StateDetails stateDetails;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cert_remaining_valid_time")
+
+    private Integer certRemainingValidTime;
+
     public EdgeNodeResp withId(String id) {
         this.id = id;
         return this;
@@ -1326,6 +1341,66 @@ public class EdgeNodeResp {
         this.identifier = identifier;
     }
 
+    public EdgeNodeResp withPurchaseId(String purchaseId) {
+        this.purchaseId = purchaseId;
+        return this;
+    }
+
+    /**
+     * IEC/IES节点id
+     * @return purchaseId
+     */
+    public String getPurchaseId() {
+        return purchaseId;
+    }
+
+    public void setPurchaseId(String purchaseId) {
+        this.purchaseId = purchaseId;
+    }
+
+    public EdgeNodeResp withStateDetails(StateDetails stateDetails) {
+        this.stateDetails = stateDetails;
+        return this;
+    }
+
+    public EdgeNodeResp withStateDetails(Consumer<StateDetails> stateDetailsSetter) {
+        if (this.stateDetails == null) {
+            this.stateDetails = new StateDetails();
+            stateDetailsSetter.accept(this.stateDetails);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get stateDetails
+     * @return stateDetails
+     */
+    public StateDetails getStateDetails() {
+        return stateDetails;
+    }
+
+    public void setStateDetails(StateDetails stateDetails) {
+        this.stateDetails = stateDetails;
+    }
+
+    public EdgeNodeResp withCertRemainingValidTime(Integer certRemainingValidTime) {
+        this.certRemainingValidTime = certRemainingValidTime;
+        return this;
+    }
+
+    /**
+     * 证书有效期持续时间
+     * @return certRemainingValidTime
+     */
+    public Integer getCertRemainingValidTime() {
+        return certRemainingValidTime;
+    }
+
+    public void setCertRemainingValidTime(Integer certRemainingValidTime) {
+        this.certRemainingValidTime = certRemainingValidTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1376,7 +1451,10 @@ public class EdgeNodeResp {
             && Objects.equals(this.tags, edgeNodeResp.tags) && Objects.equals(this.npuNum, edgeNodeResp.npuNum)
             && Objects.equals(this.npuInfo, edgeNodeResp.npuInfo)
             && Objects.equals(this.containerRuntimeVersion, edgeNodeResp.containerRuntimeVersion)
-            && Objects.equals(this.identifier, edgeNodeResp.identifier);
+            && Objects.equals(this.identifier, edgeNodeResp.identifier)
+            && Objects.equals(this.purchaseId, edgeNodeResp.purchaseId)
+            && Objects.equals(this.stateDetails, edgeNodeResp.stateDetails)
+            && Objects.equals(this.certRemainingValidTime, edgeNodeResp.certRemainingValidTime);
     }
 
     @Override
@@ -1432,7 +1510,10 @@ public class EdgeNodeResp {
             npuNum,
             npuInfo,
             containerRuntimeVersion,
-            identifier);
+            identifier,
+            purchaseId,
+            stateDetails,
+            certRemainingValidTime);
     }
 
     @Override
@@ -1491,6 +1572,9 @@ public class EdgeNodeResp {
         sb.append("    npuInfo: ").append(toIndentedString(npuInfo)).append("\n");
         sb.append("    containerRuntimeVersion: ").append(toIndentedString(containerRuntimeVersion)).append("\n");
         sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
+        sb.append("    purchaseId: ").append(toIndentedString(purchaseId)).append("\n");
+        sb.append("    stateDetails: ").append(toIndentedString(stateDetails)).append("\n");
+        sb.append("    certRemainingValidTime: ").append(toIndentedString(certRemainingValidTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

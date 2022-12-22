@@ -12,25 +12,25 @@ import java.util.Objects;
 public class UpdateDataSourceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "job_id")
 
-    private String body;
+    private String jobId;
 
-    public UpdateDataSourceResponse withBody(String body) {
-        this.body = body;
+    public UpdateDataSourceResponse withJobId(String jobId) {
+        this.jobId = jobId;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 更新数据源job_id。
+     * @return jobId
      */
-    public String getBody() {
-        return body;
+    public String getJobId() {
+        return jobId;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class UpdateDataSourceResponse extends SdkResponse {
             return false;
         }
         UpdateDataSourceResponse updateDataSourceResponse = (UpdateDataSourceResponse) o;
-        return Objects.equals(this.body, updateDataSourceResponse.body);
+        return Objects.equals(this.jobId, updateDataSourceResponse.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(jobId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateDataSourceResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -11,30 +11,30 @@ import java.util.Objects;
 public class ReconfigureExtDataSourceAction {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "database")
+    @JsonProperty(value = "reboot")
 
-    private Boolean database;
+    private Boolean reboot;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agency")
 
     private String agency;
 
-    public ReconfigureExtDataSourceAction withDatabase(Boolean database) {
-        this.database = database;
+    public ReconfigureExtDataSourceAction withReboot(Boolean reboot) {
+        this.reboot = reboot;
         return this;
     }
 
     /**
      * 重启。
-     * @return database
+     * @return reboot
      */
-    public Boolean getDatabase() {
-        return database;
+    public Boolean getReboot() {
+        return reboot;
     }
 
-    public void setDatabase(Boolean database) {
-        this.database = database;
+    public void setReboot(Boolean reboot) {
+        this.reboot = reboot;
     }
 
     public ReconfigureExtDataSourceAction withAgency(String agency) {
@@ -63,20 +63,20 @@ public class ReconfigureExtDataSourceAction {
             return false;
         }
         ReconfigureExtDataSourceAction reconfigureExtDataSourceAction = (ReconfigureExtDataSourceAction) o;
-        return Objects.equals(this.database, reconfigureExtDataSourceAction.database)
+        return Objects.equals(this.reboot, reconfigureExtDataSourceAction.reboot)
             && Objects.equals(this.agency, reconfigureExtDataSourceAction.agency);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(database, agency);
+        return Objects.hash(reboot, agency);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ReconfigureExtDataSourceAction {\n");
-        sb.append("    database: ").append(toIndentedString(database)).append("\n");
+        sb.append("    reboot: ").append(toIndentedString(reboot)).append("\n");
         sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
         sb.append("}");
         return sb.toString();

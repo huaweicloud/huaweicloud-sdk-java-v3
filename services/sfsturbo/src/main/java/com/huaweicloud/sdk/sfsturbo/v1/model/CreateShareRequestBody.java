@@ -16,6 +16,11 @@ public class CreateShareRequestBody {
 
     private Share share;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bss_param")
+
+    private BssInfo bssParam;
+
     public CreateShareRequestBody withShare(Share share) {
         this.share = share;
         return this;
@@ -42,6 +47,32 @@ public class CreateShareRequestBody {
         this.share = share;
     }
 
+    public CreateShareRequestBody withBssParam(BssInfo bssParam) {
+        this.bssParam = bssParam;
+        return this;
+    }
+
+    public CreateShareRequestBody withBssParam(Consumer<BssInfo> bssParamSetter) {
+        if (this.bssParam == null) {
+            this.bssParam = new BssInfo();
+            bssParamSetter.accept(this.bssParam);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get bssParam
+     * @return bssParam
+     */
+    public BssInfo getBssParam() {
+        return bssParam;
+    }
+
+    public void setBssParam(BssInfo bssParam) {
+        this.bssParam = bssParam;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -51,12 +82,13 @@ public class CreateShareRequestBody {
             return false;
         }
         CreateShareRequestBody createShareRequestBody = (CreateShareRequestBody) o;
-        return Objects.equals(this.share, createShareRequestBody.share);
+        return Objects.equals(this.share, createShareRequestBody.share)
+            && Objects.equals(this.bssParam, createShareRequestBody.bssParam);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(share);
+        return Objects.hash(share, bssParam);
     }
 
     @Override
@@ -64,6 +96,7 @@ public class CreateShareRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateShareRequestBody {\n");
         sb.append("    share: ").append(toIndentedString(share)).append("\n");
+        sb.append("    bssParam: ").append(toIndentedString(bssParam)).append("\n");
         sb.append("}");
         return sb.toString();
     }

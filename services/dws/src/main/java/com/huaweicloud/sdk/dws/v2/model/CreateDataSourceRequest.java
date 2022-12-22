@@ -19,7 +19,7 @@ public class CreateDataSourceRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private Object body;
+    private ExtDataSourceReq body;
 
     public CreateDataSourceRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -38,14 +38,14 @@ public class CreateDataSourceRequest {
         this.clusterId = clusterId;
     }
 
-    public CreateDataSourceRequest withBody(Object body) {
+    public CreateDataSourceRequest withBody(ExtDataSourceReq body) {
         this.body = body;
         return this;
     }
 
-    public CreateDataSourceRequest withBody(Consumer<Object> bodySetter) {
+    public CreateDataSourceRequest withBody(Consumer<ExtDataSourceReq> bodySetter) {
         if (this.body == null) {
-            this.body = new Object();
+            this.body = new ExtDataSourceReq();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class CreateDataSourceRequest {
      * Get body
      * @return body
      */
-    public Object getBody() {
+    public ExtDataSourceReq getBody() {
         return body;
     }
 
-    public void setBody(Object body) {
+    public void setBody(ExtDataSourceReq body) {
         this.body = body;
     }
 

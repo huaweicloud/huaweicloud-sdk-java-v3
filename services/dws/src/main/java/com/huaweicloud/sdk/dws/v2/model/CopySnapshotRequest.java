@@ -19,7 +19,7 @@ public class CopySnapshotRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private Object body;
+    private LinkCopyReq body;
 
     public CopySnapshotRequest withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -38,14 +38,14 @@ public class CopySnapshotRequest {
         this.snapshotId = snapshotId;
     }
 
-    public CopySnapshotRequest withBody(Object body) {
+    public CopySnapshotRequest withBody(LinkCopyReq body) {
         this.body = body;
         return this;
     }
 
-    public CopySnapshotRequest withBody(Consumer<Object> bodySetter) {
+    public CopySnapshotRequest withBody(Consumer<LinkCopyReq> bodySetter) {
         if (this.body == null) {
-            this.body = new Object();
+            this.body = new LinkCopyReq();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class CopySnapshotRequest {
      * Get body
      * @return body
      */
-    public Object getBody() {
+    public LinkCopyReq getBody() {
         return body;
     }
 
-    public void setBody(Object body) {
+    public void setBody(LinkCopyReq body) {
         this.body = body;
     }
 

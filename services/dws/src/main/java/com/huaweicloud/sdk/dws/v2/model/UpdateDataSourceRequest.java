@@ -24,7 +24,7 @@ public class UpdateDataSourceRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ReconfigureExtDataSourceAction body;
+    private ReconfigureExtDataSourceActionReq body;
 
     public UpdateDataSourceRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -60,14 +60,14 @@ public class UpdateDataSourceRequest {
         this.extDataSourceId = extDataSourceId;
     }
 
-    public UpdateDataSourceRequest withBody(ReconfigureExtDataSourceAction body) {
+    public UpdateDataSourceRequest withBody(ReconfigureExtDataSourceActionReq body) {
         this.body = body;
         return this;
     }
 
-    public UpdateDataSourceRequest withBody(Consumer<ReconfigureExtDataSourceAction> bodySetter) {
+    public UpdateDataSourceRequest withBody(Consumer<ReconfigureExtDataSourceActionReq> bodySetter) {
         if (this.body == null) {
-            this.body = new ReconfigureExtDataSourceAction();
+            this.body = new ReconfigureExtDataSourceActionReq();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +78,11 @@ public class UpdateDataSourceRequest {
      * Get body
      * @return body
      */
-    public ReconfigureExtDataSourceAction getBody() {
+    public ReconfigureExtDataSourceActionReq getBody() {
         return body;
     }
 
-    public void setBody(ReconfigureExtDataSourceAction body) {
+    public void setBody(ReconfigureExtDataSourceActionReq body) {
         this.body = body;
     }
 

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -12,25 +13,34 @@ import java.util.Objects;
 public class CreateDisasterRecoveryResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "disaster_recovery")
 
-    private String body;
+    private DisasterRecoveryId disasterRecovery;
 
-    public CreateDisasterRecoveryResponse withBody(String body) {
-        this.body = body;
+    public CreateDisasterRecoveryResponse withDisasterRecovery(DisasterRecoveryId disasterRecovery) {
+        this.disasterRecovery = disasterRecovery;
+        return this;
+    }
+
+    public CreateDisasterRecoveryResponse withDisasterRecovery(Consumer<DisasterRecoveryId> disasterRecoverySetter) {
+        if (this.disasterRecovery == null) {
+            this.disasterRecovery = new DisasterRecoveryId();
+            disasterRecoverySetter.accept(this.disasterRecovery);
+        }
+
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * Get disasterRecovery
+     * @return disasterRecovery
      */
-    public String getBody() {
-        return body;
+    public DisasterRecoveryId getDisasterRecovery() {
+        return disasterRecovery;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setDisasterRecovery(DisasterRecoveryId disasterRecovery) {
+        this.disasterRecovery = disasterRecovery;
     }
 
     @Override
@@ -42,19 +52,19 @@ public class CreateDisasterRecoveryResponse extends SdkResponse {
             return false;
         }
         CreateDisasterRecoveryResponse createDisasterRecoveryResponse = (CreateDisasterRecoveryResponse) o;
-        return Objects.equals(this.body, createDisasterRecoveryResponse.body);
+        return Objects.equals(this.disasterRecovery, createDisasterRecoveryResponse.disasterRecovery);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(disasterRecovery);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateDisasterRecoveryResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    disasterRecovery: ").append(toIndentedString(disasterRecovery)).append("\n");
         sb.append("}");
         return sb.toString();
     }

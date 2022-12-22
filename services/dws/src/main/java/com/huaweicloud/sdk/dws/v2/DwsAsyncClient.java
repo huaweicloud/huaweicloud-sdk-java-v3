@@ -492,6 +492,8 @@ public class DwsAsyncClient {
      * 创建容灾
      *
      * 创建容灾
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDisasterRecoveryRequest 请求对象
      * @return CompletableFuture<CreateDisasterRecoveryResponse>
@@ -505,6 +507,8 @@ public class DwsAsyncClient {
      * 创建容灾
      *
      * 创建容灾
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateDisasterRecoveryRequest 请求对象
      * @return AsyncInvoker<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse>
@@ -722,6 +726,36 @@ public class DwsAsyncClient {
     public AsyncInvoker<DeleteClusterDnsRequest, DeleteClusterDnsResponse> deleteClusterDnsAsyncInvoker(
         DeleteClusterDnsRequest request) {
         return new AsyncInvoker<DeleteClusterDnsRequest, DeleteClusterDnsResponse>(request, DwsMeta.deleteClusterDns,
+            hcClient);
+    }
+
+    /**
+     * 删除数据源
+     *
+     * 该接口用于删除一个数据源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDataSourceRequest 请求对象
+     * @return CompletableFuture<DeleteDataSourceResponse>
+     */
+    public CompletableFuture<DeleteDataSourceResponse> deleteDataSourceAsync(DeleteDataSourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.deleteDataSource);
+    }
+
+    /**
+     * 删除数据源
+     *
+     * 该接口用于删除一个数据源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDataSourceRequest 请求对象
+     * @return AsyncInvoker<DeleteDataSourceRequest, DeleteDataSourceResponse>
+     */
+    public AsyncInvoker<DeleteDataSourceRequest, DeleteDataSourceResponse> deleteDataSourceAsyncInvoker(
+        DeleteDataSourceRequest request) {
+        return new AsyncInvoker<DeleteDataSourceRequest, DeleteDataSourceResponse>(request, DwsMeta.deleteDataSource,
             hcClient);
     }
 
@@ -966,6 +1000,41 @@ public class DwsAsyncClient {
         ExecuteRedistributionClusterRequest request) {
         return new AsyncInvoker<ExecuteRedistributionClusterRequest, ExecuteRedistributionClusterResponse>(request,
             DwsMeta.executeRedistributionCluster, hcClient);
+    }
+
+    /**
+     * 磁盘扩容
+     *
+     * 随着客户业务的发展，磁盘空间往往最先出现资源瓶颈，在其他资源尚且充足的情况下，通过磁盘扩容可快速缓解存储资源瓶颈现象，操作过程中无需暂停业务，并且不会造成CPU、内存等资源浪费。
+     * - 磁盘扩容功能仅8.1.1.203及以上版本支持，并且创建集群规格需要为云数仓SSD云盘或实时数仓类型。
+     * - 按需+折扣套餐包消费模式下，存储扩容后超出折扣套餐包部分将按需收费。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExpandInstanceStorageRequest 请求对象
+     * @return CompletableFuture<ExpandInstanceStorageResponse>
+     */
+    public CompletableFuture<ExpandInstanceStorageResponse> expandInstanceStorageAsync(
+        ExpandInstanceStorageRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.expandInstanceStorage);
+    }
+
+    /**
+     * 磁盘扩容
+     *
+     * 随着客户业务的发展，磁盘空间往往最先出现资源瓶颈，在其他资源尚且充足的情况下，通过磁盘扩容可快速缓解存储资源瓶颈现象，操作过程中无需暂停业务，并且不会造成CPU、内存等资源浪费。
+     * - 磁盘扩容功能仅8.1.1.203及以上版本支持，并且创建集群规格需要为云数仓SSD云盘或实时数仓类型。
+     * - 按需+折扣套餐包消费模式下，存储扩容后超出折扣套餐包部分将按需收费。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExpandInstanceStorageRequest 请求对象
+     * @return AsyncInvoker<ExpandInstanceStorageRequest, ExpandInstanceStorageResponse>
+     */
+    public AsyncInvoker<ExpandInstanceStorageRequest, ExpandInstanceStorageResponse> expandInstanceStorageAsyncInvoker(
+        ExpandInstanceStorageRequest request) {
+        return new AsyncInvoker<ExpandInstanceStorageRequest, ExpandInstanceStorageResponse>(request,
+            DwsMeta.expandInstanceStorage, hcClient);
     }
 
     /**
@@ -1272,6 +1341,8 @@ public class DwsAsyncClient {
      * 查询合适的缩容数
      *
      * 查询合适的缩容数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClusterScaleInNumbersRequest 请求对象
      * @return CompletableFuture<ListClusterScaleInNumbersResponse>
@@ -1285,6 +1356,8 @@ public class DwsAsyncClient {
      * 查询合适的缩容数
      *
      * 查询合适的缩容数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListClusterScaleInNumbersRequest 请求对象
      * @return AsyncInvoker<ListClusterScaleInNumbersRequest, ListClusterScaleInNumbersResponse>
@@ -1449,6 +1522,8 @@ public class DwsAsyncClient {
      * 查询容灾列表
      *
      * 查询容灾列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDisasterRecoverRequest 请求对象
      * @return CompletableFuture<ListDisasterRecoverResponse>
@@ -1461,6 +1536,8 @@ public class DwsAsyncClient {
      * 查询容灾列表
      *
      * 查询容灾列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListDisasterRecoverRequest 请求对象
      * @return AsyncInvoker<ListDisasterRecoverRequest, ListDisasterRecoverResponse>
