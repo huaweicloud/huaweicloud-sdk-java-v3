@@ -624,7 +624,7 @@ public class AomMeta {
         // requests
         builder.<String>withRequestField("event_sn",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNotifiedHistoriesRequest::getEventSn, (req, v) -> {
                 req.setEventSn(v);

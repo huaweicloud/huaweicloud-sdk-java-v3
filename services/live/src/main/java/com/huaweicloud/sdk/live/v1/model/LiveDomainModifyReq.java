@@ -102,6 +102,11 @@ public class LiveDomainModifyReq {
 
     private StatusEnum status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public LiveDomainModifyReq withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -136,6 +141,23 @@ public class LiveDomainModifyReq {
         this.status = status;
     }
 
+    public LiveDomainModifyReq withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -146,12 +168,13 @@ public class LiveDomainModifyReq {
         }
         LiveDomainModifyReq liveDomainModifyReq = (LiveDomainModifyReq) o;
         return Objects.equals(this.domain, liveDomainModifyReq.domain)
-            && Objects.equals(this.status, liveDomainModifyReq.status);
+            && Objects.equals(this.status, liveDomainModifyReq.status)
+            && Objects.equals(this.enterpriseProjectId, liveDomainModifyReq.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domain, status);
+        return Objects.hash(domain, status, enterpriseProjectId);
     }
 
     @Override
@@ -160,6 +183,7 @@ public class LiveDomainModifyReq {
         sb.append("class LiveDomainModifyReq {\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

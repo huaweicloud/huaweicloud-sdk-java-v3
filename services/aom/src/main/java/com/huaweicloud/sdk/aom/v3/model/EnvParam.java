@@ -185,7 +185,7 @@ public class EnvParam  {
 
 
     /**
-     * 环境关联region
+     * 环境关联region。创建环境必传
      * @return region
      */
     public String getRegion() {

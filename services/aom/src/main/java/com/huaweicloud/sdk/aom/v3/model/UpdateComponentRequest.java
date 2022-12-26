@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v3.model.ComponentParam;
+import com.huaweicloud.sdk.aom.v3.model.ComponentUpdateParam;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -30,7 +30,7 @@ public class UpdateComponentRequest  {
     @JsonProperty(value="body")
     
     
-    private ComponentParam body;
+    private ComponentUpdateParam body;
 
     public UpdateComponentRequest withComponentId(String componentId) {
         this.componentId = componentId;
@@ -54,14 +54,14 @@ public class UpdateComponentRequest  {
 
     
 
-    public UpdateComponentRequest withBody(ComponentParam body) {
+    public UpdateComponentRequest withBody(ComponentUpdateParam body) {
         this.body = body;
         return this;
     }
 
-    public UpdateComponentRequest withBody(Consumer<ComponentParam> bodySetter) {
+    public UpdateComponentRequest withBody(Consumer<ComponentUpdateParam> bodySetter) {
         if(this.body == null ){
-            this.body = new ComponentParam();
+            this.body = new ComponentUpdateParam();
             bodySetter.accept(this.body);
         }
         
@@ -73,11 +73,11 @@ public class UpdateComponentRequest  {
      * Get body
      * @return body
      */
-    public ComponentParam getBody() {
+    public ComponentUpdateParam getBody() {
         return body;
     }
 
-    public void setBody(ComponentParam body) {
+    public void setBody(ComponentUpdateParam body) {
         this.body = body;
     }
 

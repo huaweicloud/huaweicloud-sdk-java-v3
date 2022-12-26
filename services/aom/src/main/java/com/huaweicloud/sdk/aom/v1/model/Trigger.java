@@ -19,10 +19,10 @@ public class Trigger  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="information")
+    @JsonProperty(value="policy")
     
     
-    private String information;
+    private String policy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,15 +45,8 @@ public class Trigger  {
     
     private String topicUrn;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_name")
-    
-    
-    private String alarmName;
-
-    public Trigger withInformation(String information) {
-        this.information = information;
+    public Trigger withPolicy(String policy) {
+        this.policy = policy;
         return this;
     }
 
@@ -61,15 +54,15 @@ public class Trigger  {
 
 
     /**
-     * 定时任务的必填信息。
-     * @return information
+     * 定时策略。once、corn、periodic
+     * @return policy
      */
-    public String getInformation() {
-        return information;
+    public String getPolicy() {
+        return policy;
     }
 
-    public void setInformation(String information) {
-        this.information = information;
+    public void setPolicy(String policy) {
+        this.policy = policy;
     }
 
     
@@ -83,7 +76,7 @@ public class Trigger  {
 
 
     /**
-     * 触发器执行时间。
+     * 触发器执行时间。单次执行为UTC毫秒数、简单周期为\"[\\\"7\\\"]\"、corn为corn表达式\"0 23 * * *\"
      * @return scheduledTime
      */
     public String getScheduledTime() {
@@ -140,28 +133,6 @@ public class Trigger  {
 
     
 
-    public Trigger withAlarmName(String alarmName) {
-        this.alarmName = alarmName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * aom告警名字。
-     * @return alarmName
-     */
-    public String getAlarmName() {
-        return alarmName;
-    }
-
-    public void setAlarmName(String alarmName) {
-        this.alarmName = alarmName;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -171,25 +142,23 @@ public class Trigger  {
             return false;
         }
         Trigger trigger = (Trigger) o;
-        return Objects.equals(this.information, trigger.information) &&
+        return Objects.equals(this.policy, trigger.policy) &&
             Objects.equals(this.scheduledTime, trigger.scheduledTime) &&
             Objects.equals(this.timeZone, trigger.timeZone) &&
-            Objects.equals(this.topicUrn, trigger.topicUrn) &&
-            Objects.equals(this.alarmName, trigger.alarmName);
+            Objects.equals(this.topicUrn, trigger.topicUrn);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(information, scheduledTime, timeZone, topicUrn, alarmName);
+        return Objects.hash(policy, scheduledTime, timeZone, topicUrn);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Trigger {\n");
-        sb.append("    information: ").append(toIndentedString(information)).append("\n");
+        sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
         sb.append("    scheduledTime: ").append(toIndentedString(scheduledTime)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
         sb.append("    topicUrn: ").append(toIndentedString(topicUrn)).append("\n");
-        sb.append("    alarmName: ").append(toIndentedString(alarmName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

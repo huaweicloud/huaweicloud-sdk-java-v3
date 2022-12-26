@@ -391,7 +391,7 @@ public class SearchTemplateByIdResponse extends SdkResponse {
 
 
     /**
-     * 模板名称，需要满足：。 不允许更新模板时修改
+     * 模板名称
      * @return name
      */
     public String getName() {

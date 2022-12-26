@@ -38,6 +38,56 @@ public class LtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateDashBoardRequest, CreateDashBoardResponse> createDashBoard =
+        genForcreateDashBoard();
+
+    private static HttpRequestDef<CreateDashBoardRequest, CreateDashBoardResponse> genForcreateDashBoard() {
+        // basic
+        HttpRequestDef.Builder<CreateDashBoardRequest, CreateDashBoardResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDashBoardRequest.class, CreateDashBoardResponse.class)
+                .withName("CreateDashBoard")
+                .withUri("/v2/{project_id}/dashboard")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateDashBoardReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateDashBoardReqBody.class),
+            f -> f.withMarshaller(CreateDashBoardRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDashboardGroupRequest, CreateDashboardGroupResponse> createDashboardGroup =
+        genForcreateDashboardGroup();
+
+    private static HttpRequestDef<CreateDashboardGroupRequest, CreateDashboardGroupResponse> genForcreateDashboardGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateDashboardGroupRequest, CreateDashboardGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDashboardGroupRequest.class, CreateDashboardGroupResponse.class)
+            .withName("CreateDashboardGroup")
+            .withUri("/v2/{project_id}/lts/dashboard-group")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateDashboardGroupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDashboardGroupReq.class),
+            f -> f.withMarshaller(CreateDashboardGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateHostGroupRequest, CreateHostGroupResponse> createHostGroup =
         genForcreateHostGroup();
 
@@ -205,6 +255,45 @@ public class LtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateSearchCriteriasRequest, CreateSearchCriteriasResponse> createSearchCriterias =
+        genForcreateSearchCriterias();
+
+    private static HttpRequestDef<CreateSearchCriteriasRequest, CreateSearchCriteriasResponse> genForcreateSearchCriterias() {
+        // basic
+        HttpRequestDef.Builder<CreateSearchCriteriasRequest, CreateSearchCriteriasResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateSearchCriteriasRequest.class, CreateSearchCriteriasResponse.class)
+            .withName("CreateSearchCriterias")
+            .withUri("/v1.0/{project_id}/groups/{group_id}/topics/{topic_id}/search-criterias")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSearchCriteriasRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("topic_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSearchCriteriasRequest::getTopicId, (req, v) -> {
+                req.setTopicId(v);
+            }));
+        builder.<CreateSearchCriteriasBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateSearchCriteriasBody.class),
+            f -> f.withMarshaller(CreateSearchCriteriasRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateStructConfigRequest, CreateStructConfigResponse> createStructConfig =
         genForcreateStructConfig();
 
@@ -269,6 +358,44 @@ public class LtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateTagsRequest, CreateTagsResponse> createTags = genForcreateTags();
+
+    private static HttpRequestDef<CreateTagsRequest, CreateTagsResponse> genForcreateTags() {
+        // basic
+        HttpRequestDef.Builder<CreateTagsRequest, CreateTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTagsRequest.class, CreateTagsResponse.class)
+                .withName("CreateTags")
+                .withUri("/v1/{project_id}/{resource_type}/{resource_id}/tags/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTagsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<CreateTagsReqbody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateTagsReqbody.class),
+            f -> f.withMarshaller(CreateTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateTransferRequest, CreateTransferResponse> createTransfer =
         genForcreateTransfer();
 
@@ -286,6 +413,31 @@ public class LtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTransferRequestBody.class),
             f -> f.withMarshaller(CreateTransferRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatefavoriteRequest, CreatefavoriteResponse> createfavorite =
+        genForcreatefavorite();
+
+    private static HttpRequestDef<CreatefavoriteRequest, CreatefavoriteResponse> genForcreatefavorite() {
+        // basic
+        HttpRequestDef.Builder<CreatefavoriteRequest, CreatefavoriteResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatefavoriteRequest.class, CreatefavoriteResponse.class)
+                .withName("Createfavorite")
+                .withUri("/v1.0/{project_id}/lts/favorite")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreatefavoriteReqbody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreatefavoriteReqbody.class),
+            f -> f.withMarshaller(CreatefavoriteRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -507,6 +659,45 @@ public class LtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteSearchCriteriasRequest, DeleteSearchCriteriasResponse> deleteSearchCriterias =
+        genFordeleteSearchCriterias();
+
+    private static HttpRequestDef<DeleteSearchCriteriasRequest, DeleteSearchCriteriasResponse> genFordeleteSearchCriterias() {
+        // basic
+        HttpRequestDef.Builder<DeleteSearchCriteriasRequest, DeleteSearchCriteriasResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteSearchCriteriasRequest.class, DeleteSearchCriteriasResponse.class)
+            .withName("DeleteSearchCriterias")
+            .withUri("/v1.0/{project_id}/groups/{group_id}/topics/{topic_id}/search-criterias")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSearchCriteriasRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("topic_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSearchCriteriasRequest::getTopicId, (req, v) -> {
+                req.setTopicId(v);
+            }));
+        builder.<DeleteSearchCriterias>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteSearchCriterias.class),
+            f -> f.withMarshaller(DeleteSearchCriteriasRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteStructTemplateRequest, DeleteStructTemplateResponse> deleteStructTemplate =
         genFordeleteStructTemplate();
 
@@ -557,6 +748,31 @@ public class LtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTransferRequest::getLogTransferId, (req, v) -> {
                 req.setLogTransferId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletefavoriteRequest, DeletefavoriteResponse> deletefavorite =
+        genFordeletefavorite();
+
+    private static HttpRequestDef<DeletefavoriteRequest, DeletefavoriteResponse> genFordeletefavorite() {
+        // basic
+        HttpRequestDef.Builder<DeletefavoriteRequest, DeletefavoriteResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletefavoriteRequest.class, DeletefavoriteResponse.class)
+                .withName("Deletefavorite")
+                .withUri("/v1.0/{project_id}/lts/favorite/{fav_res_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fav_res_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletefavoriteRequest::getFavResId, (req, v) -> {
+                req.setFavResId(v);
             }));
 
         // response
@@ -738,6 +954,63 @@ public class LtsMeta {
             f -> f.withMarshaller(ListChartsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCriteriasRequest, ListCriteriasResponse> listCriterias =
+        genForlistCriterias();
+
+    private static HttpRequestDef<ListCriteriasRequest, ListCriteriasResponse> genForlistCriterias() {
+        // basic
+        HttpRequestDef.Builder<ListCriteriasRequest, ListCriteriasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCriteriasRequest.class, ListCriteriasResponse.class)
+                .withName("ListCriterias")
+                .withUri("/v1.0/{project_id}/groups/{group_id}/topics/{topic_id}/search-criterias")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCriteriasRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("topic_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCriteriasRequest::getTopicId, (req, v) -> {
+                req.setTopicId(v);
+            }));
+        builder.<String>withRequestField("search_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCriteriasRequest::getSearchType, (req, v) -> {
+                req.setSearchType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHistorySqlRequest, ListHistorySqlResponse> listHistorySql =
+        genForlistHistorySql();
+
+    private static HttpRequestDef<ListHistorySqlRequest, ListHistorySqlResponse> genForlistHistorySql() {
+        // basic
+        HttpRequestDef.Builder<ListHistorySqlRequest, ListHistorySqlResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHistorySqlRequest.class, ListHistorySqlResponse.class)
+                .withName("ListHistorySql")
+                .withUri("/v2/{project_id}/lts/history-sql")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -1077,6 +1350,34 @@ public class LtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListQueryAllSearchCriteriasRequest, ListQueryAllSearchCriteriasResponse> listQueryAllSearchCriterias =
+        genForlistQueryAllSearchCriterias();
+
+    private static HttpRequestDef<ListQueryAllSearchCriteriasRequest, ListQueryAllSearchCriteriasResponse> genForlistQueryAllSearchCriterias() {
+        // basic
+        HttpRequestDef.Builder<ListQueryAllSearchCriteriasRequest, ListQueryAllSearchCriteriasResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListQueryAllSearchCriteriasRequest.class,
+                    ListQueryAllSearchCriteriasResponse.class)
+                .withName("ListQueryAllSearchCriterias")
+                .withUri("/v1.0/{project_id}/lts/groups/{group_id}/search-criterias")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryAllSearchCriteriasRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse> listQueryStructuredLogs =
         genForlistQueryStructuredLogs();
 
@@ -1210,6 +1511,34 @@ public class LtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TimelineTrafficStatisticsRequestBody.class),
             f -> f.withMarshaller(ListTimeLineTrafficStatisticsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTopnTrafficStatisticsRequest, ListTopnTrafficStatisticsResponse> listTopnTrafficStatistics =
+        genForlistTopnTrafficStatistics();
+
+    private static HttpRequestDef<ListTopnTrafficStatisticsRequest, ListTopnTrafficStatisticsResponse> genForlistTopnTrafficStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListTopnTrafficStatisticsRequest, ListTopnTrafficStatisticsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListTopnTrafficStatisticsRequest.class,
+                    ListTopnTrafficStatisticsResponse.class)
+                .withName("ListTopnTrafficStatistics")
+                .withUri("/v2/{project_id}/lts/topn-traffic-statistics")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<TopnRequstBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TopnRequstBody.class),
+            f -> f.withMarshaller(ListTopnTrafficStatisticsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

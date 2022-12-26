@@ -52,6 +52,13 @@ public class SearchJobsRequestBody  {
     
     private String sortOrder;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    
+    private String enterpriseProjectId;
+
     public SearchJobsRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -61,7 +68,7 @@ public class SearchJobsRequestBody  {
 
 
     /**
-     * 查询接收的的参数，版本管理时，name为脚本名称（版本管理查询时name不能为空），页面查询时，name为接收模糊查询的参数，name是null，表示查询所有默认脚本。
+     * name为作业名称。
      * @return name
      */
     public String getName() {
@@ -85,7 +92,7 @@ public class SearchJobsRequestBody  {
     /**
      * 当前页，查询的当前页，page_num为正整数，不能是0和负数，当输入参数为负数，0和大于1000，自动修正参数为1，默认值是1（用户不传，值是1）。
      * minimum: 1
-     * maximum: 9999999
+     * maximum: 1000
      * @return pageNum
      */
     public Integer getPageNum() {
@@ -166,6 +173,28 @@ public class SearchJobsRequestBody  {
 
     
 
+    public SearchJobsRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 企业项目id
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -179,11 +208,12 @@ public class SearchJobsRequestBody  {
             Objects.equals(this.pageNum, searchJobsRequestBody.pageNum) &&
             Objects.equals(this.pageSize, searchJobsRequestBody.pageSize) &&
             Objects.equals(this.orderByColumn, searchJobsRequestBody.orderByColumn) &&
-            Objects.equals(this.sortOrder, searchJobsRequestBody.sortOrder);
+            Objects.equals(this.sortOrder, searchJobsRequestBody.sortOrder) &&
+            Objects.equals(this.enterpriseProjectId, searchJobsRequestBody.enterpriseProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, pageNum, pageSize, orderByColumn, sortOrder);
+        return Objects.hash(name, pageNum, pageSize, orderByColumn, sortOrder, enterpriseProjectId);
     }
     @Override
     public String toString() {
@@ -194,6 +224,7 @@ public class SearchJobsRequestBody  {
         sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
         sb.append("    orderByColumn: ").append(toIndentedString(orderByColumn)).append("\n");
         sb.append("    sortOrder: ").append(toIndentedString(sortOrder)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

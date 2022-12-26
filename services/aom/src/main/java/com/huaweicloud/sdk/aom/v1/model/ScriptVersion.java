@@ -268,7 +268,7 @@ public class ScriptVersion  {
 
 
     /**
-     * 脚本引用次数，脚本被任务和模板引用的次数默认是0次,引用次数未非负整数，不能出现负数
+     * 脚本引用次数，脚本被任务和模板引用的次数。默认是0次,引用次数未非负整数，不能出现负数
      * minimum: 0
      * maximum: 9999999
      * @return referenceNumber
@@ -314,7 +314,7 @@ public class ScriptVersion  {
 
 
     /**
-     * 脚本语言，目前支持四种，分别是：[\"Shell\",\"Bat\",\"Python\",\"Powershell\"]
+     * 脚本语言，目前支持四种，分别是：SHELL BAT PYTHON POWER_SHELL
      * @return scriptLanguage
      */
     public String getScriptLanguage() {

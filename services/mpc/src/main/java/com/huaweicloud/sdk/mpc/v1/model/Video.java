@@ -129,11 +129,6 @@ public class Video {
     private Integer preset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ref_frames_count")
-
-    private Integer refFramesCount;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_iframes_interval")
 
     private Integer maxIframesInterval;
@@ -275,25 +270,6 @@ public class Video {
         this.preset = preset;
     }
 
-    public Video withRefFramesCount(Integer refFramesCount) {
-        this.refFramesCount = refFramesCount;
-        return this;
-    }
-
-    /**
-     * 最大参考帧数。  取值范围： - H264：[1，8] - H265：固定值4  单位：帧。 
-     * minimum: 1
-     * maximum: 8
-     * @return refFramesCount
-     */
-    public Integer getRefFramesCount() {
-        return refFramesCount;
-    }
-
-    public void setRefFramesCount(Integer refFramesCount) {
-        this.refFramesCount = refFramesCount;
-    }
-
     public Video withMaxIframesInterval(Integer maxIframesInterval) {
         this.maxIframesInterval = maxIframesInterval;
         return this;
@@ -420,7 +396,6 @@ public class Video {
         return Objects.equals(this.outputPolicy, video.outputPolicy) && Objects.equals(this.codec, video.codec)
             && Objects.equals(this.bitrate, video.bitrate) && Objects.equals(this.profile, video.profile)
             && Objects.equals(this.level, video.level) && Objects.equals(this.preset, video.preset)
-            && Objects.equals(this.refFramesCount, video.refFramesCount)
             && Objects.equals(this.maxIframesInterval, video.maxIframesInterval)
             && Objects.equals(this.bframesCount, video.bframesCount) && Objects.equals(this.frameRate, video.frameRate)
             && Objects.equals(this.width, video.width) && Objects.equals(this.height, video.height)
@@ -435,7 +410,6 @@ public class Video {
             profile,
             level,
             preset,
-            refFramesCount,
             maxIframesInterval,
             bframesCount,
             frameRate,
@@ -454,7 +428,6 @@ public class Video {
         sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
         sb.append("    level: ").append(toIndentedString(level)).append("\n");
         sb.append("    preset: ").append(toIndentedString(preset)).append("\n");
-        sb.append("    refFramesCount: ").append(toIndentedString(refFramesCount)).append("\n");
         sb.append("    maxIframesInterval: ").append(toIndentedString(maxIframesInterval)).append("\n");
         sb.append("    bframesCount: ").append(toIndentedString(bframesCount)).append("\n");
         sb.append("    frameRate: ").append(toIndentedString(frameRate)).append("\n");

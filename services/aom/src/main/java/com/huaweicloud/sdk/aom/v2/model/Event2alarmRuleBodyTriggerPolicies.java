@@ -3,11 +3,15 @@ package com.huaweicloud.sdk.aom.v2.model;
 
 
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -30,13 +34,91 @@ public class Event2alarmRuleBodyTriggerPolicies  {
     
     
     private String name;
+    /**
+     * 触发类型
+     */
+    public static final class TriggerTypeEnum {
+
+        
+        /**
+         * Enum ACCUMULATIVE for value: "accumulative"
+         */
+        public static final TriggerTypeEnum ACCUMULATIVE = new TriggerTypeEnum("accumulative");
+        
+        /**
+         * Enum NOTIFICATION for value: "notification"
+         */
+        public static final TriggerTypeEnum NOTIFICATION = new TriggerTypeEnum("notification");
+        
+
+        private static final Map<String, TriggerTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TriggerTypeEnum> createStaticFields() {
+            Map<String, TriggerTypeEnum> map = new HashMap<>();
+            map.put("accumulative", ACCUMULATIVE);
+            map.put("notification", NOTIFICATION);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TriggerTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TriggerTypeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            TriggerTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TriggerTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TriggerTypeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            TriggerTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TriggerTypeEnum) {
+                return this.value.equals(((TriggerTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger_type")
     
     
-    private String triggerType;
+    private TriggerTypeEnum triggerType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -112,7 +194,7 @@ public class Event2alarmRuleBodyTriggerPolicies  {
 
     
 
-    public Event2alarmRuleBodyTriggerPolicies withTriggerType(String triggerType) {
+    public Event2alarmRuleBodyTriggerPolicies withTriggerType(TriggerTypeEnum triggerType) {
         this.triggerType = triggerType;
         return this;
     }
@@ -124,11 +206,11 @@ public class Event2alarmRuleBodyTriggerPolicies  {
      * 触发类型
      * @return triggerType
      */
-    public String getTriggerType() {
+    public TriggerTypeEnum getTriggerType() {
         return triggerType;
     }
 
-    public void setTriggerType(String triggerType) {
+    public void setTriggerType(TriggerTypeEnum triggerType) {
         this.triggerType = triggerType;
     }
 
@@ -145,7 +227,7 @@ public class Event2alarmRuleBodyTriggerPolicies  {
     /**
      * 触发周期
      * minimum: 0
-     * maximum: 128
+     * maximum: 86400
      * @return period
      */
     public Integer getPeriod() {
@@ -191,7 +273,7 @@ public class Event2alarmRuleBodyTriggerPolicies  {
     /**
      * 触发次数
      * minimum: 0
-     * maximum: 128
+     * maximum: 100
      * @return count
      */
     public Integer getCount() {

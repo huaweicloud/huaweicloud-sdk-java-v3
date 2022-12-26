@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,13 +20,6 @@ import java.util.Objects;
 public class WorkflowQueryParam  {
 
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_name_list")
-    
-    
-    private List<String> templateNameList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="search")
@@ -111,42 +103,6 @@ public class WorkflowQueryParam  {
     
     
     private String status;
-
-    public WorkflowQueryParam withTemplateNameList(List<String> templateNameList) {
-        this.templateNameList = templateNameList;
-        return this;
-    }
-
-    
-    public WorkflowQueryParam addTemplateNameListItem(String templateNameListItem) {
-        if(this.templateNameList == null) {
-            this.templateNameList = new ArrayList<>();
-        }
-        this.templateNameList.add(templateNameListItem);
-        return this;
-    }
-
-    public WorkflowQueryParam withTemplateNameList(Consumer<List<String>> templateNameListSetter) {
-        if(this.templateNameList == null) {
-            this.templateNameList = new ArrayList<>();
-        }
-        templateNameListSetter.accept(this.templateNameList);
-        return this;
-    }
-
-    /**
-     * 模板名称列表。
-     * @return templateNameList
-     */
-    public List<String> getTemplateNameList() {
-        return templateNameList;
-    }
-
-    public void setTemplateNameList(List<String> templateNameList) {
-        this.templateNameList = templateNameList;
-    }
-
-    
 
     public WorkflowQueryParam withSearch(String search) {
         this.search = search;
@@ -261,7 +217,7 @@ public class WorkflowQueryParam  {
 
 
     /**
-     * 查询当前页的大小，默认值为1000。
+     * 查询当前页的大小，默认值为10。
      * minimum: 1
      * maximum: 100
      * @return size
@@ -421,7 +377,7 @@ public class WorkflowQueryParam  {
 
 
     /**
-     * 任务的状态
+     * 任务的状态 [\"success\",\"fail\",\"executing\",\"cancel\",\"waitExecute\",\"waitApproval\",\"approvalFailed\",\"pausing\",\"canceling\"]
      * @return status
      */
     public String getStatus() {
@@ -443,8 +399,7 @@ public class WorkflowQueryParam  {
             return false;
         }
         WorkflowQueryParam workflowQueryParam = (WorkflowQueryParam) o;
-        return Objects.equals(this.templateNameList, workflowQueryParam.templateNameList) &&
-            Objects.equals(this.search, workflowQueryParam.search) &&
+        return Objects.equals(this.search, workflowQueryParam.search) &&
             Objects.equals(this.type, workflowQueryParam.type) &&
             Objects.equals(this.tags, workflowQueryParam.tags) &&
             Objects.equals(this.page, workflowQueryParam.page) &&
@@ -459,13 +414,12 @@ public class WorkflowQueryParam  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(templateNameList, search, type, tags, page, size, enterpriseProjectId, createBy, sortField, sortType, searchTimeStart, searchTimeEnd, status);
+        return Objects.hash(search, type, tags, page, size, enterpriseProjectId, createBy, sortField, sortType, searchTimeStart, searchTimeEnd, status);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class WorkflowQueryParam {\n");
-        sb.append("    templateNameList: ").append(toIndentedString(templateNameList)).append("\n");
         sb.append("    search: ").append(toIndentedString(search)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");

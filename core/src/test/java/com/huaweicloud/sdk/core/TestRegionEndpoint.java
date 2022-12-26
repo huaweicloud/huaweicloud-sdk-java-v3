@@ -42,7 +42,7 @@ import static com.huaweicloud.sdk.core.TestRegion.TEST_ENDPOINT_WITHOUT_SCHEME;
  */
 @FixMethodOrder(value = MethodSorters.NAME_ASCENDING)
 public class TestRegionEndpoint {
-    private static final Logger logger = LoggerFactory.getLogger(TestRegionEndpoint.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(TestRegionEndpoint.class);
 
     private static final BasicCredentials CREDENTIALS =
             new BasicCredentials().withAk("ak").withSk("sk").withProjectId("project_id");
@@ -61,7 +61,7 @@ public class TestRegionEndpoint {
             endpoint.setAccessible(true);
             Assert.assertEquals(SERVICE_ENDPOINT, endpoint.get(client.hcClient));
         } catch (NoSuchFieldException | IllegalAccessException e) {
-            logger.error(e.getMessage());
+            LOGGER.error(e.getMessage());
         }
     }
 
@@ -79,7 +79,7 @@ public class TestRegionEndpoint {
             endpoint.setAccessible(true);
             Assert.assertEquals(SERVICE_ENDPOINT, endpoint.get(client.hcClient));
         } catch (NoSuchFieldException | IllegalAccessException e) {
-            logger.error(e.getMessage());
+            LOGGER.error(e.getMessage());
         }
     }
 
@@ -96,7 +96,7 @@ public class TestRegionEndpoint {
             endpoint.setAccessible(true);
             Assert.assertEquals(TEST_ENDPOINT, endpoint.get(client.hcClient));
         } catch (NoSuchFieldException | IllegalAccessException e) {
-            logger.error(e.getMessage());
+            LOGGER.error(e.getMessage());
         }
     }
 
@@ -113,7 +113,7 @@ public class TestRegionEndpoint {
             endpoint.setAccessible(true);
             Assert.assertEquals(TEST_ENDPOINT, endpoint.get(client.hcClient));
         } catch (NoSuchFieldException | IllegalAccessException e) {
-            logger.error(e.getMessage());
+            LOGGER.error(e.getMessage());
         }
     }
 
@@ -130,7 +130,7 @@ public class TestRegionEndpoint {
             endpoint.setAccessible(true);
             Assert.assertEquals(TEST_ENDPOINT, endpoint.get(client.hcClient));
         } catch (NoSuchFieldException | IllegalAccessException e) {
-            logger.error(e.getMessage());
+            LOGGER.error(e.getMessage());
         }
     }
 
@@ -147,7 +147,7 @@ public class TestRegionEndpoint {
             endpoint.setAccessible(true);
             Assert.assertEquals(TEST_ENDPOINT, endpoint.get(client.hcClient));
         } catch (NoSuchFieldException | IllegalAccessException e) {
-            logger.error(e.getMessage());
+            LOGGER.error(e.getMessage());
         }
     }
 

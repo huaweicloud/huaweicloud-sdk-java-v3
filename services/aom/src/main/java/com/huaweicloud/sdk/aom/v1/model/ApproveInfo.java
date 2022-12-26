@@ -47,7 +47,7 @@ public class ApproveInfo  {
 
 
     /**
-     * 审批人主题选择，当是否审核,默认是审核时，不能为空。
+     * 审批人主题选择。
      * @return topicSelected
      */
     public String getTopicSelected() {

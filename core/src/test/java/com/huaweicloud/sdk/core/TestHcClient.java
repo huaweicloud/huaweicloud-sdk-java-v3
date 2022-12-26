@@ -22,15 +22,11 @@
 package com.huaweicloud.sdk.core;
 
 import com.github.tomakehurst.wiremock.client.WireMock;
-import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
 import com.github.tomakehurst.wiremock.matching.MatchResult;
 import com.github.tomakehurst.wiremock.matching.StringValuePattern;
 import com.huaweicloud.sdk.core.Constants.MEDIATYPE;
-import com.huaweicloud.sdk.core.auth.BasicCredentials;
-import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -40,8 +36,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
-import java.io.IOException;
-
+import java.util.Locale;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
@@ -49,7 +44,7 @@ import static com.github.tomakehurst.wiremock.client.WireMock.equalTo;
 
 public class TestHcClient {
 
-    private static final Logger logger = LoggerFactory.getLogger(TestHcClient.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(TestHcClient.class);
 
     private static final int FILE_SIZE = 1024 * 1024 * 5;
 
@@ -77,23 +72,7 @@ public class TestHcClient {
         System.setProperty("org.eclipse.jetty.util.log.class", "org.eclipse.jetty.util.log.StdErrLog");
         System.setProperty("org.eclipse.jetty.LEVEL", "OFF");
 
-        wireMockRule = new WireMockRule(
-                WireMockConfiguration.options().httpsPort(8999).port(8998).disableRequestJournal());
-
-        hcClient = new HcClient(new HttpConfig().withIgnoreSSLVerification(true)
-                .withTimeout(600)
-                .addHttpListener(HttpListener.forResponseListener(
-                        responseListener -> logger.debug("RESPONSE: [{} {}] {} {} {} {} {}ms",
-                                responseListener.exchange().getApiReference().getName(),
-                                responseListener.exchange().getApiReference().getUri(), responseListener.httpMethod(),
-                                responseListener.uri(), responseListener.statusCode(),
-                                responseListener.body().orElse(""),
-                                responseListener.exchange().getApiTimer().getDurationMs())))
-                .addHttpListener(HttpListener.forRequestListener(
-                        requestListener -> logger.debug("REQUEST: {} {} {}", requestListener.httpMethod(),
-                                requestListener.uri(), requestListener.body().orElse("")))))
-                .withCredential(new BasicCredentials().withAk("test").withSk("test").withProjectId("pp"))
-                .withEndpoint("https://127.0.0.1:8999");
+        wireMockRule = TestUtils.createWireMockRule();
 
         wireMockRule.stubFor(WireMock.get("/v2.1/pp/servers")
                 .willReturn(WireMock.aResponse()
@@ -120,8 +99,10 @@ public class TestHcClient {
                         .withHeader("token", "success")
                         .withBody("")
                         .withStatus(200)));
-
         wireMockRule.start();
+
+        hcClient = TestUtils.createHcClient(
+                LOGGER, String.format(Locale.ROOT, "https://127.0.0.1:%d", wireMockRule.httpsPort()));
     }
 
     @After
@@ -134,7 +115,7 @@ public class TestHcClient {
         CompletableFuture<TestHttpRequestDef.TestResponse> future = callAsync(new TestHttpRequestDef.TestRequest());
         TestHttpRequestDef.TestResponse response = future.get();
         Assert.assertNotNull(response.getBody());
-        TestHttpRequestDef.InnerResponse[] result = new TestHttpRequestDef.InnerResponse[]{
+        TestHttpRequestDef.InnerResponse[] result = new TestHttpRequestDef.InnerResponse[] {
                 new TestHttpRequestDef.InnerResponse().withIres("1").withJres("2"),
                 new TestHttpRequestDef.InnerResponse().withIres("2").withJres("3")
         };
@@ -147,7 +128,7 @@ public class TestHcClient {
                 new TestHttpRequestDef.TestNoBodyRequest());
         TestHttpRequestDef.TestResponse response = future.get();
         Assert.assertNotNull(response.getBody());
-        TestHttpRequestDef.InnerResponse[] result = new TestHttpRequestDef.InnerResponse[]{
+        TestHttpRequestDef.InnerResponse[] result = new TestHttpRequestDef.InnerResponse[] {
                 new TestHttpRequestDef.InnerResponse().withIres("1").withJres("2"),
                 new TestHttpRequestDef.InnerResponse().withIres("2").withJres("3")
         };
@@ -173,19 +154,7 @@ public class TestHcClient {
         TestHttpRequestDef.TestUploadDownloadResponse response = hcClient.syncInvokeHttp(testUploadDownloadRequest,
                 testUploadDownloadDef);
 
-        response.consumeDownloadStream(inputStream -> {
-            byte[] bytes = new byte[512];
-            int len;
-            int totalLen = 0;
-            try {
-                while ((len = inputStream.read(bytes)) != -1) {
-                    totalLen = totalLen + len;
-                }
-                Assert.assertEquals(totalLen, FILE_SIZE);
-            } catch (IOException e) {
-                logger.error("Download file error ", e);
-            }
-        });
+        response.consumeDownloadStream(TestUtils.getDownloadConsumer(LOGGER));
     }
 
     @Test
@@ -200,4 +169,5 @@ public class TestHcClient {
             TestHttpRequestDef.TestCustomAuthorizationRequest request) {
         return hcClient.asyncInvokeHttp(request, testCustomizeAuthorizationDef);
     }
+
 }

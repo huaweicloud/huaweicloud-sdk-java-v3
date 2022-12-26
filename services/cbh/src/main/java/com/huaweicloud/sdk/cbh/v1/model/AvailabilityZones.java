@@ -30,6 +30,11 @@ public class AvailabilityZones {
 
     private String status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public AvailabilityZones withId(String id) {
         this.id = id;
         return this;
@@ -98,6 +103,23 @@ public class AvailabilityZones {
         this.status = status;
     }
 
+    public AvailabilityZones withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 可用区类型
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -110,12 +132,13 @@ public class AvailabilityZones {
         return Objects.equals(this.id, availabilityZones.id)
             && Objects.equals(this.displayName, availabilityZones.displayName)
             && Objects.equals(this.regionId, availabilityZones.regionId)
-            && Objects.equals(this.status, availabilityZones.status);
+            && Objects.equals(this.status, availabilityZones.status)
+            && Objects.equals(this.type, availabilityZones.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, displayName, regionId, status);
+        return Objects.hash(id, displayName, regionId, status, type);
     }
 
     @Override
@@ -126,6 +149,7 @@ public class AvailabilityZones {
         sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

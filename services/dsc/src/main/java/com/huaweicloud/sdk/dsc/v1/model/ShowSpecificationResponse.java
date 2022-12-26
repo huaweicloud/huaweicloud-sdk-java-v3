@@ -15,7 +15,7 @@ import java.util.function.Consumer;
 public class ShowSpecificationResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_infos")
+    @JsonProperty(value = "orderInfos")
 
     private List<ProductOrderInfo> orderInfos = null;
 

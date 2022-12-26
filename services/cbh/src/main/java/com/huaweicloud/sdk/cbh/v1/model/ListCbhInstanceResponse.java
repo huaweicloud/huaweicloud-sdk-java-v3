@@ -20,7 +20,7 @@ public class ListCbhInstanceResponse extends SdkResponse {
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "quota_detail")
+    @JsonProperty(value = "quotaDetail")
 
     private QuotaDetail quotaDetail;
 

@@ -22,7 +22,7 @@ public class AomAsyncClient {
     /**
      * 新增应用
      *
-     * 新增应用
+     * 新增应用。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -36,7 +36,7 @@ public class AomAsyncClient {
     /**
      * 新增应用
      *
-     * 新增应用
+     * 新增应用。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -50,7 +50,7 @@ public class AomAsyncClient {
     /**
      * 新增组件
      *
-     * 新增组件
+     * 新增组件。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -64,7 +64,7 @@ public class AomAsyncClient {
     /**
      * 新增组件
      *
-     * 新增组件
+     * 新增组件。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -78,7 +78,7 @@ public class AomAsyncClient {
     /**
      * 创建环境
      *
-     * 创建环境
+     * 创建环境。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -92,7 +92,7 @@ public class AomAsyncClient {
     /**
      * 创建环境
      *
-     * 创建环境
+     * 创建环境。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -106,7 +106,7 @@ public class AomAsyncClient {
     /**
      * 删除应用
      *
-     * 删除应用
+     * 删除应用。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -120,7 +120,7 @@ public class AomAsyncClient {
     /**
      * 删除应用
      *
-     * 删除应用
+     * 删除应用。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -134,7 +134,7 @@ public class AomAsyncClient {
     /**
      * 删除组件
      *
-     * 删除组件
+     * 删除组件。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -148,7 +148,7 @@ public class AomAsyncClient {
     /**
      * 删除组件
      *
-     * 删除组件
+     * 删除组件。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -162,7 +162,7 @@ public class AomAsyncClient {
     /**
      * 删除环境
      *
-     * 删除环境
+     * 删除环境。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -176,7 +176,7 @@ public class AomAsyncClient {
     /**
      * 删除环境
      *
-     * 删除环境
+     * 删除环境。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -190,7 +190,7 @@ public class AomAsyncClient {
     /**
      * 查询绑定在节点上的资源列表
      *
-     * 查询绑定在节点上的资源列表
+     * 查询绑定在节点上的资源列表。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -204,7 +204,7 @@ public class AomAsyncClient {
     /**
      * 查询绑定在节点上的资源列表
      *
-     * 查询绑定在节点上的资源列表
+     * 查询绑定在节点上的资源列表。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -218,7 +218,7 @@ public class AomAsyncClient {
     /**
      * 查询应用详情
      *
-     * 获取应用详情
+     * 获取应用详情。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -232,7 +232,7 @@ public class AomAsyncClient {
     /**
      * 查询应用详情
      *
-     * 获取应用详情
+     * 获取应用详情。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -246,7 +246,7 @@ public class AomAsyncClient {
     /**
      * 查询应用详情
      *
-     * 获取应用详情
+     * 获取应用详情。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -260,7 +260,7 @@ public class AomAsyncClient {
     /**
      * 查询应用详情
      *
-     * 获取应用详情
+     * 获取应用详情。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -274,7 +274,7 @@ public class AomAsyncClient {
     /**
      * 查询组件详情
      *
-     * 查询组件详情
+     * 查询组件详情。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -288,7 +288,7 @@ public class AomAsyncClient {
     /**
      * 查询组件详情
      *
-     * 查询组件详情
+     * 查询组件详情。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -302,7 +302,7 @@ public class AomAsyncClient {
     /**
      * 查询组件详情
      *
-     * 查询组件详情
+     * 查询组件详情。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -316,7 +316,7 @@ public class AomAsyncClient {
     /**
      * 查询组件详情
      *
-     * 查询组件详情
+     * 查询组件详情。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -330,7 +330,7 @@ public class AomAsyncClient {
     /**
      * 查询环境详情
      *
-     * 查询环境详情
+     * 查询环境详情。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -344,7 +344,7 @@ public class AomAsyncClient {
     /**
      * 查询环境详情
      *
-     * 查询环境详情
+     * 查询环境详情。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -358,7 +358,7 @@ public class AomAsyncClient {
     /**
      * 查询环境详情
      *
-     * 查询环境详情
+     * 查询环境详情。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -372,7 +372,7 @@ public class AomAsyncClient {
     /**
      * 查询环境详情
      *
-     * 查询环境详情
+     * 查询环境详情。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -386,7 +386,7 @@ public class AomAsyncClient {
     /**
      * 修改应用
      *
-     * 修改应用
+     * 修改应用。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -400,7 +400,7 @@ public class AomAsyncClient {
     /**
      * 修改应用
      *
-     * 修改应用
+     * 修改应用。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -414,7 +414,7 @@ public class AomAsyncClient {
     /**
      * 修改组件
      *
-     * 修改组件
+     * 修改组件。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -428,7 +428,7 @@ public class AomAsyncClient {
     /**
      * 修改组件
      *
-     * 修改组件
+     * 修改组件。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -442,7 +442,7 @@ public class AomAsyncClient {
     /**
      * 修改环境
      *
-     * 修改环境
+     * 修改环境。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -456,7 +456,7 @@ public class AomAsyncClient {
     /**
      * 修改环境
      *
-     * 修改环境
+     * 修改环境。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.aom.v2.model;
 
 
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,7 +12,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.SmnTopics;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -47,13 +51,91 @@ public class ActionRule  {
     
     
     private String desc;
+    /**
+     * 规则类型。\"1\"：通知，\"2\"：用户
+     */
+    public static final class TypeEnum {
+
+        
+        /**
+         * Enum _1_ for value: "\"1\""
+         */
+        public static final TypeEnum _1_ = new TypeEnum("\"1\"");
+        
+        /**
+         * Enum _2_ for value: "\"2\""
+         */
+        public static final TypeEnum _2_ = new TypeEnum("\"2\"");
+        
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("\"1\"", _1_);
+            map.put("\"2\"", _2_);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
     
-    private String type;
+    private TypeEnum type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -178,7 +260,7 @@ public class ActionRule  {
 
     
 
-    public ActionRule withType(String type) {
+    public ActionRule withType(TypeEnum type) {
         this.type = type;
         return this;
     }
@@ -187,14 +269,14 @@ public class ActionRule  {
 
 
     /**
-     * 规则类型。1：通知，2：用户
+     * 规则类型。\"1\"：通知，\"2\"：用户
      * @return type
      */
-    public String getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 

@@ -82,13 +82,6 @@ public class SearchScriptsRequestBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_total")
-    
-    
-    private String pageTotal;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
     
@@ -103,7 +96,7 @@ public class SearchScriptsRequestBody  {
 
 
     /**
-     * 查询接收的的参数，版本管理时，name为脚本名称（版本管理查询时name不能为空），页面查询时，name为接收模糊查询的参数，name是null，表示查询所有默认脚本。
+     * 查询接收的参数，版本管理时，name为脚本名称（版本管理查询时name不能为空），页面查询时，name为接收模糊查询的参数，name是null，表示查询所有默认脚本。
      * @return name
      */
     public String getName() {
@@ -125,7 +118,7 @@ public class SearchScriptsRequestBody  {
 
 
     /**
-     * 查询规则，default表示脚本管理主页查询，包括模糊查询，no_default就是版本管理,当defalult不输入（参数为空）进行查询时，默认是页面查询,废弃字段，传入不影响使用。
+     * 查询规则，当取值为default时，表示脚本管理主页查询，包括模糊查询；当取值为no_default时，表示版本管理；当取值为空时，默认是页面查询, 传入不影响使用。
      * @return isDefault
      */
     public String getIsDefault() {
@@ -147,7 +140,7 @@ public class SearchScriptsRequestBody  {
 
 
     /**
-     * 创建人，默认按照创建人搜说脚本。
+     * 创建人，默认按照创建人搜索脚本。
      * @return createBy
      */
     public String getCreateBy() {
@@ -191,9 +184,9 @@ public class SearchScriptsRequestBody  {
 
 
     /**
-     * 当前页，查询的当前页，page_num为正整数，不能是0和负数，当输入参数为负数，0和大于1000，自动修正参数为1，默认值是1（用户不传，值是1）。
+     * page_num为正整数。
      * minimum: 1
-     * maximum: 99999999
+     * maximum: 100
      * @return pageNum
      */
     public Integer getPageNum() {
@@ -215,7 +208,7 @@ public class SearchScriptsRequestBody  {
 
 
     /**
-     * 每页显示的条数，每页查询的总条数，page_size为正整数，不能是0和负数，当输入参数为负数，0和大于101，自动修正参数为10，默认值是10（用户不传时，值是10）。
+     * 每页显示的条数，默认值是10。
      * minimum: 1
      * maximum: 100
      * @return pageSize
@@ -239,7 +232,7 @@ public class SearchScriptsRequestBody  {
 
 
     /**
-     * 项目id，版本管理参数，当时page_total为total,返回出改脚本名称下所有的脚本对象,传入其他参数无意义，，当前进行 版本管理时，需要分页显示脚本名称下所有对象，传入空值即可。
+     * 项目id。
      * @return projectId
      */
     public String getProjectId() {
@@ -296,28 +289,6 @@ public class SearchScriptsRequestBody  {
 
     
 
-    public SearchScriptsRequestBody withPageTotal(String pageTotal) {
-        this.pageTotal = pageTotal;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 版本管理参数，当时page_total为total,返回出改脚本名称下所有的脚本对象,传入其他参数无意义，，当前进行 版本管理时，需要分页显示脚本名称下所有对象，传入空值即可。
-     * @return pageTotal
-     */
-    public String getPageTotal() {
-        return pageTotal;
-    }
-
-    public void setPageTotal(String pageTotal) {
-        this.pageTotal = pageTotal;
-    }
-
-    
-
     public SearchScriptsRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -358,12 +329,11 @@ public class SearchScriptsRequestBody  {
             Objects.equals(this.projectId, searchScriptsRequestBody.projectId) &&
             Objects.equals(this.orderByColumn, searchScriptsRequestBody.orderByColumn) &&
             Objects.equals(this.sortOrder, searchScriptsRequestBody.sortOrder) &&
-            Objects.equals(this.pageTotal, searchScriptsRequestBody.pageTotal) &&
             Objects.equals(this.enterpriseProjectId, searchScriptsRequestBody.enterpriseProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, isDefault, createBy, scriptId, pageNum, pageSize, projectId, orderByColumn, sortOrder, pageTotal, enterpriseProjectId);
+        return Objects.hash(name, isDefault, createBy, scriptId, pageNum, pageSize, projectId, orderByColumn, sortOrder, enterpriseProjectId);
     }
     @Override
     public String toString() {
@@ -378,7 +348,6 @@ public class SearchScriptsRequestBody  {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    orderByColumn: ").append(toIndentedString(orderByColumn)).append("\n");
         sb.append("    sortOrder: ").append(toIndentedString(sortOrder)).append("\n");
-        sb.append("    pageTotal: ").append(toIndentedString(pageTotal)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();

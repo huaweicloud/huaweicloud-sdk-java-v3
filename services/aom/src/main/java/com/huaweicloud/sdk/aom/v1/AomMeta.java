@@ -294,7 +294,7 @@ public class AomMeta {
         );
         builder.<String>withRequestField("share_type",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SearchTemplateByIdRequest::getShareType, (req, v) -> {
                 req.setShareType(v);
@@ -455,7 +455,7 @@ public class AomMeta {
         );
         builder.<UpdateWorkflowTriggerStatusRequest.ActionEnum>withRequestField("action",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateWorkflowTriggerStatusRequest.ActionEnum.class),
             f -> f.withMarshaller(UpdateWorkflowTriggerStatusRequest::getAction, (req, v) -> {
                 req.setAction(v);

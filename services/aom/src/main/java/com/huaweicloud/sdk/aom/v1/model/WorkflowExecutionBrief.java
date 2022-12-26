@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v1.model.NodeExecutionDetail;
+import com.huaweicloud.sdk.aom.v1.model.ExecutionResultList;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,13 +26,6 @@ public class WorkflowExecutionBrief  {
     
     
     private String workflowId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="workflow_urn")
-    
-    
-    private String workflowUrn;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -88,7 +81,7 @@ public class WorkflowExecutionBrief  {
     @JsonProperty(value="execution_result_list")
     
     
-    private List<NodeExecutionDetail> executionResultList = null;
+    private List<ExecutionResultList> executionResultList = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -129,28 +122,6 @@ public class WorkflowExecutionBrief  {
 
     public void setWorkflowId(String workflowId) {
         this.workflowId = workflowId;
-    }
-
-    
-
-    public WorkflowExecutionBrief withWorkflowUrn(String workflowUrn) {
-        this.workflowUrn = workflowUrn;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 工作流模板参数
-     * @return workflowUrn
-     */
-    public String getWorkflowUrn() {
-        return workflowUrn;
-    }
-
-    public void setWorkflowUrn(String workflowUrn) {
-        this.workflowUrn = workflowUrn;
     }
 
     
@@ -208,7 +179,7 @@ public class WorkflowExecutionBrief  {
 
 
     /**
-     * 流程实例创建时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间
+     * 流程实例创建时间，格式：UT时间戳
      * minimum: 0
      * maximum: 9999999999999
      * @return beginTime
@@ -232,7 +203,7 @@ public class WorkflowExecutionBrief  {
 
 
     /**
-     * 流程实例结束时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间
+     * 流程实例结束时间，格式：UTC时间戳
      * minimum: 0
      * maximum: 9999999999999
      * @return endTime
@@ -256,7 +227,7 @@ public class WorkflowExecutionBrief  {
 
 
     /**
-     * 流程实例上次更新时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间
+     * 流程实例上次更新时间，格式：UTC时间戳
      * minimum: 0
      * maximum: 9999999999999
      * @return lastUpdateTime
@@ -329,13 +300,13 @@ public class WorkflowExecutionBrief  {
 
     
 
-    public WorkflowExecutionBrief withExecutionResultList(List<NodeExecutionDetail> executionResultList) {
+    public WorkflowExecutionBrief withExecutionResultList(List<ExecutionResultList> executionResultList) {
         this.executionResultList = executionResultList;
         return this;
     }
 
     
-    public WorkflowExecutionBrief addExecutionResultListItem(NodeExecutionDetail executionResultListItem) {
+    public WorkflowExecutionBrief addExecutionResultListItem(ExecutionResultList executionResultListItem) {
         if(this.executionResultList == null) {
             this.executionResultList = new ArrayList<>();
         }
@@ -343,7 +314,7 @@ public class WorkflowExecutionBrief  {
         return this;
     }
 
-    public WorkflowExecutionBrief withExecutionResultList(Consumer<List<NodeExecutionDetail>> executionResultListSetter) {
+    public WorkflowExecutionBrief withExecutionResultList(Consumer<List<ExecutionResultList>> executionResultListSetter) {
         if(this.executionResultList == null) {
             this.executionResultList = new ArrayList<>();
         }
@@ -355,11 +326,11 @@ public class WorkflowExecutionBrief  {
      * 执行记录
      * @return executionResultList
      */
-    public List<NodeExecutionDetail> getExecutionResultList() {
+    public List<ExecutionResultList> getExecutionResultList() {
         return executionResultList;
     }
 
-    public void setExecutionResultList(List<NodeExecutionDetail> executionResultList) {
+    public void setExecutionResultList(List<ExecutionResultList> executionResultList) {
         this.executionResultList = executionResultList;
     }
 
@@ -396,7 +367,7 @@ public class WorkflowExecutionBrief  {
 
 
     /**
-     * 执行工作流的修改时间
+     * 执行工作流的修改时间，格式：UTC时间戳
      * minimum: 0
      * maximum: 9999999999999
      * @return workflowEditTime
@@ -443,7 +414,6 @@ public class WorkflowExecutionBrief  {
         }
         WorkflowExecutionBrief workflowExecutionBrief = (WorkflowExecutionBrief) o;
         return Objects.equals(this.workflowId, workflowExecutionBrief.workflowId) &&
-            Objects.equals(this.workflowUrn, workflowExecutionBrief.workflowUrn) &&
             Objects.equals(this.executionId, workflowExecutionBrief.executionId) &&
             Objects.equals(this.status, workflowExecutionBrief.status) &&
             Objects.equals(this.beginTime, workflowExecutionBrief.beginTime) &&
@@ -458,14 +428,13 @@ public class WorkflowExecutionBrief  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(workflowId, workflowUrn, executionId, status, beginTime, endTime, lastUpdateTime, createdBy, approveUserNameList, executionResultList, projectId, workflowEditTime, lastRecordIdWithSnapshot);
+        return Objects.hash(workflowId, executionId, status, beginTime, endTime, lastUpdateTime, createdBy, approveUserNameList, executionResultList, projectId, workflowEditTime, lastRecordIdWithSnapshot);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class WorkflowExecutionBrief {\n");
         sb.append("    workflowId: ").append(toIndentedString(workflowId)).append("\n");
-        sb.append("    workflowUrn: ").append(toIndentedString(workflowUrn)).append("\n");
         sb.append("    executionId: ").append(toIndentedString(executionId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");

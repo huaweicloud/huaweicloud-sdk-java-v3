@@ -15,23 +15,13 @@ public class CreateLogStreamParams {
 
     private String logStreamName;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_name")
-
-    private String enterpriseProjectName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ttl_in_days")
-
-    private Integer ttlInDays;
-
     public CreateLogStreamParams withLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
         return this;
     }
 
     /**
-     * 需要创建的日志流名称。
+     * 需要创建的日志流名称
      * @return logStreamName
      */
     public String getLogStreamName() {
@@ -40,40 +30,6 @@ public class CreateLogStreamParams {
 
     public void setLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
-    }
-
-    public CreateLogStreamParams withEnterpriseProjectName(String enterpriseProjectName) {
-        this.enterpriseProjectName = enterpriseProjectName;
-        return this;
-    }
-
-    /**
-     * Get enterpriseProjectName
-     * @return enterpriseProjectName
-     */
-    public String getEnterpriseProjectName() {
-        return enterpriseProjectName;
-    }
-
-    public void setEnterpriseProjectName(String enterpriseProjectName) {
-        this.enterpriseProjectName = enterpriseProjectName;
-    }
-
-    public CreateLogStreamParams withTtlInDays(Integer ttlInDays) {
-        this.ttlInDays = ttlInDays;
-        return this;
-    }
-
-    /**
-     * Get ttlInDays
-     * @return ttlInDays
-     */
-    public Integer getTtlInDays() {
-        return ttlInDays;
-    }
-
-    public void setTtlInDays(Integer ttlInDays) {
-        this.ttlInDays = ttlInDays;
     }
 
     @Override
@@ -85,14 +41,12 @@ public class CreateLogStreamParams {
             return false;
         }
         CreateLogStreamParams createLogStreamParams = (CreateLogStreamParams) o;
-        return Objects.equals(this.logStreamName, createLogStreamParams.logStreamName)
-            && Objects.equals(this.enterpriseProjectName, createLogStreamParams.enterpriseProjectName)
-            && Objects.equals(this.ttlInDays, createLogStreamParams.ttlInDays);
+        return Objects.equals(this.logStreamName, createLogStreamParams.logStreamName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(logStreamName, enterpriseProjectName, ttlInDays);
+        return Objects.hash(logStreamName);
     }
 
     @Override
@@ -100,8 +54,6 @@ public class CreateLogStreamParams {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateLogStreamParams {\n");
         sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
-        sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
-        sb.append("    ttlInDays: ").append(toIndentedString(ttlInDays)).append("\n");
         sb.append("}");
         return sb.toString();
     }

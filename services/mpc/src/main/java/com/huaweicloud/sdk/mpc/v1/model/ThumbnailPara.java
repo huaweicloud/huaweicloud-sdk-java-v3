@@ -137,11 +137,6 @@ public class ThumbnailPara {
     private Integer format;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "aspect_ratio")
-
-    private Integer aspectRatio;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "width")
 
     private Integer width;
@@ -299,25 +294,6 @@ public class ThumbnailPara {
         this.format = format;
     }
 
-    public ThumbnailPara withAspectRatio(Integer aspectRatio) {
-        this.aspectRatio = aspectRatio;
-        return this;
-    }
-
-    /**
-     * 纵横比。 
-     * minimum: 0
-     * maximum: 2147483647
-     * @return aspectRatio
-     */
-    public Integer getAspectRatio() {
-        return aspectRatio;
-    }
-
-    public void setAspectRatio(Integer aspectRatio) {
-        this.aspectRatio = aspectRatio;
-    }
-
     public ThumbnailPara withWidth(Integer width) {
         this.width = width;
         return this;
@@ -388,16 +364,14 @@ public class ThumbnailPara {
             && Objects.equals(this.startTime, thumbnailPara.startTime)
             && Objects.equals(this.duration, thumbnailPara.duration) && Objects.equals(this.dots, thumbnailPara.dots)
             && Objects.equals(this.outputFilename, thumbnailPara.outputFilename)
-            && Objects.equals(this.format, thumbnailPara.format)
-            && Objects.equals(this.aspectRatio, thumbnailPara.aspectRatio)
-            && Objects.equals(this.width, thumbnailPara.width) && Objects.equals(this.height, thumbnailPara.height)
+            && Objects.equals(this.format, thumbnailPara.format) && Objects.equals(this.width, thumbnailPara.width)
+            && Objects.equals(this.height, thumbnailPara.height)
             && Objects.equals(this.maxLength, thumbnailPara.maxLength);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(type, time, startTime, duration, dots, outputFilename, format, aspectRatio, width, height, maxLength);
+        return Objects.hash(type, time, startTime, duration, dots, outputFilename, format, width, height, maxLength);
     }
 
     @Override
@@ -411,7 +385,6 @@ public class ThumbnailPara {
         sb.append("    dots: ").append(toIndentedString(dots)).append("\n");
         sb.append("    outputFilename: ").append(toIndentedString(outputFilename)).append("\n");
         sb.append("    format: ").append(toIndentedString(format)).append("\n");
-        sb.append("    aspectRatio: ").append(toIndentedString(aspectRatio)).append("\n");
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    maxLength: ").append(toIndentedString(maxLength)).append("\n");

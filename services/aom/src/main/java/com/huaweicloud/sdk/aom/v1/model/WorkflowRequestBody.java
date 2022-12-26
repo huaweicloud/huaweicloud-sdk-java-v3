@@ -73,13 +73,6 @@ public class WorkflowRequestBody  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="citation_urns")
-    
-    
-    private List<String> citationUrns = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quote")
     
     
@@ -136,7 +129,7 @@ public class WorkflowRequestBody  {
 
 
     /**
-     * 工作流名称，需要满足：[^\\\\>+<^;#\"\\s&?%='$￥@*_/\\]\\[【】{}|:,.，。：‘’“、—！!~`·？《》…]{1,64}。
+     * 工作流名称，需要满足中文、英文大小写、数字、中划线和下划线{1,64}。
      * @return name
      */
     public String getName() {
@@ -158,7 +151,7 @@ public class WorkflowRequestBody  {
 
 
     /**
-     * 工作流类型，可以为cron/manul/event。
+     * 工作流类型，可以为cron、manual
      * @return type
      */
     public String getType() {
@@ -224,7 +217,7 @@ public class WorkflowRequestBody  {
 
 
     /**
-     * 模板名称，需要满足：[^\\\\>+<^;#\"\\s&?%='$￥@*_/\\]\\[【】{}|:,.，。：‘’“、—！!~`·？《》…]{1,64}。
+     * 模板名称，示例：CMS::ECS::BulkyRunScript  CMS::ECS::BulkyStartECSInstances CMS::ECS::BulkyCleanDisks
      * @return templateName
      */
     public String getTemplateName() {
@@ -291,42 +284,6 @@ public class WorkflowRequestBody  {
 
     public void setInput(Map<String, Object> input) {
         this.input = input;
-    }
-
-    
-
-    public WorkflowRequestBody withCitationUrns(List<String> citationUrns) {
-        this.citationUrns = citationUrns;
-        return this;
-    }
-
-    
-    public WorkflowRequestBody addCitationUrnsItem(String citationUrnsItem) {
-        if(this.citationUrns == null) {
-            this.citationUrns = new ArrayList<>();
-        }
-        this.citationUrns.add(citationUrnsItem);
-        return this;
-    }
-
-    public WorkflowRequestBody withCitationUrns(Consumer<List<String>> citationUrnsSetter) {
-        if(this.citationUrns == null) {
-            this.citationUrns = new ArrayList<>();
-        }
-        citationUrnsSetter.accept(this.citationUrns);
-        return this;
-    }
-
-    /**
-     * 引用链接,workflow引用的工作链接。
-     * @return citationUrns
-     */
-    public List<String> getCitationUrns() {
-        return citationUrns;
-    }
-
-    public void setCitationUrns(List<String> citationUrns) {
-        this.citationUrns = citationUrns;
     }
 
     
@@ -493,7 +450,7 @@ public class WorkflowRequestBody  {
 
 
     /**
-     * 任务类型。
+     * 任务类型。package,script,job,cloud,standard,customize
      * @return taskType
      */
     public String getTaskType() {
@@ -522,7 +479,6 @@ public class WorkflowRequestBody  {
             Objects.equals(this.templateName, workflowRequestBody.templateName) &&
             Objects.equals(this.templateId, workflowRequestBody.templateId) &&
             Objects.equals(this.input, workflowRequestBody.input) &&
-            Objects.equals(this.citationUrns, workflowRequestBody.citationUrns) &&
             Objects.equals(this.quote, workflowRequestBody.quote) &&
             Objects.equals(this.trigger, workflowRequestBody.trigger) &&
             Objects.equals(this.jobName, workflowRequestBody.jobName) &&
@@ -533,7 +489,7 @@ public class WorkflowRequestBody  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, description, tags, templateName, templateId, input, citationUrns, quote, trigger, jobName, jobId, serviceScenario, serviceName, taskType);
+        return Objects.hash(name, type, description, tags, templateName, templateId, input, quote, trigger, jobName, jobId, serviceScenario, serviceName, taskType);
     }
     @Override
     public String toString() {
@@ -546,7 +502,6 @@ public class WorkflowRequestBody  {
         sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
-        sb.append("    citationUrns: ").append(toIndentedString(citationUrns)).append("\n");
         sb.append("    quote: ").append(toIndentedString(quote)).append("\n");
         sb.append("    trigger: ").append(toIndentedString(trigger)).append("\n");
         sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");

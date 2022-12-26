@@ -62,7 +62,7 @@ public class SearchTemplateByIdRequest  {
 
 
     /**
-     * 模板共享类型，默认为private。
+     * 模板共享类型，默认为private。可选public private
      * @return shareType
      */
     public String getShareType() {

@@ -69,6 +69,11 @@ public class EventManagementResponseInfo {
     private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os_type")
+
+    private String osType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attack_phase")
 
     private String attackPhase;
@@ -172,6 +177,11 @@ public class EventManagementResponseInfo {
     @JsonProperty(value = "file_info_list")
 
     private List<EventFileResponseInfo> fileInfoList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_details")
+
+    private String eventDetails;
 
     public EventManagementResponseInfo withEventId(String eventId) {
         this.eventId = eventId;
@@ -360,6 +370,23 @@ public class EventManagementResponseInfo {
 
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
+    }
+
+    public EventManagementResponseInfo withOsType(String osType) {
+        this.osType = osType;
+        return this;
+    }
+
+    /**
+     * 操作系统类型，包含如下2种。   - Linux ：Linux。   - Windows ：Windows。
+     * @return osType
+     */
+    public String getOsType() {
+        return osType;
+    }
+
+    public void setOsType(String osType) {
+        this.osType = osType;
     }
 
     public EventManagementResponseInfo withAttackPhase(String attackPhase) {
@@ -814,6 +841,23 @@ public class EventManagementResponseInfo {
         this.fileInfoList = fileInfoList;
     }
 
+    public EventManagementResponseInfo withEventDetails(String eventDetails) {
+        this.eventDetails = eventDetails;
+        return this;
+    }
+
+    /**
+     * 事件信息的简述
+     * @return eventDetails
+     */
+    public String getEventDetails() {
+        return eventDetails;
+    }
+
+    public void setEventDetails(String eventDetails) {
+        this.eventDetails = eventDetails;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -834,6 +878,7 @@ public class EventManagementResponseInfo {
             && Objects.equals(this.hostId, eventManagementResponseInfo.hostId)
             && Objects.equals(this.privateIp, eventManagementResponseInfo.privateIp)
             && Objects.equals(this.publicIp, eventManagementResponseInfo.publicIp)
+            && Objects.equals(this.osType, eventManagementResponseInfo.osType)
             && Objects.equals(this.attackPhase, eventManagementResponseInfo.attackPhase)
             && Objects.equals(this.attackTag, eventManagementResponseInfo.attackTag)
             && Objects.equals(this.occurTime, eventManagementResponseInfo.occurTime)
@@ -854,7 +899,8 @@ public class EventManagementResponseInfo {
             && Objects.equals(this.recommendation, eventManagementResponseInfo.recommendation)
             && Objects.equals(this.processInfoList, eventManagementResponseInfo.processInfoList)
             && Objects.equals(this.userInfoList, eventManagementResponseInfo.userInfoList)
-            && Objects.equals(this.fileInfoList, eventManagementResponseInfo.fileInfoList);
+            && Objects.equals(this.fileInfoList, eventManagementResponseInfo.fileInfoList)
+            && Objects.equals(this.eventDetails, eventManagementResponseInfo.eventDetails);
     }
 
     @Override
@@ -870,6 +916,7 @@ public class EventManagementResponseInfo {
             hostId,
             privateIp,
             publicIp,
+            osType,
             attackPhase,
             attackTag,
             occurTime,
@@ -890,7 +937,8 @@ public class EventManagementResponseInfo {
             recommendation,
             processInfoList,
             userInfoList,
-            fileInfoList);
+            fileInfoList,
+            eventDetails);
     }
 
     @Override
@@ -908,6 +956,7 @@ public class EventManagementResponseInfo {
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
+        sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    attackPhase: ").append(toIndentedString(attackPhase)).append("\n");
         sb.append("    attackTag: ").append(toIndentedString(attackTag)).append("\n");
         sb.append("    occurTime: ").append(toIndentedString(occurTime)).append("\n");
@@ -929,6 +978,7 @@ public class EventManagementResponseInfo {
         sb.append("    processInfoList: ").append(toIndentedString(processInfoList)).append("\n");
         sb.append("    userInfoList: ").append(toIndentedString(userInfoList)).append("\n");
         sb.append("    fileInfoList: ").append(toIndentedString(fileInfoList)).append("\n");
+        sb.append("    eventDetails: ").append(toIndentedString(eventDetails)).append("\n");
         sb.append("}");
         return sb.toString();
     }

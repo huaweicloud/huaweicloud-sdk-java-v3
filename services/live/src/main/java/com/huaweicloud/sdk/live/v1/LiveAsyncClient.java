@@ -773,6 +773,37 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 配置域名IPV6开关
+     *
+     * 配置IPV6开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDomainIp6SwitchRequest 请求对象
+     * @return CompletableFuture<UpdateDomainIp6SwitchResponse>
+     */
+    public CompletableFuture<UpdateDomainIp6SwitchResponse> updateDomainIp6SwitchAsync(
+        UpdateDomainIp6SwitchRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.updateDomainIp6Switch);
+    }
+
+    /**
+     * 配置域名IPV6开关
+     *
+     * 配置IPV6开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDomainIp6SwitchRequest 请求对象
+     * @return AsyncInvoker<UpdateDomainIp6SwitchRequest, UpdateDomainIp6SwitchResponse>
+     */
+    public AsyncInvoker<UpdateDomainIp6SwitchRequest, UpdateDomainIp6SwitchResponse> updateDomainIp6SwitchAsyncInvoker(
+        UpdateDomainIp6SwitchRequest request) {
+        return new AsyncInvoker<UpdateDomainIp6SwitchRequest, UpdateDomainIp6SwitchResponse>(request,
+            LiveMeta.updateDomainIp6Switch, hcClient);
+    }
+
+    /**
      * 修改录制回调配置
      *
      * 修改录制回调配置接口

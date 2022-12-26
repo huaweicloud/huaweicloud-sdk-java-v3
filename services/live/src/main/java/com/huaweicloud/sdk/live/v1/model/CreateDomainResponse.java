@@ -300,6 +300,11 @@ public class CreateDomainResponse extends SdkResponse {
 
     private ServiceAreaEnum serviceArea;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public CreateDomainResponse withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -436,6 +441,23 @@ public class CreateDomainResponse extends SdkResponse {
         this.serviceArea = serviceArea;
     }
 
+    public CreateDomainResponse withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -452,12 +474,21 @@ public class CreateDomainResponse extends SdkResponse {
             && Objects.equals(this.status, createDomainResponse.status)
             && Objects.equals(this.createTime, createDomainResponse.createTime)
             && Objects.equals(this.statusDescribe, createDomainResponse.statusDescribe)
-            && Objects.equals(this.serviceArea, createDomainResponse.serviceArea);
+            && Objects.equals(this.serviceArea, createDomainResponse.serviceArea)
+            && Objects.equals(this.enterpriseProjectId, createDomainResponse.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domain, domainType, domainCname, region, status, createTime, statusDescribe, serviceArea);
+        return Objects.hash(domain,
+            domainType,
+            domainCname,
+            region,
+            status,
+            createTime,
+            statusDescribe,
+            serviceArea,
+            enterpriseProjectId);
     }
 
     @Override
@@ -472,6 +503,7 @@ public class CreateDomainResponse extends SdkResponse {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    statusDescribe: ").append(toIndentedString(statusDescribe)).append("\n");
         sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

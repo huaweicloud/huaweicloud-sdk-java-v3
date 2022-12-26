@@ -114,6 +114,20 @@ public class Job  {
     
     private ApproveInfo approveInfo;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_latest_version")
+    
+    
+    private Boolean isLatestVersion;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="version_number")
+    
+    
+    private Integer versionNumber;
+
     public Job withId(String id) {
         this.id = id;
         return this;
@@ -259,7 +273,7 @@ public class Job  {
 
 
     /**
-     * 作业描述,对脚本进行描述，最大长度为1000。
+     * 作业描述，最大长度为1000。
      * @return description
      */
     public String getDescription() {
@@ -446,6 +460,52 @@ public class Job  {
 
     
 
+    public Job withIsLatestVersion(Boolean isLatestVersion) {
+        this.isLatestVersion = isLatestVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否为最新版本的作业
+     * @return isLatestVersion
+     */
+    public Boolean getIsLatestVersion() {
+        return isLatestVersion;
+    }
+
+    public void setIsLatestVersion(Boolean isLatestVersion) {
+        this.isLatestVersion = isLatestVersion;
+    }
+
+    
+
+    public Job withVersionNumber(Integer versionNumber) {
+        this.versionNumber = versionNumber;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 版本号
+     * minimum: 1
+     * maximum: 100
+     * @return versionNumber
+     */
+    public Integer getVersionNumber() {
+        return versionNumber;
+    }
+
+    public void setVersionNumber(Integer versionNumber) {
+        this.versionNumber = versionNumber;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -467,11 +527,13 @@ public class Job  {
             Objects.equals(this.steps, job.steps) &&
             Objects.equals(this.parameters, job.parameters) &&
             Objects.equals(this.rateControl, job.rateControl) &&
-            Objects.equals(this.approveInfo, job.approveInfo);
+            Objects.equals(this.approveInfo, job.approveInfo) &&
+            Objects.equals(this.isLatestVersion, job.isLatestVersion) &&
+            Objects.equals(this.versionNumber, job.versionNumber);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, createTime, createBy, updateTime, updateBy, description, enterpriseProjectId, projectId, steps, parameters, rateControl, approveInfo);
+        return Objects.hash(id, name, createTime, createBy, updateTime, updateBy, description, enterpriseProjectId, projectId, steps, parameters, rateControl, approveInfo, isLatestVersion, versionNumber);
     }
     @Override
     public String toString() {
@@ -490,6 +552,8 @@ public class Job  {
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
         sb.append("    rateControl: ").append(toIndentedString(rateControl)).append("\n");
         sb.append("    approveInfo: ").append(toIndentedString(approveInfo)).append("\n");
+        sb.append("    isLatestVersion: ").append(toIndentedString(isLatestVersion)).append("\n");
+        sb.append("    versionNumber: ").append(toIndentedString(versionNumber)).append("\n");
         sb.append("}");
         return sb.toString();
     }

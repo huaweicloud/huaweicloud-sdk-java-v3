@@ -768,6 +768,13 @@ public class LiveMeta {
             f -> f.withMarshaller(ShowDomainRequest::getDomain, (req, v) -> {
                 req.setDomain(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 
@@ -888,6 +895,31 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LiveDomainModifyReq.class),
             f -> f.withMarshaller(UpdateDomainRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDomainIp6SwitchRequest, UpdateDomainIp6SwitchResponse> updateDomainIp6Switch =
+        genForupdateDomainIp6Switch();
+
+    private static HttpRequestDef<UpdateDomainIp6SwitchRequest, UpdateDomainIp6SwitchResponse> genForupdateDomainIp6Switch() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainIp6SwitchRequest, UpdateDomainIp6SwitchResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateDomainIp6SwitchRequest.class, UpdateDomainIp6SwitchResponse.class)
+            .withName("UpdateDomainIp6Switch")
+            .withUri("/v1/{project_id}/domain/ipv6-switch")
+            .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<DomainIpv6SwitchReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DomainIpv6SwitchReq.class),
+            f -> f.withMarshaller(UpdateDomainIp6SwitchRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

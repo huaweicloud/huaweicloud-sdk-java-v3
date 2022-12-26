@@ -48,6 +48,66 @@ public class LtsClient {
     }
 
     /**
+     * 创建仪表盘
+     *
+     * 创建仪表盘
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDashBoardRequest 请求对象
+     * @return CreateDashBoardResponse
+     */
+    public CreateDashBoardResponse createDashBoard(CreateDashBoardRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.createDashBoard);
+    }
+
+    /**
+     * 创建仪表盘
+     *
+     * 创建仪表盘
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDashBoardRequest 请求对象
+     * @return SyncInvoker<CreateDashBoardRequest, CreateDashBoardResponse>
+     */
+    public SyncInvoker<CreateDashBoardRequest, CreateDashBoardResponse> createDashBoardInvoker(
+        CreateDashBoardRequest request) {
+        return new SyncInvoker<CreateDashBoardRequest, CreateDashBoardResponse>(request, LtsMeta.createDashBoard,
+            hcClient);
+    }
+
+    /**
+     * 创建仪表盘分组
+     *
+     * 创建仪表盘分组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDashboardGroupRequest 请求对象
+     * @return CreateDashboardGroupResponse
+     */
+    public CreateDashboardGroupResponse createDashboardGroup(CreateDashboardGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.createDashboardGroup);
+    }
+
+    /**
+     * 创建仪表盘分组
+     *
+     * 创建仪表盘分组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDashboardGroupRequest 请求对象
+     * @return SyncInvoker<CreateDashboardGroupRequest, CreateDashboardGroupResponse>
+     */
+    public SyncInvoker<CreateDashboardGroupRequest, CreateDashboardGroupResponse> createDashboardGroupInvoker(
+        CreateDashboardGroupRequest request) {
+        return new SyncInvoker<CreateDashboardGroupRequest, CreateDashboardGroupResponse>(request,
+            LtsMeta.createDashboardGroup, hcClient);
+    }
+
+    /**
      * 创建主机组
      *
      * 创建主机组
@@ -228,6 +288,36 @@ public class LtsClient {
     }
 
     /**
+     * 添加快速查询
+     *
+     * 添加快速查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSearchCriteriasRequest 请求对象
+     * @return CreateSearchCriteriasResponse
+     */
+    public CreateSearchCriteriasResponse createSearchCriterias(CreateSearchCriteriasRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.createSearchCriterias);
+    }
+
+    /**
+     * 添加快速查询
+     *
+     * 添加快速查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSearchCriteriasRequest 请求对象
+     * @return SyncInvoker<CreateSearchCriteriasRequest, CreateSearchCriteriasResponse>
+     */
+    public SyncInvoker<CreateSearchCriteriasRequest, CreateSearchCriteriasResponse> createSearchCriteriasInvoker(
+        CreateSearchCriteriasRequest request) {
+        return new SyncInvoker<CreateSearchCriteriasRequest, CreateSearchCriteriasResponse>(request,
+            LtsMeta.createSearchCriterias, hcClient);
+    }
+
+    /**
      * 通过结构化模板创建结构化配置（新）
      *
      * 该接口通过结构化模板创建结构化配置。
@@ -288,6 +378,34 @@ public class LtsClient {
     }
 
     /**
+     * 
+     *
+     * 添加标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTagsRequest 请求对象
+     * @return CreateTagsResponse
+     */
+    public CreateTagsResponse createTags(CreateTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.createTags);
+    }
+
+    /**
+     * 
+     *
+     * 添加标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTagsRequest 请求对象
+     * @return SyncInvoker<CreateTagsRequest, CreateTagsResponse>
+     */
+    public SyncInvoker<CreateTagsRequest, CreateTagsResponse> createTagsInvoker(CreateTagsRequest request) {
+        return new SyncInvoker<CreateTagsRequest, CreateTagsResponse>(request, LtsMeta.createTags, hcClient);
+    }
+
+    /**
      * 创建日志转储（新版）
      *
      * 该接口用于创建OBS转储，DIS转储，DMS转储。
@@ -314,6 +432,36 @@ public class LtsClient {
     public SyncInvoker<CreateTransferRequest, CreateTransferResponse> createTransferInvoker(
         CreateTransferRequest request) {
         return new SyncInvoker<CreateTransferRequest, CreateTransferResponse>(request, LtsMeta.createTransfer,
+            hcClient);
+    }
+
+    /**
+     * 查询Demo
+     *
+     * 创建日志收藏
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatefavoriteRequest 请求对象
+     * @return CreatefavoriteResponse
+     */
+    public CreatefavoriteResponse createfavorite(CreatefavoriteRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.createfavorite);
+    }
+
+    /**
+     * 查询Demo
+     *
+     * 创建日志收藏
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatefavoriteRequest 请求对象
+     * @return SyncInvoker<CreatefavoriteRequest, CreatefavoriteResponse>
+     */
+    public SyncInvoker<CreatefavoriteRequest, CreatefavoriteResponse> createfavoriteInvoker(
+        CreatefavoriteRequest request) {
+        return new SyncInvoker<CreatefavoriteRequest, CreatefavoriteResponse>(request, LtsMeta.createfavorite,
             hcClient);
     }
 
@@ -528,6 +676,36 @@ public class LtsClient {
     }
 
     /**
+     * 删除快速查询
+     *
+     * 删除快速查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSearchCriteriasRequest 请求对象
+     * @return DeleteSearchCriteriasResponse
+     */
+    public DeleteSearchCriteriasResponse deleteSearchCriterias(DeleteSearchCriteriasRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.deleteSearchCriterias);
+    }
+
+    /**
+     * 删除快速查询
+     *
+     * 删除快速查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSearchCriteriasRequest 请求对象
+     * @return SyncInvoker<DeleteSearchCriteriasRequest, DeleteSearchCriteriasResponse>
+     */
+    public SyncInvoker<DeleteSearchCriteriasRequest, DeleteSearchCriteriasResponse> deleteSearchCriteriasInvoker(
+        DeleteSearchCriteriasRequest request) {
+        return new SyncInvoker<DeleteSearchCriteriasRequest, DeleteSearchCriteriasResponse>(request,
+            LtsMeta.deleteSearchCriterias, hcClient);
+    }
+
+    /**
      * 删除结构化配置
      *
      * 该接口用于删除指定日志流下的结构化配置。
@@ -584,6 +762,36 @@ public class LtsClient {
     public SyncInvoker<DeleteTransferRequest, DeleteTransferResponse> deleteTransferInvoker(
         DeleteTransferRequest request) {
         return new SyncInvoker<DeleteTransferRequest, DeleteTransferResponse>(request, LtsMeta.deleteTransfer,
+            hcClient);
+    }
+
+    /**
+     * 取消收藏
+     *
+     * 取消收藏
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletefavoriteRequest 请求对象
+     * @return DeletefavoriteResponse
+     */
+    public DeletefavoriteResponse deletefavorite(DeletefavoriteRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.deletefavorite);
+    }
+
+    /**
+     * 取消收藏
+     *
+     * 取消收藏
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletefavoriteRequest 请求对象
+     * @return SyncInvoker<DeletefavoriteRequest, DeletefavoriteResponse>
+     */
+    public SyncInvoker<DeletefavoriteRequest, DeletefavoriteResponse> deletefavoriteInvoker(
+        DeletefavoriteRequest request) {
+        return new SyncInvoker<DeletefavoriteRequest, DeletefavoriteResponse>(request, LtsMeta.deletefavorite,
             hcClient);
     }
 
@@ -763,6 +971,64 @@ public class LtsClient {
      */
     public SyncInvoker<ListChartsRequest, ListChartsResponse> listChartsInvoker(ListChartsRequest request) {
         return new SyncInvoker<ListChartsRequest, ListChartsResponse>(request, LtsMeta.listCharts, hcClient);
+    }
+
+    /**
+     * 获取快速查询
+     *
+     * 获取快速查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCriteriasRequest 请求对象
+     * @return ListCriteriasResponse
+     */
+    public ListCriteriasResponse listCriterias(ListCriteriasRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listCriterias);
+    }
+
+    /**
+     * 获取快速查询
+     *
+     * 获取快速查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCriteriasRequest 请求对象
+     * @return SyncInvoker<ListCriteriasRequest, ListCriteriasResponse>
+     */
+    public SyncInvoker<ListCriteriasRequest, ListCriteriasResponse> listCriteriasInvoker(ListCriteriasRequest request) {
+        return new SyncInvoker<ListCriteriasRequest, ListCriteriasResponse>(request, LtsMeta.listCriterias, hcClient);
+    }
+
+    /**
+     * 查询用户历史sql
+     *
+     * 查询用户历史sql
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListHistorySqlRequest 请求对象
+     * @return ListHistorySqlResponse
+     */
+    public ListHistorySqlResponse listHistorySql(ListHistorySqlRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listHistorySql);
+    }
+
+    /**
+     * 查询用户历史sql
+     *
+     * 查询用户历史sql
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListHistorySqlRequest 请求对象
+     * @return SyncInvoker<ListHistorySqlRequest, ListHistorySqlResponse>
+     */
+    public SyncInvoker<ListHistorySqlRequest, ListHistorySqlResponse> listHistorySqlInvoker(
+        ListHistorySqlRequest request) {
+        return new SyncInvoker<ListHistorySqlRequest, ListHistorySqlResponse>(request, LtsMeta.listHistorySql,
+            hcClient);
     }
 
     /**
@@ -1086,6 +1352,36 @@ public class LtsClient {
     }
 
     /**
+     * 查询日志组下所有快速查询
+     *
+     * 查询日志组下所有快速查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQueryAllSearchCriteriasRequest 请求对象
+     * @return ListQueryAllSearchCriteriasResponse
+     */
+    public ListQueryAllSearchCriteriasResponse listQueryAllSearchCriterias(ListQueryAllSearchCriteriasRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listQueryAllSearchCriterias);
+    }
+
+    /**
+     * 查询日志组下所有快速查询
+     *
+     * 查询日志组下所有快速查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQueryAllSearchCriteriasRequest 请求对象
+     * @return SyncInvoker<ListQueryAllSearchCriteriasRequest, ListQueryAllSearchCriteriasResponse>
+     */
+    public SyncInvoker<ListQueryAllSearchCriteriasRequest, ListQueryAllSearchCriteriasResponse> listQueryAllSearchCriteriasInvoker(
+        ListQueryAllSearchCriteriasRequest request) {
+        return new SyncInvoker<ListQueryAllSearchCriteriasRequest, ListQueryAllSearchCriteriasResponse>(request,
+            LtsMeta.listQueryAllSearchCriterias, hcClient);
+    }
+
+    /**
      * 查询结构化日志
      *
      * 该接口用于查询指定日志流下的结构化日志内容。
@@ -1205,6 +1501,36 @@ public class LtsClient {
         ListTimeLineTrafficStatisticsRequest request) {
         return new SyncInvoker<ListTimeLineTrafficStatisticsRequest, ListTimeLineTrafficStatisticsResponse>(request,
             LtsMeta.listTimeLineTrafficStatistics, hcClient);
+    }
+
+    /**
+     * 统计top n的日志组或日志流流量
+     *
+     * 统计top n的日志组或日志流流量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTopnTrafficStatisticsRequest 请求对象
+     * @return ListTopnTrafficStatisticsResponse
+     */
+    public ListTopnTrafficStatisticsResponse listTopnTrafficStatistics(ListTopnTrafficStatisticsRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listTopnTrafficStatistics);
+    }
+
+    /**
+     * 统计top n的日志组或日志流流量
+     *
+     * 统计top n的日志组或日志流流量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTopnTrafficStatisticsRequest 请求对象
+     * @return SyncInvoker<ListTopnTrafficStatisticsRequest, ListTopnTrafficStatisticsResponse>
+     */
+    public SyncInvoker<ListTopnTrafficStatisticsRequest, ListTopnTrafficStatisticsResponse> listTopnTrafficStatisticsInvoker(
+        ListTopnTrafficStatisticsRequest request) {
+        return new SyncInvoker<ListTopnTrafficStatisticsRequest, ListTopnTrafficStatisticsResponse>(request,
+            LtsMeta.listTopnTrafficStatistics, hcClient);
     }
 
     /**

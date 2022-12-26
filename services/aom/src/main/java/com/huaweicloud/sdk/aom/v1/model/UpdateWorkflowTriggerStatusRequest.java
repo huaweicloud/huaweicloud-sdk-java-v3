@@ -122,7 +122,7 @@ public class UpdateWorkflowTriggerStatusRequest  {
 
 
     /**
-     * 任务id， 待修改任务的id。
+     * 任务id，待修改任务的id。
      * @return workflowId
      */
     public String getWorkflowId() {

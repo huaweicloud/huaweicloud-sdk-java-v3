@@ -19,11 +19,6 @@ public class VulHostInfo {
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "repair_necessity")
-
-    private String repairNecessity;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity_level")
 
     private String severityLevel;
@@ -73,23 +68,6 @@ public class VulHostInfo {
 
     public void setHostId(String hostId) {
         this.hostId = hostId;
-    }
-
-    public VulHostInfo withRepairNecessity(String repairNecessity) {
-        this.repairNecessity = repairNecessity;
-        return this;
-    }
-
-    /**
-     * 修复紧急度   - Critical : 高危   - High : 中危   - Medium : 中危   - Low : 低危
-     * @return repairNecessity
-     */
-    public String getRepairNecessity() {
-        return repairNecessity;
-    }
-
-    public void setRepairNecessity(String repairNecessity) {
-        this.repairNecessity = repairNecessity;
     }
 
     public VulHostInfo withSeverityLevel(String severityLevel) {
@@ -239,7 +217,6 @@ public class VulHostInfo {
         }
         VulHostInfo vulHostInfo = (VulHostInfo) o;
         return Objects.equals(this.hostId, vulHostInfo.hostId)
-            && Objects.equals(this.repairNecessity, vulHostInfo.repairNecessity)
             && Objects.equals(this.severityLevel, vulHostInfo.severityLevel)
             && Objects.equals(this.hostName, vulHostInfo.hostName) && Objects.equals(this.hostIp, vulHostInfo.hostIp)
             && Objects.equals(this.cveNum, vulHostInfo.cveNum) && Objects.equals(this.cveIdList, vulHostInfo.cveIdList)
@@ -248,8 +225,7 @@ public class VulHostInfo {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(hostId, repairNecessity, severityLevel, hostName, hostIp, cveNum, cveIdList, status, repairCmd);
+        return Objects.hash(hostId, severityLevel, hostName, hostIp, cveNum, cveIdList, status, repairCmd);
     }
 
     @Override
@@ -257,7 +233,6 @@ public class VulHostInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class VulHostInfo {\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
-        sb.append("    repairNecessity: ").append(toIndentedString(repairNecessity)).append("\n");
         sb.append("    severityLevel: ").append(toIndentedString(severityLevel)).append("\n");
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");

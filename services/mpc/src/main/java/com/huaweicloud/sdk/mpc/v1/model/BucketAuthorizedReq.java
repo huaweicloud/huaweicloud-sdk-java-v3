@@ -102,11 +102,6 @@ public class BucketAuthorizedReq {
 
     private OperationEnum operation;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_id")
-
-    private String projectId;
-
     public BucketAuthorizedReq withBucket(String bucket) {
         this.bucket = bucket;
         return this;
@@ -141,23 +136,6 @@ public class BucketAuthorizedReq {
         this.operation = operation;
     }
 
-    public BucketAuthorizedReq withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    /**
-     * 租户Id
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -168,13 +146,12 @@ public class BucketAuthorizedReq {
         }
         BucketAuthorizedReq bucketAuthorizedReq = (BucketAuthorizedReq) o;
         return Objects.equals(this.bucket, bucketAuthorizedReq.bucket)
-            && Objects.equals(this.operation, bucketAuthorizedReq.operation)
-            && Objects.equals(this.projectId, bucketAuthorizedReq.projectId);
+            && Objects.equals(this.operation, bucketAuthorizedReq.operation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bucket, operation, projectId);
+        return Objects.hash(bucket, operation);
     }
 
     @Override
@@ -183,7 +160,6 @@ public class BucketAuthorizedReq {
         sb.append("class BucketAuthorizedReq {\n");
         sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
         sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

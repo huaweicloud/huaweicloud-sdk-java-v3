@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 关闭实例
+ * 重启方式
  */
 public class RebootType {
 
@@ -21,7 +21,7 @@ public class RebootType {
     }
 
     /**
-     * 关闭实例
+     * 重启方式
      * @return type
      */
     public String getType() {

@@ -12,93 +12,25 @@ import java.util.Objects;
 public class ResetLoginMethodResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "code")
+    @JsonProperty(value = "request_info")
 
-    private Integer code;
+    private String requestInfo;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
-
-    private String description;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_id")
-
-    private String taskId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
-
-    public ResetLoginMethodResponse withCode(Integer code) {
-        this.code = code;
+    public ResetLoginMethodResponse withRequestInfo(String requestInfo) {
+        this.requestInfo = requestInfo;
         return this;
     }
 
     /**
-     * 操作结果
-     * minimum: 0
-     * maximum: 2147483647
-     * @return code
+     * Requested information
+     * @return requestInfo
      */
-    public Integer getCode() {
-        return code;
+    public String getRequestInfo() {
+        return requestInfo;
     }
 
-    public void setCode(Integer code) {
-        this.code = code;
-    }
-
-    public ResetLoginMethodResponse withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    /**
-     * 描述
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public ResetLoginMethodResponse withTaskId(String taskId) {
-        this.taskId = taskId;
-        return this;
-    }
-
-    /**
-     * 任务 id
-     * @return taskId
-     */
-    public String getTaskId() {
-        return taskId;
-    }
-
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
-    }
-
-    public ResetLoginMethodResponse withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 订单 id
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
+    public void setRequestInfo(String requestInfo) {
+        this.requestInfo = requestInfo;
     }
 
     @Override
@@ -110,25 +42,19 @@ public class ResetLoginMethodResponse extends SdkResponse {
             return false;
         }
         ResetLoginMethodResponse resetLoginMethodResponse = (ResetLoginMethodResponse) o;
-        return Objects.equals(this.code, resetLoginMethodResponse.code)
-            && Objects.equals(this.description, resetLoginMethodResponse.description)
-            && Objects.equals(this.taskId, resetLoginMethodResponse.taskId)
-            && Objects.equals(this.orderId, resetLoginMethodResponse.orderId);
+        return Objects.equals(this.requestInfo, resetLoginMethodResponse.requestInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, description, taskId, orderId);
+        return Objects.hash(requestInfo);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResetLoginMethodResponse {\n");
-        sb.append("    code: ").append(toIndentedString(code)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    requestInfo: ").append(toIndentedString(requestInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

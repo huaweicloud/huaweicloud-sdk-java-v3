@@ -14,7 +14,7 @@ import java.util.Objects;
 /**
  * 函数流节点执行详细信息
  */
-public class NodeExecutionDetail  {
+public class ExecutionResultList  {
 
 
 
@@ -59,7 +59,7 @@ public class NodeExecutionDetail  {
     
     private String status;
 
-    public NodeExecutionDetail withNodeId(String nodeId) {
+    public ExecutionResultList withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
     }
@@ -81,7 +81,7 @@ public class NodeExecutionDetail  {
 
     
 
-    public NodeExecutionDetail withBeginTime(Long beginTime) {
+    public ExecutionResultList withBeginTime(Long beginTime) {
         this.beginTime = beginTime;
         return this;
     }
@@ -90,7 +90,7 @@ public class NodeExecutionDetail  {
 
 
     /**
-     * 节点开始执行时间
+     * 节点开始执行时间。
      * minimum: 0
      * maximum: 9999999999999
      * @return beginTime
@@ -105,7 +105,7 @@ public class NodeExecutionDetail  {
 
     
 
-    public NodeExecutionDetail withEndTime(Long endTime) {
+    public ExecutionResultList withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -114,7 +114,7 @@ public class NodeExecutionDetail  {
 
 
     /**
-     * 节点执行结束时间
+     * 节点执行结束时间。
      * minimum: 0
      * maximum: 9999999999999
      * @return endTime
@@ -129,7 +129,7 @@ public class NodeExecutionDetail  {
 
     
 
-    public NodeExecutionDetail withFunctionExecutionId(String functionExecutionId) {
+    public ExecutionResultList withFunctionExecutionId(String functionExecutionId) {
         this.functionExecutionId = functionExecutionId;
         return this;
     }
@@ -138,7 +138,7 @@ public class NodeExecutionDetail  {
 
 
     /**
-     * FunctionGraph的执行id
+     * FunctionGraph的执行id。
      * @return functionExecutionId
      */
     public String getFunctionExecutionId() {
@@ -151,7 +151,7 @@ public class NodeExecutionDetail  {
 
     
 
-    public NodeExecutionDetail withOutput(Object output) {
+    public ExecutionResultList withOutput(Object output) {
         this.output = output;
         return this;
     }
@@ -160,7 +160,7 @@ public class NodeExecutionDetail  {
 
 
     /**
-     * 节点输出
+     * 节点输出。
      * @return output
      */
     public Object getOutput() {
@@ -173,7 +173,7 @@ public class NodeExecutionDetail  {
 
     
 
-    public NodeExecutionDetail withStatus(String status) {
+    public ExecutionResultList withStatus(String status) {
         this.status = status;
         return this;
     }
@@ -182,7 +182,7 @@ public class NodeExecutionDetail  {
 
 
     /**
-     * 节点状态
+     * 节点状态。
      * @return status
      */
     public String getStatus() {
@@ -203,13 +203,13 @@ public class NodeExecutionDetail  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        NodeExecutionDetail nodeExecutionDetail = (NodeExecutionDetail) o;
-        return Objects.equals(this.nodeId, nodeExecutionDetail.nodeId) &&
-            Objects.equals(this.beginTime, nodeExecutionDetail.beginTime) &&
-            Objects.equals(this.endTime, nodeExecutionDetail.endTime) &&
-            Objects.equals(this.functionExecutionId, nodeExecutionDetail.functionExecutionId) &&
-            Objects.equals(this.output, nodeExecutionDetail.output) &&
-            Objects.equals(this.status, nodeExecutionDetail.status);
+        ExecutionResultList executionResultList = (ExecutionResultList) o;
+        return Objects.equals(this.nodeId, executionResultList.nodeId) &&
+            Objects.equals(this.beginTime, executionResultList.beginTime) &&
+            Objects.equals(this.endTime, executionResultList.endTime) &&
+            Objects.equals(this.functionExecutionId, executionResultList.functionExecutionId) &&
+            Objects.equals(this.output, executionResultList.output) &&
+            Objects.equals(this.status, executionResultList.status);
     }
     @Override
     public int hashCode() {
@@ -218,7 +218,7 @@ public class NodeExecutionDetail  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class NodeExecutionDetail {\n");
+        sb.append("class ExecutionResultList {\n");
         sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");

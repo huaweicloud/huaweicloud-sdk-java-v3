@@ -83,7 +83,7 @@ public class ListTemplateByJobIdRequestBody  {
 
 
     /**
-     * 当前页，查询的当前页，page_num为正整数，不能是0和负数，当输入参数为负数，0和大于1000，自动修正参数为1，默认值是1（用户不传，值是1） 当前页，查询的当前页，page_num为正整数，不能是0和负数，当输入参数为负数，0和大于1000，自动修正参数为1，默认值是1（用户不传，值是1）
+     * page_num为正整数
      * minimum: 1
      * maximum: 9999999
      * @return pageNum
@@ -107,7 +107,7 @@ public class ListTemplateByJobIdRequestBody  {
 
 
     /**
-     * 每页显示的条数，每页查询的总条数，page_size为正整数，不能是0和负数，当输入参数为负数，0和大于101，自动修正参数为10，默认值是10（用户不传时，值是10） 每页显示的条数，每页查询的总条数，page_size为正整数，不能是0和负数，当输入参数为负数，0和大于101，自动修正参数为10，默认值是10（用户不传时，值是10）
+     * 每页显示的条数
      * minimum: 1
      * maximum: 100
      * @return pageSize

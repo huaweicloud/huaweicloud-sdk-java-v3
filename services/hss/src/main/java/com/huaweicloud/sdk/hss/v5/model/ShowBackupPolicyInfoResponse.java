@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -43,11 +41,6 @@ public class ShowBackupPolicyInfoResponse extends SdkResponse {
     @JsonProperty(value = "trigger")
 
     private BackupTriggerInfo trigger;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "associated_vaults")
-
-    private List<AssociatedVaultsInfo> associatedVaults = null;
 
     public ShowBackupPolicyInfoResponse withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -170,40 +163,6 @@ public class ShowBackupPolicyInfoResponse extends SdkResponse {
         this.trigger = trigger;
     }
 
-    public ShowBackupPolicyInfoResponse withAssociatedVaults(List<AssociatedVaultsInfo> associatedVaults) {
-        this.associatedVaults = associatedVaults;
-        return this;
-    }
-
-    public ShowBackupPolicyInfoResponse addAssociatedVaultsItem(AssociatedVaultsInfo associatedVaultsItem) {
-        if (this.associatedVaults == null) {
-            this.associatedVaults = new ArrayList<>();
-        }
-        this.associatedVaults.add(associatedVaultsItem);
-        return this;
-    }
-
-    public ShowBackupPolicyInfoResponse withAssociatedVaults(
-        Consumer<List<AssociatedVaultsInfo>> associatedVaultsSetter) {
-        if (this.associatedVaults == null) {
-            this.associatedVaults = new ArrayList<>();
-        }
-        associatedVaultsSetter.accept(this.associatedVaults);
-        return this;
-    }
-
-    /**
-     * 关联的存储库
-     * @return associatedVaults
-     */
-    public List<AssociatedVaultsInfo> getAssociatedVaults() {
-        return associatedVaults;
-    }
-
-    public void setAssociatedVaults(List<AssociatedVaultsInfo> associatedVaults) {
-        this.associatedVaults = associatedVaults;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -218,13 +177,12 @@ public class ShowBackupPolicyInfoResponse extends SdkResponse {
             && Objects.equals(this.name, showBackupPolicyInfoResponse.name)
             && Objects.equals(this.operationType, showBackupPolicyInfoResponse.operationType)
             && Objects.equals(this.operationDefinition, showBackupPolicyInfoResponse.operationDefinition)
-            && Objects.equals(this.trigger, showBackupPolicyInfoResponse.trigger)
-            && Objects.equals(this.associatedVaults, showBackupPolicyInfoResponse.associatedVaults);
+            && Objects.equals(this.trigger, showBackupPolicyInfoResponse.trigger);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enabled, id, name, operationType, operationDefinition, trigger, associatedVaults);
+        return Objects.hash(enabled, id, name, operationType, operationDefinition, trigger);
     }
 
     @Override
@@ -237,7 +195,6 @@ public class ShowBackupPolicyInfoResponse extends SdkResponse {
         sb.append("    operationType: ").append(toIndentedString(operationType)).append("\n");
         sb.append("    operationDefinition: ").append(toIndentedString(operationDefinition)).append("\n");
         sb.append("    trigger: ").append(toIndentedString(trigger)).append("\n");
-        sb.append("    associatedVaults: ").append(toIndentedString(associatedVaults)).append("\n");
         sb.append("}");
         return sb.toString();
     }

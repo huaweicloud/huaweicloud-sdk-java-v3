@@ -8,13 +8,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.1.18</version>
+        <version>3.1.19</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>huaweicloud-sdk-bundle</artifactId>
-    <version>3.1.18</version>
+    <version>3.1.19</version>
     <packaging>jar</packaging>
     <name>Huawei Cloud SDK for Java Bundle</name>
     <description>A single bundled dependency that includes all service and dependent JARs for Huawei Cloud Java SDK</description>
@@ -24,7 +24,7 @@
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-all</artifactId>
-            <version>3.1.18</version>
+            <version>3.1.19</version>
         </dependency>
     </dependencies>
 

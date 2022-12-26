@@ -11,6 +11,11 @@ import java.util.Objects;
 public class AlarmWhiteListResponseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_name")
+
+    private String enterpriseProjectName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hash")
 
     private String hash;
@@ -29,6 +34,23 @@ public class AlarmWhiteListResponseInfo {
     @JsonProperty(value = "update_time")
 
     private Long updateTime;
+
+    public AlarmWhiteListResponseInfo withEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+        return this;
+    }
+
+    /**
+     * 企业项目名称
+     * @return enterpriseProjectName
+     */
+    public String getEnterpriseProjectName() {
+        return enterpriseProjectName;
+    }
+
+    public void setEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+    }
 
     public AlarmWhiteListResponseInfo withHash(String hash) {
         this.hash = hash;
@@ -111,7 +133,8 @@ public class AlarmWhiteListResponseInfo {
             return false;
         }
         AlarmWhiteListResponseInfo alarmWhiteListResponseInfo = (AlarmWhiteListResponseInfo) o;
-        return Objects.equals(this.hash, alarmWhiteListResponseInfo.hash)
+        return Objects.equals(this.enterpriseProjectName, alarmWhiteListResponseInfo.enterpriseProjectName)
+            && Objects.equals(this.hash, alarmWhiteListResponseInfo.hash)
             && Objects.equals(this.description, alarmWhiteListResponseInfo.description)
             && Objects.equals(this.eventType, alarmWhiteListResponseInfo.eventType)
             && Objects.equals(this.updateTime, alarmWhiteListResponseInfo.updateTime);
@@ -119,13 +142,14 @@ public class AlarmWhiteListResponseInfo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(hash, description, eventType, updateTime);
+        return Objects.hash(enterpriseProjectName, hash, description, eventType, updateTime);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AlarmWhiteListResponseInfo {\n");
+        sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
         sb.append("    hash: ").append(toIndentedString(hash)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");

@@ -3,11 +3,15 @@ package com.huaweicloud.sdk.aom.v3.model;
 
 
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -44,13 +48,91 @@ public class BizAppParam  {
     
     
     private String name;
+    /**
+     * 前端默认是CONSOLE，不需要传参。rest接口无参数是API，有参数只能是：SERVICE_DISCOVERY
+     */
+    public static final class RegisterTypeEnum {
+
+        
+        /**
+         * Enum API for value: "API"
+         */
+        public static final RegisterTypeEnum API = new RegisterTypeEnum("API");
+        
+        /**
+         * Enum CONSOLESERVICE_DISCOVERY for value: "CONSOLESERVICE_DISCOVERY"
+         */
+        public static final RegisterTypeEnum CONSOLESERVICE_DISCOVERY = new RegisterTypeEnum("CONSOLESERVICE_DISCOVERY");
+        
+
+        private static final Map<String, RegisterTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RegisterTypeEnum> createStaticFields() {
+            Map<String, RegisterTypeEnum> map = new HashMap<>();
+            map.put("API", API);
+            map.put("CONSOLESERVICE_DISCOVERY", CONSOLESERVICE_DISCOVERY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        RegisterTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RegisterTypeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            RegisterTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new RegisterTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static RegisterTypeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            RegisterTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RegisterTypeEnum) {
+                return this.value.equals(((RegisterTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_type")
     
     
-    private String registerType;
+    private RegisterTypeEnum registerType;
 
     public BizAppParam withDescription(String description) {
         this.description = description;
@@ -105,7 +187,7 @@ public class BizAppParam  {
 
 
     /**
-     * 应用关联的企业项目id
+     * 应用关联的企业项目id。企业级用户必传
      * @return epsId
      */
     public String getEpsId() {
@@ -140,7 +222,7 @@ public class BizAppParam  {
 
     
 
-    public BizAppParam withRegisterType(String registerType) {
+    public BizAppParam withRegisterType(RegisterTypeEnum registerType) {
         this.registerType = registerType;
         return this;
     }
@@ -152,11 +234,11 @@ public class BizAppParam  {
      * 前端默认是CONSOLE，不需要传参。rest接口无参数是API，有参数只能是：SERVICE_DISCOVERY
      * @return registerType
      */
-    public String getRegisterType() {
+    public RegisterTypeEnum getRegisterType() {
         return registerType;
     }
 
-    public void setRegisterType(String registerType) {
+    public void setRegisterType(RegisterTypeEnum registerType) {
         this.registerType = registerType;
     }
 

@@ -12,7 +12,7 @@ import java.util.Objects;
 public class ChangeInstanceOrderResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
+    @JsonProperty(value = "orderId")
 
     private String orderId;
 

@@ -16,6 +16,11 @@ public class PortResponseInfo {
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "laddr")
+
+    private String laddr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -55,6 +60,23 @@ public class PortResponseInfo {
 
     public void setHostId(String hostId) {
         this.hostId = hostId;
+    }
+
+    public PortResponseInfo withLaddr(String laddr) {
+        this.laddr = laddr;
+        return this;
+    }
+
+    /**
+     * 监听ip
+     * @return laddr
+     */
+    public String getLaddr() {
+        return laddr;
+    }
+
+    public void setLaddr(String laddr) {
+        this.laddr = laddr;
     }
 
     public PortResponseInfo withStatus(String status) {
@@ -156,6 +178,7 @@ public class PortResponseInfo {
         }
         PortResponseInfo portResponseInfo = (PortResponseInfo) o;
         return Objects.equals(this.hostId, portResponseInfo.hostId)
+            && Objects.equals(this.laddr, portResponseInfo.laddr)
             && Objects.equals(this.status, portResponseInfo.status) && Objects.equals(this.port, portResponseInfo.port)
             && Objects.equals(this.type, portResponseInfo.type) && Objects.equals(this.pid, portResponseInfo.pid)
             && Objects.equals(this.path, portResponseInfo.path);
@@ -163,7 +186,7 @@ public class PortResponseInfo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostId, status, port, type, pid, path);
+        return Objects.hash(hostId, laddr, status, port, type, pid, path);
     }
 
     @Override
@@ -171,6 +194,7 @@ public class PortResponseInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class PortResponseInfo {\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
+        sb.append("    laddr: ").append(toIndentedString(laddr)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

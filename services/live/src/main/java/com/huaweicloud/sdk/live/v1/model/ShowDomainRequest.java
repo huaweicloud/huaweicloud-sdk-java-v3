@@ -15,6 +15,11 @@ public class ShowDomainRequest {
 
     private String domain;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public ShowDomainRequest withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -32,6 +37,23 @@ public class ShowDomainRequest {
         this.domain = domain;
     }
 
+    public ShowDomainRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID，如果不设置此字段，则不进行该字段过滤，返回所有域名信息
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -41,12 +63,13 @@ public class ShowDomainRequest {
             return false;
         }
         ShowDomainRequest showDomainRequest = (ShowDomainRequest) o;
-        return Objects.equals(this.domain, showDomainRequest.domain);
+        return Objects.equals(this.domain, showDomainRequest.domain)
+            && Objects.equals(this.enterpriseProjectId, showDomainRequest.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domain);
+        return Objects.hash(domain, enterpriseProjectId);
     }
 
     @Override
@@ -54,6 +77,7 @@ public class ShowDomainRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDomainRequest {\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -54,7 +54,7 @@ public class TaskParam  {
 
 
     /**
-     * 参数名称,需要满足：[^\\>+<;#\";&?%=']{1,64}。
+     * 参数名称,满足：[^\\>+<;#\";&?%=']{1,64}。
      * @return paramName
      */
     public String getParamName() {

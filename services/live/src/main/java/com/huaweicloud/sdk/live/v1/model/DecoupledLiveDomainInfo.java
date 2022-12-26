@@ -422,6 +422,16 @@ public class DecoupledLiveDomainInfo {
 
     private ServiceAreaEnum serviceArea;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_ipv6")
+
+    private Boolean isIpv6;
+
     public DecoupledLiveDomainInfo withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -592,6 +602,40 @@ public class DecoupledLiveDomainInfo {
         this.serviceArea = serviceArea;
     }
 
+    public DecoupledLiveDomainInfo withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public DecoupledLiveDomainInfo withIsIpv6(Boolean isIpv6) {
+        this.isIpv6 = isIpv6;
+        return this;
+    }
+
+    /**
+     * IPV6开关是否开启，默认关闭，true为开启；false或空为关闭
+     * @return isIpv6
+     */
+    public Boolean getIsIpv6() {
+        return isIpv6;
+    }
+
+    public void setIsIpv6(Boolean isIpv6) {
+        this.isIpv6 = isIpv6;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -610,7 +654,9 @@ public class DecoupledLiveDomainInfo {
             && Objects.equals(this.relatedDomain, decoupledLiveDomainInfo.relatedDomain)
             && Objects.equals(this.createTime, decoupledLiveDomainInfo.createTime)
             && Objects.equals(this.statusDescribe, decoupledLiveDomainInfo.statusDescribe)
-            && Objects.equals(this.serviceArea, decoupledLiveDomainInfo.serviceArea);
+            && Objects.equals(this.serviceArea, decoupledLiveDomainInfo.serviceArea)
+            && Objects.equals(this.enterpriseProjectId, decoupledLiveDomainInfo.enterpriseProjectId)
+            && Objects.equals(this.isIpv6, decoupledLiveDomainInfo.isIpv6);
     }
 
     @Override
@@ -624,7 +670,9 @@ public class DecoupledLiveDomainInfo {
             relatedDomain,
             createTime,
             statusDescribe,
-            serviceArea);
+            serviceArea,
+            enterpriseProjectId,
+            isIpv6);
     }
 
     @Override
@@ -641,6 +689,8 @@ public class DecoupledLiveDomainInfo {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    statusDescribe: ").append(toIndentedString(statusDescribe)).append("\n");
         sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    isIpv6: ").append(toIndentedString(isIpv6)).append("\n");
         sb.append("}");
         return sb.toString();
     }

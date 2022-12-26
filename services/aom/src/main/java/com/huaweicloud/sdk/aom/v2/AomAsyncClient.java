@@ -22,7 +22,7 @@ public class AomAsyncClient {
     /**
      * 新增告警行动规则
      *
-     * 新增告警行动规则
+     * 新增告警行动规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -36,7 +36,7 @@ public class AomAsyncClient {
     /**
      * 新增告警行动规则
      *
-     * 新增告警行动规则
+     * 新增告警行动规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -78,7 +78,7 @@ public class AomAsyncClient {
     /**
      * 新增一条事件类告警规则
      *
-     * 新增一条事件类告警规则。
+     * 新增一条事件类告警规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -92,7 +92,7 @@ public class AomAsyncClient {
     /**
      * 新增一条事件类告警规则
      *
-     * 新增一条事件类告警规则。
+     * 新增一条事件类告警规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -134,7 +134,7 @@ public class AomAsyncClient {
     /**
      * 新增静默规则
      *
-     * 新增静默规则
+     * 新增静默规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -148,7 +148,7 @@ public class AomAsyncClient {
     /**
      * 新增静默规则
      *
-     * 新增静默规则
+     * 新增静默规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -218,7 +218,7 @@ public class AomAsyncClient {
     /**
      * 删除告警行动规则
      *
-     * 删除告警行动规则
+     * 删除告警行动规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -232,7 +232,7 @@ public class AomAsyncClient {
     /**
      * 删除告警行动规则
      *
-     * 删除告警行动规则
+     * 删除告警行动规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -302,7 +302,7 @@ public class AomAsyncClient {
     /**
      * 删除事件类告警规则
      *
-     * 删除一条事件类告警规则。
+     * 删除一条事件类告警规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -316,7 +316,7 @@ public class AomAsyncClient {
     /**
      * 删除事件类告警规则
      *
-     * 删除一条事件类告警规则。
+     * 删除一条事件类告警规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -330,7 +330,7 @@ public class AomAsyncClient {
     /**
      * 删除静默规则
      *
-     * 删除静默规则
+     * 删除静默规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -344,7 +344,7 @@ public class AomAsyncClient {
     /**
      * 删除静默规则
      *
-     * 删除静默规则
+     * 删除静默规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -386,7 +386,7 @@ public class AomAsyncClient {
     /**
      * 获取告警行动规则列表
      *
-     * 获取告警行动规则列表
+     * 获取告警行动规则列表。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -400,7 +400,7 @@ public class AomAsyncClient {
     /**
      * 获取告警行动规则列表
      *
-     * 获取告警行动规则列表
+     * 获取告警行动规则列表。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -442,7 +442,7 @@ public class AomAsyncClient {
     /**
      * 查询事件类告警规则列表
      *
-     * 查询事件类告警规则列表。
+     * 查询事件类告警规则列表。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -456,7 +456,7 @@ public class AomAsyncClient {
     /**
      * 查询事件类告警规则列表
      *
-     * 查询事件类告警规则列表。
+     * 查询事件类告警规则列表。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -554,7 +554,7 @@ public class AomAsyncClient {
     /**
      * 获取静默规则列表
      *
-     * 获取静默规则列表
+     * 获取静默规则列表。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -568,7 +568,7 @@ public class AomAsyncClient {
     /**
      * 获取静默规则列表
      *
-     * 获取静默规则列表
+     * 获取静默规则列表。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -582,7 +582,7 @@ public class AomAsyncClient {
     /**
      * 获取告警发送结果
      *
-     * 获取告警发送结果
+     * 获取告警发送结果。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -596,7 +596,7 @@ public class AomAsyncClient {
     /**
      * 获取告警发送结果
      *
-     * 获取告警发送结果
+     * 获取告警发送结果。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -722,7 +722,7 @@ public class AomAsyncClient {
     /**
      * 通过规则名称获取告警行动规则
      *
-     * 通过规则名称获取告警行动规则
+     * 通过规则名称获取告警行动规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -736,7 +736,7 @@ public class AomAsyncClient {
     /**
      * 通过规则名称获取告警行动规则
      *
-     * 通过规则名称获取告警行动规则
+     * 通过规则名称获取告警行动规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -806,7 +806,7 @@ public class AomAsyncClient {
     /**
      * 修改告警行动规则
      *
-     * 修改告警行动规则
+     * 修改告警行动规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -820,7 +820,7 @@ public class AomAsyncClient {
     /**
      * 修改告警行动规则
      *
-     * 修改告警行动规则
+     * 修改告警行动规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -862,7 +862,7 @@ public class AomAsyncClient {
     /**
      * 更新事件类告警规则
      *
-     * 更新事件类告警规则。
+     * 更新事件类告警规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -876,7 +876,7 @@ public class AomAsyncClient {
     /**
      * 更新事件类告警规则
      *
-     * 更新事件类告警规则。
+     * 更新事件类告警规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -890,7 +890,7 @@ public class AomAsyncClient {
     /**
      * 修改静默规则
      *
-     * 修改静默规则
+     * 修改静默规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -904,7 +904,7 @@ public class AomAsyncClient {
     /**
      * 修改静默规则
      *
-     * 修改静默规则
+     * 修改静默规则。（注：接口目前开放的region为：上海一）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

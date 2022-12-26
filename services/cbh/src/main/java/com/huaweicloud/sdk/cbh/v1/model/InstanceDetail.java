@@ -11,27 +11,27 @@ import java.util.Objects;
 public class InstanceDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "public_ip")
+    @JsonProperty(value = "publicip")
 
-    private String publicIp;
+    private String publicip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "exp_time")
+    @JsonProperty(value = "expTime")
 
     private String expTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start_time")
+    @JsonProperty(value = "startTime")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "end_time")
+    @JsonProperty(value = "endTime")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "release_time")
+    @JsonProperty(value = "releaseTime")
 
     private String releaseTime;
 
@@ -41,17 +41,17 @@ public class InstanceDetail {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_id")
+    @JsonProperty(value = "instanceId")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "private_ip")
+    @JsonProperty(value = "privateIp")
 
     private String privateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_status")
+    @JsonProperty(value = "taskStatus")
 
     private String taskStatus;
 
@@ -81,17 +81,17 @@ public class InstanceDetail {
     private String availabilityZoneDisplay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "vpc_id")
+    @JsonProperty(value = "vpcId")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "subnet_id")
+    @JsonProperty(value = "subnetId")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "security_group_id")
+    @JsonProperty(value = "securityGroupId")
 
     private String securityGroupId;
 
@@ -106,32 +106,32 @@ public class InstanceDetail {
     private String update;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "createinstance_status")
+    @JsonProperty(value = "createinstanceStatus")
 
     private String createinstanceStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "fail_reason")
+    @JsonProperty(value = "failReason")
 
     private String failReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_key")
+    @JsonProperty(value = "instanceKey")
 
     private String instanceKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
+    @JsonProperty(value = "orderId")
 
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "period_num")
+    @JsonProperty(value = "periodNum")
 
     private String periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resource_id")
+    @JsonProperty(value = "resourceId")
 
     private String resourceId;
 
@@ -141,32 +141,32 @@ public class InstanceDetail {
     private String bastionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "alter_permit")
+    @JsonProperty(value = "alterPermit")
 
     private String alterPermit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "public_id")
+    @JsonProperty(value = "publicId")
 
     private String publicId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bastion_version")
+    @JsonProperty(value = "bastionVersion")
 
     private String bastionVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "new_bastion_version")
+    @JsonProperty(value = "newBastionVersion")
 
     private String newBastionVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_status")
+    @JsonProperty(value = "instanceStatus")
 
     private String instanceStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_description")
+    @JsonProperty(value = "instanceDescription")
 
     private String instanceDescription;
 
@@ -175,21 +175,56 @@ public class InstanceDetail {
 
     private Integer isAutoRenew;
 
-    public InstanceDetail withPublicIp(String publicIp) {
-        this.publicIp = publicIp;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "slaveZone")
+
+    private String slaveZone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterpriseProjectId")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instanceType")
+
+    private String instanceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "haId")
+
+    private String haId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "slaveZoneDisplay")
+
+    private String slaveZoneDisplay;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "webPort")
+
+    private String webPort;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vip")
+
+    private String vip;
+
+    public InstanceDetail withPublicip(String publicip) {
+        this.publicip = publicip;
         return this;
     }
 
     /**
      * 弹性ip
-     * @return publicIp
+     * @return publicip
      */
-    public String getPublicIp() {
-        return publicIp;
+    public String getPublicip() {
+        return publicip;
     }
 
-    public void setPublicIp(String publicIp) {
-        this.publicIp = publicIp;
+    public void setPublicip(String publicip) {
+        this.publicip = publicip;
     }
 
     public InstanceDetail withExpTime(String expTime) {
@@ -738,6 +773,125 @@ public class InstanceDetail {
         this.isAutoRenew = isAutoRenew;
     }
 
+    public InstanceDetail withSlaveZone(String slaveZone) {
+        this.slaveZone = slaveZone;
+        return this;
+    }
+
+    /**
+     * 备可用分区
+     * @return slaveZone
+     */
+    public String getSlaveZone() {
+        return slaveZone;
+    }
+
+    public void setSlaveZone(String slaveZone) {
+        this.slaveZone = slaveZone;
+    }
+
+    public InstanceDetail withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public InstanceDetail withInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+        return this;
+    }
+
+    /**
+     * 实例类型
+     * @return instanceType
+     */
+    public String getInstanceType() {
+        return instanceType;
+    }
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    public InstanceDetail withHaId(String haId) {
+        this.haId = haId;
+        return this;
+    }
+
+    /**
+     * 主备ID
+     * @return haId
+     */
+    public String getHaId() {
+        return haId;
+    }
+
+    public void setHaId(String haId) {
+        this.haId = haId;
+    }
+
+    public InstanceDetail withSlaveZoneDisplay(String slaveZoneDisplay) {
+        this.slaveZoneDisplay = slaveZoneDisplay;
+        return this;
+    }
+
+    /**
+     * 备可用分区名称
+     * @return slaveZoneDisplay
+     */
+    public String getSlaveZoneDisplay() {
+        return slaveZoneDisplay;
+    }
+
+    public void setSlaveZoneDisplay(String slaveZoneDisplay) {
+        this.slaveZoneDisplay = slaveZoneDisplay;
+    }
+
+    public InstanceDetail withWebPort(String webPort) {
+        this.webPort = webPort;
+        return this;
+    }
+
+    /**
+     * 端口号
+     * @return webPort
+     */
+    public String getWebPort() {
+        return webPort;
+    }
+
+    public void setWebPort(String webPort) {
+        this.webPort = webPort;
+    }
+
+    public InstanceDetail withVip(String vip) {
+        this.vip = vip;
+        return this;
+    }
+
+    /**
+     * 浮动ip
+     * @return vip
+     */
+    public String getVip() {
+        return vip;
+    }
+
+    public void setVip(String vip) {
+        this.vip = vip;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -747,7 +901,7 @@ public class InstanceDetail {
             return false;
         }
         InstanceDetail instanceDetail = (InstanceDetail) o;
-        return Objects.equals(this.publicIp, instanceDetail.publicIp)
+        return Objects.equals(this.publicip, instanceDetail.publicip)
             && Objects.equals(this.expTime, instanceDetail.expTime)
             && Objects.equals(this.startTime, instanceDetail.startTime)
             && Objects.equals(this.endTime, instanceDetail.endTime)
@@ -778,12 +932,18 @@ public class InstanceDetail {
             && Objects.equals(this.newBastionVersion, instanceDetail.newBastionVersion)
             && Objects.equals(this.instanceStatus, instanceDetail.instanceStatus)
             && Objects.equals(this.instanceDescription, instanceDetail.instanceDescription)
-            && Objects.equals(this.isAutoRenew, instanceDetail.isAutoRenew);
+            && Objects.equals(this.isAutoRenew, instanceDetail.isAutoRenew)
+            && Objects.equals(this.slaveZone, instanceDetail.slaveZone)
+            && Objects.equals(this.enterpriseProjectId, instanceDetail.enterpriseProjectId)
+            && Objects.equals(this.instanceType, instanceDetail.instanceType)
+            && Objects.equals(this.haId, instanceDetail.haId)
+            && Objects.equals(this.slaveZoneDisplay, instanceDetail.slaveZoneDisplay)
+            && Objects.equals(this.webPort, instanceDetail.webPort) && Objects.equals(this.vip, instanceDetail.vip);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(publicIp,
+        return Objects.hash(publicip,
             expTime,
             startTime,
             endTime,
@@ -815,14 +975,21 @@ public class InstanceDetail {
             newBastionVersion,
             instanceStatus,
             instanceDescription,
-            isAutoRenew);
+            isAutoRenew,
+            slaveZone,
+            enterpriseProjectId,
+            instanceType,
+            haId,
+            slaveZoneDisplay,
+            webPort,
+            vip);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InstanceDetail {\n");
-        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
+        sb.append("    publicip: ").append(toIndentedString(publicip)).append("\n");
         sb.append("    expTime: ").append(toIndentedString(expTime)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
@@ -855,6 +1022,13 @@ public class InstanceDetail {
         sb.append("    instanceStatus: ").append(toIndentedString(instanceStatus)).append("\n");
         sb.append("    instanceDescription: ").append(toIndentedString(instanceDescription)).append("\n");
         sb.append("    isAutoRenew: ").append(toIndentedString(isAutoRenew)).append("\n");
+        sb.append("    slaveZone: ").append(toIndentedString(slaveZone)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
+        sb.append("    haId: ").append(toIndentedString(haId)).append("\n");
+        sb.append("    slaveZoneDisplay: ").append(toIndentedString(slaveZoneDisplay)).append("\n");
+        sb.append("    webPort: ").append(toIndentedString(webPort)).append("\n");
+        sb.append("    vip: ").append(toIndentedString(vip)).append("\n");
         sb.append("}");
         return sb.toString();
     }

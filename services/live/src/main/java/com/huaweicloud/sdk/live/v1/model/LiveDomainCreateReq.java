@@ -189,6 +189,11 @@ public class LiveDomainCreateReq {
 
     private ServiceAreaEnum serviceArea;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public LiveDomainCreateReq withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -257,6 +262,23 @@ public class LiveDomainCreateReq {
         this.serviceArea = serviceArea;
     }
 
+    public LiveDomainCreateReq withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -269,12 +291,13 @@ public class LiveDomainCreateReq {
         return Objects.equals(this.domain, liveDomainCreateReq.domain)
             && Objects.equals(this.domainType, liveDomainCreateReq.domainType)
             && Objects.equals(this.region, liveDomainCreateReq.region)
-            && Objects.equals(this.serviceArea, liveDomainCreateReq.serviceArea);
+            && Objects.equals(this.serviceArea, liveDomainCreateReq.serviceArea)
+            && Objects.equals(this.enterpriseProjectId, liveDomainCreateReq.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domain, domainType, region, serviceArea);
+        return Objects.hash(domain, domainType, region, serviceArea, enterpriseProjectId);
     }
 
     @Override
@@ -285,6 +308,7 @@ public class LiveDomainCreateReq {
         sb.append("    domainType: ").append(toIndentedString(domainType)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

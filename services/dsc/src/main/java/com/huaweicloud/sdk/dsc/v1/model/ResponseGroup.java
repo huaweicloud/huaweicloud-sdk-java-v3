@@ -127,6 +127,11 @@ public class ResponseGroup {
 
     private String taskNames;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_default")
+
+    private Boolean isDefault;
+
     public ResponseGroup withCategory(CategoryEnum category) {
         this.category = category;
         return this;
@@ -246,6 +251,23 @@ public class ResponseGroup {
         this.taskNames = taskNames;
     }
 
+    public ResponseGroup withIsDefault(Boolean isDefault) {
+        this.isDefault = isDefault;
+        return this;
+    }
+
+    /**
+     * 是否为默认规则组
+     * @return isDefault
+     */
+    public Boolean getIsDefault() {
+        return isDefault;
+    }
+
+    public void setIsDefault(Boolean isDefault) {
+        this.isDefault = isDefault;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -260,12 +282,13 @@ public class ResponseGroup {
             && Objects.equals(this.groupDesc, responseGroup.groupDesc)
             && Objects.equals(this.groupName, responseGroup.groupName) && Objects.equals(this.id, responseGroup.id)
             && Objects.equals(this.ruleNames, responseGroup.ruleNames)
-            && Objects.equals(this.taskNames, responseGroup.taskNames);
+            && Objects.equals(this.taskNames, responseGroup.taskNames)
+            && Objects.equals(this.isDefault, responseGroup.isDefault);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(category, deleteAllowed, groupDesc, groupName, id, ruleNames, taskNames);
+        return Objects.hash(category, deleteAllowed, groupDesc, groupName, id, ruleNames, taskNames, isDefault);
     }
 
     @Override
@@ -279,6 +302,7 @@ public class ResponseGroup {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    ruleNames: ").append(toIndentedString(ruleNames)).append("\n");
         sb.append("    taskNames: ").append(toIndentedString(taskNames)).append("\n");
+        sb.append("    isDefault: ").append(toIndentedString(isDefault)).append("\n");
         sb.append("}");
         return sb.toString();
     }

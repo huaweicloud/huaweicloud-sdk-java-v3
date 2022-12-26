@@ -42,6 +42,11 @@ public class ProtectionServerInfo {
     private String osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os_name")
+
+    private String osName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_status")
 
     private String hostStatus;
@@ -95,6 +100,11 @@ public class ProtectionServerInfo {
     @JsonProperty(value = "count_backuped")
 
     private Integer countBackuped;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_status")
+
+    private String agentStatus;
 
     public ProtectionServerInfo withHostId(String hostId) {
         this.hostId = hostId;
@@ -196,6 +206,23 @@ public class ProtectionServerInfo {
 
     public void setOsType(String osType) {
         this.osType = osType;
+    }
+
+    public ProtectionServerInfo withOsName(String osName) {
+        this.osName = osName;
+        return this;
+    }
+
+    /**
+     * 系统名称
+     * @return osName
+     */
+    public String getOsName() {
+        return osName;
+    }
+
+    public void setOsName(String osName) {
+        this.osName = osName;
     }
 
     public ProtectionServerInfo withHostStatus(String hostStatus) {
@@ -398,6 +425,23 @@ public class ProtectionServerInfo {
         this.countBackuped = countBackuped;
     }
 
+    public ProtectionServerInfo withAgentStatus(String agentStatus) {
+        this.agentStatus = agentStatus;
+        return this;
+    }
+
+    /**
+     * Agent状态
+     * @return agentStatus
+     */
+    public String getAgentStatus() {
+        return agentStatus;
+    }
+
+    public void setAgentStatus(String agentStatus) {
+        this.agentStatus = agentStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -413,6 +457,7 @@ public class ProtectionServerInfo {
             && Objects.equals(this.hostIp, protectionServerInfo.hostIp)
             && Objects.equals(this.privateIp, protectionServerInfo.privateIp)
             && Objects.equals(this.osType, protectionServerInfo.osType)
+            && Objects.equals(this.osName, protectionServerInfo.osName)
             && Objects.equals(this.hostStatus, protectionServerInfo.hostStatus)
             && Objects.equals(this.ransomProtectionStatus, protectionServerInfo.ransomProtectionStatus)
             && Objects.equals(this.protectStatus, protectionServerInfo.protectStatus)
@@ -423,7 +468,8 @@ public class ProtectionServerInfo {
             && Objects.equals(this.backupError, protectionServerInfo.backupError)
             && Objects.equals(this.backupProtectionStatus, protectionServerInfo.backupProtectionStatus)
             && Objects.equals(this.countProtectEvent, protectionServerInfo.countProtectEvent)
-            && Objects.equals(this.countBackuped, protectionServerInfo.countBackuped);
+            && Objects.equals(this.countBackuped, protectionServerInfo.countBackuped)
+            && Objects.equals(this.agentStatus, protectionServerInfo.agentStatus);
     }
 
     @Override
@@ -434,6 +480,7 @@ public class ProtectionServerInfo {
             hostIp,
             privateIp,
             osType,
+            osName,
             hostStatus,
             ransomProtectionStatus,
             protectStatus,
@@ -444,7 +491,8 @@ public class ProtectionServerInfo {
             backupError,
             backupProtectionStatus,
             countProtectEvent,
-            countBackuped);
+            countBackuped,
+            agentStatus);
     }
 
     @Override
@@ -457,6 +505,7 @@ public class ProtectionServerInfo {
         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
+        sb.append("    osName: ").append(toIndentedString(osName)).append("\n");
         sb.append("    hostStatus: ").append(toIndentedString(hostStatus)).append("\n");
         sb.append("    ransomProtectionStatus: ").append(toIndentedString(ransomProtectionStatus)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
@@ -468,6 +517,7 @@ public class ProtectionServerInfo {
         sb.append("    backupProtectionStatus: ").append(toIndentedString(backupProtectionStatus)).append("\n");
         sb.append("    countProtectEvent: ").append(toIndentedString(countProtectEvent)).append("\n");
         sb.append("    countBackuped: ").append(toIndentedString(countBackuped)).append("\n");
+        sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

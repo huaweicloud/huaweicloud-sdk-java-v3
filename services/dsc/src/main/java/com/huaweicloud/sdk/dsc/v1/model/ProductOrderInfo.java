@@ -14,27 +14,27 @@ import java.util.function.Consumer;
 public class ProductOrderInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tenant_id")
+    @JsonProperty(value = "tenantId")
 
     private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "period_type")
+    @JsonProperty(value = "periodType")
 
     private String periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "period_num")
+    @JsonProperty(value = "periodNum")
 
     private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resource_id")
+    @JsonProperty(value = "resourceId")
 
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "product_info")
+    @JsonProperty(value = "productInfo")
 
     private List<ProductInfoBean> productInfo = null;
 

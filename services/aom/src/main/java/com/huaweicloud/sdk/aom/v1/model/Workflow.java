@@ -110,13 +110,6 @@ public class Workflow  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="param_name")
-    
-    
-    private String paramName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_execution_id")
     
     
@@ -191,20 +184,6 @@ public class Workflow  {
     
     
     private String taskType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
-    
-    private String domainId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_name")
-    
-    
-    private String domainName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -356,7 +335,7 @@ public class Workflow  {
 
 
     /**
-     * 工作流名称，需要满足：[^\\\\>+<^;#\"\\s&?%='$￥@*_/\\]\\[【】{}|:,.，。：‘’“、—！!~`·？《》…]{1,64}。
+     * 工作流名称，满足：[^\\\\>+<^;#\"\\s&?%='$￥@*_/\\]\\[【】{}|:,.，。：‘’“、—！!~`·？《》…]{1,64}。
      * @return name
      */
     public String getName() {
@@ -378,7 +357,7 @@ public class Workflow  {
 
 
     /**
-     * 工作流类型，可以为cron/manul/event
+     * 工作流类型，可以为cron、manual
      * @return type
      */
     public String getType() {
@@ -617,28 +596,6 @@ public class Workflow  {
 
     public void setInput(Map<String, Object> input) {
         this.input = input;
-    }
-
-    
-
-    public Workflow withParamName(String paramName) {
-        this.paramName = paramName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 参数名，该字段已经被删除，不再使用
-     * @return paramName
-     */
-    public String getParamName() {
-        return paramName;
-    }
-
-    public void setParamName(String paramName) {
-        this.paramName = paramName;
     }
 
     
@@ -913,50 +870,6 @@ public class Workflow  {
 
     public void setTaskType(String taskType) {
         this.taskType = taskType;
-    }
-
-    
-
-    public Workflow withDomainId(String domainId) {
-        this.domainId = domainId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * functiongraph返回的DOMAIN_ID
-     * @return domainId
-     */
-    public String getDomainId() {
-        return domainId;
-    }
-
-    public void setDomainId(String domainId) {
-        this.domainId = domainId;
-    }
-
-    
-
-    public Workflow withDomainName(String domainName) {
-        this.domainName = domainName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * functiongraph返回的DOMAIN_NAME
-     * @return domainName
-     */
-    public String getDomainName() {
-        return domainName;
-    }
-
-    public void setDomainName(String domainName) {
-        this.domainName = domainName;
     }
 
     
@@ -1442,7 +1355,6 @@ public class Workflow  {
             Objects.equals(this.templateName, workflow.templateName) &&
             Objects.equals(this.templateId, workflow.templateId) &&
             Objects.equals(this.input, workflow.input) &&
-            Objects.equals(this.paramName, workflow.paramName) &&
             Objects.equals(this.lastExecutionId, workflow.lastExecutionId) &&
             Objects.equals(this.status, workflow.status) &&
             Objects.equals(this.citationUrns, workflow.citationUrns) &&
@@ -1454,8 +1366,6 @@ public class Workflow  {
             Objects.equals(this.serviceScenario, workflow.serviceScenario) &&
             Objects.equals(this.serviceName, workflow.serviceName) &&
             Objects.equals(this.taskType, workflow.taskType) &&
-            Objects.equals(this.domainId, workflow.domainId) &&
-            Objects.equals(this.domainName, workflow.domainName) &&
             Objects.equals(this.projectId, workflow.projectId) &&
             Objects.equals(this.workflowId, workflow.workflowId) &&
             Objects.equals(this.taskStatus, workflow.taskStatus) &&
@@ -1476,7 +1386,7 @@ public class Workflow  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, description, tags, createTime, createBy, updateTime, updateBy, templateName, templateId, input, paramName, lastExecutionId, status, citationUrns, lastExecutionEndTime, lastExecutionStartTime, quote, jobName, jobId, serviceScenario, serviceName, taskType, domainId, domainName, projectId, workflowId, taskStatus, nodes, editTime, executionActionRules, executionPermission, globalParameters, isDelete, steps, output, triggerId, triggerStatus, approveId, templateI18n, enterpriseProjectId, lastExecuteBy);
+        return Objects.hash(id, name, type, description, tags, createTime, createBy, updateTime, updateBy, templateName, templateId, input, lastExecutionId, status, citationUrns, lastExecutionEndTime, lastExecutionStartTime, quote, jobName, jobId, serviceScenario, serviceName, taskType, projectId, workflowId, taskStatus, nodes, editTime, executionActionRules, executionPermission, globalParameters, isDelete, steps, output, triggerId, triggerStatus, approveId, templateI18n, enterpriseProjectId, lastExecuteBy);
     }
     @Override
     public String toString() {
@@ -1494,7 +1404,6 @@ public class Workflow  {
         sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
-        sb.append("    paramName: ").append(toIndentedString(paramName)).append("\n");
         sb.append("    lastExecutionId: ").append(toIndentedString(lastExecutionId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    citationUrns: ").append(toIndentedString(citationUrns)).append("\n");
@@ -1506,8 +1415,6 @@ public class Workflow  {
         sb.append("    serviceScenario: ").append(toIndentedString(serviceScenario)).append("\n");
         sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
-        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-        sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    workflowId: ").append(toIndentedString(workflowId)).append("\n");
         sb.append("    taskStatus: ").append(toIndentedString(taskStatus)).append("\n");

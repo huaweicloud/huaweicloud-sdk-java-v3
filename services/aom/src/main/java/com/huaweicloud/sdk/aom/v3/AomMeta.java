@@ -471,10 +471,10 @@ public class AomMeta {
                 req.setComponentId(v);
             })
         );
-        builder.<ComponentParam>withRequestField("body",
+        builder.<ComponentUpdateParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ComponentParam.class),
+            TypeCasts.uncheckedConversion(ComponentUpdateParam.class),
             f -> f.withMarshaller(UpdateComponentRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })

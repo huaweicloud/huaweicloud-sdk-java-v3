@@ -75,7 +75,7 @@ public class HISFastScript  {
 
 
     /**
-     * 脚本类型。
+     * 脚本类型。SHELL BAT PYTHON POWER_SHELL
      * @return scriptType
      */
     public String getScriptType() {

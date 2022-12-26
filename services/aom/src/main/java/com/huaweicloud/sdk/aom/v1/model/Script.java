@@ -245,7 +245,7 @@ public class Script  {
 
 
     /**
-     * 项目id,根据project_id、脚本名称的和，用guava计算hash(md5)方式获取，比如为：c279d73a0b4e0f0927721e366c736880
+     * 脚本id,根据project_id、脚本名称的和，用guava计算hash(md5)方式获取，比如为：c279d73a0b4e0f0927721e366c736880
      * @return id
      */
     public String getId() {
@@ -289,7 +289,7 @@ public class Script  {
 
 
     /**
-     * 脚本中是否有已上线的版本，true表示有已上线的版本，false表示灭没有已上线的版本
+     * 脚本中是否有已上线的版本，true表示有已上线的版本，false表示没有已上线的版本
      * @return onlineExistStatus
      */
     public Boolean getOnlineExistStatus() {
@@ -311,7 +311,7 @@ public class Script  {
 
 
     /**
-     * 正在上线版本id
+     * 已上线版本id
      * @return onlineId
      */
     public String getOnlineId() {
@@ -384,7 +384,7 @@ public class Script  {
 
 
     /**
-     * 脚本语言，目前支持四种，分别是：[\"Shell\",\"Bat\",\"Python\",\"Powershell\"]
+     * 脚本语言，目前支持四种，分别是：SHELL BAT PYTHON POWER_SHELL
      * @return scriptLanguage
      */
     public String getScriptLanguage() {
@@ -428,7 +428,7 @@ public class Script  {
 
 
     /**
-     * 实体的最后更新时间戳。 注意：执行创建/修补/删除操作时，update_time将更新。
+     * 实体的最后更新时间戳。 注意：执行创建/修改/删除操作时，update_time将更新。
      * minimum: 0
      * maximum: 9999999999999
      * @return updateTime

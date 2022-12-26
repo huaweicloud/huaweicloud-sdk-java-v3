@@ -22,7 +22,6 @@
 package com.huaweicloud.sdk.core;
 
 import com.github.tomakehurst.wiremock.client.WireMock;
-import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
 import com.huaweicloud.sdk.core.http.HttpConfig;
@@ -37,17 +36,16 @@ import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.equalTo;
 
 public class TestRegionCreateProject {
-    private static final Logger logger = LoggerFactory.getLogger(TestRegionCreateProject.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(TestRegionCreateProject.class);
 
     private static final String EXPECTED_PROJECT_ID = "123456789";
-    private static final String IAM_ENDPOINT = "http://127.0.0.1:10086";
-    private static final BasicCredentials CREDENTIALS = new BasicCredentials().withAk("ak").withSk("sk")
-            .withIamEndpoint(IAM_ENDPOINT);
+    private static final BasicCredentials CREDENTIALS = new BasicCredentials().withAk("ak").withSk("sk");
     private final HttpConfig config = HttpConfig.getDefaultHttpConfig().withIgnoreSSLVerification(true);
 
     @Rule
@@ -58,8 +56,7 @@ public class TestRegionCreateProject {
         System.setProperty("org.eclipse.jetty.util.log.class", "org.eclipse.jetty.util.log.StdErrLog");
         System.setProperty("org.eclipse.jetty.LEVEL", "OFF");
 
-        wireMockRule =
-                new WireMockRule(WireMockConfiguration.options().httpsPort(10010).port(10086).disableRequestJournal());
+        wireMockRule = TestUtils.createWireMockRule();
 
         // mock request: GET /v3/projects
         wireMockRule.stubFor(WireMock.get("/v3/projects?name=cn-north-201")
@@ -111,6 +108,8 @@ public class TestRegionCreateProject {
                 )
         );
         wireMockRule.start();
+
+        CREDENTIALS.withIamEndpoint(String.format(Locale.ROOT, "http://127.0.0.1:%d", wireMockRule.port()));
     }
 
     @After
@@ -131,7 +130,7 @@ public class TestRegionCreateProject {
             projectId.setAccessible(true);
             Assert.assertEquals(EXPECTED_PROJECT_ID, projectId.get(CREDENTIALS));
         } catch (NoSuchFieldException | IllegalAccessException e) {
-            logger.error(e.getMessage());
+            LOGGER.error(e.getMessage());
         }
     }
 }

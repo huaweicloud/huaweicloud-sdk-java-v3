@@ -13,34 +13,34 @@ import java.util.function.Consumer;
 public class ShowAvailableZoneInfoResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "availability_zones")
+    @JsonProperty(value = "availability_zone")
 
-    private AvailabilityZones availabilityZones;
+    private AvailabilityZones availabilityZone;
 
-    public ShowAvailableZoneInfoResponse withAvailabilityZones(AvailabilityZones availabilityZones) {
-        this.availabilityZones = availabilityZones;
+    public ShowAvailableZoneInfoResponse withAvailabilityZone(AvailabilityZones availabilityZone) {
+        this.availabilityZone = availabilityZone;
         return this;
     }
 
-    public ShowAvailableZoneInfoResponse withAvailabilityZones(Consumer<AvailabilityZones> availabilityZonesSetter) {
-        if (this.availabilityZones == null) {
-            this.availabilityZones = new AvailabilityZones();
-            availabilityZonesSetter.accept(this.availabilityZones);
+    public ShowAvailableZoneInfoResponse withAvailabilityZone(Consumer<AvailabilityZones> availabilityZoneSetter) {
+        if (this.availabilityZone == null) {
+            this.availabilityZone = new AvailabilityZones();
+            availabilityZoneSetter.accept(this.availabilityZone);
         }
 
         return this;
     }
 
     /**
-     * Get availabilityZones
-     * @return availabilityZones
+     * Get availabilityZone
+     * @return availabilityZone
      */
-    public AvailabilityZones getAvailabilityZones() {
-        return availabilityZones;
+    public AvailabilityZones getAvailabilityZone() {
+        return availabilityZone;
     }
 
-    public void setAvailabilityZones(AvailabilityZones availabilityZones) {
-        this.availabilityZones = availabilityZones;
+    public void setAvailabilityZone(AvailabilityZones availabilityZone) {
+        this.availabilityZone = availabilityZone;
     }
 
     @Override
@@ -52,19 +52,19 @@ public class ShowAvailableZoneInfoResponse extends SdkResponse {
             return false;
         }
         ShowAvailableZoneInfoResponse showAvailableZoneInfoResponse = (ShowAvailableZoneInfoResponse) o;
-        return Objects.equals(this.availabilityZones, showAvailableZoneInfoResponse.availabilityZones);
+        return Objects.equals(this.availabilityZone, showAvailableZoneInfoResponse.availabilityZone);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(availabilityZones);
+        return Objects.hash(availabilityZone);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAvailableZoneInfoResponse {\n");
-        sb.append("    availabilityZones: ").append(toIndentedString(availabilityZones)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("}");
         return sb.toString();
     }

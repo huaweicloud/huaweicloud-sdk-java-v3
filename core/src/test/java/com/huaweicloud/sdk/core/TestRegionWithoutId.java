@@ -22,7 +22,6 @@
 package com.huaweicloud.sdk.core;
 
 import com.github.tomakehurst.wiremock.client.WireMock;
-import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
 import com.huaweicloud.sdk.core.auth.GlobalCredentials;
@@ -34,10 +33,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.lang.reflect.Field;
+import java.util.Locale;
 
 import static com.huaweicloud.sdk.core.Constants.MEDIATYPE;
 import static com.huaweicloud.sdk.core.TestRegion.TEST_ENDPOINT;
@@ -46,15 +43,10 @@ import static com.huaweicloud.sdk.core.TestRegion.TEST_ENDPOINT;
  * TestRegionWithoutId：测试projectId/domainId在不同调用方式下的自动回填情况
  */
 public class TestRegionWithoutId {
-    private static final Logger logger = LoggerFactory.getLogger(TestRegionWithoutId.class);
-
-    private static final String IAM_ENDPOINT = "http://127.0.0.1:10086";
     private static final String BASIC_EXPECTED = "123456789";
-    private static final BasicCredentials BASIC_CREDENTIALS =
-            new BasicCredentials().withAk("ak").withSk("sk").withIamEndpoint(IAM_ENDPOINT);
+    private static final BasicCredentials BASIC_CREDENTIALS = new BasicCredentials().withAk("ak").withSk("sk");
     private static final String GLOBAL_EXPECTED = "987654321";
-    private static final GlobalCredentials GLOBAL_CREDENTIALS =
-            new GlobalCredentials().withAk("ak").withSk("sk").withIamEndpoint(IAM_ENDPOINT);
+    private static final GlobalCredentials GLOBAL_CREDENTIALS = new GlobalCredentials().withAk("ak").withSk("sk");
     private final HttpConfig config = HttpConfig.getDefaultHttpConfig().withIgnoreSSLVerification(true);
 
     @Rule
@@ -65,8 +57,7 @@ public class TestRegionWithoutId {
         System.setProperty("org.eclipse.jetty.util.log.class", "org.eclipse.jetty.util.log.StdErrLog");
         System.setProperty("org.eclipse.jetty.LEVEL", "OFF");
 
-        wireMockRule =
-                new WireMockRule(WireMockConfiguration.options().httpsPort(10010).port(10086).disableRequestJournal());
+        wireMockRule = TestUtils.createWireMockRule();
 
         // operationId: KeystoneListProjects
         wireMockRule.stubFor(
@@ -96,6 +87,10 @@ public class TestRegionWithoutId {
                                         .withStatus(200)));
 
         wireMockRule.start();
+
+        String iamEndpoint = String.format(Locale.ROOT, "http://127.0.0.1:%d", wireMockRule.port());
+        BASIC_CREDENTIALS.withIamEndpoint(iamEndpoint);
+        GLOBAL_CREDENTIALS.withIamEndpoint(iamEndpoint);
     }
 
     @After
@@ -111,13 +106,7 @@ public class TestRegionWithoutId {
                 .withRegion(TestRegion.CN_NORTH_7)
                 .build();
 
-        try {
-            Field projectId = BasicCredentials.class.getDeclaredField("projectId");
-            projectId.setAccessible(true);
-            Assert.assertEquals(BASIC_EXPECTED, projectId.get(BASIC_CREDENTIALS));
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            logger.error(e.getMessage());
-        }
+        Assert.assertEquals(BASIC_EXPECTED, BASIC_CREDENTIALS.getProjectId());
     }
 
     @Test
@@ -128,13 +117,7 @@ public class TestRegionWithoutId {
                 .withRegion(TestRegion.valueOf("cn-north-7"))
                 .build();
 
-        try {
-            Field projectId = BasicCredentials.class.getDeclaredField("projectId");
-            projectId.setAccessible(true);
-            Assert.assertEquals(BASIC_EXPECTED, projectId.get(BASIC_CREDENTIALS));
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            logger.error(e.getMessage());
-        }
+        Assert.assertEquals(BASIC_EXPECTED, BASIC_CREDENTIALS.getProjectId());
     }
 
     @Test
@@ -144,13 +127,8 @@ public class TestRegionWithoutId {
                 .withHttpConfig(config)
                 .withRegion(new Region("cn-north-7", TEST_ENDPOINT))
                 .build();
-        try {
-            Field projectId = BasicCredentials.class.getDeclaredField("projectId");
-            projectId.setAccessible(true);
-            Assert.assertEquals(BASIC_EXPECTED, projectId.get(BASIC_CREDENTIALS));
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            logger.error(e.getMessage());
-        }
+
+        Assert.assertEquals(BASIC_EXPECTED, BASIC_CREDENTIALS.getProjectId());
     }
 
     @Test
@@ -161,13 +139,7 @@ public class TestRegionWithoutId {
                 .withRegion(TestRegion.CN_NORTH_7)
                 .build();
 
-        try {
-            Field domainId = GlobalCredentials.class.getDeclaredField("domainId");
-            domainId.setAccessible(true);
-            Assert.assertEquals(GLOBAL_EXPECTED, domainId.get(GLOBAL_CREDENTIALS));
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            logger.error(e.getMessage());
-        }
+        Assert.assertEquals(GLOBAL_EXPECTED, GLOBAL_CREDENTIALS.getDomainId());
     }
 
     @Test
@@ -178,13 +150,7 @@ public class TestRegionWithoutId {
                 .withRegion(TestRegion.valueOf("cn-north-7"))
                 .build();
 
-        try {
-            Field domainId = GlobalCredentials.class.getDeclaredField("domainId");
-            domainId.setAccessible(true);
-            Assert.assertEquals(GLOBAL_EXPECTED, domainId.get(GLOBAL_CREDENTIALS));
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            logger.error(e.getMessage());
-        }
+        Assert.assertEquals(GLOBAL_EXPECTED, GLOBAL_CREDENTIALS.getDomainId());
     }
 
     @Test
@@ -194,13 +160,8 @@ public class TestRegionWithoutId {
                 .withHttpConfig(config)
                 .withRegion(new Region("cn-north-7", TEST_ENDPOINT))
                 .build();
-        try {
-            Field domainId = GlobalCredentials.class.getDeclaredField("domainId");
-            domainId.setAccessible(true);
-            Assert.assertEquals(GLOBAL_EXPECTED, domainId.get(GLOBAL_CREDENTIALS));
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            logger.error(e.getMessage());
-        }
+
+        Assert.assertEquals(GLOBAL_EXPECTED, GLOBAL_CREDENTIALS.getDomainId());
     }
 
     @Test
