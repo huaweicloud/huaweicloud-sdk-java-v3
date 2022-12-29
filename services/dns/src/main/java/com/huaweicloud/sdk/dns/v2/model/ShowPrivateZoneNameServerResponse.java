@@ -41,7 +41,7 @@ public class ShowPrivateZoneNameServerResponse extends SdkResponse {
     }
 
     /**
-     * Get nameservers
+     * 名称服务器列表信息。
      * @return nameservers
      */
     public List<PrivateNameServer> getNameservers() {

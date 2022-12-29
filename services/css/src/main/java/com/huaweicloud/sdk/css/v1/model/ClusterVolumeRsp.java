@@ -18,7 +18,7 @@ public class ClusterVolumeRsp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    private String size;
+    private Integer size;
 
     public ClusterVolumeRsp withType(String type) {
         this.type = type;
@@ -37,7 +37,7 @@ public class ClusterVolumeRsp {
         this.type = type;
     }
 
-    public ClusterVolumeRsp withSize(String size) {
+    public ClusterVolumeRsp withSize(Integer size) {
         this.size = size;
         return this;
     }
@@ -46,11 +46,11 @@ public class ClusterVolumeRsp {
      * 实例磁盘大小。
      * @return size
      */
-    public String getSize() {
+    public Integer getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 

@@ -41,7 +41,7 @@ public class ShowResourceTagResponse extends SdkResponse {
     }
 
     /**
-     * Get tags
+     * 指定实例的标签列表。
      * @return tags
      */
     public List<Tag> getTags() {

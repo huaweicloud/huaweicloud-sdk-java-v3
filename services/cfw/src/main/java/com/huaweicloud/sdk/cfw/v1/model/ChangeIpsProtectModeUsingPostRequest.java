@@ -12,9 +12,53 @@ import java.util.function.Consumer;
 public class ChangeIpsProtectModeUsingPostRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_instance_id")
+
+    private String fwInstanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private IpsProtectDTO body;
+
+    public ChangeIpsProtectModeUsingPostRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ChangeIpsProtectModeUsingPostRequest withFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+        return this;
+    }
+
+    /**
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+     * @return fwInstanceId
+     */
+    public String getFwInstanceId() {
+        return fwInstanceId;
+    }
+
+    public void setFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+    }
 
     public ChangeIpsProtectModeUsingPostRequest withBody(IpsProtectDTO body) {
         this.body = body;
@@ -52,18 +96,22 @@ public class ChangeIpsProtectModeUsingPostRequest {
         }
         ChangeIpsProtectModeUsingPostRequest changeIpsProtectModeUsingPostRequest =
             (ChangeIpsProtectModeUsingPostRequest) o;
-        return Objects.equals(this.body, changeIpsProtectModeUsingPostRequest.body);
+        return Objects.equals(this.enterpriseProjectId, changeIpsProtectModeUsingPostRequest.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, changeIpsProtectModeUsingPostRequest.fwInstanceId)
+            && Objects.equals(this.body, changeIpsProtectModeUsingPostRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(enterpriseProjectId, fwInstanceId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ChangeIpsProtectModeUsingPostRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

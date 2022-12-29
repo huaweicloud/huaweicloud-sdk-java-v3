@@ -17,6 +17,11 @@ public class ShowVirtualGatewayResponse extends SdkResponse {
 
     private VirtualGateway virtualGateway;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
     public ShowVirtualGatewayResponse withVirtualGateway(VirtualGateway virtualGateway) {
         this.virtualGateway = virtualGateway;
         return this;
@@ -43,6 +48,23 @@ public class ShowVirtualGatewayResponse extends SdkResponse {
         this.virtualGateway = virtualGateway;
     }
 
+    public ShowVirtualGatewayResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * 操作请求ID
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -52,12 +74,13 @@ public class ShowVirtualGatewayResponse extends SdkResponse {
             return false;
         }
         ShowVirtualGatewayResponse showVirtualGatewayResponse = (ShowVirtualGatewayResponse) o;
-        return Objects.equals(this.virtualGateway, showVirtualGatewayResponse.virtualGateway);
+        return Objects.equals(this.virtualGateway, showVirtualGatewayResponse.virtualGateway)
+            && Objects.equals(this.requestId, showVirtualGatewayResponse.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(virtualGateway);
+        return Objects.hash(virtualGateway, requestId);
     }
 
     @Override
@@ -65,6 +88,7 @@ public class ShowVirtualGatewayResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowVirtualGatewayResponse {\n");
         sb.append("    virtualGateway: ").append(toIndentedString(virtualGateway)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

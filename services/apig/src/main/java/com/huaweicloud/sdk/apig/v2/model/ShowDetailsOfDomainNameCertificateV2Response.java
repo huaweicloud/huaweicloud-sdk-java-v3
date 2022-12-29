@@ -1,11 +1,17 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -13,6 +19,118 @@ import java.util.function.Consumer;
  * Response Object
  */
 public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    /**
+     * 证书类型  - global：全局证书 - instance：实例证书
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum GLOBAL for value: "global"
+         */
+        public static final TypeEnum GLOBAL = new TypeEnum("global");
+
+        /**
+         * Enum INSTANCE for value: "instance"
+         */
+        public static final TypeEnum INSTANCE = new TypeEnum("instance");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("global", GLOBAL);
+            map.put("instance", INSTANCE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private OffsetDateTime createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private OffsetDateTime updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "common_name")
@@ -78,6 +196,125 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     @JsonProperty(value = "signature_algorithm")
 
     private String signatureAlgorithm;
+
+    public ShowDetailsOfDomainNameCertificateV2Response withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 证书ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ShowDetailsOfDomainNameCertificateV2Response withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 证书名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ShowDetailsOfDomainNameCertificateV2Response withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 证书类型  - global：全局证书 - instance：实例证书
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
+    public ShowDetailsOfDomainNameCertificateV2Response withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 实例编码  - `type`为`global`时，缺省为common - `type`为`instance`时，为实例编码
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public ShowDetailsOfDomainNameCertificateV2Response withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 租户项目编号
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
+    public ShowDetailsOfDomainNameCertificateV2Response withCreateTime(OffsetDateTime createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * 创建时间
+     * @return createTime
+     */
+    public OffsetDateTime getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(OffsetDateTime createTime) {
+        this.createTime = createTime;
+    }
+
+    public ShowDetailsOfDomainNameCertificateV2Response withUpdateTime(OffsetDateTime updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * 更新时间
+     * @return updateTime
+     */
+    public OffsetDateTime getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(OffsetDateTime updateTime) {
+        this.updateTime = updateTime;
+    }
 
     public ShowDetailsOfDomainNameCertificateV2Response withCommonName(String commonName) {
         this.commonName = commonName;
@@ -423,7 +660,14 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         }
         ShowDetailsOfDomainNameCertificateV2Response showDetailsOfDomainNameCertificateV2Response =
             (ShowDetailsOfDomainNameCertificateV2Response) o;
-        return Objects.equals(this.commonName, showDetailsOfDomainNameCertificateV2Response.commonName)
+        return Objects.equals(this.id, showDetailsOfDomainNameCertificateV2Response.id)
+            && Objects.equals(this.name, showDetailsOfDomainNameCertificateV2Response.name)
+            && Objects.equals(this.type, showDetailsOfDomainNameCertificateV2Response.type)
+            && Objects.equals(this.instanceId, showDetailsOfDomainNameCertificateV2Response.instanceId)
+            && Objects.equals(this.projectId, showDetailsOfDomainNameCertificateV2Response.projectId)
+            && Objects.equals(this.createTime, showDetailsOfDomainNameCertificateV2Response.createTime)
+            && Objects.equals(this.updateTime, showDetailsOfDomainNameCertificateV2Response.updateTime)
+            && Objects.equals(this.commonName, showDetailsOfDomainNameCertificateV2Response.commonName)
             && Objects.equals(this.san, showDetailsOfDomainNameCertificateV2Response.san)
             && Objects.equals(this.version, showDetailsOfDomainNameCertificateV2Response.version)
             && Objects.equals(this.organization, showDetailsOfDomainNameCertificateV2Response.organization)
@@ -440,7 +684,14 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(commonName,
+        return Objects.hash(id,
+            name,
+            type,
+            instanceId,
+            projectId,
+            createTime,
+            updateTime,
+            commonName,
             san,
             version,
             organization,
@@ -459,6 +710,13 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDetailsOfDomainNameCertificateV2Response {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    commonName: ").append(toIndentedString(commonName)).append("\n");
         sb.append("    san: ").append(toIndentedString(san)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");

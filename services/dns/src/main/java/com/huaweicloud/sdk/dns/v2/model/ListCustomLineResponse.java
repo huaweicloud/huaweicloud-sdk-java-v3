@@ -22,7 +22,7 @@ public class ListCustomLineResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private Metedata metadata;
+    private Metadata metadata;
 
     public ListCustomLineResponse withLines(List<Line> lines) {
         this.lines = lines;
@@ -46,7 +46,7 @@ public class ListCustomLineResponse extends SdkResponse {
     }
 
     /**
-     * Get lines
+     * 线路列表。
      * @return lines
      */
     public List<Line> getLines() {
@@ -57,14 +57,14 @@ public class ListCustomLineResponse extends SdkResponse {
         this.lines = lines;
     }
 
-    public ListCustomLineResponse withMetadata(Metedata metadata) {
+    public ListCustomLineResponse withMetadata(Metadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public ListCustomLineResponse withMetadata(Consumer<Metedata> metadataSetter) {
+    public ListCustomLineResponse withMetadata(Consumer<Metadata> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new Metedata();
+            this.metadata = new Metadata();
             metadataSetter.accept(this.metadata);
         }
 
@@ -75,11 +75,11 @@ public class ListCustomLineResponse extends SdkResponse {
      * Get metadata
      * @return metadata
      */
-    public Metedata getMetadata() {
+    public Metadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Metedata metadata) {
+    public void setMetadata(Metadata metadata) {
         this.metadata = metadata;
     }
 

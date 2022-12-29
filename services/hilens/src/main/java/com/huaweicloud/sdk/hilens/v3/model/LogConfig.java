@@ -40,11 +40,6 @@ public class LogConfig {
 
     private String type;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "log_group_id")
-
-    private String logGroupId;
-
     public LogConfig withComponent(String component) {
         this.component = component;
         return this;
@@ -147,23 +142,6 @@ public class LogConfig {
         this.type = type;
     }
 
-    public LogConfig withLogGroupId(String logGroupId) {
-        this.logGroupId = logGroupId;
-        return this;
-    }
-
-    /**
-     * Get logGroupId
-     * @return logGroupId
-     */
-    public String getLogGroupId() {
-        return logGroupId;
-    }
-
-    public void setLogGroupId(String logGroupId) {
-        this.logGroupId = logGroupId;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -176,12 +154,12 @@ public class LogConfig {
         return Objects.equals(this.component, logConfig.component) && Objects.equals(this.level, logConfig.level)
             && Objects.equals(this.rotateNum, logConfig.rotateNum)
             && Objects.equals(this.rotatePeriod, logConfig.rotatePeriod) && Objects.equals(this.size, logConfig.size)
-            && Objects.equals(this.type, logConfig.type) && Objects.equals(this.logGroupId, logConfig.logGroupId);
+            && Objects.equals(this.type, logConfig.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(component, level, rotateNum, rotatePeriod, size, type, logGroupId);
+        return Objects.hash(component, level, rotateNum, rotatePeriod, size, type);
     }
 
     @Override
@@ -194,7 +172,6 @@ public class LogConfig {
         sb.append("    rotatePeriod: ").append(toIndentedString(rotatePeriod)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

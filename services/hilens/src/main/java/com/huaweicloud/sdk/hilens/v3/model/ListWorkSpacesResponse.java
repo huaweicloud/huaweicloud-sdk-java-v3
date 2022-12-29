@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -20,7 +22,7 @@ public class ListWorkSpacesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workspaces")
 
-    private WorkspaceListElem workspaces;
+    private List<WorkspaceListElem> workspaces = null;
 
     public ListWorkSpacesResponse withCount(Integer count) {
         this.count = count;
@@ -39,29 +41,36 @@ public class ListWorkSpacesResponse extends SdkResponse {
         this.count = count;
     }
 
-    public ListWorkSpacesResponse withWorkspaces(WorkspaceListElem workspaces) {
+    public ListWorkSpacesResponse withWorkspaces(List<WorkspaceListElem> workspaces) {
         this.workspaces = workspaces;
         return this;
     }
 
-    public ListWorkSpacesResponse withWorkspaces(Consumer<WorkspaceListElem> workspacesSetter) {
+    public ListWorkSpacesResponse addWorkspacesItem(WorkspaceListElem workspacesItem) {
         if (this.workspaces == null) {
-            this.workspaces = new WorkspaceListElem();
-            workspacesSetter.accept(this.workspaces);
+            this.workspaces = new ArrayList<>();
         }
+        this.workspaces.add(workspacesItem);
+        return this;
+    }
 
+    public ListWorkSpacesResponse withWorkspaces(Consumer<List<WorkspaceListElem>> workspacesSetter) {
+        if (this.workspaces == null) {
+            this.workspaces = new ArrayList<>();
+        }
+        workspacesSetter.accept(this.workspaces);
         return this;
     }
 
     /**
-     * Get workspaces
+     * 工作空间列表
      * @return workspaces
      */
-    public WorkspaceListElem getWorkspaces() {
+    public List<WorkspaceListElem> getWorkspaces() {
         return workspaces;
     }
 
-    public void setWorkspaces(WorkspaceListElem workspaces) {
+    public void setWorkspaces(List<WorkspaceListElem> workspaces) {
         this.workspaces = workspaces;
     }
 

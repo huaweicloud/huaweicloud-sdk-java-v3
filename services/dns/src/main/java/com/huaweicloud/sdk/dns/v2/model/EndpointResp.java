@@ -95,7 +95,7 @@ public class EndpointResp {
     }
 
     /**
-     * endpoint的ID，uuid形式的一个资源标识。
+     * 终端节点方向。 取值： inbound，表示入站规则。 outbound，表示出站规则。
      * @return direction
      */
     public String getDirection() {

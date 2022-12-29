@@ -199,6 +199,20 @@ public class CreateEdgeApplicationVersionDTO  {
     
     private Object services;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="supplier")
+    
+    
+    private String supplier;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tpl_id")
+    
+    
+    private String tplId;
+
     public CreateEdgeApplicationVersionDTO withVersion(String version) {
         this.version = version;
         return this;
@@ -528,6 +542,50 @@ public class CreateEdgeApplicationVersionDTO  {
 
     
 
+    public CreateEdgeApplicationVersionDTO withSupplier(String supplier) {
+        this.supplier = supplier;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 驱动厂商
+     * @return supplier
+     */
+    public String getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(String supplier) {
+        this.supplier = supplier;
+    }
+
+    
+
+    public CreateEdgeApplicationVersionDTO withTplId(String tplId) {
+        this.tplId = tplId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 模板id
+     * @return tplId
+     */
+    public String getTplId() {
+        return tplId;
+    }
+
+    public void setTplId(String tplId) {
+        this.tplId = tplId;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -550,11 +608,13 @@ public class CreateEdgeApplicationVersionDTO  {
             Objects.equals(this.args, createEdgeApplicationVersionDTO.args) &&
             Objects.equals(this.outputs, createEdgeApplicationVersionDTO.outputs) &&
             Objects.equals(this.inputs, createEdgeApplicationVersionDTO.inputs) &&
-            Objects.equals(this.services, createEdgeApplicationVersionDTO.services);
+            Objects.equals(this.services, createEdgeApplicationVersionDTO.services) &&
+            Objects.equals(this.supplier, createEdgeApplicationVersionDTO.supplier) &&
+            Objects.equals(this.tplId, createEdgeApplicationVersionDTO.tplId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(version, description, sdkVersion, deployType, deployMultiInstance, containerSettings, livenessProbe, readinessProbe, arch, command, args, outputs, inputs, services);
+        return Objects.hash(version, description, sdkVersion, deployType, deployMultiInstance, containerSettings, livenessProbe, readinessProbe, arch, command, args, outputs, inputs, services, supplier, tplId);
     }
     @Override
     public String toString() {
@@ -574,6 +634,8 @@ public class CreateEdgeApplicationVersionDTO  {
         sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
         sb.append("    inputs: ").append(toIndentedString(inputs)).append("\n");
         sb.append("    services: ").append(toIndentedString(services)).append("\n");
+        sb.append("    supplier: ").append(toIndentedString(supplier)).append("\n");
+        sb.append("    tplId: ").append(toIndentedString(tplId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

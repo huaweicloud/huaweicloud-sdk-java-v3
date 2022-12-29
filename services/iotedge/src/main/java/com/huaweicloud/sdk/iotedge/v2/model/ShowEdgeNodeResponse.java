@@ -11,9 +11,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.BasePathDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.DeviceAuthInfoDisplayDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.HaConfigDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.LogConfigDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.Nic;
+import com.huaweicloud.sdk.iotedge.v2.model.OfflineCacheConfigsDTO;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -213,6 +215,20 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     
     
     private String hardwareModel;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="offline_cache_configs")
+    
+    
+    private OfflineCacheConfigsDTO offlineCacheConfigs;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="device_auth_info")
+    
+    
+    private DeviceAuthInfoDisplayDTO deviceAuthInfo;
 
     public ShowEdgeNodeResponse withLogConfigs(List<LogConfigDTO> logConfigs) {
         this.logConfigs = logConfigs;
@@ -894,6 +910,64 @@ public class ShowEdgeNodeResponse extends SdkResponse {
 
     
 
+    public ShowEdgeNodeResponse withOfflineCacheConfigs(OfflineCacheConfigsDTO offlineCacheConfigs) {
+        this.offlineCacheConfigs = offlineCacheConfigs;
+        return this;
+    }
+
+    public ShowEdgeNodeResponse withOfflineCacheConfigs(Consumer<OfflineCacheConfigsDTO> offlineCacheConfigsSetter) {
+        if(this.offlineCacheConfigs == null ){
+            this.offlineCacheConfigs = new OfflineCacheConfigsDTO();
+            offlineCacheConfigsSetter.accept(this.offlineCacheConfigs);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get offlineCacheConfigs
+     * @return offlineCacheConfigs
+     */
+    public OfflineCacheConfigsDTO getOfflineCacheConfigs() {
+        return offlineCacheConfigs;
+    }
+
+    public void setOfflineCacheConfigs(OfflineCacheConfigsDTO offlineCacheConfigs) {
+        this.offlineCacheConfigs = offlineCacheConfigs;
+    }
+
+    
+
+    public ShowEdgeNodeResponse withDeviceAuthInfo(DeviceAuthInfoDisplayDTO deviceAuthInfo) {
+        this.deviceAuthInfo = deviceAuthInfo;
+        return this;
+    }
+
+    public ShowEdgeNodeResponse withDeviceAuthInfo(Consumer<DeviceAuthInfoDisplayDTO> deviceAuthInfoSetter) {
+        if(this.deviceAuthInfo == null ){
+            this.deviceAuthInfo = new DeviceAuthInfoDisplayDTO();
+            deviceAuthInfoSetter.accept(this.deviceAuthInfo);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get deviceAuthInfo
+     * @return deviceAuthInfo
+     */
+    public DeviceAuthInfoDisplayDTO getDeviceAuthInfo() {
+        return deviceAuthInfo;
+    }
+
+    public void setDeviceAuthInfo(DeviceAuthInfoDisplayDTO deviceAuthInfo) {
+        this.deviceAuthInfo = deviceAuthInfo;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -929,11 +1003,13 @@ public class ShowEdgeNodeResponse extends SdkResponse {
             Objects.equals(this.securityLevel, showEdgeNodeResponse.securityLevel) &&
             Objects.equals(this.storagePeriod, showEdgeNodeResponse.storagePeriod) &&
             Objects.equals(this.basePath, showEdgeNodeResponse.basePath) &&
-            Objects.equals(this.hardwareModel, showEdgeNodeResponse.hardwareModel);
+            Objects.equals(this.hardwareModel, showEdgeNodeResponse.hardwareModel) &&
+            Objects.equals(this.offlineCacheConfigs, showEdgeNodeResponse.offlineCacheConfigs) &&
+            Objects.equals(this.deviceAuthInfo, showEdgeNodeResponse.deviceAuthInfo);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(logConfigs, haConfig, edgeNodeId, instanceId, productId, productName, spaceId, resourceSpecTypes, resourceIds, ips, name, state, softwareVersion, createTime, updateTime, osName, arch, hostName, nics, specification, aiCardType, containerVersion, type, securityLevel, storagePeriod, basePath, hardwareModel);
+        return Objects.hash(logConfigs, haConfig, edgeNodeId, instanceId, productId, productName, spaceId, resourceSpecTypes, resourceIds, ips, name, state, softwareVersion, createTime, updateTime, osName, arch, hostName, nics, specification, aiCardType, containerVersion, type, securityLevel, storagePeriod, basePath, hardwareModel, offlineCacheConfigs, deviceAuthInfo);
     }
     @Override
     public String toString() {
@@ -966,6 +1042,8 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         sb.append("    storagePeriod: ").append(toIndentedString(storagePeriod)).append("\n");
         sb.append("    basePath: ").append(toIndentedString(basePath)).append("\n");
         sb.append("    hardwareModel: ").append(toIndentedString(hardwareModel)).append("\n");
+        sb.append("    offlineCacheConfigs: ").append(toIndentedString(offlineCacheConfigs)).append("\n");
+        sb.append("    deviceAuthInfo: ").append(toIndentedString(deviceAuthInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

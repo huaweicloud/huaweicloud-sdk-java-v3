@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class ShowEndpointResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoint")
 
-    private Object endpoint;
+    private EndpointResp endpoint;
 
-    public ShowEndpointResponse withEndpoint(Object endpoint) {
+    public ShowEndpointResponse withEndpoint(EndpointResp endpoint) {
         this.endpoint = endpoint;
         return this;
     }
 
+    public ShowEndpointResponse withEndpoint(Consumer<EndpointResp> endpointSetter) {
+        if (this.endpoint == null) {
+            this.endpoint = new EndpointResp();
+            endpointSetter.accept(this.endpoint);
+        }
+
+        return this;
+    }
+
     /**
-     * 查询endpoint响应。
+     * Get endpoint
      * @return endpoint
      */
-    public Object getEndpoint() {
+    public EndpointResp getEndpoint() {
         return endpoint;
     }
 
-    public void setEndpoint(Object endpoint) {
+    public void setEndpoint(EndpointResp endpoint) {
         this.endpoint = endpoint;
     }
 

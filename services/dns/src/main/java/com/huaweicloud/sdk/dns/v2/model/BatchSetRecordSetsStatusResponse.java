@@ -22,7 +22,7 @@ public class BatchSetRecordSetsStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private Metedata metadata;
+    private Metadata metadata;
 
     public BatchSetRecordSetsStatusResponse withRecordsets(List<RecordsetData> recordsets) {
         this.recordsets = recordsets;
@@ -46,7 +46,7 @@ public class BatchSetRecordSetsStatusResponse extends SdkResponse {
     }
 
     /**
-     * 待删除zone类型，当前仅支持 public 或 private
+     * 待删除zone类型，当前仅支持public或private。
      * @return recordsets
      */
     public List<RecordsetData> getRecordsets() {
@@ -57,14 +57,14 @@ public class BatchSetRecordSetsStatusResponse extends SdkResponse {
         this.recordsets = recordsets;
     }
 
-    public BatchSetRecordSetsStatusResponse withMetadata(Metedata metadata) {
+    public BatchSetRecordSetsStatusResponse withMetadata(Metadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public BatchSetRecordSetsStatusResponse withMetadata(Consumer<Metedata> metadataSetter) {
+    public BatchSetRecordSetsStatusResponse withMetadata(Consumer<Metadata> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new Metedata();
+            this.metadata = new Metadata();
             metadataSetter.accept(this.metadata);
         }
 
@@ -75,11 +75,11 @@ public class BatchSetRecordSetsStatusResponse extends SdkResponse {
      * Get metadata
      * @return metadata
      */
-    public Metedata getMetadata() {
+    public Metadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Metedata metadata) {
+    public void setMetadata(Metadata metadata) {
         this.metadata = metadata;
     }
 

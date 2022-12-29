@@ -30,11 +30,17 @@ public class PreCheckInfo {
          */
         public static final PrecheckModeEnum FORSTARTJOB = new PrecheckModeEnum("forStartJob");
 
+        /**
+         * Enum FORRETRYJOB for value: "forRetryJob"
+         */
+        public static final PrecheckModeEnum FORRETRYJOB = new PrecheckModeEnum("forRetryJob");
+
         private static final Map<String, PrecheckModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PrecheckModeEnum> createStaticFields() {
             Map<String, PrecheckModeEnum> map = new HashMap<>();
             map.put("forStartJob", FORSTARTJOB);
+            map.put("forRetryJob", FORRETRYJOB);
             return Collections.unmodifiableMap(map);
         }
 

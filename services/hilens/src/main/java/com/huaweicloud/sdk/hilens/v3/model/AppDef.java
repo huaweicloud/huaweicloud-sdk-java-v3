@@ -14,36 +14,6 @@ import java.util.function.Consumer;
 public class AppDef {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "app_docker_login")
-
-    private String appDockerLogin;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "app_id")
-
-    private String appId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "expire_time")
-
-    private Long expireTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "image_url")
-
-    private String imageUrl;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "license")
-
-    private License license;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "modelKey")
-
-    private String modelKey;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_order_id")
 
     private String appOrderId;
@@ -133,116 +103,20 @@ public class AppDef {
 
     private List<Volume> volumes = null;
 
-    public AppDef withAppDockerLogin(String appDockerLogin) {
-        this.appDockerLogin = appDockerLogin;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_resources")
 
-    /**
-     * Get appDockerLogin
-     * @return appDockerLogin
-     */
-    public String getAppDockerLogin() {
-        return appDockerLogin;
-    }
+    private ResQuest startResources;
 
-    public void setAppDockerLogin(String appDockerLogin) {
-        this.appDockerLogin = appDockerLogin;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "channel_resources")
 
-    public AppDef withAppId(String appId) {
-        this.appId = appId;
-        return this;
-    }
+    private ResQuest channelResources;
 
-    /**
-     * Get appId
-     * @return appId
-     */
-    public String getAppId() {
-        return appId;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "skill_project_id")
 
-    public void setAppId(String appId) {
-        this.appId = appId;
-    }
-
-    public AppDef withExpireTime(Long expireTime) {
-        this.expireTime = expireTime;
-        return this;
-    }
-
-    /**
-     * Get expireTime
-     * @return expireTime
-     */
-    public Long getExpireTime() {
-        return expireTime;
-    }
-
-    public void setExpireTime(Long expireTime) {
-        this.expireTime = expireTime;
-    }
-
-    public AppDef withImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-        return this;
-    }
-
-    /**
-     * Get imageUrl
-     * @return imageUrl
-     */
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public AppDef withLicense(License license) {
-        this.license = license;
-        return this;
-    }
-
-    public AppDef withLicense(Consumer<License> licenseSetter) {
-        if (this.license == null) {
-            this.license = new License();
-            licenseSetter.accept(this.license);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get license
-     * @return license
-     */
-    public License getLicense() {
-        return license;
-    }
-
-    public void setLicense(License license) {
-        this.license = license;
-    }
-
-    public AppDef withModelKey(String modelKey) {
-        this.modelKey = modelKey;
-        return this;
-    }
-
-    /**
-     * Get modelKey
-     * @return modelKey
-     */
-    public String getModelKey() {
-        return modelKey;
-    }
-
-    public void setModelKey(String modelKey) {
-        this.modelKey = modelKey;
-    }
+    private String skillProjectId;
 
     public AppDef withAppOrderId(String appOrderId) {
         this.appOrderId = appOrderId;
@@ -673,6 +547,75 @@ public class AppDef {
         this.volumes = volumes;
     }
 
+    public AppDef withStartResources(ResQuest startResources) {
+        this.startResources = startResources;
+        return this;
+    }
+
+    public AppDef withStartResources(Consumer<ResQuest> startResourcesSetter) {
+        if (this.startResources == null) {
+            this.startResources = new ResQuest();
+            startResourcesSetter.accept(this.startResources);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get startResources
+     * @return startResources
+     */
+    public ResQuest getStartResources() {
+        return startResources;
+    }
+
+    public void setStartResources(ResQuest startResources) {
+        this.startResources = startResources;
+    }
+
+    public AppDef withChannelResources(ResQuest channelResources) {
+        this.channelResources = channelResources;
+        return this;
+    }
+
+    public AppDef withChannelResources(Consumer<ResQuest> channelResourcesSetter) {
+        if (this.channelResources == null) {
+            this.channelResources = new ResQuest();
+            channelResourcesSetter.accept(this.channelResources);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get channelResources
+     * @return channelResources
+     */
+    public ResQuest getChannelResources() {
+        return channelResources;
+    }
+
+    public void setChannelResources(ResQuest channelResources) {
+        this.channelResources = channelResources;
+    }
+
+    public AppDef withSkillProjectId(String skillProjectId) {
+        this.skillProjectId = skillProjectId;
+        return this;
+    }
+
+    /**
+     * 技能管理ID，技能来源source是skill的时候，需要传入该ID
+     * @return skillProjectId
+     */
+    public String getSkillProjectId() {
+        return skillProjectId;
+    }
+
+    public void setSkillProjectId(String skillProjectId) {
+        this.skillProjectId = skillProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -682,10 +625,7 @@ public class AppDef {
             return false;
         }
         AppDef appDef = (AppDef) o;
-        return Objects.equals(this.appDockerLogin, appDef.appDockerLogin) && Objects.equals(this.appId, appDef.appId)
-            && Objects.equals(this.expireTime, appDef.expireTime) && Objects.equals(this.imageUrl, appDef.imageUrl)
-            && Objects.equals(this.license, appDef.license) && Objects.equals(this.modelKey, appDef.modelKey)
-            && Objects.equals(this.appOrderId, appDef.appOrderId) && Objects.equals(this.appUrl, appDef.appUrl)
+        return Objects.equals(this.appOrderId, appDef.appOrderId) && Objects.equals(this.appUrl, appDef.appUrl)
             && Objects.equals(this.channelLimit, appDef.channelLimit)
             && Objects.equals(this.channelUpperLimit, appDef.channelUpperLimit)
             && Objects.equals(this.args, appDef.args) && Objects.equals(this.command, appDef.command)
@@ -695,18 +635,15 @@ public class AppDef {
             && Objects.equals(this.ports, appDef.ports) && Objects.equals(this.privileged, appDef.privileged)
             && Objects.equals(this.readinessProbe, appDef.readinessProbe)
             && Objects.equals(this.resources, appDef.resources) && Objects.equals(this.version, appDef.version)
-            && Objects.equals(this.volumes, appDef.volumes);
+            && Objects.equals(this.volumes, appDef.volumes)
+            && Objects.equals(this.startResources, appDef.startResources)
+            && Objects.equals(this.channelResources, appDef.channelResources)
+            && Objects.equals(this.skillProjectId, appDef.skillProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appDockerLogin,
-            appId,
-            expireTime,
-            imageUrl,
-            license,
-            modelKey,
-            appOrderId,
+        return Objects.hash(appOrderId,
             appUrl,
             channelLimit,
             channelUpperLimit,
@@ -723,19 +660,16 @@ public class AppDef {
             readinessProbe,
             resources,
             version,
-            volumes);
+            volumes,
+            startResources,
+            channelResources,
+            skillProjectId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AppDef {\n");
-        sb.append("    appDockerLogin: ").append(toIndentedString(appDockerLogin)).append("\n");
-        sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
-        sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
-        sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
-        sb.append("    license: ").append(toIndentedString(license)).append("\n");
-        sb.append("    modelKey: ").append(toIndentedString(modelKey)).append("\n");
         sb.append("    appOrderId: ").append(toIndentedString(appOrderId)).append("\n");
         sb.append("    appUrl: ").append(toIndentedString(appUrl)).append("\n");
         sb.append("    channelLimit: ").append(toIndentedString(channelLimit)).append("\n");
@@ -754,6 +688,9 @@ public class AppDef {
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    volumes: ").append(toIndentedString(volumes)).append("\n");
+        sb.append("    startResources: ").append(toIndentedString(startResources)).append("\n");
+        sb.append("    channelResources: ").append(toIndentedString(channelResources)).append("\n");
+        sb.append("    skillProjectId: ").append(toIndentedString(skillProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

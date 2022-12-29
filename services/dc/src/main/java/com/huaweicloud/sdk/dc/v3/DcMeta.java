@@ -24,7 +24,7 @@ public class DcMeta {
                     CreateHostedDirectConnectResponse.class)
                 .withName("CreateHostedDirectConnect")
                 .withUri("/v3/{project_id}/dcaas/hosted-connects")
-                .withContentType("application/json; charset=utf-8");
+                .withContentType("application/json");
 
         // requests
         builder.<CreateHostedDirectConnectRequestBody>withRequestField("body",

@@ -20,6 +20,16 @@ public class ListDnsServersRequest {
 
     private Integer offset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_instance_id")
+
+    private String fwInstanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public ListDnsServersRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -54,6 +64,40 @@ public class ListDnsServersRequest {
         this.offset = offset;
     }
 
+    public ListDnsServersRequest withFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+        return this;
+    }
+
+    /**
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+     * @return fwInstanceId
+     */
+    public String getFwInstanceId() {
+        return fwInstanceId;
+    }
+
+    public void setFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+    }
+
+    public ListDnsServersRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -64,12 +108,14 @@ public class ListDnsServersRequest {
         }
         ListDnsServersRequest listDnsServersRequest = (ListDnsServersRequest) o;
         return Objects.equals(this.limit, listDnsServersRequest.limit)
-            && Objects.equals(this.offset, listDnsServersRequest.offset);
+            && Objects.equals(this.offset, listDnsServersRequest.offset)
+            && Objects.equals(this.fwInstanceId, listDnsServersRequest.fwInstanceId)
+            && Objects.equals(this.enterpriseProjectId, listDnsServersRequest.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset);
+        return Objects.hash(limit, offset, fwInstanceId, enterpriseProjectId);
     }
 
     @Override
@@ -78,6 +124,8 @@ public class ListDnsServersRequest {
         sb.append("class ListDnsServersRequest {\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

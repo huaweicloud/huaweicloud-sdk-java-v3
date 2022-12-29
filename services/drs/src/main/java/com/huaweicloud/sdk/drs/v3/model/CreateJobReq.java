@@ -621,6 +621,93 @@ public class CreateJobReq {
 
     private String slaveAz;
 
+    /**
+     * 计费模式，不填默认为按需计费。 取值范围： - period：包年包月。 - on_demand：按需计费。
+     */
+    public static final class ChargingModeEnum {
+
+        /**
+         * Enum PERIOD for value: "period"
+         */
+        public static final ChargingModeEnum PERIOD = new ChargingModeEnum("period");
+
+        /**
+         * Enum ON_DEMAND for value: "on_demand"
+         */
+        public static final ChargingModeEnum ON_DEMAND = new ChargingModeEnum("on_demand");
+
+        private static final Map<String, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ChargingModeEnum> createStaticFields() {
+            Map<String, ChargingModeEnum> map = new HashMap<>();
+            map.put("period", PERIOD);
+            map.put("on_demand", ON_DEMAND);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ChargingModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ChargingModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ChargingModeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ChargingModeEnum(value);
+            }
+            return result;
+        }
+
+        public static ChargingModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ChargingModeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ChargingModeEnum) {
+                return this.value.equals(((ChargingModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charging_mode")
+
+    private ChargingModeEnum chargingMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "period_order")
+
+    private PeriodOrderInfo periodOrder;
+
     public CreateJobReq withBindEip(Boolean bindEip) {
         this.bindEip = bindEip;
         return this;
@@ -1030,6 +1117,49 @@ public class CreateJobReq {
         this.slaveAz = slaveAz;
     }
 
+    public CreateJobReq withChargingMode(ChargingModeEnum chargingMode) {
+        this.chargingMode = chargingMode;
+        return this;
+    }
+
+    /**
+     * 计费模式，不填默认为按需计费。 取值范围： - period：包年包月。 - on_demand：按需计费。
+     * @return chargingMode
+     */
+    public ChargingModeEnum getChargingMode() {
+        return chargingMode;
+    }
+
+    public void setChargingMode(ChargingModeEnum chargingMode) {
+        this.chargingMode = chargingMode;
+    }
+
+    public CreateJobReq withPeriodOrder(PeriodOrderInfo periodOrder) {
+        this.periodOrder = periodOrder;
+        return this;
+    }
+
+    public CreateJobReq withPeriodOrder(Consumer<PeriodOrderInfo> periodOrderSetter) {
+        if (this.periodOrder == null) {
+            this.periodOrder = new PeriodOrderInfo();
+            periodOrderSetter.accept(this.periodOrder);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get periodOrder
+     * @return periodOrder
+     */
+    public PeriodOrderInfo getPeriodOrder() {
+        return periodOrder;
+    }
+
+    public void setPeriodOrder(PeriodOrderInfo periodOrder) {
+        this.periodOrder = periodOrder;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1056,7 +1186,9 @@ public class CreateJobReq {
             && Objects.equals(this.sysTags, createJobReq.sysTags)
             && Objects.equals(this.expiredDays, createJobReq.expiredDays)
             && Objects.equals(this.masterAz, createJobReq.masterAz)
-            && Objects.equals(this.slaveAz, createJobReq.slaveAz);
+            && Objects.equals(this.slaveAz, createJobReq.slaveAz)
+            && Objects.equals(this.chargingMode, createJobReq.chargingMode)
+            && Objects.equals(this.periodOrder, createJobReq.periodOrder);
     }
 
     @Override
@@ -1081,7 +1213,9 @@ public class CreateJobReq {
             sysTags,
             expiredDays,
             masterAz,
-            slaveAz);
+            slaveAz,
+            chargingMode,
+            periodOrder);
     }
 
     @Override
@@ -1109,6 +1243,8 @@ public class CreateJobReq {
         sb.append("    expiredDays: ").append(toIndentedString(expiredDays)).append("\n");
         sb.append("    masterAz: ").append(toIndentedString(masterAz)).append("\n");
         sb.append("    slaveAz: ").append(toIndentedString(slaveAz)).append("\n");
+        sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
+        sb.append("    periodOrder: ").append(toIndentedString(periodOrder)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -27,7 +27,7 @@ public class CreateRecordSetWithBatchLinesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private Metedata metadata;
+    private Metadata metadata;
 
     public CreateRecordSetWithBatchLinesResponse withLinks(PageLink links) {
         this.links = links;
@@ -78,7 +78,7 @@ public class CreateRecordSetWithBatchLinesResponse extends SdkResponse {
     }
 
     /**
-     * Get recordsets
+     * recordset的列表信息。
      * @return recordsets
      */
     public List<QueryRecordSetWithLineResp> getRecordsets() {
@@ -89,14 +89,14 @@ public class CreateRecordSetWithBatchLinesResponse extends SdkResponse {
         this.recordsets = recordsets;
     }
 
-    public CreateRecordSetWithBatchLinesResponse withMetadata(Metedata metadata) {
+    public CreateRecordSetWithBatchLinesResponse withMetadata(Metadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public CreateRecordSetWithBatchLinesResponse withMetadata(Consumer<Metedata> metadataSetter) {
+    public CreateRecordSetWithBatchLinesResponse withMetadata(Consumer<Metadata> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new Metedata();
+            this.metadata = new Metadata();
             metadataSetter.accept(this.metadata);
         }
 
@@ -107,11 +107,11 @@ public class CreateRecordSetWithBatchLinesResponse extends SdkResponse {
      * Get metadata
      * @return metadata
      */
-    public Metedata getMetadata() {
+    public Metadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Metedata metadata) {
+    public void setMetadata(Metadata metadata) {
         this.metadata = metadata;
     }
 

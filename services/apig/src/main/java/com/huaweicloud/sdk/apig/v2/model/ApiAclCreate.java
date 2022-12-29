@@ -108,7 +108,7 @@ public class ApiAclCreate {
     private String aclValue;
 
     /**
-     * 对象类型： - IP：IP地址 - DOMAIN：账号名 - DOMAIN_ID：账号ID
+     * 对象类型： - IP：IP地址 - DOMAIN：帐号名 - DOMAIN_ID：帐号ID
      */
     public static final class EntityTypeEnum {
 
@@ -252,7 +252,7 @@ public class ApiAclCreate {
     }
 
     /**
-     * 对象类型： - IP：IP地址 - DOMAIN：账号名 - DOMAIN_ID：账号ID
+     * 对象类型： - IP：IP地址 - DOMAIN：帐号名 - DOMAIN_ID：帐号ID
      * @return entityType
      */
     public EntityTypeEnum getEntityType() {

@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 需要关联的Router(VPC)。
+ * AssociateRouterReq
  */
 public class AssociateRouterReq {
 

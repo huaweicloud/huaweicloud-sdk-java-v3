@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -15,41 +12,25 @@ import java.util.function.Consumer;
 public class DeleteDeploymentResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "deployment_id")
 
-    private Map<String, String> body = null;
+    private String deploymentId;
 
-    public DeleteDeploymentResponse withBody(Map<String, String> body) {
-        this.body = body;
-        return this;
-    }
-
-    public DeleteDeploymentResponse putBodyItem(String key, String bodyItem) {
-        if (this.body == null) {
-            this.body = new HashMap<>();
-        }
-        this.body.put(key, bodyItem);
-        return this;
-    }
-
-    public DeleteDeploymentResponse withBody(Consumer<Map<String, String>> bodySetter) {
-        if (this.body == null) {
-            this.body = new HashMap<>();
-        }
-        bodySetter.accept(this.body);
+    public DeleteDeploymentResponse withDeploymentId(String deploymentId) {
+        this.deploymentId = deploymentId;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 部署Id
+     * @return deploymentId
      */
-    public Map<String, String> getBody() {
-        return body;
+    public String getDeploymentId() {
+        return deploymentId;
     }
 
-    public void setBody(Map<String, String> body) {
-        this.body = body;
+    public void setDeploymentId(String deploymentId) {
+        this.deploymentId = deploymentId;
     }
 
     @Override
@@ -61,19 +42,19 @@ public class DeleteDeploymentResponse extends SdkResponse {
             return false;
         }
         DeleteDeploymentResponse deleteDeploymentResponse = (DeleteDeploymentResponse) o;
-        return Objects.equals(this.body, deleteDeploymentResponse.body);
+        return Objects.equals(this.deploymentId, deleteDeploymentResponse.deploymentId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(deploymentId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteDeploymentResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    deploymentId: ").append(toIndentedString(deploymentId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

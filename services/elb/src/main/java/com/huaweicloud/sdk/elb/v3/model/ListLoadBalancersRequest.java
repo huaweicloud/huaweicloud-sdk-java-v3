@@ -777,7 +777,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 四层Flavor ID。  支持多值查询，查询条件格式：*l4_flavor_id=xxx&l4_flavor_id=xxx*。
+     * 四层Flavor ID。  支持多值查询，查询条件格式：*l4_flavor_id=xxx&l4_flavor_id=xxx*。  [不支持该字段，请勿使用。](tag:fcs)
      * @return l4FlavorId
      */
     public List<String> getL4FlavorId() {
@@ -843,7 +843,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 七层Flavor ID。  支持多值查询，查询条件格式：*l7_flavor_id=xxx&l7_flavor_id=xxx*。
+     * 七层Flavor ID。  支持多值查询，查询条件格式：*l7_flavor_id=xxx&l7_flavor_id=xxx*。  [不支持该字段，请勿使用。](tag:fcs)
      * @return l7FlavorId
      */
     public List<String> getL7FlavorId() {
@@ -1058,7 +1058,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 是否开启删除保护，false不开启，true开启。[不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)
+     * 是否开启删除保护，false不开启，true开启。[不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
      * @return deletionProtectionEnable
      */
     public Boolean getDeletionProtectionEnable() {
@@ -1124,7 +1124,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 是否开启弹性扩缩容。示例如下： \"autoscaling\": {             \"enable\": \"true\"         }  支持多值查询，查询条件格式：  *autoscaling=enable=true&autoscaling=enable=false*。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)
+     * 是否开启弹性扩缩容。示例如下： \"autoscaling\": {             \"enable\": \"true\"         }  支持多值查询，查询条件格式：  *autoscaling=enable=true&autoscaling=enable=false*。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,fcs)
      * @return autoscaling
      */
     public List<String> getAutoscaling() {

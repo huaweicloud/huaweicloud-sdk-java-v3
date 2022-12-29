@@ -26,7 +26,7 @@ public class DeleteRecordSetRequest {
     }
 
     /**
-     * Get zoneId
+     * 当前recordset所属的zoneID。
      * @return zoneId
      */
     public String getZoneId() {
@@ -43,7 +43,7 @@ public class DeleteRecordSetRequest {
     }
 
     /**
-     * Get recordsetId
+     * 当前recordset所属的ID信息。
      * @return recordsetId
      */
     public String getRecordsetId() {

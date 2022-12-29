@@ -15,30 +15,30 @@ import java.util.function.Consumer;
 public class ShowResourceTagsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total")
+    @JsonProperty(value = "count")
 
-    private Integer total;
+    private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<TagObject> tags = null;
 
-    public ShowResourceTagsResponse withTotal(Integer total) {
-        this.total = total;
+    public ShowResourceTagsResponse withCount(Integer count) {
+        this.count = count;
         return this;
     }
 
     /**
      * 满足条件的总数
-     * @return total
+     * @return count
      */
-    public Integer getTotal() {
-        return total;
+    public Integer getCount() {
+        return count;
     }
 
-    public void setTotal(Integer total) {
-        this.total = total;
+    public void setCount(Integer count) {
+        this.count = count;
     }
 
     public ShowResourceTagsResponse withTags(List<TagObject> tags) {
@@ -83,20 +83,20 @@ public class ShowResourceTagsResponse extends SdkResponse {
             return false;
         }
         ShowResourceTagsResponse showResourceTagsResponse = (ShowResourceTagsResponse) o;
-        return Objects.equals(this.total, showResourceTagsResponse.total)
+        return Objects.equals(this.count, showResourceTagsResponse.count)
             && Objects.equals(this.tags, showResourceTagsResponse.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, tags);
+        return Objects.hash(count, tags);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowResourceTagsResponse {\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -27,7 +27,7 @@ public class ListPublicZonesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private Metedata metadata;
+    private Metadata metadata;
 
     public ListPublicZonesResponse withLinks(PageLink links) {
         this.links = links;
@@ -88,14 +88,14 @@ public class ListPublicZonesResponse extends SdkResponse {
         this.zones = zones;
     }
 
-    public ListPublicZonesResponse withMetadata(Metedata metadata) {
+    public ListPublicZonesResponse withMetadata(Metadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public ListPublicZonesResponse withMetadata(Consumer<Metedata> metadataSetter) {
+    public ListPublicZonesResponse withMetadata(Consumer<Metadata> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new Metedata();
+            this.metadata = new Metadata();
             metadataSetter.accept(this.metadata);
         }
 
@@ -106,11 +106,11 @@ public class ListPublicZonesResponse extends SdkResponse {
      * Get metadata
      * @return metadata
      */
-    public Metedata getMetadata() {
+    public Metadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Metedata metadata) {
+    public void setMetadata(Metadata metadata) {
         this.metadata = metadata;
     }
 

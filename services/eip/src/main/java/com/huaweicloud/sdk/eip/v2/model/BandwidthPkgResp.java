@@ -36,7 +36,7 @@ public class BandwidthPkgResp {
     private Integer pkgSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tenant_id")
+    @JsonProperty(value = "tenantId")
 
     private String tenantId;
 

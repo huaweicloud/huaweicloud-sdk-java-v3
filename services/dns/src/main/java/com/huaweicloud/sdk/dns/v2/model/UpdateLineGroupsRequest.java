@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -14,6 +15,11 @@ public class UpdateLineGroupsRequest {
     @JsonProperty(value = "linegroup_id")
 
     private String linegroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private UpdateLineGroupsBody body;
 
     public UpdateLineGroupsRequest withLinegroupId(String linegroupId) {
         this.linegroupId = linegroupId;
@@ -32,6 +38,32 @@ public class UpdateLineGroupsRequest {
         this.linegroupId = linegroupId;
     }
 
+    public UpdateLineGroupsRequest withBody(UpdateLineGroupsBody body) {
+        this.body = body;
+        return this;
+    }
+
+    public UpdateLineGroupsRequest withBody(Consumer<UpdateLineGroupsBody> bodySetter) {
+        if (this.body == null) {
+            this.body = new UpdateLineGroupsBody();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public UpdateLineGroupsBody getBody() {
+        return body;
+    }
+
+    public void setBody(UpdateLineGroupsBody body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -41,12 +73,13 @@ public class UpdateLineGroupsRequest {
             return false;
         }
         UpdateLineGroupsRequest updateLineGroupsRequest = (UpdateLineGroupsRequest) o;
-        return Objects.equals(this.linegroupId, updateLineGroupsRequest.linegroupId);
+        return Objects.equals(this.linegroupId, updateLineGroupsRequest.linegroupId)
+            && Objects.equals(this.body, updateLineGroupsRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(linegroupId);
+        return Objects.hash(linegroupId, body);
     }
 
     @Override
@@ -54,6 +87,7 @@ public class UpdateLineGroupsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateLineGroupsRequest {\n");
         sb.append("    linegroupId: ").append(toIndentedString(linegroupId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

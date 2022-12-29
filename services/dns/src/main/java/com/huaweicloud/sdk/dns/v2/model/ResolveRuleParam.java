@@ -204,7 +204,7 @@ public class ResolveRuleParam {
     }
 
     /**
-     * Get routers
+     * 规则关联的vpc信息。
      * @return routers
      */
     public List<Router> getRouters() {

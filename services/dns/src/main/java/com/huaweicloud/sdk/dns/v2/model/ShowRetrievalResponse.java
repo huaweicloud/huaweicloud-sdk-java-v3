@@ -25,7 +25,7 @@ public class ShowRetrievalResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record")
 
-    private CreatePublicZoneFindRespRecord record;
+    private RecordInfo record;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -76,14 +76,14 @@ public class ShowRetrievalResponse extends SdkResponse {
         this.zoneName = zoneName;
     }
 
-    public ShowRetrievalResponse withRecord(CreatePublicZoneFindRespRecord record) {
+    public ShowRetrievalResponse withRecord(RecordInfo record) {
         this.record = record;
         return this;
     }
 
-    public ShowRetrievalResponse withRecord(Consumer<CreatePublicZoneFindRespRecord> recordSetter) {
+    public ShowRetrievalResponse withRecord(Consumer<RecordInfo> recordSetter) {
         if (this.record == null) {
-            this.record = new CreatePublicZoneFindRespRecord();
+            this.record = new RecordInfo();
             recordSetter.accept(this.record);
         }
 
@@ -94,11 +94,11 @@ public class ShowRetrievalResponse extends SdkResponse {
      * Get record
      * @return record
      */
-    public CreatePublicZoneFindRespRecord getRecord() {
+    public RecordInfo getRecord() {
         return record;
     }
 
-    public void setRecord(CreatePublicZoneFindRespRecord record) {
+    public void setRecord(RecordInfo record) {
         this.record = record;
     }
 

@@ -26,7 +26,7 @@ public class ShowRecordSetWithLineRequest {
     }
 
     /**
-     * Get zoneId
+     * 所属zone的ID。
      * @return zoneId
      */
     public String getZoneId() {

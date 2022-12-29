@@ -226,6 +226,16 @@ public class GetFirewallInstanceResponseRecord {
 
     private List<FirewallInstanceResource> resources = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_instance_name")
+
+    private String fwInstanceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public GetFirewallInstanceResponseRecord withFwInstanceId(String fwInstanceId) {
         this.fwInstanceId = fwInstanceId;
         return this;
@@ -504,6 +514,40 @@ public class GetFirewallInstanceResponseRecord {
         this.resources = resources;
     }
 
+    public GetFirewallInstanceResponseRecord withFwInstanceName(String fwInstanceName) {
+        this.fwInstanceName = fwInstanceName;
+        return this;
+    }
+
+    /**
+     * 防火墙名称
+     * @return fwInstanceName
+     */
+    public String getFwInstanceName() {
+        return fwInstanceName;
+    }
+
+    public void setFwInstanceName(String fwInstanceName) {
+        this.fwInstanceName = fwInstanceName;
+    }
+
+    public GetFirewallInstanceResponseRecord withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -525,7 +569,9 @@ public class GetFirewallInstanceResponseRecord {
             && Objects.equals(this.isOldFirewallInstance, getFirewallInstanceResponseRecord.isOldFirewallInstance)
             && Objects.equals(this.supportIpv6, getFirewallInstanceResponseRecord.supportIpv6)
             && Objects.equals(this.featureToggle, getFirewallInstanceResponseRecord.featureToggle)
-            && Objects.equals(this.resources, getFirewallInstanceResponseRecord.resources);
+            && Objects.equals(this.resources, getFirewallInstanceResponseRecord.resources)
+            && Objects.equals(this.fwInstanceName, getFirewallInstanceResponseRecord.fwInstanceName)
+            && Objects.equals(this.enterpriseProjectId, getFirewallInstanceResponseRecord.enterpriseProjectId);
     }
 
     @Override
@@ -542,7 +588,9 @@ public class GetFirewallInstanceResponseRecord {
             isOldFirewallInstance,
             supportIpv6,
             featureToggle,
-            resources);
+            resources,
+            fwInstanceName,
+            enterpriseProjectId);
     }
 
     @Override
@@ -562,6 +610,8 @@ public class GetFirewallInstanceResponseRecord {
         sb.append("    supportIpv6: ").append(toIndentedString(supportIpv6)).append("\n");
         sb.append("    featureToggle: ").append(toIndentedString(featureToggle)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
+        sb.append("    fwInstanceName: ").append(toIndentedString(fwInstanceName)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

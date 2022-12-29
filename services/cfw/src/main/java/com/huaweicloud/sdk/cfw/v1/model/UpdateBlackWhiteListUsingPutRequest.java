@@ -17,6 +17,16 @@ public class UpdateBlackWhiteListUsingPutRequest {
     private String listId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_instance_id")
+
+    private String fwInstanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private UpdateBlackWhiteListDto body;
@@ -36,6 +46,40 @@ public class UpdateBlackWhiteListUsingPutRequest {
 
     public void setListId(String listId) {
         this.listId = listId;
+    }
+
+    public UpdateBlackWhiteListUsingPutRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public UpdateBlackWhiteListUsingPutRequest withFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+        return this;
+    }
+
+    /**
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+     * @return fwInstanceId
+     */
+    public String getFwInstanceId() {
+        return fwInstanceId;
+    }
+
+    public void setFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
     }
 
     public UpdateBlackWhiteListUsingPutRequest withBody(UpdateBlackWhiteListDto body) {
@@ -75,12 +119,14 @@ public class UpdateBlackWhiteListUsingPutRequest {
         UpdateBlackWhiteListUsingPutRequest updateBlackWhiteListUsingPutRequest =
             (UpdateBlackWhiteListUsingPutRequest) o;
         return Objects.equals(this.listId, updateBlackWhiteListUsingPutRequest.listId)
+            && Objects.equals(this.enterpriseProjectId, updateBlackWhiteListUsingPutRequest.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, updateBlackWhiteListUsingPutRequest.fwInstanceId)
             && Objects.equals(this.body, updateBlackWhiteListUsingPutRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(listId, body);
+        return Objects.hash(listId, enterpriseProjectId, fwInstanceId, body);
     }
 
     @Override
@@ -88,6 +134,8 @@ public class UpdateBlackWhiteListUsingPutRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateBlackWhiteListUsingPutRequest {\n");
         sb.append("    listId: ").append(toIndentedString(listId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

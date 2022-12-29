@@ -18,7 +18,7 @@ public class DnsClient {
     }
 
     /**
-     * 绑定ip地址。
+     * 绑定ip地址
      *
      * 绑定单个IP地址到终端节点
      * 
@@ -32,7 +32,7 @@ public class DnsClient {
     }
 
     /**
-     * 绑定ip地址。
+     * 绑定ip地址
      *
      * 绑定单个IP地址到终端节点
      * 
@@ -45,6 +45,36 @@ public class DnsClient {
         AssociateEndpointIpaddressRequest request) {
         return new SyncInvoker<AssociateEndpointIpaddressRequest, AssociateEndpointIpaddressResponse>(request,
             DnsMeta.associateEndpointIpaddress, hcClient);
+    }
+
+    /**
+     * 在解析规则上关联VPC
+     *
+     * 在解析规则上关联VPC
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateResolveRuleRouterRequest 请求对象
+     * @return AssociateResolveRuleRouterResponse
+     */
+    public AssociateResolveRuleRouterResponse associateResolveRuleRouter(AssociateResolveRuleRouterRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.associateResolveRuleRouter);
+    }
+
+    /**
+     * 在解析规则上关联VPC
+     *
+     * 在解析规则上关联VPC
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateResolveRuleRouterRequest 请求对象
+     * @return SyncInvoker<AssociateResolveRuleRouterRequest, AssociateResolveRuleRouterResponse>
+     */
+    public SyncInvoker<AssociateResolveRuleRouterRequest, AssociateResolveRuleRouterResponse> associateResolveRuleRouterInvoker(
+        AssociateResolveRuleRouterRequest request) {
+        return new SyncInvoker<AssociateResolveRuleRouterRequest, AssociateResolveRuleRouterResponse>(request,
+            DnsMeta.associateResolveRuleRouter, hcClient);
     }
 
     /**
@@ -244,7 +274,7 @@ public class DnsClient {
     }
 
     /**
-     * 创建终端节点。
+     * 创建终端节点
      *
      * 创建单个终端节点。
      * 
@@ -258,7 +288,7 @@ public class DnsClient {
     }
 
     /**
-     * 创建终端节点。
+     * 创建终端节点
      *
      * 创建单个终端节点。
      * 
@@ -274,7 +304,7 @@ public class DnsClient {
     }
 
     /**
-     * 创建线路分组。
+     * 创建线路分组
      *
      * 创建一个线路分组。
      * 
@@ -288,7 +318,7 @@ public class DnsClient {
     }
 
     /**
-     * 创建线路分组。
+     * 创建线路分组
      *
      * 创建一个线路分组。
      * 
@@ -304,7 +334,7 @@ public class DnsClient {
     }
 
     /**
-     * 创建解析规则。
+     * 创建解析规则
      *
      * 创建一个解析规则。
      * 
@@ -318,7 +348,7 @@ public class DnsClient {
     }
 
     /**
-     * 创建解析规则。
+     * 创建解析规则
      *
      * 创建一个解析规则。
      * 
@@ -334,7 +364,7 @@ public class DnsClient {
     }
 
     /**
-     * 创建公网域名找回请求。
+     * 创建公网域名找回请求
      *
      * 创建公网域名找回请求。
      * 
@@ -348,7 +378,7 @@ public class DnsClient {
     }
 
     /**
-     * 创建公网域名找回请求。
+     * 创建公网域名找回请求
      *
      * 创建公网域名找回请求。
      * 
@@ -364,7 +394,7 @@ public class DnsClient {
     }
 
     /**
-     * 请求立即验证域名找回。
+     * 请求立即验证域名找回
      *
      * 请求服务器立即执行找回验证。
      * 
@@ -378,7 +408,7 @@ public class DnsClient {
     }
 
     /**
-     * 请求立即验证域名找回。
+     * 请求立即验证域名找回
      *
      * 请求服务器立即执行找回验证。
      * 
@@ -424,7 +454,7 @@ public class DnsClient {
     }
 
     /**
-     * 删除终端节点。
+     * 删除终端节点
      *
      * 删除终端节点。
      * 
@@ -438,7 +468,7 @@ public class DnsClient {
     }
 
     /**
-     * 删除终端节点。
+     * 删除终端节点
      *
      * 删除终端节点。
      * 
@@ -454,7 +484,7 @@ public class DnsClient {
     }
 
     /**
-     * 删除线路分组。
+     * 删除线路分组
      *
      * 删除单个线路分组。
      * 
@@ -468,7 +498,7 @@ public class DnsClient {
     }
 
     /**
-     * 删除线路分组。
+     * 删除线路分组
      *
      * 删除单个线路分组。
      * 
@@ -484,7 +514,7 @@ public class DnsClient {
     }
 
     /**
-     * 删除解析规则。
+     * 删除解析规则
      *
      * 删除解析规则。
      * 
@@ -498,7 +528,7 @@ public class DnsClient {
     }
 
     /**
-     * 删除解析规则。
+     * 删除解析规则
      *
      * 删除解析规则。
      * 
@@ -514,7 +544,7 @@ public class DnsClient {
     }
 
     /**
-     * 解关联ip地址。
+     * 解关联ip地址
      *
      * 解除endpoint绑定的IP。
      * 
@@ -529,7 +559,7 @@ public class DnsClient {
     }
 
     /**
-     * 解关联ip地址。
+     * 解关联ip地址
      *
      * 解除endpoint绑定的IP。
      * 
@@ -542,6 +572,37 @@ public class DnsClient {
         DisassociateEndpointIpaddressRequest request) {
         return new SyncInvoker<DisassociateEndpointIpaddressRequest, DisassociateEndpointIpaddressResponse>(request,
             DnsMeta.disassociateEndpointIpaddress, hcClient);
+    }
+
+    /**
+     * 在解析规则上解关联VPC
+     *
+     * 在解析规则上解关联VPC
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisassociateResolveRuleRouterRequest 请求对象
+     * @return DisassociateResolveRuleRouterResponse
+     */
+    public DisassociateResolveRuleRouterResponse disassociateResolveRuleRouter(
+        DisassociateResolveRuleRouterRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.disassociateResolveRuleRouter);
+    }
+
+    /**
+     * 在解析规则上解关联VPC
+     *
+     * 在解析规则上解关联VPC
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisassociateResolveRuleRouterRequest 请求对象
+     * @return SyncInvoker<DisassociateResolveRuleRouterRequest, DisassociateResolveRuleRouterResponse>
+     */
+    public SyncInvoker<DisassociateResolveRuleRouterRequest, DisassociateResolveRuleRouterResponse> disassociateResolveRuleRouterInvoker(
+        DisassociateResolveRuleRouterRequest request) {
+        return new SyncInvoker<DisassociateResolveRuleRouterRequest, DisassociateResolveRuleRouterResponse>(request,
+            DnsMeta.disassociateResolveRuleRouter, hcClient);
     }
 
     /**
@@ -605,7 +666,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询ip地址列表。
+     * 查询ip地址列表
      *
      * 查询某个endpoint下的ip地址列表。
      * 
@@ -619,7 +680,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询ip地址列表。
+     * 查询ip地址列表
      *
      * 查询某个endpoint下的ip地址列表。
      * 
@@ -635,7 +696,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询vpc信息。
+     * 查询vpc信息
      *
      * 查询vpc的终端节点信息。
      * 
@@ -649,7 +710,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询vpc信息。
+     * 查询vpc信息
      *
      * 查询vpc的终端节点信息。
      * 
@@ -665,7 +726,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询终端节点列表。
+     * 查询终端节点列表
      *
      * 查询终端节点列表。
      * 
@@ -679,7 +740,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询终端节点列表。
+     * 查询终端节点列表
      *
      * 查询终端节点列表。
      * 
@@ -693,7 +754,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询线路分组列表。
+     * 查询线路分组列表
      *
      * 查询线路分组列表。
      * 
@@ -707,7 +768,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询线路分组列表。
+     * 查询线路分组列表
      *
      * 查询线路分组列表。
      * 
@@ -753,7 +814,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询解析规则列表。
+     * 查询解析规则列表
      *
      * 查询解析规则的列表。
      * 
@@ -767,7 +828,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询解析规则列表。
+     * 查询解析规则列表
      *
      * 查询解析规则的列表。
      * 
@@ -841,7 +902,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询endpoint。
+     * 查询终端节点
      *
      * 查询终端单个节点。
      * 
@@ -855,7 +916,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询endpoint。
+     * 查询终端节点
      *
      * 查询终端单个节点。
      * 
@@ -869,7 +930,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询线路分组。
+     * 查询线路分组
      *
      * 查询线路分组。
      * 
@@ -883,7 +944,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询线路分组。
+     * 查询线路分组
      *
      * 查询线路分组。
      * 
@@ -897,7 +958,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询单个解析规则。
+     * 查询单个解析规则
      *
      * 查询单个解析规则。
      * 
@@ -911,7 +972,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询单个解析规则。
+     * 查询单个解析规则
      *
      * 查询单个解析规则。
      * 
@@ -927,7 +988,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询域名找回。
+     * 查询域名找回
      *
      * 查询域名找回请求。
      * 
@@ -941,7 +1002,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询域名找回。
+     * 查询域名找回
      *
      * 查询域名找回请求。
      * 
@@ -955,7 +1016,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询域名找回结果。
+     * 查询域名找回结果
      *
      * 查询域名找回结果。
      * 
@@ -969,7 +1030,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询域名找回结果。
+     * 查询域名找回结果
      *
      * 查询域名找回结果。
      * 
@@ -1045,7 +1106,7 @@ public class DnsClient {
     }
 
     /**
-     * 更新线路分组。
+     * 更新线路分组
      *
      * 更新单个线路分组。
      * 
@@ -1059,7 +1120,7 @@ public class DnsClient {
     }
 
     /**
-     * 更新线路分组。
+     * 更新线路分组
      *
      * 更新单个线路分组。
      * 
@@ -1075,7 +1136,7 @@ public class DnsClient {
     }
 
     /**
-     * 修改解析规则。
+     * 修改解析规则
      *
      * 修改一个解析规则。
      * 
@@ -1089,7 +1150,7 @@ public class DnsClient {
     }
 
     /**
-     * 修改解析规则。
+     * 修改解析规则
      *
      * 修改一个解析规则。
      * 
@@ -1255,7 +1316,7 @@ public class DnsClient {
     }
 
     /**
-     * Record Set关联健康检查。
+     * Record Set关联健康检查
      *
      * Record Set关联健康检查。
      * 
@@ -1269,7 +1330,7 @@ public class DnsClient {
     }
 
     /**
-     * Record Set关联健康检查。
+     * Record Set关联健康检查
      *
      * Record Set关联健康检查。
      * 
@@ -1285,7 +1346,7 @@ public class DnsClient {
     }
 
     /**
-     * 批量删除某个Zone下的Record Set资源。
+     * 批量删除某个Zone下的Record Set资源
      *
      * 批量删除某个Zone下的Record Set资源，当删除的资源不存在时，则默认删除成功。
      * 响应结果中只包含本次实际删除的资源。
@@ -1301,7 +1362,7 @@ public class DnsClient {
     }
 
     /**
-     * 批量删除某个Zone下的Record Set资源。
+     * 批量删除某个Zone下的Record Set资源
      *
      * 批量删除某个Zone下的Record Set资源，当删除的资源不存在时，则默认删除成功。
      * 响应结果中只包含本次实际删除的资源。
@@ -1318,7 +1379,7 @@ public class DnsClient {
     }
 
     /**
-     * 批量修改RecordSet。
+     * 批量修改RecordSet
      *
      * 批量修改RecordSet。属于原子性操作，请求Record Set将全部完成修改，或不做任何修改。
      * 仅公网Zone支持。
@@ -1334,7 +1395,7 @@ public class DnsClient {
     }
 
     /**
-     * 批量修改RecordSet。
+     * 批量修改RecordSet
      *
      * 批量修改RecordSet。属于原子性操作，请求Record Set将全部完成修改，或不做任何修改。
      * 仅公网Zone支持。
@@ -1381,7 +1442,7 @@ public class DnsClient {
     }
 
     /**
-     * 批量线路创建RecordSet。仅公网Zone支持。
+     * 批量线路创建RecordSet
      *
      * 批量线路创建RecordSet。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网Zone支持。
      * 
@@ -1396,7 +1457,7 @@ public class DnsClient {
     }
 
     /**
-     * 批量线路创建RecordSet。仅公网Zone支持。
+     * 批量线路创建RecordSet
      *
      * 批量线路创建RecordSet。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网Zone支持。
      * 
@@ -1412,7 +1473,7 @@ public class DnsClient {
     }
 
     /**
-     * 创建单个Record Set，仅适用于公网DNS
+     * 创建单个Record Set
      *
      * 创建单个Record Set，仅适用于公网DNS
      * 
@@ -1426,7 +1487,7 @@ public class DnsClient {
     }
 
     /**
-     * 创建单个Record Set，仅适用于公网DNS
+     * 创建单个Record Set
      *
      * 创建单个Record Set，仅适用于公网DNS
      * 
@@ -1502,9 +1563,9 @@ public class DnsClient {
     }
 
     /**
-     * Record Set解关联健康检查。
+     * Record Set解关联健康检查
      *
-     * Record Set解关联健康检查。。
+     * Record Set解关联健康检查。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1516,9 +1577,9 @@ public class DnsClient {
     }
 
     /**
-     * Record Set解关联健康检查。
+     * Record Set解关联健康检查
      *
-     * Record Set解关联健康检查。。
+     * Record Set解关联健康检查。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1654,7 +1715,7 @@ public class DnsClient {
     /**
      * 查询单个Record Set
      *
-     * 查询单个Record Set
+     * 查询单个Record Set。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1668,7 +1729,7 @@ public class DnsClient {
     /**
      * 查询单个Record Set
      *
-     * 查询单个Record Set
+     * 查询单个Record Set。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1710,7 +1771,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询单个Record Set，仅适用于公网DNS
+     * 查询单个Record Set
      *
      * 查询单个Record Set，仅适用于公网DNS
      * 
@@ -1724,7 +1785,7 @@ public class DnsClient {
     }
 
     /**
-     * 查询单个Record Set，仅适用于公网DNS
+     * 查询单个Record Set
      *
      * 查询单个Record Set，仅适用于公网DNS
      * 
@@ -2422,7 +2483,7 @@ public class DnsClient {
     }
 
     /**
-     * 设置单个公网Zone状态，支持暂停、启用Zone
+     * 设置单个公网Zone状态
      *
      * 设置单个公网Zone状态，支持暂停、启用Zone
      * 
@@ -2436,7 +2497,7 @@ public class DnsClient {
     }
 
     /**
-     * 设置单个公网Zone状态，支持暂停、启用Zone
+     * 设置单个公网Zone状态
      *
      * 设置单个公网Zone状态，支持暂停、启用Zone
      * 

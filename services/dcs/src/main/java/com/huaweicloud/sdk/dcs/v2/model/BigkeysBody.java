@@ -133,7 +133,7 @@ public class BigkeysBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    private Integer size;
+    private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
@@ -208,7 +208,7 @@ public class BigkeysBody {
         this.db = db;
     }
 
-    public BigkeysBody withSize(Integer size) {
+    public BigkeysBody withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -217,11 +217,11 @@ public class BigkeysBody {
      * key的value大小。
      * @return size
      */
-    public Integer getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 

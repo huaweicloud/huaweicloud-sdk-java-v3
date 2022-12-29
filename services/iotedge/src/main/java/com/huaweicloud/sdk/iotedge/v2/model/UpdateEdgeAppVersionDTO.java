@@ -110,6 +110,13 @@ public class UpdateEdgeAppVersionDTO  {
     
     private Object services;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tpl_id")
+    
+    
+    private String tplId;
+
     public UpdateEdgeAppVersionDTO withDescription(String description) {
         this.description = description;
         return this;
@@ -417,6 +424,28 @@ public class UpdateEdgeAppVersionDTO  {
 
     
 
+    public UpdateEdgeAppVersionDTO withTplId(String tplId) {
+        this.tplId = tplId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 模板id
+     * @return tplId
+     */
+    public String getTplId() {
+        return tplId;
+    }
+
+    public void setTplId(String tplId) {
+        this.tplId = tplId;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -438,11 +467,12 @@ public class UpdateEdgeAppVersionDTO  {
             Objects.equals(this.args, updateEdgeAppVersionDTO.args) &&
             Objects.equals(this.outputs, updateEdgeAppVersionDTO.outputs) &&
             Objects.equals(this.inputs, updateEdgeAppVersionDTO.inputs) &&
-            Objects.equals(this.services, updateEdgeAppVersionDTO.services);
+            Objects.equals(this.services, updateEdgeAppVersionDTO.services) &&
+            Objects.equals(this.tplId, updateEdgeAppVersionDTO.tplId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(description, deployType, deployMultiInstance, containerSettings, livenessProbe, readinessProbe, sdkVersion, arch, command, args, outputs, inputs, services);
+        return Objects.hash(description, deployType, deployMultiInstance, containerSettings, livenessProbe, readinessProbe, sdkVersion, arch, command, args, outputs, inputs, services, tplId);
     }
     @Override
     public String toString() {
@@ -461,6 +491,7 @@ public class UpdateEdgeAppVersionDTO  {
         sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
         sb.append("    inputs: ").append(toIndentedString(inputs)).append("\n");
         sb.append("    services: ").append(toIndentedString(services)).append("\n");
+        sb.append("    tplId: ").append(toIndentedString(tplId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.vpc.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -47,6 +48,16 @@ public class RouteTableListResp {
     @JsonProperty(value = "description")
 
     private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private OffsetDateTime createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated_at")
+
+    private OffsetDateTime updatedAt;
 
     public RouteTableListResp withId(String id) {
         this.id = id;
@@ -183,6 +194,40 @@ public class RouteTableListResp {
         this.description = description;
     }
 
+    public RouteTableListResp withCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 功能说明：资源创建UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+     * @return createdAt
+     */
+    public OffsetDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public RouteTableListResp withUpdatedAt(OffsetDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    /**
+     * 功能说明：资源更新UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+     * @return updatedAt
+     */
+    public OffsetDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(OffsetDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -197,12 +242,14 @@ public class RouteTableListResp {
             && Objects.equals(this.subnets, routeTableListResp.subnets)
             && Objects.equals(this.tenantId, routeTableListResp.tenantId)
             && Objects.equals(this.vpcId, routeTableListResp.vpcId)
-            && Objects.equals(this.description, routeTableListResp.description);
+            && Objects.equals(this.description, routeTableListResp.description)
+            && Objects.equals(this.createdAt, routeTableListResp.createdAt)
+            && Objects.equals(this.updatedAt, routeTableListResp.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, _default, subnets, tenantId, vpcId, description);
+        return Objects.hash(id, name, _default, subnets, tenantId, vpcId, description, createdAt, updatedAt);
     }
 
     @Override
@@ -216,6 +263,8 @@ public class RouteTableListResp {
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

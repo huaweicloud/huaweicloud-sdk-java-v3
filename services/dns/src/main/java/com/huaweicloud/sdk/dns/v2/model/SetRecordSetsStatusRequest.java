@@ -27,7 +27,7 @@ public class SetRecordSetsStatusRequest {
     }
 
     /**
-     * Get recordsetId
+     * 待设置Record Set的ID信息。
      * @return recordsetId
      */
     public String getRecordsetId() {

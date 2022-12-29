@@ -19,7 +19,7 @@ public class ShowUpgradeProgressResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private String status;
+    private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "progress")
@@ -48,7 +48,7 @@ public class ShowUpgradeProgressResponse extends SdkResponse {
         this.version = version;
     }
 
-    public ShowUpgradeProgressResponse withStatus(String status) {
+    public ShowUpgradeProgressResponse withStatus(Integer status) {
         this.status = status;
         return this;
     }
@@ -57,11 +57,11 @@ public class ShowUpgradeProgressResponse extends SdkResponse {
      * 固件升级状态，1:升级中 2:升级失败 3:升级成功
      * @return status
      */
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

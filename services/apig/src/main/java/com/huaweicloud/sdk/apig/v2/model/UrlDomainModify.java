@@ -102,6 +102,11 @@ public class UrlDomainModify {
 
     private Boolean isHttpRedirectToHttps;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verified_client_certificate_enabled")
+
+    private Boolean verifiedClientCertificateEnabled;
+
     public UrlDomainModify withMinSslVersion(MinSslVersionEnum minSslVersion) {
         this.minSslVersion = minSslVersion;
         return this;
@@ -136,6 +141,23 @@ public class UrlDomainModify {
         this.isHttpRedirectToHttps = isHttpRedirectToHttps;
     }
 
+    public UrlDomainModify withVerifiedClientCertificateEnabled(Boolean verifiedClientCertificateEnabled) {
+        this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
+        return this;
+    }
+
+    /**
+     * 是否开启客户端证书校验。只有绑定证书时，该参数才生效。当绑定证书存在trusted_root_ca时，默认开启；当绑定证书不存在trusted_root_ca时，默认关闭。
+     * @return verifiedClientCertificateEnabled
+     */
+    public Boolean getVerifiedClientCertificateEnabled() {
+        return verifiedClientCertificateEnabled;
+    }
+
+    public void setVerifiedClientCertificateEnabled(Boolean verifiedClientCertificateEnabled) {
+        this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -146,12 +168,13 @@ public class UrlDomainModify {
         }
         UrlDomainModify urlDomainModify = (UrlDomainModify) o;
         return Objects.equals(this.minSslVersion, urlDomainModify.minSslVersion)
-            && Objects.equals(this.isHttpRedirectToHttps, urlDomainModify.isHttpRedirectToHttps);
+            && Objects.equals(this.isHttpRedirectToHttps, urlDomainModify.isHttpRedirectToHttps)
+            && Objects.equals(this.verifiedClientCertificateEnabled, urlDomainModify.verifiedClientCertificateEnabled);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(minSslVersion, isHttpRedirectToHttps);
+        return Objects.hash(minSslVersion, isHttpRedirectToHttps, verifiedClientCertificateEnabled);
     }
 
     @Override
@@ -160,6 +183,9 @@ public class UrlDomainModify {
         sb.append("class UrlDomainModify {\n");
         sb.append("    minSslVersion: ").append(toIndentedString(minSslVersion)).append("\n");
         sb.append("    isHttpRedirectToHttps: ").append(toIndentedString(isHttpRedirectToHttps)).append("\n");
+        sb.append("    verifiedClientCertificateEnabled: ")
+            .append(toIndentedString(verifiedClientCertificateEnabled))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

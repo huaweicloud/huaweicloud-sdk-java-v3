@@ -32,7 +32,7 @@ public class UpdatePtrRecordRequest {
     }
 
     /**
-     * Get region
+     * 域名所属的区域。
      * @return region
      */
     public String getRegion() {
@@ -49,7 +49,7 @@ public class UpdatePtrRecordRequest {
     }
 
     /**
-     * Get floatingipId
+     * 待修改弹性IP的PTR记录ID信息。
      * @return floatingipId
      */
     public String getFloatingipId() {

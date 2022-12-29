@@ -23,6 +23,11 @@ public class AttachOrDetachDomainInfo {
 
     private List<String> instanceIds = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verified_client_certificate_enabled")
+
+    private Boolean verifiedClientCertificateEnabled;
+
     public AttachOrDetachDomainInfo withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -73,6 +78,23 @@ public class AttachOrDetachDomainInfo {
         this.instanceIds = instanceIds;
     }
 
+    public AttachOrDetachDomainInfo withVerifiedClientCertificateEnabled(Boolean verifiedClientCertificateEnabled) {
+        this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
+        return this;
+    }
+
+    /**
+     * 是否开启客户端证书校验。当绑定证书存在trusted_root_ca时，默认开启；当绑定证书不存在trusted_root_ca时，默认关闭。
+     * @return verifiedClientCertificateEnabled
+     */
+    public Boolean getVerifiedClientCertificateEnabled() {
+        return verifiedClientCertificateEnabled;
+    }
+
+    public void setVerifiedClientCertificateEnabled(Boolean verifiedClientCertificateEnabled) {
+        this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -83,12 +105,14 @@ public class AttachOrDetachDomainInfo {
         }
         AttachOrDetachDomainInfo attachOrDetachDomainInfo = (AttachOrDetachDomainInfo) o;
         return Objects.equals(this.domain, attachOrDetachDomainInfo.domain)
-            && Objects.equals(this.instanceIds, attachOrDetachDomainInfo.instanceIds);
+            && Objects.equals(this.instanceIds, attachOrDetachDomainInfo.instanceIds)
+            && Objects.equals(this.verifiedClientCertificateEnabled,
+                attachOrDetachDomainInfo.verifiedClientCertificateEnabled);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domain, instanceIds);
+        return Objects.hash(domain, instanceIds, verifiedClientCertificateEnabled);
     }
 
     @Override
@@ -97,6 +121,9 @@ public class AttachOrDetachDomainInfo {
         sb.append("class AttachOrDetachDomainInfo {\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    instanceIds: ").append(toIndentedString(instanceIds)).append("\n");
+        sb.append("    verifiedClientCertificateEnabled: ")
+            .append(toIndentedString(verifiedClientCertificateEnabled))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

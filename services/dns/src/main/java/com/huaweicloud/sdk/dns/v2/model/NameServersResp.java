@@ -84,7 +84,7 @@ public class NameServersResp {
     }
 
     /**
-     * Get nsRecords
+     * 名称服务器列表。
      * @return nsRecords
      */
     public List<NsRecords> getNsRecords() {

@@ -122,6 +122,16 @@ public class ListAddressSetListUsingGetRequest {
 
     private AddressTypeEnum addressType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_instance_id")
+
+    private String fwInstanceId;
+
     public ListAddressSetListUsingGetRequest withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
@@ -224,6 +234,40 @@ public class ListAddressSetListUsingGetRequest {
         this.addressType = addressType;
     }
 
+    public ListAddressSetListUsingGetRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ListAddressSetListUsingGetRequest withFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+        return this;
+    }
+
+    /**
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+     * @return fwInstanceId
+     */
+    public String getFwInstanceId() {
+        return fwInstanceId;
+    }
+
+    public void setFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -238,12 +282,14 @@ public class ListAddressSetListUsingGetRequest {
             && Objects.equals(this.limit, listAddressSetListUsingGetRequest.limit)
             && Objects.equals(this.offset, listAddressSetListUsingGetRequest.offset)
             && Objects.equals(this.address, listAddressSetListUsingGetRequest.address)
-            && Objects.equals(this.addressType, listAddressSetListUsingGetRequest.addressType);
+            && Objects.equals(this.addressType, listAddressSetListUsingGetRequest.addressType)
+            && Objects.equals(this.enterpriseProjectId, listAddressSetListUsingGetRequest.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, listAddressSetListUsingGetRequest.fwInstanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectId, keyWord, limit, offset, address, addressType);
+        return Objects.hash(objectId, keyWord, limit, offset, address, addressType, enterpriseProjectId, fwInstanceId);
     }
 
     @Override
@@ -256,6 +302,8 @@ public class ListAddressSetListUsingGetRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

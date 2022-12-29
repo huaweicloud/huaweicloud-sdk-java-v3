@@ -130,6 +130,11 @@ public class AssociateDomainV2Response extends SdkResponse {
 
     private Boolean isHttpRedirectToHttps;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verified_client_certificate_enabled")
+
+    private Boolean verifiedClientCertificateEnabled;
+
     public AssociateDomainV2Response withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
         return this;
@@ -215,6 +220,23 @@ public class AssociateDomainV2Response extends SdkResponse {
         this.isHttpRedirectToHttps = isHttpRedirectToHttps;
     }
 
+    public AssociateDomainV2Response withVerifiedClientCertificateEnabled(Boolean verifiedClientCertificateEnabled) {
+        this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
+        return this;
+    }
+
+    /**
+     * 是否开启客户端证书校验。只有绑定证书时，该参数才生效。当绑定证书存在trusted_root_ca时，默认开启；当绑定证书不存在trusted_root_ca时，默认关闭。
+     * @return verifiedClientCertificateEnabled
+     */
+    public Boolean getVerifiedClientCertificateEnabled() {
+        return verifiedClientCertificateEnabled;
+    }
+
+    public void setVerifiedClientCertificateEnabled(Boolean verifiedClientCertificateEnabled) {
+        this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -228,12 +250,15 @@ public class AssociateDomainV2Response extends SdkResponse {
             && Objects.equals(this.id, associateDomainV2Response.id)
             && Objects.equals(this.status, associateDomainV2Response.status)
             && Objects.equals(this.minSslVersion, associateDomainV2Response.minSslVersion)
-            && Objects.equals(this.isHttpRedirectToHttps, associateDomainV2Response.isHttpRedirectToHttps);
+            && Objects.equals(this.isHttpRedirectToHttps, associateDomainV2Response.isHttpRedirectToHttps)
+            && Objects.equals(this.verifiedClientCertificateEnabled,
+                associateDomainV2Response.verifiedClientCertificateEnabled);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(urlDomain, id, status, minSslVersion, isHttpRedirectToHttps);
+        return Objects
+            .hash(urlDomain, id, status, minSslVersion, isHttpRedirectToHttps, verifiedClientCertificateEnabled);
     }
 
     @Override
@@ -245,6 +270,9 @@ public class AssociateDomainV2Response extends SdkResponse {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    minSslVersion: ").append(toIndentedString(minSslVersion)).append("\n");
         sb.append("    isHttpRedirectToHttps: ").append(toIndentedString(isHttpRedirectToHttps)).append("\n");
+        sb.append("    verifiedClientCertificateEnabled: ")
+            .append(toIndentedString(verifiedClientCertificateEnabled))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

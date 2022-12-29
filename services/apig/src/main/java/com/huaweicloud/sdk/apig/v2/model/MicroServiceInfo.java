@@ -22,6 +22,11 @@ public class MicroServiceInfo {
 
     private String id;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
     /**
      * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎
      */
@@ -141,6 +146,23 @@ public class MicroServiceInfo {
         this.id = id;
     }
 
+    public MicroServiceInfo withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 实例编号
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
     public MicroServiceInfo withServiceType(ServiceTypeEnum serviceType) {
         this.serviceType = serviceType;
         return this;
@@ -254,6 +276,7 @@ public class MicroServiceInfo {
         }
         MicroServiceInfo microServiceInfo = (MicroServiceInfo) o;
         return Objects.equals(this.id, microServiceInfo.id)
+            && Objects.equals(this.instanceId, microServiceInfo.instanceId)
             && Objects.equals(this.serviceType, microServiceInfo.serviceType)
             && Objects.equals(this.cseInfo, microServiceInfo.cseInfo)
             && Objects.equals(this.cceInfo, microServiceInfo.cceInfo)
@@ -263,7 +286,7 @@ public class MicroServiceInfo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, serviceType, cseInfo, cceInfo, updateTime, createTime);
+        return Objects.hash(id, instanceId, serviceType, cseInfo, cceInfo, updateTime, createTime);
     }
 
     @Override
@@ -271,6 +294,7 @@ public class MicroServiceInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class MicroServiceInfo {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    cseInfo: ").append(toIndentedString(cseInfo)).append("\n");
         sb.append("    cceInfo: ").append(toIndentedString(cceInfo)).append("\n");

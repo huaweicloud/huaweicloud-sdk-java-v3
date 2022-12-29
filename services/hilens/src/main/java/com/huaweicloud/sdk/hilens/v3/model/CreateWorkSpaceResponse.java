@@ -12,25 +12,25 @@ import java.util.Objects;
 public class CreateWorkSpaceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
+    @JsonProperty(value = "workspace_id")
 
-    private String name;
+    private String workspaceId;
 
-    public CreateWorkSpaceResponse withName(String name) {
-        this.name = name;
+    public CreateWorkSpaceResponse withWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
         return this;
     }
 
     /**
-     * 创建的工作空间名
-     * @return name
+     * 工作空间id
+     * @return workspaceId
      */
-    public String getName() {
-        return name;
+    public String getWorkspaceId() {
+        return workspaceId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class CreateWorkSpaceResponse extends SdkResponse {
             return false;
         }
         CreateWorkSpaceResponse createWorkSpaceResponse = (CreateWorkSpaceResponse) o;
-        return Objects.equals(this.name, createWorkSpaceResponse.name);
+        return Objects.equals(this.workspaceId, createWorkSpaceResponse.workspaceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(workspaceId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateWorkSpaceResponse {\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

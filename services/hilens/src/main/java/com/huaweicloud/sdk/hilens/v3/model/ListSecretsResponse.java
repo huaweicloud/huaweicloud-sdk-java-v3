@@ -17,14 +17,14 @@ public class ListSecretsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
-    private String count;
+    private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "secrets")
 
     private List<SecretDetail> secrets = null;
 
-    public ListSecretsResponse withCount(String count) {
+    public ListSecretsResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
@@ -33,11 +33,11 @@ public class ListSecretsResponse extends SdkResponse {
      * 数量
      * @return count
      */
-    public String getCount() {
+    public Integer getCount() {
         return count;
     }
 
-    public void setCount(String count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
 

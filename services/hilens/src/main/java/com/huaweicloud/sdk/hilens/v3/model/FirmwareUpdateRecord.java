@@ -28,7 +28,7 @@ public class FirmwareUpdateRecord {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "firmware_upgrade_time")
 
-    private Integer firmwareUpgradeTime;
+    private String firmwareUpgradeTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -86,7 +86,7 @@ public class FirmwareUpdateRecord {
         this.firmwareSize = firmwareSize;
     }
 
-    public FirmwareUpdateRecord withFirmwareUpgradeTime(Integer firmwareUpgradeTime) {
+    public FirmwareUpdateRecord withFirmwareUpgradeTime(String firmwareUpgradeTime) {
         this.firmwareUpgradeTime = firmwareUpgradeTime;
         return this;
     }
@@ -95,11 +95,11 @@ public class FirmwareUpdateRecord {
      * 固件升级时间
      * @return firmwareUpgradeTime
      */
-    public Integer getFirmwareUpgradeTime() {
+    public String getFirmwareUpgradeTime() {
         return firmwareUpgradeTime;
     }
 
-    public void setFirmwareUpgradeTime(Integer firmwareUpgradeTime) {
+    public void setFirmwareUpgradeTime(String firmwareUpgradeTime) {
         this.firmwareUpgradeTime = firmwareUpgradeTime;
     }
 

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class ShowResoleRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resolver_rule")
 
-    private Object resolverRule;
+    private ShowResolveRuleParam resolverRule;
 
-    public ShowResoleRuleResponse withResolverRule(Object resolverRule) {
+    public ShowResoleRuleResponse withResolverRule(ShowResolveRuleParam resolverRule) {
         this.resolverRule = resolverRule;
         return this;
     }
 
+    public ShowResoleRuleResponse withResolverRule(Consumer<ShowResolveRuleParam> resolverRuleSetter) {
+        if (this.resolverRule == null) {
+            this.resolverRule = new ShowResolveRuleParam();
+            resolverRuleSetter.accept(this.resolverRule);
+        }
+
+        return this;
+    }
+
     /**
-     * 查询单个resolver_rule响应。
+     * Get resolverRule
      * @return resolverRule
      */
-    public Object getResolverRule() {
+    public ShowResolveRuleParam getResolverRule() {
         return resolverRule;
     }
 
-    public void setResolverRule(Object resolverRule) {
+    public void setResolverRule(ShowResolveRuleParam resolverRule) {
         this.resolverRule = resolverRule;
     }
 

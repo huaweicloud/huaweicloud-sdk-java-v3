@@ -27,7 +27,7 @@ public class AssociateHealthCheckRequest {
     }
 
     /**
-     * Get recordsetId
+     * 待查询的recordset ID。
      * @return recordsetId
      */
     public String getRecordsetId() {

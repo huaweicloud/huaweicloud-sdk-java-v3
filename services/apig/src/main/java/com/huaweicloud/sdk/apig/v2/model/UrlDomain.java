@@ -122,6 +122,11 @@ public class UrlDomain {
 
     private MinSslVersionEnum minSslVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verified_client_certificate_enabled")
+
+    private Boolean verifiedClientCertificateEnabled;
+
     public UrlDomain withId(String id) {
         this.id = id;
         return this;
@@ -224,6 +229,23 @@ public class UrlDomain {
         this.minSslVersion = minSslVersion;
     }
 
+    public UrlDomain withVerifiedClientCertificateEnabled(Boolean verifiedClientCertificateEnabled) {
+        this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
+        return this;
+    }
+
+    /**
+     * 是否开启客户端证书校验。只有绑定证书时，该参数才生效。当绑定证书存在trusted_root_ca时，默认开启；当绑定证书不存在trusted_root_ca时，默认关闭。
+     * @return verifiedClientCertificateEnabled
+     */
+    public Boolean getVerifiedClientCertificateEnabled() {
+        return verifiedClientCertificateEnabled;
+    }
+
+    public void setVerifiedClientCertificateEnabled(Boolean verifiedClientCertificateEnabled) {
+        this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -236,12 +258,13 @@ public class UrlDomain {
         return Objects.equals(this.id, urlDomain.id) && Objects.equals(this.domain, urlDomain.domain)
             && Objects.equals(this.cnameStatus, urlDomain.cnameStatus) && Objects.equals(this.sslId, urlDomain.sslId)
             && Objects.equals(this.sslName, urlDomain.sslName)
-            && Objects.equals(this.minSslVersion, urlDomain.minSslVersion);
+            && Objects.equals(this.minSslVersion, urlDomain.minSslVersion)
+            && Objects.equals(this.verifiedClientCertificateEnabled, urlDomain.verifiedClientCertificateEnabled);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, domain, cnameStatus, sslId, sslName, minSslVersion);
+        return Objects.hash(id, domain, cnameStatus, sslId, sslName, minSslVersion, verifiedClientCertificateEnabled);
     }
 
     @Override
@@ -254,6 +277,9 @@ public class UrlDomain {
         sb.append("    sslId: ").append(toIndentedString(sslId)).append("\n");
         sb.append("    sslName: ").append(toIndentedString(sslName)).append("\n");
         sb.append("    minSslVersion: ").append(toIndentedString(minSslVersion)).append("\n");
+        sb.append("    verifiedClientCertificateEnabled: ")
+            .append(toIndentedString(verifiedClientCertificateEnabled))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

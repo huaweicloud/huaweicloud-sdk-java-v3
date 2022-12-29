@@ -32,7 +32,7 @@ public class RestorePtrRecordRequest {
     }
 
     /**
-     * Get region
+     * 域名所属的区域。
      * @return region
      */
     public String getRegion() {
@@ -49,7 +49,7 @@ public class RestorePtrRecordRequest {
     }
 
     /**
-     * Get floatingipId
+     * 待删除PTR ID。
      * @return floatingipId
      */
     public String getFloatingipId() {

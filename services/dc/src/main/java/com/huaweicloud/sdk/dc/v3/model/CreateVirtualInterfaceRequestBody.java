@@ -7,36 +7,14 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CreateVirtualInterfaceRequestBody
+ * 创建虚拟接口请求参数
  */
 public class CreateVirtualInterfaceRequestBody {
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "request_id")
-
-    private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "virtual_interface")
 
     private CreateVirtualInterface virtualInterface;
-
-    public CreateVirtualInterfaceRequestBody withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-    /**
-     * 操作请求ID
-     * @return requestId
-     */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
 
     public CreateVirtualInterfaceRequestBody withVirtualInterface(CreateVirtualInterface virtualInterface) {
         this.virtualInterface = virtualInterface;
@@ -74,20 +52,18 @@ public class CreateVirtualInterfaceRequestBody {
             return false;
         }
         CreateVirtualInterfaceRequestBody createVirtualInterfaceRequestBody = (CreateVirtualInterfaceRequestBody) o;
-        return Objects.equals(this.requestId, createVirtualInterfaceRequestBody.requestId)
-            && Objects.equals(this.virtualInterface, createVirtualInterfaceRequestBody.virtualInterface);
+        return Objects.equals(this.virtualInterface, createVirtualInterfaceRequestBody.virtualInterface);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, virtualInterface);
+        return Objects.hash(virtualInterface);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateVirtualInterfaceRequestBody {\n");
-        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    virtualInterface: ").append(toIndentedString(virtualInterface)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -29,19 +29,9 @@ public class ResolveRuleReq {
     private String endpointId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region")
-
-    private String region;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipaddresses")
 
     private List<IpInfo> ipaddresses = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "routers")
-
-    private List<Router> routers = null;
 
     public ResolveRuleReq withName(String name) {
         this.name = name;
@@ -94,23 +84,6 @@ public class ResolveRuleReq {
         this.endpointId = endpointId;
     }
 
-    public ResolveRuleReq withRegion(String region) {
-        this.region = region;
-        return this;
-    }
-
-    /**
-     * 当前规则所在的region。
-     * @return region
-     */
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
     public ResolveRuleReq withIpaddresses(List<IpInfo> ipaddresses) {
         this.ipaddresses = ipaddresses;
         return this;
@@ -144,39 +117,6 @@ public class ResolveRuleReq {
         this.ipaddresses = ipaddresses;
     }
 
-    public ResolveRuleReq withRouters(List<Router> routers) {
-        this.routers = routers;
-        return this;
-    }
-
-    public ResolveRuleReq addRoutersItem(Router routersItem) {
-        if (this.routers == null) {
-            this.routers = new ArrayList<>();
-        }
-        this.routers.add(routersItem);
-        return this;
-    }
-
-    public ResolveRuleReq withRouters(Consumer<List<Router>> routersSetter) {
-        if (this.routers == null) {
-            this.routers = new ArrayList<>();
-        }
-        routersSetter.accept(this.routers);
-        return this;
-    }
-
-    /**
-     * 规则关联的目标ip地址。
-     * @return routers
-     */
-    public List<Router> getRouters() {
-        return routers;
-    }
-
-    public void setRouters(List<Router> routers) {
-        this.routers = routers;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -189,14 +129,12 @@ public class ResolveRuleReq {
         return Objects.equals(this.name, resolveRuleReq.name)
             && Objects.equals(this.domainName, resolveRuleReq.domainName)
             && Objects.equals(this.endpointId, resolveRuleReq.endpointId)
-            && Objects.equals(this.region, resolveRuleReq.region)
-            && Objects.equals(this.ipaddresses, resolveRuleReq.ipaddresses)
-            && Objects.equals(this.routers, resolveRuleReq.routers);
+            && Objects.equals(this.ipaddresses, resolveRuleReq.ipaddresses);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, domainName, endpointId, region, ipaddresses, routers);
+        return Objects.hash(name, domainName, endpointId, ipaddresses);
     }
 
     @Override
@@ -206,9 +144,7 @@ public class ResolveRuleReq {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    endpointId: ").append(toIndentedString(endpointId)).append("\n");
-        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    ipaddresses: ").append(toIndentedString(ipaddresses)).append("\n");
-        sb.append("    routers: ").append(toIndentedString(routers)).append("\n");
         sb.append("}");
         return sb.toString();
     }

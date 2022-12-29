@@ -22,7 +22,7 @@ public class ListPtrRecordsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private Metedata metadata;
+    private Metadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "floatingips")
@@ -55,14 +55,14 @@ public class ListPtrRecordsResponse extends SdkResponse {
         this.links = links;
     }
 
-    public ListPtrRecordsResponse withMetadata(Metedata metadata) {
+    public ListPtrRecordsResponse withMetadata(Metadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public ListPtrRecordsResponse withMetadata(Consumer<Metedata> metadataSetter) {
+    public ListPtrRecordsResponse withMetadata(Consumer<Metadata> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new Metedata();
+            this.metadata = new Metadata();
             metadataSetter.accept(this.metadata);
         }
 
@@ -73,11 +73,11 @@ public class ListPtrRecordsResponse extends SdkResponse {
      * Get metadata
      * @return metadata
      */
-    public Metedata getMetadata() {
+    public Metadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Metedata metadata) {
+    public void setMetadata(Metadata metadata) {
         this.metadata = metadata;
     }
 
@@ -103,7 +103,7 @@ public class ListPtrRecordsResponse extends SdkResponse {
     }
 
     /**
-     * Get floatingips
+     * 弹性IP的PTR记录ID列表信息。
      * @return floatingips
      */
     public List<ListPtrRecordsFloatingResp> getFloatingips() {

@@ -170,7 +170,7 @@ public class DcClient {
     }
 
     /**
-     * 查询物理连接详细信息
+     * 查询物理连接详情
      *
      * 查询物理连接详细信息.
      * 
@@ -184,7 +184,7 @@ public class DcClient {
     }
 
     /**
-     * 查询物理连接详细信息
+     * 查询物理连接详情
      *
      * 查询物理连接详细信息.
      * 
@@ -480,9 +480,9 @@ public class DcClient {
     }
 
     /**
-     * 创建虑拟网关
+     * 创建虚拟网关
      *
-     * 创建虑拟网关
+     * 创建虚拟网关
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -494,9 +494,9 @@ public class DcClient {
     }
 
     /**
-     * 创建虑拟网关
+     * 创建虚拟网关
      *
-     * 创建虑拟网关
+     * 创建虚拟网关
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -600,9 +600,9 @@ public class DcClient {
     }
 
     /**
-     * 修改虚拟网关信息
+     * 更新虚拟网关信息
      *
-     * 修改虚拟网关的信息
+     * 更新虚拟网关的信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -614,9 +614,9 @@ public class DcClient {
     }
 
     /**
-     * 修改虚拟网关信息
+     * 更新虚拟网关信息
      *
-     * 修改虚拟网关的信息
+     * 更新虚拟网关的信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -750,9 +750,9 @@ public class DcClient {
     }
 
     /**
-     * 修改虚拟接口virtual_interface
+     * 更新虚拟接口
      *
-     * 修改虚拟接口的详细信息
+     * 更新虚拟接口的详细信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -764,9 +764,9 @@ public class DcClient {
     }
 
     /**
-     * 修改虚拟接口virtual_interface
+     * 更新虚拟接口
      *
-     * 修改虚拟接口的详细信息
+     * 更新虚拟接口的详细信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

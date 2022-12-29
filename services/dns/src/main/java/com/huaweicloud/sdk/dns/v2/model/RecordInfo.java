@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * CreatePublicZoneFindRespRecord
+ * RecordInfo
  */
-public class CreatePublicZoneFindRespRecord {
+public class RecordInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host")
@@ -20,7 +20,7 @@ public class CreatePublicZoneFindRespRecord {
 
     private String value;
 
-    public CreatePublicZoneFindRespRecord withHost(String host) {
+    public RecordInfo withHost(String host) {
         this.host = host;
         return this;
     }
@@ -37,7 +37,7 @@ public class CreatePublicZoneFindRespRecord {
         this.host = host;
     }
 
-    public CreatePublicZoneFindRespRecord withValue(String value) {
+    public RecordInfo withValue(String value) {
         this.value = value;
         return this;
     }
@@ -62,9 +62,8 @@ public class CreatePublicZoneFindRespRecord {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CreatePublicZoneFindRespRecord createPublicZoneFindRespRecord = (CreatePublicZoneFindRespRecord) o;
-        return Objects.equals(this.host, createPublicZoneFindRespRecord.host)
-            && Objects.equals(this.value, createPublicZoneFindRespRecord.value);
+        RecordInfo recordInfo = (RecordInfo) o;
+        return Objects.equals(this.host, recordInfo.host) && Objects.equals(this.value, recordInfo.value);
     }
 
     @Override
@@ -75,7 +74,7 @@ public class CreatePublicZoneFindRespRecord {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreatePublicZoneFindRespRecord {\n");
+        sb.append("class RecordInfo {\n");
         sb.append("    host: ").append(toIndentedString(host)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("}");

@@ -41,7 +41,7 @@ public class ListNameServersResponse extends SdkResponse {
     }
 
     /**
-     * Get nameservers
+     * name server列表对象。
      * @return nameservers
      */
     public List<NameServersResp> getNameservers() {

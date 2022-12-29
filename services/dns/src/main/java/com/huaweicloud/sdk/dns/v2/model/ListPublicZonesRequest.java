@@ -90,7 +90,7 @@ public class ListPublicZonesRequest {
     }
 
     /**
-     * 分页查询起始的资源ID，为空时为查询第一页。
+     * 分页查询起始的资源ID，为空时为查询第一页。  默认值为空。
      * @return marker
      */
     public String getMarker() {
@@ -107,7 +107,7 @@ public class ListPublicZonesRequest {
     }
 
     /**
-     * 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。  取值范围：0-2147483647  默认值为0。  当前设置marker不为空时，以marker为分页起始标识。
+     * 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。  取值范围：0~2147483647  默认值为0。  当前设置marker不为空时，以marker为分页起始标识。
      * @return offset
      */
     public Integer getOffset() {

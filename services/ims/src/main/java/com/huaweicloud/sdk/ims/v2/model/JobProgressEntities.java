@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.ims.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
@@ -34,6 +37,16 @@ public class JobProgressEntities {
     @JsonProperty(value = "subJobId")
 
     private String subJobId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_jobs_result")
+
+    private List<SubJobResult> subJobsResult = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_jobs_list")
+
+    private List<String> subJobsList = null;
 
     public JobProgressEntities withImageId(String imageId) {
         this.imageId = imageId;
@@ -120,6 +133,72 @@ public class JobProgressEntities {
         this.subJobId = subJobId;
     }
 
+    public JobProgressEntities withSubJobsResult(List<SubJobResult> subJobsResult) {
+        this.subJobsResult = subJobsResult;
+        return this;
+    }
+
+    public JobProgressEntities addSubJobsResultItem(SubJobResult subJobsResultItem) {
+        if (this.subJobsResult == null) {
+            this.subJobsResult = new ArrayList<>();
+        }
+        this.subJobsResult.add(subJobsResultItem);
+        return this;
+    }
+
+    public JobProgressEntities withSubJobsResult(Consumer<List<SubJobResult>> subJobsResultSetter) {
+        if (this.subJobsResult == null) {
+            this.subJobsResult = new ArrayList<>();
+        }
+        subJobsResultSetter.accept(this.subJobsResult);
+        return this;
+    }
+
+    /**
+     * 子任务结果列表
+     * @return subJobsResult
+     */
+    public List<SubJobResult> getSubJobsResult() {
+        return subJobsResult;
+    }
+
+    public void setSubJobsResult(List<SubJobResult> subJobsResult) {
+        this.subJobsResult = subJobsResult;
+    }
+
+    public JobProgressEntities withSubJobsList(List<String> subJobsList) {
+        this.subJobsList = subJobsList;
+        return this;
+    }
+
+    public JobProgressEntities addSubJobsListItem(String subJobsListItem) {
+        if (this.subJobsList == null) {
+            this.subJobsList = new ArrayList<>();
+        }
+        this.subJobsList.add(subJobsListItem);
+        return this;
+    }
+
+    public JobProgressEntities withSubJobsList(Consumer<List<String>> subJobsListSetter) {
+        if (this.subJobsList == null) {
+            this.subJobsList = new ArrayList<>();
+        }
+        subJobsListSetter.accept(this.subJobsList);
+        return this;
+    }
+
+    /**
+     * 子任务ID列表
+     * @return subJobsList
+     */
+    public List<String> getSubJobsList() {
+        return subJobsList;
+    }
+
+    public void setSubJobsList(List<String> subJobsList) {
+        this.subJobsList = subJobsList;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -133,12 +212,14 @@ public class JobProgressEntities {
             && Objects.equals(this.currentTask, jobProgressEntities.currentTask)
             && Objects.equals(this.imageName, jobProgressEntities.imageName)
             && Objects.equals(this.processPercent, jobProgressEntities.processPercent)
-            && Objects.equals(this.subJobId, jobProgressEntities.subJobId);
+            && Objects.equals(this.subJobId, jobProgressEntities.subJobId)
+            && Objects.equals(this.subJobsResult, jobProgressEntities.subJobsResult)
+            && Objects.equals(this.subJobsList, jobProgressEntities.subJobsList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(imageId, currentTask, imageName, processPercent, subJobId);
+        return Objects.hash(imageId, currentTask, imageName, processPercent, subJobId, subJobsResult, subJobsList);
     }
 
     @Override
@@ -150,6 +231,8 @@ public class JobProgressEntities {
         sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
         sb.append("    processPercent: ").append(toIndentedString(processPercent)).append("\n");
         sb.append("    subJobId: ").append(toIndentedString(subJobId)).append("\n");
+        sb.append("    subJobsResult: ").append(toIndentedString(subJobsResult)).append("\n");
+        sb.append("    subJobsList: ").append(toIndentedString(subJobsList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

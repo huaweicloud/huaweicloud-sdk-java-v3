@@ -164,7 +164,7 @@ public class VirtualInterface {
     private String tenantId;
 
     /**
-     * 接口类型：private/public,
+     * 表示接口类型：private
      */
     public static final class TypeEnum {
 
@@ -495,7 +495,7 @@ public class VirtualInterface {
     }
 
     /**
-     * 接口类型：private/public,
+     * 表示接口类型：private
      * @return type
      */
     public TypeEnum getType() {

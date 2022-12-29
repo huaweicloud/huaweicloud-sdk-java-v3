@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * AliasTarget
+ * 别名记录。
  */
 public class AliasTarget {
 

@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.dns.v2.model;
+package com.huaweicloud.sdk.koomap.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,30 +6,30 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Metedata
+ * Request Object
  */
-public class Metedata {
+public class StopTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total_count")
+    @JsonProperty(value = "task_id")
 
-    private Integer totalCount;
+    private String taskId;
 
-    public Metedata withTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
+    public StopTaskRequest withTaskId(String taskId) {
+        this.taskId = taskId;
         return this;
     }
 
     /**
-     * 满足查询条件的资源总数，不受分页（即limit、offset参数）影响。
-     * @return totalCount
+     * 任务ID。
+     * @return taskId
      */
-    public Integer getTotalCount() {
-        return totalCount;
+    public String getTaskId() {
+        return taskId;
     }
 
-    public void setTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
     }
 
     @Override
@@ -40,20 +40,20 @@ public class Metedata {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Metedata metedata = (Metedata) o;
-        return Objects.equals(this.totalCount, metedata.totalCount);
+        StopTaskRequest stopTaskRequest = (StopTaskRequest) o;
+        return Objects.equals(this.taskId, stopTaskRequest.taskId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(totalCount);
+        return Objects.hash(taskId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Metedata {\n");
-        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("class StopTaskRequest {\n");
+        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

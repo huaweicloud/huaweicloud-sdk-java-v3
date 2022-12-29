@@ -133,7 +133,7 @@ public class HotkeysBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    private Integer size;
+    private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
@@ -213,7 +213,7 @@ public class HotkeysBody {
         this.db = db;
     }
 
-    public HotkeysBody withSize(Integer size) {
+    public HotkeysBody withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -222,11 +222,11 @@ public class HotkeysBody {
      * key的value大小。
      * @return size
      */
-    public Integer getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 

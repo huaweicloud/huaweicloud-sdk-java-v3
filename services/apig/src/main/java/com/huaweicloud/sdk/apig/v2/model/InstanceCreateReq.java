@@ -288,6 +288,11 @@ public class InstanceCreateReq {
 
     private List<TmsKeyValue> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpcep_service_name")
+
+    private String vpcepServiceName;
+
     public InstanceCreateReq withDescription(String description) {
         this.description = description;
         return this;
@@ -592,6 +597,23 @@ public class InstanceCreateReq {
         this.tags = tags;
     }
 
+    public InstanceCreateReq withVpcepServiceName(String vpcepServiceName) {
+        this.vpcepServiceName = vpcepServiceName;
+        return this;
+    }
+
+    /**
+     * 终端节点服务的名称。  长度不超过16个字符，允许输入大小写字母、数字、下划线、中划线。  如果您不填写该参数，系统生成的终端节点服务的名称为{region}.apig.{service_id}。 如果您填写该参数，系统生成的终端节点服务的名称为{region}.{vpcep_service_name}.{service_id}。 实例创建完成后，可以在实例管理->终端节点管理页面修改该名称。 
+     * @return vpcepServiceName
+     */
+    public String getVpcepServiceName() {
+        return vpcepServiceName;
+    }
+
+    public void setVpcepServiceName(String vpcepServiceName) {
+        this.vpcepServiceName = vpcepServiceName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -616,7 +638,8 @@ public class InstanceCreateReq {
             && Objects.equals(this.bandwidthSize, instanceCreateReq.bandwidthSize)
             && Objects.equals(this.ipv6Enable, instanceCreateReq.ipv6Enable)
             && Objects.equals(this.loadbalancerProvider, instanceCreateReq.loadbalancerProvider)
-            && Objects.equals(this.tags, instanceCreateReq.tags);
+            && Objects.equals(this.tags, instanceCreateReq.tags)
+            && Objects.equals(this.vpcepServiceName, instanceCreateReq.vpcepServiceName);
     }
 
     @Override
@@ -636,7 +659,8 @@ public class InstanceCreateReq {
             bandwidthSize,
             ipv6Enable,
             loadbalancerProvider,
-            tags);
+            tags,
+            vpcepServiceName);
     }
 
     @Override
@@ -659,6 +683,7 @@ public class InstanceCreateReq {
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    loadbalancerProvider: ").append(toIndentedString(loadbalancerProvider)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    vpcepServiceName: ").append(toIndentedString(vpcepServiceName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

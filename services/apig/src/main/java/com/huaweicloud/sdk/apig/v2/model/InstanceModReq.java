@@ -35,6 +35,11 @@ public class InstanceModReq {
 
     private String securityGroupId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpcep_service_name")
+
+    private String vpcepServiceName;
+
     public InstanceModReq withDescription(String description) {
         this.description = description;
         return this;
@@ -120,6 +125,23 @@ public class InstanceModReq {
         this.securityGroupId = securityGroupId;
     }
 
+    public InstanceModReq withVpcepServiceName(String vpcepServiceName) {
+        this.vpcepServiceName = vpcepServiceName;
+        return this;
+    }
+
+    /**
+     * 终端节点服务的名称。  长度不超过16个字符，允许输入大小写字母、数字、下划线、中划线。  如果您不填写该参数，系统生成的终端节点服务的名称为{region}.apig.{service_id}。 如果您填写该参数，系统生成的终端节点服务的名称为{region}.{vpcep_service_name}.{service_id}。 
+     * @return vpcepServiceName
+     */
+    public String getVpcepServiceName() {
+        return vpcepServiceName;
+    }
+
+    public void setVpcepServiceName(String vpcepServiceName) {
+        this.vpcepServiceName = vpcepServiceName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -133,12 +155,13 @@ public class InstanceModReq {
             && Objects.equals(this.maintainBegin, instanceModReq.maintainBegin)
             && Objects.equals(this.maintainEnd, instanceModReq.maintainEnd)
             && Objects.equals(this.instanceName, instanceModReq.instanceName)
-            && Objects.equals(this.securityGroupId, instanceModReq.securityGroupId);
+            && Objects.equals(this.securityGroupId, instanceModReq.securityGroupId)
+            && Objects.equals(this.vpcepServiceName, instanceModReq.vpcepServiceName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description, maintainBegin, maintainEnd, instanceName, securityGroupId);
+        return Objects.hash(description, maintainBegin, maintainEnd, instanceName, securityGroupId, vpcepServiceName);
     }
 
     @Override
@@ -150,6 +173,7 @@ public class InstanceModReq {
         sb.append("    maintainEnd: ").append(toIndentedString(maintainEnd)).append("\n");
         sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
+        sb.append("    vpcepServiceName: ").append(toIndentedString(vpcepServiceName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

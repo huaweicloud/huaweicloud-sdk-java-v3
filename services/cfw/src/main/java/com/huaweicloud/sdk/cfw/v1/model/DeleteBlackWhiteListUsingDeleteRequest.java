@@ -15,6 +15,16 @@ public class DeleteBlackWhiteListUsingDeleteRequest {
 
     private String listId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_instance_id")
+
+    private String fwInstanceId;
+
     public DeleteBlackWhiteListUsingDeleteRequest withListId(String listId) {
         this.listId = listId;
         return this;
@@ -32,6 +42,40 @@ public class DeleteBlackWhiteListUsingDeleteRequest {
         this.listId = listId;
     }
 
+    public DeleteBlackWhiteListUsingDeleteRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public DeleteBlackWhiteListUsingDeleteRequest withFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+        return this;
+    }
+
+    /**
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+     * @return fwInstanceId
+     */
+    public String getFwInstanceId() {
+        return fwInstanceId;
+    }
+
+    public void setFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -42,12 +86,14 @@ public class DeleteBlackWhiteListUsingDeleteRequest {
         }
         DeleteBlackWhiteListUsingDeleteRequest deleteBlackWhiteListUsingDeleteRequest =
             (DeleteBlackWhiteListUsingDeleteRequest) o;
-        return Objects.equals(this.listId, deleteBlackWhiteListUsingDeleteRequest.listId);
+        return Objects.equals(this.listId, deleteBlackWhiteListUsingDeleteRequest.listId)
+            && Objects.equals(this.enterpriseProjectId, deleteBlackWhiteListUsingDeleteRequest.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, deleteBlackWhiteListUsingDeleteRequest.fwInstanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(listId);
+        return Objects.hash(listId, enterpriseProjectId, fwInstanceId);
     }
 
     @Override
@@ -55,6 +101,8 @@ public class DeleteBlackWhiteListUsingDeleteRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteBlackWhiteListUsingDeleteRequest {\n");
         sb.append("    listId: ").append(toIndentedString(listId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -165,6 +165,11 @@ public class ClusterDetail {
 
     private FailedReason failedReasons;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elb")
+
+    private ElbResp elb;
+
     public ClusterDetail withId(String id) {
         this.id = id;
         return this;
@@ -818,6 +823,32 @@ public class ClusterDetail {
         this.failedReasons = failedReasons;
     }
 
+    public ClusterDetail withElb(ElbResp elb) {
+        this.elb = elb;
+        return this;
+    }
+
+    public ClusterDetail withElb(Consumer<ElbResp> elbSetter) {
+        if (this.elb == null) {
+            this.elb = new ElbResp();
+            elbSetter.accept(this.elb);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get elb
+     * @return elb
+     */
+    public ElbResp getElb() {
+        return elb;
+    }
+
+    public void setElb(ElbResp elb) {
+        this.elb = elb;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -851,7 +882,8 @@ public class ClusterDetail {
             && Objects.equals(this.privateIp, clusterDetail.privateIp)
             && Objects.equals(this.maintainWindow, clusterDetail.maintainWindow)
             && Objects.equals(this.resizeInfo, clusterDetail.resizeInfo)
-            && Objects.equals(this.failedReasons, clusterDetail.failedReasons);
+            && Objects.equals(this.failedReasons, clusterDetail.failedReasons)
+            && Objects.equals(this.elb, clusterDetail.elb);
     }
 
     @Override
@@ -885,7 +917,8 @@ public class ClusterDetail {
             privateIp,
             maintainWindow,
             resizeInfo,
-            failedReasons);
+            failedReasons,
+            elb);
     }
 
     @Override
@@ -922,6 +955,7 @@ public class ClusterDetail {
         sb.append("    maintainWindow: ").append(toIndentedString(maintainWindow)).append("\n");
         sb.append("    resizeInfo: ").append(toIndentedString(resizeInfo)).append("\n");
         sb.append("    failedReasons: ").append(toIndentedString(failedReasons)).append("\n");
+        sb.append("    elb: ").append(toIndentedString(elb)).append("\n");
         sb.append("}");
         return sb.toString();
     }

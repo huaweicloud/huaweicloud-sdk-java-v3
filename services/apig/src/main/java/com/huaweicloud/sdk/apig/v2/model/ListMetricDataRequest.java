@@ -26,21 +26,21 @@ public class ListMetricDataRequest {
     public static final class DimEnum {
 
         /**
-         * Enum INBOUND for value: "inbound"
+         * Enum INBOUND_EIP for value: "inbound_eip"
          */
-        public static final DimEnum INBOUND = new DimEnum("inbound");
+        public static final DimEnum INBOUND_EIP = new DimEnum("inbound_eip");
 
         /**
-         * Enum OUTBOUND for value: "outbound"
+         * Enum OUTBOUND_EIP for value: "outbound_eip"
          */
-        public static final DimEnum OUTBOUND = new DimEnum("outbound");
+        public static final DimEnum OUTBOUND_EIP = new DimEnum("outbound_eip");
 
         private static final Map<String, DimEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DimEnum> createStaticFields() {
             Map<String, DimEnum> map = new HashMap<>();
-            map.put("inbound", INBOUND);
-            map.put("outbound", OUTBOUND);
+            map.put("inbound_eip", INBOUND_EIP);
+            map.put("outbound_eip", OUTBOUND_EIP);
             return Collections.unmodifiableMap(map);
         }
 

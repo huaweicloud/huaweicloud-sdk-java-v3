@@ -15,6 +15,16 @@ public class ListAddressSetDetailUsingGetRequest {
 
     private String setId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_instance_id")
+
+    private String fwInstanceId;
+
     public ListAddressSetDetailUsingGetRequest withSetId(String setId) {
         this.setId = setId;
         return this;
@@ -32,6 +42,40 @@ public class ListAddressSetDetailUsingGetRequest {
         this.setId = setId;
     }
 
+    public ListAddressSetDetailUsingGetRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ListAddressSetDetailUsingGetRequest withFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+        return this;
+    }
+
+    /**
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+     * @return fwInstanceId
+     */
+    public String getFwInstanceId() {
+        return fwInstanceId;
+    }
+
+    public void setFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -42,12 +86,14 @@ public class ListAddressSetDetailUsingGetRequest {
         }
         ListAddressSetDetailUsingGetRequest listAddressSetDetailUsingGetRequest =
             (ListAddressSetDetailUsingGetRequest) o;
-        return Objects.equals(this.setId, listAddressSetDetailUsingGetRequest.setId);
+        return Objects.equals(this.setId, listAddressSetDetailUsingGetRequest.setId)
+            && Objects.equals(this.enterpriseProjectId, listAddressSetDetailUsingGetRequest.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, listAddressSetDetailUsingGetRequest.fwInstanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(setId);
+        return Objects.hash(setId, enterpriseProjectId, fwInstanceId);
     }
 
     @Override
@@ -55,6 +101,8 @@ public class ListAddressSetDetailUsingGetRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAddressSetDetailUsingGetRequest {\n");
         sb.append("    setId: ").append(toIndentedString(setId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

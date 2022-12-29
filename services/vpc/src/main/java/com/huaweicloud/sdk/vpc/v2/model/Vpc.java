@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -135,6 +136,21 @@ public class Vpc {
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tenant_id")
+
+    private String tenantId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private OffsetDateTime createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated_at")
+
+    private OffsetDateTime updatedAt;
 
     public Vpc withId(String id) {
         this.id = id;
@@ -271,6 +287,57 @@ public class Vpc {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public Vpc withTenantId(String tenantId) {
+        this.tenantId = tenantId;
+        return this;
+    }
+
+    /**
+     * 项目ID
+     * @return tenantId
+     */
+    public String getTenantId() {
+        return tenantId;
+    }
+
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
+
+    public Vpc withCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 功能说明：资源创建UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+     * @return createdAt
+     */
+    public OffsetDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Vpc withUpdatedAt(OffsetDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    /**
+     * 功能说明：资源更新UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+     * @return updatedAt
+     */
+    public OffsetDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(OffsetDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -283,12 +350,15 @@ public class Vpc {
         return Objects.equals(this.id, vpc.id) && Objects.equals(this.name, vpc.name)
             && Objects.equals(this.cidr, vpc.cidr) && Objects.equals(this.description, vpc.description)
             && Objects.equals(this.routes, vpc.routes) && Objects.equals(this.status, vpc.status)
-            && Objects.equals(this.enterpriseProjectId, vpc.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, vpc.enterpriseProjectId)
+            && Objects.equals(this.tenantId, vpc.tenantId) && Objects.equals(this.createdAt, vpc.createdAt)
+            && Objects.equals(this.updatedAt, vpc.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, cidr, description, routes, status, enterpriseProjectId);
+        return Objects
+            .hash(id, name, cidr, description, routes, status, enterpriseProjectId, tenantId, createdAt, updatedAt);
     }
 
     @Override
@@ -302,6 +372,9 @@ public class Vpc {
         sb.append("    routes: ").append(toIndentedString(routes)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

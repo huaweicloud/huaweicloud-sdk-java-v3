@@ -21,6 +21,11 @@ public class IpaddressesData {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip")
+
+    private String ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
@@ -72,6 +77,23 @@ public class IpaddressesData {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public IpaddressesData withIp(String ip) {
+        this.ip = ip;
+        return this;
+    }
+
+    /**
+     * ip地址信息。
+     * @return ip
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
     }
 
     public IpaddressesData withCreateTime(String createTime) {
@@ -152,6 +174,7 @@ public class IpaddressesData {
         }
         IpaddressesData ipaddressesData = (IpaddressesData) o;
         return Objects.equals(this.status, ipaddressesData.status) && Objects.equals(this.id, ipaddressesData.id)
+            && Objects.equals(this.ip, ipaddressesData.ip)
             && Objects.equals(this.createTime, ipaddressesData.createTime)
             && Objects.equals(this.updateTime, ipaddressesData.updateTime)
             && Objects.equals(this.subnetId, ipaddressesData.subnetId)
@@ -160,7 +183,7 @@ public class IpaddressesData {
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, id, createTime, updateTime, subnetId, errorInfo);
+        return Objects.hash(status, id, ip, createTime, updateTime, subnetId, errorInfo);
     }
 
     @Override
@@ -169,6 +192,7 @@ public class IpaddressesData {
         sb.append("class IpaddressesData {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");

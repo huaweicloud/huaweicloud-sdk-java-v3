@@ -27,7 +27,7 @@ public class CreateRecordSetWithBatchLinesRequest {
     }
 
     /**
-     * Get zoneId
+     * 所属Zone的ID。
      * @return zoneId
      */
     public String getZoneId() {

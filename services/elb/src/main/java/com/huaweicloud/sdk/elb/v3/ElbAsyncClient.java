@@ -341,7 +341,7 @@ public class ElbAsyncClient {
     /**
      * 创建云日志
      *
-     * 创建云日志
+     * 创建云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -355,7 +355,7 @@ public class ElbAsyncClient {
     /**
      * 创建云日志
      *
-     * 创建云日志
+     * 创建云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -429,6 +429,8 @@ public class ElbAsyncClient {
      *
      * 创建自定义安全策略。用于在创建HTTPS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
      * 
+     * [荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityPolicyRequest 请求对象
@@ -443,6 +445,8 @@ public class ElbAsyncClient {
      * 创建自定义安全策略
      *
      * 创建自定义安全策略。用于在创建HTTPS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
+     * 
+     * [荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -637,7 +641,7 @@ public class ElbAsyncClient {
     /**
      * 删除云日志
      *
-     * 删除云日志。
+     * 删除云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -651,7 +655,7 @@ public class ElbAsyncClient {
     /**
      * 删除云日志
      *
-     * 删除云日志。
+     * 删除云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -723,7 +727,7 @@ public class ElbAsyncClient {
     /**
      * 删除自定义安全策略
      *
-     * 删除自定义安全策略。
+     * 删除自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -738,7 +742,7 @@ public class ElbAsyncClient {
     /**
      * 删除自定义安全策略
      *
-     * 删除自定义安全策略。
+     * 删除自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1036,7 +1040,7 @@ public class ElbAsyncClient {
     /**
      * 查询云日志列表
      *
-     * 查询云日志列表
+     * 查询云日志列表。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1050,7 +1054,7 @@ public class ElbAsyncClient {
     /**
      * 查询云日志列表
      *
-     * 查询云日志列表
+     * 查询云日志列表。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1151,7 +1155,7 @@ public class ElbAsyncClient {
     /**
      * 查询自定义安全策略列表
      *
-     * 查询自定义安全策略列表。
+     * 查询自定义安全策略列表。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1166,7 +1170,7 @@ public class ElbAsyncClient {
     /**
      * 查询自定义安全策略列表
      *
-     * 查询自定义安全策略列表。
+     * 查询自定义安全策略列表。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1186,6 +1190,8 @@ public class ElbAsyncClient {
      * 
      * 系统安全策略为预置的所有租户通用的安全策略，租户不可新增或修改。
      * 
+     * [荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListSystemSecurityPoliciesRequest 请求对象
@@ -1202,6 +1208,8 @@ public class ElbAsyncClient {
      * 查询系统安全策略列表。
      * 
      * 系统安全策略为预置的所有租户通用的安全策略，租户不可新增或修改。
+     * 
+     * [荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1458,7 +1466,7 @@ public class ElbAsyncClient {
     /**
      * 查询云日志详情
      *
-     * 云日志详情。
+     * 云日志详情。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1472,7 +1480,7 @@ public class ElbAsyncClient {
     /**
      * 查询云日志详情
      *
-     * 云日志详情。
+     * 云日志详情。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1570,7 +1578,7 @@ public class ElbAsyncClient {
     /**
      * 查询自定义安全策略详情
      *
-     * 查询自定义安全策略详情。
+     * 查询自定义安全策略详情。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1584,7 +1592,7 @@ public class ElbAsyncClient {
     /**
      * 查询自定义安全策略详情
      *
-     * 查询自定义安全策略详情。
+     * 查询自定义安全策略详情。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1779,7 +1787,7 @@ public class ElbAsyncClient {
     /**
      * 更新云日志
      *
-     * 更新云日志
+     * 更新云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1793,7 +1801,7 @@ public class ElbAsyncClient {
     /**
      * 更新云日志
      *
-     * 更新云日志
+     * 更新云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1865,7 +1873,7 @@ public class ElbAsyncClient {
     /**
      * 更新自定义安全策略
      *
-     * 更新自定义安全策略。
+     * 更新自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1880,7 +1888,7 @@ public class ElbAsyncClient {
     /**
      * 更新自定义安全策略
      *
-     * 更新自定义安全策略。
+     * 更新自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1971,6 +1979,8 @@ public class ElbAsyncClient {
      * - 计算出来的预占IP数大于等于最终实际占用的IP数。
      * - 总占用IP数量，即整个LB所占用的IP数量。
      * 
+     * [不支持传入l7_flavor_id](tag:fcs)
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountPreoccupyIpNumRequest 请求对象
@@ -1998,6 +2008,8 @@ public class ElbAsyncClient {
      * - 计算出来的预占IP数大于等于最终实际占用的IP数。
      * - 总占用IP数量，即整个LB所占用的IP数量。
      * 
+     * [不支持传入l7_flavor_id](tag:fcs)
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CountPreoccupyIpNumRequest 请求对象
@@ -2016,6 +2028,8 @@ public class ElbAsyncClient {
      * 
      * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
+     * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateIpGroupRequest 请求对象
@@ -2032,6 +2046,8 @@ public class ElbAsyncClient {
      * 
      * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
+     * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateIpGroupRequest 请求对象
@@ -2045,7 +2061,7 @@ public class ElbAsyncClient {
     /**
      * 删除IP地址组
      *
-     * 删除ip地址组。
+     * 删除ip地址组。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2059,7 +2075,7 @@ public class ElbAsyncClient {
     /**
      * 删除IP地址组
      *
-     * 删除ip地址组。
+     * 删除ip地址组。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2074,7 +2090,7 @@ public class ElbAsyncClient {
     /**
      * 查询IP地址组列表
      *
-     * 查询IP地址组列表。
+     * 查询IP地址组列表。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2088,7 +2104,7 @@ public class ElbAsyncClient {
     /**
      * 查询IP地址组列表
      *
-     * 查询IP地址组列表。
+     * 查询IP地址组列表。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2103,7 +2119,7 @@ public class ElbAsyncClient {
     /**
      * 查询IP地址组详情
      *
-     * 获取IP地址组详情。
+     * 获取IP地址组详情。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2117,7 +2133,7 @@ public class ElbAsyncClient {
     /**
      * 查询IP地址组详情
      *
-     * 获取IP地址组详情。
+     * 获取IP地址组详情。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2136,6 +2152,8 @@ public class ElbAsyncClient {
      * 
      * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
+     * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIpGroupRequest 请求对象
@@ -2153,6 +2171,8 @@ public class ElbAsyncClient {
      * 
      * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
+     * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateIpGroupRequest 请求对象
@@ -2166,7 +2186,7 @@ public class ElbAsyncClient {
     /**
      * 更新IP地址组的IP列表项
      *
-     * 更新IP地址组的IP列表信息。
+     * 更新IP地址组的IP列表信息。[荷兰region不支持该API](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2180,7 +2200,7 @@ public class ElbAsyncClient {
     /**
      * 更新IP地址组的IP列表项
      *
-     * 更新IP地址组的IP列表信息。
+     * 更新IP地址组的IP列表信息。[荷兰region不支持该API](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

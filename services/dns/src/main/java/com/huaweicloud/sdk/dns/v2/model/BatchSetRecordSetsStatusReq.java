@@ -19,9 +19,9 @@ public class BatchSetRecordSetsStatusReq {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "zone_ids")
+    @JsonProperty(value = "recordset_ids")
 
-    private List<String> zoneIds = null;
+    private List<String> recordsetIds = null;
 
     public BatchSetRecordSetsStatusReq withStatus(String status) {
         this.status = status;
@@ -40,37 +40,37 @@ public class BatchSetRecordSetsStatusReq {
         this.status = status;
     }
 
-    public BatchSetRecordSetsStatusReq withZoneIds(List<String> zoneIds) {
-        this.zoneIds = zoneIds;
+    public BatchSetRecordSetsStatusReq withRecordsetIds(List<String> recordsetIds) {
+        this.recordsetIds = recordsetIds;
         return this;
     }
 
-    public BatchSetRecordSetsStatusReq addZoneIdsItem(String zoneIdsItem) {
-        if (this.zoneIds == null) {
-            this.zoneIds = new ArrayList<>();
+    public BatchSetRecordSetsStatusReq addRecordsetIdsItem(String recordsetIdsItem) {
+        if (this.recordsetIds == null) {
+            this.recordsetIds = new ArrayList<>();
         }
-        this.zoneIds.add(zoneIdsItem);
+        this.recordsetIds.add(recordsetIdsItem);
         return this;
     }
 
-    public BatchSetRecordSetsStatusReq withZoneIds(Consumer<List<String>> zoneIdsSetter) {
-        if (this.zoneIds == null) {
-            this.zoneIds = new ArrayList<>();
+    public BatchSetRecordSetsStatusReq withRecordsetIds(Consumer<List<String>> recordsetIdsSetter) {
+        if (this.recordsetIds == null) {
+            this.recordsetIds = new ArrayList<>();
         }
-        zoneIdsSetter.accept(this.zoneIds);
+        recordsetIdsSetter.accept(this.recordsetIds);
         return this;
     }
 
     /**
      * 待设置Record Set ID列表。 最多支持50个。
-     * @return zoneIds
+     * @return recordsetIds
      */
-    public List<String> getZoneIds() {
-        return zoneIds;
+    public List<String> getRecordsetIds() {
+        return recordsetIds;
     }
 
-    public void setZoneIds(List<String> zoneIds) {
-        this.zoneIds = zoneIds;
+    public void setRecordsetIds(List<String> recordsetIds) {
+        this.recordsetIds = recordsetIds;
     }
 
     @Override
@@ -83,12 +83,12 @@ public class BatchSetRecordSetsStatusReq {
         }
         BatchSetRecordSetsStatusReq batchSetRecordSetsStatusReq = (BatchSetRecordSetsStatusReq) o;
         return Objects.equals(this.status, batchSetRecordSetsStatusReq.status)
-            && Objects.equals(this.zoneIds, batchSetRecordSetsStatusReq.zoneIds);
+            && Objects.equals(this.recordsetIds, batchSetRecordSetsStatusReq.recordsetIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, zoneIds);
+        return Objects.hash(status, recordsetIds);
     }
 
     @Override
@@ -96,7 +96,7 @@ public class BatchSetRecordSetsStatusReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchSetRecordSetsStatusReq {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    zoneIds: ").append(toIndentedString(zoneIds)).append("\n");
+        sb.append("    recordsetIds: ").append(toIndentedString(recordsetIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

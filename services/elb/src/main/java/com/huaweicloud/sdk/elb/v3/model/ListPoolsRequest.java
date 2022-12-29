@@ -370,7 +370,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组的后端协议。  取值：TCP、UDP、HTTP、HTTPS和QUIC。  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。  [不支持QUIC协议。](tag:hws_eu,g42,hk_g42,hcso_dt)
+     * 后端云服务器组的后端协议。  取值：TCP、UDP、HTTP、HTTPS和QUIC。  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。  [不支持QUIC协议。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt)
      * @return protocol
      */
     public List<String> getProtocol() {
@@ -403,7 +403,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  支持多值查询，查询条件格式：*lb_algorithm=xxx&lb_algorithm=xxx*。  [不支持QUIC_CID算法。](tag:hws_eu,g42,hk_g42,hcso_dt)
+     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  支持多值查询，查询条件格式：*lb_algorithm=xxx&lb_algorithm=xxx*。  [不支持QUIC_CID算法。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt)
      * @return lbAlgorithm
      */
     public List<String> getLbAlgorithm() {
@@ -552,7 +552,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 是否开启删除保护，false不开启，true开启，不传查询全部。[不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)
+     * 是否开启删除保护，false不开启，true开启，不传查询全部。 [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
      * @return memberDeletionProtectionEnable
      */
     public Boolean getMemberDeletionProtectionEnable() {

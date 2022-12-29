@@ -88,7 +88,7 @@ public class ListRecordSetsByZoneRequest {
     }
 
     /**
-     * 分页查询起始的资源ID，为空时为查询第一页。
+     * 分页查询起始的资源ID，为空时为查询第一页。  默认值为空。
      * @return marker
      */
     public String getMarker() {

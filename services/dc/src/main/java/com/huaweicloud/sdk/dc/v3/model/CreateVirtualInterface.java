@@ -34,7 +34,7 @@ public class CreateVirtualInterface {
     private String directConnectId;
 
     /**
-     * 虚拟接口的类型,private/public
+     * 虚拟接口的类型,private
      */
     public static final class TypeEnum {
 
@@ -438,7 +438,7 @@ public class CreateVirtualInterface {
     }
 
     /**
-     * 虚拟接口的类型,private/public
+     * 虚拟接口的类型,private
      * @return type
      */
     public TypeEnum getType() {
@@ -510,7 +510,7 @@ public class CreateVirtualInterface {
     }
 
     /**
-     * 云侧网关IPv4接口地址
+     * 云侧网关IPv4接口地址,如果address_family是IPv4，是必选参数
      * @return localGatewayV4Ip
      */
     public String getLocalGatewayV4Ip() {
@@ -527,7 +527,7 @@ public class CreateVirtualInterface {
     }
 
     /**
-     * 客户侧网关IPv4接口地址
+     * 客户侧网关IPv4接口地址,如果address_family是IPv4，是必选参数
      * @return remoteGatewayV4Ip
      */
     public String getRemoteGatewayV4Ip() {
@@ -561,7 +561,7 @@ public class CreateVirtualInterface {
     }
 
     /**
-     * 云侧网关IPv6接口地址
+     * 云侧网关IPv6接口地址,如果address_family是IPv6，是必选参数
      * @return localGatewayV6Ip
      */
     public String getLocalGatewayV6Ip() {
@@ -578,7 +578,7 @@ public class CreateVirtualInterface {
     }
 
     /**
-     * 客户侧网关IPv6接口地址
+     * 客户侧网关IPv6接口地址,如果address_family是IPv6，是必选参数
      * @return remoteGatewayV6Ip
      */
     public String getRemoteGatewayV6Ip() {

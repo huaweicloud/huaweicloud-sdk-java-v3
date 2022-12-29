@@ -21,7 +21,7 @@ public class ChangeToPeriodReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extendParam")
 
-    private Object extendParam;
+    private CreatePrePaidPublicipExtendParamOption extendParam;
 
     public ChangeToPeriodReq withPublicipIds(List<String> publicipIds) {
         this.publicipIds = publicipIds;
@@ -56,20 +56,29 @@ public class ChangeToPeriodReq {
         this.publicipIds = publicipIds;
     }
 
-    public ChangeToPeriodReq withExtendParam(Object extendParam) {
+    public ChangeToPeriodReq withExtendParam(CreatePrePaidPublicipExtendParamOption extendParam) {
         this.extendParam = extendParam;
         return this;
     }
 
+    public ChangeToPeriodReq withExtendParam(Consumer<CreatePrePaidPublicipExtendParamOption> extendParamSetter) {
+        if (this.extendParam == null) {
+            this.extendParam = new CreatePrePaidPublicipExtendParamOption();
+            extendParamSetter.accept(this.extendParam);
+        }
+
+        return this;
+    }
+
     /**
-     * 按需转包周期参数
+     * Get extendParam
      * @return extendParam
      */
-    public Object getExtendParam() {
+    public CreatePrePaidPublicipExtendParamOption getExtendParam() {
         return extendParam;
     }
 
-    public void setExtendParam(Object extendParam) {
+    public void setExtendParam(CreatePrePaidPublicipExtendParamOption extendParam) {
         this.extendParam = extendParam;
     }
 

@@ -1009,6 +1009,11 @@ public class UpdateInstanceV2Response extends SdkResponse {
 
     private List<IpDetails> privateips = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_releasable")
+
+    private Boolean isReleasable;
+
     public UpdateInstanceV2Response withId(String id) {
         this.id = id;
         return this;
@@ -1720,6 +1725,23 @@ public class UpdateInstanceV2Response extends SdkResponse {
         this.privateips = privateips;
     }
 
+    public UpdateInstanceV2Response withIsReleasable(Boolean isReleasable) {
+        this.isReleasable = isReleasable;
+        return this;
+    }
+
+    /**
+     * 实例是否可释放 - true：可释放 - false：不可释放
+     * @return isReleasable
+     */
+    public Boolean getIsReleasable() {
+        return isReleasable;
+    }
+
+    public void setIsReleasable(Boolean isReleasable) {
+        this.isReleasable = isReleasable;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1765,7 +1787,8 @@ public class UpdateInstanceV2Response extends SdkResponse {
             && Objects.equals(this.endpointServices, updateInstanceV2Response.endpointServices)
             && Objects.equals(this.nodeIps, updateInstanceV2Response.nodeIps)
             && Objects.equals(this.publicips, updateInstanceV2Response.publicips)
-            && Objects.equals(this.privateips, updateInstanceV2Response.privateips);
+            && Objects.equals(this.privateips, updateInstanceV2Response.privateips)
+            && Objects.equals(this.isReleasable, updateInstanceV2Response.isReleasable);
     }
 
     @Override
@@ -1806,7 +1829,8 @@ public class UpdateInstanceV2Response extends SdkResponse {
             endpointServices,
             nodeIps,
             publicips,
-            privateips);
+            privateips,
+            isReleasable);
     }
 
     @Override
@@ -1850,6 +1874,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
         sb.append("    nodeIps: ").append(toIndentedString(nodeIps)).append("\n");
         sb.append("    publicips: ").append(toIndentedString(publicips)).append("\n");
         sb.append("    privateips: ").append(toIndentedString(privateips)).append("\n");
+        sb.append("    isReleasable: ").append(toIndentedString(isReleasable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

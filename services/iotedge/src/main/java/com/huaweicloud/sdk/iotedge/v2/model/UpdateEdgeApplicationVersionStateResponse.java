@@ -34,6 +34,13 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
     
@@ -211,6 +218,28 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
 
     public void setEdgeAppId(String edgeAppId) {
         this.edgeAppId = edgeAppId;
+    }
+
+    
+
+    public UpdateEdgeApplicationVersionStateResponse withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 应用名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     
@@ -481,6 +510,7 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         }
         UpdateEdgeApplicationVersionStateResponse updateEdgeApplicationVersionStateResponse = (UpdateEdgeApplicationVersionStateResponse) o;
         return Objects.equals(this.edgeAppId, updateEdgeApplicationVersionStateResponse.edgeAppId) &&
+            Objects.equals(this.name, updateEdgeApplicationVersionStateResponse.name) &&
             Objects.equals(this.version, updateEdgeApplicationVersionStateResponse.version) &&
             Objects.equals(this.sdkVersion, updateEdgeApplicationVersionStateResponse.sdkVersion) &&
             Objects.equals(this.description, updateEdgeApplicationVersionStateResponse.description) &&
@@ -495,13 +525,14 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(edgeAppId, version, sdkVersion, description, deployType, deployMultiInstance, createTime, updateTime, state, arch, publishTime, offShelfTime);
+        return Objects.hash(edgeAppId, name, version, sdkVersion, description, deployType, deployMultiInstance, createTime, updateTime, state, arch, publishTime, offShelfTime);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateEdgeApplicationVersionStateResponse {\n");
         sb.append("    edgeAppId: ").append(toIndentedString(edgeAppId)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    sdkVersion: ").append(toIndentedString(sdkVersion)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

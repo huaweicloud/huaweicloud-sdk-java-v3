@@ -51,7 +51,7 @@ public class SkillOrderInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    private Integer updateTime;
+    private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channel_limit")
@@ -91,7 +91,7 @@ public class SkillOrderInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
-    private Integer expireTime;
+    private Long expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "measure_unit")
@@ -146,7 +146,7 @@ public class SkillOrderInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_limit")
 
-    private String orderLimit;
+    private Integer orderLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
@@ -293,7 +293,7 @@ public class SkillOrderInfo {
         this.measureType = measureType;
     }
 
-    public SkillOrderInfo withUpdateTime(Integer updateTime) {
+    public SkillOrderInfo withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
@@ -302,11 +302,11 @@ public class SkillOrderInfo {
      * 更新时间
      * @return updateTime
      */
-    public Integer getUpdateTime() {
+    public Long getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Integer updateTime) {
+    public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
 
@@ -429,7 +429,7 @@ public class SkillOrderInfo {
         this.resourceType = resourceType;
     }
 
-    public SkillOrderInfo withExpireTime(Integer expireTime) {
+    public SkillOrderInfo withExpireTime(Long expireTime) {
         this.expireTime = expireTime;
         return this;
     }
@@ -438,11 +438,11 @@ public class SkillOrderInfo {
      * 到期时间
      * @return expireTime
      */
-    public Integer getExpireTime() {
+    public Long getExpireTime() {
         return expireTime;
     }
 
-    public void setExpireTime(Integer expireTime) {
+    public void setExpireTime(Long expireTime) {
         this.expireTime = expireTime;
     }
 
@@ -632,7 +632,7 @@ public class SkillOrderInfo {
         this.skillPlatform = skillPlatform;
     }
 
-    public SkillOrderInfo withOrderLimit(String orderLimit) {
+    public SkillOrderInfo withOrderLimit(Integer orderLimit) {
         this.orderLimit = orderLimit;
         return this;
     }
@@ -641,11 +641,11 @@ public class SkillOrderInfo {
      * 订单购买限制
      * @return orderLimit
      */
-    public String getOrderLimit() {
+    public Integer getOrderLimit() {
         return orderLimit;
     }
 
-    public void setOrderLimit(String orderLimit) {
+    public void setOrderLimit(Integer orderLimit) {
         this.orderLimit = orderLimit;
     }
 

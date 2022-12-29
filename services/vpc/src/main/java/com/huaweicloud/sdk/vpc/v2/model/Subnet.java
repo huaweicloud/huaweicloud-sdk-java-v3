@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -200,6 +201,21 @@ public class Subnet {
     @JsonProperty(value = "scope")
 
     private String scope;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tenant_id")
+
+    private String tenantId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private OffsetDateTime createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated_at")
+
+    private OffsetDateTime updatedAt;
 
     public Subnet withId(String id) {
         this.id = id;
@@ -573,6 +589,57 @@ public class Subnet {
         this.scope = scope;
     }
 
+    public Subnet withTenantId(String tenantId) {
+        this.tenantId = tenantId;
+        return this;
+    }
+
+    /**
+     * 项目ID
+     * @return tenantId
+     */
+    public String getTenantId() {
+        return tenantId;
+    }
+
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
+
+    public Subnet withCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 功能说明：资源创建UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+     * @return createdAt
+     */
+    public OffsetDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Subnet withUpdatedAt(OffsetDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    /**
+     * 功能说明：资源更新UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+     * @return updatedAt
+     */
+    public OffsetDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(OffsetDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -593,7 +660,9 @@ public class Subnet {
             && Objects.equals(this.neutronNetworkId, subnet.neutronNetworkId)
             && Objects.equals(this.neutronSubnetId, subnet.neutronSubnetId)
             && Objects.equals(this.neutronSubnetIdV6, subnet.neutronSubnetIdV6)
-            && Objects.equals(this.extraDhcpOpts, subnet.extraDhcpOpts) && Objects.equals(this.scope, subnet.scope);
+            && Objects.equals(this.extraDhcpOpts, subnet.extraDhcpOpts) && Objects.equals(this.scope, subnet.scope)
+            && Objects.equals(this.tenantId, subnet.tenantId) && Objects.equals(this.createdAt, subnet.createdAt)
+            && Objects.equals(this.updatedAt, subnet.updatedAt);
     }
 
     @Override
@@ -617,7 +686,10 @@ public class Subnet {
             neutronSubnetId,
             neutronSubnetIdV6,
             extraDhcpOpts,
-            scope);
+            scope,
+            tenantId,
+            createdAt,
+            updatedAt);
     }
 
     @Override
@@ -644,6 +716,9 @@ public class Subnet {
         sb.append("    neutronSubnetIdV6: ").append(toIndentedString(neutronSubnetIdV6)).append("\n");
         sb.append("    extraDhcpOpts: ").append(toIndentedString(extraDhcpOpts)).append("\n");
         sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
+        sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

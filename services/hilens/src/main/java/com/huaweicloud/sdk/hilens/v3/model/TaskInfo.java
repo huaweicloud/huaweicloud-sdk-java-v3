@@ -31,7 +31,7 @@ public class TaskInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "streams")
 
-    private TaskStream streams;
+    private List<TaskStream> streams = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ok_pod_number")
@@ -134,29 +134,36 @@ public class TaskInfo {
         this.description = description;
     }
 
-    public TaskInfo withStreams(TaskStream streams) {
+    public TaskInfo withStreams(List<TaskStream> streams) {
         this.streams = streams;
         return this;
     }
 
-    public TaskInfo withStreams(Consumer<TaskStream> streamsSetter) {
+    public TaskInfo addStreamsItem(TaskStream streamsItem) {
         if (this.streams == null) {
-            this.streams = new TaskStream();
-            streamsSetter.accept(this.streams);
+            this.streams = new ArrayList<>();
         }
+        this.streams.add(streamsItem);
+        return this;
+    }
 
+    public TaskInfo withStreams(Consumer<List<TaskStream>> streamsSetter) {
+        if (this.streams == null) {
+            this.streams = new ArrayList<>();
+        }
+        streamsSetter.accept(this.streams);
         return this;
     }
 
     /**
-     * Get streams
+     * 作业流详情
      * @return streams
      */
-    public TaskStream getStreams() {
+    public List<TaskStream> getStreams() {
         return streams;
     }
 
-    public void setStreams(TaskStream streams) {
+    public void setStreams(List<TaskStream> streams) {
         this.streams = streams;
     }
 

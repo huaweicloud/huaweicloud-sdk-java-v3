@@ -95,11 +95,6 @@ public class UpdateDeploymentUsingPatchResponse extends SdkResponse {
     private Integer nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "deployment_tags")
-
-    private String deploymentTags;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
     private List<NodeResult> result = null;
@@ -401,23 +396,6 @@ public class UpdateDeploymentUsingPatchResponse extends SdkResponse {
         this.nodeNum = nodeNum;
     }
 
-    public UpdateDeploymentUsingPatchResponse withDeploymentTags(String deploymentTags) {
-        this.deploymentTags = deploymentTags;
-        return this;
-    }
-
-    /**
-     * Get deploymentTags
-     * @return deploymentTags
-     */
-    public String getDeploymentTags() {
-        return deploymentTags;
-    }
-
-    public void setDeploymentTags(String deploymentTags) {
-        this.deploymentTags = deploymentTags;
-    }
-
     public UpdateDeploymentUsingPatchResponse withResult(List<NodeResult> result) {
         this.result = result;
         return this;
@@ -476,7 +454,6 @@ public class UpdateDeploymentUsingPatchResponse extends SdkResponse {
             && Objects.equals(this.id, updateDeploymentUsingPatchResponse.id)
             && Objects.equals(this.state, updateDeploymentUsingPatchResponse.state)
             && Objects.equals(this.nodeNum, updateDeploymentUsingPatchResponse.nodeNum)
-            && Objects.equals(this.deploymentTags, updateDeploymentUsingPatchResponse.deploymentTags)
             && Objects.equals(this.result, updateDeploymentUsingPatchResponse.result);
     }
 
@@ -498,7 +475,6 @@ public class UpdateDeploymentUsingPatchResponse extends SdkResponse {
             id,
             state,
             nodeNum,
-            deploymentTags,
             result);
     }
 
@@ -522,7 +498,6 @@ public class UpdateDeploymentUsingPatchResponse extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    nodeNum: ").append(toIndentedString(nodeNum)).append("\n");
-        sb.append("    deploymentTags: ").append(toIndentedString(deploymentTags)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("}");
         return sb.toString();

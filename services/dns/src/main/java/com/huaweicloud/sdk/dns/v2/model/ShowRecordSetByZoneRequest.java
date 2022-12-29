@@ -81,7 +81,7 @@ public class ShowRecordSetByZoneRequest {
     }
 
     /**
-     * Get zoneId
+     * 所属zone的ID。
      * @return zoneId
      */
     public String getZoneId() {

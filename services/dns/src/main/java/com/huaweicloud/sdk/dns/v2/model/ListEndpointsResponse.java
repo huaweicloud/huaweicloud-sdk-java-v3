@@ -22,7 +22,7 @@ public class ListEndpointsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private Metedata metadata;
+    private Metadata metadata;
 
     public ListEndpointsResponse withEndpoints(List<EndpointResp> endpoints) {
         this.endpoints = endpoints;
@@ -46,7 +46,7 @@ public class ListEndpointsResponse extends SdkResponse {
     }
 
     /**
-     * 查询公网Zone的列表响应。
+     * 查询终端节点响应列表。
      * @return endpoints
      */
     public List<EndpointResp> getEndpoints() {
@@ -57,14 +57,14 @@ public class ListEndpointsResponse extends SdkResponse {
         this.endpoints = endpoints;
     }
 
-    public ListEndpointsResponse withMetadata(Metedata metadata) {
+    public ListEndpointsResponse withMetadata(Metadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public ListEndpointsResponse withMetadata(Consumer<Metedata> metadataSetter) {
+    public ListEndpointsResponse withMetadata(Consumer<Metadata> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new Metedata();
+            this.metadata = new Metadata();
             metadataSetter.accept(this.metadata);
         }
 
@@ -75,11 +75,11 @@ public class ListEndpointsResponse extends SdkResponse {
      * Get metadata
      * @return metadata
      */
-    public Metedata getMetadata() {
+    public Metadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Metedata metadata) {
+    public void setMetadata(Metadata metadata) {
         this.metadata = metadata;
     }
 

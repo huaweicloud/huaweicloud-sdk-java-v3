@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 需要解关联的Router(VPC)。
+ * DisassociaterouterReq
  */
 public class DisassociaterouterReq {
 

@@ -27,7 +27,7 @@ public class BatchDeleteRecordSetWithLineResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private Metedata metadata;
+    private Metadata metadata;
 
     public BatchDeleteRecordSetWithLineResponse withLinks(PageLink links) {
         this.links = links;
@@ -78,7 +78,7 @@ public class BatchDeleteRecordSetWithLineResponse extends SdkResponse {
     }
 
     /**
-     * Get recordsets
+     * recordset的列表信息。
      * @return recordsets
      */
     public List<QueryRecordSetWithLineResp> getRecordsets() {
@@ -89,14 +89,14 @@ public class BatchDeleteRecordSetWithLineResponse extends SdkResponse {
         this.recordsets = recordsets;
     }
 
-    public BatchDeleteRecordSetWithLineResponse withMetadata(Metedata metadata) {
+    public BatchDeleteRecordSetWithLineResponse withMetadata(Metadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public BatchDeleteRecordSetWithLineResponse withMetadata(Consumer<Metedata> metadataSetter) {
+    public BatchDeleteRecordSetWithLineResponse withMetadata(Consumer<Metadata> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new Metedata();
+            this.metadata = new Metadata();
             metadataSetter.accept(this.metadata);
         }
 
@@ -107,11 +107,11 @@ public class BatchDeleteRecordSetWithLineResponse extends SdkResponse {
      * Get metadata
      * @return metadata
      */
-    public Metedata getMetadata() {
+    public Metadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Metedata metadata) {
+    public void setMetadata(Metadata metadata) {
         this.metadata = metadata;
     }
 

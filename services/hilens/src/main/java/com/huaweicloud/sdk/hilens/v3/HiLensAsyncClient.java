@@ -20,6 +20,36 @@ public class HiLensAsyncClient {
     }
 
     /**
+     * 批量部署
+     *
+     * 通过指定设备id列表或者设备标签将应用部署下发到多个设备上。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddDeploymentNodesRequest 请求对象
+     * @return CompletableFuture<AddDeploymentNodesResponse>
+     */
+    public CompletableFuture<AddDeploymentNodesResponse> addDeploymentNodesAsync(AddDeploymentNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, HiLensMeta.addDeploymentNodes);
+    }
+
+    /**
+     * 批量部署
+     *
+     * 通过指定设备id列表或者设备标签将应用部署下发到多个设备上。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddDeploymentNodesRequest 请求对象
+     * @return AsyncInvoker<AddDeploymentNodesRequest, AddDeploymentNodesResponse>
+     */
+    public AsyncInvoker<AddDeploymentNodesRequest, AddDeploymentNodesResponse> addDeploymentNodesAsyncInvoker(
+        AddDeploymentNodesRequest request) {
+        return new AsyncInvoker<AddDeploymentNodesRequest, AddDeploymentNodesResponse>(request,
+            HiLensMeta.addDeploymentNodes, hcClient);
+    }
+
+    /**
      * 批量添加节点标签
      *
      * 专业版HiLens控制台标签管理，用户选择多个设备，批量添加多个标签。
@@ -76,6 +106,36 @@ public class HiLensAsyncClient {
     public AsyncInvoker<CreateConfigMapRequest, CreateConfigMapResponse> createConfigMapAsyncInvoker(
         CreateConfigMapRequest request) {
         return new AsyncInvoker<CreateConfigMapRequest, CreateConfigMapResponse>(request, HiLensMeta.createConfigMap,
+            hcClient);
+    }
+
+    /**
+     * 创建应用部署
+     *
+     * 创建应用部署。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDeploymentRequest 请求对象
+     * @return CompletableFuture<CreateDeploymentResponse>
+     */
+    public CompletableFuture<CreateDeploymentResponse> createDeploymentAsync(CreateDeploymentRequest request) {
+        return hcClient.asyncInvokeHttp(request, HiLensMeta.createDeployment);
+    }
+
+    /**
+     * 创建应用部署
+     *
+     * 创建应用部署。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDeploymentRequest 请求对象
+     * @return AsyncInvoker<CreateDeploymentRequest, CreateDeploymentResponse>
+     */
+    public AsyncInvoker<CreateDeploymentRequest, CreateDeploymentResponse> createDeploymentAsyncInvoker(
+        CreateDeploymentRequest request) {
+        return new AsyncInvoker<CreateDeploymentRequest, CreateDeploymentResponse>(request, HiLensMeta.createDeployment,
             hcClient);
     }
 
@@ -343,6 +403,34 @@ public class HiLensAsyncClient {
     }
 
     /**
+     * 删除应用实例
+     *
+     * 删除指定实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePodRequest 请求对象
+     * @return CompletableFuture<DeletePodResponse>
+     */
+    public CompletableFuture<DeletePodResponse> deletePodAsync(DeletePodRequest request) {
+        return hcClient.asyncInvokeHttp(request, HiLensMeta.deletePod);
+    }
+
+    /**
+     * 删除应用实例
+     *
+     * 删除指定实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePodRequest 请求对象
+     * @return AsyncInvoker<DeletePodRequest, DeletePodResponse>
+     */
+    public AsyncInvoker<DeletePodRequest, DeletePodResponse> deletePodAsyncInvoker(DeletePodRequest request) {
+        return new AsyncInvoker<DeletePodRequest, DeletePodResponse>(request, HiLensMeta.deletePod, hcClient);
+    }
+
+    /**
      * 删除资源标签
      *
      * 专业版HiLens控制台标签管理，删除对应资源的标签
@@ -515,6 +603,66 @@ public class HiLensAsyncClient {
         ListConfigMapsRequest request) {
         return new AsyncInvoker<ListConfigMapsRequest, ListConfigMapsResponse>(request, HiLensMeta.listConfigMaps,
             hcClient);
+    }
+
+    /**
+     * 查询固件列表
+     *
+     * 查看指定固件历史版本信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFirmwaresRequest 请求对象
+     * @return CompletableFuture<ListFirmwaresResponse>
+     */
+    public CompletableFuture<ListFirmwaresResponse> listFirmwaresAsync(ListFirmwaresRequest request) {
+        return hcClient.asyncInvokeHttp(request, HiLensMeta.listFirmwares);
+    }
+
+    /**
+     * 查询固件列表
+     *
+     * 查看指定固件历史版本信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFirmwaresRequest 请求对象
+     * @return AsyncInvoker<ListFirmwaresRequest, ListFirmwaresResponse>
+     */
+    public AsyncInvoker<ListFirmwaresRequest, ListFirmwaresResponse> listFirmwaresAsyncInvoker(
+        ListFirmwaresRequest request) {
+        return new AsyncInvoker<ListFirmwaresRequest, ListFirmwaresResponse>(request, HiLensMeta.listFirmwares,
+            hcClient);
+    }
+
+    /**
+     * 获取运行服务费订单列表
+     *
+     * 获取平台管理费列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPlatformManagerRequest 请求对象
+     * @return CompletableFuture<ListPlatformManagerResponse>
+     */
+    public CompletableFuture<ListPlatformManagerResponse> listPlatformManagerAsync(ListPlatformManagerRequest request) {
+        return hcClient.asyncInvokeHttp(request, HiLensMeta.listPlatformManager);
+    }
+
+    /**
+     * 获取运行服务费订单列表
+     *
+     * 获取平台管理费列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPlatformManagerRequest 请求对象
+     * @return AsyncInvoker<ListPlatformManagerRequest, ListPlatformManagerResponse>
+     */
+    public AsyncInvoker<ListPlatformManagerRequest, ListPlatformManagerResponse> listPlatformManagerAsyncInvoker(
+        ListPlatformManagerRequest request) {
+        return new AsyncInvoker<ListPlatformManagerRequest, ListPlatformManagerResponse>(request,
+            HiLensMeta.listPlatformManager, hcClient);
     }
 
     /**
@@ -694,6 +842,36 @@ public class HiLensAsyncClient {
     }
 
     /**
+     * 查询应用部署详情
+     *
+     * 获取部署的详情信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDeploymentRequest 请求对象
+     * @return CompletableFuture<ShowDeploymentResponse>
+     */
+    public CompletableFuture<ShowDeploymentResponse> showDeploymentAsync(ShowDeploymentRequest request) {
+        return hcClient.asyncInvokeHttp(request, HiLensMeta.showDeployment);
+    }
+
+    /**
+     * 查询应用部署详情
+     *
+     * 获取部署的详情信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDeploymentRequest 请求对象
+     * @return AsyncInvoker<ShowDeploymentRequest, ShowDeploymentResponse>
+     */
+    public AsyncInvoker<ShowDeploymentRequest, ShowDeploymentResponse> showDeploymentAsyncInvoker(
+        ShowDeploymentRequest request) {
+        return new AsyncInvoker<ShowDeploymentRequest, ShowDeploymentResponse>(request, HiLensMeta.showDeployment,
+            hcClient);
+    }
+
+    /**
      * 查询应用实例列表
      *
      * 获取用户实例列表。
@@ -721,6 +899,36 @@ public class HiLensAsyncClient {
         ShowDeploymentPodsRequest request) {
         return new AsyncInvoker<ShowDeploymentPodsRequest, ShowDeploymentPodsResponse>(request,
             HiLensMeta.showDeploymentPods, hcClient);
+    }
+
+    /**
+     * 查询应用部署列表
+     *
+     * 获取部署列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDeploymentsRequest 请求对象
+     * @return CompletableFuture<ShowDeploymentsResponse>
+     */
+    public CompletableFuture<ShowDeploymentsResponse> showDeploymentsAsync(ShowDeploymentsRequest request) {
+        return hcClient.asyncInvokeHttp(request, HiLensMeta.showDeployments);
+    }
+
+    /**
+     * 查询应用部署列表
+     *
+     * 获取部署列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDeploymentsRequest 请求对象
+     * @return AsyncInvoker<ShowDeploymentsRequest, ShowDeploymentsResponse>
+     */
+    public AsyncInvoker<ShowDeploymentsRequest, ShowDeploymentsResponse> showDeploymentsAsyncInvoker(
+        ShowDeploymentsRequest request) {
+        return new AsyncInvoker<ShowDeploymentsRequest, ShowDeploymentsResponse>(request, HiLensMeta.showDeployments,
+            hcClient);
     }
 
     /**
@@ -1077,6 +1285,68 @@ public class HiLensAsyncClient {
     }
 
     /**
+     * 暂停、继续部署负载
+     *
+     * 启动/暂停应用部署。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartAndStopDeploymentRequest 请求对象
+     * @return CompletableFuture<StartAndStopDeploymentResponse>
+     */
+    public CompletableFuture<StartAndStopDeploymentResponse> startAndStopDeploymentAsync(
+        StartAndStopDeploymentRequest request) {
+        return hcClient.asyncInvokeHttp(request, HiLensMeta.startAndStopDeployment);
+    }
+
+    /**
+     * 暂停、继续部署负载
+     *
+     * 启动/暂停应用部署。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartAndStopDeploymentRequest 请求对象
+     * @return AsyncInvoker<StartAndStopDeploymentRequest, StartAndStopDeploymentResponse>
+     */
+    public AsyncInvoker<StartAndStopDeploymentRequest, StartAndStopDeploymentResponse> startAndStopDeploymentAsyncInvoker(
+        StartAndStopDeploymentRequest request) {
+        return new AsyncInvoker<StartAndStopDeploymentRequest, StartAndStopDeploymentResponse>(request,
+            HiLensMeta.startAndStopDeployment, hcClient);
+    }
+
+    /**
+     * 启动/停止部署下的指定实例
+     *
+     * 启动/停止部署下的指定实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartAndStopDeploymentPodRequest 请求对象
+     * @return CompletableFuture<StartAndStopDeploymentPodResponse>
+     */
+    public CompletableFuture<StartAndStopDeploymentPodResponse> startAndStopDeploymentPodAsync(
+        StartAndStopDeploymentPodRequest request) {
+        return hcClient.asyncInvokeHttp(request, HiLensMeta.startAndStopDeploymentPod);
+    }
+
+    /**
+     * 启动/停止部署下的指定实例
+     *
+     * 启动/停止部署下的指定实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartAndStopDeploymentPodRequest 请求对象
+     * @return AsyncInvoker<StartAndStopDeploymentPodRequest, StartAndStopDeploymentPodResponse>
+     */
+    public AsyncInvoker<StartAndStopDeploymentPodRequest, StartAndStopDeploymentPodResponse> startAndStopDeploymentPodAsyncInvoker(
+        StartAndStopDeploymentPodRequest request) {
+        return new AsyncInvoker<StartAndStopDeploymentPodRequest, StartAndStopDeploymentPodResponse>(request,
+            HiLensMeta.startAndStopDeploymentPod, hcClient);
+    }
+
+    /**
      * 启停设备
      *
      * 该API用于启用停用设备。被停用的设备将无法连接到云端服务，重新启用设备恢复连接。
@@ -1163,6 +1433,36 @@ public class HiLensAsyncClient {
     public AsyncInvoker<UpdateConfigMapRequest, UpdateConfigMapResponse> updateConfigMapAsyncInvoker(
         UpdateConfigMapRequest request) {
         return new AsyncInvoker<UpdateConfigMapRequest, UpdateConfigMapResponse>(request, HiLensMeta.updateConfigMap,
+            hcClient);
+    }
+
+    /**
+     * 更新应用部署
+     *
+     * 更新应用部署相关信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDeploymentRequest 请求对象
+     * @return CompletableFuture<UpdateDeploymentResponse>
+     */
+    public CompletableFuture<UpdateDeploymentResponse> updateDeploymentAsync(UpdateDeploymentRequest request) {
+        return hcClient.asyncInvokeHttp(request, HiLensMeta.updateDeployment);
+    }
+
+    /**
+     * 更新应用部署
+     *
+     * 更新应用部署相关信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDeploymentRequest 请求对象
+     * @return AsyncInvoker<UpdateDeploymentRequest, UpdateDeploymentResponse>
+     */
+    public AsyncInvoker<UpdateDeploymentRequest, UpdateDeploymentResponse> updateDeploymentAsyncInvoker(
+        UpdateDeploymentRequest request) {
+        return new AsyncInvoker<UpdateDeploymentRequest, UpdateDeploymentResponse>(request, HiLensMeta.updateDeployment,
             hcClient);
     }
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Ipaddresses
@@ -11,47 +12,34 @@ import java.util.Objects;
 public class Ipaddresses {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "subnet_id")
+    @JsonProperty(value = "ipaddress")
 
-    private String subnetId;
+    private IpaddressData ipaddress;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ip")
+    public Ipaddresses withIpaddress(IpaddressData ipaddress) {
+        this.ipaddress = ipaddress;
+        return this;
+    }
 
-    private String ip;
+    public Ipaddresses withIpaddress(Consumer<IpaddressData> ipaddressSetter) {
+        if (this.ipaddress == null) {
+            this.ipaddress = new IpaddressData();
+            ipaddressSetter.accept(this.ipaddress);
+        }
 
-    public Ipaddresses withSubnetId(String subnetId) {
-        this.subnetId = subnetId;
         return this;
     }
 
     /**
-     * 子网的网络id。
-     * @return subnetId
+     * Get ipaddress
+     * @return ipaddress
      */
-    public String getSubnetId() {
-        return subnetId;
+    public IpaddressData getIpaddress() {
+        return ipaddress;
     }
 
-    public void setSubnetId(String subnetId) {
-        this.subnetId = subnetId;
-    }
-
-    public Ipaddresses withIp(String ip) {
-        this.ip = ip;
-        return this;
-    }
-
-    /**
-     * 自定义ip地址，需在子网的网段内部。
-     * @return ip
-     */
-    public String getIp() {
-        return ip;
-    }
-
-    public void setIp(String ip) {
-        this.ip = ip;
+    public void setIpaddress(IpaddressData ipaddress) {
+        this.ipaddress = ipaddress;
     }
 
     @Override
@@ -63,20 +51,19 @@ public class Ipaddresses {
             return false;
         }
         Ipaddresses ipaddresses = (Ipaddresses) o;
-        return Objects.equals(this.subnetId, ipaddresses.subnetId) && Objects.equals(this.ip, ipaddresses.ip);
+        return Objects.equals(this.ipaddress, ipaddresses.ipaddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subnetId, ip);
+        return Objects.hash(ipaddress);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Ipaddresses {\n");
-        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
-        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    ipaddress: ").append(toIndentedString(ipaddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

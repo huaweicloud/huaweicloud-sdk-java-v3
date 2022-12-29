@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.hilens.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -69,7 +71,7 @@ public class Pod {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "apps")
 
-    private AppDef apps;
+    private List<AppDef> apps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_id")
@@ -286,29 +288,36 @@ public class Pod {
         this.affinity = affinity;
     }
 
-    public Pod withApps(AppDef apps) {
+    public Pod withApps(List<AppDef> apps) {
         this.apps = apps;
         return this;
     }
 
-    public Pod withApps(Consumer<AppDef> appsSetter) {
+    public Pod addAppsItem(AppDef appsItem) {
         if (this.apps == null) {
-            this.apps = new AppDef();
-            appsSetter.accept(this.apps);
+            this.apps = new ArrayList<>();
         }
+        this.apps.add(appsItem);
+        return this;
+    }
 
+    public Pod withApps(Consumer<List<AppDef>> appsSetter) {
+        if (this.apps == null) {
+            this.apps = new ArrayList<>();
+        }
+        appsSetter.accept(this.apps);
         return this;
     }
 
     /**
-     * Get apps
+     * 应用部署信息
      * @return apps
      */
-    public AppDef getApps() {
+    public List<AppDef> getApps() {
         return apps;
     }
 
-    public void setApps(AppDef apps) {
+    public void setApps(List<AppDef> apps) {
         this.apps = apps;
     }
 

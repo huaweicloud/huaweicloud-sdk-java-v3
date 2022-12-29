@@ -65,6 +65,16 @@ public class Quota {
 
     private Integer securityPolicy;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipgroup_bindings")
+
+    private String ipgroupBindings;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipgroup_max_length")
+
+    private String ipgroupMaxLength;
+
     public Quota withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -252,6 +262,40 @@ public class Quota {
         this.securityPolicy = securityPolicy;
     }
 
+    public Quota withIpgroupBindings(String ipgroupBindings) {
+        this.ipgroupBindings = ipgroupBindings;
+        return this;
+    }
+
+    /**
+     * ipgroup最大可关联的监听器数量。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+     * @return ipgroupBindings
+     */
+    public String getIpgroupBindings() {
+        return ipgroupBindings;
+    }
+
+    public void setIpgroupBindings(String ipgroupBindings) {
+        this.ipgroupBindings = ipgroupBindings;
+    }
+
+    public Quota withIpgroupMaxLength(String ipgroupMaxLength) {
+        this.ipgroupMaxLength = ipgroupMaxLength;
+        return this;
+    }
+
+    /**
+     * 单个ipgroup最多可设置的ip地址数量。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+     * @return ipgroupMaxLength
+     */
+    public String getIpgroupMaxLength() {
+        return ipgroupMaxLength;
+    }
+
+    public void setIpgroupMaxLength(String ipgroupMaxLength) {
+        this.ipgroupMaxLength = ipgroupMaxLength;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -266,7 +310,9 @@ public class Quota {
             && Objects.equals(this.l7policy, quota.l7policy) && Objects.equals(this.pool, quota.pool)
             && Objects.equals(this.healthmonitor, quota.healthmonitor) && Objects.equals(this.member, quota.member)
             && Objects.equals(this.membersPerPool, quota.membersPerPool) && Objects.equals(this.ipgroup, quota.ipgroup)
-            && Objects.equals(this.securityPolicy, quota.securityPolicy);
+            && Objects.equals(this.securityPolicy, quota.securityPolicy)
+            && Objects.equals(this.ipgroupBindings, quota.ipgroupBindings)
+            && Objects.equals(this.ipgroupMaxLength, quota.ipgroupMaxLength);
     }
 
     @Override
@@ -281,7 +327,9 @@ public class Quota {
             member,
             membersPerPool,
             ipgroup,
-            securityPolicy);
+            securityPolicy,
+            ipgroupBindings,
+            ipgroupMaxLength);
     }
 
     @Override
@@ -299,6 +347,8 @@ public class Quota {
         sb.append("    membersPerPool: ").append(toIndentedString(membersPerPool)).append("\n");
         sb.append("    ipgroup: ").append(toIndentedString(ipgroup)).append("\n");
         sb.append("    securityPolicy: ").append(toIndentedString(securityPolicy)).append("\n");
+        sb.append("    ipgroupBindings: ").append(toIndentedString(ipgroupBindings)).append("\n");
+        sb.append("    ipgroupMaxLength: ").append(toIndentedString(ipgroupMaxLength)).append("\n");
         sb.append("}");
         return sb.toString();
     }

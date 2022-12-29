@@ -397,7 +397,7 @@ public class VpcHealthConfigBase {
     }
 
     /**
-     * 异常阙值。判定VPC通道中主机异常的依据为：连续检查x失败，x为您设置的异常阈值。
+     * 异常阈值。判定VPC通道中主机异常的依据为：连续检查x失败，x为您设置的异常阈值。
      * minimum: 2
      * maximum: 10
      * @return thresholdAbnormal

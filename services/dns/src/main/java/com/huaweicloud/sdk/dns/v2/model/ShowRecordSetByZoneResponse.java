@@ -27,7 +27,7 @@ public class ShowRecordSetByZoneResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private Metedata metadata;
+    private Metadata metadata;
 
     public ShowRecordSetByZoneResponse withLinks(PageLink links) {
         this.links = links;
@@ -77,7 +77,7 @@ public class ShowRecordSetByZoneResponse extends SdkResponse {
     }
 
     /**
-     * Get recordsets
+     * recordset列表。
      * @return recordsets
      */
     public List<ShowRecordSetByZoneResp> getRecordsets() {
@@ -88,14 +88,14 @@ public class ShowRecordSetByZoneResponse extends SdkResponse {
         this.recordsets = recordsets;
     }
 
-    public ShowRecordSetByZoneResponse withMetadata(Metedata metadata) {
+    public ShowRecordSetByZoneResponse withMetadata(Metadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public ShowRecordSetByZoneResponse withMetadata(Consumer<Metedata> metadataSetter) {
+    public ShowRecordSetByZoneResponse withMetadata(Consumer<Metadata> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new Metedata();
+            this.metadata = new Metadata();
             metadataSetter.accept(this.metadata);
         }
 
@@ -106,11 +106,11 @@ public class ShowRecordSetByZoneResponse extends SdkResponse {
      * Get metadata
      * @return metadata
      */
-    public Metedata getMetadata() {
+    public Metadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Metedata metadata) {
+    public void setMetadata(Metadata metadata) {
         this.metadata = metadata;
     }
 

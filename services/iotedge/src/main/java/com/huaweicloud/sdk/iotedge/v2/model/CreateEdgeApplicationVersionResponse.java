@@ -258,6 +258,20 @@ public class CreateEdgeApplicationVersionResponse extends SdkResponse {
     
     private String offShelfTime;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="supplier")
+    
+    
+    private String supplier;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tpl_id")
+    
+    
+    private String tplId;
+
     public CreateEdgeApplicationVersionResponse withEdgeAppId(String edgeAppId) {
         this.edgeAppId = edgeAppId;
         return this;
@@ -825,6 +839,50 @@ public class CreateEdgeApplicationVersionResponse extends SdkResponse {
 
     
 
+    public CreateEdgeApplicationVersionResponse withSupplier(String supplier) {
+        this.supplier = supplier;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 驱动厂商
+     * @return supplier
+     */
+    public String getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(String supplier) {
+        this.supplier = supplier;
+    }
+
+    
+
+    public CreateEdgeApplicationVersionResponse withTplId(String tplId) {
+        this.tplId = tplId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 模板id
+     * @return tplId
+     */
+    public String getTplId() {
+        return tplId;
+    }
+
+    public void setTplId(String tplId) {
+        this.tplId = tplId;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -854,11 +912,13 @@ public class CreateEdgeApplicationVersionResponse extends SdkResponse {
             Objects.equals(this.inputs, createEdgeApplicationVersionResponse.inputs) &&
             Objects.equals(this.services, createEdgeApplicationVersionResponse.services) &&
             Objects.equals(this.publishTime, createEdgeApplicationVersionResponse.publishTime) &&
-            Objects.equals(this.offShelfTime, createEdgeApplicationVersionResponse.offShelfTime);
+            Objects.equals(this.offShelfTime, createEdgeApplicationVersionResponse.offShelfTime) &&
+            Objects.equals(this.supplier, createEdgeApplicationVersionResponse.supplier) &&
+            Objects.equals(this.tplId, createEdgeApplicationVersionResponse.tplId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(edgeAppId, name, deployType, deployMultiInstance, version, sdkVersion, description, createTime, updateTime, state, livenessProbe, readinessProbe, arch, command, args, containerSettings, outputs, inputs, services, publishTime, offShelfTime);
+        return Objects.hash(edgeAppId, name, deployType, deployMultiInstance, version, sdkVersion, description, createTime, updateTime, state, livenessProbe, readinessProbe, arch, command, args, containerSettings, outputs, inputs, services, publishTime, offShelfTime, supplier, tplId);
     }
     @Override
     public String toString() {
@@ -885,6 +945,8 @@ public class CreateEdgeApplicationVersionResponse extends SdkResponse {
         sb.append("    services: ").append(toIndentedString(services)).append("\n");
         sb.append("    publishTime: ").append(toIndentedString(publishTime)).append("\n");
         sb.append("    offShelfTime: ").append(toIndentedString(offShelfTime)).append("\n");
+        sb.append("    supplier: ").append(toIndentedString(supplier)).append("\n");
+        sb.append("    tplId: ").append(toIndentedString(tplId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

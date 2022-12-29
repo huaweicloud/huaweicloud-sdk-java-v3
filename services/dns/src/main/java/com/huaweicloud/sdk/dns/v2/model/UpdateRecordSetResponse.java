@@ -90,7 +90,7 @@ public class UpdateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * Get id
+     * Record Set的ID。
      * @return id
      */
     public String getId() {
@@ -107,7 +107,7 @@ public class UpdateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * Get name
+     * Record Set的名称。
      * @return name
      */
     public String getName() {
@@ -124,7 +124,7 @@ public class UpdateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * Get description
+     * Record Set的描述信息。
      * @return description
      */
     public String getDescription() {
@@ -141,7 +141,7 @@ public class UpdateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * Get zoneId
+     * 托管该记录的zone_id。
      * @return zoneId
      */
     public String getZoneId() {
@@ -158,7 +158,7 @@ public class UpdateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * Get zoneName
+     * 托管该记录的zone_name。
      * @return zoneName
      */
     public String getZoneName() {
@@ -175,7 +175,7 @@ public class UpdateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * Get type
+     * 记录类型。 取值范围：A，AAAA，MX，CNAME，TXT，NS（仅限公网Zone），SRV，CAA（仅限公网Zone）。
      * @return type
      */
     public String getType() {
@@ -192,7 +192,7 @@ public class UpdateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * Get ttl
+     * 解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
      * @return ttl
      */
     public Integer getTtl() {
@@ -225,7 +225,7 @@ public class UpdateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * Get records
+     * 域名解析后的值。
      * @return records
      */
     public List<String> getRecords() {
@@ -242,7 +242,7 @@ public class UpdateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * Get createAt
+     * 创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS
      * @return createAt
      */
     public String getCreateAt() {
@@ -259,7 +259,7 @@ public class UpdateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * Get updateAt
+     * 更新时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS
      * @return updateAt
      */
     public String getUpdateAt() {
@@ -276,7 +276,7 @@ public class UpdateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * Get status
+     * 资源状态。
      * @return status
      */
     public String getStatus() {
@@ -293,7 +293,7 @@ public class UpdateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * Get _default
+     * 标识是否由系统默认生成，系统默认生成的Record Set不能删除。
      * @return _default
      */
     public Boolean getDefault() {
@@ -310,7 +310,7 @@ public class UpdateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * Get projectId
+     * 该Record Set所属的项目ID。
      * @return projectId
      */
     public String getProjectId() {

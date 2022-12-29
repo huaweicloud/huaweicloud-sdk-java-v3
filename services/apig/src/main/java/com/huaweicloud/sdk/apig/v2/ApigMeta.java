@@ -6082,6 +6082,13 @@ public class ApigMeta {
             f -> f.withMarshaller(ExportApiDefinitionsV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<ExportApiDefinitionsV2Request.OasVersionEnum>withRequestField("oas_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportApiDefinitionsV2Request.OasVersionEnum.class),
+            f -> f.withMarshaller(ExportApiDefinitionsV2Request::getOasVersion, (req, v) -> {
+                req.setOasVersion(v);
+            }));
         builder.<ExportOpenApiReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

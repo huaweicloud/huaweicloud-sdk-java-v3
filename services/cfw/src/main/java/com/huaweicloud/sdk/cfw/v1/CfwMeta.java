@@ -23,6 +23,20 @@ public class CfwMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddAddressItemsUsingPostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddAddressItemsUsingPostRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
         builder.<AddAddressItemsInfoDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -51,6 +65,20 @@ public class CfwMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddAddressSetInfoUsingPostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddAddressSetInfoUsingPostRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
         builder.<AddAddressSetDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -79,6 +107,20 @@ public class CfwMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddBlackWhiteListUsingPostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddBlackWhiteListUsingPostRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
         builder.<AddBlackWhiteListDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -105,6 +147,20 @@ public class CfwMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddServiceItemsUsingPostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddServiceItemsUsingPostRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
         builder.<AddServiceItemsUsingPOSTRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -130,6 +186,20 @@ public class CfwMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddServiceSetUsingPostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddServiceSetUsingPostRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
         builder.<AddServiceSetUsingPOSTRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -155,6 +225,20 @@ public class CfwMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeEwProtectStatusRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeEwProtectStatusRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
         builder.<ChangeProtectStatusRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -183,6 +267,20 @@ public class CfwMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeIpsProtectModeUsingPostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeIpsProtectModeUsingPostRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
         builder.<IpsProtectDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -208,6 +306,20 @@ public class CfwMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAclRuleCountRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAclRuleCountRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
         builder.<ClearAccessLogRuleHitCountsDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -250,6 +362,20 @@ public class CfwMeta {
             f -> f.withMarshaller(DeleteAddressItemUsingDeleteRequest::getItemId, (req, v) -> {
                 req.setItemId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAddressItemUsingDeleteRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAddressItemUsingDeleteRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
 
         // response
 
@@ -277,6 +403,20 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAddressSetInfoUsingDeleteRequest::getSetId, (req, v) -> {
                 req.setSetId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAddressSetInfoUsingDeleteRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAddressSetInfoUsingDeleteRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
             }));
 
         // response
@@ -306,6 +446,20 @@ public class CfwMeta {
             f -> f.withMarshaller(DeleteBlackWhiteListUsingDeleteRequest::getListId, (req, v) -> {
                 req.setListId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBlackWhiteListUsingDeleteRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBlackWhiteListUsingDeleteRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
 
         // response
 
@@ -334,6 +488,20 @@ public class CfwMeta {
             f -> f.withMarshaller(DeleteServiceItemUsingDeleteRequest::getItemId, (req, v) -> {
                 req.setItemId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteServiceItemUsingDeleteRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteServiceItemUsingDeleteRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
 
         // response
 
@@ -361,6 +529,20 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteServiceSetUsingDeleteRequest::getSetId, (req, v) -> {
                 req.setSetId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteServiceSetUsingDeleteRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteServiceSetUsingDeleteRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
             }));
 
         // response
@@ -485,6 +667,13 @@ public class CfwMeta {
             f -> f.withMarshaller(ListAccessControlLogsRequest::getLogType, (req, v) -> {
                 req.setLogType(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAccessControlLogsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 
@@ -539,6 +728,20 @@ public class CfwMeta {
             f -> f.withMarshaller(ListAddressItemsUsingGetRequest::getAddress, (req, v) -> {
                 req.setAddress(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAddressItemsUsingGetRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAddressItemsUsingGetRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
 
         // response
 
@@ -566,6 +769,20 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAddressSetDetailUsingGetRequest::getSetId, (req, v) -> {
                 req.setSetId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAddressSetDetailUsingGetRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAddressSetDetailUsingGetRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
             }));
 
         // response
@@ -629,6 +846,20 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(ListAddressSetListUsingGetRequest.AddressTypeEnum.class),
             f -> f.withMarshaller(ListAddressSetListUsingGetRequest::getAddressType, (req, v) -> {
                 req.setAddressType(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAddressSetListUsingGetRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAddressSetListUsingGetRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
             }));
 
         // response
@@ -781,6 +1012,13 @@ public class CfwMeta {
             f -> f.withMarshaller(ListAttackLogsRequest::getSource, (req, v) -> {
                 req.setSource(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAttackLogsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 
@@ -851,6 +1089,20 @@ public class CfwMeta {
             f -> f.withMarshaller(ListBlackWhiteListsUsingGetRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBlackWhiteListsUsingGetRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBlackWhiteListsUsingGetRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
 
         // response
 
@@ -883,6 +1135,20 @@ public class CfwMeta {
             f -> f.withMarshaller(ListDnsServersRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDnsServersRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDnsServersRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 
@@ -914,6 +1180,20 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListEastWestFirewallRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEastWestFirewallRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEastWestFirewallRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
             }));
 
         // response
@@ -953,6 +1233,20 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(ListFirewallUsingGetRequest.ServiceTypeEnum.class),
             f -> f.withMarshaller(ListFirewallUsingGetRequest::getServiceType, (req, v) -> {
                 req.setServiceType(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFirewallUsingGetRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFirewallUsingGetRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
             }));
 
         // response
@@ -1076,6 +1370,13 @@ public class CfwMeta {
             f -> f.withMarshaller(ListFlowLogsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 
@@ -1104,6 +1405,20 @@ public class CfwMeta {
             f -> f.withMarshaller(ListIpsProtectModeUsingPostRequest::getObjectId, (req, v) -> {
                 req.setObjectId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpsProtectModeUsingPostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpsProtectModeUsingPostRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
 
         // response
 
@@ -1129,6 +1444,20 @@ public class CfwMeta {
             f -> f.withMarshaller(ListParseDomainDetailsRequest::getDomainName, (req, v) -> {
                 req.setDomainName(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListParseDomainDetailsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListParseDomainDetailsRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
 
         // response
 
@@ -1147,6 +1476,20 @@ public class CfwMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRuleHitCountRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRuleHitCountRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
         builder.<ListRuleHitCountDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1200,6 +1543,20 @@ public class CfwMeta {
             f -> f.withMarshaller(ListServiceItemsDetailsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServiceItemsDetailsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServiceItemsDetailsRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
 
         // response
 
@@ -1246,6 +1603,20 @@ public class CfwMeta {
             f -> f.withMarshaller(ListServiceSetRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServiceSetRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServiceSetRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
 
         // response
 
@@ -1270,6 +1641,20 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServiceSetDetailsRequest::getSetId, (req, v) -> {
                 req.setSetId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServiceSetDetailsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServiceSetDetailsRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
             }));
 
         // response
@@ -1298,6 +1683,20 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAddressSetInfoUsingPutRequest::getSetId, (req, v) -> {
                 req.setSetId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAddressSetInfoUsingPutRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAddressSetInfoUsingPutRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
             }));
         builder.<UpdateAddressSetDto>withRequestField("body",
             LocationType.Body,
@@ -1334,6 +1733,20 @@ public class CfwMeta {
             f -> f.withMarshaller(UpdateBlackWhiteListUsingPutRequest::getListId, (req, v) -> {
                 req.setListId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBlackWhiteListUsingPutRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBlackWhiteListUsingPutRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
         builder.<UpdateBlackWhiteListDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1359,6 +1772,20 @@ public class CfwMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDnsServersRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDnsServersRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<UpdateDnsServersRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1392,6 +1819,20 @@ public class CfwMeta {
             f -> f.withMarshaller(UpdateServiceSetUsingPutRequest::getSetId, (req, v) -> {
                 req.setSetId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateServiceSetUsingPutRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateServiceSetUsingPutRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
         builder.<UpdateServiceSetUsingPUTRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1417,6 +1858,20 @@ public class CfwMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddRuleAclUsingPostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddRuleAclUsingPostRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
         builder.<AddRuleAclDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1452,6 +1907,20 @@ public class CfwMeta {
             f -> f.withMarshaller(DeleteRuleAclUsingDeleteRequest::getAclRuleId, (req, v) -> {
                 req.setAclRuleId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRuleAclUsingDeleteRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRuleAclUsingDeleteRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
 
         // response
 
@@ -1476,6 +1945,20 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRuleAclUsingPutRequest::getAclRuleId, (req, v) -> {
                 req.setAclRuleId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRuleAclUsingPutRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRuleAclUsingPutRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
             }));
         builder.<OrderRuleAclDto>withRequestField("body",
             LocationType.Body,
@@ -1579,6 +2062,20 @@ public class CfwMeta {
             f -> f.withMarshaller(ListRuleAclsUsingGetRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRuleAclsUsingGetRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRuleAclsUsingGetRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
 
         // response
 
@@ -1603,6 +2100,20 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateRuleAclUsingPutRequest::getAclRuleId, (req, v) -> {
                 req.setAclRuleId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRuleAclUsingPutRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRuleAclUsingPutRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
             }));
         builder.<UpdateRuleAclDto>withRequestField("body",
             LocationType.Body,
@@ -1629,6 +2140,20 @@ public class CfwMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeProtectEipRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeProtectEipRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
         builder.<EipOperateProtectReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1659,6 +2184,20 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CountEipsRequest::getObjectId, (req, v) -> {
                 req.setObjectId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountEipsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountEipsRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
             }));
 
         // response
@@ -1741,6 +2280,27 @@ public class CfwMeta {
             f -> f.withMarshaller(ListEipResourcesRequest::getAddressType, (req, v) -> {
                 req.setAddressType(v);
             }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipResourcesRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
+        builder.<String>withRequestField("fw_key_word",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipResourcesRequest::getFwKeyWord, (req, v) -> {
+                req.setFwKeyWord(v);
+            }));
+        builder.<String>withRequestField("eps_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipResourcesRequest::getEpsId, (req, v) -> {
+                req.setEpsId(v);
+            }));
 
         // response
 
@@ -1760,6 +2320,20 @@ public class CfwMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeIpsSwitchUsingPostRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeIpsSwitchUsingPostRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
         builder.<IpsSwitchDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1795,6 +2369,20 @@ public class CfwMeta {
             f -> f.withMarshaller(ListIpsSwitchStatusUsingGetRequest::getObjectId, (req, v) -> {
                 req.setObjectId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpsSwitchStatusUsingGetRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpsSwitchStatusUsingGetRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
 
         // response
 
@@ -1819,6 +2407,20 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcProtectsRequest::getObjectId, (req, v) -> {
                 req.setObjectId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcProtectsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpcProtectsRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
             }));
 
         // response

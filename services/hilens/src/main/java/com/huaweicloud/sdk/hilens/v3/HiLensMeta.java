@@ -7,10 +7,47 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.hilens.v3.model.*;
 
-import java.util.Map;
-
 @SuppressWarnings("unchecked")
 public class HiLensMeta {
+
+    public static final HttpRequestDef<AddDeploymentNodesRequest, AddDeploymentNodesResponse> addDeploymentNodes =
+        genForaddDeploymentNodes();
+
+    private static HttpRequestDef<AddDeploymentNodesRequest, AddDeploymentNodesResponse> genForaddDeploymentNodes() {
+        // basic
+        HttpRequestDef.Builder<AddDeploymentNodesRequest, AddDeploymentNodesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, AddDeploymentNodesRequest.class, AddDeploymentNodesResponse.class)
+                .withName("AddDeploymentNodes")
+                .withUri("/v3/{project_id}/ai-mgr/deployments/{deployment_id}/nodes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddDeploymentNodesRequest::getDeploymentId, (req, v) -> {
+                req.setDeploymentId(v);
+            }));
+        builder.<String>withRequestField("provider",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddDeploymentNodesRequest::getProvider, (req, v) -> {
+                req.setProvider(v);
+            }));
+        builder.<DeploymentAddNodesRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeploymentAddNodesRequest.class),
+            f -> f.withMarshaller(AddDeploymentNodesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<BatchCreateNodeTagsRequest, BatchCreateNodeTagsResponse> batchCreateNodeTags =
         genForbatchCreateNodeTags();
@@ -61,6 +98,45 @@ public class HiLensMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConfigMapModelBoxDTO.class),
             f -> f.withMarshaller(CreateConfigMapRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDeploymentRequest, CreateDeploymentResponse> createDeployment =
+        genForcreateDeployment();
+
+    private static HttpRequestDef<CreateDeploymentRequest, CreateDeploymentResponse> genForcreateDeployment() {
+        // basic
+        HttpRequestDef.Builder<CreateDeploymentRequest, CreateDeploymentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDeploymentRequest.class, CreateDeploymentResponse.class)
+                .withName("CreateDeployment")
+                .withUri("/v3/{project_id}/ai-mgr/deployments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDeploymentRequest::getProvider, (req, v) -> {
+                req.setProvider(v);
+            }));
+        builder.<Integer>withRequestField("X-Expired-Time",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CreateDeploymentRequest::getXExpiredTime, (req, v) -> {
+                req.setXExpiredTime(v);
+            }));
+        builder.<DeploymentCreateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeploymentCreateRequest.class),
+            f -> f.withMarshaller(CreateDeploymentRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -318,13 +394,6 @@ public class HiLensMeta {
             }));
 
         // response
-        builder.<Map<String, String>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(DeleteDeploymentResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(String.class));
 
         return builder.build();
     }
@@ -352,6 +421,44 @@ public class HiLensMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(DeleteNodeRequest::getForceDelete, (req, v) -> {
+                req.setForceDelete(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePodRequest, DeletePodResponse> deletePod = genFordeletePod();
+
+    private static HttpRequestDef<DeletePodRequest, DeletePodResponse> genFordeletePod() {
+        // basic
+        HttpRequestDef.Builder<DeletePodRequest, DeletePodResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePodRequest.class, DeletePodResponse.class)
+                .withName("DeletePod")
+                .withUri("/v3/{project_id}/ai-mgr/deployments/{deployment_id}/{pod_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePodRequest::getDeploymentId, (req, v) -> {
+                req.setDeploymentId(v);
+            }));
+        builder.<String>withRequestField("pod_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePodRequest::getPodId, (req, v) -> {
+                req.setPodId(v);
+            }));
+        builder.<Boolean>withRequestField("force_delete",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeletePodRequest::getForceDelete, (req, v) -> {
                 req.setForceDelete(v);
             }));
 
@@ -570,6 +677,119 @@ public class HiLensMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListFirmwaresRequest, ListFirmwaresResponse> listFirmwares =
+        genForlistFirmwares();
+
+    private static HttpRequestDef<ListFirmwaresRequest, ListFirmwaresResponse> genForlistFirmwares() {
+        // basic
+        HttpRequestDef.Builder<ListFirmwaresRequest, ListFirmwaresResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFirmwaresRequest.class, ListFirmwaresResponse.class)
+                .withName("ListFirmwares")
+                .withUri("/v3/ai-mgr/firmwares")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("device_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFirmwaresRequest::getDeviceType, (req, v) -> {
+                req.setDeviceType(v);
+            }));
+        builder.<String>withRequestField("arch",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFirmwaresRequest::getArch, (req, v) -> {
+                req.setArch(v);
+            }));
+        builder.<String>withRequestField("os_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFirmwaresRequest::getOsName, (req, v) -> {
+                req.setOsName(v);
+            }));
+        builder.<String>withRequestField("os_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFirmwaresRequest::getOsVersion, (req, v) -> {
+                req.setOsVersion(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFirmwaresRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFirmwaresRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPlatformManagerRequest, ListPlatformManagerResponse> listPlatformManager =
+        genForlistPlatformManager();
+
+    private static HttpRequestDef<ListPlatformManagerRequest, ListPlatformManagerResponse> genForlistPlatformManager() {
+        // basic
+        HttpRequestDef.Builder<ListPlatformManagerRequest, ListPlatformManagerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPlatformManagerRequest.class, ListPlatformManagerResponse.class)
+                .withName("ListPlatformManager")
+                .withUri("/v1/{project_id}/platform-manager/orders")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPlatformManagerRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("device_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPlatformManagerRequest::getDeviceType, (req, v) -> {
+                req.setDeviceType(v);
+            }));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPlatformManagerRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPlatformManagerRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPlatformManagerRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTags =
         genForlistResourceTags();
 
@@ -760,6 +980,38 @@ public class HiLensMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDeploymentRequest, ShowDeploymentResponse> showDeployment =
+        genForshowDeployment();
+
+    private static HttpRequestDef<ShowDeploymentRequest, ShowDeploymentResponse> genForshowDeployment() {
+        // basic
+        HttpRequestDef.Builder<ShowDeploymentRequest, ShowDeploymentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDeploymentRequest.class, ShowDeploymentResponse.class)
+                .withName("ShowDeployment")
+                .withUri("/v3/{project_id}/ai-mgr/deployments/{deployment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeploymentRequest::getDeploymentId, (req, v) -> {
+                req.setDeploymentId(v);
+            }));
+        builder.<String>withRequestField("provider",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeploymentRequest::getProvider, (req, v) -> {
+                req.setProvider(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDeploymentPodsRequest, ShowDeploymentPodsResponse> showDeploymentPods =
         genForshowDeploymentPods();
 
@@ -806,6 +1058,73 @@ public class HiLensMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDeploymentPodsRequest::getWorkspaceId, (req, v) -> {
                 req.setWorkspaceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDeploymentsRequest, ShowDeploymentsResponse> showDeployments =
+        genForshowDeployments();
+
+    private static HttpRequestDef<ShowDeploymentsRequest, ShowDeploymentsResponse> genForshowDeployments() {
+        // basic
+        HttpRequestDef.Builder<ShowDeploymentsRequest, ShowDeploymentsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDeploymentsRequest.class, ShowDeploymentsResponse.class)
+                .withName("ShowDeployments")
+                .withUri("/v3/{project_id}/ai-mgr/deployments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeploymentsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeploymentsRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            }));
+        builder.<String>withRequestField("provider",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeploymentsRequest::getProvider, (req, v) -> {
+                req.setProvider(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeploymentsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeploymentsRequest::getSort, (req, v) -> {
+                req.setSort(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowDeploymentsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowDeploymentsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
             }));
 
         // response
@@ -1334,6 +1653,80 @@ public class HiLensMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<StartAndStopDeploymentRequest, StartAndStopDeploymentResponse> startAndStopDeployment =
+        genForstartAndStopDeployment();
+
+    private static HttpRequestDef<StartAndStopDeploymentRequest, StartAndStopDeploymentResponse> genForstartAndStopDeployment() {
+        // basic
+        HttpRequestDef.Builder<StartAndStopDeploymentRequest, StartAndStopDeploymentResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StartAndStopDeploymentRequest.class, StartAndStopDeploymentResponse.class)
+            .withName("StartAndStopDeployment")
+            .withUri("/v3/{project_id}/ai-mgr/deployments/{deployment_id}/action/{action}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartAndStopDeploymentRequest::getDeploymentId, (req, v) -> {
+                req.setDeploymentId(v);
+            }));
+        builder.<String>withRequestField("action",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartAndStopDeploymentRequest::getAction, (req, v) -> {
+                req.setAction(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartAndStopDeploymentPodRequest, StartAndStopDeploymentPodResponse> startAndStopDeploymentPod =
+        genForstartAndStopDeploymentPod();
+
+    private static HttpRequestDef<StartAndStopDeploymentPodRequest, StartAndStopDeploymentPodResponse> genForstartAndStopDeploymentPod() {
+        // basic
+        HttpRequestDef.Builder<StartAndStopDeploymentPodRequest, StartAndStopDeploymentPodResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    StartAndStopDeploymentPodRequest.class,
+                    StartAndStopDeploymentPodResponse.class)
+                .withName("StartAndStopDeploymentPod")
+                .withUri("/v3/{project_id}/ai-mgr/deployments/{deployment_id}/{pod_id}/action/{action}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartAndStopDeploymentPodRequest::getDeploymentId, (req, v) -> {
+                req.setDeploymentId(v);
+            }));
+        builder.<String>withRequestField("pod_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartAndStopDeploymentPodRequest::getPodId, (req, v) -> {
+                req.setPodId(v);
+            }));
+        builder.<String>withRequestField("action",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartAndStopDeploymentPodRequest::getAction, (req, v) -> {
+                req.setAction(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SwitchNodeConnectionRequest, SwitchNodeConnectionResponse> switchNodeConnection =
         genForswitchNodeConnection();
 
@@ -1428,6 +1821,52 @@ public class HiLensMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConfigMapModelBoxDTO.class),
             f -> f.withMarshaller(UpdateConfigMapRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDeploymentRequest, UpdateDeploymentResponse> updateDeployment =
+        genForupdateDeployment();
+
+    private static HttpRequestDef<UpdateDeploymentRequest, UpdateDeploymentResponse> genForupdateDeployment() {
+        // basic
+        HttpRequestDef.Builder<UpdateDeploymentRequest, UpdateDeploymentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDeploymentRequest.class, UpdateDeploymentResponse.class)
+                .withName("UpdateDeployment")
+                .withUri("/v3/{project_id}/ai-mgr/deployments/{deployment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDeploymentRequest::getDeploymentId, (req, v) -> {
+                req.setDeploymentId(v);
+            }));
+        builder.<String>withRequestField("provider",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDeploymentRequest::getProvider, (req, v) -> {
+                req.setProvider(v);
+            }));
+        builder.<Integer>withRequestField("X-Expired-Time",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(UpdateDeploymentRequest::getXExpiredTime, (req, v) -> {
+                req.setXExpiredTime(v);
+            }));
+        builder.<DeploymentUpdateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeploymentUpdateRequest.class),
+            f -> f.withMarshaller(UpdateDeploymentRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

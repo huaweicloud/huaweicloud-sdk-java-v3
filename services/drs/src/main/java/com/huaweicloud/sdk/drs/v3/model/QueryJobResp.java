@@ -1017,6 +1017,16 @@ public class QueryJobResp {
 
     private String nodeRole;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "period_order")
+
+    private PeriodOrderResp periodOrder;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "object_infos")
+
+    private List<DatabaseObjectInfo> objectInfos = null;
+
     public QueryJobResp withId(String id) {
         this.id = id;
         return this;
@@ -1987,6 +1997,65 @@ public class QueryJobResp {
         this.nodeRole = nodeRole;
     }
 
+    public QueryJobResp withPeriodOrder(PeriodOrderResp periodOrder) {
+        this.periodOrder = periodOrder;
+        return this;
+    }
+
+    public QueryJobResp withPeriodOrder(Consumer<PeriodOrderResp> periodOrderSetter) {
+        if (this.periodOrder == null) {
+            this.periodOrder = new PeriodOrderResp();
+            periodOrderSetter.accept(this.periodOrder);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get periodOrder
+     * @return periodOrder
+     */
+    public PeriodOrderResp getPeriodOrder() {
+        return periodOrder;
+    }
+
+    public void setPeriodOrder(PeriodOrderResp periodOrder) {
+        this.periodOrder = periodOrder;
+    }
+
+    public QueryJobResp withObjectInfos(List<DatabaseObjectInfo> objectInfos) {
+        this.objectInfos = objectInfos;
+        return this;
+    }
+
+    public QueryJobResp addObjectInfosItem(DatabaseObjectInfo objectInfosItem) {
+        if (this.objectInfos == null) {
+            this.objectInfos = new ArrayList<>();
+        }
+        this.objectInfos.add(objectInfosItem);
+        return this;
+    }
+
+    public QueryJobResp withObjectInfos(Consumer<List<DatabaseObjectInfo>> objectInfosSetter) {
+        if (this.objectInfos == null) {
+            this.objectInfos = new ArrayList<>();
+        }
+        objectInfosSetter.accept(this.objectInfos);
+        return this;
+    }
+
+    /**
+     * 已同步对象信息。
+     * @return objectInfos
+     */
+    public List<DatabaseObjectInfo> getObjectInfos() {
+        return objectInfos;
+    }
+
+    public void setObjectInfos(List<DatabaseObjectInfo> objectInfos) {
+        this.objectInfos = objectInfos;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -2042,7 +2111,9 @@ public class QueryJobResp {
             && Objects.equals(this.isMultiAz, queryJobResp.isMultiAz)
             && Objects.equals(this.azName, queryJobResp.azName) && Objects.equals(this.masterAz, queryJobResp.masterAz)
             && Objects.equals(this.slaveAz, queryJobResp.slaveAz)
-            && Objects.equals(this.nodeRole, queryJobResp.nodeRole);
+            && Objects.equals(this.nodeRole, queryJobResp.nodeRole)
+            && Objects.equals(this.periodOrder, queryJobResp.periodOrder)
+            && Objects.equals(this.objectInfos, queryJobResp.objectInfos);
     }
 
     @Override
@@ -2098,7 +2169,9 @@ public class QueryJobResp {
             azName,
             masterAz,
             slaveAz,
-            nodeRole);
+            nodeRole,
+            periodOrder,
+            objectInfos);
     }
 
     @Override
@@ -2157,6 +2230,8 @@ public class QueryJobResp {
         sb.append("    masterAz: ").append(toIndentedString(masterAz)).append("\n");
         sb.append("    slaveAz: ").append(toIndentedString(slaveAz)).append("\n");
         sb.append("    nodeRole: ").append(toIndentedString(nodeRole)).append("\n");
+        sb.append("    periodOrder: ").append(toIndentedString(periodOrder)).append("\n");
+        sb.append("    objectInfos: ").append(toIndentedString(objectInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

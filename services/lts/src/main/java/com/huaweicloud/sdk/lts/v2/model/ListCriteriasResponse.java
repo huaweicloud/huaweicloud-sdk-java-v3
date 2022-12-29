@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -12,25 +15,42 @@ import java.util.Objects;
 public class ListCriteriasResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
+    @JsonProperty(value = "search_criterias")
 
-    private String id;
+    private List<GetQuerySearchCriteriasBody> searchCriterias = null;
 
-    public ListCriteriasResponse withId(String id) {
-        this.id = id;
+    public ListCriteriasResponse withSearchCriterias(List<GetQuerySearchCriteriasBody> searchCriterias) {
+        this.searchCriterias = searchCriterias;
+        return this;
+    }
+
+    public ListCriteriasResponse addSearchCriteriasItem(GetQuerySearchCriteriasBody searchCriteriasItem) {
+        if (this.searchCriterias == null) {
+            this.searchCriterias = new ArrayList<>();
+        }
+        this.searchCriterias.add(searchCriteriasItem);
+        return this;
+    }
+
+    public ListCriteriasResponse withSearchCriterias(
+        Consumer<List<GetQuerySearchCriteriasBody>> searchCriteriasSetter) {
+        if (this.searchCriterias == null) {
+            this.searchCriterias = new ArrayList<>();
+        }
+        searchCriteriasSetter.accept(this.searchCriterias);
         return this;
     }
 
     /**
-     * 快速查询id
-     * @return id
+     * Get searchCriterias
+     * @return searchCriterias
      */
-    public String getId() {
-        return id;
+    public List<GetQuerySearchCriteriasBody> getSearchCriterias() {
+        return searchCriterias;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setSearchCriterias(List<GetQuerySearchCriteriasBody> searchCriterias) {
+        this.searchCriterias = searchCriterias;
     }
 
     @Override
@@ -42,19 +62,19 @@ public class ListCriteriasResponse extends SdkResponse {
             return false;
         }
         ListCriteriasResponse listCriteriasResponse = (ListCriteriasResponse) o;
-        return Objects.equals(this.id, listCriteriasResponse.id);
+        return Objects.equals(this.searchCriterias, listCriteriasResponse.searchCriterias);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(searchCriterias);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCriteriasResponse {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    searchCriterias: ").append(toIndentedString(searchCriterias)).append("\n");
         sb.append("}");
         return sb.toString();
     }

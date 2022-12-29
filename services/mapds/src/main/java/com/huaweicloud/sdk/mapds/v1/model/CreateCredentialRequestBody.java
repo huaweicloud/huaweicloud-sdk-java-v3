@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * CreateCredentialRequestBody
@@ -11,25 +12,35 @@ import java.util.Objects;
 public class CreateCredentialRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
+    @JsonProperty(value = "credential")
 
-    private String description;
+    private CreateCredentialRequestBodyCredential credential;
 
-    public CreateCredentialRequestBody withDescription(String description) {
-        this.description = description;
+    public CreateCredentialRequestBody withCredential(CreateCredentialRequestBodyCredential credential) {
+        this.credential = credential;
+        return this;
+    }
+
+    public CreateCredentialRequestBody withCredential(
+        Consumer<CreateCredentialRequestBodyCredential> credentialSetter) {
+        if (this.credential == null) {
+            this.credential = new CreateCredentialRequestBodyCredential();
+            credentialSetter.accept(this.credential);
+        }
+
         return this;
     }
 
     /**
-     * 凭证的描述信息。
-     * @return description
+     * Get credential
+     * @return credential
      */
-    public String getDescription() {
-        return description;
+    public CreateCredentialRequestBodyCredential getCredential() {
+        return credential;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setCredential(CreateCredentialRequestBodyCredential credential) {
+        this.credential = credential;
     }
 
     @Override
@@ -41,19 +52,19 @@ public class CreateCredentialRequestBody {
             return false;
         }
         CreateCredentialRequestBody createCredentialRequestBody = (CreateCredentialRequestBody) o;
-        return Objects.equals(this.description, createCredentialRequestBody.description);
+        return Objects.equals(this.credential, createCredentialRequestBody.credential);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description);
+        return Objects.hash(credential);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateCredentialRequestBody {\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    credential: ").append(toIndentedString(credential)).append("\n");
         sb.append("}");
         return sb.toString();
     }

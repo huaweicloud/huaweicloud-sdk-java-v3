@@ -30,6 +30,16 @@ public class ListServiceItemsDetailsRequest {
 
     private Integer offset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_instance_id")
+
+    private String fwInstanceId;
+
     public ListServiceItemsDetailsRequest withSetId(String setId) {
         this.setId = setId;
         return this;
@@ -98,6 +108,40 @@ public class ListServiceItemsDetailsRequest {
         this.offset = offset;
     }
 
+    public ListServiceItemsDetailsRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ListServiceItemsDetailsRequest withFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+        return this;
+    }
+
+    /**
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+     * @return fwInstanceId
+     */
+    public String getFwInstanceId() {
+        return fwInstanceId;
+    }
+
+    public void setFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -110,12 +154,14 @@ public class ListServiceItemsDetailsRequest {
         return Objects.equals(this.setId, listServiceItemsDetailsRequest.setId)
             && Objects.equals(this.keyWord, listServiceItemsDetailsRequest.keyWord)
             && Objects.equals(this.limit, listServiceItemsDetailsRequest.limit)
-            && Objects.equals(this.offset, listServiceItemsDetailsRequest.offset);
+            && Objects.equals(this.offset, listServiceItemsDetailsRequest.offset)
+            && Objects.equals(this.enterpriseProjectId, listServiceItemsDetailsRequest.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, listServiceItemsDetailsRequest.fwInstanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(setId, keyWord, limit, offset);
+        return Objects.hash(setId, keyWord, limit, offset, enterpriseProjectId, fwInstanceId);
     }
 
     @Override
@@ -126,6 +172,8 @@ public class ListServiceItemsDetailsRequest {
         sb.append("    keyWord: ").append(toIndentedString(keyWord)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

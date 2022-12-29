@@ -35,6 +35,16 @@ public class ListEventSpecsRequest {
 
     private String tag;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private String offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private String limit;
+
     public ListEventSpecsRequest withSpecName(String specName) {
         this.specName = specName;
         return this;
@@ -120,6 +130,40 @@ public class ListEventSpecsRequest {
         this.tag = tag;
     }
 
+    public ListEventSpecsRequest withOffset(String offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 偏移量
+     * @return offset
+     */
+    public String getOffset() {
+        return offset;
+    }
+
+    public void setOffset(String offset) {
+        this.offset = offset;
+    }
+
+    public ListEventSpecsRequest withLimit(String limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 限制条目数
+     * @return limit
+     */
+    public String getLimit() {
+        return limit;
+    }
+
+    public void setLimit(String limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -133,12 +177,14 @@ public class ListEventSpecsRequest {
             && Objects.equals(this.category, listEventSpecsRequest.category)
             && Objects.equals(this.severity, listEventSpecsRequest.severity)
             && Objects.equals(this.sourceType, listEventSpecsRequest.sourceType)
-            && Objects.equals(this.tag, listEventSpecsRequest.tag);
+            && Objects.equals(this.tag, listEventSpecsRequest.tag)
+            && Objects.equals(this.offset, listEventSpecsRequest.offset)
+            && Objects.equals(this.limit, listEventSpecsRequest.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(specName, category, severity, sourceType, tag);
+        return Objects.hash(specName, category, severity, sourceType, tag, offset, limit);
     }
 
     @Override
@@ -150,6 +196,8 @@ public class ListEventSpecsRequest {
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

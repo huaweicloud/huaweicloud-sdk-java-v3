@@ -1026,10 +1026,24 @@ public class DwsMeta {
         HttpRequestDef.Builder<ListAlarmConfigsRequest, ListAlarmConfigsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAlarmConfigsRequest.class, ListAlarmConfigsResponse.class)
                 .withName("ListAlarmConfigs")
-                .withUri("/v2/alarm-configs")
+                .withUri("/v2/{project_id}/alarm-configs")
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmConfigsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmConfigsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
 
         // response
 
@@ -1112,6 +1126,20 @@ public class DwsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmSubsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmSubsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
 
         // response
 
@@ -1513,7 +1541,7 @@ public class DwsMeta {
         HttpRequestDef.Builder<ListEventSpecsRequest, ListEventSpecsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEventSpecsRequest.class, ListEventSpecsResponse.class)
                 .withName("ListEventSpecs")
-                .withUri("/v2/event-specs")
+                .withUri("/v2/{project_id}/event-specs")
                 .withContentType("application/json");
 
         // requests
@@ -1552,6 +1580,20 @@ public class DwsMeta {
             f -> f.withMarshaller(ListEventSpecsRequest::getTag, (req, v) -> {
                 req.setTag(v);
             }));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventSpecsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventSpecsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
 
         // response
 
@@ -1570,6 +1612,20 @@ public class DwsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventSubsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventSubsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
 
         // response
 
@@ -1587,6 +1643,20 @@ public class DwsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
 
         // response
 
@@ -1868,7 +1938,7 @@ public class DwsMeta {
         HttpRequestDef.Builder<ListSnapshotStatisticsRequest, ListSnapshotStatisticsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListSnapshotStatisticsRequest.class, ListSnapshotStatisticsResponse.class)
             .withName("ListSnapshotStatistics")
-            .withUri("/v1.0/{project_id}/clusters/{cluster_id}/snapshots/statistics")
+            .withUri("/v1.0/{project_id}/cluster/{cluster_id}/snapshots/statistics")
             .withContentType("application/json");
 
         // requests

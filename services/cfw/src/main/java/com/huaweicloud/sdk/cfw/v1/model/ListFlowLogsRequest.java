@@ -262,6 +262,11 @@ public class ListFlowLogsRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public ListFlowLogsRequest withFwInstanceId(String fwInstanceId) {
         this.fwInstanceId = fwInstanceId;
         return this;
@@ -523,6 +528,23 @@ public class ListFlowLogsRequest {
         this.limit = limit;
     }
 
+    public ListFlowLogsRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -546,7 +568,8 @@ public class ListFlowLogsRequest {
             && Objects.equals(this.logId, listFlowLogsRequest.logId)
             && Objects.equals(this.nextDate, listFlowLogsRequest.nextDate)
             && Objects.equals(this.offset, listFlowLogsRequest.offset)
-            && Objects.equals(this.limit, listFlowLogsRequest.limit);
+            && Objects.equals(this.limit, listFlowLogsRequest.limit)
+            && Objects.equals(this.enterpriseProjectId, listFlowLogsRequest.enterpriseProjectId);
     }
 
     @Override
@@ -565,7 +588,8 @@ public class ListFlowLogsRequest {
             logId,
             nextDate,
             offset,
-            limit);
+            limit,
+            enterpriseProjectId);
     }
 
     @Override
@@ -587,6 +611,7 @@ public class ListFlowLogsRequest {
         sb.append("    nextDate: ").append(toIndentedString(nextDate)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

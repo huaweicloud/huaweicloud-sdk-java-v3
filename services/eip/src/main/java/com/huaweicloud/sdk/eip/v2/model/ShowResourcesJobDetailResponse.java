@@ -50,7 +50,7 @@ public class ShowResourcesJobDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "entities")
 
-    private SubJobs entities;
+    private SubJobsInfo entities;
 
     public ShowResourcesJobDetailResponse withJobId(String jobId) {
         this.jobId = jobId;
@@ -171,14 +171,14 @@ public class ShowResourcesJobDetailResponse extends SdkResponse {
         this.failReason = failReason;
     }
 
-    public ShowResourcesJobDetailResponse withEntities(SubJobs entities) {
+    public ShowResourcesJobDetailResponse withEntities(SubJobsInfo entities) {
         this.entities = entities;
         return this;
     }
 
-    public ShowResourcesJobDetailResponse withEntities(Consumer<SubJobs> entitiesSetter) {
+    public ShowResourcesJobDetailResponse withEntities(Consumer<SubJobsInfo> entitiesSetter) {
         if (this.entities == null) {
-            this.entities = new SubJobs();
+            this.entities = new SubJobsInfo();
             entitiesSetter.accept(this.entities);
         }
 
@@ -189,11 +189,11 @@ public class ShowResourcesJobDetailResponse extends SdkResponse {
      * Get entities
      * @return entities
      */
-    public SubJobs getEntities() {
+    public SubJobsInfo getEntities() {
         return entities;
     }
 
-    public void setEntities(SubJobs entities) {
+    public void setEntities(SubJobsInfo entities) {
         this.entities = entities;
     }
 

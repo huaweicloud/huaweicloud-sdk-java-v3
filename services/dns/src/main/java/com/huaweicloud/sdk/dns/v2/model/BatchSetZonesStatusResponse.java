@@ -22,7 +22,7 @@ public class BatchSetZonesStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private Metedata metadata;
+    private Metadata metadata;
 
     public BatchSetZonesStatusResponse withZones(List<ZoneData> zones) {
         this.zones = zones;
@@ -57,14 +57,14 @@ public class BatchSetZonesStatusResponse extends SdkResponse {
         this.zones = zones;
     }
 
-    public BatchSetZonesStatusResponse withMetadata(Metedata metadata) {
+    public BatchSetZonesStatusResponse withMetadata(Metadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public BatchSetZonesStatusResponse withMetadata(Consumer<Metedata> metadataSetter) {
+    public BatchSetZonesStatusResponse withMetadata(Consumer<Metadata> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new Metedata();
+            this.metadata = new Metadata();
             metadataSetter.accept(this.metadata);
         }
 
@@ -75,11 +75,11 @@ public class BatchSetZonesStatusResponse extends SdkResponse {
      * Get metadata
      * @return metadata
      */
-    public Metedata getMetadata() {
+    public Metadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Metedata metadata) {
+    public void setMetadata(Metadata metadata) {
         this.metadata = metadata;
     }
 

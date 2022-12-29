@@ -80,7 +80,7 @@ public class FlavorInfo {
     }
 
     /**
-     * 7层每秒查询数。单位：个
+     * 每秒查询数。单位：个。仅7层LB有该指标。
      * @return qps
      */
     public Integer getQps() {
@@ -97,7 +97,7 @@ public class FlavorInfo {
     }
 
     /**
-     * 带宽。单位：Mbit/s
+     * 带宽。单位：Mbit/s。
      * @return bandwidth
      */
     public Integer getBandwidth() {
@@ -131,7 +131,7 @@ public class FlavorInfo {
     }
 
     /**
-     * https新建连接数。单位：个
+     * https新建连接数。单位：个。仅7层LB有该指标。
      * @return httpsCps
      */
     public Integer getHttpsCps() {

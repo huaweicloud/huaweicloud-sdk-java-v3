@@ -75,6 +75,20 @@ public class CreateEdgeAppResponse extends SdkResponse {
     
     private String deployType;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="protocol")
+    
+    
+    private String protocol;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="edge_app_name")
+    
+    
+    private String edgeAppName;
+
     public CreateEdgeAppResponse withEdgeAppId(String edgeAppId) {
         this.edgeAppId = edgeAppId;
         return this;
@@ -84,7 +98,7 @@ public class CreateEdgeAppResponse extends SdkResponse {
 
 
     /**
-     * 应用名称
+     * 应用id
      * @return edgeAppId
      */
     public String getEdgeAppId() {
@@ -251,6 +265,50 @@ public class CreateEdgeAppResponse extends SdkResponse {
 
     
 
+    public CreateEdgeAppResponse withProtocol(String protocol) {
+        this.protocol = protocol;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 驱动协议类型OPCUA|Modbus-TCP
+     * @return protocol
+     */
+    public String getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
+    }
+
+    
+
+    public CreateEdgeAppResponse withEdgeAppName(String edgeAppName) {
+        this.edgeAppName = edgeAppName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 应用名称
+     * @return edgeAppName
+     */
+    public String getEdgeAppName() {
+        return edgeAppName;
+    }
+
+    public void setEdgeAppName(String edgeAppName) {
+        this.edgeAppName = edgeAppName;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -267,11 +325,13 @@ public class CreateEdgeAppResponse extends SdkResponse {
             Objects.equals(this.lastPublishedVersion, createEdgeAppResponse.lastPublishedVersion) &&
             Objects.equals(this.appType, createEdgeAppResponse.appType) &&
             Objects.equals(this.functionType, createEdgeAppResponse.functionType) &&
-            Objects.equals(this.deployType, createEdgeAppResponse.deployType);
+            Objects.equals(this.deployType, createEdgeAppResponse.deployType) &&
+            Objects.equals(this.protocol, createEdgeAppResponse.protocol) &&
+            Objects.equals(this.edgeAppName, createEdgeAppResponse.edgeAppName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(edgeAppId, description, createTime, updateTime, lastPublishedVersion, appType, functionType, deployType);
+        return Objects.hash(edgeAppId, description, createTime, updateTime, lastPublishedVersion, appType, functionType, deployType, protocol, edgeAppName);
     }
     @Override
     public String toString() {
@@ -285,6 +345,8 @@ public class CreateEdgeAppResponse extends SdkResponse {
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
         sb.append("    functionType: ").append(toIndentedString(functionType)).append("\n");
         sb.append("    deployType: ").append(toIndentedString(deployType)).append("\n");
+        sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
+        sb.append("    edgeAppName: ").append(toIndentedString(edgeAppName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

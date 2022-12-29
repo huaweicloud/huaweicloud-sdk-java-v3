@@ -15,6 +15,16 @@ public class ListVpcProtectsRequest {
 
     private String objectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_instance_id")
+
+    private String fwInstanceId;
+
     public ListVpcProtectsRequest withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
@@ -32,6 +42,40 @@ public class ListVpcProtectsRequest {
         this.objectId = objectId;
     }
 
+    public ListVpcProtectsRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ListVpcProtectsRequest withFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+        return this;
+    }
+
+    /**
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+     * @return fwInstanceId
+     */
+    public String getFwInstanceId() {
+        return fwInstanceId;
+    }
+
+    public void setFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -41,12 +85,14 @@ public class ListVpcProtectsRequest {
             return false;
         }
         ListVpcProtectsRequest listVpcProtectsRequest = (ListVpcProtectsRequest) o;
-        return Objects.equals(this.objectId, listVpcProtectsRequest.objectId);
+        return Objects.equals(this.objectId, listVpcProtectsRequest.objectId)
+            && Objects.equals(this.enterpriseProjectId, listVpcProtectsRequest.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, listVpcProtectsRequest.fwInstanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectId);
+        return Objects.hash(objectId, enterpriseProjectId, fwInstanceId);
     }
 
     @Override
@@ -54,6 +100,8 @@ public class ListVpcProtectsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListVpcProtectsRequest {\n");
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * UpdateVirtualGateway
+ * 更新虚拟网关参数
  */
 public class UpdateVirtualGateway {
 

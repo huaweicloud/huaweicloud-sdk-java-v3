@@ -41,7 +41,7 @@ public class ShowDomainQuotaResponse extends SdkResponse {
     }
 
     /**
-     * Get quotas
+     * 配额项数据。
      * @return quotas
      */
     public List<DomainQuotaResponseQuotas> getQuotas() {

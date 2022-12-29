@@ -46,7 +46,7 @@ public class ListTagResponse extends SdkResponse {
     }
 
     /**
-     * Get resources
+     * 标签资源信息列表。
      * @return resources
      */
     public List<ResourceItem> getResources() {
@@ -63,7 +63,7 @@ public class ListTagResponse extends SdkResponse {
     }
 
     /**
-     * Get totalCount
+     * 资源总数。
      * @return totalCount
      */
     public Integer getTotalCount() {

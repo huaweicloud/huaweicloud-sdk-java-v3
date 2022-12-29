@@ -173,6 +173,11 @@ public class ListAccessControlLogsRequest {
 
     private LogTypeEnum logType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public ListAccessControlLogsRequest withFwInstanceId(String fwInstanceId) {
         this.fwInstanceId = fwInstanceId;
         return this;
@@ -428,6 +433,23 @@ public class ListAccessControlLogsRequest {
         this.logType = logType;
     }
 
+    public ListAccessControlLogsRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -451,7 +473,8 @@ public class ListAccessControlLogsRequest {
             && Objects.equals(this.nextDate, listAccessControlLogsRequest.nextDate)
             && Objects.equals(this.offset, listAccessControlLogsRequest.offset)
             && Objects.equals(this.limit, listAccessControlLogsRequest.limit)
-            && Objects.equals(this.logType, listAccessControlLogsRequest.logType);
+            && Objects.equals(this.logType, listAccessControlLogsRequest.logType)
+            && Objects.equals(this.enterpriseProjectId, listAccessControlLogsRequest.enterpriseProjectId);
     }
 
     @Override
@@ -470,7 +493,8 @@ public class ListAccessControlLogsRequest {
             nextDate,
             offset,
             limit,
-            logType);
+            logType,
+            enterpriseProjectId);
     }
 
     @Override
@@ -492,6 +516,7 @@ public class ListAccessControlLogsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    logType: ").append(toIndentedString(logType)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

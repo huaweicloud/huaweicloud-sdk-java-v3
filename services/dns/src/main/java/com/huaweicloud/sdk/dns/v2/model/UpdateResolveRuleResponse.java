@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,41 +13,34 @@ import java.util.function.Consumer;
 public class UpdateResolveRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resolver_rules")
+    @JsonProperty(value = "resolver_rule")
 
-    private List<ResolveRuleParam> resolverRules = null;
+    private ResolveRuleParam resolverRule;
 
-    public UpdateResolveRuleResponse withResolverRules(List<ResolveRuleParam> resolverRules) {
-        this.resolverRules = resolverRules;
+    public UpdateResolveRuleResponse withResolverRule(ResolveRuleParam resolverRule) {
+        this.resolverRule = resolverRule;
         return this;
     }
 
-    public UpdateResolveRuleResponse addResolverRulesItem(ResolveRuleParam resolverRulesItem) {
-        if (this.resolverRules == null) {
-            this.resolverRules = new ArrayList<>();
+    public UpdateResolveRuleResponse withResolverRule(Consumer<ResolveRuleParam> resolverRuleSetter) {
+        if (this.resolverRule == null) {
+            this.resolverRule = new ResolveRuleParam();
+            resolverRuleSetter.accept(this.resolverRule);
         }
-        this.resolverRules.add(resolverRulesItem);
-        return this;
-    }
 
-    public UpdateResolveRuleResponse withResolverRules(Consumer<List<ResolveRuleParam>> resolverRulesSetter) {
-        if (this.resolverRules == null) {
-            this.resolverRules = new ArrayList<>();
-        }
-        resolverRulesSetter.accept(this.resolverRules);
         return this;
     }
 
     /**
-     * 查询resolver_rule的列表响应。
-     * @return resolverRules
+     * Get resolverRule
+     * @return resolverRule
      */
-    public List<ResolveRuleParam> getResolverRules() {
-        return resolverRules;
+    public ResolveRuleParam getResolverRule() {
+        return resolverRule;
     }
 
-    public void setResolverRules(List<ResolveRuleParam> resolverRules) {
-        this.resolverRules = resolverRules;
+    public void setResolverRule(ResolveRuleParam resolverRule) {
+        this.resolverRule = resolverRule;
     }
 
     @Override
@@ -61,19 +52,19 @@ public class UpdateResolveRuleResponse extends SdkResponse {
             return false;
         }
         UpdateResolveRuleResponse updateResolveRuleResponse = (UpdateResolveRuleResponse) o;
-        return Objects.equals(this.resolverRules, updateResolveRuleResponse.resolverRules);
+        return Objects.equals(this.resolverRule, updateResolveRuleResponse.resolverRule);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resolverRules);
+        return Objects.hash(resolverRule);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateResolveRuleResponse {\n");
-        sb.append("    resolverRules: ").append(toIndentedString(resolverRules)).append("\n");
+        sb.append("    resolverRule: ").append(toIndentedString(resolverRule)).append("\n");
         sb.append("}");
         return sb.toString();
     }

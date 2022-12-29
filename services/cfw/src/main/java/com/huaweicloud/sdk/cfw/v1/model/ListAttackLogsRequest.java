@@ -353,6 +353,11 @@ public class ListAttackLogsRequest {
 
     private String source;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public ListAttackLogsRequest withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
@@ -680,6 +685,23 @@ public class ListAttackLogsRequest {
         this.source = source;
     }
 
+    public ListAttackLogsRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -707,7 +729,8 @@ public class ListAttackLogsRequest {
             && Objects.equals(this.attackType, listAttackLogsRequest.attackType)
             && Objects.equals(this.attackRule, listAttackLogsRequest.attackRule)
             && Objects.equals(this.level, listAttackLogsRequest.level)
-            && Objects.equals(this.source, listAttackLogsRequest.source);
+            && Objects.equals(this.source, listAttackLogsRequest.source)
+            && Objects.equals(this.enterpriseProjectId, listAttackLogsRequest.enterpriseProjectId);
     }
 
     @Override
@@ -730,7 +753,8 @@ public class ListAttackLogsRequest {
             attackType,
             attackRule,
             level,
-            source);
+            source,
+            enterpriseProjectId);
     }
 
     @Override
@@ -756,6 +780,7 @@ public class ListAttackLogsRequest {
         sb.append("    attackRule: ").append(toIndentedString(attackRule)).append("\n");
         sb.append("    level: ").append(toIndentedString(level)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

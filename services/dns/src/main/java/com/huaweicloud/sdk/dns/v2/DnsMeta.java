@@ -45,6 +45,41 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AssociateResolveRuleRouterRequest, AssociateResolveRuleRouterResponse> associateResolveRuleRouter =
+        genForassociateResolveRuleRouter();
+
+    private static HttpRequestDef<AssociateResolveRuleRouterRequest, AssociateResolveRuleRouterResponse> genForassociateResolveRuleRouter() {
+        // basic
+        HttpRequestDef.Builder<AssociateResolveRuleRouterRequest, AssociateResolveRuleRouterResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AssociateResolveRuleRouterRequest.class,
+                    AssociateResolveRuleRouterResponse.class)
+                .withName("AssociateResolveRuleRouter")
+                .withUri("/v2.1/resolverrule/{resolverrule_id}/associaterouter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resolverrule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateResolveRuleRouterRequest::getResolverruleId, (req, v) -> {
+                req.setResolverruleId(v);
+            }));
+        builder.<AssociateRouterReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateRouterReq.class),
+            f -> f.withMarshaller(AssociateResolveRuleRouterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeletePtrRecordsRequest, BatchDeletePtrRecordsResponse> batchDeletePtrRecords =
         genForbatchDeletePtrRecords();
 
@@ -303,7 +338,7 @@ public class DnsMeta {
         // basic
         HttpRequestDef.Builder<CreateRetrievalVerificationRequest, CreateRetrievalVerificationResponse> builder =
             HttpRequestDef
-                .builder(HttpMethod.GET,
+                .builder(HttpMethod.POST,
                     CreateRetrievalVerificationRequest.class,
                     CreateRetrievalVerificationResponse.class)
                 .withName("CreateRetrievalVerification")
@@ -435,7 +470,7 @@ public class DnsMeta {
                     DisassociateEndpointIpaddressRequest.class,
                     DisassociateEndpointIpaddressResponse.class)
                 .withName("DisassociateEndpointIpaddress")
-                .withUri("v2.1/endpoint/{endpoint_id}/ipaddress/{ipaddress_id}")
+                .withUri("/v2.1/endpoint/{endpoint_id}/ipaddress/{ipaddress_id}")
                 .withContentType("application/json");
 
         // requests
@@ -452,6 +487,41 @@ public class DnsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DisassociateEndpointIpaddressRequest::getIpaddressId, (req, v) -> {
                 req.setIpaddressId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateResolveRuleRouterRequest, DisassociateResolveRuleRouterResponse> disassociateResolveRuleRouter =
+        genFordisassociateResolveRuleRouter();
+
+    private static HttpRequestDef<DisassociateResolveRuleRouterRequest, DisassociateResolveRuleRouterResponse> genFordisassociateResolveRuleRouter() {
+        // basic
+        HttpRequestDef.Builder<DisassociateResolveRuleRouterRequest, DisassociateResolveRuleRouterResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DisassociateResolveRuleRouterRequest.class,
+                    DisassociateResolveRuleRouterResponse.class)
+                .withName("DisassociateResolveRuleRouter")
+                .withUri("/v2.1/resolverrule/{resolverrule_id}/disassociaterouter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resolverrule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateResolveRuleRouterRequest::getResolverruleId, (req, v) -> {
+                req.setResolverruleId(v);
+            }));
+        builder.<DisassociaterouterReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DisassociaterouterReq.class),
+            f -> f.withMarshaller(DisassociateResolveRuleRouterRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -654,7 +724,7 @@ public class DnsMeta {
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListLineGroupsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
@@ -1002,6 +1072,13 @@ public class DnsMeta {
             f -> f.withMarshaller(UpdateLineGroupsRequest::getLinegroupId, (req, v) -> {
                 req.setLinegroupId(v);
             }));
+        builder.<UpdateLineGroupsBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateLineGroupsBody.class),
+            f -> f.withMarshaller(UpdateLineGroupsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
 
@@ -1257,7 +1334,7 @@ public class DnsMeta {
         HttpRequestDef.Builder<AssociateHealthCheckRequest, AssociateHealthCheckResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, AssociateHealthCheckRequest.class, AssociateHealthCheckResponse.class)
             .withName("AssociateHealthCheck")
-            .withUri(" /v2.1/recordsets/{recordset_id}/associatehealthcheck")
+            .withUri("/v2.1/recordsets/{recordset_id}/associatehealthcheck")
             .withContentType("application/json");
 
         // requests
@@ -1522,7 +1599,7 @@ public class DnsMeta {
         HttpRequestDef.Builder<DisassociateHealthCheckRequest, DisassociateHealthCheckResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DisassociateHealthCheckRequest.class, DisassociateHealthCheckResponse.class)
             .withName("DisassociateHealthCheck")
-            .withUri("/v2.1/recordsets/{recordset_id}/associatehealthcheck")
+            .withUri("/v2.1/recordsets/{recordset_id}/disassociatehealthcheck")
             .withContentType("application/json");
 
         // requests

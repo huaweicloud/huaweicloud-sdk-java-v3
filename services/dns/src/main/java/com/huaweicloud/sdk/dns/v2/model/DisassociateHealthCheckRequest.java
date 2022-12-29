@@ -27,7 +27,7 @@ public class DisassociateHealthCheckRequest {
     }
 
     /**
-     * Get recordsetId
+     * Record Set关联健康检查。
      * @return recordsetId
      */
     public String getRecordsetId() {

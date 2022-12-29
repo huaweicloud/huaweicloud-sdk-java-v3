@@ -117,6 +117,11 @@ public class CertificateForm {
 
     private String instanceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trusted_root_ca")
+
+    private String trustedRootCa;
+
     public CertificateForm withName(String name) {
         this.name = name;
         return this;
@@ -202,6 +207,23 @@ public class CertificateForm {
         this.instanceId = instanceId;
     }
 
+    public CertificateForm withTrustedRootCa(String trustedRootCa) {
+        this.trustedRootCa = trustedRootCa;
+        return this;
+    }
+
+    /**
+     * 信任的根证书CA
+     * @return trustedRootCa
+     */
+    public String getTrustedRootCa() {
+        return trustedRootCa;
+    }
+
+    public void setTrustedRootCa(String trustedRootCa) {
+        this.trustedRootCa = trustedRootCa;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -215,12 +237,13 @@ public class CertificateForm {
             && Objects.equals(this.certContent, certificateForm.certContent)
             && Objects.equals(this.privateKey, certificateForm.privateKey)
             && Objects.equals(this.type, certificateForm.type)
-            && Objects.equals(this.instanceId, certificateForm.instanceId);
+            && Objects.equals(this.instanceId, certificateForm.instanceId)
+            && Objects.equals(this.trustedRootCa, certificateForm.trustedRootCa);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, certContent, privateKey, type, instanceId);
+        return Objects.hash(name, certContent, privateKey, type, instanceId, trustedRootCa);
     }
 
     @Override
@@ -232,6 +255,7 @@ public class CertificateForm {
         sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    trustedRootCa: ").append(toIndentedString(trustedRootCa)).append("\n");
         sb.append("}");
         return sb.toString();
     }

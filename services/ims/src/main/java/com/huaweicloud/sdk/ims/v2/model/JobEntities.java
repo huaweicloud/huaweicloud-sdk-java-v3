@@ -38,6 +38,16 @@ public class JobEntities {
 
     private List<JobEntitiesResult> results = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_jobs_result")
+
+    private List<SubJobResult> subJobsResult = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_jobs_list")
+
+    private List<String> subJobsList = null;
+
     public JobEntities withImageId(String imageId) {
         this.imageId = imageId;
         return this;
@@ -139,6 +149,72 @@ public class JobEntities {
         this.results = results;
     }
 
+    public JobEntities withSubJobsResult(List<SubJobResult> subJobsResult) {
+        this.subJobsResult = subJobsResult;
+        return this;
+    }
+
+    public JobEntities addSubJobsResultItem(SubJobResult subJobsResultItem) {
+        if (this.subJobsResult == null) {
+            this.subJobsResult = new ArrayList<>();
+        }
+        this.subJobsResult.add(subJobsResultItem);
+        return this;
+    }
+
+    public JobEntities withSubJobsResult(Consumer<List<SubJobResult>> subJobsResultSetter) {
+        if (this.subJobsResult == null) {
+            this.subJobsResult = new ArrayList<>();
+        }
+        subJobsResultSetter.accept(this.subJobsResult);
+        return this;
+    }
+
+    /**
+     * 子任务结果列表
+     * @return subJobsResult
+     */
+    public List<SubJobResult> getSubJobsResult() {
+        return subJobsResult;
+    }
+
+    public void setSubJobsResult(List<SubJobResult> subJobsResult) {
+        this.subJobsResult = subJobsResult;
+    }
+
+    public JobEntities withSubJobsList(List<String> subJobsList) {
+        this.subJobsList = subJobsList;
+        return this;
+    }
+
+    public JobEntities addSubJobsListItem(String subJobsListItem) {
+        if (this.subJobsList == null) {
+            this.subJobsList = new ArrayList<>();
+        }
+        this.subJobsList.add(subJobsListItem);
+        return this;
+    }
+
+    public JobEntities withSubJobsList(Consumer<List<String>> subJobsListSetter) {
+        if (this.subJobsList == null) {
+            this.subJobsList = new ArrayList<>();
+        }
+        subJobsListSetter.accept(this.subJobsList);
+        return this;
+    }
+
+    /**
+     * 子任务ID列表
+     * @return subJobsList
+     */
+    public List<String> getSubJobsList() {
+        return subJobsList;
+    }
+
+    public void setSubJobsList(List<String> subJobsList) {
+        this.subJobsList = subJobsList;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -152,12 +228,14 @@ public class JobEntities {
             && Objects.equals(this.currentTask, jobEntities.currentTask)
             && Objects.equals(this.imageName, jobEntities.imageName)
             && Objects.equals(this.processPercent, jobEntities.processPercent)
-            && Objects.equals(this.results, jobEntities.results);
+            && Objects.equals(this.results, jobEntities.results)
+            && Objects.equals(this.subJobsResult, jobEntities.subJobsResult)
+            && Objects.equals(this.subJobsList, jobEntities.subJobsList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(imageId, currentTask, imageName, processPercent, results);
+        return Objects.hash(imageId, currentTask, imageName, processPercent, results, subJobsResult, subJobsList);
     }
 
     @Override
@@ -169,6 +247,8 @@ public class JobEntities {
         sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
         sb.append("    processPercent: ").append(toIndentedString(processPercent)).append("\n");
         sb.append("    results: ").append(toIndentedString(results)).append("\n");
+        sb.append("    subJobsResult: ").append(toIndentedString(subJobsResult)).append("\n");
+        sb.append("    subJobsList: ").append(toIndentedString(subJobsList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

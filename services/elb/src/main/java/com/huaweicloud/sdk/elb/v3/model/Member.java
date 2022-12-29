@@ -170,7 +170,7 @@ public class Member {
     }
 
     /**
-     * 所在后端服务器组ID。  注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
+     * 所在后端服务器组ID。  不支持该字段，请勿使用。
      * @return poolId
      */
     public String getPoolId() {
@@ -293,7 +293,7 @@ public class Member {
     }
 
     /**
-     * 设备所有者。  取值： - 空，表示后端服务器未关联到ECS。 - compute:{az_name}，表示关联到ECS，其中{az_name}表示ECS所在可用区名。  注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
+     * 设备所有者。  取值： - 空，表示后端服务器未关联到ECS。 - compute:{az_name}，表示关联到ECS，其中{az_name}表示ECS所在可用区名。  不支持该字段，请勿使用。
      * @return deviceOwner
      */
     public String getDeviceOwner() {
@@ -310,7 +310,7 @@ public class Member {
     }
 
     /**
-     * 关联的ECS ID，为空表示后端服务器未关联到ECS。  注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
+     * 关联的ECS ID，为空表示后端服务器未关联到ECS。  不支持该字段，请勿使用。
      * @return deviceId
      */
     public String getDeviceId() {
@@ -377,7 +377,7 @@ public class Member {
     }
 
     /**
-     * 所属负载均衡器ID。  注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
+     * 所属负载均衡器ID。  不支持该字段，请勿使用。
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {
@@ -410,7 +410,7 @@ public class Member {
     }
 
     /**
-     * 后端云服务器关联的负载均衡器ID列表。  注意：该字段当前仅GET /v3/{project_id}/elb/members 接口可见。
+     * 后端云服务器关联的负载均衡器ID列表。  不支持该字段，请勿使用。
      * @return loadbalancers
      */
     public List<ResourceID> getLoadbalancers() {

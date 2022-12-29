@@ -38,11 +38,6 @@ public class ListLoadbalancersByTagsRequestBody {
 
     private List<ActionTag> tags = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "without_any_tag")
-
-    private Boolean withoutAnyTag;
-
     public ListLoadbalancersByTagsRequestBody withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -160,23 +155,6 @@ public class ListLoadbalancersByTagsRequestBody {
         this.tags = tags;
     }
 
-    public ListLoadbalancersByTagsRequestBody withWithoutAnyTag(Boolean withoutAnyTag) {
-        this.withoutAnyTag = withoutAnyTag;
-        return this;
-    }
-
-    /**
-     * 查询不包含任何标签的资源，该字段为true时，忽略tags字段的查询条件。
-     * @return withoutAnyTag
-     */
-    public Boolean getWithoutAnyTag() {
-        return withoutAnyTag;
-    }
-
-    public void setWithoutAnyTag(Boolean withoutAnyTag) {
-        this.withoutAnyTag = withoutAnyTag;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -190,13 +168,12 @@ public class ListLoadbalancersByTagsRequestBody {
             && Objects.equals(this.limit, listLoadbalancersByTagsRequestBody.limit)
             && Objects.equals(this.action, listLoadbalancersByTagsRequestBody.action)
             && Objects.equals(this.matches, listLoadbalancersByTagsRequestBody.matches)
-            && Objects.equals(this.tags, listLoadbalancersByTagsRequestBody.tags)
-            && Objects.equals(this.withoutAnyTag, listLoadbalancersByTagsRequestBody.withoutAnyTag);
+            && Objects.equals(this.tags, listLoadbalancersByTagsRequestBody.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, action, matches, tags, withoutAnyTag);
+        return Objects.hash(offset, limit, action, matches, tags);
     }
 
     @Override
@@ -208,7 +185,6 @@ public class ListLoadbalancersByTagsRequestBody {
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    matches: ").append(toIndentedString(matches)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    withoutAnyTag: ").append(toIndentedString(withoutAnyTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

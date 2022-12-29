@@ -15,6 +15,16 @@ public class DeleteServiceItemUsingDeleteRequest {
 
     private String itemId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_instance_id")
+
+    private String fwInstanceId;
+
     public DeleteServiceItemUsingDeleteRequest withItemId(String itemId) {
         this.itemId = itemId;
         return this;
@@ -32,6 +42,40 @@ public class DeleteServiceItemUsingDeleteRequest {
         this.itemId = itemId;
     }
 
+    public DeleteServiceItemUsingDeleteRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public DeleteServiceItemUsingDeleteRequest withFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+        return this;
+    }
+
+    /**
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+     * @return fwInstanceId
+     */
+    public String getFwInstanceId() {
+        return fwInstanceId;
+    }
+
+    public void setFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -42,12 +86,14 @@ public class DeleteServiceItemUsingDeleteRequest {
         }
         DeleteServiceItemUsingDeleteRequest deleteServiceItemUsingDeleteRequest =
             (DeleteServiceItemUsingDeleteRequest) o;
-        return Objects.equals(this.itemId, deleteServiceItemUsingDeleteRequest.itemId);
+        return Objects.equals(this.itemId, deleteServiceItemUsingDeleteRequest.itemId)
+            && Objects.equals(this.enterpriseProjectId, deleteServiceItemUsingDeleteRequest.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, deleteServiceItemUsingDeleteRequest.fwInstanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(itemId);
+        return Objects.hash(itemId, enterpriseProjectId, fwInstanceId);
     }
 
     @Override
@@ -55,6 +101,8 @@ public class DeleteServiceItemUsingDeleteRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteServiceItemUsingDeleteRequest {\n");
         sb.append("    itemId: ").append(toIndentedString(itemId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

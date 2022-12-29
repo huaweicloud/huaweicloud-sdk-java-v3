@@ -61,7 +61,7 @@ public class NodeResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "firmware_status")
 
-    private String firmwareStatus;
+    private Integer firmwareStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "firmware_upgrade_record")
@@ -91,22 +91,17 @@ public class NodeResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gpu_num")
 
-    private Object gpuNum;
+    private Integer gpuNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "npu_num")
 
-    private Object npuNum;
+    private Integer npuNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_ips")
 
     private List<String> hostIps = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tags")
-
-    private List<TagObject> tags = null;
 
     public NodeResponse withId(String id) {
         this.id = id;
@@ -261,7 +256,7 @@ public class NodeResponse {
         this.upgradeFirmwareVersion = upgradeFirmwareVersion;
     }
 
-    public NodeResponse withFirmwareStatus(String firmwareStatus) {
+    public NodeResponse withFirmwareStatus(Integer firmwareStatus) {
         this.firmwareStatus = firmwareStatus;
         return this;
     }
@@ -270,11 +265,11 @@ public class NodeResponse {
      * 固件升级状态，1、2、3分别代表升级中，升级失败，升级成功
      * @return firmwareStatus
      */
-    public String getFirmwareStatus() {
+    public Integer getFirmwareStatus() {
         return firmwareStatus;
     }
 
-    public void setFirmwareStatus(String firmwareStatus) {
+    public void setFirmwareStatus(Integer firmwareStatus) {
         this.firmwareStatus = firmwareStatus;
     }
 
@@ -379,7 +374,7 @@ public class NodeResponse {
         this.cpu = cpu;
     }
 
-    public NodeResponse withGpuNum(Object gpuNum) {
+    public NodeResponse withGpuNum(Integer gpuNum) {
         this.gpuNum = gpuNum;
         return this;
     }
@@ -388,15 +383,15 @@ public class NodeResponse {
      * 设备GPU个数
      * @return gpuNum
      */
-    public Object getGpuNum() {
+    public Integer getGpuNum() {
         return gpuNum;
     }
 
-    public void setGpuNum(Object gpuNum) {
+    public void setGpuNum(Integer gpuNum) {
         this.gpuNum = gpuNum;
     }
 
-    public NodeResponse withNpuNum(Object npuNum) {
+    public NodeResponse withNpuNum(Integer npuNum) {
         this.npuNum = npuNum;
         return this;
     }
@@ -405,11 +400,11 @@ public class NodeResponse {
      * 设备NPU个数
      * @return npuNum
      */
-    public Object getNpuNum() {
+    public Integer getNpuNum() {
         return npuNum;
     }
 
-    public void setNpuNum(Object npuNum) {
+    public void setNpuNum(Integer npuNum) {
         this.npuNum = npuNum;
     }
 
@@ -446,39 +441,6 @@ public class NodeResponse {
         this.hostIps = hostIps;
     }
 
-    public NodeResponse withTags(List<TagObject> tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    public NodeResponse addTagsItem(TagObject tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        this.tags.add(tagsItem);
-        return this;
-    }
-
-    public NodeResponse withTags(Consumer<List<TagObject>> tagsSetter) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        tagsSetter.accept(this.tags);
-        return this;
-    }
-
-    /**
-     * 设备标签对列表
-     * @return tags
-     */
-    public List<TagObject> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<TagObject> tags) {
-        this.tags = tags;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -501,8 +463,7 @@ public class NodeResponse {
             && Objects.equals(this.state, nodeResponse.state) && Objects.equals(this.type, nodeResponse.type)
             && Objects.equals(this.activeStatus, nodeResponse.activeStatus)
             && Objects.equals(this.cpu, nodeResponse.cpu) && Objects.equals(this.gpuNum, nodeResponse.gpuNum)
-            && Objects.equals(this.npuNum, nodeResponse.npuNum) && Objects.equals(this.hostIps, nodeResponse.hostIps)
-            && Objects.equals(this.tags, nodeResponse.tags);
+            && Objects.equals(this.npuNum, nodeResponse.npuNum) && Objects.equals(this.hostIps, nodeResponse.hostIps);
     }
 
     @Override
@@ -524,8 +485,7 @@ public class NodeResponse {
             cpu,
             gpuNum,
             npuNum,
-            hostIps,
-            tags);
+            hostIps);
     }
 
     @Override
@@ -550,7 +510,6 @@ public class NodeResponse {
         sb.append("    gpuNum: ").append(toIndentedString(gpuNum)).append("\n");
         sb.append("    npuNum: ").append(toIndentedString(npuNum)).append("\n");
         sb.append("    hostIps: ").append(toIndentedString(hostIps)).append("\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

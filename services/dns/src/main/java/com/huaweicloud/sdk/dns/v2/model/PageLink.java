@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 分页信息
+ * 指向当前资源或者其他资源的链接。当查询需要分页时，需要包含一个next链接指向下一页。
  */
 public class PageLink {
 

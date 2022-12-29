@@ -137,6 +137,21 @@ public class EipResource {
 
     private String associateInstanceType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_instance_name")
+
+    private String fwInstanceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_instance_id")
+
+    private String fwInstanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_enterprise_project_id")
+
+    private String fwEnterpriseProjectId;
+
     public EipResource withId(String id) {
         this.id = id;
         return this;
@@ -290,6 +305,57 @@ public class EipResource {
         this.associateInstanceType = associateInstanceType;
     }
 
+    public EipResource withFwInstanceName(String fwInstanceName) {
+        this.fwInstanceName = fwInstanceName;
+        return this;
+    }
+
+    /**
+     * 防火墙名称
+     * @return fwInstanceName
+     */
+    public String getFwInstanceName() {
+        return fwInstanceName;
+    }
+
+    public void setFwInstanceName(String fwInstanceName) {
+        this.fwInstanceName = fwInstanceName;
+    }
+
+    public EipResource withFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+        return this;
+    }
+
+    /**
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+     * @return fwInstanceId
+     */
+    public String getFwInstanceId() {
+        return fwInstanceId;
+    }
+
+    public void setFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+    }
+
+    public EipResource withFwEnterpriseProjectId(String fwEnterpriseProjectId) {
+        this.fwEnterpriseProjectId = fwEnterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * Eip绑定的防火墙企业项目id
+     * @return fwEnterpriseProjectId
+     */
+    public String getFwEnterpriseProjectId() {
+        return fwEnterpriseProjectId;
+    }
+
+    public void setFwEnterpriseProjectId(String fwEnterpriseProjectId) {
+        this.fwEnterpriseProjectId = fwEnterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -306,7 +372,10 @@ public class EipResource {
             && Objects.equals(this.deviceId, eipResource.deviceId)
             && Objects.equals(this.deviceName, eipResource.deviceName)
             && Objects.equals(this.deviceOwner, eipResource.deviceOwner)
-            && Objects.equals(this.associateInstanceType, eipResource.associateInstanceType);
+            && Objects.equals(this.associateInstanceType, eipResource.associateInstanceType)
+            && Objects.equals(this.fwInstanceName, eipResource.fwInstanceName)
+            && Objects.equals(this.fwInstanceId, eipResource.fwInstanceId)
+            && Objects.equals(this.fwEnterpriseProjectId, eipResource.fwEnterpriseProjectId);
     }
 
     @Override
@@ -319,7 +388,10 @@ public class EipResource {
             deviceId,
             deviceName,
             deviceOwner,
-            associateInstanceType);
+            associateInstanceType,
+            fwInstanceName,
+            fwInstanceId,
+            fwEnterpriseProjectId);
     }
 
     @Override
@@ -335,6 +407,9 @@ public class EipResource {
         sb.append("    deviceName: ").append(toIndentedString(deviceName)).append("\n");
         sb.append("    deviceOwner: ").append(toIndentedString(deviceOwner)).append("\n");
         sb.append("    associateInstanceType: ").append(toIndentedString(associateInstanceType)).append("\n");
+        sb.append("    fwInstanceName: ").append(toIndentedString(fwInstanceName)).append("\n");
+        sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
+        sb.append("    fwEnterpriseProjectId: ").append(toIndentedString(fwEnterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

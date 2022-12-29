@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,41 +13,34 @@ import java.util.function.Consumer;
 public class AssociateEndpointIpaddressResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "endpoints")
+    @JsonProperty(value = "endpoint")
 
-    private List<EndpointResp> endpoints = null;
+    private EndpointResp endpoint;
 
-    public AssociateEndpointIpaddressResponse withEndpoints(List<EndpointResp> endpoints) {
-        this.endpoints = endpoints;
+    public AssociateEndpointIpaddressResponse withEndpoint(EndpointResp endpoint) {
+        this.endpoint = endpoint;
         return this;
     }
 
-    public AssociateEndpointIpaddressResponse addEndpointsItem(EndpointResp endpointsItem) {
-        if (this.endpoints == null) {
-            this.endpoints = new ArrayList<>();
+    public AssociateEndpointIpaddressResponse withEndpoint(Consumer<EndpointResp> endpointSetter) {
+        if (this.endpoint == null) {
+            this.endpoint = new EndpointResp();
+            endpointSetter.accept(this.endpoint);
         }
-        this.endpoints.add(endpointsItem);
-        return this;
-    }
 
-    public AssociateEndpointIpaddressResponse withEndpoints(Consumer<List<EndpointResp>> endpointsSetter) {
-        if (this.endpoints == null) {
-            this.endpoints = new ArrayList<>();
-        }
-        endpointsSetter.accept(this.endpoints);
         return this;
     }
 
     /**
-     * Get endpoints
-     * @return endpoints
+     * Get endpoint
+     * @return endpoint
      */
-    public List<EndpointResp> getEndpoints() {
-        return endpoints;
+    public EndpointResp getEndpoint() {
+        return endpoint;
     }
 
-    public void setEndpoints(List<EndpointResp> endpoints) {
-        this.endpoints = endpoints;
+    public void setEndpoint(EndpointResp endpoint) {
+        this.endpoint = endpoint;
     }
 
     @Override
@@ -61,19 +52,19 @@ public class AssociateEndpointIpaddressResponse extends SdkResponse {
             return false;
         }
         AssociateEndpointIpaddressResponse associateEndpointIpaddressResponse = (AssociateEndpointIpaddressResponse) o;
-        return Objects.equals(this.endpoints, associateEndpointIpaddressResponse.endpoints);
+        return Objects.equals(this.endpoint, associateEndpointIpaddressResponse.endpoint);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(endpoints);
+        return Objects.hash(endpoint);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AssociateEndpointIpaddressResponse {\n");
-        sb.append("    endpoints: ").append(toIndentedString(endpoints)).append("\n");
+        sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
         sb.append("}");
         return sb.toString();
     }

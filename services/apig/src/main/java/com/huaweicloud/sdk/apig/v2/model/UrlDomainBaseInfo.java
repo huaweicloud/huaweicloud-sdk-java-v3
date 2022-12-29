@@ -129,6 +129,11 @@ public class UrlDomainBaseInfo {
 
     private Boolean isHttpRedirectToHttps;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verified_client_certificate_enabled")
+
+    private Boolean verifiedClientCertificateEnabled;
+
     public UrlDomainBaseInfo withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
         return this;
@@ -214,6 +219,23 @@ public class UrlDomainBaseInfo {
         this.isHttpRedirectToHttps = isHttpRedirectToHttps;
     }
 
+    public UrlDomainBaseInfo withVerifiedClientCertificateEnabled(Boolean verifiedClientCertificateEnabled) {
+        this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
+        return this;
+    }
+
+    /**
+     * 是否开启客户端证书校验。只有绑定证书时，该参数才生效。当绑定证书存在trusted_root_ca时，默认开启；当绑定证书不存在trusted_root_ca时，默认关闭。
+     * @return verifiedClientCertificateEnabled
+     */
+    public Boolean getVerifiedClientCertificateEnabled() {
+        return verifiedClientCertificateEnabled;
+    }
+
+    public void setVerifiedClientCertificateEnabled(Boolean verifiedClientCertificateEnabled) {
+        this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -226,12 +248,14 @@ public class UrlDomainBaseInfo {
         return Objects.equals(this.urlDomain, urlDomainBaseInfo.urlDomain)
             && Objects.equals(this.id, urlDomainBaseInfo.id) && Objects.equals(this.status, urlDomainBaseInfo.status)
             && Objects.equals(this.minSslVersion, urlDomainBaseInfo.minSslVersion)
-            && Objects.equals(this.isHttpRedirectToHttps, urlDomainBaseInfo.isHttpRedirectToHttps);
+            && Objects.equals(this.isHttpRedirectToHttps, urlDomainBaseInfo.isHttpRedirectToHttps) && Objects
+                .equals(this.verifiedClientCertificateEnabled, urlDomainBaseInfo.verifiedClientCertificateEnabled);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(urlDomain, id, status, minSslVersion, isHttpRedirectToHttps);
+        return Objects
+            .hash(urlDomain, id, status, minSslVersion, isHttpRedirectToHttps, verifiedClientCertificateEnabled);
     }
 
     @Override
@@ -243,6 +267,9 @@ public class UrlDomainBaseInfo {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    minSslVersion: ").append(toIndentedString(minSslVersion)).append("\n");
         sb.append("    isHttpRedirectToHttps: ").append(toIndentedString(isHttpRedirectToHttps)).append("\n");
+        sb.append("    verifiedClientCertificateEnabled: ")
+            .append(toIndentedString(verifiedClientCertificateEnabled))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

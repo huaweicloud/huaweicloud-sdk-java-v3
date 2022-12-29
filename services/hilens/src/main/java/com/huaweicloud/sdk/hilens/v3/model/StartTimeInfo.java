@@ -61,7 +61,7 @@ public class StartTimeInfo {
     }
 
     /**
-     * Get frequency
+     * 任务运行频率（定时任务频率，每天运行还是单次运行）
      * @return frequency
      */
     public String getFrequency() {
@@ -78,7 +78,7 @@ public class StartTimeInfo {
     }
 
     /**
-     * Get mode
+     * 任务运行模式（按时间段运行还是按频率运行）
      * @return mode
      */
     public String getMode() {

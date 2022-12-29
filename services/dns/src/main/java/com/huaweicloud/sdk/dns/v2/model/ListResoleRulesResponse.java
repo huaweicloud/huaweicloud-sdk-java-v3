@@ -19,6 +19,11 @@ public class ListResoleRulesResponse extends SdkResponse {
 
     private List<ResolveRuleParam> resolverRules = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metadata")
+
+    private Metadata metadata;
+
     public ListResoleRulesResponse withResolverRules(List<ResolveRuleParam> resolverRules) {
         this.resolverRules = resolverRules;
         return this;
@@ -41,7 +46,7 @@ public class ListResoleRulesResponse extends SdkResponse {
     }
 
     /**
-     * 查询resolver_rule的列表响应。
+     * 解析记录资源列表。
      * @return resolverRules
      */
     public List<ResolveRuleParam> getResolverRules() {
@@ -50,6 +55,32 @@ public class ListResoleRulesResponse extends SdkResponse {
 
     public void setResolverRules(List<ResolveRuleParam> resolverRules) {
         this.resolverRules = resolverRules;
+    }
+
+    public ListResoleRulesResponse withMetadata(Metadata metadata) {
+        this.metadata = metadata;
+        return this;
+    }
+
+    public ListResoleRulesResponse withMetadata(Consumer<Metadata> metadataSetter) {
+        if (this.metadata == null) {
+            this.metadata = new Metadata();
+            metadataSetter.accept(this.metadata);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get metadata
+     * @return metadata
+     */
+    public Metadata getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(Metadata metadata) {
+        this.metadata = metadata;
     }
 
     @Override
@@ -61,12 +92,13 @@ public class ListResoleRulesResponse extends SdkResponse {
             return false;
         }
         ListResoleRulesResponse listResoleRulesResponse = (ListResoleRulesResponse) o;
-        return Objects.equals(this.resolverRules, listResoleRulesResponse.resolverRules);
+        return Objects.equals(this.resolverRules, listResoleRulesResponse.resolverRules)
+            && Objects.equals(this.metadata, listResoleRulesResponse.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resolverRules);
+        return Objects.hash(resolverRules, metadata);
     }
 
     @Override
@@ -74,6 +106,7 @@ public class ListResoleRulesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListResoleRulesResponse {\n");
         sb.append("    resolverRules: ").append(toIndentedString(resolverRules)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("}");
         return sb.toString();
     }

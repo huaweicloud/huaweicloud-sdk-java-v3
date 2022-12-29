@@ -30,6 +30,13 @@ public class CreateEdgeApplicationRequestDTO  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="edge_app_name")
+    
+    
+    private String edgeAppName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
     
@@ -144,6 +151,13 @@ public class CreateEdgeApplicationRequestDTO  {
     
     private FunctionTypeEnum functionType;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="protocol")
+    
+    
+    private String protocol;
+
     public CreateEdgeApplicationRequestDTO withEdgeAppId(String edgeAppId) {
         this.edgeAppId = edgeAppId;
         return this;
@@ -162,6 +176,28 @@ public class CreateEdgeApplicationRequestDTO  {
 
     public void setEdgeAppId(String edgeAppId) {
         this.edgeAppId = edgeAppId;
+    }
+
+    
+
+    public CreateEdgeApplicationRequestDTO withEdgeAppName(String edgeAppName) {
+        this.edgeAppName = edgeAppName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 应用名称
+     * @return edgeAppName
+     */
+    public String getEdgeAppName() {
+        return edgeAppName;
+    }
+
+    public void setEdgeAppName(String edgeAppName) {
+        this.edgeAppName = edgeAppName;
     }
 
     
@@ -210,6 +246,28 @@ public class CreateEdgeApplicationRequestDTO  {
 
     
 
+    public CreateEdgeApplicationRequestDTO withProtocol(String protocol) {
+        this.protocol = protocol;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 驱动协议类型OPCUA|Modbus-TCP
+     * @return protocol
+     */
+    public String getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -220,20 +278,24 @@ public class CreateEdgeApplicationRequestDTO  {
         }
         CreateEdgeApplicationRequestDTO createEdgeApplicationRequestDTO = (CreateEdgeApplicationRequestDTO) o;
         return Objects.equals(this.edgeAppId, createEdgeApplicationRequestDTO.edgeAppId) &&
+            Objects.equals(this.edgeAppName, createEdgeApplicationRequestDTO.edgeAppName) &&
             Objects.equals(this.description, createEdgeApplicationRequestDTO.description) &&
-            Objects.equals(this.functionType, createEdgeApplicationRequestDTO.functionType);
+            Objects.equals(this.functionType, createEdgeApplicationRequestDTO.functionType) &&
+            Objects.equals(this.protocol, createEdgeApplicationRequestDTO.protocol);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(edgeAppId, description, functionType);
+        return Objects.hash(edgeAppId, edgeAppName, description, functionType, protocol);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateEdgeApplicationRequestDTO {\n");
         sb.append("    edgeAppId: ").append(toIndentedString(edgeAppId)).append("\n");
+        sb.append("    edgeAppName: ").append(toIndentedString(edgeAppName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    functionType: ").append(toIndentedString(functionType)).append("\n");
+        sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("}");
         return sb.toString();
     }

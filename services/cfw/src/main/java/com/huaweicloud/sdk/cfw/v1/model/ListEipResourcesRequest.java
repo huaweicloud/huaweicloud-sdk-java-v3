@@ -220,6 +220,21 @@ public class ListEipResourcesRequest {
 
     private Integer addressType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_instance_id")
+
+    private String fwInstanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_key_word")
+
+    private String fwKeyWord;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eps_id")
+
+    private String epsId;
+
     public ListEipResourcesRequest withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
@@ -330,7 +345,7 @@ public class ListEipResourcesRequest {
     }
 
     /**
-     * 企业项目id
+     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -375,6 +390,57 @@ public class ListEipResourcesRequest {
         this.addressType = addressType;
     }
 
+    public ListEipResourcesRequest withFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+        return this;
+    }
+
+    /**
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用查询防火墙实例接口获得。具体可参考APIExlorer和帮助中心FAQ。
+     * @return fwInstanceId
+     */
+    public String getFwInstanceId() {
+        return fwInstanceId;
+    }
+
+    public void setFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+    }
+
+    public ListEipResourcesRequest withFwKeyWord(String fwKeyWord) {
+        this.fwKeyWord = fwKeyWord;
+        return this;
+    }
+
+    /**
+     * 所绑定防火墙id防火墙名称
+     * @return fwKeyWord
+     */
+    public String getFwKeyWord() {
+        return fwKeyWord;
+    }
+
+    public void setFwKeyWord(String fwKeyWord) {
+        this.fwKeyWord = fwKeyWord;
+    }
+
+    public ListEipResourcesRequest withEpsId(String epsId) {
+        this.epsId = epsId;
+        return this;
+    }
+
+    /**
+     * 弹性公网ip的企业项目id
+     * @return epsId
+     */
+    public String getEpsId() {
+        return epsId;
+    }
+
+    public void setEpsId(String epsId) {
+        this.epsId = epsId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -392,13 +458,26 @@ public class ListEipResourcesRequest {
             && Objects.equals(this.offset, listEipResourcesRequest.offset)
             && Objects.equals(this.enterpriseProjectId, listEipResourcesRequest.enterpriseProjectId)
             && Objects.equals(this.deviceKey, listEipResourcesRequest.deviceKey)
-            && Objects.equals(this.addressType, listEipResourcesRequest.addressType);
+            && Objects.equals(this.addressType, listEipResourcesRequest.addressType)
+            && Objects.equals(this.fwInstanceId, listEipResourcesRequest.fwInstanceId)
+            && Objects.equals(this.fwKeyWord, listEipResourcesRequest.fwKeyWord)
+            && Objects.equals(this.epsId, listEipResourcesRequest.epsId);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(objectId, keyWord, status, sync, limit, offset, enterpriseProjectId, deviceKey, addressType);
+        return Objects.hash(objectId,
+            keyWord,
+            status,
+            sync,
+            limit,
+            offset,
+            enterpriseProjectId,
+            deviceKey,
+            addressType,
+            fwInstanceId,
+            fwKeyWord,
+            epsId);
     }
 
     @Override
@@ -414,6 +493,9 @@ public class ListEipResourcesRequest {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    deviceKey: ").append(toIndentedString(deviceKey)).append("\n");
         sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
+        sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
+        sb.append("    fwKeyWord: ").append(toIndentedString(fwKeyWord)).append("\n");
+        sb.append("    epsId: ").append(toIndentedString(epsId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

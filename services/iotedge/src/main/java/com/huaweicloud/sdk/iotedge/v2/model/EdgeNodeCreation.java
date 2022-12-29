@@ -9,8 +9,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iotedge.v2.model.BasePathDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.DeviceAuthInfoDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.EdgeAppInstanceDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.LogConfigDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.OfflineCacheConfigsDTO;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -66,6 +68,13 @@ public class EdgeNodeCreation  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="os_type")
+    
+    
+    private String osType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
     
@@ -91,6 +100,13 @@ public class EdgeNodeCreation  {
     
     
     private String securityLevel;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="reliability_level")
+    
+    
+    private String reliabilityLevel;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -129,10 +145,31 @@ public class EdgeNodeCreation  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="network_access_point")
+    
+    
+    private String networkAccessPoint;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hardware_model")
     
     
     private String hardwareModel;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="offline_cache_configs")
+    
+    
+    private OfflineCacheConfigsDTO offlineCacheConfigs;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="device_auth_info")
+    
+    
+    private DeviceAuthInfoDTO deviceAuthInfo;
 
     public EdgeNodeCreation withEdgeNodeId(String edgeNodeId) {
         this.edgeNodeId = edgeNodeId;
@@ -268,6 +305,28 @@ public class EdgeNodeCreation  {
 
     
 
+    public EdgeNodeCreation withOsType(String osType) {
+        this.osType = osType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 系统类型。包括：generalLinux通用系统，openHarmony。
+     * @return osType
+     */
+    public String getOsType() {
+        return osType;
+    }
+
+    public void setOsType(String osType) {
+        this.osType = osType;
+    }
+
+    
+
     public EdgeNodeCreation withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -366,6 +425,28 @@ public class EdgeNodeCreation  {
 
     public void setSecurityLevel(String securityLevel) {
         this.securityLevel = securityLevel;
+    }
+
+    
+
+    public EdgeNodeCreation withReliabilityLevel(String reliabilityLevel) {
+        this.reliabilityLevel = reliabilityLevel;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 节点的可靠性等级。
+     * @return reliabilityLevel
+     */
+    public String getReliabilityLevel() {
+        return reliabilityLevel;
+    }
+
+    public void setReliabilityLevel(String reliabilityLevel) {
+        this.reliabilityLevel = reliabilityLevel;
     }
 
     
@@ -517,6 +598,28 @@ public class EdgeNodeCreation  {
 
     
 
+    public EdgeNodeCreation withNetworkAccessPoint(String networkAccessPoint) {
+        this.networkAccessPoint = networkAccessPoint;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 网络接入方式类型
+     * @return networkAccessPoint
+     */
+    public String getNetworkAccessPoint() {
+        return networkAccessPoint;
+    }
+
+    public void setNetworkAccessPoint(String networkAccessPoint) {
+        this.networkAccessPoint = networkAccessPoint;
+    }
+
+    
+
     public EdgeNodeCreation withHardwareModel(String hardwareModel) {
         this.hardwareModel = hardwareModel;
         return this;
@@ -539,6 +642,64 @@ public class EdgeNodeCreation  {
 
     
 
+    public EdgeNodeCreation withOfflineCacheConfigs(OfflineCacheConfigsDTO offlineCacheConfigs) {
+        this.offlineCacheConfigs = offlineCacheConfigs;
+        return this;
+    }
+
+    public EdgeNodeCreation withOfflineCacheConfigs(Consumer<OfflineCacheConfigsDTO> offlineCacheConfigsSetter) {
+        if(this.offlineCacheConfigs == null ){
+            this.offlineCacheConfigs = new OfflineCacheConfigsDTO();
+            offlineCacheConfigsSetter.accept(this.offlineCacheConfigs);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get offlineCacheConfigs
+     * @return offlineCacheConfigs
+     */
+    public OfflineCacheConfigsDTO getOfflineCacheConfigs() {
+        return offlineCacheConfigs;
+    }
+
+    public void setOfflineCacheConfigs(OfflineCacheConfigsDTO offlineCacheConfigs) {
+        this.offlineCacheConfigs = offlineCacheConfigs;
+    }
+
+    
+
+    public EdgeNodeCreation withDeviceAuthInfo(DeviceAuthInfoDTO deviceAuthInfo) {
+        this.deviceAuthInfo = deviceAuthInfo;
+        return this;
+    }
+
+    public EdgeNodeCreation withDeviceAuthInfo(Consumer<DeviceAuthInfoDTO> deviceAuthInfoSetter) {
+        if(this.deviceAuthInfo == null ){
+            this.deviceAuthInfo = new DeviceAuthInfoDTO();
+            deviceAuthInfoSetter.accept(this.deviceAuthInfo);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get deviceAuthInfo
+     * @return deviceAuthInfo
+     */
+    public DeviceAuthInfoDTO getDeviceAuthInfo() {
+        return deviceAuthInfo;
+    }
+
+    public void setDeviceAuthInfo(DeviceAuthInfoDTO deviceAuthInfo) {
+        this.deviceAuthInfo = deviceAuthInfo;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -554,20 +715,25 @@ public class EdgeNodeCreation  {
             Objects.equals(this.verifyCode, edgeNodeCreation.verifyCode) &&
             Objects.equals(this.timeOut, edgeNodeCreation.timeOut) &&
             Objects.equals(this.arch, edgeNodeCreation.arch) &&
+            Objects.equals(this.osType, edgeNodeCreation.osType) &&
             Objects.equals(this.instanceId, edgeNodeCreation.instanceId) &&
             Objects.equals(this.spaceId, edgeNodeCreation.spaceId) &&
             Objects.equals(this.resourceIds, edgeNodeCreation.resourceIds) &&
             Objects.equals(this.securityLevel, edgeNodeCreation.securityLevel) &&
+            Objects.equals(this.reliabilityLevel, edgeNodeCreation.reliabilityLevel) &&
             Objects.equals(this.storagePeriod, edgeNodeCreation.storagePeriod) &&
             Objects.equals(this.aiCardType, edgeNodeCreation.aiCardType) &&
             Objects.equals(this.basePath, edgeNodeCreation.basePath) &&
             Objects.equals(this.logConfigs, edgeNodeCreation.logConfigs) &&
             Objects.equals(this.apps, edgeNodeCreation.apps) &&
-            Objects.equals(this.hardwareModel, edgeNodeCreation.hardwareModel);
+            Objects.equals(this.networkAccessPoint, edgeNodeCreation.networkAccessPoint) &&
+            Objects.equals(this.hardwareModel, edgeNodeCreation.hardwareModel) &&
+            Objects.equals(this.offlineCacheConfigs, edgeNodeCreation.offlineCacheConfigs) &&
+            Objects.equals(this.deviceAuthInfo, edgeNodeCreation.deviceAuthInfo);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(edgeNodeId, name, type, verifyCode, timeOut, arch, instanceId, spaceId, resourceIds, securityLevel, storagePeriod, aiCardType, basePath, logConfigs, apps, hardwareModel);
+        return Objects.hash(edgeNodeId, name, type, verifyCode, timeOut, arch, osType, instanceId, spaceId, resourceIds, securityLevel, reliabilityLevel, storagePeriod, aiCardType, basePath, logConfigs, apps, networkAccessPoint, hardwareModel, offlineCacheConfigs, deviceAuthInfo);
     }
     @Override
     public String toString() {
@@ -579,16 +745,21 @@ public class EdgeNodeCreation  {
         sb.append("    verifyCode: ").append(toIndentedString(verifyCode)).append("\n");
         sb.append("    timeOut: ").append(toIndentedString(timeOut)).append("\n");
         sb.append("    arch: ").append(toIndentedString(arch)).append("\n");
+        sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    spaceId: ").append(toIndentedString(spaceId)).append("\n");
         sb.append("    resourceIds: ").append(toIndentedString(resourceIds)).append("\n");
         sb.append("    securityLevel: ").append(toIndentedString(securityLevel)).append("\n");
+        sb.append("    reliabilityLevel: ").append(toIndentedString(reliabilityLevel)).append("\n");
         sb.append("    storagePeriod: ").append(toIndentedString(storagePeriod)).append("\n");
         sb.append("    aiCardType: ").append(toIndentedString(aiCardType)).append("\n");
         sb.append("    basePath: ").append(toIndentedString(basePath)).append("\n");
         sb.append("    logConfigs: ").append(toIndentedString(logConfigs)).append("\n");
         sb.append("    apps: ").append(toIndentedString(apps)).append("\n");
+        sb.append("    networkAccessPoint: ").append(toIndentedString(networkAccessPoint)).append("\n");
         sb.append("    hardwareModel: ").append(toIndentedString(hardwareModel)).append("\n");
+        sb.append("    offlineCacheConfigs: ").append(toIndentedString(offlineCacheConfigs)).append("\n");
+        sb.append("    deviceAuthInfo: ").append(toIndentedString(deviceAuthInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

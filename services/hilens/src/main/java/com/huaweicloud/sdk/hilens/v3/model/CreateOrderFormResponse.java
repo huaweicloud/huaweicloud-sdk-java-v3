@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -15,63 +12,25 @@ import java.util.function.Consumer;
 public class CreateOrderFormResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "data")
+    @JsonProperty(value = "order_id")
 
-    private List<SkillInfo> data = null;
+    private String orderId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total")
-
-    private Integer total;
-
-    public CreateOrderFormResponse withData(List<SkillInfo> data) {
-        this.data = data;
-        return this;
-    }
-
-    public CreateOrderFormResponse addDataItem(SkillInfo dataItem) {
-        if (this.data == null) {
-            this.data = new ArrayList<>();
-        }
-        this.data.add(dataItem);
-        return this;
-    }
-
-    public CreateOrderFormResponse withData(Consumer<List<SkillInfo>> dataSetter) {
-        if (this.data == null) {
-            this.data = new ArrayList<>();
-        }
-        dataSetter.accept(this.data);
+    public CreateOrderFormResponse withOrderId(String orderId) {
+        this.orderId = orderId;
         return this;
     }
 
     /**
-     * 技能列表
-     * @return data
+     * 订单ID
+     * @return orderId
      */
-    public List<SkillInfo> getData() {
-        return data;
+    public String getOrderId() {
+        return orderId;
     }
 
-    public void setData(List<SkillInfo> data) {
-        this.data = data;
-    }
-
-    public CreateOrderFormResponse withTotal(Integer total) {
-        this.total = total;
-        return this;
-    }
-
-    /**
-     * 总数量
-     * @return total
-     */
-    public Integer getTotal() {
-        return total;
-    }
-
-    public void setTotal(Integer total) {
-        this.total = total;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     @Override
@@ -83,21 +42,19 @@ public class CreateOrderFormResponse extends SdkResponse {
             return false;
         }
         CreateOrderFormResponse createOrderFormResponse = (CreateOrderFormResponse) o;
-        return Objects.equals(this.data, createOrderFormResponse.data)
-            && Objects.equals(this.total, createOrderFormResponse.total);
+        return Objects.equals(this.orderId, createOrderFormResponse.orderId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(data, total);
+        return Objects.hash(orderId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateOrderFormResponse {\n");
-        sb.append("    data: ").append(toIndentedString(data)).append("\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -130,6 +130,11 @@ public class UrlDomainRefInfo {
     private Boolean isHttpRedirectToHttps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verified_client_certificate_enabled")
+
+    private Boolean verifiedClientCertificateEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_id")
 
     private String sslId;
@@ -239,6 +244,23 @@ public class UrlDomainRefInfo {
         this.isHttpRedirectToHttps = isHttpRedirectToHttps;
     }
 
+    public UrlDomainRefInfo withVerifiedClientCertificateEnabled(Boolean verifiedClientCertificateEnabled) {
+        this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
+        return this;
+    }
+
+    /**
+     * 是否开启客户端证书校验。只有绑定证书时，该参数才生效。当绑定证书存在trusted_root_ca时，默认开启；当绑定证书不存在trusted_root_ca时，默认关闭。
+     * @return verifiedClientCertificateEnabled
+     */
+    public Boolean getVerifiedClientCertificateEnabled() {
+        return verifiedClientCertificateEnabled;
+    }
+
+    public void setVerifiedClientCertificateEnabled(Boolean verifiedClientCertificateEnabled) {
+        this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
+    }
+
     public UrlDomainRefInfo withSslId(String sslId) {
         this.sslId = sslId;
         return this;
@@ -337,6 +359,7 @@ public class UrlDomainRefInfo {
             && Objects.equals(this.id, urlDomainRefInfo.id) && Objects.equals(this.status, urlDomainRefInfo.status)
             && Objects.equals(this.minSslVersion, urlDomainRefInfo.minSslVersion)
             && Objects.equals(this.isHttpRedirectToHttps, urlDomainRefInfo.isHttpRedirectToHttps)
+            && Objects.equals(this.verifiedClientCertificateEnabled, urlDomainRefInfo.verifiedClientCertificateEnabled)
             && Objects.equals(this.sslId, urlDomainRefInfo.sslId)
             && Objects.equals(this.sslName, urlDomainRefInfo.sslName)
             && Objects.equals(this.apiGroupId, urlDomainRefInfo.apiGroupId)
@@ -351,6 +374,7 @@ public class UrlDomainRefInfo {
             status,
             minSslVersion,
             isHttpRedirectToHttps,
+            verifiedClientCertificateEnabled,
             sslId,
             sslName,
             apiGroupId,
@@ -367,6 +391,9 @@ public class UrlDomainRefInfo {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    minSslVersion: ").append(toIndentedString(minSslVersion)).append("\n");
         sb.append("    isHttpRedirectToHttps: ").append(toIndentedString(isHttpRedirectToHttps)).append("\n");
+        sb.append("    verifiedClientCertificateEnabled: ")
+            .append(toIndentedString(verifiedClientCertificateEnabled))
+            .append("\n");
         sb.append("    sslId: ").append(toIndentedString(sslId)).append("\n");
         sb.append("    sslName: ").append(toIndentedString(sslName)).append("\n");
         sb.append("    apiGroupId: ").append(toIndentedString(apiGroupId)).append("\n");
