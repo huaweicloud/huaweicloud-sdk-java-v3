@@ -11,7 +11,7 @@ import java.util.Objects;
 public class DeleteSearchCriterias {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "epsId")
+    @JsonProperty(value = "eps_id")
 
     private String epsId;
 

@@ -67,7 +67,7 @@ public class ShowNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_node_type")
 
-    private Object clusterNodeType;
+    private String clusterNodeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "firmware_name")
@@ -359,7 +359,7 @@ public class ShowNodeResponse extends SdkResponse {
         this.clusterNodeState = clusterNodeState;
     }
 
-    public ShowNodeResponse withClusterNodeType(Object clusterNodeType) {
+    public ShowNodeResponse withClusterNodeType(String clusterNodeType) {
         this.clusterNodeType = clusterNodeType;
         return this;
     }
@@ -368,11 +368,11 @@ public class ShowNodeResponse extends SdkResponse {
      * 当该设备处于集群时，显示所属的集群设备类型。 - cluster_controller 控制设备 - cluster_worker 工作设备
      * @return clusterNodeType
      */
-    public Object getClusterNodeType() {
+    public String getClusterNodeType() {
         return clusterNodeType;
     }
 
-    public void setClusterNodeType(Object clusterNodeType) {
+    public void setClusterNodeType(String clusterNodeType) {
         this.clusterNodeType = clusterNodeType;
     }
 

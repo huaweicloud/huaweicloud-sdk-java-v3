@@ -606,6 +606,13 @@ public class VpcMeta {
             f -> f.withMarshaller(ListPortsRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
             }));
+        builder.<List<String>>withRequestField("security_groups",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPortsRequest::getSecurityGroups, (req, v) -> {
+                req.setSecurityGroups(v);
+            }));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -613,10 +620,10 @@ public class VpcMeta {
             f -> f.withMarshaller(ListPortsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
             }));
-        builder.<String>withRequestField("fixed_ips",
+        builder.<List<String>>withRequestField("fixed_ips",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPortsRequest::getFixedIps, (req, v) -> {
                 req.setFixedIps(v);
             }));

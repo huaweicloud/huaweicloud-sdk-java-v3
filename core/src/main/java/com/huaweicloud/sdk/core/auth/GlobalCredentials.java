@@ -75,49 +75,54 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
 
     @Override
     public CompletableFuture<ICredential> processAuthParams(HcClient hcClient, String regionId) {
-        if (!StringUtils.isEmpty(getIdpId()) || !StringUtils.isEmpty(getIdTokenFile())) {
-            if (StringUtils.isEmpty(getIdpId())) {
-                throw new SdkException("idpId is required when using idpId&idTokenFile");
-            } else if (StringUtils.isEmpty(getIdTokenFile())) {
-                throw new SdkException("idTokenFile is required when using idpId&idTokenFile");
+        return CompletableFuture.supplyAsync(() -> {
+            if (!StringUtils.isEmpty(getIdpId()) || !StringUtils.isEmpty(getIdTokenFile())) {
+                if (StringUtils.isEmpty(getIdpId())) {
+                    throw new SdkException("idpId is required when using idpId&idTokenFile");
+                } else if (StringUtils.isEmpty(getIdTokenFile())) {
+                    throw new SdkException("idTokenFile is required when using idpId&idTokenFile");
+                }
+                if (StringUtils.isEmpty(domainId)) {
+                    throw new SdkException("domainId is required when using idpId&idTokenFile");
+                }
             }
-            if (StringUtils.isEmpty(domainId)) {
-                throw new SdkException("domainId is required when using idpId&idTokenFile");
+
+            if (!StringUtils.isEmpty(domainId)) {
+                return this;
             }
-        }
 
-        if (!StringUtils.isEmpty(domainId)) {
-            return CompletableFuture.completedFuture(this);
-        }
+            // Confirm if current ak has been cached in AuthCache, key of authMap when searching domain info is ak
+            String akWithName = getAk();
+            if (Objects.nonNull(AuthCache.getAuth(akWithName))
+                    && !StringUtils.isEmpty(AuthCache.getAuth(akWithName))) {
+                domainId = AuthCache.getAuth(akWithName);
+                return this;
+            }
 
-        // Confirm if current ak has been cached in AuthCache, key of authMap when searching domain info is ak
-        String akWithName = getAk();
-        if (Objects.nonNull(AuthCache.getAuth(akWithName)) && !StringUtils.isEmpty(AuthCache.getAuth(akWithName))) {
-            domainId = AuthCache.getAuth(akWithName);
-            return CompletableFuture.completedFuture(this);
-        }
+            String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? getDefaultIamEndpoint() : getIamEndpoint();
+            HcClient inner = hcClient.overrideEndpoint(iamEndpoint);
 
-        String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? getDefaultIamEndpoint() : getIamEndpoint();
-        HcClient inner = hcClient.overrideEndpoint(iamEndpoint);
+            Function<HttpRequest, Boolean> derivedPredicate = getDerivedPredicate();
+            setDerivedPredicate(null);
 
-        Function<HttpRequest, Boolean> derivedPredicate = getDerivedPredicate();
-        setDerivedPredicate(null);
+            KeystoneListAuthDomainsRequest request = new KeystoneListAuthDomainsRequest();
+            KeystoneListAuthDomainsResponse response = inner.syncInvokeHttp(request,
+                    InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
+            if (Objects.isNull(response)
+                    || Objects.isNull(response.getDomains())
+                    || response.getDomains().size() == 0) {
+                throw new SdkException("No domain id found, please select one of the following solutions:\n\t"
+                        + "1. Manually specify domain_id when initializing the credentials.\n\t"
+                        + "2. Use the domain account to grant the current account permissions of the IAM service.\n\t"
+                        + "3. Use AK/SK of the domain account.");
+            }
+            domainId = response.getDomains().get(0).getId();
+            AuthCache.putAuth(akWithName, domainId);
 
-        KeystoneListAuthDomainsRequest request = new KeystoneListAuthDomainsRequest();
-        KeystoneListAuthDomainsResponse response = inner.syncInvokeHttp(request,
-                InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
-        if (Objects.isNull(response) || Objects.isNull(response.getDomains()) || response.getDomains().size() == 0) {
-            throw new SdkException("No domain id found, please select one of the following solutions:\n\t"
-                    + "1. Manually specify domain_id when initializing the credentials.\n\t"
-                    + "2. Use the domain account to grant the current account permissions of the IAM service.\n\t"
-                    + "3. Use AK/SK of the domain account.");
-        }
-        domainId = response.getDomains().get(0).getId();
-        AuthCache.putAuth(akWithName, domainId);
+            setDerivedPredicate(derivedPredicate);
 
-        setDerivedPredicate(derivedPredicate);
-
-        return CompletableFuture.completedFuture(this);
+            return this;
+        }, hcClient.getHttpConfig().getExecutorService());
     }
 
     @Override

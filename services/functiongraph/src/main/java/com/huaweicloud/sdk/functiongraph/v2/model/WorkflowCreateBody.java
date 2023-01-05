@@ -150,6 +150,11 @@ public class WorkflowCreateBody {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_stream_response")
+
+    private Boolean enableStreamResponse;
+
     public WorkflowCreateBody withName(String name) {
         this.name = name;
         return this;
@@ -410,6 +415,23 @@ public class WorkflowCreateBody {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public WorkflowCreateBody withEnableStreamResponse(Boolean enableStreamResponse) {
+        this.enableStreamResponse = enableStreamResponse;
+        return this;
+    }
+
+    /**
+     * 是否返回流数据
+     * @return enableStreamResponse
+     */
+    public Boolean getEnableStreamResponse() {
+        return enableStreamResponse;
+    }
+
+    public void setEnableStreamResponse(Boolean enableStreamResponse) {
+        this.enableStreamResponse = enableStreamResponse;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -429,7 +451,8 @@ public class WorkflowCreateBody {
             && Objects.equals(this.retries, workflowCreateBody.retries)
             && Objects.equals(this.mode, workflowCreateBody.mode)
             && Objects.equals(this.expressConfig, workflowCreateBody.expressConfig)
-            && Objects.equals(this.enterpriseProjectId, workflowCreateBody.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, workflowCreateBody.enterpriseProjectId)
+            && Objects.equals(this.enableStreamResponse, workflowCreateBody.enableStreamResponse);
     }
 
     @Override
@@ -444,7 +467,8 @@ public class WorkflowCreateBody {
             retries,
             mode,
             expressConfig,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            enableStreamResponse);
     }
 
     @Override
@@ -462,6 +486,7 @@ public class WorkflowCreateBody {
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    expressConfig: ").append(toIndentedString(expressConfig)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    enableStreamResponse: ").append(toIndentedString(enableStreamResponse)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -140,6 +140,94 @@ public class ListDomainTrafficDetailRequest {
 
     private String endTime;
 
+    /**
+     * 服务类型： - Live：直播 - LLL：超低时延直播 - ALL: 默认所有直播 
+     */
+    public static final class ServiceTypeEnum {
+
+        /**
+         * Enum LIVE for value: "Live"
+         */
+        public static final ServiceTypeEnum LIVE = new ServiceTypeEnum("Live");
+
+        /**
+         * Enum LLL for value: "LLL"
+         */
+        public static final ServiceTypeEnum LLL = new ServiceTypeEnum("LLL");
+
+        /**
+         * Enum ALL for value: "ALL"
+         */
+        public static final ServiceTypeEnum ALL = new ServiceTypeEnum("ALL");
+
+        private static final Map<String, ServiceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ServiceTypeEnum> createStaticFields() {
+            Map<String, ServiceTypeEnum> map = new HashMap<>();
+            map.put("Live", LIVE);
+            map.put("LLL", LLL);
+            map.put("ALL", ALL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ServiceTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ServiceTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ServiceTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ServiceTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static ServiceTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ServiceTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ServiceTypeEnum) {
+                return this.value.equals(((ServiceTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_type")
+
+    private ServiceTypeEnum serviceType;
+
     public ListDomainTrafficDetailRequest withPlayDomains(List<String> playDomains) {
         this.playDomains = playDomains;
         return this;
@@ -162,7 +250,7 @@ public class ListDomainTrafficDetailRequest {
     }
 
     /**
-     * 播放域名列表，最多支持查询100个域名，多个域名以逗号分隔。 
+     * 播放域名列表，最多支持查询100个域名，多个域名以逗号分隔。  如果不传入域名，则查询租户下所有播放域名的流量数据。 
      * @return playDomains
      */
     public List<String> getPlayDomains() {
@@ -343,6 +431,23 @@ public class ListDomainTrafficDetailRequest {
         this.endTime = endTime;
     }
 
+    public ListDomainTrafficDetailRequest withServiceType(ServiceTypeEnum serviceType) {
+        this.serviceType = serviceType;
+        return this;
+    }
+
+    /**
+     * 服务类型： - Live：直播 - LLL：超低时延直播 - ALL: 默认所有直播 
+     * @return serviceType
+     */
+    public ServiceTypeEnum getServiceType() {
+        return serviceType;
+    }
+
+    public void setServiceType(ServiceTypeEnum serviceType) {
+        this.serviceType = serviceType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -360,12 +465,13 @@ public class ListDomainTrafficDetailRequest {
             && Objects.equals(this.protocol, listDomainTrafficDetailRequest.protocol)
             && Objects.equals(this.interval, listDomainTrafficDetailRequest.interval)
             && Objects.equals(this.startTime, listDomainTrafficDetailRequest.startTime)
-            && Objects.equals(this.endTime, listDomainTrafficDetailRequest.endTime);
+            && Objects.equals(this.endTime, listDomainTrafficDetailRequest.endTime)
+            && Objects.equals(this.serviceType, listDomainTrafficDetailRequest.serviceType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(playDomains, app, stream, region, isp, protocol, interval, startTime, endTime);
+        return Objects.hash(playDomains, app, stream, region, isp, protocol, interval, startTime, endTime, serviceType);
     }
 
     @Override
@@ -381,6 +487,7 @@ public class ListDomainTrafficDetailRequest {
         sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

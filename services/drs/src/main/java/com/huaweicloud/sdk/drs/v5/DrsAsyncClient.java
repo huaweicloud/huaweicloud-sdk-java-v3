@@ -112,6 +112,43 @@ public class DrsAsyncClient {
     }
 
     /**
+     * 提交查询数据库对象信息
+     *
+     * 提交查询数据库对象信息。例如：
+     * - 当type取值为source时，表示查询源库库表信息。
+     * - 当源库库表信息有变化时，则type取值为source，is_refresh取值为true。
+     * - 当已同步到目标库的库表信息过大，需要提前将数据加载到缓存中时，type取值为synchronized。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CollectDbObjectsAsyncRequest 请求对象
+     * @return CompletableFuture<CollectDbObjectsAsyncResponse>
+     */
+    public CompletableFuture<CollectDbObjectsAsyncResponse> collectDbObjectsAsyncAsync(
+        CollectDbObjectsAsyncRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.collectDbObjectsAsync);
+    }
+
+    /**
+     * 提交查询数据库对象信息
+     *
+     * 提交查询数据库对象信息。例如：
+     * - 当type取值为source时，表示查询源库库表信息。
+     * - 当源库库表信息有变化时，则type取值为source，is_refresh取值为true。
+     * - 当已同步到目标库的库表信息过大，需要提前将数据加载到缓存中时，type取值为synchronized。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CollectDbObjectsAsyncRequest 请求对象
+     * @return AsyncInvoker<CollectDbObjectsAsyncRequest, CollectDbObjectsAsyncResponse>
+     */
+    public AsyncInvoker<CollectDbObjectsAsyncRequest, CollectDbObjectsAsyncResponse> collectDbObjectsAsyncAsyncInvoker(
+        CollectDbObjectsAsyncRequest request) {
+        return new AsyncInvoker<CollectDbObjectsAsyncRequest, CollectDbObjectsAsyncResponse>(request,
+            DrsMeta.collectDbObjectsAsync, hcClient);
+    }
+
+    /**
      * 提交批量创建异步任务
      *
      * 提交批量创建异步任务，当批量异步任务创建或更新参数后，系统会自动开始进行参数校验，待所有任务成功完成参数校验后并且无报错时，可调用此接口开始创建DRS任务实例。
@@ -403,6 +440,37 @@ public class DrsAsyncClient {
     }
 
     /**
+     * 获取数据库对象信息的结果
+     *
+     * 获取数据库对象信息的结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDbObjectCollectionStatusRequest 请求对象
+     * @return CompletableFuture<ShowDbObjectCollectionStatusResponse>
+     */
+    public CompletableFuture<ShowDbObjectCollectionStatusResponse> showDbObjectCollectionStatusAsync(
+        ShowDbObjectCollectionStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.showDbObjectCollectionStatus);
+    }
+
+    /**
+     * 获取数据库对象信息的结果
+     *
+     * 获取数据库对象信息的结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDbObjectCollectionStatusRequest 请求对象
+     * @return AsyncInvoker<ShowDbObjectCollectionStatusRequest, ShowDbObjectCollectionStatusResponse>
+     */
+    public AsyncInvoker<ShowDbObjectCollectionStatusRequest, ShowDbObjectCollectionStatusResponse> showDbObjectCollectionStatusAsyncInvoker(
+        ShowDbObjectCollectionStatusRequest request) {
+        return new AsyncInvoker<ShowDbObjectCollectionStatusRequest, ShowDbObjectCollectionStatusResponse>(request,
+            DrsMeta.showDbObjectCollectionStatus, hcClient);
+    }
+
+    /**
      * 对象选择（文件导入 - 进度查询）
      *
      * 对象选择（文件导入 - 进度查询）。
@@ -494,6 +562,37 @@ public class DrsAsyncClient {
     }
 
     /**
+     * 获取对象保存进度
+     *
+     * 获取对象保存进度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowUpdateObjectSavingStatusRequest 请求对象
+     * @return CompletableFuture<ShowUpdateObjectSavingStatusResponse>
+     */
+    public CompletableFuture<ShowUpdateObjectSavingStatusResponse> showUpdateObjectSavingStatusAsync(
+        ShowUpdateObjectSavingStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.showUpdateObjectSavingStatus);
+    }
+
+    /**
+     * 获取对象保存进度
+     *
+     * 获取对象保存进度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowUpdateObjectSavingStatusRequest 请求对象
+     * @return AsyncInvoker<ShowUpdateObjectSavingStatusRequest, ShowUpdateObjectSavingStatusResponse>
+     */
+    public AsyncInvoker<ShowUpdateObjectSavingStatusRequest, ShowUpdateObjectSavingStatusResponse> showUpdateObjectSavingStatusAsyncInvoker(
+        ShowUpdateObjectSavingStatusRequest request) {
+        return new AsyncInvoker<ShowUpdateObjectSavingStatusRequest, ShowUpdateObjectSavingStatusResponse>(request,
+            DrsMeta.showUpdateObjectSavingStatus, hcClient);
+    }
+
+    /**
      * 更新指定ID批量异步任务详情
      *
      * 更新租户指定ID批量异步任务详情。
@@ -528,6 +627,7 @@ public class DrsAsyncClient {
      * 更新指定ID任务详情
      *
      * 更新租户指定ID任务详情。
+     * 当type取值为db_object， 进行异步处理。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -542,6 +642,7 @@ public class DrsAsyncClient {
      * 更新指定ID任务详情
      *
      * 更新租户指定ID任务详情。
+     * 当type取值为db_object， 进行异步处理。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

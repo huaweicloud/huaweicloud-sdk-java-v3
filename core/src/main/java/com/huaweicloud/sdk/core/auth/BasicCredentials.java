@@ -83,50 +83,53 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
 
     @Override
     public CompletableFuture<ICredential> processAuthParams(HcClient hcClient, String regionId) {
-        if (!StringUtils.isEmpty(getIdpId()) || !StringUtils.isEmpty(getIdTokenFile())) {
-            if (StringUtils.isEmpty(getIdpId())) {
-                throw new SdkException("idpId is required when using idpId&idTokenFile");
-            } else if (StringUtils.isEmpty(getIdTokenFile())) {
-                throw new SdkException("idTokenFile is required when using idpId&idTokenFile");
+        return CompletableFuture.supplyAsync(() -> {
+            if (!StringUtils.isEmpty(getIdpId()) || !StringUtils.isEmpty(getIdTokenFile())) {
+                if (StringUtils.isEmpty(getIdpId())) {
+                    throw new SdkException("idpId is required when using idpId&idTokenFile");
+                } else if (StringUtils.isEmpty(getIdTokenFile())) {
+                    throw new SdkException("idTokenFile is required when using idpId&idTokenFile");
+                }
+                if (StringUtils.isEmpty(projectId)) {
+                    throw new SdkException("projectId is required when using idpId&idTokenFile");
+                }
             }
-            if (StringUtils.isEmpty(projectId)) {
-                throw new SdkException("projectId is required when using idpId&idTokenFile");
+
+            if (!StringUtils.isEmpty(projectId)) {
+                return this;
             }
-        }
 
-        if (!StringUtils.isEmpty(projectId)) {
-            return CompletableFuture.completedFuture(this);
-        }
+            // Confirm if current ak has been cached in AuthCache, key of authMap is ak+regionId
+            String akWithName = getAk() + regionId;
+            if (Objects.nonNull(AuthCache.getAuth(akWithName))
+                    && !StringUtils.isEmpty(AuthCache.getAuth(akWithName))) {
+                projectId = AuthCache.getAuth(akWithName);
+                return this;
+            }
 
-        // Confirm if current ak has been cached in AuthCache, key of authMap is ak+regionId
-        String akWithName = getAk() + regionId;
-        if (Objects.nonNull(AuthCache.getAuth(akWithName)) && !StringUtils.isEmpty(AuthCache.getAuth(akWithName))) {
-            projectId = AuthCache.getAuth(akWithName);
-            return CompletableFuture.completedFuture(this);
-        }
+            String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? getDefaultIamEndpoint() : getIamEndpoint();
+            HcClient inner = hcClient.overrideEndpoint(iamEndpoint);
 
-        String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? getDefaultIamEndpoint() : getIamEndpoint();
-        HcClient inner = hcClient.overrideEndpoint(iamEndpoint);
+            Function<HttpRequest, Boolean> derivedPredicate = getDerivedPredicate();
+            setDerivedPredicate(null);
 
-        Function<HttpRequest, Boolean> derivedPredicate = getDerivedPredicate();
-        setDerivedPredicate(null);
+            KeystoneListProjectsRequest request = new KeystoneListProjectsRequest().withName(regionId);
+            KeystoneListProjectsResponse response = inner.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_PROJECTS);
+            if (Objects.isNull(response)) {
+                throw new SdkException(
+                        "Failed to get project id, " + "please input project id when initializing BasicCredentials");
+            }
+            if (response.getProjects().size() == 1) {
+                projectId = response.getProjects().get(0).getId();
+            } else {
+                projectId = keystoneCreateProject(inner, regionId);
+            }
+            AuthCache.putAuth(akWithName, projectId);
 
-        KeystoneListProjectsRequest request = new KeystoneListProjectsRequest().withName(regionId);
-        KeystoneListProjectsResponse response = inner.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_PROJECTS);
-        if (Objects.isNull(response)) {
-            throw new SdkException(
-                    "Failed to get project id, " + "please input project id when initializing BasicCredentials");
-        }
-        if (response.getProjects().size() == 1) {
-            projectId = response.getProjects().get(0).getId();
-        } else {
-            projectId = keystoneCreateProject(inner, regionId);
-        }
-        AuthCache.putAuth(akWithName, projectId);
+            setDerivedPredicate(derivedPredicate);
 
-        setDerivedPredicate(derivedPredicate);
-
-        return CompletableFuture.completedFuture(this);
+            return this;
+        }, hcClient.getHttpConfig().getExecutorService());
     }
 
     private String keystoneCreateProject(HcClient client, String regionId) {

@@ -78,9 +78,9 @@ public class CloudtestAsyncClient {
     }
 
     /**
-     * 新测试类型服务注册到云测
+     * 新测试类型服务注册
      *
-     * 通过接口CreateService注册成为云测的自定义服务。 注册完成后云测界面将会出现此自定义测试类型。
+     * 通过接口CreateService注册成为自定义服务。 注册完成后界面将会出现此自定义测试类型。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -92,9 +92,9 @@ public class CloudtestAsyncClient {
     }
 
     /**
-     * 新测试类型服务注册到云测
+     * 新测试类型服务注册
      *
-     * 通过接口CreateService注册成为云测的自定义服务。 注册完成后云测界面将会出现此自定义测试类型。
+     * 通过接口CreateService注册成为自定义服务。 注册完成后界面将会出现此自定义测试类型。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -558,9 +558,9 @@ public class CloudtestAsyncClient {
     }
 
     /**
-     * 获取云测的环境参数分组列表
+     * 获取环境参数分组列表
      *
-     * 获取云测的环境参数分组列表
+     * 获取环境参数分组列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -572,9 +572,9 @@ public class CloudtestAsyncClient {
     }
 
     /**
-     * 获取云测的环境参数分组列表
+     * 获取环境参数分组列表
      *
-     * 获取云测的环境参数分组列表
+     * 获取环境参数分组列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

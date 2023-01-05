@@ -826,6 +826,36 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询实例参数修改记录列表
+     *
+     * 查询实例的参数修改记录列表，支持按照关键字查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConfigHistoriesRequest 请求对象
+     * @return CompletableFuture<ListConfigHistoriesResponse>
+     */
+    public CompletableFuture<ListConfigHistoriesResponse> listConfigHistoriesAsync(ListConfigHistoriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.listConfigHistories);
+    }
+
+    /**
+     * 查询实例参数修改记录列表
+     *
+     * 查询实例的参数修改记录列表，支持按照关键字查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConfigHistoriesRequest 请求对象
+     * @return AsyncInvoker<ListConfigHistoriesRequest, ListConfigHistoriesResponse>
+     */
+    public AsyncInvoker<ListConfigHistoriesRequest, ListConfigHistoriesResponse> listConfigHistoriesAsyncInvoker(
+        ListConfigHistoriesRequest request) {
+        return new AsyncInvoker<ListConfigHistoriesRequest, ListConfigHistoriesResponse>(request,
+            DcsMeta.listConfigHistories, hcClient);
+    }
+
+    /**
      * 查询实例配置参数
      *
      * 查询指定实例的配置参数信息。

@@ -117,6 +117,11 @@ public class DatabaseObject {
 
     private Integer totalTableNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_synchronized")
+
+    private Boolean isSynchronized;
+
     public DatabaseObject withSyncType(SyncTypeEnum syncType) {
         this.syncType = syncType;
         return this;
@@ -251,6 +256,23 @@ public class DatabaseObject {
         this.totalTableNum = totalTableNum;
     }
 
+    public DatabaseObject withIsSynchronized(Boolean isSynchronized) {
+        this.isSynchronized = isSynchronized;
+        return this;
+    }
+
+    /**
+     * 是否已同步
+     * @return isSynchronized
+     */
+    public Boolean getIsSynchronized() {
+        return isSynchronized;
+    }
+
+    public void setIsSynchronized(Boolean isSynchronized) {
+        this.isSynchronized = isSynchronized;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -263,12 +285,13 @@ public class DatabaseObject {
         return Objects.equals(this.syncType, databaseObject.syncType) && Objects.equals(this.name, databaseObject.name)
             && Objects.equals(this.all, databaseObject.all) && Objects.equals(this.schemas, databaseObject.schemas)
             && Objects.equals(this.tables, databaseObject.tables)
-            && Objects.equals(this.totalTableNum, databaseObject.totalTableNum);
+            && Objects.equals(this.totalTableNum, databaseObject.totalTableNum)
+            && Objects.equals(this.isSynchronized, databaseObject.isSynchronized);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(syncType, name, all, schemas, tables, totalTableNum);
+        return Objects.hash(syncType, name, all, schemas, tables, totalTableNum, isSynchronized);
     }
 
     @Override
@@ -281,6 +304,7 @@ public class DatabaseObject {
         sb.append("    schemas: ").append(toIndentedString(schemas)).append("\n");
         sb.append("    tables: ").append(toIndentedString(tables)).append("\n");
         sb.append("    totalTableNum: ").append(toIndentedString(totalTableNum)).append("\n");
+        sb.append("    isSynchronized: ").append(toIndentedString(isSynchronized)).append("\n");
         sb.append("}");
         return sb.toString();
     }

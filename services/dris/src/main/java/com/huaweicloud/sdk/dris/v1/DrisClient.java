@@ -548,6 +548,36 @@ public class DrisClient {
     }
 
     /**
+     * 查询雷达列表
+     *
+     * 查询雷达列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowRadarsRequest 请求对象
+     * @return BatchShowRadarsResponse
+     */
+    public BatchShowRadarsResponse batchShowRadars(BatchShowRadarsRequest request) {
+        return hcClient.syncInvokeHttp(request, DrisMeta.batchShowRadars);
+    }
+
+    /**
+     * 查询雷达列表
+     *
+     * 查询雷达列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowRadarsRequest 请求对象
+     * @return SyncInvoker<BatchShowRadarsRequest, BatchShowRadarsResponse>
+     */
+    public SyncInvoker<BatchShowRadarsRequest, BatchShowRadarsResponse> batchShowRadarsInvoker(
+        BatchShowRadarsRequest request) {
+        return new SyncInvoker<BatchShowRadarsRequest, BatchShowRadarsResponse>(request, DrisMeta.batchShowRadars,
+            hcClient);
+    }
+
+    /**
      * 查询RSU列表
      *
      * 查询RSU列表

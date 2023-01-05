@@ -147,9 +147,9 @@ public class TableObject {
     private List<String> configConditions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "has_been_sent")
+    @JsonProperty(value = "is_synchronized")
 
-    private Boolean hasBeenSent;
+    private Boolean isSynchronized;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "columns")
@@ -341,21 +341,21 @@ public class TableObject {
         this.configConditions = configConditions;
     }
 
-    public TableObject withHasBeenSent(Boolean hasBeenSent) {
-        this.hasBeenSent = hasBeenSent;
+    public TableObject withIsSynchronized(Boolean isSynchronized) {
+        this.isSynchronized = isSynchronized;
         return this;
     }
 
     /**
      * 是否已经进行同步。
-     * @return hasBeenSent
+     * @return isSynchronized
      */
-    public Boolean getHasBeenSent() {
-        return hasBeenSent;
+    public Boolean getIsSynchronized() {
+        return isSynchronized;
     }
 
-    public void setHasBeenSent(Boolean hasBeenSent) {
-        this.hasBeenSent = hasBeenSent;
+    public void setIsSynchronized(Boolean isSynchronized) {
+        this.isSynchronized = isSynchronized;
     }
 
     public TableObject withColumns(Map<String, ColumnObject> columns) {
@@ -407,7 +407,7 @@ public class TableObject {
             && Objects.equals(this.filtered, tableObject.filtered)
             && Objects.equals(this.filterConditions, tableObject.filterConditions)
             && Objects.equals(this.configConditions, tableObject.configConditions)
-            && Objects.equals(this.hasBeenSent, tableObject.hasBeenSent)
+            && Objects.equals(this.isSynchronized, tableObject.isSynchronized)
             && Objects.equals(this.columns, tableObject.columns);
     }
 
@@ -422,7 +422,7 @@ public class TableObject {
             filtered,
             filterConditions,
             configConditions,
-            hasBeenSent,
+            isSynchronized,
             columns);
     }
 
@@ -439,7 +439,7 @@ public class TableObject {
         sb.append("    filtered: ").append(toIndentedString(filtered)).append("\n");
         sb.append("    filterConditions: ").append(toIndentedString(filterConditions)).append("\n");
         sb.append("    configConditions: ").append(toIndentedString(configConditions)).append("\n");
-        sb.append("    hasBeenSent: ").append(toIndentedString(hasBeenSent)).append("\n");
+        sb.append("    isSynchronized: ").append(toIndentedString(isSynchronized)).append("\n");
         sb.append("    columns: ").append(toIndentedString(columns)).append("\n");
         sb.append("}");
         return sb.toString();

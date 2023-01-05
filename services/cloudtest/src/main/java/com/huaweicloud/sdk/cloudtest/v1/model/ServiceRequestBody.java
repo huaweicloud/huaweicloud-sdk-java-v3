@@ -43,7 +43,7 @@ public class ServiceRequestBody {
     }
 
     /**
-     * server_host是由用户提供的域名。 我们会通过此域名进行接口调用，请以https/http开头,长度小于等于128位字符。 TestHub将会通过此域名下的接口，保证云测数据与用户系统数据的一致性。
+     * server_host是由用户提供的域名。 我们会通过此域名进行接口调用，请以https/http开头,长度小于等于128位字符。 TestHub将会通过此域名下的接口，保证服务数据与用户系统数据的一致性。
      * @return serverHost
      */
     public String getServerHost() {

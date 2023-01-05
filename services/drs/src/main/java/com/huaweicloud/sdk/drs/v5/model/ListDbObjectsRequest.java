@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -117,6 +120,11 @@ public class ListDbObjectsRequest {
 
     private String type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "db_names")
+
+    private List<String> dbNames = null;
+
     public ListDbObjectsRequest withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -193,7 +201,7 @@ public class ListDbObjectsRequest {
     }
 
     /**
-     * 查询对象信息类型。取值： - source：查询源库对象信息。 - modified：查询已选择的（未下发与已同步的）对象信息。 - synchronized：查询已同步的（已下发的）对象信息 。
+     * 查询对象信息类型。取值： - source：查询源库对象信息。 - modified：查询已选择的（已同步的和未下发的）对象信息。 - synchronized：查询已同步的（已下发的）对象信息 ， 使用场景在任务处于全量中或者增量中。
      * @return type
      */
     public String getType() {
@@ -202,6 +210,39 @@ public class ListDbObjectsRequest {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public ListDbObjectsRequest withDbNames(List<String> dbNames) {
+        this.dbNames = dbNames;
+        return this;
+    }
+
+    public ListDbObjectsRequest addDbNamesItem(String dbNamesItem) {
+        if (this.dbNames == null) {
+            this.dbNames = new ArrayList<>();
+        }
+        this.dbNames.add(dbNamesItem);
+        return this;
+    }
+
+    public ListDbObjectsRequest withDbNames(Consumer<List<String>> dbNamesSetter) {
+        if (this.dbNames == null) {
+            this.dbNames = new ArrayList<>();
+        }
+        dbNamesSetter.accept(this.dbNames);
+        return this;
+    }
+
+    /**
+     * 查询指定库的信息
+     * @return dbNames
+     */
+    public List<String> getDbNames() {
+        return dbNames;
+    }
+
+    public void setDbNames(List<String> dbNames) {
+        this.dbNames = dbNames;
     }
 
     @Override
@@ -217,12 +258,13 @@ public class ListDbObjectsRequest {
             && Objects.equals(this.xLanguage, listDbObjectsRequest.xLanguage)
             && Objects.equals(this.offset, listDbObjectsRequest.offset)
             && Objects.equals(this.limit, listDbObjectsRequest.limit)
-            && Objects.equals(this.type, listDbObjectsRequest.type);
+            && Objects.equals(this.type, listDbObjectsRequest.type)
+            && Objects.equals(this.dbNames, listDbObjectsRequest.dbNames);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, xLanguage, offset, limit, type);
+        return Objects.hash(jobId, xLanguage, offset, limit, type, dbNames);
     }
 
     @Override
@@ -234,6 +276,7 @@ public class ListDbObjectsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    dbNames: ").append(toIndentedString(dbNames)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -264,7 +264,7 @@ public class DefaultHttpClient implements HttpClient {
         Request request = buildOkHttpRequest(httpRequest);
         CompletableFuture<Response> asyncHttpResponse = new CompletableFuture<>();
         client.newCall(request).enqueue(toCallback(asyncHttpResponse));
-        return asyncHttpResponse.handle((response, throwable) -> {
+        return asyncHttpResponse.handleAsync((response, throwable) -> {
             if (throwable != null) {
                 if (throwable instanceof SSLHandshakeException) {
                     throw new SslHandShakeException("DefaultHttpClient SslHandShakeException", throwable);
@@ -277,7 +277,7 @@ public class DefaultHttpClient implements HttpClient {
                 }
             }
             return DefaultHttpResponse.wrap(response);
-        });
+        }, httpConfig.getExecutorService());
     }
 
     @Override

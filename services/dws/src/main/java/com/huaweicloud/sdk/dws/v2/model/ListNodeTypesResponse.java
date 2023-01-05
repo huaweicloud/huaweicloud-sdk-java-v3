@@ -19,6 +19,11 @@ public class ListNodeTypesResponse extends SdkResponse {
 
     private List<NodeTypes> nodeTypes = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
     public ListNodeTypesResponse withNodeTypes(List<NodeTypes> nodeTypes) {
         this.nodeTypes = nodeTypes;
         return this;
@@ -52,6 +57,23 @@ public class ListNodeTypesResponse extends SdkResponse {
         this.nodeTypes = nodeTypes;
     }
 
+    public ListNodeTypesResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * 节点类型总数
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -61,12 +83,13 @@ public class ListNodeTypesResponse extends SdkResponse {
             return false;
         }
         ListNodeTypesResponse listNodeTypesResponse = (ListNodeTypesResponse) o;
-        return Objects.equals(this.nodeTypes, listNodeTypesResponse.nodeTypes);
+        return Objects.equals(this.nodeTypes, listNodeTypesResponse.nodeTypes)
+            && Objects.equals(this.count, listNodeTypesResponse.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nodeTypes);
+        return Objects.hash(nodeTypes, count);
     }
 
     @Override
@@ -74,6 +97,7 @@ public class ListNodeTypesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListNodeTypesResponse {\n");
         sb.append("    nodeTypes: ").append(toIndentedString(nodeTypes)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

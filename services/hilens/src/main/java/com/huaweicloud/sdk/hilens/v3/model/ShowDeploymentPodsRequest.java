@@ -35,6 +35,16 @@ public class ShowDeploymentPodsRequest {
 
     private String workspaceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ShowDeploymentPodsRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -120,6 +130,40 @@ public class ShowDeploymentPodsRequest {
         this.workspaceId = workspaceId;
     }
 
+    public ShowDeploymentPodsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 查询的起始位置，取值范围为非负整数，默认为0
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ShowDeploymentPodsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页显示的条目数量，取值范围1~100，默认为100
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -133,12 +177,14 @@ public class ShowDeploymentPodsRequest {
             && Objects.equals(this.nodeId, showDeploymentPodsRequest.nodeId)
             && Objects.equals(this.provider, showDeploymentPodsRequest.provider)
             && Objects.equals(this.deploymentId, showDeploymentPodsRequest.deploymentId)
-            && Objects.equals(this.workspaceId, showDeploymentPodsRequest.workspaceId);
+            && Objects.equals(this.workspaceId, showDeploymentPodsRequest.workspaceId)
+            && Objects.equals(this.offset, showDeploymentPodsRequest.offset)
+            && Objects.equals(this.limit, showDeploymentPodsRequest.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, nodeId, provider, deploymentId, workspaceId);
+        return Objects.hash(clusterId, nodeId, provider, deploymentId, workspaceId, offset, limit);
     }
 
     @Override
@@ -150,6 +196,8 @@ public class ShowDeploymentPodsRequest {
         sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
         sb.append("    deploymentId: ").append(toIndentedString(deploymentId)).append("\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -110,6 +110,11 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     private String networkVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
     private List<String> securityGroups = null;
@@ -507,6 +512,23 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
         this.networkVersion = networkVersion;
     }
 
+    public ShowCloudPhoneServerDetailResponse withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 云手机服务器所属企业项目ID。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public ShowCloudPhoneServerDetailResponse withSecurityGroups(List<String> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -602,6 +624,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
             && Objects.equals(this.bandWidths, showCloudPhoneServerDetailResponse.bandWidths)
             && Objects.equals(this.volumes, showCloudPhoneServerDetailResponse.volumes)
             && Objects.equals(this.networkVersion, showCloudPhoneServerDetailResponse.networkVersion)
+            && Objects.equals(this.enterpriseProjectId, showCloudPhoneServerDetailResponse.enterpriseProjectId)
             && Objects.equals(this.securityGroups, showCloudPhoneServerDetailResponse.securityGroups)
             && Objects.equals(this.createTime, showCloudPhoneServerDetailResponse.createTime)
             && Objects.equals(this.updateTime, showCloudPhoneServerDetailResponse.updateTime);
@@ -628,6 +651,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
             bandWidths,
             volumes,
             networkVersion,
+            enterpriseProjectId,
             securityGroups,
             createTime,
             updateTime);
@@ -656,6 +680,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
         sb.append("    bandWidths: ").append(toIndentedString(bandWidths)).append("\n");
         sb.append("    volumes: ").append(toIndentedString(volumes)).append("\n");
         sb.append("    networkVersion: ").append(toIndentedString(networkVersion)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

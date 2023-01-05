@@ -35,6 +35,11 @@ public class CreateNet2CloudPhoneServerRequestBodyExtendParam {
 
     private Integer isAutoRenew;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public CreateNet2CloudPhoneServerRequestBodyExtendParam withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
         return this;
@@ -130,6 +135,23 @@ public class CreateNet2CloudPhoneServerRequestBodyExtendParam {
         this.isAutoRenew = isAutoRenew;
     }
 
+    public CreateNet2CloudPhoneServerRequestBodyExtendParam withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID。 该字段不传（或传为字符串“0”），则将资源绑定给默认企业项目。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -144,12 +166,13 @@ public class CreateNet2CloudPhoneServerRequestBodyExtendParam {
             && Objects.equals(this.periodType, createNet2CloudPhoneServerRequestBodyExtendParam.periodType)
             && Objects.equals(this.periodNum, createNet2CloudPhoneServerRequestBodyExtendParam.periodNum)
             && Objects.equals(this.isAutoPay, createNet2CloudPhoneServerRequestBodyExtendParam.isAutoPay)
-            && Objects.equals(this.isAutoRenew, createNet2CloudPhoneServerRequestBodyExtendParam.isAutoRenew);
+            && Objects.equals(this.isAutoRenew, createNet2CloudPhoneServerRequestBodyExtendParam.isAutoRenew) && Objects
+                .equals(this.enterpriseProjectId, createNet2CloudPhoneServerRequestBodyExtendParam.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(chargingMode, periodType, periodNum, isAutoPay, isAutoRenew);
+        return Objects.hash(chargingMode, periodType, periodNum, isAutoPay, isAutoRenew, enterpriseProjectId);
     }
 
     @Override
@@ -161,6 +184,7 @@ public class CreateNet2CloudPhoneServerRequestBodyExtendParam {
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("    isAutoRenew: ").append(toIndentedString(isAutoRenew)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

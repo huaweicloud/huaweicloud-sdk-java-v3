@@ -59,6 +59,11 @@ public class PrivateZoneResp {
     private Integer recordNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_pattern")
+
+    private String proxyPattern;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_id")
 
     private String poolId;
@@ -254,6 +259,23 @@ public class PrivateZoneResp {
 
     public void setRecordNum(Integer recordNum) {
         this.recordNum = recordNum;
+    }
+
+    public PrivateZoneResp withProxyPattern(String proxyPattern) {
+        this.proxyPattern = proxyPattern;
+        return this;
+    }
+
+    /**
+     * 内网Zone的子域名递归解析代理模式。  取值范围：  AUTHORITY：当前Zone不进行递归解析 RECURSIVE：开启递归解析代理
+     * @return proxyPattern
+     */
+    public String getProxyPattern() {
+        return proxyPattern;
+    }
+
+    public void setProxyPattern(String proxyPattern) {
+        this.proxyPattern = proxyPattern;
     }
 
     public PrivateZoneResp withPoolId(String poolId) {
@@ -482,6 +504,7 @@ public class PrivateZoneResp {
             && Objects.equals(this.serial, privateZoneResp.serial)
             && Objects.equals(this.status, privateZoneResp.status)
             && Objects.equals(this.recordNum, privateZoneResp.recordNum)
+            && Objects.equals(this.proxyPattern, privateZoneResp.proxyPattern)
             && Objects.equals(this.poolId, privateZoneResp.poolId)
             && Objects.equals(this.projectId, privateZoneResp.projectId)
             && Objects.equals(this.createdAt, privateZoneResp.createdAt)
@@ -503,6 +526,7 @@ public class PrivateZoneResp {
             serial,
             status,
             recordNum,
+            proxyPattern,
             poolId,
             projectId,
             createdAt,
@@ -527,6 +551,7 @@ public class PrivateZoneResp {
         sb.append("    serial: ").append(toIndentedString(serial)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    recordNum: ").append(toIndentedString(recordNum)).append("\n");
+        sb.append("    proxyPattern: ").append(toIndentedString(proxyPattern)).append("\n");
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");

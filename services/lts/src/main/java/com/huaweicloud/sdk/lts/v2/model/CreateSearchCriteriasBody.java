@@ -16,7 +16,7 @@ public class CreateSearchCriteriasBody {
     private String criteria;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "epsId")
+    @JsonProperty(value = "eps_id")
 
     private String epsId;
 

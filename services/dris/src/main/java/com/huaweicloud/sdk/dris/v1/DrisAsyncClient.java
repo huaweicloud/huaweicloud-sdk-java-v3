@@ -561,6 +561,36 @@ public class DrisAsyncClient {
     }
 
     /**
+     * 查询雷达列表
+     *
+     * 查询雷达列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowRadarsRequest 请求对象
+     * @return CompletableFuture<BatchShowRadarsResponse>
+     */
+    public CompletableFuture<BatchShowRadarsResponse> batchShowRadarsAsync(BatchShowRadarsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrisMeta.batchShowRadars);
+    }
+
+    /**
+     * 查询雷达列表
+     *
+     * 查询雷达列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowRadarsRequest 请求对象
+     * @return AsyncInvoker<BatchShowRadarsRequest, BatchShowRadarsResponse>
+     */
+    public AsyncInvoker<BatchShowRadarsRequest, BatchShowRadarsResponse> batchShowRadarsAsyncInvoker(
+        BatchShowRadarsRequest request) {
+        return new AsyncInvoker<BatchShowRadarsRequest, BatchShowRadarsResponse>(request, DrisMeta.batchShowRadars,
+            hcClient);
+    }
+
+    /**
      * 查询RSU列表
      *
      * 查询RSU列表

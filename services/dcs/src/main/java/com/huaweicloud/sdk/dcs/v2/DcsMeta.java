@@ -857,6 +857,45 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListConfigHistoriesRequest, ListConfigHistoriesResponse> listConfigHistories =
+        genForlistConfigHistories();
+
+    private static HttpRequestDef<ListConfigHistoriesRequest, ListConfigHistoriesResponse> genForlistConfigHistories() {
+        // basic
+        HttpRequestDef.Builder<ListConfigHistoriesRequest, ListConfigHistoriesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListConfigHistoriesRequest.class, ListConfigHistoriesResponse.class)
+                .withName("ListConfigHistories")
+                .withUri("/v2/{project_id}/instances/{instance_id}/config-histories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigHistoriesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConfigHistoriesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConfigHistoriesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurations =
         genForlistConfigurations();
 

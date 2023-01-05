@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 不同键值对应的时间线
+ * 带宽（BANDWIDTH）、入带宽（IN_BANDWIDTH）以及出带宽（OUT_BANDWIDTH）统计数据项
  */
 public class BandwidthStatisticsTimelineItem {
 
@@ -62,7 +62,7 @@ public class BandwidthStatisticsTimelineItem {
     }
 
     /**
-     * 对应键值的时间线统计数据
+     * 对应键值的时间线统计数据，包含两个字段，time字段值为时间点；num字段为time对应时间点与前一时间点间隔内的统计数值
      * @return timeline
      */
     public List<TimeLineItem> getTimeline() {

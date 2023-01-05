@@ -131,6 +131,82 @@ public class ShowUpBandwidthRequest {
 
     private IntervalEnum interval;
 
+    /**
+     * 类型： - RELAY：转推 不填默认查询推流 
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum RELAY for value: "RELAY"
+         */
+        public static final TypeEnum RELAY = new TypeEnum("RELAY");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("RELAY", RELAY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
@@ -293,6 +369,23 @@ public class ShowUpBandwidthRequest {
         this.interval = interval;
     }
 
+    public ShowUpBandwidthRequest withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 类型： - RELAY：转推 不填默认查询推流 
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
     public ShowUpBandwidthRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -342,13 +435,14 @@ public class ShowUpBandwidthRequest {
             && Objects.equals(this.region, showUpBandwidthRequest.region)
             && Objects.equals(this.isp, showUpBandwidthRequest.isp)
             && Objects.equals(this.interval, showUpBandwidthRequest.interval)
+            && Objects.equals(this.type, showUpBandwidthRequest.type)
             && Objects.equals(this.startTime, showUpBandwidthRequest.startTime)
             && Objects.equals(this.endTime, showUpBandwidthRequest.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(publishDomains, app, stream, region, isp, interval, startTime, endTime);
+        return Objects.hash(publishDomains, app, stream, region, isp, interval, type, startTime, endTime);
     }
 
     @Override
@@ -361,6 +455,7 @@ public class ShowUpBandwidthRequest {
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    isp: ").append(toIndentedString(isp)).append("\n");
         sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");

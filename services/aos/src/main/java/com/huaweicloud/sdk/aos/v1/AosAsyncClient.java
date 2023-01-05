@@ -104,34 +104,6 @@ public class AosAsyncClient {
     }
 
     /**
-     * 删除资源栈
-     *
-     * 删除资源栈
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteStackRequest 请求对象
-     * @return CompletableFuture<DeleteStackResponse>
-     */
-    public CompletableFuture<DeleteStackResponse> deleteStackAsync(DeleteStackRequest request) {
-        return hcClient.asyncInvokeHttp(request, AosMeta.deleteStack);
-    }
-
-    /**
-     * 删除资源栈
-     *
-     * 删除资源栈
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteStackRequest 请求对象
-     * @return AsyncInvoker<DeleteStackRequest, DeleteStackResponse>
-     */
-    public AsyncInvoker<DeleteStackRequest, DeleteStackResponse> deleteStackAsyncInvoker(DeleteStackRequest request) {
-        return new AsyncInvoker<DeleteStackRequest, DeleteStackResponse>(request, AosMeta.deleteStack, hcClient);
-    }
-
-    /**
      * 描述执行计划当前的状态，返回执行计划的元数据
      *
      * 描述执行计划当前的状态，返回执行计划的元数据
@@ -216,6 +188,174 @@ public class AosAsyncClient {
     }
 
     /**
+     * 列举执行计划
+     *
+     * 列举执行计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListExecutionPlansRequest 请求对象
+     * @return CompletableFuture<ListExecutionPlansResponse>
+     */
+    public CompletableFuture<ListExecutionPlansResponse> listExecutionPlansAsync(ListExecutionPlansRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.listExecutionPlans);
+    }
+
+    /**
+     * 列举执行计划
+     *
+     * 列举执行计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListExecutionPlansRequest 请求对象
+     * @return AsyncInvoker<ListExecutionPlansRequest, ListExecutionPlansResponse>
+     */
+    public AsyncInvoker<ListExecutionPlansRequest, ListExecutionPlansResponse> listExecutionPlansAsyncInvoker(ListExecutionPlansRequest request) {
+        return new AsyncInvoker<ListExecutionPlansRequest, ListExecutionPlansResponse>(request, AosMeta.listExecutionPlans, hcClient);
+    }
+
+    /**
+     * 继续回滚资源栈
+     *
+     * 如果资源栈开启了自动回滚，在部署失败的时候则会自动回滚。但是自动回滚依然有可能失败，用户可以根据错误信息修复后，调用ContinueRollbackStack触发继续回滚，即重试回滚
+     * 
+     * * 如果资源栈当前可以回滚，即处于&#x60;ROLLBACK_FAILED&#x60;，则返回202与对应生成的deploymentId，否则将不允许回滚并返回响应的错误码
+     * * 继续回滚也有可能会回滚失败。如果失败，用户可以从ListStackEvents获取对应的log，解决后可再次调用ContinueRollbackStack去继续触发回滚
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ContinueRollbackStackRequest 请求对象
+     * @return CompletableFuture<ContinueRollbackStackResponse>
+     */
+    public CompletableFuture<ContinueRollbackStackResponse> continueRollbackStackAsync(ContinueRollbackStackRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.continueRollbackStack);
+    }
+
+    /**
+     * 继续回滚资源栈
+     *
+     * 如果资源栈开启了自动回滚，在部署失败的时候则会自动回滚。但是自动回滚依然有可能失败，用户可以根据错误信息修复后，调用ContinueRollbackStack触发继续回滚，即重试回滚
+     * 
+     * * 如果资源栈当前可以回滚，即处于&#x60;ROLLBACK_FAILED&#x60;，则返回202与对应生成的deploymentId，否则将不允许回滚并返回响应的错误码
+     * * 继续回滚也有可能会回滚失败。如果失败，用户可以从ListStackEvents获取对应的log，解决后可再次调用ContinueRollbackStack去继续触发回滚
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ContinueRollbackStackRequest 请求对象
+     * @return AsyncInvoker<ContinueRollbackStackRequest, ContinueRollbackStackResponse>
+     */
+    public AsyncInvoker<ContinueRollbackStackRequest, ContinueRollbackStackResponse> continueRollbackStackAsyncInvoker(ContinueRollbackStackRequest request) {
+        return new AsyncInvoker<ContinueRollbackStackRequest, ContinueRollbackStackResponse>(request, AosMeta.continueRollbackStack, hcClient);
+    }
+
+    /**
+     * 创建资源栈
+     *
+     * CreateStack用于生成一个资源栈
+     * 
+     * * 当请求中不含有模板（template）、参数（vars）等信息，将生成一个无任何资源的空资源栈，返回资源栈ID（stack_id）
+     * * 当请求中携带了模板（template）、参数（vars）等信息，则会同时创建并部署资源栈，返回资源栈ID（stack_id）和部署ID（deployment_id）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateStackRequest 请求对象
+     * @return CompletableFuture<CreateStackResponse>
+     */
+    public CompletableFuture<CreateStackResponse> createStackAsync(CreateStackRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.createStack);
+    }
+
+    /**
+     * 创建资源栈
+     *
+     * CreateStack用于生成一个资源栈
+     * 
+     * * 当请求中不含有模板（template）、参数（vars）等信息，将生成一个无任何资源的空资源栈，返回资源栈ID（stack_id）
+     * * 当请求中携带了模板（template）、参数（vars）等信息，则会同时创建并部署资源栈，返回资源栈ID（stack_id）和部署ID（deployment_id）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateStackRequest 请求对象
+     * @return AsyncInvoker<CreateStackRequest, CreateStackResponse>
+     */
+    public AsyncInvoker<CreateStackRequest, CreateStackResponse> createStackAsyncInvoker(CreateStackRequest request) {
+        return new AsyncInvoker<CreateStackRequest, CreateStackResponse>(request, AosMeta.createStack, hcClient);
+    }
+
+    /**
+     * 删除资源栈
+     *
+     * 删除资源栈
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteStackRequest 请求对象
+     * @return CompletableFuture<DeleteStackResponse>
+     */
+    public CompletableFuture<DeleteStackResponse> deleteStackAsync(DeleteStackRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.deleteStack);
+    }
+
+    /**
+     * 删除资源栈
+     *
+     * 删除资源栈
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteStackRequest 请求对象
+     * @return AsyncInvoker<DeleteStackRequest, DeleteStackResponse>
+     */
+    public AsyncInvoker<DeleteStackRequest, DeleteStackResponse> deleteStackAsyncInvoker(DeleteStackRequest request) {
+        return new AsyncInvoker<DeleteStackRequest, DeleteStackResponse>(request, AosMeta.deleteStack, hcClient);
+    }
+
+    /**
+     * 部署一个已有的资源栈
+     *
+     * 部署一个已有的资源栈
+     * 
+     * * 用户可以使用此API更新模板、参数等并触发一个新的部署
+     * 
+     * * 此API会直接触发部署，如果用户希望先确认部署会发生的时间，请使用执行计划，即使用CreateExecutionPlan以创建执行计划、使用GetExecutionPlan以获取执行计划
+     * 
+     * * 此API为全量API，即用户每次部署都需要给予所想要使用的template、vars的全量
+     * 
+     * * 当触发的部署失败时，如果资源栈开启了自动回滚，会触发自动回滚的流程，否则就会停留在部署失败时的状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeployStackRequest 请求对象
+     * @return CompletableFuture<DeployStackResponse>
+     */
+    public CompletableFuture<DeployStackResponse> deployStackAsync(DeployStackRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.deployStack);
+    }
+
+    /**
+     * 部署一个已有的资源栈
+     *
+     * 部署一个已有的资源栈
+     * 
+     * * 用户可以使用此API更新模板、参数等并触发一个新的部署
+     * 
+     * * 此API会直接触发部署，如果用户希望先确认部署会发生的时间，请使用执行计划，即使用CreateExecutionPlan以创建执行计划、使用GetExecutionPlan以获取执行计划
+     * 
+     * * 此API为全量API，即用户每次部署都需要给予所想要使用的template、vars的全量
+     * 
+     * * 当触发的部署失败时，如果资源栈开启了自动回滚，会触发自动回滚的流程，否则就会停留在部署失败时的状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeployStackRequest 请求对象
+     * @return AsyncInvoker<DeployStackRequest, DeployStackResponse>
+     */
+    public AsyncInvoker<DeployStackRequest, DeployStackResponse> deployStackAsyncInvoker(DeployStackRequest request) {
+        return new AsyncInvoker<DeployStackRequest, DeployStackResponse>(request, AosMeta.deployStack, hcClient);
+    }
+
+    /**
      * 描述栈的状态，返回栈的元数据
      *
      * 描述栈的状态，返回栈的元数据
@@ -269,34 +409,6 @@ public class AosAsyncClient {
      */
     public AsyncInvoker<GetStackTemplateRequest, GetStackTemplateResponse> getStackTemplateAsyncInvoker(GetStackTemplateRequest request) {
         return new AsyncInvoker<GetStackTemplateRequest, GetStackTemplateResponse>(request, AosMeta.getStackTemplate, hcClient);
-    }
-
-    /**
-     * 列举执行计划
-     *
-     * 列举执行计划
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListExecutionPlansRequest 请求对象
-     * @return CompletableFuture<ListExecutionPlansResponse>
-     */
-    public CompletableFuture<ListExecutionPlansResponse> listExecutionPlansAsync(ListExecutionPlansRequest request) {
-        return hcClient.asyncInvokeHttp(request, AosMeta.listExecutionPlans);
-    }
-
-    /**
-     * 列举执行计划
-     *
-     * 列举执行计划
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListExecutionPlansRequest 请求对象
-     * @return AsyncInvoker<ListExecutionPlansRequest, ListExecutionPlansResponse>
-     */
-    public AsyncInvoker<ListExecutionPlansRequest, ListExecutionPlansResponse> listExecutionPlansAsyncInvoker(ListExecutionPlansRequest request) {
-        return new AsyncInvoker<ListExecutionPlansRequest, ListExecutionPlansResponse>(request, AosMeta.listExecutionPlans, hcClient);
     }
 
     /**
@@ -384,146 +496,6 @@ public class AosAsyncClient {
     }
 
     /**
-     * 此命令用于解析模板参数
-     *
-     * 此命令用于解析模板参数
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ParseTemplateVariablesRequest 请求对象
-     * @return CompletableFuture<ParseTemplateVariablesResponse>
-     */
-    public CompletableFuture<ParseTemplateVariablesResponse> parseTemplateVariablesAsync(ParseTemplateVariablesRequest request) {
-        return hcClient.asyncInvokeHttp(request, AosMeta.parseTemplateVariables);
-    }
-
-    /**
-     * 此命令用于解析模板参数
-     *
-     * 此命令用于解析模板参数
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ParseTemplateVariablesRequest 请求对象
-     * @return AsyncInvoker<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse>
-     */
-    public AsyncInvoker<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse> parseTemplateVariablesAsyncInvoker(ParseTemplateVariablesRequest request) {
-        return new AsyncInvoker<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse>(request, AosMeta.parseTemplateVariables, hcClient);
-    }
-
-    /**
-     * 继续回滚资源栈
-     *
-     * 如果资源栈开启了自动回滚，在部署失败的时候则会自动回滚。但是自动回滚依然有可能失败，用户可以根据错误信息修复后，调用ContinueRollbackStack触发继续回滚，即重试回滚
-     * 
-     * * 如果资源栈当前可以回滚，即处于&#x60;ROLLBACK_FAILED&#x60;，则返回202与对应生成的deploymentId，否则将不允许回滚并返回响应的错误码
-     * * 继续回滚也有可能会回滚失败。如果失败，用户可以从ListStackEvents获取对应的log，解决后可再次调用ContinueRollbackStack去继续触发回滚
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ContinueRollbackStackRequest 请求对象
-     * @return CompletableFuture<ContinueRollbackStackResponse>
-     */
-    public CompletableFuture<ContinueRollbackStackResponse> continueRollbackStackAsync(ContinueRollbackStackRequest request) {
-        return hcClient.asyncInvokeHttp(request, AosMeta.continueRollbackStack);
-    }
-
-    /**
-     * 继续回滚资源栈
-     *
-     * 如果资源栈开启了自动回滚，在部署失败的时候则会自动回滚。但是自动回滚依然有可能失败，用户可以根据错误信息修复后，调用ContinueRollbackStack触发继续回滚，即重试回滚
-     * 
-     * * 如果资源栈当前可以回滚，即处于&#x60;ROLLBACK_FAILED&#x60;，则返回202与对应生成的deploymentId，否则将不允许回滚并返回响应的错误码
-     * * 继续回滚也有可能会回滚失败。如果失败，用户可以从ListStackEvents获取对应的log，解决后可再次调用ContinueRollbackStack去继续触发回滚
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ContinueRollbackStackRequest 请求对象
-     * @return AsyncInvoker<ContinueRollbackStackRequest, ContinueRollbackStackResponse>
-     */
-    public AsyncInvoker<ContinueRollbackStackRequest, ContinueRollbackStackResponse> continueRollbackStackAsyncInvoker(ContinueRollbackStackRequest request) {
-        return new AsyncInvoker<ContinueRollbackStackRequest, ContinueRollbackStackResponse>(request, AosMeta.continueRollbackStack, hcClient);
-    }
-
-    /**
-     * 创建资源栈
-     *
-     * CreateStack用于生成一个资源栈
-     * 
-     * * 当请求中不含有模板（template）、参数（vars）等信息，将生成一个无任何资源的空资源栈，返回资源栈ID（stack_id）
-     * * 当请求中携带了模板（template）、参数（vars）等信息，则会同时创建并部署资源栈，返回资源栈ID（stack_id）和部署ID（deployment_id）
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateStackRequest 请求对象
-     * @return CompletableFuture<CreateStackResponse>
-     */
-    public CompletableFuture<CreateStackResponse> createStackAsync(CreateStackRequest request) {
-        return hcClient.asyncInvokeHttp(request, AosMeta.createStack);
-    }
-
-    /**
-     * 创建资源栈
-     *
-     * CreateStack用于生成一个资源栈
-     * 
-     * * 当请求中不含有模板（template）、参数（vars）等信息，将生成一个无任何资源的空资源栈，返回资源栈ID（stack_id）
-     * * 当请求中携带了模板（template）、参数（vars）等信息，则会同时创建并部署资源栈，返回资源栈ID（stack_id）和部署ID（deployment_id）
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateStackRequest 请求对象
-     * @return AsyncInvoker<CreateStackRequest, CreateStackResponse>
-     */
-    public AsyncInvoker<CreateStackRequest, CreateStackResponse> createStackAsyncInvoker(CreateStackRequest request) {
-        return new AsyncInvoker<CreateStackRequest, CreateStackResponse>(request, AosMeta.createStack, hcClient);
-    }
-
-    /**
-     * 部署一个已有的资源栈
-     *
-     * 部署一个已有的资源栈
-     * 
-     * * 用户可以使用此API更新模板、参数等并触发一个新的部署
-     * 
-     * * 此API会直接触发部署，如果用户希望先确认部署会发生的时间，请使用执行计划，即使用CreateExecutionPlan以创建执行计划、使用GetExecutionPlan以获取执行计划
-     * 
-     * * 此API为全量API，即用户每次部署都需要给予所想要使用的template、vars的全量
-     * 
-     * * 当触发的部署失败时，如果资源栈开启了自动回滚，会触发自动回滚的流程，否则就会停留在部署失败时的状态
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeployStackRequest 请求对象
-     * @return CompletableFuture<DeployStackResponse>
-     */
-    public CompletableFuture<DeployStackResponse> deployStackAsync(DeployStackRequest request) {
-        return hcClient.asyncInvokeHttp(request, AosMeta.deployStack);
-    }
-
-    /**
-     * 部署一个已有的资源栈
-     *
-     * 部署一个已有的资源栈
-     * 
-     * * 用户可以使用此API更新模板、参数等并触发一个新的部署
-     * 
-     * * 此API会直接触发部署，如果用户希望先确认部署会发生的时间，请使用执行计划，即使用CreateExecutionPlan以创建执行计划、使用GetExecutionPlan以获取执行计划
-     * 
-     * * 此API为全量API，即用户每次部署都需要给予所想要使用的template、vars的全量
-     * 
-     * * 当触发的部署失败时，如果资源栈开启了自动回滚，会触发自动回滚的流程，否则就会停留在部署失败时的状态
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeployStackRequest 请求对象
-     * @return AsyncInvoker<DeployStackRequest, DeployStackResponse>
-     */
-    public AsyncInvoker<DeployStackRequest, DeployStackResponse> deployStackAsyncInvoker(DeployStackRequest request) {
-        return new AsyncInvoker<DeployStackRequest, DeployStackResponse>(request, AosMeta.deployStack, hcClient);
-    }
-
-    /**
      * 列举资源栈
      *
      * ListStacks 列举当前局点下用户所有的资源栈
@@ -561,6 +533,34 @@ public class AosAsyncClient {
      */
     public AsyncInvoker<ListStacksRequest, ListStacksResponse> listStacksAsyncInvoker(ListStacksRequest request) {
         return new AsyncInvoker<ListStacksRequest, ListStacksResponse>(request, AosMeta.listStacks, hcClient);
+    }
+
+    /**
+     * 此命令用于解析模板参数
+     *
+     * 此命令用于解析模板参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ParseTemplateVariablesRequest 请求对象
+     * @return CompletableFuture<ParseTemplateVariablesResponse>
+     */
+    public CompletableFuture<ParseTemplateVariablesResponse> parseTemplateVariablesAsync(ParseTemplateVariablesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.parseTemplateVariables);
+    }
+
+    /**
+     * 此命令用于解析模板参数
+     *
+     * 此命令用于解析模板参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ParseTemplateVariablesRequest 请求对象
+     * @return AsyncInvoker<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse>
+     */
+    public AsyncInvoker<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse> parseTemplateVariablesAsyncInvoker(ParseTemplateVariablesRequest request) {
+        return new AsyncInvoker<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse>(request, AosMeta.parseTemplateVariables, hcClient);
     }
 
 }

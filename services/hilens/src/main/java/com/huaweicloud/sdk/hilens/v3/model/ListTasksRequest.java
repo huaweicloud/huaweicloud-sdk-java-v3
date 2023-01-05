@@ -15,6 +15,16 @@ public class ListTasksRequest {
 
     private String deploymentId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ListTasksRequest withDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
         return this;
@@ -32,6 +42,40 @@ public class ListTasksRequest {
         this.deploymentId = deploymentId;
     }
 
+    public ListTasksRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 查询的起始位置，取值范围为非负整数，默认为0
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListTasksRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页显示的条目数量，取值范围1~100，默认为100
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -41,12 +85,14 @@ public class ListTasksRequest {
             return false;
         }
         ListTasksRequest listTasksRequest = (ListTasksRequest) o;
-        return Objects.equals(this.deploymentId, listTasksRequest.deploymentId);
+        return Objects.equals(this.deploymentId, listTasksRequest.deploymentId)
+            && Objects.equals(this.offset, listTasksRequest.offset)
+            && Objects.equals(this.limit, listTasksRequest.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(deploymentId);
+        return Objects.hash(deploymentId, offset, limit);
     }
 
     @Override
@@ -54,6 +100,8 @@ public class ListTasksRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTasksRequest {\n");
         sb.append("    deploymentId: ").append(toIndentedString(deploymentId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

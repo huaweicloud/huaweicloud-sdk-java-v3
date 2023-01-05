@@ -43,7 +43,7 @@ public class ShowRecordSetWithLineRequest {
     }
 
     /**
-     * Get recordsetId
+     * 待查询recordset的ID信息。
      * @return recordsetId
      */
     public String getRecordsetId() {

@@ -63,7 +63,7 @@ public class ListBandwidthTimelineRequest {
     }
 
     /**
-     * 起始时间（13位毫秒时间戳），需要和to同时使用
+     * 查询的带宽统计数据的起始时间（13位毫秒时间戳），需要和to同时使用
      * @return from
      */
     public Long getFrom() {
@@ -80,7 +80,7 @@ public class ListBandwidthTimelineRequest {
     }
 
     /**
-     * 结束时间（13位毫秒时间戳），需要和from同时使用
+     * 查询的带宽统计数据的结束时间（13位毫秒时间戳），需要和from同时使用
      * @return to
      */
     public Long getTo() {
@@ -97,7 +97,7 @@ public class ListBandwidthTimelineRequest {
     }
 
     /**
-     * 域名id，通过查询云模式防护域名列表（ListHost）获取域名id或者通过独享模式域名列表（ListPremiumHost）获取域名id
+     * 域名id，用于查询指定的防护域名在from到to这段时间内的带宽数据。通过查询云模式防护域名列表（ListHost）获取域名id或者通过独享模式域名列表（ListPremiumHost）获取域名id
      * @return hosts
      */
     public String getHosts() {
@@ -114,7 +114,7 @@ public class ListBandwidthTimelineRequest {
     }
 
     /**
-     * 要查询引擎实例id
+     * 引擎实例id，用于查询指定的独享引擎实例所防护的域名在from到to这段时间内的带宽数据。
      * @return instances
      */
     public String getInstances() {
@@ -131,7 +131,7 @@ public class ListBandwidthTimelineRequest {
     }
 
     /**
-     * 展示维度，按天展示时传\"DAY\"；默认不传，按照分钟展示
+     * 展示维度，按天展示时传\"DAY\"；默认不传，按照分钟展示。
      * @return groupBy
      */
     public String getGroupBy() {

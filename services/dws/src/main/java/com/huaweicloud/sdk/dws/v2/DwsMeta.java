@@ -1337,7 +1337,7 @@ public class DwsMeta {
         HttpRequestDef.Builder<ListClusterSnapshotsRequest, ListClusterSnapshotsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListClusterSnapshotsRequest.class, ListClusterSnapshotsResponse.class)
             .withName("ListClusterSnapshots")
-            .withUri("/v1.0/{project_id}/clusters/{cluster_id}/snapshots")
+            .withUri("/v1.0/{project_id}/cluster/{cluster_id}/snapshots")
             .withContentType("application/json");
 
         // requests
@@ -1938,7 +1938,7 @@ public class DwsMeta {
         HttpRequestDef.Builder<ListSnapshotStatisticsRequest, ListSnapshotStatisticsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListSnapshotStatisticsRequest.class, ListSnapshotStatisticsResponse.class)
             .withName("ListSnapshotStatistics")
-            .withUri("/v1.0/{project_id}/cluster/{cluster_id}/snapshots/statistics")
+            .withUri("/v1.0/{project_id}/clusters/{cluster_id}/snapshots/statistics")
             .withContentType("application/json");
 
         // requests

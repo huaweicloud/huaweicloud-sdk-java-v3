@@ -60,6 +60,11 @@ public class CreatePrivateZoneResponse extends SdkResponse {
     private Integer recordNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_pattern")
+
+    private String proxyPattern;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_id")
 
     private String poolId;
@@ -247,6 +252,23 @@ public class CreatePrivateZoneResponse extends SdkResponse {
         this.recordNum = recordNum;
     }
 
+    public CreatePrivateZoneResponse withProxyPattern(String proxyPattern) {
+        this.proxyPattern = proxyPattern;
+        return this;
+    }
+
+    /**
+     * 内网Zone的子域名递归解析代理模式。  取值范围：  AUTHORITY：当前Zone不进行递归解析 RECURSIVE：开启递归解析代理
+     * @return proxyPattern
+     */
+    public String getProxyPattern() {
+        return proxyPattern;
+    }
+
+    public void setProxyPattern(String proxyPattern) {
+        this.proxyPattern = proxyPattern;
+    }
+
     public CreatePrivateZoneResponse withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -418,6 +440,7 @@ public class CreatePrivateZoneResponse extends SdkResponse {
             && Objects.equals(this.serial, createPrivateZoneResponse.serial)
             && Objects.equals(this.status, createPrivateZoneResponse.status)
             && Objects.equals(this.recordNum, createPrivateZoneResponse.recordNum)
+            && Objects.equals(this.proxyPattern, createPrivateZoneResponse.proxyPattern)
             && Objects.equals(this.poolId, createPrivateZoneResponse.poolId)
             && Objects.equals(this.projectId, createPrivateZoneResponse.projectId)
             && Objects.equals(this.createdAt, createPrivateZoneResponse.createdAt)
@@ -438,6 +461,7 @@ public class CreatePrivateZoneResponse extends SdkResponse {
             serial,
             status,
             recordNum,
+            proxyPattern,
             poolId,
             projectId,
             createdAt,
@@ -460,6 +484,7 @@ public class CreatePrivateZoneResponse extends SdkResponse {
         sb.append("    serial: ").append(toIndentedString(serial)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    recordNum: ").append(toIndentedString(recordNum)).append("\n");
+        sb.append("    proxyPattern: ").append(toIndentedString(proxyPattern)).append("\n");
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");

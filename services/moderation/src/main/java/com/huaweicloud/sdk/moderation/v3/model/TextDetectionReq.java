@@ -28,6 +28,11 @@ public class TextDetectionReq {
 
     private TextDetectionDataReq data;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "white_glossary_names")
+
+    private List<String> whiteGlossaryNames = null;
+
     public TextDetectionReq withEventType(String eventType) {
         this.eventType = eventType;
         return this;
@@ -104,6 +109,39 @@ public class TextDetectionReq {
         this.data = data;
     }
 
+    public TextDetectionReq withWhiteGlossaryNames(List<String> whiteGlossaryNames) {
+        this.whiteGlossaryNames = whiteGlossaryNames;
+        return this;
+    }
+
+    public TextDetectionReq addWhiteGlossaryNamesItem(String whiteGlossaryNamesItem) {
+        if (this.whiteGlossaryNames == null) {
+            this.whiteGlossaryNames = new ArrayList<>();
+        }
+        this.whiteGlossaryNames.add(whiteGlossaryNamesItem);
+        return this;
+    }
+
+    public TextDetectionReq withWhiteGlossaryNames(Consumer<List<String>> whiteGlossaryNamesSetter) {
+        if (this.whiteGlossaryNames == null) {
+            this.whiteGlossaryNames = new ArrayList<>();
+        }
+        whiteGlossaryNamesSetter.accept(this.whiteGlossaryNames);
+        return this;
+    }
+
+    /**
+     * 检测时使用的自定义白名单词库列表。
+     * @return whiteGlossaryNames
+     */
+    public List<String> getWhiteGlossaryNames() {
+        return whiteGlossaryNames;
+    }
+
+    public void setWhiteGlossaryNames(List<String> whiteGlossaryNames) {
+        this.whiteGlossaryNames = whiteGlossaryNames;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -115,12 +153,13 @@ public class TextDetectionReq {
         TextDetectionReq textDetectionReq = (TextDetectionReq) o;
         return Objects.equals(this.eventType, textDetectionReq.eventType)
             && Objects.equals(this.glossaryNames, textDetectionReq.glossaryNames)
-            && Objects.equals(this.data, textDetectionReq.data);
+            && Objects.equals(this.data, textDetectionReq.data)
+            && Objects.equals(this.whiteGlossaryNames, textDetectionReq.whiteGlossaryNames);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eventType, glossaryNames, data);
+        return Objects.hash(eventType, glossaryNames, data, whiteGlossaryNames);
     }
 
     @Override
@@ -130,6 +169,7 @@ public class TextDetectionReq {
         sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
         sb.append("    glossaryNames: ").append(toIndentedString(glossaryNames)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
+        sb.append("    whiteGlossaryNames: ").append(toIndentedString(whiteGlossaryNames)).append("\n");
         sb.append("}");
         return sb.toString();
     }

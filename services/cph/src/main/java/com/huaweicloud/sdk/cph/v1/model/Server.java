@@ -94,6 +94,11 @@ public class Server {
     private String networkVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
@@ -402,6 +407,23 @@ public class Server {
         this.networkVersion = networkVersion;
     }
 
+    public Server withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 云手机服务器所属企业项目ID。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public Server withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -457,6 +479,7 @@ public class Server {
             && Objects.equals(this.resourceProjectId, server.resourceProjectId)
             && Objects.equals(this.metadata, server.metadata)
             && Objects.equals(this.networkVersion, server.networkVersion)
+            && Objects.equals(this.enterpriseProjectId, server.enterpriseProjectId)
             && Objects.equals(this.createTime, server.createTime) && Objects.equals(this.updateTime, server.updateTime);
     }
 
@@ -478,6 +501,7 @@ public class Server {
             resourceProjectId,
             metadata,
             networkVersion,
+            enterpriseProjectId,
             createTime,
             updateTime);
     }
@@ -502,6 +526,7 @@ public class Server {
         sb.append("    resourceProjectId: ").append(toIndentedString(resourceProjectId)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    networkVersion: ").append(toIndentedString(networkVersion)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");

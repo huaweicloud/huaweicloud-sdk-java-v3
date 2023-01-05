@@ -18,6 +18,66 @@ public class CphClient {
     }
 
     /**
+     * 批量添加标签
+     *
+     * 批量添加标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateTagsRequest 请求对象
+     * @return BatchCreateTagsResponse
+     */
+    public BatchCreateTagsResponse batchCreateTags(BatchCreateTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CphMeta.batchCreateTags);
+    }
+
+    /**
+     * 批量添加标签
+     *
+     * 批量添加标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateTagsRequest 请求对象
+     * @return SyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>
+     */
+    public SyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse> batchCreateTagsInvoker(
+        BatchCreateTagsRequest request) {
+        return new SyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>(request, CphMeta.batchCreateTags,
+            hcClient);
+    }
+
+    /**
+     * 批量删除标签
+     *
+     * 批量删除标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteTagsRequest 请求对象
+     * @return BatchDeleteTagsResponse
+     */
+    public BatchDeleteTagsResponse batchDeleteTags(BatchDeleteTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CphMeta.batchDeleteTags);
+    }
+
+    /**
+     * 批量删除标签
+     *
+     * 批量删除标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteTagsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>
+     */
+    public SyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTagsInvoker(
+        BatchDeleteTagsRequest request) {
+        return new SyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>(request, CphMeta.batchDeleteTags,
+            hcClient);
+    }
+
+    /**
      * 导出云手机数据
      *
      * 批量导出云手机中的数据。
@@ -491,6 +551,96 @@ public class CphClient {
      */
     public SyncInvoker<ListJobsRequest, ListJobsResponse> listJobsInvoker(ListJobsRequest request) {
         return new SyncInvoker<ListJobsRequest, ListJobsResponse>(request, CphMeta.listJobs, hcClient);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询租户在指定区域和资源类型的所有标签集合。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectTagsRequest 请求对象
+     * @return ListProjectTagsResponse
+     */
+    public ListProjectTagsResponse listProjectTags(ListProjectTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CphMeta.listProjectTags);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询租户在指定区域和资源类型的所有标签集合。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectTagsRequest 请求对象
+     * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
+     */
+    public SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsInvoker(
+        ListProjectTagsRequest request) {
+        return new SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, CphMeta.listProjectTags,
+            hcClient);
+    }
+
+    /**
+     * 查询资源实例
+     *
+     * 查询资源实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceInstancesRequest 请求对象
+     * @return ListResourceInstancesResponse
+     */
+    public ListResourceInstancesResponse listResourceInstances(ListResourceInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, CphMeta.listResourceInstances);
+    }
+
+    /**
+     * 查询资源实例
+     *
+     * 查询资源实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceInstancesRequest 请求对象
+     * @return SyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>
+     */
+    public SyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstancesInvoker(
+        ListResourceInstancesRequest request) {
+        return new SyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>(request,
+            CphMeta.listResourceInstances, hcClient);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询资源标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceTagsRequest 请求对象
+     * @return ListResourceTagsResponse
+     */
+    public ListResourceTagsResponse listResourceTags(ListResourceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CphMeta.listResourceTags);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询资源标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceTagsRequest 请求对象
+     * @return SyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>
+     */
+    public SyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTagsInvoker(
+        ListResourceTagsRequest request) {
+        return new SyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>(request, CphMeta.listResourceTags,
+            hcClient);
     }
 
     /**

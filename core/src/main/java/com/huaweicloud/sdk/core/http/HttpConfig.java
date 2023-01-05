@@ -23,12 +23,13 @@ package com.huaweicloud.sdk.core.http;
 
 import com.huaweicloud.sdk.core.HttpListener;
 import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
-
 import com.huaweicloud.sdk.core.utils.RandomUtils;
 import okhttp3.ConnectionPool;
 import okhttp3.Dispatcher;
 import okhttp3.internal.Util;
 
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.X509TrustManager;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,27 +38,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.X509TrustManager;
 
 /**
  * @author HuaweiCloud_SDK
  */
 public class HttpConfig {
     private static final int DEFAULT_CONNECTION_TIMEOUT = 60;
-
-    private static final int MAXIMUM_POOL_SIZE = 16;
-
-    private static final long KEEP_ALIVE_TIME = 60L;
-
-    private static final ExecutorService DEFAULT_EXECUTOR_SERVICE =
-            new ThreadPoolExecutor(
-                    0,
-                    MAXIMUM_POOL_SIZE,
-                    KEEP_ALIVE_TIME,
-                    TimeUnit.SECONDS,
-                    new SynchronousQueue<>(),
-                    Util.threadFactory("OkHttp Dispatcher", false));
 
     private int timeout = DEFAULT_CONNECTION_TIMEOUT;
 
@@ -79,13 +65,18 @@ public class HttpConfig {
 
     private List<HttpListener> httpListeners = new ArrayList<>();
 
-    private ConnectionPool connectionPool = new ConnectionPool(5, 5L, TimeUnit.MINUTES);
-
-    private Dispatcher dispatcher = new Dispatcher(DEFAULT_EXECUTOR_SERVICE);
-
     private SigningAlgorithm signingAlgorithm = SigningAlgorithm.getDefault();
 
     private SecureRandom secureRandom = RandomUtils.getDefaultSecureRandom();
+
+    private ConnectionPool connectionPool = new ConnectionPool(5, 5L, TimeUnit.MINUTES);
+
+    private ExecutorService executorService = new ThreadPoolExecutor(
+            0, Integer.MAX_VALUE, 60, TimeUnit.SECONDS,
+            new SynchronousQueue<>(), Util.threadFactory("OkHttp Dispatcher", false));
+
+    private Dispatcher dispatcher = new Dispatcher(executorService);
+
 
     public int getTimeout() {
         return timeout;
@@ -97,6 +88,19 @@ public class HttpConfig {
 
     public HttpConfig withTimeout(int timeout) {
         this.timeout = timeout;
+        return this;
+    }
+
+    public ExecutorService getExecutorService() {
+        return executorService;
+    }
+
+    public void setExecutorService(ExecutorService executorService) {
+        this.executorService = executorService;
+    }
+
+    public HttpConfig withExecutorService(ExecutorService executorService) {
+        this.executorService = executorService;
         return this;
     }
 

@@ -180,7 +180,7 @@ public class HcClient implements CustomizationConfigure {
         if (Objects.isNull(exchange)) {
             return CompletableFuture.supplyAsync(() -> {
                 throw new IllegalArgumentException("SdkExchange is null");
-            });
+            }, httpConfig.getExecutorService());
         }
         exchange.setApiReference(new ApiReference().withName(reqDef.getName())
                 .withMethod(reqDef.getMethod().toString())
@@ -197,23 +197,25 @@ public class HcClient implements CustomizationConfigure {
         }
 
         HttpRequest finalHttpRequest = httpRequest;
-        CompletableFuture<HttpRequest> validHttpRequestStage = CompletableFuture.supplyAsync(() -> finalHttpRequest);
+        CompletableFuture<HttpRequest> validHttpRequestStage = CompletableFuture.supplyAsync(
+                () -> finalHttpRequest, httpConfig.getExecutorService());
         if (StringUtils.isEmpty(httpRequest.getHeader(Constants.AUTHORIZATION)) && Objects.nonNull(credential)) {
             validHttpRequestStage = credential.processAuthRequest(httpRequest, this.httpClient);
         }
-        return validHttpRequestStage.thenCompose(validHttpRequest -> {
+        return validHttpRequestStage.thenComposeAsync(validHttpRequest -> {
             String id = SdkExchangeCache.putExchange(exchange);
             exchangeIdRef.set(id);
             validHttpRequest = validHttpRequest.builder().addHeader(SDK_EXCHANGE, id).build();
 
             HttpRequest finalValidHttpRequest = validHttpRequest;
 
-            return httpClient.asyncInvokeHttp(validHttpRequest).thenApply(httpResponse -> {
+            return httpClient.asyncInvokeHttp(validHttpRequest).thenApplyAsync(httpResponse -> {
                 printAccessLog(finalValidHttpRequest, httpResponse, exchange);
                 handleException(finalValidHttpRequest, httpResponse);
                 return extractResponse(httpResponse, reqDef);
-            }).whenComplete((r, e) -> SdkExchangeCache.removeExchange(exchangeIdRef.get()));
-        });
+            }, httpConfig.getExecutorService()).whenCompleteAsync((r, e) ->
+                    SdkExchangeCache.removeExchange(exchangeIdRef.get()), httpConfig.getExecutorService());
+        }, httpConfig.getExecutorService());
     }
 
     protected <ReqT, ResT> HttpRequest buildRequest(ReqT request, HttpRequestDef<ReqT, ResT> reqDef) {
@@ -308,7 +310,7 @@ public class HcClient implements CustomizationConfigure {
 
         while (!stack.isEmpty()) {
             Map<String, List<String>> temp = stack.pop();
-            temp.forEach(result::put);
+            result.putAll(temp);
         }
 
         return result;

@@ -44,6 +44,11 @@ public class CreatePrivateZoneReq {
     private Router router;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_pattern")
+
+    private String proxyPattern;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<Tag> tags = null;
@@ -164,6 +169,23 @@ public class CreatePrivateZoneReq {
         this.router = router;
     }
 
+    public CreatePrivateZoneReq withProxyPattern(String proxyPattern) {
+        this.proxyPattern = proxyPattern;
+        return this;
+    }
+
+    /**
+     * 内网Zone的子域名递归解析代理模式。  取值范围：  AUTHORITY：当前Zone不进行递归解析 RECURSIVE：开启递归解析代理
+     * @return proxyPattern
+     */
+    public String getProxyPattern() {
+        return proxyPattern;
+    }
+
+    public void setProxyPattern(String proxyPattern) {
+        this.proxyPattern = proxyPattern;
+    }
+
     public CreatePrivateZoneReq withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -229,13 +251,14 @@ public class CreatePrivateZoneReq {
             && Objects.equals(this.email, createPrivateZoneReq.email)
             && Objects.equals(this.ttl, createPrivateZoneReq.ttl)
             && Objects.equals(this.router, createPrivateZoneReq.router)
+            && Objects.equals(this.proxyPattern, createPrivateZoneReq.proxyPattern)
             && Objects.equals(this.tags, createPrivateZoneReq.tags)
             && Objects.equals(this.enterpriseProjectId, createPrivateZoneReq.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, zoneType, email, ttl, router, tags, enterpriseProjectId);
+        return Objects.hash(name, description, zoneType, email, ttl, router, proxyPattern, tags, enterpriseProjectId);
     }
 
     @Override
@@ -248,6 +271,7 @@ public class CreatePrivateZoneReq {
         sb.append("    email: ").append(toIndentedString(email)).append("\n");
         sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
         sb.append("    router: ").append(toIndentedString(router)).append("\n");
+        sb.append("    proxyPattern: ").append(toIndentedString(proxyPattern)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");

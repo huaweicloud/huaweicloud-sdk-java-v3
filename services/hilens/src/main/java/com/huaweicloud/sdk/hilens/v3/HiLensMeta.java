@@ -899,6 +899,20 @@ public class HiLensMeta {
             f -> f.withMarshaller(ListTasksRequest::getDeploymentId, (req, v) -> {
                 req.setDeploymentId(v);
             }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTasksRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTasksRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
 
         // response
 
@@ -923,6 +937,20 @@ public class HiLensMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListWorkSpacesRequest::getIamUserId, (req, v) -> {
                 req.setIamUserId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkSpacesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkSpacesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -1058,6 +1086,20 @@ public class HiLensMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDeploymentPodsRequest::getWorkspaceId, (req, v) -> {
                 req.setWorkspaceId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowDeploymentPodsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowDeploymentPodsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -1621,6 +1663,20 @@ public class HiLensMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowUpgradeProgressRequest::getNodeId, (req, v) -> {
                 req.setNodeId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowUpgradeProgressRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowUpgradeProgressRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response

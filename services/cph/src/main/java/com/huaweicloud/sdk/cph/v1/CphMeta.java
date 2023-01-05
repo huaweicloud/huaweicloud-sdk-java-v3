@@ -10,6 +10,84 @@ import com.huaweicloud.sdk.cph.v1.model.*;
 @SuppressWarnings("unchecked")
 public class CphMeta {
 
+    public static final HttpRequestDef<BatchCreateTagsRequest, BatchCreateTagsResponse> batchCreateTags =
+        genForbatchCreateTags();
+
+    private static HttpRequestDef<BatchCreateTagsRequest, BatchCreateTagsResponse> genForbatchCreateTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateTagsRequest, BatchCreateTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateTagsRequest.class, BatchCreateTagsResponse.class)
+                .withName("BatchCreateTags")
+                .withUri("/v1/{project_id}/{resource_type}/{resource_id}/tags/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchCreateTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(BatchCreateTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateTagsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<BatchCreateTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTags =
+        genForbatchDeleteTags();
+
+    private static HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> genForbatchDeleteTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteTagsRequest, BatchDeleteTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteTagsRequest.class, BatchDeleteTagsResponse.class)
+                .withName("BatchDeleteTags")
+                .withUri("/v1/{project_id}/{resource_type}/{resource_id}/tags/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<BatchDeleteTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchExportCloudPhoneDataRequest, BatchExportCloudPhoneDataResponse> batchExportCloudPhoneData =
         genForbatchExportCloudPhoneData();
 
@@ -508,6 +586,95 @@ public class CphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListJobsRequest::getRequestIds, (req, v) -> {
                 req.setRequestIds(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags =
+        genForlistProjectTags();
+
+    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForlistProjectTags() {
+        // basic
+        HttpRequestDef.Builder<ListProjectTagsRequest, ListProjectTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProjectTagsRequest.class, ListProjectTagsResponse.class)
+                .withName("ListProjectTags")
+                .withUri("/v1/{project_id}/{resource_type}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListProjectTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListProjectTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListProjectTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstances =
+        genForlistResourceInstances();
+
+    private static HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> genForlistResourceInstances() {
+        // basic
+        HttpRequestDef.Builder<ListResourceInstancesRequest, ListResourceInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListResourceInstancesRequest.class, ListResourceInstancesResponse.class)
+            .withName("ListResourceInstances")
+            .withUri("/v1/{project_id}/{resource_type}/resource_instances/action")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ListResourceInstancesRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListResourceInstancesRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListResourceInstancesRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<ListResourceInstancesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListResourceInstancesRequestBody.class),
+            f -> f.withMarshaller(ListResourceInstancesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTags =
+        genForlistResourceTags();
+
+    private static HttpRequestDef<ListResourceTagsRequest, ListResourceTagsResponse> genForlistResourceTags() {
+        // basic
+        HttpRequestDef.Builder<ListResourceTagsRequest, ListResourceTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListResourceTagsRequest.class, ListResourceTagsResponse.class)
+                .withName("ListResourceTags")
+                .withUri("/v1/{project_id}/{resource_type}/{resource_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListResourceTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListResourceTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceTagsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
             }));
 
         // response

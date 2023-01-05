@@ -103,6 +103,11 @@ public class NodeResponse {
 
     private List<String> hostIps = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deployment_num")
+
+    private Integer deploymentNum;
+
     public NodeResponse withId(String id) {
         this.id = id;
         return this;
@@ -441,6 +446,23 @@ public class NodeResponse {
         this.hostIps = hostIps;
     }
 
+    public NodeResponse withDeploymentNum(Integer deploymentNum) {
+        this.deploymentNum = deploymentNum;
+        return this;
+    }
+
+    /**
+     * 节点中部署的数量
+     * @return deploymentNum
+     */
+    public Integer getDeploymentNum() {
+        return deploymentNum;
+    }
+
+    public void setDeploymentNum(Integer deploymentNum) {
+        this.deploymentNum = deploymentNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -463,7 +485,8 @@ public class NodeResponse {
             && Objects.equals(this.state, nodeResponse.state) && Objects.equals(this.type, nodeResponse.type)
             && Objects.equals(this.activeStatus, nodeResponse.activeStatus)
             && Objects.equals(this.cpu, nodeResponse.cpu) && Objects.equals(this.gpuNum, nodeResponse.gpuNum)
-            && Objects.equals(this.npuNum, nodeResponse.npuNum) && Objects.equals(this.hostIps, nodeResponse.hostIps);
+            && Objects.equals(this.npuNum, nodeResponse.npuNum) && Objects.equals(this.hostIps, nodeResponse.hostIps)
+            && Objects.equals(this.deploymentNum, nodeResponse.deploymentNum);
     }
 
     @Override
@@ -485,7 +508,8 @@ public class NodeResponse {
             cpu,
             gpuNum,
             npuNum,
-            hostIps);
+            hostIps,
+            deploymentNum);
     }
 
     @Override
@@ -510,6 +534,7 @@ public class NodeResponse {
         sb.append("    gpuNum: ").append(toIndentedString(gpuNum)).append("\n");
         sb.append("    npuNum: ").append(toIndentedString(npuNum)).append("\n");
         sb.append("    hostIps: ").append(toIndentedString(hostIps)).append("\n");
+        sb.append("    deploymentNum: ").append(toIndentedString(deploymentNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -758,6 +758,59 @@ public class DrisMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchShowRadarsRequest, BatchShowRadarsResponse> batchShowRadars =
+        genForbatchShowRadars();
+
+    private static HttpRequestDef<BatchShowRadarsRequest, BatchShowRadarsResponse> genForbatchShowRadars() {
+        // basic
+        HttpRequestDef.Builder<BatchShowRadarsRequest, BatchShowRadarsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, BatchShowRadarsRequest.class, BatchShowRadarsResponse.class)
+                .withName("BatchShowRadars")
+                .withUri("/v1/{project_id}/radars")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("esn",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchShowRadarsRequest::getEsn, (req, v) -> {
+                req.setEsn(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchShowRadarsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchShowRadarsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchShowRadarsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchShowRadarsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchShowRsusRequest, BatchShowRsusResponse> batchShowRsus =
         genForbatchShowRsus();
 

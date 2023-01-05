@@ -26,7 +26,7 @@ public class LiveAsyncClient {
      * 
      * 最大查询跨度1天，最大查询周期90天。
      * 
-     * 支持查询当天，当前数据延时少于1分钟。
+     * 支持查询当天，当前数据延时少于5分钟。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -44,7 +44,7 @@ public class LiveAsyncClient {
      * 
      * 最大查询跨度1天，最大查询周期90天。
      * 
-     * 支持查询当天，当前数据延时少于1分钟。
+     * 支持查询当天，当前数据延时少于5分钟。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -60,7 +60,13 @@ public class LiveAsyncClient {
     /**
      * 查询播放带宽趋势接口
      *
-     * 查询播放域名带宽数据。  最大查询跨度31天，最大查询周期一年。
+     * 查询播放域名带宽数据。
+     * 
+     * 如果不传入域名，则查询租户下所有播放域名的带宽数据。
+     * 
+     * 当查询租户级别带宽数据时，参数app、stream不生效。
+     * 
+     * 最大查询跨度31天，最大查询周期一年。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -74,7 +80,13 @@ public class LiveAsyncClient {
     /**
      * 查询播放带宽趋势接口
      *
-     * 查询播放域名带宽数据。  最大查询跨度31天，最大查询周期一年。
+     * 查询播放域名带宽数据。
+     * 
+     * 如果不传入域名，则查询租户下所有播放域名的带宽数据。
+     * 
+     * 当查询租户级别带宽数据时，参数app、stream不生效。
+     * 
+     * 最大查询跨度31天，最大查询周期一年。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -90,7 +102,13 @@ public class LiveAsyncClient {
     /**
      * 查询播放带宽峰值接口
      *
-     * 查询指定时间范围内播放带宽峰值。  最大查询跨度31天，最大查询周期一年。
+     * 查询指定时间范围内播放带宽峰值。
+     * 
+     * 如果不传入域名，则查询租户下所有播放域名的带宽峰值。
+     * 
+     * 当查询租户级别带宽数据时，参数app、stream不生效。
+     * 
+     * 最大查询跨度31天，最大查询周期一年。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -105,7 +123,13 @@ public class LiveAsyncClient {
     /**
      * 查询播放带宽峰值接口
      *
-     * 查询指定时间范围内播放带宽峰值。  最大查询跨度31天，最大查询周期一年。
+     * 查询指定时间范围内播放带宽峰值。
+     * 
+     * 如果不传入域名，则查询租户下所有播放域名的带宽峰值。
+     * 
+     * 当查询租户级别带宽数据时，参数app、stream不生效。
+     * 
+     * 最大查询跨度31天，最大查询周期一年。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -121,7 +145,13 @@ public class LiveAsyncClient {
     /**
      * 查询播放流量趋势接口
      *
-     * 查询播放域名流量数据。  最大查询跨度31天，最大查询周期一年。
+     * 查询播放域名流量数据。
+     * 
+     * 如果不传入域名，则查询租户下所有播放域名的流量数据。
+     * 
+     * 当查询租户级别流量数据时，参数app、stream不生效。
+     * 
+     * 最大查询跨度31天，最大查询周期一年。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -136,7 +166,13 @@ public class LiveAsyncClient {
     /**
      * 查询播放流量趋势接口
      *
-     * 查询播放域名流量数据。  最大查询跨度31天，最大查询周期一年。
+     * 查询播放域名流量数据。
+     * 
+     * 如果不传入域名，则查询租户下所有播放域名的流量数据。
+     * 
+     * 当查询租户级别流量数据时，参数app、stream不生效。
+     * 
+     * 最大查询跨度31天，最大查询周期一年。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -152,7 +188,13 @@ public class LiveAsyncClient {
     /**
      * 查询播放流量汇总接口
      *
-     * 查询指定时间范围内流量汇总量。  最大查询跨度31天，最大查询周期一年。
+     * 查询指定时间范围内流量汇总量。
+     * 
+     * 如果不传入域名，则查询租户下所有播放域名的流量汇总量。
+     * 
+     * 当查询租户级别流量数据时，参数app、stream不生效。
+     * 
+     * 最大查询跨度31天，最大查询周期一年。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -167,7 +209,13 @@ public class LiveAsyncClient {
     /**
      * 查询播放流量汇总接口
      *
-     * 查询指定时间范围内流量汇总量。  最大查询跨度31天，最大查询周期一年。
+     * 查询指定时间范围内流量汇总量。
+     * 
+     * 如果不传入域名，则查询租户下所有播放域名的流量汇总量。
+     * 
+     * 当查询租户级别流量数据时，参数app、stream不生效。
+     * 
+     * 最大查询跨度31天，最大查询周期一年。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -575,6 +623,44 @@ public class LiveAsyncClient {
         ListSingleStreamFramerateRequest request) {
         return new AsyncInvoker<ListSingleStreamFramerateRequest, ListSingleStreamFramerateResponse>(request,
             LiveMeta.listSingleStreamFramerate, hcClient);
+    }
+
+    /**
+     * 查询CDN上行推流质量数据接口
+     *
+     * 查询CDN上行推流质量数据。
+     * 
+     * 最大查询跨度1天，最大查询周期7天。
+     * 
+     * 返回的CDN上行推流质量数据列表粒度为1分钟。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUpStreamDetailRequest 请求对象
+     * @return CompletableFuture<ListUpStreamDetailResponse>
+     */
+    public CompletableFuture<ListUpStreamDetailResponse> listUpStreamDetailAsync(ListUpStreamDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.listUpStreamDetail);
+    }
+
+    /**
+     * 查询CDN上行推流质量数据接口
+     *
+     * 查询CDN上行推流质量数据。
+     * 
+     * 最大查询跨度1天，最大查询周期7天。
+     * 
+     * 返回的CDN上行推流质量数据列表粒度为1分钟。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUpStreamDetailRequest 请求对象
+     * @return AsyncInvoker<ListUpStreamDetailRequest, ListUpStreamDetailResponse>
+     */
+    public AsyncInvoker<ListUpStreamDetailRequest, ListUpStreamDetailResponse> listUpStreamDetailAsyncInvoker(
+        ListUpStreamDetailRequest request) {
+        return new AsyncInvoker<ListUpStreamDetailRequest, ListUpStreamDetailResponse>(request,
+            LiveMeta.listUpStreamDetail, hcClient);
     }
 
 }

@@ -29,7 +29,7 @@ public class StatisticsTimelineItem {
     }
 
     /**
-     * 键值，包括请求总量（ACCESS）、Bot攻击防护（CRAWLER）、攻击总量（TOTAL_ATTACK）、Web基础防护（WEB_ATTACK）、精准防护（PRECISE）、CC攻击防护（CC）
+     * 键值，包括请求总量（ACCESS）、Bot攻击防护（CRAWLER）、攻击总量（ATTACK）、Web基础防护（WEB_ATTACK）、精准防护（PRECISE）、CC攻击防护（CC）
      * @return key
      */
     public String getKey() {

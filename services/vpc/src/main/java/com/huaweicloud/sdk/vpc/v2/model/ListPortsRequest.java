@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -235,6 +238,11 @@ public class ListPortsRequest {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_groups")
+
+    private List<String> securityGroups = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marker")
 
     private String marker;
@@ -242,7 +250,7 @@ public class ListPortsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fixed_ips")
 
-    private String fixedIps;
+    private List<String> fixedIps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -402,6 +410,39 @@ public class ListPortsRequest {
         this.status = status;
     }
 
+    public ListPortsRequest withSecurityGroups(List<String> securityGroups) {
+        this.securityGroups = securityGroups;
+        return this;
+    }
+
+    public ListPortsRequest addSecurityGroupsItem(String securityGroupsItem) {
+        if (this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
+        this.securityGroups.add(securityGroupsItem);
+        return this;
+    }
+
+    public ListPortsRequest withSecurityGroups(Consumer<List<String>> securityGroupsSetter) {
+        if (this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
+        securityGroupsSetter.accept(this.securityGroups);
+        return this;
+    }
+
+    /**
+     * 按照安全组ID列表过滤查询
+     * @return securityGroups
+     */
+    public List<String> getSecurityGroups() {
+        return securityGroups;
+    }
+
+    public void setSecurityGroups(List<String> securityGroups) {
+        this.securityGroups = securityGroups;
+    }
+
     public ListPortsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -419,8 +460,24 @@ public class ListPortsRequest {
         this.marker = marker;
     }
 
-    public ListPortsRequest withFixedIps(String fixedIps) {
+    public ListPortsRequest withFixedIps(List<String> fixedIps) {
         this.fixedIps = fixedIps;
+        return this;
+    }
+
+    public ListPortsRequest addFixedIpsItem(String fixedIpsItem) {
+        if (this.fixedIps == null) {
+            this.fixedIps = new ArrayList<>();
+        }
+        this.fixedIps.add(fixedIpsItem);
+        return this;
+    }
+
+    public ListPortsRequest withFixedIps(Consumer<List<String>> fixedIpsSetter) {
+        if (this.fixedIps == null) {
+            this.fixedIps = new ArrayList<>();
+        }
+        fixedIpsSetter.accept(this.fixedIps);
         return this;
     }
 
@@ -428,11 +485,11 @@ public class ListPortsRequest {
      * 按照fixed_ips=ip_address或者fixed_ips=subnet_id过滤查询
      * @return fixedIps
      */
-    public String getFixedIps() {
+    public List<String> getFixedIps() {
         return fixedIps;
     }
 
-    public void setFixedIps(String fixedIps) {
+    public void setFixedIps(List<String> fixedIps) {
         this.fixedIps = fixedIps;
     }
 
@@ -470,6 +527,7 @@ public class ListPortsRequest {
             && Objects.equals(this.deviceId, listPortsRequest.deviceId)
             && Objects.equals(this.deviceOwner, listPortsRequest.deviceOwner)
             && Objects.equals(this.status, listPortsRequest.status)
+            && Objects.equals(this.securityGroups, listPortsRequest.securityGroups)
             && Objects.equals(this.marker, listPortsRequest.marker)
             && Objects.equals(this.fixedIps, listPortsRequest.fixedIps)
             && Objects.equals(this.enterpriseProjectId, listPortsRequest.enterpriseProjectId);
@@ -486,6 +544,7 @@ public class ListPortsRequest {
             deviceId,
             deviceOwner,
             status,
+            securityGroups,
             marker,
             fixedIps,
             enterpriseProjectId);
@@ -504,6 +563,7 @@ public class ListPortsRequest {
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("    deviceOwner: ").append(toIndentedString(deviceOwner)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    fixedIps: ").append(toIndentedString(fixedIps)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");

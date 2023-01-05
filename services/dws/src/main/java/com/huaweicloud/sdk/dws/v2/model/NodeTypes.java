@@ -28,6 +28,41 @@ public class NodeTypes {
 
     private String id;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "datastore_type")
+
+    private String datastoreType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "available_zones")
+
+    private List<NodeTypeAvailableZones> availableZones = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ram")
+
+    private Integer ram;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vcpus")
+
+    private Integer vcpus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "datastores")
+
+    private List<NodeTypeDatastores> datastores = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "volume")
+
+    private VolumeResp volume;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elastic_volume_specs")
+
+    private List<NodeTypeElasticVolumeSpecs> elasticVolumeSpecs = null;
+
     public NodeTypes withSpecName(String specName) {
         this.specName = specName;
         return this;
@@ -95,6 +130,182 @@ public class NodeTypes {
         this.id = id;
     }
 
+    public NodeTypes withDatastoreType(String datastoreType) {
+        this.datastoreType = datastoreType;
+        return this;
+    }
+
+    /**
+     * 产品类型 - dws：云数仓。 - hybrid：实时数仓。 - stream：IoT数仓。
+     * @return datastoreType
+     */
+    public String getDatastoreType() {
+        return datastoreType;
+    }
+
+    public void setDatastoreType(String datastoreType) {
+        this.datastoreType = datastoreType;
+    }
+
+    public NodeTypes withAvailableZones(List<NodeTypeAvailableZones> availableZones) {
+        this.availableZones = availableZones;
+        return this;
+    }
+
+    public NodeTypes addAvailableZonesItem(NodeTypeAvailableZones availableZonesItem) {
+        if (this.availableZones == null) {
+            this.availableZones = new ArrayList<>();
+        }
+        this.availableZones.add(availableZonesItem);
+        return this;
+    }
+
+    public NodeTypes withAvailableZones(Consumer<List<NodeTypeAvailableZones>> availableZonesSetter) {
+        if (this.availableZones == null) {
+            this.availableZones = new ArrayList<>();
+        }
+        availableZonesSetter.accept(this.availableZones);
+        return this;
+    }
+
+    /**
+     * 支持的可用区及状态信息。
+     * @return availableZones
+     */
+    public List<NodeTypeAvailableZones> getAvailableZones() {
+        return availableZones;
+    }
+
+    public void setAvailableZones(List<NodeTypeAvailableZones> availableZones) {
+        this.availableZones = availableZones;
+    }
+
+    public NodeTypes withRam(Integer ram) {
+        this.ram = ram;
+        return this;
+    }
+
+    /**
+     * 内存大小。
+     * @return ram
+     */
+    public Integer getRam() {
+        return ram;
+    }
+
+    public void setRam(Integer ram) {
+        this.ram = ram;
+    }
+
+    public NodeTypes withVcpus(Integer vcpus) {
+        this.vcpus = vcpus;
+        return this;
+    }
+
+    /**
+     * CPU数量。
+     * @return vcpus
+     */
+    public Integer getVcpus() {
+        return vcpus;
+    }
+
+    public void setVcpus(Integer vcpus) {
+        this.vcpus = vcpus;
+    }
+
+    public NodeTypes withDatastores(List<NodeTypeDatastores> datastores) {
+        this.datastores = datastores;
+        return this;
+    }
+
+    public NodeTypes addDatastoresItem(NodeTypeDatastores datastoresItem) {
+        if (this.datastores == null) {
+            this.datastores = new ArrayList<>();
+        }
+        this.datastores.add(datastoresItem);
+        return this;
+    }
+
+    public NodeTypes withDatastores(Consumer<List<NodeTypeDatastores>> datastoresSetter) {
+        if (this.datastores == null) {
+            this.datastores = new ArrayList<>();
+        }
+        datastoresSetter.accept(this.datastores);
+        return this;
+    }
+
+    /**
+     * 内核版本信息。
+     * @return datastores
+     */
+    public List<NodeTypeDatastores> getDatastores() {
+        return datastores;
+    }
+
+    public void setDatastores(List<NodeTypeDatastores> datastores) {
+        this.datastores = datastores;
+    }
+
+    public NodeTypes withVolume(VolumeResp volume) {
+        this.volume = volume;
+        return this;
+    }
+
+    public NodeTypes withVolume(Consumer<VolumeResp> volumeSetter) {
+        if (this.volume == null) {
+            this.volume = new VolumeResp();
+            volumeSetter.accept(this.volume);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get volume
+     * @return volume
+     */
+    public VolumeResp getVolume() {
+        return volume;
+    }
+
+    public void setVolume(VolumeResp volume) {
+        this.volume = volume;
+    }
+
+    public NodeTypes withElasticVolumeSpecs(List<NodeTypeElasticVolumeSpecs> elasticVolumeSpecs) {
+        this.elasticVolumeSpecs = elasticVolumeSpecs;
+        return this;
+    }
+
+    public NodeTypes addElasticVolumeSpecsItem(NodeTypeElasticVolumeSpecs elasticVolumeSpecsItem) {
+        if (this.elasticVolumeSpecs == null) {
+            this.elasticVolumeSpecs = new ArrayList<>();
+        }
+        this.elasticVolumeSpecs.add(elasticVolumeSpecsItem);
+        return this;
+    }
+
+    public NodeTypes withElasticVolumeSpecs(Consumer<List<NodeTypeElasticVolumeSpecs>> elasticVolumeSpecsSetter) {
+        if (this.elasticVolumeSpecs == null) {
+            this.elasticVolumeSpecs = new ArrayList<>();
+        }
+        elasticVolumeSpecsSetter.accept(this.elasticVolumeSpecs);
+        return this;
+    }
+
+    /**
+     * 如果规格为弹性容量规格，则该属性为规格典配的弹性容量信息，包括存储类型、最小容量、最大容量以及步长信息，如果为固定存储规格，则该属性为null。
+     * @return elasticVolumeSpecs
+     */
+    public List<NodeTypeElasticVolumeSpecs> getElasticVolumeSpecs() {
+        return elasticVolumeSpecs;
+    }
+
+    public void setElasticVolumeSpecs(List<NodeTypeElasticVolumeSpecs> elasticVolumeSpecs) {
+        this.elasticVolumeSpecs = elasticVolumeSpecs;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -105,12 +316,25 @@ public class NodeTypes {
         }
         NodeTypes nodeTypes = (NodeTypes) o;
         return Objects.equals(this.specName, nodeTypes.specName) && Objects.equals(this.detail, nodeTypes.detail)
-            && Objects.equals(this.id, nodeTypes.id);
+            && Objects.equals(this.id, nodeTypes.id) && Objects.equals(this.datastoreType, nodeTypes.datastoreType)
+            && Objects.equals(this.availableZones, nodeTypes.availableZones) && Objects.equals(this.ram, nodeTypes.ram)
+            && Objects.equals(this.vcpus, nodeTypes.vcpus) && Objects.equals(this.datastores, nodeTypes.datastores)
+            && Objects.equals(this.volume, nodeTypes.volume)
+            && Objects.equals(this.elasticVolumeSpecs, nodeTypes.elasticVolumeSpecs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(specName, detail, id);
+        return Objects.hash(specName,
+            detail,
+            id,
+            datastoreType,
+            availableZones,
+            ram,
+            vcpus,
+            datastores,
+            volume,
+            elasticVolumeSpecs);
     }
 
     @Override
@@ -120,6 +344,13 @@ public class NodeTypes {
         sb.append("    specName: ").append(toIndentedString(specName)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
+        sb.append("    availableZones: ").append(toIndentedString(availableZones)).append("\n");
+        sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
+        sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
+        sb.append("    datastores: ").append(toIndentedString(datastores)).append("\n");
+        sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
+        sb.append("    elasticVolumeSpecs: ").append(toIndentedString(elasticVolumeSpecs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

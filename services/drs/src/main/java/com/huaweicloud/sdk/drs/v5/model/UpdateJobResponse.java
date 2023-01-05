@@ -1,9 +1,14 @@
 package com.huaweicloud.sdk.drs.v5.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -12,63 +17,97 @@ import java.util.Objects;
 public class UpdateJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "error_code")
-
-    private String errorCode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "error_msg")
-
-    private String errorMsg;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
+    /**
+     * 查询状态
+     */
+    public static final class StatusEnum {
 
-    private String name;
+        /**
+         * Enum PENDING for value: "pending"
+         */
+        public static final StatusEnum PENDING = new StatusEnum("pending");
+
+        /**
+         * Enum FAILED for value: "failed"
+         */
+        public static final StatusEnum FAILED = new StatusEnum("failed");
+
+        /**
+         * Enum SUCCESS for value: "success"
+         */
+        public static final StatusEnum SUCCESS = new StatusEnum("success");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("pending", PENDING);
+            map.put("failed", FAILED);
+            map.put("success", SUCCESS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatusEnum(value);
+            }
+            return result;
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private String status;
-
-    public UpdateJobResponse withErrorCode(String errorCode) {
-        this.errorCode = errorCode;
-        return this;
-    }
-
-    /**
-     * 错误码。
-     * @return errorCode
-     */
-    public String getErrorCode() {
-        return errorCode;
-    }
-
-    public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
-    }
-
-    public UpdateJobResponse withErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
-        return this;
-    }
-
-    /**
-     * 错误描述。
-     * @return errorMsg
-     */
-    public String getErrorMsg() {
-        return errorMsg;
-    }
-
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
-    }
+    private StatusEnum status;
 
     public UpdateJobResponse withId(String id) {
         this.id = id;
@@ -76,7 +115,7 @@ public class UpdateJobResponse extends SdkResponse {
     }
 
     /**
-     * 任务ID。
+     * 查询结果id
      * @return id
      */
     public String getId() {
@@ -87,37 +126,20 @@ public class UpdateJobResponse extends SdkResponse {
         this.id = id;
     }
 
-    public UpdateJobResponse withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /**
-     * 任务名称。
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public UpdateJobResponse withStatus(String status) {
+    public UpdateJobResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 操作结果。
+     * 查询状态
      * @return status
      */
-    public String getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
@@ -130,25 +152,19 @@ public class UpdateJobResponse extends SdkResponse {
             return false;
         }
         UpdateJobResponse updateJobResponse = (UpdateJobResponse) o;
-        return Objects.equals(this.errorCode, updateJobResponse.errorCode)
-            && Objects.equals(this.errorMsg, updateJobResponse.errorMsg)
-            && Objects.equals(this.id, updateJobResponse.id) && Objects.equals(this.name, updateJobResponse.name)
-            && Objects.equals(this.status, updateJobResponse.status);
+        return Objects.equals(this.id, updateJobResponse.id) && Objects.equals(this.status, updateJobResponse.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(errorCode, errorMsg, id, name, status);
+        return Objects.hash(id, status);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateJobResponse {\n");
-        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
-        sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();

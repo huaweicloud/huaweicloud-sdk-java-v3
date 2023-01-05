@@ -15,6 +15,16 @@ public class ListWorkSpacesRequest {
 
     private String iamUserId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ListWorkSpacesRequest withIamUserId(String iamUserId) {
         this.iamUserId = iamUserId;
         return this;
@@ -32,6 +42,40 @@ public class ListWorkSpacesRequest {
         this.iamUserId = iamUserId;
     }
 
+    public ListWorkSpacesRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 查询的起始位置，取值范围为非负整数，默认为0
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListWorkSpacesRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页显示的条目数量，取值范围1~100，默认为100
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -41,12 +85,14 @@ public class ListWorkSpacesRequest {
             return false;
         }
         ListWorkSpacesRequest listWorkSpacesRequest = (ListWorkSpacesRequest) o;
-        return Objects.equals(this.iamUserId, listWorkSpacesRequest.iamUserId);
+        return Objects.equals(this.iamUserId, listWorkSpacesRequest.iamUserId)
+            && Objects.equals(this.offset, listWorkSpacesRequest.offset)
+            && Objects.equals(this.limit, listWorkSpacesRequest.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(iamUserId);
+        return Objects.hash(iamUserId, offset, limit);
     }
 
     @Override
@@ -54,6 +100,8 @@ public class ListWorkSpacesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListWorkSpacesRequest {\n");
         sb.append("    iamUserId: ").append(toIndentedString(iamUserId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

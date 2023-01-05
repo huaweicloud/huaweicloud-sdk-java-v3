@@ -810,6 +810,36 @@ public class DcsClient {
     }
 
     /**
+     * 查询实例参数修改记录列表
+     *
+     * 查询实例的参数修改记录列表，支持按照关键字查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConfigHistoriesRequest 请求对象
+     * @return ListConfigHistoriesResponse
+     */
+    public ListConfigHistoriesResponse listConfigHistories(ListConfigHistoriesRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.listConfigHistories);
+    }
+
+    /**
+     * 查询实例参数修改记录列表
+     *
+     * 查询实例的参数修改记录列表，支持按照关键字查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConfigHistoriesRequest 请求对象
+     * @return SyncInvoker<ListConfigHistoriesRequest, ListConfigHistoriesResponse>
+     */
+    public SyncInvoker<ListConfigHistoriesRequest, ListConfigHistoriesResponse> listConfigHistoriesInvoker(
+        ListConfigHistoriesRequest request) {
+        return new SyncInvoker<ListConfigHistoriesRequest, ListConfigHistoriesResponse>(request,
+            DcsMeta.listConfigHistories, hcClient);
+    }
+
+    /**
      * 查询实例配置参数
      *
      * 查询指定实例的配置参数信息。

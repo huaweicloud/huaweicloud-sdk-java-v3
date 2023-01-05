@@ -197,6 +197,13 @@ public class ShowEdgeNodeResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="reliability_level")
+    
+    
+    private String reliabilityLevel;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="storage_period")
     
     
@@ -835,6 +842,28 @@ public class ShowEdgeNodeResponse extends SdkResponse {
 
     
 
+    public ShowEdgeNodeResponse withReliabilityLevel(String reliabilityLevel) {
+        this.reliabilityLevel = reliabilityLevel;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 节点的可靠性等级。
+     * @return reliabilityLevel
+     */
+    public String getReliabilityLevel() {
+        return reliabilityLevel;
+    }
+
+    public void setReliabilityLevel(String reliabilityLevel) {
+        this.reliabilityLevel = reliabilityLevel;
+    }
+
+    
+
     public ShowEdgeNodeResponse withStoragePeriod(Integer storagePeriod) {
         this.storagePeriod = storagePeriod;
         return this;
@@ -1001,6 +1030,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
             Objects.equals(this.containerVersion, showEdgeNodeResponse.containerVersion) &&
             Objects.equals(this.type, showEdgeNodeResponse.type) &&
             Objects.equals(this.securityLevel, showEdgeNodeResponse.securityLevel) &&
+            Objects.equals(this.reliabilityLevel, showEdgeNodeResponse.reliabilityLevel) &&
             Objects.equals(this.storagePeriod, showEdgeNodeResponse.storagePeriod) &&
             Objects.equals(this.basePath, showEdgeNodeResponse.basePath) &&
             Objects.equals(this.hardwareModel, showEdgeNodeResponse.hardwareModel) &&
@@ -1009,7 +1039,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(logConfigs, haConfig, edgeNodeId, instanceId, productId, productName, spaceId, resourceSpecTypes, resourceIds, ips, name, state, softwareVersion, createTime, updateTime, osName, arch, hostName, nics, specification, aiCardType, containerVersion, type, securityLevel, storagePeriod, basePath, hardwareModel, offlineCacheConfigs, deviceAuthInfo);
+        return Objects.hash(logConfigs, haConfig, edgeNodeId, instanceId, productId, productName, spaceId, resourceSpecTypes, resourceIds, ips, name, state, softwareVersion, createTime, updateTime, osName, arch, hostName, nics, specification, aiCardType, containerVersion, type, securityLevel, reliabilityLevel, storagePeriod, basePath, hardwareModel, offlineCacheConfigs, deviceAuthInfo);
     }
     @Override
     public String toString() {
@@ -1039,6 +1069,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         sb.append("    containerVersion: ").append(toIndentedString(containerVersion)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    securityLevel: ").append(toIndentedString(securityLevel)).append("\n");
+        sb.append("    reliabilityLevel: ").append(toIndentedString(reliabilityLevel)).append("\n");
         sb.append("    storagePeriod: ").append(toIndentedString(storagePeriod)).append("\n");
         sb.append("    basePath: ").append(toIndentedString(basePath)).append("\n");
         sb.append("    hardwareModel: ").append(toIndentedString(hardwareModel)).append("\n");

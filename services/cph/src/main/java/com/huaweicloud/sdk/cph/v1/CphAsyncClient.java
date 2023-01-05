@@ -20,6 +20,66 @@ public class CphAsyncClient {
     }
 
     /**
+     * 批量添加标签
+     *
+     * 批量添加标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateTagsResponse>
+     */
+    public CompletableFuture<BatchCreateTagsResponse> batchCreateTagsAsync(BatchCreateTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CphMeta.batchCreateTags);
+    }
+
+    /**
+     * 批量添加标签
+     *
+     * 批量添加标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse> batchCreateTagsAsyncInvoker(
+        BatchCreateTagsRequest request) {
+        return new AsyncInvoker<BatchCreateTagsRequest, BatchCreateTagsResponse>(request, CphMeta.batchCreateTags,
+            hcClient);
+    }
+
+    /**
+     * 批量删除标签
+     *
+     * 批量删除标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteTagsResponse> batchDeleteTagsAsync(BatchDeleteTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CphMeta.batchDeleteTags);
+    }
+
+    /**
+     * 批量删除标签
+     *
+     * 批量删除标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTagsAsyncInvoker(
+        BatchDeleteTagsRequest request) {
+        return new AsyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>(request, CphMeta.batchDeleteTags,
+            hcClient);
+    }
+
+    /**
      * 导出云手机数据
      *
      * 批量导出云手机中的数据。
@@ -504,6 +564,97 @@ public class CphAsyncClient {
      */
     public AsyncInvoker<ListJobsRequest, ListJobsResponse> listJobsAsyncInvoker(ListJobsRequest request) {
         return new AsyncInvoker<ListJobsRequest, ListJobsResponse>(request, CphMeta.listJobs, hcClient);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询租户在指定区域和资源类型的所有标签集合。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectTagsRequest 请求对象
+     * @return CompletableFuture<ListProjectTagsResponse>
+     */
+    public CompletableFuture<ListProjectTagsResponse> listProjectTagsAsync(ListProjectTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CphMeta.listProjectTags);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询租户在指定区域和资源类型的所有标签集合。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectTagsRequest 请求对象
+     * @return AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
+     */
+    public AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsAsyncInvoker(
+        ListProjectTagsRequest request) {
+        return new AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, CphMeta.listProjectTags,
+            hcClient);
+    }
+
+    /**
+     * 查询资源实例
+     *
+     * 查询资源实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceInstancesRequest 请求对象
+     * @return CompletableFuture<ListResourceInstancesResponse>
+     */
+    public CompletableFuture<ListResourceInstancesResponse> listResourceInstancesAsync(
+        ListResourceInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CphMeta.listResourceInstances);
+    }
+
+    /**
+     * 查询资源实例
+     *
+     * 查询资源实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceInstancesRequest 请求对象
+     * @return AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>
+     */
+    public AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstancesAsyncInvoker(
+        ListResourceInstancesRequest request) {
+        return new AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>(request,
+            CphMeta.listResourceInstances, hcClient);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询资源标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceTagsRequest 请求对象
+     * @return CompletableFuture<ListResourceTagsResponse>
+     */
+    public CompletableFuture<ListResourceTagsResponse> listResourceTagsAsync(ListResourceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CphMeta.listResourceTags);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询资源标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceTagsRequest 请求对象
+     * @return AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>
+     */
+    public AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTagsAsyncInvoker(
+        ListResourceTagsRequest request) {
+        return new AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>(request, CphMeta.listResourceTags,
+            hcClient);
     }
 
     /**

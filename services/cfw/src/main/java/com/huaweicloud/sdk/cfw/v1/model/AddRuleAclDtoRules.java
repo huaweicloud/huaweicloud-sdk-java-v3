@@ -222,7 +222,7 @@ public class AddRuleAclDtoRules {
     private Long longConnectTimeSecond;
 
     /**
-     * 是否支持长连接，0表示支持长连接，1表示不支持长连接
+     * 是否支持长连接，0表示不支持长连接，1表示支持长连接
      */
     public static final class LongConnectEnableEnum {
 
@@ -573,7 +573,7 @@ public class AddRuleAclDtoRules {
     }
 
     /**
-     * 是否支持长连接，0表示支持长连接，1表示不支持长连接
+     * 是否支持长连接，0表示不支持长连接，1表示支持长连接
      * @return longConnectEnable
      */
     public LongConnectEnableEnum getLongConnectEnable() {

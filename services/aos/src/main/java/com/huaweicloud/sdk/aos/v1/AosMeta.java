@@ -164,48 +164,6 @@ public class AosMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteStackRequest, DeleteStackResponse> deleteStack = genFordeleteStack();
-
-    private static HttpRequestDef<DeleteStackRequest, DeleteStackResponse> genFordeleteStack() {
-        // basic
-        HttpRequestDef.Builder<DeleteStackRequest, DeleteStackResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteStackRequest.class, DeleteStackResponse.class)
-                .withName("DeleteStack")
-                .withUri("/v1/{project_id}/stacks/{stack_name}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("stack_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStackRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            })
-        );
-        builder.<String>withRequestField("stack_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStackRequest::getStackId, (req, v) -> {
-                req.setStackId(v);
-            })
-        );
-        builder.<String>withRequestField("Client-Request-Id",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteStackRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            })
-        );
-
-        // response
-
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<DescribeExecutionPlanRequest, DescribeExecutionPlanResponse> describeExecutionPlan = genFordescribeExecutionPlan();
 
     private static HttpRequestDef<DescribeExecutionPlanRequest, DescribeExecutionPlanResponse> genFordescribeExecutionPlan() {
@@ -380,6 +338,208 @@ public class AosMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListExecutionPlansRequest, ListExecutionPlansResponse> listExecutionPlans = genForlistExecutionPlans();
+
+    private static HttpRequestDef<ListExecutionPlansRequest, ListExecutionPlansResponse> genForlistExecutionPlans() {
+        // basic
+        HttpRequestDef.Builder<ListExecutionPlansRequest, ListExecutionPlansResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListExecutionPlansRequest.class, ListExecutionPlansResponse.class)
+                .withName("ListExecutionPlans")
+                .withUri("/v1/{project_id}/stacks/{stack_name}/execution-plans")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("stack_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExecutionPlansRequest::getStackName, (req, v) -> {
+                req.setStackName(v);
+            })
+        );
+        builder.<String>withRequestField("stack_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExecutionPlansRequest::getStackId, (req, v) -> {
+                req.setStackId(v);
+            })
+        );
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExecutionPlansRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ContinueRollbackStackRequest, ContinueRollbackStackResponse> continueRollbackStack = genForcontinueRollbackStack();
+
+    private static HttpRequestDef<ContinueRollbackStackRequest, ContinueRollbackStackResponse> genForcontinueRollbackStack() {
+        // basic
+        HttpRequestDef.Builder<ContinueRollbackStackRequest, ContinueRollbackStackResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ContinueRollbackStackRequest.class, ContinueRollbackStackResponse.class)
+                .withName("ContinueRollbackStack")
+                .withUri("/v1/{project_id}/stacks/{stack_name}/rollbacks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("stack_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ContinueRollbackStackRequest::getStackName, (req, v) -> {
+                req.setStackName(v);
+            })
+        );
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ContinueRollbackStackRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+        builder.<ContinueRollbackStackRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ContinueRollbackStackRequestBody.class),
+            f -> f.withMarshaller(ContinueRollbackStackRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateStackRequest, CreateStackResponse> createStack = genForcreateStack();
+
+    private static HttpRequestDef<CreateStackRequest, CreateStackResponse> genForcreateStack() {
+        // basic
+        HttpRequestDef.Builder<CreateStackRequest, CreateStackResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateStackRequest.class, CreateStackResponse.class)
+                .withName("CreateStack")
+                .withUri("/v1/{project_id}/stacks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateStackRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+        builder.<CreateStackRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateStackRequestBody.class),
+            f -> f.withMarshaller(CreateStackRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteStackRequest, DeleteStackResponse> deleteStack = genFordeleteStack();
+
+    private static HttpRequestDef<DeleteStackRequest, DeleteStackResponse> genFordeleteStack() {
+        // basic
+        HttpRequestDef.Builder<DeleteStackRequest, DeleteStackResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteStackRequest.class, DeleteStackResponse.class)
+                .withName("DeleteStack")
+                .withUri("/v1/{project_id}/stacks/{stack_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("stack_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStackRequest::getStackName, (req, v) -> {
+                req.setStackName(v);
+            })
+        );
+        builder.<String>withRequestField("stack_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStackRequest::getStackId, (req, v) -> {
+                req.setStackId(v);
+            })
+        );
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStackRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeployStackRequest, DeployStackResponse> deployStack = genFordeployStack();
+
+    private static HttpRequestDef<DeployStackRequest, DeployStackResponse> genFordeployStack() {
+        // basic
+        HttpRequestDef.Builder<DeployStackRequest, DeployStackResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeployStackRequest.class, DeployStackResponse.class)
+                .withName("DeployStack")
+                .withUri("/v1/{project_id}/stacks/{stack_name}/deployments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("stack_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeployStackRequest::getStackName, (req, v) -> {
+                req.setStackName(v);
+            })
+        );
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeployStackRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+        builder.<DeployStackRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeployStackRequestBody.class),
+            f -> f.withMarshaller(DeployStackRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<GetStackMetadataRequest, GetStackMetadataResponse> getStackMetadata = genForgetStackMetadata();
 
     private static HttpRequestDef<GetStackMetadataRequest, GetStackMetadataResponse> genForgetStackMetadata() {
@@ -454,48 +614,6 @@ public class AosMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(GetStackTemplateRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            })
-        );
-
-        // response
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListExecutionPlansRequest, ListExecutionPlansResponse> listExecutionPlans = genForlistExecutionPlans();
-
-    private static HttpRequestDef<ListExecutionPlansRequest, ListExecutionPlansResponse> genForlistExecutionPlans() {
-        // basic
-        HttpRequestDef.Builder<ListExecutionPlansRequest, ListExecutionPlansResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListExecutionPlansRequest.class, ListExecutionPlansResponse.class)
-                .withName("ListExecutionPlans")
-                .withUri("/v1/{project_id}/stacks/{stack_name}/execution-plans")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("stack_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExecutionPlansRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            })
-        );
-        builder.<String>withRequestField("stack_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExecutionPlansRequest::getStackId, (req, v) -> {
-                req.setStackId(v);
-            })
-        );
-        builder.<String>withRequestField("Client-Request-Id",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListExecutionPlansRequest::getClientRequestId, (req, v) -> {
                 req.setClientRequestId(v);
             })
         );
@@ -640,6 +758,32 @@ public class AosMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListStacksRequest, ListStacksResponse> listStacks = genForlistStacks();
+
+    private static HttpRequestDef<ListStacksRequest, ListStacksResponse> genForlistStacks() {
+        // basic
+        HttpRequestDef.Builder<ListStacksRequest, ListStacksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListStacksRequest.class, ListStacksResponse.class)
+                .withName("ListStacks")
+                .withUri("/v1/{project_id}/stacks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStacksRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse> parseTemplateVariables = genForparseTemplateVariables();
 
     private static HttpRequestDef<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse> genForparseTemplateVariables() {
@@ -665,150 +809,6 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(ParseTemplateVariablesRequestBody.class),
             f -> f.withMarshaller(ParseTemplateVariablesRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
-
-        // response
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ContinueRollbackStackRequest, ContinueRollbackStackResponse> continueRollbackStack = genForcontinueRollbackStack();
-
-    private static HttpRequestDef<ContinueRollbackStackRequest, ContinueRollbackStackResponse> genForcontinueRollbackStack() {
-        // basic
-        HttpRequestDef.Builder<ContinueRollbackStackRequest, ContinueRollbackStackResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ContinueRollbackStackRequest.class, ContinueRollbackStackResponse.class)
-                .withName("ContinueRollbackStack")
-                .withUri("/v1/{project_id}/stacks/{stack_name}/rollbacks")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("stack_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ContinueRollbackStackRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            })
-        );
-        builder.<String>withRequestField("Client-Request-Id",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ContinueRollbackStackRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            })
-        );
-        builder.<ContinueRollbackStackRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ContinueRollbackStackRequestBody.class),
-            f -> f.withMarshaller(ContinueRollbackStackRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateStackRequest, CreateStackResponse> createStack = genForcreateStack();
-
-    private static HttpRequestDef<CreateStackRequest, CreateStackResponse> genForcreateStack() {
-        // basic
-        HttpRequestDef.Builder<CreateStackRequest, CreateStackResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateStackRequest.class, CreateStackResponse.class)
-                .withName("CreateStack")
-                .withUri("/v1/{project_id}/stacks")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("Client-Request-Id",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateStackRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            })
-        );
-        builder.<CreateStackRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateStackRequestBody.class),
-            f -> f.withMarshaller(CreateStackRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeployStackRequest, DeployStackResponse> deployStack = genFordeployStack();
-
-    private static HttpRequestDef<DeployStackRequest, DeployStackResponse> genFordeployStack() {
-        // basic
-        HttpRequestDef.Builder<DeployStackRequest, DeployStackResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, DeployStackRequest.class, DeployStackResponse.class)
-                .withName("DeployStack")
-                .withUri("/v1/{project_id}/stacks/{stack_name}/deployments")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("stack_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeployStackRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            })
-        );
-        builder.<String>withRequestField("Client-Request-Id",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeployStackRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            })
-        );
-        builder.<DeployStackRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DeployStackRequestBody.class),
-            f -> f.withMarshaller(DeployStackRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListStacksRequest, ListStacksResponse> listStacks = genForlistStacks();
-
-    private static HttpRequestDef<ListStacksRequest, ListStacksResponse> genForlistStacks() {
-        // basic
-        HttpRequestDef.Builder<ListStacksRequest, ListStacksResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListStacksRequest.class, ListStacksResponse.class)
-                .withName("ListStacks")
-                .withUri("/v1/{project_id}/stacks")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("Client-Request-Id",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListStacksRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
             })
         );
 

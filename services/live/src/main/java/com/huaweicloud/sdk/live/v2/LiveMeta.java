@@ -119,7 +119,7 @@ public class LiveMeta {
         // requests
         builder.<List<String>>withRequestField("play_domains",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListBandwidthDetailRequest::getPlayDomains, (req, v) -> {
                 req.setPlayDomains(v);
@@ -187,6 +187,13 @@ public class LiveMeta {
             f -> f.withMarshaller(ListBandwidthDetailRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
             }));
+        builder.<ListBandwidthDetailRequest.ServiceTypeEnum>withRequestField("service_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListBandwidthDetailRequest.ServiceTypeEnum.class),
+            f -> f.withMarshaller(ListBandwidthDetailRequest::getServiceType, (req, v) -> {
+                req.setServiceType(v);
+            }));
 
         // response
 
@@ -213,7 +220,7 @@ public class LiveMeta {
         // requests
         builder.<List<String>>withRequestField("play_domains",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getPlayDomains, (req, v) -> {
                 req.setPlayDomains(v);
@@ -267,6 +274,13 @@ public class LiveMeta {
             f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
             }));
+        builder.<ListDomainBandwidthPeakRequest.ServiceTypeEnum>withRequestField("service_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDomainBandwidthPeakRequest.ServiceTypeEnum.class),
+            f -> f.withMarshaller(ListDomainBandwidthPeakRequest::getServiceType, (req, v) -> {
+                req.setServiceType(v);
+            }));
 
         // response
 
@@ -293,7 +307,7 @@ public class LiveMeta {
         // requests
         builder.<List<String>>withRequestField("play_domains",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListDomainTrafficDetailRequest::getPlayDomains, (req, v) -> {
                 req.setPlayDomains(v);
@@ -354,6 +368,13 @@ public class LiveMeta {
             f -> f.withMarshaller(ListDomainTrafficDetailRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
             }));
+        builder.<ListDomainTrafficDetailRequest.ServiceTypeEnum>withRequestField("service_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDomainTrafficDetailRequest.ServiceTypeEnum.class),
+            f -> f.withMarshaller(ListDomainTrafficDetailRequest::getServiceType, (req, v) -> {
+                req.setServiceType(v);
+            }));
 
         // response
 
@@ -381,7 +402,7 @@ public class LiveMeta {
         // requests
         builder.<List<String>>withRequestField("play_domains",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getPlayDomains, (req, v) -> {
                 req.setPlayDomains(v);
@@ -434,6 +455,13 @@ public class LiveMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
+            }));
+        builder.<ListDomainTrafficSummaryRequest.ServiceTypeEnum>withRequestField("service_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDomainTrafficSummaryRequest.ServiceTypeEnum.class),
+            f -> f.withMarshaller(ListDomainTrafficSummaryRequest::getServiceType, (req, v) -> {
+                req.setServiceType(v);
             }));
 
         // response
@@ -806,6 +834,13 @@ public class LiveMeta {
             f -> f.withMarshaller(ListUsersOfStreamRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
             }));
+        builder.<ListUsersOfStreamRequest.ServiceTypeEnum>withRequestField("service_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListUsersOfStreamRequest.ServiceTypeEnum.class),
+            f -> f.withMarshaller(ListUsersOfStreamRequest::getServiceType, (req, v) -> {
+                req.setServiceType(v);
+            }));
 
         // response
 
@@ -959,6 +994,13 @@ public class LiveMeta {
             TypeCasts.uncheckedConversion(ShowUpBandwidthRequest.IntervalEnum.class),
             f -> f.withMarshaller(ShowUpBandwidthRequest::getInterval, (req, v) -> {
                 req.setInterval(v);
+            }));
+        builder.<ShowUpBandwidthRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowUpBandwidthRequest.TypeEnum.class),
+            f -> f.withMarshaller(ShowUpBandwidthRequest::getType, (req, v) -> {
+                req.setType(v);
             }));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
@@ -1162,6 +1204,65 @@ public class LiveMeta {
             String.class,
             f -> f.withMarshaller(ListSingleStreamFramerateResponse::getXRequestId,
                 ListSingleStreamFramerateResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUpStreamDetailRequest, ListUpStreamDetailResponse> listUpStreamDetail =
+        genForlistUpStreamDetail();
+
+    private static HttpRequestDef<ListUpStreamDetailRequest, ListUpStreamDetailResponse> genForlistUpStreamDetail() {
+        // basic
+        HttpRequestDef.Builder<ListUpStreamDetailRequest, ListUpStreamDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUpStreamDetailRequest.class, ListUpStreamDetailResponse.class)
+                .withName("ListUpStreamDetail")
+                .withUri("/v2/{project_id}/stats/up-stream/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("publish_domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpStreamDetailRequest::getPublishDomain, (req, v) -> {
+                req.setPublishDomain(v);
+            }));
+        builder.<String>withRequestField("app",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpStreamDetailRequest::getApp, (req, v) -> {
+                req.setApp(v);
+            }));
+        builder.<String>withRequestField("stream",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpStreamDetailRequest::getStream, (req, v) -> {
+                req.setStream(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpStreamDetailRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpStreamDetailRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListUpStreamDetailResponse::getXRequestId,
+                ListUpStreamDetailResponse::setXRequestId));
         return builder.build();
     }
 
