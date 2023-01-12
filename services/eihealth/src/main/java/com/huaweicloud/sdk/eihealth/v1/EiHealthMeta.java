@@ -151,6 +151,44 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<PublishAppRequest, PublishAppResponse> publishApp = genForpublishApp();
+
+    private static HttpRequestDef<PublishAppRequest, PublishAppResponse> genForpublishApp() {
+        // basic
+        HttpRequestDef.Builder<PublishAppRequest, PublishAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, PublishAppRequest.class, PublishAppResponse.class)
+                .withName("PublishApp")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/apps/{app_id}/publish")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PublishAppRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PublishAppRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<PublishAppReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PublishAppReq.class),
+            f -> f.withMarshaller(PublishAppRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAppRequest, ShowAppResponse> showApp = genForshowApp();
 
     private static HttpRequestDef<ShowAppRequest, ShowAppResponse> genForshowApp() {
@@ -243,6 +281,77 @@ public class EiHealthMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppDto.class),
             f -> f.withMarshaller(UpdateAppRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAssetVersionRequest, DeleteAssetVersionResponse> deleteAssetVersion =
+        genFordeleteAssetVersion();
+
+    private static HttpRequestDef<DeleteAssetVersionRequest, DeleteAssetVersionResponse> genFordeleteAssetVersion() {
+        // basic
+        HttpRequestDef.Builder<DeleteAssetVersionRequest, DeleteAssetVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAssetVersionRequest.class, DeleteAssetVersionResponse.class)
+                .withName("DeleteAssetVersion")
+                .withUri("/v1/{project_id}/assets/{asset_id}/versions/{version}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("asset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAssetVersionRequest::getAssetId, (req, v) -> {
+                req.setAssetId(v);
+            }));
+        builder.<String>withRequestField("version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAssetVersionRequest::getVersion, (req, v) -> {
+                req.setVersion(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteAssetActionRequest, ExecuteAssetActionResponse> executeAssetAction =
+        genForexecuteAssetAction();
+
+    private static HttpRequestDef<ExecuteAssetActionRequest, ExecuteAssetActionResponse> genForexecuteAssetAction() {
+        // basic
+        HttpRequestDef.Builder<ExecuteAssetActionRequest, ExecuteAssetActionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExecuteAssetActionRequest.class, ExecuteAssetActionResponse.class)
+                .withName("ExecuteAssetAction")
+                .withUri("/v1/{project_id}/assets/{asset_id}/versions/{version}/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("asset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteAssetActionRequest::getAssetId, (req, v) -> {
+                req.setAssetId(v);
+            }));
+        builder.<String>withRequestField("version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteAssetActionRequest::getVersion, (req, v) -> {
+                req.setVersion(v);
+            }));
+        builder.<ManageAssetReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ManageAssetReq.class),
+            f -> f.withMarshaller(ExecuteAssetActionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -404,6 +513,45 @@ public class EiHealthMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetVersionRequest::getVersion, (req, v) -> {
                 req.setVersion(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAssetVersionRequest, UpdateAssetVersionResponse> updateAssetVersion =
+        genForupdateAssetVersion();
+
+    private static HttpRequestDef<UpdateAssetVersionRequest, UpdateAssetVersionResponse> genForupdateAssetVersion() {
+        // basic
+        HttpRequestDef.Builder<UpdateAssetVersionRequest, UpdateAssetVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAssetVersionRequest.class, UpdateAssetVersionResponse.class)
+                .withName("UpdateAssetVersion")
+                .withUri("/v1/{project_id}/assets/{asset_id}/versions/{version}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("asset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAssetVersionRequest::getAssetId, (req, v) -> {
+                req.setAssetId(v);
+            }));
+        builder.<String>withRequestField("version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAssetVersionRequest::getVersion, (req, v) -> {
+                req.setVersion(v);
+            }));
+        builder.<UpdateAssetReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAssetReq.class),
+            f -> f.withMarshaller(UpdateAssetVersionRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -756,27 +904,6 @@ public class EiHealthMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("label",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComputingResourcesRequest::getLabel, (req, v) -> {
-                req.setLabel(v);
-            }));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListComputingResourcesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListComputingResourcesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
 
         // response
 
@@ -1423,6 +1550,37 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<PublishDataRequest, PublishDataResponse> publishData = genForpublishData();
+
+    private static HttpRequestDef<PublishDataRequest, PublishDataResponse> genForpublishData() {
+        // basic
+        HttpRequestDef.Builder<PublishDataRequest, PublishDataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, PublishDataRequest.class, PublishDataResponse.class)
+                .withName("PublishData")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/datas/publish")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PublishDataRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<PublishDataReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PublishDataReq.class),
+            f -> f.withMarshaller(PublishDataRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<QuoteDataRequest, QuoteDataResponse> quoteData = genForquoteData();
 
     private static HttpRequestDef<QuoteDataRequest, QuoteDataResponse> genForquoteData() {
@@ -1559,6 +1717,45 @@ public class EiHealthMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SubscribeDataReq.class),
             f -> f.withMarshaller(SubscribeDataRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDataPathPolicyRequest, UpdateDataPathPolicyResponse> updateDataPathPolicy =
+        genForupdateDataPathPolicy();
+
+    private static HttpRequestDef<UpdateDataPathPolicyRequest, UpdateDataPathPolicyResponse> genForupdateDataPathPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateDataPathPolicyRequest, UpdateDataPathPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateDataPathPolicyRequest.class, UpdateDataPathPolicyResponse.class)
+            .withName("UpdateDataPathPolicy")
+            .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/datas/{path}/policy")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDataPathPolicyRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("path",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDataPathPolicyRequest::getPath, (req, v) -> {
+                req.setPath(v);
+            }));
+        builder.<DataPolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DataPolicyReq.class),
+            f -> f.withMarshaller(UpdateDataPathPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -2708,6 +2905,37 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<PublishImageRequest, PublishImageResponse> publishImage = genForpublishImage();
+
+    private static HttpRequestDef<PublishImageRequest, PublishImageResponse> genForpublishImage() {
+        // basic
+        HttpRequestDef.Builder<PublishImageRequest, PublishImageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, PublishImageRequest.class, PublishImageResponse.class)
+                .withName("PublishImage")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/images/publish")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PublishImageRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<PublishAssetReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PublishAssetReq.class),
+            f -> f.withMarshaller(PublishImageRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDockerLoginRequest, ShowDockerLoginResponse> showDockerLogin =
         genForshowDockerLogin();
 
@@ -2842,6 +3070,130 @@ public class EiHealthMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCancelJobRequest, BatchCancelJobResponse> batchCancelJob =
+        genForbatchCancelJob();
+
+    private static HttpRequestDef<BatchCancelJobRequest, BatchCancelJobResponse> genForbatchCancelJob() {
+        // basic
+        HttpRequestDef.Builder<BatchCancelJobRequest, BatchCancelJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCancelJobRequest.class, BatchCancelJobResponse.class)
+                .withName("BatchCancelJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/jobs/batch-terminate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCancelJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<Boolean>withRequestField("X-Force",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(BatchCancelJobRequest::getXForce, (req, v) -> {
+                req.setXForce(v);
+            }));
+        builder.<BatchOperateJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchOperateJobReq.class),
+            f -> f.withMarshaller(BatchCancelJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<List<BatchOperateJobRsp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchCancelJobResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(BatchOperateJobRsp.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteJobRequest, BatchDeleteJobResponse> batchDeleteJob =
+        genForbatchDeleteJob();
+
+    private static HttpRequestDef<BatchDeleteJobRequest, BatchDeleteJobResponse> genForbatchDeleteJob() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteJobRequest, BatchDeleteJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteJobRequest.class, BatchDeleteJobResponse.class)
+                .withName("BatchDeleteJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/jobs/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<BatchOperateJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchOperateJobReq.class),
+            f -> f.withMarshaller(BatchDeleteJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<List<BatchOperateJobRsp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchDeleteJobResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(BatchOperateJobRsp.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchRetryJobRequest, BatchRetryJobResponse> batchRetryJob =
+        genForbatchRetryJob();
+
+    private static HttpRequestDef<BatchRetryJobRequest, BatchRetryJobResponse> genForbatchRetryJob() {
+        // basic
+        HttpRequestDef.Builder<BatchRetryJobRequest, BatchRetryJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchRetryJobRequest.class, BatchRetryJobResponse.class)
+                .withName("BatchRetryJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/jobs/batch-retry")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchRetryJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<BatchOperateJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchOperateJobReq.class),
+            f -> f.withMarshaller(BatchRetryJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<List<BatchOperateJobRsp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchRetryJobResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(BatchOperateJobRsp.class));
 
         return builder.build();
     }
@@ -3314,6 +3666,91 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowTaskInstanceMetricDataRequest, ShowTaskInstanceMetricDataResponse> showTaskInstanceMetricData =
+        genForshowTaskInstanceMetricData();
+
+    private static HttpRequestDef<ShowTaskInstanceMetricDataRequest, ShowTaskInstanceMetricDataResponse> genForshowTaskInstanceMetricData() {
+        // basic
+        HttpRequestDef.Builder<ShowTaskInstanceMetricDataRequest, ShowTaskInstanceMetricDataResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowTaskInstanceMetricDataRequest.class,
+                    ShowTaskInstanceMetricDataResponse.class)
+                .withName("ShowTaskInstanceMetricData")
+                .withUri(
+                    "/v1/{project_id}/eihealth-projects/{eihealth_project_id}/jobs/{job_id}/tasks/{task_name}/instances/{instance_name}/metric-data")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskInstanceMetricDataRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskInstanceMetricDataRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("task_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskInstanceMetricDataRequest::getTaskName, (req, v) -> {
+                req.setTaskName(v);
+            }));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskInstanceMetricDataRequest::getInstanceName, (req, v) -> {
+                req.setInstanceName(v);
+            }));
+        builder.<String>withRequestField("task_index",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskInstanceMetricDataRequest::getTaskIndex, (req, v) -> {
+                req.setTaskIndex(v);
+            }));
+        builder.<Long>withRequestField("from_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowTaskInstanceMetricDataRequest::getFromTime, (req, v) -> {
+                req.setFromTime(v);
+            }));
+        builder.<Long>withRequestField("to_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowTaskInstanceMetricDataRequest::getToTime, (req, v) -> {
+                req.setToTime(v);
+            }));
+        builder.<String>withRequestField("method",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskInstanceMetricDataRequest::getMethod, (req, v) -> {
+                req.setMethod(v);
+            }));
+        builder.<String>withRequestField("metric_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskInstanceMetricDataRequest::getMetricName, (req, v) -> {
+                req.setMetricName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTaskInstancePodRequest, ShowTaskInstancePodResponse> showTaskInstancePod =
         genForshowTaskInstancePod();
 
@@ -3408,6 +3845,69 @@ public class EiHealthMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTaskInstancesRequest::getTaskIndex, (req, v) -> {
                 req.setTaskIndex(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateJobRequest, UpdateJobResponse> updateJob = genForupdateJob();
+
+    private static HttpRequestDef<UpdateJobRequest, UpdateJobResponse> genForupdateJob() {
+        // basic
+        HttpRequestDef.Builder<UpdateJobRequest, UpdateJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateJobRequest.class, UpdateJobResponse.class)
+                .withName("UpdateJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<UpdateJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateJobReq.class),
+            f -> f.withMarshaller(UpdateJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteLabelRequest, BatchDeleteLabelResponse> batchDeleteLabel =
+        genForbatchDeleteLabel();
+
+    private static HttpRequestDef<BatchDeleteLabelRequest, BatchDeleteLabelResponse> genForbatchDeleteLabel() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteLabelRequest, BatchDeleteLabelResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteLabelRequest.class, BatchDeleteLabelResponse.class)
+                .withName("BatchDeleteLabel")
+                .withUri("/v1/{project_id}/system/labels/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteLabelReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteLabelReq.class),
+            f -> f.withMarshaller(BatchDeleteLabelRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -3834,10 +4334,10 @@ public class EiHealthMeta {
             f -> f.withMarshaller(BatchUpdateNodeLabelRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
             }));
-        builder.<BatchUpadteNodeLabelReq>withRequestField("body",
+        builder.<BatchUpdateNodeLabelReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchUpadteNodeLabelReq.class),
+            TypeCasts.uncheckedConversion(BatchUpdateNodeLabelReq.class),
             f -> f.withMarshaller(BatchUpdateNodeLabelRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -4532,38 +5032,6 @@ public class EiHealthMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRecentJobRequest, ListRecentJobResponse> listRecentJob =
-        genForlistRecentJob();
-
-    private static HttpRequestDef<ListRecentJobRequest, ListRecentJobResponse> genForlistRecentJob() {
-        // basic
-        HttpRequestDef.Builder<ListRecentJobRequest, ListRecentJobResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListRecentJobRequest.class, ListRecentJobResponse.class)
-                .withName("ListRecentJob")
-                .withUri("/v1/{project_id}/recent-jobs")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecentJobRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecentJobRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowProjectRequest, ShowProjectResponse> showProject = genForshowProject();
 
     private static HttpRequestDef<ShowProjectRequest, ShowProjectResponse> genForshowProject() {
@@ -4863,6 +5331,34 @@ public class EiHealthMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTrackerReq.class),
             f -> f.withMarshaller(UpdateProjectTrackerRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDownloadResourceStatDataRequest, BatchDownloadResourceStatDataResponse> batchDownloadResourceStatData =
+        genForbatchDownloadResourceStatData();
+
+    private static HttpRequestDef<BatchDownloadResourceStatDataRequest, BatchDownloadResourceStatDataResponse> genForbatchDownloadResourceStatData() {
+        // basic
+        HttpRequestDef.Builder<BatchDownloadResourceStatDataRequest, BatchDownloadResourceStatDataResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDownloadResourceStatDataRequest.class,
+                    BatchDownloadResourceStatDataResponse.class)
+                .withName("BatchDownloadResourceStatData")
+                .withUri("/v1/{project_id}/metric-data/batch-stat-metric-data")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchQueryStatReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchQueryStatReq.class),
+            f -> f.withMarshaller(BatchDownloadResourceStatDataRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -5632,6 +6128,24 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckTokenVerificationRequest, CheckTokenVerificationResponse> checkTokenVerification =
+        genForcheckTokenVerification();
+
+    private static HttpRequestDef<CheckTokenVerificationRequest, CheckTokenVerificationResponse> genForcheckTokenVerification() {
+        // basic
+        HttpRequestDef.Builder<CheckTokenVerificationRequest, CheckTokenVerificationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, CheckTokenVerificationRequest.class, CheckTokenVerificationResponse.class)
+            .withName("CheckTokenVerification")
+            .withUri("/v1/{project_id}/users/token-verification")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCodeRequest, CreateCodeResponse> createCode = genForcreateCode();
 
     private static HttpRequestDef<CreateCodeRequest, CreateCodeResponse> genForcreateCode() {
@@ -5705,13 +6219,6 @@ public class EiHealthMeta {
             f -> f.withMarshaller(DeleteUserRequest::getUserId, (req, v) -> {
                 req.setUserId(v);
             }));
-        builder.<String>withRequestField("user_id_type",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteUserRequest::getUserIdType, (req, v) -> {
-                req.setUserIdType(v);
-            }));
 
         // response
 
@@ -5751,24 +6258,6 @@ public class EiHealthMeta {
                 .withName("ListUser")
                 .withUri("/v1/{project_id}/users")
                 .withContentType("application/json");
-
-        // requests
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowTokenVerificationRequest, ShowTokenVerificationResponse> showTokenVerification =
-        genForshowTokenVerification();
-
-    private static HttpRequestDef<ShowTokenVerificationRequest, ShowTokenVerificationResponse> genForshowTokenVerification() {
-        // basic
-        HttpRequestDef.Builder<ShowTokenVerificationRequest, ShowTokenVerificationResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowTokenVerificationRequest.class, ShowTokenVerificationResponse.class)
-            .withName("ShowTokenVerification")
-            .withUri("/v1/{project_id}/users/token-verification")
-            .withContentType("application/json");
 
         // requests
 
@@ -6192,6 +6681,45 @@ public class EiHealthMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListWorkflowRequest::getVersion, (req, v) -> {
                 req.setVersion(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<PublishWorkflowRequest, PublishWorkflowResponse> publishWorkflow =
+        genForpublishWorkflow();
+
+    private static HttpRequestDef<PublishWorkflowRequest, PublishWorkflowResponse> genForpublishWorkflow() {
+        // basic
+        HttpRequestDef.Builder<PublishWorkflowRequest, PublishWorkflowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, PublishWorkflowRequest.class, PublishWorkflowResponse.class)
+                .withName("PublishWorkflow")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/workflows/{workflow_id}/publish")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PublishWorkflowRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PublishWorkflowRequest::getWorkflowId, (req, v) -> {
+                req.setWorkflowId(v);
+            }));
+        builder.<PublishWorkflowReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PublishWorkflowReq.class),
+            f -> f.withMarshaller(PublishWorkflowRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

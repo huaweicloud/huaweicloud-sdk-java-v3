@@ -218,7 +218,7 @@ public class IdCardResult {
     }
 
     /**
-     * 有效结束日期。   > 说明：  - 身份证识别支持中华人民共和国居民身份证识别。 
+     * 有效结束日期。  > 说明： - 身份证识别支持中华人民共和国居民身份证识别。 
      * @return validTo
      */
     public String getValidTo() {

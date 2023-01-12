@@ -55,6 +55,16 @@ public class EventDetailResponseInfo {
 
     private String loginUserName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "keyword")
+
+    private String keyword;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hash")
+
+    private String hash;
+
     public EventDetailResponseInfo withAgentId(String agentId) {
         this.agentId = agentId;
         return this;
@@ -210,6 +220,40 @@ public class EventDetailResponseInfo {
         this.loginUserName = loginUserName;
     }
 
+    public EventDetailResponseInfo withKeyword(String keyword) {
+        this.keyword = keyword;
+        return this;
+    }
+
+    /**
+     * 告警事件关键字，仅用于告警白名单
+     * @return keyword
+     */
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
+    public EventDetailResponseInfo withHash(String hash) {
+        this.hash = hash;
+        return this;
+    }
+
+    /**
+     * 告警事件hash，仅用于告警白名单
+     * @return hash
+     */
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -227,13 +271,24 @@ public class EventDetailResponseInfo {
             && Objects.equals(this.fileAttr, eventDetailResponseInfo.fileAttr)
             && Objects.equals(this.privateIp, eventDetailResponseInfo.privateIp)
             && Objects.equals(this.loginIp, eventDetailResponseInfo.loginIp)
-            && Objects.equals(this.loginUserName, eventDetailResponseInfo.loginUserName);
+            && Objects.equals(this.loginUserName, eventDetailResponseInfo.loginUserName)
+            && Objects.equals(this.keyword, eventDetailResponseInfo.keyword)
+            && Objects.equals(this.hash, eventDetailResponseInfo.hash);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(agentId, processPid, isParent, fileHash, filePath, fileAttr, privateIp, loginIp, loginUserName);
+        return Objects.hash(agentId,
+            processPid,
+            isParent,
+            fileHash,
+            filePath,
+            fileAttr,
+            privateIp,
+            loginIp,
+            loginUserName,
+            keyword,
+            hash);
     }
 
     @Override
@@ -249,6 +304,8 @@ public class EventDetailResponseInfo {
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("    loginIp: ").append(toIndentedString(loginIp)).append("\n");
         sb.append("    loginUserName: ").append(toIndentedString(loginUserName)).append("\n");
+        sb.append("    keyword: ").append(toIndentedString(keyword)).append("\n");
+        sb.append("    hash: ").append(toIndentedString(hash)).append("\n");
         sb.append("}");
         return sb.toString();
     }

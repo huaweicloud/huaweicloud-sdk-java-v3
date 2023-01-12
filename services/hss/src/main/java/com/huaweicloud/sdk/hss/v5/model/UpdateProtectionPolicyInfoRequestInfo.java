@@ -137,7 +137,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 防护目录
+     * 防护目录,多个目录请用英文分号隔开，最多支持填写20个防护目录
      * @return protectionDirectory
      */
     public String getProtectionDirectory() {
@@ -171,7 +171,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 排除目录
+     * 排除目录(选填)，多个目录请用英文分号隔开，最多支持填写20个排除目录
      * @return excludeDirectory
      */
     public String getExcludeDirectory() {
@@ -221,7 +221,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 操作系统，包含如下：   - Windows : 无需处理   - Linux : 已忽略
+     * 操作系统，包含如下：   - Windows : Windows系统   - Linux : Linux系统
      * @return operatingSystem
      */
     public String getOperatingSystem() {

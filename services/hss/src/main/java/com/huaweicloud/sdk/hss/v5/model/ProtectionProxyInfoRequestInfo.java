@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 创建防护策略
+ * 创建防护策略。若新建防护策略，则protection_policy_id为空，create_protection_policy必选
  */
 public class ProtectionProxyInfoRequestInfo {
 
@@ -61,7 +61,7 @@ public class ProtectionProxyInfoRequestInfo {
     }
 
     /**
-     * 策略ID
+     * 策略ID，新建策略可不填
      * @return policyId
      */
     public String getPolicyId() {
@@ -78,7 +78,7 @@ public class ProtectionProxyInfoRequestInfo {
     }
 
     /**
-     * 策略名称
+     * 策略名称，新建防护策略则必填
      * @return policyName
      */
     public String getPolicyName() {
@@ -95,7 +95,7 @@ public class ProtectionProxyInfoRequestInfo {
     }
 
     /**
-     * 防护动作，包含如下：   - alarm_and_isolation ：告警并自动隔离。   - alarm_only ：仅告警。
+     * 防护动作，新建防护策略则必填。包含如下：   - alarm_and_isolation ：告警并自动隔离。   - alarm_only ：仅告警。
      * @return protectionMode
      */
     public String getProtectionMode() {
@@ -112,7 +112,7 @@ public class ProtectionProxyInfoRequestInfo {
     }
 
     /**
-     * 是否开启诱饵防护，包含如下1种, 默认为开启防护诱饵防护。   - opened ：开启。   - closed ：关闭。
+     * 是否开启诱饵防护，新建防护策略则必填。包含如下1种, 默认为开启防护诱饵防护。   - opened ：开启。   - closed ：关闭。
      * @return baitProtectionStatus
      */
     public String getBaitProtectionStatus() {
@@ -129,7 +129,7 @@ public class ProtectionProxyInfoRequestInfo {
     }
 
     /**
-     * 防护目录
+     * 防护目录，新建防护策略则必填
      * @return protectionDirectory
      */
     public String getProtectionDirectory() {
@@ -146,7 +146,7 @@ public class ProtectionProxyInfoRequestInfo {
     }
 
     /**
-     * 防护类型
+     * 防护类型，新建防护策略则必填
      * @return protectionType
      */
     public String getProtectionType() {
@@ -163,7 +163,7 @@ public class ProtectionProxyInfoRequestInfo {
     }
 
     /**
-     * 排除目录
+     * 排除目录，可选填
      * @return excludeDirectory
      */
     public String getExcludeDirectory() {
@@ -180,7 +180,7 @@ public class ProtectionProxyInfoRequestInfo {
     }
 
     /**
-     * 是否运行时检测，包含如下2种，暂时只有关闭一种状态，为保留字段。   - opened ：开启。   - closed ：关闭。
+     * 是否运行时检测，选填。包含如下2种，暂时只有关闭一种状态，为保留字段。   - opened ：开启。   - closed ：关闭。
      * @return runtimeDetectionStatus
      */
     public String getRuntimeDetectionStatus() {
@@ -197,7 +197,7 @@ public class ProtectionProxyInfoRequestInfo {
     }
 
     /**
-     * 操作系统，包含如下：   - Windows : 无需处理   - Linux : 已忽略
+     * 操作系统，新建防护策略则必填。包含如下：   - Windows : Windows系统   - Linux : Linux系统
      * @return operatingSystem
      */
     public String getOperatingSystem() {

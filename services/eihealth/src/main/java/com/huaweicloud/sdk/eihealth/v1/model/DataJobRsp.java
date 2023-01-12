@@ -55,6 +55,11 @@ public class DataJobRsp {
 
     private String type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "failed_reason")
+
+    private String failedReason;
+
     public DataJobRsp withCreator(String creator) {
         this.creator = creator;
         return this;
@@ -208,6 +213,23 @@ public class DataJobRsp {
         this.type = type;
     }
 
+    public DataJobRsp withFailedReason(String failedReason) {
+        this.failedReason = failedReason;
+        return this;
+    }
+
+    /**
+     * 数据作业失败原因
+     * @return failedReason
+     */
+    public String getFailedReason() {
+        return failedReason;
+    }
+
+    public void setFailedReason(String failedReason) {
+        this.failedReason = failedReason;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -221,12 +243,14 @@ public class DataJobRsp {
             && Objects.equals(this.id, dataJobRsp.id) && Objects.equals(this.name, dataJobRsp.name)
             && Objects.equals(this.createTime, dataJobRsp.createTime) && Objects.equals(this.status, dataJobRsp.status)
             && Objects.equals(this.finishCount, dataJobRsp.finishCount)
-            && Objects.equals(this.totalCount, dataJobRsp.totalCount) && Objects.equals(this.type, dataJobRsp.type);
+            && Objects.equals(this.totalCount, dataJobRsp.totalCount) && Objects.equals(this.type, dataJobRsp.type)
+            && Objects.equals(this.failedReason, dataJobRsp.failedReason);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(creator, endTime, id, name, createTime, status, finishCount, totalCount, type);
+        return Objects
+            .hash(creator, endTime, id, name, createTime, status, finishCount, totalCount, type, failedReason);
     }
 
     @Override
@@ -242,6 +266,7 @@ public class DataJobRsp {
         sb.append("    finishCount: ").append(toIndentedString(finishCount)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

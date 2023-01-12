@@ -63,6 +63,16 @@ public class QuotaResourcesResponseInfo {
 
     private String sharedQuota;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_name")
+
+    private String enterpriseProjectName;
+
     public QuotaResourcesResponseInfo withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -251,6 +261,40 @@ public class QuotaResourcesResponseInfo {
         this.sharedQuota = sharedQuota;
     }
 
+    public QuotaResourcesResponseInfo withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public QuotaResourcesResponseInfo withEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+        return this;
+    }
+
+    /**
+     * 所属企业项目名称
+     * @return enterpriseProjectName
+     */
+    public String getEnterpriseProjectName() {
+        return enterpriseProjectName;
+    }
+
+    public void setEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -269,7 +313,9 @@ public class QuotaResourcesResponseInfo {
             && Objects.equals(this.chargingMode, quotaResourcesResponseInfo.chargingMode)
             && Objects.equals(this.tags, quotaResourcesResponseInfo.tags)
             && Objects.equals(this.expireTime, quotaResourcesResponseInfo.expireTime)
-            && Objects.equals(this.sharedQuota, quotaResourcesResponseInfo.sharedQuota);
+            && Objects.equals(this.sharedQuota, quotaResourcesResponseInfo.sharedQuota)
+            && Objects.equals(this.enterpriseProjectId, quotaResourcesResponseInfo.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, quotaResourcesResponseInfo.enterpriseProjectName);
     }
 
     @Override
@@ -283,7 +329,9 @@ public class QuotaResourcesResponseInfo {
             chargingMode,
             tags,
             expireTime,
-            sharedQuota);
+            sharedQuota,
+            enterpriseProjectId,
+            enterpriseProjectName);
     }
 
     @Override
@@ -300,6 +348,8 @@ public class QuotaResourcesResponseInfo {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    sharedQuota: ").append(toIndentedString(sharedQuota)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

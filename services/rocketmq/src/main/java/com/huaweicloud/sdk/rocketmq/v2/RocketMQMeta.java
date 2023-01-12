@@ -1094,6 +1094,46 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRocketInstanceTopicsRequest, ListRocketInstanceTopicsResponse> listRocketInstanceTopics =
+        genForlistRocketInstanceTopics();
+
+    private static HttpRequestDef<ListRocketInstanceTopicsRequest, ListRocketInstanceTopicsResponse> genForlistRocketInstanceTopics() {
+        // basic
+        HttpRequestDef.Builder<ListRocketInstanceTopicsRequest, ListRocketInstanceTopicsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListRocketInstanceTopicsRequest.class, ListRocketInstanceTopicsResponse.class)
+                .withName("ListRocketInstanceTopics")
+                .withUri("/v2/{project_id}/instances/{instance_id}/topics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRocketInstanceTopicsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRocketInstanceTopicsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRocketInstanceTopicsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowOneTopicRequest, ShowOneTopicResponse> showOneTopic = genForshowOneTopic();
 
     private static HttpRequestDef<ShowOneTopicRequest, ShowOneTopicResponse> genForshowOneTopic() {

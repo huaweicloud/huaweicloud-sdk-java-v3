@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 策略时间调度规则
+ * 策略执行时间规则
  */
 public class BackupTriggerPropertiesRequestInfo {
 

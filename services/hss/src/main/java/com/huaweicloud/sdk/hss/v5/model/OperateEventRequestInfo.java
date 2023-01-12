@@ -133,7 +133,7 @@ public class OperateEventRequestInfo {
     }
 
     /**
-     * 操作详情信息列表
+     * 操作详情信息列表，当 operate_type 为 add_to_alarm_whitelist 或 remove_from_alarm_whitelist 时，必传 keyword 和 hash；当 operate_type 为 add_to_login_whitelist 或 remove_from_login_whitelist 时，必传 login_ip， private_ip 和 login_user_name；当 operate_type 为 isolate_and_kill 或 do_not_isolate_or_kill 时，必传 agent_id，file_hash，file_path，process_pid；其余情况可不填写内容。
      * @return operateDetailList
      */
     public List<EventDetailRequestInfo> getOperateDetailList() {

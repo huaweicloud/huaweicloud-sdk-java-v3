@@ -16,6 +16,11 @@ import java.util.Objects;
 public class ShowResourceRelationsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Auth-Token")
+
+    private String xAuthToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
     private String resourceId;
@@ -112,6 +117,25 @@ public class ShowResourceRelationsRequest {
 
     private String marker;
 
+    public ShowResourceRelationsRequest withXAuthToken(String xAuthToken) {
+        this.xAuthToken = xAuthToken;
+        return this;
+    }
+
+    /**
+     * 用户Token。 获取Token，请参考《统一身份认证服务API参考》的“获取用户Token”章节。请求响应成功后在响应消息头中包含的“X-Subject-Token”的值即为Token值。
+     * @return xAuthToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Auth-Token")
+    public String getXAuthToken() {
+        return xAuthToken;
+    }
+
+    public void setXAuthToken(String xAuthToken) {
+        this.xAuthToken = xAuthToken;
+    }
+
     public ShowResourceRelationsRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -191,7 +215,8 @@ public class ShowResourceRelationsRequest {
             return false;
         }
         ShowResourceRelationsRequest showResourceRelationsRequest = (ShowResourceRelationsRequest) o;
-        return Objects.equals(this.resourceId, showResourceRelationsRequest.resourceId)
+        return Objects.equals(this.xAuthToken, showResourceRelationsRequest.xAuthToken)
+            && Objects.equals(this.resourceId, showResourceRelationsRequest.resourceId)
             && Objects.equals(this.direction, showResourceRelationsRequest.direction)
             && Objects.equals(this.limit, showResourceRelationsRequest.limit)
             && Objects.equals(this.marker, showResourceRelationsRequest.marker);
@@ -199,13 +224,14 @@ public class ShowResourceRelationsRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId, direction, limit, marker);
+        return Objects.hash(xAuthToken, resourceId, direction, limit, marker);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowResourceRelationsRequest {\n");
+        sb.append("    xAuthToken: ").append(toIndentedString(xAuthToken)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

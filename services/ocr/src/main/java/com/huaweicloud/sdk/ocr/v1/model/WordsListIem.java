@@ -28,6 +28,11 @@ public class WordsListIem {
 
     private List<List<Integer>> location = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "char_list")
+
+    private List<CharListIem> charList = null;
+
     public WordsListIem withWords(String words) {
         this.words = words;
         return this;
@@ -95,6 +100,39 @@ public class WordsListIem {
         this.location = location;
     }
 
+    public WordsListIem withCharList(List<CharListIem> charList) {
+        this.charList = charList;
+        return this;
+    }
+
+    public WordsListIem addCharListItem(CharListIem charListItem) {
+        if (this.charList == null) {
+            this.charList = new ArrayList<>();
+        }
+        this.charList.add(charListItem);
+        return this;
+    }
+
+    public WordsListIem withCharList(Consumer<List<CharListIem>> charListSetter) {
+        if (this.charList == null) {
+            this.charList = new ArrayList<>();
+        }
+        charListSetter.accept(this.charList);
+        return this;
+    }
+
+    /**
+     * 单元格内文字段列表。输出顺序从左到右，从上到下。仅当入参\"return_text_location\"和\"return_char_location\"同时为true时存在。 
+     * @return charList
+     */
+    public List<CharListIem> getCharList() {
+        return charList;
+    }
+
+    public void setCharList(List<CharListIem> charList) {
+        this.charList = charList;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -106,12 +144,13 @@ public class WordsListIem {
         WordsListIem wordsListIem = (WordsListIem) o;
         return Objects.equals(this.words, wordsListIem.words)
             && Objects.equals(this.confidence, wordsListIem.confidence)
-            && Objects.equals(this.location, wordsListIem.location);
+            && Objects.equals(this.location, wordsListIem.location)
+            && Objects.equals(this.charList, wordsListIem.charList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(words, confidence, location);
+        return Objects.hash(words, confidence, location, charList);
     }
 
     @Override
@@ -121,6 +160,7 @@ public class WordsListIem {
         sb.append("    words: ").append(toIndentedString(words)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
+        sb.append("    charList: ").append(toIndentedString(charList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -196,6 +196,88 @@ public class InstanceCreateReq {
 
     private Integer bandwidthSize;
 
+    /**
+     * 出公网带宽计费类型，实例需要开启出公网功能时需要填写： - bandwidth：按带宽计费 - traffic：按流量计费
+     */
+    public static final class BandwidthChargingModeEnum {
+
+        /**
+         * Enum BANDWIDTH for value: "bandwidth"
+         */
+        public static final BandwidthChargingModeEnum BANDWIDTH = new BandwidthChargingModeEnum("bandwidth");
+
+        /**
+         * Enum TRAFFIC for value: "traffic"
+         */
+        public static final BandwidthChargingModeEnum TRAFFIC = new BandwidthChargingModeEnum("traffic");
+
+        private static final Map<String, BandwidthChargingModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, BandwidthChargingModeEnum> createStaticFields() {
+            Map<String, BandwidthChargingModeEnum> map = new HashMap<>();
+            map.put("bandwidth", BANDWIDTH);
+            map.put("traffic", TRAFFIC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        BandwidthChargingModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static BandwidthChargingModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            BandwidthChargingModeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new BandwidthChargingModeEnum(value);
+            }
+            return result;
+        }
+
+        public static BandwidthChargingModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            BandwidthChargingModeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof BandwidthChargingModeEnum) {
+                return this.value.equals(((BandwidthChargingModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bandwidth_charging_mode")
+
+    private BandwidthChargingModeEnum bandwidthChargingMode;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_enable")
 
@@ -292,6 +374,94 @@ public class InstanceCreateReq {
     @JsonProperty(value = "vpcep_service_name")
 
     private String vpcepServiceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ingress_bandwidth_size")
+
+    private Integer ingressBandwidthSize;
+
+    /**
+     * 入公网带宽计费类型，实例需要开启入公网功能，且loadbalancer_provider为elb时需要填写： - bandwidth：按带宽计费 - traffic：按流量计费
+     */
+    public static final class IngressBandwidthChargingModeEnum {
+
+        /**
+         * Enum BANDWIDTH for value: "bandwidth"
+         */
+        public static final IngressBandwidthChargingModeEnum BANDWIDTH =
+            new IngressBandwidthChargingModeEnum("bandwidth");
+
+        /**
+         * Enum TRAFFIC for value: "traffic"
+         */
+        public static final IngressBandwidthChargingModeEnum TRAFFIC = new IngressBandwidthChargingModeEnum("traffic");
+
+        private static final Map<String, IngressBandwidthChargingModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IngressBandwidthChargingModeEnum> createStaticFields() {
+            Map<String, IngressBandwidthChargingModeEnum> map = new HashMap<>();
+            map.put("bandwidth", BANDWIDTH);
+            map.put("traffic", TRAFFIC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        IngressBandwidthChargingModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IngressBandwidthChargingModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            IngressBandwidthChargingModeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new IngressBandwidthChargingModeEnum(value);
+            }
+            return result;
+        }
+
+        public static IngressBandwidthChargingModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            IngressBandwidthChargingModeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IngressBandwidthChargingModeEnum) {
+                return this.value.equals(((IngressBandwidthChargingModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ingress_bandwidth_charging_mode")
+
+    private IngressBandwidthChargingModeEnum ingressBandwidthChargingMode;
 
     public InstanceCreateReq withDescription(String description) {
         this.description = description;
@@ -452,7 +622,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 弹性公网IP ID。  实例需要开启公网访问时需要填写，绑定后使用者可以通过该入口从公网访问APIG实例中的API等资源  获取方法：登录虚拟私有云服务的控制台界面，在弹性公网IP的详情页面查找弹性公网IP ID。
+     * 弹性公网IP ID。  实例需要开启公网访问，且loadbalancer_provider为lvs时需要填写，绑定后使用者可以通过该入口从公网访问APIG实例中的API等资源  获取方法：登录虚拟私有云服务的控制台界面，在弹性公网IP的详情页面查找弹性公网IP ID。
      * @return eipId
      */
     public String getEipId() {
@@ -528,6 +698,23 @@ public class InstanceCreateReq {
 
     public void setBandwidthSize(Integer bandwidthSize) {
         this.bandwidthSize = bandwidthSize;
+    }
+
+    public InstanceCreateReq withBandwidthChargingMode(BandwidthChargingModeEnum bandwidthChargingMode) {
+        this.bandwidthChargingMode = bandwidthChargingMode;
+        return this;
+    }
+
+    /**
+     * 出公网带宽计费类型，实例需要开启出公网功能时需要填写： - bandwidth：按带宽计费 - traffic：按流量计费
+     * @return bandwidthChargingMode
+     */
+    public BandwidthChargingModeEnum getBandwidthChargingMode() {
+        return bandwidthChargingMode;
+    }
+
+    public void setBandwidthChargingMode(BandwidthChargingModeEnum bandwidthChargingMode) {
+        this.bandwidthChargingMode = bandwidthChargingMode;
     }
 
     public InstanceCreateReq withIpv6Enable(Boolean ipv6Enable) {
@@ -614,6 +801,41 @@ public class InstanceCreateReq {
         this.vpcepServiceName = vpcepServiceName;
     }
 
+    public InstanceCreateReq withIngressBandwidthSize(Integer ingressBandwidthSize) {
+        this.ingressBandwidthSize = ingressBandwidthSize;
+        return this;
+    }
+
+    /**
+     * 入公网带宽  实例需要开启入公网功能，且loadbalancer_provider为elb时需要填写，绑定后使用者可以通过该入口从公网访问APIG实例中的API等资源
+     * @return ingressBandwidthSize
+     */
+    public Integer getIngressBandwidthSize() {
+        return ingressBandwidthSize;
+    }
+
+    public void setIngressBandwidthSize(Integer ingressBandwidthSize) {
+        this.ingressBandwidthSize = ingressBandwidthSize;
+    }
+
+    public InstanceCreateReq withIngressBandwidthChargingMode(
+        IngressBandwidthChargingModeEnum ingressBandwidthChargingMode) {
+        this.ingressBandwidthChargingMode = ingressBandwidthChargingMode;
+        return this;
+    }
+
+    /**
+     * 入公网带宽计费类型，实例需要开启入公网功能，且loadbalancer_provider为elb时需要填写： - bandwidth：按带宽计费 - traffic：按流量计费
+     * @return ingressBandwidthChargingMode
+     */
+    public IngressBandwidthChargingModeEnum getIngressBandwidthChargingMode() {
+        return ingressBandwidthChargingMode;
+    }
+
+    public void setIngressBandwidthChargingMode(IngressBandwidthChargingModeEnum ingressBandwidthChargingMode) {
+        this.ingressBandwidthChargingMode = ingressBandwidthChargingMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -636,10 +858,13 @@ public class InstanceCreateReq {
             && Objects.equals(this.enterpriseProjectId, instanceCreateReq.enterpriseProjectId)
             && Objects.equals(this.availableZoneIds, instanceCreateReq.availableZoneIds)
             && Objects.equals(this.bandwidthSize, instanceCreateReq.bandwidthSize)
+            && Objects.equals(this.bandwidthChargingMode, instanceCreateReq.bandwidthChargingMode)
             && Objects.equals(this.ipv6Enable, instanceCreateReq.ipv6Enable)
             && Objects.equals(this.loadbalancerProvider, instanceCreateReq.loadbalancerProvider)
             && Objects.equals(this.tags, instanceCreateReq.tags)
-            && Objects.equals(this.vpcepServiceName, instanceCreateReq.vpcepServiceName);
+            && Objects.equals(this.vpcepServiceName, instanceCreateReq.vpcepServiceName)
+            && Objects.equals(this.ingressBandwidthSize, instanceCreateReq.ingressBandwidthSize)
+            && Objects.equals(this.ingressBandwidthChargingMode, instanceCreateReq.ingressBandwidthChargingMode);
     }
 
     @Override
@@ -657,10 +882,13 @@ public class InstanceCreateReq {
             enterpriseProjectId,
             availableZoneIds,
             bandwidthSize,
+            bandwidthChargingMode,
             ipv6Enable,
             loadbalancerProvider,
             tags,
-            vpcepServiceName);
+            vpcepServiceName,
+            ingressBandwidthSize,
+            ingressBandwidthChargingMode);
     }
 
     @Override
@@ -680,10 +908,15 @@ public class InstanceCreateReq {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    availableZoneIds: ").append(toIndentedString(availableZoneIds)).append("\n");
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
+        sb.append("    bandwidthChargingMode: ").append(toIndentedString(bandwidthChargingMode)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    loadbalancerProvider: ").append(toIndentedString(loadbalancerProvider)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    vpcepServiceName: ").append(toIndentedString(vpcepServiceName)).append("\n");
+        sb.append("    ingressBandwidthSize: ").append(toIndentedString(ingressBandwidthSize)).append("\n");
+        sb.append("    ingressBandwidthChargingMode: ")
+            .append(toIndentedString(ingressBandwidthChargingMode))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

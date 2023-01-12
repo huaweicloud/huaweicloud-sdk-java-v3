@@ -83,6 +83,11 @@ public class ComputingResourceRsp {
 
     private Boolean schedulable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_labels")
+
+    private List<String> nodeLabels = null;
+
     public ComputingResourceRsp withId(String id) {
         this.id = id;
         return this;
@@ -364,6 +369,39 @@ public class ComputingResourceRsp {
         this.schedulable = schedulable;
     }
 
+    public ComputingResourceRsp withNodeLabels(List<String> nodeLabels) {
+        this.nodeLabels = nodeLabels;
+        return this;
+    }
+
+    public ComputingResourceRsp addNodeLabelsItem(String nodeLabelsItem) {
+        if (this.nodeLabels == null) {
+            this.nodeLabels = new ArrayList<>();
+        }
+        this.nodeLabels.add(nodeLabelsItem);
+        return this;
+    }
+
+    public ComputingResourceRsp withNodeLabels(Consumer<List<String>> nodeLabelsSetter) {
+        if (this.nodeLabels == null) {
+            this.nodeLabels = new ArrayList<>();
+        }
+        nodeLabelsSetter.accept(this.nodeLabels);
+        return this;
+    }
+
+    /**
+     * 计算节点标签列表
+     * @return nodeLabels
+     */
+    public List<String> getNodeLabels() {
+        return nodeLabels;
+    }
+
+    public void setNodeLabels(List<String> nodeLabels) {
+        this.nodeLabels = nodeLabels;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -385,7 +423,8 @@ public class ComputingResourceRsp {
             && Objects.equals(this.createTime, computingResourceRsp.createTime)
             && Objects.equals(this.status, computingResourceRsp.status)
             && Objects.equals(this.availabilityZoneId, computingResourceRsp.availabilityZoneId)
-            && Objects.equals(this.schedulable, computingResourceRsp.schedulable);
+            && Objects.equals(this.schedulable, computingResourceRsp.schedulable)
+            && Objects.equals(this.nodeLabels, computingResourceRsp.nodeLabels);
     }
 
     @Override
@@ -403,7 +442,8 @@ public class ComputingResourceRsp {
             createTime,
             status,
             availabilityZoneId,
-            schedulable);
+            schedulable,
+            nodeLabels);
     }
 
     @Override
@@ -424,6 +464,7 @@ public class ComputingResourceRsp {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    availabilityZoneId: ").append(toIndentedString(availabilityZoneId)).append("\n");
         sb.append("    schedulable: ").append(toIndentedString(schedulable)).append("\n");
+        sb.append("    nodeLabels: ").append(toIndentedString(nodeLabels)).append("\n");
         sb.append("}");
         return sb.toString();
     }

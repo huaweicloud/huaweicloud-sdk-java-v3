@@ -761,7 +761,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 降序或升序（分别对应desc和asc，默认为“desc”）
+     * 降序或升序（分别对应desc和asc，默认为“desc”）。
      * @return sortDir
      */
     public String getSortDir() {

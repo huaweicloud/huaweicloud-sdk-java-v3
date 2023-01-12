@@ -51,7 +51,7 @@ public class AssociatePolicyGroupRequestInfo {
     }
 
     /**
-     * 是否要对全量主机部署策略，如果为true的话，不需填写host_id_list
+     * 是否要对全量主机部署策略，如果为true的话，不需填写host_id_list，如果为false的话，需要填写host_id_list
      * @return operateAll
      */
     public Boolean getOperateAll() {

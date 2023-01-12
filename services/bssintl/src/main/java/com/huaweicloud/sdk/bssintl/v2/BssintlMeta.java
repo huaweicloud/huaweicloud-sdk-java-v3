@@ -707,6 +707,76 @@ public class BssintlMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse> listFreeResourcesUsageRecords =
+        genForlistFreeResourcesUsageRecords();
+
+    private static HttpRequestDef<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse> genForlistFreeResourcesUsageRecords() {
+        // basic
+        HttpRequestDef.Builder<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListFreeResourcesUsageRecordsRequest.class,
+                    ListFreeResourcesUsageRecordsResponse.class)
+                .withName("ListFreeResourcesUsageRecords")
+                .withUri("/v2/bills/customer-bills/free-resources-usage-records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("free_resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getFreeResourceId, (req, v) -> {
+                req.setFreeResourceId(v);
+            }));
+        builder.<String>withRequestField("product_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getProductId, (req, v) -> {
+                req.setProductId(v);
+            }));
+        builder.<String>withRequestField("resource_type_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getResourceTypeCode, (req, v) -> {
+                req.setResourceTypeCode(v);
+            }));
+        builder.<String>withRequestField("deduct_time_begin",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getDeductTimeBegin, (req, v) -> {
+                req.setDeductTimeBegin(v);
+            }));
+        builder.<String>withRequestField("deduct_time_end",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getDeductTimeEnd, (req, v) -> {
+                req.setDeductTimeEnd(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFreeResourcesUsageRecordsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListIndirectPartnersRequest, ListIndirectPartnersResponse> listIndirectPartners =
         genForlistIndirectPartners();
 

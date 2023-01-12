@@ -26,11 +26,6 @@ public class LabelRsp {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "count")
-
-    private Integer count;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator")
 
     private String creator;
@@ -96,23 +91,6 @@ public class LabelRsp {
         this.description = description;
     }
 
-    public LabelRsp withCount(Integer count) {
-        this.count = count;
-        return this;
-    }
-
-    /**
-     * 标签使用次数
-     * @return count
-     */
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
-
     public LabelRsp withCreator(String creator) {
         this.creator = creator;
         return this;
@@ -174,14 +152,14 @@ public class LabelRsp {
         }
         LabelRsp labelRsp = (LabelRsp) o;
         return Objects.equals(this.id, labelRsp.id) && Objects.equals(this.name, labelRsp.name)
-            && Objects.equals(this.description, labelRsp.description) && Objects.equals(this.count, labelRsp.count)
-            && Objects.equals(this.creator, labelRsp.creator) && Objects.equals(this.createTime, labelRsp.createTime)
+            && Objects.equals(this.description, labelRsp.description) && Objects.equals(this.creator, labelRsp.creator)
+            && Objects.equals(this.createTime, labelRsp.createTime)
             && Objects.equals(this.updateTime, labelRsp.updateTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, count, creator, createTime, updateTime);
+        return Objects.hash(id, name, description, creator, createTime, updateTime);
     }
 
     @Override
@@ -191,7 +169,6 @@ public class LabelRsp {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

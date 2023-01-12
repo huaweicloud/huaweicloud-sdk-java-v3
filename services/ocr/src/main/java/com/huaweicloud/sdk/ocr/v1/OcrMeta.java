@@ -1290,6 +1290,38 @@ public class OcrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RecognizeCustomTemplateRequest, RecognizeCustomTemplateResponse> recognizeCustomTemplate =
+        genForrecognizeCustomTemplate();
+
+    private static HttpRequestDef<RecognizeCustomTemplateRequest, RecognizeCustomTemplateResponse> genForrecognizeCustomTemplate() {
+        // basic
+        HttpRequestDef.Builder<RecognizeCustomTemplateRequest, RecognizeCustomTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeCustomTemplateRequest.class, RecognizeCustomTemplateResponse.class)
+            .withName("RecognizeCustomTemplate")
+            .withUri("/v2/{project_id}/ocr/custom-template")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RecognizeCustomTemplateRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<CustomTemplateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CustomTemplateRequestBody.class),
+            f -> f.withMarshaller(RecognizeCustomTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RecognizeVinRequest, RecognizeVinResponse> recognizeVin = genForrecognizeVin();
 
     private static HttpRequestDef<RecognizeVinRequest, RecognizeVinResponse> genForrecognizeVin() {

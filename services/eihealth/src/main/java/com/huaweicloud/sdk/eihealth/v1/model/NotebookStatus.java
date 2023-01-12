@@ -62,6 +62,11 @@ public class NotebookStatus {
      */
     public static final NotebookStatus UPDATEDFAILED = new NotebookStatus("UpdatedFailed");
 
+    /**
+     * Enum UNKNOWN for value: "Unknown"
+     */
+    public static final NotebookStatus UNKNOWN = new NotebookStatus("Unknown");
+
     private static final Map<String, NotebookStatus> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, NotebookStatus> createStaticFields() {
@@ -76,6 +81,7 @@ public class NotebookStatus {
         map.put("CreatedFailed", CREATEDFAILED);
         map.put("DeletedFailed", DELETEDFAILED);
         map.put("UpdatedFailed", UPDATEDFAILED);
+        map.put("Unknown", UNKNOWN);
         return Collections.unmodifiableMap(map);
     }
 

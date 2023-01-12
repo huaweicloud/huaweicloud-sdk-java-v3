@@ -19,7 +19,7 @@ public class BatchUpdateNodeLabelRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BatchUpadteNodeLabelReq body;
+    private BatchUpdateNodeLabelReq body;
 
     public BatchUpdateNodeLabelRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -38,14 +38,14 @@ public class BatchUpdateNodeLabelRequest {
         this.serverId = serverId;
     }
 
-    public BatchUpdateNodeLabelRequest withBody(BatchUpadteNodeLabelReq body) {
+    public BatchUpdateNodeLabelRequest withBody(BatchUpdateNodeLabelReq body) {
         this.body = body;
         return this;
     }
 
-    public BatchUpdateNodeLabelRequest withBody(Consumer<BatchUpadteNodeLabelReq> bodySetter) {
+    public BatchUpdateNodeLabelRequest withBody(Consumer<BatchUpdateNodeLabelReq> bodySetter) {
         if (this.body == null) {
-            this.body = new BatchUpadteNodeLabelReq();
+            this.body = new BatchUpdateNodeLabelReq();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class BatchUpdateNodeLabelRequest {
      * Get body
      * @return body
      */
-    public BatchUpadteNodeLabelReq getBody() {
+    public BatchUpdateNodeLabelReq getBody() {
         return body;
     }
 
-    public void setBody(BatchUpadteNodeLabelReq body) {
+    public void setBody(BatchUpdateNodeLabelReq body) {
         this.body = body;
     }
 

@@ -153,6 +153,11 @@ public class ShowDetailsOfCertificateV2Response extends SdkResponse {
     private OffsetDateTime updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_has_trusted_root_ca")
+
+    private Boolean isHasTrustedRootCa;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private Integer version;
@@ -398,6 +403,23 @@ public class ShowDetailsOfCertificateV2Response extends SdkResponse {
 
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public ShowDetailsOfCertificateV2Response withIsHasTrustedRootCa(Boolean isHasTrustedRootCa) {
+        this.isHasTrustedRootCa = isHasTrustedRootCa;
+        return this;
+    }
+
+    /**
+     * 是否存在信任的根证书CA。当绑定证书存在trusted_root_ca时为true。
+     * @return isHasTrustedRootCa
+     */
+    public Boolean getIsHasTrustedRootCa() {
+        return isHasTrustedRootCa;
+    }
+
+    public void setIsHasTrustedRootCa(Boolean isHasTrustedRootCa) {
+        this.isHasTrustedRootCa = isHasTrustedRootCa;
     }
 
     public ShowDetailsOfCertificateV2Response withVersion(Integer version) {
@@ -669,6 +691,7 @@ public class ShowDetailsOfCertificateV2Response extends SdkResponse {
             && Objects.equals(this.signatureAlgorithm, showDetailsOfCertificateV2Response.signatureAlgorithm)
             && Objects.equals(this.createTime, showDetailsOfCertificateV2Response.createTime)
             && Objects.equals(this.updateTime, showDetailsOfCertificateV2Response.updateTime)
+            && Objects.equals(this.isHasTrustedRootCa, showDetailsOfCertificateV2Response.isHasTrustedRootCa)
             && Objects.equals(this.version, showDetailsOfCertificateV2Response.version)
             && Objects.equals(this.organization, showDetailsOfCertificateV2Response.organization)
             && Objects.equals(this.organizationalUnit, showDetailsOfCertificateV2Response.organizationalUnit)
@@ -693,6 +716,7 @@ public class ShowDetailsOfCertificateV2Response extends SdkResponse {
             signatureAlgorithm,
             createTime,
             updateTime,
+            isHasTrustedRootCa,
             version,
             organization,
             organizationalUnit,
@@ -719,6 +743,7 @@ public class ShowDetailsOfCertificateV2Response extends SdkResponse {
         sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    isHasTrustedRootCa: ").append(toIndentedString(isHasTrustedRootCa)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
         sb.append("    organizationalUnit: ").append(toIndentedString(organizationalUnit)).append("\n");

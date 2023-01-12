@@ -52,7 +52,7 @@ public class CreateUserReq {
     }
 
     /**
-     * 用户名，长度4~31之间，首位不能为数字，特殊字符只能包含下划线“_”、中划线“-”和空格
+     * 用户名，长度5~31之间，首位不能为数字，特殊字符只能包含下划线“_”、中划线“-”和空格
      * @return name
      */
     public String getName() {

@@ -67,6 +67,13 @@ public class RmsMeta {
             f -> f.withMarshaller(ShowResourceHistoryRequest::getChronologicalOrder, (req, v) -> {
                 req.setChronologicalOrder(v);
             }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceHistoryRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
 
         // response
 
@@ -85,6 +92,13 @@ public class RmsMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePolicyAssignmentsRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
         builder.<PolicyAssignmentRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -117,6 +131,13 @@ public class RmsMeta {
             f -> f.withMarshaller(DeletePolicyAssignmentRequest::getPolicyAssignmentId, (req, v) -> {
                 req.setPolicyAssignmentId(v);
             }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePolicyAssignmentRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
 
         // response
 
@@ -141,6 +162,13 @@ public class RmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DisablePolicyAssignmentRequest::getPolicyAssignmentId, (req, v) -> {
                 req.setPolicyAssignmentId(v);
+            }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisablePolicyAssignmentRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
             }));
 
         // response
@@ -167,6 +195,13 @@ public class RmsMeta {
             f -> f.withMarshaller(EnablePolicyAssignmentRequest::getPolicyAssignmentId, (req, v) -> {
                 req.setPolicyAssignmentId(v);
             }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnablePolicyAssignmentRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
 
         // response
 
@@ -188,6 +223,13 @@ public class RmsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBuiltInPolicyDefinitionsRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -213,6 +255,13 @@ public class RmsMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyAssignmentsRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
 
         // response
 
@@ -277,6 +326,13 @@ public class RmsMeta {
             f -> f.withMarshaller(ListPolicyStatesByAssignmentIdRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
             }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyStatesByAssignmentIdRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
 
         // response
 
@@ -333,6 +389,13 @@ public class RmsMeta {
             f -> f.withMarshaller(ListPolicyStatesByDomainIdRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
             }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyStatesByDomainIdRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
 
         // response
 
@@ -382,6 +445,13 @@ public class RmsMeta {
             f -> f.withMarshaller(ListPolicyStatesByResourceIdRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
             }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyStatesByResourceIdRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
 
         // response
 
@@ -411,6 +481,13 @@ public class RmsMeta {
             f -> f.withMarshaller(RunEvaluationByPolicyAssignmentIdRequest::getPolicyAssignmentId, (req, v) -> {
                 req.setPolicyAssignmentId(v);
             }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunEvaluationByPolicyAssignmentIdRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
 
         // response
 
@@ -438,6 +515,13 @@ public class RmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBuiltInPolicyDefinitionRequest::getPolicyDefinitionId, (req, v) -> {
                 req.setPolicyDefinitionId(v);
+            }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBuiltInPolicyDefinitionRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
             }));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
@@ -475,6 +559,13 @@ public class RmsMeta {
             f -> f.withMarshaller(ShowEvaluationStateByAssignmentIdRequest::getPolicyAssignmentId, (req, v) -> {
                 req.setPolicyAssignmentId(v);
             }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEvaluationStateByAssignmentIdRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
 
         // response
 
@@ -499,6 +590,13 @@ public class RmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPolicyAssignmentRequest::getPolicyAssignmentId, (req, v) -> {
                 req.setPolicyAssignmentId(v);
+            }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPolicyAssignmentRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
             }));
 
         // response
@@ -525,6 +623,13 @@ public class RmsMeta {
             f -> f.withMarshaller(UpdatePolicyAssignmentRequest::getPolicyAssignmentId, (req, v) -> {
                 req.setPolicyAssignmentId(v);
             }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePolicyAssignmentRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
         builder.<PolicyAssignmentRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -550,6 +655,13 @@ public class RmsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePolicyStateRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
         builder.<PolicyStateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -575,6 +687,13 @@ public class RmsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateStoredQueryRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
         builder.<StoredQueryRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -607,6 +726,13 @@ public class RmsMeta {
             f -> f.withMarshaller(DeleteStoredQueryRequest::getQueryId, (req, v) -> {
                 req.setQueryId(v);
             }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStoredQueryRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
 
         // response
 
@@ -637,6 +763,13 @@ public class RmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSchemasRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
+            }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSchemasRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
             }));
 
         // response
@@ -677,6 +810,13 @@ public class RmsMeta {
             f -> f.withMarshaller(ListStoredQueriesRequest::getName, (req, v) -> {
                 req.setName(v);
             }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStoredQueriesRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
 
         // response
 
@@ -694,6 +834,13 @@ public class RmsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunQueryRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
         builder.<QueryRunRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -726,6 +873,13 @@ public class RmsMeta {
             f -> f.withMarshaller(ShowStoredQueryRequest::getQueryId, (req, v) -> {
                 req.setQueryId(v);
             }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStoredQueryRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
 
         // response
 
@@ -751,6 +905,13 @@ public class RmsMeta {
             f -> f.withMarshaller(UpdateStoredQueryRequest::getQueryId, (req, v) -> {
                 req.setQueryId(v);
             }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStoredQueryRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
         builder.<StoredQueryRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -775,6 +936,13 @@ public class RmsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRegionsRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
         builder.<ListRegionsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -827,6 +995,13 @@ public class RmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResourceRelationsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
+            }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceRelationsRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
             }));
 
         // response
@@ -881,6 +1056,13 @@ public class RmsMeta {
             f -> f.withMarshaller(ListAllResourcesRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
             }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllResourcesRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
 
         // response
 
@@ -912,6 +1094,13 @@ public class RmsMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListProvidersRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProvidersRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
             }));
         builder.<ListProvidersRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
@@ -987,6 +1176,13 @@ public class RmsMeta {
             f -> f.withMarshaller(ListResourcesRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
             }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourcesRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
 
         // response
 
@@ -1027,6 +1223,13 @@ public class RmsMeta {
             f -> f.withMarshaller(ShowResourceByIdRequest::getResourceId, (req, v) -> {
                 req.setResourceId(v);
             }));
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceByIdRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
 
         // response
 
@@ -1045,6 +1248,13 @@ public class RmsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTrackerConfigRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
         builder.<TrackerConfigBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1070,6 +1280,13 @@ public class RmsMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTrackerConfigRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
 
         // response
 
@@ -1088,6 +1305,13 @@ public class RmsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrackerConfigRequest::getXAuthToken, (req, v) -> {
+                req.setXAuthToken(v);
+            }));
 
         // response
 

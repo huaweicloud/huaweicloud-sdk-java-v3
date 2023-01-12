@@ -31,7 +31,7 @@ public class ShowDbObjectCollectionStatusRequest {
     }
 
     /**
-     * 任务id
+     * 任务ID。
      * @return jobId
      */
     public String getJobId() {
@@ -67,7 +67,7 @@ public class ShowDbObjectCollectionStatusRequest {
     }
 
     /**
-     * 对象信息采集的id，指的是提交查询对象接口返回的id
+     * 对象信息采集的ID，提交查询数据库对象信息接口返回的ID。
      * @return queryId
      */
     public String getQueryId() {

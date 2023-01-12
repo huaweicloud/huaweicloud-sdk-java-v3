@@ -16,11 +16,6 @@ public class ShowJobConfigResponse extends SdkResponse {
 
     private Integer jobRetainNumber;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "job_retain_time")
-
-    private Integer jobRetainTime;
-
     public ShowJobConfigResponse withJobRetainNumber(Integer jobRetainNumber) {
         this.jobRetainNumber = jobRetainNumber;
         return this;
@@ -29,7 +24,7 @@ public class ShowJobConfigResponse extends SdkResponse {
     /**
      * 作业保存条数
      * minimum: 10000
-     * maximum: 5000000
+     * maximum: 10000000
      * @return jobRetainNumber
      */
     public Integer getJobRetainNumber() {
@@ -38,25 +33,6 @@ public class ShowJobConfigResponse extends SdkResponse {
 
     public void setJobRetainNumber(Integer jobRetainNumber) {
         this.jobRetainNumber = jobRetainNumber;
-    }
-
-    public ShowJobConfigResponse withJobRetainTime(Integer jobRetainTime) {
-        this.jobRetainTime = jobRetainTime;
-        return this;
-    }
-
-    /**
-     * 作业保存时长，单位天
-     * minimum: 180
-     * maximum: 3650
-     * @return jobRetainTime
-     */
-    public Integer getJobRetainTime() {
-        return jobRetainTime;
-    }
-
-    public void setJobRetainTime(Integer jobRetainTime) {
-        this.jobRetainTime = jobRetainTime;
     }
 
     @Override
@@ -68,13 +44,12 @@ public class ShowJobConfigResponse extends SdkResponse {
             return false;
         }
         ShowJobConfigResponse showJobConfigResponse = (ShowJobConfigResponse) o;
-        return Objects.equals(this.jobRetainNumber, showJobConfigResponse.jobRetainNumber)
-            && Objects.equals(this.jobRetainTime, showJobConfigResponse.jobRetainTime);
+        return Objects.equals(this.jobRetainNumber, showJobConfigResponse.jobRetainNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobRetainNumber, jobRetainTime);
+        return Objects.hash(jobRetainNumber);
     }
 
     @Override
@@ -82,7 +57,6 @@ public class ShowJobConfigResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowJobConfigResponse {\n");
         sb.append("    jobRetainNumber: ").append(toIndentedString(jobRetainNumber)).append("\n");
-        sb.append("    jobRetainTime: ").append(toIndentedString(jobRetainTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

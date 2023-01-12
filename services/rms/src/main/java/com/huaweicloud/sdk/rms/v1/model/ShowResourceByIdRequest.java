@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ShowResourceByIdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Auth-Token")
+
+    private String xAuthToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provider")
 
     private String provider;
@@ -24,6 +29,25 @@ public class ShowResourceByIdRequest {
     @JsonProperty(value = "resource_id")
 
     private String resourceId;
+
+    public ShowResourceByIdRequest withXAuthToken(String xAuthToken) {
+        this.xAuthToken = xAuthToken;
+        return this;
+    }
+
+    /**
+     * 用户Token。 获取Token，请参考《统一身份认证服务API参考》的“获取用户Token”章节。请求响应成功后在响应消息头中包含的“X-Subject-Token”的值即为Token值。
+     * @return xAuthToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Auth-Token")
+    public String getXAuthToken() {
+        return xAuthToken;
+    }
+
+    public void setXAuthToken(String xAuthToken) {
+        this.xAuthToken = xAuthToken;
+    }
 
     public ShowResourceByIdRequest withProvider(String provider) {
         this.provider = provider;
@@ -85,20 +109,22 @@ public class ShowResourceByIdRequest {
             return false;
         }
         ShowResourceByIdRequest showResourceByIdRequest = (ShowResourceByIdRequest) o;
-        return Objects.equals(this.provider, showResourceByIdRequest.provider)
+        return Objects.equals(this.xAuthToken, showResourceByIdRequest.xAuthToken)
+            && Objects.equals(this.provider, showResourceByIdRequest.provider)
             && Objects.equals(this.type, showResourceByIdRequest.type)
             && Objects.equals(this.resourceId, showResourceByIdRequest.resourceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(provider, type, resourceId);
+        return Objects.hash(xAuthToken, provider, type, resourceId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowResourceByIdRequest {\n");
+        sb.append("    xAuthToken: ").append(toIndentedString(xAuthToken)).append("\n");
         sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");

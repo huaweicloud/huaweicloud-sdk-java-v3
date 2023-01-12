@@ -227,7 +227,7 @@ public class HssMeta {
             }));
         builder.<ChangeVulStatusRequestInfo>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeVulStatusRequestInfo.class),
             f -> f.withMarshaller(ChangeVulStatusRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -259,7 +259,7 @@ public class HssMeta {
             }));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteHostsGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);

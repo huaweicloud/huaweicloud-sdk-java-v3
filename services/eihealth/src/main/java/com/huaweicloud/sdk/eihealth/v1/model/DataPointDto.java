@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
- * 资源监控数据返回体
+ * 监控数据列表
  */
 public class DataPointDto {
 

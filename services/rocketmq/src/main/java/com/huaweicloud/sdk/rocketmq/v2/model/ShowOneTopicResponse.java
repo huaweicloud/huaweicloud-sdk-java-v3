@@ -21,6 +21,11 @@ import java.util.function.Consumer;
 public class ShowOneTopicResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_read_queue_num")
 
     private BigDecimal totalReadQueueNum;
@@ -123,6 +128,23 @@ public class ShowOneTopicResponse extends SdkResponse {
 
     private List<TopicBrokers> brokers = null;
 
+    public ShowOneTopicResponse withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * topic名称。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public ShowOneTopicResponse withTotalReadQueueNum(BigDecimal totalReadQueueNum) {
         this.totalReadQueueNum = totalReadQueueNum;
         return this;
@@ -216,7 +238,8 @@ public class ShowOneTopicResponse extends SdkResponse {
             return false;
         }
         ShowOneTopicResponse showOneTopicResponse = (ShowOneTopicResponse) o;
-        return Objects.equals(this.totalReadQueueNum, showOneTopicResponse.totalReadQueueNum)
+        return Objects.equals(this.name, showOneTopicResponse.name)
+            && Objects.equals(this.totalReadQueueNum, showOneTopicResponse.totalReadQueueNum)
             && Objects.equals(this.totalWriteQueueNum, showOneTopicResponse.totalWriteQueueNum)
             && Objects.equals(this.permission, showOneTopicResponse.permission)
             && Objects.equals(this.brokers, showOneTopicResponse.brokers);
@@ -224,13 +247,14 @@ public class ShowOneTopicResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(totalReadQueueNum, totalWriteQueueNum, permission, brokers);
+        return Objects.hash(name, totalReadQueueNum, totalWriteQueueNum, permission, brokers);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowOneTopicResponse {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    totalReadQueueNum: ").append(toIndentedString(totalReadQueueNum)).append("\n");
         sb.append("    totalWriteQueueNum: ").append(toIndentedString(totalWriteQueueNum)).append("\n");
         sb.append("    permission: ").append(toIndentedString(permission)).append("\n");

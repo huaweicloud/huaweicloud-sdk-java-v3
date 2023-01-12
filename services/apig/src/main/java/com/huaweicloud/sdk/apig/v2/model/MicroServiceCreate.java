@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * MicroServiceCreate
+ * 微服务详情。
  */
 public class MicroServiceCreate {
 

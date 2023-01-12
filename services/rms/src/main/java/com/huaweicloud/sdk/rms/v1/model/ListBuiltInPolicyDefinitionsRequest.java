@@ -11,9 +11,33 @@ import java.util.Objects;
 public class ListBuiltInPolicyDefinitionsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Auth-Token")
+
+    private String xAuthToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
 
     private String xLanguage;
+
+    public ListBuiltInPolicyDefinitionsRequest withXAuthToken(String xAuthToken) {
+        this.xAuthToken = xAuthToken;
+        return this;
+    }
+
+    /**
+     * 用户Token。 获取Token，请参考《统一身份认证服务API参考》的“获取用户Token”章节。请求响应成功后在响应消息头中包含的“X-Subject-Token”的值即为Token值。
+     * @return xAuthToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Auth-Token")
+    public String getXAuthToken() {
+        return xAuthToken;
+    }
+
+    public void setXAuthToken(String xAuthToken) {
+        this.xAuthToken = xAuthToken;
+    }
 
     public ListBuiltInPolicyDefinitionsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -44,18 +68,20 @@ public class ListBuiltInPolicyDefinitionsRequest {
         }
         ListBuiltInPolicyDefinitionsRequest listBuiltInPolicyDefinitionsRequest =
             (ListBuiltInPolicyDefinitionsRequest) o;
-        return Objects.equals(this.xLanguage, listBuiltInPolicyDefinitionsRequest.xLanguage);
+        return Objects.equals(this.xAuthToken, listBuiltInPolicyDefinitionsRequest.xAuthToken)
+            && Objects.equals(this.xLanguage, listBuiltInPolicyDefinitionsRequest.xLanguage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage);
+        return Objects.hash(xAuthToken, xLanguage);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListBuiltInPolicyDefinitionsRequest {\n");
+        sb.append("    xAuthToken: ").append(toIndentedString(xAuthToken)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("}");
         return sb.toString();

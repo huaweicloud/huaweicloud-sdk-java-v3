@@ -15,11 +15,6 @@ public class DeleteUserRequest {
 
     private String userId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user_id_type")
-
-    private String userIdType;
-
     public DeleteUserRequest withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -37,23 +32,6 @@ public class DeleteUserRequest {
         this.userId = userId;
     }
 
-    public DeleteUserRequest withUserIdType(String userIdType) {
-        this.userIdType = userIdType;
-        return this;
-    }
-
-    /**
-     * 删除类型，通过(name或id)删除
-     * @return userIdType
-     */
-    public String getUserIdType() {
-        return userIdType;
-    }
-
-    public void setUserIdType(String userIdType) {
-        this.userIdType = userIdType;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -63,13 +41,12 @@ public class DeleteUserRequest {
             return false;
         }
         DeleteUserRequest deleteUserRequest = (DeleteUserRequest) o;
-        return Objects.equals(this.userId, deleteUserRequest.userId)
-            && Objects.equals(this.userIdType, deleteUserRequest.userIdType);
+        return Objects.equals(this.userId, deleteUserRequest.userId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId, userIdType);
+        return Objects.hash(userId);
     }
 
     @Override
@@ -77,7 +54,6 @@ public class DeleteUserRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteUserRequest {\n");
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-        sb.append("    userIdType: ").append(toIndentedString(userIdType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

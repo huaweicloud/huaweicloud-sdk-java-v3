@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ListSchemasRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Auth-Token")
+
+    private String xAuthToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -19,6 +24,25 @@ public class ListSchemasRequest {
     @JsonProperty(value = "marker")
 
     private String marker;
+
+    public ListSchemasRequest withXAuthToken(String xAuthToken) {
+        this.xAuthToken = xAuthToken;
+        return this;
+    }
+
+    /**
+     * 用户Token。 获取Token，请参考《统一身份认证服务API参考》的“获取用户Token”章节。请求响应成功后在响应消息头中包含的“X-Subject-Token”的值即为Token值。
+     * @return xAuthToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Auth-Token")
+    public String getXAuthToken() {
+        return xAuthToken;
+    }
+
+    public void setXAuthToken(String xAuthToken) {
+        this.xAuthToken = xAuthToken;
+    }
 
     public ListSchemasRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -65,19 +89,21 @@ public class ListSchemasRequest {
             return false;
         }
         ListSchemasRequest listSchemasRequest = (ListSchemasRequest) o;
-        return Objects.equals(this.limit, listSchemasRequest.limit)
+        return Objects.equals(this.xAuthToken, listSchemasRequest.xAuthToken)
+            && Objects.equals(this.limit, listSchemasRequest.limit)
             && Objects.equals(this.marker, listSchemasRequest.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker);
+        return Objects.hash(xAuthToken, limit, marker);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSchemasRequest {\n");
+        sb.append("    xAuthToken: ").append(toIndentedString(xAuthToken)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");

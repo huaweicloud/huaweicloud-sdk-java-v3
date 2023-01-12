@@ -162,7 +162,7 @@ public class ListAssetRequest {
     }
 
     /**
-     * 查询范围，支持PUBLIC/INTERNAL
+     * 查询范围，支持PUBLIC/INTERNAL/SELF
      * @return scope
      */
     public String getScope() {

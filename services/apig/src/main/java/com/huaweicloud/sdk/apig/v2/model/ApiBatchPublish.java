@@ -24,6 +24,11 @@ public class ApiBatchPublish {
     private String envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
 
     private String remark;
@@ -50,7 +55,7 @@ public class ApiBatchPublish {
     }
 
     /**
-     * 需要发布或下线的API ID列表，单次更新上限为1000个API
+     * 需要发布或下线的API ID列表，单次更新上限为1000个API。必须指定apis或group_id。
      * @return apis
      */
     public List<String> getApis() {
@@ -76,6 +81,23 @@ public class ApiBatchPublish {
 
     public void setEnvId(String envId) {
         this.envId = envId;
+    }
+
+    public ApiBatchPublish withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * API分组ID。必须指定apis或group_id。
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
     }
 
     public ApiBatchPublish withRemark(String remark) {
@@ -105,12 +127,13 @@ public class ApiBatchPublish {
         }
         ApiBatchPublish apiBatchPublish = (ApiBatchPublish) o;
         return Objects.equals(this.apis, apiBatchPublish.apis) && Objects.equals(this.envId, apiBatchPublish.envId)
+            && Objects.equals(this.groupId, apiBatchPublish.groupId)
             && Objects.equals(this.remark, apiBatchPublish.remark);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(apis, envId, remark);
+        return Objects.hash(apis, envId, groupId, remark);
     }
 
     @Override
@@ -119,6 +142,7 @@ public class ApiBatchPublish {
         sb.append("class ApiBatchPublish {\n");
         sb.append("    apis: ").append(toIndentedString(apis)).append("\n");
         sb.append("    envId: ").append(toIndentedString(envId)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("}");
         return sb.toString();

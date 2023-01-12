@@ -151,6 +151,11 @@ public class CertBase {
 
     private OffsetDateTime updateTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_has_trusted_root_ca")
+
+    private Boolean isHasTrustedRootCa;
+
     public CertBase withId(String id) {
         this.id = id;
         return this;
@@ -354,6 +359,23 @@ public class CertBase {
         this.updateTime = updateTime;
     }
 
+    public CertBase withIsHasTrustedRootCa(Boolean isHasTrustedRootCa) {
+        this.isHasTrustedRootCa = isHasTrustedRootCa;
+        return this;
+    }
+
+    /**
+     * 是否存在信任的根证书CA。当绑定证书存在trusted_root_ca时为true。
+     * @return isHasTrustedRootCa
+     */
+    public Boolean getIsHasTrustedRootCa() {
+        return isHasTrustedRootCa;
+    }
+
+    public void setIsHasTrustedRootCa(Boolean isHasTrustedRootCa) {
+        this.isHasTrustedRootCa = isHasTrustedRootCa;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -370,7 +392,8 @@ public class CertBase {
             && Objects.equals(this.notAfter, certBase.notAfter)
             && Objects.equals(this.signatureAlgorithm, certBase.signatureAlgorithm)
             && Objects.equals(this.createTime, certBase.createTime)
-            && Objects.equals(this.updateTime, certBase.updateTime);
+            && Objects.equals(this.updateTime, certBase.updateTime)
+            && Objects.equals(this.isHasTrustedRootCa, certBase.isHasTrustedRootCa);
     }
 
     @Override
@@ -385,7 +408,8 @@ public class CertBase {
             notAfter,
             signatureAlgorithm,
             createTime,
-            updateTime);
+            updateTime,
+            isHasTrustedRootCa);
     }
 
     @Override
@@ -403,6 +427,7 @@ public class CertBase {
         sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    isHasTrustedRootCa: ").append(toIndentedString(isHasTrustedRootCa)).append("\n");
         sb.append("}");
         return sb.toString();
     }

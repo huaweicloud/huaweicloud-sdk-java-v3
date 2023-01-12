@@ -23,6 +23,11 @@ public class WebImageResult {
 
     private List<WebImageWordsBlockList> wordsBlockList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extracted_data")
+
+    private WebImageExtractedData extractedData;
+
     public WebImageResult withWordsBlockCount(Integer wordsBlockCount) {
         this.wordsBlockCount = wordsBlockCount;
         return this;
@@ -73,6 +78,32 @@ public class WebImageResult {
         this.wordsBlockList = wordsBlockList;
     }
 
+    public WebImageResult withExtractedData(WebImageExtractedData extractedData) {
+        this.extractedData = extractedData;
+        return this;
+    }
+
+    public WebImageResult withExtractedData(Consumer<WebImageExtractedData> extractedDataSetter) {
+        if (this.extractedData == null) {
+            this.extractedData = new WebImageExtractedData();
+            extractedDataSetter.accept(this.extractedData);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get extractedData
+     * @return extractedData
+     */
+    public WebImageExtractedData getExtractedData() {
+        return extractedData;
+    }
+
+    public void setExtractedData(WebImageExtractedData extractedData) {
+        this.extractedData = extractedData;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -83,12 +114,13 @@ public class WebImageResult {
         }
         WebImageResult webImageResult = (WebImageResult) o;
         return Objects.equals(this.wordsBlockCount, webImageResult.wordsBlockCount)
-            && Objects.equals(this.wordsBlockList, webImageResult.wordsBlockList);
+            && Objects.equals(this.wordsBlockList, webImageResult.wordsBlockList)
+            && Objects.equals(this.extractedData, webImageResult.extractedData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(wordsBlockCount, wordsBlockList);
+        return Objects.hash(wordsBlockCount, wordsBlockList, extractedData);
     }
 
     @Override
@@ -97,6 +129,7 @@ public class WebImageResult {
         sb.append("class WebImageResult {\n");
         sb.append("    wordsBlockCount: ").append(toIndentedString(wordsBlockCount)).append("\n");
         sb.append("    wordsBlockList: ").append(toIndentedString(wordsBlockList)).append("\n");
+        sb.append("    extractedData: ").append(toIndentedString(extractedData)).append("\n");
         sb.append("}");
         return sb.toString();
     }

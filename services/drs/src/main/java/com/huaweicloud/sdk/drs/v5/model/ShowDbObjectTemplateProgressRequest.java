@@ -154,7 +154,7 @@ public class ShowDbObjectTemplateProgressRequest {
     }
 
     /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0
+     * 偏移量，表示查询该偏移量后面的记录。
      * @return offset
      */
     public Integer getOffset() {
@@ -171,7 +171,7 @@ public class ShowDbObjectTemplateProgressRequest {
     }
 
     /**
-     * 每页显示的条目数量
+     * 查询返回记录的数量限制。
      * @return limit
      */
     public Integer getLimit() {

@@ -339,9 +339,9 @@ public class AlarmHistoryItemV2 {
     private List<Notification> okActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "datapoints")
+    @JsonProperty(value = "data_points")
 
-    private List<DataPointInfo> datapoints = null;
+    private List<DataPointInfo> dataPoints = null;
 
     public AlarmHistoryItemV2 withRecordId(String recordId) {
         this.recordId = recordId;
@@ -640,37 +640,37 @@ public class AlarmHistoryItemV2 {
         this.okActions = okActions;
     }
 
-    public AlarmHistoryItemV2 withDatapoints(List<DataPointInfo> datapoints) {
-        this.datapoints = datapoints;
+    public AlarmHistoryItemV2 withDataPoints(List<DataPointInfo> dataPoints) {
+        this.dataPoints = dataPoints;
         return this;
     }
 
-    public AlarmHistoryItemV2 addDatapointsItem(DataPointInfo datapointsItem) {
-        if (this.datapoints == null) {
-            this.datapoints = new ArrayList<>();
+    public AlarmHistoryItemV2 addDataPointsItem(DataPointInfo dataPointsItem) {
+        if (this.dataPoints == null) {
+            this.dataPoints = new ArrayList<>();
         }
-        this.datapoints.add(datapointsItem);
+        this.dataPoints.add(dataPointsItem);
         return this;
     }
 
-    public AlarmHistoryItemV2 withDatapoints(Consumer<List<DataPointInfo>> datapointsSetter) {
-        if (this.datapoints == null) {
-            this.datapoints = new ArrayList<>();
+    public AlarmHistoryItemV2 withDataPoints(Consumer<List<DataPointInfo>> dataPointsSetter) {
+        if (this.dataPoints == null) {
+            this.dataPoints = new ArrayList<>();
         }
-        datapointsSetter.accept(this.datapoints);
+        dataPointsSetter.accept(this.dataPoints);
         return this;
     }
 
     /**
      * 计算出该条告警记录的资源监控数据上报时间和监控数值。
-     * @return datapoints
+     * @return dataPoints
      */
-    public List<DataPointInfo> getDatapoints() {
-        return datapoints;
+    public List<DataPointInfo> getDataPoints() {
+        return dataPoints;
     }
 
-    public void setDatapoints(List<DataPointInfo> datapoints) {
-        this.datapoints = datapoints;
+    public void setDataPoints(List<DataPointInfo> dataPoints) {
+        this.dataPoints = dataPoints;
     }
 
     @Override
@@ -696,7 +696,7 @@ public class AlarmHistoryItemV2 {
             && Objects.equals(this.additionalInfo, alarmHistoryItemV2.additionalInfo)
             && Objects.equals(this.alarmActions, alarmHistoryItemV2.alarmActions)
             && Objects.equals(this.okActions, alarmHistoryItemV2.okActions)
-            && Objects.equals(this.datapoints, alarmHistoryItemV2.datapoints);
+            && Objects.equals(this.dataPoints, alarmHistoryItemV2.dataPoints);
     }
 
     @Override
@@ -715,7 +715,7 @@ public class AlarmHistoryItemV2 {
             additionalInfo,
             alarmActions,
             okActions,
-            datapoints);
+            dataPoints);
     }
 
     @Override
@@ -736,7 +736,7 @@ public class AlarmHistoryItemV2 {
         sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");
         sb.append("    alarmActions: ").append(toIndentedString(alarmActions)).append("\n");
         sb.append("    okActions: ").append(toIndentedString(okActions)).append("\n");
-        sb.append("    datapoints: ").append(toIndentedString(datapoints)).append("\n");
+        sb.append("    dataPoints: ").append(toIndentedString(dataPoints)).append("\n");
         sb.append("}");
         return sb.toString();
     }

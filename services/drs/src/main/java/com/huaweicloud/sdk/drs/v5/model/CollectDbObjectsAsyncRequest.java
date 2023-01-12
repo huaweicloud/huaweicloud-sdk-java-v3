@@ -339,7 +339,7 @@ public class CollectDbObjectsAsyncRequest {
     }
 
     /**
-     * 查询指定库的信息
+     * 查询指定库的信息。
      * @return dbNames
      */
     public List<String> getDbNames() {

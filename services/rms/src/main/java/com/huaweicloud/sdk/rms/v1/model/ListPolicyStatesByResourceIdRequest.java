@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ListPolicyStatesByResourceIdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Auth-Token")
+
+    private String xAuthToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
     private String resourceId;
@@ -29,6 +34,25 @@ public class ListPolicyStatesByResourceIdRequest {
     @JsonProperty(value = "marker")
 
     private String marker;
+
+    public ListPolicyStatesByResourceIdRequest withXAuthToken(String xAuthToken) {
+        this.xAuthToken = xAuthToken;
+        return this;
+    }
+
+    /**
+     * 用户Token。 获取Token，请参考《统一身份认证服务API参考》的“获取用户Token”章节。请求响应成功后在响应消息头中包含的“X-Subject-Token”的值即为Token值。
+     * @return xAuthToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Auth-Token")
+    public String getXAuthToken() {
+        return xAuthToken;
+    }
+
+    public void setXAuthToken(String xAuthToken) {
+        this.xAuthToken = xAuthToken;
+    }
 
     public ListPolicyStatesByResourceIdRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -110,7 +134,8 @@ public class ListPolicyStatesByResourceIdRequest {
         }
         ListPolicyStatesByResourceIdRequest listPolicyStatesByResourceIdRequest =
             (ListPolicyStatesByResourceIdRequest) o;
-        return Objects.equals(this.resourceId, listPolicyStatesByResourceIdRequest.resourceId)
+        return Objects.equals(this.xAuthToken, listPolicyStatesByResourceIdRequest.xAuthToken)
+            && Objects.equals(this.resourceId, listPolicyStatesByResourceIdRequest.resourceId)
             && Objects.equals(this.complianceState, listPolicyStatesByResourceIdRequest.complianceState)
             && Objects.equals(this.limit, listPolicyStatesByResourceIdRequest.limit)
             && Objects.equals(this.marker, listPolicyStatesByResourceIdRequest.marker);
@@ -118,13 +143,14 @@ public class ListPolicyStatesByResourceIdRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId, complianceState, limit, marker);
+        return Objects.hash(xAuthToken, resourceId, complianceState, limit, marker);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPolicyStatesByResourceIdRequest {\n");
+        sb.append("    xAuthToken: ").append(toIndentedString(xAuthToken)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    complianceState: ").append(toIndentedString(complianceState)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

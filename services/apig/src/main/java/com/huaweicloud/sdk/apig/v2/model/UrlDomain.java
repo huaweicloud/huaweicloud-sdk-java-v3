@@ -127,6 +127,11 @@ public class UrlDomain {
 
     private Boolean verifiedClientCertificateEnabled;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_has_trusted_root_ca")
+
+    private Boolean isHasTrustedRootCa;
+
     public UrlDomain withId(String id) {
         this.id = id;
         return this;
@@ -246,6 +251,23 @@ public class UrlDomain {
         this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
     }
 
+    public UrlDomain withIsHasTrustedRootCa(Boolean isHasTrustedRootCa) {
+        this.isHasTrustedRootCa = isHasTrustedRootCa;
+        return this;
+    }
+
+    /**
+     * 是否存在信任的根证书CA。当绑定证书存在trusted_root_ca时为true。
+     * @return isHasTrustedRootCa
+     */
+    public Boolean getIsHasTrustedRootCa() {
+        return isHasTrustedRootCa;
+    }
+
+    public void setIsHasTrustedRootCa(Boolean isHasTrustedRootCa) {
+        this.isHasTrustedRootCa = isHasTrustedRootCa;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -259,12 +281,20 @@ public class UrlDomain {
             && Objects.equals(this.cnameStatus, urlDomain.cnameStatus) && Objects.equals(this.sslId, urlDomain.sslId)
             && Objects.equals(this.sslName, urlDomain.sslName)
             && Objects.equals(this.minSslVersion, urlDomain.minSslVersion)
-            && Objects.equals(this.verifiedClientCertificateEnabled, urlDomain.verifiedClientCertificateEnabled);
+            && Objects.equals(this.verifiedClientCertificateEnabled, urlDomain.verifiedClientCertificateEnabled)
+            && Objects.equals(this.isHasTrustedRootCa, urlDomain.isHasTrustedRootCa);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, domain, cnameStatus, sslId, sslName, minSslVersion, verifiedClientCertificateEnabled);
+        return Objects.hash(id,
+            domain,
+            cnameStatus,
+            sslId,
+            sslName,
+            minSslVersion,
+            verifiedClientCertificateEnabled,
+            isHasTrustedRootCa);
     }
 
     @Override
@@ -280,6 +310,7 @@ public class UrlDomain {
         sb.append("    verifiedClientCertificateEnabled: ")
             .append(toIndentedString(verifiedClientCertificateEnabled))
             .append("\n");
+        sb.append("    isHasTrustedRootCa: ").append(toIndentedString(isHasTrustedRootCa)).append("\n");
         sb.append("}");
         return sb.toString();
     }

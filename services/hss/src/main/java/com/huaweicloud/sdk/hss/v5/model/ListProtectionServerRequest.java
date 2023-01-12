@@ -201,7 +201,7 @@ public class ListProtectionServerRequest {
     }
 
     /**
-     * 查询时间范围天数，最近7天为last_days=7
+     * 查询时间范围天数，最近7天为last_days=7，若不填，则默认查询一天内的防护事件和已有备份数
      * minimum: 1
      * maximum: 30
      * @return lastDays

@@ -1,13 +1,13 @@
 package com.huaweicloud.sdk.eihealth.v1.model;
 
-import com.huaweicloud.sdk.core.SdkResponse;
+import com.huaweicloud.sdk.core.SdkStreamResponse;
 
 import java.util.Objects;
 
 /**
  * Response Object
  */
-public class ShowBackupPathResponse extends SdkResponse {
+public class ShowBackupPathResponse extends SdkStreamResponse {
 
     @Override
     public boolean equals(java.lang.Object o) {

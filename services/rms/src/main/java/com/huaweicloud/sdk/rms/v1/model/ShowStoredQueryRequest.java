@@ -11,9 +11,33 @@ import java.util.Objects;
 public class ShowStoredQueryRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Auth-Token")
+
+    private String xAuthToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query_id")
 
     private String queryId;
+
+    public ShowStoredQueryRequest withXAuthToken(String xAuthToken) {
+        this.xAuthToken = xAuthToken;
+        return this;
+    }
+
+    /**
+     * 用户Token。 获取Token，请参考《统一身份认证服务API参考》的“获取用户Token”章节。请求响应成功后在响应消息头中包含的“X-Subject-Token”的值即为Token值。
+     * @return xAuthToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Auth-Token")
+    public String getXAuthToken() {
+        return xAuthToken;
+    }
+
+    public void setXAuthToken(String xAuthToken) {
+        this.xAuthToken = xAuthToken;
+    }
 
     public ShowStoredQueryRequest withQueryId(String queryId) {
         this.queryId = queryId;
@@ -41,18 +65,20 @@ public class ShowStoredQueryRequest {
             return false;
         }
         ShowStoredQueryRequest showStoredQueryRequest = (ShowStoredQueryRequest) o;
-        return Objects.equals(this.queryId, showStoredQueryRequest.queryId);
+        return Objects.equals(this.xAuthToken, showStoredQueryRequest.xAuthToken)
+            && Objects.equals(this.queryId, showStoredQueryRequest.queryId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(queryId);
+        return Objects.hash(xAuthToken, queryId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowStoredQueryRequest {\n");
+        sb.append("    xAuthToken: ").append(toIndentedString(xAuthToken)).append("\n");
         sb.append("    queryId: ").append(toIndentedString(queryId)).append("\n");
         sb.append("}");
         return sb.toString();

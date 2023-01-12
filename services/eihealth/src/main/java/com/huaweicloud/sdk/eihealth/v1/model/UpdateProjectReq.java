@@ -33,6 +33,11 @@ public class UpdateProjectReq {
 
     private Boolean isCore;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "storage_quota")
+
+    private Long storageQuota;
+
     public UpdateProjectReq withDescription(String description) {
         this.description = description;
         return this;
@@ -117,6 +122,23 @@ public class UpdateProjectReq {
         this.isCore = isCore;
     }
 
+    public UpdateProjectReq withStorageQuota(Long storageQuota) {
+        this.storageQuota = storageQuota;
+        return this;
+    }
+
+    /**
+     * 项目数据容量配额，单位为字节，范围为1073741824-11258999068426240，-1表示无容量限制
+     * @return storageQuota
+     */
+    public Long getStorageQuota() {
+        return storageQuota;
+    }
+
+    public void setStorageQuota(Long storageQuota) {
+        this.storageQuota = storageQuota;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -128,12 +150,13 @@ public class UpdateProjectReq {
         UpdateProjectReq updateProjectReq = (UpdateProjectReq) o;
         return Objects.equals(this.description, updateProjectReq.description)
             && Objects.equals(this.status, updateProjectReq.status) && Objects.equals(this.tags, updateProjectReq.tags)
-            && Objects.equals(this.isCore, updateProjectReq.isCore);
+            && Objects.equals(this.isCore, updateProjectReq.isCore)
+            && Objects.equals(this.storageQuota, updateProjectReq.storageQuota);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description, status, tags, isCore);
+        return Objects.hash(description, status, tags, isCore, storageQuota);
     }
 
     @Override
@@ -144,6 +167,7 @@ public class UpdateProjectReq {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    isCore: ").append(toIndentedString(isCore)).append("\n");
+        sb.append("    storageQuota: ").append(toIndentedString(storageQuota)).append("\n");
         sb.append("}");
         return sb.toString();
     }

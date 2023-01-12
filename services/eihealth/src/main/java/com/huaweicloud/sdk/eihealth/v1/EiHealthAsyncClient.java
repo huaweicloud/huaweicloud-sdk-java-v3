@@ -134,6 +134,34 @@ public class EiHealthAsyncClient {
     }
 
     /**
+     * 发布应用
+     *
+     * 发布应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishAppRequest 请求对象
+     * @return CompletableFuture<PublishAppResponse>
+     */
+    public CompletableFuture<PublishAppResponse> publishAppAsync(PublishAppRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.publishApp);
+    }
+
+    /**
+     * 发布应用
+     *
+     * 发布应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishAppRequest 请求对象
+     * @return AsyncInvoker<PublishAppRequest, PublishAppResponse>
+     */
+    public AsyncInvoker<PublishAppRequest, PublishAppResponse> publishAppAsyncInvoker(PublishAppRequest request) {
+        return new AsyncInvoker<PublishAppRequest, PublishAppResponse>(request, EiHealthMeta.publishApp, hcClient);
+    }
+
+    /**
      * 获取应用详情
      *
      * 获取应用详情
@@ -217,6 +245,66 @@ public class EiHealthAsyncClient {
      */
     public AsyncInvoker<UpdateAppRequest, UpdateAppResponse> updateAppAsyncInvoker(UpdateAppRequest request) {
         return new AsyncInvoker<UpdateAppRequest, UpdateAppResponse>(request, EiHealthMeta.updateApp, hcClient);
+    }
+
+    /**
+     * 删除资产指定版本
+     *
+     * 删除资产指定版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAssetVersionRequest 请求对象
+     * @return CompletableFuture<DeleteAssetVersionResponse>
+     */
+    public CompletableFuture<DeleteAssetVersionResponse> deleteAssetVersionAsync(DeleteAssetVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.deleteAssetVersion);
+    }
+
+    /**
+     * 删除资产指定版本
+     *
+     * 删除资产指定版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAssetVersionRequest 请求对象
+     * @return AsyncInvoker<DeleteAssetVersionRequest, DeleteAssetVersionResponse>
+     */
+    public AsyncInvoker<DeleteAssetVersionRequest, DeleteAssetVersionResponse> deleteAssetVersionAsyncInvoker(
+        DeleteAssetVersionRequest request) {
+        return new AsyncInvoker<DeleteAssetVersionRequest, DeleteAssetVersionResponse>(request,
+            EiHealthMeta.deleteAssetVersion, hcClient);
+    }
+
+    /**
+     * 操作资产发布状态
+     *
+     * 操作资产发布状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteAssetActionRequest 请求对象
+     * @return CompletableFuture<ExecuteAssetActionResponse>
+     */
+    public CompletableFuture<ExecuteAssetActionResponse> executeAssetActionAsync(ExecuteAssetActionRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.executeAssetAction);
+    }
+
+    /**
+     * 操作资产发布状态
+     *
+     * 操作资产发布状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteAssetActionRequest 请求对象
+     * @return AsyncInvoker<ExecuteAssetActionRequest, ExecuteAssetActionResponse>
+     */
+    public AsyncInvoker<ExecuteAssetActionRequest, ExecuteAssetActionResponse> executeAssetActionAsyncInvoker(
+        ExecuteAssetActionRequest request) {
+        return new AsyncInvoker<ExecuteAssetActionRequest, ExecuteAssetActionResponse>(request,
+            EiHealthMeta.executeAssetAction, hcClient);
     }
 
     /**
@@ -333,6 +421,36 @@ public class EiHealthAsyncClient {
         ShowAssetVersionRequest request) {
         return new AsyncInvoker<ShowAssetVersionRequest, ShowAssetVersionResponse>(request,
             EiHealthMeta.showAssetVersion, hcClient);
+    }
+
+    /**
+     * 更新资产指定版本的信息
+     *
+     * 更新资产指定版本的信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAssetVersionRequest 请求对象
+     * @return CompletableFuture<UpdateAssetVersionResponse>
+     */
+    public CompletableFuture<UpdateAssetVersionResponse> updateAssetVersionAsync(UpdateAssetVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.updateAssetVersion);
+    }
+
+    /**
+     * 更新资产指定版本的信息
+     *
+     * 更新资产指定版本的信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAssetVersionRequest 请求对象
+     * @return AsyncInvoker<UpdateAssetVersionRequest, UpdateAssetVersionResponse>
+     */
+    public AsyncInvoker<UpdateAssetVersionRequest, UpdateAssetVersionResponse> updateAssetVersionAsyncInvoker(
+        UpdateAssetVersionRequest request) {
+        return new AsyncInvoker<UpdateAssetVersionRequest, UpdateAssetVersionResponse>(request,
+            EiHealthMeta.updateAssetVersion, hcClient);
     }
 
     /**
@@ -1244,6 +1362,34 @@ public class EiHealthAsyncClient {
     }
 
     /**
+     * 发布数据资产
+     *
+     * 发布数据资产
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishDataRequest 请求对象
+     * @return CompletableFuture<PublishDataResponse>
+     */
+    public CompletableFuture<PublishDataResponse> publishDataAsync(PublishDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.publishData);
+    }
+
+    /**
+     * 发布数据资产
+     *
+     * 发布数据资产
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishDataRequest 请求对象
+     * @return AsyncInvoker<PublishDataRequest, PublishDataResponse>
+     */
+    public AsyncInvoker<PublishDataRequest, PublishDataResponse> publishDataAsyncInvoker(PublishDataRequest request) {
+        return new AsyncInvoker<PublishDataRequest, PublishDataResponse>(request, EiHealthMeta.publishData, hcClient);
+    }
+
+    /**
      * 引用项目数据
      *
      * 引用项目数据
@@ -1387,6 +1533,37 @@ public class EiHealthAsyncClient {
         SubscribeDataRequest request) {
         return new AsyncInvoker<SubscribeDataRequest, SubscribeDataResponse>(request, EiHealthMeta.subscribeData,
             hcClient);
+    }
+
+    /**
+     * 设置数据对象策略
+     *
+     * 设置数据对象策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDataPathPolicyRequest 请求对象
+     * @return CompletableFuture<UpdateDataPathPolicyResponse>
+     */
+    public CompletableFuture<UpdateDataPathPolicyResponse> updateDataPathPolicyAsync(
+        UpdateDataPathPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.updateDataPathPolicy);
+    }
+
+    /**
+     * 设置数据对象策略
+     *
+     * 设置数据对象策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDataPathPolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateDataPathPolicyRequest, UpdateDataPathPolicyResponse>
+     */
+    public AsyncInvoker<UpdateDataPathPolicyRequest, UpdateDataPathPolicyResponse> updateDataPathPolicyAsyncInvoker(
+        UpdateDataPathPolicyRequest request) {
+        return new AsyncInvoker<UpdateDataPathPolicyRequest, UpdateDataPathPolicyResponse>(request,
+            EiHealthMeta.updateDataPathPolicy, hcClient);
     }
 
     /**
@@ -2278,6 +2455,36 @@ public class EiHealthAsyncClient {
     }
 
     /**
+     * 发布镜像
+     *
+     * 发布镜像
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishImageRequest 请求对象
+     * @return CompletableFuture<PublishImageResponse>
+     */
+    public CompletableFuture<PublishImageResponse> publishImageAsync(PublishImageRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.publishImage);
+    }
+
+    /**
+     * 发布镜像
+     *
+     * 发布镜像
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishImageRequest 请求对象
+     * @return AsyncInvoker<PublishImageRequest, PublishImageResponse>
+     */
+    public AsyncInvoker<PublishImageRequest, PublishImageResponse> publishImageAsyncInvoker(
+        PublishImageRequest request) {
+        return new AsyncInvoker<PublishImageRequest, PublishImageResponse>(request, EiHealthMeta.publishImage,
+            hcClient);
+    }
+
+    /**
      * 获取docker login指令
      *
      * 获取docker login指令
@@ -2398,7 +2605,7 @@ public class EiHealthAsyncClient {
     /**
      * 设置作业配置
      *
-     * 设置作业配置，目前支持修改保存时长(180天 - 10年)、记录数(1W-500W)
+     * 设置作业配置，目前支持修改作业保存条数(1万条-1000万条)，默认设置为500万条；
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2412,7 +2619,7 @@ public class EiHealthAsyncClient {
     /**
      * 设置作业配置
      *
-     * 设置作业配置，目前支持修改保存时长(180天 - 10年)、记录数(1W-500W)
+     * 设置作业配置，目前支持修改作业保存条数(1万条-1000万条)，默认设置为500万条；
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2422,6 +2629,96 @@ public class EiHealthAsyncClient {
     public AsyncInvoker<UpdateJobConfigRequest, UpdateJobConfigResponse> updateJobConfigAsyncInvoker(
         UpdateJobConfigRequest request) {
         return new AsyncInvoker<UpdateJobConfigRequest, UpdateJobConfigResponse>(request, EiHealthMeta.updateJobConfig,
+            hcClient);
+    }
+
+    /**
+     * 批量取消作业
+     *
+     * 批量取消作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCancelJobRequest 请求对象
+     * @return CompletableFuture<BatchCancelJobResponse>
+     */
+    public CompletableFuture<BatchCancelJobResponse> batchCancelJobAsync(BatchCancelJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.batchCancelJob);
+    }
+
+    /**
+     * 批量取消作业
+     *
+     * 批量取消作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCancelJobRequest 请求对象
+     * @return AsyncInvoker<BatchCancelJobRequest, BatchCancelJobResponse>
+     */
+    public AsyncInvoker<BatchCancelJobRequest, BatchCancelJobResponse> batchCancelJobAsyncInvoker(
+        BatchCancelJobRequest request) {
+        return new AsyncInvoker<BatchCancelJobRequest, BatchCancelJobResponse>(request, EiHealthMeta.batchCancelJob,
+            hcClient);
+    }
+
+    /**
+     * 批量删除作业
+     *
+     * 批量删除作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteJobRequest 请求对象
+     * @return CompletableFuture<BatchDeleteJobResponse>
+     */
+    public CompletableFuture<BatchDeleteJobResponse> batchDeleteJobAsync(BatchDeleteJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.batchDeleteJob);
+    }
+
+    /**
+     * 批量删除作业
+     *
+     * 批量删除作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteJobRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteJobRequest, BatchDeleteJobResponse>
+     */
+    public AsyncInvoker<BatchDeleteJobRequest, BatchDeleteJobResponse> batchDeleteJobAsyncInvoker(
+        BatchDeleteJobRequest request) {
+        return new AsyncInvoker<BatchDeleteJobRequest, BatchDeleteJobResponse>(request, EiHealthMeta.batchDeleteJob,
+            hcClient);
+    }
+
+    /**
+     * 批量重试作业
+     *
+     * 批量重试作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchRetryJobRequest 请求对象
+     * @return CompletableFuture<BatchRetryJobResponse>
+     */
+    public CompletableFuture<BatchRetryJobResponse> batchRetryJobAsync(BatchRetryJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.batchRetryJob);
+    }
+
+    /**
+     * 批量重试作业
+     *
+     * 批量重试作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchRetryJobRequest 请求对象
+     * @return AsyncInvoker<BatchRetryJobRequest, BatchRetryJobResponse>
+     */
+    public AsyncInvoker<BatchRetryJobRequest, BatchRetryJobResponse> batchRetryJobAsyncInvoker(
+        BatchRetryJobRequest request) {
+        return new AsyncInvoker<BatchRetryJobRequest, BatchRetryJobResponse>(request, EiHealthMeta.batchRetryJob,
             hcClient);
     }
 
@@ -2713,6 +3010,37 @@ public class EiHealthAsyncClient {
     }
 
     /**
+     * 获取子任务中实例的资源监控数据
+     *
+     * 获取子任务中实例的资源监控数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTaskInstanceMetricDataRequest 请求对象
+     * @return CompletableFuture<ShowTaskInstanceMetricDataResponse>
+     */
+    public CompletableFuture<ShowTaskInstanceMetricDataResponse> showTaskInstanceMetricDataAsync(
+        ShowTaskInstanceMetricDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.showTaskInstanceMetricData);
+    }
+
+    /**
+     * 获取子任务中实例的资源监控数据
+     *
+     * 获取子任务中实例的资源监控数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTaskInstanceMetricDataRequest 请求对象
+     * @return AsyncInvoker<ShowTaskInstanceMetricDataRequest, ShowTaskInstanceMetricDataResponse>
+     */
+    public AsyncInvoker<ShowTaskInstanceMetricDataRequest, ShowTaskInstanceMetricDataResponse> showTaskInstanceMetricDataAsyncInvoker(
+        ShowTaskInstanceMetricDataRequest request) {
+        return new AsyncInvoker<ShowTaskInstanceMetricDataRequest, ShowTaskInstanceMetricDataResponse>(request,
+            EiHealthMeta.showTaskInstanceMetricData, hcClient);
+    }
+
+    /**
      * 获取子任务中实例的pod信息
      *
      * 获取子任务中实例的pod信息
@@ -2770,6 +3098,64 @@ public class EiHealthAsyncClient {
         ShowTaskInstancesRequest request) {
         return new AsyncInvoker<ShowTaskInstancesRequest, ShowTaskInstancesResponse>(request,
             EiHealthMeta.showTaskInstances, hcClient);
+    }
+
+    /**
+     * 更新作业
+     *
+     * 更新作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateJobRequest 请求对象
+     * @return CompletableFuture<UpdateJobResponse>
+     */
+    public CompletableFuture<UpdateJobResponse> updateJobAsync(UpdateJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.updateJob);
+    }
+
+    /**
+     * 更新作业
+     *
+     * 更新作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateJobRequest 请求对象
+     * @return AsyncInvoker<UpdateJobRequest, UpdateJobResponse>
+     */
+    public AsyncInvoker<UpdateJobRequest, UpdateJobResponse> updateJobAsyncInvoker(UpdateJobRequest request) {
+        return new AsyncInvoker<UpdateJobRequest, UpdateJobResponse>(request, EiHealthMeta.updateJob, hcClient);
+    }
+
+    /**
+     * 批量删除标签
+     *
+     * 批量删除标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteLabelRequest 请求对象
+     * @return CompletableFuture<BatchDeleteLabelResponse>
+     */
+    public CompletableFuture<BatchDeleteLabelResponse> batchDeleteLabelAsync(BatchDeleteLabelRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.batchDeleteLabel);
+    }
+
+    /**
+     * 批量删除标签
+     *
+     * 批量删除标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteLabelRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteLabelRequest, BatchDeleteLabelResponse>
+     */
+    public AsyncInvoker<BatchDeleteLabelRequest, BatchDeleteLabelResponse> batchDeleteLabelAsyncInvoker(
+        BatchDeleteLabelRequest request) {
+        return new AsyncInvoker<BatchDeleteLabelRequest, BatchDeleteLabelResponse>(request,
+            EiHealthMeta.batchDeleteLabel, hcClient);
     }
 
     /**
@@ -3947,36 +4333,6 @@ public class EiHealthAsyncClient {
     }
 
     /**
-     * 获取最近的作业列表
-     *
-     * 获取最近的作业列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListRecentJobRequest 请求对象
-     * @return CompletableFuture<ListRecentJobResponse>
-     */
-    public CompletableFuture<ListRecentJobResponse> listRecentJobAsync(ListRecentJobRequest request) {
-        return hcClient.asyncInvokeHttp(request, EiHealthMeta.listRecentJob);
-    }
-
-    /**
-     * 获取最近的作业列表
-     *
-     * 获取最近的作业列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListRecentJobRequest 请求对象
-     * @return AsyncInvoker<ListRecentJobRequest, ListRecentJobResponse>
-     */
-    public AsyncInvoker<ListRecentJobRequest, ListRecentJobResponse> listRecentJobAsyncInvoker(
-        ListRecentJobRequest request) {
-        return new AsyncInvoker<ListRecentJobRequest, ListRecentJobResponse>(request, EiHealthMeta.listRecentJob,
-            hcClient);
-    }
-
-    /**
      * 获取项目详情
      *
      * 获取项目详情
@@ -4244,6 +4600,37 @@ public class EiHealthAsyncClient {
         UpdateProjectTrackerRequest request) {
         return new AsyncInvoker<UpdateProjectTrackerRequest, UpdateProjectTrackerResponse>(request,
             EiHealthMeta.updateProjectTracker, hcClient);
+    }
+
+    /**
+     * 批量获取资源统计数据
+     *
+     * 批量获取资源统计数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDownloadResourceStatDataRequest 请求对象
+     * @return CompletableFuture<BatchDownloadResourceStatDataResponse>
+     */
+    public CompletableFuture<BatchDownloadResourceStatDataResponse> batchDownloadResourceStatDataAsync(
+        BatchDownloadResourceStatDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.batchDownloadResourceStatData);
+    }
+
+    /**
+     * 批量获取资源统计数据
+     *
+     * 批量获取资源统计数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDownloadResourceStatDataRequest 请求对象
+     * @return AsyncInvoker<BatchDownloadResourceStatDataRequest, BatchDownloadResourceStatDataResponse>
+     */
+    public AsyncInvoker<BatchDownloadResourceStatDataRequest, BatchDownloadResourceStatDataResponse> batchDownloadResourceStatDataAsyncInvoker(
+        BatchDownloadResourceStatDataRequest request) {
+        return new AsyncInvoker<BatchDownloadResourceStatDataRequest, BatchDownloadResourceStatDataResponse>(request,
+            EiHealthMeta.batchDownloadResourceStatData, hcClient);
     }
 
     /**
@@ -5014,6 +5401,37 @@ public class EiHealthAsyncClient {
     }
 
     /**
+     * 校验token
+     *
+     * 校验token是否可访问当前环境
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckTokenVerificationRequest 请求对象
+     * @return CompletableFuture<CheckTokenVerificationResponse>
+     */
+    public CompletableFuture<CheckTokenVerificationResponse> checkTokenVerificationAsync(
+        CheckTokenVerificationRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.checkTokenVerification);
+    }
+
+    /**
+     * 校验token
+     *
+     * 校验token是否可访问当前环境
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckTokenVerificationRequest 请求对象
+     * @return AsyncInvoker<CheckTokenVerificationRequest, CheckTokenVerificationResponse>
+     */
+    public AsyncInvoker<CheckTokenVerificationRequest, CheckTokenVerificationResponse> checkTokenVerificationAsyncInvoker(
+        CheckTokenVerificationRequest request) {
+        return new AsyncInvoker<CheckTokenVerificationRequest, CheckTokenVerificationResponse>(request,
+            EiHealthMeta.checkTokenVerification, hcClient);
+    }
+
+    /**
      * 发送验证码
      *
      * 发送验证码
@@ -5151,37 +5569,6 @@ public class EiHealthAsyncClient {
      */
     public AsyncInvoker<ListUserRequest, ListUserResponse> listUserAsyncInvoker(ListUserRequest request) {
         return new AsyncInvoker<ListUserRequest, ListUserResponse>(request, EiHealthMeta.listUser, hcClient);
-    }
-
-    /**
-     * 校验token
-     *
-     * 校验token是否可访问当前环境
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowTokenVerificationRequest 请求对象
-     * @return CompletableFuture<ShowTokenVerificationResponse>
-     */
-    public CompletableFuture<ShowTokenVerificationResponse> showTokenVerificationAsync(
-        ShowTokenVerificationRequest request) {
-        return hcClient.asyncInvokeHttp(request, EiHealthMeta.showTokenVerification);
-    }
-
-    /**
-     * 校验token
-     *
-     * 校验token是否可访问当前环境
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowTokenVerificationRequest 请求对象
-     * @return AsyncInvoker<ShowTokenVerificationRequest, ShowTokenVerificationResponse>
-     */
-    public AsyncInvoker<ShowTokenVerificationRequest, ShowTokenVerificationResponse> showTokenVerificationAsyncInvoker(
-        ShowTokenVerificationRequest request) {
-        return new AsyncInvoker<ShowTokenVerificationRequest, ShowTokenVerificationResponse>(request,
-            EiHealthMeta.showTokenVerification, hcClient);
     }
 
     /**
@@ -5595,6 +5982,36 @@ public class EiHealthAsyncClient {
     public AsyncInvoker<ListWorkflowRequest, ListWorkflowResponse> listWorkflowAsyncInvoker(
         ListWorkflowRequest request) {
         return new AsyncInvoker<ListWorkflowRequest, ListWorkflowResponse>(request, EiHealthMeta.listWorkflow,
+            hcClient);
+    }
+
+    /**
+     * 发布流程
+     *
+     * 发布流程
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishWorkflowRequest 请求对象
+     * @return CompletableFuture<PublishWorkflowResponse>
+     */
+    public CompletableFuture<PublishWorkflowResponse> publishWorkflowAsync(PublishWorkflowRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.publishWorkflow);
+    }
+
+    /**
+     * 发布流程
+     *
+     * 发布流程
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishWorkflowRequest 请求对象
+     * @return AsyncInvoker<PublishWorkflowRequest, PublishWorkflowResponse>
+     */
+    public AsyncInvoker<PublishWorkflowRequest, PublishWorkflowResponse> publishWorkflowAsyncInvoker(
+        PublishWorkflowRequest request) {
+        return new AsyncInvoker<PublishWorkflowRequest, PublishWorkflowResponse>(request, EiHealthMeta.publishWorkflow,
             hcClient);
     }
 

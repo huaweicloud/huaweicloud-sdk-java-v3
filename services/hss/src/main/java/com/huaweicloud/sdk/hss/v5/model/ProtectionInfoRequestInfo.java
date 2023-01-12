@@ -46,7 +46,7 @@ public class ProtectionInfoRequestInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_cycle")
 
-    private UpdateBackupPolicyRequestInfo backupCycle;
+    private UpdateBackupPolicyRequestInfo1 backupCycle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_id_list")
@@ -64,7 +64,7 @@ public class ProtectionInfoRequestInfo {
     }
 
     /**
-     * 操作系统，包含如下：   - Windows : 无需处理   - Linux : 已忽略
+     * 操作系统，包含如下：   - Windows : Windows系统   - Linux : Linux系统
      * @return operatingSystem
      */
     public String getOperatingSystem() {
@@ -81,7 +81,7 @@ public class ProtectionInfoRequestInfo {
     }
 
     /**
-     * 勒索防护是否开启，包含如下：   - closed ：关闭。   - opened ：开启。
+     * 勒索防护是否开启，包含如下：   - closed ：关闭。   - opened ：开启。   若选择开启，protection_policy_id或者create_protection_policy必填一项
      * @return ransomProtectionStatus
      */
     public String getRansomProtectionStatus() {
@@ -98,7 +98,7 @@ public class ProtectionInfoRequestInfo {
     }
 
     /**
-     * 防护策略ID
+     * 防护策略ID,若选择已有策略防护,则该字段必选
      * @return protectionPolicyId
      */
     public String getProtectionPolicyId() {
@@ -142,7 +142,7 @@ public class ProtectionInfoRequestInfo {
     }
 
     /**
-     * 是否服务器备份，包含如下：   - closed ：关闭。   - opened ：开启。
+     * 是否服务器备份，包含如下：   - closed ：关闭。   - opened ：开启。   若选择开启服务器备份，则backup_cycle必填
      * @return backupProtectionStatus
      */
     public String getBackupProtectionStatus() {
@@ -170,14 +170,14 @@ public class ProtectionInfoRequestInfo {
         this.backupPolicyId = backupPolicyId;
     }
 
-    public ProtectionInfoRequestInfo withBackupCycle(UpdateBackupPolicyRequestInfo backupCycle) {
+    public ProtectionInfoRequestInfo withBackupCycle(UpdateBackupPolicyRequestInfo1 backupCycle) {
         this.backupCycle = backupCycle;
         return this;
     }
 
-    public ProtectionInfoRequestInfo withBackupCycle(Consumer<UpdateBackupPolicyRequestInfo> backupCycleSetter) {
+    public ProtectionInfoRequestInfo withBackupCycle(Consumer<UpdateBackupPolicyRequestInfo1> backupCycleSetter) {
         if (this.backupCycle == null) {
-            this.backupCycle = new UpdateBackupPolicyRequestInfo();
+            this.backupCycle = new UpdateBackupPolicyRequestInfo1();
             backupCycleSetter.accept(this.backupCycle);
         }
 
@@ -188,11 +188,11 @@ public class ProtectionInfoRequestInfo {
      * Get backupCycle
      * @return backupCycle
      */
-    public UpdateBackupPolicyRequestInfo getBackupCycle() {
+    public UpdateBackupPolicyRequestInfo1 getBackupCycle() {
         return backupCycle;
     }
 
-    public void setBackupCycle(UpdateBackupPolicyRequestInfo backupCycle) {
+    public void setBackupCycle(UpdateBackupPolicyRequestInfo1 backupCycle) {
         this.backupCycle = backupCycle;
     }
 

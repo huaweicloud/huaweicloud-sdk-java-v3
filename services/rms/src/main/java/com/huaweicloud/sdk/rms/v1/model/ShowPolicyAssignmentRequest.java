@@ -11,9 +11,33 @@ import java.util.Objects;
 public class ShowPolicyAssignmentRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Auth-Token")
+
+    private String xAuthToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_assignment_id")
 
     private String policyAssignmentId;
+
+    public ShowPolicyAssignmentRequest withXAuthToken(String xAuthToken) {
+        this.xAuthToken = xAuthToken;
+        return this;
+    }
+
+    /**
+     * 用户Token。 获取Token，请参考《统一身份认证服务API参考》的“获取用户Token”章节。请求响应成功后在响应消息头中包含的“X-Subject-Token”的值即为Token值。
+     * @return xAuthToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Auth-Token")
+    public String getXAuthToken() {
+        return xAuthToken;
+    }
+
+    public void setXAuthToken(String xAuthToken) {
+        this.xAuthToken = xAuthToken;
+    }
 
     public ShowPolicyAssignmentRequest withPolicyAssignmentId(String policyAssignmentId) {
         this.policyAssignmentId = policyAssignmentId;
@@ -41,18 +65,20 @@ public class ShowPolicyAssignmentRequest {
             return false;
         }
         ShowPolicyAssignmentRequest showPolicyAssignmentRequest = (ShowPolicyAssignmentRequest) o;
-        return Objects.equals(this.policyAssignmentId, showPolicyAssignmentRequest.policyAssignmentId);
+        return Objects.equals(this.xAuthToken, showPolicyAssignmentRequest.xAuthToken)
+            && Objects.equals(this.policyAssignmentId, showPolicyAssignmentRequest.policyAssignmentId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyAssignmentId);
+        return Objects.hash(xAuthToken, policyAssignmentId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowPolicyAssignmentRequest {\n");
+        sb.append("    xAuthToken: ").append(toIndentedString(xAuthToken)).append("\n");
         sb.append("    policyAssignmentId: ").append(toIndentedString(policyAssignmentId)).append("\n");
         sb.append("}");
         return sb.toString();

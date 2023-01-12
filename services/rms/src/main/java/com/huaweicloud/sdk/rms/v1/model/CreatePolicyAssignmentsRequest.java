@@ -12,9 +12,33 @@ import java.util.function.Consumer;
 public class CreatePolicyAssignmentsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Auth-Token")
+
+    private String xAuthToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private PolicyAssignmentRequestBody body;
+
+    public CreatePolicyAssignmentsRequest withXAuthToken(String xAuthToken) {
+        this.xAuthToken = xAuthToken;
+        return this;
+    }
+
+    /**
+     * 用户Token。 获取Token，请参考《统一身份认证服务API参考》的“获取用户Token”章节。请求响应成功后在响应消息头中包含的“X-Subject-Token”的值即为Token值。
+     * @return xAuthToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Auth-Token")
+    public String getXAuthToken() {
+        return xAuthToken;
+    }
+
+    public void setXAuthToken(String xAuthToken) {
+        this.xAuthToken = xAuthToken;
+    }
 
     public CreatePolicyAssignmentsRequest withBody(PolicyAssignmentRequestBody body) {
         this.body = body;
@@ -51,18 +75,20 @@ public class CreatePolicyAssignmentsRequest {
             return false;
         }
         CreatePolicyAssignmentsRequest createPolicyAssignmentsRequest = (CreatePolicyAssignmentsRequest) o;
-        return Objects.equals(this.body, createPolicyAssignmentsRequest.body);
+        return Objects.equals(this.xAuthToken, createPolicyAssignmentsRequest.xAuthToken)
+            && Objects.equals(this.body, createPolicyAssignmentsRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(xAuthToken, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreatePolicyAssignmentsRequest {\n");
+        sb.append("    xAuthToken: ").append(toIndentedString(xAuthToken)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

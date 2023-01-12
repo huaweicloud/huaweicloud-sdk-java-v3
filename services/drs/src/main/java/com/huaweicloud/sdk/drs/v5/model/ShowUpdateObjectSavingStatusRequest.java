@@ -31,7 +31,7 @@ public class ShowUpdateObjectSavingStatusRequest {
     }
 
     /**
-     * 任务id
+     * 任务ID。
      * @return jobId
      */
     public String getJobId() {
@@ -48,7 +48,7 @@ public class ShowUpdateObjectSavingStatusRequest {
     }
 
     /**
-     * 请求语言类型
+     * 请求语言类型。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,7 +67,7 @@ public class ShowUpdateObjectSavingStatusRequest {
     }
 
     /**
-     * 指保存对象接口返回的id
+     * 保存对象接口返回的ID。
      * @return queryId
      */
     public String getQueryId() {

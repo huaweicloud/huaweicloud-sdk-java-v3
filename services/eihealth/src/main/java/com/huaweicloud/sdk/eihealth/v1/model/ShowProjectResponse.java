@@ -89,6 +89,11 @@ public class ShowProjectResponse extends SdkResponse {
 
     private Boolean isCore;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "storage_quota")
+
+    private Long storageQuota;
+
     public ShowProjectResponse withId(String id) {
         this.id = id;
         return this;
@@ -376,6 +381,23 @@ public class ShowProjectResponse extends SdkResponse {
         this.isCore = isCore;
     }
 
+    public ShowProjectResponse withStorageQuota(Long storageQuota) {
+        this.storageQuota = storageQuota;
+        return this;
+    }
+
+    /**
+     * 项目数据容量配额，-1表示无容量限制
+     * @return storageQuota
+     */
+    public Long getStorageQuota() {
+        return storageQuota;
+    }
+
+    public void setStorageQuota(Long storageQuota) {
+        this.storageQuota = storageQuota;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -398,7 +420,8 @@ public class ShowProjectResponse extends SdkResponse {
             && Objects.equals(this.createTime, showProjectResponse.createTime)
             && Objects.equals(this.updateTime, showProjectResponse.updateTime)
             && Objects.equals(this.deleteTime, showProjectResponse.deleteTime)
-            && Objects.equals(this.isCore, showProjectResponse.isCore);
+            && Objects.equals(this.isCore, showProjectResponse.isCore)
+            && Objects.equals(this.storageQuota, showProjectResponse.storageQuota);
     }
 
     @Override
@@ -417,7 +440,8 @@ public class ShowProjectResponse extends SdkResponse {
             createTime,
             updateTime,
             deleteTime,
-            isCore);
+            isCore,
+            storageQuota);
     }
 
     @Override
@@ -439,6 +463,7 @@ public class ShowProjectResponse extends SdkResponse {
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    deleteTime: ").append(toIndentedString(deleteTime)).append("\n");
         sb.append("    isCore: ").append(toIndentedString(isCore)).append("\n");
+        sb.append("    storageQuota: ").append(toIndentedString(storageQuota)).append("\n");
         sb.append("}");
         return sb.toString();
     }

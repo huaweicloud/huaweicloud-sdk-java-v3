@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * MicroServiceInfoCCECreate
+ * CCE云容器引擎详细信息，service_type为CCE时必填
  */
 public class MicroServiceInfoCCECreate {
 

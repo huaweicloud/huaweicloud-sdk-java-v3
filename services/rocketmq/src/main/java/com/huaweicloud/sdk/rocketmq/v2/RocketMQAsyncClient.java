@@ -884,6 +884,37 @@ public class RocketMQAsyncClient {
     }
 
     /**
+     * 查询主题列表
+     *
+     * 该接口用于查询指定RocketMQ实例的Topic列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRocketInstanceTopicsRequest 请求对象
+     * @return CompletableFuture<ListRocketInstanceTopicsResponse>
+     */
+    public CompletableFuture<ListRocketInstanceTopicsResponse> listRocketInstanceTopicsAsync(
+        ListRocketInstanceTopicsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.listRocketInstanceTopics);
+    }
+
+    /**
+     * 查询主题列表
+     *
+     * 该接口用于查询指定RocketMQ实例的Topic列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRocketInstanceTopicsRequest 请求对象
+     * @return AsyncInvoker<ListRocketInstanceTopicsRequest, ListRocketInstanceTopicsResponse>
+     */
+    public AsyncInvoker<ListRocketInstanceTopicsRequest, ListRocketInstanceTopicsResponse> listRocketInstanceTopicsAsyncInvoker(
+        ListRocketInstanceTopicsRequest request) {
+        return new AsyncInvoker<ListRocketInstanceTopicsRequest, ListRocketInstanceTopicsResponse>(request,
+            RocketMQMeta.listRocketInstanceTopics, hcClient);
+    }
+
+    /**
      * 查询单个主题
      *
      * 查询单个主题。

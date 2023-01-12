@@ -50,14 +50,9 @@ public class ShowAssetResponse extends SdkResponse {
     private String vendorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "latest_version")
-
-    private VersionRsp latestVersion;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "versions")
 
-    private List<String> versions = null;
+    private List<VersionRsp> versions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -214,38 +209,12 @@ public class ShowAssetResponse extends SdkResponse {
         this.vendorId = vendorId;
     }
 
-    public ShowAssetResponse withLatestVersion(VersionRsp latestVersion) {
-        this.latestVersion = latestVersion;
-        return this;
-    }
-
-    public ShowAssetResponse withLatestVersion(Consumer<VersionRsp> latestVersionSetter) {
-        if (this.latestVersion == null) {
-            this.latestVersion = new VersionRsp();
-            latestVersionSetter.accept(this.latestVersion);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get latestVersion
-     * @return latestVersion
-     */
-    public VersionRsp getLatestVersion() {
-        return latestVersion;
-    }
-
-    public void setLatestVersion(VersionRsp latestVersion) {
-        this.latestVersion = latestVersion;
-    }
-
-    public ShowAssetResponse withVersions(List<String> versions) {
+    public ShowAssetResponse withVersions(List<VersionRsp> versions) {
         this.versions = versions;
         return this;
     }
 
-    public ShowAssetResponse addVersionsItem(String versionsItem) {
+    public ShowAssetResponse addVersionsItem(VersionRsp versionsItem) {
         if (this.versions == null) {
             this.versions = new ArrayList<>();
         }
@@ -253,7 +222,7 @@ public class ShowAssetResponse extends SdkResponse {
         return this;
     }
 
-    public ShowAssetResponse withVersions(Consumer<List<String>> versionsSetter) {
+    public ShowAssetResponse withVersions(Consumer<List<VersionRsp>> versionsSetter) {
         if (this.versions == null) {
             this.versions = new ArrayList<>();
         }
@@ -265,11 +234,11 @@ public class ShowAssetResponse extends SdkResponse {
      * 资产版本号列表
      * @return versions
      */
-    public List<String> getVersions() {
+    public List<VersionRsp> getVersions() {
         return versions;
     }
 
-    public void setVersions(List<String> versions) {
+    public void setVersions(List<VersionRsp> versions) {
         this.versions = versions;
     }
 
@@ -356,7 +325,6 @@ public class ShowAssetResponse extends SdkResponse {
             && Objects.equals(this.labels, showAssetResponse.labels)
             && Objects.equals(this.picture, showAssetResponse.picture)
             && Objects.equals(this.vendorId, showAssetResponse.vendorId)
-            && Objects.equals(this.latestVersion, showAssetResponse.latestVersion)
             && Objects.equals(this.versions, showAssetResponse.versions)
             && Objects.equals(this.createTime, showAssetResponse.createTime)
             && Objects.equals(this.updateTime, showAssetResponse.updateTime)
@@ -373,7 +341,6 @@ public class ShowAssetResponse extends SdkResponse {
             labels,
             picture,
             vendorId,
-            latestVersion,
             versions,
             createTime,
             updateTime,
@@ -392,7 +359,6 @@ public class ShowAssetResponse extends SdkResponse {
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    picture: ").append(toIndentedString(picture)).append("\n");
         sb.append("    vendorId: ").append(toIndentedString(vendorId)).append("\n");
-        sb.append("    latestVersion: ").append(toIndentedString(latestVersion)).append("\n");
         sb.append("    versions: ").append(toIndentedString(versions)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

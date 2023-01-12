@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 策略属性
+ * 调度参数
  */
 public class OperationDefinitionRequestInfo {
 
@@ -71,8 +71,8 @@ public class OperationDefinitionRequestInfo {
 
     /**
      * 单个备份对象自动备份的最大备份数。取值为-1或0-99999。-1代表不按备份数清理。若该字段和retention_duration_days字段同时为空，备份会永久保留。最小值：1,最大值：99999,缺省值：-1
-     * minimum: 0
-     * maximum: 100
+     * minimum: -1
+     * maximum: 99999
      * @return maxBackups
      */
     public Integer getMaxBackups() {
@@ -109,7 +109,7 @@ public class OperationDefinitionRequestInfo {
 
     /**
      * 备份保留时长，单位天。最长支持99999天。-1代表不按时间清理。若该字段和max_backups 参数同时为空，备份会永久保留。最小值：1, 最大值：99999, 缺省值：-1
-     * minimum: 1
+     * minimum: -1
      * maximum: 99999
      * @return retentionDurationDays
      */

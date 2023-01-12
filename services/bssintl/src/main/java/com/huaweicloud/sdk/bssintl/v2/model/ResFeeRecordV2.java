@@ -255,6 +255,36 @@ public class ResFeeRecordV2 {
 
     private String formula;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_service_type_code")
+
+    private String subServiceTypeCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_service_type_name")
+
+    private String subServiceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_resource_type_code")
+
+    private String subResourceTypeCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_resource_type_name")
+
+    private String subResourceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_resource_id")
+
+    private String subResourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_resource_name")
+
+    private String subResourceName;
+
     public ResFeeRecordV2 withBillDate(String billDate) {
         this.billDate = billDate;
         return this;
@@ -1088,6 +1118,108 @@ public class ResFeeRecordV2 {
         this.formula = formula;
     }
 
+    public ResFeeRecordV2 withSubServiceTypeCode(String subServiceTypeCode) {
+        this.subServiceTypeCode = subServiceTypeCode;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段。
+     * @return subServiceTypeCode
+     */
+    public String getSubServiceTypeCode() {
+        return subServiceTypeCode;
+    }
+
+    public void setSubServiceTypeCode(String subServiceTypeCode) {
+        this.subServiceTypeCode = subServiceTypeCode;
+    }
+
+    public ResFeeRecordV2 withSubServiceTypeName(String subServiceTypeName) {
+        this.subServiceTypeName = subServiceTypeName;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段。
+     * @return subServiceTypeName
+     */
+    public String getSubServiceTypeName() {
+        return subServiceTypeName;
+    }
+
+    public void setSubServiceTypeName(String subServiceTypeName) {
+        this.subServiceTypeName = subServiceTypeName;
+    }
+
+    public ResFeeRecordV2 withSubResourceTypeCode(String subResourceTypeCode) {
+        this.subResourceTypeCode = subResourceTypeCode;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段。
+     * @return subResourceTypeCode
+     */
+    public String getSubResourceTypeCode() {
+        return subResourceTypeCode;
+    }
+
+    public void setSubResourceTypeCode(String subResourceTypeCode) {
+        this.subResourceTypeCode = subResourceTypeCode;
+    }
+
+    public ResFeeRecordV2 withSubResourceTypeName(String subResourceTypeName) {
+        this.subResourceTypeName = subResourceTypeName;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段。
+     * @return subResourceTypeName
+     */
+    public String getSubResourceTypeName() {
+        return subResourceTypeName;
+    }
+
+    public void setSubResourceTypeName(String subResourceTypeName) {
+        this.subResourceTypeName = subResourceTypeName;
+    }
+
+    public ResFeeRecordV2 withSubResourceId(String subResourceId) {
+        this.subResourceId = subResourceId;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段。
+     * @return subResourceId
+     */
+    public String getSubResourceId() {
+        return subResourceId;
+    }
+
+    public void setSubResourceId(String subResourceId) {
+        this.subResourceId = subResourceId;
+    }
+
+    public ResFeeRecordV2 withSubResourceName(String subResourceName) {
+        this.subResourceName = subResourceName;
+        return this;
+    }
+
+    /**
+     * 该字段为预留字段。
+     * @return subResourceName
+     */
+    public String getSubResourceName() {
+        return subResourceName;
+    }
+
+    public void setSubResourceName(String subResourceName) {
+        this.subResourceName = subResourceName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1145,7 +1277,13 @@ public class ResFeeRecordV2 {
             && Objects.equals(this.debtAmount, resFeeRecordV2.debtAmount)
             && Objects.equals(this.adjustmentAmount, resFeeRecordV2.adjustmentAmount)
             && Objects.equals(this.measureId, resFeeRecordV2.measureId)
-            && Objects.equals(this.formula, resFeeRecordV2.formula);
+            && Objects.equals(this.formula, resFeeRecordV2.formula)
+            && Objects.equals(this.subServiceTypeCode, resFeeRecordV2.subServiceTypeCode)
+            && Objects.equals(this.subServiceTypeName, resFeeRecordV2.subServiceTypeName)
+            && Objects.equals(this.subResourceTypeCode, resFeeRecordV2.subResourceTypeCode)
+            && Objects.equals(this.subResourceTypeName, resFeeRecordV2.subResourceTypeName)
+            && Objects.equals(this.subResourceId, resFeeRecordV2.subResourceId)
+            && Objects.equals(this.subResourceName, resFeeRecordV2.subResourceName);
     }
 
     @Override
@@ -1198,7 +1336,13 @@ public class ResFeeRecordV2 {
             debtAmount,
             adjustmentAmount,
             measureId,
-            formula);
+            formula,
+            subServiceTypeCode,
+            subServiceTypeName,
+            subResourceTypeCode,
+            subResourceTypeName,
+            subResourceId,
+            subResourceName);
     }
 
     @Override
@@ -1254,6 +1398,12 @@ public class ResFeeRecordV2 {
         sb.append("    adjustmentAmount: ").append(toIndentedString(adjustmentAmount)).append("\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
         sb.append("    formula: ").append(toIndentedString(formula)).append("\n");
+        sb.append("    subServiceTypeCode: ").append(toIndentedString(subServiceTypeCode)).append("\n");
+        sb.append("    subServiceTypeName: ").append(toIndentedString(subServiceTypeName)).append("\n");
+        sb.append("    subResourceTypeCode: ").append(toIndentedString(subResourceTypeCode)).append("\n");
+        sb.append("    subResourceTypeName: ").append(toIndentedString(subResourceTypeName)).append("\n");
+        sb.append("    subResourceId: ").append(toIndentedString(subResourceId)).append("\n");
+        sb.append("    subResourceName: ").append(toIndentedString(subResourceName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

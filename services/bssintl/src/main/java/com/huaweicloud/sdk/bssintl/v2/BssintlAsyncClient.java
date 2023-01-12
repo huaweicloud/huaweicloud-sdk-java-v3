@@ -569,6 +569,37 @@ public class BssintlAsyncClient {
     }
 
     /**
+     * 查询资源包使用明细
+     *
+     * 客户在自建平台查询资源包使用明细。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFreeResourcesUsageRecordsRequest 请求对象
+     * @return CompletableFuture<ListFreeResourcesUsageRecordsResponse>
+     */
+    public CompletableFuture<ListFreeResourcesUsageRecordsResponse> listFreeResourcesUsageRecordsAsync(
+        ListFreeResourcesUsageRecordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssintlMeta.listFreeResourcesUsageRecords);
+    }
+
+    /**
+     * 查询资源包使用明细
+     *
+     * 客户在自建平台查询资源包使用明细。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFreeResourcesUsageRecordsRequest 请求对象
+     * @return AsyncInvoker<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse>
+     */
+    public AsyncInvoker<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse> listFreeResourcesUsageRecordsAsyncInvoker(
+        ListFreeResourcesUsageRecordsRequest request) {
+        return new AsyncInvoker<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse>(request,
+            BssintlMeta.listFreeResourcesUsageRecords, hcClient);
+    }
+
+    /**
      * 查询云经销商列表
      *
      * 华为云总经销商（一级经销商）可以查询云经销商（二级经销商）列表。

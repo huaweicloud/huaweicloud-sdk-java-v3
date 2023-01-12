@@ -432,9 +432,9 @@ public class DrsClient {
     }
 
     /**
-     * 获取数据库对象信息的结果
+     * 获取提交查询数据库对象信息的结果
      *
-     * 获取数据库对象信息的结果
+     * 获取提交查询数据库对象信息的结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -447,9 +447,9 @@ public class DrsClient {
     }
 
     /**
-     * 获取数据库对象信息的结果
+     * 获取提交查询数据库对象信息的结果
      *
-     * 获取数据库对象信息的结果
+     * 获取提交查询数据库对象信息的结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

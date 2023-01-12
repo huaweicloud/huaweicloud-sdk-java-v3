@@ -36,9 +36,14 @@ public class EventDetailRequestInfo {
     private String fileAttr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
+    @JsonProperty(value = "keyword")
 
-    private String description;
+    private String keyword;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hash")
+
+    private String hash;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_ip")
@@ -142,21 +147,38 @@ public class EventDetailRequestInfo {
         this.fileAttr = fileAttr;
     }
 
-    public EventDetailRequestInfo withDescription(String description) {
-        this.description = description;
+    public EventDetailRequestInfo withKeyword(String keyword) {
+        this.keyword = keyword;
         return this;
     }
 
     /**
-     * 描述信息
-     * @return description
+     * 告警事件关键字，仅用于告警白名单
+     * @return keyword
      */
-    public String getDescription() {
-        return description;
+    public String getKeyword() {
+        return keyword;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
+    public EventDetailRequestInfo withHash(String hash) {
+        this.hash = hash;
+        return this;
+    }
+
+    /**
+     * 告警事件hash，仅用于告警白名单
+     * @return hash
+     */
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
     }
 
     public EventDetailRequestInfo withPrivateIp(String privateIp) {
@@ -224,7 +246,8 @@ public class EventDetailRequestInfo {
             && Objects.equals(this.fileHash, eventDetailRequestInfo.fileHash)
             && Objects.equals(this.filePath, eventDetailRequestInfo.filePath)
             && Objects.equals(this.fileAttr, eventDetailRequestInfo.fileAttr)
-            && Objects.equals(this.description, eventDetailRequestInfo.description)
+            && Objects.equals(this.keyword, eventDetailRequestInfo.keyword)
+            && Objects.equals(this.hash, eventDetailRequestInfo.hash)
             && Objects.equals(this.privateIp, eventDetailRequestInfo.privateIp)
             && Objects.equals(this.loginIp, eventDetailRequestInfo.loginIp)
             && Objects.equals(this.loginUserName, eventDetailRequestInfo.loginUserName);
@@ -233,7 +256,7 @@ public class EventDetailRequestInfo {
     @Override
     public int hashCode() {
         return Objects
-            .hash(agentId, processPid, fileHash, filePath, fileAttr, description, privateIp, loginIp, loginUserName);
+            .hash(agentId, processPid, fileHash, filePath, fileAttr, keyword, hash, privateIp, loginIp, loginUserName);
     }
 
     @Override
@@ -245,7 +268,8 @@ public class EventDetailRequestInfo {
         sb.append("    fileHash: ").append(toIndentedString(fileHash)).append("\n");
         sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
         sb.append("    fileAttr: ").append(toIndentedString(fileAttr)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    keyword: ").append(toIndentedString(keyword)).append("\n");
+        sb.append("    hash: ").append(toIndentedString(hash)).append("\n");
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("    loginIp: ").append(toIndentedString(loginIp)).append("\n");
         sb.append("    loginUserName: ").append(toIndentedString(loginUserName)).append("\n");

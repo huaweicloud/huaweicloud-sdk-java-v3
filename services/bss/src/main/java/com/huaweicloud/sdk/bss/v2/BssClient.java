@@ -1158,6 +1158,37 @@ public class BssClient {
     }
 
     /**
+     * 查询资源包使用明细
+     *
+     * 客户在自建平台查询资源包使用明细。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFreeResourcesUsageRecordsRequest 请求对象
+     * @return ListFreeResourcesUsageRecordsResponse
+     */
+    public ListFreeResourcesUsageRecordsResponse listFreeResourcesUsageRecords(
+        ListFreeResourcesUsageRecordsRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listFreeResourcesUsageRecords);
+    }
+
+    /**
+     * 查询资源包使用明细
+     *
+     * 客户在自建平台查询资源包使用明细。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFreeResourcesUsageRecordsRequest 请求对象
+     * @return SyncInvoker<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse>
+     */
+    public SyncInvoker<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse> listFreeResourcesUsageRecordsInvoker(
+        ListFreeResourcesUsageRecordsRequest request) {
+        return new SyncInvoker<ListFreeResourcesUsageRecordsRequest, ListFreeResourcesUsageRecordsResponse>(request,
+            BssMeta.listFreeResourcesUsageRecords, hcClient);
+    }
+
+    /**
      * 查询产品的折扣和激励策略
      *
      * 伙伴在伙伴销售平台上查询产品的折扣和激励策略。

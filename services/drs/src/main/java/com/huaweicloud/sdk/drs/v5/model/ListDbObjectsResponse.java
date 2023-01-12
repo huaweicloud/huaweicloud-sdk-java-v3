@@ -125,6 +125,11 @@ public class ListDbObjectsResponse extends SdkResponse {
 
     private String id;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "object_scope")
+
+    private String objectScope;
+
     public ListDbObjectsResponse withTargetRootDb(TargetRootDb targetRootDb) {
         this.targetRootDb = targetRootDb;
         return this;
@@ -235,6 +240,23 @@ public class ListDbObjectsResponse extends SdkResponse {
         this.id = id;
     }
 
+    public ListDbObjectsResponse withObjectScope(String objectScope) {
+        this.objectScope = objectScope;
+        return this;
+    }
+
+    /**
+     * 该数据库在实时同步场景下的类型
+     * @return objectScope
+     */
+    public String getObjectScope() {
+        return objectScope;
+    }
+
+    public void setObjectScope(String objectScope) {
+        this.objectScope = objectScope;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -248,12 +270,13 @@ public class ListDbObjectsResponse extends SdkResponse {
             && Objects.equals(this.objectInfo, listDbObjectsResponse.objectInfo)
             && Objects.equals(this.maxTableNum, listDbObjectsResponse.maxTableNum)
             && Objects.equals(this.status, listDbObjectsResponse.status)
-            && Objects.equals(this.id, listDbObjectsResponse.id);
+            && Objects.equals(this.id, listDbObjectsResponse.id)
+            && Objects.equals(this.objectScope, listDbObjectsResponse.objectScope);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(targetRootDb, objectInfo, maxTableNum, status, id);
+        return Objects.hash(targetRootDb, objectInfo, maxTableNum, status, id, objectScope);
     }
 
     @Override
@@ -265,6 +288,7 @@ public class ListDbObjectsResponse extends SdkResponse {
         sb.append("    maxTableNum: ").append(toIndentedString(maxTableNum)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    objectScope: ").append(toIndentedString(objectScope)).append("\n");
         sb.append("}");
         return sb.toString();
     }

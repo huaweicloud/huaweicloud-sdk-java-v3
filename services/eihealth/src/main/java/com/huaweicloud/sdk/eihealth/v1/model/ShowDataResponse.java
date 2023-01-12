@@ -46,6 +46,11 @@ public class ShowDataResponse extends SdkResponse {
 
     private Boolean allowedOperate;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deletable")
+
+    private Boolean deletable;
+
     public ShowDataResponse withPath(String path) {
         this.path = path;
         return this;
@@ -165,6 +170,23 @@ public class ShowDataResponse extends SdkResponse {
         this.allowedOperate = allowedOperate;
     }
 
+    public ShowDataResponse withDeletable(Boolean deletable) {
+        this.deletable = deletable;
+        return this;
+    }
+
+    /**
+     * 可删除标记
+     * @return deletable
+     */
+    public Boolean getDeletable() {
+        return deletable;
+    }
+
+    public void setDeletable(Boolean deletable) {
+        this.deletable = deletable;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -178,12 +200,13 @@ public class ShowDataResponse extends SdkResponse {
             && Objects.equals(this.type, showDataResponse.type) && Objects.equals(this.size, showDataResponse.size)
             && Objects.equals(this.createTime, showDataResponse.createTime)
             && Objects.equals(this.downloadUrl, showDataResponse.downloadUrl)
-            && Objects.equals(this.allowedOperate, showDataResponse.allowedOperate);
+            && Objects.equals(this.allowedOperate, showDataResponse.allowedOperate)
+            && Objects.equals(this.deletable, showDataResponse.deletable);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(path, name, type, size, createTime, downloadUrl, allowedOperate);
+        return Objects.hash(path, name, type, size, createTime, downloadUrl, allowedOperate, deletable);
     }
 
     @Override
@@ -197,6 +220,7 @@ public class ShowDataResponse extends SdkResponse {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
         sb.append("    allowedOperate: ").append(toIndentedString(allowedOperate)).append("\n");
+        sb.append("    deletable: ").append(toIndentedString(deletable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

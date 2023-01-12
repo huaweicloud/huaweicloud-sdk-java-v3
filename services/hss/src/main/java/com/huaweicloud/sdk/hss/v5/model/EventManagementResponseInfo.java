@@ -74,6 +74,26 @@ public class EventManagementResponseInfo {
     private String osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_status")
+
+    private String hostStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_status")
+
+    private String agentStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protect_status")
+
+    private String protectStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asset_value")
+
+    private String assetValue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attack_phase")
 
     private String attackPhase;
@@ -387,6 +407,74 @@ public class EventManagementResponseInfo {
 
     public void setOsType(String osType) {
         this.osType = osType;
+    }
+
+    public EventManagementResponseInfo withHostStatus(String hostStatus) {
+        this.hostStatus = hostStatus;
+        return this;
+    }
+
+    /**
+     * 服务器状态，包含如下4种。   - ACTIVE ：运行中。   - SHUTOFF ：关机。   - BUILDING ：创建中。   - ERROR ：故障。
+     * @return hostStatus
+     */
+    public String getHostStatus() {
+        return hostStatus;
+    }
+
+    public void setHostStatus(String hostStatus) {
+        this.hostStatus = hostStatus;
+    }
+
+    public EventManagementResponseInfo withAgentStatus(String agentStatus) {
+        this.agentStatus = agentStatus;
+        return this;
+    }
+
+    /**
+     * Agent状态，包含如下5种。   - installed ：已安装。   - not_installed ：未安装。   - online ：在线。   - offline ：离线。   - install_failed ：安装失败。   - installing ：安装中。
+     * @return agentStatus
+     */
+    public String getAgentStatus() {
+        return agentStatus;
+    }
+
+    public void setAgentStatus(String agentStatus) {
+        this.agentStatus = agentStatus;
+    }
+
+    public EventManagementResponseInfo withProtectStatus(String protectStatus) {
+        this.protectStatus = protectStatus;
+        return this;
+    }
+
+    /**
+     * 防护状态，包含如下2种。 - closed ：未防护。 - opened ：防护中。
+     * @return protectStatus
+     */
+    public String getProtectStatus() {
+        return protectStatus;
+    }
+
+    public void setProtectStatus(String protectStatus) {
+        this.protectStatus = protectStatus;
+    }
+
+    public EventManagementResponseInfo withAssetValue(String assetValue) {
+        this.assetValue = assetValue;
+        return this;
+    }
+
+    /**
+     * 资产重要性，包含如下4种   - important ：重要资产   - common ：一般资产   - test ：测试资产
+     * @return assetValue
+     */
+    public String getAssetValue() {
+        return assetValue;
+    }
+
+    public void setAssetValue(String assetValue) {
+        this.assetValue = assetValue;
     }
 
     public EventManagementResponseInfo withAttackPhase(String attackPhase) {
@@ -879,6 +967,10 @@ public class EventManagementResponseInfo {
             && Objects.equals(this.privateIp, eventManagementResponseInfo.privateIp)
             && Objects.equals(this.publicIp, eventManagementResponseInfo.publicIp)
             && Objects.equals(this.osType, eventManagementResponseInfo.osType)
+            && Objects.equals(this.hostStatus, eventManagementResponseInfo.hostStatus)
+            && Objects.equals(this.agentStatus, eventManagementResponseInfo.agentStatus)
+            && Objects.equals(this.protectStatus, eventManagementResponseInfo.protectStatus)
+            && Objects.equals(this.assetValue, eventManagementResponseInfo.assetValue)
             && Objects.equals(this.attackPhase, eventManagementResponseInfo.attackPhase)
             && Objects.equals(this.attackTag, eventManagementResponseInfo.attackTag)
             && Objects.equals(this.occurTime, eventManagementResponseInfo.occurTime)
@@ -917,6 +1009,10 @@ public class EventManagementResponseInfo {
             privateIp,
             publicIp,
             osType,
+            hostStatus,
+            agentStatus,
+            protectStatus,
+            assetValue,
             attackPhase,
             attackTag,
             occurTime,
@@ -957,6 +1053,10 @@ public class EventManagementResponseInfo {
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
+        sb.append("    hostStatus: ").append(toIndentedString(hostStatus)).append("\n");
+        sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
+        sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
+        sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    attackPhase: ").append(toIndentedString(attackPhase)).append("\n");
         sb.append("    attackTag: ").append(toIndentedString(attackTag)).append("\n");
         sb.append("    occurTime: ").append(toIndentedString(occurTime)).append("\n");

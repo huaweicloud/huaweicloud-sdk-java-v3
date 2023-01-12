@@ -37,7 +37,7 @@ public class UpdateBackupPolicyRequestInfo {
     }
 
     /**
-     * 策略是否启用
+     * 策略是否启用，缺省值：true
      * @return enabled
      */
     public Boolean getEnabled() {

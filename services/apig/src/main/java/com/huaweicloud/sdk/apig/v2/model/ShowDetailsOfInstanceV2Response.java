@@ -955,6 +955,11 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     private Integer bandwidthSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bandwidth_charging_mode")
+
+    private String bandwidthChargingMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_zone_ids")
 
     private String availableZoneIds;
@@ -1013,6 +1018,11 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     @JsonProperty(value = "is_releasable")
 
     private Boolean isReleasable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ingress_bandwidth_charging_mode")
+
+    private String ingressBandwidthChargingMode;
 
     public ShowDetailsOfInstanceV2Response withId(String id) {
         this.id = id;
@@ -1456,6 +1466,23 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.bandwidthSize = bandwidthSize;
     }
 
+    public ShowDetailsOfInstanceV2Response withBandwidthChargingMode(String bandwidthChargingMode) {
+        this.bandwidthChargingMode = bandwidthChargingMode;
+        return this;
+    }
+
+    /**
+     * 出公网带宽计费模式
+     * @return bandwidthChargingMode
+     */
+    public String getBandwidthChargingMode() {
+        return bandwidthChargingMode;
+    }
+
+    public void setBandwidthChargingMode(String bandwidthChargingMode) {
+        this.bandwidthChargingMode = bandwidthChargingMode;
+    }
+
     public ShowDetailsOfInstanceV2Response withAvailableZoneIds(String availableZoneIds) {
         this.availableZoneIds = availableZoneIds;
         return this;
@@ -1743,6 +1770,23 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.isReleasable = isReleasable;
     }
 
+    public ShowDetailsOfInstanceV2Response withIngressBandwidthChargingMode(String ingressBandwidthChargingMode) {
+        this.ingressBandwidthChargingMode = ingressBandwidthChargingMode;
+        return this;
+    }
+
+    /**
+     * 入公网带宽计费模式
+     * @return ingressBandwidthChargingMode
+     */
+    public String getIngressBandwidthChargingMode() {
+        return ingressBandwidthChargingMode;
+    }
+
+    public void setIngressBandwidthChargingMode(String ingressBandwidthChargingMode) {
+        this.ingressBandwidthChargingMode = ingressBandwidthChargingMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1778,6 +1822,7 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
             && Objects.equals(this.eipIpv6Address, showDetailsOfInstanceV2Response.eipIpv6Address)
             && Objects.equals(this.natEipAddress, showDetailsOfInstanceV2Response.natEipAddress)
             && Objects.equals(this.bandwidthSize, showDetailsOfInstanceV2Response.bandwidthSize)
+            && Objects.equals(this.bandwidthChargingMode, showDetailsOfInstanceV2Response.bandwidthChargingMode)
             && Objects.equals(this.availableZoneIds, showDetailsOfInstanceV2Response.availableZoneIds)
             && Objects.equals(this.instanceVersion, showDetailsOfInstanceV2Response.instanceVersion)
             && Objects.equals(this.virsubnetId, showDetailsOfInstanceV2Response.virsubnetId)
@@ -1789,7 +1834,9 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
             && Objects.equals(this.nodeIps, showDetailsOfInstanceV2Response.nodeIps)
             && Objects.equals(this.publicips, showDetailsOfInstanceV2Response.publicips)
             && Objects.equals(this.privateips, showDetailsOfInstanceV2Response.privateips)
-            && Objects.equals(this.isReleasable, showDetailsOfInstanceV2Response.isReleasable);
+            && Objects.equals(this.isReleasable, showDetailsOfInstanceV2Response.isReleasable)
+            && Objects.equals(this.ingressBandwidthChargingMode,
+                showDetailsOfInstanceV2Response.ingressBandwidthChargingMode);
     }
 
     @Override
@@ -1820,6 +1867,7 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
             eipIpv6Address,
             natEipAddress,
             bandwidthSize,
+            bandwidthChargingMode,
             availableZoneIds,
             instanceVersion,
             virsubnetId,
@@ -1831,7 +1879,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
             nodeIps,
             publicips,
             privateips,
-            isReleasable);
+            isReleasable,
+            ingressBandwidthChargingMode);
     }
 
     @Override
@@ -1864,6 +1913,7 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         sb.append("    eipIpv6Address: ").append(toIndentedString(eipIpv6Address)).append("\n");
         sb.append("    natEipAddress: ").append(toIndentedString(natEipAddress)).append("\n");
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
+        sb.append("    bandwidthChargingMode: ").append(toIndentedString(bandwidthChargingMode)).append("\n");
         sb.append("    availableZoneIds: ").append(toIndentedString(availableZoneIds)).append("\n");
         sb.append("    instanceVersion: ").append(toIndentedString(instanceVersion)).append("\n");
         sb.append("    virsubnetId: ").append(toIndentedString(virsubnetId)).append("\n");
@@ -1876,6 +1926,9 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         sb.append("    publicips: ").append(toIndentedString(publicips)).append("\n");
         sb.append("    privateips: ").append(toIndentedString(privateips)).append("\n");
         sb.append("    isReleasable: ").append(toIndentedString(isReleasable)).append("\n");
+        sb.append("    ingressBandwidthChargingMode: ")
+            .append(toIndentedString(ingressBandwidthChargingMode))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * MicroServiceInfoCSECreate
+ * CSE微服务详细信息，service_type为CSE时必填
  */
 public class MicroServiceInfoCSECreate {
 

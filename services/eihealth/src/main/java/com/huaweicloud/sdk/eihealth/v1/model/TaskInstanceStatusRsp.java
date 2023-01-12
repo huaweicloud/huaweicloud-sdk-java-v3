@@ -29,6 +29,11 @@ public class TaskInstanceStatusRsp {
     private String hostIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_name")
+
+    private String hostName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private String startTime;
@@ -87,6 +92,23 @@ public class TaskInstanceStatusRsp {
 
     public void setHostIp(String hostIp) {
         this.hostIp = hostIp;
+    }
+
+    public TaskInstanceStatusRsp withHostName(String hostName) {
+        this.hostName = hostName;
+        return this;
+    }
+
+    /**
+     * 计算节点的名称
+     * @return hostName
+     */
+    public String getHostName() {
+        return hostName;
+    }
+
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
     }
 
     public TaskInstanceStatusRsp withStartTime(String startTime) {
@@ -152,13 +174,14 @@ public class TaskInstanceStatusRsp {
         return Objects.equals(this.phase, taskInstanceStatusRsp.phase)
             && Objects.equals(this.podIp, taskInstanceStatusRsp.podIp)
             && Objects.equals(this.hostIp, taskInstanceStatusRsp.hostIp)
+            && Objects.equals(this.hostName, taskInstanceStatusRsp.hostName)
             && Objects.equals(this.startTime, taskInstanceStatusRsp.startTime)
             && Objects.equals(this.containerStatuses, taskInstanceStatusRsp.containerStatuses);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(phase, podIp, hostIp, startTime, containerStatuses);
+        return Objects.hash(phase, podIp, hostIp, hostName, startTime, containerStatuses);
     }
 
     @Override
@@ -168,6 +191,7 @@ public class TaskInstanceStatusRsp {
         sb.append("    phase: ").append(toIndentedString(phase)).append("\n");
         sb.append("    podIp: ").append(toIndentedString(podIp)).append("\n");
         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
+        sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    containerStatuses: ").append(toIndentedString(containerStatuses)).append("\n");
         sb.append("}");

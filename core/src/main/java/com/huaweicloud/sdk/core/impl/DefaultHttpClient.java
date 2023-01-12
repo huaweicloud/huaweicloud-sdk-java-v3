@@ -95,7 +95,9 @@ public class DefaultHttpClient implements HttpClient {
         this.httpConfig = httpConfig;
         OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder();
         clientBuilder.connectionPool(httpConfig.getConnectionPool());
-        clientBuilder.dispatcher(httpConfig.getDispatcher());
+        if (Objects.nonNull(httpConfig.getDispatcher())) {
+            clientBuilder.dispatcher(httpConfig.getDispatcher());
+        }
         clientBuilder.connectTimeout(httpConfig.getTimeout(), TimeUnit.SECONDS).readTimeout(DEFAULT_READ_TIMEOUT,
                 TimeUnit.SECONDS);
 

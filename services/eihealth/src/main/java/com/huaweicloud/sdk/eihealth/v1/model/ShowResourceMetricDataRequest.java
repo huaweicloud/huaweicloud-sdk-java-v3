@@ -102,7 +102,7 @@ public class ShowResourceMetricDataRequest {
     }
 
     /**
-     * 统计方法。枚举值，取值范围：max（最大值）、min（最小值）、sum（求和值）、average（平均值），不填时默认为max
+     * 统计方法。枚举值，取值范围：max（最大值）、min（最小值）、average（平均值），不填时默认为max
      * @return method
      */
     public String getMethod() {

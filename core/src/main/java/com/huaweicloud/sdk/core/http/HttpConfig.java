@@ -26,7 +26,6 @@ import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
 import com.huaweicloud.sdk.core.utils.RandomUtils;
 import okhttp3.ConnectionPool;
 import okhttp3.Dispatcher;
-import okhttp3.internal.Util;
 
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.X509TrustManager;
@@ -35,8 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -71,11 +69,9 @@ public class HttpConfig {
 
     private ConnectionPool connectionPool = new ConnectionPool(5, 5L, TimeUnit.MINUTES);
 
-    private ExecutorService executorService = new ThreadPoolExecutor(
-            0, Integer.MAX_VALUE, 60, TimeUnit.SECONDS,
-            new SynchronousQueue<>(), Util.threadFactory("OkHttp Dispatcher", false));
+    private ExecutorService executorService = new ForkJoinPool();
 
-    private Dispatcher dispatcher = new Dispatcher(executorService);
+    private Dispatcher dispatcher;
 
 
     public int getTimeout() {

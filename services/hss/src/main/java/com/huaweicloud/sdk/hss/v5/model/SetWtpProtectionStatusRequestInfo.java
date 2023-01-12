@@ -29,9 +29,9 @@ public class SetWtpProtectionStatusRequestInfo {
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "payment_mode")
+    @JsonProperty(value = "charging_mode")
 
-    private Integer paymentMode;
+    private String chargingMode;
 
     public SetWtpProtectionStatusRequestInfo withStatus(Boolean status) {
         this.status = status;
@@ -100,23 +100,21 @@ public class SetWtpProtectionStatusRequestInfo {
         this.resourceId = resourceId;
     }
 
-    public SetWtpProtectionStatusRequestInfo withPaymentMode(Integer paymentMode) {
-        this.paymentMode = paymentMode;
+    public SetWtpProtectionStatusRequestInfo withChargingMode(String chargingMode) {
+        this.chargingMode = chargingMode;
         return this;
     }
 
     /**
-     * 随机选择配额还是指定资源
-     * minimum: 0
-     * maximum: 100
-     * @return paymentMode
+     * 计费模式   - packet_cycle: 包周期
+     * @return chargingMode
      */
-    public Integer getPaymentMode() {
-        return paymentMode;
+    public String getChargingMode() {
+        return chargingMode;
     }
 
-    public void setPaymentMode(Integer paymentMode) {
-        this.paymentMode = paymentMode;
+    public void setChargingMode(String chargingMode) {
+        this.chargingMode = chargingMode;
     }
 
     @Override
@@ -131,12 +129,12 @@ public class SetWtpProtectionStatusRequestInfo {
         return Objects.equals(this.status, setWtpProtectionStatusRequestInfo.status)
             && Objects.equals(this.hostIdList, setWtpProtectionStatusRequestInfo.hostIdList)
             && Objects.equals(this.resourceId, setWtpProtectionStatusRequestInfo.resourceId)
-            && Objects.equals(this.paymentMode, setWtpProtectionStatusRequestInfo.paymentMode);
+            && Objects.equals(this.chargingMode, setWtpProtectionStatusRequestInfo.chargingMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, hostIdList, resourceId, paymentMode);
+        return Objects.hash(status, hostIdList, resourceId, chargingMode);
     }
 
     @Override
@@ -146,7 +144,7 @@ public class SetWtpProtectionStatusRequestInfo {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    hostIdList: ").append(toIndentedString(hostIdList)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
-        sb.append("    paymentMode: ").append(toIndentedString(paymentMode)).append("\n");
+        sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

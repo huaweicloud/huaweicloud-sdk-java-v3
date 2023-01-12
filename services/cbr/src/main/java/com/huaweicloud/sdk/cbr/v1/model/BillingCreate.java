@@ -625,7 +625,7 @@ public class BillingCreate {
 
     /**
      * 容量，单位GB
-     * minimum: 1
+     * minimum: 10
      * maximum: 10485760
      * @return size
      */

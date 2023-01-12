@@ -49,14 +49,9 @@ public class GetAssetRsp {
     private String vendorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "latest_version")
-
-    private VersionRsp latestVersion;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "versions")
 
-    private List<String> versions = null;
+    private List<VersionRsp> versions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -213,38 +208,12 @@ public class GetAssetRsp {
         this.vendorId = vendorId;
     }
 
-    public GetAssetRsp withLatestVersion(VersionRsp latestVersion) {
-        this.latestVersion = latestVersion;
-        return this;
-    }
-
-    public GetAssetRsp withLatestVersion(Consumer<VersionRsp> latestVersionSetter) {
-        if (this.latestVersion == null) {
-            this.latestVersion = new VersionRsp();
-            latestVersionSetter.accept(this.latestVersion);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get latestVersion
-     * @return latestVersion
-     */
-    public VersionRsp getLatestVersion() {
-        return latestVersion;
-    }
-
-    public void setLatestVersion(VersionRsp latestVersion) {
-        this.latestVersion = latestVersion;
-    }
-
-    public GetAssetRsp withVersions(List<String> versions) {
+    public GetAssetRsp withVersions(List<VersionRsp> versions) {
         this.versions = versions;
         return this;
     }
 
-    public GetAssetRsp addVersionsItem(String versionsItem) {
+    public GetAssetRsp addVersionsItem(VersionRsp versionsItem) {
         if (this.versions == null) {
             this.versions = new ArrayList<>();
         }
@@ -252,7 +221,7 @@ public class GetAssetRsp {
         return this;
     }
 
-    public GetAssetRsp withVersions(Consumer<List<String>> versionsSetter) {
+    public GetAssetRsp withVersions(Consumer<List<VersionRsp>> versionsSetter) {
         if (this.versions == null) {
             this.versions = new ArrayList<>();
         }
@@ -264,11 +233,11 @@ public class GetAssetRsp {
      * 资产版本号列表
      * @return versions
      */
-    public List<String> getVersions() {
+    public List<VersionRsp> getVersions() {
         return versions;
     }
 
-    public void setVersions(List<String> versions) {
+    public void setVersions(List<VersionRsp> versions) {
         this.versions = versions;
     }
 
@@ -353,7 +322,6 @@ public class GetAssetRsp {
             && Objects.equals(this.name, getAssetRsp.name) && Objects.equals(this.title, getAssetRsp.title)
             && Objects.equals(this.labels, getAssetRsp.labels) && Objects.equals(this.picture, getAssetRsp.picture)
             && Objects.equals(this.vendorId, getAssetRsp.vendorId)
-            && Objects.equals(this.latestVersion, getAssetRsp.latestVersion)
             && Objects.equals(this.versions, getAssetRsp.versions)
             && Objects.equals(this.createTime, getAssetRsp.createTime)
             && Objects.equals(this.updateTime, getAssetRsp.updateTime) && Objects.equals(this.stars, getAssetRsp.stars)
@@ -369,7 +337,6 @@ public class GetAssetRsp {
             labels,
             picture,
             vendorId,
-            latestVersion,
             versions,
             createTime,
             updateTime,
@@ -388,7 +355,6 @@ public class GetAssetRsp {
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    picture: ").append(toIndentedString(picture)).append("\n");
         sb.append("    vendorId: ").append(toIndentedString(vendorId)).append("\n");
-        sb.append("    latestVersion: ").append(toIndentedString(latestVersion)).append("\n");
         sb.append("    versions: ").append(toIndentedString(versions)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

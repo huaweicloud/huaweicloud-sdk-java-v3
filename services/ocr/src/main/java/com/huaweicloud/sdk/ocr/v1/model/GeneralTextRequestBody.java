@@ -35,6 +35,11 @@ public class GeneralTextRequestBody {
 
     private Boolean characterMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private String language;
+
     public GeneralTextRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -58,7 +63,7 @@ public class GeneralTextRequestBody {
     }
 
     /**
-     * 与image二选一  图片的URL路径，目前支持：  - 公网http/https url  - OBS提供的url，使用OBS数据需要进行授权。包括对服务授权、临时授权、匿名公开授权，详情参见[配置OBS访问权限](https://support.huaweicloud.com/api-ocr/ocr_03_0132.html)。  > 说明：  - 接口响应时间依赖于图片的下载时间，如果图片下载时间过长，会返回接口调用失败。  - 请保证被检测图片所在的存储服务稳定可靠，推荐使用OBS服务存储图片数据。 
+     * 与image二选一 图片的URL路径，目前支持： - 公网http/https url - OBS提供的url，使用OBS数据需要进行授权。包括对服务授权、临时授权、匿名公开授权，详情参见[配置OBS访问权限](https://support.huaweicloud.com/api-ocr/ocr_03_0132.html)。 > 说明： - 接口响应时间依赖于图片的下载时间，如果图片下载时间过长，会返回接口调用失败。 - 请保证被检测图片所在的存储服务稳定可靠，推荐使用OBS服务存储图片数据。 
      * @return url
      */
     public String getUrl() {
@@ -75,7 +80,7 @@ public class GeneralTextRequestBody {
     }
 
     /**
-     * 图片朝向检测开关，可选值包括：  - true：检测图片朝向;  - false：不检测图片朝向。  > 说明：  - 支持任意角度的图片朝向检测。未传入该参数时默认为false，即不检测图片朝向。 
+     * 图片朝向检测开关，可选值包括： - true：检测图片朝向; - false：不检测图片朝向。  > 说明： - 支持任意角度的图片朝向检测。未传入该参数时默认为false，即不检测图片朝向。 
      * @return detectDirection
      */
     public Boolean getDetectDirection() {
@@ -92,7 +97,7 @@ public class GeneralTextRequestBody {
     }
 
     /**
-     * 快速模式开关，针对单行文字图片（要求图片只包含一行文字，且文字区域占比超过50%），打开时可以更快返回识别。可选值包括：  - true：打开快速模式；  - false：关闭快速模式。  > 说明：  - 未传入该参数时默认为false，即关闭快速模式。 
+     * 快速模式开关，针对单行文字图片（要求图片只包含一行文字，且文字区域占比超过50%），打开时可以更快返回识别。可选值包括： - true：打开快速模式； - false：关闭快速模式。  > 说明： - 未传入该参数时默认为false，即关闭快速模式。 
      * @return quickMode
      */
     public Boolean getQuickMode() {
@@ -120,6 +125,23 @@ public class GeneralTextRequestBody {
         this.characterMode = characterMode;
     }
 
+    public GeneralTextRequestBody withLanguage(String language) {
+        this.language = language;
+        return this;
+    }
+
+    /**
+     * 语种选择，可选值可参考表1中英文列。未传入该参数时默认为中英文识别模式。 **表1* 语种选择说明 | 英文 |     中文     | | :--: | :----------: | | auto | 自动语种分类 | |  ms  |    马来语    | |  uk  |   乌克兰语   | |  hi  |    印地语    | |  ru  |     俄语     | |  vi  |    越南语    | |  id  |    印尼语    | |  th  |     泰语     | |  zh  |    中英文    | 
+     * @return language
+     */
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -133,12 +155,13 @@ public class GeneralTextRequestBody {
             && Objects.equals(this.url, generalTextRequestBody.url)
             && Objects.equals(this.detectDirection, generalTextRequestBody.detectDirection)
             && Objects.equals(this.quickMode, generalTextRequestBody.quickMode)
-            && Objects.equals(this.characterMode, generalTextRequestBody.characterMode);
+            && Objects.equals(this.characterMode, generalTextRequestBody.characterMode)
+            && Objects.equals(this.language, generalTextRequestBody.language);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, detectDirection, quickMode, characterMode);
+        return Objects.hash(image, url, detectDirection, quickMode, characterMode, language);
     }
 
     @Override
@@ -150,6 +173,7 @@ public class GeneralTextRequestBody {
         sb.append("    detectDirection: ").append(toIndentedString(detectDirection)).append("\n");
         sb.append("    quickMode: ").append(toIndentedString(quickMode)).append("\n");
         sb.append("    characterMode: ").append(toIndentedString(characterMode)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("}");
         return sb.toString();
     }

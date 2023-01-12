@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.eihealth.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * VersionRsp
@@ -39,6 +42,21 @@ public class VersionRsp {
     @JsonProperty(value = "status")
 
     private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "failed_reason")
+
+    private String failedReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "labels")
+
+    private List<String> labels = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "picture")
+
+    private String picture;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -152,6 +170,73 @@ public class VersionRsp {
         this.status = status;
     }
 
+    public VersionRsp withFailedReason(String failedReason) {
+        this.failedReason = failedReason;
+        return this;
+    }
+
+    /**
+     * 资产发布失败原因
+     * @return failedReason
+     */
+    public String getFailedReason() {
+        return failedReason;
+    }
+
+    public void setFailedReason(String failedReason) {
+        this.failedReason = failedReason;
+    }
+
+    public VersionRsp withLabels(List<String> labels) {
+        this.labels = labels;
+        return this;
+    }
+
+    public VersionRsp addLabelsItem(String labelsItem) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        this.labels.add(labelsItem);
+        return this;
+    }
+
+    public VersionRsp withLabels(Consumer<List<String>> labelsSetter) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        labelsSetter.accept(this.labels);
+        return this;
+    }
+
+    /**
+     * 资产标签列表
+     * @return labels
+     */
+    public List<String> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(List<String> labels) {
+        this.labels = labels;
+    }
+
+    public VersionRsp withPicture(String picture) {
+        this.picture = picture;
+        return this;
+    }
+
+    /**
+     * 资产封面图访问链接
+     * @return picture
+     */
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
     public VersionRsp withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -198,13 +283,26 @@ public class VersionRsp {
         return Objects.equals(this.version, versionRsp.version) && Objects.equals(this.publisher, versionRsp.publisher)
             && Objects.equals(this.descritpion, versionRsp.descritpion)
             && Objects.equals(this.summary, versionRsp.summary) && Objects.equals(this.license, versionRsp.license)
-            && Objects.equals(this.status, versionRsp.status) && Objects.equals(this.createTime, versionRsp.createTime)
+            && Objects.equals(this.status, versionRsp.status)
+            && Objects.equals(this.failedReason, versionRsp.failedReason)
+            && Objects.equals(this.labels, versionRsp.labels) && Objects.equals(this.picture, versionRsp.picture)
+            && Objects.equals(this.createTime, versionRsp.createTime)
             && Objects.equals(this.updateTime, versionRsp.updateTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(version, publisher, descritpion, summary, license, status, createTime, updateTime);
+        return Objects.hash(version,
+            publisher,
+            descritpion,
+            summary,
+            license,
+            status,
+            failedReason,
+            labels,
+            picture,
+            createTime,
+            updateTime);
     }
 
     @Override
@@ -217,6 +315,9 @@ public class VersionRsp {
         sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
         sb.append("    license: ").append(toIndentedString(license)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+        sb.append("    picture: ").append(toIndentedString(picture)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");
