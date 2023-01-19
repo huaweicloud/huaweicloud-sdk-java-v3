@@ -73,7 +73,7 @@ public class IssueCertificateAuthorityCertificateRequestBody {
     }
 
     /**
-     * 签名哈希算法，可选值如下：   - **SHA256**   - **SHA384**   - **SHA512**
+     * 签名哈希算法，可选值如下：   - **SHA256**   - **SHA384**   - **SHA512**   - **SM3**（中国站）
      * @return signatureAlgorithm
      */
     public String getSignatureAlgorithm() {

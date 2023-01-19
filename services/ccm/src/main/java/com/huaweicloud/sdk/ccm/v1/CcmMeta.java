@@ -106,6 +106,69 @@ public class CcmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DisableCertificateAuthorityCrlRequest, DisableCertificateAuthorityCrlResponse> disableCertificateAuthorityCrl =
+        genFordisableCertificateAuthorityCrl();
+
+    private static HttpRequestDef<DisableCertificateAuthorityCrlRequest, DisableCertificateAuthorityCrlResponse> genFordisableCertificateAuthorityCrl() {
+        // basic
+        HttpRequestDef.Builder<DisableCertificateAuthorityCrlRequest, DisableCertificateAuthorityCrlResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DisableCertificateAuthorityCrlRequest.class,
+                    DisableCertificateAuthorityCrlResponse.class)
+                .withName("DisableCertificateAuthorityCrl")
+                .withUri("/v1/private-certificate-authorities/{ca_id}/crl/disable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ca_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableCertificateAuthorityCrlRequest::getCaId, (req, v) -> {
+                req.setCaId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableCertificateAuthorityCrlRequest, EnableCertificateAuthorityCrlResponse> enableCertificateAuthorityCrl =
+        genForenableCertificateAuthorityCrl();
+
+    private static HttpRequestDef<EnableCertificateAuthorityCrlRequest, EnableCertificateAuthorityCrlResponse> genForenableCertificateAuthorityCrl() {
+        // basic
+        HttpRequestDef.Builder<EnableCertificateAuthorityCrlRequest, EnableCertificateAuthorityCrlResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    EnableCertificateAuthorityCrlRequest.class,
+                    EnableCertificateAuthorityCrlResponse.class)
+                .withName("EnableCertificateAuthorityCrl")
+                .withUri("/v1/private-certificate-authorities/{ca_id}/crl/enable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ca_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableCertificateAuthorityCrlRequest::getCaId, (req, v) -> {
+                req.setCaId(v);
+            }));
+        builder.<EnableCertificateAuthorityCrlRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EnableCertificateAuthorityCrlRequestBody.class),
+            f -> f.withMarshaller(EnableCertificateAuthorityCrlRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExportCertificateRequest, ExportCertificateResponse> exportCertificate =
         genForexportCertificate();
 

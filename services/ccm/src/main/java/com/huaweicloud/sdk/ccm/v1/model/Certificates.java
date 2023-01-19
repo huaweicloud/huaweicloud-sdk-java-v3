@@ -81,6 +81,11 @@ public class Certificates {
 
     private DistinguishedName distinguishedName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enc_cert_info")
+
+    private EncCertInfo encCertInfo;
+
     public Certificates withCertificateId(String certificateId) {
         this.certificateId = certificateId;
         return this;
@@ -328,6 +333,32 @@ public class Certificates {
         this.distinguishedName = distinguishedName;
     }
 
+    public Certificates withEncCertInfo(EncCertInfo encCertInfo) {
+        this.encCertInfo = encCertInfo;
+        return this;
+    }
+
+    public Certificates withEncCertInfo(Consumer<EncCertInfo> encCertInfoSetter) {
+        if (this.encCertInfo == null) {
+            this.encCertInfo = new EncCertInfo();
+            encCertInfoSetter.accept(this.encCertInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get encCertInfo
+     * @return encCertInfo
+     */
+    public EncCertInfo getEncCertInfo() {
+        return encCertInfo;
+    }
+
+    public void setEncCertInfo(EncCertInfo encCertInfo) {
+        this.encCertInfo = encCertInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -349,7 +380,8 @@ public class Certificates {
             && Objects.equals(this.deleteTime, certificates.deleteTime)
             && Objects.equals(this.notBefore, certificates.notBefore)
             && Objects.equals(this.notAfter, certificates.notAfter)
-            && Objects.equals(this.distinguishedName, certificates.distinguishedName);
+            && Objects.equals(this.distinguishedName, certificates.distinguishedName)
+            && Objects.equals(this.encCertInfo, certificates.encCertInfo);
     }
 
     @Override
@@ -367,7 +399,8 @@ public class Certificates {
             deleteTime,
             notBefore,
             notAfter,
-            distinguishedName);
+            distinguishedName,
+            encCertInfo);
     }
 
     @Override
@@ -388,6 +421,7 @@ public class Certificates {
         sb.append("    notBefore: ").append(toIndentedString(notBefore)).append("\n");
         sb.append("    notAfter: ").append(toIndentedString(notAfter)).append("\n");
         sb.append("    distinguishedName: ").append(toIndentedString(distinguishedName)).append("\n");
+        sb.append("    encCertInfo: ").append(toIndentedString(encCertInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

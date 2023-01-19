@@ -59,14 +59,14 @@ public class CheckRuleRiskInfoResponseInfo {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "fix_status")
+    @JsonProperty(value = "enable_fix")
 
-    private String fixStatus;
+    private Integer enableFix;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_auto_fix")
+    @JsonProperty(value = "enable_click")
 
-    private Boolean enableAutoFix;
+    private Boolean enableClick;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_params")
@@ -217,7 +217,7 @@ public class CheckRuleRiskInfoResponseInfo {
     }
 
     /**
-     * 状态，包含如下：   - safe : 无需处理   - ignored : 已忽略   - unhandled : 未处理
+     * 状态，包含如下：   - safe : 无需处理   - ignored : 已忽略   - unhandled : 未处理   - fixing : 修复中   - fix-failed : 修复失败   - verifying : 验证中
      * @return status
      */
     public String getStatus() {
@@ -228,38 +228,40 @@ public class CheckRuleRiskInfoResponseInfo {
         this.status = status;
     }
 
-    public CheckRuleRiskInfoResponseInfo withFixStatus(String fixStatus) {
-        this.fixStatus = fixStatus;
+    public CheckRuleRiskInfoResponseInfo withEnableFix(Integer enableFix) {
+        this.enableFix = enableFix;
         return this;
     }
 
     /**
-     * 修复状态，包含如下：   - fixing :正在修复中   - fix_failed :修复失败   - fix_success :修复成功
-     * @return fixStatus
+     * 是否支持一键修复,1:支持一键修复,0:不支持
+     * minimum: 0
+     * maximum: 2147483647
+     * @return enableFix
      */
-    public String getFixStatus() {
-        return fixStatus;
+    public Integer getEnableFix() {
+        return enableFix;
     }
 
-    public void setFixStatus(String fixStatus) {
-        this.fixStatus = fixStatus;
+    public void setEnableFix(Integer enableFix) {
+        this.enableFix = enableFix;
     }
 
-    public CheckRuleRiskInfoResponseInfo withEnableAutoFix(Boolean enableAutoFix) {
-        this.enableAutoFix = enableAutoFix;
+    public CheckRuleRiskInfoResponseInfo withEnableClick(Boolean enableClick) {
+        this.enableClick = enableClick;
         return this;
     }
 
     /**
-     * 是否支持一键修复
-     * @return enableAutoFix
+     * 该检查项的修复&忽略&验证按钮是否可点击,true:按钮可点击,false:按钮不可点击
+     * @return enableClick
      */
-    public Boolean getEnableAutoFix() {
-        return enableAutoFix;
+    public Boolean getEnableClick() {
+        return enableClick;
     }
 
-    public void setEnableAutoFix(Boolean enableAutoFix) {
-        this.enableAutoFix = enableAutoFix;
+    public void setEnableClick(Boolean enableClick) {
+        this.enableClick = enableClick;
     }
 
     public CheckRuleRiskInfoResponseInfo withRuleParams(List<CheckRuleFixParamInfo> ruleParams) {
@@ -313,8 +315,8 @@ public class CheckRuleRiskInfoResponseInfo {
             && Objects.equals(this.hostNum, checkRuleRiskInfoResponseInfo.hostNum)
             && Objects.equals(this.scanResult, checkRuleRiskInfoResponseInfo.scanResult)
             && Objects.equals(this.status, checkRuleRiskInfoResponseInfo.status)
-            && Objects.equals(this.fixStatus, checkRuleRiskInfoResponseInfo.fixStatus)
-            && Objects.equals(this.enableAutoFix, checkRuleRiskInfoResponseInfo.enableAutoFix)
+            && Objects.equals(this.enableFix, checkRuleRiskInfoResponseInfo.enableFix)
+            && Objects.equals(this.enableClick, checkRuleRiskInfoResponseInfo.enableClick)
             && Objects.equals(this.ruleParams, checkRuleRiskInfoResponseInfo.ruleParams);
     }
 
@@ -329,8 +331,8 @@ public class CheckRuleRiskInfoResponseInfo {
             hostNum,
             scanResult,
             status,
-            fixStatus,
-            enableAutoFix,
+            enableFix,
+            enableClick,
             ruleParams);
     }
 
@@ -347,8 +349,8 @@ public class CheckRuleRiskInfoResponseInfo {
         sb.append("    hostNum: ").append(toIndentedString(hostNum)).append("\n");
         sb.append("    scanResult: ").append(toIndentedString(scanResult)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    fixStatus: ").append(toIndentedString(fixStatus)).append("\n");
-        sb.append("    enableAutoFix: ").append(toIndentedString(enableAutoFix)).append("\n");
+        sb.append("    enableFix: ").append(toIndentedString(enableFix)).append("\n");
+        sb.append("    enableClick: ").append(toIndentedString(enableClick)).append("\n");
         sb.append("    ruleParams: ").append(toIndentedString(ruleParams)).append("\n");
         sb.append("}");
         return sb.toString();

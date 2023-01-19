@@ -95,7 +95,7 @@ public class ListDataSourceResponse extends SdkResponse {
     }
 
     /**
-     * 项目ID。
+     * 集群ID。
      * @return clusterId
      */
     public String getClusterId() {

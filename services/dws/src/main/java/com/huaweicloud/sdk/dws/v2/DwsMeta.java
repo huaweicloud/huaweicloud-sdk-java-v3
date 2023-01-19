@@ -1845,6 +1845,106 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListMonitorIndicatorDataRequest, ListMonitorIndicatorDataResponse> listMonitorIndicatorData =
+        genForlistMonitorIndicatorData();
+
+    private static HttpRequestDef<ListMonitorIndicatorDataRequest, ListMonitorIndicatorDataResponse> genForlistMonitorIndicatorData() {
+        // basic
+        HttpRequestDef.Builder<ListMonitorIndicatorDataRequest, ListMonitorIndicatorDataResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListMonitorIndicatorDataRequest.class, ListMonitorIndicatorDataResponse.class)
+                .withName("ListMonitorIndicatorData")
+                .withUri("/v1.0/{project_id}/dms/metric-data")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMonitorIndicatorDataRequest::getFrom, (req, v) -> {
+                req.setFrom(v);
+            }));
+        builder.<String>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMonitorIndicatorDataRequest::getTo, (req, v) -> {
+                req.setTo(v);
+            }));
+        builder.<String>withRequestField("function",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMonitorIndicatorDataRequest::getFunction, (req, v) -> {
+                req.setFunction(v);
+            }));
+        builder.<String>withRequestField("period",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMonitorIndicatorDataRequest::getPeriod, (req, v) -> {
+                req.setPeriod(v);
+            }));
+        builder.<String>withRequestField("indicator_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMonitorIndicatorDataRequest::getIndicatorName, (req, v) -> {
+                req.setIndicatorName(v);
+            }));
+        builder.<String>withRequestField("dim0",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMonitorIndicatorDataRequest::getDim0, (req, v) -> {
+                req.setDim0(v);
+            }));
+        builder.<String>withRequestField("dim1",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMonitorIndicatorDataRequest::getDim1, (req, v) -> {
+                req.setDim1(v);
+            }));
+
+        // response
+        builder.<List<TrendQueryDataResp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMonitorIndicatorDataResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(TrendQueryDataResp.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMonitorIndicatorsRequest, ListMonitorIndicatorsResponse> listMonitorIndicators =
+        genForlistMonitorIndicators();
+
+    private static HttpRequestDef<ListMonitorIndicatorsRequest, ListMonitorIndicatorsResponse> genForlistMonitorIndicators() {
+        // basic
+        HttpRequestDef.Builder<ListMonitorIndicatorsRequest, ListMonitorIndicatorsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListMonitorIndicatorsRequest.class, ListMonitorIndicatorsResponse.class)
+            .withName("ListMonitorIndicators")
+            .withUri("/v1.0/{project_id}/dms/metric-data/indicators")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<List<IndicatorInfo>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMonitorIndicatorsResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(IndicatorInfo.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListNodeTypesRequest, ListNodeTypesResponse> listNodeTypes =
         genForlistNodeTypes();
 

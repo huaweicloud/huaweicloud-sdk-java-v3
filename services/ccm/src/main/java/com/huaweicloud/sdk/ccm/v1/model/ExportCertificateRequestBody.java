@@ -20,6 +20,11 @@ public class ExportCertificateRequestBody {
 
     private String type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_sm_standard")
+
+    private String isSmStandard;
+
     public ExportCertificateRequestBody withIsCompressed(String isCompressed) {
         this.isCompressed = isCompressed;
         return this;
@@ -54,6 +59,23 @@ public class ExportCertificateRequestBody {
         this.type = type;
     }
 
+    public ExportCertificateRequestBody withIsSmStandard(String isSmStandard) {
+        this.isSmStandard = isSmStandard;
+        return this;
+    }
+
+    /**
+     * 是否国密GMT0009标准规范。当证书算法为SM2时传入才有效，若不传入，则默认为false。   - **true**   - **false**
+     * @return isSmStandard
+     */
+    public String getIsSmStandard() {
+        return isSmStandard;
+    }
+
+    public void setIsSmStandard(String isSmStandard) {
+        this.isSmStandard = isSmStandard;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -64,12 +86,13 @@ public class ExportCertificateRequestBody {
         }
         ExportCertificateRequestBody exportCertificateRequestBody = (ExportCertificateRequestBody) o;
         return Objects.equals(this.isCompressed, exportCertificateRequestBody.isCompressed)
-            && Objects.equals(this.type, exportCertificateRequestBody.type);
+            && Objects.equals(this.type, exportCertificateRequestBody.type)
+            && Objects.equals(this.isSmStandard, exportCertificateRequestBody.isSmStandard);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isCompressed, type);
+        return Objects.hash(isCompressed, type, isSmStandard);
     }
 
     @Override
@@ -78,6 +101,7 @@ public class ExportCertificateRequestBody {
         sb.append("class ExportCertificateRequestBody {\n");
         sb.append("    isCompressed: ").append(toIndentedString(isCompressed)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    isSmStandard: ").append(toIndentedString(isSmStandard)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -68,7 +68,7 @@ public class ListAuditLogResponse extends SdkResponse {
     }
 
     /**
-     * 项目ID。
+     * 集群ID。
      * @return clusterId
      */
     public String getClusterId() {

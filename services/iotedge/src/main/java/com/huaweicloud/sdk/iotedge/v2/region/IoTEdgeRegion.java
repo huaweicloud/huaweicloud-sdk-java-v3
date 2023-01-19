@@ -11,7 +11,7 @@ import com.huaweicloud.sdk.core.region.RegionProviderChain;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 public class IoTEdgeRegion {
-    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://iotedge-api.cn-north-4.myhuaweicloud.com");
+    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://iotedge-api.cn-north-4.myhuaweicloud.cn");
     
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("IOTEDGE");
 

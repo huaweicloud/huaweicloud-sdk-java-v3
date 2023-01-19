@@ -1810,6 +1810,68 @@ public class DwsAsyncClient {
     }
 
     /**
+     * openApi查询历史监控数据
+     *
+     * openApi查询历史监控数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMonitorIndicatorDataRequest 请求对象
+     * @return CompletableFuture<ListMonitorIndicatorDataResponse>
+     */
+    public CompletableFuture<ListMonitorIndicatorDataResponse> listMonitorIndicatorDataAsync(
+        ListMonitorIndicatorDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listMonitorIndicatorData);
+    }
+
+    /**
+     * openApi查询历史监控数据
+     *
+     * openApi查询历史监控数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMonitorIndicatorDataRequest 请求对象
+     * @return AsyncInvoker<ListMonitorIndicatorDataRequest, ListMonitorIndicatorDataResponse>
+     */
+    public AsyncInvoker<ListMonitorIndicatorDataRequest, ListMonitorIndicatorDataResponse> listMonitorIndicatorDataAsyncInvoker(
+        ListMonitorIndicatorDataRequest request) {
+        return new AsyncInvoker<ListMonitorIndicatorDataRequest, ListMonitorIndicatorDataResponse>(request,
+            DwsMeta.listMonitorIndicatorData, hcClient);
+    }
+
+    /**
+     * openApi查询性能监控指标
+     *
+     * openApi查询性能监控指标
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMonitorIndicatorsRequest 请求对象
+     * @return CompletableFuture<ListMonitorIndicatorsResponse>
+     */
+    public CompletableFuture<ListMonitorIndicatorsResponse> listMonitorIndicatorsAsync(
+        ListMonitorIndicatorsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listMonitorIndicators);
+    }
+
+    /**
+     * openApi查询性能监控指标
+     *
+     * openApi查询性能监控指标
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMonitorIndicatorsRequest 请求对象
+     * @return AsyncInvoker<ListMonitorIndicatorsRequest, ListMonitorIndicatorsResponse>
+     */
+    public AsyncInvoker<ListMonitorIndicatorsRequest, ListMonitorIndicatorsResponse> listMonitorIndicatorsAsyncInvoker(
+        ListMonitorIndicatorsRequest request) {
+        return new AsyncInvoker<ListMonitorIndicatorsRequest, ListMonitorIndicatorsResponse>(request,
+            DwsMeta.listMonitorIndicators, hcClient);
+    }
+
+    /**
      * 查询节点类型
      *
      * 该接口用于查询所有GaussDB(DWS)服务支持的节点类型。

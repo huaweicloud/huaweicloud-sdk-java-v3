@@ -136,7 +136,7 @@ public class ImportCertificateRequestBody {
     }
 
     /**
-     * 可选参数，国密证书的加密证书内容。书回车换行需要使用转义字符\\n或者\\r\\n替换。
+     * 可选参数，国密证书的加密证书内容。回车换行需要使用转义字符\\n或者\\r\\n替换。
      * @return encCertificate
      */
     public String getEncCertificate() {

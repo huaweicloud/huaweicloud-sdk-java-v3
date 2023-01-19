@@ -44,7 +44,7 @@ public class SwitchHostsProtectStatusRequestInfo {
     }
 
     /**
-     * 主机开通的版本，包含如下:   - hss.version.null ：无。   - hss.version.basic ：基础版。   - hss.version.enterprise ：企业版。   - hss.version.premium ：旗舰版。   - hss.version.wtp ：网页防篡改版。
+     * 主机开通的版本，包含如下:   - hss.version.null ：无，代表关闭防护。   - hss.version.basic ：基础版。   - hss.version.enterprise ：企业版。   - hss.version.premium ：旗舰版。   - hss.version.wtp ：网页防篡改版。
      * @return version
      */
     public String getVersion() {
@@ -61,7 +61,7 @@ public class SwitchHostsProtectStatusRequestInfo {
     }
 
     /**
-     * 付费模式   - packet_cycle : 包周期   - on_demand : 按需
+     * 付费模式，当version不为“hss.version.null”时，则需必填该参数   - packet_cycle : 包周期   - on_demand : 按需
      * @return chargingMode
      */
     public String getChargingMode() {
@@ -78,7 +78,7 @@ public class SwitchHostsProtectStatusRequestInfo {
     }
 
     /**
-     * 资源实例ID
+     * HSS配额ID，不填该参数时，则随机选择对应版本配额
      * @return resourceId
      */
     public String getResourceId() {
@@ -144,7 +144,7 @@ public class SwitchHostsProtectStatusRequestInfo {
     }
 
     /**
-     * 资源标签
+     * 资源标签列表
      * @return tags
      */
     public List<TagInfo> getTags() {

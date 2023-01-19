@@ -45,6 +45,13 @@ public class ActiveStandbyConfigDTO  {
     
     private String virtualIpAddress;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="virtual_ipv6_address")
+    
+    
+    private String virtualIpv6Address;
+
     public ActiveStandbyConfigDTO withWorkNode(String workNode) {
         this.workNode = workNode;
         return this;
@@ -133,6 +140,28 @@ public class ActiveStandbyConfigDTO  {
 
     
 
+    public ActiveStandbyConfigDTO withVirtualIpv6Address(String virtualIpv6Address) {
+        this.virtualIpv6Address = virtualIpv6Address;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 网卡ipv6地址
+     * @return virtualIpv6Address
+     */
+    public String getVirtualIpv6Address() {
+        return virtualIpv6Address;
+    }
+
+    public void setVirtualIpv6Address(String virtualIpv6Address) {
+        this.virtualIpv6Address = virtualIpv6Address;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -145,11 +174,12 @@ public class ActiveStandbyConfigDTO  {
         return Objects.equals(this.workNode, activeStandbyConfigDTO.workNode) &&
             Objects.equals(this.masterInterfaceName, activeStandbyConfigDTO.masterInterfaceName) &&
             Objects.equals(this.slaveInterfaceName, activeStandbyConfigDTO.slaveInterfaceName) &&
-            Objects.equals(this.virtualIpAddress, activeStandbyConfigDTO.virtualIpAddress);
+            Objects.equals(this.virtualIpAddress, activeStandbyConfigDTO.virtualIpAddress) &&
+            Objects.equals(this.virtualIpv6Address, activeStandbyConfigDTO.virtualIpv6Address);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(workNode, masterInterfaceName, slaveInterfaceName, virtualIpAddress);
+        return Objects.hash(workNode, masterInterfaceName, slaveInterfaceName, virtualIpAddress, virtualIpv6Address);
     }
     @Override
     public String toString() {
@@ -159,6 +189,7 @@ public class ActiveStandbyConfigDTO  {
         sb.append("    masterInterfaceName: ").append(toIndentedString(masterInterfaceName)).append("\n");
         sb.append("    slaveInterfaceName: ").append(toIndentedString(slaveInterfaceName)).append("\n");
         sb.append("    virtualIpAddress: ").append(toIndentedString(virtualIpAddress)).append("\n");
+        sb.append("    virtualIpv6Address: ").append(toIndentedString(virtualIpv6Address)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -2822,6 +2822,13 @@ public class HssMeta {
             f -> f.withMarshaller(ShowCheckRuleDetailRequest::getCheckName, (req, v) -> {
                 req.setCheckName(v);
             }));
+        builder.<String>withRequestField("check_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCheckRuleDetailRequest::getCheckType, (req, v) -> {
+                req.setCheckType(v);
+            }));
         builder.<String>withRequestField("check_rule_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,

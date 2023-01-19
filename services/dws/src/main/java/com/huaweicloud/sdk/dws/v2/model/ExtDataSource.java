@@ -108,7 +108,7 @@ public class ExtDataSource {
     }
 
     /**
-     * 项目ID。
+     * 数据源名称。
      * @return name
      */
     public String getName() {

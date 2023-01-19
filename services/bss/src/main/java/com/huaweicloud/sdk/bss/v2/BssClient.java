@@ -1304,6 +1304,11 @@ public class BssClient {
      * 
      * 伙伴登录伙伴中心，进入“客户业务** **\\&gt; 代金券管理”，选择“已发放代金券”页签，即可查询已发放的代金券。
      * 
+     * 伙伴登录伙伴中心，进入“客户业务 \\&gt; 现金券管理”，选择“已发放现金券”页签，即可查询已发放的现金券。
+     * 
+     * &gt;![](public_sys-resources/icon-note.gif) **说明：** 
+     * &gt;只可查到失效时间在12个月内的代金/现金劵。
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListIssuedPartnerCouponsRequest 请求对象
@@ -1319,6 +1324,11 @@ public class BssClient {
      * 合作伙伴可以查询已发放的优惠券列表。
      * 
      * 伙伴登录伙伴中心，进入“客户业务** **\\&gt; 代金券管理”，选择“已发放代金券”页签，即可查询已发放的代金券。
+     * 
+     * 伙伴登录伙伴中心，进入“客户业务 \\&gt; 现金券管理”，选择“已发放现金券”页签，即可查询已发放的现金券。
+     * 
+     * &gt;![](public_sys-resources/icon-note.gif) **说明：** 
+     * &gt;只可查到失效时间在12个月内的代金/现金劵。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

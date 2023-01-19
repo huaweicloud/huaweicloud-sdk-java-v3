@@ -1780,6 +1780,66 @@ public class DwsClient {
     }
 
     /**
+     * openApi查询历史监控数据
+     *
+     * openApi查询历史监控数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMonitorIndicatorDataRequest 请求对象
+     * @return ListMonitorIndicatorDataResponse
+     */
+    public ListMonitorIndicatorDataResponse listMonitorIndicatorData(ListMonitorIndicatorDataRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listMonitorIndicatorData);
+    }
+
+    /**
+     * openApi查询历史监控数据
+     *
+     * openApi查询历史监控数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMonitorIndicatorDataRequest 请求对象
+     * @return SyncInvoker<ListMonitorIndicatorDataRequest, ListMonitorIndicatorDataResponse>
+     */
+    public SyncInvoker<ListMonitorIndicatorDataRequest, ListMonitorIndicatorDataResponse> listMonitorIndicatorDataInvoker(
+        ListMonitorIndicatorDataRequest request) {
+        return new SyncInvoker<ListMonitorIndicatorDataRequest, ListMonitorIndicatorDataResponse>(request,
+            DwsMeta.listMonitorIndicatorData, hcClient);
+    }
+
+    /**
+     * openApi查询性能监控指标
+     *
+     * openApi查询性能监控指标
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMonitorIndicatorsRequest 请求对象
+     * @return ListMonitorIndicatorsResponse
+     */
+    public ListMonitorIndicatorsResponse listMonitorIndicators(ListMonitorIndicatorsRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listMonitorIndicators);
+    }
+
+    /**
+     * openApi查询性能监控指标
+     *
+     * openApi查询性能监控指标
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMonitorIndicatorsRequest 请求对象
+     * @return SyncInvoker<ListMonitorIndicatorsRequest, ListMonitorIndicatorsResponse>
+     */
+    public SyncInvoker<ListMonitorIndicatorsRequest, ListMonitorIndicatorsResponse> listMonitorIndicatorsInvoker(
+        ListMonitorIndicatorsRequest request) {
+        return new SyncInvoker<ListMonitorIndicatorsRequest, ListMonitorIndicatorsResponse>(request,
+            DwsMeta.listMonitorIndicators, hcClient);
+    }
+
+    /**
      * 查询节点类型
      *
      * 该接口用于查询所有GaussDB(DWS)服务支持的节点类型。

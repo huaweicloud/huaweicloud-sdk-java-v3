@@ -21,6 +21,11 @@ public class ShowCheckRuleDetailRequest {
     private String checkName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "check_type")
+
+    private String checkType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_rule_id")
 
     private String checkRuleId;
@@ -67,6 +72,23 @@ public class ShowCheckRuleDetailRequest {
 
     public void setCheckName(String checkName) {
         this.checkName = checkName;
+    }
+
+    public ShowCheckRuleDetailRequest withCheckType(String checkType) {
+        this.checkType = checkType;
+        return this;
+    }
+
+    /**
+     * 基线类型
+     * @return checkType
+     */
+    public String getCheckType() {
+        return checkType;
+    }
+
+    public void setCheckType(String checkType) {
+        this.checkType = checkType;
     }
 
     public ShowCheckRuleDetailRequest withCheckRuleId(String checkRuleId) {
@@ -131,6 +153,7 @@ public class ShowCheckRuleDetailRequest {
         ShowCheckRuleDetailRequest showCheckRuleDetailRequest = (ShowCheckRuleDetailRequest) o;
         return Objects.equals(this.enterpriseProjectId, showCheckRuleDetailRequest.enterpriseProjectId)
             && Objects.equals(this.checkName, showCheckRuleDetailRequest.checkName)
+            && Objects.equals(this.checkType, showCheckRuleDetailRequest.checkType)
             && Objects.equals(this.checkRuleId, showCheckRuleDetailRequest.checkRuleId)
             && Objects.equals(this.standard, showCheckRuleDetailRequest.standard)
             && Objects.equals(this.hostId, showCheckRuleDetailRequest.hostId);
@@ -138,7 +161,7 @@ public class ShowCheckRuleDetailRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, checkName, checkRuleId, standard, hostId);
+        return Objects.hash(enterpriseProjectId, checkName, checkType, checkRuleId, standard, hostId);
     }
 
     @Override
@@ -147,6 +170,7 @@ public class ShowCheckRuleDetailRequest {
         sb.append("class ShowCheckRuleDetailRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    checkName: ").append(toIndentedString(checkName)).append("\n");
+        sb.append("    checkType: ").append(toIndentedString(checkType)).append("\n");
         sb.append("    checkRuleId: ").append(toIndentedString(checkRuleId)).append("\n");
         sb.append("    standard: ").append(toIndentedString(standard)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");

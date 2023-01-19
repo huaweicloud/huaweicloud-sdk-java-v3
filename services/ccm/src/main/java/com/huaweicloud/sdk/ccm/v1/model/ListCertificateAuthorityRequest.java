@@ -139,7 +139,7 @@ public class ListCertificateAuthorityRequest {
     }
 
     /**
-     * 排序属性，目前支持以下属性： - **create_time** : 证书创建时间（默认） - **common_name** : 证书名称 - **ca_type** : CA证书类型 - **not_after** : 证书到期时间
+     * 排序属性，目前支持以下属性： - **create_time** : 证书创建时间（默认） - **common_name** : 证书名称 - **type** : CA证书类型 - **not_after** : 证书到期时间
      * @return sortKey
      */
     public String getSortKey() {

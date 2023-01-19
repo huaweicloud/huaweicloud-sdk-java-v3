@@ -82,6 +82,11 @@ public class ShowCertificateResponse extends SdkResponse {
 
     private DistinguishedName distinguishedName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enc_cert_info")
+
+    private EncCertInfo encCertInfo;
+
     public ShowCertificateResponse withCertificateId(String certificateId) {
         this.certificateId = certificateId;
         return this;
@@ -329,6 +334,32 @@ public class ShowCertificateResponse extends SdkResponse {
         this.distinguishedName = distinguishedName;
     }
 
+    public ShowCertificateResponse withEncCertInfo(EncCertInfo encCertInfo) {
+        this.encCertInfo = encCertInfo;
+        return this;
+    }
+
+    public ShowCertificateResponse withEncCertInfo(Consumer<EncCertInfo> encCertInfoSetter) {
+        if (this.encCertInfo == null) {
+            this.encCertInfo = new EncCertInfo();
+            encCertInfoSetter.accept(this.encCertInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get encCertInfo
+     * @return encCertInfo
+     */
+    public EncCertInfo getEncCertInfo() {
+        return encCertInfo;
+    }
+
+    public void setEncCertInfo(EncCertInfo encCertInfo) {
+        this.encCertInfo = encCertInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -351,7 +382,8 @@ public class ShowCertificateResponse extends SdkResponse {
             && Objects.equals(this.deleteTime, showCertificateResponse.deleteTime)
             && Objects.equals(this.notBefore, showCertificateResponse.notBefore)
             && Objects.equals(this.notAfter, showCertificateResponse.notAfter)
-            && Objects.equals(this.distinguishedName, showCertificateResponse.distinguishedName);
+            && Objects.equals(this.distinguishedName, showCertificateResponse.distinguishedName)
+            && Objects.equals(this.encCertInfo, showCertificateResponse.encCertInfo);
     }
 
     @Override
@@ -369,7 +401,8 @@ public class ShowCertificateResponse extends SdkResponse {
             deleteTime,
             notBefore,
             notAfter,
-            distinguishedName);
+            distinguishedName,
+            encCertInfo);
     }
 
     @Override
@@ -390,6 +423,7 @@ public class ShowCertificateResponse extends SdkResponse {
         sb.append("    notBefore: ").append(toIndentedString(notBefore)).append("\n");
         sb.append("    notAfter: ").append(toIndentedString(notAfter)).append("\n");
         sb.append("    distinguishedName: ").append(toIndentedString(distinguishedName)).append("\n");
+        sb.append("    encCertInfo: ").append(toIndentedString(encCertInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }
