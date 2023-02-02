@@ -113,6 +113,11 @@ public class CreateImageRequestBody {
          */
         public static final TypeEnum IRONIC = new TypeEnum("Ironic");
 
+        /**
+         * Enum ISOIMAGE for value: "IsoImage"
+         */
+        public static final TypeEnum ISOIMAGE = new TypeEnum("IsoImage");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -121,6 +126,7 @@ public class CreateImageRequestBody {
             map.put("BMS", BMS);
             map.put("FusionCompute", FUSIONCOMPUTE);
             map.put("Ironic", IRONIC);
+            map.put("IsoImage", ISOIMAGE);
             return Collections.unmodifiableMap(map);
         }
 

@@ -21,7 +21,7 @@ import java.util.Objects;
 public class OpenGaussDatastore  {
 
     /**
-     * 数据库引擎，不区分大小写，取值如下：  GaussDB(for openGauss)。
+     * 数据库引擎，不区分大小写，取值如下：  GaussDB。
      */
     public static final class TypeEnum {
 
@@ -31,12 +31,18 @@ public class OpenGaussDatastore  {
          */
         public static final TypeEnum GAUSSDB_FOR_OPENGAUSS_ = new TypeEnum("GaussDB(for openGauss)");
         
+        /**
+         * Enum GAUSSDB for value: "GaussDB"
+         */
+        public static final TypeEnum GAUSSDB = new TypeEnum("GaussDB");
+        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("GaussDB(for openGauss)", GAUSSDB_FOR_OPENGAUSS_);
+            map.put("GaussDB", GAUSSDB);
             return Collections.unmodifiableMap(map);
         }
 
@@ -116,7 +122,7 @@ public class OpenGaussDatastore  {
 
 
     /**
-     * 数据库引擎，不区分大小写，取值如下：  GaussDB(for openGauss)。
+     * 数据库引擎，不区分大小写，取值如下：  GaussDB。
      * @return type
      */
     public TypeEnum getType() {
@@ -138,7 +144,7 @@ public class OpenGaussDatastore  {
 
 
     /**
-     * 数据库版本。不填时，默认为当前最新版本。  GaussDB(for openGauss)支持的版本参考[查询数据库引擎的版本](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=GaussDBforopenGauss&api=ListDatastores)。
+     * 数据库版本。不填时，默认为当前最新版本。  GaussDB支持的版本参考[查询数据库引擎的版本](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=GaussDBforopenGauss&api=ListDatastores)。
      * @return version
      */
     public String getVersion() {

@@ -30,6 +30,11 @@ public class ListBackPoolsRequest {
 
     private String billingCycle;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "all_billing_cycle")
+
+    private Boolean allBillingCycle;
+
     public ListBackPoolsRequest withPoolName(String poolName) {
         this.poolName = poolName;
         return this;
@@ -102,6 +107,23 @@ public class ListBackPoolsRequest {
         this.billingCycle = billingCycle;
     }
 
+    public ListBackPoolsRequest withAllBillingCycle(Boolean allBillingCycle) {
+        this.allBillingCycle = allBillingCycle;
+        return this;
+    }
+
+    /**
+     * 是否查询近六个月账期标识
+     * @return allBillingCycle
+     */
+    public Boolean getAllBillingCycle() {
+        return allBillingCycle;
+    }
+
+    public void setAllBillingCycle(Boolean allBillingCycle) {
+        this.allBillingCycle = allBillingCycle;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -114,12 +136,13 @@ public class ListBackPoolsRequest {
         return Objects.equals(this.poolName, listBackPoolsRequest.poolName)
             && Objects.equals(this.limit, listBackPoolsRequest.limit)
             && Objects.equals(this.offset, listBackPoolsRequest.offset)
-            && Objects.equals(this.billingCycle, listBackPoolsRequest.billingCycle);
+            && Objects.equals(this.billingCycle, listBackPoolsRequest.billingCycle)
+            && Objects.equals(this.allBillingCycle, listBackPoolsRequest.allBillingCycle);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(poolName, limit, offset, billingCycle);
+        return Objects.hash(poolName, limit, offset, billingCycle, allBillingCycle);
     }
 
     @Override
@@ -130,6 +153,7 @@ public class ListBackPoolsRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    billingCycle: ").append(toIndentedString(billingCycle)).append("\n");
+        sb.append("    allBillingCycle: ").append(toIndentedString(allBillingCycle)).append("\n");
         sb.append("}");
         return sb.toString();
     }

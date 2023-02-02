@@ -181,6 +181,40 @@ public class KafkaClient {
     }
 
     /**
+     * 创建实例
+     *
+     * 创建实例。
+     * 
+     * 该接口支持创建按需和包周期两种计费方式的实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateInstanceByEngineRequest 请求对象
+     * @return CreateInstanceByEngineResponse
+     */
+    public CreateInstanceByEngineResponse createInstanceByEngine(CreateInstanceByEngineRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.createInstanceByEngine);
+    }
+
+    /**
+     * 创建实例
+     *
+     * 创建实例。
+     * 
+     * 该接口支持创建按需和包周期两种计费方式的实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateInstanceByEngineRequest 请求对象
+     * @return SyncInvoker<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse>
+     */
+    public SyncInvoker<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> createInstanceByEngineInvoker(
+        CreateInstanceByEngineRequest request) {
+        return new SyncInvoker<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse>(request,
+            KafkaMeta.createInstanceByEngine, hcClient);
+    }
+
+    /**
      * Kafka实例创建Topic
      *
      * 该接口用于向Kafka实例创建Topic。
@@ -273,7 +307,7 @@ public class KafkaClient {
     /**
      * 创建实例
      *
-     * [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,cmcc,hws_eu)[创建kafka实例。](tag:ocb)
+     * [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)[创建kafka实例。](tag:otc,ocb,hws_ocb)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -287,7 +321,7 @@ public class KafkaClient {
     /**
      * 创建实例
      *
-     * [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,cmcc,hws_eu)[创建kafka实例。](tag:ocb)
+     * [创建按需计费类型的Kafka实例。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)[创建kafka实例。](tag:otc,ocb,hws_ocb)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -298,6 +332,36 @@ public class KafkaClient {
         CreatePostPaidInstanceRequest request) {
         return new SyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse>(request,
             KafkaMeta.createPostPaidInstance, hcClient);
+    }
+
+    /**
+     * Kafka实例开始分区重平衡任务
+     *
+     * 该接口用于向Kafka实例提交分区重平衡任务，若成功则返回重平衡任务的job id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateReassignmentTaskRequest 请求对象
+     * @return CreateReassignmentTaskResponse
+     */
+    public CreateReassignmentTaskResponse createReassignmentTask(CreateReassignmentTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.createReassignmentTask);
+    }
+
+    /**
+     * Kafka实例开始分区重平衡任务
+     *
+     * 该接口用于向Kafka实例提交分区重平衡任务，若成功则返回重平衡任务的job id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateReassignmentTaskRequest 请求对象
+     * @return SyncInvoker<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse>
+     */
+    public SyncInvoker<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse> createReassignmentTaskInvoker(
+        CreateReassignmentTaskRequest request) {
+        return new SyncInvoker<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse>(request,
+            KafkaMeta.createReassignmentTask, hcClient);
     }
 
     /**
@@ -793,7 +857,35 @@ public class KafkaClient {
      *
      * 实例规格变更。
      * 
-     * **当前通过调用API，只支持按需实例进行实例规格变更。**
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResizeEngineInstanceRequest 请求对象
+     * @return ResizeEngineInstanceResponse
+     */
+    public ResizeEngineInstanceResponse resizeEngineInstance(ResizeEngineInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.resizeEngineInstance);
+    }
+
+    /**
+     * 实例规格变更
+     *
+     * 实例规格变更。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResizeEngineInstanceRequest 请求对象
+     * @return SyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse>
+     */
+    public SyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> resizeEngineInstanceInvoker(
+        ResizeEngineInstanceRequest request) {
+        return new SyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse>(request,
+            KafkaMeta.resizeEngineInstance, hcClient);
+    }
+
+    /**
+     * 实例规格变更
+     *
+     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -807,9 +899,7 @@ public class KafkaClient {
     /**
      * 实例规格变更
      *
-     * 实例规格变更。
-     * 
-     * **当前通过调用API，只支持按需实例进行实例规格变更。**
+     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -971,6 +1061,37 @@ public class KafkaClient {
     }
 
     /**
+     * 查询实例的扩容规格列表
+     *
+     * 查询实例的扩容规格列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @return ShowEngineInstanceExtendProductInfoResponse
+     */
+    public ShowEngineInstanceExtendProductInfoResponse showEngineInstanceExtendProductInfo(
+        ShowEngineInstanceExtendProductInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.showEngineInstanceExtendProductInfo);
+    }
+
+    /**
+     * 查询实例的扩容规格列表
+     *
+     * 查询实例的扩容规格列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @return SyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>
+     */
+    public SyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfoInvoker(
+        ShowEngineInstanceExtendProductInfoRequest request) {
+        return new SyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>(
+            request, KafkaMeta.showEngineInstanceExtendProductInfo, hcClient);
+    }
+
+    /**
      * 查询消费组信息
      *
      * 查询消费组信息。
@@ -1090,7 +1211,7 @@ public class KafkaClient {
     }
 
     /**
-     * 查询Kafka实例Topic详细信息
+     * 查询Kafka实例Topic详细信息(单个实例调用不要超过1s一次)
      *
      * 查询Kafka实例Topic详细信息。
      * 
@@ -1104,7 +1225,7 @@ public class KafkaClient {
     }
 
     /**
-     * 查询Kafka实例Topic详细信息
+     * 查询Kafka实例Topic详细信息(单个实例调用不要超过1s一次)
      *
      * 查询Kafka实例Topic详细信息。
      * 

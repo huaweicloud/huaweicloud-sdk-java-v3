@@ -19,6 +19,11 @@ public class CancelResourcesSubscriptionResponse extends SdkResponse {
 
     private List<String> orderIds = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fail_resource_infos")
+
+    private List<FailResourceInfo> failResourceInfos = null;
+
     public CancelResourcesSubscriptionResponse withOrderIds(List<String> orderIds) {
         this.orderIds = orderIds;
         return this;
@@ -52,6 +57,40 @@ public class CancelResourcesSubscriptionResponse extends SdkResponse {
         this.orderIds = orderIds;
     }
 
+    public CancelResourcesSubscriptionResponse withFailResourceInfos(List<FailResourceInfo> failResourceInfos) {
+        this.failResourceInfos = failResourceInfos;
+        return this;
+    }
+
+    public CancelResourcesSubscriptionResponse addFailResourceInfosItem(FailResourceInfo failResourceInfosItem) {
+        if (this.failResourceInfos == null) {
+            this.failResourceInfos = new ArrayList<>();
+        }
+        this.failResourceInfos.add(failResourceInfosItem);
+        return this;
+    }
+
+    public CancelResourcesSubscriptionResponse withFailResourceInfos(
+        Consumer<List<FailResourceInfo>> failResourceInfosSetter) {
+        if (this.failResourceInfos == null) {
+            this.failResourceInfos = new ArrayList<>();
+        }
+        failResourceInfosSetter.accept(this.failResourceInfos);
+        return this;
+    }
+
+    /**
+     * 失败的资源信息列表。有退订失败的资源时，该字段才有值。具体请参见表FailResourceInfo。 该字段为预留字段。
+     * @return failResourceInfos
+     */
+    public List<FailResourceInfo> getFailResourceInfos() {
+        return failResourceInfos;
+    }
+
+    public void setFailResourceInfos(List<FailResourceInfo> failResourceInfos) {
+        this.failResourceInfos = failResourceInfos;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -62,12 +101,13 @@ public class CancelResourcesSubscriptionResponse extends SdkResponse {
         }
         CancelResourcesSubscriptionResponse cancelResourcesSubscriptionResponse =
             (CancelResourcesSubscriptionResponse) o;
-        return Objects.equals(this.orderIds, cancelResourcesSubscriptionResponse.orderIds);
+        return Objects.equals(this.orderIds, cancelResourcesSubscriptionResponse.orderIds)
+            && Objects.equals(this.failResourceInfos, cancelResourcesSubscriptionResponse.failResourceInfos);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(orderIds);
+        return Objects.hash(orderIds, failResourceInfos);
     }
 
     @Override
@@ -75,6 +115,7 @@ public class CancelResourcesSubscriptionResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CancelResourcesSubscriptionResponse {\n");
         sb.append("    orderIds: ").append(toIndentedString(orderIds)).append("\n");
+        sb.append("    failResourceInfos: ").append(toIndentedString(failResourceInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

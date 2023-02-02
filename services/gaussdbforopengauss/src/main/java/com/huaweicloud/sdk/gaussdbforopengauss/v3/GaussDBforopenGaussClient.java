@@ -1224,9 +1224,9 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
-     * GaussDB(for openGauss)数据库实例规格变更
+     * GaussDB数据库实例规格变更
      *
-     * GaussDB(for openGauss)数据库实例规格变更
+     * GaussDB数据库实例规格变更
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1238,9 +1238,9 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
-     * GaussDB(for openGauss)数据库实例规格变更
+     * GaussDB数据库实例规格变更
      *
-     * GaussDB(for openGauss)数据库实例规格变更
+     * GaussDB数据库实例规格变更
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

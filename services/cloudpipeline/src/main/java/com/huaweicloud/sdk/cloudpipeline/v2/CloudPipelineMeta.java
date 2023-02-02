@@ -12,6 +12,55 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class CloudPipelineMeta {
 
+    public static final HttpRequestDef<BatchShowPipelinesLatestStatusRequest, BatchShowPipelinesLatestStatusResponse> batchShowPipelinesLatestStatus =
+        genForbatchShowPipelinesLatestStatus();
+
+    private static HttpRequestDef<BatchShowPipelinesLatestStatusRequest, BatchShowPipelinesLatestStatusResponse> genForbatchShowPipelinesLatestStatus() {
+        // basic
+        HttpRequestDef.Builder<BatchShowPipelinesLatestStatusRequest, BatchShowPipelinesLatestStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchShowPipelinesLatestStatusRequest.class,
+                    BatchShowPipelinesLatestStatusResponse.class)
+                .withName("BatchShowPipelinesLatestStatus")
+                .withUri("/v5/{project_id}/api/pipelines/status")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchShowPipelinesLatestStatusRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchShowPipelinesLatestStatusRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchShowPipelinesLatestStatusRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(String.class));
+
+        // response
+        builder.<List<PipelineLatestRun>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchShowPipelinesLatestStatusResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(PipelineLatestRun.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse> batchShowPipelinesStatus =
         genForbatchShowPipelinesStatus();
 
@@ -85,6 +134,91 @@ public class CloudPipelineMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeletePipelineRequest, DeletePipelineResponse> deletePipeline =
+        genFordeletePipeline();
+
+    private static HttpRequestDef<DeletePipelineRequest, DeletePipelineResponse> genFordeletePipeline() {
+        // basic
+        HttpRequestDef.Builder<DeletePipelineRequest, DeletePipelineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePipelineRequest.class, DeletePipelineResponse.class)
+                .withName("DeletePipeline")
+                .withUri("/v5/{project_id}/api/pipelines/{pipeline_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePipelineRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePipelineRequest::getPipelineId, (req, v) -> {
+                req.setPipelineId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePipelineRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPipelineRunsRequest, ListPipelineRunsResponse> listPipelineRuns =
+        genForlistPipelineRuns();
+
+    private static HttpRequestDef<ListPipelineRunsRequest, ListPipelineRunsResponse> genForlistPipelineRuns() {
+        // basic
+        HttpRequestDef.Builder<ListPipelineRunsRequest, ListPipelineRunsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListPipelineRunsRequest.class, ListPipelineRunsResponse.class)
+                .withName("ListPipelineRuns")
+                .withUri("/v5/{project_id}/api/pipelines/{pipeline_id}/pipeline-runs/list")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPipelineRunsRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPipelineRunsRequest::getPipelineId, (req, v) -> {
+                req.setPipelineId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPipelineRunsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ListPipelineRunsQuery>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPipelineRunsQuery.class),
+            f -> f.withMarshaller(ListPipelineRunsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse> listPipelineSimpleInfo =
         genForlistPipelineSimpleInfo();
 
@@ -109,6 +243,45 @@ public class CloudPipelineMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPipelineSimpleInfoRequestBody.class),
             f -> f.withMarshaller(ListPipelineSimpleInfoRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPipelinesRequest, ListPipelinesResponse> listPipelines =
+        genForlistPipelines();
+
+    private static HttpRequestDef<ListPipelinesRequest, ListPipelinesResponse> genForlistPipelines() {
+        // basic
+        HttpRequestDef.Builder<ListPipelinesRequest, ListPipelinesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListPipelinesRequest.class, ListPipelinesResponse.class)
+                .withName("ListPipelines")
+                .withUri("/v5/{project_id}/api/pipelines/list")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPipelinesRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPipelinesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ListPipelineQuery>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPipelineQuery.class),
+            f -> f.withMarshaller(ListPipelinesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -283,6 +456,51 @@ public class CloudPipelineMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RunPipelineRequest, RunPipelineResponse> runPipeline = genForrunPipeline();
+
+    private static HttpRequestDef<RunPipelineRequest, RunPipelineResponse> genForrunPipeline() {
+        // basic
+        HttpRequestDef.Builder<RunPipelineRequest, RunPipelineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunPipelineRequest.class, RunPipelineResponse.class)
+                .withName("RunPipeline")
+                .withUri("/v5/{project_id}/api/pipelines/{pipeline_id}/run")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunPipelineRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunPipelineRequest::getPipelineId, (req, v) -> {
+                req.setPipelineId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunPipelineRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<RunPipelineDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RunPipelineDTO.class),
+            f -> f.withMarshaller(RunPipelineRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowInstanceStatusRequest, ShowInstanceStatusResponse> showInstanceStatus =
         genForshowInstanceStatus();
 
@@ -307,6 +525,52 @@ public class CloudPipelineMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceStatusRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPipelineRunDetailRequest, ShowPipelineRunDetailResponse> showPipelineRunDetail =
+        genForshowPipelineRunDetail();
+
+    private static HttpRequestDef<ShowPipelineRunDetailRequest, ShowPipelineRunDetailResponse> genForshowPipelineRunDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowPipelineRunDetailRequest, ShowPipelineRunDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowPipelineRunDetailRequest.class, ShowPipelineRunDetailResponse.class)
+            .withName("ShowPipelineRunDetail")
+            .withUri("/v5/{project_id}/api/pipelines/{pipeline_id}/pipeline-runs/detail")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineRunDetailRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineRunDetailRequest::getPipelineId, (req, v) -> {
+                req.setPipelineId(v);
+            }));
+        builder.<String>withRequestField("pipeline_run_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineRunDetailRequest::getPipelineRunId, (req, v) -> {
+                req.setPipelineRunId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineRunDetailRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 
@@ -470,6 +734,52 @@ public class CloudPipelineMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopPipelineNewRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopPipelineRunRequest, StopPipelineRunResponse> stopPipelineRun =
+        genForstopPipelineRun();
+
+    private static HttpRequestDef<StopPipelineRunRequest, StopPipelineRunResponse> genForstopPipelineRun() {
+        // basic
+        HttpRequestDef.Builder<StopPipelineRunRequest, StopPipelineRunResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopPipelineRunRequest.class, StopPipelineRunResponse.class)
+                .withName("StopPipelineRun")
+                .withUri("/v5/{project_id}/api/pipelines/{pipeline_id}/pipeline-runs/{pipeline_run_id}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopPipelineRunRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopPipelineRunRequest::getPipelineId, (req, v) -> {
+                req.setPipelineId(v);
+            }));
+        builder.<String>withRequestField("pipeline_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopPipelineRunRequest::getPipelineRunId, (req, v) -> {
+                req.setPipelineRunId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopPipelineRunRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 

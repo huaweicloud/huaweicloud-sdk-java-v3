@@ -131,7 +131,7 @@ public class ListInstancesRequest  {
     
     private TypeEnum type;
     /**
-     * 数据库类型，区分大小写。  - GaussDB(for openGauss)
+     * 数据库类型，区分大小写。  - GaussDB
      */
     public static final class DatastoreTypeEnum {
 
@@ -141,12 +141,18 @@ public class ListInstancesRequest  {
          */
         public static final DatastoreTypeEnum GAUSSDB_FOR_OPENGAUSS_ = new DatastoreTypeEnum("GaussDB(for openGauss)");
         
+        /**
+         * Enum GAUSSDB for value: "GaussDB"
+         */
+        public static final DatastoreTypeEnum GAUSSDB = new DatastoreTypeEnum("GaussDB");
+        
 
         private static final Map<String, DatastoreTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DatastoreTypeEnum> createStaticFields() {
             Map<String, DatastoreTypeEnum> map = new HashMap<>();
             map.put("GaussDB(for openGauss)", GAUSSDB_FOR_OPENGAUSS_);
+            map.put("GaussDB", GAUSSDB);
             return Collections.unmodifiableMap(map);
         }
 
@@ -344,7 +350,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * 数据库类型，区分大小写。  - GaussDB(for openGauss)
+     * 数据库类型，区分大小写。  - GaussDB
      * @return datastoreType
      */
     public DatastoreTypeEnum getDatastoreType() {

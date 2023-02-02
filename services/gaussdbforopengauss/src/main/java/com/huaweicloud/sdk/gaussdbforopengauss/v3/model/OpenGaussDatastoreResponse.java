@@ -21,10 +21,15 @@ import java.util.Objects;
 public class OpenGaussDatastoreResponse  {
 
     /**
-     * 数据库引擎，不区分大小写，取值如下：  GaussDB(for openGauss)
+     * 数据库引擎，不区分大小写，取值如下：  GaussDB
      */
     public static final class TypeEnum {
 
+        
+        /**
+         * Enum GAUSSDB for value: "GaussDB"
+         */
+        public static final TypeEnum GAUSSDB = new TypeEnum("GaussDB");
         
         /**
          * Enum GAUSSDB_FOR_OPENGAUSS_ for value: "GaussDB(for openGauss)"
@@ -36,6 +41,7 @@ public class OpenGaussDatastoreResponse  {
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
+            map.put("GaussDB", GAUSSDB);
             map.put("GaussDB(for openGauss)", GAUSSDB_FOR_OPENGAUSS_);
             return Collections.unmodifiableMap(map);
         }
@@ -116,7 +122,7 @@ public class OpenGaussDatastoreResponse  {
 
 
     /**
-     * 数据库引擎，不区分大小写，取值如下：  GaussDB(for openGauss)
+     * 数据库引擎，不区分大小写，取值如下：  GaussDB
      * @return type
      */
     public TypeEnum getType() {

@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * stack resource api model
+ * 资源栈中所管理的资源信息
  */
 public class StackResource  {
 
@@ -48,8 +48,15 @@ public class StackResource  {
     
     
     private String logicalResourceType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="index_key")
+    
+    
+    private String indexKey;
     /**
-     * 此次事件的类型 * `CREATION_IN_PROGRESS` - 正在生成 * `CREATION_FAILED`      - 生成失败 * `CREATION_COMPLETE`    - 生成完成 * `DELETION_IN_PROGRESS` - 正在删除 * `DELETION_FAILED`      - 删除失败 * `DELETION_COMPLETE`    - 已经删除 * `DELETION_SKIPPED`     - 跳过删除。未来我们将支持，用户可以从资源编排服务中删除，但是不真的删除资源本身 * `UPDATE_IN_PROGRESS`   - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_FAILED`        - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_COMPLETE`      - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION
+     * 资源的状态 * `CREATION_IN_PROGRESS` - 正在生成 * `CREATION_FAILED`      - 生成失败 * `CREATION_COMPLETE`    - 生成完成 * `DELETION_IN_PROGRESS` - 正在删除 * `DELETION_FAILED`      - 删除失败 * `DELETION_COMPLETE`    - 已经删除 * `UPDATE_IN_PROGRESS`   - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_FAILED`        - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_COMPLETE`      - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION 
      */
     public static final class ResourceStatusEnum {
 
@@ -85,11 +92,6 @@ public class StackResource  {
         public static final ResourceStatusEnum DELETION_COMPLETE = new ResourceStatusEnum("DELETION_COMPLETE");
         
         /**
-         * Enum DELETION_SKIPPED for value: "DELETION_SKIPPED"
-         */
-        public static final ResourceStatusEnum DELETION_SKIPPED = new ResourceStatusEnum("DELETION_SKIPPED");
-        
-        /**
          * Enum UPDATE_IN_PROGRESS for value: "UPDATE_IN_PROGRESS"
          */
         public static final ResourceStatusEnum UPDATE_IN_PROGRESS = new ResourceStatusEnum("UPDATE_IN_PROGRESS");
@@ -115,7 +117,6 @@ public class StackResource  {
             map.put("DELETION_IN_PROGRESS", DELETION_IN_PROGRESS);
             map.put("DELETION_FAILED", DELETION_FAILED);
             map.put("DELETION_COMPLETE", DELETION_COMPLETE);
-            map.put("DELETION_SKIPPED", DELETION_SKIPPED);
             map.put("UPDATE_IN_PROGRESS", UPDATE_IN_PROGRESS);
             map.put("UPDATE_FAILED", UPDATE_FAILED);
             map.put("UPDATE_COMPLETE", UPDATE_COMPLETE);
@@ -198,7 +199,7 @@ public class StackResource  {
 
 
     /**
-     * 资源的物理id，由资源提供服务的provider在资源部署的时候生成
+     * 资源的物理id，由为该资源提供服务的provider在资源部署的时候生成  注：与physical相关的参数可以在模板以外的地方，作为该资源的一种标识 
      * @return physicalResourceId
      */
     public String getPhysicalResourceId() {
@@ -220,7 +221,7 @@ public class StackResource  {
 
 
     /**
-     * 资源的物理名称，资源提供服务在资源部署的时候给予
+     * 资源的物理名称，由为该资源提供服务的provider在资源部署的时候定义  注：与physical相关的参数可以在模板以外的地方，作为该资源的一种标识 
      * @return physicalResourceName
      */
     public String getPhysicalResourceName() {
@@ -242,7 +243,7 @@ public class StackResource  {
 
 
     /**
-     * 资源名，是用户在模板中定义的
+     * 资源的逻辑名称，由用户在模板中定义  注：与 logical 相关的参数仅仅在模板内部，作为该资源的一种标识  以hcl格式的模板为例，logical_resource_name 为 my_hello_world_vpc  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   name = \"test_vpc\" } ```  以json格式的模板为例，logical_resource_name 为 my_hello_world_vpc  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\"       }     }   } } ``` 
      * @return logicalResourceName
      */
     public String getLogicalResourceName() {
@@ -264,7 +265,7 @@ public class StackResource  {
 
 
     /**
-     * 资源的类型，是用户在模板中定义的
+     * 资源的类型  注：与 logical 相关的参数仅仅在模板内部，作为该资源的一种标识  以hcl格式的模板为例，logical_resource_type 为 huaweicloud_vpc  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   name = \"test_vpc\" } ```  以json格式的模板为例，logical_resource_type 为 huaweicloud_vpc  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\"       }     }   } } ``` 
      * @return logicalResourceType
      */
     public String getLogicalResourceType() {
@@ -273,6 +274,28 @@ public class StackResource  {
 
     public void setLogicalResourceType(String logicalResourceType) {
         this.logicalResourceType = logicalResourceType;
+    }
+
+    
+
+    public StackResource withIndexKey(String indexKey) {
+        this.indexKey = indexKey;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 资源的索引，若用户在模板中使用了count或for_each则会返回index_key。若index_key出现，则logical_resource_name + index_key可以作为该资源的一种标识  若用户在模板中使用count，则index_key为从0开始的数字  以hcl格式的模板为例，用户在模板中可以通过`huaweicloud_vpc.my_hello_world_vpc[0]`和`huaweicloud_vpc.my_hello_world_vpc[1]`标识两个资源  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   count = 2   name = \"test_vpc\" } ```  以json格式的模板为例，用户在模板中可以通过`huaweicloud_vpc.my_hello_world_vpc[0]`和`huaweicloud_vpc.my_hello_world_vpc[1]`标识两个资源  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\",         \"count\": 2       }     }   } } ```  若用户在模板中使用for_each，则index_key为用户自定义的字符串  以hcl格式的模板为例，用户在模板中可以通过`huaweicloud_vpc.my_hello_world_vpc[\"vpc1\"]`和`huaweicloud_vpc.my_hello_world_vpc[\"vpc2\"]`标识两个资源  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   for_each = {     \"vpc1\" = \"test_vpc\"     \"vpc2\" = \"test_vpc\"   }   name = each.value } ```  以json格式的模板为例，用户在模板中可以通过`huaweicloud_vpc.my_hello_world_vpc[\"vpc1\"]`和`huaweicloud_vpc.my_hello_world_vpc[\"vpc2\"]`标识两个资源  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"for_each\": {           \"vpc1\": \"test_vpc\",           \"vpc2\": \"test_vpc\"         }         \"name\": \"${each.value}\"       }     }   } } ``` 
+     * @return indexKey
+     */
+    public String getIndexKey() {
+        return indexKey;
+    }
+
+    public void setIndexKey(String indexKey) {
+        this.indexKey = indexKey;
     }
 
     
@@ -286,7 +309,7 @@ public class StackResource  {
 
 
     /**
-     * 此次事件的类型 * `CREATION_IN_PROGRESS` - 正在生成 * `CREATION_FAILED`      - 生成失败 * `CREATION_COMPLETE`    - 生成完成 * `DELETION_IN_PROGRESS` - 正在删除 * `DELETION_FAILED`      - 删除失败 * `DELETION_COMPLETE`    - 已经删除 * `DELETION_SKIPPED`     - 跳过删除。未来我们将支持，用户可以从资源编排服务中删除，但是不真的删除资源本身 * `UPDATE_IN_PROGRESS`   - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_FAILED`        - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_COMPLETE`      - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION
+     * 资源的状态 * `CREATION_IN_PROGRESS` - 正在生成 * `CREATION_FAILED`      - 生成失败 * `CREATION_COMPLETE`    - 生成完成 * `DELETION_IN_PROGRESS` - 正在删除 * `DELETION_FAILED`      - 删除失败 * `DELETION_COMPLETE`    - 已经删除 * `UPDATE_IN_PROGRESS`   - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_FAILED`        - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_COMPLETE`      - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION 
      * @return resourceStatus
      */
     public ResourceStatusEnum getResourceStatus() {
@@ -308,7 +331,7 @@ public class StackResource  {
 
 
     /**
-     * 如果是成功状态或执行中状态，则没有信息
+     * 当该资源状态为任意失败状态（即以 `FAILED` 结尾时），将会展示简要的错误信息总结以供debug
      * @return statusMessage
      */
     public String getStatusMessage() {
@@ -334,12 +357,13 @@ public class StackResource  {
             Objects.equals(this.physicalResourceName, stackResource.physicalResourceName) &&
             Objects.equals(this.logicalResourceName, stackResource.logicalResourceName) &&
             Objects.equals(this.logicalResourceType, stackResource.logicalResourceType) &&
+            Objects.equals(this.indexKey, stackResource.indexKey) &&
             Objects.equals(this.resourceStatus, stackResource.resourceStatus) &&
             Objects.equals(this.statusMessage, stackResource.statusMessage);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(physicalResourceId, physicalResourceName, logicalResourceName, logicalResourceType, resourceStatus, statusMessage);
+        return Objects.hash(physicalResourceId, physicalResourceName, logicalResourceName, logicalResourceType, indexKey, resourceStatus, statusMessage);
     }
     @Override
     public String toString() {
@@ -349,6 +373,7 @@ public class StackResource  {
         sb.append("    physicalResourceName: ").append(toIndentedString(physicalResourceName)).append("\n");
         sb.append("    logicalResourceName: ").append(toIndentedString(logicalResourceName)).append("\n");
         sb.append("    logicalResourceType: ").append(toIndentedString(logicalResourceType)).append("\n");
+        sb.append("    indexKey: ").append(toIndentedString(indexKey)).append("\n");
         sb.append("    resourceStatus: ").append(toIndentedString(resourceStatus)).append("\n");
         sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
         sb.append("}");

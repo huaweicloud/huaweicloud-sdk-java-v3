@@ -105,6 +105,13 @@ public class GslMeta {
             f -> f.withMarshaller(ListBackPoolsRequest::getBillingCycle, (req, v) -> {
                 req.setBillingCycle(v);
             }));
+        builder.<Boolean>withRequestField("all_billing_cycle",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListBackPoolsRequest::getAllBillingCycle, (req, v) -> {
+                req.setAllBillingCycle(v);
+            }));
 
         // response
 
@@ -979,6 +986,13 @@ public class GslMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSimPoolsRequest::getBillingCycle, (req, v) -> {
                 req.setBillingCycle(v);
+            }));
+        builder.<Boolean>withRequestField("all_billing_cycle",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSimPoolsRequest::getAllBillingCycle, (req, v) -> {
+                req.setAllBillingCycle(v);
             }));
 
         // response

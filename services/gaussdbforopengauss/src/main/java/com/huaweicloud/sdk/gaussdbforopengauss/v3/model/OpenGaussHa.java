@@ -25,7 +25,7 @@ import java.util.Objects;
 public class OpenGaussHa  {
 
     /**
-     * GaussDB(for openGauss)为分布式时，取值：enterprise；为集中式时，取值：centralization_standard。不区分大小写。
+     * GaussDB为分布式时，取值：enterprise；为集中式时，取值：centralization_standard。不区分大小写。
      */
     public static final class ModeEnum {
 
@@ -195,7 +195,7 @@ public class OpenGaussHa  {
     
     private ConsistencyEnum consistency;
     /**
-     * 备机同步参数。  取值：  GaussDB(for openGauss)为“sync\"  说明： - “sync”为同步模式。
+     * 备机同步参数。  取值：  GaussDB为“sync\"  说明： - “sync”为同步模式。
      */
     public static final class ReplicationModeEnum {
 
@@ -283,7 +283,7 @@ public class OpenGaussHa  {
 
 
     /**
-     * GaussDB(for openGauss)为分布式时，取值：enterprise；为集中式时，取值：centralization_standard。不区分大小写。
+     * GaussDB为分布式时，取值：enterprise；为集中式时，取值：centralization_standard。不区分大小写。
      * @return mode
      */
     public ModeEnum getMode() {
@@ -327,7 +327,7 @@ public class OpenGaussHa  {
 
 
     /**
-     * 备机同步参数。  取值：  GaussDB(for openGauss)为“sync\"  说明： - “sync”为同步模式。
+     * 备机同步参数。  取值：  GaussDB为“sync\"  说明： - “sync”为同步模式。
      * @return replicationMode
      */
     public ReplicationModeEnum getReplicationMode() {

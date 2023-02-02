@@ -171,6 +171,38 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> createInstanceByEngine =
+        genForcreateInstanceByEngine();
+
+    private static HttpRequestDef<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> genForcreateInstanceByEngine() {
+        // basic
+        HttpRequestDef.Builder<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateInstanceByEngineRequest.class, CreateInstanceByEngineResponse.class)
+            .withName("CreateInstanceByEngine")
+            .withUri("/v2/{engine}/{project_id}/instances")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateInstanceByEngineRequest.EngineEnum>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateInstanceByEngineRequest.EngineEnum.class),
+            f -> f.withMarshaller(CreateInstanceByEngineRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<CreateInstanceByEngineReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateInstanceByEngineReq.class),
+            f -> f.withMarshaller(CreateInstanceByEngineRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateInstanceTopicRequest, CreateInstanceTopicResponse> createInstanceTopic =
         genForcreateInstanceTopic();
 
@@ -291,6 +323,38 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePostPaidInstanceReq.class),
             f -> f.withMarshaller(CreatePostPaidInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse> createReassignmentTask =
+        genForcreateReassignmentTask();
+
+    private static HttpRequestDef<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse> genForcreateReassignmentTask() {
+        // basic
+        HttpRequestDef.Builder<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateReassignmentTaskRequest.class, CreateReassignmentTaskResponse.class)
+            .withName("CreateReassignmentTask")
+            .withUri("/v2/kafka/{project_id}/instances/{instance_id}/reassign")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateReassignmentTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<PartitionReassignRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PartitionReassignRequest.class),
+            f -> f.withMarshaller(CreateReassignmentTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -855,6 +919,45 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> resizeEngineInstance =
+        genForresizeEngineInstance();
+
+    private static HttpRequestDef<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> genForresizeEngineInstance() {
+        // basic
+        HttpRequestDef.Builder<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ResizeEngineInstanceRequest.class, ResizeEngineInstanceResponse.class)
+            .withName("ResizeEngineInstance")
+            .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/extend")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeEngineInstanceRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeEngineInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ResizeEngineInstanceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResizeEngineInstanceReq.class),
+            f -> f.withMarshaller(ResizeEngineInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance =
         genForresizeInstance();
 
@@ -1011,6 +1114,48 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCoordinatorsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfo =
+        genForshowEngineInstanceExtendProductInfo();
+
+    private static HttpRequestDef<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> genForshowEngineInstanceExtendProductInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowEngineInstanceExtendProductInfoRequest.class,
+                    ShowEngineInstanceExtendProductInfoResponse.class)
+                .withName("ShowEngineInstanceExtendProductInfo")
+                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/extend")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowEngineInstanceExtendProductInfoRequest.EngineEnum>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowEngineInstanceExtendProductInfoRequest.EngineEnum.class),
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ShowEngineInstanceExtendProductInfoRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowEngineInstanceExtendProductInfoRequest.TypeEnum.class),
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getType, (req, v) -> {
+                req.setType(v);
             }));
 
         // response

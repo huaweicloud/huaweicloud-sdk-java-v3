@@ -12,8 +12,18 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.aos.v1.model.AgenciesPrimitiveTypeHolder;
 import com.huaweicloud.sdk.aos.v1.model.Agency;
+import com.huaweicloud.sdk.aos.v1.model.EnableAutoRollbackPrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.EnableDeletionProtectionPrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.StackDescriptionPrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.StackIdPrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.StackNamePrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.StackStatusMessagePrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.StackStatusPrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.VarsBodyPrimitiveTypeHolder;
 import com.huaweicloud.sdk.aos.v1.model.VarsStructure;
+import com.huaweicloud.sdk.aos.v1.model.VarsStructurePrimitiveTypeHolder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -57,31 +67,10 @@ public class GetStackMetadataResponse extends SdkResponse {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vars_uri_content")
-    
-    
-    private String varsUriContent;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vars_body")
     
     
     private String varsBody;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
-    
-    private String createTime;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
-    
-    private String updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -97,10 +86,15 @@ public class GetStackMetadataResponse extends SdkResponse {
     
     private Boolean enableAutoRollback;
     /**
-     * 资源栈的执行状态     * `DEPLOYMENT_IN_PROGRESS` - 正在部署     * `DEPLOYMENT_FAILED` - 部署失败。请于StatusMessage见更多详情     * `DEPLOYMENT_COMPLETE ` - 部署结束     * `ROLLBACK_IN_PROGRESS` - 正在回滚     * `ROLLBACK_FAILED` - 回滚失败。请于StatusMessage见更多详情     * `ROLLBACK_COMPLETE` - 回滚完成     * `DELETION_IN_PROGRESS` - 正在删除     * `DELETION_FAILED` - 删除失败     * `CREATION_COMPLETE` - 生成完成，并没有任何部署
+     * 资源栈的状态     * `CREATION_COMPLETE` - 生成空资源栈完成，并没有任何部署     * `DEPLOYMENT_IN_PROGRESS` - 正在部署，请等待     * `DEPLOYMENT_FAILED` - 部署失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * `DEPLOYMENT_COMPLETE` - 部署完成     * `ROLLBACK_IN_PROGRESS` - 部署失败，正在回滚，请等待     * `ROLLBACK_FAILED` - 回滚失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * `ROLLBACK_COMPLETE` - 回滚完成     * `DELETION_IN_PROGRESS` - 正在删除，请等待     * `DELETION_FAILED` - 删除失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情
      */
     public static final class StatusEnum {
 
+        
+        /**
+         * Enum CREATION_COMPLETE for value: "CREATION_COMPLETE"
+         */
+        public static final StatusEnum CREATION_COMPLETE = new StatusEnum("CREATION_COMPLETE");
         
         /**
          * Enum DEPLOYMENT_IN_PROGRESS for value: "DEPLOYMENT_IN_PROGRESS"
@@ -142,16 +136,12 @@ public class GetStackMetadataResponse extends SdkResponse {
          */
         public static final StatusEnum DELETION_FAILED = new StatusEnum("DELETION_FAILED");
         
-        /**
-         * Enum CREATION_COMPLETE for value: "CREATION_COMPLETE"
-         */
-        public static final StatusEnum CREATION_COMPLETE = new StatusEnum("CREATION_COMPLETE");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
+            map.put("CREATION_COMPLETE", CREATION_COMPLETE);
             map.put("DEPLOYMENT_IN_PROGRESS", DEPLOYMENT_IN_PROGRESS);
             map.put("DEPLOYMENT_FAILED", DEPLOYMENT_FAILED);
             map.put("DEPLOYMENT_COMPLETE", DEPLOYMENT_COMPLETE);
@@ -160,7 +150,6 @@ public class GetStackMetadataResponse extends SdkResponse {
             map.put("ROLLBACK_COMPLETE", ROLLBACK_COMPLETE);
             map.put("DELETION_IN_PROGRESS", DELETION_IN_PROGRESS);
             map.put("DELETION_FAILED", DELETION_FAILED);
-            map.put("CREATION_COMPLETE", CREATION_COMPLETE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -226,6 +215,13 @@ public class GetStackMetadataResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="agencies")
+    
+    
+    private List<Agency> agencies = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status_message")
     
     
@@ -233,11 +229,25 @@ public class GetStackMetadataResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="agencies")
+    @JsonProperty(value="vars_uri_content")
     
     
-    private List<Agency> agencies = null;
+    private String varsUriContent;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="create_time")
     
+    
+    private String createTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="update_time")
+    
+    
+    private String updateTime;
+
     public GetStackMetadataResponse withStackId(String stackId) {
         this.stackId = stackId;
         return this;
@@ -247,7 +257,7 @@ public class GetStackMetadataResponse extends SdkResponse {
 
 
     /**
-     * 栈的唯一Id
+     * 资源栈（stack）的唯一Id。  此Id由资源编排服务在生成资源栈的时候生成，为UUID。  由于资源栈名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的资源栈，删除，再重新创建一个同名资源栈。  对于团队并行开发，用户可能希望确保，当前我操作的资源栈就是我认为的那个，而不是其他队友删除后创建的同名资源栈。因此，使用ID就可以做到强匹配。  资源编排服务保证每次创建的资源栈所对应的ID都不相同，更新不会影响ID。如果给与的stack_id和当前资源栈的ID不一致，则返回400 
      * @return stackId
      */
     public String getStackId() {
@@ -269,7 +279,7 @@ public class GetStackMetadataResponse extends SdkResponse {
 
 
     /**
-     * 栈的名字
+     * 用户希望生成的资源栈的名字。此名字在domain_id+区域+project_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
      * @return stackName
      */
     public String getStackName() {
@@ -291,7 +301,7 @@ public class GetStackMetadataResponse extends SdkResponse {
 
 
     /**
-     * 栈的描述，此描述为用户在创建资源栈时指定
+     * 资源栈的描述。可用于客户识别自己的资源栈。
      * @return description
      */
     public String getDescription() {
@@ -327,7 +337,7 @@ public class GetStackMetadataResponse extends SdkResponse {
     }
 
     /**
-     * 参数列表
+     * HCL支持参数，即，同一个模板可以给予不同的参数而达到不同的效果。  * var_structure可以允许客户提交最简单的字符串类型的参数  * 资源编排服务支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * vars_structure中的值只支持简单的字符串类型，如果需要使用其他类型，需要用户自己在HCL引用时转换， 或者用户可以使用vars_uri、vars_body，vars_uri和vars_body中支持HCL支持的各种类型以及复杂结构  * 如果vars_structure过大，可以使用vars_uri  * 注意：vars_structure中默认不应该含有任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的vars。如为敏感信息，建议设置encryption字段开启加密 
      * @return varsStructure
      */
     public List<VarsStructure> getVarsStructure() {
@@ -336,28 +346,6 @@ public class GetStackMetadataResponse extends SdkResponse {
 
     public void setVarsStructure(List<VarsStructure> varsStructure) {
         this.varsStructure = varsStructure;
-    }
-
-    
-
-    public GetStackMetadataResponse withVarsUriContent(String varsUriContent) {
-        this.varsUriContent = varsUriContent;
-        return this;
-    }
-
-    
-
-
-    /**
-     * vars文件中的内容
-     * @return varsUriContent
-     */
-    public String getVarsUriContent() {
-        return varsUriContent;
-    }
-
-    public void setVarsUriContent(String varsUriContent) {
-        this.varsUriContent = varsUriContent;
     }
 
     
@@ -371,7 +359,7 @@ public class GetStackMetadataResponse extends SdkResponse {
 
 
     /**
-     * terraform支持参数，即，同一个模板可以给予不同的参数而达到不同的效果。vars_body用于接收用户直接提交的tfvars文件内容
+     * HCL支持参数，即，同一个模板可以给予不同的参数而达到不同的效果  * vars_body使用HCL的tfvars格式，用户可以将“.tfvars”中的内容提交到vars_body中。具体tfvars格式见：https://www.terraform.io/language/values/variables#variable-definitions-tfvars-files  * 资源编排服务支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * 如果vars_body过大，可以使用vars_uri  * 如果vars中都是简单的字符串格式，可以使用var_structure  * 注意：vars_body中不应该含有任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的vars。如为敏感信息，建议通过vars_structure并设置encryption字段传递 
      * @return varsBody
      */
     public String getVarsBody() {
@@ -380,50 +368,6 @@ public class GetStackMetadataResponse extends SdkResponse {
 
     public void setVarsBody(String varsBody) {
         this.varsBody = varsBody;
-    }
-
-    
-
-    public GetStackMetadataResponse withCreateTime(String createTime) {
-        this.createTime = createTime;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 栈的生成时间，格式遵循RFC3339，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z
-     * @return createTime
-     */
-    public String getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime;
-    }
-
-    
-
-    public GetStackMetadataResponse withUpdateTime(String updateTime) {
-        this.updateTime = updateTime;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 由于栈可以被更新，此处为上次更新时间，格式遵循RFC3339，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z
-     * @return updateTime
-     */
-    public String getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(String updateTime) {
-        this.updateTime = updateTime;
     }
 
     
@@ -437,7 +381,7 @@ public class GetStackMetadataResponse extends SdkResponse {
 
 
     /**
-     * 资源栈删除保护的目标状态
+     * 删除保护的标识位，如果不传默认为false，即默认不开启资源栈删除保护（删除保护开启后资源栈不允许被删除）
      * @return enableDeletionProtection
      */
     public Boolean getEnableDeletionProtection() {
@@ -459,7 +403,7 @@ public class GetStackMetadataResponse extends SdkResponse {
 
 
     /**
-     * 资源栈是否开启自动回滚的标识位
+     * 自动回滚的标识位，如果不传默认为false，即默认不开启资源栈自动回滚（自动回滚开启后，如果部署失败，则会自动回滚，并返回上一个稳定状态）
      * @return enableAutoRollback
      */
     public Boolean getEnableAutoRollback() {
@@ -481,7 +425,7 @@ public class GetStackMetadataResponse extends SdkResponse {
 
 
     /**
-     * 资源栈的执行状态     * `DEPLOYMENT_IN_PROGRESS` - 正在部署     * `DEPLOYMENT_FAILED` - 部署失败。请于StatusMessage见更多详情     * `DEPLOYMENT_COMPLETE ` - 部署结束     * `ROLLBACK_IN_PROGRESS` - 正在回滚     * `ROLLBACK_FAILED` - 回滚失败。请于StatusMessage见更多详情     * `ROLLBACK_COMPLETE` - 回滚完成     * `DELETION_IN_PROGRESS` - 正在删除     * `DELETION_FAILED` - 删除失败     * `CREATION_COMPLETE` - 生成完成，并没有任何部署
+     * 资源栈的状态     * `CREATION_COMPLETE` - 生成空资源栈完成，并没有任何部署     * `DEPLOYMENT_IN_PROGRESS` - 正在部署，请等待     * `DEPLOYMENT_FAILED` - 部署失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * `DEPLOYMENT_COMPLETE` - 部署完成     * `ROLLBACK_IN_PROGRESS` - 部署失败，正在回滚，请等待     * `ROLLBACK_FAILED` - 回滚失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * `ROLLBACK_COMPLETE` - 回滚完成     * `DELETION_IN_PROGRESS` - 正在删除，请等待     * `DELETION_FAILED` - 删除失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情
      * @return status
      */
     public StatusEnum getStatus() {
@@ -490,28 +434,6 @@ public class GetStackMetadataResponse extends SdkResponse {
 
     public void setStatus(StatusEnum status) {
         this.status = status;
-    }
-
-    
-
-    public GetStackMetadataResponse withStatusMessage(String statusMessage) {
-        this.statusMessage = statusMessage;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 展示更多细节的信息
-     * @return statusMessage
-     */
-    public String getStatusMessage() {
-        return statusMessage;
-    }
-
-    public void setStatusMessage(String statusMessage) {
-        this.statusMessage = statusMessage;
     }
 
     
@@ -539,7 +461,7 @@ public class GetStackMetadataResponse extends SdkResponse {
     }
 
     /**
-     * 委托授权的信息
+     * 委托授权的信息。
      * @return agencies
      */
     public List<Agency> getAgencies() {
@@ -548,6 +470,94 @@ public class GetStackMetadataResponse extends SdkResponse {
 
     public void setAgencies(List<Agency> agencies) {
         this.agencies = agencies;
+    }
+
+    
+
+    public GetStackMetadataResponse withStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 当资源栈的状态为任意失败状态（即以 `FAILED` 结尾时），将会展示简要的错误信息总结以供debug
+     * @return statusMessage
+     */
+    public String getStatusMessage() {
+        return statusMessage;
+    }
+
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+    }
+
+    
+
+    public GetStackMetadataResponse withVarsUriContent(String varsUriContent) {
+        this.varsUriContent = varsUriContent;
+        return this;
+    }
+
+    
+
+
+    /**
+     * vars_uri对应的文件内容
+     * @return varsUriContent
+     */
+    public String getVarsUriContent() {
+        return varsUriContent;
+    }
+
+    public void setVarsUriContent(String varsUriContent) {
+        this.varsUriContent = varsUriContent;
+    }
+
+    
+
+    public GetStackMetadataResponse withCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 资源栈的生成时间 格式遵循RFC3339，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z 
+     * @return createTime
+     */
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    
+
+    public GetStackMetadataResponse withUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 资源栈的更新时间（更新场景包括元数据更新场景和部署场景） 格式遵循RFC3339，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z 
+     * @return updateTime
+     */
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
     }
 
     
@@ -565,19 +575,19 @@ public class GetStackMetadataResponse extends SdkResponse {
             Objects.equals(this.stackName, getStackMetadataResponse.stackName) &&
             Objects.equals(this.description, getStackMetadataResponse.description) &&
             Objects.equals(this.varsStructure, getStackMetadataResponse.varsStructure) &&
-            Objects.equals(this.varsUriContent, getStackMetadataResponse.varsUriContent) &&
             Objects.equals(this.varsBody, getStackMetadataResponse.varsBody) &&
-            Objects.equals(this.createTime, getStackMetadataResponse.createTime) &&
-            Objects.equals(this.updateTime, getStackMetadataResponse.updateTime) &&
             Objects.equals(this.enableDeletionProtection, getStackMetadataResponse.enableDeletionProtection) &&
             Objects.equals(this.enableAutoRollback, getStackMetadataResponse.enableAutoRollback) &&
             Objects.equals(this.status, getStackMetadataResponse.status) &&
+            Objects.equals(this.agencies, getStackMetadataResponse.agencies) &&
             Objects.equals(this.statusMessage, getStackMetadataResponse.statusMessage) &&
-            Objects.equals(this.agencies, getStackMetadataResponse.agencies);
+            Objects.equals(this.varsUriContent, getStackMetadataResponse.varsUriContent) &&
+            Objects.equals(this.createTime, getStackMetadataResponse.createTime) &&
+            Objects.equals(this.updateTime, getStackMetadataResponse.updateTime);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(stackId, stackName, description, varsStructure, varsUriContent, varsBody, createTime, updateTime, enableDeletionProtection, enableAutoRollback, status, statusMessage, agencies);
+        return Objects.hash(stackId, stackName, description, varsStructure, varsBody, enableDeletionProtection, enableAutoRollback, status, agencies, statusMessage, varsUriContent, createTime, updateTime);
     }
     @Override
     public String toString() {
@@ -587,15 +597,15 @@ public class GetStackMetadataResponse extends SdkResponse {
         sb.append("    stackName: ").append(toIndentedString(stackName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    varsStructure: ").append(toIndentedString(varsStructure)).append("\n");
-        sb.append("    varsUriContent: ").append(toIndentedString(varsUriContent)).append("\n");
         sb.append("    varsBody: ").append(toIndentedString(varsBody)).append("\n");
-        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    enableDeletionProtection: ").append(toIndentedString(enableDeletionProtection)).append("\n");
         sb.append("    enableAutoRollback: ").append(toIndentedString(enableAutoRollback)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
         sb.append("    agencies: ").append(toIndentedString(agencies)).append("\n");
+        sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
+        sb.append("    varsUriContent: ").append(toIndentedString(varsUriContent)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

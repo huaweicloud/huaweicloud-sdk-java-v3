@@ -19,6 +19,11 @@ public class RenewalResourcesResponse extends SdkResponse {
 
     private List<String> orderIds = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fail_resource_infos")
+
+    private List<FailResourceInfo> failResourceInfos = null;
+
     public RenewalResourcesResponse withOrderIds(List<String> orderIds) {
         this.orderIds = orderIds;
         return this;
@@ -52,6 +57,39 @@ public class RenewalResourcesResponse extends SdkResponse {
         this.orderIds = orderIds;
     }
 
+    public RenewalResourcesResponse withFailResourceInfos(List<FailResourceInfo> failResourceInfos) {
+        this.failResourceInfos = failResourceInfos;
+        return this;
+    }
+
+    public RenewalResourcesResponse addFailResourceInfosItem(FailResourceInfo failResourceInfosItem) {
+        if (this.failResourceInfos == null) {
+            this.failResourceInfos = new ArrayList<>();
+        }
+        this.failResourceInfos.add(failResourceInfosItem);
+        return this;
+    }
+
+    public RenewalResourcesResponse withFailResourceInfos(Consumer<List<FailResourceInfo>> failResourceInfosSetter) {
+        if (this.failResourceInfos == null) {
+            this.failResourceInfos = new ArrayList<>();
+        }
+        failResourceInfosSetter.accept(this.failResourceInfos);
+        return this;
+    }
+
+    /**
+     * |参数名称：失败的资源信息列表| |参数的约束及描述：套餐包使用量信息|
+     * @return failResourceInfos
+     */
+    public List<FailResourceInfo> getFailResourceInfos() {
+        return failResourceInfos;
+    }
+
+    public void setFailResourceInfos(List<FailResourceInfo> failResourceInfos) {
+        this.failResourceInfos = failResourceInfos;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -61,12 +99,13 @@ public class RenewalResourcesResponse extends SdkResponse {
             return false;
         }
         RenewalResourcesResponse renewalResourcesResponse = (RenewalResourcesResponse) o;
-        return Objects.equals(this.orderIds, renewalResourcesResponse.orderIds);
+        return Objects.equals(this.orderIds, renewalResourcesResponse.orderIds)
+            && Objects.equals(this.failResourceInfos, renewalResourcesResponse.failResourceInfos);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(orderIds);
+        return Objects.hash(orderIds, failResourceInfos);
     }
 
     @Override
@@ -74,6 +113,7 @@ public class RenewalResourcesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class RenewalResourcesResponse {\n");
         sb.append("    orderIds: ").append(toIndentedString(orderIds)).append("\n");
+        sb.append("    failResourceInfos: ").append(toIndentedString(failResourceInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

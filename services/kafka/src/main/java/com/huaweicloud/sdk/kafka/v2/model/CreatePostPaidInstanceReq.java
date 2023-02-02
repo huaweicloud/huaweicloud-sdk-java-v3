@@ -193,7 +193,7 @@ public class CreatePostPaidInstanceReq {
     private EngineVersionEnum engineVersion;
 
     /**
-     * [新规格实例：Kafka实例业务TPS规格，取值范围：   - c6.2u4g.cluster   - c6.4u8g.cluster   - c6.8u16g.cluster   - c6.12u24g.cluster   - c6.16u32g.cluster  老规格实例：](tag:hc,hk) Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB
+     *  [新规格实例：Kafka实例业务TPS规格，取值范围：   - c6.2u4g.cluster   - c6.4u8g.cluster   - c6.8u16g.cluster   - c6.12u24g.cluster   - c6.16u32g.cluster  老规格实例：](tag:hc,hk) Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB  注：此参数无需设置，其取值实际是由产品ID（product_id）决定。
      */
     public static final class SpecificationEnum {
 
@@ -519,87 +519,10 @@ public class CreatePostPaidInstanceReq {
 
     private Boolean sslEnable;
 
-    /**
-     * Gets or Sets saslEnabledMechanisms
-     */
-    public static final class SaslEnabledMechanismsEnum {
-
-        /**
-         * Enum PLAIN for value: "PLAIN"
-         */
-        public static final SaslEnabledMechanismsEnum PLAIN = new SaslEnabledMechanismsEnum("PLAIN");
-
-        /**
-         * Enum SCRAM_SHA_512 for value: "SCRAM-SHA-512"
-         */
-        public static final SaslEnabledMechanismsEnum SCRAM_SHA_512 = new SaslEnabledMechanismsEnum("SCRAM-SHA-512");
-
-        private static final Map<String, SaslEnabledMechanismsEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, SaslEnabledMechanismsEnum> createStaticFields() {
-            Map<String, SaslEnabledMechanismsEnum> map = new HashMap<>();
-            map.put("PLAIN", PLAIN);
-            map.put("SCRAM-SHA-512", SCRAM_SHA_512);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        SaslEnabledMechanismsEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static SaslEnabledMechanismsEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            SaslEnabledMechanismsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SaslEnabledMechanismsEnum(value);
-            }
-            return result;
-        }
-
-        public static SaslEnabledMechanismsEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            SaslEnabledMechanismsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof SaslEnabledMechanismsEnum) {
-                return this.value.equals(((SaslEnabledMechanismsEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sasl_enabled_mechanisms")
 
-    private List<SaslEnabledMechanismsEnum> saslEnabledMechanisms = null;
+    private List<String> saslEnabledMechanisms = null;
 
     /**
     * 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
@@ -684,11 +607,6 @@ public class CreatePostPaidInstanceReq {
     private RetentionPolicyEnum retentionPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "connector_enable")
-
-    private Boolean connectorEnable;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk_encrypted_enable")
 
     private Boolean diskEncryptedEnable;
@@ -699,12 +617,17 @@ public class CreatePostPaidInstanceReq {
     private String diskEncryptedKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connector_enable")
+
+    private Boolean connectorEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_auto_topic")
 
     private Boolean enableAutoTopic;
 
     /**
-     * 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra   如何选择磁盘类型请参考磁盘类型及性能介绍。
+     * 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra  如何选择磁盘类型请参考磁盘类型及性能介绍。
      */
     public static final class StorageSpecCodeEnum {
 
@@ -892,7 +815,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * [新规格实例：Kafka实例业务TPS规格，取值范围：   - c6.2u4g.cluster   - c6.4u8g.cluster   - c6.8u16g.cluster   - c6.12u24g.cluster   - c6.16u32g.cluster  老规格实例：](tag:hc,hk) Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB
+     *  [新规格实例：Kafka实例业务TPS规格，取值范围：   - c6.2u4g.cluster   - c6.4u8g.cluster   - c6.8u16g.cluster   - c6.12u24g.cluster   - c6.16u32g.cluster  老规格实例：](tag:hc,hk) Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB  注：此参数无需设置，其取值实际是由产品ID（product_id）决定。
      * @return specification
      */
     public SpecificationEnum getSpecification() {
@@ -909,7 +832,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 代理个数。 [老规格实例此参数无需设置。 新规格实例取值范围：3 ~ 30。](tag:hc,hk)  [此参数无需设置](tag:hws,hws_hk,otc,ocb,hws_ocb,ctc,sbc,hk_sbc,cmcc)
+     * 代理个数。 [取值范围:  - 老规格实例此参数无需设置  - 新规格必须设置，取值范围：3 ~ 30。](tag:hc,hk,hws,hws_hk,g42,tm) [此参数无需设置](tag:otc,ocb,hws_ocb,ctc,sbc,hk_sbc,cmcc)
      * @return brokerNum
      */
     public Integer getBrokerNum() {
@@ -926,7 +849,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 消息存储空间，单位GB。   - Kafka实例规格为100MB时，存储空间取值范围600GB ~ 90000GB。   - Kafka实例规格为300MB时，存储空间取值范围1200GB ~ 90000GB。   - Kafka实例规格为600MB时，存储空间取值范围2400GB ~ 90000GB。   - Kafka实例规格为1200MB，存储空间取值范围4800GB ~ 90000GB   [- Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围600GB ~ 300000GB。   - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围1200GB ~ 600000GB。   - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围2400GB ~ 900000GB。   - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围3600GB ~ 900000GB。   - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围4800GB ~ 900000GB。](tag:hc,hk)
+     * 消息存储空间，单位GB。   - Kafka实例规格为100MB时，存储空间取值范围600GB ~ 90000GB。   - Kafka实例规格为300MB时，存储空间取值范围1200GB ~ 90000GB。   - Kafka实例规格为600MB时，存储空间取值范围2400GB ~ 90000GB。   - Kafka实例规格为1200MB，存储空间取值范围4800GB ~ 90000GB   [- Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。   - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。   - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ 900000GB。   - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ 900000GB。   - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ 900000GB。](tag:hc,hk)
      * @return storageSpace
      */
     public Integer getStorageSpace() {
@@ -1078,7 +1001,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 产品ID。 产品ID可以从**查询产品规格列表**接口查询到，不同局点的产品ID的格式可能不同。 一种是包含字母的产品ID，例如：c6.2u4g.cluster；另一种是全数字格式的产品ID，例如：00300-30308-0--0。
+     * 产品ID。  [产品ID可以从**查询产品规格列表**接口查询到。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu,g42,tm)  [创建kafka实例,支持的产品规格有: (product_id/specification/partition_num/storage_space)  00300-30308-0--0/100MB/300/600;  00300-30310-0--0/300MB/900/1200;  00300-30312-0--0/600MB/1800/2400;  00300-30314-0--0/1200MB/1800/4800](tag:otc,dt)
      * @return productId
      */
     public String getProductId() {
@@ -1180,7 +1103,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 表示公网带宽，单位是Mbit/s。  [取值范围： - Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 - Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 - Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。 - Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。](tag:hws,hws_hk,otc,ocb,hws_ocb,ctc,sbc,hk_sbc,cmcc) [老规格实例取值范围： - Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 - Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。 - Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。 - Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。  新规格实例取值范围： - Kafka实例规格为c6.2u4g.cluster时，公网带宽取值范围3到250，且必须为实例节点个数的倍数。 - Kafka实例规格为c6.4u8g.cluster时，公网带宽取值范围3到500，且必须为实例节点个数的倍数。 - Kafka实例规格为c6.8u16g.cluster时，公网带宽取值范围4到1000，且必须为实例节点个数的倍数。 - Kafka实例规格为c6.12u24g.cluster时，公网带宽取值范围8到1500，且必须为实例节点个数的倍数。 - Kafka实例规格为c6.16u32g.cluster时，公网带宽取值范围8到2000，且必须为实例节点个数的倍数。](tag:hc,hk)
+     * 表示公网带宽，单位是Mbit/s。  [取值范围：  - Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。  - Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。  - Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。  - Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。](tag:hws,hws_hk,otc,ocb,hws_ocb,ctc,sbc,hk_sbc,cmcc,g42,tm)   [老规格实例取值范围：  - Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。  - Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。  - Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。  - Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。   新规格实例取值范围：  - Kafka实例规格为c6.2u4g.cluster时，公网带宽取值范围3到250，且必须为实例节点个数的倍数。  - Kafka实例规格为c6.4u8g.cluster时，公网带宽取值范围3到500，且必须为实例节点个数的倍数。  - Kafka实例规格为c6.8u16g.cluster时，公网带宽取值范围4到1000，且必须为实例节点个数的倍数。  - Kafka实例规格为c6.12u24g.cluster时，公网带宽取值范围8到1500，且必须为实例节点个数的倍数。  - Kafka实例规格为c6.16u32g.cluster时，公网带宽取值范围8到2000，且必须为实例节点个数的倍数。](tag:hc,hk)
      * @return publicBandwidth
      */
     public Integer getPublicBandwidth() {
@@ -1225,12 +1148,12 @@ public class CreatePostPaidInstanceReq {
         this.sslEnable = sslEnable;
     }
 
-    public CreatePostPaidInstanceReq withSaslEnabledMechanisms(List<SaslEnabledMechanismsEnum> saslEnabledMechanisms) {
+    public CreatePostPaidInstanceReq withSaslEnabledMechanisms(List<String> saslEnabledMechanisms) {
         this.saslEnabledMechanisms = saslEnabledMechanisms;
         return this;
     }
 
-    public CreatePostPaidInstanceReq addSaslEnabledMechanismsItem(SaslEnabledMechanismsEnum saslEnabledMechanismsItem) {
+    public CreatePostPaidInstanceReq addSaslEnabledMechanismsItem(String saslEnabledMechanismsItem) {
         if (this.saslEnabledMechanisms == null) {
             this.saslEnabledMechanisms = new ArrayList<>();
         }
@@ -1238,8 +1161,7 @@ public class CreatePostPaidInstanceReq {
         return this;
     }
 
-    public CreatePostPaidInstanceReq withSaslEnabledMechanisms(
-        Consumer<List<SaslEnabledMechanismsEnum>> saslEnabledMechanismsSetter) {
+    public CreatePostPaidInstanceReq withSaslEnabledMechanisms(Consumer<List<String>> saslEnabledMechanismsSetter) {
         if (this.saslEnabledMechanisms == null) {
             this.saslEnabledMechanisms = new ArrayList<>();
         }
@@ -1251,11 +1173,11 @@ public class CreatePostPaidInstanceReq {
      * 开启SASL后使用的认证机制，如果开启了SASL认证功能（即ssl_enable=true），该字段为必选。  若该字段值为空，默认开启PLAIN认证机制。  选择其一进行SASL认证即可,支持同时开启两种认证机制。 取值如下： - PLAIN: 简单的用户名密码校验。 - SCRAM-SHA-512: 用户凭证校验，安全性比PLAIN机制更高。
      * @return saslEnabledMechanisms
      */
-    public List<SaslEnabledMechanismsEnum> getSaslEnabledMechanisms() {
+    public List<String> getSaslEnabledMechanisms() {
         return saslEnabledMechanisms;
     }
 
-    public void setSaslEnabledMechanisms(List<SaslEnabledMechanismsEnum> saslEnabledMechanisms) {
+    public void setSaslEnabledMechanisms(List<String> saslEnabledMechanisms) {
         this.saslEnabledMechanisms = saslEnabledMechanisms;
     }
 
@@ -1274,23 +1196,6 @@ public class CreatePostPaidInstanceReq {
 
     public void setRetentionPolicy(RetentionPolicyEnum retentionPolicy) {
         this.retentionPolicy = retentionPolicy;
-    }
-
-    public CreatePostPaidInstanceReq withConnectorEnable(Boolean connectorEnable) {
-        this.connectorEnable = connectorEnable;
-        return this;
-    }
-
-    /**
-     * 是否开启消息转储功能。  默认不开启消息转储。
-     * @return connectorEnable
-     */
-    public Boolean getConnectorEnable() {
-        return connectorEnable;
-    }
-
-    public void setConnectorEnable(Boolean connectorEnable) {
-        this.connectorEnable = connectorEnable;
     }
 
     public CreatePostPaidInstanceReq withDiskEncryptedEnable(Boolean diskEncryptedEnable) {
@@ -1316,7 +1221,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 磁盘加密key，未开启磁盘加密时为空。
+     * 磁盘加密key，未开启磁盘加密时为空
      * @return diskEncryptedKey
      */
     public String getDiskEncryptedKey() {
@@ -1325,6 +1230,23 @@ public class CreatePostPaidInstanceReq {
 
     public void setDiskEncryptedKey(String diskEncryptedKey) {
         this.diskEncryptedKey = diskEncryptedKey;
+    }
+
+    public CreatePostPaidInstanceReq withConnectorEnable(Boolean connectorEnable) {
+        this.connectorEnable = connectorEnable;
+        return this;
+    }
+
+    /**
+     * 是否开启消息转储功能。  默认不开启消息转储。
+     * @return connectorEnable
+     */
+    public Boolean getConnectorEnable() {
+        return connectorEnable;
+    }
+
+    public void setConnectorEnable(Boolean connectorEnable) {
+        this.connectorEnable = connectorEnable;
     }
 
     public CreatePostPaidInstanceReq withEnableAutoTopic(Boolean enableAutoTopic) {
@@ -1350,7 +1272,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra   如何选择磁盘类型请参考磁盘类型及性能介绍。
+     * 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hc,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra  如何选择磁盘类型请参考磁盘类型及性能介绍。
      * @return storageSpecCode
      */
     public StorageSpecCodeEnum getStorageSpecCode() {
@@ -1445,9 +1367,9 @@ public class CreatePostPaidInstanceReq {
             && Objects.equals(this.sslEnable, createPostPaidInstanceReq.sslEnable)
             && Objects.equals(this.saslEnabledMechanisms, createPostPaidInstanceReq.saslEnabledMechanisms)
             && Objects.equals(this.retentionPolicy, createPostPaidInstanceReq.retentionPolicy)
-            && Objects.equals(this.connectorEnable, createPostPaidInstanceReq.connectorEnable)
             && Objects.equals(this.diskEncryptedEnable, createPostPaidInstanceReq.diskEncryptedEnable)
             && Objects.equals(this.diskEncryptedKey, createPostPaidInstanceReq.diskEncryptedKey)
+            && Objects.equals(this.connectorEnable, createPostPaidInstanceReq.connectorEnable)
             && Objects.equals(this.enableAutoTopic, createPostPaidInstanceReq.enableAutoTopic)
             && Objects.equals(this.storageSpecCode, createPostPaidInstanceReq.storageSpecCode)
             && Objects.equals(this.enterpriseProjectId, createPostPaidInstanceReq.enterpriseProjectId)
@@ -1481,9 +1403,9 @@ public class CreatePostPaidInstanceReq {
             sslEnable,
             saslEnabledMechanisms,
             retentionPolicy,
-            connectorEnable,
             diskEncryptedEnable,
             diskEncryptedKey,
+            connectorEnable,
             enableAutoTopic,
             storageSpecCode,
             enterpriseProjectId,
@@ -1519,9 +1441,9 @@ public class CreatePostPaidInstanceReq {
         sb.append("    sslEnable: ").append(toIndentedString(sslEnable)).append("\n");
         sb.append("    saslEnabledMechanisms: ").append(toIndentedString(saslEnabledMechanisms)).append("\n");
         sb.append("    retentionPolicy: ").append(toIndentedString(retentionPolicy)).append("\n");
-        sb.append("    connectorEnable: ").append(toIndentedString(connectorEnable)).append("\n");
         sb.append("    diskEncryptedEnable: ").append(toIndentedString(diskEncryptedEnable)).append("\n");
         sb.append("    diskEncryptedKey: ").append(toIndentedString(diskEncryptedKey)).append("\n");
+        sb.append("    connectorEnable: ").append(toIndentedString(connectorEnable)).append("\n");
         sb.append("    enableAutoTopic: ").append(toIndentedString(enableAutoTopic)).append("\n");
         sb.append("    storageSpecCode: ").append(toIndentedString(storageSpecCode)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");

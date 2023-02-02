@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aos.v1.model.StackEventResponse;
+import com.huaweicloud.sdk.aos.v1.model.StackEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -27,15 +27,15 @@ public class ListStackEventsResponse extends SdkResponse {
     @JsonProperty(value="stack_events")
     
     
-    private List<StackEventResponse> stackEvents = null;
+    private List<StackEvent> stackEvents = null;
     
-    public ListStackEventsResponse withStackEvents(List<StackEventResponse> stackEvents) {
+    public ListStackEventsResponse withStackEvents(List<StackEvent> stackEvents) {
         this.stackEvents = stackEvents;
         return this;
     }
 
     
-    public ListStackEventsResponse addStackEventsItem(StackEventResponse stackEventsItem) {
+    public ListStackEventsResponse addStackEventsItem(StackEvent stackEventsItem) {
         if(this.stackEvents == null) {
             this.stackEvents = new ArrayList<>();
         }
@@ -43,7 +43,7 @@ public class ListStackEventsResponse extends SdkResponse {
         return this;
     }
 
-    public ListStackEventsResponse withStackEvents(Consumer<List<StackEventResponse>> stackEventsSetter) {
+    public ListStackEventsResponse withStackEvents(Consumer<List<StackEvent>> stackEventsSetter) {
         if(this.stackEvents == null) {
             this.stackEvents = new ArrayList<>();
         }
@@ -52,14 +52,14 @@ public class ListStackEventsResponse extends SdkResponse {
     }
 
     /**
-     * 栈的更新状态
+     * 资源栈事件列表
      * @return stackEvents
      */
-    public List<StackEventResponse> getStackEvents() {
+    public List<StackEvent> getStackEvents() {
         return stackEvents;
     }
 
-    public void setStackEvents(List<StackEventResponse> stackEvents) {
+    public void setStackEvents(List<StackEvent> stackEvents) {
         this.stackEvents = stackEvents;
     }
 

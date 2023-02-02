@@ -51,7 +51,7 @@ public class AosMeta {
         );
         builder.<ApplyExecutionPlanRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ApplyExecutionPlanRequestBody.class),
             f -> f.withMarshaller(ApplyExecutionPlanRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -659,6 +659,22 @@ public class AosMeta {
                 req.setDeploymentId(v);
             })
         );
+        builder.<String>withRequestField("filter",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStackEventsRequest::getFilter, (req, v) -> {
+                req.setFilter(v);
+            })
+        );
+        builder.<String>withRequestField("field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStackEventsRequest::getField, (req, v) -> {
+                req.setField(v);
+            })
+        );
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -775,6 +791,48 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListStacksRequest::getClientRequestId, (req, v) -> {
                 req.setClientRequestId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateStackRequest, UpdateStackResponse> updateStack = genForupdateStack();
+
+    private static HttpRequestDef<UpdateStackRequest, UpdateStackResponse> genForupdateStack() {
+        // basic
+        HttpRequestDef.Builder<UpdateStackRequest, UpdateStackResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, UpdateStackRequest.class, UpdateStackResponse.class)
+                .withName("UpdateStack")
+                .withUri("/v1/{project_id}/stacks/{stack_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("stack_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStackRequest::getStackName, (req, v) -> {
+                req.setStackName(v);
+            })
+        );
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStackRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+        builder.<UpdateStackRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateStackRequestBody.class),
+            f -> f.withMarshaller(UpdateStackRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 

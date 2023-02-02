@@ -144,7 +144,7 @@ public class ListHa  {
 
 
     /**
-     * 备机同步参数。  取值：非空。  GaussDB(for openGauss)为 “sync” 说明： “sync”为同步模式。
+     * 备机同步参数。  取值：非空。  GaussDB为 “sync” 说明： “sync”为同步模式。
      * @return replicationMode
      */
     public String getReplicationMode() {

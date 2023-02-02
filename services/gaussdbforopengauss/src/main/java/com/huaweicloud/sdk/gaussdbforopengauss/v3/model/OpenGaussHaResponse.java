@@ -25,7 +25,7 @@ import java.util.Objects;
 public class OpenGaussHaResponse  {
 
     /**
-     * GaussDB(for openGauss) 分布式模式，返回值为：Enterprise（企业版）；主备版，返回值为：Ha(主备版)。
+     * GaussDB 分布式模式，返回值为：Enterprise（企业版）；主备版，返回值为：Ha(主备版)。
      */
     public static final class ModeEnum {
 
@@ -110,7 +110,7 @@ public class OpenGaussHaResponse  {
     
     private ModeEnum mode;
     /**
-     * 备机同步参数。  取值：  GaussDB(for openGauss)为“sync”。 说明： - “sync”为同步模式。
+     * 备机同步参数。  取值：  GaussDB为“sync”。 说明： - “sync”为同步模式。
      */
     public static final class ReplicationModeEnum {
 
@@ -189,7 +189,7 @@ public class OpenGaussHaResponse  {
     
     private ReplicationModeEnum replicationMode;
     /**
-     * GaussDB(for openGauss)的预留参数：指定实例一致性类型，取值范围：strong（强一致性） | eventual(最终一致性)。
+     * GaussDB的预留参数：指定实例一致性类型，取值范围：strong（强一致性） | eventual(最终一致性)。
      */
     public static final class ConsistencyEnum {
 
@@ -283,7 +283,7 @@ public class OpenGaussHaResponse  {
 
 
     /**
-     * GaussDB(for openGauss) 分布式模式，返回值为：Enterprise（企业版）；主备版，返回值为：Ha(主备版)。
+     * GaussDB 分布式模式，返回值为：Enterprise（企业版）；主备版，返回值为：Ha(主备版)。
      * @return mode
      */
     public ModeEnum getMode() {
@@ -305,7 +305,7 @@ public class OpenGaussHaResponse  {
 
 
     /**
-     * 备机同步参数。  取值：  GaussDB(for openGauss)为“sync”。 说明： - “sync”为同步模式。
+     * 备机同步参数。  取值：  GaussDB为“sync”。 说明： - “sync”为同步模式。
      * @return replicationMode
      */
     public ReplicationModeEnum getReplicationMode() {
@@ -327,7 +327,7 @@ public class OpenGaussHaResponse  {
 
 
     /**
-     * GaussDB(for openGauss)的预留参数：指定实例一致性类型，取值范围：strong（强一致性） | eventual(最终一致性)。
+     * GaussDB的预留参数：指定实例一致性类型，取值范围：strong（强一致性） | eventual(最终一致性)。
      * @return consistency
      */
     public ConsistencyEnum getConsistency() {

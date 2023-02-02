@@ -1,0 +1,272 @@
+package com.huaweicloud.sdk.kafka.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * 产品规格属性描述。
+ */
+public class ExtendProductPropertiesEntity {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_partition_per_broker")
+
+    private String maxPartitionPerBroker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_broker")
+
+    private String maxBroker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_storage_per_node")
+
+    private String maxStoragePerNode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_consumer_per_broker")
+
+    private String maxConsumerPerBroker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_broker")
+
+    private String minBroker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_bandwidth_per_broker")
+
+    private String maxBandwidthPerBroker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_storage_per_node")
+
+    private String minStoragePerNode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_tps_per_broker")
+
+    private String maxTpsPerBroker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_alias")
+
+    private String productAlias;
+
+    public ExtendProductPropertiesEntity withMaxPartitionPerBroker(String maxPartitionPerBroker) {
+        this.maxPartitionPerBroker = maxPartitionPerBroker;
+        return this;
+    }
+
+    /**
+     * 每个Broker的最大分区数。
+     * @return maxPartitionPerBroker
+     */
+    public String getMaxPartitionPerBroker() {
+        return maxPartitionPerBroker;
+    }
+
+    public void setMaxPartitionPerBroker(String maxPartitionPerBroker) {
+        this.maxPartitionPerBroker = maxPartitionPerBroker;
+    }
+
+    public ExtendProductPropertiesEntity withMaxBroker(String maxBroker) {
+        this.maxBroker = maxBroker;
+        return this;
+    }
+
+    /**
+     * Broker的最大个数。
+     * @return maxBroker
+     */
+    public String getMaxBroker() {
+        return maxBroker;
+    }
+
+    public void setMaxBroker(String maxBroker) {
+        this.maxBroker = maxBroker;
+    }
+
+    public ExtendProductPropertiesEntity withMaxStoragePerNode(String maxStoragePerNode) {
+        this.maxStoragePerNode = maxStoragePerNode;
+        return this;
+    }
+
+    /**
+     * 每个节点的最大存储。单位为GB。
+     * @return maxStoragePerNode
+     */
+    public String getMaxStoragePerNode() {
+        return maxStoragePerNode;
+    }
+
+    public void setMaxStoragePerNode(String maxStoragePerNode) {
+        this.maxStoragePerNode = maxStoragePerNode;
+    }
+
+    public ExtendProductPropertiesEntity withMaxConsumerPerBroker(String maxConsumerPerBroker) {
+        this.maxConsumerPerBroker = maxConsumerPerBroker;
+        return this;
+    }
+
+    /**
+     * 每个Broker的最大消费者数。
+     * @return maxConsumerPerBroker
+     */
+    public String getMaxConsumerPerBroker() {
+        return maxConsumerPerBroker;
+    }
+
+    public void setMaxConsumerPerBroker(String maxConsumerPerBroker) {
+        this.maxConsumerPerBroker = maxConsumerPerBroker;
+    }
+
+    public ExtendProductPropertiesEntity withMinBroker(String minBroker) {
+        this.minBroker = minBroker;
+        return this;
+    }
+
+    /**
+     * Broker的最小个数。
+     * @return minBroker
+     */
+    public String getMinBroker() {
+        return minBroker;
+    }
+
+    public void setMinBroker(String minBroker) {
+        this.minBroker = minBroker;
+    }
+
+    public ExtendProductPropertiesEntity withMaxBandwidthPerBroker(String maxBandwidthPerBroker) {
+        this.maxBandwidthPerBroker = maxBandwidthPerBroker;
+        return this;
+    }
+
+    /**
+     * 每个Broker的最大带宽。
+     * @return maxBandwidthPerBroker
+     */
+    public String getMaxBandwidthPerBroker() {
+        return maxBandwidthPerBroker;
+    }
+
+    public void setMaxBandwidthPerBroker(String maxBandwidthPerBroker) {
+        this.maxBandwidthPerBroker = maxBandwidthPerBroker;
+    }
+
+    public ExtendProductPropertiesEntity withMinStoragePerNode(String minStoragePerNode) {
+        this.minStoragePerNode = minStoragePerNode;
+        return this;
+    }
+
+    /**
+     * 每个节点的最小存储。单位为GB。
+     * @return minStoragePerNode
+     */
+    public String getMinStoragePerNode() {
+        return minStoragePerNode;
+    }
+
+    public void setMinStoragePerNode(String minStoragePerNode) {
+        this.minStoragePerNode = minStoragePerNode;
+    }
+
+    public ExtendProductPropertiesEntity withMaxTpsPerBroker(String maxTpsPerBroker) {
+        this.maxTpsPerBroker = maxTpsPerBroker;
+        return this;
+    }
+
+    /**
+     * 每个Broker的最大TPS。
+     * @return maxTpsPerBroker
+     */
+    public String getMaxTpsPerBroker() {
+        return maxTpsPerBroker;
+    }
+
+    public void setMaxTpsPerBroker(String maxTpsPerBroker) {
+        this.maxTpsPerBroker = maxTpsPerBroker;
+    }
+
+    public ExtendProductPropertiesEntity withProductAlias(String productAlias) {
+        this.productAlias = productAlias;
+        return this;
+    }
+
+    /**
+     * product_id的别名。
+     * @return productAlias
+     */
+    public String getProductAlias() {
+        return productAlias;
+    }
+
+    public void setProductAlias(String productAlias) {
+        this.productAlias = productAlias;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ExtendProductPropertiesEntity extendProductPropertiesEntity = (ExtendProductPropertiesEntity) o;
+        return Objects.equals(this.maxPartitionPerBroker, extendProductPropertiesEntity.maxPartitionPerBroker)
+            && Objects.equals(this.maxBroker, extendProductPropertiesEntity.maxBroker)
+            && Objects.equals(this.maxStoragePerNode, extendProductPropertiesEntity.maxStoragePerNode)
+            && Objects.equals(this.maxConsumerPerBroker, extendProductPropertiesEntity.maxConsumerPerBroker)
+            && Objects.equals(this.minBroker, extendProductPropertiesEntity.minBroker)
+            && Objects.equals(this.maxBandwidthPerBroker, extendProductPropertiesEntity.maxBandwidthPerBroker)
+            && Objects.equals(this.minStoragePerNode, extendProductPropertiesEntity.minStoragePerNode)
+            && Objects.equals(this.maxTpsPerBroker, extendProductPropertiesEntity.maxTpsPerBroker)
+            && Objects.equals(this.productAlias, extendProductPropertiesEntity.productAlias);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(maxPartitionPerBroker,
+            maxBroker,
+            maxStoragePerNode,
+            maxConsumerPerBroker,
+            minBroker,
+            maxBandwidthPerBroker,
+            minStoragePerNode,
+            maxTpsPerBroker,
+            productAlias);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ExtendProductPropertiesEntity {\n");
+        sb.append("    maxPartitionPerBroker: ").append(toIndentedString(maxPartitionPerBroker)).append("\n");
+        sb.append("    maxBroker: ").append(toIndentedString(maxBroker)).append("\n");
+        sb.append("    maxStoragePerNode: ").append(toIndentedString(maxStoragePerNode)).append("\n");
+        sb.append("    maxConsumerPerBroker: ").append(toIndentedString(maxConsumerPerBroker)).append("\n");
+        sb.append("    minBroker: ").append(toIndentedString(minBroker)).append("\n");
+        sb.append("    maxBandwidthPerBroker: ").append(toIndentedString(maxBandwidthPerBroker)).append("\n");
+        sb.append("    minStoragePerNode: ").append(toIndentedString(minStoragePerNode)).append("\n");
+        sb.append("    maxTpsPerBroker: ").append(toIndentedString(maxTpsPerBroker)).append("\n");
+        sb.append("    productAlias: ").append(toIndentedString(productAlias)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

@@ -20,6 +20,37 @@ public class CloudPipelineClient {
     /**
      * 批量获取流水线状态
      *
+     * 批量获取流水线状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowPipelinesLatestStatusRequest 请求对象
+     * @return BatchShowPipelinesLatestStatusResponse
+     */
+    public BatchShowPipelinesLatestStatusResponse batchShowPipelinesLatestStatus(
+        BatchShowPipelinesLatestStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudPipelineMeta.batchShowPipelinesLatestStatus);
+    }
+
+    /**
+     * 批量获取流水线状态
+     *
+     * 批量获取流水线状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowPipelinesLatestStatusRequest 请求对象
+     * @return SyncInvoker<BatchShowPipelinesLatestStatusRequest, BatchShowPipelinesLatestStatusResponse>
+     */
+    public SyncInvoker<BatchShowPipelinesLatestStatusRequest, BatchShowPipelinesLatestStatusResponse> batchShowPipelinesLatestStatusInvoker(
+        BatchShowPipelinesLatestStatusRequest request) {
+        return new SyncInvoker<BatchShowPipelinesLatestStatusRequest, BatchShowPipelinesLatestStatusResponse>(request,
+            CloudPipelineMeta.batchShowPipelinesLatestStatus, hcClient);
+    }
+
+    /**
+     * 批量获取流水线状态
+     *
      * 批量获取流水线状态和阶段信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -78,6 +109,66 @@ public class CloudPipelineClient {
     }
 
     /**
+     * 删除流水线
+     *
+     * 删除流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePipelineRequest 请求对象
+     * @return DeletePipelineResponse
+     */
+    public DeletePipelineResponse deletePipeline(DeletePipelineRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudPipelineMeta.deletePipeline);
+    }
+
+    /**
+     * 删除流水线
+     *
+     * 删除流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePipelineRequest 请求对象
+     * @return SyncInvoker<DeletePipelineRequest, DeletePipelineResponse>
+     */
+    public SyncInvoker<DeletePipelineRequest, DeletePipelineResponse> deletePipelineInvoker(
+        DeletePipelineRequest request) {
+        return new SyncInvoker<DeletePipelineRequest, DeletePipelineResponse>(request, CloudPipelineMeta.deletePipeline,
+            hcClient);
+    }
+
+    /**
+     * 获取流水线执行记录
+     *
+     * 获取流水线执行记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPipelineRunsRequest 请求对象
+     * @return ListPipelineRunsResponse
+     */
+    public ListPipelineRunsResponse listPipelineRuns(ListPipelineRunsRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudPipelineMeta.listPipelineRuns);
+    }
+
+    /**
+     * 获取流水线执行记录
+     *
+     * 获取流水线执行记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPipelineRunsRequest 请求对象
+     * @return SyncInvoker<ListPipelineRunsRequest, ListPipelineRunsResponse>
+     */
+    public SyncInvoker<ListPipelineRunsRequest, ListPipelineRunsResponse> listPipelineRunsInvoker(
+        ListPipelineRunsRequest request) {
+        return new SyncInvoker<ListPipelineRunsRequest, ListPipelineRunsResponse>(request,
+            CloudPipelineMeta.listPipelineRuns, hcClient);
+    }
+
+    /**
      * 获取流水线列表接口
      *
      * 获取流水线列表接口
@@ -105,6 +196,35 @@ public class CloudPipelineClient {
         ListPipelineSimpleInfoRequest request) {
         return new SyncInvoker<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse>(request,
             CloudPipelineMeta.listPipelineSimpleInfo, hcClient);
+    }
+
+    /**
+     * 获取流水线列表/获取项目下流水线执行状况
+     *
+     * 获取流水线列表/获取项目下流水线执行状况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPipelinesRequest 请求对象
+     * @return ListPipelinesResponse
+     */
+    public ListPipelinesResponse listPipelines(ListPipelinesRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudPipelineMeta.listPipelines);
+    }
+
+    /**
+     * 获取流水线列表/获取项目下流水线执行状况
+     *
+     * 获取流水线列表/获取项目下流水线执行状况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPipelinesRequest 请求对象
+     * @return SyncInvoker<ListPipelinesRequest, ListPipelinesResponse>
+     */
+    public SyncInvoker<ListPipelinesRequest, ListPipelinesResponse> listPipelinesInvoker(ListPipelinesRequest request) {
+        return new SyncInvoker<ListPipelinesRequest, ListPipelinesResponse>(request, CloudPipelineMeta.listPipelines,
+            hcClient);
     }
 
     /**
@@ -197,6 +317,35 @@ public class CloudPipelineClient {
     }
 
     /**
+     * 启动流水线
+     *
+     * 启动流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunPipelineRequest 请求对象
+     * @return RunPipelineResponse
+     */
+    public RunPipelineResponse runPipeline(RunPipelineRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudPipelineMeta.runPipeline);
+    }
+
+    /**
+     * 启动流水线
+     *
+     * 启动流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunPipelineRequest 请求对象
+     * @return SyncInvoker<RunPipelineRequest, RunPipelineResponse>
+     */
+    public SyncInvoker<RunPipelineRequest, RunPipelineResponse> runPipelineInvoker(RunPipelineRequest request) {
+        return new SyncInvoker<RunPipelineRequest, RunPipelineResponse>(request, CloudPipelineMeta.runPipeline,
+            hcClient);
+    }
+
+    /**
      * 检查流水线创建状态
      *
      * 检查流水线创建状态
@@ -224,6 +373,36 @@ public class CloudPipelineClient {
         ShowInstanceStatusRequest request) {
         return new SyncInvoker<ShowInstanceStatusRequest, ShowInstanceStatusResponse>(request,
             CloudPipelineMeta.showInstanceStatus, hcClient);
+    }
+
+    /**
+     * 获取流水线状态/获取流水线执行详情
+     *
+     * 获取流水线状态/获取流水线执行详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPipelineRunDetailRequest 请求对象
+     * @return ShowPipelineRunDetailResponse
+     */
+    public ShowPipelineRunDetailResponse showPipelineRunDetail(ShowPipelineRunDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudPipelineMeta.showPipelineRunDetail);
+    }
+
+    /**
+     * 获取流水线状态/获取流水线执行详情
+     *
+     * 获取流水线状态/获取流水线执行详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPipelineRunDetailRequest 请求对象
+     * @return SyncInvoker<ShowPipelineRunDetailRequest, ShowPipelineRunDetailResponse>
+     */
+    public SyncInvoker<ShowPipelineRunDetailRequest, ShowPipelineRunDetailResponse> showPipelineRunDetailInvoker(
+        ShowPipelineRunDetailRequest request) {
+        return new SyncInvoker<ShowPipelineRunDetailRequest, ShowPipelineRunDetailResponse>(request,
+            CloudPipelineMeta.showPipelineRunDetail, hcClient);
     }
 
     /**
@@ -344,6 +523,36 @@ public class CloudPipelineClient {
         StopPipelineNewRequest request) {
         return new SyncInvoker<StopPipelineNewRequest, StopPipelineNewResponse>(request,
             CloudPipelineMeta.stopPipelineNew, hcClient);
+    }
+
+    /**
+     * 停止流水线
+     *
+     * 停止流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopPipelineRunRequest 请求对象
+     * @return StopPipelineRunResponse
+     */
+    public StopPipelineRunResponse stopPipelineRun(StopPipelineRunRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudPipelineMeta.stopPipelineRun);
+    }
+
+    /**
+     * 停止流水线
+     *
+     * 停止流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopPipelineRunRequest 请求对象
+     * @return SyncInvoker<StopPipelineRunRequest, StopPipelineRunResponse>
+     */
+    public SyncInvoker<StopPipelineRunRequest, StopPipelineRunResponse> stopPipelineRunInvoker(
+        StopPipelineRunRequest request) {
+        return new SyncInvoker<StopPipelineRunRequest, StopPipelineRunResponse>(request,
+            CloudPipelineMeta.stopPipelineRun, hcClient);
     }
 
 }

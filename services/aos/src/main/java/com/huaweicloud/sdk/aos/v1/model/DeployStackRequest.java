@@ -70,7 +70,7 @@ public class DeployStackRequest  {
 
 
     /**
-     * 用户希望操作的资源栈名
+     * 用户希望操作的资源栈名称
      * @return stackName
      */
     public String getStackName() {

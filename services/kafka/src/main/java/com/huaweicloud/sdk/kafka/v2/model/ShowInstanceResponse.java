@@ -105,6 +105,16 @@ public class ShowInstanceResponse extends SdkResponse {
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_name")
+
+    private String subnetName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_cidr")
+
+    private String subnetCidr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_id")
 
     private String userId;
@@ -150,6 +160,11 @@ public class ShowInstanceResponse extends SdkResponse {
     private Boolean sslEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sasl_enabled_mechanisms")
+
+    private List<String> saslEnabledMechanisms = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_two_way_enable")
 
     private Boolean sslTwoWayEnable;
@@ -158,6 +173,11 @@ public class ShowInstanceResponse extends SdkResponse {
     @JsonProperty(value = "cert_replaced")
 
     private Boolean certReplaced;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_management_connect_address")
+
+    private String publicManagementConnectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -499,26 +519,6 @@ public class ShowInstanceResponse extends SdkResponse {
     private String diskEncryptedKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "public_management_connect_address")
-
-    private String publicManagementConnectAddress;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "subnet_cidr")
-
-    private String subnetCidr;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "subnet_name")
-
-    private String subnetName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_acl")
-
-    private Boolean enableAcl;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_private_connect_address")
 
     private String kafkaPrivateConnectAddress;
@@ -537,6 +537,11 @@ public class ShowInstanceResponse extends SdkResponse {
     @JsonProperty(value = "node_num")
 
     private Integer nodeNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_acl")
+
+    private Boolean enableAcl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_spec_billing_enable")
@@ -785,7 +790,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * [付费模式，1表示按需计费，0表示包年/包月计费。](tag:hc,hk,hws,hws_hk,otc,ctc,sbc,hk_sbc,cmcc)[付费模式，暂未使用。](tag:hws_ocb,ocb)[付费模式，1表示按需计费](tag:hws_eu)
+     * [付费模式，1表示按需计费，0表示包年/包月计费。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)[付费模式，暂未使用。](tag:hws_ocb,ocb) [付费模式，1表示按需计费。](tag:otc,dt,g42,tm)
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -845,6 +850,40 @@ public class ShowInstanceResponse extends SdkResponse {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public ShowInstanceResponse withSubnetName(String subnetName) {
+        this.subnetName = subnetName;
+        return this;
+    }
+
+    /**
+     * 子网名称。
+     * @return subnetName
+     */
+    public String getSubnetName() {
+        return subnetName;
+    }
+
+    public void setSubnetName(String subnetName) {
+        this.subnetName = subnetName;
+    }
+
+    public ShowInstanceResponse withSubnetCidr(String subnetCidr) {
+        this.subnetCidr = subnetCidr;
+        return this;
+    }
+
+    /**
+     * 子网网段。
+     * @return subnetCidr
+     */
+    public String getSubnetCidr() {
+        return subnetCidr;
+    }
+
+    public void setSubnetCidr(String subnetCidr) {
+        this.subnetCidr = subnetCidr;
     }
 
     public ShowInstanceResponse withUserId(String userId) {
@@ -1000,6 +1039,39 @@ public class ShowInstanceResponse extends SdkResponse {
         this.sslEnable = sslEnable;
     }
 
+    public ShowInstanceResponse withSaslEnabledMechanisms(List<String> saslEnabledMechanisms) {
+        this.saslEnabledMechanisms = saslEnabledMechanisms;
+        return this;
+    }
+
+    public ShowInstanceResponse addSaslEnabledMechanismsItem(String saslEnabledMechanismsItem) {
+        if (this.saslEnabledMechanisms == null) {
+            this.saslEnabledMechanisms = new ArrayList<>();
+        }
+        this.saslEnabledMechanisms.add(saslEnabledMechanismsItem);
+        return this;
+    }
+
+    public ShowInstanceResponse withSaslEnabledMechanisms(Consumer<List<String>> saslEnabledMechanismsSetter) {
+        if (this.saslEnabledMechanisms == null) {
+            this.saslEnabledMechanisms = new ArrayList<>();
+        }
+        saslEnabledMechanismsSetter.accept(this.saslEnabledMechanisms);
+        return this;
+    }
+
+    /**
+     * 开启SASL后使用的认证机制。 - PLAIN: 简单的用户名密码校验。 - SCRAM-SHA-512: 用户凭证校验，安全性比PLAIN机制更高。
+     * @return saslEnabledMechanisms
+     */
+    public List<String> getSaslEnabledMechanisms() {
+        return saslEnabledMechanisms;
+    }
+
+    public void setSaslEnabledMechanisms(List<String> saslEnabledMechanisms) {
+        this.saslEnabledMechanisms = saslEnabledMechanisms;
+    }
+
     public ShowInstanceResponse withSslTwoWayEnable(Boolean sslTwoWayEnable) {
         this.sslTwoWayEnable = sslTwoWayEnable;
         return this;
@@ -1032,6 +1104,23 @@ public class ShowInstanceResponse extends SdkResponse {
 
     public void setCertReplaced(Boolean certReplaced) {
         this.certReplaced = certReplaced;
+    }
+
+    public ShowInstanceResponse withPublicManagementConnectAddress(String publicManagementConnectAddress) {
+        this.publicManagementConnectAddress = publicManagementConnectAddress;
+        return this;
+    }
+
+    /**
+     * 公网访问Kafka Manager连接地址。
+     * @return publicManagementConnectAddress
+     */
+    public String getPublicManagementConnectAddress() {
+        return publicManagementConnectAddress;
+    }
+
+    public void setPublicManagementConnectAddress(String publicManagementConnectAddress) {
+        this.publicManagementConnectAddress = publicManagementConnectAddress;
     }
 
     public ShowInstanceResponse withEnterpriseProjectId(String enterpriseProjectId) {
@@ -1695,74 +1784,6 @@ public class ShowInstanceResponse extends SdkResponse {
         this.diskEncryptedKey = diskEncryptedKey;
     }
 
-    public ShowInstanceResponse withPublicManagementConnectAddress(String publicManagementConnectAddress) {
-        this.publicManagementConnectAddress = publicManagementConnectAddress;
-        return this;
-    }
-
-    /**
-     * 公网访问Kafka Manager连接地址。
-     * @return publicManagementConnectAddress
-     */
-    public String getPublicManagementConnectAddress() {
-        return publicManagementConnectAddress;
-    }
-
-    public void setPublicManagementConnectAddress(String publicManagementConnectAddress) {
-        this.publicManagementConnectAddress = publicManagementConnectAddress;
-    }
-
-    public ShowInstanceResponse withSubnetCidr(String subnetCidr) {
-        this.subnetCidr = subnetCidr;
-        return this;
-    }
-
-    /**
-     * 子网网段。
-     * @return subnetCidr
-     */
-    public String getSubnetCidr() {
-        return subnetCidr;
-    }
-
-    public void setSubnetCidr(String subnetCidr) {
-        this.subnetCidr = subnetCidr;
-    }
-
-    public ShowInstanceResponse withSubnetName(String subnetName) {
-        this.subnetName = subnetName;
-        return this;
-    }
-
-    /**
-     * 子网名称。
-     * @return subnetName
-     */
-    public String getSubnetName() {
-        return subnetName;
-    }
-
-    public void setSubnetName(String subnetName) {
-        this.subnetName = subnetName;
-    }
-
-    public ShowInstanceResponse withEnableAcl(Boolean enableAcl) {
-        this.enableAcl = enableAcl;
-        return this;
-    }
-
-    /**
-     * 是否开启访问控制。
-     * @return enableAcl
-     */
-    public Boolean getEnableAcl() {
-        return enableAcl;
-    }
-
-    public void setEnableAcl(Boolean enableAcl) {
-        this.enableAcl = enableAcl;
-    }
-
     public ShowInstanceResponse withKafkaPrivateConnectAddress(String kafkaPrivateConnectAddress) {
         this.kafkaPrivateConnectAddress = kafkaPrivateConnectAddress;
         return this;
@@ -1829,6 +1850,23 @@ public class ShowInstanceResponse extends SdkResponse {
 
     public void setNodeNum(Integer nodeNum) {
         this.nodeNum = nodeNum;
+    }
+
+    public ShowInstanceResponse withEnableAcl(Boolean enableAcl) {
+        this.enableAcl = enableAcl;
+        return this;
+    }
+
+    /**
+     * 是否开启访问控制。
+     * @return enableAcl
+     */
+    public Boolean getEnableAcl() {
+        return enableAcl;
+    }
+
+    public void setEnableAcl(Boolean enableAcl) {
+        this.enableAcl = enableAcl;
     }
 
     public ShowInstanceResponse withNewSpecBillingEnable(Boolean newSpecBillingEnable) {
@@ -1941,6 +1979,8 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.vpcId, showInstanceResponse.vpcId)
             && Objects.equals(this.vpcName, showInstanceResponse.vpcName)
             && Objects.equals(this.createdAt, showInstanceResponse.createdAt)
+            && Objects.equals(this.subnetName, showInstanceResponse.subnetName)
+            && Objects.equals(this.subnetCidr, showInstanceResponse.subnetCidr)
             && Objects.equals(this.userId, showInstanceResponse.userId)
             && Objects.equals(this.userName, showInstanceResponse.userName)
             && Objects.equals(this.accessUser, showInstanceResponse.accessUser)
@@ -1950,8 +1990,10 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.enablePublicip, showInstanceResponse.enablePublicip)
             && Objects.equals(this.managementConnectAddress, showInstanceResponse.managementConnectAddress)
             && Objects.equals(this.sslEnable, showInstanceResponse.sslEnable)
+            && Objects.equals(this.saslEnabledMechanisms, showInstanceResponse.saslEnabledMechanisms)
             && Objects.equals(this.sslTwoWayEnable, showInstanceResponse.sslTwoWayEnable)
             && Objects.equals(this.certReplaced, showInstanceResponse.certReplaced)
+            && Objects.equals(this.publicManagementConnectAddress, showInstanceResponse.publicManagementConnectAddress)
             && Objects.equals(this.enterpriseProjectId, showInstanceResponse.enterpriseProjectId)
             && Objects.equals(this.isLogicalVolume, showInstanceResponse.isLogicalVolume)
             && Objects.equals(this.extendTimes, showInstanceResponse.extendTimes)
@@ -1989,14 +2031,11 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.podConnectAddress, showInstanceResponse.podConnectAddress)
             && Objects.equals(this.diskEncrypted, showInstanceResponse.diskEncrypted)
             && Objects.equals(this.diskEncryptedKey, showInstanceResponse.diskEncryptedKey)
-            && Objects.equals(this.publicManagementConnectAddress, showInstanceResponse.publicManagementConnectAddress)
-            && Objects.equals(this.subnetCidr, showInstanceResponse.subnetCidr)
-            && Objects.equals(this.subnetName, showInstanceResponse.subnetName)
-            && Objects.equals(this.enableAcl, showInstanceResponse.enableAcl)
             && Objects.equals(this.kafkaPrivateConnectAddress, showInstanceResponse.kafkaPrivateConnectAddress)
             && Objects.equals(this.cesVersion, showInstanceResponse.cesVersion)
             && Objects.equals(this.publicAccessEnabled, showInstanceResponse.publicAccessEnabled)
             && Objects.equals(this.nodeNum, showInstanceResponse.nodeNum)
+            && Objects.equals(this.enableAcl, showInstanceResponse.enableAcl)
             && Objects.equals(this.newSpecBillingEnable, showInstanceResponse.newSpecBillingEnable)
             && Objects.equals(this.brokerNum, showInstanceResponse.brokerNum)
             && Objects.equals(this.tags, showInstanceResponse.tags)
@@ -2022,6 +2061,8 @@ public class ShowInstanceResponse extends SdkResponse {
             vpcId,
             vpcName,
             createdAt,
+            subnetName,
+            subnetCidr,
             userId,
             userName,
             accessUser,
@@ -2031,8 +2072,10 @@ public class ShowInstanceResponse extends SdkResponse {
             enablePublicip,
             managementConnectAddress,
             sslEnable,
+            saslEnabledMechanisms,
             sslTwoWayEnable,
             certReplaced,
+            publicManagementConnectAddress,
             enterpriseProjectId,
             isLogicalVolume,
             extendTimes,
@@ -2070,14 +2113,11 @@ public class ShowInstanceResponse extends SdkResponse {
             podConnectAddress,
             diskEncrypted,
             diskEncryptedKey,
-            publicManagementConnectAddress,
-            subnetCidr,
-            subnetName,
-            enableAcl,
             kafkaPrivateConnectAddress,
             cesVersion,
             publicAccessEnabled,
             nodeNum,
+            enableAcl,
             newSpecBillingEnable,
             brokerNum,
             tags,
@@ -2105,6 +2145,8 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    vpcName: ").append(toIndentedString(vpcName)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    subnetName: ").append(toIndentedString(subnetName)).append("\n");
+        sb.append("    subnetCidr: ").append(toIndentedString(subnetCidr)).append("\n");
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    accessUser: ").append(toIndentedString(accessUser)).append("\n");
@@ -2114,8 +2156,12 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
         sb.append("    managementConnectAddress: ").append(toIndentedString(managementConnectAddress)).append("\n");
         sb.append("    sslEnable: ").append(toIndentedString(sslEnable)).append("\n");
+        sb.append("    saslEnabledMechanisms: ").append(toIndentedString(saslEnabledMechanisms)).append("\n");
         sb.append("    sslTwoWayEnable: ").append(toIndentedString(sslTwoWayEnable)).append("\n");
         sb.append("    certReplaced: ").append(toIndentedString(certReplaced)).append("\n");
+        sb.append("    publicManagementConnectAddress: ")
+            .append(toIndentedString(publicManagementConnectAddress))
+            .append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    isLogicalVolume: ").append(toIndentedString(isLogicalVolume)).append("\n");
         sb.append("    extendTimes: ").append(toIndentedString(extendTimes)).append("\n");
@@ -2153,16 +2199,11 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    podConnectAddress: ").append(toIndentedString(podConnectAddress)).append("\n");
         sb.append("    diskEncrypted: ").append(toIndentedString(diskEncrypted)).append("\n");
         sb.append("    diskEncryptedKey: ").append(toIndentedString(diskEncryptedKey)).append("\n");
-        sb.append("    publicManagementConnectAddress: ")
-            .append(toIndentedString(publicManagementConnectAddress))
-            .append("\n");
-        sb.append("    subnetCidr: ").append(toIndentedString(subnetCidr)).append("\n");
-        sb.append("    subnetName: ").append(toIndentedString(subnetName)).append("\n");
-        sb.append("    enableAcl: ").append(toIndentedString(enableAcl)).append("\n");
         sb.append("    kafkaPrivateConnectAddress: ").append(toIndentedString(kafkaPrivateConnectAddress)).append("\n");
         sb.append("    cesVersion: ").append(toIndentedString(cesVersion)).append("\n");
         sb.append("    publicAccessEnabled: ").append(toIndentedString(publicAccessEnabled)).append("\n");
         sb.append("    nodeNum: ").append(toIndentedString(nodeNum)).append("\n");
+        sb.append("    enableAcl: ").append(toIndentedString(enableAcl)).append("\n");
         sb.append("    newSpecBillingEnable: ").append(toIndentedString(newSpecBillingEnable)).append("\n");
         sb.append("    brokerNum: ").append(toIndentedString(brokerNum)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");

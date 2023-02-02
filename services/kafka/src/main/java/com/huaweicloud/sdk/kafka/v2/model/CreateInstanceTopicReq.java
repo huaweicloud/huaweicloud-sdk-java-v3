@@ -46,7 +46,7 @@ public class CreateInstanceTopicReq {
     }
 
     /**
-     * topic名称，长度为4-64，以字母开头且只支持大小写字母、中横线、下划线以及数字。
+     * topic名称，长度为4-64，以字母开头且只支持大小写字母、中横线、下划线、点以及数字。
      * @return id
      */
     public String getId() {
@@ -97,7 +97,7 @@ public class CreateInstanceTopicReq {
     }
 
     /**
-     * topic分区数，设置消费的并发数。 取值范围：[1-100](tag:hc,hk,hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc)[1-20](tag:cmcc)。
+     * topic分区数，设置消费的并发数。 取值范围：[1-100](tag:hc,hk,hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,g42,tm)[1-20](tag:cmcc)。
      * @return partition
      */
     public Integer getPartition() {
@@ -131,7 +131,7 @@ public class CreateInstanceTopicReq {
     }
 
     /**
-     * 消息老化时间。默认值为72。 取值范围[1~168](tag:hc,hk,hws,hws_hk,hws_ocb,ctc,sbc,hk_sbc,hws_eu)[1-720](tag:ocb,otc)，单位小时。
+     * 消息老化时间。默认值为72。 取值范围[1~168](tag:hc,hk,hws,hws_hk,hws_ocb,ctc,sbc,hk_sbc,hws_eu,g42,tm)[1-720](tag:ocb,otc)，单位小时。
      * @return retentionTime
      */
     public Integer getRetentionTime() {

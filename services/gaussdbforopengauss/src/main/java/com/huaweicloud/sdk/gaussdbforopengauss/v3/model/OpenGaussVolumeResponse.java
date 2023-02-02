@@ -144,7 +144,7 @@ public class OpenGaussVolumeResponse  {
 
 
     /**
-     * 磁盘大小。  GaussDB(for openGauss)分布式实例创建时需指定大小：要求必须为（分片数 * 40GB）的倍数，取值范围：（分片数*40GB）~（分片数*16TB）。
+     * 磁盘大小。  GaussDB分布式实例创建时需指定大小：要求必须为（分片数 * 40GB）的倍数，取值范围：（分片数*40GB）~（分片数*16TB）。
      * @return size
      */
     public Integer getSize() {
