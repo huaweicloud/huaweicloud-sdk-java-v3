@@ -16,14 +16,14 @@ public class VaultBindRules {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<Tag> tags = null;
+    private List<BindRulesTags> tags = null;
 
-    public VaultBindRules withTags(List<Tag> tags) {
+    public VaultBindRules withTags(List<BindRulesTags> tags) {
         this.tags = tags;
         return this;
     }
 
-    public VaultBindRules addTagsItem(Tag tagsItem) {
+    public VaultBindRules addTagsItem(BindRulesTags tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -31,7 +31,7 @@ public class VaultBindRules {
         return this;
     }
 
-    public VaultBindRules withTags(Consumer<List<Tag>> tagsSetter) {
+    public VaultBindRules withTags(Consumer<List<BindRulesTags>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -43,11 +43,11 @@ public class VaultBindRules {
      * 按tags过滤自动绑定的资源
      * @return tags
      */
-    public List<Tag> getTags() {
+    public List<BindRulesTags> getTags() {
         return tags;
     }
 
-    public void setTags(List<Tag> tags) {
+    public void setTags(List<BindRulesTags> tags) {
         this.tags = tags;
     }
 

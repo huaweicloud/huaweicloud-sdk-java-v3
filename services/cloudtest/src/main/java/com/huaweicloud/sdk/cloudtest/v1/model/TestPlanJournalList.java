@@ -45,7 +45,7 @@ public class TestPlanJournalList {
     }
 
     /**
-     * DevCloud项目id，项目唯一标识，固定长度32位字符
+     * 项目id，项目唯一标识，固定长度32位字符
      * @return projectId
      */
     public String getProjectId() {

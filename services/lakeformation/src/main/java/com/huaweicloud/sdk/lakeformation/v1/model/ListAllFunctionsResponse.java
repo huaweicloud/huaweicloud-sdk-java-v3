@@ -1,0 +1,125 @@
+package com.huaweicloud.sdk.lakeformation.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * Response Object
+ */
+public class ListAllFunctionsResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PagedInfo pageInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "functions")
+
+    private List<Function> functions = null;
+
+    public ListAllFunctionsResponse withPageInfo(PagedInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListAllFunctionsResponse withPageInfo(Consumer<PagedInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PagedInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PagedInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PagedInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
+    public ListAllFunctionsResponse withFunctions(List<Function> functions) {
+        this.functions = functions;
+        return this;
+    }
+
+    public ListAllFunctionsResponse addFunctionsItem(Function functionsItem) {
+        if (this.functions == null) {
+            this.functions = new ArrayList<>();
+        }
+        this.functions.add(functionsItem);
+        return this;
+    }
+
+    public ListAllFunctionsResponse withFunctions(Consumer<List<Function>> functionsSetter) {
+        if (this.functions == null) {
+            this.functions = new ArrayList<>();
+        }
+        functionsSetter.accept(this.functions);
+        return this;
+    }
+
+    /**
+     * Get functions
+     * @return functions
+     */
+    public List<Function> getFunctions() {
+        return functions;
+    }
+
+    public void setFunctions(List<Function> functions) {
+        this.functions = functions;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ListAllFunctionsResponse listAllFunctionsResponse = (ListAllFunctionsResponse) o;
+        return Objects.equals(this.pageInfo, listAllFunctionsResponse.pageInfo)
+            && Objects.equals(this.functions, listAllFunctionsResponse.functions);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(pageInfo, functions);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ListAllFunctionsResponse {\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
+        sb.append("    functions: ").append(toIndentedString(functions)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

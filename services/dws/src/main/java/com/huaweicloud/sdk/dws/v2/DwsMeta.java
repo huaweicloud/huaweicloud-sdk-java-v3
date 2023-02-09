@@ -1337,7 +1337,7 @@ public class DwsMeta {
         HttpRequestDef.Builder<ListClusterSnapshotsRequest, ListClusterSnapshotsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListClusterSnapshotsRequest.class, ListClusterSnapshotsResponse.class)
             .withName("ListClusterSnapshots")
-            .withUri("/v1.0/{project_id}/cluster/{cluster_id}/snapshots")
+            .withUri("/v1.0/{project_id}/clusters/{cluster_id}/snapshots")
             .withContentType("application/json");
 
         // requests

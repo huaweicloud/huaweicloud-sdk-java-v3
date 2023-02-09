@@ -133,6 +133,31 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateFlowLogRequest, CreateFlowLogResponse> createFlowLog =
+        genForcreateFlowLog();
+
+    private static HttpRequestDef<CreateFlowLogRequest, CreateFlowLogResponse> genForcreateFlowLog() {
+        // basic
+        HttpRequestDef.Builder<CreateFlowLogRequest, CreateFlowLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateFlowLogRequest.class, CreateFlowLogResponse.class)
+                .withName("CreateFlowLog")
+                .withUri("/v1/{project_id}/fl/flow_logs")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateFlowLogReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateFlowLogReqBody.class),
+            f -> f.withMarshaller(CreateFlowLogRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePortRequest, CreatePortResponse> createPort = genForcreatePort();
 
     private static HttpRequestDef<CreatePortRequest, CreatePortResponse> genForcreatePort() {
@@ -306,6 +331,31 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(CreateVpcPeeringRequestBody.class),
             f -> f.withMarshaller(CreateVpcPeeringRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteFlowLogRequest, DeleteFlowLogResponse> deleteFlowLog =
+        genFordeleteFlowLog();
+
+    private static HttpRequestDef<DeleteFlowLogRequest, DeleteFlowLogResponse> genFordeleteFlowLog() {
+        // basic
+        HttpRequestDef.Builder<DeleteFlowLogRequest, DeleteFlowLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteFlowLogRequest.class, DeleteFlowLogResponse.class)
+                .withName("DeleteFlowLog")
+                .withUri("/v1/{project_id}/fl/flow_logs/{flowlog_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("flowlog_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFlowLogRequest::getFlowlogId, (req, v) -> {
+                req.setFlowlogId(v);
             }));
 
         // response
@@ -525,6 +575,114 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(RoutetableAssociateReqbody.class),
             f -> f.withMarshaller(DisassociateRouteTableRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFlowLogsRequest, ListFlowLogsResponse> listFlowLogs = genForlistFlowLogs();
+
+    private static HttpRequestDef<ListFlowLogsRequest, ListFlowLogsResponse> genForlistFlowLogs() {
+        // basic
+        HttpRequestDef.Builder<ListFlowLogsRequest, ListFlowLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFlowLogsRequest.class, ListFlowLogsResponse.class)
+                .withName("ListFlowLogs")
+                .withUri("/v1/{project_id}/fl/flow_logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getTenantId, (req, v) -> {
+                req.setTenantId(v);
+            }));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getDescription, (req, v) -> {
+                req.setDescription(v);
+            }));
+        builder.<ListFlowLogsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlowLogsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<ListFlowLogsRequest.TrafficTypeEnum>withRequestField("traffic_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlowLogsRequest.TrafficTypeEnum.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getTrafficType, (req, v) -> {
+                req.setTrafficType(v);
+            }));
+        builder.<String>withRequestField("log_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getLogGroupId, (req, v) -> {
+                req.setLogGroupId(v);
+            }));
+        builder.<String>withRequestField("log_topic_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getLogTopicId, (req, v) -> {
+                req.setLogTopicId(v);
+            }));
+        builder.<ListFlowLogsRequest.LogStoreTypeEnum>withRequestField("log_store_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlowLogsRequest.LogStoreTypeEnum.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getLogStoreType, (req, v) -> {
+                req.setLogStoreType(v);
+            }));
+        builder.<ListFlowLogsRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlowLogsRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
             }));
 
         // response
@@ -951,6 +1109,30 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowFlowLogRequest, ShowFlowLogResponse> showFlowLog = genForshowFlowLog();
+
+    private static HttpRequestDef<ShowFlowLogRequest, ShowFlowLogResponse> genForshowFlowLog() {
+        // basic
+        HttpRequestDef.Builder<ShowFlowLogRequest, ShowFlowLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFlowLogRequest.class, ShowFlowLogResponse.class)
+                .withName("ShowFlowLog")
+                .withUri("/v1/{project_id}/fl/flow_logs/{flowlog_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("flowlog_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlowLogRequest::getFlowlogId, (req, v) -> {
+                req.setFlowlogId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPortRequest, ShowPortResponse> showPort = genForshowPort();
 
     private static HttpRequestDef<ShowPortRequest, ShowPortResponse> genForshowPort() {
@@ -1141,6 +1323,38 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVpcPeeringRequest::getPeeringId, (req, v) -> {
                 req.setPeeringId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateFlowLogRequest, UpdateFlowLogResponse> updateFlowLog =
+        genForupdateFlowLog();
+
+    private static HttpRequestDef<UpdateFlowLogRequest, UpdateFlowLogResponse> genForupdateFlowLog() {
+        // basic
+        HttpRequestDef.Builder<UpdateFlowLogRequest, UpdateFlowLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateFlowLogRequest.class, UpdateFlowLogResponse.class)
+                .withName("UpdateFlowLog")
+                .withUri("/v1/{project_id}/fl/flow_logs/{flowlog_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("flowlog_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFlowLogRequest::getFlowlogId, (req, v) -> {
+                req.setFlowlogId(v);
+            }));
+        builder.<UpdateFlowLogReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateFlowLogReqBody.class),
+            f -> f.withMarshaller(UpdateFlowLogRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

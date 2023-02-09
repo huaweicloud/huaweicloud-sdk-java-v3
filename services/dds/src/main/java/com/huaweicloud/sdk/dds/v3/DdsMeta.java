@@ -1496,6 +1496,38 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListLtsSlowLogsRequest, ListLtsSlowLogsResponse> listLtsSlowLogs =
+        genForlistLtsSlowLogs();
+
+    private static HttpRequestDef<ListLtsSlowLogsRequest, ListLtsSlowLogsResponse> genForlistLtsSlowLogs() {
+        // basic
+        HttpRequestDef.Builder<ListLtsSlowLogsRequest, ListLtsSlowLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListLtsSlowLogsRequest.class, ListLtsSlowLogsResponse.class)
+                .withName("ListLtsSlowLogs")
+                .withUri("/v3.1/{project_id}/instances/{instance_id}/slow-logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLtsSlowLogsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ListLtsSlowLogsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListLtsSlowLogsRequestBody.class),
+            f -> f.withMarshaller(ListLtsSlowLogsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags =
         genForlistProjectTags();
 

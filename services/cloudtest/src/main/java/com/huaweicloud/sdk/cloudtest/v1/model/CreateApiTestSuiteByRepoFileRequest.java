@@ -27,7 +27,7 @@ public class CreateApiTestSuiteByRepoFileRequest {
     }
 
     /**
-     * devcloud的项目ID
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {

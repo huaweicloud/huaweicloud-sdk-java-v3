@@ -127,6 +127,11 @@ public class ListFunctionAsyncInvocationsResult {
     private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private Integer errorCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private OffsetDateTime startTime;
@@ -187,6 +192,23 @@ public class ListFunctionAsyncInvocationsResult {
         this.errorMessage = errorMessage;
     }
 
+    public ListFunctionAsyncInvocationsResult withErrorCode(Integer errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /**
+     * 异步调用错误码，如果执行成功，则返回0
+     * @return errorCode
+     */
+    public Integer getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(Integer errorCode) {
+        this.errorCode = errorCode;
+    }
+
     public ListFunctionAsyncInvocationsResult withStartTime(OffsetDateTime startTime) {
         this.startTime = startTime;
         return this;
@@ -233,13 +255,14 @@ public class ListFunctionAsyncInvocationsResult {
         return Objects.equals(this.requestId, listFunctionAsyncInvocationsResult.requestId)
             && Objects.equals(this.status, listFunctionAsyncInvocationsResult.status)
             && Objects.equals(this.errorMessage, listFunctionAsyncInvocationsResult.errorMessage)
+            && Objects.equals(this.errorCode, listFunctionAsyncInvocationsResult.errorCode)
             && Objects.equals(this.startTime, listFunctionAsyncInvocationsResult.startTime)
             && Objects.equals(this.endTime, listFunctionAsyncInvocationsResult.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, status, errorMessage, startTime, endTime);
+        return Objects.hash(requestId, status, errorMessage, errorCode, startTime, endTime);
     }
 
     @Override
@@ -249,6 +272,7 @@ public class ListFunctionAsyncInvocationsResult {
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");

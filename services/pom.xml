@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.1.24</version>
+        <version>3.1.25</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.1.24</version>
+    <version>3.1.25</version>
     <packaging>pom</packaging>
     <name>Huawei Cloud SDK for Java Services</name>
     <description>Services code for Huawei Cloud SDK for Java</description>
@@ -71,7 +71,6 @@
         <module>bcs</module>
         <module>rms</module>
         <module>kms</module>
-        <module>cloudartifact</module>
         <module>cse</module>
         <module>csms</module>
         <module>hss</module>
@@ -92,6 +91,7 @@
         <module>cgs</module>
         <module>codecraft</module>
         <module>cae</module>
+        <module>lakeformation</module>
         <module>cloudpipeline</module>
         <module>sa</module>
         <module>ddm</module>
@@ -100,7 +100,6 @@
         <module>hilens</module>
         <module>dds</module>
         <module>aos</module>
-        <module>cloudbuild</module>
         <module>bssintl</module>
         <module>cloudtable</module>
         <module>secmaster</module>
@@ -134,6 +133,7 @@
         <module>classroom</module>
         <module>oms</module>
         <module>sfsturbo</module>
+        <module>codeartsbuild</module>
         <module>waf</module>
         <module>iotda</module>
         <module>res</module>
@@ -150,6 +150,7 @@
         <module>cloudide</module>
         <module>imagesearch</module>
         <module>ims</module>
+        <module>codeartsartifact</module>
         <module>dsc</module>
         <module>ecs</module>
         <module>eg</module>

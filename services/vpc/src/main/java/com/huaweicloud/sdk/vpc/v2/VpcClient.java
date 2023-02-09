@@ -142,6 +142,38 @@ public class VpcClient {
     }
 
     /**
+     * 创建流日志
+     *
+     * 创建流日志。
+     * 流日志功能可以记录虚拟私有云中的流量信息，帮助您检查和优化安全组和网络ACL防火墙控制规则、监控网络流量、进行网络攻击分析等。
+     * VPC流日志功能需要与云日志服务LTS结合使用，请先在云日志服务中创建日志组和日志主题，然后再创建VPC流日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFlowLogRequest 请求对象
+     * @return CreateFlowLogResponse
+     */
+    public CreateFlowLogResponse createFlowLog(CreateFlowLogRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.createFlowLog);
+    }
+
+    /**
+     * 创建流日志
+     *
+     * 创建流日志。
+     * 流日志功能可以记录虚拟私有云中的流量信息，帮助您检查和优化安全组和网络ACL防火墙控制规则、监控网络流量、进行网络攻击分析等。
+     * VPC流日志功能需要与云日志服务LTS结合使用，请先在云日志服务中创建日志组和日志主题，然后再创建VPC流日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFlowLogRequest 请求对象
+     * @return SyncInvoker<CreateFlowLogRequest, CreateFlowLogResponse>
+     */
+    public SyncInvoker<CreateFlowLogRequest, CreateFlowLogResponse> createFlowLogInvoker(CreateFlowLogRequest request) {
+        return new SyncInvoker<CreateFlowLogRequest, CreateFlowLogResponse>(request, VpcMeta.createFlowLog, hcClient);
+    }
+
+    /**
      * 创建端口
      *
      * 创建端口。
@@ -347,6 +379,34 @@ public class VpcClient {
         CreateVpcPeeringRequest request) {
         return new SyncInvoker<CreateVpcPeeringRequest, CreateVpcPeeringResponse>(request, VpcMeta.createVpcPeering,
             hcClient);
+    }
+
+    /**
+     * 删除流日志
+     *
+     * 删除流日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFlowLogRequest 请求对象
+     * @return DeleteFlowLogResponse
+     */
+    public DeleteFlowLogResponse deleteFlowLog(DeleteFlowLogRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.deleteFlowLog);
+    }
+
+    /**
+     * 删除流日志
+     *
+     * 删除流日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFlowLogRequest 请求对象
+     * @return SyncInvoker<DeleteFlowLogRequest, DeleteFlowLogResponse>
+     */
+    public SyncInvoker<DeleteFlowLogRequest, DeleteFlowLogResponse> deleteFlowLogInvoker(DeleteFlowLogRequest request) {
+        return new SyncInvoker<DeleteFlowLogRequest, DeleteFlowLogResponse>(request, VpcMeta.deleteFlowLog, hcClient);
     }
 
     /**
@@ -587,6 +647,34 @@ public class VpcClient {
         DisassociateRouteTableRequest request) {
         return new SyncInvoker<DisassociateRouteTableRequest, DisassociateRouteTableResponse>(request,
             VpcMeta.disassociateRouteTable, hcClient);
+    }
+
+    /**
+     * 查询流日志列表
+     *
+     * 查询提交请求的租户的所有流日志列表，并根据过滤条件进行过滤
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFlowLogsRequest 请求对象
+     * @return ListFlowLogsResponse
+     */
+    public ListFlowLogsResponse listFlowLogs(ListFlowLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listFlowLogs);
+    }
+
+    /**
+     * 查询流日志列表
+     *
+     * 查询提交请求的租户的所有流日志列表，并根据过滤条件进行过滤
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFlowLogsRequest 请求对象
+     * @return SyncInvoker<ListFlowLogsRequest, ListFlowLogsResponse>
+     */
+    public SyncInvoker<ListFlowLogsRequest, ListFlowLogsResponse> listFlowLogsInvoker(ListFlowLogsRequest request) {
+        return new SyncInvoker<ListFlowLogsRequest, ListFlowLogsResponse>(request, VpcMeta.listFlowLogs, hcClient);
     }
 
     /**
@@ -856,6 +944,34 @@ public class VpcClient {
     }
 
     /**
+     * 查询流日志
+     *
+     * 查询流日志详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFlowLogRequest 请求对象
+     * @return ShowFlowLogResponse
+     */
+    public ShowFlowLogResponse showFlowLog(ShowFlowLogRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.showFlowLog);
+    }
+
+    /**
+     * 查询流日志
+     *
+     * 查询流日志详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFlowLogRequest 请求对象
+     * @return SyncInvoker<ShowFlowLogRequest, ShowFlowLogResponse>
+     */
+    public SyncInvoker<ShowFlowLogRequest, ShowFlowLogResponse> showFlowLogInvoker(ShowFlowLogRequest request) {
+        return new SyncInvoker<ShowFlowLogRequest, ShowFlowLogResponse>(request, VpcMeta.showFlowLog, hcClient);
+    }
+
+    /**
      * 查询端口
      *
      * 查询单个端口详情。
@@ -1087,6 +1203,34 @@ public class VpcClient {
         ShowVpcPeeringRequest request) {
         return new SyncInvoker<ShowVpcPeeringRequest, ShowVpcPeeringResponse>(request, VpcMeta.showVpcPeering,
             hcClient);
+    }
+
+    /**
+     * 更新流日志
+     *
+     * 更新流日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFlowLogRequest 请求对象
+     * @return UpdateFlowLogResponse
+     */
+    public UpdateFlowLogResponse updateFlowLog(UpdateFlowLogRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.updateFlowLog);
+    }
+
+    /**
+     * 更新流日志
+     *
+     * 更新流日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFlowLogRequest 请求对象
+     * @return SyncInvoker<UpdateFlowLogRequest, UpdateFlowLogResponse>
+     */
+    public SyncInvoker<UpdateFlowLogRequest, UpdateFlowLogResponse> updateFlowLogInvoker(UpdateFlowLogRequest request) {
+        return new SyncInvoker<UpdateFlowLogRequest, UpdateFlowLogResponse>(request, VpcMeta.updateFlowLog, hcClient);
     }
 
     /**

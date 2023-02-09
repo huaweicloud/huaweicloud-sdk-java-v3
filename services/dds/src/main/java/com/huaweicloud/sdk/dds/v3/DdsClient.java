@@ -1258,6 +1258,36 @@ public class DdsClient {
     }
 
     /**
+     * 查询数据库慢日志
+     *
+     * 查询数据库慢日志信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLtsSlowLogsRequest 请求对象
+     * @return ListLtsSlowLogsResponse
+     */
+    public ListLtsSlowLogsResponse listLtsSlowLogs(ListLtsSlowLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listLtsSlowLogs);
+    }
+
+    /**
+     * 查询数据库慢日志
+     *
+     * 查询数据库慢日志信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLtsSlowLogsRequest 请求对象
+     * @return SyncInvoker<ListLtsSlowLogsRequest, ListLtsSlowLogsResponse>
+     */
+    public SyncInvoker<ListLtsSlowLogsRequest, ListLtsSlowLogsResponse> listLtsSlowLogsInvoker(
+        ListLtsSlowLogsRequest request) {
+        return new SyncInvoker<ListLtsSlowLogsRequest, ListLtsSlowLogsResponse>(request, DdsMeta.listLtsSlowLogs,
+            hcClient);
+    }
+
+    /**
      * 查询项目标签
      *
      * 查询指定project ID下实例的所有标签集合。

@@ -1029,6 +1029,45 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListErrorlogForLtsRequest, ListErrorlogForLtsResponse> listErrorlogForLts =
+        genForlistErrorlogForLts();
+
+    private static HttpRequestDef<ListErrorlogForLtsRequest, ListErrorlogForLtsResponse> genForlistErrorlogForLts() {
+        // basic
+        HttpRequestDef.Builder<ListErrorlogForLtsRequest, ListErrorlogForLtsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListErrorlogForLtsRequest.class, ListErrorlogForLtsResponse.class)
+                .withName("ListErrorlogForLts")
+                .withUri("/v3/{project_id}/instances/{instance_id}/error-logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListErrorlogForLtsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ListErrorlogForLtsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListErrorlogForLtsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListErrorlogForLtsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ErrorlogForLtsRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ErrorlogForLtsRequest.class),
+            f -> f.withMarshaller(ListErrorlogForLtsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForlistFlavors();
 
     private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForlistFlavors() {
@@ -1564,6 +1603,48 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSlowLogStatisticsForLtsRequest, ListSlowLogStatisticsForLtsResponse> listSlowLogStatisticsForLts =
+        genForlistSlowLogStatisticsForLts();
+
+    private static HttpRequestDef<ListSlowLogStatisticsForLtsRequest, ListSlowLogStatisticsForLtsResponse> genForlistSlowLogStatisticsForLts() {
+        // basic
+        HttpRequestDef.Builder<ListSlowLogStatisticsForLtsRequest, ListSlowLogStatisticsForLtsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListSlowLogStatisticsForLtsRequest.class,
+                    ListSlowLogStatisticsForLtsResponse.class)
+                .withName("ListSlowLogStatisticsForLts")
+                .withUri("/v3.1/{project_id}/instances/{instance_id}/slow-logs/statistics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSlowLogStatisticsForLtsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ListSlowLogStatisticsForLtsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSlowLogStatisticsForLtsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSlowLogStatisticsForLtsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<SlowLogStatisticsForLtsRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SlowLogStatisticsForLtsRequest.class),
+            f -> f.withMarshaller(ListSlowLogStatisticsForLtsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogs = genForlistSlowLogs();
 
     private static HttpRequestDef<ListSlowLogsRequest, ListSlowLogsResponse> genForlistSlowLogs() {
@@ -1690,6 +1771,45 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSlowLogsNewRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSlowlogForLtsRequest, ListSlowlogForLtsResponse> listSlowlogForLts =
+        genForlistSlowlogForLts();
+
+    private static HttpRequestDef<ListSlowlogForLtsRequest, ListSlowlogForLtsResponse> genForlistSlowlogForLts() {
+        // basic
+        HttpRequestDef.Builder<ListSlowlogForLtsRequest, ListSlowlogForLtsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListSlowlogForLtsRequest.class, ListSlowlogForLtsResponse.class)
+                .withName("ListSlowlogForLts")
+                .withUri("/v3/{project_id}/instances/{instance_id}/slow-logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSlowlogForLtsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ListSlowlogForLtsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSlowlogForLtsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSlowlogForLtsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<SlowlogForLtsRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SlowlogForLtsRequest.class),
+            f -> f.withMarshaller(ListSlowlogForLtsRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

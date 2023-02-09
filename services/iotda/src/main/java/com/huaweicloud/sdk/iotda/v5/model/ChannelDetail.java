@@ -36,6 +36,31 @@ public class ChannelDetail {
 
     private DmsKafkaForwarding dmsKafkaForwarding;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "roma_forwarding")
+
+    private RomaForwarding romaForwarding;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "influxdb_forwarding")
+
+    private InfluxDBForwarding influxdbForwarding;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "functiongraph_forwarding")
+
+    private FunctionGraphForwarding functiongraphForwarding;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mrs_kafka_forwarding")
+
+    private MrsKafkaForwarding mrsKafkaForwarding;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dms_rocketmq_forwarding")
+
+    private DmsRocketMQForwarding dmsRocketmqForwarding;
+
     public ChannelDetail withHttpForwarding(HttpForwarding httpForwarding) {
         this.httpForwarding = httpForwarding;
         return this;
@@ -166,6 +191,136 @@ public class ChannelDetail {
         this.dmsKafkaForwarding = dmsKafkaForwarding;
     }
 
+    public ChannelDetail withRomaForwarding(RomaForwarding romaForwarding) {
+        this.romaForwarding = romaForwarding;
+        return this;
+    }
+
+    public ChannelDetail withRomaForwarding(Consumer<RomaForwarding> romaForwardingSetter) {
+        if (this.romaForwarding == null) {
+            this.romaForwarding = new RomaForwarding();
+            romaForwardingSetter.accept(this.romaForwarding);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get romaForwarding
+     * @return romaForwarding
+     */
+    public RomaForwarding getRomaForwarding() {
+        return romaForwarding;
+    }
+
+    public void setRomaForwarding(RomaForwarding romaForwarding) {
+        this.romaForwarding = romaForwarding;
+    }
+
+    public ChannelDetail withInfluxdbForwarding(InfluxDBForwarding influxdbForwarding) {
+        this.influxdbForwarding = influxdbForwarding;
+        return this;
+    }
+
+    public ChannelDetail withInfluxdbForwarding(Consumer<InfluxDBForwarding> influxdbForwardingSetter) {
+        if (this.influxdbForwarding == null) {
+            this.influxdbForwarding = new InfluxDBForwarding();
+            influxdbForwardingSetter.accept(this.influxdbForwarding);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get influxdbForwarding
+     * @return influxdbForwarding
+     */
+    public InfluxDBForwarding getInfluxdbForwarding() {
+        return influxdbForwarding;
+    }
+
+    public void setInfluxdbForwarding(InfluxDBForwarding influxdbForwarding) {
+        this.influxdbForwarding = influxdbForwarding;
+    }
+
+    public ChannelDetail withFunctiongraphForwarding(FunctionGraphForwarding functiongraphForwarding) {
+        this.functiongraphForwarding = functiongraphForwarding;
+        return this;
+    }
+
+    public ChannelDetail withFunctiongraphForwarding(Consumer<FunctionGraphForwarding> functiongraphForwardingSetter) {
+        if (this.functiongraphForwarding == null) {
+            this.functiongraphForwarding = new FunctionGraphForwarding();
+            functiongraphForwardingSetter.accept(this.functiongraphForwarding);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get functiongraphForwarding
+     * @return functiongraphForwarding
+     */
+    public FunctionGraphForwarding getFunctiongraphForwarding() {
+        return functiongraphForwarding;
+    }
+
+    public void setFunctiongraphForwarding(FunctionGraphForwarding functiongraphForwarding) {
+        this.functiongraphForwarding = functiongraphForwarding;
+    }
+
+    public ChannelDetail withMrsKafkaForwarding(MrsKafkaForwarding mrsKafkaForwarding) {
+        this.mrsKafkaForwarding = mrsKafkaForwarding;
+        return this;
+    }
+
+    public ChannelDetail withMrsKafkaForwarding(Consumer<MrsKafkaForwarding> mrsKafkaForwardingSetter) {
+        if (this.mrsKafkaForwarding == null) {
+            this.mrsKafkaForwarding = new MrsKafkaForwarding();
+            mrsKafkaForwardingSetter.accept(this.mrsKafkaForwarding);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get mrsKafkaForwarding
+     * @return mrsKafkaForwarding
+     */
+    public MrsKafkaForwarding getMrsKafkaForwarding() {
+        return mrsKafkaForwarding;
+    }
+
+    public void setMrsKafkaForwarding(MrsKafkaForwarding mrsKafkaForwarding) {
+        this.mrsKafkaForwarding = mrsKafkaForwarding;
+    }
+
+    public ChannelDetail withDmsRocketmqForwarding(DmsRocketMQForwarding dmsRocketmqForwarding) {
+        this.dmsRocketmqForwarding = dmsRocketmqForwarding;
+        return this;
+    }
+
+    public ChannelDetail withDmsRocketmqForwarding(Consumer<DmsRocketMQForwarding> dmsRocketmqForwardingSetter) {
+        if (this.dmsRocketmqForwarding == null) {
+            this.dmsRocketmqForwarding = new DmsRocketMQForwarding();
+            dmsRocketmqForwardingSetter.accept(this.dmsRocketmqForwarding);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get dmsRocketmqForwarding
+     * @return dmsRocketmqForwarding
+     */
+    public DmsRocketMQForwarding getDmsRocketmqForwarding() {
+        return dmsRocketmqForwarding;
+    }
+
+    public void setDmsRocketmqForwarding(DmsRocketMQForwarding dmsRocketmqForwarding) {
+        this.dmsRocketmqForwarding = dmsRocketmqForwarding;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -179,12 +334,26 @@ public class ChannelDetail {
             && Objects.equals(this.disForwarding, channelDetail.disForwarding)
             && Objects.equals(this.obsForwarding, channelDetail.obsForwarding)
             && Objects.equals(this.amqpForwarding, channelDetail.amqpForwarding)
-            && Objects.equals(this.dmsKafkaForwarding, channelDetail.dmsKafkaForwarding);
+            && Objects.equals(this.dmsKafkaForwarding, channelDetail.dmsKafkaForwarding)
+            && Objects.equals(this.romaForwarding, channelDetail.romaForwarding)
+            && Objects.equals(this.influxdbForwarding, channelDetail.influxdbForwarding)
+            && Objects.equals(this.functiongraphForwarding, channelDetail.functiongraphForwarding)
+            && Objects.equals(this.mrsKafkaForwarding, channelDetail.mrsKafkaForwarding)
+            && Objects.equals(this.dmsRocketmqForwarding, channelDetail.dmsRocketmqForwarding);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(httpForwarding, disForwarding, obsForwarding, amqpForwarding, dmsKafkaForwarding);
+        return Objects.hash(httpForwarding,
+            disForwarding,
+            obsForwarding,
+            amqpForwarding,
+            dmsKafkaForwarding,
+            romaForwarding,
+            influxdbForwarding,
+            functiongraphForwarding,
+            mrsKafkaForwarding,
+            dmsRocketmqForwarding);
     }
 
     @Override
@@ -196,6 +365,11 @@ public class ChannelDetail {
         sb.append("    obsForwarding: ").append(toIndentedString(obsForwarding)).append("\n");
         sb.append("    amqpForwarding: ").append(toIndentedString(amqpForwarding)).append("\n");
         sb.append("    dmsKafkaForwarding: ").append(toIndentedString(dmsKafkaForwarding)).append("\n");
+        sb.append("    romaForwarding: ").append(toIndentedString(romaForwarding)).append("\n");
+        sb.append("    influxdbForwarding: ").append(toIndentedString(influxdbForwarding)).append("\n");
+        sb.append("    functiongraphForwarding: ").append(toIndentedString(functiongraphForwarding)).append("\n");
+        sb.append("    mrsKafkaForwarding: ").append(toIndentedString(mrsKafkaForwarding)).append("\n");
+        sb.append("    dmsRocketmqForwarding: ").append(toIndentedString(dmsRocketmqForwarding)).append("\n");
         sb.append("}");
         return sb.toString();
     }

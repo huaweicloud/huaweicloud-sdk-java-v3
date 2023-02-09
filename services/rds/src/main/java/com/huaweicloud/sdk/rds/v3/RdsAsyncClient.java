@@ -796,6 +796,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 
+     *
+     * 查询实例的错误日志数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListErrorlogForLtsRequest 请求对象
+     * @return CompletableFuture<ListErrorlogForLtsResponse>
+     */
+    public CompletableFuture<ListErrorlogForLtsResponse> listErrorlogForLtsAsync(ListErrorlogForLtsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listErrorlogForLts);
+    }
+
+    /**
+     * 
+     *
+     * 查询实例的错误日志数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListErrorlogForLtsRequest 请求对象
+     * @return AsyncInvoker<ListErrorlogForLtsRequest, ListErrorlogForLtsResponse>
+     */
+    public AsyncInvoker<ListErrorlogForLtsRequest, ListErrorlogForLtsResponse> listErrorlogForLtsAsyncInvoker(
+        ListErrorlogForLtsRequest request) {
+        return new AsyncInvoker<ListErrorlogForLtsRequest, ListErrorlogForLtsResponse>(request,
+            RdsMeta.listErrorlogForLts, hcClient);
+    }
+
+    /**
      * 查询数据库规格
      *
      * 查询数据库规格。
@@ -1130,6 +1160,37 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 
+     *
+     * 查询实例慢日志的统计数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSlowLogStatisticsForLtsRequest 请求对象
+     * @return CompletableFuture<ListSlowLogStatisticsForLtsResponse>
+     */
+    public CompletableFuture<ListSlowLogStatisticsForLtsResponse> listSlowLogStatisticsForLtsAsync(
+        ListSlowLogStatisticsForLtsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listSlowLogStatisticsForLts);
+    }
+
+    /**
+     * 
+     *
+     * 查询实例慢日志的统计数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSlowLogStatisticsForLtsRequest 请求对象
+     * @return AsyncInvoker<ListSlowLogStatisticsForLtsRequest, ListSlowLogStatisticsForLtsResponse>
+     */
+    public AsyncInvoker<ListSlowLogStatisticsForLtsRequest, ListSlowLogStatisticsForLtsResponse> listSlowLogStatisticsForLtsAsyncInvoker(
+        ListSlowLogStatisticsForLtsRequest request) {
+        return new AsyncInvoker<ListSlowLogStatisticsForLtsRequest, ListSlowLogStatisticsForLtsResponse>(request,
+            RdsMeta.listSlowLogStatisticsForLts, hcClient);
+    }
+
+    /**
      * 查询数据库慢日志
      *
      * 查询数据库慢日志。
@@ -1185,6 +1246,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListSlowLogsNewRequest, ListSlowLogsNewResponse> listSlowLogsNewAsyncInvoker(
         ListSlowLogsNewRequest request) {
         return new AsyncInvoker<ListSlowLogsNewRequest, ListSlowLogsNewResponse>(request, RdsMeta.listSlowLogsNew,
+            hcClient);
+    }
+
+    /**
+     * 
+     *
+     * 查询实例的慢日志数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSlowlogForLtsRequest 请求对象
+     * @return CompletableFuture<ListSlowlogForLtsResponse>
+     */
+    public CompletableFuture<ListSlowlogForLtsResponse> listSlowlogForLtsAsync(ListSlowlogForLtsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listSlowlogForLts);
+    }
+
+    /**
+     * 
+     *
+     * 查询实例的慢日志数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSlowlogForLtsRequest 请求对象
+     * @return AsyncInvoker<ListSlowlogForLtsRequest, ListSlowlogForLtsResponse>
+     */
+    public AsyncInvoker<ListSlowlogForLtsRequest, ListSlowlogForLtsResponse> listSlowlogForLtsAsyncInvoker(
+        ListSlowlogForLtsRequest request) {
+        return new AsyncInvoker<ListSlowlogForLtsRequest, ListSlowlogForLtsResponse>(request, RdsMeta.listSlowlogForLts,
             hcClient);
     }
 

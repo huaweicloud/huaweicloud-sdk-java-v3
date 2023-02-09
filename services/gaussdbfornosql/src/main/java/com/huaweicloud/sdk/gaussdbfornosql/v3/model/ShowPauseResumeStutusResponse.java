@@ -6,15 +6,28 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ShowPauseResumeStutusResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "master_instance_id")
+
+    private String masterInstanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "slave_instance_id")
+
+    private String slaveInstanceId;
 
     /**
      * 容灾实例数据同步状态 - NA：实例尚未搭建容灾关系 - NEW：尚未启动的数据同步状态 - SYNCING：数据同步正常进行中 - SUSPENDING：正在暂停数据同步 - SUSPENDED：数据同步已暂停 - RECOVERYING：正在恢复数据同步
@@ -122,6 +135,50 @@ public class ShowPauseResumeStutusResponse extends SdkResponse {
 
     private StatusEnum status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_sync_indicators")
+
+    private NoSQLDrDateSyncIndicators dataSyncIndicators;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rto_and_rpo_indicators")
+
+    private List<NoSQLDrRpoAndRto> rtoAndRpoIndicators = null;
+
+    public ShowPauseResumeStutusResponse withMasterInstanceId(String masterInstanceId) {
+        this.masterInstanceId = masterInstanceId;
+        return this;
+    }
+
+    /**
+     * 主实例id
+     * @return masterInstanceId
+     */
+    public String getMasterInstanceId() {
+        return masterInstanceId;
+    }
+
+    public void setMasterInstanceId(String masterInstanceId) {
+        this.masterInstanceId = masterInstanceId;
+    }
+
+    public ShowPauseResumeStutusResponse withSlaveInstanceId(String slaveInstanceId) {
+        this.slaveInstanceId = slaveInstanceId;
+        return this;
+    }
+
+    /**
+     * 备实例id
+     * @return slaveInstanceId
+     */
+    public String getSlaveInstanceId() {
+        return slaveInstanceId;
+    }
+
+    public void setSlaveInstanceId(String slaveInstanceId) {
+        this.slaveInstanceId = slaveInstanceId;
+    }
+
     public ShowPauseResumeStutusResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -139,6 +196,67 @@ public class ShowPauseResumeStutusResponse extends SdkResponse {
         this.status = status;
     }
 
+    public ShowPauseResumeStutusResponse withDataSyncIndicators(NoSQLDrDateSyncIndicators dataSyncIndicators) {
+        this.dataSyncIndicators = dataSyncIndicators;
+        return this;
+    }
+
+    public ShowPauseResumeStutusResponse withDataSyncIndicators(
+        Consumer<NoSQLDrDateSyncIndicators> dataSyncIndicatorsSetter) {
+        if (this.dataSyncIndicators == null) {
+            this.dataSyncIndicators = new NoSQLDrDateSyncIndicators();
+            dataSyncIndicatorsSetter.accept(this.dataSyncIndicators);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get dataSyncIndicators
+     * @return dataSyncIndicators
+     */
+    public NoSQLDrDateSyncIndicators getDataSyncIndicators() {
+        return dataSyncIndicators;
+    }
+
+    public void setDataSyncIndicators(NoSQLDrDateSyncIndicators dataSyncIndicators) {
+        this.dataSyncIndicators = dataSyncIndicators;
+    }
+
+    public ShowPauseResumeStutusResponse withRtoAndRpoIndicators(List<NoSQLDrRpoAndRto> rtoAndRpoIndicators) {
+        this.rtoAndRpoIndicators = rtoAndRpoIndicators;
+        return this;
+    }
+
+    public ShowPauseResumeStutusResponse addRtoAndRpoIndicatorsItem(NoSQLDrRpoAndRto rtoAndRpoIndicatorsItem) {
+        if (this.rtoAndRpoIndicators == null) {
+            this.rtoAndRpoIndicators = new ArrayList<>();
+        }
+        this.rtoAndRpoIndicators.add(rtoAndRpoIndicatorsItem);
+        return this;
+    }
+
+    public ShowPauseResumeStutusResponse withRtoAndRpoIndicators(
+        Consumer<List<NoSQLDrRpoAndRto>> rtoAndRpoIndicatorsSetter) {
+        if (this.rtoAndRpoIndicators == null) {
+            this.rtoAndRpoIndicators = new ArrayList<>();
+        }
+        rtoAndRpoIndicatorsSetter.accept(this.rtoAndRpoIndicators);
+        return this;
+    }
+
+    /**
+     * 切换或倒换RPO和RTO值，仅当请求实例id为主实例时有值
+     * @return rtoAndRpoIndicators
+     */
+    public List<NoSQLDrRpoAndRto> getRtoAndRpoIndicators() {
+        return rtoAndRpoIndicators;
+    }
+
+    public void setRtoAndRpoIndicators(List<NoSQLDrRpoAndRto> rtoAndRpoIndicators) {
+        this.rtoAndRpoIndicators = rtoAndRpoIndicators;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -148,19 +266,27 @@ public class ShowPauseResumeStutusResponse extends SdkResponse {
             return false;
         }
         ShowPauseResumeStutusResponse showPauseResumeStutusResponse = (ShowPauseResumeStutusResponse) o;
-        return Objects.equals(this.status, showPauseResumeStutusResponse.status);
+        return Objects.equals(this.masterInstanceId, showPauseResumeStutusResponse.masterInstanceId)
+            && Objects.equals(this.slaveInstanceId, showPauseResumeStutusResponse.slaveInstanceId)
+            && Objects.equals(this.status, showPauseResumeStutusResponse.status)
+            && Objects.equals(this.dataSyncIndicators, showPauseResumeStutusResponse.dataSyncIndicators)
+            && Objects.equals(this.rtoAndRpoIndicators, showPauseResumeStutusResponse.rtoAndRpoIndicators);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status);
+        return Objects.hash(masterInstanceId, slaveInstanceId, status, dataSyncIndicators, rtoAndRpoIndicators);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowPauseResumeStutusResponse {\n");
+        sb.append("    masterInstanceId: ").append(toIndentedString(masterInstanceId)).append("\n");
+        sb.append("    slaveInstanceId: ").append(toIndentedString(slaveInstanceId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    dataSyncIndicators: ").append(toIndentedString(dataSyncIndicators)).append("\n");
+        sb.append("    rtoAndRpoIndicators: ").append(toIndentedString(rtoAndRpoIndicators)).append("\n");
         sb.append("}");
         return sb.toString();
     }

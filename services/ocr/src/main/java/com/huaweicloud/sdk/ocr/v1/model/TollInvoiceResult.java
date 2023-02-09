@@ -60,6 +60,11 @@ public class TollInvoiceResult {
 
     private Object confidence;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "text_location")
+
+    private Object textLocation;
+
     public TollInvoiceResult withCode(String code) {
         this.code = code;
         return this;
@@ -230,6 +235,23 @@ public class TollInvoiceResult {
         this.confidence = confidence;
     }
 
+    public TollInvoiceResult withTextLocation(Object textLocation) {
+        this.textLocation = textLocation;
+        return this;
+    }
+
+    /**
+     * 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
+     * @return textLocation
+     */
+    public Object getTextLocation() {
+        return textLocation;
+    }
+
+    public void setTextLocation(Object textLocation) {
+        this.textLocation = textLocation;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -246,12 +268,14 @@ public class TollInvoiceResult {
             && Objects.equals(this.cashier, tollInvoiceResult.cashier)
             && Objects.equals(this.vehicleType, tollInvoiceResult.vehicleType)
             && Objects.equals(this.date, tollInvoiceResult.date) && Objects.equals(this.time, tollInvoiceResult.time)
-            && Objects.equals(this.confidence, tollInvoiceResult.confidence);
+            && Objects.equals(this.confidence, tollInvoiceResult.confidence)
+            && Objects.equals(this.textLocation, tollInvoiceResult.textLocation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, number, entry, exit, amount, cashier, vehicleType, date, time, confidence);
+        return Objects
+            .hash(code, number, entry, exit, amount, cashier, vehicleType, date, time, confidence, textLocation);
     }
 
     @Override
@@ -268,6 +292,7 @@ public class TollInvoiceResult {
         sb.append("    date: ").append(toIndentedString(date)).append("\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+        sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
         sb.append("}");
         return sb.toString();
     }
