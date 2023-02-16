@@ -268,5 +268,7 @@ public class SkillResponse  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

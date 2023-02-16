@@ -286,5 +286,7 @@ public class AutoScalingPolicy  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

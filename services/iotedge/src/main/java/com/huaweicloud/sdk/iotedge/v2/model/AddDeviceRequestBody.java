@@ -336,5 +336,7 @@ public class AddDeviceRequestBody  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

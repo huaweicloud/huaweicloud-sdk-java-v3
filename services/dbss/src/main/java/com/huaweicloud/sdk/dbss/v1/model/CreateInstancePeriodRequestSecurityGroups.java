@@ -80,5 +80,7 @@ public class CreateInstancePeriodRequestSecurityGroups  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

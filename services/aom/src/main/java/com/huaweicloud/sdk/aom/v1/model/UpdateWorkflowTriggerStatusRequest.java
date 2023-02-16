@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.aom.v1.model;
 
 
 
+
 import java.util.Collections;
 
 
@@ -192,6 +193,8 @@ public class UpdateWorkflowTriggerStatusRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

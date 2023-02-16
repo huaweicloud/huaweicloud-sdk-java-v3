@@ -304,5 +304,7 @@ public class PostMultiGrainedSegmentReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -78,6 +78,36 @@ public class CssAsyncClient {
     }
 
     /**
+     * 切换安全组
+     *
+     * 该接口可以在集群创建成功后，修改安全组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeSecurityGroupRequest 请求对象
+     * @return CompletableFuture<ChangeSecurityGroupResponse>
+     */
+    public CompletableFuture<ChangeSecurityGroupResponse> changeSecurityGroupAsync(ChangeSecurityGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, CssMeta.changeSecurityGroup);
+    }
+
+    /**
+     * 切换安全组
+     *
+     * 该接口可以在集群创建成功后，修改安全组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeSecurityGroupRequest 请求对象
+     * @return AsyncInvoker<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse>
+     */
+    public AsyncInvoker<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> changeSecurityGroupAsyncInvoker(
+        ChangeSecurityGroupRequest request) {
+        return new AsyncInvoker<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse>(request,
+            CssMeta.changeSecurityGroup, hcClient);
+    }
+
+    /**
      * 设置自动创建快照策略
      *
      * 该接口用于设置自动创建快照，默认一天创建一个快照。
@@ -943,13 +973,16 @@ public class CssAsyncClient {
     /**
      * 自动设置集群快照的基础配置（不推荐使用）
      *
-     * &gt;自动设置集群快照接口将会自动创建快照OBS桶和委托。如果有多个集群，每个集群使用这个接口都会创建一个不一样的OBS桶，可能会导致OBS的配额不够，较多的OBS桶也难以维护。建议可以直接使用[修改集群快照的基础配置](UpdateSnapshotSetting.xml)。
-     * 
      * 该接口用于自动设置集群快照的基础配置，包括配置OBS桶和IAM委托。
      * 
+     * 
      * - “OBS桶”：快照存储的OBS桶位置。
+     * 
      * - “备份路径”：快照在OBS桶中的存放路径。
+     * 
      * - “IAM委托”：由于需要将快照保存在OBS中，所以需要在IAM中设置对应的委托获取对OBS服务的授权。
+     * 
+     * &gt;自动设置集群快照接口将会自动创建快照OBS桶和委托。如果有多个集群，每个集群使用这个接口都会创建一个不一样的OBS桶，可能会导致OBS的配额不够，较多的OBS桶也难以维护。建议可以直接使用[修改集群快照的基础配置](UpdateSnapshotSetting.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -963,13 +996,16 @@ public class CssAsyncClient {
     /**
      * 自动设置集群快照的基础配置（不推荐使用）
      *
-     * &gt;自动设置集群快照接口将会自动创建快照OBS桶和委托。如果有多个集群，每个集群使用这个接口都会创建一个不一样的OBS桶，可能会导致OBS的配额不够，较多的OBS桶也难以维护。建议可以直接使用[修改集群快照的基础配置](UpdateSnapshotSetting.xml)。
-     * 
      * 该接口用于自动设置集群快照的基础配置，包括配置OBS桶和IAM委托。
      * 
+     * 
      * - “OBS桶”：快照存储的OBS桶位置。
+     * 
      * - “备份路径”：快照在OBS桶中的存放路径。
+     * 
      * - “IAM委托”：由于需要将快照保存在OBS中，所以需要在IAM中设置对应的委托获取对OBS服务的授权。
+     * 
+     * &gt;自动设置集群快照接口将会自动创建快照OBS桶和委托。如果有多个集群，每个集群使用这个接口都会创建一个不一样的OBS桶，可能会导致OBS的配额不够，较多的OBS桶也难以维护。建议可以直接使用[修改集群快照的基础配置](UpdateSnapshotSetting.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1564,7 +1600,7 @@ public class CssAsyncClient {
     /**
      * 指定节点类型缩容
      *
-     * 该接口用于集群对不同类型实例的个数以及存储容量进行缩容。包周期集群不支持API操作。
+     * 该接口用于集群对不同类型实例的个数以及存储容量进行缩容。包周期类型的集群不支持通过api进行指定节点类型缩容操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1578,7 +1614,7 @@ public class CssAsyncClient {
     /**
      * 指定节点类型缩容
      *
-     * 该接口用于集群对不同类型实例的个数以及存储容量进行缩容。包周期集群不支持API操作。
+     * 该接口用于集群对不同类型实例的个数以及存储容量进行缩容。包周期类型的集群不支持通过api进行指定节点类型缩容操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1594,7 +1630,7 @@ public class CssAsyncClient {
     /**
      * 指定节点缩容
      *
-     * 该接口可以对集群现有节点中指定节点进行缩容。包周期集群不支持API操作。
+     * 该接口可以对集群现有节点中指定节点进行缩容。包周期类型的集群不支持通过api进行指定节点缩容操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1608,7 +1644,7 @@ public class CssAsyncClient {
     /**
      * 指定节点缩容
      *
-     * 该接口可以对集群现有节点中指定节点进行缩容。包周期集群不支持API操作。
+     * 该接口可以对集群现有节点中指定节点进行缩容。包周期类型的集群不支持通过api进行指定节点缩容操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

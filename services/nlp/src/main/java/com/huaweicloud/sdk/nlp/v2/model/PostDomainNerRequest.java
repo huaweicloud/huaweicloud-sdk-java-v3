@@ -304,5 +304,7 @@ public class PostDomainNerRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

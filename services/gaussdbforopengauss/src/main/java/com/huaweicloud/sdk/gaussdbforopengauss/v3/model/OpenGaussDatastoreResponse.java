@@ -21,7 +21,7 @@ import java.util.Objects;
 public class OpenGaussDatastoreResponse  {
 
     /**
-     * 数据库引擎，不区分大小写，取值如下：  GaussDB
+     * 数据库引擎，不区分大小写，取值如下：  GaussDB(for openGauss)
      */
     public static final class TypeEnum {
 
@@ -122,7 +122,7 @@ public class OpenGaussDatastoreResponse  {
 
 
     /**
-     * 数据库引擎，不区分大小写，取值如下：  GaussDB
+     * 数据库引擎，不区分大小写，取值如下：  GaussDB(for openGauss)
      * @return type
      */
     public TypeEnum getType() {
@@ -192,6 +192,8 @@ public class OpenGaussDatastoreResponse  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

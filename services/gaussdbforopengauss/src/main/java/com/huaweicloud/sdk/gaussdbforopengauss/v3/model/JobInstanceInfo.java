@@ -111,5 +111,7 @@ public class JobInstanceInfo  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

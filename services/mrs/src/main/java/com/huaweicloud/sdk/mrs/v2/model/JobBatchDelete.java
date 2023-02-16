@@ -96,5 +96,7 @@ public class JobBatchDelete  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

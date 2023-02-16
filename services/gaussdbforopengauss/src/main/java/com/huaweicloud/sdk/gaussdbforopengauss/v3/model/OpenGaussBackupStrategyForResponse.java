@@ -111,5 +111,7 @@ public class OpenGaussBackupStrategyForResponse  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

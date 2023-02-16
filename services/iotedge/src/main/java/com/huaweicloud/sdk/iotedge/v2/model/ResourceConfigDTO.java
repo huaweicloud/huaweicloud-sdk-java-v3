@@ -181,5 +181,7 @@ public class ResourceConfigDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

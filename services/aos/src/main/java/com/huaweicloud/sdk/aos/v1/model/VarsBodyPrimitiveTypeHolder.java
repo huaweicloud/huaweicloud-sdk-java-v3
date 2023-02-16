@@ -80,5 +80,7 @@ public class VarsBodyPrimitiveTypeHolder  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

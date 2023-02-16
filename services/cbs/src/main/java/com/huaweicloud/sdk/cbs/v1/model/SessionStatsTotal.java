@@ -173,5 +173,7 @@ public class SessionStatsTotal  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

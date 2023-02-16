@@ -11,33 +11,9 @@ import java.util.Objects;
 public class RunEvaluationByPolicyAssignmentIdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Auth-Token")
-
-    private String xAuthToken;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_assignment_id")
 
     private String policyAssignmentId;
-
-    public RunEvaluationByPolicyAssignmentIdRequest withXAuthToken(String xAuthToken) {
-        this.xAuthToken = xAuthToken;
-        return this;
-    }
-
-    /**
-     * 用户Token。 获取Token，请参考《统一身份认证服务API参考》的“获取用户Token”章节。请求响应成功后在响应消息头中包含的“X-Subject-Token”的值即为Token值。
-     * @return xAuthToken
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Auth-Token")
-    public String getXAuthToken() {
-        return xAuthToken;
-    }
-
-    public void setXAuthToken(String xAuthToken) {
-        this.xAuthToken = xAuthToken;
-    }
 
     public RunEvaluationByPolicyAssignmentIdRequest withPolicyAssignmentId(String policyAssignmentId) {
         this.policyAssignmentId = policyAssignmentId;
@@ -66,20 +42,18 @@ public class RunEvaluationByPolicyAssignmentIdRequest {
         }
         RunEvaluationByPolicyAssignmentIdRequest runEvaluationByPolicyAssignmentIdRequest =
             (RunEvaluationByPolicyAssignmentIdRequest) o;
-        return Objects.equals(this.xAuthToken, runEvaluationByPolicyAssignmentIdRequest.xAuthToken)
-            && Objects.equals(this.policyAssignmentId, runEvaluationByPolicyAssignmentIdRequest.policyAssignmentId);
+        return Objects.equals(this.policyAssignmentId, runEvaluationByPolicyAssignmentIdRequest.policyAssignmentId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xAuthToken, policyAssignmentId);
+        return Objects.hash(policyAssignmentId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RunEvaluationByPolicyAssignmentIdRequest {\n");
-        sb.append("    xAuthToken: ").append(toIndentedString(xAuthToken)).append("\n");
         sb.append("    policyAssignmentId: ").append(toIndentedString(policyAssignmentId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -616,5 +616,7 @@ public class OpenGaussInstanceResponse  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

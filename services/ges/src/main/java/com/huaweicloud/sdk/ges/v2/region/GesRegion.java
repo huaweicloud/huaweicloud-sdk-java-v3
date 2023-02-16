@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.ges.v2.region;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,13 +12,20 @@ import com.huaweicloud.sdk.core.region.RegionProviderChain;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 public class GesRegion {
-    public static final Region CN_NORTH_2 = new Region("cn-north-2", "https://ges.cn-north-2.myhuaweicloud.com");
-    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://ges.cn-north-4.myhuaweicloud.com");
-    public static final Region CN_NORTH_1 = new Region("cn-north-1", "https://ges.cn-north-1.myhuaweicloud.com");
-    public static final Region CN_EAST_3 = new Region("cn-east-3", "https://ges.cn-east-3.myhuaweicloud.com");
-    public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://ges.cn-south-1.myhuaweicloud.com");
-    public static final Region AP_SOUTHEAST_1 = new Region("ap-southeast-1", "https://ges.ap-southeast-1.myhuaweicloud.com");
-    public static final Region AP_SOUTHEAST_3 = new Region("ap-southeast-3", "https://ges.ap-southeast-3.myhuaweicloud.com");
+    public static final Region CN_NORTH_2 = new Region("cn-north-2",
+            "https://ges.cn-north-2.myhuaweicloud.com");
+    public static final Region CN_NORTH_4 = new Region("cn-north-4",
+            "https://ges.cn-north-4.myhuaweicloud.com");
+    public static final Region CN_NORTH_1 = new Region("cn-north-1",
+            "https://ges.cn-north-1.myhuaweicloud.com");
+    public static final Region CN_EAST_3 = new Region("cn-east-3",
+            "https://ges.cn-east-3.myhuaweicloud.com");
+    public static final Region CN_SOUTH_1 = new Region("cn-south-1",
+            "https://ges.cn-south-1.myhuaweicloud.com");
+    public static final Region AP_SOUTHEAST_1 = new Region("ap-southeast-1",
+            "https://ges.ap-southeast-1.myhuaweicloud.com");
+    public static final Region AP_SOUTHEAST_3 = new Region("ap-southeast-3",
+            "https://ges.ap-southeast-3.myhuaweicloud.com");
     
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("GES");
 

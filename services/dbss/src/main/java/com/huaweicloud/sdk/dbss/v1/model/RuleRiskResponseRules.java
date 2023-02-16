@@ -266,5 +266,7 @@ public class RuleRiskResponseRules  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

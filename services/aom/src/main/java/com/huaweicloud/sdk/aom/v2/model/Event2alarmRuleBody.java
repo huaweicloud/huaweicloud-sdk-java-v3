@@ -481,5 +481,7 @@ public class Event2alarmRuleBody  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

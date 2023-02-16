@@ -111,5 +111,7 @@ public class OpenGaussErrorResponse  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

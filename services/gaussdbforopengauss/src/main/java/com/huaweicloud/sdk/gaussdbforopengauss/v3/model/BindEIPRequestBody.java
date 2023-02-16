@@ -142,5 +142,7 @@ public class BindEIPRequestBody  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

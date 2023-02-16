@@ -243,5 +243,7 @@ public class TaskDetailResult  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

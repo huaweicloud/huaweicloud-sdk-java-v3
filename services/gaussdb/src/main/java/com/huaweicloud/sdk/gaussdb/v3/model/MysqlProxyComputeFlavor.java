@@ -235,5 +235,7 @@ public class MysqlProxyComputeFlavor  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

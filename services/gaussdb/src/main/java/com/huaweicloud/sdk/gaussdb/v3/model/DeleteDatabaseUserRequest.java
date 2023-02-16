@@ -97,5 +97,7 @@ public class DeleteDatabaseUserRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

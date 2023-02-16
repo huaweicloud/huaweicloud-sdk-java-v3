@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
 
 
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 
@@ -89,6 +90,8 @@ public class ShowJobDetailResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

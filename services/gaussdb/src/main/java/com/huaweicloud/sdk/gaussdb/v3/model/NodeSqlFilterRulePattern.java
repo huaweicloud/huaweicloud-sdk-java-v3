@@ -111,5 +111,7 @@ public class NodeSqlFilterRulePattern  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

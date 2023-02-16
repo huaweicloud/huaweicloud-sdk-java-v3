@@ -80,5 +80,7 @@ public class TaurusRestartInstanceRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

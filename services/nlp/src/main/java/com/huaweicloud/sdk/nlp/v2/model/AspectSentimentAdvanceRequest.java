@@ -193,5 +193,7 @@ public class AspectSentimentAdvanceRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

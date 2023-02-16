@@ -159,5 +159,7 @@ public class QuerySample  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

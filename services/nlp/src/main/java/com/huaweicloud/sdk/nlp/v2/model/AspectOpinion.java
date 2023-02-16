@@ -282,5 +282,7 @@ public class AspectOpinion  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

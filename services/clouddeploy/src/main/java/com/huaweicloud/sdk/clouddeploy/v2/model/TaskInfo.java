@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 查询部署任务详情响应体
+ * 查询应用详情响应体
  */
 public class TaskInfo {
 
@@ -54,7 +54,7 @@ public class TaskInfo {
     private String updateTime;
 
     /**
-     * 部署任务状态，Draft表示草稿状态，Available表示可用状态
+     * 应用状态，Draft表示草稿状态，Available表示可用状态
      */
     public static final class StateEnum {
 
@@ -288,7 +288,7 @@ public class TaskInfo {
     }
 
     /**
-     * 部署任务名称
+     * 应用名称
      * @return name
      */
     public String getName() {
@@ -305,7 +305,7 @@ public class TaskInfo {
     }
 
     /**
-     * devcloud项目id
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {
@@ -322,7 +322,7 @@ public class TaskInfo {
     }
 
     /**
-     * devcloud项目名称
+     * 项目名称
      * @return projectName
      */
     public String getProjectName() {
@@ -390,7 +390,7 @@ public class TaskInfo {
     }
 
     /**
-     * 部署任务状态，Draft表示草稿状态，Available表示可用状态
+     * 应用状态，Draft表示草稿状态，Available表示可用状态
      * @return state
      */
     public StateEnum getState() {
@@ -407,7 +407,7 @@ public class TaskInfo {
     }
 
     /**
-     * 最后一次执行时间
+     * 最后一次部署时间
      * @return executionTime
      */
     public String getExecutionTime() {
@@ -475,7 +475,7 @@ public class TaskInfo {
     }
 
     /**
-     * 部署任务创建者用户名
+     * 应用创建者用户名
      * @return owner
      */
     public String getOwner() {
@@ -492,7 +492,7 @@ public class TaskInfo {
     }
 
     /**
-     * 部署任务创建者昵称
+     * 应用创建者昵称
      * @return nickName
      */
     public String getNickName() {
@@ -509,7 +509,7 @@ public class TaskInfo {
     }
 
     /**
-     * 部署任务创建者用户ID
+     * 应用创建者用户ID
      * @return ownerId
      */
     public String getOwnerId() {
@@ -526,7 +526,7 @@ public class TaskInfo {
     }
 
     /**
-     * 部署任务创建者租户ID
+     * 应用创建者租户ID
      * @return tenantId
      */
     public String getTenantId() {
@@ -543,7 +543,7 @@ public class TaskInfo {
     }
 
     /**
-     * 部署任务创建者租户名
+     * 应用创建者租户名
      * @return tenantName
      */
     public String getTenantName() {
@@ -645,7 +645,7 @@ public class TaskInfo {
     }
 
     /**
-     * 是否有执行权限
+     * 是否有部署权限
      * @return canExecute
      */
     public Boolean getCanExecute() {
@@ -679,7 +679,7 @@ public class TaskInfo {
     }
 
     /**
-     * 是否有管理权限，包含增删改查执行以及权限修改
+     * 是否有管理权限，包含增删改查部署以及权限修改
      * @return canManage
      */
     public Boolean getCanManage() {
@@ -712,7 +712,7 @@ public class TaskInfo {
     }
 
     /**
-     * 部署任务和应用组件对应关系
+     * 应用和AOM应用组件对应关系
      * @return appComponentList
      */
     public List<AppComponentDao> getAppComponentList() {
@@ -729,7 +729,7 @@ public class TaskInfo {
     }
 
     /**
-     * 角色ID,0：部署任务创建者，-1：项目创建者，3：项目经理，4：开发人员，5：测试经理，6：测试人员，7：参与者，8：浏览者
+     * 角色ID,0：应用创建者，-1：项目创建者，3：项目经理，4：开发人员，5：测试经理，6：测试人员，7：参与者，8：浏览者
      * @return roleId
      */
     public Integer getRoleId() {
@@ -763,7 +763,7 @@ public class TaskInfo {
     }
 
     /**
-     * 任务序列id
+     * 部署记录序列号
      * @return releaseId
      */
     public Integer getReleaseId() {
@@ -780,7 +780,7 @@ public class TaskInfo {
     }
 
     /**
-     * 执行时间
+     * 部署时间
      * @return duration
      */
     public String getDuration() {
@@ -797,7 +797,7 @@ public class TaskInfo {
     }
 
     /**
-     * 执行状态
+     * 部署状态
      * @return executionState
      */
     public String getExecutionState() {
@@ -814,7 +814,7 @@ public class TaskInfo {
     }
 
     /**
-     * 执行者id
+     * 部署者id
      * @return executorId
      */
     public String getExecutorId() {
@@ -831,7 +831,7 @@ public class TaskInfo {
     }
 
     /**
-     * 执行者名称
+     * 部署者名称
      * @return executorNickName
      */
     public String getExecutorNickName() {
@@ -864,7 +864,7 @@ public class TaskInfo {
     }
 
     /**
-     * 执行步骤
+     * 部署步骤
      * @return steps
      */
     public Map<String, Step> getSteps() {

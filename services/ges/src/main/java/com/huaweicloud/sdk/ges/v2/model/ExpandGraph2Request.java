@@ -4,6 +4,7 @@ package com.huaweicloud.sdk.ges.v2.model;
 
 
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -118,6 +119,8 @@ public class ExpandGraph2Request  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

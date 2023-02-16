@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
 
 
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 
@@ -143,6 +144,8 @@ public class CreateConfigurationTemplateResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

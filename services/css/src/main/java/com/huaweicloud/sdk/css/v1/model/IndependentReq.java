@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * IndependentReq
@@ -11,69 +12,34 @@ import java.util.Objects;
 public class IndependentReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "flavor_ref")
+    @JsonProperty(value = "type")
 
-    private String flavorRef;
+    private IndependentBodyReq type;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "node_size")
+    public IndependentReq withType(IndependentBodyReq type) {
+        this.type = type;
+        return this;
+    }
 
-    private Integer nodeSize;
+    public IndependentReq withType(Consumer<IndependentBodyReq> typeSetter) {
+        if (this.type == null) {
+            this.type = new IndependentBodyReq();
+            typeSetter.accept(this.type);
+        }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "volume_type")
-
-    private String volumeType;
-
-    public IndependentReq withFlavorRef(String flavorRef) {
-        this.flavorRef = flavorRef;
         return this;
     }
 
     /**
-     * 规格id，该参数通过[获取实例规格列表](ListFlavors.xml)接口获取，根据集群版本选择所需要的规格id
-     * @return flavorRef
+     * Get type
+     * @return type
      */
-    public String getFlavorRef() {
-        return flavorRef;
+    public IndependentBodyReq getType() {
+        return type;
     }
 
-    public void setFlavorRef(String flavorRef) {
-        this.flavorRef = flavorRef;
-    }
-
-    public IndependentReq withNodeSize(Integer nodeSize) {
-        this.nodeSize = nodeSize;
-        return this;
-    }
-
-    /**
-     * 要独立节点个数。 - 如果路径参数type取值为“ess-master”即新增独立master节点，节点个数必须为大于等于三且小于等于10的奇数。 - 如果路径参数type取值为“ess-client”即新增独立client节点，节点个数要求大于等于1小于等于32。
-     * @return nodeSize
-     */
-    public Integer getNodeSize() {
-        return nodeSize;
-    }
-
-    public void setNodeSize(Integer nodeSize) {
-        this.nodeSize = nodeSize;
-    }
-
-    public IndependentReq withVolumeType(String volumeType) {
-        this.volumeType = volumeType;
-        return this;
-    }
-
-    /**
-     * 节点存储类型：取值为ULTRAHIGH，COMMON，HIGH。
-     * @return volumeType
-     */
-    public String getVolumeType() {
-        return volumeType;
-    }
-
-    public void setVolumeType(String volumeType) {
-        this.volumeType = volumeType;
+    public void setType(IndependentBodyReq type) {
+        this.type = type;
     }
 
     @Override
@@ -85,23 +51,19 @@ public class IndependentReq {
             return false;
         }
         IndependentReq independentReq = (IndependentReq) o;
-        return Objects.equals(this.flavorRef, independentReq.flavorRef)
-            && Objects.equals(this.nodeSize, independentReq.nodeSize)
-            && Objects.equals(this.volumeType, independentReq.volumeType);
+        return Objects.equals(this.type, independentReq.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flavorRef, nodeSize, volumeType);
+        return Objects.hash(type);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class IndependentReq {\n");
-        sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
-        sb.append("    nodeSize: ").append(toIndentedString(nodeSize)).append("\n");
-        sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

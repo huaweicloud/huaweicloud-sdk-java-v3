@@ -111,5 +111,7 @@ public class ConfirmIaConfigRequestBody  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

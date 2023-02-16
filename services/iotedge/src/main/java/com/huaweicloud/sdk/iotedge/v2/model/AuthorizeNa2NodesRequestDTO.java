@@ -80,5 +80,7 @@ public class AuthorizeNa2NodesRequestDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

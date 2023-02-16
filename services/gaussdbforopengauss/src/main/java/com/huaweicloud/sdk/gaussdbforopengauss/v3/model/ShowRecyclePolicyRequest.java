@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
 
 
+
 import java.util.Collections;
 
 
@@ -163,6 +164,8 @@ public class ShowRecyclePolicyRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

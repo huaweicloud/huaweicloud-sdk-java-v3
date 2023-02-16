@@ -96,5 +96,7 @@ public class Event2alarmRuleBodyMetadata  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

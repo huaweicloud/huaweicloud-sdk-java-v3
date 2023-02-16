@@ -314,5 +314,7 @@ public class MysqlFlavorsInfo  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

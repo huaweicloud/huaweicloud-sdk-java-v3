@@ -111,5 +111,7 @@ public class GaussDBforOpenGaussUserForCreation  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -378,5 +378,7 @@ public class OpenGaussHaResponse  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

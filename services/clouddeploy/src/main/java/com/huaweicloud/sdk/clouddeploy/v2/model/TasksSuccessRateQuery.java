@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 查询多个任务的执行成功率的请求体
+ * 查询多个应用的部署成功率的请求体
  */
 public class TasksSuccessRateQuery {
 
@@ -34,7 +34,7 @@ public class TasksSuccessRateQuery {
     }
 
     /**
-     * 任务执行开始时间范围的左边界（包含），格式yyyy-MM-dd
+     * 部署应用开始时间范围的左边界（包含），格式yyyy-MM-dd
      * @return startDate
      */
     public String getStartDate() {
@@ -51,7 +51,7 @@ public class TasksSuccessRateQuery {
     }
 
     /**
-     * 任务执行开始时间范围的右边界（包含），格式yyyy-MM-dd 。最大时间范围为1年。
+     * 部署应用开始时间范围的右边界（包含），格式yyyy-MM-dd 。最大时间范围为1年。
      * @return endDate
      */
     public String getEndDate() {

@@ -111,5 +111,7 @@ public class GaussDBforOpenGaussCreateSchemaReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -142,5 +142,7 @@ public class DedicatedResourceCapacity  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

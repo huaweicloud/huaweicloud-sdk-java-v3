@@ -48,7 +48,7 @@ public class ShowProjectSuccessRateRequest {
     }
 
     /**
-     * 任务执行开始时间范围的左边界（包含），格式yyyy-MM-dd
+     * 部署应用开始时间范围的左边界（包含），格式yyyy-MM-dd
      * @return startDate
      */
     public String getStartDate() {
@@ -65,7 +65,7 @@ public class ShowProjectSuccessRateRequest {
     }
 
     /**
-     * 任务执行开始时间范围的右边界（包含），格式yyyy-MM-dd 。最大时间范围为1年。
+     * 部署应用开始时间范围的右边界（包含），格式yyyy-MM-dd 。最大时间范围为1年。
      * @return endDate
      */
     public String getEndDate() {

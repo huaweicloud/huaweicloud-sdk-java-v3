@@ -355,5 +355,7 @@ public class SummaryDomainReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

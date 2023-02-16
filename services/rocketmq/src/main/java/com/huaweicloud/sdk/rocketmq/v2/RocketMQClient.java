@@ -18,6 +18,37 @@ public class RocketMQClient {
     }
 
     /**
+     * 批量添加或删除实例标签
+     *
+     * 批量添加或删除实例标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateOrDeleteRocketmqTagRequest 请求对象
+     * @return BatchCreateOrDeleteRocketmqTagResponse
+     */
+    public BatchCreateOrDeleteRocketmqTagResponse batchCreateOrDeleteRocketmqTag(
+        BatchCreateOrDeleteRocketmqTagRequest request) {
+        return hcClient.syncInvokeHttp(request, RocketMQMeta.batchCreateOrDeleteRocketmqTag);
+    }
+
+    /**
+     * 批量添加或删除实例标签
+     *
+     * 批量添加或删除实例标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateOrDeleteRocketmqTagRequest 请求对象
+     * @return SyncInvoker<BatchCreateOrDeleteRocketmqTagRequest, BatchCreateOrDeleteRocketmqTagResponse>
+     */
+    public SyncInvoker<BatchCreateOrDeleteRocketmqTagRequest, BatchCreateOrDeleteRocketmqTagResponse> batchCreateOrDeleteRocketmqTagInvoker(
+        BatchCreateOrDeleteRocketmqTagRequest request) {
+        return new SyncInvoker<BatchCreateOrDeleteRocketmqTagRequest, BatchCreateOrDeleteRocketmqTagResponse>(request,
+            RocketMQMeta.batchCreateOrDeleteRocketmqTag, hcClient);
+    }
+
+    /**
      * 批量删除实例
      *
      * 批量删除实例。**实例删除后，实例中原有的数据将被删除，且没有备份，请谨慎操作。**
@@ -106,6 +137,36 @@ public class RocketMQClient {
         CreateConsumerGroupOrBatchDeleteConsumerGroupRequest request) {
         return new SyncInvoker<CreateConsumerGroupOrBatchDeleteConsumerGroupRequest, CreateConsumerGroupOrBatchDeleteConsumerGroupResponse>(
             request, RocketMQMeta.createConsumerGroupOrBatchDeleteConsumerGroup, hcClient);
+    }
+
+    /**
+     * 创建实例
+     *
+     * 该接口支持创建按需和包周期两种计费方式的实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateInstanceByEngineRequest 请求对象
+     * @return CreateInstanceByEngineResponse
+     */
+    public CreateInstanceByEngineResponse createInstanceByEngine(CreateInstanceByEngineRequest request) {
+        return hcClient.syncInvokeHttp(request, RocketMQMeta.createInstanceByEngine);
+    }
+
+    /**
+     * 创建实例
+     *
+     * 该接口支持创建按需和包周期两种计费方式的实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateInstanceByEngineRequest 请求对象
+     * @return SyncInvoker<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse>
+     */
+    public SyncInvoker<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> createInstanceByEngineInvoker(
+        CreateInstanceByEngineRequest request) {
+        return new SyncInvoker<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse>(request,
+            RocketMQMeta.createInstanceByEngine, hcClient);
     }
 
     /**
@@ -662,6 +723,66 @@ public class RocketMQClient {
      */
     public SyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceInvoker(ShowInstanceRequest request) {
         return new SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, RocketMQMeta.showInstance, hcClient);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询项目标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRocketmqProjectTagsRequest 请求对象
+     * @return ShowRocketmqProjectTagsResponse
+     */
+    public ShowRocketmqProjectTagsResponse showRocketmqProjectTags(ShowRocketmqProjectTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, RocketMQMeta.showRocketmqProjectTags);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询项目标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRocketmqProjectTagsRequest 请求对象
+     * @return SyncInvoker<ShowRocketmqProjectTagsRequest, ShowRocketmqProjectTagsResponse>
+     */
+    public SyncInvoker<ShowRocketmqProjectTagsRequest, ShowRocketmqProjectTagsResponse> showRocketmqProjectTagsInvoker(
+        ShowRocketmqProjectTagsRequest request) {
+        return new SyncInvoker<ShowRocketmqProjectTagsRequest, ShowRocketmqProjectTagsResponse>(request,
+            RocketMQMeta.showRocketmqProjectTags, hcClient);
+    }
+
+    /**
+     * 查询实例标签
+     *
+     * 查询实例标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRocketmqTagsRequest 请求对象
+     * @return ShowRocketmqTagsResponse
+     */
+    public ShowRocketmqTagsResponse showRocketmqTags(ShowRocketmqTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, RocketMQMeta.showRocketmqTags);
+    }
+
+    /**
+     * 查询实例标签
+     *
+     * 查询实例标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRocketmqTagsRequest 请求对象
+     * @return SyncInvoker<ShowRocketmqTagsRequest, ShowRocketmqTagsResponse>
+     */
+    public SyncInvoker<ShowRocketmqTagsRequest, ShowRocketmqTagsResponse> showRocketmqTagsInvoker(
+        ShowRocketmqTagsRequest request) {
+        return new SyncInvoker<ShowRocketmqTagsRequest, ShowRocketmqTagsResponse>(request,
+            RocketMQMeta.showRocketmqTags, hcClient);
     }
 
     /**

@@ -384,5 +384,7 @@ public class DedicatedResource  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -35,7 +35,16 @@ public class AomMeta {
         );
 
         // response
-
+        builder.<String>withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAppResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
+        
 
         return builder.build();
     }

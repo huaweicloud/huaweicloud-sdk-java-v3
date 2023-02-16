@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 执行步骤
+ * 部署步骤
  */
 public class Step {
 

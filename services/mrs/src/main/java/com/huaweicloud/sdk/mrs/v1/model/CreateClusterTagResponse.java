@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.mrs.v1.model;
 
 
 
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 
@@ -36,6 +37,8 @@ public class CreateClusterTagResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+    
+    
     
 }
 

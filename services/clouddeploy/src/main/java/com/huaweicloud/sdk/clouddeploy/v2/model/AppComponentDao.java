@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 部署任务和应用组件对应关系
+ * 应用和AOM应用组件对应关系
  */
 public class AppComponentDao {
 
@@ -73,7 +73,7 @@ public class AppComponentDao {
     }
 
     /**
-     * 应用id
+     * AOM应用id
      * @return appId
      */
     public String getAppId() {
@@ -90,7 +90,7 @@ public class AppComponentDao {
     }
 
     /**
-     * 应用名称
+     * AOM应用名称
      * @return appName
      */
     public String getAppName() {
@@ -107,7 +107,7 @@ public class AppComponentDao {
     }
 
     /**
-     * 组件id
+     * AOM应用组件id
      * @return compId
      */
     public String getCompId() {
@@ -124,7 +124,7 @@ public class AppComponentDao {
     }
 
     /**
-     * 组件名称
+     * AOM应用组件名称
      * @return compName
      */
     public String getCompName() {
@@ -175,7 +175,7 @@ public class AppComponentDao {
     }
 
     /**
-     * 组件是否生效，0表示初始化，1表示执行成功，已生效
+     * AOM应用组件是否生效，0表示初始化，1表示执行成功，已生效
      * @return state
      */
     public String getState() {

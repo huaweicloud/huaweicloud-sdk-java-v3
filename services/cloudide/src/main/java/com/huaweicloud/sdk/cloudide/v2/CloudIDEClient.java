@@ -556,6 +556,34 @@ public class CloudIDEClient {
     }
 
     /**
+     * CreateLogin接口
+     *
+     * create a login
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateLoginRequest 请求对象
+     * @return CreateLoginResponse
+     */
+    public CreateLoginResponse createLogin(CreateLoginRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.createLogin);
+    }
+
+    /**
+     * CreateLogin接口
+     *
+     * create a login
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateLoginRequest 请求对象
+     * @return SyncInvoker<CreateLoginRequest, CreateLoginResponse>
+     */
+    public SyncInvoker<CreateLoginRequest, CreateLoginResponse> createLoginInvoker(CreateLoginRequest request) {
+        return new SyncInvoker<CreateLoginRequest, CreateLoginResponse>(request, CloudIDEMeta.createLogin, hcClient);
+    }
+
+    /**
      * Create Request接口
      *
      * create a code generation request.

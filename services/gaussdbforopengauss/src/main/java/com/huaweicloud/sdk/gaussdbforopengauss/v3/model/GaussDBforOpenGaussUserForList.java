@@ -150,5 +150,7 @@ public class GaussDBforOpenGaussUserForList  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -254,5 +254,7 @@ public class SmnResponse  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

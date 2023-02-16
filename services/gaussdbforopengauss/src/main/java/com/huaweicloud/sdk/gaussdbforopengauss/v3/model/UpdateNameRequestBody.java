@@ -80,5 +80,7 @@ public class UpdateNameRequestBody  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

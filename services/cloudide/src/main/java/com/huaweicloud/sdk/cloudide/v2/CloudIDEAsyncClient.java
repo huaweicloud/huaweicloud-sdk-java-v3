@@ -565,6 +565,34 @@ public class CloudIDEAsyncClient {
     }
 
     /**
+     * CreateLogin接口
+     *
+     * create a login
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateLoginRequest 请求对象
+     * @return CompletableFuture<CreateLoginResponse>
+     */
+    public CompletableFuture<CreateLoginResponse> createLoginAsync(CreateLoginRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudIDEMeta.createLogin);
+    }
+
+    /**
+     * CreateLogin接口
+     *
+     * create a login
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateLoginRequest 请求对象
+     * @return AsyncInvoker<CreateLoginRequest, CreateLoginResponse>
+     */
+    public AsyncInvoker<CreateLoginRequest, CreateLoginResponse> createLoginAsyncInvoker(CreateLoginRequest request) {
+        return new AsyncInvoker<CreateLoginRequest, CreateLoginResponse>(request, CloudIDEMeta.createLogin, hcClient);
+    }
+
+    /**
      * Create Request接口
      *
      * create a code generation request.

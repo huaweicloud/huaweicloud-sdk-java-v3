@@ -97,5 +97,7 @@ public class DeregisterScenesReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

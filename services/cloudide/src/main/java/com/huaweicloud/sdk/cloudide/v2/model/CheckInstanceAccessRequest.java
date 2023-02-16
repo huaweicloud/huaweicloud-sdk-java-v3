@@ -21,7 +21,7 @@ public class CheckInstanceAccessRequest {
     }
 
     /**
-     * CloudIDE实例id
+     * CodeArtsIDEOnline实例id
      * @return instanceId
      */
     public String getInstanceId() {

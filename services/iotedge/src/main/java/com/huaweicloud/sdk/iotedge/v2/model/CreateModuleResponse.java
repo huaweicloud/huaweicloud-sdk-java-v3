@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.iotedge.v2.model;
 
 
 
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
@@ -744,6 +745,8 @@ public class CreateModuleResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

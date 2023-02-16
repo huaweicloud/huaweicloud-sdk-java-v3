@@ -162,5 +162,7 @@ public class UpdateEdgeAppVersionStateDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

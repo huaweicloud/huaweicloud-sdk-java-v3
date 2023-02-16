@@ -187,5 +187,7 @@ public class ShowJobRespJobDetail  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

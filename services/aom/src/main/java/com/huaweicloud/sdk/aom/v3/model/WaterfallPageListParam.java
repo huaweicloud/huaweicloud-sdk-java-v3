@@ -40,7 +40,7 @@ public class WaterfallPageListParam  {
 
 
     /**
-     * 页面的分页标志位
+     * 页面的分页标志位；为分页的最后一条记录的id
      * @return maker
      */
     public String getMaker() {
@@ -63,6 +63,8 @@ public class WaterfallPageListParam  {
 
     /**
      * 查询返回记录的数量限制
+     * minimum: 1
+     * maximum: 100
      * @return limit
      */
     public Integer getLimit() {
@@ -110,6 +112,8 @@ public class WaterfallPageListParam  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

@@ -58,11 +58,6 @@ public class UpdateHostRequestBody {
          */
         public static final TlsEnum TLS_V1_2 = new TlsEnum("TLS v1.2");
 
-        /**
-         * Enum TLS_V1_3 for value: "TLS v1.3"
-         */
-        public static final TlsEnum TLS_V1_3 = new TlsEnum("TLS v1.3");
-
         private static final Map<String, TlsEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TlsEnum> createStaticFields() {
@@ -70,7 +65,6 @@ public class UpdateHostRequestBody {
             map.put("TLS v1.0", TLS_V1_0);
             map.put("TLS v1.1", TLS_V1_1);
             map.put("TLS v1.2", TLS_V1_2);
-            map.put("TLS v1.3", TLS_V1_3);
             return Collections.unmodifiableMap(map);
         }
 

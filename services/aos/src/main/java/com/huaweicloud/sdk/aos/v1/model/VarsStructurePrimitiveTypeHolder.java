@@ -97,5 +97,7 @@ public class VarsStructurePrimitiveTypeHolder  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

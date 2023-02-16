@@ -142,5 +142,7 @@ public class HWCloudSentimentResp  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

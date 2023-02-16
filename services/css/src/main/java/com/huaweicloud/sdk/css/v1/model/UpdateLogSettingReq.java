@@ -31,7 +31,7 @@ public class UpdateLogSettingReq {
     }
 
     /**
-     * IAM 委托。
+     * 委托名称，委托给CSS，允许CSS调用您的其他云服务。
      * @return agency
      */
     public String getAgency() {

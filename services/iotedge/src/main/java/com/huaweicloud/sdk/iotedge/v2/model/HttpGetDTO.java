@@ -257,5 +257,7 @@ public class HttpGetDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

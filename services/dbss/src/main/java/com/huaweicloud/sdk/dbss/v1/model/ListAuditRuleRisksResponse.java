@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.dbss.v1.model;
 
 
 
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 
@@ -129,6 +130,8 @@ public class ListAuditRuleRisksResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

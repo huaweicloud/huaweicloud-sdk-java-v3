@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 执行部署任务时传递的动态参数
+ * 部署应用时传递的动态参数
  */
 public class KeyValueDO {
 
@@ -26,7 +26,7 @@ public class KeyValueDO {
     }
 
     /**
-     * 执行部署任务时传递的参数名称
+     * 部署应用时传递的参数名称
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class KeyValueDO {
     }
 
     /**
-     * 执行部署任务时传递的参数值
+     * 部署应用时传递的参数值
      * @return value
      */
     public String getValue() {

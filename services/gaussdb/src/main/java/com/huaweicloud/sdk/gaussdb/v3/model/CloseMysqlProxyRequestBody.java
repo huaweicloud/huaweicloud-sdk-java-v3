@@ -96,5 +96,7 @@ public class CloseMysqlProxyRequestBody  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

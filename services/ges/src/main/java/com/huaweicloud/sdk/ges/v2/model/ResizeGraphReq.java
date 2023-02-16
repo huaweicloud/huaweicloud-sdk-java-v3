@@ -88,5 +88,7 @@ public class ResizeGraphReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

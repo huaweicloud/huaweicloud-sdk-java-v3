@@ -111,5 +111,7 @@ public class ModifyBindEipRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

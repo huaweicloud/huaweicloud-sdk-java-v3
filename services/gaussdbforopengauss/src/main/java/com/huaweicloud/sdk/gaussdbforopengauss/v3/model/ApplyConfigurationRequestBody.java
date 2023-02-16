@@ -96,5 +96,7 @@ public class ApplyConfigurationRequestBody  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -111,5 +111,7 @@ public class ResourceInstanceResponseTags  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -199,5 +199,7 @@ public class NerRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

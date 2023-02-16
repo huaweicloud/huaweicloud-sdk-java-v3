@@ -195,5 +195,7 @@ public class AutoScalingPolicyReqV11  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

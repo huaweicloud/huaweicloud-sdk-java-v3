@@ -190,5 +190,7 @@ public class AvailableFlavorInfoResult  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

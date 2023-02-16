@@ -128,5 +128,7 @@ public class NodeSqlFilterRuleInfo  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

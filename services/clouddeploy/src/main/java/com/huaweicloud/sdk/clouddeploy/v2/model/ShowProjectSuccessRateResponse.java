@@ -108,7 +108,7 @@ public class ShowProjectSuccessRateResponse extends SdkResponse {
     }
 
     /**
-     * 任务执行开始时间范围的左边界（包含），格式yyyy-MM-dd
+     * 应用部署开始时间范围的左边界（包含），格式yyyy-MM-dd
      * @return startDate
      */
     public String getStartDate() {
@@ -125,7 +125,7 @@ public class ShowProjectSuccessRateResponse extends SdkResponse {
     }
 
     /**
-     * 任务执行开始时间范围的右边界（包含），格式yyyy-MM-dd
+     * 应用部署开始时间范围的右边界（包含），格式yyyy-MM-dd
      * @return endDate
      */
     public String getEndDate() {
@@ -142,7 +142,7 @@ public class ShowProjectSuccessRateResponse extends SdkResponse {
     }
 
     /**
-     * 查询到的任务数
+     * 查询到的应用数
      * @return taskCount
      */
     public Integer getTaskCount() {
@@ -159,7 +159,7 @@ public class ShowProjectSuccessRateResponse extends SdkResponse {
     }
 
     /**
-     * 查询到的任务执行记录数
+     * 查询到的应用部署记录数
      * @return recordCount
      */
     public Integer getRecordCount() {
@@ -176,7 +176,7 @@ public class ShowProjectSuccessRateResponse extends SdkResponse {
     }
 
     /**
-     * 成功的任务执行记录数
+     * 成功的应用部署记录数
      * @return successRecordCount
      */
     public Integer getSuccessRecordCount() {

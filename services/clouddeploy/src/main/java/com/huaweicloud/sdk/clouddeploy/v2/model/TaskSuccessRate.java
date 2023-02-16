@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 单个任务的执行成功率
+ * 单个应用的部署成功率
  */
 public class TaskSuccessRate {
 
@@ -58,7 +58,7 @@ public class TaskSuccessRate {
     }
 
     /**
-     * 任务名称
+     * 应用名称
      * @return taskName
      */
     public String getTaskName() {
@@ -92,7 +92,7 @@ public class TaskSuccessRate {
     }
 
     /**
-     * 执行记录数
+     * 部署记录数
      * @return recordCount
      */
     public Integer getRecordCount() {
@@ -109,7 +109,7 @@ public class TaskSuccessRate {
     }
 
     /**
-     * 成功的执行记录数
+     * 成功的部署记录数
      * @return successRecordCount
      */
     public Integer getSuccessRecordCount() {

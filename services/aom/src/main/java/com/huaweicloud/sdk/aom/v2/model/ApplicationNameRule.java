@@ -172,5 +172,7 @@ public class ApplicationNameRule  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

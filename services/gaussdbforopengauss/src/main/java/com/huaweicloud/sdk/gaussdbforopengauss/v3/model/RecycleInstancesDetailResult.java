@@ -866,5 +866,7 @@ public class RecycleInstancesDetailResult  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

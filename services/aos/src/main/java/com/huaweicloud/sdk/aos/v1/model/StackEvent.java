@@ -476,5 +476,7 @@ public class StackEvent  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

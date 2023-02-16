@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.iotedge.v2.model;
 
 
 
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 
@@ -81,6 +82,8 @@ public class DeleteModuleResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

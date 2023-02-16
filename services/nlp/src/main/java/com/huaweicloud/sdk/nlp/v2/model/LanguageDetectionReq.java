@@ -80,5 +80,7 @@ public class LanguageDetectionReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

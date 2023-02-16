@@ -111,5 +111,7 @@ public class FlavorErrorResponse  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -128,5 +128,7 @@ public class DeleteNodeSqlFilterRuleInfo  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

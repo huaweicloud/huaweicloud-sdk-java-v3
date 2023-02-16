@@ -204,5 +204,7 @@ public class EventExtractionResponseItem  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

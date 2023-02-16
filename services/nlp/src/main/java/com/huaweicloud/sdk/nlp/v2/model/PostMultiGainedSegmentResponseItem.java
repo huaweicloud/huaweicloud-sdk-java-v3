@@ -241,5 +241,7 @@ public class PostMultiGainedSegmentResponseItem  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

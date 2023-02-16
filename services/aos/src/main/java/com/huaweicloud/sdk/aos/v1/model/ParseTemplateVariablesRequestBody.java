@@ -111,5 +111,7 @@ public class ParseTemplateVariablesRequestBody  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

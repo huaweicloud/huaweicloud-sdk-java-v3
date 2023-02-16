@@ -111,5 +111,7 @@ public class VariableValidationResponse  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

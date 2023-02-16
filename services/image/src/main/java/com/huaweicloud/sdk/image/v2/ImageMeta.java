@@ -156,6 +156,31 @@ public class ImageMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RunImageSuperResolutionRequest, RunImageSuperResolutionResponse> runImageSuperResolution =
+        genForrunImageSuperResolution();
+
+    private static HttpRequestDef<RunImageSuperResolutionRequest, RunImageSuperResolutionResponse> genForrunImageSuperResolution() {
+        // basic
+        HttpRequestDef.Builder<RunImageSuperResolutionRequest, RunImageSuperResolutionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RunImageSuperResolutionRequest.class, RunImageSuperResolutionResponse.class)
+            .withName("RunImageSuperResolution")
+            .withUri("/v2/{project_id}/image/image-super-resolution")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ImageSuperResolutionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImageSuperResolutionReq.class),
+            f -> f.withMarshaller(RunImageSuperResolutionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunImageTaggingRequest, RunImageTaggingResponse> runImageTagging =
         genForrunImageTagging();
 
@@ -193,6 +218,31 @@ public class ImageMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RunRecaptureDetectRequest, RunRecaptureDetectResponse> runRecaptureDetect =
+        genForrunRecaptureDetect();
+
+    private static HttpRequestDef<RunRecaptureDetectRequest, RunRecaptureDetectResponse> genForrunRecaptureDetect() {
+        // basic
+        HttpRequestDef.Builder<RunRecaptureDetectRequest, RunRecaptureDetectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunRecaptureDetectRequest.class, RunRecaptureDetectResponse.class)
+                .withName("RunRecaptureDetect")
+                .withUri("/v2/{project_id}/image/recapture-detect")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<RecaptureDetectReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RecaptureDetectReq.class),
+            f -> f.withMarshaller(RunRecaptureDetectRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
 

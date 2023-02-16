@@ -172,5 +172,7 @@ public class LogPathRule  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

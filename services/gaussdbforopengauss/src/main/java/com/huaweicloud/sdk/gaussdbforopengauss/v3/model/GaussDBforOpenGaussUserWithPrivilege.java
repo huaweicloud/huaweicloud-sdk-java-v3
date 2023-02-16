@@ -142,5 +142,7 @@ public class GaussDBforOpenGaussUserWithPrivilege  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

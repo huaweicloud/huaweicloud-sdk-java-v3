@@ -16,11 +16,6 @@ import java.util.Objects;
 public class ShowResourceHistoryRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Auth-Token")
-
-    private String xAuthToken;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
     private String resourceId;
@@ -126,25 +121,6 @@ public class ShowResourceHistoryRequest {
     @JsonProperty(value = "chronological_order")
 
     private ChronologicalOrderEnum chronologicalOrder;
-
-    public ShowResourceHistoryRequest withXAuthToken(String xAuthToken) {
-        this.xAuthToken = xAuthToken;
-        return this;
-    }
-
-    /**
-     * 用户Token。 获取Token，请参考《统一身份认证服务API参考》的“获取用户Token”章节。请求响应成功后在响应消息头中包含的“X-Subject-Token”的值即为Token值。
-     * @return xAuthToken
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Auth-Token")
-    public String getXAuthToken() {
-        return xAuthToken;
-    }
-
-    public void setXAuthToken(String xAuthToken) {
-        this.xAuthToken = xAuthToken;
-    }
 
     public ShowResourceHistoryRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -259,8 +235,7 @@ public class ShowResourceHistoryRequest {
             return false;
         }
         ShowResourceHistoryRequest showResourceHistoryRequest = (ShowResourceHistoryRequest) o;
-        return Objects.equals(this.xAuthToken, showResourceHistoryRequest.xAuthToken)
-            && Objects.equals(this.resourceId, showResourceHistoryRequest.resourceId)
+        return Objects.equals(this.resourceId, showResourceHistoryRequest.resourceId)
             && Objects.equals(this.marker, showResourceHistoryRequest.marker)
             && Objects.equals(this.limit, showResourceHistoryRequest.limit)
             && Objects.equals(this.earlierTime, showResourceHistoryRequest.earlierTime)
@@ -270,14 +245,13 @@ public class ShowResourceHistoryRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(xAuthToken, resourceId, marker, limit, earlierTime, laterTime, chronologicalOrder);
+        return Objects.hash(resourceId, marker, limit, earlierTime, laterTime, chronologicalOrder);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowResourceHistoryRequest {\n");
-        sb.append("    xAuthToken: ").append(toIndentedString(xAuthToken)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

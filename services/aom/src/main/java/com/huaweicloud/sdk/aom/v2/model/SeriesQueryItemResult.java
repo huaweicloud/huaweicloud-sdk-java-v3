@@ -221,5 +221,7 @@ public class SeriesQueryItemResult  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

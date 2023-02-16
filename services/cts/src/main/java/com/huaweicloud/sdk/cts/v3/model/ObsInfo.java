@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.cts.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -34,6 +39,93 @@ public class ObsInfo {
     @JsonProperty(value = "bucket_lifecycle")
 
     private Long bucketLifecycle;
+
+    /**
+     * 压缩类型。包括不压缩（json），压缩（gzip）两种状态。默认为gzip格式。
+     */
+    public static final class CompressTypeEnum {
+
+        /**
+         * Enum GZIP for value: "gzip"
+         */
+        public static final CompressTypeEnum GZIP = new CompressTypeEnum("gzip");
+
+        /**
+         * Enum JSON for value: "json"
+         */
+        public static final CompressTypeEnum JSON = new CompressTypeEnum("json");
+
+        private static final Map<String, CompressTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CompressTypeEnum> createStaticFields() {
+            Map<String, CompressTypeEnum> map = new HashMap<>();
+            map.put("gzip", GZIP);
+            map.put("json", JSON);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        CompressTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static CompressTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            CompressTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new CompressTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static CompressTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            CompressTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof CompressTypeEnum) {
+                return this.value.equals(((CompressTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "compress_type")
+
+    private CompressTypeEnum compressType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_sort_by_service")
+
+    private Boolean isSortByService;
 
     public ObsInfo withBucketName(String bucketName) {
         this.bucketName = bucketName;
@@ -122,6 +214,40 @@ public class ObsInfo {
         this.bucketLifecycle = bucketLifecycle;
     }
 
+    public ObsInfo withCompressType(CompressTypeEnum compressType) {
+        this.compressType = compressType;
+        return this;
+    }
+
+    /**
+     * 压缩类型。包括不压缩（json），压缩（gzip）两种状态。默认为gzip格式。
+     * @return compressType
+     */
+    public CompressTypeEnum getCompressType() {
+        return compressType;
+    }
+
+    public void setCompressType(CompressTypeEnum compressType) {
+        this.compressType = compressType;
+    }
+
+    public ObsInfo withIsSortByService(Boolean isSortByService) {
+        this.isSortByService = isSortByService;
+        return this;
+    }
+
+    /**
+     * 路径按云服务划分，打开后转储文件路径中将增加云服务名。默认为true。
+     * @return isSortByService
+     */
+    public Boolean getIsSortByService() {
+        return isSortByService;
+    }
+
+    public void setIsSortByService(Boolean isSortByService) {
+        this.isSortByService = isSortByService;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -135,12 +261,20 @@ public class ObsInfo {
             && Objects.equals(this.filePrefixName, obsInfo.filePrefixName)
             && Objects.equals(this.isObsCreated, obsInfo.isObsCreated)
             && Objects.equals(this.isAuthorizedBucket, obsInfo.isAuthorizedBucket)
-            && Objects.equals(this.bucketLifecycle, obsInfo.bucketLifecycle);
+            && Objects.equals(this.bucketLifecycle, obsInfo.bucketLifecycle)
+            && Objects.equals(this.compressType, obsInfo.compressType)
+            && Objects.equals(this.isSortByService, obsInfo.isSortByService);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bucketName, filePrefixName, isObsCreated, isAuthorizedBucket, bucketLifecycle);
+        return Objects.hash(bucketName,
+            filePrefixName,
+            isObsCreated,
+            isAuthorizedBucket,
+            bucketLifecycle,
+            compressType,
+            isSortByService);
     }
 
     @Override
@@ -152,6 +286,8 @@ public class ObsInfo {
         sb.append("    isObsCreated: ").append(toIndentedString(isObsCreated)).append("\n");
         sb.append("    isAuthorizedBucket: ").append(toIndentedString(isAuthorizedBucket)).append("\n");
         sb.append("    bucketLifecycle: ").append(toIndentedString(bucketLifecycle)).append("\n");
+        sb.append("    compressType: ").append(toIndentedString(compressType)).append("\n");
+        sb.append("    isSortByService: ").append(toIndentedString(isSortByService)).append("\n");
         sb.append("}");
         return sb.toString();
     }

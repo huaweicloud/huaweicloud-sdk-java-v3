@@ -111,5 +111,7 @@ public class CreateInstancePeriodRequestNics  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

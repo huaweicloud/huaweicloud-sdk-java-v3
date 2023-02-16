@@ -27,7 +27,7 @@ public class UploadExtensionFileRequest {
     }
 
     /**
-     * 插件类型。目前只支持CloudIDE
+     * 插件类型。目前只支持CodeArtsIDEOnline
      * @return official
      */
     public String getOfficial() {

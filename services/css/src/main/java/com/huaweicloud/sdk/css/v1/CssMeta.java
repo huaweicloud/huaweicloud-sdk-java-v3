@@ -36,10 +36,10 @@ public class CssMeta {
             f -> f.withMarshaller(AddIndependentNodeRequest::getType, (req, v) -> {
                 req.setType(v);
             }));
-        builder.<IndependentRequestBody>withRequestField("body",
+        builder.<IndependentReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(IndependentRequestBody.class),
+            TypeCasts.uncheckedConversion(IndependentReq.class),
             f -> f.withMarshaller(AddIndependentNodeRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -67,11 +67,43 @@ public class CssMeta {
             f -> f.withMarshaller(ChangeModeRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
             }));
-        builder.<ChangeModeRequestBody>withRequestField("body",
+        builder.<ChangeModeReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ChangeModeRequestBody.class),
+            TypeCasts.uncheckedConversion(ChangeModeReq.class),
             f -> f.withMarshaller(ChangeModeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> changeSecurityGroup =
+        genForchangeSecurityGroup();
+
+    private static HttpRequestDef<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> genForchangeSecurityGroup() {
+        // basic
+        HttpRequestDef.Builder<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeSecurityGroupRequest.class, ChangeSecurityGroupResponse.class)
+                .withName("ChangeSecurityGroup")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/sg/change")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeSecurityGroupRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<ChangeSecurityGroupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeSecurityGroupReq.class),
+            f -> f.withMarshaller(ChangeSecurityGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

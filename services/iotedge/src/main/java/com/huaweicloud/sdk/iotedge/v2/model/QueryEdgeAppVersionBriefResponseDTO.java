@@ -556,5 +556,7 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

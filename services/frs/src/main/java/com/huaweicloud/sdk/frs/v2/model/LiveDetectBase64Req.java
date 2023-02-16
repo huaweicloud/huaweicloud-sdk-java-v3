@@ -11,11 +11,6 @@ import java.util.Objects;
 public class LiveDetectBase64Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "action_time")
-
-    private String actionTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_base64")
 
     private String videoBase64;
@@ -25,22 +20,15 @@ public class LiveDetectBase64Req {
 
     private String actions;
 
-    public LiveDetectBase64Req withActionTime(String actionTime) {
-        this.actionTime = actionTime;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action_time")
 
-    /**
-     * 该参数为动作时间数组拼接的字符串，数组的长度和actions的数量一致，每一项代表了对应次序动作的起始时间和结束时间，单位为距视频开始的毫秒数。
-     * @return actionTime
-     */
-    public String getActionTime() {
-        return actionTime;
-    }
+    private String actionTime;
 
-    public void setActionTime(String actionTime) {
-        this.actionTime = actionTime;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nod_threshold")
+
+    private Double nodThreshold;
 
     public LiveDetectBase64Req withVideoBase64(String videoBase64) {
         this.videoBase64 = videoBase64;
@@ -76,6 +64,40 @@ public class LiveDetectBase64Req {
         this.actions = actions;
     }
 
+    public LiveDetectBase64Req withActionTime(String actionTime) {
+        this.actionTime = actionTime;
+        return this;
+    }
+
+    /**
+     * 该参数为动作时间数组拼接的字符串，数组的长度和actions的数量一致，每一项代表了对应次序动作的起始时间和结束时间，单位为距视频开始的毫秒数。
+     * @return actionTime
+     */
+    public String getActionTime() {
+        return actionTime;
+    }
+
+    public void setActionTime(String actionTime) {
+        this.actionTime = actionTime;
+    }
+
+    public LiveDetectBase64Req withNodThreshold(Double nodThreshold) {
+        this.nodThreshold = nodThreshold;
+        return this;
+    }
+
+    /**
+     * 该参数为点头动作幅度的判断门限，取值范围：[1,90]，默认为10，单位为度。该值设置越大，则越难判断为点头。
+     * @return nodThreshold
+     */
+    public Double getNodThreshold() {
+        return nodThreshold;
+    }
+
+    public void setNodThreshold(Double nodThreshold) {
+        this.nodThreshold = nodThreshold;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -85,23 +107,25 @@ public class LiveDetectBase64Req {
             return false;
         }
         LiveDetectBase64Req liveDetectBase64Req = (LiveDetectBase64Req) o;
-        return Objects.equals(this.actionTime, liveDetectBase64Req.actionTime)
-            && Objects.equals(this.videoBase64, liveDetectBase64Req.videoBase64)
-            && Objects.equals(this.actions, liveDetectBase64Req.actions);
+        return Objects.equals(this.videoBase64, liveDetectBase64Req.videoBase64)
+            && Objects.equals(this.actions, liveDetectBase64Req.actions)
+            && Objects.equals(this.actionTime, liveDetectBase64Req.actionTime)
+            && Objects.equals(this.nodThreshold, liveDetectBase64Req.nodThreshold);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(actionTime, videoBase64, actions);
+        return Objects.hash(videoBase64, actions, actionTime, nodThreshold);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class LiveDetectBase64Req {\n");
-        sb.append("    actionTime: ").append(toIndentedString(actionTime)).append("\n");
         sb.append("    videoBase64: ").append(toIndentedString(videoBase64)).append("\n");
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
+        sb.append("    actionTime: ").append(toIndentedString(actionTime)).append("\n");
+        sb.append("    nodThreshold: ").append(toIndentedString(nodThreshold)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -438,5 +438,7 @@ public class GetJobInfoDetail  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

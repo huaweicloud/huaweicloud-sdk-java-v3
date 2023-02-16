@@ -206,5 +206,7 @@ public class EdgeDeviceAuthInfo  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

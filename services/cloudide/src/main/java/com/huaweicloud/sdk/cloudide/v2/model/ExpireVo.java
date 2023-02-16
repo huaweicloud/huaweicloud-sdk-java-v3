@@ -50,7 +50,7 @@ public class ExpireVo {
     }
 
     /**
-     * CloudIDE实例id
+     * CodeArtsIDEOnline实例id
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class ExpireVo {
     }
 
     /**
-     * CloudIDE实例自动休眠时长，单位‘分钟’
+     * CodeArtsIDEOnline实例自动休眠时长，单位‘分钟’
      * minimum: -1
      * maximum: 1440
      * @return interval

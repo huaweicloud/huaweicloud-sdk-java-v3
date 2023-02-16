@@ -128,5 +128,7 @@ public class SqlFilterRule  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

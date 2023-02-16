@@ -142,5 +142,7 @@ public class EntitySentimentReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

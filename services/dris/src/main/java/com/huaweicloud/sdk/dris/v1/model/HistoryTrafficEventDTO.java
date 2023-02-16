@@ -31,6 +31,11 @@ public class HistoryTrafficEventDTO {
     private String eventSourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "esn")
+
+    private String esn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "area_code")
 
     private Integer areaCode;
@@ -169,6 +174,23 @@ public class HistoryTrafficEventDTO {
 
     public void setEventSourceId(String eventSourceId) {
         this.eventSourceId = eventSourceId;
+    }
+
+    public HistoryTrafficEventDTO withEsn(String esn) {
+        this.esn = esn;
+        return this;
+    }
+
+    /**
+     * **参数说明**：设备编码。 **取值范围**：长度不超过64，只允许字母、数字、以及_等字符的组合。 
+     * @return esn
+     */
+    public String getEsn() {
+        return esn;
+    }
+
+    public void setEsn(String esn) {
+        this.esn = esn;
     }
 
     public HistoryTrafficEventDTO withAreaCode(Integer areaCode) {
@@ -563,6 +585,7 @@ public class HistoryTrafficEventDTO {
         return Objects.equals(this.eventId, historyTrafficEventDTO.eventId)
             && Objects.equals(this.eventSourceType, historyTrafficEventDTO.eventSourceType)
             && Objects.equals(this.eventSourceId, historyTrafficEventDTO.eventSourceId)
+            && Objects.equals(this.esn, historyTrafficEventDTO.esn)
             && Objects.equals(this.areaCode, historyTrafficEventDTO.areaCode)
             && Objects.equals(this.eventClass, historyTrafficEventDTO.eventClass)
             && Objects.equals(this.eventType, historyTrafficEventDTO.eventType)
@@ -588,6 +611,7 @@ public class HistoryTrafficEventDTO {
         return Objects.hash(eventId,
             eventSourceType,
             eventSourceId,
+            esn,
             areaCode,
             eventClass,
             eventType,
@@ -615,6 +639,7 @@ public class HistoryTrafficEventDTO {
         sb.append("    eventId: ").append(toIndentedString(eventId)).append("\n");
         sb.append("    eventSourceType: ").append(toIndentedString(eventSourceType)).append("\n");
         sb.append("    eventSourceId: ").append(toIndentedString(eventSourceId)).append("\n");
+        sb.append("    esn: ").append(toIndentedString(esn)).append("\n");
         sb.append("    areaCode: ").append(toIndentedString(areaCode)).append("\n");
         sb.append("    eventClass: ").append(toIndentedString(eventClass)).append("\n");
         sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");

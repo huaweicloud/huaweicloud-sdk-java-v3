@@ -897,5 +897,7 @@ public class QueryAlarmResult  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

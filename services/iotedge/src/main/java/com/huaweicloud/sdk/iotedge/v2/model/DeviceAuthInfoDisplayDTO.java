@@ -119,5 +119,7 @@ public class DeviceAuthInfoDisplayDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

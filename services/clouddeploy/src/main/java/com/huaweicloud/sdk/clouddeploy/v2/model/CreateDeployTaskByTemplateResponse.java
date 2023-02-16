@@ -27,7 +27,7 @@ public class CreateDeployTaskByTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 部署任务名称
+     * 应用名称
      * @return taskName
      */
     public String getTaskName() {

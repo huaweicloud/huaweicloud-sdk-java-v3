@@ -80,5 +80,7 @@ public class WeakPasswordRequestBody  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

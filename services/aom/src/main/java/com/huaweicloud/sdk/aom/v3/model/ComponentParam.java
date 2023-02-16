@@ -76,7 +76,7 @@ public class ComponentParam  {
 
 
     /**
-     * 应用Id、子应用Id
+     * 应用Id、子应用Id；id长度不能超过36位，由大小写字母、数字组成
      * @return modelId
      */
     public String getModelId() {
@@ -172,6 +172,8 @@ public class ComponentParam  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

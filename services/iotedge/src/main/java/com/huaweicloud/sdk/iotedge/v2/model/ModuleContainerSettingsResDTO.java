@@ -88,5 +88,7 @@ public class ModuleContainerSettingsResDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -576,5 +576,7 @@ public class JobQueryBean  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

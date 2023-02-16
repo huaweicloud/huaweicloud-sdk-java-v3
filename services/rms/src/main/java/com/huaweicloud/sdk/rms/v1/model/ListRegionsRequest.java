@@ -15,11 +15,6 @@ import java.util.Objects;
  */
 public class ListRegionsRequest {
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Auth-Token")
-
-    private String xAuthToken;
-
     /**
      * 选择接口返回的信息的语言，默认为\"zh-cn\"中文
      */
@@ -102,25 +97,6 @@ public class ListRegionsRequest {
 
     private XLanguageEnum xLanguage;
 
-    public ListRegionsRequest withXAuthToken(String xAuthToken) {
-        this.xAuthToken = xAuthToken;
-        return this;
-    }
-
-    /**
-     * 用户Token。 获取Token，请参考《统一身份认证服务API参考》的“获取用户Token”章节。请求响应成功后在响应消息头中包含的“X-Subject-Token”的值即为Token值。
-     * @return xAuthToken
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Auth-Token")
-    public String getXAuthToken() {
-        return xAuthToken;
-    }
-
-    public void setXAuthToken(String xAuthToken) {
-        this.xAuthToken = xAuthToken;
-    }
-
     public ListRegionsRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -149,20 +125,18 @@ public class ListRegionsRequest {
             return false;
         }
         ListRegionsRequest listRegionsRequest = (ListRegionsRequest) o;
-        return Objects.equals(this.xAuthToken, listRegionsRequest.xAuthToken)
-            && Objects.equals(this.xLanguage, listRegionsRequest.xLanguage);
+        return Objects.equals(this.xLanguage, listRegionsRequest.xLanguage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xAuthToken, xLanguage);
+        return Objects.hash(xLanguage);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListRegionsRequest {\n");
-        sb.append("    xAuthToken: ").append(toIndentedString(xAuthToken)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("}");
         return sb.toString();

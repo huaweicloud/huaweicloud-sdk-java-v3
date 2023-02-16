@@ -4,6 +4,7 @@ package com.huaweicloud.sdk.dbss.v1.model;
 
 
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -141,6 +142,8 @@ public class ListAuditSensitiveMasksRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

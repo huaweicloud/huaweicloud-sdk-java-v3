@@ -204,5 +204,7 @@ public class BatchCreateClusterTagsReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

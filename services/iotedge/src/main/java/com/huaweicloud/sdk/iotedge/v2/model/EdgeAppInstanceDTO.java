@@ -111,5 +111,7 @@ public class EdgeAppInstanceDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -80,5 +80,7 @@ public class EnableAutoRollbackPrimitiveTypeHolder  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

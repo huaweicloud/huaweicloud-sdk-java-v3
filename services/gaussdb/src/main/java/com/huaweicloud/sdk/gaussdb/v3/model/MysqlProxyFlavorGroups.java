@@ -128,5 +128,7 @@ public class MysqlProxyFlavorGroups  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -25,6 +25,8 @@ public class DwsRegion {
     public static final Region CN_SOUTHWEST_2 =
         new Region("cn-southwest-2", "https://dws.cn-southwest-2.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_2 = new Region("cn-north-2", "https://dws.cn-north-2.myhuaweicloud.com");
+
     public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://dws.cn-south-1.myhuaweicloud.com");
 
     public static final Region AP_SOUTHEAST_1 =
@@ -58,6 +60,7 @@ public class DwsRegion {
         map.put("cn-north-1", CN_NORTH_1);
         map.put("cn-north-4", CN_NORTH_4);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
+        map.put("cn-north-2", CN_NORTH_2);
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-2", AP_SOUTHEAST_2);

@@ -853,5 +853,7 @@ public class OpenGaussInstanceRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

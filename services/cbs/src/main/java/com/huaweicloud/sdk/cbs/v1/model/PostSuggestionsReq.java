@@ -113,5 +113,7 @@ public class PostSuggestionsReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

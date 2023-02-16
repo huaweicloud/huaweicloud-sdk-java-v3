@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.mrs.v1.model;
 
 
 
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 
@@ -81,6 +82,8 @@ public class UpdateClusterScalingResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

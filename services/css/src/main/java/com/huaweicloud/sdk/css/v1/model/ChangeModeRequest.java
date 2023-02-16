@@ -19,7 +19,7 @@ public class ChangeModeRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ChangeModeRequestBody body;
+    private ChangeModeReq body;
 
     public ChangeModeRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -38,14 +38,14 @@ public class ChangeModeRequest {
         this.clusterId = clusterId;
     }
 
-    public ChangeModeRequest withBody(ChangeModeRequestBody body) {
+    public ChangeModeRequest withBody(ChangeModeReq body) {
         this.body = body;
         return this;
     }
 
-    public ChangeModeRequest withBody(Consumer<ChangeModeRequestBody> bodySetter) {
+    public ChangeModeRequest withBody(Consumer<ChangeModeReq> bodySetter) {
         if (this.body == null) {
-            this.body = new ChangeModeRequestBody();
+            this.body = new ChangeModeReq();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class ChangeModeRequest {
      * Get body
      * @return body
      */
-    public ChangeModeRequestBody getBody() {
+    public ChangeModeReq getBody() {
         return body;
     }
 
-    public void setBody(ChangeModeRequestBody body) {
+    public void setBody(ChangeModeReq body) {
         this.body = body;
     }
 

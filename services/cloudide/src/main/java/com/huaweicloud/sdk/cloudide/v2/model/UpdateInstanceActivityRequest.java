@@ -21,7 +21,7 @@ public class UpdateInstanceActivityRequest {
     }
 
     /**
-     * CloudIDE实例id
+     * CodeArtsIDEOnline实例id
      * @return instanceId
      */
     public String getInstanceId() {

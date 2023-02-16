@@ -21,7 +21,7 @@ public class ShowInstanceStatusInfoRequest {
     }
 
     /**
-     * CloudIDE实例id
+     * CodeArtsIDEOnline实例id
      * @return instanceId
      */
     public String getInstanceId() {

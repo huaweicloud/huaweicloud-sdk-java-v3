@@ -16,11 +16,6 @@ import java.util.Objects;
 public class ListProvidersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Auth-Token")
-
-    private String xAuthToken;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -112,25 +107,6 @@ public class ListProvidersRequest {
 
     private XLanguageEnum xLanguage;
 
-    public ListProvidersRequest withXAuthToken(String xAuthToken) {
-        this.xAuthToken = xAuthToken;
-        return this;
-    }
-
-    /**
-     * 用户Token。 获取Token，请参考《统一身份认证服务API参考》的“获取用户Token”章节。请求响应成功后在响应消息头中包含的“X-Subject-Token”的值即为Token值。
-     * @return xAuthToken
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Auth-Token")
-    public String getXAuthToken() {
-        return xAuthToken;
-    }
-
-    public void setXAuthToken(String xAuthToken) {
-        this.xAuthToken = xAuthToken;
-    }
-
     public ListProvidersRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -197,22 +173,20 @@ public class ListProvidersRequest {
             return false;
         }
         ListProvidersRequest listProvidersRequest = (ListProvidersRequest) o;
-        return Objects.equals(this.xAuthToken, listProvidersRequest.xAuthToken)
-            && Objects.equals(this.offset, listProvidersRequest.offset)
+        return Objects.equals(this.offset, listProvidersRequest.offset)
             && Objects.equals(this.limit, listProvidersRequest.limit)
             && Objects.equals(this.xLanguage, listProvidersRequest.xLanguage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xAuthToken, offset, limit, xLanguage);
+        return Objects.hash(offset, limit, xLanguage);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListProvidersRequest {\n");
-        sb.append("    xAuthToken: ").append(toIndentedString(xAuthToken)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");

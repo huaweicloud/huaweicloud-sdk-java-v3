@@ -366,5 +366,7 @@ public class OpenGaussChargeInfo  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

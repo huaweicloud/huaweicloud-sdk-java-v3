@@ -82,5 +82,7 @@ public class PostSatisfactionReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

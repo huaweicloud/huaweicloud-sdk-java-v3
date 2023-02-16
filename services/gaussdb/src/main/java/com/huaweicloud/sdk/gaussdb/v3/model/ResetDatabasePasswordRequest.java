@@ -97,5 +97,7 @@ public class ResetDatabasePasswordRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

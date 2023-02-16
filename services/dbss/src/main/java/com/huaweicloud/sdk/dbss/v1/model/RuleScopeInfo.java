@@ -390,5 +390,7 @@ public class RuleScopeInfo  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

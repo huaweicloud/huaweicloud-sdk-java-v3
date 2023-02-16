@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.aom.v3.model;
 
 
 
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 
@@ -21,13 +22,13 @@ public class CreateAppResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
+    @JsonProperty(value="body")
     
     
-    private String id;
+    private String body;
 
-    public CreateAppResponse withId(String id) {
-        this.id = id;
+    public CreateAppResponse withBody(String body) {
+        this.body = body;
         return this;
     }
 
@@ -35,15 +36,15 @@ public class CreateAppResponse extends SdkResponse {
 
 
     /**
-     * 对象id
-     * @return id
+     * Get body
+     * @return body
      */
-    public String getId() {
-        return id;
+    public String getBody() {
+        return body;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setBody(String body) {
+        this.body = body;
     }
 
     
@@ -57,17 +58,17 @@ public class CreateAppResponse extends SdkResponse {
             return false;
         }
         CreateAppResponse createAppResponse = (CreateAppResponse) o;
-        return Objects.equals(this.id, createAppResponse.id);
+        return Objects.equals(this.body, createAppResponse.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateAppResponse {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -81,6 +82,8 @@ public class CreateAppResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

@@ -80,5 +80,7 @@ public class MysqlResetPasswordRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

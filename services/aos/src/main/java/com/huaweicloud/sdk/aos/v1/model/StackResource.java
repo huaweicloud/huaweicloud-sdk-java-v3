@@ -390,5 +390,7 @@ public class StackResource  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

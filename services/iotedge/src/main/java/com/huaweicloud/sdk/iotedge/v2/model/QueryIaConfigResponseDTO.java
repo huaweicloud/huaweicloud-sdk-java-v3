@@ -379,5 +379,7 @@ public class QueryIaConfigResponseDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

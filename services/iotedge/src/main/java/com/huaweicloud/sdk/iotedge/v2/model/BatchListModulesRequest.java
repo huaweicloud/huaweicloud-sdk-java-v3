@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.iotedge.v2.model;
 
 
 
+
 import java.util.Collections;
 
 import java.util.Collections;
@@ -381,6 +382,8 @@ public class BatchListModulesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

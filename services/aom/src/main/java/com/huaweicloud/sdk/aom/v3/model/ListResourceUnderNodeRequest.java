@@ -4,6 +4,7 @@ package com.huaweicloud.sdk.aom.v3.model;
 
 
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -48,7 +49,7 @@ public class ListResourceUnderNodeRequest  {
 
 
     /**
-     * 资源种类
+     * 云服务资源；同rms服务的provider
      * @return rfResourceType
      */
     public String getRfResourceType() {
@@ -70,7 +71,7 @@ public class ListResourceUnderNodeRequest  {
 
 
     /**
-     * 资源种类下的类型区分
+     * 云服务资源类型；同rms服务的type
      * @return type
      */
     public String getType() {
@@ -149,6 +150,8 @@ public class ListResourceUnderNodeRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

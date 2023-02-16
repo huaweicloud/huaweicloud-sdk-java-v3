@@ -111,5 +111,7 @@ public class CandidateIntention  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

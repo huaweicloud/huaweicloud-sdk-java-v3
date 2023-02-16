@@ -80,5 +80,7 @@ public class TaurusProxyScaleRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -4,6 +4,7 @@ package com.huaweicloud.sdk.aom.v2.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,6 +35,8 @@ public class ListActionRuleRequest  {
         sb.append("}");
         return sb.toString();
     }
+    
+    
     
 }
 

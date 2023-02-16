@@ -11,11 +11,6 @@ import java.util.Objects;
 public class LiveDetectUrlReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "action_time")
-
-    private String actionTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_url")
 
     private String videoUrl;
@@ -25,22 +20,15 @@ public class LiveDetectUrlReq {
 
     private String actions;
 
-    public LiveDetectUrlReq withActionTime(String actionTime) {
-        this.actionTime = actionTime;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action_time")
 
-    /**
-     * 该参数为动作时间数组拼接的字符串，数组的长度和actions的数量一致，每一项代表了对应次序动作的起始时间和结束时间，单位为距视频开始的毫秒数。
-     * @return actionTime
-     */
-    public String getActionTime() {
-        return actionTime;
-    }
+    private String actionTime;
 
-    public void setActionTime(String actionTime) {
-        this.actionTime = actionTime;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nod_threshold")
+
+    private Double nodThreshold;
 
     public LiveDetectUrlReq withVideoUrl(String videoUrl) {
         this.videoUrl = videoUrl;
@@ -76,6 +64,40 @@ public class LiveDetectUrlReq {
         this.actions = actions;
     }
 
+    public LiveDetectUrlReq withActionTime(String actionTime) {
+        this.actionTime = actionTime;
+        return this;
+    }
+
+    /**
+     * 该参数为动作时间数组拼接的字符串，数组的长度和actions的数量一致，每一项代表了对应次序动作的起始时间和结束时间，单位为距视频开始的毫秒数。
+     * @return actionTime
+     */
+    public String getActionTime() {
+        return actionTime;
+    }
+
+    public void setActionTime(String actionTime) {
+        this.actionTime = actionTime;
+    }
+
+    public LiveDetectUrlReq withNodThreshold(Double nodThreshold) {
+        this.nodThreshold = nodThreshold;
+        return this;
+    }
+
+    /**
+     * 该参数为点头动作幅度的判断门限，取值范围：[1,90]，默认为10，单位为度。该值设置越大，则越难判断为点头。
+     * @return nodThreshold
+     */
+    public Double getNodThreshold() {
+        return nodThreshold;
+    }
+
+    public void setNodThreshold(Double nodThreshold) {
+        this.nodThreshold = nodThreshold;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -85,23 +107,25 @@ public class LiveDetectUrlReq {
             return false;
         }
         LiveDetectUrlReq liveDetectUrlReq = (LiveDetectUrlReq) o;
-        return Objects.equals(this.actionTime, liveDetectUrlReq.actionTime)
-            && Objects.equals(this.videoUrl, liveDetectUrlReq.videoUrl)
-            && Objects.equals(this.actions, liveDetectUrlReq.actions);
+        return Objects.equals(this.videoUrl, liveDetectUrlReq.videoUrl)
+            && Objects.equals(this.actions, liveDetectUrlReq.actions)
+            && Objects.equals(this.actionTime, liveDetectUrlReq.actionTime)
+            && Objects.equals(this.nodThreshold, liveDetectUrlReq.nodThreshold);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(actionTime, videoUrl, actions);
+        return Objects.hash(videoUrl, actions, actionTime, nodThreshold);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class LiveDetectUrlReq {\n");
-        sb.append("    actionTime: ").append(toIndentedString(actionTime)).append("\n");
         sb.append("    videoUrl: ").append(toIndentedString(videoUrl)).append("\n");
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
+        sb.append("    actionTime: ").append(toIndentedString(actionTime)).append("\n");
+        sb.append("    nodThreshold: ").append(toIndentedString(nodThreshold)).append("\n");
         sb.append("}");
         return sb.toString();
     }

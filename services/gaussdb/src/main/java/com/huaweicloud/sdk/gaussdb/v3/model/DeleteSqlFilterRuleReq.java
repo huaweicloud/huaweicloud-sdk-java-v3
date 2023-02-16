@@ -97,5 +97,7 @@ public class DeleteSqlFilterRuleReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

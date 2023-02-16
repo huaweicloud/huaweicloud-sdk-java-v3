@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 部署任务启动参数
+ * 应用启动参数
  */
 public class EnvExecutionBody {
 
@@ -50,7 +50,7 @@ public class EnvExecutionBody {
     }
 
     /**
-     * 部署任务执行时传递的参数
+     * 部署应用时传递的参数
      * @return params
      */
     public List<DynamicConfigInfo> getParams() {
@@ -67,7 +67,7 @@ public class EnvExecutionBody {
     }
 
     /**
-     * 部署任务的执行id，可通过record_id回滚至之前的部署状态。选中部署历史执行记录，在URL中获取
+     * 应用的部署id，可通过record_id回滚至之前的部署状态。选中应用历史部署记录，在URL中获取
      * @return recordId
      */
     public String getRecordId() {
@@ -84,7 +84,7 @@ public class EnvExecutionBody {
     }
 
     /**
-     * 限制触发来源,0不限制任何执行请求来源,1时只允许通过流水线触发执行
+     * 限制触发来源,0不限制任何部署请求来源,1时只允许通过流水线触发部署
      * @return triggerSource
      */
     public String getTriggerSource() {

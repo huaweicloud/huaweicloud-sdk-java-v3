@@ -297,5 +297,7 @@ public class GaussDBforOpenGaussUserForListAttributes  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

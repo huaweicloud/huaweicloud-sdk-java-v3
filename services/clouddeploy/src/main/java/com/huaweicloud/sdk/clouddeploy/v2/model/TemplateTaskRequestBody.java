@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 通过模板创建部署任务请求体
+ * 通过模板创建应用请求体
  */
 public class TemplateTaskRequestBody {
 
@@ -100,7 +100,7 @@ public class TemplateTaskRequestBody {
     }
 
     /**
-     * 部署任务名称
+     * 应用名称
      * @return taskName
      */
     public String getTaskName() {

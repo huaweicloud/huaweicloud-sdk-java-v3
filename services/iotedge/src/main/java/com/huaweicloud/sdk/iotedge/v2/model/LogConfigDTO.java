@@ -239,5 +239,7 @@ public class LogConfigDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

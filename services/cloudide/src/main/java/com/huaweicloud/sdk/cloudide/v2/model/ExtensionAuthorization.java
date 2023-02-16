@@ -158,7 +158,7 @@ public class ExtensionAuthorization {
     }
 
     /**
-     * CloudIDE实例ID
+     * CodeArtsIDEOnline实例ID
      * @return instanceId
      */
     public String getInstanceId() {

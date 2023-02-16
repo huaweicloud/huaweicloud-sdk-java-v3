@@ -142,5 +142,7 @@ public class ExtDevice  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

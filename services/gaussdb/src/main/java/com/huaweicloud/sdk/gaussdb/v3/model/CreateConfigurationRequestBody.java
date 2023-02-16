@@ -198,5 +198,7 @@ public class CreateConfigurationRequestBody  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

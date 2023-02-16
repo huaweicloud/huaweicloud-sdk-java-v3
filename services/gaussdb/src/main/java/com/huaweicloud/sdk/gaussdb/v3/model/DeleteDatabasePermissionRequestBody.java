@@ -97,5 +97,7 @@ public class DeleteDatabasePermissionRequestBody  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

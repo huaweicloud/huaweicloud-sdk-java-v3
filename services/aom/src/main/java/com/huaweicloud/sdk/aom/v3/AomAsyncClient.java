@@ -244,7 +244,7 @@ public class AomAsyncClient {
     }
 
     /**
-     * 查询应用详情
+     * 根据应用名称查询应用详情
      *
      * 获取应用详情。（注：接口目前开放的region为：上海一）。
      * 
@@ -258,7 +258,7 @@ public class AomAsyncClient {
     }
 
     /**
-     * 查询应用详情
+     * 根据应用名称查询应用详情
      *
      * 获取应用详情。（注：接口目前开放的region为：上海一）。
      * 
@@ -300,7 +300,7 @@ public class AomAsyncClient {
     }
 
     /**
-     * 查询组件详情
+     * 根据组件名称查询组件详情
      *
      * 查询组件详情。（注：接口目前开放的region为：上海一）。
      * 
@@ -314,7 +314,7 @@ public class AomAsyncClient {
     }
 
     /**
-     * 查询组件详情
+     * 根据组件名称查询组件详情
      *
      * 查询组件详情。（注：接口目前开放的region为：上海一）。
      * 
@@ -356,7 +356,7 @@ public class AomAsyncClient {
     }
 
     /**
-     * 查询环境详情
+     * 根据环境名称查询环境详情
      *
      * 查询环境详情。（注：接口目前开放的region为：上海一）。
      * 
@@ -370,7 +370,7 @@ public class AomAsyncClient {
     }
 
     /**
-     * 查询环境详情
+     * 根据环境名称查询环境详情
      *
      * 查询环境详情。（注：接口目前开放的region为：上海一）。
      * 

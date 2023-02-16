@@ -239,5 +239,7 @@ public class SearchJobsRequestBody  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -128,5 +128,7 @@ public class GaussDBforOpenGaussGrantRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

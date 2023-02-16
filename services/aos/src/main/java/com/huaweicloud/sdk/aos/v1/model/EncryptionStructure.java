@@ -88,5 +88,7 @@ public class EncryptionStructure  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

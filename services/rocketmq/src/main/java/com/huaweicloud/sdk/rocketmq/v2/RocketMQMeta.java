@@ -12,6 +12,41 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class RocketMQMeta {
 
+    public static final HttpRequestDef<BatchCreateOrDeleteRocketmqTagRequest, BatchCreateOrDeleteRocketmqTagResponse> batchCreateOrDeleteRocketmqTag =
+        genForbatchCreateOrDeleteRocketmqTag();
+
+    private static HttpRequestDef<BatchCreateOrDeleteRocketmqTagRequest, BatchCreateOrDeleteRocketmqTagResponse> genForbatchCreateOrDeleteRocketmqTag() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateOrDeleteRocketmqTagRequest, BatchCreateOrDeleteRocketmqTagResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateOrDeleteRocketmqTagRequest.class,
+                    BatchCreateOrDeleteRocketmqTagResponse.class)
+                .withName("BatchCreateOrDeleteRocketmqTag")
+                .withUri("/v2/{project_id}/rocketmq/{instance_id}/tags/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateOrDeleteRocketmqTagRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<BatchCreateOrDeleteTagReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateOrDeleteTagReq.class),
+            f -> f.withMarshaller(BatchCreateOrDeleteRocketmqTagRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> batchDeleteInstances =
         genForbatchDeleteInstances();
 
@@ -104,6 +139,38 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateConsumerGroupOrBatchDeleteConsumerGroupReq.class),
             f -> f.withMarshaller(CreateConsumerGroupOrBatchDeleteConsumerGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> createInstanceByEngine =
+        genForcreateInstanceByEngine();
+
+    private static HttpRequestDef<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> genForcreateInstanceByEngine() {
+        // basic
+        HttpRequestDef.Builder<CreateInstanceByEngineRequest, CreateInstanceByEngineResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateInstanceByEngineRequest.class, CreateInstanceByEngineResponse.class)
+            .withName("CreateInstanceByEngine")
+            .withUri("/v2/{engine}/{project_id}/instances")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateInstanceByEngineRequest.EngineEnum>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateInstanceByEngineRequest.EngineEnum.class),
+            f -> f.withMarshaller(CreateInstanceByEngineRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<CreateInstanceByEngineReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateInstanceByEngineReq.class),
+            f -> f.withMarshaller(CreateInstanceByEngineRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -503,6 +570,20 @@ public class RocketMQMeta {
             f -> f.withMarshaller(ListInstancesRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstancesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
 
         // response
 
@@ -787,6 +868,20 @@ public class RocketMQMeta {
             f -> f.withMarshaller(ShowConsumerListOrDetailsRequest::getTopic, (req, v) -> {
                 req.setTopic(v);
             }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowConsumerListOrDetailsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowConsumerListOrDetailsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
 
         // response
 
@@ -840,6 +935,49 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRocketmqProjectTagsRequest, ShowRocketmqProjectTagsResponse> showRocketmqProjectTags =
+        genForshowRocketmqProjectTags();
+
+    private static HttpRequestDef<ShowRocketmqProjectTagsRequest, ShowRocketmqProjectTagsResponse> genForshowRocketmqProjectTags() {
+        // basic
+        HttpRequestDef.Builder<ShowRocketmqProjectTagsRequest, ShowRocketmqProjectTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowRocketmqProjectTagsRequest.class, ShowRocketmqProjectTagsResponse.class)
+            .withName("ShowRocketmqProjectTags")
+            .withUri("/v2/{project_id}/rocketmq/tags")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRocketmqTagsRequest, ShowRocketmqTagsResponse> showRocketmqTags =
+        genForshowRocketmqTags();
+
+    private static HttpRequestDef<ShowRocketmqTagsRequest, ShowRocketmqTagsResponse> genForshowRocketmqTags() {
+        // basic
+        HttpRequestDef.Builder<ShowRocketmqTagsRequest, ShowRocketmqTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRocketmqTagsRequest.class, ShowRocketmqTagsResponse.class)
+                .withName("ShowRocketmqTags")
+                .withUri("/v2/{project_id}/rocketmq/{instance_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRocketmqTagsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
 
@@ -1087,6 +1225,20 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListConsumerGroupOfTopicRequest::getTopic, (req, v) -> {
                 req.setTopic(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConsumerGroupOfTopicRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConsumerGroupOfTopicRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
             }));
 
         // response

@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.gaussdb.v3.model;
 
 
 
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 
@@ -36,6 +37,8 @@ public class BatchTagActionResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+    
+    
     
 }
 

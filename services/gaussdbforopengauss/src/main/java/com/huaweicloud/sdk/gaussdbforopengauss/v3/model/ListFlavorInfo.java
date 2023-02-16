@@ -111,5 +111,7 @@ public class ListFlavorInfo  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -204,5 +204,7 @@ public class BatchDeleteClusterTagsReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

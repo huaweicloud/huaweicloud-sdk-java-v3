@@ -310,5 +310,7 @@ public class CreateEdgeApplicationRequestDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

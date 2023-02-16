@@ -235,5 +235,7 @@ public class QueryNaBriefResponseDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

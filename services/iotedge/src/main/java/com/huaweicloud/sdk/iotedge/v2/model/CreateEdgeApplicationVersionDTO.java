@@ -650,5 +650,7 @@ public class CreateEdgeApplicationVersionDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

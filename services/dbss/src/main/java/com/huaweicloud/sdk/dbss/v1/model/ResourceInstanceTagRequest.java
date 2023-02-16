@@ -347,5 +347,7 @@ public class ResourceInstanceTagRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -328,5 +328,7 @@ public class DocQueryAnswerDetail  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

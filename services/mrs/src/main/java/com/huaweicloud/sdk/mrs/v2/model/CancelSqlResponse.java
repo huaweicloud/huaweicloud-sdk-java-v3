@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.mrs.v2.model;
 
 
 
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
@@ -194,6 +195,8 @@ public class CancelSqlResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

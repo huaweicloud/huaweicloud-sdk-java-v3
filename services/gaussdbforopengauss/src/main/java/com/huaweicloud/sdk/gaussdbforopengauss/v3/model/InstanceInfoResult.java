@@ -142,5 +142,7 @@ public class InstanceInfoResult  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

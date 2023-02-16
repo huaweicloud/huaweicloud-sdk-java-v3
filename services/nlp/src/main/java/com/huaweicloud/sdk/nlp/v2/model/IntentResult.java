@@ -190,5 +190,7 @@ public class IntentResult  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

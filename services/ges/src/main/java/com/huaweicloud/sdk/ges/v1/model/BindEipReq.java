@@ -80,5 +80,7 @@ public class BindEipReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

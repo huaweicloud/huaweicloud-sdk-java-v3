@@ -199,5 +199,7 @@ public class DomainSentimentReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

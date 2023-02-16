@@ -236,5 +236,7 @@ public class ResourceInstanceResponseResources  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -126,5 +126,7 @@ public class ResourceDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

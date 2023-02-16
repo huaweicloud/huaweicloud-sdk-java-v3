@@ -193,5 +193,7 @@ public class BatchSwitchesRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

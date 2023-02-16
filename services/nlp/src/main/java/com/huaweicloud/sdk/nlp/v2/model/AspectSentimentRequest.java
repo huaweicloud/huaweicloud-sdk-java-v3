@@ -187,5 +187,7 @@ public class AspectSentimentRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

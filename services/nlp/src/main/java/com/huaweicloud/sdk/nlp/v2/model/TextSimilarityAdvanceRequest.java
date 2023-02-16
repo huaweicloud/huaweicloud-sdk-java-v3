@@ -218,5 +218,7 @@ public class TextSimilarityAdvanceRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -165,7 +165,7 @@ public class BizAppParam  {
 
 
     /**
-     * 应用名称
+     * 应用名称.字符集长度2-64，仅支持字符集：中文字符、英文字母、数字、下划线、中划线、点
      * @return displayName
      */
     public String getDisplayName() {
@@ -209,7 +209,7 @@ public class BizAppParam  {
 
 
     /**
-     * 唯一标识
+     * 唯一标识.字符集长度2-64，仅支持字符集：英文字母、数字、下划线、中划线、点
      * @return name
      */
     public String getName() {
@@ -285,6 +285,8 @@ public class BizAppParam  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

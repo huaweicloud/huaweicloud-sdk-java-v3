@@ -158,5 +158,7 @@ public class OpenGaussInstanceActionRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

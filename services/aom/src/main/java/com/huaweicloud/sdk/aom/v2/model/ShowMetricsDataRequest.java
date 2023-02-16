@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.aom.v2.model;
 
 
 
+
 import java.util.Collections;
 
 
@@ -212,6 +213,8 @@ public class ShowMetricsDataRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

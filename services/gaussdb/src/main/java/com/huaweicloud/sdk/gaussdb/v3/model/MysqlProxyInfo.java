@@ -142,5 +142,7 @@ public class MysqlProxyInfo  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

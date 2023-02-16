@@ -283,5 +283,7 @@ public class VariableResponse  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

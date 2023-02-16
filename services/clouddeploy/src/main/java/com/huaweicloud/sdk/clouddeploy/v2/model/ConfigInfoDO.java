@@ -133,7 +133,7 @@ public class ConfigInfoDO {
     private String taskId;
 
     /**
-     * 表示是否为静态参数，值为1时不支持执行时变更参数，值为0时支持，并且也会把该参数上报流水线
+     * 表示是否为静态参数，值为1时不支持部署时变更参数，值为0时支持，并且也会把该参数上报流水线
      */
     public static final class StaticStatusEnum {
 
@@ -293,7 +293,7 @@ public class ConfigInfoDO {
     }
 
     /**
-     * 部署任务id，创建部署任务后由系统自动生成
+     * 部署任务id，创建应用后由系统自动生成
      * @return taskId
      */
     public String getTaskId() {
@@ -310,7 +310,7 @@ public class ConfigInfoDO {
     }
 
     /**
-     * 表示是否为静态参数，值为1时不支持执行时变更参数，值为0时支持，并且也会把该参数上报流水线
+     * 表示是否为静态参数，值为1时不支持部署时变更参数，值为0时支持，并且也会把该参数上报流水线
      * @return staticStatus
      */
     public StaticStatusEnum getStaticStatus() {

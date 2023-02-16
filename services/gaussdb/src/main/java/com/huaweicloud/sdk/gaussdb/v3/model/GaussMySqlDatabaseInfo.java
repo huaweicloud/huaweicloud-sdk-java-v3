@@ -142,5 +142,7 @@ public class GaussMySqlDatabaseInfo  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

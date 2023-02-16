@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.nlp.v2.model;
 
 
 
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 
@@ -174,6 +175,8 @@ public class RunGetFileTranslationResultResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

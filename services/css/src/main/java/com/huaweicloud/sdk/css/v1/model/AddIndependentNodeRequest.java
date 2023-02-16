@@ -24,7 +24,7 @@ public class AddIndependentNodeRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private IndependentRequestBody body;
+    private IndependentReq body;
 
     public AddIndependentNodeRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -60,14 +60,14 @@ public class AddIndependentNodeRequest {
         this.type = type;
     }
 
-    public AddIndependentNodeRequest withBody(IndependentRequestBody body) {
+    public AddIndependentNodeRequest withBody(IndependentReq body) {
         this.body = body;
         return this;
     }
 
-    public AddIndependentNodeRequest withBody(Consumer<IndependentRequestBody> bodySetter) {
+    public AddIndependentNodeRequest withBody(Consumer<IndependentReq> bodySetter) {
         if (this.body == null) {
-            this.body = new IndependentRequestBody();
+            this.body = new IndependentReq();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +78,11 @@ public class AddIndependentNodeRequest {
      * Get body
      * @return body
      */
-    public IndependentRequestBody getBody() {
+    public IndependentReq getBody() {
         return body;
     }
 
-    public void setBody(IndependentRequestBody body) {
+    public void setBody(IndependentReq body) {
         this.body = body;
     }
 

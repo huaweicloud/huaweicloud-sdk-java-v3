@@ -243,5 +243,7 @@ public class ConfigurationSummary2  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

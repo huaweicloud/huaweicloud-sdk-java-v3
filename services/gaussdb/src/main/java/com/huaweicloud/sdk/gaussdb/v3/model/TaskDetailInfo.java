@@ -390,5 +390,7 @@ public class TaskDetailInfo  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

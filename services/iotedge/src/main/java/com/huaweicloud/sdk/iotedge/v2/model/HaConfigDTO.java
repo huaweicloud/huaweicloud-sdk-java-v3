@@ -119,5 +119,7 @@ public class HaConfigDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

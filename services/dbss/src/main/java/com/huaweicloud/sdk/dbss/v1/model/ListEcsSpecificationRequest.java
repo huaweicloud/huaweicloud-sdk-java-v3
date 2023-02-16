@@ -4,6 +4,7 @@ package com.huaweicloud.sdk.dbss.v1.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,6 +35,8 @@ public class ListEcsSpecificationRequest  {
         sb.append("}");
         return sb.toString();
     }
+    
+    
     
 }
 

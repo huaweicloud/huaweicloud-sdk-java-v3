@@ -198,5 +198,7 @@ public class ClusterScalingReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

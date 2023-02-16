@@ -359,5 +359,7 @@ public class QueryApplicationBriefResponseDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -631,5 +631,7 @@ public class MysqlInstanceNodeInfo  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

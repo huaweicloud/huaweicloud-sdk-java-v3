@@ -119,5 +119,7 @@ public class MysqlChangeSpecificationRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

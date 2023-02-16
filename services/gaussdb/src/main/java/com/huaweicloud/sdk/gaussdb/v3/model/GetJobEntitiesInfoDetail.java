@@ -35,5 +35,7 @@ public class GetJobEntitiesInfoDetail  {
         return sb.toString();
     }
     
+    
+    
 }
 

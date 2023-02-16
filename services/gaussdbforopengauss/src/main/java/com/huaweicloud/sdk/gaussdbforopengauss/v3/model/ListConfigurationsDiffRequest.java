@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
 
 
+
 import java.util.Collections;
 
 
@@ -202,6 +203,8 @@ public class ListConfigurationsDiffRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

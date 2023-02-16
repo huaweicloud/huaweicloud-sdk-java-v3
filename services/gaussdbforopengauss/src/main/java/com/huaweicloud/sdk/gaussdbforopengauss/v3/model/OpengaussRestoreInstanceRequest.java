@@ -639,5 +639,7 @@ public class OpengaussRestoreInstanceRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

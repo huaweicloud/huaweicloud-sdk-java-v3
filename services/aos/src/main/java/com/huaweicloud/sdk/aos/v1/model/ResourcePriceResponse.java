@@ -439,5 +439,7 @@ public class ResourcePriceResponse  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

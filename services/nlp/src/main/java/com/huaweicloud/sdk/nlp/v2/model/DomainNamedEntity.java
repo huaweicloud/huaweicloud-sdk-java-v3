@@ -173,5 +173,7 @@ public class DomainNamedEntity  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

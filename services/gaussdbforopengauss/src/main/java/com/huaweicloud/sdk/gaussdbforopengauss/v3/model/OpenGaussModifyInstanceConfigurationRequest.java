@@ -97,5 +97,7 @@ public class OpenGaussModifyInstanceConfigurationRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

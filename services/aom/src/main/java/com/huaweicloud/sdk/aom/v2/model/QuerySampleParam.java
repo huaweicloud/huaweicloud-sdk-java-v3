@@ -204,5 +204,7 @@ public class QuerySampleParam  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

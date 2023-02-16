@@ -187,5 +187,7 @@ public class ClassificationReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

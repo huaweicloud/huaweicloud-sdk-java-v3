@@ -185,7 +185,7 @@ public class ListInstancesRequest {
     }
 
     /**
-     * 是否按照实例名称进行精确匹配查询。  默认为“false”，表示模糊匹配实例名称查询。若参数值为“true”表示按照实例名称进行精确匹配查询。
+     * 是否按照实例名称进行精确匹配查询。  和name字段对应，name字段为模糊匹配的用例名，name_equal是精确匹配的用例名。
      * @return nameEqual
      */
     public String getNameEqual() {

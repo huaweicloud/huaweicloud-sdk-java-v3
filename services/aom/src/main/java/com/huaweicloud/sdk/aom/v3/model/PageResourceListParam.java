@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v3.model.WaterfallPageListParam;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -65,6 +66,13 @@ public class PageResourceListParam  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ci_ids")
+    
+    
+    private List<String> ciIds = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ci_id")
     
     
@@ -79,7 +87,7 @@ public class PageResourceListParam  {
 
 
     /**
-     * 页面的分页标志位
+     * 页面的分页标志位；为分页的最后一条记录的id
      * @return maker
      */
     public String getMaker() {
@@ -102,6 +110,8 @@ public class PageResourceListParam  {
 
     /**
      * 查询返回记录的数量限制
+     * minimum: 1
+     * maximum: 100
      * @return limit
      */
     public Integer getLimit() {
@@ -216,6 +226,42 @@ public class PageResourceListParam  {
 
     
 
+    public PageResourceListParam withCiIds(List<String> ciIds) {
+        this.ciIds = ciIds;
+        return this;
+    }
+
+    
+    public PageResourceListParam addCiIdsItem(String ciIdsItem) {
+        if(this.ciIds == null) {
+            this.ciIds = new ArrayList<>();
+        }
+        this.ciIds.add(ciIdsItem);
+        return this;
+    }
+
+    public PageResourceListParam withCiIds(Consumer<List<String>> ciIdsSetter) {
+        if(this.ciIds == null) {
+            this.ciIds = new ArrayList<>();
+        }
+        ciIdsSetter.accept(this.ciIds);
+        return this;
+    }
+
+    /**
+     * 节点id列表;如果ci_ids和ci_id同时有，则优先ci_ids，但是不能同时为空
+     * @return ciIds
+     */
+    public List<String> getCiIds() {
+        return ciIds;
+    }
+
+    public void setCiIds(List<String> ciIds) {
+        this.ciIds = ciIds;
+    }
+
+    
+
     public PageResourceListParam withCiId(String ciId) {
         this.ciId = ciId;
         return this;
@@ -225,7 +271,7 @@ public class PageResourceListParam  {
 
 
     /**
-     * 节点id
+     * 节点id列表;如果ci_ids和ci_id同时有，则优先ci_ids，但是不能同时为空。但是不支持应用批量查询
      * @return ciId
      */
     public String getCiId() {
@@ -253,11 +299,12 @@ public class PageResourceListParam  {
             Objects.equals(this.ciRelationships, pageResourceListParam.ciRelationships) &&
             Objects.equals(this.ciType, pageResourceListParam.ciType) &&
             Objects.equals(this.ciRegion, pageResourceListParam.ciRegion) &&
+            Objects.equals(this.ciIds, pageResourceListParam.ciIds) &&
             Objects.equals(this.ciId, pageResourceListParam.ciId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(maker, limit, keywords, ciRelationships, ciType, ciRegion, ciId);
+        return Objects.hash(maker, limit, keywords, ciRelationships, ciType, ciRegion, ciIds, ciId);
     }
     @Override
     public String toString() {
@@ -269,6 +316,7 @@ public class PageResourceListParam  {
         sb.append("    ciRelationships: ").append(toIndentedString(ciRelationships)).append("\n");
         sb.append("    ciType: ").append(toIndentedString(ciType)).append("\n");
         sb.append("    ciRegion: ").append(toIndentedString(ciRegion)).append("\n");
+        sb.append("    ciIds: ").append(toIndentedString(ciIds)).append("\n");
         sb.append("    ciId: ").append(toIndentedString(ciId)).append("\n");
         sb.append("}");
         return sb.toString();
@@ -283,6 +331,8 @@ public class PageResourceListParam  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

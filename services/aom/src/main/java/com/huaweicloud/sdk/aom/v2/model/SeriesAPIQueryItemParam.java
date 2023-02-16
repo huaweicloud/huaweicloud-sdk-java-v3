@@ -97,5 +97,7 @@ public class SeriesAPIQueryItemParam  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

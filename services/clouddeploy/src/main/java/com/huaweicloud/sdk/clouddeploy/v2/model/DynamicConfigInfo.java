@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 部署任务执行时传递的参数
+ * 部署应用时传递的参数
  */
 public class DynamicConfigInfo {
 
@@ -125,7 +125,7 @@ public class DynamicConfigInfo {
     }
 
     /**
-     * 执行部署任务时传递的参数名称
+     * 部署应用时传递的参数名称
      * @return key
      */
     public String getKey() {
@@ -142,7 +142,7 @@ public class DynamicConfigInfo {
     }
 
     /**
-     * 执行部署任务时传递的参数值
+     * 部署应用时传递的参数值
      * @return value
      */
     public String getValue() {

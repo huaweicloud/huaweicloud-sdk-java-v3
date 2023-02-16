@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ListAllResourcesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Auth-Token")
-
-    private String xAuthToken;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
 
     private String regionId;
@@ -39,25 +34,6 @@ public class ListAllResourcesRequest {
     @JsonProperty(value = "marker")
 
     private String marker;
-
-    public ListAllResourcesRequest withXAuthToken(String xAuthToken) {
-        this.xAuthToken = xAuthToken;
-        return this;
-    }
-
-    /**
-     * 用户Token。 获取Token，请参考《统一身份认证服务API参考》的“获取用户Token”章节。请求响应成功后在响应消息头中包含的“X-Subject-Token”的值即为Token值。
-     * @return xAuthToken
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Auth-Token")
-    public String getXAuthToken() {
-        return xAuthToken;
-    }
-
-    public void setXAuthToken(String xAuthToken) {
-        this.xAuthToken = xAuthToken;
-    }
 
     public ListAllResourcesRequest withRegionId(String regionId) {
         this.regionId = regionId;
@@ -155,8 +131,7 @@ public class ListAllResourcesRequest {
             return false;
         }
         ListAllResourcesRequest listAllResourcesRequest = (ListAllResourcesRequest) o;
-        return Objects.equals(this.xAuthToken, listAllResourcesRequest.xAuthToken)
-            && Objects.equals(this.regionId, listAllResourcesRequest.regionId)
+        return Objects.equals(this.regionId, listAllResourcesRequest.regionId)
             && Objects.equals(this.epId, listAllResourcesRequest.epId)
             && Objects.equals(this.type, listAllResourcesRequest.type)
             && Objects.equals(this.limit, listAllResourcesRequest.limit)
@@ -165,14 +140,13 @@ public class ListAllResourcesRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(xAuthToken, regionId, epId, type, limit, marker);
+        return Objects.hash(regionId, epId, type, limit, marker);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAllResourcesRequest {\n");
-        sb.append("    xAuthToken: ").append(toIndentedString(xAuthToken)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    epId: ").append(toIndentedString(epId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

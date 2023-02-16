@@ -20,9 +20,9 @@ public class CloudDeployAsyncClient {
     }
 
     /**
-     * 通过模板新建部署任务
+     * 通过模板新建应用
      *
-     * 通过模板新建部署任务cloudpipeline流水线调用。
+     * 通过模板新建应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -35,9 +35,9 @@ public class CloudDeployAsyncClient {
     }
 
     /**
-     * 通过模板新建部署任务
+     * 通过模板新建应用
      *
-     * 通过模板新建部署任务cloudpipeline流水线调用。
+     * 通过模板新建应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -51,9 +51,9 @@ public class CloudDeployAsyncClient {
     }
 
     /**
-     * 删除部署任务
+     * 删除应用
      *
-     * 根据部署任务id删除部署任务。
+     * 根据部署任务id删除应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -65,9 +65,9 @@ public class CloudDeployAsyncClient {
     }
 
     /**
-     * 删除部署任务
+     * 删除应用
      *
-     * 根据部署任务id删除部署任务。
+     * 根据部署任务id删除应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -81,9 +81,9 @@ public class CloudDeployAsyncClient {
     }
 
     /**
-     * 根据开始时间和结束时间查询项目下指定任务的历史执行记录列表
+     * 根据开始时间和结束时间查询项目下指定应用的历史部署记录列表
      *
-     * 根据开始时间和结束时间查询项目下指定任务的历史执行记录列表
+     * 根据开始时间和结束时间查询项目下指定应用的历史部署记录列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -96,9 +96,9 @@ public class CloudDeployAsyncClient {
     }
 
     /**
-     * 根据开始时间和结束时间查询项目下指定任务的历史执行记录列表
+     * 根据开始时间和结束时间查询项目下指定应用的历史部署记录列表
      *
-     * 根据开始时间和结束时间查询项目下指定任务的历史执行记录列表
+     * 根据开始时间和结束时间查询项目下指定应用的历史部署记录列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -112,9 +112,9 @@ public class CloudDeployAsyncClient {
     }
 
     /**
-     * 获取部署任务列表
+     * 获取应用列表
      *
-     * 查询项目下部署任务列表
+     * 查询项目下应用列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -126,9 +126,9 @@ public class CloudDeployAsyncClient {
     }
 
     /**
-     * 获取部署任务列表
+     * 获取应用列表
      *
-     * 查询项目下部署任务列表
+     * 查询项目下应用列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -142,9 +142,9 @@ public class CloudDeployAsyncClient {
     }
 
     /**
-     * 获取部署任务详情
+     * 获取应用详情
      *
-     * 根据部署任务id获取部署任务详情。
+     * 根据部署任务id获取应用详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -157,9 +157,9 @@ public class CloudDeployAsyncClient {
     }
 
     /**
-     * 获取部署任务详情
+     * 获取应用详情
      *
-     * 根据部署任务id获取部署任务详情。
+     * 根据部署任务id获取应用详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -173,9 +173,9 @@ public class CloudDeployAsyncClient {
     }
 
     /**
-     * 启动部署任务
+     * 部署应用
      *
-     * 根据部署任务id启动部署任务。
+     * 根据部署任务id部署应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -187,9 +187,9 @@ public class CloudDeployAsyncClient {
     }
 
     /**
-     * 启动部署任务
+     * 部署应用
      *
-     * 根据部署任务id启动部署任务。
+     * 根据部署任务id部署应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -509,9 +509,9 @@ public class CloudDeployAsyncClient {
     }
 
     /**
-     * 获取指定任务的部署任务执行成功率
+     * 获取指定应用的应用部署成功率
      *
-     * 获取指定任务的部署任务执行成功率
+     * 获取指定应用的应用部署成功率
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -523,9 +523,9 @@ public class CloudDeployAsyncClient {
     }
 
     /**
-     * 获取指定任务的部署任务执行成功率
+     * 获取指定应用的应用部署成功率
      *
-     * 获取指定任务的部署任务执行成功率
+     * 获取指定应用的应用部署成功率
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -539,9 +539,9 @@ public class CloudDeployAsyncClient {
     }
 
     /**
-     * 获取指定项目的部署任务执行成功率
+     * 获取指定项目的应用部署成功率
      *
-     * 获取指定项目的部署任务执行成功率
+     * 获取指定项目的应用部署成功率
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -554,9 +554,9 @@ public class CloudDeployAsyncClient {
     }
 
     /**
-     * 获取指定项目的部署任务执行成功率
+     * 获取指定项目的应用部署成功率
      *
-     * 获取指定项目的部署任务执行成功率
+     * 获取指定项目的应用部署成功率
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

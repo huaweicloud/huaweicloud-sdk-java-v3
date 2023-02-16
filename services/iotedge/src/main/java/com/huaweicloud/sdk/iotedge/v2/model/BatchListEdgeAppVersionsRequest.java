@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.iotedge.v2.model;
 
 
 
+
 import java.util.Collections;
 
 import java.util.Collections;
@@ -529,6 +530,8 @@ public class BatchListEdgeAppVersionsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

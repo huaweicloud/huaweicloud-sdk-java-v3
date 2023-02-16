@@ -142,5 +142,7 @@ public class SmnInfo  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

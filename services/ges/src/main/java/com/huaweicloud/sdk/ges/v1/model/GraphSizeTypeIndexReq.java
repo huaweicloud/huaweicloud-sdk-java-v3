@@ -80,5 +80,7 @@ public class GraphSizeTypeIndexReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

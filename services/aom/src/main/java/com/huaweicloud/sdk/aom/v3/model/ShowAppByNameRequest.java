@@ -4,6 +4,7 @@ package com.huaweicloud.sdk.aom.v3.model;
 
 
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -40,7 +41,7 @@ public class ShowAppByNameRequest  {
 
 
     /**
-     * 应用唯一标识
+     * 应用唯一标识;字符集长度2-64，仅支持字符集：英文字母、数字、下划线、中划线、点；应用唯一标识与显示名称至少填写其一
      * @return name
      */
     public String getName() {
@@ -62,7 +63,7 @@ public class ShowAppByNameRequest  {
 
 
     /**
-     * 实体的显示名称。
+     * 实体的显示名称；字符集长度2-64，仅支持字符集：中文字符、英文字母、数字、下划线、中划线、点；应用唯一标识与显示名称至少填写其一
      * @return displayName
      */
     public String getDisplayName() {
@@ -110,6 +111,8 @@ public class ShowAppByNameRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

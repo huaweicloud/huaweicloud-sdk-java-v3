@@ -522,6 +522,30 @@ public class CloudIDEMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateLoginRequest, CreateLoginResponse> createLogin = genForcreateLogin();
+
+    private static HttpRequestDef<CreateLoginRequest, CreateLoginResponse> genForcreateLogin() {
+        // basic
+        HttpRequestDef.Builder<CreateLoginRequest, CreateLoginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateLoginRequest.class, CreateLoginResponse.class)
+                .withName("CreateLogin")
+                .withUri("/v2/aims/codemodelserver/code-generation/login")
+                .withContentType("application/json");
+
+        // requests
+        builder.<LoginSchema>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LoginSchema.class),
+            f -> f.withMarshaller(CreateLoginRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateRequestRequest, CreateRequestResponse> createRequest =
         genForcreateRequest();
 

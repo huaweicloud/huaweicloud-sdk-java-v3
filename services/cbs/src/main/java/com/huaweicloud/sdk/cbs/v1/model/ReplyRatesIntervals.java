@@ -483,5 +483,7 @@ public class ReplyRatesIntervals  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -111,5 +111,7 @@ public class QueryAuthorizedNodeDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -139,6 +139,66 @@ public class OsmAsyncClient {
     }
 
     /**
+     * 语料提问
+     *
+     * 基于语料的一次问答
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAskQuestionRequest 请求对象
+     * @return CompletableFuture<CreateAskQuestionResponse>
+     */
+    public CompletableFuture<CreateAskQuestionResponse> createAskQuestionAsync(CreateAskQuestionRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.createAskQuestion);
+    }
+
+    /**
+     * 语料提问
+     *
+     * 基于语料的一次问答
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAskQuestionRequest 请求对象
+     * @return AsyncInvoker<CreateAskQuestionRequest, CreateAskQuestionResponse>
+     */
+    public AsyncInvoker<CreateAskQuestionRequest, CreateAskQuestionResponse> createAskQuestionAsyncInvoker(
+        CreateAskQuestionRequest request) {
+        return new AsyncInvoker<CreateAskQuestionRequest, CreateAskQuestionResponse>(request, OsmMeta.createAskQuestion,
+            hcClient);
+    }
+
+    /**
+     * 创建授权
+     *
+     * 创建授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAuthorizationRequest 请求对象
+     * @return CompletableFuture<CreateAuthorizationResponse>
+     */
+    public CompletableFuture<CreateAuthorizationResponse> createAuthorizationAsync(CreateAuthorizationRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.createAuthorization);
+    }
+
+    /**
+     * 创建授权
+     *
+     * 创建授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAuthorizationRequest 请求对象
+     * @return AsyncInvoker<CreateAuthorizationRequest, CreateAuthorizationResponse>
+     */
+    public AsyncInvoker<CreateAuthorizationRequest, CreateAuthorizationResponse> createAuthorizationAsyncInvoker(
+        CreateAuthorizationRequest request) {
+        return new AsyncInvoker<CreateAuthorizationRequest, CreateAuthorizationResponse>(request,
+            OsmMeta.createAuthorization, hcClient);
+    }
+
+    /**
      * 提交工单扩展参数
      *
      * 提交工单扩展参数
@@ -225,6 +285,127 @@ public class OsmAsyncClient {
      */
     public AsyncInvoker<CreateCasesRequest, CreateCasesResponse> createCasesAsyncInvoker(CreateCasesRequest request) {
         return new AsyncInvoker<CreateCasesRequest, CreateCasesResponse>(request, OsmMeta.createCases, hcClient);
+    }
+
+    /**
+     * 用户反馈是否有帮助
+     *
+     * 用户反馈是否有帮助
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDiagnoseFeedbackRequest 请求对象
+     * @return CompletableFuture<CreateDiagnoseFeedbackResponse>
+     */
+    public CompletableFuture<CreateDiagnoseFeedbackResponse> createDiagnoseFeedbackAsync(
+        CreateDiagnoseFeedbackRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.createDiagnoseFeedback);
+    }
+
+    /**
+     * 用户反馈是否有帮助
+     *
+     * 用户反馈是否有帮助
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDiagnoseFeedbackRequest 请求对象
+     * @return AsyncInvoker<CreateDiagnoseFeedbackRequest, CreateDiagnoseFeedbackResponse>
+     */
+    public AsyncInvoker<CreateDiagnoseFeedbackRequest, CreateDiagnoseFeedbackResponse> createDiagnoseFeedbackAsyncInvoker(
+        CreateDiagnoseFeedbackRequest request) {
+        return new AsyncInvoker<CreateDiagnoseFeedbackRequest, CreateDiagnoseFeedbackResponse>(request,
+            OsmMeta.createDiagnoseFeedback, hcClient);
+    }
+
+    /**
+     * 开始一键诊断
+     *
+     * 开始一键诊断
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDiagnoseJobRequest 请求对象
+     * @return CompletableFuture<CreateDiagnoseJobResponse>
+     */
+    public CompletableFuture<CreateDiagnoseJobResponse> createDiagnoseJobAsync(CreateDiagnoseJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.createDiagnoseJob);
+    }
+
+    /**
+     * 开始一键诊断
+     *
+     * 开始一键诊断
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDiagnoseJobRequest 请求对象
+     * @return AsyncInvoker<CreateDiagnoseJobRequest, CreateDiagnoseJobResponse>
+     */
+    public AsyncInvoker<CreateDiagnoseJobRequest, CreateDiagnoseJobResponse> createDiagnoseJobAsyncInvoker(
+        CreateDiagnoseJobRequest request) {
+        return new AsyncInvoker<CreateDiagnoseJobRequest, CreateDiagnoseJobResponse>(request, OsmMeta.createDiagnoseJob,
+            hcClient);
+    }
+
+    /**
+     * 问答满意度评价
+     *
+     * 一次问答完毕后, 针对这一次问答提交满意度评价
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEvaluateRequest 请求对象
+     * @return CompletableFuture<CreateEvaluateResponse>
+     */
+    public CompletableFuture<CreateEvaluateResponse> createEvaluateAsync(CreateEvaluateRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.createEvaluate);
+    }
+
+    /**
+     * 问答满意度评价
+     *
+     * 一次问答完毕后, 针对这一次问答提交满意度评价
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEvaluateRequest 请求对象
+     * @return AsyncInvoker<CreateEvaluateRequest, CreateEvaluateResponse>
+     */
+    public AsyncInvoker<CreateEvaluateRequest, CreateEvaluateResponse> createEvaluateAsyncInvoker(
+        CreateEvaluateRequest request) {
+        return new AsyncInvoker<CreateEvaluateRequest, CreateEvaluateResponse>(request, OsmMeta.createEvaluate,
+            hcClient);
+    }
+
+    /**
+     * 创建举报反馈
+     *
+     * 创建举报反馈
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFeedbackRequest 请求对象
+     * @return CompletableFuture<CreateFeedbackResponse>
+     */
+    public CompletableFuture<CreateFeedbackResponse> createFeedbackAsync(CreateFeedbackRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.createFeedback);
+    }
+
+    /**
+     * 创建举报反馈
+     *
+     * 创建举报反馈
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFeedbackRequest 请求对象
+     * @return AsyncInvoker<CreateFeedbackRequest, CreateFeedbackResponse>
+     */
+    public AsyncInvoker<CreateFeedbackRequest, CreateFeedbackResponse> createFeedbackAsyncInvoker(
+        CreateFeedbackRequest request) {
+        return new AsyncInvoker<CreateFeedbackRequest, CreateFeedbackResponse>(request, OsmMeta.createFeedback,
+            hcClient);
     }
 
     /**
@@ -317,6 +498,95 @@ public class OsmAsyncClient {
     }
 
     /**
+     * 新问答接口
+     *
+     * 支持多轮流程问答接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateQaAskRequest 请求对象
+     * @return CompletableFuture<CreateQaAskResponse>
+     */
+    public CompletableFuture<CreateQaAskResponse> createQaAskAsync(CreateQaAskRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.createQaAsk);
+    }
+
+    /**
+     * 新问答接口
+     *
+     * 支持多轮流程问答接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateQaAskRequest 请求对象
+     * @return AsyncInvoker<CreateQaAskRequest, CreateQaAskResponse>
+     */
+    public AsyncInvoker<CreateQaAskRequest, CreateQaAskResponse> createQaAskAsyncInvoker(CreateQaAskRequest request) {
+        return new AsyncInvoker<CreateQaAskRequest, CreateQaAskResponse>(request, OsmMeta.createQaAsk, hcClient);
+    }
+
+    /**
+     * 反馈评价
+     *
+     * 提交/取消反馈评价
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateQaFeedbacksRequest 请求对象
+     * @return CompletableFuture<CreateQaFeedbacksResponse>
+     */
+    public CompletableFuture<CreateQaFeedbacksResponse> createQaFeedbacksAsync(CreateQaFeedbacksRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.createQaFeedbacks);
+    }
+
+    /**
+     * 反馈评价
+     *
+     * 提交/取消反馈评价
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateQaFeedbacksRequest 请求对象
+     * @return AsyncInvoker<CreateQaFeedbacksRequest, CreateQaFeedbacksResponse>
+     */
+    public AsyncInvoker<CreateQaFeedbacksRequest, CreateQaFeedbacksResponse> createQaFeedbacksAsyncInvoker(
+        CreateQaFeedbacksRequest request) {
+        return new AsyncInvoker<CreateQaFeedbacksRequest, CreateQaFeedbacksResponse>(request, OsmMeta.createQaFeedbacks,
+            hcClient);
+    }
+
+    /**
+     * 提问（在制定的会话中）
+     *
+     * 提问（在制定的会话中）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateQuestionInSessionRequest 请求对象
+     * @return CompletableFuture<CreateQuestionInSessionResponse>
+     */
+    public CompletableFuture<CreateQuestionInSessionResponse> createQuestionInSessionAsync(
+        CreateQuestionInSessionRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.createQuestionInSession);
+    }
+
+    /**
+     * 提问（在制定的会话中）
+     *
+     * 提问（在制定的会话中）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateQuestionInSessionRequest 请求对象
+     * @return AsyncInvoker<CreateQuestionInSessionRequest, CreateQuestionInSessionResponse>
+     */
+    public AsyncInvoker<CreateQuestionInSessionRequest, CreateQuestionInSessionResponse> createQuestionInSessionAsyncInvoker(
+        CreateQuestionInSessionRequest request) {
+        return new AsyncInvoker<CreateQuestionInSessionRequest, CreateQuestionInSessionResponse>(request,
+            OsmMeta.createQuestionInSession, hcClient);
+    }
+
+    /**
      * 创建关联
      *
      * 创建关联，一个工单最多支持3个关联
@@ -373,6 +643,35 @@ public class OsmAsyncClient {
     public AsyncInvoker<CreateScoresRequest, CreateScoresResponse> createScoresAsyncInvoker(
         CreateScoresRequest request) {
         return new AsyncInvoker<CreateScoresRequest, CreateScoresResponse>(request, OsmMeta.createScores, hcClient);
+    }
+
+    /**
+     * 创建问答会话
+     *
+     * 用于创建问答会话, 创建会话后可开始问答
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSessionRequest 请求对象
+     * @return CompletableFuture<CreateSessionResponse>
+     */
+    public CompletableFuture<CreateSessionResponse> createSessionAsync(CreateSessionRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.createSession);
+    }
+
+    /**
+     * 创建问答会话
+     *
+     * 用于创建问答会话, 创建会话后可开始问答
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSessionRequest 请求对象
+     * @return AsyncInvoker<CreateSessionRequest, CreateSessionResponse>
+     */
+    public AsyncInvoker<CreateSessionRequest, CreateSessionResponse> createSessionAsyncInvoker(
+        CreateSessionRequest request) {
+        return new AsyncInvoker<CreateSessionRequest, CreateSessionResponse>(request, OsmMeta.createSession, hcClient);
     }
 
     /**
@@ -670,6 +969,35 @@ public class OsmAsyncClient {
     public AsyncInvoker<ListAreaCodesRequest, ListAreaCodesResponse> listAreaCodesAsyncInvoker(
         ListAreaCodesRequest request) {
         return new AsyncInvoker<ListAreaCodesRequest, ListAreaCodesResponse>(request, OsmMeta.listAreaCodes, hcClient);
+    }
+
+    /**
+     * 查询案例
+     *
+     * 查询满足指定条件的案例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListArticlesRequest 请求对象
+     * @return CompletableFuture<ListArticlesResponse>
+     */
+    public CompletableFuture<ListArticlesResponse> listArticlesAsync(ListArticlesRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.listArticles);
+    }
+
+    /**
+     * 查询案例
+     *
+     * 查询满足指定条件的案例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListArticlesRequest 请求对象
+     * @return AsyncInvoker<ListArticlesRequest, ListArticlesResponse>
+     */
+    public AsyncInvoker<ListArticlesRequest, ListArticlesResponse> listArticlesAsyncInvoker(
+        ListArticlesRequest request) {
+        return new AsyncInvoker<ListArticlesRequest, ListArticlesResponse>(request, OsmMeta.listArticles, hcClient);
     }
 
     /**
@@ -1002,6 +1330,96 @@ public class OsmAsyncClient {
     }
 
     /**
+     * 根据itemIds查询指定的诊断检查项执行结果
+     *
+     * 根据itemIds查询指定的诊断检查项执行结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDiagnoseItemsRequest 请求对象
+     * @return CompletableFuture<ListDiagnoseItemsResponse>
+     */
+    public CompletableFuture<ListDiagnoseItemsResponse> listDiagnoseItemsAsync(ListDiagnoseItemsRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.listDiagnoseItems);
+    }
+
+    /**
+     * 根据itemIds查询指定的诊断检查项执行结果
+     *
+     * 根据itemIds查询指定的诊断检查项执行结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDiagnoseItemsRequest 请求对象
+     * @return AsyncInvoker<ListDiagnoseItemsRequest, ListDiagnoseItemsResponse>
+     */
+    public AsyncInvoker<ListDiagnoseItemsRequest, ListDiagnoseItemsResponse> listDiagnoseItemsAsyncInvoker(
+        ListDiagnoseItemsRequest request) {
+        return new AsyncInvoker<ListDiagnoseItemsRequest, ListDiagnoseItemsResponse>(request, OsmMeta.listDiagnoseItems,
+            hcClient);
+    }
+
+    /**
+     * 查询诊断任务执行结果
+     *
+     * 查询诊断任务执行结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDiagnoseJobRequest 请求对象
+     * @return CompletableFuture<ListDiagnoseJobResponse>
+     */
+    public CompletableFuture<ListDiagnoseJobResponse> listDiagnoseJobAsync(ListDiagnoseJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.listDiagnoseJob);
+    }
+
+    /**
+     * 查询诊断任务执行结果
+     *
+     * 查询诊断任务执行结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDiagnoseJobRequest 请求对象
+     * @return AsyncInvoker<ListDiagnoseJobRequest, ListDiagnoseJobResponse>
+     */
+    public AsyncInvoker<ListDiagnoseJobRequest, ListDiagnoseJobResponse> listDiagnoseJobAsyncInvoker(
+        ListDiagnoseJobRequest request) {
+        return new AsyncInvoker<ListDiagnoseJobRequest, ListDiagnoseJobResponse>(request, OsmMeta.listDiagnoseJob,
+            hcClient);
+    }
+
+    /**
+     * 查询诊断历史记录列表
+     *
+     * 查询诊断历史记录列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDiagnoseRecordsRequest 请求对象
+     * @return CompletableFuture<ListDiagnoseRecordsResponse>
+     */
+    public CompletableFuture<ListDiagnoseRecordsResponse> listDiagnoseRecordsAsync(ListDiagnoseRecordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.listDiagnoseRecords);
+    }
+
+    /**
+     * 查询诊断历史记录列表
+     *
+     * 查询诊断历史记录列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDiagnoseRecordsRequest 请求对象
+     * @return AsyncInvoker<ListDiagnoseRecordsRequest, ListDiagnoseRecordsResponse>
+     */
+    public AsyncInvoker<ListDiagnoseRecordsRequest, ListDiagnoseRecordsResponse> listDiagnoseRecordsAsyncInvoker(
+        ListDiagnoseRecordsRequest request) {
+        return new AsyncInvoker<ListDiagnoseRecordsRequest, ListDiagnoseRecordsResponse>(request,
+            OsmMeta.listDiagnoseRecords, hcClient);
+    }
+
+    /**
      * 查询附加参数
      *
      * 提单时，根据不同的产品或者问题类型，会存在不同的一些附加参数填写
@@ -1029,6 +1447,36 @@ public class OsmAsyncClient {
         ListExtendsParamsRequest request) {
         return new AsyncInvoker<ListExtendsParamsRequest, ListExtendsParamsResponse>(request, OsmMeta.listExtendsParams,
             hcClient);
+    }
+
+    /**
+     * 查询反馈选项
+     *
+     * 查询符合条件的反馈选项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFeedbackOptionRequest 请求对象
+     * @return CompletableFuture<ListFeedbackOptionResponse>
+     */
+    public CompletableFuture<ListFeedbackOptionResponse> listFeedbackOptionAsync(ListFeedbackOptionRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.listFeedbackOption);
+    }
+
+    /**
+     * 查询反馈选项
+     *
+     * 查询符合条件的反馈选项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFeedbackOptionRequest 请求对象
+     * @return AsyncInvoker<ListFeedbackOptionRequest, ListFeedbackOptionResponse>
+     */
+    public AsyncInvoker<ListFeedbackOptionRequest, ListFeedbackOptionResponse> listFeedbackOptionAsyncInvoker(
+        ListFeedbackOptionRequest request) {
+        return new AsyncInvoker<ListFeedbackOptionRequest, ListFeedbackOptionResponse>(request,
+            OsmMeta.listFeedbackOption, hcClient);
     }
 
     /**
@@ -1243,6 +1691,34 @@ public class OsmAsyncClient {
     }
 
     /**
+     * 查询公告
+     *
+     * 查询满足指定条件的公告列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNoticesRequest 请求对象
+     * @return CompletableFuture<ListNoticesResponse>
+     */
+    public CompletableFuture<ListNoticesResponse> listNoticesAsync(ListNoticesRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.listNotices);
+    }
+
+    /**
+     * 查询公告
+     *
+     * 查询满足指定条件的公告列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNoticesRequest 请求对象
+     * @return AsyncInvoker<ListNoticesRequest, ListNoticesResponse>
+     */
+    public AsyncInvoker<ListNoticesRequest, ListNoticesResponse> listNoticesAsyncInvoker(ListNoticesRequest request) {
+        return new AsyncInvoker<ListNoticesRequest, ListNoticesResponse>(request, OsmMeta.listNotices, hcClient);
+    }
+
+    /**
      * 查询工单权限
      *
      * 查询工单权限
@@ -1331,6 +1807,36 @@ public class OsmAsyncClient {
         ListProductCategoriesRequest request) {
         return new AsyncInvoker<ListProductCategoriesRequest, ListProductCategoriesResponse>(request,
             OsmMeta.listProductCategories, hcClient);
+    }
+
+    /**
+     * 查询推荐热词
+     *
+     * 查询指定条件的推荐热词
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRecommendWordsRequest 请求对象
+     * @return CompletableFuture<ListRecommendWordsResponse>
+     */
+    public CompletableFuture<ListRecommendWordsResponse> listRecommendWordsAsync(ListRecommendWordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.listRecommendWords);
+    }
+
+    /**
+     * 查询推荐热词
+     *
+     * 查询指定条件的推荐热词
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRecommendWordsRequest 请求对象
+     * @return AsyncInvoker<ListRecommendWordsRequest, ListRecommendWordsResponse>
+     */
+    public AsyncInvoker<ListRecommendWordsRequest, ListRecommendWordsResponse> listRecommendWordsAsyncInvoker(
+        ListRecommendWordsRequest request) {
+        return new AsyncInvoker<ListRecommendWordsRequest, ListRecommendWordsResponse>(request,
+            OsmMeta.listRecommendWords, hcClient);
     }
 
     /**
@@ -1482,6 +1988,34 @@ public class OsmAsyncClient {
     }
 
     /**
+     * 查询工具
+     *
+     * 查询满足指定条件的工具列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListToolsRequest 请求对象
+     * @return CompletableFuture<ListToolsResponse>
+     */
+    public CompletableFuture<ListToolsResponse> listToolsAsync(ListToolsRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.listTools);
+    }
+
+    /**
+     * 查询工具
+     *
+     * 查询满足指定条件的工具列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListToolsRequest 请求对象
+     * @return AsyncInvoker<ListToolsRequest, ListToolsResponse>
+     */
+    public AsyncInvoker<ListToolsRequest, ListToolsResponse> listToolsAsyncInvoker(ListToolsRequest request) {
+        return new AsyncInvoker<ListToolsRequest, ListToolsResponse>(request, OsmMeta.listTools, hcClient);
+    }
+
+    /**
      * 查询堡垒机文件传输记录
      *
      * 查询堡垒机文件传输记录
@@ -1630,6 +2164,37 @@ public class OsmAsyncClient {
         ShowAccessoryLimitsRequest request) {
         return new AsyncInvoker<ShowAccessoryLimitsRequest, ShowAccessoryLimitsResponse>(request,
             OsmMeta.showAccessoryLimits, hcClient);
+    }
+
+    /**
+     * 查询联想问题
+     *
+     * 根据当前输入, 联想相关的问题
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAssociatedQuestionsRequest 请求对象
+     * @return CompletableFuture<ShowAssociatedQuestionsResponse>
+     */
+    public CompletableFuture<ShowAssociatedQuestionsResponse> showAssociatedQuestionsAsync(
+        ShowAssociatedQuestionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.showAssociatedQuestions);
+    }
+
+    /**
+     * 查询联想问题
+     *
+     * 根据当前输入, 联想相关的问题
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAssociatedQuestionsRequest 请求对象
+     * @return AsyncInvoker<ShowAssociatedQuestionsRequest, ShowAssociatedQuestionsResponse>
+     */
+    public AsyncInvoker<ShowAssociatedQuestionsRequest, ShowAssociatedQuestionsResponse> showAssociatedQuestionsAsyncInvoker(
+        ShowAssociatedQuestionsRequest request) {
+        return new AsyncInvoker<ShowAssociatedQuestionsRequest, ShowAssociatedQuestionsResponse>(request,
+            OsmMeta.showAssociatedQuestions, hcClient);
     }
 
     /**
@@ -1786,6 +2351,37 @@ public class OsmAsyncClient {
     }
 
     /**
+     * 附件下载地址
+     *
+     * 附件下载地址
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDownloadAccessoryUrlRequest 请求对象
+     * @return CompletableFuture<ShowDownloadAccessoryUrlResponse>
+     */
+    public CompletableFuture<ShowDownloadAccessoryUrlResponse> showDownloadAccessoryUrlAsync(
+        ShowDownloadAccessoryUrlRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.showDownloadAccessoryUrl);
+    }
+
+    /**
+     * 附件下载地址
+     *
+     * 附件下载地址
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDownloadAccessoryUrlRequest 请求对象
+     * @return AsyncInvoker<ShowDownloadAccessoryUrlRequest, ShowDownloadAccessoryUrlResponse>
+     */
+    public AsyncInvoker<ShowDownloadAccessoryUrlRequest, ShowDownloadAccessoryUrlResponse> showDownloadAccessoryUrlAsyncInvoker(
+        ShowDownloadAccessoryUrlRequest request) {
+        return new AsyncInvoker<ShowDownloadAccessoryUrlRequest, ShowDownloadAccessoryUrlResponse>(request,
+            OsmMeta.showDownloadAccessoryUrl, hcClient);
+    }
+
+    /**
      * 查看最新发布版本协议详情
      *
      * 查看最新发布版本协议详情
@@ -1879,6 +2475,64 @@ public class OsmAsyncClient {
     }
 
     /**
+     * 查询语料详情
+     *
+     * 查询指定语料的详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowQaPairDetailRequest 请求对象
+     * @return CompletableFuture<ShowQaPairDetailResponse>
+     */
+    public CompletableFuture<ShowQaPairDetailResponse> showQaPairDetailAsync(ShowQaPairDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.showQaPairDetail);
+    }
+
+    /**
+     * 查询语料详情
+     *
+     * 查询指定语料的详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowQaPairDetailRequest 请求对象
+     * @return AsyncInvoker<ShowQaPairDetailRequest, ShowQaPairDetailResponse>
+     */
+    public AsyncInvoker<ShowQaPairDetailRequest, ShowQaPairDetailResponse> showQaPairDetailAsyncInvoker(
+        ShowQaPairDetailRequest request) {
+        return new AsyncInvoker<ShowQaPairDetailRequest, ShowQaPairDetailResponse>(request, OsmMeta.showQaPairDetail,
+            hcClient);
+    }
+
+    /**
+     * 查询语料
+     *
+     * 查询满足指定条件的语料列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowQaPairsRequest 请求对象
+     * @return CompletableFuture<ShowQaPairsResponse>
+     */
+    public CompletableFuture<ShowQaPairsResponse> showQaPairsAsync(ShowQaPairsRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.showQaPairs);
+    }
+
+    /**
+     * 查询语料
+     *
+     * 查询满足指定条件的语料列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowQaPairsRequest 请求对象
+     * @return AsyncInvoker<ShowQaPairsRequest, ShowQaPairsResponse>
+     */
+    public AsyncInvoker<ShowQaPairsRequest, ShowQaPairsResponse> showQaPairsAsyncInvoker(ShowQaPairsRequest request) {
+        return new AsyncInvoker<ShowQaPairsRequest, ShowQaPairsResponse>(request, OsmMeta.showQaPairs, hcClient);
+    }
+
+    /**
      * 查询用户是否签署最新协议
      *
      * 查询用户是否签署最新协议
@@ -1907,6 +2561,34 @@ public class OsmAsyncClient {
         ShowSignedLatestPublishedAgreementRequest request) {
         return new AsyncInvoker<ShowSignedLatestPublishedAgreementRequest, ShowSignedLatestPublishedAgreementResponse>(
             request, OsmMeta.showSignedLatestPublishedAgreement, hcClient);
+    }
+
+    /**
+     * 产品类型转为主题
+     *
+     * 产品类型转为主题
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowThemeRequest 请求对象
+     * @return CompletableFuture<ShowThemeResponse>
+     */
+    public CompletableFuture<ShowThemeResponse> showThemeAsync(ShowThemeRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.showTheme);
+    }
+
+    /**
+     * 产品类型转为主题
+     *
+     * 产品类型转为主题
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowThemeRequest 请求对象
+     * @return AsyncInvoker<ShowThemeRequest, ShowThemeResponse>
+     */
+    public AsyncInvoker<ShowThemeRequest, ShowThemeResponse> showThemeAsyncInvoker(ShowThemeRequest request) {
+        return new AsyncInvoker<ShowThemeRequest, ShowThemeResponse>(request, OsmMeta.showTheme, hcClient);
     }
 
     /**

@@ -403,5 +403,7 @@ public class EdgeNodeDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

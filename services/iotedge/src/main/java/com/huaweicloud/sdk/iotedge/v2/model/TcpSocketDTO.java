@@ -82,5 +82,7 @@ public class TcpSocketDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

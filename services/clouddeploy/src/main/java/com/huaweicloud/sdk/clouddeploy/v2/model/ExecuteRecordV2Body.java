@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 任务执行记录Body
+ * 应用部署记录Body
  */
 public class ExecuteRecordV2Body {
 
@@ -61,7 +61,7 @@ public class ExecuteRecordV2Body {
     }
 
     /**
-     * 执行用时
+     * 部署用时
      * @return duration
      */
     public String getDuration() {
@@ -78,7 +78,7 @@ public class ExecuteRecordV2Body {
     }
 
     /**
-     * 任务状态
+     * 应用状态
      * @return state
      */
     public String getState() {
@@ -112,7 +112,7 @@ public class ExecuteRecordV2Body {
     }
 
     /**
-     * 执行记录ID
+     * 部署记录ID
      * @return executionId
      */
     public String getExecutionId() {
@@ -129,7 +129,7 @@ public class ExecuteRecordV2Body {
     }
 
     /**
-     * 执行任务的开始时间
+     * 部署应用的开始时间
      * @return startTime
      */
     public String getStartTime() {
@@ -163,7 +163,7 @@ public class ExecuteRecordV2Body {
     }
 
     /**
-     * 执行任务的结束时间
+     * 部署应用的结束时间
      * @return endTime
      */
     public String getEndTime() {
@@ -180,7 +180,7 @@ public class ExecuteRecordV2Body {
     }
 
     /**
-     * 执行序列号
+     * 部署记录序列号
      * @return releaseId
      */
     public Long getReleaseId() {

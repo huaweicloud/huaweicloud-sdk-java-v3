@@ -80,5 +80,7 @@ public class DetachEipReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

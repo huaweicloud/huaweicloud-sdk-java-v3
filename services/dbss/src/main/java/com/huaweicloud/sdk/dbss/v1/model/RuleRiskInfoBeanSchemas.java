@@ -142,5 +142,7 @@ public class RuleRiskInfoBeanSchemas  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

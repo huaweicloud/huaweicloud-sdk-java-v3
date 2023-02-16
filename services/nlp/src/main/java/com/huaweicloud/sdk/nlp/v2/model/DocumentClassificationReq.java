@@ -187,5 +187,7 @@ public class DocumentClassificationReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

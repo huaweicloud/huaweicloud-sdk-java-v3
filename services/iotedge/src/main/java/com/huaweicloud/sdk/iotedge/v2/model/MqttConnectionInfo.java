@@ -297,5 +297,7 @@ public class MqttConnectionInfo  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

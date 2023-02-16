@@ -506,5 +506,7 @@ public class UpdateEdgeAppVersionDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

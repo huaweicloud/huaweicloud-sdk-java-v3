@@ -159,5 +159,7 @@ public class HistorySlot  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

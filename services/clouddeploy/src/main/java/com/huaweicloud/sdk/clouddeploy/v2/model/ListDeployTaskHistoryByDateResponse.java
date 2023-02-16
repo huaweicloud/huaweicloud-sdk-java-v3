@@ -46,7 +46,7 @@ public class ListDeployTaskHistoryByDateResponse extends SdkResponse {
     }
 
     /**
-     * 部署任务历史执行记录列表
+     * 应用历史部署记录列表
      * @return result
      */
     public List<ExecuteRecordV2Body> getResult() {
@@ -63,7 +63,7 @@ public class ListDeployTaskHistoryByDateResponse extends SdkResponse {
     }
 
     /**
-     * 开始时间和结束时间内任务历史执行记录总数
+     * 开始时间和结束时间内应用历史部署记录总数
      * @return totalNum
      */
     public Integer getTotalNum() {

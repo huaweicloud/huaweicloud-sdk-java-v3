@@ -80,5 +80,7 @@ public class MysqlResizeFlavor  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

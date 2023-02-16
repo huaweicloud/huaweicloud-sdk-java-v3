@@ -150,5 +150,7 @@ public class UpdateEdgeModuleReqDTO  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

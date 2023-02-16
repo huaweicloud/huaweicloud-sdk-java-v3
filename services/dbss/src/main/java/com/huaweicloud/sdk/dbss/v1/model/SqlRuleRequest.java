@@ -80,5 +80,7 @@ public class SqlRuleRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

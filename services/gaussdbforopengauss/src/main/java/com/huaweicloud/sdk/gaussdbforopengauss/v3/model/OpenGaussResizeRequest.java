@@ -111,5 +111,7 @@ public class OpenGaussResizeRequest  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

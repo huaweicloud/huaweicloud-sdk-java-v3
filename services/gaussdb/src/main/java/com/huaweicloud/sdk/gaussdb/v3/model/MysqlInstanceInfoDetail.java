@@ -1064,5 +1064,7 @@ public class MysqlInstanceInfoDetail  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

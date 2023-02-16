@@ -209,6 +209,41 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 创建过期key扫描任务
+     *
+     * 创建过期key扫描任务（Redis 3.0 不支持过期key扫描）。
+     * 过期key扫描会对键空间进行Redis的scan扫描，释放内存中已过期但是由于惰性删除机制而没有释放的内存空间。
+     * 过期key扫描在主节点上执行，会对实例性能有一定的影响，建议不要在业务高峰期进行。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAutoExpireScanTaskRequest 请求对象
+     * @return CompletableFuture<CreateAutoExpireScanTaskResponse>
+     */
+    public CompletableFuture<CreateAutoExpireScanTaskResponse> createAutoExpireScanTaskAsync(
+        CreateAutoExpireScanTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.createAutoExpireScanTask);
+    }
+
+    /**
+     * 创建过期key扫描任务
+     *
+     * 创建过期key扫描任务（Redis 3.0 不支持过期key扫描）。
+     * 过期key扫描会对键空间进行Redis的scan扫描，释放内存中已过期但是由于惰性删除机制而没有释放的内存空间。
+     * 过期key扫描在主节点上执行，会对实例性能有一定的影响，建议不要在业务高峰期进行。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAutoExpireScanTaskRequest 请求对象
+     * @return AsyncInvoker<CreateAutoExpireScanTaskRequest, CreateAutoExpireScanTaskResponse>
+     */
+    public AsyncInvoker<CreateAutoExpireScanTaskRequest, CreateAutoExpireScanTaskResponse> createAutoExpireScanTaskAsyncInvoker(
+        CreateAutoExpireScanTaskRequest request) {
+        return new AsyncInvoker<CreateAutoExpireScanTaskRequest, CreateAutoExpireScanTaskResponse>(request,
+            DcsMeta.createAutoExpireScanTask, hcClient);
+    }
+
+    /**
      * 创建大key分析任务
      *
      * 为Redis实例创建大key分析任务。
@@ -237,6 +272,37 @@ public class DcsAsyncClient {
         CreateBigkeyScanTaskRequest request) {
         return new AsyncInvoker<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse>(request,
             DcsMeta.createBigkeyScanTask, hcClient);
+    }
+
+    /**
+     * 创建自定义模板
+     *
+     * 创建自定义模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCustomTemplateRequest 请求对象
+     * @return CompletableFuture<CreateCustomTemplateResponse>
+     */
+    public CompletableFuture<CreateCustomTemplateResponse> createCustomTemplateAsync(
+        CreateCustomTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.createCustomTemplate);
+    }
+
+    /**
+     * 创建自定义模板
+     *
+     * 创建自定义模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCustomTemplateRequest 请求对象
+     * @return AsyncInvoker<CreateCustomTemplateRequest, CreateCustomTemplateResponse>
+     */
+    public AsyncInvoker<CreateCustomTemplateRequest, CreateCustomTemplateResponse> createCustomTemplateAsyncInvoker(
+        CreateCustomTemplateRequest request) {
+        return new AsyncInvoker<CreateCustomTemplateRequest, CreateCustomTemplateResponse>(request,
+            DcsMeta.createCustomTemplate, hcClient);
     }
 
     /**

@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.nlp.v2.region;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +12,8 @@ import com.huaweicloud.sdk.core.region.RegionProviderChain;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 public class NlpRegion {
-    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://nlp-ext.cn-north-4.myhuaweicloud.com");
+    public static final Region CN_NORTH_4 = new Region("cn-north-4",
+            "https://nlp-ext.cn-north-4.myhuaweicloud.com");
     
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("NLP");
 

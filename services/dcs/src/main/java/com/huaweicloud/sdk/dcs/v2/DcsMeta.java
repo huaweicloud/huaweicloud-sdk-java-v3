@@ -190,6 +190,32 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateAutoExpireScanTaskRequest, CreateAutoExpireScanTaskResponse> createAutoExpireScanTask =
+        genForcreateAutoExpireScanTask();
+
+    private static HttpRequestDef<CreateAutoExpireScanTaskRequest, CreateAutoExpireScanTaskResponse> genForcreateAutoExpireScanTask() {
+        // basic
+        HttpRequestDef.Builder<CreateAutoExpireScanTaskRequest, CreateAutoExpireScanTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateAutoExpireScanTaskRequest.class, CreateAutoExpireScanTaskResponse.class)
+                .withName("CreateAutoExpireScanTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/scan-expire-keys-task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAutoExpireScanTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse> createBigkeyScanTask =
         genForcreateBigkeyScanTask();
 
@@ -208,6 +234,31 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateBigkeyScanTaskRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCustomTemplateRequest, CreateCustomTemplateResponse> createCustomTemplate =
+        genForcreateCustomTemplate();
+
+    private static HttpRequestDef<CreateCustomTemplateRequest, CreateCustomTemplateResponse> genForcreateCustomTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateCustomTemplateRequest, CreateCustomTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateCustomTemplateRequest.class, CreateCustomTemplateResponse.class)
+            .withName("CreateCustomTemplate")
+            .withUri("/v2/{project_id}/config-templates")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateCustomTemplateBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateCustomTemplateBody.class),
+            f -> f.withMarshaller(CreateCustomTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

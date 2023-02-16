@@ -150,5 +150,7 @@ public class AutoScalingPolicyV2  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

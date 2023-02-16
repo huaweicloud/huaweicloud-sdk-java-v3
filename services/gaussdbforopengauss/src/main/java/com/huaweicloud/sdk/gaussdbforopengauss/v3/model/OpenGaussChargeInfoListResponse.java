@@ -156,5 +156,7 @@ public class OpenGaussChargeInfoListResponse  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

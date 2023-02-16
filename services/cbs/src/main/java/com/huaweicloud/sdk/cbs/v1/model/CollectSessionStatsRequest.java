@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.cbs.v1.model;
 
 
 
+
 import java.util.Collections;
 
 
@@ -291,6 +292,8 @@ public class CollectSessionStatsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

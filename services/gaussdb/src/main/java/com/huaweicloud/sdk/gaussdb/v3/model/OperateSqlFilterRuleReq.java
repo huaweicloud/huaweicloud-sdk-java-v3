@@ -97,5 +97,7 @@ public class OperateSqlFilterRuleReq  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
 
 
+
 import java.util.Collections;
 
 import java.util.Collections;
@@ -483,6 +484,8 @@ public class ListTasksRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

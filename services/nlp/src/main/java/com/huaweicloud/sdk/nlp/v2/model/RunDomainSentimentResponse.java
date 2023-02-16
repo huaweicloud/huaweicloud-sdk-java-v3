@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.nlp.v2.model;
 
 
 
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 
@@ -151,6 +152,8 @@ public class RunDomainSentimentResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

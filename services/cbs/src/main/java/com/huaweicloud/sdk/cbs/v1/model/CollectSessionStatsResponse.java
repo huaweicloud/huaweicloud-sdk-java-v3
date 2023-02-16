@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.cbs.v1.model;
 
 
 
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 
@@ -261,6 +262,8 @@ public class CollectSessionStatsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

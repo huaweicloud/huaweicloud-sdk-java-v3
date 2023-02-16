@@ -40,7 +40,7 @@ public class StartDeployTaskResponse extends SdkResponse {
     }
 
     /**
-     * 执行记录id
+     * 部署记录id
      * @return id
      */
     public String getId() {
@@ -107,7 +107,7 @@ public class StartDeployTaskResponse extends SdkResponse {
     }
 
     /**
-     * 部署任务和应用组件对应关系
+     * 应用和AOM应用组件对应关系
      * @return appComponentList
      */
     public List<AppComponentDao> getAppComponentList() {

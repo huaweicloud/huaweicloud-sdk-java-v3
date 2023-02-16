@@ -30,6 +30,11 @@ public class DetectLiveByFileRequestBody implements SdkFormDataBody {
 
     private String actionTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nod_threshold")
+
+    private Double nodThreshold;
+
     public DetectLiveByFileRequestBody withVideoFile(FormDataFilePart videoFile) {
         this.videoFile = videoFile;
         return this;
@@ -81,6 +86,23 @@ public class DetectLiveByFileRequestBody implements SdkFormDataBody {
         this.actionTime = actionTime;
     }
 
+    public DetectLiveByFileRequestBody withNodThreshold(Double nodThreshold) {
+        this.nodThreshold = nodThreshold;
+        return this;
+    }
+
+    /**
+     * 该参数为点头动作幅度的判断门限，取值范围：[1,90]，默认为10，单位为度。该值设置越大，则越难判断为点头。
+     * @return nodThreshold
+     */
+    public Double getNodThreshold() {
+        return nodThreshold;
+    }
+
+    public void setNodThreshold(Double nodThreshold) {
+        this.nodThreshold = nodThreshold;
+    }
+
     public DetectLiveByFileRequestBody withVideoFile(InputStream inputStream, String fileName, String contentType) {
         this.videoFile = new FormDataFilePart(inputStream, fileName).withContentType(contentType);
         return this;
@@ -108,6 +130,9 @@ public class DetectLiveByFileRequestBody implements SdkFormDataBody {
                 if (actionTime != null) {
                     put("action_time", new FormDataPart<>(actionTime));
                 }
+                if (nodThreshold != null) {
+                    put("nod_threshold", new FormDataPart<>(nodThreshold));
+                }
             }
         };
     }
@@ -123,12 +148,13 @@ public class DetectLiveByFileRequestBody implements SdkFormDataBody {
         DetectLiveByFileRequestBody detectLiveByFileRequestBody = (DetectLiveByFileRequestBody) o;
         return Objects.equals(this.videoFile, detectLiveByFileRequestBody.videoFile)
             && Objects.equals(this.actions, detectLiveByFileRequestBody.actions)
-            && Objects.equals(this.actionTime, detectLiveByFileRequestBody.actionTime);
+            && Objects.equals(this.actionTime, detectLiveByFileRequestBody.actionTime)
+            && Objects.equals(this.nodThreshold, detectLiveByFileRequestBody.nodThreshold);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(videoFile, actions, actionTime);
+        return Objects.hash(videoFile, actions, actionTime, nodThreshold);
     }
 
     @Override
@@ -138,6 +164,7 @@ public class DetectLiveByFileRequestBody implements SdkFormDataBody {
         sb.append("    videoFile: ").append(toIndentedString("[resource:will-not-print]")).append("\n");
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
         sb.append("    actionTime: ").append(toIndentedString(actionTime)).append("\n");
+        sb.append("    nodThreshold: ").append(toIndentedString(nodThreshold)).append("\n");
         sb.append("}");
         return sb.toString();
     }

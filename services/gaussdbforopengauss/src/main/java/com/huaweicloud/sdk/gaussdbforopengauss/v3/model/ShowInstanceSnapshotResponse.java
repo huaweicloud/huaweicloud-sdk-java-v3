@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
 
 
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
@@ -577,6 +578,8 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
+    
     
 }
 

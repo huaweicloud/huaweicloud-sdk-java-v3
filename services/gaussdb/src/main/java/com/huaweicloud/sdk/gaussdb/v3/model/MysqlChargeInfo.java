@@ -366,5 +366,7 @@ public class MysqlChargeInfo  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 

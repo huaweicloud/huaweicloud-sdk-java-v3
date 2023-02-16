@@ -491,7 +491,7 @@ public class ExtensionVersionSnake {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property_list")
 
-    private List<CloudIDEExtensionVersionProperty> propertyList = null;
+    private List<CodeArtsIDEOnlineExtensionVersionProperty> propertyList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uploader")
@@ -983,12 +983,12 @@ public class ExtensionVersionSnake {
         this.depends = depends;
     }
 
-    public ExtensionVersionSnake withPropertyList(List<CloudIDEExtensionVersionProperty> propertyList) {
+    public ExtensionVersionSnake withPropertyList(List<CodeArtsIDEOnlineExtensionVersionProperty> propertyList) {
         this.propertyList = propertyList;
         return this;
     }
 
-    public ExtensionVersionSnake addPropertyListItem(CloudIDEExtensionVersionProperty propertyListItem) {
+    public ExtensionVersionSnake addPropertyListItem(CodeArtsIDEOnlineExtensionVersionProperty propertyListItem) {
         if (this.propertyList == null) {
             this.propertyList = new ArrayList<>();
         }
@@ -996,7 +996,8 @@ public class ExtensionVersionSnake {
         return this;
     }
 
-    public ExtensionVersionSnake withPropertyList(Consumer<List<CloudIDEExtensionVersionProperty>> propertyListSetter) {
+    public ExtensionVersionSnake withPropertyList(
+        Consumer<List<CodeArtsIDEOnlineExtensionVersionProperty>> propertyListSetter) {
         if (this.propertyList == null) {
             this.propertyList = new ArrayList<>();
         }
@@ -1005,14 +1006,14 @@ public class ExtensionVersionSnake {
     }
 
     /**
-     * cloudide插件版本参数
+     * CodeArtsIDEOnline插件版本参数
      * @return propertyList
      */
-    public List<CloudIDEExtensionVersionProperty> getPropertyList() {
+    public List<CodeArtsIDEOnlineExtensionVersionProperty> getPropertyList() {
         return propertyList;
     }
 
-    public void setPropertyList(List<CloudIDEExtensionVersionProperty> propertyList) {
+    public void setPropertyList(List<CodeArtsIDEOnlineExtensionVersionProperty> propertyList) {
         this.propertyList = propertyList;
     }
 

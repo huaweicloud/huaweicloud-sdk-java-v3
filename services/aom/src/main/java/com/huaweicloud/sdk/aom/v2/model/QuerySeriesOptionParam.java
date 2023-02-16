@@ -159,5 +159,7 @@ public class QuerySeriesOptionParam  {
         return o.toString().replace("\n", "\n    ");
     }
     
+    
+    
 }
 
