@@ -17,18 +17,16 @@ import java.util.Objects;
 public class MysqlExtendInstanceVolumeRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    
-    private Integer size;
 
+    private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_pay")
     
-    
+
     private String isAutoPay;
 
     public MysqlExtendInstanceVolumeRequest withSize(Integer size) {

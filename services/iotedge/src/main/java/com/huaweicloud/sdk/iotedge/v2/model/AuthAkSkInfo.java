@@ -17,11 +17,10 @@ import java.util.Objects;
 public class AuthAkSkInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="secret")
     
-    
+
     private String secret;
 
     public AuthAkSkInfo withSecret(String secret) {

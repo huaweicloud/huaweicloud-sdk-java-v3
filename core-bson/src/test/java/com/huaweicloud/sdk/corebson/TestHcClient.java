@@ -21,6 +21,8 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.equalTo;
@@ -58,6 +60,14 @@ public class TestHcClient {
 
         wireMockRule.start();
 
+        List<String> endpoints = new ArrayList<String>() {
+            private static final long serialVersionUID = -1692043459070495869L;
+
+            {
+                add(String.format(Locale.ROOT, "https://127.0.0.1:%d", wireMockRule.httpsPort()));
+            }
+        };
+
         hcClient = new HcClient(new HttpConfig().withIgnoreSSLVerification(true)
                 .withTimeout(600)
                 .addHttpListener(HttpListener.forResponseListener(
@@ -71,7 +81,7 @@ public class TestHcClient {
                         requestListener -> logger.debug("REQUEST: {} {} {}", requestListener.httpMethod(),
                                 requestListener.uri(), requestListener.body().orElse("")))))
                 .withCredential(new BasicCredentials().withAk("test").withSk("test").withProjectId("pp"))
-                .withEndpoint(String.format(Locale.ROOT, "https://127.0.0.1:%d", wireMockRule.httpsPort()));
+                .withEndpoints(endpoints);
     }
 
     @Test

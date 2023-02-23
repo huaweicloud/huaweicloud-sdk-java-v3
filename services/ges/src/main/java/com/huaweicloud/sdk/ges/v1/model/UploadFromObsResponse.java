@@ -20,32 +20,28 @@ import java.util.Objects;
 public class UploadFromObsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorMessage")
     
-    
-    private String errorMessage;
 
+    private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorCode")
     
-    
-    private String errorCode;
 
+    private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
+
     private String name;
 
     public UploadFromObsResponse withErrorMessage(String errorMessage) {

@@ -2923,6 +2923,38 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse> shrinkInstanceNodes =
+        genForshrinkInstanceNodes();
+
+    private static HttpRequestDef<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse> genForshrinkInstanceNodes() {
+        // basic
+        HttpRequestDef.Builder<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, ShrinkInstanceNodesRequest.class, ShrinkInstanceNodesResponse.class)
+            .withName("ShrinkInstanceNodes")
+            .withUri("/v3/{project_id}/instances/{instance_id}/nodes")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShrinkInstanceNodesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ReduceInstanceNodeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReduceInstanceNodeRequestBody.class),
+            f -> f.withMarshaller(ShrinkInstanceNodesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SwitchConfigurationRequest, SwitchConfigurationResponse> switchConfiguration =
         genForswitchConfiguration();
 

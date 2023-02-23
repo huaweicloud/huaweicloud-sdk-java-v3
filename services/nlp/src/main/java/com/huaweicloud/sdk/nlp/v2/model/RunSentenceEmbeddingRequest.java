@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunSentenceEmbeddingRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private PostSentenceEmbeddingReq body;
 
     public RunSentenceEmbeddingRequest withBody(PostSentenceEmbeddingReq body) {

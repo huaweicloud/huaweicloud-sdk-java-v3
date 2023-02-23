@@ -22,46 +22,40 @@ import java.util.Objects;
 public class CollectReplyRatesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="interval")
     
-    
-    private String interval;
 
+    private String interval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_zone")
     
-    
-    private String timeZone;
 
+    private String timeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
-    
-    private ReplyRatesTotal total;
 
+    private ReplyRatesTotal total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="intervals")
     
-    
-    private ReplyRatesIntervals intervals;
 
+    private ReplyRatesIntervals intervals;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="startutc")
     
-    
-    private Long startutc;
 
+    private Long startutc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endutc")
     
-    
+
     private Long endutc;
 
     public CollectReplyRatesResponse withInterval(String interval) {

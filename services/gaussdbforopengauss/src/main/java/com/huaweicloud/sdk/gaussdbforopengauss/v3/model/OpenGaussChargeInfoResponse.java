@@ -101,11 +101,10 @@ public class OpenGaussChargeInfoResponse  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_mode")
     
-    
+
     private ChargeModeEnum chargeMode;
     /**
      * 订购周期类型。month：包月。year：包年。 说明： “charge_mode”为“prePaid”时生效，且为必选值。
@@ -186,32 +185,28 @@ public class OpenGaussChargeInfoResponse  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period_type")
     
-    
-    private PeriodTypeEnum periodType;
 
+    private PeriodTypeEnum periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period_num")
     
-    
-    private Integer periodNum;
 
+    private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_renew")
     
-    
-    private Boolean isAutoRenew;
 
+    private Boolean isAutoRenew;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_pay")
     
-    
+
     private Boolean isAutoPay;
 
     public OpenGaussChargeInfoResponse withChargeMode(ChargeModeEnum chargeMode) {

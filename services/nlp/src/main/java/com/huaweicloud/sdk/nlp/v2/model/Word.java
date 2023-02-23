@@ -17,18 +17,16 @@ import java.util.Objects;
 public class Word  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
-    
-    private String content;
 
+    private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pos")
     
-    
+
     private String pos;
 
     public Word withContent(String content) {

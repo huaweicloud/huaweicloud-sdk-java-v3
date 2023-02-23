@@ -22,17 +22,13 @@ import java.util.Objects;
 public class DeregisterScenes2Response extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="success")
     
-    
     private List<String> success = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="failure")
-    
     
     private List<String> failure = null;
     

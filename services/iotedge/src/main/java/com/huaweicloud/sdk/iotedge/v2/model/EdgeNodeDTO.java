@@ -19,74 +19,61 @@ import java.util.Objects;
 public class EdgeNodeDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
     
-    
-    private String edgeNodeId;
 
+    private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state")
     
-    
-    private String state;
 
+    private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="space_id")
     
-    
-    private String spaceId;
 
+    private String spaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_ids")
     
-    
     private List<String> resourceIds = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_spec_types")
     
-    
     private List<String> resourceSpecTypes = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ips")
     
-    
     private List<String> ips = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    
+
     private String createTime;
 
     public EdgeNodeDTO withEdgeNodeId(String edgeNodeId) {

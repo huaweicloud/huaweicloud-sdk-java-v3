@@ -17,39 +17,34 @@ import java.util.Objects;
 public class AppliedHistoriesResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_name")
     
-    
-    private String instanceName;
 
+    private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apply_result")
     
-    
-    private String applyResult;
 
+    private String applyResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="applied_at")
     
-    
-    private String appliedAt;
 
+    private String appliedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
-    
+
     private String errorCode;
 
     public AppliedHistoriesResult withInstanceId(String instanceId) {

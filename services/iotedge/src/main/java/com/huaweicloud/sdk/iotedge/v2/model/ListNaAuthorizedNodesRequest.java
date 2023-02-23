@@ -18,25 +18,22 @@ import java.util.Objects;
 public class ListNaAuthorizedNodesRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="na_id")
     
-    
-    private String naId;
 
+    private String naId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private Integer offset;
 
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
+
     private Integer limit;
 
     public ListNaAuthorizedNodesRequest withNaId(String naId) {

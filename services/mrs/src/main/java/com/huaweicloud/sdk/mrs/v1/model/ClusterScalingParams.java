@@ -24,11 +24,10 @@ import java.util.Objects;
 public class ClusterScalingParams  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_id")
     
-    
+
     private String orderId;
     /**
      * - scale_in：缩容 - scale_out：扩容
@@ -109,60 +108,51 @@ public class ClusterScalingParams  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scale_type")
     
-    
-    private ScaleTypeEnum scaleType;
 
+    private ScaleTypeEnum scaleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    
-    private String nodeId;
 
+    private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_group")
     
-    
-    private String nodeGroup;
 
+    private String nodeGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="skip_bootstrap_scripts")
     
-    
-    private String skipBootstrapScripts;
 
+    private String skipBootstrapScripts;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scale_without_start")
     
-    
-    private Boolean scaleWithoutStart;
 
+    private Boolean scaleWithoutStart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server_ids")
     
-    
     private List<String> serverIds = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instances")
     
-    
-    private Integer instances;
 
+    private Integer instances;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_node_info")
     
-    
+
     private TaskNodeInfo taskNodeInfo;
 
     public ClusterScalingParams withOrderId(String orderId) {

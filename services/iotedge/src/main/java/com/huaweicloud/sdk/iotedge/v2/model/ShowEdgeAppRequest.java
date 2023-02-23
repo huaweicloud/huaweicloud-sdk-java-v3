@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ShowEdgeAppRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
-    
+
     private String edgeAppId;
 
     public ShowEdgeAppRequest withEdgeAppId(String edgeAppId) {

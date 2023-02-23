@@ -18,18 +18,16 @@ import java.util.Objects;
 public class ResourceDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limits")
     
-    
-    private ResourceConfigDTO limits;
 
+    private ResourceConfigDTO limits;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="requests")
     
-    
+
     private ResourceConfigDTO requests;
 
     public ResourceDTO withLimits(ResourceConfigDTO limits) {

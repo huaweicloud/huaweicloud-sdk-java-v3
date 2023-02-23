@@ -17,11 +17,10 @@ import java.util.Objects;
 public class ReplicationReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replication")
     
-    
+
     private String replication;
 
     public ReplicationReq withReplication(String replication) {

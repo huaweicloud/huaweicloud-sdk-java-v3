@@ -18,11 +18,10 @@ import java.util.Objects;
 public class CreateGraphReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph")
     
-    
+
     private Graph graph;
 
     public CreateGraphReq withGraph(Graph graph) {

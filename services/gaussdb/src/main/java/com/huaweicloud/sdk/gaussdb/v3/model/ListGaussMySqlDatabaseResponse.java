@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListGaussMySqlDatabaseResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="databases")
     
-    
     private List<ListGaussMysqlDatabaseInfo> databases = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Integer totalCount;
 
     public ListGaussMySqlDatabaseResponse withDatabases(List<ListGaussMysqlDatabaseInfo> databases) {

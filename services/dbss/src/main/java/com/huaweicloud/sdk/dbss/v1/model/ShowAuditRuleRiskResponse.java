@@ -23,102 +23,87 @@ import java.util.Objects;
 public class ShowAuditRuleRiskResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rule_id")
     
-    
-    private String ruleId;
 
+    private String ruleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rule_name")
     
-    
-    private String ruleName;
 
+    private String ruleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    
-    private String action;
 
+    private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schemas")
     
-    
     private List<RuleRiskInfoBeanSchemas> schemas = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rank")
     
-    
-    private Integer rank;
 
+    private Integer rank;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ignore_case")
     
-    
-    private Boolean ignoreCase;
 
+    private Boolean ignoreCase;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="risk_level")
     
-    
-    private String riskLevel;
 
+    private String riskLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db_ids")
     
-    
-    private String dbIds;
 
+    private String dbIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="execution_symbol")
     
-    
-    private String executionSymbol;
 
+    private String executionSymbol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="execution_time")
     
-    
-    private Integer executionTime;
 
+    private Integer executionTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="affect_symbol")
     
-    
-    private String affectSymbol;
 
+    private String affectSymbol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="affect_rows")
     
-    
-    private Integer affectRows;
 
+    private Integer affectRows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="client_ips")
     
-    
+
     private String clientIps;
 
     public ShowAuditRuleRiskResponse withRuleId(String ruleId) {

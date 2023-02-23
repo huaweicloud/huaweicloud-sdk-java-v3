@@ -20,10 +20,8 @@ import java.util.Objects;
 public class CreateDatabaseUserRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="users")
-    
     
     private List<CreateDatabaseUserList> users = null;
     

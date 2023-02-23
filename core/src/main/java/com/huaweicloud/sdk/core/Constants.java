@@ -81,7 +81,11 @@ public final class Constants {
 
         public static final String APPLICATION_OCTET_STREAM = "application/octet-stream";
 
+        public static final String BINARY_OCTET_STREAM = "binary/octet-stream";
+
         public static final String APPLICATION_BSON = "application/bson";
+
+        public static final String APPLICATION_XML = "application/xml";
 
         public static final String MULTIPART_FORM_DATA = "multipart/form-data";
 

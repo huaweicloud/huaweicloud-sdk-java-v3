@@ -22,18 +22,16 @@ import java.util.Objects;
 public class Rule  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
+
     private String description;
     /**
      * 弹性伸缩规则的调整类型，只允许以下类型：  枚举值： - scale_out：扩容 - scale_in：缩容
@@ -114,32 +112,28 @@ public class Rule  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="adjustment_type")
     
-    
-    private AdjustmentTypeEnum adjustmentType;
 
+    private AdjustmentTypeEnum adjustmentType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cool_down_minutes")
     
-    
-    private Integer coolDownMinutes;
 
+    private Integer coolDownMinutes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scaling_adjustment")
     
-    
-    private Integer scalingAdjustment;
 
+    private Integer scalingAdjustment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger")
     
-    
+
     private Trigger trigger;
 
     public Rule withName(String name) {

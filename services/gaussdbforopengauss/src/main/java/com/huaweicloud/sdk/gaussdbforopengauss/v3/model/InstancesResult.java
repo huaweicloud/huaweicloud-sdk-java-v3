@@ -24,39 +24,34 @@ import java.util.Objects;
 public class InstancesResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_name")
     
-    
-    private String instanceName;
 
+    private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_type")
     
-    
-    private String volumeType;
 
+    private String volumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_size")
     
-    
-    private BigDecimal dataVolumeSize;
 
+    private BigDecimal dataVolumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    
+
     private BigDecimal version;
     /**
      * 部署形态。
@@ -137,11 +132,10 @@ public class InstancesResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mode")
     
-    
+
     private ModeEnum mode;
     /**
      * 实例模型，企业版，标准版，基础版。
@@ -228,11 +222,10 @@ public class InstancesResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_mode")
     
-    
+
     private InstanceModeEnum instanceMode;
 
     public InstancesResult withInstanceName(String instanceName) {

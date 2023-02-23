@@ -17,18 +17,16 @@ import java.util.Objects;
 public class ConfirmIaConfigRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    
+
     private String version;
 
     public ConfirmIaConfigRequestBody withId(String id) {

@@ -14,27 +14,29 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 查询条件。
  */
+@JacksonXmlRootElement(localName = "RelationModel")
 public class RelationModel  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key")
     
-    
-    private String key;
+    @JacksonXmlProperty(localName = "key")
 
+    private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
-    
+    @JacksonXmlProperty(localName = "value")
     private List<String> value = null;
         /**
      * 该条件与其他条件的组合方式。 AND：必须满足所有条件； OR：可以满足其中一个条件； NOT：必须不满足所有条件。
@@ -121,11 +123,11 @@ public class RelationModel  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="relation")
     
-    
+    @JacksonXmlProperty(localName = "relation")
+
     private RelationEnum relation;
 
     public RelationModel withKey(String key) {

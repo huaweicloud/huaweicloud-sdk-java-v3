@@ -104,12 +104,16 @@ public class DerivedAKSKSigner extends AKSKSigner {
         // Step 2: Create Canonical URI -- the part of the URI from domain to query
         String pathOld = url.getPath();
         String canonicalUri;
-        StringBuilder canonicalUriSb = new StringBuilder();
-        String[] split = pathOld.split("/");
-        for (String urlSplit : split) {
-            canonicalUriSb.append(SignUtils.urlEncode(urlSplit, false)).append("/");
+        if (pathOld.equals("/")) {
+            canonicalUri = pathOld;
+        } else {
+            StringBuilder canonicalUriSb = new StringBuilder();
+            String[] split = pathOld.split("/");
+            for (String urlSplit : split) {
+                canonicalUriSb.append(SignUtils.urlEncode(urlSplit, false)).append("/");
+            }
+            canonicalUri = canonicalUriSb.toString();
         }
-        canonicalUri = canonicalUriSb.toString();
 
         // Step 3: Create the canonical query string. In this example (a GET request),
         // request parameters are in the query string. Query string values must

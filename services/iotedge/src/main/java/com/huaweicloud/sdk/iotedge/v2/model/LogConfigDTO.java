@@ -17,46 +17,40 @@ import java.util.Objects;
 public class LogConfigDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    
-    private Integer size;
 
+    private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="level")
     
-    
-    private String level;
 
+    private String level;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rotate_num")
     
-    
-    private Integer rotateNum;
 
+    private Integer rotateNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rotate_period")
     
-    
-    private String rotatePeriod;
 
+    private String rotatePeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="component")
     
-    
+
     private String component;
 
     public LogConfigDTO withSize(Integer size) {

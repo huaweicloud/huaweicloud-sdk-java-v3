@@ -21,67 +21,55 @@ import java.util.Objects;
 public class Frame  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="intention")
     
-    
-    private String intention;
 
+    private String intention;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confidence")
     
-    
-    private Double confidence;
 
+    private Double confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="current_slots")
     
-    
     private List<CurrentSlot> currentSlots = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="history_slots")
     
-    
     private List<HistorySlot> historySlots = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="reply")
     
-    
-    private String reply;
 
+    private String reply;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_complete")
     
-    
-    private Boolean taskComplete;
 
+    private Boolean taskComplete;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flow_complete")
     
-    
-    private Boolean flowComplete;
 
+    private Boolean flowComplete;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="candidate_words")
     
-    
     private List<String> candidateWords = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="intention_alias")
     
-    
+
     private String intentionAlias;
 
     public Frame withIntention(String intention) {

@@ -171,6 +171,34 @@ public class LakeFormationClient {
     /**
      * 获取同步权限策略
      *
+     * 分页获取同步权限策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPolicyRequest 请求对象
+     * @return ListPolicyResponse
+     */
+    public ListPolicyResponse listPolicy(ListPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, LakeFormationMeta.listPolicy);
+    }
+
+    /**
+     * 获取同步权限策略
+     *
+     * 分页获取同步权限策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPolicyRequest 请求对象
+     * @return SyncInvoker<ListPolicyRequest, ListPolicyResponse>
+     */
+    public SyncInvoker<ListPolicyRequest, ListPolicyResponse> listPolicyInvoker(ListPolicyRequest request) {
+        return new SyncInvoker<ListPolicyRequest, ListPolicyResponse>(request, LakeFormationMeta.listPolicy, hcClient);
+    }
+
+    /**
+     * 获取同步权限策略
+     *
      * 获取同步权限策略
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -823,6 +851,36 @@ public class LakeFormationClient {
     public SyncInvoker<CountMetaObjRequest, CountMetaObjResponse> countMetaObjInvoker(CountMetaObjRequest request) {
         return new SyncInvoker<CountMetaObjRequest, CountMetaObjResponse>(request, LakeFormationMeta.countMetaObj,
             hcClient);
+    }
+
+    /**
+     * 创建实例
+     *
+     * 创建一个LakeFormation实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateLakeFormationInstanceRequest 请求对象
+     * @return CreateLakeFormationInstanceResponse
+     */
+    public CreateLakeFormationInstanceResponse createLakeFormationInstance(CreateLakeFormationInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, LakeFormationMeta.createLakeFormationInstance);
+    }
+
+    /**
+     * 创建实例
+     *
+     * 创建一个LakeFormation实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateLakeFormationInstanceRequest 请求对象
+     * @return SyncInvoker<CreateLakeFormationInstanceRequest, CreateLakeFormationInstanceResponse>
+     */
+    public SyncInvoker<CreateLakeFormationInstanceRequest, CreateLakeFormationInstanceResponse> createLakeFormationInstanceInvoker(
+        CreateLakeFormationInstanceRequest request) {
+        return new SyncInvoker<CreateLakeFormationInstanceRequest, CreateLakeFormationInstanceResponse>(request,
+            LakeFormationMeta.createLakeFormationInstance, hcClient);
     }
 
     /**
@@ -1993,6 +2051,37 @@ public class LakeFormationClient {
         ListConstraintsRequest request) {
         return new SyncInvoker<ListConstraintsRequest, ListConstraintsResponse>(request,
             LakeFormationMeta.listConstraints, hcClient);
+    }
+
+    /**
+     * 批量更新标签
+     *
+     * 为指定实例批量更新标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateLakeFormationInstanceTagsRequest 请求对象
+     * @return BatchUpdateLakeFormationInstanceTagsResponse
+     */
+    public BatchUpdateLakeFormationInstanceTagsResponse batchUpdateLakeFormationInstanceTags(
+        BatchUpdateLakeFormationInstanceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, LakeFormationMeta.batchUpdateLakeFormationInstanceTags);
+    }
+
+    /**
+     * 批量更新标签
+     *
+     * 为指定实例批量更新标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateLakeFormationInstanceTagsRequest 请求对象
+     * @return SyncInvoker<BatchUpdateLakeFormationInstanceTagsRequest, BatchUpdateLakeFormationInstanceTagsResponse>
+     */
+    public SyncInvoker<BatchUpdateLakeFormationInstanceTagsRequest, BatchUpdateLakeFormationInstanceTagsResponse> batchUpdateLakeFormationInstanceTagsInvoker(
+        BatchUpdateLakeFormationInstanceTagsRequest request) {
+        return new SyncInvoker<BatchUpdateLakeFormationInstanceTagsRequest, BatchUpdateLakeFormationInstanceTagsResponse>(
+            request, LakeFormationMeta.batchUpdateLakeFormationInstanceTags, hcClient);
     }
 
     /**

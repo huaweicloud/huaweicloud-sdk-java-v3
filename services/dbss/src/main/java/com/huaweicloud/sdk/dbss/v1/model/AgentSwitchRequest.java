@@ -17,18 +17,16 @@ import java.util.Objects;
 public class AgentSwitchRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agent_id")
     
-    
-    private String agentId;
 
+    private String agentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
+
     private Integer status;
 
     public AgentSwitchRequest withAgentId(String agentId) {

@@ -20,11 +20,10 @@ import java.util.Objects;
 public class ShowRecyclePolicyResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="retention_period_in_days")
     
-    
+
     private String retentionPeriodInDays;
 
     public ShowRecyclePolicyResponse withRetentionPeriodInDays(String retentionPeriodInDays) {

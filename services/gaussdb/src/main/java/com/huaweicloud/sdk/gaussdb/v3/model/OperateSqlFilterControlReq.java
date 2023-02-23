@@ -17,11 +17,10 @@ import java.util.Objects;
 public class OperateSqlFilterControlReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="switch_status")
     
-    
+
     private String switchStatus;
 
     public OperateSqlFilterControlReq withSwitchStatus(String switchStatus) {

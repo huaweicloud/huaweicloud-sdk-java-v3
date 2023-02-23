@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListTasksResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tasks")
     
-    
     private List<TaskDetailResult> tasks = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Integer totalCount;
 
     public ListTasksResponse withTasks(List<TaskDetailResult> tasks) {

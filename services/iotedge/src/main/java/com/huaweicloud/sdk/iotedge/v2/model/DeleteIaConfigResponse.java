@@ -20,11 +20,10 @@ import java.util.Objects;
 public class DeleteIaConfigResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private String body;
 
     public DeleteIaConfigResponse withBody(String body) {

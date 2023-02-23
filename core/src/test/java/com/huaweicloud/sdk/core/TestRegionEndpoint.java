@@ -32,10 +32,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Field;
-
-import static com.huaweicloud.sdk.core.TestRegion.SERVICE_ENDPOINT;
-import static com.huaweicloud.sdk.core.TestRegion.TEST_ENDPOINT;
-import static com.huaweicloud.sdk.core.TestRegion.TEST_ENDPOINT_WITHOUT_SCHEME;
+import java.util.List;
 
 /**
  * TestRegionWitProjectId类：测试配置了withRegion方法时，endpoint的自动回填情况，由于有override场景，需要按照字典序执行用例
@@ -57,9 +54,11 @@ public class TestRegionEndpoint {
                         .build();
 
         try {
-            Field endpoint = HcClient.class.getDeclaredField("endpoint");
-            endpoint.setAccessible(true);
-            Assert.assertEquals(SERVICE_ENDPOINT, endpoint.get(client.hcClient));
+            Field endpoints = HcClient.class.getDeclaredField("endpoints");
+            endpoints.setAccessible(true);
+            Object endpointsObj = endpoints.get(client.hcClient);
+            Assert.assertTrue(endpointsObj instanceof List);
+            Assert.assertEquals(TestRegion.SERVICE_ENDPOINT, ((List<?>) endpointsObj).get(0));
         } catch (NoSuchFieldException | IllegalAccessException e) {
             LOGGER.error(e.getMessage());
         }
@@ -75,9 +74,11 @@ public class TestRegionEndpoint {
                         .build();
 
         try {
-            Field endpoint = HcClient.class.getDeclaredField("endpoint");
-            endpoint.setAccessible(true);
-            Assert.assertEquals(SERVICE_ENDPOINT, endpoint.get(client.hcClient));
+            Field endpoints = HcClient.class.getDeclaredField("endpoints");
+            endpoints.setAccessible(true);
+            Object endpointsObj = endpoints.get(client.hcClient);
+            Assert.assertTrue(endpointsObj instanceof List);
+            Assert.assertEquals(TestRegion.SERVICE_ENDPOINT, ((List<?>) endpointsObj).get(0));
         } catch (NoSuchFieldException | IllegalAccessException e) {
             LOGGER.error(e.getMessage());
         }
@@ -89,12 +90,14 @@ public class TestRegionEndpoint {
                 TestServiceClient.newBuilder()
                         .withCredential(CREDENTIALS)
                         .withHttpConfig(HttpConfig.getDefaultHttpConfig())
-                        .withRegion(new Region("cn-north-7", TEST_ENDPOINT))
+                        .withRegion(new Region("cn-north-7", TestRegion.TEST_ENDPOINT))
                         .build();
         try {
-            Field endpoint = HcClient.class.getDeclaredField("endpoint");
-            endpoint.setAccessible(true);
-            Assert.assertEquals(TEST_ENDPOINT, endpoint.get(client.hcClient));
+            Field endpoints = HcClient.class.getDeclaredField("endpoints");
+            endpoints.setAccessible(true);
+            Object endpointsObj = endpoints.get(client.hcClient);
+            Assert.assertTrue(endpointsObj instanceof List);
+            Assert.assertEquals(TestRegion.TEST_ENDPOINTS, endpointsObj);
         } catch (NoSuchFieldException | IllegalAccessException e) {
             LOGGER.error(e.getMessage());
         }
@@ -106,12 +109,14 @@ public class TestRegionEndpoint {
                 TestServiceClient.newBuilder()
                         .withCredential(CREDENTIALS)
                         .withHttpConfig(HttpConfig.getDefaultHttpConfig())
-                        .withRegion(new Region("cn-north-7", TEST_ENDPOINT_WITHOUT_SCHEME))
+                        .withRegion(new Region("cn-north-7", TestRegion.TEST_ENDPOINT_WITHOUT_SCHEME))
                         .build();
         try {
-            Field endpoint = HcClient.class.getDeclaredField("endpoint");
-            endpoint.setAccessible(true);
-            Assert.assertEquals(TEST_ENDPOINT, endpoint.get(client.hcClient));
+            Field endpoints = HcClient.class.getDeclaredField("endpoints");
+            endpoints.setAccessible(true);
+            Object endpointsObj = endpoints.get(client.hcClient);
+            Assert.assertTrue(endpointsObj instanceof List);
+            Assert.assertEquals(TestRegion.TEST_ENDPOINTS, endpointsObj);
         } catch (NoSuchFieldException | IllegalAccessException e) {
             LOGGER.error(e.getMessage());
         }
@@ -123,12 +128,14 @@ public class TestRegionEndpoint {
                 TestServiceClient.newBuilder()
                         .withCredential(CREDENTIALS)
                         .withHttpConfig(HttpConfig.getDefaultHttpConfig())
-                        .withRegion(TestRegion.CN_NORTH_7.withEndpointOverride(TEST_ENDPOINT))
+                        .withRegion(TestRegion.CN_NORTH_7.withEndpointsOverride(TestRegion.TEST_ENDPOINTS))
                         .build();
         try {
-            Field endpoint = HcClient.class.getDeclaredField("endpoint");
-            endpoint.setAccessible(true);
-            Assert.assertEquals(TEST_ENDPOINT, endpoint.get(client.hcClient));
+            Field endpoints = HcClient.class.getDeclaredField("endpoints");
+            endpoints.setAccessible(true);
+            Object endpointsObj = endpoints.get(client.hcClient);
+            Assert.assertTrue(endpointsObj instanceof List);
+            Assert.assertEquals(TestRegion.TEST_ENDPOINTS, endpointsObj);
         } catch (NoSuchFieldException | IllegalAccessException e) {
             LOGGER.error(e.getMessage());
         }
@@ -140,12 +147,15 @@ public class TestRegionEndpoint {
                 TestServiceClient.newBuilder()
                         .withCredential(CREDENTIALS)
                         .withHttpConfig(HttpConfig.getDefaultHttpConfig())
-                        .withRegion(TestRegion.valueOf("cn-north-7").withEndpointOverride(TEST_ENDPOINT))
+                        .withRegion(TestRegion.valueOf("cn-north-7")
+                                .withEndpointsOverride(TestRegion.TEST_ENDPOINTS))
                         .build();
         try {
-            Field endpoint = HcClient.class.getDeclaredField("endpoint");
-            endpoint.setAccessible(true);
-            Assert.assertEquals(TEST_ENDPOINT, endpoint.get(client.hcClient));
+            Field endpoints = HcClient.class.getDeclaredField("endpoints");
+            endpoints.setAccessible(true);
+            Object endpointsObj = endpoints.get(client.hcClient);
+            Assert.assertTrue(endpointsObj instanceof List);
+            Assert.assertEquals(TestRegion.TEST_ENDPOINTS, endpointsObj);
         } catch (NoSuchFieldException | IllegalAccessException e) {
             LOGGER.error(e.getMessage());
         }

@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ListIaConfigsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configs")
-    
     
     private List<QueryIaConfigResponseDTO> configs = null;
     

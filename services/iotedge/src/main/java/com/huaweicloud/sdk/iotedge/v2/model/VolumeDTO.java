@@ -17,39 +17,34 @@ import java.util.Objects;
 public class VolumeDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source")
     
-    
-    private String source;
 
+    private String source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="destination")
     
-    
-    private String destination;
 
+    private String destination;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="read_only")
     
-    
+
     private Boolean readOnly;
 
     public VolumeDTO withName(String name) {

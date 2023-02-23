@@ -18,11 +18,10 @@ import java.util.Objects;
 public class DataBaseBean  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="database")
     
-    
+
     private DataBase database;
 
     public DataBaseBean withDatabase(DataBase database) {

@@ -17,11 +17,10 @@ import java.util.Objects;
 public class StackIdPrimitiveTypeHolder  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stack_id")
     
-    
+
     private String stackId;
 
     public StackIdPrimitiveTypeHolder withStackId(String stackId) {

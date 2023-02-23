@@ -23,304 +23,257 @@ import java.util.Objects;
 public class CreateAndExecuteJobResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="templated")
     
-    
-    private Boolean templated;
 
+    private Boolean templated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    
-    private Long createdAt;
 
+    private Long createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_at")
     
-    
-    private Long updatedAt;
 
+    private Long updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tenant_id")
     
-    
-    private String tenantId;
 
+    private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
-    private String jobId;
 
+    private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_name")
     
-    
-    private String jobName;
 
+    private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input_id")
     
-    
-    private String inputId;
 
+    private String inputId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_id")
     
-    
-    private String outputId;
 
+    private String outputId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    
-    private Long startTime;
 
+    private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    
-    private Long endTime;
 
+    private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
-    
-    private String clusterId;
 
+    private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="engine_job_id")
     
-    
-    private String engineJobId;
 
+    private String engineJobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="return_code")
     
-    
-    private String returnCode;
 
+    private String returnCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_public")
     
-    
-    private Boolean isPublic;
 
+    private Boolean isPublic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_protected")
     
-    
-    private Boolean isProtected;
 
+    private Boolean isProtected;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_id")
     
-    
-    private String groupId;
 
+    private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jar_path")
     
-    
-    private String jarPath;
 
+    private String jarPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    
-    private String input;
 
+    private String input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    
-    private String output;
 
+    private String output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_log")
     
-    
-    private String jobLog;
 
+    private String jobLog;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_type")
     
-    
-    private Integer jobType;
 
+    private Integer jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="file_action")
     
-    
-    private String fileAction;
 
+    private String fileAction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arguments")
     
-    
-    private String arguments;
 
+    private String arguments;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hql")
     
-    
-    private String hql;
 
+    private String hql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_state")
     
-    
-    private Integer jobState;
 
+    private Integer jobState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_final_status")
     
-    
-    private Integer jobFinalStatus;
 
+    private Integer jobFinalStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hive_script_path")
     
-    
-    private String hiveScriptPath;
 
+    private String hiveScriptPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_by")
     
-    
-    private String createBy;
 
+    private String createBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="finished_step")
     
-    
-    private Integer finishedStep;
 
+    private Integer finishedStep;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_main_id")
     
-    
-    private String jobMainId;
 
+    private String jobMainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_step_id")
     
-    
-    private String jobStepId;
 
+    private String jobStepId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="postpone_at")
     
-    
-    private Long postponeAt;
 
+    private Long postponeAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="step_name")
     
-    
-    private String stepName;
 
+    private String stepName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="step_num")
     
-    
-    private Integer stepNum;
 
+    private Integer stepNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_num")
     
-    
-    private Integer taskNum;
 
+    private Integer taskNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_by")
     
-    
-    private String updateBy;
 
+    private String updateBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="credentials")
     
-    
-    private String credentials;
 
+    private String credentials;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_id")
     
-    
-    private String userId;
 
+    private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_configs")
     
-    
     private Map<String, Object> jobConfigs = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extra")
     
-    
     private Map<String, Object> extra = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_source_urls")
     
-    
     private Map<String, Object> dataSourceUrls = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="info")
-    
     
     private Map<String, Object> info = null;
     

@@ -23,10 +23,8 @@ import java.util.Objects;
 public class DatastoresResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="supported_versions")
-    
     
     private List<String> supportedVersions = null;
         /**
@@ -108,11 +106,10 @@ public class DatastoresResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_mode")
     
-    
+
     private InstanceModeEnum instanceMode;
 
     public DatastoresResult withSupportedVersions(List<String> supportedVersions) {

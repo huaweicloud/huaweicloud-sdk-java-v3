@@ -19,25 +19,22 @@ import java.util.Objects;
 public class BatchAssociateNaToNodesRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="na_id")
     
-    
-    private String naId;
 
+    private String naId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    
-    private String action;
 
+    private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private AuthorizeNa2NodesRequestDTO body;
 
     public BatchAssociateNaToNodesRequest withNaId(String naId) {

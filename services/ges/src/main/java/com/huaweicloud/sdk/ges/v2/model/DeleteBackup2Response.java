@@ -23,10 +23,8 @@ import java.util.Objects;
 public class DeleteBackup2Response extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
-    
     
     private Map<String, String> body = null;
     

@@ -17,32 +17,28 @@ import java.util.Objects;
 public class SlotValue  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="word")
     
-    
-    private String word;
 
+    private String word;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="norm_word")
     
-    
-    private String normWord;
 
+    private String normWord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="begin_position")
     
-    
-    private Integer beginPosition;
 
+    private Integer beginPosition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_position")
     
-    
+
     private Integer endPosition;
 
     public SlotValue withWord(String word) {

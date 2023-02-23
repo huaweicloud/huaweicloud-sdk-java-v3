@@ -20,38 +20,32 @@ import java.util.Objects;
 public class ItemsResponse  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_type")
     
-    
-    private String resourceType;
 
+    private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_name")
     
-    
-    private String resourceName;
 
+    private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="index")
     
-    
-    private String index;
 
+    private String index;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="supported")
     
-    
-    private Boolean supported;
 
+    private Boolean supported;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_price")
-    
     
     private List<ResourcePriceResponse> resourcePrice = null;
     

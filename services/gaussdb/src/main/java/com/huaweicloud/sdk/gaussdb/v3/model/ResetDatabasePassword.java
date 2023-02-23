@@ -17,25 +17,22 @@ import java.util.Objects;
 public class ResetDatabasePassword  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host")
     
-    
-    private String host;
 
+    private String host;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password")
     
-    
+
     private String password;
 
     public ResetDatabasePassword withName(String name) {

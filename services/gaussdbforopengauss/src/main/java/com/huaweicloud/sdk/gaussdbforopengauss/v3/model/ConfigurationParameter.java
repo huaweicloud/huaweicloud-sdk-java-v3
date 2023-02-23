@@ -21,32 +21,28 @@ import java.util.Objects;
 public class ConfigurationParameter  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
-    
-    private String value;
 
+    private String value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="restart_required")
     
-    
-    private Boolean restartRequired;
 
+    private Boolean restartRequired;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value_range")
     
-    
+
     private String valueRange;
     /**
      * 参数类型，取值为“string”、“integer”、“boolean”、“list”或“float”之一。
@@ -145,18 +141,16 @@ public class ConfigurationParameter  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private TypeEnum type;
 
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
+
     private String description;
 
     public ConfigurationParameter withName(String name) {

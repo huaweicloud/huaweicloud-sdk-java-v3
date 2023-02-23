@@ -19,18 +19,16 @@ import java.util.Objects;
 public class RegisterScenes2Request  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_id")
     
-    
-    private String graphId;
 
+    private String graphId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private RegisterScenesReq body;
 
     public RegisterScenes2Request withGraphId(String graphId) {

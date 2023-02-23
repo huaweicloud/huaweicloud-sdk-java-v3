@@ -18,74 +18,64 @@ import java.util.Objects;
 public class ImportGraphReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgeset_path")
     
-    
-    private String edgesetPath;
 
+    private String edgesetPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgeset_format")
     
-    
-    private String edgesetFormat;
 
+    private String edgesetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexset_path")
     
-    
-    private String vertexsetPath;
 
+    private String vertexsetPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexset_format")
     
-    
-    private String vertexsetFormat;
 
+    private String vertexsetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schema_path")
     
-    
-    private String schemaPath;
 
+    private String schemaPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="log_dir")
     
-    
-    private String logDir;
 
+    private String logDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parallel_edge")
     
-    
-    private ImportGraphReqParallelEdge parallelEdge;
 
+    private ImportGraphReqParallelEdge parallelEdge;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delimiter")
     
-    
-    private String delimiter;
 
+    private String delimiter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trim_quote")
     
-    
-    private String trimQuote;
 
+    private String trimQuote;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offline")
     
-    
+
     private Boolean offline;
 
     public ImportGraphReq withEdgesetPath(String edgesetPath) {

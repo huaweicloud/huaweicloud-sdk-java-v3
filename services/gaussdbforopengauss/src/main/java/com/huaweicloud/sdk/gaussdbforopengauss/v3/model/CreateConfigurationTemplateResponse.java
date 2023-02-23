@@ -20,25 +20,22 @@ import java.util.Objects;
 public class CreateConfigurationTemplateResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    
+
     private String createdAt;
 
     public CreateConfigurationTemplateResponse withId(String id) {

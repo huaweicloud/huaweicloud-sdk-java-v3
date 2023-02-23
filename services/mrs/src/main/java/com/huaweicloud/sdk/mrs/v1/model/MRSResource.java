@@ -20,32 +20,27 @@ import java.util.Objects;
 public class MRSResource  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_id")
     
-    
-    private String resourceId;
 
+    private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_detail")
     
-    
-    private String resourceDetail;
 
+    private String resourceDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    
     private List<TagPlain> tags = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_name")
     
-    
+
     private String resourceName;
 
     public MRSResource withResourceId(String resourceId) {

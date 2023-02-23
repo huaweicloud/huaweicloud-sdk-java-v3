@@ -18,39 +18,34 @@ import java.util.Objects;
 public class CreateExternalEntityReqDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="external_id")
     
-    
-    private String externalId;
 
+    private String externalId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol")
     
-    
-    private String protocol;
 
+    private String protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="connection_type")
     
-    
-    private String connectionType;
 
+    private String connectionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mqtt_connection_info")
     
-    
-    private MqttConnectionInfo mqttConnectionInfo;
 
+    private MqttConnectionInfo mqttConnectionInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="space_id")
     
-    
+
     private String spaceId;
 
     public CreateExternalEntityReqDTO withExternalId(String externalId) {

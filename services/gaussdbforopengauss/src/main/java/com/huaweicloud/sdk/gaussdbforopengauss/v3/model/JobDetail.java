@@ -18,60 +18,52 @@ import java.util.Objects;
 public class JobDetail  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
-    
-    private String created;
 
+    private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ended")
     
-    
-    private String ended;
 
+    private String ended;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="progress")
     
-    
-    private String progress;
 
+    private String progress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance")
     
-    
-    private JobInstanceInfo instance;
 
+    private JobInstanceInfo instance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fail_reason")
     
-    
+
     private String failReason;
 
     public JobDetail withId(String id) {

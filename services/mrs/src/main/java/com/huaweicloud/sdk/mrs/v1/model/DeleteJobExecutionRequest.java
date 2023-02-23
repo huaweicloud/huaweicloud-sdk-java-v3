@@ -18,11 +18,10 @@ import java.util.Objects;
 public class DeleteJobExecutionRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_execution_id")
     
-    
+
     private String jobExecutionId;
 
     public DeleteJobExecutionRequest withJobExecutionId(String jobExecutionId) {

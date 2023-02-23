@@ -14,34 +14,36 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 静默规则的生效时间配置
  */
+@JacksonXmlRootElement(localName = "MuteConfig")
 public class MuteConfig  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ends_at")
     
-    
-    private Long endsAt;
+    @JacksonXmlProperty(localName = "ends_at")
 
+    private Long endsAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scope")
     
-    
+    @JacksonXmlProperty(localName = "scope")
     private List<String> scope = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="starts_at")
     
-    
+    @JacksonXmlProperty(localName = "starts_at")
+
     private Long startsAt;
     /**
      * 静默规则生效时间种类。FIXED:固定方式统计,DAILY:按日合计,WEEKLY:按周统计,MONTHLY:按月统计
@@ -134,11 +136,11 @@ public class MuteConfig  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
+    @JacksonXmlProperty(localName = "type")
+
     private TypeEnum type;
 
     public MuteConfig withEndsAt(Long endsAt) {

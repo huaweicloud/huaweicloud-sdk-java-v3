@@ -17,11 +17,10 @@ import java.util.Objects;
 public class VarsBodyPrimitiveTypeHolder  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vars_body")
     
-    
+
     private String varsBody;
 
     public VarsBodyPrimitiveTypeHolder withVarsBody(String varsBody) {

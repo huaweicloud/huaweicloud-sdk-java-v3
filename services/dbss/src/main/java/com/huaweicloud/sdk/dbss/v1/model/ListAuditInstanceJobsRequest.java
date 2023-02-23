@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ListAuditInstanceJobsRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_id")
     
-    
+
     private String resourceId;
 
     public ListAuditInstanceJobsRequest withResourceId(String resourceId) {

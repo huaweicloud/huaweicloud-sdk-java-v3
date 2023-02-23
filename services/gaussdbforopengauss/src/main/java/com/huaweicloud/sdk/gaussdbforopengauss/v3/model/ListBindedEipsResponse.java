@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListBindedEipsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ips")
     
-    
     private List<BindedEipResult> publicIps = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Integer totalCount;
 
     public ListBindedEipsResponse withPublicIps(List<BindedEipResult> publicIps) {

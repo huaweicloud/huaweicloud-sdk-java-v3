@@ -24,24 +24,20 @@ import java.util.Objects;
 public class BatchListEdgeAppVersionsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
-    
-    private Integer count;
 
+    private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    
-    private PageInfoDTO pageInfo;
 
+    private PageInfoDTO pageInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="versions")
-    
     
     private List<QueryEdgeAppVersionBriefResponseDTO> versions = null;
     

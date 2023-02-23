@@ -19,18 +19,16 @@ import java.util.Objects;
 public class SetGaussMySqlQuotasRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private SetQuotasRequestBody body;
 
     public SetGaussMySqlQuotasRequest withXLanguage(String xLanguage) {

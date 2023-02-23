@@ -54,7 +54,7 @@ public class ShowSyncPolicyRequest {
 
     /**
      * lastKnownVersion
-     * minimum: 1
+     * minimum: -1
      * @return lastKnownVersion
      */
     public Long getLastKnownVersion() {

@@ -23,17 +23,14 @@ import java.util.Objects;
 public class ShowJobExeListNewResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_record")
     
-    
-    private Integer totalRecord;
 
+    private Integer totalRecord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_list")
-    
     
     private List<JobQueryBean> jobList = null;
     

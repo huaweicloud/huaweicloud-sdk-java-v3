@@ -17,18 +17,16 @@ import java.util.Objects;
 public class CreateGraphReqGraphVertexIdType  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id_type")
     
-    
-    private String idType;
 
+    private String idType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id_length")
     
-    
+
     private Integer idLength;
 
     public CreateGraphReqGraphVertexIdType withIdType(String idType) {

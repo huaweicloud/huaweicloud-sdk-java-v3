@@ -17,18 +17,16 @@ import java.util.Objects;
 public class Shards  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    
-    private String nodeId;
 
+    private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="component_id")
     
-    
+
     private String componentId;
 
     public Shards withNodeId(String nodeId) {

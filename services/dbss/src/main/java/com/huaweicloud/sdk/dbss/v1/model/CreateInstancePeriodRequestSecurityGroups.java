@@ -17,11 +17,10 @@ import java.util.Objects;
 public class CreateInstancePeriodRequestSecurityGroups  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
+
     private String id;
 
     public CreateInstancePeriodRequestSecurityGroups withId(String id) {

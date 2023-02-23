@@ -18,46 +18,40 @@ import java.util.Objects;
 public class ConfigurationSummary2  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    
-    private DatastoreResult datastore;
 
+    private DatastoreResult datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
-    
-    private String created;
 
+    private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
-    
+
     private String updated;
 
     public ConfigurationSummary2 withId(String id) {

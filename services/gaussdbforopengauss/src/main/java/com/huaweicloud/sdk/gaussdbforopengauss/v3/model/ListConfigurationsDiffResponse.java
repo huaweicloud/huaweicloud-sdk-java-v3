@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ListConfigurationsDiffResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="differences")
-    
     
     private List<ListDiffDetailsResult> differences = null;
     

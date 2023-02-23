@@ -17,46 +17,40 @@ import java.util.Objects;
 public class MysqlProxyNodes  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="role")
     
-    
-    private String role;
 
+    private String role;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_code")
     
-    
-    private String azCode;
 
+    private String azCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="frozen_flag")
     
-    
+
     private Integer frozenFlag;
 
     public MysqlProxyNodes withId(String id) {

@@ -17,25 +17,22 @@ import java.util.Objects;
 public class MysqlDatastoreWithKernelVersion  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    
-    private String version;
 
+    private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kernel_version")
     
-    
+
     private String kernelVersion;
 
     public MysqlDatastoreWithKernelVersion withType(String type) {

@@ -17,25 +17,22 @@ import java.util.Objects;
 public class DedicatedResourceCapacity  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram")
     
-    
-    private Integer ram;
 
+    private Integer ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
-    
-    private Long volume;
 
+    private Long volume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus")
     
-    
+
     private Integer vcpus;
 
     public DedicatedResourceCapacity withRam(Integer ram) {

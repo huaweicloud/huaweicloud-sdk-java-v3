@@ -17,25 +17,22 @@ import java.util.Objects;
 public class SchemaPath1  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobId")
     
-    
-    private String jobId;
 
+    private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="path")
     
-    
-    private String path;
 
+    private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
+
     private String status;
 
     public SchemaPath1 withJobId(String jobId) {

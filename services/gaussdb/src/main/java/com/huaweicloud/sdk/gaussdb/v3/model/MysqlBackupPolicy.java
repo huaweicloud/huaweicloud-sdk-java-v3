@@ -17,32 +17,28 @@ import java.util.Objects;
 public class MysqlBackupPolicy  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    
-    private String startTime;
 
+    private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="keep_days")
     
-    
-    private Integer keepDays;
 
+    private Integer keepDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period")
     
-    
-    private String period;
 
+    private String period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="retention_num_backup_level1")
     
-    
+
     private Integer retentionNumBackupLevel1;
 
     public MysqlBackupPolicy withStartTime(String startTime) {

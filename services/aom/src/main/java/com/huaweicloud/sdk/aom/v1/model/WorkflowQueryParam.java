@@ -11,97 +11,99 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 查询工作流列表。
  */
+@JacksonXmlRootElement(localName = "WorkflowQueryParam")
 public class WorkflowQueryParam  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="search")
     
-    
-    private String search;
+    @JacksonXmlProperty(localName = "search")
 
+    private String search;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
+    @JacksonXmlProperty(localName = "type")
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    
+    @JacksonXmlProperty(localName = "tags")
     private Map<String, String> tags = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    
-    private Integer page;
+    @JacksonXmlProperty(localName = "page")
 
+    private Integer page;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    
-    private Integer size;
+    @JacksonXmlProperty(localName = "size")
 
+    private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
-    private String enterpriseProjectId;
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_by")
     
-    
-    private String createBy;
+    @JacksonXmlProperty(localName = "create_by")
 
+    private String createBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_field")
     
-    
-    private String sortField;
+    @JacksonXmlProperty(localName = "sort_field")
 
+    private String sortField;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_type")
     
-    
-    private String sortType;
+    @JacksonXmlProperty(localName = "sort_type")
 
+    private String sortType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="search_time_start")
     
-    
-    private Long searchTimeStart;
+    @JacksonXmlProperty(localName = "search_time_start")
 
+    private Long searchTimeStart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="search_time_end")
     
-    
-    private Long searchTimeEnd;
+    @JacksonXmlProperty(localName = "search_time_end")
 
+    private Long searchTimeEnd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     public WorkflowQueryParam withSearch(String search) {

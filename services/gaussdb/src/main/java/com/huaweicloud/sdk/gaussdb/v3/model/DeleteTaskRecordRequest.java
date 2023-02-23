@@ -18,18 +18,16 @@ import java.util.Objects;
 public class DeleteTaskRecordRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public DeleteTaskRecordRequest withXLanguage(String xLanguage) {

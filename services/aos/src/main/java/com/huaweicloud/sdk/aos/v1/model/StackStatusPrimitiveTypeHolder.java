@@ -141,11 +141,10 @@ public class StackStatusPrimitiveTypeHolder  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
+
     private StatusEnum status;
 
     public StackStatusPrimitiveTypeHolder withStatus(StatusEnum status) {

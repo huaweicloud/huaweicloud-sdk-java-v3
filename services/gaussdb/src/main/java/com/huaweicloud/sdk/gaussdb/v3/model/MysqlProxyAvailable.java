@@ -17,18 +17,16 @@ import java.util.Objects;
 public class MysqlProxyAvailable  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="code")
     
-    
-    private String code;
 
+    private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
+
     private String description;
 
     public MysqlProxyAvailable withCode(String code) {

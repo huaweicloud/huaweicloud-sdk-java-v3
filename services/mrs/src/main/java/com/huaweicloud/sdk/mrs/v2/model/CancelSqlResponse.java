@@ -24,11 +24,10 @@ import java.util.Objects;
 public class CancelSqlResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="message")
     
-    
+
     private String message;
     /**
      * 取消SQL的执行结果。 说明： 默认返回SUCCEED，对于已经结束的任务也会返回SUCCEED，只有取消正在运行的SQL时没成功才会FAILED。 枚举值： - SUCCEED：成功 - FAILED：失败
@@ -109,11 +108,10 @@ public class CancelSqlResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
+
     private StatusEnum status;
 
     public CancelSqlResponse withMessage(String message) {

@@ -21,11 +21,11 @@
 
 package com.huaweicloud.sdk.core.exception;
 
+import java.util.Objects;
+
 import static com.huaweicloud.sdk.core.Constants.StatusCode.CLIENT_ERROR;
 import static com.huaweicloud.sdk.core.Constants.StatusCode.SERVER_ERROR;
 import static com.huaweicloud.sdk.core.Constants.StatusCode.SERVER_ERROR_UPPER_LIMIT;
-
-import java.util.Objects;
 
 /**
  * Base Exception for HTTP Errors during Rest Operations
@@ -129,7 +129,7 @@ public class ServiceResponseException extends SdkException {
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
      */
-    private String toIndentedString(java.lang.Object o) {
+    private String toIndentedString(Object o) {
         if (o == null) {
             return "null";
         }

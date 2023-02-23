@@ -20,130 +20,111 @@ import java.util.Objects;
 public class MysqlInstanceNodeInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    
-    private Integer port;
 
+    private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="private_read_ips")
     
-    
     private List<String> privateReadIps = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
-    
-    private MysqlInstanceNodeVolumeInfo volume;
 
+    private MysqlInstanceNodeVolumeInfo volume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_code")
     
-    
-    private String azCode;
 
+    private String azCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="region_code")
     
-    
-    private String regionCode;
 
+    private String regionCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
-    
-    private String created;
 
+    private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
-    
-    private String updated;
 
+    private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_id")
     
-    
-    private String flavorId;
 
+    private String flavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
-    
-    private String flavorRef;
 
+    private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max_connections")
     
-    
-    private String maxConnections;
 
+    private String maxConnections;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus")
     
-    
-    private String vcpus;
 
+    private String vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram")
     
-    
-    private String ram;
 
+    private String ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="need_restart")
     
-    
-    private Boolean needRestart;
 
+    private Boolean needRestart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="priority")
     
-    
+
     private Integer priority;
 
     public MysqlInstanceNodeInfo withId(String id) {

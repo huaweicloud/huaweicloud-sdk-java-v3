@@ -18,25 +18,22 @@ import java.util.Objects;
 public class ListRestoreTimesRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="date")
     
-    
+
     private String date;
 
     public ListRestoreTimesRequest withXLanguage(String xLanguage) {

@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunEventExtractionRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private PostEventExtractionReq body;
 
     public RunEventExtractionRequest withBody(PostEventExtractionReq body) {

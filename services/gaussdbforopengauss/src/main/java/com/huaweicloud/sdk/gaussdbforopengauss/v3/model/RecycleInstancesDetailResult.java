@@ -29,18 +29,16 @@ import java.util.Objects;
 public class RecycleInstancesDetailResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
+
     private String name;
     /**
      * 部署形态。
@@ -121,18 +119,16 @@ public class RecycleInstancesDetailResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ha_mode")
     
-    
-    private HaModeEnum haMode;
 
+    private HaModeEnum haMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="engine_version")
     
-    
+
     private String engineVersion;
     /**
      * 计费模式（0：按需计费；1：包年/包月）。
@@ -213,25 +209,22 @@ public class RecycleInstancesDetailResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pay_model")
     
-    
-    private PayModelEnum payModel;
 
+    private PayModelEnum payModel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    
-    private String createdAt;
 
+    private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deleted_at")
     
-    
+
     private String deletedAt;
     /**
      * 磁盘类型。（SAS：high；SSD：ultrahigh；ESSD：essd）。
@@ -318,32 +311,28 @@ public class RecycleInstancesDetailResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_type")
     
-    
-    private VolumeTypeEnum volumeType;
 
+    private VolumeTypeEnum volumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_vip")
     
-    
-    private String dataVip;
 
+    private String dataVip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
-    private String enterpriseProjectId;
 
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="recycle_backup_id")
     
-    
+
     private String recycleBackupId;
     /**
      * 回收站备份状态。（Running：运行中；Active：有效的）。
@@ -424,11 +413,10 @@ public class RecycleInstancesDetailResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="recycle_status")
     
-    
+
     private RecycleStatusEnum recycleStatus;
     /**
      * 实例类型（basic：基础版；standard：标准版；enterprise：企业版）。
@@ -515,11 +503,10 @@ public class RecycleInstancesDetailResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mode")
     
-    
+
     private ModeEnum mode;
 
     public RecycleInstancesDetailResult withId(String id) {

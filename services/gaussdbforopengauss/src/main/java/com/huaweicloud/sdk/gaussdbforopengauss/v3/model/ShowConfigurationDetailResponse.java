@@ -27,32 +27,28 @@ import java.util.Objects;
 public class ShowConfigurationDetailResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="engine_version")
     
-    
+
     private String engineVersion;
     /**
      * 实例部署形态。independent：独立；ha：主备。
@@ -133,31 +129,26 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_mode")
     
-    
-    private InstanceModeEnum instanceMode;
 
+    private InstanceModeEnum instanceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    
-    private String createdAt;
 
+    private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_at")
     
-    
-    private String updatedAt;
 
+    private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration_parameters")
-    
     
     private List<ParaGroupParameterResult> configurationParameters = null;
     

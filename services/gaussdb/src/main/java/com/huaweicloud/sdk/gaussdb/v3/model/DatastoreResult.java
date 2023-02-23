@@ -17,18 +17,16 @@ import java.util.Objects;
 public class DatastoreResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    
+
     private String version;
 
     public DatastoreResult withType(String type) {

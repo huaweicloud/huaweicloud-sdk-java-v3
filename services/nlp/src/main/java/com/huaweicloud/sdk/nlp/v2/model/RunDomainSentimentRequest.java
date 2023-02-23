@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunDomainSentimentRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private DomainSentimentReq body;
 
     public RunDomainSentimentRequest withBody(DomainSentimentReq body) {

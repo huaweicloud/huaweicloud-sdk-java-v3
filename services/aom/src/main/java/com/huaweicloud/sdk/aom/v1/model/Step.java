@@ -11,55 +11,57 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 创建作业时的步骤参数
  */
+@JacksonXmlRootElement(localName = "Step")
 public class Step  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
+    @JacksonXmlProperty(localName = "id")
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
+    @JacksonXmlProperty(localName = "name")
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
+    @JacksonXmlProperty(localName = "type")
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    
+    @JacksonXmlProperty(localName = "input")
     private Map<String, String> input = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ignore_error")
     
-    
-    private Boolean ignoreError;
+    @JacksonXmlProperty(localName = "ignore_error")
 
+    private Boolean ignoreError;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     public Step withId(String id) {

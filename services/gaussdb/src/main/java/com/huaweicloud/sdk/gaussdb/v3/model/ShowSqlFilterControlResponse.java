@@ -20,11 +20,10 @@ import java.util.Objects;
 public class ShowSqlFilterControlResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="switch_status")
     
-    
+
     private String switchStatus;
 
     public ShowSqlFilterControlResponse withSwitchStatus(String switchStatus) {

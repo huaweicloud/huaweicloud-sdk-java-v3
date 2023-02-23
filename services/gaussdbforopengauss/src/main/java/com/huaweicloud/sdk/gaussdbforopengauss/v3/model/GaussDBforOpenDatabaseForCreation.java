@@ -17,46 +17,40 @@ import java.util.Objects;
 public class GaussDBforOpenDatabaseForCreation  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="character_set")
     
-    
-    private String characterSet;
 
+    private String characterSet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="owner")
     
-    
-    private String owner;
 
+    private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template")
     
-    
-    private String template;
 
+    private String template;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lc_collate")
     
-    
-    private String lcCollate;
 
+    private String lcCollate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lc_ctype")
     
-    
+
     private String lcCtype;
 
     public GaussDBforOpenDatabaseForCreation withName(String name) {

@@ -19,18 +19,16 @@ import java.util.Objects;
 public class ExecuteQaChatRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qabot_id")
     
-    
-    private String qabotId;
 
+    private String qabotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private PostRequestsReq body;
 
     public ExecuteQaChatRequest withQabotId(String qabotId) {

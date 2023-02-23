@@ -18,25 +18,22 @@ import java.util.Objects;
 public class DeleteGaussMySqlReadonlyNodeRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    
+
     private String nodeId;
 
     public DeleteGaussMySqlReadonlyNodeRequest withXLanguage(String xLanguage) {

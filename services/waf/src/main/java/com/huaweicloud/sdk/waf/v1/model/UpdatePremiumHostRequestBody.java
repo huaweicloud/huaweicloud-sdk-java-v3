@@ -271,6 +271,11 @@ public class UpdatePremiumHostRequestBody {
 
     private TimeoutConfig timeoutConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flag")
+
+    private HostFlag flag;
+
     public UpdatePremiumHostRequestBody withProxy(Boolean proxy) {
         this.proxy = proxy;
         return this;
@@ -578,6 +583,32 @@ public class UpdatePremiumHostRequestBody {
         this.timeoutConfig = timeoutConfig;
     }
 
+    public UpdatePremiumHostRequestBody withFlag(HostFlag flag) {
+        this.flag = flag;
+        return this;
+    }
+
+    public UpdatePremiumHostRequestBody withFlag(Consumer<HostFlag> flagSetter) {
+        if (this.flag == null) {
+            this.flag = new HostFlag();
+            flagSetter.accept(this.flag);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get flag
+     * @return flag
+     */
+    public HostFlag getFlag() {
+        return flag;
+    }
+
+    public void setFlag(HostFlag flag) {
+        this.flag = flag;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -601,7 +632,8 @@ public class UpdatePremiumHostRequestBody {
             && Objects.equals(this.blockPage, updatePremiumHostRequestBody.blockPage)
             && Objects.equals(this.trafficMark, updatePremiumHostRequestBody.trafficMark)
             && Objects.equals(this.circuitBreaker, updatePremiumHostRequestBody.circuitBreaker)
-            && Objects.equals(this.timeoutConfig, updatePremiumHostRequestBody.timeoutConfig);
+            && Objects.equals(this.timeoutConfig, updatePremiumHostRequestBody.timeoutConfig)
+            && Objects.equals(this.flag, updatePremiumHostRequestBody.flag);
     }
 
     @Override
@@ -620,7 +652,8 @@ public class UpdatePremiumHostRequestBody {
             blockPage,
             trafficMark,
             circuitBreaker,
-            timeoutConfig);
+            timeoutConfig,
+            flag);
     }
 
     @Override
@@ -642,6 +675,7 @@ public class UpdatePremiumHostRequestBody {
         sb.append("    trafficMark: ").append(toIndentedString(trafficMark)).append("\n");
         sb.append("    circuitBreaker: ").append(toIndentedString(circuitBreaker)).append("\n");
         sb.append("    timeoutConfig: ").append(toIndentedString(timeoutConfig)).append("\n");
+        sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

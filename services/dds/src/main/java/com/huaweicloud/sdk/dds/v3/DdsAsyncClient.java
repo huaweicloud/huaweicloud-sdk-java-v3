@@ -2503,6 +2503,36 @@ public class DdsAsyncClient {
     }
 
     /**
+     * 删除实例的节点
+     *
+     * 删除实例的节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShrinkInstanceNodesRequest 请求对象
+     * @return CompletableFuture<ShrinkInstanceNodesResponse>
+     */
+    public CompletableFuture<ShrinkInstanceNodesResponse> shrinkInstanceNodesAsync(ShrinkInstanceNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.shrinkInstanceNodes);
+    }
+
+    /**
+     * 删除实例的节点
+     *
+     * 删除实例的节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShrinkInstanceNodesRequest 请求对象
+     * @return AsyncInvoker<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse>
+     */
+    public AsyncInvoker<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse> shrinkInstanceNodesAsyncInvoker(
+        ShrinkInstanceNodesRequest request) {
+        return new AsyncInvoker<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse>(request,
+            DdsMeta.shrinkInstanceNodes, hcClient);
+    }
+
+    /**
      * 应用参数模板
      *
      * 指定实例变更参数模板。

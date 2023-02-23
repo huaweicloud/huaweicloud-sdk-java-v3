@@ -14,12 +14,15 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.EventQueryParam2;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
+@JacksonXmlRootElement(localName = "ListEventsRequest")
 public class ListEventsRequest  {
 
     /**
@@ -101,18 +104,18 @@ public class ListEventsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private TypeEnum type;
+    @JacksonXmlProperty(localName = "type")
 
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+    @JacksonXmlProperty(localName = "body")
+
     private EventQueryParam2 body;
 
     public ListEventsRequest withType(TypeEnum type) {

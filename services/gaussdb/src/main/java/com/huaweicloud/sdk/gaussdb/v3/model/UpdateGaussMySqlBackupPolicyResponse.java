@@ -20,25 +20,22 @@ import java.util.Objects;
 public class UpdateGaussMySqlBackupPolicyResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_name")
     
-    
+
     private String instanceName;
 
     public UpdateGaussMySqlBackupPolicyResponse withStatus(String status) {

@@ -396,6 +396,31 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateClusterV2Request, CreateClusterV2Response> createClusterV2 =
+        genForcreateClusterV2();
+
+    private static HttpRequestDef<CreateClusterV2Request, CreateClusterV2Response> genForcreateClusterV2() {
+        // basic
+        HttpRequestDef.Builder<CreateClusterV2Request, CreateClusterV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateClusterV2Request.class, CreateClusterV2Response.class)
+                .withName("CreateClusterV2")
+                .withUri("/v2/{project_id}/clusters")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<V2CreateClusterReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(V2CreateClusterReq.class),
+            f -> f.withMarshaller(CreateClusterV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateClusterWorkloadRequest, CreateClusterWorkloadResponse> createClusterWorkload =
         genForcreateClusterWorkload();
 

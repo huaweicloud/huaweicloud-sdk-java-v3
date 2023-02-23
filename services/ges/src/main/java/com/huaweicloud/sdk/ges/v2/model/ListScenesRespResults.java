@@ -20,32 +20,27 @@ import java.util.Objects;
 public class ListScenesRespResults  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scene")
     
-    
-    private String scene;
 
+    private String scene;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="params")
     
-    
     private List<ListScenesRespParams> params = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
+
     private String description;
 
     public ListScenesRespResults withScene(String scene) {

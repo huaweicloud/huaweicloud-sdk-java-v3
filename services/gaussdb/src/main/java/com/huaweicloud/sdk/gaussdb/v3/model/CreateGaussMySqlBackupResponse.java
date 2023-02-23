@@ -21,18 +21,16 @@ import java.util.Objects;
 public class CreateGaussMySqlBackupResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup")
     
-    
-    private Backup backup;
 
+    private Backup backup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public CreateGaussMySqlBackupResponse withBackup(Backup backup) {

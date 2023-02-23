@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunNerDomainRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private PostDomainNerRequest body;
 
     public RunNerDomainRequest withBody(PostDomainNerRequest body) {

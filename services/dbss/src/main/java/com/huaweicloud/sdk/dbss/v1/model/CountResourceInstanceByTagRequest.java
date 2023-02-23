@@ -19,18 +19,16 @@ import java.util.Objects;
 public class CountResourceInstanceByTagRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_type")
     
-    
-    private String resourceType;
 
+    private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private ResourceInstanceTagRequest body;
 
     public CountResourceInstanceByTagRequest withResourceType(String resourceType) {

@@ -93,18 +93,16 @@ public class IntentReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lang")
     
-    
-    private LangEnum lang;
 
+    private LangEnum lang;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text")
     
-    
+
     private String text;
 
     public IntentReq withLang(LangEnum lang) {

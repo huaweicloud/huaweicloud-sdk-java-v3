@@ -20,11 +20,10 @@ import java.util.Objects;
 public class UpdateProxySessionConsistenceResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public UpdateProxySessionConsistenceResponse withJobId(String jobId) {

@@ -20,25 +20,21 @@ import java.util.Objects;
 public class SessionExtends  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag_ids")
     
-    
-    private Tag tagIds;
 
+    private Tag tagIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain_ids")
     
-    
     private List<String> domainIds = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source")
     
-    
+
     private String source;
 
     public SessionExtends withTagIds(Tag tagIds) {

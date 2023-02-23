@@ -17,11 +17,10 @@ import java.util.Objects;
 public class PostEventExtractionReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text")
     
-    
+
     private String text;
 
     public PostEventExtractionReq withText(String text) {

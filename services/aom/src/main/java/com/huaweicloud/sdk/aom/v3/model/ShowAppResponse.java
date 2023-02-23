@@ -15,83 +15,86 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Response Object
  */
+@JacksonXmlRootElement(localName = "ShowAppResponse")
 public class ShowAppResponse extends SdkResponse {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="aom_id")
     
-    
-    private String aomId;
+    @JacksonXmlProperty(localName = "aom_id")
 
+    private String aomId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_id")
     
-    
-    private String appId;
+    @JacksonXmlProperty(localName = "app_id")
 
+    private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    
-    private String createTime;
+    @JacksonXmlProperty(localName = "create_time")
 
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="creator")
     
-    
-    private String creator;
+    @JacksonXmlProperty(localName = "creator")
 
+    private String creator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
+    @JacksonXmlProperty(localName = "description")
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="display_name")
     
-    
-    private String displayName;
+    @JacksonXmlProperty(localName = "display_name")
 
+    private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eps_id")
     
-    
-    private String epsId;
+    @JacksonXmlProperty(localName = "eps_id")
 
+    private String epsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="modified_time")
     
-    
-    private String modifiedTime;
+    @JacksonXmlProperty(localName = "modified_time")
 
+    private String modifiedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="modifier")
     
-    
-    private String modifier;
+    @JacksonXmlProperty(localName = "modifier")
 
+    private String modifier;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
     /**
      * 注册方式
@@ -178,11 +181,11 @@ public class ShowAppResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_type")
     
-    
+    @JacksonXmlProperty(localName = "register_type")
+
     private RegisterTypeEnum registerType;
 
     public ShowAppResponse withAomId(String aomId) {

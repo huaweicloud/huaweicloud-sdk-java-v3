@@ -18,60 +18,52 @@ import java.util.Objects;
 public class ShowGaussMySqlBackupListRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_id")
     
-    
-    private String backupId;
 
+    private String backupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_type")
     
-    
-    private String backupType;
 
+    private String backupType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private String offset;
 
+    private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
-    private String limit;
 
+    private String limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="begin_time")
     
-    
-    private String beginTime;
 
+    private String beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    
+
     private String endTime;
 
     public ShowGaussMySqlBackupListRequest withXLanguage(String xLanguage) {

@@ -138,6 +138,11 @@ public class AccessPolicyInput {
          */
         public static final PermissionsEnum WRITE = new PermissionsEnum("WRITE");
 
+        /**
+         * Enum OPERATE for value: "OPERATE"
+         */
+        public static final PermissionsEnum OPERATE = new PermissionsEnum("OPERATE");
+
         private static final Map<String, PermissionsEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PermissionsEnum> createStaticFields() {
@@ -162,6 +167,7 @@ public class AccessPolicyInput {
             map.put("SELECT", SELECT);
             map.put("READ", READ);
             map.put("WRITE", WRITE);
+            map.put("OPERATE", OPERATE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -328,6 +334,11 @@ public class AccessPolicyInput {
          */
         public static final GrantAblePermissionsEnum WRITE = new GrantAblePermissionsEnum("WRITE");
 
+        /**
+         * Enum OPERATE for value: "OPERATE"
+         */
+        public static final GrantAblePermissionsEnum OPERATE = new GrantAblePermissionsEnum("OPERATE");
+
         private static final Map<String, GrantAblePermissionsEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, GrantAblePermissionsEnum> createStaticFields() {
@@ -352,6 +363,7 @@ public class AccessPolicyInput {
             map.put("SELECT", SELECT);
             map.put("READ", READ);
             map.put("WRITE", WRITE);
+            map.put("OPERATE", OPERATE);
             return Collections.unmodifiableMap(map);
         }
 

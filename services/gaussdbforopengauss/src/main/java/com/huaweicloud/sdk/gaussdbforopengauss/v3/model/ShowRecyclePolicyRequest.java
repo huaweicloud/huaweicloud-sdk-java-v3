@@ -100,11 +100,10 @@ public class ShowRecyclePolicyRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
+
     private XLanguageEnum xLanguage;
 
     public ShowRecyclePolicyRequest withXLanguage(XLanguageEnum xLanguage) {

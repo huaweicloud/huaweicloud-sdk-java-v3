@@ -19,18 +19,16 @@ import java.util.Objects;
 public class ExpandGraphRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_id")
     
-    
-    private String graphId;
 
+    private String graphId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private ExpandGraphReq body;
 
     public ExpandGraphRequest withGraphId(String graphId) {

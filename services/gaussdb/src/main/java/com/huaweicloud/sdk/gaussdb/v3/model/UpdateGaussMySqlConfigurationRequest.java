@@ -19,25 +19,22 @@ import java.util.Objects;
 public class UpdateGaussMySqlConfigurationRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration_id")
     
-    
-    private String configurationId;
 
+    private String configurationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private UpdateConfigurationParameterRequestBody body;
 
     public UpdateGaussMySqlConfigurationRequest withXLanguage(String xLanguage) {

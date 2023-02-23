@@ -23,17 +23,14 @@ import java.util.Objects;
 public class ListAuditOperateLogsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_num")
     
-    
-    private Integer totalNum;
 
+    private Integer totalNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="operate_log")
-    
     
     private List<OperateLogInfo> operateLog = null;
     

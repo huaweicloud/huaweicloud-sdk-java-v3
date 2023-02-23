@@ -17,60 +17,52 @@ import java.util.Objects;
 public class GaussDBforOpenGaussUserForListAttributes  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rolsuper")
     
-    
-    private Boolean rolsuper;
 
+    private Boolean rolsuper;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rolinherit")
     
-    
-    private Boolean rolinherit;
 
+    private Boolean rolinherit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rolcreaterole")
     
-    
-    private Boolean rolcreaterole;
 
+    private Boolean rolcreaterole;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rolcreatedb")
     
-    
-    private Boolean rolcreatedb;
 
+    private Boolean rolcreatedb;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rolcanlogin")
     
-    
-    private Boolean rolcanlogin;
 
+    private Boolean rolcanlogin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rolconnlimit")
     
-    
-    private Integer rolconnlimit;
 
+    private Integer rolconnlimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rolreplication")
     
-    
-    private Boolean rolreplication;
 
+    private Boolean rolreplication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rolbypassrls")
     
-    
+
     private Boolean rolbypassrls;
 
     public GaussDBforOpenGaussUserForListAttributes withRolsuper(Boolean rolsuper) {

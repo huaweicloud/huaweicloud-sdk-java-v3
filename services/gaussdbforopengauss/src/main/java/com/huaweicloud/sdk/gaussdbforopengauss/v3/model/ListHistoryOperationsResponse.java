@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListHistoryOperationsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="histories")
     
-    
     private List<ListHistoryOperationsResult> histories = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Integer totalCount;
 
     public ListHistoryOperationsResponse withHistories(List<ListHistoryOperationsResult> histories) {

@@ -19,25 +19,22 @@ import java.util.Objects;
 public class TagSatisfactionRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qabot_id")
     
-    
-    private String qabotId;
 
+    private String qabotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="request_id")
     
-    
-    private String requestId;
 
+    private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private PostSatisfactionReq body;
 
     public TagSatisfactionRequest withQabotId(String qabotId) {

@@ -19,32 +19,28 @@ import java.util.Objects;
 public class ApplyExecutionPlanRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Client-Request-Id")
     
-    
-    private String clientRequestId;
 
+    private String clientRequestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stack_name")
     
-    
-    private String stackName;
 
+    private String stackName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="execution_plan_name")
     
-    
-    private String executionPlanName;
 
+    private String executionPlanName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private ApplyExecutionPlanRequestBody body;
 
     public ApplyExecutionPlanRequest withClientRequestId(String clientRequestId) {

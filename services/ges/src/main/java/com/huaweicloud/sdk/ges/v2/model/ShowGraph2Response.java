@@ -21,11 +21,10 @@ import java.util.Objects;
 public class ShowGraph2Response extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph")
     
-    
+
     private ShowGraphRespGraph graph;
 
     public ShowGraph2Response withGraph(ShowGraphRespGraph graph) {

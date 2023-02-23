@@ -17,18 +17,16 @@ import java.util.Objects;
 public class ListFlavorInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpu")
     
-    
-    private Integer vcpu;
 
+    private Integer vcpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mem")
     
-    
+
     private Integer mem;
 
     public ListFlavorInfo withVcpu(Integer vcpu) {

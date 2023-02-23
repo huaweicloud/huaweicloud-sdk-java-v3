@@ -19,18 +19,16 @@ import java.util.Objects;
 public class CancelScheduleTaskRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private CancelScheduleTask body;
 
     public CancelScheduleTaskRequest withXLanguage(String xLanguage) {

@@ -18,60 +18,52 @@ import java.util.Objects;
 public class ListGaussMySqlErrorLogRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_date")
     
-    
-    private String startDate;
 
+    private String startDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_date")
     
-    
-    private String endDate;
 
+    private String endDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private Integer offset;
 
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
-    private Integer limit;
 
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="level")
     
-    
-    private String level;
 
+    private String level;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    
+
     private String nodeId;
 
     public ListGaussMySqlErrorLogRequest withXLanguage(String xLanguage) {

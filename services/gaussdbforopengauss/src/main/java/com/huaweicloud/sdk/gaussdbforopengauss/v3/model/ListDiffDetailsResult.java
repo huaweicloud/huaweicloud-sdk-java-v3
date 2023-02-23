@@ -17,25 +17,22 @@ import java.util.Objects;
 public class ListDiffDetailsResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_value")
     
-    
-    private String sourceValue;
 
+    private String sourceValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target_value")
     
-    
+
     private String targetValue;
 
     public ListDiffDetailsResult withName(String name) {

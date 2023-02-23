@@ -20,25 +20,21 @@ import java.util.Objects;
 public class HistorySlot  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slot_name")
     
-    
-    private String slotName;
 
+    private String slotName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slot_values")
     
-    
     private List<HistorySlotWord> slotValues = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slot_identification")
     
-    
+
     private String slotIdentification;
 
     public HistorySlot withSlotName(String slotName) {

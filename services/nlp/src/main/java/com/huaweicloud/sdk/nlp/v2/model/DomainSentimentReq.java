@@ -21,11 +21,10 @@ import java.util.Objects;
 public class DomainSentimentReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
-    
+
     private String content;
     /**
      * 取值如下： 0：自适应领域，根据输入内容自动识别适应领域。 1：电商领域，适用于电商领域评论。 2：汽车领域，适用于汽车领域评论。
@@ -112,11 +111,10 @@ public class DomainSentimentReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
+
     private TypeEnum type;
 
     public DomainSentimentReq withContent(String content) {

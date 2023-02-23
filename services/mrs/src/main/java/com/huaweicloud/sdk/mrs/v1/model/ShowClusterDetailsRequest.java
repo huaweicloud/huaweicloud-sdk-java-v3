@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ShowClusterDetailsRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
-    
+
     private String clusterId;
 
     public ShowClusterDetailsRequest withClusterId(String clusterId) {

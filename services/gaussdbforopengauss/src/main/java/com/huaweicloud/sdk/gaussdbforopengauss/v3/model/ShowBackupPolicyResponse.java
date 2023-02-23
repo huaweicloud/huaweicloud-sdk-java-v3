@@ -21,11 +21,10 @@ import java.util.Objects;
 public class ShowBackupPolicyResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_policy")
     
-    
+
     private ShowBackupPolicy backupPolicy;
 
     public ShowBackupPolicyResponse withBackupPolicy(ShowBackupPolicy backupPolicy) {

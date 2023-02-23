@@ -17,18 +17,16 @@ import java.util.Objects;
 public class EncryptionReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable")
     
-    
-    private Boolean enable;
 
+    private Boolean enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterKeyId")
     
-    
+
     private String masterKeyId;
 
     public EncryptionReq withEnable(Boolean enable) {

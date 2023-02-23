@@ -17,18 +17,16 @@ import java.util.Objects;
 public class KeyWordsStat  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="keyword")
     
-    
-    private String keyword;
 
+    private String keyword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="freq")
     
-    
+
     private Long freq;
 
     public KeyWordsStat withKeyword(String keyword) {

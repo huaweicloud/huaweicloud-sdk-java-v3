@@ -17,32 +17,28 @@ import java.util.Objects;
 public class SchemaPath  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="path")
     
-    
-    private String path;
 
+    private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="log")
     
-    
-    private String log;
 
+    private String log;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cause")
     
-    
+
     private String cause;
 
     public SchemaPath withPath(String path) {

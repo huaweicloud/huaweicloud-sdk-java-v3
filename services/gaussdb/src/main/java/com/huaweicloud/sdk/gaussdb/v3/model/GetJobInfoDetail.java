@@ -23,18 +23,16 @@ import java.util.Objects;
 public class GetJobInfoDetail  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
+
     private String name;
     /**
      * 任务执行状态。  取值： - 值为“Pending”，表示延时任务，未执行。 - 值为“Running”，表示任务正在执行。 - 值为“Completed”，表示任务执行成功。 - 值为“Failed”，表示任务执行失败。
@@ -127,53 +125,46 @@ public class GetJobInfoDetail  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private StatusEnum status;
 
+    private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
-    
-    private String created;
 
+    private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ended")
     
-    
-    private String ended;
 
+    private String ended;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="process")
     
-    
-    private String process;
 
+    private String process;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance")
     
-    
-    private GetJobInstanceInfoDetail instance;
 
+    private GetJobInstanceInfoDetail instance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="entities")
     
-    
-    private GetJobEntitiesInfoDetail entities;
 
+    private GetJobEntitiesInfoDetail entities;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fail_reason")
     
-    
+
     private String failReason;
 
     public GetJobInfoDetail withId(String id) {

@@ -17,32 +17,28 @@ import java.util.Objects;
 public class Trigger  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric_name")
     
-    
-    private String metricName;
 
+    private String metricName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric_value")
     
-    
-    private String metricValue;
 
+    private String metricValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="comparison_operator")
     
-    
-    private String comparisonOperator;
 
+    private String comparisonOperator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="evaluation_periods")
     
-    
+
     private Integer evaluationPeriods;
 
     public Trigger withMetricName(String metricName) {

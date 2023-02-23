@@ -8,83 +8,86 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * SearchScriptsRequestBody
  */
+@JacksonXmlRootElement(localName = "SearchScriptsRequestBody")
 public class SearchScriptsRequestBody  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
+    @JacksonXmlProperty(localName = "name")
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_default")
     
-    
-    private String isDefault;
+    @JacksonXmlProperty(localName = "is_default")
 
+    private String isDefault;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_by")
     
-    
-    private String createBy;
+    @JacksonXmlProperty(localName = "create_by")
 
+    private String createBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="script_id")
     
-    
-    private String scriptId;
+    @JacksonXmlProperty(localName = "script_id")
 
+    private String scriptId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_num")
     
-    
-    private Integer pageNum;
+    @JacksonXmlProperty(localName = "page_num")
 
+    private Integer pageNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_size")
     
-    
-    private Integer pageSize;
+    @JacksonXmlProperty(localName = "page_size")
 
+    private Integer pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project_id")
     
-    
-    private String projectId;
+    @JacksonXmlProperty(localName = "project_id")
 
+    private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_by_column")
     
-    
-    private String orderByColumn;
+    @JacksonXmlProperty(localName = "order_by_column")
 
+    private String orderByColumn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_order")
     
-    
-    private String sortOrder;
+    @JacksonXmlProperty(localName = "sort_order")
 
+    private String sortOrder;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public SearchScriptsRequestBody withName(String name) {

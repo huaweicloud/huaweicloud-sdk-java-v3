@@ -19,25 +19,22 @@ import java.util.Objects;
 public class CreateInstallCmdRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
     
-    
-    private String edgeNodeId;
 
+    private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
-    
-    private String arch;
 
+    private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private CreateInstallCmdRequestDTO body;
 
     public CreateInstallCmdRequest withEdgeNodeId(String edgeNodeId) {

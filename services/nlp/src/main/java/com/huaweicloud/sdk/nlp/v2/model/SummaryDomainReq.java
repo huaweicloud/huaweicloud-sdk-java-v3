@@ -23,18 +23,16 @@ import java.util.Objects;
 public class SummaryDomainReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="length_limit")
     
-    
-    private Float lengthLimit;
 
+    private Float lengthLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="title")
     
-    
+
     private String title;
     /**
      * 支持的文本语言类型，目前支持中文（zh）。
@@ -109,18 +107,16 @@ public class SummaryDomainReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lang")
     
-    
-    private LangEnum lang;
 
+    private LangEnum lang;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
-    
+
     private String content;
     /**
      * 支持的领域类型，取值如下（目前只支持通用领域），默认为通用领域： 0：通用领域
@@ -195,11 +191,10 @@ public class SummaryDomainReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
+
     private TypeEnum type;
 
     public SummaryDomainReq withLengthLimit(Float lengthLimit) {

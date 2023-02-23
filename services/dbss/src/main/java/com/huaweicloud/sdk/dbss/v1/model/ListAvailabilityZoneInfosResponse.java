@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ListAvailabilityZoneInfosResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="azs")
-    
     
     private List<AzInfo> azs = null;
     

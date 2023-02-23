@@ -18,46 +18,40 @@ import java.util.Objects;
 public class ListStackEventsRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Client-Request-Id")
     
-    
-    private String clientRequestId;
 
+    private String clientRequestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stack_name")
     
-    
-    private String stackName;
 
+    private String stackName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stack_id")
     
-    
-    private String stackId;
 
+    private String stackId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deployment_id")
     
-    
-    private String deploymentId;
 
+    private String deploymentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="filter")
     
-    
-    private String filter;
 
+    private String filter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="field")
     
-    
+
     private String field;
 
     public ListStackEventsRequest withClientRequestId(String clientRequestId) {

@@ -18,25 +18,22 @@ import java.util.Objects;
 public class ListAuditRuleRisksRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="risk_levels")
     
-    
+
     private String riskLevels;
 
     public ListAuditRuleRisksRequest withInstanceId(String instanceId) {

@@ -20,25 +20,22 @@ import java.util.Objects;
 public class RunTextSimilarityResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="similarity")
     
-    
-    private Float similarity;
 
+    private Float similarity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
-    
-    private String errorCode;
 
+    private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_msg")
     
-    
+
     private String errorMsg;
 
     public RunTextSimilarityResponse withSimilarity(Float similarity) {

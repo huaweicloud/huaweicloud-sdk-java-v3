@@ -99,18 +99,16 @@ public class ListHa  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="consistency")
     
-    
-    private ConsistencyEnum consistency;
 
+    private ConsistencyEnum consistency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replication_mode")
     
-    
+
     private String replicationMode;
 
     public ListHa withConsistency(ConsistencyEnum consistency) {

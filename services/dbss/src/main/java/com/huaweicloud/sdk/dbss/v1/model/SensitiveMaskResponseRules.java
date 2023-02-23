@@ -17,53 +17,46 @@ import java.util.Objects;
 public class SensitiveMaskResponseRules  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="regex")
     
-    
-    private String regex;
 
+    private String regex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mask_value")
     
-    
-    private String maskValue;
 
+    private String maskValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="operate_time")
     
-    
+
     private String operateTime;
 
     public SensitiveMaskResponseRules withId(String id) {

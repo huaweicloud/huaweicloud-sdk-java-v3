@@ -20,74 +20,64 @@ import java.util.Objects;
 public class ShowEdgeAppResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
-    
-    private String edgeAppId;
 
+    private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    
-    private String createTime;
 
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    
-    private String updateTime;
 
+    private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_published_version")
     
-    
-    private String lastPublishedVersion;
 
+    private String lastPublishedVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_type")
     
-    
-    private String appType;
 
+    private String appType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="function_type")
     
-    
-    private String functionType;
 
+    private String functionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deploy_type")
     
-    
-    private String deployType;
 
+    private String deployType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol")
     
-    
-    private String protocol;
 
+    private String protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_name")
     
-    
+
     private String edgeAppName;
 
     public ShowEdgeAppResponse withEdgeAppId(String edgeAppId) {

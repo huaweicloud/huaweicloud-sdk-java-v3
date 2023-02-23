@@ -18,18 +18,16 @@ import java.util.Objects;
 public class ShowJobRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_id")
     
-    
-    private String graphId;
 
+    private String graphId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public ShowJobRequest withGraphId(String graphId) {

@@ -18,32 +18,28 @@ import java.util.Objects;
 public class PostQaSessionReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extends")
     
-    
-    private SessionExtends _extends;
 
+    private SessionExtends _extends;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="chat_enable")
     
-    
-    private Boolean chatEnable;
 
+    private Boolean chatEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_id")
     
-    
-    private String userId;
 
+    private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="question")
     
-    
+
     private String question;
 
     public PostQaSessionReq withExtends(SessionExtends _extends) {

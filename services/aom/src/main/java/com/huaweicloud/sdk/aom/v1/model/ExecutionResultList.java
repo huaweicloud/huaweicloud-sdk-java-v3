@@ -8,55 +8,58 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 函数流节点执行详细信息
  */
+@JacksonXmlRootElement(localName = "ExecutionResultList")
 public class ExecutionResultList  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    
-    private String nodeId;
+    @JacksonXmlProperty(localName = "node_id")
 
+    private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="begin_time")
     
-    
-    private Long beginTime;
+    @JacksonXmlProperty(localName = "begin_time")
 
+    private Long beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    
-    private Long endTime;
+    @JacksonXmlProperty(localName = "end_time")
 
+    private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="function_execution_id")
     
-    
-    private String functionExecutionId;
+    @JacksonXmlProperty(localName = "function_execution_id")
 
+    private String functionExecutionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    
-    private Object output;
+    @JacksonXmlProperty(localName = "output")
 
+    private Object output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
+    @JacksonXmlProperty(localName = "status")
+
     private String status;
 
     public ExecutionResultList withNodeId(String nodeId) {

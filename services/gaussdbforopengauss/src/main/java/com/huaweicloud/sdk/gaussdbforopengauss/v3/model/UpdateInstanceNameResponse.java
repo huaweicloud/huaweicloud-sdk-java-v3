@@ -20,11 +20,10 @@ import java.util.Objects;
 public class UpdateInstanceNameResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public UpdateInstanceNameResponse withJobId(String jobId) {

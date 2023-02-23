@@ -20,10 +20,8 @@ import java.util.Objects;
 public class AddTagsRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
-    
     
     private List<TagsOption> tags = null;
     

@@ -21,18 +21,16 @@ import java.util.Objects;
 public class TextSimilarityAdvanceRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text1")
     
-    
-    private String text1;
 
+    private String text1;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text2")
     
-    
+
     private String text2;
     /**
      * 支持的文本语言类型，目前只支持中文（zh），默认为中文。
@@ -107,11 +105,10 @@ public class TextSimilarityAdvanceRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lang")
     
-    
+
     private LangEnum lang;
 
     public TextSimilarityAdvanceRequest withText1(String text1) {

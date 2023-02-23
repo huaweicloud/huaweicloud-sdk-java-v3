@@ -20,10 +20,8 @@ import java.util.Objects;
 public class AgencyMappingArray  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agency_mappings")
-    
     
     private List<AgencyMapping> agencyMappings = null;
     

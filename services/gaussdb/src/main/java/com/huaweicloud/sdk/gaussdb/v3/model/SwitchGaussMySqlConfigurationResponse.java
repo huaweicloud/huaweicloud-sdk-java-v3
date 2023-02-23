@@ -20,11 +20,10 @@ import java.util.Objects;
 public class SwitchGaussMySqlConfigurationResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public SwitchGaussMySqlConfigurationResponse withJobId(String jobId) {

@@ -18,18 +18,16 @@ import java.util.Objects;
 public class ShowEdgeApplicationVersionRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
-    
-    private String edgeAppId;
 
+    private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    
+
     private String version;
 
     public ShowEdgeApplicationVersionRequest withEdgeAppId(String edgeAppId) {

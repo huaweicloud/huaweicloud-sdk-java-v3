@@ -17,18 +17,16 @@ import java.util.Objects;
 public class QueryAuthorizedNodeDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    
-    private String nodeId;
 
+    private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="authorized_time")
     
-    
+
     private String authorizedTime;
 
     public QueryAuthorizedNodeDTO withNodeId(String nodeId) {

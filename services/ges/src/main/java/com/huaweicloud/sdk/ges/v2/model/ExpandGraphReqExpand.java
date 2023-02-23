@@ -17,11 +17,10 @@ import java.util.Objects;
 public class ExpandGraphReqExpand  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replication")
     
-    
+
     private Integer replication;
 
     public ExpandGraphReqExpand withReplication(Integer replication) {

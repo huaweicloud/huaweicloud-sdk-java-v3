@@ -22,10 +22,8 @@ import java.util.Objects;
 public class ListPredefinedTagsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
-    
     
     private List<List<Object>> tags = null;
     

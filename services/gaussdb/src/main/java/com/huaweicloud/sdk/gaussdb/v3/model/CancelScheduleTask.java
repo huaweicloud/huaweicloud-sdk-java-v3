@@ -19,10 +19,8 @@ import java.util.Objects;
 public class CancelScheduleTask  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_ids")
-    
     
     private List<String> jobIds = null;
     

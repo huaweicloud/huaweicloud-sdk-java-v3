@@ -22,31 +22,26 @@ import java.util.Objects;
 public class ShowProductConfigResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="service_id")
     
-    
-    private String serviceId;
 
+    private String serviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="service_type")
     
-    
-    private String serviceType;
 
+    private String serviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="properties")
-    
     
     private List<Object> properties = null;
     

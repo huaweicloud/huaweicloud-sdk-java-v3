@@ -17,18 +17,16 @@ import java.util.Objects;
 public class GaussDBforOpenGaussDatabaseForListSchema  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schema_name")
     
-    
-    private String schemaName;
 
+    private String schemaName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="owner")
     
-    
+
     private String owner;
 
     public GaussDBforOpenGaussDatabaseForListSchema withSchemaName(String schemaName) {

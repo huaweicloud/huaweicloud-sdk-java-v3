@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ShowNaRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="na_id")
     
-    
+
     private String naId;
 
     public ShowNaRequest withNaId(String naId) {

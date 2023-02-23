@@ -18,18 +18,16 @@ import java.util.Objects;
 public class ListRoutesRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
     
-    
-    private String edgeNodeId;
 
+    private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parsed")
     
-    
+
     private Boolean parsed;
 
     public ListRoutesRequest withEdgeNodeId(String edgeNodeId) {

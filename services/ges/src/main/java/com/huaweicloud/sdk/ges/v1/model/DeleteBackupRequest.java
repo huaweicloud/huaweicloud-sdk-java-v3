@@ -18,18 +18,16 @@ import java.util.Objects;
 public class DeleteBackupRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_id")
     
-    
-    private String backupId;
 
+    private String backupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_id")
     
-    
+
     private String graphId;
 
     public DeleteBackupRequest withBackupId(String backupId) {

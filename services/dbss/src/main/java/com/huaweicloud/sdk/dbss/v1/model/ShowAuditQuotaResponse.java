@@ -20,39 +20,34 @@ import java.util.Objects;
 public class ShowAuditQuotaResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audit_quota")
     
-    
-    private Long auditQuota;
 
+    private Long auditQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cpu")
     
-    
-    private Long cpu;
 
+    private Long cpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project_id")
     
-    
-    private String projectId;
 
+    private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quota")
     
-    
-    private Long quota;
 
+    private Long quota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram")
     
-    
+
     private Long ram;
 
     public ShowAuditQuotaResponse withAuditQuota(Long auditQuota) {

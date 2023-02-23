@@ -20,17 +20,14 @@ import java.util.Objects;
 public class ContainerConfigsResDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host_network")
     
-    
-    private Boolean hostNetwork;
 
+    private Boolean hostNetwork;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_port_list")
-    
     
     private List<ContainerPortDTO> containerPortList = null;
     

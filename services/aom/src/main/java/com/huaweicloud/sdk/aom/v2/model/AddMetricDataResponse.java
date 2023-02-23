@@ -11,27 +11,30 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Response Object
  */
+@JacksonXmlRootElement(localName = "AddMetricDataResponse")
 public class AddMetricDataResponse extends SdkResponse {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorCode")
     
-    
-    private String errorCode;
+    @JacksonXmlProperty(localName = "errorCode")
 
+    private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorMessage")
     
-    
+    @JacksonXmlProperty(localName = "errorMessage")
+
     private String errorMessage;
 
     public AddMetricDataResponse withErrorCode(String errorCode) {

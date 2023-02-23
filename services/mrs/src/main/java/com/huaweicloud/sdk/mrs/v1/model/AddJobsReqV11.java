@@ -17,88 +17,76 @@ import java.util.Objects;
 public class AddJobsReqV11  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_type")
     
-    
-    private Integer jobType;
 
+    private Integer jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_name")
     
-    
-    private String jobName;
 
+    private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jar_path")
     
-    
-    private String jarPath;
 
+    private String jarPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arguments")
     
-    
-    private String arguments;
 
+    private String arguments;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    
-    private String input;
 
+    private String input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    
-    private String output;
 
+    private String output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_log")
     
-    
-    private String jobLog;
 
+    private String jobLog;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hive_script_path")
     
-    
-    private String hiveScriptPath;
 
+    private String hiveScriptPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hql")
     
-    
-    private String hql;
 
+    private String hql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="shutdown_cluster")
     
-    
-    private Boolean shutdownCluster;
 
+    private Boolean shutdownCluster;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="submit_job_once_cluster_run")
     
-    
-    private Boolean submitJobOnceClusterRun;
 
+    private Boolean submitJobOnceClusterRun;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="file_action")
     
-    
+
     private String fileAction;
 
     public AddJobsReqV11 withJobType(Integer jobType) {

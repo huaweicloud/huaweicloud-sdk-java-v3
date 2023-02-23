@@ -20,11 +20,10 @@ import java.util.Objects;
 public class CreateInstallCmdResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cmd")
     
-    
+
     private String cmd;
 
     public CreateInstallCmdResponse withCmd(String cmd) {

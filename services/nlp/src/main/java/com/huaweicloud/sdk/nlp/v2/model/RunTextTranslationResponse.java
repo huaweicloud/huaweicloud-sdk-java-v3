@@ -20,32 +20,28 @@ import java.util.Objects;
 public class RunTextTranslationResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="src_text")
     
-    
-    private String srcText;
 
+    private String srcText;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="translated_text")
     
-    
-    private String translatedText;
 
+    private String translatedText;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
-    
-    private String errorCode;
 
+    private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_msg")
     
-    
+
     private String errorMsg;
 
     public RunTextTranslationResponse withSrcText(String srcText) {

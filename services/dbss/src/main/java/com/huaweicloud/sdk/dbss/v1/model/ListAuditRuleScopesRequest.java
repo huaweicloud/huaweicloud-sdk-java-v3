@@ -18,25 +18,22 @@ import java.util.Objects;
 public class ListAuditRuleScopesRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private String offset;
 
+    private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
+
     private String limit;
 
     public ListAuditRuleScopesRequest withInstanceId(String instanceId) {

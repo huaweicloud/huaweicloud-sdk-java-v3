@@ -42,6 +42,11 @@ public class ChannelDetail {
     private RomaForwarding romaForwarding;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mysql_forwarding")
+
+    private MysqlForwarding mysqlForwarding;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "influxdb_forwarding")
 
     private InfluxDBForwarding influxdbForwarding;
@@ -217,6 +222,32 @@ public class ChannelDetail {
         this.romaForwarding = romaForwarding;
     }
 
+    public ChannelDetail withMysqlForwarding(MysqlForwarding mysqlForwarding) {
+        this.mysqlForwarding = mysqlForwarding;
+        return this;
+    }
+
+    public ChannelDetail withMysqlForwarding(Consumer<MysqlForwarding> mysqlForwardingSetter) {
+        if (this.mysqlForwarding == null) {
+            this.mysqlForwarding = new MysqlForwarding();
+            mysqlForwardingSetter.accept(this.mysqlForwarding);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get mysqlForwarding
+     * @return mysqlForwarding
+     */
+    public MysqlForwarding getMysqlForwarding() {
+        return mysqlForwarding;
+    }
+
+    public void setMysqlForwarding(MysqlForwarding mysqlForwarding) {
+        this.mysqlForwarding = mysqlForwarding;
+    }
+
     public ChannelDetail withInfluxdbForwarding(InfluxDBForwarding influxdbForwarding) {
         this.influxdbForwarding = influxdbForwarding;
         return this;
@@ -336,6 +367,7 @@ public class ChannelDetail {
             && Objects.equals(this.amqpForwarding, channelDetail.amqpForwarding)
             && Objects.equals(this.dmsKafkaForwarding, channelDetail.dmsKafkaForwarding)
             && Objects.equals(this.romaForwarding, channelDetail.romaForwarding)
+            && Objects.equals(this.mysqlForwarding, channelDetail.mysqlForwarding)
             && Objects.equals(this.influxdbForwarding, channelDetail.influxdbForwarding)
             && Objects.equals(this.functiongraphForwarding, channelDetail.functiongraphForwarding)
             && Objects.equals(this.mrsKafkaForwarding, channelDetail.mrsKafkaForwarding)
@@ -350,6 +382,7 @@ public class ChannelDetail {
             amqpForwarding,
             dmsKafkaForwarding,
             romaForwarding,
+            mysqlForwarding,
             influxdbForwarding,
             functiongraphForwarding,
             mrsKafkaForwarding,
@@ -366,6 +399,7 @@ public class ChannelDetail {
         sb.append("    amqpForwarding: ").append(toIndentedString(amqpForwarding)).append("\n");
         sb.append("    dmsKafkaForwarding: ").append(toIndentedString(dmsKafkaForwarding)).append("\n");
         sb.append("    romaForwarding: ").append(toIndentedString(romaForwarding)).append("\n");
+        sb.append("    mysqlForwarding: ").append(toIndentedString(mysqlForwarding)).append("\n");
         sb.append("    influxdbForwarding: ").append(toIndentedString(influxdbForwarding)).append("\n");
         sb.append("    functiongraphForwarding: ").append(toIndentedString(functiongraphForwarding)).append("\n");
         sb.append("    mrsKafkaForwarding: ").append(toIndentedString(mrsKafkaForwarding)).append("\n");

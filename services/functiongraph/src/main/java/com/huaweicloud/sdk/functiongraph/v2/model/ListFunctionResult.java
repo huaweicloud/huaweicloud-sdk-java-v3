@@ -939,7 +939,7 @@ public class ListFunctionResult {
     }
 
     /**
-     * 对应tbl_func_vpc表的id字段。
+     * 用户的vpcid。
      * @return funcVpcId
      */
     public String getFuncVpcId() {

@@ -18,67 +18,58 @@ import java.util.Objects;
 public class Parameters  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schemaPath")
     
-    
-    private String schemaPath;
 
+    private String schemaPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgesetPath")
     
-    
-    private String edgesetPath;
 
+    private String edgesetPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgesetFormat")
     
-    
-    private String edgesetFormat;
 
+    private String edgesetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgesetDefaultLabel")
     
-    
-    private String edgesetDefaultLabel;
 
+    private String edgesetDefaultLabel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexsetPath")
     
-    
-    private String vertexsetPath;
 
+    private String vertexsetPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexsetFormat")
     
-    
-    private String vertexsetFormat;
 
+    private String vertexsetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexsetDefaultLabel")
     
-    
-    private String vertexsetDefaultLabel;
 
+    private String vertexsetDefaultLabel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="logDir")
     
-    
-    private String logDir;
 
+    private String logDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parallelEdge")
     
-    
+
     private ParallelEdge parallelEdge;
 
     public Parameters withSchemaPath(String schemaPath) {

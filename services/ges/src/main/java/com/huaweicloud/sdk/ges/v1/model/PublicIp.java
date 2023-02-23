@@ -17,18 +17,16 @@ import java.util.Objects;
 public class PublicIp  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicBindType")
     
-    
-    private String publicBindType;
 
+    private String publicBindType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eipId")
     
-    
+
     private String eipId;
 
     public PublicIp withPublicBindType(String publicBindType) {

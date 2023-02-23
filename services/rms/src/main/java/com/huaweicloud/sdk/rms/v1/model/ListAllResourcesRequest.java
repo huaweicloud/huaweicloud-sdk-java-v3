@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.rms.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -34,6 +37,21 @@ public class ListAllResourcesRequest {
     @JsonProperty(value = "marker")
 
     private String marker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
 
     public ListAllResourcesRequest withRegionId(String regionId) {
         this.regionId = regionId;
@@ -92,7 +110,7 @@ public class ListAllResourcesRequest {
     }
 
     /**
-     * 最大的返回数量
+     * 最大的返回数量。
      * minimum: 1
      * maximum: 200
      * @return limit
@@ -122,6 +140,73 @@ public class ListAllResourcesRequest {
         this.marker = marker;
     }
 
+    public ListAllResourcesRequest withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 资源ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ListAllResourcesRequest withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 资源名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ListAllResourcesRequest withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ListAllResourcesRequest addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ListAllResourcesRequest withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -135,12 +220,15 @@ public class ListAllResourcesRequest {
             && Objects.equals(this.epId, listAllResourcesRequest.epId)
             && Objects.equals(this.type, listAllResourcesRequest.type)
             && Objects.equals(this.limit, listAllResourcesRequest.limit)
-            && Objects.equals(this.marker, listAllResourcesRequest.marker);
+            && Objects.equals(this.marker, listAllResourcesRequest.marker)
+            && Objects.equals(this.id, listAllResourcesRequest.id)
+            && Objects.equals(this.name, listAllResourcesRequest.name)
+            && Objects.equals(this.tags, listAllResourcesRequest.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(regionId, epId, type, limit, marker);
+        return Objects.hash(regionId, epId, type, limit, marker, id, name, tags);
     }
 
     @Override
@@ -152,6 +240,9 @@ public class ListAllResourcesRequest {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -23,10 +23,8 @@ import java.util.Objects;
 public class RunEntityLinkingResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="entities")
-    
     
     private List<LinkedEntity> entities = null;
     

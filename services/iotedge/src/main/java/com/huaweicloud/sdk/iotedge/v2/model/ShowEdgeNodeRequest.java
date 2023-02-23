@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ShowEdgeNodeRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
     
-    
+
     private String edgeNodeId;
 
     public ShowEdgeNodeRequest withEdgeNodeId(String edgeNodeId) {

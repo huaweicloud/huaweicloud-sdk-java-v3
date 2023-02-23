@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ListStackResourcesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stack_resources")
-    
     
     private List<StackResource> stackResources = null;
     

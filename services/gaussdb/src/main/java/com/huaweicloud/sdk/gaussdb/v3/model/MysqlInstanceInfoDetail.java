@@ -25,213 +25,179 @@ import java.util.Objects;
 public class MysqlInstanceInfoDetail  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project_id")
     
-    
-    private String projectId;
 
+    private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    
-    private String port;
 
+    private String port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alias")
     
-    
-    private String alias;
 
+    private String alias;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_info")
     
-    
-    private MysqlInstanceChargeInfo chargeInfo;
 
+    private MysqlInstanceChargeInfo chargeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_count")
     
-    
-    private Integer nodeCount;
 
+    private Integer nodeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    
-    private MysqlDatastoreWithKernelVersion datastore;
 
+    private MysqlDatastoreWithKernelVersion datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_used_space")
     
-    
-    private Double backupUsedSpace;
 
+    private Double backupUsedSpace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
-    
-    private String created;
 
+    private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
-    
-    private String updated;
 
+    private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="private_write_ips")
     
-    
     private List<String> privateWriteIps = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ips")
     
-    
-    private String publicIps;
 
+    private String publicIps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db_user_name")
     
-    
-    private String dbUserName;
 
+    private String dbUserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
-    
-    private String vpcId;
 
+    private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
-    
-    private String subnetId;
 
+    private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_id")
     
-    
-    private String securityGroupId;
 
+    private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration_id")
     
-    
-    private String configurationId;
 
+    private String configurationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_strategy")
     
-    
-    private MysqlBackupStrategy backupStrategy;
 
+    private MysqlBackupStrategy backupStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
-    
     private List<MysqlInstanceNodeInfo> nodes = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
-    private String enterpriseProjectId;
 
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_zone")
     
-    
-    private String timeZone;
 
+    private String timeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_mode")
     
-    
-    private String azMode;
 
+    private String azMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_az_code")
     
-    
-    private String masterAzCode;
 
+    private String masterAzCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="maintenance_window")
     
-    
-    private String maintenanceWindow;
 
+    private String maintenanceWindow;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    
     private List<MysqlTags> tags = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dedicated_resource_id")
     
-    
-    private String dedicatedResourceId;
 
+    private String dedicatedResourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="proxies")
-    
     
     private List<MysqlProxyInfo> proxies = null;
     

@@ -17,102 +17,88 @@ import java.util.Objects;
 public class ReplyRatesIntervals  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start")
     
-    
-    private String start;
 
+    private String start;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="question_count")
     
-    
-    private Long questionCount;
 
+    private Long questionCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="direct_count")
     
-    
-    private Long directCount;
 
+    private Long directCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="recommend_count")
     
-    
-    private Long recommendCount;
 
+    private Long recommendCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="notmatch_count")
     
-    
-    private Long notmatchCount;
 
+    private Long notmatchCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invalid_count")
     
-    
-    private Long invalidCount;
 
+    private Long invalidCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="chat_count")
     
-    
-    private Long chatCount;
 
+    private Long chatCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="direct_rate")
     
-    
-    private Double directRate;
 
+    private Double directRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="recommend_rate")
     
-    
-    private Double recommendRate;
 
+    private Double recommendRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="notmatch_rate")
     
-    
-    private Double notmatchRate;
 
+    private Double notmatchRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="chat_rate")
     
-    
-    private Double chatRate;
 
+    private Double chatRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invalid_rate")
     
-    
-    private Double invalidRate;
 
+    private Double invalidRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dialog_count")
     
-    
-    private Long dialogCount;
 
+    private Long dialogCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dialog_rate")
     
-    
+
     private Double dialogRate;
 
     public ReplyRatesIntervals withStart(String start) {

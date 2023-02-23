@@ -20,11 +20,10 @@ import java.util.Objects;
 public class ValidateParaGroupNameResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="exist")
     
-    
+
     private Boolean exist;
 
     public ValidateParaGroupNameResponse withExist(Boolean exist) {

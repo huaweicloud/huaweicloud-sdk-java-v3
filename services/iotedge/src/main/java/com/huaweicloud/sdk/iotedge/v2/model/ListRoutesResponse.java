@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListRoutesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="routes")
     
-    
     private List<RouterDetailRespDTO> routes = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    
+
     private String updateTime;
 
     public ListRoutesResponse withRoutes(List<RouterDetailRespDTO> routes) {

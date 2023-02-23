@@ -21,11 +21,10 @@ import java.util.Objects;
 public class BatchSwitchesRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ids")
     
-    
+
     private String ids;
     /**
      * OFF：关闭 ON：开启
@@ -106,11 +105,10 @@ public class BatchSwitchesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
+
     private StatusEnum status;
 
     public BatchSwitchesRequest withIds(String ids) {

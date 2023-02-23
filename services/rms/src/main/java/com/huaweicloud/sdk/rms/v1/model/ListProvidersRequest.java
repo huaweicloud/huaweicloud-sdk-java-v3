@@ -26,6 +26,88 @@ public class ListProvidersRequest {
     private Integer limit;
 
     /**
+     * 资源是否默认收集
+     */
+    public static final class TrackEnum {
+
+        /**
+         * Enum TRACKED for value: "tracked"
+         */
+        public static final TrackEnum TRACKED = new TrackEnum("tracked");
+
+        /**
+         * Enum UNTRACKED for value: "untracked"
+         */
+        public static final TrackEnum UNTRACKED = new TrackEnum("untracked");
+
+        private static final Map<String, TrackEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TrackEnum> createStaticFields() {
+            Map<String, TrackEnum> map = new HashMap<>();
+            map.put("tracked", TRACKED);
+            map.put("untracked", UNTRACKED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TrackEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TrackEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            TrackEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TrackEnum(value);
+            }
+            return result;
+        }
+
+        public static TrackEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            TrackEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TrackEnum) {
+                return this.value.equals(((TrackEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "track")
+
+    private TrackEnum track;
+
+    /**
      * 选择接口返回的信息的语言，默认为\"zh-cn\"中文
      */
     public static final class XLanguageEnum {
@@ -145,6 +227,23 @@ public class ListProvidersRequest {
         this.limit = limit;
     }
 
+    public ListProvidersRequest withTrack(TrackEnum track) {
+        this.track = track;
+        return this;
+    }
+
+    /**
+     * 资源是否默认收集
+     * @return track
+     */
+    public TrackEnum getTrack() {
+        return track;
+    }
+
+    public void setTrack(TrackEnum track) {
+        this.track = track;
+    }
+
     public ListProvidersRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -175,12 +274,13 @@ public class ListProvidersRequest {
         ListProvidersRequest listProvidersRequest = (ListProvidersRequest) o;
         return Objects.equals(this.offset, listProvidersRequest.offset)
             && Objects.equals(this.limit, listProvidersRequest.limit)
+            && Objects.equals(this.track, listProvidersRequest.track)
             && Objects.equals(this.xLanguage, listProvidersRequest.xLanguage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, xLanguage);
+        return Objects.hash(offset, limit, track, xLanguage);
     }
 
     @Override
@@ -189,6 +289,7 @@ public class ListProvidersRequest {
         sb.append("class ListProvidersRequest {\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    track: ").append(toIndentedString(track)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("}");
         return sb.toString();

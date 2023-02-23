@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ListRestoreTimesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="restore_time")
-    
     
     private List<GetRestoreTimeResponseRestoreTime> restoreTime = null;
     

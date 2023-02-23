@@ -14,118 +14,119 @@ import com.huaweicloud.sdk.aom.v1.model.RateControl;
 import com.huaweicloud.sdk.aom.v1.model.Step;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 作业id
  */
+@JacksonXmlRootElement(localName = "Job")
 public class Job  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
+    @JacksonXmlProperty(localName = "id")
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
+    @JacksonXmlProperty(localName = "name")
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    
-    private Long createTime;
+    @JacksonXmlProperty(localName = "create_time")
 
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_by")
     
-    
-    private String createBy;
+    @JacksonXmlProperty(localName = "create_by")
 
+    private String createBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    
-    private Long updateTime;
+    @JacksonXmlProperty(localName = "update_time")
 
+    private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_by")
     
-    
-    private String updateBy;
+    @JacksonXmlProperty(localName = "update_by")
 
+    private String updateBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
+    @JacksonXmlProperty(localName = "description")
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
-    private String enterpriseProjectId;
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project_id")
     
-    
-    private String projectId;
+    @JacksonXmlProperty(localName = "project_id")
 
+    private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="steps")
     
-    
+    @JacksonXmlProperty(localName = "steps")
     private List<Step> steps = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
-    
+    @JacksonXmlProperty(localName = "parameters")
     private List<Parameter> parameters = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rate_control")
     
-    
-    private RateControl rateControl;
+    @JacksonXmlProperty(localName = "rate_control")
 
+    private RateControl rateControl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="approve_info")
     
-    
-    private ApproveInfo approveInfo;
+    @JacksonXmlProperty(localName = "approve_info")
 
+    private ApproveInfo approveInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_latest_version")
     
-    
-    private Boolean isLatestVersion;
+    @JacksonXmlProperty(localName = "is_latest_version")
 
+    private Boolean isLatestVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_number")
     
-    
+    @JacksonXmlProperty(localName = "version_number")
+
     private Integer versionNumber;
 
     public Job withId(String id) {

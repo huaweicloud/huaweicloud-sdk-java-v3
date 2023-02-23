@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunLanguageDetectionRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private LanguageDetectionReq body;
 
     public RunLanguageDetectionRequest withBody(LanguageDetectionReq body) {

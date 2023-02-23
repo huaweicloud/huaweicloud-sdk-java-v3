@@ -20,25 +20,22 @@ import java.util.Objects;
 public class ImportGraphResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorMessage")
     
-    
-    private String errorMessage;
 
+    private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorCode")
     
-    
-    private String errorCode;
 
+    private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobId")
     
-    
+
     private String jobId;
 
     public ImportGraphResponse withErrorMessage(String errorMessage) {

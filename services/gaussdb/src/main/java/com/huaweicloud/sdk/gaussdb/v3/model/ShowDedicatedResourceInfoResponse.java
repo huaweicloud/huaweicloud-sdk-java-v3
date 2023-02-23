@@ -24,60 +24,51 @@ import java.util.Objects;
 public class ShowDedicatedResourceInfoResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="engine_name")
     
-    
-    private String engineName;
 
+    private String engineName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone_ids")
     
-    
     private List<String> availabilityZoneIds = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="architecture")
     
-    
-    private String architecture;
 
+    private String architecture;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dedicated_compute_info")
     
-    
-    private DedicatedComputeInfo dedicatedComputeInfo;
 
+    private DedicatedComputeInfo dedicatedComputeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dedicated_storage_info")
     
-    
+
     private DedicatedStorageInfo dedicatedStorageInfo;
 
     public ShowDedicatedResourceInfoResponse withId(String id) {

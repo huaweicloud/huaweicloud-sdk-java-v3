@@ -22,6 +22,11 @@ public class ChangeCloudPhoneServerModelRequestBody {
     private String serverModelName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "phone_model_name")
+
+    private String phoneModelName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_param")
 
     private ChangeCloudPhoneServerModelRequestBodyExtendParam extendParam;
@@ -49,7 +54,7 @@ public class ChangeCloudPhoneServerModelRequestBody {
     }
 
     /**
-     * 要变更为的目标云手机服务器规格，不超过64个字节。 当前只支持填写physical.rx1.xlarge.special
+     * 目标云手机服务器规格，不超过64个字节。仅允许相同代系服务器之间的规格切换。
      * @return serverModelName
      */
     public String getServerModelName() {
@@ -58,6 +63,23 @@ public class ChangeCloudPhoneServerModelRequestBody {
 
     public void setServerModelName(String serverModelName) {
         this.serverModelName = serverModelName;
+    }
+
+    public ChangeCloudPhoneServerModelRequestBody withPhoneModelName(String phoneModelName) {
+        this.phoneModelName = phoneModelName;
+        return this;
+    }
+
+    /**
+     * 目标云手机规格。要求与变更前云手机规格路数相同，与目标云手机服务器规格匹配。
+     * @return phoneModelName
+     */
+    public String getPhoneModelName() {
+        return phoneModelName;
+    }
+
+    public void setPhoneModelName(String phoneModelName) {
+        this.phoneModelName = phoneModelName;
     }
 
     public ChangeCloudPhoneServerModelRequestBody withExtendParam(
@@ -100,12 +122,13 @@ public class ChangeCloudPhoneServerModelRequestBody {
             (ChangeCloudPhoneServerModelRequestBody) o;
         return Objects.equals(this.serverId, changeCloudPhoneServerModelRequestBody.serverId)
             && Objects.equals(this.serverModelName, changeCloudPhoneServerModelRequestBody.serverModelName)
+            && Objects.equals(this.phoneModelName, changeCloudPhoneServerModelRequestBody.phoneModelName)
             && Objects.equals(this.extendParam, changeCloudPhoneServerModelRequestBody.extendParam);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serverId, serverModelName, extendParam);
+        return Objects.hash(serverId, serverModelName, phoneModelName, extendParam);
     }
 
     @Override
@@ -114,6 +137,7 @@ public class ChangeCloudPhoneServerModelRequestBody {
         sb.append("class ChangeCloudPhoneServerModelRequestBody {\n");
         sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
         sb.append("    serverModelName: ").append(toIndentedString(serverModelName)).append("\n");
+        sb.append("    phoneModelName: ").append(toIndentedString(phoneModelName)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("}");
         return sb.toString();

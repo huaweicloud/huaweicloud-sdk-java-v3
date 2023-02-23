@@ -17,18 +17,16 @@ import java.util.Objects;
 public class ChatAnswers  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="answer")
     
-    
-    private String answer;
 
+    private String answer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="score")
     
-    
+
     private Float score;
 
     public ChatAnswers withAnswer(String answer) {

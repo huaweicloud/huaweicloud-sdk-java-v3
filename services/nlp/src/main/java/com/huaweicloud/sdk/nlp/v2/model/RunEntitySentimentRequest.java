@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunEntitySentimentRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private EntitySentimentReq body;
 
     public RunEntitySentimentRequest withBody(EntitySentimentReq body) {

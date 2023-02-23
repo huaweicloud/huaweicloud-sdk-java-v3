@@ -17,11 +17,10 @@ import java.util.Objects;
 public class ModifyAliasRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alias")
     
-    
+
     private String alias;
 
     public ModifyAliasRequest withAlias(String alias) {

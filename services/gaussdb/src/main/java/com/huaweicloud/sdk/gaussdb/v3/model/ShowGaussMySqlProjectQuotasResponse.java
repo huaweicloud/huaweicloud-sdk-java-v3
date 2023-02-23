@@ -21,11 +21,10 @@ import java.util.Objects;
 public class ShowGaussMySqlProjectQuotasResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quotas")
     
-    
+
     private ProjectQuotas quotas;
 
     public ShowGaussMySqlProjectQuotasResponse withQuotas(ProjectQuotas quotas) {

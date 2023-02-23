@@ -17,18 +17,16 @@ import java.util.Objects;
 public class ModifyBindEipRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip")
     
-    
-    private String publicIp;
 
+    private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip_id")
     
-    
+
     private String publicIpId;
 
     public ModifyBindEipRequest withPublicIp(String publicIp) {

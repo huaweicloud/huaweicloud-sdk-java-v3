@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunTextSimilarityAdvanceRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private TextSimilarityAdvanceRequest body;
 
     public RunTextSimilarityAdvanceRequest withBody(TextSimilarityAdvanceRequest body) {

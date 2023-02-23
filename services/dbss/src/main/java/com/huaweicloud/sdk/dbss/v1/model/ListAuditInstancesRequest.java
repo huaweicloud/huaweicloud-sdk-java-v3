@@ -18,18 +18,16 @@ import java.util.Objects;
 public class ListAuditInstancesRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private String offset;
 
+    private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
+
     private String limit;
 
     public ListAuditInstancesRequest withOffset(String offset) {

@@ -99,6 +99,11 @@ public class CreateInstanceRequest {
     private XLanguageEnum xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Client-Token")
+
+    private String xClientToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private InstanceRequest body;
@@ -120,6 +125,25 @@ public class CreateInstanceRequest {
 
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
+    }
+
+    public CreateInstanceRequest withXClientToken(String xClientToken) {
+        this.xClientToken = xClientToken;
+        return this;
+    }
+
+    /**
+     * 保证客户端请求幂等性的标识。 该标识为32位UUID格式，由客户端生成，且需确保72小时内不同请求之间该标识具有唯一性。
+     * @return xClientToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Client-Token")
+    public String getXClientToken() {
+        return xClientToken;
+    }
+
+    public void setXClientToken(String xClientToken) {
+        this.xClientToken = xClientToken;
     }
 
     public CreateInstanceRequest withBody(InstanceRequest body) {
@@ -158,12 +182,13 @@ public class CreateInstanceRequest {
         }
         CreateInstanceRequest createInstanceRequest = (CreateInstanceRequest) o;
         return Objects.equals(this.xLanguage, createInstanceRequest.xLanguage)
+            && Objects.equals(this.xClientToken, createInstanceRequest.xClientToken)
             && Objects.equals(this.body, createInstanceRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, body);
+        return Objects.hash(xLanguage, xClientToken, body);
     }
 
     @Override
@@ -171,6 +196,7 @@ public class CreateInstanceRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateInstanceRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
+        sb.append("    xClientToken: ").append(toIndentedString(xClientToken)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

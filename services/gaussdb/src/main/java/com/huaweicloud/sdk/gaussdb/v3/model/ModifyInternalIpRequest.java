@@ -17,11 +17,10 @@ import java.util.Objects;
 public class ModifyInternalIpRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="internal_ip")
     
-    
+
     private String internalIp;
 
     public ModifyInternalIpRequest withInternalIp(String internalIp) {

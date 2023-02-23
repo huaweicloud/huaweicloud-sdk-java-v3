@@ -17,11 +17,10 @@ import java.util.Objects;
 public class MysqlUpdateInstanceNameRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
+
     private String name;
 
     public MysqlUpdateInstanceNameRequest withName(String name) {

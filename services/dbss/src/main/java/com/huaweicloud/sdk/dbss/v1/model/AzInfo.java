@@ -17,39 +17,34 @@ import java.util.Objects;
 public class AzInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="zone_name")
     
-    
-    private String zoneName;
 
+    private String zoneName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="zone_number")
     
-    
-    private Integer zoneNumber;
 
+    private Integer zoneNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_type")
     
-    
-    private String azType;
 
+    private String azType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alias")
     
-    
-    private String alias;
 
+    private String alias;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alias_us")
     
-    
+
     private String aliasUs;
 
     public AzInfo withZoneName(String zoneName) {

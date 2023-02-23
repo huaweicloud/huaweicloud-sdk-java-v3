@@ -23,130 +23,108 @@ import java.util.Objects;
 public class CreateInstancePeriodRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
-    
-    private String flavorRef;
 
+    private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
-    
-    private String vpcId;
 
+    private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone")
     
-    
-    private String availabilityZone;
 
+    private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
-    private String enterpriseProjectId;
 
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nics")
     
-    
     private List<CreateInstancePeriodRequestNics> nics = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_groups")
     
-    
     private List<CreateInstancePeriodRequestSecurityGroups> securityGroups = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="comment")
     
-    
-    private String comment;
 
+    private String comment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="region")
     
-    
-    private String region;
 
+    private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cloud_service_type")
     
-    
-    private String cloudServiceType;
 
+    private String cloudServiceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charging_mode")
     
-    
-    private Integer chargingMode;
 
+    private Integer chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period_type")
     
-    
-    private Integer periodType;
 
+    private Integer periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period_num")
     
-    
-    private Integer periodNum;
 
+    private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subscription_num")
     
-    
-    private Integer subscriptionNum;
 
+    private Integer subscriptionNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_infos")
     
-    
     private List<CreateInstancePeriodRequestProductInfos> productInfos = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    
     private List<KeyValueBean> tags = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="promotion_info")
     
-    
-    private String promotionInfo;
 
+    private String promotionInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_renew")
     
-    
+
     private Integer isAutoRenew;
 
     public CreateInstancePeriodRequest withFlavorRef(String flavorRef) {

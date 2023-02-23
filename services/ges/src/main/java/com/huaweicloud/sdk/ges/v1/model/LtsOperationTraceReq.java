@@ -17,18 +17,16 @@ import java.util.Objects;
 public class LtsOperationTraceReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enableAudit")
     
-    
-    private Boolean enableAudit;
 
+    private Boolean enableAudit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auditLogGroupName")
     
-    
+
     private String auditLogGroupName;
 
     public LtsOperationTraceReq withEnableAudit(Boolean enableAudit) {

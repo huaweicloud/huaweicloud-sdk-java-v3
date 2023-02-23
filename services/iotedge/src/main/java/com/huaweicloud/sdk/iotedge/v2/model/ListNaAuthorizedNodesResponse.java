@@ -24,24 +24,20 @@ import java.util.Objects;
 public class ListNaAuthorizedNodesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
-    
-    private Long count;
 
+    private Long count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    
-    private PageInfoDTO pageInfo;
 
+    private PageInfoDTO pageInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
-    
     
     private List<QueryAuthorizedNodeDTO> nodes = null;
     

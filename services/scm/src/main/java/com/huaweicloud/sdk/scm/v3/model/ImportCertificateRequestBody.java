@@ -68,7 +68,7 @@ public class ImportCertificateRequestBody {
     }
 
     /**
-     * 证书内容。回车换行需要使用转义字符\\n或者\\r\\n替换。
+     * 证书内容，可包含中间证书及根证书。若certificate_chain字段传入证书链，则该字段只取证书本身。回车换行需要使用转义字符\\n或者\\r\\n替换。
      * @return certificate
      */
     public String getCertificate() {
@@ -85,7 +85,7 @@ public class ImportCertificateRequestBody {
     }
 
     /**
-     * 证书链。回车换行需要使用转义字符\\n或者\\r\\n替换。
+     * 证书链，非必填，可通过certificate字段传入。回车换行需要使用转义字符\\n或者\\r\\n替换。
      * @return certificateChain
      */
     public String getCertificateChain() {

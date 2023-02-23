@@ -20,10 +20,8 @@ import java.util.Objects;
 public class VarsStructurePrimitiveTypeHolder  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vars_structure")
-    
     
     private List<VarsStructure> varsStructure = null;
     

@@ -21,25 +21,22 @@ import java.util.Objects;
 public class CreateEdgeApplicationRequestDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
-    
-    private String edgeAppId;
 
+    private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_name")
     
-    
-    private String edgeAppName;
 
+    private String edgeAppName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
+
     private String description;
     /**
      * 功能类型,分为数据处理（DATA_PROCESSING）、协议解析（PROTOCOL_PARSING）、IT集成（ON_PREMISE_INTEGRATION）和混合应用（COMPOSITE_APPLICATION），数据默认为DATA_PROCESSING，数据处理模块可以传输消息，协议解析为驱动类型，IT集成为部署南向3rdIA使用，混合应用可同时实现数据处理和协议解析。
@@ -144,18 +141,16 @@ public class CreateEdgeApplicationRequestDTO  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="function_type")
     
-    
-    private FunctionTypeEnum functionType;
 
+    private FunctionTypeEnum functionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol")
     
-    
+
     private String protocol;
 
     public CreateEdgeApplicationRequestDTO withEdgeAppId(String edgeAppId) {

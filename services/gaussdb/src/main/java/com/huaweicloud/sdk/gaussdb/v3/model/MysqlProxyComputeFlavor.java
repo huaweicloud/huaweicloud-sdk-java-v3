@@ -17,46 +17,40 @@ import java.util.Objects;
 public class MysqlProxyComputeFlavor  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus")
     
-    
-    private String vcpus;
 
+    private String vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram")
     
-    
-    private String ram;
 
+    private String ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db_type")
     
-    
-    private String dbType;
 
+    private String dbType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec_code")
     
-    
-    private String specCode;
 
+    private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_status")
     
-    
+
     private Object azStatus;
 
     public MysqlProxyComputeFlavor withVcpus(String vcpus) {

@@ -99,11 +99,10 @@ public class UpdateEdgeAppVersionStateDTO  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state")
     
-    
+
     private StateEnum state;
 
     public UpdateEdgeAppVersionStateDTO withState(StateEnum state) {

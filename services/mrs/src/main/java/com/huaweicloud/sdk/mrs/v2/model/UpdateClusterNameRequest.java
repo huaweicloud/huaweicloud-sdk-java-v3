@@ -19,18 +19,16 @@ import java.util.Objects;
 public class UpdateClusterNameRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
-    
-    private String clusterId;
 
+    private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private UpdateClusterReq body;
 
     public UpdateClusterNameRequest withClusterId(String clusterId) {

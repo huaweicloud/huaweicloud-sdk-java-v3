@@ -20,24 +20,20 @@ import java.util.Objects;
 public class UpdateConfigurationParameterRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameter_values")
-    
     
     private Map<String, String> parameterValues = null;
     

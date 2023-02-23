@@ -10,34 +10,36 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 规则发现部分,数组中有多个对象时表示需要同时满足所有条件的进程才会被匹配到。 checkType为cmdLine时checkMode填contain,checkContent格式为[“xxx”]表示进程命令行参数中需要包含xxx。checkType为env时checkMode填contain,checkContent格式为 [\&quot;k1\&quot;,\&quot;v1\&quot;]表示进程环境变量中需要包含名为k1值为v1的环境变量。checkType为scope时checkMode填equals,checkContent格式为节点ID数组[\&quot;hostId1”,”hostId2”],表示规则仅会在这些节点上生效(如果不指定节点范围,规则将下发到该项目所有的节点)。
  */
+@JacksonXmlRootElement(localName = "DiscoveryRule")
 public class DiscoveryRule  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="checkContent")
     
-    
+    @JacksonXmlProperty(localName = "checkContent")
     private List<String> checkContent = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="checkMode")
     
-    
-    private String checkMode;
+    @JacksonXmlProperty(localName = "checkMode")
 
+    private String checkMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="checkType")
     
-    
+    @JacksonXmlProperty(localName = "checkType")
+
     private String checkType;
 
     public DiscoveryRule withCheckContent(List<String> checkContent) {

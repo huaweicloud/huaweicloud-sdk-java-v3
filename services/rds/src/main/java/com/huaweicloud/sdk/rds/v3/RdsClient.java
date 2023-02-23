@@ -3813,6 +3813,36 @@ public class RdsClient {
     }
 
     /**
+     * 
+     *
+     * 数据库帐号授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDbUserPrivilegeRequest 请求对象
+     * @return UpdateDbUserPrivilegeResponse
+     */
+    public UpdateDbUserPrivilegeResponse updateDbUserPrivilege(UpdateDbUserPrivilegeRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.updateDbUserPrivilege);
+    }
+
+    /**
+     * 
+     *
+     * 数据库帐号授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDbUserPrivilegeRequest 请求对象
+     * @return SyncInvoker<UpdateDbUserPrivilegeRequest, UpdateDbUserPrivilegeResponse>
+     */
+    public SyncInvoker<UpdateDbUserPrivilegeRequest, UpdateDbUserPrivilegeResponse> updateDbUserPrivilegeInvoker(
+        UpdateDbUserPrivilegeRequest request) {
+        return new SyncInvoker<UpdateDbUserPrivilegeRequest, UpdateDbUserPrivilegeResponse>(request,
+            RdsMeta.updateDbUserPrivilege, hcClient);
+    }
+
+    /**
      * 修改实例指定参数的值
      *
      * 修改实例指定参数的值。

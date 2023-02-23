@@ -24,102 +24,87 @@ import java.util.Objects;
 public class Graph  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graphSizeTypeIndex")
     
-    
-    private String graphSizeTypeIndex;
 
+    private String graphSizeTypeIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
-    
-    private String arch;
 
+    private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dataSource")
     
-    
-    private DataSource dataSource;
 
+    private DataSource dataSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpcId")
     
-    
-    private String vpcId;
 
+    private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnetId")
     
-    
-    private String subnetId;
 
+    private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="securityGroupId")
     
-    
-    private String securityGroupId;
 
+    private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicIp")
     
-    
-    private PublicIp publicIp;
 
+    private PublicIp publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enableMultiAz")
     
-    
-    private Boolean enableMultiAz;
 
+    private Boolean enableMultiAz;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encryption")
     
-    
-    private EncryptionReq encryption;
 
+    private EncryptionReq encryption;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ltsOperationTrace")
     
-    
-    private LtsOperationTraceReq ltsOperationTrace;
 
+    private LtsOperationTraceReq ltsOperationTrace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sys_tags")
     
-    
     private List<SysTagsRes> sysTags = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enableRBAC")
     
-    
-    private Boolean enableRBAC;
 
+    private Boolean enableRBAC;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enableFullTextIndex")
     
-    
+
     private Boolean enableFullTextIndex;
 
     public Graph withName(String name) {

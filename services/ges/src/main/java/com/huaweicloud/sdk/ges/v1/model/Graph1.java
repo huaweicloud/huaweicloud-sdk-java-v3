@@ -22,262 +22,219 @@ import java.util.Objects;
 public class Graph1  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="createdBy")
     
-    
-    private String createdBy;
 
+    private String createdBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isMultiAz")
     
-    
-    private String isMultiAz;
 
+    private String isMultiAz;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="regionCode")
     
-    
-    private String regionCode;
 
+    private String regionCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="azCode")
     
-    
-    private String azCode;
 
+    private String azCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schemaPath")
     
-    
     private List<SchemaPath1> schemaPath = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgesetPath")
     
-    
     private List<EdgesetPath1> edgesetPath = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgesetFormat")
     
-    
-    private String edgesetFormat;
 
+    private String edgesetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgesetDefaultLabel")
     
-    
-    private String edgesetDefaultLabel;
 
+    private String edgesetDefaultLabel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexsetPath")
     
-    
     private List<VertexsetPath1> vertexsetPath = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexsetFormat")
     
-    
-    private String vertexsetFormat;
 
+    private String vertexsetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexsetDefaultLabel")
     
-    
-    private String vertexsetDefaultLabel;
 
+    private String vertexsetDefaultLabel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dataStoreVersion")
     
-    
-    private String dataStoreVersion;
 
+    private String dataStoreVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sys_tags")
     
-    
     private List<String> sysTags = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="actionProgress")
     
-    
-    private String actionProgress;
 
+    private String actionProgress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graphSizeTypeIndex")
     
-    
-    private String graphSizeTypeIndex;
 
+    private String graphSizeTypeIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpcId")
     
-    
-    private String vpcId;
 
+    private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnetId")
     
-    
-    private String subnetId;
 
+    private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="securityGroupId")
     
-    
-    private String securityGroupId;
 
+    private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replication")
     
-    
-    private Integer replication;
 
+    private Integer replication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
-    
-    private String created;
 
+    private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
-    
-    private String updated;
 
+    private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="privateIp")
     
-    
-    private String privateIp;
 
+    private String privateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicIp")
     
-    
-    private String publicIp;
 
+    private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
-    
-    private String arch;
 
+    private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encrypted")
     
-    
-    private Boolean encrypted;
 
+    private Boolean encrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterKeyId")
     
-    
-    private String masterKeyId;
 
+    private String masterKeyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="masterKeyName")
     
-    
-    private String masterKeyName;
 
+    private String masterKeyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enableRBAC")
     
-    
-    private Boolean enableRBAC;
 
+    private Boolean enableRBAC;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enableFulltextIndex")
     
-    
-    private Boolean enableFulltextIndex;
 
+    private Boolean enableFulltextIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enableHyG")
     
-    
-    private Boolean enableHyG;
 
+    private Boolean enableHyG;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trafficIpList")
     
-    
     private List<String> trafficIpList = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cryptAlgorithm")
     
-    
-    private String cryptAlgorithm;
 
+    private String cryptAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enableHttps")
     
-    
-    private Boolean enableHttps;
 
+    private Boolean enableHttps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
-    
     
     private List<Object> tags = null;
     

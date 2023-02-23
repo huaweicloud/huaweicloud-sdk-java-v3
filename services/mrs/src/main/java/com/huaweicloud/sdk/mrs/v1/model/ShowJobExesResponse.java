@@ -21,11 +21,10 @@ import java.util.Objects;
 public class ShowJobExesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_execution")
     
-    
+
     private JobExeResult jobExecution;
 
     public ShowJobExesResponse withJobExecution(JobExeResult jobExecution) {

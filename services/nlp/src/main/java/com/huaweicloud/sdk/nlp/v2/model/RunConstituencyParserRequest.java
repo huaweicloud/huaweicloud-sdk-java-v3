@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunConstituencyParserRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private ConstituencyParserReq body;
 
     public RunConstituencyParserRequest withBody(ConstituencyParserReq body) {

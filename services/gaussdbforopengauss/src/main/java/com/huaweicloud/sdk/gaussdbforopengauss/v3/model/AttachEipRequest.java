@@ -101,32 +101,28 @@ public class AttachEipRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private XLanguageEnum xLanguage;
 
+    private XLanguageEnum xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    
-    private String nodeId;
 
+    private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private BindEIPRequestBody body;
 
     public AttachEipRequest withXLanguage(XLanguageEnum xLanguage) {

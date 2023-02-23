@@ -19,17 +19,14 @@ import java.util.Objects;
 public class TagsResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key")
     
-    
-    private String key;
 
+    private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
-    
     
     private List<String> value = null;
     

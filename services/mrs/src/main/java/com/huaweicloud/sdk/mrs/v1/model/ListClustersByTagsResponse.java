@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListClustersByTagsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
     
-    
     private List<MRSResource> resources = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Integer totalCount;
 
     public ListClustersByTagsResponse withResources(List<MRSResource> resources) {

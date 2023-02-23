@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ListDatastoresRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
+
     private String xLanguage;
 
     public ListDatastoresRequest withXLanguage(String xLanguage) {

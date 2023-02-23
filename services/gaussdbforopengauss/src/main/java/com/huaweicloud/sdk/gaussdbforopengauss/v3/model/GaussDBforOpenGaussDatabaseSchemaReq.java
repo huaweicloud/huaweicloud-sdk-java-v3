@@ -20,17 +20,14 @@ import java.util.Objects;
 public class GaussDBforOpenGaussDatabaseSchemaReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db_name")
     
-    
-    private String dbName;
 
+    private String dbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schemas")
-    
     
     private List<GaussDBforOpenGaussCreateSchemaReq> schemas = null;
     

@@ -21,39 +21,34 @@ import java.util.Objects;
 public class StackResource  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="physical_resource_id")
     
-    
-    private String physicalResourceId;
 
+    private String physicalResourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="physical_resource_name")
     
-    
-    private String physicalResourceName;
 
+    private String physicalResourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="logical_resource_name")
     
-    
-    private String logicalResourceName;
 
+    private String logicalResourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="logical_resource_type")
     
-    
-    private String logicalResourceType;
 
+    private String logicalResourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="index_key")
     
-    
+
     private String indexKey;
     /**
      * 资源的状态 * `CREATION_IN_PROGRESS` - 正在生成 * `CREATION_FAILED`      - 生成失败 * `CREATION_COMPLETE`    - 生成完成 * `DELETION_IN_PROGRESS` - 正在删除 * `DELETION_FAILED`      - 删除失败 * `DELETION_COMPLETE`    - 已经删除 * `UPDATE_IN_PROGRESS`   - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_FAILED`        - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION * `UPDATE_COMPLETE`      - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION 
@@ -176,18 +171,16 @@ public class StackResource  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_status")
     
-    
-    private ResourceStatusEnum resourceStatus;
 
+    private ResourceStatusEnum resourceStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status_message")
     
-    
+
     private String statusMessage;
 
     public StackResource withPhysicalResourceId(String physicalResourceId) {

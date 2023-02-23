@@ -23,17 +23,14 @@ import java.util.Objects;
 public class ListGraphBackups2Response extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_count")
     
-    
-    private Integer backupCount;
 
+    private Integer backupCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_list")
-    
     
     private List<ListBackupsRespBackupList> backupList = null;
     

@@ -93,11 +93,10 @@ public class OpenGaussChargeInfoListResponse  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_mode")
     
-    
+
     private ChargeModeEnum chargeMode;
 
     public OpenGaussChargeInfoListResponse withChargeMode(ChargeModeEnum chargeMode) {

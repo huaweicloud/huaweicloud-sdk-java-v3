@@ -21,11 +21,10 @@ import java.util.Objects;
 public class ShowClusterDetailsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster")
     
-    
+
     private Cluster cluster;
 
     public ShowClusterDetailsResponse withCluster(Cluster cluster) {

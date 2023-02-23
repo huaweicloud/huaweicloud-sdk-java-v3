@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ShowProductConfigRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol_type")
     
-    
+
     private String protocolType;
 
     public ShowProductConfigRequest withProtocolType(String protocolType) {

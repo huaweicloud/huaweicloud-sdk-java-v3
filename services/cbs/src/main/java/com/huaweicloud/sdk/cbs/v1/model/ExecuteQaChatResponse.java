@@ -26,67 +26,58 @@ import java.util.Objects;
 public class ExecuteQaChatResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="reply_type")
     
-    
-    private Integer replyType;
 
+    private Integer replyType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qabot_answers")
     
-    
-    private QaBotAnswersNew qabotAnswers;
 
+    private QaBotAnswersNew qabotAnswers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="chat_answers")
     
-    
-    private ChatAnswers chatAnswers;
 
+    private ChatAnswers chatAnswers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="taskbot_answers")
     
-    
-    private TaskBotAnswers taskbotAnswers;
 
+    private TaskBotAnswers taskbotAnswers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="docqa_answers")
     
-    
-    private DocBotAnswers docqaAnswers;
 
+    private DocBotAnswers docqaAnswers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tableqa_answers")
     
-    
-    private TableQaAnswers tableqaAnswers;
 
+    private TableQaAnswers tableqaAnswers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="session_id")
     
-    
-    private String sessionId;
 
+    private String sessionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kbqa_answers")
     
-    
-    private KbqaAnswers kbqaAnswers;
 
+    private KbqaAnswers kbqaAnswers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="request_id")
     
-    
+
     private String requestId;
 
     public ExecuteQaChatResponse withReplyType(Integer replyType) {

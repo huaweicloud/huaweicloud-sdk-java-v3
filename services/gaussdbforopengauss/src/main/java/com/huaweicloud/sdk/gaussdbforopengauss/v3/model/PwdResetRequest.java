@@ -17,11 +17,10 @@ import java.util.Objects;
 public class PwdResetRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password")
     
-    
+
     private String password;
 
     public PwdResetRequest withPassword(String password) {

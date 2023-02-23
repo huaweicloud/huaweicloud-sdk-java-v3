@@ -22,25 +22,21 @@ import java.util.Objects;
 public class RunSentenceEmbeddingResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vectors")
     
-    
     private List<List<Float>> vectors = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
-    
-    private String errorCode;
 
+    private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_msg")
     
-    
+
     private String errorMsg;
 
     public RunSentenceEmbeddingResponse withVectors(List<List<Float>> vectors) {

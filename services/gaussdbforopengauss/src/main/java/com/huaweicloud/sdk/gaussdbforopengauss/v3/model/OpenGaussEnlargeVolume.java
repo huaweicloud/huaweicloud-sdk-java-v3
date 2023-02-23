@@ -17,11 +17,10 @@ import java.util.Objects;
 public class OpenGaussEnlargeVolume  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    
+
     private Integer size;
 
     public OpenGaussEnlargeVolume withSize(Integer size) {

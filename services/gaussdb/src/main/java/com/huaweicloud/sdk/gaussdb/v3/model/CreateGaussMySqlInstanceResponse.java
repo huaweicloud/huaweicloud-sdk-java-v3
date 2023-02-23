@@ -21,25 +21,22 @@ import java.util.Objects;
 public class CreateGaussMySqlInstanceResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance")
     
-    
-    private MysqlInstanceResponse instance;
 
+    private MysqlInstanceResponse instance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
-    private String jobId;
 
+    private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_id")
     
-    
+
     private String orderId;
 
     public CreateGaussMySqlInstanceResponse withInstance(MysqlInstanceResponse instance) {

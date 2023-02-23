@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunPoemRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private CreatePoem body;
 
     public RunPoemRequest withBody(CreatePoem body) {

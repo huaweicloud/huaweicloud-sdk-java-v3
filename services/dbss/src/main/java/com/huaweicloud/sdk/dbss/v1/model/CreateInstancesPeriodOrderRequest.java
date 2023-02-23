@@ -19,11 +19,10 @@ import java.util.Objects;
 public class CreateInstancesPeriodOrderRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private CreateInstancePeriodRequest body;
 
     public CreateInstancesPeriodOrderRequest withBody(CreateInstancePeriodRequest body) {

@@ -231,6 +231,51 @@ public class LakeFormationMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPolicyRequest, ListPolicyResponse> listPolicy = genForlistPolicy();
+
+    private static HttpRequestDef<ListPolicyRequest, ListPolicyResponse> genForlistPolicy() {
+        // basic
+        HttpRequestDef.Builder<ListPolicyRequest, ListPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPolicyRequest.class, ListPolicyResponse.class)
+                .withName("ListPolicy")
+                .withUri("/v1/{project_id}/instances/{instance_id}/policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPolicyRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<Boolean>withRequestField("reverse_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListPolicyRequest::getReversePage, (req, v) -> {
+                req.setReversePage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSyncPolicyRequest, ShowSyncPolicyResponse> showSyncPolicy =
         genForshowSyncPolicy();
 
@@ -1136,6 +1181,40 @@ public class LakeFormationMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateLakeFormationInstanceRequest, CreateLakeFormationInstanceResponse> createLakeFormationInstance =
+        genForcreateLakeFormationInstance();
+
+    private static HttpRequestDef<CreateLakeFormationInstanceRequest, CreateLakeFormationInstanceResponse> genForcreateLakeFormationInstance() {
+        // basic
+        HttpRequestDef.Builder<CreateLakeFormationInstanceRequest, CreateLakeFormationInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateLakeFormationInstanceRequest.class,
+                    CreateLakeFormationInstanceResponse.class)
+                .withName("CreateLakeFormationInstance")
+                .withUri("/v1/{project_id}/instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateInstanceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateInstanceRequestBody.class),
+            f -> f.withMarshaller(CreateLakeFormationInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateLakeFormationInstanceResponse::getXRequestId,
+                CreateLakeFormationInstanceResponse::setXRequestId));
         return builder.build();
     }
 
@@ -2070,13 +2149,6 @@ public class LakeFormationMeta {
             }));
 
         // response
-        builder.<List<PartitionColumnStatistics>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(SetPartitionColumnStatisticsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(PartitionColumnStatistics.class));
 
         return builder.build();
     }
@@ -3194,6 +3266,41 @@ public class LakeFormationMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListConstraintsRequest::getParentTbl, (req, v) -> {
                 req.setParentTbl(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdateLakeFormationInstanceTagsRequest, BatchUpdateLakeFormationInstanceTagsResponse> batchUpdateLakeFormationInstanceTags =
+        genForbatchUpdateLakeFormationInstanceTags();
+
+    private static HttpRequestDef<BatchUpdateLakeFormationInstanceTagsRequest, BatchUpdateLakeFormationInstanceTagsResponse> genForbatchUpdateLakeFormationInstanceTags() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateLakeFormationInstanceTagsRequest, BatchUpdateLakeFormationInstanceTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchUpdateLakeFormationInstanceTagsRequest.class,
+                    BatchUpdateLakeFormationInstanceTagsResponse.class)
+                .withName("BatchUpdateLakeFormationInstanceTags")
+                .withUri("/v1/{project_id}/instances/{instance_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateLakeFormationInstanceTagsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<BatchUpdateTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchUpdateTagsRequestBody.class),
+            f -> f.withMarshaller(BatchUpdateLakeFormationInstanceTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

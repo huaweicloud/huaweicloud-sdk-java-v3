@@ -18,18 +18,16 @@ import java.util.Objects;
 public class StopJobRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_execution_id")
     
-    
-    private String jobExecutionId;
 
+    private String jobExecutionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
-    
+
     private String clusterId;
 
     public StopJobRequest withJobExecutionId(String jobExecutionId) {

@@ -101,18 +101,16 @@ public class ValidateWeakPasswordRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private XLanguageEnum xLanguage;
 
+    private XLanguageEnum xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private WeakPasswordRequestBody body;
 
     public ValidateWeakPasswordRequest withXLanguage(XLanguageEnum xLanguage) {

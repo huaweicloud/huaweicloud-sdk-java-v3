@@ -20,11 +20,10 @@ import java.util.Objects;
 public class AddDatabasePermissionResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public AddDatabasePermissionResponse withJobId(String jobId) {

@@ -21,25 +21,22 @@ import java.util.Objects;
 public class ListGraphMetadatasResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorMessage")
     
-    
-    private String errorMessage;
 
+    private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorCode")
     
-    
-    private String errorCode;
 
+    private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="gesMetadata")
     
-    
+
     private GesMetaData gesMetadata;
 
     public ListGraphMetadatasResponse withErrorMessage(String errorMessage) {

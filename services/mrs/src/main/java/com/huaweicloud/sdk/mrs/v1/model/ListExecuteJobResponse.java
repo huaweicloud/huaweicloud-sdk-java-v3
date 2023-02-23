@@ -23,17 +23,14 @@ import java.util.Objects;
 public class ListExecuteJobResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="totalRecord")
     
-    
-    private Integer totalRecord;
 
+    private Integer totalRecord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_executions")
-    
     
     private List<JobExeResult> jobExecutions = null;
     

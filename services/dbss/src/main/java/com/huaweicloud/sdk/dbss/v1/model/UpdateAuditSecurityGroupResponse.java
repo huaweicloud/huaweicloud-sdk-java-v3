@@ -20,11 +20,10 @@ import java.util.Objects;
 public class UpdateAuditSecurityGroupResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    
+
     private String result;
 
     public UpdateAuditSecurityGroupResponse withResult(String result) {

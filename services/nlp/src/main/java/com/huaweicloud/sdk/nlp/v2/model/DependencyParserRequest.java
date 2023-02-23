@@ -21,11 +21,10 @@ import java.util.Objects;
 public class DependencyParserRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text")
     
-    
+
     private String text;
     /**
      * 支持的文本语言类型，目前只支持中文，默认为zh。 
@@ -100,11 +99,10 @@ public class DependencyParserRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lang")
     
-    
+
     private LangEnum lang;
 
     public DependencyParserRequest withText(String text) {

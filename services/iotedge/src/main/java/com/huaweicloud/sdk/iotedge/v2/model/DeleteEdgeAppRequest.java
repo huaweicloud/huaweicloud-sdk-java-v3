@@ -18,11 +18,10 @@ import java.util.Objects;
 public class DeleteEdgeAppRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
-    
+
     private String edgeAppId;
 
     public DeleteEdgeAppRequest withEdgeAppId(String edgeAppId) {

@@ -18,11 +18,10 @@ import java.util.Objects;
 public class CreateBackupRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_id")
     
-    
+
     private String graphId;
 
     public CreateBackupRequest withGraphId(String graphId) {

@@ -17,88 +17,76 @@ import java.util.Objects;
 public class JobBean  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
-    private String jobId;
 
+    private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_type")
     
-    
-    private String jobType;
 
+    private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server_id")
     
-    
-    private String serverId;
 
+    private String serverId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server_name")
     
-    
-    private String serverName;
 
+    private String serverName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="begin_time")
     
-    
-    private Long beginTime;
 
+    private Long beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    
-    private Long endTime;
 
+    private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_mode")
     
-    
-    private String chargeMode;
 
+    private String chargeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
-    
-    private String errorCode;
 
+    private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fail_reason")
     
-    
-    private String failReason;
 
+    private String failReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ha_id")
     
-    
-    private String haId;
 
+    private String haId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ha_name")
     
-    
+
     private String haName;
 
     public JobBean withJobId(String jobId) {

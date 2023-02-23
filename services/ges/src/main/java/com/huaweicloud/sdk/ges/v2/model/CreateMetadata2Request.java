@@ -19,11 +19,10 @@ import java.util.Objects;
 public class CreateMetadata2Request  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private CreateMetadataReq body;
 
     public CreateMetadata2Request withBody(CreateMetadataReq body) {

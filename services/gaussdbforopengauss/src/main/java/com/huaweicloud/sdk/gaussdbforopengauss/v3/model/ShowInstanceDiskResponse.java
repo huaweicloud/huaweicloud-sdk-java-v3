@@ -20,18 +20,16 @@ import java.util.Objects;
 public class ShowInstanceDiskResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="used")
     
-    
-    private String used;
 
+    private String used;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
-    
+
     private String total;
 
     public ShowInstanceDiskResponse withUsed(String used) {

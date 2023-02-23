@@ -20,17 +20,14 @@ import java.util.Objects;
 public class Nodes  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="components")
-    
     
     private List<Components> components = null;
     

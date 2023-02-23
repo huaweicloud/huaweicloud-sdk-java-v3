@@ -19,17 +19,14 @@ import java.util.Objects;
 public class DeleteNodeSqlFilterRule  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sql_type")
     
-    
-    private String sqlType;
 
+    private String sqlType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="patterns")
-    
     
     private List<String> patterns = null;
     

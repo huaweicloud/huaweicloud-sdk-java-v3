@@ -18,160 +18,159 @@ import com.huaweicloud.sdk.aom.v1.model.RateControl;
 import com.huaweicloud.sdk.aom.v1.model.Step;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Response Object
  */
+@JacksonXmlRootElement(localName = "SearchTemplateByIdResponse")
 public class SearchTemplateByIdResponse extends SdkResponse {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="approve_info")
     
-    
-    private ApproveInfo approveInfo;
+    @JacksonXmlProperty(localName = "approve_info")
 
+    private ApproveInfo approveInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_by")
     
-    
-    private String createBy;
+    @JacksonXmlProperty(localName = "create_by")
 
+    private String createBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    
-    private Long createTime;
+    @JacksonXmlProperty(localName = "create_time")
 
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
-    private String enterpriseProjectId;
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
+    @JacksonXmlProperty(localName = "id")
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_collect")
     
-    
-    private Boolean isCollect;
+    @JacksonXmlProperty(localName = "is_collect")
 
+    private Boolean isCollect;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_publish")
     
-    
-    private Boolean isPublish;
+    @JacksonXmlProperty(localName = "is_publish")
 
+    private Boolean isPublish;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
-    private String jobId;
+    @JacksonXmlProperty(localName = "job_id")
 
+    private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_version")
     
-    
-    private Integer jobVersion;
+    @JacksonXmlProperty(localName = "job_version")
 
+    private Integer jobVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
+    @JacksonXmlProperty(localName = "name")
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="need_synchronize")
     
-    
-    private Boolean needSynchronize;
+    @JacksonXmlProperty(localName = "need_synchronize")
 
+    private Boolean needSynchronize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
-    
+    @JacksonXmlProperty(localName = "nodes")
     private List<Node> nodes = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
-    
+    @JacksonXmlProperty(localName = "parameters")
     private List<Parameter> parameters = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project_id")
     
-    
-    private String projectId;
+    @JacksonXmlProperty(localName = "project_id")
 
+    private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quote")
     
-    
+    @JacksonXmlProperty(localName = "quote")
     private List<String> quote = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rate_control")
     
-    
-    private RateControl rateControl;
+    @JacksonXmlProperty(localName = "rate_control")
 
+    private RateControl rateControl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="share_type")
     
-    
-    private String shareType;
+    @JacksonXmlProperty(localName = "share_type")
 
+    private String shareType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="steps")
     
-    
+    @JacksonXmlProperty(localName = "steps")
     private List<Step> steps = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_by")
     
-    
-    private String updateBy;
+    @JacksonXmlProperty(localName = "update_by")
 
+    private String updateBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    
-    private Long updateTime;
+    @JacksonXmlProperty(localName = "update_time")
 
+    private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    
+    @JacksonXmlProperty(localName = "version")
+
     private String version;
 
     public SearchTemplateByIdResponse withApproveInfo(ApproveInfo approveInfo) {

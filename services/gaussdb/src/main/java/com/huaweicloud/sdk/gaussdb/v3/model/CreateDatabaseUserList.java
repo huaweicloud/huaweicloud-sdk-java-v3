@@ -20,31 +20,25 @@ import java.util.Objects;
 public class CreateDatabaseUserList  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password")
     
-    
-    private String password;
 
+    private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hosts")
     
-    
     private List<String> hosts = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="databases")
-    
     
     private List<CreateDatabaseList> databases = null;
     

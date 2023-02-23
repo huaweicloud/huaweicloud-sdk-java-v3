@@ -20,11 +20,10 @@ import java.util.Objects;
 public class ExportGraph2Response extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public ExportGraph2Response withJobId(String jobId) {

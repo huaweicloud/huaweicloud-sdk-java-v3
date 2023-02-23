@@ -17,25 +17,22 @@ import java.util.Objects;
 public class ListQuotasRespQuotasResources  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="available")
     
-    
-    private Integer available;
 
+    private Integer available;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_volume")
     
-    
+
     private Integer edgeVolume;
 
     public ListQuotasRespQuotasResources withType(String type) {

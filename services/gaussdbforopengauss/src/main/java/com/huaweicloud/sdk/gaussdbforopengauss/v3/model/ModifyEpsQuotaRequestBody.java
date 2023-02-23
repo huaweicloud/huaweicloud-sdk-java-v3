@@ -20,10 +20,8 @@ import java.util.Objects;
 public class ModifyEpsQuotaRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eps_quotas")
-    
     
     private List<EpsQuotasOption> epsQuotas = null;
     

@@ -17,18 +17,16 @@ import java.util.Objects;
 public class RelatedIntention  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="intention")
     
-    
-    private String intention;
 
+    private String intention;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confidence")
     
-    
+
     private Double confidence;
 
     public RelatedIntention withIntention(String intention) {

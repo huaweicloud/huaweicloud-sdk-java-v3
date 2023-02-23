@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ShowGaussMySqlProxyFlavorsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="proxy_flavor_groups")
-    
     
     private List<MysqlProxyFlavorGroups> proxyFlavorGroups = null;
     

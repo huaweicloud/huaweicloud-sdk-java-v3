@@ -17,18 +17,16 @@ import java.util.Objects;
 public class DedicatedStorageInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec_code")
     
-    
-    private String specCode;
 
+    private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host_num")
     
-    
+
     private Integer hostNum;
 
     public DedicatedStorageInfo withSpecCode(String specCode) {

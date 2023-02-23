@@ -13,111 +13,112 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 自动化运维工作流工作流元数据。
  */
+@JacksonXmlRootElement(localName = "WorkflowRequestBody")
 public class WorkflowRequestBody  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
+    @JacksonXmlProperty(localName = "name")
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
+    @JacksonXmlProperty(localName = "type")
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
+    @JacksonXmlProperty(localName = "description")
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    
-    private Object tags;
+    @JacksonXmlProperty(localName = "tags")
 
+    private Object tags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_name")
     
-    
-    private String templateName;
+    @JacksonXmlProperty(localName = "template_name")
 
+    private String templateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_id")
     
-    
-    private String templateId;
+    @JacksonXmlProperty(localName = "template_id")
 
+    private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    
+    @JacksonXmlProperty(localName = "input")
     private Map<String, Object> input = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quote")
     
-    
+    @JacksonXmlProperty(localName = "quote")
     private List<String> quote = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger")
     
-    
-    private Trigger trigger;
+    @JacksonXmlProperty(localName = "trigger")
 
+    private Trigger trigger;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_name")
     
-    
-    private String jobName;
+    @JacksonXmlProperty(localName = "job_name")
 
+    private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
-    private String jobId;
+    @JacksonXmlProperty(localName = "job_id")
 
+    private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="service_scenario")
     
-    
-    private String serviceScenario;
+    @JacksonXmlProperty(localName = "service_scenario")
 
+    private String serviceScenario;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="service_name")
     
-    
-    private String serviceName;
+    @JacksonXmlProperty(localName = "service_name")
 
+    private String serviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_type")
     
-    
+    @JacksonXmlProperty(localName = "task_type")
+
     private String taskType;
 
     public WorkflowRequestBody withName(String name) {

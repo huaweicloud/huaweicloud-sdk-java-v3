@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunKeywordExtractRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private KeywordExtractReq body;
 
     public RunKeywordExtractRequest withBody(KeywordExtractReq body) {

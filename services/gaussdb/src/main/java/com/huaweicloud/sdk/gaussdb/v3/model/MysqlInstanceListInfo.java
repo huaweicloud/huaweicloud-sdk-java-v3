@@ -25,171 +25,144 @@ import java.util.Objects;
 public class MysqlInstanceListInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="private_ips")
     
-    
     private List<String> privateIps = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ips")
     
-    
     private List<String> publicIps = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    
-    private String port;
 
+    private String port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="region")
     
-    
-    private String region;
 
+    private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    
-    private MysqlDatastoreWithKernelVersion datastore;
 
+    private MysqlDatastoreWithKernelVersion datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
-    
-    private String created;
 
+    private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
-    
-    private String updated;
 
+    private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db_user_name")
     
-    
-    private String dbUserName;
 
+    private String dbUserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
-    
-    private String vpcId;
 
+    private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
-    
-    private String subnetId;
 
+    private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_id")
     
-    
-    private String securityGroupId;
 
+    private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
-    
-    private String flavorRef;
 
+    private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_info")
     
-    
-    private MysqlFlavorInfo flavorInfo;
 
+    private MysqlFlavorInfo flavorInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
-    
-    private MysqlVolumeInfo volume;
 
+    private MysqlVolumeInfo volume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_strategy")
     
-    
-    private MysqlBackupStrategy backupStrategy;
 
+    private MysqlBackupStrategy backupStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
-    private String enterpriseProjectId;
 
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_zone")
     
-    
-    private String timeZone;
 
+    private String timeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_info")
     
-    
-    private MysqlChargeInfo chargeInfo;
 
+    private MysqlChargeInfo chargeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dedicated_resource_id")
     
-    
-    private String dedicatedResourceId;
 
+    private String dedicatedResourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
-    
     
     private List<InstanceTagItem> tags = null;
     

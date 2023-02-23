@@ -18,25 +18,22 @@ import java.util.Objects;
 public class UpdateEdgeModuleReqDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_version")
     
-    
-    private String appVersion;
 
+    private String appVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="module_name")
     
-    
-    private String moduleName;
 
+    private String moduleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_settings")
     
-    
+
     private ContainerSettingsReqDTO containerSettings;
 
     public UpdateEdgeModuleReqDTO withAppVersion(String appVersion) {

@@ -17,11 +17,10 @@ import java.util.Objects;
 public class SwitchSSLRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ssl_option")
     
-    
+
     private Boolean sslOption;
 
     public SwitchSSLRequest withSslOption(Boolean sslOption) {

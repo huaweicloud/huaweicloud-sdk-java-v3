@@ -20,18 +20,16 @@ import java.util.Objects;
 public class AddInstanceTagsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_name")
     
-    
+
     private String instanceName;
 
     public AddInstanceTagsResponse withInstanceId(String instanceId) {

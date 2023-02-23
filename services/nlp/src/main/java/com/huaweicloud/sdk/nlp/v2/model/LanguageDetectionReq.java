@@ -17,11 +17,10 @@ import java.util.Objects;
 public class LanguageDetectionReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text")
     
-    
+
     private String text;
 
     public LanguageDetectionReq withText(String text) {

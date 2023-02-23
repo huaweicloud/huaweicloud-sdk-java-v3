@@ -11,27 +11,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 任务节点形状信息。
  */
+@JacksonXmlRootElement(localName = "Metadata")
 public class Metadata  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
+    @JacksonXmlProperty(localName = "type")
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration")
     
-    
+    @JacksonXmlProperty(localName = "configuration")
     private Map<String, Object> _configuration = null;
     
     public Metadata withType(String type) {

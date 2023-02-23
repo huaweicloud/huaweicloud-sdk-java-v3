@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ShowAutoScalingPolicyResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
-    
     
     private List<AutoScalingPolicyV2> body = null;
     

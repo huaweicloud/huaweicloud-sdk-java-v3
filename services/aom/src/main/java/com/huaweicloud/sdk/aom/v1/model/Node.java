@@ -9,69 +9,72 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v1.model.Metadata;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 任务节点定义。
  */
+@JacksonXmlRootElement(localName = "Node")
 public class Node  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parent_node")
     
-    
-    private String parentNode;
+    @JacksonXmlProperty(localName = "parent_node")
 
+    private String parentNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="category")
     
-    
-    private String category;
+    @JacksonXmlProperty(localName = "category")
 
+    private String category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
+    @JacksonXmlProperty(localName = "description")
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
+    @JacksonXmlProperty(localName = "id")
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ignore_error")
     
-    
-    private Boolean ignoreError;
+    @JacksonXmlProperty(localName = "ignore_error")
 
+    private Boolean ignoreError;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    
-    private Metadata metadata;
+    @JacksonXmlProperty(localName = "metadata")
 
+    private Metadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
+    @JacksonXmlProperty(localName = "name")
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_name")
     
-    
+    @JacksonXmlProperty(localName = "task_name")
+
     private String taskName;
 
     public Node withParentNode(String parentNode) {

@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ListScenes2Response extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="results")
-    
     
     private List<ListScenesRespResults> results = null;
     

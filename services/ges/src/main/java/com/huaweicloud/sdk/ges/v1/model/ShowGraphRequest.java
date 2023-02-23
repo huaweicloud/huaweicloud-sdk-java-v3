@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ShowGraphRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_id")
     
-    
+
     private String graphId;
 
     public ShowGraphRequest withGraphId(String graphId) {

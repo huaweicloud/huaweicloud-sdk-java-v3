@@ -18,67 +18,58 @@ import java.util.Objects;
 public class NodeGroupV11  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_name")
     
-    
-    private String groupName;
 
+    private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_num")
     
-    
-    private Integer nodeNum;
 
+    private Integer nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_size")
     
-    
-    private String nodeSize;
 
+    private String nodeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="root_volume_size")
     
-    
-    private String rootVolumeSize;
 
+    private String rootVolumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="root_volume_type")
     
-    
-    private String rootVolumeType;
 
+    private String rootVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_type")
     
-    
-    private String dataVolumeType;
 
+    private String dataVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_count")
     
-    
-    private Integer dataVolumeCount;
 
+    private Integer dataVolumeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_size")
     
-    
-    private Integer dataVolumeSize;
 
+    private Integer dataVolumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_scaling_policy")
     
-    
+
     private AutoScalingPolicy autoScalingPolicy;
 
     public NodeGroupV11 withGroupName(String groupName) {

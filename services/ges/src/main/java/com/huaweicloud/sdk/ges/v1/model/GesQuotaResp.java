@@ -20,10 +20,8 @@ import java.util.Objects;
 public class GesQuotaResp  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
-    
     
     private List<Quota> resources = null;
     

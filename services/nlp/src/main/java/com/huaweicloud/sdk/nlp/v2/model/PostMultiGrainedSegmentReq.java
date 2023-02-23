@@ -23,11 +23,10 @@ import java.util.Objects;
 public class PostMultiGrainedSegmentReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text")
     
-    
+
     private String text;
     /**
      * 支持的文本语言类型，目前只支持中文，默认为zh。
@@ -102,11 +101,10 @@ public class PostMultiGrainedSegmentReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lang")
     
-    
+
     private LangEnum lang;
     /**
      * 分词粒度，1为最细粒度，2为最粗粒度，其它情况默认返回全部粒度分词树结果。
@@ -193,11 +191,10 @@ public class PostMultiGrainedSegmentReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="granularity")
     
-    
+
     private GranularityEnum granularity;
 
     public PostMultiGrainedSegmentReq withText(String text) {

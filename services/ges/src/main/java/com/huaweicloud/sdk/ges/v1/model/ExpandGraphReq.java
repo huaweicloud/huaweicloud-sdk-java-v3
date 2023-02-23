@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ExpandGraphReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="expand")
     
-    
+
     private ReplicationReq expand;
 
     public ExpandGraphReq withExpand(ReplicationReq expand) {

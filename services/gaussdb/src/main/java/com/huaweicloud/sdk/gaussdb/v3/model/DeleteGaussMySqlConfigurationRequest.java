@@ -18,18 +18,16 @@ import java.util.Objects;
 public class DeleteGaussMySqlConfigurationRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration_id")
     
-    
+
     private String configurationId;
 
     public DeleteGaussMySqlConfigurationRequest withXLanguage(String xLanguage) {

@@ -17,123 +17,106 @@ import java.util.Objects;
 public class Backup  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backupMethod")
     
-    
-    private String backupMethod;
 
+    private String backupMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graphId")
     
-    
-    private String graphId;
 
+    private String graphId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graphName")
     
-    
-    private String graphName;
 
+    private String graphName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graphStatus")
     
-    
-    private String graphStatus;
 
+    private String graphStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graphSizeTypeIndex")
     
-    
-    private String graphSizeTypeIndex;
 
+    private String graphSizeTypeIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dataStoreVersion")
     
-    
-    private String dataStoreVersion;
 
+    private String dataStoreVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
-    
-    private String arch;
 
+    private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="startTimestamp")
     
-    
-    private Long startTimestamp;
 
+    private Long startTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="startTime")
     
-    
-    private String startTime;
 
+    private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endTimestamp")
     
-    
-    private Long endTimestamp;
 
+    private Long endTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endTime")
     
-    
-    private String endTime;
 
+    private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    
-    private Long size;
 
+    private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="duration")
     
-    
-    private Long duration;
 
+    private Long duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encrypted")
     
-    
+
     private Boolean encrypted;
 
     public Backup withId(String id) {

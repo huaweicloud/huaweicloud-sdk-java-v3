@@ -10,27 +10,30 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.QuerySampleParam;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
+@JacksonXmlRootElement(localName = "ListSampleRequest")
 public class ListSampleRequest  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fill_value")
     
-    
-    private String fillValue;
+    @JacksonXmlProperty(localName = "fill_value")
 
+    private String fillValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+    @JacksonXmlProperty(localName = "body")
+
     private QuerySampleParam body;
 
     public ListSampleRequest withFillValue(String fillValue) {

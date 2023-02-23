@@ -45,32 +45,28 @@ import java.util.Objects;
 public class CreateClusterReqV11  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_version")
     
-    
-    private String clusterVersion;
 
+    private String clusterVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_name")
     
-    
-    private String clusterName;
 
+    private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_node_num")
     
-    
-    private Integer masterNodeNum;
 
+    private Integer masterNodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="core_node_num")
     
-    
+
     private Integer coreNodeNum;
     /**
      * 集群的计费模式。  12：表示按需计费。接口调用仅支持创建按需计费集群。
@@ -145,95 +141,80 @@ public class CreateClusterReqV11  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="billing_type")
     
-    
-    private BillingTypeEnum billingType;
 
+    private BillingTypeEnum billingType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_center")
     
-    
-    private String dataCenter;
 
+    private String dataCenter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc")
     
-    
-    private String vpc;
 
+    private String vpc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_node_size")
     
-    
-    private String masterNodeSize;
 
+    private String masterNodeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="core_node_size")
     
-    
-    private String coreNodeSize;
 
+    private String coreNodeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="component_list")
     
-    
     private List<ComponentAmbV11> componentList = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="available_zone_id")
     
-    
-    private String availableZoneId;
 
+    private String availableZoneId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
-    
-    private String vpcId;
 
+    private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
-    
-    private String subnetId;
 
+    private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_name")
     
-    
-    private String subnetName;
 
+    private String subnetName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_groups_id")
     
-    
-    private String securityGroupsId;
 
+    private String securityGroupsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="add_jobs")
     
-    
     private List<AddJobsReqV11> addJobs = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_size")
     
-    
+
     private Integer volumeSize;
     /**
      * Master和Core节点的磁盘存储类别，目前支持SATA、SAS、SSD和GPSSD。磁盘参数可以使用volume_type和volume_size表示，也可以使用多磁盘相关的参数表示。volume_type和volume_size这两个参数如果与多磁盘参数同时出现，系统优先读取volume_type和volume_size参数。建议使用多磁盘参数。 - SATA：普通IO - SAS：高IO - SSD：超高IO - GPSSD：通用型SSD
@@ -326,11 +307,10 @@ public class CreateClusterReqV11  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_type")
     
-    
+
     private VolumeTypeEnum volumeType;
     /**
      * 该参数为多磁盘参数，表示Master节点数据磁盘存储类别，目前支持SATA、SAS、SSD和GPSSD。
@@ -423,18 +403,16 @@ public class CreateClusterReqV11  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_data_volume_type")
     
-    
-    private MasterDataVolumeTypeEnum masterDataVolumeType;
 
+    private MasterDataVolumeTypeEnum masterDataVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_data_volume_size")
     
-    
+
     private Integer masterDataVolumeSize;
     /**
      * 该参数为多磁盘参数，表示Master节点数据磁盘个数。取值只能是1。
@@ -509,11 +487,10 @@ public class CreateClusterReqV11  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_data_volume_count")
     
-    
+
     private MasterDataVolumeCountEnum masterDataVolumeCount;
     /**
      * 该参数为多磁盘参数，表示Core节点数据磁盘存储类别，目前支持SATA、SAS、SSD和GPSSD。
@@ -606,60 +583,50 @@ public class CreateClusterReqV11  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="core_data_volume_type")
     
-    
-    private CoreDataVolumeTypeEnum coreDataVolumeType;
 
+    private CoreDataVolumeTypeEnum coreDataVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="core_data_volume_size")
     
-    
-    private Integer coreDataVolumeSize;
 
+    private Integer coreDataVolumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="core_data_volume_count")
     
-    
-    private Integer coreDataVolumeCount;
 
+    private Integer coreDataVolumeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_node_groups")
     
-    
     private List<TaskNodeGroup> taskNodeGroups = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bootstrap_scripts")
     
-    
     private List<BootstrapScript> bootstrapScripts = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_public_cert_name")
     
-    
-    private String nodePublicCertName;
 
+    private String nodePublicCertName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_admin_secret")
     
-    
-    private String clusterAdminSecret;
 
+    private String clusterAdminSecret;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_master_secret")
     
-    
+
     private String clusterMasterSecret;
     /**
      * MRS集群运行模式。 - 0：普通集群，表示Kerberos认证关闭，用户可使用集群提供的所有功能。 - 1：安全集群，表示Kerberos认证开启，普通用户无权限使用MRS集群的“文件管理”和“作业管理”功能，并且无法查看Hadoop、Spark的作业记录以及集群资源使用情况。如果需要使用集群更多功能，需要找MRS Manager的管理员分配权限。
@@ -740,11 +707,10 @@ public class CreateClusterReqV11  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="safe_mode")
     
-    
+
     private SafeModeEnum safeMode;
     /**
      * 集群类型。  默认值为0：分析集群。  说明：暂不支持通过接口方式创建混合集群。  枚举值： - 0：分析集群 - 1：流式集群
@@ -825,11 +791,10 @@ public class CreateClusterReqV11  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_type")
     
-    
+
     private ClusterTypeEnum clusterType;
     /**
      * 集群创建失败时，是否收集失败日志。  默认设置为1，将创建OBS桶仅用于MRS集群创建失败时的日志收集。  枚举值： - 0：不收集 - 1：收集
@@ -910,24 +875,20 @@ public class CreateClusterReqV11  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="log_collection")
     
-    
-    private LogCollectionEnum logCollection;
 
+    private LogCollectionEnum logCollection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
-    private String enterpriseProjectId;
 
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
-    
     
     private List<Tag> tags = null;
         /**
@@ -1009,17 +970,14 @@ public class CreateClusterReqV11  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="login_mode")
     
-    
-    private LoginModeEnum loginMode;
 
+    private LoginModeEnum loginMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_groups")
-    
     
     private List<NodeGroupV11> nodeGroups = null;
     

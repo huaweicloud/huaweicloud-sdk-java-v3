@@ -23,10 +23,8 @@ import java.util.Objects;
 public class PostSentenceEmbeddingReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sentences")
-    
     
     private List<String> sentences = null;
         /**
@@ -102,11 +100,10 @@ public class PostSentenceEmbeddingReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    
+
     private DomainEnum domain;
 
     public PostSentenceEmbeddingReq withSentences(List<String> sentences) {

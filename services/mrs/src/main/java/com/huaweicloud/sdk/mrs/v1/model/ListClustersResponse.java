@@ -23,17 +23,14 @@ import java.util.Objects;
 public class ListClustersResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterTotal")
     
-    
-    private Integer clusterTotal;
 
+    private Integer clusterTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusters")
-    
     
     private List<Cluster> clusters = null;
     

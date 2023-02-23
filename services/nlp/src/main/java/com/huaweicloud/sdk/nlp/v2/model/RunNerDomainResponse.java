@@ -23,25 +23,21 @@ import java.util.Objects;
 public class RunNerDomainResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="named_entities")
     
-    
     private List<DomainNamedEntity> namedEntities = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
-    
-    private String errorCode;
 
+    private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_msg")
     
-    
+
     private String errorMsg;
 
     public RunNerDomainResponse withNamedEntities(List<DomainNamedEntity> namedEntities) {

@@ -18,32 +18,28 @@ import java.util.Objects;
 public class ListIaConfigsRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    
-    private String nodeId;
 
+    private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ia_id")
     
-    
-    private String iaId;
 
+    private String iaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private Integer offset;
 
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
+
     private Integer limit;
 
     public ListIaConfigsRequest withNodeId(String nodeId) {

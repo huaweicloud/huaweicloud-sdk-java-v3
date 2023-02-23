@@ -17,11 +17,10 @@ import java.util.Objects;
 public class MysqlResizeFlavor  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec_code")
     
-    
+
     private String specCode;
 
     public MysqlResizeFlavor withSpecCode(String specCode) {

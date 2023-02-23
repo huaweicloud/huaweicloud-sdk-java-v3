@@ -17,11 +17,10 @@ import java.util.Objects;
 public class VarsURIPrimitiveTypeHolder  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vars_uri")
     
-    
+
     private String varsUri;
 
     public VarsURIPrimitiveTypeHolder withVarsUri(String varsUri) {

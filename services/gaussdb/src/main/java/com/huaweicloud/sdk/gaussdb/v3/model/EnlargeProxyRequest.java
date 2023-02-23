@@ -17,18 +17,16 @@ import java.util.Objects;
 public class EnlargeProxyRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_num")
     
-    
-    private Integer nodeNum;
 
+    private Integer nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="proxy_id")
     
-    
+
     private String proxyId;
 
     public EnlargeProxyRequest withNodeNum(Integer nodeNum) {

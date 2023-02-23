@@ -20,10 +20,8 @@ import java.util.Objects;
 public class DeleteSqlFilterRuleReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sql_filter_rules")
-    
     
     private List<DeleteNodeSqlFilterRuleInfo> sqlFilterRules = null;
     

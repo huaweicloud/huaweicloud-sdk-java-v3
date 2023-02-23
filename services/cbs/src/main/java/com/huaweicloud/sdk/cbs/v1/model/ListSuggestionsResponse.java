@@ -22,10 +22,8 @@ import java.util.Objects;
 public class ListSuggestionsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="questions")
-    
     
     private List<String> questions = null;
     

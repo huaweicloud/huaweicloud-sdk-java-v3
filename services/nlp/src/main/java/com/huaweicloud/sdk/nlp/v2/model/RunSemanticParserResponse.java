@@ -21,25 +21,22 @@ import java.util.Objects;
 public class RunSemanticParserResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    
-    private IntentResult result;
 
+    private IntentResult result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
-    
-    private String errorCode;
 
+    private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_msg")
     
-    
+
     private String errorMsg;
 
     public RunSemanticParserResponse withResult(IntentResult result) {

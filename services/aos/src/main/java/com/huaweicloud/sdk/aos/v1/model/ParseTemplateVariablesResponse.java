@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ParseTemplateVariablesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="variables")
-    
     
     private List<VariableResponse> variables = null;
     

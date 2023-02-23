@@ -12,34 +12,37 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * smn主题相关信息
  */
+@JacksonXmlRootElement(localName = "SmnTopics")
 public class SmnTopics  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="display_name")
     
-    
-    private String displayName;
+    @JacksonXmlProperty(localName = "display_name")
 
+    private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
+    @JacksonXmlProperty(localName = "name")
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="push_policy")
     
-    
+    @JacksonXmlProperty(localName = "push_policy")
+
     private Integer pushPolicy;
     /**
      * topic中订阅者的状态。0:主题已删除或主题下订阅列表为空。1:主题下的订阅列表存在状态为“已订阅”的订阅信息。2:主题下的订阅信息状态处于“未订阅”或“已取消”。
@@ -126,18 +129,18 @@ public class SmnTopics  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private StatusEnum status;
+    @JacksonXmlProperty(localName = "status")
 
+    private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="topic_urn")
     
-    
+    @JacksonXmlProperty(localName = "topic_urn")
+
     private String topicUrn;
 
     public SmnTopics withDisplayName(String displayName) {

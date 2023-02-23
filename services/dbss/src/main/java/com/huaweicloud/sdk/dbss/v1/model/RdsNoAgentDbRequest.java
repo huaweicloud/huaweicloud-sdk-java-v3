@@ -20,18 +20,15 @@ import java.util.Objects;
 public class RdsNoAgentDbRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="databases")
     
-    
     private List<RdsNoAgentDbRequestDatabases> databases = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Integer totalCount;
 
     public RdsNoAgentDbRequest withDatabases(List<RdsNoAgentDbRequestDatabases> databases) {

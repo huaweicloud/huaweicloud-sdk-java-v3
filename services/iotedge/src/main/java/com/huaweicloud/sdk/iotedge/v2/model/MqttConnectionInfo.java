@@ -17,60 +17,52 @@ import java.util.Objects;
 public class MqttConnectionInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server_address")
     
-    
-    private String serverAddress;
 
+    private String serverAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="client_id")
     
-    
-    private String clientId;
 
+    private String clientId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_type")
     
-    
-    private String authType;
 
+    private String authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="private_key")
     
-    
-    private String privateKey;
 
+    private String privateKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="certificate")
     
-    
-    private String certificate;
 
+    private String certificate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_name")
     
-    
-    private String userName;
 
+    private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password")
     
-    
-    private String password;
 
+    private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qos")
     
-    
+
     private Integer qos;
 
     public MqttConnectionInfo withServerAddress(String serverAddress) {

@@ -20,11 +20,10 @@ import java.util.Objects;
 public class CreateClusterResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
-    
+
     private String clusterId;
 
     public CreateClusterResponse withClusterId(String clusterId) {

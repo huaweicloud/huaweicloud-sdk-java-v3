@@ -17,11 +17,10 @@ import java.util.Objects;
 public class OpenGaussCoordinators  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_code")
     
-    
+
     private String azCode;
 
     public OpenGaussCoordinators withAzCode(String azCode) {

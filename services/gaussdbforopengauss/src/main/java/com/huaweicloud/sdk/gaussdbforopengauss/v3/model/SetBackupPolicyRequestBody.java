@@ -18,11 +18,10 @@ import java.util.Objects;
 public class SetBackupPolicyRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_policy")
     
-    
+
     private BackupPolicy backupPolicy;
 
     public SetBackupPolicyRequestBody withBackupPolicy(BackupPolicy backupPolicy) {

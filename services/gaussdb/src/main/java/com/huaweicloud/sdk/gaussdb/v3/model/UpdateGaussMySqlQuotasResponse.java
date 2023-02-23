@@ -23,10 +23,8 @@ import java.util.Objects;
 public class UpdateGaussMySqlQuotasResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quota_list")
-    
     
     private List<SetQuota> quotaList = null;
     

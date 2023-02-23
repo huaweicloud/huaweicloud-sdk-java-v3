@@ -17,207 +17,178 @@ import java.util.Objects;
 public class AuditInstanceListBean  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_model")
     
-    
-    private String chargeModel;
 
+    private String chargeModel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="comment")
     
-    
-    private String comment;
 
+    private String comment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="config_num")
     
-    
-    private Integer configNum;
 
+    private Integer configNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="connect_ip")
     
-    
-    private String connectIp;
 
+    private String connectIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="connect_ipv6")
     
-    
-    private String connectIpv6;
 
+    private String connectIpv6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cpu")
     
-    
-    private Integer cpu;
 
+    private Integer cpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
-    
-    private String created;
 
+    private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="database_limit")
     
-    
-    private Integer databaseLimit;
 
+    private Integer databaseLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="effect")
     
-    
-    private Integer effect;
 
+    private Integer effect;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="expired")
     
-    
-    private String expired;
 
+    private String expired;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="keep_days")
     
-    
-    private String keepDays;
 
+    private String keepDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="new_version")
     
-    
-    private String newVersion;
 
+    private String newVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port_id")
     
-    
-    private String portId;
 
+    private String portId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram")
     
-    
-    private Integer ram;
 
+    private Integer ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="region")
     
-    
-    private String region;
 
+    private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="remain_days")
     
-    
-    private String remainDays;
 
+    private String remainDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_id")
     
-    
-    private String resourceId;
 
+    private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_spec_code")
     
-    
-    private String resourceSpecCode;
 
+    private String resourceSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scene")
     
-    
-    private String scene;
 
+    private String scene;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_id")
     
-    
-    private String securityGroupId;
 
+    private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="specification")
     
-    
-    private String specification;
 
+    private String specification;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
-    
-    private String subnetId;
 
+    private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task")
     
-    
-    private String task;
 
+    private String task;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    
-    private String version;
 
+    private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
-    
-    private String vpcId;
 
+    private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="zone")
     
-    
+
     private String zone;
 
     public AuditInstanceListBean withChargeModel(String chargeModel) {

@@ -22,11 +22,10 @@ import java.util.Objects;
 public class ShowProjectQuotasRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
+
     private String xLanguage;
     /**
      * '功能说明：根据type过滤查询指定类型的配额' 取值范围：instance
@@ -101,11 +100,10 @@ public class ShowProjectQuotasRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
+
     private TypeEnum type;
 
     public ShowProjectQuotasRequest withXLanguage(String xLanguage) {

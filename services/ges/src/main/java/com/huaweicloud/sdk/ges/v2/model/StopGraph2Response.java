@@ -20,11 +20,10 @@ import java.util.Objects;
 public class StopGraph2Response extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public StopGraph2Response withJobId(String jobId) {

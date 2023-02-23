@@ -18,32 +18,28 @@ import java.util.Objects;
 public class UploadFromObsReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata_path")
     
-    
-    private String metadataPath;
 
+    private String metadataPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encryption")
     
-    
+
     private UploadFromObsReqEncryption encryption;
 
     public UploadFromObsReq withMetadataPath(String metadataPath) {

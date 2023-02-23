@@ -17,18 +17,16 @@ import java.util.Objects;
 public class HistorySlotWord  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="word")
     
-    
-    private String word;
 
+    private String word;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="norm_word")
     
-    
+
     private String normWord;
 
     public HistorySlotWord withWord(String word) {

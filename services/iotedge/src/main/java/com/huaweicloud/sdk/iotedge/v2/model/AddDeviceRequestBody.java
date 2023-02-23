@@ -18,67 +18,58 @@ import java.util.Objects;
 public class AddDeviceRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    
-    private String nodeId;
 
+    private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_name")
     
-    
-    private String deviceName;
 
+    private String deviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_id")
     
-    
-    private String productId;
 
+    private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_info")
     
-    
-    private EdgeDeviceAuthInfo authInfo;
 
+    private EdgeDeviceAuthInfo authInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="gateway_id")
     
-    
-    private String gatewayId;
 
+    private String gatewayId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="space_id")
     
-    
-    private String spaceId;
 
+    private String spaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extension_info")
     
-    
-    private Object extensionInfo;
 
+    private Object extensionInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="config")
     
-    
+
     private Object config;
 
     public AddDeviceRequestBody withNodeId(String nodeId) {

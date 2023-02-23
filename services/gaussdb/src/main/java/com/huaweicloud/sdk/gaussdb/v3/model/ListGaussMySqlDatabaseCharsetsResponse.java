@@ -22,10 +22,8 @@ import java.util.Objects;
 public class ListGaussMySqlDatabaseCharsetsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charsets")
-    
     
     private List<String> charsets = null;
     

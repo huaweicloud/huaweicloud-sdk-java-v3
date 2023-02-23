@@ -21,11 +21,10 @@ import java.util.Objects;
 public class ShowProjectQuotasResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quotas")
     
-    
+
     private ProjectQuotasResult quotas;
 
     public ShowProjectQuotasResponse withQuotas(ProjectQuotasResult quotas) {

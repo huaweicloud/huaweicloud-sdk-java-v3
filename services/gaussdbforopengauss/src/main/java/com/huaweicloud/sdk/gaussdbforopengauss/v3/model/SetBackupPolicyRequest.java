@@ -101,25 +101,22 @@ public class SetBackupPolicyRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private XLanguageEnum xLanguage;
 
+    private XLanguageEnum xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private SetBackupPolicyRequestBody body;
 
     public SetBackupPolicyRequest withXLanguage(XLanguageEnum xLanguage) {

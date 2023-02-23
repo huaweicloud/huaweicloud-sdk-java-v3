@@ -17,18 +17,16 @@ import java.util.Objects;
 public class RouterRespDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="route_id")
     
-    
-    private String routeId;
 
+    private String routeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sql")
     
-    
+
     private String sql;
 
     public RouterRespDTO withRouteId(String routeId) {

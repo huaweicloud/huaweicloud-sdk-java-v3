@@ -20,10 +20,8 @@ import java.util.Objects;
 public class ContainerConfigsReqDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_port_list")
-    
     
     private List<ContainerPortDTO> containerPortList = null;
     

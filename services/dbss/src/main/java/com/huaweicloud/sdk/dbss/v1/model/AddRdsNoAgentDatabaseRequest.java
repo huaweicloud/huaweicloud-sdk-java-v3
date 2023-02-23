@@ -19,18 +19,16 @@ import java.util.Objects;
 public class AddRdsNoAgentDatabaseRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private RdsNoAgentDbRequest body;
 
     public AddRdsNoAgentDatabaseRequest withInstanceId(String instanceId) {

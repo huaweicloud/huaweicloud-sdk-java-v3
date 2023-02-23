@@ -21,60 +21,50 @@ import java.util.Objects;
 public class Flavor  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus")
     
-    
-    private String vcpus;
 
+    private String vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram")
     
-    
-    private String ram;
 
+    private String ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec_code")
     
-    
-    private String specCode;
 
+    private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone")
     
-    
     private List<String> availabilityZone = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_status")
     
-    
     private Map<String, String> azStatus = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    
-    private String version;
 
+    private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_type")
     
-    
+
     private String groupType;
 
     public Flavor withVcpus(String vcpus) {

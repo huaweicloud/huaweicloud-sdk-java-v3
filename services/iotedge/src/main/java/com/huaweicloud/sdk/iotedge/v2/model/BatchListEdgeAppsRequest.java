@@ -24,25 +24,22 @@ import java.util.Objects;
 public class BatchListEdgeAppsRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
-    
-    private String edgeAppId;
 
+    private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private Integer offset;
 
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
+
     private Integer limit;
     /**
      * 应用id搜索关键字
@@ -129,11 +126,10 @@ public class BatchListEdgeAppsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_type")
     
-    
+
     private AppTypeEnum appType;
     /**
      * 功能类型
@@ -238,11 +234,10 @@ public class BatchListEdgeAppsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="function_type")
     
-    
+
     private FunctionTypeEnum functionType;
 
     public BatchListEdgeAppsRequest withEdgeAppId(String edgeAppId) {

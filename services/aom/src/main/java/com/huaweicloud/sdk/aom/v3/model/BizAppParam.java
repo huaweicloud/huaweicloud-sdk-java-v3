@@ -12,41 +12,44 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * BizAppParam
  */
+@JacksonXmlRootElement(localName = "BizAppParam")
 public class BizAppParam  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
+    @JacksonXmlProperty(localName = "description")
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="display_name")
     
-    
-    private String displayName;
+    @JacksonXmlProperty(localName = "display_name")
 
+    private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eps_id")
     
-    
-    private String epsId;
+    @JacksonXmlProperty(localName = "eps_id")
 
+    private String epsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
     /**
      * 前端默认是CONSOLE，不需要传参。rest接口无参数是API，有参数只能是：SERVICE_DISCOVERY
@@ -127,11 +130,11 @@ public class BizAppParam  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_type")
     
-    
+    @JacksonXmlProperty(localName = "register_type")
+
     private RegisterTypeEnum registerType;
 
     public BizAppParam withDescription(String description) {

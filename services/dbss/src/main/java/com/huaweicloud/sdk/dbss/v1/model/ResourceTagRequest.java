@@ -20,17 +20,13 @@ import java.util.Objects;
 public class ResourceTagRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    
     private List<KeyValueBean> tags = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sys_tags")
-    
     
     private List<KeyValueBean> sysTags = null;
     

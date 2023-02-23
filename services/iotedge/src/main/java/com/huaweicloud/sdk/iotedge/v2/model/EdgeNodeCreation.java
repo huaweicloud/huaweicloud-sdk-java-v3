@@ -24,151 +24,127 @@ import java.util.Objects;
 public class EdgeNodeCreation  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
     
-    
-    private String edgeNodeId;
 
+    private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="verify_code")
     
-    
-    private String verifyCode;
 
+    private String verifyCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_out")
     
-    
-    private Integer timeOut;
 
+    private Integer timeOut;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
-    
-    private String arch;
 
+    private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os_type")
     
-    
-    private String osType;
 
+    private String osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="space_id")
     
-    
-    private String spaceId;
 
+    private String spaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_ids")
     
-    
     private List<String> resourceIds = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_level")
     
-    
-    private String securityLevel;
 
+    private String securityLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="reliability_level")
     
-    
-    private String reliabilityLevel;
 
+    private String reliabilityLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="storage_period")
     
-    
-    private Integer storagePeriod;
 
+    private Integer storagePeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ai_card_type")
     
-    
-    private String aiCardType;
 
+    private String aiCardType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="base_path")
     
-    
-    private BasePathDTO basePath;
 
+    private BasePathDTO basePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="log_configs")
     
-    
     private List<LogConfigDTO> logConfigs = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apps")
     
-    
     private List<EdgeAppInstanceDTO> apps = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="network_access_point")
     
-    
-    private String networkAccessPoint;
 
+    private String networkAccessPoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hardware_model")
     
-    
-    private String hardwareModel;
 
+    private String hardwareModel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offline_cache_configs")
     
-    
-    private OfflineCacheConfigsDTO offlineCacheConfigs;
 
+    private OfflineCacheConfigsDTO offlineCacheConfigs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_auth_info")
     
-    
+
     private DeviceAuthInfoDTO deviceAuthInfo;
 
     public EdgeNodeCreation withEdgeNodeId(String edgeNodeId) {

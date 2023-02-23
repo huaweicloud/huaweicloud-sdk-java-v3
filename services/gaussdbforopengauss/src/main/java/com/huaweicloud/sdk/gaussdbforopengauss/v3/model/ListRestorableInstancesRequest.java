@@ -18,46 +18,40 @@ import java.util.Objects;
 public class ListRestorableInstancesRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_instance_id")
     
-    
-    private String sourceInstanceId;
 
+    private String sourceInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_id")
     
-    
-    private String backupId;
 
+    private String backupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="restore_time")
     
-    
-    private String restoreTime;
 
+    private String restoreTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private Integer offset;
 
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
+
     private Integer limit;
 
     public ListRestorableInstancesRequest withXLanguage(String xLanguage) {

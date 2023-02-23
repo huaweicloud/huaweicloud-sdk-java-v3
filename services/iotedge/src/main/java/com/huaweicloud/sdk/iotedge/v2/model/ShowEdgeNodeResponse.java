@@ -28,214 +28,179 @@ import java.util.Objects;
 public class ShowEdgeNodeResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="log_configs")
     
-    
     private List<LogConfigDTO> logConfigs = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ha_config")
     
-    
-    private HaConfigDTO haConfig;
 
+    private HaConfigDTO haConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
     
-    
-    private String edgeNodeId;
 
+    private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_id")
     
-    
-    private String productId;
 
+    private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_name")
     
-    
-    private String productName;
 
+    private String productName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="space_id")
     
-    
-    private String spaceId;
 
+    private String spaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_spec_types")
     
-    
     private List<String> resourceSpecTypes = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_ids")
     
-    
     private List<String> resourceIds = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ips")
     
-    
     private List<String> ips = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state")
     
-    
-    private String state;
 
+    private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="software_version")
     
-    
-    private String softwareVersion;
 
+    private String softwareVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    
-    private String createTime;
 
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    
-    private String updateTime;
 
+    private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os_name")
     
-    
-    private String osName;
 
+    private String osName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
-    
-    private String arch;
 
+    private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host_name")
     
-    
-    private String hostName;
 
+    private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nics")
     
-    
     private List<Nic> nics = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="specification")
     
-    
-    private String specification;
 
+    private String specification;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ai_card_type")
     
-    
-    private String aiCardType;
 
+    private String aiCardType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_version")
     
-    
-    private String containerVersion;
 
+    private String containerVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_level")
     
-    
-    private String securityLevel;
 
+    private String securityLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="reliability_level")
     
-    
-    private String reliabilityLevel;
 
+    private String reliabilityLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="storage_period")
     
-    
-    private Integer storagePeriod;
 
+    private Integer storagePeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="base_path")
     
-    
-    private BasePathDTO basePath;
 
+    private BasePathDTO basePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hardware_model")
     
-    
-    private String hardwareModel;
 
+    private String hardwareModel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offline_cache_configs")
     
-    
-    private OfflineCacheConfigsDTO offlineCacheConfigs;
 
+    private OfflineCacheConfigsDTO offlineCacheConfigs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_auth_info")
     
-    
+
     private DeviceAuthInfoDisplayDTO deviceAuthInfo;
 
     public ShowEdgeNodeResponse withLogConfigs(List<LogConfigDTO> logConfigs) {

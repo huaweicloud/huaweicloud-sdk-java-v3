@@ -23,11 +23,10 @@ import java.util.Objects;
 public class PostDomainNerRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text")
     
-    
+
     private String text;
     /**
      * 支持的文本语言类型，目前只支持中文，默认为zh。
@@ -102,11 +101,10 @@ public class PostDomainNerRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lang")
     
-    
+
     private LangEnum lang;
     /**
      * 支持的领域类型，目前支持通用（general）领域、商务（business）领域、娱乐（entertainment）领域，默认为general。
@@ -193,11 +191,10 @@ public class PostDomainNerRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    
+
     private DomainEnum domain;
 
     public PostDomainNerRequest withText(String text) {

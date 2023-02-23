@@ -8,34 +8,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * RateControl
  */
+@JacksonXmlRootElement(localName = "RateControl")
 public class RateControl  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="have_rate_control")
     
-    
-    private Boolean haveRateControl;
+    @JacksonXmlProperty(localName = "have_rate_control")
 
+    private Boolean haveRateControl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_delay")
     
-    
-    private Integer timeDelay;
+    @JacksonXmlProperty(localName = "time_delay")
 
+    private Integer timeDelay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max")
     
-    
+    @JacksonXmlProperty(localName = "max")
+
     private Integer max;
 
     public RateControl withHaveRateControl(Boolean haveRateControl) {

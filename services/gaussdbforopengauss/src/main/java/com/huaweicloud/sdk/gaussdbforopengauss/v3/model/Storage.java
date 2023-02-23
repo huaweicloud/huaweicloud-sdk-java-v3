@@ -21,24 +21,19 @@ import java.util.Objects;
 public class Storage  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_status")
     
-    
     private Map<String, String> azStatus = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="support_compute_group_type")
-    
     
     private List<String> supportComputeGroupType = null;
     

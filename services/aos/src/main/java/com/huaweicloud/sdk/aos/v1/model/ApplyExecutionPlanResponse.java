@@ -20,11 +20,10 @@ import java.util.Objects;
 public class ApplyExecutionPlanResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deployment_id")
     
-    
+
     private String deploymentId;
 
     public ApplyExecutionPlanResponse withDeploymentId(String deploymentId) {

@@ -101,18 +101,16 @@ public class ListConfigurationsDiffRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private XLanguageEnum xLanguage;
 
+    private XLanguageEnum xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private ParamGroupDiffRequestBody body;
 
     public ListConfigurationsDiffRequest withXLanguage(XLanguageEnum xLanguage) {

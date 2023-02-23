@@ -20,11 +20,10 @@ import java.util.Objects;
 public class CreateGaussMySqlDatabaseResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public CreateGaussMySqlDatabaseResponse withJobId(String jobId) {

@@ -21,18 +21,16 @@ import java.util.Objects;
 public class CreateRestoreInstanceResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance")
     
-    
-    private CreateInstanceRespItem instance;
 
+    private CreateInstanceRespItem instance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public CreateRestoreInstanceResponse withInstance(CreateInstanceRespItem instance) {

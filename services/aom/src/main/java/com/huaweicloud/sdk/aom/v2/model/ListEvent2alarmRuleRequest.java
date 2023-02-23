@@ -5,12 +5,15 @@ package com.huaweicloud.sdk.aom.v2.model;
 
 
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
+@JacksonXmlRootElement(localName = "ListEvent2alarmRuleRequest")
 public class ListEvent2alarmRuleRequest  {
 
 

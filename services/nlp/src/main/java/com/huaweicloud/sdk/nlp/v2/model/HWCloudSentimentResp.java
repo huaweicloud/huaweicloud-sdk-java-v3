@@ -17,25 +17,22 @@ import java.util.Objects;
 public class HWCloudSentimentResp  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="label")
     
-    
-    private Integer label;
 
+    private Integer label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confidence")
     
-    
-    private Float confidence;
 
+    private Float confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
-    
+
     private String content;
 
     public HWCloudSentimentResp withLabel(Integer label) {

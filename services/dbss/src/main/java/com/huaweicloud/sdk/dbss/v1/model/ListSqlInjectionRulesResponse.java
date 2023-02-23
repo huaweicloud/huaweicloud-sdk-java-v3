@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListSqlInjectionRulesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rules")
     
-    
     private List<SqlRuleResponseRules> rules = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
-    
+
     private Integer total;
 
     public ListSqlInjectionRulesResponse withRules(List<SqlRuleResponseRules> rules) {

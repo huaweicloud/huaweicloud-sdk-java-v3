@@ -18,11 +18,10 @@ import java.util.Objects;
 public class MysqlUpdateBackupPolicyRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_policy")
     
-    
+
     private MysqlBackupPolicy backupPolicy;
 
     public MysqlUpdateBackupPolicyRequest withBackupPolicy(MysqlBackupPolicy backupPolicy) {

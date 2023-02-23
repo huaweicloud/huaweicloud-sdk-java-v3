@@ -17,25 +17,22 @@ import java.util.Objects;
 public class Quota  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="available")
     
-    
-    private Integer available;
 
+    private Integer available;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgeVolume")
     
-    
+
     private Integer edgeVolume;
 
     public Quota withType(String type) {

@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ListAuditInstanceJobsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobs")
-    
     
     private List<JobBean> jobs = null;
     

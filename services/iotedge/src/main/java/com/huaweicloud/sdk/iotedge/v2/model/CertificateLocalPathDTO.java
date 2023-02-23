@@ -17,18 +17,16 @@ import java.util.Objects;
 public class CertificateLocalPathDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cert_path")
     
-    
-    private String certPath;
 
+    private String certPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key_path")
     
-    
+
     private String keyPath;
 
     public CertificateLocalPathDTO withCertPath(String certPath) {

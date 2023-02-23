@@ -24,25 +24,22 @@ import java.util.Objects;
 public class BatchListModulesRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
     
-    
-    private String edgeNodeId;
 
+    private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private Integer offset;
 
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
+
     private Integer limit;
     /**
      * 应用类型
@@ -129,11 +126,10 @@ public class BatchListModulesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_type")
     
-    
+
     private AppTypeEnum appType;
     /**
      * 功能类型
@@ -220,11 +216,10 @@ public class BatchListModulesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="function_type")
     
-    
+
     private FunctionTypeEnum functionType;
 
     public BatchListModulesRequest withEdgeNodeId(String edgeNodeId) {

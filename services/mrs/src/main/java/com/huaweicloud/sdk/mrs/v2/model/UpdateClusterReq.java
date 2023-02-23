@@ -17,11 +17,10 @@ import java.util.Objects;
 public class UpdateClusterReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_name")
     
-    
+
     private String clusterName;
 
     public UpdateClusterReq withClusterName(String clusterName) {

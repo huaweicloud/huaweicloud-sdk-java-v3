@@ -13,6 +13,522 @@ import java.util.Map;
 @SuppressWarnings("unchecked")
 public class RmsMeta {
 
+    public static final HttpRequestDef<CreateAggregationAuthorizationRequest, CreateAggregationAuthorizationResponse> createAggregationAuthorization =
+        genForcreateAggregationAuthorization();
+
+    private static HttpRequestDef<CreateAggregationAuthorizationRequest, CreateAggregationAuthorizationResponse> genForcreateAggregationAuthorization() {
+        // basic
+        HttpRequestDef.Builder<CreateAggregationAuthorizationRequest, CreateAggregationAuthorizationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    CreateAggregationAuthorizationRequest.class,
+                    CreateAggregationAuthorizationResponse.class)
+                .withName("CreateAggregationAuthorization")
+                .withUri("/v1/resource-manager/domains/{domain_id}/aggregators/aggregation-authorization")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AggregationAuthorizationRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AggregationAuthorizationRequest.class),
+            f -> f.withMarshaller(CreateAggregationAuthorizationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateConfigurationAggregatorRequest, CreateConfigurationAggregatorResponse> createConfigurationAggregator =
+        genForcreateConfigurationAggregator();
+
+    private static HttpRequestDef<CreateConfigurationAggregatorRequest, CreateConfigurationAggregatorResponse> genForcreateConfigurationAggregator() {
+        // basic
+        HttpRequestDef.Builder<CreateConfigurationAggregatorRequest, CreateConfigurationAggregatorResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    CreateConfigurationAggregatorRequest.class,
+                    CreateConfigurationAggregatorResponse.class)
+                .withName("CreateConfigurationAggregator")
+                .withUri("/v1/resource-manager/domains/{domain_id}/aggregators")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ConfigurationAggregatorRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ConfigurationAggregatorRequest.class),
+            f -> f.withMarshaller(CreateConfigurationAggregatorRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAggregationAuthorizationRequest, DeleteAggregationAuthorizationResponse> deleteAggregationAuthorization =
+        genFordeleteAggregationAuthorization();
+
+    private static HttpRequestDef<DeleteAggregationAuthorizationRequest, DeleteAggregationAuthorizationResponse> genFordeleteAggregationAuthorization() {
+        // basic
+        HttpRequestDef.Builder<DeleteAggregationAuthorizationRequest, DeleteAggregationAuthorizationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteAggregationAuthorizationRequest.class,
+                    DeleteAggregationAuthorizationResponse.class)
+                .withName("DeleteAggregationAuthorization")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/aggregators/aggregation-authorization/{authorized_account_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("authorized_account_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAggregationAuthorizationRequest::getAuthorizedAccountId, (req, v) -> {
+                req.setAuthorizedAccountId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteConfigurationAggregatorRequest, DeleteConfigurationAggregatorResponse> deleteConfigurationAggregator =
+        genFordeleteConfigurationAggregator();
+
+    private static HttpRequestDef<DeleteConfigurationAggregatorRequest, DeleteConfigurationAggregatorResponse> genFordeleteConfigurationAggregator() {
+        // basic
+        HttpRequestDef.Builder<DeleteConfigurationAggregatorRequest, DeleteConfigurationAggregatorResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteConfigurationAggregatorRequest.class,
+                    DeleteConfigurationAggregatorResponse.class)
+                .withName("DeleteConfigurationAggregator")
+                .withUri("/v1/resource-manager/domains/{domain_id}/aggregators/{aggregator_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("aggregator_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConfigurationAggregatorRequest::getAggregatorId, (req, v) -> {
+                req.setAggregatorId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePendingAggregationRequestRequest, DeletePendingAggregationRequestResponse> deletePendingAggregationRequest =
+        genFordeletePendingAggregationRequest();
+
+    private static HttpRequestDef<DeletePendingAggregationRequestRequest, DeletePendingAggregationRequestResponse> genFordeletePendingAggregationRequest() {
+        // basic
+        HttpRequestDef.Builder<DeletePendingAggregationRequestRequest, DeletePendingAggregationRequestResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeletePendingAggregationRequestRequest.class,
+                    DeletePendingAggregationRequestResponse.class)
+                .withName("DeletePendingAggregationRequest")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/aggregators/pending-aggregation-request/{requester_account_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("requester_account_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePendingAggregationRequestRequest::getRequesterAccountId, (req, v) -> {
+                req.setRequesterAccountId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAggregateDiscoveredResourcesRequest, ListAggregateDiscoveredResourcesResponse> listAggregateDiscoveredResources =
+        genForlistAggregateDiscoveredResources();
+
+    private static HttpRequestDef<ListAggregateDiscoveredResourcesRequest, ListAggregateDiscoveredResourcesResponse> genForlistAggregateDiscoveredResources() {
+        // basic
+        HttpRequestDef.Builder<ListAggregateDiscoveredResourcesRequest, ListAggregateDiscoveredResourcesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListAggregateDiscoveredResourcesRequest.class,
+                    ListAggregateDiscoveredResourcesResponse.class)
+                .withName("ListAggregateDiscoveredResources")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/aggregators/aggregate-data/aggregate-discovered-resources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAggregateDiscoveredResourcesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAggregateDiscoveredResourcesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<AggregateDiscoveredResourcesRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AggregateDiscoveredResourcesRequest.class),
+            f -> f.withMarshaller(ListAggregateDiscoveredResourcesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAggregationAuthorizationsRequest, ListAggregationAuthorizationsResponse> listAggregationAuthorizations =
+        genForlistAggregationAuthorizations();
+
+    private static HttpRequestDef<ListAggregationAuthorizationsRequest, ListAggregationAuthorizationsResponse> genForlistAggregationAuthorizations() {
+        // basic
+        HttpRequestDef.Builder<ListAggregationAuthorizationsRequest, ListAggregationAuthorizationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAggregationAuthorizationsRequest.class,
+                    ListAggregationAuthorizationsResponse.class)
+                .withName("ListAggregationAuthorizations")
+                .withUri("/v1/resource-manager/domains/{domain_id}/aggregators/aggregation-authorization")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("account_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAggregationAuthorizationsRequest::getAccountId, (req, v) -> {
+                req.setAccountId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAggregationAuthorizationsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAggregationAuthorizationsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConfigurationAggregatorsRequest, ListConfigurationAggregatorsResponse> listConfigurationAggregators =
+        genForlistConfigurationAggregators();
+
+    private static HttpRequestDef<ListConfigurationAggregatorsRequest, ListConfigurationAggregatorsResponse> genForlistConfigurationAggregators() {
+        // basic
+        HttpRequestDef.Builder<ListConfigurationAggregatorsRequest, ListConfigurationAggregatorsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListConfigurationAggregatorsRequest.class,
+                    ListConfigurationAggregatorsResponse.class)
+                .withName("ListConfigurationAggregators")
+                .withUri("/v1/resource-manager/domains/{domain_id}/aggregators")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("aggregator_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigurationAggregatorsRequest::getAggregatorName, (req, v) -> {
+                req.setAggregatorName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConfigurationAggregatorsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigurationAggregatorsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPendingAggregationRequestsRequest, ListPendingAggregationRequestsResponse> listPendingAggregationRequests =
+        genForlistPendingAggregationRequests();
+
+    private static HttpRequestDef<ListPendingAggregationRequestsRequest, ListPendingAggregationRequestsResponse> genForlistPendingAggregationRequests() {
+        // basic
+        HttpRequestDef.Builder<ListPendingAggregationRequestsRequest, ListPendingAggregationRequestsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListPendingAggregationRequestsRequest.class,
+                    ListPendingAggregationRequestsResponse.class)
+                .withName("ListPendingAggregationRequests")
+                .withUri("/v1/resource-manager/domains/{domain_id}/aggregators/pending-aggregation-request")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("account_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPendingAggregationRequestsRequest::getAccountId, (req, v) -> {
+                req.setAccountId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPendingAggregationRequestsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPendingAggregationRequestsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RunAggregateResourceQueryRequest, RunAggregateResourceQueryResponse> runAggregateResourceQuery =
+        genForrunAggregateResourceQuery();
+
+    private static HttpRequestDef<RunAggregateResourceQueryRequest, RunAggregateResourceQueryResponse> genForrunAggregateResourceQuery() {
+        // basic
+        HttpRequestDef.Builder<RunAggregateResourceQueryRequest, RunAggregateResourceQueryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RunAggregateResourceQueryRequest.class,
+                    RunAggregateResourceQueryResponse.class)
+                .withName("RunAggregateResourceQuery")
+                .withUri("/v1/resource-manager/domains/{domain_id}/aggregators/{aggregator_id}/run-query")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("aggregator_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunAggregateResourceQueryRequest::getAggregatorId, (req, v) -> {
+                req.setAggregatorId(v);
+            }));
+        builder.<QueryRunRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(QueryRunRequestBody.class),
+            f -> f.withMarshaller(RunAggregateResourceQueryRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAggregateDiscoveredResourceCountsRequest, ShowAggregateDiscoveredResourceCountsResponse> showAggregateDiscoveredResourceCounts =
+        genForshowAggregateDiscoveredResourceCounts();
+
+    private static HttpRequestDef<ShowAggregateDiscoveredResourceCountsRequest, ShowAggregateDiscoveredResourceCountsResponse> genForshowAggregateDiscoveredResourceCounts() {
+        // basic
+        HttpRequestDef.Builder<ShowAggregateDiscoveredResourceCountsRequest, ShowAggregateDiscoveredResourceCountsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowAggregateDiscoveredResourceCountsRequest.class,
+                    ShowAggregateDiscoveredResourceCountsResponse.class)
+                .withName("ShowAggregateDiscoveredResourceCounts")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/aggregators/aggregate-data/aggregate-discovered-resource-counts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AggregateDiscoveredResourceCountsRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AggregateDiscoveredResourceCountsRequest.class),
+            f -> f.withMarshaller(ShowAggregateDiscoveredResourceCountsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAggregateResourceConfigRequest, ShowAggregateResourceConfigResponse> showAggregateResourceConfig =
+        genForshowAggregateResourceConfig();
+
+    private static HttpRequestDef<ShowAggregateResourceConfigRequest, ShowAggregateResourceConfigResponse> genForshowAggregateResourceConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowAggregateResourceConfigRequest, ShowAggregateResourceConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowAggregateResourceConfigRequest.class,
+                    ShowAggregateResourceConfigResponse.class)
+                .withName("ShowAggregateResourceConfig")
+                .withUri("/v1/resource-manager/domains/{domain_id}/aggregators/aggregate-resource-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AggregateResourceConfigRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AggregateResourceConfigRequest.class),
+            f -> f.withMarshaller(ShowAggregateResourceConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowConfigurationAggregatorRequest, ShowConfigurationAggregatorResponse> showConfigurationAggregator =
+        genForshowConfigurationAggregator();
+
+    private static HttpRequestDef<ShowConfigurationAggregatorRequest, ShowConfigurationAggregatorResponse> genForshowConfigurationAggregator() {
+        // basic
+        HttpRequestDef.Builder<ShowConfigurationAggregatorRequest, ShowConfigurationAggregatorResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowConfigurationAggregatorRequest.class,
+                    ShowConfigurationAggregatorResponse.class)
+                .withName("ShowConfigurationAggregator")
+                .withUri("/v1/resource-manager/domains/{domain_id}/aggregators/{aggregator_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("aggregator_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConfigurationAggregatorRequest::getAggregatorId, (req, v) -> {
+                req.setAggregatorId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowConfigurationAggregatorSourcesStatusRequest, ShowConfigurationAggregatorSourcesStatusResponse> showConfigurationAggregatorSourcesStatus =
+        genForshowConfigurationAggregatorSourcesStatus();
+
+    private static HttpRequestDef<ShowConfigurationAggregatorSourcesStatusRequest, ShowConfigurationAggregatorSourcesStatusResponse> genForshowConfigurationAggregatorSourcesStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowConfigurationAggregatorSourcesStatusRequest, ShowConfigurationAggregatorSourcesStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowConfigurationAggregatorSourcesStatusRequest.class,
+                    ShowConfigurationAggregatorSourcesStatusResponse.class)
+                .withName("ShowConfigurationAggregatorSourcesStatus")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/aggregators/{aggregator_id}/aggregator-sources-status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("aggregator_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConfigurationAggregatorSourcesStatusRequest::getAggregatorId, (req, v) -> {
+                req.setAggregatorId(v);
+            }));
+        builder.<ShowConfigurationAggregatorSourcesStatusRequest.UpdateStatusEnum>withRequestField("update_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowConfigurationAggregatorSourcesStatusRequest.UpdateStatusEnum.class),
+            f -> f.withMarshaller(ShowConfigurationAggregatorSourcesStatusRequest::getUpdateStatus, (req, v) -> {
+                req.setUpdateStatus(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowConfigurationAggregatorSourcesStatusRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConfigurationAggregatorSourcesStatusRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateConfigurationAggregatorRequest, UpdateConfigurationAggregatorResponse> updateConfigurationAggregator =
+        genForupdateConfigurationAggregator();
+
+    private static HttpRequestDef<UpdateConfigurationAggregatorRequest, UpdateConfigurationAggregatorResponse> genForupdateConfigurationAggregator() {
+        // basic
+        HttpRequestDef.Builder<UpdateConfigurationAggregatorRequest, UpdateConfigurationAggregatorResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateConfigurationAggregatorRequest.class,
+                    UpdateConfigurationAggregatorResponse.class)
+                .withName("UpdateConfigurationAggregator")
+                .withUri("/v1/resource-manager/domains/{domain_id}/aggregators/{aggregator_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("aggregator_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateConfigurationAggregatorRequest::getAggregatorId, (req, v) -> {
+                req.setAggregatorId(v);
+            }));
+        builder.<ConfigurationAggregatorRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ConfigurationAggregatorRequest.class),
+            f -> f.withMarshaller(UpdateConfigurationAggregatorRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowResourceHistoryRequest, ShowResourceHistoryResponse> showResourceHistory =
         genForshowResourceHistory();
 
@@ -73,6 +589,41 @@ public class RmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateOrganizationPolicyAssignmentRequest, CreateOrganizationPolicyAssignmentResponse> createOrganizationPolicyAssignment =
+        genForcreateOrganizationPolicyAssignment();
+
+    private static HttpRequestDef<CreateOrganizationPolicyAssignmentRequest, CreateOrganizationPolicyAssignmentResponse> genForcreateOrganizationPolicyAssignment() {
+        // basic
+        HttpRequestDef.Builder<CreateOrganizationPolicyAssignmentRequest, CreateOrganizationPolicyAssignmentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    CreateOrganizationPolicyAssignmentRequest.class,
+                    CreateOrganizationPolicyAssignmentResponse.class)
+                .withName("CreateOrganizationPolicyAssignment")
+                .withUri("/v1/resource-manager/organizations/{organization_id}/policy-assignments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("organization_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateOrganizationPolicyAssignmentRequest::getOrganizationId, (req, v) -> {
+                req.setOrganizationId(v);
+            }));
+        builder.<OrganizationPolicyAssignmentRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OrganizationPolicyAssignmentRequest.class),
+            f -> f.withMarshaller(CreateOrganizationPolicyAssignmentRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePolicyAssignmentsRequest, CreatePolicyAssignmentsResponse> createPolicyAssignments =
         genForcreatePolicyAssignments();
 
@@ -92,6 +643,43 @@ public class RmsMeta {
             f -> f.withMarshaller(CreatePolicyAssignmentsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteOrganizationPolicyAssignmentRequest, DeleteOrganizationPolicyAssignmentResponse> deleteOrganizationPolicyAssignment =
+        genFordeleteOrganizationPolicyAssignment();
+
+    private static HttpRequestDef<DeleteOrganizationPolicyAssignmentRequest, DeleteOrganizationPolicyAssignmentResponse> genFordeleteOrganizationPolicyAssignment() {
+        // basic
+        HttpRequestDef.Builder<DeleteOrganizationPolicyAssignmentRequest, DeleteOrganizationPolicyAssignmentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteOrganizationPolicyAssignmentRequest.class,
+                    DeleteOrganizationPolicyAssignmentResponse.class)
+                .withName("DeleteOrganizationPolicyAssignment")
+                .withUri(
+                    "/v1/resource-manager/organizations/{organization_id}/policy-assignments/{organization_policy_assignment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("organization_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOrganizationPolicyAssignmentRequest::getOrganizationId, (req, v) -> {
+                req.setOrganizationId(v);
+            }));
+        builder.<String>withRequestField("organization_policy_assignment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOrganizationPolicyAssignmentRequest::getOrganizationPolicyAssignmentId,
+                (req, v) -> {
+                    req.setOrganizationPolicyAssignmentId(v);
+                }));
 
         // response
 
@@ -194,6 +782,56 @@ public class RmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBuiltInPolicyDefinitionsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOrganizationPolicyAssignmentsRequest, ListOrganizationPolicyAssignmentsResponse> listOrganizationPolicyAssignments =
+        genForlistOrganizationPolicyAssignments();
+
+    private static HttpRequestDef<ListOrganizationPolicyAssignmentsRequest, ListOrganizationPolicyAssignmentsResponse> genForlistOrganizationPolicyAssignments() {
+        // basic
+        HttpRequestDef.Builder<ListOrganizationPolicyAssignmentsRequest, ListOrganizationPolicyAssignmentsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListOrganizationPolicyAssignmentsRequest.class,
+                    ListOrganizationPolicyAssignmentsResponse.class)
+                .withName("ListOrganizationPolicyAssignments")
+                .withUri("/v1/resource-manager/organizations/{organization_id}/policy-assignments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("organization_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrganizationPolicyAssignmentsRequest::getOrganizationId, (req, v) -> {
+                req.setOrganizationId(v);
+            }));
+        builder.<String>withRequestField("organization_policy_assignment_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrganizationPolicyAssignmentsRequest::getOrganizationPolicyAssignmentName,
+                (req, v) -> {
+                    req.setOrganizationPolicyAssignmentName(v);
+                }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOrganizationPolicyAssignmentsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrganizationPolicyAssignmentsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
             }));
 
         // response
@@ -474,6 +1112,152 @@ public class RmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEvaluationStateByAssignmentIdRequest::getPolicyAssignmentId, (req, v) -> {
                 req.setPolicyAssignmentId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOrganizationPolicyAssignmentRequest, ShowOrganizationPolicyAssignmentResponse> showOrganizationPolicyAssignment =
+        genForshowOrganizationPolicyAssignment();
+
+    private static HttpRequestDef<ShowOrganizationPolicyAssignmentRequest, ShowOrganizationPolicyAssignmentResponse> genForshowOrganizationPolicyAssignment() {
+        // basic
+        HttpRequestDef.Builder<ShowOrganizationPolicyAssignmentRequest, ShowOrganizationPolicyAssignmentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowOrganizationPolicyAssignmentRequest.class,
+                    ShowOrganizationPolicyAssignmentResponse.class)
+                .withName("ShowOrganizationPolicyAssignment")
+                .withUri(
+                    "/v1/resource-manager/organizations/{organization_id}/policy-assignments/{organization_policy_assignment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("organization_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentRequest::getOrganizationId, (req, v) -> {
+                req.setOrganizationId(v);
+            }));
+        builder.<String>withRequestField("organization_policy_assignment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentRequest::getOrganizationPolicyAssignmentId,
+                (req, v) -> {
+                    req.setOrganizationPolicyAssignmentId(v);
+                }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOrganizationPolicyAssignmentDetailedStatusRequest, ShowOrganizationPolicyAssignmentDetailedStatusResponse> showOrganizationPolicyAssignmentDetailedStatus =
+        genForshowOrganizationPolicyAssignmentDetailedStatus();
+
+    private static HttpRequestDef<ShowOrganizationPolicyAssignmentDetailedStatusRequest, ShowOrganizationPolicyAssignmentDetailedStatusResponse> genForshowOrganizationPolicyAssignmentDetailedStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowOrganizationPolicyAssignmentDetailedStatusRequest, ShowOrganizationPolicyAssignmentDetailedStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowOrganizationPolicyAssignmentDetailedStatusRequest.class,
+                    ShowOrganizationPolicyAssignmentDetailedStatusResponse.class)
+                .withName("ShowOrganizationPolicyAssignmentDetailedStatus")
+                .withUri("/v1/resource-manager/organizations/{organization_id}/policy-assignment-detailed-status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("organization_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentDetailedStatusRequest::getOrganizationId,
+                (req, v) -> {
+                    req.setOrganizationId(v);
+                }));
+        builder.<String>withRequestField("organization_policy_assignment_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(
+                ShowOrganizationPolicyAssignmentDetailedStatusRequest::getOrganizationPolicyAssignmentName,
+                (req, v) -> {
+                    req.setOrganizationPolicyAssignmentName(v);
+                }));
+        builder.<ShowOrganizationPolicyAssignmentDetailedStatusRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowOrganizationPolicyAssignmentDetailedStatusRequest.StatusEnum.class),
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentDetailedStatusRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentDetailedStatusRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentDetailedStatusRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOrganizationPolicyAssignmentStatusesRequest, ShowOrganizationPolicyAssignmentStatusesResponse> showOrganizationPolicyAssignmentStatuses =
+        genForshowOrganizationPolicyAssignmentStatuses();
+
+    private static HttpRequestDef<ShowOrganizationPolicyAssignmentStatusesRequest, ShowOrganizationPolicyAssignmentStatusesResponse> genForshowOrganizationPolicyAssignmentStatuses() {
+        // basic
+        HttpRequestDef.Builder<ShowOrganizationPolicyAssignmentStatusesRequest, ShowOrganizationPolicyAssignmentStatusesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowOrganizationPolicyAssignmentStatusesRequest.class,
+                    ShowOrganizationPolicyAssignmentStatusesResponse.class)
+                .withName("ShowOrganizationPolicyAssignmentStatuses")
+                .withUri("/v1/resource-manager/organizations/{organization_id}/policy-assignment-statuses")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("organization_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentStatusesRequest::getOrganizationId, (req, v) -> {
+                req.setOrganizationId(v);
+            }));
+        builder.<String>withRequestField("organization_policy_assignment_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentStatusesRequest::getOrganizationPolicyAssignmentName,
+                (req, v) -> {
+                    req.setOrganizationPolicyAssignmentName(v);
+                }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentStatusesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOrganizationPolicyAssignmentStatusesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
             }));
 
         // response
@@ -834,6 +1618,192 @@ public class RmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowResourceRelationsDetailRequest, ShowResourceRelationsDetailResponse> showResourceRelationsDetail =
+        genForshowResourceRelationsDetail();
+
+    private static HttpRequestDef<ShowResourceRelationsDetailRequest, ShowResourceRelationsDetailResponse> genForshowResourceRelationsDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowResourceRelationsDetailRequest, ShowResourceRelationsDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowResourceRelationsDetailRequest.class,
+                    ShowResourceRelationsDetailResponse.class)
+                .withName("ShowResourceRelationsDetail")
+                .withUri("/v1/resource-manager/domains/{domain_id}/all-resources/{resource_id}/relations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceRelationsDetailRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<ShowResourceRelationsDetailRequest.DirectionEnum>withRequestField("direction",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowResourceRelationsDetailRequest.DirectionEnum.class),
+            f -> f.withMarshaller(ShowResourceRelationsDetailRequest::getDirection, (req, v) -> {
+                req.setDirection(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowResourceRelationsDetailRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceRelationsDetailRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CollectAllResourcesSummaryRequest, CollectAllResourcesSummaryResponse> collectAllResourcesSummary =
+        genForcollectAllResourcesSummary();
+
+    private static HttpRequestDef<CollectAllResourcesSummaryRequest, CollectAllResourcesSummaryResponse> genForcollectAllResourcesSummary() {
+        // basic
+        HttpRequestDef.Builder<CollectAllResourcesSummaryRequest, CollectAllResourcesSummaryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    CollectAllResourcesSummaryRequest.class,
+                    CollectAllResourcesSummaryResponse.class)
+                .withName("CollectAllResourcesSummary")
+                .withUri("/v1/resource-manager/domains/{domain_id}/all-resources/summary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<List<String>>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<List<String>>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getRegionId, (req, v) -> {
+                req.setRegionId(v);
+            }));
+        builder.<List<String>>withRequestField("ep_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getEpId, (req, v) -> {
+                req.setEpId(v);
+            }));
+        builder.<List<String>>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<List<String>>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CollectAllResourcesSummaryRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            }));
+
+        // response
+        builder.<List<ResourceSummaryResponseItem>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CollectAllResourcesSummaryResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(ResourceSummaryResponseItem.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountAllResourcesRequest, CountAllResourcesResponse> countAllResources =
+        genForcountAllResources();
+
+    private static HttpRequestDef<CountAllResourcesRequest, CountAllResourcesResponse> genForcountAllResources() {
+        // basic
+        HttpRequestDef.Builder<CountAllResourcesRequest, CountAllResourcesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CountAllResourcesRequest.class, CountAllResourcesResponse.class)
+                .withName("CountAllResources")
+                .withUri("/v1/resource-manager/domains/{domain_id}/all-resources/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountAllResourcesRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountAllResourcesRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<List<String>>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CountAllResourcesRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<List<String>>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CountAllResourcesRequest::getRegionId, (req, v) -> {
+                req.setRegionId(v);
+            }));
+        builder.<List<String>>withRequestField("ep_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CountAllResourcesRequest::getEpId, (req, v) -> {
+                req.setEpId(v);
+            }));
+        builder.<List<String>>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CountAllResourcesRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<List<String>>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CountAllResourcesRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAllResourcesRequest, ListAllResourcesResponse> listAllResources =
         genForlistAllResources();
 
@@ -881,6 +1851,65 @@ public class RmsMeta {
             f -> f.withMarshaller(ListAllResourcesRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
             }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllResourcesRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllResourcesRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<List<String>>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAllResourcesRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllTagsRequest, ListAllTagsResponse> listAllTags = genForlistAllTags();
+
+    private static HttpRequestDef<ListAllTagsRequest, ListAllTagsResponse> genForlistAllTags() {
+        // basic
+        HttpRequestDef.Builder<ListAllTagsRequest, ListAllTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAllTagsRequest.class, ListAllTagsResponse.class)
+                .withName("ListAllTags")
+                .withUri("/v1/resource-manager/domains/{domain_id}/all-resources/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllTagsRequest::getKey, (req, v) -> {
+                req.setKey(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllTagsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllTagsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
 
         // response
 
@@ -912,6 +1941,13 @@ public class RmsMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListProvidersRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+        builder.<ListProvidersRequest.TrackEnum>withRequestField("track",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListProvidersRequest.TrackEnum.class),
+            f -> f.withMarshaller(ListProvidersRequest::getTrack, (req, v) -> {
+                req.setTrack(v);
             }));
         builder.<ListProvidersRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
@@ -1025,6 +2061,31 @@ public class RmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResourceByIdRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowResourceDetailRequest, ShowResourceDetailResponse> showResourceDetail =
+        genForshowResourceDetail();
+
+    private static HttpRequestDef<ShowResourceDetailRequest, ShowResourceDetailResponse> genForshowResourceDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowResourceDetailRequest, ShowResourceDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowResourceDetailRequest.class, ShowResourceDetailResponse.class)
+                .withName("ShowResourceDetail")
+                .withUri("/v1/resource-manager/domains/{domain_id}/all-resources/{resource_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceDetailRequest::getResourceId, (req, v) -> {
                 req.setResourceId(v);
             }));
 

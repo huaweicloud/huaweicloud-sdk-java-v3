@@ -24,11 +24,10 @@ import java.util.Objects;
 public class ListTasksRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
+
     private String xLanguage;
     /**
      * 任务状态。
@@ -115,11 +114,10 @@ public class ListTasksRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
+
     private StatusEnum status;
     /**
      * 任务名称。
@@ -248,39 +246,34 @@ public class ListTasksRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private NameEnum name;
 
+    private NameEnum name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    
-    private String startTime;
 
+    private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    
-    private String endTime;
 
+    private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private Integer offset;
 
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
+
     private Integer limit;
 
     public ListTasksRequest withXLanguage(String xLanguage) {

@@ -21,15 +21,12 @@
 
 package com.huaweicloud.sdk.core.impl;
 
-import static com.huaweicloud.sdk.core.Constants.SDK_EXCHANGE;
-
 import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.HttpListener;
 import com.huaweicloud.sdk.core.exchange.ApiTimer;
 import com.huaweicloud.sdk.core.exchange.SdkExchange;
 import com.huaweicloud.sdk.core.exchange.SdkExchangeCache;
 import com.huaweicloud.sdk.core.http.HttpConfig;
-
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -41,6 +38,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+
+import static com.huaweicloud.sdk.core.Constants.SDK_EXCHANGE;
 
 /**
  * @author HuaweiCloud_SDK

@@ -19,32 +19,28 @@ import java.util.Objects;
 public class ListResourceInstanceByTagRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_type")
     
-    
-    private String resourceType;
 
+    private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
-    private String limit;
 
+    private String limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private String offset;
 
+    private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private ResourceInstanceTagRequest body;
 
     public ListResourceInstanceByTagRequest withResourceType(String resourceType) {

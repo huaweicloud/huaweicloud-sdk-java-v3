@@ -21,25 +21,22 @@ import java.util.Objects;
 public class ShowGraphResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph")
     
-    
-    private Graph1 graph;
 
+    private Graph1 graph;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorMessage")
     
-    
-    private String errorMessage;
 
+    private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorCode")
     
-    
+
     private String errorCode;
 
     public ShowGraphResponse withGraph(Graph1 graph) {

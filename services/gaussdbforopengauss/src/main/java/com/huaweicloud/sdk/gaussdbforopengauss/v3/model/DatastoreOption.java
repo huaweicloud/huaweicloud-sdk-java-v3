@@ -21,11 +21,10 @@ import java.util.Objects;
 public class DatastoreOption  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="engine_version")
     
-    
+
     private String engineVersion;
     /**
      * 部署形态。
@@ -106,11 +105,10 @@ public class DatastoreOption  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_mode")
     
-    
+
     private InstanceModeEnum instanceMode;
 
     public DatastoreOption withEngineVersion(String engineVersion) {

@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ShowGaussMySqlFlavorsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavors")
-    
     
     private List<MysqlFlavorsInfo> flavors = null;
     

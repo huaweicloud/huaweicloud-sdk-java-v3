@@ -20,11 +20,10 @@ import java.util.Objects;
 public class UpdateTransactionSplitStatusResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public UpdateTransactionSplitStatusResponse withJobId(String jobId) {

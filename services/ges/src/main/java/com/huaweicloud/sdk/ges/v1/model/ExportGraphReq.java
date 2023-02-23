@@ -17,32 +17,28 @@ import java.util.Objects;
 public class ExportGraphReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graphExportPath")
     
-    
-    private String graphExportPath;
 
+    private String graphExportPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgeSetName")
     
-    
-    private String edgeSetName;
 
+    private String edgeSetName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexSetName")
     
-    
-    private String vertexSetName;
 
+    private String vertexSetName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schemaName")
     
-    
+
     private String schemaName;
 
     public ExportGraphReq withGraphExportPath(String graphExportPath) {

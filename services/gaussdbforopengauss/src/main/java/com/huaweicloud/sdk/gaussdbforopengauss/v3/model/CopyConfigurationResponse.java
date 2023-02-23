@@ -20,11 +20,10 @@ import java.util.Objects;
 public class CopyConfigurationResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="config_id")
     
-    
+
     private String configId;
 
     public CopyConfigurationResponse withConfigId(String configId) {

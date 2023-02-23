@@ -20,32 +20,27 @@ import java.util.Objects;
 public class IntentResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confidence")
     
-    
-    private Float confidence;
 
+    private Float confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="label")
     
-    
-    private String label;
 
+    private String label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slots")
     
-    
     private List<Slot> slots = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text")
     
-    
+
     private String text;
 
     public IntentResult withConfidence(Float confidence) {

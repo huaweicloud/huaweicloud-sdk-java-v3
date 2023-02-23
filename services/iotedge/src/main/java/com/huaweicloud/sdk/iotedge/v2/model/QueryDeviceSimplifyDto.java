@@ -17,53 +17,46 @@ import java.util.Objects;
 public class QueryDeviceSimplifyDto  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_id")
     
-    
-    private String deviceId;
 
+    private String deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    
-    private String nodeId;
 
+    private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="gateway_id")
     
-    
-    private String gatewayId;
 
+    private String gatewayId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_name")
     
-    
-    private String deviceName;
 
+    private String deviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol_type")
     
-    
-    private String protocolType;
 
+    private String protocolType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_name")
     
-    
-    private String productName;
 
+    private String productName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_id")
     
-    
+
     private String productId;
 
     public QueryDeviceSimplifyDto withDeviceId(String deviceId) {

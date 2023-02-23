@@ -17,25 +17,22 @@ import java.util.Objects;
 public class ContainerPortDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_port")
     
-    
-    private Integer containerPort;
 
+    private Integer containerPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host_port")
     
-    
-    private Integer hostPort;
 
+    private Integer hostPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host_ip")
     
-    
+
     private String hostIp;
 
     public ContainerPortDTO withContainerPort(Integer containerPort) {

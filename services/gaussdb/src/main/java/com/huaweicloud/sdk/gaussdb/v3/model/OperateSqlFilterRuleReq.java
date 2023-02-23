@@ -20,10 +20,8 @@ import java.util.Objects;
 public class OperateSqlFilterRuleReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sql_filter_rules")
-    
     
     private List<NodeSqlFilterRuleInfo> sqlFilterRules = null;
     

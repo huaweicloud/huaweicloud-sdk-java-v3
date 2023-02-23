@@ -101,18 +101,16 @@ public class ModifyEpsQuotaRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private XLanguageEnum xLanguage;
 
+    private XLanguageEnum xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private ModifyEpsQuotaRequestBody body;
 
     public ModifyEpsQuotaRequest withXLanguage(XLanguageEnum xLanguage) {

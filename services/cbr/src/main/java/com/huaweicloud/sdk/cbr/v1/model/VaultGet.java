@@ -51,7 +51,7 @@ public class VaultGet {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<TagsResp> tags = null;
+    private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -247,12 +247,12 @@ public class VaultGet {
         this.resources = resources;
     }
 
-    public VaultGet withTags(List<TagsResp> tags) {
+    public VaultGet withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public VaultGet addTagsItem(TagsResp tagsItem) {
+    public VaultGet addTagsItem(Tag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -260,7 +260,7 @@ public class VaultGet {
         return this;
     }
 
-    public VaultGet withTags(Consumer<List<TagsResp>> tagsSetter) {
+    public VaultGet withTags(Consumer<List<Tag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -269,14 +269,14 @@ public class VaultGet {
     }
 
     /**
-     * 标签
+     * 存储库标签
      * @return tags
      */
-    public List<TagsResp> getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(List<TagsResp> tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
 

@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ListEcsSpecificationResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="specification")
-    
     
     private List<EcsSpecificationBean> specification = null;
     

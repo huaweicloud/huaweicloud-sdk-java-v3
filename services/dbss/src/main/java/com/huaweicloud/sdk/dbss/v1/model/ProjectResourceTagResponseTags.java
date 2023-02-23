@@ -19,17 +19,14 @@ import java.util.Objects;
 public class ProjectResourceTagResponseTags  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key")
     
-    
-    private String key;
 
+    private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="values")
-    
     
     private List<String> values = null;
     

@@ -17,18 +17,16 @@ import java.util.Objects;
 public class ParamGroupDiffRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_id")
     
-    
-    private String sourceId;
 
+    private String sourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target_id")
     
-    
+
     private String targetId;
 
     public ParamGroupDiffRequestBody withSourceId(String sourceId) {

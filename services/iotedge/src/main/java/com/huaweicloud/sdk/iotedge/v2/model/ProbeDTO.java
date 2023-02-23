@@ -19,53 +19,46 @@ import java.util.Objects;
 public class ProbeDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="exec_command")
     
-    
-    private String execCommand;
 
+    private String execCommand;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tcp_socket")
     
-    
-    private TcpSocketDTO tcpSocket;
 
+    private TcpSocketDTO tcpSocket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="http_get")
     
-    
-    private HttpGetDTO httpGet;
 
+    private HttpGetDTO httpGet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="initial_delay_seconds")
     
-    
-    private Integer initialDelaySeconds;
 
+    private Integer initialDelaySeconds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeout_seconds")
     
-    
-    private Integer timeoutSeconds;
 
+    private Integer timeoutSeconds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period_seconds")
     
-    
-    private Integer periodSeconds;
 
+    private Integer periodSeconds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="failure_threshold")
     
-    
+
     private Integer failureThreshold;
 
     public ProbeDTO withExecCommand(String execCommand) {

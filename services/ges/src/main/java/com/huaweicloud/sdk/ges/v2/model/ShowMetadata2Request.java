@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ShowMetadata2Request  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata_id")
     
-    
+
     private String metadataId;
 
     public ShowMetadata2Request withMetadataId(String metadataId) {

@@ -17,88 +17,76 @@ import java.util.Objects;
 public class ImportGraphReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgesetPath")
     
-    
-    private String edgesetPath;
 
+    private String edgesetPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgesetFormat")
     
-    
-    private String edgesetFormat;
 
+    private String edgesetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexsetPath")
     
-    
-    private String vertexsetPath;
 
+    private String vertexsetPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexsetFormat")
     
-    
-    private String vertexsetFormat;
 
+    private String vertexsetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schemaPath")
     
-    
-    private String schemaPath;
 
+    private String schemaPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="logDir")
     
-    
-    private String logDir;
 
+    private String logDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parallelEdge")
     
-    
-    private Object parallelEdge;
 
+    private Object parallelEdge;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    
-    private String action;
 
+    private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ignoreLabel")
     
-    
-    private Boolean ignoreLabel;
 
+    private Boolean ignoreLabel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delimiter")
     
-    
-    private String delimiter;
 
+    private String delimiter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trimQuote")
     
-    
-    private String trimQuote;
 
+    private String trimQuote;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offline")
     
-    
+
     private Boolean offline;
 
     public ImportGraphReq withEdgesetPath(String edgesetPath) {

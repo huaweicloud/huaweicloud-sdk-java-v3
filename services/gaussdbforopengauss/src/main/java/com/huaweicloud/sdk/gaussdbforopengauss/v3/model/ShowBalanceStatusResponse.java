@@ -20,11 +20,10 @@ import java.util.Objects;
 public class ShowBalanceStatusResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="balanced")
     
-    
+
     private Boolean balanced;
 
     public ShowBalanceStatusResponse withBalanced(Boolean balanced) {

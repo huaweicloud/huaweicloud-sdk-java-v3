@@ -24,7 +24,6 @@ package com.huaweicloud.sdk.core;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.utils.JsonUtils;
-
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -20,45 +20,38 @@ import java.util.Objects;
 public class PostRequestsReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extends")
     
-    
-    private ModelExtends _extends;
 
+    private ModelExtends _extends;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="chat_enable")
     
-    
-    private Boolean chatEnable;
 
+    private Boolean chatEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_id")
     
-    
-    private String userId;
 
+    private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="question")
     
-    
-    private String question;
 
+    private String question;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="session_id")
     
-    
-    private String sessionId;
 
+    private String sessionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="query_types")
-    
     
     private List<Integer> queryTypes = null;
     

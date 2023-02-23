@@ -18,18 +18,16 @@ import java.util.Objects;
 public class DeleteEdgeNodeRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
     
-    
-    private String edgeNodeId;
 
+    private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delete_external_node")
     
-    
+
     private Boolean deleteExternalNode;
 
     public DeleteEdgeNodeRequest withEdgeNodeId(String edgeNodeId) {

@@ -17,81 +17,70 @@ import java.util.Objects;
 public class FileStatusV2  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="path_suffix")
     
-    
-    private String pathSuffix;
 
+    private String pathSuffix;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="owner")
     
-    
-    private String owner;
 
+    private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group")
     
-    
-    private String group;
 
+    private String group;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="permission")
     
-    
-    private String permission;
 
+    private String permission;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replication")
     
-    
-    private Integer replication;
 
+    private Integer replication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="block_size")
     
-    
-    private Integer blockSize;
 
+    private Integer blockSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="length")
     
-    
-    private Integer length;
 
+    private Integer length;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="children_num")
     
-    
-    private Integer childrenNum;
 
+    private Integer childrenNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="access_time")
     
-    
-    private Long accessTime;
 
+    private Long accessTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="modification_time")
     
-    
+
     private Long modificationTime;
 
     public FileStatusV2 withPathSuffix(String pathSuffix) {

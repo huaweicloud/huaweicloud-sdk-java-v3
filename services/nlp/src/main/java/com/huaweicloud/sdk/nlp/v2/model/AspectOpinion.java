@@ -19,53 +19,45 @@ import java.util.Objects;
 public class AspectOpinion  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="aspect_category")
     
-    
-    private String aspectCategory;
 
+    private String aspectCategory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="aspect_term")
     
-    
-    private String aspectTerm;
 
+    private String aspectTerm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="opinion_term")
     
-    
-    private String opinionTerm;
 
+    private String opinionTerm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="span")
     
-    
     private List<Integer> span = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="label")
     
-    
-    private Integer label;
 
+    private Integer label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confidence")
     
-    
-    private Float confidence;
 
+    private Float confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag")
     
-    
+
     private String tag;
 
     public AspectOpinion withAspectCategory(String aspectCategory) {

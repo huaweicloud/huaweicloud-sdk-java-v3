@@ -18,25 +18,22 @@ import java.util.Objects;
 public class GaussDBforOpenGaussUserForList  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="attributes")
     
-    
-    private GaussDBforOpenGaussUserForListAttributes attributes;
 
+    private GaussDBforOpenGaussUserForListAttributes attributes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="memberof")
     
-    
+
     private String memberof;
 
     public GaussDBforOpenGaussUserForList withName(String name) {

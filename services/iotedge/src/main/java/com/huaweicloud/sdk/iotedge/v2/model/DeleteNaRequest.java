@@ -18,11 +18,10 @@ import java.util.Objects;
 public class DeleteNaRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="na_id")
     
-    
+
     private String naId;
 
     public DeleteNaRequest withNaId(String naId) {

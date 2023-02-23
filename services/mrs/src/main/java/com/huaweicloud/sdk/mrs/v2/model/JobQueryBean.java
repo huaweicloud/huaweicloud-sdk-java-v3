@@ -17,123 +17,106 @@ import java.util.Objects;
 public class JobQueryBean  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
-    private String jobId;
 
+    private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    
-    private String user;
 
+    private String user;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_name")
     
-    
-    private String jobName;
 
+    private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_result")
     
-    
-    private String jobResult;
 
+    private String jobResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_state")
     
-    
-    private String jobState;
 
+    private String jobState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_progress")
     
-    
-    private Float jobProgress;
 
+    private Float jobProgress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_type")
     
-    
-    private String jobType;
 
+    private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="started_time")
     
-    
-    private Long startedTime;
 
+    private Long startedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="submitted_time")
     
-    
-    private Long submittedTime;
 
+    private Long submittedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="finished_time")
     
-    
-    private Long finishedTime;
 
+    private Long finishedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="elapsed_time")
     
-    
-    private Long elapsedTime;
 
+    private Long elapsedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arguments")
     
-    
-    private String arguments;
 
+    private String arguments;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="launcher_id")
     
-    
-    private String launcherId;
 
+    private String launcherId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="properties")
     
-    
-    private String properties;
 
+    private String properties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_id")
     
-    
-    private String appId;
 
+    private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tracking_url")
     
-    
-    private String trackingUrl;
 
+    private String trackingUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="queue")
     
-    
+
     private String queue;
 
     public JobQueryBean withJobId(String jobId) {

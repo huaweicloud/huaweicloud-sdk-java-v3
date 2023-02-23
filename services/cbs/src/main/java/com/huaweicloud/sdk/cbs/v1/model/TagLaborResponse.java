@@ -20,18 +20,16 @@ import java.util.Objects;
 public class TagLaborResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="request_id")
     
-    
-    private String requestId;
 
+    private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_time")
     
-    
+
     private String updatedTime;
 
     public TagLaborResponse withRequestId(String requestId) {

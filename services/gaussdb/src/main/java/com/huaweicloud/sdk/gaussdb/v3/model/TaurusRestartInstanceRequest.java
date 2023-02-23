@@ -17,11 +17,10 @@ import java.util.Objects;
 public class TaurusRestartInstanceRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delay")
     
-    
+
     private Boolean delay;
 
     public TaurusRestartInstanceRequest withDelay(Boolean delay) {

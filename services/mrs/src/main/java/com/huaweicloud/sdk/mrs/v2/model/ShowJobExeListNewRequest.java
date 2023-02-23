@@ -24,39 +24,34 @@ import java.util.Objects;
 public class ShowJobExeListNewRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
-    
-    private String clusterId;
 
+    private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_name")
     
-    
-    private String jobName;
 
+    private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
-    private String jobId;
 
+    private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    
-    private String user;
 
+    private String user;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_type")
     
-    
+
     private String jobType;
     /**
      * 作业运行状态。 - FAILED：失败 - KILLED：已终止 - NEW：已创建 - NEW_SAVING：已创建保存中 - SUBMITTED：已提交 - ACCEPTED：已接受 - RUNNING：运行中 - FINISHED：已完成
@@ -65,58 +60,58 @@ public class ShowJobExeListNewRequest  {
 
         
         /**
-         * Enum FAILED_ for value: "FAILED：失败"
+         * Enum FAILED for value: "FAILED"
          */
-        public static final JobStateEnum FAILED_ = new JobStateEnum("FAILED：失败");
+        public static final JobStateEnum FAILED = new JobStateEnum("FAILED");
         
         /**
-         * Enum KILLED_ for value: "KILLED：已终止"
+         * Enum KILLED for value: "KILLED"
          */
-        public static final JobStateEnum KILLED_ = new JobStateEnum("KILLED：已终止");
+        public static final JobStateEnum KILLED = new JobStateEnum("KILLED");
         
         /**
-         * Enum NEW_ for value: "NEW：已创建"
+         * Enum NEW for value: "NEW"
          */
-        public static final JobStateEnum NEW_ = new JobStateEnum("NEW：已创建");
+        public static final JobStateEnum NEW = new JobStateEnum("NEW");
         
         /**
-         * Enum NEW_SAVING_ for value: "NEW_SAVING：已创建保存中"
+         * Enum NEW_SAVING for value: "NEW_SAVING"
          */
-        public static final JobStateEnum NEW_SAVING_ = new JobStateEnum("NEW_SAVING：已创建保存中");
+        public static final JobStateEnum NEW_SAVING = new JobStateEnum("NEW_SAVING");
         
         /**
-         * Enum SUBMITTED_ for value: "SUBMITTED：已提交"
+         * Enum SUBMITTED for value: "SUBMITTED"
          */
-        public static final JobStateEnum SUBMITTED_ = new JobStateEnum("SUBMITTED：已提交");
+        public static final JobStateEnum SUBMITTED = new JobStateEnum("SUBMITTED");
         
         /**
-         * Enum ACCEPTED_ for value: "ACCEPTED：已接受"
+         * Enum ACCEPTED for value: "ACCEPTED"
          */
-        public static final JobStateEnum ACCEPTED_ = new JobStateEnum("ACCEPTED：已接受");
+        public static final JobStateEnum ACCEPTED = new JobStateEnum("ACCEPTED");
         
         /**
-         * Enum RUNNING_ for value: "RUNNING：运行中"
+         * Enum RUNNING for value: "RUNNING"
          */
-        public static final JobStateEnum RUNNING_ = new JobStateEnum("RUNNING：运行中");
+        public static final JobStateEnum RUNNING = new JobStateEnum("RUNNING");
         
         /**
-         * Enum FINISHED_ for value: "FINISHED：已完成"
+         * Enum FINISHED for value: "FINISHED"
          */
-        public static final JobStateEnum FINISHED_ = new JobStateEnum("FINISHED：已完成");
+        public static final JobStateEnum FINISHED = new JobStateEnum("FINISHED");
         
 
         private static final Map<String, JobStateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, JobStateEnum> createStaticFields() {
             Map<String, JobStateEnum> map = new HashMap<>();
-            map.put("FAILED：失败", FAILED_);
-            map.put("KILLED：已终止", KILLED_);
-            map.put("NEW：已创建", NEW_);
-            map.put("NEW_SAVING：已创建保存中", NEW_SAVING_);
-            map.put("SUBMITTED：已提交", SUBMITTED_);
-            map.put("ACCEPTED：已接受", ACCEPTED_);
-            map.put("RUNNING：运行中", RUNNING_);
-            map.put("FINISHED：已完成", FINISHED_);
+            map.put("FAILED", FAILED);
+            map.put("KILLED", KILLED);
+            map.put("NEW", NEW);
+            map.put("NEW_SAVING", NEW_SAVING);
+            map.put("SUBMITTED", SUBMITTED);
+            map.put("ACCEPTED", ACCEPTED);
+            map.put("RUNNING", RUNNING);
+            map.put("FINISHED", FINISHED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -173,11 +168,10 @@ public class ShowJobExeListNewRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_state")
     
-    
+
     private JobStateEnum jobState;
     /**
      * 作业运行结果。 - FAILED：执行失败的作业。 - KILLED：执行中被手动终止的作业。 - UNDEFINED：正在执行的作业。 - SUCCEEDED：执行成功的作业。
@@ -186,34 +180,34 @@ public class ShowJobExeListNewRequest  {
 
         
         /**
-         * Enum FAILED_ for value: "FAILED：执行失败的作业。"
+         * Enum FAILED for value: "FAILED"
          */
-        public static final JobResultEnum FAILED_ = new JobResultEnum("FAILED：执行失败的作业。");
+        public static final JobResultEnum FAILED = new JobResultEnum("FAILED");
         
         /**
-         * Enum KILLED_ for value: "KILLED：执行中被手动终止的作业。"
+         * Enum KILLED for value: "KILLED"
          */
-        public static final JobResultEnum KILLED_ = new JobResultEnum("KILLED：执行中被手动终止的作业。");
+        public static final JobResultEnum KILLED = new JobResultEnum("KILLED");
         
         /**
-         * Enum UNDEFINED_ for value: "UNDEFINED：正在执行的作业。"
+         * Enum UNDEFINED for value: "UNDEFINED"
          */
-        public static final JobResultEnum UNDEFINED_ = new JobResultEnum("UNDEFINED：正在执行的作业。");
+        public static final JobResultEnum UNDEFINED = new JobResultEnum("UNDEFINED");
         
         /**
-         * Enum SUCCEEDED_ for value: "SUCCEEDED：执行成功的作业。"
+         * Enum SUCCEEDED for value: "SUCCEEDED"
          */
-        public static final JobResultEnum SUCCEEDED_ = new JobResultEnum("SUCCEEDED：执行成功的作业。");
+        public static final JobResultEnum SUCCEEDED = new JobResultEnum("SUCCEEDED");
         
 
         private static final Map<String, JobResultEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, JobResultEnum> createStaticFields() {
             Map<String, JobResultEnum> map = new HashMap<>();
-            map.put("FAILED：执行失败的作业。", FAILED_);
-            map.put("KILLED：执行中被手动终止的作业。", KILLED_);
-            map.put("UNDEFINED：正在执行的作业。", UNDEFINED_);
-            map.put("SUCCEEDED：执行成功的作业。", SUCCEEDED_);
+            map.put("FAILED", FAILED);
+            map.put("KILLED", KILLED);
+            map.put("UNDEFINED", UNDEFINED);
+            map.put("SUCCEEDED", SUCCEEDED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -270,53 +264,46 @@ public class ShowJobExeListNewRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_result")
     
-    
-    private JobResultEnum jobResult;
 
+    private JobResultEnum jobResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="queue")
     
-    
-    private String queue;
 
+    private String queue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
-    private String limit;
 
+    private String limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private String offset;
 
+    private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_by")
     
-    
-    private String sortBy;
 
+    private String sortBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="submitted_time_begin")
     
-    
-    private Long submittedTimeBegin;
 
+    private Long submittedTimeBegin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="submitted_time_end")
     
-    
+
     private Long submittedTimeEnd;
 
     public ShowJobExeListNewRequest withClusterId(String clusterId) {

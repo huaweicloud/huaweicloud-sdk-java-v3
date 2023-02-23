@@ -17,25 +17,22 @@ import java.util.Objects;
 public class EntitySentimentReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
-    
-    private String content;
 
+    private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="entity")
     
-    
-    private String entity;
 
+    private String entity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
+
     private Integer type;
 
     public EntitySentimentReq withContent(String content) {

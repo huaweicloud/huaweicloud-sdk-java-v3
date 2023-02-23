@@ -22,11 +22,10 @@ import java.util.Objects;
 public class ClearGraphRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_id")
     
-    
+
     private String graphId;
     /**
      * 图actionId
@@ -101,18 +100,16 @@ public class ClearGraphRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_id")
     
-    
-    private ActionIdEnum actionId;
 
+    private ActionIdEnum actionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clear-metadata")
     
-    
+
     private Boolean clearMetadata;
 
     public ClearGraphRequest withGraphId(String graphId) {

@@ -21,17 +21,20 @@
 
 package com.huaweicloud.sdk.core.region;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @author HuaweiCloud_SDK
  */
 public class Region {
     private String id;
 
-    private String endpoint;
+    private List<String> endpoints;
 
-    public Region(String id, String endpoint) {
+    public Region(String id, String... endpoints) {
         this.id = id;
-        this.endpoint = endpoint;
+        this.endpoints = Arrays.asList(endpoints);
     }
 
     public Region() {
@@ -46,16 +49,49 @@ public class Region {
         this.id = id;
     }
 
+    /**
+     * @deprecated As of 3.1.27, because of the support of the multi-endpoint feature,
+     * use {@link #getEndpoints()} instead
+     */
+    @Deprecated
     public String getEndpoint() {
-        return endpoint;
+        return endpoints.isEmpty() ? null : endpoints.get(0);
     }
 
+    /**
+     * @deprecated As of 3.1.27, because of the support of the multi-endpoint feature,
+     * use {@link #setEndpoints(List<String> endpoints)} instead
+     */
+    @Deprecated
     public void setEndpoint(String endpoint) {
-        this.endpoint = endpoint;
+        if (endpoints.isEmpty()) {
+            endpoints.add(endpoint);
+        } else {
+            endpoints.set(0, endpoint);
+        }
     }
 
-    public Region withEndpointOverride(String iamEndpoint) {
-        this.setEndpoint(iamEndpoint);
+    public List<String> getEndpoints() {
+        return endpoints;
+    }
+
+    public void setEndpoints(List<String> endpoints) {
+        this.endpoints = endpoints;
+    }
+
+    /**
+     * @deprecated As of 3.1.27, because of the support of the multi-endpoint feature,
+     * use {@link #withEndpointsOverride(List<String> endpoints)} instead
+     */
+    @Deprecated
+    public Region withEndpointOverride(String endpoint) {
+        setEndpoint(endpoint);
         return this;
     }
+
+    public Region withEndpointsOverride(List<String> endpoints) {
+        setEndpoints(endpoints);
+        return this;
+    }
+
 }

@@ -756,6 +756,37 @@ public class BssAsyncClient {
     }
 
     /**
+     * 查询收支明细(客户)
+     *
+     * 功能描述：客户可以查询自身的收支明细情况(此接口不适用于伙伴的代售类、转售类客户。)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCustomerAccountChangeRecordsRequest 请求对象
+     * @return CompletableFuture<ListCustomerAccountChangeRecordsResponse>
+     */
+    public CompletableFuture<ListCustomerAccountChangeRecordsResponse> listCustomerAccountChangeRecordsAsync(
+        ListCustomerAccountChangeRecordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listCustomerAccountChangeRecords);
+    }
+
+    /**
+     * 查询收支明细(客户)
+     *
+     * 功能描述：客户可以查询自身的收支明细情况(此接口不适用于伙伴的代售类、转售类客户。)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCustomerAccountChangeRecordsRequest 请求对象
+     * @return AsyncInvoker<ListCustomerAccountChangeRecordsRequest, ListCustomerAccountChangeRecordsResponse>
+     */
+    public AsyncInvoker<ListCustomerAccountChangeRecordsRequest, ListCustomerAccountChangeRecordsResponse> listCustomerAccountChangeRecordsAsyncInvoker(
+        ListCustomerAccountChangeRecordsRequest request) {
+        return new AsyncInvoker<ListCustomerAccountChangeRecordsRequest, ListCustomerAccountChangeRecordsResponse>(
+            request, BssMeta.listCustomerAccountChangeRecords, hcClient);
+    }
+
+    /**
      * 查询流水账单
      *
      * 客户在自建平台查询自己的消费流水账单。

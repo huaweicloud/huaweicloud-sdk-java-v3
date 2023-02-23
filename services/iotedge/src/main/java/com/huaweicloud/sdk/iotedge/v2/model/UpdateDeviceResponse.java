@@ -20,11 +20,10 @@ import java.util.Objects;
 public class UpdateDeviceResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="config")
     
-    
+
     private Object config;
 
     public UpdateDeviceResponse withConfig(Object config) {

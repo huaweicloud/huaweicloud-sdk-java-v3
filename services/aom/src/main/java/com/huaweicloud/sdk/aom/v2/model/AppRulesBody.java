@@ -11,20 +11,22 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.AppRules;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * AppRulesBody
  */
+@JacksonXmlRootElement(localName = "AppRulesBody")
 public class AppRulesBody  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="appRules")
     
-    
+    @JacksonXmlProperty(localName = "appRules")
     private List<AppRules> appRules = null;
     
     public AppRulesBody withAppRules(List<AppRules> appRules) {

@@ -20,31 +20,26 @@ import java.util.Objects;
 public class AvailableFlavorInfoResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec_cpde")
     
-    
-    private String specCpde;
 
+    private String specCpde;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus")
     
-    
-    private String vcpus;
 
+    private String vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram")
     
-    
-    private String ram;
 
+    private String ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_status")
-    
     
     private Map<String, String> azStatus = null;
     

@@ -19,11 +19,10 @@ import java.util.Objects;
 public class CreateEdgeAppRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private CreateEdgeApplicationRequestDTO body;
 
     public CreateEdgeAppRequest withBody(CreateEdgeApplicationRequestDTO body) {

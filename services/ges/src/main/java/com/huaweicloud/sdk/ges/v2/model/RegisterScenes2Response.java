@@ -20,11 +20,10 @@ import java.util.Objects;
 public class RegisterScenes2Response extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    
+
     private String result;
 
     public RegisterScenes2Response withResult(String result) {

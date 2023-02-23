@@ -586,6 +586,13 @@ public class CloudIDEMeta {
             f -> f.withMarshaller(CreateRequestRequest::getModelId, (req, v) -> {
                 req.setModelId(v);
             }));
+        builder.<CreateRequestRequest.RequestTypeEnum>withRequestField("request_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateRequestRequest.RequestTypeEnum.class),
+            f -> f.withMarshaller(CreateRequestRequest::getRequestType, (req, v) -> {
+                req.setRequestType(v);
+            }));
         builder.<PropertiesSchema>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

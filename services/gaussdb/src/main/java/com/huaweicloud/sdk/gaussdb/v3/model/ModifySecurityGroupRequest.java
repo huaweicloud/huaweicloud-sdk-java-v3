@@ -17,11 +17,10 @@ import java.util.Objects;
 public class ModifySecurityGroupRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_id")
     
-    
+
     private String securityGroupId;
 
     public ModifySecurityGroupRequest withSecurityGroupId(String securityGroupId) {

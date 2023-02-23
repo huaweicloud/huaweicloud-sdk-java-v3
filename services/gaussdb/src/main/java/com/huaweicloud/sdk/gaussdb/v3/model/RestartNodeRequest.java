@@ -17,11 +17,10 @@ import java.util.Objects;
 public class RestartNodeRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delay")
     
-    
+
     private Boolean delay;
 
     public RestartNodeRequest withDelay(Boolean delay) {

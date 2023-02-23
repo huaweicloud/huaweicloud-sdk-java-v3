@@ -20,18 +20,16 @@ import java.util.Objects;
 public class ShowInstanceMonitorExtendResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="monitor_switch")
     
-    
-    private Boolean monitorSwitch;
 
+    private Boolean monitorSwitch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period")
     
-    
+
     private Integer period;
 
     public ShowInstanceMonitorExtendResponse withMonitorSwitch(Boolean monitorSwitch) {

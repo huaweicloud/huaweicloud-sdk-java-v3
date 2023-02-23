@@ -20,11 +20,10 @@ import java.util.Objects;
 public class ShowSslCertDownloadLinkResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="download_link")
     
-    
+
     private String downloadLink;
 
     public ShowSslCertDownloadLinkResponse withDownloadLink(String downloadLink) {

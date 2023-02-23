@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunEntityLinkingRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private PostEntityLinkingRequest body;
 
     public RunEntityLinkingRequest withBody(PostEntityLinkingRequest body) {

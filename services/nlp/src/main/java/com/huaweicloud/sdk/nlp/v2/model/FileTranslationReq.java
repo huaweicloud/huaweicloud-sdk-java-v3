@@ -25,11 +25,10 @@ import java.util.Objects;
 public class FileTranslationReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="url")
     
-    
+
     private String url;
     /**
      * 翻译原语言，文档翻译服务当前仅支持中英互译。
@@ -110,11 +109,10 @@ public class FileTranslationReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="from")
     
-    
+
     private FromEnum from;
     /**
      * 翻译目标语言，文档翻译服务当前仅支持中英互译。
@@ -195,11 +193,10 @@ public class FileTranslationReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="to")
     
-    
+
     private ToEnum to;
     /**
      * 文档格式，当前仅支持翻译“docx”、“pptx”和“txt”格式的文档。
@@ -286,11 +283,10 @@ public class FileTranslationReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
+
     private TypeEnum type;
 
     public FileTranslationReq withUrl(String url) {

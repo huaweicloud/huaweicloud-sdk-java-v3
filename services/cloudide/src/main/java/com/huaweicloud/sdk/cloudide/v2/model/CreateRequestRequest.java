@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.cloudide.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -30,6 +35,88 @@ public class CreateRequestRequest {
     @JsonProperty(value = "model_id")
 
     private String modelId;
+
+    /**
+     * An enumeration. - function - rawtext
+     */
+    public static final class RequestTypeEnum {
+
+        /**
+         * Enum FUNCTION for value: "function"
+         */
+        public static final RequestTypeEnum FUNCTION = new RequestTypeEnum("function");
+
+        /**
+         * Enum RAWTEXT for value: "rawtext"
+         */
+        public static final RequestTypeEnum RAWTEXT = new RequestTypeEnum("rawtext");
+
+        private static final Map<String, RequestTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RequestTypeEnum> createStaticFields() {
+            Map<String, RequestTypeEnum> map = new HashMap<>();
+            map.put("function", FUNCTION);
+            map.put("rawtext", RAWTEXT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        RequestTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RequestTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            RequestTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new RequestTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static RequestTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            RequestTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RequestTypeEnum) {
+                return this.value.equals(((RequestTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_type")
+
+    private RequestTypeEnum requestType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
@@ -106,6 +193,23 @@ public class CreateRequestRequest {
         this.modelId = modelId;
     }
 
+    public CreateRequestRequest withRequestType(RequestTypeEnum requestType) {
+        this.requestType = requestType;
+        return this;
+    }
+
+    /**
+     * An enumeration. - function - rawtext
+     * @return requestType
+     */
+    public RequestTypeEnum getRequestType() {
+        return requestType;
+    }
+
+    public void setRequestType(RequestTypeEnum requestType) {
+        this.requestType = requestType;
+    }
+
     public CreateRequestRequest withBody(PropertiesSchema body) {
         this.body = body;
         return this;
@@ -145,12 +249,13 @@ public class CreateRequestRequest {
             && Objects.equals(this.scenario, createRequestRequest.scenario)
             && Objects.equals(this.resubmit, createRequestRequest.resubmit)
             && Objects.equals(this.modelId, createRequestRequest.modelId)
+            && Objects.equals(this.requestType, createRequestRequest.requestType)
             && Objects.equals(this.body, createRequestRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(topn, scenario, resubmit, modelId, body);
+        return Objects.hash(topn, scenario, resubmit, modelId, requestType, body);
     }
 
     @Override
@@ -161,6 +266,7 @@ public class CreateRequestRequest {
         sb.append("    scenario: ").append(toIndentedString(scenario)).append("\n");
         sb.append("    resubmit: ").append(toIndentedString(resubmit)).append("\n");
         sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
+        sb.append("    requestType: ").append(toIndentedString(requestType)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

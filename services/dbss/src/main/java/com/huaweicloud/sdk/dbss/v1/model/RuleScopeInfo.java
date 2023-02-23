@@ -17,81 +17,70 @@ import java.util.Objects;
 public class RuleScopeInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    
-    private String action;
 
+    private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="exception_ips")
     
-    
-    private String exceptionIps;
 
+    private String exceptionIps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_ips")
     
-    
-    private String sourceIps;
 
+    private String sourceIps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_ports")
     
-    
-    private String sourcePorts;
 
+    private String sourcePorts;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db_ids")
     
-    
-    private String dbIds;
 
+    private String dbIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db_names")
     
-    
-    private String dbNames;
 
+    private String dbNames;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db_users")
     
-    
-    private String dbUsers;
 
+    private String dbUsers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="all_audit")
     
-    
+
     private Boolean allAudit;
 
     public RuleScopeInfo withId(String id) {

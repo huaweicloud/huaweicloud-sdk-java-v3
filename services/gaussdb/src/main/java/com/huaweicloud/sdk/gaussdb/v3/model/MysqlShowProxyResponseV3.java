@@ -21,24 +21,20 @@ import java.util.Objects;
 public class MysqlShowProxyResponseV3  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="proxy")
     
-    
-    private MysqlProxyV3 proxy;
 
+    private MysqlProxyV3 proxy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_node")
     
-    
-    private MysqlProxyNodeV3 masterNode;
 
+    private MysqlProxyNodeV3 masterNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="readonly_nodes")
-    
     
     private List<MysqlProxyNodeV3> readonlyNodes = null;
     

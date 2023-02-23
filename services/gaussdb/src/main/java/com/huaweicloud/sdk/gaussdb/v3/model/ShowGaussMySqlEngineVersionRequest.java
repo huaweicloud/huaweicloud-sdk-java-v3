@@ -18,18 +18,16 @@ import java.util.Objects;
 public class ShowGaussMySqlEngineVersionRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="database_name")
     
-    
+
     private String databaseName;
 
     public ShowGaussMySqlEngineVersionRequest withXLanguage(String xLanguage) {

@@ -20,11 +20,10 @@ import java.util.Objects;
 public class ValidateWeakPasswordResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_weak_password")
     
-    
+
     private Boolean isWeakPassword;
 
     public ValidateWeakPasswordResponse withIsWeakPassword(Boolean isWeakPassword) {

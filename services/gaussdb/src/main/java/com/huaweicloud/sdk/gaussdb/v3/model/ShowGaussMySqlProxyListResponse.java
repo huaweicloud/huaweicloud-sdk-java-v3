@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ShowGaussMySqlProxyListResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="proxy_list")
-    
     
     private List<MysqlShowProxyResponseV3> proxyList = null;
     

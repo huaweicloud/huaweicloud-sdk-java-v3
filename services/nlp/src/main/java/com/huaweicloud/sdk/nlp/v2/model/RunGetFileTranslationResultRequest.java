@@ -18,11 +18,10 @@ import java.util.Objects;
 public class RunGetFileTranslationResultRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public RunGetFileTranslationResultRequest withJobId(String jobId) {

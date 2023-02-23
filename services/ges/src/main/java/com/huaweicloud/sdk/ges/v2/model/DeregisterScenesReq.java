@@ -20,10 +20,8 @@ import java.util.Objects;
 public class DeregisterScenesReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scenes")
-    
     
     private List<DeregisterScenesReqScenes> scenes = null;
     

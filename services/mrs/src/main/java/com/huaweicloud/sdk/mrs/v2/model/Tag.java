@@ -17,18 +17,16 @@ import java.util.Objects;
 public class Tag  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key")
     
-    
-    private String key;
 
+    private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
-    
+
     private String value;
 
     public Tag withKey(String key) {

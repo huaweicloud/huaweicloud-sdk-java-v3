@@ -100,11 +100,10 @@ public class ListGaussDbDatastoresRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
+
     private XLanguageEnum xLanguage;
 
     public ListGaussDbDatastoresRequest withXLanguage(XLanguageEnum xLanguage) {

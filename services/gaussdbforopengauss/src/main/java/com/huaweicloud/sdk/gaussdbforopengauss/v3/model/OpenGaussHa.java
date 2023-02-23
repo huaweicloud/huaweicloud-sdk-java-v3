@@ -103,11 +103,10 @@ public class OpenGaussHa  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mode")
     
-    
+
     private ModeEnum mode;
     /**
      * 指定实例一致性类型，当创建分布式模式实例时，该字段值必传，当创建主备模式实例时，该字段值不传。取值范围：strong（强一致性） | eventual(最终一致性)，不分区大小写。
@@ -188,11 +187,10 @@ public class OpenGaussHa  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="consistency")
     
-    
+
     private ConsistencyEnum consistency;
     /**
      * 备机同步参数。  取值：  GaussDB为“sync\"  说明： - “sync”为同步模式。
@@ -267,11 +265,10 @@ public class OpenGaussHa  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replication_mode")
     
-    
+
     private ReplicationModeEnum replicationMode;
 
     public OpenGaussHa withMode(ModeEnum mode) {

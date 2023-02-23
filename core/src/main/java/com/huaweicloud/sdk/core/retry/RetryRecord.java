@@ -27,7 +27,6 @@ import com.huaweicloud.sdk.core.exception.ConnectionException;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.exception.ServiceResponseException;
 import com.huaweicloud.sdk.core.retry.backoff.BackoffStrategy;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

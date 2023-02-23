@@ -20,10 +20,8 @@ import java.util.Objects;
 public class GesMetaData  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="labels")
-    
     
     private List<Label> labels = null;
     

@@ -27,46 +27,39 @@ import java.util.Objects;
 public class DeployStackRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_body")
     
-    
-    private String templateBody;
 
+    private String templateBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_uri")
     
-    
-    private String templateUri;
 
+    private String templateUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vars_structure")
     
-    
     private List<VarsStructure> varsStructure = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vars_body")
     
-    
-    private String varsBody;
 
+    private String varsBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vars_uri")
     
-    
-    private String varsUri;
 
+    private String varsUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stack_id")
     
-    
+
     private String stackId;
 
     public DeployStackRequestBody withTemplateBody(String templateBody) {

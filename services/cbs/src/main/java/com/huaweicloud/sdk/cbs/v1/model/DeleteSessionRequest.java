@@ -18,18 +18,16 @@ import java.util.Objects;
 public class DeleteSessionRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qabot_id")
     
-    
-    private String qabotId;
 
+    private String qabotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="session_id")
     
-    
+
     private String sessionId;
 
     public DeleteSessionRequest withQabotId(String qabotId) {

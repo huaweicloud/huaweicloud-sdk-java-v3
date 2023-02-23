@@ -21,11 +21,10 @@ import java.util.Objects;
 public class JobSubmitResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
     /**
      * 作业提交状态。 枚举值： - COMPLETE：作业提交完成。 - FAILED：作业提交失败。
@@ -106,11 +105,10 @@ public class JobSubmitResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state")
     
-    
+
     private StateEnum state;
 
     public JobSubmitResult withJobId(String jobId) {

@@ -23,11 +23,10 @@ import java.util.Objects;
 public class AttachEipRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_id")
     
-    
+
     private String graphId;
     /**
      * 图actionId
@@ -102,18 +101,16 @@ public class AttachEipRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_id")
     
-    
-    private ActionIdEnum actionId;
 
+    private ActionIdEnum actionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private BindEipReq body;
 
     public AttachEipRequest withGraphId(String graphId) {

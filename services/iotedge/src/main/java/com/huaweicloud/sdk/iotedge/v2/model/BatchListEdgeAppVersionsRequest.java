@@ -26,32 +26,28 @@ import java.util.Objects;
 public class BatchListEdgeAppVersionsRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
-    
-    private String edgeAppId;
 
+    private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    
-    private String version;
 
+    private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private Integer offset;
 
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
+
     private Integer limit;
     /**
      * ai加速卡类型
@@ -138,11 +134,10 @@ public class BatchListEdgeAppVersionsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ai_card_type")
     
-    
+
     private AiCardTypeEnum aiCardType;
     /**
      * 支持架构
@@ -229,11 +224,10 @@ public class BatchListEdgeAppVersionsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
-    
+
     private ArchEnum arch;
     /**
      * 应用版本状态
@@ -320,11 +314,10 @@ public class BatchListEdgeAppVersionsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state")
     
-    
+
     private StateEnum state;
 
     public BatchListEdgeAppVersionsRequest withEdgeAppId(String edgeAppId) {

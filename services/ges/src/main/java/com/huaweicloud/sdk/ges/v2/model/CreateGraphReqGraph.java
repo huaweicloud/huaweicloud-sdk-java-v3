@@ -25,137 +25,116 @@ import java.util.Objects;
 public class CreateGraphReqGraph  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_size_type_index")
     
-    
-    private String graphSizeTypeIndex;
 
+    private String graphSizeTypeIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
-    
-    private String arch;
 
+    private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
-    
-    private String vpcId;
 
+    private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
-    
-    private String subnetId;
 
+    private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_id")
     
-    
-    private String securityGroupId;
 
+    private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip")
     
-    
-    private CreateGraphReqGraphPublicIp publicIp;
 
+    private CreateGraphReqGraphPublicIp publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_multi_az")
     
-    
-    private Boolean enableMultiAz;
 
+    private Boolean enableMultiAz;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encryption")
     
-    
-    private CreateGraphReqGraphEncryption encryption;
 
+    private CreateGraphReqGraphEncryption encryption;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lts_operation_trace")
     
-    
-    private CreateGraphReqGraphLtsOperationTrace ltsOperationTrace;
 
+    private CreateGraphReqGraphLtsOperationTrace ltsOperationTrace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sys_tags")
     
-    
     private List<CreateGraphReqGraphSysTags> sysTags = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    
     private List<ListGraphsRespTags> tags = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_rbac")
     
-    
-    private Boolean enableRbac;
 
+    private Boolean enableRbac;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_full_text_index")
     
-    
-    private Boolean enableFullTextIndex;
 
+    private Boolean enableFullTextIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_hyg")
     
-    
-    private Boolean enableHyg;
 
+    private Boolean enableHyg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="crypt_algorithm")
     
-    
-    private String cryptAlgorithm;
 
+    private String cryptAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_https")
     
-    
-    private Boolean enableHttps;
 
+    private Boolean enableHttps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_type")
     
-    
-    private String productType;
 
+    private String productType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertex_id_type")
     
-    
+
     private CreateGraphReqGraphVertexIdType vertexIdType;
 
     public CreateGraphReqGraph withName(String name) {

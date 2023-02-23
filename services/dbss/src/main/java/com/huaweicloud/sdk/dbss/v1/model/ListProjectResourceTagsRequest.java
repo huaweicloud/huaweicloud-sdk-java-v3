@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ListProjectResourceTagsRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_type")
     
-    
+
     private String resourceType;
 
     public ListProjectResourceTagsRequest withResourceType(String resourceType) {

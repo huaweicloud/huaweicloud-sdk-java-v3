@@ -17,11 +17,10 @@ import java.util.Objects;
 public class TaurusSwitchoverRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    
+
     private String nodeId;
 
     public TaurusSwitchoverRequest withNodeId(String nodeId) {

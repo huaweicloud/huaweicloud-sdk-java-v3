@@ -103,11 +103,10 @@ public class OpenGaussHaResponse  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mode")
     
-    
+
     private ModeEnum mode;
     /**
      * 备机同步参数。  取值：  GaussDB为“sync”。 说明： - “sync”为同步模式。
@@ -182,11 +181,10 @@ public class OpenGaussHaResponse  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replication_mode")
     
-    
+
     private ReplicationModeEnum replicationMode;
     /**
      * GaussDB的预留参数：指定实例一致性类型，取值范围：strong（强一致性） | eventual(最终一致性)。
@@ -267,11 +265,10 @@ public class OpenGaussHaResponse  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="consistency")
     
-    
+
     private ConsistencyEnum consistency;
 
     public OpenGaussHaResponse withMode(ModeEnum mode) {

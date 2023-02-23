@@ -19,25 +19,22 @@ import java.util.Objects;
 public class UpdateExternalEntityRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
     
-    
-    private String edgeNodeId;
 
+    private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="external_id")
     
-    
-    private String externalId;
 
+    private String externalId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private UpdateExternalEntityReqDTO body;
 
     public UpdateExternalEntityRequest withEdgeNodeId(String edgeNodeId) {

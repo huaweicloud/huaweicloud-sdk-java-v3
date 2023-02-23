@@ -17,18 +17,16 @@ import java.util.Objects;
 public class CreateGraphReqGraphPublicIp  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_bind_type")
     
-    
-    private String publicBindType;
 
+    private String publicBindType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eip_id")
     
-    
+
     private String eipId;
 
     public CreateGraphReqGraphPublicIp withPublicBindType(String publicBindType) {

@@ -17,18 +17,16 @@ import java.util.Objects;
 public class ParallelEdge  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    
-    private String action;
 
+    private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ignoreLabel")
     
-    
+
     private Boolean ignoreLabel;
 
     public ParallelEdge withAction(String action) {

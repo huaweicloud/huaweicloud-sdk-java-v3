@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListDbUsersResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="users")
     
-    
     private List<GaussDBforOpenGaussUserForList> users = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Integer totalCount;
 
     public ListDbUsersResponse withUsers(List<GaussDBforOpenGaussUserForList> users) {

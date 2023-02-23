@@ -18,32 +18,28 @@ import java.util.Objects;
 public class ShowGaussMySqlQuotasRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private String offset;
 
+    private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
-    private String limit;
 
+    private String limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_name")
     
-    
+
     private String enterpriseProjectName;
 
     public ShowGaussMySqlQuotasRequest withXLanguage(String xLanguage) {

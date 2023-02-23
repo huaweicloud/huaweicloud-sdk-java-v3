@@ -134,46 +134,40 @@ public class ExecutionPlanItem  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    
-    private ActionEnum action;
 
+    private ActionEnum action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_reason")
     
-    
-    private String actionReason;
 
+    private String actionReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="provider_name")
     
-    
-    private String providerName;
 
+    private String providerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_type")
     
-    
-    private String resourceType;
 
+    private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_name")
     
-    
-    private String resourceName;
 
+    private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="index")
     
-    
+
     private String index;
     /**
      * * `DATA` - 指可以在模板解析期间运行和获取服务端数据的资源类型，不会操作基础设施组件 * `RESOURCE` - 指通过模板管理的由服务定义的基础设施组件抽象，可以是物理资源也可以是逻辑资源
@@ -254,31 +248,26 @@ public class ExecutionPlanItem  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mode")
     
-    
-    private ModeEnum mode;
 
+    private ModeEnum mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="drifted")
     
-    
-    private Boolean drifted;
 
+    private Boolean drifted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_id")
     
-    
-    private String resourceId;
 
+    private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="attributes")
-    
     
     private List<ExecutionPlanDiffAttribute> attributes = null;
     

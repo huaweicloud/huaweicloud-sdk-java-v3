@@ -21,17 +21,14 @@ import java.util.Objects;
 public class UpdateRoutesRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
     
-    
-    private String edgeNodeId;
 
+    private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
-    
     
     private List<CreateRouterReqDTO> body = null;
     

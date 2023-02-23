@@ -17,39 +17,34 @@ import java.util.Objects;
 public class StackOutput  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
-    
-    private String value;
 
+    private String value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sensitive")
     
-    
+
     private Boolean sensitive;
 
     public StackOutput withName(String name) {

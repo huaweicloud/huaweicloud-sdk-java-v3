@@ -23,32 +23,27 @@ import java.util.Objects;
 public class ListGraphsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graphCount")
     
-    
-    private Integer graphCount;
 
+    private Integer graphCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graphs")
     
-    
     private List<Graph1> graphs = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorMessage")
     
-    
-    private String errorMessage;
 
+    private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorCode")
     
-    
+
     private String errorCode;
 
     public ListGraphsResponse withGraphCount(Integer graphCount) {

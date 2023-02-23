@@ -17,39 +17,34 @@ import java.util.Objects;
 public class ActiveStandbyConfigDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="work_node")
     
-    
-    private String workNode;
 
+    private String workNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_interface_name")
     
-    
-    private String masterInterfaceName;
 
+    private String masterInterfaceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slave_interface_name")
     
-    
-    private String slaveInterfaceName;
 
+    private String slaveInterfaceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="virtual_ip_address")
     
-    
-    private String virtualIpAddress;
 
+    private String virtualIpAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="virtual_ipv6_address")
     
-    
+
     private String virtualIpv6Address;
 
     public ActiveStandbyConfigDTO withWorkNode(String workNode) {

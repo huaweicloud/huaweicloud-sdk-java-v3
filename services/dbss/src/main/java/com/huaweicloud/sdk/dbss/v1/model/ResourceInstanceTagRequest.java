@@ -21,53 +21,41 @@ import java.util.Objects;
 public class ResourceInstanceTagRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="matches")
     
-    
     private List<ResourceInstanceTagRequestMatches> matches = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="not_tags")
     
-    
     private List<TagKeyValuesBean> notTags = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    
     private List<TagKeyValuesBean> tags = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags_any")
     
-    
     private List<TagKeyValuesBean> tagsAny = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="not_tags_any")
     
-    
     private List<TagKeyValuesBean> notTagsAny = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sys_tags")
     
-    
-    private TagKeyValuesBean sysTags;
 
+    private TagKeyValuesBean sysTags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="without_any_tag")
     
-    
+
     private Boolean withoutAnyTag;
 
     public ResourceInstanceTagRequest withMatches(List<ResourceInstanceTagRequestMatches> matches) {

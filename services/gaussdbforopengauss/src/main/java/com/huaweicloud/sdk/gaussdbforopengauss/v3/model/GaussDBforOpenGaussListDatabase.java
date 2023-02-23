@@ -17,39 +17,34 @@ import java.util.Objects;
 public class GaussDBforOpenGaussListDatabase  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="owner")
     
-    
-    private String owner;
 
+    private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="character_set")
     
-    
-    private String characterSet;
 
+    private String characterSet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="collate_set")
     
-    
-    private String collateSet;
 
+    private String collateSet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    
+
     private String size;
 
     public GaussDBforOpenGaussListDatabase withName(String name) {

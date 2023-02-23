@@ -19,25 +19,22 @@ import java.util.Objects;
 public class UpdateModuleRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
     
-    
-    private String edgeNodeId;
 
+    private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="module_id")
     
-    
-    private String moduleId;
 
+    private String moduleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private UpdateEdgeModuleReqDTO body;
 
     public UpdateModuleRequest withEdgeNodeId(String edgeNodeId) {

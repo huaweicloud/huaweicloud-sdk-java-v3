@@ -23,17 +23,14 @@ import java.util.Objects;
 public class ListProjectTagsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
-    private Integer totalCount;
 
+    private Integer totalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
-    
     
     private List<ProjectTagItem> tags = null;
     

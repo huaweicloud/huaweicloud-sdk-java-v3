@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListAuditRuleRisksResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rules")
     
-    
     private List<RuleRiskResponseRules> rules = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
-    
+
     private Integer total;
 
     public ListAuditRuleRisksResponse withRules(List<RuleRiskResponseRules> rules) {

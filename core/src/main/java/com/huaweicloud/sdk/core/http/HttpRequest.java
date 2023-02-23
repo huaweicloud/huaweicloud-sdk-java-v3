@@ -26,7 +26,6 @@ import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.utils.SignUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

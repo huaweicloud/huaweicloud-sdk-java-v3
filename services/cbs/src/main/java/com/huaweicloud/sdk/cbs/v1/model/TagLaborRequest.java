@@ -18,18 +18,16 @@ import java.util.Objects;
 public class TagLaborRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qabot_id")
     
-    
-    private String qabotId;
 
+    private String qabotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="request_id")
     
-    
+
     private String requestId;
 
     public TagLaborRequest withQabotId(String qabotId) {

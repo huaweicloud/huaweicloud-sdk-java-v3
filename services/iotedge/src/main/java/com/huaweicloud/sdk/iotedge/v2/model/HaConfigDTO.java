@@ -18,18 +18,16 @@ import java.util.Objects;
 public class HaConfigDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ha_type")
     
-    
-    private String haType;
 
+    private String haType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="active_standby_config")
     
-    
+
     private ActiveStandbyConfigDTO activeStandbyConfig;
 
     public HaConfigDTO withHaType(String haType) {

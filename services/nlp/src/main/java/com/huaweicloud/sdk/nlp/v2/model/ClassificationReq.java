@@ -21,11 +21,10 @@ import java.util.Objects;
 public class ClassificationReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
-    
+
     private String content;
     /**
      * 1 广告检测
@@ -100,11 +99,10 @@ public class ClassificationReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    
+
     private DomainEnum domain;
 
     public ClassificationReq withContent(String content) {

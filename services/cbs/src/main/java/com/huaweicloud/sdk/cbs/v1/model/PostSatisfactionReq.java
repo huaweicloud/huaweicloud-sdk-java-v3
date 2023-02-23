@@ -17,11 +17,10 @@ import java.util.Objects;
 public class PostSatisfactionReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="degree")
     
-    
+
     private Integer degree;
 
     public PostSatisfactionReq withDegree(Integer degree) {

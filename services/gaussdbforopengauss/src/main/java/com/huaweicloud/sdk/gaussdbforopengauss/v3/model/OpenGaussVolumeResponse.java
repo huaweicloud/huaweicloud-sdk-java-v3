@@ -99,18 +99,16 @@ public class OpenGaussVolumeResponse  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private TypeEnum type;
 
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    
+
     private Integer size;
 
     public OpenGaussVolumeResponse withType(TypeEnum type) {

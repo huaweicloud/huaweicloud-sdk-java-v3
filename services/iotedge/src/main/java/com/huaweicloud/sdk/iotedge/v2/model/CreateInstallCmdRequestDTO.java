@@ -17,11 +17,10 @@ import java.util.Objects;
 public class CreateInstallCmdRequestDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host_tag")
     
-    
+
     private String hostTag;
 
     public CreateInstallCmdRequestDTO withHostTag(String hostTag) {

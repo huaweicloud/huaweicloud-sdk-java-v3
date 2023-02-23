@@ -17,32 +17,28 @@ import java.util.Objects;
 public class SqlExecutionReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sql_type")
     
-    
-    private String sqlType;
 
+    private String sqlType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sql_content")
     
-    
-    private String sqlContent;
 
+    private String sqlContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="database")
     
-    
-    private String database;
 
+    private String database;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="archive_path")
     
-    
+
     private String archivePath;
 
     public SqlExecutionReq withSqlType(String sqlType) {

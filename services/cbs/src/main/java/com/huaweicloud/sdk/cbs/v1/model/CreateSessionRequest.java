@@ -18,11 +18,10 @@ import java.util.Objects;
 public class CreateSessionRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qabot_id")
     
-    
+
     private String qabotId;
 
     public CreateSessionRequest withQabotId(String qabotId) {

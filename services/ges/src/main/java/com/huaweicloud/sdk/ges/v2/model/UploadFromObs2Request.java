@@ -19,11 +19,10 @@ import java.util.Objects;
 public class UploadFromObs2Request  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private UploadFromObsReq body;
 
     public UploadFromObs2Request withBody(UploadFromObsReq body) {

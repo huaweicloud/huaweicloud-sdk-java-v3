@@ -3868,6 +3868,37 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 
+     *
+     * 数据库帐号授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDbUserPrivilegeRequest 请求对象
+     * @return CompletableFuture<UpdateDbUserPrivilegeResponse>
+     */
+    public CompletableFuture<UpdateDbUserPrivilegeResponse> updateDbUserPrivilegeAsync(
+        UpdateDbUserPrivilegeRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updateDbUserPrivilege);
+    }
+
+    /**
+     * 
+     *
+     * 数据库帐号授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDbUserPrivilegeRequest 请求对象
+     * @return AsyncInvoker<UpdateDbUserPrivilegeRequest, UpdateDbUserPrivilegeResponse>
+     */
+    public AsyncInvoker<UpdateDbUserPrivilegeRequest, UpdateDbUserPrivilegeResponse> updateDbUserPrivilegeAsyncInvoker(
+        UpdateDbUserPrivilegeRequest request) {
+        return new AsyncInvoker<UpdateDbUserPrivilegeRequest, UpdateDbUserPrivilegeResponse>(request,
+            RdsMeta.updateDbUserPrivilege, hcClient);
+    }
+
+    /**
      * 修改实例指定参数的值
      *
      * 修改实例指定参数的值。

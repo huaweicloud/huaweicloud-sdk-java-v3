@@ -20,10 +20,8 @@ import java.util.Objects;
 public class BatchImportConfigsRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configs")
-    
     
     private List<BatchImportConfigRequestBody> configs = null;
     

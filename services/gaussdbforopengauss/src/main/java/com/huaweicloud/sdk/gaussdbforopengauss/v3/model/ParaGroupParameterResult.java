@@ -21,39 +21,34 @@ import java.util.Objects;
 public class ParaGroupParameterResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
-    
-    private String value;
 
+    private String value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="need_restart")
     
-    
-    private Boolean needRestart;
 
+    private Boolean needRestart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="readonly")
     
-    
-    private Boolean readonly;
 
+    private Boolean readonly;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value_range")
     
-    
+
     private String valueRange;
     /**
      * 参数类型，取值为“string”、“integer”、“boolean”、“list”或“float”之一。
@@ -152,18 +147,16 @@ public class ParaGroupParameterResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_type")
     
-    
-    private DataTypeEnum dataType;
 
+    private DataTypeEnum dataType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
+
     private String description;
 
     public ParaGroupParameterResult withName(String name) {

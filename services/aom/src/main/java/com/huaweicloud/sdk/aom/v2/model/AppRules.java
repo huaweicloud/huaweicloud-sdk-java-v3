@@ -11,69 +11,71 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.AppRulesSpec;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 服务参数。
  */
+@JacksonXmlRootElement(localName = "AppRules")
 public class AppRules  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="createTime")
     
-    
-    private String createTime;
+    @JacksonXmlProperty(localName = "createTime")
 
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable")
     
-    
-    private Boolean enable;
+    @JacksonXmlProperty(localName = "enable")
 
+    private Boolean enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eventName")
     
-    
-    private String eventName;
+    @JacksonXmlProperty(localName = "eventName")
 
+    private String eventName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hostid")
     
-    
+    @JacksonXmlProperty(localName = "hostid")
     private List<String> hostid = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
+    @JacksonXmlProperty(localName = "id")
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
+    @JacksonXmlProperty(localName = "name")
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="projectid")
     
-    
-    private String projectid;
+    @JacksonXmlProperty(localName = "projectid")
 
+    private String projectid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    
+    @JacksonXmlProperty(localName = "spec")
+
     private AppRulesSpec spec;
 
     public AppRules withCreateTime(String createTime) {

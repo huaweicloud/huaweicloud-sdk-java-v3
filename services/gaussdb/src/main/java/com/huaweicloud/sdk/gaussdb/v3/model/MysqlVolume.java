@@ -17,11 +17,10 @@ import java.util.Objects;
 public class MysqlVolume  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    
+
     private String size;
 
     public MysqlVolume withSize(String size) {

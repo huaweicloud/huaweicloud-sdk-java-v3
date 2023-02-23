@@ -17,18 +17,16 @@ import java.util.Objects;
 public class ParamGroupCopyRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
+
     private String description;
 
     public ParamGroupCopyRequestBody withName(String name) {

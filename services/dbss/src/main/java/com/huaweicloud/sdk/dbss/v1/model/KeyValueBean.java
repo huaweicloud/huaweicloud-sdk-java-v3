@@ -17,18 +17,16 @@ import java.util.Objects;
 public class KeyValueBean  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key")
     
-    
-    private String key;
 
+    private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
-    
+
     private String value;
 
     public KeyValueBean withKey(String key) {

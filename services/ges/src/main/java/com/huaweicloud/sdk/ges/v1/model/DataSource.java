@@ -18,18 +18,16 @@ import java.util.Objects;
 public class DataSource  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
-    
+
     private Parameters parameters;
 
     public DataSource withType(String type) {

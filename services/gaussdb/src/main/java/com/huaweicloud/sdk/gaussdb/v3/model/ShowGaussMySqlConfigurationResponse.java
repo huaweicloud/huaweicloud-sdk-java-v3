@@ -24,17 +24,14 @@ import java.util.Objects;
 public class ShowGaussMySqlConfigurationResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configurations")
     
-    
-    private ConfigurationSummary2 configurations;
 
+    private ConfigurationSummary2 configurations;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameter_values")
-    
     
     private Map<String, String> parameterValues = null;
     

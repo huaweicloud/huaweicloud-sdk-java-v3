@@ -17,25 +17,22 @@ import java.util.Objects;
 public class InstanceInfoResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_name")
     
-    
-    private String instanceName;
 
+    private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_status")
     
-    
+
     private String instanceStatus;
 
     public InstanceInfoResult withInstanceId(String instanceId) {

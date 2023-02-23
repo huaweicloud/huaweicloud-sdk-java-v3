@@ -17,18 +17,16 @@ import java.util.Objects;
 public class SqlFilterRulePattern  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pattern")
     
-    
-    private String pattern;
 
+    private String pattern;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max_concurrency")
     
-    
+
     private Integer maxConcurrency;
 
     public SqlFilterRulePattern withPattern(String pattern) {

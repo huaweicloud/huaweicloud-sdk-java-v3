@@ -17,25 +17,22 @@ import java.util.Objects;
 public class ExecutionPlanSummary  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_add")
     
-    
-    private Integer resourceAdd;
 
+    private Integer resourceAdd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_update")
     
-    
-    private Integer resourceUpdate;
 
+    private Integer resourceUpdate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_delete")
     
-    
+
     private Integer resourceDelete;
 
     public ExecutionPlanSummary withResourceAdd(Integer resourceAdd) {

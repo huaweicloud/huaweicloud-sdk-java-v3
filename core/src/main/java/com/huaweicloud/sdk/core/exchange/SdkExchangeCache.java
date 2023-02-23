@@ -31,7 +31,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class SdkExchangeCache {
 
-    private static Map<String, SdkExchange> exchangeMap = new ConcurrentHashMap<>();
+    private static final Map<String, SdkExchange> exchangeMap = new ConcurrentHashMap<>();
 
     /**
      * The utility class should hide the public constructor

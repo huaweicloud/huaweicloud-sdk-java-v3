@@ -21,88 +21,76 @@ import java.util.Objects;
 public class NodeGroupV10  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="GroupName")
     
-    
-    private String groupName;
 
+    private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="NodeNum")
     
-    
-    private Integer nodeNum;
 
+    private Integer nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="NodeSize")
     
-    
-    private String nodeSize;
 
+    private String nodeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="NodeSpecId")
     
-    
-    private String nodeSpecId;
 
+    private String nodeSpecId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="VmProductId")
     
-    
-    private String vmProductId;
 
+    private String vmProductId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="VmSpecCode")
     
-    
-    private String vmSpecCode;
 
+    private String vmSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="NodeProductId")
     
-    
-    private String nodeProductId;
 
+    private String nodeProductId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="RootVolumeSize")
     
-    
-    private Integer rootVolumeSize;
 
+    private Integer rootVolumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="RootVolumeProductId")
     
-    
-    private String rootVolumeProductId;
 
+    private String rootVolumeProductId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="RootVolumeType")
     
-    
-    private String rootVolumeType;
 
+    private String rootVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="RootVolumeResourceSpecCode")
     
-    
-    private String rootVolumeResourceSpecCode;
 
+    private String rootVolumeResourceSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="RootVolumeResourceType")
     
-    
+
     private String rootVolumeResourceType;
     /**
      * 节点数据磁盘存储类别，目前支持SATA、SAS和SSD。  - SATA：普通IO - SAS：高IO - SSD：超高IO
@@ -195,46 +183,40 @@ public class NodeGroupV10  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="DataVolumeType")
     
-    
-    private DataVolumeTypeEnum dataVolumeType;
 
+    private DataVolumeTypeEnum dataVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="DataVolumeCount")
     
-    
-    private Integer dataVolumeCount;
 
+    private Integer dataVolumeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="DataVolumeSize")
     
-    
-    private Integer dataVolumeSize;
 
+    private Integer dataVolumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="DataVolumeProductId")
     
-    
-    private String dataVolumeProductId;
 
+    private String dataVolumeProductId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="DataVolumeResourceSpecCode")
     
-    
-    private String dataVolumeResourceSpecCode;
 
+    private String dataVolumeResourceSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="DataVolumeResourceType")
     
-    
+
     private String dataVolumeResourceType;
 
     public NodeGroupV10 withGroupName(String groupName) {

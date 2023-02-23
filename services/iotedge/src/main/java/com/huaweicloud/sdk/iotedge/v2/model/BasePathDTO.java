@@ -17,25 +17,22 @@ import java.util.Objects;
 public class BasePathDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="log_base_path")
     
-    
-    private String logBasePath;
 
+    private String logBasePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="config_base_path")
     
-    
-    private String configBasePath;
 
+    private String configBasePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db_base_path")
     
-    
+
     private String dbBasePath;
 
     public BasePathDTO withLogBasePath(String logBasePath) {

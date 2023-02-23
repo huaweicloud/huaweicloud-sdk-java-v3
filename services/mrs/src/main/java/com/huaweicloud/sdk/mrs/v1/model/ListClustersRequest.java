@@ -18,46 +18,40 @@ import java.util.Objects;
 public class ListClustersRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    
-    private String tags;
 
+    private String tags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pageSize")
     
-    
-    private String pageSize;
 
+    private String pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="currentPage")
     
-    
-    private String currentPage;
 
+    private String currentPage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterName")
     
-    
-    private String clusterName;
 
+    private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterState")
     
-    
-    private String clusterState;
 
+    private String clusterState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterpriseProjectId")
     
-    
+
     private String enterpriseProjectId;
 
     public ListClustersRequest withTags(String tags) {

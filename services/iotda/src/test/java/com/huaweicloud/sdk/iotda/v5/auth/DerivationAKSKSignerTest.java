@@ -9,6 +9,10 @@ import org.junit.Assert;
 import java.util.Arrays;
 import java.util.Map;
 
+/**
+ * @deprecated Deprecated test class.
+ */
+@Deprecated
 public class DerivationAKSKSignerTest {
 
     @org.junit.Test

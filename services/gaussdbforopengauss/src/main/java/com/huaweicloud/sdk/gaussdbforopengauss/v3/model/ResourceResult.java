@@ -93,25 +93,22 @@ public class ResourceResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private TypeEnum type;
 
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="used")
     
-    
-    private Integer used;
 
+    private Integer used;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quota")
     
-    
+
     private Integer quota;
 
     public ResourceResult withType(TypeEnum type) {

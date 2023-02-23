@@ -19,25 +19,22 @@ import java.util.Objects;
 public class AddDatabasePermissionRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private GrantDatabasePermissionRequestBody body;
 
     public AddDatabasePermissionRequest withXLanguage(String xLanguage) {

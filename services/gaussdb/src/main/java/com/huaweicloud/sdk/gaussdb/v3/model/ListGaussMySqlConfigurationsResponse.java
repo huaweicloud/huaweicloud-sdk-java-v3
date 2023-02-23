@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListGaussMySqlConfigurationsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configurations")
     
-    
     private List<ConfigurationSummary> configurations = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Integer totalCount;
 
     public ListGaussMySqlConfigurationsResponse withConfigurations(List<ConfigurationSummary> configurations) {

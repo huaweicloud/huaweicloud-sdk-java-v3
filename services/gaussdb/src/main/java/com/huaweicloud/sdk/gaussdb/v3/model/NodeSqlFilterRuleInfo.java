@@ -20,17 +20,14 @@ import java.util.Objects;
 public class NodeSqlFilterRuleInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    
-    private String nodeId;
 
+    private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rules")
-    
     
     private List<NodeSqlFilterRule> rules = null;
     

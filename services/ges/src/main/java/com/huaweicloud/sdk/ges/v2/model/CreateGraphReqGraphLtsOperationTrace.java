@@ -17,18 +17,16 @@ import java.util.Objects;
 public class CreateGraphReqGraphLtsOperationTrace  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_audit")
     
-    
-    private Boolean enableAudit;
 
+    private Boolean enableAudit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audit_log_group_name")
     
-    
+
     private String auditLogGroupName;
 
     public CreateGraphReqGraphLtsOperationTrace withEnableAudit(Boolean enableAudit) {

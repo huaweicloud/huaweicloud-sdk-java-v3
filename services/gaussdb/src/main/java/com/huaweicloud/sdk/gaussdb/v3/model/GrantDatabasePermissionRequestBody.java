@@ -20,10 +20,8 @@ import java.util.Objects;
 public class GrantDatabasePermissionRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="users")
-    
     
     private List<GrantDatabasePermission> users = null;
     

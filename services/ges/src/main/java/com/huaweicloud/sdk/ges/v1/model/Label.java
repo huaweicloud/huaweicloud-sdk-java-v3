@@ -17,18 +17,16 @@ import java.util.Objects;
 public class Label  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="properties")
     
-    
+
     private Object properties;
 
     public Label withName(String name) {

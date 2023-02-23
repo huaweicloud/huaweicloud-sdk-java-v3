@@ -22,32 +22,27 @@ import java.util.Objects;
 public class CreateGaussMySqlReadonlyNodeResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_names")
     
-    
     private List<String> nodeNames = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
-    private String jobId;
 
+    private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_id")
     
-    
+
     private String orderId;
 
     public CreateGaussMySqlReadonlyNodeResponse withInstanceId(String instanceId) {

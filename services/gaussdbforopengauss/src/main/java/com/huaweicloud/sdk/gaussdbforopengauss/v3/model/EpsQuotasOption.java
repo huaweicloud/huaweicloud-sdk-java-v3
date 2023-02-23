@@ -17,39 +17,34 @@ import java.util.Objects;
 public class EpsQuotasOption  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_projects_id")
     
-    
-    private String enterpriseProjectsId;
 
+    private String enterpriseProjectsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_quota")
     
-    
-    private Integer instanceQuota;
 
+    private Integer instanceQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus_quota")
     
-    
-    private Integer vcpusQuota;
 
+    private Integer vcpusQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram_quota")
     
-    
-    private Integer ramQuota;
 
+    private Integer ramQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_quota")
     
-    
+
     private Integer volumeQuota;
 
     public EpsQuotasOption withEnterpriseProjectsId(String enterpriseProjectsId) {

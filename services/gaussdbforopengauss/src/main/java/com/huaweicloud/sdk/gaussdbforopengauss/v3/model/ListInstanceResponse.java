@@ -25,213 +25,179 @@ import java.util.Objects;
 public class ListInstanceResponse  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="private_ips")
     
-    
     private List<String> privateIps = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ips")
     
-    
     private List<String> publicIps = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    
-    private Integer port;
 
+    private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ha")
     
-    
-    private ListHa ha;
 
+    private ListHa ha;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replica_num")
     
-    
-    private Integer replicaNum;
 
+    private Integer replicaNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="region")
     
-    
-    private String region;
 
+    private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    
-    private ListDatastore datastore;
 
+    private ListDatastore datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
-    
-    private String created;
 
+    private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
-    
-    private String updated;
 
+    private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db_user_name")
     
-    
-    private String dbUserName;
 
+    private String dbUserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
-    
-    private String vpcId;
 
+    private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
-    
-    private String subnetId;
 
+    private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_id")
     
-    
-    private String securityGroupId;
 
+    private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
-    
-    private String flavorRef;
 
+    private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_info")
     
-    
-    private ListFlavorInfo flavorInfo;
 
+    private ListFlavorInfo flavorInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
-    
-    private ListVolume volume;
 
+    private ListVolume volume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="switch_strategy")
     
-    
-    private String switchStrategy;
 
+    private String switchStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_strategy")
     
-    
-    private OpenGaussBackupStrategyForListResponse backupStrategy;
 
+    private OpenGaussBackupStrategyForListResponse backupStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="maintenance_window")
     
-    
-    private String maintenanceWindow;
 
+    private String maintenanceWindow;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
-    
     private List<Object> nodes = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
-    private String enterpriseProjectId;
 
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_mode")
     
-    
-    private String instanceMode;
 
+    private String instanceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disk_encryption_id")
     
-    
-    private String diskEncryptionId;
 
+    private String diskEncryptionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_info")
     
-    
-    private OpenGaussChargeInfoListResponse chargeInfo;
 
+    private OpenGaussChargeInfoListResponse chargeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_zone")
     
-    
-    private String timeZone;
 
+    private String timeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
-    
     
     private List<Object> tags = null;
     

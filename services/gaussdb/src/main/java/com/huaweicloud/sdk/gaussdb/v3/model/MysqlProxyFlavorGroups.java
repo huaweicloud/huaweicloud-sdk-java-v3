@@ -20,17 +20,14 @@ import java.util.Objects;
 public class MysqlProxyFlavorGroups  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_type")
     
-    
-    private String groupType;
 
+    private String groupType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="proxy_flavors")
-    
     
     private List<MysqlProxyComputeFlavor> proxyFlavors = null;
     

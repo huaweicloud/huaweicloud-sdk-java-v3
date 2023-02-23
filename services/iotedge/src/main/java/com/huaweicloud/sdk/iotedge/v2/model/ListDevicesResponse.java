@@ -24,25 +24,21 @@ import java.util.Objects;
 public class ListDevicesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="devices")
     
-    
     private List<QueryDeviceSimplifyDto> devices = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
-    
-    private Long count;
 
+    private Long count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    
+
     private PageInfoDTO pageInfo;
 
     public ListDevicesResponse withDevices(List<QueryDeviceSimplifyDto> devices) {

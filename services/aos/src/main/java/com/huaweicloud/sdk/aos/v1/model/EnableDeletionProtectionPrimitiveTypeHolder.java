@@ -17,11 +17,10 @@ import java.util.Objects;
 public class EnableDeletionProtectionPrimitiveTypeHolder  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_deletion_protection")
     
-    
+
     private Boolean enableDeletionProtection;
 
     public EnableDeletionProtectionPrimitiveTypeHolder withEnableDeletionProtection(Boolean enableDeletionProtection) {

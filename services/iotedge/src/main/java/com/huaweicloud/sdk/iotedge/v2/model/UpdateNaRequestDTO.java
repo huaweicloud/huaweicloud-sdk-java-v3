@@ -19,53 +19,46 @@ import java.util.Objects;
 public class UpdateNaRequestDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endpoint")
     
-    
-    private String endpoint;
 
+    private String endpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_type")
     
-    
-    private String authType;
 
+    private String authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_aksk_info")
     
-    
-    private AuthAkSkInfo authAkskInfo;
 
+    private AuthAkSkInfo authAkskInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="access_type")
     
-    
-    private String accessType;
 
+    private String accessType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="access_roma_info")
     
-    
+
     private AccessRomaInfo accessRomaInfo;
 
     public UpdateNaRequestDTO withName(String name) {

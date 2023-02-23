@@ -20,11 +20,10 @@ import java.util.Objects;
 public class BatchImportConfigsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ids")
     
-    
+
     private Object ids;
 
     public BatchImportConfigsResponse withIds(Object ids) {

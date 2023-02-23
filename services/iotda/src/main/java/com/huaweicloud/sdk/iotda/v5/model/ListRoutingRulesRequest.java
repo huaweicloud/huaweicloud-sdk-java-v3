@@ -41,6 +41,11 @@ public class ListRoutingRulesRequest {
     private String ruleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "active")
+
+    private Boolean active;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -61,7 +66,7 @@ public class ListRoutingRulesRequest {
     }
 
     /**
-     * **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
+     * **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。您可以在IoTDA管理控制台界面，选择左侧导航栏“总览”页签查看当前实例的ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -157,6 +162,23 @@ public class ListRoutingRulesRequest {
         this.ruleName = ruleName;
     }
 
+    public ListRoutingRulesRequest withActive(Boolean active) {
+        this.active = active;
+        return this;
+    }
+
+    /**
+     * **参数说明**：规则条件的状态是否为激活。
+     * @return active
+     */
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
     public ListRoutingRulesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -227,6 +249,7 @@ public class ListRoutingRulesRequest {
             && Objects.equals(this.appType, listRoutingRulesRequest.appType)
             && Objects.equals(this.appId, listRoutingRulesRequest.appId)
             && Objects.equals(this.ruleName, listRoutingRulesRequest.ruleName)
+            && Objects.equals(this.active, listRoutingRulesRequest.active)
             && Objects.equals(this.limit, listRoutingRulesRequest.limit)
             && Objects.equals(this.marker, listRoutingRulesRequest.marker)
             && Objects.equals(this.offset, listRoutingRulesRequest.offset);
@@ -234,7 +257,7 @@ public class ListRoutingRulesRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, resource, event, appType, appId, ruleName, limit, marker, offset);
+        return Objects.hash(instanceId, resource, event, appType, appId, ruleName, active, limit, marker, offset);
     }
 
     @Override
@@ -247,6 +270,7 @@ public class ListRoutingRulesRequest {
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    ruleName: ").append(toIndentedString(ruleName)).append("\n");
+        sb.append("    active: ").append(toIndentedString(active)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

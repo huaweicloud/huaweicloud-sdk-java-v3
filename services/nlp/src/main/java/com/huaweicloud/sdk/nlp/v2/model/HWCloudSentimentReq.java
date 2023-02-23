@@ -21,11 +21,10 @@ import java.util.Objects;
 public class HWCloudSentimentReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
-    
+
     private String content;
     /**
      * 支持的文本语言类型，目前支持中文（zh）和英文（en），默认为中文。
@@ -106,11 +105,10 @@ public class HWCloudSentimentReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lang")
     
-    
+
     private LangEnum lang;
 
     public HWCloudSentimentReq withContent(String content) {

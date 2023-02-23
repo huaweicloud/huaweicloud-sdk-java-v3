@@ -23,17 +23,14 @@ import java.util.Objects;
 public class ListConfigurationsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
-    
-    private Integer count;
 
+    private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configurations")
-    
     
     private List<ConfigurationSummary> configurations = null;
     

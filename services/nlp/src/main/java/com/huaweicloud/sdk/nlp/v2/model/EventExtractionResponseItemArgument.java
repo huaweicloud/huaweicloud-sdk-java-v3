@@ -19,25 +19,21 @@ import java.util.Objects;
 public class EventExtractionResponseItemArgument  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="role")
     
-    
-    private String role;
 
+    private String role;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="span")
     
-    
     private List<Integer> span = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="word")
     
-    
+
     private String word;
 
     public EventExtractionResponseItemArgument withRole(String role) {

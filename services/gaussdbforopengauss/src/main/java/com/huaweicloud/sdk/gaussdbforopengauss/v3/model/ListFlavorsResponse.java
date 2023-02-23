@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListFlavorsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavors")
     
-    
     private List<Flavor> flavors = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
-    
+
     private Integer total;
 
     public ListFlavorsResponse withFlavors(List<Flavor> flavors) {

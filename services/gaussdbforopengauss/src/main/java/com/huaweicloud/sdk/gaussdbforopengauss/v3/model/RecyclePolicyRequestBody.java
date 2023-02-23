@@ -18,11 +18,10 @@ import java.util.Objects;
 public class RecyclePolicyRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="recycle_policy")
     
-    
+
     private RecyclePolicy recyclePolicy;
 
     public RecyclePolicyRequestBody withRecyclePolicy(RecyclePolicy recyclePolicy) {

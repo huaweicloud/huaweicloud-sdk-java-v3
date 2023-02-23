@@ -17,25 +17,22 @@ import java.util.Objects;
 public class HotQuestionCount  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qa_pair_id")
     
-    
-    private String qaPairId;
 
+    private String qaPairId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="st_question")
     
-    
-    private String stQuestion;
 
+    private String stQuestion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    
+
     private String domain;
 
     public HotQuestionCount withQaPairId(String qaPairId) {

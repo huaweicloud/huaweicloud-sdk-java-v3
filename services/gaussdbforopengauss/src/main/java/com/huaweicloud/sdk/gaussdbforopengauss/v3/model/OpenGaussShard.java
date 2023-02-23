@@ -17,11 +17,10 @@ import java.util.Objects;
 public class OpenGaussShard  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
-    
+
     private Integer count;
 
     public OpenGaussShard withCount(Integer count) {

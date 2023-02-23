@@ -17,32 +17,28 @@ import java.util.Objects;
 public class NamedEntity  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="word")
     
-    
-    private String word;
 
+    private String word;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag")
     
-    
-    private String tag;
 
+    private String tag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private Integer offset;
 
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="len")
     
-    
+
     private Integer len;
 
     public NamedEntity withWord(String word) {

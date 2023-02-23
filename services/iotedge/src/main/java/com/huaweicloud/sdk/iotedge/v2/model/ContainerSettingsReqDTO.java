@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ContainerSettingsReqDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configs")
     
-    
+
     private ContainerConfigsReqDTO configs;
 
     public ContainerSettingsReqDTO withConfigs(ContainerConfigsReqDTO configs) {

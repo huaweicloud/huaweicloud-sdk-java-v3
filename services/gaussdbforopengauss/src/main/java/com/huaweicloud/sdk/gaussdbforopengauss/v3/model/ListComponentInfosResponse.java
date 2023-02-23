@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListComponentInfosResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
-    
     private List<Nodes> nodes = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Integer totalCount;
 
     public ListComponentInfosResponse withNodes(List<Nodes> nodes) {

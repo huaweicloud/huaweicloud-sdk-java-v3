@@ -17,46 +17,40 @@ import java.util.Objects;
 public class DedicatedComputeInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus_total")
     
-    
-    private Integer vcpusTotal;
 
+    private Integer vcpusTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus_used")
     
-    
-    private Integer vcpusUsed;
 
+    private Integer vcpusUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram_total")
     
-    
-    private Integer ramTotal;
 
+    private Integer ramTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram_used")
     
-    
-    private Integer ramUsed;
 
+    private Integer ramUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec_code")
     
-    
-    private String specCode;
 
+    private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host_num")
     
-    
+
     private Integer hostNum;
 
     public DedicatedComputeInfo withVcpusTotal(Integer vcpusTotal) {

@@ -94,18 +94,16 @@ public class AutoScalingPolicyReqV11  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_group")
     
-    
-    private NodeGroupEnum nodeGroup;
 
+    private NodeGroupEnum nodeGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_scaling_policy")
     
-    
+
     private AutoScalingPolicy autoScalingPolicy;
 
     public AutoScalingPolicyReqV11 withNodeGroup(NodeGroupEnum nodeGroup) {

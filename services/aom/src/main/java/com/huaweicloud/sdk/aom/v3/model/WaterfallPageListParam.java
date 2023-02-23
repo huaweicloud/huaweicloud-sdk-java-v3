@@ -8,27 +8,30 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * WaterfallPageListParam
  */
+@JacksonXmlRootElement(localName = "WaterfallPageListParam")
 public class WaterfallPageListParam  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="maker")
     
-    
-    private String maker;
+    @JacksonXmlProperty(localName = "maker")
 
+    private String maker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
+    @JacksonXmlProperty(localName = "limit")
+
     private Integer limit;
 
     public WaterfallPageListParam withMaker(String maker) {

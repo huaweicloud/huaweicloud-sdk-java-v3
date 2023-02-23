@@ -17,18 +17,16 @@ import java.util.Objects;
 public class ApplyExecutionPlanRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stack_id")
     
-    
-    private String stackId;
 
+    private String stackId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="execution_plan_id")
     
-    
+
     private String executionPlanId;
 
     public ApplyExecutionPlanRequestBody withStackId(String stackId) {

@@ -174,6 +174,34 @@ public class LakeFormationAsyncClient {
     /**
      * 获取同步权限策略
      *
+     * 分页获取同步权限策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPolicyRequest 请求对象
+     * @return CompletableFuture<ListPolicyResponse>
+     */
+    public CompletableFuture<ListPolicyResponse> listPolicyAsync(ListPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.listPolicy);
+    }
+
+    /**
+     * 获取同步权限策略
+     *
+     * 分页获取同步权限策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPolicyRequest 请求对象
+     * @return AsyncInvoker<ListPolicyRequest, ListPolicyResponse>
+     */
+    public AsyncInvoker<ListPolicyRequest, ListPolicyResponse> listPolicyAsyncInvoker(ListPolicyRequest request) {
+        return new AsyncInvoker<ListPolicyRequest, ListPolicyResponse>(request, LakeFormationMeta.listPolicy, hcClient);
+    }
+
+    /**
+     * 获取同步权限策略
+     *
      * 获取同步权限策略
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -836,6 +864,37 @@ public class LakeFormationAsyncClient {
         CountMetaObjRequest request) {
         return new AsyncInvoker<CountMetaObjRequest, CountMetaObjResponse>(request, LakeFormationMeta.countMetaObj,
             hcClient);
+    }
+
+    /**
+     * 创建实例
+     *
+     * 创建一个LakeFormation实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateLakeFormationInstanceRequest 请求对象
+     * @return CompletableFuture<CreateLakeFormationInstanceResponse>
+     */
+    public CompletableFuture<CreateLakeFormationInstanceResponse> createLakeFormationInstanceAsync(
+        CreateLakeFormationInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.createLakeFormationInstance);
+    }
+
+    /**
+     * 创建实例
+     *
+     * 创建一个LakeFormation实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateLakeFormationInstanceRequest 请求对象
+     * @return AsyncInvoker<CreateLakeFormationInstanceRequest, CreateLakeFormationInstanceResponse>
+     */
+    public AsyncInvoker<CreateLakeFormationInstanceRequest, CreateLakeFormationInstanceResponse> createLakeFormationInstanceAsyncInvoker(
+        CreateLakeFormationInstanceRequest request) {
+        return new AsyncInvoker<CreateLakeFormationInstanceRequest, CreateLakeFormationInstanceResponse>(request,
+            LakeFormationMeta.createLakeFormationInstance, hcClient);
     }
 
     /**
@@ -2021,6 +2080,37 @@ public class LakeFormationAsyncClient {
         ListConstraintsRequest request) {
         return new AsyncInvoker<ListConstraintsRequest, ListConstraintsResponse>(request,
             LakeFormationMeta.listConstraints, hcClient);
+    }
+
+    /**
+     * 批量更新标签
+     *
+     * 为指定实例批量更新标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateLakeFormationInstanceTagsRequest 请求对象
+     * @return CompletableFuture<BatchUpdateLakeFormationInstanceTagsResponse>
+     */
+    public CompletableFuture<BatchUpdateLakeFormationInstanceTagsResponse> batchUpdateLakeFormationInstanceTagsAsync(
+        BatchUpdateLakeFormationInstanceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.batchUpdateLakeFormationInstanceTags);
+    }
+
+    /**
+     * 批量更新标签
+     *
+     * 为指定实例批量更新标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateLakeFormationInstanceTagsRequest 请求对象
+     * @return AsyncInvoker<BatchUpdateLakeFormationInstanceTagsRequest, BatchUpdateLakeFormationInstanceTagsResponse>
+     */
+    public AsyncInvoker<BatchUpdateLakeFormationInstanceTagsRequest, BatchUpdateLakeFormationInstanceTagsResponse> batchUpdateLakeFormationInstanceTagsAsyncInvoker(
+        BatchUpdateLakeFormationInstanceTagsRequest request) {
+        return new AsyncInvoker<BatchUpdateLakeFormationInstanceTagsRequest, BatchUpdateLakeFormationInstanceTagsResponse>(
+            request, LakeFormationMeta.batchUpdateLakeFormationInstanceTags, hcClient);
     }
 
     /**

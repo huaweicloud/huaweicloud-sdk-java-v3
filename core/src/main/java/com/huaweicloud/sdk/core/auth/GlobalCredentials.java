@@ -35,6 +35,7 @@ import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -100,7 +101,7 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
             }
 
             String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? getDefaultIamEndpoint() : getIamEndpoint();
-            HcClient inner = hcClient.overrideEndpoint(iamEndpoint);
+            HcClient inner = hcClient.overrideEndpoints(Collections.singletonList(iamEndpoint));
 
             Function<HttpRequest, Boolean> derivedPredicate = getDerivedPredicate();
             setDerivedPredicate(null);

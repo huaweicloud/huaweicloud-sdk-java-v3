@@ -21,18 +21,16 @@ import java.util.Objects;
 public class TextSimilarityRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text1")
     
-    
-    private String text1;
 
+    private String text1;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text2")
     
-    
+
     private String text2;
     /**
      * 支持的文本语言类型，目前支持中文（zh）和英文（en），默认为中文。
@@ -113,11 +111,10 @@ public class TextSimilarityRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lang")
     
-    
+
     private LangEnum lang;
 
     public TextSimilarityRequest withText1(String text1) {

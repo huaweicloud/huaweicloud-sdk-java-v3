@@ -17,25 +17,22 @@ import java.util.Objects;
 public class BindEIPRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    
-    private String action;
 
+    private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip")
     
-    
-    private String publicIp;
 
+    private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip_id")
     
-    
+
     private String publicIpId;
 
     public BindEIPRequestBody withAction(String action) {

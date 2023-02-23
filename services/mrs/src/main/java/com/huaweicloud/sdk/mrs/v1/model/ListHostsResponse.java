@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListHostsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hosts")
     
-    
     private List<HostModel> hosts = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
-    
+
     private Integer total;
 
     public ListHostsResponse withHosts(List<HostModel> hosts) {

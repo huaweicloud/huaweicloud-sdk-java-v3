@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListApplicableInstancesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instances")
     
-    
     private List<InstancesListResult> instances = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Integer totalCount;
 
     public ListApplicableInstancesResponse withInstances(List<InstancesListResult> instances) {

@@ -17,11 +17,10 @@ import java.util.Objects;
 public class TemplateURIPrimitiveTypeHolder  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_uri")
     
-    
+
     private String templateUri;
 
     public TemplateURIPrimitiveTypeHolder withTemplateUri(String templateUri) {

@@ -17,25 +17,22 @@ import java.util.Objects;
 public class ExtDevice  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source")
     
-    
-    private String source;
 
+    private String source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="destination")
     
-    
-    private String destination;
 
+    private String destination;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cgroup_permissions")
     
-    
+
     private String cgroupPermissions;
 
     public ExtDevice withSource(String source) {

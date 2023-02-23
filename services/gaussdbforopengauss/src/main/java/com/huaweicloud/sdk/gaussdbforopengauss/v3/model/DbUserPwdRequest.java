@@ -17,18 +17,16 @@ import java.util.Objects;
 public class DbUserPwdRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password")
     
-    
+
     private String password;
 
     public DbUserPwdRequest withName(String name) {

@@ -22,11 +22,10 @@ import java.util.Objects;
 public class ResetConfigurationRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="config_id")
     
-    
+
     private String configId;
     /**
      * 语言。
@@ -107,11 +106,10 @@ public class ResetConfigurationRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
+
     private XLanguageEnum xLanguage;
 
     public ResetConfigurationRequest withConfigId(String configId) {

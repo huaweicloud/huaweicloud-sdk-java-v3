@@ -20,24 +20,20 @@ import java.util.Objects;
 public class TaskBotAnswers  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="answer")
     
-    
-    private String answer;
 
+    private String answer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="skill_id")
     
-    
-    private String skillId;
 
+    private String skillId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="skill_responses")
-    
     
     private List<SkillResponse> skillResponses = null;
     

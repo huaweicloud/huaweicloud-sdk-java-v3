@@ -19,18 +19,16 @@ import java.util.Objects;
 public class SwitchAgentRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private AgentSwitchRequest body;
 
     public SwitchAgentRequest withInstanceId(String instanceId) {

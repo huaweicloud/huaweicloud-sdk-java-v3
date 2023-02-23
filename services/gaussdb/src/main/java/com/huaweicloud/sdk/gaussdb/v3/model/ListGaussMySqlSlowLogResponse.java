@@ -23,25 +23,21 @@ import java.util.Objects;
 public class ListGaussMySqlSlowLogResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slow_log_list")
     
-    
     private List<MysqlSlowLogList> slowLogList = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="long_query_time")
     
-    
-    private String longQueryTime;
 
+    private String longQueryTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_record")
     
-    
+
     private Integer totalRecord;
 
     public ListGaussMySqlSlowLogResponse withSlowLogList(List<MysqlSlowLogList> slowLogList) {

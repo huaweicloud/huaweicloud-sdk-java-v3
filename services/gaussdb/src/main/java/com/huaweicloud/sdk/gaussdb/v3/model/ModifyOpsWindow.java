@@ -17,18 +17,16 @@ import java.util.Objects;
 public class ModifyOpsWindow  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    
-    private String startTime;
 
+    private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    
+
     private String endTime;
 
     public ModifyOpsWindow withStartTime(String startTime) {

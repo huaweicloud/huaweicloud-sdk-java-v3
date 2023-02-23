@@ -23,10 +23,8 @@ import java.util.Objects;
 public class CollectKeyWordsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="keywords")
-    
     
     private List<KeyWordsStat> keywords = null;
     

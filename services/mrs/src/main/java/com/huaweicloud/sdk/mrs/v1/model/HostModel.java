@@ -20,109 +20,93 @@ import java.util.Objects;
 public class HostModel  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip")
     
-    
-    private String ip;
 
+    private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone_id")
     
-    
-    private String availabilityZoneId;
 
+    private String availabilityZoneId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    
     private List<TagPlain> tags = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_id")
     
-    
-    private String resourceId;
 
+    private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor")
     
-    
-    private String flavor;
 
+    private String flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mem")
     
-    
-    private String mem;
 
+    private String mem;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cpu")
     
-    
-    private String cpu;
 
+    private String cpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="root_volume_size")
     
-    
-    private String rootVolumeSize;
 
+    private String rootVolumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_type")
     
-    
-    private String dataVolumeType;
 
+    private String dataVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_size")
     
-    
-    private Integer dataVolumeSize;
 
+    private Integer dataVolumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_count")
     
-    
+
     private Integer dataVolumeCount;
 
     public HostModel withId(String id) {

@@ -20,53 +20,46 @@ import java.util.Objects;
 public class CreateExternalEntityResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    
-    private String nodeId;
 
+    private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="space_id")
     
-    
-    private String spaceId;
 
+    private String spaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="external_id")
     
-    
-    private String externalId;
 
+    private String externalId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol")
     
-    
-    private String protocol;
 
+    private String protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="connection_type")
     
-    
-    private String connectionType;
 
+    private String connectionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    
-    private String createTime;
 
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_modify_time")
     
-    
+
     private String lastModifyTime;
 
     public CreateExternalEntityResponse withNodeId(String nodeId) {

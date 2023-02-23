@@ -17,53 +17,46 @@ import java.util.Objects;
 public class VertexsetPath  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="path")
     
-    
-    private String path;
 
+    private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="log")
     
-    
-    private String log;
 
+    private String log;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cause")
     
-    
-    private String cause;
 
+    private String cause;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="totalLines")
     
-    
-    private Long totalLines;
 
+    private Long totalLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="failedLines")
     
-    
-    private Long failedLines;
 
+    private Long failedLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="successfulLines")
     
-    
+
     private Long successfulLines;
 
     public VertexsetPath withPath(String path) {

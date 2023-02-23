@@ -11,41 +11,44 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Response Object
  */
+@JacksonXmlRootElement(localName = "ShowComponentByNameResponse")
 public class ShowComponentByNameResponse extends SdkResponse {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
+    @JacksonXmlProperty(localName = "name")
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
+    @JacksonXmlProperty(localName = "id")
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="aom_id")
     
-    
-    private String aomId;
+    @JacksonXmlProperty(localName = "aom_id")
 
+    private String aomId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_id")
     
-    
+    @JacksonXmlProperty(localName = "app_id")
+
     private String appId;
 
     public ShowComponentByNameResponse withName(String name) {

@@ -14,12 +14,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 事件或者告警统计值统计结果元数据。
  */
+@JacksonXmlRootElement(localName = "EventSeries")
 public class EventSeries  {
 
     /**
@@ -113,18 +116,17 @@ public class EventSeries  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="event_severity")
     
-    
-    private EventSeverityEnum eventSeverity;
+    @JacksonXmlProperty(localName = "event_severity")
 
+    private EventSeverityEnum eventSeverity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="values")
     
-    
+    @JacksonXmlProperty(localName = "values")
     private List<Integer> values = null;
     
     public EventSeries withEventSeverity(EventSeverityEnum eventSeverity) {

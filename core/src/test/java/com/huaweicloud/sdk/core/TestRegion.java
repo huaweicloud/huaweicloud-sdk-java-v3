@@ -24,8 +24,10 @@ package com.huaweicloud.sdk.core;
 import com.huaweicloud.sdk.core.region.Region;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -35,6 +37,8 @@ import java.util.Objects;
 public class TestRegion {
     public static final String SERVICE_ENDPOINT = "http://127.0.0.1:10086";
     public static final String TEST_ENDPOINT = "https://test.huaweicloud.com";
+
+    public static final List<String> TEST_ENDPOINTS = Arrays.asList(TEST_ENDPOINT);
     public static final String TEST_ENDPOINT_WITHOUT_SCHEME = "test.huaweicloud.com";
 
     public static final Region CN_NORTH_7 = new Region("cn-north-7", SERVICE_ENDPOINT);

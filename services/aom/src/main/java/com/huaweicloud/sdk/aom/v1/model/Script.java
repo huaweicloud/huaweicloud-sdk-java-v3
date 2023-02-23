@@ -10,111 +10,114 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v1.model.ApproveInfo;
 import com.huaweicloud.sdk.aom.v1.model.RateControl;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 脚本的基本信息。
  */
+@JacksonXmlRootElement(localName = "Script")
 public class Script  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="approve_info")
     
-    
-    private ApproveInfo approveInfo;
+    @JacksonXmlProperty(localName = "approve_info")
 
+    private ApproveInfo approveInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_by")
     
-    
-    private String createBy;
+    @JacksonXmlProperty(localName = "create_by")
 
+    private String createBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    
-    private Long createTime;
+    @JacksonXmlProperty(localName = "create_time")
 
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
+    @JacksonXmlProperty(localName = "description")
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
-    private String enterpriseProjectId;
+    @JacksonXmlProperty(localName = "enterprise_project_id")
 
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
+    @JacksonXmlProperty(localName = "id")
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
+    @JacksonXmlProperty(localName = "name")
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="online_exist_status")
     
-    
-    private Boolean onlineExistStatus;
+    @JacksonXmlProperty(localName = "online_exist_status")
 
+    private Boolean onlineExistStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="online_id")
     
-    
-    private String onlineId;
+    @JacksonXmlProperty(localName = "online_id")
 
+    private String onlineId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project_id")
     
-    
-    private String projectId;
+    @JacksonXmlProperty(localName = "project_id")
 
+    private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rate_control")
     
-    
-    private RateControl rateControl;
+    @JacksonXmlProperty(localName = "rate_control")
 
+    private RateControl rateControl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="script_language")
     
-    
-    private String scriptLanguage;
+    @JacksonXmlProperty(localName = "script_language")
 
+    private String scriptLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_by")
     
-    
-    private String updateBy;
+    @JacksonXmlProperty(localName = "update_by")
 
+    private String updateBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    
+    @JacksonXmlProperty(localName = "update_time")
+
     private Long updateTime;
 
     public Script withApproveInfo(ApproveInfo approveInfo) {

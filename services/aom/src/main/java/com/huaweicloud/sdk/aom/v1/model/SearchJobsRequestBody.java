@@ -8,55 +8,58 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 分页查询作业列表请求参数
  */
+@JacksonXmlRootElement(localName = "SearchJobsRequestBody")
 public class SearchJobsRequestBody  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
+    @JacksonXmlProperty(localName = "name")
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_num")
     
-    
-    private Integer pageNum;
+    @JacksonXmlProperty(localName = "page_num")
 
+    private Integer pageNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_size")
     
-    
-    private Integer pageSize;
+    @JacksonXmlProperty(localName = "page_size")
 
+    private Integer pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_by_column")
     
-    
-    private String orderByColumn;
+    @JacksonXmlProperty(localName = "order_by_column")
 
+    private String orderByColumn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_order")
     
-    
-    private String sortOrder;
+    @JacksonXmlProperty(localName = "sort_order")
 
+    private String sortOrder;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
+    @JacksonXmlProperty(localName = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public SearchJobsRequestBody withName(String name) {

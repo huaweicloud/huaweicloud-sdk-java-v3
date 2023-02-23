@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ShowGaussMySqlBackupListResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backups")
     
-    
     private List<Backups> backups = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Long totalCount;
 
     public ShowGaussMySqlBackupListResponse withBackups(List<Backups> backups) {

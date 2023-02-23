@@ -404,6 +404,13 @@ public class RdsMeta {
             f -> f.withMarshaller(CreateInstanceRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
+        builder.<String>withRequestField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInstanceRequest::getXClientToken, (req, v) -> {
+                req.setXClientToken(v);
+            }));
         builder.<InstanceRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -5123,6 +5130,38 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(StopDatabaseProxyRequest.XLanguageEnum.class),
             f -> f.withMarshaller(StopDatabaseProxyRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDbUserPrivilegeRequest, UpdateDbUserPrivilegeResponse> updateDbUserPrivilege =
+        genForupdateDbUserPrivilege();
+
+    private static HttpRequestDef<UpdateDbUserPrivilegeRequest, UpdateDbUserPrivilegeResponse> genForupdateDbUserPrivilege() {
+        // basic
+        HttpRequestDef.Builder<UpdateDbUserPrivilegeRequest, UpdateDbUserPrivilegeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdateDbUserPrivilegeRequest.class, UpdateDbUserPrivilegeResponse.class)
+            .withName("UpdateDbUserPrivilege")
+            .withUri("/v3/{project_id}/instances/{instance_id}/db-user-privilege")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDbUserPrivilegeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<DbUserPrivilegeRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DbUserPrivilegeRequest.class),
+            f -> f.withMarshaller(UpdateDbUserPrivilegeRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

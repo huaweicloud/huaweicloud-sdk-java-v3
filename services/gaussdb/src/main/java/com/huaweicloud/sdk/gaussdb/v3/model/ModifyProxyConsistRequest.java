@@ -17,11 +17,10 @@ import java.util.Objects;
 public class ModifyProxyConsistRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="session_consistence")
     
-    
+
     private String sessionConsistence;
 
     public ModifyProxyConsistRequest withSessionConsistence(String sessionConsistence) {

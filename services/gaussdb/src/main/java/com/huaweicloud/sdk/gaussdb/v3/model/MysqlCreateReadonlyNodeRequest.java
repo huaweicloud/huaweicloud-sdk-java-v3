@@ -19,18 +19,15 @@ import java.util.Objects;
 public class MysqlCreateReadonlyNodeRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="priorities")
     
-    
     private List<Integer> priorities = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_pay")
     
-    
+
     private String isAutoPay;
 
     public MysqlCreateReadonlyNodeRequest withPriorities(List<Integer> priorities) {

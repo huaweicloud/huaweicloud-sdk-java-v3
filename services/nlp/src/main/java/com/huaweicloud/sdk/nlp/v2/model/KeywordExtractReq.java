@@ -21,18 +21,16 @@ import java.util.Objects;
 public class KeywordExtractReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text")
     
-    
-    private String text;
 
+    private String text;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
+
     private Integer limit;
     /**
      * 支持的文本语言类型，目前只支持中文，默认为zh。
@@ -107,11 +105,10 @@ public class KeywordExtractReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lang")
     
-    
+
     private LangEnum lang;
 
     public KeywordExtractReq withText(String text) {

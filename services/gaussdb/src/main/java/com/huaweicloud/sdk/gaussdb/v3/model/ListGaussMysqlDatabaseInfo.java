@@ -20,24 +20,20 @@ import java.util.Objects;
 public class ListGaussMysqlDatabaseInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charset")
     
-    
-    private String charset;
 
+    private String charset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="users")
-    
     
     private List<GaussMySqlDatabaseInfo> users = null;
     

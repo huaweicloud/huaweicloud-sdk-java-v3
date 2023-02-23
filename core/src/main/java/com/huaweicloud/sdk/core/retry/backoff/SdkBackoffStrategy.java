@@ -4,13 +4,13 @@
 
 package com.huaweicloud.sdk.core.retry.backoff;
 
-import static com.huaweicloud.sdk.core.utils.ValidationUtils.assertIntIsPositive;
-
 import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.retry.RetryContext;
 import com.huaweicloud.sdk.core.utils.RandomUtils;
 
 import java.security.SecureRandom;
+
+import static com.huaweicloud.sdk.core.utils.ValidationUtils.assertIntIsPositive;
 
 /**
  * Default backoff strategy in SDK.

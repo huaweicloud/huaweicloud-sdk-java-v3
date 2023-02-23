@@ -5,6 +5,7 @@ package com.huaweicloud.sdk.aom.v1.model;
 
 
 import com.huaweicloud.sdk.core.SdkResponse;
+import com.huaweicloud.sdk.corexml.SdkXmlResponse;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -14,27 +15,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v1.model.ScriptVersion;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Response Object
  */
-public class ListAllVersionByVersionIdResponse extends SdkResponse {
-
+@JacksonXmlRootElement(localName = "ListAllVersionByVersionIdResponse")
+public class ListAllVersionByVersionIdResponse extends SdkXmlResponse<ListAllVersionByVersionIdResponse> {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="elements")
     
-    
+    @JacksonXmlProperty(localName = "elements")
     private List<ScriptVersion> elements = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_elements")
     
-    
+    @JacksonXmlProperty(localName = "total_elements")
+
     private Integer totalElements;
 
     public ListAllVersionByVersionIdResponse withElements(List<ScriptVersion> elements) {

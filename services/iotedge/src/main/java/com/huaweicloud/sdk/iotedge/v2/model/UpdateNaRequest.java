@@ -19,18 +19,16 @@ import java.util.Objects;
 public class UpdateNaRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="na_id")
     
-    
-    private String naId;
 
+    private String naId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private UpdateNaRequestDTO body;
 
     public UpdateNaRequest withNaId(String naId) {

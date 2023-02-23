@@ -17,25 +17,22 @@ import java.util.Objects;
 public class ExecutionPlanDiffAttribute  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="previous_value")
     
-    
-    private String previousValue;
 
+    private String previousValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target_value")
     
-    
+
     private String targetValue;
 
     public ExecutionPlanDiffAttribute withName(String name) {

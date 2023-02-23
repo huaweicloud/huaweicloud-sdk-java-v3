@@ -17,18 +17,16 @@ import java.util.Objects;
 public class Nic  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eth")
     
-    
-    private String eth;
 
+    private String eth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip")
     
-    
+
     private String ip;
 
     public Nic withEth(String eth) {

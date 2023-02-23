@@ -17,25 +17,22 @@ import java.util.Objects;
 public class OfflineCacheConfigsDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publish_order")
     
-    
-    private String publishOrder;
 
+    private String publishOrder;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period")
     
-    
-    private Integer period;
 
+    private Integer period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="capacity")
     
-    
+
     private Integer capacity;
 
     public OfflineCacheConfigsDTO withPublishOrder(String publishOrder) {

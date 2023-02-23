@@ -23,17 +23,14 @@ import java.util.Objects;
 public class ListMetadatas2Response extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schema_count")
     
-    
-    private Integer schemaCount;
 
+    private Integer schemaCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schema_list")
-    
     
     private List<ListMetadatasRespSchemaList> schemaList = null;
     

@@ -17,11 +17,10 @@ import java.util.Objects;
 public class EnableAutoRollbackPrimitiveTypeHolder  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_auto_rollback")
     
-    
+
     private Boolean enableAutoRollback;
 
     public EnableAutoRollbackPrimitiveTypeHolder withEnableAutoRollback(Boolean enableAutoRollback) {

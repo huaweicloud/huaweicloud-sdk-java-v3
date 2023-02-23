@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ListNasResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nas")
-    
     
     private List<QueryNaBriefResponseDTO> nas = null;
     

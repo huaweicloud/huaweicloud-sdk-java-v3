@@ -24,46 +24,39 @@ import java.util.Objects;
 public class CollectSessionStatsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="interval")
     
-    
-    private String interval;
 
+    private String interval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_zone")
     
-    
-    private String timeZone;
 
+    private String timeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
-    
-    private SessionStatsTotal total;
 
+    private SessionStatsTotal total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="intervals")
     
-    
     private List<SessionStatsIntervals> intervals = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="startutc")
     
-    
-    private Long startutc;
 
+    private Long startutc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endutc")
     
-    
+
     private Long endutc;
 
     public CollectSessionStatsResponse withInterval(String interval) {

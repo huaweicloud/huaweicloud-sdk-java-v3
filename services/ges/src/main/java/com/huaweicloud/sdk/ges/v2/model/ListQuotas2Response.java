@@ -21,11 +21,10 @@ import java.util.Objects;
 public class ListQuotas2Response extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quotas")
     
-    
+
     private ListQuotasRespQuotas quotas;
 
     public ListQuotas2Response withQuotas(ListQuotasRespQuotas quotas) {

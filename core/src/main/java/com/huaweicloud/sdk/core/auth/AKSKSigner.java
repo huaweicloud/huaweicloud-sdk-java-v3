@@ -59,11 +59,6 @@ public class AKSKSigner {
      **/
     public static final String EMPTY_BODY_SHA256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
 
-    /**
-     * format strings for the date/time and date stamps required during signing
-     **/
-    public static final String ISO_8601_BASIC_FORMAT = "yyyyMMdd'T'HHmmss'Z'";
-
     public static <T extends AbstractCredentials<T>> Map<String, String>
         sign(HttpRequest request, T credential) {
         // ************* TASK 1: CONSTRUCT CANONICAL REQUEST *************
@@ -106,9 +101,13 @@ public class AKSKSigner {
         // Step 2: Create Canonical URI -- the part of the URI from domain to query
         String pathOld = url.getPath();
         StringBuilder canonicalUri = new StringBuilder();
-        String[] split = pathOld.split("/");
-        for (String urlSplit : split) {
-            canonicalUri.append(SignUtils.urlEncode(urlSplit, false)).append("/");
+        if (pathOld.equals("/")) {
+            canonicalUri.append(pathOld);
+        } else {
+            String[] split = pathOld.split("/");
+            for (String urlSplit : split) {
+                canonicalUri.append(SignUtils.urlEncode(urlSplit, false)).append("/");
+            }
         }
 
         // Step 3: Create the canonical query string. In this example (a GET request),

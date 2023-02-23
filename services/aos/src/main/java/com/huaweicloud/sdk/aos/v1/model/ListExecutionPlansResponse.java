@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ListExecutionPlansResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="execution_plans")
-    
     
     private List<ExecutionPlan> executionPlans = null;
     

@@ -18,32 +18,28 @@ import java.util.Objects;
 public class CreateEdgeModuleReqDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
-    
-    private String edgeAppId;
 
+    private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_version")
     
-    
-    private String appVersion;
 
+    private String appVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="module_name")
     
-    
-    private String moduleName;
 
+    private String moduleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_settings")
     
-    
+
     private ContainerSettingsReqDTO containerSettings;
 
     public CreateEdgeModuleReqDTO withEdgeAppId(String edgeAppId) {

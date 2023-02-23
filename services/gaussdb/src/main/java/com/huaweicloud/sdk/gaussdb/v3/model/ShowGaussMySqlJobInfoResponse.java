@@ -21,11 +21,10 @@ import java.util.Objects;
 public class ShowGaussMySqlJobInfoResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job")
     
-    
+
     private GetJobInfoDetail job;
 
     public ShowGaussMySqlJobInfoResponse withJob(GetJobInfoDetail job) {

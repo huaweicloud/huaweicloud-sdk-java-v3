@@ -18,41 +18,44 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Response Object
  */
+@JacksonXmlRootElement(localName = "ShowActionRuleResponse")
 public class ShowActionRuleResponse extends SdkResponse {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rule_name")
     
-    
-    private String ruleName;
+    @JacksonXmlProperty(localName = "rule_name")
 
+    private String ruleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project_id")
     
-    
-    private String projectId;
+    @JacksonXmlProperty(localName = "project_id")
 
+    private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_name")
     
-    
-    private String userName;
+    @JacksonXmlProperty(localName = "user_name")
 
+    private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="desc")
     
-    
+    @JacksonXmlProperty(localName = "desc")
+
     private String desc;
     /**
      * 规则类型。\"1\"：通知，\"2\"：用户
@@ -133,46 +136,45 @@ public class ShowActionRuleResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private TypeEnum type;
+    @JacksonXmlProperty(localName = "type")
 
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="notification_template")
     
-    
-    private String notificationTemplate;
+    @JacksonXmlProperty(localName = "notification_template")
 
+    private String notificationTemplate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    
-    private Long createTime;
+    @JacksonXmlProperty(localName = "create_time")
 
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    
-    private Long updateTime;
+    @JacksonXmlProperty(localName = "update_time")
 
+    private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_zone")
     
-    
-    private String timeZone;
+    @JacksonXmlProperty(localName = "time_zone")
 
+    private String timeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="smn_topics")
     
-    
+    @JacksonXmlProperty(localName = "smn_topics")
     private List<SmnTopics> smnTopics = null;
     
     public ShowActionRuleResponse withRuleName(String ruleName) {

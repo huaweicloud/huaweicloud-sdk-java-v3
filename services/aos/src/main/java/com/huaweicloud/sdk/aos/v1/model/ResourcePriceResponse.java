@@ -107,32 +107,28 @@ public class ResourcePriceResponse  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_mode")
     
-    
-    private ChargeModeEnum chargeMode;
 
+    private ChargeModeEnum chargeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sale_price")
     
-    
-    private Object salePrice;
 
+    private Object salePrice;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discount")
     
-    
-    private Object discount;
 
+    private Object discount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="original_price")
     
-    
+
     private Object originalPrice;
     /**
      * 包周期和按需的计费单位，包周期计费和按需计费返回，免费不会返回 HOUR：小时，包周期计费和按需计费返回，免费不会返回 DAY：天，包周期计费返回，按需计费和免费不会返回 WEEK：周，包周期计费返回，按需计费和免费不会返回 MONTH：月，包周期计费返回，按需计费和免费不会返回 YEAR：年，包周期计费返回，按需计费和免费不会返回 BYTE：字节，按需计费返回，包周期计费和免费不会返回 MB：百万字节，按需计费返回，包周期计费和免费不会返回 GB：千兆字节，按需计费返回，包周期计费和免费不会返回
@@ -249,18 +245,16 @@ public class ResourcePriceResponse  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period_type")
     
-    
-    private PeriodTypeEnum periodType;
 
+    private PeriodTypeEnum periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period_count")
     
-    
+
     private Integer periodCount;
 
     public ResourcePriceResponse withChargeMode(ChargeModeEnum chargeMode) {

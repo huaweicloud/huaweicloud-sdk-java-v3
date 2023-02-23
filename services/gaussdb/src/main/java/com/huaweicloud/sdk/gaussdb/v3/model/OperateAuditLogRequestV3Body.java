@@ -17,11 +17,10 @@ import java.util.Objects;
 public class OperateAuditLogRequestV3Body  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="switch_status")
     
-    
+
     private String switchStatus;
 
     public OperateAuditLogRequestV3Body withSwitchStatus(String switchStatus) {

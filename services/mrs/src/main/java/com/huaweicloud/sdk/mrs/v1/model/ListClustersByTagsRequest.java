@@ -19,11 +19,10 @@ import java.util.Objects;
 public class ListClustersByTagsRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private ListResourceReq body;
 
     public ListClustersByTagsRequest withBody(ListResourceReq body) {

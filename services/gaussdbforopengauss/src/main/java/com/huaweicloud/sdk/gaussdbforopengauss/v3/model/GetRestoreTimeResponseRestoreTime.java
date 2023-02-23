@@ -17,18 +17,16 @@ import java.util.Objects;
 public class GetRestoreTimeResponseRestoreTime  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    
-    private Long startTime;
 
+    private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    
+
     private Long endTime;
 
     public GetRestoreTimeResponseRestoreTime withStartTime(Long startTime) {

@@ -21,31 +21,26 @@ import java.util.Objects;
 public class ClusterScalingReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="service_id")
     
-    
-    private String serviceId;
 
+    private String serviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="plan_id")
     
-    
-    private String planId;
 
+    private String planId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
-    
-    private ClusterScalingParams parameters;
 
+    private ClusterScalingParams parameters;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="previous_values")
-    
     
     private Map<String, String> previousValues = null;
     

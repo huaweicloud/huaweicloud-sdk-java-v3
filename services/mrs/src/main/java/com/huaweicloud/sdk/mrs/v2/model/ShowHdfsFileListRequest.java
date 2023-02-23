@@ -24,32 +24,28 @@ import java.util.Objects;
 public class ShowHdfsFileListRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
-    
-    private String clusterId;
 
+    private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="path")
     
-    
-    private String path;
 
+    private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private String offset;
 
+    private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
+
     private String limit;
     /**
      * 列表排序按该属性排序。缺省值：path_suffix - path_suffix：文件或目录名称 - length：文件大小 - modification_time：修改时间
@@ -58,28 +54,28 @@ public class ShowHdfsFileListRequest  {
 
         
         /**
-         * Enum PATH_SUFFIX_ for value: "path_suffix：文件或目录名称"
+         * Enum PATH_SUFFIX for value: "path_suffix"
          */
-        public static final SortKeyEnum PATH_SUFFIX_ = new SortKeyEnum("path_suffix：文件或目录名称");
+        public static final SortKeyEnum PATH_SUFFIX = new SortKeyEnum("path_suffix");
         
         /**
-         * Enum LENGTH_ for value: "length：文件大小"
+         * Enum LENGTH for value: "length"
          */
-        public static final SortKeyEnum LENGTH_ = new SortKeyEnum("length：文件大小");
+        public static final SortKeyEnum LENGTH = new SortKeyEnum("length");
         
         /**
-         * Enum MODIFICATION_TIME_ for value: "modification_time：修改时间"
+         * Enum MODIFICATION_TIME for value: "modification_time"
          */
-        public static final SortKeyEnum MODIFICATION_TIME_ = new SortKeyEnum("modification_time：修改时间");
+        public static final SortKeyEnum MODIFICATION_TIME = new SortKeyEnum("modification_time");
         
 
         private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SortKeyEnum> createStaticFields() {
             Map<String, SortKeyEnum> map = new HashMap<>();
-            map.put("path_suffix：文件或目录名称", PATH_SUFFIX_);
-            map.put("length：文件大小", LENGTH_);
-            map.put("modification_time：修改时间", MODIFICATION_TIME_);
+            map.put("path_suffix", PATH_SUFFIX);
+            map.put("length", LENGTH);
+            map.put("modification_time", MODIFICATION_TIME);
             return Collections.unmodifiableMap(map);
         }
 
@@ -136,11 +132,10 @@ public class ShowHdfsFileListRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_key")
     
-    
+
     private SortKeyEnum sortKey;
     /**
      * 列表排序方式，desc为降序，asc为升序，默认值为desc。
@@ -221,11 +216,10 @@ public class ShowHdfsFileListRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order")
     
-    
+
     private OrderEnum order;
 
     public ShowHdfsFileListRequest withClusterId(String clusterId) {

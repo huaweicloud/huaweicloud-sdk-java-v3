@@ -17,32 +17,28 @@ import java.util.Objects;
 public class SetQuota  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
-    private String enterpriseProjectId;
 
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_quota")
     
-    
-    private Integer instanceQuota;
 
+    private Integer instanceQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus_quota")
     
-    
-    private Integer vcpusQuota;
 
+    private Integer vcpusQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram_quota")
     
-    
+
     private Integer ramQuota;
 
     public SetQuota withEnterpriseProjectId(String enterpriseProjectId) {

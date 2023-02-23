@@ -20,24 +20,18 @@ import java.util.Objects;
 public class ShowJobRespJobDetail  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schema_path")
     
-    
     private List<ShowJobRespJobDetailSchemaPath> schemaPath = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgeset_path")
     
-    
     private List<ShowJobRespJobDetailSchemaPath> edgesetPath = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexset_path")
-    
     
     private List<ShowJobRespJobDetailSchemaPath> vertexsetPath = null;
     

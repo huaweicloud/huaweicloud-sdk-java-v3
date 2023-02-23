@@ -21,25 +21,22 @@ import java.util.Objects;
 public class RunSentimentResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    
-    private HWCloudSentimentResp result;
 
+    private HWCloudSentimentResp result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
-    
-    private String errorCode;
 
+    private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_msg")
     
-    
+
     private String errorMsg;
 
     public RunSentimentResponse withResult(HWCloudSentimentResp result) {

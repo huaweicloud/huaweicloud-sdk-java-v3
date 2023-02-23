@@ -18,32 +18,28 @@ import java.util.Objects;
 public class CollectKeyWordsRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qabot_id")
     
-    
-    private String qabotId;
 
+    private String qabotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    
-    private String startTime;
 
+    private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    
-    private String endTime;
 
+    private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="top")
     
-    
+
     private Integer top;
 
     public CollectKeyWordsRequest withQabotId(String qabotId) {

@@ -19,18 +19,16 @@ import java.util.Objects;
 public class CreateGaussMySqlBackupRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private MysqlCreateBackupRequest body;
 
     public CreateGaussMySqlBackupRequest withXLanguage(String xLanguage) {

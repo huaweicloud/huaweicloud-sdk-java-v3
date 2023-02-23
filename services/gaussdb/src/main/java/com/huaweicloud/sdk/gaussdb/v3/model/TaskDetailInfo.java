@@ -17,81 +17,70 @@ import java.util.Objects;
 public class TaskDetailInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_name")
     
-    
-    private String instanceName;
 
+    private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_status")
     
-    
-    private String instanceStatus;
 
+    private String instanceStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
-    private String jobId;
 
+    private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_id")
     
-    
-    private String orderId;
 
+    private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_name")
     
-    
-    private String jobName;
 
+    private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="process")
     
-    
-    private String process;
 
+    private String process;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_time")
     
-    
-    private String createdTime;
 
+    private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ended_time")
     
-    
-    private String endedTime;
 
+    private String endedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fail_reason")
     
-    
+
     private String failReason;
 
     public TaskDetailInfo withInstanceId(String instanceId) {

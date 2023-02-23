@@ -18,18 +18,16 @@ import java.util.Objects;
 public class ShowModuleRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
     
-    
-    private String edgeNodeId;
 
+    private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="module_id")
     
-    
+
     private String moduleId;
 
     public ShowModuleRequest withEdgeNodeId(String edgeNodeId) {

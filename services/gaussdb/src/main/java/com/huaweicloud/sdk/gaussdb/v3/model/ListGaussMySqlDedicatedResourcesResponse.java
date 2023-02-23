@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListGaussMySqlDedicatedResourcesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
     
-    
     private List<DedicatedResource> resources = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Integer totalCount;
 
     public ListGaussMySqlDedicatedResourcesResponse withResources(List<DedicatedResource> resources) {

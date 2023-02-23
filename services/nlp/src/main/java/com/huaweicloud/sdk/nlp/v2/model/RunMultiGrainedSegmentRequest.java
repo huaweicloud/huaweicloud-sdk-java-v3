@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunMultiGrainedSegmentRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private PostMultiGrainedSegmentReq body;
 
     public RunMultiGrainedSegmentRequest withBody(PostMultiGrainedSegmentReq body) {

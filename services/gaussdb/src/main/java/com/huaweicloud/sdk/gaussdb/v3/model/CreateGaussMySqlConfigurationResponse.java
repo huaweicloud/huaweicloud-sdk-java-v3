@@ -21,11 +21,10 @@ import java.util.Objects;
 public class CreateGaussMySqlConfigurationResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configurations")
     
-    
+
     private ConfigurationSummary2 configurations;
 
     public CreateGaussMySqlConfigurationResponse withConfigurations(ConfigurationSummary2 configurations) {

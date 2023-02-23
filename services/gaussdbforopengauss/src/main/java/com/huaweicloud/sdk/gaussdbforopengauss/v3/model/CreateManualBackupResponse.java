@@ -21,18 +21,16 @@ import java.util.Objects;
 public class CreateManualBackupResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup")
     
-    
-    private BackupInfo backup;
 
+    private BackupInfo backup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public CreateManualBackupResponse withBackup(BackupInfo backup) {

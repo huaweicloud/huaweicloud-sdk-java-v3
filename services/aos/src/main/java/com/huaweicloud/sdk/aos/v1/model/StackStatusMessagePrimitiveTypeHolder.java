@@ -17,11 +17,10 @@ import java.util.Objects;
 public class StackStatusMessagePrimitiveTypeHolder  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status_message")
     
-    
+
     private String statusMessage;
 
     public StackStatusMessagePrimitiveTypeHolder withStatusMessage(String statusMessage) {

@@ -20,10 +20,8 @@ import java.util.Objects;
 public class SetQuotasRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quota_list")
-    
     
     private List<SetQuota> quotaList = null;
     

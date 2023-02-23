@@ -19,32 +19,27 @@ import java.util.Objects;
 public class AgencyMapping  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agency")
     
-    
-    private String agency;
 
+    private String agency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="identifier_type")
     
-    
-    private String identifierType;
 
+    private String identifierType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="identifiers")
     
-    
     private List<String> identifiers = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agency_id")
     
-    
+
     private String agencyId;
 
     public AgencyMapping withAgency(String agency) {

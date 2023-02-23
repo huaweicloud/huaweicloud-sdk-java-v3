@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListAuditInstancesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="servers")
     
-    
     private List<AuditInstanceListBean> servers = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
-    
+
     private Integer total;
 
     public ListAuditInstancesResponse withServers(List<AuditInstanceListBean> servers) {

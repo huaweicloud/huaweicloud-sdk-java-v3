@@ -22,277 +22,232 @@ import java.util.Objects;
 public class ListGraphsRespGraphs  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_by")
     
-    
-    private String createdBy;
 
+    private String createdBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_multi_az")
     
-    
-    private String isMultiAz;
 
+    private String isMultiAz;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="region_code")
     
-    
-    private String regionCode;
 
+    private String regionCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_code")
     
-    
-    private String azCode;
 
+    private String azCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schema_path")
     
-    
     private List<ListGraphsRespSchemaPath> schemaPath = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgeset_path")
     
-    
     private List<ListGraphsRespSchemaPath> edgesetPath = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexset_path")
     
-    
     private List<ListGraphsRespSchemaPath> vertexsetPath = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgeset_format")
     
-    
-    private String edgesetFormat;
 
+    private String edgesetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgeset_default_label")
     
-    
-    private String edgesetDefaultLabel;
 
+    private String edgesetDefaultLabel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexset_format")
     
-    
-    private String vertexsetFormat;
 
+    private String vertexsetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexset_default_label")
     
-    
-    private String vertexsetDefaultLabel;
 
+    private String vertexsetDefaultLabel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_store_version")
     
-    
-    private String dataStoreVersion;
 
+    private String dataStoreVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sys_tags")
     
-    
     private List<String> sysTags = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_progress")
     
-    
-    private String actionProgress;
 
+    private String actionProgress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_size_type_index")
     
-    
-    private String graphSizeTypeIndex;
 
+    private String graphSizeTypeIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
-    
-    private String vpcId;
 
+    private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
-    
-    private String subnetId;
 
+    private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_id")
     
-    
-    private String securityGroupId;
 
+    private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replication")
     
-    
-    private Integer replication;
 
+    private Integer replication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
-    
-    private String created;
 
+    private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
-    
-    private String updated;
 
+    private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="private_ip")
     
-    
-    private String privateIp;
 
+    private String privateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip")
     
-    
-    private String publicIp;
 
+    private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
-    
-    private String arch;
 
+    private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encrypted")
     
-    
-    private Boolean encrypted;
 
+    private Boolean encrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_key_id")
     
-    
-    private String masterKeyId;
 
+    private String masterKeyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_key_name")
     
-    
-    private String masterKeyName;
 
+    private String masterKeyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_rbac")
     
-    
-    private Boolean enableRbac;
 
+    private Boolean enableRbac;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_full_text_index")
     
-    
-    private Boolean enableFullTextIndex;
 
+    private Boolean enableFullTextIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_hyg")
     
-    
-    private Boolean enableHyg;
 
+    private Boolean enableHyg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="traffic_ip_list")
     
-    
     private List<String> trafficIpList = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="crypt_algorithm")
     
-    
-    private String cryptAlgorithm;
 
+    private String cryptAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_https")
     
-    
-    private Boolean enableHttps;
 
+    private Boolean enableHttps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    
     private List<ListGraphsRespTags> tags = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_type")
     
-    
-    private String productType;
 
+    private String productType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertex_id_type")
     
-    
+
     private ListGraphsRespVertexIdType vertexIdType;
 
     public ListGraphsRespGraphs withId(String id) {

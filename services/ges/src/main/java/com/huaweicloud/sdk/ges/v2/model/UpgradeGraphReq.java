@@ -17,18 +17,16 @@ import java.util.Objects;
 public class UpgradeGraphReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="upgrade_version")
     
-    
-    private String upgradeVersion;
 
+    private String upgradeVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="force_upgrade")
     
-    
+
     private Boolean forceUpgrade;
 
     public UpgradeGraphReq withUpgradeVersion(String upgradeVersion) {

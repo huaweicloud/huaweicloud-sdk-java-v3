@@ -20,18 +20,16 @@ import java.util.Objects;
 public class CreateGraph2Response extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
+
     private String name;
 
     public CreateGraph2Response withId(String id) {

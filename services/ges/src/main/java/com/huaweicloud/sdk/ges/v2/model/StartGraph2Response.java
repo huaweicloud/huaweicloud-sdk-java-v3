@@ -20,11 +20,10 @@ import java.util.Objects;
 public class StartGraph2Response extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public StartGraph2Response withJobId(String jobId) {

@@ -20,32 +20,28 @@ import java.util.Objects;
 public class ShowDeploymentFormResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="initial_node_num")
     
-    
-    private Integer initialNodeNum;
 
+    private Integer initialNodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="solution")
     
-    
-    private String solution;
 
+    private String solution;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="shard_num")
     
-    
-    private Integer shardNum;
 
+    private Integer shardNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replica_num")
     
-    
+
     private Integer replicaNum;
 
     public ShowDeploymentFormResponse withInitialNodeNum(Integer initialNodeNum) {

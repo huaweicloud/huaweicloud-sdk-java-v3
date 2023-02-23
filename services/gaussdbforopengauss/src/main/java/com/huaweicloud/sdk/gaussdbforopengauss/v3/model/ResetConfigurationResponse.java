@@ -20,11 +20,10 @@ import java.util.Objects;
 public class ResetConfigurationResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private String body;
 
     public ResetConfigurationResponse withBody(String body) {

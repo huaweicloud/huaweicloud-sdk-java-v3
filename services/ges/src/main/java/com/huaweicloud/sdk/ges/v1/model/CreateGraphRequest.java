@@ -19,11 +19,10 @@ import java.util.Objects;
 public class CreateGraphRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private CreateGraphReq body;
 
     public CreateGraphRequest withBody(CreateGraphReq body) {

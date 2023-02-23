@@ -44,6 +44,7 @@ import com.huaweicloud.sdk.core.internal.model.KeystoneListRegionsResponse;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 import com.huaweicloud.sdk.iotda.v5.region.IoTDARegion;
 
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,7 +54,9 @@ import java.util.stream.Collectors;
 
 /**
  * @author HuaweiCloud_SDK
+ * @deprecated Use BasicCredentials instead.
  */
+@Deprecated
 public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
     private String projectId;
 
@@ -111,7 +114,7 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
         isDefaultEndpoint = true;
 
         String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? Constants.DEFAULT_IAM_ENDPOINT : getIamEndpoint();
-        HcClient inner = hcClient.overrideEndpoint(iamEndpoint);
+        HcClient inner = hcClient.overrideEndpoints(Collections.singletonList(iamEndpoint));
         KeystoneListProjectsRequest request = new KeystoneListProjectsRequest().withName(regionId);
         KeystoneListProjectsResponse response = inner.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_PROJECTS);
         if (Objects.isNull(response)) {
@@ -222,7 +225,7 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
         }
         // 根据请求判断
         try {
-            return Objects.equals(IoTDARegion.valueOf(regionId).getEndpoint(), httpRequest.getEndpoint());
+            return Objects.equals(IoTDARegion.valueOf(regionId).getEndpoints().get(0), httpRequest.getEndpoint());
         } catch (IllegalArgumentException exp) {
             return false;
         }

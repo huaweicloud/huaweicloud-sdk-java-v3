@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListResourceInstanceByTagResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
     
-    
     private List<ResourceInstanceResponseResources> resources = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Integer totalCount;
 
     public ListResourceInstanceByTagResponse withResources(List<ResourceInstanceResponseResources> resources) {

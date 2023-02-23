@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListAuditRuleScopesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scopes")
     
-    
     private List<RuleScopeInfo> scopes = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
-    
+
     private Integer total;
 
     public ListAuditRuleScopesResponse withScopes(List<RuleScopeInfo> scopes) {

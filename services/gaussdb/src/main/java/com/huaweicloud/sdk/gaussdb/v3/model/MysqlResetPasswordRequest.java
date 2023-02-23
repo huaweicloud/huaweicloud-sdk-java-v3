@@ -17,11 +17,10 @@ import java.util.Objects;
 public class MysqlResetPasswordRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password")
     
-    
+
     private String password;
 
     public MysqlResetPasswordRequest withPassword(String password) {

@@ -18,25 +18,22 @@ import java.util.Objects;
 public class VarsStructure  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="var_key")
     
-    
-    private String varKey;
 
+    private String varKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="var_value")
     
-    
-    private String varValue;
 
+    private String varValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encryption")
     
-    
+
     private EncryptionStructure encryption;
 
     public VarsStructure withVarKey(String varKey) {

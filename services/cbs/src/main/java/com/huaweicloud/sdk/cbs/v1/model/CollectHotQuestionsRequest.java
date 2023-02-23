@@ -18,53 +18,46 @@ import java.util.Objects;
 public class CollectHotQuestionsRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qabot_id")
     
-    
-    private String qabotId;
 
+    private String qabotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    
-    private String startTime;
 
+    private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    
-    private String endTime;
 
+    private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="top")
     
-    
-    private Integer top;
 
+    private Integer top;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    
-    private String domain;
 
+    private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain_id")
     
-    
-    private String domainId;
 
+    private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="exclude")
     
-    
+
     private Boolean exclude;
 
     public CollectHotQuestionsRequest withQabotId(String qabotId) {

@@ -25,31 +25,23 @@ import java.util.Objects;
 public class ListResourceReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    
     private List<TagWithMultiValue> tags = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags_any")
     
-    
     private List<TagWithMultiValue> tagsAny = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="not_tags")
     
-    
     private List<TagWithMultiValue> notTags = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="not_tags_any")
-    
     
     private List<TagWithMultiValue> notTagsAny = null;
         /**
@@ -131,31 +123,26 @@ public class ListResourceReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    
-    private ActionEnum action;
 
+    private ActionEnum action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
-    private Integer limit;
 
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private Integer offset;
 
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="matches")
-    
     
     private List<Match> matches = null;
     

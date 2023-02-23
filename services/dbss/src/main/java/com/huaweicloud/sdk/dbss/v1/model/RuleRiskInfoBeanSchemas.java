@@ -17,25 +17,22 @@ import java.util.Objects;
 public class RuleRiskInfoBeanSchemas  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schema")
     
-    
-    private String schema;
 
+    private String schema;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="table")
     
-    
-    private String table;
 
+    private String table;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="column")
     
-    
+
     private String column;
 
     public RuleRiskInfoBeanSchemas withSchema(String schema) {

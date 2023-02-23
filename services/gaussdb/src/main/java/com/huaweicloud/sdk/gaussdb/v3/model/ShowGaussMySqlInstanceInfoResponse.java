@@ -21,11 +21,10 @@ import java.util.Objects;
 public class ShowGaussMySqlInstanceInfoResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance")
     
-    
+
     private MysqlInstanceInfoDetail instance;
 
     public ShowGaussMySqlInstanceInfoResponse withInstance(MysqlInstanceInfoDetail instance) {

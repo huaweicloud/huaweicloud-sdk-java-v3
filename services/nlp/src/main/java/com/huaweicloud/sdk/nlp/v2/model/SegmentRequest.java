@@ -25,11 +25,10 @@ import java.util.Objects;
 public class SegmentRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text")
     
-    
+
     private String text;
     /**
      * 是否开启词性标注功能，1为开启，0为关闭，默认为关闭。
@@ -110,11 +109,10 @@ public class SegmentRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pos_switch")
     
-    
+
     private PosSwitchEnum posSwitch;
     /**
      * 支持的文本语言类型，目前支持中文（zh）和英文（en），默认为中文。
@@ -195,11 +193,10 @@ public class SegmentRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lang")
     
-    
+
     private LangEnum lang;
     /**
      * 支持的分词规范。 中文分词标准目前支持PKU（北大分词标准）、CTB（宾州中文树库标准），默认为PKU。 英文分词标准默认为Penn TreeBank（宾州树库标准），不需要传入该参数。
@@ -280,11 +277,10 @@ public class SegmentRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="criterion")
     
-    
+
     private CriterionEnum criterion;
 
     public SegmentRequest withText(String text) {

@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunDependencyParserRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private DependencyParserRequest body;
 
     public RunDependencyParserRequest withBody(DependencyParserRequest body) {

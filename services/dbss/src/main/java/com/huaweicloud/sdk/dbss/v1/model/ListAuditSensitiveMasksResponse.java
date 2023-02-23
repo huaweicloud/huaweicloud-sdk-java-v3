@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListAuditSensitiveMasksResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rules")
     
-    
     private List<SensitiveMaskResponseRules> rules = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
-    
+
     private Integer total;
 
     public ListAuditSensitiveMasksResponse withRules(List<SensitiveMaskResponseRules> rules) {

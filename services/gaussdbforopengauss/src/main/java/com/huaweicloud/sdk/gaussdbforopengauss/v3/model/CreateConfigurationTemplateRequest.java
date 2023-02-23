@@ -101,18 +101,16 @@ public class CreateConfigurationTemplateRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private XLanguageEnum xLanguage;
 
+    private XLanguageEnum xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private CreateConfigurationTemplateRequestBody body;
 
     public CreateConfigurationTemplateRequest withXLanguage(XLanguageEnum xLanguage) {

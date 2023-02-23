@@ -20,11 +20,10 @@ import java.util.Objects;
 public class CreateExecutionPlanResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="execution_plan_id")
     
-    
+
     private String executionPlanId;
 
     public CreateExecutionPlanResponse withExecutionPlanId(String executionPlanId) {

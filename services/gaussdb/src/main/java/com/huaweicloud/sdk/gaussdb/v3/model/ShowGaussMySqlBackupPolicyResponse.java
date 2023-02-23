@@ -21,11 +21,10 @@ import java.util.Objects;
 public class ShowGaussMySqlBackupPolicyResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_policy")
     
-    
+
     private BackupPolicy backupPolicy;
 
     public ShowGaussMySqlBackupPolicyResponse withBackupPolicy(BackupPolicy backupPolicy) {

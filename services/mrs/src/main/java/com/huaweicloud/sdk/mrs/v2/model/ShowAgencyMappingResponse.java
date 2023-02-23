@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ShowAgencyMappingResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agency_mappings")
-    
     
     private List<AgencyMapping> agencyMappings = null;
     

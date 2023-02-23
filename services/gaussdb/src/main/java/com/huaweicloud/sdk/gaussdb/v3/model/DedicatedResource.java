@@ -24,32 +24,28 @@ import java.util.Objects;
 public class DedicatedResource  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_name")
     
-    
-    private String resourceName;
 
+    private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="engine_name")
     
-    
-    private String engineName;
 
+    private String engineName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="architecture")
     
-    
+
     private String architecture;
     /**
      * 专属资源池状态
@@ -142,24 +138,20 @@ public class DedicatedResource  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private StatusEnum status;
 
+    private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="capacity")
     
-    
-    private DedicatedResourceCapacity capacity;
 
+    private DedicatedResourceCapacity capacity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone")
-    
     
     private List<String> availabilityZone = null;
     

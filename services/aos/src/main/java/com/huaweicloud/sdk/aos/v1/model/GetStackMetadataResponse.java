@@ -38,53 +38,45 @@ import java.util.Objects;
 public class GetStackMetadataResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stack_id")
     
-    
-    private String stackId;
 
+    private String stackId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stack_name")
     
-    
-    private String stackName;
 
+    private String stackName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vars_structure")
     
-    
     private List<VarsStructure> varsStructure = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vars_body")
     
-    
-    private String varsBody;
 
+    private String varsBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_deletion_protection")
     
-    
-    private Boolean enableDeletionProtection;
 
+    private Boolean enableDeletionProtection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_auto_rollback")
     
-    
+
     private Boolean enableAutoRollback;
     /**
      * 资源栈的状态     * `CREATION_COMPLETE` - 生成空资源栈完成，并没有任何部署     * `DEPLOYMENT_IN_PROGRESS` - 正在部署，请等待     * `DEPLOYMENT_FAILED` - 部署失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * `DEPLOYMENT_COMPLETE` - 部署完成     * `ROLLBACK_IN_PROGRESS` - 部署失败，正在回滚，请等待     * `ROLLBACK_FAILED` - 回滚失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情     * `ROLLBACK_COMPLETE` - 回滚完成     * `DELETION_IN_PROGRESS` - 正在删除，请等待     * `DELETION_FAILED` - 删除失败。请于status_message见错误信息汇总，或者调用ListStackEvents获得事件详情
@@ -207,46 +199,39 @@ public class GetStackMetadataResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private StatusEnum status;
 
+    private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agencies")
     
-    
     private List<Agency> agencies = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status_message")
     
-    
-    private String statusMessage;
 
+    private String statusMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vars_uri_content")
     
-    
-    private String varsUriContent;
 
+    private String varsUriContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    
-    private String createTime;
 
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    
+
     private String updateTime;
 
     public GetStackMetadataResponse withStackId(String stackId) {

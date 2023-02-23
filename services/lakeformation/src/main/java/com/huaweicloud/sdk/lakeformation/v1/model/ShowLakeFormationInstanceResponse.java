@@ -63,7 +63,7 @@ public class ShowLakeFormationInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<TMSResourceTag> tags = null;
+    private List<ResourceTag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "specs")
@@ -228,12 +228,12 @@ public class ShowLakeFormationInstanceResponse extends SdkResponse {
         this.inRecycleBin = inRecycleBin;
     }
 
-    public ShowLakeFormationInstanceResponse withTags(List<TMSResourceTag> tags) {
+    public ShowLakeFormationInstanceResponse withTags(List<ResourceTag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public ShowLakeFormationInstanceResponse addTagsItem(TMSResourceTag tagsItem) {
+    public ShowLakeFormationInstanceResponse addTagsItem(ResourceTag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -241,7 +241,7 @@ public class ShowLakeFormationInstanceResponse extends SdkResponse {
         return this;
     }
 
-    public ShowLakeFormationInstanceResponse withTags(Consumer<List<TMSResourceTag>> tagsSetter) {
+    public ShowLakeFormationInstanceResponse withTags(Consumer<List<ResourceTag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -253,11 +253,11 @@ public class ShowLakeFormationInstanceResponse extends SdkResponse {
      * 标签列表
      * @return tags
      */
-    public List<TMSResourceTag> getTags() {
+    public List<ResourceTag> getTags() {
         return tags;
     }
 
-    public void setTags(List<TMSResourceTag> tags) {
+    public void setTags(List<ResourceTag> tags) {
         this.tags = tags;
     }
 

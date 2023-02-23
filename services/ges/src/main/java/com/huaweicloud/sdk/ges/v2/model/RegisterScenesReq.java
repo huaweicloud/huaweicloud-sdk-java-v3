@@ -20,10 +20,8 @@ import java.util.Objects;
 public class RegisterScenesReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scenes")
-    
     
     private List<RegisterScenesReqScenes> scenes = null;
     

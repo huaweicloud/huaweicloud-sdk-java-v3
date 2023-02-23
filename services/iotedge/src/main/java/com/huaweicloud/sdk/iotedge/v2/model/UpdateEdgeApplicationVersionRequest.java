@@ -19,25 +19,22 @@ import java.util.Objects;
 public class UpdateEdgeApplicationVersionRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
-    
-    private String edgeAppId;
 
+    private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    
-    private String version;
 
+    private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private UpdateEdgeAppVersionDTO body;
 
     public UpdateEdgeApplicationVersionRequest withEdgeAppId(String edgeAppId) {

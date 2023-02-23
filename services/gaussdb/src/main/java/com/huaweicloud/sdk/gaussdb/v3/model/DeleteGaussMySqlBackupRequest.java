@@ -18,18 +18,16 @@ import java.util.Objects;
 public class DeleteGaussMySqlBackupRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_id")
     
-    
+
     private String backupId;
 
     public DeleteGaussMySqlBackupRequest withXLanguage(String xLanguage) {

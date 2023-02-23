@@ -23,39 +23,34 @@ import java.util.Objects;
 public class ExecuteSessionResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="reply_type")
     
-    
-    private Integer replyType;
 
+    private Integer replyType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qabot_answers")
     
-    
-    private QaBotAnswers qabotAnswers;
 
+    private QaBotAnswers qabotAnswers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="chat_answers")
     
-    
-    private ChatAnswers chatAnswers;
 
+    private ChatAnswers chatAnswers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="taskbot_answers")
     
-    
-    private TaskBotAnswers taskbotAnswers;
 
+    private TaskBotAnswers taskbotAnswers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="request_id")
     
-    
+
     private String requestId;
 
     public ExecuteSessionResponse withReplyType(Integer replyType) {

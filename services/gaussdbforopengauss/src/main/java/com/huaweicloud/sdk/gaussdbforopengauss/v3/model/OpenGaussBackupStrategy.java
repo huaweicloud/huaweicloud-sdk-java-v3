@@ -17,18 +17,16 @@ import java.util.Objects;
 public class OpenGaussBackupStrategy  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    
-    private String startTime;
 
+    private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="keep_days")
     
-    
+
     private Integer keepDays;
 
     public OpenGaussBackupStrategy withStartTime(String startTime) {

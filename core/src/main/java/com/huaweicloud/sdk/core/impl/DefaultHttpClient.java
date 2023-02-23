@@ -22,6 +22,7 @@
 package com.huaweicloud.sdk.core.impl;
 
 import com.huaweicloud.sdk.core.Constants;
+import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
 import com.huaweicloud.sdk.core.exception.ConnectionException;
 import com.huaweicloud.sdk.core.exception.HostUnreachableException;
 import com.huaweicloud.sdk.core.exception.SslHandShakeException;
@@ -30,7 +31,6 @@ import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.http.HttpResponse;
-import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
 import com.huaweicloud.sdk.core.ssl.DefaultSSLSocketFactory;
 import com.huaweicloud.sdk.core.ssl.GMSSLSocketFactory;
 import com.huaweicloud.sdk.core.ssl.IgnoreSSLVerificationFactory;

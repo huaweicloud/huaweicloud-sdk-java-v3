@@ -17,18 +17,16 @@ import java.util.Objects;
 public class DatabasePermission  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="readonly")
     
-    
+
     private Boolean readonly;
 
     public DatabasePermission withName(String name) {

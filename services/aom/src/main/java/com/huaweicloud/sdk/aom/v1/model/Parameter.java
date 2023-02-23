@@ -9,83 +9,86 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v1.model.TaskParam;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 全局参数
  */
+@JacksonXmlRootElement(localName = "Parameter")
 public class Parameter  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="param_name")
     
-    
-    private String paramName;
+    @JacksonXmlProperty(localName = "param_name")
 
+    private String paramName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="param_type")
     
-    
-    private String paramType;
+    @JacksonXmlProperty(localName = "param_type")
 
+    private String paramType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="param_group")
     
-    
-    private String paramGroup;
+    @JacksonXmlProperty(localName = "param_group")
 
+    private String paramGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="default_value")
     
-    
-    private String defaultValue;
+    @JacksonXmlProperty(localName = "default_value")
 
+    private String defaultValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
+    @JacksonXmlProperty(localName = "id")
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encryption")
     
-    
-    private Boolean encryption;
+    @JacksonXmlProperty(localName = "encryption")
 
+    private Boolean encryption;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hint")
     
-    
-    private String hint;
+    @JacksonXmlProperty(localName = "hint")
 
+    private String hint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quote_param")
     
-    
-    private Boolean quoteParam;
+    @JacksonXmlProperty(localName = "quote_param")
 
+    private Boolean quoteParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="required")
     
-    
-    private Boolean required;
+    @JacksonXmlProperty(localName = "required")
 
+    private Boolean required;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
+    @JacksonXmlProperty(localName = "description")
+
     private String description;
 
     public Parameter withParamName(String paramName) {

@@ -23,17 +23,14 @@ import java.util.Objects;
 public class ListJobs2Response extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_count")
     
-    
-    private Integer jobCount;
 
+    private Integer jobCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_list")
-    
     
     private List<ListJobsRespJobList> jobList = null;
     

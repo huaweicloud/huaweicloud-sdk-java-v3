@@ -17,18 +17,16 @@ import java.util.Objects;
 public class ListDeleteDatabaseUserRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host")
     
-    
+
     private String host;
 
     public ListDeleteDatabaseUserRequest withName(String name) {

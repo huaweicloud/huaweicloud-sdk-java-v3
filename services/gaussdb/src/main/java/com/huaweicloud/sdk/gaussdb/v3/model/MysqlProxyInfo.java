@@ -17,25 +17,22 @@ import java.util.Objects;
 public class MysqlProxyInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pool_id")
     
-    
-    private String poolId;
 
+    private String poolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="address")
     
-    
+
     private String address;
 
     public MysqlProxyInfo withPoolId(String poolId) {

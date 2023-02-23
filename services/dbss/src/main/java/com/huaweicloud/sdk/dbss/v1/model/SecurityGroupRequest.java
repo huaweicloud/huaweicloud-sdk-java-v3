@@ -19,17 +19,14 @@ import java.util.Objects;
 public class SecurityGroupRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_id")
     
-    
-    private String resourceId;
 
+    private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="securitygroup_ids")
-    
     
     private List<String> securitygroupIds = null;
     

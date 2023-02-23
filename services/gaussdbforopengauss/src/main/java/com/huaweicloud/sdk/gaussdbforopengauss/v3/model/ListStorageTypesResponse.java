@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ListStorageTypesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="storage_type")
-    
     
     private List<Storage> storageType = null;
     

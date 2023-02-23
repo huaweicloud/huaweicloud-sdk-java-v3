@@ -19,18 +19,16 @@ import java.util.Objects;
 public class BatchDeleteClusterTagsRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
-    
-    private String clusterId;
 
+    private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private BatchDeleteClusterTagsReq body;
 
     public BatchDeleteClusterTagsRequest withClusterId(String clusterId) {

@@ -19,10 +19,8 @@ import java.util.Objects;
 public class CloseMysqlProxyRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="proxy_ids")
-    
     
     private List<String> proxyIds = null;
     

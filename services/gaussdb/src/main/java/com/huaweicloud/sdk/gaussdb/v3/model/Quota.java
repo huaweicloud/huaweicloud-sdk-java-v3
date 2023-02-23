@@ -17,60 +17,52 @@ import java.util.Objects;
 public class Quota  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
-    private String enterpriseProjectId;
 
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_name")
     
-    
-    private String enterpriseProjectName;
 
+    private String enterpriseProjectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_quota")
     
-    
-    private Integer instanceQuota;
 
+    private Integer instanceQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus_quota")
     
-    
-    private Integer vcpusQuota;
 
+    private Integer vcpusQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram_quota")
     
-    
-    private Integer ramQuota;
 
+    private Integer ramQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_instance_quota")
     
-    
-    private Integer availabilityInstanceQuota;
 
+    private Integer availabilityInstanceQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_vcpus_quota")
     
-    
-    private Integer availabilityVcpusQuota;
 
+    private Integer availabilityVcpusQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_ram_quota")
     
-    
+
     private Integer availabilityRamQuota;
 
     public Quota withEnterpriseProjectId(String enterpriseProjectId) {

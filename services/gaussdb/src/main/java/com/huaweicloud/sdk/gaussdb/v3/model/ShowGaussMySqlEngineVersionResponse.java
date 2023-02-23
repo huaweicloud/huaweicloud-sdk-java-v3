@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ShowGaussMySqlEngineVersionResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastores")
-    
     
     private List<MysqlEngineVersionInfo> datastores = null;
     

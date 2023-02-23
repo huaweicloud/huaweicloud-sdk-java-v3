@@ -14,27 +14,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v1.model.Job;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Response Object
  */
+@JacksonXmlRootElement(localName = "ListAllJobByNameResponse")
 public class ListAllJobByNameResponse extends SdkResponse {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_elements")
     
-    
-    private Long totalElements;
+    @JacksonXmlProperty(localName = "total_elements")
 
+    private Long totalElements;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="elements")
     
-    
+    @JacksonXmlProperty(localName = "elements")
     private List<Job> elements = null;
     
     public ListAllJobByNameResponse withTotalElements(Long totalElements) {

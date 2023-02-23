@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ListGraphMetadatasRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata_id")
     
-    
+
     private String metadataId;
 
     public ListGraphMetadatasRequest withMetadataId(String metadataId) {

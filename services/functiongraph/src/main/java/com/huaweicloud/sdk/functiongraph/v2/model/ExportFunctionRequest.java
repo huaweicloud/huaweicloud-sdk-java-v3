@@ -53,7 +53,7 @@ public class ExportFunctionRequest {
     }
 
     /**
-     * 是否导出函数配置
+     * 是否导出函数配置，默认为false
      * @return config
      */
     public Boolean getConfig() {
@@ -70,7 +70,7 @@ public class ExportFunctionRequest {
     }
 
     /**
-     * 是否导出函数代码
+     * 是否导出函数代码，默认为false
      * @return code
      */
     public Boolean getCode() {
@@ -87,7 +87,7 @@ public class ExportFunctionRequest {
     }
 
     /**
-     * 兼容老的方式，type=code代表导出代码,type=config代码导出配置
+     * 不兼容与code、config参数混用；type=code代表导出代码,type=config代码导出配置
      * @return type
      */
     public String getType() {

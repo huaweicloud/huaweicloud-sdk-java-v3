@@ -17,11 +17,10 @@ import java.util.Objects;
 public class UpdateDesireds  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="config")
     
-    
+
     private Object config;
 
     public UpdateDesireds withConfig(Object config) {

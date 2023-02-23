@@ -20,11 +20,10 @@ import java.util.Objects;
 public class UpdateInstanceConfigurationResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="restart_required")
     
-    
+
     private Boolean restartRequired;
 
     public UpdateInstanceConfigurationResponse withRestartRequired(Boolean restartRequired) {

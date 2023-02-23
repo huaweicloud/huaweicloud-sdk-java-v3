@@ -20,60 +20,51 @@ import java.util.Objects;
 public class CreateExecutionPlanRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stack_id")
     
-    
-    private String stackId;
 
+    private String stackId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_body")
     
-    
-    private String templateBody;
 
+    private String templateBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_uri")
     
-    
-    private String templateUri;
 
+    private String templateUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="execution_plan_name")
     
-    
-    private String executionPlanName;
 
+    private String executionPlanName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vars_structure")
     
-    
     private List<VarsStructure> varsStructure = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vars_body")
     
-    
-    private String varsBody;
 
+    private String varsBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vars_uri")
     
-    
+
     private String varsUri;
 
     public CreateExecutionPlanRequestBody withStackId(String stackId) {

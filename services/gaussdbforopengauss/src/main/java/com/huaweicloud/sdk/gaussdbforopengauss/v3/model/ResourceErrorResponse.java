@@ -17,18 +17,16 @@ import java.util.Objects;
 public class ResourceErrorResponse  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
-    
-    private String errorCode;
 
+    private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_msg")
     
-    
+
     private String errorMsg;
 
     public ResourceErrorResponse withErrorCode(String errorCode) {

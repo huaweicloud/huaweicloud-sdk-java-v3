@@ -20,38 +20,32 @@ import java.util.Objects;
 public class UpdateStackRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stack_id")
     
-    
-    private String stackId;
 
+    private String stackId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_deletion_protection")
     
-    
-    private Boolean enableDeletionProtection;
 
+    private Boolean enableDeletionProtection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_auto_rollback")
     
-    
-    private Boolean enableAutoRollback;
 
+    private Boolean enableAutoRollback;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agencies")
-    
     
     private List<Agency> agencies = null;
     

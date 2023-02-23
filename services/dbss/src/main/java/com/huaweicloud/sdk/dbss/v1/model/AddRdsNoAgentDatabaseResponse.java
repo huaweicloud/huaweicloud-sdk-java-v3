@@ -22,17 +22,13 @@ import java.util.Objects;
 public class AddRdsNoAgentDatabaseResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="illegal_db_id")
     
-    
     private List<String> illegalDbId = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="legal_db_id")
-    
     
     private List<String> legalDbId = null;
     

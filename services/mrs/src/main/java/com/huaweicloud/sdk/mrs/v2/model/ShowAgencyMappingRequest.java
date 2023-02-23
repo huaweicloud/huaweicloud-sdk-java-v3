@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ShowAgencyMappingRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
-    
+
     private String clusterId;
 
     public ShowAgencyMappingRequest withClusterId(String clusterId) {

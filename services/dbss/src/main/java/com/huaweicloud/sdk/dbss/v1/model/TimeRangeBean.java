@@ -17,25 +17,22 @@ import java.util.Objects;
 public class TimeRangeBean  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    
-    private String endTime;
 
+    private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    
-    private String startTime;
 
+    private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_range")
     
-    
+
     private String timeRange;
 
     public TimeRangeBean withEndTime(String endTime) {

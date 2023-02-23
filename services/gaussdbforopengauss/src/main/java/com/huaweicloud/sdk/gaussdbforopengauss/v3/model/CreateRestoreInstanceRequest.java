@@ -101,18 +101,16 @@ public class CreateRestoreInstanceRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private XLanguageEnum xLanguage;
 
+    private XLanguageEnum xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private OpengaussRestoreInstanceRequest body;
 
     public CreateRestoreInstanceRequest withXLanguage(XLanguageEnum xLanguage) {

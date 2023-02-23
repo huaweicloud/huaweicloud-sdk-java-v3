@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListScheduleJobsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schedules")
     
-    
     private List<ScheduleTask> schedules = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Integer totalCount;
 
     public ListScheduleJobsResponse withSchedules(List<ScheduleTask> schedules) {

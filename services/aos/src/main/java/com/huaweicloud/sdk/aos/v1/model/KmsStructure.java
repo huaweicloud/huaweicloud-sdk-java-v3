@@ -17,18 +17,16 @@ import java.util.Objects;
 public class KmsStructure  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cipher_text")
     
-    
+
     private String cipherText;
 
     public KmsStructure withId(String id) {

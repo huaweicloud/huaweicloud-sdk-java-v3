@@ -20,116 +20,99 @@ import java.util.Objects;
 public class MysqlProxyV3  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pool_id")
     
-    
-    private String poolId;
 
+    private String poolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="address")
     
-    
-    private String address;
 
+    private String address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    
-    private Integer port;
 
+    private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pool_status")
     
-    
-    private String poolStatus;
 
+    private String poolStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delay_threshold_in_seconds")
     
-    
-    private Integer delayThresholdInSeconds;
 
+    private Integer delayThresholdInSeconds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="elb_vip")
     
-    
-    private String elbVip;
 
+    private String elbVip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eip")
     
-    
-    private String eip;
 
+    private String eip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus")
     
-    
-    private String vcpus;
 
+    private String vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram")
     
-    
-    private String ram;
 
+    private String ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_num")
     
-    
-    private Integer nodeNum;
 
+    private Integer nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mode")
     
-    
-    private String mode;
 
+    private String mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
-    
     private List<MysqlProxyNodes> nodes = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
-    
-    private String flavorRef;
 
+    private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="transaction_split")
     
-    
+
     private String transactionSplit;
 
     public MysqlProxyV3 withPoolId(String poolId) {

@@ -17,88 +17,76 @@ import java.util.Objects;
 public class MysqlSlowLogList  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    
-    private String nodeId;
 
+    private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
-    
-    private String count;
 
+    private String count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time")
     
-    
-    private String time;
 
+    private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lock_time")
     
-    
-    private String lockTime;
 
+    private String lockTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rows_sent")
     
-    
-    private String rowsSent;
 
+    private String rowsSent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rows_examined")
     
-    
-    private String rowsExamined;
 
+    private String rowsExamined;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="database")
     
-    
-    private String database;
 
+    private String database;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="users")
     
-    
-    private String users;
 
+    private String users;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="query_sample")
     
-    
-    private String querySample;
 
+    private String querySample;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    
-    private String startTime;
 
+    private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="client_ip")
     
-    
+
     private String clientIp;
 
     public MysqlSlowLogList withNodeId(String nodeId) {

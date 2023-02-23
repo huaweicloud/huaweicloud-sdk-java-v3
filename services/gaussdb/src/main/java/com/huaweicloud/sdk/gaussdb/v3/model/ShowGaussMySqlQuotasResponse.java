@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ShowGaussMySqlQuotasResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quota_list")
     
-    
     private List<Quota> quotaList = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Integer totalCount;
 
     public ShowGaussMySqlQuotasResponse withQuotaList(List<Quota> quotaList) {

@@ -19,25 +19,22 @@ import java.util.Objects;
 public class UpdateDeviceRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_node_id")
     
-    
-    private String edgeNodeId;
 
+    private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_id")
     
-    
-    private String deviceId;
 
+    private String deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private UpdateDesireds body;
 
     public UpdateDeviceRequest withEdgeNodeId(String edgeNodeId) {

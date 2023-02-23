@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunAspectSentimentAdvanceRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private AspectSentimentAdvanceRequest body;
 
     public RunAspectSentimentAdvanceRequest withBody(AspectSentimentAdvanceRequest body) {

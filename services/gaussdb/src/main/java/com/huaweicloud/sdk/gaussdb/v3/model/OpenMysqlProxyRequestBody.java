@@ -24,25 +24,22 @@ import java.util.Objects;
 public class OpenMysqlProxyRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
-    
-    private String flavorRef;
 
+    private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_num")
     
-    
-    private Integer nodeNum;
 
+    private Integer nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="proxy_name")
     
-    
+
     private String proxyName;
     /**
      * 代理实例类型。默认类型为readwrite。
@@ -123,17 +120,14 @@ public class OpenMysqlProxyRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="proxy_mode")
     
-    
-    private ProxyModeEnum proxyMode;
 
+    private ProxyModeEnum proxyMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes_read_weight")
-    
     
     private List<NodesWeight> nodesReadWeight = null;
     

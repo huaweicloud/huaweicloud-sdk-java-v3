@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListGaussMySqlErrorLogResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_log_list")
     
-    
     private List<MysqlErrorLogList> errorLogList = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_record")
     
-    
+
     private Integer totalRecord;
 
     public ListGaussMySqlErrorLogResponse withErrorLogList(List<MysqlErrorLogList> errorLogList) {

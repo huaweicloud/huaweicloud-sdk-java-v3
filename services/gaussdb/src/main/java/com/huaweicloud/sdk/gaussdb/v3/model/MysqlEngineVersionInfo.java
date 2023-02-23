@@ -17,18 +17,16 @@ import java.util.Objects;
 public class MysqlEngineVersionInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
+
     private String name;
 
     public MysqlEngineVersionInfo withId(String id) {

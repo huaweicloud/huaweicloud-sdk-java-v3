@@ -17,11 +17,10 @@ import java.util.Objects;
 public class ChargeInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_mode")
     
-    
+
     private String chargeMode;
 
     public ChargeInfo withChargeMode(String chargeMode) {

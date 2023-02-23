@@ -20,18 +20,16 @@ import java.util.Objects;
 public class DeleteGaussMySqlConfigurationResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration_id")
     
-    
-    private String configurationId;
 
+    private String configurationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration_name")
     
-    
+
     private String configurationName;
 
     public DeleteGaussMySqlConfigurationResponse withConfigurationId(String configurationId) {

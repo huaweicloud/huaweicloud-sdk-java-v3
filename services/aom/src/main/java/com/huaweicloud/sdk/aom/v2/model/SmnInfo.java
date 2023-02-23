@@ -8,34 +8,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * SMN信息
  */
+@JacksonXmlRootElement(localName = "SmnInfo")
 public class SmnInfo  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="smn_notified_content")
     
-    
-    private String smnNotifiedContent;
+    @JacksonXmlProperty(localName = "smn_notified_content")
 
+    private String smnNotifiedContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="smn_subscription_status")
     
-    
-    private String smnSubscriptionStatus;
+    @JacksonXmlProperty(localName = "smn_subscription_status")
 
+    private String smnSubscriptionStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="smn_subscription_type")
     
-    
+    @JacksonXmlProperty(localName = "smn_subscription_type")
+
     private String smnSubscriptionType;
 
     public SmnInfo withSmnNotifiedContent(String smnNotifiedContent) {

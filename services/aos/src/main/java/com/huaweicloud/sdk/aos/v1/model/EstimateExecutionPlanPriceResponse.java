@@ -105,17 +105,14 @@ public class EstimateExecutionPlanPriceResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="currency")
     
-    
-    private CurrencyEnum currency;
 
+    private CurrencyEnum currency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="items")
-    
     
     private List<ItemsResponse> items = null;
     

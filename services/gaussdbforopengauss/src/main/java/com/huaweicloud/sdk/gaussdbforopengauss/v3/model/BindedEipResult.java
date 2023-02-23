@@ -17,74 +17,64 @@ import java.util.Objects;
 public class BindedEipResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip_id")
     
-    
-    private String publicIpId;
 
+    private String publicIpId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip_type")
     
-    
-    private String publicIpType;
 
+    private String publicIpType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port_id")
     
-    
-    private String portId;
 
+    private String portId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip_address")
     
-    
-    private String publicIpAddress;
 
+    private String publicIpAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="private_ip_address")
     
-    
-    private String privateIpAddress;
 
+    private String privateIpAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth_id")
     
-    
-    private String bandwidthId;
 
+    private String bandwidthId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth_name")
     
-    
-    private String bandwidthName;
 
+    private String bandwidthName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth_share_type")
     
-    
-    private String bandwidthShareType;
 
+    private String bandwidthShareType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth_size")
     
-    
-    private Integer bandwidthSize;
 
+    private Integer bandwidthSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="applied_at")
     
-    
+
     private String appliedAt;
 
     public BindedEipResult withPublicIpId(String publicIpId) {

@@ -17,39 +17,34 @@ import java.util.Objects;
 public class EdgeDeviceAuthInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_type")
     
-    
-    private String authType;
 
+    private String authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="secret")
     
-    
-    private String secret;
 
+    private String secret;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fingerprint")
     
-    
-    private String fingerprint;
 
+    private String fingerprint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="secure_access")
     
-    
-    private Boolean secureAccess;
 
+    private Boolean secureAccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeout")
     
-    
+
     private Integer timeout;
 
     public EdgeDeviceAuthInfo withAuthType(String authType) {

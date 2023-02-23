@@ -17,18 +17,16 @@ import java.util.Objects;
 public class CreateInstancePeriodRequestNics  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
-    
-    private String subnetId;
 
+    private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_address")
     
-    
+
     private String ipAddress;
 
     public CreateInstancePeriodRequestNics withSubnetId(String subnetId) {

@@ -21,11 +21,10 @@ import java.util.Objects;
 public class SummaryReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
-    
+
     private String content;
     /**
      * 支持的文本语言类型，目前支持中文（zh）和英文（en），默认为中文。
@@ -106,25 +105,22 @@ public class SummaryReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lang")
     
-    
-    private LangEnum lang;
 
+    private LangEnum lang;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="length_limit")
     
-    
-    private Float lengthLimit;
 
+    private Float lengthLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="title")
     
-    
+
     private String title;
 
     public SummaryReq withContent(String content) {

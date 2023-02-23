@@ -17,46 +17,40 @@ import java.util.Objects;
 public class QaBotAnswer  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qa_pair_id")
     
-    
-    private String qaPairId;
 
+    private String qaPairId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="st_question")
     
-    
-    private String stQuestion;
 
+    private String stQuestion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="answer")
     
-    
-    private String answer;
 
+    private String answer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="score")
     
-    
-    private Double score;
 
+    private Double score;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    
-    private String domain;
 
+    private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="top_score_question")
     
-    
+
     private String topScoreQuestion;
 
     public QaBotAnswer withQaPairId(String qaPairId) {

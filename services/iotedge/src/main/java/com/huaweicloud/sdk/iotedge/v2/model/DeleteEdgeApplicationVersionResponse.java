@@ -20,11 +20,10 @@ import java.util.Objects;
 public class DeleteEdgeApplicationVersionResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private String body;
 
     public DeleteEdgeApplicationVersionResponse withBody(String body) {

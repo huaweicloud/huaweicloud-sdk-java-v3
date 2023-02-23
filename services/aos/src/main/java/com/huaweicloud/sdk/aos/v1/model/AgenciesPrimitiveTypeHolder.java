@@ -20,10 +20,8 @@ import java.util.Objects;
 public class AgenciesPrimitiveTypeHolder  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agencies")
-    
     
     private List<Agency> agencies = null;
     

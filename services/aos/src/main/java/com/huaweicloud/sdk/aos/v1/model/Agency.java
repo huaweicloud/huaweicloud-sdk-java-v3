@@ -17,18 +17,16 @@ import java.util.Objects;
 public class Agency  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="provider_name")
     
-    
-    private String providerName;
 
+    private String providerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agency_name")
     
-    
+
     private String agencyName;
 
     public Agency withProviderName(String providerName) {

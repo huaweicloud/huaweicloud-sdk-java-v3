@@ -21,38 +21,31 @@ import java.util.Objects;
 public class ResourceInstanceResponseResources  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_detail")
     
-    
-    private Object resourceDetail;
 
+    private Object resourceDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_id")
     
-    
-    private String resourceId;
 
+    private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_name")
     
-    
-    private String resourceName;
 
+    private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    
     private List<ResourceInstanceResponseTags> tags = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sys_tags")
-    
     
     private List<ResourceInstanceResponseSysTags> sysTags = null;
     

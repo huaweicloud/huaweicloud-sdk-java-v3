@@ -17,18 +17,16 @@ import java.util.Objects;
 public class OpenGaussResizeRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
-    
-    private String flavorRef;
 
+    private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_pay")
     
-    
+
     private Boolean isAutoPay;
 
     public OpenGaussResizeRequest withFlavorRef(String flavorRef) {

@@ -19,95 +19,81 @@ import java.util.Objects;
 public class DataBase  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    
-    private String version;
 
+    private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charset")
     
-    
-    private String charset;
 
+    private String charset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip")
     
-    
-    private String ip;
 
+    private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    
-    private String port;
 
+    private String port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os")
     
-    
-    private String os;
 
+    private String os;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_name")
     
-    
-    private String instanceName;
 
+    private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audit_status")
     
-    
-    private String auditStatus;
 
+    private String auditStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agent_url")
     
-    
     private List<String> agentUrl = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db_classification")
     
-    
+
     private String dbClassification;
 
     public DataBase withId(String id) {

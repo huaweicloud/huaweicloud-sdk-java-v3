@@ -17,53 +17,46 @@ import java.util.Objects;
 public class ShowJobRespJobDetailSchemaPath  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="path")
     
-    
-    private String path;
 
+    private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="log")
     
-    
-    private String log;
 
+    private String log;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cause")
     
-    
-    private String cause;
 
+    private String cause;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_lines")
     
-    
-    private Long totalLines;
 
+    private Long totalLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="failed_lines")
     
-    
-    private Long failedLines;
 
+    private Long failedLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="successful_lines")
     
-    
+
     private Long successfulLines;
 
     public ShowJobRespJobDetailSchemaPath withPath(String path) {

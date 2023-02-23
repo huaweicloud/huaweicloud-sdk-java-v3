@@ -17,18 +17,16 @@ import java.util.Objects;
 public class VariableValidationResponse  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="condition")
     
-    
-    private String condition;
 
+    private String condition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_message")
     
-    
+
     private String errorMessage;
 
     public VariableValidationResponse withCondition(String condition) {

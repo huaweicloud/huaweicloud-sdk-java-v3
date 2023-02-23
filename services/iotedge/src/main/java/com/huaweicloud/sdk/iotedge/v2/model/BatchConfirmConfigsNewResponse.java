@@ -20,11 +20,10 @@ import java.util.Objects;
 public class BatchConfirmConfigsNewResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ids")
     
-    
+
     private Object ids;
 
     public BatchConfirmConfigsNewResponse withIds(Object ids) {

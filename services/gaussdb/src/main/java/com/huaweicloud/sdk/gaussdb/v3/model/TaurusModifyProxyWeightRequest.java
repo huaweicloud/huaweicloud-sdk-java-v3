@@ -20,17 +20,14 @@ import java.util.Objects;
 public class TaurusModifyProxyWeightRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_weight")
     
-    
-    private Integer masterWeight;
 
+    private Integer masterWeight;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="readonly_nodes")
-    
     
     private List<ModifyProxyWeightReadonlyNode> readonlyNodes = null;
     

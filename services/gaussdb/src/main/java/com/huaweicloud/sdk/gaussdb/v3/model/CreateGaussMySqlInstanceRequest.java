@@ -19,18 +19,16 @@ import java.util.Objects;
 public class CreateGaussMySqlInstanceRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private MysqlInstanceRequest body;
 
     public CreateGaussMySqlInstanceRequest withXLanguage(String xLanguage) {

@@ -17,11 +17,10 @@ import java.util.Objects;
 public class StartGraphReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_backup_id")
     
-    
+
     private String graphBackupId;
 
     public StartGraphReq withGraphBackupId(String graphBackupId) {

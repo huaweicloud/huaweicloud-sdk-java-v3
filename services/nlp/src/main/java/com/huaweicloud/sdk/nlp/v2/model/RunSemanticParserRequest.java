@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunSemanticParserRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private IntentReq body;
 
     public RunSemanticParserRequest withBody(IntentReq body) {

@@ -23,17 +23,14 @@ import java.util.Objects;
 public class ListRecycleInstancesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
-    private Integer totalCount;
 
+    private Integer totalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instances")
-    
     
     private List<RecycleInstancesDetailResult> instances = null;
     

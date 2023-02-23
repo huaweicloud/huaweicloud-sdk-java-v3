@@ -17,11 +17,10 @@ import java.util.Objects;
 public class ComponentAmbV11  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="component_name")
     
-    
+
     private String componentName;
 
     public ComponentAmbV11 withComponentName(String componentName) {

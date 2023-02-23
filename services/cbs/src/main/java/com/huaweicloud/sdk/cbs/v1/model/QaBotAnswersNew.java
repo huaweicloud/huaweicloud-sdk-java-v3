@@ -21,17 +21,13 @@ import java.util.Objects;
 public class QaBotAnswersNew  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="answers")
     
-    
     private List<QaBotAnswer> answers = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="recommend_answers")
-    
     
     private List<RecomendAnswer> recommendAnswers = null;
     

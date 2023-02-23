@@ -17,53 +17,46 @@ import java.util.Objects;
 public class Metadata  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadataPath")
     
-    
-    private String metadataPath;
 
+    private String metadataPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="createTimestamp")
     
-    
-    private String createTimestamp;
 
+    private String createTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lastUpdateTimestamp")
     
-    
+
     private String lastUpdateTimestamp;
 
     public Metadata withId(String id) {

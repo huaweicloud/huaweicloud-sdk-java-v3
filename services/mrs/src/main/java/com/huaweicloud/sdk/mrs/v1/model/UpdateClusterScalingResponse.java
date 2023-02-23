@@ -20,11 +20,10 @@ import java.util.Objects;
 public class UpdateClusterScalingResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    
+
     private String result;
 
     public UpdateClusterScalingResponse withResult(String result) {

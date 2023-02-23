@@ -100,11 +100,10 @@ public class ListPredefinedTagsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
+
     private XLanguageEnum xLanguage;
 
     public ListPredefinedTagsRequest withXLanguage(XLanguageEnum xLanguage) {

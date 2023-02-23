@@ -19,11 +19,10 @@ import java.util.Objects;
 public class CreateClusterRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private CreateClusterReqV11 body;
 
     public CreateClusterRequest withBody(CreateClusterReqV11 body) {

@@ -17,18 +17,16 @@ import java.util.Objects;
 public class ParaErrorResponseBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
-    
-    private String errorCode;
 
+    private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_msg")
     
-    
+
     private String errorMsg;
 
     public ParaErrorResponseBody withErrorCode(String errorCode) {

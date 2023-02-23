@@ -20,10 +20,8 @@ import java.util.Objects;
 public class ProjectQuotasResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
-    
     
     private List<ResourceResult> resources = null;
     

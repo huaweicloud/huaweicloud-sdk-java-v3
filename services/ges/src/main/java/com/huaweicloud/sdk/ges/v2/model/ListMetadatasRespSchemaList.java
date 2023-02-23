@@ -17,74 +17,64 @@ import java.util.Objects;
 public class ListMetadatasRespSchemaList  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    
-    private String startTime;
 
+    private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_update_time")
     
-    
-    private String lastUpdateTime;
 
+    private String lastUpdateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encrypted")
     
-    
-    private Boolean encrypted;
 
+    private Boolean encrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_key_name")
     
-    
-    private String masterKeyName;
 
+    private String masterKeyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_key_id")
     
-    
-    private String masterKeyId;
 
+    private String masterKeyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata_path")
     
-    
-    private String metadataPath;
 
+    private String metadataPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
+
     private String status;
 
     public ListMetadatasRespSchemaList withId(String id) {

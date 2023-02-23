@@ -21,130 +21,112 @@ import java.util.Objects;
 public class OpengaussRestoreInstanceRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone")
     
-    
-    private String availabilityZone;
 
+    private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
-    
-    private String flavorRef;
 
+    private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
-    
-    private OpenGaussVolume volume;
 
+    private OpenGaussVolume volume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disk_encryption_id")
     
-    
-    private String diskEncryptionId;
 
+    private String diskEncryptionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
-    
-    private String vpcId;
 
+    private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
-    
-    private String subnetId;
 
+    private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_id")
     
-    
-    private String securityGroupId;
 
+    private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password")
     
-    
-    private String password;
 
+    private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_info")
     
-    
-    private OpenGaussChargeInfo chargeInfo;
 
+    private OpenGaussChargeInfo chargeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="restore_point")
     
-    
-    private RestorePoint restorePoint;
 
+    private RestorePoint restorePoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_strategy")
     
-    
-    private OpenGaussBackupStrategy backupStrategy;
 
+    private OpenGaussBackupStrategy backupStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_parallel_restore")
     
-    
-    private Boolean enableParallelRestore;
 
+    private Boolean enableParallelRestore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration_id")
     
-    
-    private String configurationId;
 
+    private String configurationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
-    private String enterpriseProjectId;
 
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    
-    private String port;
 
+    private String port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_zone")
     
-    
-    private String timeZone;
 
+    private String timeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_force_switch")
     
-    
+
     private Boolean enableForceSwitch;
 
     public OpengaussRestoreInstanceRequest withName(String name) {

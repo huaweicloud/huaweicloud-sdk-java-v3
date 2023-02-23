@@ -19,18 +19,16 @@ import java.util.Objects;
 public class CreateManualBackupRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private CreateManualBackupRequestBody body;
 
     public CreateManualBackupRequest withXLanguage(String xLanguage) {

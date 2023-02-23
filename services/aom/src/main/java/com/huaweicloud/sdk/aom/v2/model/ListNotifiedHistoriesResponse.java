@@ -14,27 +14,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.Notifications;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Response Object
  */
+@JacksonXmlRootElement(localName = "ListNotifiedHistoriesResponse")
 public class ListNotifiedHistoriesResponse extends SdkResponse {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="event_sn")
     
-    
-    private String eventSn;
+    @JacksonXmlProperty(localName = "event_sn")
 
+    private String eventSn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="notifications")
     
-    
+    @JacksonXmlProperty(localName = "notifications")
     private List<Notifications> notifications = null;
     
     public ListNotifiedHistoriesResponse withEventSn(String eventSn) {

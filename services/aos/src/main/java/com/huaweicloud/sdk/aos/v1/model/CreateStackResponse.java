@@ -21,18 +21,16 @@ import java.util.Objects;
 public class CreateStackResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stack_id")
     
-    
-    private String stackId;
 
+    private String stackId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deployment_id")
     
-    
+
     private String deploymentId;
 
     public CreateStackResponse withStackId(String stackId) {

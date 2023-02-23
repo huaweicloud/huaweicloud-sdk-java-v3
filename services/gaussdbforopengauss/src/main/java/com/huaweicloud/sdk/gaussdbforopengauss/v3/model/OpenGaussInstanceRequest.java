@@ -26,144 +26,124 @@ import java.util.Objects;
 public class OpenGaussInstanceRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    
-    private OpenGaussDatastore datastore;
 
+    private OpenGaussDatastore datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ha")
     
-    
-    private OpenGaussHa ha;
 
+    private OpenGaussHa ha;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration_id")
     
-    
-    private String configurationId;
 
+    private String configurationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    
-    private String port;
 
+    private String port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password")
     
-    
-    private String password;
 
+    private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_strategy")
     
-    
-    private OpenGaussBackupStrategy backupStrategy;
 
+    private OpenGaussBackupStrategy backupStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
-    private String enterpriseProjectId;
 
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disk_encryption_id")
     
-    
-    private String diskEncryptionId;
 
+    private String diskEncryptionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
-    
-    private String flavorRef;
 
+    private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
-    
-    private OpenGaussVolume volume;
 
+    private OpenGaussVolume volume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="region")
     
-    
-    private String region;
 
+    private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone")
     
-    
-    private String availabilityZone;
 
+    private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
-    
-    private String vpcId;
 
+    private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
-    
-    private String subnetId;
 
+    private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_id")
     
-    
-    private String securityGroupId;
 
+    private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_info")
     
-    
-    private OpenGaussChargeInfo chargeInfo;
 
+    private OpenGaussChargeInfo chargeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_zone")
     
-    
-    private String timeZone;
 
+    private String timeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sharding_num")
     
-    
-    private Integer shardingNum;
 
+    private Integer shardingNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coordinator_num")
     
-    
+
     private Integer coordinatorNum;
     /**
      * 实例副本数，支持取值2，3。不填默认为3。仅支持1.3.0及以上版本的实例。  说明： 2副本选项仅针对特定用户开放，如需配置白名单权限，您可以在管理控制台右上角，选择“[工单 > 新建工单](https://auth.huaweicloud.com/authui/login.html?service=https%3A%2F%2Fconsole.huaweicloud.com%2Fticket%2F%3Fregion%3Dcn-north-1%26locale%3Dzh-cn%26cloud_route_state%3D%2Fticketindex%2FcreateIndex#/login)”，提交开通白名单的申请。
@@ -244,18 +224,16 @@ public class OpenGaussInstanceRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replica_num")
     
-    
-    private ReplicaNumEnum replicaNum;
 
+    private ReplicaNumEnum replicaNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_force_switch")
     
-    
+
     private Boolean enableForceSwitch;
 
     public OpenGaussInstanceRequest withName(String name) {

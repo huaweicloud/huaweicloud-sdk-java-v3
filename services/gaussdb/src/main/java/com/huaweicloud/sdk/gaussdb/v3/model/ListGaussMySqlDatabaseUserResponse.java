@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListGaussMySqlDatabaseUserResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="users")
     
-    
     private List<ListGaussMySqlDatabaseUser> users = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Integer totalCount;
 
     public ListGaussMySqlDatabaseUserResponse withUsers(List<ListGaussMySqlDatabaseUser> users) {

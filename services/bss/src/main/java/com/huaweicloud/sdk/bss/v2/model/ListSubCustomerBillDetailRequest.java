@@ -366,7 +366,7 @@ public class ListSubCustomerBillDetailRequest {
     }
 
     /**
-     * 查询的资源消费记录的开始日期，格式为YYYY-MM-DD。此参数不携带或携带值为空或携带值为空串时，不作为筛选条件。 说明： 必须和cycle（即资源的消费账期）在同一个月。
+     * 查询的资源消费记录的开始日期，格式为YYYY-MM-DD。此参数不携带或携带值为空时，不作为筛选条件；不支持携带值为空串。 说明： 必须和cycle（即资源的消费账期）在同一个月。
      * @return billDateBegin
      */
     public String getBillDateBegin() {
@@ -383,7 +383,7 @@ public class ListSubCustomerBillDetailRequest {
     }
 
     /**
-     * 查询的资源消费记录的结束日期，格式为YYYY-MM-DD。此参数不携带或携带值为空或携带值为空串时，不作为筛选条件。 说明： 必须和cycle（即资源的消费账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照cycle（即资源的消费账期）进行查询。
+     * 查询的资源消费记录的结束日期，格式为YYYY-MM-DD。此参数不携带或携带值为空时，不作为筛选条件；不支持携带值为空串。 说明： 必须和cycle（即资源的消费账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照cycle（即资源的消费账期）进行查询。
      * @return billDateEnd
      */
     public String getBillDateEnd() {

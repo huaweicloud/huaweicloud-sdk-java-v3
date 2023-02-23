@@ -43,7 +43,7 @@ import java.util.function.Function;
  * @author HuaweiCloud_SDK
  */
 public class ClientBuilder<T> {
-    private Function<HcClient, T> creator;
+    private final Function<HcClient, T> creator;
 
     private ICredential credential;
 
@@ -51,7 +51,7 @@ public class ClientBuilder<T> {
 
     private Region region;
 
-    private String endpoint;
+    private List<String> endpoints;
 
     private List<String> credentialType = new ArrayList<>(
             Collections.singletonList(BasicCredentials.class.getSimpleName()));
@@ -87,8 +87,17 @@ public class ClientBuilder<T> {
         return this;
     }
 
+    /**
+     * @deprecated As of 3.1.27, because of the support of the multi-endpoint feature,
+     * use {@link #withEndpoints(List<String> endpoints)} instead
+     */
+    @Deprecated
     public ClientBuilder<T> withEndpoint(String endpoint) {
-        this.endpoint = endpoint;
+        return withEndpoints(Arrays.asList(endpoint));
+    }
+
+    public ClientBuilder<T> withEndpoints(List<String> endpoints) {
+        this.endpoints = endpoints;
         return this;
     }
 
@@ -102,7 +111,7 @@ public class ClientBuilder<T> {
 
         if (Objects.isNull(credential)) {
             CredentialProviderChain providerChain = CredentialProviderChain.getDefaultCredentialProviderChain(
-                credentialType.get(0));
+                    credentialType.get(0));
             credential = providerChain.getCredentials();
         }
 
@@ -116,7 +125,10 @@ public class ClientBuilder<T> {
         }
 
         if (Objects.nonNull(region)) {
-            endpoint = region.getEndpoint();
+            if (region.getEndpoints() != null) {
+                endpoints = region.getEndpoints();
+            }
+
             try {
                 hcClient.withCredential(credential);
                 credential = credential.processAuthParams(hcClient, region.getId()).get();
@@ -129,11 +141,13 @@ public class ClientBuilder<T> {
             }
         }
 
-        if (!endpoint.startsWith(Constants.HTTP_SCHEME)) {
-            endpoint = Constants.HTTPS_SCHEME + "://" + endpoint;
+        if (endpoints.isEmpty()) {
+            throw new SdkException("Could not find any endpoints, at least one endpoint is required");
         }
+        endpoints.replaceAll(endpoint -> endpoint.startsWith(Constants.HTTP_SCHEME)
+                ? endpoint : Constants.HTTPS_SCHEME + "://" + endpoint);
 
-        hcClient.withEndpoint(endpoint).withCredential(credential);
+        hcClient.withEndpoints(endpoints).withCredential(credential);
 
         T t = creator.apply(hcClient);
         ClientCustomization clientCustomization = loadClientCustomization(t);
@@ -168,8 +182,16 @@ public class ClientBuilder<T> {
         return httpConfig;
     }
 
+    /**
+     * @deprecated As of 3.1.27, because of the support of the multi-endpoint feature,
+     * use {@link #getEndpoints()} instead
+     */
+    @Deprecated
     public String getEndpoint() {
-        return endpoint;
+        return endpoints.isEmpty() ? null : endpoints.get(0);
     }
 
+    public List<String> getEndpoints() {
+        return endpoints;
+    }
 }

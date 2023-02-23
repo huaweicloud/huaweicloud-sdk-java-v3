@@ -17,53 +17,46 @@ import java.util.Objects;
 public class RouterDetailRespDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="route_id")
     
-    
-    private String routeId;
 
+    private String routeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input_module_id")
     
-    
-    private String inputModuleId;
 
+    private String inputModuleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_module_id")
     
-    
-    private String outputModuleId;
 
+    private String outputModuleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    
-    private String input;
 
+    private String input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    
-    private String output;
 
+    private String output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sql")
     
-    
-    private String sql;
 
+    private String sql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="available")
     
-    
+
     private Boolean available;
 
     public RouterDetailRespDTO withRouteId(String routeId) {

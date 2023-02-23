@@ -19,18 +19,16 @@ import java.util.Objects;
 public class ExecuteSqlRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
-    
-    private String clusterId;
 
+    private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private SqlExecutionReq body;
 
     public ExecuteSqlRequest withClusterId(String clusterId) {

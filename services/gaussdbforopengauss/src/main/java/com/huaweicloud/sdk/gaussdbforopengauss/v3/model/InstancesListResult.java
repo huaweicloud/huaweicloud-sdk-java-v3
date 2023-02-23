@@ -17,18 +17,16 @@ import java.util.Objects;
 public class InstancesListResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_name")
     
-    
+
     private String instanceName;
 
     public InstancesListResult withInstanceId(String instanceId) {

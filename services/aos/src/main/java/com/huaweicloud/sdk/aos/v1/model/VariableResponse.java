@@ -20,52 +20,44 @@ import java.util.Objects;
 public class VariableResponse  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="default")
     
-    
-    private Object _default;
 
+    private Object _default;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sensitive")
     
-    
-    private Boolean sensitive;
 
+    private Boolean sensitive;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nullable")
     
-    
-    private Boolean nullable;
 
+    private Boolean nullable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="validations")
-    
     
     private List<VariableValidationResponse> validations = null;
     

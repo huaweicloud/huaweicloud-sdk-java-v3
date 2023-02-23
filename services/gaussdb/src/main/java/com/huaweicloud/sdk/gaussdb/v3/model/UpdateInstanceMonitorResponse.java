@@ -20,11 +20,10 @@ import java.util.Objects;
 public class UpdateInstanceMonitorResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public UpdateInstanceMonitorResponse withJobId(String jobId) {

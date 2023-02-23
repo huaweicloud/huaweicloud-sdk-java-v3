@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ListGaussMySqlInstanceDetailInfoResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instances")
-    
     
     private List<MysqlInstanceInfoDetail> instances = null;
     

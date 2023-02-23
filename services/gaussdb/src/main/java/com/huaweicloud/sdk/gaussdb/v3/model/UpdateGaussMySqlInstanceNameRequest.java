@@ -19,25 +19,22 @@ import java.util.Objects;
 public class UpdateGaussMySqlInstanceNameRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private MysqlUpdateInstanceNameRequest body;
 
     public UpdateGaussMySqlInstanceNameRequest withXLanguage(String xLanguage) {

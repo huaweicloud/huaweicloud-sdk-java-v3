@@ -18,11 +18,10 @@ import java.util.Objects;
 public class CreateTagReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag")
     
-    
+
     private Tag tag;
 
     public CreateTagReq withTag(Tag tag) {

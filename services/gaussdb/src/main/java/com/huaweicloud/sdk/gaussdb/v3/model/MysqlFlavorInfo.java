@@ -17,18 +17,16 @@ import java.util.Objects;
 public class MysqlFlavorInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus")
     
-    
-    private String vcpus;
 
+    private String vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram")
     
-    
+
     private String ram;
 
     public MysqlFlavorInfo withVcpus(String vcpus) {

@@ -17,39 +17,34 @@ import java.util.Objects;
 public class Slot  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="word")
     
-    
-    private String word;
 
+    private String word;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag")
     
-    
-    private String tag;
 
+    private String tag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private Integer offset;
 
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="length")
     
-    
-    private Integer length;
 
+    private Integer length;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="normalized_word")
     
-    
+
     private String normalizedWord;
 
     public Slot withWord(String word) {

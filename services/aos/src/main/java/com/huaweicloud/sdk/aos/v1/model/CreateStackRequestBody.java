@@ -32,74 +32,62 @@ import java.util.Objects;
 public class CreateStackRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stack_name")
     
-    
-    private String stackName;
 
+    private String stackName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agencies")
     
-    
     private List<Agency> agencies = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_deletion_protection")
     
-    
-    private Boolean enableDeletionProtection;
 
+    private Boolean enableDeletionProtection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_auto_rollback")
     
-    
-    private Boolean enableAutoRollback;
 
+    private Boolean enableAutoRollback;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_body")
     
-    
-    private String templateBody;
 
+    private String templateBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_uri")
     
-    
-    private String templateUri;
 
+    private String templateUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vars_body")
     
-    
-    private String varsBody;
 
+    private String varsBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vars_structure")
     
-    
     private List<VarsStructure> varsStructure = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vars_uri")
     
-    
+
     private String varsUri;
 
     public CreateStackRequestBody withStackName(String stackName) {

@@ -25,39 +25,33 @@ import java.util.Objects;
 public class ScaleScript  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="uri")
     
-    
-    private String uri;
 
+    private String uri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
-    
-    private String parameters;
 
+    private String parameters;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
-    
     private List<String> nodes = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="active_master")
     
-    
+
     private Boolean activeMaster;
     /**
      * 自自定义自动化脚本执行失败后，是否继续执行后续脚本和创建集群。  说明：  - 建议您在调试阶段设置为“continue”，无论此自定义自动化脚本是否执行成功，则集群都能继续安装和启动。  - 由于缩容成功无法回滚，因此缩容后执行的脚本“fail_action”必须设置为“continue”。  枚举值： - continue：继续执行后续脚本。 - errorout：终止操作。
@@ -138,11 +132,10 @@ public class ScaleScript  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fail_action")
     
-    
+
     private FailActionEnum failAction;
     /**
      * 脚本执行时机。  枚举值： - before_scale_out：扩容前 - before_scale_in：缩容前 - after_scale_out：扩容后 - after_scale_in：缩容后
@@ -235,11 +228,10 @@ public class ScaleScript  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_stage")
     
-    
+
     private ActionStageEnum actionStage;
 
     public ScaleScript withName(String name) {

@@ -17,11 +17,10 @@ import java.util.Objects;
 public class BindEipReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eipId")
     
-    
+
     private String eipId;
 
     public BindEipReq withEipId(String eipId) {

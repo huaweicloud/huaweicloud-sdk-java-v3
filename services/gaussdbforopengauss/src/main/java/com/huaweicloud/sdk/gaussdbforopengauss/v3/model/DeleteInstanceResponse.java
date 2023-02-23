@@ -20,18 +20,16 @@ import java.util.Objects;
 public class DeleteInstanceResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
-    private String jobId;
 
+    private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_id")
     
-    
+
     private String orderId;
 
     public DeleteInstanceResponse withJobId(String jobId) {

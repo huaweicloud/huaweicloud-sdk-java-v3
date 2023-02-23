@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunFileTranslationRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private FileTranslationReq body;
 
     public RunFileTranslationRequest withBody(FileTranslationReq body) {

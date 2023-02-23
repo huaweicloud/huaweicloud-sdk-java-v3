@@ -20,11 +20,10 @@ import java.util.Objects;
 public class ShowSqlResultWithJobResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sql_results")
     
-    
+
     private Object sqlResults;
 
     public ShowSqlResultWithJobResponse withSqlResults(Object sqlResults) {

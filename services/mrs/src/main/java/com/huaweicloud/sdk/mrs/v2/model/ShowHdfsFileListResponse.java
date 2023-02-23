@@ -23,17 +23,14 @@ import java.util.Objects;
 public class ShowHdfsFileListResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
-    private Long totalCount;
 
+    private Long totalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="files")
-    
     
     private List<FileStatusV2> files = null;
     

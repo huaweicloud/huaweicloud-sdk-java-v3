@@ -27,39 +27,33 @@ import java.util.Objects;
 public class BootstrapScript  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="uri")
     
-    
-    private String uri;
 
+    private String uri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
-    
-    private String parameters;
 
+    private String parameters;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
-    
     private List<String> nodes = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="active_master")
     
-    
+
     private Boolean activeMaster;
     /**
      * 引导操作脚本执行失败后，是否继续执行后续脚本和创建集群。 缺省值为errorout,表示终止操作。 说明： 建议您在调试阶段设置为“继续”，无论此引导操作是否执行成功，则集群都能继续安装和启动。 枚举值： - continue：继续执行后续脚本。 - errorout：终止操作。
@@ -140,25 +134,22 @@ public class BootstrapScript  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fail_action")
     
-    
-    private FailActionEnum failAction;
 
+    private FailActionEnum failAction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="before_component_start")
     
-    
-    private Boolean beforeComponentStart;
 
+    private Boolean beforeComponentStart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    
+
     private Long startTime;
     /**
      * 单个引导操作脚本的运行状态。  - PENDING - IN_PROGRESS - SUCCESS - FAILURE
@@ -251,11 +242,10 @@ public class BootstrapScript  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state")
     
-    
+
     private StateEnum state;
     /**
      * 枚举值： - BEFORE_COMPONENT_FIRST_START: 组件首次启动后 - AFTER_COMPONENT_FIRST_START: 组件首次启动前 - BEFORE_SCALE_IN: 缩容前 - AFTER_SCALE_IN: 缩容后 - BEFORE_SCALE_OUT: 扩容前 - AFTER_SCALE_OUT: 扩容后
@@ -360,10 +350,8 @@ public class BootstrapScript  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_stages")
-    
     
     private List<ActionStagesEnum> actionStages = null;
     

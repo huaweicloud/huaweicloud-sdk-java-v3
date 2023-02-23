@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ModuleContainerSettingsResDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configs")
     
-    
+
     private ContainerConfigsResDTO configs;
 
     public ModuleContainerSettingsResDTO withConfigs(ContainerConfigsResDTO configs) {

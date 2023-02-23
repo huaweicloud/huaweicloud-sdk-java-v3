@@ -17,11 +17,10 @@ import java.util.Objects;
 public class DetachEipReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eip_id")
     
-    
+
     private String eipId;
 
     public DetachEipReq withEipId(String eipId) {

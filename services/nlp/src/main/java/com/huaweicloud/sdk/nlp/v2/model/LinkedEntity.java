@@ -17,25 +17,22 @@ import java.util.Objects;
 public class LinkedEntity  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mention")
     
-    
-    private String mention;
 
+    private String mention;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
-    private Integer offset;
 
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="entity_title")
     
-    
+
     private String entityTitle;
 
     public LinkedEntity withMention(String mention) {

@@ -22,18 +22,16 @@ import java.util.Objects;
 public class TaskNodeGroup  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_num")
     
-    
-    private Integer nodeNum;
 
+    private Integer nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_size")
     
-    
+
     private String nodeSize;
     /**
      * Task节点数据磁盘存储类别，目前支持SATA、SAS和SSD。 - SATA：普通IO - SAS：高IO - SSD：超高IO - GPSSD：通用型SSD
@@ -126,32 +124,28 @@ public class TaskNodeGroup  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_type")
     
-    
-    private DataVolumeTypeEnum dataVolumeType;
 
+    private DataVolumeTypeEnum dataVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_count")
     
-    
-    private Integer dataVolumeCount;
 
+    private Integer dataVolumeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_size")
     
-    
-    private Integer dataVolumeSize;
 
+    private Integer dataVolumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_scaling_policy")
     
-    
+
     private AutoScalingPolicy autoScalingPolicy;
 
     public TaskNodeGroup withNodeNum(Integer nodeNum) {

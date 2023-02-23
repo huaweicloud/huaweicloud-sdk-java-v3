@@ -23,45 +23,37 @@ import java.util.Objects;
 public class ContainerSettingsDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configs")
     
-    
-    private ContainerConfigsDTO configs;
 
+    private ContainerConfigsDTO configs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="image_url")
     
-    
-    private String imageUrl;
 
+    private String imageUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="envs")
     
-    
-    private Object envs;
 
+    private Object envs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volumes")
     
-    
     private List<VolumeDTO> volumes = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
     
-    
-    private ResourceDTO resources;
 
+    private ResourceDTO resources;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ext_devices")
-    
     
     private List<ExtDevice> extDevices = null;
     

@@ -20,11 +20,10 @@ import java.util.Objects;
 public class ResetGaussMySqlDatabasePasswordResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public ResetGaussMySqlDatabasePasswordResponse withJobId(String jobId) {

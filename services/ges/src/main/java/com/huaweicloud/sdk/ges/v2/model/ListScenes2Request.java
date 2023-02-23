@@ -18,25 +18,22 @@ import java.util.Objects;
 public class ListScenes2Request  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scene_name")
     
-    
-    private String sceneName;
 
+    private String sceneName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="application_name")
     
-    
-    private String applicationName;
 
+    private String applicationName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_id")
     
-    
+
     private String graphId;
 
     public ListScenes2Request withSceneName(String sceneName) {

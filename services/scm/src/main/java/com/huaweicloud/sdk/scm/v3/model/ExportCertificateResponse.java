@@ -12,6 +12,11 @@ import java.util.Objects;
 public class ExportCertificateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "entire_certificate")
+
+    private String entireCertificate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate")
 
     private String certificate;
@@ -36,13 +41,30 @@ public class ExportCertificateResponse extends SdkResponse {
 
     private String encPrivateKey;
 
+    public ExportCertificateResponse withEntireCertificate(String entireCertificate) {
+        this.entireCertificate = entireCertificate;
+        return this;
+    }
+
+    /**
+     * 证书及证书链。
+     * @return entireCertificate
+     */
+    public String getEntireCertificate() {
+        return entireCertificate;
+    }
+
+    public void setEntireCertificate(String entireCertificate) {
+        this.entireCertificate = entireCertificate;
+    }
+
     public ExportCertificateResponse withCertificate(String certificate) {
         this.certificate = certificate;
         return this;
     }
 
     /**
-     * 证书内容。
+     * 证书内容，不包含证书链。
      * @return certificate
      */
     public String getCertificate() {
@@ -130,7 +152,8 @@ public class ExportCertificateResponse extends SdkResponse {
             return false;
         }
         ExportCertificateResponse exportCertificateResponse = (ExportCertificateResponse) o;
-        return Objects.equals(this.certificate, exportCertificateResponse.certificate)
+        return Objects.equals(this.entireCertificate, exportCertificateResponse.entireCertificate)
+            && Objects.equals(this.certificate, exportCertificateResponse.certificate)
             && Objects.equals(this.certificateChain, exportCertificateResponse.certificateChain)
             && Objects.equals(this.privateKey, exportCertificateResponse.privateKey)
             && Objects.equals(this.encCertificate, exportCertificateResponse.encCertificate)
@@ -139,13 +162,15 @@ public class ExportCertificateResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(certificate, certificateChain, privateKey, encCertificate, encPrivateKey);
+        return Objects
+            .hash(entireCertificate, certificate, certificateChain, privateKey, encCertificate, encPrivateKey);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExportCertificateResponse {\n");
+        sb.append("    entireCertificate: ").append(toIndentedString(entireCertificate)).append("\n");
         sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
         sb.append("    certificateChain: ").append(toIndentedString(certificateChain)).append("\n");
         sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");

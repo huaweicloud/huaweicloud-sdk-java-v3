@@ -17,18 +17,16 @@ import java.util.Objects;
 public class MysqlVolumeInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    
+
     private String size;
 
     public MysqlVolumeInfo withType(String type) {

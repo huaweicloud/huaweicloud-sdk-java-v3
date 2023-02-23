@@ -20,18 +20,15 @@ import java.util.Objects;
 public class QaBotAnswers  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="answers")
     
-    
     private List<QaBotAnswer> answers = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="request_id")
     
-    
+
     private String requestId;
 
     public QaBotAnswers withAnswers(List<QaBotAnswer> answers) {

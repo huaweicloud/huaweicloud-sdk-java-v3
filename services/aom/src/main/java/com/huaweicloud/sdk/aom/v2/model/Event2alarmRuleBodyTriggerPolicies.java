@@ -12,27 +12,30 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Event2alarmRuleBodyTriggerPolicies
  */
+@JacksonXmlRootElement(localName = "Event2alarmRuleBodyTriggerPolicies")
 public class Event2alarmRuleBodyTriggerPolicies  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private Integer id;
+    @JacksonXmlProperty(localName = "id")
 
+    private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
+    @JacksonXmlProperty(localName = "name")
+
     private String name;
     /**
      * 触发类型
@@ -113,39 +116,39 @@ public class Event2alarmRuleBodyTriggerPolicies  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger_type")
     
-    
-    private TriggerTypeEnum triggerType;
+    @JacksonXmlProperty(localName = "trigger_type")
 
+    private TriggerTypeEnum triggerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period")
     
-    
-    private Integer period;
+    @JacksonXmlProperty(localName = "period")
 
+    private Integer period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="operator")
     
-    
-    private String operator;
+    @JacksonXmlProperty(localName = "operator")
 
+    private String operator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
-    
-    private Integer count;
+    @JacksonXmlProperty(localName = "count")
 
+    private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="level")
     
-    
+    @JacksonXmlProperty(localName = "level")
+
     private String level;
 
     public Event2alarmRuleBodyTriggerPolicies withId(Integer id) {

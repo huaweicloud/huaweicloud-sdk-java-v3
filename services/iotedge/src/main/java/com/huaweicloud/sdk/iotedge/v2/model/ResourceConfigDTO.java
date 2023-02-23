@@ -17,32 +17,28 @@ import java.util.Objects;
 public class ResourceConfigDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cpu")
     
-    
-    private Float cpu;
 
+    private Float cpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="memory")
     
-    
-    private Float memory;
 
+    private Float memory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="gpu")
     
-    
-    private Float gpu;
 
+    private Float gpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="npu")
     
-    
+
     private Float npu;
 
     public ResourceConfigDTO withCpu(Float cpu) {

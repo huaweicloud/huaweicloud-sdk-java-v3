@@ -19,11 +19,10 @@ import java.util.Objects;
 public class CreateAndExecuteJobRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private SubmitJobReqV11 body;
 
     public CreateAndExecuteJobRequest withBody(SubmitJobReqV11 body) {

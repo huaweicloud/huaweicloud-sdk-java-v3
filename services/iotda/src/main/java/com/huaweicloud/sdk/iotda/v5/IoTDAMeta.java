@@ -2330,6 +2330,13 @@ public class IoTDAMeta {
             f -> f.withMarshaller(ListRoutingRulesRequest::getRuleName, (req, v) -> {
                 req.setRuleName(v);
             }));
+        builder.<Boolean>withRequestField("active",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListRoutingRulesRequest::getActive, (req, v) -> {
+                req.setActive(v);
+            }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

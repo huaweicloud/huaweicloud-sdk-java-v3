@@ -428,6 +428,40 @@ public class DwsAsyncClient {
     }
 
     /**
+     * V2创建集群
+     *
+     * 该接口用于创建集群。
+     * 集群必须要运行在VPC之内，创建集群前，您需要先创建VPC，并获取VPC和子网的id。
+     * 该接口为异步接口，创建集群需要10～15分钟。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateClusterV2Request 请求对象
+     * @return CompletableFuture<CreateClusterV2Response>
+     */
+    public CompletableFuture<CreateClusterV2Response> createClusterV2Async(CreateClusterV2Request request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.createClusterV2);
+    }
+
+    /**
+     * V2创建集群
+     *
+     * 该接口用于创建集群。
+     * 集群必须要运行在VPC之内，创建集群前，您需要先创建VPC，并获取VPC和子网的id。
+     * 该接口为异步接口，创建集群需要10～15分钟。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateClusterV2Request 请求对象
+     * @return AsyncInvoker<CreateClusterV2Request, CreateClusterV2Response>
+     */
+    public AsyncInvoker<CreateClusterV2Request, CreateClusterV2Response> createClusterV2AsyncInvoker(
+        CreateClusterV2Request request) {
+        return new AsyncInvoker<CreateClusterV2Request, CreateClusterV2Response>(request, DwsMeta.createClusterV2,
+            hcClient);
+    }
+
+    /**
      * 设置资源管理
      *
      * 设置资源管理。

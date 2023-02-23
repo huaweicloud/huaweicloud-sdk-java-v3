@@ -106,11 +106,10 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_mode")
     
-    
+
     private ClusterModeEnum clusterMode;
     /**
      * 实例模型，企业版enterprise，标准版standard，基础版basic。
@@ -197,18 +196,16 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_mode")
     
-    
-    private InstanceModeEnum instanceMode;
 
+    private InstanceModeEnum instanceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_size")
     
-    
+
     private String dataVolumeSize;
     /**
      * 解决方案模板类型。集中式Ha一般用triset，分布式Independent一般为空或者默认hws。  描述如下：  triset：高可用(1主2备)  hws：默认。
@@ -289,46 +286,40 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="solution")
     
-    
-    private SolutionEnum solution;
 
+    private SolutionEnum solution;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_num")
     
-    
-    private Integer nodeNum;
 
+    private Integer nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coordinator_num")
     
-    
-    private Integer coordinatorNum;
 
+    private Integer coordinatorNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sharding_num")
     
-    
-    private Integer shardingNum;
 
+    private Integer shardingNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replica_num")
     
-    
-    private Integer replicaNum;
 
+    private Integer replicaNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="engine_version")
     
-    
+
     private String engineVersion;
 
     public ShowInstanceSnapshotResponse withClusterMode(ClusterModeEnum clusterMode) {

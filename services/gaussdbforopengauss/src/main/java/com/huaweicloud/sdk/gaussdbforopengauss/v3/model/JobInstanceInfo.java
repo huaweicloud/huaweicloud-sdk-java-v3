@@ -17,18 +17,16 @@ import java.util.Objects;
 public class JobInstanceInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
+
     private String name;
 
     public JobInstanceInfo withId(String id) {

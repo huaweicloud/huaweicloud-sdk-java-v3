@@ -20,31 +20,25 @@ import java.util.Objects;
 public class EventExtractionResponseItem  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="argument")
     
-    
     private List<EventExtractionResponseItemArgument> argument = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="event_trigger")
     
-    
-    private String eventTrigger;
 
+    private String eventTrigger;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="event_type")
     
-    
-    private String eventType;
 
+    private String eventType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger_span")
-    
     
     private List<Integer> triggerSpan = null;
     

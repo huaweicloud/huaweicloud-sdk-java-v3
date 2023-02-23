@@ -17,18 +17,16 @@ import java.util.Objects;
 public class ModifyProxyWeightReadonlyNode  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="weight")
     
-    
+
     private Integer weight;
 
     public ModifyProxyWeightReadonlyNode withId(String id) {

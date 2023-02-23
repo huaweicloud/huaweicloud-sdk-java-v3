@@ -17,39 +17,34 @@ import java.util.Objects;
 public class CreateInstancePeriodRequestProductInfos  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_id")
     
-    
-    private String productId;
 
+    private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cloud_service_type")
     
-    
-    private String cloudServiceType;
 
+    private String cloudServiceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_type")
     
-    
-    private String resourceType;
 
+    private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_spec_code")
     
-    
-    private String resourceSpecCode;
 
+    private String resourceSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_spec_desc")
     
-    
+
     private String productSpecDesc;
 
     public CreateInstancePeriodRequestProductInfos withProductId(String productId) {

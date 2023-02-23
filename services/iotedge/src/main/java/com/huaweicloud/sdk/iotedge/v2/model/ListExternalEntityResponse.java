@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ListExternalEntityResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="externals")
-    
     
     private List<ExternalEntityRespDTO> externals = null;
     

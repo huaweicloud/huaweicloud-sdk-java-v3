@@ -17,25 +17,22 @@ import java.util.Objects;
 public class ListScenesRespParams  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="default_value")
     
-    
+
     private String defaultValue;
 
     public ListScenesRespParams withName(String name) {

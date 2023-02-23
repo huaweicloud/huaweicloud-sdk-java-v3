@@ -24,6 +24,11 @@ public class ShowResultResponse extends SdkResponse {
 
     private List<TaskModel> tasks = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_type")
+
+    private String requestType;
+
     public ShowResultResponse withRequestStatus(RequestStatus requestStatus) {
         this.requestStatus = requestStatus;
         return this;
@@ -74,6 +79,23 @@ public class ShowResultResponse extends SdkResponse {
         this.tasks = tasks;
     }
 
+    public ShowResultResponse withRequestType(String requestType) {
+        this.requestType = requestType;
+        return this;
+    }
+
+    /**
+     * the type of the request
+     * @return requestType
+     */
+    public String getRequestType() {
+        return requestType;
+    }
+
+    public void setRequestType(String requestType) {
+        this.requestType = requestType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -84,12 +106,13 @@ public class ShowResultResponse extends SdkResponse {
         }
         ShowResultResponse showResultResponse = (ShowResultResponse) o;
         return Objects.equals(this.requestStatus, showResultResponse.requestStatus)
-            && Objects.equals(this.tasks, showResultResponse.tasks);
+            && Objects.equals(this.tasks, showResultResponse.tasks)
+            && Objects.equals(this.requestType, showResultResponse.requestType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestStatus, tasks);
+        return Objects.hash(requestStatus, tasks, requestType);
     }
 
     @Override
@@ -98,6 +121,7 @@ public class ShowResultResponse extends SdkResponse {
         sb.append("class ShowResultResponse {\n");
         sb.append("    requestStatus: ").append(toIndentedString(requestStatus)).append("\n");
         sb.append("    tasks: ").append(toIndentedString(tasks)).append("\n");
+        sb.append("    requestType: ").append(toIndentedString(requestType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

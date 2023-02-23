@@ -20,18 +20,16 @@ import java.util.Objects;
 public class DeleteBackupResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorMessage")
     
-    
-    private String errorMessage;
 
+    private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorCode")
     
-    
+
     private String errorCode;
 
     public DeleteBackupResponse withErrorMessage(String errorMessage) {

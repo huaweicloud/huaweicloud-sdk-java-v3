@@ -18,11 +18,10 @@ import java.util.Objects;
 public class DeleteMetadataRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata_id")
     
-    
+
     private String metadataId;
 
     public DeleteMetadataRequest withMetadataId(String metadataId) {

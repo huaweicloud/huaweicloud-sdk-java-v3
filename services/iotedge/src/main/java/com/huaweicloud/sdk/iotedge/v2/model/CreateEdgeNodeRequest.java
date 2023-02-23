@@ -19,11 +19,10 @@ import java.util.Objects;
 public class CreateEdgeNodeRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private EdgeNodeCreation body;
 
     public CreateEdgeNodeRequest withBody(EdgeNodeCreation body) {

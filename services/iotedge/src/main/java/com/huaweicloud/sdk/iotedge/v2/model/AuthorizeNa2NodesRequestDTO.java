@@ -17,11 +17,10 @@ import java.util.Objects;
 public class AuthorizeNa2NodesRequestDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_ids")
     
-    
+
     private Object nodeIds;
 
     public AuthorizeNa2NodesRequestDTO withNodeIds(Object nodeIds) {

@@ -17,41 +17,43 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 阈值规则实体
  */
+@JacksonXmlRootElement(localName = "UpdateAlarmRuleParam")
 public class UpdateAlarmRuleParam  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_enabled")
     
-    
-    private Boolean actionEnabled;
+    @JacksonXmlProperty(localName = "action_enabled")
 
+    private Boolean actionEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_actions")
     
-    
+    @JacksonXmlProperty(localName = "alarm_actions")
     private List<String> alarmActions = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_advice")
     
-    
-    private String alarmAdvice;
+    @JacksonXmlProperty(localName = "alarm_advice")
 
+    private String alarmAdvice;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_description")
     
-    
+    @JacksonXmlProperty(localName = "alarm_description")
+
     private String alarmDescription;
     /**
      * 告警级别。1：紧急，2：重要，3：一般，4：提示。
@@ -144,81 +146,78 @@ public class UpdateAlarmRuleParam  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_level")
     
-    
-    private AlarmLevelEnum alarmLevel;
+    @JacksonXmlProperty(localName = "alarm_level")
 
+    private AlarmLevelEnum alarmLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_rule_name")
     
-    
-    private String alarmRuleName;
+    @JacksonXmlProperty(localName = "alarm_rule_name")
 
+    private String alarmRuleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="comparison_operator")
     
-    
-    private String comparisonOperator;
+    @JacksonXmlProperty(localName = "comparison_operator")
 
+    private String comparisonOperator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dimensions")
     
-    
+    @JacksonXmlProperty(localName = "dimensions")
     private List<Dimension> dimensions = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="evaluation_periods")
     
-    
-    private Integer evaluationPeriods;
+    @JacksonXmlProperty(localName = "evaluation_periods")
 
+    private Integer evaluationPeriods;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id_turn_on")
     
-    
-    private Boolean idTurnOn;
+    @JacksonXmlProperty(localName = "id_turn_on")
 
+    private Boolean idTurnOn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="insufficient_data_actions")
     
-    
+    @JacksonXmlProperty(localName = "insufficient_data_actions")
     private List<String> insufficientDataActions = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric_name")
     
-    
-    private String metricName;
+    @JacksonXmlProperty(localName = "metric_name")
 
+    private String metricName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="namespace")
     
-    
-    private String namespace;
+    @JacksonXmlProperty(localName = "namespace")
 
+    private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ok_actions")
     
-    
+    @JacksonXmlProperty(localName = "ok_actions")
     private List<String> okActions = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period")
     
-    
+    @JacksonXmlProperty(localName = "period")
+
     private Integer period;
     /**
      * 统计方式。
@@ -317,25 +316,25 @@ public class UpdateAlarmRuleParam  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="statistic")
     
-    
-    private StatisticEnum statistic;
+    @JacksonXmlProperty(localName = "statistic")
 
+    private StatisticEnum statistic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="threshold")
     
-    
-    private String threshold;
+    @JacksonXmlProperty(localName = "threshold")
 
+    private String threshold;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="unit")
     
-    
+    @JacksonXmlProperty(localName = "unit")
+
     private String unit;
 
     public UpdateAlarmRuleParam withActionEnabled(Boolean actionEnabled) {

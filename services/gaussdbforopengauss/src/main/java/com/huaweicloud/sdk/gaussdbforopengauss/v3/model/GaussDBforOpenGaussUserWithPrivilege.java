@@ -17,25 +17,22 @@ import java.util.Objects;
 public class GaussDBforOpenGaussUserWithPrivilege  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="readonly")
     
-    
-    private Boolean readonly;
 
+    private Boolean readonly;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schema_name")
     
-    
+
     private String schemaName;
 
     public GaussDBforOpenGaussUserWithPrivilege withName(String name) {

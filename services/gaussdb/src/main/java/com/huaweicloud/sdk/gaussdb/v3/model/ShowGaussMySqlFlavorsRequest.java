@@ -18,39 +18,34 @@ import java.util.Objects;
 public class ShowGaussMySqlFlavorsRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="database_name")
     
-    
-    private String databaseName;
 
+    private String databaseName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_name")
     
-    
-    private String versionName;
 
+    private String versionName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone_mode")
     
-    
-    private String availabilityZoneMode;
 
+    private String availabilityZoneMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec_code")
     
-    
+
     private String specCode;
 
     public ShowGaussMySqlFlavorsRequest withXLanguage(String xLanguage) {

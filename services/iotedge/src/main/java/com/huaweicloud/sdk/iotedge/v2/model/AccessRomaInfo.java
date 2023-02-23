@@ -17,18 +17,16 @@ import java.util.Objects;
 public class AccessRomaInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_key")
     
-    
-    private String appKey;
 
+    private String appKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_secret")
     
-    
+
     private String appSecret;
 
     public AccessRomaInfo withAppKey(String appKey) {

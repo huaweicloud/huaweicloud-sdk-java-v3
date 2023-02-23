@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ResizeGraphReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resize")
     
-    
+
     private GraphSizeTypeIndexReq resize;
 
     public ResizeGraphReq withResize(GraphSizeTypeIndexReq resize) {

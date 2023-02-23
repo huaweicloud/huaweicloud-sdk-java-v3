@@ -17,67 +17,58 @@ import java.util.Objects;
 public class BackupPolicy  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="keep_days")
     
-    
-    private Integer keepDays;
 
+    private Integer keepDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    
-    private String startTime;
 
+    private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period")
     
-    
-    private String period;
 
+    private String period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="differential_period")
     
-    
-    private String differentialPeriod;
 
+    private String differentialPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rate_limit")
     
-    
-    private Integer rateLimit;
 
+    private Integer rateLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="prefetch_block")
     
-    
-    private Integer prefetchBlock;
 
+    private Integer prefetchBlock;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="filesplit_size")
     
-    
-    private Integer filesplitSize;
 
+    private Integer filesplitSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="file_split_size")
     
-    
-    private Integer fileSplitSize;
 
+    private Integer fileSplitSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_standby_backup")
     
-    
+
     private Boolean enableStandbyBackup;
 
     public BackupPolicy withKeepDays(Integer keepDays) {

@@ -19,10 +19,8 @@ import java.util.Objects;
 public class Tag  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="should")
-    
     
     private List<String> should = null;
     

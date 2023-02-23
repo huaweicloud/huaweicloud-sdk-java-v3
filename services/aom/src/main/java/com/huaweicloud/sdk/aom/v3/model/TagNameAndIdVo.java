@@ -8,27 +8,30 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * TagNameAndIdVo
  */
+@JacksonXmlRootElement(localName = "TagNameAndIdVo")
 public class TagNameAndIdVo  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag_id")
     
-    
-    private String tagId;
+    @JacksonXmlProperty(localName = "tag_id")
 
+    private String tagId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag_name")
     
-    
+    @JacksonXmlProperty(localName = "tag_name")
+
     private String tagName;
 
     public TagNameAndIdVo withTagId(String tagId) {

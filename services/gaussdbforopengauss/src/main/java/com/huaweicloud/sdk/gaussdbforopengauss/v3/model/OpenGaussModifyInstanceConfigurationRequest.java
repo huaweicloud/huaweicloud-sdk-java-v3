@@ -20,10 +20,8 @@ import java.util.Objects;
 public class OpenGaussModifyInstanceConfigurationRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="values")
-    
     
     private Map<String, String> values = null;
     

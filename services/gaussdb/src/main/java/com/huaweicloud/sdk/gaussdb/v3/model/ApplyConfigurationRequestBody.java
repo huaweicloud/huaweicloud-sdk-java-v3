@@ -19,10 +19,8 @@ import java.util.Objects;
 public class ApplyConfigurationRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_ids")
-    
     
     private List<String> instanceIds = null;
     

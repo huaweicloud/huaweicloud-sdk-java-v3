@@ -23,25 +23,22 @@ import java.util.Objects;
 public class CreateEdgeApplicationVersionDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    
-    private String version;
 
+    private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sdk_version")
     
-    
+
     private String sdkVersion;
     /**
      * 应用部署类型，分为docker容器部署类型和process进程部署类型，兼容之前数据，此字段可以为空，为空情况为docker类型
@@ -122,95 +119,82 @@ public class CreateEdgeApplicationVersionDTO  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deploy_type")
     
-    
-    private DeployTypeEnum deployType;
 
+    private DeployTypeEnum deployType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deploy_multi_instance")
     
-    
-    private Boolean deployMultiInstance;
 
+    private Boolean deployMultiInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_settings")
     
-    
-    private ContainerSettingsDTO containerSettings;
 
+    private ContainerSettingsDTO containerSettings;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="liveness_probe")
     
-    
-    private ProbeDTO livenessProbe;
 
+    private ProbeDTO livenessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="readiness_probe")
     
-    
-    private ProbeDTO readinessProbe;
 
+    private ProbeDTO readinessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
-    
-    private Object arch;
 
+    private Object arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="command")
     
-    
-    private Object command;
 
+    private Object command;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="args")
     
-    
-    private Object args;
 
+    private Object args;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="outputs")
     
-    
-    private Object outputs;
 
+    private Object outputs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="inputs")
     
-    
-    private Object inputs;
 
+    private Object inputs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="services")
     
-    
-    private Object services;
 
+    private Object services;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="supplier")
     
-    
-    private String supplier;
 
+    private String supplier;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tpl_id")
     
-    
+
     private String tplId;
 
     public CreateEdgeApplicationVersionDTO withVersion(String version) {

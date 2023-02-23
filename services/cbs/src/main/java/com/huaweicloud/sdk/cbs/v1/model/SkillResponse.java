@@ -22,45 +22,38 @@ import java.util.Objects;
 public class SkillResponse  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="skill_id")
     
-    
-    private String skillId;
 
+    private String skillId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="skill_version")
     
-    
-    private String skillVersion;
 
+    private String skillVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="frame")
     
-    
-    private Frame frame;
 
+    private Frame frame;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="candidate")
     
-    
-    private CandidateIntention candidate;
 
+    private CandidateIntention candidate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="locked")
     
-    
-    private Boolean locked;
 
+    private Boolean locked;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="related_intenions")
-    
     
     private List<RelatedIntention> relatedIntenions = null;
     

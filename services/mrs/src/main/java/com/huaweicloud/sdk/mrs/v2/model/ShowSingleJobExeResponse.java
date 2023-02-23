@@ -21,11 +21,10 @@ import java.util.Objects;
 public class ShowSingleJobExeResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_detail")
     
-    
+
     private JobQueryBean jobDetail;
 
     public ShowSingleJobExeResponse withJobDetail(JobQueryBean jobDetail) {

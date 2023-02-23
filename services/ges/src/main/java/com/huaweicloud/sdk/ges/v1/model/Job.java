@@ -18,74 +18,64 @@ import java.util.Objects;
 public class Job  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobId")
     
-    
-    private String jobId;
 
+    private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobType")
     
-    
-    private String jobType;
 
+    private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobName")
     
-    
-    private String jobName;
 
+    private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="relatedGraph")
     
-    
-    private String relatedGraph;
 
+    private String relatedGraph;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="beginTime")
     
-    
-    private String beginTime;
 
+    private String beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endTime")
     
-    
-    private String endTime;
 
+    private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobDetail")
     
-    
-    private JobDetail jobDetail;
 
+    private JobDetail jobDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="failReason")
     
-    
-    private String failReason;
 
+    private String failReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobProgress")
     
-    
+
     private Double jobProgress;
 
     public Job withJobId(String jobId) {

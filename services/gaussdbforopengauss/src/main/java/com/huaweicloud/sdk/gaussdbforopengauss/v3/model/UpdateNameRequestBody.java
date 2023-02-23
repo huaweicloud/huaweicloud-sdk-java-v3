@@ -17,11 +17,10 @@ import java.util.Objects;
 public class UpdateNameRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
+
     private String name;
 
     public UpdateNameRequestBody withName(String name) {

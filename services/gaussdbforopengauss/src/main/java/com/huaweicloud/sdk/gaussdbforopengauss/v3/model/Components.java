@@ -17,25 +17,22 @@ import java.util.Objects;
 public class Components  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="role")
     
-    
-    private String role;
 
+    private String role;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
+
     private String status;
 
     public Components withId(String id) {

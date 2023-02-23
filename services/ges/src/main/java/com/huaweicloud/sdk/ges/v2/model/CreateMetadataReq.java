@@ -18,39 +18,34 @@ import java.util.Objects;
 public class CreateMetadataReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata_path")
     
-    
-    private String metadataPath;
 
+    private String metadataPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_overwrite")
     
-    
-    private Boolean isOverwrite;
 
+    private Boolean isOverwrite;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ges_metadata")
     
-    
+
     private CreateMetadataReqGesMetadata gesMetadata;
 
     public CreateMetadataReq withMetadataPath(String metadataPath) {

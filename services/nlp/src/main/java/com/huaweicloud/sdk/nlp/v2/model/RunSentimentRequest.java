@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunSentimentRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private HWCloudSentimentReq body;
 
     public RunSentimentRequest withBody(HWCloudSentimentReq body) {

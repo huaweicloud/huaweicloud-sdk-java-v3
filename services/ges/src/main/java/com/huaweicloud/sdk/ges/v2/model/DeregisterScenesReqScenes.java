@@ -19,17 +19,14 @@ import java.util.Objects;
 public class DeregisterScenesReqScenes  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="applications")
-    
     
     private List<String> applications = null;
     

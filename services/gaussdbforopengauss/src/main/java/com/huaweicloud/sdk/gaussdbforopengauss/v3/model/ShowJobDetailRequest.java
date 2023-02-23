@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ShowJobDetailRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
+
     private String id;
 
     public ShowJobDetailRequest withId(String id) {

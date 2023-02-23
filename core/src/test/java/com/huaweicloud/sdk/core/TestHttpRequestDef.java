@@ -30,9 +30,7 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
 import com.huaweicloud.sdk.core.utils.JsonUtils;
-
 import net.minidev.json.annotate.JsonIgnore;
-
 import org.junit.Assert;
 import org.junit.Test;
 

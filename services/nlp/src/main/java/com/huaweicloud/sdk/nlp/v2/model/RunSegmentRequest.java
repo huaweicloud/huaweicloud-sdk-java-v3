@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunSegmentRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private SegmentRequest body;
 
     public RunSegmentRequest withBody(SegmentRequest body) {

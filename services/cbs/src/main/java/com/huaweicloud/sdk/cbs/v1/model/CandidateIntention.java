@@ -17,18 +17,16 @@ import java.util.Objects;
 public class CandidateIntention  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="candidate_intention")
     
-    
-    private String candidateIntention;
 
+    private String candidateIntention;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="candidate_confidence")
     
-    
+
     private Double candidateConfidence;
 
     public CandidateIntention withCandidateIntention(String candidateIntention) {

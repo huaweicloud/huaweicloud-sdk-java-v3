@@ -19,32 +19,28 @@ import java.util.Objects;
 public class ChangeGaussMySqlProxySpecificationRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
-    private String instanceId;
 
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="proxy_id")
     
-    
-    private String proxyId;
 
+    private String proxyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private TaurusProxyScaleRequest body;
 
     public ChangeGaussMySqlProxySpecificationRequest withXLanguage(String xLanguage) {

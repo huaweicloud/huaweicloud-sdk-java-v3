@@ -14,90 +14,91 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v1.model.ExecutionResultList;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Response Object
  */
+@JacksonXmlRootElement(localName = "SearchWorkflowExecutionDetailResponse")
 public class SearchWorkflowExecutionDetailResponse extends SdkResponse {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="workflow_id")
     
-    
-    private String workflowId;
+    @JacksonXmlProperty(localName = "workflow_id")
 
+    private String workflowId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="execution_id")
     
-    
-    private String executionId;
+    @JacksonXmlProperty(localName = "execution_id")
 
+    private String executionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
+    @JacksonXmlProperty(localName = "status")
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="begin_time")
     
-    
-    private Long beginTime;
+    @JacksonXmlProperty(localName = "begin_time")
 
+    private Long beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    
-    private Long endTime;
+    @JacksonXmlProperty(localName = "end_time")
 
+    private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_update_time")
     
-    
-    private Long lastUpdateTime;
+    @JacksonXmlProperty(localName = "last_update_time")
 
+    private Long lastUpdateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="execution_result_list")
     
-    
+    @JacksonXmlProperty(localName = "execution_result_list")
     private List<ExecutionResultList> executionResultList = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="approve_user_name_list")
     
-    
+    @JacksonXmlProperty(localName = "approve_user_name_list")
     private List<String> approveUserNameList = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project_id")
     
-    
-    private String projectId;
+    @JacksonXmlProperty(localName = "project_id")
 
+    private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="workflow_edit_time")
     
-    
-    private Long workflowEditTime;
+    @JacksonXmlProperty(localName = "workflow_edit_time")
 
+    private Long workflowEditTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_record_id_with_snapshot")
     
-    
+    @JacksonXmlProperty(localName = "last_record_id_with_snapshot")
+
     private String lastRecordIdWithSnapshot;
 
     public SearchWorkflowExecutionDetailResponse withWorkflowId(String workflowId) {

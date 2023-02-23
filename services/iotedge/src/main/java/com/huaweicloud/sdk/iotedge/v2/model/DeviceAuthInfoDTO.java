@@ -18,25 +18,22 @@ import java.util.Objects;
 public class DeviceAuthInfoDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_type")
     
-    
-    private String authType;
 
+    private String authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fingerprint")
     
-    
-    private String fingerprint;
 
+    private String fingerprint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="local_path")
     
-    
+
     private CertificateLocalPathDTO localPath;
 
     public DeviceAuthInfoDTO withAuthType(String authType) {

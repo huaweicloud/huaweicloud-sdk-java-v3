@@ -23,10 +23,8 @@ import java.util.Objects;
 public class BatchAssociateNaToNodesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
-    
     
     private List<QueryAuthorizedNodeDTO> nodes = null;
     

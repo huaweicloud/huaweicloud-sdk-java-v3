@@ -19,18 +19,16 @@ import java.util.Objects;
 public class ParseTemplateVariablesRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Client-Request-Id")
     
-    
-    private String clientRequestId;
 
+    private String clientRequestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private ParseTemplateVariablesRequestBody body;
 
     public ParseTemplateVariablesRequest withClientRequestId(String clientRequestId) {

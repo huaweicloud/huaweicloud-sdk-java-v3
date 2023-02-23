@@ -18,46 +18,40 @@ import java.util.Objects;
 public class TaskDetailResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_info")
     
-    
-    private InstanceInfoResult instanceInfo;
 
+    private InstanceInfoResult instanceInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
-    private String jobId;
 
+    private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="process")
     
-    
-    private String process;
 
+    private String process;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fail_reason")
     
-    
+
     private String failReason;
 
     public TaskDetailResult withInstanceInfo(InstanceInfoResult instanceInfo) {

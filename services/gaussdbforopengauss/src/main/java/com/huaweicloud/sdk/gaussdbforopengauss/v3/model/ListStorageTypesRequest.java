@@ -22,18 +22,16 @@ import java.util.Objects;
 public class ListStorageTypesRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    
+
     private String version;
     /**
      * 实例类型： enterprise(企业版)， centralization_standard(主备版)，不区分大小写。
@@ -114,11 +112,10 @@ public class ListStorageTypesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ha_mode")
     
-    
+
     private HaModeEnum haMode;
 
     public ListStorageTypesRequest withXLanguage(String xLanguage) {

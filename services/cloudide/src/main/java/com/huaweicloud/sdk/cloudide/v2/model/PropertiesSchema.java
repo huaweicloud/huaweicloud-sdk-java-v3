@@ -45,6 +45,16 @@ public class PropertiesSchema {
 
     private String signature;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "above_text")
+
+    private String aboveText;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "following_text")
+
+    private String followingText;
+
     public PropertiesSchema withContext(String context) {
         this.context = context;
         return this;
@@ -164,6 +174,40 @@ public class PropertiesSchema {
         this.signature = signature;
     }
 
+    public PropertiesSchema withAboveText(String aboveText) {
+        this.aboveText = aboveText;
+        return this;
+    }
+
+    /**
+     * the text above the cursor
+     * @return aboveText
+     */
+    public String getAboveText() {
+        return aboveText;
+    }
+
+    public void setAboveText(String aboveText) {
+        this.aboveText = aboveText;
+    }
+
+    public PropertiesSchema withFollowingText(String followingText) {
+        this.followingText = followingText;
+        return this;
+    }
+
+    /**
+     * the text following the cursor
+     * @return followingText
+     */
+    public String getFollowingText() {
+        return followingText;
+    }
+
+    public void setFollowingText(String followingText) {
+        this.followingText = followingText;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -179,12 +223,22 @@ public class PropertiesSchema {
             && Objects.equals(this.ideVersion, propertiesSchema.ideVersion)
             && Objects.equals(this.language, propertiesSchema.language)
             && Objects.equals(this.pluginVersion, propertiesSchema.pluginVersion)
-            && Objects.equals(this.signature, propertiesSchema.signature);
+            && Objects.equals(this.signature, propertiesSchema.signature)
+            && Objects.equals(this.aboveText, propertiesSchema.aboveText)
+            && Objects.equals(this.followingText, propertiesSchema.followingText);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(context, docstring, ideType, ideVersion, language, pluginVersion, signature);
+        return Objects.hash(context,
+            docstring,
+            ideType,
+            ideVersion,
+            language,
+            pluginVersion,
+            signature,
+            aboveText,
+            followingText);
     }
 
     @Override
@@ -198,6 +252,8 @@ public class PropertiesSchema {
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    pluginVersion: ").append(toIndentedString(pluginVersion)).append("\n");
         sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
+        sb.append("    aboveText: ").append(toIndentedString(aboveText)).append("\n");
+        sb.append("    followingText: ").append(toIndentedString(followingText)).append("\n");
         sb.append("}");
         return sb.toString();
     }

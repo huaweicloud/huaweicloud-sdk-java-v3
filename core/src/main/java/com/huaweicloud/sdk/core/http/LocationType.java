@@ -32,6 +32,7 @@ public enum LocationType {
     Path,
     Query,
     Body,
+    Cname,
     // 内部临时字段
     TransientInternal
 }

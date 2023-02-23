@@ -25,18 +25,16 @@ import java.util.Objects;
 public class EdgeModuleDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
-    
-    private String edgeAppId;
 
+    private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_version")
     
-    
+
     private String appVersion;
     /**
      * 模块运行状态
@@ -159,53 +157,46 @@ public class EdgeModuleDTO  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state")
     
-    
-    private StateEnum state;
 
+    private StateEnum state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="control_status")
     
-    
-    private String controlStatus;
 
+    private String controlStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    
-    private String nodeId;
 
+    private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="module_name")
     
-    
-    private String moduleName;
 
+    private String moduleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="module_id")
     
-    
-    private String moduleId;
 
+    private String moduleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    
-    private String createTime;
 
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    
+
     private String updateTime;
     /**
      * 应用类型
@@ -292,11 +283,10 @@ public class EdgeModuleDTO  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_type")
     
-    
+
     private AppTypeEnum appType;
     /**
      * 功能类型
@@ -401,11 +391,10 @@ public class EdgeModuleDTO  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="function_type")
     
-    
+
     private FunctionTypeEnum functionType;
 
     public EdgeModuleDTO withEdgeAppId(String edgeAppId) {

@@ -20,11 +20,10 @@ import java.util.Objects;
 public class SwitchRiskRuleResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
+
     private String status;
 
     public SwitchRiskRuleResponse withStatus(String status) {

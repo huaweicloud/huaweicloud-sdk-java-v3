@@ -19,25 +19,22 @@ import java.util.Objects;
 public class ExecuteSessionRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qabot_id")
     
-    
-    private String qabotId;
 
+    private String qabotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="session_id")
     
-    
-    private String sessionId;
 
+    private String sessionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private PostQaSessionReq body;
 
     public ExecuteSessionRequest withQabotId(String qabotId) {

@@ -20,31 +20,26 @@ import java.util.Objects;
 public class ContainerConfigsDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="privileged")
     
-    
-    private Boolean privileged;
 
+    private Boolean privileged;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host_network")
     
-    
-    private Boolean hostNetwork;
 
+    private Boolean hostNetwork;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="restart_policy")
     
-    
-    private String restartPolicy;
 
+    private String restartPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_port_list")
-    
     
     private List<ContainerPortDTO> containerPortList = null;
     

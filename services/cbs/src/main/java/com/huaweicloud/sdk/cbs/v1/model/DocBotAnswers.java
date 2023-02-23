@@ -20,38 +20,32 @@ import java.util.Objects;
 public class DocBotAnswers  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="answer")
     
-    
-    private String answer;
 
+    private String answer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="score")
     
-    
-    private Double score;
 
+    private Double score;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="question")
     
-    
-    private String question;
 
+    private String question;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="answer_detail")
     
-    
-    private DocQueryAnswerDetail answerDetail;
 
+    private DocQueryAnswerDetail answerDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="details")
-    
     
     private List<DocQueryAnswerDetail> details = null;
     

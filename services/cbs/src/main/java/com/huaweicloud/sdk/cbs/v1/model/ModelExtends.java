@@ -20,32 +20,27 @@ import java.util.Objects;
 public class ModelExtends  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag_ids")
     
-    
-    private Tag tagIds;
 
+    private Tag tagIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain_ids")
     
-    
     private List<String> domainIds = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source")
     
-    
-    private String source;
 
+    private String source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="return_all_answers")
     
-    
+
     private Boolean returnAllAnswers;
 
     public ModelExtends withTagIds(Tag tagIds) {

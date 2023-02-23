@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collections;
 import java.util.function.Consumer;
 
 public class TestUtils {
@@ -31,7 +32,8 @@ public class TestUtils {
                         requestListener -> logger.debug("REQUEST: {} {} {}", requestListener.httpMethod(),
                                 requestListener.uri(), requestListener.body().orElse("")))))
                 .withCredential(new BasicCredentials().withAk("test").withSk("test").withProjectId("pp"))
-                .withEndpoint(endpoint);
+                .withEndpoints(Collections.singletonList(endpoint));
+
     }
 
     public static Consumer<InputStream> getDownloadConsumer(Logger logger) {

@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunSummaryDomainRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private SummaryDomainReq body;
 
     public RunSummaryDomainRequest withBody(SummaryDomainReq body) {

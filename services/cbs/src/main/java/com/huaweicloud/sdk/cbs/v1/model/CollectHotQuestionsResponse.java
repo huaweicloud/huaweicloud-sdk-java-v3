@@ -23,10 +23,8 @@ import java.util.Objects;
 public class CollectHotQuestionsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="questions")
-    
     
     private List<HotQuestionCount> questions = null;
     

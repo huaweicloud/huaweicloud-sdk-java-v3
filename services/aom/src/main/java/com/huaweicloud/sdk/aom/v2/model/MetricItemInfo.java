@@ -11,27 +11,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.Dimension2;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 指标详细信息。
  */
+@JacksonXmlRootElement(localName = "MetricItemInfo")
 public class MetricItemInfo  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dimensions")
     
-    
+    @JacksonXmlProperty(localName = "dimensions")
     private List<Dimension2> dimensions = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="namespace")
     
-    
+    @JacksonXmlProperty(localName = "namespace")
+
     private String namespace;
 
     public MetricItemInfo withDimensions(List<Dimension2> dimensions) {

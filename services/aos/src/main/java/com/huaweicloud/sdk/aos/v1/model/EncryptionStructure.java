@@ -18,11 +18,10 @@ import java.util.Objects;
 public class EncryptionStructure  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kms")
     
-    
+
     private KmsStructure kms;
 
     public EncryptionStructure withKms(KmsStructure kms) {

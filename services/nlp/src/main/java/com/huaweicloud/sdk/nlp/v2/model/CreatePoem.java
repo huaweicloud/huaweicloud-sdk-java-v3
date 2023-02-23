@@ -21,11 +21,10 @@ import java.util.Objects;
 public class CreatePoem  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="title")
     
-    
+
     private String title;
     /**
      * 诗歌类型，取值如下： 0：五言绝句； 1：七言绝句； 2：五言律诗； 3：七言律诗；
@@ -118,18 +117,16 @@ public class CreatePoem  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private TypeEnum type;
 
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="acrostic")
     
-    
+
     private Boolean acrostic;
 
     public CreatePoem withTitle(String title) {

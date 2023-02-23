@@ -12,69 +12,71 @@ import com.huaweicloud.sdk.aom.v2.model.Match;
 import com.huaweicloud.sdk.aom.v2.model.MuteConfig;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 静默规则
  */
+@JacksonXmlRootElement(localName = "MuteRule")
 public class MuteRule  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    
-    private Long createTime;
+    @JacksonXmlProperty(localName = "create_time")
 
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="desc")
     
-    
-    private String desc;
+    @JacksonXmlProperty(localName = "desc")
 
+    private String desc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="match")
     
-    
+    @JacksonXmlProperty(localName = "match")
     private List<List<Match>> match = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mute_config")
     
-    
-    private MuteConfig muteConfig;
+    @JacksonXmlProperty(localName = "mute_config")
 
+    private MuteConfig muteConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
+    @JacksonXmlProperty(localName = "name")
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timezone")
     
-    
-    private String timezone;
+    @JacksonXmlProperty(localName = "timezone")
 
+    private String timezone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    
-    private Long updateTime;
+    @JacksonXmlProperty(localName = "update_time")
 
+    private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_id")
     
-    
+    @JacksonXmlProperty(localName = "user_id")
+
     private String userId;
 
     public MuteRule withCreateTime(Long createTime) {

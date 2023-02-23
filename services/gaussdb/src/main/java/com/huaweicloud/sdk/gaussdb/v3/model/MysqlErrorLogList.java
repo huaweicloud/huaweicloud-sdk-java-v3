@@ -17,32 +17,28 @@ import java.util.Objects;
 public class MysqlErrorLogList  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    
-    private String nodeId;
 
+    private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time")
     
-    
-    private String time;
 
+    private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="level")
     
-    
-    private String level;
 
+    private String level;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
-    
+
     private String content;
 
     public MysqlErrorLogList withNodeId(String nodeId) {

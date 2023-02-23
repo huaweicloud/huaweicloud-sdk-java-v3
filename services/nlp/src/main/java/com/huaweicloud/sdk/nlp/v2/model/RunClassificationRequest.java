@@ -19,11 +19,10 @@ import java.util.Objects;
 public class RunClassificationRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private ClassificationReq body;
 
     public RunClassificationRequest withBody(ClassificationReq body) {

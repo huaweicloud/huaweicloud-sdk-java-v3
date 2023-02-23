@@ -19,10 +19,8 @@ import java.util.Objects;
 public class JobBatchDelete  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id_list")
-    
     
     private List<String> jobIdList = null;
     

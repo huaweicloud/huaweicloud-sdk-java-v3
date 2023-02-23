@@ -20,10 +20,8 @@ import java.util.Objects;
 public class CreateGaussMySqlDatabaseRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="databases")
-    
     
     private List<CreateGaussMySqlDatabase> databases = null;
     

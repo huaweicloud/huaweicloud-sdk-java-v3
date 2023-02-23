@@ -17,39 +17,34 @@ import java.util.Objects;
 public class SessionStatsIntervals  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start")
     
-    
-    private String start;
 
+    private String start;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="session_count")
     
-    
-    private Long sessionCount;
 
+    private Long sessionCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_count")
     
-    
-    private Long userCount;
 
+    private Long userCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="avg_request_count")
     
-    
-    private Double avgRequestCount;
 
+    private Double avgRequestCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="avg_session_time")
     
-    
+
     private Double avgSessionTime;
 
     public SessionStatsIntervals withStart(String start) {

@@ -20,17 +20,14 @@ import java.util.Objects;
 public class ShowMetadataRespGesMetadataLabels  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="properties")
-    
     
     private List<Map<String, String>> properties = null;
     

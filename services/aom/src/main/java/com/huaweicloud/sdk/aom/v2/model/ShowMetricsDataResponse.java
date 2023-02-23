@@ -14,34 +14,36 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.MetricDataValue;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Response Object
  */
+@JacksonXmlRootElement(localName = "ShowMetricsDataResponse")
 public class ShowMetricsDataResponse extends SdkResponse {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorCode")
     
-    
-    private String errorCode;
+    @JacksonXmlProperty(localName = "errorCode")
 
+    private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="errorMessage")
     
-    
-    private String errorMessage;
+    @JacksonXmlProperty(localName = "errorMessage")
 
+    private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metrics")
     
-    
+    @JacksonXmlProperty(localName = "metrics")
     private List<MetricDataValue> metrics = null;
     
     public ShowMetricsDataResponse withErrorCode(String errorCode) {

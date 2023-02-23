@@ -18,6 +18,468 @@ public class RmsClient {
     }
 
     /**
+     * 创建资源聚合器授权
+     *
+     * 给资源聚合器帐号授予从源帐号收集数据的权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAggregationAuthorizationRequest 请求对象
+     * @return CreateAggregationAuthorizationResponse
+     */
+    public CreateAggregationAuthorizationResponse createAggregationAuthorization(
+        CreateAggregationAuthorizationRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.createAggregationAuthorization);
+    }
+
+    /**
+     * 创建资源聚合器授权
+     *
+     * 给资源聚合器帐号授予从源帐号收集数据的权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAggregationAuthorizationRequest 请求对象
+     * @return SyncInvoker<CreateAggregationAuthorizationRequest, CreateAggregationAuthorizationResponse>
+     */
+    public SyncInvoker<CreateAggregationAuthorizationRequest, CreateAggregationAuthorizationResponse> createAggregationAuthorizationInvoker(
+        CreateAggregationAuthorizationRequest request) {
+        return new SyncInvoker<CreateAggregationAuthorizationRequest, CreateAggregationAuthorizationResponse>(request,
+            RmsMeta.createAggregationAuthorization, hcClient);
+    }
+
+    /**
+     * 创建资源聚合器
+     *
+     * 创建资源聚合器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateConfigurationAggregatorRequest 请求对象
+     * @return CreateConfigurationAggregatorResponse
+     */
+    public CreateConfigurationAggregatorResponse createConfigurationAggregator(
+        CreateConfigurationAggregatorRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.createConfigurationAggregator);
+    }
+
+    /**
+     * 创建资源聚合器
+     *
+     * 创建资源聚合器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateConfigurationAggregatorRequest 请求对象
+     * @return SyncInvoker<CreateConfigurationAggregatorRequest, CreateConfigurationAggregatorResponse>
+     */
+    public SyncInvoker<CreateConfigurationAggregatorRequest, CreateConfigurationAggregatorResponse> createConfigurationAggregatorInvoker(
+        CreateConfigurationAggregatorRequest request) {
+        return new SyncInvoker<CreateConfigurationAggregatorRequest, CreateConfigurationAggregatorResponse>(request,
+            RmsMeta.createConfigurationAggregator, hcClient);
+    }
+
+    /**
+     * 删除资源聚合器授权
+     *
+     * 删除指定资源聚合器帐号的授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAggregationAuthorizationRequest 请求对象
+     * @return DeleteAggregationAuthorizationResponse
+     */
+    public DeleteAggregationAuthorizationResponse deleteAggregationAuthorization(
+        DeleteAggregationAuthorizationRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.deleteAggregationAuthorization);
+    }
+
+    /**
+     * 删除资源聚合器授权
+     *
+     * 删除指定资源聚合器帐号的授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAggregationAuthorizationRequest 请求对象
+     * @return SyncInvoker<DeleteAggregationAuthorizationRequest, DeleteAggregationAuthorizationResponse>
+     */
+    public SyncInvoker<DeleteAggregationAuthorizationRequest, DeleteAggregationAuthorizationResponse> deleteAggregationAuthorizationInvoker(
+        DeleteAggregationAuthorizationRequest request) {
+        return new SyncInvoker<DeleteAggregationAuthorizationRequest, DeleteAggregationAuthorizationResponse>(request,
+            RmsMeta.deleteAggregationAuthorization, hcClient);
+    }
+
+    /**
+     * 删除资源聚合器
+     *
+     * 删除资源聚合器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteConfigurationAggregatorRequest 请求对象
+     * @return DeleteConfigurationAggregatorResponse
+     */
+    public DeleteConfigurationAggregatorResponse deleteConfigurationAggregator(
+        DeleteConfigurationAggregatorRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.deleteConfigurationAggregator);
+    }
+
+    /**
+     * 删除资源聚合器
+     *
+     * 删除资源聚合器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteConfigurationAggregatorRequest 请求对象
+     * @return SyncInvoker<DeleteConfigurationAggregatorRequest, DeleteConfigurationAggregatorResponse>
+     */
+    public SyncInvoker<DeleteConfigurationAggregatorRequest, DeleteConfigurationAggregatorResponse> deleteConfigurationAggregatorInvoker(
+        DeleteConfigurationAggregatorRequest request) {
+        return new SyncInvoker<DeleteConfigurationAggregatorRequest, DeleteConfigurationAggregatorResponse>(request,
+            RmsMeta.deleteConfigurationAggregator, hcClient);
+    }
+
+    /**
+     * 删除聚合器帐号中挂起的授权请求
+     *
+     * 删除聚合器帐号中挂起的授权请求。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePendingAggregationRequestRequest 请求对象
+     * @return DeletePendingAggregationRequestResponse
+     */
+    public DeletePendingAggregationRequestResponse deletePendingAggregationRequest(
+        DeletePendingAggregationRequestRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.deletePendingAggregationRequest);
+    }
+
+    /**
+     * 删除聚合器帐号中挂起的授权请求
+     *
+     * 删除聚合器帐号中挂起的授权请求。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePendingAggregationRequestRequest 请求对象
+     * @return SyncInvoker<DeletePendingAggregationRequestRequest, DeletePendingAggregationRequestResponse>
+     */
+    public SyncInvoker<DeletePendingAggregationRequestRequest, DeletePendingAggregationRequestResponse> deletePendingAggregationRequestInvoker(
+        DeletePendingAggregationRequestRequest request) {
+        return new SyncInvoker<DeletePendingAggregationRequestRequest, DeletePendingAggregationRequestResponse>(request,
+            RmsMeta.deletePendingAggregationRequest, hcClient);
+    }
+
+    /**
+     * 查询聚合器中资源的列表
+     *
+     * 查询资源聚合器中特定资源的列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAggregateDiscoveredResourcesRequest 请求对象
+     * @return ListAggregateDiscoveredResourcesResponse
+     */
+    public ListAggregateDiscoveredResourcesResponse listAggregateDiscoveredResources(
+        ListAggregateDiscoveredResourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.listAggregateDiscoveredResources);
+    }
+
+    /**
+     * 查询聚合器中资源的列表
+     *
+     * 查询资源聚合器中特定资源的列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAggregateDiscoveredResourcesRequest 请求对象
+     * @return SyncInvoker<ListAggregateDiscoveredResourcesRequest, ListAggregateDiscoveredResourcesResponse>
+     */
+    public SyncInvoker<ListAggregateDiscoveredResourcesRequest, ListAggregateDiscoveredResourcesResponse> listAggregateDiscoveredResourcesInvoker(
+        ListAggregateDiscoveredResourcesRequest request) {
+        return new SyncInvoker<ListAggregateDiscoveredResourcesRequest, ListAggregateDiscoveredResourcesResponse>(
+            request, RmsMeta.listAggregateDiscoveredResources, hcClient);
+    }
+
+    /**
+     * 查询资源聚合器授权列表
+     *
+     * 查询授权过的资源聚合器列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAggregationAuthorizationsRequest 请求对象
+     * @return ListAggregationAuthorizationsResponse
+     */
+    public ListAggregationAuthorizationsResponse listAggregationAuthorizations(
+        ListAggregationAuthorizationsRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.listAggregationAuthorizations);
+    }
+
+    /**
+     * 查询资源聚合器授权列表
+     *
+     * 查询授权过的资源聚合器列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAggregationAuthorizationsRequest 请求对象
+     * @return SyncInvoker<ListAggregationAuthorizationsRequest, ListAggregationAuthorizationsResponse>
+     */
+    public SyncInvoker<ListAggregationAuthorizationsRequest, ListAggregationAuthorizationsResponse> listAggregationAuthorizationsInvoker(
+        ListAggregationAuthorizationsRequest request) {
+        return new SyncInvoker<ListAggregationAuthorizationsRequest, ListAggregationAuthorizationsResponse>(request,
+            RmsMeta.listAggregationAuthorizations, hcClient);
+    }
+
+    /**
+     * 查询资源聚合器列表
+     *
+     * 查询资源聚合器列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConfigurationAggregatorsRequest 请求对象
+     * @return ListConfigurationAggregatorsResponse
+     */
+    public ListConfigurationAggregatorsResponse listConfigurationAggregators(
+        ListConfigurationAggregatorsRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.listConfigurationAggregators);
+    }
+
+    /**
+     * 查询资源聚合器列表
+     *
+     * 查询资源聚合器列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConfigurationAggregatorsRequest 请求对象
+     * @return SyncInvoker<ListConfigurationAggregatorsRequest, ListConfigurationAggregatorsResponse>
+     */
+    public SyncInvoker<ListConfigurationAggregatorsRequest, ListConfigurationAggregatorsResponse> listConfigurationAggregatorsInvoker(
+        ListConfigurationAggregatorsRequest request) {
+        return new SyncInvoker<ListConfigurationAggregatorsRequest, ListConfigurationAggregatorsResponse>(request,
+            RmsMeta.listConfigurationAggregators, hcClient);
+    }
+
+    /**
+     * 查询所有挂起的聚合请求列表
+     *
+     * 查询所有挂起的聚合请求列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPendingAggregationRequestsRequest 请求对象
+     * @return ListPendingAggregationRequestsResponse
+     */
+    public ListPendingAggregationRequestsResponse listPendingAggregationRequests(
+        ListPendingAggregationRequestsRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.listPendingAggregationRequests);
+    }
+
+    /**
+     * 查询所有挂起的聚合请求列表
+     *
+     * 查询所有挂起的聚合请求列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPendingAggregationRequestsRequest 请求对象
+     * @return SyncInvoker<ListPendingAggregationRequestsRequest, ListPendingAggregationRequestsResponse>
+     */
+    public SyncInvoker<ListPendingAggregationRequestsRequest, ListPendingAggregationRequestsResponse> listPendingAggregationRequestsInvoker(
+        ListPendingAggregationRequestsRequest request) {
+        return new SyncInvoker<ListPendingAggregationRequestsRequest, ListPendingAggregationRequestsResponse>(request,
+            RmsMeta.listPendingAggregationRequests, hcClient);
+    }
+
+    /**
+     * 对指定聚合器执行高级查询
+     *
+     * 对指定聚合器执行高级查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunAggregateResourceQueryRequest 请求对象
+     * @return RunAggregateResourceQueryResponse
+     */
+    public RunAggregateResourceQueryResponse runAggregateResourceQuery(RunAggregateResourceQueryRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.runAggregateResourceQuery);
+    }
+
+    /**
+     * 对指定聚合器执行高级查询
+     *
+     * 对指定聚合器执行高级查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunAggregateResourceQueryRequest 请求对象
+     * @return SyncInvoker<RunAggregateResourceQueryRequest, RunAggregateResourceQueryResponse>
+     */
+    public SyncInvoker<RunAggregateResourceQueryRequest, RunAggregateResourceQueryResponse> runAggregateResourceQueryInvoker(
+        RunAggregateResourceQueryRequest request) {
+        return new SyncInvoker<RunAggregateResourceQueryRequest, RunAggregateResourceQueryResponse>(request,
+            RmsMeta.runAggregateResourceQuery, hcClient);
+    }
+
+    /**
+     * 查询聚合器中帐号资源的计数
+     *
+     * 查询聚合器中帐号资源的计数，支持通过过滤器和GroupByKey来统计资源数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAggregateDiscoveredResourceCountsRequest 请求对象
+     * @return ShowAggregateDiscoveredResourceCountsResponse
+     */
+    public ShowAggregateDiscoveredResourceCountsResponse showAggregateDiscoveredResourceCounts(
+        ShowAggregateDiscoveredResourceCountsRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.showAggregateDiscoveredResourceCounts);
+    }
+
+    /**
+     * 查询聚合器中帐号资源的计数
+     *
+     * 查询聚合器中帐号资源的计数，支持通过过滤器和GroupByKey来统计资源数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAggregateDiscoveredResourceCountsRequest 请求对象
+     * @return SyncInvoker<ShowAggregateDiscoveredResourceCountsRequest, ShowAggregateDiscoveredResourceCountsResponse>
+     */
+    public SyncInvoker<ShowAggregateDiscoveredResourceCountsRequest, ShowAggregateDiscoveredResourceCountsResponse> showAggregateDiscoveredResourceCountsInvoker(
+        ShowAggregateDiscoveredResourceCountsRequest request) {
+        return new SyncInvoker<ShowAggregateDiscoveredResourceCountsRequest, ShowAggregateDiscoveredResourceCountsResponse>(
+            request, RmsMeta.showAggregateDiscoveredResourceCounts, hcClient);
+    }
+
+    /**
+     * 查询源帐号中资源的详情
+     *
+     * 查询源帐号中特定资源的详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAggregateResourceConfigRequest 请求对象
+     * @return ShowAggregateResourceConfigResponse
+     */
+    public ShowAggregateResourceConfigResponse showAggregateResourceConfig(ShowAggregateResourceConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.showAggregateResourceConfig);
+    }
+
+    /**
+     * 查询源帐号中资源的详情
+     *
+     * 查询源帐号中特定资源的详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAggregateResourceConfigRequest 请求对象
+     * @return SyncInvoker<ShowAggregateResourceConfigRequest, ShowAggregateResourceConfigResponse>
+     */
+    public SyncInvoker<ShowAggregateResourceConfigRequest, ShowAggregateResourceConfigResponse> showAggregateResourceConfigInvoker(
+        ShowAggregateResourceConfigRequest request) {
+        return new SyncInvoker<ShowAggregateResourceConfigRequest, ShowAggregateResourceConfigResponse>(request,
+            RmsMeta.showAggregateResourceConfig, hcClient);
+    }
+
+    /**
+     * 查询指定资源聚合器
+     *
+     * 查询指定资源聚合器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConfigurationAggregatorRequest 请求对象
+     * @return ShowConfigurationAggregatorResponse
+     */
+    public ShowConfigurationAggregatorResponse showConfigurationAggregator(ShowConfigurationAggregatorRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.showConfigurationAggregator);
+    }
+
+    /**
+     * 查询指定资源聚合器
+     *
+     * 查询指定资源聚合器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConfigurationAggregatorRequest 请求对象
+     * @return SyncInvoker<ShowConfigurationAggregatorRequest, ShowConfigurationAggregatorResponse>
+     */
+    public SyncInvoker<ShowConfigurationAggregatorRequest, ShowConfigurationAggregatorResponse> showConfigurationAggregatorInvoker(
+        ShowConfigurationAggregatorRequest request) {
+        return new SyncInvoker<ShowConfigurationAggregatorRequest, ShowConfigurationAggregatorResponse>(request,
+            RmsMeta.showConfigurationAggregator, hcClient);
+    }
+
+    /**
+     * 查询指定资源聚合器聚合帐号的状态信息
+     *
+     * 查询指定资源聚合器聚合帐号的状态信息，状态包括验证源帐号和聚合器帐号之间授权的信息。如果失败，状态包含相关的错误码或消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConfigurationAggregatorSourcesStatusRequest 请求对象
+     * @return ShowConfigurationAggregatorSourcesStatusResponse
+     */
+    public ShowConfigurationAggregatorSourcesStatusResponse showConfigurationAggregatorSourcesStatus(
+        ShowConfigurationAggregatorSourcesStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.showConfigurationAggregatorSourcesStatus);
+    }
+
+    /**
+     * 查询指定资源聚合器聚合帐号的状态信息
+     *
+     * 查询指定资源聚合器聚合帐号的状态信息，状态包括验证源帐号和聚合器帐号之间授权的信息。如果失败，状态包含相关的错误码或消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConfigurationAggregatorSourcesStatusRequest 请求对象
+     * @return SyncInvoker<ShowConfigurationAggregatorSourcesStatusRequest, ShowConfigurationAggregatorSourcesStatusResponse>
+     */
+    public SyncInvoker<ShowConfigurationAggregatorSourcesStatusRequest, ShowConfigurationAggregatorSourcesStatusResponse> showConfigurationAggregatorSourcesStatusInvoker(
+        ShowConfigurationAggregatorSourcesStatusRequest request) {
+        return new SyncInvoker<ShowConfigurationAggregatorSourcesStatusRequest, ShowConfigurationAggregatorSourcesStatusResponse>(
+            request, RmsMeta.showConfigurationAggregatorSourcesStatus, hcClient);
+    }
+
+    /**
+     * 更新资源聚合器
+     *
+     * 更新资源聚合器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateConfigurationAggregatorRequest 请求对象
+     * @return UpdateConfigurationAggregatorResponse
+     */
+    public UpdateConfigurationAggregatorResponse updateConfigurationAggregator(
+        UpdateConfigurationAggregatorRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.updateConfigurationAggregator);
+    }
+
+    /**
+     * 更新资源聚合器
+     *
+     * 更新资源聚合器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateConfigurationAggregatorRequest 请求对象
+     * @return SyncInvoker<UpdateConfigurationAggregatorRequest, UpdateConfigurationAggregatorResponse>
+     */
+    public SyncInvoker<UpdateConfigurationAggregatorRequest, UpdateConfigurationAggregatorResponse> updateConfigurationAggregatorInvoker(
+        UpdateConfigurationAggregatorRequest request) {
+        return new SyncInvoker<UpdateConfigurationAggregatorRequest, UpdateConfigurationAggregatorResponse>(request,
+            RmsMeta.updateConfigurationAggregator, hcClient);
+    }
+
+    /**
      * 查询资源历史
      *
      * 查询资源与资源关系的变更历史
@@ -48,6 +510,37 @@ public class RmsClient {
     }
 
     /**
+     * 创建或更新组织合规规则
+     *
+     * 创建或更新组织合规规则，如果规则名称已存在，则为更新操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOrganizationPolicyAssignmentRequest 请求对象
+     * @return CreateOrganizationPolicyAssignmentResponse
+     */
+    public CreateOrganizationPolicyAssignmentResponse createOrganizationPolicyAssignment(
+        CreateOrganizationPolicyAssignmentRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.createOrganizationPolicyAssignment);
+    }
+
+    /**
+     * 创建或更新组织合规规则
+     *
+     * 创建或更新组织合规规则，如果规则名称已存在，则为更新操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOrganizationPolicyAssignmentRequest 请求对象
+     * @return SyncInvoker<CreateOrganizationPolicyAssignmentRequest, CreateOrganizationPolicyAssignmentResponse>
+     */
+    public SyncInvoker<CreateOrganizationPolicyAssignmentRequest, CreateOrganizationPolicyAssignmentResponse> createOrganizationPolicyAssignmentInvoker(
+        CreateOrganizationPolicyAssignmentRequest request) {
+        return new SyncInvoker<CreateOrganizationPolicyAssignmentRequest, CreateOrganizationPolicyAssignmentResponse>(
+            request, RmsMeta.createOrganizationPolicyAssignment, hcClient);
+    }
+
+    /**
      * 创建合规规则
      *
      * 创建新的合规规则
@@ -75,6 +568,37 @@ public class RmsClient {
         CreatePolicyAssignmentsRequest request) {
         return new SyncInvoker<CreatePolicyAssignmentsRequest, CreatePolicyAssignmentsResponse>(request,
             RmsMeta.createPolicyAssignments, hcClient);
+    }
+
+    /**
+     * 删除组织合规规则
+     *
+     * 删除组织合规规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteOrganizationPolicyAssignmentRequest 请求对象
+     * @return DeleteOrganizationPolicyAssignmentResponse
+     */
+    public DeleteOrganizationPolicyAssignmentResponse deleteOrganizationPolicyAssignment(
+        DeleteOrganizationPolicyAssignmentRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.deleteOrganizationPolicyAssignment);
+    }
+
+    /**
+     * 删除组织合规规则
+     *
+     * 删除组织合规规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteOrganizationPolicyAssignmentRequest 请求对象
+     * @return SyncInvoker<DeleteOrganizationPolicyAssignmentRequest, DeleteOrganizationPolicyAssignmentResponse>
+     */
+    public SyncInvoker<DeleteOrganizationPolicyAssignmentRequest, DeleteOrganizationPolicyAssignmentResponse> deleteOrganizationPolicyAssignmentInvoker(
+        DeleteOrganizationPolicyAssignmentRequest request) {
+        return new SyncInvoker<DeleteOrganizationPolicyAssignmentRequest, DeleteOrganizationPolicyAssignmentResponse>(
+            request, RmsMeta.deleteOrganizationPolicyAssignment, hcClient);
     }
 
     /**
@@ -196,6 +720,37 @@ public class RmsClient {
         ListBuiltInPolicyDefinitionsRequest request) {
         return new SyncInvoker<ListBuiltInPolicyDefinitionsRequest, ListBuiltInPolicyDefinitionsResponse>(request,
             RmsMeta.listBuiltInPolicyDefinitions, hcClient);
+    }
+
+    /**
+     * 查询组织合规规则列表
+     *
+     * 查询组织合规规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOrganizationPolicyAssignmentsRequest 请求对象
+     * @return ListOrganizationPolicyAssignmentsResponse
+     */
+    public ListOrganizationPolicyAssignmentsResponse listOrganizationPolicyAssignments(
+        ListOrganizationPolicyAssignmentsRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.listOrganizationPolicyAssignments);
+    }
+
+    /**
+     * 查询组织合规规则列表
+     *
+     * 查询组织合规规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOrganizationPolicyAssignmentsRequest 请求对象
+     * @return SyncInvoker<ListOrganizationPolicyAssignmentsRequest, ListOrganizationPolicyAssignmentsResponse>
+     */
+    public SyncInvoker<ListOrganizationPolicyAssignmentsRequest, ListOrganizationPolicyAssignmentsResponse> listOrganizationPolicyAssignmentsInvoker(
+        ListOrganizationPolicyAssignmentsRequest request) {
+        return new SyncInvoker<ListOrganizationPolicyAssignmentsRequest, ListOrganizationPolicyAssignmentsResponse>(
+            request, RmsMeta.listOrganizationPolicyAssignments, hcClient);
     }
 
     /**
@@ -410,6 +965,99 @@ public class RmsClient {
         ShowEvaluationStateByAssignmentIdRequest request) {
         return new SyncInvoker<ShowEvaluationStateByAssignmentIdRequest, ShowEvaluationStateByAssignmentIdResponse>(
             request, RmsMeta.showEvaluationStateByAssignmentId, hcClient);
+    }
+
+    /**
+     * 查询指定组织合规规则
+     *
+     * 查询指定组织合规规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOrganizationPolicyAssignmentRequest 请求对象
+     * @return ShowOrganizationPolicyAssignmentResponse
+     */
+    public ShowOrganizationPolicyAssignmentResponse showOrganizationPolicyAssignment(
+        ShowOrganizationPolicyAssignmentRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.showOrganizationPolicyAssignment);
+    }
+
+    /**
+     * 查询指定组织合规规则
+     *
+     * 查询指定组织合规规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOrganizationPolicyAssignmentRequest 请求对象
+     * @return SyncInvoker<ShowOrganizationPolicyAssignmentRequest, ShowOrganizationPolicyAssignmentResponse>
+     */
+    public SyncInvoker<ShowOrganizationPolicyAssignmentRequest, ShowOrganizationPolicyAssignmentResponse> showOrganizationPolicyAssignmentInvoker(
+        ShowOrganizationPolicyAssignmentRequest request) {
+        return new SyncInvoker<ShowOrganizationPolicyAssignmentRequest, ShowOrganizationPolicyAssignmentResponse>(
+            request, RmsMeta.showOrganizationPolicyAssignment, hcClient);
+    }
+
+    /**
+     * 查询组织内每个成员帐号合规规则部署的详细状态
+     *
+     * 查询组织内每个成员帐号合规规则部署的详细状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOrganizationPolicyAssignmentDetailedStatusRequest 请求对象
+     * @return ShowOrganizationPolicyAssignmentDetailedStatusResponse
+     */
+    public ShowOrganizationPolicyAssignmentDetailedStatusResponse showOrganizationPolicyAssignmentDetailedStatus(
+        ShowOrganizationPolicyAssignmentDetailedStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.showOrganizationPolicyAssignmentDetailedStatus);
+    }
+
+    /**
+     * 查询组织内每个成员帐号合规规则部署的详细状态
+     *
+     * 查询组织内每个成员帐号合规规则部署的详细状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOrganizationPolicyAssignmentDetailedStatusRequest 请求对象
+     * @return SyncInvoker<ShowOrganizationPolicyAssignmentDetailedStatusRequest, ShowOrganizationPolicyAssignmentDetailedStatusResponse>
+     */
+    public SyncInvoker<ShowOrganizationPolicyAssignmentDetailedStatusRequest, ShowOrganizationPolicyAssignmentDetailedStatusResponse> showOrganizationPolicyAssignmentDetailedStatusInvoker(
+        ShowOrganizationPolicyAssignmentDetailedStatusRequest request) {
+        return new SyncInvoker<ShowOrganizationPolicyAssignmentDetailedStatusRequest, ShowOrganizationPolicyAssignmentDetailedStatusResponse>(
+            request, RmsMeta.showOrganizationPolicyAssignmentDetailedStatus, hcClient);
+    }
+
+    /**
+     * 查询组织合规规则部署状态
+     *
+     * 查询组织合规规则部署状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOrganizationPolicyAssignmentStatusesRequest 请求对象
+     * @return ShowOrganizationPolicyAssignmentStatusesResponse
+     */
+    public ShowOrganizationPolicyAssignmentStatusesResponse showOrganizationPolicyAssignmentStatuses(
+        ShowOrganizationPolicyAssignmentStatusesRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.showOrganizationPolicyAssignmentStatuses);
+    }
+
+    /**
+     * 查询组织合规规则部署状态
+     *
+     * 查询组织合规规则部署状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOrganizationPolicyAssignmentStatusesRequest 请求对象
+     * @return SyncInvoker<ShowOrganizationPolicyAssignmentStatusesRequest, ShowOrganizationPolicyAssignmentStatusesResponse>
+     */
+    public SyncInvoker<ShowOrganizationPolicyAssignmentStatusesRequest, ShowOrganizationPolicyAssignmentStatusesResponse> showOrganizationPolicyAssignmentStatusesInvoker(
+        ShowOrganizationPolicyAssignmentStatusesRequest request) {
+        return new SyncInvoker<ShowOrganizationPolicyAssignmentStatusesRequest, ShowOrganizationPolicyAssignmentStatusesResponse>(
+            request, RmsMeta.showOrganizationPolicyAssignmentStatuses, hcClient);
     }
 
     /**
@@ -767,6 +1415,96 @@ public class RmsClient {
     }
 
     /**
+     * 列举资源关系详情
+     *
+     * 指定资源ID，查询该资源与其他资源的关联关系，可以指定关系方向为“in”或者“out”，需要当帐号有rms:resources:getRelation权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResourceRelationsDetailRequest 请求对象
+     * @return ShowResourceRelationsDetailResponse
+     */
+    public ShowResourceRelationsDetailResponse showResourceRelationsDetail(ShowResourceRelationsDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.showResourceRelationsDetail);
+    }
+
+    /**
+     * 列举资源关系详情
+     *
+     * 指定资源ID，查询该资源与其他资源的关联关系，可以指定关系方向为“in”或者“out”，需要当帐号有rms:resources:getRelation权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResourceRelationsDetailRequest 请求对象
+     * @return SyncInvoker<ShowResourceRelationsDetailRequest, ShowResourceRelationsDetailResponse>
+     */
+    public SyncInvoker<ShowResourceRelationsDetailRequest, ShowResourceRelationsDetailResponse> showResourceRelationsDetailInvoker(
+        ShowResourceRelationsDetailRequest request) {
+        return new SyncInvoker<ShowResourceRelationsDetailRequest, ShowResourceRelationsDetailResponse>(request,
+            RmsMeta.showResourceRelationsDetail, hcClient);
+    }
+
+    /**
+     * 列举资源概要
+     *
+     * 查询当前帐号的资源概览。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CollectAllResourcesSummaryRequest 请求对象
+     * @return CollectAllResourcesSummaryResponse
+     */
+    public CollectAllResourcesSummaryResponse collectAllResourcesSummary(CollectAllResourcesSummaryRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.collectAllResourcesSummary);
+    }
+
+    /**
+     * 列举资源概要
+     *
+     * 查询当前帐号的资源概览。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CollectAllResourcesSummaryRequest 请求对象
+     * @return SyncInvoker<CollectAllResourcesSummaryRequest, CollectAllResourcesSummaryResponse>
+     */
+    public SyncInvoker<CollectAllResourcesSummaryRequest, CollectAllResourcesSummaryResponse> collectAllResourcesSummaryInvoker(
+        CollectAllResourcesSummaryRequest request) {
+        return new SyncInvoker<CollectAllResourcesSummaryRequest, CollectAllResourcesSummaryResponse>(request,
+            RmsMeta.collectAllResourcesSummary, hcClient);
+    }
+
+    /**
+     * 查询资源数量
+     *
+     * 查询当前帐号的资源数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountAllResourcesRequest 请求对象
+     * @return CountAllResourcesResponse
+     */
+    public CountAllResourcesResponse countAllResources(CountAllResourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.countAllResources);
+    }
+
+    /**
+     * 查询资源数量
+     *
+     * 查询当前帐号的资源数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountAllResourcesRequest 请求对象
+     * @return SyncInvoker<CountAllResourcesRequest, CountAllResourcesResponse>
+     */
+    public SyncInvoker<CountAllResourcesRequest, CountAllResourcesResponse> countAllResourcesInvoker(
+        CountAllResourcesRequest request) {
+        return new SyncInvoker<CountAllResourcesRequest, CountAllResourcesResponse>(request, RmsMeta.countAllResources,
+            hcClient);
+    }
+
+    /**
      * 列举所有资源
      *
      * 返回当前用户下所有资源，需要当前用户有rms:resources:list权限。
@@ -794,6 +1532,34 @@ public class RmsClient {
         ListAllResourcesRequest request) {
         return new SyncInvoker<ListAllResourcesRequest, ListAllResourcesResponse>(request, RmsMeta.listAllResources,
             hcClient);
+    }
+
+    /**
+     * 列举资源标签
+     *
+     * 查询当前帐号下所有资源的标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAllTagsRequest 请求对象
+     * @return ListAllTagsResponse
+     */
+    public ListAllTagsResponse listAllTags(ListAllTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.listAllTags);
+    }
+
+    /**
+     * 列举资源标签
+     *
+     * 查询当前帐号下所有资源的标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAllTagsRequest 请求对象
+     * @return SyncInvoker<ListAllTagsRequest, ListAllTagsResponse>
+     */
+    public SyncInvoker<ListAllTagsRequest, ListAllTagsResponse> listAllTagsInvoker(ListAllTagsRequest request) {
+        return new SyncInvoker<ListAllTagsRequest, ListAllTagsResponse>(request, RmsMeta.listAllTags, hcClient);
     }
 
     /**
@@ -880,6 +1646,36 @@ public class RmsClient {
         ShowResourceByIdRequest request) {
         return new SyncInvoker<ShowResourceByIdRequest, ShowResourceByIdResponse>(request, RmsMeta.showResourceById,
             hcClient);
+    }
+
+    /**
+     * 查询帐号下的单个资源
+     *
+     * 查询当前帐号下的单个资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResourceDetailRequest 请求对象
+     * @return ShowResourceDetailResponse
+     */
+    public ShowResourceDetailResponse showResourceDetail(ShowResourceDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.showResourceDetail);
+    }
+
+    /**
+     * 查询帐号下的单个资源
+     *
+     * 查询当前帐号下的单个资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResourceDetailRequest 请求对象
+     * @return SyncInvoker<ShowResourceDetailRequest, ShowResourceDetailResponse>
+     */
+    public SyncInvoker<ShowResourceDetailRequest, ShowResourceDetailResponse> showResourceDetailInvoker(
+        ShowResourceDetailRequest request) {
+        return new SyncInvoker<ShowResourceDetailRequest, ShowResourceDetailResponse>(request,
+            RmsMeta.showResourceDetail, hcClient);
     }
 
     /**

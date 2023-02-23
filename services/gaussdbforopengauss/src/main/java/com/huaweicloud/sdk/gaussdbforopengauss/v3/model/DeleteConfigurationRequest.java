@@ -100,18 +100,16 @@ public class DeleteConfigurationRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private XLanguageEnum xLanguage;
 
+    private XLanguageEnum xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="config_id")
     
-    
+
     private String configId;
 
     public DeleteConfigurationRequest withXLanguage(XLanguageEnum xLanguage) {

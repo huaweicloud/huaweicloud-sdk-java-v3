@@ -21,32 +21,28 @@ import java.util.Objects;
 public class ShowMetadata2Response extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encrypted")
     
-    
-    private Boolean encrypted;
 
+    private Boolean encrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_key_name")
     
-    
-    private String masterKeyName;
 
+    private String masterKeyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_key_id")
     
-    
-    private String masterKeyId;
 
+    private String masterKeyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ges_metadata")
     
-    
+
     private ShowMetadataRespGesMetadata gesMetadata;
 
     public ShowMetadata2Response withEncrypted(Boolean encrypted) {

@@ -11,48 +11,50 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.DimensionSeries;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 维度信息。
  */
+@JacksonXmlRootElement(localName = "SeriesQueryItemResult")
 public class SeriesQueryItemResult  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="namespace")
     
-    
-    private String namespace;
+    @JacksonXmlProperty(localName = "namespace")
 
+    private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dimensions")
     
-    
+    @JacksonXmlProperty(localName = "dimensions")
     private List<DimensionSeries> dimensions = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric_name")
     
-    
-    private String metricName;
+    @JacksonXmlProperty(localName = "metric_name")
 
+    private String metricName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="unit")
     
-    
-    private String unit;
+    @JacksonXmlProperty(localName = "unit")
 
+    private String unit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dimension_value_hash")
     
-    
+    @JacksonXmlProperty(localName = "dimension_value_hash")
+
     private String dimensionValueHash;
 
     public SeriesQueryItemResult withNamespace(String namespace) {

@@ -20,18 +20,16 @@ import java.util.Objects;
 public class ExpandGaussMySqlInstanceVolumeResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    
-    private Integer size;
 
+    private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_id")
     
-    
+
     private String orderId;
 
     public ExpandGaussMySqlInstanceVolumeResponse withSize(Integer size) {

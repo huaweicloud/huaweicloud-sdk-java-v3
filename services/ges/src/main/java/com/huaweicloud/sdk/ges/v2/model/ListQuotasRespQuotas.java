@@ -20,10 +20,8 @@ import java.util.Objects;
 public class ListQuotasRespQuotas  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
-    
     
     private List<ListQuotasRespQuotasResources> resources = null;
     

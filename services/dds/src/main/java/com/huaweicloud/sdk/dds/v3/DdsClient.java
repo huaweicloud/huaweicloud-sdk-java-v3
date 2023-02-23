@@ -2477,6 +2477,36 @@ public class DdsClient {
     }
 
     /**
+     * 删除实例的节点
+     *
+     * 删除实例的节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShrinkInstanceNodesRequest 请求对象
+     * @return ShrinkInstanceNodesResponse
+     */
+    public ShrinkInstanceNodesResponse shrinkInstanceNodes(ShrinkInstanceNodesRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.shrinkInstanceNodes);
+    }
+
+    /**
+     * 删除实例的节点
+     *
+     * 删除实例的节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShrinkInstanceNodesRequest 请求对象
+     * @return SyncInvoker<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse>
+     */
+    public SyncInvoker<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse> shrinkInstanceNodesInvoker(
+        ShrinkInstanceNodesRequest request) {
+        return new SyncInvoker<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse>(request,
+            DdsMeta.shrinkInstanceNodes, hcClient);
+    }
+
+    /**
      * 应用参数模板
      *
      * 指定实例变更参数模板。

@@ -22,10 +22,8 @@ import java.util.Objects;
 public class ListDatastoresResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="versions")
-    
     
     private List<String> versions = null;
     

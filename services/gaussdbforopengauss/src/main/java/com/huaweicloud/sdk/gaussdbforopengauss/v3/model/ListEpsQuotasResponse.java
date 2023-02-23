@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListEpsQuotasResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eps_quotas")
     
-    
     private List<ListQuotaResult> epsQuotas = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Integer totalCount;
 
     public ListEpsQuotasResponse withEpsQuotas(List<ListQuotaResult> epsQuotas) {

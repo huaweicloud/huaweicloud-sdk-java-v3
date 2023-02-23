@@ -20,10 +20,8 @@ import java.util.Objects;
 public class SwitchShardRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="shards")
-    
     
     private List<Shards> shards = null;
     

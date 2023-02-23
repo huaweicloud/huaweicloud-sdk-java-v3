@@ -17,11 +17,10 @@ import java.util.Objects;
 public class WeakPasswordRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password")
     
-    
+
     private String password;
 
     public WeakPasswordRequestBody withPassword(String password) {

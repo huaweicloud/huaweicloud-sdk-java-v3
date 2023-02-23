@@ -20,11 +20,10 @@ import java.util.Objects;
 public class ContinueRollbackStackResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deployment_id")
     
-    
+
     private String deploymentId;
 
     public ContinueRollbackStackResponse withDeploymentId(String deploymentId) {

@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListDatabasesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="databases")
     
-    
     private List<GaussDBforOpenGaussListDatabase> databases = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Long totalCount;
 
     public ListDatabasesResponse withDatabases(List<GaussDBforOpenGaussListDatabase> databases) {

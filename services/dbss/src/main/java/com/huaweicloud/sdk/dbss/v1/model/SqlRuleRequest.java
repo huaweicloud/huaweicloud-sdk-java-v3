@@ -17,11 +17,10 @@ import java.util.Objects;
 public class SqlRuleRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="risk_levels")
     
-    
+
     private String riskLevels;
 
     public SqlRuleRequest withRiskLevels(String riskLevels) {

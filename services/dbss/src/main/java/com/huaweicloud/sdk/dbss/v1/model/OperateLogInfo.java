@@ -17,60 +17,52 @@ import java.util.Objects;
 public class OperateLogInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    
-    private String user;
 
+    private String user;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time")
     
-    
-    private String time;
 
+    private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="function")
     
-    
-    private String function;
 
+    private String function;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    
-    private String action;
 
+    private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    
+
     private String result;
 
     public OperateLogInfo withId(String id) {

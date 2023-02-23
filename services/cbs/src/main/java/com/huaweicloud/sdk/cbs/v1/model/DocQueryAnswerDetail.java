@@ -17,67 +17,58 @@ import java.util.Objects;
 public class DocQueryAnswerDetail  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="answer")
     
-    
-    private String answer;
 
+    private String answer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="doc_id")
     
-    
-    private String docId;
 
+    private String docId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_index")
     
-    
-    private Integer endIndex;
 
+    private Integer endIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="paragraph_score")
     
-    
-    private Double paragraphScore;
 
+    private Double paragraphScore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="paragraph_text")
     
-    
-    private String paragraphText;
 
+    private String paragraphText;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="phrase_score")
     
-    
-    private Double phraseScore;
 
+    private Double phraseScore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_index")
     
-    
-    private Integer startIndex;
 
+    private Integer startIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_score")
     
-    
-    private Double totalScore;
 
+    private Double totalScore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="paragraph_number")
     
-    
+
     private Integer paragraphNumber;
 
     public DocQueryAnswerDetail withAnswer(String answer) {

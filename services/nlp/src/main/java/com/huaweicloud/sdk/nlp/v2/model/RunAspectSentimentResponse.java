@@ -23,46 +23,39 @@ import java.util.Objects;
 public class RunAspectSentimentResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text")
     
-    
-    private String text;
 
+    private String text;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="label")
     
-    
-    private Integer label;
 
+    private Integer label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confidence")
     
-    
-    private Float confidence;
 
+    private Float confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="aspect_opinions")
     
-    
     private List<AspectOpinion> aspectOpinions = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
-    
-    private String errorCode;
 
+    private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_msg")
     
-    
+
     private String errorMsg;
 
     public RunAspectSentimentResponse withText(String text) {

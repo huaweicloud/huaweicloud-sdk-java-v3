@@ -19,25 +19,22 @@ import java.util.Objects;
 public class OpenGaussInstanceActionRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="expand_cluster")
     
-    
-    private OpenGaussExpandCluster expandCluster;
 
+    private OpenGaussExpandCluster expandCluster;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enlarge_volume")
     
-    
-    private OpenGaussEnlargeVolume enlargeVolume;
 
+    private OpenGaussEnlargeVolume enlargeVolume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_pay")
     
-    
+
     private String isAutoPay;
 
     public OpenGaussInstanceActionRequest withExpandCluster(OpenGaussExpandCluster expandCluster) {

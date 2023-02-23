@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ContinueRollbackStackRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stack_id")
     
-    
+
     private String stackId;
 
     public ContinueRollbackStackRequestBody withStackId(String stackId) {

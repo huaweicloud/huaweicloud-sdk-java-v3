@@ -13,83 +13,82 @@ import com.huaweicloud.sdk.aom.v2.model.LogPathRule;
 import com.huaweicloud.sdk.aom.v2.model.NameRule;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 规则详情。
  */
+@JacksonXmlRootElement(localName = "AppRulesSpec")
 public class AppRulesSpec  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="appType")
     
-    
-    private String appType;
+    @JacksonXmlProperty(localName = "appType")
 
+    private String appType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="attrList")
     
-    
+    @JacksonXmlProperty(localName = "attrList")
     private List<String> attrList = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="detectLog")
     
-    
-    private String detectLog;
+    @JacksonXmlProperty(localName = "detectLog")
 
+    private String detectLog;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discoveryRule")
     
-    
+    @JacksonXmlProperty(localName = "discoveryRule")
     private List<DiscoveryRule> discoveryRule = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isDefaultRule")
     
-    
-    private String isDefaultRule;
+    @JacksonXmlProperty(localName = "isDefaultRule")
 
+    private String isDefaultRule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isDetect")
     
-    
-    private String isDetect;
+    @JacksonXmlProperty(localName = "isDetect")
 
+    private String isDetect;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="logFileFix")
     
-    
+    @JacksonXmlProperty(localName = "logFileFix")
     private List<String> logFileFix = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="logPathRule")
     
-    
+    @JacksonXmlProperty(localName = "logPathRule")
     private List<LogPathRule> logPathRule = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nameRule")
     
-    
-    private NameRule nameRule;
+    @JacksonXmlProperty(localName = "nameRule")
 
+    private NameRule nameRule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="priority")
     
-    
+    @JacksonXmlProperty(localName = "priority")
+
     private Integer priority;
 
     public AppRulesSpec withAppType(String appType) {

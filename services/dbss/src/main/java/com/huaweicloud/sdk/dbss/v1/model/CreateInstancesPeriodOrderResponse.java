@@ -20,25 +20,22 @@ import java.util.Objects;
 public class CreateInstancesPeriodOrderResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="code")
     
-    
-    private String code;
 
+    private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_id")
     
-    
+
     private String orderId;
 
     public CreateInstancesPeriodOrderResponse withDescription(String description) {

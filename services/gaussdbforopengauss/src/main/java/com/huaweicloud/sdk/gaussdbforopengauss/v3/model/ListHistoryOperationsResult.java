@@ -17,39 +17,34 @@ import java.util.Objects;
 public class ListHistoryOperationsResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameter_name")
     
-    
-    private String parameterName;
 
+    private String parameterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="old_value")
     
-    
-    private String oldValue;
 
+    private String oldValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="new_value")
     
-    
-    private String newValue;
 
+    private String newValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_result")
     
-    
-    private String updateResult;
 
+    private String updateResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_at")
     
-    
+
     private String updatedAt;
 
     public ListHistoryOperationsResult withParameterName(String parameterName) {

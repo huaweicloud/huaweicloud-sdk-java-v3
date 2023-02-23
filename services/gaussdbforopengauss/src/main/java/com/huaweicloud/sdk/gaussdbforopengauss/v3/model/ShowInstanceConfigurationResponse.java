@@ -23,38 +23,32 @@ import java.util.Objects;
 public class ShowInstanceConfigurationResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore_version")
     
-    
-    private String datastoreVersion;
 
+    private String datastoreVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore_name")
     
-    
-    private String datastoreName;
 
+    private String datastoreName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
-    
-    private String created;
 
+    private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
-    
-    private String updated;
 
+    private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration_parameters")
-    
     
     private List<ConfigurationParameter> configurationParameters = null;
     

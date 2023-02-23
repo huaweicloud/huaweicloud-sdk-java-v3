@@ -18,18 +18,16 @@ import java.util.Objects;
 public class ShowInstanceConfigurationRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
+
     private String instanceId;
 
     public ShowInstanceConfigurationRequest withXLanguage(String xLanguage) {

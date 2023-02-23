@@ -25,11 +25,10 @@ import java.util.Objects;
 public class TextTranslationReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text")
     
-    
+
     private String text;
     /**
      * 翻译原语言，具体取值见支持的语言列表: 阿拉伯语 ar 德语 de 俄语 ru 法语 fr 韩语 ko 葡萄牙语 pt 日语 ja 泰语 th 土耳其语 tr 西班牙语 es 英语 en 越南语 vi 中文（简体） zh 中文（繁体） zh-tw 自动检测输入语种并翻译成目标语种，您需要指定目标语种。 auto
@@ -452,11 +451,10 @@ public class TextTranslationReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="from")
     
-    
+
     private FromEnum from;
     /**
      * 翻译目标语言，具体取值见支持的语言列表: 阿拉伯语 ar 德语 de 俄语 ru 法语 fr 韩语 ko 葡萄牙语 pt 日语 ja 泰语 th 土耳其语 tr 西班牙语 es 英语 en 越南语 vi 中文（简体） zh 中文（繁体） zh-tw
@@ -873,11 +871,10 @@ public class TextTranslationReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="to")
     
-    
+
     private ToEnum to;
     /**
      * 默认为“common”，当前只有通用场景
@@ -952,11 +949,10 @@ public class TextTranslationReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scene")
     
-    
+
     private SceneEnum scene;
 
     public TextTranslationReq withText(String text) {

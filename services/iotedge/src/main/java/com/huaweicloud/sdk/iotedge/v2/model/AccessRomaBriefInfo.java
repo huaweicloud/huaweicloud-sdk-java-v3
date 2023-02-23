@@ -17,11 +17,10 @@ import java.util.Objects;
 public class AccessRomaBriefInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_key")
     
-    
+
     private String appKey;
 
     public AccessRomaBriefInfo withAppKey(String appKey) {

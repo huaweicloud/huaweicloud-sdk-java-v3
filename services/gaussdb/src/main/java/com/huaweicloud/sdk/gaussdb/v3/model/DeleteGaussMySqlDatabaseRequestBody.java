@@ -19,10 +19,8 @@ import java.util.Objects;
 public class DeleteGaussMySqlDatabaseRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="databases")
-    
     
     private List<String> databases = null;
     

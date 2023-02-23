@@ -20,46 +20,40 @@ import java.util.Objects;
 public class RunEntitySentimentResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
-    
-    private String content;
 
+    private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="entity")
     
-    
-    private String entity;
 
+    private String entity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="label")
     
-    
-    private Integer label;
 
+    private Integer label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confidence")
     
-    
-    private Double confidence;
 
+    private Double confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
-    
-    private String errorCode;
 
+    private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_msg")
     
-    
+
     private String errorMsg;
 
     public RunEntitySentimentResponse withContent(String content) {

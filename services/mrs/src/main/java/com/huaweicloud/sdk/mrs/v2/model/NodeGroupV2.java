@@ -22,66 +22,56 @@ import java.util.Objects;
 public class NodeGroupV2  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_name")
     
-    
-    private String groupName;
 
+    private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_num")
     
-    
-    private Integer nodeNum;
 
+    private Integer nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_size")
     
-    
-    private String nodeSize;
 
+    private String nodeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="root_volume")
     
-    
-    private Volume rootVolume;
 
+    private Volume rootVolume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume")
     
-    
-    private Volume dataVolume;
 
+    private Volume dataVolume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_volume_count")
     
-    
-    private Integer dataVolumeCount;
 
+    private Integer dataVolumeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_info")
     
-    
-    private ChargeInfo chargeInfo;
 
+    private ChargeInfo chargeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_scaling_policy")
     
-    
-    private AutoScalingPolicy autoScalingPolicy;
 
+    private AutoScalingPolicy autoScalingPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="assigned_roles")
-    
     
     private List<String> assignedRoles = null;
     

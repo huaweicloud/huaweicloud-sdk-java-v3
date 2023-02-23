@@ -19,17 +19,14 @@ import java.util.Objects;
 public class ProxyTransactionSplitRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="transaction_split")
     
-    
-    private String transactionSplit;
 
+    private String transactionSplit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="proxy_id_list")
-    
     
     private List<String> proxyIdList = null;
     

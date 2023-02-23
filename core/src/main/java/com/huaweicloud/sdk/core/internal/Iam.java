@@ -40,7 +40,6 @@ import com.huaweicloud.sdk.core.internal.model.GetIdTokenRequestBody;
 import com.huaweicloud.sdk.core.internal.model.GetIdTokenScopeDomainOrProjectBody;
 import com.huaweicloud.sdk.core.utils.ExceptionUtils;
 import com.huaweicloud.sdk.core.utils.JsonUtils;
-
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;

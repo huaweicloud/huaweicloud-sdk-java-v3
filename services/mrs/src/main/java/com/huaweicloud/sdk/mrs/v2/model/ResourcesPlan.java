@@ -17,39 +17,34 @@ import java.util.Objects;
 public class ResourcesPlan  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period_type")
     
-    
-    private String periodType;
 
+    private String periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    
-    private String startTime;
 
+    private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    
-    private String endTime;
 
+    private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="min_capacity")
     
-    
-    private Integer minCapacity;
 
+    private Integer minCapacity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max_capacity")
     
-    
+
     private Integer maxCapacity;
 
     public ResourcesPlan withPeriodType(String periodType) {

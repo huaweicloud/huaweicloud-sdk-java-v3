@@ -17,18 +17,16 @@ import java.util.Objects;
 public class EdgeAppInstanceDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
-    
-    private String edgeAppId;
 
+    private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_version")
     
-    
+
     private String appVersion;
 
     public EdgeAppInstanceDTO withEdgeAppId(String edgeAppId) {

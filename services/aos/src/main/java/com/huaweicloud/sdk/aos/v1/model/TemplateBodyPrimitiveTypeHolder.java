@@ -17,11 +17,10 @@ import java.util.Objects;
 public class TemplateBodyPrimitiveTypeHolder  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_body")
     
-    
+
     private String templateBody;
 
     public TemplateBodyPrimitiveTypeHolder withTemplateBody(String templateBody) {

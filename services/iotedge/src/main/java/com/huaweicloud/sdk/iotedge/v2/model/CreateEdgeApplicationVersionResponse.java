@@ -28,67 +28,58 @@ import java.util.Objects;
 public class CreateEdgeApplicationVersionResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edge_app_id")
     
-    
-    private String edgeAppId;
 
+    private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deploy_type")
     
-    
-    private String deployType;
 
+    private String deployType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deploy_multi_instance")
     
-    
-    private Boolean deployMultiInstance;
 
+    private Boolean deployMultiInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    
-    private String version;
 
+    private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sdk_version")
     
-    
-    private String sdkVersion;
 
+    private String sdkVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    
-    private String createTime;
 
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    
+
     private String updateTime;
     /**
      * 应用版本状态
@@ -175,102 +166,82 @@ public class CreateEdgeApplicationVersionResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state")
     
-    
-    private StateEnum state;
 
+    private StateEnum state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="liveness_probe")
     
-    
-    private ProbeDTO livenessProbe;
 
+    private ProbeDTO livenessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="readiness_probe")
     
-    
-    private ProbeDTO readinessProbe;
 
+    private ProbeDTO readinessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arch")
     
-    
     private List<String> arch = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="command")
     
-    
     private List<String> command = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="args")
     
-    
     private List<String> args = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_settings")
     
-    
-    private ContainerSettingsDTO containerSettings;
 
+    private ContainerSettingsDTO containerSettings;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="outputs")
     
-    
     private List<String> outputs = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="inputs")
     
-    
     private List<String> inputs = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="services")
     
-    
     private List<String> services = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publish_time")
     
-    
-    private String publishTime;
 
+    private String publishTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="off_shelf_time")
     
-    
-    private String offShelfTime;
 
+    private String offShelfTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="supplier")
     
-    
-    private String supplier;
 
+    private String supplier;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tpl_id")
     
-    
+
     private String tplId;
 
     public CreateEdgeApplicationVersionResponse withEdgeAppId(String edgeAppId) {

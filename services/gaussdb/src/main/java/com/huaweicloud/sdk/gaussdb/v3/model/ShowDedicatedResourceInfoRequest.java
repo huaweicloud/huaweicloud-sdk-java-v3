@@ -18,18 +18,16 @@ import java.util.Objects;
 public class ShowDedicatedResourceInfoRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dedicated_resource_id")
     
-    
+
     private String dedicatedResourceId;
 
     public ShowDedicatedResourceInfoRequest withXLanguage(String xLanguage) {

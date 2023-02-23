@@ -10,34 +10,35 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 应用命名部分。 nameType取值cmdLine时args格式为[\&quot;start\&quot;,\&quot;end\&quot;],表示抽取命令行中start、end之间的字符。 nameType取值cmdLine时args格式为 [\&quot;aa\&quot;],表示抽取环境变量名为aa对应的环境变量值。 nameType取值str时,args格式为[\&quot;fix\&quot;],表示服务名称最后拼接固定文字fix。 nameType取值cmdLineHash时,args格式为[\&quot;0001\&quot;],value格式为[\&quot;ser\&quot;],表示当启动命令是0001时,应用名称为ser。
  */
+@JacksonXmlRootElement(localName = "ApplicationNameRule")
 public class ApplicationNameRule  {
-
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nameType")
     
-    
-    private String nameType;
+    @JacksonXmlProperty(localName = "nameType")
 
+    private String nameType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="args")
     
-    
+    @JacksonXmlProperty(localName = "args")
     private List<String> args = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
-    
+    @JacksonXmlProperty(localName = "value")
     private List<String> value = null;
     
     public ApplicationNameRule withNameType(String nameType) {

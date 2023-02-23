@@ -19,18 +19,16 @@ import java.util.Objects;
 public class ListSuggestionsRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="qabot_id")
     
-    
-    private String qabotId;
 
+    private String qabotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private PostSuggestionsReq body;
 
     public ListSuggestionsRequest withQabotId(String qabotId) {

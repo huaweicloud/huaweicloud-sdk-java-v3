@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ListProjectResourceTagsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
-    
     
     private List<ProjectResourceTagResponseTags> tags = null;
     

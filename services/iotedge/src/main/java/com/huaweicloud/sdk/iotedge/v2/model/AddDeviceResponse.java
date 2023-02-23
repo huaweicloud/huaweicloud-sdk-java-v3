@@ -20,18 +20,16 @@ import java.util.Objects;
 public class AddDeviceResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_id")
     
-    
-    private String deviceId;
 
+    private String deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password")
     
-    
+
     private String password;
 
     public AddDeviceResponse withDeviceId(String deviceId) {

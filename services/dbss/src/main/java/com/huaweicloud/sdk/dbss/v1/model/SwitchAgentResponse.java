@@ -20,11 +20,10 @@ import java.util.Objects;
 public class SwitchAgentResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    
+
     private String result;
 
     public SwitchAgentResponse withResult(String result) {

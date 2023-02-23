@@ -17,18 +17,16 @@ import java.util.Objects;
 public class NodesWeight  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="weight")
     
-    
+
     private Integer weight;
 
     public NodesWeight withId(String id) {

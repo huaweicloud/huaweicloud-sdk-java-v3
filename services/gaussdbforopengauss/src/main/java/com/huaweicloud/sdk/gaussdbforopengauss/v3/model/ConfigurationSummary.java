@@ -17,67 +17,58 @@ import java.util.Objects;
 public class ConfigurationSummary  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore_version")
     
-    
-    private String datastoreVersion;
 
+    private String datastoreVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore_name")
     
-    
-    private String datastoreName;
 
+    private String datastoreName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ha_mode")
     
-    
-    private String haMode;
 
+    private String haMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
-    
-    private String created;
 
+    private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
-    
-    private String updated;
 
+    private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_defined")
     
-    
+
     private Boolean userDefined;
 
     public ConfigurationSummary withId(String id) {

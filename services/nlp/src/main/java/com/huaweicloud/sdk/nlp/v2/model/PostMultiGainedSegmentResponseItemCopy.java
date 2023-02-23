@@ -24,11 +24,10 @@ import java.util.Objects;
 public class PostMultiGainedSegmentResponseItemCopy  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
-    
+
     private String content;
     /**
      * 文本类型，取值如下： WORD-词汇类型 CHAR-字符类型
@@ -109,17 +108,14 @@ public class PostMultiGainedSegmentResponseItemCopy  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private TypeEnum type;
 
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sub_contents")
-    
     
     private List<PostMultiGainedSegmentResponseItem> subContents = null;
     

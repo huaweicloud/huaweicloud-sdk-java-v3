@@ -17,11 +17,10 @@ import java.util.Objects;
 public class ModifyPortRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    
+
     private Integer port;
 
     public ModifyPortRequest withPort(Integer port) {

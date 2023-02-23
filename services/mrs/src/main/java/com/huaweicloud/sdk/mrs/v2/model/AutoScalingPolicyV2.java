@@ -18,25 +18,22 @@ import java.util.Objects;
 public class AutoScalingPolicyV2  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_group_name")
     
-    
-    private String nodeGroupName;
 
+    private String nodeGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_pool_name")
     
-    
-    private String resourcePoolName;
 
+    private String resourcePoolName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_scaling_policy")
     
-    
+
     private AutoScalingPolicy autoScalingPolicy;
 
     public AutoScalingPolicyV2 withNodeGroupName(String nodeGroupName) {

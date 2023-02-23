@@ -22,24 +22,18 @@ import java.util.Objects;
 public class JobDetail  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schemaPath")
     
-    
     private List<SchemaPath> schemaPath = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edgesetPath")
     
-    
     private List<EdgesetPath> edgesetPath = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vertexsetPath")
-    
     
     private List<VertexsetPath> vertexsetPath = null;
     

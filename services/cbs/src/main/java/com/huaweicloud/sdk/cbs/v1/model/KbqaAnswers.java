@@ -17,18 +17,16 @@ import java.util.Objects;
 public class KbqaAnswers  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="answer")
     
-    
-    private String answer;
 
+    private String answer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="score")
     
-    
+
     private Double score;
 
     public KbqaAnswers withAnswer(String answer) {

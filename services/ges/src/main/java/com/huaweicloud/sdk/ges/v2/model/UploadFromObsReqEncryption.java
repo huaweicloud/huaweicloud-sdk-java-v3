@@ -17,18 +17,16 @@ import java.util.Objects;
 public class UploadFromObsReqEncryption  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable")
     
-    
-    private Boolean enable;
 
+    private Boolean enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_key_id")
     
-    
+
     private String masterKeyId;
 
     public UploadFromObsReqEncryption withEnable(Boolean enable) {

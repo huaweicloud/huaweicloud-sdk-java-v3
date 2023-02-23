@@ -21,11 +21,10 @@ import java.util.Objects;
 public class DocumentClassificationReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
-    
+
     private String content;
     /**
      * 预留字段，支持的文本语言类型，当前只支持zh（中文），默认zh。
@@ -100,11 +99,10 @@ public class DocumentClassificationReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lang")
     
-    
+
     private LangEnum lang;
 
     public DocumentClassificationReq withContent(String content) {

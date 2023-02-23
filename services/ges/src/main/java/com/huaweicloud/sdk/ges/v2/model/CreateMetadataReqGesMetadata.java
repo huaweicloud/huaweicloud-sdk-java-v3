@@ -20,10 +20,8 @@ import java.util.Objects;
 public class CreateMetadataReqGesMetadata  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="labels")
-    
     
     private List<CreateMetadataReqGesMetadataLabels> labels = null;
     

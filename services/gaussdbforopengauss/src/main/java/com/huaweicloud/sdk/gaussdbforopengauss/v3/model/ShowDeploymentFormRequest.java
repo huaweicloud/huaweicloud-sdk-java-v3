@@ -22,11 +22,10 @@ import java.util.Objects;
 public class ShowDeploymentFormRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
+
     private String xLanguage;
     /**
      * 解决方案模板名称。
@@ -107,18 +106,16 @@ public class ShowDeploymentFormRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="solution")
     
-    
-    private SolutionEnum solution;
 
+    private SolutionEnum solution;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_id")
     
-    
+
     private String instanceId;
 
     public ShowDeploymentFormRequest withXLanguage(String xLanguage) {

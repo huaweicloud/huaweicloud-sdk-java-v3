@@ -21,11 +21,10 @@ import java.util.Objects;
 public class AspectSentimentAdvanceRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
-    
+
     private String content;
     /**
      * 取值如下： 1 手机领域 2 汽车领域
@@ -106,11 +105,10 @@ public class AspectSentimentAdvanceRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
+
     private TypeEnum type;
 
     public AspectSentimentAdvanceRequest withContent(String content) {

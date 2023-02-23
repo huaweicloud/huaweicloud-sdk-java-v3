@@ -18,18 +18,16 @@ import java.util.Objects;
 public class ShowGaussMySqlJobInfoRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    
-    private String xLanguage;
 
+    private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
+
     private String id;
 
     public ShowGaussMySqlJobInfoRequest withXLanguage(String xLanguage) {

@@ -7,12 +7,15 @@ package com.huaweicloud.sdk.aom.v2.model;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Response Object
  */
+@JacksonXmlRootElement(localName = "DeleteActionRuleResponse")
 public class DeleteActionRuleResponse extends SdkResponse {
 
 

@@ -21,18 +21,15 @@ import java.util.Objects;
 public class OpenGaussExpandCluster  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coordinators")
     
-    
     private List<OpenGaussCoordinators> coordinators = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="shard")
     
-    
+
     private OpenGaussShard shard;
 
     public OpenGaussExpandCluster withCoordinators(List<OpenGaussCoordinators> coordinators) {

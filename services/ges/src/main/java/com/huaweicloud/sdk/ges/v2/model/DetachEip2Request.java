@@ -19,18 +19,16 @@ import java.util.Objects;
 public class DetachEip2Request  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_id")
     
-    
-    private String graphId;
 
+    private String graphId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private DetachEipReq body;
 
     public DetachEip2Request withGraphId(String graphId) {

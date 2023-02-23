@@ -17,11 +17,10 @@ import java.util.Objects;
 public class StackNamePrimitiveTypeHolder  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stack_name")
     
-    
+
     private String stackName;
 
     public StackNamePrimitiveTypeHolder withStackName(String stackName) {

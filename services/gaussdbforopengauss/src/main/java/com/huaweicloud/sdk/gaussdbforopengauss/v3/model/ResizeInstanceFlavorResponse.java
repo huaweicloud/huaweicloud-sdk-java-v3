@@ -20,18 +20,16 @@ import java.util.Objects;
 public class ResizeInstanceFlavorResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
-    private String jobId;
 
+    private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_id")
     
-    
+
     private String orderId;
 
     public ResizeInstanceFlavorResponse withJobId(String jobId) {

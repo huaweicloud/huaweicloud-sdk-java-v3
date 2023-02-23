@@ -17,25 +17,22 @@ import java.util.Objects;
 public class ClassificationResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
-    
-    private String content;
 
+    private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="label")
     
-    
-    private Integer label;
 
+    private Integer label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confidence")
     
-    
+
     private Float confidence;
 
     public ClassificationResult withContent(String content) {

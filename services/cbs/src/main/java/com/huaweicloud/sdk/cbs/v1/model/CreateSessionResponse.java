@@ -20,18 +20,16 @@ import java.util.Objects;
 public class CreateSessionResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="session_id")
     
-    
-    private String sessionId;
 
+    private String sessionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="greeting")
     
-    
+
     private String greeting;
 
     public CreateSessionResponse withSessionId(String sessionId) {

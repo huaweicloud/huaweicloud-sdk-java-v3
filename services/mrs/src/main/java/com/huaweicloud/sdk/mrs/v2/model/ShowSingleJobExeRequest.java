@@ -18,18 +18,16 @@ import java.util.Objects;
 public class ShowSingleJobExeRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_execution_id")
     
-    
-    private String jobExecutionId;
 
+    private String jobExecutionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
-    
+
     private String clusterId;
 
     public ShowSingleJobExeRequest withJobExecutionId(String jobExecutionId) {

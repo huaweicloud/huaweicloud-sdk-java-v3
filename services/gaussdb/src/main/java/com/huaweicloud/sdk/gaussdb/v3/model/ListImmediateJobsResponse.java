@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListImmediateJobsResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobs")
     
-    
     private List<TaskDetailInfo> jobs = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    
+
     private Integer totalCount;
 
     public ListImmediateJobsResponse withJobs(List<TaskDetailInfo> jobs) {

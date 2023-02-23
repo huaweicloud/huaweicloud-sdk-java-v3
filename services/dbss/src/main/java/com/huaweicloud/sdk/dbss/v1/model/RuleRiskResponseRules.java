@@ -17,53 +17,46 @@ import java.util.Objects;
 public class RuleRiskResponseRules  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    
-    private String type;
 
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="feature")
     
-    
-    private String feature;
 
+    private String feature;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rank")
     
-    
-    private Integer rank;
 
+    private Integer rank;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="risk_level")
     
-    
+
     private String riskLevel;
 
     public RuleRiskResponseRules withId(String id) {

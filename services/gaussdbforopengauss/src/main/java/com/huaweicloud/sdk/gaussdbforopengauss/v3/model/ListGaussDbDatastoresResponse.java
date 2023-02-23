@@ -23,10 +23,8 @@ import java.util.Objects;
 public class ListGaussDbDatastoresResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastores")
-    
     
     private List<DatastoresResult> datastores = null;
     

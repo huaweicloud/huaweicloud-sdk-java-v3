@@ -17,74 +17,64 @@ import java.util.Objects;
 public class ListQuotaResult  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
-    private String enterpriseProjectId;
 
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_name")
     
-    
-    private String enterpriseProjectName;
 
+    private String enterpriseProjectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_eps_quota")
     
-    
-    private Integer instanceEpsQuota;
 
+    private Integer instanceEpsQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus_eps_quota")
     
-    
-    private Integer vcpusEpsQuota;
 
+    private Integer vcpusEpsQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram_eps_quota")
     
-    
-    private Integer ramEpsQuota;
 
+    private Integer ramEpsQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_eps_quota")
     
-    
-    private Integer volumeEpsQuota;
 
+    private Integer volumeEpsQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_used")
     
-    
-    private Integer instanceUsed;
 
+    private Integer instanceUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vcpus_used")
     
-    
-    private Integer vcpusUsed;
 
+    private Integer vcpusUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ram_used")
     
-    
-    private Integer ramUsed;
 
+    private Integer ramUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_used")
     
-    
+
     private Integer volumeUsed;
 
     public ListQuotaResult withEnterpriseProjectId(String enterpriseProjectId) {

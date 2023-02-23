@@ -28,171 +28,146 @@ import java.util.Objects;
 public class CreateClusterReqV2  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_dec_project")
     
-    
-    private Boolean isDecProject;
 
+    private Boolean isDecProject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_version")
     
-    
-    private String clusterVersion;
 
+    private String clusterVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_name")
     
-    
-    private String clusterName;
 
+    private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_type")
     
-    
-    private String clusterType;
 
+    private String clusterType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_info")
     
-    
-    private ChargeInfo chargeInfo;
 
+    private ChargeInfo chargeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="region")
     
-    
-    private String region;
 
+    private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_name")
     
-    
-    private String vpcName;
 
+    private String vpcName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
-    
-    private String subnetId;
 
+    private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_name")
     
-    
-    private String subnetName;
 
+    private String subnetName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="components")
     
-    
-    private String components;
 
+    private String components;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone")
     
-    
-    private String availabilityZone;
 
+    private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_groups_id")
     
-    
-    private String securityGroupsId;
 
+    private String securityGroupsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_create_default_security_group")
     
-    
-    private Boolean autoCreateDefaultSecurityGroup;
 
+    private Boolean autoCreateDefaultSecurityGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="safe_mode")
     
-    
-    private String safeMode;
 
+    private String safeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="manager_admin_password")
     
-    
-    private String managerAdminPassword;
 
+    private String managerAdminPassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="login_mode")
     
-    
-    private String loginMode;
 
+    private String loginMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_root_password")
     
-    
-    private String nodeRootPassword;
 
+    private String nodeRootPassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_keypair_name")
     
-    
-    private String nodeKeypairName;
 
+    private String nodeKeypairName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    
-    private String enterpriseProjectId;
 
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eip_address")
     
-    
-    private String eipAddress;
 
+    private String eipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eip_id")
     
-    
-    private String eipId;
 
+    private String eipId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mrs_ecs_default_agency")
     
-    
-    private String mrsEcsDefaultAgency;
 
+    private String mrsEcsDefaultAgency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_id")
     
-    
-    private String templateId;
 
+    private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
-    
     
     private List<Tag> tags = null;
         /**
@@ -274,31 +249,24 @@ public class CreateClusterReqV2  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="log_collection")
     
-    
-    private LogCollectionEnum logCollection;
 
+    private LogCollectionEnum logCollection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_groups")
     
-    
     private List<NodeGroupV2> nodeGroups = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bootstrap_scripts")
     
-    
     private List<BootstrapScript> bootstrapScripts = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="add_jobs")
-    
     
     private List<AddJobsReqV11> addJobs = null;
     

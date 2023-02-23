@@ -23,17 +23,14 @@ import java.util.Objects;
 public class ShowSqlFilterRuleResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    
-    private String nodeId;
 
+    private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sql_filter_rules")
-    
     
     private List<SqlFilterRule> sqlFilterRules = null;
     

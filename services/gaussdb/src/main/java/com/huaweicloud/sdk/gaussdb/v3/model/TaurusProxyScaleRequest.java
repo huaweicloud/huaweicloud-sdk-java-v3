@@ -17,11 +17,10 @@ import java.util.Objects;
 public class TaurusProxyScaleRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_ref")
     
-    
+
     private String flavorRef;
 
     public TaurusProxyScaleRequest withFlavorRef(String flavorRef) {

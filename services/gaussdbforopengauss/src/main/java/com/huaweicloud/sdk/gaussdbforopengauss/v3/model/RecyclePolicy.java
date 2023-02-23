@@ -17,11 +17,10 @@ import java.util.Objects;
 public class RecyclePolicy  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="retention_period_in_days")
     
-    
+
     private Integer retentionPeriodInDays;
 
     public RecyclePolicy withRetentionPeriodInDays(Integer retentionPeriodInDays) {

@@ -8,6 +8,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 public class TestEcsClient {
 
     static public class TestClass {
@@ -35,7 +37,7 @@ public class TestEcsClient {
                 .withCredential(new BasicCredentials().withProjectId("11")
                         .withAk("11")
                         .withSk("11"))
-                .withEndpoint("11")
+                .withEndpoints(Arrays.asList("11"))
                 .build();
     }
 

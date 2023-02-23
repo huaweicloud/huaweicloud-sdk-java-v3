@@ -18,18 +18,16 @@ import java.util.Objects;
 public class ListBackupsRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    
-    private Integer limit;
 
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    
+
     private Integer offset;
 
     public ListBackupsRequest withLimit(Integer limit) {

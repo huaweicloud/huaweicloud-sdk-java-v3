@@ -142,34 +142,34 @@ public class TestMapQueryParameters {
 
         // requests
         builder.withRequestField("p1",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(TestRequest::getP1, TestRequest::setP1)
+                LocationType.Query,
+                FieldExistence.NULL_IGNORE,
+                String.class,
+                f -> f.withMarshaller(TestRequest::getP1, TestRequest::setP1)
         );
         builder.withRequestField("p2",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Map.class,
-            f -> f.withMarshaller(TestRequest::getP2, TestRequest::setP2)
+                LocationType.Query,
+                FieldExistence.NULL_IGNORE,
+                Map.class,
+                f -> f.withMarshaller(TestRequest::getP2, TestRequest::setP2)
         );
         builder.withRequestField("p3",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Map.class,
-            f -> f.withMarshaller(TestRequest::getP3, TestRequest::setP3)
+                LocationType.Query,
+                FieldExistence.NULL_IGNORE,
+                Map.class,
+                f -> f.withMarshaller(TestRequest::getP3, TestRequest::setP3)
         );
         builder.withRequestField("p4",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Map.class,
-            f -> f.withMarshaller(TestRequest::getP4, TestRequest::setP4)
+                LocationType.Query,
+                FieldExistence.NULL_IGNORE,
+                Map.class,
+                f -> f.withMarshaller(TestRequest::getP4, TestRequest::setP4)
         );
         builder.withRequestField("p5",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            List.class,
-            f -> f.withMarshaller(TestRequest::getP5, TestRequest::setP5)
+                LocationType.Query,
+                FieldExistence.NULL_IGNORE,
+                List.class,
+                f -> f.withMarshaller(TestRequest::getP5, TestRequest::setP5)
         );
 
         // response
@@ -208,8 +208,10 @@ public class TestMapQueryParameters {
 
     @Test
     public void buildQuery() {
+        List<String> endpoints = Collections.singletonList("https://ecs.cn-north-1.myhuaweicloud.com");
 
-        HcClient hcClient = new HcClient(new HttpConfig()).withEndpoint("https://ecs.cn-north-1.myhuaweicloud.com");
+        HcClient hcClient = new HcClient(new HttpConfig())
+                .withEndpoints(endpoints);
 
         HttpRequest httpRequest = hcClient.buildRequest(request, genFortest());
         // 当类型为 Map<String, List<Object>> 时，由于堆栈先进后出，此处参数的顺序为逆序

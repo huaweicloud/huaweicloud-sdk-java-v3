@@ -21,25 +21,22 @@ import java.util.Objects;
 public class HttpGetDTO  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="path")
     
-    
-    private String path;
 
+    private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    
-    private Integer port;
 
+    private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host")
     
-    
+
     private String host;
     /**
      * 协议类型
@@ -120,11 +117,10 @@ public class HttpGetDTO  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scheme")
     
-    
+
     private SchemeEnum scheme;
 
     public HttpGetDTO withPath(String path) {

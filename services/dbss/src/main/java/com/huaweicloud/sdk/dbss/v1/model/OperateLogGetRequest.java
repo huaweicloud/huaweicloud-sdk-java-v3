@@ -18,46 +18,40 @@ import java.util.Objects;
 public class OperateLogGetRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time")
     
-    
-    private TimeRangeBean time;
 
+    private TimeRangeBean time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_name")
     
-    
-    private String userName;
 
+    private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="operate_name")
     
-    
-    private String operateName;
 
+    private String operateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    
-    private String result;
 
+    private String result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    
-    private String page;
 
+    private String page;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    
+
     private String size;
 
     public OperateLogGetRequest withTime(TimeRangeBean time) {

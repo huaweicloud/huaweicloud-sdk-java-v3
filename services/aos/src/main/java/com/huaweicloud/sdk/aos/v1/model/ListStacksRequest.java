@@ -18,11 +18,10 @@ import java.util.Objects;
 public class ListStacksRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Client-Request-Id")
     
-    
+
     private String clientRequestId;
 
     public ListStacksRequest withClientRequestId(String clientRequestId) {

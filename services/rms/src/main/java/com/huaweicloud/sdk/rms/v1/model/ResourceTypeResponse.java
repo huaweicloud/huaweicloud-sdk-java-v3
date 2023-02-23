@@ -48,6 +48,11 @@ public class ResourceTypeResponse {
 
     private String consoleDetailUrl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "track")
+
+    private String track;
+
     public ResourceTypeResponse withName(String name) {
         this.name = name;
         return this;
@@ -183,6 +188,23 @@ public class ResourceTypeResponse {
         this.consoleDetailUrl = consoleDetailUrl;
     }
 
+    public ResourceTypeResponse withTrack(String track) {
+        this.track = track;
+        return this;
+    }
+
+    /**
+     * 资源是否默认收集，\"tracked\"表示默认收集，\"untracked\"表示默认不收集
+     * @return track
+     */
+    public String getTrack() {
+        return track;
+    }
+
+    public void setTrack(String track) {
+        this.track = track;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -198,12 +220,14 @@ public class ResourceTypeResponse {
             && Objects.equals(this.regions, resourceTypeResponse.regions)
             && Objects.equals(this.consoleEndpointId, resourceTypeResponse.consoleEndpointId)
             && Objects.equals(this.consoleListUrl, resourceTypeResponse.consoleListUrl)
-            && Objects.equals(this.consoleDetailUrl, resourceTypeResponse.consoleDetailUrl);
+            && Objects.equals(this.consoleDetailUrl, resourceTypeResponse.consoleDetailUrl)
+            && Objects.equals(this.track, resourceTypeResponse.track);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, displayName, global, regions, consoleEndpointId, consoleListUrl, consoleDetailUrl);
+        return Objects
+            .hash(name, displayName, global, regions, consoleEndpointId, consoleListUrl, consoleDetailUrl, track);
     }
 
     @Override
@@ -217,6 +241,7 @@ public class ResourceTypeResponse {
         sb.append("    consoleEndpointId: ").append(toIndentedString(consoleEndpointId)).append("\n");
         sb.append("    consoleListUrl: ").append(toIndentedString(consoleListUrl)).append("\n");
         sb.append("    consoleDetailUrl: ").append(toIndentedString(consoleDetailUrl)).append("\n");
+        sb.append("    track: ").append(toIndentedString(track)).append("\n");
         sb.append("}");
         return sb.toString();
     }

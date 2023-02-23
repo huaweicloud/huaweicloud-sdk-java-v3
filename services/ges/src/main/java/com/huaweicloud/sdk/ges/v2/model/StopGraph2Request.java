@@ -18,11 +18,10 @@ import java.util.Objects;
 public class StopGraph2Request  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_id")
     
-    
+
     private String graphId;
 
     public StopGraph2Request withGraphId(String graphId) {

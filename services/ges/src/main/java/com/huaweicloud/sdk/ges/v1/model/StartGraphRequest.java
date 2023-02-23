@@ -23,11 +23,10 @@ import java.util.Objects;
 public class StartGraphRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="graph_id")
     
-    
+
     private String graphId;
     /**
      * 图actionId
@@ -102,18 +101,16 @@ public class StartGraphRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_id")
     
-    
-    private ActionIdEnum actionId;
 
+    private ActionIdEnum actionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    
+
     private StartGraphReq body;
 
     public StartGraphRequest withGraphId(String graphId) {

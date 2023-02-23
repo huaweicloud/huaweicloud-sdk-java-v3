@@ -640,6 +640,97 @@ public class BssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCustomerAccountChangeRecordsRequest, ListCustomerAccountChangeRecordsResponse> listCustomerAccountChangeRecords =
+        genForlistCustomerAccountChangeRecords();
+
+    private static HttpRequestDef<ListCustomerAccountChangeRecordsRequest, ListCustomerAccountChangeRecordsResponse> genForlistCustomerAccountChangeRecords() {
+        // basic
+        HttpRequestDef.Builder<ListCustomerAccountChangeRecordsRequest, ListCustomerAccountChangeRecordsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListCustomerAccountChangeRecordsRequest.class,
+                    ListCustomerAccountChangeRecordsResponse.class)
+                .withName("ListCustomerAccountChangeRecords")
+                .withUri("/v2/accounts/customer-accounts/account-change-records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("balance_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getBalanceType, (req, v) -> {
+                req.setBalanceType(v);
+            }));
+        builder.<String>withRequestField("revenue_expense_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getRevenueExpenseType, (req, v) -> {
+                req.setRevenueExpenseType(v);
+            }));
+        builder.<String>withRequestField("trade_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getTradeType, (req, v) -> {
+                req.setTradeType(v);
+            }));
+        builder.<String>withRequestField("trade_time_begin",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getTradeTimeBegin, (req, v) -> {
+                req.setTradeTimeBegin(v);
+            }));
+        builder.<String>withRequestField("trade_time_end",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getTradeTimeEnd, (req, v) -> {
+                req.setTradeTimeEnd(v);
+            }));
+        builder.<String>withRequestField("trade_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getTradeId, (req, v) -> {
+                req.setTradeId(v);
+            }));
+        builder.<String>withRequestField("payment_channel_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getPaymentChannelId, (req, v) -> {
+                req.setPaymentChannelId(v);
+            }));
+        builder.<String>withRequestField("payment_channel_no",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getPaymentChannelNo, (req, v) -> {
+                req.setPaymentChannelNo(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomerAccountChangeRecordsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCustomerBillsFeeRecordsRequest, ListCustomerBillsFeeRecordsResponse> listCustomerBillsFeeRecords =
         genForlistCustomerBillsFeeRecords();
 

@@ -17,18 +17,16 @@ import java.util.Objects;
 public class MysqlInstanceChargeInfo  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_mode")
     
-    
-    private String chargeMode;
 
+    private String chargeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_id")
     
-    
+
     private String orderId;
 
     public MysqlInstanceChargeInfo withChargeMode(String chargeMode) {

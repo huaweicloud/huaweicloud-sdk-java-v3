@@ -20,11 +20,10 @@ import java.util.Objects;
 public class ClearGraph2Response extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public ClearGraph2Response withJobId(String jobId) {

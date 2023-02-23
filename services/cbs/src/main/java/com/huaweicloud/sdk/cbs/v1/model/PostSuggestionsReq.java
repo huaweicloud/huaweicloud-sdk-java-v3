@@ -17,18 +17,16 @@ import java.util.Objects;
 public class PostSuggestionsReq  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="question")
     
-    
-    private String question;
 
+    private String question;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="top")
     
-    
+
     private Integer top;
 
     public PostSuggestionsReq withQuestion(String question) {

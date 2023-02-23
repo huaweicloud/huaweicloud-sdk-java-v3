@@ -23,18 +23,15 @@ import java.util.Objects;
 public class ListAuditDatabasesResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="databases")
     
-    
     private List<DataBaseBean> databases = null;
     
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
-    
+
     private Integer total;
 
     public ListAuditDatabasesResponse withDatabases(List<DataBaseBean> databases) {

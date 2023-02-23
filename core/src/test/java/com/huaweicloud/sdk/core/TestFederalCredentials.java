@@ -26,7 +26,6 @@ import com.huaweicloud.sdk.core.auth.GlobalCredentials;
 import com.huaweicloud.sdk.core.auth.ICredential;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpConfig;
-
 import org.junit.Assert;
 import org.junit.Test;
 

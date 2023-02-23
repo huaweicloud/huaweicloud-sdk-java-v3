@@ -22,45 +22,38 @@ import java.util.Objects;
 public class ShowSqlResultResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    
-    private String id;
 
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="message")
     
-    
-    private String message;
 
+    private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="statement")
     
-    
-    private String statement;
 
+    private String statement;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    
-    private String status;
 
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result_location")
     
-    
-    private String resultLocation;
 
+    private String resultLocation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
-    
     
     private List<List<String>> content = null;
     

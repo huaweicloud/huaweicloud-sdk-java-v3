@@ -18,25 +18,22 @@ import java.util.Objects;
 public class ListHostsRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
-    
-    private String clusterId;
 
+    private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pageSize")
     
-    
-    private String pageSize;
 
+    private String pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="currentPage")
     
-    
+
     private String currentPage;
 
     public ListHostsRequest withClusterId(String clusterId) {

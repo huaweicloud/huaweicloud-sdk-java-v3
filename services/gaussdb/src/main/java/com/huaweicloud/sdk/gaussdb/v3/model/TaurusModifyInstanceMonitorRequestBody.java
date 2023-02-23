@@ -21,11 +21,10 @@ import java.util.Objects;
 public class TaurusModifyInstanceMonitorRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="monitor_switch")
     
-    
+
     private Boolean monitorSwitch;
     /**
      * 采集周期，仅在monitor_switch为true时生效。默认为5s。monitor_switch为false时，不传该参数。  取值： 1：采集周期为1s。 5：采集周期为5s。
@@ -106,11 +105,10 @@ public class TaurusModifyInstanceMonitorRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period")
     
-    
+
     private PeriodEnum period;
 
     public TaurusModifyInstanceMonitorRequestBody withMonitorSwitch(Boolean monitorSwitch) {

@@ -17,18 +17,16 @@ import java.util.Objects;
 public class ParseTemplateVariablesRequestBody  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_body")
     
-    
-    private String templateBody;
 
+    private String templateBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_uri")
     
-    
+
     private String templateUri;
 
     public ParseTemplateVariablesRequestBody withTemplateBody(String templateBody) {

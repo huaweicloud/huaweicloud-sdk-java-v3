@@ -21,67 +21,58 @@ import java.util.Objects;
 public class UpdateNaResponse extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="na_id")
     
-    
-    private String naId;
 
+    private String naId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    
-    private String name;
 
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    
-    private String description;
 
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endpoint")
     
-    
-    private String endpoint;
 
+    private String endpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_type")
     
-    
-    private String authType;
 
+    private String authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="access_type")
     
-    
-    private String accessType;
 
+    private String accessType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="access_roma_info")
     
-    
-    private AccessRomaBriefInfo accessRomaInfo;
 
+    private AccessRomaBriefInfo accessRomaInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    
-    private String createTime;
 
+    private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    
+
     private String updateTime;
 
     public UpdateNaResponse withNaId(String naId) {

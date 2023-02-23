@@ -21,11 +21,10 @@ import java.util.Objects;
 public class NerRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text")
     
-    
+
     private String text;
     /**
      * 支持的文本语言类型，目前支持中文（zh）,英文（en）,和西班牙文（es），默认为中文。
@@ -112,11 +111,10 @@ public class NerRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lang")
     
-    
+
     private LangEnum lang;
 
     public NerRequest withText(String text) {

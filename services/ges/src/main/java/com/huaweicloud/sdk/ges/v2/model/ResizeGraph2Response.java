@@ -20,11 +20,10 @@ import java.util.Objects;
 public class ResizeGraph2Response extends SdkResponse {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    
+
     private String jobId;
 
     public ResizeGraph2Response withJobId(String jobId) {

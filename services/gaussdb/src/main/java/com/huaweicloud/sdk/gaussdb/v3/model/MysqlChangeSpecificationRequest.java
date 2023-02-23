@@ -18,18 +18,16 @@ import java.util.Objects;
 public class MysqlChangeSpecificationRequest  {
 
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resize_flavor")
     
-    
-    private MysqlResizeFlavor resizeFlavor;
 
+    private MysqlResizeFlavor resizeFlavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_pay")
     
-    
+
     private String isAutoPay;
 
     public MysqlChangeSpecificationRequest withResizeFlavor(MysqlResizeFlavor resizeFlavor) {
