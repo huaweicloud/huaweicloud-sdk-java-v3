@@ -10,22 +10,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v1.model.SearchScriptsRequestBody;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-@JacksonXmlRootElement(localName = "ListAllVersionByVersionIdRequest")
 public class ListAllVersionByVersionIdRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    @JacksonXmlProperty(localName = "body")
 
     private SearchScriptsRequestBody body;
 

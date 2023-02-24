@@ -10,29 +10,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v3.model.EnvParam;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-@JacksonXmlRootElement(localName = "UpdateEnvRequest")
 public class UpdateEnvRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="environment_id")
     
-    @JacksonXmlProperty(localName = "environment_id")
 
     private String environmentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    @JacksonXmlProperty(localName = "body")
 
     private EnvParam body;
 

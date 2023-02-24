@@ -18,112 +18,95 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Response Object
  */
-@JacksonXmlRootElement(localName = "ShowEnvByNameResponse")
 public class ShowEnvByNameResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="aom_id")
     
-    @JacksonXmlProperty(localName = "aom_id")
 
     private String aomId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="component_id")
     
-    @JacksonXmlProperty(localName = "component_id")
 
     private String componentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    @JacksonXmlProperty(localName = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="creator")
     
-    @JacksonXmlProperty(localName = "creator")
 
     private String creator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="env_id")
     
-    @JacksonXmlProperty(localName = "env_id")
 
     private String envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="env_name")
     
-    @JacksonXmlProperty(localName = "env_name")
 
     private String envName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="env_tags")
     
-    @JacksonXmlProperty(localName = "env_tags")
     private List<TagNameAndIdVo> envTags = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="env_type")
     
-    @JacksonXmlProperty(localName = "env_type")
 
     private String envType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eps_id")
     
-    @JacksonXmlProperty(localName = "eps_id")
 
     private String epsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="modified_time")
     
-    @JacksonXmlProperty(localName = "modified_time")
 
     private String modifiedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="modifier")
     
-    @JacksonXmlProperty(localName = "modifier")
 
     private String modifier;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os_type")
     
-    @JacksonXmlProperty(localName = "os_type")
 
     private String osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="region")
     
-    @JacksonXmlProperty(localName = "region")
 
     private String region;
     /**
@@ -214,7 +197,6 @@ public class ShowEnvByNameResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_type")
     
-    @JacksonXmlProperty(localName = "register_type")
 
     private RegisterTypeEnum registerType;
 

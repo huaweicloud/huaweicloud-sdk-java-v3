@@ -12,50 +12,42 @@ import com.huaweicloud.sdk.aom.v2.model.EventQueryParam2Sort;
 import com.huaweicloud.sdk.aom.v2.model.RelationModel;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 查询事件或者告警信息 。
  */
-@JacksonXmlRootElement(localName = "EventQueryParam2")
 public class EventQueryParam2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_range")
     
-    @JacksonXmlProperty(localName = "time_range")
 
     private String timeRange;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="step")
     
-    @JacksonXmlProperty(localName = "step")
 
     private Long step;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="search")
     
-    @JacksonXmlProperty(localName = "search")
 
     private String search;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort")
     
-    @JacksonXmlProperty(localName = "sort")
 
     private EventQueryParam2Sort sort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata_relation")
     
-    @JacksonXmlProperty(localName = "metadata_relation")
     private List<RelationModel> metadataRelation = null;
     
     public EventQueryParam2 withTimeRange(String timeRange) {

@@ -8,50 +8,42 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 根据作业id分页查询方案集合
  */
-@JacksonXmlRootElement(localName = "ListTemplateByJobIdRequestBody")
 public class ListTemplateByJobIdRequestBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_num")
     
-    @JacksonXmlProperty(localName = "page_num")
 
     private Integer pageNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_size")
     
-    @JacksonXmlProperty(localName = "page_size")
 
     private Integer pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_by_column")
     
-    @JacksonXmlProperty(localName = "order_by_column")
 
     private String orderByColumn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_order")
     
-    @JacksonXmlProperty(localName = "sort_order")
 
     private String sortOrder;
 

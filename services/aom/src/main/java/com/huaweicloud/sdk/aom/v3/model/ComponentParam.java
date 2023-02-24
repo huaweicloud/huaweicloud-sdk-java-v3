@@ -8,43 +8,36 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * ComponentParam
  */
-@JacksonXmlRootElement(localName = "ComponentParam")
 public class ComponentParam  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="model_id")
     
-    @JacksonXmlProperty(localName = "model_id")
 
     private String modelId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="model_type")
     
-    @JacksonXmlProperty(localName = "model_type")
 
     private String modelType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 

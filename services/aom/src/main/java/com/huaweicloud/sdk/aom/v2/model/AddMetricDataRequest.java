@@ -12,22 +12,18 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.MetricDataItem;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-@JacksonXmlRootElement(localName = "AddMetricDataRequest")
 public class AddMetricDataRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    @JacksonXmlProperty(localName = "body")
     private List<MetricDataItem> body = null;
     
     public AddMetricDataRequest withBody(List<MetricDataItem> body) {

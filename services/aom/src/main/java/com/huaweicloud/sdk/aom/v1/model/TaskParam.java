@@ -8,43 +8,36 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 任务参数对象。
  */
-@JacksonXmlRootElement(localName = "TaskParam")
 public class TaskParam  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="param_name")
     
-    @JacksonXmlProperty(localName = "param_name")
 
     private String paramName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="param_type")
     
-    @JacksonXmlProperty(localName = "param_type")
 
     private String paramType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="param_group")
     
-    @JacksonXmlProperty(localName = "param_group")
 
     private String paramGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="default_value")
     
-    @JacksonXmlProperty(localName = "default_value")
 
     private String defaultValue;
 

@@ -14,22 +14,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 静默规则的匹配条件
  */
-@JacksonXmlRootElement(localName = "Match")
 public class Match  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key")
     
-    @JacksonXmlProperty(localName = "key")
 
     private String key;
     /**
@@ -120,14 +116,12 @@ public class Match  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="operate")
     
-    @JacksonXmlProperty(localName = "operate")
 
     private OperateEnum operate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
-    @JacksonXmlProperty(localName = "value")
     private List<String> value = null;
     
     public Match withKey(String key) {

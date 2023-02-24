@@ -13,29 +13,24 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-@JacksonXmlRootElement(localName = "StartPausingWorkflowExecutionsRequest")
 public class StartPausingWorkflowExecutionsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="workflow_id")
     
-    @JacksonXmlProperty(localName = "workflow_id")
 
     private String workflowId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="execution_id")
     
-    @JacksonXmlProperty(localName = "execution_id")
 
     private String executionId;
     /**
@@ -126,14 +121,12 @@ public class StartPausingWorkflowExecutionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    @JacksonXmlProperty(localName = "action")
 
     private ActionEnum action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_id")
     
-    @JacksonXmlProperty(localName = "node_id")
 
     private String nodeId;
 

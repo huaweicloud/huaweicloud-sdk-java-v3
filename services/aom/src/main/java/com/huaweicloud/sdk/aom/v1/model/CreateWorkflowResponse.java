@@ -18,285 +18,242 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Response Object
  */
-@JacksonXmlRootElement(localName = "CreateWorkflowResponse")
 public class CreateWorkflowResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    @JacksonXmlProperty(localName = "tags")
     private Map<String, String> tags = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_by")
     
-    @JacksonXmlProperty(localName = "create_by")
 
     private String createBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    @JacksonXmlProperty(localName = "update_time")
 
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_by")
     
-    @JacksonXmlProperty(localName = "update_by")
 
     private String updateBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_name")
     
-    @JacksonXmlProperty(localName = "template_name")
 
     private String templateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_id")
     
-    @JacksonXmlProperty(localName = "template_id")
 
     private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    @JacksonXmlProperty(localName = "input")
     private Map<String, Object> input = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_execution_id")
     
-    @JacksonXmlProperty(localName = "last_execution_id")
 
     private String lastExecutionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="citation_urns")
     
-    @JacksonXmlProperty(localName = "citation_urns")
     private List<String> citationUrns = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_execution_end_time")
     
-    @JacksonXmlProperty(localName = "last_execution_end_time")
 
     private Long lastExecutionEndTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_execution_start_time")
     
-    @JacksonXmlProperty(localName = "last_execution_start_time")
 
     private Long lastExecutionStartTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quote")
     
-    @JacksonXmlProperty(localName = "quote")
     private List<String> quote = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_name")
     
-    @JacksonXmlProperty(localName = "job_name")
 
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
-    @JacksonXmlProperty(localName = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="service_scenario")
     
-    @JacksonXmlProperty(localName = "service_scenario")
 
     private String serviceScenario;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="service_name")
     
-    @JacksonXmlProperty(localName = "service_name")
 
     private String serviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_type")
     
-    @JacksonXmlProperty(localName = "task_type")
 
     private String taskType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project_id")
     
-    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="workflow_id")
     
-    @JacksonXmlProperty(localName = "workflow_id")
 
     private String workflowId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_status")
     
-    @JacksonXmlProperty(localName = "task_status")
 
     private String taskStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
-    @JacksonXmlProperty(localName = "nodes")
     private List<Node> nodes = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="edit_time")
     
-    @JacksonXmlProperty(localName = "edit_time")
 
     private Long editTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="execution_action_rules")
     
-    @JacksonXmlProperty(localName = "execution_action_rules")
     private List<String> executionActionRules = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="execution_permission")
     
-    @JacksonXmlProperty(localName = "execution_permission")
     private List<String> executionPermission = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="global_parameters")
     
-    @JacksonXmlProperty(localName = "global_parameters")
     private List<Parameter> globalParameters = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_delete")
     
-    @JacksonXmlProperty(localName = "is_delete")
 
     private Boolean isDelete;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="steps")
     
-    @JacksonXmlProperty(localName = "steps")
     private List<Step> steps = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    @JacksonXmlProperty(localName = "output")
 
     private String output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger_id")
     
-    @JacksonXmlProperty(localName = "trigger_id")
 
     private String triggerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger_status")
     
-    @JacksonXmlProperty(localName = "trigger_status")
 
     private String triggerStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="approve_id")
     
-    @JacksonXmlProperty(localName = "approve_id")
 
     private String approveId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_i18n")
     
-    @JacksonXmlProperty(localName = "template_i18n")
     private Map<String, Map<String, Object>> templateI18n = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_execute_by")
     
-    @JacksonXmlProperty(localName = "last_execute_by")
 
     private String lastExecuteBy;
 

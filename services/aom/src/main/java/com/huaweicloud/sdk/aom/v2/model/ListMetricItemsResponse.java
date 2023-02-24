@@ -15,29 +15,24 @@ import com.huaweicloud.sdk.aom.v2.model.MetaData;
 import com.huaweicloud.sdk.aom.v2.model.MetricItemResultAPI;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Response Object
  */
-@JacksonXmlRootElement(localName = "ListMetricItemsResponse")
 public class ListMetricItemsResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metaData")
     
-    @JacksonXmlProperty(localName = "metaData")
 
     private MetaData metaData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metrics")
     
-    @JacksonXmlProperty(localName = "metrics")
     private List<MetricItemResultAPI> metrics = null;
     
     public ListMetricItemsResponse withMetaData(MetaData metaData) {

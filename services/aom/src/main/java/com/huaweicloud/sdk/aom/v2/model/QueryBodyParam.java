@@ -9,85 +9,72 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.SearchKey;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * QueryBodyParam
  */
-@JacksonXmlRootElement(localName = "QueryBodyParam")
 public class QueryBodyParam  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="category")
     
-    @JacksonXmlProperty(localName = "category")
 
     private String category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endTime")
     
-    @JacksonXmlProperty(localName = "endTime")
 
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hideSyslog")
     
-    @JacksonXmlProperty(localName = "hideSyslog")
 
     private Integer hideSyslog;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="keyWord")
     
-    @JacksonXmlProperty(localName = "keyWord")
 
     private String keyWord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lineNum")
     
-    @JacksonXmlProperty(localName = "lineNum")
 
     private String lineNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pageSize/size")
     
-    @JacksonXmlProperty(localName = "pageSize/size")
 
     private String pageSizeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="searchKey")
     
-    @JacksonXmlProperty(localName = "searchKey")
 
     private SearchKey searchKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="startTime")
     
-    @JacksonXmlProperty(localName = "startTime")
 
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isDesc")
     
-    @JacksonXmlProperty(localName = "isDesc")
 
     private Boolean isDesc;
 

@@ -11,56 +11,47 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.SmnInfo;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * SMN返回的发送结果信息
  */
-@JacksonXmlRootElement(localName = "SmnResponse")
 public class SmnResponse  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sent_time")
     
-    @JacksonXmlProperty(localName = "sent_time")
 
     private Long sentTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="smn_notified_history")
     
-    @JacksonXmlProperty(localName = "smn_notified_history")
     private List<SmnInfo> smnNotifiedHistory = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="smn_request_id")
     
-    @JacksonXmlProperty(localName = "smn_request_id")
 
     private String smnRequestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="smn_response_body")
     
-    @JacksonXmlProperty(localName = "smn_response_body")
 
     private String smnResponseBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="smn_response_code")
     
-    @JacksonXmlProperty(localName = "smn_response_code")
 
     private String smnResponseCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="smn_topic")
     
-    @JacksonXmlProperty(localName = "smn_topic")
 
     private String smnTopic;
 

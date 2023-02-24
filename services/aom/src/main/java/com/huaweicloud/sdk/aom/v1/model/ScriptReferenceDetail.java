@@ -8,36 +8,30 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 脚本的引用详情。
  */
-@JacksonXmlRootElement(localName = "ScriptReferenceDetail")
 public class ScriptReferenceDetail  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="reference_name")
     
-    @JacksonXmlProperty(localName = "reference_name")
 
     private String referenceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="reference_id")
     
-    @JacksonXmlProperty(localName = "reference_id")
 
     private String referenceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="reference_type")
     
-    @JacksonXmlProperty(localName = "reference_type")
 
     private String referenceType;
 

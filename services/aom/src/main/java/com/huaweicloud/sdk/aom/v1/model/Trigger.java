@@ -8,43 +8,36 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 定时任务数据
  */
-@JacksonXmlRootElement(localName = "Trigger")
 public class Trigger  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy")
     
-    @JacksonXmlProperty(localName = "policy")
 
     private String policy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scheduled_time")
     
-    @JacksonXmlProperty(localName = "scheduled_time")
 
     private String scheduledTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_zone")
     
-    @JacksonXmlProperty(localName = "time_zone")
 
     private String timeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="topic_urn")
     
-    @JacksonXmlProperty(localName = "topic_urn")
 
     private String topicUrn;
 

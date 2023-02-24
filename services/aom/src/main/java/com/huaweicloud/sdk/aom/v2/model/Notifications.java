@@ -13,22 +13,18 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.SmnResponse;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 发送结果
  */
-@JacksonXmlRootElement(localName = "Notifications")
 public class Notifications  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_rule")
     
-    @JacksonXmlProperty(localName = "action_rule")
 
     private String actionRule;
     /**
@@ -107,14 +103,12 @@ public class Notifications  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="notifier_channel")
     
-    @JacksonXmlProperty(localName = "notifier_channel")
 
     private NotifierChannelEnum notifierChannel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="smn_channel")
     
-    @JacksonXmlProperty(localName = "smn_channel")
 
     private SmnResponse smnChannel;
 

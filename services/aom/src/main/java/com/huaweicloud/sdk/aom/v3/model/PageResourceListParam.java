@@ -13,69 +13,58 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * PageResourceListParam
  */
-@JacksonXmlRootElement(localName = "PageResourceListParam")
 public class PageResourceListParam  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="maker")
     
-    @JacksonXmlProperty(localName = "maker")
 
     private String maker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    @JacksonXmlProperty(localName = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="keywords")
     
-    @JacksonXmlProperty(localName = "keywords")
     private Map<String, String> keywords = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ci_relationships")
     
-    @JacksonXmlProperty(localName = "ci_relationships")
 
     private Boolean ciRelationships;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ci_type")
     
-    @JacksonXmlProperty(localName = "ci_type")
 
     private String ciType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ci_region")
     
-    @JacksonXmlProperty(localName = "ci_region")
 
     private String ciRegion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ci_ids")
     
-    @JacksonXmlProperty(localName = "ci_ids")
     private List<String> ciIds = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ci_id")
     
-    @JacksonXmlProperty(localName = "ci_id")
 
     private String ciId;
 

@@ -13,29 +13,24 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Response Object
  */
-@JacksonXmlRootElement(localName = "ListLabelsAomPromGetResponse")
 public class ListLabelsAomPromGetResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    @JacksonXmlProperty(localName = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data")
     
-    @JacksonXmlProperty(localName = "data")
     private List<String> data = null;
     
     public ListLabelsAomPromGetResponse withStatus(String status) {

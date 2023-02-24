@@ -12,105 +12,89 @@ import com.huaweicloud.sdk.aom.v2.model.Event2alarmRuleBodyMetadata;
 import com.huaweicloud.sdk.aom.v2.model.Event2alarmRuleBodyTriggerPolicies;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 事件类告警实体
  */
-@JacksonXmlRootElement(localName = "Event2alarmRuleBody")
 public class Event2alarmRuleBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_id")
     
-    @JacksonXmlProperty(localName = "user_id")
 
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    @JacksonXmlProperty(localName = "create_time")
 
     private Integer createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    @JacksonXmlProperty(localName = "update_time")
 
     private Integer updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_provider")
     
-    @JacksonXmlProperty(localName = "resource_provider")
 
     private String resourceProvider;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    @JacksonXmlProperty(localName = "metadata")
 
     private Event2alarmRuleBodyMetadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable")
     
-    @JacksonXmlProperty(localName = "enable")
 
     private Boolean enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger_policies")
     
-    @JacksonXmlProperty(localName = "trigger_policies")
     private List<Event2alarmRuleBodyTriggerPolicies> triggerPolicies = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_type")
     
-    @JacksonXmlProperty(localName = "alarm_type")
 
     private String alarmType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_rule")
     
-    @JacksonXmlProperty(localName = "action_rule")
 
     private String actionRule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="inhibit_rule")
     
-    @JacksonXmlProperty(localName = "inhibit_rule")
 
     private String inhibitRule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="route_group_rule")
     
-    @JacksonXmlProperty(localName = "route_group_rule")
 
     private String routeGroupRule;
 

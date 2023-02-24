@@ -11,120 +11,102 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v1.model.ScriptReferenceDetail;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 脚本版本的详细信息。
  */
-@JacksonXmlRootElement(localName = "ScriptVersion")
 public class ScriptVersion  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
-    @JacksonXmlProperty(localName = "content")
 
     private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_by")
     
-    @JacksonXmlProperty(localName = "create_by")
 
     private String createBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    @JacksonXmlProperty(localName = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    @JacksonXmlProperty(localName = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project_id")
     
-    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="reference_number")
     
-    @JacksonXmlProperty(localName = "reference_number")
 
     private Integer referenceNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="script_id")
     
-    @JacksonXmlProperty(localName = "script_id")
 
     private String scriptId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="script_language")
     
-    @JacksonXmlProperty(localName = "script_language")
 
     private String scriptLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status_desc")
     
-    @JacksonXmlProperty(localName = "status_desc")
 
     private Integer statusDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_by")
     
-    @JacksonXmlProperty(localName = "update_by")
 
     private String updateBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    @JacksonXmlProperty(localName = "update_time")
 
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    @JacksonXmlProperty(localName = "version_id")
 
     private String versionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_number")
     
-    @JacksonXmlProperty(localName = "version_number")
 
     private String versionNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="script_reference")
     
-    @JacksonXmlProperty(localName = "script_reference")
     private List<ScriptReferenceDetail> scriptReference = null;
     
     public ScriptVersion withContent(String content) {

@@ -13,22 +13,18 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-@JacksonXmlRootElement(localName = "UpdateWorkflowTriggerStatusRequest")
 public class UpdateWorkflowTriggerStatusRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="workflow_id")
     
-    @JacksonXmlProperty(localName = "workflow_id")
 
     private String workflowId;
     /**
@@ -113,7 +109,6 @@ public class UpdateWorkflowTriggerStatusRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    @JacksonXmlProperty(localName = "action")
 
     private ActionEnum action;
 

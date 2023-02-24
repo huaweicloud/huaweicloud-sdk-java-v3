@@ -8,36 +8,30 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 查询结果元数据信息，包括分页信息等。
  */
-@JacksonXmlRootElement(localName = "MetaData")
 public class MetaData  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
-    @JacksonXmlProperty(localName = "count")
 
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start")
     
-    @JacksonXmlProperty(localName = "start")
 
     private Long start;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
-    @JacksonXmlProperty(localName = "total")
 
     private Integer total;
 

@@ -8,64 +8,54 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * HIS 用户快速执行脚本实体类。
  */
-@JacksonXmlRootElement(localName = "HISFastScript")
 public class HISFastScript  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="script_type")
     
-    @JacksonXmlProperty(localName = "script_type")
 
     private String scriptType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cmd_user")
     
-    @JacksonXmlProperty(localName = "cmd_user")
 
     private String cmdUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="script_content")
     
-    @JacksonXmlProperty(localName = "script_content")
 
     private String scriptContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ecs_id_list")
     
-    @JacksonXmlProperty(localName = "ecs_id_list")
 
     private String ecsIdList;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project_id")
     
-    @JacksonXmlProperty(localName = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="script_args")
     
-    @JacksonXmlProperty(localName = "script_args")
 
     private String scriptArgs;
 

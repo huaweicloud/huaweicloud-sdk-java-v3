@@ -10,35 +10,29 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 日志路径配置规则。 当cmdLineHash为固定字符串时,指定日志路径或者日志文件。否则只采集进程当前打开的以.log和.trace结尾的文件。nameType取值cmdLineHash时,args格式为[\&quot;00001\&quot;],value格式为[\&quot;/xxx/xx.log\&quot;],表示当启动命令是00001时,日志路径为/xxx/xx.log。
  */
-@JacksonXmlRootElement(localName = "LogPathRule")
 public class LogPathRule  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="args")
     
-    @JacksonXmlProperty(localName = "args")
     private List<String> args = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nameType")
     
-    @JacksonXmlProperty(localName = "nameType")
 
     private String nameType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
-    @JacksonXmlProperty(localName = "value")
     private List<String> value = null;
     
     public LogPathRule withArgs(List<String> args) {

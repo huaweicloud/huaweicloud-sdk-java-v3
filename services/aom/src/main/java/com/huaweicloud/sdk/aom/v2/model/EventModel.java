@@ -8,64 +8,54 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 事件或者告警元数据。
  */
-@JacksonXmlRootElement(localName = "EventModel")
 public class EventModel  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="starts_at")
     
-    @JacksonXmlProperty(localName = "starts_at")
 
     private Long startsAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ends_at")
     
-    @JacksonXmlProperty(localName = "ends_at")
 
     private Long endsAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeout")
     
-    @JacksonXmlProperty(localName = "timeout")
 
     private Long timeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    @JacksonXmlProperty(localName = "metadata")
 
     private Object metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="annotations")
     
-    @JacksonXmlProperty(localName = "annotations")
 
     private Object annotations;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="attach_rule")
     
-    @JacksonXmlProperty(localName = "attach_rule")
 
     private Object attachRule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    @JacksonXmlProperty(localName = "id")
 
     private String id;
 

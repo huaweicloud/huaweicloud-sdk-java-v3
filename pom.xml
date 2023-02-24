@@ -47,6 +47,7 @@
         <module>all</module>
         <module>bundle</module>
         <module>core-bson</module>
+        <module>core-xml</module>
     </modules>
 
     <properties>

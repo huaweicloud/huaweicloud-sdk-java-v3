@@ -11,35 +11,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.Dimension;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 查询参数集
  */
-@JacksonXmlRootElement(localName = "MetricQueryMeritcParam")
 public class MetricQueryMeritcParam  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dimensions")
     
-    @JacksonXmlProperty(localName = "dimensions")
     private List<Dimension> dimensions = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metricName")
     
-    @JacksonXmlProperty(localName = "metricName")
 
     private String metricName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="namespace")
     
-    @JacksonXmlProperty(localName = "namespace")
 
     private String namespace;
 

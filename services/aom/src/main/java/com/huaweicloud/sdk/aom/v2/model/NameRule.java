@@ -12,28 +12,23 @@ import com.huaweicloud.sdk.aom.v2.model.AppNameRule;
 import com.huaweicloud.sdk.aom.v2.model.ApplicationNameRule;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 服务发现规则命名部分。
  */
-@JacksonXmlRootElement(localName = "NameRule")
 public class NameRule  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="appNameRule")
     
-    @JacksonXmlProperty(localName = "appNameRule")
     private List<AppNameRule> appNameRule = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="applicationNameRule")
     
-    @JacksonXmlProperty(localName = "applicationNameRule")
     private List<ApplicationNameRule> applicationNameRule = null;
     
     public NameRule withAppNameRule(List<AppNameRule> appNameRule) {

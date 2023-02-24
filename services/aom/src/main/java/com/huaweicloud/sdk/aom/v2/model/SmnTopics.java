@@ -12,36 +12,30 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * smn主题相关信息
  */
-@JacksonXmlRootElement(localName = "SmnTopics")
 public class SmnTopics  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="display_name")
     
-    @JacksonXmlProperty(localName = "display_name")
 
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    @JacksonXmlProperty(localName = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="push_policy")
     
-    @JacksonXmlProperty(localName = "push_policy")
 
     private Integer pushPolicy;
     /**
@@ -132,14 +126,12 @@ public class SmnTopics  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    @JacksonXmlProperty(localName = "status")
 
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="topic_urn")
     
-    @JacksonXmlProperty(localName = "topic_urn")
 
     private String topicUrn;
 

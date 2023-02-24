@@ -14,15 +14,12 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.QueryMetricDataParam;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-@JacksonXmlRootElement(localName = "ShowMetricsDataRequest")
 public class ShowMetricsDataRequest  {
 
     /**
@@ -119,14 +116,12 @@ public class ShowMetricsDataRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fillValue")
     
-    @JacksonXmlProperty(localName = "fillValue")
 
     private FillValueEnum fillValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    @JacksonXmlProperty(localName = "body")
 
     private QueryMetricDataParam body;
 

@@ -14,35 +14,29 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 静默规则的生效时间配置
  */
-@JacksonXmlRootElement(localName = "MuteConfig")
 public class MuteConfig  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ends_at")
     
-    @JacksonXmlProperty(localName = "ends_at")
 
     private Long endsAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scope")
     
-    @JacksonXmlProperty(localName = "scope")
     private List<String> scope = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="starts_at")
     
-    @JacksonXmlProperty(localName = "starts_at")
 
     private Long startsAt;
     /**
@@ -139,7 +133,6 @@ public class MuteConfig  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    @JacksonXmlProperty(localName = "type")
 
     private TypeEnum type;
 

@@ -14,22 +14,18 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.SampleDataValue;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Response Object
  */
-@JacksonXmlRootElement(localName = "ListSampleResponse")
 public class ListSampleResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="samples")
     
-    @JacksonXmlProperty(localName = "samples")
     private List<SampleDataValue> samples = null;
     
     public ListSampleResponse withSamples(List<SampleDataValue> samples) {

@@ -9,29 +9,24 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-@JacksonXmlRootElement(localName = "ListWorkflowExecutionsRequest")
 public class ListWorkflowExecutionsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="workflow_id")
     
-    @JacksonXmlProperty(localName = "workflow_id")
 
     private String workflowId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="x_enterprise_project_id")
     
-    @JacksonXmlProperty(localName = "x_enterprise_project_id")
 
     private String xEnterpriseProjectId;
 

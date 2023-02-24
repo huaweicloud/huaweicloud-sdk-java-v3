@@ -8,36 +8,30 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 审批信息
  */
-@JacksonXmlRootElement(localName = "ApproveInfo")
 public class ApproveInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="topic_selected")
     
-    @JacksonXmlProperty(localName = "topic_selected")
 
     private String topicSelected;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="need_approve")
     
-    @JacksonXmlProperty(localName = "need_approve")
 
     private Boolean needApprove;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="smn_urn_list")
     
-    @JacksonXmlProperty(localName = "smn_urn_list")
 
     private String smnUrnList;
 

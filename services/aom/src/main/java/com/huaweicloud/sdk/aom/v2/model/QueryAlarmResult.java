@@ -11,185 +11,157 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v2.model.Dimension;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 阈值规则查询参数。
  */
-@JacksonXmlRootElement(localName = "QueryAlarmResult")
 public class QueryAlarmResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_enabled")
     
-    @JacksonXmlProperty(localName = "action_enabled")
 
     private Boolean actionEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_actions")
     
-    @JacksonXmlProperty(localName = "alarm_actions")
     private List<String> alarmActions = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_advice")
     
-    @JacksonXmlProperty(localName = "alarm_advice")
 
     private String alarmAdvice;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_description")
     
-    @JacksonXmlProperty(localName = "alarm_description")
 
     private String alarmDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_level")
     
-    @JacksonXmlProperty(localName = "alarm_level")
 
     private String alarmLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_rule_id")
     
-    @JacksonXmlProperty(localName = "alarm_rule_id")
 
     private String alarmRuleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_rule_name")
     
-    @JacksonXmlProperty(localName = "alarm_rule_name")
 
     private String alarmRuleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="comparison_operator")
     
-    @JacksonXmlProperty(localName = "comparison_operator")
 
     private String comparisonOperator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dimensions")
     
-    @JacksonXmlProperty(localName = "dimensions")
     private List<Dimension> dimensions = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="evaluation_periods")
     
-    @JacksonXmlProperty(localName = "evaluation_periods")
 
     private Integer evaluationPeriods;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id_turn_on")
     
-    @JacksonXmlProperty(localName = "id_turn_on")
 
     private Boolean idTurnOn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="insufficient_data_actions")
     
-    @JacksonXmlProperty(localName = "insufficient_data_actions")
     private List<String> insufficientDataActions = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric_name")
     
-    @JacksonXmlProperty(localName = "metric_name")
 
     private String metricName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="namespace")
     
-    @JacksonXmlProperty(localName = "namespace")
 
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ok_actions")
     
-    @JacksonXmlProperty(localName = "ok_actions")
     private List<String> okActions = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period")
     
-    @JacksonXmlProperty(localName = "period")
 
     private Integer period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy_name")
     
-    @JacksonXmlProperty(localName = "policy_name")
 
     private String policyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
     
-    @JacksonXmlProperty(localName = "resources")
     private List<String> resources = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state_reason")
     
-    @JacksonXmlProperty(localName = "state_reason")
 
     private String stateReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state_updated_timestamp")
     
-    @JacksonXmlProperty(localName = "state_updated_timestamp")
 
     private String stateUpdatedTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state_value")
     
-    @JacksonXmlProperty(localName = "state_value")
 
     private String stateValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="statistic")
     
-    @JacksonXmlProperty(localName = "statistic")
 
     private String statistic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="threshold")
     
-    @JacksonXmlProperty(localName = "threshold")
 
     private String threshold;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    @JacksonXmlProperty(localName = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="unit")
     
-    @JacksonXmlProperty(localName = "unit")
 
     private String unit;
 

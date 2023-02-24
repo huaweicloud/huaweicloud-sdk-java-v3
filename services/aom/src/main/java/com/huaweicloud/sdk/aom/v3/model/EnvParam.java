@@ -8,64 +8,54 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * EnvParam
  */
-@JacksonXmlRootElement(localName = "EnvParam")
 public class EnvParam  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="component_id")
     
-    @JacksonXmlProperty(localName = "component_id")
 
     private String componentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    @JacksonXmlProperty(localName = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="env_name")
     
-    @JacksonXmlProperty(localName = "env_name")
 
     private String envName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="env_type")
     
-    @JacksonXmlProperty(localName = "env_type")
 
     private String envType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os_type")
     
-    @JacksonXmlProperty(localName = "os_type")
 
     private String osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="region")
     
-    @JacksonXmlProperty(localName = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_type")
     
-    @JacksonXmlProperty(localName = "register_type")
 
     private String registerType;
 

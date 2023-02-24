@@ -15,28 +15,23 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 参数项。
  */
-@JacksonXmlRootElement(localName = "QueryMetricItemOptionParam")
 public class QueryMetricItemOptionParam  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dimensions")
     
-    @JacksonXmlProperty(localName = "dimensions")
     private List<Dimension> dimensions = null;
     
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metricName")
     
-    @JacksonXmlProperty(localName = "metricName")
 
     private String metricName;
     /**
@@ -139,7 +134,6 @@ public class QueryMetricItemOptionParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="namespace")
     
-    @JacksonXmlProperty(localName = "namespace")
 
     private NamespaceEnum namespace;
 
