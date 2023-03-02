@@ -3,11 +3,17 @@ package com.huaweicloud.sdk.mrs.v2.model;
 
 
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -46,7 +52,120 @@ public class ResourcesPlan  {
     
 
     private Integer maxCapacity;
+    /**
+     * 枚举值： - MONDAY: 星期一 - TUESDAY: 星期二 - WEDNESDAY: 星期三 - THURSDAY: 星期四 - FRIDAY: 星期五 - SATURDAY: 星期六 - SUNDAY: 星期日
+     */
+    public static final class EffectiveDaysEnum {
 
+        
+        /**
+         * Enum MONDAY for value: "MONDAY"
+         */
+        public static final EffectiveDaysEnum MONDAY = new EffectiveDaysEnum("MONDAY");
+        
+        /**
+         * Enum TUESDAY for value: "TUESDAY"
+         */
+        public static final EffectiveDaysEnum TUESDAY = new EffectiveDaysEnum("TUESDAY");
+        
+        /**
+         * Enum WEDNESDAY for value: "WEDNESDAY"
+         */
+        public static final EffectiveDaysEnum WEDNESDAY = new EffectiveDaysEnum("WEDNESDAY");
+        
+        /**
+         * Enum THURSDAY for value: "THURSDAY"
+         */
+        public static final EffectiveDaysEnum THURSDAY = new EffectiveDaysEnum("THURSDAY");
+        
+        /**
+         * Enum FRIDAY for value: "FRIDAY"
+         */
+        public static final EffectiveDaysEnum FRIDAY = new EffectiveDaysEnum("FRIDAY");
+        
+        /**
+         * Enum SATURDAY for value: "SATURDAY"
+         */
+        public static final EffectiveDaysEnum SATURDAY = new EffectiveDaysEnum("SATURDAY");
+        
+        /**
+         * Enum SUNDAY for value: "SUNDAY"
+         */
+        public static final EffectiveDaysEnum SUNDAY = new EffectiveDaysEnum("SUNDAY");
+        
+
+        private static final Map<String, EffectiveDaysEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EffectiveDaysEnum> createStaticFields() {
+            Map<String, EffectiveDaysEnum> map = new HashMap<>();
+            map.put("MONDAY", MONDAY);
+            map.put("TUESDAY", TUESDAY);
+            map.put("WEDNESDAY", WEDNESDAY);
+            map.put("THURSDAY", THURSDAY);
+            map.put("FRIDAY", FRIDAY);
+            map.put("SATURDAY", SATURDAY);
+            map.put("SUNDAY", SUNDAY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EffectiveDaysEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EffectiveDaysEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            EffectiveDaysEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new EffectiveDaysEnum(value);
+            }
+            return result;
+        }
+
+        public static EffectiveDaysEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            EffectiveDaysEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EffectiveDaysEnum) {
+                return this.value.equals(((EffectiveDaysEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="effective_days")
+    
+    private List<EffectiveDaysEnum> effectiveDays = null;
+    
     public ResourcesPlan withPeriodType(String periodType) {
         this.periodType = periodType;
         return this;
@@ -161,6 +280,42 @@ public class ResourcesPlan  {
 
     
 
+    public ResourcesPlan withEffectiveDays(List<EffectiveDaysEnum> effectiveDays) {
+        this.effectiveDays = effectiveDays;
+        return this;
+    }
+
+    
+    public ResourcesPlan addEffectiveDaysItem(EffectiveDaysEnum effectiveDaysItem) {
+        if(this.effectiveDays == null) {
+            this.effectiveDays = new ArrayList<>();
+        }
+        this.effectiveDays.add(effectiveDaysItem);
+        return this;
+    }
+
+    public ResourcesPlan withEffectiveDays(Consumer<List<EffectiveDaysEnum>> effectiveDaysSetter) {
+        if(this.effectiveDays == null) {
+            this.effectiveDays = new ArrayList<>();
+        }
+        effectiveDaysSetter.accept(this.effectiveDays);
+        return this;
+    }
+
+    /**
+     * 资源计划的生效日期，为空时代表每日，另外也可为以下返回值：  MONDAY（周一）、TUESDAY（周二）、WEDNESDAY（周三）、THURSDAY（周四）、FRIDAY（周五）、SATURDAY（周六）、SUNDAY（周日）
+     * @return effectiveDays
+     */
+    public List<EffectiveDaysEnum> getEffectiveDays() {
+        return effectiveDays;
+    }
+
+    public void setEffectiveDays(List<EffectiveDaysEnum> effectiveDays) {
+        this.effectiveDays = effectiveDays;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -174,11 +329,12 @@ public class ResourcesPlan  {
             Objects.equals(this.startTime, resourcesPlan.startTime) &&
             Objects.equals(this.endTime, resourcesPlan.endTime) &&
             Objects.equals(this.minCapacity, resourcesPlan.minCapacity) &&
-            Objects.equals(this.maxCapacity, resourcesPlan.maxCapacity);
+            Objects.equals(this.maxCapacity, resourcesPlan.maxCapacity) &&
+            Objects.equals(this.effectiveDays, resourcesPlan.effectiveDays);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(periodType, startTime, endTime, minCapacity, maxCapacity);
+        return Objects.hash(periodType, startTime, endTime, minCapacity, maxCapacity, effectiveDays);
     }
     @Override
     public String toString() {
@@ -189,6 +345,7 @@ public class ResourcesPlan  {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    minCapacity: ").append(toIndentedString(minCapacity)).append("\n");
         sb.append("    maxCapacity: ").append(toIndentedString(maxCapacity)).append("\n");
+        sb.append("    effectiveDays: ").append(toIndentedString(effectiveDays)).append("\n");
         sb.append("}");
         return sb.toString();
     }

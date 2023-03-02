@@ -39,7 +39,7 @@ public class SubscriptionTargetInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transform")
 
-    private SubscriptionTargetInfoTransform transform;
+    private TransForm transform;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
@@ -136,14 +136,14 @@ public class SubscriptionTargetInfo {
         this.detail = detail;
     }
 
-    public SubscriptionTargetInfo withTransform(SubscriptionTargetInfoTransform transform) {
+    public SubscriptionTargetInfo withTransform(TransForm transform) {
         this.transform = transform;
         return this;
     }
 
-    public SubscriptionTargetInfo withTransform(Consumer<SubscriptionTargetInfoTransform> transformSetter) {
+    public SubscriptionTargetInfo withTransform(Consumer<TransForm> transformSetter) {
         if (this.transform == null) {
-            this.transform = new SubscriptionTargetInfoTransform();
+            this.transform = new TransForm();
             transformSetter.accept(this.transform);
         }
 
@@ -154,11 +154,11 @@ public class SubscriptionTargetInfo {
      * Get transform
      * @return transform
      */
-    public SubscriptionTargetInfoTransform getTransform() {
+    public TransForm getTransform() {
         return transform;
     }
 
-    public void setTransform(SubscriptionTargetInfoTransform transform) {
+    public void setTransform(TransForm transform) {
         this.transform = transform;
     }
 

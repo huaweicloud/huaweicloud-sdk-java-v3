@@ -26,7 +26,7 @@ public class ApiVersionsLinks {
     }
 
     /**
-     * Get href
+     * href属性
      * @return href
      */
     public String getHref() {
@@ -43,7 +43,7 @@ public class ApiVersionsLinks {
     }
 
     /**
-     * Get rel
+     * rel属性
      * @return rel
      */
     public String getRel() {

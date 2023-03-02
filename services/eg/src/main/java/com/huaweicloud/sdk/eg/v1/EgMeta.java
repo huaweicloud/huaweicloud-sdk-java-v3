@@ -10,6 +10,36 @@ import com.huaweicloud.sdk.eg.v1.model.*;
 @SuppressWarnings("unchecked")
 public class EgMeta {
 
+    public static final HttpRequestDef<CheckPutEventsRequest, CheckPutEventsResponse> checkPutEvents =
+        genForcheckPutEvents();
+
+    private static HttpRequestDef<CheckPutEventsRequest, CheckPutEventsResponse> genForcheckPutEvents() {
+        // basic
+        HttpRequestDef.Builder<CheckPutEventsRequest, CheckPutEventsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckPutEventsRequest.class, CheckPutEventsResponse.class)
+                .withName("CheckPutEvents")
+                .withUri("/v1/{project_id}/events/check")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CheckPutEventsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CheckPutEventsReq.class),
+            f -> f.withMarshaller(CheckPutEventsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CheckPutEventsResponse::getXRequestId, CheckPutEventsResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateAgenciesRequest, CreateAgenciesResponse> createAgencies =
         genForcreateAgencies();
 
@@ -982,6 +1012,73 @@ public class EgMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPubMetricsRequest, ListPubMetricsResponse> listPubMetrics =
+        genForlistPubMetrics();
+
+    private static HttpRequestDef<ListPubMetricsRequest, ListPubMetricsResponse> genForlistPubMetrics() {
+        // basic
+        HttpRequestDef.Builder<ListPubMetricsRequest, ListPubMetricsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPubMetricsRequest.class, ListPubMetricsResponse.class)
+                .withName("ListPubMetrics")
+                .withUri("/v1/{project_id}/metrics/pub")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListPubMetricsRequest.FilterEnum>withRequestField("filter",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPubMetricsRequest.FilterEnum.class),
+            f -> f.withMarshaller(ListPubMetricsRequest::getFilter, (req, v) -> {
+                req.setFilter(v);
+            }));
+        builder.<Integer>withRequestField("period",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPubMetricsRequest::getPeriod, (req, v) -> {
+                req.setPeriod(v);
+            }));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListPubMetricsRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListPubMetricsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<String>withRequestField("channel_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPubMetricsRequest::getChannelId, (req, v) -> {
+                req.setChannelId(v);
+            }));
+        builder.<ListPubMetricsRequest.ProviderTypeEnum>withRequestField("provider_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPubMetricsRequest.ProviderTypeEnum.class),
+            f -> f.withMarshaller(ListPubMetricsRequest::getProviderType, (req, v) -> {
+                req.setProviderType(v);
+            }));
+        builder.<String>withRequestField("source_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPubMetricsRequest::getSourceName, (req, v) -> {
+                req.setSourceName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
 
     private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
@@ -999,6 +1096,73 @@ public class EgMeta {
             TypeCasts.uncheckedConversion(ListQuotasRequest.TypeEnum.class),
             f -> f.withMarshaller(ListQuotasRequest::getType, (req, v) -> {
                 req.setType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSubMetricsRequest, ListSubMetricsResponse> listSubMetrics =
+        genForlistSubMetrics();
+
+    private static HttpRequestDef<ListSubMetricsRequest, ListSubMetricsResponse> genForlistSubMetrics() {
+        // basic
+        HttpRequestDef.Builder<ListSubMetricsRequest, ListSubMetricsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSubMetricsRequest.class, ListSubMetricsResponse.class)
+                .withName("ListSubMetrics")
+                .withUri("/v1/{project_id}/metrics/sub")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListSubMetricsRequest.FilterEnum>withRequestField("filter",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSubMetricsRequest.FilterEnum.class),
+            f -> f.withMarshaller(ListSubMetricsRequest::getFilter, (req, v) -> {
+                req.setFilter(v);
+            }));
+        builder.<Integer>withRequestField("period",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSubMetricsRequest::getPeriod, (req, v) -> {
+                req.setPeriod(v);
+            }));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSubMetricsRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSubMetricsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<String>withRequestField("subscription_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubMetricsRequest::getSubscriptionId, (req, v) -> {
+                req.setSubscriptionId(v);
+            }));
+        builder.<ListSubMetricsRequest.ProviderTypeEnum>withRequestField("provider_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSubMetricsRequest.ProviderTypeEnum.class),
+            f -> f.withMarshaller(ListSubMetricsRequest::getProviderType, (req, v) -> {
+                req.setProviderType(v);
+            }));
+        builder.<String>withRequestField("target_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubMetricsRequest::getTargetId, (req, v) -> {
+                req.setTargetId(v);
             }));
 
         // response
@@ -1103,6 +1267,52 @@ public class EgMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTriggersRequest::getSort, (req, v) -> {
+                req.setSort(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWorkflowTriggersRequest, ListWorkflowTriggersResponse> listWorkflowTriggers =
+        genForlistWorkflowTriggers();
+
+    private static HttpRequestDef<ListWorkflowTriggersRequest, ListWorkflowTriggersResponse> genForlistWorkflowTriggers() {
+        // basic
+        HttpRequestDef.Builder<ListWorkflowTriggersRequest, ListWorkflowTriggersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListWorkflowTriggersRequest.class, ListWorkflowTriggersResponse.class)
+            .withName("ListWorkflowTriggers")
+            .withUri("/v1/{project_id}/subscription-triggers/workflow/{workflow_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowTriggersRequest::getWorkflowId, (req, v) -> {
+                req.setWorkflowId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkflowTriggersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkflowTriggersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowTriggersRequest::getSort, (req, v) -> {
                 req.setSort(v);
             }));
 
@@ -1696,6 +1906,45 @@ public class EgMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListObsBucketsRequest, ListObsBucketsResponse> listObsBuckets =
+        genForlistObsBuckets();
+
+    private static HttpRequestDef<ListObsBucketsRequest, ListObsBucketsResponse> genForlistObsBuckets() {
+        // basic
+        HttpRequestDef.Builder<ListObsBucketsRequest, ListObsBucketsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListObsBucketsRequest.class, ListObsBucketsResponse.class)
+                .withName("ListObsBuckets")
+                .withUri("/v1/{project_id}/subscriptions/obsbuckets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListObsBucketsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListObsBucketsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListObsBucketsRequest::getSort, (req, v) -> {
+                req.setSort(v);
+            }));
 
         // response
 

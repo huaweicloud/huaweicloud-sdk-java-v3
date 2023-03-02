@@ -462,6 +462,34 @@ public class DrisClient {
     }
 
     /**
+     * 查询历史交通统计信息列表
+     *
+     * 查询历史交通统计信息列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEdgeFlowsRequest 请求对象
+     * @return ListEdgeFlowsResponse
+     */
+    public ListEdgeFlowsResponse listEdgeFlows(ListEdgeFlowsRequest request) {
+        return hcClient.syncInvokeHttp(request, DrisMeta.listEdgeFlows);
+    }
+
+    /**
+     * 查询历史交通统计信息列表
+     *
+     * 查询历史交通统计信息列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEdgeFlowsRequest 请求对象
+     * @return SyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse>
+     */
+    public SyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse> listEdgeFlowsInvoker(ListEdgeFlowsRequest request) {
+        return new SyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse>(request, DrisMeta.listEdgeFlows, hcClient);
+    }
+
+    /**
      * 查询历史交通事件列表
      *
      * 查询历史交通事件列表
@@ -1590,34 +1618,6 @@ public class DrisClient {
         UpdateEdgeApplicationVersionStateRequest request) {
         return new SyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse>(
             request, DrisMeta.updateEdgeApplicationVersionState, hcClient);
-    }
-
-    /**
-     * 查询历史交通统计信息列表
-     *
-     * 查询历史交通统计信息列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListEdgeFlowsRequest 请求对象
-     * @return ListEdgeFlowsResponse
-     */
-    public ListEdgeFlowsResponse listEdgeFlows(ListEdgeFlowsRequest request) {
-        return hcClient.syncInvokeHttp(request, DrisMeta.listEdgeFlows);
-    }
-
-    /**
-     * 查询历史交通统计信息列表
-     *
-     * 查询历史交通统计信息列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListEdgeFlowsRequest 请求对象
-     * @return SyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse>
-     */
-    public SyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse> listEdgeFlowsInvoker(ListEdgeFlowsRequest request) {
-        return new SyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse>(request, DrisMeta.listEdgeFlows, hcClient);
     }
 
     /**

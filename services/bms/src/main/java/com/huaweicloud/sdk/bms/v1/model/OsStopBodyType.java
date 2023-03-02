@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class OsStopBodyType {
 
     /**
-     * 关机类型：SOFT：普通关机（默认）。HARD：强制关机。
+     * 关机类型：SOFT：普通关机（不生效）。HARD：强制关机（默认）。
      */
     public static final class TypeEnum {
 
@@ -111,7 +111,7 @@ public class OsStopBodyType {
     }
 
     /**
-     * 关机类型：SOFT：普通关机（默认）。HARD：强制关机。
+     * 关机类型：SOFT：普通关机（不生效）。HARD：强制关机（默认）。
      * @return type
      */
     public TypeEnum getType() {

@@ -30,12 +30,18 @@ public class ListAgenciesRequest {
          */
         public static final TypeEnum CUSTOM_SOURCE_RABBITMQ = new TypeEnum("CUSTOM_SOURCE_RABBITMQ");
 
+        /**
+         * Enum EG_RESTORE_AGENCY for value: "EG_RESTORE_AGENCY"
+         */
+        public static final TypeEnum EG_RESTORE_AGENCY = new TypeEnum("EG_RESTORE_AGENCY");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("TARGET_CONNECTION", TARGET_CONNECTION);
             map.put("CUSTOM_SOURCE_RABBITMQ", CUSTOM_SOURCE_RABBITMQ);
+            map.put("EG_RESTORE_AGENCY", EG_RESTORE_AGENCY);
             return Collections.unmodifiableMap(map);
         }
 

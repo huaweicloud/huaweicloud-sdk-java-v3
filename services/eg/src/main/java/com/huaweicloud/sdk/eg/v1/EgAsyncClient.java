@@ -20,6 +20,36 @@ public class EgAsyncClient {
     }
 
     /**
+     * 预校验指定事件源发布事件成功
+     *
+     * 发布事件到事件源成功需要有订阅等条件，预先校验
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckPutEventsRequest 请求对象
+     * @return CompletableFuture<CheckPutEventsResponse>
+     */
+    public CompletableFuture<CheckPutEventsResponse> checkPutEventsAsync(CheckPutEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.checkPutEvents);
+    }
+
+    /**
+     * 预校验指定事件源发布事件成功
+     *
+     * 发布事件到事件源成功需要有订阅等条件，预先校验
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckPutEventsRequest 请求对象
+     * @return AsyncInvoker<CheckPutEventsRequest, CheckPutEventsResponse>
+     */
+    public AsyncInvoker<CheckPutEventsRequest, CheckPutEventsResponse> checkPutEventsAsyncInvoker(
+        CheckPutEventsRequest request) {
+        return new AsyncInvoker<CheckPutEventsRequest, CheckPutEventsResponse>(request, EgMeta.checkPutEvents,
+            hcClient);
+    }
+
+    /**
      * 创建服务委托
      *
      * 按照业务场景，一键创建服务委托授权
@@ -111,7 +141,7 @@ public class EgAsyncClient {
     /**
      * 创建访问端点
      *
-     * create endpoint
+     * 创建访问端点
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -125,7 +155,7 @@ public class EgAsyncClient {
     /**
      * 创建访问端点
      *
-     * create endpoint
+     * 创建访问端点
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -352,6 +382,7 @@ public class EgAsyncClient {
     /**
      * 删除访问端点
      *
+     * 删除访问端点
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -365,6 +396,7 @@ public class EgAsyncClient {
     /**
      * 删除访问端点
      *
+     * 删除访问端点
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -563,6 +595,7 @@ public class EgAsyncClient {
     /**
      * 查询服务委托
      *
+     * 查询服务委托
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -576,6 +609,7 @@ public class EgAsyncClient {
     /**
      * 查询服务委托
      *
+     * 查询服务委托
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -649,7 +683,7 @@ public class EgAsyncClient {
     /**
      * 查询访问端点
      *
-     * list all endpoints
+     * 查询访问端点
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -663,7 +697,7 @@ public class EgAsyncClient {
     /**
      * 查询访问端点
      *
-     * list all endpoints
+     * 查询访问端点
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -797,6 +831,36 @@ public class EgAsyncClient {
     }
 
     /**
+     * 查询事件通道监控指标数据
+     *
+     * 查询事件通道监控指标数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPubMetricsRequest 请求对象
+     * @return CompletableFuture<ListPubMetricsResponse>
+     */
+    public CompletableFuture<ListPubMetricsResponse> listPubMetricsAsync(ListPubMetricsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.listPubMetrics);
+    }
+
+    /**
+     * 查询事件通道监控指标数据
+     *
+     * 查询事件通道监控指标数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPubMetricsRequest 请求对象
+     * @return AsyncInvoker<ListPubMetricsRequest, ListPubMetricsResponse>
+     */
+    public AsyncInvoker<ListPubMetricsRequest, ListPubMetricsResponse> listPubMetricsAsyncInvoker(
+        ListPubMetricsRequest request) {
+        return new AsyncInvoker<ListPubMetricsRequest, ListPubMetricsResponse>(request, EgMeta.listPubMetrics,
+            hcClient);
+    }
+
+    /**
      * 查询配额
      *
      * 查询当前租户的配额，未特殊配置过的会返回默认配额
@@ -822,6 +886,36 @@ public class EgAsyncClient {
      */
     public AsyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasAsyncInvoker(ListQuotasRequest request) {
         return new AsyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, EgMeta.listQuotas, hcClient);
+    }
+
+    /**
+     * 查询事件订阅监控指标数据
+     *
+     * 查询事件订阅监控指标数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSubMetricsRequest 请求对象
+     * @return CompletableFuture<ListSubMetricsResponse>
+     */
+    public CompletableFuture<ListSubMetricsResponse> listSubMetricsAsync(ListSubMetricsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.listSubMetrics);
+    }
+
+    /**
+     * 查询事件订阅监控指标数据
+     *
+     * 查询事件订阅监控指标数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSubMetricsRequest 请求对象
+     * @return AsyncInvoker<ListSubMetricsRequest, ListSubMetricsResponse>
+     */
+    public AsyncInvoker<ListSubMetricsRequest, ListSubMetricsResponse> listSubMetricsAsyncInvoker(
+        ListSubMetricsRequest request) {
+        return new AsyncInvoker<ListSubMetricsRequest, ListSubMetricsResponse>(request, EgMeta.listSubMetrics,
+            hcClient);
     }
 
     /**
@@ -855,7 +949,7 @@ public class EgAsyncClient {
     }
 
     /**
-     * 查询事件订阅列表
+     * 查询单个函数的EG触发器
      *
      * 查询触发器，支持指定函数urn。一个以函数urn为目标的订阅为一个触发器。
      * 
@@ -869,7 +963,7 @@ public class EgAsyncClient {
     }
 
     /**
-     * 查询事件订阅列表
+     * 查询单个函数的EG触发器
      *
      * 查询触发器，支持指定函数urn。一个以函数urn为目标的订阅为一个触发器。
      * 
@@ -881,6 +975,37 @@ public class EgAsyncClient {
     public AsyncInvoker<ListTriggersRequest, ListTriggersResponse> listTriggersAsyncInvoker(
         ListTriggersRequest request) {
         return new AsyncInvoker<ListTriggersRequest, ListTriggersResponse>(request, EgMeta.listTriggers, hcClient);
+    }
+
+    /**
+     * 查询单个函数流的EG触发器
+     *
+     * 查询触发器，支持指定函数流id。一个以函数流id为目标的订阅为一个触发器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListWorkflowTriggersRequest 请求对象
+     * @return CompletableFuture<ListWorkflowTriggersResponse>
+     */
+    public CompletableFuture<ListWorkflowTriggersResponse> listWorkflowTriggersAsync(
+        ListWorkflowTriggersRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.listWorkflowTriggers);
+    }
+
+    /**
+     * 查询单个函数流的EG触发器
+     *
+     * 查询触发器，支持指定函数流id。一个以函数流id为目标的订阅为一个触发器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListWorkflowTriggersRequest 请求对象
+     * @return AsyncInvoker<ListWorkflowTriggersRequest, ListWorkflowTriggersResponse>
+     */
+    public AsyncInvoker<ListWorkflowTriggersRequest, ListWorkflowTriggersResponse> listWorkflowTriggersAsyncInvoker(
+        ListWorkflowTriggersRequest request) {
+        return new AsyncInvoker<ListWorkflowTriggersRequest, ListWorkflowTriggersResponse>(request,
+            EgMeta.listWorkflowTriggers, hcClient);
     }
 
     /**
@@ -944,6 +1069,7 @@ public class EgAsyncClient {
     /**
      * 查询事件通道详情
      *
+     * 查询指定事件通道详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -957,6 +1083,7 @@ public class EgAsyncClient {
     /**
      * 查询事件通道详情
      *
+     * 查询指定事件通道详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -972,6 +1099,7 @@ public class EgAsyncClient {
     /**
      * 查询目标连接详情
      *
+     * 查询目标连接详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -986,6 +1114,7 @@ public class EgAsyncClient {
     /**
      * 查询目标连接详情
      *
+     * 查询目标连接详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1215,7 +1344,7 @@ public class EgAsyncClient {
     /**
      * 更新访问端点
      *
-     * update endpoint
+     * 更新访问端点
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1229,7 +1358,7 @@ public class EgAsyncClient {
     /**
      * 更新访问端点
      *
-     * update endpoint
+     * 更新访问端点
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1421,6 +1550,36 @@ public class EgAsyncClient {
     public AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsAsyncInvoker(
         ListApiVersionsRequest request) {
         return new AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, EgMeta.listApiVersions,
+            hcClient);
+    }
+
+    /**
+     * 获取obs桶列表
+     *
+     * 获取obs桶列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListObsBucketsRequest 请求对象
+     * @return CompletableFuture<ListObsBucketsResponse>
+     */
+    public CompletableFuture<ListObsBucketsResponse> listObsBucketsAsync(ListObsBucketsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.listObsBuckets);
+    }
+
+    /**
+     * 获取obs桶列表
+     *
+     * 获取obs桶列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListObsBucketsRequest 请求对象
+     * @return AsyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse>
+     */
+    public AsyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse> listObsBucketsAsyncInvoker(
+        ListObsBucketsRequest request) {
+        return new AsyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse>(request, EgMeta.listObsBuckets,
             hcClient);
     }
 

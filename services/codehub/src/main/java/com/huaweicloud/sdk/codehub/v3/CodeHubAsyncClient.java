@@ -320,7 +320,7 @@ public class CodeHubAsyncClient {
     /**
      * 添加仓库成员
      *
-     * 调用方codehubportal,添加仓库成员。
+     * 添加仓库成员。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -334,7 +334,7 @@ public class CodeHubAsyncClient {
     /**
      * 添加仓库成员
      *
-     * 调用方codehubportal,添加仓库成员。
+     * 添加仓库成员。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

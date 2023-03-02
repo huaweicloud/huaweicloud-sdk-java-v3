@@ -20,6 +20,285 @@ public class ImageAsyncClient {
     }
 
     /**
+     * 创建任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateImageHighresolutionMattingTaskRequest 请求对象
+     * @return CompletableFuture<CreateImageHighresolutionMattingTaskResponse>
+     */
+    public CompletableFuture<CreateImageHighresolutionMattingTaskResponse> createImageHighresolutionMattingTaskAsync(
+        CreateImageHighresolutionMattingTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.createImageHighresolutionMattingTask);
+    }
+
+    /**
+     * 创建任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateImageHighresolutionMattingTaskRequest 请求对象
+     * @return AsyncInvoker<CreateImageHighresolutionMattingTaskRequest, CreateImageHighresolutionMattingTaskResponse>
+     */
+    public AsyncInvoker<CreateImageHighresolutionMattingTaskRequest, CreateImageHighresolutionMattingTaskResponse> createImageHighresolutionMattingTaskAsyncInvoker(
+        CreateImageHighresolutionMattingTaskRequest request) {
+        return new AsyncInvoker<CreateImageHighresolutionMattingTaskRequest, CreateImageHighresolutionMattingTaskResponse>(
+            request, ImageMeta.createImageHighresolutionMattingTask, hcClient);
+    }
+
+    /**
+     * 创建任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateImageToVideoTaskRequest 请求对象
+     * @return CompletableFuture<CreateImageToVideoTaskResponse>
+     */
+    public CompletableFuture<CreateImageToVideoTaskResponse> createImageToVideoTaskAsync(
+        CreateImageToVideoTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.createImageToVideoTask);
+    }
+
+    /**
+     * 创建任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateImageToVideoTaskRequest 请求对象
+     * @return AsyncInvoker<CreateImageToVideoTaskRequest, CreateImageToVideoTaskResponse>
+     */
+    public AsyncInvoker<CreateImageToVideoTaskRequest, CreateImageToVideoTaskResponse> createImageToVideoTaskAsyncInvoker(
+        CreateImageToVideoTaskRequest request) {
+        return new AsyncInvoker<CreateImageToVideoTaskRequest, CreateImageToVideoTaskResponse>(request,
+            ImageMeta.createImageToVideoTask, hcClient);
+    }
+
+    /**
+     * 创建任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateImageTranslateTaskRequest 请求对象
+     * @return CompletableFuture<CreateImageTranslateTaskResponse>
+     */
+    public CompletableFuture<CreateImageTranslateTaskResponse> createImageTranslateTaskAsync(
+        CreateImageTranslateTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.createImageTranslateTask);
+    }
+
+    /**
+     * 创建任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateImageTranslateTaskRequest 请求对象
+     * @return AsyncInvoker<CreateImageTranslateTaskRequest, CreateImageTranslateTaskResponse>
+     */
+    public AsyncInvoker<CreateImageTranslateTaskRequest, CreateImageTranslateTaskResponse> createImageTranslateTaskAsyncInvoker(
+        CreateImageTranslateTaskRequest request) {
+        return new AsyncInvoker<CreateImageTranslateTaskRequest, CreateImageTranslateTaskResponse>(request,
+            ImageMeta.createImageTranslateTask, hcClient);
+    }
+
+    /**
+     * 创建任务
+     *
+     * 创建视频封面任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoCoverAnalysisTaskRequest 请求对象
+     * @return CompletableFuture<CreateVideoCoverAnalysisTaskResponse>
+     */
+    public CompletableFuture<CreateVideoCoverAnalysisTaskResponse> createVideoCoverAnalysisTaskAsync(
+        CreateVideoCoverAnalysisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.createVideoCoverAnalysisTask);
+    }
+
+    /**
+     * 创建任务
+     *
+     * 创建视频封面任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoCoverAnalysisTaskRequest 请求对象
+     * @return AsyncInvoker<CreateVideoCoverAnalysisTaskRequest, CreateVideoCoverAnalysisTaskResponse>
+     */
+    public AsyncInvoker<CreateVideoCoverAnalysisTaskRequest, CreateVideoCoverAnalysisTaskResponse> createVideoCoverAnalysisTaskAsyncInvoker(
+        CreateVideoCoverAnalysisTaskRequest request) {
+        return new AsyncInvoker<CreateVideoCoverAnalysisTaskRequest, CreateVideoCoverAnalysisTaskResponse>(request,
+            ImageMeta.createVideoCoverAnalysisTask, hcClient);
+    }
+
+    /**
+     * 创建任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoCuttingTaskRequest 请求对象
+     * @return CompletableFuture<CreateVideoCuttingTaskResponse>
+     */
+    public CompletableFuture<CreateVideoCuttingTaskResponse> createVideoCuttingTaskAsync(
+        CreateVideoCuttingTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.createVideoCuttingTask);
+    }
+
+    /**
+     * 创建任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoCuttingTaskRequest 请求对象
+     * @return AsyncInvoker<CreateVideoCuttingTaskRequest, CreateVideoCuttingTaskResponse>
+     */
+    public AsyncInvoker<CreateVideoCuttingTaskRequest, CreateVideoCuttingTaskResponse> createVideoCuttingTaskAsyncInvoker(
+        CreateVideoCuttingTaskRequest request) {
+        return new AsyncInvoker<CreateVideoCuttingTaskRequest, CreateVideoCuttingTaskResponse>(request,
+            ImageMeta.createVideoCuttingTask, hcClient);
+    }
+
+    /**
+     * 创建任务
+     *
+     * 创建视频拆条任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoShotSplitTaskRequest 请求对象
+     * @return CompletableFuture<CreateVideoShotSplitTaskResponse>
+     */
+    public CompletableFuture<CreateVideoShotSplitTaskResponse> createVideoShotSplitTaskAsync(
+        CreateVideoShotSplitTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.createVideoShotSplitTask);
+    }
+
+    /**
+     * 创建任务
+     *
+     * 创建视频拆条任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoShotSplitTaskRequest 请求对象
+     * @return AsyncInvoker<CreateVideoShotSplitTaskRequest, CreateVideoShotSplitTaskResponse>
+     */
+    public AsyncInvoker<CreateVideoShotSplitTaskRequest, CreateVideoShotSplitTaskResponse> createVideoShotSplitTaskAsyncInvoker(
+        CreateVideoShotSplitTaskRequest request) {
+        return new AsyncInvoker<CreateVideoShotSplitTaskRequest, CreateVideoShotSplitTaskResponse>(request,
+            ImageMeta.createVideoShotSplitTask, hcClient);
+    }
+
+    /**
+     * 创建任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoSummarizationAnalysisTaskRequest 请求对象
+     * @return CompletableFuture<CreateVideoSummarizationAnalysisTaskResponse>
+     */
+    public CompletableFuture<CreateVideoSummarizationAnalysisTaskResponse> createVideoSummarizationAnalysisTaskAsync(
+        CreateVideoSummarizationAnalysisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.createVideoSummarizationAnalysisTask);
+    }
+
+    /**
+     * 创建任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoSummarizationAnalysisTaskRequest 请求对象
+     * @return AsyncInvoker<CreateVideoSummarizationAnalysisTaskRequest, CreateVideoSummarizationAnalysisTaskResponse>
+     */
+    public AsyncInvoker<CreateVideoSummarizationAnalysisTaskRequest, CreateVideoSummarizationAnalysisTaskResponse> createVideoSummarizationAnalysisTaskAsyncInvoker(
+        CreateVideoSummarizationAnalysisTaskRequest request) {
+        return new AsyncInvoker<CreateVideoSummarizationAnalysisTaskRequest, CreateVideoSummarizationAnalysisTaskResponse>(
+            request, ImageMeta.createVideoSummarizationAnalysisTask, hcClient);
+    }
+
+    /**
+     * 创建任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoSynthesisTaskRequest 请求对象
+     * @return CompletableFuture<CreateVideoSynthesisTaskResponse>
+     */
+    public CompletableFuture<CreateVideoSynthesisTaskResponse> createVideoSynthesisTaskAsync(
+        CreateVideoSynthesisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.createVideoSynthesisTask);
+    }
+
+    /**
+     * 创建任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoSynthesisTaskRequest 请求对象
+     * @return AsyncInvoker<CreateVideoSynthesisTaskRequest, CreateVideoSynthesisTaskResponse>
+     */
+    public AsyncInvoker<CreateVideoSynthesisTaskRequest, CreateVideoSynthesisTaskResponse> createVideoSynthesisTaskAsyncInvoker(
+        CreateVideoSynthesisTaskRequest request) {
+        return new AsyncInvoker<CreateVideoSynthesisTaskRequest, CreateVideoSynthesisTaskResponse>(request,
+            ImageMeta.createVideoSynthesisTask, hcClient);
+    }
+
+    /**
+     * 创建任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoTranslateTaskRequest 请求对象
+     * @return CompletableFuture<CreateVideoTranslateTaskResponse>
+     */
+    public CompletableFuture<CreateVideoTranslateTaskResponse> createVideoTranslateTaskAsync(
+        CreateVideoTranslateTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.createVideoTranslateTask);
+    }
+
+    /**
+     * 创建任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoTranslateTaskRequest 请求对象
+     * @return AsyncInvoker<CreateVideoTranslateTaskRequest, CreateVideoTranslateTaskResponse>
+     */
+    public AsyncInvoker<CreateVideoTranslateTaskRequest, CreateVideoTranslateTaskResponse> createVideoTranslateTaskAsyncInvoker(
+        CreateVideoTranslateTaskRequest request) {
+        return new AsyncInvoker<CreateVideoTranslateTaskRequest, CreateVideoTranslateTaskResponse>(request,
+            ImageMeta.createVideoTranslateTask, hcClient);
+    }
+
+    /**
      * 名人识别
      *
      * 分析并识别图片中包含的政治人物、明星及网红人物，返回人物信息及人脸坐标。
@@ -265,6 +544,130 @@ public class ImageAsyncClient {
     }
 
     /**
+     * 智能设计图像滤镜
+     *
+     * 智能设计图像滤镜服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunImageWisedesignColorfilterRequest 请求对象
+     * @return CompletableFuture<RunImageWisedesignColorfilterResponse>
+     */
+    public CompletableFuture<RunImageWisedesignColorfilterResponse> runImageWisedesignColorfilterAsync(
+        RunImageWisedesignColorfilterRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.runImageWisedesignColorfilter);
+    }
+
+    /**
+     * 智能设计图像滤镜
+     *
+     * 智能设计图像滤镜服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunImageWisedesignColorfilterRequest 请求对象
+     * @return AsyncInvoker<RunImageWisedesignColorfilterRequest, RunImageWisedesignColorfilterResponse>
+     */
+    public AsyncInvoker<RunImageWisedesignColorfilterRequest, RunImageWisedesignColorfilterResponse> runImageWisedesignColorfilterAsyncInvoker(
+        RunImageWisedesignColorfilterRequest request) {
+        return new AsyncInvoker<RunImageWisedesignColorfilterRequest, RunImageWisedesignColorfilterResponse>(request,
+            ImageMeta.runImageWisedesignColorfilter, hcClient);
+    }
+
+    /**
+     * 智能设计图像合图
+     *
+     * 智能设计图像合图服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunImageWisedesignCombineRequest 请求对象
+     * @return CompletableFuture<RunImageWisedesignCombineResponse>
+     */
+    public CompletableFuture<RunImageWisedesignCombineResponse> runImageWisedesignCombineAsync(
+        RunImageWisedesignCombineRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.runImageWisedesignCombine);
+    }
+
+    /**
+     * 智能设计图像合图
+     *
+     * 智能设计图像合图服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunImageWisedesignCombineRequest 请求对象
+     * @return AsyncInvoker<RunImageWisedesignCombineRequest, RunImageWisedesignCombineResponse>
+     */
+    public AsyncInvoker<RunImageWisedesignCombineRequest, RunImageWisedesignCombineResponse> runImageWisedesignCombineAsyncInvoker(
+        RunImageWisedesignCombineRequest request) {
+        return new AsyncInvoker<RunImageWisedesignCombineRequest, RunImageWisedesignCombineResponse>(request,
+            ImageMeta.runImageWisedesignCombine, hcClient);
+    }
+
+    /**
+     * 智能设计图像裁剪
+     *
+     * 智能设计图像裁剪服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunImageWisedesignCropRequest 请求对象
+     * @return CompletableFuture<RunImageWisedesignCropResponse>
+     */
+    public CompletableFuture<RunImageWisedesignCropResponse> runImageWisedesignCropAsync(
+        RunImageWisedesignCropRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.runImageWisedesignCrop);
+    }
+
+    /**
+     * 智能设计图像裁剪
+     *
+     * 智能设计图像裁剪服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunImageWisedesignCropRequest 请求对象
+     * @return AsyncInvoker<RunImageWisedesignCropRequest, RunImageWisedesignCropResponse>
+     */
+    public AsyncInvoker<RunImageWisedesignCropRequest, RunImageWisedesignCropResponse> runImageWisedesignCropAsyncInvoker(
+        RunImageWisedesignCropRequest request) {
+        return new AsyncInvoker<RunImageWisedesignCropRequest, RunImageWisedesignCropResponse>(request,
+            ImageMeta.runImageWisedesignCrop, hcClient);
+    }
+
+    /**
+     * 智能设计图像修复
+     *
+     * 智能设计图像修复服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunImageWisedesignInpaintingRequest 请求对象
+     * @return CompletableFuture<RunImageWisedesignInpaintingResponse>
+     */
+    public CompletableFuture<RunImageWisedesignInpaintingResponse> runImageWisedesignInpaintingAsync(
+        RunImageWisedesignInpaintingRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.runImageWisedesignInpainting);
+    }
+
+    /**
+     * 智能设计图像修复
+     *
+     * 智能设计图像修复服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunImageWisedesignInpaintingRequest 请求对象
+     * @return AsyncInvoker<RunImageWisedesignInpaintingRequest, RunImageWisedesignInpaintingResponse>
+     */
+    public AsyncInvoker<RunImageWisedesignInpaintingRequest, RunImageWisedesignInpaintingResponse> runImageWisedesignInpaintingAsyncInvoker(
+        RunImageWisedesignInpaintingRequest request) {
+        return new AsyncInvoker<RunImageWisedesignInpaintingRequest, RunImageWisedesignInpaintingResponse>(request,
+            ImageMeta.runImageWisedesignInpainting, hcClient);
+    }
+
+    /**
      * 查询媒资图像标签
      *
      * 用于用户自查是否存在自定义的标签。
@@ -322,6 +725,285 @@ public class ImageAsyncClient {
         RunRecaptureDetectRequest request) {
         return new AsyncInvoker<RunRecaptureDetectRequest, RunRecaptureDetectResponse>(request,
             ImageMeta.runRecaptureDetect, hcClient);
+    }
+
+    /**
+     * 查询任务
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowImageHighresolutionMattingTaskRequest 请求对象
+     * @return CompletableFuture<ShowImageHighresolutionMattingTaskResponse>
+     */
+    public CompletableFuture<ShowImageHighresolutionMattingTaskResponse> showImageHighresolutionMattingTaskAsync(
+        ShowImageHighresolutionMattingTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.showImageHighresolutionMattingTask);
+    }
+
+    /**
+     * 查询任务
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowImageHighresolutionMattingTaskRequest 请求对象
+     * @return AsyncInvoker<ShowImageHighresolutionMattingTaskRequest, ShowImageHighresolutionMattingTaskResponse>
+     */
+    public AsyncInvoker<ShowImageHighresolutionMattingTaskRequest, ShowImageHighresolutionMattingTaskResponse> showImageHighresolutionMattingTaskAsyncInvoker(
+        ShowImageHighresolutionMattingTaskRequest request) {
+        return new AsyncInvoker<ShowImageHighresolutionMattingTaskRequest, ShowImageHighresolutionMattingTaskResponse>(
+            request, ImageMeta.showImageHighresolutionMattingTask, hcClient);
+    }
+
+    /**
+     * 查询任务
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowImageToVideoTaskRequest 请求对象
+     * @return CompletableFuture<ShowImageToVideoTaskResponse>
+     */
+    public CompletableFuture<ShowImageToVideoTaskResponse> showImageToVideoTaskAsync(
+        ShowImageToVideoTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.showImageToVideoTask);
+    }
+
+    /**
+     * 查询任务
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowImageToVideoTaskRequest 请求对象
+     * @return AsyncInvoker<ShowImageToVideoTaskRequest, ShowImageToVideoTaskResponse>
+     */
+    public AsyncInvoker<ShowImageToVideoTaskRequest, ShowImageToVideoTaskResponse> showImageToVideoTaskAsyncInvoker(
+        ShowImageToVideoTaskRequest request) {
+        return new AsyncInvoker<ShowImageToVideoTaskRequest, ShowImageToVideoTaskResponse>(request,
+            ImageMeta.showImageToVideoTask, hcClient);
+    }
+
+    /**
+     * 查询任务
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowImageTranslateTaskRequest 请求对象
+     * @return CompletableFuture<ShowImageTranslateTaskResponse>
+     */
+    public CompletableFuture<ShowImageTranslateTaskResponse> showImageTranslateTaskAsync(
+        ShowImageTranslateTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.showImageTranslateTask);
+    }
+
+    /**
+     * 查询任务
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowImageTranslateTaskRequest 请求对象
+     * @return AsyncInvoker<ShowImageTranslateTaskRequest, ShowImageTranslateTaskResponse>
+     */
+    public AsyncInvoker<ShowImageTranslateTaskRequest, ShowImageTranslateTaskResponse> showImageTranslateTaskAsyncInvoker(
+        ShowImageTranslateTaskRequest request) {
+        return new AsyncInvoker<ShowImageTranslateTaskRequest, ShowImageTranslateTaskResponse>(request,
+            ImageMeta.showImageTranslateTask, hcClient);
+    }
+
+    /**
+     * 查询任务
+     *
+     * 查询视频封面任务完成状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoCoverAnalysisTaskRequest 请求对象
+     * @return CompletableFuture<ShowVideoCoverAnalysisTaskResponse>
+     */
+    public CompletableFuture<ShowVideoCoverAnalysisTaskResponse> showVideoCoverAnalysisTaskAsync(
+        ShowVideoCoverAnalysisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.showVideoCoverAnalysisTask);
+    }
+
+    /**
+     * 查询任务
+     *
+     * 查询视频封面任务完成状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoCoverAnalysisTaskRequest 请求对象
+     * @return AsyncInvoker<ShowVideoCoverAnalysisTaskRequest, ShowVideoCoverAnalysisTaskResponse>
+     */
+    public AsyncInvoker<ShowVideoCoverAnalysisTaskRequest, ShowVideoCoverAnalysisTaskResponse> showVideoCoverAnalysisTaskAsyncInvoker(
+        ShowVideoCoverAnalysisTaskRequest request) {
+        return new AsyncInvoker<ShowVideoCoverAnalysisTaskRequest, ShowVideoCoverAnalysisTaskResponse>(request,
+            ImageMeta.showVideoCoverAnalysisTask, hcClient);
+    }
+
+    /**
+     * 查询任务
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoCuttingTaskRequest 请求对象
+     * @return CompletableFuture<ShowVideoCuttingTaskResponse>
+     */
+    public CompletableFuture<ShowVideoCuttingTaskResponse> showVideoCuttingTaskAsync(
+        ShowVideoCuttingTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.showVideoCuttingTask);
+    }
+
+    /**
+     * 查询任务
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoCuttingTaskRequest 请求对象
+     * @return AsyncInvoker<ShowVideoCuttingTaskRequest, ShowVideoCuttingTaskResponse>
+     */
+    public AsyncInvoker<ShowVideoCuttingTaskRequest, ShowVideoCuttingTaskResponse> showVideoCuttingTaskAsyncInvoker(
+        ShowVideoCuttingTaskRequest request) {
+        return new AsyncInvoker<ShowVideoCuttingTaskRequest, ShowVideoCuttingTaskResponse>(request,
+            ImageMeta.showVideoCuttingTask, hcClient);
+    }
+
+    /**
+     * 查询任务
+     *
+     * 查询拆条任务状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoShotSplitTaskRequest 请求对象
+     * @return CompletableFuture<ShowVideoShotSplitTaskResponse>
+     */
+    public CompletableFuture<ShowVideoShotSplitTaskResponse> showVideoShotSplitTaskAsync(
+        ShowVideoShotSplitTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.showVideoShotSplitTask);
+    }
+
+    /**
+     * 查询任务
+     *
+     * 查询拆条任务状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoShotSplitTaskRequest 请求对象
+     * @return AsyncInvoker<ShowVideoShotSplitTaskRequest, ShowVideoShotSplitTaskResponse>
+     */
+    public AsyncInvoker<ShowVideoShotSplitTaskRequest, ShowVideoShotSplitTaskResponse> showVideoShotSplitTaskAsyncInvoker(
+        ShowVideoShotSplitTaskRequest request) {
+        return new AsyncInvoker<ShowVideoShotSplitTaskRequest, ShowVideoShotSplitTaskResponse>(request,
+            ImageMeta.showVideoShotSplitTask, hcClient);
+    }
+
+    /**
+     * 查询任务
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoSummarizationAnalysisTaskRequest 请求对象
+     * @return CompletableFuture<ShowVideoSummarizationAnalysisTaskResponse>
+     */
+    public CompletableFuture<ShowVideoSummarizationAnalysisTaskResponse> showVideoSummarizationAnalysisTaskAsync(
+        ShowVideoSummarizationAnalysisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.showVideoSummarizationAnalysisTask);
+    }
+
+    /**
+     * 查询任务
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoSummarizationAnalysisTaskRequest 请求对象
+     * @return AsyncInvoker<ShowVideoSummarizationAnalysisTaskRequest, ShowVideoSummarizationAnalysisTaskResponse>
+     */
+    public AsyncInvoker<ShowVideoSummarizationAnalysisTaskRequest, ShowVideoSummarizationAnalysisTaskResponse> showVideoSummarizationAnalysisTaskAsyncInvoker(
+        ShowVideoSummarizationAnalysisTaskRequest request) {
+        return new AsyncInvoker<ShowVideoSummarizationAnalysisTaskRequest, ShowVideoSummarizationAnalysisTaskResponse>(
+            request, ImageMeta.showVideoSummarizationAnalysisTask, hcClient);
+    }
+
+    /**
+     * 查询任务
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoSynthesisTaskRequest 请求对象
+     * @return CompletableFuture<ShowVideoSynthesisTaskResponse>
+     */
+    public CompletableFuture<ShowVideoSynthesisTaskResponse> showVideoSynthesisTaskAsync(
+        ShowVideoSynthesisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.showVideoSynthesisTask);
+    }
+
+    /**
+     * 查询任务
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoSynthesisTaskRequest 请求对象
+     * @return AsyncInvoker<ShowVideoSynthesisTaskRequest, ShowVideoSynthesisTaskResponse>
+     */
+    public AsyncInvoker<ShowVideoSynthesisTaskRequest, ShowVideoSynthesisTaskResponse> showVideoSynthesisTaskAsyncInvoker(
+        ShowVideoSynthesisTaskRequest request) {
+        return new AsyncInvoker<ShowVideoSynthesisTaskRequest, ShowVideoSynthesisTaskResponse>(request,
+            ImageMeta.showVideoSynthesisTask, hcClient);
+    }
+
+    /**
+     * 查询任务
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoTranslateTaskRequest 请求对象
+     * @return CompletableFuture<ShowVideoTranslateTaskResponse>
+     */
+    public CompletableFuture<ShowVideoTranslateTaskResponse> showVideoTranslateTaskAsync(
+        ShowVideoTranslateTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.showVideoTranslateTask);
+    }
+
+    /**
+     * 查询任务
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoTranslateTaskRequest 请求对象
+     * @return AsyncInvoker<ShowVideoTranslateTaskRequest, ShowVideoTranslateTaskResponse>
+     */
+    public AsyncInvoker<ShowVideoTranslateTaskRequest, ShowVideoTranslateTaskResponse> showVideoTranslateTaskAsyncInvoker(
+        ShowVideoTranslateTaskRequest request) {
+        return new AsyncInvoker<ShowVideoTranslateTaskRequest, ShowVideoTranslateTaskResponse>(request,
+            ImageMeta.showVideoTranslateTask, hcClient);
     }
 
 }

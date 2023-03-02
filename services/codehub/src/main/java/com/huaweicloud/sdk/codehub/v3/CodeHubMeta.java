@@ -101,6 +101,20 @@ public class CodeHubMeta {
             f -> f.withMarshaller(ListCommitsRequest::getWithStats, (req, v) -> {
                 req.setWithStats(v);
             }));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCommitsRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            }));
+        builder.<Integer>withRequestField("per_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCommitsRequest::getPerPage, (req, v) -> {
+                req.setPerPage(v);
+            }));
 
         // response
 

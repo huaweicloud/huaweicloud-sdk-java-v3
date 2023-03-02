@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aom.v1.model.Node;
 import com.huaweicloud.sdk.aom.v1.model.Parameter;
 import com.huaweicloud.sdk.aom.v1.model.Step;
+import com.huaweicloud.sdk.aom.v1.model.WorkFlowModel;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -240,8 +241,9 @@ public class Workflow  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_i18n")
     
-    private Map<String, Map<String, Object>> templateI18n = null;
-    
+
+    private WorkFlowModel templateI18n;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
@@ -285,7 +287,7 @@ public class Workflow  {
 
 
     /**
-     * 工作流名称，满足：[^\\\\>+<^;#\"\\s&?%='$￥@*_/\\]\\[【】{}|:,.，。：‘’“、—！!~`·？《》…]{1,64}。
+     * 工作流名称。
      * @return name
      */
     public String getName() {
@@ -479,7 +481,7 @@ public class Workflow  {
 
 
     /**
-     * 模板名称，需要满足：[^\\\\>+<^;#\"\\s&?%='$￥@*_/\\]\\[【】{}|:,.，。：‘’“、—！!~`·？《》…]{1,64}。
+     * 模板名称。
      * @return templateName
      */
     public String getTemplateName() {
@@ -617,7 +619,7 @@ public class Workflow  {
     }
 
     /**
-     * 引用链接,workflow引用的工作链接
+     * 工作流的引用。
      * @return citationUrns
      */
     public List<String> getCitationUrns() {
@@ -1204,37 +1206,30 @@ public class Workflow  {
 
     
 
-    public Workflow withTemplateI18n(Map<String, Map<String, Object>> templateI18n) {
+    public Workflow withTemplateI18n(WorkFlowModel templateI18n) {
         this.templateI18n = templateI18n;
         return this;
     }
 
-    
-
-    public Workflow putTemplateI18nItem(String key, Map<String, Object> templateI18nItem) {
-        if(this.templateI18n == null) {
-            this.templateI18n = new HashMap<>();
+    public Workflow withTemplateI18n(Consumer<WorkFlowModel> templateI18nSetter) {
+        if(this.templateI18n == null ){
+            this.templateI18n = new WorkFlowModel();
+            templateI18nSetter.accept(this.templateI18n);
         }
-        this.templateI18n.put(key, templateI18nItem);
+        
         return this;
     }
 
-    public Workflow withTemplateI18n(Consumer<Map<String, Map<String, Object>>> templateI18nSetter) {
-        if(this.templateI18n == null) {
-            this.templateI18n = new HashMap<>();
-        }
-        templateI18nSetter.accept(this.templateI18n);
-        return this;
-    }
+
     /**
-     * 任务国际化字段，包含中英文描述
+     * Get templateI18n
      * @return templateI18n
      */
-    public Map<String, Map<String, Object>> getTemplateI18n() {
+    public WorkFlowModel getTemplateI18n() {
         return templateI18n;
     }
 
-    public void setTemplateI18n(Map<String, Map<String, Object>> templateI18n) {
+    public void setTemplateI18n(WorkFlowModel templateI18n) {
         this.templateI18n = templateI18n;
     }
 

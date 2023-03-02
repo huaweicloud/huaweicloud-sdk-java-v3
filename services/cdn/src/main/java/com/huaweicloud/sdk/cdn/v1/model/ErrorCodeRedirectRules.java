@@ -13,19 +13,19 @@ public class ErrorCodeRedirectRules {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
 
-    private String errorCode;
+    private Integer errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_code")
 
-    private String targetCode;
+    private Integer targetCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_link")
 
     private String targetLink;
 
-    public ErrorCodeRedirectRules withErrorCode(String errorCode) {
+    public ErrorCodeRedirectRules withErrorCode(Integer errorCode) {
         this.errorCode = errorCode;
         return this;
     }
@@ -34,15 +34,15 @@ public class ErrorCodeRedirectRules {
      * 重定向的错误码，当前支持以下状态码 4xx:400, 403, 404, 405, 414, 416, 451 5xx:500, 501, 502, 503, 504
      * @return errorCode
      */
-    public String getErrorCode() {
+    public Integer getErrorCode() {
         return errorCode;
     }
 
-    public void setErrorCode(String errorCode) {
+    public void setErrorCode(Integer errorCode) {
         this.errorCode = errorCode;
     }
 
-    public ErrorCodeRedirectRules withTargetCode(String targetCode) {
+    public ErrorCodeRedirectRules withTargetCode(Integer targetCode) {
         this.targetCode = targetCode;
         return this;
     }
@@ -51,11 +51,11 @@ public class ErrorCodeRedirectRules {
      * 重定向状态码，取值为301或302
      * @return targetCode
      */
-    public String getTargetCode() {
+    public Integer getTargetCode() {
         return targetCode;
     }
 
-    public void setTargetCode(String targetCode) {
+    public void setTargetCode(Integer targetCode) {
         this.targetCode = targetCode;
     }
 

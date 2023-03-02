@@ -279,6 +279,37 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateDbUserRequest, CreateDbUserResponse> createDbUser = genForcreateDbUser();
+
+    private static HttpRequestDef<CreateDbUserRequest, CreateDbUserResponse> genForcreateDbUser() {
+        // basic
+        HttpRequestDef.Builder<CreateDbUserRequest, CreateDbUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDbUserRequest.class, CreateDbUserResponse.class)
+                .withName("CreateDbUser")
+                .withUri("/v3/{project_id}/redis/instances/{instance_id}/db-users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDbUserRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<RedisCreateDbUserRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RedisCreateDbUserRequest.class),
+            f -> f.withMarshaller(CreateDbUserRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDisasterRecoveryRequest, CreateDisasterRecoveryResponse> createDisasterRecovery =
         genForcreateDisasterRecovery();
 
@@ -378,6 +409,37 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteConfigurationRequest::getConfigId, (req, v) -> {
                 req.setConfigId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDbUserRequest, DeleteDbUserResponse> deleteDbUser = genFordeleteDbUser();
+
+    private static HttpRequestDef<DeleteDbUserRequest, DeleteDbUserResponse> genFordeleteDbUser() {
+        // basic
+        HttpRequestDef.Builder<DeleteDbUserRequest, DeleteDbUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDbUserRequest.class, DeleteDbUserResponse.class)
+                .withName("DeleteDbUser")
+                .withUri("/v3/{project_id}/redis/instances/{instance_id}/db-users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDbUserRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<RedisDeleteDbUserRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RedisDeleteDbUserRequest.class),
+            f -> f.withMarshaller(DeleteDbUserRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -638,6 +700,51 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> listDbUsers = genForlistDbUsers();
+
+    private static HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> genForlistDbUsers() {
+        // basic
+        HttpRequestDef.Builder<ListDbUsersRequest, ListDbUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDbUsersRequest.class, ListDbUsersResponse.class)
+                .withName("ListDbUsers")
+                .withUri("/v3/{project_id}/redis/instances/{instance_id}/db-users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbUsersRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbUsersRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDbUsersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDbUsersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDedicatedResourcesRequest, ListDedicatedResourcesResponse> listDedicatedResources =
         genForlistDedicatedResources();
 
@@ -772,6 +879,45 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getEngineName, (req, v) -> {
                 req.setEngineName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstanceDatabasesRequest, ListInstanceDatabasesResponse> listInstanceDatabases =
+        genForlistInstanceDatabases();
+
+    private static HttpRequestDef<ListInstanceDatabasesRequest, ListInstanceDatabasesResponse> genForlistInstanceDatabases() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceDatabasesRequest, ListInstanceDatabasesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInstanceDatabasesRequest.class, ListInstanceDatabasesResponse.class)
+            .withName("ListInstanceDatabases")
+            .withUri("/v3/{project_id}/redis/instances/{instance_id}/databases")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceDatabasesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceDatabasesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceDatabasesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -1121,6 +1267,38 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyDbUserPrivilegeRequest, ModifyDbUserPrivilegeResponse> modifyDbUserPrivilege =
+        genFormodifyDbUserPrivilege();
+
+    private static HttpRequestDef<ModifyDbUserPrivilegeRequest, ModifyDbUserPrivilegeResponse> genFormodifyDbUserPrivilege() {
+        // basic
+        HttpRequestDef.Builder<ModifyDbUserPrivilegeRequest, ModifyDbUserPrivilegeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, ModifyDbUserPrivilegeRequest.class, ModifyDbUserPrivilegeResponse.class)
+            .withName("ModifyDbUserPrivilege")
+            .withUri("/v3/{project_id}/redis/instances/{instance_id}/db-users/privilege")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyDbUserPrivilegeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<RedisModifyDBUserPrivilegeRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RedisModifyDBUserPrivilegeRequest.class),
+            f -> f.withMarshaller(ModifyDbUserPrivilegeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse> modifyEpsQuotas =
         genFormodifyEpsQuotas();
 
@@ -1274,6 +1452,38 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ActionBody.class),
             f -> f.withMarshaller(PauseResumeDataSynchronizationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetDbUserPasswordRequest, ResetDbUserPasswordResponse> resetDbUserPassword =
+        genForresetDbUserPassword();
+
+    private static HttpRequestDef<ResetDbUserPasswordRequest, ResetDbUserPasswordResponse> genForresetDbUserPassword() {
+        // basic
+        HttpRequestDef.Builder<ResetDbUserPasswordRequest, ResetDbUserPasswordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ResetDbUserPasswordRequest.class, ResetDbUserPasswordResponse.class)
+                .withName("ResetDbUserPassword")
+                .withUri("/v3/{project_id}/redis/instances/{instance_id}/db-users/password")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetDbUserPasswordRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<RedisResetDbUserPasswordRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RedisResetDbUserPasswordRequestBody.class),
+            f -> f.withMarshaller(ResetDbUserPasswordRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

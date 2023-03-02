@@ -1856,6 +1856,211 @@ public class IoTDAMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateOtaPackageRequest, CreateOtaPackageResponse> createOtaPackage =
+        genForcreateOtaPackage();
+
+    private static HttpRequestDef<CreateOtaPackageRequest, CreateOtaPackageResponse> genForcreateOtaPackage() {
+        // basic
+        HttpRequestDef.Builder<CreateOtaPackageRequest, CreateOtaPackageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateOtaPackageRequest.class, CreateOtaPackageResponse.class)
+                .withName("CreateOtaPackage")
+                .withUri("/v5/iot/{project_id}/ota-upgrades/packages")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateOtaPackageRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateOtaPackageRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<CreateOtaPackage>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOtaPackage.class),
+            f -> f.withMarshaller(CreateOtaPackageRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteOtaPackageRequest, DeleteOtaPackageResponse> deleteOtaPackage =
+        genFordeleteOtaPackage();
+
+    private static HttpRequestDef<DeleteOtaPackageRequest, DeleteOtaPackageResponse> genFordeleteOtaPackage() {
+        // basic
+        HttpRequestDef.Builder<DeleteOtaPackageRequest, DeleteOtaPackageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteOtaPackageRequest.class, DeleteOtaPackageResponse.class)
+                .withName("DeleteOtaPackage")
+                .withUri("/v5/iot/{project_id}/ota-upgrades/packages/{package_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("package_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOtaPackageRequest::getPackageId, (req, v) -> {
+                req.setPackageId(v);
+            }));
+        builder.<String>withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOtaPackageRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOtaPackageRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteOtaPackageResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOtaPackageInfoRequest, ListOtaPackageInfoResponse> listOtaPackageInfo =
+        genForlistOtaPackageInfo();
+
+    private static HttpRequestDef<ListOtaPackageInfoRequest, ListOtaPackageInfoResponse> genForlistOtaPackageInfo() {
+        // basic
+        HttpRequestDef.Builder<ListOtaPackageInfoRequest, ListOtaPackageInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListOtaPackageInfoRequest.class, ListOtaPackageInfoResponse.class)
+                .withName("ListOtaPackageInfo")
+                .withUri("/v5/iot/{project_id}/ota-upgrades/packages")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOtaPackageInfoRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<String>withRequestField("package_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOtaPackageInfoRequest::getPackageType, (req, v) -> {
+                req.setPackageType(v);
+            }));
+        builder.<String>withRequestField("product_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOtaPackageInfoRequest::getProductId, (req, v) -> {
+                req.setProductId(v);
+            }));
+        builder.<String>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOtaPackageInfoRequest::getVersion, (req, v) -> {
+                req.setVersion(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOtaPackageInfoRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOtaPackageInfoRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOtaPackageInfoRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOtaPackageInfoRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOtaPackageInfoRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOtaPackageRequest, ShowOtaPackageResponse> showOtaPackage =
+        genForshowOtaPackage();
+
+    private static HttpRequestDef<ShowOtaPackageRequest, ShowOtaPackageResponse> genForshowOtaPackage() {
+        // basic
+        HttpRequestDef.Builder<ShowOtaPackageRequest, ShowOtaPackageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowOtaPackageRequest.class, ShowOtaPackageResponse.class)
+                .withName("ShowOtaPackage")
+                .withUri("/v5/iot/{project_id}/ota-upgrades/packages/{package_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("package_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOtaPackageRequest::getPackageId, (req, v) -> {
+                req.setPackageId(v);
+            }));
+        builder.<String>withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOtaPackageRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOtaPackageRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateProductRequest, CreateProductResponse> createProduct =
         genForcreateProduct();
 

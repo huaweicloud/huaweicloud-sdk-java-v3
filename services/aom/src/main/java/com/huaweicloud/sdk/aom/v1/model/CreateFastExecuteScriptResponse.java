@@ -35,7 +35,7 @@ public class CreateFastExecuteScriptResponse extends SdkResponse {
 
 
     /**
-     * 响应体。
+     * 工作流执行id。
      * @return executionId
      */
     public String getExecutionId() {

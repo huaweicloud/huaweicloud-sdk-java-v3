@@ -75,6 +75,11 @@ public class QuotaItemInfo {
          */
         public static final TypeEnum SOURCE_RABBITMQ = new TypeEnum("SOURCE_RABBITMQ");
 
+        /**
+         * Enum SOURCE_ROCKETMQ for value: "SOURCE_ROCKETMQ"
+         */
+        public static final TypeEnum SOURCE_ROCKETMQ = new TypeEnum("SOURCE_ROCKETMQ");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -89,6 +94,7 @@ public class QuotaItemInfo {
             map.put("CONNECTION", CONNECTION);
             map.put("PRIVATE_ENDPOINT", PRIVATE_ENDPOINT);
             map.put("SOURCE_RABBITMQ", SOURCE_RABBITMQ);
+            map.put("SOURCE_ROCKETMQ", SOURCE_ROCKETMQ);
             return Collections.unmodifiableMap(map);
         }
 

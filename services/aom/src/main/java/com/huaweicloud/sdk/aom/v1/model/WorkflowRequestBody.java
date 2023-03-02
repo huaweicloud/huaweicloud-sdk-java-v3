@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v1.model.Trigger;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -68,12 +67,6 @@ public class WorkflowRequestBody  {
     
     private List<String> quote = null;
     
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trigger")
-    
-
-    private Trigger trigger;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_name")
     
@@ -308,35 +301,6 @@ public class WorkflowRequestBody  {
 
     
 
-    public WorkflowRequestBody withTrigger(Trigger trigger) {
-        this.trigger = trigger;
-        return this;
-    }
-
-    public WorkflowRequestBody withTrigger(Consumer<Trigger> triggerSetter) {
-        if(this.trigger == null ){
-            this.trigger = new Trigger();
-            triggerSetter.accept(this.trigger);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get trigger
-     * @return trigger
-     */
-    public Trigger getTrigger() {
-        return trigger;
-    }
-
-    public void setTrigger(Trigger trigger) {
-        this.trigger = trigger;
-    }
-
-    
-
     public WorkflowRequestBody withJobName(String jobName) {
         this.jobName = jobName;
         return this;
@@ -464,7 +428,6 @@ public class WorkflowRequestBody  {
             Objects.equals(this.templateId, workflowRequestBody.templateId) &&
             Objects.equals(this.input, workflowRequestBody.input) &&
             Objects.equals(this.quote, workflowRequestBody.quote) &&
-            Objects.equals(this.trigger, workflowRequestBody.trigger) &&
             Objects.equals(this.jobName, workflowRequestBody.jobName) &&
             Objects.equals(this.jobId, workflowRequestBody.jobId) &&
             Objects.equals(this.serviceScenario, workflowRequestBody.serviceScenario) &&
@@ -473,7 +436,7 @@ public class WorkflowRequestBody  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, description, tags, templateName, templateId, input, quote, trigger, jobName, jobId, serviceScenario, serviceName, taskType);
+        return Objects.hash(name, type, description, tags, templateName, templateId, input, quote, jobName, jobId, serviceScenario, serviceName, taskType);
     }
     @Override
     public String toString() {
@@ -487,7 +450,6 @@ public class WorkflowRequestBody  {
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    quote: ").append(toIndentedString(quote)).append("\n");
-        sb.append("    trigger: ").append(toIndentedString(trigger)).append("\n");
         sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    serviceScenario: ").append(toIndentedString(serviceScenario)).append("\n");

@@ -592,6 +592,66 @@ public class DrisMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListEdgeFlowsRequest, ListEdgeFlowsResponse> listEdgeFlows =
+        genForlistEdgeFlows();
+
+    private static HttpRequestDef<ListEdgeFlowsRequest, ListEdgeFlowsResponse> genForlistEdgeFlows() {
+        // basic
+        HttpRequestDef.Builder<ListEdgeFlowsRequest, ListEdgeFlowsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEdgeFlowsRequest.class, ListEdgeFlowsResponse.class)
+                .withName("ListEdgeFlows")
+                .withUri("/v1/{project_id}/edge-flow")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEdgeFlowsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEdgeFlowsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("from_date",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEdgeFlowsRequest::getFromDate, (req, v) -> {
+                req.setFromDate(v);
+            }));
+        builder.<String>withRequestField("to_date",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEdgeFlowsRequest::getToDate, (req, v) -> {
+                req.setToDate(v);
+            }));
+        builder.<String>withRequestField("edge_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEdgeFlowsRequest::getEdgeId, (req, v) -> {
+                req.setEdgeId(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEdgeFlowsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowHistoryTrafficEventsRequest, ShowHistoryTrafficEventsResponse> showHistoryTrafficEvents =
         genForshowHistoryTrafficEvents();
 
@@ -2267,66 +2327,6 @@ public class DrisMeta {
             TypeCasts.uncheckedConversion(UpdateEdgeAppVersionStateDTO.class),
             f -> f.withMarshaller(UpdateEdgeApplicationVersionStateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListEdgeFlowsRequest, ListEdgeFlowsResponse> listEdgeFlows =
-        genForlistEdgeFlows();
-
-    private static HttpRequestDef<ListEdgeFlowsRequest, ListEdgeFlowsResponse> genForlistEdgeFlows() {
-        // basic
-        HttpRequestDef.Builder<ListEdgeFlowsRequest, ListEdgeFlowsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListEdgeFlowsRequest.class, ListEdgeFlowsResponse.class)
-                .withName("ListEdgeFlows")
-                .withUri("/v1/{project_id}/edge-flow")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEdgeFlowsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEdgeFlowsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<String>withRequestField("from_date",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeFlowsRequest::getFromDate, (req, v) -> {
-                req.setFromDate(v);
-            }));
-        builder.<String>withRequestField("to_date",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeFlowsRequest::getToDate, (req, v) -> {
-                req.setToDate(v);
-            }));
-        builder.<String>withRequestField("edge_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeFlowsRequest::getEdgeId, (req, v) -> {
-                req.setEdgeId(v);
-            }));
-        builder.<String>withRequestField("Instance-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEdgeFlowsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
             }));
 
         // response

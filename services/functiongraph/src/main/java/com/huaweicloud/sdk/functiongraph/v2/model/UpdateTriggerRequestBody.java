@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * UpdateTriggerRequestBody
@@ -97,6 +100,11 @@ public class UpdateTriggerRequestBody {
 
     private TriggerStatusEnum triggerStatus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_data")
+
+    private List<TriggerEventData> eventData = null;
+
     public UpdateTriggerRequestBody withTriggerStatus(TriggerStatusEnum triggerStatus) {
         this.triggerStatus = triggerStatus;
         return this;
@@ -114,6 +122,39 @@ public class UpdateTriggerRequestBody {
         this.triggerStatus = triggerStatus;
     }
 
+    public UpdateTriggerRequestBody withEventData(List<TriggerEventData> eventData) {
+        this.eventData = eventData;
+        return this;
+    }
+
+    public UpdateTriggerRequestBody addEventDataItem(TriggerEventData eventDataItem) {
+        if (this.eventData == null) {
+            this.eventData = new ArrayList<>();
+        }
+        this.eventData.add(eventDataItem);
+        return this;
+    }
+
+    public UpdateTriggerRequestBody withEventData(Consumer<List<TriggerEventData>> eventDataSetter) {
+        if (this.eventData == null) {
+            this.eventData = new ArrayList<>();
+        }
+        eventDataSetter.accept(this.eventData);
+        return this;
+    }
+
+    /**
+     * 触发器更新事件
+     * @return eventData
+     */
+    public List<TriggerEventData> getEventData() {
+        return eventData;
+    }
+
+    public void setEventData(List<TriggerEventData> eventData) {
+        this.eventData = eventData;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -123,12 +164,13 @@ public class UpdateTriggerRequestBody {
             return false;
         }
         UpdateTriggerRequestBody updateTriggerRequestBody = (UpdateTriggerRequestBody) o;
-        return Objects.equals(this.triggerStatus, updateTriggerRequestBody.triggerStatus);
+        return Objects.equals(this.triggerStatus, updateTriggerRequestBody.triggerStatus)
+            && Objects.equals(this.eventData, updateTriggerRequestBody.eventData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(triggerStatus);
+        return Objects.hash(triggerStatus, eventData);
     }
 
     @Override
@@ -136,6 +178,7 @@ public class UpdateTriggerRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateTriggerRequestBody {\n");
         sb.append("    triggerStatus: ").append(toIndentedString(triggerStatus)).append("\n");
+        sb.append("    eventData: ").append(toIndentedString(eventData)).append("\n");
         sb.append("}");
         return sb.toString();
     }

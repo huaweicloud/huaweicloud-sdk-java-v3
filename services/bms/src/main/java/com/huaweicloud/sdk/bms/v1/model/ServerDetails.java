@@ -91,7 +91,7 @@ public class ServerDetails {
     private String accessIPv6;
 
     /**
-     * 裸金属服务器当前状态信息。取值范围：ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中裸金属服务器当前状态信息。取值范围：ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中
+     * 裸金属服务器当前状态信息。  取值范围：  ACTIVE：运行中/正在关机/删除中 BUILD：创建中 ERROR：故障 HARD_REBOOT：强制重启中 REBOOT：重启中 DELETED：实例已被正常删除 SHUTOFF：关机/正在开机/删除中/重建中/重装操作系统中/重装操作系统失败/冻结
      */
     public static final class StatusEnum {
 
@@ -111,9 +111,19 @@ public class ServerDetails {
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
 
         /**
+         * Enum HARD_REBOOT for value: "HARD_REBOOT"
+         */
+        public static final StatusEnum HARD_REBOOT = new StatusEnum("HARD_REBOOT");
+
+        /**
          * Enum REBOOT for value: "REBOOT"
          */
         public static final StatusEnum REBOOT = new StatusEnum("REBOOT");
+
+        /**
+         * Enum DELETED for value: "DELETED"
+         */
+        public static final StatusEnum DELETED = new StatusEnum("DELETED");
 
         /**
          * Enum SHUTOFF for value: "SHUTOFF"
@@ -127,7 +137,9 @@ public class ServerDetails {
             map.put("ACTIVE", ACTIVE);
             map.put("BUILD", BUILD);
             map.put("ERROR", ERROR);
+            map.put("HARD_REBOOT", HARD_REBOOT);
             map.put("REBOOT", REBOOT);
+            map.put("DELETED", DELETED);
             map.put("SHUTOFF", SHUTOFF);
             return Collections.unmodifiableMap(map);
         }
@@ -325,7 +337,7 @@ public class ServerDetails {
     private OsEXTSTSTaskStateEnum osEXTSTSTaskState;
 
     /**
-     * 扩展属性，裸金属服务器的稳定状态。例如：active：运行中shutoff：关机suspended：暂停reboot：重启
+     * 扩展属性，裸金属服务器的稳定状态。例如：active：运行中shutoff：关机reboot：重启
      */
     public static final class OsEXTSTSVmStateEnum {
 
@@ -340,11 +352,6 @@ public class ServerDetails {
         public static final OsEXTSTSVmStateEnum SHUTOFF = new OsEXTSTSVmStateEnum("shutoff");
 
         /**
-         * Enum SUSPENDED for value: "suspended"
-         */
-        public static final OsEXTSTSVmStateEnum SUSPENDED = new OsEXTSTSVmStateEnum("suspended");
-
-        /**
          * Enum REBOOT for value: "reboot"
          */
         public static final OsEXTSTSVmStateEnum REBOOT = new OsEXTSTSVmStateEnum("reboot");
@@ -355,7 +362,6 @@ public class ServerDetails {
             Map<String, OsEXTSTSVmStateEnum> map = new HashMap<>();
             map.put("active", ACTIVE);
             map.put("shutoff", SHUTOFF);
-            map.put("suspended", SUSPENDED);
             map.put("reboot", REBOOT);
             return Collections.unmodifiableMap(map);
         }
@@ -998,7 +1004,7 @@ public class ServerDetails {
     }
 
     /**
-     * 裸金属服务器当前状态信息。取值范围：ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中裸金属服务器当前状态信息。取值范围：ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中
+     * 裸金属服务器当前状态信息。  取值范围：  ACTIVE：运行中/正在关机/删除中 BUILD：创建中 ERROR：故障 HARD_REBOOT：强制重启中 REBOOT：重启中 DELETED：实例已被正常删除 SHUTOFF：关机/正在开机/删除中/重建中/重装操作系统中/重装操作系统失败/冻结
      * @return status
      */
     public StatusEnum getStatus() {
@@ -1092,7 +1098,7 @@ public class ServerDetails {
     }
 
     /**
-     * 扩展属性，裸金属服务器的稳定状态。例如：active：运行中shutoff：关机suspended：暂停reboot：重启
+     * 扩展属性，裸金属服务器的稳定状态。例如：active：运行中shutoff：关机reboot：重启
      * @return osEXTSTSVmState
      */
     public OsEXTSTSVmStateEnum getOsEXTSTSVmState() {

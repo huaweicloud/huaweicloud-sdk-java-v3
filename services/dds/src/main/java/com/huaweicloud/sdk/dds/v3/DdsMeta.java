@@ -2803,6 +2803,43 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowReplSetNameRequest, ShowReplSetNameResponse> showReplSetName =
+        genForshowReplSetName();
+
+    private static HttpRequestDef<ShowReplSetNameRequest, ShowReplSetNameResponse> genForshowReplSetName() {
+        // basic
+        HttpRequestDef.Builder<ShowReplSetNameRequest, ShowReplSetNameResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowReplSetNameRequest.class, ShowReplSetNameResponse.class)
+                .withName("ShowReplSetName")
+                .withUri("/v3/{project_id}/instances/{instance_id}/replica-set/name")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReplSetNameRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowReplSetNameResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        builder.<String>withResponseField("name",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowReplSetNameResponse::getName, ShowReplSetNameResponse::setName));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSecondLevelMonitoringStatusRequest, ShowSecondLevelMonitoringStatusResponse> showSecondLevelMonitoringStatus =
         genForshowSecondLevelMonitoringStatus();
 
@@ -3314,6 +3351,45 @@ public class DdsMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateReplSetNameRequest, UpdateReplSetNameResponse> updateReplSetName =
+        genForupdateReplSetName();
+
+    private static HttpRequestDef<UpdateReplSetNameRequest, UpdateReplSetNameResponse> genForupdateReplSetName() {
+        // basic
+        HttpRequestDef.Builder<UpdateReplSetNameRequest, UpdateReplSetNameResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateReplSetNameRequest.class, UpdateReplSetNameResponse.class)
+                .withName("UpdateReplSetName")
+                .withUri("/v3/{project_id}/instances/{instance_id}/replica-set/name")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateReplSetNameRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<MongoUpdateReplSetV3RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MongoUpdateReplSetV3RequestBody.class),
+            f -> f.withMarshaller(UpdateReplSetNameRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateReplSetNameResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }

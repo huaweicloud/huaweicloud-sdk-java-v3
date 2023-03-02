@@ -310,6 +310,11 @@ public class ListSimCardsRequest {
 
     private Boolean filterDowntimePeriod;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_ids")
+
+    private List<Long> orderIds = null;
+
     public ListSimCardsRequest withMainSearchType(Integer mainSearchType) {
         this.mainSearchType = mainSearchType;
         return this;
@@ -756,6 +761,39 @@ public class ListSimCardsRequest {
         this.filterDowntimePeriod = filterDowntimePeriod;
     }
 
+    public ListSimCardsRequest withOrderIds(List<Long> orderIds) {
+        this.orderIds = orderIds;
+        return this;
+    }
+
+    public ListSimCardsRequest addOrderIdsItem(Long orderIdsItem) {
+        if (this.orderIds == null) {
+            this.orderIds = new ArrayList<>();
+        }
+        this.orderIds.add(orderIdsItem);
+        return this;
+    }
+
+    public ListSimCardsRequest withOrderIds(Consumer<List<Long>> orderIdsSetter) {
+        if (this.orderIds == null) {
+            this.orderIds = new ArrayList<>();
+        }
+        orderIdsSetter.accept(this.orderIds);
+        return this;
+    }
+
+    /**
+     * 订单批次号集合
+     * @return orderIds
+     */
+    public List<Long> getOrderIds() {
+        return orderIds;
+    }
+
+    public void setOrderIds(List<Long> orderIds) {
+        this.orderIds = orderIds;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -788,7 +826,8 @@ public class ListSimCardsRequest {
             && Objects.equals(this.maxLeftFlow, listSimCardsRequest.maxLeftFlow)
             && Objects.equals(this.realNamed, listSimCardsRequest.realNamed)
             && Objects.equals(this.orderId, listSimCardsRequest.orderId)
-            && Objects.equals(this.filterDowntimePeriod, listSimCardsRequest.filterDowntimePeriod);
+            && Objects.equals(this.filterDowntimePeriod, listSimCardsRequest.filterDowntimePeriod)
+            && Objects.equals(this.orderIds, listSimCardsRequest.orderIds);
     }
 
     @Override
@@ -816,7 +855,8 @@ public class ListSimCardsRequest {
             maxLeftFlow,
             realNamed,
             orderId,
-            filterDowntimePeriod);
+            filterDowntimePeriod,
+            orderIds);
     }
 
     @Override
@@ -847,6 +887,7 @@ public class ListSimCardsRequest {
         sb.append("    realNamed: ").append(toIndentedString(realNamed)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    filterDowntimePeriod: ").append(toIndentedString(filterDowntimePeriod)).append("\n");
+        sb.append("    orderIds: ").append(toIndentedString(orderIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

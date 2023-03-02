@@ -210,7 +210,7 @@ public class Job  {
 
 
     /**
-     * 实体的最后更新时间戳。 注意：执行创建/修补/删除操作时，update_time将更新。
+     * 实体的最后更新时间戳。 注意：执行创建/修改/删除操作时，update_time将更新。
      * minimum: 0
      * maximum: 9999999999999
      * @return updateTime

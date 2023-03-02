@@ -2084,6 +2084,31 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSpecIssueStayTimesRequest, ListSpecIssueStayTimesResponse> listSpecIssueStayTimes =
+        genForlistSpecIssueStayTimes();
+
+    private static HttpRequestDef<ListSpecIssueStayTimesRequest, ListSpecIssueStayTimesResponse> genForlistSpecIssueStayTimes() {
+        // basic
+        HttpRequestDef.Builder<ListSpecIssueStayTimesRequest, ListSpecIssueStayTimesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListSpecIssueStayTimesRequest.class, ListSpecIssueStayTimesResponse.class)
+            .withName("ListSpecIssueStayTimes")
+            .withUri("/v4/issues/duration")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ListSpecIssueStayTimesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListSpecIssueStayTimesRequestBody.class),
+            f -> f.withMarshaller(ListSpecIssueStayTimesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListStatusStatisticRequest, ListStatusStatisticResponse> listStatusStatistic =
         genForlistStatusStatistic();
 

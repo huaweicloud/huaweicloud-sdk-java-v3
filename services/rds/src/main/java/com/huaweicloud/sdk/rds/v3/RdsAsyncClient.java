@@ -1311,6 +1311,37 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 获取SSL证书下载地址
+     *
+     * 获取SSL证书下载地址
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSslCertDownloadLinkRequest 请求对象
+     * @return CompletableFuture<ListSslCertDownloadLinkResponse>
+     */
+    public CompletableFuture<ListSslCertDownloadLinkResponse> listSslCertDownloadLinkAsync(
+        ListSslCertDownloadLinkRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listSslCertDownloadLink);
+    }
+
+    /**
+     * 获取SSL证书下载地址
+     *
+     * 获取SSL证书下载地址
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSslCertDownloadLinkRequest 请求对象
+     * @return AsyncInvoker<ListSslCertDownloadLinkRequest, ListSslCertDownloadLinkResponse>
+     */
+    public AsyncInvoker<ListSslCertDownloadLinkRequest, ListSslCertDownloadLinkResponse> listSslCertDownloadLinkAsyncInvoker(
+        ListSslCertDownloadLinkRequest request) {
+        return new AsyncInvoker<ListSslCertDownloadLinkRequest, ListSslCertDownloadLinkResponse>(request,
+            RdsMeta.listSslCertDownloadLink, hcClient);
+    }
+
+    /**
      * 查询数据库磁盘类型
      *
      * 查询数据库磁盘类型。

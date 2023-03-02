@@ -26,7 +26,7 @@ public class ExternalKeyMessage {
     }
 
     /**
-     * 第三方保存在codehub的关键信息
+     * 第三方保存在代码托管的关键信息
      * @return externalKeyMessage
      */
     public String getExternalKeyMessage() {

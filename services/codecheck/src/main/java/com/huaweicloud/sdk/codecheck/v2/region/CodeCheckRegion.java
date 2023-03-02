@@ -12,18 +12,20 @@ import java.util.Objects;
 
 public class CodeCheckRegion {
 
-    public static final Region CN_NORTH_4 =
-        new Region("cn-north-4", "https://codecheck-ext.cn-north-4.myhuaweicloud.com");
+    public static final Region CN_NORTH_4 = new Region("cn-north-4",
+        "https://codecheck-ext.cn-north-4.myhuaweicloud.com", "https://codecheck-ext.cn-north-4.myhuaweicloud.cn");
 
-    public static final Region CN_NORTH_1 =
-        new Region("cn-north-1", "https://codecheck-ext.cn-north-1.myhuaweicloud.com");
+    public static final Region CN_NORTH_1 = new Region("cn-north-1",
+        "https://codecheck-ext.cn-north-1.myhuaweicloud.com", "https://codecheck-ext.cn-north-1.myhuaweicloud.cn");
 
-    public static final Region CN_EAST_2 = new Region("cn-east-2", "https://codecheck-ext.cn-east-2.myhuaweicloud.com");
+    public static final Region CN_EAST_2 = new Region("cn-east-2", "https://codecheck-ext.cn-east-2.myhuaweicloud.com",
+        "https://codecheck-ext.cn-east-2.myhuaweicloud.cn");
 
-    public static final Region CN_SOUTH_1 =
-        new Region("cn-south-1", "https://codecheck-ext.cn-south-1.myhuaweicloud.com");
+    public static final Region CN_SOUTH_1 = new Region("cn-south-1",
+        "https://codecheck-ext.cn-south-1.myhuaweicloud.com", "https://codecheck-ext.cn-south-1.myhuaweicloud.cn");
 
-    public static final Region CN_EAST_3 = new Region("cn-east-3", "https://codecheck-ext.cn-east-3.myhuaweicloud.com");
+    public static final Region CN_EAST_3 = new Region("cn-east-3", "https://codecheck-ext.cn-east-3.myhuaweicloud.com",
+        "https://codecheck-ext.cn-east-3.myhuaweicloud.cn");
 
     public static final Region LA_NORTH_2 =
         new Region("la-north-2", "https://codecheck-ext.la-north-2.myhuaweicloud.com");

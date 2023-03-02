@@ -132,7 +132,7 @@ public class SearchJobsRequestBody  {
 
 
     /**
-     * 需要排序的字段(默认为更新时间),支持字段有create_time。
+     * 需要排序的字段(默认为更新时间),支持字段有name,create_time,update_time。
      * @return orderByColumn
      */
     public String getOrderByColumn() {

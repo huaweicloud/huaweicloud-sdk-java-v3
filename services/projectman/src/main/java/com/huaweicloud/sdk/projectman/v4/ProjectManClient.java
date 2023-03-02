@@ -1782,6 +1782,36 @@ public class ProjectManClient {
     }
 
     /**
+     * 获取指定工作项停留时间
+     *
+     * 获取指定工作项停留时间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSpecIssueStayTimesRequest 请求对象
+     * @return ListSpecIssueStayTimesResponse
+     */
+    public ListSpecIssueStayTimesResponse listSpecIssueStayTimes(ListSpecIssueStayTimesRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listSpecIssueStayTimes);
+    }
+
+    /**
+     * 获取指定工作项停留时间
+     *
+     * 获取指定工作项停留时间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSpecIssueStayTimesRequest 请求对象
+     * @return SyncInvoker<ListSpecIssueStayTimesRequest, ListSpecIssueStayTimesResponse>
+     */
+    public SyncInvoker<ListSpecIssueStayTimesRequest, ListSpecIssueStayTimesResponse> listSpecIssueStayTimesInvoker(
+        ListSpecIssueStayTimesRequest request) {
+        return new SyncInvoker<ListSpecIssueStayTimesRequest, ListSpecIssueStayTimesResponse>(request,
+            ProjectManMeta.listSpecIssueStayTimes, hcClient);
+    }
+
+    /**
      * 查询迭代下工作项状态的统计数据（处理人维度）
      *
      * 查询迭代下工作项状态的统计数据（处理人维度）

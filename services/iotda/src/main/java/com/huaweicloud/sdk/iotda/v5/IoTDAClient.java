@@ -1630,6 +1630,128 @@ public class IoTDAClient {
     }
 
     /**
+     * 创建OTA升级包
+     *
+     * 用户可调用此接口创建升级包关联OBS对象
+     * 使用前提：使用该API需要您授权设备接入服务(IoTDA)的实例访问对象存储服务(OBS)以及 密钥管理服务(KMS Administrator)的权限。在“[[统一身份认证服务（IAM）](https://console.huaweicloud.com/iam/?region&#x3D;cn-north-4#/iam/agencies)](tag:hws) - 委托”中将委托名称为iotda_admin_trust的委托授权KMS Administrator和OBS OperateAccess
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOtaPackageRequest 请求对象
+     * @return CreateOtaPackageResponse
+     */
+    public CreateOtaPackageResponse createOtaPackage(CreateOtaPackageRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.createOtaPackage);
+    }
+
+    /**
+     * 创建OTA升级包
+     *
+     * 用户可调用此接口创建升级包关联OBS对象
+     * 使用前提：使用该API需要您授权设备接入服务(IoTDA)的实例访问对象存储服务(OBS)以及 密钥管理服务(KMS Administrator)的权限。在“[[统一身份认证服务（IAM）](https://console.huaweicloud.com/iam/?region&#x3D;cn-north-4#/iam/agencies)](tag:hws) - 委托”中将委托名称为iotda_admin_trust的委托授权KMS Administrator和OBS OperateAccess
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOtaPackageRequest 请求对象
+     * @return SyncInvoker<CreateOtaPackageRequest, CreateOtaPackageResponse>
+     */
+    public SyncInvoker<CreateOtaPackageRequest, CreateOtaPackageResponse> createOtaPackageInvoker(
+        CreateOtaPackageRequest request) {
+        return new SyncInvoker<CreateOtaPackageRequest, CreateOtaPackageResponse>(request, IoTDAMeta.createOtaPackage,
+            hcClient);
+    }
+
+    /**
+     * 删除OTA升级包
+     *
+     * 只删除升级包信息，不会删除OBS上对象
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteOtaPackageRequest 请求对象
+     * @return DeleteOtaPackageResponse
+     */
+    public DeleteOtaPackageResponse deleteOtaPackage(DeleteOtaPackageRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteOtaPackage);
+    }
+
+    /**
+     * 删除OTA升级包
+     *
+     * 只删除升级包信息，不会删除OBS上对象
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteOtaPackageRequest 请求对象
+     * @return SyncInvoker<DeleteOtaPackageRequest, DeleteOtaPackageResponse>
+     */
+    public SyncInvoker<DeleteOtaPackageRequest, DeleteOtaPackageResponse> deleteOtaPackageInvoker(
+        DeleteOtaPackageRequest request) {
+        return new SyncInvoker<DeleteOtaPackageRequest, DeleteOtaPackageResponse>(request, IoTDAMeta.deleteOtaPackage,
+            hcClient);
+    }
+
+    /**
+     * 查询OTA升级包列表
+     *
+     * 查询OTA升级包列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOtaPackageInfoRequest 请求对象
+     * @return ListOtaPackageInfoResponse
+     */
+    public ListOtaPackageInfoResponse listOtaPackageInfo(ListOtaPackageInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.listOtaPackageInfo);
+    }
+
+    /**
+     * 查询OTA升级包列表
+     *
+     * 查询OTA升级包列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOtaPackageInfoRequest 请求对象
+     * @return SyncInvoker<ListOtaPackageInfoRequest, ListOtaPackageInfoResponse>
+     */
+    public SyncInvoker<ListOtaPackageInfoRequest, ListOtaPackageInfoResponse> listOtaPackageInfoInvoker(
+        ListOtaPackageInfoRequest request) {
+        return new SyncInvoker<ListOtaPackageInfoRequest, ListOtaPackageInfoResponse>(request,
+            IoTDAMeta.listOtaPackageInfo, hcClient);
+    }
+
+    /**
+     * 获取OTA升级包详情
+     *
+     * 获取OTA升级包详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOtaPackageRequest 请求对象
+     * @return ShowOtaPackageResponse
+     */
+    public ShowOtaPackageResponse showOtaPackage(ShowOtaPackageRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showOtaPackage);
+    }
+
+    /**
+     * 获取OTA升级包详情
+     *
+     * 获取OTA升级包详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOtaPackageRequest 请求对象
+     * @return SyncInvoker<ShowOtaPackageRequest, ShowOtaPackageResponse>
+     */
+    public SyncInvoker<ShowOtaPackageRequest, ShowOtaPackageResponse> showOtaPackageInvoker(
+        ShowOtaPackageRequest request) {
+        return new SyncInvoker<ShowOtaPackageRequest, ShowOtaPackageResponse>(request, IoTDAMeta.showOtaPackage,
+            hcClient);
+    }
+
+    /**
      * 创建产品
      *
      * 应用服务器可调用此接口创建产品。

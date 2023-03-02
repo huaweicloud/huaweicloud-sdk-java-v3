@@ -1898,6 +1898,38 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSslCertDownloadLinkRequest, ListSslCertDownloadLinkResponse> listSslCertDownloadLink =
+        genForlistSslCertDownloadLink();
+
+    private static HttpRequestDef<ListSslCertDownloadLinkRequest, ListSslCertDownloadLinkResponse> genForlistSslCertDownloadLink() {
+        // basic
+        HttpRequestDef.Builder<ListSslCertDownloadLinkRequest, ListSslCertDownloadLinkResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSslCertDownloadLinkRequest.class, ListSslCertDownloadLinkResponse.class)
+            .withName("ListSslCertDownloadLink")
+            .withUri("/v3/{project_id}/instances/{instance_id}/ssl-cert/download-link")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSslCertDownloadLinkRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSslCertDownloadLinkRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListStorageTypesRequest, ListStorageTypesResponse> listStorageTypes =
         genForlistStorageTypes();
 

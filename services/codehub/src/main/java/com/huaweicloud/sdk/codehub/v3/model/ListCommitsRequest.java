@@ -45,6 +45,16 @@ public class ListCommitsRequest {
 
     private Boolean withStats;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page")
+
+    private Integer page;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "per_page")
+
+    private Integer perPage;
+
     public ListCommitsRequest withRepoId(Integer repoId) {
         this.repoId = repoId;
         return this;
@@ -164,6 +174,44 @@ public class ListCommitsRequest {
         this.withStats = withStats;
     }
 
+    public ListCommitsRequest withPage(Integer page) {
+        this.page = page;
+        return this;
+    }
+
+    /**
+     * 页码
+     * minimum: 1
+     * maximum: 2147483647
+     * @return page
+     */
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    public ListCommitsRequest withPerPage(Integer perPage) {
+        this.perPage = perPage;
+        return this;
+    }
+
+    /**
+     * 每页条目数
+     * minimum: 1
+     * maximum: 100
+     * @return perPage
+     */
+    public Integer getPerPage() {
+        return perPage;
+    }
+
+    public void setPerPage(Integer perPage) {
+        this.perPage = perPage;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -178,12 +226,14 @@ public class ListCommitsRequest {
             && Objects.equals(this.since, listCommitsRequest.since)
             && Objects.equals(this.until, listCommitsRequest.until)
             && Objects.equals(this.path, listCommitsRequest.path) && Objects.equals(this.all, listCommitsRequest.all)
-            && Objects.equals(this.withStats, listCommitsRequest.withStats);
+            && Objects.equals(this.withStats, listCommitsRequest.withStats)
+            && Objects.equals(this.page, listCommitsRequest.page)
+            && Objects.equals(this.perPage, listCommitsRequest.perPage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(repoId, refName, since, until, path, all, withStats);
+        return Objects.hash(repoId, refName, since, until, path, all, withStats, page, perPage);
     }
 
     @Override
@@ -197,6 +247,8 @@ public class ListCommitsRequest {
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
         sb.append("    all: ").append(toIndentedString(all)).append("\n");
         sb.append("    withStats: ").append(toIndentedString(withStats)).append("\n");
+        sb.append("    page: ").append(toIndentedString(page)).append("\n");
+        sb.append("    perPage: ").append(toIndentedString(perPage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

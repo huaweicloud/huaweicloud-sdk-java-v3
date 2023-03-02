@@ -15,7 +15,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 任务节点形状信息。
+ * 任务节点元数据。
  */
 public class Metadata  {
 
@@ -40,7 +40,7 @@ public class Metadata  {
 
 
     /**
-     * 形状,节点类型。
+     * 节点类型。
      * @return type
      */
     public String getType() {

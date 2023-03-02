@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class ServersInfoType {
 
     /**
-     * 重启类型：SOFT：普通重启。HARD：强制重启。
+     * 重启类型：SOFT：普通重启（不生效）。HARD：强制重启（默认）。
      */
     public static final class TypeEnum {
 
@@ -111,7 +111,7 @@ public class ServersInfoType {
     }
 
     /**
-     * 重启类型：SOFT：普通重启。HARD：强制重启。
+     * 重启类型：SOFT：普通重启（不生效）。HARD：强制重启（默认）。
      * @return type
      */
     public TypeEnum getType() {

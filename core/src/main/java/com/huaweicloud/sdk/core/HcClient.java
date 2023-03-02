@@ -265,7 +265,8 @@ public class HcClient implements CustomizationConfigure {
                     buildRequestBody(httpRequestBuilder, reqValue);
                 } else if (field.getLocation() == LocationType.Cname) {
                     try {
-                        URL url = new URL(endpoint);
+                        URL url = new URL(
+                                endpoint.replace("\r", "").replace("\n", ""));
                         StringBuilder endpointBuilder = new StringBuilder();
                         endpointBuilder.append(url.getProtocol())
                                 .append("://")

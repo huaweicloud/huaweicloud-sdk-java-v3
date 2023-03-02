@@ -627,6 +627,13 @@ public class GslMeta {
             f -> f.withMarshaller(ListSimCardsRequest::getFilterDowntimePeriod, (req, v) -> {
                 req.setFilterDowntimePeriod(v);
             }));
+        builder.<List<Long>>withRequestField("order_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSimCardsRequest::getOrderIds, (req, v) -> {
+                req.setOrderIds(v);
+            }));
 
         // response
 

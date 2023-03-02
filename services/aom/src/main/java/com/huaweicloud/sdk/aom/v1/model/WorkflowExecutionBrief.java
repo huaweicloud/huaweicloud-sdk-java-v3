@@ -165,7 +165,7 @@ public class WorkflowExecutionBrief  {
 
 
     /**
-     * 流程实例创建时间，格式：UT时间戳
+     * 流程实例创建时间，格式：UTC时间戳
      * minimum: 0
      * maximum: 9999999999999
      * @return beginTime

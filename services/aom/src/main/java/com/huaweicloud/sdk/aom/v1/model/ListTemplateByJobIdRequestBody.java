@@ -126,7 +126,7 @@ public class ListTemplateByJobIdRequestBody  {
 
 
     /**
-     * 需要排序的字段(默认为更新时间),支持字段有create_time
+     * 需要排序的字段(默认为更新时间),支持字段有name，create_time，update_time。
      * @return orderByColumn
      */
     public String getOrderByColumn() {
@@ -148,7 +148,7 @@ public class ListTemplateByJobIdRequestBody  {
 
 
     /**
-     * 排序规则(默认降序) 传入升序或降序，升序：ASC，降序：DESC 排序规则(默认降序) 传入升序或降序，升序：ASC，降序：DESC
+     * 排序规则(默认降序) 传入升序或降序，升序：ASC，降序：DESC。
      * @return sortOrder
      */
     public String getSortOrder() {

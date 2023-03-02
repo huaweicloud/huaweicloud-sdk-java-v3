@@ -31,7 +31,7 @@ public class SetChargeModesBody {
     }
 
     /**
-     * 计费模式，支持flux（流量），bw（带宽）
+     * 计费模式，支持flux（流量），v2及以上客户支持bw（带宽）
      * @return chargeMode
      */
     public String getChargeMode() {

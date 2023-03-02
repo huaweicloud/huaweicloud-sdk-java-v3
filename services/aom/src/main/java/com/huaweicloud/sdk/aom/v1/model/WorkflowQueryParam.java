@@ -158,7 +158,7 @@ public class WorkflowQueryParam  {
         return this;
     }
     /**
-     * 工作标签，最多支持10个。
+     * 工作流标签，最多支持10个。
      * @return tags
      */
     public Map<String, String> getTags() {
@@ -272,7 +272,7 @@ public class WorkflowQueryParam  {
 
 
     /**
-     * 排序字段，取值[\"create_time\"，\"last_execution_start_time\"]。
+     * 排序字段，取值[\"create_time\"，\"last_execution_start_time\"，\"update_time\"]。
      * @return sortField
      */
     public String getSortField() {
@@ -316,7 +316,7 @@ public class WorkflowQueryParam  {
 
 
     /**
-     * 更新时间，时间范围查询的开始时间。
+     * 时间范围查询的开始时间。
      * minimum: 0
      * maximum: 9999999999999
      * @return searchTimeStart
@@ -340,7 +340,7 @@ public class WorkflowQueryParam  {
 
 
     /**
-     * 更新时间，时间范围查询的结束时间。
+     * 时间范围查询的结束时间。
      * minimum: 0
      * maximum: 9999999999999
      * @return searchTimeEnd

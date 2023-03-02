@@ -2380,6 +2380,36 @@ public class DdsAsyncClient {
     }
 
     /**
+     * 查询数据库复制集名称
+     *
+     * 查询数据库复制集名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowReplSetNameRequest 请求对象
+     * @return CompletableFuture<ShowReplSetNameResponse>
+     */
+    public CompletableFuture<ShowReplSetNameResponse> showReplSetNameAsync(ShowReplSetNameRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.showReplSetName);
+    }
+
+    /**
+     * 查询数据库复制集名称
+     *
+     * 查询数据库复制集名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowReplSetNameRequest 请求对象
+     * @return AsyncInvoker<ShowReplSetNameRequest, ShowReplSetNameResponse>
+     */
+    public AsyncInvoker<ShowReplSetNameRequest, ShowReplSetNameResponse> showReplSetNameAsyncInvoker(
+        ShowReplSetNameRequest request) {
+        return new AsyncInvoker<ShowReplSetNameRequest, ShowReplSetNameResponse>(request, DdsMeta.showReplSetName,
+            hcClient);
+    }
+
+    /**
      * 查询秒级监控配置
      *
      * 查询秒级监控配置。
@@ -2864,6 +2894,36 @@ public class DdsAsyncClient {
         UpdateInstanceRemarkRequest request) {
         return new AsyncInvoker<UpdateInstanceRemarkRequest, UpdateInstanceRemarkResponse>(request,
             DdsMeta.updateInstanceRemark, hcClient);
+    }
+
+    /**
+     * 修改数据库复制集名称
+     *
+     * 修改数据库复制集名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateReplSetNameRequest 请求对象
+     * @return CompletableFuture<UpdateReplSetNameResponse>
+     */
+    public CompletableFuture<UpdateReplSetNameResponse> updateReplSetNameAsync(UpdateReplSetNameRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.updateReplSetName);
+    }
+
+    /**
+     * 修改数据库复制集名称
+     *
+     * 修改数据库复制集名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateReplSetNameRequest 请求对象
+     * @return AsyncInvoker<UpdateReplSetNameRequest, UpdateReplSetNameResponse>
+     */
+    public AsyncInvoker<UpdateReplSetNameRequest, UpdateReplSetNameResponse> updateReplSetNameAsyncInvoker(
+        UpdateReplSetNameRequest request) {
+        return new AsyncInvoker<UpdateReplSetNameRequest, UpdateReplSetNameResponse>(request, DdsMeta.updateReplSetName,
+            hcClient);
     }
 
     /**

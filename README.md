@@ -30,6 +30,8 @@ At first, you need to [download](https://maven.apache.org/download.cgi)
 and [install](https://maven.apache.org/install.html) Maven, and then declare dependencies in the `pom.xml` file in your
 Java project.
 
+Please choose a specific version number when specifying dependencies, otherwise it may cause unforeseen issues at build time.
+
 ### Individual Services
 
 You can add depenencies for the specific services only. Take using ECS and VPC SDK for example, you need to
@@ -39,12 +41,12 @@ import `huaweicloud-sdk-ecs` and `huaweicloud-sdk-vpc` libraries:
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-ecs</artifactId>
-    <version>[3.0.40-rc, 3.1.0)</version>
+    <version>[3.0.40-rc, 3.2.0)</version>
 </dependency>
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-vpc</artifactId>
-    <version>[3.0.40-rc, 3.1.0)</version>
+    <version>[3.0.40-rc, 3.2.0)</version>
 </dependency>
 ```
 
@@ -56,7 +58,7 @@ You can add only one dependency library to import all supported services.(3.0.40
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-all</artifactId>
-    <version>[3.0.40-rc, 3.1.0)</version>
+    <version>[3.0.40-rc, 3.2.0)</version>
 </dependency>
 ```
 
@@ -69,7 +71,7 @@ contains all supported services and dependent JARs with third-party libraries re
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-bundle</artifactId>
-    <version>[3.0.40-rc, 3.1.0)</version>
+    <version>[3.0.40-rc, 3.2.0)</version>
 </dependency>
 ```
 

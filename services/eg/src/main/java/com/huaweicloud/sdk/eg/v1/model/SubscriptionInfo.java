@@ -226,6 +226,11 @@ public class SubscriptionInfo {
     private String channelName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "used")
+
+    private List<SubscriptionUsedInfo> used = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sources")
 
     private List<SubscriptionSourceInfo> sources = null;
@@ -364,6 +369,39 @@ public class SubscriptionInfo {
         this.channelName = channelName;
     }
 
+    public SubscriptionInfo withUsed(List<SubscriptionUsedInfo> used) {
+        this.used = used;
+        return this;
+    }
+
+    public SubscriptionInfo addUsedItem(SubscriptionUsedInfo usedItem) {
+        if (this.used == null) {
+            this.used = new ArrayList<>();
+        }
+        this.used.add(usedItem);
+        return this;
+    }
+
+    public SubscriptionInfo withUsed(Consumer<List<SubscriptionUsedInfo>> usedSetter) {
+        if (this.used == null) {
+            this.used = new ArrayList<>();
+        }
+        usedSetter.accept(this.used);
+        return this;
+    }
+
+    /**
+     * 标签信息
+     * @return used
+     */
+    public List<SubscriptionUsedInfo> getUsed() {
+        return used;
+    }
+
+    public void setUsed(List<SubscriptionUsedInfo> used) {
+        this.used = used;
+    }
+
     public SubscriptionInfo withSources(List<SubscriptionSourceInfo> sources) {
         this.sources = sources;
         return this;
@@ -478,6 +516,7 @@ public class SubscriptionInfo {
             && Objects.equals(this.type, subscriptionInfo.type) && Objects.equals(this.status, subscriptionInfo.status)
             && Objects.equals(this.channelId, subscriptionInfo.channelId)
             && Objects.equals(this.channelName, subscriptionInfo.channelName)
+            && Objects.equals(this.used, subscriptionInfo.used)
             && Objects.equals(this.sources, subscriptionInfo.sources)
             && Objects.equals(this.targets, subscriptionInfo.targets)
             && Objects.equals(this.createdTime, subscriptionInfo.createdTime)
@@ -493,6 +532,7 @@ public class SubscriptionInfo {
             status,
             channelId,
             channelName,
+            used,
             sources,
             targets,
             createdTime,
@@ -510,6 +550,7 @@ public class SubscriptionInfo {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    channelId: ").append(toIndentedString(channelId)).append("\n");
         sb.append("    channelName: ").append(toIndentedString(channelName)).append("\n");
+        sb.append("    used: ").append(toIndentedString(used)).append("\n");
         sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
         sb.append("    targets: ").append(toIndentedString(targets)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");

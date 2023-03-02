@@ -290,6 +290,35 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 创建Redis数据库账号
+     *
+     * 在Redis实例中创建数据库帐号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDbUserRequest 请求对象
+     * @return CreateDbUserResponse
+     */
+    public CreateDbUserResponse createDbUser(CreateDbUserRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.createDbUser);
+    }
+
+    /**
+     * 创建Redis数据库账号
+     *
+     * 在Redis实例中创建数据库帐号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDbUserRequest 请求对象
+     * @return SyncInvoker<CreateDbUserRequest, CreateDbUserResponse>
+     */
+    public SyncInvoker<CreateDbUserRequest, CreateDbUserResponse> createDbUserInvoker(CreateDbUserRequest request) {
+        return new SyncInvoker<CreateDbUserRequest, CreateDbUserResponse>(request, GaussDBforNoSQLMeta.createDbUser,
+            hcClient);
+    }
+
+    /**
      * 搭建实例与特定实例的容灾关系
      *
      * 搭建实例与特定实例的容灾关系。 该接口需要对搭建容灾关系的两个实例分别各调用一次，2次接口都调用成功才能成功搭建容灾关系。
@@ -406,6 +435,35 @@ public class GaussDBforNoSQLClient {
         DeleteConfigurationRequest request) {
         return new SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse>(request,
             GaussDBforNoSQLMeta.deleteConfiguration, hcClient);
+    }
+
+    /**
+     * 删除Redis数据库账号
+     *
+     * 删除Redis实例的数据库账号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDbUserRequest 请求对象
+     * @return DeleteDbUserResponse
+     */
+    public DeleteDbUserResponse deleteDbUser(DeleteDbUserRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.deleteDbUser);
+    }
+
+    /**
+     * 删除Redis数据库账号
+     *
+     * 删除Redis实例的数据库账号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDbUserRequest 请求对象
+     * @return SyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse>
+     */
+    public SyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse> deleteDbUserInvoker(DeleteDbUserRequest request) {
+        return new SyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse>(request, GaussDBforNoSQLMeta.deleteDbUser,
+            hcClient);
     }
 
     /**
@@ -679,6 +737,35 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 获取Redis数据库账号列表和详情
+     *
+     * 获取Redis数据库账号列表和详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDbUsersRequest 请求对象
+     * @return ListDbUsersResponse
+     */
+    public ListDbUsersResponse listDbUsers(ListDbUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.listDbUsers);
+    }
+
+    /**
+     * 获取Redis数据库账号列表和详情
+     *
+     * 获取Redis数据库账号列表和详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDbUsersRequest 请求对象
+     * @return SyncInvoker<ListDbUsersRequest, ListDbUsersResponse>
+     */
+    public SyncInvoker<ListDbUsersRequest, ListDbUsersResponse> listDbUsersInvoker(ListDbUsersRequest request) {
+        return new SyncInvoker<ListDbUsersRequest, ListDbUsersResponse>(request, GaussDBforNoSQLMeta.listDbUsers,
+            hcClient);
+    }
+
+    /**
      * 查询专属资源列表
      *
      * 查询专属资源列表。
@@ -794,6 +881,36 @@ public class GaussDBforNoSQLClient {
     public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
         return new SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, GaussDBforNoSQLMeta.listFlavors,
             hcClient);
+    }
+
+    /**
+     * 获取Redis实例数据库列表
+     *
+     * 获取Redis实例数据库列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceDatabasesRequest 请求对象
+     * @return ListInstanceDatabasesResponse
+     */
+    public ListInstanceDatabasesResponse listInstanceDatabases(ListInstanceDatabasesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.listInstanceDatabases);
+    }
+
+    /**
+     * 获取Redis实例数据库列表
+     *
+     * 获取Redis实例数据库列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceDatabasesRequest 请求对象
+     * @return SyncInvoker<ListInstanceDatabasesRequest, ListInstanceDatabasesResponse>
+     */
+    public SyncInvoker<ListInstanceDatabasesRequest, ListInstanceDatabasesResponse> listInstanceDatabasesInvoker(
+        ListInstanceDatabasesRequest request) {
+        return new SyncInvoker<ListInstanceDatabasesRequest, ListInstanceDatabasesResponse>(request,
+            GaussDBforNoSQLMeta.listInstanceDatabases, hcClient);
     }
 
     /**
@@ -1035,6 +1152,36 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 修改Redis数据库帐号权限
+     *
+     * 修改Redis数据库帐号权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyDbUserPrivilegeRequest 请求对象
+     * @return ModifyDbUserPrivilegeResponse
+     */
+    public ModifyDbUserPrivilegeResponse modifyDbUserPrivilege(ModifyDbUserPrivilegeRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.modifyDbUserPrivilege);
+    }
+
+    /**
+     * 修改Redis数据库帐号权限
+     *
+     * 修改Redis数据库帐号权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyDbUserPrivilegeRequest 请求对象
+     * @return SyncInvoker<ModifyDbUserPrivilegeRequest, ModifyDbUserPrivilegeResponse>
+     */
+    public SyncInvoker<ModifyDbUserPrivilegeRequest, ModifyDbUserPrivilegeResponse> modifyDbUserPrivilegeInvoker(
+        ModifyDbUserPrivilegeRequest request) {
+        return new SyncInvoker<ModifyDbUserPrivilegeRequest, ModifyDbUserPrivilegeResponse>(request,
+            GaussDBforNoSQLMeta.modifyDbUserPrivilege, hcClient);
+    }
+
+    /**
      * 修改企业项目配额
      *
      * 修改企业项目配额。
@@ -1185,6 +1332,36 @@ public class GaussDBforNoSQLClient {
         PauseResumeDataSynchronizationRequest request) {
         return new SyncInvoker<PauseResumeDataSynchronizationRequest, PauseResumeDataSynchronizationResponse>(request,
             GaussDBforNoSQLMeta.pauseResumeDataSynchronization, hcClient);
+    }
+
+    /**
+     * 重置Redis数据库账号密码
+     *
+     * 重置Redis数据库账号密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetDbUserPasswordRequest 请求对象
+     * @return ResetDbUserPasswordResponse
+     */
+    public ResetDbUserPasswordResponse resetDbUserPassword(ResetDbUserPasswordRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.resetDbUserPassword);
+    }
+
+    /**
+     * 重置Redis数据库账号密码
+     *
+     * 重置Redis数据库账号密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetDbUserPasswordRequest 请求对象
+     * @return SyncInvoker<ResetDbUserPasswordRequest, ResetDbUserPasswordResponse>
+     */
+    public SyncInvoker<ResetDbUserPasswordRequest, ResetDbUserPasswordResponse> resetDbUserPasswordInvoker(
+        ResetDbUserPasswordRequest request) {
+        return new SyncInvoker<ResetDbUserPasswordRequest, ResetDbUserPasswordResponse>(request,
+            GaussDBforNoSQLMeta.resetDbUserPassword, hcClient);
     }
 
     /**

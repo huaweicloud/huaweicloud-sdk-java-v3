@@ -61,7 +61,7 @@ public class SearchWorkflowExecutionDetailRequest  {
 
 
     /**
-     * 工作流执行ID，xxxxx。
+     * 工作流执行ID。
      * @return executionId
      */
     public String getExecutionId() {

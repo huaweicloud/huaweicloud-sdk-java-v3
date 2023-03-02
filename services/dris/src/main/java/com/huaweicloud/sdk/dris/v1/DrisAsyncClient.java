@@ -473,6 +473,35 @@ public class DrisAsyncClient {
     }
 
     /**
+     * 查询历史交通统计信息列表
+     *
+     * 查询历史交通统计信息列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEdgeFlowsRequest 请求对象
+     * @return CompletableFuture<ListEdgeFlowsResponse>
+     */
+    public CompletableFuture<ListEdgeFlowsResponse> listEdgeFlowsAsync(ListEdgeFlowsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrisMeta.listEdgeFlows);
+    }
+
+    /**
+     * 查询历史交通统计信息列表
+     *
+     * 查询历史交通统计信息列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEdgeFlowsRequest 请求对象
+     * @return AsyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse>
+     */
+    public AsyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse> listEdgeFlowsAsyncInvoker(
+        ListEdgeFlowsRequest request) {
+        return new AsyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse>(request, DrisMeta.listEdgeFlows, hcClient);
+    }
+
+    /**
      * 查询历史交通事件列表
      *
      * 查询历史交通事件列表
@@ -1618,35 +1647,6 @@ public class DrisAsyncClient {
         UpdateEdgeApplicationVersionStateRequest request) {
         return new AsyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse>(
             request, DrisMeta.updateEdgeApplicationVersionState, hcClient);
-    }
-
-    /**
-     * 查询历史交通统计信息列表
-     *
-     * 查询历史交通统计信息列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListEdgeFlowsRequest 请求对象
-     * @return CompletableFuture<ListEdgeFlowsResponse>
-     */
-    public CompletableFuture<ListEdgeFlowsResponse> listEdgeFlowsAsync(ListEdgeFlowsRequest request) {
-        return hcClient.asyncInvokeHttp(request, DrisMeta.listEdgeFlows);
-    }
-
-    /**
-     * 查询历史交通统计信息列表
-     *
-     * 查询历史交通统计信息列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListEdgeFlowsRequest 请求对象
-     * @return AsyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse>
-     */
-    public AsyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse> listEdgeFlowsAsyncInvoker(
-        ListEdgeFlowsRequest request) {
-        return new AsyncInvoker<ListEdgeFlowsRequest, ListEdgeFlowsResponse>(request, DrisMeta.listEdgeFlows, hcClient);
     }
 
     /**

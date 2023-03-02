@@ -276,7 +276,7 @@ public class ScriptVersion  {
 
 
     /**
-     * 版本所在的脚本id,根据project_id、脚本名称的和，用guava计算hash(md5)方式获取，比如为：d648c682ef5750f700c050b41692b2b8
+     * 脚本id，根据UUID.randomUUID生成。
      * @return scriptId
      */
     public String getScriptId() {
@@ -366,7 +366,7 @@ public class ScriptVersion  {
 
 
     /**
-     * 实体的最后更新时间戳。 注意：执行创建/修补/删除操作时，update_time将更新。
+     * 实体的最后更新时间戳。 注意：执行创建/修改/删除操作时，update_time将更新。
      * minimum: 0
      * maximum: 9999999999999
      * @return updateTime
@@ -390,7 +390,7 @@ public class ScriptVersion  {
 
 
     /**
-     * 版本id，唯一标识，根据project_id、脚本名称、脚本版本号的和，用guava计算hash(md5)方式获取，比如为：d648c682ef5750f700c050b41692b2b8
+     * 版本id，根据UUID.randomUUID生成。
      * @return versionId
      */
     public String getVersionId() {

@@ -86,7 +86,7 @@ public class SearchScriptsRequestBody  {
 
 
     /**
-     * 查询接收的参数，版本管理时，name为脚本名称（版本管理查询时name不能为空），页面查询时，name为接收模糊查询的参数，name是null，表示查询所有默认脚本。
+     * 查询接收的参数，版本管理时，name为脚本名称（版本管理查询时name不能为空），脚本管理页面查询时，name为接收模糊查询的参数，name是null，表示查询所有默认脚本。
      * @return name
      */
     public String getName() {
@@ -108,7 +108,7 @@ public class SearchScriptsRequestBody  {
 
 
     /**
-     * 查询规则，当取值为default时，表示脚本管理主页查询，包括模糊查询；当取值为no_default时，表示版本管理；当取值为空时，默认是页面查询, 传入不影响使用。
+     * 查询规则，如果是类型为default，则为模糊查询和脚本管理主页展示，no_default为版本管理。
      * @return isDefault
      */
     public String getIsDefault() {

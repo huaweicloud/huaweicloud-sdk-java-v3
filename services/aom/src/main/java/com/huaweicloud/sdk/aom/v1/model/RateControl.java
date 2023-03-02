@@ -90,7 +90,7 @@ public class RateControl  {
 
 
     /**
-     * 是否分批发布。
+     * 每批支持的最大实例数。
      * minimum: 0
      * maximum: 100
      * @return max

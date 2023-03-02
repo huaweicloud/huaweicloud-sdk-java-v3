@@ -22,7 +22,6 @@
 package com.huaweicloud.sdk.core.impl;
 
 import com.huaweicloud.sdk.core.Constants;
-import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
 import com.huaweicloud.sdk.core.exception.ConnectionException;
 import com.huaweicloud.sdk.core.exception.HostUnreachableException;
 import com.huaweicloud.sdk.core.exception.SslHandShakeException;
@@ -31,8 +30,6 @@ import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.http.HttpResponse;
-import com.huaweicloud.sdk.core.ssl.DefaultSSLSocketFactory;
-import com.huaweicloud.sdk.core.ssl.GMSSLSocketFactory;
 import com.huaweicloud.sdk.core.ssl.IgnoreSSLVerificationFactory;
 import com.huaweicloud.sdk.core.utils.ExceptionUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
@@ -103,19 +100,12 @@ public class DefaultHttpClient implements HttpClient {
 
         if (Objects.nonNull(httpConfig.getSSLSocketFactory()) && Objects.nonNull(httpConfig.getX509TrustManager())) {
             clientBuilder.sslSocketFactory(httpConfig.getSSLSocketFactory(), httpConfig.getX509TrustManager());
-        } else if (httpConfig.isIgnoreSSLVerification()) {
+        }
+        if (httpConfig.isIgnoreSSLVerification()) {
             clientBuilder.hostnameVerifier(IgnoreSSLVerificationFactory.getHostnameVerifier())
                     .sslSocketFactory(
                             IgnoreSSLVerificationFactory.getSSLContext(httpConfig.getSecureRandom()).getSocketFactory(),
                             IgnoreSSLVerificationFactory.getTrustAllManager());
-        } else if (httpConfig.getSigningAlgorithm() == SigningAlgorithm.HMAC_SHA256) {
-            clientBuilder.sslSocketFactory(
-                    DefaultSSLSocketFactory.getDefaultSSLSocketFactory(),
-                    DefaultSSLSocketFactory.getDefaultX509TrustManager());
-        } else if (httpConfig.getSigningAlgorithm() == SigningAlgorithm.HMAC_SM3) {
-            clientBuilder.sslSocketFactory(
-                    GMSSLSocketFactory.getSSLContext(httpConfig.getSecureRandom()).getSocketFactory(),
-                    GMSSLSocketFactory.getX509TrustManager());
         }
 
         clientBuilder.protocols(Collections.singletonList(Protocol.HTTP_1_1));

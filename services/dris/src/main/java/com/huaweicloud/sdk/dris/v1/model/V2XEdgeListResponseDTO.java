@@ -33,6 +33,11 @@ public class V2XEdgeListResponseDTO {
     private String esn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip")
+
+    private String ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "position_description")
 
     private String positionDescription;
@@ -191,6 +196,23 @@ public class V2XEdgeListResponseDTO {
         this.esn = esn;
     }
 
+    public V2XEdgeListResponseDTO withIp(String ip) {
+        this.ip = ip;
+        return this;
+    }
+
+    /**
+     * **参数说明**：网络IP，例如127.0.0.1。 
+     * @return ip
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
     public V2XEdgeListResponseDTO withPositionDescription(String positionDescription) {
         this.positionDescription = positionDescription;
         return this;
@@ -297,6 +319,7 @@ public class V2XEdgeListResponseDTO {
         return Objects.equals(this.v2xEdgeId, v2XEdgeListResponseDTO.v2xEdgeId)
             && Objects.equals(this.name, v2XEdgeListResponseDTO.name)
             && Objects.equals(this.esn, v2XEdgeListResponseDTO.esn)
+            && Objects.equals(this.ip, v2XEdgeListResponseDTO.ip)
             && Objects.equals(this.positionDescription, v2XEdgeListResponseDTO.positionDescription)
             && Objects.equals(this.location, v2XEdgeListResponseDTO.location)
             && Objects.equals(this.status, v2XEdgeListResponseDTO.status)
@@ -306,7 +329,8 @@ public class V2XEdgeListResponseDTO {
 
     @Override
     public int hashCode() {
-        return Objects.hash(v2xEdgeId, name, esn, positionDescription, location, status, channelStatus, createdTime);
+        return Objects
+            .hash(v2xEdgeId, name, esn, ip, positionDescription, location, status, channelStatus, createdTime);
     }
 
     @Override
@@ -316,6 +340,7 @@ public class V2XEdgeListResponseDTO {
         sb.append("    v2xEdgeId: ").append(toIndentedString(v2xEdgeId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    esn: ").append(toIndentedString(esn)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    positionDescription: ").append(toIndentedString(positionDescription)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

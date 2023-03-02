@@ -23,7 +23,7 @@ public class OrganizationV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_count")
 
-    private String nodeCount;
+    private Integer nodeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -69,7 +69,7 @@ public class OrganizationV2 {
         this.nameHash = nameHash;
     }
 
-    public OrganizationV2 withNodeCount(String nodeCount) {
+    public OrganizationV2 withNodeCount(Integer nodeCount) {
         this.nodeCount = nodeCount;
         return this;
     }
@@ -78,11 +78,11 @@ public class OrganizationV2 {
      * 组织节点
      * @return nodeCount
      */
-    public String getNodeCount() {
+    public Integer getNodeCount() {
         return nodeCount;
     }
 
-    public void setNodeCount(String nodeCount) {
+    public void setNodeCount(Integer nodeCount) {
         this.nodeCount = nodeCount;
     }
 

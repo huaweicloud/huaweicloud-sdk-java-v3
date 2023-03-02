@@ -29,6 +29,8 @@
 首先您需要在您的操作系统中 [下载](https://maven.apache.org/download.cgi) 并 [安装](https://maven.apache.org/install.html) Maven ，安装完成后您只需在
 Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
 
+指定依赖时请选择特定的版本号，否则可能会在构建时导致不可预见的问题。
+
 ### 独立服务包：
 
 根据需要独立引入SDK依赖包 。以 ECS 和 VPC SDK 为例，您需要安装 `huaweicloud-sdk-ecs`和 `huaweicloud-sdk-vpc`：
@@ -37,12 +39,12 @@ Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-ecs</artifactId>
-    <version>[3.0.40-rc, 3.1.0)</version>
+    <version>[3.0.40-rc, 3.2.0)</version>
 </dependency>
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-vpc</artifactId>
-    <version>[3.0.40-rc, 3.1.0)</version>
+    <version>[3.0.40-rc, 3.2.0)</version>
 </dependency>
 ```
 
@@ -55,7 +57,7 @@ Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-all</artifactId>
-    <version>[3.0.40-rc, 3.1.0)</version>
+    <version>[3.0.40-rc, 3.2.0)</version>
 </dependency>
 ```
 
@@ -68,7 +70,7 @@ Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-bundle</artifactId>
-    <version>[3.0.40-rc, 3.1.0)</version>
+    <version>[3.0.40-rc, 3.2.0)</version>
 </dependency>
 ```
 

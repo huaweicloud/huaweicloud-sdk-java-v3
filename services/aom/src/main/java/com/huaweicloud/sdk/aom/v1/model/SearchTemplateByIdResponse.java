@@ -187,7 +187,7 @@ public class SearchTemplateByIdResponse extends SdkResponse {
 
 
     /**
-     * 模板创人，从接口调用传入的token中获取。
+     * 模板创建人，从接口调用传入的token中获取。
      * @return createBy
      */
     public String getCreateBy() {

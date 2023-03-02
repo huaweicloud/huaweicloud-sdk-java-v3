@@ -121,7 +121,7 @@ public class SubscriptionTarget {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transform")
 
-    private SubscriptionTargetTransform transform;
+    private TransForm transform;
 
     public SubscriptionTarget withId(String id) {
         this.id = id;
@@ -208,14 +208,14 @@ public class SubscriptionTarget {
         this.detail = detail;
     }
 
-    public SubscriptionTarget withTransform(SubscriptionTargetTransform transform) {
+    public SubscriptionTarget withTransform(TransForm transform) {
         this.transform = transform;
         return this;
     }
 
-    public SubscriptionTarget withTransform(Consumer<SubscriptionTargetTransform> transformSetter) {
+    public SubscriptionTarget withTransform(Consumer<TransForm> transformSetter) {
         if (this.transform == null) {
-            this.transform = new SubscriptionTargetTransform();
+            this.transform = new TransForm();
             transformSetter.accept(this.transform);
         }
 
@@ -226,11 +226,11 @@ public class SubscriptionTarget {
      * Get transform
      * @return transform
      */
-    public SubscriptionTargetTransform getTransform() {
+    public TransForm getTransform() {
         return transform;
     }
 
-    public void setTransform(SubscriptionTargetTransform transform) {
+    public void setTransform(TransForm transform) {
         this.transform = transform;
     }
 

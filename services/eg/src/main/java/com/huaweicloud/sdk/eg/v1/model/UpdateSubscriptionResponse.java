@@ -227,6 +227,11 @@ public class UpdateSubscriptionResponse extends SdkResponse {
     private String channelName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "used")
+
+    private List<SubscriptionUsedInfo> used = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sources")
 
     private List<SubscriptionSourceInfo> sources = null;
@@ -370,6 +375,39 @@ public class UpdateSubscriptionResponse extends SdkResponse {
         this.channelName = channelName;
     }
 
+    public UpdateSubscriptionResponse withUsed(List<SubscriptionUsedInfo> used) {
+        this.used = used;
+        return this;
+    }
+
+    public UpdateSubscriptionResponse addUsedItem(SubscriptionUsedInfo usedItem) {
+        if (this.used == null) {
+            this.used = new ArrayList<>();
+        }
+        this.used.add(usedItem);
+        return this;
+    }
+
+    public UpdateSubscriptionResponse withUsed(Consumer<List<SubscriptionUsedInfo>> usedSetter) {
+        if (this.used == null) {
+            this.used = new ArrayList<>();
+        }
+        usedSetter.accept(this.used);
+        return this;
+    }
+
+    /**
+     * 标签信息
+     * @return used
+     */
+    public List<SubscriptionUsedInfo> getUsed() {
+        return used;
+    }
+
+    public void setUsed(List<SubscriptionUsedInfo> used) {
+        this.used = used;
+    }
+
     public UpdateSubscriptionResponse withSources(List<SubscriptionSourceInfo> sources) {
         this.sources = sources;
         return this;
@@ -505,6 +543,7 @@ public class UpdateSubscriptionResponse extends SdkResponse {
             && Objects.equals(this.status, updateSubscriptionResponse.status)
             && Objects.equals(this.channelId, updateSubscriptionResponse.channelId)
             && Objects.equals(this.channelName, updateSubscriptionResponse.channelName)
+            && Objects.equals(this.used, updateSubscriptionResponse.used)
             && Objects.equals(this.sources, updateSubscriptionResponse.sources)
             && Objects.equals(this.targets, updateSubscriptionResponse.targets)
             && Objects.equals(this.createdTime, updateSubscriptionResponse.createdTime)
@@ -521,6 +560,7 @@ public class UpdateSubscriptionResponse extends SdkResponse {
             status,
             channelId,
             channelName,
+            used,
             sources,
             targets,
             createdTime,
@@ -539,6 +579,7 @@ public class UpdateSubscriptionResponse extends SdkResponse {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    channelId: ").append(toIndentedString(channelId)).append("\n");
         sb.append("    channelName: ").append(toIndentedString(channelName)).append("\n");
+        sb.append("    used: ").append(toIndentedString(used)).append("\n");
         sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
         sb.append("    targets: ").append(toIndentedString(targets)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");

@@ -161,7 +161,7 @@ public class StartPausingWorkflowExecutionsRequest  {
 
 
     /**
-     * 工作流执行ID，xxxxxx。
+     * 工作流执行ID。
      * @return executionId
      */
     public String getExecutionId() {

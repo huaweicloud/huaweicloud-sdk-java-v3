@@ -15,56 +15,46 @@ import java.util.function.Consumer;
 public class ListInstanceConsumerGroupsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "group_ids")
+    @JsonProperty(value = "groups")
 
-    private List<String> groupIds = null;
+    private List<GroupInfoSimple> groups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
     private Integer total;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "next_offset")
-
-    private Integer nextOffset;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "previous_offset")
-
-    private Integer previousOffset;
-
-    public ListInstanceConsumerGroupsResponse withGroupIds(List<String> groupIds) {
-        this.groupIds = groupIds;
+    public ListInstanceConsumerGroupsResponse withGroups(List<GroupInfoSimple> groups) {
+        this.groups = groups;
         return this;
     }
 
-    public ListInstanceConsumerGroupsResponse addGroupIdsItem(String groupIdsItem) {
-        if (this.groupIds == null) {
-            this.groupIds = new ArrayList<>();
+    public ListInstanceConsumerGroupsResponse addGroupsItem(GroupInfoSimple groupsItem) {
+        if (this.groups == null) {
+            this.groups = new ArrayList<>();
         }
-        this.groupIds.add(groupIdsItem);
+        this.groups.add(groupsItem);
         return this;
     }
 
-    public ListInstanceConsumerGroupsResponse withGroupIds(Consumer<List<String>> groupIdsSetter) {
-        if (this.groupIds == null) {
-            this.groupIds = new ArrayList<>();
+    public ListInstanceConsumerGroupsResponse withGroups(Consumer<List<GroupInfoSimple>> groupsSetter) {
+        if (this.groups == null) {
+            this.groups = new ArrayList<>();
         }
-        groupIdsSetter.accept(this.groupIds);
+        groupsSetter.accept(this.groups);
         return this;
     }
 
     /**
-     * 所有的消费组ID
-     * @return groupIds
+     * 所有的消费组。
+     * @return groups
      */
-    public List<String> getGroupIds() {
-        return groupIds;
+    public List<GroupInfoSimple> getGroups() {
+        return groups;
     }
 
-    public void setGroupIds(List<String> groupIds) {
-        this.groupIds = groupIds;
+    public void setGroups(List<GroupInfoSimple> groups) {
+        this.groups = groups;
     }
 
     public ListInstanceConsumerGroupsResponse withTotal(Integer total) {
@@ -73,7 +63,7 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 所有的消费组总数
+     * 所有的消费组总数。
      * @return total
      */
     public Integer getTotal() {
@@ -82,40 +72,6 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
 
     public void setTotal(Integer total) {
         this.total = total;
-    }
-
-    public ListInstanceConsumerGroupsResponse withNextOffset(Integer nextOffset) {
-        this.nextOffset = nextOffset;
-        return this;
-    }
-
-    /**
-     * 下一个消费组序号
-     * @return nextOffset
-     */
-    public Integer getNextOffset() {
-        return nextOffset;
-    }
-
-    public void setNextOffset(Integer nextOffset) {
-        this.nextOffset = nextOffset;
-    }
-
-    public ListInstanceConsumerGroupsResponse withPreviousOffset(Integer previousOffset) {
-        this.previousOffset = previousOffset;
-        return this;
-    }
-
-    /**
-     * 上一个消费组序号
-     * @return previousOffset
-     */
-    public Integer getPreviousOffset() {
-        return previousOffset;
-    }
-
-    public void setPreviousOffset(Integer previousOffset) {
-        this.previousOffset = previousOffset;
     }
 
     @Override
@@ -127,25 +83,21 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
             return false;
         }
         ListInstanceConsumerGroupsResponse listInstanceConsumerGroupsResponse = (ListInstanceConsumerGroupsResponse) o;
-        return Objects.equals(this.groupIds, listInstanceConsumerGroupsResponse.groupIds)
-            && Objects.equals(this.total, listInstanceConsumerGroupsResponse.total)
-            && Objects.equals(this.nextOffset, listInstanceConsumerGroupsResponse.nextOffset)
-            && Objects.equals(this.previousOffset, listInstanceConsumerGroupsResponse.previousOffset);
+        return Objects.equals(this.groups, listInstanceConsumerGroupsResponse.groups)
+            && Objects.equals(this.total, listInstanceConsumerGroupsResponse.total);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupIds, total, nextOffset, previousOffset);
+        return Objects.hash(groups, total);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListInstanceConsumerGroupsResponse {\n");
-        sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
+        sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
-        sb.append("    nextOffset: ").append(toIndentedString(nextOffset)).append("\n");
-        sb.append("    previousOffset: ").append(toIndentedString(previousOffset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1296,6 +1296,36 @@ public class RdsClient {
     }
 
     /**
+     * 获取SSL证书下载地址
+     *
+     * 获取SSL证书下载地址
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSslCertDownloadLinkRequest 请求对象
+     * @return ListSslCertDownloadLinkResponse
+     */
+    public ListSslCertDownloadLinkResponse listSslCertDownloadLink(ListSslCertDownloadLinkRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listSslCertDownloadLink);
+    }
+
+    /**
+     * 获取SSL证书下载地址
+     *
+     * 获取SSL证书下载地址
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSslCertDownloadLinkRequest 请求对象
+     * @return SyncInvoker<ListSslCertDownloadLinkRequest, ListSslCertDownloadLinkResponse>
+     */
+    public SyncInvoker<ListSslCertDownloadLinkRequest, ListSslCertDownloadLinkResponse> listSslCertDownloadLinkInvoker(
+        ListSslCertDownloadLinkRequest request) {
+        return new SyncInvoker<ListSslCertDownloadLinkRequest, ListSslCertDownloadLinkResponse>(request,
+            RdsMeta.listSslCertDownloadLink, hcClient);
+    }
+
+    /**
      * 查询数据库磁盘类型
      *
      * 查询数据库磁盘类型。

@@ -146,7 +146,7 @@ public class CloudEvents {
     }
 
     /**
-     * 件内容模型定义的URI，遵循RFC3986，参考https://tools.ietf.org/html/rfc3986#section-4.3
+     * 事件内容模型定义的URI，遵循RFC3986，参考https://tools.ietf.org/html/rfc3986#section-4.3
      * @return dataschema
      */
     public String getDataschema() {

@@ -174,9 +174,9 @@ public class ListEventSourcesRequest {
     }
 
     /**
-     * 每页显示的条目数量，不能小于0
-     * minimum: 0
-     * maximum: 100
+     * 每页显示的条目数量，不能小于1或大于1000
+     * minimum: 1
+     * maximum: 1000
      * @return limit
      */
     public Integer getLimit() {

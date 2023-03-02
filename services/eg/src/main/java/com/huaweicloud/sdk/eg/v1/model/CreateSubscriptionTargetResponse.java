@@ -40,7 +40,7 @@ public class CreateSubscriptionTargetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transform")
 
-    private SubscriptionTargetInfoTransform transform;
+    private TransForm transform;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
@@ -142,14 +142,14 @@ public class CreateSubscriptionTargetResponse extends SdkResponse {
         this.detail = detail;
     }
 
-    public CreateSubscriptionTargetResponse withTransform(SubscriptionTargetInfoTransform transform) {
+    public CreateSubscriptionTargetResponse withTransform(TransForm transform) {
         this.transform = transform;
         return this;
     }
 
-    public CreateSubscriptionTargetResponse withTransform(Consumer<SubscriptionTargetInfoTransform> transformSetter) {
+    public CreateSubscriptionTargetResponse withTransform(Consumer<TransForm> transformSetter) {
         if (this.transform == null) {
-            this.transform = new SubscriptionTargetInfoTransform();
+            this.transform = new TransForm();
             transformSetter.accept(this.transform);
         }
 
@@ -160,11 +160,11 @@ public class CreateSubscriptionTargetResponse extends SdkResponse {
      * Get transform
      * @return transform
      */
-    public SubscriptionTargetInfoTransform getTransform() {
+    public TransForm getTransform() {
         return transform;
     }
 
-    public void setTransform(SubscriptionTargetInfoTransform transform) {
+    public void setTransform(TransForm transform) {
         this.transform = transform;
     }
 

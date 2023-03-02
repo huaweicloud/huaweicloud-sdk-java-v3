@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.mrs.v2.model.AddJobsReqV11;
 import com.huaweicloud.sdk.mrs.v2.model.BootstrapScript;
 import com.huaweicloud.sdk.mrs.v2.model.ChargeInfo;
+import com.huaweicloud.sdk.mrs.v2.model.ClusterDataConnectorMap;
 import com.huaweicloud.sdk.mrs.v2.model.NodeGroupV2;
 import com.huaweicloud.sdk.mrs.v2.model.Tag;
 import java.util.ArrayList;
@@ -88,6 +89,11 @@ public class CreateClusterReqV2  {
 
     private String components;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="external_datasources")
+    
+    private List<ClusterDataConnectorMap> externalDatasources = null;
+    
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone")
     
@@ -493,6 +499,42 @@ public class CreateClusterReqV2  {
 
     public void setComponents(String components) {
         this.components = components;
+    }
+
+    
+
+    public CreateClusterReqV2 withExternalDatasources(List<ClusterDataConnectorMap> externalDatasources) {
+        this.externalDatasources = externalDatasources;
+        return this;
+    }
+
+    
+    public CreateClusterReqV2 addExternalDatasourcesItem(ClusterDataConnectorMap externalDatasourcesItem) {
+        if(this.externalDatasources == null) {
+            this.externalDatasources = new ArrayList<>();
+        }
+        this.externalDatasources.add(externalDatasourcesItem);
+        return this;
+    }
+
+    public CreateClusterReqV2 withExternalDatasources(Consumer<List<ClusterDataConnectorMap>> externalDatasourcesSetter) {
+        if(this.externalDatasources == null) {
+            this.externalDatasources = new ArrayList<>();
+        }
+        externalDatasourcesSetter.accept(this.externalDatasources);
+        return this;
+    }
+
+    /**
+     * 部署Hive和Ranger等组件时，可以关联数据连接，将元数据存储于关联的数据库
+     * @return externalDatasources
+     */
+    public List<ClusterDataConnectorMap> getExternalDatasources() {
+        return externalDatasources;
+    }
+
+    public void setExternalDatasources(List<ClusterDataConnectorMap> externalDatasources) {
+        this.externalDatasources = externalDatasources;
     }
 
     
@@ -968,6 +1010,7 @@ public class CreateClusterReqV2  {
             Objects.equals(this.subnetId, createClusterReqV2.subnetId) &&
             Objects.equals(this.subnetName, createClusterReqV2.subnetName) &&
             Objects.equals(this.components, createClusterReqV2.components) &&
+            Objects.equals(this.externalDatasources, createClusterReqV2.externalDatasources) &&
             Objects.equals(this.availabilityZone, createClusterReqV2.availabilityZone) &&
             Objects.equals(this.securityGroupsId, createClusterReqV2.securityGroupsId) &&
             Objects.equals(this.autoCreateDefaultSecurityGroup, createClusterReqV2.autoCreateDefaultSecurityGroup) &&
@@ -989,7 +1032,7 @@ public class CreateClusterReqV2  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(isDecProject, clusterVersion, clusterName, clusterType, chargeInfo, region, vpcName, subnetId, subnetName, components, availabilityZone, securityGroupsId, autoCreateDefaultSecurityGroup, safeMode, managerAdminPassword, loginMode, nodeRootPassword, nodeKeypairName, enterpriseProjectId, eipAddress, eipId, mrsEcsDefaultAgency, templateId, tags, logCollection, nodeGroups, bootstrapScripts, addJobs);
+        return Objects.hash(isDecProject, clusterVersion, clusterName, clusterType, chargeInfo, region, vpcName, subnetId, subnetName, components, externalDatasources, availabilityZone, securityGroupsId, autoCreateDefaultSecurityGroup, safeMode, managerAdminPassword, loginMode, nodeRootPassword, nodeKeypairName, enterpriseProjectId, eipAddress, eipId, mrsEcsDefaultAgency, templateId, tags, logCollection, nodeGroups, bootstrapScripts, addJobs);
     }
     @Override
     public String toString() {
@@ -1005,6 +1048,7 @@ public class CreateClusterReqV2  {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    subnetName: ").append(toIndentedString(subnetName)).append("\n");
         sb.append("    components: ").append(toIndentedString(components)).append("\n");
+        sb.append("    externalDatasources: ").append(toIndentedString(externalDatasources)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    securityGroupsId: ").append(toIndentedString(securityGroupsId)).append("\n");
         sb.append("    autoCreateDefaultSecurityGroup: ").append(toIndentedString(autoCreateDefaultSecurityGroup)).append("\n");

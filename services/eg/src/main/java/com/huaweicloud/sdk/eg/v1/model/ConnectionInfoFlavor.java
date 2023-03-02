@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * ConnectionInfoFlavor
+ * 规格
  */
 public class ConnectionInfoFlavor {
 

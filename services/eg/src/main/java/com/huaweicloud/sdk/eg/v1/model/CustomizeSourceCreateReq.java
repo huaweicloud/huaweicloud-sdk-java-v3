@@ -45,12 +45,18 @@ public class CustomizeSourceCreateReq {
          */
         public static final TypeEnum RABBITMQ = new TypeEnum("RABBITMQ");
 
+        /**
+         * Enum ROCKETMQ for value: "ROCKETMQ"
+         */
+        public static final TypeEnum ROCKETMQ = new TypeEnum("ROCKETMQ");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("APPLICATION", APPLICATION);
             map.put("RABBITMQ", RABBITMQ);
+            map.put("ROCKETMQ", ROCKETMQ);
             return Collections.unmodifiableMap(map);
         }
 

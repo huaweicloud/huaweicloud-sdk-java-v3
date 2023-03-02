@@ -231,7 +231,7 @@ public class Script  {
 
 
     /**
-     * 脚本id,根据project_id、脚本名称的和，用guava计算hash(md5)方式获取，比如为：c279d73a0b4e0f0927721e366c736880
+     * 脚本id，根据UUID.randomUUID生成。
      * @return id
      */
     public String getId() {

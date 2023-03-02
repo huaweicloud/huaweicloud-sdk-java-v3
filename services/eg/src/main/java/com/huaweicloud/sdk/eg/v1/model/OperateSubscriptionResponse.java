@@ -68,7 +68,7 @@ public class OperateSubscriptionResponse extends SdkResponse {
     }
 
     /**
-     * Get events
+     * 事件列表
      * @return events
      */
     public List<SubscriptionOperateRespEvents> getEvents() {

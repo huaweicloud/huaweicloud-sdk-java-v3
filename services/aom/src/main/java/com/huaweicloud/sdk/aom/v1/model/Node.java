@@ -119,7 +119,7 @@ public class Node  {
 
 
     /**
-     * 节点描述,节点上任务的描述。
+     * 节点描述。
      * @return description
      */
     public String getDescription() {
