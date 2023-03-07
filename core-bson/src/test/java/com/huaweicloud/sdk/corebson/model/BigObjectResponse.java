@@ -27,11 +27,6 @@ public class BigObjectResponse extends SdkBsonDocResponse {
         this.bigStr = bigStr;
     }
 
-
-    @Override
-    protected void fillBody(Object obj) {
-    }
-
     @Override
     protected Object decodeBody(CodecRegistry codecRegistry, BsonReader reader) {
         return codecRegistry.get(BigObjectResponse.class).decode(reader, DecoderContext.builder().build());

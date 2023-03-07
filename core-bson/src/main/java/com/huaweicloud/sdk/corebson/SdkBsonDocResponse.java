@@ -5,7 +5,6 @@
 package com.huaweicloud.sdk.corebson;
 
 import com.huaweicloud.sdk.core.SdkStreamResponse;
-import com.huaweicloud.sdk.corebson.codec.CustomCodecProvider;
 import org.bson.BsonBinaryReader;
 import org.bson.BsonReader;
 import org.bson.codecs.configuration.CodecProvider;
@@ -24,18 +23,10 @@ import static com.mongodb.MongoClientSettings.getDefaultCodecRegistry;
  * @since 2022-11-18
  */
 public abstract class SdkBsonDocResponse extends SdkStreamResponse {
-
     @Override
-    public void parseBody(InputStream input) {
-        Object obj = getBodyFromInputStream(input);
-        fillBody(obj);
+    public Object parseBody(InputStream input) {
+        return getBodyFromInputStream(input);
     }
-
-    /**
-     * 子类实现fillBody方法，set自己的body值
-     * @param obj
-     */
-    protected abstract void fillBody(Object obj);
 
     /**
      * getBodyFromInputStream
@@ -48,7 +39,6 @@ public abstract class SdkBsonDocResponse extends SdkStreamResponse {
         BsonReader reader = new BsonBinaryReader(bsonInput);
         CodecProvider pojoCodecProvider = PojoCodecProvider.builder().automatic(true).build();
         CodecRegistry codecRegistry = CodecRegistries.fromRegistries(
-                CodecRegistries.fromProviders(new CustomCodecProvider()),
                 getDefaultCodecRegistry(),
                 CodecRegistries.fromProviders(pojoCodecProvider)
         );

@@ -5,7 +5,6 @@
 package com.huaweicloud.sdk.corebson;
 
 import com.huaweicloud.sdk.core.SdkStreamRequest;
-import com.huaweicloud.sdk.corebson.codec.CustomCodecProvider;
 import org.bson.BsonBinaryWriter;
 import org.bson.BsonWriter;
 import org.bson.codecs.configuration.CodecProvider;
@@ -36,7 +35,6 @@ public abstract class SdkBsonDocRequest extends SdkStreamRequest {
         BsonWriter writer = new BsonBinaryWriter(output);
         CodecProvider pojoCodecProvider = PojoCodecProvider.builder().automatic(true).build();
         CodecRegistry codecRegistry = CodecRegistries.fromRegistries(
-                CodecRegistries.fromProviders(new CustomCodecProvider()),
                 getDefaultCodecRegistry(),
                 CodecRegistries.fromProviders(pojoCodecProvider)
                 );

@@ -33,8 +33,4 @@ public class ArrayResponse extends SdkBsonDocResponse {
         return codecRegistry.get(ArrayResponse.class).decode(reader, DecoderContext.builder().build());
     }
 
-    @Override
-    protected void fillBody(Object obj) {
-
-    }
 }

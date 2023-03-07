@@ -11,6 +11,7 @@ import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import org.bson.BsonRegularExpression;
 import org.bson.BsonSerializationException;
+import org.bson.BsonTimestamp;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
@@ -20,8 +21,8 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -87,17 +88,16 @@ public class TestHcClient {
     @Test
     public void testBsonDocRequest() {
         TestHttpRequestDef.TestBsonDocResponse response = hcClient.syncInvokeHttp(testBsonDocRequest, testBsonDocDef);
-        Assert.assertEquals(testBsonDocRequest.getBody(), response.getBody());
+        Assert.assertEquals(testBsonDocRequest.getBody(), response);
     }
 
     private void testBsonDocRequestInit() {
         // bson规范date-time精度为ms
-        OffsetDateTime time = OffsetDateTime.now();
-        time = time.withNano((time.getNano() / 1000000) * 1000000);
-
+        long time = new Date().getTime();
+        BsonTimestamp bsonTimestamp = new BsonTimestamp(time);
         TestHttpRequestDef.TestBsonDocBody body = new TestHttpRequestDef.TestBsonDocBody();
         body.setId("abc123");
-        body.setTime(time);
+        body.setTimestamp(bsonTimestamp);
         body.setReg(new BsonRegularExpression("[a-z0-9_]", "-g"));
 
         testBsonDocRequest = new TestHttpRequestDef.TestBsonDocRequest();

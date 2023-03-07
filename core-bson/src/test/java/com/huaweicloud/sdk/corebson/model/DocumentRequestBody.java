@@ -4,23 +4,25 @@
 
 package com.huaweicloud.sdk.corebson.model;
 
+import org.bson.Document;
+
 /**
  * DocumentRequestBody
  *
  * @since 2022-11-18
  */
 public class DocumentRequestBody {
-    private BasicType doc;
+    private Document doc;
 
-    public DocumentRequestBody(BasicType doc) {
+    public DocumentRequestBody(Document doc) {
         this.doc = doc;
     }
 
-    public BasicType getDoc() {
+    public Document getDoc() {
         return doc;
     }
 
-    public void setDoc(BasicType doc) {
+    public void setDoc(Document doc) {
         this.doc = doc;
     }
 }

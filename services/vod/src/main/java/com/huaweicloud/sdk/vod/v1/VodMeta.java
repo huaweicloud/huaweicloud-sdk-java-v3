@@ -2492,4 +2492,29 @@ public class VodMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifySubtitleRequest, ModifySubtitleResponse> modifySubtitle =
+        genFormodifySubtitle();
+
+    private static HttpRequestDef<ModifySubtitleRequest, ModifySubtitleResponse> genFormodifySubtitle() {
+        // basic
+        HttpRequestDef.Builder<ModifySubtitleRequest, ModifySubtitleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifySubtitleRequest.class, ModifySubtitleResponse.class)
+                .withName("ModifySubtitle")
+                .withUri("/v1/{project_id}/asset/subtitles")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SubtitleModifyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SubtitleModifyReq.class),
+            f -> f.withMarshaller(ModifySubtitleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
 }

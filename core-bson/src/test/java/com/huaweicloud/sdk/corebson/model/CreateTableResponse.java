@@ -19,14 +19,12 @@ public class CreateTableResponse extends SdkBsonDocResponse {
 
     // 创表的请求和响应的body是同一个数据结构
     private CreateTableRequestBody body;
-
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class CreateTableResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
-        sb.append("}");
-        return sb.toString();
+        String sb = "class CreateTableResponse {\n" +
+                "    body: " + toIndentedString(body) + "\n" +
+                "}";
+        return sb;
     }
 
     /**
@@ -56,8 +54,4 @@ public class CreateTableResponse extends SdkBsonDocResponse {
         return body;
     }
 
-    @Override
-    protected void fillBody(Object obj) {
-        setBody((CreateTableRequestBody) obj);
-    }
 }

@@ -6,11 +6,11 @@ package com.huaweicloud.sdk.corebson.model;
 
 import com.huaweicloud.sdk.corebson.SdkBsonDocResponse;
 
+import org.bson.BsonDateTime;
 import org.bson.BsonReader;
+import org.bson.BsonTimestamp;
 import org.bson.codecs.DecoderContext;
 import org.bson.codecs.configuration.CodecRegistry;
-
-import java.time.OffsetDateTime;
 
 /**
  * TimeResponse
@@ -18,14 +18,28 @@ import java.time.OffsetDateTime;
  * @since 2022-11-18
  */
 public class TimeResponse extends SdkBsonDocResponse {
-    private OffsetDateTime time;
 
-    public OffsetDateTime getTime() {
-        return time;
+    private BsonTimestamp timestamp;
+    private BsonDateTime datetime;
+
+    public TimeResponse() {}
+
+    public TimeResponse(BsonTimestamp timestamp, BsonDateTime datetime) {
+        this.timestamp = timestamp;
+        this.datetime = datetime;
     }
 
-    public void setTime(OffsetDateTime time) {
-        this.time = time;
+    public BsonDateTime getDatetime() {
+        return datetime;
+    }
+    public void setDatetime(BsonDateTime datetime) {
+        this.datetime = datetime;
+    }
+    public BsonTimestamp getTimestamp() {
+        return timestamp;
+    }
+    public void setTimestamp(BsonTimestamp timestamp) {
+        this.timestamp = timestamp;
     }
 
     @Override
@@ -33,8 +47,4 @@ public class TimeResponse extends SdkBsonDocResponse {
         return codecRegistry.get(TimeResponse.class).decode(reader, DecoderContext.builder().build());
     }
 
-    @Override
-    protected void fillBody(Object obj) {
-
-    }
 }

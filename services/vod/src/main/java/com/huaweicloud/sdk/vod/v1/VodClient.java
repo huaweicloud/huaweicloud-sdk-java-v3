@@ -1636,4 +1636,34 @@ public class VodClient {
             VodMeta.showTakeOverTaskDetails, hcClient);
     }
 
+    /**
+     * 多字幕封装
+     *
+     * 多字幕封装，仅支持 HLS VTT格式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifySubtitleRequest 请求对象
+     * @return ModifySubtitleResponse
+     */
+    public ModifySubtitleResponse modifySubtitle(ModifySubtitleRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.modifySubtitle);
+    }
+
+    /**
+     * 多字幕封装
+     *
+     * 多字幕封装，仅支持 HLS VTT格式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifySubtitleRequest 请求对象
+     * @return SyncInvoker<ModifySubtitleRequest, ModifySubtitleResponse>
+     */
+    public SyncInvoker<ModifySubtitleRequest, ModifySubtitleResponse> modifySubtitleInvoker(
+        ModifySubtitleRequest request) {
+        return new SyncInvoker<ModifySubtitleRequest, ModifySubtitleResponse>(request, VodMeta.modifySubtitle,
+            hcClient);
+    }
+
 }

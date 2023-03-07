@@ -7,6 +7,7 @@ package com.huaweicloud.sdk.corebson.model;
 import com.huaweicloud.sdk.corebson.SdkBsonDocResponse;
 
 import org.bson.BsonReader;
+import org.bson.Document;
 import org.bson.codecs.DecoderContext;
 import org.bson.codecs.configuration.CodecRegistry;
 
@@ -16,13 +17,13 @@ import org.bson.codecs.configuration.CodecRegistry;
  * @since 2022-11-18
  */
 public class DocumentResponse extends SdkBsonDocResponse {
-    private BasicType doc;
+    private Document doc;
 
-    public BasicType getDoc() {
+    public Document getDoc() {
         return doc;
     }
 
-    public void setDoc(BasicType doc) {
+    public void setDoc(Document doc) {
         this.doc = doc;
     }
     @Override
@@ -30,8 +31,4 @@ public class DocumentResponse extends SdkBsonDocResponse {
         return codecRegistry.get(DocumentResponse.class).decode(reader, DecoderContext.builder().build());
     }
 
-    @Override
-    protected void fillBody(Object obj) {
-
-    }
 }

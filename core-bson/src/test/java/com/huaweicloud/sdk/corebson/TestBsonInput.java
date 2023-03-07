@@ -13,7 +13,6 @@ import com.huaweicloud.sdk.corebson.model.TimeRequest;
 import com.huaweicloud.sdk.corebson.model.TimeRequestBody;
 import com.huaweicloud.sdk.corebson.model.TimeResponse;
 import com.huaweicloud.sdk.corebson.model.BasicRequestBody;
-import com.huaweicloud.sdk.corebson.model.BasicType;
 import com.huaweicloud.sdk.corebson.model.DocumentRequest;
 import com.huaweicloud.sdk.corebson.model.DocumentRequestBody;
 import com.huaweicloud.sdk.corebson.model.DocumentResponse;
@@ -27,8 +26,13 @@ import com.huaweicloud.sdk.corebson.model.CreateTableResponse;
 import com.huaweicloud.sdk.corebson.model.KeySchema;
 import com.huaweicloud.sdk.corebson.model.ShardKeyFieldName;
 
+import org.bson.BsonDateTime;
+import org.bson.BsonDecimal128;
+import org.bson.BsonTimestamp;
+import org.bson.Document;
 import org.bson.BsonJavaScript;
 import org.bson.BsonRegularExpression;
+import org.bson.types.Decimal128;
 import org.bson.types.MaxKey;
 import org.bson.types.MinKey;
 import org.bson.types.ObjectId;
@@ -37,10 +41,8 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.math.BigDecimal;
-import java.sql.Timestamp;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class TestBsonInput {
@@ -50,7 +52,7 @@ public class TestBsonInput {
         int intValue = 123;
         long longValue = 1234556789L;
         double doubleValue = 123.456789D;
-        BigDecimal bigDecimal = new BigDecimal(Double.toString(123.11111111));
+        BsonDecimal128 bigDecimal = new BsonDecimal128(new Decimal128(12345));
         boolean bool = true;
         String str = "test";
         // encode
@@ -65,7 +67,7 @@ public class TestBsonInput {
             Assert.assertEquals(res.getStringValue(), str);
             Assert.assertEquals(res.getIntValue(), intValue);
             Assert.assertEquals(res.getLongValue(), longValue);
-            Assert.assertEquals(res.getBigDecimalValue(), bigDecimal);
+            Assert.assertEquals(res.getDecimal128(), bigDecimal);
         }
     }
 
@@ -86,28 +88,24 @@ public class TestBsonInput {
 
     @Test
     public void testTime() throws IOException {
-        OffsetDateTime time = OffsetDateTime.now();
+        long time = new Date().getTime();
+        BsonTimestamp timestamp = new BsonTimestamp(time);
+        BsonDateTime dateTim = new BsonDateTime(time);
         // encode
-        TimeRequest request = new TimeRequest().withBody(new TimeRequestBody(time));
+        TimeRequest request = new TimeRequest().withBody(new TimeRequestBody(timestamp, dateTim));
         try (InputStream output = request.extractBody()) {
             // decode
             TimeResponse response = new TimeResponse();
             TimeResponse res = (TimeResponse) response.getBodyFromInputStream(output);
-            // 纳秒清零，因为序列化仅支持到毫秒精度
-            Assert.assertEquals(res.getTime(), time.withNano((time.getNano() / 1000000) * 1000000));
+            Assert.assertEquals(request.getBody(), res);
         }
     }
 
     @Test
     public void testDocument() throws IOException {
-        byte byteValue = (byte) 12;
-        boolean boolValue = true;
-        int intValue = 123;
-        long longValue = 1234556789L;
-        double doubleValue = 123.456789D;
-        BigDecimal bigDecimal = new BigDecimal(Double.toString(123.11111111));
-        String str = "test";
-        BasicType doc = new BasicType(byteValue, boolValue, intValue, longValue, doubleValue, bigDecimal, str);
+        Document doc = new Document();
+        doc.put("id", 12345);
+        doc.put("name", "abc");
         // encode
         DocumentRequest request = new DocumentRequest().withBody(new DocumentRequestBody(doc));
         try (InputStream output = request.extractBody()) {
@@ -140,7 +138,7 @@ public class TestBsonInput {
     @Test
     public void testPrivateType() throws IOException {
         // encode
-        CreateTableRequest request = new CreateTableRequest().withBody(new CreateTableRequestBody().withTableName("course").withPrimaryKeySchema(new PrimaryKeySchema().withKeySchema(new KeySchema().withShardKeyFieldName(new ShardKeyFieldName().withByteValue((byte) 12).withJscodeValue(new BsonJavaScript("1234")).withObjectidValue(new ObjectId()).withMaxkeyValue(new MaxKey()).withMinkeyValue(new MinKey()).withTimestampValue(new Timestamp(System.currentTimeMillis())).withRegexValue(new BsonRegularExpression("a*b", "w"))))));
+        CreateTableRequest request = new CreateTableRequest().withBody(new CreateTableRequestBody().withTableName("course").withPrimaryKeySchema(new PrimaryKeySchema().withKeySchema(new KeySchema().withShardKeyFieldName(new ShardKeyFieldName().withByteValue((byte) 12).withJscodeValue(new BsonJavaScript("1234")).withObjectidValue(new ObjectId()).withMaxkeyValue(new MaxKey()).withMinkeyValue(new MinKey()).withTimestampValue(new BsonTimestamp(System.currentTimeMillis())).withRegexValue(new BsonRegularExpression("a*b", "w"))))));
         try (InputStream output = request.extractBody()) {
             // decode
             CreateTableResponse response = new CreateTableResponse();

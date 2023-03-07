@@ -6,11 +6,10 @@ package com.huaweicloud.sdk.corebson.model;
 
 import com.huaweicloud.sdk.corebson.SdkBsonDocResponse;
 
+import org.bson.BsonDecimal128;
 import org.bson.BsonReader;
 import org.bson.codecs.DecoderContext;
 import org.bson.codecs.configuration.CodecRegistry;
-
-import java.math.BigDecimal;
 
 /**
  * BasicResponse
@@ -23,7 +22,7 @@ public class BasicResponse extends SdkBsonDocResponse {
     private int intValue;
     private long longValue;
     private double doubleValue;
-    private BigDecimal bigDecimalValue;
+    private BsonDecimal128 decimal128;
     private String stringValue;
 
     public byte getByteValue() {
@@ -66,12 +65,12 @@ public class BasicResponse extends SdkBsonDocResponse {
         this.doubleValue = doubleValue;
     }
 
-    public BigDecimal getBigDecimalValue() {
-        return bigDecimalValue;
+    public BsonDecimal128 getDecimal128() {
+        return decimal128;
     }
 
-    public void setBigDecimalValue(BigDecimal bigDecimalValue) {
-        this.bigDecimalValue = bigDecimalValue;
+    public void setDecimal128(BsonDecimal128 decimal128) {
+        this.decimal128 = decimal128;
     }
 
     public String getStringValue() {
@@ -87,9 +86,5 @@ public class BasicResponse extends SdkBsonDocResponse {
         return codecRegistry.get(BasicResponse.class).decode(reader, DecoderContext.builder().build());
     }
 
-    @Override
-    protected void fillBody(Object obj) {
-
-    }
 }
 

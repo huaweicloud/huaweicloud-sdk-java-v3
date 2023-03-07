@@ -40,8 +40,9 @@ public class SdkStreamResponse extends SdkResponse {
      * 解析http响应body，用于content-type是application/bson或application/octet-stream的响应
      * @param inputStream http response body
      */
-    public void parseBody(InputStream inputStream) {
+    public Object parseBody(InputStream inputStream) {
         this.body = inputStream;
+        return this;
     }
 
     public void consumeDownloadStream(Consumer<InputStream> consumer) {

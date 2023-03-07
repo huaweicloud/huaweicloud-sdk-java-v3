@@ -40,7 +40,7 @@ public class VaultBindRules {
     }
 
     /**
-     * 按tags过滤自动绑定的资源
+     * 按tags过滤自动绑定的资源  最小长度：1  最大长度：5
      * @return tags
      */
     public List<BindRulesTags> getTags() {

@@ -39,6 +39,7 @@ import com.huaweicloud.sdk.core.http.HttpResponse;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
 import com.huaweicloud.sdk.core.impl.DefaultHttpClient;
+import com.huaweicloud.sdk.core.utils.CastUtils;
 import com.huaweicloud.sdk.core.utils.ExceptionUtils;
 import com.huaweicloud.sdk.core.utils.JsonUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
@@ -392,7 +393,7 @@ public class HcClient implements CustomizationConfigure {
                     || respContentType.startsWith(Constants.MEDIATYPE.IMAGE)
                     || respContentType.startsWith(Constants.MEDIATYPE.APPLICATION_BSON))) {
                 resT = reqDef.getResponseType().newInstance();
-                ((SdkStreamResponse) resT).parseBody(httpResponse.getBody());
+                resT = CastUtils.cast(((SdkStreamResponse) resT).parseBody(httpResponse.getBody()));
             } else {
                 if (SdkSerializable.class.isAssignableFrom(reqDef.getResponseType())) {
                     resT = deserializeSerializableResponse(reqDef.getResponseType(), stringResult);

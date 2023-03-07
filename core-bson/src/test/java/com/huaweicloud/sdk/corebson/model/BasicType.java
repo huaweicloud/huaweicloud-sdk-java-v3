@@ -4,7 +4,8 @@
 
 package com.huaweicloud.sdk.corebson.model;
 
-import java.math.BigDecimal;
+import org.bson.BsonDecimal128;
+
 import java.util.Objects;
 
 /**
@@ -18,17 +19,17 @@ public class BasicType {
     private int intValue;
     private long longValue;
     private double doubleValue;
-    private BigDecimal bigDecimalValue;
+    private BsonDecimal128 decimal128;
     private String stringValue;
 
     public BasicType(byte byteValue, boolean bool, int intValue, long longValue,
-        double doubleValue, BigDecimal big, String str) {
+        double doubleValue, BsonDecimal128 decimal, String str) {
         this.byteValue = byteValue;
         this.boolValue = bool;
         this.intValue = intValue;
         this.longValue = longValue;
         this.doubleValue = doubleValue;
-        this.bigDecimalValue = big;
+        this.decimal128 = decimal;
         this.stringValue = str;
     }
 
@@ -78,12 +79,12 @@ public class BasicType {
         this.byteValue = byteValue;
     }
 
-    public BigDecimal getBigDecimalValue() {
-        return bigDecimalValue;
+    public BsonDecimal128 getDecimal128() {
+        return decimal128;
     }
 
-    public void setBigDecimalValue(BigDecimal bigDecimalValue) {
-        this.bigDecimalValue = bigDecimalValue;
+    public void setDecimal128(BsonDecimal128 decimal128) {
+        this.decimal128 = decimal128;
     }
 
     public boolean getBoolValue() {
@@ -103,8 +104,8 @@ public class BasicType {
             BasicType basicType = (BasicType) object;
             if ((basicType.boolValue == this.boolValue) && (basicType.byteValue == this.byteValue)
                     && (basicType.doubleValue == this.doubleValue)) {
-                if((basicType.intValue == this.intValue)
-                        && (basicType.bigDecimalValue.compareTo(this.bigDecimalValue) == 0) && (basicType.longValue == this.longValue)) {
+                if ((basicType.intValue == this.intValue)
+                        && basicType.decimal128.equals(this.decimal128) && (basicType.longValue == this.longValue)) {
                     if (basicType.stringValue.equals(this.stringValue)) {
                         return true;
                     }
@@ -117,6 +118,6 @@ public class BasicType {
     @Override
     public int hashCode() {
         return Objects
-                .hash(byteValue, boolValue, intValue, longValue, doubleValue, bigDecimalValue, stringValue);
+                .hash(byteValue, boolValue, intValue, longValue, doubleValue, decimal128, stringValue);
     }
 }

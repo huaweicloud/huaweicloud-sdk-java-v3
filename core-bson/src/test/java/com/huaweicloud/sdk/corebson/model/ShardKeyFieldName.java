@@ -8,11 +8,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.bson.BsonJavaScript;
 import org.bson.BsonRegularExpression;
+import org.bson.BsonTimestamp;
 import org.bson.types.MaxKey;
 import org.bson.types.MinKey;
 import org.bson.types.ObjectId;
 
-import java.sql.Timestamp;
 import java.util.Objects;
 
 /**
@@ -44,7 +44,7 @@ public class ShardKeyFieldName {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp_value")
 
-    private Timestamp timestampValue;
+    private BsonTimestamp timestampValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "minkey_value")
@@ -160,7 +160,7 @@ public class ShardKeyFieldName {
      * @return CreateTableRequestBodyPrimaryKeySchemaKeySchemaShardKeyFieldName
      */
     public ShardKeyFieldName withTimestampValue(
-        Timestamp timestampValue) {
+            BsonTimestamp timestampValue) {
         this.timestampValue = timestampValue;
         return this;
     }
@@ -170,11 +170,11 @@ public class ShardKeyFieldName {
      *
      * @return timestampValue
      */
-    public Timestamp getTimestampValue() {
+    public BsonTimestamp getTimestampValue() {
         return timestampValue;
     }
 
-    public void setTimestampValue(Timestamp timestampValue) {
+    public void setTimestampValue(BsonTimestamp timestampValue) {
         this.timestampValue = timestampValue;
     }
 

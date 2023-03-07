@@ -550,6 +550,26 @@ public class BillingCreate {
 
     private BillbingCreateExtraInfo extraInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_multi_az")
+
+    private Boolean isMultiAz;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "promotion_info")
+
+    private String promotionInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "purchase_mode")
+
+    private String purchaseMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
     public BillingCreate withCloudType(CloudTypeEnum cloudType) {
         this.cloudType = cloudType;
         return this;
@@ -765,6 +785,74 @@ public class BillingCreate {
         this.extraInfo = extraInfo;
     }
 
+    public BillingCreate withIsMultiAz(Boolean isMultiAz) {
+        this.isMultiAz = isMultiAz;
+        return this;
+    }
+
+    /**
+     * 存储库多az属性，默认为false
+     * @return isMultiAz
+     */
+    public Boolean getIsMultiAz() {
+        return isMultiAz;
+    }
+
+    public void setIsMultiAz(Boolean isMultiAz) {
+        this.isMultiAz = isMultiAz;
+    }
+
+    public BillingCreate withPromotionInfo(String promotionInfo) {
+        this.promotionInfo = promotionInfo;
+        return this;
+    }
+
+    /**
+     * 促销信息，包周期时可选参数
+     * @return promotionInfo
+     */
+    public String getPromotionInfo() {
+        return promotionInfo;
+    }
+
+    public void setPromotionInfo(String promotionInfo) {
+        this.promotionInfo = promotionInfo;
+    }
+
+    public BillingCreate withPurchaseMode(String purchaseMode) {
+        this.purchaseMode = purchaseMode;
+        return this;
+    }
+
+    /**
+     * 购买模式，包周期时可选参数
+     * @return purchaseMode
+     */
+    public String getPurchaseMode() {
+        return purchaseMode;
+    }
+
+    public void setPurchaseMode(String purchaseMode) {
+        this.purchaseMode = purchaseMode;
+    }
+
+    public BillingCreate withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 订单 ID，包周期时可选参数
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -785,7 +873,11 @@ public class BillingCreate {
             && Objects.equals(this.isAutoRenew, billingCreate.isAutoRenew)
             && Objects.equals(this.isAutoPay, billingCreate.isAutoPay)
             && Objects.equals(this.consoleUrl, billingCreate.consoleUrl)
-            && Objects.equals(this.extraInfo, billingCreate.extraInfo);
+            && Objects.equals(this.extraInfo, billingCreate.extraInfo)
+            && Objects.equals(this.isMultiAz, billingCreate.isMultiAz)
+            && Objects.equals(this.promotionInfo, billingCreate.promotionInfo)
+            && Objects.equals(this.purchaseMode, billingCreate.purchaseMode)
+            && Objects.equals(this.orderId, billingCreate.orderId);
     }
 
     @Override
@@ -801,7 +893,11 @@ public class BillingCreate {
             isAutoRenew,
             isAutoPay,
             consoleUrl,
-            extraInfo);
+            extraInfo,
+            isMultiAz,
+            promotionInfo,
+            purchaseMode,
+            orderId);
     }
 
     @Override
@@ -820,6 +916,10 @@ public class BillingCreate {
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("    consoleUrl: ").append(toIndentedString(consoleUrl)).append("\n");
         sb.append("    extraInfo: ").append(toIndentedString(extraInfo)).append("\n");
+        sb.append("    isMultiAz: ").append(toIndentedString(isMultiAz)).append("\n");
+        sb.append("    promotionInfo: ").append(toIndentedString(promotionInfo)).append("\n");
+        sb.append("    purchaseMode: ").append(toIndentedString(purchaseMode)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

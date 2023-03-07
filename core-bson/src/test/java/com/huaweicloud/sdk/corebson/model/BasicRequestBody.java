@@ -4,7 +4,7 @@
 
 package com.huaweicloud.sdk.corebson.model;
 
-import java.math.BigDecimal;
+import org.bson.BsonDecimal128;
 
 /**
  * BasicRequestBody
@@ -17,16 +17,16 @@ public class BasicRequestBody {
     private int intValue;
     private long longValue;
     private double doubleValue;
-    private BigDecimal bigDecimalValue;
+    private BsonDecimal128 decimal128;
     private String stringValue;
 
-    public BasicRequestBody(byte b, boolean bool, int n, long l, double d, BigDecimal big, String s) {
+    public BasicRequestBody(byte b, boolean bool, int n, long l, double d, BsonDecimal128 dec, String s) {
         this.byteValue = b;
         this.boolValue = bool;
         this.intValue = n;
         this.longValue = l;
         this.doubleValue = d;
-        this.bigDecimalValue = big;
+        this.decimal128 = dec;
         this.stringValue = s;
     }
 
@@ -70,12 +70,12 @@ public class BasicRequestBody {
         this.doubleValue = doubleValue;
     }
 
-    public BigDecimal getBigDecimalValue() {
-        return bigDecimalValue;
+    public BsonDecimal128 getDecimal128() {
+        return decimal128;
     }
 
-    public void setBigDecimalValue(BigDecimal bigDecimalValue) {
-        this.bigDecimalValue = bigDecimalValue;
+    public void setDecimal128(BsonDecimal128 decimal128) {
+        this.decimal128 = decimal128;
     }
 
     public String getStringValue() {
