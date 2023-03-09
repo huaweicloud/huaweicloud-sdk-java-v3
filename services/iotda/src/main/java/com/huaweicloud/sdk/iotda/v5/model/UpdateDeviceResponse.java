@@ -95,6 +95,16 @@ public class UpdateDeviceResponse extends SdkResponse {
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_status_update_time")
+
+    private String connectionStatusUpdateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "active_time")
+
+    private String activeTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<TagV5DTO> tags = null;
@@ -385,6 +395,40 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    public UpdateDeviceResponse withConnectionStatusUpdateTime(String connectionStatusUpdateTime) {
+        this.connectionStatusUpdateTime = connectionStatusUpdateTime;
+        return this;
+    }
+
+    /**
+     * 设备最近一次连接状态(ONLINE:在线，OFFLINE：离线，ABNORMAL：异常)变化时间。格式：yyyy-MM-dd'T'HH:mm:ss.SSS'Z',如 2015-12-12T12:12:122Z。
+     * @return connectionStatusUpdateTime
+     */
+    public String getConnectionStatusUpdateTime() {
+        return connectionStatusUpdateTime;
+    }
+
+    public void setConnectionStatusUpdateTime(String connectionStatusUpdateTime) {
+        this.connectionStatusUpdateTime = connectionStatusUpdateTime;
+    }
+
+    public UpdateDeviceResponse withActiveTime(String activeTime) {
+        this.activeTime = activeTime;
+        return this;
+    }
+
+    /**
+     * 设备激活时间。格式：yyyy-MM-dd'T'HH:mm:ss.SSS'Z',如 2015-12-12T12:12:122Z。
+     * @return activeTime
+     */
+    public String getActiveTime() {
+        return activeTime;
+    }
+
+    public void setActiveTime(String activeTime) {
+        this.activeTime = activeTime;
+    }
+
     public UpdateDeviceResponse withTags(List<TagV5DTO> tags) {
         this.tags = tags;
         return this;
@@ -460,6 +504,8 @@ public class UpdateDeviceResponse extends SdkResponse {
             && Objects.equals(this.productName, updateDeviceResponse.productName)
             && Objects.equals(this.status, updateDeviceResponse.status)
             && Objects.equals(this.createTime, updateDeviceResponse.createTime)
+            && Objects.equals(this.connectionStatusUpdateTime, updateDeviceResponse.connectionStatusUpdateTime)
+            && Objects.equals(this.activeTime, updateDeviceResponse.activeTime)
             && Objects.equals(this.tags, updateDeviceResponse.tags)
             && Objects.equals(this.extensionInfo, updateDeviceResponse.extensionInfo);
     }
@@ -482,6 +528,8 @@ public class UpdateDeviceResponse extends SdkResponse {
             productName,
             status,
             createTime,
+            connectionStatusUpdateTime,
+            activeTime,
             tags,
             extensionInfo);
     }
@@ -506,6 +554,8 @@ public class UpdateDeviceResponse extends SdkResponse {
         sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    connectionStatusUpdateTime: ").append(toIndentedString(connectionStatusUpdateTime)).append("\n");
+        sb.append("    activeTime: ").append(toIndentedString(activeTime)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    extensionInfo: ").append(toIndentedString(extensionInfo)).append("\n");
         sb.append("}");

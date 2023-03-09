@@ -13,8 +13,18 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.aos.v1.model.ExecutionPlanDescriptionPrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.ExecutionPlanIdPrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.ExecutionPlanNamePrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.ExecutionPlanStatusMessagePrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.ExecutionPlanStatusPrimitiveTypeHolder;
 import com.huaweicloud.sdk.aos.v1.model.ExecutionPlanSummary;
+import com.huaweicloud.sdk.aos.v1.model.StackIdPrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.StackNamePrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.VarsBodyPrimitiveTypeHolder;
 import com.huaweicloud.sdk.aos.v1.model.VarsStructure;
+import com.huaweicloud.sdk.aos.v1.model.VarsStructurePrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.VarsUriContentPrimitiveTypeHolder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,7 +35,7 @@ import java.util.Objects;
 /**
  * Response Object
  */
-public class DescribeExecutionPlanResponse extends SdkResponse {
+public class GetExecutionPlanMetadataResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,20 +84,8 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
     
 
     private String varsBody;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
-
-    private String createTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apply_time")
-    
-
-    private String applyTime;
     /**
-     * 执行计划的执行状态，只有当AVAILABLE的时候才可以使用apply执行     * `CREATION_IN_PROGRESS` - 正在生成     * `CREATION_FAILED` - 生成失败     * `AVAILABLE` - 执行计划已经生成完成。可以使用apply进行执行     * `APPLY_IN_PROGRESS` - 执行计划正在执行     * `APPLIED` - 执行完成
+     * 执行计划的状态     * `CREATION_IN_PROGRESS` - 正在创建，请等待     * `CREATION_FAILED` - 创建失败，请从status_message获取错误信息汇总     * `AVAILABLE` - 创建完成，可以调用ApplyExecutionPlan API进行执行     * `APPLY_IN_PROGRESS` - 执行中，可通过GetStackMetadata查询资源栈状态，通过ListStackEvents获取执行过程中产生的资源栈事件     * `APPLIED` - 已执行
      */
     public static final class StatusEnum {
 
@@ -196,12 +194,24 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
     private String statusMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="create_time")
+    
+
+    private String createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="apply_time")
+    
+
+    private String applyTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="summary")
     
 
     private ExecutionPlanSummary summary;
 
-    public DescribeExecutionPlanResponse withStackId(String stackId) {
+    public GetExecutionPlanMetadataResponse withStackId(String stackId) {
         this.stackId = stackId;
         return this;
     }
@@ -210,7 +220,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
 
     /**
-     * 栈的唯一Id,为uuid
+     * 资源栈（stack）的唯一Id。  此Id由资源编排服务在生成资源栈的时候生成，为UUID。  由于资源栈名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的资源栈，删除，再重新创建一个同名资源栈。  对于团队并行开发，用户可能希望确保，当前我操作的资源栈就是我认为的那个，而不是其他队友删除后创建的同名资源栈。因此，使用ID就可以做到强匹配。  资源编排服务保证每次创建的资源栈所对应的ID都不相同，更新不会影响ID。如果给与的stack_id和当前资源栈的ID不一致，则返回400 
      * @return stackId
      */
     public String getStackId() {
@@ -223,7 +233,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
     
 
-    public DescribeExecutionPlanResponse withStackName(String stackName) {
+    public GetExecutionPlanMetadataResponse withStackName(String stackName) {
         this.stackName = stackName;
         return this;
     }
@@ -232,7 +242,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
 
     /**
-     * 栈的名字
+     * 资源栈的名称。此名字在domain_id+区域+project_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
      * @return stackName
      */
     public String getStackName() {
@@ -245,7 +255,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
     
 
-    public DescribeExecutionPlanResponse withExecutionPlanId(String executionPlanId) {
+    public GetExecutionPlanMetadataResponse withExecutionPlanId(String executionPlanId) {
         this.executionPlanId = executionPlanId;
         return this;
     }
@@ -254,7 +264,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
 
     /**
-     * 执行计划的唯一Id，由资源编排服务随机生成,为uuid
+     * 执行计划（execution_plan）的唯一Id。  此Id由资源编排服务在生成执行计划的时候生成，为UUID。  由于执行计划名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的执行计划，删除，再重新创建一个同名执行计划。  对于团队并行开发，用户可能希望确保，当前我操作的执行计划就是我认为的那个，而不是其他队友删除后创建的同名执行计划。因此，使用ID就可以做到强匹配。  资源编排服务保证每次创建的执行计划所对应的ID都不相同，更新不会影响ID。如果给与的execution_plan_id和当前执行计划的ID不一致，则返回400 
      * @return executionPlanId
      */
     public String getExecutionPlanId() {
@@ -267,7 +277,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
     
 
-    public DescribeExecutionPlanResponse withExecutionPlanName(String executionPlanName) {
+    public GetExecutionPlanMetadataResponse withExecutionPlanName(String executionPlanName) {
         this.executionPlanName = executionPlanName;
         return this;
     }
@@ -276,7 +286,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
 
     /**
-     * 执行计划的名字
+     * 执行计划的名称。此名字在domain_id+区域+project_id+stack_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
      * @return executionPlanName
      */
     public String getExecutionPlanName() {
@@ -289,7 +299,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
     
 
-    public DescribeExecutionPlanResponse withDescription(String description) {
+    public GetExecutionPlanMetadataResponse withDescription(String description) {
         this.description = description;
         return this;
     }
@@ -298,7 +308,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
 
     /**
-     * 执行计划的描述，此描述为用户在创建执行计划时指定
+     * 执行计划的描述。可用于客户识别自己的执行计划。
      * @return description
      */
     public String getDescription() {
@@ -311,13 +321,13 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
     
 
-    public DescribeExecutionPlanResponse withVarsStructure(List<VarsStructure> varsStructure) {
+    public GetExecutionPlanMetadataResponse withVarsStructure(List<VarsStructure> varsStructure) {
         this.varsStructure = varsStructure;
         return this;
     }
 
     
-    public DescribeExecutionPlanResponse addVarsStructureItem(VarsStructure varsStructureItem) {
+    public GetExecutionPlanMetadataResponse addVarsStructureItem(VarsStructure varsStructureItem) {
         if(this.varsStructure == null) {
             this.varsStructure = new ArrayList<>();
         }
@@ -325,7 +335,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
         return this;
     }
 
-    public DescribeExecutionPlanResponse withVarsStructure(Consumer<List<VarsStructure>> varsStructureSetter) {
+    public GetExecutionPlanMetadataResponse withVarsStructure(Consumer<List<VarsStructure>> varsStructureSetter) {
         if(this.varsStructure == null) {
             this.varsStructure = new ArrayList<>();
         }
@@ -334,7 +344,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
     }
 
     /**
-     * 参数列表
+     * HCL参数结构。HCL模板支持参数传入，即，同一个模板可以给予不同的参数而达到不同的效果。  * var_structure可以允许客户提交最简单的字符串类型的参数  * 资源编排服务支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * vars_structure中的值只支持简单的字符串类型，如果需要使用其他类型，需要用户自己在HCL引用时转换， 或者用户可以使用vars_uri、vars_body，vars_uri和vars_body中支持HCL支持的各种类型以及复杂结构  * 如果vars_structure过大，可以使用vars_uri  * 注意：vars_structure中默认不应该含有任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的vars。如为敏感信息，建议设置encryption字段开启加密 
      * @return varsStructure
      */
     public List<VarsStructure> getVarsStructure() {
@@ -347,7 +357,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
     
 
-    public DescribeExecutionPlanResponse withVarsUriContent(String varsUriContent) {
+    public GetExecutionPlanMetadataResponse withVarsUriContent(String varsUriContent) {
         this.varsUriContent = varsUriContent;
         return this;
     }
@@ -356,7 +366,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
 
     /**
-     * 创建该执行计划时，给出的vars文件中的内容
+     * vars_uri对应的文件内容
      * @return varsUriContent
      */
     public String getVarsUriContent() {
@@ -369,7 +379,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
     
 
-    public DescribeExecutionPlanResponse withVarsBody(String varsBody) {
+    public GetExecutionPlanMetadataResponse withVarsBody(String varsBody) {
         this.varsBody = varsBody;
         return this;
     }
@@ -378,7 +388,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
 
     /**
-     * 创建该执行计划时，请求Body体中的tfvars文件内容
+     * HCL参数文件的内容。HCL模板支持参数传入，即，同一个模板可以给予不同的参数而达到不同的效果。  * vars_body使用HCL的tfvars格式，用户可以将“.tfvars”中的内容提交到vars_body中。  * 资源编排服务支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * 如果vars_body过大，可以使用vars_uri  * 如果vars中都是简单的字符串格式，可以使用var_structure  * 注意：vars_body中不应该含有任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的vars。如为敏感信息，建议通过vars_structure并设置encryption字段传递 
      * @return varsBody
      */
     public String getVarsBody() {
@@ -391,51 +401,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
     
 
-    public DescribeExecutionPlanResponse withCreateTime(String createTime) {
-        this.createTime = createTime;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 执行计划的生成时间
-     * @return createTime
-     */
-    public String getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime;
-    }
-
-    
-
-    public DescribeExecutionPlanResponse withApplyTime(String applyTime) {
-        this.applyTime = applyTime;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 执行时间
-     * @return applyTime
-     */
-    public String getApplyTime() {
-        return applyTime;
-    }
-
-    public void setApplyTime(String applyTime) {
-        this.applyTime = applyTime;
-    }
-
-    
-
-    public DescribeExecutionPlanResponse withStatus(StatusEnum status) {
+    public GetExecutionPlanMetadataResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -444,7 +410,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
 
     /**
-     * 执行计划的执行状态，只有当AVAILABLE的时候才可以使用apply执行     * `CREATION_IN_PROGRESS` - 正在生成     * `CREATION_FAILED` - 生成失败     * `AVAILABLE` - 执行计划已经生成完成。可以使用apply进行执行     * `APPLY_IN_PROGRESS` - 执行计划正在执行     * `APPLIED` - 执行完成
+     * 执行计划的状态     * `CREATION_IN_PROGRESS` - 正在创建，请等待     * `CREATION_FAILED` - 创建失败，请从status_message获取错误信息汇总     * `AVAILABLE` - 创建完成，可以调用ApplyExecutionPlan API进行执行     * `APPLY_IN_PROGRESS` - 执行中，可通过GetStackMetadata查询资源栈状态，通过ListStackEvents获取执行过程中产生的资源栈事件     * `APPLIED` - 已执行
      * @return status
      */
     public StatusEnum getStatus() {
@@ -457,7 +423,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
     
 
-    public DescribeExecutionPlanResponse withStatusMessage(String statusMessage) {
+    public GetExecutionPlanMetadataResponse withStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
         return this;
     }
@@ -466,7 +432,7 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
 
     /**
-     * 展示执行计划状态更多细节的信息
+     * 当执行计划的状态为创建失败状态（即为 `CREATION_FAILED` 时），将会展示简要的错误信息总结以供debug
      * @return statusMessage
      */
     public String getStatusMessage() {
@@ -479,12 +445,56 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
 
     
 
-    public DescribeExecutionPlanResponse withSummary(ExecutionPlanSummary summary) {
+    public GetExecutionPlanMetadataResponse withCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 执行计划的生成时间 格式遵循RFC3339，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z 
+     * @return createTime
+     */
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    
+
+    public GetExecutionPlanMetadataResponse withApplyTime(String applyTime) {
+        this.applyTime = applyTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 执行计划的执行时间 格式遵循RFC3339，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z 
+     * @return applyTime
+     */
+    public String getApplyTime() {
+        return applyTime;
+    }
+
+    public void setApplyTime(String applyTime) {
+        this.applyTime = applyTime;
+    }
+
+    
+
+    public GetExecutionPlanMetadataResponse withSummary(ExecutionPlanSummary summary) {
         this.summary = summary;
         return this;
     }
 
-    public DescribeExecutionPlanResponse withSummary(Consumer<ExecutionPlanSummary> summarySetter) {
+    public GetExecutionPlanMetadataResponse withSummary(Consumer<ExecutionPlanSummary> summarySetter) {
         if(this.summary == null ){
             this.summary = new ExecutionPlanSummary();
             summarySetter.accept(this.summary);
@@ -516,29 +526,29 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        DescribeExecutionPlanResponse describeExecutionPlanResponse = (DescribeExecutionPlanResponse) o;
-        return Objects.equals(this.stackId, describeExecutionPlanResponse.stackId) &&
-            Objects.equals(this.stackName, describeExecutionPlanResponse.stackName) &&
-            Objects.equals(this.executionPlanId, describeExecutionPlanResponse.executionPlanId) &&
-            Objects.equals(this.executionPlanName, describeExecutionPlanResponse.executionPlanName) &&
-            Objects.equals(this.description, describeExecutionPlanResponse.description) &&
-            Objects.equals(this.varsStructure, describeExecutionPlanResponse.varsStructure) &&
-            Objects.equals(this.varsUriContent, describeExecutionPlanResponse.varsUriContent) &&
-            Objects.equals(this.varsBody, describeExecutionPlanResponse.varsBody) &&
-            Objects.equals(this.createTime, describeExecutionPlanResponse.createTime) &&
-            Objects.equals(this.applyTime, describeExecutionPlanResponse.applyTime) &&
-            Objects.equals(this.status, describeExecutionPlanResponse.status) &&
-            Objects.equals(this.statusMessage, describeExecutionPlanResponse.statusMessage) &&
-            Objects.equals(this.summary, describeExecutionPlanResponse.summary);
+        GetExecutionPlanMetadataResponse getExecutionPlanMetadataResponse = (GetExecutionPlanMetadataResponse) o;
+        return Objects.equals(this.stackId, getExecutionPlanMetadataResponse.stackId) &&
+            Objects.equals(this.stackName, getExecutionPlanMetadataResponse.stackName) &&
+            Objects.equals(this.executionPlanId, getExecutionPlanMetadataResponse.executionPlanId) &&
+            Objects.equals(this.executionPlanName, getExecutionPlanMetadataResponse.executionPlanName) &&
+            Objects.equals(this.description, getExecutionPlanMetadataResponse.description) &&
+            Objects.equals(this.varsStructure, getExecutionPlanMetadataResponse.varsStructure) &&
+            Objects.equals(this.varsUriContent, getExecutionPlanMetadataResponse.varsUriContent) &&
+            Objects.equals(this.varsBody, getExecutionPlanMetadataResponse.varsBody) &&
+            Objects.equals(this.status, getExecutionPlanMetadataResponse.status) &&
+            Objects.equals(this.statusMessage, getExecutionPlanMetadataResponse.statusMessage) &&
+            Objects.equals(this.createTime, getExecutionPlanMetadataResponse.createTime) &&
+            Objects.equals(this.applyTime, getExecutionPlanMetadataResponse.applyTime) &&
+            Objects.equals(this.summary, getExecutionPlanMetadataResponse.summary);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(stackId, stackName, executionPlanId, executionPlanName, description, varsStructure, varsUriContent, varsBody, createTime, applyTime, status, statusMessage, summary);
+        return Objects.hash(stackId, stackName, executionPlanId, executionPlanName, description, varsStructure, varsUriContent, varsBody, status, statusMessage, createTime, applyTime, summary);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class DescribeExecutionPlanResponse {\n");
+        sb.append("class GetExecutionPlanMetadataResponse {\n");
         sb.append("    stackId: ").append(toIndentedString(stackId)).append("\n");
         sb.append("    stackName: ").append(toIndentedString(stackName)).append("\n");
         sb.append("    executionPlanId: ").append(toIndentedString(executionPlanId)).append("\n");
@@ -547,10 +557,10 @@ public class DescribeExecutionPlanResponse extends SdkResponse {
         sb.append("    varsStructure: ").append(toIndentedString(varsStructure)).append("\n");
         sb.append("    varsUriContent: ").append(toIndentedString(varsUriContent)).append("\n");
         sb.append("    varsBody: ").append(toIndentedString(varsBody)).append("\n");
-        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    applyTime: ").append(toIndentedString(applyTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    applyTime: ").append(toIndentedString(applyTime)).append("\n");
         sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -15,7 +15,7 @@ import java.util.Objects;
 /**
  * Request Object
  */
-public class DescribeExecutionPlanRequest  {
+public class GetExecutionPlanMetadataRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,7 +48,7 @@ public class DescribeExecutionPlanRequest  {
 
     private String executionPlanId;
 
-    public DescribeExecutionPlanRequest withClientRequestId(String clientRequestId) {
+    public GetExecutionPlanMetadataRequest withClientRequestId(String clientRequestId) {
         this.clientRequestId = clientRequestId;
         return this;
     }
@@ -70,7 +70,7 @@ public class DescribeExecutionPlanRequest  {
 
     
 
-    public DescribeExecutionPlanRequest withStackName(String stackName) {
+    public GetExecutionPlanMetadataRequest withStackName(String stackName) {
         this.stackName = stackName;
         return this;
     }
@@ -79,7 +79,7 @@ public class DescribeExecutionPlanRequest  {
 
 
     /**
-     * 用户希望操作的资源栈名称
+     * 资源栈的名称。此名字在domain_id+区域+project_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
      * @return stackName
      */
     public String getStackName() {
@@ -92,7 +92,7 @@ public class DescribeExecutionPlanRequest  {
 
     
 
-    public DescribeExecutionPlanRequest withExecutionPlanName(String executionPlanName) {
+    public GetExecutionPlanMetadataRequest withExecutionPlanName(String executionPlanName) {
         this.executionPlanName = executionPlanName;
         return this;
     }
@@ -101,7 +101,7 @@ public class DescribeExecutionPlanRequest  {
 
 
     /**
-     * 执行计划的名字。
+     * 执行计划的名称。此名字在domain_id+区域+project_id+stack_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
      * @return executionPlanName
      */
     public String getExecutionPlanName() {
@@ -114,7 +114,7 @@ public class DescribeExecutionPlanRequest  {
 
     
 
-    public DescribeExecutionPlanRequest withStackId(String stackId) {
+    public GetExecutionPlanMetadataRequest withStackId(String stackId) {
         this.stackId = stackId;
         return this;
     }
@@ -123,7 +123,7 @@ public class DescribeExecutionPlanRequest  {
 
 
     /**
-     * 用户希望描述的资源栈的Id。若stack_name和stack_id同时存在，则资源编排服务会检查是否两个匹配，否则返回400
+     * 资源栈（stack）的唯一Id。  此Id由资源编排服务在生成资源栈的时候生成，为UUID。  由于资源栈名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的资源栈，删除，再重新创建一个同名资源栈。  对于团队并行开发，用户可能希望确保，当前我操作的资源栈就是我认为的那个，而不是其他队友删除后创建的同名资源栈。因此，使用ID就可以做到强匹配。  资源编排服务保证每次创建的资源栈所对应的ID都不相同，更新不会影响ID。如果给与的stack_id和当前资源栈的ID不一致，则返回400 
      * @return stackId
      */
     public String getStackId() {
@@ -136,7 +136,7 @@ public class DescribeExecutionPlanRequest  {
 
     
 
-    public DescribeExecutionPlanRequest withExecutionPlanId(String executionPlanId) {
+    public GetExecutionPlanMetadataRequest withExecutionPlanId(String executionPlanId) {
         this.executionPlanId = executionPlanId;
         return this;
     }
@@ -145,7 +145,7 @@ public class DescribeExecutionPlanRequest  {
 
 
     /**
-     * 执行计划ID(uuid)
+     * 执行计划（execution_plan）的唯一Id。  此Id由资源编排服务在生成执行计划的时候生成，为UUID。  由于执行计划名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的执行计划，删除，再重新创建一个同名执行计划。  对于团队并行开发，用户可能希望确保，当前我操作的执行计划就是我认为的那个，而不是其他队友删除后创建的同名执行计划。因此，使用ID就可以做到强匹配。  资源编排服务保证每次创建的执行计划所对应的ID都不相同，更新不会影响ID。如果给与的execution_plan_id和当前执行计划的ID不一致，则返回400 
      * @return executionPlanId
      */
     public String getExecutionPlanId() {
@@ -166,12 +166,12 @@ public class DescribeExecutionPlanRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        DescribeExecutionPlanRequest describeExecutionPlanRequest = (DescribeExecutionPlanRequest) o;
-        return Objects.equals(this.clientRequestId, describeExecutionPlanRequest.clientRequestId) &&
-            Objects.equals(this.stackName, describeExecutionPlanRequest.stackName) &&
-            Objects.equals(this.executionPlanName, describeExecutionPlanRequest.executionPlanName) &&
-            Objects.equals(this.stackId, describeExecutionPlanRequest.stackId) &&
-            Objects.equals(this.executionPlanId, describeExecutionPlanRequest.executionPlanId);
+        GetExecutionPlanMetadataRequest getExecutionPlanMetadataRequest = (GetExecutionPlanMetadataRequest) o;
+        return Objects.equals(this.clientRequestId, getExecutionPlanMetadataRequest.clientRequestId) &&
+            Objects.equals(this.stackName, getExecutionPlanMetadataRequest.stackName) &&
+            Objects.equals(this.executionPlanName, getExecutionPlanMetadataRequest.executionPlanName) &&
+            Objects.equals(this.stackId, getExecutionPlanMetadataRequest.stackId) &&
+            Objects.equals(this.executionPlanId, getExecutionPlanMetadataRequest.executionPlanId);
     }
     @Override
     public int hashCode() {
@@ -180,7 +180,7 @@ public class DescribeExecutionPlanRequest  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class DescribeExecutionPlanRequest {\n");
+        sb.append("class GetExecutionPlanMetadataRequest {\n");
         sb.append("    clientRequestId: ").append(toIndentedString(clientRequestId)).append("\n");
         sb.append("    stackName: ").append(toIndentedString(stackName)).append("\n");
         sb.append("    executionPlanName: ").append(toIndentedString(executionPlanName)).append("\n");

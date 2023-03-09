@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.aos.v1.model.DeploymentIdPrimitiveTypeHolder;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -35,7 +36,7 @@ public class ApplyExecutionPlanResponse extends SdkResponse {
 
 
     /**
-     * 部署生成的唯一ID，由资源编排服务生成
+     * 标识部署的唯一Id，此Id由资源编排服务在触发部署、回滚等操作时生成，为UUID。 
      * @return deploymentId
      */
     public String getDeploymentId() {

@@ -290,6 +290,35 @@ public class CloudIDEClient {
     }
 
     /**
+     * 获取当前用户下的发布商列表
+     *
+     * 获取当前用户下的发布商列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPublisherRequest 请求对象
+     * @return ListPublisherResponse
+     */
+    public ListPublisherResponse listPublisher(ListPublisherRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.listPublisher);
+    }
+
+    /**
+     * 获取当前用户下的发布商列表
+     *
+     * 获取当前用户下的发布商列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPublisherRequest 请求对象
+     * @return SyncInvoker<ListPublisherRequest, ListPublisherResponse>
+     */
+    public SyncInvoker<ListPublisherRequest, ListPublisherResponse> listPublisherInvoker(ListPublisherRequest request) {
+        return new SyncInvoker<ListPublisherRequest, ListPublisherResponse>(request, CloudIDEMeta.listPublisher,
+            hcClient);
+    }
+
+    /**
      * 按region获取标签所有技术栈
      *
      * 按region获取标签所有技术栈
@@ -345,6 +374,36 @@ public class CloudIDEClient {
         ShowAccountStatusRequest request) {
         return new SyncInvoker<ShowAccountStatusRequest, ShowAccountStatusResponse>(request,
             CloudIDEMeta.showAccountStatus, hcClient);
+    }
+
+    /**
+     * 查询插件分类
+     *
+     * 查询插件分类
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCategoryListRequest 请求对象
+     * @return ShowCategoryListResponse
+     */
+    public ShowCategoryListResponse showCategoryList(ShowCategoryListRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.showCategoryList);
+    }
+
+    /**
+     * 查询插件分类
+     *
+     * 查询插件分类
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCategoryListRequest 请求对象
+     * @return SyncInvoker<ShowCategoryListRequest, ShowCategoryListResponse>
+     */
+    public SyncInvoker<ShowCategoryListRequest, ShowCategoryListResponse> showCategoryListInvoker(
+        ShowCategoryListRequest request) {
+        return new SyncInvoker<ShowCategoryListRequest, ShowCategoryListResponse>(request,
+            CloudIDEMeta.showCategoryList, hcClient);
     }
 
     /**

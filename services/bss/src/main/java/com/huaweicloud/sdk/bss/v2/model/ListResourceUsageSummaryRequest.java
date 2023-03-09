@@ -87,7 +87,7 @@ public class ListResourceUsageSummaryRequest {
     }
 
     /**
-     * 云服务类型，当前仅支持：hws.service.type.cdn：内容分发网络,hws.service.type.obs：对象存储服务
+     * 云服务类型，当前仅支持：hws.service.type.cdn：内容分发网络,hws.service.type.obs：对象存储服务,hws.service.type.vpc：虚拟私有云
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -104,7 +104,7 @@ public class ListResourceUsageSummaryRequest {
     }
 
     /**
-     * 资源类型编码，当前仅支持：hws.resource.type.cdn：CDN,hws.resource.type.obs：云存储.资源类型和云服务类型的对应关系可调用[根据云服务类型查询资源列表](https://support.huaweicloud.com/api-oce/qct_00003.html)接口获取。
+     * 资源类型编码，当前仅支持：hws.resource.type.cdn：CDN,hws.resource.type.obs：云存储,hws.resource.type.bandwidth：固定带宽.资源类型和云服务类型的对应关系可调用[根据云服务类型查询资源列表](https://support.huaweicloud.com/api-oce/qct_00003.html)接口获取。
      * @return resourceTypeCode
      */
     public String getResourceTypeCode() {

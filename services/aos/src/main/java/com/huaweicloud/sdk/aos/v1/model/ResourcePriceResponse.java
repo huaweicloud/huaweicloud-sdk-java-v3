@@ -18,12 +18,12 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * resource price response
+ * ResourcePriceResponse
  */
 public class ResourcePriceResponse  {
 
     /**
-     * 计费模式，包周期计费、按需计费、免费的返回，不支持的资源不返回 PRE_PAID 包周期计费 POST_PAID 按需计费 FREE 免费
+     * 计费模式  * `PRE_PAID` - 包周期计费 * `POST_PAID` - 按需计费 * `FREE` - 免费 
      */
     public static final class ChargeModeEnum {
 
@@ -117,21 +117,21 @@ public class ResourcePriceResponse  {
     @JsonProperty(value="sale_price")
     
 
-    private Object salePrice;
+    private Double salePrice;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discount")
     
 
-    private Object discount;
+    private Double discount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="original_price")
     
 
-    private Object originalPrice;
+    private Double originalPrice;
     /**
-     * 包周期和按需的计费单位，包周期计费和按需计费返回，免费不会返回 HOUR：小时，包周期计费和按需计费返回，免费不会返回 DAY：天，包周期计费返回，按需计费和免费不会返回 WEEK：周，包周期计费返回，按需计费和免费不会返回 MONTH：月，包周期计费返回，按需计费和免费不会返回 YEAR：年，包周期计费返回，按需计费和免费不会返回 BYTE：字节，按需计费返回，包周期计费和免费不会返回 MB：百万字节，按需计费返回，包周期计费和免费不会返回 GB：千兆字节，按需计费返回，包周期计费和免费不会返回
+     * 计费单位  若该资源支持包周期计费或按需计费，则会返回该字段；若该资源为免费资源，则不返回该字段。  * `HOUR` - 小时，按需计费的单位 * `DAY` - 天，按需计费的单位 * `MONTH` - 月，包周期计费的单位 * `YEAR` - 年，包周期计费的单位 * `BYTE` - 字节，按需计费的单位 * `MB` - 百万字节，包周期计费和按需计费的单位 * `GB` - 千兆字节，包周期计费和按需计费的单位 
      */
     public static final class PeriodTypeEnum {
 
@@ -145,11 +145,6 @@ public class ResourcePriceResponse  {
          * Enum DAY for value: "DAY"
          */
         public static final PeriodTypeEnum DAY = new PeriodTypeEnum("DAY");
-        
-        /**
-         * Enum WEEK for value: "WEEK"
-         */
-        public static final PeriodTypeEnum WEEK = new PeriodTypeEnum("WEEK");
         
         /**
          * Enum MONTH for value: "MONTH"
@@ -183,7 +178,6 @@ public class ResourcePriceResponse  {
             Map<String, PeriodTypeEnum> map = new HashMap<>();
             map.put("HOUR", HOUR);
             map.put("DAY", DAY);
-            map.put("WEEK", WEEK);
             map.put("MONTH", MONTH);
             map.put("YEAR", YEAR);
             map.put("BYTE", BYTE);
@@ -266,7 +260,7 @@ public class ResourcePriceResponse  {
 
 
     /**
-     * 计费模式，包周期计费、按需计费、免费的返回，不支持的资源不返回 PRE_PAID 包周期计费 POST_PAID 按需计费 FREE 免费
+     * 计费模式  * `PRE_PAID` - 包周期计费 * `POST_PAID` - 按需计费 * `FREE` - 免费 
      * @return chargeMode
      */
     public ChargeModeEnum getChargeMode() {
@@ -279,7 +273,7 @@ public class ResourcePriceResponse  {
 
     
 
-    public ResourcePriceResponse withSalePrice(Object salePrice) {
+    public ResourcePriceResponse withSalePrice(Double salePrice) {
         this.salePrice = salePrice;
         return this;
     }
@@ -288,20 +282,20 @@ public class ResourcePriceResponse  {
 
 
     /**
-     * 执行计划中的每个资源部署后最终优惠后的金额（只考虑商务折扣以及伙伴折扣，不包含促销折扣及优惠券），保留小数点后2位，向上取整，默认单位是元
+     * 该资源最终优惠后的金额（只考虑官网折扣、商务折扣以及伙伴折扣，不包含促销折扣及优惠券），保留小数点后2位，向上取整，默认单位是元。
      * @return salePrice
      */
-    public Object getSalePrice() {
+    public Double getSalePrice() {
         return salePrice;
     }
 
-    public void setSalePrice(Object salePrice) {
+    public void setSalePrice(Double salePrice) {
         this.salePrice = salePrice;
     }
 
     
 
-    public ResourcePriceResponse withDiscount(Object discount) {
+    public ResourcePriceResponse withDiscount(Double discount) {
         this.discount = discount;
         return this;
     }
@@ -310,20 +304,20 @@ public class ResourcePriceResponse  {
 
 
     /**
-     * 执行计划中的每个资源部署后的优惠额，保留小数点后2位，向上取整，默认单位是元
+     * 该资源的总优惠额，保留小数点后2位，向上取整，默认单位是元。
      * @return discount
      */
-    public Object getDiscount() {
+    public Double getDiscount() {
         return discount;
     }
 
-    public void setDiscount(Object discount) {
+    public void setDiscount(Double discount) {
         this.discount = discount;
     }
 
     
 
-    public ResourcePriceResponse withOriginalPrice(Object originalPrice) {
+    public ResourcePriceResponse withOriginalPrice(Double originalPrice) {
         this.originalPrice = originalPrice;
         return this;
     }
@@ -332,14 +326,14 @@ public class ResourcePriceResponse  {
 
 
     /**
-     * 执行计划中的每个资源部署后的原价，保留小数点后2位，向上取整，默认单位是元
+     * 该资源的原价，保留小数点后2位，向上取整，默认单位是元。
      * @return originalPrice
      */
-    public Object getOriginalPrice() {
+    public Double getOriginalPrice() {
         return originalPrice;
     }
 
-    public void setOriginalPrice(Object originalPrice) {
+    public void setOriginalPrice(Double originalPrice) {
         this.originalPrice = originalPrice;
     }
 
@@ -354,7 +348,7 @@ public class ResourcePriceResponse  {
 
 
     /**
-     * 包周期和按需的计费单位，包周期计费和按需计费返回，免费不会返回 HOUR：小时，包周期计费和按需计费返回，免费不会返回 DAY：天，包周期计费返回，按需计费和免费不会返回 WEEK：周，包周期计费返回，按需计费和免费不会返回 MONTH：月，包周期计费返回，按需计费和免费不会返回 YEAR：年，包周期计费返回，按需计费和免费不会返回 BYTE：字节，按需计费返回，包周期计费和免费不会返回 MB：百万字节，按需计费返回，包周期计费和免费不会返回 GB：千兆字节，按需计费返回，包周期计费和免费不会返回
+     * 计费单位  若该资源支持包周期计费或按需计费，则会返回该字段；若该资源为免费资源，则不返回该字段。  * `HOUR` - 小时，按需计费的单位 * `DAY` - 天，按需计费的单位 * `MONTH` - 月，包周期计费的单位 * `YEAR` - 年，包周期计费的单位 * `BYTE` - 字节，按需计费的单位 * `MB` - 百万字节，包周期计费和按需计费的单位 * `GB` - 千兆字节，包周期计费和按需计费的单位 
      * @return periodType
      */
     public PeriodTypeEnum getPeriodType() {
@@ -376,7 +370,7 @@ public class ResourcePriceResponse  {
 
 
     /**
-     * 订购数量。包周期计费和按需计费返回，免费不会返回。
+     * 该资源的计费数量，需要和period_type搭配使用  若该资源支持包周期计费或按需计费，则会返回该字段；若该资源为免费资源，则不返回该字段。  * 对于按需计费资源，此值默认返回1，代表在1个计费单位下，该资源的价格 * 对于包周期计费资源，此值与模板中该资源的period字段保持一致 
      * @return periodCount
      */
     public Integer getPeriodCount() {

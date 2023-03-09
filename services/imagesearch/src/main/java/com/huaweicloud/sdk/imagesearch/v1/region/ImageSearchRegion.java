@@ -13,11 +13,14 @@ import com.huaweicloud.sdk.core.utils.StringUtils;
 
 public class ImageSearchRegion {
     public static final Region CN_NORTH_4 = new Region("cn-north-4",
-            "https://imagesearch.cn-north-4.myhuaweicloud.com");
+            "https://imagesearch.cn-north-4.myhuaweicloud.com",
+            "https://imagesearch.cn-north-4.myhuaweicloud.cn");
     public static final Region CN_NORTH_1 = new Region("cn-north-1",
-            "https://imagesearch.cn-north-1.myhuaweicloud.com");
+            "https://imagesearch.cn-north-1.myhuaweicloud.com",
+            "https://imagesearch.cn-north-1.myhuaweicloud.cn");
     public static final Region AP_SOUTHEAST_1 = new Region("ap-southeast-1",
-            "https://imagesearch.ap-southeast-1.myhuaweicloud.com");
+            "https://imagesearch.ap-southeast-1.myhuaweicloud.com",
+            "https://imagesearch.ap-southeast-1.myhuaweicloud.cn");
     
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("IMAGESEARCH");
 

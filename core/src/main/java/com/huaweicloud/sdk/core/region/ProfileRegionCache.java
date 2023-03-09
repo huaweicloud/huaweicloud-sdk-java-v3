@@ -25,6 +25,7 @@ import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.utils.PathUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
+import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.SafeConstructor;
 
@@ -78,7 +79,7 @@ public class ProfileRegionCache {
 
     private static Map<String, Region> resolveRegions(String filepath) {
         Map<String, Region> result = new LinkedHashMap<>();
-        Yaml yaml = new Yaml(new SafeConstructor());
+        Yaml yaml = new Yaml(new SafeConstructor(new LoaderOptions()));
         Map<?, ?> map;
         try (FileInputStream inputStream = new FileInputStream(filepath)) {
             Object obj = yaml.load(inputStream);

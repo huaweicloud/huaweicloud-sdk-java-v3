@@ -8,14 +8,17 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.aos.v1.model.IndexPrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.ResourceNamePrimitiveTypeHolder;
 import com.huaweicloud.sdk.aos.v1.model.ResourcePriceResponse;
+import com.huaweicloud.sdk.aos.v1.model.ResourceTypePrimitiveTypeHolder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * items response
+ * ItemsResponse
  */
 public class ItemsResponse  {
 
@@ -45,6 +48,12 @@ public class ItemsResponse  {
     private Boolean supported;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="unsupported_message")
+    
+
+    private String unsupportedMessage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_price")
     
     private List<ResourcePriceResponse> resourcePrice = null;
@@ -58,7 +67,7 @@ public class ItemsResponse  {
 
 
     /**
-     * 执行计划中的资源类型，如：huaweicloud_evs_volume
+     * 资源的类型  以HCL格式的模板为例，resource_type 为 huaweicloud_vpc  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   name = \"test_vpc\" } ```  以json格式的模板为例，resource_type 为 huaweicloud_vpc  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\"       }     }   } } ``` 
      * @return resourceType
      */
     public String getResourceType() {
@@ -80,7 +89,7 @@ public class ItemsResponse  {
 
 
     /**
-     * 执行计划中的用户定义的资源的名字，如：my_volume
+     * 资源的名称，默认为资源的逻辑名称  以HCL格式的模板为例，resource_name 为 my_hello_world_vpc  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   name = \"test_vpc\" } ```  以json格式的模板为例，resource_name 为 my_hello_world_vpc  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\"       }     }   } } ``` 
      * @return resourceName
      */
     public String getResourceName() {
@@ -102,7 +111,7 @@ public class ItemsResponse  {
 
 
     /**
-     * 使用count构建的资源时资源对应的index
+     * 资源的索引，若用户在模板中使用了count或for_each则会返回index。若index出现，则resource_name + index可以作为该资源的一种标识  若用户在模板中使用count，则index为从0开始的数字  以HCL格式的模板为例，用户在模板中可以通过`huaweicloud_vpc.my_hello_world_vpc[0]`和`huaweicloud_vpc.my_hello_world_vpc[1]`标识两个资源  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   count = 2   name = \"test_vpc\" } ```  以json格式的模板为例，用户在模板中可以通过`huaweicloud_vpc.my_hello_world_vpc[0]`和`huaweicloud_vpc.my_hello_world_vpc[1]`标识两个资源  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\",         \"count\": 2       }     }   } } ```  若用户在模板中使用for_each，则index为用户自定义的字符串  以HCL格式的模板为例，用户在模板中可以通过`huaweicloud_vpc.my_hello_world_vpc[\"vpc1\"]`和`huaweicloud_vpc.my_hello_world_vpc[\"vpc2\"]`标识两个资源  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   for_each = {     \"vpc1\" = \"test_vpc\"     \"vpc2\" = \"test_vpc\"   }   name = each.value } ```  以json格式的模板为例，用户在模板中可以通过`huaweicloud_vpc.my_hello_world_vpc[\"vpc1\"]`和`huaweicloud_vpc.my_hello_world_vpc[\"vpc2\"]`标识两个资源  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"for_each\": {           \"vpc1\": \"test_vpc\",           \"vpc2\": \"test_vpc\"         }         \"name\": \"${each.value}\"       }     }   } } ``` 
      * @return index
      */
     public String getIndex() {
@@ -124,7 +133,7 @@ public class ItemsResponse  {
 
 
     /**
-     * 执行计划中的资源是否支持询价
+     * 该资源或该资源当前所给予的参数是否支持进行询价
      * @return supported
      */
     public Boolean getSupported() {
@@ -133,6 +142,28 @@ public class ItemsResponse  {
 
     public void setSupported(Boolean supported) {
         this.supported = supported;
+    }
+
+    
+
+    public ItemsResponse withUnsupportedMessage(String unsupportedMessage) {
+        this.unsupportedMessage = unsupportedMessage;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 该资源不支持询价的具体原因
+     * @return unsupportedMessage
+     */
+    public String getUnsupportedMessage() {
+        return unsupportedMessage;
+    }
+
+    public void setUnsupportedMessage(String unsupportedMessage) {
+        this.unsupportedMessage = unsupportedMessage;
     }
 
     
@@ -160,7 +191,7 @@ public class ItemsResponse  {
     }
 
     /**
-     * 执行计划中的每个资源部署后的总的询价信息，如果该资源询价结果包含不同的period_type，则询价结果根据period_type类型展示总价。 包周期计费和按需计费返回，免费和不支持询价的资源不返回
+     * 该资源的询价信息  若该资源支持包周期计费或按需计费，或者该资源为免费资源，则返回该字段；若该资源不支持询价，则不返回该字段。 
      * @return resourcePrice
      */
     public List<ResourcePriceResponse> getResourcePrice() {
@@ -186,11 +217,12 @@ public class ItemsResponse  {
             Objects.equals(this.resourceName, itemsResponse.resourceName) &&
             Objects.equals(this.index, itemsResponse.index) &&
             Objects.equals(this.supported, itemsResponse.supported) &&
+            Objects.equals(this.unsupportedMessage, itemsResponse.unsupportedMessage) &&
             Objects.equals(this.resourcePrice, itemsResponse.resourcePrice);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(resourceType, resourceName, index, supported, resourcePrice);
+        return Objects.hash(resourceType, resourceName, index, supported, unsupportedMessage, resourcePrice);
     }
     @Override
     public String toString() {
@@ -200,6 +232,7 @@ public class ItemsResponse  {
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    index: ").append(toIndentedString(index)).append("\n");
         sb.append("    supported: ").append(toIndentedString(supported)).append("\n");
+        sb.append("    unsupportedMessage: ").append(toIndentedString(unsupportedMessage)).append("\n");
         sb.append("    resourcePrice: ").append(toIndentedString(resourcePrice)).append("\n");
         sb.append("}");
         return sb.toString();

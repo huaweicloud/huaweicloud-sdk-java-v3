@@ -296,6 +296,36 @@ public class CloudIDEAsyncClient {
     }
 
     /**
+     * 获取当前用户下的发布商列表
+     *
+     * 获取当前用户下的发布商列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPublisherRequest 请求对象
+     * @return CompletableFuture<ListPublisherResponse>
+     */
+    public CompletableFuture<ListPublisherResponse> listPublisherAsync(ListPublisherRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudIDEMeta.listPublisher);
+    }
+
+    /**
+     * 获取当前用户下的发布商列表
+     *
+     * 获取当前用户下的发布商列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPublisherRequest 请求对象
+     * @return AsyncInvoker<ListPublisherRequest, ListPublisherResponse>
+     */
+    public AsyncInvoker<ListPublisherRequest, ListPublisherResponse> listPublisherAsyncInvoker(
+        ListPublisherRequest request) {
+        return new AsyncInvoker<ListPublisherRequest, ListPublisherResponse>(request, CloudIDEMeta.listPublisher,
+            hcClient);
+    }
+
+    /**
      * 按region获取标签所有技术栈
      *
      * 按region获取标签所有技术栈
@@ -351,6 +381,36 @@ public class CloudIDEAsyncClient {
         ShowAccountStatusRequest request) {
         return new AsyncInvoker<ShowAccountStatusRequest, ShowAccountStatusResponse>(request,
             CloudIDEMeta.showAccountStatus, hcClient);
+    }
+
+    /**
+     * 查询插件分类
+     *
+     * 查询插件分类
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCategoryListRequest 请求对象
+     * @return CompletableFuture<ShowCategoryListResponse>
+     */
+    public CompletableFuture<ShowCategoryListResponse> showCategoryListAsync(ShowCategoryListRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudIDEMeta.showCategoryList);
+    }
+
+    /**
+     * 查询插件分类
+     *
+     * 查询插件分类
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCategoryListRequest 请求对象
+     * @return AsyncInvoker<ShowCategoryListRequest, ShowCategoryListResponse>
+     */
+    public AsyncInvoker<ShowCategoryListRequest, ShowCategoryListResponse> showCategoryListAsyncInvoker(
+        ShowCategoryListRequest request) {
+        return new AsyncInvoker<ShowCategoryListRequest, ShowCategoryListResponse>(request,
+            CloudIDEMeta.showCategoryList, hcClient);
     }
 
     /**

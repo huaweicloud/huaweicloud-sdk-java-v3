@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * variable-validation response
+ * VariableValidationResponse
  */
 public class VariableValidationResponse  {
 
@@ -38,7 +38,7 @@ public class VariableValidationResponse  {
 
 
     /**
-     * 校验表达式。支持Terraform表达式
+     * 校验表达式
      * @return condition
      */
     public String getCondition() {

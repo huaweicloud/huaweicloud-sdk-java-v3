@@ -10,7 +10,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.aos.v1.model.ResourceAttribute;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
@@ -183,6 +186,11 @@ public class StackResource  {
 
     private String statusMessage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="resource_attributes")
+    
+    private List<ResourceAttribute> resourceAttributes = null;
+    
     public StackResource withPhysicalResourceId(String physicalResourceId) {
         this.physicalResourceId = physicalResourceId;
         return this;
@@ -192,7 +200,7 @@ public class StackResource  {
 
 
     /**
-     * 资源的物理id，由为该资源提供服务的provider在资源部署的时候生成  注：与physical相关的参数可以在模板以外的地方，作为该资源的一种标识 
+     * 资源的物理id，由该资源的provider、云服务或其他服务提供方在资源部署的时候生成  注：与physical相关的参数可以在模板以外的地方，作为该资源的一种标识 
      * @return physicalResourceId
      */
     public String getPhysicalResourceId() {
@@ -214,7 +222,7 @@ public class StackResource  {
 
 
     /**
-     * 资源的物理名称，由为该资源提供服务的provider在资源部署的时候定义  注：与physical相关的参数可以在模板以外的地方，作为该资源的一种标识 
+     * 资源的物理名称，由该资源的provider、云服务或其他服务提供方在资源部署的时候定义  注：与physical相关的参数可以在模板以外的地方，作为该资源的一种标识 
      * @return physicalResourceName
      */
     public String getPhysicalResourceName() {
@@ -236,7 +244,7 @@ public class StackResource  {
 
 
     /**
-     * 资源的逻辑名称，由用户在模板中定义  注：与 logical 相关的参数仅仅在模板内部，作为该资源的一种标识  以hcl格式的模板为例，logical_resource_name 为 my_hello_world_vpc  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   name = \"test_vpc\" } ```  以json格式的模板为例，logical_resource_name 为 my_hello_world_vpc  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\"       }     }   } } ``` 
+     * 资源的逻辑名称，由用户在模板中定义  注：与 logical 相关的参数仅仅在模板内部，作为该资源的一种标识  以HCL格式的模板为例，logical_resource_name 为 my_hello_world_vpc  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   name = \"test_vpc\" } ```  以json格式的模板为例，logical_resource_name 为 my_hello_world_vpc  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\"       }     }   } } ``` 
      * @return logicalResourceName
      */
     public String getLogicalResourceName() {
@@ -258,7 +266,7 @@ public class StackResource  {
 
 
     /**
-     * 资源的类型  注：与 logical 相关的参数仅仅在模板内部，作为该资源的一种标识  以hcl格式的模板为例，logical_resource_type 为 huaweicloud_vpc  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   name = \"test_vpc\" } ```  以json格式的模板为例，logical_resource_type 为 huaweicloud_vpc  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\"       }     }   } } ``` 
+     * 资源的类型  注：与 logical 相关的参数仅仅在模板内部，作为该资源的一种标识  以HCL格式的模板为例，logical_resource_type 为 huaweicloud_vpc  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   name = \"test_vpc\" } ```  以json格式的模板为例，logical_resource_type 为 huaweicloud_vpc  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\"       }     }   } } ``` 
      * @return logicalResourceType
      */
     public String getLogicalResourceType() {
@@ -280,7 +288,7 @@ public class StackResource  {
 
 
     /**
-     * 资源的索引，若用户在模板中使用了count或for_each则会返回index_key。若index_key出现，则logical_resource_name + index_key可以作为该资源的一种标识  若用户在模板中使用count，则index_key为从0开始的数字  以hcl格式的模板为例，用户在模板中可以通过`huaweicloud_vpc.my_hello_world_vpc[0]`和`huaweicloud_vpc.my_hello_world_vpc[1]`标识两个资源  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   count = 2   name = \"test_vpc\" } ```  以json格式的模板为例，用户在模板中可以通过`huaweicloud_vpc.my_hello_world_vpc[0]`和`huaweicloud_vpc.my_hello_world_vpc[1]`标识两个资源  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\",         \"count\": 2       }     }   } } ```  若用户在模板中使用for_each，则index_key为用户自定义的字符串  以hcl格式的模板为例，用户在模板中可以通过`huaweicloud_vpc.my_hello_world_vpc[\"vpc1\"]`和`huaweicloud_vpc.my_hello_world_vpc[\"vpc2\"]`标识两个资源  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   for_each = {     \"vpc1\" = \"test_vpc\"     \"vpc2\" = \"test_vpc\"   }   name = each.value } ```  以json格式的模板为例，用户在模板中可以通过`huaweicloud_vpc.my_hello_world_vpc[\"vpc1\"]`和`huaweicloud_vpc.my_hello_world_vpc[\"vpc2\"]`标识两个资源  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"for_each\": {           \"vpc1\": \"test_vpc\",           \"vpc2\": \"test_vpc\"         }         \"name\": \"${each.value}\"       }     }   } } ``` 
+     * 资源的索引，若用户在模板中使用了count或for_each则会返回index_key。若index_key出现，则logical_resource_name + index_key可以作为该资源的一种标识  若用户在模板中使用count，则index_key为从0开始的数字  以HCL格式的模板为例，用户在模板中可以通过`huaweicloud_vpc.my_hello_world_vpc[0]`和`huaweicloud_vpc.my_hello_world_vpc[1]`标识两个资源  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   count = 2   name = \"test_vpc\" } ```  以json格式的模板为例，用户在模板中可以通过`huaweicloud_vpc.my_hello_world_vpc[0]`和`huaweicloud_vpc.my_hello_world_vpc[1]`标识两个资源  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\",         \"count\": 2       }     }   } } ```  若用户在模板中使用for_each，则index_key为用户自定义的字符串  以HCL格式的模板为例，用户在模板中可以通过`huaweicloud_vpc.my_hello_world_vpc[\"vpc1\"]`和`huaweicloud_vpc.my_hello_world_vpc[\"vpc2\"]`标识两个资源  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   for_each = {     \"vpc1\" = \"test_vpc\"     \"vpc2\" = \"test_vpc\"   }   name = each.value } ```  以json格式的模板为例，用户在模板中可以通过`huaweicloud_vpc.my_hello_world_vpc[\"vpc1\"]`和`huaweicloud_vpc.my_hello_world_vpc[\"vpc2\"]`标识两个资源  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"for_each\": {           \"vpc1\": \"test_vpc\",           \"vpc2\": \"test_vpc\"         }         \"name\": \"${each.value}\"       }     }   } } ``` 
      * @return indexKey
      */
     public String getIndexKey() {
@@ -337,6 +345,42 @@ public class StackResource  {
 
     
 
+    public StackResource withResourceAttributes(List<ResourceAttribute> resourceAttributes) {
+        this.resourceAttributes = resourceAttributes;
+        return this;
+    }
+
+    
+    public StackResource addResourceAttributesItem(ResourceAttribute resourceAttributesItem) {
+        if(this.resourceAttributes == null) {
+            this.resourceAttributes = new ArrayList<>();
+        }
+        this.resourceAttributes.add(resourceAttributesItem);
+        return this;
+    }
+
+    public StackResource withResourceAttributes(Consumer<List<ResourceAttribute>> resourceAttributesSetter) {
+        if(this.resourceAttributes == null) {
+            this.resourceAttributes = new ArrayList<>();
+        }
+        resourceAttributesSetter.accept(this.resourceAttributes);
+        return this;
+    }
+
+    /**
+     * 资源属性列表
+     * @return resourceAttributes
+     */
+    public List<ResourceAttribute> getResourceAttributes() {
+        return resourceAttributes;
+    }
+
+    public void setResourceAttributes(List<ResourceAttribute> resourceAttributes) {
+        this.resourceAttributes = resourceAttributes;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -352,11 +396,12 @@ public class StackResource  {
             Objects.equals(this.logicalResourceType, stackResource.logicalResourceType) &&
             Objects.equals(this.indexKey, stackResource.indexKey) &&
             Objects.equals(this.resourceStatus, stackResource.resourceStatus) &&
-            Objects.equals(this.statusMessage, stackResource.statusMessage);
+            Objects.equals(this.statusMessage, stackResource.statusMessage) &&
+            Objects.equals(this.resourceAttributes, stackResource.resourceAttributes);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(physicalResourceId, physicalResourceName, logicalResourceName, logicalResourceType, indexKey, resourceStatus, statusMessage);
+        return Objects.hash(physicalResourceId, physicalResourceName, logicalResourceName, logicalResourceType, indexKey, resourceStatus, statusMessage, resourceAttributes);
     }
     @Override
     public String toString() {
@@ -369,6 +414,7 @@ public class StackResource  {
         sb.append("    indexKey: ").append(toIndentedString(indexKey)).append("\n");
         sb.append("    resourceStatus: ").append(toIndentedString(resourceStatus)).append("\n");
         sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
+        sb.append("    resourceAttributes: ").append(toIndentedString(resourceAttributes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

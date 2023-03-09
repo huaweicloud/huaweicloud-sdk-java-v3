@@ -164,64 +164,6 @@ public class AosMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DescribeExecutionPlanRequest, DescribeExecutionPlanResponse> describeExecutionPlan = genFordescribeExecutionPlan();
-
-    private static HttpRequestDef<DescribeExecutionPlanRequest, DescribeExecutionPlanResponse> genFordescribeExecutionPlan() {
-        // basic
-        HttpRequestDef.Builder<DescribeExecutionPlanRequest, DescribeExecutionPlanResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, DescribeExecutionPlanRequest.class, DescribeExecutionPlanResponse.class)
-                .withName("DescribeExecutionPlan")
-                .withUri("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/metadata")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("stack_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DescribeExecutionPlanRequest::getStackName, (req, v) -> {
-                req.setStackName(v);
-            })
-        );
-        builder.<String>withRequestField("execution_plan_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DescribeExecutionPlanRequest::getExecutionPlanName, (req, v) -> {
-                req.setExecutionPlanName(v);
-            })
-        );
-        builder.<String>withRequestField("stack_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DescribeExecutionPlanRequest::getStackId, (req, v) -> {
-                req.setStackId(v);
-            })
-        );
-        builder.<String>withRequestField("execution_plan_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DescribeExecutionPlanRequest::getExecutionPlanId, (req, v) -> {
-                req.setExecutionPlanId(v);
-            })
-        );
-        builder.<String>withRequestField("Client-Request-Id",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DescribeExecutionPlanRequest::getClientRequestId, (req, v) -> {
-                req.setClientRequestId(v);
-            })
-        );
-
-        // response
-
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<EstimateExecutionPlanPriceRequest, EstimateExecutionPlanPriceResponse> estimateExecutionPlanPrice = genForestimateExecutionPlanPrice();
 
     private static HttpRequestDef<EstimateExecutionPlanPriceRequest, EstimateExecutionPlanPriceResponse> genForestimateExecutionPlanPrice() {
@@ -338,6 +280,64 @@ public class AosMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<GetExecutionPlanMetadataRequest, GetExecutionPlanMetadataResponse> getExecutionPlanMetadata = genForgetExecutionPlanMetadata();
+
+    private static HttpRequestDef<GetExecutionPlanMetadataRequest, GetExecutionPlanMetadataResponse> genForgetExecutionPlanMetadata() {
+        // basic
+        HttpRequestDef.Builder<GetExecutionPlanMetadataRequest, GetExecutionPlanMetadataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetExecutionPlanMetadataRequest.class, GetExecutionPlanMetadataResponse.class)
+                .withName("GetExecutionPlanMetadata")
+                .withUri("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("stack_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetExecutionPlanMetadataRequest::getStackName, (req, v) -> {
+                req.setStackName(v);
+            })
+        );
+        builder.<String>withRequestField("execution_plan_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetExecutionPlanMetadataRequest::getExecutionPlanName, (req, v) -> {
+                req.setExecutionPlanName(v);
+            })
+        );
+        builder.<String>withRequestField("stack_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetExecutionPlanMetadataRequest::getStackId, (req, v) -> {
+                req.setStackId(v);
+            })
+        );
+        builder.<String>withRequestField("execution_plan_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetExecutionPlanMetadataRequest::getExecutionPlanId, (req, v) -> {
+                req.setExecutionPlanId(v);
+            })
+        );
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetExecutionPlanMetadataRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListExecutionPlansRequest, ListExecutionPlansResponse> listExecutionPlans = genForlistExecutionPlans();
 
     private static HttpRequestDef<ListExecutionPlansRequest, ListExecutionPlansResponse> genForlistExecutionPlans() {
@@ -409,7 +409,7 @@ public class AosMeta {
         );
         builder.<ContinueRollbackStackRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ContinueRollbackStackRequestBody.class),
             f -> f.withMarshaller(ContinueRollbackStackRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -866,6 +866,308 @@ public class AosMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ParseTemplateVariablesRequestBody.class),
             f -> f.withMarshaller(ParseTemplateVariablesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplate = genFordeleteTemplate();
+
+    private static HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> genFordeleteTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteTemplateRequest, DeleteTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTemplateRequest.class, DeleteTemplateResponse.class)
+                .withName("DeleteTemplate")
+                .withUri("/v1/{project_id}/templates/{template_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTemplateRequest::getTemplateName, (req, v) -> {
+                req.setTemplateName(v);
+            })
+        );
+        builder.<String>withRequestField("template_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTemplateRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            })
+        );
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTemplateRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTemplateVersionRequest, DeleteTemplateVersionResponse> deleteTemplateVersion = genFordeleteTemplateVersion();
+
+    private static HttpRequestDef<DeleteTemplateVersionRequest, DeleteTemplateVersionResponse> genFordeleteTemplateVersion() {
+        // basic
+        HttpRequestDef.Builder<DeleteTemplateVersionRequest, DeleteTemplateVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTemplateVersionRequest.class, DeleteTemplateVersionResponse.class)
+                .withName("DeleteTemplateVersion")
+                .withUri("/v1/{project_id}/templates/{template_name}/versions/{version_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTemplateVersionRequest::getTemplateName, (req, v) -> {
+                req.setTemplateName(v);
+            })
+        );
+        builder.<String>withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTemplateVersionRequest::getVersionId, (req, v) -> {
+                req.setVersionId(v);
+            })
+        );
+        builder.<String>withRequestField("template_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTemplateVersionRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            })
+        );
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTemplateVersionRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> listTemplates = genForlistTemplates();
+
+    private static HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> genForlistTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListTemplatesRequest, ListTemplatesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTemplatesRequest.class, ListTemplatesResponse.class)
+                .withName("ListTemplates")
+                .withUri("/v1/{project_id}/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTemplatesRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTemplateMetadataRequest, ShowTemplateMetadataResponse> showTemplateMetadata = genForshowTemplateMetadata();
+
+    private static HttpRequestDef<ShowTemplateMetadataRequest, ShowTemplateMetadataResponse> genForshowTemplateMetadata() {
+        // basic
+        HttpRequestDef.Builder<ShowTemplateMetadataRequest, ShowTemplateMetadataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTemplateMetadataRequest.class, ShowTemplateMetadataResponse.class)
+                .withName("ShowTemplateMetadata")
+                .withUri("/v1/{project_id}/templates/{template_name}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTemplateMetadataRequest::getTemplateName, (req, v) -> {
+                req.setTemplateName(v);
+            })
+        );
+        builder.<String>withRequestField("template_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTemplateMetadataRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            })
+        );
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTemplateMetadataRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTemplateVersionContentRequest, ShowTemplateVersionContentResponse> showTemplateVersionContent = genForshowTemplateVersionContent();
+
+    private static HttpRequestDef<ShowTemplateVersionContentRequest, ShowTemplateVersionContentResponse> genForshowTemplateVersionContent() {
+        // basic
+        HttpRequestDef.Builder<ShowTemplateVersionContentRequest, ShowTemplateVersionContentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTemplateVersionContentRequest.class, ShowTemplateVersionContentResponse.class)
+                .withName("ShowTemplateVersionContent")
+                .withUri("/v1/{project_id}/templates/{template_name}/versions/{version_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTemplateVersionContentRequest::getTemplateName, (req, v) -> {
+                req.setTemplateName(v);
+            })
+        );
+        builder.<String>withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTemplateVersionContentRequest::getVersionId, (req, v) -> {
+                req.setVersionId(v);
+            })
+        );
+        builder.<String>withRequestField("template_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTemplateVersionContentRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            })
+        );
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTemplateVersionContentRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTemplateVersionMetadataRequest, ShowTemplateVersionMetadataResponse> showTemplateVersionMetadata = genForshowTemplateVersionMetadata();
+
+    private static HttpRequestDef<ShowTemplateVersionMetadataRequest, ShowTemplateVersionMetadataResponse> genForshowTemplateVersionMetadata() {
+        // basic
+        HttpRequestDef.Builder<ShowTemplateVersionMetadataRequest, ShowTemplateVersionMetadataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTemplateVersionMetadataRequest.class, ShowTemplateVersionMetadataResponse.class)
+                .withName("ShowTemplateVersionMetadata")
+                .withUri("/v1/{project_id}/templates/{template_name}/versions/{version_id}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTemplateVersionMetadataRequest::getTemplateName, (req, v) -> {
+                req.setTemplateName(v);
+            })
+        );
+        builder.<String>withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTemplateVersionMetadataRequest::getVersionId, (req, v) -> {
+                req.setVersionId(v);
+            })
+        );
+        builder.<String>withRequestField("template_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTemplateVersionMetadataRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            })
+        );
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTemplateVersionMetadataRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTemplateMetadataRequest, UpdateTemplateMetadataResponse> updateTemplateMetadata = genForupdateTemplateMetadata();
+
+    private static HttpRequestDef<UpdateTemplateMetadataRequest, UpdateTemplateMetadataResponse> genForupdateTemplateMetadata() {
+        // basic
+        HttpRequestDef.Builder<UpdateTemplateMetadataRequest, UpdateTemplateMetadataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, UpdateTemplateMetadataRequest.class, UpdateTemplateMetadataResponse.class)
+                .withName("UpdateTemplateMetadata")
+                .withUri("/v1/{project_id}/templates/{template_name}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTemplateMetadataRequest::getTemplateName, (req, v) -> {
+                req.setTemplateName(v);
+            })
+        );
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTemplateMetadataRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+        builder.<UpdateTemplateMetadataRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateTemplateMetadataRequestBody.class),
+            f -> f.withMarshaller(UpdateTemplateMetadataRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

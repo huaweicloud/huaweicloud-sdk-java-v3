@@ -8,14 +8,23 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.aos.v1.model.ExecutionPlanDescriptionPrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.ExecutionPlanNamePrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.ExecutorPrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.StackIdPrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.TemplateBodyPrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.TemplateURIPrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.VarsBodyPrimitiveTypeHolder;
 import com.huaweicloud.sdk.aos.v1.model.VarsStructure;
+import com.huaweicloud.sdk.aos.v1.model.VarsStructurePrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.VarsURIPrimitiveTypeHolder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * create-execution-plan request parameters
+ * CreateExecutionPlanRequestBody
  */
 public class CreateExecutionPlanRequestBody  {
 
@@ -76,7 +85,7 @@ public class CreateExecutionPlanRequestBody  {
 
 
     /**
-     * 用户希望生成执行计划的栈（stack）的Id。此Id由资源编排服务在生成栈的时候生成，为UUID。
+     * 资源栈（stack）的唯一Id。  此Id由资源编排服务在生成资源栈的时候生成，为UUID。  由于资源栈名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的资源栈，删除，再重新创建一个同名资源栈。  对于团队并行开发，用户可能希望确保，当前我操作的资源栈就是我认为的那个，而不是其他队友删除后创建的同名资源栈。因此，使用ID就可以做到强匹配。  资源编排服务保证每次创建的资源栈所对应的ID都不相同，更新不会影响ID。如果给与的stack_id和当前资源栈的ID不一致，则返回400 
      * @return stackId
      */
     public String getStackId() {
@@ -98,7 +107,7 @@ public class CreateExecutionPlanRequestBody  {
 
 
     /**
-     * HCL模板，描述了资源的目标状态。资源编排服务将比较此模板与当前远程资源的状态之间的区别 template_body 和 template_uri 有且仅有一个存在
+     * HCL模板，描述了资源的目标状态。资源编排服务将比较此模板与当前远程资源的状态之间的区别。  template_body和template_uri 必须有且只有一个存在  *在CreateStack API中，template_body和template_uri可以都不给予*  **注意：**   * template_body中默认不应该含有任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的template_body。如为敏感信息，建议将敏感信息通过vars_structure参数化，并设置encryption字段开启加密 
      * @return templateBody
      */
     public String getTemplateBody() {
@@ -120,7 +129,7 @@ public class CreateExecutionPlanRequestBody  {
 
 
     /**
-     * HCL模板的OBS地址，描述了资源的目标状态。资源编排服务将比较此模板与当前远程资源的状态之间的区别。目前接受纯tf文件或zip压缩包。 纯tf文件需要以“.tf”结尾，并遵守tf模板格式。压缩包目前只支持zip格式，文件需要以\".zip\"结尾，压缩包解压后应该只包含文件，且文件均以“.tf”结尾，不支持nested结构 template_body 和 template_uri 有且仅有一个存在
+     * HCL模板的OBS地址，该模板描述了资源的目标状态。资源编排服务将比较此模板与当前远程资源的状态之间的区别。  OBS地址支持同类型Region之间进行互相访问（Region分为通用Region和专属Region，通用Region指面向公共租户提供通用云服务的Region；专属Region指只承载同一类业务或只面向特定租户提供业务服务的专用Region）  对应的文件应该是纯tf文件或zip压缩包  纯tf文件需要以`.tf`或者`.tf.json`结尾，并遵守HCL语法  压缩包目前只支持zip格式，文件需要以`.zip`结尾。解压后的文件不得包含\".tfvars\"文件  template_body和template_uri 必须有且只有一个存在  *在CreateStack API中，template_body和template_uri可以都不给予*  **注意：**   * template_uri对应的模板文件中默认不应该含有任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的模板文件内容。如为敏感信息，建议将敏感信息通过vars_structure参数化，并设置encryption字段开启加密 
      * @return templateUri
      */
     public String getTemplateUri() {
@@ -142,7 +151,7 @@ public class CreateExecutionPlanRequestBody  {
 
 
     /**
-     * 执行计划的名字，在domain_id+region+project_id+stack_id下应唯一。
+     * 执行计划的名称。此名字在domain_id+区域+project_id+stack_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
      * @return executionPlanName
      */
     public String getExecutionPlanName() {
@@ -164,7 +173,7 @@ public class CreateExecutionPlanRequestBody  {
 
 
     /**
-     * 执行计划的描述。可用于客户识别自己的执行计划
+     * 执行计划的描述。可用于客户识别自己的执行计划。
      * @return description
      */
     public String getDescription() {
@@ -200,7 +209,7 @@ public class CreateExecutionPlanRequestBody  {
     }
 
     /**
-     * terraform支持参数，即，同一个模板可以给予不同的参数而达到不同的效果。var是一系列terraform所需要的参数。 注：资源编排服务支持vars、vars_body和vars_uri，如果vars、vars_body和vars_uri中声名了同一个变量，将报错400。 注：vars中的值只支持简单的字符串类型，如果其他类型，需要用户自己在HCL引用时转换，或者用户可以使用vars_body或vars_uri， vars_body和vars_uri中支持HCL支持的各种类型以及复杂结构。
+     * HCL参数结构。HCL模板支持参数传入，即，同一个模板可以给予不同的参数而达到不同的效果。  * var_structure可以允许客户提交最简单的字符串类型的参数  * 资源编排服务支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * vars_structure中的值只支持简单的字符串类型，如果需要使用其他类型，需要用户自己在HCL引用时转换， 或者用户可以使用vars_uri、vars_body，vars_uri和vars_body中支持HCL支持的各种类型以及复杂结构  * 如果vars_structure过大，可以使用vars_uri  * 注意：vars_structure中默认不应该含有任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的vars。如为敏感信息，建议设置encryption字段开启加密 
      * @return varsStructure
      */
     public List<VarsStructure> getVarsStructure() {
@@ -222,7 +231,7 @@ public class CreateExecutionPlanRequestBody  {
 
 
     /**
-     * terraform支持参数，即，同一个模板可以给予不同的参数而达到不同的效果。vars_body用于接收用户直接提交的tfvars文件内容
+     * HCL参数文件的内容。HCL模板支持参数传入，即，同一个模板可以给予不同的参数而达到不同的效果。  * vars_body使用HCL的tfvars格式，用户可以将“.tfvars”中的内容提交到vars_body中。  * 资源编排服务支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400  * 如果vars_body过大，可以使用vars_uri  * 如果vars中都是简单的字符串格式，可以使用var_structure  * 注意：vars_body中不应该含有任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的vars。如为敏感信息，建议通过vars_structure并设置encryption字段传递 
      * @return varsBody
      */
     public String getVarsBody() {
@@ -244,7 +253,7 @@ public class CreateExecutionPlanRequestBody  {
 
 
     /**
-     * 参数文件的OBS地址，如果客户偏向使用文件维护参数，可以将参数上传OBS，并将OBS地址提交。 注：如果用户同时使用了vars_body、vars_uri和vars，且他们的内容中定义了同一个参数，资源编排服务将报错并返回400。 vars_uri和vars_body中的vars按照HCL的语义，可以支持各种类型、复杂结构等
+     * HCL参数文件的OBS地址。HCL模板支持参数传入，即，同一个模板可以给予不同的参数而达到不同的效果。  OBS地址支持同类型Region之间进行互相访问（Region分为通用Region和专属Region，通用Region指面向公共租户提供通用云服务的Region；专属Region指只承载同一类业务或只面向特定租户提供业务服务的专用Region）  * 资源编排服务支持vars_structure，vars_body和vars_uri，如果他们中声名了同一个变量，将报错400 * vars_uri中的内容使用HCL的tfvars格式，用户可以将“.tfvars”中的内容保存到文件并上传到OBS中，并将OBS pre-signed URL传递给vars_uri。 * 注意：vars_uri的内容不应该含有任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的vars。如为敏感信息，建议通过vars_structure并设置encryption字段传递 
      * @return varsUri
      */
     public String getVarsUri() {

@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 如果用户给与的var_value是经过KMS加密的，可以通过传递相关加密信息，资源编排服务在使用的时候会帮助用户进行KMS解密  更多关于KMS加密介绍见：https://support.huaweicloud.com/productdesc-dew/dew_01_0006.html  * 注意：KMS每个月有免费试用的额度，如果超过，则KMS需要收费，此费用不是资源编排服务收取， 具体标准见：https://www.huaweicloud.com/pricing.html?tab&#x3D;detail#/dew  * 注意：KMS加密只代表资源编排服务在存储和传输的时候传递的是密文，但是在stack-events中依然是明文，如果希望在log中以密文形式对待， 请在模板中声名sensitive，更多关于sensitive的介绍见：https://learn.hashicorp.com/tutorials/terraform/sensitive-variables 
+ * 如果用户给与的var_value是经过KMS加密的，可以通过传递相关加密信息，资源编排服务在使用的时候会帮助用户进行KMS解密  更多关于KMS加密以及KMS加密的样例代码请见：[KMS加密使用场景介绍](https://support.huaweicloud.com/productdesc-dew/dew_01_0006.html)  **注意：**   * 请确保用户给予资源编排服务的委托中包含对指定秘钥ID的操作权限   * KMS每个月有免费试用的额度，如果超过，则KMS需要收费，此费用不是资源编排服务收取，具体标准见：[https://www.huaweicloud.com/pricing.html?tab&#x3D;detail#/dew](https://www.huaweicloud.com/pricing.html?tab&#x3D;detail#/dew)   * KMS加密只代表资源编排服务在存储和传输的时候传递的是密文，但是在stack-events中依然是明文，如果希望在log中以密文形式对待，请在模板中声名sensitive，更多关于sensitive的介绍见：[https://learn.hashicorp.com/tutorials/terraform/sensitive-variables](https://learn.hashicorp.com/tutorials/terraform/sensitive-variables) 
  */
 public class KmsStructure  {
 

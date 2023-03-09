@@ -51,7 +51,7 @@ public class ParseTemplateVariablesResponse extends SdkResponse {
     }
 
     /**
-     * 模板中的所有参数
+     * 解析模板得到的参数列表
      * @return variables
      */
     public List<VariableResponse> getVariables() {

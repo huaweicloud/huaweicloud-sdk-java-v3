@@ -258,6 +258,31 @@ public class CloudIDEMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPublisherRequest, ListPublisherResponse> listPublisher =
+        genForlistPublisher();
+
+    private static HttpRequestDef<ListPublisherRequest, ListPublisherResponse> genForlistPublisher() {
+        // basic
+        HttpRequestDef.Builder<ListPublisherRequest, ListPublisherResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPublisherRequest.class, ListPublisherResponse.class)
+                .withName("ListPublisher")
+                .withUri("/v1/marketplace/publishers/mine")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublisherRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListStacksRequest, ListStacksResponse> listStacks = genForlistStacks();
 
     private static HttpRequestDef<ListStacksRequest, ListStacksResponse> genForlistStacks() {
@@ -294,6 +319,59 @@ public class CloudIDEMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCategoryListRequest, ShowCategoryListResponse> showCategoryList =
+        genForshowCategoryList();
+
+    private static HttpRequestDef<ShowCategoryListRequest, ShowCategoryListResponse> genForshowCategoryList() {
+        // basic
+        HttpRequestDef.Builder<ShowCategoryListRequest, ShowCategoryListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCategoryListRequest.class, ShowCategoryListResponse.class)
+                .withName("ShowCategoryList")
+                .withUri("/v1/marketplace/extension/category")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("page_num",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowCategoryListRequest::getPageNum, (req, v) -> {
+                req.setPageNum(v);
+            }));
+        builder.<Long>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowCategoryListRequest::getPageSize, (req, v) -> {
+                req.setPageSize(v);
+            }));
+        builder.<String>withRequestField("scene_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCategoryListRequest::getSceneName, (req, v) -> {
+                req.setSceneName(v);
+            }));
+        builder.<Integer>withRequestField("support_ide",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowCategoryListRequest::getSupportIde, (req, v) -> {
+                req.setSupportIde(v);
+            }));
+        builder.<Integer>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowCategoryListRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
 
         // response
 

@@ -15,16 +15,17 @@ public class CreateNatGatewaySnatRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snat_rule")
 
-    private NatGatewaySnatRuleResponseBody snatRule;
+    private CreateNatGatewaySnatRuleResponseBody snatRule;
 
-    public CreateNatGatewaySnatRuleResponse withSnatRule(NatGatewaySnatRuleResponseBody snatRule) {
+    public CreateNatGatewaySnatRuleResponse withSnatRule(CreateNatGatewaySnatRuleResponseBody snatRule) {
         this.snatRule = snatRule;
         return this;
     }
 
-    public CreateNatGatewaySnatRuleResponse withSnatRule(Consumer<NatGatewaySnatRuleResponseBody> snatRuleSetter) {
+    public CreateNatGatewaySnatRuleResponse withSnatRule(
+        Consumer<CreateNatGatewaySnatRuleResponseBody> snatRuleSetter) {
         if (this.snatRule == null) {
-            this.snatRule = new NatGatewaySnatRuleResponseBody();
+            this.snatRule = new CreateNatGatewaySnatRuleResponseBody();
             snatRuleSetter.accept(this.snatRule);
         }
 
@@ -35,11 +36,11 @@ public class CreateNatGatewaySnatRuleResponse extends SdkResponse {
      * Get snatRule
      * @return snatRule
      */
-    public NatGatewaySnatRuleResponseBody getSnatRule() {
+    public CreateNatGatewaySnatRuleResponseBody getSnatRule() {
         return snatRule;
     }
 
-    public void setSnatRule(NatGatewaySnatRuleResponseBody snatRule) {
+    public void setSnatRule(CreateNatGatewaySnatRuleResponseBody snatRule) {
         this.snatRule = snatRule;
     }
 

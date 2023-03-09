@@ -10,16 +10,30 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.aos.v1.model.ResourceNamePrimitiveTypeHolder;
+import com.huaweicloud.sdk.aos.v1.model.ResourceTypePrimitiveTypeHolder;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 资源栈事件
+ * StackEvent
  */
 public class StackEvent  {
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="resource_type")
+    
+
+    private String resourceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="resource_name")
+    
+
+    private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_id_key")
@@ -34,18 +48,6 @@ public class StackEvent  {
     private String resourceIdValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_name")
-    
-
-    private String resourceName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
-    
-
-    private String resourceType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_key")
     
 
@@ -57,7 +59,7 @@ public class StackEvent  {
 
     private String time;
     /**
-     * 此次事件的类型   * `LOG` - 记录状态信息，比如当前状态，目标状态等。   * `ERROR` - 记录失败信息   * `DRIFT` - 记录资源偏移信息   * `SUMMARY` - 记录资源变更结果总结   * `CREATION_IN_PROGRESS` - 正在生成   * `CREATION_FAILED` - 生成失败   * `CREATION_COMPLETE` - 生成完成   * `DELETION_IN_PROGRESS` - 正在删除   * `DELETION_FAILED` - 删除失败   * `DELETION_COMPLETE` - 已经删除   * `UPDATE_IN_PROGRESS` - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION   * `UPDATE_FAILED` - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后   * `UPDATE_COMPLETE` - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION 
+     * 此次事件的类型   * `LOG` - 记录状态信息，比如当前状态，目标状态等。   * `ERROR` - 记录失败信息   * `DRIFT` - 记录资源偏移信息   * `SUMMARY` - 记录资源变更结果总结   * `CREATION_IN_PROGRESS` - 正在生成   * `CREATION_FAILED` - 生成失败   * `CREATION_COMPLETE` - 生成完成   * `DELETION_IN_PROGRESS` - 正在删除   * `DELETION_FAILED` - 删除失败   * `DELETION_COMPLETE` - 已经删除   * `UPDATE_IN_PROGRESS` - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则是DELETION后CREATION，或者CREATION后DELETION，具体以何种行为进行替换式更新由Provider定义。   * `UPDATE_FAILED` - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则是DELETION后CREATION，或者CREATION后DELETION，具体以何种行为进行替换式更新由Provider定义。   * `UPDATE_COMPLETE` - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则是DELETION后CREATION，或者CREATION后DELETION，具体以何种行为进行替换式更新由Provider定义。 
      */
     public static final class EventTypeEnum {
 
@@ -219,6 +221,50 @@ public class StackEvent  {
 
     private Integer elapsedSeconds;
 
+    public StackEvent withResourceType(String resourceType) {
+        this.resourceType = resourceType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 资源的类型  以HCL格式的模板为例，resource_type 为 huaweicloud_vpc  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   name = \"test_vpc\" } ```  以json格式的模板为例，resource_type 为 huaweicloud_vpc  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\"       }     }   } } ``` 
+     * @return resourceType
+     */
+    public String getResourceType() {
+        return resourceType;
+    }
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+
+    
+
+    public StackEvent withResourceName(String resourceName) {
+        this.resourceName = resourceName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 资源的名称，默认为资源的逻辑名称  以HCL格式的模板为例，resource_name 为 my_hello_world_vpc  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   name = \"test_vpc\" } ```  以json格式的模板为例，resource_name 为 my_hello_world_vpc  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\"       }     }   } } ``` 
+     * @return resourceName
+     */
+    public String getResourceName() {
+        return resourceName;
+    }
+
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
+    }
+
+    
+
     public StackEvent withResourceIdKey(String resourceIdKey) {
         this.resourceIdKey = resourceIdKey;
         return this;
@@ -263,50 +309,6 @@ public class StackEvent  {
 
     
 
-    public StackEvent withResourceName(String resourceName) {
-        this.resourceName = resourceName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 资源的名称，默认为资源的逻辑名称  以hcl格式的模板为例，resource_name 为 my_hello_world_vpc  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   name = \"test_vpc\" } ```  以json格式的模板为例，resource_name 为 my_hello_world_vpc  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\"       }     }   } } ``` 
-     * @return resourceName
-     */
-    public String getResourceName() {
-        return resourceName;
-    }
-
-    public void setResourceName(String resourceName) {
-        this.resourceName = resourceName;
-    }
-
-    
-
-    public StackEvent withResourceType(String resourceType) {
-        this.resourceType = resourceType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 资源的类型  以hcl格式的模板为例，resource_type 为 huaweicloud_vpc  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   name = \"test_vpc\" } ```  以json格式的模板为例，resource_type 为 huaweicloud_vpc  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\"       }     }   } } ``` 
-     * @return resourceType
-     */
-    public String getResourceType() {
-        return resourceType;
-    }
-
-    public void setResourceType(String resourceType) {
-        this.resourceType = resourceType;
-    }
-
-    
-
     public StackEvent withResourceKey(String resourceKey) {
         this.resourceKey = resourceKey;
         return this;
@@ -316,7 +318,7 @@ public class StackEvent  {
 
 
     /**
-     * 资源键，若用户在模板中使用了count或for_each则会返回resource_key  若用户在模板中使用count，则resource_key为从0开始的数字  以hcl格式的模板为例，resource_key分别为0和1  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   count = 2   name = \"test_vpc\" } ```  以json格式的模板为例，resource_key分别为0和1  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\",         \"count\": 2       }     }   } } ```  若用户在模板中使用for_each，则resource_key为用户自定义的字符串  以hcl格式的模板为例，resource_key分别为vpc1和vpc2  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   for_each = {     \"vpc1\" = \"test_vpc\"     \"vpc2\" = \"test_vpc\"   }   name = each.value } ```  以json格式的模板为例，resource_key分别为vpc1和vpc2  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"for_each\": {           \"vpc1\": \"test_vpc\",           \"vpc2\": \"test_vpc\"         }         \"name\": \"${each.value}\"       }     }   } } ``` 
+     * 资源键，若用户在模板中使用了count或for_each则会返回resource_key  若用户在模板中使用count，则resource_key为从0开始的数字  以HCL格式的模板为例，模板中count为2，意味着将会生成两个资源，对应的resource_key分别为0和1  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   count = 2   name = \"test_vpc\" } ```  以json格式的模板为例，模板中count为2，意味着将会生成两个资源，对应的resource_key分别为0和1  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"name\": \"test_vpc\",         \"count\": 2       }     }   } } ```  若用户在模板中使用for_each，则resource_key为用户自定义的字符串  以HCL格式的模板为例，resource_key分别为vpc1和vpc2  ```hcl resource \"huaweicloud_vpc\" \"my_hello_world_vpc\" {   for_each = {     \"vpc1\" = \"test_vpc\"     \"vpc2\" = \"test_vpc\"   }   name = each.value } ```  以json格式的模板为例，resource_key分别为vpc1和vpc2  ```json {   \"resource\": {     \"huaweicloud_vpc\": {       \"my_hello_world_vpc\": {         \"for_each\": {           \"vpc1\": \"test_vpc\",           \"vpc2\": \"test_vpc\"         }         \"name\": \"${each.value}\"       }     }   } } ``` 
      * @return resourceKey
      */
     public String getResourceKey() {
@@ -360,7 +362,7 @@ public class StackEvent  {
 
 
     /**
-     * 此次事件的类型   * `LOG` - 记录状态信息，比如当前状态，目标状态等。   * `ERROR` - 记录失败信息   * `DRIFT` - 记录资源偏移信息   * `SUMMARY` - 记录资源变更结果总结   * `CREATION_IN_PROGRESS` - 正在生成   * `CREATION_FAILED` - 生成失败   * `CREATION_COMPLETE` - 生成完成   * `DELETION_IN_PROGRESS` - 正在删除   * `DELETION_FAILED` - 删除失败   * `DELETION_COMPLETE` - 已经删除   * `UPDATE_IN_PROGRESS` - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION   * `UPDATE_FAILED` - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后   * `UPDATE_COMPLETE` - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则使用CREATION后DELETION 
+     * 此次事件的类型   * `LOG` - 记录状态信息，比如当前状态，目标状态等。   * `ERROR` - 记录失败信息   * `DRIFT` - 记录资源偏移信息   * `SUMMARY` - 记录资源变更结果总结   * `CREATION_IN_PROGRESS` - 正在生成   * `CREATION_FAILED` - 生成失败   * `CREATION_COMPLETE` - 生成完成   * `DELETION_IN_PROGRESS` - 正在删除   * `DELETION_FAILED` - 删除失败   * `DELETION_COMPLETE` - 已经删除   * `UPDATE_IN_PROGRESS` - 正在更新。此处的更新特指非替换式更新，如果是替换式更新，则是DELETION后CREATION，或者CREATION后DELETION，具体以何种行为进行替换式更新由Provider定义。   * `UPDATE_FAILED` - 更新失败。此处的更新特指非替换式更新，如果是替换式更新，则是DELETION后CREATION，或者CREATION后DELETION，具体以何种行为进行替换式更新由Provider定义。   * `UPDATE_COMPLETE` - 更新完成。此处的更新特指非替换式更新，如果是替换式更新，则是DELETION后CREATION，或者CREATION后DELETION，具体以何种行为进行替换式更新由Provider定义。 
      * @return eventType
      */
     public EventTypeEnum getEventType() {
@@ -426,10 +428,10 @@ public class StackEvent  {
             return false;
         }
         StackEvent stackEvent = (StackEvent) o;
-        return Objects.equals(this.resourceIdKey, stackEvent.resourceIdKey) &&
-            Objects.equals(this.resourceIdValue, stackEvent.resourceIdValue) &&
+        return Objects.equals(this.resourceType, stackEvent.resourceType) &&
             Objects.equals(this.resourceName, stackEvent.resourceName) &&
-            Objects.equals(this.resourceType, stackEvent.resourceType) &&
+            Objects.equals(this.resourceIdKey, stackEvent.resourceIdKey) &&
+            Objects.equals(this.resourceIdValue, stackEvent.resourceIdValue) &&
             Objects.equals(this.resourceKey, stackEvent.resourceKey) &&
             Objects.equals(this.time, stackEvent.time) &&
             Objects.equals(this.eventType, stackEvent.eventType) &&
@@ -438,16 +440,16 @@ public class StackEvent  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(resourceIdKey, resourceIdValue, resourceName, resourceType, resourceKey, time, eventType, eventMessage, elapsedSeconds);
+        return Objects.hash(resourceType, resourceName, resourceIdKey, resourceIdValue, resourceKey, time, eventType, eventMessage, elapsedSeconds);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class StackEvent {\n");
+        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    resourceIdKey: ").append(toIndentedString(resourceIdKey)).append("\n");
         sb.append("    resourceIdValue: ").append(toIndentedString(resourceIdValue)).append("\n");
-        sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
-        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    resourceKey: ").append(toIndentedString(resourceKey)).append("\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
