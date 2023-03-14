@@ -109,6 +109,66 @@ public class ImageClient {
     }
 
     /**
+     * 创建图像重构任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateImageVariationTaskRequest 请求对象
+     * @return CreateImageVariationTaskResponse
+     */
+    public CreateImageVariationTaskResponse createImageVariationTask(CreateImageVariationTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, ImageMeta.createImageVariationTask);
+    }
+
+    /**
+     * 创建图像重构任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateImageVariationTaskRequest 请求对象
+     * @return SyncInvoker<CreateImageVariationTaskRequest, CreateImageVariationTaskResponse>
+     */
+    public SyncInvoker<CreateImageVariationTaskRequest, CreateImageVariationTaskResponse> createImageVariationTaskInvoker(
+        CreateImageVariationTaskRequest request) {
+        return new SyncInvoker<CreateImageVariationTaskRequest, CreateImageVariationTaskResponse>(request,
+            ImageMeta.createImageVariationTask, hcClient);
+    }
+
+    /**
+     * 创建文生图任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTextToImageTaskRequest 请求对象
+     * @return CreateTextToImageTaskResponse
+     */
+    public CreateTextToImageTaskResponse createTextToImageTask(CreateTextToImageTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, ImageMeta.createTextToImageTask);
+    }
+
+    /**
+     * 创建文生图任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTextToImageTaskRequest 请求对象
+     * @return SyncInvoker<CreateTextToImageTaskRequest, CreateTextToImageTaskResponse>
+     */
+    public SyncInvoker<CreateTextToImageTaskRequest, CreateTextToImageTaskResponse> createTextToImageTaskInvoker(
+        CreateTextToImageTaskRequest request) {
+        return new SyncInvoker<CreateTextToImageTaskRequest, CreateTextToImageTaskResponse>(request,
+            ImageMeta.createTextToImageTask, hcClient);
+    }
+
+    /**
      * 创建任务
      *
      * 创建视频封面任务
@@ -531,67 +591,6 @@ public class ImageClient {
     }
 
     /**
-     * 智能设计图像滤镜
-     *
-     * 智能设计图像滤镜服务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunImageWisedesignColorfilterRequest 请求对象
-     * @return RunImageWisedesignColorfilterResponse
-     */
-    public RunImageWisedesignColorfilterResponse runImageWisedesignColorfilter(
-        RunImageWisedesignColorfilterRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.runImageWisedesignColorfilter);
-    }
-
-    /**
-     * 智能设计图像滤镜
-     *
-     * 智能设计图像滤镜服务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunImageWisedesignColorfilterRequest 请求对象
-     * @return SyncInvoker<RunImageWisedesignColorfilterRequest, RunImageWisedesignColorfilterResponse>
-     */
-    public SyncInvoker<RunImageWisedesignColorfilterRequest, RunImageWisedesignColorfilterResponse> runImageWisedesignColorfilterInvoker(
-        RunImageWisedesignColorfilterRequest request) {
-        return new SyncInvoker<RunImageWisedesignColorfilterRequest, RunImageWisedesignColorfilterResponse>(request,
-            ImageMeta.runImageWisedesignColorfilter, hcClient);
-    }
-
-    /**
-     * 智能设计图像合图
-     *
-     * 智能设计图像合图服务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunImageWisedesignCombineRequest 请求对象
-     * @return RunImageWisedesignCombineResponse
-     */
-    public RunImageWisedesignCombineResponse runImageWisedesignCombine(RunImageWisedesignCombineRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.runImageWisedesignCombine);
-    }
-
-    /**
-     * 智能设计图像合图
-     *
-     * 智能设计图像合图服务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunImageWisedesignCombineRequest 请求对象
-     * @return SyncInvoker<RunImageWisedesignCombineRequest, RunImageWisedesignCombineResponse>
-     */
-    public SyncInvoker<RunImageWisedesignCombineRequest, RunImageWisedesignCombineResponse> runImageWisedesignCombineInvoker(
-        RunImageWisedesignCombineRequest request) {
-        return new SyncInvoker<RunImageWisedesignCombineRequest, RunImageWisedesignCombineResponse>(request,
-            ImageMeta.runImageWisedesignCombine, hcClient);
-    }
-
-    /**
      * 智能设计图像裁剪
      *
      * 智能设计图像裁剪服务
@@ -801,6 +800,66 @@ public class ImageClient {
         ShowImageTranslateTaskRequest request) {
         return new SyncInvoker<ShowImageTranslateTaskRequest, ShowImageTranslateTaskResponse>(request,
             ImageMeta.showImageTranslateTask, hcClient);
+    }
+
+    /**
+     * show task 查询任务信息
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowImageVariationTaskRequest 请求对象
+     * @return ShowImageVariationTaskResponse
+     */
+    public ShowImageVariationTaskResponse showImageVariationTask(ShowImageVariationTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, ImageMeta.showImageVariationTask);
+    }
+
+    /**
+     * show task 查询任务信息
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowImageVariationTaskRequest 请求对象
+     * @return SyncInvoker<ShowImageVariationTaskRequest, ShowImageVariationTaskResponse>
+     */
+    public SyncInvoker<ShowImageVariationTaskRequest, ShowImageVariationTaskResponse> showImageVariationTaskInvoker(
+        ShowImageVariationTaskRequest request) {
+        return new SyncInvoker<ShowImageVariationTaskRequest, ShowImageVariationTaskResponse>(request,
+            ImageMeta.showImageVariationTask, hcClient);
+    }
+
+    /**
+     * show task 查询任务信息
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTextToImageTaskRequest 请求对象
+     * @return ShowTextToImageTaskResponse
+     */
+    public ShowTextToImageTaskResponse showTextToImageTask(ShowTextToImageTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, ImageMeta.showTextToImageTask);
+    }
+
+    /**
+     * show task 查询任务信息
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTextToImageTaskRequest 请求对象
+     * @return SyncInvoker<ShowTextToImageTaskRequest, ShowTextToImageTaskResponse>
+     */
+    public SyncInvoker<ShowTextToImageTaskRequest, ShowTextToImageTaskResponse> showTextToImageTaskInvoker(
+        ShowTextToImageTaskRequest request) {
+        return new SyncInvoker<ShowTextToImageTaskRequest, ShowTextToImageTaskResponse>(request,
+            ImageMeta.showTextToImageTask, hcClient);
     }
 
     /**

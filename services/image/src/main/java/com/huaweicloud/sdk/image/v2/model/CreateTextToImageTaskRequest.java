@@ -9,21 +9,21 @@ import java.util.function.Consumer;
 /**
  * Request Object
  */
-public class RunImageWisedesignColorfilterRequest {
+public class CreateTextToImageTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ImageWisedesignColorfilterReq body;
+    private CreateTextToImageTaskRequestBody body;
 
-    public RunImageWisedesignColorfilterRequest withBody(ImageWisedesignColorfilterReq body) {
+    public CreateTextToImageTaskRequest withBody(CreateTextToImageTaskRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public RunImageWisedesignColorfilterRequest withBody(Consumer<ImageWisedesignColorfilterReq> bodySetter) {
+    public CreateTextToImageTaskRequest withBody(Consumer<CreateTextToImageTaskRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new ImageWisedesignColorfilterReq();
+            this.body = new CreateTextToImageTaskRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class RunImageWisedesignColorfilterRequest {
      * Get body
      * @return body
      */
-    public ImageWisedesignColorfilterReq getBody() {
+    public CreateTextToImageTaskRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ImageWisedesignColorfilterReq body) {
+    public void setBody(CreateTextToImageTaskRequestBody body) {
         this.body = body;
     }
 
@@ -50,9 +50,8 @@ public class RunImageWisedesignColorfilterRequest {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        RunImageWisedesignColorfilterRequest runImageWisedesignColorfilterRequest =
-            (RunImageWisedesignColorfilterRequest) o;
-        return Objects.equals(this.body, runImageWisedesignColorfilterRequest.body);
+        CreateTextToImageTaskRequest createTextToImageTaskRequest = (CreateTextToImageTaskRequest) o;
+        return Objects.equals(this.body, createTextToImageTaskRequest.body);
     }
 
     @Override
@@ -63,7 +62,7 @@ public class RunImageWisedesignColorfilterRequest {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class RunImageWisedesignColorfilterRequest {\n");
+        sb.append("class CreateTextToImageTaskRequest {\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

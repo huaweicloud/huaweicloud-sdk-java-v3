@@ -9,28 +9,28 @@ import java.util.Objects;
 /**
  * Response Object
  */
-public class RunImageWisedesignCombineResponse extends SdkResponse {
+public class CreateImageVariationTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "result_base64")
+    @JsonProperty(value = "task_id")
 
-    private String resultBase64;
+    private String taskId;
 
-    public RunImageWisedesignCombineResponse withResultBase64(String resultBase64) {
-        this.resultBase64 = resultBase64;
+    public CreateImageVariationTaskResponse withTaskId(String taskId) {
+        this.taskId = taskId;
         return this;
     }
 
     /**
-     * 图片合成后图像的64位编码
-     * @return resultBase64
+     * 任务唯一标识
+     * @return taskId
      */
-    public String getResultBase64() {
-        return resultBase64;
+    public String getTaskId() {
+        return taskId;
     }
 
-    public void setResultBase64(String resultBase64) {
-        this.resultBase64 = resultBase64;
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
     }
 
     @Override
@@ -41,20 +41,20 @@ public class RunImageWisedesignCombineResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        RunImageWisedesignCombineResponse runImageWisedesignCombineResponse = (RunImageWisedesignCombineResponse) o;
-        return Objects.equals(this.resultBase64, runImageWisedesignCombineResponse.resultBase64);
+        CreateImageVariationTaskResponse createImageVariationTaskResponse = (CreateImageVariationTaskResponse) o;
+        return Objects.equals(this.taskId, createImageVariationTaskResponse.taskId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resultBase64);
+        return Objects.hash(taskId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class RunImageWisedesignCombineResponse {\n");
-        sb.append("    resultBase64: ").append(toIndentedString(resultBase64)).append("\n");
+        sb.append("class CreateImageVariationTaskResponse {\n");
+        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -33,7 +33,7 @@ public class OrganizationPolicyAssignmentStatusResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_message")
 
-    private Object errorMessage;
+    private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
@@ -116,7 +116,7 @@ public class OrganizationPolicyAssignmentStatusResponse {
         this.errorCode = errorCode;
     }
 
-    public OrganizationPolicyAssignmentStatusResponse withErrorMessage(Object errorMessage) {
+    public OrganizationPolicyAssignmentStatusResponse withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
     }
@@ -125,11 +125,11 @@ public class OrganizationPolicyAssignmentStatusResponse {
      * 当创建或更新组织合规规则失败时错误信息。
      * @return errorMessage
      */
-    public Object getErrorMessage() {
+    public String getErrorMessage() {
         return errorMessage;
     }
 
-    public void setErrorMessage(Object errorMessage) {
+    public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
 

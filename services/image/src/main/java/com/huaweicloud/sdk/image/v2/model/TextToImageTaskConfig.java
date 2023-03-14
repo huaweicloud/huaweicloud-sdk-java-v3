@@ -7,39 +7,39 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Request Object
+ * TextToImageTaskConfig
  */
-public class RunImageWisedesignCombineRequest {
+public class TextToImageTaskConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "common")
 
-    private ImageWisedesignCombineReq body;
+    private TextToImageTaskConfigCommon common;
 
-    public RunImageWisedesignCombineRequest withBody(ImageWisedesignCombineReq body) {
-        this.body = body;
+    public TextToImageTaskConfig withCommon(TextToImageTaskConfigCommon common) {
+        this.common = common;
         return this;
     }
 
-    public RunImageWisedesignCombineRequest withBody(Consumer<ImageWisedesignCombineReq> bodySetter) {
-        if (this.body == null) {
-            this.body = new ImageWisedesignCombineReq();
-            bodySetter.accept(this.body);
+    public TextToImageTaskConfig withCommon(Consumer<TextToImageTaskConfigCommon> commonSetter) {
+        if (this.common == null) {
+            this.common = new TextToImageTaskConfigCommon();
+            commonSetter.accept(this.common);
         }
 
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * Get common
+     * @return common
      */
-    public ImageWisedesignCombineReq getBody() {
-        return body;
+    public TextToImageTaskConfigCommon getCommon() {
+        return common;
     }
 
-    public void setBody(ImageWisedesignCombineReq body) {
-        this.body = body;
+    public void setCommon(TextToImageTaskConfigCommon common) {
+        this.common = common;
     }
 
     @Override
@@ -50,20 +50,20 @@ public class RunImageWisedesignCombineRequest {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        RunImageWisedesignCombineRequest runImageWisedesignCombineRequest = (RunImageWisedesignCombineRequest) o;
-        return Objects.equals(this.body, runImageWisedesignCombineRequest.body);
+        TextToImageTaskConfig textToImageTaskConfig = (TextToImageTaskConfig) o;
+        return Objects.equals(this.common, textToImageTaskConfig.common);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(common);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class RunImageWisedesignCombineRequest {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("class TextToImageTaskConfig {\n");
+        sb.append("    common: ").append(toIndentedString(common)).append("\n");
         sb.append("}");
         return sb.toString();
     }

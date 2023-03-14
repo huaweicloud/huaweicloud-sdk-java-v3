@@ -95,7 +95,7 @@ public class ListBareMetalServersRequest {
     }
 
     /**
-     * 裸金属服务器状态,只有管理员可以使用DELETED状态过滤查询已经删除的裸金属服务器。取值范围：ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、REBOOT、REBUILD、SHUTOFF
+     * 裸金属服务器状态,只有管理员可以使用DELETED状态过滤查询已经删除的裸金属服务器。取值范围：ACTIVE、BUILD、ERROR、HARD_REBOOT、REBOOT、REBUILD、SHUTOFF
      * @return status
      */
     public String getStatus() {
@@ -180,7 +180,7 @@ public class ListBareMetalServersRequest {
     }
 
     /**
-     * 查询裸金属服务器结果的详细级别，级别越高，查询到的裸金属服务器信息越多，默认为4。可使用的级别为 1，2，3，4，5
+     * 查询裸金属服务器结果的详细级别，级别越高，查询到的裸金属服务器信息越多，默认为4。可使用的级别为 1，2，3，4
      * @return detail
      */
     public String getDetail() {

@@ -2,34 +2,35 @@ package com.huaweicloud.sdk.image.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
- * 智能设计图像滤镜结果信息
+ * Response Object
  */
-public class ImageWisedesignColorfilterResponseResult {
+public class CreateTextToImageTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "result_base64")
+    @JsonProperty(value = "task_id")
 
-    private String resultBase64;
+    private String taskId;
 
-    public ImageWisedesignColorfilterResponseResult withResultBase64(String resultBase64) {
-        this.resultBase64 = resultBase64;
+    public CreateTextToImageTaskResponse withTaskId(String taskId) {
+        this.taskId = taskId;
         return this;
     }
 
     /**
-     * 图片加滤镜后图像的64位编码
-     * @return resultBase64
+     * 任务唯一标识
+     * @return taskId
      */
-    public String getResultBase64() {
-        return resultBase64;
+    public String getTaskId() {
+        return taskId;
     }
 
-    public void setResultBase64(String resultBase64) {
-        this.resultBase64 = resultBase64;
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
     }
 
     @Override
@@ -40,21 +41,20 @@ public class ImageWisedesignColorfilterResponseResult {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ImageWisedesignColorfilterResponseResult imageWisedesignColorfilterResponseResult =
-            (ImageWisedesignColorfilterResponseResult) o;
-        return Objects.equals(this.resultBase64, imageWisedesignColorfilterResponseResult.resultBase64);
+        CreateTextToImageTaskResponse createTextToImageTaskResponse = (CreateTextToImageTaskResponse) o;
+        return Objects.equals(this.taskId, createTextToImageTaskResponse.taskId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resultBase64);
+        return Objects.hash(taskId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ImageWisedesignColorfilterResponseResult {\n");
-        sb.append("    resultBase64: ").append(toIndentedString(resultBase64)).append("\n");
+        sb.append("class CreateTextToImageTaskResponse {\n");
+        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

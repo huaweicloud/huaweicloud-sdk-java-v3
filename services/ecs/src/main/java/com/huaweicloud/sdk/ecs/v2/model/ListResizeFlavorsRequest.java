@@ -234,7 +234,7 @@ public class ListResizeFlavorsRequest {
     }
 
     /**
-     * 进行规格切换的云服务器ID，UUID格式。
+     * 进行规格切换的云服务器ID，UUID格式。(instance_uuid,source_flavor_id and source_flavor_name 不能都为空)
      * @return instanceUuid
      */
     public String getInstanceUuid() {
@@ -319,7 +319,7 @@ public class ListResizeFlavorsRequest {
     }
 
     /**
-     * 进行规格切换的云服务器源规格ID。
+     * 进行规格切换的云服务器源规格ID。(instance_uuid,source_flavor_id and source_flavor_name 不能都为空)
      * @return sourceFlavorId
      */
     public String getSourceFlavorId() {
@@ -336,7 +336,7 @@ public class ListResizeFlavorsRequest {
     }
 
     /**
-     * 进行规格切换的云服务器源规格名称。
+     * 进行规格切换的云服务器源规格名称。(instance_uuid,source_flavor_id and source_flavor_name 不能都为空)
      * @return sourceFlavorName
      */
     public String getSourceFlavorName() {
