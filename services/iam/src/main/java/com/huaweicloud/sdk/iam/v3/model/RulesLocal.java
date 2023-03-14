@@ -24,7 +24,7 @@ public class RulesLocal {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "groups")
 
-    private RulesLocalGroups groups;
+    private String groups;
 
     public RulesLocal withUser(RulesLocalUser user) {
         this.user = user;
@@ -78,14 +78,14 @@ public class RulesLocal {
         this.group = group;
     }
 
-    public RulesLocal withGroups(RulesLocalGroups groups) {
+    public RulesLocal withGroups(String groups) {
         this.groups = groups;
         return this;
     }
 
-    public RulesLocal withGroups(Consumer<RulesLocalGroups> groupsSetter) {
+    public RulesLocal withGroups(Consumer<String> groupsSetter) {
         if (this.groups == null) {
-            this.groups = new RulesLocalGroups();
+            this.groups = new String();
             groupsSetter.accept(this.groups);
         }
 
@@ -96,11 +96,11 @@ public class RulesLocal {
      * Get groups
      * @return groups
      */
-    public RulesLocalGroups getGroups() {
+    public String getGroups() {
         return groups;
     }
 
-    public void setGroups(RulesLocalGroups groups) {
+    public void setGroups(String groups) {
         this.groups = groups;
     }
 
