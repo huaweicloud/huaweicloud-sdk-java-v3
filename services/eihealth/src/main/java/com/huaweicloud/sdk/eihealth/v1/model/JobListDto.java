@@ -369,7 +369,7 @@ public class JobListDto {
     }
 
     /**
-     * IO加速实例ID
+     * 作业使用的IO加速实例id，不填表示不使用；
      * @return ioAccId
      */
     public String getIoAccId() {

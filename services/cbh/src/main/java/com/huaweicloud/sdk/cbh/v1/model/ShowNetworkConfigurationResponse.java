@@ -37,7 +37,7 @@ public class ShowNetworkConfigurationResponse extends SdkResponse {
     }
 
     /**
-     * 状态
+     * 云堡垒机实例网络状态。下面3个正常则正常，有一个不正常，网络状态为失败。
      * @return status
      */
     public Boolean getStatus() {
@@ -54,7 +54,7 @@ public class ShowNetworkConfigurationResponse extends SdkResponse {
     }
 
     /**
-     * 安全组状态
+     * 云堡垒机实例安全组状态。 - true  正常 - false 失败
      * @return securityGrpStatus
      */
     public Boolean getSecurityGrpStatus() {
@@ -71,7 +71,7 @@ public class ShowNetworkConfigurationResponse extends SdkResponse {
     }
 
     /**
-     * 防火墙状态
+     * 云堡垒机实例防火墙状态。 - true  正常 - false 失败
      * @return firewallStatus
      */
     public Boolean getFirewallStatus() {
@@ -88,7 +88,7 @@ public class ShowNetworkConfigurationResponse extends SdkResponse {
     }
 
     /**
-     * 公网IP状态
+     * 云堡垒机实例公网IP状态。 - true  正常 - false 失败
      * @return publicEipStatus
      */
     public Boolean getPublicEipStatus() {

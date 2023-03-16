@@ -47,6 +47,11 @@ public class DatabaseResourceRsp {
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "failure_reason")
+
+    private String failureReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private DatabaseStatusEnum status;
@@ -188,6 +193,23 @@ public class DatabaseResourceRsp {
         this.createTime = createTime;
     }
 
+    public DatabaseResourceRsp withFailureReason(String failureReason) {
+        this.failureReason = failureReason;
+        return this;
+    }
+
+    /**
+     * 失败原因
+     * @return failureReason
+     */
+    public String getFailureReason() {
+        return failureReason;
+    }
+
+    public void setFailureReason(String failureReason) {
+        this.failureReason = failureReason;
+    }
+
     public DatabaseResourceRsp withStatus(DatabaseStatusEnum status) {
         this.status = status;
         return this;
@@ -221,12 +243,13 @@ public class DatabaseResourceRsp {
             && Objects.equals(this.chargeMode, databaseResourceRsp.chargeMode)
             && Objects.equals(this.periodNum, databaseResourceRsp.periodNum)
             && Objects.equals(this.createTime, databaseResourceRsp.createTime)
+            && Objects.equals(this.failureReason, databaseResourceRsp.failureReason)
             && Objects.equals(this.status, databaseResourceRsp.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, resourceId, spec, disk, chargeMode, periodNum, createTime, status);
+        return Objects.hash(id, resourceId, spec, disk, chargeMode, periodNum, createTime, failureReason, status);
     }
 
     @Override
@@ -240,6 +263,7 @@ public class DatabaseResourceRsp {
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    failureReason: ").append(toIndentedString(failureReason)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();

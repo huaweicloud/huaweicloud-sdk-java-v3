@@ -20,6 +20,16 @@ public class ListJobsRequest {
 
     private String requestIds;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ListJobsRequest withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -54,6 +64,44 @@ public class ListJobsRequest {
         this.requestIds = requestIds;
     }
 
+    public ListJobsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源数，默认值为0。
+     * minimum: 0
+     * maximum: 8096
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListJobsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页返回的资源个数。取值范围：1~100（默认值为100），一般设置为10、20、50。
+     * minimum: 0
+     * maximum: 8096
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -64,12 +112,13 @@ public class ListJobsRequest {
         }
         ListJobsRequest listJobsRequest = (ListJobsRequest) o;
         return Objects.equals(this.requestId, listJobsRequest.requestId)
-            && Objects.equals(this.requestIds, listJobsRequest.requestIds);
+            && Objects.equals(this.requestIds, listJobsRequest.requestIds)
+            && Objects.equals(this.offset, listJobsRequest.offset) && Objects.equals(this.limit, listJobsRequest.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, requestIds);
+        return Objects.hash(requestId, requestIds, offset, limit);
     }
 
     @Override
@@ -78,6 +127,8 @@ public class ListJobsRequest {
         sb.append("class ListJobsRequest {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    requestIds: ").append(toIndentedString(requestIds)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

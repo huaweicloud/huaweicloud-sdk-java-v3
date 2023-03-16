@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 管理CBH实例Eip响应对象
+ * 云堡垒机绑定\\解绑弹性公网IP请求对象。
  */
 public class OperateEipRequestBody {
 
@@ -26,7 +26,7 @@ public class OperateEipRequestBody {
     }
 
     /**
-     * 弹性ip的id
+     * 弹性公网IP的ID,使用UUID格式。
      * @return publicipId
      */
     public String getPublicipId() {
@@ -43,7 +43,7 @@ public class OperateEipRequestBody {
     }
 
     /**
-     * 弹性ip
+     * 弹性公网IP，使用IP地址。
      * @return publicEip
      */
     public String getPublicEip() {

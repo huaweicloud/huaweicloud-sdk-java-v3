@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 生成订单接口请求参数
+ * 生成订单接口请求参数。
  */
 public class CreateInstanceOrder {
 
@@ -44,11 +44,6 @@ public class CreateInstanceOrder {
     private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "end_time")
-
-    private String endTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_infos")
 
     private List<ProductInfos> productInfos = null;
@@ -63,18 +58,13 @@ public class CreateInstanceOrder {
 
     private Integer subscriptionNum;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "relative_resource_id")
-
-    private String relativeResourceId;
-
     public CreateInstanceOrder withInstanceKey(Integer instanceKey) {
         this.instanceKey = instanceKey;
         return this;
     }
 
     /**
-     * 实例的instance_id
+     * 云堡垒机实例ID。
      * minimum: 0
      * maximum: 9223372036854775807
      * @return instanceKey
@@ -93,7 +83,7 @@ public class CreateInstanceOrder {
     }
 
     /**
-     * CBH云服务类型
+     * 云服务类型，默认填写“hws.service.type.cbh”。
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -110,7 +100,7 @@ public class CreateInstanceOrder {
     }
 
     /**
-     * region id
+     * 云堡垒机实例局点ID。
      * @return regionId
      */
     public String getRegionId() {
@@ -127,7 +117,7 @@ public class CreateInstanceOrder {
     }
 
     /**
-     * 计费模式
+     * 计费模式。“0”包周期计费。
      * minimum: 0
      * maximum: 9223372036854775807
      * @return chargingMode
@@ -146,7 +136,7 @@ public class CreateInstanceOrder {
     }
 
     /**
-     * 订购周期类型
+     * 订购周期类型。 - 2：月 - 3：年 - 5：绝对时间
      * minimum: 0
      * maximum: 9223372036854775807
      * @return periodType
@@ -165,7 +155,7 @@ public class CreateInstanceOrder {
     }
 
     /**
-     * 订购周期数
+     * 订购周期数。 - period_type=2（周期类型为月），取值范围[1，9] - periodType=3（周期类型为年），取值范围[1，10] - periodType=5时，可空
      * minimum: 0
      * maximum: 9223372036854775807
      * @return periodNum
@@ -176,23 +166,6 @@ public class CreateInstanceOrder {
 
     public void setPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
-    }
-
-    public CreateInstanceOrder withEndTime(String endTime) {
-        this.endTime = endTime;
-        return this;
-    }
-
-    /**
-     * 订购截止日期
-     * @return endTime
-     */
-    public String getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
     }
 
     public CreateInstanceOrder withProductInfos(List<ProductInfos> productInfos) {
@@ -234,7 +207,7 @@ public class CreateInstanceOrder {
     }
 
     /**
-     * 是否支持续费0/1
+     * 是否自动续订。 - 1，自动续订 - 0，不自动续订（默认）
      * minimum: 0
      * maximum: 9223372036854775807
      * @return isAutoRenew
@@ -253,7 +226,7 @@ public class CreateInstanceOrder {
     }
 
     /**
-     * 订购数量
+     * 订购数量，取值大于0。
      * minimum: 0
      * maximum: 9223372036854775807
      * @return subscriptionNum
@@ -264,23 +237,6 @@ public class CreateInstanceOrder {
 
     public void setSubscriptionNum(Integer subscriptionNum) {
         this.subscriptionNum = subscriptionNum;
-    }
-
-    public CreateInstanceOrder withRelativeResourceId(String relativeResourceId) {
-        this.relativeResourceId = relativeResourceId;
-        return this;
-    }
-
-    /**
-     * 扩容新添
-     * @return relativeResourceId
-     */
-    public String getRelativeResourceId() {
-        return relativeResourceId;
-    }
-
-    public void setRelativeResourceId(String relativeResourceId) {
-        this.relativeResourceId = relativeResourceId;
     }
 
     @Override
@@ -298,11 +254,9 @@ public class CreateInstanceOrder {
             && Objects.equals(this.chargingMode, createInstanceOrder.chargingMode)
             && Objects.equals(this.periodType, createInstanceOrder.periodType)
             && Objects.equals(this.periodNum, createInstanceOrder.periodNum)
-            && Objects.equals(this.endTime, createInstanceOrder.endTime)
             && Objects.equals(this.productInfos, createInstanceOrder.productInfos)
             && Objects.equals(this.isAutoRenew, createInstanceOrder.isAutoRenew)
-            && Objects.equals(this.subscriptionNum, createInstanceOrder.subscriptionNum)
-            && Objects.equals(this.relativeResourceId, createInstanceOrder.relativeResourceId);
+            && Objects.equals(this.subscriptionNum, createInstanceOrder.subscriptionNum);
     }
 
     @Override
@@ -313,11 +267,9 @@ public class CreateInstanceOrder {
             chargingMode,
             periodType,
             periodNum,
-            endTime,
             productInfos,
             isAutoRenew,
-            subscriptionNum,
-            relativeResourceId);
+            subscriptionNum);
     }
 
     @Override
@@ -330,11 +282,9 @@ public class CreateInstanceOrder {
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
-        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    productInfos: ").append(toIndentedString(productInfos)).append("\n");
         sb.append("    isAutoRenew: ").append(toIndentedString(isAutoRenew)).append("\n");
         sb.append("    subscriptionNum: ").append(toIndentedString(subscriptionNum)).append("\n");
-        sb.append("    relativeResourceId: ").append(toIndentedString(relativeResourceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -75,6 +75,38 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddIngressEipV2Request, AddIngressEipV2Response> addIngressEipV2 =
+        genForaddIngressEipV2();
+
+    private static HttpRequestDef<AddIngressEipV2Request, AddIngressEipV2Response> genForaddIngressEipV2() {
+        // basic
+        HttpRequestDef.Builder<AddIngressEipV2Request, AddIngressEipV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddIngressEipV2Request.class, AddIngressEipV2Response.class)
+                .withName("AddIngressEipV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/ingress-eip")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddIngressEipV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<OpenIngressEipReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OpenIngressEipReq.class),
+            f -> f.withMarshaller(AddIngressEipV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AssociateCertificateV2Request, AssociateCertificateV2Response> associateCertificateV2 =
         genForassociateCertificateV2();
 
@@ -2812,6 +2844,31 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RemoveIngressEipV2Request, RemoveIngressEipV2Response> removeIngressEipV2 =
+        genForremoveIngressEipV2();
+
+    private static HttpRequestDef<RemoveIngressEipV2Request, RemoveIngressEipV2Response> genForremoveIngressEipV2() {
+        // basic
+        HttpRequestDef.Builder<RemoveIngressEipV2Request, RemoveIngressEipV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, RemoveIngressEipV2Request.class, RemoveIngressEipV2Response.class)
+                .withName("RemoveIngressEipV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/ingress-eip")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveIngressEipV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> showDetailsOfCustomAuthorizersV2 =
         genForshowDetailsOfCustomAuthorizersV2();
 
@@ -3411,6 +3468,38 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResponsesCreate.class),
             f -> f.withMarshaller(UpdateGatewayResponseV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateIngressEipV2Request, UpdateIngressEipV2Response> updateIngressEipV2 =
+        genForupdateIngressEipV2();
+
+    private static HttpRequestDef<UpdateIngressEipV2Request, UpdateIngressEipV2Response> genForupdateIngressEipV2() {
+        // basic
+        HttpRequestDef.Builder<UpdateIngressEipV2Request, UpdateIngressEipV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateIngressEipV2Request.class, UpdateIngressEipV2Response.class)
+                .withName("UpdateIngressEipV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/ingress-eip")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIngressEipV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<OpenIngressEipReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OpenIngressEipReq.class),
+            f -> f.withMarshaller(UpdateIngressEipV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

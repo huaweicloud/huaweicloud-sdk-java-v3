@@ -34,11 +34,6 @@ public class ComputingResourceRsp {
     private ComputingSpecDto spec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ip")
-
-    private String ip;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "system_disk")
 
     private DiskDto systemDisk;
@@ -59,14 +54,14 @@ public class ComputingResourceRsp {
     private String chargeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "period_num")
-
-    private String periodNum;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "failure_reason")
+
+    private String failureReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -163,23 +158,6 @@ public class ComputingResourceRsp {
 
     public void setSpec(ComputingSpecDto spec) {
         this.spec = spec;
-    }
-
-    public ComputingResourceRsp withIp(String ip) {
-        this.ip = ip;
-        return this;
-    }
-
-    /**
-     * IP地址
-     * @return ip
-     */
-    public String getIp() {
-        return ip;
-    }
-
-    public void setIp(String ip) {
-        this.ip = ip;
     }
 
     public ComputingResourceRsp withSystemDisk(DiskDto systemDisk) {
@@ -284,23 +262,6 @@ public class ComputingResourceRsp {
         this.chargeMode = chargeMode;
     }
 
-    public ComputingResourceRsp withPeriodNum(String periodNum) {
-        this.periodNum = periodNum;
-        return this;
-    }
-
-    /**
-     * 购买周期
-     * @return periodNum
-     */
-    public String getPeriodNum() {
-        return periodNum;
-    }
-
-    public void setPeriodNum(String periodNum) {
-        this.periodNum = periodNum;
-    }
-
     public ComputingResourceRsp withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -316,6 +277,23 @@ public class ComputingResourceRsp {
 
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
+    }
+
+    public ComputingResourceRsp withFailureReason(String failureReason) {
+        this.failureReason = failureReason;
+        return this;
+    }
+
+    /**
+     * 失败原因
+     * @return failureReason
+     */
+    public String getFailureReason() {
+        return failureReason;
+    }
+
+    public void setFailureReason(String failureReason) {
+        this.failureReason = failureReason;
     }
 
     public ComputingResourceRsp withStatus(String status) {
@@ -414,13 +392,13 @@ public class ComputingResourceRsp {
         return Objects.equals(this.id, computingResourceRsp.id)
             && Objects.equals(this.resourceId, computingResourceRsp.resourceId)
             && Objects.equals(this.name, computingResourceRsp.name)
-            && Objects.equals(this.spec, computingResourceRsp.spec) && Objects.equals(this.ip, computingResourceRsp.ip)
+            && Objects.equals(this.spec, computingResourceRsp.spec)
             && Objects.equals(this.systemDisk, computingResourceRsp.systemDisk)
             && Objects.equals(this.dataDisks, computingResourceRsp.dataDisks)
             && Objects.equals(this.image, computingResourceRsp.image)
             && Objects.equals(this.chargeMode, computingResourceRsp.chargeMode)
-            && Objects.equals(this.periodNum, computingResourceRsp.periodNum)
             && Objects.equals(this.createTime, computingResourceRsp.createTime)
+            && Objects.equals(this.failureReason, computingResourceRsp.failureReason)
             && Objects.equals(this.status, computingResourceRsp.status)
             && Objects.equals(this.availabilityZoneId, computingResourceRsp.availabilityZoneId)
             && Objects.equals(this.schedulable, computingResourceRsp.schedulable)
@@ -433,13 +411,12 @@ public class ComputingResourceRsp {
             resourceId,
             name,
             spec,
-            ip,
             systemDisk,
             dataDisks,
             image,
             chargeMode,
-            periodNum,
             createTime,
+            failureReason,
             status,
             availabilityZoneId,
             schedulable,
@@ -454,13 +431,12 @@ public class ComputingResourceRsp {
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
-        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    systemDisk: ").append(toIndentedString(systemDisk)).append("\n");
         sb.append("    dataDisks: ").append(toIndentedString(dataDisks)).append("\n");
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
-        sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    failureReason: ").append(toIndentedString(failureReason)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    availabilityZoneId: ").append(toIndentedString(availabilityZoneId)).append("\n");
         sb.append("    schedulable: ").append(toIndentedString(schedulable)).append("\n");

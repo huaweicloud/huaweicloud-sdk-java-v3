@@ -42,6 +42,38 @@ public class CbhMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> changeInstanceOrder =
+        genForchangeInstanceOrder();
+
+    private static HttpRequestDef<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> genForchangeInstanceOrder() {
+        // basic
+        HttpRequestDef.Builder<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ChangeInstanceOrderRequest.class, ChangeInstanceOrderResponse.class)
+                .withName("ChangeInstanceOrder")
+                .withUri("/v1/{project_id}/cbs/{server_id}/alter/{instance_key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeInstanceOrderRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+        builder.<String>withRequestField("instance_key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeInstanceOrderRequest::getInstanceKey, (req, v) -> {
+                req.setInstanceKey(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> createInstance =
         genForcreateInstance();
 
@@ -92,6 +124,38 @@ public class CbhMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<InstallInstanceEipRequest, InstallInstanceEipResponse> installInstanceEip =
+        genForinstallInstanceEip();
+
+    private static HttpRequestDef<InstallInstanceEipRequest, InstallInstanceEipResponse> genForinstallInstanceEip() {
+        // basic
+        HttpRequestDef.Builder<InstallInstanceEipRequest, InstallInstanceEipResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, InstallInstanceEipRequest.class, InstallInstanceEipResponse.class)
+                .withName("InstallInstanceEip")
+                .withUri("/v1/{project_id}/cbs/instance/{server_id}/eip/bind")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InstallInstanceEipRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+        builder.<OperateEipRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OperateEipRequestBody.class),
+            f -> f.withMarshaller(InstallInstanceEipRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCbhInstanceRequest, ListCbhInstanceResponse> listCbhInstance =
         genForlistCbhInstance();
 
@@ -104,6 +168,88 @@ public class CbhMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListQuotaStatusRequest, ListQuotaStatusResponse> listQuotaStatus =
+        genForlistQuotaStatus();
+
+    private static HttpRequestDef<ListQuotaStatusRequest, ListQuotaStatusResponse> genForlistQuotaStatus() {
+        // basic
+        HttpRequestDef.Builder<ListQuotaStatusRequest, ListQuotaStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListQuotaStatusRequest.class, ListQuotaStatusResponse.class)
+                .withName("ListQuotaStatus")
+                .withUri("/v1/{project_id}/cbs/instance/ecs-quota")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("availability_zone",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQuotaStatusRequest::getAvailabilityZone, (req, v) -> {
+                req.setAvailabilityZone(v);
+            }));
+        builder.<String>withRequestField("resource_spec_code",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQuotaStatusRequest::getResourceSpecCode, (req, v) -> {
+                req.setResourceSpecCode(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetLoginMethodRequest, ResetLoginMethodResponse> resetLoginMethod =
+        genForresetLoginMethod();
+
+    private static HttpRequestDef<ResetLoginMethodRequest, ResetLoginMethodResponse> genForresetLoginMethod() {
+        // basic
+        HttpRequestDef.Builder<ResetLoginMethodRequest, ResetLoginMethodResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ResetLoginMethodRequest.class, ResetLoginMethodResponse.class)
+                .withName("ResetLoginMethod")
+                .withUri("/v1/{project_id}/cbs/instance/{server_id}/login-method")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetLoginMethodRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword =
+        genForresetPassword();
+
+    private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForresetPassword() {
+        // basic
+        HttpRequestDef.Builder<ResetPasswordRequest, ResetPasswordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ResetPasswordRequest.class, ResetPasswordResponse.class)
+                .withName("ResetPassword")
+                .withUri("/v1/{project_id}/cbs/instance/password")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ResetPassword>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResetPassword.class),
+            f -> f.withMarshaller(ResetPasswordRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
 
@@ -221,113 +367,6 @@ public class CbhMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse> upgradeCbhInstance =
-        genForupgradeCbhInstance();
-
-    private static HttpRequestDef<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse> genForupgradeCbhInstance() {
-        // basic
-        HttpRequestDef.Builder<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UpgradeCbhInstanceRequest.class, UpgradeCbhInstanceResponse.class)
-                .withName("UpgradeCbhInstance")
-                .withUri("/v1/{project_id}/cbs/instance/upgrade")
-                .withContentType("application/json");
-
-        // requests
-        builder.<UpgradeCbhRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpgradeCbhRequestBody.class),
-            f -> f.withMarshaller(UpgradeCbhInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ResetLoginMethodRequest, ResetLoginMethodResponse> resetLoginMethod =
-        genForresetLoginMethod();
-
-    private static HttpRequestDef<ResetLoginMethodRequest, ResetLoginMethodResponse> genForresetLoginMethod() {
-        // basic
-        HttpRequestDef.Builder<ResetLoginMethodRequest, ResetLoginMethodResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ResetLoginMethodRequest.class, ResetLoginMethodResponse.class)
-                .withName("ResetLoginMethod")
-                .withUri("/v1/{project_id}/cbs/instance/{server_id}/login-method")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("server_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetLoginMethodRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword =
-        genForresetPassword();
-
-    private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForresetPassword() {
-        // basic
-        HttpRequestDef.Builder<ResetPasswordRequest, ResetPasswordResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ResetPasswordRequest.class, ResetPasswordResponse.class)
-                .withName("ResetPassword")
-                .withUri("/v1/{project_id}/cbs/instance/password")
-                .withContentType("application/json");
-
-        // requests
-        builder.<ResetPassword>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ResetPassword.class),
-            f -> f.withMarshaller(ResetPasswordRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> changeInstanceOrder =
-        genForchangeInstanceOrder();
-
-    private static HttpRequestDef<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> genForchangeInstanceOrder() {
-        // basic
-        HttpRequestDef.Builder<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ChangeInstanceOrderRequest.class, ChangeInstanceOrderResponse.class)
-                .withName("ChangeInstanceOrder")
-                .withUri("/v1/{project_id}/cbs/{server_id}/alter/{instance_key}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("server_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeInstanceOrderRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
-        builder.<String>withRequestField("instance_key",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeInstanceOrderRequest::getInstanceKey, (req, v) -> {
-                req.setInstanceKey(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<StopCbhInstanceRequest, StopCbhInstanceResponse> stopCbhInstance =
         genForstopCbhInstance();
 
@@ -345,70 +384,6 @@ public class CbhMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StopCbhRequestBody.class),
             f -> f.withMarshaller(StopCbhInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListQuotaStateRequest, ListQuotaStateResponse> listQuotaState =
-        genForlistQuotaState();
-
-    private static HttpRequestDef<ListQuotaStateRequest, ListQuotaStateResponse> genForlistQuotaState() {
-        // basic
-        HttpRequestDef.Builder<ListQuotaStateRequest, ListQuotaStateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListQuotaStateRequest.class, ListQuotaStateResponse.class)
-                .withName("ListQuotaState")
-                .withUri("/v1/{project_id}/cbs/instance/ecs-quota")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("availability_zone",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQuotaStateRequest::getAvailabilityZone, (req, v) -> {
-                req.setAvailabilityZone(v);
-            }));
-        builder.<String>withRequestField("resource_spec_code",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQuotaStateRequest::getResourceSpecCode, (req, v) -> {
-                req.setResourceSpecCode(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<InstallInstanceEipRequest, InstallInstanceEipResponse> installInstanceEip =
-        genForinstallInstanceEip();
-
-    private static HttpRequestDef<InstallInstanceEipRequest, InstallInstanceEipResponse> genForinstallInstanceEip() {
-        // basic
-        HttpRequestDef.Builder<InstallInstanceEipRequest, InstallInstanceEipResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, InstallInstanceEipRequest.class, InstallInstanceEipResponse.class)
-                .withName("InstallInstanceEip")
-                .withUri("/v1/{project_id}/cbs/instance/{server_id}/eip/bind")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("server_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InstallInstanceEipRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            }));
-        builder.<OperateEipRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(OperateEipRequestBody.class),
-            f -> f.withMarshaller(InstallInstanceEipRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -441,6 +416,31 @@ public class CbhMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateEipRequestBody.class),
             f -> f.withMarshaller(UninstallInstanceEipRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse> upgradeCbhInstance =
+        genForupgradeCbhInstance();
+
+    private static HttpRequestDef<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse> genForupgradeCbhInstance() {
+        // basic
+        HttpRequestDef.Builder<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpgradeCbhInstanceRequest.class, UpgradeCbhInstanceResponse.class)
+                .withName("UpgradeCbhInstance")
+                .withUri("/v1/{project_id}/cbs/instance/upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UpgradeCbhRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpgradeCbhRequestBody.class),
+            f -> f.withMarshaller(UpgradeCbhInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

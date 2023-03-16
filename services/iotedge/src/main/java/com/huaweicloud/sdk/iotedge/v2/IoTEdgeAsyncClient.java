@@ -580,6 +580,342 @@ public class IoTEdgeAsyncClient {
     }
 
     /**
+     * 查询数据源配置列表
+     *
+     * 查询数据源配置列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchListDcDsRequest 请求对象
+     * @return CompletableFuture<BatchListDcDsResponse>
+     */
+    public CompletableFuture<BatchListDcDsResponse> batchListDcDsAsync(BatchListDcDsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.batchListDcDs);
+    }
+
+    /**
+     * 查询数据源配置列表
+     *
+     * 查询数据源配置列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchListDcDsRequest 请求对象
+     * @return AsyncInvoker<BatchListDcDsRequest, BatchListDcDsResponse>
+     */
+    public AsyncInvoker<BatchListDcDsRequest, BatchListDcDsResponse> batchListDcDsAsyncInvoker(BatchListDcDsRequest request) {
+        return new AsyncInvoker<BatchListDcDsRequest, BatchListDcDsResponse>(request, IoTEdgeMeta.batchListDcDs, hcClient);
+    }
+
+    /**
+     * 创建数据源配置
+     *
+     * 用户通过Console接口在指定边缘节点上创建数据源配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDsRequest 请求对象
+     * @return CompletableFuture<CreateDsResponse>
+     */
+    public CompletableFuture<CreateDsResponse> createDsAsync(CreateDsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.createDs);
+    }
+
+    /**
+     * 创建数据源配置
+     *
+     * 用户通过Console接口在指定边缘节点上创建数据源配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDsRequest 请求对象
+     * @return AsyncInvoker<CreateDsRequest, CreateDsResponse>
+     */
+    public AsyncInvoker<CreateDsRequest, CreateDsResponse> createDsAsyncInvoker(CreateDsRequest request) {
+        return new AsyncInvoker<CreateDsRequest, CreateDsResponse>(request, IoTEdgeMeta.createDs, hcClient);
+    }
+
+    /**
+     * 删除数据源配置
+     *
+     * 删除数据源配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDcDsRequest 请求对象
+     * @return CompletableFuture<DeleteDcDsResponse>
+     */
+    public CompletableFuture<DeleteDcDsResponse> deleteDcDsAsync(DeleteDcDsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.deleteDcDs);
+    }
+
+    /**
+     * 删除数据源配置
+     *
+     * 删除数据源配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDcDsRequest 请求对象
+     * @return AsyncInvoker<DeleteDcDsRequest, DeleteDcDsResponse>
+     */
+    public AsyncInvoker<DeleteDcDsRequest, DeleteDcDsResponse> deleteDcDsAsyncInvoker(DeleteDcDsRequest request) {
+        return new AsyncInvoker<DeleteDcDsRequest, DeleteDcDsResponse>(request, IoTEdgeMeta.deleteDcDs, hcClient);
+    }
+
+    /**
+     * 查询数据源配置
+     *
+     * 查询数据源配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDcDsRequest 请求对象
+     * @return CompletableFuture<ShowDcDsResponse>
+     */
+    public CompletableFuture<ShowDcDsResponse> showDcDsAsync(ShowDcDsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.showDcDs);
+    }
+
+    /**
+     * 查询数据源配置
+     *
+     * 查询数据源配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDcDsRequest 请求对象
+     * @return AsyncInvoker<ShowDcDsRequest, ShowDcDsResponse>
+     */
+    public AsyncInvoker<ShowDcDsRequest, ShowDcDsResponse> showDcDsAsyncInvoker(ShowDcDsRequest request) {
+        return new AsyncInvoker<ShowDcDsRequest, ShowDcDsResponse>(request, IoTEdgeMeta.showDcDs, hcClient);
+    }
+
+    /**
+     * 下发数采配置
+     *
+     * 下发数采配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SynchronizeDcConfigsRequest 请求对象
+     * @return CompletableFuture<SynchronizeDcConfigsResponse>
+     */
+    public CompletableFuture<SynchronizeDcConfigsResponse> synchronizeDcConfigsAsync(SynchronizeDcConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.synchronizeDcConfigs);
+    }
+
+    /**
+     * 下发数采配置
+     *
+     * 下发数采配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SynchronizeDcConfigsRequest 请求对象
+     * @return AsyncInvoker<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse>
+     */
+    public AsyncInvoker<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse> synchronizeDcConfigsAsyncInvoker(SynchronizeDcConfigsRequest request) {
+        return new AsyncInvoker<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse>(request, IoTEdgeMeta.synchronizeDcConfigs, hcClient);
+    }
+
+    /**
+     * 修改数据源配置
+     *
+     * 修改数据源配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDcDsRequest 请求对象
+     * @return CompletableFuture<UpdateDcDsResponse>
+     */
+    public CompletableFuture<UpdateDcDsResponse> updateDcDsAsync(UpdateDcDsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.updateDcDs);
+    }
+
+    /**
+     * 修改数据源配置
+     *
+     * 修改数据源配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDcDsRequest 请求对象
+     * @return AsyncInvoker<UpdateDcDsRequest, UpdateDcDsResponse>
+     */
+    public AsyncInvoker<UpdateDcDsRequest, UpdateDcDsResponse> updateDcDsAsyncInvoker(UpdateDcDsRequest request) {
+        return new AsyncInvoker<UpdateDcDsRequest, UpdateDcDsResponse>(request, IoTEdgeMeta.updateDcDs, hcClient);
+    }
+
+    /**
+     * 查数采连接子设备列表
+     *
+     * 查询数采连接下子设备列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchListDcDevicesRequest 请求对象
+     * @return CompletableFuture<BatchListDcDevicesResponse>
+     */
+    public CompletableFuture<BatchListDcDevicesResponse> batchListDcDevicesAsync(BatchListDcDevicesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.batchListDcDevices);
+    }
+
+    /**
+     * 查数采连接子设备列表
+     *
+     * 查询数采连接下子设备列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchListDcDevicesRequest 请求对象
+     * @return AsyncInvoker<BatchListDcDevicesRequest, BatchListDcDevicesResponse>
+     */
+    public AsyncInvoker<BatchListDcDevicesRequest, BatchListDcDevicesResponse> batchListDcDevicesAsyncInvoker(BatchListDcDevicesRequest request) {
+        return new AsyncInvoker<BatchListDcDevicesRequest, BatchListDcDevicesResponse>(request, IoTEdgeMeta.batchListDcDevices, hcClient);
+    }
+
+    /**
+     * 查询点位表配置列表
+     *
+     * 查询点位表配置列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchListDcPointsRequest 请求对象
+     * @return CompletableFuture<BatchListDcPointsResponse>
+     */
+    public CompletableFuture<BatchListDcPointsResponse> batchListDcPointsAsync(BatchListDcPointsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.batchListDcPoints);
+    }
+
+    /**
+     * 查询点位表配置列表
+     *
+     * 查询点位表配置列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchListDcPointsRequest 请求对象
+     * @return AsyncInvoker<BatchListDcPointsRequest, BatchListDcPointsResponse>
+     */
+    public AsyncInvoker<BatchListDcPointsRequest, BatchListDcPointsResponse> batchListDcPointsAsyncInvoker(BatchListDcPointsRequest request) {
+        return new AsyncInvoker<BatchListDcPointsRequest, BatchListDcPointsResponse>(request, IoTEdgeMeta.batchListDcPoints, hcClient);
+    }
+
+    /**
+     * 创建点位表配置
+     *
+     * 用户通过Console接口在指定边缘节点上点位表配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDcPointRequest 请求对象
+     * @return CompletableFuture<CreateDcPointResponse>
+     */
+    public CompletableFuture<CreateDcPointResponse> createDcPointAsync(CreateDcPointRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.createDcPoint);
+    }
+
+    /**
+     * 创建点位表配置
+     *
+     * 用户通过Console接口在指定边缘节点上点位表配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDcPointRequest 请求对象
+     * @return AsyncInvoker<CreateDcPointRequest, CreateDcPointResponse>
+     */
+    public AsyncInvoker<CreateDcPointRequest, CreateDcPointResponse> createDcPointAsyncInvoker(CreateDcPointRequest request) {
+        return new AsyncInvoker<CreateDcPointRequest, CreateDcPointResponse>(request, IoTEdgeMeta.createDcPoint, hcClient);
+    }
+
+    /**
+     * 删除点位表配置
+     *
+     * 删除点位表配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDcPointRequest 请求对象
+     * @return CompletableFuture<DeleteDcPointResponse>
+     */
+    public CompletableFuture<DeleteDcPointResponse> deleteDcPointAsync(DeleteDcPointRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.deleteDcPoint);
+    }
+
+    /**
+     * 删除点位表配置
+     *
+     * 删除点位表配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDcPointRequest 请求对象
+     * @return AsyncInvoker<DeleteDcPointRequest, DeleteDcPointResponse>
+     */
+    public AsyncInvoker<DeleteDcPointRequest, DeleteDcPointResponse> deleteDcPointAsyncInvoker(DeleteDcPointRequest request) {
+        return new AsyncInvoker<DeleteDcPointRequest, DeleteDcPointResponse>(request, IoTEdgeMeta.deleteDcPoint, hcClient);
+    }
+
+    /**
+     * 查询点位表配置详情
+     *
+     * 查询点位表配置详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDcPointRequest 请求对象
+     * @return CompletableFuture<ShowDcPointResponse>
+     */
+    public CompletableFuture<ShowDcPointResponse> showDcPointAsync(ShowDcPointRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.showDcPoint);
+    }
+
+    /**
+     * 查询点位表配置详情
+     *
+     * 查询点位表配置详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDcPointRequest 请求对象
+     * @return AsyncInvoker<ShowDcPointRequest, ShowDcPointResponse>
+     */
+    public AsyncInvoker<ShowDcPointRequest, ShowDcPointResponse> showDcPointAsyncInvoker(ShowDcPointRequest request) {
+        return new AsyncInvoker<ShowDcPointRequest, ShowDcPointResponse>(request, IoTEdgeMeta.showDcPoint, hcClient);
+    }
+
+    /**
+     * 修改点位表配置
+     *
+     * 修改点位表配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDcPointRequest 请求对象
+     * @return CompletableFuture<UpdateDcPointResponse>
+     */
+    public CompletableFuture<UpdateDcPointResponse> updateDcPointAsync(UpdateDcPointRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.updateDcPoint);
+    }
+
+    /**
+     * 修改点位表配置
+     *
+     * 修改点位表配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDcPointRequest 请求对象
+     * @return AsyncInvoker<UpdateDcPointRequest, UpdateDcPointResponse>
+     */
+    public AsyncInvoker<UpdateDcPointRequest, UpdateDcPointResponse> updateDcPointAsyncInvoker(UpdateDcPointRequest request) {
+        return new AsyncInvoker<UpdateDcPointRequest, UpdateDcPointResponse>(request, IoTEdgeMeta.updateDcPoint, hcClient);
+    }
+
+    /**
      * 在指定节点上创建外部实体
      *
      * 用户通过在指定边缘节点上设置外部实体的接入信息
@@ -885,6 +1221,90 @@ public class IoTEdgeAsyncClient {
      */
     public AsyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse> updateRoutesAsyncInvoker(UpdateRoutesRequest request) {
         return new AsyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse>(request, IoTEdgeMeta.updateRoutes, hcClient);
+    }
+
+    /**
+     * 批量导入点位表
+     *
+     * 用户通过Console接口在指定边缘节点上点位表配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportPointsRequest 请求对象
+     * @return CompletableFuture<ImportPointsResponse>
+     */
+    public CompletableFuture<ImportPointsResponse> importPointsAsync(ImportPointsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.importPoints);
+    }
+
+    /**
+     * 批量导入点位表
+     *
+     * 用户通过Console接口在指定边缘节点上点位表配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportPointsRequest 请求对象
+     * @return AsyncInvoker<ImportPointsRequest, ImportPointsResponse>
+     */
+    public AsyncInvoker<ImportPointsRequest, ImportPointsResponse> importPointsAsyncInvoker(ImportPointsRequest request) {
+        return new AsyncInvoker<ImportPointsRequest, ImportPointsResponse>(request, IoTEdgeMeta.importPoints, hcClient);
+    }
+
+    /**
+     * 查询点位表模板文件
+     *
+     * 查询点位表模板文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPointTemplateRequest 请求对象
+     * @return CompletableFuture<ShowPointTemplateResponse>
+     */
+    public CompletableFuture<ShowPointTemplateResponse> showPointTemplateAsync(ShowPointTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.showPointTemplate);
+    }
+
+    /**
+     * 查询点位表模板文件
+     *
+     * 查询点位表模板文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPointTemplateRequest 请求对象
+     * @return AsyncInvoker<ShowPointTemplateRequest, ShowPointTemplateResponse>
+     */
+    public AsyncInvoker<ShowPointTemplateRequest, ShowPointTemplateResponse> showPointTemplateAsyncInvoker(ShowPointTemplateRequest request) {
+        return new AsyncInvoker<ShowPointTemplateRequest, ShowPointTemplateResponse>(request, IoTEdgeMeta.showPointTemplate, hcClient);
+    }
+
+    /**
+     * 查询点位表模板文件
+     *
+     * 查询点位表模板文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPointsRequest 请求对象
+     * @return CompletableFuture<ShowPointsResponse>
+     */
+    public CompletableFuture<ShowPointsResponse> showPointsAsync(ShowPointsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.showPoints);
+    }
+
+    /**
+     * 查询点位表模板文件
+     *
+     * 查询点位表模板文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPointsRequest 请求对象
+     * @return AsyncInvoker<ShowPointsRequest, ShowPointsResponse>
+     */
+    public AsyncInvoker<ShowPointsRequest, ShowPointsResponse> showPointsAsyncInvoker(ShowPointsRequest request) {
+        return new AsyncInvoker<ShowPointsRequest, ShowPointsResponse>(request, IoTEdgeMeta.showPoints, hcClient);
     }
 
     /**

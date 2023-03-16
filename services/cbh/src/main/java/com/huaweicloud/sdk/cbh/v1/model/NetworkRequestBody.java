@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 检查网络请求body
+ * 检查云堡垒机实例网络请求信息。
  */
 public class NetworkRequestBody {
 
@@ -28,13 +28,18 @@ public class NetworkRequestBody {
 
     private List<Nics> nics = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_id")
+
+    private String serverId;
+
     public NetworkRequestBody withType(String type) {
         this.type = type;
         return this;
     }
 
     /**
-     * 状态
+     * 云堡垒机实例状态，枚举值如下： - create  创建 - renewals  更新 - change  变更 状态为renewals或change时server_id必传。
      * @return type
      */
     public String getType() {
@@ -67,7 +72,7 @@ public class NetworkRequestBody {
     }
 
     /**
-     * 安全组信息
+     * 云堡垒升级实例所在安全组信息。
      * @return securityGroups
      */
     public List<SecurityGroup> getSecurityGroups() {
@@ -100,7 +105,7 @@ public class NetworkRequestBody {
     }
 
     /**
-     * 网卡信息
+     * 云堡垒升级实例的网卡信息。
      * @return nics
      */
     public List<Nics> getNics() {
@@ -109,6 +114,23 @@ public class NetworkRequestBody {
 
     public void setNics(List<Nics> nics) {
         this.nics = nics;
+    }
+
+    public NetworkRequestBody withServerId(String serverId) {
+        this.serverId = serverId;
+        return this;
+    }
+
+    /**
+     * 云堡垒机实例ID。
+     * @return serverId
+     */
+    public String getServerId() {
+        return serverId;
+    }
+
+    public void setServerId(String serverId) {
+        this.serverId = serverId;
     }
 
     @Override
@@ -122,12 +144,13 @@ public class NetworkRequestBody {
         NetworkRequestBody networkRequestBody = (NetworkRequestBody) o;
         return Objects.equals(this.type, networkRequestBody.type)
             && Objects.equals(this.securityGroups, networkRequestBody.securityGroups)
-            && Objects.equals(this.nics, networkRequestBody.nics);
+            && Objects.equals(this.nics, networkRequestBody.nics)
+            && Objects.equals(this.serverId, networkRequestBody.serverId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, securityGroups, nics);
+        return Objects.hash(type, securityGroups, nics, serverId);
     }
 
     @Override
@@ -137,6 +160,7 @@ public class NetworkRequestBody {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
         sb.append("    nics: ").append(toIndentedString(nics)).append("\n");
+        sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

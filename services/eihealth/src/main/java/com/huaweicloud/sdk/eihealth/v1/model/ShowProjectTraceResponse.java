@@ -22,7 +22,7 @@ public class ShowProjectTraceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datas")
 
-    private List<DataRsp> datas = null;
+    private List<TraceDataRsp> datas = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket_size")
@@ -46,12 +46,12 @@ public class ShowProjectTraceResponse extends SdkResponse {
         this.count = count;
     }
 
-    public ShowProjectTraceResponse withDatas(List<DataRsp> datas) {
+    public ShowProjectTraceResponse withDatas(List<TraceDataRsp> datas) {
         this.datas = datas;
         return this;
     }
 
-    public ShowProjectTraceResponse addDatasItem(DataRsp datasItem) {
+    public ShowProjectTraceResponse addDatasItem(TraceDataRsp datasItem) {
         if (this.datas == null) {
             this.datas = new ArrayList<>();
         }
@@ -59,7 +59,7 @@ public class ShowProjectTraceResponse extends SdkResponse {
         return this;
     }
 
-    public ShowProjectTraceResponse withDatas(Consumer<List<DataRsp>> datasSetter) {
+    public ShowProjectTraceResponse withDatas(Consumer<List<TraceDataRsp>> datasSetter) {
         if (this.datas == null) {
             this.datas = new ArrayList<>();
         }
@@ -71,11 +71,11 @@ public class ShowProjectTraceResponse extends SdkResponse {
      * 数据对象列表
      * @return datas
      */
-    public List<DataRsp> getDatas() {
+    public List<TraceDataRsp> getDatas() {
         return datas;
     }
 
-    public void setDatas(List<DataRsp> datas) {
+    public void setDatas(List<TraceDataRsp> datas) {
         this.datas = datas;
     }
 

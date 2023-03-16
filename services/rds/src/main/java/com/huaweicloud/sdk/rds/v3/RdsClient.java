@@ -1084,6 +1084,36 @@ public class RdsClient {
     }
 
     /**
+     * 查询回收站
+     *
+     * 查询回收站实例信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRecycleInstancesRequest 请求对象
+     * @return ListRecycleInstancesResponse
+     */
+    public ListRecycleInstancesResponse listRecycleInstances(ListRecycleInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listRecycleInstances);
+    }
+
+    /**
+     * 查询回收站
+     *
+     * 查询回收站实例信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRecycleInstancesRequest 请求对象
+     * @return SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>
+     */
+    public SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse> listRecycleInstancesInvoker(
+        ListRecycleInstancesRequest request) {
+        return new SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>(request,
+            RdsMeta.listRecycleInstances, hcClient);
+    }
+
+    /**
      * 查询可恢复时间段
      *
      * 查询可恢复时间段。
@@ -2105,6 +2135,36 @@ public class RdsClient {
      */
     public SyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasInvoker(ShowQuotasRequest request) {
         return new SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, RdsMeta.showQuotas, hcClient);
+    }
+
+    /**
+     * 查询回收站的回收策略。
+     *
+     * 查询回收站的回收策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRecyclePolicyRequest 请求对象
+     * @return ShowRecyclePolicyResponse
+     */
+    public ShowRecyclePolicyResponse showRecyclePolicy(ShowRecyclePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showRecyclePolicy);
+    }
+
+    /**
+     * 查询回收站的回收策略。
+     *
+     * 查询回收站的回收策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRecyclePolicyRequest 请求对象
+     * @return SyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse>
+     */
+    public SyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> showRecyclePolicyInvoker(
+        ShowRecyclePolicyRequest request) {
+        return new SyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse>(request, RdsMeta.showRecyclePolicy,
+            hcClient);
     }
 
     /**

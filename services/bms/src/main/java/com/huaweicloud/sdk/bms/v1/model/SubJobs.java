@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -129,12 +128,12 @@ public class SubJobs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
 
-    private OffsetDateTime beginTime;
+    private String beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private OffsetDateTime endTime;
+    private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
@@ -233,7 +232,7 @@ public class SubJobs {
         this.jobType = jobType;
     }
 
-    public SubJobs withBeginTime(OffsetDateTime beginTime) {
+    public SubJobs withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
     }
@@ -242,15 +241,15 @@ public class SubJobs {
      * 开始时间。时间戳格式为ISO 8601，例如：2019-04-25T20:04:47.591Z
      * @return beginTime
      */
-    public OffsetDateTime getBeginTime() {
+    public String getBeginTime() {
         return beginTime;
     }
 
-    public void setBeginTime(OffsetDateTime beginTime) {
+    public void setBeginTime(String beginTime) {
         this.beginTime = beginTime;
     }
 
-    public SubJobs withEndTime(OffsetDateTime endTime) {
+    public SubJobs withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -259,11 +258,11 @@ public class SubJobs {
      * 结束时间。时间戳格式为ISO 8601，例如：2019-04-26T20:04:47.591Z
      * @return endTime
      */
-    public OffsetDateTime getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(OffsetDateTime endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 

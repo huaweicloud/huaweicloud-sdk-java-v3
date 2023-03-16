@@ -1096,6 +1096,37 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 查询回收站
+     *
+     * 查询回收站实例信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRecycleInstancesRequest 请求对象
+     * @return CompletableFuture<ListRecycleInstancesResponse>
+     */
+    public CompletableFuture<ListRecycleInstancesResponse> listRecycleInstancesAsync(
+        ListRecycleInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listRecycleInstances);
+    }
+
+    /**
+     * 查询回收站
+     *
+     * 查询回收站实例信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRecycleInstancesRequest 请求对象
+     * @return AsyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>
+     */
+    public AsyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse> listRecycleInstancesAsyncInvoker(
+        ListRecycleInstancesRequest request) {
+        return new AsyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>(request,
+            RdsMeta.listRecycleInstances, hcClient);
+    }
+
+    /**
      * 查询可恢复时间段
      *
      * 查询可恢复时间段。
@@ -2134,6 +2165,36 @@ public class RdsAsyncClient {
      */
     public AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasAsyncInvoker(ShowQuotasRequest request) {
         return new AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, RdsMeta.showQuotas, hcClient);
+    }
+
+    /**
+     * 查询回收站的回收策略。
+     *
+     * 查询回收站的回收策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRecyclePolicyRequest 请求对象
+     * @return CompletableFuture<ShowRecyclePolicyResponse>
+     */
+    public CompletableFuture<ShowRecyclePolicyResponse> showRecyclePolicyAsync(ShowRecyclePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showRecyclePolicy);
+    }
+
+    /**
+     * 查询回收站的回收策略。
+     *
+     * 查询回收站的回收策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRecyclePolicyRequest 请求对象
+     * @return AsyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse>
+     */
+    public AsyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> showRecyclePolicyAsyncInvoker(
+        ShowRecyclePolicyRequest request) {
+        return new AsyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse>(request, RdsMeta.showRecyclePolicy,
+            hcClient);
     }
 
     /**

@@ -162,7 +162,7 @@ public class DeploymentGroup {
     }
 
     /**
-     * devcloud项目id
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {
@@ -196,7 +196,7 @@ public class DeploymentGroup {
     }
 
     /**
-     * slave集群id，默认为null时使用devcloud八爪鱼slave集群，用户自定义slave时为slave集群id
+     * slave集群id，默认为null时使用默认slave集群，用户自定义slave时为slave集群id
      * @return slaveClusterId
      */
     public String getSlaveClusterId() {

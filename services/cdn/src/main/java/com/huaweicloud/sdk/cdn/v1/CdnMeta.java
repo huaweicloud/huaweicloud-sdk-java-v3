@@ -294,6 +294,20 @@ public class CdnMeta {
             f -> f.withMarshaller(ListDomainsRequest::getPageNumber, (req, v) -> {
                 req.setPageNumber(v);
             }));
+        builder.<Boolean>withRequestField("show_tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDomainsRequest::getShowTags, (req, v) -> {
+                req.setShowTags(v);
+            }));
+        builder.<Boolean>withRequestField("exact_match",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDomainsRequest::getExactMatch, (req, v) -> {
+                req.setExactMatch(v);
+            }));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

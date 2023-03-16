@@ -14,16 +14,16 @@ public class UpdateMessageClearRuleRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private GetMessageClearRuleReq body;
+    private SetMessageClearRuleReq body;
 
-    public UpdateMessageClearRuleRequest withBody(GetMessageClearRuleReq body) {
+    public UpdateMessageClearRuleRequest withBody(SetMessageClearRuleReq body) {
         this.body = body;
         return this;
     }
 
-    public UpdateMessageClearRuleRequest withBody(Consumer<GetMessageClearRuleReq> bodySetter) {
+    public UpdateMessageClearRuleRequest withBody(Consumer<SetMessageClearRuleReq> bodySetter) {
         if (this.body == null) {
-            this.body = new GetMessageClearRuleReq();
+            this.body = new SetMessageClearRuleReq();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class UpdateMessageClearRuleRequest {
      * Get body
      * @return body
      */
-    public GetMessageClearRuleReq getBody() {
+    public SetMessageClearRuleReq getBody() {
         return body;
     }
 
-    public void setBody(GetMessageClearRuleReq body) {
+    public void setBody(SetMessageClearRuleReq body) {
         this.body = body;
     }
 

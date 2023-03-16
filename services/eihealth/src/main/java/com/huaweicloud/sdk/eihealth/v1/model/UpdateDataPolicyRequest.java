@@ -19,7 +19,7 @@ public class UpdateDataPolicyRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private GetDataPolicyRsp body;
+    private UpdateDataPolicyReq body;
 
     public UpdateDataPolicyRequest withEihealthProjectId(String eihealthProjectId) {
         this.eihealthProjectId = eihealthProjectId;
@@ -38,14 +38,14 @@ public class UpdateDataPolicyRequest {
         this.eihealthProjectId = eihealthProjectId;
     }
 
-    public UpdateDataPolicyRequest withBody(GetDataPolicyRsp body) {
+    public UpdateDataPolicyRequest withBody(UpdateDataPolicyReq body) {
         this.body = body;
         return this;
     }
 
-    public UpdateDataPolicyRequest withBody(Consumer<GetDataPolicyRsp> bodySetter) {
+    public UpdateDataPolicyRequest withBody(Consumer<UpdateDataPolicyReq> bodySetter) {
         if (this.body == null) {
-            this.body = new GetDataPolicyRsp();
+            this.body = new UpdateDataPolicyReq();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateDataPolicyRequest {
      * Get body
      * @return body
      */
-    public GetDataPolicyRsp getBody() {
+    public UpdateDataPolicyReq getBody() {
         return body;
     }
 
-    public void setBody(GetDataPolicyRsp body) {
+    public void setBody(UpdateDataPolicyReq body) {
         this.body = body;
     }
 

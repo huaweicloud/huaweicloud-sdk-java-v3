@@ -12,16 +12,6 @@ import java.util.function.Consumer;
 public class StorageResourceRsp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec")
 
     private SpecDto spec;
@@ -45,40 +35,6 @@ public class StorageResourceRsp {
     @JsonProperty(value = "status")
 
     private String status;
-
-    public StorageResourceRsp withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * 实例ID
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public StorageResourceRsp withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /**
-     * 实例名称
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public StorageResourceRsp withSpec(SpecDto spec) {
         this.spec = spec;
@@ -183,8 +139,7 @@ public class StorageResourceRsp {
             return false;
         }
         StorageResourceRsp storageResourceRsp = (StorageResourceRsp) o;
-        return Objects.equals(this.id, storageResourceRsp.id) && Objects.equals(this.name, storageResourceRsp.name)
-            && Objects.equals(this.spec, storageResourceRsp.spec) && Objects.equals(this.size, storageResourceRsp.size)
+        return Objects.equals(this.spec, storageResourceRsp.spec) && Objects.equals(this.size, storageResourceRsp.size)
             && Objects.equals(this.chargeMode, storageResourceRsp.chargeMode)
             && Objects.equals(this.createTime, storageResourceRsp.createTime)
             && Objects.equals(this.status, storageResourceRsp.status);
@@ -192,15 +147,13 @@ public class StorageResourceRsp {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, spec, size, chargeMode, createTime, status);
+        return Objects.hash(spec, size, chargeMode, createTime, status);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class StorageResourceRsp {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");

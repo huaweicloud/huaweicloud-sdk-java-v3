@@ -15,6 +15,11 @@ public class UpdatePerformanceResourceReq {
 
     private Integer jobQuota;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "schedulable")
+
+    private Boolean schedulable;
+
     public UpdatePerformanceResourceReq withJobQuota(Integer jobQuota) {
         this.jobQuota = jobQuota;
         return this;
@@ -34,6 +39,23 @@ public class UpdatePerformanceResourceReq {
         this.jobQuota = jobQuota;
     }
 
+    public UpdatePerformanceResourceReq withSchedulable(Boolean schedulable) {
+        this.schedulable = schedulable;
+        return this;
+    }
+
+    /**
+     * 资源是否可调度
+     * @return schedulable
+     */
+    public Boolean getSchedulable() {
+        return schedulable;
+    }
+
+    public void setSchedulable(Boolean schedulable) {
+        this.schedulable = schedulable;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -43,12 +65,13 @@ public class UpdatePerformanceResourceReq {
             return false;
         }
         UpdatePerformanceResourceReq updatePerformanceResourceReq = (UpdatePerformanceResourceReq) o;
-        return Objects.equals(this.jobQuota, updatePerformanceResourceReq.jobQuota);
+        return Objects.equals(this.jobQuota, updatePerformanceResourceReq.jobQuota)
+            && Objects.equals(this.schedulable, updatePerformanceResourceReq.schedulable);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobQuota);
+        return Objects.hash(jobQuota, schedulable);
     }
 
     @Override
@@ -56,6 +79,7 @@ public class UpdatePerformanceResourceReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdatePerformanceResourceReq {\n");
         sb.append("    jobQuota: ").append(toIndentedString(jobQuota)).append("\n");
+        sb.append("    schedulable: ").append(toIndentedString(schedulable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

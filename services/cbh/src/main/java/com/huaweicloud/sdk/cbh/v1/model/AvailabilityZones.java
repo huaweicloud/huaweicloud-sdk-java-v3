@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * CBH服务可用区对象
+ * 云堡垒机服务可用分区信息。
  */
 public class AvailabilityZones {
 
@@ -41,7 +41,7 @@ public class AvailabilityZones {
     }
 
     /**
-     * 可用区id
+     * 云堡垒机服务可用区ID。
      * @return id
      */
     public String getId() {
@@ -58,7 +58,7 @@ public class AvailabilityZones {
     }
 
     /**
-     * 可用区显示名称
+     * 云堡垒机服务可用分区显示名称。
      * @return displayName
      */
     public String getDisplayName() {
@@ -75,7 +75,7 @@ public class AvailabilityZones {
     }
 
     /**
-     * region id
+     * 云堡垒机服务分区ID
      * @return regionId
      */
     public String getRegionId() {
@@ -92,7 +92,7 @@ public class AvailabilityZones {
     }
 
     /**
-     * 可用区状态
+     * 云堡垒机服务可用区状态。
      * @return status
      */
     public String getStatus() {
@@ -109,7 +109,7 @@ public class AvailabilityZones {
     }
 
     /**
-     * 可用区类型
+     * 云堡垒机服务可用区类型。
      * @return type
      */
     public String getType() {

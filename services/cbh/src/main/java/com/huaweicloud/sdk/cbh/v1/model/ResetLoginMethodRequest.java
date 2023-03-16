@@ -21,7 +21,7 @@ public class ResetLoginMethodRequest {
     }
 
     /**
-     * Cbh Server Id
+     * 堡垒机实例ID，使用UUID格式。
      * @return serverId
      */
     public String getServerId() {

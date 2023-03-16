@@ -20,9 +20,9 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 修改CBH实例网络
+     * 修改实例网络
      *
-     * 修改CBH实例网络
+     * 修改云堡垒机实例网络。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -35,9 +35,9 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 修改CBH实例网络
+     * 修改实例网络
      *
-     * 修改CBH实例网络
+     * 修改云堡垒机实例网络。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -51,9 +51,39 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 创建CBH实例
+     * 创建变更云堡垒机实例订单
      *
-     * 创建CBH实例
+     * 创建变更云堡垒机实例订单。（调用此接口前先调用创建变更云堡垒机实例任务接口，当前接口未开放）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeInstanceOrderRequest 请求对象
+     * @return CompletableFuture<ChangeInstanceOrderResponse>
+     */
+    public CompletableFuture<ChangeInstanceOrderResponse> changeInstanceOrderAsync(ChangeInstanceOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbhMeta.changeInstanceOrder);
+    }
+
+    /**
+     * 创建变更云堡垒机实例订单
+     *
+     * 创建变更云堡垒机实例订单。（调用此接口前先调用创建变更云堡垒机实例任务接口，当前接口未开放）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeInstanceOrderRequest 请求对象
+     * @return AsyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse>
+     */
+    public AsyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> changeInstanceOrderAsyncInvoker(
+        ChangeInstanceOrderRequest request) {
+        return new AsyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse>(request,
+            CbhMeta.changeInstanceOrder, hcClient);
+    }
+
+    /**
+     * 创建云堡垒机实例
+     *
+     * 创建云堡垒机实例。（创建云堡垒机实例订单前，先调用此接口）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -65,9 +95,9 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 创建CBH实例
+     * 创建云堡垒机实例
      *
-     * 创建CBH实例
+     * 创建云堡垒机实例。（创建云堡垒机实例订单前，先调用此接口）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -81,9 +111,9 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 创建CBH实例订单
+     * 创建云堡垒机实例订单
      *
-     * 创建CBH实例订单
+     * 创建云堡垒机实例订单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -95,9 +125,9 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 创建CBH实例订单
+     * 创建云堡垒机实例订单
      *
-     * 创建CBH实例订单
+     * 创建云堡垒机实例订单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -111,9 +141,39 @@ public class CbhAsyncClient {
     }
 
     /**
+     * 绑定弹性公网IP
+     *
+     * 云堡垒机实例绑定弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param InstallInstanceEipRequest 请求对象
+     * @return CompletableFuture<InstallInstanceEipResponse>
+     */
+    public CompletableFuture<InstallInstanceEipResponse> installInstanceEipAsync(InstallInstanceEipRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbhMeta.installInstanceEip);
+    }
+
+    /**
+     * 绑定弹性公网IP
+     *
+     * 云堡垒机实例绑定弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param InstallInstanceEipRequest 请求对象
+     * @return AsyncInvoker<InstallInstanceEipRequest, InstallInstanceEipResponse>
+     */
+    public AsyncInvoker<InstallInstanceEipRequest, InstallInstanceEipResponse> installInstanceEipAsyncInvoker(
+        InstallInstanceEipRequest request) {
+        return new AsyncInvoker<InstallInstanceEipRequest, InstallInstanceEipResponse>(request,
+            CbhMeta.installInstanceEip, hcClient);
+    }
+
+    /**
      * 获取CBH实例列表
      *
-     * 获取CBH实例列表
+     * 获取当前租户下的云堡垒机实例列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -127,7 +187,7 @@ public class CbhAsyncClient {
     /**
      * 获取CBH实例列表
      *
-     * 获取CBH实例列表
+     * 获取当前租户下的云堡垒机实例列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -141,9 +201,98 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 重启CBH实例
+     * 获取弹性云服务器配额
      *
-     * 重启CBH实例
+     * 获取当前租户所选择的可用分区、性能规格所对应的弹性云服务器是否可用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQuotaStatusRequest 请求对象
+     * @return CompletableFuture<ListQuotaStatusResponse>
+     */
+    public CompletableFuture<ListQuotaStatusResponse> listQuotaStatusAsync(ListQuotaStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbhMeta.listQuotaStatus);
+    }
+
+    /**
+     * 获取弹性云服务器配额
+     *
+     * 获取当前租户所选择的可用分区、性能规格所对应的弹性云服务器是否可用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQuotaStatusRequest 请求对象
+     * @return AsyncInvoker<ListQuotaStatusRequest, ListQuotaStatusResponse>
+     */
+    public AsyncInvoker<ListQuotaStatusRequest, ListQuotaStatusResponse> listQuotaStatusAsyncInvoker(
+        ListQuotaStatusRequest request) {
+        return new AsyncInvoker<ListQuotaStatusRequest, ListQuotaStatusResponse>(request, CbhMeta.listQuotaStatus,
+            hcClient);
+    }
+
+    /**
+     * 重置admin用户多因子认证方式
+     *
+     * 重置admin用户多因子认证方式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetLoginMethodRequest 请求对象
+     * @return CompletableFuture<ResetLoginMethodResponse>
+     */
+    public CompletableFuture<ResetLoginMethodResponse> resetLoginMethodAsync(ResetLoginMethodRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbhMeta.resetLoginMethod);
+    }
+
+    /**
+     * 重置admin用户多因子认证方式
+     *
+     * 重置admin用户多因子认证方式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetLoginMethodRequest 请求对象
+     * @return AsyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse>
+     */
+    public AsyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse> resetLoginMethodAsyncInvoker(
+        ResetLoginMethodRequest request) {
+        return new AsyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse>(request, CbhMeta.resetLoginMethod,
+            hcClient);
+    }
+
+    /**
+     * 修改admin用户密码
+     *
+     * 修改云堡垒机实例web登录admin用户密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetPasswordRequest 请求对象
+     * @return CompletableFuture<ResetPasswordResponse>
+     */
+    public CompletableFuture<ResetPasswordResponse> resetPasswordAsync(ResetPasswordRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbhMeta.resetPassword);
+    }
+
+    /**
+     * 修改admin用户密码
+     *
+     * 修改云堡垒机实例web登录admin用户密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetPasswordRequest 请求对象
+     * @return AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
+     */
+    public AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordAsyncInvoker(
+        ResetPasswordRequest request) {
+        return new AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse>(request, CbhMeta.resetPassword, hcClient);
+    }
+
+    /**
+     * 重启云堡垒机实例
+     *
+     * 重启云堡垒机实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -155,9 +304,9 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 重启CBH实例
+     * 重启云堡垒机实例
      *
-     * 重启CBH实例
+     * 重启云堡垒机实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -173,7 +322,7 @@ public class CbhAsyncClient {
     /**
      * 查询堡垒机配额
      *
-     * 查询堡垒机配额
+     * 查询云堡垒机配额信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -187,7 +336,7 @@ public class CbhAsyncClient {
     /**
      * 查询堡垒机配额
      *
-     * 查询堡垒机配额
+     * 查询云堡垒机配额信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -199,9 +348,9 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 获取CBH服务可用分区信息
+     * 获取可用用分区信息
      *
-     * 获取CBH服务可用分区信息
+     * 获取云堡垒机服务可用分区信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -214,9 +363,9 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 获取CBH服务可用分区信息
+     * 获取可用用分区信息
      *
-     * 获取CBH服务可用分区信息
+     * 获取云堡垒机服务可用分区信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -230,9 +379,9 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 检查网络接口
+     * 检查云堡垒机网络
      *
-     * 检查网络接口
+     * 检查云堡垒机实例网络信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -245,9 +394,9 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 检查网络接口
+     * 检查云堡垒机网络
      *
-     * 检查网络接口
+     * 检查云堡垒机实例网络信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -261,9 +410,9 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 启动CBH实例
+     * 启动云堡垒机实例
      *
-     * 启动CBH实例
+     * 启动云堡垒机实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -275,9 +424,9 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 启动CBH实例
+     * 启动云堡垒机实例
      *
-     * 启动CBH实例
+     * 启动云堡垒机实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -291,128 +440,9 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 升级CBH实例
+     * 关闭云堡垒机实例
      *
-     * 升级CBH实例
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpgradeCbhInstanceRequest 请求对象
-     * @return CompletableFuture<UpgradeCbhInstanceResponse>
-     */
-    public CompletableFuture<UpgradeCbhInstanceResponse> upgradeCbhInstanceAsync(UpgradeCbhInstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, CbhMeta.upgradeCbhInstance);
-    }
-
-    /**
-     * 升级CBH实例
-     *
-     * 升级CBH实例
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpgradeCbhInstanceRequest 请求对象
-     * @return AsyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse>
-     */
-    public AsyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse> upgradeCbhInstanceAsyncInvoker(
-        UpgradeCbhInstanceRequest request) {
-        return new AsyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse>(request,
-            CbhMeta.upgradeCbhInstance, hcClient);
-    }
-
-    /**
-     * 修改admin用户多因子认证方式
-     *
-     * 修改admin用户多因子认证方式
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ResetLoginMethodRequest 请求对象
-     * @return CompletableFuture<ResetLoginMethodResponse>
-     */
-    public CompletableFuture<ResetLoginMethodResponse> resetLoginMethodAsync(ResetLoginMethodRequest request) {
-        return hcClient.asyncInvokeHttp(request, CbhMeta.resetLoginMethod);
-    }
-
-    /**
-     * 修改admin用户多因子认证方式
-     *
-     * 修改admin用户多因子认证方式
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ResetLoginMethodRequest 请求对象
-     * @return AsyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse>
-     */
-    public AsyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse> resetLoginMethodAsyncInvoker(
-        ResetLoginMethodRequest request) {
-        return new AsyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse>(request, CbhMeta.resetLoginMethod,
-            hcClient);
-    }
-
-    /**
-     * 修改admin密码
-     *
-     * 修改admin密码
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ResetPasswordRequest 请求对象
-     * @return CompletableFuture<ResetPasswordResponse>
-     */
-    public CompletableFuture<ResetPasswordResponse> resetPasswordAsync(ResetPasswordRequest request) {
-        return hcClient.asyncInvokeHttp(request, CbhMeta.resetPassword);
-    }
-
-    /**
-     * 修改admin密码
-     *
-     * 修改admin密码
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ResetPasswordRequest 请求对象
-     * @return AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
-     */
-    public AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordAsyncInvoker(
-        ResetPasswordRequest request) {
-        return new AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse>(request, CbhMeta.resetPassword, hcClient);
-    }
-
-    /**
-     * 创建变更CBH订单
-     *
-     * 创建变更CBH订单
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ChangeInstanceOrderRequest 请求对象
-     * @return CompletableFuture<ChangeInstanceOrderResponse>
-     */
-    public CompletableFuture<ChangeInstanceOrderResponse> changeInstanceOrderAsync(ChangeInstanceOrderRequest request) {
-        return hcClient.asyncInvokeHttp(request, CbhMeta.changeInstanceOrder);
-    }
-
-    /**
-     * 创建变更CBH订单
-     *
-     * 创建变更CBH订单
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ChangeInstanceOrderRequest 请求对象
-     * @return AsyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse>
-     */
-    public AsyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> changeInstanceOrderAsyncInvoker(
-        ChangeInstanceOrderRequest request) {
-        return new AsyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse>(request,
-            CbhMeta.changeInstanceOrder, hcClient);
-    }
-
-    /**
-     * 关闭CBH实例
-     *
-     * 关闭CBH实例
+     * 关闭云堡垒机实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -424,9 +454,9 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 关闭CBH实例
+     * 关闭云堡垒机实例
      *
-     * 关闭CBH实例
+     * 关闭云堡垒机实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -440,69 +470,9 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 获取ECS配额
+     * 解绑弹性公网IP
      *
-     * 获取当前租户所选择的可用分区、性能规格所对应的ECS flavor是否可用
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListQuotaStateRequest 请求对象
-     * @return CompletableFuture<ListQuotaStateResponse>
-     */
-    public CompletableFuture<ListQuotaStateResponse> listQuotaStateAsync(ListQuotaStateRequest request) {
-        return hcClient.asyncInvokeHttp(request, CbhMeta.listQuotaState);
-    }
-
-    /**
-     * 获取ECS配额
-     *
-     * 获取当前租户所选择的可用分区、性能规格所对应的ECS flavor是否可用
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListQuotaStateRequest 请求对象
-     * @return AsyncInvoker<ListQuotaStateRequest, ListQuotaStateResponse>
-     */
-    public AsyncInvoker<ListQuotaStateRequest, ListQuotaStateResponse> listQuotaStateAsyncInvoker(
-        ListQuotaStateRequest request) {
-        return new AsyncInvoker<ListQuotaStateRequest, ListQuotaStateResponse>(request, CbhMeta.listQuotaState,
-            hcClient);
-    }
-
-    /**
-     * 绑定CBH实例Eip
-     *
-     * 绑定CBH实例Eip
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param InstallInstanceEipRequest 请求对象
-     * @return CompletableFuture<InstallInstanceEipResponse>
-     */
-    public CompletableFuture<InstallInstanceEipResponse> installInstanceEipAsync(InstallInstanceEipRequest request) {
-        return hcClient.asyncInvokeHttp(request, CbhMeta.installInstanceEip);
-    }
-
-    /**
-     * 绑定CBH实例Eip
-     *
-     * 绑定CBH实例Eip
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param InstallInstanceEipRequest 请求对象
-     * @return AsyncInvoker<InstallInstanceEipRequest, InstallInstanceEipResponse>
-     */
-    public AsyncInvoker<InstallInstanceEipRequest, InstallInstanceEipResponse> installInstanceEipAsyncInvoker(
-        InstallInstanceEipRequest request) {
-        return new AsyncInvoker<InstallInstanceEipRequest, InstallInstanceEipResponse>(request,
-            CbhMeta.installInstanceEip, hcClient);
-    }
-
-    /**
-     * 解绑CBH实例Eip
-     *
-     * 解绑CBH实例Eip
+     * 云堡垒机实例解绑弹性公网IP。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -515,9 +485,9 @@ public class CbhAsyncClient {
     }
 
     /**
-     * 解绑CBH实例Eip
+     * 解绑弹性公网IP
      *
-     * 解绑CBH实例Eip
+     * 云堡垒机实例解绑弹性公网IP。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -528,6 +498,36 @@ public class CbhAsyncClient {
         UninstallInstanceEipRequest request) {
         return new AsyncInvoker<UninstallInstanceEipRequest, UninstallInstanceEipResponse>(request,
             CbhMeta.uninstallInstanceEip, hcClient);
+    }
+
+    /**
+     * 升级云堡垒机实例
+     *
+     * 升级云堡垒机实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeCbhInstanceRequest 请求对象
+     * @return CompletableFuture<UpgradeCbhInstanceResponse>
+     */
+    public CompletableFuture<UpgradeCbhInstanceResponse> upgradeCbhInstanceAsync(UpgradeCbhInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbhMeta.upgradeCbhInstance);
+    }
+
+    /**
+     * 升级云堡垒机实例
+     *
+     * 升级云堡垒机实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeCbhInstanceRequest 请求对象
+     * @return AsyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse>
+     */
+    public AsyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse> upgradeCbhInstanceAsyncInvoker(
+        UpgradeCbhInstanceRequest request) {
+        return new AsyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse>(request,
+            CbhMeta.upgradeCbhInstance, hcClient);
     }
 
 }

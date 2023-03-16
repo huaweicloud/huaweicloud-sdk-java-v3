@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ShowDataRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Need-Content")
+
+    private Boolean xNeedContent;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eihealth_project_id")
 
     private String eihealthProjectId;
@@ -19,6 +24,25 @@ public class ShowDataRequest {
     @JsonProperty(value = "path")
 
     private String path;
+
+    public ShowDataRequest withXNeedContent(Boolean xNeedContent) {
+        this.xNeedContent = xNeedContent;
+        return this;
+    }
+
+    /**
+     * 返回文件内容
+     * @return xNeedContent
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Need-Content")
+    public Boolean getXNeedContent() {
+        return xNeedContent;
+    }
+
+    public void setXNeedContent(Boolean xNeedContent) {
+        this.xNeedContent = xNeedContent;
+    }
 
     public ShowDataRequest withEihealthProjectId(String eihealthProjectId) {
         this.eihealthProjectId = eihealthProjectId;
@@ -63,19 +87,21 @@ public class ShowDataRequest {
             return false;
         }
         ShowDataRequest showDataRequest = (ShowDataRequest) o;
-        return Objects.equals(this.eihealthProjectId, showDataRequest.eihealthProjectId)
+        return Objects.equals(this.xNeedContent, showDataRequest.xNeedContent)
+            && Objects.equals(this.eihealthProjectId, showDataRequest.eihealthProjectId)
             && Objects.equals(this.path, showDataRequest.path);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eihealthProjectId, path);
+        return Objects.hash(xNeedContent, eihealthProjectId, path);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDataRequest {\n");
+        sb.append("    xNeedContent: ").append(toIndentedString(xNeedContent)).append("\n");
         sb.append("    eihealthProjectId: ").append(toIndentedString(eihealthProjectId)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
         sb.append("}");

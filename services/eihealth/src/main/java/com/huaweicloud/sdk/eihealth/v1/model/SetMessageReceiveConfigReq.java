@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 用户邮件接收配置
+ * 用户邮件接收配置请求体
  */
 public class SetMessageReceiveConfigReq {
 

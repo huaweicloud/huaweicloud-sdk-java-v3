@@ -237,6 +237,37 @@ public class ImageAsyncClient {
     }
 
     /**
+     * 创建司乘敏感擦除任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoObjectMaskingTaskRequest 请求对象
+     * @return CompletableFuture<CreateVideoObjectMaskingTaskResponse>
+     */
+    public CompletableFuture<CreateVideoObjectMaskingTaskResponse> createVideoObjectMaskingTaskAsync(
+        CreateVideoObjectMaskingTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.createVideoObjectMaskingTask);
+    }
+
+    /**
+     * 创建司乘敏感擦除任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoObjectMaskingTaskRequest 请求对象
+     * @return AsyncInvoker<CreateVideoObjectMaskingTaskRequest, CreateVideoObjectMaskingTaskResponse>
+     */
+    public AsyncInvoker<CreateVideoObjectMaskingTaskRequest, CreateVideoObjectMaskingTaskResponse> createVideoObjectMaskingTaskAsyncInvoker(
+        CreateVideoObjectMaskingTaskRequest request) {
+        return new AsyncInvoker<CreateVideoObjectMaskingTaskRequest, CreateVideoObjectMaskingTaskResponse>(request,
+            ImageMeta.createVideoObjectMaskingTask, hcClient);
+    }
+
+    /**
      * 创建任务
      *
      * 创建视频拆条任务
@@ -941,6 +972,37 @@ public class ImageAsyncClient {
         ShowVideoCuttingTaskRequest request) {
         return new AsyncInvoker<ShowVideoCuttingTaskRequest, ShowVideoCuttingTaskResponse>(request,
             ImageMeta.showVideoCuttingTask, hcClient);
+    }
+
+    /**
+     * show task 查询任务信息
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoObjectMaskingTaskRequest 请求对象
+     * @return CompletableFuture<ShowVideoObjectMaskingTaskResponse>
+     */
+    public CompletableFuture<ShowVideoObjectMaskingTaskResponse> showVideoObjectMaskingTaskAsync(
+        ShowVideoObjectMaskingTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImageMeta.showVideoObjectMaskingTask);
+    }
+
+    /**
+     * show task 查询任务信息
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoObjectMaskingTaskRequest 请求对象
+     * @return AsyncInvoker<ShowVideoObjectMaskingTaskRequest, ShowVideoObjectMaskingTaskResponse>
+     */
+    public AsyncInvoker<ShowVideoObjectMaskingTaskRequest, ShowVideoObjectMaskingTaskResponse> showVideoObjectMaskingTaskAsyncInvoker(
+        ShowVideoObjectMaskingTaskRequest request) {
+        return new AsyncInvoker<ShowVideoObjectMaskingTaskRequest, ShowVideoObjectMaskingTaskResponse>(request,
+            ImageMeta.showVideoObjectMaskingTask, hcClient);
     }
 
     /**

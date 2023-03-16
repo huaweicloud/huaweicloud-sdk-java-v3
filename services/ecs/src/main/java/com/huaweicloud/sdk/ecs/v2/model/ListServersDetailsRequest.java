@@ -265,7 +265,7 @@ public class ListServersDetailsRequest {
     }
 
     /**
-     * 云服务器ID，格式为UUID，匹配规则为精确匹配  示例: server_id={id1}&server_id={id2}
+     * 云服务器ID，格式为UUID，匹配规则为精确匹配  示例: server_id=id1,id2
      * @return serverId
      */
     public String getServerId() {

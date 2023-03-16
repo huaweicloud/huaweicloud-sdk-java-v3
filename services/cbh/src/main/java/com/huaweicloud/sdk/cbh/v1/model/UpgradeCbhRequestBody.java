@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 升级CBH实例请求对象
+ * 升级云堡垒机实例请求对象。
  */
 public class UpgradeCbhRequestBody {
 
@@ -21,7 +21,7 @@ public class UpgradeCbhRequestBody {
     }
 
     /**
-     * 实例的server id
+     * 云堡垒机实例ID，使用UUID格式。
      * @return instanceId
      */
     public String getInstanceId() {

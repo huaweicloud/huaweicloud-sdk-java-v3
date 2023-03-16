@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 安全组
+ * 安全组信息。
  */
 public class SecurityGroup {
 
@@ -21,7 +21,7 @@ public class SecurityGroup {
     }
 
     /**
-     * 安全组ID
+     * 云堡垒机实例安全组ID，字母数字下划线连接符组成。
      * @return id
      */
     public String getId() {

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 修改网络请求body
+ * 修改网络请求body。
  */
 public class ChangeInstanceNetwork {
 
@@ -28,13 +28,18 @@ public class ChangeInstanceNetwork {
 
     private List<Nics> nics = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_id")
+
+    private String serverId;
+
     public ChangeInstanceNetwork withType(String type) {
         this.type = type;
         return this;
     }
 
     /**
-     * 状态
+     * 云堡垒机实例状态，枚举值如下： - create  创建 - renewals  续费 - change  扩容
      * @return type
      */
     public String getType() {
@@ -67,7 +72,7 @@ public class ChangeInstanceNetwork {
     }
 
     /**
-     * 安全组信息
+     * 云堡垒机实例修改后的安全组信息。
      * @return securityGroups
      */
     public List<SecurityGroup> getSecurityGroups() {
@@ -100,7 +105,7 @@ public class ChangeInstanceNetwork {
     }
 
     /**
-     * 网卡信息
+     * 云堡垒机实例修改后的网卡信息。
      * @return nics
      */
     public List<Nics> getNics() {
@@ -109,6 +114,23 @@ public class ChangeInstanceNetwork {
 
     public void setNics(List<Nics> nics) {
         this.nics = nics;
+    }
+
+    public ChangeInstanceNetwork withServerId(String serverId) {
+        this.serverId = serverId;
+        return this;
+    }
+
+    /**
+     * 云堡垒机实例ID。云堡垒机实例状态为renewals或change时必传。
+     * @return serverId
+     */
+    public String getServerId() {
+        return serverId;
+    }
+
+    public void setServerId(String serverId) {
+        this.serverId = serverId;
     }
 
     @Override
@@ -122,12 +144,13 @@ public class ChangeInstanceNetwork {
         ChangeInstanceNetwork changeInstanceNetwork = (ChangeInstanceNetwork) o;
         return Objects.equals(this.type, changeInstanceNetwork.type)
             && Objects.equals(this.securityGroups, changeInstanceNetwork.securityGroups)
-            && Objects.equals(this.nics, changeInstanceNetwork.nics);
+            && Objects.equals(this.nics, changeInstanceNetwork.nics)
+            && Objects.equals(this.serverId, changeInstanceNetwork.serverId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, securityGroups, nics);
+        return Objects.hash(type, securityGroups, nics, serverId);
     }
 
     @Override
@@ -137,6 +160,7 @@ public class ChangeInstanceNetwork {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
         sb.append("    nics: ").append(toIndentedString(nics)).append("\n");
+        sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

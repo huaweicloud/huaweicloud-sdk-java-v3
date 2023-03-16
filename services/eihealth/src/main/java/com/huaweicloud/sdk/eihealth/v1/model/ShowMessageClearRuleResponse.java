@@ -12,33 +12,9 @@ import java.util.Objects;
 public class ShowMessageClearRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "message_retain_time")
-
-    private Integer messageRetainTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_retain_number")
 
     private Integer messageRetainNumber;
-
-    public ShowMessageClearRuleResponse withMessageRetainTime(Integer messageRetainTime) {
-        this.messageRetainTime = messageRetainTime;
-        return this;
-    }
-
-    /**
-     * 保存时长，单位：天
-     * minimum: 180
-     * maximum: 3650
-     * @return messageRetainTime
-     */
-    public Integer getMessageRetainTime() {
-        return messageRetainTime;
-    }
-
-    public void setMessageRetainTime(Integer messageRetainTime) {
-        this.messageRetainTime = messageRetainTime;
-    }
 
     public ShowMessageClearRuleResponse withMessageRetainNumber(Integer messageRetainNumber) {
         this.messageRetainNumber = messageRetainNumber;
@@ -47,8 +23,6 @@ public class ShowMessageClearRuleResponse extends SdkResponse {
 
     /**
      * 最多保留记录数
-     * minimum: 10000
-     * maximum: 5000000
      * @return messageRetainNumber
      */
     public Integer getMessageRetainNumber() {
@@ -68,20 +42,18 @@ public class ShowMessageClearRuleResponse extends SdkResponse {
             return false;
         }
         ShowMessageClearRuleResponse showMessageClearRuleResponse = (ShowMessageClearRuleResponse) o;
-        return Objects.equals(this.messageRetainTime, showMessageClearRuleResponse.messageRetainTime)
-            && Objects.equals(this.messageRetainNumber, showMessageClearRuleResponse.messageRetainNumber);
+        return Objects.equals(this.messageRetainNumber, showMessageClearRuleResponse.messageRetainNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(messageRetainTime, messageRetainNumber);
+        return Objects.hash(messageRetainNumber);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowMessageClearRuleResponse {\n");
-        sb.append("    messageRetainTime: ").append(toIndentedString(messageRetainTime)).append("\n");
         sb.append("    messageRetainNumber: ").append(toIndentedString(messageRetainNumber)).append("\n");
         sb.append("}");
         return sb.toString();

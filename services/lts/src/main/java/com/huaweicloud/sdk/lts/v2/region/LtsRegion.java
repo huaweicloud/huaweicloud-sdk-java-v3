@@ -44,7 +44,7 @@ public class LtsRegion {
 
     public static final Region LA_NORTH_2 = new Region("la-north-2", "https://lts.la-north-2.myhuaweicloud.com");
 
-    public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://lts-pctest.cn-north-9.myhuaweicloud.cn");
+    public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://lts.cn-north-9.myhuaweicloud.com");
 
     public static final Region CN_SOUTH_2 = new Region("cn-south-2", "https://lts.cn-south-2.myhuaweicloud.com");
 

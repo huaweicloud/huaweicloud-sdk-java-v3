@@ -78,6 +78,36 @@ public class ApigAsyncClient {
     }
 
     /**
+     * 开启实例公网入口
+     *
+     * 开启实例开启公网入口，仅当实例为ELB类型时支持
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddIngressEipV2Request 请求对象
+     * @return CompletableFuture<AddIngressEipV2Response>
+     */
+    public CompletableFuture<AddIngressEipV2Response> addIngressEipV2Async(AddIngressEipV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.addIngressEipV2);
+    }
+
+    /**
+     * 开启实例公网入口
+     *
+     * 开启实例开启公网入口，仅当实例为ELB类型时支持
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddIngressEipV2Request 请求对象
+     * @return AsyncInvoker<AddIngressEipV2Request, AddIngressEipV2Response>
+     */
+    public AsyncInvoker<AddIngressEipV2Request, AddIngressEipV2Response> addIngressEipV2AsyncInvoker(
+        AddIngressEipV2Request request) {
+        return new AsyncInvoker<AddIngressEipV2Request, AddIngressEipV2Response>(request, ApigMeta.addIngressEipV2,
+            hcClient);
+    }
+
+    /**
      * 绑定域名证书
      *
      * 如果创建API时，“定义API请求”使用HTTPS请求协议，那么在独立域名中需要添加SSL证书。
@@ -2269,6 +2299,36 @@ public class ApigAsyncClient {
     }
 
     /**
+     * 关闭实例公网入口
+     *
+     * 关闭实例公网入口，仅当实例为ELB类型时支持
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RemoveIngressEipV2Request 请求对象
+     * @return CompletableFuture<RemoveIngressEipV2Response>
+     */
+    public CompletableFuture<RemoveIngressEipV2Response> removeIngressEipV2Async(RemoveIngressEipV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.removeIngressEipV2);
+    }
+
+    /**
+     * 关闭实例公网入口
+     *
+     * 关闭实例公网入口，仅当实例为ELB类型时支持
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RemoveIngressEipV2Request 请求对象
+     * @return AsyncInvoker<RemoveIngressEipV2Request, RemoveIngressEipV2Response>
+     */
+    public AsyncInvoker<RemoveIngressEipV2Request, RemoveIngressEipV2Response> removeIngressEipV2AsyncInvoker(
+        RemoveIngressEipV2Request request) {
+        return new AsyncInvoker<RemoveIngressEipV2Request, RemoveIngressEipV2Response>(request,
+            ApigMeta.removeIngressEipV2, hcClient);
+    }
+
+    /**
      * 查看自定义认证详情
      *
      * 查看自定义认证详情
@@ -2725,6 +2785,36 @@ public class ApigAsyncClient {
         UpdateGatewayResponseV2Request request) {
         return new AsyncInvoker<UpdateGatewayResponseV2Request, UpdateGatewayResponseV2Response>(request,
             ApigMeta.updateGatewayResponseV2, hcClient);
+    }
+
+    /**
+     * 更新实例入公网带宽
+     *
+     * 更新实例入公网带宽，仅当实例为ELB类型时支持
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateIngressEipV2Request 请求对象
+     * @return CompletableFuture<UpdateIngressEipV2Response>
+     */
+    public CompletableFuture<UpdateIngressEipV2Response> updateIngressEipV2Async(UpdateIngressEipV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.updateIngressEipV2);
+    }
+
+    /**
+     * 更新实例入公网带宽
+     *
+     * 更新实例入公网带宽，仅当实例为ELB类型时支持
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateIngressEipV2Request 请求对象
+     * @return AsyncInvoker<UpdateIngressEipV2Request, UpdateIngressEipV2Response>
+     */
+    public AsyncInvoker<UpdateIngressEipV2Request, UpdateIngressEipV2Response> updateIngressEipV2AsyncInvoker(
+        UpdateIngressEipV2Request request) {
+        return new AsyncInvoker<UpdateIngressEipV2Request, UpdateIngressEipV2Response>(request,
+            ApigMeta.updateIngressEipV2, hcClient);
     }
 
     /**

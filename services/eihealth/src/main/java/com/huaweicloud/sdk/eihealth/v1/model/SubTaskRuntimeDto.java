@@ -40,6 +40,21 @@ public class SubTaskRuntimeDto {
 
     private String logStorageLink;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pod_create_time")
+
+    private String podCreateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pod_start_time")
+
+    private String podStartTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_failed_times")
+
+    private Integer jobFailedTimes;
+
     public SubTaskRuntimeDto withSubTaskName(String subTaskName) {
         this.subTaskName = subTaskName;
         return this;
@@ -142,6 +157,57 @@ public class SubTaskRuntimeDto {
         this.logStorageLink = logStorageLink;
     }
 
+    public SubTaskRuntimeDto withPodCreateTime(String podCreateTime) {
+        this.podCreateTime = podCreateTime;
+        return this;
+    }
+
+    /**
+     * task的pod创建时间
+     * @return podCreateTime
+     */
+    public String getPodCreateTime() {
+        return podCreateTime;
+    }
+
+    public void setPodCreateTime(String podCreateTime) {
+        this.podCreateTime = podCreateTime;
+    }
+
+    public SubTaskRuntimeDto withPodStartTime(String podStartTime) {
+        this.podStartTime = podStartTime;
+        return this;
+    }
+
+    /**
+     * task的pod启动时间
+     * @return podStartTime
+     */
+    public String getPodStartTime() {
+        return podStartTime;
+    }
+
+    public void setPodStartTime(String podStartTime) {
+        this.podStartTime = podStartTime;
+    }
+
+    public SubTaskRuntimeDto withJobFailedTimes(Integer jobFailedTimes) {
+        this.jobFailedTimes = jobFailedTimes;
+        return this;
+    }
+
+    /**
+     * task的cce job失败次数
+     * @return jobFailedTimes
+     */
+    public Integer getJobFailedTimes() {
+        return jobFailedTimes;
+    }
+
+    public void setJobFailedTimes(Integer jobFailedTimes) {
+        this.jobFailedTimes = jobFailedTimes;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -156,12 +222,23 @@ public class SubTaskRuntimeDto {
             && Objects.equals(this.finishTime, subTaskRuntimeDto.finishTime)
             && Objects.equals(this.actualRunningTime, subTaskRuntimeDto.actualRunningTime)
             && Objects.equals(this.status, subTaskRuntimeDto.status)
-            && Objects.equals(this.logStorageLink, subTaskRuntimeDto.logStorageLink);
+            && Objects.equals(this.logStorageLink, subTaskRuntimeDto.logStorageLink)
+            && Objects.equals(this.podCreateTime, subTaskRuntimeDto.podCreateTime)
+            && Objects.equals(this.podStartTime, subTaskRuntimeDto.podStartTime)
+            && Objects.equals(this.jobFailedTimes, subTaskRuntimeDto.jobFailedTimes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subTaskName, createTime, finishTime, actualRunningTime, status, logStorageLink);
+        return Objects.hash(subTaskName,
+            createTime,
+            finishTime,
+            actualRunningTime,
+            status,
+            logStorageLink,
+            podCreateTime,
+            podStartTime,
+            jobFailedTimes);
     }
 
     @Override
@@ -174,6 +251,9 @@ public class SubTaskRuntimeDto {
         sb.append("    actualRunningTime: ").append(toIndentedString(actualRunningTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    logStorageLink: ").append(toIndentedString(logStorageLink)).append("\n");
+        sb.append("    podCreateTime: ").append(toIndentedString(podCreateTime)).append("\n");
+        sb.append("    podStartTime: ").append(toIndentedString(podStartTime)).append("\n");
+        sb.append("    jobFailedTimes: ").append(toIndentedString(jobFailedTimes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

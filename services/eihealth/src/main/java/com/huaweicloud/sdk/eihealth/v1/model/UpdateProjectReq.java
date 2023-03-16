@@ -129,6 +129,8 @@ public class UpdateProjectReq {
 
     /**
      * 项目数据容量配额，单位为字节，范围为1073741824-11258999068426240，-1表示无容量限制
+     * minimum: -1
+     * maximum: 11258999068426240
      * @return storageQuota
      */
     public Long getStorageQuota() {

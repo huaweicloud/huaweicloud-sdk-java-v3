@@ -66,6 +66,11 @@ public class ShowUserResponse extends SdkResponse {
 
     private String updateTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source")
+
+    private String source;
+
     public ShowUserResponse withId(String id) {
         this.id = id;
         return this;
@@ -253,6 +258,23 @@ public class ShowUserResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
+    public ShowUserResponse withSource(String source) {
+        this.source = source;
+        return this;
+    }
+
+    /**
+     * 来源，PLATFORM或者IAM
+     * @return source
+     */
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -269,13 +291,24 @@ public class ShowUserResponse extends SdkResponse {
             && Objects.equals(this.isDomainOwner, showUserResponse.isDomainOwner)
             && Objects.equals(this.createTime, showUserResponse.createTime)
             && Objects.equals(this.pwdStatus, showUserResponse.pwdStatus)
-            && Objects.equals(this.updateTime, showUserResponse.updateTime);
+            && Objects.equals(this.updateTime, showUserResponse.updateTime)
+            && Objects.equals(this.source, showUserResponse.source);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, name, role, status, email, phone, areacode, isDomainOwner, createTime, pwdStatus, updateTime);
+        return Objects.hash(id,
+            name,
+            role,
+            status,
+            email,
+            phone,
+            areacode,
+            isDomainOwner,
+            createTime,
+            pwdStatus,
+            updateTime,
+            source);
     }
 
     @Override
@@ -293,6 +326,7 @@ public class ShowUserResponse extends SdkResponse {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    pwdStatus: ").append(toIndentedString(pwdStatus)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("}");
         return sb.toString();
     }

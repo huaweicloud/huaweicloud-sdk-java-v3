@@ -148,6 +148,34 @@ public class CdnClient {
     }
 
     /**
+     * 查询加速域名
+     *
+     * 查询加速域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainsRequest 请求对象
+     * @return ListDomainsResponse
+     */
+    public ListDomainsResponse listDomains(ListDomainsRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.listDomains);
+    }
+
+    /**
+     * 查询加速域名
+     *
+     * 查询加速域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainsRequest 请求对象
+     * @return SyncInvoker<ListDomainsRequest, ListDomainsResponse>
+     */
+    public SyncInvoker<ListDomainsRequest, ListDomainsResponse> listDomainsInvoker(ListDomainsRequest request) {
+        return new SyncInvoker<ListDomainsRequest, ListDomainsResponse>(request, CdnMeta.listDomains, hcClient);
+    }
+
+    /**
      * 设置用户计费模式
      *
      * - 设置用户计费模式。
@@ -291,6 +319,36 @@ public class CdnClient {
         ShowChargeModesRequest request) {
         return new SyncInvoker<ShowChargeModesRequest, ShowChargeModesResponse>(request, CdnMeta.showChargeModes,
             hcClient);
+    }
+
+    /**
+     * 查询加速域名详情
+     *
+     * 加速域名详情信息接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDomainDetailByNameRequest 请求对象
+     * @return ShowDomainDetailByNameResponse
+     */
+    public ShowDomainDetailByNameResponse showDomainDetailByName(ShowDomainDetailByNameRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.showDomainDetailByName);
+    }
+
+    /**
+     * 查询加速域名详情
+     *
+     * 加速域名详情信息接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDomainDetailByNameRequest 请求对象
+     * @return SyncInvoker<ShowDomainDetailByNameRequest, ShowDomainDetailByNameResponse>
+     */
+    public SyncInvoker<ShowDomainDetailByNameRequest, ShowDomainDetailByNameResponse> showDomainDetailByNameInvoker(
+        ShowDomainDetailByNameRequest request) {
+        return new SyncInvoker<ShowDomainDetailByNameRequest, ShowDomainDetailByNameResponse>(request,
+            CdnMeta.showDomainDetailByName, hcClient);
     }
 
     /**

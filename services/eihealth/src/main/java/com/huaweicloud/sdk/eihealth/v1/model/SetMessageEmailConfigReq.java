@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 消息邮件发送配置
+ * 消息邮件发送配置请求体
  */
 public class SetMessageEmailConfigReq {
 

@@ -111,6 +111,11 @@ public class ShowJobResponse extends SdkResponse {
 
     private List<String> nodeLabels = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "still_running_tasks")
+
+    private List<String> stillRunningTasks = null;
+
     public ShowJobResponse withId(String id) {
         this.id = id;
         return this;
@@ -532,6 +537,39 @@ public class ShowJobResponse extends SdkResponse {
         this.nodeLabels = nodeLabels;
     }
 
+    public ShowJobResponse withStillRunningTasks(List<String> stillRunningTasks) {
+        this.stillRunningTasks = stillRunningTasks;
+        return this;
+    }
+
+    public ShowJobResponse addStillRunningTasksItem(String stillRunningTasksItem) {
+        if (this.stillRunningTasks == null) {
+            this.stillRunningTasks = new ArrayList<>();
+        }
+        this.stillRunningTasks.add(stillRunningTasksItem);
+        return this;
+    }
+
+    public ShowJobResponse withStillRunningTasks(Consumer<List<String>> stillRunningTasksSetter) {
+        if (this.stillRunningTasks == null) {
+            this.stillRunningTasks = new ArrayList<>();
+        }
+        stillRunningTasksSetter.accept(this.stillRunningTasks);
+        return this;
+    }
+
+    /**
+     * 仍在运行中的子任务
+     * @return stillRunningTasks
+     */
+    public List<String> getStillRunningTasks() {
+        return stillRunningTasks;
+    }
+
+    public void setStillRunningTasks(List<String> stillRunningTasks) {
+        this.stillRunningTasks = stillRunningTasks;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -558,7 +596,8 @@ public class ShowJobResponse extends SdkResponse {
             && Objects.equals(this.dag, showJobResponse.dag)
             && Objects.equals(this.ioAccExpectedUsage, showJobResponse.ioAccExpectedUsage)
             && Objects.equals(this.ioAccInfo, showJobResponse.ioAccInfo)
-            && Objects.equals(this.nodeLabels, showJobResponse.nodeLabels);
+            && Objects.equals(this.nodeLabels, showJobResponse.nodeLabels)
+            && Objects.equals(this.stillRunningTasks, showJobResponse.stillRunningTasks);
     }
 
     @Override
@@ -581,7 +620,8 @@ public class ShowJobResponse extends SdkResponse {
             dag,
             ioAccExpectedUsage,
             ioAccInfo,
-            nodeLabels);
+            nodeLabels,
+            stillRunningTasks);
     }
 
     @Override
@@ -607,6 +647,7 @@ public class ShowJobResponse extends SdkResponse {
         sb.append("    ioAccExpectedUsage: ").append(toIndentedString(ioAccExpectedUsage)).append("\n");
         sb.append("    ioAccInfo: ").append(toIndentedString(ioAccInfo)).append("\n");
         sb.append("    nodeLabels: ").append(toIndentedString(nodeLabels)).append("\n");
+        sb.append("    stillRunningTasks: ").append(toIndentedString(stillRunningTasks)).append("\n");
         sb.append("}");
         return sb.toString();
     }

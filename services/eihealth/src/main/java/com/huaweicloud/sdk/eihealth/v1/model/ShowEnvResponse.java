@@ -36,6 +36,11 @@ public class ShowEnvResponse extends SdkResponse {
 
     private String deployMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_cold_archive")
+
+    private Boolean enableColdArchive;
+
     public ShowEnvResponse withDevUserPool(Boolean devUserPool) {
         this.devUserPool = devUserPool;
         return this;
@@ -121,6 +126,23 @@ public class ShowEnvResponse extends SdkResponse {
         this.deployMode = deployMode;
     }
 
+    public ShowEnvResponse withEnableColdArchive(Boolean enableColdArchive) {
+        this.enableColdArchive = enableColdArchive;
+        return this;
+    }
+
+    /**
+     * 是否支持归档类型存储
+     * @return enableColdArchive
+     */
+    public Boolean getEnableColdArchive() {
+        return enableColdArchive;
+    }
+
+    public void setEnableColdArchive(Boolean enableColdArchive) {
+        this.enableColdArchive = enableColdArchive;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -134,12 +156,13 @@ public class ShowEnvResponse extends SdkResponse {
             && Objects.equals(this.hasDev, showEnvResponse.hasDev)
             && Objects.equals(this.hasDrug, showEnvResponse.hasDrug)
             && Objects.equals(this.hasEncryptionButton, showEnvResponse.hasEncryptionButton)
-            && Objects.equals(this.deployMode, showEnvResponse.deployMode);
+            && Objects.equals(this.deployMode, showEnvResponse.deployMode)
+            && Objects.equals(this.enableColdArchive, showEnvResponse.enableColdArchive);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(devUserPool, hasDev, hasDrug, hasEncryptionButton, deployMode);
+        return Objects.hash(devUserPool, hasDev, hasDrug, hasEncryptionButton, deployMode, enableColdArchive);
     }
 
     @Override
@@ -151,6 +174,7 @@ public class ShowEnvResponse extends SdkResponse {
         sb.append("    hasDrug: ").append(toIndentedString(hasDrug)).append("\n");
         sb.append("    hasEncryptionButton: ").append(toIndentedString(hasEncryptionButton)).append("\n");
         sb.append("    deployMode: ").append(toIndentedString(deployMode)).append("\n");
+        sb.append("    enableColdArchive: ").append(toIndentedString(enableColdArchive)).append("\n");
         sb.append("}");
         return sb.toString();
     }

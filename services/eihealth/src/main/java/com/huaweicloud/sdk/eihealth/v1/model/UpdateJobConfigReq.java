@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 作业配置DTO
+ * 作业配置请求体
  */
 public class UpdateJobConfigReq {
 

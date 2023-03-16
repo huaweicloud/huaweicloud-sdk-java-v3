@@ -25,6 +25,11 @@ public class PerformanceResourcesRsp {
 
     private Integer runningJobCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "schedulable")
+
+    private Boolean schedulable;
+
     public PerformanceResourcesRsp withId(String id) {
         this.id = id;
         return this;
@@ -76,6 +81,23 @@ public class PerformanceResourcesRsp {
         this.runningJobCount = runningJobCount;
     }
 
+    public PerformanceResourcesRsp withSchedulable(Boolean schedulable) {
+        this.schedulable = schedulable;
+        return this;
+    }
+
+    /**
+     * 资源是否可调度
+     * @return schedulable
+     */
+    public Boolean getSchedulable() {
+        return schedulable;
+    }
+
+    public void setSchedulable(Boolean schedulable) {
+        this.schedulable = schedulable;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -87,12 +109,13 @@ public class PerformanceResourcesRsp {
         PerformanceResourcesRsp performanceResourcesRsp = (PerformanceResourcesRsp) o;
         return Objects.equals(this.id, performanceResourcesRsp.id)
             && Objects.equals(this.name, performanceResourcesRsp.name)
-            && Objects.equals(this.runningJobCount, performanceResourcesRsp.runningJobCount);
+            && Objects.equals(this.runningJobCount, performanceResourcesRsp.runningJobCount)
+            && Objects.equals(this.schedulable, performanceResourcesRsp.schedulable);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, runningJobCount);
+        return Objects.hash(id, name, runningJobCount, schedulable);
     }
 
     @Override
@@ -102,6 +125,7 @@ public class PerformanceResourcesRsp {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    runningJobCount: ").append(toIndentedString(runningJobCount)).append("\n");
+        sb.append("    schedulable: ").append(toIndentedString(schedulable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

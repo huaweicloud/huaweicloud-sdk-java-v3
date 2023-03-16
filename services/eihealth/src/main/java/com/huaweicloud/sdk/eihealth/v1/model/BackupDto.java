@@ -29,6 +29,11 @@ public class BackupDto {
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "storage_type")
+
+    private String storageType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
     private String region;
@@ -47,6 +52,11 @@ public class BackupDto {
     @JsonProperty(value = "end_time")
 
     private String endTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "archive_days")
+
+    private Integer archiveDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
@@ -112,6 +122,23 @@ public class BackupDto {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public BackupDto withStorageType(String storageType) {
+        this.storageType = storageType;
+        return this;
+    }
+
+    /**
+     * 存储类型
+     * @return storageType
+     */
+    public String getStorageType() {
+        return storageType;
+    }
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
     }
 
     public BackupDto withRegion(String region) {
@@ -198,6 +225,23 @@ public class BackupDto {
         this.endTime = endTime;
     }
 
+    public BackupDto withArchiveDays(Integer archiveDays) {
+        this.archiveDays = archiveDays;
+        return this;
+    }
+
+    /**
+     * 已归档天数
+     * @return archiveDays
+     */
+    public Integer getArchiveDays() {
+        return archiveDays;
+    }
+
+    public void setArchiveDays(Integer archiveDays) {
+        this.archiveDays = archiveDays;
+    }
+
     public BackupDto withSize(Long size) {
         this.size = size;
         return this;
@@ -259,16 +303,28 @@ public class BackupDto {
         }
         BackupDto backupDto = (BackupDto) o;
         return Objects.equals(this.id, backupDto.id) && Objects.equals(this.name, backupDto.name)
-            && Objects.equals(this.type, backupDto.type) && Objects.equals(this.region, backupDto.region)
-            && Objects.equals(this.paths, backupDto.paths) && Objects.equals(this.startTime, backupDto.startTime)
-            && Objects.equals(this.endTime, backupDto.endTime) && Objects.equals(this.size, backupDto.size)
+            && Objects.equals(this.type, backupDto.type) && Objects.equals(this.storageType, backupDto.storageType)
+            && Objects.equals(this.region, backupDto.region) && Objects.equals(this.paths, backupDto.paths)
+            && Objects.equals(this.startTime, backupDto.startTime) && Objects.equals(this.endTime, backupDto.endTime)
+            && Objects.equals(this.archiveDays, backupDto.archiveDays) && Objects.equals(this.size, backupDto.size)
             && Objects.equals(this.description, backupDto.description)
             && Objects.equals(this.operatorName, backupDto.operatorName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, region, paths, startTime, endTime, size, description, operatorName);
+        return Objects.hash(id,
+            name,
+            type,
+            storageType,
+            region,
+            paths,
+            startTime,
+            endTime,
+            archiveDays,
+            size,
+            description,
+            operatorName);
     }
 
     @Override
@@ -278,10 +334,12 @@ public class BackupDto {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    storageType: ").append(toIndentedString(storageType)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    paths: ").append(toIndentedString(paths)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    archiveDays: ").append(toIndentedString(archiveDays)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    operatorName: ").append(toIndentedString(operatorName)).append("\n");

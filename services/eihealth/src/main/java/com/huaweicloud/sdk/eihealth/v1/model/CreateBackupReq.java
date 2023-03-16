@@ -29,6 +29,11 @@ public class CreateBackupReq {
     private List<String> subPaths = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "storage_type")
+
+    private StorageType storageType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_archived_data")
 
     private Boolean deleteArchivedData;
@@ -100,6 +105,23 @@ public class CreateBackupReq {
         this.subPaths = subPaths;
     }
 
+    public CreateBackupReq withStorageType(StorageType storageType) {
+        this.storageType = storageType;
+        return this;
+    }
+
+    /**
+     * Get storageType
+     * @return storageType
+     */
+    public StorageType getStorageType() {
+        return storageType;
+    }
+
+    public void setStorageType(StorageType storageType) {
+        this.storageType = storageType;
+    }
+
     public CreateBackupReq withDeleteArchivedData(Boolean deleteArchivedData) {
         this.deleteArchivedData = deleteArchivedData;
         return this;
@@ -129,12 +151,13 @@ public class CreateBackupReq {
         return Objects.equals(this.description, createBackupReq.description)
             && Objects.equals(this.name, createBackupReq.name)
             && Objects.equals(this.subPaths, createBackupReq.subPaths)
+            && Objects.equals(this.storageType, createBackupReq.storageType)
             && Objects.equals(this.deleteArchivedData, createBackupReq.deleteArchivedData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description, name, subPaths, deleteArchivedData);
+        return Objects.hash(description, name, subPaths, storageType, deleteArchivedData);
     }
 
     @Override
@@ -144,6 +167,7 @@ public class CreateBackupReq {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    subPaths: ").append(toIndentedString(subPaths)).append("\n");
+        sb.append("    storageType: ").append(toIndentedString(storageType)).append("\n");
         sb.append("    deleteArchivedData: ").append(toIndentedString(deleteArchivedData)).append("\n");
         sb.append("}");
         return sb.toString();

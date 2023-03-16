@@ -35,7 +35,7 @@ public class ListCbhInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例总数
+     * 云堡垒机实例总数。
      * minimum: 0
      * maximum: 100
      * @return total
@@ -96,7 +96,7 @@ public class ListCbhInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例列表
+     * 云堡垒机实例列表信息。
      * @return instance
      */
     public List<InstanceDetail> getInstance() {

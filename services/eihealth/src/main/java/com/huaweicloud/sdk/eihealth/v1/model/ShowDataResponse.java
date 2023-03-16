@@ -37,6 +37,11 @@ public class ShowDataResponse extends SdkResponse {
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "content")
+
+    private String content;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "download_url")
 
     private String downloadUrl;
@@ -136,6 +141,23 @@ public class ShowDataResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    public ShowDataResponse withContent(String content) {
+        this.content = content;
+        return this;
+    }
+
+    /**
+     * 文件内容
+     * @return content
+     */
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     public ShowDataResponse withDownloadUrl(String downloadUrl) {
         this.downloadUrl = downloadUrl;
         return this;
@@ -199,6 +221,7 @@ public class ShowDataResponse extends SdkResponse {
         return Objects.equals(this.path, showDataResponse.path) && Objects.equals(this.name, showDataResponse.name)
             && Objects.equals(this.type, showDataResponse.type) && Objects.equals(this.size, showDataResponse.size)
             && Objects.equals(this.createTime, showDataResponse.createTime)
+            && Objects.equals(this.content, showDataResponse.content)
             && Objects.equals(this.downloadUrl, showDataResponse.downloadUrl)
             && Objects.equals(this.allowedOperate, showDataResponse.allowedOperate)
             && Objects.equals(this.deletable, showDataResponse.deletable);
@@ -206,7 +229,7 @@ public class ShowDataResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(path, name, type, size, createTime, downloadUrl, allowedOperate, deletable);
+        return Objects.hash(path, name, type, size, createTime, content, downloadUrl, allowedOperate, deletable);
     }
 
     @Override
@@ -218,6 +241,7 @@ public class ShowDataResponse extends SdkResponse {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    content: ").append(toIndentedString(content)).append("\n");
         sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
         sb.append("    allowedOperate: ").append(toIndentedString(allowedOperate)).append("\n");
         sb.append("    deletable: ").append(toIndentedString(deletable)).append("\n");

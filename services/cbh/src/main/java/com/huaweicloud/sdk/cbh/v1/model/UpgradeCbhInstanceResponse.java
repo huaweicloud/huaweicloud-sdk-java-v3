@@ -37,7 +37,7 @@ public class UpgradeCbhInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 操作结果
+     * 操作结果。
      * minimum: 0
      * maximum: 2147483647
      * @return code
@@ -56,7 +56,7 @@ public class UpgradeCbhInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -73,7 +73,7 @@ public class UpgradeCbhInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 任务 id
+     * 任务 id。
      * @return taskId
      */
     public String getTaskId() {
@@ -90,7 +90,7 @@ public class UpgradeCbhInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 订单 id
+     * 订单 id。
      * @return orderId
      */
     public String getOrderId() {

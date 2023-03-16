@@ -55,6 +55,16 @@ public class ListShareBandwidthTypesRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     public ListShareBandwidthTypesRequest withFields(String fields) {
         this.fields = fields;
         return this;
@@ -210,6 +220,42 @@ public class ListShareBandwidthTypesRequest {
         this.limit = limit;
     }
 
+    public ListShareBandwidthTypesRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 分页查询起始的资源ID，为空时为查询第一页
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
+    public ListShareBandwidthTypesRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 分页查询起始的资源序号
+     * minimum: 0
+     * maximum: 99999
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -227,12 +273,24 @@ public class ListShareBandwidthTypesRequest {
             && Objects.equals(this.publicBorderGroup, listShareBandwidthTypesRequest.publicBorderGroup)
             && Objects.equals(this.sortKey, listShareBandwidthTypesRequest.sortKey)
             && Objects.equals(this.sortDir, listShareBandwidthTypesRequest.sortDir)
-            && Objects.equals(this.limit, listShareBandwidthTypesRequest.limit);
+            && Objects.equals(this.limit, listShareBandwidthTypesRequest.limit)
+            && Objects.equals(this.marker, listShareBandwidthTypesRequest.marker)
+            && Objects.equals(this.offset, listShareBandwidthTypesRequest.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fields, id, bandwidthType, nameEn, nameZh, publicBorderGroup, sortKey, sortDir, limit);
+        return Objects.hash(fields,
+            id,
+            bandwidthType,
+            nameEn,
+            nameZh,
+            publicBorderGroup,
+            sortKey,
+            sortDir,
+            limit,
+            marker,
+            offset);
     }
 
     @Override
@@ -248,6 +306,8 @@ public class ListShareBandwidthTypesRequest {
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

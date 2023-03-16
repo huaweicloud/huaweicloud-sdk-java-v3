@@ -215,7 +215,7 @@ public class ListHostGroupsRequest {
     }
 
     /**
-     * devcloud创建的项目id
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {

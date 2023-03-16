@@ -152,6 +152,34 @@ public class CdnAsyncClient {
     }
 
     /**
+     * 查询加速域名
+     *
+     * 查询加速域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainsRequest 请求对象
+     * @return CompletableFuture<ListDomainsResponse>
+     */
+    public CompletableFuture<ListDomainsResponse> listDomainsAsync(ListDomainsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.listDomains);
+    }
+
+    /**
+     * 查询加速域名
+     *
+     * 查询加速域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainsRequest 请求对象
+     * @return AsyncInvoker<ListDomainsRequest, ListDomainsResponse>
+     */
+    public AsyncInvoker<ListDomainsRequest, ListDomainsResponse> listDomainsAsyncInvoker(ListDomainsRequest request) {
+        return new AsyncInvoker<ListDomainsRequest, ListDomainsResponse>(request, CdnMeta.listDomains, hcClient);
+    }
+
+    /**
      * 设置用户计费模式
      *
      * - 设置用户计费模式。
@@ -295,6 +323,37 @@ public class CdnAsyncClient {
         ShowChargeModesRequest request) {
         return new AsyncInvoker<ShowChargeModesRequest, ShowChargeModesResponse>(request, CdnMeta.showChargeModes,
             hcClient);
+    }
+
+    /**
+     * 查询加速域名详情
+     *
+     * 加速域名详情信息接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDomainDetailByNameRequest 请求对象
+     * @return CompletableFuture<ShowDomainDetailByNameResponse>
+     */
+    public CompletableFuture<ShowDomainDetailByNameResponse> showDomainDetailByNameAsync(
+        ShowDomainDetailByNameRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.showDomainDetailByName);
+    }
+
+    /**
+     * 查询加速域名详情
+     *
+     * 加速域名详情信息接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDomainDetailByNameRequest 请求对象
+     * @return AsyncInvoker<ShowDomainDetailByNameRequest, ShowDomainDetailByNameResponse>
+     */
+    public AsyncInvoker<ShowDomainDetailByNameRequest, ShowDomainDetailByNameResponse> showDomainDetailByNameAsyncInvoker(
+        ShowDomainDetailByNameRequest request) {
+        return new AsyncInvoker<ShowDomainDetailByNameRequest, ShowDomainDetailByNameResponse>(request,
+            CdnMeta.showDomainDetailByName, hcClient);
     }
 
     /**

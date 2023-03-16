@@ -22,14 +22,14 @@ public class SearchQuotaResponse extends SdkResponse {
     private Integer eipQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
-
-    private String status;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_v6")
 
     private String statusV6;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
 
     public SearchQuotaResponse withQuota(Integer quota) {
         this.quota = quota;
@@ -37,7 +37,7 @@ public class SearchQuotaResponse extends SdkResponse {
     }
 
     /**
-     * 配额
+     * 剩余可创建云堡垒机实例个数。
      * minimum: 0
      * maximum: 9223372036854775807
      * @return quota
@@ -56,7 +56,7 @@ public class SearchQuotaResponse extends SdkResponse {
     }
 
     /**
-     * EIP配额
+     * 弹性公网IP个数，默认值1。
      * minimum: 0
      * maximum: 9223372036854775807
      * @return eipQuota
@@ -69,30 +69,13 @@ public class SearchQuotaResponse extends SdkResponse {
         this.eipQuota = eipQuota;
     }
 
-    public SearchQuotaResponse withStatus(String status) {
-        this.status = status;
-        return this;
-    }
-
-    /**
-     * 状态
-     * @return status
-     */
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public SearchQuotaResponse withStatusV6(String statusV6) {
         this.statusV6 = statusV6;
         return this;
     }
 
     /**
-     * v6状态
+     * IPV6状态信息，返回默认值null。
      * @return statusV6
      */
     public String getStatusV6() {
@@ -101,6 +84,23 @@ public class SearchQuotaResponse extends SdkResponse {
 
     public void setStatusV6(String statusV6) {
         this.statusV6 = statusV6;
+    }
+
+    public SearchQuotaResponse withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * IPV6状态信息，返回默认值null。
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
@@ -114,13 +114,13 @@ public class SearchQuotaResponse extends SdkResponse {
         SearchQuotaResponse searchQuotaResponse = (SearchQuotaResponse) o;
         return Objects.equals(this.quota, searchQuotaResponse.quota)
             && Objects.equals(this.eipQuota, searchQuotaResponse.eipQuota)
-            && Objects.equals(this.status, searchQuotaResponse.status)
-            && Objects.equals(this.statusV6, searchQuotaResponse.statusV6);
+            && Objects.equals(this.statusV6, searchQuotaResponse.statusV6)
+            && Objects.equals(this.status, searchQuotaResponse.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(quota, eipQuota, status, statusV6);
+        return Objects.hash(quota, eipQuota, statusV6, status);
     }
 
     @Override
@@ -129,8 +129,8 @@ public class SearchQuotaResponse extends SdkResponse {
         sb.append("class SearchQuotaResponse {\n");
         sb.append("    quota: ").append(toIndentedString(quota)).append("\n");
         sb.append("    eipQuota: ").append(toIndentedString(eipQuota)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    statusV6: ").append(toIndentedString(statusV6)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 弹性IP
+ * 云堡垒机实例弹性公网IP信息。
  */
 public class PublicIp {
 
@@ -32,7 +32,7 @@ public class PublicIp {
     }
 
     /**
-     * 已分配的弹性IP 和EIP只能有一个
+     * 已分配的弹性IP和EIP只能有一个。
      * @return id
      */
     public String getId() {
@@ -49,7 +49,7 @@ public class PublicIp {
     }
 
     /**
-     * 已分配的弹性IP的地址Address
+     * 已分配的弹性IP的地址Address。
      * @return publicEip
      */
     public String getPublicEip() {

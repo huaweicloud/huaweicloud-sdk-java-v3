@@ -168,7 +168,7 @@ public class ShowDeploymentGroupDetailResponse extends SdkResponse {
     }
 
     /**
-     * devcloud项目名称
+     * 项目名称
      * @return projectName
      */
     public String getProjectName() {
@@ -219,7 +219,7 @@ public class ShowDeploymentGroupDetailResponse extends SdkResponse {
     }
 
     /**
-     * devcloud项目id
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {
@@ -270,7 +270,7 @@ public class ShowDeploymentGroupDetailResponse extends SdkResponse {
     }
 
     /**
-     * slave集群id，默认为null时使用devcloud八爪鱼slave集群，用户自定义slave时为slave集群id
+     * slave集群id，默认为null时使用默认slave集群，用户自定义slave时为slave集群id
      * @return slaveClusterId
      */
     public String getSlaveClusterId() {

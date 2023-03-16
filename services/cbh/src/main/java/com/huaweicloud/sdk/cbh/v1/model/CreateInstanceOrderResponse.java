@@ -22,7 +22,7 @@ public class CreateInstanceOrderResponse extends SdkResponse {
     }
 
     /**
-     * 订单ID
+     * 订单ID。
      * @return orderId
      */
     public String getOrderId() {

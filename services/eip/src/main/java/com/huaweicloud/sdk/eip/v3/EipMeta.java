@@ -31,6 +31,20 @@ public class EipMeta {
             f -> f.withMarshaller(ListCommonPoolsRequest::getFields, (req, v) -> {
                 req.setFields(v);
             }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCommonPoolsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCommonPoolsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -252,6 +266,20 @@ public class EipMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListShareBandwidthTypesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListShareBandwidthTypesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
             }));
 
         // response

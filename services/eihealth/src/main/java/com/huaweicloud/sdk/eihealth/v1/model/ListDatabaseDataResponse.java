@@ -23,7 +23,7 @@ public class ListDatabaseDataResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "objects")
 
-    private List<Map<String, Object>> objects = null;
+    private List<Map<String, String>> objects = null;
 
     public ListDatabaseDataResponse withCount(Integer count) {
         this.count = count;
@@ -42,12 +42,12 @@ public class ListDatabaseDataResponse extends SdkResponse {
         this.count = count;
     }
 
-    public ListDatabaseDataResponse withObjects(List<Map<String, Object>> objects) {
+    public ListDatabaseDataResponse withObjects(List<Map<String, String>> objects) {
         this.objects = objects;
         return this;
     }
 
-    public ListDatabaseDataResponse addObjectsItem(Map<String, Object> objectsItem) {
+    public ListDatabaseDataResponse addObjectsItem(Map<String, String> objectsItem) {
         if (this.objects == null) {
             this.objects = new ArrayList<>();
         }
@@ -55,7 +55,7 @@ public class ListDatabaseDataResponse extends SdkResponse {
         return this;
     }
 
-    public ListDatabaseDataResponse withObjects(Consumer<List<Map<String, Object>>> objectsSetter) {
+    public ListDatabaseDataResponse withObjects(Consumer<List<Map<String, String>>> objectsSetter) {
         if (this.objects == null) {
             this.objects = new ArrayList<>();
         }
@@ -67,11 +67,11 @@ public class ListDatabaseDataResponse extends SdkResponse {
      * 查询记录列表
      * @return objects
      */
-    public List<Map<String, Object>> getObjects() {
+    public List<Map<String, String>> getObjects() {
         return objects;
     }
 
-    public void setObjects(List<Map<String, Object>> objects) {
+    public void setObjects(List<Map<String, String>> objects) {
         this.objects = objects;
     }
 

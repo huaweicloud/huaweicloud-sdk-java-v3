@@ -549,7 +549,7 @@ public class ShowAutoJobResponse extends SdkResponse {
     }
 
     /**
-     * 自动作业使用的SFS-Turbo实例id，不填表示不使用
+     * 自动作业使用的IO加速实例id，不填表示不使用
      * @return ioAccId
      */
     public String getIoAccId() {

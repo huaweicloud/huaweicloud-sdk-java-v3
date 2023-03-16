@@ -364,7 +364,7 @@ public class CreateServers {
     }
 
     /**
-     * 创建裸金属服务器的数量。约束：不传该字段时默认取值为1。租户的配额足够时，最大值为24。
+     * 创建裸金属服务器的数量。约束：不传该字段时默认取值为1。租户的配额足够时，最大值为100。
      * @return count
      */
     public Integer getCount() {

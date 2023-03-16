@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 启动CBH实例请求对象
+ * 启动云堡垒机实例请求对象。
  */
 public class StartCbhRequestBody {
 
@@ -21,7 +21,7 @@ public class StartCbhRequestBody {
     }
 
     /**
-     * 实例的server id
+     * 云堡垒机实例的ID，使用UUID格式。
      * @return instanceId
      */
     public String getInstanceId() {

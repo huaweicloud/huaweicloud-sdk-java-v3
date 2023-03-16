@@ -150,4 +150,74 @@ public class IvsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DetectStandardByVideoAndIdCardImageRequest, DetectStandardByVideoAndIdCardImageResponse> detectStandardByVideoAndIdCardImage =
+        genFordetectStandardByVideoAndIdCardImage();
+
+    private static HttpRequestDef<DetectStandardByVideoAndIdCardImageRequest, DetectStandardByVideoAndIdCardImageResponse> genFordetectStandardByVideoAndIdCardImage() {
+        // basic
+        HttpRequestDef.Builder<DetectStandardByVideoAndIdCardImageRequest, DetectStandardByVideoAndIdCardImageResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DetectStandardByVideoAndIdCardImageRequest.class,
+                    DetectStandardByVideoAndIdCardImageResponse.class)
+                .withName("DetectStandardByVideoAndIdCardImage")
+                .withUri("/v2.0/ivs-standard")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetectStandardByVideoAndIdCardImageRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<IvsStandardByVideoAndIdCardImageRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IvsStandardByVideoAndIdCardImageRequestBody.class),
+            f -> f.withMarshaller(DetectStandardByVideoAndIdCardImageRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetectStandardByVideoAndNameAndIdRequest, DetectStandardByVideoAndNameAndIdResponse> detectStandardByVideoAndNameAndId =
+        genFordetectStandardByVideoAndNameAndId();
+
+    private static HttpRequestDef<DetectStandardByVideoAndNameAndIdRequest, DetectStandardByVideoAndNameAndIdResponse> genFordetectStandardByVideoAndNameAndId() {
+        // basic
+        HttpRequestDef.Builder<DetectStandardByVideoAndNameAndIdRequest, DetectStandardByVideoAndNameAndIdResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DetectStandardByVideoAndNameAndIdRequest.class,
+                    DetectStandardByVideoAndNameAndIdResponse.class)
+                .withName("DetectStandardByVideoAndNameAndId")
+                .withUri("/v2.0/ivs-standard")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetectStandardByVideoAndNameAndIdRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<IvsStandardByVideoAndNameAndIdRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IvsStandardByVideoAndNameAndIdRequestBody.class),
+            f -> f.withMarshaller(DetectStandardByVideoAndNameAndIdRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
 }

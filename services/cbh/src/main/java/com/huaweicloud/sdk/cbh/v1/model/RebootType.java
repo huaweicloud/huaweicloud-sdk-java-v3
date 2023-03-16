@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 重启方式
+ * 云堡垒机实例重启方式。
  */
 public class RebootType {
 
@@ -21,7 +21,7 @@ public class RebootType {
     }
 
     /**
-     * 重启方式
+     * 重启方式，不区分大小写。 - SOFT  普通重启，关闭虚拟机服务 - HARD  强制重启，重启虚拟机
      * @return type
      */
     public String getType() {

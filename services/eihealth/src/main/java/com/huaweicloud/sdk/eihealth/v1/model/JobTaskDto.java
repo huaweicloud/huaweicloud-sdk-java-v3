@@ -28,6 +28,11 @@ public class JobTaskDto {
 
     private TaskResourceDto resources;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "io_acc_type")
+
+    private String ioAccType;
+
     public JobTaskDto withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
@@ -104,6 +109,23 @@ public class JobTaskDto {
         this.resources = resources;
     }
 
+    public JobTaskDto withIoAccType(String ioAccType) {
+        this.ioAccType = ioAccType;
+        return this;
+    }
+
+    /**
+     * 子任务使用的IO加速实例类型，不填表示不使用；
+     * @return ioAccType
+     */
+    public String getIoAccType() {
+        return ioAccType;
+    }
+
+    public void setIoAccType(String ioAccType) {
+        this.ioAccType = ioAccType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -114,12 +136,13 @@ public class JobTaskDto {
         }
         JobTaskDto jobTaskDto = (JobTaskDto) o;
         return Objects.equals(this.taskName, jobTaskDto.taskName) && Objects.equals(this.inputs, jobTaskDto.inputs)
-            && Objects.equals(this.resources, jobTaskDto.resources);
+            && Objects.equals(this.resources, jobTaskDto.resources)
+            && Objects.equals(this.ioAccType, jobTaskDto.ioAccType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskName, inputs, resources);
+        return Objects.hash(taskName, inputs, resources, ioAccType);
     }
 
     @Override
@@ -129,6 +152,7 @@ public class JobTaskDto {
         sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
         sb.append("    inputs: ").append(toIndentedString(inputs)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
+        sb.append("    ioAccType: ").append(toIndentedString(ioAccType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

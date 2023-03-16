@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 当前租户CBH的配额信息
+ * 当前用户云堡垒机的配额信息。公有云返回null。
  */
 public class QuotaDetail {
 
@@ -31,7 +31,7 @@ public class QuotaDetail {
     }
 
     /**
-     * 中文配额描述
+     * 中文配额描述。
      * @return zhCn
      */
     public String getZhCn() {
@@ -48,7 +48,7 @@ public class QuotaDetail {
     }
 
     /**
-     * 英文配额描述
+     * 英文配额描述。
      * @return enUs
      */
     public String getEnUs() {
@@ -65,7 +65,7 @@ public class QuotaDetail {
     }
 
     /**
-     * 租户剩余配额数量
+     * 租户剩余配额数量。
      * minimum: 0
      * maximum: 100
      * @return remaining

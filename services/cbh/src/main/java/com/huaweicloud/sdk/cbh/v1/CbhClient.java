@@ -18,9 +18,9 @@ public class CbhClient {
     }
 
     /**
-     * 修改CBH实例网络
+     * 修改实例网络
      *
-     * 修改CBH实例网络
+     * 修改云堡垒机实例网络。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -32,9 +32,9 @@ public class CbhClient {
     }
 
     /**
-     * 修改CBH实例网络
+     * 修改实例网络
      *
-     * 修改CBH实例网络
+     * 修改云堡垒机实例网络。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -48,9 +48,39 @@ public class CbhClient {
     }
 
     /**
-     * 创建CBH实例
+     * 创建变更云堡垒机实例订单
      *
-     * 创建CBH实例
+     * 创建变更云堡垒机实例订单。（调用此接口前先调用创建变更云堡垒机实例任务接口，当前接口未开放）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeInstanceOrderRequest 请求对象
+     * @return ChangeInstanceOrderResponse
+     */
+    public ChangeInstanceOrderResponse changeInstanceOrder(ChangeInstanceOrderRequest request) {
+        return hcClient.syncInvokeHttp(request, CbhMeta.changeInstanceOrder);
+    }
+
+    /**
+     * 创建变更云堡垒机实例订单
+     *
+     * 创建变更云堡垒机实例订单。（调用此接口前先调用创建变更云堡垒机实例任务接口，当前接口未开放）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeInstanceOrderRequest 请求对象
+     * @return SyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse>
+     */
+    public SyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> changeInstanceOrderInvoker(
+        ChangeInstanceOrderRequest request) {
+        return new SyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse>(request,
+            CbhMeta.changeInstanceOrder, hcClient);
+    }
+
+    /**
+     * 创建云堡垒机实例
+     *
+     * 创建云堡垒机实例。（创建云堡垒机实例订单前，先调用此接口）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -62,9 +92,9 @@ public class CbhClient {
     }
 
     /**
-     * 创建CBH实例
+     * 创建云堡垒机实例
      *
-     * 创建CBH实例
+     * 创建云堡垒机实例。（创建云堡垒机实例订单前，先调用此接口）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -78,9 +108,9 @@ public class CbhClient {
     }
 
     /**
-     * 创建CBH实例订单
+     * 创建云堡垒机实例订单
      *
-     * 创建CBH实例订单
+     * 创建云堡垒机实例订单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -92,9 +122,9 @@ public class CbhClient {
     }
 
     /**
-     * 创建CBH实例订单
+     * 创建云堡垒机实例订单
      *
-     * 创建CBH实例订单
+     * 创建云堡垒机实例订单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -108,9 +138,39 @@ public class CbhClient {
     }
 
     /**
+     * 绑定弹性公网IP
+     *
+     * 云堡垒机实例绑定弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param InstallInstanceEipRequest 请求对象
+     * @return InstallInstanceEipResponse
+     */
+    public InstallInstanceEipResponse installInstanceEip(InstallInstanceEipRequest request) {
+        return hcClient.syncInvokeHttp(request, CbhMeta.installInstanceEip);
+    }
+
+    /**
+     * 绑定弹性公网IP
+     *
+     * 云堡垒机实例绑定弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param InstallInstanceEipRequest 请求对象
+     * @return SyncInvoker<InstallInstanceEipRequest, InstallInstanceEipResponse>
+     */
+    public SyncInvoker<InstallInstanceEipRequest, InstallInstanceEipResponse> installInstanceEipInvoker(
+        InstallInstanceEipRequest request) {
+        return new SyncInvoker<InstallInstanceEipRequest, InstallInstanceEipResponse>(request,
+            CbhMeta.installInstanceEip, hcClient);
+    }
+
+    /**
      * 获取CBH实例列表
      *
-     * 获取CBH实例列表
+     * 获取当前租户下的云堡垒机实例列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -124,7 +184,7 @@ public class CbhClient {
     /**
      * 获取CBH实例列表
      *
-     * 获取CBH实例列表
+     * 获取当前租户下的云堡垒机实例列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -138,9 +198,97 @@ public class CbhClient {
     }
 
     /**
-     * 重启CBH实例
+     * 获取弹性云服务器配额
      *
-     * 重启CBH实例
+     * 获取当前租户所选择的可用分区、性能规格所对应的弹性云服务器是否可用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQuotaStatusRequest 请求对象
+     * @return ListQuotaStatusResponse
+     */
+    public ListQuotaStatusResponse listQuotaStatus(ListQuotaStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, CbhMeta.listQuotaStatus);
+    }
+
+    /**
+     * 获取弹性云服务器配额
+     *
+     * 获取当前租户所选择的可用分区、性能规格所对应的弹性云服务器是否可用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQuotaStatusRequest 请求对象
+     * @return SyncInvoker<ListQuotaStatusRequest, ListQuotaStatusResponse>
+     */
+    public SyncInvoker<ListQuotaStatusRequest, ListQuotaStatusResponse> listQuotaStatusInvoker(
+        ListQuotaStatusRequest request) {
+        return new SyncInvoker<ListQuotaStatusRequest, ListQuotaStatusResponse>(request, CbhMeta.listQuotaStatus,
+            hcClient);
+    }
+
+    /**
+     * 重置admin用户多因子认证方式
+     *
+     * 重置admin用户多因子认证方式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetLoginMethodRequest 请求对象
+     * @return ResetLoginMethodResponse
+     */
+    public ResetLoginMethodResponse resetLoginMethod(ResetLoginMethodRequest request) {
+        return hcClient.syncInvokeHttp(request, CbhMeta.resetLoginMethod);
+    }
+
+    /**
+     * 重置admin用户多因子认证方式
+     *
+     * 重置admin用户多因子认证方式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetLoginMethodRequest 请求对象
+     * @return SyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse>
+     */
+    public SyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse> resetLoginMethodInvoker(
+        ResetLoginMethodRequest request) {
+        return new SyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse>(request, CbhMeta.resetLoginMethod,
+            hcClient);
+    }
+
+    /**
+     * 修改admin用户密码
+     *
+     * 修改云堡垒机实例web登录admin用户密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetPasswordRequest 请求对象
+     * @return ResetPasswordResponse
+     */
+    public ResetPasswordResponse resetPassword(ResetPasswordRequest request) {
+        return hcClient.syncInvokeHttp(request, CbhMeta.resetPassword);
+    }
+
+    /**
+     * 修改admin用户密码
+     *
+     * 修改云堡垒机实例web登录admin用户密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetPasswordRequest 请求对象
+     * @return SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
+     */
+    public SyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordInvoker(ResetPasswordRequest request) {
+        return new SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>(request, CbhMeta.resetPassword, hcClient);
+    }
+
+    /**
+     * 重启云堡垒机实例
+     *
+     * 重启云堡垒机实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -152,9 +300,9 @@ public class CbhClient {
     }
 
     /**
-     * 重启CBH实例
+     * 重启云堡垒机实例
      *
-     * 重启CBH实例
+     * 重启云堡垒机实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -170,7 +318,7 @@ public class CbhClient {
     /**
      * 查询堡垒机配额
      *
-     * 查询堡垒机配额
+     * 查询云堡垒机配额信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -184,7 +332,7 @@ public class CbhClient {
     /**
      * 查询堡垒机配额
      *
-     * 查询堡垒机配额
+     * 查询云堡垒机配额信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -196,9 +344,9 @@ public class CbhClient {
     }
 
     /**
-     * 获取CBH服务可用分区信息
+     * 获取可用用分区信息
      *
-     * 获取CBH服务可用分区信息
+     * 获取云堡垒机服务可用分区信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -210,9 +358,9 @@ public class CbhClient {
     }
 
     /**
-     * 获取CBH服务可用分区信息
+     * 获取可用用分区信息
      *
-     * 获取CBH服务可用分区信息
+     * 获取云堡垒机服务可用分区信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -226,9 +374,9 @@ public class CbhClient {
     }
 
     /**
-     * 检查网络接口
+     * 检查云堡垒机网络
      *
-     * 检查网络接口
+     * 检查云堡垒机实例网络信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -240,9 +388,9 @@ public class CbhClient {
     }
 
     /**
-     * 检查网络接口
+     * 检查云堡垒机网络
      *
-     * 检查网络接口
+     * 检查云堡垒机实例网络信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -256,9 +404,9 @@ public class CbhClient {
     }
 
     /**
-     * 启动CBH实例
+     * 启动云堡垒机实例
      *
-     * 启动CBH实例
+     * 启动云堡垒机实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -270,9 +418,9 @@ public class CbhClient {
     }
 
     /**
-     * 启动CBH实例
+     * 启动云堡垒机实例
      *
-     * 启动CBH实例
+     * 启动云堡垒机实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -286,127 +434,9 @@ public class CbhClient {
     }
 
     /**
-     * 升级CBH实例
+     * 关闭云堡垒机实例
      *
-     * 升级CBH实例
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpgradeCbhInstanceRequest 请求对象
-     * @return UpgradeCbhInstanceResponse
-     */
-    public UpgradeCbhInstanceResponse upgradeCbhInstance(UpgradeCbhInstanceRequest request) {
-        return hcClient.syncInvokeHttp(request, CbhMeta.upgradeCbhInstance);
-    }
-
-    /**
-     * 升级CBH实例
-     *
-     * 升级CBH实例
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpgradeCbhInstanceRequest 请求对象
-     * @return SyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse>
-     */
-    public SyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse> upgradeCbhInstanceInvoker(
-        UpgradeCbhInstanceRequest request) {
-        return new SyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse>(request,
-            CbhMeta.upgradeCbhInstance, hcClient);
-    }
-
-    /**
-     * 修改admin用户多因子认证方式
-     *
-     * 修改admin用户多因子认证方式
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ResetLoginMethodRequest 请求对象
-     * @return ResetLoginMethodResponse
-     */
-    public ResetLoginMethodResponse resetLoginMethod(ResetLoginMethodRequest request) {
-        return hcClient.syncInvokeHttp(request, CbhMeta.resetLoginMethod);
-    }
-
-    /**
-     * 修改admin用户多因子认证方式
-     *
-     * 修改admin用户多因子认证方式
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ResetLoginMethodRequest 请求对象
-     * @return SyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse>
-     */
-    public SyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse> resetLoginMethodInvoker(
-        ResetLoginMethodRequest request) {
-        return new SyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse>(request, CbhMeta.resetLoginMethod,
-            hcClient);
-    }
-
-    /**
-     * 修改admin密码
-     *
-     * 修改admin密码
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ResetPasswordRequest 请求对象
-     * @return ResetPasswordResponse
-     */
-    public ResetPasswordResponse resetPassword(ResetPasswordRequest request) {
-        return hcClient.syncInvokeHttp(request, CbhMeta.resetPassword);
-    }
-
-    /**
-     * 修改admin密码
-     *
-     * 修改admin密码
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ResetPasswordRequest 请求对象
-     * @return SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
-     */
-    public SyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordInvoker(ResetPasswordRequest request) {
-        return new SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>(request, CbhMeta.resetPassword, hcClient);
-    }
-
-    /**
-     * 创建变更CBH订单
-     *
-     * 创建变更CBH订单
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ChangeInstanceOrderRequest 请求对象
-     * @return ChangeInstanceOrderResponse
-     */
-    public ChangeInstanceOrderResponse changeInstanceOrder(ChangeInstanceOrderRequest request) {
-        return hcClient.syncInvokeHttp(request, CbhMeta.changeInstanceOrder);
-    }
-
-    /**
-     * 创建变更CBH订单
-     *
-     * 创建变更CBH订单
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ChangeInstanceOrderRequest 请求对象
-     * @return SyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse>
-     */
-    public SyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> changeInstanceOrderInvoker(
-        ChangeInstanceOrderRequest request) {
-        return new SyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse>(request,
-            CbhMeta.changeInstanceOrder, hcClient);
-    }
-
-    /**
-     * 关闭CBH实例
-     *
-     * 关闭CBH实例
+     * 关闭云堡垒机实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -418,9 +448,9 @@ public class CbhClient {
     }
 
     /**
-     * 关闭CBH实例
+     * 关闭云堡垒机实例
      *
-     * 关闭CBH实例
+     * 关闭云堡垒机实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -434,69 +464,9 @@ public class CbhClient {
     }
 
     /**
-     * 获取ECS配额
+     * 解绑弹性公网IP
      *
-     * 获取当前租户所选择的可用分区、性能规格所对应的ECS flavor是否可用
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListQuotaStateRequest 请求对象
-     * @return ListQuotaStateResponse
-     */
-    public ListQuotaStateResponse listQuotaState(ListQuotaStateRequest request) {
-        return hcClient.syncInvokeHttp(request, CbhMeta.listQuotaState);
-    }
-
-    /**
-     * 获取ECS配额
-     *
-     * 获取当前租户所选择的可用分区、性能规格所对应的ECS flavor是否可用
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListQuotaStateRequest 请求对象
-     * @return SyncInvoker<ListQuotaStateRequest, ListQuotaStateResponse>
-     */
-    public SyncInvoker<ListQuotaStateRequest, ListQuotaStateResponse> listQuotaStateInvoker(
-        ListQuotaStateRequest request) {
-        return new SyncInvoker<ListQuotaStateRequest, ListQuotaStateResponse>(request, CbhMeta.listQuotaState,
-            hcClient);
-    }
-
-    /**
-     * 绑定CBH实例Eip
-     *
-     * 绑定CBH实例Eip
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param InstallInstanceEipRequest 请求对象
-     * @return InstallInstanceEipResponse
-     */
-    public InstallInstanceEipResponse installInstanceEip(InstallInstanceEipRequest request) {
-        return hcClient.syncInvokeHttp(request, CbhMeta.installInstanceEip);
-    }
-
-    /**
-     * 绑定CBH实例Eip
-     *
-     * 绑定CBH实例Eip
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param InstallInstanceEipRequest 请求对象
-     * @return SyncInvoker<InstallInstanceEipRequest, InstallInstanceEipResponse>
-     */
-    public SyncInvoker<InstallInstanceEipRequest, InstallInstanceEipResponse> installInstanceEipInvoker(
-        InstallInstanceEipRequest request) {
-        return new SyncInvoker<InstallInstanceEipRequest, InstallInstanceEipResponse>(request,
-            CbhMeta.installInstanceEip, hcClient);
-    }
-
-    /**
-     * 解绑CBH实例Eip
-     *
-     * 解绑CBH实例Eip
+     * 云堡垒机实例解绑弹性公网IP。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -508,9 +478,9 @@ public class CbhClient {
     }
 
     /**
-     * 解绑CBH实例Eip
+     * 解绑弹性公网IP
      *
-     * 解绑CBH实例Eip
+     * 云堡垒机实例解绑弹性公网IP。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -521,6 +491,36 @@ public class CbhClient {
         UninstallInstanceEipRequest request) {
         return new SyncInvoker<UninstallInstanceEipRequest, UninstallInstanceEipResponse>(request,
             CbhMeta.uninstallInstanceEip, hcClient);
+    }
+
+    /**
+     * 升级云堡垒机实例
+     *
+     * 升级云堡垒机实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeCbhInstanceRequest 请求对象
+     * @return UpgradeCbhInstanceResponse
+     */
+    public UpgradeCbhInstanceResponse upgradeCbhInstance(UpgradeCbhInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, CbhMeta.upgradeCbhInstance);
+    }
+
+    /**
+     * 升级云堡垒机实例
+     *
+     * 升级云堡垒机实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeCbhInstanceRequest 请求对象
+     * @return SyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse>
+     */
+    public SyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse> upgradeCbhInstanceInvoker(
+        UpgradeCbhInstanceRequest request) {
+        return new SyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse>(request,
+            CbhMeta.upgradeCbhInstance, hcClient);
     }
 
 }

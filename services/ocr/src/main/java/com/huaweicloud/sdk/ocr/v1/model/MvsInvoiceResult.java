@@ -56,6 +56,16 @@ public class MvsInvoiceResult {
     private String buyerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "buyer_address")
+
+    private String buyerAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "buyer_phone")
+
+    private String buyerPhone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seller_name")
 
     private String sellerName;
@@ -79,6 +89,21 @@ public class MvsInvoiceResult {
     @JsonProperty(value = "seller_address")
 
     private String sellerAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "licence_plate_number")
+
+    private String licencePlateNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "registration_number")
+
+    private String registrationNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dept_motor_vehicles")
+
+    private String deptMotorVehicles;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seller_bank")
@@ -180,13 +205,88 @@ public class MvsInvoiceResult {
 
     private String fiscalCode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auction_org_name")
+
+    private String auctionOrgName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auction_org_address")
+
+    private String auctionOrgAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auction_org_id")
+
+    private String auctionOrgId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auction_org_bank_account")
+
+    private String auctionOrgBankAccount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auction_org_phone")
+
+    private String auctionOrgPhone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "used_vehicle_market_name")
+
+    private String usedVehicleMarketName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "used_vehicle_market_id")
+
+    private String usedVehicleMarketId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "used_vehicle_market_address")
+
+    private String usedVehicleMarketAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "used_vehicle_market_bank_account")
+
+    private String usedVehicleMarketBankAccount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "used_vehicle_market_phone")
+
+    private String usedVehicleMarketPhone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remark")
+
+    private String remark;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "drawer_name")
+
+    private String drawerName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "text_location")
+
+    private Object textLocation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "confidence")
+
+    private Object confidence;
+
     public MvsInvoiceResult withCode(String code) {
         this.code = code;
         return this;
     }
 
     /**
-     * 发票代码。 
+     * 发票代码。
      * @return code
      */
     public String getCode() {
@@ -203,7 +303,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 发票号码。 
+     * 发票号码。
      * @return number
      */
     public String getNumber() {
@@ -220,7 +320,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 机打代码。 
+     * 机打代码。
      * @return machinePrintedCode
      */
     public String getMachinePrintedCode() {
@@ -237,7 +337,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 机打号码。 
+     * 机打号码。
      * @return machinePrintedNumber
      */
     public String getMachinePrintedNumber() {
@@ -254,7 +354,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 开票日期。 
+     * 开票日期。
      * @return issueDate
      */
     public String getIssueDate() {
@@ -271,7 +371,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 机器编号。 
+     * 机器编号。
      * @return machineNumber
      */
     public String getMachineNumber() {
@@ -288,7 +388,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 购买方名称。 
+     * 购买方名称、二手车买方单位/个人
      * @return buyerName
      */
     public String getBuyerName() {
@@ -305,7 +405,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 购买方身份证号码/组织机构代码。 
+     * 购买方身份证号码/组织机构代码。
      * @return buyerOrganizationNumber
      */
     public String getBuyerOrganizationNumber() {
@@ -322,7 +422,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 购买方纳税人识别号。 
+     * 购买方纳税人识别号、二手车买方单位代码/身份证号
      * @return buyerId
      */
     public String getBuyerId() {
@@ -333,13 +433,47 @@ public class MvsInvoiceResult {
         this.buyerId = buyerId;
     }
 
+    public MvsInvoiceResult withBuyerAddress(String buyerAddress) {
+        this.buyerAddress = buyerAddress;
+        return this;
+    }
+
+    /**
+     * 二手车买方单位/个人住址。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * @return buyerAddress
+     */
+    public String getBuyerAddress() {
+        return buyerAddress;
+    }
+
+    public void setBuyerAddress(String buyerAddress) {
+        this.buyerAddress = buyerAddress;
+    }
+
+    public MvsInvoiceResult withBuyerPhone(String buyerPhone) {
+        this.buyerPhone = buyerPhone;
+        return this;
+    }
+
+    /**
+     * 二手车买方单位/个人电话。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * @return buyerPhone
+     */
+    public String getBuyerPhone() {
+        return buyerPhone;
+    }
+
+    public void setBuyerPhone(String buyerPhone) {
+        this.buyerPhone = buyerPhone;
+    }
+
     public MvsInvoiceResult withSellerName(String sellerName) {
         this.sellerName = sellerName;
         return this;
     }
 
     /**
-     * 销货单位名称。 
+     * 销货单位名称、二手车卖方单位/个人
      * @return sellerName
      */
     public String getSellerName() {
@@ -356,7 +490,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 销售方电话。 
+     * 销售方电话、二手车卖方电话
      * @return sellerPhone
      */
     public String getSellerPhone() {
@@ -373,7 +507,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 销售方纳税人识别号。 
+     * 销售方纳税人识别号、二手车卖方单位代码/身份证号
      * @return sellerId
      */
     public String getSellerId() {
@@ -390,7 +524,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 销售方账号。 
+     * 销售方账号。
      * @return sellerAccount
      */
     public String getSellerAccount() {
@@ -407,7 +541,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 销售方地址。 
+     * 销售方地址、二手车卖方单位/个人地址
      * @return sellerAddress
      */
     public String getSellerAddress() {
@@ -418,13 +552,64 @@ public class MvsInvoiceResult {
         this.sellerAddress = sellerAddress;
     }
 
+    public MvsInvoiceResult withLicencePlateNumber(String licencePlateNumber) {
+        this.licencePlateNumber = licencePlateNumber;
+        return this;
+    }
+
+    /**
+     * 二手车车牌照号。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * @return licencePlateNumber
+     */
+    public String getLicencePlateNumber() {
+        return licencePlateNumber;
+    }
+
+    public void setLicencePlateNumber(String licencePlateNumber) {
+        this.licencePlateNumber = licencePlateNumber;
+    }
+
+    public MvsInvoiceResult withRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
+        return this;
+    }
+
+    /**
+     * 二手车登记证号。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * @return registrationNumber
+     */
+    public String getRegistrationNumber() {
+        return registrationNumber;
+    }
+
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
+    }
+
+    public MvsInvoiceResult withDeptMotorVehicles(String deptMotorVehicles) {
+        this.deptMotorVehicles = deptMotorVehicles;
+        return this;
+    }
+
+    /**
+     * 二手车转入地车管所名称。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * @return deptMotorVehicles
+     */
+    public String getDeptMotorVehicles() {
+        return deptMotorVehicles;
+    }
+
+    public void setDeptMotorVehicles(String deptMotorVehicles) {
+        this.deptMotorVehicles = deptMotorVehicles;
+    }
+
     public MvsInvoiceResult withSellerBank(String sellerBank) {
         this.sellerBank = sellerBank;
         return this;
     }
 
     /**
-     * 销售方开户行。 
+     * 销售方开户行。
      * @return sellerBank
      */
     public String getSellerBank() {
@@ -441,7 +626,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 车辆类型。 
+     * 车辆类型。
      * @return vehicleType
      */
     public String getVehicleType() {
@@ -458,7 +643,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 厂牌型号。 
+     * 厂牌型号。
      * @return brandModel
      */
     public String getBrandModel() {
@@ -475,7 +660,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 产地。 
+     * 产地。
      * @return manufacturingLocation
      */
     public String getManufacturingLocation() {
@@ -492,7 +677,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 合格证号。 
+     * 合格证号。
      * @return qualityCertificate
      */
     public String getQualityCertificate() {
@@ -509,7 +694,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 进口证明书号。 
+     * 进口证明书号。
      * @return importCertificate
      */
     public String getImportCertificate() {
@@ -526,7 +711,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 商检单号。 
+     * 商检单号。
      * @return inspectionNumber
      */
     public String getInspectionNumber() {
@@ -543,7 +728,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 发动机号码。 
+     * 发动机号码。
      * @return engineNumber
      */
     public String getEngineNumber() {
@@ -560,7 +745,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 车辆识别代号/车架号码。 
+     * 车辆识别代号/车架号码。
      * @return vehicleIdentificationNumber
      */
     public String getVehicleIdentificationNumber() {
@@ -577,7 +762,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 吨位。 
+     * 吨位。
      * @return tonnage
      */
     public String getTonnage() {
@@ -594,7 +779,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 限乘人数。 
+     * 限乘人数。
      * @return seatingCapacity
      */
     public String getSeatingCapacity() {
@@ -611,7 +796,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 主管税务机关。 
+     * 主管税务机关。
      * @return taxAuthority
      */
     public String getTaxAuthority() {
@@ -628,7 +813,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 主管税务机关代码。 
+     * 主管税务机关代码。
      * @return taxAuthorityCode
      */
     public String getTaxAuthorityCode() {
@@ -645,7 +830,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 完税凭证号码。 
+     * 完税凭证号码。
      * @return taxPaymentReceipt
      */
     public String getTaxPaymentReceipt() {
@@ -662,7 +847,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 增值税税率或征收率。 
+     * 增值税税率或征收率。
      * @return taxRate
      */
     public String getTaxRate() {
@@ -679,7 +864,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 增值税税额。 
+     * 增值税税额。
      * @return tax
      */
     public String getTax() {
@@ -696,7 +881,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 不含税价。 
+     * 不含税价。
      * @return taxExclusivePrice
      */
     public String getTaxExclusivePrice() {
@@ -713,7 +898,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 价税合计。 
+     * 价税合计、二手车车价合计（小写）
      * @return total
      */
     public String getTotal() {
@@ -730,7 +915,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 价税合计大写。 
+     * 价税合计大写、二手车车价合计（大写）
      * @return totalChinese
      */
     public String getTotalChinese() {
@@ -747,7 +932,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 税控码。 
+     * 税控码。
      * @return fiscalCode
      */
     public String getFiscalCode() {
@@ -756,6 +941,261 @@ public class MvsInvoiceResult {
 
     public void setFiscalCode(String fiscalCode) {
         this.fiscalCode = fiscalCode;
+    }
+
+    public MvsInvoiceResult withAuctionOrgName(String auctionOrgName) {
+        this.auctionOrgName = auctionOrgName;
+        return this;
+    }
+
+    /**
+     * 二手车经营拍卖单位名称。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * @return auctionOrgName
+     */
+    public String getAuctionOrgName() {
+        return auctionOrgName;
+    }
+
+    public void setAuctionOrgName(String auctionOrgName) {
+        this.auctionOrgName = auctionOrgName;
+    }
+
+    public MvsInvoiceResult withAuctionOrgAddress(String auctionOrgAddress) {
+        this.auctionOrgAddress = auctionOrgAddress;
+        return this;
+    }
+
+    /**
+     * 二手车经营拍卖单位地址。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * @return auctionOrgAddress
+     */
+    public String getAuctionOrgAddress() {
+        return auctionOrgAddress;
+    }
+
+    public void setAuctionOrgAddress(String auctionOrgAddress) {
+        this.auctionOrgAddress = auctionOrgAddress;
+    }
+
+    public MvsInvoiceResult withAuctionOrgId(String auctionOrgId) {
+        this.auctionOrgId = auctionOrgId;
+        return this;
+    }
+
+    /**
+     * 二手车经营拍卖单位纳税人识别号。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * @return auctionOrgId
+     */
+    public String getAuctionOrgId() {
+        return auctionOrgId;
+    }
+
+    public void setAuctionOrgId(String auctionOrgId) {
+        this.auctionOrgId = auctionOrgId;
+    }
+
+    public MvsInvoiceResult withAuctionOrgBankAccount(String auctionOrgBankAccount) {
+        this.auctionOrgBankAccount = auctionOrgBankAccount;
+        return this;
+    }
+
+    /**
+     * 二手车经营拍卖单位银行和账号。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * @return auctionOrgBankAccount
+     */
+    public String getAuctionOrgBankAccount() {
+        return auctionOrgBankAccount;
+    }
+
+    public void setAuctionOrgBankAccount(String auctionOrgBankAccount) {
+        this.auctionOrgBankAccount = auctionOrgBankAccount;
+    }
+
+    public MvsInvoiceResult withAuctionOrgPhone(String auctionOrgPhone) {
+        this.auctionOrgPhone = auctionOrgPhone;
+        return this;
+    }
+
+    /**
+     * 二手车经营拍卖单位电话。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * @return auctionOrgPhone
+     */
+    public String getAuctionOrgPhone() {
+        return auctionOrgPhone;
+    }
+
+    public void setAuctionOrgPhone(String auctionOrgPhone) {
+        this.auctionOrgPhone = auctionOrgPhone;
+    }
+
+    public MvsInvoiceResult withUsedVehicleMarketName(String usedVehicleMarketName) {
+        this.usedVehicleMarketName = usedVehicleMarketName;
+        return this;
+    }
+
+    /**
+     * 二手车市场名称。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * @return usedVehicleMarketName
+     */
+    public String getUsedVehicleMarketName() {
+        return usedVehicleMarketName;
+    }
+
+    public void setUsedVehicleMarketName(String usedVehicleMarketName) {
+        this.usedVehicleMarketName = usedVehicleMarketName;
+    }
+
+    public MvsInvoiceResult withUsedVehicleMarketId(String usedVehicleMarketId) {
+        this.usedVehicleMarketId = usedVehicleMarketId;
+        return this;
+    }
+
+    /**
+     * 二手车市场纳税人识别号。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * @return usedVehicleMarketId
+     */
+    public String getUsedVehicleMarketId() {
+        return usedVehicleMarketId;
+    }
+
+    public void setUsedVehicleMarketId(String usedVehicleMarketId) {
+        this.usedVehicleMarketId = usedVehicleMarketId;
+    }
+
+    public MvsInvoiceResult withUsedVehicleMarketAddress(String usedVehicleMarketAddress) {
+        this.usedVehicleMarketAddress = usedVehicleMarketAddress;
+        return this;
+    }
+
+    /**
+     * 二手车市场地址。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * @return usedVehicleMarketAddress
+     */
+    public String getUsedVehicleMarketAddress() {
+        return usedVehicleMarketAddress;
+    }
+
+    public void setUsedVehicleMarketAddress(String usedVehicleMarketAddress) {
+        this.usedVehicleMarketAddress = usedVehicleMarketAddress;
+    }
+
+    public MvsInvoiceResult withUsedVehicleMarketBankAccount(String usedVehicleMarketBankAccount) {
+        this.usedVehicleMarketBankAccount = usedVehicleMarketBankAccount;
+        return this;
+    }
+
+    /**
+     * 二手车市场银行和账号。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * @return usedVehicleMarketBankAccount
+     */
+    public String getUsedVehicleMarketBankAccount() {
+        return usedVehicleMarketBankAccount;
+    }
+
+    public void setUsedVehicleMarketBankAccount(String usedVehicleMarketBankAccount) {
+        this.usedVehicleMarketBankAccount = usedVehicleMarketBankAccount;
+    }
+
+    public MvsInvoiceResult withUsedVehicleMarketPhone(String usedVehicleMarketPhone) {
+        this.usedVehicleMarketPhone = usedVehicleMarketPhone;
+        return this;
+    }
+
+    /**
+     * 二手车市场电话。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * @return usedVehicleMarketPhone
+     */
+    public String getUsedVehicleMarketPhone() {
+        return usedVehicleMarketPhone;
+    }
+
+    public void setUsedVehicleMarketPhone(String usedVehicleMarketPhone) {
+        this.usedVehicleMarketPhone = usedVehicleMarketPhone;
+    }
+
+    public MvsInvoiceResult withRemark(String remark) {
+        this.remark = remark;
+        return this;
+    }
+
+    /**
+     * 备注
+     * @return remark
+     */
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public MvsInvoiceResult withDrawerName(String drawerName) {
+        this.drawerName = drawerName;
+        return this;
+    }
+
+    /**
+     * 开票人
+     * @return drawerName
+     */
+    public String getDrawerName() {
+        return drawerName;
+    }
+
+    public void setDrawerName(String drawerName) {
+        this.drawerName = drawerName;
+    }
+
+    public MvsInvoiceResult withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 枚举值，机动车销售统一发票或者二手车销售统一发票。 当入参中包含type时返回。 
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public MvsInvoiceResult withTextLocation(Object textLocation) {
+        this.textLocation = textLocation;
+        return this;
+    }
+
+    /**
+     * 检测框对象，内部为字段-框坐标对。如 code:[[x0, y0],[x1,y1],[x2,y2],[x3,y3]], 点的顺序是左上角、右上角、右下角、左下角。如果原图找不到字段，返回空列表。
+     * @return textLocation
+     */
+    public Object getTextLocation() {
+        return textLocation;
+    }
+
+    public void setTextLocation(Object textLocation) {
+        this.textLocation = textLocation;
+    }
+
+    public MvsInvoiceResult withConfidence(Object confidence) {
+        this.confidence = confidence;
+        return this;
+    }
+
+    /**
+     * 字段文字内容置信度，内容为字段-字符置信度对,如code:0.9999。这个数值为字段中每个字符置信度，格式为fp32，保留四位。若字段不存在则返回0.0。
+     * @return confidence
+     */
+    public Object getConfidence() {
+        return confidence;
+    }
+
+    public void setConfidence(Object confidence) {
+        this.confidence = confidence;
     }
 
     @Override
@@ -775,11 +1215,16 @@ public class MvsInvoiceResult {
             && Objects.equals(this.buyerName, mvsInvoiceResult.buyerName)
             && Objects.equals(this.buyerOrganizationNumber, mvsInvoiceResult.buyerOrganizationNumber)
             && Objects.equals(this.buyerId, mvsInvoiceResult.buyerId)
+            && Objects.equals(this.buyerAddress, mvsInvoiceResult.buyerAddress)
+            && Objects.equals(this.buyerPhone, mvsInvoiceResult.buyerPhone)
             && Objects.equals(this.sellerName, mvsInvoiceResult.sellerName)
             && Objects.equals(this.sellerPhone, mvsInvoiceResult.sellerPhone)
             && Objects.equals(this.sellerId, mvsInvoiceResult.sellerId)
             && Objects.equals(this.sellerAccount, mvsInvoiceResult.sellerAccount)
             && Objects.equals(this.sellerAddress, mvsInvoiceResult.sellerAddress)
+            && Objects.equals(this.licencePlateNumber, mvsInvoiceResult.licencePlateNumber)
+            && Objects.equals(this.registrationNumber, mvsInvoiceResult.registrationNumber)
+            && Objects.equals(this.deptMotorVehicles, mvsInvoiceResult.deptMotorVehicles)
             && Objects.equals(this.sellerBank, mvsInvoiceResult.sellerBank)
             && Objects.equals(this.vehicleType, mvsInvoiceResult.vehicleType)
             && Objects.equals(this.brandModel, mvsInvoiceResult.brandModel)
@@ -798,7 +1243,22 @@ public class MvsInvoiceResult {
             && Objects.equals(this.taxExclusivePrice, mvsInvoiceResult.taxExclusivePrice)
             && Objects.equals(this.total, mvsInvoiceResult.total)
             && Objects.equals(this.totalChinese, mvsInvoiceResult.totalChinese)
-            && Objects.equals(this.fiscalCode, mvsInvoiceResult.fiscalCode);
+            && Objects.equals(this.fiscalCode, mvsInvoiceResult.fiscalCode)
+            && Objects.equals(this.auctionOrgName, mvsInvoiceResult.auctionOrgName)
+            && Objects.equals(this.auctionOrgAddress, mvsInvoiceResult.auctionOrgAddress)
+            && Objects.equals(this.auctionOrgId, mvsInvoiceResult.auctionOrgId)
+            && Objects.equals(this.auctionOrgBankAccount, mvsInvoiceResult.auctionOrgBankAccount)
+            && Objects.equals(this.auctionOrgPhone, mvsInvoiceResult.auctionOrgPhone)
+            && Objects.equals(this.usedVehicleMarketName, mvsInvoiceResult.usedVehicleMarketName)
+            && Objects.equals(this.usedVehicleMarketId, mvsInvoiceResult.usedVehicleMarketId)
+            && Objects.equals(this.usedVehicleMarketAddress, mvsInvoiceResult.usedVehicleMarketAddress)
+            && Objects.equals(this.usedVehicleMarketBankAccount, mvsInvoiceResult.usedVehicleMarketBankAccount)
+            && Objects.equals(this.usedVehicleMarketPhone, mvsInvoiceResult.usedVehicleMarketPhone)
+            && Objects.equals(this.remark, mvsInvoiceResult.remark)
+            && Objects.equals(this.drawerName, mvsInvoiceResult.drawerName)
+            && Objects.equals(this.type, mvsInvoiceResult.type)
+            && Objects.equals(this.textLocation, mvsInvoiceResult.textLocation)
+            && Objects.equals(this.confidence, mvsInvoiceResult.confidence);
     }
 
     @Override
@@ -812,11 +1272,16 @@ public class MvsInvoiceResult {
             buyerName,
             buyerOrganizationNumber,
             buyerId,
+            buyerAddress,
+            buyerPhone,
             sellerName,
             sellerPhone,
             sellerId,
             sellerAccount,
             sellerAddress,
+            licencePlateNumber,
+            registrationNumber,
+            deptMotorVehicles,
             sellerBank,
             vehicleType,
             brandModel,
@@ -836,7 +1301,22 @@ public class MvsInvoiceResult {
             taxExclusivePrice,
             total,
             totalChinese,
-            fiscalCode);
+            fiscalCode,
+            auctionOrgName,
+            auctionOrgAddress,
+            auctionOrgId,
+            auctionOrgBankAccount,
+            auctionOrgPhone,
+            usedVehicleMarketName,
+            usedVehicleMarketId,
+            usedVehicleMarketAddress,
+            usedVehicleMarketBankAccount,
+            usedVehicleMarketPhone,
+            remark,
+            drawerName,
+            type,
+            textLocation,
+            confidence);
     }
 
     @Override
@@ -852,11 +1332,16 @@ public class MvsInvoiceResult {
         sb.append("    buyerName: ").append(toIndentedString(buyerName)).append("\n");
         sb.append("    buyerOrganizationNumber: ").append(toIndentedString(buyerOrganizationNumber)).append("\n");
         sb.append("    buyerId: ").append(toIndentedString(buyerId)).append("\n");
+        sb.append("    buyerAddress: ").append(toIndentedString(buyerAddress)).append("\n");
+        sb.append("    buyerPhone: ").append(toIndentedString(buyerPhone)).append("\n");
         sb.append("    sellerName: ").append(toIndentedString(sellerName)).append("\n");
         sb.append("    sellerPhone: ").append(toIndentedString(sellerPhone)).append("\n");
         sb.append("    sellerId: ").append(toIndentedString(sellerId)).append("\n");
         sb.append("    sellerAccount: ").append(toIndentedString(sellerAccount)).append("\n");
         sb.append("    sellerAddress: ").append(toIndentedString(sellerAddress)).append("\n");
+        sb.append("    licencePlateNumber: ").append(toIndentedString(licencePlateNumber)).append("\n");
+        sb.append("    registrationNumber: ").append(toIndentedString(registrationNumber)).append("\n");
+        sb.append("    deptMotorVehicles: ").append(toIndentedString(deptMotorVehicles)).append("\n");
         sb.append("    sellerBank: ").append(toIndentedString(sellerBank)).append("\n");
         sb.append("    vehicleType: ").append(toIndentedString(vehicleType)).append("\n");
         sb.append("    brandModel: ").append(toIndentedString(brandModel)).append("\n");
@@ -879,6 +1364,23 @@ public class MvsInvoiceResult {
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    totalChinese: ").append(toIndentedString(totalChinese)).append("\n");
         sb.append("    fiscalCode: ").append(toIndentedString(fiscalCode)).append("\n");
+        sb.append("    auctionOrgName: ").append(toIndentedString(auctionOrgName)).append("\n");
+        sb.append("    auctionOrgAddress: ").append(toIndentedString(auctionOrgAddress)).append("\n");
+        sb.append("    auctionOrgId: ").append(toIndentedString(auctionOrgId)).append("\n");
+        sb.append("    auctionOrgBankAccount: ").append(toIndentedString(auctionOrgBankAccount)).append("\n");
+        sb.append("    auctionOrgPhone: ").append(toIndentedString(auctionOrgPhone)).append("\n");
+        sb.append("    usedVehicleMarketName: ").append(toIndentedString(usedVehicleMarketName)).append("\n");
+        sb.append("    usedVehicleMarketId: ").append(toIndentedString(usedVehicleMarketId)).append("\n");
+        sb.append("    usedVehicleMarketAddress: ").append(toIndentedString(usedVehicleMarketAddress)).append("\n");
+        sb.append("    usedVehicleMarketBankAccount: ")
+            .append(toIndentedString(usedVehicleMarketBankAccount))
+            .append("\n");
+        sb.append("    usedVehicleMarketPhone: ").append(toIndentedString(usedVehicleMarketPhone)).append("\n");
+        sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
+        sb.append("    drawerName: ").append(toIndentedString(drawerName)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
+        sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
         sb.append("}");
         return sb.toString();
     }

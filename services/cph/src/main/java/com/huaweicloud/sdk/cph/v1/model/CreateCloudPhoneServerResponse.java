@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -25,6 +28,11 @@ public class CreateCloudPhoneServerResponse extends SdkResponse {
     @JsonProperty(value = "product_id")
 
     private String productId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_ids")
+
+    private List<String> serverIds = null;
 
     public CreateCloudPhoneServerResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -77,6 +85,39 @@ public class CreateCloudPhoneServerResponse extends SdkResponse {
         this.productId = productId;
     }
 
+    public CreateCloudPhoneServerResponse withServerIds(List<String> serverIds) {
+        this.serverIds = serverIds;
+        return this;
+    }
+
+    public CreateCloudPhoneServerResponse addServerIdsItem(String serverIdsItem) {
+        if (this.serverIds == null) {
+            this.serverIds = new ArrayList<>();
+        }
+        this.serverIds.add(serverIdsItem);
+        return this;
+    }
+
+    public CreateCloudPhoneServerResponse withServerIds(Consumer<List<String>> serverIdsSetter) {
+        if (this.serverIds == null) {
+            this.serverIds = new ArrayList<>();
+        }
+        serverIdsSetter.accept(this.serverIds);
+        return this;
+    }
+
+    /**
+     * 服务器ID列表
+     * @return serverIds
+     */
+    public List<String> getServerIds() {
+        return serverIds;
+    }
+
+    public void setServerIds(List<String> serverIds) {
+        this.serverIds = serverIds;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -88,12 +129,13 @@ public class CreateCloudPhoneServerResponse extends SdkResponse {
         CreateCloudPhoneServerResponse createCloudPhoneServerResponse = (CreateCloudPhoneServerResponse) o;
         return Objects.equals(this.requestId, createCloudPhoneServerResponse.requestId)
             && Objects.equals(this.orderId, createCloudPhoneServerResponse.orderId)
-            && Objects.equals(this.productId, createCloudPhoneServerResponse.productId);
+            && Objects.equals(this.productId, createCloudPhoneServerResponse.productId)
+            && Objects.equals(this.serverIds, createCloudPhoneServerResponse.serverIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, orderId, productId);
+        return Objects.hash(requestId, orderId, productId, serverIds);
     }
 
     @Override
@@ -103,6 +145,7 @@ public class CreateCloudPhoneServerResponse extends SdkResponse {
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    serverIds: ").append(toIndentedString(serverIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -41,16 +41,6 @@ public class ShowProjectTraceDataResponse extends SdkResponse {
 
     private String downloadUrl;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "allowed_operate")
-
-    private Boolean allowedOperate;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "deletable")
-
-    private Boolean deletable;
-
     public ShowProjectTraceDataResponse withPath(String path) {
         this.path = path;
         return this;
@@ -153,40 +143,6 @@ public class ShowProjectTraceDataResponse extends SdkResponse {
         this.downloadUrl = downloadUrl;
     }
 
-    public ShowProjectTraceDataResponse withAllowedOperate(Boolean allowedOperate) {
-        this.allowedOperate = allowedOperate;
-        return this;
-    }
-
-    /**
-     * 可操作标记
-     * @return allowedOperate
-     */
-    public Boolean getAllowedOperate() {
-        return allowedOperate;
-    }
-
-    public void setAllowedOperate(Boolean allowedOperate) {
-        this.allowedOperate = allowedOperate;
-    }
-
-    public ShowProjectTraceDataResponse withDeletable(Boolean deletable) {
-        this.deletable = deletable;
-        return this;
-    }
-
-    /**
-     * 可删除标记
-     * @return deletable
-     */
-    public Boolean getDeletable() {
-        return deletable;
-    }
-
-    public void setDeletable(Boolean deletable) {
-        this.deletable = deletable;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -201,14 +157,12 @@ public class ShowProjectTraceDataResponse extends SdkResponse {
             && Objects.equals(this.type, showProjectTraceDataResponse.type)
             && Objects.equals(this.size, showProjectTraceDataResponse.size)
             && Objects.equals(this.createTime, showProjectTraceDataResponse.createTime)
-            && Objects.equals(this.downloadUrl, showProjectTraceDataResponse.downloadUrl)
-            && Objects.equals(this.allowedOperate, showProjectTraceDataResponse.allowedOperate)
-            && Objects.equals(this.deletable, showProjectTraceDataResponse.deletable);
+            && Objects.equals(this.downloadUrl, showProjectTraceDataResponse.downloadUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(path, name, type, size, createTime, downloadUrl, allowedOperate, deletable);
+        return Objects.hash(path, name, type, size, createTime, downloadUrl);
     }
 
     @Override
@@ -221,8 +175,6 @@ public class ShowProjectTraceDataResponse extends SdkResponse {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
-        sb.append("    allowedOperate: ").append(toIndentedString(allowedOperate)).append("\n");
-        sb.append("    deletable: ").append(toIndentedString(deletable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

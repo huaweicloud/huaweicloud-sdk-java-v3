@@ -206,6 +206,11 @@ public class Domains {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<EpResourceTag> tags = null;
+
     public Domains withId(String id) {
         this.id = id;
         return this;
@@ -588,6 +593,39 @@ public class Domains {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public Domains withTags(List<EpResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public Domains addTagsItem(EpResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public Domains withTags(Consumer<List<EpResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签信息
+     * @return tags
+     */
+    public List<EpResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<EpResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -614,7 +652,8 @@ public class Domains {
             && Objects.equals(this.originStatus, domains.originStatus)
             && Objects.equals(this.bannedReason, domains.bannedReason)
             && Objects.equals(this.lockedReason, domains.lockedReason)
-            && Objects.equals(this.enterpriseProjectId, domains.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, domains.enterpriseProjectId)
+            && Objects.equals(this.tags, domains.tags);
     }
 
     @Override
@@ -639,7 +678,8 @@ public class Domains {
             originStatus,
             bannedReason,
             lockedReason,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            tags);
     }
 
     @Override
@@ -667,6 +707,7 @@ public class Domains {
         sb.append("    bannedReason: ").append(toIndentedString(bannedReason)).append("\n");
         sb.append("    lockedReason: ").append(toIndentedString(lockedReason)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

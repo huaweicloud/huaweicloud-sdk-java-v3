@@ -850,6 +850,609 @@ public class IoTEdgeMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchListDcDsRequest, BatchListDcDsResponse> batchListDcDs = genForbatchListDcDs();
+
+    private static HttpRequestDef<BatchListDcDsRequest, BatchListDcDsResponse> genForbatchListDcDs() {
+        // basic
+        HttpRequestDef.Builder<BatchListDcDsRequest, BatchListDcDsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, BatchListDcDsRequest.class, BatchListDcDsResponse.class)
+                .withName("BatchListDcDs")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/ots/data-sources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchListDcDsRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            })
+        );
+        builder.<String>withRequestField("module_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchListDcDsRequest::getModuleId, (req, v) -> {
+                req.setModuleId(v);
+            })
+        );
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchListDcDsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchListDcDsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDsRequest, CreateDsResponse> createDs = genForcreateDs();
+
+    private static HttpRequestDef<CreateDsRequest, CreateDsResponse> genForcreateDs() {
+        // basic
+        HttpRequestDef.Builder<CreateDsRequest, CreateDsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDsRequest.class, CreateDsResponse.class)
+                .withName("CreateDs")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/ots/data-sources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDsRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            })
+        );
+        builder.<CreateDcDsReqDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDcDsReqDTO.class),
+            f -> f.withMarshaller(CreateDsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDcDsRequest, DeleteDcDsResponse> deleteDcDs = genFordeleteDcDs();
+
+    private static HttpRequestDef<DeleteDcDsRequest, DeleteDcDsResponse> genFordeleteDcDs() {
+        // basic
+        HttpRequestDef.Builder<DeleteDcDsRequest, DeleteDcDsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDcDsRequest.class, DeleteDcDsResponse.class)
+                .withName("DeleteDcDs")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/ots/data-sources/{ds_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDcDsRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            })
+        );
+        builder.<String>withRequestField("ds_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDcDsRequest::getDsId, (req, v) -> {
+                req.setDsId(v);
+            })
+        );
+
+        // response
+        builder.<String>withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDcDsResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
+        
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDcDsRequest, ShowDcDsResponse> showDcDs = genForshowDcDs();
+
+    private static HttpRequestDef<ShowDcDsRequest, ShowDcDsResponse> genForshowDcDs() {
+        // basic
+        HttpRequestDef.Builder<ShowDcDsRequest, ShowDcDsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDcDsRequest.class, ShowDcDsResponse.class)
+                .withName("ShowDcDs")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/ots/data-sources/{ds_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDcDsRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            })
+        );
+        builder.<String>withRequestField("ds_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDcDsRequest::getDsId, (req, v) -> {
+                req.setDsId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse> synchronizeDcConfigs = genForsynchronizeDcConfigs();
+
+    private static HttpRequestDef<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse> genForsynchronizeDcConfigs() {
+        // basic
+        HttpRequestDef.Builder<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SynchronizeDcConfigsRequest.class, SynchronizeDcConfigsResponse.class)
+                .withName("SynchronizeDcConfigs")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/ots/data-sources/{ds_id}/synchronize")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SynchronizeDcConfigsRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            })
+        );
+        builder.<String>withRequestField("ds_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SynchronizeDcConfigsRequest::getDsId, (req, v) -> {
+                req.setDsId(v);
+            })
+        );
+
+        // response
+        builder.<String>withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SynchronizeDcConfigsResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
+        
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDcDsRequest, UpdateDcDsResponse> updateDcDs = genForupdateDcDs();
+
+    private static HttpRequestDef<UpdateDcDsRequest, UpdateDcDsResponse> genForupdateDcDs() {
+        // basic
+        HttpRequestDef.Builder<UpdateDcDsRequest, UpdateDcDsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDcDsRequest.class, UpdateDcDsResponse.class)
+                .withName("UpdateDcDs")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/ots/data-sources/{ds_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDcDsRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            })
+        );
+        builder.<String>withRequestField("ds_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDcDsRequest::getDsId, (req, v) -> {
+                req.setDsId(v);
+            })
+        );
+        builder.<UpdateDcDsReqDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDcDsReqDTO.class),
+            f -> f.withMarshaller(UpdateDcDsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchListDcDevicesRequest, BatchListDcDevicesResponse> batchListDcDevices = genForbatchListDcDevices();
+
+    private static HttpRequestDef<BatchListDcDevicesRequest, BatchListDcDevicesResponse> genForbatchListDcDevices() {
+        // basic
+        HttpRequestDef.Builder<BatchListDcDevicesRequest, BatchListDcDevicesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, BatchListDcDevicesRequest.class, BatchListDcDevicesResponse.class)
+                .withName("BatchListDcDevices")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/ots/data-sources/{ds_id}/devices")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchListDcDevicesRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            })
+        );
+        builder.<String>withRequestField("ds_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchListDcDevicesRequest::getDsId, (req, v) -> {
+                req.setDsId(v);
+            })
+        );
+        builder.<String>withRequestField("device_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchListDcDevicesRequest::getDeviceId, (req, v) -> {
+                req.setDeviceId(v);
+            })
+        );
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchListDcDevicesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchListDcDevicesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchListDcPointsRequest, BatchListDcPointsResponse> batchListDcPoints = genForbatchListDcPoints();
+
+    private static HttpRequestDef<BatchListDcPointsRequest, BatchListDcPointsResponse> genForbatchListDcPoints() {
+        // basic
+        HttpRequestDef.Builder<BatchListDcPointsRequest, BatchListDcPointsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, BatchListDcPointsRequest.class, BatchListDcPointsResponse.class)
+                .withName("BatchListDcPoints")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/ots/data-sources/{ds_id}/points")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchListDcPointsRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            })
+        );
+        builder.<String>withRequestField("ds_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchListDcPointsRequest::getDsId, (req, v) -> {
+                req.setDsId(v);
+            })
+        );
+        builder.<String>withRequestField("point_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchListDcPointsRequest::getPointId, (req, v) -> {
+                req.setPointId(v);
+            })
+        );
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchListDcPointsRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.<String>withRequestField("property",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchListDcPointsRequest::getProperty, (req, v) -> {
+                req.setProperty(v);
+            })
+        );
+        builder.<String>withRequestField("device_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchListDcPointsRequest::getDeviceId, (req, v) -> {
+                req.setDeviceId(v);
+            })
+        );
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchListDcPointsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchListDcPointsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDcPointRequest, CreateDcPointResponse> createDcPoint = genForcreateDcPoint();
+
+    private static HttpRequestDef<CreateDcPointRequest, CreateDcPointResponse> genForcreateDcPoint() {
+        // basic
+        HttpRequestDef.Builder<CreateDcPointRequest, CreateDcPointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDcPointRequest.class, CreateDcPointResponse.class)
+                .withName("CreateDcPoint")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/ots/data-sources/{ds_id}/points")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDcPointRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            })
+        );
+        builder.<String>withRequestField("ds_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDcPointRequest::getDsId, (req, v) -> {
+                req.setDsId(v);
+            })
+        );
+        builder.<CreateDcPointReqDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDcPointReqDTO.class),
+            f -> f.withMarshaller(CreateDcPointRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDcPointRequest, DeleteDcPointResponse> deleteDcPoint = genFordeleteDcPoint();
+
+    private static HttpRequestDef<DeleteDcPointRequest, DeleteDcPointResponse> genFordeleteDcPoint() {
+        // basic
+        HttpRequestDef.Builder<DeleteDcPointRequest, DeleteDcPointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDcPointRequest.class, DeleteDcPointResponse.class)
+                .withName("DeleteDcPoint")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/ots/data-sources/{ds_id}/points/{point_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDcPointRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            })
+        );
+        builder.<String>withRequestField("ds_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDcPointRequest::getDsId, (req, v) -> {
+                req.setDsId(v);
+            })
+        );
+        builder.<String>withRequestField("point_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDcPointRequest::getPointId, (req, v) -> {
+                req.setPointId(v);
+            })
+        );
+        builder.<String>withRequestField("device_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDcPointRequest::getDeviceId, (req, v) -> {
+                req.setDeviceId(v);
+            })
+        );
+        builder.<String>withRequestField("property",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDcPointRequest::getProperty, (req, v) -> {
+                req.setProperty(v);
+            })
+        );
+
+        // response
+        builder.<String>withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDcPointResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
+        
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDcPointRequest, ShowDcPointResponse> showDcPoint = genForshowDcPoint();
+
+    private static HttpRequestDef<ShowDcPointRequest, ShowDcPointResponse> genForshowDcPoint() {
+        // basic
+        HttpRequestDef.Builder<ShowDcPointRequest, ShowDcPointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDcPointRequest.class, ShowDcPointResponse.class)
+                .withName("ShowDcPoint")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/ots/data-sources/{ds_id}/points/{point_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDcPointRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            })
+        );
+        builder.<String>withRequestField("ds_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDcPointRequest::getDsId, (req, v) -> {
+                req.setDsId(v);
+            })
+        );
+        builder.<String>withRequestField("point_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDcPointRequest::getPointId, (req, v) -> {
+                req.setPointId(v);
+            })
+        );
+        builder.<String>withRequestField("device_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDcPointRequest::getDeviceId, (req, v) -> {
+                req.setDeviceId(v);
+            })
+        );
+        builder.<String>withRequestField("property",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDcPointRequest::getProperty, (req, v) -> {
+                req.setProperty(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDcPointRequest, UpdateDcPointResponse> updateDcPoint = genForupdateDcPoint();
+
+    private static HttpRequestDef<UpdateDcPointRequest, UpdateDcPointResponse> genForupdateDcPoint() {
+        // basic
+        HttpRequestDef.Builder<UpdateDcPointRequest, UpdateDcPointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDcPointRequest.class, UpdateDcPointResponse.class)
+                .withName("UpdateDcPoint")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/ots/data-sources/{ds_id}/points/{point_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDcPointRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            })
+        );
+        builder.<String>withRequestField("ds_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDcPointRequest::getDsId, (req, v) -> {
+                req.setDsId(v);
+            })
+        );
+        builder.<String>withRequestField("point_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDcPointRequest::getPointId, (req, v) -> {
+                req.setPointId(v);
+            })
+        );
+        builder.<UpdateDcPointReqDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDcPointReqDTO.class),
+            f -> f.withMarshaller(UpdateDcPointRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateExternalEntityRequest, CreateExternalEntityResponse> createExternalEntity = genForcreateExternalEntity();
 
     private static HttpRequestDef<CreateExternalEntityRequest, CreateExternalEntityResponse> genForcreateExternalEntity() {
@@ -1286,6 +1889,151 @@ public class IoTEdgeMeta {
 
         // response
 
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportPointsRequest, ImportPointsResponse> importPoints = genForimportPoints();
+
+    private static HttpRequestDef<ImportPointsRequest, ImportPointsResponse> genForimportPoints() {
+        // basic
+        HttpRequestDef.Builder<ImportPointsRequest, ImportPointsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ImportPointsRequest.class, ImportPointsResponse.class)
+                .withName("ImportPoints")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/ots/data-sources/{ds_id}/import-points")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportPointsRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            })
+        );
+        builder.<String>withRequestField("ds_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportPointsRequest::getDsId, (req, v) -> {
+                req.setDsId(v);
+            })
+        );
+        builder.<ImportPointsRequest.UpdateTypeEnum>withRequestField("update_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportPointsRequest.UpdateTypeEnum.class),
+            f -> f.withMarshaller(ImportPointsRequest::getUpdateType, (req, v) -> {
+                req.setUpdateType(v);
+            })
+        );
+        builder.<ImportPointsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportPointsRequestBody.class),
+            f -> f.withMarshaller(ImportPointsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        builder.<String>withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ImportPointsResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
+        
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPointTemplateRequest, ShowPointTemplateResponse> showPointTemplate = genForshowPointTemplate();
+
+    private static HttpRequestDef<ShowPointTemplateRequest, ShowPointTemplateResponse> genForshowPointTemplate() {
+        // basic
+        HttpRequestDef.Builder<ShowPointTemplateRequest, ShowPointTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPointTemplateRequest.class, ShowPointTemplateResponse.class)
+                .withName("ShowPointTemplate")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/ots/data-sources/{ds_id}/download-template")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPointTemplateRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            })
+        );
+        builder.<String>withRequestField("ds_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPointTemplateRequest::getDsId, (req, v) -> {
+                req.setDsId(v);
+            })
+        );
+
+        // response
+        builder.<String>withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPointTemplateResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
+        
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPointsRequest, ShowPointsResponse> showPoints = genForshowPoints();
+
+    private static HttpRequestDef<ShowPointsRequest, ShowPointsResponse> genForshowPoints() {
+        // basic
+        HttpRequestDef.Builder<ShowPointsRequest, ShowPointsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPointsRequest.class, ShowPointsResponse.class)
+                .withName("ShowPoints")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/ots/data-sources/{ds_id}/export-points")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPointsRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            })
+        );
+        builder.<String>withRequestField("ds_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPointsRequest::getDsId, (req, v) -> {
+                req.setDsId(v);
+            })
+        );
+
+        // response
+        builder.<String>withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPointsResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
+        
 
         return builder.build();
     }

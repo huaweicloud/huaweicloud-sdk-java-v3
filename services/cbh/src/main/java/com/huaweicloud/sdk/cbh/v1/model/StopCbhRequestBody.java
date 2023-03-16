@@ -4,10 +4,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
- * 关闭CBH实例请求对象
+ * 关闭云堡垒机实例请求对象。
  */
 public class StopCbhRequestBody {
 
@@ -16,18 +15,13 @@ public class StopCbhRequestBody {
 
     private String instanceId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "reboot")
-
-    private RebootType reboot;
-
     public StopCbhRequestBody withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
     /**
-     * 实例的server id
+     * 云堡垒机实例ID，使用UUID格式。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -36,32 +30,6 @@ public class StopCbhRequestBody {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
-    }
-
-    public StopCbhRequestBody withReboot(RebootType reboot) {
-        this.reboot = reboot;
-        return this;
-    }
-
-    public StopCbhRequestBody withReboot(Consumer<RebootType> rebootSetter) {
-        if (this.reboot == null) {
-            this.reboot = new RebootType();
-            rebootSetter.accept(this.reboot);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get reboot
-     * @return reboot
-     */
-    public RebootType getReboot() {
-        return reboot;
-    }
-
-    public void setReboot(RebootType reboot) {
-        this.reboot = reboot;
     }
 
     @Override
@@ -73,13 +41,12 @@ public class StopCbhRequestBody {
             return false;
         }
         StopCbhRequestBody stopCbhRequestBody = (StopCbhRequestBody) o;
-        return Objects.equals(this.instanceId, stopCbhRequestBody.instanceId)
-            && Objects.equals(this.reboot, stopCbhRequestBody.reboot);
+        return Objects.equals(this.instanceId, stopCbhRequestBody.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, reboot);
+        return Objects.hash(instanceId);
     }
 
     @Override
@@ -87,7 +54,6 @@ public class StopCbhRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class StopCbhRequestBody {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    reboot: ").append(toIndentedString(reboot)).append("\n");
         sb.append("}");
         return sb.toString();
     }

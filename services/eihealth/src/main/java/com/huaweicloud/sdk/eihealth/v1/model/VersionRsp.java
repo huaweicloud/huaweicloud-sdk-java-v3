@@ -24,9 +24,9 @@ public class VersionRsp {
     private String publisher;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "descritpion")
+    @JsonProperty(value = "description")
 
-    private String descritpion;
+    private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "summary")
@@ -102,21 +102,21 @@ public class VersionRsp {
         this.publisher = publisher;
     }
 
-    public VersionRsp withDescritpion(String descritpion) {
-        this.descritpion = descritpion;
+    public VersionRsp withDescription(String description) {
+        this.description = description;
         return this;
     }
 
     /**
      * 资产长描述
-     * @return descritpion
+     * @return description
      */
-    public String getDescritpion() {
-        return descritpion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescritpion(String descritpion) {
-        this.descritpion = descritpion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public VersionRsp withSummary(String summary) {
@@ -281,7 +281,7 @@ public class VersionRsp {
         }
         VersionRsp versionRsp = (VersionRsp) o;
         return Objects.equals(this.version, versionRsp.version) && Objects.equals(this.publisher, versionRsp.publisher)
-            && Objects.equals(this.descritpion, versionRsp.descritpion)
+            && Objects.equals(this.description, versionRsp.description)
             && Objects.equals(this.summary, versionRsp.summary) && Objects.equals(this.license, versionRsp.license)
             && Objects.equals(this.status, versionRsp.status)
             && Objects.equals(this.failedReason, versionRsp.failedReason)
@@ -294,7 +294,7 @@ public class VersionRsp {
     public int hashCode() {
         return Objects.hash(version,
             publisher,
-            descritpion,
+            description,
             summary,
             license,
             status,
@@ -311,7 +311,7 @@ public class VersionRsp {
         sb.append("class VersionRsp {\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    publisher: ").append(toIndentedString(publisher)).append("\n");
-        sb.append("    descritpion: ").append(toIndentedString(descritpion)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
         sb.append("    license: ").append(toIndentedString(license)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

@@ -27,7 +27,7 @@ public class InstallInstanceEipRequest {
     }
 
     /**
-     * server_id
+     * 云堡垒机实例ID，使用UUID格式表示。
      * @return serverId
      */
     public String getServerId() {

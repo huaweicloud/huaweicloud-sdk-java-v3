@@ -60,6 +60,11 @@ public class DataJobRsp {
 
     private String failedReason;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "additions")
+
+    private String additions;
+
     public DataJobRsp withCreator(String creator) {
         this.creator = creator;
         return this;
@@ -230,6 +235,23 @@ public class DataJobRsp {
         this.failedReason = failedReason;
     }
 
+    public DataJobRsp withAdditions(String additions) {
+        this.additions = additions;
+        return this;
+    }
+
+    /**
+     * 附加信息
+     * @return additions
+     */
+    public String getAdditions() {
+        return additions;
+    }
+
+    public void setAdditions(String additions) {
+        this.additions = additions;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -244,13 +266,23 @@ public class DataJobRsp {
             && Objects.equals(this.createTime, dataJobRsp.createTime) && Objects.equals(this.status, dataJobRsp.status)
             && Objects.equals(this.finishCount, dataJobRsp.finishCount)
             && Objects.equals(this.totalCount, dataJobRsp.totalCount) && Objects.equals(this.type, dataJobRsp.type)
-            && Objects.equals(this.failedReason, dataJobRsp.failedReason);
+            && Objects.equals(this.failedReason, dataJobRsp.failedReason)
+            && Objects.equals(this.additions, dataJobRsp.additions);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(creator, endTime, id, name, createTime, status, finishCount, totalCount, type, failedReason);
+        return Objects.hash(creator,
+            endTime,
+            id,
+            name,
+            createTime,
+            status,
+            finishCount,
+            totalCount,
+            type,
+            failedReason,
+            additions);
     }
 
     @Override
@@ -267,6 +299,7 @@ public class DataJobRsp {
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");
+        sb.append("    additions: ").append(toIndentedString(additions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

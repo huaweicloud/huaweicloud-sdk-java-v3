@@ -84,6 +84,11 @@ public class ShowDataJobResponse extends SdkResponse {
 
     private String failedReason;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "additions")
+
+    private String additions;
+
     public ShowDataJobResponse withCompleteData(List<String> completeData) {
         this.completeData = completeData;
         return this;
@@ -386,6 +391,23 @@ public class ShowDataJobResponse extends SdkResponse {
         this.failedReason = failedReason;
     }
 
+    public ShowDataJobResponse withAdditions(String additions) {
+        this.additions = additions;
+        return this;
+    }
+
+    /**
+     * 附加信息
+     * @return additions
+     */
+    public String getAdditions() {
+        return additions;
+    }
+
+    public void setAdditions(String additions) {
+        this.additions = additions;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -407,7 +429,8 @@ public class ShowDataJobResponse extends SdkResponse {
             && Objects.equals(this.status, showDataJobResponse.status)
             && Objects.equals(this.destinations, showDataJobResponse.destinations)
             && Objects.equals(this.type, showDataJobResponse.type)
-            && Objects.equals(this.failedReason, showDataJobResponse.failedReason);
+            && Objects.equals(this.failedReason, showDataJobResponse.failedReason)
+            && Objects.equals(this.additions, showDataJobResponse.additions);
     }
 
     @Override
@@ -425,7 +448,8 @@ public class ShowDataJobResponse extends SdkResponse {
             status,
             destinations,
             type,
-            failedReason);
+            failedReason,
+            additions);
     }
 
     @Override
@@ -446,6 +470,7 @@ public class ShowDataJobResponse extends SdkResponse {
         sb.append("    destinations: ").append(toIndentedString(destinations)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");
+        sb.append("    additions: ").append(toIndentedString(additions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

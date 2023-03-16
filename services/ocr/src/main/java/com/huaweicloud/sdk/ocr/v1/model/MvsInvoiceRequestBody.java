@@ -20,6 +20,21 @@ public class MvsInvoiceRequestBody {
 
     private String url;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_text_location")
+
+    private Boolean returnTextLocation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_confidence")
+
+    private Boolean returnConfidence;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public MvsInvoiceRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -54,6 +69,57 @@ public class MvsInvoiceRequestBody {
         this.url = url;
     }
 
+    public MvsInvoiceRequestBody withReturnTextLocation(Boolean returnTextLocation) {
+        this.returnTextLocation = returnTextLocation;
+        return this;
+    }
+
+    /**
+     * 如果为True，返回体中会包含text_location对象，内容是各字段的检测框四点坐标。如果是False或者没有这个key，则返回体中不包含text_location对象。 
+     * @return returnTextLocation
+     */
+    public Boolean getReturnTextLocation() {
+        return returnTextLocation;
+    }
+
+    public void setReturnTextLocation(Boolean returnTextLocation) {
+        this.returnTextLocation = returnTextLocation;
+    }
+
+    public MvsInvoiceRequestBody withReturnConfidence(Boolean returnConfidence) {
+        this.returnConfidence = returnConfidence;
+        return this;
+    }
+
+    /**
+     * 如果为True，返回体中会包含confidence对象，内容是各字段的置信度。如果是False或者没有这个key，则返回体中不包含confidence对象。 
+     * @return returnConfidence
+     */
+    public Boolean getReturnConfidence() {
+        return returnConfidence;
+    }
+
+    public void setReturnConfidence(Boolean returnConfidence) {
+        this.returnConfidence = returnConfidence;
+    }
+
+    public MvsInvoiceRequestBody withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 如果没有type字段则默认返回原机动车销售发票出参； 若存在type字段但是不属于 auto、new或者used三个枚举值，API返回AIS.0101入参错误； 如果type为auto，API自动判断发票类型，并在返回参数中添加type出参以指明发票类型； 如果type为new，API在检测出的类型为机动车发票时返回原版机动车发票出参并添加type出参（机动车销售统一发票），不一致时报错AIS.0104图像质量差； 如果type为used，API在检测出的类型为二手车时返回二手车发票出参，并添加type出参（二手车销售统一发票），不一致时报错AIS.0104图像质量差。 
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -64,12 +130,15 @@ public class MvsInvoiceRequestBody {
         }
         MvsInvoiceRequestBody mvsInvoiceRequestBody = (MvsInvoiceRequestBody) o;
         return Objects.equals(this.image, mvsInvoiceRequestBody.image)
-            && Objects.equals(this.url, mvsInvoiceRequestBody.url);
+            && Objects.equals(this.url, mvsInvoiceRequestBody.url)
+            && Objects.equals(this.returnTextLocation, mvsInvoiceRequestBody.returnTextLocation)
+            && Objects.equals(this.returnConfidence, mvsInvoiceRequestBody.returnConfidence)
+            && Objects.equals(this.type, mvsInvoiceRequestBody.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url);
+        return Objects.hash(image, url, returnTextLocation, returnConfidence, type);
     }
 
     @Override
@@ -78,6 +147,9 @@ public class MvsInvoiceRequestBody {
         sb.append("class MvsInvoiceRequestBody {\n");
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    returnTextLocation: ").append(toIndentedString(returnTextLocation)).append("\n");
+        sb.append("    returnConfidence: ").append(toIndentedString(returnConfidence)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

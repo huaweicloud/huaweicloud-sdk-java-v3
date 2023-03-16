@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 网卡信息
+ * 云堡垒机实例网卡信息。
  */
 public class Nics {
 
@@ -26,7 +26,7 @@ public class Nics {
     }
 
     /**
-     * 子网ID
+     * 子网ID，字母数字下划线连接符组成。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -43,7 +43,7 @@ public class Nics {
     }
 
     /**
-     * IP地址，不填或空字符串为自动分配
+     * IP地址，不填或空字符串为自动分配。
      * @return ipAddress
      */
     public String getIpAddress() {

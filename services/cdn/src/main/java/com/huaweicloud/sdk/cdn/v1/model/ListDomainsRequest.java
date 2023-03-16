@@ -325,6 +325,16 @@ public class ListDomainsRequest {
     private Integer pageNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "show_tags")
+
+    private Boolean showTags;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "exact_match")
+
+    private Boolean exactMatch;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -435,6 +445,40 @@ public class ListDomainsRequest {
         this.pageNumber = pageNumber;
     }
 
+    public ListDomainsRequest withShowTags(Boolean showTags) {
+        this.showTags = showTags;
+        return this;
+    }
+
+    /**
+     * 展示标签标识 true：不展示 false：展示。
+     * @return showTags
+     */
+    public Boolean getShowTags() {
+        return showTags;
+    }
+
+    public void setShowTags(Boolean showTags) {
+        this.showTags = showTags;
+    }
+
+    public ListDomainsRequest withExactMatch(Boolean exactMatch) {
+        this.exactMatch = exactMatch;
+        return this;
+    }
+
+    /**
+     * 精准匹配 on：开启 off：关闭。
+     * @return exactMatch
+     */
+    public Boolean getExactMatch() {
+        return exactMatch;
+    }
+
+    public void setExactMatch(Boolean exactMatch) {
+        this.exactMatch = exactMatch;
+    }
+
     public ListDomainsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -467,13 +511,22 @@ public class ListDomainsRequest {
             && Objects.equals(this.serviceArea, listDomainsRequest.serviceArea)
             && Objects.equals(this.pageSize, listDomainsRequest.pageSize)
             && Objects.equals(this.pageNumber, listDomainsRequest.pageNumber)
+            && Objects.equals(this.showTags, listDomainsRequest.showTags)
+            && Objects.equals(this.exactMatch, listDomainsRequest.exactMatch)
             && Objects.equals(this.enterpriseProjectId, listDomainsRequest.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(domainName, businessType, domainStatus, serviceArea, pageSize, pageNumber, enterpriseProjectId);
+        return Objects.hash(domainName,
+            businessType,
+            domainStatus,
+            serviceArea,
+            pageSize,
+            pageNumber,
+            showTags,
+            exactMatch,
+            enterpriseProjectId);
     }
 
     @Override
@@ -486,6 +539,8 @@ public class ListDomainsRequest {
         sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
         sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
         sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
+        sb.append("    showTags: ").append(toIndentedString(showTags)).append("\n");
+        sb.append("    exactMatch: ").append(toIndentedString(exactMatch)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();

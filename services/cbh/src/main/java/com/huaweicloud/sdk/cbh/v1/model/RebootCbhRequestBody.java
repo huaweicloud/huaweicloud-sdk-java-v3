@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 重启CBH实例请求对象
+ * 重启云堡垒机实例请求对象。
  */
 public class RebootCbhRequestBody {
 
@@ -27,7 +27,7 @@ public class RebootCbhRequestBody {
     }
 
     /**
-     * 实例的server id
+     * 云堡垒机实例ID，使用UUID格式。
      * @return instanceId
      */
     public String getInstanceId() {

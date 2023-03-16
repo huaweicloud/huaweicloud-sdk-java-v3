@@ -57,6 +57,11 @@ public class PerformanceResourceRsp {
     private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "running_job_count")
+
+    private Integer runningJobCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_quota")
 
     private Integer jobQuota;
@@ -67,9 +72,19 @@ public class PerformanceResourceRsp {
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "failure_reason")
+
+    private String failureReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "schedulable")
+
+    private Boolean schedulable;
 
     public PerformanceResourceRsp withId(String id) {
         this.id = id;
@@ -233,6 +248,23 @@ public class PerformanceResourceRsp {
         this.periodNum = periodNum;
     }
 
+    public PerformanceResourceRsp withRunningJobCount(Integer runningJobCount) {
+        this.runningJobCount = runningJobCount;
+        return this;
+    }
+
+    /**
+     * 作业运行数
+     * @return runningJobCount
+     */
+    public Integer getRunningJobCount() {
+        return runningJobCount;
+    }
+
+    public void setRunningJobCount(Integer runningJobCount) {
+        this.runningJobCount = runningJobCount;
+    }
+
     public PerformanceResourceRsp withJobQuota(Integer jobQuota) {
         this.jobQuota = jobQuota;
         return this;
@@ -267,6 +299,23 @@ public class PerformanceResourceRsp {
         this.createTime = createTime;
     }
 
+    public PerformanceResourceRsp withFailureReason(String failureReason) {
+        this.failureReason = failureReason;
+        return this;
+    }
+
+    /**
+     * 失败原因
+     * @return failureReason
+     */
+    public String getFailureReason() {
+        return failureReason;
+    }
+
+    public void setFailureReason(String failureReason) {
+        this.failureReason = failureReason;
+    }
+
     public PerformanceResourceRsp withStatus(String status) {
         this.status = status;
         return this;
@@ -282,6 +331,23 @@ public class PerformanceResourceRsp {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public PerformanceResourceRsp withSchedulable(Boolean schedulable) {
+        this.schedulable = schedulable;
+        return this;
+    }
+
+    /**
+     * 资源是否可调度
+     * @return schedulable
+     */
+    public Boolean getSchedulable() {
+        return schedulable;
+    }
+
+    public void setSchedulable(Boolean schedulable) {
+        this.schedulable = schedulable;
     }
 
     @Override
@@ -302,9 +368,12 @@ public class PerformanceResourceRsp {
             && Objects.equals(this.freeSpace, performanceResourceRsp.freeSpace)
             && Objects.equals(this.chargeMode, performanceResourceRsp.chargeMode)
             && Objects.equals(this.periodNum, performanceResourceRsp.periodNum)
+            && Objects.equals(this.runningJobCount, performanceResourceRsp.runningJobCount)
             && Objects.equals(this.jobQuota, performanceResourceRsp.jobQuota)
             && Objects.equals(this.createTime, performanceResourceRsp.createTime)
-            && Objects.equals(this.status, performanceResourceRsp.status);
+            && Objects.equals(this.failureReason, performanceResourceRsp.failureReason)
+            && Objects.equals(this.status, performanceResourceRsp.status)
+            && Objects.equals(this.schedulable, performanceResourceRsp.schedulable);
     }
 
     @Override
@@ -318,9 +387,12 @@ public class PerformanceResourceRsp {
             freeSpace,
             chargeMode,
             periodNum,
+            runningJobCount,
             jobQuota,
             createTime,
-            status);
+            failureReason,
+            status,
+            schedulable);
     }
 
     @Override
@@ -336,9 +408,12 @@ public class PerformanceResourceRsp {
         sb.append("    freeSpace: ").append(toIndentedString(freeSpace)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
+        sb.append("    runningJobCount: ").append(toIndentedString(runningJobCount)).append("\n");
         sb.append("    jobQuota: ").append(toIndentedString(jobQuota)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    failureReason: ").append(toIndentedString(failureReason)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    schedulable: ").append(toIndentedString(schedulable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

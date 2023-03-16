@@ -34,6 +34,11 @@ public class TaskDefinitionDto {
     private String wholeOutputDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "io_acc_type")
+
+    private String ioAccType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
     private TaskResourceDto resources;
@@ -119,6 +124,23 @@ public class TaskDefinitionDto {
 
     public void setWholeOutputDir(String wholeOutputDir) {
         this.wholeOutputDir = wholeOutputDir;
+    }
+
+    public TaskDefinitionDto withIoAccType(String ioAccType) {
+        this.ioAccType = ioAccType;
+        return this;
+    }
+
+    /**
+     * 子任务使用的IO加速类型，不填表示不使用；
+     * @return ioAccType
+     */
+    public String getIoAccType() {
+        return ioAccType;
+    }
+
+    public void setIoAccType(String ioAccType) {
+        this.ioAccType = ioAccType;
     }
 
     public TaskDefinitionDto withResources(TaskResourceDto resources) {
@@ -245,6 +267,7 @@ public class TaskDefinitionDto {
             && Objects.equals(this.displayName, taskDefinitionDto.displayName)
             && Objects.equals(this.outputDir, taskDefinitionDto.outputDir)
             && Objects.equals(this.wholeOutputDir, taskDefinitionDto.wholeOutputDir)
+            && Objects.equals(this.ioAccType, taskDefinitionDto.ioAccType)
             && Objects.equals(this.resources, taskDefinitionDto.resources)
             && Objects.equals(this.location, taskDefinitionDto.location)
             && Objects.equals(this.inputs, taskDefinitionDto.inputs)
@@ -253,7 +276,8 @@ public class TaskDefinitionDto {
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskName, displayName, outputDir, wholeOutputDir, resources, location, inputs, appInfo);
+        return Objects
+            .hash(taskName, displayName, outputDir, wholeOutputDir, ioAccType, resources, location, inputs, appInfo);
     }
 
     @Override
@@ -264,6 +288,7 @@ public class TaskDefinitionDto {
         sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
         sb.append("    outputDir: ").append(toIndentedString(outputDir)).append("\n");
         sb.append("    wholeOutputDir: ").append(toIndentedString(wholeOutputDir)).append("\n");
+        sb.append("    ioAccType: ").append(toIndentedString(ioAccType)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("    inputs: ").append(toIndentedString(inputs)).append("\n");

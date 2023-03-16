@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -130,12 +129,12 @@ public class ShowJobInfosResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
 
-    private OffsetDateTime beginTime;
+    private String beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private OffsetDateTime endTime;
+    private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
@@ -234,7 +233,7 @@ public class ShowJobInfosResponse extends SdkResponse {
         this.jobType = jobType;
     }
 
-    public ShowJobInfosResponse withBeginTime(OffsetDateTime beginTime) {
+    public ShowJobInfosResponse withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
     }
@@ -243,15 +242,15 @@ public class ShowJobInfosResponse extends SdkResponse {
      * 开始时间。时间戳格式为ISO 8601，例如：2019-04-25T20:04:47.591Z
      * @return beginTime
      */
-    public OffsetDateTime getBeginTime() {
+    public String getBeginTime() {
         return beginTime;
     }
 
-    public void setBeginTime(OffsetDateTime beginTime) {
+    public void setBeginTime(String beginTime) {
         this.beginTime = beginTime;
     }
 
-    public ShowJobInfosResponse withEndTime(OffsetDateTime endTime) {
+    public ShowJobInfosResponse withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -260,11 +259,11 @@ public class ShowJobInfosResponse extends SdkResponse {
      * 结束时间。时间戳格式为ISO 8601，例如：2019-04-26T20:04:47.591Z
      * @return endTime
      */
-    public OffsetDateTime getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(OffsetDateTime endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 

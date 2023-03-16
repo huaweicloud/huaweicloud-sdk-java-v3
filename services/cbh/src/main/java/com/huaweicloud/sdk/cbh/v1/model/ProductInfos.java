@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 产品信息
+ * 云堡垒机产品信息。
  */
 public class ProductInfos {
 
@@ -31,11 +31,6 @@ public class ProductInfos {
     private String resourceSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "available_zone_id")
-
-    private String availableZoneId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_size_measure_id")
 
     private String resourceSizeMeasureId;
@@ -51,7 +46,7 @@ public class ProductInfos {
     }
 
     /**
-     * 产品标识，通过订购询价接口获得
+     * 产品标识，通过订购询价接口获得。
      * @return productId
      */
     public String getProductId() {
@@ -68,7 +63,7 @@ public class ProductInfos {
     }
 
     /**
-     * CBH云服务类型
+     * 云服务类型，填写“hws.service.type.cbh”。
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -85,7 +80,7 @@ public class ProductInfos {
     }
 
     /**
-     * CBH资源类型
+     * 云堡垒机资源类型，填写“hws.resource.type.cbh.ins”。
      * @return resourceType
      */
     public String getResourceType() {
@@ -102,7 +97,7 @@ public class ProductInfos {
     }
 
     /**
-     * CBH资源规格
+     * 待创建云堡垒机规格ID，例如： - cbh.basic.50 - cbh.enhance.50 已上线的规格请参见《云堡垒机产品介绍》的“服务版本差异(https://support.huaweicloud.com/productdesc-cbh/cbh_01_0010.html)”章节。
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -113,30 +108,13 @@ public class ProductInfos {
         this.resourceSpecCode = resourceSpecCode;
     }
 
-    public ProductInfos withAvailableZoneId(String availableZoneId) {
-        this.availableZoneId = availableZoneId;
-        return this;
-    }
-
-    /**
-     * 可用区id
-     * @return availableZoneId
-     */
-    public String getAvailableZoneId() {
-        return availableZoneId;
-    }
-
-    public void setAvailableZoneId(String availableZoneId) {
-        this.availableZoneId = availableZoneId;
-    }
-
     public ProductInfos withResourceSizeMeasureId(String resourceSizeMeasureId) {
         this.resourceSizeMeasureId = resourceSizeMeasureId;
         return this;
     }
 
     /**
-     * 资源容量度量标识
+     * 资源容量度量标识。 - 15：Mbps（购买带宽时使用） - 17：GB（购买云硬盘时使用） - 14：个/次（购买堡垒机使用）
      * @return resourceSizeMeasureId
      */
     public String getResourceSizeMeasureId() {
@@ -153,7 +131,7 @@ public class ProductInfos {
     }
 
     /**
-     * 资源容量大小
+     * 资源容量大小。默认为1
      * @return resourceSize
      */
     public String getResourceSize() {
@@ -177,20 +155,14 @@ public class ProductInfos {
             && Objects.equals(this.cloudServiceType, productInfos.cloudServiceType)
             && Objects.equals(this.resourceType, productInfos.resourceType)
             && Objects.equals(this.resourceSpecCode, productInfos.resourceSpecCode)
-            && Objects.equals(this.availableZoneId, productInfos.availableZoneId)
             && Objects.equals(this.resourceSizeMeasureId, productInfos.resourceSizeMeasureId)
             && Objects.equals(this.resourceSize, productInfos.resourceSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(productId,
-            cloudServiceType,
-            resourceType,
-            resourceSpecCode,
-            availableZoneId,
-            resourceSizeMeasureId,
-            resourceSize);
+        return Objects
+            .hash(productId, cloudServiceType, resourceType, resourceSpecCode, resourceSizeMeasureId, resourceSize);
     }
 
     @Override
@@ -201,7 +173,6 @@ public class ProductInfos {
         sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    resourceSpecCode: ").append(toIndentedString(resourceSpecCode)).append("\n");
-        sb.append("    availableZoneId: ").append(toIndentedString(availableZoneId)).append("\n");
         sb.append("    resourceSizeMeasureId: ").append(toIndentedString(resourceSizeMeasureId)).append("\n");
         sb.append("    resourceSize: ").append(toIndentedString(resourceSize)).append("\n");
         sb.append("}");

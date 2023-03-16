@@ -19,16 +19,6 @@ public class ShowTaskInstanceMetricDataResponse extends SdkResponse {
 
     private List<DataPointDto> dataPoints = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "metric_name")
-
-    private String metricName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resource_id")
-
-    private String resourceId;
-
     public ShowTaskInstanceMetricDataResponse withDataPoints(List<DataPointDto> dataPoints) {
         this.dataPoints = dataPoints;
         return this;
@@ -62,40 +52,6 @@ public class ShowTaskInstanceMetricDataResponse extends SdkResponse {
         this.dataPoints = dataPoints;
     }
 
-    public ShowTaskInstanceMetricDataResponse withMetricName(String metricName) {
-        this.metricName = metricName;
-        return this;
-    }
-
-    /**
-     * 监控指标名称
-     * @return metricName
-     */
-    public String getMetricName() {
-        return metricName;
-    }
-
-    public void setMetricName(String metricName) {
-        this.metricName = metricName;
-    }
-
-    public ShowTaskInstanceMetricDataResponse withResourceId(String resourceId) {
-        this.resourceId = resourceId;
-        return this;
-    }
-
-    /**
-     * 监控资源id
-     * @return resourceId
-     */
-    public String getResourceId() {
-        return resourceId;
-    }
-
-    public void setResourceId(String resourceId) {
-        this.resourceId = resourceId;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -105,14 +61,12 @@ public class ShowTaskInstanceMetricDataResponse extends SdkResponse {
             return false;
         }
         ShowTaskInstanceMetricDataResponse showTaskInstanceMetricDataResponse = (ShowTaskInstanceMetricDataResponse) o;
-        return Objects.equals(this.dataPoints, showTaskInstanceMetricDataResponse.dataPoints)
-            && Objects.equals(this.metricName, showTaskInstanceMetricDataResponse.metricName)
-            && Objects.equals(this.resourceId, showTaskInstanceMetricDataResponse.resourceId);
+        return Objects.equals(this.dataPoints, showTaskInstanceMetricDataResponse.dataPoints);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dataPoints, metricName, resourceId);
+        return Objects.hash(dataPoints);
     }
 
     @Override
@@ -120,8 +74,6 @@ public class ShowTaskInstanceMetricDataResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowTaskInstanceMetricDataResponse {\n");
         sb.append("    dataPoints: ").append(toIndentedString(dataPoints)).append("\n");
-        sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
-        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

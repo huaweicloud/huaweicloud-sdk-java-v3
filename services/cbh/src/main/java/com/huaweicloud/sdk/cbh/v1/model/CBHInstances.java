@@ -9,14 +9,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建堡垒机实例请求body
+ * 创建堡垒机实例请求参数。
  */
 public class CBHInstances {
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "image_ref")
-
-    private String imageRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor_ref")
@@ -27,31 +22,6 @@ public class CBHInstances {
     @JsonProperty(value = "instance_name")
 
     private String instanceName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "personality")
-
-    private Personality personality;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user_data")
-
-    private String userData;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "admin_password")
-
-    private String adminPassword;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "key_name")
-
-    private String keyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
@@ -69,21 +39,6 @@ public class CBHInstances {
     private PublicIp publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "count")
-
-    private Integer count;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "root_volume")
-
-    private RootVolume rootVolume;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "data_volumes")
-
-    private DataVolumes dataVolumes;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
     private List<SecurityGroup> securityGroups = null;
@@ -99,16 +54,6 @@ public class CBHInstances {
     private String slaveAvailabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "extend_param")
-
-    private ExtendParam extendParam;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "metadata")
-
-    private String metadata;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "comment")
 
     private String comment;
@@ -117,16 +62,6 @@ public class CBHInstances {
     @JsonProperty(value = "region")
 
     private String region;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region_id")
-
-    private String regionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resource_spec_code")
-
-    private String resourceSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hx_password")
@@ -143,35 +78,13 @@ public class CBHInstances {
 
     private Boolean ipv6Enable;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "end_time")
-
-    private String endTime;
-
-    public CBHInstances withImageRef(String imageRef) {
-        this.imageRef = imageRef;
-        return this;
-    }
-
-    /**
-     * 镜像ID
-     * @return imageRef
-     */
-    public String getImageRef() {
-        return imageRef;
-    }
-
-    public void setImageRef(String imageRef) {
-        this.imageRef = imageRef;
-    }
-
     public CBHInstances withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
     }
 
     /**
-     * 规格ID
+     * 待创建云堡垒机规格ID，例如： - cbh.basic.50 - cbh.enhance.50 已上线的规格请参见《云堡垒机产品介绍》的“服务版本差异(https://support.huaweicloud.com/productdesc-cbh/cbh_01_0010.html)”章节。
      * @return flavorRef
      */
     public String getFlavorRef() {
@@ -188,7 +101,7 @@ public class CBHInstances {
     }
 
     /**
-     * 堡垒机实例名称
+     * 云堡垒机实例名称，取值范围： - 只能由中文字符、英文字母、数字及“_”、“-”组成，且长度为[1-64]个字符。 例如：CBH-6b8e
      * @return instanceName
      */
     public String getInstanceName() {
@@ -199,107 +112,13 @@ public class CBHInstances {
         this.instanceName = instanceName;
     }
 
-    public CBHInstances withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /**
-     * 名字
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public CBHInstances withPersonality(Personality personality) {
-        this.personality = personality;
-        return this;
-    }
-
-    public CBHInstances withPersonality(Consumer<Personality> personalitySetter) {
-        if (this.personality == null) {
-            this.personality = new Personality();
-            personalitySetter.accept(this.personality);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get personality
-     * @return personality
-     */
-    public Personality getPersonality() {
-        return personality;
-    }
-
-    public void setPersonality(Personality personality) {
-        this.personality = personality;
-    }
-
-    public CBHInstances withUserData(String userData) {
-        this.userData = userData;
-        return this;
-    }
-
-    /**
-     * 注入用户数据
-     * @return userData
-     */
-    public String getUserData() {
-        return userData;
-    }
-
-    public void setUserData(String userData) {
-        this.userData = userData;
-    }
-
-    public CBHInstances withAdminPassword(String adminPassword) {
-        this.adminPassword = adminPassword;
-        return this;
-    }
-
-    /**
-     * 初始登录密码
-     * @return adminPassword
-     */
-    public String getAdminPassword() {
-        return adminPassword;
-    }
-
-    public void setAdminPassword(String adminPassword) {
-        this.adminPassword = adminPassword;
-    }
-
-    public CBHInstances withKeyName(String keyName) {
-        this.keyName = keyName;
-        return this;
-    }
-
-    /**
-     * 管理员SSH秘钥登录
-     * @return keyName
-     */
-    public String getKeyName() {
-        return keyName;
-    }
-
-    public void setKeyName(String keyName) {
-        this.keyName = keyName;
-    }
-
     public CBHInstances withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
     /**
-     * VPC ID
+     * 待创建云服务器所属虚拟私有云（简称VPC），需要指定已创建VPC的ID，UUID格式。 VPC的ID可以从控制台或者参考《虚拟私有云接口参考》的“查询VPC”章节获取。 例如：03211ecf-697e-4306-a7a0-6e939bf948de
      * @return vpcId
      */
     public String getVpcId() {
@@ -332,7 +151,7 @@ public class CBHInstances {
     }
 
     /**
-     * 网卡信息
+     * Get nics
      * @return nics
      */
     public List<Nics> getNics() {
@@ -369,77 +188,6 @@ public class CBHInstances {
         this.publicIp = publicIp;
     }
 
-    public CBHInstances withCount(Integer count) {
-        this.count = count;
-        return this;
-    }
-
-    /**
-     * 弹性数量
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return count
-     */
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
-
-    public CBHInstances withRootVolume(RootVolume rootVolume) {
-        this.rootVolume = rootVolume;
-        return this;
-    }
-
-    public CBHInstances withRootVolume(Consumer<RootVolume> rootVolumeSetter) {
-        if (this.rootVolume == null) {
-            this.rootVolume = new RootVolume();
-            rootVolumeSetter.accept(this.rootVolume);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get rootVolume
-     * @return rootVolume
-     */
-    public RootVolume getRootVolume() {
-        return rootVolume;
-    }
-
-    public void setRootVolume(RootVolume rootVolume) {
-        this.rootVolume = rootVolume;
-    }
-
-    public CBHInstances withDataVolumes(DataVolumes dataVolumes) {
-        this.dataVolumes = dataVolumes;
-        return this;
-    }
-
-    public CBHInstances withDataVolumes(Consumer<DataVolumes> dataVolumesSetter) {
-        if (this.dataVolumes == null) {
-            this.dataVolumes = new DataVolumes();
-            dataVolumesSetter.accept(this.dataVolumes);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get dataVolumes
-     * @return dataVolumes
-     */
-    public DataVolumes getDataVolumes() {
-        return dataVolumes;
-    }
-
-    public void setDataVolumes(DataVolumes dataVolumes) {
-        this.dataVolumes = dataVolumes;
-    }
-
     public CBHInstances withSecurityGroups(List<SecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -462,7 +210,7 @@ public class CBHInstances {
     }
 
     /**
-     * 网卡信息
+     * Get securityGroups
      * @return securityGroups
      */
     public List<SecurityGroup> getSecurityGroups() {
@@ -479,7 +227,7 @@ public class CBHInstances {
     }
 
     /**
-     * 分区信息
+     * 创建云堡垒机所在的可用区，需要指定可用区名称。 可参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)获取
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -496,7 +244,7 @@ public class CBHInstances {
     }
 
     /**
-     * 备用区
+     * 创建云堡垒机所在的备机可用区，需要指定备机可用区名称。 可参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)获取
      * @return slaveAvailabilityZone
      */
     public String getSlaveAvailabilityZone() {
@@ -507,56 +255,13 @@ public class CBHInstances {
         this.slaveAvailabilityZone = slaveAvailabilityZone;
     }
 
-    public CBHInstances withExtendParam(ExtendParam extendParam) {
-        this.extendParam = extendParam;
-        return this;
-    }
-
-    public CBHInstances withExtendParam(Consumer<ExtendParam> extendParamSetter) {
-        if (this.extendParam == null) {
-            this.extendParam = new ExtendParam();
-            extendParamSetter.accept(this.extendParam);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get extendParam
-     * @return extendParam
-     */
-    public ExtendParam getExtendParam() {
-        return extendParam;
-    }
-
-    public void setExtendParam(ExtendParam extendParam) {
-        this.extendParam = extendParam;
-    }
-
-    public CBHInstances withMetadata(String metadata) {
-        this.metadata = metadata;
-        return this;
-    }
-
-    /**
-     * 创建云服务云数据
-     * @return metadata
-     */
-    public String getMetadata() {
-        return metadata;
-    }
-
-    public void setMetadata(String metadata) {
-        this.metadata = metadata;
-    }
-
     public CBHInstances withComment(String comment) {
         this.comment = comment;
         return this;
     }
 
     /**
-     * 描述
+     * 云堡垒机实例描述信息。
      * @return comment
      */
     public String getComment() {
@@ -573,7 +278,7 @@ public class CBHInstances {
     }
 
     /**
-     * 云服务所在区域ID
+     * 云服务所在局点ID。
      * @return region
      */
     public String getRegion() {
@@ -584,47 +289,13 @@ public class CBHInstances {
         this.region = region;
     }
 
-    public CBHInstances withRegionId(String regionId) {
-        this.regionId = regionId;
-        return this;
-    }
-
-    /**
-     * region标识
-     * @return regionId
-     */
-    public String getRegionId() {
-        return regionId;
-    }
-
-    public void setRegionId(String regionId) {
-        this.regionId = regionId;
-    }
-
-    public CBHInstances withResourceSpecCode(String resourceSpecCode) {
-        this.resourceSpecCode = resourceSpecCode;
-        return this;
-    }
-
-    /**
-     * 资源规格
-     * @return resourceSpecCode
-     */
-    public String getResourceSpecCode() {
-        return resourceSpecCode;
-    }
-
-    public void setResourceSpecCode(String resourceSpecCode) {
-        this.resourceSpecCode = resourceSpecCode;
-    }
-
     public CBHInstances withHxPassword(String hxPassword) {
         this.hxPassword = hxPassword;
         return this;
     }
 
     /**
-     * 前端登录密码
+     * 堡垒机实例前端登录密码。密码规则：8-32位,不能包含amdin或nidma及其大写形式,必须包含大小写数字特殊字符四种类型中的三种。
      * @return hxPassword
      */
     public String getHxPassword() {
@@ -641,7 +312,7 @@ public class CBHInstances {
     }
 
     /**
-     * 堡垒机机机型
+     * 堡垒机实例类型，填写“OEM”即可。
      * @return bastionType
      */
     public String getBastionType() {
@@ -658,7 +329,7 @@ public class CBHInstances {
     }
 
     /**
-     * 分区信息
+     * 是否支持IPV6，不填默认为false。
      * @return ipv6Enable
      */
     public Boolean getIpv6Enable() {
@@ -667,23 +338,6 @@ public class CBHInstances {
 
     public void setIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
-    }
-
-    public CBHInstances withEndTime(String endTime) {
-        this.endTime = endTime;
-        return this;
-    }
-
-    /**
-     * 订购截止日期
-     * @return endTime
-     */
-    public String getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
     }
 
     @Override
@@ -695,94 +349,53 @@ public class CBHInstances {
             return false;
         }
         CBHInstances cbHInstances = (CBHInstances) o;
-        return Objects.equals(this.imageRef, cbHInstances.imageRef)
-            && Objects.equals(this.flavorRef, cbHInstances.flavorRef)
+        return Objects.equals(this.flavorRef, cbHInstances.flavorRef)
             && Objects.equals(this.instanceName, cbHInstances.instanceName)
-            && Objects.equals(this.name, cbHInstances.name)
-            && Objects.equals(this.personality, cbHInstances.personality)
-            && Objects.equals(this.userData, cbHInstances.userData)
-            && Objects.equals(this.adminPassword, cbHInstances.adminPassword)
-            && Objects.equals(this.keyName, cbHInstances.keyName) && Objects.equals(this.vpcId, cbHInstances.vpcId)
-            && Objects.equals(this.nics, cbHInstances.nics) && Objects.equals(this.publicIp, cbHInstances.publicIp)
-            && Objects.equals(this.count, cbHInstances.count)
-            && Objects.equals(this.rootVolume, cbHInstances.rootVolume)
-            && Objects.equals(this.dataVolumes, cbHInstances.dataVolumes)
+            && Objects.equals(this.vpcId, cbHInstances.vpcId) && Objects.equals(this.nics, cbHInstances.nics)
+            && Objects.equals(this.publicIp, cbHInstances.publicIp)
             && Objects.equals(this.securityGroups, cbHInstances.securityGroups)
             && Objects.equals(this.availabilityZone, cbHInstances.availabilityZone)
             && Objects.equals(this.slaveAvailabilityZone, cbHInstances.slaveAvailabilityZone)
-            && Objects.equals(this.extendParam, cbHInstances.extendParam)
-            && Objects.equals(this.metadata, cbHInstances.metadata)
             && Objects.equals(this.comment, cbHInstances.comment) && Objects.equals(this.region, cbHInstances.region)
-            && Objects.equals(this.regionId, cbHInstances.regionId)
-            && Objects.equals(this.resourceSpecCode, cbHInstances.resourceSpecCode)
             && Objects.equals(this.hxPassword, cbHInstances.hxPassword)
             && Objects.equals(this.bastionType, cbHInstances.bastionType)
-            && Objects.equals(this.ipv6Enable, cbHInstances.ipv6Enable)
-            && Objects.equals(this.endTime, cbHInstances.endTime);
+            && Objects.equals(this.ipv6Enable, cbHInstances.ipv6Enable);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(imageRef,
-            flavorRef,
+        return Objects.hash(flavorRef,
             instanceName,
-            name,
-            personality,
-            userData,
-            adminPassword,
-            keyName,
             vpcId,
             nics,
             publicIp,
-            count,
-            rootVolume,
-            dataVolumes,
             securityGroups,
             availabilityZone,
             slaveAvailabilityZone,
-            extendParam,
-            metadata,
             comment,
             region,
-            regionId,
-            resourceSpecCode,
             hxPassword,
             bastionType,
-            ipv6Enable,
-            endTime);
+            ipv6Enable);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CBHInstances {\n");
-        sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
         sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
         sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    personality: ").append(toIndentedString(personality)).append("\n");
-        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
-        sb.append("    adminPassword: ").append(toIndentedString(adminPassword)).append("\n");
-        sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    nics: ").append(toIndentedString(nics)).append("\n");
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
-        sb.append("    count: ").append(toIndentedString(count)).append("\n");
-        sb.append("    rootVolume: ").append(toIndentedString(rootVolume)).append("\n");
-        sb.append("    dataVolumes: ").append(toIndentedString(dataVolumes)).append("\n");
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    slaveAvailabilityZone: ").append(toIndentedString(slaveAvailabilityZone)).append("\n");
-        sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
-        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
-        sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
-        sb.append("    resourceSpecCode: ").append(toIndentedString(resourceSpecCode)).append("\n");
         sb.append("    hxPassword: ").append(toIndentedString(hxPassword)).append("\n");
         sb.append("    bastionType: ").append(toIndentedString(bastionType)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
-        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -23,8 +23,6 @@ public class ShowJobConfigResponse extends SdkResponse {
 
     /**
      * 作业保存条数
-     * minimum: 10000
-     * maximum: 10000000
      * @return jobRetainNumber
      */
     public Integer getJobRetainNumber() {

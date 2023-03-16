@@ -129,7 +129,7 @@ public class JobDto {
     }
 
     /**
-     * 作业标签，取值范围[0,5]，单个标签最大长度32字符，仅仅包含小写字母或数字或大写字母
+     * 作业标签，取值范围[0,5]，单个标签最大长度32字符，支持中文、字母、数字、空格、下划线和中划线，且不能以空格开头或者结尾。
      * @return labels
      */
     public List<String> getLabels() {
@@ -268,7 +268,7 @@ public class JobDto {
     }
 
     /**
-     * 作业使用的SFS-Turbo实例id，不填表示不使用
+     * 作业使用的IO加速实例id，不填表示不使用
      * @return ioAccId
      */
     public String getIoAccId() {

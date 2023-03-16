@@ -15,6 +15,16 @@ public class ListCloudPhoneModelsRequest {
 
     private Integer status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ListCloudPhoneModelsRequest withStatus(Integer status) {
         this.status = status;
         return this;
@@ -34,6 +44,44 @@ public class ListCloudPhoneModelsRequest {
         this.status = status;
     }
 
+    public ListCloudPhoneModelsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源数，默认值为0。
+     * minimum: 0
+     * maximum: 8096
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListCloudPhoneModelsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页返回的资源个数。取值范围：1~100（默认值为100），一般设置为10、20、50。
+     * minimum: 0
+     * maximum: 8096
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -43,12 +91,14 @@ public class ListCloudPhoneModelsRequest {
             return false;
         }
         ListCloudPhoneModelsRequest listCloudPhoneModelsRequest = (ListCloudPhoneModelsRequest) o;
-        return Objects.equals(this.status, listCloudPhoneModelsRequest.status);
+        return Objects.equals(this.status, listCloudPhoneModelsRequest.status)
+            && Objects.equals(this.offset, listCloudPhoneModelsRequest.offset)
+            && Objects.equals(this.limit, listCloudPhoneModelsRequest.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status);
+        return Objects.hash(status, offset, limit);
     }
 
     @Override
@@ -56,6 +106,8 @@ public class ListCloudPhoneModelsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCloudPhoneModelsRequest {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

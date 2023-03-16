@@ -116,6 +116,8 @@ public class ListDataJobRequest {
 
     /**
      * 查询该时间之后创建的数据作业
+     * minimum: 1000000000000
+     * maximum: 9999999999999
      * @return fromTime
      */
     public Long getFromTime() {
@@ -205,6 +207,8 @@ public class ListDataJobRequest {
 
     /**
      * 查询该时间之前创建的数据作业
+     * minimum: 1000000000000
+     * maximum: 9999999999999
      * @return toTime
      */
     public Long getToTime() {
@@ -239,6 +243,8 @@ public class ListDataJobRequest {
 
     /**
      * 查询该时间之后完成的数据作业
+     * minimum: 1000000000000
+     * maximum: 9999999999999
      * @return finishFromTime
      */
     public Long getFinishFromTime() {
@@ -256,6 +262,8 @@ public class ListDataJobRequest {
 
     /**
      * 查询该时间之前完成的数据作业
+     * minimum: 1000000000000
+     * maximum: 9999999999999
      * @return finishToTime
      */
     public Long getFinishToTime() {

@@ -31,6 +31,11 @@ public class ShowOverviewResponse extends SdkResponse {
 
     private Integer chargeMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_arrears")
+
+    private Boolean isArrears;
+
     public ShowOverviewResponse withId(String id) {
         this.id = id;
         return this;
@@ -99,6 +104,23 @@ public class ShowOverviewResponse extends SdkResponse {
         this.chargeMode = chargeMode;
     }
 
+    public ShowOverviewResponse withIsArrears(Boolean isArrears) {
+        this.isArrears = isArrears;
+        return this;
+    }
+
+    /**
+     * 是否欠费
+     * @return isArrears
+     */
+    public Boolean getIsArrears() {
+        return isArrears;
+    }
+
+    public void setIsArrears(Boolean isArrears) {
+        this.isArrears = isArrears;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -111,12 +133,13 @@ public class ShowOverviewResponse extends SdkResponse {
         return Objects.equals(this.id, showOverviewResponse.id)
             && Objects.equals(this.storage, showOverviewResponse.storage)
             && Objects.equals(this.projectNum, showOverviewResponse.projectNum)
-            && Objects.equals(this.chargeMode, showOverviewResponse.chargeMode);
+            && Objects.equals(this.chargeMode, showOverviewResponse.chargeMode)
+            && Objects.equals(this.isArrears, showOverviewResponse.isArrears);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, storage, projectNum, chargeMode);
+        return Objects.hash(id, storage, projectNum, chargeMode, isArrears);
     }
 
     @Override
@@ -127,6 +150,7 @@ public class ShowOverviewResponse extends SdkResponse {
         sb.append("    storage: ").append(toIndentedString(storage)).append("\n");
         sb.append("    projectNum: ").append(toIndentedString(projectNum)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
+        sb.append("    isArrears: ").append(toIndentedString(isArrears)).append("\n");
         sb.append("}");
         return sb.toString();
     }

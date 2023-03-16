@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建堡垒机实例请求body
+ * 创建堡垒机实例请求参数。
  */
 public class CreateInstanceBody {
 

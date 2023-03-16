@@ -26,7 +26,7 @@ public class ChangeInstanceOrderRequest {
     }
 
     /**
-     * 实例ID
+     * 云堡垒机实例ID。
      * @return serverId
      */
     public String getServerId() {
@@ -43,7 +43,7 @@ public class ChangeInstanceOrderRequest {
     }
 
     /**
-     * 实例的Instance_id
+     * 云堡垒机实例Key。
      * @return instanceKey
      */
     public String getInstanceKey() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * CBH服务实例修改密码
+ * 云堡垒机实例修改admin用户密码
  */
 public class ResetPassword {
 
@@ -26,7 +26,7 @@ public class ResetPassword {
     }
 
     /**
-     * 新密码
+     * admin用户修改后的新密码，8-32位，大写字母、小写字母、数字和特殊字符。
      * @return newPassword
      */
     public String getNewPassword() {
@@ -43,7 +43,7 @@ public class ResetPassword {
     }
 
     /**
-     * Cbh Server Id
+     * 云堡垒机实例ID，使用UUID格式。
      * @return serverId
      */
     public String getServerId() {

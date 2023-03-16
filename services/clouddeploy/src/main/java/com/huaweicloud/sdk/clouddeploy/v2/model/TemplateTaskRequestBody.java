@@ -49,7 +49,7 @@ public class TemplateTaskRequestBody {
     }
 
     /**
-     * devcloud创建的项目id
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {
@@ -66,7 +66,7 @@ public class TemplateTaskRequestBody {
     }
 
     /**
-     * devcloud创建的项目名称
+     * 项目名称
      * @return projectName
      */
     public String getProjectName() {

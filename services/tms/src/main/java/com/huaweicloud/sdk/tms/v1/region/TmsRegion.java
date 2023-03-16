@@ -14,6 +14,9 @@ public class TmsRegion {
 
     public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://tms.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_1 =
+        new Region("ap-southeast-1", "https://tms.ap-southeast-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("TMS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -21,6 +24,7 @@ public class TmsRegion {
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
         map.put("cn-north-4", CN_NORTH_4);
+        map.put("ap-southeast-1", AP_SOUTHEAST_1);
         return Collections.unmodifiableMap(map);
     }
 

@@ -171,11 +171,6 @@ public class InstanceDetail {
     private String instanceDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_auto_renew")
-
-    private Integer isAutoRenew;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "slaveZone")
 
     private String slaveZone;
@@ -216,7 +211,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 弹性ip
+     * 云堡垒机实例弹性公网IP，返回默认值null
      * @return publicip
      */
     public String getPublicip() {
@@ -233,7 +228,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 过期时间，要求用UTC时间表示
+     * 云堡垒机实例过期时间。
      * @return expTime
      */
     public String getExpTime() {
@@ -250,7 +245,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 开始时间，要求用UTC时间表示
+     * 云堡垒机实例开始时间，使用时间戳格式表示。
      * @return startTime
      */
     public String getStartTime() {
@@ -267,7 +262,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 结束时间，要求用UTC时间表示
+     * 云堡垒机实例结束时间，使用时间戳格式表示。
      * @return endTime
      */
     public String getEndTime() {
@@ -284,7 +279,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 释放时间，要求用UTC时间表示
+     * 云堡垒机释放时间，使用时间戳格式表示。
      * @return releaseTime
      */
     public String getReleaseTime() {
@@ -301,7 +296,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例名称
+     * 云堡垒机实例名称。
      * @return name
      */
     public String getName() {
@@ -318,7 +313,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例的server id
+     * 云堡垒机实例ID，UUID格式。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -335,7 +330,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例私有ip
+     * 云堡垒机实例私有ip。
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -352,7 +347,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例当前的任务状态
+     * 云堡垒机实例当前的任务状态。
      * @return taskStatus
      */
     public String getTaskStatus() {
@@ -369,7 +364,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例状态
+     * 云堡垒机实例状态。
      * @return status
      */
     public String getStatus() {
@@ -386,7 +381,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例创建时间，要求用UTC时间表示
+     * 云堡垒机实例创建时间，使用UTC时间表示。
      * @return created
      */
     public String getCreated() {
@@ -403,7 +398,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例所在region
+     * 云堡垒机实例所在局点。
      * @return region
      */
     public String getRegion() {
@@ -420,7 +415,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例所在可用区id
+     * 云堡垒机实例所在可用区。
      * @return zone
      */
     public String getZone() {
@@ -437,7 +432,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例所在可用区名称
+     * 云堡垒机实例所在可用区中文名称。
      * @return availabilityZoneDisplay
      */
     public String getAvailabilityZoneDisplay() {
@@ -454,7 +449,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例所在vpc的id
+     * 云堡垒机实例所在虚拟私有云的VPC ID。
      * @return vpcId
      */
     public String getVpcId() {
@@ -471,7 +466,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例所在子网的id
+     * 云堡垒机实例所在子网的ID。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -488,7 +483,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例所属的安全组的id
+     * 云堡垒机实例所属的安全组的ID。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -505,7 +500,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例规格
+     * 云堡垒机实例规格。
      * @return specification
      */
     public String getSpecification() {
@@ -522,7 +517,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例镜像是否可以升级
+     * 云堡垒机实例镜像是否可以升级。 - NEW，可以升级 - OLD，不能升级
      * @return update
      */
     public String getUpdate() {
@@ -539,7 +534,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 在创建实例过程中的过程状态信息
+     * 云堡垒机实例在创建实例过程中的过程状态信息。 - Waiting for payment，等待支付 - creating-network，创建网络 - creating-server，创建服务 - tranfering-horizontal-network，网络打通 - adding-policy-route，添加路由策略 - configing-dns，配置DNS - starting-cbs-service，服务运行中 - setting-init-conf，初始化 - buying-EIP，购买弹性公网IP
      * @return createinstanceStatus
      */
     public String getCreateinstanceStatus() {
@@ -556,7 +551,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 创建实例失败原因
+     * 云堡垒机实例创建实例失败原因。
      * @return failReason
      */
     public String getFailReason() {
@@ -573,7 +568,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例ID
+     * 云堡垒机实例key。
      * @return instanceKey
      */
     public String getInstanceKey() {
@@ -590,7 +585,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 订单id
+     * 订单ID。
      * @return orderId
      */
     public String getOrderId() {
@@ -607,7 +602,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 租户购买的时长
+     * 云堡垒机实例订购周期数。
      * @return periodNum
      */
     public String getPeriodNum() {
@@ -624,7 +619,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例的资源id
+     * 云堡垒机实例实例的资源id,UUID格式显示。
      * @return resourceId
      */
     public String getResourceId() {
@@ -641,7 +636,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 堡垒机类型
+     * 云堡垒机实例堡垒机类型。 - OEM
      * @return bastionType
      */
     public String getBastionType() {
@@ -658,7 +653,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 前端是否显示扩容按钮
+     * 云堡垒机实例是否可以扩容。 - 1 开启扩容 - 0 关闭扩容
      * @return alterPermit
      */
     public String getAlterPermit() {
@@ -675,7 +670,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例绑定的弹性IP的id
+     * 云堡垒机实例绑定公网的弹性IP的ID，UUID格式表示。
      * @return publicId
      */
     public String getPublicId() {
@@ -692,7 +687,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例镜像当前版本号
+     * 云堡垒机实例镜像当前版本号。
      * @return bastionVersion
      */
     public String getBastionVersion() {
@@ -709,7 +704,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例镜像最新版本号
+     * 云堡垒机实例镜像可以升级的版本号。
      * @return newBastionVersion
      */
     public String getNewBastionVersion() {
@@ -726,7 +721,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例状态
+     * 云堡垒机实例状态。 - building  创建中 - deleting  删除中 - deleted 删除了 - unpaid  未支付 - upgrading 升级中 - resizing  扩容中 - abnormal  异常 - error 故障 - ok  正常
      * @return instanceStatus
      */
     public String getInstanceStatus() {
@@ -743,7 +738,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例描述
+     * 云堡垒机实例状态描述。
      * @return instanceDescription
      */
     public String getInstanceDescription() {
@@ -754,32 +749,13 @@ public class InstanceDetail {
         this.instanceDescription = instanceDescription;
     }
 
-    public InstanceDetail withIsAutoRenew(Integer isAutoRenew) {
-        this.isAutoRenew = isAutoRenew;
-        return this;
-    }
-
-    /**
-     * 是否支持续费
-     * minimum: 0
-     * maximum: 100
-     * @return isAutoRenew
-     */
-    public Integer getIsAutoRenew() {
-        return isAutoRenew;
-    }
-
-    public void setIsAutoRenew(Integer isAutoRenew) {
-        this.isAutoRenew = isAutoRenew;
-    }
-
     public InstanceDetail withSlaveZone(String slaveZone) {
         this.slaveZone = slaveZone;
         return this;
     }
 
     /**
-     * 备可用分区
+     * 备可用分区，默认返回null。
      * @return slaveZone
      */
     public String getSlaveZone() {
@@ -796,7 +772,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 企业项目id
+     * 云堡垒机实例所属企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -813,7 +789,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例类型
+     * 云堡垒机实例类型。 - null  单机默认返回null - master  HA时返回主机 - slave HA时返回备机
      * @return instanceType
      */
     public String getInstanceType() {
@@ -830,7 +806,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 主备ID
+     * 云堡垒机实例主备ID。 - 单机堡垒机实例默认返回null - HA堡垒机实例返回主机HAID
      * @return haId
      */
     public String getHaId() {
@@ -847,7 +823,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 备可用分区名称
+     * 云堡垒机实例备机可用分区名称。 单机堡垒机实例和备机堡垒机实例返回null，HA堡垒机实例主机返回备机所在可用区名称。
      * @return slaveZoneDisplay
      */
     public String getSlaveZoneDisplay() {
@@ -864,7 +840,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 端口号
+     * 云堡垒机实例WEB界面访问的端口号。
      * @return webPort
      */
     public String getWebPort() {
@@ -881,7 +857,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 浮动ip
+     * 云堡垒机实例浮动ip。
      * @return vip
      */
     public String getVip() {
@@ -932,7 +908,6 @@ public class InstanceDetail {
             && Objects.equals(this.newBastionVersion, instanceDetail.newBastionVersion)
             && Objects.equals(this.instanceStatus, instanceDetail.instanceStatus)
             && Objects.equals(this.instanceDescription, instanceDetail.instanceDescription)
-            && Objects.equals(this.isAutoRenew, instanceDetail.isAutoRenew)
             && Objects.equals(this.slaveZone, instanceDetail.slaveZone)
             && Objects.equals(this.enterpriseProjectId, instanceDetail.enterpriseProjectId)
             && Objects.equals(this.instanceType, instanceDetail.instanceType)
@@ -975,7 +950,6 @@ public class InstanceDetail {
             newBastionVersion,
             instanceStatus,
             instanceDescription,
-            isAutoRenew,
             slaveZone,
             enterpriseProjectId,
             instanceType,
@@ -1021,7 +995,6 @@ public class InstanceDetail {
         sb.append("    newBastionVersion: ").append(toIndentedString(newBastionVersion)).append("\n");
         sb.append("    instanceStatus: ").append(toIndentedString(instanceStatus)).append("\n");
         sb.append("    instanceDescription: ").append(toIndentedString(instanceDescription)).append("\n");
-        sb.append("    isAutoRenew: ").append(toIndentedString(isAutoRenew)).append("\n");
         sb.append("    slaveZone: ").append(toIndentedString(slaveZone)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");

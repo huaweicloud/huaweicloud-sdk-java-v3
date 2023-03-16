@@ -230,6 +230,37 @@ public class ImageClient {
     }
 
     /**
+     * 创建司乘敏感擦除任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoObjectMaskingTaskRequest 请求对象
+     * @return CreateVideoObjectMaskingTaskResponse
+     */
+    public CreateVideoObjectMaskingTaskResponse createVideoObjectMaskingTask(
+        CreateVideoObjectMaskingTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, ImageMeta.createVideoObjectMaskingTask);
+    }
+
+    /**
+     * 创建司乘敏感擦除任务
+     *
+     * Create Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoObjectMaskingTaskRequest 请求对象
+     * @return SyncInvoker<CreateVideoObjectMaskingTaskRequest, CreateVideoObjectMaskingTaskResponse>
+     */
+    public SyncInvoker<CreateVideoObjectMaskingTaskRequest, CreateVideoObjectMaskingTaskResponse> createVideoObjectMaskingTaskInvoker(
+        CreateVideoObjectMaskingTaskRequest request) {
+        return new SyncInvoker<CreateVideoObjectMaskingTaskRequest, CreateVideoObjectMaskingTaskResponse>(request,
+            ImageMeta.createVideoObjectMaskingTask, hcClient);
+    }
+
+    /**
      * 创建任务
      *
      * 创建视频拆条任务
@@ -920,6 +951,36 @@ public class ImageClient {
         ShowVideoCuttingTaskRequest request) {
         return new SyncInvoker<ShowVideoCuttingTaskRequest, ShowVideoCuttingTaskResponse>(request,
             ImageMeta.showVideoCuttingTask, hcClient);
+    }
+
+    /**
+     * show task 查询任务信息
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoObjectMaskingTaskRequest 请求对象
+     * @return ShowVideoObjectMaskingTaskResponse
+     */
+    public ShowVideoObjectMaskingTaskResponse showVideoObjectMaskingTask(ShowVideoObjectMaskingTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, ImageMeta.showVideoObjectMaskingTask);
+    }
+
+    /**
+     * show task 查询任务信息
+     *
+     * show task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoObjectMaskingTaskRequest 请求对象
+     * @return SyncInvoker<ShowVideoObjectMaskingTaskRequest, ShowVideoObjectMaskingTaskResponse>
+     */
+    public SyncInvoker<ShowVideoObjectMaskingTaskRequest, ShowVideoObjectMaskingTaskResponse> showVideoObjectMaskingTaskInvoker(
+        ShowVideoObjectMaskingTaskRequest request) {
+        return new SyncInvoker<ShowVideoObjectMaskingTaskRequest, ShowVideoObjectMaskingTaskResponse>(request,
+            ImageMeta.showVideoObjectMaskingTask, hcClient);
     }
 
     /**

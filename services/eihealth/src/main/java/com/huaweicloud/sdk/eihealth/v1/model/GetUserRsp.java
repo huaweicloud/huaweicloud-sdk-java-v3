@@ -65,6 +65,11 @@ public class GetUserRsp {
 
     private String updateTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source")
+
+    private String source;
+
     public GetUserRsp withId(String id) {
         this.id = id;
         return this;
@@ -252,6 +257,23 @@ public class GetUserRsp {
         this.updateTime = updateTime;
     }
 
+    public GetUserRsp withSource(String source) {
+        this.source = source;
+        return this;
+    }
+
+    /**
+     * 来源，PLATFORM或者IAM
+     * @return source
+     */
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -268,13 +290,23 @@ public class GetUserRsp {
             && Objects.equals(this.isDomainOwner, getUserRsp.isDomainOwner)
             && Objects.equals(this.createTime, getUserRsp.createTime)
             && Objects.equals(this.pwdStatus, getUserRsp.pwdStatus)
-            && Objects.equals(this.updateTime, getUserRsp.updateTime);
+            && Objects.equals(this.updateTime, getUserRsp.updateTime) && Objects.equals(this.source, getUserRsp.source);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, name, role, status, email, phone, areacode, isDomainOwner, createTime, pwdStatus, updateTime);
+        return Objects.hash(id,
+            name,
+            role,
+            status,
+            email,
+            phone,
+            areacode,
+            isDomainOwner,
+            createTime,
+            pwdStatus,
+            updateTime,
+            source);
     }
 
     @Override
@@ -292,6 +324,7 @@ public class GetUserRsp {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    pwdStatus: ").append(toIndentedString(pwdStatus)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("}");
         return sb.toString();
     }

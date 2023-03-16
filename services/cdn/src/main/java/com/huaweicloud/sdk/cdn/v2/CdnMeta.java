@@ -200,6 +200,86 @@ public class CdnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDomainsRequest, ListDomainsResponse> listDomains = genForlistDomains();
+
+    private static HttpRequestDef<ListDomainsRequest, ListDomainsResponse> genForlistDomains() {
+        // basic
+        HttpRequestDef.Builder<ListDomainsRequest, ListDomainsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDomainsRequest.class, ListDomainsResponse.class)
+                .withName("ListDomains")
+                .withUri("/v1.0/cdn/domains")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainsRequest::getDomainName, (req, v) -> {
+                req.setDomainName(v);
+            }));
+        builder.<String>withRequestField("business_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainsRequest::getBusinessType, (req, v) -> {
+                req.setBusinessType(v);
+            }));
+        builder.<String>withRequestField("domain_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainsRequest::getDomainStatus, (req, v) -> {
+                req.setDomainStatus(v);
+            }));
+        builder.<String>withRequestField("service_area",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainsRequest::getServiceArea, (req, v) -> {
+                req.setServiceArea(v);
+            }));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDomainsRequest::getPageSize, (req, v) -> {
+                req.setPageSize(v);
+            }));
+        builder.<Integer>withRequestField("page_number",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDomainsRequest::getPageNumber, (req, v) -> {
+                req.setPageNumber(v);
+            }));
+        builder.<Boolean>withRequestField("show_tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDomainsRequest::getShowTags, (req, v) -> {
+                req.setShowTags(v);
+            }));
+        builder.<Boolean>withRequestField("exact_match",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDomainsRequest::getExactMatch, (req, v) -> {
+                req.setExactMatch(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetChargeModesRequest, SetChargeModesResponse> setChargeModes =
         genForsetChargeModes();
 
@@ -317,6 +397,38 @@ public class CdnMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowChargeModesRequest::getServiceArea, (req, v) -> {
                 req.setServiceArea(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainDetailByNameRequest, ShowDomainDetailByNameResponse> showDomainDetailByName =
+        genForshowDomainDetailByName();
+
+    private static HttpRequestDef<ShowDomainDetailByNameRequest, ShowDomainDetailByNameResponse> genForshowDomainDetailByName() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainDetailByNameRequest, ShowDomainDetailByNameResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDomainDetailByNameRequest.class, ShowDomainDetailByNameResponse.class)
+            .withName("ShowDomainDetailByName")
+            .withUri("/v1.0/cdn/configuration/domains/{domain_name}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainDetailByNameRequest::getDomainName, (req, v) -> {
+                req.setDomainName(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainDetailByNameRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
 
         // response
