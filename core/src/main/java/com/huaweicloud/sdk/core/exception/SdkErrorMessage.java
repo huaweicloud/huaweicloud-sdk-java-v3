@@ -33,6 +33,8 @@ public class SdkErrorMessage extends SdkResponse {
 
     private String requestId;
 
+    private String encodedAuthorizationMessage;
+
     /**
      * Default constructor of class SdkErrorMessage
      */
@@ -53,7 +55,7 @@ public class SdkErrorMessage extends SdkResponse {
      * Constructor with full error type
      *
      * @param errorCode error code from response
-     * @param errorMsg error message from response
+     * @param errorMsg  error message from response
      * @param requestId requestId from response
      */
     public SdkErrorMessage(String errorCode, String errorMsg, String requestId) {
@@ -66,7 +68,7 @@ public class SdkErrorMessage extends SdkResponse {
      * Constructor with two parameter
      *
      * @param errorCode error code from response
-     * @param errorMsg error message from response
+     * @param errorMsg  error message from response
      */
     public SdkErrorMessage(String errorCode, String errorMsg) {
         this.errorMsg = errorMsg;
@@ -112,4 +114,16 @@ public class SdkErrorMessage extends SdkResponse {
         return this;
     }
 
+    public String getEncodedAuthorizationMessage() {
+        return encodedAuthorizationMessage;
+    }
+
+    public void setEncodedAuthorizationMessage(String encodedAuthorizationMessage) {
+        this.encodedAuthorizationMessage = encodedAuthorizationMessage;
+    }
+
+    public SdkErrorMessage withEncodedAuthorizationMessage(String encodedAuthorizationMessage) {
+        this.encodedAuthorizationMessage = encodedAuthorizationMessage;
+        return this;
+    }
 }

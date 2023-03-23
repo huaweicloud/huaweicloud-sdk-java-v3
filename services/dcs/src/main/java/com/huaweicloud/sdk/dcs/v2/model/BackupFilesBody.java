@@ -28,11 +28,17 @@ public class BackupFilesBody {
          */
         public static final FileSourceEnum SELF_BUILD_OBS = new FileSourceEnum("self_build_obs");
 
+        /**
+         * Enum BACKUP_RECORD for value: "backup_record"
+         */
+        public static final FileSourceEnum BACKUP_RECORD = new FileSourceEnum("backup_record");
+
         private static final Map<String, FileSourceEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FileSourceEnum> createStaticFields() {
             Map<String, FileSourceEnum> map = new HashMap<>();
             map.put("self_build_obs", SELF_BUILD_OBS);
+            map.put("backup_record", BACKUP_RECORD);
             return Collections.unmodifiableMap(map);
         }
 

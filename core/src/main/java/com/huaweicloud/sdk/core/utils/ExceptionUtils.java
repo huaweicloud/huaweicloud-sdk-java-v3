@@ -63,56 +63,45 @@ public final class ExceptionUtils {
             if (Objects.isNull(errResult)) {
                 return sdkErrorMessage;
             }
-            processErrorMessageFromMap(sdkErrorMessage, errResult);
-            processErrorMessageFromNestedMap(sdkErrorMessage, errResult);
+            processErrorMessage(sdkErrorMessage, errResult);
             if (Objects.isNull(sdkErrorMessage.getErrorMsg())) {
                 sdkErrorMessage.setErrorMsg(strBody);
-            }
-
-            if (Objects.isNull(sdkErrorMessage.getRequestId()) && Objects.nonNull(
-                httpResponse.getHeader(Constants.X_REQUEST_ID))) {
-                sdkErrorMessage.setRequestId(httpResponse.getHeader(Constants.X_REQUEST_ID));
             }
         } catch (SdkException e) {
             sdkErrorMessage.setErrorMsg(httpResponse.getBodyAsString());
         }
 
+        if (Objects.isNull(sdkErrorMessage.getRequestId()) && Objects.nonNull(
+                httpResponse.getHeader(Constants.X_REQUEST_ID))) {
+            sdkErrorMessage.setRequestId(httpResponse.getHeader(Constants.X_REQUEST_ID));
+        }
+
         return sdkErrorMessage;
     }
 
-    private static void processErrorMessageFromMap(SdkErrorMessage sdkErrorMessage, Map<?, ?> errResult) {
-        sdkErrorMessage.withErrorCode(errResult.containsKey(Constants.ERROR_CODE)
-            ? errResult.get(Constants.ERROR_CODE).toString()
-            : errResult.containsKey(Constants.CODE) ? errResult.get(Constants.CODE).toString() : null)
-            .withErrorMsg(errResult.containsKey(Constants.ERROR_MSG)
-                ? errResult.get(Constants.ERROR_MSG).toString()
-                : errResult.containsKey(Constants.MESSAGE) ? errResult.get(Constants.MESSAGE).toString() : null)
-            .withRequestId(
-                errResult.containsKey(Constants.REQUEST_ID) ? errResult.get(Constants.REQUEST_ID).toString() : null);
-    }
+    private static void processErrorMessage(SdkErrorMessage sdkErrorMessage, Map<?, ?> errResult) {
+        if (errResult.containsKey(Constants.ENCODED_AUTHORIZATION_MESSAGE)) {
+            sdkErrorMessage.setEncodedAuthorizationMessage(
+                    (String) errResult.get(Constants.ENCODED_AUTHORIZATION_MESSAGE));
+        }
 
-    private static void processErrorMessageFromNestedMap(SdkErrorMessage sdkErrorMessage, Map<?, ?> errResult) {
-        if (!(Objects.isNull(sdkErrorMessage.getErrorCode()) || Objects.isNull(sdkErrorMessage.getErrorMsg()))) {
+        if (errResult.containsKey(Constants.ERROR_CODE) && errResult.containsKey(Constants.ERROR_MSG)) {
+            sdkErrorMessage.setErrorCode((String) errResult.get(Constants.ERROR_CODE));
+            sdkErrorMessage.setErrorMsg((String) errResult.get(Constants.ERROR_MSG));
             return;
         }
 
-        errResult.forEach((key, value) -> {
-            if (value instanceof Map) {
-                Map<?, ?> valueMap = (Map<?, ?>) value;
-                if (Objects.isNull(sdkErrorMessage.getErrorCode()) && valueMap.containsKey(Constants.CODE)) {
-                    sdkErrorMessage.setErrorCode(valueMap.get(Constants.CODE).toString());
-                }
-                if (Objects.isNull(sdkErrorMessage.getErrorMsg()) && valueMap.containsKey(Constants.MESSAGE)) {
-                    sdkErrorMessage.setErrorMsg(valueMap.get(Constants.MESSAGE).toString());
-                }
-                if (Objects.isNull(sdkErrorMessage.getErrorCode()) && valueMap.containsKey(Constants.ERROR_CODE)) {
-                    sdkErrorMessage.setErrorCode(valueMap.get(Constants.ERROR_CODE).toString());
-                }
-                if (Objects.isNull(sdkErrorMessage.getErrorMsg()) && valueMap.containsKey(Constants.ERROR_MSG)) {
-                    sdkErrorMessage.setErrorMsg(valueMap.get(Constants.ERROR_MSG).toString());
-                }
+        if (errResult.containsKey(Constants.CODE) && errResult.containsKey(Constants.MESSAGE)) {
+            sdkErrorMessage.setErrorCode((String) errResult.get(Constants.CODE));
+            sdkErrorMessage.setErrorMsg((String) errResult.get(Constants.MESSAGE));
+            return;
+        }
+
+        for (Object value : errResult.values()) {
+            if (value instanceof Map<?, ?>) {
+                processErrorMessage(sdkErrorMessage, (Map<?, ?>) value);
             }
-        });
+        }
     }
 
     public static void mapSocketTimeoutException(String originMsg, Throwable cause) {

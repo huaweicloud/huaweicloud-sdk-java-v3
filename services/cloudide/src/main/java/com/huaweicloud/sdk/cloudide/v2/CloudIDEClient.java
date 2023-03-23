@@ -347,6 +347,36 @@ public class CloudIDEClient {
     }
 
     /**
+     * 插件发布
+     *
+     * 插件发布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishExtensionRequest 请求对象
+     * @return PublishExtensionResponse
+     */
+    public PublishExtensionResponse publishExtension(PublishExtensionRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.publishExtension);
+    }
+
+    /**
+     * 插件发布
+     *
+     * 插件发布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishExtensionRequest 请求对象
+     * @return SyncInvoker<PublishExtensionRequest, PublishExtensionResponse>
+     */
+    public SyncInvoker<PublishExtensionRequest, PublishExtensionResponse> publishExtensionInvoker(
+        PublishExtensionRequest request) {
+        return new SyncInvoker<PublishExtensionRequest, PublishExtensionResponse>(request,
+            CloudIDEMeta.publishExtension, hcClient);
+    }
+
+    /**
      * 查询当前帐号访问权限
      *
      * 查询当前帐号访问权限
@@ -527,6 +557,36 @@ public class CloudIDEClient {
     }
 
     /**
+     * 获取插件检测结果
+     *
+     * 获取插件检测结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowExtensionTestingResultRequest 请求对象
+     * @return ShowExtensionTestingResultResponse
+     */
+    public ShowExtensionTestingResultResponse showExtensionTestingResult(ShowExtensionTestingResultRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.showExtensionTestingResult);
+    }
+
+    /**
+     * 获取插件检测结果
+     *
+     * 获取插件检测结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowExtensionTestingResultRequest 请求对象
+     * @return SyncInvoker<ShowExtensionTestingResultRequest, ShowExtensionTestingResultResponse>
+     */
+    public SyncInvoker<ShowExtensionTestingResultRequest, ShowExtensionTestingResultResponse> showExtensionTestingResultInvoker(
+        ShowExtensionTestingResultRequest request) {
+        return new SyncInvoker<ShowExtensionTestingResultRequest, ShowExtensionTestingResultResponse>(request,
+            CloudIDEMeta.showExtensionTestingResult, hcClient);
+    }
+
+    /**
      * 获取技术栈计费信息
      *
      * 获取技术栈计费信息
@@ -582,6 +642,36 @@ public class CloudIDEClient {
         UploadExtensionFileRequest request) {
         return new SyncInvoker<UploadExtensionFileRequest, UploadExtensionFileResponse>(request,
             CloudIDEMeta.uploadExtensionFile, hcClient);
+    }
+
+    /**
+     * 文件上传归一化
+     *
+     * 文件上传归一化
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UploadFilePublisherRequest 请求对象
+     * @return UploadFilePublisherResponse
+     */
+    public UploadFilePublisherResponse uploadFilePublisher(UploadFilePublisherRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.uploadFilePublisher);
+    }
+
+    /**
+     * 文件上传归一化
+     *
+     * 文件上传归一化
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UploadFilePublisherRequest 请求对象
+     * @return SyncInvoker<UploadFilePublisherRequest, UploadFilePublisherResponse>
+     */
+    public SyncInvoker<UploadFilePublisherRequest, UploadFilePublisherResponse> uploadFilePublisherInvoker(
+        UploadFilePublisherRequest request) {
+        return new SyncInvoker<UploadFilePublisherRequest, UploadFilePublisherResponse>(request,
+            CloudIDEMeta.uploadFilePublisher, hcClient);
     }
 
     /**

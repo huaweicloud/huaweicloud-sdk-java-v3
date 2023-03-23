@@ -119,6 +119,97 @@ public class WafAsyncClient {
     }
 
     /**
+     * 创建JS脚本反爬虫规则
+     *
+     * 创建JS脚本反爬虫规则，在调用此接口创建防护规则前，需要调用更新JS脚本反爬虫规则防护模式（UpdateAnticrawlerRuleType）接口指定防护模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAnticrawlerRuleRequest 请求对象
+     * @return CompletableFuture<CreateAnticrawlerRuleResponse>
+     */
+    public CompletableFuture<CreateAnticrawlerRuleResponse> createAnticrawlerRuleAsync(
+        CreateAnticrawlerRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createAnticrawlerRule);
+    }
+
+    /**
+     * 创建JS脚本反爬虫规则
+     *
+     * 创建JS脚本反爬虫规则，在调用此接口创建防护规则前，需要调用更新JS脚本反爬虫规则防护模式（UpdateAnticrawlerRuleType）接口指定防护模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAnticrawlerRuleRequest 请求对象
+     * @return AsyncInvoker<CreateAnticrawlerRuleRequest, CreateAnticrawlerRuleResponse>
+     */
+    public AsyncInvoker<CreateAnticrawlerRuleRequest, CreateAnticrawlerRuleResponse> createAnticrawlerRuleAsyncInvoker(
+        CreateAnticrawlerRuleRequest request) {
+        return new AsyncInvoker<CreateAnticrawlerRuleRequest, CreateAnticrawlerRuleResponse>(request,
+            WafMeta.createAnticrawlerRule, hcClient);
+    }
+
+    /**
+     * 创建防敏感信息泄露规则
+     *
+     * 创建防敏感信息泄露规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAntileakageRuleRequest 请求对象
+     * @return CompletableFuture<CreateAntileakageRuleResponse>
+     */
+    public CompletableFuture<CreateAntileakageRuleResponse> createAntileakageRuleAsync(
+        CreateAntileakageRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createAntileakageRule);
+    }
+
+    /**
+     * 创建防敏感信息泄露规则
+     *
+     * 创建防敏感信息泄露规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAntileakageRuleRequest 请求对象
+     * @return AsyncInvoker<CreateAntileakageRuleRequest, CreateAntileakageRuleResponse>
+     */
+    public AsyncInvoker<CreateAntileakageRuleRequest, CreateAntileakageRuleResponse> createAntileakageRuleAsyncInvoker(
+        CreateAntileakageRuleRequest request) {
+        return new AsyncInvoker<CreateAntileakageRuleRequest, CreateAntileakageRuleResponse>(request,
+            WafMeta.createAntileakageRule, hcClient);
+    }
+
+    /**
+     * 创建cc规则
+     *
+     * 创建cc规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCcRuleRequest 请求对象
+     * @return CompletableFuture<CreateCcRuleResponse>
+     */
+    public CompletableFuture<CreateCcRuleResponse> createCcRuleAsync(CreateCcRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createCcRule);
+    }
+
+    /**
+     * 创建cc规则
+     *
+     * 创建cc规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCcRuleRequest 请求对象
+     * @return AsyncInvoker<CreateCcRuleRequest, CreateCcRuleResponse>
+     */
+    public AsyncInvoker<CreateCcRuleRequest, CreateCcRuleResponse> createCcRuleAsyncInvoker(
+        CreateCcRuleRequest request) {
+        return new AsyncInvoker<CreateCcRuleRequest, CreateCcRuleResponse>(request, WafMeta.createCcRule, hcClient);
+    }
+
+    /**
      * 创建证书
      *
      * 创建证书
@@ -145,6 +236,36 @@ public class WafAsyncClient {
     public AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse> createCertificateAsyncInvoker(
         CreateCertificateRequest request) {
         return new AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse>(request, WafMeta.createCertificate,
+            hcClient);
+    }
+
+    /**
+     * 创建精准防护规则
+     *
+     * 创建精准防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCustomRuleRequest 请求对象
+     * @return CompletableFuture<CreateCustomRuleResponse>
+     */
+    public CompletableFuture<CreateCustomRuleResponse> createCustomRuleAsync(CreateCustomRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createCustomRule);
+    }
+
+    /**
+     * 创建精准防护规则
+     *
+     * 创建精准防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCustomRuleRequest 请求对象
+     * @return AsyncInvoker<CreateCustomRuleRequest, CreateCustomRuleResponse>
+     */
+    public AsyncInvoker<CreateCustomRuleRequest, CreateCustomRuleResponse> createCustomRuleAsyncInvoker(
+        CreateCustomRuleRequest request) {
+        return new AsyncInvoker<CreateCustomRuleRequest, CreateCustomRuleResponse>(request, WafMeta.createCustomRule,
             hcClient);
     }
 
@@ -416,6 +537,37 @@ public class WafAsyncClient {
     }
 
     /**
+     * 创建攻击惩罚规则
+     *
+     * 创建攻击惩罚规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePunishmentRuleRequest 请求对象
+     * @return CompletableFuture<CreatePunishmentRuleResponse>
+     */
+    public CompletableFuture<CreatePunishmentRuleResponse> createPunishmentRuleAsync(
+        CreatePunishmentRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createPunishmentRule);
+    }
+
+    /**
+     * 创建攻击惩罚规则
+     *
+     * 创建攻击惩罚规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePunishmentRuleRequest 请求对象
+     * @return AsyncInvoker<CreatePunishmentRuleRequest, CreatePunishmentRuleResponse>
+     */
+    public AsyncInvoker<CreatePunishmentRuleRequest, CreatePunishmentRuleResponse> createPunishmentRuleAsyncInvoker(
+        CreatePunishmentRuleRequest request) {
+        return new AsyncInvoker<CreatePunishmentRuleRequest, CreatePunishmentRuleResponse>(request,
+            WafMeta.createPunishmentRule, hcClient);
+    }
+
+    /**
      * 创建引用表
      *
      * 创建引用表，引用表能够被CC攻击防护规则和精准访问防护中的规则所引用。
@@ -477,6 +629,68 @@ public class WafAsyncClient {
     }
 
     /**
+     * 删除JS脚本反爬虫防护规则
+     *
+     * 删除JS脚本反爬虫防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAnticrawlerRuleRequest 请求对象
+     * @return CompletableFuture<DeleteAnticrawlerRuleResponse>
+     */
+    public CompletableFuture<DeleteAnticrawlerRuleResponse> deleteAnticrawlerRuleAsync(
+        DeleteAnticrawlerRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deleteAnticrawlerRule);
+    }
+
+    /**
+     * 删除JS脚本反爬虫防护规则
+     *
+     * 删除JS脚本反爬虫防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAnticrawlerRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse>
+     */
+    public AsyncInvoker<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse> deleteAnticrawlerRuleAsyncInvoker(
+        DeleteAnticrawlerRuleRequest request) {
+        return new AsyncInvoker<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse>(request,
+            WafMeta.deleteAnticrawlerRule, hcClient);
+    }
+
+    /**
+     * 删除防敏感信息泄露防护规则
+     *
+     * 删除防敏感信息泄露防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAntileakageRuleRequest 请求对象
+     * @return CompletableFuture<DeleteAntileakageRuleResponse>
+     */
+    public CompletableFuture<DeleteAntileakageRuleResponse> deleteAntileakageRuleAsync(
+        DeleteAntileakageRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deleteAntileakageRule);
+    }
+
+    /**
+     * 删除防敏感信息泄露防护规则
+     *
+     * 删除防敏感信息泄露防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAntileakageRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteAntileakageRuleRequest, DeleteAntileakageRuleResponse>
+     */
+    public AsyncInvoker<DeleteAntileakageRuleRequest, DeleteAntileakageRuleResponse> deleteAntileakageRuleAsyncInvoker(
+        DeleteAntileakageRuleRequest request) {
+        return new AsyncInvoker<DeleteAntileakageRuleRequest, DeleteAntileakageRuleResponse>(request,
+            WafMeta.deleteAntileakageRule, hcClient);
+    }
+
+    /**
      * 删除防篡改防护规则
      *
      * 删除防篡改防护规则
@@ -508,6 +722,35 @@ public class WafAsyncClient {
     }
 
     /**
+     * 删除cc防护规则
+     *
+     * 删除cc防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCcRuleRequest 请求对象
+     * @return CompletableFuture<DeleteCcRuleResponse>
+     */
+    public CompletableFuture<DeleteCcRuleResponse> deleteCcRuleAsync(DeleteCcRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deleteCcRule);
+    }
+
+    /**
+     * 删除cc防护规则
+     *
+     * 删除cc防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCcRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteCcRuleRequest, DeleteCcRuleResponse>
+     */
+    public AsyncInvoker<DeleteCcRuleRequest, DeleteCcRuleResponse> deleteCcRuleAsyncInvoker(
+        DeleteCcRuleRequest request) {
+        return new AsyncInvoker<DeleteCcRuleRequest, DeleteCcRuleResponse>(request, WafMeta.deleteCcRule, hcClient);
+    }
+
+    /**
      * 删除证书
      *
      * 删除证书
@@ -534,6 +777,36 @@ public class WafAsyncClient {
     public AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificateAsyncInvoker(
         DeleteCertificateRequest request) {
         return new AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>(request, WafMeta.deleteCertificate,
+            hcClient);
+    }
+
+    /**
+     * 删除精准防护规则
+     *
+     * 删除精准防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCustomRuleRequest 请求对象
+     * @return CompletableFuture<DeleteCustomRuleResponse>
+     */
+    public CompletableFuture<DeleteCustomRuleResponse> deleteCustomRuleAsync(DeleteCustomRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deleteCustomRule);
+    }
+
+    /**
+     * 删除精准防护规则
+     *
+     * 删除精准防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCustomRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteCustomRuleRequest, DeleteCustomRuleResponse>
+     */
+    public AsyncInvoker<DeleteCustomRuleRequest, DeleteCustomRuleResponse> deleteCustomRuleAsyncInvoker(
+        DeleteCustomRuleRequest request) {
+        return new AsyncInvoker<DeleteCustomRuleRequest, DeleteCustomRuleResponse>(request, WafMeta.deleteCustomRule,
             hcClient);
     }
 
@@ -774,6 +1047,37 @@ public class WafAsyncClient {
     }
 
     /**
+     * 删除攻击惩罚规则
+     *
+     * 删除攻击惩罚规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePunishmentRuleRequest 请求对象
+     * @return CompletableFuture<DeletePunishmentRuleResponse>
+     */
+    public CompletableFuture<DeletePunishmentRuleResponse> deletePunishmentRuleAsync(
+        DeletePunishmentRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deletePunishmentRule);
+    }
+
+    /**
+     * 删除攻击惩罚规则
+     *
+     * 删除攻击惩罚规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePunishmentRuleRequest 请求对象
+     * @return AsyncInvoker<DeletePunishmentRuleRequest, DeletePunishmentRuleResponse>
+     */
+    public AsyncInvoker<DeletePunishmentRuleRequest, DeletePunishmentRuleResponse> deletePunishmentRuleAsyncInvoker(
+        DeletePunishmentRuleRequest request) {
+        return new AsyncInvoker<DeletePunishmentRuleRequest, DeletePunishmentRuleResponse>(request,
+            WafMeta.deletePunishmentRule, hcClient);
+    }
+
+    /**
      * 删除引用表
      *
      * 删除引用表
@@ -832,6 +1136,68 @@ public class WafAsyncClient {
         DeleteWhiteBlackIpRuleRequest request) {
         return new AsyncInvoker<DeleteWhiteBlackIpRuleRequest, DeleteWhiteBlackIpRuleResponse>(request,
             WafMeta.deleteWhiteBlackIpRule, hcClient);
+    }
+
+    /**
+     * 查询JS脚本反爬虫规则列表
+     *
+     * 查询JS脚本反爬虫规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAnticrawlerRulesRequest 请求对象
+     * @return CompletableFuture<ListAnticrawlerRulesResponse>
+     */
+    public CompletableFuture<ListAnticrawlerRulesResponse> listAnticrawlerRulesAsync(
+        ListAnticrawlerRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listAnticrawlerRules);
+    }
+
+    /**
+     * 查询JS脚本反爬虫规则列表
+     *
+     * 查询JS脚本反爬虫规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAnticrawlerRulesRequest 请求对象
+     * @return AsyncInvoker<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse>
+     */
+    public AsyncInvoker<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse> listAnticrawlerRulesAsyncInvoker(
+        ListAnticrawlerRulesRequest request) {
+        return new AsyncInvoker<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse>(request,
+            WafMeta.listAnticrawlerRules, hcClient);
+    }
+
+    /**
+     * 查询防敏感信息泄露规则列表
+     *
+     * 查询防敏感信息泄露规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAntileakageRulesRequest 请求对象
+     * @return CompletableFuture<ListAntileakageRulesResponse>
+     */
+    public CompletableFuture<ListAntileakageRulesResponse> listAntileakageRulesAsync(
+        ListAntileakageRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listAntileakageRules);
+    }
+
+    /**
+     * 查询防敏感信息泄露规则列表
+     *
+     * 查询防敏感信息泄露规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAntileakageRulesRequest 请求对象
+     * @return AsyncInvoker<ListAntileakageRulesRequest, ListAntileakageRulesResponse>
+     */
+    public AsyncInvoker<ListAntileakageRulesRequest, ListAntileakageRulesResponse> listAntileakageRulesAsyncInvoker(
+        ListAntileakageRulesRequest request) {
+        return new AsyncInvoker<ListAntileakageRulesRequest, ListAntileakageRulesResponse>(request,
+            WafMeta.listAntileakageRules, hcClient);
     }
 
     /**
@@ -896,6 +1262,34 @@ public class WafAsyncClient {
     }
 
     /**
+     * 查询cc规则列表
+     *
+     * 查询cc规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCcRulesRequest 请求对象
+     * @return CompletableFuture<ListCcRulesResponse>
+     */
+    public CompletableFuture<ListCcRulesResponse> listCcRulesAsync(ListCcRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listCcRules);
+    }
+
+    /**
+     * 查询cc规则列表
+     *
+     * 查询cc规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCcRulesRequest 请求对象
+     * @return AsyncInvoker<ListCcRulesRequest, ListCcRulesResponse>
+     */
+    public AsyncInvoker<ListCcRulesRequest, ListCcRulesResponse> listCcRulesAsyncInvoker(ListCcRulesRequest request) {
+        return new AsyncInvoker<ListCcRulesRequest, ListCcRulesResponse>(request, WafMeta.listCcRules, hcClient);
+    }
+
+    /**
      * 查询证书列表
      *
      * 查询证书列表
@@ -953,6 +1347,36 @@ public class WafAsyncClient {
         ListCompositeHostsRequest request) {
         return new AsyncInvoker<ListCompositeHostsRequest, ListCompositeHostsResponse>(request,
             WafMeta.listCompositeHosts, hcClient);
+    }
+
+    /**
+     * 查询精准防护规则列表
+     *
+     * 查询精准防护规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCustomRulesRequest 请求对象
+     * @return CompletableFuture<ListCustomRulesResponse>
+     */
+    public CompletableFuture<ListCustomRulesResponse> listCustomRulesAsync(ListCustomRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listCustomRules);
+    }
+
+    /**
+     * 查询精准防护规则列表
+     *
+     * 查询精准防护规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCustomRulesRequest 请求对象
+     * @return AsyncInvoker<ListCustomRulesRequest, ListCustomRulesResponse>
+     */
+    public AsyncInvoker<ListCustomRulesRequest, ListCustomRulesResponse> listCustomRulesAsyncInvoker(
+        ListCustomRulesRequest request) {
+        return new AsyncInvoker<ListCustomRulesRequest, ListCustomRulesResponse>(request, WafMeta.listCustomRules,
+            hcClient);
     }
 
     /**
@@ -1306,6 +1730,36 @@ public class WafAsyncClient {
     }
 
     /**
+     * 查询攻击惩罚规则列表
+     *
+     * 查询攻击惩罚规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPunishmentRulesRequest 请求对象
+     * @return CompletableFuture<ListPunishmentRulesResponse>
+     */
+    public CompletableFuture<ListPunishmentRulesResponse> listPunishmentRulesAsync(ListPunishmentRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listPunishmentRules);
+    }
+
+    /**
+     * 查询攻击惩罚规则列表
+     *
+     * 查询攻击惩罚规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPunishmentRulesRequest 请求对象
+     * @return AsyncInvoker<ListPunishmentRulesRequest, ListPunishmentRulesResponse>
+     */
+    public AsyncInvoker<ListPunishmentRulesRequest, ListPunishmentRulesResponse> listPunishmentRulesAsyncInvoker(
+        ListPunishmentRulesRequest request) {
+        return new AsyncInvoker<ListPunishmentRulesRequest, ListPunishmentRulesResponse>(request,
+            WafMeta.listPunishmentRules, hcClient);
+    }
+
+    /**
      * 查询安全统计qps次数
      *
      * 查询安全统计qps次数。需要注意的是，安全统计相关的接口，暂时不能支持任意时间的查询。只能支持 console上显示的 昨天，今天，3天，7天和30天 数据查询。
@@ -1547,6 +2001,94 @@ public class WafAsyncClient {
     }
 
     /**
+     * 查询JS脚本反爬虫防护规则
+     *
+     * 根据Id查询JS脚本反爬虫防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAnticrawlerRuleRequest 请求对象
+     * @return CompletableFuture<ShowAnticrawlerRuleResponse>
+     */
+    public CompletableFuture<ShowAnticrawlerRuleResponse> showAnticrawlerRuleAsync(ShowAnticrawlerRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showAnticrawlerRule);
+    }
+
+    /**
+     * 查询JS脚本反爬虫防护规则
+     *
+     * 根据Id查询JS脚本反爬虫防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAnticrawlerRuleRequest 请求对象
+     * @return AsyncInvoker<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse>
+     */
+    public AsyncInvoker<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse> showAnticrawlerRuleAsyncInvoker(
+        ShowAnticrawlerRuleRequest request) {
+        return new AsyncInvoker<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse>(request,
+            WafMeta.showAnticrawlerRule, hcClient);
+    }
+
+    /**
+     * 查询防敏感信息泄露防护规则
+     *
+     * 根据Id查询防敏感信息泄露防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAntileakageRuleRequest 请求对象
+     * @return CompletableFuture<ShowAntileakageRuleResponse>
+     */
+    public CompletableFuture<ShowAntileakageRuleResponse> showAntileakageRuleAsync(ShowAntileakageRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showAntileakageRule);
+    }
+
+    /**
+     * 查询防敏感信息泄露防护规则
+     *
+     * 根据Id查询防敏感信息泄露防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAntileakageRuleRequest 请求对象
+     * @return AsyncInvoker<ShowAntileakageRuleRequest, ShowAntileakageRuleResponse>
+     */
+    public AsyncInvoker<ShowAntileakageRuleRequest, ShowAntileakageRuleResponse> showAntileakageRuleAsyncInvoker(
+        ShowAntileakageRuleRequest request) {
+        return new AsyncInvoker<ShowAntileakageRuleRequest, ShowAntileakageRuleResponse>(request,
+            WafMeta.showAntileakageRule, hcClient);
+    }
+
+    /**
+     * 根据Id查询cc防护规则
+     *
+     * 根据Id查询cc防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCcRuleRequest 请求对象
+     * @return CompletableFuture<ShowCcRuleResponse>
+     */
+    public CompletableFuture<ShowCcRuleResponse> showCcRuleAsync(ShowCcRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showCcRule);
+    }
+
+    /**
+     * 根据Id查询cc防护规则
+     *
+     * 根据Id查询cc防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCcRuleRequest 请求对象
+     * @return AsyncInvoker<ShowCcRuleRequest, ShowCcRuleResponse>
+     */
+    public AsyncInvoker<ShowCcRuleRequest, ShowCcRuleResponse> showCcRuleAsyncInvoker(ShowCcRuleRequest request) {
+        return new AsyncInvoker<ShowCcRuleRequest, ShowCcRuleResponse>(request, WafMeta.showCcRule, hcClient);
+    }
+
+    /**
      * 查询证书
      *
      * 查询证书
@@ -1637,6 +2179,36 @@ public class WafAsyncClient {
     }
 
     /**
+     * 根据Id查询精准防护规则
+     *
+     * 根据Id查询精准防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCustomRuleRequest 请求对象
+     * @return CompletableFuture<ShowCustomRuleResponse>
+     */
+    public CompletableFuture<ShowCustomRuleResponse> showCustomRuleAsync(ShowCustomRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showCustomRule);
+    }
+
+    /**
+     * 根据Id查询精准防护规则
+     *
+     * 根据Id查询精准防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCustomRuleRequest 请求对象
+     * @return AsyncInvoker<ShowCustomRuleRequest, ShowCustomRuleResponse>
+     */
+    public AsyncInvoker<ShowCustomRuleRequest, ShowCustomRuleResponse> showCustomRuleAsyncInvoker(
+        ShowCustomRuleRequest request) {
+        return new AsyncInvoker<ShowCustomRuleRequest, ShowCustomRuleResponse>(request, WafMeta.showCustomRule,
+            hcClient);
+    }
+
+    /**
      * 查询指定事件id的防护事件详情
      *
      * 查询指定事件id的防护事件详情
@@ -1665,6 +2237,35 @@ public class WafAsyncClient {
     }
 
     /**
+     * 删除地理位置控制防护规则
+     *
+     * 删除地理位置控制防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowGeoipRuleRequest 请求对象
+     * @return CompletableFuture<ShowGeoipRuleResponse>
+     */
+    public CompletableFuture<ShowGeoipRuleResponse> showGeoipRuleAsync(ShowGeoipRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showGeoipRule);
+    }
+
+    /**
+     * 删除地理位置控制防护规则
+     *
+     * 删除地理位置控制防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowGeoipRuleRequest 请求对象
+     * @return AsyncInvoker<ShowGeoipRuleRequest, ShowGeoipRuleResponse>
+     */
+    public AsyncInvoker<ShowGeoipRuleRequest, ShowGeoipRuleResponse> showGeoipRuleAsyncInvoker(
+        ShowGeoipRuleRequest request) {
+        return new AsyncInvoker<ShowGeoipRuleRequest, ShowGeoipRuleResponse>(request, WafMeta.showGeoipRule, hcClient);
+    }
+
+    /**
      * 根据防护域名Id查询云模式防护域名详细信息
      *
      * 根据防护域名Id查询云模式防护域名详细信息
@@ -1690,6 +2291,36 @@ public class WafAsyncClient {
      */
     public AsyncInvoker<ShowHostRequest, ShowHostResponse> showHostAsyncInvoker(ShowHostRequest request) {
         return new AsyncInvoker<ShowHostRequest, ShowHostResponse>(request, WafMeta.showHost, hcClient);
+    }
+
+    /**
+     * 查询全局白名单(原误报屏蔽)防护规则
+     *
+     * 查询全局白名单(原误报屏蔽)防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowIgnoreRuleRequest 请求对象
+     * @return CompletableFuture<ShowIgnoreRuleResponse>
+     */
+    public CompletableFuture<ShowIgnoreRuleResponse> showIgnoreRuleAsync(ShowIgnoreRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showIgnoreRule);
+    }
+
+    /**
+     * 查询全局白名单(原误报屏蔽)防护规则
+     *
+     * 查询全局白名单(原误报屏蔽)防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowIgnoreRuleRequest 请求对象
+     * @return AsyncInvoker<ShowIgnoreRuleRequest, ShowIgnoreRuleResponse>
+     */
+    public AsyncInvoker<ShowIgnoreRuleRequest, ShowIgnoreRuleResponse> showIgnoreRuleAsyncInvoker(
+        ShowIgnoreRuleRequest request) {
+        return new AsyncInvoker<ShowIgnoreRuleRequest, ShowIgnoreRuleResponse>(request, WafMeta.showIgnoreRule,
+            hcClient);
     }
 
     /**
@@ -1838,6 +2469,36 @@ public class WafAsyncClient {
     }
 
     /**
+     * 根据Id查询攻击惩罚防护规则
+     *
+     * 根据Id查询攻击惩罚防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPunishmentRuleRequest 请求对象
+     * @return CompletableFuture<ShowPunishmentRuleResponse>
+     */
+    public CompletableFuture<ShowPunishmentRuleResponse> showPunishmentRuleAsync(ShowPunishmentRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showPunishmentRule);
+    }
+
+    /**
+     * 根据Id查询攻击惩罚防护规则
+     *
+     * 根据Id查询攻击惩罚防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPunishmentRuleRequest 请求对象
+     * @return AsyncInvoker<ShowPunishmentRuleRequest, ShowPunishmentRuleResponse>
+     */
+    public AsyncInvoker<ShowPunishmentRuleRequest, ShowPunishmentRuleResponse> showPunishmentRuleAsyncInvoker(
+        ShowPunishmentRuleRequest request) {
+        return new AsyncInvoker<ShowPunishmentRuleRequest, ShowPunishmentRuleResponse>(request,
+            WafMeta.showPunishmentRule, hcClient);
+    }
+
+    /**
      * 查询WAF回源Ip信息
      *
      * 查询WAF回源Ip信息
@@ -1929,6 +2590,159 @@ public class WafAsyncClient {
     }
 
     /**
+     * 网页防篡改规则更新缓存
+     *
+     * 网页防篡改规则更新缓存
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAntiTamperRuleRefreshRequest 请求对象
+     * @return CompletableFuture<UpdateAntiTamperRuleRefreshResponse>
+     */
+    public CompletableFuture<UpdateAntiTamperRuleRefreshResponse> updateAntiTamperRuleRefreshAsync(
+        UpdateAntiTamperRuleRefreshRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateAntiTamperRuleRefresh);
+    }
+
+    /**
+     * 网页防篡改规则更新缓存
+     *
+     * 网页防篡改规则更新缓存
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAntiTamperRuleRefreshRequest 请求对象
+     * @return AsyncInvoker<UpdateAntiTamperRuleRefreshRequest, UpdateAntiTamperRuleRefreshResponse>
+     */
+    public AsyncInvoker<UpdateAntiTamperRuleRefreshRequest, UpdateAntiTamperRuleRefreshResponse> updateAntiTamperRuleRefreshAsyncInvoker(
+        UpdateAntiTamperRuleRefreshRequest request) {
+        return new AsyncInvoker<UpdateAntiTamperRuleRefreshRequest, UpdateAntiTamperRuleRefreshResponse>(request,
+            WafMeta.updateAntiTamperRuleRefresh, hcClient);
+    }
+
+    /**
+     * 更新JS脚本反爬虫防护规则
+     *
+     * 更新JS脚本反爬虫防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAnticrawlerRuleRequest 请求对象
+     * @return CompletableFuture<UpdateAnticrawlerRuleResponse>
+     */
+    public CompletableFuture<UpdateAnticrawlerRuleResponse> updateAnticrawlerRuleAsync(
+        UpdateAnticrawlerRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateAnticrawlerRule);
+    }
+
+    /**
+     * 更新JS脚本反爬虫防护规则
+     *
+     * 更新JS脚本反爬虫防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAnticrawlerRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse>
+     */
+    public AsyncInvoker<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse> updateAnticrawlerRuleAsyncInvoker(
+        UpdateAnticrawlerRuleRequest request) {
+        return new AsyncInvoker<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse>(request,
+            WafMeta.updateAnticrawlerRule, hcClient);
+    }
+
+    /**
+     * 更新JS脚本反爬虫规则防护模式
+     *
+     * 更新JS脚本反爬虫规则防护模式，在创建JS脚本反爬虫规则前，需要调用该接口指定JS脚本反爬虫规则防护模式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAnticrawlerRuleTypeRequest 请求对象
+     * @return CompletableFuture<UpdateAnticrawlerRuleTypeResponse>
+     */
+    public CompletableFuture<UpdateAnticrawlerRuleTypeResponse> updateAnticrawlerRuleTypeAsync(
+        UpdateAnticrawlerRuleTypeRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateAnticrawlerRuleType);
+    }
+
+    /**
+     * 更新JS脚本反爬虫规则防护模式
+     *
+     * 更新JS脚本反爬虫规则防护模式，在创建JS脚本反爬虫规则前，需要调用该接口指定JS脚本反爬虫规则防护模式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAnticrawlerRuleTypeRequest 请求对象
+     * @return AsyncInvoker<UpdateAnticrawlerRuleTypeRequest, UpdateAnticrawlerRuleTypeResponse>
+     */
+    public AsyncInvoker<UpdateAnticrawlerRuleTypeRequest, UpdateAnticrawlerRuleTypeResponse> updateAnticrawlerRuleTypeAsyncInvoker(
+        UpdateAnticrawlerRuleTypeRequest request) {
+        return new AsyncInvoker<UpdateAnticrawlerRuleTypeRequest, UpdateAnticrawlerRuleTypeResponse>(request,
+            WafMeta.updateAnticrawlerRuleType, hcClient);
+    }
+
+    /**
+     * 更新防敏感信息泄露防护规则
+     *
+     * 更新防敏感信息泄露防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAntileakageRuleRequest 请求对象
+     * @return CompletableFuture<UpdateAntileakageRuleResponse>
+     */
+    public CompletableFuture<UpdateAntileakageRuleResponse> updateAntileakageRuleAsync(
+        UpdateAntileakageRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateAntileakageRule);
+    }
+
+    /**
+     * 更新防敏感信息泄露防护规则
+     *
+     * 更新防敏感信息泄露防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAntileakageRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateAntileakageRuleRequest, UpdateAntileakageRuleResponse>
+     */
+    public AsyncInvoker<UpdateAntileakageRuleRequest, UpdateAntileakageRuleResponse> updateAntileakageRuleAsyncInvoker(
+        UpdateAntileakageRuleRequest request) {
+        return new AsyncInvoker<UpdateAntileakageRuleRequest, UpdateAntileakageRuleResponse>(request,
+            WafMeta.updateAntileakageRule, hcClient);
+    }
+
+    /**
+     * 更新cc防护规则
+     *
+     * 更新cc防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateCcRuleRequest 请求对象
+     * @return CompletableFuture<UpdateCcRuleResponse>
+     */
+    public CompletableFuture<UpdateCcRuleResponse> updateCcRuleAsync(UpdateCcRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateCcRule);
+    }
+
+    /**
+     * 更新cc防护规则
+     *
+     * 更新cc防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateCcRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateCcRuleRequest, UpdateCcRuleResponse>
+     */
+    public AsyncInvoker<UpdateCcRuleRequest, UpdateCcRuleResponse> updateCcRuleAsyncInvoker(
+        UpdateCcRuleRequest request) {
+        return new AsyncInvoker<UpdateCcRuleRequest, UpdateCcRuleResponse>(request, WafMeta.updateCcRule, hcClient);
+    }
+
+    /**
      * 修改证书
      *
      * 修改证书
@@ -1955,6 +2769,36 @@ public class WafAsyncClient {
     public AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificateAsyncInvoker(
         UpdateCertificateRequest request) {
         return new AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>(request, WafMeta.updateCertificate,
+            hcClient);
+    }
+
+    /**
+     * 更新精准防护规则
+     *
+     * 更新精准防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateCustomRuleRequest 请求对象
+     * @return CompletableFuture<UpdateCustomRuleResponse>
+     */
+    public CompletableFuture<UpdateCustomRuleResponse> updateCustomRuleAsync(UpdateCustomRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateCustomRule);
+    }
+
+    /**
+     * 更新精准防护规则
+     *
+     * 更新精准防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateCustomRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateCustomRuleRequest, UpdateCustomRuleResponse>
+     */
+    public AsyncInvoker<UpdateCustomRuleRequest, UpdateCustomRuleResponse> updateCustomRuleAsyncInvoker(
+        UpdateCustomRuleRequest request) {
+        return new AsyncInvoker<UpdateCustomRuleRequest, UpdateCustomRuleResponse>(request, WafMeta.updateCustomRule,
             hcClient);
     }
 
@@ -2045,6 +2889,36 @@ public class WafAsyncClient {
         UpdateHostProtectStatusRequest request) {
         return new AsyncInvoker<UpdateHostProtectStatusRequest, UpdateHostProtectStatusResponse>(request,
             WafMeta.updateHostProtectStatus, hcClient);
+    }
+
+    /**
+     * 更新全局白名单(原误报屏蔽)防护规则
+     *
+     * 更新全局白名单(原误报屏蔽)防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateIgnoreRuleRequest 请求对象
+     * @return CompletableFuture<UpdateIgnoreRuleResponse>
+     */
+    public CompletableFuture<UpdateIgnoreRuleResponse> updateIgnoreRuleAsync(UpdateIgnoreRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateIgnoreRule);
+    }
+
+    /**
+     * 更新全局白名单(原误报屏蔽)防护规则
+     *
+     * 更新全局白名单(原误报屏蔽)防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateIgnoreRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateIgnoreRuleRequest, UpdateIgnoreRuleResponse>
+     */
+    public AsyncInvoker<UpdateIgnoreRuleRequest, UpdateIgnoreRuleResponse> updateIgnoreRuleAsyncInvoker(
+        UpdateIgnoreRuleRequest request) {
+        return new AsyncInvoker<UpdateIgnoreRuleRequest, UpdateIgnoreRuleResponse>(request, WafMeta.updateIgnoreRule,
+            hcClient);
     }
 
     /**
@@ -2286,6 +3160,37 @@ public class WafAsyncClient {
         UpdatePrivacyRuleRequest request) {
         return new AsyncInvoker<UpdatePrivacyRuleRequest, UpdatePrivacyRuleResponse>(request, WafMeta.updatePrivacyRule,
             hcClient);
+    }
+
+    /**
+     * 更新攻击惩罚规则
+     *
+     * 更新攻击惩罚规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePunishmentRuleRequest 请求对象
+     * @return CompletableFuture<UpdatePunishmentRuleResponse>
+     */
+    public CompletableFuture<UpdatePunishmentRuleResponse> updatePunishmentRuleAsync(
+        UpdatePunishmentRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updatePunishmentRule);
+    }
+
+    /**
+     * 更新攻击惩罚规则
+     *
+     * 更新攻击惩罚规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePunishmentRuleRequest 请求对象
+     * @return AsyncInvoker<UpdatePunishmentRuleRequest, UpdatePunishmentRuleResponse>
+     */
+    public AsyncInvoker<UpdatePunishmentRuleRequest, UpdatePunishmentRuleResponse> updatePunishmentRuleAsyncInvoker(
+        UpdatePunishmentRuleRequest request) {
+        return new AsyncInvoker<UpdatePunishmentRuleRequest, UpdatePunishmentRuleResponse>(request,
+            WafMeta.updatePunishmentRule, hcClient);
     }
 
     /**

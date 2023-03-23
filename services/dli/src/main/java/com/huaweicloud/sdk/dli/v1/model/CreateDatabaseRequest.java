@@ -14,16 +14,16 @@ public class CreateDatabaseRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateDatabaseReq body;
+    private CreateDatabaseRequestBody body;
 
-    public CreateDatabaseRequest withBody(CreateDatabaseReq body) {
+    public CreateDatabaseRequest withBody(CreateDatabaseRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateDatabaseRequest withBody(Consumer<CreateDatabaseReq> bodySetter) {
+    public CreateDatabaseRequest withBody(Consumer<CreateDatabaseRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateDatabaseReq();
+            this.body = new CreateDatabaseRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateDatabaseRequest {
      * Get body
      * @return body
      */
-    public CreateDatabaseReq getBody() {
+    public CreateDatabaseRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateDatabaseReq body) {
+    public void setBody(CreateDatabaseRequestBody body) {
         this.body = body;
     }
 

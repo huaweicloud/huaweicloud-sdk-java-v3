@@ -13,7 +13,7 @@ public class ListEnhancedConnectionsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private String limit;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -23,7 +23,7 @@ public class ListEnhancedConnectionsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private String offset;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -35,7 +35,7 @@ public class ListEnhancedConnectionsRequest {
 
     private String tags;
 
-    public ListEnhancedConnectionsRequest withLimit(String limit) {
+    public ListEnhancedConnectionsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
@@ -44,11 +44,11 @@ public class ListEnhancedConnectionsRequest {
      * 查询最大连接个数，默认100。
      * @return limit
      */
-    public String getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(String limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 
@@ -69,7 +69,7 @@ public class ListEnhancedConnectionsRequest {
         this.name = name;
     }
 
-    public ListEnhancedConnectionsRequest withOffset(String offset) {
+    public ListEnhancedConnectionsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
@@ -78,11 +78,11 @@ public class ListEnhancedConnectionsRequest {
      * 查询结果偏移量，默认为0（连接以创建时间进行排序）
      * @return offset
      */
-    public String getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(String offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 

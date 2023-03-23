@@ -26,7 +26,7 @@ public class ShowBatchJobDetailResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "appId")
 
-    private List<String> appId = null;
+    private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log")
@@ -122,36 +122,20 @@ public class ShowBatchJobDetailResp {
         this.state = state;
     }
 
-    public ShowBatchJobDetailResp withAppId(List<String> appId) {
+    public ShowBatchJobDetailResp withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    public ShowBatchJobDetailResp addAppIdItem(String appIdItem) {
-        if (this.appId == null) {
-            this.appId = new ArrayList<>();
-        }
-        this.appId.add(appIdItem);
-        return this;
-    }
-
-    public ShowBatchJobDetailResp withAppId(Consumer<List<String>> appIdSetter) {
-        if (this.appId == null) {
-            this.appId = new ArrayList<>();
-        }
-        appIdSetter.accept(this.appId);
-        return this;
-    }
-
     /**
-     * Batch作业的后台app id。
+     * 批处理作业的后台app id。
      * @return appId
      */
-    public List<String> getAppId() {
+    public String getAppId() {
         return appId;
     }
 
-    public void setAppId(List<String> appId) {
+    public void setAppId(String appId) {
         this.appId = appId;
     }
 

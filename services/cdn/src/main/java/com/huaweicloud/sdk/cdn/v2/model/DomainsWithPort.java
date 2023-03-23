@@ -156,21 +156,6 @@ public class DomainsWithPort {
 
     private ServiceAreaEnum serviceArea;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "banned_reason")
-
-    private String bannedReason;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "locked_reason")
-
-    private String lockedReason;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_id")
-
-    private String enterpriseProjectId;
-
     public DomainsWithPort withId(String id) {
         this.id = id;
         return this;
@@ -374,57 +359,6 @@ public class DomainsWithPort {
         this.serviceArea = serviceArea;
     }
 
-    public DomainsWithPort withBannedReason(String bannedReason) {
-        this.bannedReason = bannedReason;
-        return this;
-    }
-
-    /**
-     * 域名禁用原因。 1：该域名涉嫌违规内容（涉黄/涉赌/涉毒/涉政）已被禁用； 2：该域名因备案失效已被禁用； 3：该域名遭受攻击，已被禁用； 150：该域名涉嫌违规内容涉黄已被禁用； 151：该域名涉嫌违规内容涉政已被禁用； 152：该域名涉嫌违规内容涉暴已被禁用； 153：该域名涉嫌违规内容涉赌已被禁用。
-     * @return bannedReason
-     */
-    public String getBannedReason() {
-        return bannedReason;
-    }
-
-    public void setBannedReason(String bannedReason) {
-        this.bannedReason = bannedReason;
-    }
-
-    public DomainsWithPort withLockedReason(String lockedReason) {
-        this.lockedReason = lockedReason;
-        return this;
-    }
-
-    /**
-     * 域名锁定原因（Changing the config, please wait）。
-     * @return lockedReason
-     */
-    public String getLockedReason() {
-        return lockedReason;
-    }
-
-    public void setLockedReason(String lockedReason) {
-        this.lockedReason = lockedReason;
-    }
-
-    public DomainsWithPort withEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-        return this;
-    }
-
-    /**
-     * 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子帐号调用接口时，该参数必传。  您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。       
-     * @return enterpriseProjectId
-     */
-    public String getEnterpriseProjectId() {
-        return enterpriseProjectId;
-    }
-
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -444,10 +378,7 @@ public class DomainsWithPort {
             && Objects.equals(this.updateTime, domainsWithPort.updateTime)
             && Objects.equals(this.disabled, domainsWithPort.disabled)
             && Objects.equals(this.locked, domainsWithPort.locked)
-            && Objects.equals(this.serviceArea, domainsWithPort.serviceArea)
-            && Objects.equals(this.bannedReason, domainsWithPort.bannedReason)
-            && Objects.equals(this.lockedReason, domainsWithPort.lockedReason)
-            && Objects.equals(this.enterpriseProjectId, domainsWithPort.enterpriseProjectId);
+            && Objects.equals(this.serviceArea, domainsWithPort.serviceArea);
     }
 
     @Override
@@ -462,10 +393,7 @@ public class DomainsWithPort {
             updateTime,
             disabled,
             locked,
-            serviceArea,
-            bannedReason,
-            lockedReason,
-            enterpriseProjectId);
+            serviceArea);
     }
 
     @Override
@@ -483,9 +411,6 @@ public class DomainsWithPort {
         sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
         sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
         sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
-        sb.append("    bannedReason: ").append(toIndentedString(bannedReason)).append("\n");
-        sb.append("    lockedReason: ").append(toIndentedString(lockedReason)).append("\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

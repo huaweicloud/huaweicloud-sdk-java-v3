@@ -14,16 +14,16 @@ public class CreateFlinkTemplateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateTemplateReq body;
+    private CreateFlinkTemplateRequestBody body;
 
-    public CreateFlinkTemplateRequest withBody(CreateTemplateReq body) {
+    public CreateFlinkTemplateRequest withBody(CreateFlinkTemplateRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateFlinkTemplateRequest withBody(Consumer<CreateTemplateReq> bodySetter) {
+    public CreateFlinkTemplateRequest withBody(Consumer<CreateFlinkTemplateRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateTemplateReq();
+            this.body = new CreateFlinkTemplateRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateFlinkTemplateRequest {
      * Get body
      * @return body
      */
-    public CreateTemplateReq getBody() {
+    public CreateFlinkTemplateRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateTemplateReq body) {
+    public void setBody(CreateFlinkTemplateRequestBody body) {
         this.body = body;
     }
 

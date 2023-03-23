@@ -440,6 +440,45 @@ public class RabbitMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> resizeEngineInstance =
+        genForresizeEngineInstance();
+
+    private static HttpRequestDef<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> genForresizeEngineInstance() {
+        // basic
+        HttpRequestDef.Builder<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ResizeEngineInstanceRequest.class, ResizeEngineInstanceResponse.class)
+            .withName("ResizeEngineInstance")
+            .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/extend")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeEngineInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeEngineInstanceRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<ResizeEngineInstanceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResizeEngineInstanceReq.class),
+            f -> f.withMarshaller(ResizeEngineInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance =
         genForresizeInstance();
 
@@ -497,6 +536,48 @@ public class RabbitMQMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBackgroundTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfo =
+        genForshowEngineInstanceExtendProductInfo();
+
+    private static HttpRequestDef<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> genForshowEngineInstanceExtendProductInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowEngineInstanceExtendProductInfoRequest.class,
+                    ShowEngineInstanceExtendProductInfoResponse.class)
+                .withName("ShowEngineInstanceExtendProductInfo")
+                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/extend")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ShowEngineInstanceExtendProductInfoRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowEngineInstanceExtendProductInfoRequest.TypeEnum.class),
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getType, (req, v) -> {
+                req.setType(v);
             }));
 
         // response

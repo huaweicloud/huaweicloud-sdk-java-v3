@@ -19,7 +19,7 @@ public class UpdateDatabaseOwnerRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateDatabaseOwnerReq body;
+    private UpdateOwnerRequestBody body;
 
     public UpdateDatabaseOwnerRequest withDatabaseName(String databaseName) {
         this.databaseName = databaseName;
@@ -38,14 +38,14 @@ public class UpdateDatabaseOwnerRequest {
         this.databaseName = databaseName;
     }
 
-    public UpdateDatabaseOwnerRequest withBody(UpdateDatabaseOwnerReq body) {
+    public UpdateDatabaseOwnerRequest withBody(UpdateOwnerRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateDatabaseOwnerRequest withBody(Consumer<UpdateDatabaseOwnerReq> bodySetter) {
+    public UpdateDatabaseOwnerRequest withBody(Consumer<UpdateOwnerRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateDatabaseOwnerReq();
+            this.body = new UpdateOwnerRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateDatabaseOwnerRequest {
      * Get body
      * @return body
      */
-    public UpdateDatabaseOwnerReq getBody() {
+    public UpdateOwnerRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateDatabaseOwnerReq body) {
+    public void setBody(UpdateOwnerRequestBody body) {
         this.body = body;
     }
 

@@ -414,6 +414,36 @@ public class RabbitMQClient {
     }
 
     /**
+     * 新规格实例的规格变更
+     *
+     * 新规格实例的规格变更。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResizeEngineInstanceRequest 请求对象
+     * @return ResizeEngineInstanceResponse
+     */
+    public ResizeEngineInstanceResponse resizeEngineInstance(ResizeEngineInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.resizeEngineInstance);
+    }
+
+    /**
+     * 新规格实例的规格变更
+     *
+     * 新规格实例的规格变更。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResizeEngineInstanceRequest 请求对象
+     * @return SyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse>
+     */
+    public SyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> resizeEngineInstanceInvoker(
+        ResizeEngineInstanceRequest request) {
+        return new SyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse>(request,
+            RabbitMQMeta.resizeEngineInstance, hcClient);
+    }
+
+    /**
      * 实例规格变更
      *
      * 实例规格变更。
@@ -475,6 +505,37 @@ public class RabbitMQClient {
         ShowBackgroundTaskRequest request) {
         return new SyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse>(request,
             RabbitMQMeta.showBackgroundTask, hcClient);
+    }
+
+    /**
+     * 查询新规格可扩容规格列表
+     *
+     * 查询新规格实例可扩容列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @return ShowEngineInstanceExtendProductInfoResponse
+     */
+    public ShowEngineInstanceExtendProductInfoResponse showEngineInstanceExtendProductInfo(
+        ShowEngineInstanceExtendProductInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.showEngineInstanceExtendProductInfo);
+    }
+
+    /**
+     * 查询新规格可扩容规格列表
+     *
+     * 查询新规格实例可扩容列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @return SyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>
+     */
+    public SyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfoInvoker(
+        ShowEngineInstanceExtendProductInfoRequest request) {
+        return new SyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>(
+            request, RabbitMQMeta.showEngineInstanceExtendProductInfo, hcClient);
     }
 
     /**

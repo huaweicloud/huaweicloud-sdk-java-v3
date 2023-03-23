@@ -104,6 +104,8 @@ public final class Constants {
 
     public static final String X_REQUEST_ID = "X-Request-Id";
 
+    public static final String ENCODED_AUTHORIZATION_MESSAGE = "encoded_authorization_message";
+
     public static final String CODE = "code";
 
     public static final String MESSAGE = "message";

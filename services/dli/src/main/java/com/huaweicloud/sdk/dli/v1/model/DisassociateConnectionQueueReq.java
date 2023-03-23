@@ -1,111 +1,34 @@
 package com.huaweicloud.sdk.dli.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 解绑列队的请求body体。
+ * DisassociateConnectionQueueReq
  */
 public class DisassociateConnectionQueueReq {
-
-    /**
-     * Gets or Sets queues
-     */
-    public static final class QueuesEnum {
-
-        /**
-         * Enum Q1 for value: "q1"
-         */
-        public static final QueuesEnum Q1 = new QueuesEnum("q1");
-
-        /**
-         * Enum Q2 for value: "q2"
-         */
-        public static final QueuesEnum Q2 = new QueuesEnum("q2");
-
-        private static final Map<String, QueuesEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, QueuesEnum> createStaticFields() {
-            Map<String, QueuesEnum> map = new HashMap<>();
-            map.put("q1", Q1);
-            map.put("q2", Q2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        QueuesEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static QueuesEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            QueuesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new QueuesEnum(value);
-            }
-            return result;
-        }
-
-        public static QueuesEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            QueuesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof QueuesEnum) {
-                return this.value.equals(((QueuesEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queues")
 
-    private List<QueuesEnum> queues = null;
+    private List<String> queues = null;
 
-    public DisassociateConnectionQueueReq withQueues(List<QueuesEnum> queues) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elastic_resource_pools")
+
+    private List<String> elasticResourcePools = null;
+
+    public DisassociateConnectionQueueReq withQueues(List<String> queues) {
         this.queues = queues;
         return this;
     }
 
-    public DisassociateConnectionQueueReq addQueuesItem(QueuesEnum queuesItem) {
+    public DisassociateConnectionQueueReq addQueuesItem(String queuesItem) {
         if (this.queues == null) {
             this.queues = new ArrayList<>();
         }
@@ -113,7 +36,7 @@ public class DisassociateConnectionQueueReq {
         return this;
     }
 
-    public DisassociateConnectionQueueReq withQueues(Consumer<List<QueuesEnum>> queuesSetter) {
+    public DisassociateConnectionQueueReq withQueues(Consumer<List<String>> queuesSetter) {
         if (this.queues == null) {
             this.queues = new ArrayList<>();
         }
@@ -125,12 +48,45 @@ public class DisassociateConnectionQueueReq {
      * 需要使用跨源的队列名列表。
      * @return queues
      */
-    public List<QueuesEnum> getQueues() {
+    public List<String> getQueues() {
         return queues;
     }
 
-    public void setQueues(List<QueuesEnum> queues) {
+    public void setQueues(List<String> queues) {
         this.queues = queues;
+    }
+
+    public DisassociateConnectionQueueReq withElasticResourcePools(List<String> elasticResourcePools) {
+        this.elasticResourcePools = elasticResourcePools;
+        return this;
+    }
+
+    public DisassociateConnectionQueueReq addElasticResourcePoolsItem(String elasticResourcePoolsItem) {
+        if (this.elasticResourcePools == null) {
+            this.elasticResourcePools = new ArrayList<>();
+        }
+        this.elasticResourcePools.add(elasticResourcePoolsItem);
+        return this;
+    }
+
+    public DisassociateConnectionQueueReq withElasticResourcePools(Consumer<List<String>> elasticResourcePoolsSetter) {
+        if (this.elasticResourcePools == null) {
+            this.elasticResourcePools = new ArrayList<>();
+        }
+        elasticResourcePoolsSetter.accept(this.elasticResourcePools);
+        return this;
+    }
+
+    /**
+     * 需要使用跨源的弹性资源池名列表。
+     * @return elasticResourcePools
+     */
+    public List<String> getElasticResourcePools() {
+        return elasticResourcePools;
+    }
+
+    public void setElasticResourcePools(List<String> elasticResourcePools) {
+        this.elasticResourcePools = elasticResourcePools;
     }
 
     @Override
@@ -142,12 +98,13 @@ public class DisassociateConnectionQueueReq {
             return false;
         }
         DisassociateConnectionQueueReq disassociateConnectionQueueReq = (DisassociateConnectionQueueReq) o;
-        return Objects.equals(this.queues, disassociateConnectionQueueReq.queues);
+        return Objects.equals(this.queues, disassociateConnectionQueueReq.queues)
+            && Objects.equals(this.elasticResourcePools, disassociateConnectionQueueReq.elasticResourcePools);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(queues);
+        return Objects.hash(queues, elasticResourcePools);
     }
 
     @Override
@@ -155,6 +112,7 @@ public class DisassociateConnectionQueueReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class DisassociateConnectionQueueReq {\n");
         sb.append("    queues: ").append(toIndentedString(queues)).append("\n");
+        sb.append("    elasticResourcePools: ").append(toIndentedString(elasticResourcePools)).append("\n");
         sb.append("}");
         return sb.toString();
     }

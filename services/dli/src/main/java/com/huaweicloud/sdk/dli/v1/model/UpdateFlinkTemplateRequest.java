@@ -19,7 +19,7 @@ public class UpdateFlinkTemplateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateTemplateReq body;
+    private UpdateFlinkTemplateRequestBody body;
 
     public UpdateFlinkTemplateRequest withTemplateId(Long templateId) {
         this.templateId = templateId;
@@ -38,14 +38,14 @@ public class UpdateFlinkTemplateRequest {
         this.templateId = templateId;
     }
 
-    public UpdateFlinkTemplateRequest withBody(UpdateTemplateReq body) {
+    public UpdateFlinkTemplateRequest withBody(UpdateFlinkTemplateRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateFlinkTemplateRequest withBody(Consumer<UpdateTemplateReq> bodySetter) {
+    public UpdateFlinkTemplateRequest withBody(Consumer<UpdateFlinkTemplateRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateTemplateReq();
+            this.body = new UpdateFlinkTemplateRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateFlinkTemplateRequest {
      * Get body
      * @return body
      */
-    public UpdateTemplateReq getBody() {
+    public UpdateFlinkTemplateRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateTemplateReq body) {
+    public void setBody(UpdateFlinkTemplateRequestBody body) {
         this.body = body;
     }
 

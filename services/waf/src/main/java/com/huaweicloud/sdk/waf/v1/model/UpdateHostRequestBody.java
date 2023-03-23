@@ -473,7 +473,7 @@ public class UpdateHostRequestBody {
     }
 
     /**
-     * 套餐付费模式，目前只支持prePaid预付款模式
+     * 套餐付费模式，默认值为prePaid。prePaid：包周期款模式；postPaid：按需模式。
      * @return paidType
      */
     public String getPaidType() {

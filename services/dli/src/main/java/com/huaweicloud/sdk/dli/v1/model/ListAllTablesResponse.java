@@ -32,7 +32,7 @@ public class ListAllTablesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tables")
 
-    private List<ListTablesRespTable> tables = null;
+    private List<Table> tables = null;
 
     public ListAllTablesResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -85,12 +85,12 @@ public class ListAllTablesResponse extends SdkResponse {
         this.tableCount = tableCount;
     }
 
-    public ListAllTablesResponse withTables(List<ListTablesRespTable> tables) {
+    public ListAllTablesResponse withTables(List<Table> tables) {
         this.tables = tables;
         return this;
     }
 
-    public ListAllTablesResponse addTablesItem(ListTablesRespTable tablesItem) {
+    public ListAllTablesResponse addTablesItem(Table tablesItem) {
         if (this.tables == null) {
             this.tables = new ArrayList<>();
         }
@@ -98,7 +98,7 @@ public class ListAllTablesResponse extends SdkResponse {
         return this;
     }
 
-    public ListAllTablesResponse withTables(Consumer<List<ListTablesRespTable>> tablesSetter) {
+    public ListAllTablesResponse withTables(Consumer<List<Table>> tablesSetter) {
         if (this.tables == null) {
             this.tables = new ArrayList<>();
         }
@@ -110,11 +110,11 @@ public class ListAllTablesResponse extends SdkResponse {
      * 表的信息。
      * @return tables
      */
-    public List<ListTablesRespTable> getTables() {
+    public List<Table> getTables() {
         return tables;
     }
 
-    public void setTables(List<ListTablesRespTable> tables) {
+    public void setTables(List<Table> tables) {
         this.tables = tables;
     }
 

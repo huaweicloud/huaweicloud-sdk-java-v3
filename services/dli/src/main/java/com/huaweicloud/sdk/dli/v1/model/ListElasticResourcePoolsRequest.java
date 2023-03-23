@@ -36,16 +36,33 @@ public class ListElasticResourcePoolsRequest {
     public static final class StatusEnum {
 
         /**
-         * Enum AVAILABLE_SCALING_CREATING_FAILED for value: "AVAILABLE，SCALING，CREATING，FAILED"
+         * Enum AVAILABLE for value: "AVAILABLE"
          */
-        public static final StatusEnum AVAILABLE_SCALING_CREATING_FAILED =
-            new StatusEnum("AVAILABLE，SCALING，CREATING，FAILED");
+        public static final StatusEnum AVAILABLE = new StatusEnum("AVAILABLE");
+
+        /**
+         * Enum SCALING for value: "SCALING"
+         */
+        public static final StatusEnum SCALING = new StatusEnum("SCALING");
+
+        /**
+         * Enum CREATING for value: "CREATING"
+         */
+        public static final StatusEnum CREATING = new StatusEnum("CREATING");
+
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
+        public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
-            map.put("AVAILABLE，SCALING，CREATING，FAILED", AVAILABLE_SCALING_CREATING_FAILED);
+            map.put("AVAILABLE", AVAILABLE);
+            map.put("SCALING", SCALING);
+            map.put("CREATING", CREATING);
+            map.put("FAILED", FAILED);
             return Collections.unmodifiableMap(map);
         }
 

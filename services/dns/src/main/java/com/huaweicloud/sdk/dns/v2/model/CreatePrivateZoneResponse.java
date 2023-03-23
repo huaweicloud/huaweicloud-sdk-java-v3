@@ -173,7 +173,7 @@ public class CreatePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * zone类型，公网（public）或者内网（private）。
+     * zone类型，内网（private）。
      * @return zoneType
      */
     public String getZoneType() {

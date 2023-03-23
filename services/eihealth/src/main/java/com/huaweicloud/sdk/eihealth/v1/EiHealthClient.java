@@ -18,6 +18,125 @@ public class EiHealthClient {
     }
 
     /**
+     * 新建CPI任务接口
+     *
+     * 输入蛋白序列、小分子库，创建分子-蛋白互作预测任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCpiTaskRequest 请求对象
+     * @return CreateCpiTaskResponse
+     */
+    public CreateCpiTaskResponse createCpiTask(CreateCpiTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createCpiTask);
+    }
+
+    /**
+     * 新建CPI任务接口
+     *
+     * 输入蛋白序列、小分子库，创建分子-蛋白互作预测任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCpiTaskRequest 请求对象
+     * @return SyncInvoker<CreateCpiTaskRequest, CreateCpiTaskResponse>
+     */
+    public SyncInvoker<CreateCpiTaskRequest, CreateCpiTaskResponse> createCpiTaskInvoker(CreateCpiTaskRequest request) {
+        return new SyncInvoker<CreateCpiTaskRequest, CreateCpiTaskResponse>(request, EiHealthMeta.createCpiTask,
+            hcClient);
+    }
+
+    /**
+     * 查询CPI任务
+     *
+     * 通过CPI任务ID查询CPI任务状态及结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCpiTaskResultRequest 请求对象
+     * @return ShowCpiTaskResultResponse
+     */
+    public ShowCpiTaskResultResponse showCpiTaskResult(ShowCpiTaskResultRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showCpiTaskResult);
+    }
+
+    /**
+     * 查询CPI任务
+     *
+     * 通过CPI任务ID查询CPI任务状态及结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCpiTaskResultRequest 请求对象
+     * @return SyncInvoker<ShowCpiTaskResultRequest, ShowCpiTaskResultResponse>
+     */
+    public SyncInvoker<ShowCpiTaskResultRequest, ShowCpiTaskResultResponse> showCpiTaskResultInvoker(
+        ShowCpiTaskResultRequest request) {
+        return new SyncInvoker<ShowCpiTaskResultRequest, ShowCpiTaskResultResponse>(request,
+            EiHealthMeta.showCpiTaskResult, hcClient);
+    }
+
+    /**
+     * 新建分子生成任务接口
+     *
+     * 输入分子属性约束，创建分子生成任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateGenerationTaskRequest 请求对象
+     * @return CreateGenerationTaskResponse
+     */
+    public CreateGenerationTaskResponse createGenerationTask(CreateGenerationTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createGenerationTask);
+    }
+
+    /**
+     * 新建分子生成任务接口
+     *
+     * 输入分子属性约束，创建分子生成任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateGenerationTaskRequest 请求对象
+     * @return SyncInvoker<CreateGenerationTaskRequest, CreateGenerationTaskResponse>
+     */
+    public SyncInvoker<CreateGenerationTaskRequest, CreateGenerationTaskResponse> createGenerationTaskInvoker(
+        CreateGenerationTaskRequest request) {
+        return new SyncInvoker<CreateGenerationTaskRequest, CreateGenerationTaskResponse>(request,
+            EiHealthMeta.createGenerationTask, hcClient);
+    }
+
+    /**
+     * 查询分子生成任务
+     *
+     * 通过分子生成任务ID查询分子生成任务状态及结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowGenerationTaskResultRequest 请求对象
+     * @return ShowGenerationTaskResultResponse
+     */
+    public ShowGenerationTaskResultResponse showGenerationTaskResult(ShowGenerationTaskResultRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showGenerationTaskResult);
+    }
+
+    /**
+     * 查询分子生成任务
+     *
+     * 通过分子生成任务ID查询分子生成任务状态及结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowGenerationTaskResultRequest 请求对象
+     * @return SyncInvoker<ShowGenerationTaskResultRequest, ShowGenerationTaskResultResponse>
+     */
+    public SyncInvoker<ShowGenerationTaskResultRequest, ShowGenerationTaskResultResponse> showGenerationTaskResultInvoker(
+        ShowGenerationTaskResultRequest request) {
+        return new SyncInvoker<ShowGenerationTaskResultRequest, ShowGenerationTaskResultResponse>(request,
+            EiHealthMeta.showGenerationTaskResult, hcClient);
+    }
+
+    /**
      * 导入应用
      *
      * 批量导入应用
@@ -6180,6 +6299,126 @@ public class EiHealthClient {
         UpdateWorkflowRequest request) {
         return new SyncInvoker<UpdateWorkflowRequest, UpdateWorkflowResponse>(request, EiHealthMeta.updateWorkflow,
             hcClient);
+    }
+
+    /**
+     * 新建分子优化任务接口
+     *
+     * 输入起始小分子以及属性约束，创建分子优化任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOptimizationTaskRequest 请求对象
+     * @return CreateOptimizationTaskResponse
+     */
+    public CreateOptimizationTaskResponse createOptimizationTask(CreateOptimizationTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createOptimizationTask);
+    }
+
+    /**
+     * 新建分子优化任务接口
+     *
+     * 输入起始小分子以及属性约束，创建分子优化任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOptimizationTaskRequest 请求对象
+     * @return SyncInvoker<CreateOptimizationTaskRequest, CreateOptimizationTaskResponse>
+     */
+    public SyncInvoker<CreateOptimizationTaskRequest, CreateOptimizationTaskResponse> createOptimizationTaskInvoker(
+        CreateOptimizationTaskRequest request) {
+        return new SyncInvoker<CreateOptimizationTaskRequest, CreateOptimizationTaskResponse>(request,
+            EiHealthMeta.createOptimizationTask, hcClient);
+    }
+
+    /**
+     * 查询分子优化任务
+     *
+     * 通过分子优化任务ID查询分子优化任务状态及结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOptimizationTaskResultRequest 请求对象
+     * @return ShowOptimizationTaskResultResponse
+     */
+    public ShowOptimizationTaskResultResponse showOptimizationTaskResult(ShowOptimizationTaskResultRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showOptimizationTaskResult);
+    }
+
+    /**
+     * 查询分子优化任务
+     *
+     * 通过分子优化任务ID查询分子优化任务状态及结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOptimizationTaskResultRequest 请求对象
+     * @return SyncInvoker<ShowOptimizationTaskResultRequest, ShowOptimizationTaskResultResponse>
+     */
+    public SyncInvoker<ShowOptimizationTaskResultRequest, ShowOptimizationTaskResultResponse> showOptimizationTaskResultInvoker(
+        ShowOptimizationTaskResultRequest request) {
+        return new SyncInvoker<ShowOptimizationTaskResultRequest, ShowOptimizationTaskResultResponse>(request,
+            EiHealthMeta.showOptimizationTaskResult, hcClient);
+    }
+
+    /**
+     * 新建分子搜索任务接口
+     *
+     * 输入要查询的分子以及查询条件，创建分子搜索任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSearchTaskRequest 请求对象
+     * @return CreateSearchTaskResponse
+     */
+    public CreateSearchTaskResponse createSearchTask(CreateSearchTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createSearchTask);
+    }
+
+    /**
+     * 新建分子搜索任务接口
+     *
+     * 输入要查询的分子以及查询条件，创建分子搜索任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSearchTaskRequest 请求对象
+     * @return SyncInvoker<CreateSearchTaskRequest, CreateSearchTaskResponse>
+     */
+    public SyncInvoker<CreateSearchTaskRequest, CreateSearchTaskResponse> createSearchTaskInvoker(
+        CreateSearchTaskRequest request) {
+        return new SyncInvoker<CreateSearchTaskRequest, CreateSearchTaskResponse>(request,
+            EiHealthMeta.createSearchTask, hcClient);
+    }
+
+    /**
+     * 查询分子搜索任务
+     *
+     * 通过分子搜索任务ID查询分子搜索任务状态及结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSearchTaskResultRequest 请求对象
+     * @return ShowSearchTaskResultResponse
+     */
+    public ShowSearchTaskResultResponse showSearchTaskResult(ShowSearchTaskResultRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showSearchTaskResult);
+    }
+
+    /**
+     * 查询分子搜索任务
+     *
+     * 通过分子搜索任务ID查询分子搜索任务状态及结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSearchTaskResultRequest 请求对象
+     * @return SyncInvoker<ShowSearchTaskResultRequest, ShowSearchTaskResultResponse>
+     */
+    public SyncInvoker<ShowSearchTaskResultRequest, ShowSearchTaskResultResponse> showSearchTaskResultInvoker(
+        ShowSearchTaskResultRequest request) {
+        return new SyncInvoker<ShowSearchTaskResultRequest, ShowSearchTaskResultResponse>(request,
+            EiHealthMeta.showSearchTaskResult, hcClient);
     }
 
 }

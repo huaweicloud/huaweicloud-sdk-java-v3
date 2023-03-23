@@ -2824,19 +2824,7 @@ public class DdsMeta {
             }));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowReplSetNameResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
 
-        builder.<String>withResponseField("name",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowReplSetNameResponse::getName, ShowReplSetNameResponse::setName));
         return builder.build();
     }
 
@@ -3383,13 +3371,6 @@ public class DdsMeta {
             }));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateReplSetNameResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
 
         return builder.build();
     }

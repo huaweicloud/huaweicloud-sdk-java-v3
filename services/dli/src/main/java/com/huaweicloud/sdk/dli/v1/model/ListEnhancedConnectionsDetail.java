@@ -31,7 +31,12 @@ public class ListEnhancedConnectionsDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_queue_info")
 
-    private List<EnhancedConnectionQueueInfo> availableQueueInfo = null;
+    private List<EnhancedConnectionResourceInfo> availableQueueInfo = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elastic_resource_pools")
+
+    private List<EnhancedConnectionResourceInfo> elasticResourcePools = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dest_vpc_id")
@@ -109,12 +114,14 @@ public class ListEnhancedConnectionsDetail {
         this.status = status;
     }
 
-    public ListEnhancedConnectionsDetail withAvailableQueueInfo(List<EnhancedConnectionQueueInfo> availableQueueInfo) {
+    public ListEnhancedConnectionsDetail withAvailableQueueInfo(
+        List<EnhancedConnectionResourceInfo> availableQueueInfo) {
         this.availableQueueInfo = availableQueueInfo;
         return this;
     }
 
-    public ListEnhancedConnectionsDetail addAvailableQueueInfoItem(EnhancedConnectionQueueInfo availableQueueInfoItem) {
+    public ListEnhancedConnectionsDetail addAvailableQueueInfoItem(
+        EnhancedConnectionResourceInfo availableQueueInfoItem) {
         if (this.availableQueueInfo == null) {
             this.availableQueueInfo = new ArrayList<>();
         }
@@ -123,7 +130,7 @@ public class ListEnhancedConnectionsDetail {
     }
 
     public ListEnhancedConnectionsDetail withAvailableQueueInfo(
-        Consumer<List<EnhancedConnectionQueueInfo>> availableQueueInfoSetter) {
+        Consumer<List<EnhancedConnectionResourceInfo>> availableQueueInfoSetter) {
         if (this.availableQueueInfo == null) {
             this.availableQueueInfo = new ArrayList<>();
         }
@@ -135,12 +142,48 @@ public class ListEnhancedConnectionsDetail {
      * 各个队列创建对等连接的信息。
      * @return availableQueueInfo
      */
-    public List<EnhancedConnectionQueueInfo> getAvailableQueueInfo() {
+    public List<EnhancedConnectionResourceInfo> getAvailableQueueInfo() {
         return availableQueueInfo;
     }
 
-    public void setAvailableQueueInfo(List<EnhancedConnectionQueueInfo> availableQueueInfo) {
+    public void setAvailableQueueInfo(List<EnhancedConnectionResourceInfo> availableQueueInfo) {
         this.availableQueueInfo = availableQueueInfo;
+    }
+
+    public ListEnhancedConnectionsDetail withElasticResourcePools(
+        List<EnhancedConnectionResourceInfo> elasticResourcePools) {
+        this.elasticResourcePools = elasticResourcePools;
+        return this;
+    }
+
+    public ListEnhancedConnectionsDetail addElasticResourcePoolsItem(
+        EnhancedConnectionResourceInfo elasticResourcePoolsItem) {
+        if (this.elasticResourcePools == null) {
+            this.elasticResourcePools = new ArrayList<>();
+        }
+        this.elasticResourcePools.add(elasticResourcePoolsItem);
+        return this;
+    }
+
+    public ListEnhancedConnectionsDetail withElasticResourcePools(
+        Consumer<List<EnhancedConnectionResourceInfo>> elasticResourcePoolsSetter) {
+        if (this.elasticResourcePools == null) {
+            this.elasticResourcePools = new ArrayList<>();
+        }
+        elasticResourcePoolsSetter.accept(this.elasticResourcePools);
+        return this;
+    }
+
+    /**
+     * 各个弹性资源池创建对等连接的信息。
+     * @return elasticResourcePools
+     */
+    public List<EnhancedConnectionResourceInfo> getElasticResourcePools() {
+        return elasticResourcePools;
+    }
+
+    public void setElasticResourcePools(List<EnhancedConnectionResourceInfo> elasticResourcePools) {
+        this.elasticResourcePools = elasticResourcePools;
     }
 
     public ListEnhancedConnectionsDetail withDestVpcId(String destVpcId) {
@@ -257,6 +300,7 @@ public class ListEnhancedConnectionsDetail {
             && Objects.equals(this.name, listEnhancedConnectionsDetail.name)
             && Objects.equals(this.status, listEnhancedConnectionsDetail.status)
             && Objects.equals(this.availableQueueInfo, listEnhancedConnectionsDetail.availableQueueInfo)
+            && Objects.equals(this.elasticResourcePools, listEnhancedConnectionsDetail.elasticResourcePools)
             && Objects.equals(this.destVpcId, listEnhancedConnectionsDetail.destVpcId)
             && Objects.equals(this.destNetworkId, listEnhancedConnectionsDetail.destNetworkId)
             && Objects.equals(this.createTime, listEnhancedConnectionsDetail.createTime)
@@ -266,8 +310,16 @@ public class ListEnhancedConnectionsDetail {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, name, status, availableQueueInfo, destVpcId, destNetworkId, createTime, hosts, isPrivis);
+        return Objects.hash(id,
+            name,
+            status,
+            availableQueueInfo,
+            elasticResourcePools,
+            destVpcId,
+            destNetworkId,
+            createTime,
+            hosts,
+            isPrivis);
     }
 
     @Override
@@ -278,6 +330,7 @@ public class ListEnhancedConnectionsDetail {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    availableQueueInfo: ").append(toIndentedString(availableQueueInfo)).append("\n");
+        sb.append("    elasticResourcePools: ").append(toIndentedString(elasticResourcePools)).append("\n");
         sb.append("    destVpcId: ").append(toIndentedString(destVpcId)).append("\n");
         sb.append("    destNetworkId: ").append(toIndentedString(destNetworkId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");

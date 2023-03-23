@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 绑定队列的请求body体。
+ * AssociateConnectionQueueReq
  */
 public class AssociateConnectionQueueReq {
 
@@ -17,6 +17,11 @@ public class AssociateConnectionQueueReq {
     @JsonProperty(value = "queues")
 
     private List<String> queues = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elastic_resource_pools")
+
+    private List<String> elasticResourcePools = null;
 
     public AssociateConnectionQueueReq withQueues(List<String> queues) {
         this.queues = queues;
@@ -51,6 +56,39 @@ public class AssociateConnectionQueueReq {
         this.queues = queues;
     }
 
+    public AssociateConnectionQueueReq withElasticResourcePools(List<String> elasticResourcePools) {
+        this.elasticResourcePools = elasticResourcePools;
+        return this;
+    }
+
+    public AssociateConnectionQueueReq addElasticResourcePoolsItem(String elasticResourcePoolsItem) {
+        if (this.elasticResourcePools == null) {
+            this.elasticResourcePools = new ArrayList<>();
+        }
+        this.elasticResourcePools.add(elasticResourcePoolsItem);
+        return this;
+    }
+
+    public AssociateConnectionQueueReq withElasticResourcePools(Consumer<List<String>> elasticResourcePoolsSetter) {
+        if (this.elasticResourcePools == null) {
+            this.elasticResourcePools = new ArrayList<>();
+        }
+        elasticResourcePoolsSetter.accept(this.elasticResourcePools);
+        return this;
+    }
+
+    /**
+     * 需要使用跨源的弹性资源池名列表。
+     * @return elasticResourcePools
+     */
+    public List<String> getElasticResourcePools() {
+        return elasticResourcePools;
+    }
+
+    public void setElasticResourcePools(List<String> elasticResourcePools) {
+        this.elasticResourcePools = elasticResourcePools;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -60,12 +98,13 @@ public class AssociateConnectionQueueReq {
             return false;
         }
         AssociateConnectionQueueReq associateConnectionQueueReq = (AssociateConnectionQueueReq) o;
-        return Objects.equals(this.queues, associateConnectionQueueReq.queues);
+        return Objects.equals(this.queues, associateConnectionQueueReq.queues)
+            && Objects.equals(this.elasticResourcePools, associateConnectionQueueReq.elasticResourcePools);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(queues);
+        return Objects.hash(queues, elasticResourcePools);
     }
 
     @Override
@@ -73,6 +112,7 @@ public class AssociateConnectionQueueReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class AssociateConnectionQueueReq {\n");
         sb.append("    queues: ").append(toIndentedString(queues)).append("\n");
+        sb.append("    elasticResourcePools: ").append(toIndentedString(elasticResourcePools)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -88,7 +88,7 @@ public class CreateRecordSetReq {
     }
 
     /**
-     * Record Set的类型。  取值范围：A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。
+     * Record Set的类型。  公网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。  内网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、NS、SRV、CAA、PTR。  默认值为空。
      * @return type
      */
     public String getType() {

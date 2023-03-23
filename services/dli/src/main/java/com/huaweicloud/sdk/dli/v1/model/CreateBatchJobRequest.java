@@ -19,7 +19,7 @@ public class CreateBatchJobRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateBatchJobReq body;
+    private BatchJobInfo body;
 
     public CreateBatchJobRequest withUserId(String userId) {
         this.userId = userId;
@@ -38,14 +38,14 @@ public class CreateBatchJobRequest {
         this.userId = userId;
     }
 
-    public CreateBatchJobRequest withBody(CreateBatchJobReq body) {
+    public CreateBatchJobRequest withBody(BatchJobInfo body) {
         this.body = body;
         return this;
     }
 
-    public CreateBatchJobRequest withBody(Consumer<CreateBatchJobReq> bodySetter) {
+    public CreateBatchJobRequest withBody(Consumer<BatchJobInfo> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateBatchJobReq();
+            this.body = new BatchJobInfo();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class CreateBatchJobRequest {
      * Get body
      * @return body
      */
-    public CreateBatchJobReq getBody() {
+    public BatchJobInfo getBody() {
         return body;
     }
 
-    public void setBody(CreateBatchJobReq body) {
+    public void setBody(BatchJobInfo body) {
         this.body = body;
     }
 

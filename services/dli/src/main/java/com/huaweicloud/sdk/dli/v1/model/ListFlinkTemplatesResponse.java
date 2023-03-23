@@ -25,7 +25,7 @@ public class ListFlinkTemplatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_list")
 
-    private ListTemplatesRespList templateList;
+    private FlinkTemplateList templateList;
 
     public ListFlinkTemplatesResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -61,14 +61,14 @@ public class ListFlinkTemplatesResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ListFlinkTemplatesResponse withTemplateList(ListTemplatesRespList templateList) {
+    public ListFlinkTemplatesResponse withTemplateList(FlinkTemplateList templateList) {
         this.templateList = templateList;
         return this;
     }
 
-    public ListFlinkTemplatesResponse withTemplateList(Consumer<ListTemplatesRespList> templateListSetter) {
+    public ListFlinkTemplatesResponse withTemplateList(Consumer<FlinkTemplateList> templateListSetter) {
         if (this.templateList == null) {
-            this.templateList = new ListTemplatesRespList();
+            this.templateList = new FlinkTemplateList();
             templateListSetter.accept(this.templateList);
         }
 
@@ -79,11 +79,11 @@ public class ListFlinkTemplatesResponse extends SdkResponse {
      * Get templateList
      * @return templateList
      */
-    public ListTemplatesRespList getTemplateList() {
+    public FlinkTemplateList getTemplateList() {
         return templateList;
     }
 
-    public void setTemplateList(ListTemplatesRespList templateList) {
+    public void setTemplateList(FlinkTemplateList templateList) {
         this.templateList = templateList;
     }
 

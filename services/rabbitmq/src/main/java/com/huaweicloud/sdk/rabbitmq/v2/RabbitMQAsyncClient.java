@@ -422,6 +422,37 @@ public class RabbitMQAsyncClient {
     }
 
     /**
+     * 新规格实例的规格变更
+     *
+     * 新规格实例的规格变更。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResizeEngineInstanceRequest 请求对象
+     * @return CompletableFuture<ResizeEngineInstanceResponse>
+     */
+    public CompletableFuture<ResizeEngineInstanceResponse> resizeEngineInstanceAsync(
+        ResizeEngineInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, RabbitMQMeta.resizeEngineInstance);
+    }
+
+    /**
+     * 新规格实例的规格变更
+     *
+     * 新规格实例的规格变更。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResizeEngineInstanceRequest 请求对象
+     * @return AsyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse>
+     */
+    public AsyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> resizeEngineInstanceAsyncInvoker(
+        ResizeEngineInstanceRequest request) {
+        return new AsyncInvoker<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse>(request,
+            RabbitMQMeta.resizeEngineInstance, hcClient);
+    }
+
+    /**
      * 实例规格变更
      *
      * 实例规格变更。
@@ -483,6 +514,37 @@ public class RabbitMQAsyncClient {
         ShowBackgroundTaskRequest request) {
         return new AsyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse>(request,
             RabbitMQMeta.showBackgroundTask, hcClient);
+    }
+
+    /**
+     * 查询新规格可扩容规格列表
+     *
+     * 查询新规格实例可扩容列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @return CompletableFuture<ShowEngineInstanceExtendProductInfoResponse>
+     */
+    public CompletableFuture<ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfoAsync(
+        ShowEngineInstanceExtendProductInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, RabbitMQMeta.showEngineInstanceExtendProductInfo);
+    }
+
+    /**
+     * 查询新规格可扩容规格列表
+     *
+     * 查询新规格实例可扩容列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @return AsyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>
+     */
+    public AsyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfoAsyncInvoker(
+        ShowEngineInstanceExtendProductInfoRequest request) {
+        return new AsyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>(
+            request, RabbitMQMeta.showEngineInstanceExtendProductInfo, hcClient);
     }
 
     /**

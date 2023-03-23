@@ -168,7 +168,7 @@ public class ShowPublicZoneResponse extends SdkResponse {
     }
 
     /**
-     * zone类型，公网（public）或者内网（private）
+     * zone类型，公网（public）。
      * @return zoneType
      */
     public String getZoneType() {

@@ -14,16 +14,16 @@ public class CheckSqlRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CheckSQLGramarReq body;
+    private CheckSqlRequestBody body;
 
-    public CheckSqlRequest withBody(CheckSQLGramarReq body) {
+    public CheckSqlRequest withBody(CheckSqlRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CheckSqlRequest withBody(Consumer<CheckSQLGramarReq> bodySetter) {
+    public CheckSqlRequest withBody(Consumer<CheckSqlRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CheckSQLGramarReq();
+            this.body = new CheckSqlRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CheckSqlRequest {
      * Get body
      * @return body
      */
-    public CheckSQLGramarReq getBody() {
+    public CheckSqlRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CheckSQLGramarReq body) {
+    public void setBody(CheckSqlRequestBody body) {
         this.body = body;
     }
 

@@ -100,6 +100,11 @@ public class NodeExtendParam {
 
     private Integer chargingMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_name")
+
+    private String agencyName;
+
     public NodeExtendParam withEcsPerformancetype(String ecsPerformancetype) {
         this.ecsPerformancetype = ecsPerformancetype;
         return this;
@@ -408,6 +413,23 @@ public class NodeExtendParam {
         this.chargingMode = chargingMode;
     }
 
+    public NodeExtendParam withAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+        return this;
+    }
+
+    /**
+     * 委托的名称。  委托是由租户管理员在统一身份认证服务（Identity and Access Management，IAM）上创建的，可以为CCE节点提供访问云服务器的临时凭证。 
+     * @return agencyName
+     */
+    public String getAgencyName() {
+        return agencyName;
+    }
+
+    public void setAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -434,7 +456,8 @@ public class NodeExtendParam {
             && Objects.equals(this.nicMultiqueue, nodeExtendParam.nicMultiqueue)
             && Objects.equals(this.nicThreshold, nodeExtendParam.nicThreshold)
             && Objects.equals(this.enterpriseProjectId, nodeExtendParam.enterpriseProjectId)
-            && Objects.equals(this.chargingMode, nodeExtendParam.chargingMode);
+            && Objects.equals(this.chargingMode, nodeExtendParam.chargingMode)
+            && Objects.equals(this.agencyName, nodeExtendParam.agencyName);
     }
 
     @Override
@@ -456,7 +479,8 @@ public class NodeExtendParam {
             nicMultiqueue,
             nicThreshold,
             enterpriseProjectId,
-            chargingMode);
+            chargingMode,
+            agencyName);
     }
 
     @Override
@@ -481,6 +505,7 @@ public class NodeExtendParam {
         sb.append("    nicThreshold: ").append(toIndentedString(nicThreshold)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
+        sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

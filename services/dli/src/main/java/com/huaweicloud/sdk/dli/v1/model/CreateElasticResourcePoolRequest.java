@@ -14,16 +14,16 @@ public class CreateElasticResourcePoolRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateElasticResourcePoolInfo body;
+    private CreateElasticResourcePoolRequestBody body;
 
-    public CreateElasticResourcePoolRequest withBody(CreateElasticResourcePoolInfo body) {
+    public CreateElasticResourcePoolRequest withBody(CreateElasticResourcePoolRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateElasticResourcePoolRequest withBody(Consumer<CreateElasticResourcePoolInfo> bodySetter) {
+    public CreateElasticResourcePoolRequest withBody(Consumer<CreateElasticResourcePoolRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateElasticResourcePoolInfo();
+            this.body = new CreateElasticResourcePoolRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateElasticResourcePoolRequest {
      * Get body
      * @return body
      */
-    public CreateElasticResourcePoolInfo getBody() {
+    public CreateElasticResourcePoolRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateElasticResourcePoolInfo body) {
+    public void setBody(CreateElasticResourcePoolRequestBody body) {
         this.body = body;
     }
 

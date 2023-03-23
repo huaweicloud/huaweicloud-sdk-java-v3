@@ -42,7 +42,12 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_queue_info")
 
-    private List<EnhancedConnectionQueueInfo> availableQueueInfo = null;
+    private List<EnhancedConnectionResourceInfo> availableQueueInfo = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elastic_resource_pools")
+
+    private List<EnhancedConnectionResourceInfo> elasticResourcePools = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dest_vpc_id")
@@ -149,13 +154,14 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
         this.status = status;
     }
 
-    public ShowEnhancedConnectionResponse withAvailableQueueInfo(List<EnhancedConnectionQueueInfo> availableQueueInfo) {
+    public ShowEnhancedConnectionResponse withAvailableQueueInfo(
+        List<EnhancedConnectionResourceInfo> availableQueueInfo) {
         this.availableQueueInfo = availableQueueInfo;
         return this;
     }
 
     public ShowEnhancedConnectionResponse addAvailableQueueInfoItem(
-        EnhancedConnectionQueueInfo availableQueueInfoItem) {
+        EnhancedConnectionResourceInfo availableQueueInfoItem) {
         if (this.availableQueueInfo == null) {
             this.availableQueueInfo = new ArrayList<>();
         }
@@ -164,7 +170,7 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
     }
 
     public ShowEnhancedConnectionResponse withAvailableQueueInfo(
-        Consumer<List<EnhancedConnectionQueueInfo>> availableQueueInfoSetter) {
+        Consumer<List<EnhancedConnectionResourceInfo>> availableQueueInfoSetter) {
         if (this.availableQueueInfo == null) {
             this.availableQueueInfo = new ArrayList<>();
         }
@@ -176,12 +182,48 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
      * 各个队列创建对等连接的信息。
      * @return availableQueueInfo
      */
-    public List<EnhancedConnectionQueueInfo> getAvailableQueueInfo() {
+    public List<EnhancedConnectionResourceInfo> getAvailableQueueInfo() {
         return availableQueueInfo;
     }
 
-    public void setAvailableQueueInfo(List<EnhancedConnectionQueueInfo> availableQueueInfo) {
+    public void setAvailableQueueInfo(List<EnhancedConnectionResourceInfo> availableQueueInfo) {
         this.availableQueueInfo = availableQueueInfo;
+    }
+
+    public ShowEnhancedConnectionResponse withElasticResourcePools(
+        List<EnhancedConnectionResourceInfo> elasticResourcePools) {
+        this.elasticResourcePools = elasticResourcePools;
+        return this;
+    }
+
+    public ShowEnhancedConnectionResponse addElasticResourcePoolsItem(
+        EnhancedConnectionResourceInfo elasticResourcePoolsItem) {
+        if (this.elasticResourcePools == null) {
+            this.elasticResourcePools = new ArrayList<>();
+        }
+        this.elasticResourcePools.add(elasticResourcePoolsItem);
+        return this;
+    }
+
+    public ShowEnhancedConnectionResponse withElasticResourcePools(
+        Consumer<List<EnhancedConnectionResourceInfo>> elasticResourcePoolsSetter) {
+        if (this.elasticResourcePools == null) {
+            this.elasticResourcePools = new ArrayList<>();
+        }
+        elasticResourcePoolsSetter.accept(this.elasticResourcePools);
+        return this;
+    }
+
+    /**
+     * 各个弹性资源池创建对等连接的信息。
+     * @return elasticResourcePools
+     */
+    public List<EnhancedConnectionResourceInfo> getElasticResourcePools() {
+        return elasticResourcePools;
+    }
+
+    public void setElasticResourcePools(List<EnhancedConnectionResourceInfo> elasticResourcePools) {
+        this.elasticResourcePools = elasticResourcePools;
     }
 
     public ShowEnhancedConnectionResponse withDestVpcId(String destVpcId) {
@@ -283,6 +325,7 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
             && Objects.equals(this.name, showEnhancedConnectionResponse.name)
             && Objects.equals(this.status, showEnhancedConnectionResponse.status)
             && Objects.equals(this.availableQueueInfo, showEnhancedConnectionResponse.availableQueueInfo)
+            && Objects.equals(this.elasticResourcePools, showEnhancedConnectionResponse.elasticResourcePools)
             && Objects.equals(this.destVpcId, showEnhancedConnectionResponse.destVpcId)
             && Objects.equals(this.destNetworkId, showEnhancedConnectionResponse.destNetworkId)
             && Objects.equals(this.createTime, showEnhancedConnectionResponse.createTime)
@@ -297,6 +340,7 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
             name,
             status,
             availableQueueInfo,
+            elasticResourcePools,
             destVpcId,
             destNetworkId,
             createTime,
@@ -313,6 +357,7 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    availableQueueInfo: ").append(toIndentedString(availableQueueInfo)).append("\n");
+        sb.append("    elasticResourcePools: ").append(toIndentedString(elasticResourcePools)).append("\n");
         sb.append("    destVpcId: ").append(toIndentedString(destVpcId)).append("\n");
         sb.append("    destNetworkId: ").append(toIndentedString(destNetworkId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");

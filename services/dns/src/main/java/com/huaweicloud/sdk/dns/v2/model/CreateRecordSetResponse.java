@@ -175,7 +175,7 @@ public class CreateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * 记录类型。 取值范围：A，AAAA，MX，CNAME，TXT，NS（仅限公网Zone），SRV，CAA（仅限公网Zone）
+     * 记录类型。  公网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。  内网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、NS、SRV、CAA、PTR。
      * @return type
      */
     public String getType() {

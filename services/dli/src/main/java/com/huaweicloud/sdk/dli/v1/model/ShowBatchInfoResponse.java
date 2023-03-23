@@ -27,7 +27,7 @@ public class ShowBatchInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "appId")
 
-    private List<String> appId = null;
+    private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log")
@@ -128,36 +128,20 @@ public class ShowBatchInfoResponse extends SdkResponse {
         this.state = state;
     }
 
-    public ShowBatchInfoResponse withAppId(List<String> appId) {
+    public ShowBatchInfoResponse withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    public ShowBatchInfoResponse addAppIdItem(String appIdItem) {
-        if (this.appId == null) {
-            this.appId = new ArrayList<>();
-        }
-        this.appId.add(appIdItem);
-        return this;
-    }
-
-    public ShowBatchInfoResponse withAppId(Consumer<List<String>> appIdSetter) {
-        if (this.appId == null) {
-            this.appId = new ArrayList<>();
-        }
-        appIdSetter.accept(this.appId);
-        return this;
-    }
-
     /**
-     * Batch作业的后台app id。
+     * 批处理作业的后台app id。
      * @return appId
      */
-    public List<String> getAppId() {
+    public String getAppId() {
         return appId;
     }
 
-    public void setAppId(List<String> appId) {
+    public void setAppId(String appId) {
         this.appId = appId;
     }
 

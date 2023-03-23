@@ -14,16 +14,16 @@ public class ExportFlinkJobRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ExportReq body;
+    private ExportFlinkJobRequestBody body;
 
-    public ExportFlinkJobRequest withBody(ExportReq body) {
+    public ExportFlinkJobRequest withBody(ExportFlinkJobRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ExportFlinkJobRequest withBody(Consumer<ExportReq> bodySetter) {
+    public ExportFlinkJobRequest withBody(Consumer<ExportFlinkJobRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new ExportReq();
+            this.body = new ExportFlinkJobRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class ExportFlinkJobRequest {
      * Get body
      * @return body
      */
-    public ExportReq getBody() {
+    public ExportFlinkJobRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ExportReq body) {
+    public void setBody(ExportFlinkJobRequestBody body) {
         this.body = body;
     }
 

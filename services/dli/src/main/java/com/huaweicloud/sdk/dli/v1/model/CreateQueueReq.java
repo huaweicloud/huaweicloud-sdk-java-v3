@@ -130,7 +130,7 @@ public class CreateQueueReq {
     }
 
     /**
-     * 与队列绑定的最小计算单元个数。设置值当前只支持16，64，256。
+     * 队列的实际CU。
      * @return cuCount
      */
     public Integer getCuCount() {

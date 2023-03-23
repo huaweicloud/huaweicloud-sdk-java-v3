@@ -65,7 +65,7 @@ public class RunQueueActionReq {
     }
 
     /**
-     * 扩容或者缩容的cu数。“action”为“scale_out”或者“scale_in”时可选择配置
+     * 队列的实际CU。
      * @return cuCount
      */
     public Integer getCuCount() {

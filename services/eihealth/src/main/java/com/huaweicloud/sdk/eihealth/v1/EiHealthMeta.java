@@ -12,6 +12,121 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class EiHealthMeta {
 
+    public static final HttpRequestDef<CreateCpiTaskRequest, CreateCpiTaskResponse> createCpiTask =
+        genForcreateCpiTask();
+
+    private static HttpRequestDef<CreateCpiTaskRequest, CreateCpiTaskResponse> genForcreateCpiTask() {
+        // basic
+        HttpRequestDef.Builder<CreateCpiTaskRequest, CreateCpiTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCpiTaskRequest.class, CreateCpiTaskResponse.class)
+                .withName("CreateCpiTask")
+                .withUri("/v1/{project_id}/task/cpi")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CpiTaskData>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CpiTaskData.class),
+            f -> f.withMarshaller(CreateCpiTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateCpiTaskResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCpiTaskResultRequest, ShowCpiTaskResultResponse> showCpiTaskResult =
+        genForshowCpiTaskResult();
+
+    private static HttpRequestDef<ShowCpiTaskResultRequest, ShowCpiTaskResultResponse> genForshowCpiTaskResult() {
+        // basic
+        HttpRequestDef.Builder<ShowCpiTaskResultRequest, ShowCpiTaskResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCpiTaskResultRequest.class, ShowCpiTaskResultResponse.class)
+                .withName("ShowCpiTaskResult")
+                .withUri("/v1/{project_id}/task/cpi/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCpiTaskResultRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateGenerationTaskRequest, CreateGenerationTaskResponse> createGenerationTask =
+        genForcreateGenerationTask();
+
+    private static HttpRequestDef<CreateGenerationTaskRequest, CreateGenerationTaskResponse> genForcreateGenerationTask() {
+        // basic
+        HttpRequestDef.Builder<CreateGenerationTaskRequest, CreateGenerationTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateGenerationTaskRequest.class, CreateGenerationTaskResponse.class)
+            .withName("CreateGenerationTask")
+            .withUri("/v1/{project_id}/task/generation")
+            .withContentType("application/json");
+
+        // requests
+        builder.<GenerationTaskData>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GenerationTaskData.class),
+            f -> f.withMarshaller(CreateGenerationTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateGenerationTaskResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowGenerationTaskResultRequest, ShowGenerationTaskResultResponse> showGenerationTaskResult =
+        genForshowGenerationTaskResult();
+
+    private static HttpRequestDef<ShowGenerationTaskResultRequest, ShowGenerationTaskResultResponse> genForshowGenerationTaskResult() {
+        // basic
+        HttpRequestDef.Builder<ShowGenerationTaskResultRequest, ShowGenerationTaskResultResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowGenerationTaskResultRequest.class, ShowGenerationTaskResultResponse.class)
+                .withName("ShowGenerationTaskResult")
+                .withUri("/v1/{project_id}/task/generation/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGenerationTaskResultRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchImportAppRequest, BatchImportAppResponse> batchImportApp =
         genForbatchImportApp();
 
@@ -6995,6 +7110,123 @@ public class EiHealthMeta {
             TypeCasts.uncheckedConversion(WorkflowDto.class),
             f -> f.withMarshaller(UpdateWorkflowRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOptimizationTaskRequest, CreateOptimizationTaskResponse> createOptimizationTask =
+        genForcreateOptimizationTask();
+
+    private static HttpRequestDef<CreateOptimizationTaskRequest, CreateOptimizationTaskResponse> genForcreateOptimizationTask() {
+        // basic
+        HttpRequestDef.Builder<CreateOptimizationTaskRequest, CreateOptimizationTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateOptimizationTaskRequest.class, CreateOptimizationTaskResponse.class)
+            .withName("CreateOptimizationTask")
+            .withUri("/v1/{project_id}/task/optimization")
+            .withContentType("application/json");
+
+        // requests
+        builder.<OptimizationTaskData>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OptimizationTaskData.class),
+            f -> f.withMarshaller(CreateOptimizationTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateOptimizationTaskResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOptimizationTaskResultRequest, ShowOptimizationTaskResultResponse> showOptimizationTaskResult =
+        genForshowOptimizationTaskResult();
+
+    private static HttpRequestDef<ShowOptimizationTaskResultRequest, ShowOptimizationTaskResultResponse> genForshowOptimizationTaskResult() {
+        // basic
+        HttpRequestDef.Builder<ShowOptimizationTaskResultRequest, ShowOptimizationTaskResultResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowOptimizationTaskResultRequest.class,
+                    ShowOptimizationTaskResultResponse.class)
+                .withName("ShowOptimizationTaskResult")
+                .withUri("/v1/{project_id}/task/optimization/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOptimizationTaskResultRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSearchTaskRequest, CreateSearchTaskResponse> createSearchTask =
+        genForcreateSearchTask();
+
+    private static HttpRequestDef<CreateSearchTaskRequest, CreateSearchTaskResponse> genForcreateSearchTask() {
+        // basic
+        HttpRequestDef.Builder<CreateSearchTaskRequest, CreateSearchTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSearchTaskRequest.class, CreateSearchTaskResponse.class)
+                .withName("CreateSearchTask")
+                .withUri("/v1/{project_id}/task/search")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SearchTaskData>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchTaskData.class),
+            f -> f.withMarshaller(CreateSearchTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateSearchTaskResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSearchTaskResultRequest, ShowSearchTaskResultResponse> showSearchTaskResult =
+        genForshowSearchTaskResult();
+
+    private static HttpRequestDef<ShowSearchTaskResultRequest, ShowSearchTaskResultResponse> genForshowSearchTaskResult() {
+        // basic
+        HttpRequestDef.Builder<ShowSearchTaskResultRequest, ShowSearchTaskResultResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSearchTaskResultRequest.class, ShowSearchTaskResultResponse.class)
+            .withName("ShowSearchTaskResult")
+            .withUri("/v1/{project_id}/task/search/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSearchTaskResultRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
             }));
 
         // response

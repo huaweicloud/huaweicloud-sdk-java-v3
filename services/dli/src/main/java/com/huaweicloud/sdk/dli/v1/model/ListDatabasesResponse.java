@@ -32,7 +32,7 @@ public class ListDatabasesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "databases")
 
-    private List<ListDatabasesRespDatabase> databases = null;
+    private List<Database> databases = null;
 
     public ListDatabasesResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -85,12 +85,12 @@ public class ListDatabasesResponse extends SdkResponse {
         this.databaseCount = databaseCount;
     }
 
-    public ListDatabasesResponse withDatabases(List<ListDatabasesRespDatabase> databases) {
+    public ListDatabasesResponse withDatabases(List<Database> databases) {
         this.databases = databases;
         return this;
     }
 
-    public ListDatabasesResponse addDatabasesItem(ListDatabasesRespDatabase databasesItem) {
+    public ListDatabasesResponse addDatabasesItem(Database databasesItem) {
         if (this.databases == null) {
             this.databases = new ArrayList<>();
         }
@@ -98,7 +98,7 @@ public class ListDatabasesResponse extends SdkResponse {
         return this;
     }
 
-    public ListDatabasesResponse withDatabases(Consumer<List<ListDatabasesRespDatabase>> databasesSetter) {
+    public ListDatabasesResponse withDatabases(Consumer<List<Database>> databasesSetter) {
         if (this.databases == null) {
             this.databases = new ArrayList<>();
         }
@@ -110,11 +110,11 @@ public class ListDatabasesResponse extends SdkResponse {
      * 查询所有数据库的响应参数。
      * @return databases
      */
-    public List<ListDatabasesRespDatabase> getDatabases() {
+    public List<Database> getDatabases() {
         return databases;
     }
 
-    public void setDatabases(List<ListDatabasesRespDatabase> databases) {
+    public void setDatabases(List<Database> databases) {
         this.databases = databases;
     }
 

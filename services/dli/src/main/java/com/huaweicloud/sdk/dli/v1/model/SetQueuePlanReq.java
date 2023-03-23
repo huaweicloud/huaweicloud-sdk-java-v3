@@ -49,46 +49,46 @@ public class SetQueuePlanReq {
         public static final RepeatDayEnum SUNDAY = new RepeatDayEnum("SUNDAY");
 
         /**
-         * Enum _MONDAY for value: " MONDAY"
+         * Enum MONDAY for value: "MONDAY"
          */
-        public static final RepeatDayEnum _MONDAY = new RepeatDayEnum(" MONDAY");
+        public static final RepeatDayEnum MONDAY = new RepeatDayEnum("MONDAY");
 
         /**
-         * Enum _TUESDAY for value: " TUESDAY"
+         * Enum TUESDAY for value: "TUESDAY"
          */
-        public static final RepeatDayEnum _TUESDAY = new RepeatDayEnum(" TUESDAY");
+        public static final RepeatDayEnum TUESDAY = new RepeatDayEnum("TUESDAY");
 
         /**
-         * Enum _WEDNESDAY for value: " WEDNESDAY"
+         * Enum WEDNESDAY for value: "WEDNESDAY"
          */
-        public static final RepeatDayEnum _WEDNESDAY = new RepeatDayEnum(" WEDNESDAY");
+        public static final RepeatDayEnum WEDNESDAY = new RepeatDayEnum("WEDNESDAY");
 
         /**
-         * Enum _THURSDAY for value: " THURSDAY"
+         * Enum THURSDAY for value: "THURSDAY"
          */
-        public static final RepeatDayEnum _THURSDAY = new RepeatDayEnum(" THURSDAY");
+        public static final RepeatDayEnum THURSDAY = new RepeatDayEnum("THURSDAY");
 
         /**
-         * Enum _FRIDAY for value: " FRIDAY"
+         * Enum FRIDAY for value: "FRIDAY"
          */
-        public static final RepeatDayEnum _FRIDAY = new RepeatDayEnum(" FRIDAY");
+        public static final RepeatDayEnum FRIDAY = new RepeatDayEnum("FRIDAY");
 
         /**
-         * Enum _SATURDAY for value: " SATURDAY"
+         * Enum SATURDAY for value: "SATURDAY"
          */
-        public static final RepeatDayEnum _SATURDAY = new RepeatDayEnum(" SATURDAY");
+        public static final RepeatDayEnum SATURDAY = new RepeatDayEnum("SATURDAY");
 
         private static final Map<String, RepeatDayEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RepeatDayEnum> createStaticFields() {
             Map<String, RepeatDayEnum> map = new HashMap<>();
             map.put("SUNDAY", SUNDAY);
-            map.put(" MONDAY", _MONDAY);
-            map.put(" TUESDAY", _TUESDAY);
-            map.put(" WEDNESDAY", _WEDNESDAY);
-            map.put(" THURSDAY", _THURSDAY);
-            map.put(" FRIDAY", _FRIDAY);
-            map.put(" SATURDAY", _SATURDAY);
+            map.put("MONDAY", MONDAY);
+            map.put("TUESDAY", TUESDAY);
+            map.put("WEDNESDAY", WEDNESDAY);
+            map.put("THURSDAY", THURSDAY);
+            map.put("FRIDAY", FRIDAY);
+            map.put("SATURDAY", SATURDAY);
             return Collections.unmodifiableMap(map);
         }
 

@@ -25,7 +25,7 @@ public class ListFlinkJobsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_list")
 
-    private ListStreamJobRespJobs jobList;
+    private FlinkJobList jobList;
 
     public ListFlinkJobsResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -61,14 +61,14 @@ public class ListFlinkJobsResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ListFlinkJobsResponse withJobList(ListStreamJobRespJobs jobList) {
+    public ListFlinkJobsResponse withJobList(FlinkJobList jobList) {
         this.jobList = jobList;
         return this;
     }
 
-    public ListFlinkJobsResponse withJobList(Consumer<ListStreamJobRespJobs> jobListSetter) {
+    public ListFlinkJobsResponse withJobList(Consumer<FlinkJobList> jobListSetter) {
         if (this.jobList == null) {
-            this.jobList = new ListStreamJobRespJobs();
+            this.jobList = new FlinkJobList();
             jobListSetter.accept(this.jobList);
         }
 
@@ -79,11 +79,11 @@ public class ListFlinkJobsResponse extends SdkResponse {
      * Get jobList
      * @return jobList
      */
-    public ListStreamJobRespJobs getJobList() {
+    public FlinkJobList getJobList() {
         return jobList;
     }
 
-    public void setJobList(ListStreamJobRespJobs jobList) {
+    public void setJobList(FlinkJobList jobList) {
         this.jobList = jobList;
     }
 

@@ -19,7 +19,7 @@ public class AssociateQueueToElasticResourcePoolRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private AssociateQueueToElasticResourcePoolIfno body;
+    private AssociateQueueToElasticResourcePoolRequestBody body;
 
     public AssociateQueueToElasticResourcePoolRequest withElasticResourcePoolName(String elasticResourcePoolName) {
         this.elasticResourcePoolName = elasticResourcePoolName;
@@ -38,15 +38,15 @@ public class AssociateQueueToElasticResourcePoolRequest {
         this.elasticResourcePoolName = elasticResourcePoolName;
     }
 
-    public AssociateQueueToElasticResourcePoolRequest withBody(AssociateQueueToElasticResourcePoolIfno body) {
+    public AssociateQueueToElasticResourcePoolRequest withBody(AssociateQueueToElasticResourcePoolRequestBody body) {
         this.body = body;
         return this;
     }
 
     public AssociateQueueToElasticResourcePoolRequest withBody(
-        Consumer<AssociateQueueToElasticResourcePoolIfno> bodySetter) {
+        Consumer<AssociateQueueToElasticResourcePoolRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new AssociateQueueToElasticResourcePoolIfno();
+            this.body = new AssociateQueueToElasticResourcePoolRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -57,11 +57,11 @@ public class AssociateQueueToElasticResourcePoolRequest {
      * Get body
      * @return body
      */
-    public AssociateQueueToElasticResourcePoolIfno getBody() {
+    public AssociateQueueToElasticResourcePoolRequestBody getBody() {
         return body;
     }
 
-    public void setBody(AssociateQueueToElasticResourcePoolIfno body) {
+    public void setBody(AssociateQueueToElasticResourcePoolRequestBody body) {
         this.body = body;
     }
 

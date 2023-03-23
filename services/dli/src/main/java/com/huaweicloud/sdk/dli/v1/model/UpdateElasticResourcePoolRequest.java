@@ -19,7 +19,7 @@ public class UpdateElasticResourcePoolRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateElasticResourcePoolInfo body;
+    private UpdateElasticResourcePoolRequestBody body;
 
     public UpdateElasticResourcePoolRequest withElasticResourcePoolName(String elasticResourcePoolName) {
         this.elasticResourcePoolName = elasticResourcePoolName;
@@ -38,14 +38,14 @@ public class UpdateElasticResourcePoolRequest {
         this.elasticResourcePoolName = elasticResourcePoolName;
     }
 
-    public UpdateElasticResourcePoolRequest withBody(UpdateElasticResourcePoolInfo body) {
+    public UpdateElasticResourcePoolRequest withBody(UpdateElasticResourcePoolRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateElasticResourcePoolRequest withBody(Consumer<UpdateElasticResourcePoolInfo> bodySetter) {
+    public UpdateElasticResourcePoolRequest withBody(Consumer<UpdateElasticResourcePoolRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateElasticResourcePoolInfo();
+            this.body = new UpdateElasticResourcePoolRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateElasticResourcePoolRequest {
      * Get body
      * @return body
      */
-    public UpdateElasticResourcePoolInfo getBody() {
+    public UpdateElasticResourcePoolRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateElasticResourcePoolInfo body) {
+    public void setBody(UpdateElasticResourcePoolRequestBody body) {
         this.body = body;
     }
 

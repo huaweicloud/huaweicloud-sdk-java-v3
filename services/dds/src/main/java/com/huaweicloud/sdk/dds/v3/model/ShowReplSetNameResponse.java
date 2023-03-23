@@ -12,31 +12,9 @@ import java.util.Objects;
 public class ShowReplSetNameResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
-
-    private String body;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
-
-    public ShowReplSetNameResponse withBody(String body) {
-        this.body = body;
-        return this;
-    }
-
-    /**
-     * Get body
-     * @return body
-     */
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
 
     public ShowReplSetNameResponse withName(String name) {
         this.name = name;
@@ -44,7 +22,7 @@ public class ShowReplSetNameResponse extends SdkResponse {
     }
 
     /**
-     * Get name
+     * 连接地址复制集名称：实例高可用连接地址的唯一标识。该参数可以将读请求发送到副本集实例的所有节点。副本集中的所有主机必须具有相同的集名称。字符限制：大小写字母，数字，下划线组合，字母为首，长度限制在3-128
      * @return name
      */
     public String getName() {
@@ -64,20 +42,18 @@ public class ShowReplSetNameResponse extends SdkResponse {
             return false;
         }
         ShowReplSetNameResponse showReplSetNameResponse = (ShowReplSetNameResponse) o;
-        return Objects.equals(this.body, showReplSetNameResponse.body)
-            && Objects.equals(this.name, showReplSetNameResponse.name);
+        return Objects.equals(this.name, showReplSetNameResponse.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body, name);
+        return Objects.hash(name);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowReplSetNameResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();

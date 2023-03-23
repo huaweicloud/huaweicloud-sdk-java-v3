@@ -78,6 +78,11 @@ public class CreateTableReq {
 
     private String selectStatement;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TmsTagEntity> tags = null;
+
     public CreateTableReq withTableName(String tableName) {
         this.tableName = tableName;
         return this;
@@ -315,6 +320,39 @@ public class CreateTableReq {
         this.selectStatement = selectStatement;
     }
 
+    public CreateTableReq withTags(List<TmsTagEntity> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateTableReq addTagsItem(TmsTagEntity tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateTableReq withTags(Consumer<List<TmsTagEntity>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签
+     * @return tags
+     */
+    public List<TmsTagEntity> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TmsTagEntity> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -336,7 +374,8 @@ public class CreateTableReq {
             && Objects.equals(this.escapeChar, createTableReq.escapeChar)
             && Objects.equals(this.dateFormat, createTableReq.dateFormat)
             && Objects.equals(this.timestampFormat, createTableReq.timestampFormat)
-            && Objects.equals(this.selectStatement, createTableReq.selectStatement);
+            && Objects.equals(this.selectStatement, createTableReq.selectStatement)
+            && Objects.equals(this.tags, createTableReq.tags);
     }
 
     @Override
@@ -353,7 +392,8 @@ public class CreateTableReq {
             escapeChar,
             dateFormat,
             timestampFormat,
-            selectStatement);
+            selectStatement,
+            tags);
     }
 
     @Override
@@ -373,6 +413,7 @@ public class CreateTableReq {
         sb.append("    dateFormat: ").append(toIndentedString(dateFormat)).append("\n");
         sb.append("    timestampFormat: ").append(toIndentedString(timestampFormat)).append("\n");
         sb.append("    selectStatement: ").append(toIndentedString(selectStatement)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

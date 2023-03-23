@@ -307,6 +307,45 @@ public class CloudIDEMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<PublishExtensionRequest, PublishExtensionResponse> publishExtension =
+        genForpublishExtension();
+
+    private static HttpRequestDef<PublishExtensionRequest, PublishExtensionResponse> genForpublishExtension() {
+        // basic
+        HttpRequestDef.Builder<PublishExtensionRequest, PublishExtensionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, PublishExtensionRequest.class, PublishExtensionResponse.class)
+                .withName("PublishExtension")
+                .withUri("/v1/marketplace/extension/{task_id}/archiving")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PublishExtensionRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<String>withRequestField("x-publisher-token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PublishExtensionRequest::getXPublisherToken, (req, v) -> {
+                req.setXPublisherToken(v);
+            }));
+        builder.<TaskModelMarketPlace>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TaskModelMarketPlace.class),
+            f -> f.withMarshaller(PublishExtensionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAccountStatusRequest, ShowAccountStatusResponse> showAccountStatus =
         genForshowAccountStatus();
 
@@ -526,6 +565,41 @@ public class CloudIDEMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowExtensionTestingResultRequest, ShowExtensionTestingResultResponse> showExtensionTestingResult =
+        genForshowExtensionTestingResult();
+
+    private static HttpRequestDef<ShowExtensionTestingResultRequest, ShowExtensionTestingResultResponse> genForshowExtensionTestingResult() {
+        // basic
+        HttpRequestDef.Builder<ShowExtensionTestingResultRequest, ShowExtensionTestingResultResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowExtensionTestingResultRequest.class,
+                    ShowExtensionTestingResultResponse.class)
+                .withName("ShowExtensionTestingResult")
+                .withUri("/v1/marketplace/extension/{task_id}/status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowExtensionTestingResultRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<String>withRequestField("x-publisher-token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowExtensionTestingResultRequest::getXPublisherToken, (req, v) -> {
+                req.setXPublisherToken(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPriceRequest, ShowPriceResponse> showPrice = genForshowPrice();
 
     private static HttpRequestDef<ShowPriceRequest, ShowPriceResponse> genForshowPrice() {
@@ -567,6 +641,38 @@ public class CloudIDEMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadExtensionFileRequestBody.class),
             f -> f.withMarshaller(UploadExtensionFileRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadFilePublisherRequest, UploadFilePublisherResponse> uploadFilePublisher =
+        genForuploadFilePublisher();
+
+    private static HttpRequestDef<UploadFilePublisherRequest, UploadFilePublisherResponse> genForuploadFilePublisher() {
+        // basic
+        HttpRequestDef.Builder<UploadFilePublisherRequest, UploadFilePublisherResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadFilePublisherRequest.class, UploadFilePublisherResponse.class)
+                .withName("UploadFilePublisher")
+                .withUri("/v2/fileservice/file/upload")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("x-publisher-token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadFilePublisherRequest::getXPublisherToken, (req, v) -> {
+                req.setXPublisherToken(v);
+            }));
+        builder.<UploadFilePublisherRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadFilePublisherRequestBody.class),
+            f -> f.withMarshaller(UploadFilePublisherRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

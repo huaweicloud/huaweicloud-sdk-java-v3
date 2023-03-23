@@ -27,7 +27,7 @@ public class ImportFlinkJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_mapping")
 
-    private List<ImportRspJob> jobMapping = null;
+    private List<JobMapInfo> jobMapping = null;
 
     public ImportFlinkJobResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
@@ -63,12 +63,12 @@ public class ImportFlinkJobResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ImportFlinkJobResponse withJobMapping(List<ImportRspJob> jobMapping) {
+    public ImportFlinkJobResponse withJobMapping(List<JobMapInfo> jobMapping) {
         this.jobMapping = jobMapping;
         return this;
     }
 
-    public ImportFlinkJobResponse addJobMappingItem(ImportRspJob jobMappingItem) {
+    public ImportFlinkJobResponse addJobMappingItem(JobMapInfo jobMappingItem) {
         if (this.jobMapping == null) {
             this.jobMapping = new ArrayList<>();
         }
@@ -76,7 +76,7 @@ public class ImportFlinkJobResponse extends SdkResponse {
         return this;
     }
 
-    public ImportFlinkJobResponse withJobMapping(Consumer<List<ImportRspJob>> jobMappingSetter) {
+    public ImportFlinkJobResponse withJobMapping(Consumer<List<JobMapInfo>> jobMappingSetter) {
         if (this.jobMapping == null) {
             this.jobMapping = new ArrayList<>();
         }
@@ -88,11 +88,11 @@ public class ImportFlinkJobResponse extends SdkResponse {
      * 作业导入结果。
      * @return jobMapping
      */
-    public List<ImportRspJob> getJobMapping() {
+    public List<JobMapInfo> getJobMapping() {
         return jobMapping;
     }
 
-    public void setJobMapping(List<ImportRspJob> jobMapping) {
+    public void setJobMapping(List<JobMapInfo> jobMapping) {
         this.jobMapping = jobMapping;
     }
 
