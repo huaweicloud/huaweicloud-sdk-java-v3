@@ -65,6 +65,11 @@ public class ShowCustomRuleResponse extends SdkResponse {
     private Long timestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time")
+
+    private Boolean time;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start")
 
     private Long start;
@@ -274,6 +279,23 @@ public class ShowCustomRuleResponse extends SdkResponse {
         this.timestamp = timestamp;
     }
 
+    public ShowCustomRuleResponse withTime(Boolean time) {
+        this.time = time;
+        return this;
+    }
+
+    /**
+     * 精准防护规则生效时间:  - “false”：表示该规则立即生效。   - “true”：表示自定义生效时间。
+     * @return time
+     */
+    public Boolean getTime() {
+        return time;
+    }
+
+    public void setTime(Boolean time) {
+        this.time = time;
+    }
+
     public ShowCustomRuleResponse withStart(Long start) {
         this.start = start;
         return this;
@@ -344,6 +366,7 @@ public class ShowCustomRuleResponse extends SdkResponse {
             && Objects.equals(this.actionMode, showCustomRuleResponse.actionMode)
             && Objects.equals(this.priority, showCustomRuleResponse.priority)
             && Objects.equals(this.timestamp, showCustomRuleResponse.timestamp)
+            && Objects.equals(this.time, showCustomRuleResponse.time)
             && Objects.equals(this.start, showCustomRuleResponse.start)
             && Objects.equals(this.terminal, showCustomRuleResponse.terminal)
             && Objects.equals(this.producer, showCustomRuleResponse.producer);
@@ -361,6 +384,7 @@ public class ShowCustomRuleResponse extends SdkResponse {
             actionMode,
             priority,
             timestamp,
+            time,
             start,
             terminal,
             producer);
@@ -380,6 +404,7 @@ public class ShowCustomRuleResponse extends SdkResponse {
         sb.append("    actionMode: ").append(toIndentedString(actionMode)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+        sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    start: ").append(toIndentedString(start)).append("\n");
         sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
         sb.append("    producer: ").append(toIndentedString(producer)).append("\n");

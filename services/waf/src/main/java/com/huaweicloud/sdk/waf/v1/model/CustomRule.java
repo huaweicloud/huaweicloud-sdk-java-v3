@@ -59,6 +59,11 @@ public class CustomRule {
     private Long timestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time")
+
+    private Boolean time;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start")
 
     private Long start;
@@ -251,6 +256,23 @@ public class CustomRule {
         this.timestamp = timestamp;
     }
 
+    public CustomRule withTime(Boolean time) {
+        this.time = time;
+        return this;
+    }
+
+    /**
+     * 精准防护规则生效时间:  - “false”：表示该规则立即生效。   - “true”：表示自定义生效时间。
+     * @return time
+     */
+    public Boolean getTime() {
+        return time;
+    }
+
+    public void setTime(Boolean time) {
+        this.time = time;
+    }
+
     public CustomRule withStart(Long start) {
         this.start = start;
         return this;
@@ -316,8 +338,9 @@ public class CustomRule {
             && Objects.equals(this.status, customRule.status) && Objects.equals(this.conditions, customRule.conditions)
             && Objects.equals(this.action, customRule.action) && Objects.equals(this.actionMode, customRule.actionMode)
             && Objects.equals(this.priority, customRule.priority)
-            && Objects.equals(this.timestamp, customRule.timestamp) && Objects.equals(this.start, customRule.start)
-            && Objects.equals(this.terminal, customRule.terminal) && Objects.equals(this.producer, customRule.producer);
+            && Objects.equals(this.timestamp, customRule.timestamp) && Objects.equals(this.time, customRule.time)
+            && Objects.equals(this.start, customRule.start) && Objects.equals(this.terminal, customRule.terminal)
+            && Objects.equals(this.producer, customRule.producer);
     }
 
     @Override
@@ -331,6 +354,7 @@ public class CustomRule {
             actionMode,
             priority,
             timestamp,
+            time,
             start,
             terminal,
             producer);
@@ -349,6 +373,7 @@ public class CustomRule {
         sb.append("    actionMode: ").append(toIndentedString(actionMode)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+        sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    start: ").append(toIndentedString(start)).append("\n");
         sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
         sb.append("    producer: ").append(toIndentedString(producer)).append("\n");

@@ -564,6 +564,11 @@ public class ListBackupsRequest {
 
     private Boolean showReplication;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "incremental")
+
+    private Boolean incremental;
+
     public ListBackupsRequest withCheckpointId(String checkpointId) {
         this.checkpointId = checkpointId;
         return this;
@@ -587,7 +592,7 @@ public class ListBackupsRequest {
     }
 
     /**
-     * 专属云
+     * 专属云 （专属云场景使用，非专属云场景不生效）
      * @return dec
      */
     public Boolean getDec() {
@@ -938,6 +943,23 @@ public class ListBackupsRequest {
         this.showReplication = showReplication;
     }
 
+    public ListBackupsRequest withIncremental(Boolean incremental) {
+        this.incremental = incremental;
+        return this;
+    }
+
+    /**
+     * 是否是增备
+     * @return incremental
+     */
+    public Boolean getIncremental() {
+        return incremental;
+    }
+
+    public void setIncremental(Boolean incremental) {
+        this.incremental = incremental;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -968,7 +990,8 @@ public class ListBackupsRequest {
             && Objects.equals(this.memberStatus, listBackupsRequest.memberStatus)
             && Objects.equals(this.parentId, listBackupsRequest.parentId)
             && Objects.equals(this.usedPercent, listBackupsRequest.usedPercent)
-            && Objects.equals(this.showReplication, listBackupsRequest.showReplication);
+            && Objects.equals(this.showReplication, listBackupsRequest.showReplication)
+            && Objects.equals(this.incremental, listBackupsRequest.incremental);
     }
 
     @Override
@@ -994,7 +1017,8 @@ public class ListBackupsRequest {
             memberStatus,
             parentId,
             usedPercent,
-            showReplication);
+            showReplication,
+            incremental);
     }
 
     @Override
@@ -1023,6 +1047,7 @@ public class ListBackupsRequest {
         sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
         sb.append("    usedPercent: ").append(toIndentedString(usedPercent)).append("\n");
         sb.append("    showReplication: ").append(toIndentedString(showReplication)).append("\n");
+        sb.append("    incremental: ").append(toIndentedString(incremental)).append("\n");
         sb.append("}");
         return sb.toString();
     }

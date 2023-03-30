@@ -401,7 +401,7 @@ public class AddDeviceResponse extends SdkResponse {
     }
 
     /**
-     * 设备最近一次连接状态(ONLINE:在线，OFFLINE：离线，ABNORMAL：异常)变化时间。格式：yyyy-MM-dd'T'HH:mm:ss.SSS'Z',如 2015-12-12T12:12:122Z。
+     * 设备最近一次连接状态(ONLINE:在线，OFFLINE：离线，ABNORMAL：异常)变化时间。格式：yyyy-MM-dd'T'HH:mm:ss.SSS'Z' ，如2015-12-12T12:12:122Z。
      * @return connectionStatusUpdateTime
      */
     public String getConnectionStatusUpdateTime() {
@@ -418,7 +418,7 @@ public class AddDeviceResponse extends SdkResponse {
     }
 
     /**
-     * 设备激活时间。格式：yyyy-MM-dd'T'HH:mm:ss.SSS'Z',如 2015-12-12T12:12:122Z。
+     * 设备激活时间。格式：yyyy-MM-dd'T'HH:mm:ss.SSS'Z' ，如2015-12-12T12:12:122Z。
      * @return activeTime
      */
     public String getActiveTime() {

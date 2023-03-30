@@ -60,6 +60,11 @@ public class UpdateCustomRuleResponse extends SdkResponse {
     private Integer priority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time")
+
+    private Boolean time;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start")
 
     private Long start;
@@ -252,6 +257,23 @@ public class UpdateCustomRuleResponse extends SdkResponse {
         this.priority = priority;
     }
 
+    public UpdateCustomRuleResponse withTime(Boolean time) {
+        this.time = time;
+        return this;
+    }
+
+    /**
+     * 精准防护规则生效时间:  - “false”：表示该规则立即生效。   - “true”：表示自定义生效时间。
+     * @return time
+     */
+    public Boolean getTime() {
+        return time;
+    }
+
+    public void setTime(Boolean time) {
+        this.time = time;
+    }
+
     public UpdateCustomRuleResponse withStart(Long start) {
         this.start = start;
         return this;
@@ -321,6 +343,7 @@ public class UpdateCustomRuleResponse extends SdkResponse {
             && Objects.equals(this.action, updateCustomRuleResponse.action)
             && Objects.equals(this.actionMode, updateCustomRuleResponse.actionMode)
             && Objects.equals(this.priority, updateCustomRuleResponse.priority)
+            && Objects.equals(this.time, updateCustomRuleResponse.time)
             && Objects.equals(this.start, updateCustomRuleResponse.start)
             && Objects.equals(this.terminal, updateCustomRuleResponse.terminal)
             && Objects.equals(this.producer, updateCustomRuleResponse.producer);
@@ -337,6 +360,7 @@ public class UpdateCustomRuleResponse extends SdkResponse {
             action,
             actionMode,
             priority,
+            time,
             start,
             terminal,
             producer);
@@ -355,6 +379,7 @@ public class UpdateCustomRuleResponse extends SdkResponse {
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    actionMode: ").append(toIndentedString(actionMode)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+        sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    start: ").append(toIndentedString(start)).append("\n");
         sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
         sb.append("    producer: ").append(toIndentedString(producer)).append("\n");

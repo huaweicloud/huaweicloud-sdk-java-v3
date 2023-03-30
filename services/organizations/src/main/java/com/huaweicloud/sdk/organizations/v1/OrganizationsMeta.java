@@ -197,6 +197,31 @@ public class OrganizationsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowCreateAccountStatusRequest, ShowCreateAccountStatusResponse> showCreateAccountStatus =
+        genForshowCreateAccountStatus();
+
+    private static HttpRequestDef<ShowCreateAccountStatusRequest, ShowCreateAccountStatusResponse> genForshowCreateAccountStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowCreateAccountStatusRequest, ShowCreateAccountStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowCreateAccountStatusRequest.class, ShowCreateAccountStatusResponse.class)
+            .withName("ShowCreateAccountStatus")
+            .withUri("/v1/organizations/create-account-status/{create_account_status_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("create_account_status_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCreateAccountStatusRequest::getCreateAccountStatusId, (req, v) -> {
+                req.setCreateAccountStatusId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeregisterDelegatedAdministratorRequest, DeregisterDelegatedAdministratorResponse> deregisterDelegatedAdministrator =
         genForderegisterDelegatedAdministrator();
 
@@ -554,6 +579,56 @@ public class OrganizationsMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTagPolicyServicesRequest, ListTagPolicyServicesResponse> listTagPolicyServices =
+        genForlistTagPolicyServices();
+
+    private static HttpRequestDef<ListTagPolicyServicesRequest, ListTagPolicyServicesResponse> genForlistTagPolicyServices() {
+        // basic
+        HttpRequestDef.Builder<ListTagPolicyServicesRequest, ListTagPolicyServicesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListTagPolicyServicesRequest.class, ListTagPolicyServicesResponse.class)
+            .withName("ListTagPolicyServices")
+            .withUri("/v1/organizations/tag-policy-services")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEffectivePoliciesRequest, ShowEffectivePoliciesResponse> showEffectivePolicies =
+        genForshowEffectivePolicies();
+
+    private static HttpRequestDef<ShowEffectivePoliciesRequest, ShowEffectivePoliciesResponse> genForshowEffectivePolicies() {
+        // basic
+        HttpRequestDef.Builder<ShowEffectivePoliciesRequest, ShowEffectivePoliciesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowEffectivePoliciesRequest.class, ShowEffectivePoliciesResponse.class)
+            .withName("ShowEffectivePolicies")
+            .withUri("/v1/organizations/entities/effective-policies")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("entity_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEffectivePoliciesRequest::getEntityId, (req, v) -> {
+                req.setEntityId(v);
+            }));
+        builder.<ShowEffectivePoliciesRequest.PolicyTypeEnum>withRequestField("policy_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowEffectivePoliciesRequest.PolicyTypeEnum.class),
+            f -> f.withMarshaller(ShowEffectivePoliciesRequest::getPolicyType, (req, v) -> {
+                req.setPolicyType(v);
+            }));
 
         // response
 
@@ -1136,6 +1211,201 @@ public class OrganizationsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateTagResourceRequest, CreateTagResourceResponse> createTagResource =
+        genForcreateTagResource();
+
+    private static HttpRequestDef<CreateTagResourceRequest, CreateTagResourceResponse> genForcreateTagResource() {
+        // basic
+        HttpRequestDef.Builder<CreateTagResourceRequest, CreateTagResourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTagResourceRequest.class, CreateTagResourceResponse.class)
+                .withName("CreateTagResource")
+                .withUri("/v1/organizations/{resource_type}/{resource_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateTagResourceRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTagResourceRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(CreateTagResourceRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTagResourceRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<TagResourceReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TagResourceReqBody.class),
+            f -> f.withMarshaller(CreateTagResourceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTagResourceRequest, DeleteTagResourceResponse> deleteTagResource =
+        genFordeleteTagResource();
+
+    private static HttpRequestDef<DeleteTagResourceRequest, DeleteTagResourceResponse> genFordeleteTagResource() {
+        // basic
+        HttpRequestDef.Builder<DeleteTagResourceRequest, DeleteTagResourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteTagResourceRequest.class, DeleteTagResourceResponse.class)
+                .withName("DeleteTagResource")
+                .withUri("/v1/organizations/{resource_type}/{resource_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DeleteTagResourceRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteTagResourceRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(DeleteTagResourceRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTagResourceRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<TagResourceReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TagResourceReqBody.class),
+            f -> f.withMarshaller(DeleteTagResourceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstances =
+        genForlistResourceInstances();
+
+    private static HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> genForlistResourceInstances() {
+        // basic
+        HttpRequestDef.Builder<ListResourceInstancesRequest, ListResourceInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListResourceInstancesRequest.class, ListResourceInstancesResponse.class)
+            .withName("ListResourceInstances")
+            .withUri("/v1/organizations/{resource_type}/resource-instances/filter")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ListResourceInstancesRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListResourceInstancesRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListResourceInstancesRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourceInstancesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceInstancesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<ResourceInstanceReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceInstanceReqBody.class),
+            f -> f.withMarshaller(ListResourceInstancesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTags =
+        genForlistResourceTags();
+
+    private static HttpRequestDef<ListResourceTagsRequest, ListResourceTagsResponse> genForlistResourceTags() {
+        // basic
+        HttpRequestDef.Builder<ListResourceTagsRequest, ListResourceTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListResourceTagsRequest.class, ListResourceTagsResponse.class)
+                .withName("ListResourceTags")
+                .withUri("/v1/organizations/{resource_type}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListResourceTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListResourceTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTagResourcesRequest, ListTagResourcesResponse> listTagResources =
+        genForlistTagResources();
+
+    private static HttpRequestDef<ListTagResourcesRequest, ListTagResourcesResponse> genForlistTagResources() {
+        // basic
+        HttpRequestDef.Builder<ListTagResourcesRequest, ListTagResourcesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTagResourcesRequest.class, ListTagResourcesResponse.class)
+                .withName("ListTagResources")
+                .withUri("/v1/organizations/{resource_type}/{resource_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListTagResourcesRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListTagResourcesRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListTagResourcesRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagResourcesRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTagResourcesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagResourcesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListTagsForResourceRequest, ListTagsForResourceResponse> listTagsForResource =
         genForlistTagsForResource();
 
@@ -1168,6 +1438,41 @@ public class OrganizationsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTagsForResourceRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowResourceInstancesCountRequest, ShowResourceInstancesCountResponse> showResourceInstancesCount =
+        genForshowResourceInstancesCount();
+
+    private static HttpRequestDef<ShowResourceInstancesCountRequest, ShowResourceInstancesCountResponse> genForshowResourceInstancesCount() {
+        // basic
+        HttpRequestDef.Builder<ShowResourceInstancesCountRequest, ShowResourceInstancesCountResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowResourceInstancesCountRequest.class,
+                    ShowResourceInstancesCountResponse.class)
+                .withName("ShowResourceInstancesCount")
+                .withUri("/v1/organizations/{resource_type}/resource-instances/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowResourceInstancesCountRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowResourceInstancesCountRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ShowResourceInstancesCountRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<ResourceInstanceReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceInstanceReqBody.class),
+            f -> f.withMarshaller(ShowResourceInstancesCountRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

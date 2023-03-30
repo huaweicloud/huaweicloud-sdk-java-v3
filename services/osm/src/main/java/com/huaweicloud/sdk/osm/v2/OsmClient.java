@@ -2291,6 +2291,36 @@ public class OsmClient {
     }
 
     /**
+     * 查询配置
+     *
+     * 查询配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConfigurationRequest 请求对象
+     * @return ShowConfigurationResponse
+     */
+    public ShowConfigurationResponse showConfiguration(ShowConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.showConfiguration);
+    }
+
+    /**
+     * 查询配置
+     *
+     * 查询配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConfigurationRequest 请求对象
+     * @return SyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse>
+     */
+    public SyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse> showConfigurationInvoker(
+        ShowConfigurationRequest request) {
+        return new SyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse>(request, OsmMeta.showConfiguration,
+            hcClient);
+    }
+
+    /**
      * 查询提单权限
      *
      * 查询提单权限

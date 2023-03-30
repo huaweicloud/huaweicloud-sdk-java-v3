@@ -180,7 +180,7 @@ public class ListServersDetailsRequest {
     }
 
     /**
-     * 页码。 当前页面数，默认为1。  取值大于等于0，取值为0时返回第1页。
+     * 页码。 当前页面数，默认为1，取值范围大于等于0。 当取值为0时，系统默认返回第1页，与取值为1时相同。 建议设置该参数大于等于1。
      * @return offset
      */
     public Integer getOffset() {

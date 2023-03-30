@@ -26,6 +26,7 @@ import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.utils.BinaryUtils;
 import com.huaweicloud.sdk.core.utils.SignUtils;
+import com.huaweicloud.sdk.core.utils.StringUtils;
 import org.bouncycastle.crypto.digests.SM3Digest;
 import org.openeuler.BGMProvider;
 
@@ -57,6 +58,12 @@ public class SM3AKSKSigner {
 
     public static <T extends AbstractCredentials<T>> Map<String, String>
         sign(HttpRequest request, T credentials) {
+        if (StringUtils.isEmpty(credentials.getAk())) {
+            throw new SdkException("ak is required in credentials");
+        }
+        if (StringUtils.isEmpty(credentials.getSk())) {
+            throw new SdkException("sk in credentials is required");
+        }
 
         HashMap<String, String> authenticationHeaders = new HashMap<>();
 

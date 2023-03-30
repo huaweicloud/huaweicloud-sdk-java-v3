@@ -19,6 +19,11 @@ import java.util.function.Consumer;
 public class CcrulesListInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
@@ -239,6 +244,23 @@ public class CcrulesListInfo {
     @JsonProperty(value = "timestamp")
 
     private Long timestamp;
+
+    public CcrulesListInfo withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 规则名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public CcrulesListInfo withId(String id) {
         this.id = id;
@@ -674,9 +696,10 @@ public class CcrulesListInfo {
             return false;
         }
         CcrulesListInfo ccrulesListInfo = (CcrulesListInfo) o;
-        return Objects.equals(this.id, ccrulesListInfo.id) && Objects.equals(this.policyid, ccrulesListInfo.policyid)
-            && Objects.equals(this.url, ccrulesListInfo.url) && Objects.equals(this.prefix, ccrulesListInfo.prefix)
-            && Objects.equals(this.mode, ccrulesListInfo.mode) && Objects.equals(this.status, ccrulesListInfo.status)
+        return Objects.equals(this.name, ccrulesListInfo.name) && Objects.equals(this.id, ccrulesListInfo.id)
+            && Objects.equals(this.policyid, ccrulesListInfo.policyid) && Objects.equals(this.url, ccrulesListInfo.url)
+            && Objects.equals(this.prefix, ccrulesListInfo.prefix) && Objects.equals(this.mode, ccrulesListInfo.mode)
+            && Objects.equals(this.status, ccrulesListInfo.status)
             && Objects.equals(this.conditions, ccrulesListInfo.conditions)
             && Objects.equals(this.action, ccrulesListInfo.action)
             && Objects.equals(this.tagType, ccrulesListInfo.tagType)
@@ -698,7 +721,8 @@ public class CcrulesListInfo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
+        return Objects.hash(name,
+            id,
             policyid,
             url,
             prefix,
@@ -727,6 +751,7 @@ public class CcrulesListInfo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CcrulesListInfo {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");

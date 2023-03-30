@@ -199,6 +199,37 @@ public class OrganizationsAsyncClient {
     }
 
     /**
+     * 查询有关创建帐号状态的信息
+     *
+     * 检索创建帐号的异步请求的当前状态。此操作只能由组织的管理帐号或作为服务委托管理员的成员帐号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCreateAccountStatusRequest 请求对象
+     * @return CompletableFuture<ShowCreateAccountStatusResponse>
+     */
+    public CompletableFuture<ShowCreateAccountStatusResponse> showCreateAccountStatusAsync(
+        ShowCreateAccountStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, OrganizationsMeta.showCreateAccountStatus);
+    }
+
+    /**
+     * 查询有关创建帐号状态的信息
+     *
+     * 检索创建帐号的异步请求的当前状态。此操作只能由组织的管理帐号或作为服务委托管理员的成员帐号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCreateAccountStatusRequest 请求对象
+     * @return AsyncInvoker<ShowCreateAccountStatusRequest, ShowCreateAccountStatusResponse>
+     */
+    public AsyncInvoker<ShowCreateAccountStatusRequest, ShowCreateAccountStatusResponse> showCreateAccountStatusAsyncInvoker(
+        ShowCreateAccountStatusRequest request) {
+        return new AsyncInvoker<ShowCreateAccountStatusRequest, ShowCreateAccountStatusResponse>(request,
+            OrganizationsMeta.showCreateAccountStatus, hcClient);
+    }
+
+    /**
      * 注销服务的委托管理员
      *
      * 删除指定成员帐号作为指定服务的委托管理员。此操作只能由组织的管理帐号调用。
@@ -561,6 +592,68 @@ public class OrganizationsAsyncClient {
         ListServicesRequest request) {
         return new AsyncInvoker<ListServicesRequest, ListServicesResponse>(request, OrganizationsMeta.listServices,
             hcClient);
+    }
+
+    /**
+     * 列出被添加到标签策略强制执行的资源类型
+     *
+     * List all services and resource type that could integrate with tag policy.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTagPolicyServicesRequest 请求对象
+     * @return CompletableFuture<ListTagPolicyServicesResponse>
+     */
+    public CompletableFuture<ListTagPolicyServicesResponse> listTagPolicyServicesAsync(
+        ListTagPolicyServicesRequest request) {
+        return hcClient.asyncInvokeHttp(request, OrganizationsMeta.listTagPolicyServices);
+    }
+
+    /**
+     * 列出被添加到标签策略强制执行的资源类型
+     *
+     * List all services and resource type that could integrate with tag policy.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTagPolicyServicesRequest 请求对象
+     * @return AsyncInvoker<ListTagPolicyServicesRequest, ListTagPolicyServicesResponse>
+     */
+    public AsyncInvoker<ListTagPolicyServicesRequest, ListTagPolicyServicesResponse> listTagPolicyServicesAsyncInvoker(
+        ListTagPolicyServicesRequest request) {
+        return new AsyncInvoker<ListTagPolicyServicesRequest, ListTagPolicyServicesResponse>(request,
+            OrganizationsMeta.listTagPolicyServices, hcClient);
+    }
+
+    /**
+     * 查询有效的策略
+     *
+     * 查询指定策略类型和帐户的有效策略信息。当前此接口不支持查询服务控制策略（service_control_policy）。此操作只能由组织的管理帐号或作为服务委托管理员的成员帐号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEffectivePoliciesRequest 请求对象
+     * @return CompletableFuture<ShowEffectivePoliciesResponse>
+     */
+    public CompletableFuture<ShowEffectivePoliciesResponse> showEffectivePoliciesAsync(
+        ShowEffectivePoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, OrganizationsMeta.showEffectivePolicies);
+    }
+
+    /**
+     * 查询有效的策略
+     *
+     * 查询指定策略类型和帐户的有效策略信息。当前此接口不支持查询服务控制策略（service_control_policy）。此操作只能由组织的管理帐号或作为服务委托管理员的成员帐号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEffectivePoliciesRequest 请求对象
+     * @return AsyncInvoker<ShowEffectivePoliciesRequest, ShowEffectivePoliciesResponse>
+     */
+    public AsyncInvoker<ShowEffectivePoliciesRequest, ShowEffectivePoliciesResponse> showEffectivePoliciesAsyncInvoker(
+        ShowEffectivePoliciesRequest request) {
+        return new AsyncInvoker<ShowEffectivePoliciesRequest, ShowEffectivePoliciesResponse>(request,
+            OrganizationsMeta.showEffectivePolicies, hcClient);
     }
 
     /**
@@ -1166,6 +1259,157 @@ public class OrganizationsAsyncClient {
     }
 
     /**
+     * 为指定资源添加标签
+     *
+     * 向指定的资源添加一个或多个标签。目前，您可以将标签附加到组织中的帐号、组织单元、根和策略。此操作只能由组织的管理帐号调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTagResourceRequest 请求对象
+     * @return CompletableFuture<CreateTagResourceResponse>
+     */
+    public CompletableFuture<CreateTagResourceResponse> createTagResourceAsync(CreateTagResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, OrganizationsMeta.createTagResource);
+    }
+
+    /**
+     * 为指定资源添加标签
+     *
+     * 向指定的资源添加一个或多个标签。目前，您可以将标签附加到组织中的帐号、组织单元、根和策略。此操作只能由组织的管理帐号调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTagResourceRequest 请求对象
+     * @return AsyncInvoker<CreateTagResourceRequest, CreateTagResourceResponse>
+     */
+    public AsyncInvoker<CreateTagResourceRequest, CreateTagResourceResponse> createTagResourceAsyncInvoker(
+        CreateTagResourceRequest request) {
+        return new AsyncInvoker<CreateTagResourceRequest, CreateTagResourceResponse>(request,
+            OrganizationsMeta.createTagResource, hcClient);
+    }
+
+    /**
+     * 从指定资源中删除指定主键标签
+     *
+     * 从指定资源中删除具有指定主键的任何标签。您可以将标签绑定到组织中的帐号、组织单元、根和策略。此操作只能由组织的管理帐号调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTagResourceRequest 请求对象
+     * @return CompletableFuture<DeleteTagResourceResponse>
+     */
+    public CompletableFuture<DeleteTagResourceResponse> deleteTagResourceAsync(DeleteTagResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, OrganizationsMeta.deleteTagResource);
+    }
+
+    /**
+     * 从指定资源中删除指定主键标签
+     *
+     * 从指定资源中删除具有指定主键的任何标签。您可以将标签绑定到组织中的帐号、组织单元、根和策略。此操作只能由组织的管理帐号调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTagResourceRequest 请求对象
+     * @return AsyncInvoker<DeleteTagResourceRequest, DeleteTagResourceResponse>
+     */
+    public AsyncInvoker<DeleteTagResourceRequest, DeleteTagResourceResponse> deleteTagResourceAsyncInvoker(
+        DeleteTagResourceRequest request) {
+        return new AsyncInvoker<DeleteTagResourceRequest, DeleteTagResourceResponse>(request,
+            OrganizationsMeta.deleteTagResource, hcClient);
+    }
+
+    /**
+     * 根据资源类型及标签信息查询实例列表
+     *
+     * 根据资源类型及标签信息查询实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceInstancesRequest 请求对象
+     * @return CompletableFuture<ListResourceInstancesResponse>
+     */
+    public CompletableFuture<ListResourceInstancesResponse> listResourceInstancesAsync(
+        ListResourceInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, OrganizationsMeta.listResourceInstances);
+    }
+
+    /**
+     * 根据资源类型及标签信息查询实例列表
+     *
+     * 根据资源类型及标签信息查询实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceInstancesRequest 请求对象
+     * @return AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>
+     */
+    public AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstancesAsyncInvoker(
+        ListResourceInstancesRequest request) {
+        return new AsyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>(request,
+            OrganizationsMeta.listResourceInstances, hcClient);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询项目标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceTagsRequest 请求对象
+     * @return CompletableFuture<ListResourceTagsResponse>
+     */
+    public CompletableFuture<ListResourceTagsResponse> listResourceTagsAsync(ListResourceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, OrganizationsMeta.listResourceTags);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询项目标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceTagsRequest 请求对象
+     * @return AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>
+     */
+    public AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTagsAsyncInvoker(
+        ListResourceTagsRequest request) {
+        return new AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>(request,
+            OrganizationsMeta.listResourceTags, hcClient);
+    }
+
+    /**
+     * 列出绑定到指定资源的标签
+     *
+     * 列出绑定到指定资源的标签。您可以将标签附加到组织中的帐号、组织单元、根和策略。此操作只能由组织的管理帐号或作为服务委托管理员的成员帐号调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTagResourcesRequest 请求对象
+     * @return CompletableFuture<ListTagResourcesResponse>
+     */
+    public CompletableFuture<ListTagResourcesResponse> listTagResourcesAsync(ListTagResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, OrganizationsMeta.listTagResources);
+    }
+
+    /**
+     * 列出绑定到指定资源的标签
+     *
+     * 列出绑定到指定资源的标签。您可以将标签附加到组织中的帐号、组织单元、根和策略。此操作只能由组织的管理帐号或作为服务委托管理员的成员帐号调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTagResourcesRequest 请求对象
+     * @return AsyncInvoker<ListTagResourcesRequest, ListTagResourcesResponse>
+     */
+    public AsyncInvoker<ListTagResourcesRequest, ListTagResourcesResponse> listTagResourcesAsyncInvoker(
+        ListTagResourcesRequest request) {
+        return new AsyncInvoker<ListTagResourcesRequest, ListTagResourcesResponse>(request,
+            OrganizationsMeta.listTagResources, hcClient);
+    }
+
+    /**
      * 列出绑定到指定资源的标签
      *
      * 列出绑定到指定资源的标签。您可以将标签附加到组织中的帐号、组织单元、根和策略。此操作只能由组织的管理帐号或作为服务委托管理员的成员帐号调用。
@@ -1193,6 +1437,37 @@ public class OrganizationsAsyncClient {
         ListTagsForResourceRequest request) {
         return new AsyncInvoker<ListTagsForResourceRequest, ListTagsForResourceResponse>(request,
             OrganizationsMeta.listTagsForResource, hcClient);
+    }
+
+    /**
+     * 根据资源类型及标签信息查询实例数量
+     *
+     * 根据资源类型及标签信息查询实例数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResourceInstancesCountRequest 请求对象
+     * @return CompletableFuture<ShowResourceInstancesCountResponse>
+     */
+    public CompletableFuture<ShowResourceInstancesCountResponse> showResourceInstancesCountAsync(
+        ShowResourceInstancesCountRequest request) {
+        return hcClient.asyncInvokeHttp(request, OrganizationsMeta.showResourceInstancesCount);
+    }
+
+    /**
+     * 根据资源类型及标签信息查询实例数量
+     *
+     * 根据资源类型及标签信息查询实例数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResourceInstancesCountRequest 请求对象
+     * @return AsyncInvoker<ShowResourceInstancesCountRequest, ShowResourceInstancesCountResponse>
+     */
+    public AsyncInvoker<ShowResourceInstancesCountRequest, ShowResourceInstancesCountResponse> showResourceInstancesCountAsyncInvoker(
+        ShowResourceInstancesCountRequest request) {
+        return new AsyncInvoker<ShowResourceInstancesCountRequest, ShowResourceInstancesCountResponse>(request,
+            OrganizationsMeta.showResourceInstancesCount, hcClient);
     }
 
     /**

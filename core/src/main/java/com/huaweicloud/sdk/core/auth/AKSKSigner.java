@@ -26,6 +26,7 @@ import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.utils.BinaryUtils;
 import com.huaweicloud.sdk.core.utils.SignUtils;
+import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -61,6 +62,13 @@ public class AKSKSigner {
 
     public static <T extends AbstractCredentials<T>> Map<String, String>
         sign(HttpRequest request, T credential) {
+        if (StringUtils.isEmpty(credential.getAk())) {
+            throw new SdkException("ak is required in credentials");
+        }
+        if (StringUtils.isEmpty(credential.getSk())) {
+            throw new SdkException("sk in credentials is required");
+        }
+
         // ************* TASK 1: CONSTRUCT CANONICAL REQUEST *************
         // 设置基准时间
         Date now = new Date();

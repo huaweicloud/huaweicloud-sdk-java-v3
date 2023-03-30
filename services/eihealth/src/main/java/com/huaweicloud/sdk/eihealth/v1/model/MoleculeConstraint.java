@@ -143,11 +143,6 @@ public class MoleculeConstraint {
 
     private List<Float> quantiles = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "requirement")
-
-    private Object requirement;
-
     public MoleculeConstraint withName(String name) {
         this.name = name;
         return this;
@@ -291,23 +286,6 @@ public class MoleculeConstraint {
         this.quantiles = quantiles;
     }
 
-    public MoleculeConstraint withRequirement(Object requirement) {
-        this.requirement = requirement;
-        return this;
-    }
-
-    /**
-     * 属性约束参数
-     * @return requirement
-     */
-    public Object getRequirement() {
-        return requirement;
-    }
-
-    public void setRequirement(Object requirement) {
-        this.requirement = requirement;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -321,13 +299,12 @@ public class MoleculeConstraint {
             && Objects.equals(this.bool, moleculeConstraint.bool)
             && Objects.equals(this.range, moleculeConstraint.range)
             && Objects.equals(this.struct, moleculeConstraint.struct)
-            && Objects.equals(this.quantiles, moleculeConstraint.quantiles)
-            && Objects.equals(this.requirement, moleculeConstraint.requirement);
+            && Objects.equals(this.quantiles, moleculeConstraint.quantiles);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, bool, range, struct, quantiles, requirement);
+        return Objects.hash(name, type, bool, range, struct, quantiles);
     }
 
     @Override
@@ -340,7 +317,6 @@ public class MoleculeConstraint {
         sb.append("    range: ").append(toIndentedString(range)).append("\n");
         sb.append("    struct: ").append(toIndentedString(struct)).append("\n");
         sb.append("    quantiles: ").append(toIndentedString(quantiles)).append("\n");
-        sb.append("    requirement: ").append(toIndentedString(requirement)).append("\n");
         sb.append("}");
         return sb.toString();
     }

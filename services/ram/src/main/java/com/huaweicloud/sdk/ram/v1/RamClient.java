@@ -685,4 +685,66 @@ public class RamClient {
             RamMeta.searchResourceShareInvitation, hcClient);
     }
 
+    /**
+     * 资源共享实例增加标签
+     *
+     * 资源共享实例增加标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateResourceShareTagsRequest 请求对象
+     * @return BatchCreateResourceShareTagsResponse
+     */
+    public BatchCreateResourceShareTagsResponse batchCreateResourceShareTags(
+        BatchCreateResourceShareTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, RamMeta.batchCreateResourceShareTags);
+    }
+
+    /**
+     * 资源共享实例增加标签
+     *
+     * 资源共享实例增加标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateResourceShareTagsRequest 请求对象
+     * @return SyncInvoker<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse>
+     */
+    public SyncInvoker<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse> batchCreateResourceShareTagsInvoker(
+        BatchCreateResourceShareTagsRequest request) {
+        return new SyncInvoker<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse>(request,
+            RamMeta.batchCreateResourceShareTags, hcClient);
+    }
+
+    /**
+     * 删除资源共享实例的标签
+     *
+     * 删除资源共享实例指定的标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteResourceShareTagsRequest 请求对象
+     * @return BatchDeleteResourceShareTagsResponse
+     */
+    public BatchDeleteResourceShareTagsResponse batchDeleteResourceShareTags(
+        BatchDeleteResourceShareTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, RamMeta.batchDeleteResourceShareTags);
+    }
+
+    /**
+     * 删除资源共享实例的标签
+     *
+     * 删除资源共享实例指定的标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteResourceShareTagsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse>
+     */
+    public SyncInvoker<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse> batchDeleteResourceShareTagsInvoker(
+        BatchDeleteResourceShareTagsRequest request) {
+        return new SyncInvoker<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse>(request,
+            RamMeta.batchDeleteResourceShareTags, hcClient);
+    }
+
 }

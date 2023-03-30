@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.iotda.v5.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -25,6 +27,11 @@ public class PropertyFilter {
     @JsonProperty(value = "value")
 
     private String value;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "in_values")
+
+    private List<String> inValues = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "strategy")
@@ -54,7 +61,7 @@ public class PropertyFilter {
     }
 
     /**
-     * **参数说明**：数据比较的操作符。 **取值范围**：当前支持的操作符有：>，<，>=，<=，=和between:表示数值区间。
+     * **参数说明**：数据比较的操作符。 **取值范围**：当前支持的操作符有：>，<，>=，<=，=,in:表示在指定值中匹配和between:表示数值区间。
      * @return operator
      */
     public String getOperator() {
@@ -80,6 +87,39 @@ public class PropertyFilter {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public PropertyFilter withInValues(List<String> inValues) {
+        this.inValues = inValues;
+        return this;
+    }
+
+    public PropertyFilter addInValuesItem(String inValuesItem) {
+        if (this.inValues == null) {
+            this.inValues = new ArrayList<>();
+        }
+        this.inValues.add(inValuesItem);
+        return this;
+    }
+
+    public PropertyFilter withInValues(Consumer<List<String>> inValuesSetter) {
+        if (this.inValues == null) {
+            this.inValues = new ArrayList<>();
+        }
+        inValuesSetter.accept(this.inValues);
+        return this;
+    }
+
+    /**
+     * **参数说明**：当operator为in时该字段必填，使用该字段传递比较表达式右值，上限为20个。
+     * @return inValues
+     */
+    public List<String> getInValues() {
+        return inValues;
+    }
+
+    public void setInValues(List<String> inValues) {
+        this.inValues = inValues;
     }
 
     public PropertyFilter withStrategy(Strategy strategy) {
@@ -119,12 +159,13 @@ public class PropertyFilter {
         PropertyFilter propertyFilter = (PropertyFilter) o;
         return Objects.equals(this.path, propertyFilter.path) && Objects.equals(this.operator, propertyFilter.operator)
             && Objects.equals(this.value, propertyFilter.value)
+            && Objects.equals(this.inValues, propertyFilter.inValues)
             && Objects.equals(this.strategy, propertyFilter.strategy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(path, operator, value, strategy);
+        return Objects.hash(path, operator, value, inValues, strategy);
     }
 
     @Override
@@ -134,6 +175,7 @@ public class PropertyFilter {
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
         sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    inValues: ").append(toIndentedString(inValues)).append("\n");
         sb.append("    strategy: ").append(toIndentedString(strategy)).append("\n");
         sb.append("}");
         return sb.toString();

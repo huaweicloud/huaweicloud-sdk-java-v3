@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * 设备组信息结构体，创建、查询、修改设备组时返回
  */
-public class DeviceGroupResponseDTO {
+public class DeviceGroupResponseSummary {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
@@ -30,7 +30,7 @@ public class DeviceGroupResponseDTO {
 
     private String superGroupId;
 
-    public DeviceGroupResponseDTO withGroupId(String groupId) {
+    public DeviceGroupResponseSummary withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
@@ -47,7 +47,7 @@ public class DeviceGroupResponseDTO {
         this.groupId = groupId;
     }
 
-    public DeviceGroupResponseDTO withName(String name) {
+    public DeviceGroupResponseSummary withName(String name) {
         this.name = name;
         return this;
     }
@@ -64,7 +64,7 @@ public class DeviceGroupResponseDTO {
         this.name = name;
     }
 
-    public DeviceGroupResponseDTO withDescription(String description) {
+    public DeviceGroupResponseSummary withDescription(String description) {
         this.description = description;
         return this;
     }
@@ -81,7 +81,7 @@ public class DeviceGroupResponseDTO {
         this.description = description;
     }
 
-    public DeviceGroupResponseDTO withSuperGroupId(String superGroupId) {
+    public DeviceGroupResponseSummary withSuperGroupId(String superGroupId) {
         this.superGroupId = superGroupId;
         return this;
     }
@@ -106,11 +106,11 @@ public class DeviceGroupResponseDTO {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        DeviceGroupResponseDTO deviceGroupResponseDTO = (DeviceGroupResponseDTO) o;
-        return Objects.equals(this.groupId, deviceGroupResponseDTO.groupId)
-            && Objects.equals(this.name, deviceGroupResponseDTO.name)
-            && Objects.equals(this.description, deviceGroupResponseDTO.description)
-            && Objects.equals(this.superGroupId, deviceGroupResponseDTO.superGroupId);
+        DeviceGroupResponseSummary deviceGroupResponseSummary = (DeviceGroupResponseSummary) o;
+        return Objects.equals(this.groupId, deviceGroupResponseSummary.groupId)
+            && Objects.equals(this.name, deviceGroupResponseSummary.name)
+            && Objects.equals(this.description, deviceGroupResponseSummary.description)
+            && Objects.equals(this.superGroupId, deviceGroupResponseSummary.superGroupId);
     }
 
     @Override
@@ -121,7 +121,7 @@ public class DeviceGroupResponseDTO {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class DeviceGroupResponseDTO {\n");
+        sb.append("class DeviceGroupResponseSummary {\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

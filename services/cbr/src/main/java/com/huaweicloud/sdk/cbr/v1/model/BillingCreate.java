@@ -181,7 +181,7 @@ public class BillingCreate {
     private ConsistentLevelEnum consistentLevel;
 
     /**
-     * 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo），云桌面（workspace）。
+     * 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo），云桌面（workspace），VMware（vmware），关系型数据库（rds），文件（file）。
      */
     public static final class ObjectTypeEnum {
 
@@ -205,6 +205,21 @@ public class BillingCreate {
          */
         public static final ObjectTypeEnum WORKSPACE = new ObjectTypeEnum("workspace");
 
+        /**
+         * Enum VMWARE for value: "vmware"
+         */
+        public static final ObjectTypeEnum VMWARE = new ObjectTypeEnum("vmware");
+
+        /**
+         * Enum RDS for value: "rds"
+         */
+        public static final ObjectTypeEnum RDS = new ObjectTypeEnum("rds");
+
+        /**
+         * Enum FILE for value: "file"
+         */
+        public static final ObjectTypeEnum FILE = new ObjectTypeEnum("file");
+
         private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ObjectTypeEnum> createStaticFields() {
@@ -213,6 +228,9 @@ public class BillingCreate {
             map.put("disk", DISK);
             map.put("turbo", TURBO);
             map.put("workspace", WORKSPACE);
+            map.put("vmware", VMWARE);
+            map.put("rds", RDS);
+            map.put("file", FILE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -610,7 +628,7 @@ public class BillingCreate {
     }
 
     /**
-     * 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo），云桌面（workspace）。
+     * 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo），云桌面（workspace），VMware（vmware），关系型数据库（rds），文件（file）。
      * @return objectType
      */
     public ObjectTypeEnum getObjectType() {

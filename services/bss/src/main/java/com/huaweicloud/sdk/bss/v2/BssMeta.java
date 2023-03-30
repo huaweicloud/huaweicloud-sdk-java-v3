@@ -2376,6 +2376,31 @@ public class BssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse> listRenewRateOnPeriod =
+        genForlistRenewRateOnPeriod();
+
+    private static HttpRequestDef<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse> genForlistRenewRateOnPeriod() {
+        // basic
+        HttpRequestDef.Builder<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListRenewRateOnPeriodRequest.class, ListRenewRateOnPeriodResponse.class)
+            .withName("ListRenewRateOnPeriod")
+            .withUri("/v2/bills/ratings/period-resources/renew-rate")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ListRenewRateOnPeriodReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListRenewRateOnPeriodReq.class),
+            f -> f.withMarshaller(ListRenewRateOnPeriodRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListResourceTypesRequest, ListResourceTypesResponse> listResourceTypes =
         genForlistResourceTypes();
 

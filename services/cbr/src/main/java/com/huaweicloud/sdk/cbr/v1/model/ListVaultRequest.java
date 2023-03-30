@@ -317,7 +317,7 @@ public class ListVaultRequest {
     }
 
     /**
-     * 资源类型：云服务器（server），云硬盘（disk），文件系统（turbo），云桌面（workspace）。
+     * 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo），云桌面（workspace），VMware（vmware），关系型数据库（rds），文件（file）。
      * @return objectType
      */
     public String getObjectType() {

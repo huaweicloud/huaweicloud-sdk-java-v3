@@ -638,4 +638,74 @@ public class RamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse> batchCreateResourceShareTags =
+        genForbatchCreateResourceShareTags();
+
+    private static HttpRequestDef<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse> genForbatchCreateResourceShareTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateResourceShareTagsRequest.class,
+                    BatchCreateResourceShareTagsResponse.class)
+                .withName("BatchCreateResourceShareTags")
+                .withUri("/v1/resource-shares/{resource_share_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateResourceShareTagsRequest::getResourceShareId, (req, v) -> {
+                req.setResourceShareId(v);
+            }));
+        builder.<TagResourceReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TagResourceReqBody.class),
+            f -> f.withMarshaller(BatchCreateResourceShareTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse> batchDeleteResourceShareTags =
+        genForbatchDeleteResourceShareTags();
+
+    private static HttpRequestDef<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse> genForbatchDeleteResourceShareTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteResourceShareTagsRequest.class,
+                    BatchDeleteResourceShareTagsResponse.class)
+                .withName("BatchDeleteResourceShareTags")
+                .withUri("/v1/resource-shares/{resource_share_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteResourceShareTagsRequest::getResourceShareId, (req, v) -> {
+                req.setResourceShareId(v);
+            }));
+        builder.<UntagResourceReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UntagResourceReqBody.class),
+            f -> f.withMarshaller(BatchDeleteResourceShareTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
 }

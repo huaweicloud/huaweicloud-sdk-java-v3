@@ -2061,6 +2061,36 @@ public class WafAsyncClient {
     }
 
     /**
+     * 查询防篡改防护规则
+     *
+     * 查询防篡改防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAntitamperRuleRequest 请求对象
+     * @return CompletableFuture<ShowAntitamperRuleResponse>
+     */
+    public CompletableFuture<ShowAntitamperRuleResponse> showAntitamperRuleAsync(ShowAntitamperRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showAntitamperRule);
+    }
+
+    /**
+     * 查询防篡改防护规则
+     *
+     * 查询防篡改防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAntitamperRuleRequest 请求对象
+     * @return AsyncInvoker<ShowAntitamperRuleRequest, ShowAntitamperRuleResponse>
+     */
+    public AsyncInvoker<ShowAntitamperRuleRequest, ShowAntitamperRuleResponse> showAntitamperRuleAsyncInvoker(
+        ShowAntitamperRuleRequest request) {
+        return new AsyncInvoker<ShowAntitamperRuleRequest, ShowAntitamperRuleResponse>(request,
+            WafMeta.showAntitamperRule, hcClient);
+    }
+
+    /**
      * 根据Id查询cc防护规则
      *
      * 根据Id查询cc防护规则
@@ -2469,6 +2499,36 @@ public class WafAsyncClient {
     }
 
     /**
+     * 查询隐私屏蔽防护规则
+     *
+     * 删除隐私屏蔽防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPrivacyRuleRequest 请求对象
+     * @return CompletableFuture<ShowPrivacyRuleResponse>
+     */
+    public CompletableFuture<ShowPrivacyRuleResponse> showPrivacyRuleAsync(ShowPrivacyRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showPrivacyRule);
+    }
+
+    /**
+     * 查询隐私屏蔽防护规则
+     *
+     * 删除隐私屏蔽防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPrivacyRuleRequest 请求对象
+     * @return AsyncInvoker<ShowPrivacyRuleRequest, ShowPrivacyRuleResponse>
+     */
+    public AsyncInvoker<ShowPrivacyRuleRequest, ShowPrivacyRuleResponse> showPrivacyRuleAsyncInvoker(
+        ShowPrivacyRuleRequest request) {
+        return new AsyncInvoker<ShowPrivacyRuleRequest, ShowPrivacyRuleResponse>(request, WafMeta.showPrivacyRule,
+            hcClient);
+    }
+
+    /**
      * 根据Id查询攻击惩罚防护规则
      *
      * 根据Id查询攻击惩罚防护规则
@@ -2556,6 +2616,66 @@ public class WafAsyncClient {
         ShowSubscriptionInfoRequest request) {
         return new AsyncInvoker<ShowSubscriptionInfoRequest, ShowSubscriptionInfoResponse>(request,
             WafMeta.showSubscriptionInfo, hcClient);
+    }
+
+    /**
+     * 查询引用表
+     *
+     * 查询引用表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowValueListRequest 请求对象
+     * @return CompletableFuture<ShowValueListResponse>
+     */
+    public CompletableFuture<ShowValueListResponse> showValueListAsync(ShowValueListRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showValueList);
+    }
+
+    /**
+     * 查询引用表
+     *
+     * 查询引用表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowValueListRequest 请求对象
+     * @return AsyncInvoker<ShowValueListRequest, ShowValueListResponse>
+     */
+    public AsyncInvoker<ShowValueListRequest, ShowValueListResponse> showValueListAsyncInvoker(
+        ShowValueListRequest request) {
+        return new AsyncInvoker<ShowValueListRequest, ShowValueListResponse>(request, WafMeta.showValueList, hcClient);
+    }
+
+    /**
+     * 查询黑白名单防护规则
+     *
+     * 查询黑白名单防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowWhiteBlackIpRuleRequest 请求对象
+     * @return CompletableFuture<ShowWhiteBlackIpRuleResponse>
+     */
+    public CompletableFuture<ShowWhiteBlackIpRuleResponse> showWhiteBlackIpRuleAsync(
+        ShowWhiteBlackIpRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showWhiteBlackIpRule);
+    }
+
+    /**
+     * 查询黑白名单防护规则
+     *
+     * 查询黑白名单防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowWhiteBlackIpRuleRequest 请求对象
+     * @return AsyncInvoker<ShowWhiteBlackIpRuleRequest, ShowWhiteBlackIpRuleResponse>
+     */
+    public AsyncInvoker<ShowWhiteBlackIpRuleRequest, ShowWhiteBlackIpRuleResponse> showWhiteBlackIpRuleAsyncInvoker(
+        ShowWhiteBlackIpRuleRequest request) {
+        return new AsyncInvoker<ShowWhiteBlackIpRuleRequest, ShowWhiteBlackIpRuleResponse>(request,
+            WafMeta.showWhiteBlackIpRule, hcClient);
     }
 
     /**

@@ -2921,6 +2921,45 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAntitamperRuleRequest, ShowAntitamperRuleResponse> showAntitamperRule =
+        genForshowAntitamperRule();
+
+    private static HttpRequestDef<ShowAntitamperRuleRequest, ShowAntitamperRuleResponse> genForshowAntitamperRule() {
+        // basic
+        HttpRequestDef.Builder<ShowAntitamperRuleRequest, ShowAntitamperRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAntitamperRuleRequest.class, ShowAntitamperRuleResponse.class)
+                .withName("ShowAntitamperRule")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/antitamper/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAntitamperRuleRequest::getPolicyId, (req, v) -> {
+                req.setPolicyId(v);
+            }));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAntitamperRuleRequest::getRuleId, (req, v) -> {
+                req.setRuleId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAntitamperRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowCcRuleRequest, ShowCcRuleResponse> showCcRule = genForshowCcRule();
 
     private static HttpRequestDef<ShowCcRuleRequest, ShowCcRuleResponse> genForshowCcRule() {
@@ -3370,6 +3409,45 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowPrivacyRuleRequest, ShowPrivacyRuleResponse> showPrivacyRule =
+        genForshowPrivacyRule();
+
+    private static HttpRequestDef<ShowPrivacyRuleRequest, ShowPrivacyRuleResponse> genForshowPrivacyRule() {
+        // basic
+        HttpRequestDef.Builder<ShowPrivacyRuleRequest, ShowPrivacyRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPrivacyRuleRequest.class, ShowPrivacyRuleResponse.class)
+                .withName("ShowPrivacyRule")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/privacy/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivacyRuleRequest::getPolicyId, (req, v) -> {
+                req.setPolicyId(v);
+            }));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivacyRuleRequest::getRuleId, (req, v) -> {
+                req.setRuleId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivacyRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPunishmentRuleRequest, ShowPunishmentRuleResponse> showPunishmentRule =
         genForshowPunishmentRule();
 
@@ -3438,6 +3516,77 @@ public class WafMeta {
             .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowValueListRequest, ShowValueListResponse> showValueList =
+        genForshowValueList();
+
+    private static HttpRequestDef<ShowValueListRequest, ShowValueListResponse> genForshowValueList() {
+        // basic
+        HttpRequestDef.Builder<ShowValueListRequest, ShowValueListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowValueListRequest.class, ShowValueListResponse.class)
+                .withName("ShowValueList")
+                .withUri("/v1/{project_id}/waf/valuelist/{valuelistid}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("valuelistid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowValueListRequest::getValuelistid, (req, v) -> {
+                req.setValuelistid(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowValueListRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWhiteBlackIpRuleRequest, ShowWhiteBlackIpRuleResponse> showWhiteBlackIpRule =
+        genForshowWhiteBlackIpRule();
+
+    private static HttpRequestDef<ShowWhiteBlackIpRuleRequest, ShowWhiteBlackIpRuleResponse> genForshowWhiteBlackIpRule() {
+        // basic
+        HttpRequestDef.Builder<ShowWhiteBlackIpRuleRequest, ShowWhiteBlackIpRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowWhiteBlackIpRuleRequest.class, ShowWhiteBlackIpRuleResponse.class)
+            .withName("ShowWhiteBlackIpRule")
+            .withUri("/v1/{project_id}/waf/policy/{policy_id}/whiteblackip/{rule_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWhiteBlackIpRuleRequest::getPolicyId, (req, v) -> {
+                req.setPolicyId(v);
+            }));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWhiteBlackIpRuleRequest::getRuleId, (req, v) -> {
+                req.setRuleId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWhiteBlackIpRuleRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 

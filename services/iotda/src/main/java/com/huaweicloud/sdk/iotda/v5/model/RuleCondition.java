@@ -31,13 +31,18 @@ public class RuleCondition {
 
     private DailyTimerType dailyTimerCondition;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_linkage_status_condition")
+
+    private DeviceLinkageStatusCondition deviceLinkageStatusCondition;
+
     public RuleCondition withType(String type) {
         this.type = type;
         return this;
     }
 
     /**
-     * **参数说明**：规则条件的类型。 **取值范围**： - DEVICE_DATA：设备属性数据类型条件。 - SIMPLE_TIMER：简单定时类型条件。 - DAILY_TIMER：每日定时类型条件。
+     * **参数说明**：规则条件的类型。 **取值范围**： - DEVICE_DATA：设备属性数据类型条件。 - SIMPLE_TIMER：简单定时类型条件。 - DAILY_TIMER：每日定时类型条件。 - DEVICE_LINKAGE_STATUS：设备状态类型条件。
      * @return type
      */
     public String getType() {
@@ -126,6 +131,33 @@ public class RuleCondition {
         this.dailyTimerCondition = dailyTimerCondition;
     }
 
+    public RuleCondition withDeviceLinkageStatusCondition(DeviceLinkageStatusCondition deviceLinkageStatusCondition) {
+        this.deviceLinkageStatusCondition = deviceLinkageStatusCondition;
+        return this;
+    }
+
+    public RuleCondition withDeviceLinkageStatusCondition(
+        Consumer<DeviceLinkageStatusCondition> deviceLinkageStatusConditionSetter) {
+        if (this.deviceLinkageStatusCondition == null) {
+            this.deviceLinkageStatusCondition = new DeviceLinkageStatusCondition();
+            deviceLinkageStatusConditionSetter.accept(this.deviceLinkageStatusCondition);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get deviceLinkageStatusCondition
+     * @return deviceLinkageStatusCondition
+     */
+    public DeviceLinkageStatusCondition getDeviceLinkageStatusCondition() {
+        return deviceLinkageStatusCondition;
+    }
+
+    public void setDeviceLinkageStatusCondition(DeviceLinkageStatusCondition deviceLinkageStatusCondition) {
+        this.deviceLinkageStatusCondition = deviceLinkageStatusCondition;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -138,12 +170,17 @@ public class RuleCondition {
         return Objects.equals(this.type, ruleCondition.type)
             && Objects.equals(this.devicePropertyCondition, ruleCondition.devicePropertyCondition)
             && Objects.equals(this.simpleTimerCondition, ruleCondition.simpleTimerCondition)
-            && Objects.equals(this.dailyTimerCondition, ruleCondition.dailyTimerCondition);
+            && Objects.equals(this.dailyTimerCondition, ruleCondition.dailyTimerCondition)
+            && Objects.equals(this.deviceLinkageStatusCondition, ruleCondition.deviceLinkageStatusCondition);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, devicePropertyCondition, simpleTimerCondition, dailyTimerCondition);
+        return Objects.hash(type,
+            devicePropertyCondition,
+            simpleTimerCondition,
+            dailyTimerCondition,
+            deviceLinkageStatusCondition);
     }
 
     @Override
@@ -154,6 +191,9 @@ public class RuleCondition {
         sb.append("    devicePropertyCondition: ").append(toIndentedString(devicePropertyCondition)).append("\n");
         sb.append("    simpleTimerCondition: ").append(toIndentedString(simpleTimerCondition)).append("\n");
         sb.append("    dailyTimerCondition: ").append(toIndentedString(dailyTimerCondition)).append("\n");
+        sb.append("    deviceLinkageStatusCondition: ")
+            .append(toIndentedString(deviceLinkageStatusCondition))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

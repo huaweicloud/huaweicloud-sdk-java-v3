@@ -11,6 +11,11 @@ import java.util.Objects;
 public class SetRDSBackupCnfReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "indices")
+
+    private String indices;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prefix")
 
     private String prefix;
@@ -34,6 +39,23 @@ public class SetRDSBackupCnfReq {
     @JsonProperty(value = "deleteAuto")
 
     private String deleteAuto;
+
+    public SetRDSBackupCnfReq withIndices(String indices) {
+        this.indices = indices;
+        return this;
+    }
+
+    /**
+     * 需要备份的索引名。*代表所有索引。
+     * @return indices
+     */
+    public String getIndices() {
+        return indices;
+    }
+
+    public void setIndices(String indices) {
+        this.indices = indices;
+    }
 
     public SetRDSBackupCnfReq withPrefix(String prefix) {
         this.prefix = prefix;
@@ -129,7 +151,8 @@ public class SetRDSBackupCnfReq {
             return false;
         }
         SetRDSBackupCnfReq setRDSBackupCnfReq = (SetRDSBackupCnfReq) o;
-        return Objects.equals(this.prefix, setRDSBackupCnfReq.prefix)
+        return Objects.equals(this.indices, setRDSBackupCnfReq.indices)
+            && Objects.equals(this.prefix, setRDSBackupCnfReq.prefix)
             && Objects.equals(this.period, setRDSBackupCnfReq.period)
             && Objects.equals(this.keepday, setRDSBackupCnfReq.keepday)
             && Objects.equals(this.enable, setRDSBackupCnfReq.enable)
@@ -138,13 +161,14 @@ public class SetRDSBackupCnfReq {
 
     @Override
     public int hashCode() {
-        return Objects.hash(prefix, period, keepday, enable, deleteAuto);
+        return Objects.hash(indices, prefix, period, keepday, enable, deleteAuto);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SetRDSBackupCnfReq {\n");
+        sb.append("    indices: ").append(toIndentedString(indices)).append("\n");
         sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("    keepday: ").append(toIndentedString(keepday)).append("\n");

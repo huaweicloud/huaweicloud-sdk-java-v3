@@ -19,6 +19,11 @@ import java.util.function.Consumer;
 public class UpdateCcRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
 
     private Integer mode;
@@ -194,6 +199,23 @@ public class UpdateCcRuleRequestBody {
     @JsonProperty(value = "description")
 
     private String description;
+
+    public UpdateCcRuleRequestBody withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 规则名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public UpdateCcRuleRequestBody withMode(Integer mode) {
         this.mode = mode;
@@ -476,7 +498,8 @@ public class UpdateCcRuleRequestBody {
             return false;
         }
         UpdateCcRuleRequestBody updateCcRuleRequestBody = (UpdateCcRuleRequestBody) o;
-        return Objects.equals(this.mode, updateCcRuleRequestBody.mode)
+        return Objects.equals(this.name, updateCcRuleRequestBody.name)
+            && Objects.equals(this.mode, updateCcRuleRequestBody.mode)
             && Objects.equals(this.url, updateCcRuleRequestBody.url)
             && Objects.equals(this.conditions, updateCcRuleRequestBody.conditions)
             && Objects.equals(this.action, updateCcRuleRequestBody.action)
@@ -494,7 +517,8 @@ public class UpdateCcRuleRequestBody {
 
     @Override
     public int hashCode() {
-        return Objects.hash(mode,
+        return Objects.hash(name,
+            mode,
             url,
             conditions,
             action,
@@ -514,6 +538,7 @@ public class UpdateCcRuleRequestBody {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateCcRuleRequestBody {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");

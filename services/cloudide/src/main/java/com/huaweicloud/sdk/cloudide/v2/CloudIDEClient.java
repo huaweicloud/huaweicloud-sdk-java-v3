@@ -705,6 +705,62 @@ public class CloudIDEClient {
     }
 
     /**
+     * CreateJoinRequest接口
+     *
+     * create a join-request
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateApplyRequest 请求对象
+     * @return CreateApplyResponse
+     */
+    public CreateApplyResponse createApply(CreateApplyRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.createApply);
+    }
+
+    /**
+     * CreateJoinRequest接口
+     *
+     * create a join-request
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateApplyRequest 请求对象
+     * @return SyncInvoker<CreateApplyRequest, CreateApplyResponse>
+     */
+    public SyncInvoker<CreateApplyRequest, CreateApplyResponse> createApplyInvoker(CreateApplyRequest request) {
+        return new SyncInvoker<CreateApplyRequest, CreateApplyResponse>(request, CloudIDEMeta.createApply, hcClient);
+    }
+
+    /**
+     * CreateEvent接口
+     *
+     * create an event
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEventRequest 请求对象
+     * @return CreateEventResponse
+     */
+    public CreateEventResponse createEvent(CreateEventRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.createEvent);
+    }
+
+    /**
+     * CreateEvent接口
+     *
+     * create an event
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEventRequest 请求对象
+     * @return SyncInvoker<CreateEventRequest, CreateEventResponse>
+     */
+    public SyncInvoker<CreateEventRequest, CreateEventResponse> createEventInvoker(CreateEventRequest request) {
+        return new SyncInvoker<CreateEventRequest, CreateEventResponse>(request, CloudIDEMeta.createEvent, hcClient);
+    }
+
+    /**
      * CreateLogin接口
      *
      * create a login

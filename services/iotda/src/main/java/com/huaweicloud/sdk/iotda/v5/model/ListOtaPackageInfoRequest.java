@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ListOtaPackageInfoRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Sp-Auth-Token")
-
-    private String spAuthToken;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Instance-Id")
 
     private String instanceId;
@@ -55,30 +50,13 @@ public class ListOtaPackageInfoRequest {
 
     private Integer offset;
 
-    public ListOtaPackageInfoRequest withSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-        return this;
-    }
-
-    /**
-     * Sp用户Token。通过调用IoBPS服务获取SP用户Token
-     * @return spAuthToken
-     */
-    public String getSpAuthToken() {
-        return spAuthToken;
-    }
-
-    public void setSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-    }
-
     public ListOtaPackageInfoRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
     /**
-     * 实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
+     * **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。您可以在IoTDA管理控制台界面，选择左侧导航栏“总览”页签查看当前实例的ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -163,7 +141,7 @@ public class ListOtaPackageInfoRequest {
     }
 
     /**
-     * |- **参数说明**：分页查询时每页显示的记录数。 **取值范围**：1-50的整数，默认值为10。
+     * **参数说明**：分页查询时每页显示的记录数。 **取值范围**：1-50的整数，默认值为10。
      * minimum: 1
      * maximum: 50
      * @return limit
@@ -182,7 +160,7 @@ public class ListOtaPackageInfoRequest {
     }
 
     /**
-     * **参数说明**：上一次分页查询结果中最后一条记录的ID，在上一次分页查询时由物联网平台返回获得。分页查询时物联网平台是按marker也就是记录ID降序查询的，越新的数据记录ID也会越大。若填写marker，则本次只查询记录ID小于marker的数据记录。若不填写，则从记录ID最大也就是最新的一条数据开始查询。如果需要依次查询所有数据，则每次查询时必须填写上一次查询响应中的marker值。 **取值范围**：长度为24的十六进制字符串，默认值为ffffffffffffffffffffffff。
+     * **参数说明**：上一次分页查询结果中最后一条记录的ID，在上一次分页查询时由物联网平台返回获得。分页查询时物联网平台是按marker也就是记录ID降序查询的，越新的数据记录ID也会越大。若填写marker，则本次只查询记录ID小于marker的数据记录。若不填写，则从记录ID最大也就是最新的一条数据开始查询。如果需要依次查询所有数据，则每次查询时必须填写上一次查询响应中的marker值。**取值范围**：长度为24的十六进制字符串，默认值为ffffffffffffffffffffffff。
      * @return marker
      */
     public String getMarker() {
@@ -221,8 +199,7 @@ public class ListOtaPackageInfoRequest {
             return false;
         }
         ListOtaPackageInfoRequest listOtaPackageInfoRequest = (ListOtaPackageInfoRequest) o;
-        return Objects.equals(this.spAuthToken, listOtaPackageInfoRequest.spAuthToken)
-            && Objects.equals(this.instanceId, listOtaPackageInfoRequest.instanceId)
+        return Objects.equals(this.instanceId, listOtaPackageInfoRequest.instanceId)
             && Objects.equals(this.appId, listOtaPackageInfoRequest.appId)
             && Objects.equals(this.packageType, listOtaPackageInfoRequest.packageType)
             && Objects.equals(this.productId, listOtaPackageInfoRequest.productId)
@@ -234,14 +211,13 @@ public class ListOtaPackageInfoRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(spAuthToken, instanceId, appId, packageType, productId, version, limit, marker, offset);
+        return Objects.hash(instanceId, appId, packageType, productId, version, limit, marker, offset);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListOtaPackageInfoRequest {\n");
-        sb.append("    spAuthToken: ").append(toIndentedString(spAuthToken)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    packageType: ").append(toIndentedString(packageType)).append("\n");

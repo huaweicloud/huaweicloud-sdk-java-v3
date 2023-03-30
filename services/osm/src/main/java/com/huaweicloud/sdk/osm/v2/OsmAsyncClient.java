@@ -2320,6 +2320,36 @@ public class OsmAsyncClient {
     }
 
     /**
+     * 查询配置
+     *
+     * 查询配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConfigurationRequest 请求对象
+     * @return CompletableFuture<ShowConfigurationResponse>
+     */
+    public CompletableFuture<ShowConfigurationResponse> showConfigurationAsync(ShowConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.showConfiguration);
+    }
+
+    /**
+     * 查询配置
+     *
+     * 查询配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConfigurationRequest 请求对象
+     * @return AsyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse>
+     */
+    public AsyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse> showConfigurationAsyncInvoker(
+        ShowConfigurationRequest request) {
+        return new AsyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse>(request, OsmMeta.showConfiguration,
+            hcClient);
+    }
+
+    /**
      * 查询提单权限
      *
      * 查询提单权限

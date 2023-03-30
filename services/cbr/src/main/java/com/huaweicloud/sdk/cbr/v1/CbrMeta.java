@@ -657,6 +657,13 @@ public class CbrMeta {
             f -> f.withMarshaller(ListBackupsRequest::getShowReplication, (req, v) -> {
                 req.setShowReplication(v);
             }));
+        builder.<Boolean>withRequestField("incremental",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListBackupsRequest::getIncremental, (req, v) -> {
+                req.setIncremental(v);
+            }));
 
         // response
 

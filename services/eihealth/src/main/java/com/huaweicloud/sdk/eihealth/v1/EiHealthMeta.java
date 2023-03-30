@@ -8,9 +8,42 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.eihealth.v1.model.*;
 
 import java.util.List;
+import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class EiHealthMeta {
+
+    public static final HttpRequestDef<ShowAdmetPropertiesRequest, ShowAdmetPropertiesResponse> showAdmetProperties =
+        genForshowAdmetProperties();
+
+    private static HttpRequestDef<ShowAdmetPropertiesRequest, ShowAdmetPropertiesResponse> genForshowAdmetProperties() {
+        // basic
+        HttpRequestDef.Builder<ShowAdmetPropertiesRequest, ShowAdmetPropertiesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowAdmetPropertiesRequest.class, ShowAdmetPropertiesResponse.class)
+                .withName("ShowAdmetProperties")
+                .withUri("/v1/{project_id}/admet")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AdmetRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AdmetRequest.class),
+            f -> f.withMarshaller(ShowAdmetPropertiesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<Map<String, Object>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Map.class),
+            f -> f.withMarshaller(ShowAdmetPropertiesResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(Object.class));
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<CreateCpiTaskRequest, CreateCpiTaskResponse> createCpiTask =
         genForcreateCpiTask();

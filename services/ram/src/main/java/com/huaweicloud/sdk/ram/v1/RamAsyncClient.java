@@ -696,4 +696,66 @@ public class RamAsyncClient {
             RamMeta.searchResourceShareInvitation, hcClient);
     }
 
+    /**
+     * 资源共享实例增加标签
+     *
+     * 资源共享实例增加标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateResourceShareTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateResourceShareTagsResponse>
+     */
+    public CompletableFuture<BatchCreateResourceShareTagsResponse> batchCreateResourceShareTagsAsync(
+        BatchCreateResourceShareTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RamMeta.batchCreateResourceShareTags);
+    }
+
+    /**
+     * 资源共享实例增加标签
+     *
+     * 资源共享实例增加标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateResourceShareTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse> batchCreateResourceShareTagsAsyncInvoker(
+        BatchCreateResourceShareTagsRequest request) {
+        return new AsyncInvoker<BatchCreateResourceShareTagsRequest, BatchCreateResourceShareTagsResponse>(request,
+            RamMeta.batchCreateResourceShareTags, hcClient);
+    }
+
+    /**
+     * 删除资源共享实例的标签
+     *
+     * 删除资源共享实例指定的标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteResourceShareTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteResourceShareTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteResourceShareTagsResponse> batchDeleteResourceShareTagsAsync(
+        BatchDeleteResourceShareTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RamMeta.batchDeleteResourceShareTags);
+    }
+
+    /**
+     * 删除资源共享实例的标签
+     *
+     * 删除资源共享实例指定的标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteResourceShareTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse> batchDeleteResourceShareTagsAsyncInvoker(
+        BatchDeleteResourceShareTagsRequest request) {
+        return new AsyncInvoker<BatchDeleteResourceShareTagsRequest, BatchDeleteResourceShareTagsResponse>(request,
+            RamMeta.batchDeleteResourceShareTags, hcClient);
+    }
+
 }

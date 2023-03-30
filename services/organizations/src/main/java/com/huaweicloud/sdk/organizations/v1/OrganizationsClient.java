@@ -193,6 +193,36 @@ public class OrganizationsClient {
     }
 
     /**
+     * 查询有关创建帐号状态的信息
+     *
+     * 检索创建帐号的异步请求的当前状态。此操作只能由组织的管理帐号或作为服务委托管理员的成员帐号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCreateAccountStatusRequest 请求对象
+     * @return ShowCreateAccountStatusResponse
+     */
+    public ShowCreateAccountStatusResponse showCreateAccountStatus(ShowCreateAccountStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.showCreateAccountStatus);
+    }
+
+    /**
+     * 查询有关创建帐号状态的信息
+     *
+     * 检索创建帐号的异步请求的当前状态。此操作只能由组织的管理帐号或作为服务委托管理员的成员帐号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCreateAccountStatusRequest 请求对象
+     * @return SyncInvoker<ShowCreateAccountStatusRequest, ShowCreateAccountStatusResponse>
+     */
+    public SyncInvoker<ShowCreateAccountStatusRequest, ShowCreateAccountStatusResponse> showCreateAccountStatusInvoker(
+        ShowCreateAccountStatusRequest request) {
+        return new SyncInvoker<ShowCreateAccountStatusRequest, ShowCreateAccountStatusResponse>(request,
+            OrganizationsMeta.showCreateAccountStatus, hcClient);
+    }
+
+    /**
      * 注销服务的委托管理员
      *
      * 删除指定成员帐号作为指定服务的委托管理员。此操作只能由组织的管理帐号调用。
@@ -549,6 +579,66 @@ public class OrganizationsClient {
     public SyncInvoker<ListServicesRequest, ListServicesResponse> listServicesInvoker(ListServicesRequest request) {
         return new SyncInvoker<ListServicesRequest, ListServicesResponse>(request, OrganizationsMeta.listServices,
             hcClient);
+    }
+
+    /**
+     * 列出被添加到标签策略强制执行的资源类型
+     *
+     * List all services and resource type that could integrate with tag policy.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTagPolicyServicesRequest 请求对象
+     * @return ListTagPolicyServicesResponse
+     */
+    public ListTagPolicyServicesResponse listTagPolicyServices(ListTagPolicyServicesRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.listTagPolicyServices);
+    }
+
+    /**
+     * 列出被添加到标签策略强制执行的资源类型
+     *
+     * List all services and resource type that could integrate with tag policy.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTagPolicyServicesRequest 请求对象
+     * @return SyncInvoker<ListTagPolicyServicesRequest, ListTagPolicyServicesResponse>
+     */
+    public SyncInvoker<ListTagPolicyServicesRequest, ListTagPolicyServicesResponse> listTagPolicyServicesInvoker(
+        ListTagPolicyServicesRequest request) {
+        return new SyncInvoker<ListTagPolicyServicesRequest, ListTagPolicyServicesResponse>(request,
+            OrganizationsMeta.listTagPolicyServices, hcClient);
+    }
+
+    /**
+     * 查询有效的策略
+     *
+     * 查询指定策略类型和帐户的有效策略信息。当前此接口不支持查询服务控制策略（service_control_policy）。此操作只能由组织的管理帐号或作为服务委托管理员的成员帐号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEffectivePoliciesRequest 请求对象
+     * @return ShowEffectivePoliciesResponse
+     */
+    public ShowEffectivePoliciesResponse showEffectivePolicies(ShowEffectivePoliciesRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.showEffectivePolicies);
+    }
+
+    /**
+     * 查询有效的策略
+     *
+     * 查询指定策略类型和帐户的有效策略信息。当前此接口不支持查询服务控制策略（service_control_policy）。此操作只能由组织的管理帐号或作为服务委托管理员的成员帐号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEffectivePoliciesRequest 请求对象
+     * @return SyncInvoker<ShowEffectivePoliciesRequest, ShowEffectivePoliciesResponse>
+     */
+    public SyncInvoker<ShowEffectivePoliciesRequest, ShowEffectivePoliciesResponse> showEffectivePoliciesInvoker(
+        ShowEffectivePoliciesRequest request) {
+        return new SyncInvoker<ShowEffectivePoliciesRequest, ShowEffectivePoliciesResponse>(request,
+            OrganizationsMeta.showEffectivePolicies, hcClient);
     }
 
     /**
@@ -1142,6 +1232,156 @@ public class OrganizationsClient {
     }
 
     /**
+     * 为指定资源添加标签
+     *
+     * 向指定的资源添加一个或多个标签。目前，您可以将标签附加到组织中的帐号、组织单元、根和策略。此操作只能由组织的管理帐号调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTagResourceRequest 请求对象
+     * @return CreateTagResourceResponse
+     */
+    public CreateTagResourceResponse createTagResource(CreateTagResourceRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.createTagResource);
+    }
+
+    /**
+     * 为指定资源添加标签
+     *
+     * 向指定的资源添加一个或多个标签。目前，您可以将标签附加到组织中的帐号、组织单元、根和策略。此操作只能由组织的管理帐号调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTagResourceRequest 请求对象
+     * @return SyncInvoker<CreateTagResourceRequest, CreateTagResourceResponse>
+     */
+    public SyncInvoker<CreateTagResourceRequest, CreateTagResourceResponse> createTagResourceInvoker(
+        CreateTagResourceRequest request) {
+        return new SyncInvoker<CreateTagResourceRequest, CreateTagResourceResponse>(request,
+            OrganizationsMeta.createTagResource, hcClient);
+    }
+
+    /**
+     * 从指定资源中删除指定主键标签
+     *
+     * 从指定资源中删除具有指定主键的任何标签。您可以将标签绑定到组织中的帐号、组织单元、根和策略。此操作只能由组织的管理帐号调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTagResourceRequest 请求对象
+     * @return DeleteTagResourceResponse
+     */
+    public DeleteTagResourceResponse deleteTagResource(DeleteTagResourceRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.deleteTagResource);
+    }
+
+    /**
+     * 从指定资源中删除指定主键标签
+     *
+     * 从指定资源中删除具有指定主键的任何标签。您可以将标签绑定到组织中的帐号、组织单元、根和策略。此操作只能由组织的管理帐号调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTagResourceRequest 请求对象
+     * @return SyncInvoker<DeleteTagResourceRequest, DeleteTagResourceResponse>
+     */
+    public SyncInvoker<DeleteTagResourceRequest, DeleteTagResourceResponse> deleteTagResourceInvoker(
+        DeleteTagResourceRequest request) {
+        return new SyncInvoker<DeleteTagResourceRequest, DeleteTagResourceResponse>(request,
+            OrganizationsMeta.deleteTagResource, hcClient);
+    }
+
+    /**
+     * 根据资源类型及标签信息查询实例列表
+     *
+     * 根据资源类型及标签信息查询实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceInstancesRequest 请求对象
+     * @return ListResourceInstancesResponse
+     */
+    public ListResourceInstancesResponse listResourceInstances(ListResourceInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.listResourceInstances);
+    }
+
+    /**
+     * 根据资源类型及标签信息查询实例列表
+     *
+     * 根据资源类型及标签信息查询实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceInstancesRequest 请求对象
+     * @return SyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>
+     */
+    public SyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstancesInvoker(
+        ListResourceInstancesRequest request) {
+        return new SyncInvoker<ListResourceInstancesRequest, ListResourceInstancesResponse>(request,
+            OrganizationsMeta.listResourceInstances, hcClient);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询项目标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceTagsRequest 请求对象
+     * @return ListResourceTagsResponse
+     */
+    public ListResourceTagsResponse listResourceTags(ListResourceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.listResourceTags);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询项目标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceTagsRequest 请求对象
+     * @return SyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>
+     */
+    public SyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTagsInvoker(
+        ListResourceTagsRequest request) {
+        return new SyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>(request,
+            OrganizationsMeta.listResourceTags, hcClient);
+    }
+
+    /**
+     * 列出绑定到指定资源的标签
+     *
+     * 列出绑定到指定资源的标签。您可以将标签附加到组织中的帐号、组织单元、根和策略。此操作只能由组织的管理帐号或作为服务委托管理员的成员帐号调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTagResourcesRequest 请求对象
+     * @return ListTagResourcesResponse
+     */
+    public ListTagResourcesResponse listTagResources(ListTagResourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.listTagResources);
+    }
+
+    /**
+     * 列出绑定到指定资源的标签
+     *
+     * 列出绑定到指定资源的标签。您可以将标签附加到组织中的帐号、组织单元、根和策略。此操作只能由组织的管理帐号或作为服务委托管理员的成员帐号调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTagResourcesRequest 请求对象
+     * @return SyncInvoker<ListTagResourcesRequest, ListTagResourcesResponse>
+     */
+    public SyncInvoker<ListTagResourcesRequest, ListTagResourcesResponse> listTagResourcesInvoker(
+        ListTagResourcesRequest request) {
+        return new SyncInvoker<ListTagResourcesRequest, ListTagResourcesResponse>(request,
+            OrganizationsMeta.listTagResources, hcClient);
+    }
+
+    /**
      * 列出绑定到指定资源的标签
      *
      * 列出绑定到指定资源的标签。您可以将标签附加到组织中的帐号、组织单元、根和策略。此操作只能由组织的管理帐号或作为服务委托管理员的成员帐号调用。
@@ -1169,6 +1409,36 @@ public class OrganizationsClient {
         ListTagsForResourceRequest request) {
         return new SyncInvoker<ListTagsForResourceRequest, ListTagsForResourceResponse>(request,
             OrganizationsMeta.listTagsForResource, hcClient);
+    }
+
+    /**
+     * 根据资源类型及标签信息查询实例数量
+     *
+     * 根据资源类型及标签信息查询实例数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResourceInstancesCountRequest 请求对象
+     * @return ShowResourceInstancesCountResponse
+     */
+    public ShowResourceInstancesCountResponse showResourceInstancesCount(ShowResourceInstancesCountRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.showResourceInstancesCount);
+    }
+
+    /**
+     * 根据资源类型及标签信息查询实例数量
+     *
+     * 根据资源类型及标签信息查询实例数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowResourceInstancesCountRequest 请求对象
+     * @return SyncInvoker<ShowResourceInstancesCountRequest, ShowResourceInstancesCountResponse>
+     */
+    public SyncInvoker<ShowResourceInstancesCountRequest, ShowResourceInstancesCountResponse> showResourceInstancesCountInvoker(
+        ShowResourceInstancesCountRequest request) {
+        return new SyncInvoker<ShowResourceInstancesCountRequest, ShowResourceInstancesCountResponse>(request,
+            OrganizationsMeta.showResourceInstancesCount, hcClient);
     }
 
     /**

@@ -36,7 +36,7 @@ public class QueryUserDetailResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "privileges")
 
-    private List<String> privileges = null;
+    private String privileges;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
@@ -136,24 +136,8 @@ public class QueryUserDetailResp {
         this.isTransfer = isTransfer;
     }
 
-    public QueryUserDetailResp withPrivileges(List<String> privileges) {
+    public QueryUserDetailResp withPrivileges(String privileges) {
         this.privileges = privileges;
-        return this;
-    }
-
-    public QueryUserDetailResp addPrivilegesItem(String privilegesItem) {
-        if (this.privileges == null) {
-            this.privileges = new ArrayList<>();
-        }
-        this.privileges.add(privilegesItem);
-        return this;
-    }
-
-    public QueryUserDetailResp withPrivileges(Consumer<List<String>> privilegesSetter) {
-        if (this.privileges == null) {
-            this.privileges = new ArrayList<>();
-        }
-        privilegesSetter.accept(this.privileges);
         return this;
     }
 
@@ -161,11 +145,11 @@ public class QueryUserDetailResp {
      * 权限
      * @return privileges
      */
-    public List<String> getPrivileges() {
+    public String getPrivileges() {
         return privileges;
     }
 
-    public void setPrivileges(List<String> privileges) {
+    public void setPrivileges(String privileges) {
         this.privileges = privileges;
     }
 

@@ -4074,6 +4074,31 @@ public class OsmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowConfigurationRequest, ShowConfigurationResponse> showConfiguration =
+        genForshowConfiguration();
+
+    private static HttpRequestDef<ShowConfigurationRequest, ShowConfigurationResponse> genForshowConfiguration() {
+        // basic
+        HttpRequestDef.Builder<ShowConfigurationRequest, ShowConfigurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowConfigurationRequest.class, ShowConfigurationResponse.class)
+                .withName("ShowConfiguration")
+                .withUri("/v2/servicerequest/configurations/{config_key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConfigurationRequest::getConfigKey, (req, v) -> {
+                req.setConfigKey(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowCustomerPrivilegePolicyRequest, ShowCustomerPrivilegePolicyResponse> showCustomerPrivilegePolicy =
         genForshowCustomerPrivilegePolicy();
 

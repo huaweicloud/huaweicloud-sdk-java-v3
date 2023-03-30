@@ -166,6 +166,16 @@ public class VideoTypeRef {
          */
         public static final VideoTypeEnum MP2 = new VideoTypeEnum("MP2");
 
+        /**
+         * Enum RMVB for value: "RMVB"
+         */
+        public static final VideoTypeEnum RMVB = new VideoTypeEnum("RMVB");
+
+        /**
+         * Enum WEBM for value: "WEBM"
+         */
+        public static final VideoTypeEnum WEBM = new VideoTypeEnum("WEBM");
+
         private static final Map<String, VideoTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, VideoTypeEnum> createStaticFields() {
@@ -199,6 +209,8 @@ public class VideoTypeRef {
             map.put("M4R", M4R);
             map.put("WV", WV);
             map.put("MP2", MP2);
+            map.put("RMVB", RMVB);
+            map.put("WEBM", WEBM);
             return Collections.unmodifiableMap(map);
         }
 

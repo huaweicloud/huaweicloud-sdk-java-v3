@@ -1868,13 +1868,6 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Sp-Auth-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateOtaPackageRequest::getSpAuthToken, (req, v) -> {
-                req.setSpAuthToken(v);
-            }));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1913,13 +1906,6 @@ public class IoTDAMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteOtaPackageRequest::getPackageId, (req, v) -> {
                 req.setPackageId(v);
-            }));
-        builder.<String>withRequestField("Sp-Auth-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteOtaPackageRequest::getSpAuthToken, (req, v) -> {
-                req.setSpAuthToken(v);
             }));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
@@ -2002,13 +1988,6 @@ public class IoTDAMeta {
             f -> f.withMarshaller(ListOtaPackageInfoRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
-        builder.<String>withRequestField("Sp-Auth-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOtaPackageInfoRequest::getSpAuthToken, (req, v) -> {
-                req.setSpAuthToken(v);
-            }));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2040,13 +2019,6 @@ public class IoTDAMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowOtaPackageRequest::getPackageId, (req, v) -> {
                 req.setPackageId(v);
-            }));
-        builder.<String>withRequestField("Sp-Auth-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowOtaPackageRequest::getSpAuthToken, (req, v) -> {
-                req.setSpAuthToken(v);
             }));
         builder.<String>withRequestField("Instance-Id",
             LocationType.Header,

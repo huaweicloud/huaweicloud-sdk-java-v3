@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ShowOtaPackageRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Sp-Auth-Token")
-
-    private String spAuthToken;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Instance-Id")
 
     private String instanceId;
@@ -25,30 +20,13 @@ public class ShowOtaPackageRequest {
 
     private String packageId;
 
-    public ShowOtaPackageRequest withSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-        return this;
-    }
-
-    /**
-     * Sp用户Token。通过调用IoBPS服务获取SP用户Token
-     * @return spAuthToken
-     */
-    public String getSpAuthToken() {
-        return spAuthToken;
-    }
-
-    public void setSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-    }
-
     public ShowOtaPackageRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
     /**
-     * 实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
+     * **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。您可以在IoTDA管理控制台界面，选择左侧导航栏“总览”页签查看当前实例的ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -85,21 +63,19 @@ public class ShowOtaPackageRequest {
             return false;
         }
         ShowOtaPackageRequest showOtaPackageRequest = (ShowOtaPackageRequest) o;
-        return Objects.equals(this.spAuthToken, showOtaPackageRequest.spAuthToken)
-            && Objects.equals(this.instanceId, showOtaPackageRequest.instanceId)
+        return Objects.equals(this.instanceId, showOtaPackageRequest.instanceId)
             && Objects.equals(this.packageId, showOtaPackageRequest.packageId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(spAuthToken, instanceId, packageId);
+        return Objects.hash(instanceId, packageId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowOtaPackageRequest {\n");
-        sb.append("    spAuthToken: ").append(toIndentedString(spAuthToken)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    packageId: ").append(toIndentedString(packageId)).append("\n");
         sb.append("}");

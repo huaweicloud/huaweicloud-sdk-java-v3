@@ -48,6 +48,11 @@ public class LeakageListInfo {
 
     private Integer status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public LeakageListInfo withId(String id) {
         this.id = id;
         return this;
@@ -183,6 +188,23 @@ public class LeakageListInfo {
         this.status = status;
     }
 
+    public LeakageListInfo withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 规则描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -196,12 +218,13 @@ public class LeakageListInfo {
             && Objects.equals(this.url, leakageListInfo.url) && Objects.equals(this.category, leakageListInfo.category)
             && Objects.equals(this.contents, leakageListInfo.contents)
             && Objects.equals(this.timestamp, leakageListInfo.timestamp)
-            && Objects.equals(this.status, leakageListInfo.status);
+            && Objects.equals(this.status, leakageListInfo.status)
+            && Objects.equals(this.description, leakageListInfo.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyid, url, category, contents, timestamp, status);
+        return Objects.hash(id, policyid, url, category, contents, timestamp, status, description);
     }
 
     @Override
@@ -215,6 +238,7 @@ public class LeakageListInfo {
         sb.append("    contents: ").append(toIndentedString(contents)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

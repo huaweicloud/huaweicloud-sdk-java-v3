@@ -238,7 +238,7 @@ public class CreateIgnoreRuleResponse extends SdkResponse {
     }
 
     /**
-     * 高级配置项
+     * 高级配置项。**当前该参数类型错误，请用户忽略该参数**；正确类型可先参考更新接口，后续将改正。
      * @return advanced
      */
     public List<Advanced> getAdvanced() {

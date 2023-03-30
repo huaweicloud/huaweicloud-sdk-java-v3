@@ -1815,6 +1815,36 @@ public class BssClient {
     }
 
     /**
+     * 查询待续订包年包月资源的续订金额
+     *
+     * 功能描述：客户在自建平台按照条件查询待续订包年/包月资源续订时候的续订金额
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRenewRateOnPeriodRequest 请求对象
+     * @return ListRenewRateOnPeriodResponse
+     */
+    public ListRenewRateOnPeriodResponse listRenewRateOnPeriod(ListRenewRateOnPeriodRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listRenewRateOnPeriod);
+    }
+
+    /**
+     * 查询待续订包年包月资源的续订金额
+     *
+     * 功能描述：客户在自建平台按照条件查询待续订包年/包月资源续订时候的续订金额
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRenewRateOnPeriodRequest 请求对象
+     * @return SyncInvoker<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse>
+     */
+    public SyncInvoker<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse> listRenewRateOnPeriodInvoker(
+        ListRenewRateOnPeriodRequest request) {
+        return new SyncInvoker<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse>(request,
+            BssMeta.listRenewRateOnPeriod, hcClient);
+    }
+
+    /**
      * 查询资源类型列表
      *
      * 伙伴在伙伴销售平台查询资源类型的列表。

@@ -20,6 +20,36 @@ public class EiHealthAsyncClient {
     }
 
     /**
+     * ADMET属性预测接口
+     *
+     * 计算小分子的物化性质，包括吸收(adsorption)、分布(distribution)、代谢(metabolism)、清除(excretion)与毒性(toxicity)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAdmetPropertiesRequest 请求对象
+     * @return CompletableFuture<ShowAdmetPropertiesResponse>
+     */
+    public CompletableFuture<ShowAdmetPropertiesResponse> showAdmetPropertiesAsync(ShowAdmetPropertiesRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.showAdmetProperties);
+    }
+
+    /**
+     * ADMET属性预测接口
+     *
+     * 计算小分子的物化性质，包括吸收(adsorption)、分布(distribution)、代谢(metabolism)、清除(excretion)与毒性(toxicity)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAdmetPropertiesRequest 请求对象
+     * @return AsyncInvoker<ShowAdmetPropertiesRequest, ShowAdmetPropertiesResponse>
+     */
+    public AsyncInvoker<ShowAdmetPropertiesRequest, ShowAdmetPropertiesResponse> showAdmetPropertiesAsyncInvoker(
+        ShowAdmetPropertiesRequest request) {
+        return new AsyncInvoker<ShowAdmetPropertiesRequest, ShowAdmetPropertiesResponse>(request,
+            EiHealthMeta.showAdmetProperties, hcClient);
+    }
+
+    /**
      * 新建CPI任务接口
      *
      * 输入蛋白序列、小分子库，创建分子-蛋白互作预测任务。

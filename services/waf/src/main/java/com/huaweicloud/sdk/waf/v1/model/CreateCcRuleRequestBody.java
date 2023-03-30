@@ -19,6 +19,11 @@ import java.util.function.Consumer;
 public class CreateCcRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
 
     private Integer mode;
@@ -189,6 +194,23 @@ public class CreateCcRuleRequestBody {
     @JsonProperty(value = "description")
 
     private String description;
+
+    public CreateCcRuleRequestBody withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 规则名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public CreateCcRuleRequestBody withMode(Integer mode) {
         this.mode = mode;
@@ -454,7 +476,8 @@ public class CreateCcRuleRequestBody {
             return false;
         }
         CreateCcRuleRequestBody createCcRuleRequestBody = (CreateCcRuleRequestBody) o;
-        return Objects.equals(this.mode, createCcRuleRequestBody.mode)
+        return Objects.equals(this.name, createCcRuleRequestBody.name)
+            && Objects.equals(this.mode, createCcRuleRequestBody.mode)
             && Objects.equals(this.conditions, createCcRuleRequestBody.conditions)
             && Objects.equals(this.action, createCcRuleRequestBody.action)
             && Objects.equals(this.tagType, createCcRuleRequestBody.tagType)
@@ -471,7 +494,8 @@ public class CreateCcRuleRequestBody {
 
     @Override
     public int hashCode() {
-        return Objects.hash(mode,
+        return Objects.hash(name,
+            mode,
             conditions,
             action,
             tagType,
@@ -490,6 +514,7 @@ public class CreateCcRuleRequestBody {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateCcRuleRequestBody {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");

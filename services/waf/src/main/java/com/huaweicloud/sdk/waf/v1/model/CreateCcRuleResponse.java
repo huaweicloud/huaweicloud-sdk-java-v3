@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,6 +18,11 @@ import java.util.function.Consumer;
  * Response Object
  */
 public class CreateCcRuleResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -43,7 +47,7 @@ public class CreateCcRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
 
-    private BigDecimal mode;
+    private Integer mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -242,6 +246,23 @@ public class CreateCcRuleResponse extends SdkResponse {
 
     private Long timestamp;
 
+    public CreateCcRuleResponse withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 规则名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public CreateCcRuleResponse withId(String id) {
         this.id = id;
         return this;
@@ -310,7 +331,7 @@ public class CreateCcRuleResponse extends SdkResponse {
         this.prefix = prefix;
     }
 
-    public CreateCcRuleResponse withMode(BigDecimal mode) {
+    public CreateCcRuleResponse withMode(Integer mode) {
         this.mode = mode;
         return this;
     }
@@ -319,11 +340,11 @@ public class CreateCcRuleResponse extends SdkResponse {
      * cc规则防护模式，对应console上的mode，现在只支持创建高级cc规则防护模式。   - 0：标准，只支持对域名的防护路径做限制。  - 1：高级，支持对路径、IP、Cookie、Header、Params字段做限制。
      * @return mode
      */
-    public BigDecimal getMode() {
+    public Integer getMode() {
         return mode;
     }
 
-    public void setMode(BigDecimal mode) {
+    public void setMode(Integer mode) {
         this.mode = mode;
     }
 
@@ -676,7 +697,7 @@ public class CreateCcRuleResponse extends SdkResponse {
             return false;
         }
         CreateCcRuleResponse createCcRuleResponse = (CreateCcRuleResponse) o;
-        return Objects.equals(this.id, createCcRuleResponse.id)
+        return Objects.equals(this.name, createCcRuleResponse.name) && Objects.equals(this.id, createCcRuleResponse.id)
             && Objects.equals(this.policyid, createCcRuleResponse.policyid)
             && Objects.equals(this.url, createCcRuleResponse.url)
             && Objects.equals(this.prefix, createCcRuleResponse.prefix)
@@ -703,7 +724,8 @@ public class CreateCcRuleResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
+        return Objects.hash(name,
+            id,
             policyid,
             url,
             prefix,
@@ -732,6 +754,7 @@ public class CreateCcRuleResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateCcRuleResponse {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");

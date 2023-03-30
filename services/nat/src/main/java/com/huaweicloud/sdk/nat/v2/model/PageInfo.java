@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.nat.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -24,7 +23,7 @@ public class PageInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_count")
 
-    private BigDecimal currentCount;
+    private Integer currentCount;
 
     public PageInfo withNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
@@ -60,7 +59,7 @@ public class PageInfo {
         this.previousMarker = previousMarker;
     }
 
-    public PageInfo withCurrentCount(BigDecimal currentCount) {
+    public PageInfo withCurrentCount(Integer currentCount) {
         this.currentCount = currentCount;
         return this;
     }
@@ -68,14 +67,14 @@ public class PageInfo {
     /**
      * 分页查询资源时，本页的实例的个数。
      * minimum: 1
-     * maximum: 2E+3
+     * maximum: 2000
      * @return currentCount
      */
-    public BigDecimal getCurrentCount() {
+    public Integer getCurrentCount() {
         return currentCount;
     }
 
-    public void setCurrentCount(BigDecimal currentCount) {
+    public void setCurrentCount(Integer currentCount) {
         this.currentCount = currentCount;
     }
 

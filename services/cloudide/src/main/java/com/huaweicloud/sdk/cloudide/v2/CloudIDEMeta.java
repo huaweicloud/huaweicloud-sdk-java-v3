@@ -706,6 +706,54 @@ public class CloudIDEMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateApplyRequest, CreateApplyResponse> createApply = genForcreateApply();
+
+    private static HttpRequestDef<CreateApplyRequest, CreateApplyResponse> genForcreateApply() {
+        // basic
+        HttpRequestDef.Builder<CreateApplyRequest, CreateApplyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateApplyRequest.class, CreateApplyResponse.class)
+                .withName("CreateApply")
+                .withUri("/v2/aims/codemodelserver/join-request")
+                .withContentType("application/json");
+
+        // requests
+        builder.<JoinRequestSchema>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(JoinRequestSchema.class),
+            f -> f.withMarshaller(CreateApplyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateEventRequest, CreateEventResponse> createEvent = genForcreateEvent();
+
+    private static HttpRequestDef<CreateEventRequest, CreateEventResponse> genForcreateEvent() {
+        // basic
+        HttpRequestDef.Builder<CreateEventRequest, CreateEventResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateEventRequest.class, CreateEventResponse.class)
+                .withName("CreateEvent")
+                .withUri("/v2/aims/codemodelserver/management/event")
+                .withContentType("application/json");
+
+        // requests
+        builder.<EventSchema>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EventSchema.class),
+            f -> f.withMarshaller(CreateEventRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateLoginRequest, CreateLoginResponse> createLogin = genForcreateLogin();
 
     private static HttpRequestDef<CreateLoginRequest, CreateLoginResponse> genForcreateLogin() {
