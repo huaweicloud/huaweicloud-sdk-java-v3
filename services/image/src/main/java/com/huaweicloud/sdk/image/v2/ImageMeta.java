@@ -107,57 +107,6 @@ public class ImageMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateImageVariationTaskRequest, CreateImageVariationTaskResponse> createImageVariationTask =
-        genForcreateImageVariationTask();
-
-    private static HttpRequestDef<CreateImageVariationTaskRequest, CreateImageVariationTaskResponse> genForcreateImageVariationTask() {
-        // basic
-        HttpRequestDef.Builder<CreateImageVariationTaskRequest, CreateImageVariationTaskResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST, CreateImageVariationTaskRequest.class, CreateImageVariationTaskResponse.class)
-                .withName("CreateImageVariationTask")
-                .withUri("/v2/{project_id}/image/image-variation/tasks")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<CreateImageVariationTaskRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateImageVariationTaskRequestBody.class),
-            f -> f.withMarshaller(CreateImageVariationTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateTextToImageTaskRequest, CreateTextToImageTaskResponse> createTextToImageTask =
-        genForcreateTextToImageTask();
-
-    private static HttpRequestDef<CreateTextToImageTaskRequest, CreateTextToImageTaskResponse> genForcreateTextToImageTask() {
-        // basic
-        HttpRequestDef.Builder<CreateTextToImageTaskRequest, CreateTextToImageTaskResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreateTextToImageTaskRequest.class, CreateTextToImageTaskResponse.class)
-            .withName("CreateTextToImageTask")
-            .withUri("/v2/{project_id}/image/text-to-image/tasks")
-            .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<CreateTextToImageTaskRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateTextToImageTaskRequestBody.class),
-            f -> f.withMarshaller(CreateTextToImageTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateVideoCoverAnalysisTaskRequest, CreateVideoCoverAnalysisTaskResponse> createVideoCoverAnalysisTask =
         genForcreateVideoCoverAnalysisTask();
 
@@ -754,68 +703,6 @@ public class ImageMeta {
             String.class,
             f -> f.withMarshaller(ShowImageTranslateTaskResponse::getXRequestId,
                 ShowImageTranslateTaskResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowImageVariationTaskRequest, ShowImageVariationTaskResponse> showImageVariationTask =
-        genForshowImageVariationTask();
-
-    private static HttpRequestDef<ShowImageVariationTaskRequest, ShowImageVariationTaskResponse> genForshowImageVariationTask() {
-        // basic
-        HttpRequestDef.Builder<ShowImageVariationTaskRequest, ShowImageVariationTaskResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowImageVariationTaskRequest.class, ShowImageVariationTaskResponse.class)
-            .withName("ShowImageVariationTask")
-            .withUri("/v2/{project_id}/image/image-variation/tasks/{task_id}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("task_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowImageVariationTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowImageVariationTaskResponse::getXRequestId,
-                ShowImageVariationTaskResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowTextToImageTaskRequest, ShowTextToImageTaskResponse> showTextToImageTask =
-        genForshowTextToImageTask();
-
-    private static HttpRequestDef<ShowTextToImageTaskRequest, ShowTextToImageTaskResponse> genForshowTextToImageTask() {
-        // basic
-        HttpRequestDef.Builder<ShowTextToImageTaskRequest, ShowTextToImageTaskResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowTextToImageTaskRequest.class, ShowTextToImageTaskResponse.class)
-                .withName("ShowTextToImageTask")
-                .withUri("/v2/{project_id}/image/text-to-image/tasks/{task_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("task_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTextToImageTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowTextToImageTaskResponse::getXRequestId,
-                ShowTextToImageTaskResponse::setXRequestId));
         return builder.build();
     }
 

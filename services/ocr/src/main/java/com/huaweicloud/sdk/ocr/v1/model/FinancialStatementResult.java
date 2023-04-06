@@ -33,6 +33,11 @@ public class FinancialStatementResult {
 
     private FinancialStatementResultImageSize imageSize;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rectification_matrix")
+
+    private List<List<Float>> rectificationMatrix = null;
+
     public FinancialStatementResult withWordsRegionCount(Integer wordsRegionCount) {
         this.wordsRegionCount = wordsRegionCount;
         return this;
@@ -127,6 +132,39 @@ public class FinancialStatementResult {
         this.imageSize = imageSize;
     }
 
+    public FinancialStatementResult withRectificationMatrix(List<List<Float>> rectificationMatrix) {
+        this.rectificationMatrix = rectificationMatrix;
+        return this;
+    }
+
+    public FinancialStatementResult addRectificationMatrixItem(List<Float> rectificationMatrixItem) {
+        if (this.rectificationMatrix == null) {
+            this.rectificationMatrix = new ArrayList<>();
+        }
+        this.rectificationMatrix.add(rectificationMatrixItem);
+        return this;
+    }
+
+    public FinancialStatementResult withRectificationMatrix(Consumer<List<List<Float>>> rectificationMatrixSetter) {
+        if (this.rectificationMatrix == null) {
+            this.rectificationMatrix = new ArrayList<>();
+        }
+        rectificationMatrixSetter.accept(this.rectificationMatrix);
+        return this;
+    }
+
+    /**
+     * 返回透视变换矩阵 
+     * @return rectificationMatrix
+     */
+    public List<List<Float>> getRectificationMatrix() {
+        return rectificationMatrix;
+    }
+
+    public void setRectificationMatrix(List<List<Float>> rectificationMatrix) {
+        this.rectificationMatrix = rectificationMatrix;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -139,12 +177,13 @@ public class FinancialStatementResult {
         return Objects.equals(this.wordsRegionCount, financialStatementResult.wordsRegionCount)
             && Objects.equals(this.wordsRegionList, financialStatementResult.wordsRegionList)
             && Objects.equals(this.excel, financialStatementResult.excel)
-            && Objects.equals(this.imageSize, financialStatementResult.imageSize);
+            && Objects.equals(this.imageSize, financialStatementResult.imageSize)
+            && Objects.equals(this.rectificationMatrix, financialStatementResult.rectificationMatrix);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(wordsRegionCount, wordsRegionList, excel, imageSize);
+        return Objects.hash(wordsRegionCount, wordsRegionList, excel, imageSize, rectificationMatrix);
     }
 
     @Override
@@ -155,6 +194,7 @@ public class FinancialStatementResult {
         sb.append("    wordsRegionList: ").append(toIndentedString(wordsRegionList)).append("\n");
         sb.append("    excel: ").append(toIndentedString(excel)).append("\n");
         sb.append("    imageSize: ").append(toIndentedString(imageSize)).append("\n");
+        sb.append("    rectificationMatrix: ").append(toIndentedString(rectificationMatrix)).append("\n");
         sb.append("}");
         return sb.toString();
     }

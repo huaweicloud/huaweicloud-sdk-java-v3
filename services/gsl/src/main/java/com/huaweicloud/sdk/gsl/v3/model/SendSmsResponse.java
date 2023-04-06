@@ -1,32 +1,23 @@
-package com.huaweicloud.sdk.image.v2.model;
+package com.huaweicloud.sdk.gsl.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
- * Request Object
+ * Response Object
  */
-public class CreateImageVariationTaskRequest {
+public class SendSmsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateImageVariationTaskRequestBody body;
+    private String body;
 
-    public CreateImageVariationTaskRequest withBody(CreateImageVariationTaskRequestBody body) {
+    public SendSmsResponse withBody(String body) {
         this.body = body;
-        return this;
-    }
-
-    public CreateImageVariationTaskRequest withBody(Consumer<CreateImageVariationTaskRequestBody> bodySetter) {
-        if (this.body == null) {
-            this.body = new CreateImageVariationTaskRequestBody();
-            bodySetter.accept(this.body);
-        }
-
         return this;
     }
 
@@ -34,11 +25,11 @@ public class CreateImageVariationTaskRequest {
      * Get body
      * @return body
      */
-    public CreateImageVariationTaskRequestBody getBody() {
+    public String getBody() {
         return body;
     }
 
-    public void setBody(CreateImageVariationTaskRequestBody body) {
+    public void setBody(String body) {
         this.body = body;
     }
 
@@ -50,8 +41,8 @@ public class CreateImageVariationTaskRequest {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CreateImageVariationTaskRequest createImageVariationTaskRequest = (CreateImageVariationTaskRequest) o;
-        return Objects.equals(this.body, createImageVariationTaskRequest.body);
+        SendSmsResponse sendSmsResponse = (SendSmsResponse) o;
+        return Objects.equals(this.body, sendSmsResponse.body);
     }
 
     @Override
@@ -62,7 +53,7 @@ public class CreateImageVariationTaskRequest {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateImageVariationTaskRequest {\n");
+        sb.append("class SendSmsResponse {\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -46,7 +46,7 @@ public class ListAlarmResponseAlarms {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private String type;
+    private AlarmType type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
@@ -222,20 +222,20 @@ public class ListAlarmResponseAlarms {
         this.resources = resources;
     }
 
-    public ListAlarmResponseAlarms withType(String type) {
+    public ListAlarmResponseAlarms withType(AlarmType type) {
         this.type = type;
         return this;
     }
 
     /**
-     * 告警规则类型
+     * Get type
      * @return type
      */
-    public String getType() {
+    public AlarmType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(AlarmType type) {
         this.type = type;
     }
 

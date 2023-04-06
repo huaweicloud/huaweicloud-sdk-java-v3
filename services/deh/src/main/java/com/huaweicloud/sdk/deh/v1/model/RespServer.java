@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.deh.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -14,7 +17,7 @@ public class RespServer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "addresses")
 
-    private RespAddresses addresses;
+    private Map<String, List<RespAddr>> addresses = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
@@ -71,29 +74,36 @@ public class RespServer {
 
     private RespMetadata metadata;
 
-    public RespServer withAddresses(RespAddresses addresses) {
+    public RespServer withAddresses(Map<String, List<RespAddr>> addresses) {
         this.addresses = addresses;
         return this;
     }
 
-    public RespServer withAddresses(Consumer<RespAddresses> addressesSetter) {
+    public RespServer putAddressesItem(String key, List<RespAddr> addressesItem) {
         if (this.addresses == null) {
-            this.addresses = new RespAddresses();
-            addressesSetter.accept(this.addresses);
+            this.addresses = new HashMap<>();
         }
+        this.addresses.put(key, addressesItem);
+        return this;
+    }
 
+    public RespServer withAddresses(Consumer<Map<String, List<RespAddr>>> addressesSetter) {
+        if (this.addresses == null) {
+            this.addresses = new HashMap<>();
+        }
+        addressesSetter.accept(this.addresses);
         return this;
     }
 
     /**
-     * Get addresses
+     * 弹性云服务器的网络属性。
      * @return addresses
      */
-    public RespAddresses getAddresses() {
+    public Map<String, List<RespAddr>> getAddresses() {
         return addresses;
     }
 
-    public void setAddresses(RespAddresses addresses) {
+    public void setAddresses(Map<String, List<RespAddr>> addresses) {
         this.addresses = addresses;
     }
 

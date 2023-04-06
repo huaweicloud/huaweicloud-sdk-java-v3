@@ -216,87 +216,10 @@ public class AlarmHistoryItemV2 {
 
     private LevelEnum level;
 
-    /**
-     * 告警类型； 仅针对事件告警的参数，枚举类型：值为EVENT.SYS或者EVENT.CUSTOM
-     */
-    public static final class TypeEnum {
-
-        /**
-         * Enum EVENT_SYS for value: "EVENT.SYS"
-         */
-        public static final TypeEnum EVENT_SYS = new TypeEnum("EVENT.SYS");
-
-        /**
-         * Enum EVENT_CUSTOM for value: "EVENT.CUSTOM"
-         */
-        public static final TypeEnum EVENT_CUSTOM = new TypeEnum("EVENT.CUSTOM");
-
-        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, TypeEnum> createStaticFields() {
-            Map<String, TypeEnum> map = new HashMap<>();
-            map.put("EVENT.SYS", EVENT_SYS);
-            map.put("EVENT.CUSTOM", EVENT_CUSTOM);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        TypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
-        }
-
-        public static TypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof TypeEnum) {
-                return this.value.equals(((TypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private TypeEnum type;
+    private AlarmType type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action_enabled")
@@ -428,20 +351,20 @@ public class AlarmHistoryItemV2 {
         this.level = level;
     }
 
-    public AlarmHistoryItemV2 withType(TypeEnum type) {
+    public AlarmHistoryItemV2 withType(AlarmType type) {
         this.type = type;
         return this;
     }
 
     /**
-     * 告警类型； 仅针对事件告警的参数，枚举类型：值为EVENT.SYS或者EVENT.CUSTOM
+     * Get type
      * @return type
      */
-    public TypeEnum getType() {
+    public AlarmType getType() {
         return type;
     }
 
-    public void setType(TypeEnum type) {
+    public void setType(AlarmType type) {
         this.type = type;
     }
 

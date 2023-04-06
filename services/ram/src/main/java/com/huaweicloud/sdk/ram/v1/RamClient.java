@@ -747,4 +747,95 @@ public class RamClient {
             RamMeta.batchDeleteResourceShareTags, hcClient);
     }
 
+    /**
+     * 查询已经使用的标签列表
+     *
+     * 查询的标签相信列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceShareTagsRequest 请求对象
+     * @return ListResourceShareTagsResponse
+     */
+    public ListResourceShareTagsResponse listResourceShareTags(ListResourceShareTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, RamMeta.listResourceShareTags);
+    }
+
+    /**
+     * 查询已经使用的标签列表
+     *
+     * 查询的标签相信列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceShareTagsRequest 请求对象
+     * @return SyncInvoker<ListResourceShareTagsRequest, ListResourceShareTagsResponse>
+     */
+    public SyncInvoker<ListResourceShareTagsRequest, ListResourceShareTagsResponse> listResourceShareTagsInvoker(
+        ListResourceShareTagsRequest request) {
+        return new SyncInvoker<ListResourceShareTagsRequest, ListResourceShareTagsResponse>(request,
+            RamMeta.listResourceShareTags, hcClient);
+    }
+
+    /**
+     * 根据标签信息查询实例列表
+     *
+     * 根据标签信息查询实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceSharesByTagsRequest 请求对象
+     * @return ListResourceSharesByTagsResponse
+     */
+    public ListResourceSharesByTagsResponse listResourceSharesByTags(ListResourceSharesByTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, RamMeta.listResourceSharesByTags);
+    }
+
+    /**
+     * 根据标签信息查询实例列表
+     *
+     * 根据标签信息查询实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceSharesByTagsRequest 请求对象
+     * @return SyncInvoker<ListResourceSharesByTagsRequest, ListResourceSharesByTagsResponse>
+     */
+    public SyncInvoker<ListResourceSharesByTagsRequest, ListResourceSharesByTagsResponse> listResourceSharesByTagsInvoker(
+        ListResourceSharesByTagsRequest request) {
+        return new SyncInvoker<ListResourceSharesByTagsRequest, ListResourceSharesByTagsResponse>(request,
+            RamMeta.listResourceSharesByTags, hcClient);
+    }
+
+    /**
+     * 根据标签信息查询实例数量
+     *
+     * 根据标签信息查询实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SearchResourceShareCountByTagsRequest 请求对象
+     * @return SearchResourceShareCountByTagsResponse
+     */
+    public SearchResourceShareCountByTagsResponse searchResourceShareCountByTags(
+        SearchResourceShareCountByTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, RamMeta.searchResourceShareCountByTags);
+    }
+
+    /**
+     * 根据标签信息查询实例数量
+     *
+     * 根据标签信息查询实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SearchResourceShareCountByTagsRequest 请求对象
+     * @return SyncInvoker<SearchResourceShareCountByTagsRequest, SearchResourceShareCountByTagsResponse>
+     */
+    public SyncInvoker<SearchResourceShareCountByTagsRequest, SearchResourceShareCountByTagsResponse> searchResourceShareCountByTagsInvoker(
+        SearchResourceShareCountByTagsRequest request) {
+        return new SyncInvoker<SearchResourceShareCountByTagsRequest, SearchResourceShareCountByTagsResponse>(request,
+            RamMeta.searchResourceShareCountByTags, hcClient);
+    }
+
 }

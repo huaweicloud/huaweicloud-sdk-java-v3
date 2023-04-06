@@ -1,46 +1,58 @@
-package com.huaweicloud.sdk.image.v2.model;
+package com.huaweicloud.sdk.mrs.v2.model;
+
+
+
+
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowCommand;
 import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
  */
-public class CreateTextToImageTaskRequest {
+public class RunJobFlowRequest  {
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value="body")
+    
 
-    private CreateTextToImageTaskRequestBody body;
+    private RunJobFlowCommand body;
 
-    public CreateTextToImageTaskRequest withBody(CreateTextToImageTaskRequestBody body) {
+    public RunJobFlowRequest withBody(RunJobFlowCommand body) {
         this.body = body;
         return this;
     }
 
-    public CreateTextToImageTaskRequest withBody(Consumer<CreateTextToImageTaskRequestBody> bodySetter) {
-        if (this.body == null) {
-            this.body = new CreateTextToImageTaskRequestBody();
+    public RunJobFlowRequest withBody(Consumer<RunJobFlowCommand> bodySetter) {
+        if(this.body == null ){
+            this.body = new RunJobFlowCommand();
             bodySetter.accept(this.body);
         }
-
+        
         return this;
     }
+
 
     /**
      * Get body
      * @return body
      */
-    public CreateTextToImageTaskRequestBody getBody() {
+    public RunJobFlowCommand getBody() {
         return body;
     }
 
-    public void setBody(CreateTextToImageTaskRequestBody body) {
+    public void setBody(RunJobFlowCommand body) {
         this.body = body;
     }
+
+    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -50,24 +62,21 @@ public class CreateTextToImageTaskRequest {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CreateTextToImageTaskRequest createTextToImageTaskRequest = (CreateTextToImageTaskRequest) o;
-        return Objects.equals(this.body, createTextToImageTaskRequest.body);
+        RunJobFlowRequest runJobFlowRequest = (RunJobFlowRequest) o;
+        return Objects.equals(this.body, runJobFlowRequest.body);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(body);
     }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateTextToImageTaskRequest {\n");
+        sb.append("class RunJobFlowRequest {\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }
-
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,5 +87,8 @@ public class CreateTextToImageTaskRequest {
         }
         return o.toString().replace("\n", "\n    ");
     }
-
+    
+    
+    
 }
+

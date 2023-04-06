@@ -108,6 +108,32 @@ public class MrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RunJobFlowRequest, RunJobFlowResponse> runJobFlow = genForrunJobFlow();
+
+    private static HttpRequestDef<RunJobFlowRequest, RunJobFlowResponse> genForrunJobFlow() {
+        // basic
+        HttpRequestDef.Builder<RunJobFlowRequest, RunJobFlowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunJobFlowRequest.class, RunJobFlowResponse.class)
+                .withName("RunJobFlow")
+                .withUri("/v2/{project_id}/run-job-flow")
+                .withContentType("application/json");
+
+        // requests
+        builder.<RunJobFlowCommand>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RunJobFlowCommand.class),
+            f -> f.withMarshaller(RunJobFlowRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAgencyMappingRequest, ShowAgencyMappingResponse> showAgencyMapping = genForshowAgencyMapping();
 
     private static HttpRequestDef<ShowAgencyMappingRequest, ShowAgencyMappingResponse> genForshowAgencyMapping() {

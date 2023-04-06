@@ -46,7 +46,7 @@ public class PostAlarmsReqV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private String type;
+    private AlarmType type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_notifications")
@@ -222,20 +222,20 @@ public class PostAlarmsReqV2 {
         this.policies = policies;
     }
 
-    public PostAlarmsReqV2 withType(String type) {
+    public PostAlarmsReqV2 withType(AlarmType type) {
         this.type = type;
         return this;
     }
 
     /**
-     * 告警规则类型
+     * Get type
      * @return type
      */
-    public String getType() {
+    public AlarmType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(AlarmType type) {
         this.type = type;
     }
 

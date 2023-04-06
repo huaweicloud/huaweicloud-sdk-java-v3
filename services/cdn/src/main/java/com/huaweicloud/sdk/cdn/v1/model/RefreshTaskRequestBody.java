@@ -101,6 +101,11 @@ public class RefreshTaskRequestBody {
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private Boolean mode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "urls")
 
     private List<String> urls = null;
@@ -120,6 +125,23 @@ public class RefreshTaskRequestBody {
 
     public void setType(TypeEnum type) {
         this.type = type;
+    }
+
+    public RefreshTaskRequestBody withMode(Boolean mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * 目录刷新只刷新变更资源标识，其值为true 或false，默认为false
+     * @return mode
+     */
+    public Boolean getMode() {
+        return mode;
+    }
+
+    public void setMode(Boolean mode) {
+        this.mode = mode;
     }
 
     public RefreshTaskRequestBody withUrls(List<String> urls) {
@@ -165,12 +187,13 @@ public class RefreshTaskRequestBody {
         }
         RefreshTaskRequestBody refreshTaskRequestBody = (RefreshTaskRequestBody) o;
         return Objects.equals(this.type, refreshTaskRequestBody.type)
+            && Objects.equals(this.mode, refreshTaskRequestBody.mode)
             && Objects.equals(this.urls, refreshTaskRequestBody.urls);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, urls);
+        return Objects.hash(type, mode, urls);
     }
 
     @Override
@@ -178,6 +201,7 @@ public class RefreshTaskRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class RefreshTaskRequestBody {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
         sb.append("}");
         return sb.toString();

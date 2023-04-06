@@ -7,6 +7,7 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.gsl.v3.model.*;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
@@ -1219,6 +1220,90 @@ public class GslMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSmsDetailsRequest, ListSmsDetailsResponse> listSmsDetails =
+        genForlistSmsDetails();
+
+    private static HttpRequestDef<ListSmsDetailsRequest, ListSmsDetailsResponse> genForlistSmsDetails() {
+        // basic
+        HttpRequestDef.Builder<ListSmsDetailsRequest, ListSmsDetailsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSmsDetailsRequest.class, ListSmsDetailsResponse.class)
+                .withName("ListSmsDetails")
+                .withUri("/v1/sms-send-infos/details")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSmsDetailsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSmsDetailsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("cid",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmsDetailsRequest::getCid, (req, v) -> {
+                req.setCid(v);
+            }));
+        builder.<OffsetDateTime>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListSmsDetailsRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<OffsetDateTime>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListSmsDetailsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SendSmsRequest, SendSmsResponse> sendSms = genForsendSms();
+
+    private static HttpRequestDef<SendSmsRequest, SendSmsResponse> genForsendSms() {
+        // basic
+        HttpRequestDef.Builder<SendSmsRequest, SendSmsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SendSmsRequest.class, SendSmsResponse.class)
+                .withName("SendSms")
+                .withUri("/v1/sms-send-infos")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateSendSmsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSendSmsReq.class),
+            f -> f.withMarshaller(SendSmsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SendSmsResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }

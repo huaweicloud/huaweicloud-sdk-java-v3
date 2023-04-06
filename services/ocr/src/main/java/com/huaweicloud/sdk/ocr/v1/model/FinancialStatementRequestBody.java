@@ -45,6 +45,11 @@ public class FinancialStatementRequestBody {
 
     private Boolean returnImageSize;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_rectification_matrix")
+
+    private Boolean returnRectificationMatrix;
+
     public FinancialStatementRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -164,6 +169,23 @@ public class FinancialStatementRequestBody {
         this.returnImageSize = returnImageSize;
     }
 
+    public FinancialStatementRequestBody withReturnRectificationMatrix(Boolean returnRectificationMatrix) {
+        this.returnRectificationMatrix = returnRectificationMatrix;
+        return this;
+    }
+
+    /**
+     * 透视变换矩阵，可选值包括： - true：返回透视变换矩阵; - false：不返回。  > 说明： - 未传入该参数时默认为false，即不返回透视变换矩阵。 
+     * @return returnRectificationMatrix
+     */
+    public Boolean getReturnRectificationMatrix() {
+        return returnRectificationMatrix;
+    }
+
+    public void setReturnRectificationMatrix(Boolean returnRectificationMatrix) {
+        this.returnRectificationMatrix = returnRectificationMatrix;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -179,13 +201,20 @@ public class FinancialStatementRequestBody {
             && Objects.equals(this.returnConfidence, financialStatementRequestBody.returnConfidence)
             && Objects.equals(this.returnExcel, financialStatementRequestBody.returnExcel)
             && Objects.equals(this.returnTableLocation, financialStatementRequestBody.returnTableLocation)
-            && Objects.equals(this.returnImageSize, financialStatementRequestBody.returnImageSize);
+            && Objects.equals(this.returnImageSize, financialStatementRequestBody.returnImageSize)
+            && Objects.equals(this.returnRectificationMatrix, financialStatementRequestBody.returnRectificationMatrix);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(image, url, returnTextLocation, returnConfidence, returnExcel, returnTableLocation, returnImageSize);
+        return Objects.hash(image,
+            url,
+            returnTextLocation,
+            returnConfidence,
+            returnExcel,
+            returnTableLocation,
+            returnImageSize,
+            returnRectificationMatrix);
     }
 
     @Override
@@ -199,6 +228,7 @@ public class FinancialStatementRequestBody {
         sb.append("    returnExcel: ").append(toIndentedString(returnExcel)).append("\n");
         sb.append("    returnTableLocation: ").append(toIndentedString(returnTableLocation)).append("\n");
         sb.append("    returnImageSize: ").append(toIndentedString(returnImageSize)).append("\n");
+        sb.append("    returnRectificationMatrix: ").append(toIndentedString(returnRectificationMatrix)).append("\n");
         sb.append("}");
         return sb.toString();
     }

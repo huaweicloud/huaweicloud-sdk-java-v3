@@ -708,4 +708,104 @@ public class RamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListResourceShareTagsRequest, ListResourceShareTagsResponse> listResourceShareTags =
+        genForlistResourceShareTags();
+
+    private static HttpRequestDef<ListResourceShareTagsRequest, ListResourceShareTagsResponse> genForlistResourceShareTags() {
+        // basic
+        HttpRequestDef.Builder<ListResourceShareTagsRequest, ListResourceShareTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListResourceShareTagsRequest.class, ListResourceShareTagsResponse.class)
+            .withName("ListResourceShareTags")
+            .withUri("/v1/resource-shares/tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourceShareTagsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceShareTagsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResourceSharesByTagsRequest, ListResourceSharesByTagsResponse> listResourceSharesByTags =
+        genForlistResourceSharesByTags();
+
+    private static HttpRequestDef<ListResourceSharesByTagsRequest, ListResourceSharesByTagsResponse> genForlistResourceSharesByTags() {
+        // basic
+        HttpRequestDef.Builder<ListResourceSharesByTagsRequest, ListResourceSharesByTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ListResourceSharesByTagsRequest.class, ListResourceSharesByTagsResponse.class)
+                .withName("ListResourceSharesByTags")
+                .withUri("/v1/resource-shares/resource-instances/filter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourceSharesByTagsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceSharesByTagsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<ResourceSharesByTagsReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceSharesByTagsReqBody.class),
+            f -> f.withMarshaller(ListResourceSharesByTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchResourceShareCountByTagsRequest, SearchResourceShareCountByTagsResponse> searchResourceShareCountByTags =
+        genForsearchResourceShareCountByTags();
+
+    private static HttpRequestDef<SearchResourceShareCountByTagsRequest, SearchResourceShareCountByTagsResponse> genForsearchResourceShareCountByTags() {
+        // basic
+        HttpRequestDef.Builder<SearchResourceShareCountByTagsRequest, SearchResourceShareCountByTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    SearchResourceShareCountByTagsRequest.class,
+                    SearchResourceShareCountByTagsResponse.class)
+                .withName("SearchResourceShareCountByTags")
+                .withUri("/v1/resource-shares/resource-instances/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ResourceSharesByTagsReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceSharesByTagsReqBody.class),
+            f -> f.withMarshaller(SearchResourceShareCountByTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
 }

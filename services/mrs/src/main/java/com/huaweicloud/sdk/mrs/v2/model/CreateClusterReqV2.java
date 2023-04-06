@@ -14,6 +14,7 @@ import com.huaweicloud.sdk.mrs.v2.model.AddJobsReqV11;
 import com.huaweicloud.sdk.mrs.v2.model.BootstrapScript;
 import com.huaweicloud.sdk.mrs.v2.model.ChargeInfo;
 import com.huaweicloud.sdk.mrs.v2.model.ClusterDataConnectorMap;
+import com.huaweicloud.sdk.mrs.v2.model.ComponentConfig;
 import com.huaweicloud.sdk.mrs.v2.model.NodeGroupV2;
 import com.huaweicloud.sdk.mrs.v2.model.Tag;
 import java.util.ArrayList;
@@ -275,6 +276,17 @@ public class CreateClusterReqV2  {
     @JsonProperty(value="add_jobs")
     
     private List<AddJobsReqV11> addJobs = null;
+    
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="log_uri")
+    
+
+    private String logUri;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="component_configs")
+    
+    private List<ComponentConfig> componentConfigs = null;
     
     public CreateClusterReqV2 withIsDecProject(Boolean isDecProject) {
         this.isDecProject = isDecProject;
@@ -978,7 +990,7 @@ public class CreateClusterReqV2  {
     }
 
     /**
-     * 创建集群时可同时提交作业，当前版本暂时只支持新增一个作业。
+     * 创建集群时可同时提交作业，当前仅MRS1.8.7之前版本支持，暂时只支持新增一个作业。建议使用创建集群并提交作业接口RunJobFlow的steps参数
      * @return addJobs
      */
     public List<AddJobsReqV11> getAddJobs() {
@@ -987,6 +999,64 @@ public class CreateClusterReqV2  {
 
     public void setAddJobs(List<AddJobsReqV11> addJobs) {
         this.addJobs = addJobs;
+    }
+
+    
+
+    public CreateClusterReqV2 withLogUri(String logUri) {
+        this.logUri = logUri;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 集群日志转储至OBS的具体路径。 开启日志转储功能后，日志上传需要对应OBS路径的读写权限， 请配置MRS_ECS_DEFULT_AGENCY默认委托或具有对应OBS路径读写权限的自定义委托。 具体请参见[配置存算分离集群（委托方式）](https://support.huaweicloud.com/usermanual-mrs/mrs_01_0768.html)。 该参数只适用于支持“集群日志转储OBS”特性的集群版本。
+     * @return logUri
+     */
+    public String getLogUri() {
+        return logUri;
+    }
+
+    public void setLogUri(String logUri) {
+        this.logUri = logUri;
+    }
+
+    
+
+    public CreateClusterReqV2 withComponentConfigs(List<ComponentConfig> componentConfigs) {
+        this.componentConfigs = componentConfigs;
+        return this;
+    }
+
+    
+    public CreateClusterReqV2 addComponentConfigsItem(ComponentConfig componentConfigsItem) {
+        if(this.componentConfigs == null) {
+            this.componentConfigs = new ArrayList<>();
+        }
+        this.componentConfigs.add(componentConfigsItem);
+        return this;
+    }
+
+    public CreateClusterReqV2 withComponentConfigs(Consumer<List<ComponentConfig>> componentConfigsSetter) {
+        if(this.componentConfigs == null) {
+            this.componentConfigs = new ArrayList<>();
+        }
+        componentConfigsSetter.accept(this.componentConfigs);
+        return this;
+    }
+
+    /**
+     * 集群组件自定义配置。 该参数只适用于支持“自定义组件配置创建集群”特性的集群版本。
+     * @return componentConfigs
+     */
+    public List<ComponentConfig> getComponentConfigs() {
+        return componentConfigs;
+    }
+
+    public void setComponentConfigs(List<ComponentConfig> componentConfigs) {
+        this.componentConfigs = componentConfigs;
     }
 
     
@@ -1028,11 +1098,13 @@ public class CreateClusterReqV2  {
             Objects.equals(this.logCollection, createClusterReqV2.logCollection) &&
             Objects.equals(this.nodeGroups, createClusterReqV2.nodeGroups) &&
             Objects.equals(this.bootstrapScripts, createClusterReqV2.bootstrapScripts) &&
-            Objects.equals(this.addJobs, createClusterReqV2.addJobs);
+            Objects.equals(this.addJobs, createClusterReqV2.addJobs) &&
+            Objects.equals(this.logUri, createClusterReqV2.logUri) &&
+            Objects.equals(this.componentConfigs, createClusterReqV2.componentConfigs);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(isDecProject, clusterVersion, clusterName, clusterType, chargeInfo, region, vpcName, subnetId, subnetName, components, externalDatasources, availabilityZone, securityGroupsId, autoCreateDefaultSecurityGroup, safeMode, managerAdminPassword, loginMode, nodeRootPassword, nodeKeypairName, enterpriseProjectId, eipAddress, eipId, mrsEcsDefaultAgency, templateId, tags, logCollection, nodeGroups, bootstrapScripts, addJobs);
+        return Objects.hash(isDecProject, clusterVersion, clusterName, clusterType, chargeInfo, region, vpcName, subnetId, subnetName, components, externalDatasources, availabilityZone, securityGroupsId, autoCreateDefaultSecurityGroup, safeMode, managerAdminPassword, loginMode, nodeRootPassword, nodeKeypairName, enterpriseProjectId, eipAddress, eipId, mrsEcsDefaultAgency, templateId, tags, logCollection, nodeGroups, bootstrapScripts, addJobs, logUri, componentConfigs);
     }
     @Override
     public String toString() {
@@ -1067,6 +1139,8 @@ public class CreateClusterReqV2  {
         sb.append("    nodeGroups: ").append(toIndentedString(nodeGroups)).append("\n");
         sb.append("    bootstrapScripts: ").append(toIndentedString(bootstrapScripts)).append("\n");
         sb.append("    addJobs: ").append(toIndentedString(addJobs)).append("\n");
+        sb.append("    logUri: ").append(toIndentedString(logUri)).append("\n");
+        sb.append("    componentConfigs: ").append(toIndentedString(componentConfigs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

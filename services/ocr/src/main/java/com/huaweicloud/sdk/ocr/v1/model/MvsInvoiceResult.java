@@ -286,7 +286,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 发票代码。
+     * 发票代码。 
      * @return code
      */
     public String getCode() {
@@ -303,7 +303,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 发票号码。
+     * 发票号码。 
      * @return number
      */
     public String getNumber() {
@@ -320,7 +320,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 机打代码。
+     * 机打代码。 
      * @return machinePrintedCode
      */
     public String getMachinePrintedCode() {
@@ -337,7 +337,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 机打号码。
+     * 机打号码。 
      * @return machinePrintedNumber
      */
     public String getMachinePrintedNumber() {
@@ -354,7 +354,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 开票日期。
+     * 开票日期。 
      * @return issueDate
      */
     public String getIssueDate() {
@@ -371,7 +371,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 机器编号。
+     * 机器编号。 
      * @return machineNumber
      */
     public String getMachineNumber() {
@@ -388,7 +388,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 购买方名称、二手车买方单位/个人
+     * 购买方名称、二手车买方单位/个人 
      * @return buyerName
      */
     public String getBuyerName() {
@@ -405,7 +405,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 购买方身份证号码/组织机构代码。
+     * 购买方身份证号码/组织机构代码。 
      * @return buyerOrganizationNumber
      */
     public String getBuyerOrganizationNumber() {
@@ -422,7 +422,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 购买方纳税人识别号、二手车买方单位代码/身份证号
+     * 购买方纳税人识别号、二手车买方单位代码/身份证号 
      * @return buyerId
      */
     public String getBuyerId() {
@@ -439,7 +439,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 二手车买方单位/个人住址。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * 二手车买方单位/个人住址。 当请求参数\"type\"设置为\"auto\"或\"used\"时才返回。 
      * @return buyerAddress
      */
     public String getBuyerAddress() {
@@ -456,7 +456,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 二手车买方单位/个人电话。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * 二手车买方单位/个人电话。 当请求参数\"type\"设置为\"auto\"或\"used\"时才返回。 
      * @return buyerPhone
      */
     public String getBuyerPhone() {
@@ -473,7 +473,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 销货单位名称、二手车卖方单位/个人
+     * 销货单位名称、二手车卖方单位/个人 
      * @return sellerName
      */
     public String getSellerName() {
@@ -490,7 +490,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 销售方电话、二手车卖方电话
+     * 销售方电话、二手车卖方电话 
      * @return sellerPhone
      */
     public String getSellerPhone() {
@@ -507,7 +507,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 销售方纳税人识别号、二手车卖方单位代码/身份证号
+     * 销售方纳税人识别号、二手车卖方单位代码/身份证号 
      * @return sellerId
      */
     public String getSellerId() {
@@ -524,7 +524,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 销售方账号。
+     * 销售方账号。 
      * @return sellerAccount
      */
     public String getSellerAccount() {
@@ -541,7 +541,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 销售方地址、二手车卖方单位/个人地址
+     * 销售方地址、二手车卖方单位/个人地址 
      * @return sellerAddress
      */
     public String getSellerAddress() {
@@ -558,7 +558,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 二手车车牌照号。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * 二手车车牌照号。 当请求参数\"type\"设置为\"auto\"或\"used\"时才返回。 
      * @return licencePlateNumber
      */
     public String getLicencePlateNumber() {
@@ -575,7 +575,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 二手车登记证号。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * 二手车登记证号。 当请求参数\"type\"设置为\"auto\"或\"used\"时才返回。 
      * @return registrationNumber
      */
     public String getRegistrationNumber() {
@@ -592,7 +592,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 二手车转入地车管所名称。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * 二手车转入地车管所名称。 当请求参数\"type\"设置为\"auto\"或\"used\"时才返回。 
      * @return deptMotorVehicles
      */
     public String getDeptMotorVehicles() {
@@ -609,7 +609,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 销售方开户行。
+     * 销售方开户行。 
      * @return sellerBank
      */
     public String getSellerBank() {
@@ -626,7 +626,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 车辆类型。
+     * 车辆类型。 
      * @return vehicleType
      */
     public String getVehicleType() {
@@ -643,7 +643,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 厂牌型号。
+     * 厂牌型号。 
      * @return brandModel
      */
     public String getBrandModel() {
@@ -660,7 +660,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 产地。
+     * 产地。 
      * @return manufacturingLocation
      */
     public String getManufacturingLocation() {
@@ -677,7 +677,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 合格证号。
+     * 合格证号。 
      * @return qualityCertificate
      */
     public String getQualityCertificate() {
@@ -694,7 +694,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 进口证明书号。
+     * 进口证明书号。 
      * @return importCertificate
      */
     public String getImportCertificate() {
@@ -711,7 +711,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 商检单号。
+     * 商检单号。 
      * @return inspectionNumber
      */
     public String getInspectionNumber() {
@@ -728,7 +728,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 发动机号码。
+     * 发动机号码。 
      * @return engineNumber
      */
     public String getEngineNumber() {
@@ -745,7 +745,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 车辆识别代号/车架号码。
+     * 车辆识别代号/车架号码。 
      * @return vehicleIdentificationNumber
      */
     public String getVehicleIdentificationNumber() {
@@ -762,7 +762,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 吨位。
+     * 吨位。 
      * @return tonnage
      */
     public String getTonnage() {
@@ -779,7 +779,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 限乘人数。
+     * 限乘人数。 
      * @return seatingCapacity
      */
     public String getSeatingCapacity() {
@@ -796,7 +796,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 主管税务机关。
+     * 主管税务机关。 
      * @return taxAuthority
      */
     public String getTaxAuthority() {
@@ -813,7 +813,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 主管税务机关代码。
+     * 主管税务机关代码。 
      * @return taxAuthorityCode
      */
     public String getTaxAuthorityCode() {
@@ -830,7 +830,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 完税凭证号码。
+     * 完税凭证号码。 
      * @return taxPaymentReceipt
      */
     public String getTaxPaymentReceipt() {
@@ -847,7 +847,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 增值税税率或征收率。
+     * 增值税税率或征收率。 
      * @return taxRate
      */
     public String getTaxRate() {
@@ -864,7 +864,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 增值税税额。
+     * 增值税税额。 
      * @return tax
      */
     public String getTax() {
@@ -881,7 +881,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 不含税价。
+     * 不含税价。 
      * @return taxExclusivePrice
      */
     public String getTaxExclusivePrice() {
@@ -898,7 +898,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 价税合计、二手车车价合计（小写）
+     * 价税合计、二手车车价合计（小写） 
      * @return total
      */
     public String getTotal() {
@@ -915,7 +915,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 价税合计大写、二手车车价合计（大写）
+     * 价税合计大写、二手车车价合计（大写） 
      * @return totalChinese
      */
     public String getTotalChinese() {
@@ -932,7 +932,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 税控码。
+     * 税控码。 
      * @return fiscalCode
      */
     public String getFiscalCode() {
@@ -949,7 +949,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 二手车经营拍卖单位名称。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * 二手车经营拍卖单位名称。 当请求参数\"type\"设置为\"auto\"或\"used\"时才返回。 
      * @return auctionOrgName
      */
     public String getAuctionOrgName() {
@@ -966,7 +966,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 二手车经营拍卖单位地址。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * 二手车经营拍卖单位地址。 当请求参数\"type\"设置为\"auto\"或\"used\"时才返回。 
      * @return auctionOrgAddress
      */
     public String getAuctionOrgAddress() {
@@ -983,7 +983,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 二手车经营拍卖单位纳税人识别号。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * 二手车经营拍卖单位纳税人识别号。 当请求参数\"type\"设置为\"auto\"或\"used\"时才返回。 
      * @return auctionOrgId
      */
     public String getAuctionOrgId() {
@@ -1000,7 +1000,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 二手车经营拍卖单位银行和账号。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * 二手车经营拍卖单位银行和账号。 当请求参数\"type\"设置为\"auto\"或\"used\"时才返回。 
      * @return auctionOrgBankAccount
      */
     public String getAuctionOrgBankAccount() {
@@ -1017,7 +1017,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 二手车经营拍卖单位电话。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * 二手车经营拍卖单位电话。 当请求参数\"type\"设置为\"auto\"或\"used\"时才返回。 
      * @return auctionOrgPhone
      */
     public String getAuctionOrgPhone() {
@@ -1034,7 +1034,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 二手车市场名称。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * 二手车市场名称。 当请求参数\"type\"设置为\"auto\"或\"used\"时才返回。 
      * @return usedVehicleMarketName
      */
     public String getUsedVehicleMarketName() {
@@ -1051,7 +1051,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 二手车市场纳税人识别号。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * 二手车市场纳税人识别号。 当请求参数\"type\"设置为\"auto\"或\"used\"时才返回。 
      * @return usedVehicleMarketId
      */
     public String getUsedVehicleMarketId() {
@@ -1068,7 +1068,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 二手车市场地址。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * 二手车市场地址。 当请求参数\"type\"设置为\"auto\"或\"used\"时才返回。 
      * @return usedVehicleMarketAddress
      */
     public String getUsedVehicleMarketAddress() {
@@ -1085,7 +1085,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 二手车市场银行和账号。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * 二手车市场银行和账号。 当请求参数\"type\"设置为\"auto\"或\"used\"时才返回。 
      * @return usedVehicleMarketBankAccount
      */
     public String getUsedVehicleMarketBankAccount() {
@@ -1102,7 +1102,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 二手车市场电话。 当请求参数\"tpye\"设置为\"auto\"或“used”时才返回。 
+     * 二手车市场电话。 当请求参数\"type\"设置为\"auto\"或\"used\"时才返回。 
      * @return usedVehicleMarketPhone
      */
     public String getUsedVehicleMarketPhone() {
@@ -1119,7 +1119,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 备注
+     * 备注 
      * @return remark
      */
     public String getRemark() {
@@ -1136,7 +1136,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 开票人
+     * 开票人 
      * @return drawerName
      */
     public String getDrawerName() {
@@ -1170,7 +1170,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 检测框对象，内部为字段-框坐标对。如 code:[[x0, y0],[x1,y1],[x2,y2],[x3,y3]], 点的顺序是左上角、右上角、右下角、左下角。如果原图找不到字段，返回空列表。
+     * 检测框对象，内部为字段-框坐标对。如 code:[[x0, y0],[x1,y1],[x2,y2],[x3,y3]], 点的顺序是左上角、右上角、右下角、左下角。如果原图找不到字段，返回空列表。 
      * @return textLocation
      */
     public Object getTextLocation() {
@@ -1187,7 +1187,7 @@ public class MvsInvoiceResult {
     }
 
     /**
-     * 字段文字内容置信度，内容为字段-字符置信度对,如code:0.9999。这个数值为字段中每个字符置信度，格式为fp32，保留四位。若字段不存在则返回0.0。
+     * 字段文字内容置信度，内容为字段-字符置信度对,如code:0.9999。这个数值为字段中每个字符置信度，格式为fp32，保留四位。若字段不存在则返回0.0。 
      * @return confidence
      */
     public Object getConfidence() {

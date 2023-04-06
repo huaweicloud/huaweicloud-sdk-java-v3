@@ -1,36 +1,45 @@
-package com.huaweicloud.sdk.image.v2.model;
+package com.huaweicloud.sdk.gsl.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
- * Response Object
+ * Request Object
  */
-public class CreateImageVariationTaskResponse extends SdkResponse {
+public class SendSmsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_id")
+    @JsonProperty(value = "body")
 
-    private String taskId;
+    private CreateSendSmsReq body;
 
-    public CreateImageVariationTaskResponse withTaskId(String taskId) {
-        this.taskId = taskId;
+    public SendSmsRequest withBody(CreateSendSmsReq body) {
+        this.body = body;
+        return this;
+    }
+
+    public SendSmsRequest withBody(Consumer<CreateSendSmsReq> bodySetter) {
+        if (this.body == null) {
+            this.body = new CreateSendSmsReq();
+            bodySetter.accept(this.body);
+        }
+
         return this;
     }
 
     /**
-     * 任务唯一标识
-     * @return taskId
+     * Get body
+     * @return body
      */
-    public String getTaskId() {
-        return taskId;
+    public CreateSendSmsReq getBody() {
+        return body;
     }
 
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
+    public void setBody(CreateSendSmsReq body) {
+        this.body = body;
     }
 
     @Override
@@ -41,20 +50,20 @@ public class CreateImageVariationTaskResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CreateImageVariationTaskResponse createImageVariationTaskResponse = (CreateImageVariationTaskResponse) o;
-        return Objects.equals(this.taskId, createImageVariationTaskResponse.taskId);
+        SendSmsRequest sendSmsRequest = (SendSmsRequest) o;
+        return Objects.equals(this.body, sendSmsRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateImageVariationTaskResponse {\n");
-        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("class SendSmsRequest {\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

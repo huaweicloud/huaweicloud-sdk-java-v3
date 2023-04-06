@@ -25,6 +25,11 @@ public class ExportCertificateRequestBody {
 
     private String isSmStandard;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "password")
+
+    private String password;
+
     public ExportCertificateRequestBody withIsCompressed(String isCompressed) {
         this.isCompressed = isCompressed;
         return this;
@@ -76,6 +81,23 @@ public class ExportCertificateRequestBody {
         this.isSmStandard = isSmStandard;
     }
 
+    public ExportCertificateRequestBody withPassword(String password) {
+        this.password = password;
+        return this;
+    }
+
+    /**
+     * 设置用于加密私钥的密码。支持使用英文大小写字母、数字、特殊字符（例如,.+-_#）等。最大长度为32字节，若不传入，则默认不使用加密导出。
+     * @return password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -87,12 +109,13 @@ public class ExportCertificateRequestBody {
         ExportCertificateRequestBody exportCertificateRequestBody = (ExportCertificateRequestBody) o;
         return Objects.equals(this.isCompressed, exportCertificateRequestBody.isCompressed)
             && Objects.equals(this.type, exportCertificateRequestBody.type)
-            && Objects.equals(this.isSmStandard, exportCertificateRequestBody.isSmStandard);
+            && Objects.equals(this.isSmStandard, exportCertificateRequestBody.isSmStandard)
+            && Objects.equals(this.password, exportCertificateRequestBody.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isCompressed, type, isSmStandard);
+        return Objects.hash(isCompressed, type, isSmStandard, password);
     }
 
     @Override
@@ -102,6 +125,7 @@ public class ExportCertificateRequestBody {
         sb.append("    isCompressed: ").append(toIndentedString(isCompressed)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    isSmStandard: ").append(toIndentedString(isSmStandard)).append("\n");
+        sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("}");
         return sb.toString();
     }

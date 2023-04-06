@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.image.v2.model;
+package com.huaweicloud.sdk.ram.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,28 +9,30 @@ import java.util.Objects;
 /**
  * Response Object
  */
-public class CreateTextToImageTaskResponse extends SdkResponse {
+public class SearchResourceShareCountByTagsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_id")
+    @JsonProperty(value = "total_count")
 
-    private String taskId;
+    private Integer totalCount;
 
-    public CreateTextToImageTaskResponse withTaskId(String taskId) {
-        this.taskId = taskId;
+    public SearchResourceShareCountByTagsResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
         return this;
     }
 
     /**
-     * 任务唯一标识
-     * @return taskId
+     * 总记录数。
+     * minimum: 0
+     * maximum: 1000000
+     * @return totalCount
      */
-    public String getTaskId() {
-        return taskId;
+    public Integer getTotalCount() {
+        return totalCount;
     }
 
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
     }
 
     @Override
@@ -41,20 +43,21 @@ public class CreateTextToImageTaskResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CreateTextToImageTaskResponse createTextToImageTaskResponse = (CreateTextToImageTaskResponse) o;
-        return Objects.equals(this.taskId, createTextToImageTaskResponse.taskId);
+        SearchResourceShareCountByTagsResponse searchResourceShareCountByTagsResponse =
+            (SearchResourceShareCountByTagsResponse) o;
+        return Objects.equals(this.totalCount, searchResourceShareCountByTagsResponse.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId);
+        return Objects.hash(totalCount);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateTextToImageTaskResponse {\n");
-        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("class SearchResourceShareCountByTagsResponse {\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

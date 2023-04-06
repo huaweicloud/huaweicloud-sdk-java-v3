@@ -124,6 +124,42 @@ public class MrsAsyncClient {
     }
 
     /**
+     * 创建集群并提交作业
+     *
+     * 创建一个MRS集群并提交作业，并支持作业完成后删除集群，支持MRS 1.8.9及以上集群版本使用。使用接口前，您需要先获取下的资源信息。
+     * - 通过VPC创建或查询VPC、子网
+     * - 通过ECS创建或查询密钥对
+     * - 通过[终端节点](https://support.huaweicloud.com/api-mrs/mrs_02_0003.html)获取区域信息
+     * - 参考[MRS服务支持的组件](https://support.huaweicloud.com/api-mrs/mrs_02_9001.html)获取MRS版本及对应版本支持的组件信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunJobFlowRequest 请求对象
+     * @return CompletableFuture<RunJobFlowResponse>
+     */
+    public CompletableFuture<RunJobFlowResponse> runJobFlowAsync(RunJobFlowRequest request) {
+        return hcClient.asyncInvokeHttp(request, MrsMeta.runJobFlow);
+    }
+
+    /**
+     * 创建集群并提交作业
+     *
+     * 创建一个MRS集群并提交作业，并支持作业完成后删除集群，支持MRS 1.8.9及以上集群版本使用。使用接口前，您需要先获取下的资源信息。
+     * - 通过VPC创建或查询VPC、子网
+     * - 通过ECS创建或查询密钥对
+     * - 通过[终端节点](https://support.huaweicloud.com/api-mrs/mrs_02_0003.html)获取区域信息
+     * - 参考[MRS服务支持的组件](https://support.huaweicloud.com/api-mrs/mrs_02_9001.html)获取MRS版本及对应版本支持的组件信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunJobFlowRequest 请求对象
+     * @return AsyncInvoker<RunJobFlowRequest, RunJobFlowResponse>
+     */
+    public AsyncInvoker<RunJobFlowRequest, RunJobFlowResponse> runJobFlowAsyncInvoker(RunJobFlowRequest request) {
+        return new AsyncInvoker<RunJobFlowRequest, RunJobFlowResponse>(request, MrsMeta.runJobFlow, hcClient);
+    }
+
+    /**
      * 查询用户（组）与IAM委托的映射关系
      *
      * 获取用户（组）与IAM委托之间的映射关系的详细信息。

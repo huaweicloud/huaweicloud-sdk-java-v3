@@ -467,7 +467,7 @@ public class GslAsyncClient {
     /**
      * 实体卡限速
      *
-     * 实体卡限速接口,支持电信和联通实体卡调用。
+     * 实体卡限速接口,支持电信和联通实体卡调用。联通卡需要个人实名认证后才能使用限速功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -481,7 +481,7 @@ public class GslAsyncClient {
     /**
      * 实体卡限速
      *
-     * 实体卡限速接口,支持电信和联通实体卡调用。
+     * 实体卡限速接口,支持电信和联通实体卡调用。联通卡需要个人实名认证后才能使用限速功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -867,6 +867,64 @@ public class GslAsyncClient {
      */
     public AsyncInvoker<ListTagsRequest, ListTagsResponse> listTagsAsyncInvoker(ListTagsRequest request) {
         return new AsyncInvoker<ListTagsRequest, ListTagsResponse>(request, GslMeta.listTags, hcClient);
+    }
+
+    /**
+     * 短信发送详情
+     *
+     * 短信发送详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSmsDetailsRequest 请求对象
+     * @return CompletableFuture<ListSmsDetailsResponse>
+     */
+    public CompletableFuture<ListSmsDetailsResponse> listSmsDetailsAsync(ListSmsDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.listSmsDetails);
+    }
+
+    /**
+     * 短信发送详情
+     *
+     * 短信发送详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSmsDetailsRequest 请求对象
+     * @return AsyncInvoker<ListSmsDetailsRequest, ListSmsDetailsResponse>
+     */
+    public AsyncInvoker<ListSmsDetailsRequest, ListSmsDetailsResponse> listSmsDetailsAsyncInvoker(
+        ListSmsDetailsRequest request) {
+        return new AsyncInvoker<ListSmsDetailsRequest, ListSmsDetailsResponse>(request, GslMeta.listSmsDetails,
+            hcClient);
+    }
+
+    /**
+     * 发送短信
+     *
+     * 发送短信
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SendSmsRequest 请求对象
+     * @return CompletableFuture<SendSmsResponse>
+     */
+    public CompletableFuture<SendSmsResponse> sendSmsAsync(SendSmsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.sendSms);
+    }
+
+    /**
+     * 发送短信
+     *
+     * 发送短信
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SendSmsRequest 请求对象
+     * @return AsyncInvoker<SendSmsRequest, SendSmsResponse>
+     */
+    public AsyncInvoker<SendSmsRequest, SendSmsResponse> sendSmsAsyncInvoker(SendSmsRequest request) {
+        return new AsyncInvoker<SendSmsRequest, SendSmsResponse>(request, GslMeta.sendSms, hcClient);
     }
 
 }
