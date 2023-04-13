@@ -92,7 +92,7 @@ public class ShowConsumerListOrDetailsRequest {
     }
 
     /**
-     * 当次查询返回的最大个数,默认值为10,取值范围为1~50。
+     * 当次查询返回的最大个数，默认值为10，取值范围为1~50。
      * @return limit
      */
     public Integer getLimit() {

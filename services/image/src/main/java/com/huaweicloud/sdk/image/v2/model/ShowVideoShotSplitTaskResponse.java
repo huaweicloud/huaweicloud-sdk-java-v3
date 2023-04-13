@@ -1,14 +1,9 @@
 package com.huaweicloud.sdk.image.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -32,93 +27,10 @@ public class ShowVideoShotSplitTaskResponse extends SdkResponse {
 
     private String updateTime;
 
-    /**
-     * 任务当前的状态，分别为SUCCEEDED（运行成功），FAILED（运行失败），RUNNING（运行中）。
-     */
-    public static final class StateEnum {
-
-        /**
-         * Enum SUCCEEDED for value: "SUCCEEDED"
-         */
-        public static final StateEnum SUCCEEDED = new StateEnum("SUCCEEDED");
-
-        /**
-         * Enum FAILED for value: "FAILED"
-         */
-        public static final StateEnum FAILED = new StateEnum("FAILED");
-
-        /**
-         * Enum RUNNING for value: "RUNNING"
-         */
-        public static final StateEnum RUNNING = new StateEnum("RUNNING");
-
-        private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StateEnum> createStaticFields() {
-            Map<String, StateEnum> map = new HashMap<>();
-            map.put("SUCCEEDED", SUCCEEDED);
-            map.put("FAILED", FAILED);
-            map.put("RUNNING", RUNNING);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StateEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StateEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
-        }
-
-        public static StateEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StateEnum) {
-                return this.value.equals(((StateEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
 
-    private StateEnum state;
+    private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
@@ -191,7 +103,7 @@ public class ShowVideoShotSplitTaskResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    public ShowVideoShotSplitTaskResponse withState(StateEnum state) {
+    public ShowVideoShotSplitTaskResponse withState(String state) {
         this.state = state;
         return this;
     }
@@ -200,11 +112,11 @@ public class ShowVideoShotSplitTaskResponse extends SdkResponse {
      * 任务当前的状态，分别为SUCCEEDED（运行成功），FAILED（运行失败），RUNNING（运行中）。
      * @return state
      */
-    public StateEnum getState() {
+    public String getState() {
         return state;
     }
 
-    public void setState(StateEnum state) {
+    public void setState(String state) {
         this.state = state;
     }
 

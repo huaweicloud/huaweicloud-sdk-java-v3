@@ -51,6 +51,36 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * Kafka实例批量删除Group
+     *
+     * 该接口用于向Kafka实例批量删除Group。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteGroupRequest 请求对象
+     * @return CompletableFuture<BatchDeleteGroupResponse>
+     */
+    public CompletableFuture<BatchDeleteGroupResponse> batchDeleteGroupAsync(BatchDeleteGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.batchDeleteGroup);
+    }
+
+    /**
+     * Kafka实例批量删除Group
+     *
+     * 该接口用于向Kafka实例批量删除Group。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteGroupRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteGroupRequest, BatchDeleteGroupResponse>
+     */
+    public AsyncInvoker<BatchDeleteGroupRequest, BatchDeleteGroupResponse> batchDeleteGroupAsyncInvoker(
+        BatchDeleteGroupRequest request) {
+        return new AsyncInvoker<BatchDeleteGroupRequest, BatchDeleteGroupResponse>(request, KafkaMeta.batchDeleteGroup,
+            hcClient);
+    }
+
+    /**
      * Kafka实例批量删除Topic
      *
      * 该接口用于向Kafka实例批量删除Topic。批量删除多个消费组时，部分删除成功，部分失败，此时接口返回删除成功，并在返回中显示删除失败的消费组信息。

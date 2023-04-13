@@ -45,6 +45,38 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDeleteGroupRequest, BatchDeleteGroupResponse> batchDeleteGroup =
+        genForbatchDeleteGroup();
+
+    private static HttpRequestDef<BatchDeleteGroupRequest, BatchDeleteGroupResponse> genForbatchDeleteGroup() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteGroupRequest, BatchDeleteGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteGroupRequest.class, BatchDeleteGroupResponse.class)
+                .withName("BatchDeleteGroup")
+                .withUri("/v2/{project_id}/instances/{instance_id}/groups/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteGroupRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<BatchDeleteGroupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteGroupReq.class),
+            f -> f.withMarshaller(BatchDeleteGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse> batchDeleteInstanceTopic =
         genForbatchDeleteInstanceTopic();
 

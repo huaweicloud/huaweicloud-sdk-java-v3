@@ -35,7 +35,7 @@ public class ShowImageHighresolutionMattingTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
-    private TaskInput input;
+    private ImageHighresolutionMattingInput input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
@@ -125,14 +125,14 @@ public class ShowImageHighresolutionMattingTaskResponse extends SdkResponse {
         this.state = state;
     }
 
-    public ShowImageHighresolutionMattingTaskResponse withInput(TaskInput input) {
+    public ShowImageHighresolutionMattingTaskResponse withInput(ImageHighresolutionMattingInput input) {
         this.input = input;
         return this;
     }
 
-    public ShowImageHighresolutionMattingTaskResponse withInput(Consumer<TaskInput> inputSetter) {
+    public ShowImageHighresolutionMattingTaskResponse withInput(Consumer<ImageHighresolutionMattingInput> inputSetter) {
         if (this.input == null) {
-            this.input = new TaskInput();
+            this.input = new ImageHighresolutionMattingInput();
             inputSetter.accept(this.input);
         }
 
@@ -143,11 +143,11 @@ public class ShowImageHighresolutionMattingTaskResponse extends SdkResponse {
      * Get input
      * @return input
      */
-    public TaskInput getInput() {
+    public ImageHighresolutionMattingInput getInput() {
         return input;
     }
 
-    public void setInput(TaskInput input) {
+    public void setInput(ImageHighresolutionMattingInput input) {
         this.input = input;
     }
 

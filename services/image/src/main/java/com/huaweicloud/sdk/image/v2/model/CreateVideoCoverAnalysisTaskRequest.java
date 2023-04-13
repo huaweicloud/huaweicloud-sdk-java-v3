@@ -14,16 +14,16 @@ public class CreateVideoCoverAnalysisTaskRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private VideoCoverAnalysisCreateTaskRequestBody body;
+    private CreateVideoCoverAnalysisTaskRequestBody body;
 
-    public CreateVideoCoverAnalysisTaskRequest withBody(VideoCoverAnalysisCreateTaskRequestBody body) {
+    public CreateVideoCoverAnalysisTaskRequest withBody(CreateVideoCoverAnalysisTaskRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateVideoCoverAnalysisTaskRequest withBody(Consumer<VideoCoverAnalysisCreateTaskRequestBody> bodySetter) {
+    public CreateVideoCoverAnalysisTaskRequest withBody(Consumer<CreateVideoCoverAnalysisTaskRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new VideoCoverAnalysisCreateTaskRequestBody();
+            this.body = new CreateVideoCoverAnalysisTaskRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateVideoCoverAnalysisTaskRequest {
      * Get body
      * @return body
      */
-    public VideoCoverAnalysisCreateTaskRequestBody getBody() {
+    public CreateVideoCoverAnalysisTaskRequestBody getBody() {
         return body;
     }
 
-    public void setBody(VideoCoverAnalysisCreateTaskRequestBody body) {
+    public void setBody(CreateVideoCoverAnalysisTaskRequestBody body) {
         this.body = body;
     }
 

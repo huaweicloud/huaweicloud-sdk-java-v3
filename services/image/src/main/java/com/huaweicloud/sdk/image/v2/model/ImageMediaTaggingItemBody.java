@@ -41,7 +41,7 @@ public class ImageMediaTaggingItemBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
-    private List<ImageTaggingInstance> instances = null;
+    private List<ImageMediaTaggingInstance> instances = null;
 
     public ImageMediaTaggingItemBody withConfidence(String confidence) {
         this.confidence = confidence;
@@ -146,12 +146,12 @@ public class ImageMediaTaggingItemBody {
         this.i18nType = i18nType;
     }
 
-    public ImageMediaTaggingItemBody withInstances(List<ImageTaggingInstance> instances) {
+    public ImageMediaTaggingItemBody withInstances(List<ImageMediaTaggingInstance> instances) {
         this.instances = instances;
         return this;
     }
 
-    public ImageMediaTaggingItemBody addInstancesItem(ImageTaggingInstance instancesItem) {
+    public ImageMediaTaggingItemBody addInstancesItem(ImageMediaTaggingInstance instancesItem) {
         if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
@@ -159,7 +159,7 @@ public class ImageMediaTaggingItemBody {
         return this;
     }
 
-    public ImageMediaTaggingItemBody withInstances(Consumer<List<ImageTaggingInstance>> instancesSetter) {
+    public ImageMediaTaggingItemBody withInstances(Consumer<List<ImageMediaTaggingInstance>> instancesSetter) {
         if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
@@ -171,11 +171,11 @@ public class ImageMediaTaggingItemBody {
      * 目标检测框信息，为空则表示没有目标检测框。
      * @return instances
      */
-    public List<ImageTaggingInstance> getInstances() {
+    public List<ImageMediaTaggingInstance> getInstances() {
         return instances;
     }
 
-    public void setInstances(List<ImageTaggingInstance> instances) {
+    public void setInstances(List<ImageMediaTaggingInstance> instances) {
         this.instances = instances;
     }
 

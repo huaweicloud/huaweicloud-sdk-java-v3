@@ -26,7 +26,7 @@ public class TaskOutputObs {
     }
 
     /**
-     * OBS桶名。
+     * 任务运行结果输出的OBS桶名。
      * @return bucket
      */
     public String getBucket() {
@@ -43,7 +43,7 @@ public class TaskOutputObs {
     }
 
     /**
-     * OBS的路径。
+     * 任务运行结果输出的OBS路径。
      * @return path
      */
     public String getPath() {

@@ -14,16 +14,16 @@ public class CreateVideoTranslateTaskRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private VideoTranslateRequestBody body;
+    private CreateVideoTranslateTaskRequestBody body;
 
-    public CreateVideoTranslateTaskRequest withBody(VideoTranslateRequestBody body) {
+    public CreateVideoTranslateTaskRequest withBody(CreateVideoTranslateTaskRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateVideoTranslateTaskRequest withBody(Consumer<VideoTranslateRequestBody> bodySetter) {
+    public CreateVideoTranslateTaskRequest withBody(Consumer<CreateVideoTranslateTaskRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new VideoTranslateRequestBody();
+            this.body = new CreateVideoTranslateTaskRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateVideoTranslateTaskRequest {
      * Get body
      * @return body
      */
-    public VideoTranslateRequestBody getBody() {
+    public CreateVideoTranslateTaskRequestBody getBody() {
         return body;
     }
 
-    public void setBody(VideoTranslateRequestBody body) {
+    public void setBody(CreateVideoTranslateTaskRequestBody body) {
         this.body = body;
     }
 

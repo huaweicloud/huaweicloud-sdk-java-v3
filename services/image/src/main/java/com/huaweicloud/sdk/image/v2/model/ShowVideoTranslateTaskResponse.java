@@ -35,7 +35,7 @@ public class ShowVideoTranslateTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
-    private TaskInput input;
+    private VideoTranslateTaskInput input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
@@ -125,14 +125,14 @@ public class ShowVideoTranslateTaskResponse extends SdkResponse {
         this.state = state;
     }
 
-    public ShowVideoTranslateTaskResponse withInput(TaskInput input) {
+    public ShowVideoTranslateTaskResponse withInput(VideoTranslateTaskInput input) {
         this.input = input;
         return this;
     }
 
-    public ShowVideoTranslateTaskResponse withInput(Consumer<TaskInput> inputSetter) {
+    public ShowVideoTranslateTaskResponse withInput(Consumer<VideoTranslateTaskInput> inputSetter) {
         if (this.input == null) {
-            this.input = new TaskInput();
+            this.input = new VideoTranslateTaskInput();
             inputSetter.accept(this.input);
         }
 
@@ -143,11 +143,11 @@ public class ShowVideoTranslateTaskResponse extends SdkResponse {
      * Get input
      * @return input
      */
-    public TaskInput getInput() {
+    public VideoTranslateTaskInput getInput() {
         return input;
     }
 
-    public void setInput(TaskInput input) {
+    public void setInput(VideoTranslateTaskInput input) {
         this.input = input;
     }
 

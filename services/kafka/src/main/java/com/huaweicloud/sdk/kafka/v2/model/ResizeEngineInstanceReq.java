@@ -30,6 +30,11 @@ public class ResizeEngineInstanceReq {
 
     private String newProductId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publicip_id")
+
+    private String publicipId;
+
     public ResizeEngineInstanceReq withOperType(String operType) {
         this.operType = operType;
         return this;
@@ -98,6 +103,23 @@ public class ResizeEngineInstanceReq {
         this.newProductId = newProductId;
     }
 
+    public ResizeEngineInstanceReq withPublicipId(String publicipId) {
+        this.publicipId = publicipId;
+        return this;
+    }
+
+    /**
+     * 实例绑定的弹性IP地址的ID。 以英文逗号隔开多个弹性IP地址的ID。 当oper_type类型是horizontal时，该参数必填。
+     * @return publicipId
+     */
+    public String getPublicipId() {
+        return publicipId;
+    }
+
+    public void setPublicipId(String publicipId) {
+        this.publicipId = publicipId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -110,12 +132,13 @@ public class ResizeEngineInstanceReq {
         return Objects.equals(this.operType, resizeEngineInstanceReq.operType)
             && Objects.equals(this.newStorageSpace, resizeEngineInstanceReq.newStorageSpace)
             && Objects.equals(this.newBrokerNum, resizeEngineInstanceReq.newBrokerNum)
-            && Objects.equals(this.newProductId, resizeEngineInstanceReq.newProductId);
+            && Objects.equals(this.newProductId, resizeEngineInstanceReq.newProductId)
+            && Objects.equals(this.publicipId, resizeEngineInstanceReq.publicipId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operType, newStorageSpace, newBrokerNum, newProductId);
+        return Objects.hash(operType, newStorageSpace, newBrokerNum, newProductId, publicipId);
     }
 
     @Override
@@ -126,6 +149,7 @@ public class ResizeEngineInstanceReq {
         sb.append("    newStorageSpace: ").append(toIndentedString(newStorageSpace)).append("\n");
         sb.append("    newBrokerNum: ").append(toIndentedString(newBrokerNum)).append("\n");
         sb.append("    newProductId: ").append(toIndentedString(newProductId)).append("\n");
+        sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

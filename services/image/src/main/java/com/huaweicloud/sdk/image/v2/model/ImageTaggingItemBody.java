@@ -168,7 +168,7 @@ public class ImageTaggingItemBody {
     }
 
     /**
-     * 目标检测框信息，为空则表示没有目标检测框。
+     * 目标检测框信息(该服务不返回目标检测信息)。
      * @return instances
      */
     public List<ImageTaggingInstance> getInstances() {

@@ -20,7 +20,7 @@ public class OmsClient {
     /**
      * 创建同步事件
      *
-     * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步(目前只支持华北-北京四、华东-上海一地区)。
+     * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -34,7 +34,7 @@ public class OmsClient {
     /**
      * 创建同步事件
      *
-     * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步(目前只支持华北-北京四、华东-上海一地区)。
+     * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -250,7 +250,7 @@ public class OmsClient {
     /**
      * 创建迁移任务组
      *
-     * 创建迁移任务组，创建成功后，迁移任务组会自动创建迁移任务，不需要额外调用启动任务命令（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 创建迁移任务组，创建成功后，迁移任务组会自动创建迁移任务，不需要额外调用启动任务命令。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -264,7 +264,7 @@ public class OmsClient {
     /**
      * 创建迁移任务组
      *
-     * 创建迁移任务组，创建成功后，迁移任务组会自动创建迁移任务，不需要额外调用启动任务命令（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 创建迁移任务组，创建成功后，迁移任务组会自动创建迁移任务，不需要额外调用启动任务命令。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -280,7 +280,7 @@ public class OmsClient {
     /**
      * 删除指定ID的迁移任务组
      *
-     * 删除指定的迁移任务组.（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）
+     * 删除指定的迁移任务组.
      * 创建任务中、监控中、暂停中状态的任务不允许删除，如果删除会返回失败；若要删除，请先行暂停任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -295,7 +295,7 @@ public class OmsClient {
     /**
      * 删除指定ID的迁移任务组
      *
-     * 删除指定的迁移任务组.（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）
+     * 删除指定的迁移任务组.
      * 创建任务中、监控中、暂停中状态的任务不允许删除，如果删除会返回失败；若要删除，请先行暂停任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -312,7 +312,7 @@ public class OmsClient {
     /**
      * 查询迁移任务组列表
      *
-     * 查询用户账户下的任务组信息（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 查询用户账户下的任务组信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -326,7 +326,7 @@ public class OmsClient {
     /**
      * 查询迁移任务组列表
      *
-     * 查询用户账户下的任务组信息（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 查询用户账户下的任务组信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -340,7 +340,7 @@ public class OmsClient {
     /**
      * 对已经失败的指定ID迁移任务组进行重启
      *
-     * 当迁移任务组处于迁移失败状态时，调用该接口重启指定ID的迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 当迁移任务组处于迁移失败状态时，调用该接口重启指定ID的迁移任务组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -354,7 +354,7 @@ public class OmsClient {
     /**
      * 对已经失败的指定ID迁移任务组进行重启
      *
-     * 当迁移任务组处于迁移失败状态时，调用该接口重启指定ID的迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 当迁移任务组处于迁移失败状态时，调用该接口重启指定ID的迁移任务组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -370,7 +370,7 @@ public class OmsClient {
     /**
      * 获取指定ID的taskgroup信息
      *
-     * 获取指定ID的taskgroup信息（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 获取指定ID的taskgroup信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -384,7 +384,7 @@ public class OmsClient {
     /**
      * 获取指定ID的taskgroup信息
      *
-     * 获取指定ID的taskgroup信息（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 获取指定ID的taskgroup信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -398,7 +398,7 @@ public class OmsClient {
     /**
      * 恢复指定ID的迁移任务组
      *
-     * 当迁移任务组处于暂停状态时，调用该接口启动指定ID的迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 当迁移任务组处于暂停状态时，调用该接口启动指定ID的迁移任务组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -412,7 +412,7 @@ public class OmsClient {
     /**
      * 恢复指定ID的迁移任务组
      *
-     * 当迁移任务组处于暂停状态时，调用该接口启动指定ID的迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 当迁移任务组处于暂停状态时，调用该接口启动指定ID的迁移任务组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -428,7 +428,7 @@ public class OmsClient {
     /**
      * 暂停指定ID的迁移任务组
      *
-     * 当迁移任务组处于创建任务中或监控中时，调用该接口暂停指定迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 当迁移任务组处于创建任务中或监控中时，调用该接口暂停指定迁移任务组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -442,7 +442,7 @@ public class OmsClient {
     /**
      * 暂停指定ID的迁移任务组
      *
-     * 当迁移任务组处于创建任务中或监控中时，调用该接口暂停指定迁移任务组（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 当迁移任务组处于创建任务中或监控中时，调用该接口暂停指定迁移任务组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -456,7 +456,7 @@ public class OmsClient {
     /**
      * 更新指定ID的迁移任务组的流控策略
      *
-     * 当迁移任务组未执行完成时，修改迁移任务组的流量控制策略（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 当迁移任务组未执行完成时，修改迁移任务组的流量控制策略。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -470,7 +470,7 @@ public class OmsClient {
     /**
      * 更新指定ID的迁移任务组的流控策略
      *
-     * 当迁移任务组未执行完成时，修改迁移任务组的流量控制策略（目前只支持华南-广州用户友好环境、西南-贵阳一、亚太-香港和亚太-新加坡地区）。
+     * 当迁移任务组未执行完成时，修改迁移任务组的流量控制策略。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

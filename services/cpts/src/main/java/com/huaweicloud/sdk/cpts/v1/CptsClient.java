@@ -302,6 +302,36 @@ public class CptsClient {
     }
 
     /**
+     * 全链路压测探针获取配置信息
+     *
+     * 全链路压测探针获取配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAgentConfigRequest 请求对象
+     * @return ShowAgentConfigResponse
+     */
+    public ShowAgentConfigResponse showAgentConfig(ShowAgentConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.showAgentConfig);
+    }
+
+    /**
+     * 全链路压测探针获取配置信息
+     *
+     * 全链路压测探针获取配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAgentConfigRequest 请求对象
+     * @return SyncInvoker<ShowAgentConfigRequest, ShowAgentConfigResponse>
+     */
+    public SyncInvoker<ShowAgentConfigRequest, ShowAgentConfigResponse> showAgentConfigInvoker(
+        ShowAgentConfigRequest request) {
+        return new SyncInvoker<ShowAgentConfigRequest, ShowAgentConfigResponse>(request, CptsMeta.showAgentConfig,
+            hcClient);
+    }
+
+    /**
      * 查询CPTS任务离线报告列表
      *
      * 查询CPTS任务离线报告列表
@@ -469,6 +499,36 @@ public class CptsClient {
      */
     public SyncInvoker<ShowTempSetRequest, ShowTempSetResponse> showTempSetInvoker(ShowTempSetRequest request) {
         return new SyncInvoker<ShowTempSetRequest, ShowTempSetResponse>(request, CptsMeta.showTempSet, hcClient);
+    }
+
+    /**
+     * 全链路压测探针上报健康状态
+     *
+     * 全链路压测探针上报健康状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAgentHealthStatusRequest 请求对象
+     * @return UpdateAgentHealthStatusResponse
+     */
+    public UpdateAgentHealthStatusResponse updateAgentHealthStatus(UpdateAgentHealthStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, CptsMeta.updateAgentHealthStatus);
+    }
+
+    /**
+     * 全链路压测探针上报健康状态
+     *
+     * 全链路压测探针上报健康状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAgentHealthStatusRequest 请求对象
+     * @return SyncInvoker<UpdateAgentHealthStatusRequest, UpdateAgentHealthStatusResponse>
+     */
+    public SyncInvoker<UpdateAgentHealthStatusRequest, UpdateAgentHealthStatusResponse> updateAgentHealthStatusInvoker(
+        UpdateAgentHealthStatusRequest request) {
+        return new SyncInvoker<UpdateAgentHealthStatusRequest, UpdateAgentHealthStatusResponse>(request,
+            CptsMeta.updateAgentHealthStatus, hcClient);
     }
 
     /**

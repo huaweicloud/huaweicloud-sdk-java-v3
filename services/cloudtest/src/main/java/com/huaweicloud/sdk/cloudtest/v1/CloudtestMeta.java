@@ -469,6 +469,44 @@ public class CloudtestMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowReportRequest, ShowReportResponse> showReport = genForshowReport();
+
+    private static HttpRequestDef<ShowReportRequest, ShowReportResponse> genForshowReport() {
+        // basic
+        HttpRequestDef.Builder<ShowReportRequest, ShowReportResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowReportRequest.class, ShowReportResponse.class)
+                .withName("ShowReport")
+                .withUri("/v4/{project_id}/versions/{plan_id}/custom-reports/generate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReportRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("plan_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReportRequest::getPlanId, (req, v) -> {
+                req.setPlanId(v);
+            }));
+        builder.<GenerateReportInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GenerateReportInfo.class),
+            f -> f.withMarshaller(ShowReportRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTestCaseDetailRequest, ShowTestCaseDetailResponse> showTestCaseDetail =
         genForshowTestCaseDetail();
 

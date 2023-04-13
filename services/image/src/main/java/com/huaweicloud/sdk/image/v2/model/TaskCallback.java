@@ -21,7 +21,7 @@ public class TaskCallback {
     }
 
     /**
-     * 回调url地址。
+     * 回调url地址，用于通知客户任务运行结束。
      * @return url
      */
     public String getUrl() {

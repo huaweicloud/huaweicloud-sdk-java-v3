@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ImageTaggingInstance
@@ -13,27 +14,36 @@ public class ImageTaggingInstance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bounding_box")
 
-    private Object boundingBox;
+    private ImageTaggingBoundingBox boundingBox;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
     private String confidence;
 
-    public ImageTaggingInstance withBoundingBox(Object boundingBox) {
+    public ImageTaggingInstance withBoundingBox(ImageTaggingBoundingBox boundingBox) {
         this.boundingBox = boundingBox;
         return this;
     }
 
+    public ImageTaggingInstance withBoundingBox(Consumer<ImageTaggingBoundingBox> boundingBoxSetter) {
+        if (this.boundingBox == null) {
+            this.boundingBox = new ImageTaggingBoundingBox();
+            boundingBoxSetter.accept(this.boundingBox);
+        }
+
+        return this;
+    }
+
     /**
-     * 目标检测框位置信息，包括4个值：  width：检测框区域宽度  height：检测框区域高度  top_left_x：检测框左上角到垂直轴距离  top_left_y：检测框左上角到水平轴距离 
+     * Get boundingBox
      * @return boundingBox
      */
-    public Object getBoundingBox() {
+    public ImageTaggingBoundingBox getBoundingBox() {
         return boundingBox;
     }
 
-    public void setBoundingBox(Object boundingBox) {
+    public void setBoundingBox(ImageTaggingBoundingBox boundingBox) {
         this.boundingBox = boundingBox;
     }
 

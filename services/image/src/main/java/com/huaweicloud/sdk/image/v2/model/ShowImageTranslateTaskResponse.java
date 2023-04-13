@@ -35,7 +35,7 @@ public class ShowImageTranslateTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
-    private TaskInput input;
+    private ImageTranslateTaskInput input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
@@ -125,14 +125,14 @@ public class ShowImageTranslateTaskResponse extends SdkResponse {
         this.state = state;
     }
 
-    public ShowImageTranslateTaskResponse withInput(TaskInput input) {
+    public ShowImageTranslateTaskResponse withInput(ImageTranslateTaskInput input) {
         this.input = input;
         return this;
     }
 
-    public ShowImageTranslateTaskResponse withInput(Consumer<TaskInput> inputSetter) {
+    public ShowImageTranslateTaskResponse withInput(Consumer<ImageTranslateTaskInput> inputSetter) {
         if (this.input == null) {
-            this.input = new TaskInput();
+            this.input = new ImageTranslateTaskInput();
             inputSetter.accept(this.input);
         }
 
@@ -143,11 +143,11 @@ public class ShowImageTranslateTaskResponse extends SdkResponse {
      * Get input
      * @return input
      */
-    public TaskInput getInput() {
+    public ImageTranslateTaskInput getInput() {
         return input;
     }
 
-    public void setInput(TaskInput input) {
+    public void setInput(ImageTranslateTaskInput input) {
         this.input = input;
     }
 

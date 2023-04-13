@@ -1420,6 +1420,37 @@ public class OsmAsyncClient {
     }
 
     /**
+     * 获取资源信息
+     *
+     * 获取资源信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDiagnoseResourcesRequest 请求对象
+     * @return CompletableFuture<ListDiagnoseResourcesResponse>
+     */
+    public CompletableFuture<ListDiagnoseResourcesResponse> listDiagnoseResourcesAsync(
+        ListDiagnoseResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.listDiagnoseResources);
+    }
+
+    /**
+     * 获取资源信息
+     *
+     * 获取资源信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDiagnoseResourcesRequest 请求对象
+     * @return AsyncInvoker<ListDiagnoseResourcesRequest, ListDiagnoseResourcesResponse>
+     */
+    public AsyncInvoker<ListDiagnoseResourcesRequest, ListDiagnoseResourcesResponse> listDiagnoseResourcesAsyncInvoker(
+        ListDiagnoseResourcesRequest request) {
+        return new AsyncInvoker<ListDiagnoseResourcesRequest, ListDiagnoseResourcesResponse>(request,
+            OsmMeta.listDiagnoseResources, hcClient);
+    }
+
+    /**
      * 查询附加参数
      *
      * 提单时，根据不同的产品或者问题类型，会存在不同的一些附加参数填写
@@ -1716,6 +1747,36 @@ public class OsmAsyncClient {
      */
     public AsyncInvoker<ListNoticesRequest, ListNoticesResponse> listNoticesAsyncInvoker(ListNoticesRequest request) {
         return new AsyncInvoker<ListNoticesRequest, ListNoticesResponse>(request, OsmMeta.listNotices, hcClient);
+    }
+
+    /**
+     * 工单列表
+     *
+     * 工单列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOrderIncidentRequest 请求对象
+     * @return CompletableFuture<ListOrderIncidentResponse>
+     */
+    public CompletableFuture<ListOrderIncidentResponse> listOrderIncidentAsync(ListOrderIncidentRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.listOrderIncident);
+    }
+
+    /**
+     * 工单列表
+     *
+     * 工单列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOrderIncidentRequest 请求对象
+     * @return AsyncInvoker<ListOrderIncidentRequest, ListOrderIncidentResponse>
+     */
+    public AsyncInvoker<ListOrderIncidentRequest, ListOrderIncidentResponse> listOrderIncidentAsyncInvoker(
+        ListOrderIncidentRequest request) {
+        return new AsyncInvoker<ListOrderIncidentRequest, ListOrderIncidentResponse>(request, OsmMeta.listOrderIncident,
+            hcClient);
     }
 
     /**

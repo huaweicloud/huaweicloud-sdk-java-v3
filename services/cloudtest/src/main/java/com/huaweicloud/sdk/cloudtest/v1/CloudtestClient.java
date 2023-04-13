@@ -369,6 +369,34 @@ public class CloudtestClient {
     }
 
     /**
+     * 实时计算单个自定义报表
+     *
+     * 实时计算单个自定义报表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowReportRequest 请求对象
+     * @return ShowReportResponse
+     */
+    public ShowReportResponse showReport(ShowReportRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.showReport);
+    }
+
+    /**
+     * 实时计算单个自定义报表
+     *
+     * 实时计算单个自定义报表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowReportRequest 请求对象
+     * @return SyncInvoker<ShowReportRequest, ShowReportResponse>
+     */
+    public SyncInvoker<ShowReportRequest, ShowReportResponse> showReportInvoker(ShowReportRequest request) {
+        return new SyncInvoker<ShowReportRequest, ShowReportResponse>(request, CloudtestMeta.showReport, hcClient);
+    }
+
+    /**
      * 获取测试用例详情
      *
      * 获取测试用例详情

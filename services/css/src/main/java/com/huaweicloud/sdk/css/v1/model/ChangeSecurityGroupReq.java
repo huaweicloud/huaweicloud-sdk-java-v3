@@ -21,7 +21,7 @@ public class ChangeSecurityGroupReq {
     }
 
     /**
-     * 期望安全组的ID。如何获取安全组ID，请参见[[《查询安全组列表》](https://support.huaweicloud.com/api-vpc/vpc_sg01_0003.html)](tag:hc)[[《查询安全组列表》](https://support.huaweicloud.com/intl/zh-cn/api-vpc/vpc_sg01_0003.html)](tag:hk,hws_hk)
+     * 期望安全组的ID。
      * @return securityGroupIds
      */
     public String getSecurityGroupIds() {

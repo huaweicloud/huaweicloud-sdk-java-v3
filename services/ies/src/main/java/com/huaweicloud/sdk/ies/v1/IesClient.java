@@ -226,6 +226,62 @@ public class IesClient {
     }
 
     /**
+     * 查询机柜列表
+     *
+     * 查询机柜列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRacksRequest 请求对象
+     * @return ListRacksResponse
+     */
+    public ListRacksResponse listRacks(ListRacksRequest request) {
+        return hcClient.syncInvokeHttp(request, IesMeta.listRacks);
+    }
+
+    /**
+     * 查询机柜列表
+     *
+     * 查询机柜列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRacksRequest 请求对象
+     * @return SyncInvoker<ListRacksRequest, ListRacksResponse>
+     */
+    public SyncInvoker<ListRacksRequest, ListRacksResponse> listRacksInvoker(ListRacksRequest request) {
+        return new SyncInvoker<ListRacksRequest, ListRacksResponse>(request, IesMeta.listRacks, hcClient);
+    }
+
+    /**
+     * 查询机柜详情
+     *
+     * 查询机柜详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRackRequest 请求对象
+     * @return ShowRackResponse
+     */
+    public ShowRackResponse showRack(ShowRackRequest request) {
+        return hcClient.syncInvokeHttp(request, IesMeta.showRack);
+    }
+
+    /**
+     * 查询机柜详情
+     *
+     * 查询机柜详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRackRequest 请求对象
+     * @return SyncInvoker<ShowRackRequest, ShowRackResponse>
+     */
+    public SyncInvoker<ShowRackRequest, ShowRackResponse> showRackInvoker(ShowRackRequest request) {
+        return new SyncInvoker<ShowRackRequest, ShowRackResponse>(request, IesMeta.showRack, hcClient);
+    }
+
+    /**
      * 查询支持的区域列表
      *
      * 查询支持智能边缘小站接入的华为云区域（region）列表。
@@ -253,6 +309,66 @@ public class IesClient {
         ListSupportedRegionsRequest request) {
         return new SyncInvoker<ListSupportedRegionsRequest, ListSupportedRegionsResponse>(request,
             IesMeta.listSupportedRegions, hcClient);
+    }
+
+    /**
+     * 查询存储池列表
+     *
+     * 查询存储池列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListStoragePoolsRequest 请求对象
+     * @return ListStoragePoolsResponse
+     */
+    public ListStoragePoolsResponse listStoragePools(ListStoragePoolsRequest request) {
+        return hcClient.syncInvokeHttp(request, IesMeta.listStoragePools);
+    }
+
+    /**
+     * 查询存储池列表
+     *
+     * 查询存储池列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListStoragePoolsRequest 请求对象
+     * @return SyncInvoker<ListStoragePoolsRequest, ListStoragePoolsResponse>
+     */
+    public SyncInvoker<ListStoragePoolsRequest, ListStoragePoolsResponse> listStoragePoolsInvoker(
+        ListStoragePoolsRequest request) {
+        return new SyncInvoker<ListStoragePoolsRequest, ListStoragePoolsResponse>(request, IesMeta.listStoragePools,
+            hcClient);
+    }
+
+    /**
+     * 查询存储池详情
+     *
+     * 查询存储池详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowStoragePoolRequest 请求对象
+     * @return ShowStoragePoolResponse
+     */
+    public ShowStoragePoolResponse showStoragePool(ShowStoragePoolRequest request) {
+        return hcClient.syncInvokeHttp(request, IesMeta.showStoragePool);
+    }
+
+    /**
+     * 查询存储池详情
+     *
+     * 查询存储池详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowStoragePoolRequest 请求对象
+     * @return SyncInvoker<ShowStoragePoolRequest, ShowStoragePoolResponse>
+     */
+    public SyncInvoker<ShowStoragePoolRequest, ShowStoragePoolResponse> showStoragePoolInvoker(
+        ShowStoragePoolRequest request) {
+        return new SyncInvoker<ShowStoragePoolRequest, ShowStoragePoolResponse>(request, IesMeta.showStoragePool,
+            hcClient);
     }
 
 }

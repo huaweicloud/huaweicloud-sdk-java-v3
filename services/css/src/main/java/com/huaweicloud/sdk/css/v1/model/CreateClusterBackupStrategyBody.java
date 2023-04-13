@@ -131,7 +131,7 @@ public class CreateClusterBackupStrategyBody {
     }
 
     /**
-     * 委托名称，委托给CSS，允许CSS调用您的其他云服务。  >如果bucket、basePath和agency三个参数同时为空，则系统会自动创建OBS桶和IAM代理，否则使用配置的参数值。
+     * 委托名称，委托给CSS，允许CSS调用您的其他云服务。  >如果bucket、basePath和agency三个参数同时为空，则系统会自动创建OBS桶和IAM代理（若创建失败，则需要手工配置正确的参数）。
      * @return agency
      */
     public String getAgency() {

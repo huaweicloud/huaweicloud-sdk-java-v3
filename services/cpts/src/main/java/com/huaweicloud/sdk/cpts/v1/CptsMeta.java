@@ -297,6 +297,31 @@ public class CptsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAgentConfigRequest, ShowAgentConfigResponse> showAgentConfig =
+        genForshowAgentConfig();
+
+    private static HttpRequestDef<ShowAgentConfigRequest, ShowAgentConfigResponse> genForshowAgentConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowAgentConfigRequest, ShowAgentConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowAgentConfigRequest.class, ShowAgentConfigResponse.class)
+                .withName("ShowAgentConfig")
+                .withUri("/v1/cpts/{project_id}/stress/agents")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowAgentConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowAgentConfigRequestBody.class),
+            f -> f.withMarshaller(ShowAgentConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowHistoryRunInfoRequest, ShowHistoryRunInfoResponse> showHistoryRunInfo =
         genForshowHistoryRunInfo();
 
@@ -477,6 +502,38 @@ public class CptsMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowTempSetRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAgentHealthStatusRequest, UpdateAgentHealthStatusResponse> updateAgentHealthStatus =
+        genForupdateAgentHealthStatus();
+
+    private static HttpRequestDef<UpdateAgentHealthStatusRequest, UpdateAgentHealthStatusResponse> genForupdateAgentHealthStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdateAgentHealthStatusRequest, UpdateAgentHealthStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAgentHealthStatusRequest.class, UpdateAgentHealthStatusResponse.class)
+            .withName("UpdateAgentHealthStatus")
+            .withUri("/v1/{project_id}/stress/agents/{agent_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("agent_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(UpdateAgentHealthStatusRequest::getAgentId, (req, v) -> {
+                req.setAgentId(v);
+            }));
+        builder.<UpdateAgentHealthStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAgentHealthStatusRequestBody.class),
+            f -> f.withMarshaller(UpdateAgentHealthStatusRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

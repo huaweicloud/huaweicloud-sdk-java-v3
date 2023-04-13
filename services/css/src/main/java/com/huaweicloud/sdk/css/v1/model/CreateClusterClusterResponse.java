@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群对象。[若创建的是按需集群，则只返回cluster参数。](tag:hc,hws)
+ * 集群对象。若创建的是按需集群，则只返回cluster参数。
  */
 public class CreateClusterClusterResponse {
 

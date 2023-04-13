@@ -2376,6 +2376,31 @@ public class OsmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDiagnoseResourcesRequest, ListDiagnoseResourcesResponse> listDiagnoseResources =
+        genForlistDiagnoseResources();
+
+    private static HttpRequestDef<ListDiagnoseResourcesRequest, ListDiagnoseResourcesResponse> genForlistDiagnoseResources() {
+        // basic
+        HttpRequestDef.Builder<ListDiagnoseResourcesRequest, ListDiagnoseResourcesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListDiagnoseResourcesRequest.class, ListDiagnoseResourcesResponse.class)
+            .withName("ListDiagnoseResources")
+            .withUri("/v2.0/servicerequest/diagnose/job/vm/resources")
+            .withContentType("application/json");
+
+        // requests
+        builder.<QueryTscDiagnoseResourcesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(QueryTscDiagnoseResourcesReq.class),
+            f -> f.withMarshaller(ListDiagnoseResourcesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListExtendsParamsRequest, ListExtendsParamsResponse> listExtendsParams =
         genForlistExtendsParams();
 
@@ -3058,6 +3083,136 @@ public class OsmMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchNoticesReq.class),
             f -> f.withMarshaller(ListNoticesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOrderIncidentRequest, ListOrderIncidentResponse> listOrderIncident =
+        genForlistOrderIncident();
+
+    private static HttpRequestDef<ListOrderIncidentRequest, ListOrderIncidentResponse> genForlistOrderIncident() {
+        // basic
+        HttpRequestDef.Builder<ListOrderIncidentRequest, ListOrderIncidentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListOrderIncidentRequest.class, ListOrderIncidentResponse.class)
+                .withName("ListOrderIncident")
+                .withUri("/osm/incidentservice/api/v1/queryincident")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrderIncidentRequest::getVersion, (req, v) -> {
+                req.setVersion(v);
+            }));
+        builder.<List<String>>withRequestField("searchKey",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListOrderIncidentRequest::getSearchKey, (req, v) -> {
+                req.setSearchKey(v);
+            }));
+        builder.<List<Integer>>withRequestField("labelIdList",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListOrderIncidentRequest::getLabelIdList, (req, v) -> {
+                req.setLabelIdList(v);
+            }));
+        builder.<String>withRequestField("appKey",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrderIncidentRequest::getAppKey, (req, v) -> {
+                req.setAppKey(v);
+            }));
+        builder.<String>withRequestField("incidentId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrderIncidentRequest::getIncidentId, (req, v) -> {
+                req.setIncidentId(v);
+            }));
+        builder.<String>withRequestField("queryStartTime",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrderIncidentRequest::getQueryStartTime, (req, v) -> {
+                req.setQueryStartTime(v);
+            }));
+        builder.<String>withRequestField("queryEndTime",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrderIncidentRequest::getQueryEndTime, (req, v) -> {
+                req.setQueryEndTime(v);
+            }));
+        builder.<Integer>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOrderIncidentRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("incidentStatus",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrderIncidentRequest::getIncidentStatus, (req, v) -> {
+                req.setIncidentStatus(v);
+            }));
+        builder.<String>withRequestField("xCustomerName",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrderIncidentRequest::getXCustomerName, (req, v) -> {
+                req.setXCustomerName(v);
+            }));
+        builder.<String>withRequestField("groupId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrderIncidentRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("productCategoryId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrderIncidentRequest::getProductCategoryId, (req, v) -> {
+                req.setProductCategoryId(v);
+            }));
+        builder.<String>withRequestField("businessTypeId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrderIncidentRequest::getBusinessTypeId, (req, v) -> {
+                req.setBusinessTypeId(v);
+            }));
+        builder.<Integer>withRequestField("pageNo",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOrderIncidentRequest::getPageNo, (req, v) -> {
+                req.setPageNo(v);
+            }));
+        builder.<Integer>withRequestField("pageSize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOrderIncidentRequest::getPageSize, (req, v) -> {
+                req.setPageSize(v);
+            }));
+        builder.<String>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrderIncidentRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -15,6 +15,11 @@ import java.util.function.Consumer;
 public class CollectTranscriberJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_id")
+
+    private String jobId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -43,6 +48,23 @@ public class CollectTranscriberJobResponse extends SdkResponse {
     @JsonProperty(value = "audio_duration")
 
     private Integer audioDuration;
+
+    public CollectTranscriberJobResponse withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+
+    /**
+     * 录音文件识别任务标识符。  使用“callback_url”回调url时，该字段会随结果发送至用户服务器。 使用get接口查询，不会出现该字段
+     * @return jobId
+     */
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
 
     public CollectTranscriberJobResponse withStatus(String status) {
         this.status = status;
@@ -171,7 +193,8 @@ public class CollectTranscriberJobResponse extends SdkResponse {
             return false;
         }
         CollectTranscriberJobResponse collectTranscriberJobResponse = (CollectTranscriberJobResponse) o;
-        return Objects.equals(this.status, collectTranscriberJobResponse.status)
+        return Objects.equals(this.jobId, collectTranscriberJobResponse.jobId)
+            && Objects.equals(this.status, collectTranscriberJobResponse.status)
             && Objects.equals(this.createTime, collectTranscriberJobResponse.createTime)
             && Objects.equals(this.startTime, collectTranscriberJobResponse.startTime)
             && Objects.equals(this.finishTime, collectTranscriberJobResponse.finishTime)
@@ -181,13 +204,14 @@ public class CollectTranscriberJobResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, createTime, startTime, finishTime, segments, audioDuration);
+        return Objects.hash(jobId, status, createTime, startTime, finishTime, segments, audioDuration);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CollectTranscriberJobResponse {\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");

@@ -14,16 +14,16 @@ public class CreateImageTranslateTaskRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ImageTranslateRequestBody body;
+    private CreateImageTranslateRequestBody body;
 
-    public CreateImageTranslateTaskRequest withBody(ImageTranslateRequestBody body) {
+    public CreateImageTranslateTaskRequest withBody(CreateImageTranslateRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateImageTranslateTaskRequest withBody(Consumer<ImageTranslateRequestBody> bodySetter) {
+    public CreateImageTranslateTaskRequest withBody(Consumer<CreateImageTranslateRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new ImageTranslateRequestBody();
+            this.body = new CreateImageTranslateRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateImageTranslateTaskRequest {
      * Get body
      * @return body
      */
-    public ImageTranslateRequestBody getBody() {
+    public CreateImageTranslateRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ImageTranslateRequestBody body) {
+    public void setBody(CreateImageTranslateRequestBody body) {
         this.body = body;
     }
 

@@ -14,7 +14,7 @@ public class ImageHighresolutionMattingRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
-    private TaskInput input;
+    private ImageHighresolutionMattingInput input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
@@ -31,14 +31,14 @@ public class ImageHighresolutionMattingRequestBody {
 
     private ImageHighresolutionMattingConfig config;
 
-    public ImageHighresolutionMattingRequestBody withInput(TaskInput input) {
+    public ImageHighresolutionMattingRequestBody withInput(ImageHighresolutionMattingInput input) {
         this.input = input;
         return this;
     }
 
-    public ImageHighresolutionMattingRequestBody withInput(Consumer<TaskInput> inputSetter) {
+    public ImageHighresolutionMattingRequestBody withInput(Consumer<ImageHighresolutionMattingInput> inputSetter) {
         if (this.input == null) {
-            this.input = new TaskInput();
+            this.input = new ImageHighresolutionMattingInput();
             inputSetter.accept(this.input);
         }
 
@@ -49,11 +49,11 @@ public class ImageHighresolutionMattingRequestBody {
      * Get input
      * @return input
      */
-    public TaskInput getInput() {
+    public ImageHighresolutionMattingInput getInput() {
         return input;
     }
 
-    public void setInput(TaskInput input) {
+    public void setInput(ImageHighresolutionMattingInput input) {
         this.input = input;
     }
 

@@ -123,7 +123,7 @@ public class ShowVideoSummarizationAnalysisTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
-    private TaskInput input;
+    private VideoSummarizationTaskInput input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
@@ -213,14 +213,14 @@ public class ShowVideoSummarizationAnalysisTaskResponse extends SdkResponse {
         this.state = state;
     }
 
-    public ShowVideoSummarizationAnalysisTaskResponse withInput(TaskInput input) {
+    public ShowVideoSummarizationAnalysisTaskResponse withInput(VideoSummarizationTaskInput input) {
         this.input = input;
         return this;
     }
 
-    public ShowVideoSummarizationAnalysisTaskResponse withInput(Consumer<TaskInput> inputSetter) {
+    public ShowVideoSummarizationAnalysisTaskResponse withInput(Consumer<VideoSummarizationTaskInput> inputSetter) {
         if (this.input == null) {
-            this.input = new TaskInput();
+            this.input = new VideoSummarizationTaskInput();
             inputSetter.accept(this.input);
         }
 
@@ -231,11 +231,11 @@ public class ShowVideoSummarizationAnalysisTaskResponse extends SdkResponse {
      * Get input
      * @return input
      */
-    public TaskInput getInput() {
+    public VideoSummarizationTaskInput getInput() {
         return input;
     }
 
-    public void setInput(TaskInput input) {
+    public void setInput(VideoSummarizationTaskInput input) {
         this.input = input;
     }
 

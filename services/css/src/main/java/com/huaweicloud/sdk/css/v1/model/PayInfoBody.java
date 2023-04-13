@@ -70,7 +70,7 @@ public class PayInfoBody {
     }
 
     /**
-     * 是否自动续订，为空时表示不自动续订。 - 1: 自动续订。 - 2：不自动续订（默认）。
+     * 是否自动续订，为空时表示不自动续订。 - 1: 自动续订。 - 0：不自动续订（默认）。
      * @return isAutoRenew
      */
     public Integer getIsAutoRenew() {

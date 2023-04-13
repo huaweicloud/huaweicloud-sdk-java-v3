@@ -305,6 +305,36 @@ public class CptsAsyncClient {
     }
 
     /**
+     * 全链路压测探针获取配置信息
+     *
+     * 全链路压测探针获取配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAgentConfigRequest 请求对象
+     * @return CompletableFuture<ShowAgentConfigResponse>
+     */
+    public CompletableFuture<ShowAgentConfigResponse> showAgentConfigAsync(ShowAgentConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.showAgentConfig);
+    }
+
+    /**
+     * 全链路压测探针获取配置信息
+     *
+     * 全链路压测探针获取配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAgentConfigRequest 请求对象
+     * @return AsyncInvoker<ShowAgentConfigRequest, ShowAgentConfigResponse>
+     */
+    public AsyncInvoker<ShowAgentConfigRequest, ShowAgentConfigResponse> showAgentConfigAsyncInvoker(
+        ShowAgentConfigRequest request) {
+        return new AsyncInvoker<ShowAgentConfigRequest, ShowAgentConfigResponse>(request, CptsMeta.showAgentConfig,
+            hcClient);
+    }
+
+    /**
      * 查询CPTS任务离线报告列表
      *
      * 查询CPTS任务离线报告列表
@@ -472,6 +502,37 @@ public class CptsAsyncClient {
      */
     public AsyncInvoker<ShowTempSetRequest, ShowTempSetResponse> showTempSetAsyncInvoker(ShowTempSetRequest request) {
         return new AsyncInvoker<ShowTempSetRequest, ShowTempSetResponse>(request, CptsMeta.showTempSet, hcClient);
+    }
+
+    /**
+     * 全链路压测探针上报健康状态
+     *
+     * 全链路压测探针上报健康状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAgentHealthStatusRequest 请求对象
+     * @return CompletableFuture<UpdateAgentHealthStatusResponse>
+     */
+    public CompletableFuture<UpdateAgentHealthStatusResponse> updateAgentHealthStatusAsync(
+        UpdateAgentHealthStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, CptsMeta.updateAgentHealthStatus);
+    }
+
+    /**
+     * 全链路压测探针上报健康状态
+     *
+     * 全链路压测探针上报健康状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAgentHealthStatusRequest 请求对象
+     * @return AsyncInvoker<UpdateAgentHealthStatusRequest, UpdateAgentHealthStatusResponse>
+     */
+    public AsyncInvoker<UpdateAgentHealthStatusRequest, UpdateAgentHealthStatusResponse> updateAgentHealthStatusAsyncInvoker(
+        UpdateAgentHealthStatusRequest request) {
+        return new AsyncInvoker<UpdateAgentHealthStatusRequest, UpdateAgentHealthStatusResponse>(request,
+            CptsMeta.updateAgentHealthStatus, hcClient);
     }
 
     /**

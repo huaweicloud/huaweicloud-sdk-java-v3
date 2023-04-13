@@ -270,6 +270,48 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateCloudWafPostPaidResourceRequest, CreateCloudWafPostPaidResourceResponse> createCloudWafPostPaidResource =
+        genForcreateCloudWafPostPaidResource();
+
+    private static HttpRequestDef<CreateCloudWafPostPaidResourceRequest, CreateCloudWafPostPaidResourceResponse> genForcreateCloudWafPostPaidResource() {
+        // basic
+        HttpRequestDef.Builder<CreateCloudWafPostPaidResourceRequest, CreateCloudWafPostPaidResourceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateCloudWafPostPaidResourceRequest.class,
+                    CreateCloudWafPostPaidResourceResponse.class)
+                .withName("CreateCloudWafPostPaidResource")
+                .withUri("/v1/{project_id}/waf/postpaid")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCloudWafPostPaidResourceRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("region",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCloudWafPostPaidResourceRequest::getRegion, (req, v) -> {
+                req.setRegion(v);
+            }));
+        builder.<CreateCloudWafPostPaidResourceRequestbody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateCloudWafPostPaidResourceRequestbody.class),
+            f -> f.withMarshaller(CreateCloudWafPostPaidResourceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCustomRuleRequest, CreateCustomRuleResponse> createCustomRule =
         genForcreateCustomRule();
 
@@ -906,6 +948,41 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteCertificateRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCloudWafPostPaidResourceRequest, DeleteCloudWafPostPaidResourceResponse> deleteCloudWafPostPaidResource =
+        genFordeleteCloudWafPostPaidResource();
+
+    private static HttpRequestDef<DeleteCloudWafPostPaidResourceRequest, DeleteCloudWafPostPaidResourceResponse> genFordeleteCloudWafPostPaidResource() {
+        // basic
+        HttpRequestDef.Builder<DeleteCloudWafPostPaidResourceRequest, DeleteCloudWafPostPaidResourceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteCloudWafPostPaidResourceRequest.class,
+                    DeleteCloudWafPostPaidResourceResponse.class)
+                .withName("DeleteCloudWafPostPaidResource")
+                .withUri("/v1/{project_id}/waf/postpaid")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCloudWafPostPaidResourceRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("region",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCloudWafPostPaidResourceRequest::getRegion, (req, v) -> {
+                req.setRegion(v);
             }));
 
         // response

@@ -241,6 +241,82 @@ public class IesMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRacksRequest, ListRacksResponse> listRacks = genForlistRacks();
+
+    private static HttpRequestDef<ListRacksRequest, ListRacksResponse> genForlistRacks() {
+        // basic
+        HttpRequestDef.Builder<ListRacksRequest, ListRacksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRacksRequest.class, ListRacksResponse.class)
+                .withName("ListRacks")
+                .withUri("/v1/{domain_id}/racks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRacksRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRacksRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<List<String>>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRacksRequest::getSortKey, (req, v) -> {
+                req.setSortKey(v);
+            }));
+        builder.<List<String>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRacksRequest::getSortDir, (req, v) -> {
+                req.setSortDir(v);
+            }));
+        builder.<String>withRequestField("edge_site_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRacksRequest::getEdgeSiteId, (req, v) -> {
+                req.setEdgeSiteId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRackRequest, ShowRackResponse> showRack = genForshowRack();
+
+    private static HttpRequestDef<ShowRackRequest, ShowRackResponse> genForshowRack() {
+        // basic
+        HttpRequestDef.Builder<ShowRackRequest, ShowRackResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRackRequest.class, ShowRackResponse.class)
+                .withName("ShowRack")
+                .withUri("/v1/{domain_id}/racks/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRackRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSupportedRegionsRequest, ListSupportedRegionsResponse> listSupportedRegions =
         genForlistSupportedRegions();
 
@@ -287,6 +363,84 @@ public class IesMeta {
             TypeCasts.uncheckedConversion(ListSupportedRegionsRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListSupportedRegionsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListStoragePoolsRequest, ListStoragePoolsResponse> listStoragePools =
+        genForlistStoragePools();
+
+    private static HttpRequestDef<ListStoragePoolsRequest, ListStoragePoolsResponse> genForlistStoragePools() {
+        // basic
+        HttpRequestDef.Builder<ListStoragePoolsRequest, ListStoragePoolsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListStoragePoolsRequest.class, ListStoragePoolsResponse.class)
+                .withName("ListStoragePools")
+                .withUri("/v1/{domain_id}/storage-pools")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListStoragePoolsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStoragePoolsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<List<String>>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListStoragePoolsRequest::getSortKey, (req, v) -> {
+                req.setSortKey(v);
+            }));
+        builder.<List<String>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListStoragePoolsRequest::getSortDir, (req, v) -> {
+                req.setSortDir(v);
+            }));
+        builder.<String>withRequestField("edge_site_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStoragePoolsRequest::getEdgeSiteId, (req, v) -> {
+                req.setEdgeSiteId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowStoragePoolRequest, ShowStoragePoolResponse> showStoragePool =
+        genForshowStoragePool();
+
+    private static HttpRequestDef<ShowStoragePoolRequest, ShowStoragePoolResponse> genForshowStoragePool() {
+        // basic
+        HttpRequestDef.Builder<ShowStoragePoolRequest, ShowStoragePoolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowStoragePoolRequest.class, ShowStoragePoolResponse.class)
+                .withName("ShowStoragePool")
+                .withUri("/v1/{domain_id}/storage-pools/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStoragePoolRequest::getId, (req, v) -> {
+                req.setId(v);
             }));
 
         // response

@@ -44,37 +44,6 @@ public class ImageMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateImageToVideoTaskRequest, CreateImageToVideoTaskResponse> createImageToVideoTask =
-        genForcreateImageToVideoTask();
-
-    private static HttpRequestDef<CreateImageToVideoTaskRequest, CreateImageToVideoTaskResponse> genForcreateImageToVideoTask() {
-        // basic
-        HttpRequestDef.Builder<CreateImageToVideoTaskRequest, CreateImageToVideoTaskResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreateImageToVideoTaskRequest.class, CreateImageToVideoTaskResponse.class)
-            .withName("CreateImageToVideoTask")
-            .withUri("/v2/{project_id}/image/image-to-video/tasks")
-            .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<ImageToVideoRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ImageToVideoRequestBody.class),
-            f -> f.withMarshaller(CreateImageToVideoTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateImageToVideoTaskResponse::getXRequestId,
-                CreateImageToVideoTaskResponse::setXRequestId));
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateImageTranslateTaskRequest, CreateImageTranslateTaskResponse> createImageTranslateTask =
         genForcreateImageTranslateTask();
 
@@ -88,10 +57,10 @@ public class ImageMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.<ImageTranslateRequestBody>withRequestField("body",
+        builder.<CreateImageTranslateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ImageTranslateRequestBody.class),
+            TypeCasts.uncheckedConversion(CreateImageTranslateRequestBody.class),
             f -> f.withMarshaller(CreateImageTranslateTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -122,10 +91,10 @@ public class ImageMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.<VideoCoverAnalysisCreateTaskRequestBody>withRequestField("body",
+        builder.<CreateVideoCoverAnalysisTaskRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(VideoCoverAnalysisCreateTaskRequestBody.class),
+            TypeCasts.uncheckedConversion(CreateVideoCoverAnalysisTaskRequestBody.class),
             f -> f.withMarshaller(CreateVideoCoverAnalysisTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -138,37 +107,6 @@ public class ImageMeta {
             String.class,
             f -> f.withMarshaller(CreateVideoCoverAnalysisTaskResponse::getXRequestId,
                 CreateVideoCoverAnalysisTaskResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateVideoCuttingTaskRequest, CreateVideoCuttingTaskResponse> createVideoCuttingTask =
-        genForcreateVideoCuttingTask();
-
-    private static HttpRequestDef<CreateVideoCuttingTaskRequest, CreateVideoCuttingTaskResponse> genForcreateVideoCuttingTask() {
-        // basic
-        HttpRequestDef.Builder<CreateVideoCuttingTaskRequest, CreateVideoCuttingTaskResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreateVideoCuttingTaskRequest.class, CreateVideoCuttingTaskResponse.class)
-            .withName("CreateVideoCuttingTask")
-            .withUri("/v2/{project_id}/image/video-cutting/tasks")
-            .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<VideoCuttingRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(VideoCuttingRequestBody.class),
-            f -> f.withMarshaller(CreateVideoCuttingTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateVideoCuttingTaskResponse::getXRequestId,
-                CreateVideoCuttingTaskResponse::setXRequestId));
         return builder.build();
     }
 
@@ -241,48 +179,16 @@ public class ImageMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.<VideoSummarizationCreateTaskRequestBody>withRequestField("body",
+        builder.<CreateVideoSummarizationTaskRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(VideoSummarizationCreateTaskRequestBody.class),
+            TypeCasts.uncheckedConversion(CreateVideoSummarizationTaskRequestBody.class),
             f -> f.withMarshaller(CreateVideoSummarizationAnalysisTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
         // response
 
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateVideoSynthesisTaskRequest, CreateVideoSynthesisTaskResponse> createVideoSynthesisTask =
-        genForcreateVideoSynthesisTask();
-
-    private static HttpRequestDef<CreateVideoSynthesisTaskRequest, CreateVideoSynthesisTaskResponse> genForcreateVideoSynthesisTask() {
-        // basic
-        HttpRequestDef.Builder<CreateVideoSynthesisTaskRequest, CreateVideoSynthesisTaskResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST, CreateVideoSynthesisTaskRequest.class, CreateVideoSynthesisTaskResponse.class)
-                .withName("CreateVideoSynthesisTask")
-                .withUri("/v2/{project_id}/image/video-synthesis/tasks")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<VideoSynthesisRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(VideoSynthesisRequestBody.class),
-            f -> f.withMarshaller(CreateVideoSynthesisTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateVideoSynthesisTaskResponse::getXRequestId,
-                CreateVideoSynthesisTaskResponse::setXRequestId));
         return builder.build();
     }
 
@@ -299,10 +205,10 @@ public class ImageMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.<VideoTranslateRequestBody>withRequestField("body",
+        builder.<CreateVideoTranslateTaskRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(VideoTranslateRequestBody.class),
+            TypeCasts.uncheckedConversion(CreateVideoTranslateTaskRequestBody.class),
             f -> f.withMarshaller(CreateVideoTranslateTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -514,59 +420,6 @@ public class ImageMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunImageWisedesignCropRequest, RunImageWisedesignCropResponse> runImageWisedesignCrop =
-        genForrunImageWisedesignCrop();
-
-    private static HttpRequestDef<RunImageWisedesignCropRequest, RunImageWisedesignCropResponse> genForrunImageWisedesignCrop() {
-        // basic
-        HttpRequestDef.Builder<RunImageWisedesignCropRequest, RunImageWisedesignCropResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, RunImageWisedesignCropRequest.class, RunImageWisedesignCropResponse.class)
-            .withName("RunImageWisedesignCrop")
-            .withUri("/v2/{project_id}/image/image-wisedesign-crop")
-            .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<ImageWisedesignCropReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ImageWisedesignCropReq.class),
-            f -> f.withMarshaller(RunImageWisedesignCropRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<RunImageWisedesignInpaintingRequest, RunImageWisedesignInpaintingResponse> runImageWisedesignInpainting =
-        genForrunImageWisedesignInpainting();
-
-    private static HttpRequestDef<RunImageWisedesignInpaintingRequest, RunImageWisedesignInpaintingResponse> genForrunImageWisedesignInpainting() {
-        // basic
-        HttpRequestDef.Builder<RunImageWisedesignInpaintingRequest, RunImageWisedesignInpaintingResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    RunImageWisedesignInpaintingRequest.class,
-                    RunImageWisedesignInpaintingResponse.class)
-                .withName("RunImageWisedesignInpainting")
-                .withUri("/v2/{project_id}/image/image-wisedesign-inpainting")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<ImageWisedesignInpaintingReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ImageWisedesignInpaintingReq.class),
-            f -> f.withMarshaller(RunImageWisedesignInpaintingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<RunQueryCustomTagsRequest, RunQueryCustomTagsResponse> runQueryCustomTags =
         genForrunQueryCustomTags();
 
@@ -644,37 +497,6 @@ public class ImageMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowImageToVideoTaskRequest, ShowImageToVideoTaskResponse> showImageToVideoTask =
-        genForshowImageToVideoTask();
-
-    private static HttpRequestDef<ShowImageToVideoTaskRequest, ShowImageToVideoTaskResponse> genForshowImageToVideoTask() {
-        // basic
-        HttpRequestDef.Builder<ShowImageToVideoTaskRequest, ShowImageToVideoTaskResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowImageToVideoTaskRequest.class, ShowImageToVideoTaskResponse.class)
-            .withName("ShowImageToVideoTask")
-            .withUri("/v2/{project_id}/image/image-to-video/tasks/{task_id}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("task_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowImageToVideoTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowImageToVideoTaskResponse::getXRequestId,
-                ShowImageToVideoTaskResponse::setXRequestId));
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowImageTranslateTaskRequest, ShowImageTranslateTaskResponse> showImageTranslateTask =
         genForshowImageTranslateTask();
 
@@ -737,37 +559,6 @@ public class ImageMeta {
             String.class,
             f -> f.withMarshaller(ShowVideoCoverAnalysisTaskResponse::getXRequestId,
                 ShowVideoCoverAnalysisTaskResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowVideoCuttingTaskRequest, ShowVideoCuttingTaskResponse> showVideoCuttingTask =
-        genForshowVideoCuttingTask();
-
-    private static HttpRequestDef<ShowVideoCuttingTaskRequest, ShowVideoCuttingTaskResponse> genForshowVideoCuttingTask() {
-        // basic
-        HttpRequestDef.Builder<ShowVideoCuttingTaskRequest, ShowVideoCuttingTaskResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowVideoCuttingTaskRequest.class, ShowVideoCuttingTaskResponse.class)
-            .withName("ShowVideoCuttingTask")
-            .withUri("/v2/{project_id}/image/video-cutting/tasks/{task_id}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("task_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVideoCuttingTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowVideoCuttingTaskResponse::getXRequestId,
-                ShowVideoCuttingTaskResponse::setXRequestId));
         return builder.build();
     }
 
@@ -867,37 +658,6 @@ public class ImageMeta {
             String.class,
             f -> f.withMarshaller(ShowVideoSummarizationAnalysisTaskResponse::getXRequestId,
                 ShowVideoSummarizationAnalysisTaskResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowVideoSynthesisTaskRequest, ShowVideoSynthesisTaskResponse> showVideoSynthesisTask =
-        genForshowVideoSynthesisTask();
-
-    private static HttpRequestDef<ShowVideoSynthesisTaskRequest, ShowVideoSynthesisTaskResponse> genForshowVideoSynthesisTask() {
-        // basic
-        HttpRequestDef.Builder<ShowVideoSynthesisTaskRequest, ShowVideoSynthesisTaskResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowVideoSynthesisTaskRequest.class, ShowVideoSynthesisTaskResponse.class)
-            .withName("ShowVideoSynthesisTask")
-            .withUri("/v2/{project_id}/image/video-synthesis/tasks/{task_id}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("task_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVideoSynthesisTaskRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowVideoSynthesisTaskResponse::getXRequestId,
-                ShowVideoSynthesisTaskResponse::setXRequestId));
         return builder.build();
     }
 

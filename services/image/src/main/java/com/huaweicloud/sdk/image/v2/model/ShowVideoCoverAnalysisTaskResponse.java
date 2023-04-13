@@ -123,7 +123,7 @@ public class ShowVideoCoverAnalysisTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
-    private TaskInput input;
+    private VideoCoverAnalysisTaskInput input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
@@ -213,14 +213,14 @@ public class ShowVideoCoverAnalysisTaskResponse extends SdkResponse {
         this.state = state;
     }
 
-    public ShowVideoCoverAnalysisTaskResponse withInput(TaskInput input) {
+    public ShowVideoCoverAnalysisTaskResponse withInput(VideoCoverAnalysisTaskInput input) {
         this.input = input;
         return this;
     }
 
-    public ShowVideoCoverAnalysisTaskResponse withInput(Consumer<TaskInput> inputSetter) {
+    public ShowVideoCoverAnalysisTaskResponse withInput(Consumer<VideoCoverAnalysisTaskInput> inputSetter) {
         if (this.input == null) {
-            this.input = new TaskInput();
+            this.input = new VideoCoverAnalysisTaskInput();
             inputSetter.accept(this.input);
         }
 
@@ -231,11 +231,11 @@ public class ShowVideoCoverAnalysisTaskResponse extends SdkResponse {
      * Get input
      * @return input
      */
-    public TaskInput getInput() {
+    public VideoCoverAnalysisTaskInput getInput() {
         return input;
     }
 
-    public void setInput(TaskInput input) {
+    public void setInput(VideoCoverAnalysisTaskInput input) {
         this.input = input;
     }
 

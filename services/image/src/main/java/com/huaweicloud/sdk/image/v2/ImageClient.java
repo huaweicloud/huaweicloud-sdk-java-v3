@@ -18,9 +18,9 @@ public class ImageClient {
     }
 
     /**
-     * 创建任务
+     * 创建图像高清抠图任务
      *
-     * Create Task
+     * 创建图像高清抠图任务，将输入的高清图像中的商品主体从原图中扣取出来，输出商品主体图片或者蒙版。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -33,9 +33,9 @@ public class ImageClient {
     }
 
     /**
-     * 创建任务
+     * 创建图像高清抠图任务
      *
-     * Create Task
+     * 创建图像高清抠图任务，将输入的高清图像中的商品主体从原图中扣取出来，输出商品主体图片或者蒙版。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -46,36 +46,6 @@ public class ImageClient {
         CreateImageHighresolutionMattingTaskRequest request) {
         return new SyncInvoker<CreateImageHighresolutionMattingTaskRequest, CreateImageHighresolutionMattingTaskResponse>(
             request, ImageMeta.createImageHighresolutionMattingTask, hcClient);
-    }
-
-    /**
-     * 创建任务
-     *
-     * Create Task
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateImageToVideoTaskRequest 请求对象
-     * @return CreateImageToVideoTaskResponse
-     */
-    public CreateImageToVideoTaskResponse createImageToVideoTask(CreateImageToVideoTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.createImageToVideoTask);
-    }
-
-    /**
-     * 创建任务
-     *
-     * Create Task
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateImageToVideoTaskRequest 请求对象
-     * @return SyncInvoker<CreateImageToVideoTaskRequest, CreateImageToVideoTaskResponse>
-     */
-    public SyncInvoker<CreateImageToVideoTaskRequest, CreateImageToVideoTaskResponse> createImageToVideoTaskInvoker(
-        CreateImageToVideoTaskRequest request) {
-        return new SyncInvoker<CreateImageToVideoTaskRequest, CreateImageToVideoTaskResponse>(request,
-            ImageMeta.createImageToVideoTask, hcClient);
     }
 
     /**
@@ -140,39 +110,9 @@ public class ImageClient {
     }
 
     /**
-     * 创建任务
+     * 创建视频脱敏任务
      *
-     * Create Task
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateVideoCuttingTaskRequest 请求对象
-     * @return CreateVideoCuttingTaskResponse
-     */
-    public CreateVideoCuttingTaskResponse createVideoCuttingTask(CreateVideoCuttingTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.createVideoCuttingTask);
-    }
-
-    /**
-     * 创建任务
-     *
-     * Create Task
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateVideoCuttingTaskRequest 请求对象
-     * @return SyncInvoker<CreateVideoCuttingTaskRequest, CreateVideoCuttingTaskResponse>
-     */
-    public SyncInvoker<CreateVideoCuttingTaskRequest, CreateVideoCuttingTaskResponse> createVideoCuttingTaskInvoker(
-        CreateVideoCuttingTaskRequest request) {
-        return new SyncInvoker<CreateVideoCuttingTaskRequest, CreateVideoCuttingTaskResponse>(request,
-            ImageMeta.createVideoCuttingTask, hcClient);
-    }
-
-    /**
-     * 创建司乘敏感擦除任务
-     *
-     * Create Task
+     * 创建视频脱敏除任务，将输入视频的图像敏感信息模糊化，包括视频中的人脸和车牌
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -185,9 +125,9 @@ public class ImageClient {
     }
 
     /**
-     * 创建司乘敏感擦除任务
+     * 创建视频脱敏任务
      *
-     * Create Task
+     * 创建视频脱敏除任务，将输入视频的图像敏感信息模糊化，包括视频中的人脸和车牌
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -259,36 +199,6 @@ public class ImageClient {
         CreateVideoSummarizationAnalysisTaskRequest request) {
         return new SyncInvoker<CreateVideoSummarizationAnalysisTaskRequest, CreateVideoSummarizationAnalysisTaskResponse>(
             request, ImageMeta.createVideoSummarizationAnalysisTask, hcClient);
-    }
-
-    /**
-     * 创建任务
-     *
-     * Create Task
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateVideoSynthesisTaskRequest 请求对象
-     * @return CreateVideoSynthesisTaskResponse
-     */
-    public CreateVideoSynthesisTaskResponse createVideoSynthesisTask(CreateVideoSynthesisTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.createVideoSynthesisTask);
-    }
-
-    /**
-     * 创建任务
-     *
-     * Create Task
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateVideoSynthesisTaskRequest 请求对象
-     * @return SyncInvoker<CreateVideoSynthesisTaskRequest, CreateVideoSynthesisTaskResponse>
-     */
-    public SyncInvoker<CreateVideoSynthesisTaskRequest, CreateVideoSynthesisTaskResponse> createVideoSynthesisTaskInvoker(
-        CreateVideoSynthesisTaskRequest request) {
-        return new SyncInvoker<CreateVideoSynthesisTaskRequest, CreateVideoSynthesisTaskResponse>(request,
-            ImageMeta.createVideoSynthesisTask, hcClient);
     }
 
     /**
@@ -562,67 +472,6 @@ public class ImageClient {
     }
 
     /**
-     * 智能设计图像裁剪
-     *
-     * 智能设计图像裁剪服务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunImageWisedesignCropRequest 请求对象
-     * @return RunImageWisedesignCropResponse
-     */
-    public RunImageWisedesignCropResponse runImageWisedesignCrop(RunImageWisedesignCropRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.runImageWisedesignCrop);
-    }
-
-    /**
-     * 智能设计图像裁剪
-     *
-     * 智能设计图像裁剪服务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunImageWisedesignCropRequest 请求对象
-     * @return SyncInvoker<RunImageWisedesignCropRequest, RunImageWisedesignCropResponse>
-     */
-    public SyncInvoker<RunImageWisedesignCropRequest, RunImageWisedesignCropResponse> runImageWisedesignCropInvoker(
-        RunImageWisedesignCropRequest request) {
-        return new SyncInvoker<RunImageWisedesignCropRequest, RunImageWisedesignCropResponse>(request,
-            ImageMeta.runImageWisedesignCrop, hcClient);
-    }
-
-    /**
-     * 智能设计图像修复
-     *
-     * 智能设计图像修复服务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunImageWisedesignInpaintingRequest 请求对象
-     * @return RunImageWisedesignInpaintingResponse
-     */
-    public RunImageWisedesignInpaintingResponse runImageWisedesignInpainting(
-        RunImageWisedesignInpaintingRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.runImageWisedesignInpainting);
-    }
-
-    /**
-     * 智能设计图像修复
-     *
-     * 智能设计图像修复服务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunImageWisedesignInpaintingRequest 请求对象
-     * @return SyncInvoker<RunImageWisedesignInpaintingRequest, RunImageWisedesignInpaintingResponse>
-     */
-    public SyncInvoker<RunImageWisedesignInpaintingRequest, RunImageWisedesignInpaintingResponse> runImageWisedesignInpaintingInvoker(
-        RunImageWisedesignInpaintingRequest request) {
-        return new SyncInvoker<RunImageWisedesignInpaintingRequest, RunImageWisedesignInpaintingResponse>(request,
-            ImageMeta.runImageWisedesignInpainting, hcClient);
-    }
-
-    /**
      * 查询媒资图像标签
      *
      * 用于用户自查是否存在自定义的标签。
@@ -683,9 +532,9 @@ public class ImageClient {
     }
 
     /**
-     * 查询任务
+     * 查询图像高清抠图任务
      *
-     * show task
+     * 查询图像高清抠图任务，返回参数配置以及任务状态信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -698,9 +547,9 @@ public class ImageClient {
     }
 
     /**
-     * 查询任务
+     * 查询图像高清抠图任务
      *
-     * show task
+     * 查询图像高清抠图任务，返回参数配置以及任务状态信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -711,36 +560,6 @@ public class ImageClient {
         ShowImageHighresolutionMattingTaskRequest request) {
         return new SyncInvoker<ShowImageHighresolutionMattingTaskRequest, ShowImageHighresolutionMattingTaskResponse>(
             request, ImageMeta.showImageHighresolutionMattingTask, hcClient);
-    }
-
-    /**
-     * 查询任务
-     *
-     * show task
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowImageToVideoTaskRequest 请求对象
-     * @return ShowImageToVideoTaskResponse
-     */
-    public ShowImageToVideoTaskResponse showImageToVideoTask(ShowImageToVideoTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.showImageToVideoTask);
-    }
-
-    /**
-     * 查询任务
-     *
-     * show task
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowImageToVideoTaskRequest 请求对象
-     * @return SyncInvoker<ShowImageToVideoTaskRequest, ShowImageToVideoTaskResponse>
-     */
-    public SyncInvoker<ShowImageToVideoTaskRequest, ShowImageToVideoTaskResponse> showImageToVideoTaskInvoker(
-        ShowImageToVideoTaskRequest request) {
-        return new SyncInvoker<ShowImageToVideoTaskRequest, ShowImageToVideoTaskResponse>(request,
-            ImageMeta.showImageToVideoTask, hcClient);
     }
 
     /**
@@ -804,37 +623,7 @@ public class ImageClient {
     }
 
     /**
-     * 查询任务
-     *
-     * show task
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowVideoCuttingTaskRequest 请求对象
-     * @return ShowVideoCuttingTaskResponse
-     */
-    public ShowVideoCuttingTaskResponse showVideoCuttingTask(ShowVideoCuttingTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.showVideoCuttingTask);
-    }
-
-    /**
-     * 查询任务
-     *
-     * show task
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowVideoCuttingTaskRequest 请求对象
-     * @return SyncInvoker<ShowVideoCuttingTaskRequest, ShowVideoCuttingTaskResponse>
-     */
-    public SyncInvoker<ShowVideoCuttingTaskRequest, ShowVideoCuttingTaskResponse> showVideoCuttingTaskInvoker(
-        ShowVideoCuttingTaskRequest request) {
-        return new SyncInvoker<ShowVideoCuttingTaskRequest, ShowVideoCuttingTaskResponse>(request,
-            ImageMeta.showVideoCuttingTask, hcClient);
-    }
-
-    /**
-     * show task 查询任务信息
+     * 查询视频脱敏任务详情
      *
      * show task
      * 
@@ -848,7 +637,7 @@ public class ImageClient {
     }
 
     /**
-     * show task 查询任务信息
+     * 查询视频脱敏任务详情
      *
      * show task
      * 
@@ -922,36 +711,6 @@ public class ImageClient {
         ShowVideoSummarizationAnalysisTaskRequest request) {
         return new SyncInvoker<ShowVideoSummarizationAnalysisTaskRequest, ShowVideoSummarizationAnalysisTaskResponse>(
             request, ImageMeta.showVideoSummarizationAnalysisTask, hcClient);
-    }
-
-    /**
-     * 查询任务
-     *
-     * show task
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowVideoSynthesisTaskRequest 请求对象
-     * @return ShowVideoSynthesisTaskResponse
-     */
-    public ShowVideoSynthesisTaskResponse showVideoSynthesisTask(ShowVideoSynthesisTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.showVideoSynthesisTask);
-    }
-
-    /**
-     * 查询任务
-     *
-     * show task
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowVideoSynthesisTaskRequest 请求对象
-     * @return SyncInvoker<ShowVideoSynthesisTaskRequest, ShowVideoSynthesisTaskResponse>
-     */
-    public SyncInvoker<ShowVideoSynthesisTaskRequest, ShowVideoSynthesisTaskResponse> showVideoSynthesisTaskInvoker(
-        ShowVideoSynthesisTaskRequest request) {
-        return new SyncInvoker<ShowVideoSynthesisTaskRequest, ShowVideoSynthesisTaskResponse>(request,
-            ImageMeta.showVideoSynthesisTask, hcClient);
     }
 
     /**

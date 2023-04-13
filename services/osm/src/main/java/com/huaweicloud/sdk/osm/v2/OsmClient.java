@@ -1404,6 +1404,36 @@ public class OsmClient {
     }
 
     /**
+     * 获取资源信息
+     *
+     * 获取资源信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDiagnoseResourcesRequest 请求对象
+     * @return ListDiagnoseResourcesResponse
+     */
+    public ListDiagnoseResourcesResponse listDiagnoseResources(ListDiagnoseResourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.listDiagnoseResources);
+    }
+
+    /**
+     * 获取资源信息
+     *
+     * 获取资源信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDiagnoseResourcesRequest 请求对象
+     * @return SyncInvoker<ListDiagnoseResourcesRequest, ListDiagnoseResourcesResponse>
+     */
+    public SyncInvoker<ListDiagnoseResourcesRequest, ListDiagnoseResourcesResponse> listDiagnoseResourcesInvoker(
+        ListDiagnoseResourcesRequest request) {
+        return new SyncInvoker<ListDiagnoseResourcesRequest, ListDiagnoseResourcesResponse>(request,
+            OsmMeta.listDiagnoseResources, hcClient);
+    }
+
+    /**
      * 查询附加参数
      *
      * 提单时，根据不同的产品或者问题类型，会存在不同的一些附加参数填写
@@ -1695,6 +1725,36 @@ public class OsmClient {
      */
     public SyncInvoker<ListNoticesRequest, ListNoticesResponse> listNoticesInvoker(ListNoticesRequest request) {
         return new SyncInvoker<ListNoticesRequest, ListNoticesResponse>(request, OsmMeta.listNotices, hcClient);
+    }
+
+    /**
+     * 工单列表
+     *
+     * 工单列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOrderIncidentRequest 请求对象
+     * @return ListOrderIncidentResponse
+     */
+    public ListOrderIncidentResponse listOrderIncident(ListOrderIncidentRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.listOrderIncident);
+    }
+
+    /**
+     * 工单列表
+     *
+     * 工单列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOrderIncidentRequest 请求对象
+     * @return SyncInvoker<ListOrderIncidentRequest, ListOrderIncidentResponse>
+     */
+    public SyncInvoker<ListOrderIncidentRequest, ListOrderIncidentResponse> listOrderIncidentInvoker(
+        ListOrderIncidentRequest request) {
+        return new SyncInvoker<ListOrderIncidentRequest, ListOrderIncidentResponse>(request, OsmMeta.listOrderIncident,
+            hcClient);
     }
 
     /**

@@ -240,6 +240,37 @@ public class WafAsyncClient {
     }
 
     /**
+     * 开通云模式按需计费接口
+     *
+     * 开通云模式按需计费接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCloudWafPostPaidResourceRequest 请求对象
+     * @return CompletableFuture<CreateCloudWafPostPaidResourceResponse>
+     */
+    public CompletableFuture<CreateCloudWafPostPaidResourceResponse> createCloudWafPostPaidResourceAsync(
+        CreateCloudWafPostPaidResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createCloudWafPostPaidResource);
+    }
+
+    /**
+     * 开通云模式按需计费接口
+     *
+     * 开通云模式按需计费接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCloudWafPostPaidResourceRequest 请求对象
+     * @return AsyncInvoker<CreateCloudWafPostPaidResourceRequest, CreateCloudWafPostPaidResourceResponse>
+     */
+    public AsyncInvoker<CreateCloudWafPostPaidResourceRequest, CreateCloudWafPostPaidResourceResponse> createCloudWafPostPaidResourceAsyncInvoker(
+        CreateCloudWafPostPaidResourceRequest request) {
+        return new AsyncInvoker<CreateCloudWafPostPaidResourceRequest, CreateCloudWafPostPaidResourceResponse>(request,
+            WafMeta.createCloudWafPostPaidResource, hcClient);
+    }
+
+    /**
      * 创建精准防护规则
      *
      * 创建精准防护规则
@@ -778,6 +809,37 @@ public class WafAsyncClient {
         DeleteCertificateRequest request) {
         return new AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>(request, WafMeta.deleteCertificate,
             hcClient);
+    }
+
+    /**
+     * 关闭云模式按需计费接口
+     *
+     * 关闭云模式按需计费接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCloudWafPostPaidResourceRequest 请求对象
+     * @return CompletableFuture<DeleteCloudWafPostPaidResourceResponse>
+     */
+    public CompletableFuture<DeleteCloudWafPostPaidResourceResponse> deleteCloudWafPostPaidResourceAsync(
+        DeleteCloudWafPostPaidResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deleteCloudWafPostPaidResource);
+    }
+
+    /**
+     * 关闭云模式按需计费接口
+     *
+     * 关闭云模式按需计费接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCloudWafPostPaidResourceRequest 请求对象
+     * @return AsyncInvoker<DeleteCloudWafPostPaidResourceRequest, DeleteCloudWafPostPaidResourceResponse>
+     */
+    public AsyncInvoker<DeleteCloudWafPostPaidResourceRequest, DeleteCloudWafPostPaidResourceResponse> deleteCloudWafPostPaidResourceAsyncInvoker(
+        DeleteCloudWafPostPaidResourceRequest request) {
+        return new AsyncInvoker<DeleteCloudWafPostPaidResourceRequest, DeleteCloudWafPostPaidResourceResponse>(request,
+            WafMeta.deleteCloudWafPostPaidResource, hcClient);
     }
 
     /**
@@ -1700,9 +1762,9 @@ public class WafAsyncClient {
     }
 
     /**
-     * 查询隐私屏蔽防护规则
+     * 查询隐私屏蔽防护规则列表
      *
-     * 查询隐私屏蔽防护规则
+     * 查询隐私屏蔽防护规则列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1714,9 +1776,9 @@ public class WafAsyncClient {
     }
 
     /**
-     * 查询隐私屏蔽防护规则
+     * 查询隐私屏蔽防护规则列表
      *
-     * 查询隐私屏蔽防护规则
+     * 查询隐私屏蔽防护规则列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

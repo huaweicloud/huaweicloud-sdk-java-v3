@@ -78,6 +78,11 @@ public class CustomRule {
 
     private Integer producer;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
     public CustomRule withId(String id) {
         this.id = id;
         return this;
@@ -324,6 +329,23 @@ public class CustomRule {
         this.producer = producer;
     }
 
+    public CustomRule withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 规则名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -340,7 +362,7 @@ public class CustomRule {
             && Objects.equals(this.priority, customRule.priority)
             && Objects.equals(this.timestamp, customRule.timestamp) && Objects.equals(this.time, customRule.time)
             && Objects.equals(this.start, customRule.start) && Objects.equals(this.terminal, customRule.terminal)
-            && Objects.equals(this.producer, customRule.producer);
+            && Objects.equals(this.producer, customRule.producer) && Objects.equals(this.name, customRule.name);
     }
 
     @Override
@@ -357,7 +379,8 @@ public class CustomRule {
             time,
             start,
             terminal,
-            producer);
+            producer,
+            name);
     }
 
     @Override
@@ -377,6 +400,7 @@ public class CustomRule {
         sb.append("    start: ").append(toIndentedString(start)).append("\n");
         sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
         sb.append("    producer: ").append(toIndentedString(producer)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

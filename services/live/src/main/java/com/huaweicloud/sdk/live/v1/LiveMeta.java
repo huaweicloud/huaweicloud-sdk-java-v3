@@ -144,6 +144,31 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateSnapshotConfigRequest, CreateSnapshotConfigResponse> createSnapshotConfig =
+        genForcreateSnapshotConfig();
+
+    private static HttpRequestDef<CreateSnapshotConfigRequest, CreateSnapshotConfigResponse> genForcreateSnapshotConfig() {
+        // basic
+        HttpRequestDef.Builder<CreateSnapshotConfigRequest, CreateSnapshotConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateSnapshotConfigRequest.class, CreateSnapshotConfigResponse.class)
+            .withName("CreateSnapshotConfig")
+            .withUri("/v1/{project_id}/stream/snapshot")
+            .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<LiveSnapshotConfig>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LiveSnapshotConfig.class),
+            f -> f.withMarshaller(CreateSnapshotConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateStreamForbiddenRequest, CreateStreamForbiddenResponse> createStreamForbidden =
         genForcreateStreamForbidden();
 
@@ -213,6 +238,31 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDomainRequest::getDomain, (req, v) -> {
+                req.setDomain(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDomainKeyChainRequest, DeleteDomainKeyChainResponse> deleteDomainKeyChain =
+        genFordeleteDomainKeyChain();
+
+    private static HttpRequestDef<DeleteDomainKeyChainRequest, DeleteDomainKeyChainResponse> genFordeleteDomainKeyChain() {
+        // basic
+        HttpRequestDef.Builder<DeleteDomainKeyChainRequest, DeleteDomainKeyChainResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDomainKeyChainRequest.class, DeleteDomainKeyChainResponse.class)
+            .withName("DeleteDomainKeyChain")
+            .withUri("/v1/{project_id}/guard/key-chain")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDomainKeyChainRequest::getDomain, (req, v) -> {
                 req.setDomain(v);
             }));
 
@@ -299,6 +349,38 @@ public class LiveMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteRecordRuleRequest::getId, (req, v) -> {
                 req.setId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSnapshotConfigRequest, DeleteSnapshotConfigResponse> deleteSnapshotConfig =
+        genFordeleteSnapshotConfig();
+
+    private static HttpRequestDef<DeleteSnapshotConfigRequest, DeleteSnapshotConfigResponse> genFordeleteSnapshotConfig() {
+        // basic
+        HttpRequestDef.Builder<DeleteSnapshotConfigRequest, DeleteSnapshotConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteSnapshotConfigRequest.class, DeleteSnapshotConfigResponse.class)
+            .withName("DeleteSnapshotConfig")
+            .withUri("/v1/{project_id}/stream/snapshot")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSnapshotConfigRequest::getDomain, (req, v) -> {
+                req.setDomain(v);
+            }));
+        builder.<String>withRequestField("app_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSnapshotConfigRequest::getAppName, (req, v) -> {
+                req.setAppName(v);
             }));
 
         // response
@@ -661,6 +743,52 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSnapshotConfigsRequest, ListSnapshotConfigsResponse> listSnapshotConfigs =
+        genForlistSnapshotConfigs();
+
+    private static HttpRequestDef<ListSnapshotConfigsRequest, ListSnapshotConfigsResponse> genForlistSnapshotConfigs() {
+        // basic
+        HttpRequestDef.Builder<ListSnapshotConfigsRequest, ListSnapshotConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSnapshotConfigsRequest.class, ListSnapshotConfigsResponse.class)
+                .withName("ListSnapshotConfigs")
+                .withUri("/v1/{project_id}/stream/snapshot")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotConfigsRequest::getDomain, (req, v) -> {
+                req.setDomain(v);
+            }));
+        builder.<String>withRequestField("app_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotConfigsRequest::getAppName, (req, v) -> {
+                req.setAppName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSnapshotConfigsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSnapshotConfigsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListStreamForbiddenRequest, ListStreamForbiddenResponse> listStreamForbidden =
         genForlistStreamForbidden();
 
@@ -774,6 +902,31 @@ public class LiveMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDomainRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainKeyChainRequest, ShowDomainKeyChainResponse> showDomainKeyChain =
+        genForshowDomainKeyChain();
+
+    private static HttpRequestDef<ShowDomainKeyChainRequest, ShowDomainKeyChainResponse> genForshowDomainKeyChain() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainKeyChainRequest, ShowDomainKeyChainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainKeyChainRequest.class, ShowDomainKeyChainResponse.class)
+                .withName("ShowDomainKeyChain")
+                .withUri("/v1/{project_id}/guard/key-chain")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainKeyChainRequest::getDomain, (req, v) -> {
+                req.setDomain(v);
             }));
 
         // response
@@ -928,6 +1081,38 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateDomainKeyChainRequest, UpdateDomainKeyChainResponse> updateDomainKeyChain =
+        genForupdateDomainKeyChain();
+
+    private static HttpRequestDef<UpdateDomainKeyChainRequest, UpdateDomainKeyChainResponse> genForupdateDomainKeyChain() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainKeyChainRequest, UpdateDomainKeyChainResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateDomainKeyChainRequest.class, UpdateDomainKeyChainResponse.class)
+            .withName("UpdateDomainKeyChain")
+            .withUri("/v1/{project_id}/guard/key-chain")
+            .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDomainKeyChainRequest::getDomain, (req, v) -> {
+                req.setDomain(v);
+            }));
+        builder.<KeyChainInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(KeyChainInfo.class),
+            f -> f.withMarshaller(UpdateDomainKeyChainRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateRecordCallbackConfigRequest, UpdateRecordCallbackConfigResponse> updateRecordCallbackConfig =
         genForupdateRecordCallbackConfig();
 
@@ -995,6 +1180,31 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateSnapshotConfigRequest, UpdateSnapshotConfigResponse> updateSnapshotConfig =
+        genForupdateSnapshotConfig();
+
+    private static HttpRequestDef<UpdateSnapshotConfigRequest, UpdateSnapshotConfigResponse> genForupdateSnapshotConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateSnapshotConfigRequest, UpdateSnapshotConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateSnapshotConfigRequest.class, UpdateSnapshotConfigResponse.class)
+            .withName("UpdateSnapshotConfig")
+            .withUri("/v1/{project_id}/stream/snapshot")
+            .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<LiveSnapshotConfig>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LiveSnapshotConfig.class),
+            f -> f.withMarshaller(UpdateSnapshotConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateStreamForbiddenRequest, UpdateStreamForbiddenResponse> updateStreamForbidden =
         genForupdateStreamForbidden();
 
@@ -1040,6 +1250,116 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StreamTranscodingTemplate.class),
             f -> f.withMarshaller(UpdateTranscodingsTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDomainHttpsCertRequest, DeleteDomainHttpsCertResponse> deleteDomainHttpsCert =
+        genFordeleteDomainHttpsCert();
+
+    private static HttpRequestDef<DeleteDomainHttpsCertRequest, DeleteDomainHttpsCertResponse> genFordeleteDomainHttpsCert() {
+        // basic
+        HttpRequestDef.Builder<DeleteDomainHttpsCertRequest, DeleteDomainHttpsCertResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDomainHttpsCertRequest.class, DeleteDomainHttpsCertResponse.class)
+            .withName("DeleteDomainHttpsCert")
+            .withUri("/v1/{project_id}/guard/https-cert")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDomainHttpsCertRequest::getDomain, (req, v) -> {
+                req.setDomain(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainHttpsCertRequest, ShowDomainHttpsCertResponse> showDomainHttpsCert =
+        genForshowDomainHttpsCert();
+
+    private static HttpRequestDef<ShowDomainHttpsCertRequest, ShowDomainHttpsCertResponse> genForshowDomainHttpsCert() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainHttpsCertRequest, ShowDomainHttpsCertResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainHttpsCertRequest.class, ShowDomainHttpsCertResponse.class)
+                .withName("ShowDomainHttpsCert")
+                .withUri("/v1/{project_id}/guard/https-cert")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainHttpsCertRequest::getDomain, (req, v) -> {
+                req.setDomain(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDomainHttpsCertRequest, UpdateDomainHttpsCertResponse> updateDomainHttpsCert =
+        genForupdateDomainHttpsCert();
+
+    private static HttpRequestDef<UpdateDomainHttpsCertRequest, UpdateDomainHttpsCertResponse> genForupdateDomainHttpsCert() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainHttpsCertRequest, UpdateDomainHttpsCertResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateDomainHttpsCertRequest.class, UpdateDomainHttpsCertResponse.class)
+            .withName("UpdateDomainHttpsCert")
+            .withUri("/v1/{project_id}/guard/https-cert")
+            .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDomainHttpsCertRequest::getDomain, (req, v) -> {
+                req.setDomain(v);
+            }));
+        builder.<DomainHttpsCertInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DomainHttpsCertInfo.class),
+            f -> f.withMarshaller(UpdateDomainHttpsCertRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateObsBucketAuthorityPublicRequest, UpdateObsBucketAuthorityPublicResponse> updateObsBucketAuthorityPublic =
+        genForupdateObsBucketAuthorityPublic();
+
+    private static HttpRequestDef<UpdateObsBucketAuthorityPublicRequest, UpdateObsBucketAuthorityPublicResponse> genForupdateObsBucketAuthorityPublic() {
+        // basic
+        HttpRequestDef.Builder<UpdateObsBucketAuthorityPublicRequest, UpdateObsBucketAuthorityPublicResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateObsBucketAuthorityPublicRequest.class,
+                    UpdateObsBucketAuthorityPublicResponse.class)
+                .withName("UpdateObsBucketAuthorityPublic")
+                .withUri("/v1/{project_id}/obs/authority")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<ObsAuthorityConfigV2>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ObsAuthorityConfigV2.class),
+            f -> f.withMarshaller(UpdateObsBucketAuthorityPublicRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

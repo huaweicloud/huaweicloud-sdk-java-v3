@@ -185,6 +185,16 @@ public class VolumeDetail {
 
     private String serialNumber;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iops")
+
+    private Iops iops;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "throughput")
+
+    private Throughput throughput;
+
     public VolumeDetail withId(String id) {
         this.id = id;
         return this;
@@ -843,6 +853,58 @@ public class VolumeDetail {
         this.serialNumber = serialNumber;
     }
 
+    public VolumeDetail withIops(Iops iops) {
+        this.iops = iops;
+        return this;
+    }
+
+    public VolumeDetail withIops(Consumer<Iops> iopsSetter) {
+        if (this.iops == null) {
+            this.iops = new Iops();
+            iopsSetter.accept(this.iops);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get iops
+     * @return iops
+     */
+    public Iops getIops() {
+        return iops;
+    }
+
+    public void setIops(Iops iops) {
+        this.iops = iops;
+    }
+
+    public VolumeDetail withThroughput(Throughput throughput) {
+        this.throughput = throughput;
+        return this;
+    }
+
+    public VolumeDetail withThroughput(Consumer<Throughput> throughputSetter) {
+        if (this.throughput == null) {
+            this.throughput = new Throughput();
+            throughputSetter.accept(this.throughput);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get throughput
+     * @return throughput
+     */
+    public Throughput getThroughput() {
+        return throughput;
+    }
+
+    public void setThroughput(Throughput throughput) {
+        this.throughput = throughput;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -881,7 +943,8 @@ public class VolumeDetail {
             && Objects.equals(this.dedicatedStorageName, volumeDetail.dedicatedStorageName)
             && Objects.equals(this.tags, volumeDetail.tags) && Objects.equals(this.wwn, volumeDetail.wwn)
             && Objects.equals(this.enterpriseProjectId, volumeDetail.enterpriseProjectId)
-            && Objects.equals(this.serialNumber, volumeDetail.serialNumber);
+            && Objects.equals(this.serialNumber, volumeDetail.serialNumber)
+            && Objects.equals(this.iops, volumeDetail.iops) && Objects.equals(this.throughput, volumeDetail.throughput);
     }
 
     @Override
@@ -919,7 +982,9 @@ public class VolumeDetail {
             tags,
             wwn,
             enterpriseProjectId,
-            serialNumber);
+            serialNumber,
+            iops,
+            throughput);
     }
 
     @Override
@@ -962,6 +1027,8 @@ public class VolumeDetail {
         sb.append("    wwn: ").append(toIndentedString(wwn)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
+        sb.append("    iops: ").append(toIndentedString(iops)).append("\n");
+        sb.append("    throughput: ").append(toIndentedString(throughput)).append("\n");
         sb.append("}");
         return sb.toString();
     }

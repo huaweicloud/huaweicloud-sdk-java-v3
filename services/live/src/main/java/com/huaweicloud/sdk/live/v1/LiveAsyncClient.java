@@ -170,6 +170,37 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 创建直播截图配置
+     *
+     * 创建直播截图配置接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSnapshotConfigRequest 请求对象
+     * @return CompletableFuture<CreateSnapshotConfigResponse>
+     */
+    public CompletableFuture<CreateSnapshotConfigResponse> createSnapshotConfigAsync(
+        CreateSnapshotConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.createSnapshotConfig);
+    }
+
+    /**
+     * 创建直播截图配置
+     *
+     * 创建直播截图配置接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSnapshotConfigRequest 请求对象
+     * @return AsyncInvoker<CreateSnapshotConfigRequest, CreateSnapshotConfigResponse>
+     */
+    public AsyncInvoker<CreateSnapshotConfigRequest, CreateSnapshotConfigResponse> createSnapshotConfigAsyncInvoker(
+        CreateSnapshotConfigRequest request) {
+        return new AsyncInvoker<CreateSnapshotConfigRequest, CreateSnapshotConfigResponse>(request,
+            LiveMeta.createSnapshotConfig, hcClient);
+    }
+
+    /**
      * 禁止直播推流
      *
      * 禁止直播推流
@@ -261,6 +292,37 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 删除指定域名的Key防盗链配置
+     *
+     * 删除指定域名的Key防盗链配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDomainKeyChainRequest 请求对象
+     * @return CompletableFuture<DeleteDomainKeyChainResponse>
+     */
+    public CompletableFuture<DeleteDomainKeyChainResponse> deleteDomainKeyChainAsync(
+        DeleteDomainKeyChainRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.deleteDomainKeyChain);
+    }
+
+    /**
+     * 删除指定域名的Key防盗链配置
+     *
+     * 删除指定域名的Key防盗链配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDomainKeyChainRequest 请求对象
+     * @return AsyncInvoker<DeleteDomainKeyChainRequest, DeleteDomainKeyChainResponse>
+     */
+    public AsyncInvoker<DeleteDomainKeyChainRequest, DeleteDomainKeyChainResponse> deleteDomainKeyChainAsyncInvoker(
+        DeleteDomainKeyChainRequest request) {
+        return new AsyncInvoker<DeleteDomainKeyChainRequest, DeleteDomainKeyChainResponse>(request,
+            LiveMeta.deleteDomainKeyChain, hcClient);
+    }
+
+    /**
      * 删除直播域名映射关系
      *
      * 将播放域名和推流域名的域名映射关系删除
@@ -349,6 +411,37 @@ public class LiveAsyncClient {
         DeleteRecordRuleRequest request) {
         return new AsyncInvoker<DeleteRecordRuleRequest, DeleteRecordRuleResponse>(request, LiveMeta.deleteRecordRule,
             hcClient);
+    }
+
+    /**
+     * 删除直播截图配置
+     *
+     * 删除直播截图配置接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSnapshotConfigRequest 请求对象
+     * @return CompletableFuture<DeleteSnapshotConfigResponse>
+     */
+    public CompletableFuture<DeleteSnapshotConfigResponse> deleteSnapshotConfigAsync(
+        DeleteSnapshotConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.deleteSnapshotConfig);
+    }
+
+    /**
+     * 删除直播截图配置
+     *
+     * 删除直播截图配置接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSnapshotConfigRequest 请求对象
+     * @return AsyncInvoker<DeleteSnapshotConfigRequest, DeleteSnapshotConfigResponse>
+     */
+    public AsyncInvoker<DeleteSnapshotConfigRequest, DeleteSnapshotConfigResponse> deleteSnapshotConfigAsyncInvoker(
+        DeleteSnapshotConfigRequest request) {
+        return new AsyncInvoker<DeleteSnapshotConfigRequest, DeleteSnapshotConfigResponse>(request,
+            LiveMeta.deleteSnapshotConfig, hcClient);
     }
 
     /**
@@ -566,6 +659,36 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 查询直播截图配置
+     *
+     * 查询直播截图配置接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSnapshotConfigsRequest 请求对象
+     * @return CompletableFuture<ListSnapshotConfigsResponse>
+     */
+    public CompletableFuture<ListSnapshotConfigsResponse> listSnapshotConfigsAsync(ListSnapshotConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.listSnapshotConfigs);
+    }
+
+    /**
+     * 查询直播截图配置
+     *
+     * 查询直播截图配置接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSnapshotConfigsRequest 请求对象
+     * @return AsyncInvoker<ListSnapshotConfigsRequest, ListSnapshotConfigsResponse>
+     */
+    public AsyncInvoker<ListSnapshotConfigsRequest, ListSnapshotConfigsResponse> listSnapshotConfigsAsyncInvoker(
+        ListSnapshotConfigsRequest request) {
+        return new AsyncInvoker<ListSnapshotConfigsRequest, ListSnapshotConfigsResponse>(request,
+            LiveMeta.listSnapshotConfigs, hcClient);
+    }
+
+    /**
      * 查询禁止直播推流列表
      *
      * 查询禁播黑名单列表
@@ -649,6 +772,36 @@ public class LiveAsyncClient {
      */
     public AsyncInvoker<ShowDomainRequest, ShowDomainResponse> showDomainAsyncInvoker(ShowDomainRequest request) {
         return new AsyncInvoker<ShowDomainRequest, ShowDomainResponse>(request, LiveMeta.showDomain, hcClient);
+    }
+
+    /**
+     * 查询指定域名的Key防盗链配置
+     *
+     * 查询指定域名的Key防盗链配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDomainKeyChainRequest 请求对象
+     * @return CompletableFuture<ShowDomainKeyChainResponse>
+     */
+    public CompletableFuture<ShowDomainKeyChainResponse> showDomainKeyChainAsync(ShowDomainKeyChainRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.showDomainKeyChain);
+    }
+
+    /**
+     * 查询指定域名的Key防盗链配置
+     *
+     * 查询指定域名的Key防盗链配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDomainKeyChainRequest 请求对象
+     * @return AsyncInvoker<ShowDomainKeyChainRequest, ShowDomainKeyChainResponse>
+     */
+    public AsyncInvoker<ShowDomainKeyChainRequest, ShowDomainKeyChainResponse> showDomainKeyChainAsyncInvoker(
+        ShowDomainKeyChainRequest request) {
+        return new AsyncInvoker<ShowDomainKeyChainRequest, ShowDomainKeyChainResponse>(request,
+            LiveMeta.showDomainKeyChain, hcClient);
     }
 
     /**
@@ -804,6 +957,37 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 更新指定域名的Key防盗链配置
+     *
+     * 更新指定域名的Key防盗链配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDomainKeyChainRequest 请求对象
+     * @return CompletableFuture<UpdateDomainKeyChainResponse>
+     */
+    public CompletableFuture<UpdateDomainKeyChainResponse> updateDomainKeyChainAsync(
+        UpdateDomainKeyChainRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.updateDomainKeyChain);
+    }
+
+    /**
+     * 更新指定域名的Key防盗链配置
+     *
+     * 更新指定域名的Key防盗链配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDomainKeyChainRequest 请求对象
+     * @return AsyncInvoker<UpdateDomainKeyChainRequest, UpdateDomainKeyChainResponse>
+     */
+    public AsyncInvoker<UpdateDomainKeyChainRequest, UpdateDomainKeyChainResponse> updateDomainKeyChainAsyncInvoker(
+        UpdateDomainKeyChainRequest request) {
+        return new AsyncInvoker<UpdateDomainKeyChainRequest, UpdateDomainKeyChainResponse>(request,
+            LiveMeta.updateDomainKeyChain, hcClient);
+    }
+
+    /**
      * 修改录制回调配置
      *
      * 修改录制回调配置接口
@@ -862,6 +1046,37 @@ public class LiveAsyncClient {
         UpdateRecordRuleRequest request) {
         return new AsyncInvoker<UpdateRecordRuleRequest, UpdateRecordRuleResponse>(request, LiveMeta.updateRecordRule,
             hcClient);
+    }
+
+    /**
+     * 修改直播截图配置
+     *
+     * 修改直播截图配置接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSnapshotConfigRequest 请求对象
+     * @return CompletableFuture<UpdateSnapshotConfigResponse>
+     */
+    public CompletableFuture<UpdateSnapshotConfigResponse> updateSnapshotConfigAsync(
+        UpdateSnapshotConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.updateSnapshotConfig);
+    }
+
+    /**
+     * 修改直播截图配置
+     *
+     * 修改直播截图配置接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSnapshotConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateSnapshotConfigRequest, UpdateSnapshotConfigResponse>
+     */
+    public AsyncInvoker<UpdateSnapshotConfigRequest, UpdateSnapshotConfigResponse> updateSnapshotConfigAsyncInvoker(
+        UpdateSnapshotConfigRequest request) {
+        return new AsyncInvoker<UpdateSnapshotConfigRequest, UpdateSnapshotConfigResponse>(request,
+            LiveMeta.updateSnapshotConfig, hcClient);
     }
 
     /**
@@ -924,6 +1139,129 @@ public class LiveAsyncClient {
         UpdateTranscodingsTemplateRequest request) {
         return new AsyncInvoker<UpdateTranscodingsTemplateRequest, UpdateTranscodingsTemplateResponse>(request,
             LiveMeta.updateTranscodingsTemplate, hcClient);
+    }
+
+    /**
+     * 删除指定域名的https证书配置
+     *
+     * 删除指定域名的https证书配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDomainHttpsCertRequest 请求对象
+     * @return CompletableFuture<DeleteDomainHttpsCertResponse>
+     */
+    public CompletableFuture<DeleteDomainHttpsCertResponse> deleteDomainHttpsCertAsync(
+        DeleteDomainHttpsCertRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.deleteDomainHttpsCert);
+    }
+
+    /**
+     * 删除指定域名的https证书配置
+     *
+     * 删除指定域名的https证书配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDomainHttpsCertRequest 请求对象
+     * @return AsyncInvoker<DeleteDomainHttpsCertRequest, DeleteDomainHttpsCertResponse>
+     */
+    public AsyncInvoker<DeleteDomainHttpsCertRequest, DeleteDomainHttpsCertResponse> deleteDomainHttpsCertAsyncInvoker(
+        DeleteDomainHttpsCertRequest request) {
+        return new AsyncInvoker<DeleteDomainHttpsCertRequest, DeleteDomainHttpsCertResponse>(request,
+            LiveMeta.deleteDomainHttpsCert, hcClient);
+    }
+
+    /**
+     * 查询指定域名的https证书配置
+     *
+     * 查询指定域名的https证书配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDomainHttpsCertRequest 请求对象
+     * @return CompletableFuture<ShowDomainHttpsCertResponse>
+     */
+    public CompletableFuture<ShowDomainHttpsCertResponse> showDomainHttpsCertAsync(ShowDomainHttpsCertRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.showDomainHttpsCert);
+    }
+
+    /**
+     * 查询指定域名的https证书配置
+     *
+     * 查询指定域名的https证书配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDomainHttpsCertRequest 请求对象
+     * @return AsyncInvoker<ShowDomainHttpsCertRequest, ShowDomainHttpsCertResponse>
+     */
+    public AsyncInvoker<ShowDomainHttpsCertRequest, ShowDomainHttpsCertResponse> showDomainHttpsCertAsyncInvoker(
+        ShowDomainHttpsCertRequest request) {
+        return new AsyncInvoker<ShowDomainHttpsCertRequest, ShowDomainHttpsCertResponse>(request,
+            LiveMeta.showDomainHttpsCert, hcClient);
+    }
+
+    /**
+     * 修改指定域名的https证书配置
+     *
+     * 修改指定域名的https证书配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDomainHttpsCertRequest 请求对象
+     * @return CompletableFuture<UpdateDomainHttpsCertResponse>
+     */
+    public CompletableFuture<UpdateDomainHttpsCertResponse> updateDomainHttpsCertAsync(
+        UpdateDomainHttpsCertRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.updateDomainHttpsCert);
+    }
+
+    /**
+     * 修改指定域名的https证书配置
+     *
+     * 修改指定域名的https证书配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDomainHttpsCertRequest 请求对象
+     * @return AsyncInvoker<UpdateDomainHttpsCertRequest, UpdateDomainHttpsCertResponse>
+     */
+    public AsyncInvoker<UpdateDomainHttpsCertRequest, UpdateDomainHttpsCertResponse> updateDomainHttpsCertAsyncInvoker(
+        UpdateDomainHttpsCertRequest request) {
+        return new AsyncInvoker<UpdateDomainHttpsCertRequest, UpdateDomainHttpsCertResponse>(request,
+            LiveMeta.updateDomainHttpsCert, hcClient);
+    }
+
+    /**
+     * OBS桶授权及取消授权
+     *
+     * OBS桶授权及取消授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateObsBucketAuthorityPublicRequest 请求对象
+     * @return CompletableFuture<UpdateObsBucketAuthorityPublicResponse>
+     */
+    public CompletableFuture<UpdateObsBucketAuthorityPublicResponse> updateObsBucketAuthorityPublicAsync(
+        UpdateObsBucketAuthorityPublicRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.updateObsBucketAuthorityPublic);
+    }
+
+    /**
+     * OBS桶授权及取消授权
+     *
+     * OBS桶授权及取消授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateObsBucketAuthorityPublicRequest 请求对象
+     * @return AsyncInvoker<UpdateObsBucketAuthorityPublicRequest, UpdateObsBucketAuthorityPublicResponse>
+     */
+    public AsyncInvoker<UpdateObsBucketAuthorityPublicRequest, UpdateObsBucketAuthorityPublicResponse> updateObsBucketAuthorityPublicAsyncInvoker(
+        UpdateObsBucketAuthorityPublicRequest request) {
+        return new AsyncInvoker<UpdateObsBucketAuthorityPublicRequest, UpdateObsBucketAuthorityPublicResponse>(request,
+            LiveMeta.updateObsBucketAuthorityPublic, hcClient);
     }
 
 }

@@ -375,6 +375,34 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 实时计算单个自定义报表
+     *
+     * 实时计算单个自定义报表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowReportRequest 请求对象
+     * @return CompletableFuture<ShowReportResponse>
+     */
+    public CompletableFuture<ShowReportResponse> showReportAsync(ShowReportRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showReport);
+    }
+
+    /**
+     * 实时计算单个自定义报表
+     *
+     * 实时计算单个自定义报表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowReportRequest 请求对象
+     * @return AsyncInvoker<ShowReportRequest, ShowReportResponse>
+     */
+    public AsyncInvoker<ShowReportRequest, ShowReportResponse> showReportAsyncInvoker(ShowReportRequest request) {
+        return new AsyncInvoker<ShowReportRequest, ShowReportResponse>(request, CloudtestMeta.showReport, hcClient);
+    }
+
+    /**
      * 获取测试用例详情
      *
      * 获取测试用例详情

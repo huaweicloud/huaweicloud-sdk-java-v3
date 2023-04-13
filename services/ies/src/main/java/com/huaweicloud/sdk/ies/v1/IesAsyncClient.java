@@ -230,6 +230,62 @@ public class IesAsyncClient {
     }
 
     /**
+     * 查询机柜列表
+     *
+     * 查询机柜列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRacksRequest 请求对象
+     * @return CompletableFuture<ListRacksResponse>
+     */
+    public CompletableFuture<ListRacksResponse> listRacksAsync(ListRacksRequest request) {
+        return hcClient.asyncInvokeHttp(request, IesMeta.listRacks);
+    }
+
+    /**
+     * 查询机柜列表
+     *
+     * 查询机柜列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRacksRequest 请求对象
+     * @return AsyncInvoker<ListRacksRequest, ListRacksResponse>
+     */
+    public AsyncInvoker<ListRacksRequest, ListRacksResponse> listRacksAsyncInvoker(ListRacksRequest request) {
+        return new AsyncInvoker<ListRacksRequest, ListRacksResponse>(request, IesMeta.listRacks, hcClient);
+    }
+
+    /**
+     * 查询机柜详情
+     *
+     * 查询机柜详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRackRequest 请求对象
+     * @return CompletableFuture<ShowRackResponse>
+     */
+    public CompletableFuture<ShowRackResponse> showRackAsync(ShowRackRequest request) {
+        return hcClient.asyncInvokeHttp(request, IesMeta.showRack);
+    }
+
+    /**
+     * 查询机柜详情
+     *
+     * 查询机柜详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRackRequest 请求对象
+     * @return AsyncInvoker<ShowRackRequest, ShowRackResponse>
+     */
+    public AsyncInvoker<ShowRackRequest, ShowRackResponse> showRackAsyncInvoker(ShowRackRequest request) {
+        return new AsyncInvoker<ShowRackRequest, ShowRackResponse>(request, IesMeta.showRack, hcClient);
+    }
+
+    /**
      * 查询支持的区域列表
      *
      * 查询支持智能边缘小站接入的华为云区域（region）列表。
@@ -258,6 +314,66 @@ public class IesAsyncClient {
         ListSupportedRegionsRequest request) {
         return new AsyncInvoker<ListSupportedRegionsRequest, ListSupportedRegionsResponse>(request,
             IesMeta.listSupportedRegions, hcClient);
+    }
+
+    /**
+     * 查询存储池列表
+     *
+     * 查询存储池列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListStoragePoolsRequest 请求对象
+     * @return CompletableFuture<ListStoragePoolsResponse>
+     */
+    public CompletableFuture<ListStoragePoolsResponse> listStoragePoolsAsync(ListStoragePoolsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IesMeta.listStoragePools);
+    }
+
+    /**
+     * 查询存储池列表
+     *
+     * 查询存储池列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListStoragePoolsRequest 请求对象
+     * @return AsyncInvoker<ListStoragePoolsRequest, ListStoragePoolsResponse>
+     */
+    public AsyncInvoker<ListStoragePoolsRequest, ListStoragePoolsResponse> listStoragePoolsAsyncInvoker(
+        ListStoragePoolsRequest request) {
+        return new AsyncInvoker<ListStoragePoolsRequest, ListStoragePoolsResponse>(request, IesMeta.listStoragePools,
+            hcClient);
+    }
+
+    /**
+     * 查询存储池详情
+     *
+     * 查询存储池详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowStoragePoolRequest 请求对象
+     * @return CompletableFuture<ShowStoragePoolResponse>
+     */
+    public CompletableFuture<ShowStoragePoolResponse> showStoragePoolAsync(ShowStoragePoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, IesMeta.showStoragePool);
+    }
+
+    /**
+     * 查询存储池详情
+     *
+     * 查询存储池详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowStoragePoolRequest 请求对象
+     * @return AsyncInvoker<ShowStoragePoolRequest, ShowStoragePoolResponse>
+     */
+    public AsyncInvoker<ShowStoragePoolRequest, ShowStoragePoolResponse> showStoragePoolAsyncInvoker(
+        ShowStoragePoolRequest request) {
+        return new AsyncInvoker<ShowStoragePoolRequest, ShowStoragePoolResponse>(request, IesMeta.showStoragePool,
+            hcClient);
     }
 
 }

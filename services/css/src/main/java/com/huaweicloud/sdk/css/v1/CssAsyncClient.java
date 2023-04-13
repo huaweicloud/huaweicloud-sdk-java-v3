@@ -1695,7 +1695,7 @@ public class CssAsyncClient {
     /**
      * 关闭公网访问
      *
-     * 该接口用于关闭公网访问。
+     * 该接口用于关闭公网访问。包周期类型的集群不支持通过api进行关闭公网访问。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1709,7 +1709,7 @@ public class CssAsyncClient {
     /**
      * 关闭公网访问
      *
-     * 该接口用于关闭公网访问。
+     * 该接口用于关闭公网访问。包周期类型的集群不支持通过api进行关闭公网访问。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1906,7 +1906,7 @@ public class CssAsyncClient {
     /**
      * 关闭Kibana公网访问
      *
-     * 该接口用于关闭Kibana公网访问。
+     * 该接口用于关闭Kibana公网访问。包周期类型集群不支持通过api进行关闭Kibana公网访问。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1920,7 +1920,7 @@ public class CssAsyncClient {
     /**
      * 关闭Kibana公网访问
      *
-     * 该接口用于关闭Kibana公网访问。
+     * 该接口用于关闭Kibana公网访问。包周期类型集群不支持通过api进行关闭Kibana公网访问。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
