@@ -21,6 +21,16 @@ public class ThailandIdcardConfidence {
     private Float nameTh;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name_en")
+
+    private Float nameEn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ref_number")
+
+    private Float refNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "first_name_en")
 
     private Float firstNameEn;
@@ -117,6 +127,40 @@ public class ThailandIdcardConfidence {
 
     public void setNameTh(Float nameTh) {
         this.nameTh = nameTh;
+    }
+
+    public ThailandIdcardConfidence withNameEn(Float nameEn) {
+        this.nameEn = nameEn;
+        return this;
+    }
+
+    /**
+     * 英文名置信度。 
+     * @return nameEn
+     */
+    public Float getNameEn() {
+        return nameEn;
+    }
+
+    public void setNameEn(Float nameEn) {
+        this.nameEn = nameEn;
+    }
+
+    public ThailandIdcardConfidence withRefNumber(Float refNumber) {
+        this.refNumber = refNumber;
+        return this;
+    }
+
+    /**
+     * 参考编码置信度。 
+     * @return refNumber
+     */
+    public Float getRefNumber() {
+        return refNumber;
+    }
+
+    public void setRefNumber(Float refNumber) {
+        this.refNumber = refNumber;
     }
 
     public ThailandIdcardConfidence withFirstNameEn(Float firstNameEn) {
@@ -351,6 +395,8 @@ public class ThailandIdcardConfidence {
         ThailandIdcardConfidence thailandIdcardConfidence = (ThailandIdcardConfidence) o;
         return Objects.equals(this.idNumber, thailandIdcardConfidence.idNumber)
             && Objects.equals(this.nameTh, thailandIdcardConfidence.nameTh)
+            && Objects.equals(this.nameEn, thailandIdcardConfidence.nameEn)
+            && Objects.equals(this.refNumber, thailandIdcardConfidence.refNumber)
             && Objects.equals(this.firstNameEn, thailandIdcardConfidence.firstNameEn)
             && Objects.equals(this.lastNameEn, thailandIdcardConfidence.lastNameEn)
             && Objects.equals(this.dateOfBirthTh, thailandIdcardConfidence.dateOfBirthTh)
@@ -370,6 +416,8 @@ public class ThailandIdcardConfidence {
     public int hashCode() {
         return Objects.hash(idNumber,
             nameTh,
+            nameEn,
+            refNumber,
             firstNameEn,
             lastNameEn,
             dateOfBirthTh,
@@ -391,6 +439,8 @@ public class ThailandIdcardConfidence {
         sb.append("class ThailandIdcardConfidence {\n");
         sb.append("    idNumber: ").append(toIndentedString(idNumber)).append("\n");
         sb.append("    nameTh: ").append(toIndentedString(nameTh)).append("\n");
+        sb.append("    nameEn: ").append(toIndentedString(nameEn)).append("\n");
+        sb.append("    refNumber: ").append(toIndentedString(refNumber)).append("\n");
         sb.append("    firstNameEn: ").append(toIndentedString(firstNameEn)).append("\n");
         sb.append("    lastNameEn: ").append(toIndentedString(lastNameEn)).append("\n");
         sb.append("    dateOfBirthTh: ").append(toIndentedString(dateOfBirthTh)).append("\n");

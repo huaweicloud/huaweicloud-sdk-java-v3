@@ -108,6 +108,16 @@ public class DriverLicenseResult {
 
     private Object textLocation;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "front")
+
+    private DriverLicenseFront front;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "back")
+
+    private DriverLicenseBack back;
+
     public DriverLicenseResult withType(String type) {
         this.type = type;
         return this;
@@ -447,6 +457,58 @@ public class DriverLicenseResult {
         this.textLocation = textLocation;
     }
 
+    public DriverLicenseResult withFront(DriverLicenseFront front) {
+        this.front = front;
+        return this;
+    }
+
+    public DriverLicenseResult withFront(Consumer<DriverLicenseFront> frontSetter) {
+        if (this.front == null) {
+            this.front = new DriverLicenseFront();
+            frontSetter.accept(this.front);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get front
+     * @return front
+     */
+    public DriverLicenseFront getFront() {
+        return front;
+    }
+
+    public void setFront(DriverLicenseFront front) {
+        this.front = front;
+    }
+
+    public DriverLicenseResult withBack(DriverLicenseBack back) {
+        this.back = back;
+        return this;
+    }
+
+    public DriverLicenseResult withBack(Consumer<DriverLicenseBack> backSetter) {
+        if (this.back == null) {
+            this.back = new DriverLicenseBack();
+            backSetter.accept(this.back);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get back
+     * @return back
+     */
+    public DriverLicenseBack getBack() {
+        return back;
+    }
+
+    public void setBack(DriverLicenseBack back) {
+        this.back = back;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -473,7 +535,9 @@ public class DriverLicenseResult {
             && Objects.equals(this.status, driverLicenseResult.status)
             && Objects.equals(this.generationDate, driverLicenseResult.generationDate)
             && Objects.equals(this.currentTime, driverLicenseResult.currentTime)
-            && Objects.equals(this.textLocation, driverLicenseResult.textLocation);
+            && Objects.equals(this.textLocation, driverLicenseResult.textLocation)
+            && Objects.equals(this.front, driverLicenseResult.front)
+            && Objects.equals(this.back, driverLicenseResult.back);
     }
 
     @Override
@@ -496,7 +560,9 @@ public class DriverLicenseResult {
             status,
             generationDate,
             currentTime,
-            textLocation);
+            textLocation,
+            front,
+            back);
     }
 
     @Override
@@ -522,6 +588,8 @@ public class DriverLicenseResult {
         sb.append("    generationDate: ").append(toIndentedString(generationDate)).append("\n");
         sb.append("    currentTime: ").append(toIndentedString(currentTime)).append("\n");
         sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
+        sb.append("    front: ").append(toIndentedString(front)).append("\n");
+        sb.append("    back: ").append(toIndentedString(back)).append("\n");
         sb.append("}");
         return sb.toString();
     }

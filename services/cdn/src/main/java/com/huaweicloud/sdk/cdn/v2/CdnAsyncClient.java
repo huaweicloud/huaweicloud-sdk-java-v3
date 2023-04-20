@@ -357,6 +357,37 @@ public class CdnAsyncClient {
     }
 
     /**
+     * 查询域名配置接口
+     *
+     * 查询域名配置接口，支持查询回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、强制重定向、智能压缩、缓存URL参数、IPv6开关、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDomainFullConfigRequest 请求对象
+     * @return CompletableFuture<ShowDomainFullConfigResponse>
+     */
+    public CompletableFuture<ShowDomainFullConfigResponse> showDomainFullConfigAsync(
+        ShowDomainFullConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.showDomainFullConfig);
+    }
+
+    /**
+     * 查询域名配置接口
+     *
+     * 查询域名配置接口，支持查询回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、强制重定向、智能压缩、缓存URL参数、IPv6开关、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDomainFullConfigRequest 请求对象
+     * @return AsyncInvoker<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse>
+     */
+    public AsyncInvoker<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse> showDomainFullConfigAsyncInvoker(
+        ShowDomainFullConfigRequest request) {
+        return new AsyncInvoker<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse>(request,
+            CdnMeta.showDomainFullConfig, hcClient);
+    }
+
+    /**
      * 查询域名统计区域运营商数据
      *
      * - 支持查询90天内的数据。
@@ -569,6 +600,37 @@ public class CdnAsyncClient {
      */
     public AsyncInvoker<ShowTopUrlRequest, ShowTopUrlResponse> showTopUrlAsyncInvoker(ShowTopUrlRequest request) {
         return new AsyncInvoker<ShowTopUrlRequest, ShowTopUrlResponse>(request, CdnMeta.showTopUrl, hcClient);
+    }
+
+    /**
+     * 修改域名全量配置接口
+     *
+     * 修改域名全量配置接口，支持配置回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、强制重定向、智能压缩、缓存URL参数、IPv6、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDomainFullConfigRequest 请求对象
+     * @return CompletableFuture<UpdateDomainFullConfigResponse>
+     */
+    public CompletableFuture<UpdateDomainFullConfigResponse> updateDomainFullConfigAsync(
+        UpdateDomainFullConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.updateDomainFullConfig);
+    }
+
+    /**
+     * 修改域名全量配置接口
+     *
+     * 修改域名全量配置接口，支持配置回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、强制重定向、智能压缩、缓存URL参数、IPv6、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDomainFullConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse>
+     */
+    public AsyncInvoker<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse> updateDomainFullConfigAsyncInvoker(
+        UpdateDomainFullConfigRequest request) {
+        return new AsyncInvoker<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse>(request,
+            CdnMeta.updateDomainFullConfig, hcClient);
     }
 
 }

@@ -200,7 +200,7 @@ public class SearchScriptsRequestBody  {
     /**
      * 每页显示的条数，默认值是10。
      * minimum: 1
-     * maximum: 100
+     * maximum: 1000
      * @return pageSize
      */
     public Integer getPageSize() {

@@ -62,7 +62,7 @@ public class TagDTO {
     }
 
     /**
-     * 值列表。每个值最大长度255个unicode字符。
+     * 值列表。每个值最大长度255个字符。
      * @return values
      */
     public List<String> getValues() {

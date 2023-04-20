@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 函数vpc配置。
@@ -39,6 +42,11 @@ public class FuncVpc {
     @JsonProperty(value = "gateway")
 
     private String gateway;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_groups")
+
+    private List<String> securityGroups = null;
 
     public FuncVpc withVpcName(String vpcName) {
         this.vpcName = vpcName;
@@ -142,6 +150,39 @@ public class FuncVpc {
         this.gateway = gateway;
     }
 
+    public FuncVpc withSecurityGroups(List<String> securityGroups) {
+        this.securityGroups = securityGroups;
+        return this;
+    }
+
+    public FuncVpc addSecurityGroupsItem(String securityGroupsItem) {
+        if (this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
+        this.securityGroups.add(securityGroupsItem);
+        return this;
+    }
+
+    public FuncVpc withSecurityGroups(Consumer<List<String>> securityGroupsSetter) {
+        if (this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
+        securityGroupsSetter.accept(this.securityGroups);
+        return this;
+    }
+
+    /**
+     * 安全组
+     * @return securityGroups
+     */
+    public List<String> getSecurityGroups() {
+        return securityGroups;
+    }
+
+    public void setSecurityGroups(List<String> securityGroups) {
+        this.securityGroups = securityGroups;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -153,12 +194,13 @@ public class FuncVpc {
         FuncVpc funcVpc = (FuncVpc) o;
         return Objects.equals(this.vpcName, funcVpc.vpcName) && Objects.equals(this.vpcId, funcVpc.vpcId)
             && Objects.equals(this.subnetName, funcVpc.subnetName) && Objects.equals(this.subnetId, funcVpc.subnetId)
-            && Objects.equals(this.cidr, funcVpc.cidr) && Objects.equals(this.gateway, funcVpc.gateway);
+            && Objects.equals(this.cidr, funcVpc.cidr) && Objects.equals(this.gateway, funcVpc.gateway)
+            && Objects.equals(this.securityGroups, funcVpc.securityGroups);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vpcName, vpcId, subnetName, subnetId, cidr, gateway);
+        return Objects.hash(vpcName, vpcId, subnetName, subnetId, cidr, gateway, securityGroups);
     }
 
     @Override
@@ -171,6 +213,7 @@ public class FuncVpc {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
         sb.append("    gateway: ").append(toIndentedString(gateway)).append("\n");
+        sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
         sb.append("}");
         return sb.toString();
     }

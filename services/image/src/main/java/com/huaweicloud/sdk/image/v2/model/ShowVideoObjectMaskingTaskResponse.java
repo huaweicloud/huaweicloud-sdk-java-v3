@@ -123,7 +123,7 @@ public class ShowVideoObjectMaskingTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
-    private ObjectMaskingTaskInput input;
+    private TaskInput input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
@@ -213,14 +213,14 @@ public class ShowVideoObjectMaskingTaskResponse extends SdkResponse {
         this.state = state;
     }
 
-    public ShowVideoObjectMaskingTaskResponse withInput(ObjectMaskingTaskInput input) {
+    public ShowVideoObjectMaskingTaskResponse withInput(TaskInput input) {
         this.input = input;
         return this;
     }
 
-    public ShowVideoObjectMaskingTaskResponse withInput(Consumer<ObjectMaskingTaskInput> inputSetter) {
+    public ShowVideoObjectMaskingTaskResponse withInput(Consumer<TaskInput> inputSetter) {
         if (this.input == null) {
-            this.input = new ObjectMaskingTaskInput();
+            this.input = new TaskInput();
             inputSetter.accept(this.input);
         }
 
@@ -231,11 +231,11 @@ public class ShowVideoObjectMaskingTaskResponse extends SdkResponse {
      * Get input
      * @return input
      */
-    public ObjectMaskingTaskInput getInput() {
+    public TaskInput getInput() {
         return input;
     }
 
-    public void setInput(ObjectMaskingTaskInput input) {
+    public void setInput(TaskInput input) {
         this.input = input;
     }
 

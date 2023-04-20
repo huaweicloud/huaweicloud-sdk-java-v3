@@ -39,7 +39,7 @@ public class ResourceDTO {
     }
 
     /**
-     * 资源Id。
+     * 资源ID。
      * @return resourceId
      */
     public String getResourceId() {

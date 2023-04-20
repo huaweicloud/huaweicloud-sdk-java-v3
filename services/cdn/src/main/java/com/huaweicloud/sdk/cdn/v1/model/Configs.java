@@ -44,6 +44,26 @@ public class Configs {
     private String originProtocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin_follow302_status")
+
+    private String originFollow302Status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cache_rules")
+
+    private List<CacheRules> cacheRules = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_filter")
+
+    private IpFilter ipFilter;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "referer")
+
+    private RefererConfig referer;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "force_redirect")
 
     private ForceRedirectConfig forceRedirect;
@@ -254,6 +274,108 @@ public class Configs {
 
     public void setOriginProtocol(String originProtocol) {
         this.originProtocol = originProtocol;
+    }
+
+    public Configs withOriginFollow302Status(String originFollow302Status) {
+        this.originFollow302Status = originFollow302Status;
+        return this;
+    }
+
+    /**
+     * 回源跟随（on：开启，off：关闭）。
+     * @return originFollow302Status
+     */
+    public String getOriginFollow302Status() {
+        return originFollow302Status;
+    }
+
+    public void setOriginFollow302Status(String originFollow302Status) {
+        this.originFollow302Status = originFollow302Status;
+    }
+
+    public Configs withCacheRules(List<CacheRules> cacheRules) {
+        this.cacheRules = cacheRules;
+        return this;
+    }
+
+    public Configs addCacheRulesItem(CacheRules cacheRulesItem) {
+        if (this.cacheRules == null) {
+            this.cacheRules = new ArrayList<>();
+        }
+        this.cacheRules.add(cacheRulesItem);
+        return this;
+    }
+
+    public Configs withCacheRules(Consumer<List<CacheRules>> cacheRulesSetter) {
+        if (this.cacheRules == null) {
+            this.cacheRules = new ArrayList<>();
+        }
+        cacheRulesSetter.accept(this.cacheRules);
+        return this;
+    }
+
+    /**
+     * 缓存规则。
+     * @return cacheRules
+     */
+    public List<CacheRules> getCacheRules() {
+        return cacheRules;
+    }
+
+    public void setCacheRules(List<CacheRules> cacheRules) {
+        this.cacheRules = cacheRules;
+    }
+
+    public Configs withIpFilter(IpFilter ipFilter) {
+        this.ipFilter = ipFilter;
+        return this;
+    }
+
+    public Configs withIpFilter(Consumer<IpFilter> ipFilterSetter) {
+        if (this.ipFilter == null) {
+            this.ipFilter = new IpFilter();
+            ipFilterSetter.accept(this.ipFilter);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get ipFilter
+     * @return ipFilter
+     */
+    public IpFilter getIpFilter() {
+        return ipFilter;
+    }
+
+    public void setIpFilter(IpFilter ipFilter) {
+        this.ipFilter = ipFilter;
+    }
+
+    public Configs withReferer(RefererConfig referer) {
+        this.referer = referer;
+        return this;
+    }
+
+    public Configs withReferer(Consumer<RefererConfig> refererSetter) {
+        if (this.referer == null) {
+            this.referer = new RefererConfig();
+            refererSetter.accept(this.referer);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get referer
+     * @return referer
+     */
+    public RefererConfig getReferer() {
+        return referer;
+    }
+
+    public void setReferer(RefererConfig referer) {
+        this.referer = referer;
     }
 
     public Configs withForceRedirect(ForceRedirectConfig forceRedirect) {
@@ -507,6 +629,9 @@ public class Configs {
             && Objects.equals(this.urlAuth, configs.urlAuth) && Objects.equals(this.https, configs.https)
             && Objects.equals(this.sources, configs.sources)
             && Objects.equals(this.originProtocol, configs.originProtocol)
+            && Objects.equals(this.originFollow302Status, configs.originFollow302Status)
+            && Objects.equals(this.cacheRules, configs.cacheRules) && Objects.equals(this.ipFilter, configs.ipFilter)
+            && Objects.equals(this.referer, configs.referer)
             && Objects.equals(this.forceRedirect, configs.forceRedirect)
             && Objects.equals(this.compress, configs.compress)
             && Objects.equals(this.cacheUrlParameterFilter, configs.cacheUrlParameterFilter)
@@ -526,6 +651,10 @@ public class Configs {
             https,
             sources,
             originProtocol,
+            originFollow302Status,
+            cacheRules,
+            ipFilter,
+            referer,
             forceRedirect,
             compress,
             cacheUrlParameterFilter,
@@ -547,6 +676,10 @@ public class Configs {
         sb.append("    https: ").append(toIndentedString(https)).append("\n");
         sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
         sb.append("    originProtocol: ").append(toIndentedString(originProtocol)).append("\n");
+        sb.append("    originFollow302Status: ").append(toIndentedString(originFollow302Status)).append("\n");
+        sb.append("    cacheRules: ").append(toIndentedString(cacheRules)).append("\n");
+        sb.append("    ipFilter: ").append(toIndentedString(ipFilter)).append("\n");
+        sb.append("    referer: ").append(toIndentedString(referer)).append("\n");
         sb.append("    forceRedirect: ").append(toIndentedString(forceRedirect)).append("\n");
         sb.append("    compress: ").append(toIndentedString(compress)).append("\n");
         sb.append("    cacheUrlParameterFilter: ").append(toIndentedString(cacheUrlParameterFilter)).append("\n");

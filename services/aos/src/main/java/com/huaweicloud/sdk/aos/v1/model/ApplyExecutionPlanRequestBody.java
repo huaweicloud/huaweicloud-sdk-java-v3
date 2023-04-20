@@ -9,7 +9,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.aos.v1.model.ExecutionPlanIdPrimitiveTypeHolder;
-import com.huaweicloud.sdk.aos.v1.model.ExecutorPrimitiveTypeHolder;
 import com.huaweicloud.sdk.aos.v1.model.StackIdPrimitiveTypeHolder;
 import java.util.function.Consumer;
 import java.util.Objects;

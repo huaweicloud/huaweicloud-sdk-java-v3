@@ -114,7 +114,7 @@ public class SetRDSBackupCnfReq {
     }
 
     /**
-     * 是否开启自动创建快照策略。 - true：表示开启自动创建快照策略。 - false：表示关闭自动创建快照策略。
+     * 是否开启自动创建快照策略。 - true：表示开启自动创建快照策略。 - false：表示关闭自动创建快照策略，且无需下发其余参数。
      * @return enable
      */
     public String getEnable() {

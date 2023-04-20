@@ -17,19 +17,19 @@ public class ListDeviceGroupsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_groups")
 
-    private List<DeviceGroupResponseSummary> deviceGroups = null;
+    private List<DeviceGroupResponsSummery> deviceGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
 
     private Page page;
 
-    public ListDeviceGroupsResponse withDeviceGroups(List<DeviceGroupResponseSummary> deviceGroups) {
+    public ListDeviceGroupsResponse withDeviceGroups(List<DeviceGroupResponsSummery> deviceGroups) {
         this.deviceGroups = deviceGroups;
         return this;
     }
 
-    public ListDeviceGroupsResponse addDeviceGroupsItem(DeviceGroupResponseSummary deviceGroupsItem) {
+    public ListDeviceGroupsResponse addDeviceGroupsItem(DeviceGroupResponsSummery deviceGroupsItem) {
         if (this.deviceGroups == null) {
             this.deviceGroups = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListDeviceGroupsResponse extends SdkResponse {
         return this;
     }
 
-    public ListDeviceGroupsResponse withDeviceGroups(Consumer<List<DeviceGroupResponseSummary>> deviceGroupsSetter) {
+    public ListDeviceGroupsResponse withDeviceGroups(Consumer<List<DeviceGroupResponsSummery>> deviceGroupsSetter) {
         if (this.deviceGroups == null) {
             this.deviceGroups = new ArrayList<>();
         }
@@ -49,11 +49,11 @@ public class ListDeviceGroupsResponse extends SdkResponse {
      * 设备组信息列表。
      * @return deviceGroups
      */
-    public List<DeviceGroupResponseSummary> getDeviceGroups() {
+    public List<DeviceGroupResponsSummery> getDeviceGroups() {
         return deviceGroups;
     }
 
-    public void setDeviceGroups(List<DeviceGroupResponseSummary> deviceGroups) {
+    public void setDeviceGroups(List<DeviceGroupResponsSummery> deviceGroups) {
         this.deviceGroups = deviceGroups;
     }
 

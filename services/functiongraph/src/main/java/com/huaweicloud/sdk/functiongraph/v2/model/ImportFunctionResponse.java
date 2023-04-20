@@ -238,6 +238,11 @@ public class ImportFunctionResponse extends SdkResponse {
     private Integer memorySize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gpu_memory")
+
+    private Integer gpuMemory;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu")
 
     private Integer cpu;
@@ -604,6 +609,23 @@ public class ImportFunctionResponse extends SdkResponse {
 
     public void setMemorySize(Integer memorySize) {
         this.memorySize = memorySize;
+    }
+
+    public ImportFunctionResponse withGpuMemory(Integer gpuMemory) {
+        this.gpuMemory = gpuMemory;
+        return this;
+    }
+
+    /**
+     * 函数消耗的显存，只支持自定义运行时与自定义镜像函数配置GPU。 单位MB。 取值范围为：1024、2048、3072、4096、5120、6144、7168、8192、9216、10240、11264、12288、13312、14336、15360、16384。 最小值为1024，最大值为16384。
+     * @return gpuMemory
+     */
+    public Integer getGpuMemory() {
+        return gpuMemory;
+    }
+
+    public void setGpuMemory(Integer gpuMemory) {
+        this.gpuMemory = gpuMemory;
     }
 
     public ImportFunctionResponse withCpu(Integer cpu) {
@@ -1049,6 +1071,7 @@ public class ImportFunctionResponse extends SdkResponse {
             && Objects.equals(this.timeout, importFunctionResponse.timeout)
             && Objects.equals(this.handler, importFunctionResponse.handler)
             && Objects.equals(this.memorySize, importFunctionResponse.memorySize)
+            && Objects.equals(this.gpuMemory, importFunctionResponse.gpuMemory)
             && Objects.equals(this.cpu, importFunctionResponse.cpu)
             && Objects.equals(this.codeType, importFunctionResponse.codeType)
             && Objects.equals(this.codeUrl, importFunctionResponse.codeUrl)
@@ -1085,6 +1108,7 @@ public class ImportFunctionResponse extends SdkResponse {
             timeout,
             handler,
             memorySize,
+            gpuMemory,
             cpu,
             codeType,
             codeUrl,
@@ -1123,6 +1147,7 @@ public class ImportFunctionResponse extends SdkResponse {
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    handler: ").append(toIndentedString(handler)).append("\n");
         sb.append("    memorySize: ").append(toIndentedString(memorySize)).append("\n");
+        sb.append("    gpuMemory: ").append(toIndentedString(gpuMemory)).append("\n");
         sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");
         sb.append("    codeType: ").append(toIndentedString(codeType)).append("\n");
         sb.append("    codeUrl: ").append(toIndentedString(codeUrl)).append("\n");

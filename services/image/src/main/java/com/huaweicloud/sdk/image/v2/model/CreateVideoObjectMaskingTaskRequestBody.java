@@ -14,7 +14,7 @@ public class CreateVideoObjectMaskingTaskRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
-    private ObjectMaskingTaskInput input;
+    private TaskInput input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output")
@@ -31,14 +31,14 @@ public class CreateVideoObjectMaskingTaskRequestBody {
 
     private VideoObjectMaskingTaskConfig config;
 
-    public CreateVideoObjectMaskingTaskRequestBody withInput(ObjectMaskingTaskInput input) {
+    public CreateVideoObjectMaskingTaskRequestBody withInput(TaskInput input) {
         this.input = input;
         return this;
     }
 
-    public CreateVideoObjectMaskingTaskRequestBody withInput(Consumer<ObjectMaskingTaskInput> inputSetter) {
+    public CreateVideoObjectMaskingTaskRequestBody withInput(Consumer<TaskInput> inputSetter) {
         if (this.input == null) {
-            this.input = new ObjectMaskingTaskInput();
+            this.input = new TaskInput();
             inputSetter.accept(this.input);
         }
 
@@ -49,11 +49,11 @@ public class CreateVideoObjectMaskingTaskRequestBody {
      * Get input
      * @return input
      */
-    public ObjectMaskingTaskInput getInput() {
+    public TaskInput getInput() {
         return input;
     }
 
-    public void setInput(ObjectMaskingTaskInput input) {
+    public void setInput(TaskInput input) {
         this.input = input;
     }
 

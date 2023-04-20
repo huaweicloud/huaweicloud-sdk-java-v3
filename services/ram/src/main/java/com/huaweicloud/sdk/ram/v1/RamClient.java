@@ -748,9 +748,9 @@ public class RamClient {
     }
 
     /**
-     * 查询已经使用的标签列表
+     * 查询已使用的标签列表
      *
-     * 查询的标签相信列表。
+     * 查询资源共享实例已使用标签的列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -762,9 +762,9 @@ public class RamClient {
     }
 
     /**
-     * 查询已经使用的标签列表
+     * 查询已使用的标签列表
      *
-     * 查询的标签相信列表。
+     * 查询资源共享实例已使用标签的列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -780,7 +780,7 @@ public class RamClient {
     /**
      * 根据标签信息查询实例列表
      *
-     * 根据标签信息查询实例列表。
+     * 根据标签信息查询资源共享实例列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -794,7 +794,7 @@ public class RamClient {
     /**
      * 根据标签信息查询实例列表
      *
-     * 根据标签信息查询实例列表。
+     * 根据标签信息查询资源共享实例列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -810,7 +810,7 @@ public class RamClient {
     /**
      * 根据标签信息查询实例数量
      *
-     * 根据标签信息查询实例数量。
+     * 根据标签信息查询资源共享实例数量。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -825,7 +825,7 @@ public class RamClient {
     /**
      * 根据标签信息查询实例数量
      *
-     * 根据标签信息查询实例数量。
+     * 根据标签信息查询资源共享实例数量。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -547,6 +547,40 @@ public class IoTDAClient {
     }
 
     /**
+     * 下发广播消息
+     *
+     * 应用服务器可调用此接口向订阅了指定Topic的所有在线设备发布广播消息。应用将广播消息下发给平台后，平台会先返回应用响应结果，再将消息广播给设备。
+     * 注意：
+     * - 此接口只适用于使用MQTT协议接入的设备。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BroadcastMessageRequest 请求对象
+     * @return BroadcastMessageResponse
+     */
+    public BroadcastMessageResponse broadcastMessage(BroadcastMessageRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.broadcastMessage);
+    }
+
+    /**
+     * 下发广播消息
+     *
+     * 应用服务器可调用此接口向订阅了指定Topic的所有在线设备发布广播消息。应用将广播消息下发给平台后，平台会先返回应用响应结果，再将消息广播给设备。
+     * 注意：
+     * - 此接口只适用于使用MQTT协议接入的设备。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BroadcastMessageRequest 请求对象
+     * @return SyncInvoker<BroadcastMessageRequest, BroadcastMessageResponse>
+     */
+    public SyncInvoker<BroadcastMessageRequest, BroadcastMessageResponse> broadcastMessageInvoker(
+        BroadcastMessageRequest request) {
+        return new SyncInvoker<BroadcastMessageRequest, BroadcastMessageResponse>(request, IoTDAMeta.broadcastMessage,
+            hcClient);
+    }
+
+    /**
      * 上传设备CA证书
      *
      * 应用服务器可调用此接口在物联网平台上传设备CA证书

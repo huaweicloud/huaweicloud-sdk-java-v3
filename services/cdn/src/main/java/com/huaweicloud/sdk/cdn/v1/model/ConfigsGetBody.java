@@ -39,6 +39,26 @@ public class ConfigsGetBody {
     private List<SourcesConfig> sources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin_follow302_status")
+
+    private String originFollow302Status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cache_rules")
+
+    private List<CacheRules> cacheRules = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_filter")
+
+    private IpFilter ipFilter;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "referer")
+
+    private RefererConfig referer;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_protocol")
 
     private String originProtocol;
@@ -237,6 +257,108 @@ public class ConfigsGetBody {
 
     public void setSources(List<SourcesConfig> sources) {
         this.sources = sources;
+    }
+
+    public ConfigsGetBody withOriginFollow302Status(String originFollow302Status) {
+        this.originFollow302Status = originFollow302Status;
+        return this;
+    }
+
+    /**
+     * 回源跟随（on：开启，off：关闭）。
+     * @return originFollow302Status
+     */
+    public String getOriginFollow302Status() {
+        return originFollow302Status;
+    }
+
+    public void setOriginFollow302Status(String originFollow302Status) {
+        this.originFollow302Status = originFollow302Status;
+    }
+
+    public ConfigsGetBody withCacheRules(List<CacheRules> cacheRules) {
+        this.cacheRules = cacheRules;
+        return this;
+    }
+
+    public ConfigsGetBody addCacheRulesItem(CacheRules cacheRulesItem) {
+        if (this.cacheRules == null) {
+            this.cacheRules = new ArrayList<>();
+        }
+        this.cacheRules.add(cacheRulesItem);
+        return this;
+    }
+
+    public ConfigsGetBody withCacheRules(Consumer<List<CacheRules>> cacheRulesSetter) {
+        if (this.cacheRules == null) {
+            this.cacheRules = new ArrayList<>();
+        }
+        cacheRulesSetter.accept(this.cacheRules);
+        return this;
+    }
+
+    /**
+     * 缓存规则。
+     * @return cacheRules
+     */
+    public List<CacheRules> getCacheRules() {
+        return cacheRules;
+    }
+
+    public void setCacheRules(List<CacheRules> cacheRules) {
+        this.cacheRules = cacheRules;
+    }
+
+    public ConfigsGetBody withIpFilter(IpFilter ipFilter) {
+        this.ipFilter = ipFilter;
+        return this;
+    }
+
+    public ConfigsGetBody withIpFilter(Consumer<IpFilter> ipFilterSetter) {
+        if (this.ipFilter == null) {
+            this.ipFilter = new IpFilter();
+            ipFilterSetter.accept(this.ipFilter);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get ipFilter
+     * @return ipFilter
+     */
+    public IpFilter getIpFilter() {
+        return ipFilter;
+    }
+
+    public void setIpFilter(IpFilter ipFilter) {
+        this.ipFilter = ipFilter;
+    }
+
+    public ConfigsGetBody withReferer(RefererConfig referer) {
+        this.referer = referer;
+        return this;
+    }
+
+    public ConfigsGetBody withReferer(Consumer<RefererConfig> refererSetter) {
+        if (this.referer == null) {
+            this.referer = new RefererConfig();
+            refererSetter.accept(this.referer);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get referer
+     * @return referer
+     */
+    public RefererConfig getReferer() {
+        return referer;
+    }
+
+    public void setReferer(RefererConfig referer) {
+        this.referer = referer;
     }
 
     public ConfigsGetBody withOriginProtocol(String originProtocol) {
@@ -508,6 +630,10 @@ public class ConfigsGetBody {
             && Objects.equals(this.httpResponseHeader, configsGetBody.httpResponseHeader)
             && Objects.equals(this.urlAuth, configsGetBody.urlAuth) && Objects.equals(this.https, configsGetBody.https)
             && Objects.equals(this.sources, configsGetBody.sources)
+            && Objects.equals(this.originFollow302Status, configsGetBody.originFollow302Status)
+            && Objects.equals(this.cacheRules, configsGetBody.cacheRules)
+            && Objects.equals(this.ipFilter, configsGetBody.ipFilter)
+            && Objects.equals(this.referer, configsGetBody.referer)
             && Objects.equals(this.originProtocol, configsGetBody.originProtocol)
             && Objects.equals(this.forceRedirect, configsGetBody.forceRedirect)
             && Objects.equals(this.compress, configsGetBody.compress)
@@ -527,6 +653,10 @@ public class ConfigsGetBody {
             urlAuth,
             https,
             sources,
+            originFollow302Status,
+            cacheRules,
+            ipFilter,
+            referer,
             originProtocol,
             forceRedirect,
             compress,
@@ -548,6 +678,10 @@ public class ConfigsGetBody {
         sb.append("    urlAuth: ").append(toIndentedString(urlAuth)).append("\n");
         sb.append("    https: ").append(toIndentedString(https)).append("\n");
         sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
+        sb.append("    originFollow302Status: ").append(toIndentedString(originFollow302Status)).append("\n");
+        sb.append("    cacheRules: ").append(toIndentedString(cacheRules)).append("\n");
+        sb.append("    ipFilter: ").append(toIndentedString(ipFilter)).append("\n");
+        sb.append("    referer: ").append(toIndentedString(referer)).append("\n");
         sb.append("    originProtocol: ").append(toIndentedString(originProtocol)).append("\n");
         sb.append("    forceRedirect: ").append(toIndentedString(forceRedirect)).append("\n");
         sb.append("    compress: ").append(toIndentedString(compress)).append("\n");

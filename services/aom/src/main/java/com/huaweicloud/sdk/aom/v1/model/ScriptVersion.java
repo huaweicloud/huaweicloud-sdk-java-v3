@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v1.model.ScriptReferenceDetail;
+import com.huaweicloud.sdk.aom.v1.model.ReferenceInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -57,10 +57,10 @@ public class ScriptVersion  {
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reference_number")
+    @JsonProperty(value="job_reference_number")
     
 
-    private Integer referenceNumber;
+    private Integer jobReferenceNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="script_id")
@@ -105,9 +105,9 @@ public class ScriptVersion  {
     private String versionNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="script_reference")
+    @JsonProperty(value="job_reference_name")
     
-    private List<ScriptReferenceDetail> scriptReference = null;
+    private List<ReferenceInfo> jobReferenceName = null;
     
     public ScriptVersion withContent(String content) {
         this.content = content;
@@ -243,8 +243,8 @@ public class ScriptVersion  {
 
     
 
-    public ScriptVersion withReferenceNumber(Integer referenceNumber) {
-        this.referenceNumber = referenceNumber;
+    public ScriptVersion withJobReferenceNumber(Integer jobReferenceNumber) {
+        this.jobReferenceNumber = jobReferenceNumber;
         return this;
     }
 
@@ -252,17 +252,17 @@ public class ScriptVersion  {
 
 
     /**
-     * 脚本引用次数，脚本被任务和模板引用的次数。默认是0次,引用次数未非负整数，不能出现负数
+     * 脚本版本的引用次数，脚本版本被作业引用的次数。默认是0次,引用次数为非负整数，不能出现负数
      * minimum: 0
      * maximum: 9999999
-     * @return referenceNumber
+     * @return jobReferenceNumber
      */
-    public Integer getReferenceNumber() {
-        return referenceNumber;
+    public Integer getJobReferenceNumber() {
+        return jobReferenceNumber;
     }
 
-    public void setReferenceNumber(Integer referenceNumber) {
-        this.referenceNumber = referenceNumber;
+    public void setJobReferenceNumber(Integer jobReferenceNumber) {
+        this.jobReferenceNumber = jobReferenceNumber;
     }
 
     
@@ -425,38 +425,38 @@ public class ScriptVersion  {
 
     
 
-    public ScriptVersion withScriptReference(List<ScriptReferenceDetail> scriptReference) {
-        this.scriptReference = scriptReference;
+    public ScriptVersion withJobReferenceName(List<ReferenceInfo> jobReferenceName) {
+        this.jobReferenceName = jobReferenceName;
         return this;
     }
 
     
-    public ScriptVersion addScriptReferenceItem(ScriptReferenceDetail scriptReferenceItem) {
-        if(this.scriptReference == null) {
-            this.scriptReference = new ArrayList<>();
+    public ScriptVersion addJobReferenceNameItem(ReferenceInfo jobReferenceNameItem) {
+        if(this.jobReferenceName == null) {
+            this.jobReferenceName = new ArrayList<>();
         }
-        this.scriptReference.add(scriptReferenceItem);
+        this.jobReferenceName.add(jobReferenceNameItem);
         return this;
     }
 
-    public ScriptVersion withScriptReference(Consumer<List<ScriptReferenceDetail>> scriptReferenceSetter) {
-        if(this.scriptReference == null) {
-            this.scriptReference = new ArrayList<>();
+    public ScriptVersion withJobReferenceName(Consumer<List<ReferenceInfo>> jobReferenceNameSetter) {
+        if(this.jobReferenceName == null) {
+            this.jobReferenceName = new ArrayList<>();
         }
-        scriptReferenceSetter.accept(this.scriptReference);
+        jobReferenceNameSetter.accept(this.jobReferenceName);
         return this;
     }
 
     /**
-     * 脚本引用详情
-     * @return scriptReference
+     * 脚本引用的作业详情
+     * @return jobReferenceName
      */
-    public List<ScriptReferenceDetail> getScriptReference() {
-        return scriptReference;
+    public List<ReferenceInfo> getJobReferenceName() {
+        return jobReferenceName;
     }
 
-    public void setScriptReference(List<ScriptReferenceDetail> scriptReference) {
-        this.scriptReference = scriptReference;
+    public void setJobReferenceName(List<ReferenceInfo> jobReferenceName) {
+        this.jobReferenceName = jobReferenceName;
     }
 
     
@@ -476,7 +476,7 @@ public class ScriptVersion  {
             Objects.equals(this.enterpriseProjectId, scriptVersion.enterpriseProjectId) &&
             Objects.equals(this.name, scriptVersion.name) &&
             Objects.equals(this.projectId, scriptVersion.projectId) &&
-            Objects.equals(this.referenceNumber, scriptVersion.referenceNumber) &&
+            Objects.equals(this.jobReferenceNumber, scriptVersion.jobReferenceNumber) &&
             Objects.equals(this.scriptId, scriptVersion.scriptId) &&
             Objects.equals(this.scriptLanguage, scriptVersion.scriptLanguage) &&
             Objects.equals(this.statusDesc, scriptVersion.statusDesc) &&
@@ -484,11 +484,11 @@ public class ScriptVersion  {
             Objects.equals(this.updateTime, scriptVersion.updateTime) &&
             Objects.equals(this.versionId, scriptVersion.versionId) &&
             Objects.equals(this.versionNumber, scriptVersion.versionNumber) &&
-            Objects.equals(this.scriptReference, scriptVersion.scriptReference);
+            Objects.equals(this.jobReferenceName, scriptVersion.jobReferenceName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(content, createBy, createTime, enterpriseProjectId, name, projectId, referenceNumber, scriptId, scriptLanguage, statusDesc, updateBy, updateTime, versionId, versionNumber, scriptReference);
+        return Objects.hash(content, createBy, createTime, enterpriseProjectId, name, projectId, jobReferenceNumber, scriptId, scriptLanguage, statusDesc, updateBy, updateTime, versionId, versionNumber, jobReferenceName);
     }
     @Override
     public String toString() {
@@ -500,7 +500,7 @@ public class ScriptVersion  {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    referenceNumber: ").append(toIndentedString(referenceNumber)).append("\n");
+        sb.append("    jobReferenceNumber: ").append(toIndentedString(jobReferenceNumber)).append("\n");
         sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
         sb.append("    scriptLanguage: ").append(toIndentedString(scriptLanguage)).append("\n");
         sb.append("    statusDesc: ").append(toIndentedString(statusDesc)).append("\n");
@@ -508,7 +508,7 @@ public class ScriptVersion  {
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    versionId: ").append(toIndentedString(versionId)).append("\n");
         sb.append("    versionNumber: ").append(toIndentedString(versionNumber)).append("\n");
-        sb.append("    scriptReference: ").append(toIndentedString(scriptReference)).append("\n");
+        sb.append("    jobReferenceName: ").append(toIndentedString(jobReferenceName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

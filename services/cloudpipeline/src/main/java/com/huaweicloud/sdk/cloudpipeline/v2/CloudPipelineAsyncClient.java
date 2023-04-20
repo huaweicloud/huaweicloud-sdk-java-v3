@@ -113,6 +113,37 @@ public class CloudPipelineAsyncClient {
     }
 
     /**
+     * 基于模板创建流水线
+     *
+     * 基于模板创建流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePipelineByTemplateIdRequest 请求对象
+     * @return CompletableFuture<CreatePipelineByTemplateIdResponse>
+     */
+    public CompletableFuture<CreatePipelineByTemplateIdResponse> createPipelineByTemplateIdAsync(
+        CreatePipelineByTemplateIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.createPipelineByTemplateId);
+    }
+
+    /**
+     * 基于模板创建流水线
+     *
+     * 基于模板创建流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePipelineByTemplateIdRequest 请求对象
+     * @return AsyncInvoker<CreatePipelineByTemplateIdRequest, CreatePipelineByTemplateIdResponse>
+     */
+    public AsyncInvoker<CreatePipelineByTemplateIdRequest, CreatePipelineByTemplateIdResponse> createPipelineByTemplateIdAsyncInvoker(
+        CreatePipelineByTemplateIdRequest request) {
+        return new AsyncInvoker<CreatePipelineByTemplateIdRequest, CreatePipelineByTemplateIdResponse>(request,
+            CloudPipelineMeta.createPipelineByTemplateId, hcClient);
+    }
+
+    /**
      * 删除流水线
      *
      * 删除流水线
@@ -201,6 +232,37 @@ public class CloudPipelineAsyncClient {
         ListPipelineSimpleInfoRequest request) {
         return new AsyncInvoker<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse>(request,
             CloudPipelineMeta.listPipelineSimpleInfo, hcClient);
+    }
+
+    /**
+     * 查询模板列表
+     *
+     * 查询流水线模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPipelineTemplatesRequest 请求对象
+     * @return CompletableFuture<ListPipelineTemplatesResponse>
+     */
+    public CompletableFuture<ListPipelineTemplatesResponse> listPipelineTemplatesAsync(
+        ListPipelineTemplatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.listPipelineTemplates);
+    }
+
+    /**
+     * 查询模板列表
+     *
+     * 查询流水线模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPipelineTemplatesRequest 请求对象
+     * @return AsyncInvoker<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse>
+     */
+    public AsyncInvoker<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse> listPipelineTemplatesAsyncInvoker(
+        ListPipelineTemplatesRequest request) {
+        return new AsyncInvoker<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse>(request,
+            CloudPipelineMeta.listPipelineTemplates, hcClient);
     }
 
     /**
@@ -412,6 +474,37 @@ public class CloudPipelineAsyncClient {
         ShowPipelineRunDetailRequest request) {
         return new AsyncInvoker<ShowPipelineRunDetailRequest, ShowPipelineRunDetailResponse>(request,
             CloudPipelineMeta.showPipelineRunDetail, hcClient);
+    }
+
+    /**
+     * 查询模板详情
+     *
+     * 查询模板详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPipelineTemplateDetailRequest 请求对象
+     * @return CompletableFuture<ShowPipelineTemplateDetailResponse>
+     */
+    public CompletableFuture<ShowPipelineTemplateDetailResponse> showPipelineTemplateDetailAsync(
+        ShowPipelineTemplateDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.showPipelineTemplateDetail);
+    }
+
+    /**
+     * 查询模板详情
+     *
+     * 查询模板详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPipelineTemplateDetailRequest 请求对象
+     * @return AsyncInvoker<ShowPipelineTemplateDetailRequest, ShowPipelineTemplateDetailResponse>
+     */
+    public AsyncInvoker<ShowPipelineTemplateDetailRequest, ShowPipelineTemplateDetailResponse> showPipelineTemplateDetailAsyncInvoker(
+        ShowPipelineTemplateDetailRequest request) {
+        return new AsyncInvoker<ShowPipelineTemplateDetailRequest, ShowPipelineTemplateDetailResponse>(request,
+            CloudPipelineMeta.showPipelineTemplateDetail, hcClient);
     }
 
     /**

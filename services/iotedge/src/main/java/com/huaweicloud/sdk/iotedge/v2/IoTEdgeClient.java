@@ -1166,6 +1166,34 @@ public class IoTEdgeClient {
     }
 
     /**
+     * 修改边缘模块状态
+     *
+     * 用户通过Console接口启停数采连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateModuleStateRequest 请求对象
+     * @return UpdateModuleStateResponse
+     */
+    public UpdateModuleStateResponse updateModuleState(UpdateModuleStateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.updateModuleState);
+    }
+
+    /**
+     * 修改边缘模块状态
+     *
+     * 用户通过Console接口启停数采连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateModuleStateRequest 请求对象
+     * @return SyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse>
+     */
+    public SyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse> updateModuleStateInvoker(UpdateModuleStateRequest request) {
+        return new SyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse>(request, IoTEdgeMeta.updateModuleState, hcClient);
+    }
+
+    /**
      * 查询边缘路由列表
      *
      * 用户在指定边缘节点上查询边缘路由列表
@@ -1219,6 +1247,146 @@ public class IoTEdgeClient {
      */
     public SyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse> updateRoutesInvoker(UpdateRoutesRequest request) {
         return new SyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse>(request, IoTEdgeMeta.updateRoutes, hcClient);
+    }
+
+    /**
+     * 导入标准数采模板
+     *
+     * 导入标准数采模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddGeneralOtTemplateRequest 请求对象
+     * @return AddGeneralOtTemplateResponse
+     */
+    public AddGeneralOtTemplateResponse addGeneralOtTemplate(AddGeneralOtTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.addGeneralOtTemplate);
+    }
+
+    /**
+     * 导入标准数采模板
+     *
+     * 导入标准数采模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddGeneralOtTemplateRequest 请求对象
+     * @return SyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse>
+     */
+    public SyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse> addGeneralOtTemplateInvoker(AddGeneralOtTemplateRequest request) {
+        return new SyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse>(request, IoTEdgeMeta.addGeneralOtTemplate, hcClient);
+    }
+
+    /**
+     * 添加数采模板
+     *
+     * 添加数采模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddOtTemplatesRequest 请求对象
+     * @return AddOtTemplatesResponse
+     */
+    public AddOtTemplatesResponse addOtTemplates(AddOtTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.addOtTemplates);
+    }
+
+    /**
+     * 添加数采模板
+     *
+     * 添加数采模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddOtTemplatesRequest 请求对象
+     * @return SyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse>
+     */
+    public SyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse> addOtTemplatesInvoker(AddOtTemplatesRequest request) {
+        return new SyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse>(request, IoTEdgeMeta.addOtTemplates, hcClient);
+    }
+
+    /**
+     * 查询数采模板列表
+     *
+     * 查询数采模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchListOtTemplatesRequest 请求对象
+     * @return BatchListOtTemplatesResponse
+     */
+    public BatchListOtTemplatesResponse batchListOtTemplates(BatchListOtTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.batchListOtTemplates);
+    }
+
+    /**
+     * 查询数采模板列表
+     *
+     * 查询数采模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchListOtTemplatesRequest 请求对象
+     * @return SyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse>
+     */
+    public SyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse> batchListOtTemplatesInvoker(BatchListOtTemplatesRequest request) {
+        return new SyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse>(request, IoTEdgeMeta.batchListOtTemplates, hcClient);
+    }
+
+    /**
+     * 删除数采模板
+     *
+     * 删除数采模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteOtTemplateRequest 请求对象
+     * @return DeleteOtTemplateResponse
+     */
+    public DeleteOtTemplateResponse deleteOtTemplate(DeleteOtTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.deleteOtTemplate);
+    }
+
+    /**
+     * 删除数采模板
+     *
+     * 删除数采模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteOtTemplateRequest 请求对象
+     * @return SyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse>
+     */
+    public SyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse> deleteOtTemplateInvoker(DeleteOtTemplateRequest request) {
+        return new SyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse>(request, IoTEdgeMeta.deleteOtTemplate, hcClient);
+    }
+
+    /**
+     * 查询数采模板详情
+     *
+     * 查询数采模板详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOtTemplateRequest 请求对象
+     * @return ShowOtTemplateResponse
+     */
+    public ShowOtTemplateResponse showOtTemplate(ShowOtTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.showOtTemplate);
+    }
+
+    /**
+     * 查询数采模板详情
+     *
+     * 查询数采模板详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOtTemplateRequest 请求对象
+     * @return SyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse>
+     */
+    public SyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse> showOtTemplateInvoker(ShowOtTemplateRequest request) {
+        return new SyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse>(request, IoTEdgeMeta.showOtTemplate, hcClient);
     }
 
     /**

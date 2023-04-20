@@ -635,6 +635,13 @@ public class GslMeta {
             f -> f.withMarshaller(ListSimCardsRequest::getOrderIds, (req, v) -> {
                 req.setOrderIds(v);
             }));
+        builder.<List<String>>withRequestField("price_plan_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSimCardsRequest::getPricePlanId, (req, v) -> {
+                req.setPricePlanId(v);
+            }));
 
         // response
 

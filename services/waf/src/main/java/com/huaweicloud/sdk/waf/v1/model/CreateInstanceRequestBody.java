@@ -282,7 +282,7 @@ public class CreateInstanceRequestBody {
     }
 
     /**
-     * 是否为资源租户类   - true: 资源租户类   - false: 普通租户类
+     * 是否为资源租户类，默认值为false。   - true: 资源租户类   - false: 普通租户类
      * @return resTenant
      */
     public Boolean getResTenant() {

@@ -61,7 +61,7 @@ public class StorageUnit {
     }
 
     /**
-     * 存储池大小，单位：TB/PB（视图存储中容量、视图存储大容量）。
+     * 存储池大小，单位：TB。
      * minimum: 1
      * @return capacity
      */

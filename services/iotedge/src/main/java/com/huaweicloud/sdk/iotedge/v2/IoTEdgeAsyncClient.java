@@ -1168,6 +1168,34 @@ public class IoTEdgeAsyncClient {
     }
 
     /**
+     * 修改边缘模块状态
+     *
+     * 用户通过Console接口启停数采连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateModuleStateRequest 请求对象
+     * @return CompletableFuture<UpdateModuleStateResponse>
+     */
+    public CompletableFuture<UpdateModuleStateResponse> updateModuleStateAsync(UpdateModuleStateRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.updateModuleState);
+    }
+
+    /**
+     * 修改边缘模块状态
+     *
+     * 用户通过Console接口启停数采连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateModuleStateRequest 请求对象
+     * @return AsyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse>
+     */
+    public AsyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse> updateModuleStateAsyncInvoker(UpdateModuleStateRequest request) {
+        return new AsyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse>(request, IoTEdgeMeta.updateModuleState, hcClient);
+    }
+
+    /**
      * 查询边缘路由列表
      *
      * 用户在指定边缘节点上查询边缘路由列表
@@ -1221,6 +1249,146 @@ public class IoTEdgeAsyncClient {
      */
     public AsyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse> updateRoutesAsyncInvoker(UpdateRoutesRequest request) {
         return new AsyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse>(request, IoTEdgeMeta.updateRoutes, hcClient);
+    }
+
+    /**
+     * 导入标准数采模板
+     *
+     * 导入标准数采模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddGeneralOtTemplateRequest 请求对象
+     * @return CompletableFuture<AddGeneralOtTemplateResponse>
+     */
+    public CompletableFuture<AddGeneralOtTemplateResponse> addGeneralOtTemplateAsync(AddGeneralOtTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.addGeneralOtTemplate);
+    }
+
+    /**
+     * 导入标准数采模板
+     *
+     * 导入标准数采模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddGeneralOtTemplateRequest 请求对象
+     * @return AsyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse>
+     */
+    public AsyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse> addGeneralOtTemplateAsyncInvoker(AddGeneralOtTemplateRequest request) {
+        return new AsyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse>(request, IoTEdgeMeta.addGeneralOtTemplate, hcClient);
+    }
+
+    /**
+     * 添加数采模板
+     *
+     * 添加数采模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddOtTemplatesRequest 请求对象
+     * @return CompletableFuture<AddOtTemplatesResponse>
+     */
+    public CompletableFuture<AddOtTemplatesResponse> addOtTemplatesAsync(AddOtTemplatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.addOtTemplates);
+    }
+
+    /**
+     * 添加数采模板
+     *
+     * 添加数采模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddOtTemplatesRequest 请求对象
+     * @return AsyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse>
+     */
+    public AsyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse> addOtTemplatesAsyncInvoker(AddOtTemplatesRequest request) {
+        return new AsyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse>(request, IoTEdgeMeta.addOtTemplates, hcClient);
+    }
+
+    /**
+     * 查询数采模板列表
+     *
+     * 查询数采模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchListOtTemplatesRequest 请求对象
+     * @return CompletableFuture<BatchListOtTemplatesResponse>
+     */
+    public CompletableFuture<BatchListOtTemplatesResponse> batchListOtTemplatesAsync(BatchListOtTemplatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.batchListOtTemplates);
+    }
+
+    /**
+     * 查询数采模板列表
+     *
+     * 查询数采模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchListOtTemplatesRequest 请求对象
+     * @return AsyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse>
+     */
+    public AsyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse> batchListOtTemplatesAsyncInvoker(BatchListOtTemplatesRequest request) {
+        return new AsyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse>(request, IoTEdgeMeta.batchListOtTemplates, hcClient);
+    }
+
+    /**
+     * 删除数采模板
+     *
+     * 删除数采模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteOtTemplateRequest 请求对象
+     * @return CompletableFuture<DeleteOtTemplateResponse>
+     */
+    public CompletableFuture<DeleteOtTemplateResponse> deleteOtTemplateAsync(DeleteOtTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.deleteOtTemplate);
+    }
+
+    /**
+     * 删除数采模板
+     *
+     * 删除数采模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteOtTemplateRequest 请求对象
+     * @return AsyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse>
+     */
+    public AsyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse> deleteOtTemplateAsyncInvoker(DeleteOtTemplateRequest request) {
+        return new AsyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse>(request, IoTEdgeMeta.deleteOtTemplate, hcClient);
+    }
+
+    /**
+     * 查询数采模板详情
+     *
+     * 查询数采模板详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOtTemplateRequest 请求对象
+     * @return CompletableFuture<ShowOtTemplateResponse>
+     */
+    public CompletableFuture<ShowOtTemplateResponse> showOtTemplateAsync(ShowOtTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.showOtTemplate);
+    }
+
+    /**
+     * 查询数采模板详情
+     *
+     * 查询数采模板详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOtTemplateRequest 请求对象
+     * @return AsyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse>
+     */
+    public AsyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse> showOtTemplateAsyncInvoker(ShowOtTemplateRequest request) {
+        return new AsyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse>(request, IoTEdgeMeta.showOtTemplate, hcClient);
     }
 
     /**

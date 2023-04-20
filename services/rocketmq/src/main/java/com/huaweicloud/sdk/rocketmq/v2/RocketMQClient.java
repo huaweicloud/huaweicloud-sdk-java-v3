@@ -640,6 +640,36 @@ public class RocketMQClient {
     }
 
     /**
+     * 查询消费者列表
+     *
+     * 查询消费组内消费者列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConsumerConnectionsRequest 请求对象
+     * @return ShowConsumerConnectionsResponse
+     */
+    public ShowConsumerConnectionsResponse showConsumerConnections(ShowConsumerConnectionsRequest request) {
+        return hcClient.syncInvokeHttp(request, RocketMQMeta.showConsumerConnections);
+    }
+
+    /**
+     * 查询消费者列表
+     *
+     * 查询消费组内消费者列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConsumerConnectionsRequest 请求对象
+     * @return SyncInvoker<ShowConsumerConnectionsRequest, ShowConsumerConnectionsResponse>
+     */
+    public SyncInvoker<ShowConsumerConnectionsRequest, ShowConsumerConnectionsResponse> showConsumerConnectionsInvoker(
+        ShowConsumerConnectionsRequest request) {
+        return new SyncInvoker<ShowConsumerConnectionsRequest, ShowConsumerConnectionsResponse>(request,
+            RocketMQMeta.showConsumerConnections, hcClient);
+    }
+
+    /**
      * 查询消费列表或详情
      *
      * 查询消费列表或详情。

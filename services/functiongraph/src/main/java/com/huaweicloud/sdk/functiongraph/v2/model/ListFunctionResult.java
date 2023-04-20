@@ -6,8 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -233,6 +235,11 @@ public class ListFunctionResult {
     @JsonProperty(value = "memory_size")
 
     private Integer memorySize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gpu_memory")
+
+    private Integer gpuMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu")
@@ -525,6 +532,16 @@ public class ListFunctionResult {
 
     private Integer failCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_bridge_function")
+
+    private Boolean isBridgeFunction;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bind_bridge_funcUrns")
+
+    private List<String> bindBridgeFuncUrns = null;
+
     public ListFunctionResult withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
         return this;
@@ -693,6 +710,23 @@ public class ListFunctionResult {
 
     public void setMemorySize(Integer memorySize) {
         this.memorySize = memorySize;
+    }
+
+    public ListFunctionResult withGpuMemory(Integer gpuMemory) {
+        this.gpuMemory = gpuMemory;
+        return this;
+    }
+
+    /**
+     * 函数消耗的显存，只支持自定义运行时与自定义镜像函数配置GPU。 单位MB。 取值范围为：1024、2048、3072、4096、5120、6144、7168、8192、9216、10240、11264、12288、13312、14336、15360、16384。 最小值为1024，最大值为16384。
+     * @return gpuMemory
+     */
+    public Integer getGpuMemory() {
+        return gpuMemory;
+    }
+
+    public void setGpuMemory(Integer gpuMemory) {
+        this.gpuMemory = gpuMemory;
     }
 
     public ListFunctionResult withCpu(Integer cpu) {
@@ -1129,6 +1163,56 @@ public class ListFunctionResult {
         this.failCount = failCount;
     }
 
+    public ListFunctionResult withIsBridgeFunction(Boolean isBridgeFunction) {
+        this.isBridgeFunction = isBridgeFunction;
+        return this;
+    }
+
+    /**
+     * 是否为bridge函数
+     * @return isBridgeFunction
+     */
+    public Boolean getIsBridgeFunction() {
+        return isBridgeFunction;
+    }
+
+    public void setIsBridgeFunction(Boolean isBridgeFunction) {
+        this.isBridgeFunction = isBridgeFunction;
+    }
+
+    public ListFunctionResult withBindBridgeFuncUrns(List<String> bindBridgeFuncUrns) {
+        this.bindBridgeFuncUrns = bindBridgeFuncUrns;
+        return this;
+    }
+
+    public ListFunctionResult addBindBridgeFuncUrnsItem(String bindBridgeFuncUrnsItem) {
+        if (this.bindBridgeFuncUrns == null) {
+            this.bindBridgeFuncUrns = new ArrayList<>();
+        }
+        this.bindBridgeFuncUrns.add(bindBridgeFuncUrnsItem);
+        return this;
+    }
+
+    public ListFunctionResult withBindBridgeFuncUrns(Consumer<List<String>> bindBridgeFuncUrnsSetter) {
+        if (this.bindBridgeFuncUrns == null) {
+            this.bindBridgeFuncUrns = new ArrayList<>();
+        }
+        bindBridgeFuncUrnsSetter.accept(this.bindBridgeFuncUrns);
+        return this;
+    }
+
+    /**
+     * 绑定bridge函数的urn列表
+     * @return bindBridgeFuncUrns
+     */
+    public List<String> getBindBridgeFuncUrns() {
+        return bindBridgeFuncUrns;
+    }
+
+    public void setBindBridgeFuncUrns(List<String> bindBridgeFuncUrns) {
+        this.bindBridgeFuncUrns = bindBridgeFuncUrns;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1148,6 +1232,7 @@ public class ListFunctionResult {
             && Objects.equals(this.timeout, listFunctionResult.timeout)
             && Objects.equals(this.handler, listFunctionResult.handler)
             && Objects.equals(this.memorySize, listFunctionResult.memorySize)
+            && Objects.equals(this.gpuMemory, listFunctionResult.gpuMemory)
             && Objects.equals(this.cpu, listFunctionResult.cpu)
             && Objects.equals(this.codeType, listFunctionResult.codeType)
             && Objects.equals(this.codeUrl, listFunctionResult.codeUrl)
@@ -1172,7 +1257,9 @@ public class ListFunctionResult {
             && Objects.equals(this.logGroupId, listFunctionResult.logGroupId)
             && Objects.equals(this.logStreamId, listFunctionResult.logStreamId)
             && Objects.equals(this.type, listFunctionResult.type)
-            && Objects.equals(this.failCount, listFunctionResult.failCount);
+            && Objects.equals(this.failCount, listFunctionResult.failCount)
+            && Objects.equals(this.isBridgeFunction, listFunctionResult.isBridgeFunction)
+            && Objects.equals(this.bindBridgeFuncUrns, listFunctionResult.bindBridgeFuncUrns);
     }
 
     @Override
@@ -1187,6 +1274,7 @@ public class ListFunctionResult {
             timeout,
             handler,
             memorySize,
+            gpuMemory,
             cpu,
             codeType,
             codeUrl,
@@ -1211,7 +1299,9 @@ public class ListFunctionResult {
             logGroupId,
             logStreamId,
             type,
-            failCount);
+            failCount,
+            isBridgeFunction,
+            bindBridgeFuncUrns);
     }
 
     @Override
@@ -1228,6 +1318,7 @@ public class ListFunctionResult {
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    handler: ").append(toIndentedString(handler)).append("\n");
         sb.append("    memorySize: ").append(toIndentedString(memorySize)).append("\n");
+        sb.append("    gpuMemory: ").append(toIndentedString(gpuMemory)).append("\n");
         sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");
         sb.append("    codeType: ").append(toIndentedString(codeType)).append("\n");
         sb.append("    codeUrl: ").append(toIndentedString(codeUrl)).append("\n");
@@ -1253,6 +1344,8 @@ public class ListFunctionResult {
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    failCount: ").append(toIndentedString(failCount)).append("\n");
+        sb.append("    isBridgeFunction: ").append(toIndentedString(isBridgeFunction)).append("\n");
+        sb.append("    bindBridgeFuncUrns: ").append(toIndentedString(bindBridgeFuncUrns)).append("\n");
         sb.append("}");
         return sb.toString();
     }

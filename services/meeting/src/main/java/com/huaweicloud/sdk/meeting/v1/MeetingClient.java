@@ -633,6 +633,36 @@ public class MeetingClient {
     }
 
     /**
+     * 批量查询用户详情
+     *
+     * 批量查询用户详情，支持指定第三方账号查询详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowUserDetailsRequest 请求对象
+     * @return BatchShowUserDetailsResponse
+     */
+    public BatchShowUserDetailsResponse batchShowUserDetails(BatchShowUserDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.batchShowUserDetails);
+    }
+
+    /**
+     * 批量查询用户详情
+     *
+     * 批量查询用户详情，支持指定第三方账号查询详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchShowUserDetailsRequest 请求对象
+     * @return SyncInvoker<BatchShowUserDetailsRequest, BatchShowUserDetailsResponse>
+     */
+    public SyncInvoker<BatchShowUserDetailsRequest, BatchShowUserDetailsResponse> batchShowUserDetailsInvoker(
+        BatchShowUserDetailsRequest request) {
+        return new SyncInvoker<BatchShowUserDetailsRequest, BatchShowUserDetailsResponse>(request,
+            MeetingMeta.batchShowUserDetails, hcClient);
+    }
+
+    /**
      * 批量修改终端状态
      *
      * 企业管理员通过该接口批量修改专业会议终端状态。当硬终端资源到期后，若企业内对应资源的硬终端超过数量后会被系统随机自动停用，此时可通过该接口修改专业会议终端的状态。

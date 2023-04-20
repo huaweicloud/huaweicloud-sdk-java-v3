@@ -24,6 +24,11 @@ public class JobInfo {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private Integer id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodes")
 
     private List<Node> nodes = null;
@@ -126,6 +131,11 @@ public class JobInfo {
     private JobTypeEnum jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lastUpdateUser")
+
+    private String lastUpdateUser;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "basicConfig")
 
     private BasicInfo basicConfig;
@@ -145,6 +155,23 @@ public class JobInfo {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public JobInfo withId(Integer id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * Get id
+     * @return id
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public JobInfo withNodes(List<Node> nodes) {
@@ -273,6 +300,23 @@ public class JobInfo {
         this.jobType = jobType;
     }
 
+    public JobInfo withLastUpdateUser(String lastUpdateUser) {
+        this.lastUpdateUser = lastUpdateUser;
+        return this;
+    }
+
+    /**
+     * Get lastUpdateUser
+     * @return lastUpdateUser
+     */
+    public String getLastUpdateUser() {
+        return lastUpdateUser;
+    }
+
+    public void setLastUpdateUser(String lastUpdateUser) {
+        this.lastUpdateUser = lastUpdateUser;
+    }
+
     public JobInfo withBasicConfig(BasicInfo basicConfig) {
         this.basicConfig = basicConfig;
         return this;
@@ -308,15 +352,17 @@ public class JobInfo {
             return false;
         }
         JobInfo jobInfo = (JobInfo) o;
-        return Objects.equals(this.name, jobInfo.name) && Objects.equals(this.nodes, jobInfo.nodes)
-            && Objects.equals(this.schedule, jobInfo.schedule) && Objects.equals(this.params, jobInfo.params)
-            && Objects.equals(this.directory, jobInfo.directory) && Objects.equals(this.jobType, jobInfo.jobType)
+        return Objects.equals(this.name, jobInfo.name) && Objects.equals(this.id, jobInfo.id)
+            && Objects.equals(this.nodes, jobInfo.nodes) && Objects.equals(this.schedule, jobInfo.schedule)
+            && Objects.equals(this.params, jobInfo.params) && Objects.equals(this.directory, jobInfo.directory)
+            && Objects.equals(this.jobType, jobInfo.jobType)
+            && Objects.equals(this.lastUpdateUser, jobInfo.lastUpdateUser)
             && Objects.equals(this.basicConfig, jobInfo.basicConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, nodes, schedule, params, directory, jobType, basicConfig);
+        return Objects.hash(name, id, nodes, schedule, params, directory, jobType, lastUpdateUser, basicConfig);
     }
 
     @Override
@@ -324,11 +370,13 @@ public class JobInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class JobInfo {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
         sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");
         sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("    directory: ").append(toIndentedString(directory)).append("\n");
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
+        sb.append("    lastUpdateUser: ").append(toIndentedString(lastUpdateUser)).append("\n");
         sb.append("    basicConfig: ").append(toIndentedString(basicConfig)).append("\n");
         sb.append("}");
         return sb.toString();

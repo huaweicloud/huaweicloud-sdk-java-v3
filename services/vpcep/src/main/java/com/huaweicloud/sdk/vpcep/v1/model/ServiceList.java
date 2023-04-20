@@ -265,7 +265,7 @@ public class ServiceList {
     private Integer connectionCount;
 
     /**
-     * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
+     * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
      */
     public static final class TcpProxyEnum {
 
@@ -289,6 +289,11 @@ public class ServiceList {
          */
         public static final TcpProxyEnum OPEN = new TcpProxyEnum("open");
 
+        /**
+         * Enum PROXY_VNI for value: "proxy_vni"
+         */
+        public static final TcpProxyEnum PROXY_VNI = new TcpProxyEnum("proxy_vni");
+
         private static final Map<String, TcpProxyEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TcpProxyEnum> createStaticFields() {
@@ -297,6 +302,7 @@ public class ServiceList {
             map.put("toa_open", TOA_OPEN);
             map.put("proxy_open", PROXY_OPEN);
             map.put("open", OPEN);
+            map.put("proxy_vni", PROXY_VNI);
             return Collections.unmodifiableMap(map);
         }
 
@@ -373,6 +379,11 @@ public class ServiceList {
 
     private String publicBorderGroup;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_policy")
+
+    private Boolean enablePolicy;
+
     public ServiceList withId(String id) {
         this.id = id;
         return this;
@@ -396,7 +407,7 @@ public class ServiceList {
     }
 
     /**
-     * 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally Unique Identifier，下文简称UUID）。取值为： ● LB类型：增强型负载均衡器内网IP对应的端口ID。 ● VM类型：弹性云服务器IP地址对应的网卡ID。 ● VIP类型：虚拟资源所在物理服务器对应的网卡ID。
+     * 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally Unique Identifier，下文简称UUID）。取值为： ● LB类型：负载均衡器内网IP对应的端口ID。 ● VM类型：弹性云服务器IP地址对应的网卡ID。 ● VIP类型：虚拟资源所在物理服务器对应的网卡ID。（该字段已废弃，请优先使用LB类型）
      * @return portId
      */
     public String getPortId() {
@@ -683,7 +694,7 @@ public class ServiceList {
     }
 
     /**
-     * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 默认值为“close”。
+     * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
      * @return tcpProxy
      */
     public TcpProxyEnum getTcpProxy() {
@@ -761,6 +772,23 @@ public class ServiceList {
         this.publicBorderGroup = publicBorderGroup;
     }
 
+    public ServiceList withEnablePolicy(Boolean enablePolicy) {
+        this.enablePolicy = enablePolicy;
+        return this;
+    }
+
+    /**
+     * 是否开启终端节点策略。 ● false：不支持设置终端节点策略 ● true：支持设置终端节点策略 默认为false
+     * @return enablePolicy
+     */
+    public Boolean getEnablePolicy() {
+        return enablePolicy;
+    }
+
+    public void setEnablePolicy(Boolean enablePolicy) {
+        this.enablePolicy = enablePolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -785,7 +813,8 @@ public class ServiceList {
             && Objects.equals(this.connectionCount, serviceList.connectionCount)
             && Objects.equals(this.tcpProxy, serviceList.tcpProxy) && Objects.equals(this.error, serviceList.error)
             && Objects.equals(this.description, serviceList.description)
-            && Objects.equals(this.publicBorderGroup, serviceList.publicBorderGroup);
+            && Objects.equals(this.publicBorderGroup, serviceList.publicBorderGroup)
+            && Objects.equals(this.enablePolicy, serviceList.enablePolicy);
     }
 
     @Override
@@ -809,7 +838,8 @@ public class ServiceList {
             tcpProxy,
             error,
             description,
-            publicBorderGroup);
+            publicBorderGroup,
+            enablePolicy);
     }
 
     @Override
@@ -836,6 +866,7 @@ public class ServiceList {
         sb.append("    error: ").append(toIndentedString(error)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
+        sb.append("    enablePolicy: ").append(toIndentedString(enablePolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

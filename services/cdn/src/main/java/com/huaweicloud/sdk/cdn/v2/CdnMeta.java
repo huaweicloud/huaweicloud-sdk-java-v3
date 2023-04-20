@@ -436,6 +436,38 @@ public class CdnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse> showDomainFullConfig =
+        genForshowDomainFullConfig();
+
+    private static HttpRequestDef<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse> genForshowDomainFullConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainFullConfigRequest, ShowDomainFullConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDomainFullConfigRequest.class, ShowDomainFullConfigResponse.class)
+            .withName("ShowDomainFullConfig")
+            .withUri("/v1.1/cdn/configuration/domains/{domain_name}/configs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainFullConfigRequest::getDomainName, (req, v) -> {
+                req.setDomainName(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainFullConfigRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse> showDomainLocationStats =
         genForshowDomainLocationStats();
 
@@ -724,6 +756,45 @@ public class CdnMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTopUrlRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse> updateDomainFullConfig =
+        genForupdateDomainFullConfig();
+
+    private static HttpRequestDef<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse> genForupdateDomainFullConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainFullConfigRequest, UpdateDomainFullConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateDomainFullConfigRequest.class, UpdateDomainFullConfigResponse.class)
+            .withName("UpdateDomainFullConfig")
+            .withUri("/v1.1/cdn/configuration/domains/{domain_name}/configs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDomainFullConfigRequest::getDomainName, (req, v) -> {
+                req.setDomainName(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDomainFullConfigRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<ModifyDomainConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ModifyDomainConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateDomainFullConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

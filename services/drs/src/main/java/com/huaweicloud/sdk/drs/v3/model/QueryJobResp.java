@@ -1027,6 +1027,94 @@ public class QueryJobResp {
 
     private List<DatabaseObjectInfo> objectInfos = null;
 
+    /**
+    * 初始任务方向。 取值： - up：入云，灾备场景时对应本云为备。 - down：出云，灾备场景时对应本云为主。 - non-dbs：自建。
+    */
+    public static final class OriginalJobDirectionEnum {
+
+        /**
+         * Enum UP for value: "up"
+         */
+        public static final OriginalJobDirectionEnum UP = new OriginalJobDirectionEnum("up");
+
+        /**
+         * Enum DOWN for value: "down"
+         */
+        public static final OriginalJobDirectionEnum DOWN = new OriginalJobDirectionEnum("down");
+
+        /**
+         * Enum NON_DBS for value: "non-dbs"
+         */
+        public static final OriginalJobDirectionEnum NON_DBS = new OriginalJobDirectionEnum("non-dbs");
+
+        private static final Map<String, OriginalJobDirectionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OriginalJobDirectionEnum> createStaticFields() {
+            Map<String, OriginalJobDirectionEnum> map = new HashMap<>();
+            map.put("up", UP);
+            map.put("down", DOWN);
+            map.put("non-dbs", NON_DBS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        OriginalJobDirectionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static OriginalJobDirectionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            OriginalJobDirectionEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new OriginalJobDirectionEnum(value);
+            }
+            return result;
+        }
+
+        public static OriginalJobDirectionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            OriginalJobDirectionEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof OriginalJobDirectionEnum) {
+                return this.value.equals(((OriginalJobDirectionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "original_job_direction")
+
+    private OriginalJobDirectionEnum originalJobDirection;
+
     public QueryJobResp withId(String id) {
         this.id = id;
         return this;
@@ -2056,6 +2144,23 @@ public class QueryJobResp {
         this.objectInfos = objectInfos;
     }
 
+    public QueryJobResp withOriginalJobDirection(OriginalJobDirectionEnum originalJobDirection) {
+        this.originalJobDirection = originalJobDirection;
+        return this;
+    }
+
+    /**
+     * 初始任务方向。 取值： - up：入云，灾备场景时对应本云为备。 - down：出云，灾备场景时对应本云为主。 - non-dbs：自建。
+     * @return originalJobDirection
+     */
+    public OriginalJobDirectionEnum getOriginalJobDirection() {
+        return originalJobDirection;
+    }
+
+    public void setOriginalJobDirection(OriginalJobDirectionEnum originalJobDirection) {
+        this.originalJobDirection = originalJobDirection;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -2113,7 +2218,8 @@ public class QueryJobResp {
             && Objects.equals(this.slaveAz, queryJobResp.slaveAz)
             && Objects.equals(this.nodeRole, queryJobResp.nodeRole)
             && Objects.equals(this.periodOrder, queryJobResp.periodOrder)
-            && Objects.equals(this.objectInfos, queryJobResp.objectInfos);
+            && Objects.equals(this.objectInfos, queryJobResp.objectInfos)
+            && Objects.equals(this.originalJobDirection, queryJobResp.originalJobDirection);
     }
 
     @Override
@@ -2171,7 +2277,8 @@ public class QueryJobResp {
             slaveAz,
             nodeRole,
             periodOrder,
-            objectInfos);
+            objectInfos,
+            originalJobDirection);
     }
 
     @Override
@@ -2232,6 +2339,7 @@ public class QueryJobResp {
         sb.append("    nodeRole: ").append(toIndentedString(nodeRole)).append("\n");
         sb.append("    periodOrder: ").append(toIndentedString(periodOrder)).append("\n");
         sb.append("    objectInfos: ").append(toIndentedString(objectInfos)).append("\n");
+        sb.append("    originalJobDirection: ").append(toIndentedString(originalJobDirection)).append("\n");
         sb.append("}");
         return sb.toString();
     }

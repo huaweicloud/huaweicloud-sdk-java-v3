@@ -315,6 +315,11 @@ public class ListSimCardsRequest {
 
     private List<Long> orderIds = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "price_plan_id")
+
+    private List<String> pricePlanId = null;
+
     public ListSimCardsRequest withMainSearchType(Integer mainSearchType) {
         this.mainSearchType = mainSearchType;
         return this;
@@ -794,6 +799,39 @@ public class ListSimCardsRequest {
         this.orderIds = orderIds;
     }
 
+    public ListSimCardsRequest withPricePlanId(List<String> pricePlanId) {
+        this.pricePlanId = pricePlanId;
+        return this;
+    }
+
+    public ListSimCardsRequest addPricePlanIdItem(String pricePlanIdItem) {
+        if (this.pricePlanId == null) {
+            this.pricePlanId = new ArrayList<>();
+        }
+        this.pricePlanId.add(pricePlanIdItem);
+        return this;
+    }
+
+    public ListSimCardsRequest withPricePlanId(Consumer<List<String>> pricePlanIdSetter) {
+        if (this.pricePlanId == null) {
+            this.pricePlanId = new ArrayList<>();
+        }
+        pricePlanIdSetter.accept(this.pricePlanId);
+        return this;
+    }
+
+    /**
+     * 套餐id集合，最多支持传30个
+     * @return pricePlanId
+     */
+    public List<String> getPricePlanId() {
+        return pricePlanId;
+    }
+
+    public void setPricePlanId(List<String> pricePlanId) {
+        this.pricePlanId = pricePlanId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -827,7 +865,8 @@ public class ListSimCardsRequest {
             && Objects.equals(this.realNamed, listSimCardsRequest.realNamed)
             && Objects.equals(this.orderId, listSimCardsRequest.orderId)
             && Objects.equals(this.filterDowntimePeriod, listSimCardsRequest.filterDowntimePeriod)
-            && Objects.equals(this.orderIds, listSimCardsRequest.orderIds);
+            && Objects.equals(this.orderIds, listSimCardsRequest.orderIds)
+            && Objects.equals(this.pricePlanId, listSimCardsRequest.pricePlanId);
     }
 
     @Override
@@ -856,7 +895,8 @@ public class ListSimCardsRequest {
             realNamed,
             orderId,
             filterDowntimePeriod,
-            orderIds);
+            orderIds,
+            pricePlanId);
     }
 
     @Override
@@ -888,6 +928,7 @@ public class ListSimCardsRequest {
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    filterDowntimePeriod: ").append(toIndentedString(filterDowntimePeriod)).append("\n");
         sb.append("    orderIds: ").append(toIndentedString(orderIds)).append("\n");
+        sb.append("    pricePlanId: ").append(toIndentedString(pricePlanId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1,0 +1,236 @@
+package com.huaweicloud.sdk.rocketmq.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * Response Object
+ */
+public class ShowConsumerConnectionsResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_name")
+
+    private String groupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "online")
+
+    private Boolean online;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subscription_consistency")
+
+    private Boolean subscriptionConsistency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private Integer total;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "next_offset")
+
+    private Integer nextOffset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "previous_offset")
+
+    private Integer previousOffset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "clients")
+
+    private List<ClientData> clients = null;
+
+    public ShowConsumerConnectionsResponse withGroupName(String groupName) {
+        this.groupName = groupName;
+        return this;
+    }
+
+    /**
+     * 消费组名称
+     * @return groupName
+     */
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public ShowConsumerConnectionsResponse withOnline(Boolean online) {
+        this.online = online;
+        return this;
+    }
+
+    /**
+     * 消费组是否在线
+     * @return online
+     */
+    public Boolean getOnline() {
+        return online;
+    }
+
+    public void setOnline(Boolean online) {
+        this.online = online;
+    }
+
+    public ShowConsumerConnectionsResponse withSubscriptionConsistency(Boolean subscriptionConsistency) {
+        this.subscriptionConsistency = subscriptionConsistency;
+        return this;
+    }
+
+    /**
+     * 订阅关系是否一致
+     * @return subscriptionConsistency
+     */
+    public Boolean getSubscriptionConsistency() {
+        return subscriptionConsistency;
+    }
+
+    public void setSubscriptionConsistency(Boolean subscriptionConsistency) {
+        this.subscriptionConsistency = subscriptionConsistency;
+    }
+
+    public ShowConsumerConnectionsResponse withTotal(Integer total) {
+        this.total = total;
+        return this;
+    }
+
+    /**
+     * 消费者总数
+     * @return total
+     */
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
+    public ShowConsumerConnectionsResponse withNextOffset(Integer nextOffset) {
+        this.nextOffset = nextOffset;
+        return this;
+    }
+
+    /**
+     * 下个分页的offset
+     * @return nextOffset
+     */
+    public Integer getNextOffset() {
+        return nextOffset;
+    }
+
+    public void setNextOffset(Integer nextOffset) {
+        this.nextOffset = nextOffset;
+    }
+
+    public ShowConsumerConnectionsResponse withPreviousOffset(Integer previousOffset) {
+        this.previousOffset = previousOffset;
+        return this;
+    }
+
+    /**
+     * 上个分页的offset
+     * @return previousOffset
+     */
+    public Integer getPreviousOffset() {
+        return previousOffset;
+    }
+
+    public void setPreviousOffset(Integer previousOffset) {
+        this.previousOffset = previousOffset;
+    }
+
+    public ShowConsumerConnectionsResponse withClients(List<ClientData> clients) {
+        this.clients = clients;
+        return this;
+    }
+
+    public ShowConsumerConnectionsResponse addClientsItem(ClientData clientsItem) {
+        if (this.clients == null) {
+            this.clients = new ArrayList<>();
+        }
+        this.clients.add(clientsItem);
+        return this;
+    }
+
+    public ShowConsumerConnectionsResponse withClients(Consumer<List<ClientData>> clientsSetter) {
+        if (this.clients == null) {
+            this.clients = new ArrayList<>();
+        }
+        clientsSetter.accept(this.clients);
+        return this;
+    }
+
+    /**
+     * 消费者订阅详情列表
+     * @return clients
+     */
+    public List<ClientData> getClients() {
+        return clients;
+    }
+
+    public void setClients(List<ClientData> clients) {
+        this.clients = clients;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ShowConsumerConnectionsResponse showConsumerConnectionsResponse = (ShowConsumerConnectionsResponse) o;
+        return Objects.equals(this.groupName, showConsumerConnectionsResponse.groupName)
+            && Objects.equals(this.online, showConsumerConnectionsResponse.online)
+            && Objects.equals(this.subscriptionConsistency, showConsumerConnectionsResponse.subscriptionConsistency)
+            && Objects.equals(this.total, showConsumerConnectionsResponse.total)
+            && Objects.equals(this.nextOffset, showConsumerConnectionsResponse.nextOffset)
+            && Objects.equals(this.previousOffset, showConsumerConnectionsResponse.previousOffset)
+            && Objects.equals(this.clients, showConsumerConnectionsResponse.clients);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(groupName, online, subscriptionConsistency, total, nextOffset, previousOffset, clients);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ShowConsumerConnectionsResponse {\n");
+        sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+        sb.append("    online: ").append(toIndentedString(online)).append("\n");
+        sb.append("    subscriptionConsistency: ").append(toIndentedString(subscriptionConsistency)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    nextOffset: ").append(toIndentedString(nextOffset)).append("\n");
+        sb.append("    previousOffset: ").append(toIndentedString(previousOffset)).append("\n");
+        sb.append("    clients: ").append(toIndentedString(clients)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

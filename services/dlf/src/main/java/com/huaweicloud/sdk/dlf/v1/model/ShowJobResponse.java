@@ -25,6 +25,11 @@ public class ShowJobResponse extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private Integer id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodes")
 
     private List<Node> nodes = null;
@@ -127,6 +132,11 @@ public class ShowJobResponse extends SdkResponse {
     private JobTypeEnum jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lastUpdateUser")
+
+    private String lastUpdateUser;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "basicConfig")
 
     private BasicInfo basicConfig;
@@ -146,6 +156,23 @@ public class ShowJobResponse extends SdkResponse {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ShowJobResponse withId(Integer id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * Get id
+     * @return id
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public ShowJobResponse withNodes(List<Node> nodes) {
@@ -274,6 +301,23 @@ public class ShowJobResponse extends SdkResponse {
         this.jobType = jobType;
     }
 
+    public ShowJobResponse withLastUpdateUser(String lastUpdateUser) {
+        this.lastUpdateUser = lastUpdateUser;
+        return this;
+    }
+
+    /**
+     * Get lastUpdateUser
+     * @return lastUpdateUser
+     */
+    public String getLastUpdateUser() {
+        return lastUpdateUser;
+    }
+
+    public void setLastUpdateUser(String lastUpdateUser) {
+        this.lastUpdateUser = lastUpdateUser;
+    }
+
     public ShowJobResponse withBasicConfig(BasicInfo basicConfig) {
         this.basicConfig = basicConfig;
         return this;
@@ -309,17 +353,19 @@ public class ShowJobResponse extends SdkResponse {
             return false;
         }
         ShowJobResponse showJobResponse = (ShowJobResponse) o;
-        return Objects.equals(this.name, showJobResponse.name) && Objects.equals(this.nodes, showJobResponse.nodes)
+        return Objects.equals(this.name, showJobResponse.name) && Objects.equals(this.id, showJobResponse.id)
+            && Objects.equals(this.nodes, showJobResponse.nodes)
             && Objects.equals(this.schedule, showJobResponse.schedule)
             && Objects.equals(this.params, showJobResponse.params)
             && Objects.equals(this.directory, showJobResponse.directory)
             && Objects.equals(this.jobType, showJobResponse.jobType)
+            && Objects.equals(this.lastUpdateUser, showJobResponse.lastUpdateUser)
             && Objects.equals(this.basicConfig, showJobResponse.basicConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, nodes, schedule, params, directory, jobType, basicConfig);
+        return Objects.hash(name, id, nodes, schedule, params, directory, jobType, lastUpdateUser, basicConfig);
     }
 
     @Override
@@ -327,11 +373,13 @@ public class ShowJobResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowJobResponse {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
         sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");
         sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("    directory: ").append(toIndentedString(directory)).append("\n");
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
+        sb.append("    lastUpdateUser: ").append(toIndentedString(lastUpdateUser)).append("\n");
         sb.append("    basicConfig: ").append(toIndentedString(basicConfig)).append("\n");
         sb.append("}");
         return sb.toString();

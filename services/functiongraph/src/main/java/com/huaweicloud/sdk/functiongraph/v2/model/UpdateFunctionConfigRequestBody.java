@@ -209,6 +209,11 @@ public class UpdateFunctionConfigRequestBody {
     private Integer memorySize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gpu_memory")
+
+    private Integer gpuMemory;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
 
     private String userData;
@@ -269,9 +274,24 @@ public class UpdateFunctionConfigRequestBody {
     private Integer initializerTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ephemeral_storage")
+
+    private Integer ephemeralStorage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_config")
+
+    private FuncLogConfig logConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "network_controller")
+
+    private NetworkControlConfig networkController;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_stateful_function")
@@ -292,6 +312,16 @@ public class UpdateFunctionConfigRequestBody {
     @JsonProperty(value = "domain_names")
 
     private String domainNames;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "restore_hook_handler")
+
+    private String restoreHookHandler;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "restore_hook_timeout")
+
+    private Integer restoreHookTimeout;
 
     public UpdateFunctionConfigRequestBody withFuncName(String funcName) {
         this.funcName = funcName;
@@ -376,6 +406,23 @@ public class UpdateFunctionConfigRequestBody {
 
     public void setMemorySize(Integer memorySize) {
         this.memorySize = memorySize;
+    }
+
+    public UpdateFunctionConfigRequestBody withGpuMemory(Integer gpuMemory) {
+        this.gpuMemory = gpuMemory;
+        return this;
+    }
+
+    /**
+     * 函数消耗的显存，只支持自定义运行时与自定义镜像函数配置GPU。 单位MB。 取值范围为：1024、2048、3072、4096、5120、6144、7168、8192、9216、10240、11264、12288、13312、14336、15360、16384。 最小值为1024，最大值为16384。
+     * @return gpuMemory
+     */
+    public Integer getGpuMemory() {
+        return gpuMemory;
+    }
+
+    public void setGpuMemory(Integer gpuMemory) {
+        this.gpuMemory = gpuMemory;
     }
 
     public UpdateFunctionConfigRequestBody withUserData(String userData) {
@@ -618,6 +665,23 @@ public class UpdateFunctionConfigRequestBody {
         this.initializerTimeout = initializerTimeout;
     }
 
+    public UpdateFunctionConfigRequestBody withEphemeralStorage(Integer ephemeralStorage) {
+        this.ephemeralStorage = ephemeralStorage;
+        return this;
+    }
+
+    /**
+     * 临时存储大小, 默认512M, 支持配置10G。
+     * @return ephemeralStorage
+     */
+    public Integer getEphemeralStorage() {
+        return ephemeralStorage;
+    }
+
+    public void setEphemeralStorage(Integer ephemeralStorage) {
+        this.ephemeralStorage = ephemeralStorage;
+    }
+
     public UpdateFunctionConfigRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -633,6 +697,59 @@ public class UpdateFunctionConfigRequestBody {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public UpdateFunctionConfigRequestBody withLogConfig(FuncLogConfig logConfig) {
+        this.logConfig = logConfig;
+        return this;
+    }
+
+    public UpdateFunctionConfigRequestBody withLogConfig(Consumer<FuncLogConfig> logConfigSetter) {
+        if (this.logConfig == null) {
+            this.logConfig = new FuncLogConfig();
+            logConfigSetter.accept(this.logConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get logConfig
+     * @return logConfig
+     */
+    public FuncLogConfig getLogConfig() {
+        return logConfig;
+    }
+
+    public void setLogConfig(FuncLogConfig logConfig) {
+        this.logConfig = logConfig;
+    }
+
+    public UpdateFunctionConfigRequestBody withNetworkController(NetworkControlConfig networkController) {
+        this.networkController = networkController;
+        return this;
+    }
+
+    public UpdateFunctionConfigRequestBody withNetworkController(
+        Consumer<NetworkControlConfig> networkControllerSetter) {
+        if (this.networkController == null) {
+            this.networkController = new NetworkControlConfig();
+            networkControllerSetter.accept(this.networkController);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get networkController
+     * @return networkController
+     */
+    public NetworkControlConfig getNetworkController() {
+        return networkController;
+    }
+
+    public void setNetworkController(NetworkControlConfig networkController) {
+        this.networkController = networkController;
     }
 
     public UpdateFunctionConfigRequestBody withIsStatefulFunction(Boolean isStatefulFunction) {
@@ -703,6 +820,40 @@ public class UpdateFunctionConfigRequestBody {
         this.domainNames = domainNames;
     }
 
+    public UpdateFunctionConfigRequestBody withRestoreHookHandler(String restoreHookHandler) {
+        this.restoreHookHandler = restoreHookHandler;
+        return this;
+    }
+
+    /**
+     * 函数快照式冷启动Restore Hook入口，仅支持Java，规则：xx.xx，必须包含“. ”。如：com.huawei.demo.Test.restoreHook
+     * @return restoreHookHandler
+     */
+    public String getRestoreHookHandler() {
+        return restoreHookHandler;
+    }
+
+    public void setRestoreHookHandler(String restoreHookHandler) {
+        this.restoreHookHandler = restoreHookHandler;
+    }
+
+    public UpdateFunctionConfigRequestBody withRestoreHookTimeout(Integer restoreHookTimeout) {
+        this.restoreHookTimeout = restoreHookTimeout;
+        return this;
+    }
+
+    /**
+     * 快照冷启动Restore Hook的超时时间，超时函数将被强行停止，范围1～300秒。
+     * @return restoreHookTimeout
+     */
+    public Integer getRestoreHookTimeout() {
+        return restoreHookTimeout;
+    }
+
+    public void setRestoreHookTimeout(Integer restoreHookTimeout) {
+        this.restoreHookTimeout = restoreHookTimeout;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -717,6 +868,7 @@ public class UpdateFunctionConfigRequestBody {
             && Objects.equals(this.timeout, updateFunctionConfigRequestBody.timeout)
             && Objects.equals(this.handler, updateFunctionConfigRequestBody.handler)
             && Objects.equals(this.memorySize, updateFunctionConfigRequestBody.memorySize)
+            && Objects.equals(this.gpuMemory, updateFunctionConfigRequestBody.gpuMemory)
             && Objects.equals(this.userData, updateFunctionConfigRequestBody.userData)
             && Objects.equals(this.encryptedUserData, updateFunctionConfigRequestBody.encryptedUserData)
             && Objects.equals(this.xrole, updateFunctionConfigRequestBody.xrole)
@@ -729,11 +881,16 @@ public class UpdateFunctionConfigRequestBody {
             && Objects.equals(this.extendConfig, updateFunctionConfigRequestBody.extendConfig)
             && Objects.equals(this.initializerHandler, updateFunctionConfigRequestBody.initializerHandler)
             && Objects.equals(this.initializerTimeout, updateFunctionConfigRequestBody.initializerTimeout)
+            && Objects.equals(this.ephemeralStorage, updateFunctionConfigRequestBody.ephemeralStorage)
             && Objects.equals(this.enterpriseProjectId, updateFunctionConfigRequestBody.enterpriseProjectId)
+            && Objects.equals(this.logConfig, updateFunctionConfigRequestBody.logConfig)
+            && Objects.equals(this.networkController, updateFunctionConfigRequestBody.networkController)
             && Objects.equals(this.isStatefulFunction, updateFunctionConfigRequestBody.isStatefulFunction)
             && Objects.equals(this.enableDynamicMemory, updateFunctionConfigRequestBody.enableDynamicMemory)
             && Objects.equals(this.enableAuthInHeader, updateFunctionConfigRequestBody.enableAuthInHeader)
-            && Objects.equals(this.domainNames, updateFunctionConfigRequestBody.domainNames);
+            && Objects.equals(this.domainNames, updateFunctionConfigRequestBody.domainNames)
+            && Objects.equals(this.restoreHookHandler, updateFunctionConfigRequestBody.restoreHookHandler)
+            && Objects.equals(this.restoreHookTimeout, updateFunctionConfigRequestBody.restoreHookTimeout);
     }
 
     @Override
@@ -743,6 +900,7 @@ public class UpdateFunctionConfigRequestBody {
             timeout,
             handler,
             memorySize,
+            gpuMemory,
             userData,
             encryptedUserData,
             xrole,
@@ -755,11 +913,16 @@ public class UpdateFunctionConfigRequestBody {
             extendConfig,
             initializerHandler,
             initializerTimeout,
+            ephemeralStorage,
             enterpriseProjectId,
+            logConfig,
+            networkController,
             isStatefulFunction,
             enableDynamicMemory,
             enableAuthInHeader,
-            domainNames);
+            domainNames,
+            restoreHookHandler,
+            restoreHookTimeout);
     }
 
     @Override
@@ -771,6 +934,7 @@ public class UpdateFunctionConfigRequestBody {
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    handler: ").append(toIndentedString(handler)).append("\n");
         sb.append("    memorySize: ").append(toIndentedString(memorySize)).append("\n");
+        sb.append("    gpuMemory: ").append(toIndentedString(gpuMemory)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    encryptedUserData: ").append(toIndentedString(encryptedUserData)).append("\n");
         sb.append("    xrole: ").append(toIndentedString(xrole)).append("\n");
@@ -783,11 +947,16 @@ public class UpdateFunctionConfigRequestBody {
         sb.append("    extendConfig: ").append(toIndentedString(extendConfig)).append("\n");
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
+        sb.append("    ephemeralStorage: ").append(toIndentedString(ephemeralStorage)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    logConfig: ").append(toIndentedString(logConfig)).append("\n");
+        sb.append("    networkController: ").append(toIndentedString(networkController)).append("\n");
         sb.append("    isStatefulFunction: ").append(toIndentedString(isStatefulFunction)).append("\n");
         sb.append("    enableDynamicMemory: ").append(toIndentedString(enableDynamicMemory)).append("\n");
         sb.append("    enableAuthInHeader: ").append(toIndentedString(enableAuthInHeader)).append("\n");
         sb.append("    domainNames: ").append(toIndentedString(domainNames)).append("\n");
+        sb.append("    restoreHookHandler: ").append(toIndentedString(restoreHookHandler)).append("\n");
+        sb.append("    restoreHookTimeout: ").append(toIndentedString(restoreHookTimeout)).append("\n");
         sb.append("}");
         return sb.toString();
     }

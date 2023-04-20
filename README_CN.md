@@ -812,7 +812,7 @@ SDK 提供 Access 级别的访问日志及 Debug 级别的原始 HTTP 监听器�
 
 #### 6.1 访问日志 [:top:](#用户手册-top)
 
-**注意：** SDK在运行的时候默认采用slf4j进行日志打印，如果在运行代码实例时，未配置日志实现库，会有提示如下：
+**注意：** SDK在运行的时候默认采用slf4j的实现库进行日志打印，如果在运行代码实例时，未配置日志实现库，会有提示如下：
 
 ``` text
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
@@ -820,17 +820,15 @@ SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 ```
 
-所以需要用户根据目标项目实际情况引入对应的日志实现，请在对应的工程项目的 pom.xml 文件中引入日志实现的依赖，如：
+*更多关于使用slf4j的常见问题请参阅： [Frequently Asked Questions about SLF4J](https://www.slf4j.org/faq.html)*
 
-**slf4j**
+SDK支持的slf4j与对应的日志实现的版本关系，如下表所示：
 
-``` xml
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-simple</artifactId>
-    <version>1.7.21</version>
-</dependency>
-```
+| slf4j-api | logback-classic | slf4j-log4j12 | slf4j-simple | slf4j-jdk14 |
+|-----------|-----------------|---------------|--------------|-------------|
+| 1.7.x     | 1.2.x           | 1.6.x/1.7.x   | 1.6.x/1.7.x  | 1.6.x/1.7.x |
+
+用户需要根据目标项目实际情况引入对应的日志实现，请在对应的工程项目的 pom.xml 文件中引入日志实现的依赖，如：
 
 **logback**
 
@@ -838,12 +836,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 <dependency>
     <groupId>ch.qos.logback</groupId>
     <artifactId>logback-classic</artifactId>
-    <version>1.2.3</version>
-</dependency>
-<dependency>
-    <groupId>ch.qos.logback</groupId>
-    <artifactId>logback-core</artifactId>
-    <version>1.2.3</version>
+    <version>1.2.12</version>
 </dependency>
 ```
 
@@ -851,9 +844,29 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 
 ``` xml
 <dependency>
-    <groupId>log4j</groupId>
-    <artifactId>log4j</artifactId>
-    <version>1.2.17</version>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-log4j12</artifactId>
+    <version>1.7.36</version>
+</dependency>
+```
+
+**slf4j simple**
+
+``` xml
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-simple</artifactId>
+    <version>1.7.36</version>
+</dependency>
+```
+
+**jul**
+
+``` xml
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-jdk14</artifactId>
+    <version>1.7.36</version>
 </dependency>
 ```
 

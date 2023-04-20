@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -18,6 +19,16 @@ public class ShowConsumerListOrDetailsResponse extends SdkResponse {
     @JsonProperty(value = "topics")
 
     private List<String> topics = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private BigDecimal total;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "brokers")
+
+    private List<Brokers> brokers = null;
 
     public ShowConsumerListOrDetailsResponse withTopics(List<String> topics) {
         this.topics = topics;
@@ -41,7 +52,7 @@ public class ShowConsumerListOrDetailsResponse extends SdkResponse {
     }
 
     /**
-     * Topic列表。
+     * Topic列表（当查询topic消费“列表”时才显示此参数）。
      * @return topics
      */
     public List<String> getTopics() {
@@ -50,6 +61,56 @@ public class ShowConsumerListOrDetailsResponse extends SdkResponse {
 
     public void setTopics(List<String> topics) {
         this.topics = topics;
+    }
+
+    public ShowConsumerListOrDetailsResponse withTotal(BigDecimal total) {
+        this.total = total;
+        return this;
+    }
+
+    /**
+     * Topic总数（当查询topic消费“列表”时才显示此参数）。
+     * @return total
+     */
+    public BigDecimal getTotal() {
+        return total;
+    }
+
+    public void setTotal(BigDecimal total) {
+        this.total = total;
+    }
+
+    public ShowConsumerListOrDetailsResponse withBrokers(List<Brokers> brokers) {
+        this.brokers = brokers;
+        return this;
+    }
+
+    public ShowConsumerListOrDetailsResponse addBrokersItem(Brokers brokersItem) {
+        if (this.brokers == null) {
+            this.brokers = new ArrayList<>();
+        }
+        this.brokers.add(brokersItem);
+        return this;
+    }
+
+    public ShowConsumerListOrDetailsResponse withBrokers(Consumer<List<Brokers>> brokersSetter) {
+        if (this.brokers == null) {
+            this.brokers = new ArrayList<>();
+        }
+        brokersSetter.accept(this.brokers);
+        return this;
+    }
+
+    /**
+     * Topic关联代理（当查询topic消费“详情”才显示此参数）。
+     * @return brokers
+     */
+    public List<Brokers> getBrokers() {
+        return brokers;
+    }
+
+    public void setBrokers(List<Brokers> brokers) {
+        this.brokers = brokers;
     }
 
     @Override
@@ -61,12 +122,14 @@ public class ShowConsumerListOrDetailsResponse extends SdkResponse {
             return false;
         }
         ShowConsumerListOrDetailsResponse showConsumerListOrDetailsResponse = (ShowConsumerListOrDetailsResponse) o;
-        return Objects.equals(this.topics, showConsumerListOrDetailsResponse.topics);
+        return Objects.equals(this.topics, showConsumerListOrDetailsResponse.topics)
+            && Objects.equals(this.total, showConsumerListOrDetailsResponse.total)
+            && Objects.equals(this.brokers, showConsumerListOrDetailsResponse.brokers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(topics);
+        return Objects.hash(topics, total, brokers);
     }
 
     @Override
@@ -74,6 +137,8 @@ public class ShowConsumerListOrDetailsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowConsumerListOrDetailsResponse {\n");
         sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    brokers: ").append(toIndentedString(brokers)).append("\n");
         sb.append("}");
         return sb.toString();
     }

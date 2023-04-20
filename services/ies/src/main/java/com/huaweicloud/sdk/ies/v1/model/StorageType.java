@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 存储类型。 - SAS：高IO - SSD：超高IO - VS_SMALL_CAP：视图存储-小容量型 - VS_MEDIUM_CAP：视图存储-中容量型 - VS_LARGE_CAP：视图存储-大容量型
+ * 存储类型。 - SAS：高IO - SSD：超高IO
  */
 public class StorageType {
 

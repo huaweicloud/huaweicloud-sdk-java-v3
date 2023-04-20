@@ -89,7 +89,7 @@ public class CreateClusterPublicIpReq {
     }
 
     /**
-     * 是否自动绑定弹性公网IP。auto_assign为自动分配，bind_existing为绑定已有IP，需要填写eipId字段。
+     * 是否自动绑定弹性公网IP。当前仅支持auto_assign为自动分配参数。
      * @return publicBindType
      */
     public String getPublicBindType() {

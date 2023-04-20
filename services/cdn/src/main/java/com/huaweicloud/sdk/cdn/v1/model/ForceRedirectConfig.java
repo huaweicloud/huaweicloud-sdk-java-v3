@@ -20,6 +20,11 @@ public class ForceRedirectConfig {
 
     private String type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "redirect_code")
+
+    private Integer redirectCode;
+
     public ForceRedirectConfig withStatus(String status) {
         this.status = status;
         return this;
@@ -54,6 +59,23 @@ public class ForceRedirectConfig {
         this.type = type;
     }
 
+    public ForceRedirectConfig withRedirectCode(Integer redirectCode) {
+        this.redirectCode = redirectCode;
+        return this;
+    }
+
+    /**
+     * 重定向跳转码301,302。
+     * @return redirectCode
+     */
+    public Integer getRedirectCode() {
+        return redirectCode;
+    }
+
+    public void setRedirectCode(Integer redirectCode) {
+        this.redirectCode = redirectCode;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -64,12 +86,13 @@ public class ForceRedirectConfig {
         }
         ForceRedirectConfig forceRedirectConfig = (ForceRedirectConfig) o;
         return Objects.equals(this.status, forceRedirectConfig.status)
-            && Objects.equals(this.type, forceRedirectConfig.type);
+            && Objects.equals(this.type, forceRedirectConfig.type)
+            && Objects.equals(this.redirectCode, forceRedirectConfig.redirectCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, type);
+        return Objects.hash(status, type, redirectCode);
     }
 
     @Override
@@ -78,6 +101,7 @@ public class ForceRedirectConfig {
         sb.append("class ForceRedirectConfig {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    redirectCode: ").append(toIndentedString(redirectCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

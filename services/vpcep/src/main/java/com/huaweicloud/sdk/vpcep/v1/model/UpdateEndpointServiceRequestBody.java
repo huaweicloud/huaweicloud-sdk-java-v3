@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.vpcep.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -37,6 +42,106 @@ public class UpdateEndpointServiceRequestBody {
     @JsonProperty(value = "vip_port_id")
 
     private String vipPortId;
+
+    /**
+     * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
+     */
+    public static final class TcpProxyEnum {
+
+        /**
+         * Enum CLOSE for value: "close"
+         */
+        public static final TcpProxyEnum CLOSE = new TcpProxyEnum("close");
+
+        /**
+         * Enum TOA_OPEN for value: "toa_open"
+         */
+        public static final TcpProxyEnum TOA_OPEN = new TcpProxyEnum("toa_open");
+
+        /**
+         * Enum PROXY_OPEN for value: "proxy_open"
+         */
+        public static final TcpProxyEnum PROXY_OPEN = new TcpProxyEnum("proxy_open");
+
+        /**
+         * Enum OPEN for value: "open"
+         */
+        public static final TcpProxyEnum OPEN = new TcpProxyEnum("open");
+
+        /**
+         * Enum PROXY_VNI for value: "proxy_vni"
+         */
+        public static final TcpProxyEnum PROXY_VNI = new TcpProxyEnum("proxy_vni");
+
+        private static final Map<String, TcpProxyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TcpProxyEnum> createStaticFields() {
+            Map<String, TcpProxyEnum> map = new HashMap<>();
+            map.put("close", CLOSE);
+            map.put("toa_open", TOA_OPEN);
+            map.put("proxy_open", PROXY_OPEN);
+            map.put("open", OPEN);
+            map.put("proxy_vni", PROXY_VNI);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TcpProxyEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TcpProxyEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            TcpProxyEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TcpProxyEnum(value);
+            }
+            return result;
+        }
+
+        public static TcpProxyEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            TcpProxyEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TcpProxyEnum) {
+                return this.value.equals(((TcpProxyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tcp_proxy")
+
+    private TcpProxyEnum tcpProxy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -99,7 +204,7 @@ public class UpdateEndpointServiceRequestBody {
     }
 
     /**
-     * 服务开放的端口映射列表，详细内容请参见表4-22。 同一个终端节点服务下，不允许重复的端口映射。 若多个终端节点服务共用一个port_id， 则终端节点之间服务的所有端口映射的server_port和protocol的组合不能重复， 单次最多添加200个。
+     * 服务开放的端口映射列表，同一个终端节点服务下，不允许重复的端口映射。 若多个终端节点服务共用一个port_id， 则终端节点之间服务的所有端口映射的server_port和protocol的组合不能重复， 单次最多添加200个。 该参数值将被全量更新。
      * @return ports
      */
     public List<PortList> getPorts() {
@@ -116,7 +221,7 @@ public class UpdateEndpointServiceRequestBody {
     }
 
     /**
-     * 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally UniqueIdentifier，下文简称UUID）。 取值为： ● LB类型：增强型负载均衡器内网IP对应的端口ID。 详细内容请参考《弹性负载均衡API参考》中的“查询负载均衡详情”， 详见响应消息中的“vip_port_id”字段。 ● VM类型：弹性云服务器IP地址对应的网卡ID。 详细内容请参考《弹性云服务器API参考》中的“查询云服务器网卡信息”， 详见响应消息中的“port_id”字段。 ● VIP类型：虚拟资源所在物理服务器对应的网卡ID。 说明 当后端资源为“LB类型”时，仅支持修改为同类型后端资源的“vip_port_id”。 例如，共享型负载均衡仅支持更换为共享型负载均衡，不支持更换为独享型负载均衡。
+     * 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally UniqueIdentifier，下文简称UUID）。 取值为： ● LB类型：负载均衡器内网IP对应的端口ID。 详细内容请参考《弹性负载均衡API参考》中的“查询负载均衡详情”， 详见响应消息中的“vip_port_id”字段。 ● VM类型：弹性云服务器IP地址对应的网卡ID。 详细内容请参考《弹性云服务器API参考》中的“查询云服务器网卡信息”， 详见响应消息中的“port_id”字段。 ● VIP类型：虚拟资源所在物理服务器对应的网卡ID。（该字段已废弃，请优先使用LB类型） 说明 当后端资源为“LB类型”时，仅支持修改为同类型后端资源的“vip_port_id”。 例如，共享型负载均衡仅支持更换为共享型负载均衡，不支持更换为独享型负载均衡。
      * @return portId
      */
     public String getPortId() {
@@ -142,6 +247,23 @@ public class UpdateEndpointServiceRequestBody {
 
     public void setVipPortId(String vipPortId) {
         this.vipPortId = vipPortId;
+    }
+
+    public UpdateEndpointServiceRequestBody withTcpProxy(TcpProxyEnum tcpProxy) {
+        this.tcpProxy = tcpProxy;
+        return this;
+    }
+
+    /**
+     * 用于控制是否将客户端的源IP、源端口、marker_id等信息携带到服务端。 信息携带支持两种方式： ● TCP TOA：表示将客户端信息插入到tcp，option字段中携带至服务端。 说明 仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端相关信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
+     * @return tcpProxy
+     */
+    public TcpProxyEnum getTcpProxy() {
+        return tcpProxy;
+    }
+
+    public void setTcpProxy(TcpProxyEnum tcpProxy) {
+        this.tcpProxy = tcpProxy;
     }
 
     public UpdateEndpointServiceRequestBody withDescription(String description) {
@@ -175,12 +297,13 @@ public class UpdateEndpointServiceRequestBody {
             && Objects.equals(this.ports, updateEndpointServiceRequestBody.ports)
             && Objects.equals(this.portId, updateEndpointServiceRequestBody.portId)
             && Objects.equals(this.vipPortId, updateEndpointServiceRequestBody.vipPortId)
+            && Objects.equals(this.tcpProxy, updateEndpointServiceRequestBody.tcpProxy)
             && Objects.equals(this.description, updateEndpointServiceRequestBody.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(approvalEnabled, serviceName, ports, portId, vipPortId, description);
+        return Objects.hash(approvalEnabled, serviceName, ports, portId, vipPortId, tcpProxy, description);
     }
 
     @Override
@@ -192,6 +315,7 @@ public class UpdateEndpointServiceRequestBody {
         sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
         sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
         sb.append("    vipPortId: ").append(toIndentedString(vipPortId)).append("\n");
+        sb.append("    tcpProxy: ").append(toIndentedString(tcpProxy)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();

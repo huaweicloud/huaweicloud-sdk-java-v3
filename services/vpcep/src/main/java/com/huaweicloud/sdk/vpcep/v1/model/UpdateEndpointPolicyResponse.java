@@ -809,7 +809,7 @@ public class UpdateEndpointPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 终端节点相关联的Pood的ID
+     * 待废弃，实例相关联的集群ID
      * @return endpointPoolId
      */
     public String getEndpointPoolId() {

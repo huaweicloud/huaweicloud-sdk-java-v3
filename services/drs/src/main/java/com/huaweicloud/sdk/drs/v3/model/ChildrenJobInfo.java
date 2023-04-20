@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 子任务信息体
@@ -750,6 +751,11 @@ public class ChildrenJobInfo {
 
     private TaskTypeEnum taskType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_action")
+
+    private JobActionResp jobAction;
+
     public ChildrenJobInfo withBillingTag(Boolean billingTag) {
         this.billingTag = billingTag;
         return this;
@@ -971,6 +977,32 @@ public class ChildrenJobInfo {
         this.taskType = taskType;
     }
 
+    public ChildrenJobInfo withJobAction(JobActionResp jobAction) {
+        this.jobAction = jobAction;
+        return this;
+    }
+
+    public ChildrenJobInfo withJobAction(Consumer<JobActionResp> jobActionSetter) {
+        if (this.jobAction == null) {
+            this.jobAction = new JobActionResp();
+            jobActionSetter.accept(this.jobAction);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get jobAction
+     * @return jobAction
+     */
+    public JobActionResp getJobAction() {
+        return jobAction;
+    }
+
+    public void setJobAction(JobActionResp jobAction) {
+        this.jobAction = jobAction;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -990,7 +1022,8 @@ public class ChildrenJobInfo {
             && Objects.equals(this.name, childrenJobInfo.name) && Objects.equals(this.netType, childrenJobInfo.netType)
             && Objects.equals(this.nodeNewFramework, childrenJobInfo.nodeNewFramework)
             && Objects.equals(this.status, childrenJobInfo.status)
-            && Objects.equals(this.taskType, childrenJobInfo.taskType);
+            && Objects.equals(this.taskType, childrenJobInfo.taskType)
+            && Objects.equals(this.jobAction, childrenJobInfo.jobAction);
     }
 
     @Override
@@ -1007,7 +1040,8 @@ public class ChildrenJobInfo {
             netType,
             nodeNewFramework,
             status,
-            taskType);
+            taskType,
+            jobAction);
     }
 
     @Override
@@ -1027,6 +1061,7 @@ public class ChildrenJobInfo {
         sb.append("    nodeNewFramework: ").append(toIndentedString(nodeNewFramework)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
+        sb.append("    jobAction: ").append(toIndentedString(jobAction)).append("\n");
         sb.append("}");
         return sb.toString();
     }

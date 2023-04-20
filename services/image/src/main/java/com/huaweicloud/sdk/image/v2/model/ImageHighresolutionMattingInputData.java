@@ -11,16 +11,6 @@ import java.util.Objects;
 public class ImageHighresolutionMattingInputData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bucket")
-
-    private String bucket;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "path")
-
-    private String path;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
     private String url;
@@ -29,40 +19,6 @@ public class ImageHighresolutionMattingInputData {
     @JsonProperty(value = "key")
 
     private String key;
-
-    public ImageHighresolutionMattingInputData withBucket(String bucket) {
-        this.bucket = bucket;
-        return this;
-    }
-
-    /**
-     * OBS桶名，当输入为obs类型时必填。
-     * @return bucket
-     */
-    public String getBucket() {
-        return bucket;
-    }
-
-    public void setBucket(String bucket) {
-        this.bucket = bucket;
-    }
-
-    public ImageHighresolutionMattingInputData withPath(String path) {
-        this.path = path;
-        return this;
-    }
-
-    /**
-     * OBS的路径，当输入为obs类型时必填。
-     * @return path
-     */
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
 
     public ImageHighresolutionMattingInputData withUrl(String url) {
         this.url = url;
@@ -108,23 +64,19 @@ public class ImageHighresolutionMattingInputData {
         }
         ImageHighresolutionMattingInputData imageHighresolutionMattingInputData =
             (ImageHighresolutionMattingInputData) o;
-        return Objects.equals(this.bucket, imageHighresolutionMattingInputData.bucket)
-            && Objects.equals(this.path, imageHighresolutionMattingInputData.path)
-            && Objects.equals(this.url, imageHighresolutionMattingInputData.url)
+        return Objects.equals(this.url, imageHighresolutionMattingInputData.url)
             && Objects.equals(this.key, imageHighresolutionMattingInputData.key);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bucket, path, url, key);
+        return Objects.hash(url, key);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ImageHighresolutionMattingInputData {\n");
-        sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
-        sb.append("    path: ").append(toIndentedString(path)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("}");

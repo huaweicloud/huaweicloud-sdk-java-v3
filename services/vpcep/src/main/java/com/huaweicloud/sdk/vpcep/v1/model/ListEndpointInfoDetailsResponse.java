@@ -394,6 +394,16 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
 
     private List<String> policyStatement = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "endpoint_pool_id")
+
+    private String endpointPoolId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private String publicBorderGroup;
+
     public ListEndpointInfoDetailsResponse withId(String id) {
         this.id = id;
         return this;
@@ -907,6 +917,40 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         this.policyStatement = policyStatement;
     }
 
+    public ListEndpointInfoDetailsResponse withEndpointPoolId(String endpointPoolId) {
+        this.endpointPoolId = endpointPoolId;
+        return this;
+    }
+
+    /**
+     * 待废弃，实例相关联的集群ID
+     * @return endpointPoolId
+     */
+    public String getEndpointPoolId() {
+        return endpointPoolId;
+    }
+
+    public void setEndpointPoolId(String endpointPoolId) {
+        this.endpointPoolId = endpointPoolId;
+    }
+
+    public ListEndpointInfoDetailsResponse withPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    /**
+     * 终端节点对应Pool的Public Border Group信息
+     * @return publicBorderGroup
+     */
+    public String getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -939,7 +983,9 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
             && Objects.equals(this.enableWhitelist, listEndpointInfoDetailsResponse.enableWhitelist)
             && Objects.equals(this.routetables, listEndpointInfoDetailsResponse.routetables)
             && Objects.equals(this.description, listEndpointInfoDetailsResponse.description)
-            && Objects.equals(this.policyStatement, listEndpointInfoDetailsResponse.policyStatement);
+            && Objects.equals(this.policyStatement, listEndpointInfoDetailsResponse.policyStatement)
+            && Objects.equals(this.endpointPoolId, listEndpointInfoDetailsResponse.endpointPoolId)
+            && Objects.equals(this.publicBorderGroup, listEndpointInfoDetailsResponse.publicBorderGroup);
     }
 
     @Override
@@ -967,7 +1013,9 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
             enableWhitelist,
             routetables,
             description,
-            policyStatement);
+            policyStatement,
+            endpointPoolId,
+            publicBorderGroup);
     }
 
     @Override
@@ -998,6 +1046,8 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         sb.append("    routetables: ").append(toIndentedString(routetables)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    policyStatement: ").append(toIndentedString(policyStatement)).append("\n");
+        sb.append("    endpointPoolId: ").append(toIndentedString(endpointPoolId)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

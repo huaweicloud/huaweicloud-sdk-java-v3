@@ -30,6 +30,16 @@ public class UpdateInstanceReq {
 
     private Boolean enableAcl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_publicip")
+
+    private Boolean enablePublicip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publicip_id")
+
+    private String publicipId;
+
     public UpdateInstanceReq withName(String name) {
         this.name = name;
         return this;
@@ -98,6 +108,40 @@ public class UpdateInstanceReq {
         this.enableAcl = enableAcl;
     }
 
+    public UpdateInstanceReq withEnablePublicip(Boolean enablePublicip) {
+        this.enablePublicip = enablePublicip;
+        return this;
+    }
+
+    /**
+     * 是否开启公网。
+     * @return enablePublicip
+     */
+    public Boolean getEnablePublicip() {
+        return enablePublicip;
+    }
+
+    public void setEnablePublicip(Boolean enablePublicip) {
+        this.enablePublicip = enablePublicip;
+    }
+
+    public UpdateInstanceReq withPublicipId(String publicipId) {
+        this.publicipId = publicipId;
+        return this;
+    }
+
+    /**
+     * 实例绑定的弹性IP地址的ID。 以英文逗号隔开多个弹性IP地址的ID。 如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
+     * @return publicipId
+     */
+    public String getPublicipId() {
+        return publicipId;
+    }
+
+    public void setPublicipId(String publicipId) {
+        this.publicipId = publicipId;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -110,12 +154,14 @@ public class UpdateInstanceReq {
         return Objects.equals(this.name, updateInstanceReq.name)
             && Objects.equals(this.description, updateInstanceReq.description)
             && Objects.equals(this.securityGroupId, updateInstanceReq.securityGroupId)
-            && Objects.equals(this.enableAcl, updateInstanceReq.enableAcl);
+            && Objects.equals(this.enableAcl, updateInstanceReq.enableAcl)
+            && Objects.equals(this.enablePublicip, updateInstanceReq.enablePublicip)
+            && Objects.equals(this.publicipId, updateInstanceReq.publicipId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, securityGroupId, enableAcl);
+        return Objects.hash(name, description, securityGroupId, enableAcl, enablePublicip, publicipId);
     }
 
     @Override
@@ -126,6 +172,8 @@ public class UpdateInstanceReq {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("    enableAcl: ").append(toIndentedString(enableAcl)).append("\n");
+        sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
+        sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

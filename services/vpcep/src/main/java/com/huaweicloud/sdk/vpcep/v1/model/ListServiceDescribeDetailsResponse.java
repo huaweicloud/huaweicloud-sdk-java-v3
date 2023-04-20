@@ -112,6 +112,11 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
 
     private Boolean isCharge;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private String publicBorderGroup;
+
     public ListServiceDescribeDetailsResponse withId(String id) {
         this.id = id;
         return this;
@@ -197,6 +202,23 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
         this.isCharge = isCharge;
     }
 
+    public ListServiceDescribeDetailsResponse withPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    /**
+     * 终端节点对应Pool的Public Border Group信息
+     * @return publicBorderGroup
+     */
+    public String getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -210,12 +232,13 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
             && Objects.equals(this.serviceName, listServiceDescribeDetailsResponse.serviceName)
             && Objects.equals(this.serviceType, listServiceDescribeDetailsResponse.serviceType)
             && Objects.equals(this.createdAt, listServiceDescribeDetailsResponse.createdAt)
-            && Objects.equals(this.isCharge, listServiceDescribeDetailsResponse.isCharge);
+            && Objects.equals(this.isCharge, listServiceDescribeDetailsResponse.isCharge)
+            && Objects.equals(this.publicBorderGroup, listServiceDescribeDetailsResponse.publicBorderGroup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, serviceName, serviceType, createdAt, isCharge);
+        return Objects.hash(id, serviceName, serviceType, createdAt, isCharge, publicBorderGroup);
     }
 
     @Override
@@ -227,6 +250,7 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    isCharge: ").append(toIndentedString(isCharge)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

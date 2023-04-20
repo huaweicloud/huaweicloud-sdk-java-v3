@@ -1,0 +1,120 @@
+package com.huaweicloud.sdk.iotda.v5.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * DeviceBroadcastRequest
+ */
+public class DeviceBroadcastRequest {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_id")
+
+    private String appId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "topic_full_name")
+
+    private String topicFullName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message")
+
+    private String message;
+
+    public DeviceBroadcastRequest withAppId(String appId) {
+        this.appId = appId;
+        return this;
+    }
+
+    /**
+     * **参数说明**：资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，建议携带该参数指定广播消息所属的资源空间，否则广播消息将会向[[默认资源空间](https://support.huaweicloud.com/usermanual-iothub/iot_01_0006.html#section0)](tag:hws)[[默认资源空间](https://support.huaweicloud.com/intl/zh-cn/usermanual-iothub/iot_01_0006.html#section0)](tag:hws_hk)下订阅指定topic的设备发送。 **取值范围**：长度不超过36，只允许字母、数字、下划线（_）、连接符（-）的组合。
+     * @return appId
+     */
+    public String getAppId() {
+        return appId;
+    }
+
+    public void setAppId(String appId) {
+        this.appId = appId;
+    }
+
+    public DeviceBroadcastRequest withTopicFullName(String topicFullName) {
+        this.topicFullName = topicFullName;
+        return this;
+    }
+
+    /**
+     * **参数说明**：接收广播消息的完整Topic名称, 必选。用户需要发布广播消息给设备时，可以使用该参数指定完整的topic名称，物联网平台会向指定资源空间下订阅了该topic的所有在线设备发送消息。广播的topic无需控制台创建，但topic的前缀必须为$oc/broadcast/
+     * @return topicFullName
+     */
+    public String getTopicFullName() {
+        return topicFullName;
+    }
+
+    public void setTopicFullName(String topicFullName) {
+        this.topicFullName = topicFullName;
+    }
+
+    public DeviceBroadcastRequest withMessage(String message) {
+        this.message = message;
+        return this;
+    }
+
+    /**
+     * **参数说明**：广播消息的内容，您需要将消息原文转换成二进制数据并进行Base64编码，Base64编码后的长度不超过128KB。
+     * @return message
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        DeviceBroadcastRequest deviceBroadcastRequest = (DeviceBroadcastRequest) o;
+        return Objects.equals(this.appId, deviceBroadcastRequest.appId)
+            && Objects.equals(this.topicFullName, deviceBroadcastRequest.topicFullName)
+            && Objects.equals(this.message, deviceBroadcastRequest.message);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(appId, topicFullName, message);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class DeviceBroadcastRequest {\n");
+        sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
+        sb.append("    topicFullName: ").append(toIndentedString(topicFullName)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

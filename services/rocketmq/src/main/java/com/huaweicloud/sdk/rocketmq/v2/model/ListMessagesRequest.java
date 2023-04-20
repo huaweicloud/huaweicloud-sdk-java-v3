@@ -217,7 +217,7 @@ public class ListMessagesRequest {
     }
 
     /**
-     * 开始时间（不按msg_id查询时需要填写开始时间）。
+     * 开始时间（不通过msg_id精确查询消息时，此参数必填）。
      * @return startTime
      */
     public String getStartTime() {
@@ -234,7 +234,7 @@ public class ListMessagesRequest {
     }
 
     /**
-     * 结束时间（不按msg_id查询时需要填写结束时间）。
+     * 结束时间（不通过msg_id精确查询消息时，此参数必填）。
      * @return endTime
      */
     public String getEndTime() {

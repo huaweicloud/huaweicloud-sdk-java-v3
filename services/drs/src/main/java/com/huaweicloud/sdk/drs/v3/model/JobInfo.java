@@ -747,6 +747,11 @@ public class JobInfo {
 
     private Boolean nodeNewFramework;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_action")
+
+    private JobActionResp jobAction;
+
     public JobInfo withId(String id) {
         this.id = id;
         return this;
@@ -984,6 +989,32 @@ public class JobInfo {
         this.nodeNewFramework = nodeNewFramework;
     }
 
+    public JobInfo withJobAction(JobActionResp jobAction) {
+        this.jobAction = jobAction;
+        return this;
+    }
+
+    public JobInfo withJobAction(Consumer<JobActionResp> jobActionSetter) {
+        if (this.jobAction == null) {
+            this.jobAction = new JobActionResp();
+            jobActionSetter.accept(this.jobAction);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get jobAction
+     * @return jobAction
+     */
+    public JobActionResp getJobAction() {
+        return jobAction;
+    }
+
+    public void setJobAction(JobActionResp jobAction) {
+        this.jobAction = jobAction;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1001,7 +1032,8 @@ public class JobInfo {
             && Objects.equals(this.jobDirection, jobInfo.jobDirection)
             && Objects.equals(this.dbUseType, jobInfo.dbUseType) && Objects.equals(this.taskType, jobInfo.taskType)
             && Objects.equals(this.children, jobInfo.children)
-            && Objects.equals(this.nodeNewFramework, jobInfo.nodeNewFramework);
+            && Objects.equals(this.nodeNewFramework, jobInfo.nodeNewFramework)
+            && Objects.equals(this.jobAction, jobInfo.jobAction);
     }
 
     @Override
@@ -1018,7 +1050,8 @@ public class JobInfo {
             dbUseType,
             taskType,
             children,
-            nodeNewFramework);
+            nodeNewFramework,
+            jobAction);
     }
 
     @Override
@@ -1038,6 +1071,7 @@ public class JobInfo {
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
         sb.append("    children: ").append(toIndentedString(children)).append("\n");
         sb.append("    nodeNewFramework: ").append(toIndentedString(nodeNewFramework)).append("\n");
+        sb.append("    jobAction: ").append(toIndentedString(jobAction)).append("\n");
         sb.append("}");
         return sb.toString();
     }

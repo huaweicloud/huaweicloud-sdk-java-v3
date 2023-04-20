@@ -58,7 +58,7 @@ public class ListAccessPolicyRespPolicies {
     }
 
     /**
-     * 秘钥。
+     * 密钥。
      * @return secretKey
      */
     public String getSecretKey() {

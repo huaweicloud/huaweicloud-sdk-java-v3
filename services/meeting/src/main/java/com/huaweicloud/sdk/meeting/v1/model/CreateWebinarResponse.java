@@ -120,6 +120,11 @@ public class CreateWebinarResponse extends SdkResponse {
     private String audiencePasswd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enableRecording")
+
+    private YesNoEnum enableRecording;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attendees")
 
     private List<String> attendees = null;
@@ -481,6 +486,23 @@ public class CreateWebinarResponse extends SdkResponse {
         this.audiencePasswd = audiencePasswd;
     }
 
+    public CreateWebinarResponse withEnableRecording(YesNoEnum enableRecording) {
+        this.enableRecording = enableRecording;
+        return this;
+    }
+
+    /**
+     * Get enableRecording
+     * @return enableRecording
+     */
+    public YesNoEnum getEnableRecording() {
+        return enableRecording;
+    }
+
+    public void setEnableRecording(YesNoEnum enableRecording) {
+        this.enableRecording = enableRecording;
+    }
+
     public CreateWebinarResponse withAttendees(List<String> attendees) {
         this.attendees = attendees;
         return this;
@@ -544,6 +566,7 @@ public class CreateWebinarResponse extends SdkResponse {
             && Objects.equals(this.guestPasswd, createWebinarResponse.guestPasswd)
             && Objects.equals(this.audienceJoinUri, createWebinarResponse.audienceJoinUri)
             && Objects.equals(this.audiencePasswd, createWebinarResponse.audiencePasswd)
+            && Objects.equals(this.enableRecording, createWebinarResponse.enableRecording)
             && Objects.equals(this.attendees, createWebinarResponse.attendees);
     }
 
@@ -570,6 +593,7 @@ public class CreateWebinarResponse extends SdkResponse {
             guestPasswd,
             audienceJoinUri,
             audiencePasswd,
+            enableRecording,
             attendees);
     }
 
@@ -598,6 +622,7 @@ public class CreateWebinarResponse extends SdkResponse {
         sb.append("    guestPasswd: ").append(toIndentedString(guestPasswd)).append("\n");
         sb.append("    audienceJoinUri: ").append(toIndentedString(audienceJoinUri)).append("\n");
         sb.append("    audiencePasswd: ").append(toIndentedString(audiencePasswd)).append("\n");
+        sb.append("    enableRecording: ").append(toIndentedString(enableRecording)).append("\n");
         sb.append("    attendees: ").append(toIndentedString(attendees)).append("\n");
         sb.append("}");
         return sb.toString();

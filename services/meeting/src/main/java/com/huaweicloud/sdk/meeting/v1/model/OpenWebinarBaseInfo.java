@@ -115,6 +115,11 @@ public class OpenWebinarBaseInfo {
 
     private String audiencePasswd;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enableRecording")
+
+    private YesNoEnum enableRecording;
+
     public OpenWebinarBaseInfo withConferenceId(String conferenceId) {
         this.conferenceId = conferenceId;
         return this;
@@ -472,6 +477,23 @@ public class OpenWebinarBaseInfo {
         this.audiencePasswd = audiencePasswd;
     }
 
+    public OpenWebinarBaseInfo withEnableRecording(YesNoEnum enableRecording) {
+        this.enableRecording = enableRecording;
+        return this;
+    }
+
+    /**
+     * Get enableRecording
+     * @return enableRecording
+     */
+    public YesNoEnum getEnableRecording() {
+        return enableRecording;
+    }
+
+    public void setEnableRecording(YesNoEnum enableRecording) {
+        this.enableRecording = enableRecording;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -501,7 +523,8 @@ public class OpenWebinarBaseInfo {
             && Objects.equals(this.guestJoinUri, openWebinarBaseInfo.guestJoinUri)
             && Objects.equals(this.guestPasswd, openWebinarBaseInfo.guestPasswd)
             && Objects.equals(this.audienceJoinUri, openWebinarBaseInfo.audienceJoinUri)
-            && Objects.equals(this.audiencePasswd, openWebinarBaseInfo.audiencePasswd);
+            && Objects.equals(this.audiencePasswd, openWebinarBaseInfo.audiencePasswd)
+            && Objects.equals(this.enableRecording, openWebinarBaseInfo.enableRecording);
     }
 
     @Override
@@ -526,7 +549,8 @@ public class OpenWebinarBaseInfo {
             guestJoinUri,
             guestPasswd,
             audienceJoinUri,
-            audiencePasswd);
+            audiencePasswd,
+            enableRecording);
     }
 
     @Override
@@ -554,6 +578,7 @@ public class OpenWebinarBaseInfo {
         sb.append("    guestPasswd: ").append(toIndentedString(guestPasswd)).append("\n");
         sb.append("    audienceJoinUri: ").append(toIndentedString(audienceJoinUri)).append("\n");
         sb.append("    audiencePasswd: ").append(toIndentedString(audiencePasswd)).append("\n");
+        sb.append("    enableRecording: ").append(toIndentedString(enableRecording)).append("\n");
         sb.append("}");
         return sb.toString();
     }

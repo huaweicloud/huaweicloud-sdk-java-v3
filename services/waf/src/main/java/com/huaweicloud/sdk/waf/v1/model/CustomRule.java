@@ -250,7 +250,7 @@ public class CustomRule {
     }
 
     /**
-     * 创建精准防护规则的
+     * 创建精准防护规则的时间戳
      * @return timestamp
      */
     public Long getTimestamp() {

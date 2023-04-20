@@ -832,6 +832,59 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowConsumerConnectionsRequest, ShowConsumerConnectionsResponse> showConsumerConnections =
+        genForshowConsumerConnections();
+
+    private static HttpRequestDef<ShowConsumerConnectionsRequest, ShowConsumerConnectionsResponse> genForshowConsumerConnections() {
+        // basic
+        HttpRequestDef.Builder<ShowConsumerConnectionsRequest, ShowConsumerConnectionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowConsumerConnectionsRequest.class, ShowConsumerConnectionsResponse.class)
+            .withName("ShowConsumerConnections")
+            .withUri("/v2/rocketmq/{project_id}/instances/{instance_id}/groups/{group}/clients")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConsumerConnectionsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConsumerConnectionsRequest::getGroup, (req, v) -> {
+                req.setGroup(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowConsumerConnectionsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowConsumerConnectionsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Boolean>withRequestField("is_detail",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowConsumerConnectionsRequest::getIsDetail, (req, v) -> {
+                req.setIsDetail(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowConsumerListOrDetailsRequest, ShowConsumerListOrDetailsResponse> showConsumerListOrDetails =
         genForshowConsumerListOrDetails();
 

@@ -656,6 +656,38 @@ public class IoTDAMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BroadcastMessageRequest, BroadcastMessageResponse> broadcastMessage =
+        genForbroadcastMessage();
+
+    private static HttpRequestDef<BroadcastMessageRequest, BroadcastMessageResponse> genForbroadcastMessage() {
+        // basic
+        HttpRequestDef.Builder<BroadcastMessageRequest, BroadcastMessageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BroadcastMessageRequest.class, BroadcastMessageResponse.class)
+                .withName("BroadcastMessage")
+                .withUri("/v5/iot/{project_id}/broadcast-messages")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BroadcastMessageRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<DeviceBroadcastRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeviceBroadcastRequest.class),
+            f -> f.withMarshaller(BroadcastMessageRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddCertificateRequest, AddCertificateResponse> addCertificate =
         genForaddCertificate();
 

@@ -818,7 +818,7 @@ SDK supports `Access` log and `Debug` log which could be configured manually.
 #### 6.1 Access Log [:top:](#user-manual-top)
 
 **Notice:**
-When running SDK, slf4j is used for printing log. If the log implementation library is not configured when running the
+When running SDK, slf4j implementation library is used for printing log. If the log implementation library is not configured when running the
 code example, and it prompts as follows:
 
 ``` shell
@@ -827,18 +827,16 @@ SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 ```
 
+*For more, refer to [Frequently Asked Questions about SLF4J](https://www.slf4j.org/faq.html)*
+
+The version between slf4j supported by the SDK and the corresponding log implementation is shown in the following table:
+
+| slf4j-api | logback-classic | slf4j-log4j12 | slf4j-simple | slf4j-jdk14 |
+|-----------|-----------------|---------------|--------------|-------------|
+| 1.7.x     | 1.2.x           | 1.6.x/1.7.x   | 1.6.x/1.7.x  | 1.6.x/1.7.x |
+
 You can add corresponding library for log implementation according to actual situation of your target project. For
 example, you can add one of the following dependency to your **pom.xml** file:
-
-**slf4j**
-
-``` xml
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-simple</artifactId>
-    <version>1.7.21</version>
-</dependency>
-```
 
 **logback**
 
@@ -846,12 +844,7 @@ example, you can add one of the following dependency to your **pom.xml** file:
 <dependency>
     <groupId>ch.qos.logback</groupId>
     <artifactId>logback-classic</artifactId>
-    <version>1.2.3</version>
-</dependency>
-<dependency>
-    <groupId>ch.qos.logback</groupId>
-    <artifactId>logback-core</artifactId>
-    <version>1.2.3</version>
+    <version>1.2.12</version>
 </dependency>
 ```
 
@@ -859,9 +852,29 @@ example, you can add one of the following dependency to your **pom.xml** file:
 
 ``` xml
 <dependency>
-    <groupId>log4j</groupId>
-    <artifactId>log4j</artifactId>
-    <version>1.2.17</version>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-log4j12</artifactId>
+    <version>1.7.36</version>
+</dependency>
+```
+
+**slf4j simple**
+
+``` xml
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-simple</artifactId>
+    <version>1.7.36</version>
+</dependency>
+```
+
+**jul**
+
+``` xml
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-jdk14</artifactId>
+    <version>1.7.36</version>
 </dependency>
 ```
 

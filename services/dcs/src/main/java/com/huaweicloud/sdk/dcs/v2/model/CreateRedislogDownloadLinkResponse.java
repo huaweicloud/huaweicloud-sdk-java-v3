@@ -17,6 +17,11 @@ public class CreateRedislogDownloadLinkResponse extends SdkResponse {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_id")
+
+    private String backupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "link")
 
     private String link;
@@ -36,6 +41,23 @@ public class CreateRedislogDownloadLinkResponse extends SdkResponse {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public CreateRedislogDownloadLinkResponse withBackupId(String backupId) {
+        this.backupId = backupId;
+        return this;
+    }
+
+    /**
+     * 后台任务id
+     * @return backupId
+     */
+    public String getBackupId() {
+        return backupId;
+    }
+
+    public void setBackupId(String backupId) {
+        this.backupId = backupId;
     }
 
     public CreateRedislogDownloadLinkResponse withLink(String link) {
@@ -65,12 +87,13 @@ public class CreateRedislogDownloadLinkResponse extends SdkResponse {
         }
         CreateRedislogDownloadLinkResponse createRedislogDownloadLinkResponse = (CreateRedislogDownloadLinkResponse) o;
         return Objects.equals(this.id, createRedislogDownloadLinkResponse.id)
+            && Objects.equals(this.backupId, createRedislogDownloadLinkResponse.backupId)
             && Objects.equals(this.link, createRedislogDownloadLinkResponse.link);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, link);
+        return Objects.hash(id, backupId, link);
     }
 
     @Override
@@ -78,6 +101,7 @@ public class CreateRedislogDownloadLinkResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateRedislogDownloadLinkResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
         sb.append("    link: ").append(toIndentedString(link)).append("\n");
         sb.append("}");
         return sb.toString();

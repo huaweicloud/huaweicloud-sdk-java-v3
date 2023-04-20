@@ -238,6 +238,11 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     private Integer memorySize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gpu_memory")
+
+    private Integer gpuMemory;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu")
 
     private Integer cpu;
@@ -395,6 +400,11 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     @JsonProperty(value = "last_modified")
 
     private OffsetDateTime lastModified;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ephemeral_storage")
+
+    private Integer ephemeralStorage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_vpc")
@@ -728,6 +738,23 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         this.memorySize = memorySize;
     }
 
+    public ShowFunctionConfigResponse withGpuMemory(Integer gpuMemory) {
+        this.gpuMemory = gpuMemory;
+        return this;
+    }
+
+    /**
+     * 函数消耗的显存，只支持自定义运行时与自定义镜像函数配置GPU。 单位MB。 取值范围为：1024、2048、3072、4096、5120、6144、7168、8192、9216、10240、11264、12288、13312、14336、15360、16384。 最小值为1024，最大值为16384。
+     * @return gpuMemory
+     */
+    public Integer getGpuMemory() {
+        return gpuMemory;
+    }
+
+    public void setGpuMemory(Integer gpuMemory) {
+        this.gpuMemory = gpuMemory;
+    }
+
     public ShowFunctionConfigResponse withCpu(Integer cpu) {
         this.cpu = cpu;
         return this;
@@ -964,6 +991,23 @@ public class ShowFunctionConfigResponse extends SdkResponse {
 
     public void setLastModified(OffsetDateTime lastModified) {
         this.lastModified = lastModified;
+    }
+
+    public ShowFunctionConfigResponse withEphemeralStorage(Integer ephemeralStorage) {
+        this.ephemeralStorage = ephemeralStorage;
+        return this;
+    }
+
+    /**
+     * 临时存储大小。
+     * @return ephemeralStorage
+     */
+    public Integer getEphemeralStorage() {
+        return ephemeralStorage;
+    }
+
+    public void setEphemeralStorage(Integer ephemeralStorage) {
+        this.ephemeralStorage = ephemeralStorage;
     }
 
     public ShowFunctionConfigResponse withFuncVpc(FuncVpc funcVpc) {
@@ -1358,6 +1402,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.timeout, showFunctionConfigResponse.timeout)
             && Objects.equals(this.handler, showFunctionConfigResponse.handler)
             && Objects.equals(this.memorySize, showFunctionConfigResponse.memorySize)
+            && Objects.equals(this.gpuMemory, showFunctionConfigResponse.gpuMemory)
             && Objects.equals(this.cpu, showFunctionConfigResponse.cpu)
             && Objects.equals(this.codeType, showFunctionConfigResponse.codeType)
             && Objects.equals(this.codeUrl, showFunctionConfigResponse.codeUrl)
@@ -1372,6 +1417,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.appXrole, showFunctionConfigResponse.appXrole)
             && Objects.equals(this.description, showFunctionConfigResponse.description)
             && Objects.equals(this.lastModified, showFunctionConfigResponse.lastModified)
+            && Objects.equals(this.ephemeralStorage, showFunctionConfigResponse.ephemeralStorage)
             && Objects.equals(this.funcVpc, showFunctionConfigResponse.funcVpc)
             && Objects.equals(this.mountConfig, showFunctionConfigResponse.mountConfig)
             && Objects.equals(this.dependList, showFunctionConfigResponse.dependList)
@@ -1403,6 +1449,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             timeout,
             handler,
             memorySize,
+            gpuMemory,
             cpu,
             codeType,
             codeUrl,
@@ -1417,6 +1464,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             appXrole,
             description,
             lastModified,
+            ephemeralStorage,
             funcVpc,
             mountConfig,
             dependList,
@@ -1450,6 +1498,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    handler: ").append(toIndentedString(handler)).append("\n");
         sb.append("    memorySize: ").append(toIndentedString(memorySize)).append("\n");
+        sb.append("    gpuMemory: ").append(toIndentedString(gpuMemory)).append("\n");
         sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");
         sb.append("    codeType: ").append(toIndentedString(codeType)).append("\n");
         sb.append("    codeUrl: ").append(toIndentedString(codeUrl)).append("\n");
@@ -1464,6 +1513,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         sb.append("    appXrole: ").append(toIndentedString(appXrole)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
+        sb.append("    ephemeralStorage: ").append(toIndentedString(ephemeralStorage)).append("\n");
         sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
         sb.append("    mountConfig: ").append(toIndentedString(mountConfig)).append("\n");
         sb.append("    dependList: ").append(toIndentedString(dependList)).append("\n");

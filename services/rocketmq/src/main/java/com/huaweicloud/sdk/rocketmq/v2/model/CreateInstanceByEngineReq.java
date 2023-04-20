@@ -683,7 +683,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 是否支持IPV6。   - true: 支持   - false：不支持
+     * 是否支持IPv6。   - true: 支持   - false：不支持
      * @return ipv6Enable
      */
     public Boolean getIpv6Enable() {

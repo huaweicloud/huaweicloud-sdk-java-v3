@@ -107,7 +107,7 @@ public class CreateEndpointResponse extends SdkResponse {
     private ServiceTypeEnum serviceType;
 
     /**
-     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● failed：失败
+     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
      */
     public static final class StatusEnum {
 
@@ -213,6 +213,11 @@ public class CreateEndpointResponse extends SdkResponse {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip")
+
+    private String ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "active_status")
 
     private List<String> activeStatus = null;
@@ -307,6 +312,16 @@ public class CreateEndpointResponse extends SdkResponse {
 
     private String enableStatus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "endpoint_pool_id")
+
+    private String endpointPoolId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private String publicBorderGroup;
+
     public CreateEndpointResponse withId(String id) {
         this.id = id;
         return this;
@@ -347,7 +362,7 @@ public class CreateEndpointResponse extends SdkResponse {
     }
 
     /**
-     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● failed：失败
+     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
      * @return status
      */
     public StatusEnum getStatus() {
@@ -356,6 +371,23 @@ public class CreateEndpointResponse extends SdkResponse {
 
     public void setStatus(StatusEnum status) {
         this.status = status;
+    }
+
+    public CreateEndpointResponse withIp(String ip) {
+        this.ip = ip;
+        return this;
+    }
+
+    /**
+     * 终端节点ip
+     * @return ip
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
     }
 
     public CreateEndpointResponse withActiveStatus(List<String> activeStatus) {
@@ -777,6 +809,40 @@ public class CreateEndpointResponse extends SdkResponse {
         this.enableStatus = enableStatus;
     }
 
+    public CreateEndpointResponse withEndpointPoolId(String endpointPoolId) {
+        this.endpointPoolId = endpointPoolId;
+        return this;
+    }
+
+    /**
+     * 待废弃，实例相关联的集群ID
+     * @return endpointPoolId
+     */
+    public String getEndpointPoolId() {
+        return endpointPoolId;
+    }
+
+    public void setEndpointPoolId(String endpointPoolId) {
+        this.endpointPoolId = endpointPoolId;
+    }
+
+    public CreateEndpointResponse withPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    /**
+     * 终端节点对应Pool的Public Border Group信息
+     * @return publicBorderGroup
+     */
+    public String getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -789,6 +855,7 @@ public class CreateEndpointResponse extends SdkResponse {
         return Objects.equals(this.id, createEndpointResponse.id)
             && Objects.equals(this.serviceType, createEndpointResponse.serviceType)
             && Objects.equals(this.status, createEndpointResponse.status)
+            && Objects.equals(this.ip, createEndpointResponse.ip)
             && Objects.equals(this.activeStatus, createEndpointResponse.activeStatus)
             && Objects.equals(this.endpointServiceName, createEndpointResponse.endpointServiceName)
             && Objects.equals(this.markerId, createEndpointResponse.markerId)
@@ -807,7 +874,9 @@ public class CreateEndpointResponse extends SdkResponse {
             && Objects.equals(this.specificationName, createEndpointResponse.specificationName)
             && Objects.equals(this.description, createEndpointResponse.description)
             && Objects.equals(this.policyStatement, createEndpointResponse.policyStatement)
-            && Objects.equals(this.enableStatus, createEndpointResponse.enableStatus);
+            && Objects.equals(this.enableStatus, createEndpointResponse.enableStatus)
+            && Objects.equals(this.endpointPoolId, createEndpointResponse.endpointPoolId)
+            && Objects.equals(this.publicBorderGroup, createEndpointResponse.publicBorderGroup);
     }
 
     @Override
@@ -815,6 +884,7 @@ public class CreateEndpointResponse extends SdkResponse {
         return Objects.hash(id,
             serviceType,
             status,
+            ip,
             activeStatus,
             endpointServiceName,
             markerId,
@@ -833,7 +903,9 @@ public class CreateEndpointResponse extends SdkResponse {
             specificationName,
             description,
             policyStatement,
-            enableStatus);
+            enableStatus,
+            endpointPoolId,
+            publicBorderGroup);
     }
 
     @Override
@@ -843,6 +915,7 @@ public class CreateEndpointResponse extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    activeStatus: ").append(toIndentedString(activeStatus)).append("\n");
         sb.append("    endpointServiceName: ").append(toIndentedString(endpointServiceName)).append("\n");
         sb.append("    markerId: ").append(toIndentedString(markerId)).append("\n");
@@ -862,6 +935,8 @@ public class CreateEndpointResponse extends SdkResponse {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    policyStatement: ").append(toIndentedString(policyStatement)).append("\n");
         sb.append("    enableStatus: ").append(toIndentedString(enableStatus)).append("\n");
+        sb.append("    endpointPoolId: ").append(toIndentedString(endpointPoolId)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

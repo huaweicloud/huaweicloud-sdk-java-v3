@@ -78,6 +78,11 @@ public class OpenScheduleConfReq {
 
     private Integer audienceScope;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enableRecording")
+
+    private YesNoEnum enableRecording;
+
     public OpenScheduleConfReq withSubject(String subject) {
         this.subject = subject;
         return this;
@@ -324,6 +329,23 @@ public class OpenScheduleConfReq {
         this.audienceScope = audienceScope;
     }
 
+    public OpenScheduleConfReq withEnableRecording(YesNoEnum enableRecording) {
+        this.enableRecording = enableRecording;
+        return this;
+    }
+
+    /**
+     * Get enableRecording
+     * @return enableRecording
+     */
+    public YesNoEnum getEnableRecording() {
+        return enableRecording;
+    }
+
+    public void setEnableRecording(YesNoEnum enableRecording) {
+        this.enableRecording = enableRecording;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -345,7 +367,8 @@ public class OpenScheduleConfReq {
             && Objects.equals(this.audiencePasswd, openScheduleConfReq.audiencePasswd)
             && Objects.equals(this.callRestriction, openScheduleConfReq.callRestriction)
             && Objects.equals(this.scope, openScheduleConfReq.scope)
-            && Objects.equals(this.audienceScope, openScheduleConfReq.audienceScope);
+            && Objects.equals(this.audienceScope, openScheduleConfReq.audienceScope)
+            && Objects.equals(this.enableRecording, openScheduleConfReq.enableRecording);
     }
 
     @Override
@@ -362,7 +385,8 @@ public class OpenScheduleConfReq {
             audiencePasswd,
             callRestriction,
             scope,
-            audienceScope);
+            audienceScope,
+            enableRecording);
     }
 
     @Override
@@ -382,6 +406,7 @@ public class OpenScheduleConfReq {
         sb.append("    callRestriction: ").append(toIndentedString(callRestriction)).append("\n");
         sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
         sb.append("    audienceScope: ").append(toIndentedString(audienceScope)).append("\n");
+        sb.append("    enableRecording: ").append(toIndentedString(enableRecording)).append("\n");
         sb.append("}");
         return sb.toString();
     }

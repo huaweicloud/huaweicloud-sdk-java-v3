@@ -139,19 +139,9 @@ public class UpdateUserResponse extends SdkResponse {
     public static final class DefaultGroupPermEnum {
 
         /**
-         * Enum PUB for value: "PUB"
-         */
-        public static final DefaultGroupPermEnum PUB = new DefaultGroupPermEnum("PUB");
-
-        /**
          * Enum SUB for value: "SUB"
          */
         public static final DefaultGroupPermEnum SUB = new DefaultGroupPermEnum("SUB");
-
-        /**
-         * Enum PUB_SUB for value: "PUB|SUB"
-         */
-        public static final DefaultGroupPermEnum PUB_SUB = new DefaultGroupPermEnum("PUB|SUB");
 
         /**
          * Enum DENY for value: "DENY"
@@ -162,9 +152,7 @@ public class UpdateUserResponse extends SdkResponse {
 
         private static Map<String, DefaultGroupPermEnum> createStaticFields() {
             Map<String, DefaultGroupPermEnum> map = new HashMap<>();
-            map.put("PUB", PUB);
             map.put("SUB", SUB);
-            map.put("PUB|SUB", PUB_SUB);
             map.put("DENY", DENY);
             return Collections.unmodifiableMap(map);
         }

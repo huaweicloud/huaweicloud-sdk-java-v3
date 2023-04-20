@@ -1825,6 +1825,48 @@ public class IoTEdgeMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateModuleStateRequest, UpdateModuleStateResponse> updateModuleState = genForupdateModuleState();
+
+    private static HttpRequestDef<UpdateModuleStateRequest, UpdateModuleStateResponse> genForupdateModuleState() {
+        // basic
+        HttpRequestDef.Builder<UpdateModuleStateRequest, UpdateModuleStateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateModuleStateRequest.class, UpdateModuleStateResponse.class)
+                .withName("UpdateModuleState")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/modules/{module_id}/state")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateModuleStateRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            })
+        );
+        builder.<String>withRequestField("module_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateModuleStateRequest::getModuleId, (req, v) -> {
+                req.setModuleId(v);
+            })
+        );
+        builder.<UpdateEdgeModuleStateReqDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateEdgeModuleStateReqDTO.class),
+            f -> f.withMarshaller(UpdateModuleStateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRoutesRequest, ListRoutesResponse> listRoutes = genForlistRoutes();
 
     private static HttpRequestDef<ListRoutesRequest, ListRoutesResponse> genForlistRoutes() {
@@ -1885,6 +1927,154 @@ public class IoTEdgeMeta {
             f -> f.withMarshaller(UpdateRoutesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }).withInnerContainerType(CreateRouterReqDTO.class)
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse> addGeneralOtTemplate = genForaddGeneralOtTemplate();
+
+    private static HttpRequestDef<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse> genForaddGeneralOtTemplate() {
+        // basic
+        HttpRequestDef.Builder<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddGeneralOtTemplateRequest.class, AddGeneralOtTemplateResponse.class)
+                .withName("AddGeneralOtTemplate")
+                .withUri("/v2/{project_id}/templates/ots/data-sources/import")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<String>withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddGeneralOtTemplateResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
+        
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddOtTemplatesRequest, AddOtTemplatesResponse> addOtTemplates = genForaddOtTemplates();
+
+    private static HttpRequestDef<AddOtTemplatesRequest, AddOtTemplatesResponse> genForaddOtTemplates() {
+        // basic
+        HttpRequestDef.Builder<AddOtTemplatesRequest, AddOtTemplatesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddOtTemplatesRequest.class, AddOtTemplatesResponse.class)
+                .withName("AddOtTemplates")
+                .withUri("/v2/{project_id}/templates/ots/data-sources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateOtTemplatesReqDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOtTemplatesReqDTO.class),
+            f -> f.withMarshaller(AddOtTemplatesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse> batchListOtTemplates = genForbatchListOtTemplates();
+
+    private static HttpRequestDef<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse> genForbatchListOtTemplates() {
+        // basic
+        HttpRequestDef.Builder<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, BatchListOtTemplatesRequest.class, BatchListOtTemplatesResponse.class)
+                .withName("BatchListOtTemplates")
+                .withUri("/v2/{project_id}/templates/ots/data-sources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchListOtTemplatesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchListOtTemplatesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteOtTemplateRequest, DeleteOtTemplateResponse> deleteOtTemplate = genFordeleteOtTemplate();
+
+    private static HttpRequestDef<DeleteOtTemplateRequest, DeleteOtTemplateResponse> genFordeleteOtTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteOtTemplateRequest, DeleteOtTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteOtTemplateRequest.class, DeleteOtTemplateResponse.class)
+                .withName("DeleteOtTemplate")
+                .withUri("/v2/{project_id}/templates/ots/data-sources/{tpl_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tpl_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOtTemplateRequest::getTplId, (req, v) -> {
+                req.setTplId(v);
+            })
+        );
+
+        // response
+        builder.<String>withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteOtTemplateResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
+        
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOtTemplateRequest, ShowOtTemplateResponse> showOtTemplate = genForshowOtTemplate();
+
+    private static HttpRequestDef<ShowOtTemplateRequest, ShowOtTemplateResponse> genForshowOtTemplate() {
+        // basic
+        HttpRequestDef.Builder<ShowOtTemplateRequest, ShowOtTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowOtTemplateRequest.class, ShowOtTemplateResponse.class)
+                .withName("ShowOtTemplate")
+                .withUri("/v2/{project_id}/templates/ots/data-sources/{tpl_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tpl_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOtTemplateRequest::getTplId, (req, v) -> {
+                req.setTplId(v);
+            })
         );
 
         // response

@@ -26,19 +26,9 @@ public class UserGroupPerms {
     public static final class PermEnum {
 
         /**
-         * Enum PUB for value: "PUB"
-         */
-        public static final PermEnum PUB = new PermEnum("PUB");
-
-        /**
          * Enum SUB for value: "SUB"
          */
         public static final PermEnum SUB = new PermEnum("SUB");
-
-        /**
-         * Enum PUB_SUB for value: "PUB|SUB"
-         */
-        public static final PermEnum PUB_SUB = new PermEnum("PUB|SUB");
 
         /**
          * Enum DENY for value: "DENY"
@@ -49,9 +39,7 @@ public class UserGroupPerms {
 
         private static Map<String, PermEnum> createStaticFields() {
             Map<String, PermEnum> map = new HashMap<>();
-            map.put("PUB", PUB);
             map.put("SUB", SUB);
-            map.put("PUB|SUB", PUB_SUB);
             map.put("DENY", DENY);
             return Collections.unmodifiableMap(map);
         }

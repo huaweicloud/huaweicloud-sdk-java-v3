@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * MonthlyBillRes
@@ -209,6 +212,16 @@ public class MonthlyBillRes {
     @JsonProperty(value = "sub_resource_name")
 
     private String subResourceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pre_order_id")
+
+    private String preOrderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "az_code_infos")
+
+    private List<AzCodeInfo> azCodeInfos = null;
 
     public MonthlyBillRes withCycle(String cycle) {
         this.cycle = cycle;
@@ -890,6 +903,56 @@ public class MonthlyBillRes {
         this.subResourceName = subResourceName;
     }
 
+    public MonthlyBillRes withPreOrderId(String preOrderId) {
+        this.preOrderId = preOrderId;
+        return this;
+    }
+
+    /**
+     * |参数名称：原订单ID| |参数的约束及描述：该参数非必填，且只允许字符串|
+     * @return preOrderId
+     */
+    public String getPreOrderId() {
+        return preOrderId;
+    }
+
+    public void setPreOrderId(String preOrderId) {
+        this.preOrderId = preOrderId;
+    }
+
+    public MonthlyBillRes withAzCodeInfos(List<AzCodeInfo> azCodeInfos) {
+        this.azCodeInfos = azCodeInfos;
+        return this;
+    }
+
+    public MonthlyBillRes addAzCodeInfosItem(AzCodeInfo azCodeInfosItem) {
+        if (this.azCodeInfos == null) {
+            this.azCodeInfos = new ArrayList<>();
+        }
+        this.azCodeInfos.add(azCodeInfosItem);
+        return this;
+    }
+
+    public MonthlyBillRes withAzCodeInfos(Consumer<List<AzCodeInfo>> azCodeInfosSetter) {
+        if (this.azCodeInfos == null) {
+            this.azCodeInfos = new ArrayList<>();
+        }
+        azCodeInfosSetter.accept(this.azCodeInfos);
+        return this;
+    }
+
+    /**
+     * |参数名称：可用区信息列表| |参数的约束及描述：该参数非必填，且只允许字符串|
+     * @return azCodeInfos
+     */
+    public List<AzCodeInfo> getAzCodeInfos() {
+        return azCodeInfos;
+    }
+
+    public void setAzCodeInfos(List<AzCodeInfo> azCodeInfos) {
+        this.azCodeInfos = azCodeInfos;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -938,7 +1001,9 @@ public class MonthlyBillRes {
             && Objects.equals(this.subResourceTypeCode, monthlyBillRes.subResourceTypeCode)
             && Objects.equals(this.subResourceTypeName, monthlyBillRes.subResourceTypeName)
             && Objects.equals(this.subResourceId, monthlyBillRes.subResourceId)
-            && Objects.equals(this.subResourceName, monthlyBillRes.subResourceName);
+            && Objects.equals(this.subResourceName, monthlyBillRes.subResourceName)
+            && Objects.equals(this.preOrderId, monthlyBillRes.preOrderId)
+            && Objects.equals(this.azCodeInfos, monthlyBillRes.azCodeInfos);
     }
 
     @Override
@@ -982,7 +1047,9 @@ public class MonthlyBillRes {
             subResourceTypeCode,
             subResourceTypeName,
             subResourceId,
-            subResourceName);
+            subResourceName,
+            preOrderId,
+            azCodeInfos);
     }
 
     @Override
@@ -1029,6 +1096,8 @@ public class MonthlyBillRes {
         sb.append("    subResourceTypeName: ").append(toIndentedString(subResourceTypeName)).append("\n");
         sb.append("    subResourceId: ").append(toIndentedString(subResourceId)).append("\n");
         sb.append("    subResourceName: ").append(toIndentedString(subResourceName)).append("\n");
+        sb.append("    preOrderId: ").append(toIndentedString(preOrderId)).append("\n");
+        sb.append("    azCodeInfos: ").append(toIndentedString(azCodeInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -13,14 +13,14 @@ public class GetRestoreTimeResponseRestoreTime {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    private Integer startTime;
+    private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private Integer endTime;
+    private Long endTime;
 
-    public GetRestoreTimeResponseRestoreTime withStartTime(Integer startTime) {
+    public GetRestoreTimeResponseRestoreTime withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -29,15 +29,15 @@ public class GetRestoreTimeResponseRestoreTime {
      * 可恢复时间段的起始时间点，UNIX时间戳格式，单位是毫秒，时区是UTC。
      * @return startTime
      */
-    public Integer getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Integer startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 
-    public GetRestoreTimeResponseRestoreTime withEndTime(Integer endTime) {
+    public GetRestoreTimeResponseRestoreTime withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -46,11 +46,11 @@ public class GetRestoreTimeResponseRestoreTime {
      * 可恢复时间段的结束时间点，UNIX时间戳格式，单位是毫秒，时区是UTC。
      * @return endTime
      */
-    public Integer getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Integer endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 

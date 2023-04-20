@@ -3,9 +3,6 @@ package com.huaweicloud.sdk.vpc.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -27,7 +24,7 @@ public class UpdateRouteTableReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "routes")
 
-    private Map<String, List<RouteTableRoute>> routes = null;
+    private RouteTableRouteAction routes;
 
     public UpdateRouteTableReq withName(String name) {
         this.name = name;
@@ -63,36 +60,29 @@ public class UpdateRouteTableReq {
         this.description = description;
     }
 
-    public UpdateRouteTableReq withRoutes(Map<String, List<RouteTableRoute>> routes) {
+    public UpdateRouteTableReq withRoutes(RouteTableRouteAction routes) {
         this.routes = routes;
         return this;
     }
 
-    public UpdateRouteTableReq putRoutesItem(String key, List<RouteTableRoute> routesItem) {
+    public UpdateRouteTableReq withRoutes(Consumer<RouteTableRouteAction> routesSetter) {
         if (this.routes == null) {
-            this.routes = new HashMap<>();
+            this.routes = new RouteTableRouteAction();
+            routesSetter.accept(this.routes);
         }
-        this.routes.put(key, routesItem);
-        return this;
-    }
 
-    public UpdateRouteTableReq withRoutes(Consumer<Map<String, List<RouteTableRoute>>> routesSetter) {
-        if (this.routes == null) {
-            this.routes = new HashMap<>();
-        }
-        routesSetter.accept(this.routes);
         return this;
     }
 
     /**
-     * 功能说明：路由对象  取值范围：参见route字段说明。更新存在三种动作：     1）add：新增路由条目，type，destination，nexthop必选。     2）mod：修改路由信息，type，destination，nexthop必选。     3）del：删除路由条目，destination必选  约束：     每个路由表最大关联200条路由。     不支持直接修改destination，如需修改，只能使用del先删除对应路由，然后使用add新增路由。
+     * Get routes
      * @return routes
      */
-    public Map<String, List<RouteTableRoute>> getRoutes() {
+    public RouteTableRouteAction getRoutes() {
         return routes;
     }
 
-    public void setRoutes(Map<String, List<RouteTableRoute>> routes) {
+    public void setRoutes(RouteTableRouteAction routes) {
         this.routes = routes;
     }
 

@@ -190,6 +190,328 @@ public class CbsClient {
     }
 
     /**
+     * 合成视频(按包周期收费)
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteComposeVideoRequest 请求对象
+     * @return ExecuteComposeVideoResponse
+     */
+    public ExecuteComposeVideoResponse executeComposeVideo(ExecuteComposeVideoRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executeComposeVideo);
+    }
+
+    /**
+     * 合成视频(按包周期收费)
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteComposeVideoRequest 请求对象
+     * @return SyncInvoker<ExecuteComposeVideoRequest, ExecuteComposeVideoResponse>
+     */
+    public SyncInvoker<ExecuteComposeVideoRequest, ExecuteComposeVideoResponse> executeComposeVideoInvoker(ExecuteComposeVideoRequest request) {
+        return new SyncInvoker<ExecuteComposeVideoRequest, ExecuteComposeVideoResponse>(request, CbsMeta.executeComposeVideo, hcClient);
+    }
+
+    /**
+     * 合成视频(按需收费)
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteComposeVideoOndemandRequest 请求对象
+     * @return ExecuteComposeVideoOndemandResponse
+     */
+    public ExecuteComposeVideoOndemandResponse executeComposeVideoOndemand(ExecuteComposeVideoOndemandRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executeComposeVideoOndemand);
+    }
+
+    /**
+     * 合成视频(按需收费)
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteComposeVideoOndemandRequest 请求对象
+     * @return SyncInvoker<ExecuteComposeVideoOndemandRequest, ExecuteComposeVideoOndemandResponse>
+     */
+    public SyncInvoker<ExecuteComposeVideoOndemandRequest, ExecuteComposeVideoOndemandResponse> executeComposeVideoOndemandInvoker(ExecuteComposeVideoOndemandRequest request) {
+        return new SyncInvoker<ExecuteComposeVideoOndemandRequest, ExecuteComposeVideoOndemandResponse>(request, CbsMeta.executeComposeVideoOndemand, hcClient);
+    }
+
+    /**
+     * 创建视频
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteCreateVideoRequest 请求对象
+     * @return ExecuteCreateVideoResponse
+     */
+    public ExecuteCreateVideoResponse executeCreateVideo(ExecuteCreateVideoRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executeCreateVideo);
+    }
+
+    /**
+     * 创建视频
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteCreateVideoRequest 请求对象
+     * @return SyncInvoker<ExecuteCreateVideoRequest, ExecuteCreateVideoResponse>
+     */
+    public SyncInvoker<ExecuteCreateVideoRequest, ExecuteCreateVideoResponse> executeCreateVideoInvoker(ExecuteCreateVideoRequest request) {
+        return new SyncInvoker<ExecuteCreateVideoRequest, ExecuteCreateVideoResponse>(request, CbsMeta.executeCreateVideo, hcClient);
+    }
+
+    /**
+     * 删除视频
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteDeleteVideoByIdRequest 请求对象
+     * @return ExecuteDeleteVideoByIdResponse
+     */
+    public ExecuteDeleteVideoByIdResponse executeDeleteVideoById(ExecuteDeleteVideoByIdRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executeDeleteVideoById);
+    }
+
+    /**
+     * 删除视频
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteDeleteVideoByIdRequest 请求对象
+     * @return SyncInvoker<ExecuteDeleteVideoByIdRequest, ExecuteDeleteVideoByIdResponse>
+     */
+    public SyncInvoker<ExecuteDeleteVideoByIdRequest, ExecuteDeleteVideoByIdResponse> executeDeleteVideoByIdInvoker(ExecuteDeleteVideoByIdRequest request) {
+        return new SyncInvoker<ExecuteDeleteVideoByIdRequest, ExecuteDeleteVideoByIdResponse>(request, CbsMeta.executeDeleteVideoById, hcClient);
+    }
+
+    /**
+     * 删除图片
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteDeleteimageByIdRequest 请求对象
+     * @return ExecuteDeleteimageByIdResponse
+     */
+    public ExecuteDeleteimageByIdResponse executeDeleteimageById(ExecuteDeleteimageByIdRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executeDeleteimageById);
+    }
+
+    /**
+     * 删除图片
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteDeleteimageByIdRequest 请求对象
+     * @return SyncInvoker<ExecuteDeleteimageByIdRequest, ExecuteDeleteimageByIdResponse>
+     */
+    public SyncInvoker<ExecuteDeleteimageByIdRequest, ExecuteDeleteimageByIdResponse> executeDeleteimageByIdInvoker(ExecuteDeleteimageByIdRequest request) {
+        return new SyncInvoker<ExecuteDeleteimageByIdRequest, ExecuteDeleteimageByIdResponse>(request, CbsMeta.executeDeleteimageById, hcClient);
+    }
+
+    /**
+     * 获取形象详情
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteGetCharacterInfoByIdRequest 请求对象
+     * @return ExecuteGetCharacterInfoByIdResponse
+     */
+    public ExecuteGetCharacterInfoByIdResponse executeGetCharacterInfoById(ExecuteGetCharacterInfoByIdRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executeGetCharacterInfoById);
+    }
+
+    /**
+     * 获取形象详情
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteGetCharacterInfoByIdRequest 请求对象
+     * @return SyncInvoker<ExecuteGetCharacterInfoByIdRequest, ExecuteGetCharacterInfoByIdResponse>
+     */
+    public SyncInvoker<ExecuteGetCharacterInfoByIdRequest, ExecuteGetCharacterInfoByIdResponse> executeGetCharacterInfoByIdInvoker(ExecuteGetCharacterInfoByIdRequest request) {
+        return new SyncInvoker<ExecuteGetCharacterInfoByIdRequest, ExecuteGetCharacterInfoByIdResponse>(request, CbsMeta.executeGetCharacterInfoById, hcClient);
+    }
+
+    /**
+     * 获取形象列表
+     *
+     * TODO:
+     * 
+     * 本期不做形象进度
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteGetCharactersRequest 请求对象
+     * @return ExecuteGetCharactersResponse
+     */
+    public ExecuteGetCharactersResponse executeGetCharacters(ExecuteGetCharactersRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executeGetCharacters);
+    }
+
+    /**
+     * 获取形象列表
+     *
+     * TODO:
+     * 
+     * 本期不做形象进度
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteGetCharactersRequest 请求对象
+     * @return SyncInvoker<ExecuteGetCharactersRequest, ExecuteGetCharactersResponse>
+     */
+    public SyncInvoker<ExecuteGetCharactersRequest, ExecuteGetCharactersResponse> executeGetCharactersInvoker(ExecuteGetCharactersRequest request) {
+        return new SyncInvoker<ExecuteGetCharactersRequest, ExecuteGetCharactersResponse>(request, CbsMeta.executeGetCharacters, hcClient);
+    }
+
+    /**
+     * 获取播报框
+     *
+     * 获取指定图片可用的播报框列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteGetFramsListByImagesIdRequest 请求对象
+     * @return ExecuteGetFramsListByImagesIdResponse
+     */
+    public ExecuteGetFramsListByImagesIdResponse executeGetFramsListByImagesId(ExecuteGetFramsListByImagesIdRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executeGetFramsListByImagesId);
+    }
+
+    /**
+     * 获取播报框
+     *
+     * 获取指定图片可用的播报框列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteGetFramsListByImagesIdRequest 请求对象
+     * @return SyncInvoker<ExecuteGetFramsListByImagesIdRequest, ExecuteGetFramsListByImagesIdResponse>
+     */
+    public SyncInvoker<ExecuteGetFramsListByImagesIdRequest, ExecuteGetFramsListByImagesIdResponse> executeGetFramsListByImagesIdInvoker(ExecuteGetFramsListByImagesIdRequest request) {
+        return new SyncInvoker<ExecuteGetFramsListByImagesIdRequest, ExecuteGetFramsListByImagesIdResponse>(request, CbsMeta.executeGetFramsListByImagesId, hcClient);
+    }
+
+    /**
+     * 获取图片列表
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteGetImagesListRequest 请求对象
+     * @return ExecuteGetImagesListResponse
+     */
+    public ExecuteGetImagesListResponse executeGetImagesList(ExecuteGetImagesListRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executeGetImagesList);
+    }
+
+    /**
+     * 获取图片列表
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteGetImagesListRequest 请求对象
+     * @return SyncInvoker<ExecuteGetImagesListRequest, ExecuteGetImagesListResponse>
+     */
+    public SyncInvoker<ExecuteGetImagesListRequest, ExecuteGetImagesListResponse> executeGetImagesListInvoker(ExecuteGetImagesListRequest request) {
+        return new SyncInvoker<ExecuteGetImagesListRequest, ExecuteGetImagesListResponse>(request, CbsMeta.executeGetImagesList, hcClient);
+    }
+
+    /**
+     * 获取视频详情
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteGetVideoInfoByIdRequest 请求对象
+     * @return ExecuteGetVideoInfoByIdResponse
+     */
+    public ExecuteGetVideoInfoByIdResponse executeGetVideoInfoById(ExecuteGetVideoInfoByIdRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executeGetVideoInfoById);
+    }
+
+    /**
+     * 获取视频详情
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteGetVideoInfoByIdRequest 请求对象
+     * @return SyncInvoker<ExecuteGetVideoInfoByIdRequest, ExecuteGetVideoInfoByIdResponse>
+     */
+    public SyncInvoker<ExecuteGetVideoInfoByIdRequest, ExecuteGetVideoInfoByIdResponse> executeGetVideoInfoByIdInvoker(ExecuteGetVideoInfoByIdRequest request) {
+        return new SyncInvoker<ExecuteGetVideoInfoByIdRequest, ExecuteGetVideoInfoByIdResponse>(request, CbsMeta.executeGetVideoInfoById, hcClient);
+    }
+
+    /**
+     * 获取视频列表
+     *
+     * 该接口用于获取视频列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteGetVideosListRequest 请求对象
+     * @return ExecuteGetVideosListResponse
+     */
+    public ExecuteGetVideosListResponse executeGetVideosList(ExecuteGetVideosListRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executeGetVideosList);
+    }
+
+    /**
+     * 获取视频列表
+     *
+     * 该接口用于获取视频列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteGetVideosListRequest 请求对象
+     * @return SyncInvoker<ExecuteGetVideosListRequest, ExecuteGetVideosListResponse>
+     */
+    public SyncInvoker<ExecuteGetVideosListRequest, ExecuteGetVideosListResponse> executeGetVideosListInvoker(ExecuteGetVideosListRequest request) {
+        return new SyncInvoker<ExecuteGetVideosListRequest, ExecuteGetVideosListResponse>(request, CbsMeta.executeGetVideosList, hcClient);
+    }
+
+    /**
+     * 创建图片
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecutePostCreateImagesRequest 请求对象
+     * @return ExecutePostCreateImagesResponse
+     */
+    public ExecutePostCreateImagesResponse executePostCreateImages(ExecutePostCreateImagesRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executePostCreateImages);
+    }
+
+    /**
+     * 创建图片
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecutePostCreateImagesRequest 请求对象
+     * @return SyncInvoker<ExecutePostCreateImagesRequest, ExecutePostCreateImagesResponse>
+     */
+    public SyncInvoker<ExecutePostCreateImagesRequest, ExecutePostCreateImagesResponse> executePostCreateImagesInvoker(ExecutePostCreateImagesRequest request) {
+        return new SyncInvoker<ExecutePostCreateImagesRequest, ExecutePostCreateImagesResponse>(request, CbsMeta.executePostCreateImages, hcClient);
+    }
+
+    /**
      * 问答机器人会话
      *
      * 用户调用该接口和机器人进行聊天。
@@ -243,6 +565,148 @@ public class CbsClient {
      */
     public SyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse> executeSessionInvoker(ExecuteSessionRequest request) {
         return new SyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse>(request, CbsMeta.executeSession, hcClient);
+    }
+
+    /**
+     * 修改图片名
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteUpdateImageNameRequest 请求对象
+     * @return ExecuteUpdateImageNameResponse
+     */
+    public ExecuteUpdateImageNameResponse executeUpdateImageName(ExecuteUpdateImageNameRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executeUpdateImageName);
+    }
+
+    /**
+     * 修改图片名
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteUpdateImageNameRequest 请求对象
+     * @return SyncInvoker<ExecuteUpdateImageNameRequest, ExecuteUpdateImageNameResponse>
+     */
+    public SyncInvoker<ExecuteUpdateImageNameRequest, ExecuteUpdateImageNameResponse> executeUpdateImageNameInvoker(ExecuteUpdateImageNameRequest request) {
+        return new SyncInvoker<ExecuteUpdateImageNameRequest, ExecuteUpdateImageNameResponse>(request, CbsMeta.executeUpdateImageName, hcClient);
+    }
+
+    /**
+     * 更新视频名
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteUpdateVideoByIdRequest 请求对象
+     * @return ExecuteUpdateVideoByIdResponse
+     */
+    public ExecuteUpdateVideoByIdResponse executeUpdateVideoById(ExecuteUpdateVideoByIdRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executeUpdateVideoById);
+    }
+
+    /**
+     * 更新视频名
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteUpdateVideoByIdRequest 请求对象
+     * @return SyncInvoker<ExecuteUpdateVideoByIdRequest, ExecuteUpdateVideoByIdResponse>
+     */
+    public SyncInvoker<ExecuteUpdateVideoByIdRequest, ExecuteUpdateVideoByIdResponse> executeUpdateVideoByIdInvoker(ExecuteUpdateVideoByIdRequest request) {
+        return new SyncInvoker<ExecuteUpdateVideoByIdRequest, ExecuteUpdateVideoByIdResponse>(request, CbsMeta.executeUpdateVideoById, hcClient);
+    }
+
+    /**
+     * 配置视频
+     *
+     * 通过该接口配置视频
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteUpdateVideoInfoByIdRequest 请求对象
+     * @return ExecuteUpdateVideoInfoByIdResponse
+     */
+    public ExecuteUpdateVideoInfoByIdResponse executeUpdateVideoInfoById(ExecuteUpdateVideoInfoByIdRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executeUpdateVideoInfoById);
+    }
+
+    /**
+     * 配置视频
+     *
+     * 通过该接口配置视频
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteUpdateVideoInfoByIdRequest 请求对象
+     * @return SyncInvoker<ExecuteUpdateVideoInfoByIdRequest, ExecuteUpdateVideoInfoByIdResponse>
+     */
+    public SyncInvoker<ExecuteUpdateVideoInfoByIdRequest, ExecuteUpdateVideoInfoByIdResponse> executeUpdateVideoInfoByIdInvoker(ExecuteUpdateVideoInfoByIdRequest request) {
+        return new SyncInvoker<ExecuteUpdateVideoInfoByIdRequest, ExecuteUpdateVideoInfoByIdResponse>(request, CbsMeta.executeUpdateVideoInfoById, hcClient);
+    }
+
+    /**
+     * 上传播报插图
+     *
+     * 上传图片并生成图片链接，图片需小于10m；
+     * 同一个视频同时最多支持50张插图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteUploadImageRequest 请求对象
+     * @return ExecuteUploadImageResponse
+     */
+    public ExecuteUploadImageResponse executeUploadImage(ExecuteUploadImageRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executeUploadImage);
+    }
+
+    /**
+     * 上传播报插图
+     *
+     * 上传图片并生成图片链接，图片需小于10m；
+     * 同一个视频同时最多支持50张插图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteUploadImageRequest 请求对象
+     * @return SyncInvoker<ExecuteUploadImageRequest, ExecuteUploadImageResponse>
+     */
+    public SyncInvoker<ExecuteUploadImageRequest, ExecuteUploadImageResponse> executeUploadImageInvoker(ExecuteUploadImageRequest request) {
+        return new SyncInvoker<ExecuteUploadImageRequest, ExecuteUploadImageResponse>(request, CbsMeta.executeUploadImage, hcClient);
+    }
+
+    /**
+     * 通过pdf上传多张插图
+     *
+     * 当前仅支持上传PDF，如有PPT请将PPT转化为PDF再进行上传，文件需小于10m；
+     * 该接口会将pdf每一页转换图片，并生成链接；
+     * 同一个视频同时最多支持50张插图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteUploadPptRequest 请求对象
+     * @return ExecuteUploadPptResponse
+     */
+    public ExecuteUploadPptResponse executeUploadPpt(ExecuteUploadPptRequest request) {
+        return hcClient.syncInvokeHttp(request, CbsMeta.executeUploadPpt);
+    }
+
+    /**
+     * 通过pdf上传多张插图
+     *
+     * 当前仅支持上传PDF，如有PPT请将PPT转化为PDF再进行上传，文件需小于10m；
+     * 该接口会将pdf每一页转换图片，并生成链接；
+     * 同一个视频同时最多支持50张插图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteUploadPptRequest 请求对象
+     * @return SyncInvoker<ExecuteUploadPptRequest, ExecuteUploadPptResponse>
+     */
+    public SyncInvoker<ExecuteUploadPptRequest, ExecuteUploadPptResponse> executeUploadPptInvoker(ExecuteUploadPptRequest request) {
+        return new SyncInvoker<ExecuteUploadPptRequest, ExecuteUploadPptResponse>(request, CbsMeta.executeUploadPpt, hcClient);
     }
 
     /**

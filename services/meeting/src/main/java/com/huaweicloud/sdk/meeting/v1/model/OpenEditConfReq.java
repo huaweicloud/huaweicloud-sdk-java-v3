@@ -78,6 +78,11 @@ public class OpenEditConfReq {
 
     private Integer audienceScope;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enableRecording")
+
+    private YesNoEnum enableRecording;
+
     public OpenEditConfReq withConferenceId(String conferenceId) {
         this.conferenceId = conferenceId;
         return this;
@@ -324,6 +329,23 @@ public class OpenEditConfReq {
         this.audienceScope = audienceScope;
     }
 
+    public OpenEditConfReq withEnableRecording(YesNoEnum enableRecording) {
+        this.enableRecording = enableRecording;
+        return this;
+    }
+
+    /**
+     * Get enableRecording
+     * @return enableRecording
+     */
+    public YesNoEnum getEnableRecording() {
+        return enableRecording;
+    }
+
+    public void setEnableRecording(YesNoEnum enableRecording) {
+        this.enableRecording = enableRecording;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -345,7 +367,8 @@ public class OpenEditConfReq {
             && Objects.equals(this.audiencePasswd, openEditConfReq.audiencePasswd)
             && Objects.equals(this.callRestriction, openEditConfReq.callRestriction)
             && Objects.equals(this.scope, openEditConfReq.scope)
-            && Objects.equals(this.audienceScope, openEditConfReq.audienceScope);
+            && Objects.equals(this.audienceScope, openEditConfReq.audienceScope)
+            && Objects.equals(this.enableRecording, openEditConfReq.enableRecording);
     }
 
     @Override
@@ -362,7 +385,8 @@ public class OpenEditConfReq {
             audiencePasswd,
             callRestriction,
             scope,
-            audienceScope);
+            audienceScope,
+            enableRecording);
     }
 
     @Override
@@ -382,6 +406,7 @@ public class OpenEditConfReq {
         sb.append("    callRestriction: ").append(toIndentedString(callRestriction)).append("\n");
         sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
         sb.append("    audienceScope: ").append(toIndentedString(audienceScope)).append("\n");
+        sb.append("    enableRecording: ").append(toIndentedString(enableRecording)).append("\n");
         sb.append("}");
         return sb.toString();
     }

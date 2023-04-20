@@ -872,6 +872,59 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchShowUserDetailsRequest, BatchShowUserDetailsResponse> batchShowUserDetails =
+        genForbatchShowUserDetails();
+
+    private static HttpRequestDef<BatchShowUserDetailsRequest, BatchShowUserDetailsResponse> genForbatchShowUserDetails() {
+        // basic
+        HttpRequestDef.Builder<BatchShowUserDetailsRequest, BatchShowUserDetailsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchShowUserDetailsRequest.class, BatchShowUserDetailsResponse.class)
+            .withName("BatchShowUserDetails")
+            .withUri("/v1/usg/abs/users/list")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("idType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchShowUserDetailsRequest::getIdType, (req, v) -> {
+                req.setIdType(v);
+            }));
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchShowUserDetailsRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            }));
+        builder.<String>withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchShowUserDetailsRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            }));
+        builder.<List<ShowUserRequestDTO>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchShowUserDetailsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(ShowUserRequestDTO.class));
+
+        // response
+        builder.<List<UserDTO>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchShowUserDetailsResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(UserDTO.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchUpdateDevicesStatusRequest, BatchUpdateDevicesStatusResponse> batchUpdateDevicesStatus =
         genForbatchUpdateDevicesStatus();
 

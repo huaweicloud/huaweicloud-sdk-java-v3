@@ -559,6 +559,20 @@ public class CssMeta {
             f -> f.withMarshaller(ListLogsJobRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
             }));
+        builder.<Integer>withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogsJobRequest::getStart, (req, v) -> {
+                req.setStart(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogsJobRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
 
         // response
 
@@ -631,6 +645,20 @@ public class CssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListYmlsJobRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
+            }));
+        builder.<Integer>withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListYmlsJobRequest::getStart, (req, v) -> {
+                req.setStart(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListYmlsJobRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -916,6 +944,20 @@ public class CssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVpcepConnectionRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
+            }));
+        builder.<Integer>withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowVpcepConnectionRequest::getStart, (req, v) -> {
+                req.setStart(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowVpcepConnectionRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response

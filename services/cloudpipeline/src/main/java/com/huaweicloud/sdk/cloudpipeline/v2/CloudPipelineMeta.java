@@ -134,6 +134,62 @@ public class CloudPipelineMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreatePipelineByTemplateIdRequest, CreatePipelineByTemplateIdResponse> createPipelineByTemplateId =
+        genForcreatePipelineByTemplateId();
+
+    private static HttpRequestDef<CreatePipelineByTemplateIdRequest, CreatePipelineByTemplateIdResponse> genForcreatePipelineByTemplateId() {
+        // basic
+        HttpRequestDef.Builder<CreatePipelineByTemplateIdRequest, CreatePipelineByTemplateIdResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreatePipelineByTemplateIdRequest.class,
+                    CreatePipelineByTemplateIdResponse.class)
+                .withName("CreatePipelineByTemplateId")
+                .withUri("/v5/{project_id}/api/pipeline-templates/{template_id}/create-pipeline")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePipelineByTemplateIdRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePipelineByTemplateIdRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            }));
+        builder.<String>withRequestField("component_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePipelineByTemplateIdRequest::getComponentId, (req, v) -> {
+                req.setComponentId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePipelineByTemplateIdRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<PipelineByTemplateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PipelineByTemplateDTO.class),
+            f -> f.withMarshaller(CreatePipelineByTemplateIdRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeletePipelineRequest, DeletePipelineResponse> deletePipeline =
         genFordeletePipeline();
 
@@ -243,6 +299,45 @@ public class CloudPipelineMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPipelineSimpleInfoRequestBody.class),
             f -> f.withMarshaller(ListPipelineSimpleInfoRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse> listPipelineTemplates =
+        genForlistPipelineTemplates();
+
+    private static HttpRequestDef<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse> genForlistPipelineTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListPipelineTemplatesRequest.class, ListPipelineTemplatesResponse.class)
+            .withName("ListPipelineTemplates")
+            .withUri("/v5/{tenant_id}/api/pipeline-templates/list")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPipelineTemplatesRequest::getTenantId, (req, v) -> {
+                req.setTenantId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPipelineTemplatesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ListPipelineTemplatesQuery>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPipelineTemplatesQuery.class),
+            f -> f.withMarshaller(ListPipelineTemplatesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -572,6 +667,41 @@ public class CloudPipelineMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPipelineRunDetailRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPipelineTemplateDetailRequest, ShowPipelineTemplateDetailResponse> showPipelineTemplateDetail =
+        genForshowPipelineTemplateDetail();
+
+    private static HttpRequestDef<ShowPipelineTemplateDetailRequest, ShowPipelineTemplateDetailResponse> genForshowPipelineTemplateDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowPipelineTemplateDetailRequest, ShowPipelineTemplateDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowPipelineTemplateDetailRequest.class,
+                    ShowPipelineTemplateDetailResponse.class)
+                .withName("ShowPipelineTemplateDetail")
+                .withUri("/v5/{tenant_id}/api/pipeline-templates/{template_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineTemplateDetailRequest::getTenantId, (req, v) -> {
+                req.setTenantId(v);
+            }));
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineTemplateDetailRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
             }));
 
         // response

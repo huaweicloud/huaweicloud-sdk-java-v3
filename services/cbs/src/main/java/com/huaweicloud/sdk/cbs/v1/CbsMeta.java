@@ -322,6 +322,406 @@ public class CbsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExecuteComposeVideoRequest, ExecuteComposeVideoResponse> executeComposeVideo = genForexecuteComposeVideo();
+
+    private static HttpRequestDef<ExecuteComposeVideoRequest, ExecuteComposeVideoResponse> genForexecuteComposeVideo() {
+        // basic
+        HttpRequestDef.Builder<ExecuteComposeVideoRequest, ExecuteComposeVideoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExecuteComposeVideoRequest.class, ExecuteComposeVideoResponse.class)
+                .withName("ExecuteComposeVideo")
+                .withUri("/v1/{project_id}/digital-human/video/{video_id}/compose")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("video_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteComposeVideoRequest::getVideoId, (req, v) -> {
+                req.setVideoId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteComposeVideoOndemandRequest, ExecuteComposeVideoOndemandResponse> executeComposeVideoOndemand = genForexecuteComposeVideoOndemand();
+
+    private static HttpRequestDef<ExecuteComposeVideoOndemandRequest, ExecuteComposeVideoOndemandResponse> genForexecuteComposeVideoOndemand() {
+        // basic
+        HttpRequestDef.Builder<ExecuteComposeVideoOndemandRequest, ExecuteComposeVideoOndemandResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExecuteComposeVideoOndemandRequest.class, ExecuteComposeVideoOndemandResponse.class)
+                .withName("ExecuteComposeVideoOndemand")
+                .withUri("/v1/{project_id}/digital-human/video/{video_id}/compose/on-demand")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("video_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteComposeVideoOndemandRequest::getVideoId, (req, v) -> {
+                req.setVideoId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteCreateVideoRequest, ExecuteCreateVideoResponse> executeCreateVideo = genForexecuteCreateVideo();
+
+    private static HttpRequestDef<ExecuteCreateVideoRequest, ExecuteCreateVideoResponse> genForexecuteCreateVideo() {
+        // basic
+        HttpRequestDef.Builder<ExecuteCreateVideoRequest, ExecuteCreateVideoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExecuteCreateVideoRequest.class, ExecuteCreateVideoResponse.class)
+                .withName("ExecuteCreateVideo")
+                .withUri("/v1/{project_id}/digital-human/video")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateVideoReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateVideoReq.class),
+            f -> f.withMarshaller(ExecuteCreateVideoRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteDeleteVideoByIdRequest, ExecuteDeleteVideoByIdResponse> executeDeleteVideoById = genForexecuteDeleteVideoById();
+
+    private static HttpRequestDef<ExecuteDeleteVideoByIdRequest, ExecuteDeleteVideoByIdResponse> genForexecuteDeleteVideoById() {
+        // basic
+        HttpRequestDef.Builder<ExecuteDeleteVideoByIdRequest, ExecuteDeleteVideoByIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, ExecuteDeleteVideoByIdRequest.class, ExecuteDeleteVideoByIdResponse.class)
+                .withName("ExecuteDeleteVideoById")
+                .withUri("/v1/{project_id}/digital-human/video/{video_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("video_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteDeleteVideoByIdRequest::getVideoId, (req, v) -> {
+                req.setVideoId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteDeleteimageByIdRequest, ExecuteDeleteimageByIdResponse> executeDeleteimageById = genForexecuteDeleteimageById();
+
+    private static HttpRequestDef<ExecuteDeleteimageByIdRequest, ExecuteDeleteimageByIdResponse> genForexecuteDeleteimageById() {
+        // basic
+        HttpRequestDef.Builder<ExecuteDeleteimageByIdRequest, ExecuteDeleteimageByIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, ExecuteDeleteimageByIdRequest.class, ExecuteDeleteimageByIdResponse.class)
+                .withName("ExecuteDeleteimageById")
+                .withUri("/v1/{project_id}/digital-human/images/{image_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteDeleteimageByIdRequest::getImageId, (req, v) -> {
+                req.setImageId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteGetCharacterInfoByIdRequest, ExecuteGetCharacterInfoByIdResponse> executeGetCharacterInfoById = genForexecuteGetCharacterInfoById();
+
+    private static HttpRequestDef<ExecuteGetCharacterInfoByIdRequest, ExecuteGetCharacterInfoByIdResponse> genForexecuteGetCharacterInfoById() {
+        // basic
+        HttpRequestDef.Builder<ExecuteGetCharacterInfoByIdRequest, ExecuteGetCharacterInfoByIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ExecuteGetCharacterInfoByIdRequest.class, ExecuteGetCharacterInfoByIdResponse.class)
+                .withName("ExecuteGetCharacterInfoById")
+                .withUri("/v1/{project_id}/digital-human/characters/{character_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("character_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteGetCharacterInfoByIdRequest::getCharacterId, (req, v) -> {
+                req.setCharacterId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteGetCharactersRequest, ExecuteGetCharactersResponse> executeGetCharacters = genForexecuteGetCharacters();
+
+    private static HttpRequestDef<ExecuteGetCharactersRequest, ExecuteGetCharactersResponse> genForexecuteGetCharacters() {
+        // basic
+        HttpRequestDef.Builder<ExecuteGetCharactersRequest, ExecuteGetCharactersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ExecuteGetCharactersRequest.class, ExecuteGetCharactersResponse.class)
+                .withName("ExecuteGetCharacters")
+                .withUri("/v1/{project_id}/digital-human/characters")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteGetCharactersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteGetCharactersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.<Integer>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExecuteGetCharactersRequest::getType, (req, v) -> {
+                req.setType(v);
+            })
+        );
+        builder.<Integer>withRequestField("train_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExecuteGetCharactersRequest::getTrainStatus, (req, v) -> {
+                req.setTrainStatus(v);
+            })
+        );
+        builder.<String>withRequestField("character_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteGetCharactersRequest::getCharacterName, (req, v) -> {
+                req.setCharacterName(v);
+            })
+        );
+        builder.<Boolean>withRequestField("support_interact",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ExecuteGetCharactersRequest::getSupportInteract, (req, v) -> {
+                req.setSupportInteract(v);
+            })
+        );
+        builder.<String>withRequestField("gender",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteGetCharactersRequest::getGender, (req, v) -> {
+                req.setGender(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteGetFramsListByImagesIdRequest, ExecuteGetFramsListByImagesIdResponse> executeGetFramsListByImagesId = genForexecuteGetFramsListByImagesId();
+
+    private static HttpRequestDef<ExecuteGetFramsListByImagesIdRequest, ExecuteGetFramsListByImagesIdResponse> genForexecuteGetFramsListByImagesId() {
+        // basic
+        HttpRequestDef.Builder<ExecuteGetFramsListByImagesIdRequest, ExecuteGetFramsListByImagesIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ExecuteGetFramsListByImagesIdRequest.class, ExecuteGetFramsListByImagesIdResponse.class)
+                .withName("ExecuteGetFramsListByImagesId")
+                .withUri("/v1/{project_id}/digital-human/image-frames")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("image_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteGetFramsListByImagesIdRequest::getImageId, (req, v) -> {
+                req.setImageId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteGetImagesListRequest, ExecuteGetImagesListResponse> executeGetImagesList = genForexecuteGetImagesList();
+
+    private static HttpRequestDef<ExecuteGetImagesListRequest, ExecuteGetImagesListResponse> genForexecuteGetImagesList() {
+        // basic
+        HttpRequestDef.Builder<ExecuteGetImagesListRequest, ExecuteGetImagesListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ExecuteGetImagesListRequest.class, ExecuteGetImagesListResponse.class)
+                .withName("ExecuteGetImagesList")
+                .withUri("/v1/{project_id}/digital-human/images")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExecuteGetImagesListRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExecuteGetImagesListRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.<Integer>withRequestField("resolution_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExecuteGetImagesListRequest::getResolutionType, (req, v) -> {
+                req.setResolutionType(v);
+            })
+        );
+        builder.<Integer>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExecuteGetImagesListRequest::getType, (req, v) -> {
+                req.setType(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteGetVideoInfoByIdRequest, ExecuteGetVideoInfoByIdResponse> executeGetVideoInfoById = genForexecuteGetVideoInfoById();
+
+    private static HttpRequestDef<ExecuteGetVideoInfoByIdRequest, ExecuteGetVideoInfoByIdResponse> genForexecuteGetVideoInfoById() {
+        // basic
+        HttpRequestDef.Builder<ExecuteGetVideoInfoByIdRequest, ExecuteGetVideoInfoByIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ExecuteGetVideoInfoByIdRequest.class, ExecuteGetVideoInfoByIdResponse.class)
+                .withName("ExecuteGetVideoInfoById")
+                .withUri("/v1/{project_id}/digital-human/video/{video_id}/info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("video_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteGetVideoInfoByIdRequest::getVideoId, (req, v) -> {
+                req.setVideoId(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteGetVideosListRequest, ExecuteGetVideosListResponse> executeGetVideosList = genForexecuteGetVideosList();
+
+    private static HttpRequestDef<ExecuteGetVideosListRequest, ExecuteGetVideosListResponse> genForexecuteGetVideosList() {
+        // basic
+        HttpRequestDef.Builder<ExecuteGetVideosListRequest, ExecuteGetVideosListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ExecuteGetVideosListRequest.class, ExecuteGetVideosListResponse.class)
+                .withName("ExecuteGetVideosList")
+                .withUri("/v1/{project_id}/digital-human/video")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExecuteGetVideosListRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteGetVideosListRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExecuteGetVideosListRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecutePostCreateImagesRequest, ExecutePostCreateImagesResponse> executePostCreateImages = genForexecutePostCreateImages();
+
+    private static HttpRequestDef<ExecutePostCreateImagesRequest, ExecutePostCreateImagesResponse> genForexecutePostCreateImages() {
+        // basic
+        HttpRequestDef.Builder<ExecutePostCreateImagesRequest, ExecutePostCreateImagesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExecutePostCreateImagesRequest.class, ExecutePostCreateImagesResponse.class)
+                .withName("ExecutePostCreateImages")
+                .withUri("/v1/{project_id}/digital-human/images")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<PostImagesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PostImagesReq.class),
+            f -> f.withMarshaller(ExecutePostCreateImagesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExecuteQaChatRequest, ExecuteQaChatResponse> executeQaChat = genForexecuteQaChat();
 
     private static HttpRequestDef<ExecuteQaChatRequest, ExecuteQaChatResponse> genForexecuteQaChat() {
@@ -388,6 +788,184 @@ public class CbsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PostQaSessionReq.class),
             f -> f.withMarshaller(ExecuteSessionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteUpdateImageNameRequest, ExecuteUpdateImageNameResponse> executeUpdateImageName = genForexecuteUpdateImageName();
+
+    private static HttpRequestDef<ExecuteUpdateImageNameRequest, ExecuteUpdateImageNameResponse> genForexecuteUpdateImageName() {
+        // basic
+        HttpRequestDef.Builder<ExecuteUpdateImageNameRequest, ExecuteUpdateImageNameResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ExecuteUpdateImageNameRequest.class, ExecuteUpdateImageNameResponse.class)
+                .withName("ExecuteUpdateImageName")
+                .withUri("/v1/{project_id}/digital-human/images/{image_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteUpdateImageNameRequest::getImageId, (req, v) -> {
+                req.setImageId(v);
+            })
+        );
+        builder.<UpdateImageNameReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateImageNameReq.class),
+            f -> f.withMarshaller(ExecuteUpdateImageNameRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteUpdateVideoByIdRequest, ExecuteUpdateVideoByIdResponse> executeUpdateVideoById = genForexecuteUpdateVideoById();
+
+    private static HttpRequestDef<ExecuteUpdateVideoByIdRequest, ExecuteUpdateVideoByIdResponse> genForexecuteUpdateVideoById() {
+        // basic
+        HttpRequestDef.Builder<ExecuteUpdateVideoByIdRequest, ExecuteUpdateVideoByIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ExecuteUpdateVideoByIdRequest.class, ExecuteUpdateVideoByIdResponse.class)
+                .withName("ExecuteUpdateVideoById")
+                .withUri("/v1/{project_id}/digital-human/video/{video_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("video_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteUpdateVideoByIdRequest::getVideoId, (req, v) -> {
+                req.setVideoId(v);
+            })
+        );
+        builder.<UpdateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateReq.class),
+            f -> f.withMarshaller(ExecuteUpdateVideoByIdRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteUpdateVideoInfoByIdRequest, ExecuteUpdateVideoInfoByIdResponse> executeUpdateVideoInfoById = genForexecuteUpdateVideoInfoById();
+
+    private static HttpRequestDef<ExecuteUpdateVideoInfoByIdRequest, ExecuteUpdateVideoInfoByIdResponse> genForexecuteUpdateVideoInfoById() {
+        // basic
+        HttpRequestDef.Builder<ExecuteUpdateVideoInfoByIdRequest, ExecuteUpdateVideoInfoByIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ExecuteUpdateVideoInfoByIdRequest.class, ExecuteUpdateVideoInfoByIdResponse.class)
+                .withName("ExecuteUpdateVideoInfoById")
+                .withUri("/v1/{project_id}/digital-human/video/{video_id}/info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("video_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteUpdateVideoInfoByIdRequest::getVideoId, (req, v) -> {
+                req.setVideoId(v);
+            })
+        );
+        builder.<PutVideoInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(PutVideoInfo.class),
+            f -> f.withMarshaller(ExecuteUpdateVideoInfoByIdRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteUploadImageRequest, ExecuteUploadImageResponse> executeUploadImage = genForexecuteUploadImage();
+
+    private static HttpRequestDef<ExecuteUploadImageRequest, ExecuteUploadImageResponse> genForexecuteUploadImage() {
+        // basic
+        HttpRequestDef.Builder<ExecuteUploadImageRequest, ExecuteUploadImageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExecuteUploadImageRequest.class, ExecuteUploadImageResponse.class)
+                .withName("ExecuteUploadImage")
+                .withUri("/v1/{project_id}/digital-human/video/{video_id}/upload/image")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("video_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteUploadImageRequest::getVideoId, (req, v) -> {
+                req.setVideoId(v);
+            })
+        );
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteUploadImageRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.<ExecuteUploadImageRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExecuteUploadImageRequestBody.class),
+            f -> f.withMarshaller(ExecuteUploadImageRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteUploadPptRequest, ExecuteUploadPptResponse> executeUploadPpt = genForexecuteUploadPpt();
+
+    private static HttpRequestDef<ExecuteUploadPptRequest, ExecuteUploadPptResponse> genForexecuteUploadPpt() {
+        // basic
+        HttpRequestDef.Builder<ExecuteUploadPptRequest, ExecuteUploadPptResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExecuteUploadPptRequest.class, ExecuteUploadPptResponse.class)
+                .withName("ExecuteUploadPpt")
+                .withUri("/v1/{project_id}/digital-human/video/{video_id}/upload/ppt")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("video_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteUploadPptRequest::getVideoId, (req, v) -> {
+                req.setVideoId(v);
+            })
+        );
+        builder.<ExecuteUploadPptRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExecuteUploadPptRequestBody.class),
+            f -> f.withMarshaller(ExecuteUploadPptRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

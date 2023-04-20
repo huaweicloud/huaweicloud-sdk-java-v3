@@ -225,6 +225,11 @@ public class CreateFunctionRequestBody {
 
     private Integer memorySize;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gpu_memory")
+
+    private Integer gpuMemory;
+
     /**
      * 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
      */
@@ -451,6 +456,16 @@ public class CreateFunctionRequestBody {
 
     private TypeEnum type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_config")
+
+    private FuncLogConfig logConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "network_controller")
+
+    private NetworkControlConfig networkController;
+
     public CreateFunctionRequestBody withFuncName(String funcName) {
         this.funcName = funcName;
         return this;
@@ -610,6 +625,23 @@ public class CreateFunctionRequestBody {
 
     public void setMemorySize(Integer memorySize) {
         this.memorySize = memorySize;
+    }
+
+    public CreateFunctionRequestBody withGpuMemory(Integer gpuMemory) {
+        this.gpuMemory = gpuMemory;
+        return this;
+    }
+
+    /**
+     * 函数消耗的显存，只支持自定义运行时与自定义镜像函数配置GPU。 单位MB。 取值范围为：1024、2048、3072、4096、5120、6144、7168、8192、9216、10240、11264、12288、13312、14336、15360、16384。 最小值为1024，最大值为16384。
+     * @return gpuMemory
+     */
+    public Integer getGpuMemory() {
+        return gpuMemory;
+    }
+
+    public void setGpuMemory(Integer gpuMemory) {
+        this.gpuMemory = gpuMemory;
     }
 
     public CreateFunctionRequestBody withCodeType(CodeTypeEnum codeType) {
@@ -825,6 +857,58 @@ public class CreateFunctionRequestBody {
         this.type = type;
     }
 
+    public CreateFunctionRequestBody withLogConfig(FuncLogConfig logConfig) {
+        this.logConfig = logConfig;
+        return this;
+    }
+
+    public CreateFunctionRequestBody withLogConfig(Consumer<FuncLogConfig> logConfigSetter) {
+        if (this.logConfig == null) {
+            this.logConfig = new FuncLogConfig();
+            logConfigSetter.accept(this.logConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get logConfig
+     * @return logConfig
+     */
+    public FuncLogConfig getLogConfig() {
+        return logConfig;
+    }
+
+    public void setLogConfig(FuncLogConfig logConfig) {
+        this.logConfig = logConfig;
+    }
+
+    public CreateFunctionRequestBody withNetworkController(NetworkControlConfig networkController) {
+        this.networkController = networkController;
+        return this;
+    }
+
+    public CreateFunctionRequestBody withNetworkController(Consumer<NetworkControlConfig> networkControllerSetter) {
+        if (this.networkController == null) {
+            this.networkController = new NetworkControlConfig();
+            networkControllerSetter.accept(this.networkController);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get networkController
+     * @return networkController
+     */
+    public NetworkControlConfig getNetworkController() {
+        return networkController;
+    }
+
+    public void setNetworkController(NetworkControlConfig networkController) {
+        this.networkController = networkController;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -842,6 +926,7 @@ public class CreateFunctionRequestBody {
             && Objects.equals(this.dependVersionList, createFunctionRequestBody.dependVersionList)
             && Objects.equals(this.funcVpc, createFunctionRequestBody.funcVpc)
             && Objects.equals(this.memorySize, createFunctionRequestBody.memorySize)
+            && Objects.equals(this.gpuMemory, createFunctionRequestBody.gpuMemory)
             && Objects.equals(this.codeType, createFunctionRequestBody.codeType)
             && Objects.equals(this.codeUrl, createFunctionRequestBody.codeUrl)
             && Objects.equals(this.codeFilename, createFunctionRequestBody.codeFilename)
@@ -853,7 +938,9 @@ public class CreateFunctionRequestBody {
             && Objects.equals(this.initializerHandler, createFunctionRequestBody.initializerHandler)
             && Objects.equals(this.initializerTimeout, createFunctionRequestBody.initializerTimeout)
             && Objects.equals(this.enterpriseProjectId, createFunctionRequestBody.enterpriseProjectId)
-            && Objects.equals(this.type, createFunctionRequestBody.type);
+            && Objects.equals(this.type, createFunctionRequestBody.type)
+            && Objects.equals(this.logConfig, createFunctionRequestBody.logConfig)
+            && Objects.equals(this.networkController, createFunctionRequestBody.networkController);
     }
 
     @Override
@@ -866,6 +953,7 @@ public class CreateFunctionRequestBody {
             dependVersionList,
             funcVpc,
             memorySize,
+            gpuMemory,
             codeType,
             codeUrl,
             codeFilename,
@@ -877,7 +965,9 @@ public class CreateFunctionRequestBody {
             initializerHandler,
             initializerTimeout,
             enterpriseProjectId,
-            type);
+            type,
+            logConfig,
+            networkController);
     }
 
     @Override
@@ -892,6 +982,7 @@ public class CreateFunctionRequestBody {
         sb.append("    dependVersionList: ").append(toIndentedString(dependVersionList)).append("\n");
         sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
         sb.append("    memorySize: ").append(toIndentedString(memorySize)).append("\n");
+        sb.append("    gpuMemory: ").append(toIndentedString(gpuMemory)).append("\n");
         sb.append("    codeType: ").append(toIndentedString(codeType)).append("\n");
         sb.append("    codeUrl: ").append(toIndentedString(codeUrl)).append("\n");
         sb.append("    codeFilename: ").append(toIndentedString(codeFilename)).append("\n");
@@ -904,6 +995,8 @@ public class CreateFunctionRequestBody {
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    logConfig: ").append(toIndentedString(logConfig)).append("\n");
+        sb.append("    networkController: ").append(toIndentedString(networkController)).append("\n");
         sb.append("}");
         return sb.toString();
     }

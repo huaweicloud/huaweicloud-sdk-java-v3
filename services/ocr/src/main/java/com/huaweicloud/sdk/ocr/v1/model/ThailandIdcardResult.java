@@ -14,6 +14,21 @@ import java.util.function.Consumer;
 public class ThailandIdcardResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name_en")
+
+    private String nameEn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ref_number")
+
+    private String refNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "side")
 
     private String side;
@@ -117,6 +132,57 @@ public class ThailandIdcardResult {
     @JsonProperty(value = "text_location")
 
     private Object textLocation;
+
+    public ThailandIdcardResult withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 返回证件类型，\"normal\"表示普通泰文证件，\"pink\"表示外国人身份证件 
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public ThailandIdcardResult withNameEn(String nameEn) {
+        this.nameEn = nameEn;
+        return this;
+    }
+
+    /**
+     * 英文名。 
+     * @return nameEn
+     */
+    public String getNameEn() {
+        return nameEn;
+    }
+
+    public void setNameEn(String nameEn) {
+        this.nameEn = nameEn;
+    }
+
+    public ThailandIdcardResult withRefNumber(String refNumber) {
+        this.refNumber = refNumber;
+        return this;
+    }
+
+    /**
+     * 参考编码。 
+     * @return refNumber
+     */
+    public String getRefNumber() {
+        return refNumber;
+    }
+
+    public void setRefNumber(String refNumber) {
+        this.refNumber = refNumber;
+    }
 
     public ThailandIdcardResult withSide(String side) {
         this.side = side;
@@ -472,7 +538,7 @@ public class ThailandIdcardResult {
     }
 
     /**
-     * 身份证的类型。取值如下所示： - normal：身份证原件 - copy：复印的身份证 当输入参数“return_idcard_type”为“true”时，才返回该参数。 
+     * 身份证的类型。取值如下所示： - normal：身份证原件 - copy：复印的身份证 - screen：屏幕翻拍 当输入参数“return_idcard_type”为“true”时，才返回该参数。 
      * @return idcardType
      */
     public String getIdcardType() {
@@ -509,7 +575,10 @@ public class ThailandIdcardResult {
             return false;
         }
         ThailandIdcardResult thailandIdcardResult = (ThailandIdcardResult) o;
-        return Objects.equals(this.side, thailandIdcardResult.side)
+        return Objects.equals(this.type, thailandIdcardResult.type)
+            && Objects.equals(this.nameEn, thailandIdcardResult.nameEn)
+            && Objects.equals(this.refNumber, thailandIdcardResult.refNumber)
+            && Objects.equals(this.side, thailandIdcardResult.side)
             && Objects.equals(this.idNumber, thailandIdcardResult.idNumber)
             && Objects.equals(this.nameTh, thailandIdcardResult.nameTh)
             && Objects.equals(this.firstNameEn, thailandIdcardResult.firstNameEn)
@@ -534,7 +603,10 @@ public class ThailandIdcardResult {
 
     @Override
     public int hashCode() {
-        return Objects.hash(side,
+        return Objects.hash(type,
+            nameEn,
+            refNumber,
+            side,
             idNumber,
             nameTh,
             firstNameEn,
@@ -561,6 +633,9 @@ public class ThailandIdcardResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ThailandIdcardResult {\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    nameEn: ").append(toIndentedString(nameEn)).append("\n");
+        sb.append("    refNumber: ").append(toIndentedString(refNumber)).append("\n");
         sb.append("    side: ").append(toIndentedString(side)).append("\n");
         sb.append("    idNumber: ").append(toIndentedString(idNumber)).append("\n");
         sb.append("    nameTh: ").append(toIndentedString(nameTh)).append("\n");

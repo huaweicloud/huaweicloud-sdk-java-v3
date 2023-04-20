@@ -29,6 +29,12 @@ public class GaussDBforOpenGaussUserForCreation  {
 
     private String password;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_login_only")
+    
+
+    private Boolean isLoginOnly;
+
     public GaussDBforOpenGaussUserForCreation withName(String name) {
         this.name = name;
         return this;
@@ -73,6 +79,28 @@ public class GaussDBforOpenGaussUserForCreation  {
 
     
 
+    public GaussDBforOpenGaussUserForCreation withIsLoginOnly(Boolean isLoginOnly) {
+        this.isLoginOnly = isLoginOnly;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 数据库账户是否只支持登入。 取值范围：不传值或设置为false，创建数据库账号包含登入数据库、创建数据库与用户权限，设置为true，只包含登入数据库权限。
+     * @return isLoginOnly
+     */
+    public Boolean getIsLoginOnly() {
+        return isLoginOnly;
+    }
+
+    public void setIsLoginOnly(Boolean isLoginOnly) {
+        this.isLoginOnly = isLoginOnly;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -83,11 +111,12 @@ public class GaussDBforOpenGaussUserForCreation  {
         }
         GaussDBforOpenGaussUserForCreation gaussDBforOpenGaussUserForCreation = (GaussDBforOpenGaussUserForCreation) o;
         return Objects.equals(this.name, gaussDBforOpenGaussUserForCreation.name) &&
-            Objects.equals(this.password, gaussDBforOpenGaussUserForCreation.password);
+            Objects.equals(this.password, gaussDBforOpenGaussUserForCreation.password) &&
+            Objects.equals(this.isLoginOnly, gaussDBforOpenGaussUserForCreation.isLoginOnly);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, password);
+        return Objects.hash(name, password, isLoginOnly);
     }
     @Override
     public String toString() {
@@ -95,6 +124,7 @@ public class GaussDBforOpenGaussUserForCreation  {
         sb.append("class GaussDBforOpenGaussUserForCreation {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
+        sb.append("    isLoginOnly: ").append(toIndentedString(isLoginOnly)).append("\n");
         sb.append("}");
         return sb.toString();
     }

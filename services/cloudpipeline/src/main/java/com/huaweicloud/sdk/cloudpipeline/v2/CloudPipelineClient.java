@@ -109,6 +109,36 @@ public class CloudPipelineClient {
     }
 
     /**
+     * 基于模板创建流水线
+     *
+     * 基于模板创建流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePipelineByTemplateIdRequest 请求对象
+     * @return CreatePipelineByTemplateIdResponse
+     */
+    public CreatePipelineByTemplateIdResponse createPipelineByTemplateId(CreatePipelineByTemplateIdRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudPipelineMeta.createPipelineByTemplateId);
+    }
+
+    /**
+     * 基于模板创建流水线
+     *
+     * 基于模板创建流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePipelineByTemplateIdRequest 请求对象
+     * @return SyncInvoker<CreatePipelineByTemplateIdRequest, CreatePipelineByTemplateIdResponse>
+     */
+    public SyncInvoker<CreatePipelineByTemplateIdRequest, CreatePipelineByTemplateIdResponse> createPipelineByTemplateIdInvoker(
+        CreatePipelineByTemplateIdRequest request) {
+        return new SyncInvoker<CreatePipelineByTemplateIdRequest, CreatePipelineByTemplateIdResponse>(request,
+            CloudPipelineMeta.createPipelineByTemplateId, hcClient);
+    }
+
+    /**
      * 删除流水线
      *
      * 删除流水线
@@ -196,6 +226,36 @@ public class CloudPipelineClient {
         ListPipelineSimpleInfoRequest request) {
         return new SyncInvoker<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse>(request,
             CloudPipelineMeta.listPipelineSimpleInfo, hcClient);
+    }
+
+    /**
+     * 查询模板列表
+     *
+     * 查询流水线模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPipelineTemplatesRequest 请求对象
+     * @return ListPipelineTemplatesResponse
+     */
+    public ListPipelineTemplatesResponse listPipelineTemplates(ListPipelineTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudPipelineMeta.listPipelineTemplates);
+    }
+
+    /**
+     * 查询模板列表
+     *
+     * 查询流水线模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPipelineTemplatesRequest 请求对象
+     * @return SyncInvoker<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse>
+     */
+    public SyncInvoker<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse> listPipelineTemplatesInvoker(
+        ListPipelineTemplatesRequest request) {
+        return new SyncInvoker<ListPipelineTemplatesRequest, ListPipelineTemplatesResponse>(request,
+            CloudPipelineMeta.listPipelineTemplates, hcClient);
     }
 
     /**
@@ -403,6 +463,36 @@ public class CloudPipelineClient {
         ShowPipelineRunDetailRequest request) {
         return new SyncInvoker<ShowPipelineRunDetailRequest, ShowPipelineRunDetailResponse>(request,
             CloudPipelineMeta.showPipelineRunDetail, hcClient);
+    }
+
+    /**
+     * 查询模板详情
+     *
+     * 查询模板详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPipelineTemplateDetailRequest 请求对象
+     * @return ShowPipelineTemplateDetailResponse
+     */
+    public ShowPipelineTemplateDetailResponse showPipelineTemplateDetail(ShowPipelineTemplateDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudPipelineMeta.showPipelineTemplateDetail);
+    }
+
+    /**
+     * 查询模板详情
+     *
+     * 查询模板详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPipelineTemplateDetailRequest 请求对象
+     * @return SyncInvoker<ShowPipelineTemplateDetailRequest, ShowPipelineTemplateDetailResponse>
+     */
+    public SyncInvoker<ShowPipelineTemplateDetailRequest, ShowPipelineTemplateDetailResponse> showPipelineTemplateDetailInvoker(
+        ShowPipelineTemplateDetailRequest request) {
+        return new SyncInvoker<ShowPipelineTemplateDetailRequest, ShowPipelineTemplateDetailResponse>(request,
+            CloudPipelineMeta.showPipelineTemplateDetail, hcClient);
     }
 
     /**
