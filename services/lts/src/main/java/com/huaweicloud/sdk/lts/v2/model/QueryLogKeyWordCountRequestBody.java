@@ -40,6 +40,11 @@ public class QueryLogKeyWordCountRequestBody {
 
     private String keyWord;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_iterative")
+
+    private Boolean isIterative;
+
     public QueryLogKeyWordCountRequestBody withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -142,6 +147,23 @@ public class QueryLogKeyWordCountRequestBody {
         this.keyWord = keyWord;
     }
 
+    public QueryLogKeyWordCountRequestBody withIsIterative(Boolean isIterative) {
+        this.isIterative = isIterative;
+        return this;
+    }
+
+    /**
+     * 日志迭代查询，默认为false（不开启迭代），true为开启迭代。
+     * @return isIterative
+     */
+    public Boolean getIsIterative() {
+        return isIterative;
+    }
+
+    public void setIsIterative(Boolean isIterative) {
+        this.isIterative = isIterative;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -156,12 +178,13 @@ public class QueryLogKeyWordCountRequestBody {
             && Objects.equals(this.stepInterval, queryLogKeyWordCountRequestBody.stepInterval)
             && Objects.equals(this.groupId, queryLogKeyWordCountRequestBody.groupId)
             && Objects.equals(this.streamId, queryLogKeyWordCountRequestBody.streamId)
-            && Objects.equals(this.keyWord, queryLogKeyWordCountRequestBody.keyWord);
+            && Objects.equals(this.keyWord, queryLogKeyWordCountRequestBody.keyWord)
+            && Objects.equals(this.isIterative, queryLogKeyWordCountRequestBody.isIterative);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime, stepInterval, groupId, streamId, keyWord);
+        return Objects.hash(startTime, endTime, stepInterval, groupId, streamId, keyWord, isIterative);
     }
 
     @Override
@@ -174,6 +197,7 @@ public class QueryLogKeyWordCountRequestBody {
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    streamId: ").append(toIndentedString(streamId)).append("\n");
         sb.append("    keyWord: ").append(toIndentedString(keyWord)).append("\n");
+        sb.append("    isIterative: ").append(toIndentedString(isIterative)).append("\n");
         sb.append("}");
         return sb.toString();
     }

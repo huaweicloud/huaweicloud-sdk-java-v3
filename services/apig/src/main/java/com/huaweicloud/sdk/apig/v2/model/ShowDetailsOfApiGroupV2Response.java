@@ -284,7 +284,7 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
     }
 
     /**
-     * 是否已上架云商店： - 1：已上架 - 2：未上架 - 3：审核中
+     * 是否已上架云商店： - 1：已上架 - 2：未上架 - 3：审核中  [暂不支持](tag:cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm,hws_hk)
      * @return onSellStatus
      */
     public Integer getOnSellStatus() {

@@ -58,7 +58,7 @@ public class CreateSecretRequestBody {
     }
 
     /**
-     * 用于加密保护凭据值的KMS主密钥ID，如果您未指定此参数，凭据管理服务将默认使用名为csms/default的默认主密钥，用于加密您账号在本项目中创建的凭据值。如果用户账号下不存在该名称的主密钥，则凭据管理服务自动为您创建该名称的密钥。
+     * 用于加密保护凭据值的KMS主密钥ID，如果您未指定此参数，凭据管理服务将默认使用名为csms/default的默认主密钥，用于加密您帐号在本项目中创建的凭据值。如果用户帐号下不存在该名称的主密钥，则凭据管理服务自动为您创建该名称的密钥。
      * @return kmsKeyId
      */
     public String getKmsKeyId() {

@@ -75,7 +75,7 @@ public class ShowConsumerConnectionsRequest {
     }
 
     /**
-     * 查询数量，取值范围[1, 50]。
+     * 查询数量，取值范围为1~50。
      * @return limit
      */
     public Integer getLimit() {

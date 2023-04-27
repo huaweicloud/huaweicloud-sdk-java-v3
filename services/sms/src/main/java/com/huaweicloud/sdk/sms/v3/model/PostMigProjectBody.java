@@ -56,7 +56,7 @@ public class PostMigProjectBody {
     private Boolean existServer;
 
     /**
-     * 迁移项目类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移 
+     * 迁移项目类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移
      */
     public static final class TypeEnum {
 
@@ -146,6 +146,11 @@ public class PostMigProjectBody {
     @JsonProperty(value = "syncing")
 
     private Boolean syncing;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_networck_check")
+
+    private Boolean startNetworckCheck;
 
     public PostMigProjectBody withName(String name) {
         this.name = name;
@@ -291,7 +296,7 @@ public class PostMigProjectBody {
     }
 
     /**
-     * 迁移项目类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移 
+     * 迁移项目类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移
      * @return type
      */
     public TypeEnum getType() {
@@ -336,6 +341,23 @@ public class PostMigProjectBody {
         this.syncing = syncing;
     }
 
+    public PostMigProjectBody withStartNetworckCheck(Boolean startNetworckCheck) {
+        this.startNetworckCheck = startNetworckCheck;
+        return this;
+    }
+
+    /**
+     * 是否启动网络质量检测
+     * @return startNetworckCheck
+     */
+    public Boolean getStartNetworckCheck() {
+        return startNetworckCheck;
+    }
+
+    public void setStartNetworckCheck(Boolean startNetworckCheck) {
+        this.startNetworckCheck = startNetworckCheck;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -355,7 +377,8 @@ public class PostMigProjectBody {
             && Objects.equals(this.existServer, postMigProjectBody.existServer)
             && Objects.equals(this.type, postMigProjectBody.type)
             && Objects.equals(this.enterpriseProject, postMigProjectBody.enterpriseProject)
-            && Objects.equals(this.syncing, postMigProjectBody.syncing);
+            && Objects.equals(this.syncing, postMigProjectBody.syncing)
+            && Objects.equals(this.startNetworckCheck, postMigProjectBody.startNetworckCheck);
     }
 
     @Override
@@ -370,7 +393,8 @@ public class PostMigProjectBody {
             existServer,
             type,
             enterpriseProject,
-            syncing);
+            syncing,
+            startNetworckCheck);
     }
 
     @Override
@@ -388,6 +412,7 @@ public class PostMigProjectBody {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    enterpriseProject: ").append(toIndentedString(enterpriseProject)).append("\n");
         sb.append("    syncing: ").append(toIndentedString(syncing)).append("\n");
+        sb.append("    startNetworckCheck: ").append(toIndentedString(startNetworckCheck)).append("\n");
         sb.append("}");
         return sb.toString();
     }

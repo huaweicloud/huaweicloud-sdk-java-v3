@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -12,47 +13,34 @@ import java.util.Objects;
 public class ListIpsProtectModeUsingPostResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "object_id")
+    @JsonProperty(value = "data")
 
-    private String objectId;
+    private IpsProtectModeObject data;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
+    public ListIpsProtectModeUsingPostResponse withData(IpsProtectModeObject data) {
+        this.data = data;
+        return this;
+    }
 
-    private Integer status;
+    public ListIpsProtectModeUsingPostResponse withData(Consumer<IpsProtectModeObject> dataSetter) {
+        if (this.data == null) {
+            this.data = new IpsProtectModeObject();
+            dataSetter.accept(this.data);
+        }
 
-    public ListIpsProtectModeUsingPostResponse withObjectId(String objectId) {
-        this.objectId = objectId;
         return this;
     }
 
     /**
-     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用查询防火墙实例接口获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。具体可参考APIExlorer和帮助中心FAQ。
-     * @return objectId
+     * Get data
+     * @return data
      */
-    public String getObjectId() {
-        return objectId;
+    public IpsProtectModeObject getData() {
+        return data;
     }
 
-    public void setObjectId(String objectId) {
-        this.objectId = objectId;
-    }
-
-    public ListIpsProtectModeUsingPostResponse withStatus(Integer status) {
-        this.status = status;
-        return this;
-    }
-
-    /**
-     * 防护状态
-     * @return status
-     */
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setData(IpsProtectModeObject data) {
+        this.data = data;
     }
 
     @Override
@@ -65,21 +53,19 @@ public class ListIpsProtectModeUsingPostResponse extends SdkResponse {
         }
         ListIpsProtectModeUsingPostResponse listIpsProtectModeUsingPostResponse =
             (ListIpsProtectModeUsingPostResponse) o;
-        return Objects.equals(this.objectId, listIpsProtectModeUsingPostResponse.objectId)
-            && Objects.equals(this.status, listIpsProtectModeUsingPostResponse.status);
+        return Objects.equals(this.data, listIpsProtectModeUsingPostResponse.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectId, status);
+        return Objects.hash(data);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListIpsProtectModeUsingPostResponse {\n");
-        sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

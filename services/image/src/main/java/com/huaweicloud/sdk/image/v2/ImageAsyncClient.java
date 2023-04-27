@@ -113,36 +113,6 @@ public class ImageAsyncClient {
     }
 
     /**
-     * 删除媒资图像标签
-     *
-     * 用于用户删除自定义的标签。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunDeleteCustomTagsRequest 请求对象
-     * @return CompletableFuture<RunDeleteCustomTagsResponse>
-     */
-    public CompletableFuture<RunDeleteCustomTagsResponse> runDeleteCustomTagsAsync(RunDeleteCustomTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, ImageMeta.runDeleteCustomTags);
-    }
-
-    /**
-     * 删除媒资图像标签
-     *
-     * 用于用户删除自定义的标签。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunDeleteCustomTagsRequest 请求对象
-     * @return AsyncInvoker<RunDeleteCustomTagsRequest, RunDeleteCustomTagsResponse>
-     */
-    public AsyncInvoker<RunDeleteCustomTagsRequest, RunDeleteCustomTagsResponse> runDeleteCustomTagsAsyncInvoker(
-        RunDeleteCustomTagsRequest request) {
-        return new AsyncInvoker<RunDeleteCustomTagsRequest, RunDeleteCustomTagsResponse>(request,
-            ImageMeta.runDeleteCustomTags, hcClient);
-    }
-
-    /**
      * 图像描述
      *
      * 图像描述
@@ -324,36 +294,6 @@ public class ImageAsyncClient {
         RunImageTaggingRequest request) {
         return new AsyncInvoker<RunImageTaggingRequest, RunImageTaggingResponse>(request, ImageMeta.runImageTagging,
             hcClient);
-    }
-
-    /**
-     * 查询媒资图像标签
-     *
-     * 用于用户自查是否存在自定义的标签。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunQueryCustomTagsRequest 请求对象
-     * @return CompletableFuture<RunQueryCustomTagsResponse>
-     */
-    public CompletableFuture<RunQueryCustomTagsResponse> runQueryCustomTagsAsync(RunQueryCustomTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, ImageMeta.runQueryCustomTags);
-    }
-
-    /**
-     * 查询媒资图像标签
-     *
-     * 用于用户自查是否存在自定义的标签。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunQueryCustomTagsRequest 请求对象
-     * @return AsyncInvoker<RunQueryCustomTagsRequest, RunQueryCustomTagsResponse>
-     */
-    public AsyncInvoker<RunQueryCustomTagsRequest, RunQueryCustomTagsResponse> runQueryCustomTagsAsyncInvoker(
-        RunQueryCustomTagsRequest request) {
-        return new AsyncInvoker<RunQueryCustomTagsRequest, RunQueryCustomTagsResponse>(request,
-            ImageMeta.runQueryCustomTags, hcClient);
     }
 
     /**

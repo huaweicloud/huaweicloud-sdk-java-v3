@@ -108,7 +108,7 @@ public class GetEastWestFirewallResponseBody {
     }
 
     /**
-     * 防护状态：0 未开启防护， 1 已开启防护
+     * 防护状态：0 已开启防护， 1 未开启防护
      * @return status
      */
     public Integer getStatus() {

@@ -21,7 +21,7 @@ public class ShowPolicyRequest {
     private String policyId;
 
     /**
-     * 选择接口返回的信息的语言，默认为\"zh-cn\"中文，zh-cn中文，en-us英文
+     * 选择接口返回的信息的语言
      */
     public static final class XLanguageEnum {
 
@@ -108,7 +108,7 @@ public class ShowPolicyRequest {
     }
 
     /**
-     * 根、组织单元或帐号的唯一标识符（ID）。
+     * 策略的唯一标识符（ID）。
      * @return policyId
      */
     public String getPolicyId() {
@@ -125,7 +125,7 @@ public class ShowPolicyRequest {
     }
 
     /**
-     * 选择接口返回的信息的语言，默认为\"zh-cn\"中文，zh-cn中文，en-us英文
+     * 选择接口返回的信息的语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -159,6 +159,11 @@ public class ShowMigprojectResponse extends SdkResponse {
 
     private Boolean syncing;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_network_check")
+
+    private Boolean startNetworkCheck;
+
     public ShowMigprojectResponse withId(String id) {
         this.id = id;
         return this;
@@ -391,6 +396,23 @@ public class ShowMigprojectResponse extends SdkResponse {
         this.syncing = syncing;
     }
 
+    public ShowMigprojectResponse withStartNetworkCheck(Boolean startNetworkCheck) {
+        this.startNetworkCheck = startNetworkCheck;
+        return this;
+    }
+
+    /**
+     * 是否启动网络质量检测
+     * @return startNetworkCheck
+     */
+    public Boolean getStartNetworkCheck() {
+        return startNetworkCheck;
+    }
+
+    public void setStartNetworkCheck(Boolean startNetworkCheck) {
+        this.startNetworkCheck = startNetworkCheck;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -412,7 +434,8 @@ public class ShowMigprojectResponse extends SdkResponse {
             && Objects.equals(this.existServer, showMigprojectResponse.existServer)
             && Objects.equals(this.type, showMigprojectResponse.type)
             && Objects.equals(this.enterpriseProject, showMigprojectResponse.enterpriseProject)
-            && Objects.equals(this.syncing, showMigprojectResponse.syncing);
+            && Objects.equals(this.syncing, showMigprojectResponse.syncing)
+            && Objects.equals(this.startNetworkCheck, showMigprojectResponse.startNetworkCheck);
     }
 
     @Override
@@ -429,7 +452,8 @@ public class ShowMigprojectResponse extends SdkResponse {
             existServer,
             type,
             enterpriseProject,
-            syncing);
+            syncing,
+            startNetworkCheck);
     }
 
     @Override
@@ -449,6 +473,7 @@ public class ShowMigprojectResponse extends SdkResponse {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    enterpriseProject: ").append(toIndentedString(enterpriseProject)).append("\n");
         sb.append("    syncing: ").append(toIndentedString(syncing)).append("\n");
+        sb.append("    startNetworkCheck: ").append(toIndentedString(startNetworkCheck)).append("\n");
         sb.append("}");
         return sb.toString();
     }

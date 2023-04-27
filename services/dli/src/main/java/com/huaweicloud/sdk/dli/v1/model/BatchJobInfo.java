@@ -226,6 +226,11 @@ public class BatchJobInfo {
 
     private String obsBucket;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "catalog_name")
+
+    private String catalogName;
+
     public BatchJobInfo withFile(String file) {
         this.file = file;
         return this;
@@ -779,6 +784,23 @@ public class BatchJobInfo {
         this.obsBucket = obsBucket;
     }
 
+    public BatchJobInfo withCatalogName(String catalogName) {
+        this.catalogName = catalogName;
+        return this;
+    }
+
+    /**
+     * 访问元数据时，需要将该参数配置为dli。
+     * @return catalogName
+     */
+    public String getCatalogName() {
+        return catalogName;
+    }
+
+    public void setCatalogName(String catalogName) {
+        this.catalogName = catalogName;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -806,7 +828,8 @@ public class BatchJobInfo {
             && Objects.equals(this.queue, batchJobInfo.queue)
             && Objects.equals(this.autoRecovery, batchJobInfo.autoRecovery)
             && Objects.equals(this.maxRetryTimes, batchJobInfo.maxRetryTimes)
-            && Objects.equals(this.image, batchJobInfo.image) && Objects.equals(this.obsBucket, batchJobInfo.obsBucket);
+            && Objects.equals(this.image, batchJobInfo.image) && Objects.equals(this.obsBucket, batchJobInfo.obsBucket)
+            && Objects.equals(this.catalogName, batchJobInfo.catalogName);
     }
 
     @Override
@@ -835,7 +858,8 @@ public class BatchJobInfo {
             autoRecovery,
             maxRetryTimes,
             image,
-            obsBucket);
+            obsBucket,
+            catalogName);
     }
 
     @Override
@@ -867,6 +891,7 @@ public class BatchJobInfo {
         sb.append("    maxRetryTimes: ").append(toIndentedString(maxRetryTimes)).append("\n");
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
         sb.append("    obsBucket: ").append(toIndentedString(obsBucket)).append("\n");
+        sb.append("    catalogName: ").append(toIndentedString(catalogName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

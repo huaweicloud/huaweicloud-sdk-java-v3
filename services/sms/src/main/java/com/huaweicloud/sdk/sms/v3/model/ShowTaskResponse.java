@@ -25,7 +25,7 @@ public class ShowTaskResponse extends SdkResponse {
     private String name;
 
     /**
-     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移 
+     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移
      */
     public static final class TypeEnum {
 
@@ -411,6 +411,11 @@ public class ShowTaskResponse extends SdkResponse {
 
     private List<SubTask> subTasks = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "network_check_info")
+
+    private NetworkCheckInfoRequestBody networkCheckInfo;
+
     public ShowTaskResponse withName(String name) {
         this.name = name;
         return this;
@@ -434,7 +439,7 @@ public class ShowTaskResponse extends SdkResponse {
     }
 
     /**
-     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移 
+     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移
      * @return type
      */
     public TypeEnum getType() {
@@ -1001,6 +1006,32 @@ public class ShowTaskResponse extends SdkResponse {
         this.subTasks = subTasks;
     }
 
+    public ShowTaskResponse withNetworkCheckInfo(NetworkCheckInfoRequestBody networkCheckInfo) {
+        this.networkCheckInfo = networkCheckInfo;
+        return this;
+    }
+
+    public ShowTaskResponse withNetworkCheckInfo(Consumer<NetworkCheckInfoRequestBody> networkCheckInfoSetter) {
+        if (this.networkCheckInfo == null) {
+            this.networkCheckInfo = new NetworkCheckInfoRequestBody();
+            networkCheckInfoSetter.accept(this.networkCheckInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get networkCheckInfo
+     * @return networkCheckInfo
+     */
+    public NetworkCheckInfoRequestBody getNetworkCheckInfo() {
+        return networkCheckInfo;
+    }
+
+    public void setNetworkCheckInfo(NetworkCheckInfoRequestBody networkCheckInfo) {
+        this.networkCheckInfo = networkCheckInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1038,7 +1069,8 @@ public class ShowTaskResponse extends SdkResponse {
             && Objects.equals(this.remainSeconds, showTaskResponse.remainSeconds)
             && Objects.equals(this.targetSnapshotId, showTaskResponse.targetSnapshotId)
             && Objects.equals(this.cloneServer, showTaskResponse.cloneServer)
-            && Objects.equals(this.subTasks, showTaskResponse.subTasks);
+            && Objects.equals(this.subTasks, showTaskResponse.subTasks)
+            && Objects.equals(this.networkCheckInfo, showTaskResponse.networkCheckInfo);
     }
 
     @Override
@@ -1073,7 +1105,8 @@ public class ShowTaskResponse extends SdkResponse {
             remainSeconds,
             targetSnapshotId,
             cloneServer,
-            subTasks);
+            subTasks,
+            networkCheckInfo);
     }
 
     @Override
@@ -1111,6 +1144,7 @@ public class ShowTaskResponse extends SdkResponse {
         sb.append("    targetSnapshotId: ").append(toIndentedString(targetSnapshotId)).append("\n");
         sb.append("    cloneServer: ").append(toIndentedString(cloneServer)).append("\n");
         sb.append("    subTasks: ").append(toIndentedString(subTasks)).append("\n");
+        sb.append("    networkCheckInfo: ").append(toIndentedString(networkCheckInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

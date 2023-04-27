@@ -272,9 +272,96 @@ public class CreateInstanceByEngineReq {
 
     private Boolean sslEnable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kafka_security_protocol")
+
+    private String kafkaSecurityProtocol;
+
     /**
-     * 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
+     * Gets or Sets saslEnabledMechanisms
      */
+    public static final class SaslEnabledMechanismsEnum {
+
+        /**
+         * Enum PLAIN for value: "PLAIN"
+         */
+        public static final SaslEnabledMechanismsEnum PLAIN = new SaslEnabledMechanismsEnum("PLAIN");
+
+        /**
+         * Enum SCRAM_SHA_512 for value: "SCRAM-SHA-512"
+         */
+        public static final SaslEnabledMechanismsEnum SCRAM_SHA_512 = new SaslEnabledMechanismsEnum("SCRAM-SHA-512");
+
+        private static final Map<String, SaslEnabledMechanismsEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SaslEnabledMechanismsEnum> createStaticFields() {
+            Map<String, SaslEnabledMechanismsEnum> map = new HashMap<>();
+            map.put("PLAIN", PLAIN);
+            map.put("SCRAM-SHA-512", SCRAM_SHA_512);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SaslEnabledMechanismsEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SaslEnabledMechanismsEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            SaslEnabledMechanismsEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new SaslEnabledMechanismsEnum(value);
+            }
+            return result;
+        }
+
+        public static SaslEnabledMechanismsEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            SaslEnabledMechanismsEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SaslEnabledMechanismsEnum) {
+                return this.value.equals(((SaslEnabledMechanismsEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sasl_enabled_mechanisms")
+
+    private List<SaslEnabledMechanismsEnum> saslEnabledMechanisms = null;
+
+    /**
+    * 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
+    */
     public static final class RetentionPolicyEnum {
 
         /**
@@ -829,6 +916,57 @@ public class CreateInstanceByEngineReq {
         this.sslEnable = sslEnable;
     }
 
+    public CreateInstanceByEngineReq withKafkaSecurityProtocol(String kafkaSecurityProtocol) {
+        this.kafkaSecurityProtocol = kafkaSecurityProtocol;
+        return this;
+    }
+
+    /**
+     * 开启SASL后使用的安全协议，如果开启了SASL认证功能（即ssl_enable=true），该字段为必选。  若该字段值为空，默认开启SASL_SSL认证机制。  实例创建后将不支持动态开启和关闭。  - SASL_SSL: 采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT: 明文传输，支持账号密码认证，性能更好，仅支持SCRAM-SHA-512机制。  
+     * @return kafkaSecurityProtocol
+     */
+    public String getKafkaSecurityProtocol() {
+        return kafkaSecurityProtocol;
+    }
+
+    public void setKafkaSecurityProtocol(String kafkaSecurityProtocol) {
+        this.kafkaSecurityProtocol = kafkaSecurityProtocol;
+    }
+
+    public CreateInstanceByEngineReq withSaslEnabledMechanisms(List<SaslEnabledMechanismsEnum> saslEnabledMechanisms) {
+        this.saslEnabledMechanisms = saslEnabledMechanisms;
+        return this;
+    }
+
+    public CreateInstanceByEngineReq addSaslEnabledMechanismsItem(SaslEnabledMechanismsEnum saslEnabledMechanismsItem) {
+        if (this.saslEnabledMechanisms == null) {
+            this.saslEnabledMechanisms = new ArrayList<>();
+        }
+        this.saslEnabledMechanisms.add(saslEnabledMechanismsItem);
+        return this;
+    }
+
+    public CreateInstanceByEngineReq withSaslEnabledMechanisms(
+        Consumer<List<SaslEnabledMechanismsEnum>> saslEnabledMechanismsSetter) {
+        if (this.saslEnabledMechanisms == null) {
+            this.saslEnabledMechanisms = new ArrayList<>();
+        }
+        saslEnabledMechanismsSetter.accept(this.saslEnabledMechanisms);
+        return this;
+    }
+
+    /**
+     * 开启SASL后使用的认证机制，如果开启了SASL认证功能（即ssl_enable=true），该字段为必选。  若该字段值为空，默认开启PLAIN认证机制。  选择其一进行SASL认证即可,支持同时开启两种认证机制。 取值如下： - PLAIN: 简单的用户名密码校验。 - SCRAM-SHA-512: 用户凭证校验，安全性比PLAIN机制更高。
+     * @return saslEnabledMechanisms
+     */
+    public List<SaslEnabledMechanismsEnum> getSaslEnabledMechanisms() {
+        return saslEnabledMechanisms;
+    }
+
+    public void setSaslEnabledMechanisms(List<SaslEnabledMechanismsEnum> saslEnabledMechanisms) {
+        this.saslEnabledMechanisms = saslEnabledMechanisms;
+    }
+
     public CreateInstanceByEngineReq withRetentionPolicy(RetentionPolicyEnum retentionPolicy) {
         this.retentionPolicy = retentionPolicy;
         return this;
@@ -1036,6 +1174,8 @@ public class CreateInstanceByEngineReq {
             && Objects.equals(this.enablePublicip, createInstanceByEngineReq.enablePublicip)
             && Objects.equals(this.publicipId, createInstanceByEngineReq.publicipId)
             && Objects.equals(this.sslEnable, createInstanceByEngineReq.sslEnable)
+            && Objects.equals(this.kafkaSecurityProtocol, createInstanceByEngineReq.kafkaSecurityProtocol)
+            && Objects.equals(this.saslEnabledMechanisms, createInstanceByEngineReq.saslEnabledMechanisms)
             && Objects.equals(this.retentionPolicy, createInstanceByEngineReq.retentionPolicy)
             && Objects.equals(this.connectorEnable, createInstanceByEngineReq.connectorEnable)
             && Objects.equals(this.enableAutoTopic, createInstanceByEngineReq.enableAutoTopic)
@@ -1069,6 +1209,8 @@ public class CreateInstanceByEngineReq {
             enablePublicip,
             publicipId,
             sslEnable,
+            kafkaSecurityProtocol,
+            saslEnabledMechanisms,
             retentionPolicy,
             connectorEnable,
             enableAutoTopic,
@@ -1104,6 +1246,8 @@ public class CreateInstanceByEngineReq {
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
         sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
         sb.append("    sslEnable: ").append(toIndentedString(sslEnable)).append("\n");
+        sb.append("    kafkaSecurityProtocol: ").append(toIndentedString(kafkaSecurityProtocol)).append("\n");
+        sb.append("    saslEnabledMechanisms: ").append(toIndentedString(saslEnabledMechanisms)).append("\n");
         sb.append("    retentionPolicy: ").append(toIndentedString(retentionPolicy)).append("\n");
         sb.append("    connectorEnable: ").append(toIndentedString(connectorEnable)).append("\n");
         sb.append("    enableAutoTopic: ").append(toIndentedString(enableAutoTopic)).append("\n");

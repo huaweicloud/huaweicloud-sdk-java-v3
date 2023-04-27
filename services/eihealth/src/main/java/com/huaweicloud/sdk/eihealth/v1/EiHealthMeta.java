@@ -217,10 +217,10 @@ public class EiHealthMeta {
             f -> f.withMarshaller(CreateAppRequest::getEihealthProjectId, (req, v) -> {
                 req.setEihealthProjectId(v);
             }));
-        builder.<AppDto>withRequestField("body",
+        builder.<AppReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AppDto.class),
+            TypeCasts.uncheckedConversion(AppReq.class),
             f -> f.withMarshaller(CreateAppRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -424,10 +424,10 @@ public class EiHealthMeta {
             f -> f.withMarshaller(UpdateAppRequest::getEihealthProjectId, (req, v) -> {
                 req.setEihealthProjectId(v);
             }));
-        builder.<AppDto>withRequestField("body",
+        builder.<AppReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AppDto.class),
+            TypeCasts.uncheckedConversion(AppReq.class),
             f -> f.withMarshaller(UpdateAppRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -954,6 +954,224 @@ public class EiHealthMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAutJobReq.class),
             f -> f.withMarshaller(UpdateAutoJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateScaleOutPolicyRequest, CreateScaleOutPolicyResponse> createScaleOutPolicy =
+        genForcreateScaleOutPolicy();
+
+    private static HttpRequestDef<CreateScaleOutPolicyRequest, CreateScaleOutPolicyResponse> genForcreateScaleOutPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateScaleOutPolicyRequest, CreateScaleOutPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateScaleOutPolicyRequest.class, CreateScaleOutPolicyResponse.class)
+            .withName("CreateScaleOutPolicy")
+            .withUri("/v1/{project_id}/system/autoscaler/scale-out-policies")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateScaleOutPolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateScaleOutPolicyReq.class),
+            f -> f.withMarshaller(CreateScaleOutPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteScaleOutPolicyRequest, DeleteScaleOutPolicyResponse> deleteScaleOutPolicy =
+        genFordeleteScaleOutPolicy();
+
+    private static HttpRequestDef<DeleteScaleOutPolicyRequest, DeleteScaleOutPolicyResponse> genFordeleteScaleOutPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteScaleOutPolicyRequest, DeleteScaleOutPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteScaleOutPolicyRequest.class, DeleteScaleOutPolicyResponse.class)
+            .withName("DeleteScaleOutPolicy")
+            .withUri("/v1/{project_id}/system/autoscaler/scale-out-policies/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScaleOutPolicyRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListScaleOutPolicyRequest, ListScaleOutPolicyResponse> listScaleOutPolicy =
+        genForlistScaleOutPolicy();
+
+    private static HttpRequestDef<ListScaleOutPolicyRequest, ListScaleOutPolicyResponse> genForlistScaleOutPolicy() {
+        // basic
+        HttpRequestDef.Builder<ListScaleOutPolicyRequest, ListScaleOutPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListScaleOutPolicyRequest.class, ListScaleOutPolicyResponse.class)
+                .withName("ListScaleOutPolicy")
+                .withUri("/v1/{project_id}/system/autoscaler/scale-out-policies")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowScaleInPolicyRequest, ShowScaleInPolicyResponse> showScaleInPolicy =
+        genForshowScaleInPolicy();
+
+    private static HttpRequestDef<ShowScaleInPolicyRequest, ShowScaleInPolicyResponse> genForshowScaleInPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowScaleInPolicyRequest, ShowScaleInPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowScaleInPolicyRequest.class, ShowScaleInPolicyResponse.class)
+                .withName("ShowScaleInPolicy")
+                .withUri("/v1/{project_id}/system/autoscaler/scale-in-policy")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowScaleOutPolicyRequest, ShowScaleOutPolicyResponse> showScaleOutPolicy =
+        genForshowScaleOutPolicy();
+
+    private static HttpRequestDef<ShowScaleOutPolicyRequest, ShowScaleOutPolicyResponse> genForshowScaleOutPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowScaleOutPolicyRequest, ShowScaleOutPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowScaleOutPolicyRequest.class, ShowScaleOutPolicyResponse.class)
+                .withName("ShowScaleOutPolicy")
+                .withUri("/v1/{project_id}/system/autoscaler/scale-out-policies/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowScaleOutPolicyRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartScaleOutPolicyRequest, StartScaleOutPolicyResponse> startScaleOutPolicy =
+        genForstartScaleOutPolicy();
+
+    private static HttpRequestDef<StartScaleOutPolicyRequest, StartScaleOutPolicyResponse> genForstartScaleOutPolicy() {
+        // basic
+        HttpRequestDef.Builder<StartScaleOutPolicyRequest, StartScaleOutPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartScaleOutPolicyRequest.class, StartScaleOutPolicyResponse.class)
+                .withName("StartScaleOutPolicy")
+                .withUri("/v1/{project_id}/system/autoscaler/scale-out-policies/{id}/start")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartScaleOutPolicyRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopScaleOutPolicyRequest, StopScaleOutPolicyResponse> stopScaleOutPolicy =
+        genForstopScaleOutPolicy();
+
+    private static HttpRequestDef<StopScaleOutPolicyRequest, StopScaleOutPolicyResponse> genForstopScaleOutPolicy() {
+        // basic
+        HttpRequestDef.Builder<StopScaleOutPolicyRequest, StopScaleOutPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopScaleOutPolicyRequest.class, StopScaleOutPolicyResponse.class)
+                .withName("StopScaleOutPolicy")
+                .withUri("/v1/{project_id}/system/autoscaler/scale-out-policies/{id}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopScaleOutPolicyRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateScaleInPolicyRequest, UpdateScaleInPolicyResponse> updateScaleInPolicy =
+        genForupdateScaleInPolicy();
+
+    private static HttpRequestDef<UpdateScaleInPolicyRequest, UpdateScaleInPolicyResponse> genForupdateScaleInPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateScaleInPolicyRequest, UpdateScaleInPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateScaleInPolicyRequest.class, UpdateScaleInPolicyResponse.class)
+                .withName("UpdateScaleInPolicy")
+                .withUri("/v1/{project_id}/system/autoscaler/scale-in-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UpdateScaleInPolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateScaleInPolicyReq.class),
+            f -> f.withMarshaller(UpdateScaleInPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateScaleOutPolicyRequest, UpdateScaleOutPolicyResponse> updateScaleOutPolicy =
+        genForupdateScaleOutPolicy();
+
+    private static HttpRequestDef<UpdateScaleOutPolicyRequest, UpdateScaleOutPolicyResponse> genForupdateScaleOutPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateScaleOutPolicyRequest, UpdateScaleOutPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateScaleOutPolicyRequest.class, UpdateScaleOutPolicyResponse.class)
+            .withName("UpdateScaleOutPolicy")
+            .withUri("/v1/{project_id}/system/autoscaler/scale-out-policies/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScaleOutPolicyRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<UpdateScaleOutPolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateScaleOutPolicyReq.class),
+            f -> f.withMarshaller(UpdateScaleOutPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -4577,6 +4795,748 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CleanNextflowCacheRequest, CleanNextflowCacheResponse> cleanNextflowCache =
+        genForcleanNextflowCache();
+
+    private static HttpRequestDef<CleanNextflowCacheRequest, CleanNextflowCacheResponse> genForcleanNextflowCache() {
+        // basic
+        HttpRequestDef.Builder<CleanNextflowCacheRequest, CleanNextflowCacheResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CleanNextflowCacheRequest.class, CleanNextflowCacheResponse.class)
+                .withName("CleanNextflowCache")
+                .withUri("/v1/{project_id}/nextflow/clean-cache")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<InstallNextflowRequest, InstallNextflowResponse> installNextflow =
+        genForinstallNextflow();
+
+    private static HttpRequestDef<InstallNextflowRequest, InstallNextflowResponse> genForinstallNextflow() {
+        // basic
+        HttpRequestDef.Builder<InstallNextflowRequest, InstallNextflowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, InstallNextflowRequest.class, InstallNextflowResponse.class)
+                .withName("InstallNextflow")
+                .withUri("/v1/{project_id}/nextflow/engines")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<InstallNextflowRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(InstallNextflowRequestBody.class),
+            f -> f.withMarshaller(InstallNextflowRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNextflowVersionRequest, ListNextflowVersionResponse> listNextflowVersion =
+        genForlistNextflowVersion();
+
+    private static HttpRequestDef<ListNextflowVersionRequest, ListNextflowVersionResponse> genForlistNextflowVersion() {
+        // basic
+        HttpRequestDef.Builder<ListNextflowVersionRequest, ListNextflowVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListNextflowVersionRequest.class, ListNextflowVersionResponse.class)
+                .withName("ListNextflowVersion")
+                .withUri("/v1/{project_id}/nextflow/versions")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowNextflowRequest, ShowNextflowResponse> showNextflow = genForshowNextflow();
+
+    private static HttpRequestDef<ShowNextflowRequest, ShowNextflowResponse> genForshowNextflow() {
+        // basic
+        HttpRequestDef.Builder<ShowNextflowRequest, ShowNextflowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowNextflowRequest.class, ShowNextflowResponse.class)
+                .withName("ShowNextflow")
+                .withUri("/v1/{project_id}/nextflow/engines/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNextflowRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UninstallNextflowRequest, UninstallNextflowResponse> uninstallNextflow =
+        genForuninstallNextflow();
+
+    private static HttpRequestDef<UninstallNextflowRequest, UninstallNextflowResponse> genForuninstallNextflow() {
+        // basic
+        HttpRequestDef.Builder<UninstallNextflowRequest, UninstallNextflowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, UninstallNextflowRequest.class, UninstallNextflowResponse.class)
+                .withName("UninstallNextflow")
+                .withUri("/v1/{project_id}/nextflow/engines/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UninstallNextflowRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateNextflowJobRequest, CreateNextflowJobResponse> createNextflowJob =
+        genForcreateNextflowJob();
+
+    private static HttpRequestDef<CreateNextflowJobRequest, CreateNextflowJobResponse> genForcreateNextflowJob() {
+        // basic
+        HttpRequestDef.Builder<CreateNextflowJobRequest, CreateNextflowJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateNextflowJobRequest.class, CreateNextflowJobResponse.class)
+                .withName("CreateNextflowJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/nextflow/jobs")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateNextflowJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<CreateNextflowJobRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateNextflowJobRequestBody.class),
+            f -> f.withMarshaller(CreateNextflowJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteNextflowJobRequest, DeleteNextflowJobResponse> deleteNextflowJob =
+        genFordeleteNextflowJob();
+
+    private static HttpRequestDef<DeleteNextflowJobRequest, DeleteNextflowJobResponse> genFordeleteNextflowJob() {
+        // basic
+        HttpRequestDef.Builder<DeleteNextflowJobRequest, DeleteNextflowJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteNextflowJobRequest.class, DeleteNextflowJobResponse.class)
+                .withName("DeleteNextflowJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/nextflow/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNextflowJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNextflowJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNextflowJobRequest, ListNextflowJobResponse> listNextflowJob =
+        genForlistNextflowJob();
+
+    private static HttpRequestDef<ListNextflowJobRequest, ListNextflowJobResponse> genForlistNextflowJob() {
+        // basic
+        HttpRequestDef.Builder<ListNextflowJobRequest, ListNextflowJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListNextflowJobRequest.class, ListNextflowJobResponse.class)
+                .withName("ListNextflowJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/nextflow/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNextflowJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNextflowJobRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNextflowJobRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNextflowJobRequest::getSortDir, (req, v) -> {
+                req.setSortDir(v);
+            }));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNextflowJobRequest::getSortKey, (req, v) -> {
+                req.setSortKey(v);
+            }));
+        builder.<String>withRequestField("job_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNextflowJobRequest::getJobName, (req, v) -> {
+                req.setJobName(v);
+            }));
+        builder.<List<String>>withRequestField("labels",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListNextflowJobRequest::getLabels, (req, v) -> {
+                req.setLabels(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNextflowJobRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("workflow_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNextflowJobRequest::getWorkflowName, (req, v) -> {
+                req.setWorkflowName(v);
+            }));
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNextflowJobRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            }));
+        builder.<Long>withRequestField("create_start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListNextflowJobRequest::getCreateStartTime, (req, v) -> {
+                req.setCreateStartTime(v);
+            }));
+        builder.<Long>withRequestField("create_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListNextflowJobRequest::getCreateEndTime, (req, v) -> {
+                req.setCreateEndTime(v);
+            }));
+        builder.<Long>withRequestField("finish_start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListNextflowJobRequest::getFinishStartTime, (req, v) -> {
+                req.setFinishStartTime(v);
+            }));
+        builder.<Long>withRequestField("finish_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListNextflowJobRequest::getFinishEndTime, (req, v) -> {
+                req.setFinishEndTime(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RetryNextflowJobRequest, RetryNextflowJobResponse> retryNextflowJob =
+        genForretryNextflowJob();
+
+    private static HttpRequestDef<RetryNextflowJobRequest, RetryNextflowJobResponse> genForretryNextflowJob() {
+        // basic
+        HttpRequestDef.Builder<RetryNextflowJobRequest, RetryNextflowJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RetryNextflowJobRequest.class, RetryNextflowJobResponse.class)
+                .withName("RetryNextflowJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/nextflow/jobs/{job_id}/retry")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryNextflowJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryNextflowJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<RetryNextflowJobRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RetryNextflowJobRequestBody.class),
+            f -> f.withMarshaller(RetryNextflowJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowNextflowJobRequest, ShowNextflowJobResponse> showNextflowJob =
+        genForshowNextflowJob();
+
+    private static HttpRequestDef<ShowNextflowJobRequest, ShowNextflowJobResponse> genForshowNextflowJob() {
+        // basic
+        HttpRequestDef.Builder<ShowNextflowJobRequest, ShowNextflowJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowNextflowJobRequest.class, ShowNextflowJobResponse.class)
+                .withName("ShowNextflowJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/nextflow/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNextflowJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNextflowJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowNextflowJobLogRequest, ShowNextflowJobLogResponse> showNextflowJobLog =
+        genForshowNextflowJobLog();
+
+    private static HttpRequestDef<ShowNextflowJobLogRequest, ShowNextflowJobLogResponse> genForshowNextflowJobLog() {
+        // basic
+        HttpRequestDef.Builder<ShowNextflowJobLogRequest, ShowNextflowJobLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowNextflowJobLogRequest.class, ShowNextflowJobLogResponse.class)
+                .withName("ShowNextflowJobLog")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/nextflow/jobs/{job_id}/logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNextflowJobLogRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNextflowJobLogRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowNextflowJobReportsRequest, ShowNextflowJobReportsResponse> showNextflowJobReports =
+        genForshowNextflowJobReports();
+
+    private static HttpRequestDef<ShowNextflowJobReportsRequest, ShowNextflowJobReportsResponse> genForshowNextflowJobReports() {
+        // basic
+        HttpRequestDef.Builder<ShowNextflowJobReportsRequest, ShowNextflowJobReportsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowNextflowJobReportsRequest.class, ShowNextflowJobReportsResponse.class)
+            .withName("ShowNextflowJobReports")
+            .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/nextflow/jobs/{job_id}/reports")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNextflowJobReportsRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNextflowJobReportsRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopNextflowJobRequest, StopNextflowJobResponse> stopNextflowJob =
+        genForstopNextflowJob();
+
+    private static HttpRequestDef<StopNextflowJobRequest, StopNextflowJobResponse> genForstopNextflowJob() {
+        // basic
+        HttpRequestDef.Builder<StopNextflowJobRequest, StopNextflowJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopNextflowJobRequest.class, StopNextflowJobResponse.class)
+                .withName("StopNextflowJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/nextflow/jobs/{job_id}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopNextflowJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopNextflowJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNextflowTaskRequest, ListNextflowTaskResponse> listNextflowTask =
+        genForlistNextflowTask();
+
+    private static HttpRequestDef<ListNextflowTaskRequest, ListNextflowTaskResponse> genForlistNextflowTask() {
+        // basic
+        HttpRequestDef.Builder<ListNextflowTaskRequest, ListNextflowTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListNextflowTaskRequest.class, ListNextflowTaskResponse.class)
+                .withName("ListNextflowTask")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/nextflow/jobs/{job_id}/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNextflowTaskRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNextflowTaskRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("search_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNextflowTaskRequest::getSearchKey, (req, v) -> {
+                req.setSearchKey(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowNextflowTaskDetailRequest, ShowNextflowTaskDetailResponse> showNextflowTaskDetail =
+        genForshowNextflowTaskDetail();
+
+    private static HttpRequestDef<ShowNextflowTaskDetailRequest, ShowNextflowTaskDetailResponse> genForshowNextflowTaskDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowNextflowTaskDetailRequest, ShowNextflowTaskDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowNextflowTaskDetailRequest.class, ShowNextflowTaskDetailResponse.class)
+            .withName("ShowNextflowTaskDetail")
+            .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/nextflow/jobs/{job_id}/tasks/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNextflowTaskDetailRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNextflowTaskDetailRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNextflowTaskDetailRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowNextflowTaskLogRequest, ShowNextflowTaskLogResponse> showNextflowTaskLog =
+        genForshowNextflowTaskLog();
+
+    private static HttpRequestDef<ShowNextflowTaskLogRequest, ShowNextflowTaskLogResponse> genForshowNextflowTaskLog() {
+        // basic
+        HttpRequestDef.Builder<ShowNextflowTaskLogRequest, ShowNextflowTaskLogResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowNextflowTaskLogRequest.class, ShowNextflowTaskLogResponse.class)
+            .withName("ShowNextflowTaskLog")
+            .withUri(
+                "/v1/{project_id}/eihealth-projects/{eihealth_project_id}/nextflow/jobs/{job_id}/tasks/{task_id}/logs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNextflowTaskLogRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNextflowTaskLogRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNextflowTaskLogRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateNextflowWorkflowRequest, CreateNextflowWorkflowResponse> createNextflowWorkflow =
+        genForcreateNextflowWorkflow();
+
+    private static HttpRequestDef<CreateNextflowWorkflowRequest, CreateNextflowWorkflowResponse> genForcreateNextflowWorkflow() {
+        // basic
+        HttpRequestDef.Builder<CreateNextflowWorkflowRequest, CreateNextflowWorkflowResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateNextflowWorkflowRequest.class, CreateNextflowWorkflowResponse.class)
+            .withName("CreateNextflowWorkflow")
+            .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/nextflow/workflows")
+            .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateNextflowWorkflowRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<CreateNextflowWorkflowRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateNextflowWorkflowRequestBody.class),
+            f -> f.withMarshaller(CreateNextflowWorkflowRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteNextflowWorkflowRequest, DeleteNextflowWorkflowResponse> deleteNextflowWorkflow =
+        genFordeleteNextflowWorkflow();
+
+    private static HttpRequestDef<DeleteNextflowWorkflowRequest, DeleteNextflowWorkflowResponse> genFordeleteNextflowWorkflow() {
+        // basic
+        HttpRequestDef.Builder<DeleteNextflowWorkflowRequest, DeleteNextflowWorkflowResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteNextflowWorkflowRequest.class, DeleteNextflowWorkflowResponse.class)
+            .withName("DeleteNextflowWorkflow")
+            .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/nextflow/workflows/{workflow_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNextflowWorkflowRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNextflowWorkflowRequest::getWorkflowId, (req, v) -> {
+                req.setWorkflowId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNextflowWorkflowRequest, ListNextflowWorkflowResponse> listNextflowWorkflow =
+        genForlistNextflowWorkflow();
+
+    private static HttpRequestDef<ListNextflowWorkflowRequest, ListNextflowWorkflowResponse> genForlistNextflowWorkflow() {
+        // basic
+        HttpRequestDef.Builder<ListNextflowWorkflowRequest, ListNextflowWorkflowResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListNextflowWorkflowRequest.class, ListNextflowWorkflowResponse.class)
+            .withName("ListNextflowWorkflow")
+            .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/nextflow/workflows")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNextflowWorkflowRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNextflowWorkflowRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowNextflowWorkflowRequest, ShowNextflowWorkflowResponse> showNextflowWorkflow =
+        genForshowNextflowWorkflow();
+
+    private static HttpRequestDef<ShowNextflowWorkflowRequest, ShowNextflowWorkflowResponse> genForshowNextflowWorkflow() {
+        // basic
+        HttpRequestDef.Builder<ShowNextflowWorkflowRequest, ShowNextflowWorkflowResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowNextflowWorkflowRequest.class, ShowNextflowWorkflowResponse.class)
+            .withName("ShowNextflowWorkflow")
+            .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/nextflow/workflows/{workflow_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNextflowWorkflowRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNextflowWorkflowRequest::getWorkflowId, (req, v) -> {
+                req.setWorkflowId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateNextflowWorkflowRequest, UpdateNextflowWorkflowResponse> updateNextflowWorkflow =
+        genForupdateNextflowWorkflow();
+
+    private static HttpRequestDef<UpdateNextflowWorkflowRequest, UpdateNextflowWorkflowResponse> genForupdateNextflowWorkflow() {
+        // basic
+        HttpRequestDef.Builder<UpdateNextflowWorkflowRequest, UpdateNextflowWorkflowResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateNextflowWorkflowRequest.class, UpdateNextflowWorkflowResponse.class)
+            .withName("UpdateNextflowWorkflow")
+            .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/nextflow/workflows/{workflow_id}")
+            .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNextflowWorkflowRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNextflowWorkflowRequest::getWorkflowId, (req, v) -> {
+                req.setWorkflowId(v);
+            }));
+        builder.<UpdateNextflowWorkflowRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateNextflowWorkflowRequestBody.class),
+            f -> f.withMarshaller(UpdateNextflowWorkflowRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchUpdateNodeLabelRequest, BatchUpdateNodeLabelResponse> batchUpdateNodeLabel =
         genForbatchUpdateNodeLabel();
 
@@ -5016,6 +5976,13 @@ public class EiHealthMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListObsBucketObjectRequest::getPath, (req, v) -> {
                 req.setPath(v);
+            }));
+        builder.<String>withRequestField("search_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListObsBucketObjectRequest::getSearchKey, (req, v) -> {
+                req.setSearchKey(v);
             }));
 
         // response
@@ -7144,6 +8111,66 @@ public class EiHealthMeta {
             f -> f.withMarshaller(UpdateWorkflowRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListIamGroupUsersRequest, ListIamGroupUsersResponse> listIamGroupUsers =
+        genForlistIamGroupUsers();
+
+    private static HttpRequestDef<ListIamGroupUsersRequest, ListIamGroupUsersResponse> genForlistIamGroupUsers() {
+        // basic
+        HttpRequestDef.Builder<ListIamGroupUsersRequest, ListIamGroupUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListIamGroupUsersRequest.class, ListIamGroupUsersResponse.class)
+                .withName("ListIamGroupUsers")
+                .withUri("/v1/{project_id}/iam/groups/{group_id}/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIamGroupUsersRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListIamGroupsRequest, ListIamGroupsResponse> listIamGroups =
+        genForlistIamGroups();
+
+    private static HttpRequestDef<ListIamGroupsRequest, ListIamGroupsResponse> genForlistIamGroups() {
+        // basic
+        HttpRequestDef.Builder<ListIamGroupsRequest, ListIamGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListIamGroupsRequest.class, ListIamGroupsResponse.class)
+                .withName("ListIamGroups")
+                .withUri("/v1/{project_id}/iam/groups")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListIamUsersRequest, ListIamUsersResponse> listIamUsers = genForlistIamUsers();
+
+    private static HttpRequestDef<ListIamUsersRequest, ListIamUsersResponse> genForlistIamUsers() {
+        // basic
+        HttpRequestDef.Builder<ListIamUsersRequest, ListIamUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListIamUsersRequest.class, ListIamUsersResponse.class)
+                .withName("ListIamUsers")
+                .withUri("/v1/{project_id}/iam/users")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

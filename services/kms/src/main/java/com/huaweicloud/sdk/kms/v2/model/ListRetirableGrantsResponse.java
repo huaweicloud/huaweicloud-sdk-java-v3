@@ -29,6 +29,11 @@ public class ListRetirableGrantsResponse extends SdkResponse {
 
     private String nextMarker;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private Integer total;
+
     /**
      * 是否还有下一页：  - “true”表示还有数据。  - “false”表示已经是最后一页。
      */
@@ -161,6 +166,25 @@ public class ListRetirableGrantsResponse extends SdkResponse {
         this.nextMarker = nextMarker;
     }
 
+    public ListRetirableGrantsResponse withTotal(Integer total) {
+        this.total = total;
+        return this;
+    }
+
+    /**
+     * 可退役授权总条数。
+     * minimum: 0
+     * maximum: 1000
+     * @return total
+     */
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
     public ListRetirableGrantsResponse withTruncated(TruncatedEnum truncated) {
         this.truncated = truncated;
         return this;
@@ -189,12 +213,13 @@ public class ListRetirableGrantsResponse extends SdkResponse {
         ListRetirableGrantsResponse listRetirableGrantsResponse = (ListRetirableGrantsResponse) o;
         return Objects.equals(this.grants, listRetirableGrantsResponse.grants)
             && Objects.equals(this.nextMarker, listRetirableGrantsResponse.nextMarker)
+            && Objects.equals(this.total, listRetirableGrantsResponse.total)
             && Objects.equals(this.truncated, listRetirableGrantsResponse.truncated);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(grants, nextMarker, truncated);
+        return Objects.hash(grants, nextMarker, total, truncated);
     }
 
     @Override
@@ -203,6 +228,7 @@ public class ListRetirableGrantsResponse extends SdkResponse {
         sb.append("class ListRetirableGrantsResponse {\n");
         sb.append("    grants: ").append(toIndentedString(grants)).append("\n");
         sb.append("    nextMarker: ").append(toIndentedString(nextMarker)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    truncated: ").append(toIndentedString(truncated)).append("\n");
         sb.append("}");
         return sb.toString();

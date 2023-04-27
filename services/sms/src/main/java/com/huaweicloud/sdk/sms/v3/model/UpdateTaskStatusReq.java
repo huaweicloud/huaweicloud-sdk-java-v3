@@ -133,6 +133,11 @@ public class UpdateTaskStatusReq {
 
     private Map<String, String> param = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "switch_hce")
+
+    private Boolean switchHce;
+
     public UpdateTaskStatusReq withOperation(OperationEnum operation) {
         this.operation = operation;
         return this;
@@ -183,6 +188,23 @@ public class UpdateTaskStatusReq {
         this.param = param;
     }
 
+    public UpdateTaskStatusReq withSwitchHce(Boolean switchHce) {
+        this.switchHce = switchHce;
+        return this;
+    }
+
+    /**
+     * 是否切换hce
+     * @return switchHce
+     */
+    public Boolean getSwitchHce() {
+        return switchHce;
+    }
+
+    public void setSwitchHce(Boolean switchHce) {
+        this.switchHce = switchHce;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -193,12 +215,13 @@ public class UpdateTaskStatusReq {
         }
         UpdateTaskStatusReq updateTaskStatusReq = (UpdateTaskStatusReq) o;
         return Objects.equals(this.operation, updateTaskStatusReq.operation)
-            && Objects.equals(this.param, updateTaskStatusReq.param);
+            && Objects.equals(this.param, updateTaskStatusReq.param)
+            && Objects.equals(this.switchHce, updateTaskStatusReq.switchHce);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operation, param);
+        return Objects.hash(operation, param, switchHce);
     }
 
     @Override
@@ -207,6 +230,7 @@ public class UpdateTaskStatusReq {
         sb.append("class UpdateTaskStatusReq {\n");
         sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
         sb.append("    param: ").append(toIndentedString(param)).append("\n");
+        sb.append("    switchHce: ").append(toIndentedString(switchHce)).append("\n");
         sb.append("}");
         return sb.toString();
     }

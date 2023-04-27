@@ -100,7 +100,7 @@ public class BatchDeleteInstanceReq {
     private ActionEnum action;
 
     /**
-     * 参数值为 reliability，表示删除租户所有创建失败的RocketMQ实例。
+     * 参数值为reliability，表示删除租户所有创建失败的RocketMQ实例。
      */
     public static final class AllFailureEnum {
 
@@ -231,7 +231,7 @@ public class BatchDeleteInstanceReq {
     }
 
     /**
-     * 参数值为 reliability，表示删除租户所有创建失败的RocketMQ实例。
+     * 参数值为reliability，表示删除租户所有创建失败的RocketMQ实例。
      * @return allFailure
      */
     public AllFailureEnum getAllFailure() {

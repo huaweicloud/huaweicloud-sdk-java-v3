@@ -24,6 +24,11 @@ public class ListLogsResponse extends SdkResponse {
 
     private List<LogContents> logs = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isQueryComplete")
+
+    private Boolean isQueryComplete;
+
     public ListLogsResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -74,6 +79,23 @@ public class ListLogsResponse extends SdkResponse {
         this.logs = logs;
     }
 
+    public ListLogsResponse withIsQueryComplete(Boolean isQueryComplete) {
+        this.isQueryComplete = isQueryComplete;
+        return this;
+    }
+
+    /**
+     * 是否查询完成。
+     * @return isQueryComplete
+     */
+    public Boolean getIsQueryComplete() {
+        return isQueryComplete;
+    }
+
+    public void setIsQueryComplete(Boolean isQueryComplete) {
+        this.isQueryComplete = isQueryComplete;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -83,12 +105,13 @@ public class ListLogsResponse extends SdkResponse {
             return false;
         }
         ListLogsResponse listLogsResponse = (ListLogsResponse) o;
-        return Objects.equals(this.count, listLogsResponse.count) && Objects.equals(this.logs, listLogsResponse.logs);
+        return Objects.equals(this.count, listLogsResponse.count) && Objects.equals(this.logs, listLogsResponse.logs)
+            && Objects.equals(this.isQueryComplete, listLogsResponse.isQueryComplete);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, logs);
+        return Objects.hash(count, logs, isQueryComplete);
     }
 
     @Override
@@ -97,6 +120,7 @@ public class ListLogsResponse extends SdkResponse {
         sb.append("class ListLogsResponse {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    logs: ").append(toIndentedString(logs)).append("\n");
+        sb.append("    isQueryComplete: ").append(toIndentedString(isQueryComplete)).append("\n");
         sb.append("}");
         return sb.toString();
     }

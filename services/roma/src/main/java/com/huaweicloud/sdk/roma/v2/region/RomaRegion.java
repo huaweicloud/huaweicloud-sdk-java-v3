@@ -26,7 +26,7 @@ public class RomaRegion {
         new Region("ap-southeast-3", "https://roma.ap-southeast-3.myhuaweicloud.com");
 
     public static final Region AP_SOUTHEAST_1 =
-        new Region("ap-southeast-1", "https://roma.ap-southeast-3.myhuaweicloud.com");
+        new Region("ap-southeast-1", "https://roma.ap-southeast-1.myhuaweicloud.com");
 
     public static final Region RU_NORTHWEST_2 =
         new Region("ru-northwest-2", "https://roma.ru-northwest-2.myhuaweicloud.com");

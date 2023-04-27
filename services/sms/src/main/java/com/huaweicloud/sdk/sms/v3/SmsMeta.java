@@ -689,6 +689,38 @@ public class SmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowConfigSettingRequest, ShowConfigSettingResponse> showConfigSetting =
+        genForshowConfigSetting();
+
+    private static HttpRequestDef<ShowConfigSettingRequest, ShowConfigSettingResponse> genForshowConfigSetting() {
+        // basic
+        HttpRequestDef.Builder<ShowConfigSettingRequest, ShowConfigSettingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowConfigSettingRequest.class, ShowConfigSettingResponse.class)
+                .withName("ShowConfigSetting")
+                .withUri("/v3/tasks/{task_id}/configuration-setting")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConfigSettingRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<String>withRequestField("config_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConfigSettingRequest::getConfigKey, (req, v) -> {
+                req.setConfigKey(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowMigprojectRequest, ShowMigprojectResponse> showMigproject =
         genForshowMigproject();
 
@@ -1087,6 +1119,45 @@ public class SmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateNetworkCheckInfoRequest, UpdateNetworkCheckInfoResponse> updateNetworkCheckInfo =
+        genForupdateNetworkCheckInfo();
+
+    private static HttpRequestDef<UpdateNetworkCheckInfoRequest, UpdateNetworkCheckInfoResponse> genForupdateNetworkCheckInfo() {
+        // basic
+        HttpRequestDef.Builder<UpdateNetworkCheckInfoRequest, UpdateNetworkCheckInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdateNetworkCheckInfoRequest.class, UpdateNetworkCheckInfoResponse.class)
+            .withName("UpdateNetworkCheckInfo")
+            .withUri("/v3/{task_id}/update-network-check-info")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNetworkCheckInfoRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<NetworkCheckInfoRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NetworkCheckInfoRequestBody.class),
+            f -> f.withMarshaller(UpdateNetworkCheckInfoRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateNetworkCheckInfoResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateServerNameRequest, UpdateServerNameResponse> updateServerName =
         genForupdateServerName();
 
@@ -1277,6 +1348,101 @@ public class SmsMeta {
             TypeCasts.uncheckedConversion(UpdateTemplateReq.class),
             f -> f.withMarshaller(UpdateTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadSpecialConfigurationSettingRequest, UploadSpecialConfigurationSettingResponse> uploadSpecialConfigurationSetting =
+        genForuploadSpecialConfigurationSetting();
+
+    private static HttpRequestDef<UploadSpecialConfigurationSettingRequest, UploadSpecialConfigurationSettingResponse> genForuploadSpecialConfigurationSetting() {
+        // basic
+        HttpRequestDef.Builder<UploadSpecialConfigurationSettingRequest, UploadSpecialConfigurationSettingResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UploadSpecialConfigurationSettingRequest.class,
+                    UploadSpecialConfigurationSettingResponse.class)
+                .withName("UploadSpecialConfigurationSetting")
+                .withUri("/v3/tasks/{task_id}/configuration-setting")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadSpecialConfigurationSettingRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<ConfigurationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConfigurationRequestBody.class),
+            f -> f.withMarshaller(UploadSpecialConfigurationSettingRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowConfigRequest, ShowConfigResponse> showConfig = genForshowConfig();
+
+    private static HttpRequestDef<ShowConfigRequest, ShowConfigResponse> genForshowConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowConfigRequest, ShowConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowConfigRequest.class, ShowConfigResponse.class)
+                .withName("ShowConfig")
+                .withUri("/v3/config")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> listApiVersion =
+        genForlistApiVersion();
+
+    private static HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> genForlistApiVersion() {
+        // basic
+        HttpRequestDef.Builder<ListApiVersionRequest, ListApiVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListApiVersionRequest.class, ListApiVersionResponse.class)
+                .withName("ListApiVersion")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion =
+        genForshowApiVersion();
+
+    private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForshowApiVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowApiVersionRequest, ShowApiVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowApiVersionRequest.class, ShowApiVersionResponse.class)
+                .withName("ShowApiVersion")
+                .withUri("/{version}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowApiVersionRequest::getVersion, (req, v) -> {
+                req.setVersion(v);
             }));
 
         // response

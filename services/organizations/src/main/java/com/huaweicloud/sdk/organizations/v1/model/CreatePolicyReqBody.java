@@ -34,7 +34,7 @@ public class CreatePolicyReqBody {
     private String name;
 
     /**
-     * 要创建的策略类型,service_control_policy服务控制策略。
+     * 要创建的策略类型,service_control_policy服务控制策略；tag_policy：标签策略。
      */
     public static final class TypeEnum {
 
@@ -43,11 +43,17 @@ public class CreatePolicyReqBody {
          */
         public static final TypeEnum SERVICE_CONTROL_POLICY = new TypeEnum("service_control_policy");
 
+        /**
+         * Enum TAG_POLICY for value: "tag_policy"
+         */
+        public static final TypeEnum TAG_POLICY = new TypeEnum("tag_policy");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("service_control_policy", SERVICE_CONTROL_POLICY);
+            map.put("tag_policy", TAG_POLICY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -171,7 +177,7 @@ public class CreatePolicyReqBody {
     }
 
     /**
-     * 要创建的策略类型,service_control_policy服务控制策略。
+     * 要创建的策略类型,service_control_policy服务控制策略；tag_policy：标签策略。
      * @return type
      */
     public TypeEnum getType() {

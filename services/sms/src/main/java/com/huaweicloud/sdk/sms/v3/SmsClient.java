@@ -594,6 +594,36 @@ public class SmsClient {
     }
 
     /**
+     * 查询配置资源
+     *
+     * 使用该接口查询任指定任务的指定配置类型的配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConfigSettingRequest 请求对象
+     * @return ShowConfigSettingResponse
+     */
+    public ShowConfigSettingResponse showConfigSetting(ShowConfigSettingRequest request) {
+        return hcClient.syncInvokeHttp(request, SmsMeta.showConfigSetting);
+    }
+
+    /**
+     * 查询配置资源
+     *
+     * 使用该接口查询任指定任务的指定配置类型的配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConfigSettingRequest 请求对象
+     * @return SyncInvoker<ShowConfigSettingRequest, ShowConfigSettingResponse>
+     */
+    public SyncInvoker<ShowConfigSettingRequest, ShowConfigSettingResponse> showConfigSettingInvoker(
+        ShowConfigSettingRequest request) {
+        return new SyncInvoker<ShowConfigSettingRequest, ShowConfigSettingResponse>(request, SmsMeta.showConfigSetting,
+            hcClient);
+    }
+
+    /**
      * 查询指定ID迁移项目详情
      *
      * 查询指定ID的迁移项目详情。
@@ -1034,6 +1064,36 @@ public class SmsClient {
     }
 
     /**
+     * 更新网络检测相关的信息
+     *
+     * Agent 上报网络检测相关的信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateNetworkCheckInfoRequest 请求对象
+     * @return UpdateNetworkCheckInfoResponse
+     */
+    public UpdateNetworkCheckInfoResponse updateNetworkCheckInfo(UpdateNetworkCheckInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, SmsMeta.updateNetworkCheckInfo);
+    }
+
+    /**
+     * 更新网络检测相关的信息
+     *
+     * Agent 上报网络检测相关的信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateNetworkCheckInfoRequest 请求对象
+     * @return SyncInvoker<UpdateNetworkCheckInfoRequest, UpdateNetworkCheckInfoResponse>
+     */
+    public SyncInvoker<UpdateNetworkCheckInfoRequest, UpdateNetworkCheckInfoResponse> updateNetworkCheckInfoInvoker(
+        UpdateNetworkCheckInfoRequest request) {
+        return new SyncInvoker<UpdateNetworkCheckInfoRequest, UpdateNetworkCheckInfoResponse>(request,
+            SmsMeta.updateNetworkCheckInfo, hcClient);
+    }
+
+    /**
      * 修改指定ID的源端服务器名称
      *
      * 该功能用来修改SMS服务端的源端名称，方便用户对源端进行管理。
@@ -1210,6 +1270,125 @@ public class SmsClient {
     public SyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse> updateTemplateInvoker(
         UpdateTemplateRequest request) {
         return new SyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse>(request, SmsMeta.updateTemplate,
+            hcClient);
+    }
+
+    /**
+     * 迁移任务配置设置
+     *
+     * 配置迁移任务特殊设置，例如配置指定同步的文件或路径
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UploadSpecialConfigurationSettingRequest 请求对象
+     * @return UploadSpecialConfigurationSettingResponse
+     */
+    public UploadSpecialConfigurationSettingResponse uploadSpecialConfigurationSetting(
+        UploadSpecialConfigurationSettingRequest request) {
+        return hcClient.syncInvokeHttp(request, SmsMeta.uploadSpecialConfigurationSetting);
+    }
+
+    /**
+     * 迁移任务配置设置
+     *
+     * 配置迁移任务特殊设置，例如配置指定同步的文件或路径
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UploadSpecialConfigurationSettingRequest 请求对象
+     * @return SyncInvoker<UploadSpecialConfigurationSettingRequest, UploadSpecialConfigurationSettingResponse>
+     */
+    public SyncInvoker<UploadSpecialConfigurationSettingRequest, UploadSpecialConfigurationSettingResponse> uploadSpecialConfigurationSettingInvoker(
+        UploadSpecialConfigurationSettingRequest request) {
+        return new SyncInvoker<UploadSpecialConfigurationSettingRequest, UploadSpecialConfigurationSettingResponse>(
+            request, SmsMeta.uploadSpecialConfigurationSetting, hcClient);
+    }
+
+    /**
+     * 获取Agent配置信息
+     *
+     * 源端Agent启动后，访问此接口获取配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConfigRequest 请求对象
+     * @return ShowConfigResponse
+     */
+    public ShowConfigResponse showConfig(ShowConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, SmsMeta.showConfig);
+    }
+
+    /**
+     * 获取Agent配置信息
+     *
+     * 源端Agent启动后，访问此接口获取配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConfigRequest 请求对象
+     * @return SyncInvoker<ShowConfigRequest, ShowConfigResponse>
+     */
+    public SyncInvoker<ShowConfigRequest, ShowConfigResponse> showConfigInvoker(ShowConfigRequest request) {
+        return new SyncInvoker<ShowConfigRequest, ShowConfigResponse>(request, SmsMeta.showConfig, hcClient);
+    }
+
+    /**
+     * 查询主机迁移服务的API版本信息
+     *
+     * 查询主机迁移服务的API版本信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListApiVersionRequest 请求对象
+     * @return ListApiVersionResponse
+     */
+    public ListApiVersionResponse listApiVersion(ListApiVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, SmsMeta.listApiVersion);
+    }
+
+    /**
+     * 查询主机迁移服务的API版本信息
+     *
+     * 查询主机迁移服务的API版本信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListApiVersionRequest 请求对象
+     * @return SyncInvoker<ListApiVersionRequest, ListApiVersionResponse>
+     */
+    public SyncInvoker<ListApiVersionRequest, ListApiVersionResponse> listApiVersionInvoker(
+        ListApiVersionRequest request) {
+        return new SyncInvoker<ListApiVersionRequest, ListApiVersionResponse>(request, SmsMeta.listApiVersion,
+            hcClient);
+    }
+
+    /**
+     * 查询主机迁移服务指定API版本信息
+     *
+     * 查询主机迁移服务指定API版本信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowApiVersionRequest 请求对象
+     * @return ShowApiVersionResponse
+     */
+    public ShowApiVersionResponse showApiVersion(ShowApiVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, SmsMeta.showApiVersion);
+    }
+
+    /**
+     * 查询主机迁移服务指定API版本信息
+     *
+     * 查询主机迁移服务指定API版本信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowApiVersionRequest 请求对象
+     * @return SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
+     */
+    public SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionInvoker(
+        ShowApiVersionRequest request) {
+        return new SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>(request, SmsMeta.showApiVersion,
             hcClient);
     }
 

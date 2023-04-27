@@ -23,10 +23,10 @@ public class PageResourceListParam  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maker")
+    @JsonProperty(value="marker")
     
 
-    private String maker;
+    private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
@@ -68,8 +68,8 @@ public class PageResourceListParam  {
 
     private String ciId;
 
-    public PageResourceListParam withMaker(String maker) {
-        this.maker = maker;
+    public PageResourceListParam withMarker(String marker) {
+        this.marker = marker;
         return this;
     }
 
@@ -78,14 +78,14 @@ public class PageResourceListParam  {
 
     /**
      * 页面的分页标志位；为分页的最后一条记录的id
-     * @return maker
+     * @return marker
      */
-    public String getMaker() {
-        return maker;
+    public String getMarker() {
+        return marker;
     }
 
-    public void setMaker(String maker) {
-        this.maker = maker;
+    public void setMarker(String marker) {
+        this.marker = marker;
     }
 
     
@@ -283,7 +283,7 @@ public class PageResourceListParam  {
             return false;
         }
         PageResourceListParam pageResourceListParam = (PageResourceListParam) o;
-        return Objects.equals(this.maker, pageResourceListParam.maker) &&
+        return Objects.equals(this.marker, pageResourceListParam.marker) &&
             Objects.equals(this.limit, pageResourceListParam.limit) &&
             Objects.equals(this.keywords, pageResourceListParam.keywords) &&
             Objects.equals(this.ciRelationships, pageResourceListParam.ciRelationships) &&
@@ -294,13 +294,13 @@ public class PageResourceListParam  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(maker, limit, keywords, ciRelationships, ciType, ciRegion, ciIds, ciId);
+        return Objects.hash(marker, limit, keywords, ciRelationships, ciType, ciRegion, ciIds, ciId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PageResourceListParam {\n");
-        sb.append("    maker: ").append(toIndentedString(maker)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
         sb.append("    ciRelationships: ").append(toIndentedString(ciRelationships)).append("\n");

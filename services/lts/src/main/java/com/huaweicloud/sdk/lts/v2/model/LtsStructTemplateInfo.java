@@ -171,7 +171,7 @@ public class LtsStructTemplateInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule")
 
-    private List<Rule> rule = null;
+    private Rule rule;
 
     public LtsStructTemplateInfo withDemoFields(List<StructFieldInfo> demoFields) {
         this.demoFields = demoFields;
@@ -392,36 +392,29 @@ public class LtsStructTemplateInfo {
         this.logFormat = logFormat;
     }
 
-    public LtsStructTemplateInfo withRule(List<Rule> rule) {
+    public LtsStructTemplateInfo withRule(Rule rule) {
         this.rule = rule;
         return this;
     }
 
-    public LtsStructTemplateInfo addRuleItem(Rule ruleItem) {
+    public LtsStructTemplateInfo withRule(Consumer<Rule> ruleSetter) {
         if (this.rule == null) {
-            this.rule = new ArrayList<>();
+            this.rule = new Rule();
+            ruleSetter.accept(this.rule);
         }
-        this.rule.add(ruleItem);
-        return this;
-    }
 
-    public LtsStructTemplateInfo withRule(Consumer<List<Rule>> ruleSetter) {
-        if (this.rule == null) {
-            this.rule = new ArrayList<>();
-        }
-        ruleSetter.accept(this.rule);
         return this;
     }
 
     /**
-     * 结构化方式
+     * Get rule
      * @return rule
      */
-    public List<Rule> getRule() {
+    public Rule getRule() {
         return rule;
     }
 
-    public void setRule(List<Rule> rule) {
+    public void setRule(Rule rule) {
         this.rule = rule;
     }
 

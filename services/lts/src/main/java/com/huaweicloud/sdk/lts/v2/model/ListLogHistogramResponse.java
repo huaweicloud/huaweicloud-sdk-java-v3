@@ -21,6 +21,11 @@ public class ListLogHistogramResponse extends SdkResponse {
 
     private Long count;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isQueryComplete")
+
+    private Boolean isQueryComplete;
+
     public ListLogHistogramResponse withHistogram(String histogram) {
         this.histogram = histogram;
         return this;
@@ -55,6 +60,23 @@ public class ListLogHistogramResponse extends SdkResponse {
         this.count = count;
     }
 
+    public ListLogHistogramResponse withIsQueryComplete(Boolean isQueryComplete) {
+        this.isQueryComplete = isQueryComplete;
+        return this;
+    }
+
+    /**
+     * 是否查询完成。
+     * @return isQueryComplete
+     */
+    public Boolean getIsQueryComplete() {
+        return isQueryComplete;
+    }
+
+    public void setIsQueryComplete(Boolean isQueryComplete) {
+        this.isQueryComplete = isQueryComplete;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -65,12 +87,13 @@ public class ListLogHistogramResponse extends SdkResponse {
         }
         ListLogHistogramResponse listLogHistogramResponse = (ListLogHistogramResponse) o;
         return Objects.equals(this.histogram, listLogHistogramResponse.histogram)
-            && Objects.equals(this.count, listLogHistogramResponse.count);
+            && Objects.equals(this.count, listLogHistogramResponse.count)
+            && Objects.equals(this.isQueryComplete, listLogHistogramResponse.isQueryComplete);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(histogram, count);
+        return Objects.hash(histogram, count, isQueryComplete);
     }
 
     @Override
@@ -79,6 +102,7 @@ public class ListLogHistogramResponse extends SdkResponse {
         sb.append("class ListLogHistogramResponse {\n");
         sb.append("    histogram: ").append(toIndentedString(histogram)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    isQueryComplete: ").append(toIndentedString(isQueryComplete)).append("\n");
         sb.append("}");
         return sb.toString();
     }

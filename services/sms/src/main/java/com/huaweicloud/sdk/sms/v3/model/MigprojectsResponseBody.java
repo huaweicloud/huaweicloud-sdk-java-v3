@@ -61,7 +61,7 @@ public class MigprojectsResponseBody {
     private String description;
 
     /**
-     * 迁移项目默认迁移类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移 
+     * 迁移项目默认迁移类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移
      */
     public static final class TypeEnum {
 
@@ -151,6 +151,11 @@ public class MigprojectsResponseBody {
     @JsonProperty(value = "syncing")
 
     private Boolean syncing;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_network_check")
+
+    private Boolean startNetworkCheck;
 
     public MigprojectsResponseBody withId(String id) {
         this.id = id;
@@ -313,7 +318,7 @@ public class MigprojectsResponseBody {
     }
 
     /**
-     * 迁移项目默认迁移类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移 
+     * 迁移项目默认迁移类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移
      * @return type
      */
     public TypeEnum getType() {
@@ -358,6 +363,23 @@ public class MigprojectsResponseBody {
         this.syncing = syncing;
     }
 
+    public MigprojectsResponseBody withStartNetworkCheck(Boolean startNetworkCheck) {
+        this.startNetworkCheck = startNetworkCheck;
+        return this;
+    }
+
+    /**
+     * 是否开启网络质量检测
+     * @return startNetworkCheck
+     */
+    public Boolean getStartNetworkCheck() {
+        return startNetworkCheck;
+    }
+
+    public void setStartNetworkCheck(Boolean startNetworkCheck) {
+        this.startNetworkCheck = startNetworkCheck;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -378,7 +400,8 @@ public class MigprojectsResponseBody {
             && Objects.equals(this.description, migprojectsResponseBody.description)
             && Objects.equals(this.type, migprojectsResponseBody.type)
             && Objects.equals(this.enterpriseProject, migprojectsResponseBody.enterpriseProject)
-            && Objects.equals(this.syncing, migprojectsResponseBody.syncing);
+            && Objects.equals(this.syncing, migprojectsResponseBody.syncing)
+            && Objects.equals(this.startNetworkCheck, migprojectsResponseBody.startNetworkCheck);
     }
 
     @Override
@@ -394,7 +417,8 @@ public class MigprojectsResponseBody {
             description,
             type,
             enterpriseProject,
-            syncing);
+            syncing,
+            startNetworkCheck);
     }
 
     @Override
@@ -413,6 +437,7 @@ public class MigprojectsResponseBody {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    enterpriseProject: ").append(toIndentedString(enterpriseProject)).append("\n");
         sb.append("    syncing: ").append(toIndentedString(syncing)).append("\n");
+        sb.append("    startNetworkCheck: ").append(toIndentedString(startNetworkCheck)).append("\n");
         sb.append("}");
         return sb.toString();
     }

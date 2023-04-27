@@ -12,30 +12,30 @@ import java.util.Objects;
 public class PublishAppResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "asset_id")
+    @JsonProperty(value = "id")
 
-    private String assetId;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
 
-    public PublishAppResponse withAssetId(String assetId) {
-        this.assetId = assetId;
+    public PublishAppResponse withId(String id) {
+        this.id = id;
         return this;
     }
 
     /**
      * 资产id
-     * @return assetId
+     * @return id
      */
-    public String getAssetId() {
-        return assetId;
+    public String getId() {
+        return id;
     }
 
-    public void setAssetId(String assetId) {
-        this.assetId = assetId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public PublishAppResponse withVersion(String version) {
@@ -64,20 +64,20 @@ public class PublishAppResponse extends SdkResponse {
             return false;
         }
         PublishAppResponse publishAppResponse = (PublishAppResponse) o;
-        return Objects.equals(this.assetId, publishAppResponse.assetId)
+        return Objects.equals(this.id, publishAppResponse.id)
             && Objects.equals(this.version, publishAppResponse.version);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(assetId, version);
+        return Objects.hash(id, version);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PublishAppResponse {\n");
-        sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();

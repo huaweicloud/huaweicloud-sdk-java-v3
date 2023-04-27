@@ -26,7 +26,7 @@ public class EipResource {
     private String publicIp;
 
     /**
-     * EIP防护状态
+     * EIP防护状态，0表示防护中，1表示未防护
      */
     public static final class StatusEnum {
 
@@ -192,7 +192,7 @@ public class EipResource {
     }
 
     /**
-     * EIP防护状态
+     * EIP防护状态，0表示防护中，1表示未防护
      * @return status
      */
     public StatusEnum getStatus() {

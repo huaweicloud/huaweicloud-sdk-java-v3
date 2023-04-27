@@ -44,8 +44,8 @@ public class UploadLogRequestBody {
 
     /**
      * 指定有效期
-     * minimum: 0
-     * maximum: 65535
+     * minimum: 300
+     * maximum: 64800
      * @return logExpire
      */
     public Integer getLogExpire() {

@@ -31,7 +31,7 @@ public class ListPoliciesRequest {
     private String marker;
 
     /**
-     * 选择接口返回的信息的语言，默认为\"zh-cn\"中文，zh-cn中文，en-us英文
+     * 选择接口返回的信息的语言
      */
     public static final class XLanguageEnum {
 
@@ -171,7 +171,7 @@ public class ListPoliciesRequest {
     }
 
     /**
-     * 选择接口返回的信息的语言，默认为\"zh-cn\"中文，zh-cn中文，en-us英文
+     * 选择接口返回的信息的语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

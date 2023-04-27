@@ -30,6 +30,11 @@ public class GetTagDetailRsp {
 
     private String updateTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "path")
+
+    private String path;
+
     public GetTagDetailRsp withTag(String tag) {
         this.tag = tag;
         return this;
@@ -98,6 +103,23 @@ public class GetTagDetailRsp {
         this.updateTime = updateTime;
     }
 
+    public GetTagDetailRsp withPath(String path) {
+        this.path = path;
+        return this;
+    }
+
+    /**
+     * 镜像地址
+     * @return path
+     */
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -109,12 +131,13 @@ public class GetTagDetailRsp {
         GetTagDetailRsp getTagDetailRsp = (GetTagDetailRsp) o;
         return Objects.equals(this.tag, getTagDetailRsp.tag) && Objects.equals(this.size, getTagDetailRsp.size)
             && Objects.equals(this.createTime, getTagDetailRsp.createTime)
-            && Objects.equals(this.updateTime, getTagDetailRsp.updateTime);
+            && Objects.equals(this.updateTime, getTagDetailRsp.updateTime)
+            && Objects.equals(this.path, getTagDetailRsp.path);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tag, size, createTime, updateTime);
+        return Objects.hash(tag, size, createTime, updateTime, path);
     }
 
     @Override
@@ -125,6 +148,7 @@ public class GetTagDetailRsp {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    path: ").append(toIndentedString(path)).append("\n");
         sb.append("}");
         return sb.toString();
     }

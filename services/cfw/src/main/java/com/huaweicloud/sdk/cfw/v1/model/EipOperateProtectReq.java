@@ -51,7 +51,7 @@ public class EipOperateProtectReq {
     }
 
     /**
-     * EIP状态
+     * EIP状态，0表示防护中，1表示未防护
      * minimum: 0
      * maximum: 1
      * @return status

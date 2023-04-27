@@ -79,9 +79,19 @@ public class ConfigsGetBody {
     private CacheUrlParameterFilter cacheUrlParameterFilter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_accelerate")
+
+    private Integer ipv6Accelerate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code_cache")
 
     private List<ErrorCodeCache> errorCodeCache = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin_range_status")
+
+    private String originRangeStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_agent_filter")
@@ -446,6 +456,23 @@ public class ConfigsGetBody {
         this.cacheUrlParameterFilter = cacheUrlParameterFilter;
     }
 
+    public ConfigsGetBody withIpv6Accelerate(Integer ipv6Accelerate) {
+        this.ipv6Accelerate = ipv6Accelerate;
+        return this;
+    }
+
+    /**
+     * ipv6设置（1：打开；0：关闭）
+     * @return ipv6Accelerate
+     */
+    public Integer getIpv6Accelerate() {
+        return ipv6Accelerate;
+    }
+
+    public void setIpv6Accelerate(Integer ipv6Accelerate) {
+        this.ipv6Accelerate = ipv6Accelerate;
+    }
+
     public ConfigsGetBody withErrorCodeCache(List<ErrorCodeCache> errorCodeCache) {
         this.errorCodeCache = errorCodeCache;
         return this;
@@ -477,6 +504,23 @@ public class ConfigsGetBody {
 
     public void setErrorCodeCache(List<ErrorCodeCache> errorCodeCache) {
         this.errorCodeCache = errorCodeCache;
+    }
+
+    public ConfigsGetBody withOriginRangeStatus(String originRangeStatus) {
+        this.originRangeStatus = originRangeStatus;
+        return this;
+    }
+
+    /**
+     * Range回源，即分片回源 开启Range回源的前提是您的源站支持Range请求，即HTTP请求头中包含Range字段，否则可能导致回源失败。 开启: on
+     * @return originRangeStatus
+     */
+    public String getOriginRangeStatus() {
+        return originRangeStatus;
+    }
+
+    public void setOriginRangeStatus(String originRangeStatus) {
+        this.originRangeStatus = originRangeStatus;
     }
 
     public ConfigsGetBody withUserAgentFilter(UserAgentFilter userAgentFilter) {
@@ -594,7 +638,9 @@ public class ConfigsGetBody {
             && Objects.equals(this.forceRedirect, configsGetBody.forceRedirect)
             && Objects.equals(this.compress, configsGetBody.compress)
             && Objects.equals(this.cacheUrlParameterFilter, configsGetBody.cacheUrlParameterFilter)
+            && Objects.equals(this.ipv6Accelerate, configsGetBody.ipv6Accelerate)
             && Objects.equals(this.errorCodeCache, configsGetBody.errorCodeCache)
+            && Objects.equals(this.originRangeStatus, configsGetBody.originRangeStatus)
             && Objects.equals(this.userAgentFilter, configsGetBody.userAgentFilter)
             && Objects.equals(this.originRequestUrlRewrite, configsGetBody.originRequestUrlRewrite)
             && Objects.equals(this.errorCodeRedirectRules, configsGetBody.errorCodeRedirectRules);
@@ -615,7 +661,9 @@ public class ConfigsGetBody {
             forceRedirect,
             compress,
             cacheUrlParameterFilter,
+            ipv6Accelerate,
             errorCodeCache,
+            originRangeStatus,
             userAgentFilter,
             originRequestUrlRewrite,
             errorCodeRedirectRules);
@@ -638,7 +686,9 @@ public class ConfigsGetBody {
         sb.append("    forceRedirect: ").append(toIndentedString(forceRedirect)).append("\n");
         sb.append("    compress: ").append(toIndentedString(compress)).append("\n");
         sb.append("    cacheUrlParameterFilter: ").append(toIndentedString(cacheUrlParameterFilter)).append("\n");
+        sb.append("    ipv6Accelerate: ").append(toIndentedString(ipv6Accelerate)).append("\n");
         sb.append("    errorCodeCache: ").append(toIndentedString(errorCodeCache)).append("\n");
+        sb.append("    originRangeStatus: ").append(toIndentedString(originRangeStatus)).append("\n");
         sb.append("    userAgentFilter: ").append(toIndentedString(userAgentFilter)).append("\n");
         sb.append("    originRequestUrlRewrite: ").append(toIndentedString(originRequestUrlRewrite)).append("\n");
         sb.append("    errorCodeRedirectRules: ").append(toIndentedString(errorCodeRedirectRules)).append("\n");

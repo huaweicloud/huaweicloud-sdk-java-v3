@@ -22,7 +22,7 @@ public class ListDataResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datas")
 
-    private List<DataRsp> datas = null;
+    private List<DataSummaryRsp> datas = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "next_marker")
@@ -46,12 +46,12 @@ public class ListDataResponse extends SdkResponse {
         this.count = count;
     }
 
-    public ListDataResponse withDatas(List<DataRsp> datas) {
+    public ListDataResponse withDatas(List<DataSummaryRsp> datas) {
         this.datas = datas;
         return this;
     }
 
-    public ListDataResponse addDatasItem(DataRsp datasItem) {
+    public ListDataResponse addDatasItem(DataSummaryRsp datasItem) {
         if (this.datas == null) {
             this.datas = new ArrayList<>();
         }
@@ -59,7 +59,7 @@ public class ListDataResponse extends SdkResponse {
         return this;
     }
 
-    public ListDataResponse withDatas(Consumer<List<DataRsp>> datasSetter) {
+    public ListDataResponse withDatas(Consumer<List<DataSummaryRsp>> datasSetter) {
         if (this.datas == null) {
             this.datas = new ArrayList<>();
         }
@@ -71,11 +71,11 @@ public class ListDataResponse extends SdkResponse {
      * 数据对象列表
      * @return datas
      */
-    public List<DataRsp> getDatas() {
+    public List<DataSummaryRsp> getDatas() {
         return datas;
     }
 
-    public void setDatas(List<DataRsp> datas) {
+    public void setDatas(List<DataSummaryRsp> datas) {
         this.datas = datas;
     }
 

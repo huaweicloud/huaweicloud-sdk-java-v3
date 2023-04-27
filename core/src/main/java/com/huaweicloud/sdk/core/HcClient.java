@@ -393,7 +393,9 @@ public class HcClient implements CustomizationConfigure {
                     || respContentType.startsWith(Constants.MEDIATYPE.IMAGE)
                     || respContentType.startsWith(Constants.MEDIATYPE.APPLICATION_BSON))) {
                 resT = reqDef.getResponseType().newInstance();
-                resT = CastUtils.cast(((SdkStreamResponse) resT).parseBody(httpResponse.getBody()));
+                if (resT instanceof SdkStreamResponse) {
+                    resT = CastUtils.cast(((SdkStreamResponse) resT).parseBody(httpResponse.getBody()));
+                }
             } else {
                 if (SdkSerializable.class.isAssignableFrom(reqDef.getResponseType())) {
                     resT = deserializeSerializableResponse(reqDef.getResponseType(), stringResult);

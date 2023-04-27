@@ -597,7 +597,7 @@ public class OrganizationsAsyncClient {
     /**
      * 列出被添加到标签策略强制执行的资源类型
      *
-     * List all services and resource type that could integrate with tag policy.
+     * 列出被添加到标签策略强制执行的资源类型。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -612,7 +612,7 @@ public class OrganizationsAsyncClient {
     /**
      * 列出被添加到标签策略强制执行的资源类型
      *
-     * List all services and resource type that could integrate with tag policy.
+     * 列出被添加到标签策略强制执行的资源类型。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

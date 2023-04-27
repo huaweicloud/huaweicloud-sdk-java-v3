@@ -158,6 +158,11 @@ public class MigProject {
 
     private Boolean syncing;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_network_check")
+
+    private Boolean startNetworkCheck;
+
     public MigProject withId(String id) {
         this.id = id;
         return this;
@@ -390,6 +395,23 @@ public class MigProject {
         this.syncing = syncing;
     }
 
+    public MigProject withStartNetworkCheck(Boolean startNetworkCheck) {
+        this.startNetworkCheck = startNetworkCheck;
+        return this;
+    }
+
+    /**
+     * 是否启动网络质量检测
+     * @return startNetworkCheck
+     */
+    public Boolean getStartNetworkCheck() {
+        return startNetworkCheck;
+    }
+
+    public void setStartNetworkCheck(Boolean startNetworkCheck) {
+        this.startNetworkCheck = startNetworkCheck;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -408,7 +430,8 @@ public class MigProject {
             && Objects.equals(this.usePublicIp, migProject.usePublicIp)
             && Objects.equals(this.existServer, migProject.existServer) && Objects.equals(this.type, migProject.type)
             && Objects.equals(this.enterpriseProject, migProject.enterpriseProject)
-            && Objects.equals(this.syncing, migProject.syncing);
+            && Objects.equals(this.syncing, migProject.syncing)
+            && Objects.equals(this.startNetworkCheck, migProject.startNetworkCheck);
     }
 
     @Override
@@ -425,7 +448,8 @@ public class MigProject {
             existServer,
             type,
             enterpriseProject,
-            syncing);
+            syncing,
+            startNetworkCheck);
     }
 
     @Override
@@ -445,6 +469,7 @@ public class MigProject {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    enterpriseProject: ").append(toIndentedString(enterpriseProject)).append("\n");
         sb.append("    syncing: ").append(toIndentedString(syncing)).append("\n");
+        sb.append("    startNetworkCheck: ").append(toIndentedString(startNetworkCheck)).append("\n");
         sb.append("}");
         return sb.toString();
     }

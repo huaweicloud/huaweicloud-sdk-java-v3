@@ -29,7 +29,7 @@ public class TasksResponseBody {
     private String name;
 
     /**
-     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移 
+     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移
      */
     public static final class TypeEnum {
 
@@ -351,7 +351,7 @@ public class TasksResponseBody {
     private TargetServerAssociatedWithTask targetServer;
 
     /**
-     * 日志收集状态 INIT TELL_AGENT_TO_COLLECT WAIT_AGENT_COLLECT_ACK AGENT_COLLECT_FAIL AGENT_COLLECT_SUCCESS WAIT_SERVER_COLLECT SERVER_COLLECT_FAIL SERVER_COLLECT_SUCCESS TELL_AGENT_RESET_ACL WAIT_AGENT_RESET_ACL_ACK 
+     * 日志收集状态 INIT TELL_AGENT_TO_COLLECT WAIT_AGENT_COLLECT_ACK AGENT_COLLECT_FAIL AGENT_COLLECT_SUCCESS WAIT_SERVER_COLLECT SERVER_COLLECT_FAIL SERVER_COLLECT_SUCCESS TELL_AGENT_RESET_ACL WAIT_AGENT_RESET_ACL_ACK
      */
     public static final class LogCollectStatusEnum {
 
@@ -496,6 +496,16 @@ public class TasksResponseBody {
 
     private Boolean syncing;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "network_check_info")
+
+    private NetworkCheckInfoRequestBody networkCheckInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "special_config")
+
+    private List<ConfigBody> specialConfig = null;
+
     public TasksResponseBody withId(String id) {
         this.id = id;
         return this;
@@ -536,7 +546,7 @@ public class TasksResponseBody {
     }
 
     /**
-     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移 
+     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移
      * @return type
      */
     public TypeEnum getType() {
@@ -873,7 +883,7 @@ public class TasksResponseBody {
     }
 
     /**
-     * 日志收集状态 INIT TELL_AGENT_TO_COLLECT WAIT_AGENT_COLLECT_ACK AGENT_COLLECT_FAIL AGENT_COLLECT_SUCCESS WAIT_SERVER_COLLECT SERVER_COLLECT_FAIL SERVER_COLLECT_SUCCESS TELL_AGENT_RESET_ACL WAIT_AGENT_RESET_ACL_ACK 
+     * 日志收集状态 INIT TELL_AGENT_TO_COLLECT WAIT_AGENT_COLLECT_ACK AGENT_COLLECT_FAIL AGENT_COLLECT_SUCCESS WAIT_SERVER_COLLECT SERVER_COLLECT_FAIL SERVER_COLLECT_SUCCESS TELL_AGENT_RESET_ACL WAIT_AGENT_RESET_ACL_ACK
      * @return logCollectStatus
      */
     public LogCollectStatusEnum getLogCollectStatus() {
@@ -927,6 +937,65 @@ public class TasksResponseBody {
         this.syncing = syncing;
     }
 
+    public TasksResponseBody withNetworkCheckInfo(NetworkCheckInfoRequestBody networkCheckInfo) {
+        this.networkCheckInfo = networkCheckInfo;
+        return this;
+    }
+
+    public TasksResponseBody withNetworkCheckInfo(Consumer<NetworkCheckInfoRequestBody> networkCheckInfoSetter) {
+        if (this.networkCheckInfo == null) {
+            this.networkCheckInfo = new NetworkCheckInfoRequestBody();
+            networkCheckInfoSetter.accept(this.networkCheckInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get networkCheckInfo
+     * @return networkCheckInfo
+     */
+    public NetworkCheckInfoRequestBody getNetworkCheckInfo() {
+        return networkCheckInfo;
+    }
+
+    public void setNetworkCheckInfo(NetworkCheckInfoRequestBody networkCheckInfo) {
+        this.networkCheckInfo = networkCheckInfo;
+    }
+
+    public TasksResponseBody withSpecialConfig(List<ConfigBody> specialConfig) {
+        this.specialConfig = specialConfig;
+        return this;
+    }
+
+    public TasksResponseBody addSpecialConfigItem(ConfigBody specialConfigItem) {
+        if (this.specialConfig == null) {
+            this.specialConfig = new ArrayList<>();
+        }
+        this.specialConfig.add(specialConfigItem);
+        return this;
+    }
+
+    public TasksResponseBody withSpecialConfig(Consumer<List<ConfigBody>> specialConfigSetter) {
+        if (this.specialConfig == null) {
+            this.specialConfig = new ArrayList<>();
+        }
+        specialConfigSetter.accept(this.specialConfig);
+        return this;
+    }
+
+    /**
+     * 特殊配置项配置信息
+     * @return specialConfig
+     */
+    public List<ConfigBody> getSpecialConfig() {
+        return specialConfig;
+    }
+
+    public void setSpecialConfig(List<ConfigBody> specialConfig) {
+        this.specialConfig = specialConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -956,7 +1025,9 @@ public class TasksResponseBody {
             && Objects.equals(this.targetServer, tasksResponseBody.targetServer)
             && Objects.equals(this.logCollectStatus, tasksResponseBody.logCollectStatus)
             && Objects.equals(this.cloneServer, tasksResponseBody.cloneServer)
-            && Objects.equals(this.syncing, tasksResponseBody.syncing);
+            && Objects.equals(this.syncing, tasksResponseBody.syncing)
+            && Objects.equals(this.networkCheckInfo, tasksResponseBody.networkCheckInfo)
+            && Objects.equals(this.specialConfig, tasksResponseBody.specialConfig);
     }
 
     @Override
@@ -982,7 +1053,9 @@ public class TasksResponseBody {
             targetServer,
             logCollectStatus,
             cloneServer,
-            syncing);
+            syncing,
+            networkCheckInfo,
+            specialConfig);
     }
 
     @Override
@@ -1011,6 +1084,8 @@ public class TasksResponseBody {
         sb.append("    logCollectStatus: ").append(toIndentedString(logCollectStatus)).append("\n");
         sb.append("    cloneServer: ").append(toIndentedString(cloneServer)).append("\n");
         sb.append("    syncing: ").append(toIndentedString(syncing)).append("\n");
+        sb.append("    networkCheckInfo: ").append(toIndentedString(networkCheckInfo)).append("\n");
+        sb.append("    specialConfig: ").append(toIndentedString(specialConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

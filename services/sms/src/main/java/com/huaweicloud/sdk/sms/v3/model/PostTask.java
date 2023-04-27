@@ -22,7 +22,7 @@ public class PostTask {
     private String name;
 
     /**
-     * 任务类型 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移 
+     * 任务类型 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移
      */
     public static final class TypeEnum {
 
@@ -168,6 +168,11 @@ public class PostTask {
 
     private Boolean existServer;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_network_check")
+
+    private Boolean startNetworkCheck;
+
     public PostTask withName(String name) {
         this.name = name;
         return this;
@@ -191,7 +196,7 @@ public class PostTask {
     }
 
     /**
-     * 任务类型 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移 
+     * 任务类型 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移
      * @return type
      */
     public TypeEnum getType() {
@@ -441,6 +446,23 @@ public class PostTask {
         this.existServer = existServer;
     }
 
+    public PostTask withStartNetworkCheck(Boolean startNetworkCheck) {
+        this.startNetworkCheck = startNetworkCheck;
+        return this;
+    }
+
+    /**
+     * 是否开启网络检测
+     * @return startNetworkCheck
+     */
+    public Boolean getStartNetworkCheck() {
+        return startNetworkCheck;
+    }
+
+    public void setStartNetworkCheck(Boolean startNetworkCheck) {
+        this.startNetworkCheck = startNetworkCheck;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -460,7 +482,8 @@ public class PostTask {
             && Objects.equals(this.projectId, postTask.projectId)
             && Objects.equals(this.vmTemplateId, postTask.vmTemplateId)
             && Objects.equals(this.usePublicIp, postTask.usePublicIp) && Objects.equals(this.syncing, postTask.syncing)
-            && Objects.equals(this.existServer, postTask.existServer);
+            && Objects.equals(this.existServer, postTask.existServer)
+            && Objects.equals(this.startNetworkCheck, postTask.startNetworkCheck);
     }
 
     @Override
@@ -479,7 +502,8 @@ public class PostTask {
             vmTemplateId,
             usePublicIp,
             syncing,
-            existServer);
+            existServer,
+            startNetworkCheck);
     }
 
     @Override
@@ -501,6 +525,7 @@ public class PostTask {
         sb.append("    usePublicIp: ").append(toIndentedString(usePublicIp)).append("\n");
         sb.append("    syncing: ").append(toIndentedString(syncing)).append("\n");
         sb.append("    existServer: ").append(toIndentedString(existServer)).append("\n");
+        sb.append("    startNetworkCheck: ").append(toIndentedString(startNetworkCheck)).append("\n");
         sb.append("}");
         return sb.toString();
     }

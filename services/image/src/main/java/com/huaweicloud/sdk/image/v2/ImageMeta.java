@@ -97,24 +97,6 @@ public class ImageMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunDeleteCustomTagsRequest, RunDeleteCustomTagsResponse> runDeleteCustomTags =
-        genForrunDeleteCustomTags();
-
-    private static HttpRequestDef<RunDeleteCustomTagsRequest, RunDeleteCustomTagsResponse> genForrunDeleteCustomTags() {
-        // basic
-        HttpRequestDef.Builder<RunDeleteCustomTagsRequest, RunDeleteCustomTagsResponse> builder = HttpRequestDef
-            .builder(HttpMethod.DELETE, RunDeleteCustomTagsRequest.class, RunDeleteCustomTagsResponse.class)
-            .withName("RunDeleteCustomTags")
-            .withUri("/v2/{project_id}/image/media-tagging/custom-tags")
-            .withContentType("application/json");
-
-        // requests
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<RunImageDescriptionRequest, RunImageDescriptionResponse> runImageDescription =
         genForrunImageDescription();
 
@@ -262,24 +244,6 @@ public class ImageMeta {
             f -> f.withMarshaller(RunImageTaggingRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<RunQueryCustomTagsRequest, RunQueryCustomTagsResponse> runQueryCustomTags =
-        genForrunQueryCustomTags();
-
-    private static HttpRequestDef<RunQueryCustomTagsRequest, RunQueryCustomTagsResponse> genForrunQueryCustomTags() {
-        // basic
-        HttpRequestDef.Builder<RunQueryCustomTagsRequest, RunQueryCustomTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, RunQueryCustomTagsRequest.class, RunQueryCustomTagsResponse.class)
-                .withName("RunQueryCustomTags")
-                .withUri("/v2/{project_id}/image/media-tagging/custom-tags/check")
-                .withContentType("application/json");
-
-        // requests
 
         // response
 

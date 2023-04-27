@@ -21,7 +21,7 @@ public class DeletePolicyRequest {
     }
 
     /**
-     * 根、组织单元或帐号的唯一标识符（ID）。
+     * 策略的唯一标识符（ID）。
      * @return policyId
      */
     public String getPolicyId() {

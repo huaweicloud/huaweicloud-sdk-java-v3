@@ -1151,7 +1151,7 @@ public class ApigClient {
     }
 
     /**
-     * 解除绑定
+     * 解除API与签名密钥的绑定关系
      *
      * 解除API与签名密钥的绑定关系。
      * 
@@ -1165,7 +1165,7 @@ public class ApigClient {
     }
 
     /**
-     * 解除绑定
+     * 解除API与签名密钥的绑定关系
      *
      * 解除API与签名密钥的绑定关系。
      * 
@@ -3283,7 +3283,7 @@ public class ApigClient {
     }
 
     /**
-     * 注册API
+     * 创建API
      *
      * 添加一个API，API即一个服务接口，具体的服务能力。
      * 
@@ -3299,7 +3299,7 @@ public class ApigClient {
     }
 
     /**
-     * 注册API
+     * 创建API
      *
      * 添加一个API，API即一个服务接口，具体的服务能力。
      * 

@@ -16,7 +16,7 @@ import java.util.Objects;
 public class PolicyTypeReqBody {
 
     /**
-     * 策略类型的名称，service_control_policy服务控制策略。
+     * 策略类型的名称，service_control_policy服务控制策略；tag_policy：标签策略。
      */
     public static final class PolicyTypeEnum {
 
@@ -25,11 +25,17 @@ public class PolicyTypeReqBody {
          */
         public static final PolicyTypeEnum SERVICE_CONTROL_POLICY = new PolicyTypeEnum("service_control_policy");
 
+        /**
+         * Enum TAG_POLICY for value: "tag_policy"
+         */
+        public static final PolicyTypeEnum TAG_POLICY = new PolicyTypeEnum("tag_policy");
+
         private static final Map<String, PolicyTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PolicyTypeEnum> createStaticFields() {
             Map<String, PolicyTypeEnum> map = new HashMap<>();
             map.put("service_control_policy", SERVICE_CONTROL_POLICY);
+            map.put("tag_policy", TAG_POLICY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -102,7 +108,7 @@ public class PolicyTypeReqBody {
     }
 
     /**
-     * 策略类型的名称，service_control_policy服务控制策略。
+     * 策略类型的名称，service_control_policy服务控制策略；tag_policy：标签策略。
      * @return policyType
      */
     public PolicyTypeEnum getPolicyType() {

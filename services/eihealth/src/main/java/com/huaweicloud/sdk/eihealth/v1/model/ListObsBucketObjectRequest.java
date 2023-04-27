@@ -30,6 +30,11 @@ public class ListObsBucketObjectRequest {
 
     private String path;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "search_key")
+
+    private String searchKey;
+
     public ListObsBucketObjectRequest withBucketName(String bucketName) {
         this.bucketName = bucketName;
         return this;
@@ -102,6 +107,23 @@ public class ListObsBucketObjectRequest {
         this.path = path;
     }
 
+    public ListObsBucketObjectRequest withSearchKey(String searchKey) {
+        this.searchKey = searchKey;
+        return this;
+    }
+
+    /**
+     * 查询关键词
+     * @return searchKey
+     */
+    public String getSearchKey() {
+        return searchKey;
+    }
+
+    public void setSearchKey(String searchKey) {
+        this.searchKey = searchKey;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -114,12 +136,13 @@ public class ListObsBucketObjectRequest {
         return Objects.equals(this.bucketName, listObsBucketObjectRequest.bucketName)
             && Objects.equals(this.limit, listObsBucketObjectRequest.limit)
             && Objects.equals(this.offset, listObsBucketObjectRequest.offset)
-            && Objects.equals(this.path, listObsBucketObjectRequest.path);
+            && Objects.equals(this.path, listObsBucketObjectRequest.path)
+            && Objects.equals(this.searchKey, listObsBucketObjectRequest.searchKey);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bucketName, limit, offset, path);
+        return Objects.hash(bucketName, limit, offset, path, searchKey);
     }
 
     @Override
@@ -130,6 +153,7 @@ public class ListObsBucketObjectRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
+        sb.append("    searchKey: ").append(toIndentedString(searchKey)).append("\n");
         sb.append("}");
         return sb.toString();
     }

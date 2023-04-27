@@ -947,6 +947,87 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListConfigTemplatesRequest, ListConfigTemplatesResponse> listConfigTemplates =
+        genForlistConfigTemplates();
+
+    private static HttpRequestDef<ListConfigTemplatesRequest, ListConfigTemplatesResponse> genForlistConfigTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListConfigTemplatesRequest, ListConfigTemplatesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListConfigTemplatesRequest.class, ListConfigTemplatesResponse.class)
+                .withName("ListConfigTemplates")
+                .withUri("/v2/{project_id}/config-templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("template_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            }));
+        builder.<ListConfigTemplatesRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListConfigTemplatesRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("engine",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<String>withRequestField("engine_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getEngineVersion, (req, v) -> {
+                req.setEngineVersion(v);
+            }));
+        builder.<String>withRequestField("cache_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getCacheMode, (req, v) -> {
+                req.setCacheMode(v);
+            }));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getDescription, (req, v) -> {
+                req.setDescription(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConfigTemplatesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurations =
         genForlistConfigurations();
 
@@ -1599,6 +1680,38 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword =
+        genForresetPassword();
+
+    private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForresetPassword() {
+        // basic
+        HttpRequestDef.Builder<ResetPasswordRequest, ResetPasswordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResetPasswordRequest.class, ResetPasswordResponse.class)
+                .withName("ResetPassword")
+                .withUri("/v2/{project_id}/instances/{instance_id}/password/reset")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetPasswordRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ResetInstancePasswordBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ResetInstancePasswordBody.class),
+            f -> f.withMarshaller(ResetPasswordRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance =
         genForresizeInstance();
 
@@ -2158,6 +2271,31 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(ModifyInstanceBody.class),
             f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstanceBandwidthRequest, UpdateInstanceBandwidthResponse> updateInstanceBandwidth =
+        genForupdateInstanceBandwidth();
+
+    private static HttpRequestDef<UpdateInstanceBandwidthRequest, UpdateInstanceBandwidthResponse> genForupdateInstanceBandwidth() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceBandwidthRequest, UpdateInstanceBandwidthResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateInstanceBandwidthRequest.class, UpdateInstanceBandwidthResponse.class)
+            .withName("UpdateInstanceBandwidth")
+            .withUri("/v2/{project_id}/instances/{instance_id}/bandwidth")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceBandwidthRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             }));
 
         // response

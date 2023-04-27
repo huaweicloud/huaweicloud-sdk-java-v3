@@ -904,6 +904,36 @@ public class DcsClient {
     }
 
     /**
+     * 查询参数模板列表
+     *
+     * 查询租户的参数模板列表，支持按照条件查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConfigTemplatesRequest 请求对象
+     * @return ListConfigTemplatesResponse
+     */
+    public ListConfigTemplatesResponse listConfigTemplates(ListConfigTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.listConfigTemplates);
+    }
+
+    /**
+     * 查询参数模板列表
+     *
+     * 查询租户的参数模板列表，支持按照条件查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConfigTemplatesRequest 请求对象
+     * @return SyncInvoker<ListConfigTemplatesRequest, ListConfigTemplatesResponse>
+     */
+    public SyncInvoker<ListConfigTemplatesRequest, ListConfigTemplatesResponse> listConfigTemplatesInvoker(
+        ListConfigTemplatesRequest request) {
+        return new SyncInvoker<ListConfigTemplatesRequest, ListConfigTemplatesResponse>(request,
+            DcsMeta.listConfigTemplates, hcClient);
+    }
+
+    /**
      * 查询实例配置参数
      *
      * 查询指定实例的配置参数信息。
@@ -1380,6 +1410,34 @@ public class DcsClient {
         ListTagsOfTenantRequest request) {
         return new SyncInvoker<ListTagsOfTenantRequest, ListTagsOfTenantResponse>(request, DcsMeta.listTagsOfTenant,
             hcClient);
+    }
+
+    /**
+     * 重置密码
+     *
+     * 重置缓存实例的密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetPasswordRequest 请求对象
+     * @return ResetPasswordResponse
+     */
+    public ResetPasswordResponse resetPassword(ResetPasswordRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.resetPassword);
+    }
+
+    /**
+     * 重置密码
+     *
+     * 重置缓存实例的密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetPasswordRequest 请求对象
+     * @return SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
+     */
+    public SyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordInvoker(ResetPasswordRequest request) {
+        return new SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>(request, DcsMeta.resetPassword, hcClient);
     }
 
     /**
@@ -1982,6 +2040,36 @@ public class DcsClient {
         UpdateInstanceRequest request) {
         return new SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, DcsMeta.updateInstance,
             hcClient);
+    }
+
+    /**
+     * 变更指定实例的带宽
+     *
+     * 变更指定实例的带宽
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateInstanceBandwidthRequest 请求对象
+     * @return UpdateInstanceBandwidthResponse
+     */
+    public UpdateInstanceBandwidthResponse updateInstanceBandwidth(UpdateInstanceBandwidthRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.updateInstanceBandwidth);
+    }
+
+    /**
+     * 变更指定实例的带宽
+     *
+     * 变更指定实例的带宽
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateInstanceBandwidthRequest 请求对象
+     * @return SyncInvoker<UpdateInstanceBandwidthRequest, UpdateInstanceBandwidthResponse>
+     */
+    public SyncInvoker<UpdateInstanceBandwidthRequest, UpdateInstanceBandwidthResponse> updateInstanceBandwidthInvoker(
+        UpdateInstanceBandwidthRequest request) {
+        return new SyncInvoker<UpdateInstanceBandwidthRequest, UpdateInstanceBandwidthResponse>(request,
+            DcsMeta.updateInstanceBandwidth, hcClient);
     }
 
     /**

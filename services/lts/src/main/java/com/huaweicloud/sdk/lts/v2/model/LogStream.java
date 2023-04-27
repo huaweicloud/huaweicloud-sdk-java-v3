@@ -38,6 +38,11 @@ public class LogStream {
 
     private Map<String, String> tag = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_favorite")
+
+    private Boolean isFavorite;
+
     public LogStream withCreationTime(Long creationTime) {
         this.creationTime = creationTime;
         return this;
@@ -141,6 +146,23 @@ public class LogStream {
         this.tag = tag;
     }
 
+    public LogStream withIsFavorite(Boolean isFavorite) {
+        this.isFavorite = isFavorite;
+        return this;
+    }
+
+    /**
+     * 是否收藏日志流
+     * @return isFavorite
+     */
+    public Boolean getIsFavorite() {
+        return isFavorite;
+    }
+
+    public void setIsFavorite(Boolean isFavorite) {
+        this.isFavorite = isFavorite;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -153,12 +175,13 @@ public class LogStream {
         return Objects.equals(this.creationTime, logStream.creationTime)
             && Objects.equals(this.logStreamName, logStream.logStreamName)
             && Objects.equals(this.logStreamId, logStream.logStreamId)
-            && Objects.equals(this.filterCount, logStream.filterCount) && Objects.equals(this.tag, logStream.tag);
+            && Objects.equals(this.filterCount, logStream.filterCount) && Objects.equals(this.tag, logStream.tag)
+            && Objects.equals(this.isFavorite, logStream.isFavorite);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(creationTime, logStreamName, logStreamId, filterCount, tag);
+        return Objects.hash(creationTime, logStreamName, logStreamId, filterCount, tag, isFavorite);
     }
 
     @Override
@@ -170,6 +193,7 @@ public class LogStream {
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    filterCount: ").append(toIndentedString(filterCount)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    isFavorite: ").append(toIndentedString(isFavorite)).append("\n");
         sb.append("}");
         return sb.toString();
     }

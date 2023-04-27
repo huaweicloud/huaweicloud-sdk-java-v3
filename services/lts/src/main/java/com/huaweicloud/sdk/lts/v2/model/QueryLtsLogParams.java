@@ -143,6 +143,11 @@ public class QueryLtsLogParams {
 
     private Boolean highlight;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_iterative")
+
+    private Boolean isIterative;
+
     public QueryLtsLogParams withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -331,6 +336,23 @@ public class QueryLtsLogParams {
         this.highlight = highlight;
     }
 
+    public QueryLtsLogParams withIsIterative(Boolean isIterative) {
+        this.isIterative = isIterative;
+        return this;
+    }
+
+    /**
+     * 日志迭代查询，默认为false（不开启迭代），true为开启迭代。
+     * @return isIterative
+     */
+    public Boolean getIsIterative() {
+        return isIterative;
+    }
+
+    public void setIsIterative(Boolean isIterative) {
+        this.isIterative = isIterative;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -349,13 +371,23 @@ public class QueryLtsLogParams {
             && Objects.equals(this.isDesc, queryLtsLogParams.isDesc)
             && Objects.equals(this.searchType, queryLtsLogParams.searchType)
             && Objects.equals(this.limit, queryLtsLogParams.limit)
-            && Objects.equals(this.highlight, queryLtsLogParams.highlight);
+            && Objects.equals(this.highlight, queryLtsLogParams.highlight)
+            && Objects.equals(this.isIterative, queryLtsLogParams.isIterative);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(startTime, endTime, labels, isCount, keywords, lineNum, isDesc, searchType, limit, highlight);
+        return Objects.hash(startTime,
+            endTime,
+            labels,
+            isCount,
+            keywords,
+            lineNum,
+            isDesc,
+            searchType,
+            limit,
+            highlight,
+            isIterative);
     }
 
     @Override
@@ -372,6 +404,7 @@ public class QueryLtsLogParams {
         sb.append("    searchType: ").append(toIndentedString(searchType)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    highlight: ").append(toIndentedString(highlight)).append("\n");
+        sb.append("    isIterative: ").append(toIndentedString(isIterative)).append("\n");
         sb.append("}");
         return sb.toString();
     }

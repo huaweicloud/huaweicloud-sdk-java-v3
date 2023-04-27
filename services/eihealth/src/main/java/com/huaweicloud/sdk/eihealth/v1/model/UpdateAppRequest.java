@@ -24,7 +24,7 @@ public class UpdateAppRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private AppDto body;
+    private AppReq body;
 
     public UpdateAppRequest withAppId(String appId) {
         this.appId = appId;
@@ -60,14 +60,14 @@ public class UpdateAppRequest {
         this.eihealthProjectId = eihealthProjectId;
     }
 
-    public UpdateAppRequest withBody(AppDto body) {
+    public UpdateAppRequest withBody(AppReq body) {
         this.body = body;
         return this;
     }
 
-    public UpdateAppRequest withBody(Consumer<AppDto> bodySetter) {
+    public UpdateAppRequest withBody(Consumer<AppReq> bodySetter) {
         if (this.body == null) {
-            this.body = new AppDto();
+            this.body = new AppReq();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +78,11 @@ public class UpdateAppRequest {
      * Get body
      * @return body
      */
-    public AppDto getBody() {
+    public AppReq getBody() {
         return body;
     }
 
-    public void setBody(AppDto body) {
+    public void setBody(AppReq body) {
         this.body = body;
     }
 

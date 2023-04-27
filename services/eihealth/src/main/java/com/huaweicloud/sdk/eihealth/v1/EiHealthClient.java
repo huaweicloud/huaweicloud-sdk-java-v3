@@ -796,6 +796,276 @@ public class EiHealthClient {
     }
 
     /**
+     * 创建扩容策略
+     *
+     * 创建扩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateScaleOutPolicyRequest 请求对象
+     * @return CreateScaleOutPolicyResponse
+     */
+    public CreateScaleOutPolicyResponse createScaleOutPolicy(CreateScaleOutPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createScaleOutPolicy);
+    }
+
+    /**
+     * 创建扩容策略
+     *
+     * 创建扩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateScaleOutPolicyRequest 请求对象
+     * @return SyncInvoker<CreateScaleOutPolicyRequest, CreateScaleOutPolicyResponse>
+     */
+    public SyncInvoker<CreateScaleOutPolicyRequest, CreateScaleOutPolicyResponse> createScaleOutPolicyInvoker(
+        CreateScaleOutPolicyRequest request) {
+        return new SyncInvoker<CreateScaleOutPolicyRequest, CreateScaleOutPolicyResponse>(request,
+            EiHealthMeta.createScaleOutPolicy, hcClient);
+    }
+
+    /**
+     * 删除扩容策略
+     *
+     * 删除扩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteScaleOutPolicyRequest 请求对象
+     * @return DeleteScaleOutPolicyResponse
+     */
+    public DeleteScaleOutPolicyResponse deleteScaleOutPolicy(DeleteScaleOutPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.deleteScaleOutPolicy);
+    }
+
+    /**
+     * 删除扩容策略
+     *
+     * 删除扩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteScaleOutPolicyRequest 请求对象
+     * @return SyncInvoker<DeleteScaleOutPolicyRequest, DeleteScaleOutPolicyResponse>
+     */
+    public SyncInvoker<DeleteScaleOutPolicyRequest, DeleteScaleOutPolicyResponse> deleteScaleOutPolicyInvoker(
+        DeleteScaleOutPolicyRequest request) {
+        return new SyncInvoker<DeleteScaleOutPolicyRequest, DeleteScaleOutPolicyResponse>(request,
+            EiHealthMeta.deleteScaleOutPolicy, hcClient);
+    }
+
+    /**
+     * 查询扩容策略列表
+     *
+     * 查询扩容策略列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListScaleOutPolicyRequest 请求对象
+     * @return ListScaleOutPolicyResponse
+     */
+    public ListScaleOutPolicyResponse listScaleOutPolicy(ListScaleOutPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.listScaleOutPolicy);
+    }
+
+    /**
+     * 查询扩容策略列表
+     *
+     * 查询扩容策略列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListScaleOutPolicyRequest 请求对象
+     * @return SyncInvoker<ListScaleOutPolicyRequest, ListScaleOutPolicyResponse>
+     */
+    public SyncInvoker<ListScaleOutPolicyRequest, ListScaleOutPolicyResponse> listScaleOutPolicyInvoker(
+        ListScaleOutPolicyRequest request) {
+        return new SyncInvoker<ListScaleOutPolicyRequest, ListScaleOutPolicyResponse>(request,
+            EiHealthMeta.listScaleOutPolicy, hcClient);
+    }
+
+    /**
+     * 查询缩容策略
+     *
+     * 查询缩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowScaleInPolicyRequest 请求对象
+     * @return ShowScaleInPolicyResponse
+     */
+    public ShowScaleInPolicyResponse showScaleInPolicy(ShowScaleInPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showScaleInPolicy);
+    }
+
+    /**
+     * 查询缩容策略
+     *
+     * 查询缩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowScaleInPolicyRequest 请求对象
+     * @return SyncInvoker<ShowScaleInPolicyRequest, ShowScaleInPolicyResponse>
+     */
+    public SyncInvoker<ShowScaleInPolicyRequest, ShowScaleInPolicyResponse> showScaleInPolicyInvoker(
+        ShowScaleInPolicyRequest request) {
+        return new SyncInvoker<ShowScaleInPolicyRequest, ShowScaleInPolicyResponse>(request,
+            EiHealthMeta.showScaleInPolicy, hcClient);
+    }
+
+    /**
+     * 获取扩容策略详情
+     *
+     * 获取扩容策略详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowScaleOutPolicyRequest 请求对象
+     * @return ShowScaleOutPolicyResponse
+     */
+    public ShowScaleOutPolicyResponse showScaleOutPolicy(ShowScaleOutPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showScaleOutPolicy);
+    }
+
+    /**
+     * 获取扩容策略详情
+     *
+     * 获取扩容策略详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowScaleOutPolicyRequest 请求对象
+     * @return SyncInvoker<ShowScaleOutPolicyRequest, ShowScaleOutPolicyResponse>
+     */
+    public SyncInvoker<ShowScaleOutPolicyRequest, ShowScaleOutPolicyResponse> showScaleOutPolicyInvoker(
+        ShowScaleOutPolicyRequest request) {
+        return new SyncInvoker<ShowScaleOutPolicyRequest, ShowScaleOutPolicyResponse>(request,
+            EiHealthMeta.showScaleOutPolicy, hcClient);
+    }
+
+    /**
+     * 启动自动扩容策略
+     *
+     * 启动自动扩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartScaleOutPolicyRequest 请求对象
+     * @return StartScaleOutPolicyResponse
+     */
+    public StartScaleOutPolicyResponse startScaleOutPolicy(StartScaleOutPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.startScaleOutPolicy);
+    }
+
+    /**
+     * 启动自动扩容策略
+     *
+     * 启动自动扩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartScaleOutPolicyRequest 请求对象
+     * @return SyncInvoker<StartScaleOutPolicyRequest, StartScaleOutPolicyResponse>
+     */
+    public SyncInvoker<StartScaleOutPolicyRequest, StartScaleOutPolicyResponse> startScaleOutPolicyInvoker(
+        StartScaleOutPolicyRequest request) {
+        return new SyncInvoker<StartScaleOutPolicyRequest, StartScaleOutPolicyResponse>(request,
+            EiHealthMeta.startScaleOutPolicy, hcClient);
+    }
+
+    /**
+     * 停用自动扩容策略
+     *
+     * 停用自动扩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopScaleOutPolicyRequest 请求对象
+     * @return StopScaleOutPolicyResponse
+     */
+    public StopScaleOutPolicyResponse stopScaleOutPolicy(StopScaleOutPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.stopScaleOutPolicy);
+    }
+
+    /**
+     * 停用自动扩容策略
+     *
+     * 停用自动扩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopScaleOutPolicyRequest 请求对象
+     * @return SyncInvoker<StopScaleOutPolicyRequest, StopScaleOutPolicyResponse>
+     */
+    public SyncInvoker<StopScaleOutPolicyRequest, StopScaleOutPolicyResponse> stopScaleOutPolicyInvoker(
+        StopScaleOutPolicyRequest request) {
+        return new SyncInvoker<StopScaleOutPolicyRequest, StopScaleOutPolicyResponse>(request,
+            EiHealthMeta.stopScaleOutPolicy, hcClient);
+    }
+
+    /**
+     * 修改缩容策略
+     *
+     * 修改缩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateScaleInPolicyRequest 请求对象
+     * @return UpdateScaleInPolicyResponse
+     */
+    public UpdateScaleInPolicyResponse updateScaleInPolicy(UpdateScaleInPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.updateScaleInPolicy);
+    }
+
+    /**
+     * 修改缩容策略
+     *
+     * 修改缩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateScaleInPolicyRequest 请求对象
+     * @return SyncInvoker<UpdateScaleInPolicyRequest, UpdateScaleInPolicyResponse>
+     */
+    public SyncInvoker<UpdateScaleInPolicyRequest, UpdateScaleInPolicyResponse> updateScaleInPolicyInvoker(
+        UpdateScaleInPolicyRequest request) {
+        return new SyncInvoker<UpdateScaleInPolicyRequest, UpdateScaleInPolicyResponse>(request,
+            EiHealthMeta.updateScaleInPolicy, hcClient);
+    }
+
+    /**
+     * 修改扩容策略
+     *
+     * 修改扩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateScaleOutPolicyRequest 请求对象
+     * @return UpdateScaleOutPolicyResponse
+     */
+    public UpdateScaleOutPolicyResponse updateScaleOutPolicy(UpdateScaleOutPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.updateScaleOutPolicy);
+    }
+
+    /**
+     * 修改扩容策略
+     *
+     * 修改扩容策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateScaleOutPolicyRequest 请求对象
+     * @return SyncInvoker<UpdateScaleOutPolicyRequest, UpdateScaleOutPolicyResponse>
+     */
+    public SyncInvoker<UpdateScaleOutPolicyRequest, UpdateScaleOutPolicyResponse> updateScaleOutPolicyInvoker(
+        UpdateScaleOutPolicyRequest request) {
+        return new SyncInvoker<UpdateScaleOutPolicyRequest, UpdateScaleOutPolicyResponse>(request,
+            EiHealthMeta.updateScaleOutPolicy, hcClient);
+    }
+
+    /**
      * 购买计算资源
      *
      * 购买计算资源
@@ -1575,7 +1845,7 @@ public class EiHealthClient {
     }
 
     /**
-     * 获取指定数据对象
+     * 获取数据详情
      *
      * 获取指定数据对象的详细信息
      * 
@@ -1589,7 +1859,7 @@ public class EiHealthClient {
     }
 
     /**
-     * 获取指定数据对象
+     * 获取数据详情
      *
      * 获取指定数据对象的详细信息
      * 
@@ -3817,6 +4087,634 @@ public class EiHealthClient {
         UpdateMessageReceiveConfigRequest request) {
         return new SyncInvoker<UpdateMessageReceiveConfigRequest, UpdateMessageReceiveConfigResponse>(request,
             EiHealthMeta.updateMessageReceiveConfig, hcClient);
+    }
+
+    /**
+     * 清理Nextflow缓存
+     *
+     * 清理Nextflow缓存
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CleanNextflowCacheRequest 请求对象
+     * @return CleanNextflowCacheResponse
+     */
+    public CleanNextflowCacheResponse cleanNextflowCache(CleanNextflowCacheRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.cleanNextflowCache);
+    }
+
+    /**
+     * 清理Nextflow缓存
+     *
+     * 清理Nextflow缓存
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CleanNextflowCacheRequest 请求对象
+     * @return SyncInvoker<CleanNextflowCacheRequest, CleanNextflowCacheResponse>
+     */
+    public SyncInvoker<CleanNextflowCacheRequest, CleanNextflowCacheResponse> cleanNextflowCacheInvoker(
+        CleanNextflowCacheRequest request) {
+        return new SyncInvoker<CleanNextflowCacheRequest, CleanNextflowCacheResponse>(request,
+            EiHealthMeta.cleanNextflowCache, hcClient);
+    }
+
+    /**
+     * 安装Nextflow
+     *
+     * 安装Nextflow（file和version参数必须提供其中一种）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param InstallNextflowRequest 请求对象
+     * @return InstallNextflowResponse
+     */
+    public InstallNextflowResponse installNextflow(InstallNextflowRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.installNextflow);
+    }
+
+    /**
+     * 安装Nextflow
+     *
+     * 安装Nextflow（file和version参数必须提供其中一种）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param InstallNextflowRequest 请求对象
+     * @return SyncInvoker<InstallNextflowRequest, InstallNextflowResponse>
+     */
+    public SyncInvoker<InstallNextflowRequest, InstallNextflowResponse> installNextflowInvoker(
+        InstallNextflowRequest request) {
+        return new SyncInvoker<InstallNextflowRequest, InstallNextflowResponse>(request, EiHealthMeta.installNextflow,
+            hcClient);
+    }
+
+    /**
+     * 查询Nextflow版本列表
+     *
+     * 查询Nextflow版本列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNextflowVersionRequest 请求对象
+     * @return ListNextflowVersionResponse
+     */
+    public ListNextflowVersionResponse listNextflowVersion(ListNextflowVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.listNextflowVersion);
+    }
+
+    /**
+     * 查询Nextflow版本列表
+     *
+     * 查询Nextflow版本列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNextflowVersionRequest 请求对象
+     * @return SyncInvoker<ListNextflowVersionRequest, ListNextflowVersionResponse>
+     */
+    public SyncInvoker<ListNextflowVersionRequest, ListNextflowVersionResponse> listNextflowVersionInvoker(
+        ListNextflowVersionRequest request) {
+        return new SyncInvoker<ListNextflowVersionRequest, ListNextflowVersionResponse>(request,
+            EiHealthMeta.listNextflowVersion, hcClient);
+    }
+
+    /**
+     * 查询Nextflow配置详情
+     *
+     * 查询Nextflow配置详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNextflowRequest 请求对象
+     * @return ShowNextflowResponse
+     */
+    public ShowNextflowResponse showNextflow(ShowNextflowRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showNextflow);
+    }
+
+    /**
+     * 查询Nextflow配置详情
+     *
+     * 查询Nextflow配置详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNextflowRequest 请求对象
+     * @return SyncInvoker<ShowNextflowRequest, ShowNextflowResponse>
+     */
+    public SyncInvoker<ShowNextflowRequest, ShowNextflowResponse> showNextflowInvoker(ShowNextflowRequest request) {
+        return new SyncInvoker<ShowNextflowRequest, ShowNextflowResponse>(request, EiHealthMeta.showNextflow, hcClient);
+    }
+
+    /**
+     * 卸载Nextflow
+     *
+     * 卸载Nextflow
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UninstallNextflowRequest 请求对象
+     * @return UninstallNextflowResponse
+     */
+    public UninstallNextflowResponse uninstallNextflow(UninstallNextflowRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.uninstallNextflow);
+    }
+
+    /**
+     * 卸载Nextflow
+     *
+     * 卸载Nextflow
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UninstallNextflowRequest 请求对象
+     * @return SyncInvoker<UninstallNextflowRequest, UninstallNextflowResponse>
+     */
+    public SyncInvoker<UninstallNextflowRequest, UninstallNextflowResponse> uninstallNextflowInvoker(
+        UninstallNextflowRequest request) {
+        return new SyncInvoker<UninstallNextflowRequest, UninstallNextflowResponse>(request,
+            EiHealthMeta.uninstallNextflow, hcClient);
+    }
+
+    /**
+     * 创建nextflow作业
+     *
+     * 创建nextflow作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateNextflowJobRequest 请求对象
+     * @return CreateNextflowJobResponse
+     */
+    public CreateNextflowJobResponse createNextflowJob(CreateNextflowJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createNextflowJob);
+    }
+
+    /**
+     * 创建nextflow作业
+     *
+     * 创建nextflow作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateNextflowJobRequest 请求对象
+     * @return SyncInvoker<CreateNextflowJobRequest, CreateNextflowJobResponse>
+     */
+    public SyncInvoker<CreateNextflowJobRequest, CreateNextflowJobResponse> createNextflowJobInvoker(
+        CreateNextflowJobRequest request) {
+        return new SyncInvoker<CreateNextflowJobRequest, CreateNextflowJobResponse>(request,
+            EiHealthMeta.createNextflowJob, hcClient);
+    }
+
+    /**
+     * 删除Nextflow作业
+     *
+     * 删除Nextflow作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteNextflowJobRequest 请求对象
+     * @return DeleteNextflowJobResponse
+     */
+    public DeleteNextflowJobResponse deleteNextflowJob(DeleteNextflowJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.deleteNextflowJob);
+    }
+
+    /**
+     * 删除Nextflow作业
+     *
+     * 删除Nextflow作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteNextflowJobRequest 请求对象
+     * @return SyncInvoker<DeleteNextflowJobRequest, DeleteNextflowJobResponse>
+     */
+    public SyncInvoker<DeleteNextflowJobRequest, DeleteNextflowJobResponse> deleteNextflowJobInvoker(
+        DeleteNextflowJobRequest request) {
+        return new SyncInvoker<DeleteNextflowJobRequest, DeleteNextflowJobResponse>(request,
+            EiHealthMeta.deleteNextflowJob, hcClient);
+    }
+
+    /**
+     * 查询nextflow作业列表
+     *
+     * 查询nextflow作业列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNextflowJobRequest 请求对象
+     * @return ListNextflowJobResponse
+     */
+    public ListNextflowJobResponse listNextflowJob(ListNextflowJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.listNextflowJob);
+    }
+
+    /**
+     * 查询nextflow作业列表
+     *
+     * 查询nextflow作业列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNextflowJobRequest 请求对象
+     * @return SyncInvoker<ListNextflowJobRequest, ListNextflowJobResponse>
+     */
+    public SyncInvoker<ListNextflowJobRequest, ListNextflowJobResponse> listNextflowJobInvoker(
+        ListNextflowJobRequest request) {
+        return new SyncInvoker<ListNextflowJobRequest, ListNextflowJobResponse>(request, EiHealthMeta.listNextflowJob,
+            hcClient);
+    }
+
+    /**
+     * 重试Nextflow作业
+     *
+     * 重试Nextflow作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RetryNextflowJobRequest 请求对象
+     * @return RetryNextflowJobResponse
+     */
+    public RetryNextflowJobResponse retryNextflowJob(RetryNextflowJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.retryNextflowJob);
+    }
+
+    /**
+     * 重试Nextflow作业
+     *
+     * 重试Nextflow作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RetryNextflowJobRequest 请求对象
+     * @return SyncInvoker<RetryNextflowJobRequest, RetryNextflowJobResponse>
+     */
+    public SyncInvoker<RetryNextflowJobRequest, RetryNextflowJobResponse> retryNextflowJobInvoker(
+        RetryNextflowJobRequest request) {
+        return new SyncInvoker<RetryNextflowJobRequest, RetryNextflowJobResponse>(request,
+            EiHealthMeta.retryNextflowJob, hcClient);
+    }
+
+    /**
+     * 获取Nextflow作业详情
+     *
+     * 获取Nextflow作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNextflowJobRequest 请求对象
+     * @return ShowNextflowJobResponse
+     */
+    public ShowNextflowJobResponse showNextflowJob(ShowNextflowJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showNextflowJob);
+    }
+
+    /**
+     * 获取Nextflow作业详情
+     *
+     * 获取Nextflow作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNextflowJobRequest 请求对象
+     * @return SyncInvoker<ShowNextflowJobRequest, ShowNextflowJobResponse>
+     */
+    public SyncInvoker<ShowNextflowJobRequest, ShowNextflowJobResponse> showNextflowJobInvoker(
+        ShowNextflowJobRequest request) {
+        return new SyncInvoker<ShowNextflowJobRequest, ShowNextflowJobResponse>(request, EiHealthMeta.showNextflowJob,
+            hcClient);
+    }
+
+    /**
+     * 获取Nextflow作业日志
+     *
+     * 获取Nextflow作业日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNextflowJobLogRequest 请求对象
+     * @return ShowNextflowJobLogResponse
+     */
+    public ShowNextflowJobLogResponse showNextflowJobLog(ShowNextflowJobLogRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showNextflowJobLog);
+    }
+
+    /**
+     * 获取Nextflow作业日志
+     *
+     * 获取Nextflow作业日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNextflowJobLogRequest 请求对象
+     * @return SyncInvoker<ShowNextflowJobLogRequest, ShowNextflowJobLogResponse>
+     */
+    public SyncInvoker<ShowNextflowJobLogRequest, ShowNextflowJobLogResponse> showNextflowJobLogInvoker(
+        ShowNextflowJobLogRequest request) {
+        return new SyncInvoker<ShowNextflowJobLogRequest, ShowNextflowJobLogResponse>(request,
+            EiHealthMeta.showNextflowJobLog, hcClient);
+    }
+
+    /**
+     * 获取Nextflow作业报告
+     *
+     * 获取Nextflow作业报告
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNextflowJobReportsRequest 请求对象
+     * @return ShowNextflowJobReportsResponse
+     */
+    public ShowNextflowJobReportsResponse showNextflowJobReports(ShowNextflowJobReportsRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showNextflowJobReports);
+    }
+
+    /**
+     * 获取Nextflow作业报告
+     *
+     * 获取Nextflow作业报告
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNextflowJobReportsRequest 请求对象
+     * @return SyncInvoker<ShowNextflowJobReportsRequest, ShowNextflowJobReportsResponse>
+     */
+    public SyncInvoker<ShowNextflowJobReportsRequest, ShowNextflowJobReportsResponse> showNextflowJobReportsInvoker(
+        ShowNextflowJobReportsRequest request) {
+        return new SyncInvoker<ShowNextflowJobReportsRequest, ShowNextflowJobReportsResponse>(request,
+            EiHealthMeta.showNextflowJobReports, hcClient);
+    }
+
+    /**
+     * 停止Nextflow作业
+     *
+     * 停止Nextflow作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopNextflowJobRequest 请求对象
+     * @return StopNextflowJobResponse
+     */
+    public StopNextflowJobResponse stopNextflowJob(StopNextflowJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.stopNextflowJob);
+    }
+
+    /**
+     * 停止Nextflow作业
+     *
+     * 停止Nextflow作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopNextflowJobRequest 请求对象
+     * @return SyncInvoker<StopNextflowJobRequest, StopNextflowJobResponse>
+     */
+    public SyncInvoker<StopNextflowJobRequest, StopNextflowJobResponse> stopNextflowJobInvoker(
+        StopNextflowJobRequest request) {
+        return new SyncInvoker<StopNextflowJobRequest, StopNextflowJobResponse>(request, EiHealthMeta.stopNextflowJob,
+            hcClient);
+    }
+
+    /**
+     * 获取task列表
+     *
+     * 获取task列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNextflowTaskRequest 请求对象
+     * @return ListNextflowTaskResponse
+     */
+    public ListNextflowTaskResponse listNextflowTask(ListNextflowTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.listNextflowTask);
+    }
+
+    /**
+     * 获取task列表
+     *
+     * 获取task列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNextflowTaskRequest 请求对象
+     * @return SyncInvoker<ListNextflowTaskRequest, ListNextflowTaskResponse>
+     */
+    public SyncInvoker<ListNextflowTaskRequest, ListNextflowTaskResponse> listNextflowTaskInvoker(
+        ListNextflowTaskRequest request) {
+        return new SyncInvoker<ListNextflowTaskRequest, ListNextflowTaskResponse>(request,
+            EiHealthMeta.listNextflowTask, hcClient);
+    }
+
+    /**
+     * 获取task详情
+     *
+     * 获取task详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNextflowTaskDetailRequest 请求对象
+     * @return ShowNextflowTaskDetailResponse
+     */
+    public ShowNextflowTaskDetailResponse showNextflowTaskDetail(ShowNextflowTaskDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showNextflowTaskDetail);
+    }
+
+    /**
+     * 获取task详情
+     *
+     * 获取task详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNextflowTaskDetailRequest 请求对象
+     * @return SyncInvoker<ShowNextflowTaskDetailRequest, ShowNextflowTaskDetailResponse>
+     */
+    public SyncInvoker<ShowNextflowTaskDetailRequest, ShowNextflowTaskDetailResponse> showNextflowTaskDetailInvoker(
+        ShowNextflowTaskDetailRequest request) {
+        return new SyncInvoker<ShowNextflowTaskDetailRequest, ShowNextflowTaskDetailResponse>(request,
+            EiHealthMeta.showNextflowTaskDetail, hcClient);
+    }
+
+    /**
+     * 获取Nextflow任务日志
+     *
+     * 获取Nextflow任务日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNextflowTaskLogRequest 请求对象
+     * @return ShowNextflowTaskLogResponse
+     */
+    public ShowNextflowTaskLogResponse showNextflowTaskLog(ShowNextflowTaskLogRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showNextflowTaskLog);
+    }
+
+    /**
+     * 获取Nextflow任务日志
+     *
+     * 获取Nextflow任务日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNextflowTaskLogRequest 请求对象
+     * @return SyncInvoker<ShowNextflowTaskLogRequest, ShowNextflowTaskLogResponse>
+     */
+    public SyncInvoker<ShowNextflowTaskLogRequest, ShowNextflowTaskLogResponse> showNextflowTaskLogInvoker(
+        ShowNextflowTaskLogRequest request) {
+        return new SyncInvoker<ShowNextflowTaskLogRequest, ShowNextflowTaskLogResponse>(request,
+            EiHealthMeta.showNextflowTaskLog, hcClient);
+    }
+
+    /**
+     * 创建流程
+     *
+     * 创建流程
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateNextflowWorkflowRequest 请求对象
+     * @return CreateNextflowWorkflowResponse
+     */
+    public CreateNextflowWorkflowResponse createNextflowWorkflow(CreateNextflowWorkflowRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createNextflowWorkflow);
+    }
+
+    /**
+     * 创建流程
+     *
+     * 创建流程
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateNextflowWorkflowRequest 请求对象
+     * @return SyncInvoker<CreateNextflowWorkflowRequest, CreateNextflowWorkflowResponse>
+     */
+    public SyncInvoker<CreateNextflowWorkflowRequest, CreateNextflowWorkflowResponse> createNextflowWorkflowInvoker(
+        CreateNextflowWorkflowRequest request) {
+        return new SyncInvoker<CreateNextflowWorkflowRequest, CreateNextflowWorkflowResponse>(request,
+            EiHealthMeta.createNextflowWorkflow, hcClient);
+    }
+
+    /**
+     * 删除流程
+     *
+     * 删除流程
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteNextflowWorkflowRequest 请求对象
+     * @return DeleteNextflowWorkflowResponse
+     */
+    public DeleteNextflowWorkflowResponse deleteNextflowWorkflow(DeleteNextflowWorkflowRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.deleteNextflowWorkflow);
+    }
+
+    /**
+     * 删除流程
+     *
+     * 删除流程
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteNextflowWorkflowRequest 请求对象
+     * @return SyncInvoker<DeleteNextflowWorkflowRequest, DeleteNextflowWorkflowResponse>
+     */
+    public SyncInvoker<DeleteNextflowWorkflowRequest, DeleteNextflowWorkflowResponse> deleteNextflowWorkflowInvoker(
+        DeleteNextflowWorkflowRequest request) {
+        return new SyncInvoker<DeleteNextflowWorkflowRequest, DeleteNextflowWorkflowResponse>(request,
+            EiHealthMeta.deleteNextflowWorkflow, hcClient);
+    }
+
+    /**
+     * 获取流程列表
+     *
+     * 获取流程列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNextflowWorkflowRequest 请求对象
+     * @return ListNextflowWorkflowResponse
+     */
+    public ListNextflowWorkflowResponse listNextflowWorkflow(ListNextflowWorkflowRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.listNextflowWorkflow);
+    }
+
+    /**
+     * 获取流程列表
+     *
+     * 获取流程列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNextflowWorkflowRequest 请求对象
+     * @return SyncInvoker<ListNextflowWorkflowRequest, ListNextflowWorkflowResponse>
+     */
+    public SyncInvoker<ListNextflowWorkflowRequest, ListNextflowWorkflowResponse> listNextflowWorkflowInvoker(
+        ListNextflowWorkflowRequest request) {
+        return new SyncInvoker<ListNextflowWorkflowRequest, ListNextflowWorkflowResponse>(request,
+            EiHealthMeta.listNextflowWorkflow, hcClient);
+    }
+
+    /**
+     * 获取流程详情
+     *
+     * 获取流程详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNextflowWorkflowRequest 请求对象
+     * @return ShowNextflowWorkflowResponse
+     */
+    public ShowNextflowWorkflowResponse showNextflowWorkflow(ShowNextflowWorkflowRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showNextflowWorkflow);
+    }
+
+    /**
+     * 获取流程详情
+     *
+     * 获取流程详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNextflowWorkflowRequest 请求对象
+     * @return SyncInvoker<ShowNextflowWorkflowRequest, ShowNextflowWorkflowResponse>
+     */
+    public SyncInvoker<ShowNextflowWorkflowRequest, ShowNextflowWorkflowResponse> showNextflowWorkflowInvoker(
+        ShowNextflowWorkflowRequest request) {
+        return new SyncInvoker<ShowNextflowWorkflowRequest, ShowNextflowWorkflowResponse>(request,
+            EiHealthMeta.showNextflowWorkflow, hcClient);
+    }
+
+    /**
+     * 更新流程
+     *
+     * 更新流程
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateNextflowWorkflowRequest 请求对象
+     * @return UpdateNextflowWorkflowResponse
+     */
+    public UpdateNextflowWorkflowResponse updateNextflowWorkflow(UpdateNextflowWorkflowRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.updateNextflowWorkflow);
+    }
+
+    /**
+     * 更新流程
+     *
+     * 更新流程
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateNextflowWorkflowRequest 请求对象
+     * @return SyncInvoker<UpdateNextflowWorkflowRequest, UpdateNextflowWorkflowResponse>
+     */
+    public SyncInvoker<UpdateNextflowWorkflowRequest, UpdateNextflowWorkflowResponse> updateNextflowWorkflowInvoker(
+        UpdateNextflowWorkflowRequest request) {
+        return new SyncInvoker<UpdateNextflowWorkflowRequest, UpdateNextflowWorkflowResponse>(request,
+            EiHealthMeta.updateNextflowWorkflow, hcClient);
     }
 
     /**
@@ -6329,6 +7227,93 @@ public class EiHealthClient {
         UpdateWorkflowRequest request) {
         return new SyncInvoker<UpdateWorkflowRequest, UpdateWorkflowResponse>(request, EiHealthMeta.updateWorkflow,
             hcClient);
+    }
+
+    /**
+     * 查询IAM用户组的用户列表
+     *
+     * 查询IAM用户组的用户列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListIamGroupUsersRequest 请求对象
+     * @return ListIamGroupUsersResponse
+     */
+    public ListIamGroupUsersResponse listIamGroupUsers(ListIamGroupUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.listIamGroupUsers);
+    }
+
+    /**
+     * 查询IAM用户组的用户列表
+     *
+     * 查询IAM用户组的用户列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListIamGroupUsersRequest 请求对象
+     * @return SyncInvoker<ListIamGroupUsersRequest, ListIamGroupUsersResponse>
+     */
+    public SyncInvoker<ListIamGroupUsersRequest, ListIamGroupUsersResponse> listIamGroupUsersInvoker(
+        ListIamGroupUsersRequest request) {
+        return new SyncInvoker<ListIamGroupUsersRequest, ListIamGroupUsersResponse>(request,
+            EiHealthMeta.listIamGroupUsers, hcClient);
+    }
+
+    /**
+     * 查询IAM用户组列表
+     *
+     * 查询IAM用户组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListIamGroupsRequest 请求对象
+     * @return ListIamGroupsResponse
+     */
+    public ListIamGroupsResponse listIamGroups(ListIamGroupsRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.listIamGroups);
+    }
+
+    /**
+     * 查询IAM用户组列表
+     *
+     * 查询IAM用户组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListIamGroupsRequest 请求对象
+     * @return SyncInvoker<ListIamGroupsRequest, ListIamGroupsResponse>
+     */
+    public SyncInvoker<ListIamGroupsRequest, ListIamGroupsResponse> listIamGroupsInvoker(ListIamGroupsRequest request) {
+        return new SyncInvoker<ListIamGroupsRequest, ListIamGroupsResponse>(request, EiHealthMeta.listIamGroups,
+            hcClient);
+    }
+
+    /**
+     * 查询IAM用户列表
+     *
+     * 查询IAM用户列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListIamUsersRequest 请求对象
+     * @return ListIamUsersResponse
+     */
+    public ListIamUsersResponse listIamUsers(ListIamUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.listIamUsers);
+    }
+
+    /**
+     * 查询IAM用户列表
+     *
+     * 查询IAM用户列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListIamUsersRequest 请求对象
+     * @return SyncInvoker<ListIamUsersRequest, ListIamUsersResponse>
+     */
+    public SyncInvoker<ListIamUsersRequest, ListIamUsersResponse> listIamUsersInvoker(ListIamUsersRequest request) {
+        return new SyncInvoker<ListIamUsersRequest, ListIamUsersResponse>(request, EiHealthMeta.listIamUsers, hcClient);
     }
 
     /**

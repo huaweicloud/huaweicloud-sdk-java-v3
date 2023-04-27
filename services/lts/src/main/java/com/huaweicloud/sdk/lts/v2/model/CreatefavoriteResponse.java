@@ -14,7 +14,7 @@ public class CreatefavoriteResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private String createTime;
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eps_id")
@@ -56,20 +56,22 @@ public class CreatefavoriteResponse extends SdkResponse {
 
     private String projectId;
 
-    public CreatefavoriteResponse withCreateTime(String createTime) {
+    public CreatefavoriteResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
     /**
      * 创建时间
+     * minimum: 0
+     * maximum: 9999999999999
      * @return createTime
      */
-    public String getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 

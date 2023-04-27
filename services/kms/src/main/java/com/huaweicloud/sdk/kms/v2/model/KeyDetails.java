@@ -372,6 +372,11 @@ public class KeyDetails {
 
     private String keyLabel;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "partition_type")
+
+    private String partitionType;
+
     public KeyDetails withKeyId(String keyId) {
         this.keyId = keyId;
         return this;
@@ -678,6 +683,23 @@ public class KeyDetails {
         this.keyLabel = keyLabel;
     }
 
+    public KeyDetails withPartitionType(String partitionType) {
+        this.partitionType = partitionType;
+        return this;
+    }
+
+    /**
+     * 分区类型，枚举如下：  - 1为专业版
+     * @return partitionType
+     */
+    public String getPartitionType() {
+        return partitionType;
+    }
+
+    public void setPartitionType(String partitionType) {
+        this.partitionType = partitionType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -701,7 +723,8 @@ public class KeyDetails {
             && Objects.equals(this.keyRotationEnabled, keyDetails.keyRotationEnabled)
             && Objects.equals(this.sysEnterpriseProjectId, keyDetails.sysEnterpriseProjectId)
             && Objects.equals(this.keystoreId, keyDetails.keystoreId)
-            && Objects.equals(this.keyLabel, keyDetails.keyLabel);
+            && Objects.equals(this.keyLabel, keyDetails.keyLabel)
+            && Objects.equals(this.partitionType, keyDetails.partitionType);
     }
 
     @Override
@@ -723,7 +746,8 @@ public class KeyDetails {
             keyRotationEnabled,
             sysEnterpriseProjectId,
             keystoreId,
-            keyLabel);
+            keyLabel,
+            partitionType);
     }
 
     @Override
@@ -748,6 +772,7 @@ public class KeyDetails {
         sb.append("    sysEnterpriseProjectId: ").append(toIndentedString(sysEnterpriseProjectId)).append("\n");
         sb.append("    keystoreId: ").append(toIndentedString(keystoreId)).append("\n");
         sb.append("    keyLabel: ").append(toIndentedString(keyLabel)).append("\n");
+        sb.append("    partitionType: ").append(toIndentedString(partitionType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

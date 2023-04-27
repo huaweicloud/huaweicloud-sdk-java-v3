@@ -43,7 +43,7 @@ public class PolicyTypeSummaryDto {
     }
 
     /**
-     * 策略类型的名称，service_control_policy：服务控制策略。
+     * 策略类型的名称，service_control_policy：服务控制策略；tag_policy：标签策略。
      * @return type
      */
     public String getType() {

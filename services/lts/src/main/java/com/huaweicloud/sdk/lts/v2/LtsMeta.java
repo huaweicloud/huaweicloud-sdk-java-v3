@@ -1011,6 +1011,20 @@ public class LtsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("log_group_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistorySqlRequest::getLogGroupId, (req, v) -> {
+                req.setLogGroupId(v);
+            }));
+        builder.<String>withRequestField("log_stream_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistorySqlRequest::getLogStreamId, (req, v) -> {
+                req.setLogStreamId(v);
+            }));
 
         // response
 

@@ -18,10 +18,10 @@ public class WaterfallPageListParam  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maker")
+    @JsonProperty(value="marker")
     
 
-    private String maker;
+    private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
@@ -29,8 +29,8 @@ public class WaterfallPageListParam  {
 
     private Integer limit;
 
-    public WaterfallPageListParam withMaker(String maker) {
-        this.maker = maker;
+    public WaterfallPageListParam withMarker(String marker) {
+        this.marker = marker;
         return this;
     }
 
@@ -39,14 +39,14 @@ public class WaterfallPageListParam  {
 
     /**
      * 页面的分页标志位；为分页的最后一条记录的id
-     * @return maker
+     * @return marker
      */
-    public String getMaker() {
-        return maker;
+    public String getMarker() {
+        return marker;
     }
 
-    public void setMaker(String maker) {
-        this.maker = maker;
+    public void setMarker(String marker) {
+        this.marker = marker;
     }
 
     
@@ -84,18 +84,18 @@ public class WaterfallPageListParam  {
             return false;
         }
         WaterfallPageListParam waterfallPageListParam = (WaterfallPageListParam) o;
-        return Objects.equals(this.maker, waterfallPageListParam.maker) &&
+        return Objects.equals(this.marker, waterfallPageListParam.marker) &&
             Objects.equals(this.limit, waterfallPageListParam.limit);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(maker, limit);
+        return Objects.hash(marker, limit);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class WaterfallPageListParam {\n");
-        sb.append("    maker: ").append(toIndentedString(maker)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();

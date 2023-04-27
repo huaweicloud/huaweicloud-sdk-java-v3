@@ -229,6 +229,11 @@ public class UpdateTaskSpeedReq {
 
     private Double compressRate;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remain_time")
+
+    private Long remainTime;
+
     public UpdateTaskSpeedReq withSubtaskName(SubtaskNameEnum subtaskName) {
         this.subtaskName = subtaskName;
         return this;
@@ -358,6 +363,25 @@ public class UpdateTaskSpeedReq {
         this.compressRate = compressRate;
     }
 
+    public UpdateTaskSpeedReq withRemainTime(Long remainTime) {
+        this.remainTime = remainTime;
+        return this;
+    }
+
+    /**
+     * 剩余时间
+     * minimum: 0
+     * maximum: 2147483647
+     * @return remainTime
+     */
+    public Long getRemainTime() {
+        return remainTime;
+    }
+
+    public void setRemainTime(Long remainTime) {
+        this.remainTime = remainTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -373,12 +397,20 @@ public class UpdateTaskSpeedReq {
             && Objects.equals(this.totalsize, updateTaskSpeedReq.totalsize)
             && Objects.equals(this.processTrace, updateTaskSpeedReq.processTrace)
             && Objects.equals(this.migrateSpeed, updateTaskSpeedReq.migrateSpeed)
-            && Objects.equals(this.compressRate, updateTaskSpeedReq.compressRate);
+            && Objects.equals(this.compressRate, updateTaskSpeedReq.compressRate)
+            && Objects.equals(this.remainTime, updateTaskSpeedReq.remainTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subtaskName, progress, replicatesize, totalsize, processTrace, migrateSpeed, compressRate);
+        return Objects.hash(subtaskName,
+            progress,
+            replicatesize,
+            totalsize,
+            processTrace,
+            migrateSpeed,
+            compressRate,
+            remainTime);
     }
 
     @Override
@@ -392,6 +424,7 @@ public class UpdateTaskSpeedReq {
         sb.append("    processTrace: ").append(toIndentedString(processTrace)).append("\n");
         sb.append("    migrateSpeed: ").append(toIndentedString(migrateSpeed)).append("\n");
         sb.append("    compressRate: ").append(toIndentedString(compressRate)).append("\n");
+        sb.append("    remainTime: ").append(toIndentedString(remainTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

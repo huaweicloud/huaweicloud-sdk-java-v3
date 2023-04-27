@@ -33,6 +33,11 @@ public class ActionResources {
 
     private List<TagItem> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sys_tags")
+
+    private List<TagItem> sysTags = null;
+
     public ActionResources withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -126,6 +131,39 @@ public class ActionResources {
         this.tags = tags;
     }
 
+    public ActionResources withSysTags(List<TagItem> sysTags) {
+        this.sysTags = sysTags;
+        return this;
+    }
+
+    public ActionResources addSysTagsItem(TagItem sysTagsItem) {
+        if (this.sysTags == null) {
+            this.sysTags = new ArrayList<>();
+        }
+        this.sysTags.add(sysTagsItem);
+        return this;
+    }
+
+    public ActionResources withSysTags(Consumer<List<TagItem>> sysTagsSetter) {
+        if (this.sysTags == null) {
+            this.sysTags = new ArrayList<>();
+        }
+        sysTagsSetter.accept(this.sysTags);
+        return this;
+    }
+
+    /**
+     * 标签列表，key和value键值对的集合。  - key：表示标签键，一个凭据下最多包含10个key，key不能为空，不能重复，同一个key中value不能重复。key最大长度为36个字符。  - value：表示标签值。每个值最大长度43个字符，value之间为“与”的关系。
+     * @return sysTags
+     */
+    public List<TagItem> getSysTags() {
+        return sysTags;
+    }
+
+    public void setSysTags(List<TagItem> sysTags) {
+        this.sysTags = sysTags;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -138,12 +176,12 @@ public class ActionResources {
         return Objects.equals(this.resourceId, actionResources.resourceId)
             && Objects.equals(this.resourceDetail, actionResources.resourceDetail)
             && Objects.equals(this.resourceName, actionResources.resourceName)
-            && Objects.equals(this.tags, actionResources.tags);
+            && Objects.equals(this.tags, actionResources.tags) && Objects.equals(this.sysTags, actionResources.sysTags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId, resourceDetail, resourceName, tags);
+        return Objects.hash(resourceId, resourceDetail, resourceName, tags, sysTags);
     }
 
     @Override
@@ -154,6 +192,7 @@ public class ActionResources {
         sb.append("    resourceDetail: ").append(toIndentedString(resourceDetail)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
         sb.append("}");
         return sb.toString();
     }
