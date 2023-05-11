@@ -43,6 +43,11 @@ public class GenerationTaskData {
 
     private BindingSite bindingSite;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_props")
+
+    private List<CustomProp> customProps = null;
+
     public GenerationTaskData withNumTrials(Integer numTrials) {
         this.numTrials = numTrials;
         return this;
@@ -202,6 +207,39 @@ public class GenerationTaskData {
         this.bindingSite = bindingSite;
     }
 
+    public GenerationTaskData withCustomProps(List<CustomProp> customProps) {
+        this.customProps = customProps;
+        return this;
+    }
+
+    public GenerationTaskData addCustomPropsItem(CustomProp customPropsItem) {
+        if (this.customProps == null) {
+            this.customProps = new ArrayList<>();
+        }
+        this.customProps.add(customPropsItem);
+        return this;
+    }
+
+    public GenerationTaskData withCustomProps(Consumer<List<CustomProp>> customPropsSetter) {
+        if (this.customProps == null) {
+            this.customProps = new ArrayList<>();
+        }
+        customPropsSetter.accept(this.customProps);
+        return this;
+    }
+
+    /**
+     * 用户已开启的自定义属性集合
+     * @return customProps
+     */
+    public List<CustomProp> getCustomProps() {
+        return customProps;
+    }
+
+    public void setCustomProps(List<CustomProp> customProps) {
+        this.customProps = customProps;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -216,12 +254,14 @@ public class GenerationTaskData {
             && Objects.equals(this.weakConstraints, generationTaskData.weakConstraints)
             && Objects.equals(this.numExpected, generationTaskData.numExpected)
             && Objects.equals(this.initialDataset, generationTaskData.initialDataset)
-            && Objects.equals(this.bindingSite, generationTaskData.bindingSite);
+            && Objects.equals(this.bindingSite, generationTaskData.bindingSite)
+            && Objects.equals(this.customProps, generationTaskData.customProps);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(numTrials, strongConstraints, weakConstraints, numExpected, initialDataset, bindingSite);
+        return Objects
+            .hash(numTrials, strongConstraints, weakConstraints, numExpected, initialDataset, bindingSite, customProps);
     }
 
     @Override
@@ -234,6 +274,7 @@ public class GenerationTaskData {
         sb.append("    numExpected: ").append(toIndentedString(numExpected)).append("\n");
         sb.append("    initialDataset: ").append(toIndentedString(initialDataset)).append("\n");
         sb.append("    bindingSite: ").append(toIndentedString(bindingSite)).append("\n");
+        sb.append("    customProps: ").append(toIndentedString(customProps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

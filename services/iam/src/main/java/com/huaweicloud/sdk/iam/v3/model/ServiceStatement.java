@@ -137,7 +137,7 @@ public class ServiceStatement {
     }
 
     /**
-     * 授权项，指对资源的具体操作权限，不超过100个。 > - 格式为：服务名:资源类型:操作，例：vpc:ports:create。 > - 服务名为产品名称，例如ecs、evs和vpc等，服务名仅支持小写。 资源类型和操作没有大小写，要求支持通配符号*，无需罗列全部授权项。
+     * 授权项，指对资源的具体操作权限。 > - 格式为：服务名:资源类型:操作，例：vpc:ports:create。 > - 服务名为产品名称，例如ecs、evs和vpc等，服务名仅支持小写。 资源类型和操作没有大小写，要求支持通配符号*，无需罗列全部授权项。
      * @return action
      */
     public List<String> getAction() {
@@ -187,7 +187,7 @@ public class ServiceStatement {
     }
 
     /**
-     * 限制条件。不超过10个。
+     * Get condition
      * @return condition
      */
     public Map<String, Map<String, List<String>>> getCondition() {
@@ -220,7 +220,7 @@ public class ServiceStatement {
     }
 
     /**
-     * 资源。数组长度不超过10，每个字符串长度不超过128，规则如下： > - 可填 * 的五段式：<service-name>:<region>:<account-id>:<resource-type>:<resource-path>，例：\"obs:*:*:bucket:*\"。 > - region字段为*或用户可访问的region。service必须存在且resource属于对应service。
+     * 资源。规则如下： > - 可填 * 的五段式：<service-name>:<region>:<account-id>:<resource-type>:<resource-path>，例：\"obs:*:*:bucket:*\"。 > - region字段为*或用户可访问的region。service必须存在且resource属于对应service。
      * @return resource
      */
     public List<String> getResource() {

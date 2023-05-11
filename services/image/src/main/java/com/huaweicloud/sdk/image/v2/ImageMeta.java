@@ -72,6 +72,40 @@ public class ImageMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateVideoTaggingMediaTaskRequest, CreateVideoTaggingMediaTaskResponse> createVideoTaggingMediaTask =
+        genForcreateVideoTaggingMediaTask();
+
+    private static HttpRequestDef<CreateVideoTaggingMediaTaskRequest, CreateVideoTaggingMediaTaskResponse> genForcreateVideoTaggingMediaTask() {
+        // basic
+        HttpRequestDef.Builder<CreateVideoTaggingMediaTaskRequest, CreateVideoTaggingMediaTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateVideoTaggingMediaTaskRequest.class,
+                    CreateVideoTaggingMediaTaskResponse.class)
+                .withName("CreateVideoTaggingMediaTask")
+                .withUri("/v2/{project_id}/image/video-tagging-media/tasks")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateVideoTaggingMediaTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateVideoTaggingMediaTaskRequestBody.class),
+            f -> f.withMarshaller(CreateVideoTaggingMediaTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateVideoTaggingMediaTaskResponse::getXRequestId,
+                CreateVideoTaggingMediaTaskResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunCelebrityRecognitionRequest, RunCelebrityRecognitionResponse> runCelebrityRecognition =
         genForrunCelebrityRecognition();
 
@@ -340,6 +374,40 @@ public class ImageMeta {
             String.class,
             f -> f.withMarshaller(ShowVideoObjectMaskingTaskResponse::getXRequestId,
                 ShowVideoObjectMaskingTaskResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVideoTaggingMediaTaskRequest, ShowVideoTaggingMediaTaskResponse> showVideoTaggingMediaTask =
+        genForshowVideoTaggingMediaTask();
+
+    private static HttpRequestDef<ShowVideoTaggingMediaTaskRequest, ShowVideoTaggingMediaTaskResponse> genForshowVideoTaggingMediaTask() {
+        // basic
+        HttpRequestDef.Builder<ShowVideoTaggingMediaTaskRequest, ShowVideoTaggingMediaTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowVideoTaggingMediaTaskRequest.class,
+                    ShowVideoTaggingMediaTaskResponse.class)
+                .withName("ShowVideoTaggingMediaTask")
+                .withUri("/v2/{project_id}/image/video-tagging-media/tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVideoTaggingMediaTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowVideoTaggingMediaTaskResponse::getXRequestId,
+                ShowVideoTaggingMediaTaskResponse::setXRequestId));
         return builder.build();
     }
 

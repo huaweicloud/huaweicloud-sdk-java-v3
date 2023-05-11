@@ -28,6 +28,11 @@ public class PostgresqlUserForList {
 
     private List<String> memberof = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "comment")
+
+    private String comment;
+
     public PostgresqlUserForList withName(String name) {
         this.name = name;
         return this;
@@ -95,6 +100,23 @@ public class PostgresqlUserForList {
         this.memberof = memberof;
     }
 
+    public PostgresqlUserForList withComment(String comment) {
+        this.comment = comment;
+        return this;
+    }
+
+    /**
+     * 数据库用户备注。
+     * @return comment
+     */
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -106,12 +128,13 @@ public class PostgresqlUserForList {
         PostgresqlUserForList postgresqlUserForList = (PostgresqlUserForList) o;
         return Objects.equals(this.name, postgresqlUserForList.name)
             && Objects.equals(this.attributes, postgresqlUserForList.attributes)
-            && Objects.equals(this.memberof, postgresqlUserForList.memberof);
+            && Objects.equals(this.memberof, postgresqlUserForList.memberof)
+            && Objects.equals(this.comment, postgresqlUserForList.comment);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, attributes, memberof);
+        return Objects.hash(name, attributes, memberof, comment);
     }
 
     @Override
@@ -121,6 +144,7 @@ public class PostgresqlUserForList {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
         sb.append("    memberof: ").append(toIndentedString(memberof)).append("\n");
+        sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
         sb.append("}");
         return sb.toString();
     }

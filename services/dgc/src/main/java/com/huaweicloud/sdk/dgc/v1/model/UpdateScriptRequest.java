@@ -12,6 +12,11 @@ import java.util.function.Consumer;
 public class UpdateScriptRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workspace")
+
+    private String workspace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "script_name")
 
     private String scriptName;
@@ -20,6 +25,23 @@ public class UpdateScriptRequest {
     @JsonProperty(value = "body")
 
     private ScriptInfo body;
+
+    public UpdateScriptRequest withWorkspace(String workspace) {
+        this.workspace = workspace;
+        return this;
+    }
+
+    /**
+     * 工作空间id
+     * @return workspace
+     */
+    public String getWorkspace() {
+        return workspace;
+    }
+
+    public void setWorkspace(String workspace) {
+        this.workspace = workspace;
+    }
 
     public UpdateScriptRequest withScriptName(String scriptName) {
         this.scriptName = scriptName;
@@ -73,19 +95,21 @@ public class UpdateScriptRequest {
             return false;
         }
         UpdateScriptRequest updateScriptRequest = (UpdateScriptRequest) o;
-        return Objects.equals(this.scriptName, updateScriptRequest.scriptName)
+        return Objects.equals(this.workspace, updateScriptRequest.workspace)
+            && Objects.equals(this.scriptName, updateScriptRequest.scriptName)
             && Objects.equals(this.body, updateScriptRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(scriptName, body);
+        return Objects.hash(workspace, scriptName, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateScriptRequest {\n");
+        sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    scriptName: ").append(toIndentedString(scriptName)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

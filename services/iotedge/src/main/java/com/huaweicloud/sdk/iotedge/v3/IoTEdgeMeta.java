@@ -642,13 +642,13 @@ public class IoTEdgeMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateInstallCmdRequest, CreateInstallCmdResponse> createInstallCmd = genForcreateInstallCmd();
+    public static final HttpRequestDef<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse> createClusterInstallCmd = genForcreateClusterInstallCmd();
 
-    private static HttpRequestDef<CreateInstallCmdRequest, CreateInstallCmdResponse> genForcreateInstallCmd() {
+    private static HttpRequestDef<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse> genForcreateClusterInstallCmd() {
         // basic
-        HttpRequestDef.Builder<CreateInstallCmdRequest, CreateInstallCmdResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateInstallCmdRequest.class, CreateInstallCmdResponse.class)
-                .withName("CreateInstallCmd")
+        HttpRequestDef.Builder<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateClusterInstallCmdRequest.class, CreateClusterInstallCmdResponse.class)
+                .withName("CreateClusterInstallCmd")
                 .withUri("/v3/{project_id}/clusters/{cluster_id}/install-cmd")
                 .withContentType("application/json");
 
@@ -657,7 +657,7 @@ public class IoTEdgeMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateInstallCmdRequest::getClusterId, (req, v) -> {
+            f -> f.withMarshaller(CreateClusterInstallCmdRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
             })
         );
@@ -665,7 +665,7 @@ public class IoTEdgeMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateInstallCmdRequest::getArch, (req, v) -> {
+            f -> f.withMarshaller(CreateClusterInstallCmdRequest::getArch, (req, v) -> {
                 req.setArch(v);
             })
         );
@@ -673,7 +673,7 @@ public class IoTEdgeMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateInstallCmdRequest::getOs, (req, v) -> {
+            f -> f.withMarshaller(CreateClusterInstallCmdRequest::getOs, (req, v) -> {
                 req.setOs(v);
             })
         );

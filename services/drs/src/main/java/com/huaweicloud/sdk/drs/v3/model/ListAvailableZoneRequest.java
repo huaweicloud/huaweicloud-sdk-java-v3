@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class ListAvailableZoneRequest {
 
     /**
-     * 请求语言类型
+     * 请求语言类型。
      */
     public static final class XLanguageEnum {
 
@@ -109,7 +109,7 @@ public class ListAvailableZoneRequest {
     }
 
     /**
-     * 请求语言类型
+     * 请求语言类型。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

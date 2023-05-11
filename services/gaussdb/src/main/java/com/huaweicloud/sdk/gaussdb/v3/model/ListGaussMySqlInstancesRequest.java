@@ -67,6 +67,18 @@ public class ListGaussMySqlInstancesRequest  {
     private String privateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="readonly_private_ip")
+    
+
+    private String readonlyPrivateIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="proxy_ip")
+    
+
+    private String proxyIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
 
@@ -262,6 +274,50 @@ public class ListGaussMySqlInstancesRequest  {
 
     
 
+    public ListGaussMySqlInstancesRequest withReadonlyPrivateIp(String readonlyPrivateIp) {
+        this.readonlyPrivateIp = readonlyPrivateIp;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 读内网IP。
+     * @return readonlyPrivateIp
+     */
+    public String getReadonlyPrivateIp() {
+        return readonlyPrivateIp;
+    }
+
+    public void setReadonlyPrivateIp(String readonlyPrivateIp) {
+        this.readonlyPrivateIp = readonlyPrivateIp;
+    }
+
+    
+
+    public ListGaussMySqlInstancesRequest withProxyIp(String proxyIp) {
+        this.proxyIp = proxyIp;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 读写分离IP。
+     * @return proxyIp
+     */
+    public String getProxyIp() {
+        return proxyIp;
+    }
+
+    public void setProxyIp(String proxyIp) {
+        this.proxyIp = proxyIp;
+    }
+
+    
+
     public ListGaussMySqlInstancesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -345,13 +401,15 @@ public class ListGaussMySqlInstancesRequest  {
             Objects.equals(this.vpcId, listGaussMySqlInstancesRequest.vpcId) &&
             Objects.equals(this.subnetId, listGaussMySqlInstancesRequest.subnetId) &&
             Objects.equals(this.privateIp, listGaussMySqlInstancesRequest.privateIp) &&
+            Objects.equals(this.readonlyPrivateIp, listGaussMySqlInstancesRequest.readonlyPrivateIp) &&
+            Objects.equals(this.proxyIp, listGaussMySqlInstancesRequest.proxyIp) &&
             Objects.equals(this.offset, listGaussMySqlInstancesRequest.offset) &&
             Objects.equals(this.limit, listGaussMySqlInstancesRequest.limit) &&
             Objects.equals(this.tags, listGaussMySqlInstancesRequest.tags);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, id, name, type, datastoreType, vpcId, subnetId, privateIp, offset, limit, tags);
+        return Objects.hash(xLanguage, id, name, type, datastoreType, vpcId, subnetId, privateIp, readonlyPrivateIp, proxyIp, offset, limit, tags);
     }
     @Override
     public String toString() {
@@ -365,6 +423,8 @@ public class ListGaussMySqlInstancesRequest  {
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
+        sb.append("    readonlyPrivateIp: ").append(toIndentedString(readonlyPrivateIp)).append("\n");
+        sb.append("    proxyIp: ").append(toIndentedString(proxyIp)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");

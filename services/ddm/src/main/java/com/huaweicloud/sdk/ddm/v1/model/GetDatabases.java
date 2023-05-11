@@ -68,7 +68,7 @@ public class GetDatabases {
     }
 
     /**
-     * 分片名称.
+     * 分片名称。
      * @return name
      */
     public String getName() {

@@ -14,16 +14,16 @@ public class UpdateAomMappingRulesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private AomMappingRequestInfo body;
+    private UpdateAomMappingRequest body;
 
-    public UpdateAomMappingRulesRequest withBody(AomMappingRequestInfo body) {
+    public UpdateAomMappingRulesRequest withBody(UpdateAomMappingRequest body) {
         this.body = body;
         return this;
     }
 
-    public UpdateAomMappingRulesRequest withBody(Consumer<AomMappingRequestInfo> bodySetter) {
+    public UpdateAomMappingRulesRequest withBody(Consumer<UpdateAomMappingRequest> bodySetter) {
         if (this.body == null) {
-            this.body = new AomMappingRequestInfo();
+            this.body = new UpdateAomMappingRequest();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class UpdateAomMappingRulesRequest {
      * Get body
      * @return body
      */
-    public AomMappingRequestInfo getBody() {
+    public UpdateAomMappingRequest getBody() {
         return body;
     }
 
-    public void setBody(AomMappingRequestInfo body) {
+    public void setBody(UpdateAomMappingRequest body) {
         this.body = body;
     }
 

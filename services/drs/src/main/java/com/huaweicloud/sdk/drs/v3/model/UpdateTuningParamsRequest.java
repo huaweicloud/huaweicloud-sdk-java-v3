@@ -114,7 +114,7 @@ public class UpdateTuningParamsRequest {
     }
 
     /**
-     * Get jobId
+     * 租户在某一Region下的Job ID，如果是主备任务，使用父任务ID。
      * @return jobId
      */
     public String getJobId() {

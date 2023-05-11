@@ -68,8 +68,6 @@ public class ListPermissionCheckResultRequest {
 
     /**
      * 每页显示的条目数量。
-     * minimum: 1
-     * maximum: 100
      * @return limit
      */
     public Integer getLimit() {

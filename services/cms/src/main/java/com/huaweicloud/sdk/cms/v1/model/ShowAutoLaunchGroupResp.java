@@ -1,0 +1,817 @@
+package com.huaweicloud.sdk.cms.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * 智能购买组信息
+ */
+public class ShowAutoLaunchGroupResp {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    /**
+     * 请求类型 request：一次性。仅在启动时交付实例集群，调度失败后不再重试。 maintain：持续供应。在启动时尝试交付实例集群，并监控实时容量，未达到目标容量则尝试继续创建ECS实例
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum REQUEST for value: "request"
+         */
+        public static final TypeEnum REQUEST = new TypeEnum("request");
+
+        /**
+         * Enum MAINTAIN for value: "maintain"
+         */
+        public static final TypeEnum MAINTAIN = new TypeEnum("maintain");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("request", REQUEST);
+            map.put("maintain", MAINTAIN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_state")
+
+    private String taskState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target_capacity")
+
+    private Integer targetCapacity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "stable_capacity")
+
+    private Integer stableCapacity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "current_capacity")
+
+    private Integer currentCapacity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "current_stable_capacity")
+
+    private Integer currentStableCapacity;
+
+    /**
+     * 目标容量减少时 实例的中断行为 terminate|noTermination terminate：释放 noTermination：不释放 默认值：terminate
+     */
+    public static final class ExcessFulfilledCapacityBehaviorEnum {
+
+        /**
+         * Enum NOTERMINATION for value: "noTermination"
+         */
+        public static final ExcessFulfilledCapacityBehaviorEnum NOTERMINATION =
+            new ExcessFulfilledCapacityBehaviorEnum("noTermination");
+
+        /**
+         * Enum TERMINATE for value: "terminate"
+         */
+        public static final ExcessFulfilledCapacityBehaviorEnum TERMINATE =
+            new ExcessFulfilledCapacityBehaviorEnum("terminate");
+
+        private static final Map<String, ExcessFulfilledCapacityBehaviorEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ExcessFulfilledCapacityBehaviorEnum> createStaticFields() {
+            Map<String, ExcessFulfilledCapacityBehaviorEnum> map = new HashMap<>();
+            map.put("noTermination", NOTERMINATION);
+            map.put("terminate", TERMINATE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ExcessFulfilledCapacityBehaviorEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ExcessFulfilledCapacityBehaviorEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            ExcessFulfilledCapacityBehaviorEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ExcessFulfilledCapacityBehaviorEnum(value);
+            }
+            return result;
+        }
+
+        public static ExcessFulfilledCapacityBehaviorEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            ExcessFulfilledCapacityBehaviorEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ExcessFulfilledCapacityBehaviorEnum) {
+                return this.value.equals(((ExcessFulfilledCapacityBehaviorEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "excess_fulfilled_capacity_behavior")
+
+    private ExcessFulfilledCapacityBehaviorEnum excessFulfilledCapacityBehavior;
+
+    /**
+     * 请求到期 实例的中断行为 terminate|noTermination terminate：释放 noTermination：不释放 默认值：terminate
+     */
+    public static final class InstancesBehaviorWithExpirationEnum {
+
+        /**
+         * Enum TERMINATE for value: "terminate"
+         */
+        public static final InstancesBehaviorWithExpirationEnum TERMINATE =
+            new InstancesBehaviorWithExpirationEnum("terminate");
+
+        /**
+         * Enum NOTERMINATION for value: "noTermination"
+         */
+        public static final InstancesBehaviorWithExpirationEnum NOTERMINATION =
+            new InstancesBehaviorWithExpirationEnum("noTermination");
+
+        private static final Map<String, InstancesBehaviorWithExpirationEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, InstancesBehaviorWithExpirationEnum> createStaticFields() {
+            Map<String, InstancesBehaviorWithExpirationEnum> map = new HashMap<>();
+            map.put("terminate", TERMINATE);
+            map.put("noTermination", NOTERMINATION);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        InstancesBehaviorWithExpirationEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static InstancesBehaviorWithExpirationEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            InstancesBehaviorWithExpirationEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new InstancesBehaviorWithExpirationEnum(value);
+            }
+            return result;
+        }
+
+        public static InstancesBehaviorWithExpirationEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            InstancesBehaviorWithExpirationEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof InstancesBehaviorWithExpirationEnum) {
+                return this.value.equals(((InstancesBehaviorWithExpirationEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instances_behavior_with_expiration")
+
+    private InstancesBehaviorWithExpirationEnum instancesBehaviorWithExpiration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "valid_since")
+
+    private OffsetDateTime validSince;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "valid_until")
+
+    private OffsetDateTime validUntil;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_specs")
+
+    private List<RegionSpec> regionSpecs = null;
+
+    /**
+    * 实例分配策略 lowest_price:最小价格 diversified：AZ均铺 prioritized：优先级 capacity_optimized：容量最优化 默认值：lowest_price
+    */
+    public static final class AllocationStrategyEnum {
+
+        /**
+         * Enum LOWEST_PRICE for value: "lowest_price"
+         */
+        public static final AllocationStrategyEnum LOWEST_PRICE = new AllocationStrategyEnum("lowest_price");
+
+        /**
+         * Enum DIVERSIFIED for value: "diversified"
+         */
+        public static final AllocationStrategyEnum DIVERSIFIED = new AllocationStrategyEnum("diversified");
+
+        /**
+         * Enum PRIORITIZED for value: "prioritized"
+         */
+        public static final AllocationStrategyEnum PRIORITIZED = new AllocationStrategyEnum("prioritized");
+
+        /**
+         * Enum CAPACITY_OPTIMIZED for value: "capacity_optimized"
+         */
+        public static final AllocationStrategyEnum CAPACITY_OPTIMIZED =
+            new AllocationStrategyEnum("capacity_optimized");
+
+        private static final Map<String, AllocationStrategyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AllocationStrategyEnum> createStaticFields() {
+            Map<String, AllocationStrategyEnum> map = new HashMap<>();
+            map.put("lowest_price", LOWEST_PRICE);
+            map.put("diversified", DIVERSIFIED);
+            map.put("prioritized", PRIORITIZED);
+            map.put("capacity_optimized", CAPACITY_OPTIMIZED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AllocationStrategyEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AllocationStrategyEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            AllocationStrategyEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new AllocationStrategyEnum(value);
+            }
+            return result;
+        }
+
+        public static AllocationStrategyEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            AllocationStrategyEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AllocationStrategyEnum) {
+                return this.value.equals(((AllocationStrategyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allocation_strategy")
+
+    private AllocationStrategyEnum allocationStrategy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "spot_price")
+
+    private Double spotPrice;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private OffsetDateTime createdAt;
+
+    public ShowAutoLaunchGroupResp withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * autoLaunchGroup名称(1-64个字符)，只能包含中文、字母、数字、下划线或中划线
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ShowAutoLaunchGroupResp withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 请求类型 request：一次性。仅在启动时交付实例集群，调度失败后不再重试。 maintain：持续供应。在启动时尝试交付实例集群，并监控实时容量，未达到目标容量则尝试继续创建ECS实例
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
+    public ShowAutoLaunchGroupResp withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * AutoLaunchGroup状态,[SUBMITTED|ACTIVE|DELETING|DELETED]
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public ShowAutoLaunchGroupResp withTaskState(String taskState) {
+        this.taskState = taskState;
+        return this;
+    }
+
+    /**
+     * 任务状态,[INIT|HANDLING|FULFILLED|ERROR]
+     * @return taskState
+     */
+    public String getTaskState() {
+        return taskState;
+    }
+
+    public void setTaskState(String taskState) {
+        this.taskState = taskState;
+    }
+
+    public ShowAutoLaunchGroupResp withTargetCapacity(Integer targetCapacity) {
+        this.targetCapacity = targetCapacity;
+        return this;
+    }
+
+    /**
+     * 目标容量 实例数量或者CPU个数 目标容量大于等于stable_capacity， spot实例的容量为目标容量减去stable_capacity
+     * minimum: 0
+     * maximum: 10000
+     * @return targetCapacity
+     */
+    public Integer getTargetCapacity() {
+        return targetCapacity;
+    }
+
+    public void setTargetCapacity(Integer targetCapacity) {
+        this.targetCapacity = targetCapacity;
+    }
+
+    public ShowAutoLaunchGroupResp withStableCapacity(Integer stableCapacity) {
+        this.stableCapacity = stableCapacity;
+        return this;
+    }
+
+    /**
+     * 按需实例目标容量 小于等于target_capacity
+     * minimum: 0
+     * maximum: 10000
+     * @return stableCapacity
+     */
+    public Integer getStableCapacity() {
+        return stableCapacity;
+    }
+
+    public void setStableCapacity(Integer stableCapacity) {
+        this.stableCapacity = stableCapacity;
+    }
+
+    public ShowAutoLaunchGroupResp withCurrentCapacity(Integer currentCapacity) {
+        this.currentCapacity = currentCapacity;
+        return this;
+    }
+
+    /**
+     * 当前已经购买成功的总算力
+     * minimum: 0
+     * maximum: 10000
+     * @return currentCapacity
+     */
+    public Integer getCurrentCapacity() {
+        return currentCapacity;
+    }
+
+    public void setCurrentCapacity(Integer currentCapacity) {
+        this.currentCapacity = currentCapacity;
+    }
+
+    public ShowAutoLaunchGroupResp withCurrentStableCapacity(Integer currentStableCapacity) {
+        this.currentStableCapacity = currentStableCapacity;
+        return this;
+    }
+
+    /**
+     * 当前已经购买成功的按需容量
+     * minimum: 0
+     * maximum: 10000
+     * @return currentStableCapacity
+     */
+    public Integer getCurrentStableCapacity() {
+        return currentStableCapacity;
+    }
+
+    public void setCurrentStableCapacity(Integer currentStableCapacity) {
+        this.currentStableCapacity = currentStableCapacity;
+    }
+
+    public ShowAutoLaunchGroupResp withExcessFulfilledCapacityBehavior(
+        ExcessFulfilledCapacityBehaviorEnum excessFulfilledCapacityBehavior) {
+        this.excessFulfilledCapacityBehavior = excessFulfilledCapacityBehavior;
+        return this;
+    }
+
+    /**
+     * 目标容量减少时 实例的中断行为 terminate|noTermination terminate：释放 noTermination：不释放 默认值：terminate
+     * @return excessFulfilledCapacityBehavior
+     */
+    public ExcessFulfilledCapacityBehaviorEnum getExcessFulfilledCapacityBehavior() {
+        return excessFulfilledCapacityBehavior;
+    }
+
+    public void setExcessFulfilledCapacityBehavior(
+        ExcessFulfilledCapacityBehaviorEnum excessFulfilledCapacityBehavior) {
+        this.excessFulfilledCapacityBehavior = excessFulfilledCapacityBehavior;
+    }
+
+    public ShowAutoLaunchGroupResp withInstancesBehaviorWithExpiration(
+        InstancesBehaviorWithExpirationEnum instancesBehaviorWithExpiration) {
+        this.instancesBehaviorWithExpiration = instancesBehaviorWithExpiration;
+        return this;
+    }
+
+    /**
+     * 请求到期 实例的中断行为 terminate|noTermination terminate：释放 noTermination：不释放 默认值：terminate
+     * @return instancesBehaviorWithExpiration
+     */
+    public InstancesBehaviorWithExpirationEnum getInstancesBehaviorWithExpiration() {
+        return instancesBehaviorWithExpiration;
+    }
+
+    public void setInstancesBehaviorWithExpiration(
+        InstancesBehaviorWithExpirationEnum instancesBehaviorWithExpiration) {
+        this.instancesBehaviorWithExpiration = instancesBehaviorWithExpiration;
+    }
+
+    public ShowAutoLaunchGroupResp withValidSince(OffsetDateTime validSince) {
+        this.validSince = validSince;
+        return this;
+    }
+
+    /**
+     * 请求开始时间 yyyy-MM-dd HH:mm:ss
+     * @return validSince
+     */
+    public OffsetDateTime getValidSince() {
+        return validSince;
+    }
+
+    public void setValidSince(OffsetDateTime validSince) {
+        this.validSince = validSince;
+    }
+
+    public ShowAutoLaunchGroupResp withValidUntil(OffsetDateTime validUntil) {
+        this.validUntil = validUntil;
+        return this;
+    }
+
+    /**
+     * 请求结束时间 yyyy-MM-dd HH:mm:ss
+     * @return validUntil
+     */
+    public OffsetDateTime getValidUntil() {
+        return validUntil;
+    }
+
+    public void setValidUntil(OffsetDateTime validUntil) {
+        this.validUntil = validUntil;
+    }
+
+    public ShowAutoLaunchGroupResp withRegionSpecs(List<RegionSpec> regionSpecs) {
+        this.regionSpecs = regionSpecs;
+        return this;
+    }
+
+    public ShowAutoLaunchGroupResp addRegionSpecsItem(RegionSpec regionSpecsItem) {
+        if (this.regionSpecs == null) {
+            this.regionSpecs = new ArrayList<>();
+        }
+        this.regionSpecs.add(regionSpecsItem);
+        return this;
+    }
+
+    public ShowAutoLaunchGroupResp withRegionSpecs(Consumer<List<RegionSpec>> regionSpecsSetter) {
+        if (this.regionSpecs == null) {
+            this.regionSpecs = new ArrayList<>();
+        }
+        regionSpecsSetter.accept(this.regionSpecs);
+        return this;
+    }
+
+    /**
+     * 智能购买组在各个region的配置
+     * @return regionSpecs
+     */
+    public List<RegionSpec> getRegionSpecs() {
+        return regionSpecs;
+    }
+
+    public void setRegionSpecs(List<RegionSpec> regionSpecs) {
+        this.regionSpecs = regionSpecs;
+    }
+
+    public ShowAutoLaunchGroupResp withAllocationStrategy(AllocationStrategyEnum allocationStrategy) {
+        this.allocationStrategy = allocationStrategy;
+        return this;
+    }
+
+    /**
+     * 实例分配策略 lowest_price:最小价格 diversified：AZ均铺 prioritized：优先级 capacity_optimized：容量最优化 默认值：lowest_price
+     * @return allocationStrategy
+     */
+    public AllocationStrategyEnum getAllocationStrategy() {
+        return allocationStrategy;
+    }
+
+    public void setAllocationStrategy(AllocationStrategyEnum allocationStrategy) {
+        this.allocationStrategy = allocationStrategy;
+    }
+
+    public ShowAutoLaunchGroupResp withSpotPrice(Double spotPrice) {
+        this.spotPrice = spotPrice;
+        return this;
+    }
+
+    /**
+     * spot实例价格 为全局spot实例的价格， 如果overrides中没有提供价格，可以使用该价格
+     * minimum: 0
+     * maximum: 1E+3
+     * @return spotPrice
+     */
+    public Double getSpotPrice() {
+        return spotPrice;
+    }
+
+    public void setSpotPrice(Double spotPrice) {
+        this.spotPrice = spotPrice;
+    }
+
+    public ShowAutoLaunchGroupResp withCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 智能购买组的创建时间
+     * @return createdAt
+     */
+    public OffsetDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ShowAutoLaunchGroupResp showAutoLaunchGroupResp = (ShowAutoLaunchGroupResp) o;
+        return Objects.equals(this.name, showAutoLaunchGroupResp.name)
+            && Objects.equals(this.type, showAutoLaunchGroupResp.type)
+            && Objects.equals(this.status, showAutoLaunchGroupResp.status)
+            && Objects.equals(this.taskState, showAutoLaunchGroupResp.taskState)
+            && Objects.equals(this.targetCapacity, showAutoLaunchGroupResp.targetCapacity)
+            && Objects.equals(this.stableCapacity, showAutoLaunchGroupResp.stableCapacity)
+            && Objects.equals(this.currentCapacity, showAutoLaunchGroupResp.currentCapacity)
+            && Objects.equals(this.currentStableCapacity, showAutoLaunchGroupResp.currentStableCapacity)
+            && Objects.equals(this.excessFulfilledCapacityBehavior,
+                showAutoLaunchGroupResp.excessFulfilledCapacityBehavior)
+            && Objects.equals(this.instancesBehaviorWithExpiration,
+                showAutoLaunchGroupResp.instancesBehaviorWithExpiration)
+            && Objects.equals(this.validSince, showAutoLaunchGroupResp.validSince)
+            && Objects.equals(this.validUntil, showAutoLaunchGroupResp.validUntil)
+            && Objects.equals(this.regionSpecs, showAutoLaunchGroupResp.regionSpecs)
+            && Objects.equals(this.allocationStrategy, showAutoLaunchGroupResp.allocationStrategy)
+            && Objects.equals(this.spotPrice, showAutoLaunchGroupResp.spotPrice)
+            && Objects.equals(this.createdAt, showAutoLaunchGroupResp.createdAt);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name,
+            type,
+            status,
+            taskState,
+            targetCapacity,
+            stableCapacity,
+            currentCapacity,
+            currentStableCapacity,
+            excessFulfilledCapacityBehavior,
+            instancesBehaviorWithExpiration,
+            validSince,
+            validUntil,
+            regionSpecs,
+            allocationStrategy,
+            spotPrice,
+            createdAt);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ShowAutoLaunchGroupResp {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    taskState: ").append(toIndentedString(taskState)).append("\n");
+        sb.append("    targetCapacity: ").append(toIndentedString(targetCapacity)).append("\n");
+        sb.append("    stableCapacity: ").append(toIndentedString(stableCapacity)).append("\n");
+        sb.append("    currentCapacity: ").append(toIndentedString(currentCapacity)).append("\n");
+        sb.append("    currentStableCapacity: ").append(toIndentedString(currentStableCapacity)).append("\n");
+        sb.append("    excessFulfilledCapacityBehavior: ")
+            .append(toIndentedString(excessFulfilledCapacityBehavior))
+            .append("\n");
+        sb.append("    instancesBehaviorWithExpiration: ")
+            .append(toIndentedString(instancesBehaviorWithExpiration))
+            .append("\n");
+        sb.append("    validSince: ").append(toIndentedString(validSince)).append("\n");
+        sb.append("    validUntil: ").append(toIndentedString(validUntil)).append("\n");
+        sb.append("    regionSpecs: ").append(toIndentedString(regionSpecs)).append("\n");
+        sb.append("    allocationStrategy: ").append(toIndentedString(allocationStrategy)).append("\n");
+        sb.append("    spotPrice: ").append(toIndentedString(spotPrice)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

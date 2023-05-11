@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 重装操作系统body。
@@ -29,6 +30,11 @@ public class ReinstallServerWithoutCloudInitOption {
     @JsonProperty(value = "mode")
 
     private String mode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metadata")
+
+    private ReinstallSeverMetadataWithoutCloudInitOption metadata;
 
     public ReinstallServerWithoutCloudInitOption withAdminpass(String adminpass) {
         this.adminpass = adminpass;
@@ -98,6 +104,33 @@ public class ReinstallServerWithoutCloudInitOption {
         this.mode = mode;
     }
 
+    public ReinstallServerWithoutCloudInitOption withMetadata(ReinstallSeverMetadataWithoutCloudInitOption metadata) {
+        this.metadata = metadata;
+        return this;
+    }
+
+    public ReinstallServerWithoutCloudInitOption withMetadata(
+        Consumer<ReinstallSeverMetadataWithoutCloudInitOption> metadataSetter) {
+        if (this.metadata == null) {
+            this.metadata = new ReinstallSeverMetadataWithoutCloudInitOption();
+            metadataSetter.accept(this.metadata);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get metadata
+     * @return metadata
+     */
+    public ReinstallSeverMetadataWithoutCloudInitOption getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(ReinstallSeverMetadataWithoutCloudInitOption metadata) {
+        this.metadata = metadata;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -111,12 +144,13 @@ public class ReinstallServerWithoutCloudInitOption {
         return Objects.equals(this.adminpass, reinstallServerWithoutCloudInitOption.adminpass)
             && Objects.equals(this.keyname, reinstallServerWithoutCloudInitOption.keyname)
             && Objects.equals(this.userid, reinstallServerWithoutCloudInitOption.userid)
-            && Objects.equals(this.mode, reinstallServerWithoutCloudInitOption.mode);
+            && Objects.equals(this.mode, reinstallServerWithoutCloudInitOption.mode)
+            && Objects.equals(this.metadata, reinstallServerWithoutCloudInitOption.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(adminpass, keyname, userid, mode);
+        return Objects.hash(adminpass, keyname, userid, mode, metadata);
     }
 
     @Override
@@ -127,6 +161,7 @@ public class ReinstallServerWithoutCloudInitOption {
         sb.append("    keyname: ").append(toIndentedString(keyname)).append("\n");
         sb.append("    userid: ").append(toIndentedString(userid)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("}");
         return sb.toString();
     }

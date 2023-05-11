@@ -1115,6 +1115,16 @@ public class QueryJobResp {
 
     private OriginalJobDirectionEnum originalJobDirection;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_transformation")
+
+    private GetDataTransformationResp dataTransformation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<Tag> tags = null;
+
     public QueryJobResp withId(String id) {
         this.id = id;
         return this;
@@ -2161,6 +2171,65 @@ public class QueryJobResp {
         this.originalJobDirection = originalJobDirection;
     }
 
+    public QueryJobResp withDataTransformation(GetDataTransformationResp dataTransformation) {
+        this.dataTransformation = dataTransformation;
+        return this;
+    }
+
+    public QueryJobResp withDataTransformation(Consumer<GetDataTransformationResp> dataTransformationSetter) {
+        if (this.dataTransformation == null) {
+            this.dataTransformation = new GetDataTransformationResp();
+            dataTransformationSetter.accept(this.dataTransformation);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get dataTransformation
+     * @return dataTransformation
+     */
+    public GetDataTransformationResp getDataTransformation() {
+        return dataTransformation;
+    }
+
+    public void setDataTransformation(GetDataTransformationResp dataTransformation) {
+        this.dataTransformation = dataTransformation;
+    }
+
+    public QueryJobResp withTags(List<Tag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public QueryJobResp addTagsItem(Tag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public QueryJobResp withTags(Consumer<List<Tag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * DRS任务标签
+     * @return tags
+     */
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -2219,7 +2288,9 @@ public class QueryJobResp {
             && Objects.equals(this.nodeRole, queryJobResp.nodeRole)
             && Objects.equals(this.periodOrder, queryJobResp.periodOrder)
             && Objects.equals(this.objectInfos, queryJobResp.objectInfos)
-            && Objects.equals(this.originalJobDirection, queryJobResp.originalJobDirection);
+            && Objects.equals(this.originalJobDirection, queryJobResp.originalJobDirection)
+            && Objects.equals(this.dataTransformation, queryJobResp.dataTransformation)
+            && Objects.equals(this.tags, queryJobResp.tags);
     }
 
     @Override
@@ -2278,7 +2349,9 @@ public class QueryJobResp {
             nodeRole,
             periodOrder,
             objectInfos,
-            originalJobDirection);
+            originalJobDirection,
+            dataTransformation,
+            tags);
     }
 
     @Override
@@ -2340,6 +2413,8 @@ public class QueryJobResp {
         sb.append("    periodOrder: ").append(toIndentedString(periodOrder)).append("\n");
         sb.append("    objectInfos: ").append(toIndentedString(objectInfos)).append("\n");
         sb.append("    originalJobDirection: ").append(toIndentedString(originalJobDirection)).append("\n");
+        sb.append("    dataTransformation: ").append(toIndentedString(dataTransformation)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

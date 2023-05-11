@@ -32,7 +32,7 @@ public class IncidentInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incidentTypeName")
 
-    private Object incidentTypeName;
+    private String incidentTypeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customerId")
@@ -132,7 +132,7 @@ public class IncidentInfo {
         this.businessTypeName = businessTypeName;
     }
 
-    public IncidentInfo withIncidentTypeName(Object incidentTypeName) {
+    public IncidentInfo withIncidentTypeName(String incidentTypeName) {
         this.incidentTypeName = incidentTypeName;
         return this;
     }
@@ -141,11 +141,11 @@ public class IncidentInfo {
      * 工单类型名称
      * @return incidentTypeName
      */
-    public Object getIncidentTypeName() {
+    public String getIncidentTypeName() {
         return incidentTypeName;
     }
 
-    public void setIncidentTypeName(Object incidentTypeName) {
+    public void setIncidentTypeName(String incidentTypeName) {
         this.incidentTypeName = incidentTypeName;
     }
 

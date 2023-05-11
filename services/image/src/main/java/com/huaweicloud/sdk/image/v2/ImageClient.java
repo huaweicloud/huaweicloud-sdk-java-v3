@@ -80,6 +80,36 @@ public class ImageClient {
     }
 
     /**
+     * 创建视频标签任务
+     *
+     * 创建视频标签任务，输入一段视频，通过AI模型分析视频中的信息，输出视频所包含的媒资标签、名人标签、logo标签、语音标签、OCR标签等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoTaggingMediaTaskRequest 请求对象
+     * @return CreateVideoTaggingMediaTaskResponse
+     */
+    public CreateVideoTaggingMediaTaskResponse createVideoTaggingMediaTask(CreateVideoTaggingMediaTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, ImageMeta.createVideoTaggingMediaTask);
+    }
+
+    /**
+     * 创建视频标签任务
+     *
+     * 创建视频标签任务，输入一段视频，通过AI模型分析视频中的信息，输出视频所包含的媒资标签、名人标签、logo标签、语音标签、OCR标签等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoTaggingMediaTaskRequest 请求对象
+     * @return SyncInvoker<CreateVideoTaggingMediaTaskRequest, CreateVideoTaggingMediaTaskResponse>
+     */
+    public SyncInvoker<CreateVideoTaggingMediaTaskRequest, CreateVideoTaggingMediaTaskResponse> createVideoTaggingMediaTaskInvoker(
+        CreateVideoTaggingMediaTaskRequest request) {
+        return new SyncInvoker<CreateVideoTaggingMediaTaskRequest, CreateVideoTaggingMediaTaskResponse>(request,
+            ImageMeta.createVideoTaggingMediaTask, hcClient);
+    }
+
+    /**
      * 名人识别
      *
      * 分析并识别图片中包含的政治人物、明星及网红人物，返回人物信息及人脸坐标。
@@ -378,6 +408,36 @@ public class ImageClient {
         ShowVideoObjectMaskingTaskRequest request) {
         return new SyncInvoker<ShowVideoObjectMaskingTaskRequest, ShowVideoObjectMaskingTaskResponse>(request,
             ImageMeta.showVideoObjectMaskingTask, hcClient);
+    }
+
+    /**
+     * 查询视频标签任务
+     *
+     * 查询视频标签任务详情，返回参数配置以及任务状态信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoTaggingMediaTaskRequest 请求对象
+     * @return ShowVideoTaggingMediaTaskResponse
+     */
+    public ShowVideoTaggingMediaTaskResponse showVideoTaggingMediaTask(ShowVideoTaggingMediaTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, ImageMeta.showVideoTaggingMediaTask);
+    }
+
+    /**
+     * 查询视频标签任务
+     *
+     * 查询视频标签任务详情，返回参数配置以及任务状态信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoTaggingMediaTaskRequest 请求对象
+     * @return SyncInvoker<ShowVideoTaggingMediaTaskRequest, ShowVideoTaggingMediaTaskResponse>
+     */
+    public SyncInvoker<ShowVideoTaggingMediaTaskRequest, ShowVideoTaggingMediaTaskResponse> showVideoTaggingMediaTaskInvoker(
+        ShowVideoTaggingMediaTaskRequest request) {
+        return new SyncInvoker<ShowVideoTaggingMediaTaskRequest, ShowVideoTaggingMediaTaskResponse>(request,
+            ImageMeta.showVideoTaggingMediaTask, hcClient);
     }
 
 }

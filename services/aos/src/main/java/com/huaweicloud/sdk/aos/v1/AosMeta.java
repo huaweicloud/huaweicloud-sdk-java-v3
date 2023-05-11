@@ -380,6 +380,48 @@ public class AosMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ContinueDeployStackRequest, ContinueDeployStackResponse> continueDeployStack = genForcontinueDeployStack();
+
+    private static HttpRequestDef<ContinueDeployStackRequest, ContinueDeployStackResponse> genForcontinueDeployStack() {
+        // basic
+        HttpRequestDef.Builder<ContinueDeployStackRequest, ContinueDeployStackResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ContinueDeployStackRequest.class, ContinueDeployStackResponse.class)
+                .withName("ContinueDeployStack")
+                .withUri("/v1/{project_id}/stacks/{stack_name}/continuations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("stack_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ContinueDeployStackRequest::getStackName, (req, v) -> {
+                req.setStackName(v);
+            })
+        );
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ContinueDeployStackRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            })
+        );
+        builder.<ContinueDeployStackRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ContinueDeployStackRequestBody.class),
+            f -> f.withMarshaller(ContinueDeployStackRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ContinueRollbackStackRequest, ContinueRollbackStackResponse> continueRollbackStack = genForcontinueRollbackStack();
 
     private static HttpRequestDef<ContinueRollbackStackRequest, ContinueRollbackStackResponse> genForcontinueRollbackStack() {

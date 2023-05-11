@@ -107,6 +107,66 @@ public class EiHealthClient {
     }
 
     /**
+     * 新建自定义属性任务接口
+     *
+     * 输入自定义属性的任务数据，创建自定义属性建模任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCustomPropsTaskRequest 请求对象
+     * @return CreateCustomPropsTaskResponse
+     */
+    public CreateCustomPropsTaskResponse createCustomPropsTask(CreateCustomPropsTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createCustomPropsTask);
+    }
+
+    /**
+     * 新建自定义属性任务接口
+     *
+     * 输入自定义属性的任务数据，创建自定义属性建模任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCustomPropsTaskRequest 请求对象
+     * @return SyncInvoker<CreateCustomPropsTaskRequest, CreateCustomPropsTaskResponse>
+     */
+    public SyncInvoker<CreateCustomPropsTaskRequest, CreateCustomPropsTaskResponse> createCustomPropsTaskInvoker(
+        CreateCustomPropsTaskRequest request) {
+        return new SyncInvoker<CreateCustomPropsTaskRequest, CreateCustomPropsTaskResponse>(request,
+            EiHealthMeta.createCustomPropsTask, hcClient);
+    }
+
+    /**
+     * 查询自定义属性任务
+     *
+     * 通过自定义属性任务ID查询任务状态及结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCustomPropsTaskResultRequest 请求对象
+     * @return ShowCustomPropsTaskResultResponse
+     */
+    public ShowCustomPropsTaskResultResponse showCustomPropsTaskResult(ShowCustomPropsTaskResultRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showCustomPropsTaskResult);
+    }
+
+    /**
+     * 查询自定义属性任务
+     *
+     * 通过自定义属性任务ID查询任务状态及结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCustomPropsTaskResultRequest 请求对象
+     * @return SyncInvoker<ShowCustomPropsTaskResultRequest, ShowCustomPropsTaskResultResponse>
+     */
+    public SyncInvoker<ShowCustomPropsTaskResultRequest, ShowCustomPropsTaskResultResponse> showCustomPropsTaskResultInvoker(
+        ShowCustomPropsTaskResultRequest request) {
+        return new SyncInvoker<ShowCustomPropsTaskResultRequest, ShowCustomPropsTaskResultResponse>(request,
+            EiHealthMeta.showCustomPropsTaskResult, hcClient);
+    }
+
+    /**
      * 新建分子生成任务接口
      *
      * 输入分子属性约束，创建分子生成任务。
@@ -7434,6 +7494,66 @@ public class EiHealthClient {
         ShowSearchTaskResultRequest request) {
         return new SyncInvoker<ShowSearchTaskResultRequest, ShowSearchTaskResultResponse>(request,
             EiHealthMeta.showSearchTaskResult, hcClient);
+    }
+
+    /**
+     * 新建分子合成路径规划任务接口
+     *
+     * 输入要进行合成路径规划的分子以及输出可行方案的个数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSynthesisTaskRequest 请求对象
+     * @return CreateSynthesisTaskResponse
+     */
+    public CreateSynthesisTaskResponse createSynthesisTask(CreateSynthesisTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createSynthesisTask);
+    }
+
+    /**
+     * 新建分子合成路径规划任务接口
+     *
+     * 输入要进行合成路径规划的分子以及输出可行方案的个数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSynthesisTaskRequest 请求对象
+     * @return SyncInvoker<CreateSynthesisTaskRequest, CreateSynthesisTaskResponse>
+     */
+    public SyncInvoker<CreateSynthesisTaskRequest, CreateSynthesisTaskResponse> createSynthesisTaskInvoker(
+        CreateSynthesisTaskRequest request) {
+        return new SyncInvoker<CreateSynthesisTaskRequest, CreateSynthesisTaskResponse>(request,
+            EiHealthMeta.createSynthesisTask, hcClient);
+    }
+
+    /**
+     * 查询分子合成路径规划任务
+     *
+     * 通过分子合成路径规划任务ID查询分子合成路径规划任务状态及结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSynthesisTaskResultRequest 请求对象
+     * @return ShowSynthesisTaskResultResponse
+     */
+    public ShowSynthesisTaskResultResponse showSynthesisTaskResult(ShowSynthesisTaskResultRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showSynthesisTaskResult);
+    }
+
+    /**
+     * 查询分子合成路径规划任务
+     *
+     * 通过分子合成路径规划任务ID查询分子合成路径规划任务状态及结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSynthesisTaskResultRequest 请求对象
+     * @return SyncInvoker<ShowSynthesisTaskResultRequest, ShowSynthesisTaskResultResponse>
+     */
+    public SyncInvoker<ShowSynthesisTaskResultRequest, ShowSynthesisTaskResultResponse> showSynthesisTaskResultInvoker(
+        ShowSynthesisTaskResultRequest request) {
+        return new SyncInvoker<ShowSynthesisTaskResultRequest, ShowSynthesisTaskResultResponse>(request,
+            EiHealthMeta.showSynthesisTaskResult, hcClient);
     }
 
 }

@@ -173,6 +173,37 @@ public class RmsClient {
     }
 
     /**
+     * 查询聚合合规规则列表
+     *
+     * 查询合规和不合规规则的列表，其中包含合规和不合规规则的资源数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAggregateComplianceByPolicyAssignmentRequest 请求对象
+     * @return ListAggregateComplianceByPolicyAssignmentResponse
+     */
+    public ListAggregateComplianceByPolicyAssignmentResponse listAggregateComplianceByPolicyAssignment(
+        ListAggregateComplianceByPolicyAssignmentRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.listAggregateComplianceByPolicyAssignment);
+    }
+
+    /**
+     * 查询聚合合规规则列表
+     *
+     * 查询合规和不合规规则的列表，其中包含合规和不合规规则的资源数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAggregateComplianceByPolicyAssignmentRequest 请求对象
+     * @return SyncInvoker<ListAggregateComplianceByPolicyAssignmentRequest, ListAggregateComplianceByPolicyAssignmentResponse>
+     */
+    public SyncInvoker<ListAggregateComplianceByPolicyAssignmentRequest, ListAggregateComplianceByPolicyAssignmentResponse> listAggregateComplianceByPolicyAssignmentInvoker(
+        ListAggregateComplianceByPolicyAssignmentRequest request) {
+        return new SyncInvoker<ListAggregateComplianceByPolicyAssignmentRequest, ListAggregateComplianceByPolicyAssignmentResponse>(
+            request, RmsMeta.listAggregateComplianceByPolicyAssignment, hcClient);
+    }
+
+    /**
      * 查询聚合器中资源的列表
      *
      * 查询资源聚合器中特定资源的列表。
@@ -327,6 +358,37 @@ public class RmsClient {
     }
 
     /**
+     * 查询指定聚合合规规则的评估结果详情
+     *
+     * 返回指定聚合合规规则的评估结果详情。包含评估了哪些资源，以及每个资源是否符合规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAggregateComplianceDetailsByPolicyAssignmentRequest 请求对象
+     * @return ShowAggregateComplianceDetailsByPolicyAssignmentResponse
+     */
+    public ShowAggregateComplianceDetailsByPolicyAssignmentResponse showAggregateComplianceDetailsByPolicyAssignment(
+        ShowAggregateComplianceDetailsByPolicyAssignmentRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.showAggregateComplianceDetailsByPolicyAssignment);
+    }
+
+    /**
+     * 查询指定聚合合规规则的评估结果详情
+     *
+     * 返回指定聚合合规规则的评估结果详情。包含评估了哪些资源，以及每个资源是否符合规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAggregateComplianceDetailsByPolicyAssignmentRequest 请求对象
+     * @return SyncInvoker<ShowAggregateComplianceDetailsByPolicyAssignmentRequest, ShowAggregateComplianceDetailsByPolicyAssignmentResponse>
+     */
+    public SyncInvoker<ShowAggregateComplianceDetailsByPolicyAssignmentRequest, ShowAggregateComplianceDetailsByPolicyAssignmentResponse> showAggregateComplianceDetailsByPolicyAssignmentInvoker(
+        ShowAggregateComplianceDetailsByPolicyAssignmentRequest request) {
+        return new SyncInvoker<ShowAggregateComplianceDetailsByPolicyAssignmentRequest, ShowAggregateComplianceDetailsByPolicyAssignmentResponse>(
+            request, RmsMeta.showAggregateComplianceDetailsByPolicyAssignment, hcClient);
+    }
+
+    /**
      * 查询聚合器中帐号资源的计数
      *
      * 查询聚合器中帐号资源的计数，支持通过过滤器和GroupByKey来统计资源数量。
@@ -355,6 +417,68 @@ public class RmsClient {
         ShowAggregateDiscoveredResourceCountsRequest request) {
         return new SyncInvoker<ShowAggregateDiscoveredResourceCountsRequest, ShowAggregateDiscoveredResourceCountsResponse>(
             request, RmsMeta.showAggregateDiscoveredResourceCounts, hcClient);
+    }
+
+    /**
+     * 查询指定聚合合规规则详情
+     *
+     * 返回指定聚合合规规则详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAggregatePolicyAssignmentDetailRequest 请求对象
+     * @return ShowAggregatePolicyAssignmentDetailResponse
+     */
+    public ShowAggregatePolicyAssignmentDetailResponse showAggregatePolicyAssignmentDetail(
+        ShowAggregatePolicyAssignmentDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.showAggregatePolicyAssignmentDetail);
+    }
+
+    /**
+     * 查询指定聚合合规规则详情
+     *
+     * 返回指定聚合合规规则详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAggregatePolicyAssignmentDetailRequest 请求对象
+     * @return SyncInvoker<ShowAggregatePolicyAssignmentDetailRequest, ShowAggregatePolicyAssignmentDetailResponse>
+     */
+    public SyncInvoker<ShowAggregatePolicyAssignmentDetailRequest, ShowAggregatePolicyAssignmentDetailResponse> showAggregatePolicyAssignmentDetailInvoker(
+        ShowAggregatePolicyAssignmentDetailRequest request) {
+        return new SyncInvoker<ShowAggregatePolicyAssignmentDetailRequest, ShowAggregatePolicyAssignmentDetailResponse>(
+            request, RmsMeta.showAggregatePolicyAssignmentDetail, hcClient);
+    }
+
+    /**
+     * 查询聚合器中一个或多个帐户的合规概况
+     *
+     * 查询聚合器中一个或多个帐户的合规和不合规规则数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAggregatePolicyStateComplianceSummaryRequest 请求对象
+     * @return ShowAggregatePolicyStateComplianceSummaryResponse
+     */
+    public ShowAggregatePolicyStateComplianceSummaryResponse showAggregatePolicyStateComplianceSummary(
+        ShowAggregatePolicyStateComplianceSummaryRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.showAggregatePolicyStateComplianceSummary);
+    }
+
+    /**
+     * 查询聚合器中一个或多个帐户的合规概况
+     *
+     * 查询聚合器中一个或多个帐户的合规和不合规规则数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAggregatePolicyStateComplianceSummaryRequest 请求对象
+     * @return SyncInvoker<ShowAggregatePolicyStateComplianceSummaryRequest, ShowAggregatePolicyStateComplianceSummaryResponse>
+     */
+    public SyncInvoker<ShowAggregatePolicyStateComplianceSummaryRequest, ShowAggregatePolicyStateComplianceSummaryResponse> showAggregatePolicyStateComplianceSummaryInvoker(
+        ShowAggregatePolicyStateComplianceSummaryRequest request) {
+        return new SyncInvoker<ShowAggregatePolicyStateComplianceSummaryRequest, ShowAggregatePolicyStateComplianceSummaryResponse>(
+            request, RmsMeta.showAggregatePolicyStateComplianceSummary, hcClient);
     }
 
     /**

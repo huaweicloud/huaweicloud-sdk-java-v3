@@ -60,6 +60,11 @@ public class PolicyoODCreate {
 
     private Integer yearBackups;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "full_backup_interval")
+
+    private Integer fullBackupInterval;
+
     public PolicyoODCreate withDayBackups(Integer dayBackups) {
         this.dayBackups = dayBackups;
         return this;
@@ -240,6 +245,25 @@ public class PolicyoODCreate {
         this.yearBackups = yearBackups;
     }
 
+    public PolicyoODCreate withFullBackupInterval(Integer fullBackupInterval) {
+        this.fullBackupInterval = fullBackupInterval;
+        return this;
+    }
+
+    /**
+     * 每间隔多少次执行一次全量备份，当取值为 -1 时，不执行全量备份。  最小值：-1  最大值：100
+     * minimum: -1
+     * maximum: 100
+     * @return fullBackupInterval
+     */
+    public Integer getFullBackupInterval() {
+        return fullBackupInterval;
+    }
+
+    public void setFullBackupInterval(Integer fullBackupInterval) {
+        this.fullBackupInterval = fullBackupInterval;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -258,7 +282,8 @@ public class PolicyoODCreate {
             && Objects.equals(this.retentionDurationDays, policyoODCreate.retentionDurationDays)
             && Objects.equals(this.timezone, policyoODCreate.timezone)
             && Objects.equals(this.weekBackups, policyoODCreate.weekBackups)
-            && Objects.equals(this.yearBackups, policyoODCreate.yearBackups);
+            && Objects.equals(this.yearBackups, policyoODCreate.yearBackups)
+            && Objects.equals(this.fullBackupInterval, policyoODCreate.fullBackupInterval);
     }
 
     @Override
@@ -272,7 +297,8 @@ public class PolicyoODCreate {
             retentionDurationDays,
             timezone,
             weekBackups,
-            yearBackups);
+            yearBackups,
+            fullBackupInterval);
     }
 
     @Override
@@ -289,6 +315,7 @@ public class PolicyoODCreate {
         sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
         sb.append("    weekBackups: ").append(toIndentedString(weekBackups)).append("\n");
         sb.append("    yearBackups: ").append(toIndentedString(yearBackups)).append("\n");
+        sb.append("    fullBackupInterval: ").append(toIndentedString(fullBackupInterval)).append("\n");
         sb.append("}");
         return sb.toString();
     }

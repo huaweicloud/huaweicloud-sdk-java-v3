@@ -1155,6 +1155,38 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<NovaAttachInterfaceRequest, NovaAttachInterfaceResponse> novaAttachInterface =
+        genFornovaAttachInterface();
+
+    private static HttpRequestDef<NovaAttachInterfaceRequest, NovaAttachInterfaceResponse> genFornovaAttachInterface() {
+        // basic
+        HttpRequestDef.Builder<NovaAttachInterfaceRequest, NovaAttachInterfaceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, NovaAttachInterfaceRequest.class, NovaAttachInterfaceResponse.class)
+                .withName("NovaAttachInterface")
+                .withUri("/v2.1/{project_id}/servers/{server_id}/os-interface")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NovaAttachInterfaceRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            }));
+        builder.<NovaAttachInterfaceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NovaAttachInterfaceRequestBody.class),
+            f -> f.withMarshaller(NovaAttachInterfaceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<NovaCreateKeypairRequest, NovaCreateKeypairResponse> novaCreateKeypair =
         genFornovaCreateKeypair();
 

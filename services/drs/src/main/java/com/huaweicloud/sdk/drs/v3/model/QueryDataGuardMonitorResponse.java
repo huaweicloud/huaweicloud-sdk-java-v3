@@ -105,6 +105,11 @@ public class QueryDataGuardMonitorResponse {
 
     private String volumeUsedInGB;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "migration_bytes_per_second")
+
+    private Long migrationBytesPerSecond;
+
     public QueryDataGuardMonitorResponse withBandwidth(String bandwidth) {
         this.bandwidth = bandwidth;
         return this;
@@ -428,6 +433,23 @@ public class QueryDataGuardMonitorResponse {
         this.volumeUsedInGB = volumeUsedInGB;
     }
 
+    public QueryDataGuardMonitorResponse withMigrationBytesPerSecond(Long migrationBytesPerSecond) {
+        this.migrationBytesPerSecond = migrationBytesPerSecond;
+        return this;
+    }
+
+    /**
+     * 每秒迁移字节大小。
+     * @return migrationBytesPerSecond
+     */
+    public Long getMigrationBytesPerSecond() {
+        return migrationBytesPerSecond;
+    }
+
+    public void setMigrationBytesPerSecond(Long migrationBytesPerSecond) {
+        this.migrationBytesPerSecond = migrationBytesPerSecond;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -455,7 +477,8 @@ public class QueryDataGuardMonitorResponse {
             && Objects.equals(this.srcRps, queryDataGuardMonitorResponse.srcRps)
             && Objects.equals(this.transInMB, queryDataGuardMonitorResponse.transInMB)
             && Objects.equals(this.transLines, queryDataGuardMonitorResponse.transLines)
-            && Objects.equals(this.volumeUsedInGB, queryDataGuardMonitorResponse.volumeUsedInGB);
+            && Objects.equals(this.volumeUsedInGB, queryDataGuardMonitorResponse.volumeUsedInGB)
+            && Objects.equals(this.migrationBytesPerSecond, queryDataGuardMonitorResponse.migrationBytesPerSecond);
     }
 
     @Override
@@ -478,7 +501,8 @@ public class QueryDataGuardMonitorResponse {
             srcRps,
             transInMB,
             transLines,
-            volumeUsedInGB);
+            volumeUsedInGB,
+            migrationBytesPerSecond);
     }
 
     @Override
@@ -504,6 +528,7 @@ public class QueryDataGuardMonitorResponse {
         sb.append("    transInMB: ").append(toIndentedString(transInMB)).append("\n");
         sb.append("    transLines: ").append(toIndentedString(transLines)).append("\n");
         sb.append("    volumeUsedInGB: ").append(toIndentedString(volumeUsedInGB)).append("\n");
+        sb.append("    migrationBytesPerSecond: ").append(toIndentedString(migrationBytesPerSecond)).append("\n");
         sb.append("}");
         return sb.toString();
     }

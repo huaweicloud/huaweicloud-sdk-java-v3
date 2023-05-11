@@ -12,9 +12,31 @@ import java.util.function.Consumer;
 public class ExportJobListRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workspace")
+
+    private String workspace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private ExportJobsReq body;
+
+    public ExportJobListRequest withWorkspace(String workspace) {
+        this.workspace = workspace;
+        return this;
+    }
+
+    /**
+     * 工作空间id
+     * @return workspace
+     */
+    public String getWorkspace() {
+        return workspace;
+    }
+
+    public void setWorkspace(String workspace) {
+        this.workspace = workspace;
+    }
 
     public ExportJobListRequest withBody(ExportJobsReq body) {
         this.body = body;
@@ -51,18 +73,20 @@ public class ExportJobListRequest {
             return false;
         }
         ExportJobListRequest exportJobListRequest = (ExportJobListRequest) o;
-        return Objects.equals(this.body, exportJobListRequest.body);
+        return Objects.equals(this.workspace, exportJobListRequest.workspace)
+            && Objects.equals(this.body, exportJobListRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(workspace, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExportJobListRequest {\n");
+        sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

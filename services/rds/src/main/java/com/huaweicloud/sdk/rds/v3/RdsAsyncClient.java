@@ -3551,6 +3551,68 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 删除数据库
+     *
+     * 删除数据库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePostgresqlDatabaseRequest 请求对象
+     * @return CompletableFuture<DeletePostgresqlDatabaseResponse>
+     */
+    public CompletableFuture<DeletePostgresqlDatabaseResponse> deletePostgresqlDatabaseAsync(
+        DeletePostgresqlDatabaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.deletePostgresqlDatabase);
+    }
+
+    /**
+     * 删除数据库
+     *
+     * 删除数据库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePostgresqlDatabaseRequest 请求对象
+     * @return AsyncInvoker<DeletePostgresqlDatabaseRequest, DeletePostgresqlDatabaseResponse>
+     */
+    public AsyncInvoker<DeletePostgresqlDatabaseRequest, DeletePostgresqlDatabaseResponse> deletePostgresqlDatabaseAsyncInvoker(
+        DeletePostgresqlDatabaseRequest request) {
+        return new AsyncInvoker<DeletePostgresqlDatabaseRequest, DeletePostgresqlDatabaseResponse>(request,
+            RdsMeta.deletePostgresqlDatabase, hcClient);
+    }
+
+    /**
+     * 删除数据库用户
+     *
+     * 删除数据库用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePostgresqlDbUserRequest 请求对象
+     * @return CompletableFuture<DeletePostgresqlDbUserResponse>
+     */
+    public CompletableFuture<DeletePostgresqlDbUserResponse> deletePostgresqlDbUserAsync(
+        DeletePostgresqlDbUserRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.deletePostgresqlDbUser);
+    }
+
+    /**
+     * 删除数据库用户
+     *
+     * 删除数据库用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePostgresqlDbUserRequest 请求对象
+     * @return AsyncInvoker<DeletePostgresqlDbUserRequest, DeletePostgresqlDbUserResponse>
+     */
+    public AsyncInvoker<DeletePostgresqlDbUserRequest, DeletePostgresqlDbUserResponse> deletePostgresqlDbUserAsyncInvoker(
+        DeletePostgresqlDbUserRequest request) {
+        return new AsyncInvoker<DeletePostgresqlDbUserRequest, DeletePostgresqlDbUserResponse>(request,
+            RdsMeta.deletePostgresqlDbUser, hcClient);
+    }
+
+    /**
      * 删除插件
      *
      * 在指定数据库上删除插件。
@@ -3988,6 +4050,68 @@ public class RdsAsyncClient {
         UpdateDbUserPrivilegeRequest request) {
         return new AsyncInvoker<UpdateDbUserPrivilegeRequest, UpdateDbUserPrivilegeResponse>(request,
             RdsMeta.updateDbUserPrivilege, hcClient);
+    }
+
+    /**
+     * 修改指定实例的数据库备注
+     *
+     * 修改指定实例中的数据库备注。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePostgresqlDatabaseRequest 请求对象
+     * @return CompletableFuture<UpdatePostgresqlDatabaseResponse>
+     */
+    public CompletableFuture<UpdatePostgresqlDatabaseResponse> updatePostgresqlDatabaseAsync(
+        UpdatePostgresqlDatabaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updatePostgresqlDatabase);
+    }
+
+    /**
+     * 修改指定实例的数据库备注
+     *
+     * 修改指定实例中的数据库备注。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePostgresqlDatabaseRequest 请求对象
+     * @return AsyncInvoker<UpdatePostgresqlDatabaseRequest, UpdatePostgresqlDatabaseResponse>
+     */
+    public AsyncInvoker<UpdatePostgresqlDatabaseRequest, UpdatePostgresqlDatabaseResponse> updatePostgresqlDatabaseAsyncInvoker(
+        UpdatePostgresqlDatabaseRequest request) {
+        return new AsyncInvoker<UpdatePostgresqlDatabaseRequest, UpdatePostgresqlDatabaseResponse>(request,
+            RdsMeta.updatePostgresqlDatabase, hcClient);
+    }
+
+    /**
+     * 修改数据库用户名备注
+     *
+     * 修改数据库用户名备注
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePostgresqlDbUserCommentRequest 请求对象
+     * @return CompletableFuture<UpdatePostgresqlDbUserCommentResponse>
+     */
+    public CompletableFuture<UpdatePostgresqlDbUserCommentResponse> updatePostgresqlDbUserCommentAsync(
+        UpdatePostgresqlDbUserCommentRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updatePostgresqlDbUserComment);
+    }
+
+    /**
+     * 修改数据库用户名备注
+     *
+     * 修改数据库用户名备注
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePostgresqlDbUserCommentRequest 请求对象
+     * @return AsyncInvoker<UpdatePostgresqlDbUserCommentRequest, UpdatePostgresqlDbUserCommentResponse>
+     */
+    public AsyncInvoker<UpdatePostgresqlDbUserCommentRequest, UpdatePostgresqlDbUserCommentResponse> updatePostgresqlDbUserCommentAsyncInvoker(
+        UpdatePostgresqlDbUserCommentRequest request) {
+        return new AsyncInvoker<UpdatePostgresqlDbUserCommentRequest, UpdatePostgresqlDbUserCommentResponse>(request,
+            RdsMeta.updatePostgresqlDbUserComment, hcClient);
     }
 
     /**

@@ -11,9 +11,31 @@ import java.util.Objects;
 public class ShowJobRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workspace")
+
+    private String workspace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_name")
 
     private String jobName;
+
+    public ShowJobRequest withWorkspace(String workspace) {
+        this.workspace = workspace;
+        return this;
+    }
+
+    /**
+     * 工作空间id
+     * @return workspace
+     */
+    public String getWorkspace() {
+        return workspace;
+    }
+
+    public void setWorkspace(String workspace) {
+        this.workspace = workspace;
+    }
 
     public ShowJobRequest withJobName(String jobName) {
         this.jobName = jobName;
@@ -41,18 +63,20 @@ public class ShowJobRequest {
             return false;
         }
         ShowJobRequest showJobRequest = (ShowJobRequest) o;
-        return Objects.equals(this.jobName, showJobRequest.jobName);
+        return Objects.equals(this.workspace, showJobRequest.workspace)
+            && Objects.equals(this.jobName, showJobRequest.jobName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobName);
+        return Objects.hash(workspace, jobName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowJobRequest {\n");
+        sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
         sb.append("}");
         return sb.toString();

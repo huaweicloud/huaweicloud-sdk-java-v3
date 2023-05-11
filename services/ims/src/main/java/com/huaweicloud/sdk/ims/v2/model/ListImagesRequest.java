@@ -35,6 +35,11 @@ public class ListImagesRequest {
          */
         public static final ImagetypeEnum SHARED = new ImagetypeEnum("shared");
 
+        /**
+         * Enum MARKET for value: "market"
+         */
+        public static final ImagetypeEnum MARKET = new ImagetypeEnum("market");
+
         private static final Map<String, ImagetypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ImagetypeEnum> createStaticFields() {
@@ -42,6 +47,7 @@ public class ListImagesRequest {
             map.put("gold", GOLD);
             map.put("private", PRIVATE);
             map.put("shared", SHARED);
+            map.put("market", MARKET);
             return Collections.unmodifiableMap(map);
         }
 

@@ -1410,6 +1410,22 @@ public class GaussDBMeta {
                 req.setPrivateIp(v);
             })
         );
+        builder.<String>withRequestField("readonly_private_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getReadonlyPrivateIp, (req, v) -> {
+                req.setReadonlyPrivateIp(v);
+            })
+        );
+        builder.<String>withRequestField("proxy_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getProxyIp, (req, v) -> {
+                req.setProxyIp(v);
+            })
+        );
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

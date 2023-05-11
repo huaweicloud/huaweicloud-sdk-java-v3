@@ -102,6 +102,66 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateCustomPropsTaskRequest, CreateCustomPropsTaskResponse> createCustomPropsTask =
+        genForcreateCustomPropsTask();
+
+    private static HttpRequestDef<CreateCustomPropsTaskRequest, CreateCustomPropsTaskResponse> genForcreateCustomPropsTask() {
+        // basic
+        HttpRequestDef.Builder<CreateCustomPropsTaskRequest, CreateCustomPropsTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateCustomPropsTaskRequest.class, CreateCustomPropsTaskResponse.class)
+            .withName("CreateCustomPropsTask")
+            .withUri("/v1/{project_id}/custom-props")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CustomPropsTaskData>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CustomPropsTaskData.class),
+            f -> f.withMarshaller(CreateCustomPropsTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateCustomPropsTaskResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCustomPropsTaskResultRequest, ShowCustomPropsTaskResultResponse> showCustomPropsTaskResult =
+        genForshowCustomPropsTaskResult();
+
+    private static HttpRequestDef<ShowCustomPropsTaskResultRequest, ShowCustomPropsTaskResultResponse> genForshowCustomPropsTaskResult() {
+        // basic
+        HttpRequestDef.Builder<ShowCustomPropsTaskResultRequest, ShowCustomPropsTaskResultResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowCustomPropsTaskResultRequest.class,
+                    ShowCustomPropsTaskResultResponse.class)
+                .withName("ShowCustomPropsTaskResult")
+                .withUri("/v1/{project_id}/custom-props/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCustomPropsTaskResultRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateGenerationTaskRequest, CreateGenerationTaskResponse> createGenerationTask =
         genForcreateGenerationTask();
 
@@ -8286,6 +8346,63 @@ public class EiHealthMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSearchTaskResultRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSynthesisTaskRequest, CreateSynthesisTaskResponse> createSynthesisTask =
+        genForcreateSynthesisTask();
+
+    private static HttpRequestDef<CreateSynthesisTaskRequest, CreateSynthesisTaskResponse> genForcreateSynthesisTask() {
+        // basic
+        HttpRequestDef.Builder<CreateSynthesisTaskRequest, CreateSynthesisTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSynthesisTaskRequest.class, CreateSynthesisTaskResponse.class)
+                .withName("CreateSynthesisTask")
+                .withUri("/v1/{project_id}/task/synthesis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SynthesisTaskData>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SynthesisTaskData.class),
+            f -> f.withMarshaller(CreateSynthesisTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateSynthesisTaskResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSynthesisTaskResultRequest, ShowSynthesisTaskResultResponse> showSynthesisTaskResult =
+        genForshowSynthesisTaskResult();
+
+    private static HttpRequestDef<ShowSynthesisTaskResultRequest, ShowSynthesisTaskResultResponse> genForshowSynthesisTaskResult() {
+        // basic
+        HttpRequestDef.Builder<ShowSynthesisTaskResultRequest, ShowSynthesisTaskResultResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSynthesisTaskResultRequest.class, ShowSynthesisTaskResultResponse.class)
+            .withName("ShowSynthesisTaskResult")
+            .withUri("/v1/{project_id}/task/synthesis/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSynthesisTaskResultRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
             }));
 

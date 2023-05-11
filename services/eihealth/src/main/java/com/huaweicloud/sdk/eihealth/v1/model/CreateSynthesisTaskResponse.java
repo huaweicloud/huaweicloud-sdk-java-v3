@@ -1,52 +1,37 @@
-package com.huaweicloud.sdk.iotedge.v3.model;
-
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
+package com.huaweicloud.sdk.eihealth.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
  * Response Object
  */
-public class CreateInstallCmdResponse extends SdkResponse {
-
+public class CreateSynthesisTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cmd")
-    
+    @JsonProperty(value = "body")
 
-    private String cmd;
+    private String body;
 
-    public CreateInstallCmdResponse withCmd(String cmd) {
-        this.cmd = cmd;
+    public CreateSynthesisTaskResponse withBody(String body) {
+        this.body = body;
         return this;
     }
 
-    
-
-
     /**
-     * 标准版节点安装/升级命令
-     * @return cmd
+     * 分子合成路径规划任务ID
+     * @return body
      */
-    public String getCmd() {
-        return cmd;
+    public String getBody() {
+        return body;
     }
 
-    public void setCmd(String cmd) {
-        this.cmd = cmd;
+    public void setBody(String body) {
+        this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,21 +41,24 @@ public class CreateInstallCmdResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CreateInstallCmdResponse createInstallCmdResponse = (CreateInstallCmdResponse) o;
-        return Objects.equals(this.cmd, createInstallCmdResponse.cmd);
+        CreateSynthesisTaskResponse createSynthesisTaskResponse = (CreateSynthesisTaskResponse) o;
+        return Objects.equals(this.body, createSynthesisTaskResponse.body);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(cmd);
+        return Objects.hash(body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateInstallCmdResponse {\n");
-        sb.append("    cmd: ").append(toIndentedString(cmd)).append("\n");
+        sb.append("class CreateSynthesisTaskResponse {\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -81,8 +69,5 @@ public class CreateInstallCmdResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

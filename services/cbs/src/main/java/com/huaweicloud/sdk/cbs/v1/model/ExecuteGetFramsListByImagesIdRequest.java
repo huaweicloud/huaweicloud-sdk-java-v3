@@ -24,6 +24,18 @@ public class ExecuteGetFramsListByImagesIdRequest  {
 
     private String imageId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="offset")
+    
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit")
+    
+
+    private Integer limit;
+
     public ExecuteGetFramsListByImagesIdRequest withImageId(String imageId) {
         this.imageId = imageId;
         return this;
@@ -46,6 +58,50 @@ public class ExecuteGetFramsListByImagesIdRequest  {
 
     
 
+    public ExecuteGetFramsListByImagesIdRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 偏移量，默认为零
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    
+
+    public ExecuteGetFramsListByImagesIdRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 分页限制数
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -55,17 +111,21 @@ public class ExecuteGetFramsListByImagesIdRequest  {
             return false;
         }
         ExecuteGetFramsListByImagesIdRequest executeGetFramsListByImagesIdRequest = (ExecuteGetFramsListByImagesIdRequest) o;
-        return Objects.equals(this.imageId, executeGetFramsListByImagesIdRequest.imageId);
+        return Objects.equals(this.imageId, executeGetFramsListByImagesIdRequest.imageId) &&
+            Objects.equals(this.offset, executeGetFramsListByImagesIdRequest.offset) &&
+            Objects.equals(this.limit, executeGetFramsListByImagesIdRequest.limit);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(imageId);
+        return Objects.hash(imageId, offset, limit);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExecuteGetFramsListByImagesIdRequest {\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

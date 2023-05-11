@@ -35,6 +35,13 @@ public class DgcMeta {
             f -> f.withMarshaller(CancelScriptRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelScriptRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
 
         // response
 
@@ -53,6 +60,13 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateConnectionRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
         builder.<ConnectionInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -77,6 +91,13 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateJobRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
         builder.<JobInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -102,6 +123,13 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateResourceRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
         builder.<ResourceInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -133,6 +161,13 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateScriptRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
         builder.<ScriptInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -165,6 +200,13 @@ public class DgcMeta {
             f -> f.withMarshaller(DeleteConnctionRequest::getConnectionName, (req, v) -> {
                 req.setConnectionName(v);
             }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConnctionRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
 
         // response
 
@@ -188,6 +230,13 @@ public class DgcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteJobRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteJobRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
             }));
 
         // response
@@ -214,6 +263,13 @@ public class DgcMeta {
             f -> f.withMarshaller(DeleteResourceRequest::getResourceId, (req, v) -> {
                 req.setResourceId(v);
             }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteResourceRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
 
         // response
 
@@ -237,6 +293,13 @@ public class DgcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteScriptRequest::getScriptName, (req, v) -> {
                 req.setScriptName(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScriptRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
             }));
 
         // response
@@ -263,6 +326,13 @@ public class DgcMeta {
             f -> f.withMarshaller(ExecuteScriptRequest::getScriptName, (req, v) -> {
                 req.setScriptName(v);
             }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteScriptRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
         builder.<ExecuteScriptReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -288,6 +358,13 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportConnectionsRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
 
         // response
 
@@ -312,6 +389,13 @@ public class DgcMeta {
             f -> f.withMarshaller(ExportJobRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
             }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportJobRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
 
         // response
 
@@ -330,6 +414,13 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportJobListRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
         builder.<ExportJobsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -355,6 +446,13 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportConnectionsRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
         builder.<ImportConnectionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -379,6 +477,13 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportJobRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
         builder.<ImportFileReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -404,6 +509,13 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
 
         // response
 
@@ -422,6 +534,13 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobInstancesRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
 
         // response
 
@@ -439,6 +558,13 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
 
         // response
 
@@ -457,6 +583,13 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourcesRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
 
         // response
 
@@ -489,6 +622,13 @@ public class DgcMeta {
             f -> f.withMarshaller(ListScriptResultsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScriptResultsRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
 
         // response
 
@@ -506,6 +646,13 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScriptsRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
 
         // response
 
@@ -530,6 +677,13 @@ public class DgcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSystemTasksRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSystemTasksRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
             }));
 
         // response
@@ -563,6 +717,13 @@ public class DgcMeta {
             f -> f.withMarshaller(RestoreJobInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreJobInstanceRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
 
         // response
 
@@ -586,6 +747,13 @@ public class DgcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RunOnceRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunOnceRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
             }));
         builder.<StartJobReq>withRequestField("body",
             LocationType.Body,
@@ -619,6 +787,13 @@ public class DgcMeta {
             f -> f.withMarshaller(ShowConnectionRequest::getConnectionName, (req, v) -> {
                 req.setConnectionName(v);
             }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConnectionRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
 
         // response
 
@@ -636,6 +811,13 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFileInfoRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
         builder.<FilePath>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -666,6 +848,13 @@ public class DgcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJobRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
             }));
 
         // response
@@ -699,6 +888,13 @@ public class DgcMeta {
             f -> f.withMarshaller(ShowJobInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobInstanceRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
 
         // response
 
@@ -724,6 +920,13 @@ public class DgcMeta {
             f -> f.withMarshaller(ShowJobStatusRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
             }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobStatusRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
 
         // response
 
@@ -747,6 +950,13 @@ public class DgcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResourceRequest::getResourceId, (req, v) -> {
                 req.setResourceId(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
             }));
 
         // response
@@ -772,6 +982,13 @@ public class DgcMeta {
             f -> f.withMarshaller(ShowScriptRequest::getScriptName, (req, v) -> {
                 req.setScriptName(v);
             }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowScriptRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
 
         // response
 
@@ -795,6 +1012,13 @@ public class DgcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StartJobRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartJobRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
             }));
         builder.<StartJobReq>withRequestField("body",
             LocationType.Body,
@@ -826,6 +1050,13 @@ public class DgcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopJobRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopJobRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
             }));
 
         // response
@@ -859,6 +1090,13 @@ public class DgcMeta {
             f -> f.withMarshaller(StopJobInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopJobInstanceRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
 
         // response
 
@@ -883,6 +1121,13 @@ public class DgcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateConnectionRequest::getConnectionName, (req, v) -> {
                 req.setConnectionName(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateConnectionRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
             }));
         builder.<ConnectionInfo>withRequestField("body",
             LocationType.Body,
@@ -914,6 +1159,13 @@ public class DgcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateJobRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateJobRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
             }));
         builder.<JobInfo>withRequestField("body",
             LocationType.Body,
@@ -947,6 +1199,13 @@ public class DgcMeta {
             f -> f.withMarshaller(UpdateResourceRequest::getResourceId, (req, v) -> {
                 req.setResourceId(v);
             }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateResourceRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
         builder.<ResourceInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -977,6 +1236,13 @@ public class DgcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateScriptRequest::getScriptName, (req, v) -> {
                 req.setScriptName(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScriptRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
             }));
         builder.<ScriptInfo>withRequestField("body",
             LocationType.Body,

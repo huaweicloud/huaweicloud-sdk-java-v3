@@ -48,6 +48,31 @@ public class GenerationResult {
 
     private List<GenerationResultItem> result = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "initial_dataset_size")
+
+    private Integer initialDatasetSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "strong_constraints")
+
+    private List<MoleculeConstraint> strongConstraints = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "weak_constraints")
+
+    private List<MoleculeConstraint> weakConstraints = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "binding_site")
+
+    private BindingSite bindingSite;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_props")
+
+    private List<CustomProp> customProps = null;
+
     public GenerationResult withName(String name) {
         this.name = name;
         return this;
@@ -199,6 +224,148 @@ public class GenerationResult {
         this.result = result;
     }
 
+    public GenerationResult withInitialDatasetSize(Integer initialDatasetSize) {
+        this.initialDatasetSize = initialDatasetSize;
+        return this;
+    }
+
+    /**
+     * 初始化数据集的分子条目数
+     * @return initialDatasetSize
+     */
+    public Integer getInitialDatasetSize() {
+        return initialDatasetSize;
+    }
+
+    public void setInitialDatasetSize(Integer initialDatasetSize) {
+        this.initialDatasetSize = initialDatasetSize;
+    }
+
+    public GenerationResult withStrongConstraints(List<MoleculeConstraint> strongConstraints) {
+        this.strongConstraints = strongConstraints;
+        return this;
+    }
+
+    public GenerationResult addStrongConstraintsItem(MoleculeConstraint strongConstraintsItem) {
+        if (this.strongConstraints == null) {
+            this.strongConstraints = new ArrayList<>();
+        }
+        this.strongConstraints.add(strongConstraintsItem);
+        return this;
+    }
+
+    public GenerationResult withStrongConstraints(Consumer<List<MoleculeConstraint>> strongConstraintsSetter) {
+        if (this.strongConstraints == null) {
+            this.strongConstraints = new ArrayList<>();
+        }
+        strongConstraintsSetter.accept(this.strongConstraints);
+        return this;
+    }
+
+    /**
+     * 强约束集合
+     * @return strongConstraints
+     */
+    public List<MoleculeConstraint> getStrongConstraints() {
+        return strongConstraints;
+    }
+
+    public void setStrongConstraints(List<MoleculeConstraint> strongConstraints) {
+        this.strongConstraints = strongConstraints;
+    }
+
+    public GenerationResult withWeakConstraints(List<MoleculeConstraint> weakConstraints) {
+        this.weakConstraints = weakConstraints;
+        return this;
+    }
+
+    public GenerationResult addWeakConstraintsItem(MoleculeConstraint weakConstraintsItem) {
+        if (this.weakConstraints == null) {
+            this.weakConstraints = new ArrayList<>();
+        }
+        this.weakConstraints.add(weakConstraintsItem);
+        return this;
+    }
+
+    public GenerationResult withWeakConstraints(Consumer<List<MoleculeConstraint>> weakConstraintsSetter) {
+        if (this.weakConstraints == null) {
+            this.weakConstraints = new ArrayList<>();
+        }
+        weakConstraintsSetter.accept(this.weakConstraints);
+        return this;
+    }
+
+    /**
+     * 弱约束集合
+     * @return weakConstraints
+     */
+    public List<MoleculeConstraint> getWeakConstraints() {
+        return weakConstraints;
+    }
+
+    public void setWeakConstraints(List<MoleculeConstraint> weakConstraints) {
+        this.weakConstraints = weakConstraints;
+    }
+
+    public GenerationResult withBindingSite(BindingSite bindingSite) {
+        this.bindingSite = bindingSite;
+        return this;
+    }
+
+    public GenerationResult withBindingSite(Consumer<BindingSite> bindingSiteSetter) {
+        if (this.bindingSite == null) {
+            this.bindingSite = new BindingSite();
+            bindingSiteSetter.accept(this.bindingSite);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get bindingSite
+     * @return bindingSite
+     */
+    public BindingSite getBindingSite() {
+        return bindingSite;
+    }
+
+    public void setBindingSite(BindingSite bindingSite) {
+        this.bindingSite = bindingSite;
+    }
+
+    public GenerationResult withCustomProps(List<CustomProp> customProps) {
+        this.customProps = customProps;
+        return this;
+    }
+
+    public GenerationResult addCustomPropsItem(CustomProp customPropsItem) {
+        if (this.customProps == null) {
+            this.customProps = new ArrayList<>();
+        }
+        this.customProps.add(customPropsItem);
+        return this;
+    }
+
+    public GenerationResult withCustomProps(Consumer<List<CustomProp>> customPropsSetter) {
+        if (this.customProps == null) {
+            this.customProps = new ArrayList<>();
+        }
+        customPropsSetter.accept(this.customProps);
+        return this;
+    }
+
+    /**
+     * 用户已开启的自定义属性集合
+     * @return customProps
+     */
+    public List<CustomProp> getCustomProps() {
+        return customProps;
+    }
+
+    public void setCustomProps(List<CustomProp> customProps) {
+        this.customProps = customProps;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -214,12 +381,28 @@ public class GenerationResult {
             && Objects.equals(this.numStrongConstraints, generationResult.numStrongConstraints)
             && Objects.equals(this.numWeakConstraints, generationResult.numWeakConstraints)
             && Objects.equals(this.propNames, generationResult.propNames)
-            && Objects.equals(this.result, generationResult.result);
+            && Objects.equals(this.result, generationResult.result)
+            && Objects.equals(this.initialDatasetSize, generationResult.initialDatasetSize)
+            && Objects.equals(this.strongConstraints, generationResult.strongConstraints)
+            && Objects.equals(this.weakConstraints, generationResult.weakConstraints)
+            && Objects.equals(this.bindingSite, generationResult.bindingSite)
+            && Objects.equals(this.customProps, generationResult.customProps);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, numRounds, numExpected, numStrongConstraints, numWeakConstraints, propNames, result);
+        return Objects.hash(name,
+            numRounds,
+            numExpected,
+            numStrongConstraints,
+            numWeakConstraints,
+            propNames,
+            result,
+            initialDatasetSize,
+            strongConstraints,
+            weakConstraints,
+            bindingSite,
+            customProps);
     }
 
     @Override
@@ -233,6 +416,11 @@ public class GenerationResult {
         sb.append("    numWeakConstraints: ").append(toIndentedString(numWeakConstraints)).append("\n");
         sb.append("    propNames: ").append(toIndentedString(propNames)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    initialDatasetSize: ").append(toIndentedString(initialDatasetSize)).append("\n");
+        sb.append("    strongConstraints: ").append(toIndentedString(strongConstraints)).append("\n");
+        sb.append("    weakConstraints: ").append(toIndentedString(weakConstraints)).append("\n");
+        sb.append("    bindingSite: ").append(toIndentedString(bindingSite)).append("\n");
+        sb.append("    customProps: ").append(toIndentedString(customProps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

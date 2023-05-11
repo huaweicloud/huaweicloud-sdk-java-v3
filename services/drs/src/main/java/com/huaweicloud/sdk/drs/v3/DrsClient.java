@@ -506,7 +506,7 @@ public class DrsClient {
     /**
      * 批量配置异常通知
      *
-     * 批量设置告警信息，已结束的任务不支持设置。
+     * 批量设置异常通知，已结束的任务不支持设置。
      * - 支持选择已有的SMN主题和手动输入手机号、邮箱两种方式，具体根据自己使用情况选择
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -521,7 +521,7 @@ public class DrsClient {
     /**
      * 批量配置异常通知
      *
-     * 批量设置告警信息，已结束的任务不支持设置。
+     * 批量设置异常通知，已结束的任务不支持设置。
      * - 支持选择已有的SMN主题和手动输入手机号、邮箱两种方式，具体根据自己使用情况选择
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -985,7 +985,7 @@ public class DrsClient {
     /**
      * 查询配额
      *
-     * 查询单租户在DRS服务下的配额信息。
+     * 查询单租户在某一项目下DRS服务下的配额信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -999,7 +999,7 @@ public class DrsClient {
     /**
      * 查询配额
      *
-     * 查询单租户在DRS服务下的配额信息。
+     * 查询单租户在某一项目下DRS服务下的配额信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

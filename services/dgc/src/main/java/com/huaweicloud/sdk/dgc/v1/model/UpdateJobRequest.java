@@ -12,6 +12,11 @@ import java.util.function.Consumer;
 public class UpdateJobRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workspace")
+
+    private String workspace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_name")
 
     private String jobName;
@@ -20,6 +25,23 @@ public class UpdateJobRequest {
     @JsonProperty(value = "body")
 
     private JobInfo body;
+
+    public UpdateJobRequest withWorkspace(String workspace) {
+        this.workspace = workspace;
+        return this;
+    }
+
+    /**
+     * 工作空间id
+     * @return workspace
+     */
+    public String getWorkspace() {
+        return workspace;
+    }
+
+    public void setWorkspace(String workspace) {
+        this.workspace = workspace;
+    }
 
     public UpdateJobRequest withJobName(String jobName) {
         this.jobName = jobName;
@@ -73,19 +95,21 @@ public class UpdateJobRequest {
             return false;
         }
         UpdateJobRequest updateJobRequest = (UpdateJobRequest) o;
-        return Objects.equals(this.jobName, updateJobRequest.jobName)
+        return Objects.equals(this.workspace, updateJobRequest.workspace)
+            && Objects.equals(this.jobName, updateJobRequest.jobName)
             && Objects.equals(this.body, updateJobRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobName, body);
+        return Objects.hash(workspace, jobName, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateJobRequest {\n");
+        sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

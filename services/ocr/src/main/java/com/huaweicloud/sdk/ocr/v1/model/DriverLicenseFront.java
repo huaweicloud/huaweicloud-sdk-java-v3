@@ -397,7 +397,7 @@ public class DriverLicenseFront {
     }
 
     /**
-     * 档案编号。 
+     * 档案编号。  > 说明：当驾驶证类型为电子驾驶证时才返回。 
      * @return fileNumber
      */
     public String getFileNumber() {

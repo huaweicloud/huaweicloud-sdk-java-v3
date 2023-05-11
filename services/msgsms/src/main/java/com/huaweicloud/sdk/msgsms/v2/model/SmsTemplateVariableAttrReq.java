@@ -67,7 +67,7 @@ public class SmsTemplateVariableAttrReq {
     }
 
     /**
-     * 变量类型，目前支持：PHONE|CHARDIGIT|DATETIME|MONEY|TEXT
+     * 变量类型，目前支持：PHONE|CHARDIGIT|DATETIME|MONEY|TEXT|NEWTEXT
      * @return variableType
      */
     public String getVariableType() {

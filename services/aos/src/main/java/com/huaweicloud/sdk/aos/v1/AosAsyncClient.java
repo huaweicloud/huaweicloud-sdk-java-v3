@@ -344,6 +344,46 @@ public class AosAsyncClient {
     }
 
     /**
+     * 继续部署资源栈
+     *
+     * 继续部署资源栈（ContinueDeployStack）
+     * 
+     * 此API用于继续部署一个已有的资源栈
+     * 
+     * * 如果资源栈当前可以继续部署，即处于&#x60;DEPLOYMENT_FAILED&#x60;，则返回202与对应生成的deploymentId，否则将不允许继续部署并返回相应的错误码
+     * 
+     * * 继续部署操作依然有可能部署失败，用户可以从ListStackEvents获取对应的log，解决后可再次调用此API触发继续部署
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ContinueDeployStackRequest 请求对象
+     * @return CompletableFuture<ContinueDeployStackResponse>
+     */
+    public CompletableFuture<ContinueDeployStackResponse> continueDeployStackAsync(ContinueDeployStackRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.continueDeployStack);
+    }
+
+    /**
+     * 继续部署资源栈
+     *
+     * 继续部署资源栈（ContinueDeployStack）
+     * 
+     * 此API用于继续部署一个已有的资源栈
+     * 
+     * * 如果资源栈当前可以继续部署，即处于&#x60;DEPLOYMENT_FAILED&#x60;，则返回202与对应生成的deploymentId，否则将不允许继续部署并返回相应的错误码
+     * 
+     * * 继续部署操作依然有可能部署失败，用户可以从ListStackEvents获取对应的log，解决后可再次调用此API触发继续部署
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ContinueDeployStackRequest 请求对象
+     * @return AsyncInvoker<ContinueDeployStackRequest, ContinueDeployStackResponse>
+     */
+    public AsyncInvoker<ContinueDeployStackRequest, ContinueDeployStackResponse> continueDeployStackAsyncInvoker(ContinueDeployStackRequest request) {
+        return new AsyncInvoker<ContinueDeployStackRequest, ContinueDeployStackResponse>(request, AosMeta.continueDeployStack, hcClient);
+    }
+
+    /**
      * 继续回滚资源栈
      *
      * 继续回滚资源栈（ContinueRollbackStack）

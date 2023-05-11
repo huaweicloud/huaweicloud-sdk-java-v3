@@ -43,6 +43,11 @@ public class OptimizationTaskData {
 
     private BindingSite bindingSite;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_props")
+
+    private List<CustomProp> customProps = null;
+
     public OptimizationTaskData withSmiles(String smiles) {
         this.smiles = smiles;
         return this;
@@ -186,6 +191,39 @@ public class OptimizationTaskData {
         this.bindingSite = bindingSite;
     }
 
+    public OptimizationTaskData withCustomProps(List<CustomProp> customProps) {
+        this.customProps = customProps;
+        return this;
+    }
+
+    public OptimizationTaskData addCustomPropsItem(CustomProp customPropsItem) {
+        if (this.customProps == null) {
+            this.customProps = new ArrayList<>();
+        }
+        this.customProps.add(customPropsItem);
+        return this;
+    }
+
+    public OptimizationTaskData withCustomProps(Consumer<List<CustomProp>> customPropsSetter) {
+        if (this.customProps == null) {
+            this.customProps = new ArrayList<>();
+        }
+        customPropsSetter.accept(this.customProps);
+        return this;
+    }
+
+    /**
+     * 用户已开启的自定义属性集合
+     * @return customProps
+     */
+    public List<CustomProp> getCustomProps() {
+        return customProps;
+    }
+
+    public void setCustomProps(List<CustomProp> customProps) {
+        this.customProps = customProps;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -200,12 +238,14 @@ public class OptimizationTaskData {
             && Objects.equals(this.strongConstraints, optimizationTaskData.strongConstraints)
             && Objects.equals(this.weakConstraints, optimizationTaskData.weakConstraints)
             && Objects.equals(this.numExpected, optimizationTaskData.numExpected)
-            && Objects.equals(this.bindingSite, optimizationTaskData.bindingSite);
+            && Objects.equals(this.bindingSite, optimizationTaskData.bindingSite)
+            && Objects.equals(this.customProps, optimizationTaskData.customProps);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(smiles, numTrials, strongConstraints, weakConstraints, numExpected, bindingSite);
+        return Objects
+            .hash(smiles, numTrials, strongConstraints, weakConstraints, numExpected, bindingSite, customProps);
     }
 
     @Override
@@ -218,6 +258,7 @@ public class OptimizationTaskData {
         sb.append("    weakConstraints: ").append(toIndentedString(weakConstraints)).append("\n");
         sb.append("    numExpected: ").append(toIndentedString(numExpected)).append("\n");
         sb.append("    bindingSite: ").append(toIndentedString(bindingSite)).append("\n");
+        sb.append("    customProps: ").append(toIndentedString(customProps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

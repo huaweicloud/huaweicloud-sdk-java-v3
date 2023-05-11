@@ -33,6 +33,11 @@ public class CpiResult {
 
     private List<CpiResultItem> result = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_props")
+
+    private List<CustomProp> customProps = null;
+
     public CpiResult withHeader(String header) {
         this.header = header;
         return this;
@@ -133,6 +138,39 @@ public class CpiResult {
         this.result = result;
     }
 
+    public CpiResult withCustomProps(List<CustomProp> customProps) {
+        this.customProps = customProps;
+        return this;
+    }
+
+    public CpiResult addCustomPropsItem(CustomProp customPropsItem) {
+        if (this.customProps == null) {
+            this.customProps = new ArrayList<>();
+        }
+        this.customProps.add(customPropsItem);
+        return this;
+    }
+
+    public CpiResult withCustomProps(Consumer<List<CustomProp>> customPropsSetter) {
+        if (this.customProps == null) {
+            this.customProps = new ArrayList<>();
+        }
+        customPropsSetter.accept(this.customProps);
+        return this;
+    }
+
+    /**
+     * 用户已开启的自定义属性集合
+     * @return customProps
+     */
+    public List<CustomProp> getCustomProps() {
+        return customProps;
+    }
+
+    public void setCustomProps(List<CustomProp> customProps) {
+        this.customProps = customProps;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -143,12 +181,13 @@ public class CpiResult {
         }
         CpiResult cpiResult = (CpiResult) o;
         return Objects.equals(this.header, cpiResult.header) && Objects.equals(this.fasta, cpiResult.fasta)
-            && Objects.equals(this.propNames, cpiResult.propNames) && Objects.equals(this.result, cpiResult.result);
+            && Objects.equals(this.propNames, cpiResult.propNames) && Objects.equals(this.result, cpiResult.result)
+            && Objects.equals(this.customProps, cpiResult.customProps);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(header, fasta, propNames, result);
+        return Objects.hash(header, fasta, propNames, result, customProps);
     }
 
     @Override
@@ -159,6 +198,7 @@ public class CpiResult {
         sb.append("    fasta: ").append(toIndentedString(fasta)).append("\n");
         sb.append("    propNames: ").append(toIndentedString(propNames)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    customProps: ").append(toIndentedString(customProps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

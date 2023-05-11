@@ -92,7 +92,7 @@ public class SqlConvertReq {
     private SourceDbTypeEnum sourceDbType;
 
     /**
-     * 目标数据库类型。
+     * 目标数据库类型。其中GaussDB Centralized已弃用。
      */
     public static final class TargetDbTypeEnum {
 
@@ -100,11 +100,6 @@ public class SqlConvertReq {
          * Enum RDS_FOR_MYSQL for value: "RDS for MySQL"
          */
         public static final TargetDbTypeEnum RDS_FOR_MYSQL = new TargetDbTypeEnum("RDS for MySQL");
-
-        /**
-         * Enum GAUSSDB_CENTRALIZED for value: "GaussDB Centralized"
-         */
-        public static final TargetDbTypeEnum GAUSSDB_CENTRALIZED = new TargetDbTypeEnum("GaussDB Centralized");
 
         /**
          * Enum GAUSSDB_FOR_MYSQL_ for value: "GaussDB(for MySQL)"
@@ -116,14 +111,25 @@ public class SqlConvertReq {
          */
         public static final TargetDbTypeEnum RDS_FOR_POSTGRESQL = new TargetDbTypeEnum("RDS for PostgreSQL");
 
+        /**
+         * Enum GAUSSDB_PRIMARY_STANDBY for value: "GaussDB Primary/Standby"
+         */
+        public static final TargetDbTypeEnum GAUSSDB_PRIMARY_STANDBY = new TargetDbTypeEnum("GaussDB Primary/Standby");
+
+        /**
+         * Enum GAUSSDB_CENTRALIZED for value: "GaussDB Centralized"
+         */
+        public static final TargetDbTypeEnum GAUSSDB_CENTRALIZED = new TargetDbTypeEnum("GaussDB Centralized");
+
         private static final Map<String, TargetDbTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TargetDbTypeEnum> createStaticFields() {
             Map<String, TargetDbTypeEnum> map = new HashMap<>();
             map.put("RDS for MySQL", RDS_FOR_MYSQL);
-            map.put("GaussDB Centralized", GAUSSDB_CENTRALIZED);
             map.put("GaussDB(for MySQL)", GAUSSDB_FOR_MYSQL_);
             map.put("RDS for PostgreSQL", RDS_FOR_POSTGRESQL);
+            map.put("GaussDB Primary/Standby", GAUSSDB_PRIMARY_STANDBY);
+            map.put("GaussDB Centralized", GAUSSDB_CENTRALIZED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -186,7 +192,7 @@ public class SqlConvertReq {
     private TargetDbTypeEnum targetDbType;
 
     /**
-     * 目标数据库版本。 （注意：该字段需要与 target_db_type 字段组合成有效的目标数据库类型与版本，当前支持以下组合： GaussDB Centralized-2.0； RDS for PostgreSQL-11； RDS for PostgreSQL-Enhanced Edition； RDS for MySQL-5.7; GaussDB(for MySQL) 8.0。)
+     * 目标数据库版本。 （注意：该字段需要与 target_db_type 字段组合成有效的目标数据库类型与版本，当前支持以下组合： GaussDB Centralized-2.0（已弃用）； GaussDB Primary/Standby-2.0； RDS for PostgreSQL-11； RDS for PostgreSQL-Enhanced Edition； RDS for MySQL-5.7; GaussDB(for MySQL) 8.0。)
      */
     public static final class TargetDbVersionEnum {
 
@@ -313,7 +319,7 @@ public class SqlConvertReq {
     }
 
     /**
-     * 目标数据库类型。
+     * 目标数据库类型。其中GaussDB Centralized已弃用。
      * @return targetDbType
      */
     public TargetDbTypeEnum getTargetDbType() {
@@ -330,7 +336,7 @@ public class SqlConvertReq {
     }
 
     /**
-     * 目标数据库版本。 （注意：该字段需要与 target_db_type 字段组合成有效的目标数据库类型与版本，当前支持以下组合： GaussDB Centralized-2.0； RDS for PostgreSQL-11； RDS for PostgreSQL-Enhanced Edition； RDS for MySQL-5.7; GaussDB(for MySQL) 8.0。)
+     * 目标数据库版本。 （注意：该字段需要与 target_db_type 字段组合成有效的目标数据库类型与版本，当前支持以下组合： GaussDB Centralized-2.0（已弃用）； GaussDB Primary/Standby-2.0； RDS for PostgreSQL-11； RDS for PostgreSQL-Enhanced Edition； RDS for MySQL-5.7; GaussDB(for MySQL) 8.0。)
      * @return targetDbVersion
      */
     public TargetDbVersionEnum getTargetDbVersion() {

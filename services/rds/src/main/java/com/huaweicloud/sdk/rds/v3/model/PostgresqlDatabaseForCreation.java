@@ -45,6 +45,11 @@ public class PostgresqlDatabaseForCreation {
 
     private Boolean isRevokePublicPrivilege;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "comment")
+
+    private String comment;
+
     public PostgresqlDatabaseForCreation withName(String name) {
         this.name = name;
         return this;
@@ -164,6 +169,23 @@ public class PostgresqlDatabaseForCreation {
         this.isRevokePublicPrivilege = isRevokePublicPrivilege;
     }
 
+    public PostgresqlDatabaseForCreation withComment(String comment) {
+        this.comment = comment;
+        return this;
+    }
+
+    /**
+     * 数据库备注。 取值范围：长度1~512个字符。
+     * @return comment
+     */
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -179,12 +201,13 @@ public class PostgresqlDatabaseForCreation {
             && Objects.equals(this.template, postgresqlDatabaseForCreation.template)
             && Objects.equals(this.lcCollate, postgresqlDatabaseForCreation.lcCollate)
             && Objects.equals(this.lcCtype, postgresqlDatabaseForCreation.lcCtype)
-            && Objects.equals(this.isRevokePublicPrivilege, postgresqlDatabaseForCreation.isRevokePublicPrivilege);
+            && Objects.equals(this.isRevokePublicPrivilege, postgresqlDatabaseForCreation.isRevokePublicPrivilege)
+            && Objects.equals(this.comment, postgresqlDatabaseForCreation.comment);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, characterSet, owner, template, lcCollate, lcCtype, isRevokePublicPrivilege);
+        return Objects.hash(name, characterSet, owner, template, lcCollate, lcCtype, isRevokePublicPrivilege, comment);
     }
 
     @Override
@@ -198,6 +221,7 @@ public class PostgresqlDatabaseForCreation {
         sb.append("    lcCollate: ").append(toIndentedString(lcCollate)).append("\n");
         sb.append("    lcCtype: ").append(toIndentedString(lcCtype)).append("\n");
         sb.append("    isRevokePublicPrivilege: ").append(toIndentedString(isRevokePublicPrivilege)).append("\n");
+        sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
         sb.append("}");
         return sb.toString();
     }

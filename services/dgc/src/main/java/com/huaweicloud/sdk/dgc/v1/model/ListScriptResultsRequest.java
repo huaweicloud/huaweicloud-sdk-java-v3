@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ListScriptResultsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workspace")
+
+    private String workspace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "script_name")
 
     private String scriptName;
@@ -19,6 +24,23 @@ public class ListScriptResultsRequest {
     @JsonProperty(value = "instance_id")
 
     private String instanceId;
+
+    public ListScriptResultsRequest withWorkspace(String workspace) {
+        this.workspace = workspace;
+        return this;
+    }
+
+    /**
+     * 工作空间id
+     * @return workspace
+     */
+    public String getWorkspace() {
+        return workspace;
+    }
+
+    public void setWorkspace(String workspace) {
+        this.workspace = workspace;
+    }
 
     public ListScriptResultsRequest withScriptName(String scriptName) {
         this.scriptName = scriptName;
@@ -63,19 +85,21 @@ public class ListScriptResultsRequest {
             return false;
         }
         ListScriptResultsRequest listScriptResultsRequest = (ListScriptResultsRequest) o;
-        return Objects.equals(this.scriptName, listScriptResultsRequest.scriptName)
+        return Objects.equals(this.workspace, listScriptResultsRequest.workspace)
+            && Objects.equals(this.scriptName, listScriptResultsRequest.scriptName)
             && Objects.equals(this.instanceId, listScriptResultsRequest.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(scriptName, instanceId);
+        return Objects.hash(workspace, scriptName, instanceId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListScriptResultsRequest {\n");
+        sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    scriptName: ").append(toIndentedString(scriptName)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");

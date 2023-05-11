@@ -11,9 +11,31 @@ import java.util.Objects;
 public class DeleteConnctionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workspace")
+
+    private String workspace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connection_name")
 
     private String connectionName;
+
+    public DeleteConnctionRequest withWorkspace(String workspace) {
+        this.workspace = workspace;
+        return this;
+    }
+
+    /**
+     * 工作空间id
+     * @return workspace
+     */
+    public String getWorkspace() {
+        return workspace;
+    }
+
+    public void setWorkspace(String workspace) {
+        this.workspace = workspace;
+    }
 
     public DeleteConnctionRequest withConnectionName(String connectionName) {
         this.connectionName = connectionName;
@@ -41,18 +63,20 @@ public class DeleteConnctionRequest {
             return false;
         }
         DeleteConnctionRequest deleteConnctionRequest = (DeleteConnctionRequest) o;
-        return Objects.equals(this.connectionName, deleteConnctionRequest.connectionName);
+        return Objects.equals(this.workspace, deleteConnctionRequest.workspace)
+            && Objects.equals(this.connectionName, deleteConnctionRequest.connectionName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(connectionName);
+        return Objects.hash(workspace, connectionName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteConnctionRequest {\n");
+        sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    connectionName: ").append(toIndentedString(connectionName)).append("\n");
         sb.append("}");
         return sb.toString();

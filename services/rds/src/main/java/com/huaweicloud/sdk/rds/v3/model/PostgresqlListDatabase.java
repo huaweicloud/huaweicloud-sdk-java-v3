@@ -35,6 +35,11 @@ public class PostgresqlListDatabase {
 
     private Long size;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "comment")
+
+    private String comment;
+
     public PostgresqlListDatabase withName(String name) {
         this.name = name;
         return this;
@@ -120,6 +125,23 @@ public class PostgresqlListDatabase {
         this.size = size;
     }
 
+    public PostgresqlListDatabase withComment(String comment) {
+        this.comment = comment;
+        return this;
+    }
+
+    /**
+     * 数据库备注
+     * @return comment
+     */
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -133,12 +155,13 @@ public class PostgresqlListDatabase {
             && Objects.equals(this.owner, postgresqlListDatabase.owner)
             && Objects.equals(this.characterSet, postgresqlListDatabase.characterSet)
             && Objects.equals(this.collateSet, postgresqlListDatabase.collateSet)
-            && Objects.equals(this.size, postgresqlListDatabase.size);
+            && Objects.equals(this.size, postgresqlListDatabase.size)
+            && Objects.equals(this.comment, postgresqlListDatabase.comment);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, owner, characterSet, collateSet, size);
+        return Objects.hash(name, owner, characterSet, collateSet, size, comment);
     }
 
     @Override
@@ -150,6 +173,7 @@ public class PostgresqlListDatabase {
         sb.append("    characterSet: ").append(toIndentedString(characterSet)).append("\n");
         sb.append("    collateSet: ").append(toIndentedString(collateSet)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
         sb.append("}");
         return sb.toString();
     }

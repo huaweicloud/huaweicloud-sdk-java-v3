@@ -15,7 +15,7 @@ import java.util.Objects;
 /**
  * Request Object
  */
-public class CreateInstallCmdRequest  {
+public class CreateClusterInstallCmdRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,7 +36,7 @@ public class CreateInstallCmdRequest  {
 
     private String os;
 
-    public CreateInstallCmdRequest withClusterId(String clusterId) {
+    public CreateClusterInstallCmdRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
     }
@@ -58,7 +58,7 @@ public class CreateInstallCmdRequest  {
 
     
 
-    public CreateInstallCmdRequest withArch(String arch) {
+    public CreateClusterInstallCmdRequest withArch(String arch) {
         this.arch = arch;
         return this;
     }
@@ -80,7 +80,7 @@ public class CreateInstallCmdRequest  {
 
     
 
-    public CreateInstallCmdRequest withOs(String os) {
+    public CreateClusterInstallCmdRequest withOs(String os) {
         this.os = os;
         return this;
     }
@@ -110,10 +110,10 @@ public class CreateInstallCmdRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CreateInstallCmdRequest createInstallCmdRequest = (CreateInstallCmdRequest) o;
-        return Objects.equals(this.clusterId, createInstallCmdRequest.clusterId) &&
-            Objects.equals(this.arch, createInstallCmdRequest.arch) &&
-            Objects.equals(this.os, createInstallCmdRequest.os);
+        CreateClusterInstallCmdRequest createClusterInstallCmdRequest = (CreateClusterInstallCmdRequest) o;
+        return Objects.equals(this.clusterId, createClusterInstallCmdRequest.clusterId) &&
+            Objects.equals(this.arch, createClusterInstallCmdRequest.arch) &&
+            Objects.equals(this.os, createClusterInstallCmdRequest.os);
     }
     @Override
     public int hashCode() {
@@ -122,7 +122,7 @@ public class CreateInstallCmdRequest  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateInstallCmdRequest {\n");
+        sb.append("class CreateClusterInstallCmdRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    arch: ").append(toIndentedString(arch)).append("\n");
         sb.append("    os: ").append(toIndentedString(os)).append("\n");

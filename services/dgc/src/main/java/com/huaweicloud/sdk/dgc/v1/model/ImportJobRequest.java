@@ -12,9 +12,31 @@ import java.util.function.Consumer;
 public class ImportJobRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workspace")
+
+    private String workspace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private ImportFileReq body;
+
+    public ImportJobRequest withWorkspace(String workspace) {
+        this.workspace = workspace;
+        return this;
+    }
+
+    /**
+     * 工作空间id
+     * @return workspace
+     */
+    public String getWorkspace() {
+        return workspace;
+    }
+
+    public void setWorkspace(String workspace) {
+        this.workspace = workspace;
+    }
 
     public ImportJobRequest withBody(ImportFileReq body) {
         this.body = body;
@@ -51,18 +73,20 @@ public class ImportJobRequest {
             return false;
         }
         ImportJobRequest importJobRequest = (ImportJobRequest) o;
-        return Objects.equals(this.body, importJobRequest.body);
+        return Objects.equals(this.workspace, importJobRequest.workspace)
+            && Objects.equals(this.body, importJobRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(workspace, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ImportJobRequest {\n");
+        sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

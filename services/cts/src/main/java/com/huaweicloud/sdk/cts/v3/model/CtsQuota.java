@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Quota
+ * CtsQuota
  */
-public class Quota {
+public class CtsQuota {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
@@ -25,7 +25,7 @@ public class Quota {
 
     private Long quota;
 
-    public Quota withType(String type) {
+    public CtsQuota withType(String type) {
         this.type = type;
         return this;
     }
@@ -42,7 +42,7 @@ public class Quota {
         this.type = type;
     }
 
-    public Quota withUsed(Long used) {
+    public CtsQuota withUsed(Long used) {
         this.used = used;
         return this;
     }
@@ -61,7 +61,7 @@ public class Quota {
         this.used = used;
     }
 
-    public Quota withQuota(Long quota) {
+    public CtsQuota withQuota(Long quota) {
         this.quota = quota;
         return this;
     }
@@ -88,9 +88,9 @@ public class Quota {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Quota quota = (Quota) o;
-        return Objects.equals(this.type, quota.type) && Objects.equals(this.used, quota.used)
-            && Objects.equals(this.quota, quota.quota);
+        CtsQuota ctsQuota = (CtsQuota) o;
+        return Objects.equals(this.type, ctsQuota.type) && Objects.equals(this.used, ctsQuota.used)
+            && Objects.equals(this.quota, ctsQuota.quota);
     }
 
     @Override
@@ -101,7 +101,7 @@ public class Quota {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Quota {\n");
+        sb.append("class CtsQuota {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    used: ").append(toIndentedString(used)).append("\n");
         sb.append("    quota: ").append(toIndentedString(quota)).append("\n");

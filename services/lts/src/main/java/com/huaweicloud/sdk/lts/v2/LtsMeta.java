@@ -2076,10 +2076,10 @@ public class LtsMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<AomMappingRequestInfo>withRequestField("body",
+        builder.<UpdateAomMappingRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AomMappingRequestInfo.class),
+            TypeCasts.uncheckedConversion(UpdateAomMappingRequest.class),
             f -> f.withMarshaller(UpdateAomMappingRulesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

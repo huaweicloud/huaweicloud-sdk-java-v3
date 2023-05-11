@@ -118,6 +118,64 @@ public class SFSTurboAsyncClient {
     }
 
     /**
+     * 创建目录
+     *
+     * 创建目录 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFsDirRequest 请求对象
+     * @return CompletableFuture<CreateFsDirResponse>
+     */
+    public CompletableFuture<CreateFsDirResponse> createFsDirAsync(CreateFsDirRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.createFsDir);
+    }
+
+    /**
+     * 创建目录
+     *
+     * 创建目录 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFsDirRequest 请求对象
+     * @return AsyncInvoker<CreateFsDirRequest, CreateFsDirResponse>
+     */
+    public AsyncInvoker<CreateFsDirRequest, CreateFsDirResponse> createFsDirAsyncInvoker(CreateFsDirRequest request) {
+        return new AsyncInvoker<CreateFsDirRequest, CreateFsDirResponse>(request, SFSTurboMeta.createFsDir, hcClient);
+    }
+
+    /**
+     * 创建目标文件夹quota
+     *
+     * 创建目标文件夹quota。只支持对空目录设置目录quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFsDirQuotaRequest 请求对象
+     * @return CompletableFuture<CreateFsDirQuotaResponse>
+     */
+    public CompletableFuture<CreateFsDirQuotaResponse> createFsDirQuotaAsync(CreateFsDirQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.createFsDirQuota);
+    }
+
+    /**
+     * 创建目标文件夹quota
+     *
+     * 创建目标文件夹quota。只支持对空目录设置目录quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFsDirQuotaRequest 请求对象
+     * @return AsyncInvoker<CreateFsDirQuotaRequest, CreateFsDirQuotaResponse>
+     */
+    public AsyncInvoker<CreateFsDirQuotaRequest, CreateFsDirQuotaResponse> createFsDirQuotaAsyncInvoker(
+        CreateFsDirQuotaRequest request) {
+        return new AsyncInvoker<CreateFsDirQuotaRequest, CreateFsDirQuotaResponse>(request,
+            SFSTurboMeta.createFsDirQuota, hcClient);
+    }
+
+    /**
      * 创建文件系统
      *
      * 创建文件系统。
@@ -179,6 +237,64 @@ public class SFSTurboAsyncClient {
         CreateSharedTagRequest request) {
         return new AsyncInvoker<CreateSharedTagRequest, CreateSharedTagResponse>(request, SFSTurboMeta.createSharedTag,
             hcClient);
+    }
+
+    /**
+     * 删除文件系统目录
+     *
+     * 删除文件系统目录 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFsDirRequest 请求对象
+     * @return CompletableFuture<DeleteFsDirResponse>
+     */
+    public CompletableFuture<DeleteFsDirResponse> deleteFsDirAsync(DeleteFsDirRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.deleteFsDir);
+    }
+
+    /**
+     * 删除文件系统目录
+     *
+     * 删除文件系统目录 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFsDirRequest 请求对象
+     * @return AsyncInvoker<DeleteFsDirRequest, DeleteFsDirResponse>
+     */
+    public AsyncInvoker<DeleteFsDirRequest, DeleteFsDirResponse> deleteFsDirAsyncInvoker(DeleteFsDirRequest request) {
+        return new AsyncInvoker<DeleteFsDirRequest, DeleteFsDirResponse>(request, SFSTurboMeta.deleteFsDir, hcClient);
+    }
+
+    /**
+     * 删除目标文件夹quota
+     *
+     * 删除目标文件夹quota。只支持对空目录进行删除quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFsDirQuotaRequest 请求对象
+     * @return CompletableFuture<DeleteFsDirQuotaResponse>
+     */
+    public CompletableFuture<DeleteFsDirQuotaResponse> deleteFsDirQuotaAsync(DeleteFsDirQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.deleteFsDirQuota);
+    }
+
+    /**
+     * 删除目标文件夹quota
+     *
+     * 删除目标文件夹quota。只支持对空目录进行删除quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFsDirQuotaRequest 请求对象
+     * @return AsyncInvoker<DeleteFsDirQuotaRequest, DeleteFsDirQuotaResponse>
+     */
+    public AsyncInvoker<DeleteFsDirQuotaRequest, DeleteFsDirQuotaResponse> deleteFsDirQuotaAsyncInvoker(
+        DeleteFsDirQuotaRequest request) {
+        return new AsyncInvoker<DeleteFsDirQuotaRequest, DeleteFsDirQuotaResponse>(request,
+            SFSTurboMeta.deleteFsDirQuota, hcClient);
     }
 
     /**
@@ -326,6 +442,64 @@ public class SFSTurboAsyncClient {
     }
 
     /**
+     * 查询目录是否存在
+     *
+     * 查询目录是否存在 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFsDirRequest 请求对象
+     * @return CompletableFuture<ShowFsDirResponse>
+     */
+    public CompletableFuture<ShowFsDirResponse> showFsDirAsync(ShowFsDirRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.showFsDir);
+    }
+
+    /**
+     * 查询目录是否存在
+     *
+     * 查询目录是否存在 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFsDirRequest 请求对象
+     * @return AsyncInvoker<ShowFsDirRequest, ShowFsDirResponse>
+     */
+    public AsyncInvoker<ShowFsDirRequest, ShowFsDirResponse> showFsDirAsyncInvoker(ShowFsDirRequest request) {
+        return new AsyncInvoker<ShowFsDirRequest, ShowFsDirResponse>(request, SFSTurboMeta.showFsDir, hcClient);
+    }
+
+    /**
+     * 查询目标文件夹quota
+     *
+     * 查询目标文件夹quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFsDirQuotaRequest 请求对象
+     * @return CompletableFuture<ShowFsDirQuotaResponse>
+     */
+    public CompletableFuture<ShowFsDirQuotaResponse> showFsDirQuotaAsync(ShowFsDirQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.showFsDirQuota);
+    }
+
+    /**
+     * 查询目标文件夹quota
+     *
+     * 查询目标文件夹quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFsDirQuotaRequest 请求对象
+     * @return AsyncInvoker<ShowFsDirQuotaRequest, ShowFsDirQuotaResponse>
+     */
+    public AsyncInvoker<ShowFsDirQuotaRequest, ShowFsDirQuotaResponse> showFsDirQuotaAsyncInvoker(
+        ShowFsDirQuotaRequest request) {
+        return new AsyncInvoker<ShowFsDirQuotaRequest, ShowFsDirQuotaResponse>(request, SFSTurboMeta.showFsDirQuota,
+            hcClient);
+    }
+
+    /**
      * 查询文件系统详细信息
      *
      * 查询SFS Turbo文件系统详细信息。
@@ -381,6 +555,36 @@ public class SFSTurboAsyncClient {
         ShowSharedTagsRequest request) {
         return new AsyncInvoker<ShowSharedTagsRequest, ShowSharedTagsResponse>(request, SFSTurboMeta.showSharedTags,
             hcClient);
+    }
+
+    /**
+     * 更新目标文件夹quota
+     *
+     * 更新目标文件夹quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFsDirQuotaRequest 请求对象
+     * @return CompletableFuture<UpdateFsDirQuotaResponse>
+     */
+    public CompletableFuture<UpdateFsDirQuotaResponse> updateFsDirQuotaAsync(UpdateFsDirQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.updateFsDirQuota);
+    }
+
+    /**
+     * 更新目标文件夹quota
+     *
+     * 更新目标文件夹quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFsDirQuotaRequest 请求对象
+     * @return AsyncInvoker<UpdateFsDirQuotaRequest, UpdateFsDirQuotaResponse>
+     */
+    public AsyncInvoker<UpdateFsDirQuotaRequest, UpdateFsDirQuotaResponse> updateFsDirQuotaAsyncInvoker(
+        UpdateFsDirQuotaRequest request) {
+        return new AsyncInvoker<UpdateFsDirQuotaRequest, UpdateFsDirQuotaResponse>(request,
+            SFSTurboMeta.updateFsDirQuota, hcClient);
     }
 
 }

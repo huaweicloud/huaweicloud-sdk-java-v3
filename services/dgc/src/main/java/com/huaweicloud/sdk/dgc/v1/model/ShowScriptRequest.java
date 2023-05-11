@@ -11,9 +11,31 @@ import java.util.Objects;
 public class ShowScriptRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workspace")
+
+    private String workspace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "script_name")
 
     private String scriptName;
+
+    public ShowScriptRequest withWorkspace(String workspace) {
+        this.workspace = workspace;
+        return this;
+    }
+
+    /**
+     * 工作空间id
+     * @return workspace
+     */
+    public String getWorkspace() {
+        return workspace;
+    }
+
+    public void setWorkspace(String workspace) {
+        this.workspace = workspace;
+    }
 
     public ShowScriptRequest withScriptName(String scriptName) {
         this.scriptName = scriptName;
@@ -41,18 +63,20 @@ public class ShowScriptRequest {
             return false;
         }
         ShowScriptRequest showScriptRequest = (ShowScriptRequest) o;
-        return Objects.equals(this.scriptName, showScriptRequest.scriptName);
+        return Objects.equals(this.workspace, showScriptRequest.workspace)
+            && Objects.equals(this.scriptName, showScriptRequest.scriptName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(scriptName);
+        return Objects.hash(workspace, scriptName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowScriptRequest {\n");
+        sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    scriptName: ").append(toIndentedString(scriptName)).append("\n");
         sb.append("}");
         return sb.toString();

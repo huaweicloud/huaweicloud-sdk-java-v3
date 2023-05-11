@@ -62,7 +62,7 @@ public class ServicePolicy {
     }
 
     /**
-     * 授权语句，描述自定义策略的具体内容，不超过8个。
+     * 授权语句，描述自定义策略的具体内容。
      * @return statement
      */
     public List<ServiceStatement> getStatement() {

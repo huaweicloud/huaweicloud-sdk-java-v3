@@ -442,6 +442,98 @@ public class MpcClient {
     }
 
     /**
+     * 新建剪辑拼接任务
+     *
+     * 创建剪辑任务，用于将多个视频文件进行裁剪成多个视频分段，并且可以把这些视频分段合并成一个视频。
+     * 待剪辑的视频文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEditingJobsRequest 请求对象
+     * @return CreateEditingJobsResponse
+     */
+    public CreateEditingJobsResponse createEditingJobs(CreateEditingJobsRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.createEditingJobs);
+    }
+
+    /**
+     * 新建剪辑拼接任务
+     *
+     * 创建剪辑任务，用于将多个视频文件进行裁剪成多个视频分段，并且可以把这些视频分段合并成一个视频。
+     * 待剪辑的视频文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEditingJobsRequest 请求对象
+     * @return SyncInvoker<CreateEditingJobsRequest, CreateEditingJobsResponse>
+     */
+    public SyncInvoker<CreateEditingJobsRequest, CreateEditingJobsResponse> createEditingJobsInvoker(
+        CreateEditingJobsRequest request) {
+        return new SyncInvoker<CreateEditingJobsRequest, CreateEditingJobsResponse>(request, MpcMeta.createEditingJobs,
+            hcClient);
+    }
+
+    /**
+     * 取消剪辑任务
+     *
+     * 取消已下发的生成剪辑任务，仅支持取消正在排队中的任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEditingJobsRequest 请求对象
+     * @return DeleteEditingJobsResponse
+     */
+    public DeleteEditingJobsResponse deleteEditingJobs(DeleteEditingJobsRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.deleteEditingJobs);
+    }
+
+    /**
+     * 取消剪辑任务
+     *
+     * 取消已下发的生成剪辑任务，仅支持取消正在排队中的任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEditingJobsRequest 请求对象
+     * @return SyncInvoker<DeleteEditingJobsRequest, DeleteEditingJobsResponse>
+     */
+    public SyncInvoker<DeleteEditingJobsRequest, DeleteEditingJobsResponse> deleteEditingJobsInvoker(
+        DeleteEditingJobsRequest request) {
+        return new SyncInvoker<DeleteEditingJobsRequest, DeleteEditingJobsResponse>(request, MpcMeta.deleteEditingJobs,
+            hcClient);
+    }
+
+    /**
+     * 查询剪辑任务
+     *
+     * 查询剪辑任务的状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEditingJobsRequest 请求对象
+     * @return ListEditingJobsResponse
+     */
+    public ListEditingJobsResponse listEditingJobs(ListEditingJobsRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.listEditingJobs);
+    }
+
+    /**
+     * 查询剪辑任务
+     *
+     * 查询剪辑任务的状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEditingJobsRequest 请求对象
+     * @return SyncInvoker<ListEditingJobsRequest, ListEditingJobsResponse>
+     */
+    public SyncInvoker<ListEditingJobsRequest, ListEditingJobsResponse> listEditingJobsInvoker(
+        ListEditingJobsRequest request) {
+        return new SyncInvoker<ListEditingJobsRequest, ListEditingJobsResponse>(request, MpcMeta.listEditingJobs,
+            hcClient);
+    }
+
+    /**
      * 新建独立加密任务
      *
      * 支持独立加密，包括创建、查询、删除独立加密任务。该API已废弃。

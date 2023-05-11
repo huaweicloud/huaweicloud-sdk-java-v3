@@ -20,6 +20,11 @@ public class PostgresqlUserForCreation {
 
     private String password;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "comment")
+
+    private String comment;
+
     public PostgresqlUserForCreation withName(String name) {
         this.name = name;
         return this;
@@ -54,6 +59,23 @@ public class PostgresqlUserForCreation {
         this.password = password;
     }
 
+    public PostgresqlUserForCreation withComment(String comment) {
+        this.comment = comment;
+        return this;
+    }
+
+    /**
+     * 数据库用户备注。 取值范围：长度1~512个字符。
+     * @return comment
+     */
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -64,12 +86,13 @@ public class PostgresqlUserForCreation {
         }
         PostgresqlUserForCreation postgresqlUserForCreation = (PostgresqlUserForCreation) o;
         return Objects.equals(this.name, postgresqlUserForCreation.name)
-            && Objects.equals(this.password, postgresqlUserForCreation.password);
+            && Objects.equals(this.password, postgresqlUserForCreation.password)
+            && Objects.equals(this.comment, postgresqlUserForCreation.comment);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, password);
+        return Objects.hash(name, password, comment);
     }
 
     @Override
@@ -78,6 +101,7 @@ public class PostgresqlUserForCreation {
         sb.append("class PostgresqlUserForCreation {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
+        sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
         sb.append("}");
         return sb.toString();
     }

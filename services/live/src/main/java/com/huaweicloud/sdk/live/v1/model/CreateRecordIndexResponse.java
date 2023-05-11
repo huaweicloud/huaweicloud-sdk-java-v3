@@ -53,9 +53,9 @@ public class CreateRecordIndexResponse extends SdkResponse {
     private Integer duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "weight")
+    @JsonProperty(value = "width")
 
-    private Integer weight;
+    private Integer width;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "height")
@@ -286,8 +286,8 @@ public class CreateRecordIndexResponse extends SdkResponse {
         this.duration = duration;
     }
 
-    public CreateRecordIndexResponse withWeight(Integer weight) {
-        this.weight = weight;
+    public CreateRecordIndexResponse withWidth(Integer width) {
+        this.width = width;
         return this;
     }
 
@@ -295,14 +295,14 @@ public class CreateRecordIndexResponse extends SdkResponse {
      * 视频宽。
      * minimum: 0
      * maximum: 65535
-     * @return weight
+     * @return width
      */
-    public Integer getWeight() {
-        return weight;
+    public Integer getWidth() {
+        return width;
     }
 
-    public void setWeight(Integer weight) {
-        this.weight = weight;
+    public void setWidth(Integer width) {
+        this.width = width;
     }
 
     public CreateRecordIndexResponse withHeight(Integer height) {
@@ -410,7 +410,7 @@ public class CreateRecordIndexResponse extends SdkResponse {
             && Objects.equals(this.startTime, createRecordIndexResponse.startTime)
             && Objects.equals(this.endTime, createRecordIndexResponse.endTime)
             && Objects.equals(this.duration, createRecordIndexResponse.duration)
-            && Objects.equals(this.weight, createRecordIndexResponse.weight)
+            && Objects.equals(this.width, createRecordIndexResponse.width)
             && Objects.equals(this.height, createRecordIndexResponse.height)
             && Objects.equals(this.location, createRecordIndexResponse.location)
             && Objects.equals(this.bucket, createRecordIndexResponse.bucket)
@@ -427,7 +427,7 @@ public class CreateRecordIndexResponse extends SdkResponse {
             startTime,
             endTime,
             duration,
-            weight,
+            width,
             height,
             location,
             bucket,
@@ -446,7 +446,7 @@ public class CreateRecordIndexResponse extends SdkResponse {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
-        sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
+        sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");

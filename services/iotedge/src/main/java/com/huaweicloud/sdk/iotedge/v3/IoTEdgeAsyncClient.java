@@ -474,11 +474,11 @@ public class IoTEdgeAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstallCmdRequest 请求对象
-     * @return CompletableFuture<CreateInstallCmdResponse>
+     * @param CreateClusterInstallCmdRequest 请求对象
+     * @return CompletableFuture<CreateClusterInstallCmdResponse>
      */
-    public CompletableFuture<CreateInstallCmdResponse> createInstallCmdAsync(CreateInstallCmdRequest request) {
-        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.createInstallCmd);
+    public CompletableFuture<CreateClusterInstallCmdResponse> createClusterInstallCmdAsync(CreateClusterInstallCmdRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.createClusterInstallCmd);
     }
 
     /**
@@ -488,11 +488,11 @@ public class IoTEdgeAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstallCmdRequest 请求对象
-     * @return AsyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse>
+     * @param CreateClusterInstallCmdRequest 请求对象
+     * @return AsyncInvoker<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse>
      */
-    public AsyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse> createInstallCmdAsyncInvoker(CreateInstallCmdRequest request) {
-        return new AsyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse>(request, IoTEdgeMeta.createInstallCmd, hcClient);
+    public AsyncInvoker<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse> createClusterInstallCmdAsyncInvoker(CreateClusterInstallCmdRequest request) {
+        return new AsyncInvoker<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse>(request, IoTEdgeMeta.createClusterInstallCmd, hcClient);
     }
 
     /**

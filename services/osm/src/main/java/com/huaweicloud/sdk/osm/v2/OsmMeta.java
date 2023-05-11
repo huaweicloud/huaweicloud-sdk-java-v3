@@ -3208,12 +3208,12 @@ public class OsmMeta {
             f -> f.withMarshaller(ListOrderIncidentRequest::getPageSize, (req, v) -> {
                 req.setPageSize(v);
             }));
-        builder.<String>withRequestField("body",
-            LocationType.Body,
+        builder.<String>withRequestField("xCustomerId",
+            LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrderIncidentRequest::getBody, (req, v) -> {
-                req.setBody(v);
+            f -> f.withMarshaller(ListOrderIncidentRequest::getXCustomerId, (req, v) -> {
+                req.setXCustomerId(v);
             }));
 
         // response

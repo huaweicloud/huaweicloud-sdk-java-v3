@@ -9,7 +9,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * 创建参数
@@ -564,11 +563,6 @@ public class BillingCreate {
     private String consoleUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "extra_info")
-
-    private BillbingCreateExtraInfo extraInfo;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_multi_az")
 
     private Boolean isMultiAz;
@@ -777,32 +771,6 @@ public class BillingCreate {
         this.consoleUrl = consoleUrl;
     }
 
-    public BillingCreate withExtraInfo(BillbingCreateExtraInfo extraInfo) {
-        this.extraInfo = extraInfo;
-        return this;
-    }
-
-    public BillingCreate withExtraInfo(Consumer<BillbingCreateExtraInfo> extraInfoSetter) {
-        if (this.extraInfo == null) {
-            this.extraInfo = new BillbingCreateExtraInfo();
-            extraInfoSetter.accept(this.extraInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get extraInfo
-     * @return extraInfo
-     */
-    public BillbingCreateExtraInfo getExtraInfo() {
-        return extraInfo;
-    }
-
-    public void setExtraInfo(BillbingCreateExtraInfo extraInfo) {
-        this.extraInfo = extraInfo;
-    }
-
     public BillingCreate withIsMultiAz(Boolean isMultiAz) {
         this.isMultiAz = isMultiAz;
         return this;
@@ -891,7 +859,6 @@ public class BillingCreate {
             && Objects.equals(this.isAutoRenew, billingCreate.isAutoRenew)
             && Objects.equals(this.isAutoPay, billingCreate.isAutoPay)
             && Objects.equals(this.consoleUrl, billingCreate.consoleUrl)
-            && Objects.equals(this.extraInfo, billingCreate.extraInfo)
             && Objects.equals(this.isMultiAz, billingCreate.isMultiAz)
             && Objects.equals(this.promotionInfo, billingCreate.promotionInfo)
             && Objects.equals(this.purchaseMode, billingCreate.purchaseMode)
@@ -911,7 +878,6 @@ public class BillingCreate {
             isAutoRenew,
             isAutoPay,
             consoleUrl,
-            extraInfo,
             isMultiAz,
             promotionInfo,
             purchaseMode,
@@ -933,7 +899,6 @@ public class BillingCreate {
         sb.append("    isAutoRenew: ").append(toIndentedString(isAutoRenew)).append("\n");
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("    consoleUrl: ").append(toIndentedString(consoleUrl)).append("\n");
-        sb.append("    extraInfo: ").append(toIndentedString(extraInfo)).append("\n");
         sb.append("    isMultiAz: ").append(toIndentedString(isMultiAz)).append("\n");
         sb.append("    promotionInfo: ").append(toIndentedString(promotionInfo)).append("\n");
         sb.append("    purchaseMode: ").append(toIndentedString(purchaseMode)).append("\n");

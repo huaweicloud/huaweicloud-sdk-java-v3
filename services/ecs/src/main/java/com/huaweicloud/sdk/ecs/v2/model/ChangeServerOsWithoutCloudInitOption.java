@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 重装操作系统body体。
@@ -34,6 +35,11 @@ public class ChangeServerOsWithoutCloudInitOption {
     @JsonProperty(value = "mode")
 
     private String mode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metadata")
+
+    private ChangeSeversOsMetadataWithoutCloudInitOption metadata;
 
     public ChangeServerOsWithoutCloudInitOption withAdminpass(String adminpass) {
         this.adminpass = adminpass;
@@ -120,6 +126,33 @@ public class ChangeServerOsWithoutCloudInitOption {
         this.mode = mode;
     }
 
+    public ChangeServerOsWithoutCloudInitOption withMetadata(ChangeSeversOsMetadataWithoutCloudInitOption metadata) {
+        this.metadata = metadata;
+        return this;
+    }
+
+    public ChangeServerOsWithoutCloudInitOption withMetadata(
+        Consumer<ChangeSeversOsMetadataWithoutCloudInitOption> metadataSetter) {
+        if (this.metadata == null) {
+            this.metadata = new ChangeSeversOsMetadataWithoutCloudInitOption();
+            metadataSetter.accept(this.metadata);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get metadata
+     * @return metadata
+     */
+    public ChangeSeversOsMetadataWithoutCloudInitOption getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(ChangeSeversOsMetadataWithoutCloudInitOption metadata) {
+        this.metadata = metadata;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -134,12 +167,13 @@ public class ChangeServerOsWithoutCloudInitOption {
             && Objects.equals(this.keyname, changeServerOsWithoutCloudInitOption.keyname)
             && Objects.equals(this.userid, changeServerOsWithoutCloudInitOption.userid)
             && Objects.equals(this.imageid, changeServerOsWithoutCloudInitOption.imageid)
-            && Objects.equals(this.mode, changeServerOsWithoutCloudInitOption.mode);
+            && Objects.equals(this.mode, changeServerOsWithoutCloudInitOption.mode)
+            && Objects.equals(this.metadata, changeServerOsWithoutCloudInitOption.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(adminpass, keyname, userid, imageid, mode);
+        return Objects.hash(adminpass, keyname, userid, imageid, mode, metadata);
     }
 
     @Override
@@ -151,6 +185,7 @@ public class ChangeServerOsWithoutCloudInitOption {
         sb.append("    userid: ").append(toIndentedString(userid)).append("\n");
         sb.append("    imageid: ").append(toIndentedString(imageid)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("}");
         return sb.toString();
     }

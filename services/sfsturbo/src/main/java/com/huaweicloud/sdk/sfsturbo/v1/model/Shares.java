@@ -503,7 +503,7 @@ public class Shares {
     }
 
     /**
-     * SFS Turbo文件系统的状态。'100'表示创建中，'200'表示可用，'400'表示已删除，'303'表示创建失败。
+     * SFS Turbo文件系统的状态。'100'表示创建中，'200'表示可用，'303'表示创建失败。
      * @return status
      */
     public String getStatus() {

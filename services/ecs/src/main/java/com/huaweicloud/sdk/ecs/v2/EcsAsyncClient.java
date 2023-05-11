@@ -1219,6 +1219,36 @@ public class EcsAsyncClient {
     }
 
     /**
+     * 添加云服务器网卡
+     *
+     * 给云服务器添加一张网卡。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NovaAttachInterfaceRequest 请求对象
+     * @return CompletableFuture<NovaAttachInterfaceResponse>
+     */
+    public CompletableFuture<NovaAttachInterfaceResponse> novaAttachInterfaceAsync(NovaAttachInterfaceRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.novaAttachInterface);
+    }
+
+    /**
+     * 添加云服务器网卡
+     *
+     * 给云服务器添加一张网卡。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NovaAttachInterfaceRequest 请求对象
+     * @return AsyncInvoker<NovaAttachInterfaceRequest, NovaAttachInterfaceResponse>
+     */
+    public AsyncInvoker<NovaAttachInterfaceRequest, NovaAttachInterfaceResponse> novaAttachInterfaceAsyncInvoker(
+        NovaAttachInterfaceRequest request) {
+        return new AsyncInvoker<NovaAttachInterfaceRequest, NovaAttachInterfaceResponse>(request,
+            EcsMeta.novaAttachInterface, hcClient);
+    }
+
+    /**
      * 创建和导入SSH密钥
      *
      * 创建SSH密钥，或把公钥导入系统，生成密钥对。

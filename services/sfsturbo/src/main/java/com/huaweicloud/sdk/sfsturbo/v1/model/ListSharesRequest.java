@@ -47,7 +47,6 @@ public class ListSharesRequest {
     /**
      * 文件系统查询个数的偏移量。
      * minimum: 0
-     * maximum: 200
      * @return offset
      */
     public Long getOffset() {

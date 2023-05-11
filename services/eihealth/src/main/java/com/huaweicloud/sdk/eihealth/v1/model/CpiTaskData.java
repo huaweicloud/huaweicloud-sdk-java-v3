@@ -38,6 +38,11 @@ public class CpiTaskData {
 
     private Integer numResults;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_props")
+
+    private List<CustomProp> customProps = null;
+
     public CpiTaskData withHeader(String header) {
         this.header = header;
         return this;
@@ -139,6 +144,39 @@ public class CpiTaskData {
         this.numResults = numResults;
     }
 
+    public CpiTaskData withCustomProps(List<CustomProp> customProps) {
+        this.customProps = customProps;
+        return this;
+    }
+
+    public CpiTaskData addCustomPropsItem(CustomProp customPropsItem) {
+        if (this.customProps == null) {
+            this.customProps = new ArrayList<>();
+        }
+        this.customProps.add(customPropsItem);
+        return this;
+    }
+
+    public CpiTaskData withCustomProps(Consumer<List<CustomProp>> customPropsSetter) {
+        if (this.customProps == null) {
+            this.customProps = new ArrayList<>();
+        }
+        customPropsSetter.accept(this.customProps);
+        return this;
+    }
+
+    /**
+     * 用户已开启的自定义属性集合
+     * @return customProps
+     */
+    public List<CustomProp> getCustomProps() {
+        return customProps;
+    }
+
+    public void setCustomProps(List<CustomProp> customProps) {
+        this.customProps = customProps;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -151,12 +189,13 @@ public class CpiTaskData {
         return Objects.equals(this.header, cpiTaskData.header) && Objects.equals(this.fasta, cpiTaskData.fasta)
             && Objects.equals(this.smilesList, cpiTaskData.smilesList)
             && Objects.equals(this.threshold, cpiTaskData.threshold)
-            && Objects.equals(this.numResults, cpiTaskData.numResults);
+            && Objects.equals(this.numResults, cpiTaskData.numResults)
+            && Objects.equals(this.customProps, cpiTaskData.customProps);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(header, fasta, smilesList, threshold, numResults);
+        return Objects.hash(header, fasta, smilesList, threshold, numResults, customProps);
     }
 
     @Override
@@ -168,6 +207,7 @@ public class CpiTaskData {
         sb.append("    smilesList: ").append(toIndentedString(smilesList)).append("\n");
         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
         sb.append("    numResults: ").append(toIndentedString(numResults)).append("\n");
+        sb.append("    customProps: ").append(toIndentedString(customProps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -11,6 +11,11 @@ import java.util.Objects;
 public class StopJobInstanceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workspace")
+
+    private String workspace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_name")
 
     private String jobName;
@@ -19,6 +24,23 @@ public class StopJobInstanceRequest {
     @JsonProperty(value = "instance_id")
 
     private String instanceId;
+
+    public StopJobInstanceRequest withWorkspace(String workspace) {
+        this.workspace = workspace;
+        return this;
+    }
+
+    /**
+     * 工作空间id
+     * @return workspace
+     */
+    public String getWorkspace() {
+        return workspace;
+    }
+
+    public void setWorkspace(String workspace) {
+        this.workspace = workspace;
+    }
 
     public StopJobInstanceRequest withJobName(String jobName) {
         this.jobName = jobName;
@@ -63,19 +85,21 @@ public class StopJobInstanceRequest {
             return false;
         }
         StopJobInstanceRequest stopJobInstanceRequest = (StopJobInstanceRequest) o;
-        return Objects.equals(this.jobName, stopJobInstanceRequest.jobName)
+        return Objects.equals(this.workspace, stopJobInstanceRequest.workspace)
+            && Objects.equals(this.jobName, stopJobInstanceRequest.jobName)
             && Objects.equals(this.instanceId, stopJobInstanceRequest.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobName, instanceId);
+        return Objects.hash(workspace, jobName, instanceId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class StopJobInstanceRequest {\n");
+        sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");

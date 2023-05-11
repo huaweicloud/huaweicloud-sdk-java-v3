@@ -17,14 +17,14 @@ public class ListQuotasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
-    private List<Quota> resources = null;
+    private List<CtsQuota> resources = null;
 
-    public ListQuotasResponse withResources(List<Quota> resources) {
+    public ListQuotasResponse withResources(List<CtsQuota> resources) {
         this.resources = resources;
         return this;
     }
 
-    public ListQuotasResponse addResourcesItem(Quota resourcesItem) {
+    public ListQuotasResponse addResourcesItem(CtsQuota resourcesItem) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ListQuotasResponse extends SdkResponse {
         return this;
     }
 
-    public ListQuotasResponse withResources(Consumer<List<Quota>> resourcesSetter) {
+    public ListQuotasResponse withResources(Consumer<List<CtsQuota>> resourcesSetter) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -44,11 +44,11 @@ public class ListQuotasResponse extends SdkResponse {
      * 本次查询追踪器列表返回的追踪器数组。
      * @return resources
      */
-    public List<Quota> getResources() {
+    public List<CtsQuota> getResources() {
         return resources;
     }
 
-    public void setResources(List<Quota> resources) {
+    public void setResources(List<CtsQuota> resources) {
         this.resources = resources;
     }
 

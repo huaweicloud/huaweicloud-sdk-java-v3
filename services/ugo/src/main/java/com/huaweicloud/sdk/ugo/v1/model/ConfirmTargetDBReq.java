@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.ugo.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -20,187 +15,15 @@ public class ConfirmTargetDBReq {
 
     private String evaluationProjectId;
 
-    /**
-     * 目标数据库类型。
-     */
-    public static final class TargetDbTypeEnum {
-
-        /**
-         * Enum RDS_FOR_MYSQL for value: "RDS for MySQL"
-         */
-        public static final TargetDbTypeEnum RDS_FOR_MYSQL = new TargetDbTypeEnum("RDS for MySQL");
-
-        /**
-         * Enum GAUSSDB_FOR_MYSQL_ for value: "GaussDB(for MySQL)"
-         */
-        public static final TargetDbTypeEnum GAUSSDB_FOR_MYSQL_ = new TargetDbTypeEnum("GaussDB(for MySQL)");
-
-        /**
-         * Enum RDS_FOR_POSTGRESQL for value: "RDS for PostgreSQL"
-         */
-        public static final TargetDbTypeEnum RDS_FOR_POSTGRESQL = new TargetDbTypeEnum("RDS for PostgreSQL");
-
-        private static final Map<String, TargetDbTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, TargetDbTypeEnum> createStaticFields() {
-            Map<String, TargetDbTypeEnum> map = new HashMap<>();
-            map.put("RDS for MySQL", RDS_FOR_MYSQL);
-            map.put("GaussDB(for MySQL)", GAUSSDB_FOR_MYSQL_);
-            map.put("RDS for PostgreSQL", RDS_FOR_POSTGRESQL);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        TargetDbTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TargetDbTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            TargetDbTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TargetDbTypeEnum(value);
-            }
-            return result;
-        }
-
-        public static TargetDbTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            TargetDbTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof TargetDbTypeEnum) {
-                return this.value.equals(((TargetDbTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_db_type")
 
-    private TargetDbTypeEnum targetDbType;
-
-    /**
-     * 目标数据库版本。（注意：该字段需要与 target_db_type 字段组合成有效的目标数据库类型与版本，当前支持以下组合： RDS for PostgreSQL-11； RDS for PostgreSQL-Enhanced Edition； RDS for MySQL-5.7; GaussDB(for MySQL) 8.0。)
-     */
-    public static final class TargetDbVersionEnum {
-
-        /**
-         * Enum _5_7 for value: "5.7"
-         */
-        public static final TargetDbVersionEnum _5_7 = new TargetDbVersionEnum("5.7");
-
-        /**
-         * Enum _8_0 for value: "8.0"
-         */
-        public static final TargetDbVersionEnum _8_0 = new TargetDbVersionEnum("8.0");
-
-        /**
-         * Enum _11 for value: "11"
-         */
-        public static final TargetDbVersionEnum _11 = new TargetDbVersionEnum("11");
-
-        /**
-         * Enum ENHANCED_EDITION for value: "Enhanced Edition"
-         */
-        public static final TargetDbVersionEnum ENHANCED_EDITION = new TargetDbVersionEnum("Enhanced Edition");
-
-        private static final Map<String, TargetDbVersionEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, TargetDbVersionEnum> createStaticFields() {
-            Map<String, TargetDbVersionEnum> map = new HashMap<>();
-            map.put("5.7", _5_7);
-            map.put("8.0", _8_0);
-            map.put("11", _11);
-            map.put("Enhanced Edition", ENHANCED_EDITION);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        TargetDbVersionEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TargetDbVersionEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            TargetDbVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TargetDbVersionEnum(value);
-            }
-            return result;
-        }
-
-        public static TargetDbVersionEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            TargetDbVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof TargetDbVersionEnum) {
-                return this.value.equals(((TargetDbVersionEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String targetDbType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_db_version")
 
-    private TargetDbVersionEnum targetDbVersion;
+    private String targetDbVersion;
 
     public ConfirmTargetDBReq withEvaluationProjectId(String evaluationProjectId) {
         this.evaluationProjectId = evaluationProjectId;
@@ -219,7 +42,7 @@ public class ConfirmTargetDBReq {
         this.evaluationProjectId = evaluationProjectId;
     }
 
-    public ConfirmTargetDBReq withTargetDbType(TargetDbTypeEnum targetDbType) {
+    public ConfirmTargetDBReq withTargetDbType(String targetDbType) {
         this.targetDbType = targetDbType;
         return this;
     }
@@ -228,28 +51,28 @@ public class ConfirmTargetDBReq {
      * 目标数据库类型。
      * @return targetDbType
      */
-    public TargetDbTypeEnum getTargetDbType() {
+    public String getTargetDbType() {
         return targetDbType;
     }
 
-    public void setTargetDbType(TargetDbTypeEnum targetDbType) {
+    public void setTargetDbType(String targetDbType) {
         this.targetDbType = targetDbType;
     }
 
-    public ConfirmTargetDBReq withTargetDbVersion(TargetDbVersionEnum targetDbVersion) {
+    public ConfirmTargetDBReq withTargetDbVersion(String targetDbVersion) {
         this.targetDbVersion = targetDbVersion;
         return this;
     }
 
     /**
-     * 目标数据库版本。（注意：该字段需要与 target_db_type 字段组合成有效的目标数据库类型与版本，当前支持以下组合： RDS for PostgreSQL-11； RDS for PostgreSQL-Enhanced Edition； RDS for MySQL-5.7; GaussDB(for MySQL) 8.0。)
+     * 目标数据库版本。
      * @return targetDbVersion
      */
-    public TargetDbVersionEnum getTargetDbVersion() {
+    public String getTargetDbVersion() {
         return targetDbVersion;
     }
 
-    public void setTargetDbVersion(TargetDbVersionEnum targetDbVersion) {
+    public void setTargetDbVersion(String targetDbVersion) {
         this.targetDbVersion = targetDbVersion;
     }
 

@@ -155,6 +155,49 @@ public class RmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAggregateComplianceByPolicyAssignmentRequest, ListAggregateComplianceByPolicyAssignmentResponse> listAggregateComplianceByPolicyAssignment =
+        genForlistAggregateComplianceByPolicyAssignment();
+
+    private static HttpRequestDef<ListAggregateComplianceByPolicyAssignmentRequest, ListAggregateComplianceByPolicyAssignmentResponse> genForlistAggregateComplianceByPolicyAssignment() {
+        // basic
+        HttpRequestDef.Builder<ListAggregateComplianceByPolicyAssignmentRequest, ListAggregateComplianceByPolicyAssignmentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListAggregateComplianceByPolicyAssignmentRequest.class,
+                    ListAggregateComplianceByPolicyAssignmentResponse.class)
+                .withName("ListAggregateComplianceByPolicyAssignment")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/aggregators/aggregate-data/policy-assignments/compliance")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAggregateComplianceByPolicyAssignmentRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAggregateComplianceByPolicyAssignmentRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<AggregatePolicyAssignmentsRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AggregatePolicyAssignmentsRequest.class),
+            f -> f.withMarshaller(ListAggregateComplianceByPolicyAssignmentRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAggregateDiscoveredResourcesRequest, ListAggregateDiscoveredResourcesResponse> listAggregateDiscoveredResources =
         genForlistAggregateDiscoveredResources();
 
@@ -359,6 +402,49 @@ public class RmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAggregateComplianceDetailsByPolicyAssignmentRequest, ShowAggregateComplianceDetailsByPolicyAssignmentResponse> showAggregateComplianceDetailsByPolicyAssignment =
+        genForshowAggregateComplianceDetailsByPolicyAssignment();
+
+    private static HttpRequestDef<ShowAggregateComplianceDetailsByPolicyAssignmentRequest, ShowAggregateComplianceDetailsByPolicyAssignmentResponse> genForshowAggregateComplianceDetailsByPolicyAssignment() {
+        // basic
+        HttpRequestDef.Builder<ShowAggregateComplianceDetailsByPolicyAssignmentRequest, ShowAggregateComplianceDetailsByPolicyAssignmentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowAggregateComplianceDetailsByPolicyAssignmentRequest.class,
+                    ShowAggregateComplianceDetailsByPolicyAssignmentResponse.class)
+                .withName("ShowAggregateComplianceDetailsByPolicyAssignment")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/aggregators/aggregate-data/policy-states/compliance-details")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAggregateComplianceDetailsByPolicyAssignmentRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAggregateComplianceDetailsByPolicyAssignmentRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<AggregateComplianceDetailRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AggregateComplianceDetailRequest.class),
+            f -> f.withMarshaller(ShowAggregateComplianceDetailsByPolicyAssignmentRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAggregateDiscoveredResourceCountsRequest, ShowAggregateDiscoveredResourceCountsResponse> showAggregateDiscoveredResourceCounts =
         genForshowAggregateDiscoveredResourceCounts();
 
@@ -380,6 +466,63 @@ public class RmsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AggregateDiscoveredResourceCountsRequest.class),
             f -> f.withMarshaller(ShowAggregateDiscoveredResourceCountsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAggregatePolicyAssignmentDetailRequest, ShowAggregatePolicyAssignmentDetailResponse> showAggregatePolicyAssignmentDetail =
+        genForshowAggregatePolicyAssignmentDetail();
+
+    private static HttpRequestDef<ShowAggregatePolicyAssignmentDetailRequest, ShowAggregatePolicyAssignmentDetailResponse> genForshowAggregatePolicyAssignmentDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowAggregatePolicyAssignmentDetailRequest, ShowAggregatePolicyAssignmentDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowAggregatePolicyAssignmentDetailRequest.class,
+                    ShowAggregatePolicyAssignmentDetailResponse.class)
+                .withName("ShowAggregatePolicyAssignmentDetail")
+                .withUri("/v1/resource-manager/domains/{domain_id}/aggregators/aggregate-data/policy-assignment/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AggregatePolicyAssignmentDetailRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AggregatePolicyAssignmentDetailRequest.class),
+            f -> f.withMarshaller(ShowAggregatePolicyAssignmentDetailRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAggregatePolicyStateComplianceSummaryRequest, ShowAggregatePolicyStateComplianceSummaryResponse> showAggregatePolicyStateComplianceSummary =
+        genForshowAggregatePolicyStateComplianceSummary();
+
+    private static HttpRequestDef<ShowAggregatePolicyStateComplianceSummaryRequest, ShowAggregatePolicyStateComplianceSummaryResponse> genForshowAggregatePolicyStateComplianceSummary() {
+        // basic
+        HttpRequestDef.Builder<ShowAggregatePolicyStateComplianceSummaryRequest, ShowAggregatePolicyStateComplianceSummaryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowAggregatePolicyStateComplianceSummaryRequest.class,
+                    ShowAggregatePolicyStateComplianceSummaryResponse.class)
+                .withName("ShowAggregatePolicyStateComplianceSummary")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/aggregators/aggregate-data/policy-states/compliance-summary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AggregatePolicyStatesRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AggregatePolicyStatesRequest.class),
+            f -> f.withMarshaller(ShowAggregatePolicyStateComplianceSummaryRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

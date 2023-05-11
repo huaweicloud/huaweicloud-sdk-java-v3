@@ -40,7 +40,7 @@ public class LiveMeta {
             }));
         builder.<List<String>>withRequestField("play_domains",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAreaDetailRequest::getPlayDomains, (req, v) -> {
                 req.setPlayDomains(v);

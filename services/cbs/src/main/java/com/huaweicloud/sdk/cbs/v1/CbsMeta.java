@@ -571,6 +571,22 @@ public class CbsMeta {
                 req.setImageId(v);
             })
         );
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExecuteGetFramsListByImagesIdRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExecuteGetFramsListByImagesIdRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
 
         // response
 

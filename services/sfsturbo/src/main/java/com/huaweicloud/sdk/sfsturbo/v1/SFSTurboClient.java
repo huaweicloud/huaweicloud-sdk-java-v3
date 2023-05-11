@@ -116,6 +116,64 @@ public class SFSTurboClient {
     }
 
     /**
+     * 创建目录
+     *
+     * 创建目录 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFsDirRequest 请求对象
+     * @return CreateFsDirResponse
+     */
+    public CreateFsDirResponse createFsDir(CreateFsDirRequest request) {
+        return hcClient.syncInvokeHttp(request, SFSTurboMeta.createFsDir);
+    }
+
+    /**
+     * 创建目录
+     *
+     * 创建目录 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFsDirRequest 请求对象
+     * @return SyncInvoker<CreateFsDirRequest, CreateFsDirResponse>
+     */
+    public SyncInvoker<CreateFsDirRequest, CreateFsDirResponse> createFsDirInvoker(CreateFsDirRequest request) {
+        return new SyncInvoker<CreateFsDirRequest, CreateFsDirResponse>(request, SFSTurboMeta.createFsDir, hcClient);
+    }
+
+    /**
+     * 创建目标文件夹quota
+     *
+     * 创建目标文件夹quota。只支持对空目录设置目录quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFsDirQuotaRequest 请求对象
+     * @return CreateFsDirQuotaResponse
+     */
+    public CreateFsDirQuotaResponse createFsDirQuota(CreateFsDirQuotaRequest request) {
+        return hcClient.syncInvokeHttp(request, SFSTurboMeta.createFsDirQuota);
+    }
+
+    /**
+     * 创建目标文件夹quota
+     *
+     * 创建目标文件夹quota。只支持对空目录设置目录quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFsDirQuotaRequest 请求对象
+     * @return SyncInvoker<CreateFsDirQuotaRequest, CreateFsDirQuotaResponse>
+     */
+    public SyncInvoker<CreateFsDirQuotaRequest, CreateFsDirQuotaResponse> createFsDirQuotaInvoker(
+        CreateFsDirQuotaRequest request) {
+        return new SyncInvoker<CreateFsDirQuotaRequest, CreateFsDirQuotaResponse>(request,
+            SFSTurboMeta.createFsDirQuota, hcClient);
+    }
+
+    /**
      * 创建文件系统
      *
      * 创建文件系统。
@@ -177,6 +235,64 @@ public class SFSTurboClient {
         CreateSharedTagRequest request) {
         return new SyncInvoker<CreateSharedTagRequest, CreateSharedTagResponse>(request, SFSTurboMeta.createSharedTag,
             hcClient);
+    }
+
+    /**
+     * 删除文件系统目录
+     *
+     * 删除文件系统目录 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFsDirRequest 请求对象
+     * @return DeleteFsDirResponse
+     */
+    public DeleteFsDirResponse deleteFsDir(DeleteFsDirRequest request) {
+        return hcClient.syncInvokeHttp(request, SFSTurboMeta.deleteFsDir);
+    }
+
+    /**
+     * 删除文件系统目录
+     *
+     * 删除文件系统目录 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFsDirRequest 请求对象
+     * @return SyncInvoker<DeleteFsDirRequest, DeleteFsDirResponse>
+     */
+    public SyncInvoker<DeleteFsDirRequest, DeleteFsDirResponse> deleteFsDirInvoker(DeleteFsDirRequest request) {
+        return new SyncInvoker<DeleteFsDirRequest, DeleteFsDirResponse>(request, SFSTurboMeta.deleteFsDir, hcClient);
+    }
+
+    /**
+     * 删除目标文件夹quota
+     *
+     * 删除目标文件夹quota。只支持对空目录进行删除quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFsDirQuotaRequest 请求对象
+     * @return DeleteFsDirQuotaResponse
+     */
+    public DeleteFsDirQuotaResponse deleteFsDirQuota(DeleteFsDirQuotaRequest request) {
+        return hcClient.syncInvokeHttp(request, SFSTurboMeta.deleteFsDirQuota);
+    }
+
+    /**
+     * 删除目标文件夹quota
+     *
+     * 删除目标文件夹quota。只支持对空目录进行删除quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFsDirQuotaRequest 请求对象
+     * @return SyncInvoker<DeleteFsDirQuotaRequest, DeleteFsDirQuotaResponse>
+     */
+    public SyncInvoker<DeleteFsDirQuotaRequest, DeleteFsDirQuotaResponse> deleteFsDirQuotaInvoker(
+        DeleteFsDirQuotaRequest request) {
+        return new SyncInvoker<DeleteFsDirQuotaRequest, DeleteFsDirQuotaResponse>(request,
+            SFSTurboMeta.deleteFsDirQuota, hcClient);
     }
 
     /**
@@ -324,6 +440,64 @@ public class SFSTurboClient {
     }
 
     /**
+     * 查询目录是否存在
+     *
+     * 查询目录是否存在 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFsDirRequest 请求对象
+     * @return ShowFsDirResponse
+     */
+    public ShowFsDirResponse showFsDir(ShowFsDirRequest request) {
+        return hcClient.syncInvokeHttp(request, SFSTurboMeta.showFsDir);
+    }
+
+    /**
+     * 查询目录是否存在
+     *
+     * 查询目录是否存在 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFsDirRequest 请求对象
+     * @return SyncInvoker<ShowFsDirRequest, ShowFsDirResponse>
+     */
+    public SyncInvoker<ShowFsDirRequest, ShowFsDirResponse> showFsDirInvoker(ShowFsDirRequest request) {
+        return new SyncInvoker<ShowFsDirRequest, ShowFsDirResponse>(request, SFSTurboMeta.showFsDir, hcClient);
+    }
+
+    /**
+     * 查询目标文件夹quota
+     *
+     * 查询目标文件夹quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFsDirQuotaRequest 请求对象
+     * @return ShowFsDirQuotaResponse
+     */
+    public ShowFsDirQuotaResponse showFsDirQuota(ShowFsDirQuotaRequest request) {
+        return hcClient.syncInvokeHttp(request, SFSTurboMeta.showFsDirQuota);
+    }
+
+    /**
+     * 查询目标文件夹quota
+     *
+     * 查询目标文件夹quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFsDirQuotaRequest 请求对象
+     * @return SyncInvoker<ShowFsDirQuotaRequest, ShowFsDirQuotaResponse>
+     */
+    public SyncInvoker<ShowFsDirQuotaRequest, ShowFsDirQuotaResponse> showFsDirQuotaInvoker(
+        ShowFsDirQuotaRequest request) {
+        return new SyncInvoker<ShowFsDirQuotaRequest, ShowFsDirQuotaResponse>(request, SFSTurboMeta.showFsDirQuota,
+            hcClient);
+    }
+
+    /**
      * 查询文件系统详细信息
      *
      * 查询SFS Turbo文件系统详细信息。
@@ -379,6 +553,36 @@ public class SFSTurboClient {
         ShowSharedTagsRequest request) {
         return new SyncInvoker<ShowSharedTagsRequest, ShowSharedTagsResponse>(request, SFSTurboMeta.showSharedTags,
             hcClient);
+    }
+
+    /**
+     * 更新目标文件夹quota
+     *
+     * 更新目标文件夹quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFsDirQuotaRequest 请求对象
+     * @return UpdateFsDirQuotaResponse
+     */
+    public UpdateFsDirQuotaResponse updateFsDirQuota(UpdateFsDirQuotaRequest request) {
+        return hcClient.syncInvokeHttp(request, SFSTurboMeta.updateFsDirQuota);
+    }
+
+    /**
+     * 更新目标文件夹quota
+     *
+     * 更新目标文件夹quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFsDirQuotaRequest 请求对象
+     * @return SyncInvoker<UpdateFsDirQuotaRequest, UpdateFsDirQuotaResponse>
+     */
+    public SyncInvoker<UpdateFsDirQuotaRequest, UpdateFsDirQuotaResponse> updateFsDirQuotaInvoker(
+        UpdateFsDirQuotaRequest request) {
+        return new SyncInvoker<UpdateFsDirQuotaRequest, UpdateFsDirQuotaResponse>(request,
+            SFSTurboMeta.updateFsDirQuota, hcClient);
     }
 
 }

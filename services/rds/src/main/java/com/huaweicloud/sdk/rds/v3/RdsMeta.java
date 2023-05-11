@@ -4674,6 +4674,87 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeletePostgresqlDatabaseRequest, DeletePostgresqlDatabaseResponse> deletePostgresqlDatabase =
+        genFordeletePostgresqlDatabase();
+
+    private static HttpRequestDef<DeletePostgresqlDatabaseRequest, DeletePostgresqlDatabaseResponse> genFordeletePostgresqlDatabase() {
+        // basic
+        HttpRequestDef.Builder<DeletePostgresqlDatabaseRequest, DeletePostgresqlDatabaseResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeletePostgresqlDatabaseRequest.class,
+                    DeletePostgresqlDatabaseResponse.class)
+                .withName("DeletePostgresqlDatabase")
+                .withUri("/v3/{project_id}/instances/{instance_id}/database/{db_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePostgresqlDatabaseRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("db_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePostgresqlDatabaseRequest::getDbName, (req, v) -> {
+                req.setDbName(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePostgresqlDatabaseRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePostgresqlDbUserRequest, DeletePostgresqlDbUserResponse> deletePostgresqlDbUser =
+        genFordeletePostgresqlDbUser();
+
+    private static HttpRequestDef<DeletePostgresqlDbUserRequest, DeletePostgresqlDbUserResponse> genFordeletePostgresqlDbUser() {
+        // basic
+        HttpRequestDef.Builder<DeletePostgresqlDbUserRequest, DeletePostgresqlDbUserResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeletePostgresqlDbUserRequest.class, DeletePostgresqlDbUserResponse.class)
+            .withName("DeletePostgresqlDbUser")
+            .withUri("/v3/{project_id}/instances/{instance_id}/db_user/{user_name}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePostgresqlDbUserRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePostgresqlDbUserRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePostgresqlDbUserRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeletePostgresqlExtensionRequest, DeletePostgresqlExtensionResponse> deletePostgresqlExtension =
         genFordeletePostgresqlExtension();
 
@@ -5257,6 +5338,88 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DbUserPrivilegeRequest.class),
             f -> f.withMarshaller(UpdateDbUserPrivilegeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePostgresqlDatabaseRequest, UpdatePostgresqlDatabaseResponse> updatePostgresqlDatabase =
+        genForupdatePostgresqlDatabase();
+
+    private static HttpRequestDef<UpdatePostgresqlDatabaseRequest, UpdatePostgresqlDatabaseResponse> genForupdatePostgresqlDatabase() {
+        // basic
+        HttpRequestDef.Builder<UpdatePostgresqlDatabaseRequest, UpdatePostgresqlDatabaseResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, UpdatePostgresqlDatabaseRequest.class, UpdatePostgresqlDatabaseResponse.class)
+                .withName("UpdatePostgresqlDatabase")
+                .withUri("/v3/{project_id}/instances/{instance_id}/database/update")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePostgresqlDatabaseRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpdatePostgresqlDatabaseRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdatePostgresqlDatabaseRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpdatePostgresqlDatabaseRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<UpdateDatabaseReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDatabaseReq.class),
+            f -> f.withMarshaller(UpdatePostgresqlDatabaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePostgresqlDbUserCommentRequest, UpdatePostgresqlDbUserCommentResponse> updatePostgresqlDbUserComment =
+        genForupdatePostgresqlDbUserComment();
+
+    private static HttpRequestDef<UpdatePostgresqlDbUserCommentRequest, UpdatePostgresqlDbUserCommentResponse> genForupdatePostgresqlDbUserComment() {
+        // basic
+        HttpRequestDef.Builder<UpdatePostgresqlDbUserCommentRequest, UpdatePostgresqlDbUserCommentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdatePostgresqlDbUserCommentRequest.class,
+                    UpdatePostgresqlDbUserCommentResponse.class)
+                .withName("UpdatePostgresqlDbUserComment")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-users/{user_name}/comment")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePostgresqlDbUserCommentRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePostgresqlDbUserCommentRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            }));
+        builder.<UpdateDbUserReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDbUserReq.class),
+            f -> f.withMarshaller(UpdatePostgresqlDbUserCommentRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

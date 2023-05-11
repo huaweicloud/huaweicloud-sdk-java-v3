@@ -21,7 +21,7 @@ public class TagResource {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_detail")
 
-    private List<Vault> resourceDetail = null;
+    private InstancesResourceDetail resourceDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -55,36 +55,29 @@ public class TagResource {
         this.resourceId = resourceId;
     }
 
-    public TagResource withResourceDetail(List<Vault> resourceDetail) {
+    public TagResource withResourceDetail(InstancesResourceDetail resourceDetail) {
         this.resourceDetail = resourceDetail;
         return this;
     }
 
-    public TagResource addResourceDetailItem(Vault resourceDetailItem) {
+    public TagResource withResourceDetail(Consumer<InstancesResourceDetail> resourceDetailSetter) {
         if (this.resourceDetail == null) {
-            this.resourceDetail = new ArrayList<>();
+            this.resourceDetail = new InstancesResourceDetail();
+            resourceDetailSetter.accept(this.resourceDetail);
         }
-        this.resourceDetail.add(resourceDetailItem);
-        return this;
-    }
 
-    public TagResource withResourceDetail(Consumer<List<Vault>> resourceDetailSetter) {
-        if (this.resourceDetail == null) {
-            this.resourceDetail = new ArrayList<>();
-        }
-        resourceDetailSetter.accept(this.resourceDetail);
         return this;
     }
 
     /**
-     * 资源详情
+     * Get resourceDetail
      * @return resourceDetail
      */
-    public List<Vault> getResourceDetail() {
+    public InstancesResourceDetail getResourceDetail() {
         return resourceDetail;
     }
 
-    public void setResourceDetail(List<Vault> resourceDetail) {
+    public void setResourceDetail(InstancesResourceDetail resourceDetail) {
         this.resourceDetail = resourceDetail;
     }
 

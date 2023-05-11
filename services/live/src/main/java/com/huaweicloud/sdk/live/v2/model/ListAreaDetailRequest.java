@@ -207,7 +207,7 @@ public class ListAreaDetailRequest {
     }
 
     /**
-     * 需查询的播放域名列表，最多支持查询15个域名。 
+     * 需查询的播放域名列表，最多支持查询100个域名。 
      * @return playDomains
      */
     public List<String> getPlayDomains() {

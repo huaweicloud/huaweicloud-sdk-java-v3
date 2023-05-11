@@ -11,9 +11,31 @@ import java.util.Objects;
 public class ShowResourceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workspace")
+
+    private String workspace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
     private String resourceId;
+
+    public ShowResourceRequest withWorkspace(String workspace) {
+        this.workspace = workspace;
+        return this;
+    }
+
+    /**
+     * 工作空间id
+     * @return workspace
+     */
+    public String getWorkspace() {
+        return workspace;
+    }
+
+    public void setWorkspace(String workspace) {
+        this.workspace = workspace;
+    }
 
     public ShowResourceRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -41,18 +63,20 @@ public class ShowResourceRequest {
             return false;
         }
         ShowResourceRequest showResourceRequest = (ShowResourceRequest) o;
-        return Objects.equals(this.resourceId, showResourceRequest.resourceId);
+        return Objects.equals(this.workspace, showResourceRequest.workspace)
+            && Objects.equals(this.resourceId, showResourceRequest.resourceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId);
+        return Objects.hash(workspace, resourceId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowResourceRequest {\n");
+        sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("}");
         return sb.toString();

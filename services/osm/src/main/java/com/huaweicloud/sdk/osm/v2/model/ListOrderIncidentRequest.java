@@ -89,9 +89,9 @@ public class ListOrderIncidentRequest {
     private Integer pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "xCustomerId")
 
-    private String body;
+    private String xCustomerId;
 
     public ListOrderIncidentRequest withVersion(String version) {
         this.version = version;
@@ -386,21 +386,21 @@ public class ListOrderIncidentRequest {
         this.pageSize = pageSize;
     }
 
-    public ListOrderIncidentRequest withBody(String body) {
-        this.body = body;
+    public ListOrderIncidentRequest withXCustomerId(String xCustomerId) {
+        this.xCustomerId = xCustomerId;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 客户id
+     * @return xCustomerId
      */
-    public String getBody() {
-        return body;
+    public String getXCustomerId() {
+        return xCustomerId;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setXCustomerId(String xCustomerId) {
+        this.xCustomerId = xCustomerId;
     }
 
     @Override
@@ -427,7 +427,7 @@ public class ListOrderIncidentRequest {
             && Objects.equals(this.businessTypeId, listOrderIncidentRequest.businessTypeId)
             && Objects.equals(this.pageNo, listOrderIncidentRequest.pageNo)
             && Objects.equals(this.pageSize, listOrderIncidentRequest.pageSize)
-            && Objects.equals(this.body, listOrderIncidentRequest.body);
+            && Objects.equals(this.xCustomerId, listOrderIncidentRequest.xCustomerId);
     }
 
     @Override
@@ -447,7 +447,7 @@ public class ListOrderIncidentRequest {
             businessTypeId,
             pageNo,
             pageSize,
-            body);
+            xCustomerId);
     }
 
     @Override
@@ -469,7 +469,7 @@ public class ListOrderIncidentRequest {
         sb.append("    businessTypeId: ").append(toIndentedString(businessTypeId)).append("\n");
         sb.append("    pageNo: ").append(toIndentedString(pageNo)).append("\n");
         sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    xCustomerId: ").append(toIndentedString(xCustomerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -12,6 +12,11 @@ import java.util.function.Consumer;
 public class RunOnceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workspace")
+
+    private String workspace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_name")
 
     private String jobName;
@@ -20,6 +25,23 @@ public class RunOnceRequest {
     @JsonProperty(value = "body")
 
     private StartJobReq body;
+
+    public RunOnceRequest withWorkspace(String workspace) {
+        this.workspace = workspace;
+        return this;
+    }
+
+    /**
+     * 工作空间id
+     * @return workspace
+     */
+    public String getWorkspace() {
+        return workspace;
+    }
+
+    public void setWorkspace(String workspace) {
+        this.workspace = workspace;
+    }
 
     public RunOnceRequest withJobName(String jobName) {
         this.jobName = jobName;
@@ -73,18 +95,20 @@ public class RunOnceRequest {
             return false;
         }
         RunOnceRequest runOnceRequest = (RunOnceRequest) o;
-        return Objects.equals(this.jobName, runOnceRequest.jobName) && Objects.equals(this.body, runOnceRequest.body);
+        return Objects.equals(this.workspace, runOnceRequest.workspace)
+            && Objects.equals(this.jobName, runOnceRequest.jobName) && Objects.equals(this.body, runOnceRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobName, body);
+        return Objects.hash(workspace, jobName, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RunOnceRequest {\n");
+        sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
